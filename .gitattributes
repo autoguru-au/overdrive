@@ -1,0 +1,25 @@
+# The below will match all files not defined below
+# eg, _everything_ is text, and force line ending normalization to LF
+# this will leave all files marked as binary, untouched.
+
+* text=auto eol=lf
+
+## Source Code ##
+# .sh files is a linux thing, so force line endings to lf
+*.sh		text eol=lf
+yarn.lock	text
+
+# Setting the below, as they are pre-built patterns within git.
+*.html		text diff=html
+*.css		text diff=css
+
+## Graphics ##
+# Git thinks .svg by default is a binary file
+*.svg		text
+
+## Fonts ##
+*.ttf		binary
+*.eot		binary
+*.otf		binary
+*.woff		binary
+*.woff2		binary

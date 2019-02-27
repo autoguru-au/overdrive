@@ -1,0 +1,15 @@
+printWidth: 80
+bracketSpacing: true
+jsxBracketSameLine: true
+semi: true
+singleQuote: true
+useTabs: true
+tabWidth: 4
+trailingComma: es5
+
+overrides:
+  - files: ['**/package.json', '**/.*.yml', '**/*.yml']
+    options:
+      printWidth: 999
+      tabWidth: 2
+      useTabs: false

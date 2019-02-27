@@ -1,0 +1,20 @@
+# Editors
+.vscode/
+.idea/
+
+# Git things
+
+# Node things
+node_modules/
+*.log*
+
+# Build things
+dist/
+.cache/
+*.tgz
+coverage/
+*.xml
+.awcache/
+
+# OS
+.DS_Store

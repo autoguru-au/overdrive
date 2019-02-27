@@ -1,0 +1,23 @@
+extends:
+  - stylelint-config-recommended
+  - stylelint-config-recommended-scss
+  - stylelint-config-css-modules
+  - stylelint-config-prettier
+
+plugins:
+  - stylelint-scss
+
+rules:
+  at-rule-empty-line-before: [always, { except: [blockless-after-same-name-blockless], ignore: [after-comment, first-nested] }]
+  at-rule-no-unknown: null
+  block-no-empty: null
+  color-hex-length: long
+  custom-property-empty-line-before: [always, { except: [after-custom-property], ignore: [after-comment, first-nested, inside-single-line-block] }]
+  declaration-empty-line-before: [always, { except: [after-declaration], ignore: [after-comment, first-nested, inside-single-line-block] }]
+  function-name-case: null
+  indentation: [tab, { ignore: [inside-parens] }]
+  no-descending-specificity: null
+  rule-empty-line-before: [always, { ignore: [after-comment, first-nested] }]
+  scss/at-rule-no-unknown: true
+  scss/percent-placeholder-pattern: ^__[a-z-]+$
+  unit-case: lower
