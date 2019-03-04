@@ -5,12 +5,16 @@
 
 > Secret things coming here.
 
-```js
-import myTheme from './myTheme';
+### TODO:
 
-import { ThemeProvider, Button } from '@autoguru/overdreive';
-
-<ThemeProvider theme={myTheme}>
-	<Button>Hello World</Button>
-</ThemeProvider>;
-```
+-   [ ] all components that expose a a :root, needs to be refactored to use scss vars
+-   [ ] isDesktop() => native @media but with screen vars
+-   [ ] heading scss needs to be uncommented and fixed
+-   [ ] detailtext scss needs to be uncommented and fixed
+-   [ ] build something
+-   [ ] rid scripts/generateReExport.js
+-   [ ] clean up repo, and comb commponents
+-   [ ] Travis
+-   [ ] Chromatic
+-   [ ] commitizen
+-   [ ] semantic release
