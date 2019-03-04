@@ -34,6 +34,7 @@
       ],
       "*.{scss,css}": [
         "stylelint --ignore-path .gitignore --fix",
+        "prettier --write",
         "git add"
       ]
     },
