@@ -1,0 +1,95 @@
+// Grays
+$gray: (
+	900: #212338,
+	//tarmac
+		800: #2e324d,
+	700: #3c4262,
+	600: #495277,
+	500: #7f87a8,
+	400: #a7adc4,
+	300: #d5dae8,
+	200: #f0f3fa,
+	100: #f7f9fc,
+);
+
+// Green
+$green: (
+	900: #078171,
+	800: #05987a,
+	700: #03af83,
+	600: #01c68c,
+	500: #00dd95,
+	//adventure
+		400: #36e5aa,
+	300: #71edc2,
+	200: #aff5dc,
+	100: #f2fdf9,
+);
+
+// Blue
+$blue: (
+	900: #0d47a1,
+	800: #0d4bb7,
+	700: #0d50ce,
+	600: #0d54e5,
+	500: #0d59fc,
+	//link
+		400: #4680fc,
+	300: #80a7fd,
+	200: #b9cefe,
+	100: #f3f6ff,
+);
+
+// Yellow
+$yellow: (
+	900: #f38e29,
+	800: #f69a1f,
+	700: #f9a715,
+	600: #fcb30b,
+	500: #ffc001,
+	//zest
+		400: #ffcf3d,
+	300: #ffde79,
+	200: #ffedb5,
+	100: #fffcf2,
+);
+
+// Red
+$red: (
+	900: #780502,
+	800: #96110e,
+	700: #b51e1a,
+	600: #d42b26,
+	500: #e12e28,
+	//danger
+		400: #e85f5b,
+	300: #ef918e,
+	200: #f6c2c1,
+	100: #fdf4f4,
+);
+
+$colour_map: (
+	gray: $gray,
+	green: $green,
+	blue: $blue,
+	yellow: $yellow,
+	red: $red,
+);
+
+@function getColour($colour, $weight) {
+	$hex: map_get(map_get($colour_map, $colour), $weight);
+
+	@return var(--global--colour--#{$colour}-#{$weight}, $hex);
+}
+
+@mixin generateGlobalColourVariables() {
+	:root {
+		@each $name, $list in $colour_map {
+			@each $weight, $colour in $list {
+				--global--colour--#{$name}-#{$weight}: #{$colour};
+			}
+
+			--global--colour--#{$name}-0: white;
+		}
+	}
+}
