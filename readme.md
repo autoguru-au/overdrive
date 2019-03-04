@@ -1,9 +1,10 @@
 # Overdrive
 
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg?style=flat-square)](https://lernajs.io/)
 [![Styled with Prettier](https://img.shields.io/badge/styled%20with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)
 
-> Secret things coming here.
+> Product component UI library for [AutoGuru](https://www.autoguru.com.au/)
 
 ### TODO:
 
@@ -18,3 +19,9 @@
 -   [ ] Chromatic
 -   [ ] commitizen
 -   [ ] semantic release
+
+## License
+
+MIT &copy; [AutoGuru](https://www.autoguru.com.au/)
+
+<a href="http://www.autoguru.com.au/"><img src="https://cdn.autoguru.com.au/images/logos/autoguru.svg" alt="AutoGuru" width="150" /></a>
