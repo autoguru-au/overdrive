@@ -26,7 +26,7 @@ addDecorator(
 addDecorator(withKnobs);
 
 configure(
-	() => load(require.context('../src', true, /.?stories.tsx?$/)),
+	() => load(require.context('../lib', true, /.?Button\/stories.tsx?$/)),
 	module
 );
 

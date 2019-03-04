@@ -1,11 +1,9 @@
-@import '~@autoguru/styles/preflight';
+@import '../../theme/tokens/facade';
 
-:root {
-	--global--button--height-small: 36px;
-	--global--button--height-medium: 48px;
-	--global--button--height-large: 64px;
-	--global--button--width-small: 36px;
-}
+$heightSmall: 36px;
+$heightMedium: 36px;
+$heightLarge: 36px;
+$widthSmall: 36px;
 
 @mixin isHoverState() {
 	&:not([disabled]),
@@ -55,7 +53,6 @@
 		border-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 }
 
-// TODO: Make this come from a util
 .fullWidth {
 	width: 100%;
 }
@@ -131,7 +128,7 @@
 
 .size {
 	&-small {
-		$size: var(--global--button--height-small);
+		$size: $heightSmall;
 		$font_size: var(--global--fontSize--3);
 		$verticalPadding: calc(((#{$size} - #{$font_size}) / 2) - 1px);
 
@@ -148,7 +145,7 @@
 	}
 
 	&-medium {
-		$size: var(--global--button--height-medium);
+		$size: $heightMedium;
 		$font_size: var(--global--fontSize--4);
 		$verticalPadding: calc(((#{$size} - #{$font_size}) / 2) - 1px);
 
@@ -165,7 +162,7 @@
 	}
 
 	&-large {
-		$size: var(--global--button--height-large);
+		$size: $heightLarge;
 		$font_size: var(--global--fontSize--6);
 		$verticalPadding: calc(((#{$size} - #{$font_size}) / 2) - 1px);
 
