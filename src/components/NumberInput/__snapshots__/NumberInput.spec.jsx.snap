@@ -1,0 +1,230 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NumberInput /> should match snapshot for active number input 1`] = `
+<EnhancedInput(NumberInput)
+  className="number-input-class"
+  placeholder="Hello World!"
+>
+  <div
+    className="root number-input-class"
+  >
+    <NotchedBase
+      isActive={true}
+      isEmpty={false}
+      placeholder="Hello World!"
+    >
+      <div
+        className="notchedBase notchedBaseShift notchedBaseActive"
+      >
+        <NumberInput
+          eventHandlers={
+            Object {
+              "onBlur": [Function],
+              "onChange": [Function],
+              "onFocus": [Function],
+            }
+          }
+          field={
+            Object {
+              "className": "input",
+              "disabled": false,
+              "id": undefined,
+              "name": undefined,
+              "value": 3,
+            }
+          }
+          validation={
+            Object {
+              "isTouched": undefined,
+              "isValid": undefined,
+            }
+          }
+        >
+          <input
+            autoComplete="off"
+            className="input"
+            disabled={false}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            type="number"
+            value={3}
+          />
+        </NumberInput>
+        <div
+          className="notchedBaseBorder"
+        >
+          <div
+            className="notchedBaseBorderLeading"
+          />
+          <div
+            className="notchedBaseBorderNotch"
+            style={
+              Object {
+                "width": 8,
+              }
+            }
+          >
+            <label
+              className="notchedBasePlaceholder"
+            >
+              Hello World!
+            </label>
+          </div>
+          <div
+            className="notchedBaseBorderTrailing"
+          />
+        </div>
+      </div>
+    </NotchedBase>
+  </div>
+</EnhancedInput(NumberInput)>
+`;
+
+exports[`<NumberInput /> should match snapshot for default number input 1`] = `
+<div
+  class="root number-input-class"
+>
+  <div
+    class="notchedBase"
+  >
+    <input
+      autocomplete="off"
+      class="input"
+      type="number"
+      value=""
+    />
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width:0"
+      >
+        <label
+          class="notchedBasePlaceholder"
+        >
+          Hello World!
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<NumberInput /> should match snapshot for touched invalid number input 1`] = `
+<div
+  class="root number-input-class invalid withStatus"
+>
+  <div
+    class="notchedBase"
+  >
+    <input
+      autocomplete="off"
+      class="input"
+      type="number"
+      value=""
+    />
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width:0"
+      >
+        <label
+          class="notchedBasePlaceholder"
+        >
+          Hello World!
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<NumberInput /> should match snapshot for touched number input 1`] = `
+<div
+  class="root number-input-class"
+>
+  <div
+    class="notchedBase"
+  >
+    <input
+      autocomplete="off"
+      class="input"
+      type="number"
+      value=""
+    />
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width:0"
+      >
+        <label
+          class="notchedBasePlaceholder"
+        >
+          Hello World!
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<NumberInput /> should match snapshot for touched valid number input 1`] = `
+<div
+  class="root number-input-class valid withStatus"
+>
+  <div
+    class="notchedBase"
+  >
+    <input
+      autocomplete="off"
+      class="input"
+      type="number"
+      value=""
+    />
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width:0"
+      >
+        <label
+          class="notchedBasePlaceholder"
+        >
+          Hello World!
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+</div>
+`;

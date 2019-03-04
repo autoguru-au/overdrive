@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tabs /> should match snapshot with nested tab items 1`] = `"<div class=\\"tabs\\"><div class=\\"tabsNav\\"><button class=\\"navItem navItemActive\\">tab 1 title</button><button class=\\"navItem\\">tab 2 title</button><button class=\\"navItem\\">tab 3 title</button></div><div class=\\"tabsContent\\"><div class=\\"tabPane tabPaneActive\\">tab 1 content</div><div class=\\"tabPane\\">tab 2 content</div><div class=\\"tabPane\\">tab 3 content</div></div></div>"`;

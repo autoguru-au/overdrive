@@ -1,0 +1,35 @@
+@import '~@autoguru/styles/preflight';
+
+:root {
+	--global--meta--size-mobile: 16px;
+	--global--meta--size-desktop: 18px;
+	--global--meta--height-mobile: 24px;
+	--global--meta--height-desktop: 26px;
+}
+
+.root {
+	flex-direction: row;
+	box-sizing: border-box;
+	display: flex;
+	align-content: center;
+	justify-content: flex-start;
+	align-items: center;
+	color: getColour(gray, 900);
+	text-decoration: none;
+}
+
+.icon {
+	margin-right: 10px;
+	flex-shrink: 0;
+
+	.variant-primary & {
+		fill: getColour(green, 900);
+	}
+
+	.variant-secondary & {
+		fill: getColour(gray, 900);
+	}
+}
+
+.withIcon {
+}

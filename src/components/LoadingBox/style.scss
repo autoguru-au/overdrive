@@ -1,0 +1,30 @@
+@import '~@autoguru/styles/preflight';
+
+:root {
+	--global--min--loading--box--height: 14px;
+	--loading--box--fade-level: 0.5;
+}
+
+@keyframes fade {
+	0% {
+		opacity: var(--loading--box--fade-level);
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: var(--loading--box--fade-level);
+	}
+}
+
+.root {
+	min-height: var(--global--min--loading--box--height);
+	background-color: getColour(gray, 200);
+	width: 100%;
+}
+
+.blinking {
+	animation: fade 1.5s ease-in-out infinite;
+}

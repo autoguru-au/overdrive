@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
+<div
+  class="pagination"
+>
+  <button
+    aria-disabled="true"
+    class="root sizeSmall variantSecondary chevron disabled rounded"
+    disabled=""
+  >
+    <i
+      class="root icon"
+      style="width:24px;height:24px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M328.747 353.707L231.04 256l97.707-97.92-30.08-30.08-128 128 128 128 30.08-30.293z"
+        />
+      </svg>
+    </i>
+  </button>
+  <button
+    aria-disabled="false"
+    class="root sizeSmall variantSecondary chevron rounded"
+  >
+    <i
+      class="root icon"
+      style="width:24px;height:24px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+        />
+      </svg>
+    </i>
+  </button>
+</div>
+`;
+
+exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 1`] = `
+<div
+  class="pagination"
+>
+  <button
+    aria-disabled="false"
+    class="root sizeSmall variantSecondary chevron rounded"
+  >
+    <i
+      class="root icon"
+      style="width:24px;height:24px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M328.747 353.707L231.04 256l97.707-97.92-30.08-30.08-128 128 128 128 30.08-30.293z"
+        />
+      </svg>
+    </i>
+  </button>
+  <button
+    aria-disabled="false"
+    class="root sizeSmall variantSecondary chevron rounded"
+  >
+    <i
+      class="root icon"
+      style="width:24px;height:24px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+        />
+      </svg>
+    </i>
+  </button>
+</div>
+`;
+
+exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
+<div
+  class="pagination"
+>
+  <button
+    aria-disabled="false"
+    class="root sizeSmall variantSecondary chevron rounded"
+  >
+    <i
+      class="root icon"
+      style="width:24px;height:24px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M328.747 353.707L231.04 256l97.707-97.92-30.08-30.08-128 128 128 128 30.08-30.293z"
+        />
+      </svg>
+    </i>
+  </button>
+  <button
+    aria-disabled="true"
+    class="root sizeSmall variantSecondary chevron disabled rounded"
+    disabled=""
+  >
+    <i
+      class="root icon"
+      style="width:24px;height:24px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+        />
+      </svg>
+    </i>
+  </button>
+</div>
+`;

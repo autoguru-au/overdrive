@@ -1,0 +1,54 @@
+@import '~@autoguru/styles/preflight';
+
+.nav-item {
+	display: block;
+	outline: none;
+	width: auto;
+	border: none;
+	margin-bottom: -1px;
+	background: transparent;
+	font-size: var(--global--fontSize--4);
+	padding: var(--global--space--3) var(--global--space--4);
+	color: getColour(gray, 400);
+	cursor: pointer;
+	border-bottom: 2px solid transparent;
+
+	&:hover {
+		border-bottom-color: getColour(gray, 600);
+	}
+
+	&--active {
+		border-bottom-color: getColour(gray, 600);
+	}
+}
+
+.tab-pane {
+	display: none;
+	float: left;
+	width: 100%;
+
+	&--active {
+		display: block;
+	}
+}
+
+.tabs {
+	display: block;
+	width: 100%;
+
+	&__nav {
+		display: flex;
+		flex-wrap: nowrap;
+		border-bottom: 1px solid getColour(gray, 300);
+	}
+
+	&__content {
+		padding: var(--global--space--6) var(--global--space--4);
+
+		&:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+	}
+}

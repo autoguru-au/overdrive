@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Pagination /> should match snapshot for loading phase 1`] = `
+<span
+  class="loading pagination"
+>
+  <i
+    class="root chevron disabled"
+    style="width:25px;height:25px"
+  >
+    <svg
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M328.747 353.707L231.04 256l97.707-97.92-30.08-30.08-128 128 128 128 30.08-30.293z"
+      />
+    </svg>
+  </i>
+  <button
+    class="bubble disabled"
+  />
+  <button
+    class="bubble disabled"
+  />
+  <button
+    class="bubble disabled"
+  />
+  <i
+    class="root chevron disabled"
+    style="width:25px;height:25px"
+  >
+    <svg
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+      />
+    </svg>
+  </i>
+</span>
+`;

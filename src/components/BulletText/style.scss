@@ -1,0 +1,44 @@
+@import '~@autoguru/styles/preflight';
+
+:root {
+	--bullet--size: 24px;
+}
+
+.root {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	flex-direction: row;
+	box-sizing: border-box;
+	display: flex;
+	align-content: flex-start;
+	align-items: flex-start;
+}
+
+.bullet {
+	margin: 2px var(--global--space--4) 0 0;
+	position: relative;
+	flex: var(--bullet--size) 0 0;
+	height: var(--bullet--size);
+	line-height: var(--bullet--size);
+	flex-shrink: 0;
+	border-radius: 50%;
+
+	.variant-primary & {
+		background-color: getColour(green, 200);
+		color: getColour(green, 900);
+	}
+
+	.variant-secondary & {
+		background-color: getColour(gray, 200);
+		color: getColour(gray, 900);
+	}
+}
+
+.bullet-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 12px;
+}

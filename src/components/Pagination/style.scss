@@ -1,0 +1,79 @@
+@import '~@autoguru/styles/preflight';
+
+:root {
+	--global--meta--bubble--size: 36px;
+}
+
+.pagination,
+.loading {
+	flex-direction: row;
+	box-sizing: border-box;
+	display: flex;
+	align-content: center;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.chevron {
+	fill: getColour(gray, 500);
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&.disabled {
+		fill: getColour(gray, 300);
+	}
+}
+
+.disabled {
+	pointer-events: none;
+}
+
+.chevron,
+.bubble {
+	flex-direction: row;
+	box-sizing: border-box;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	margin-right: 10px;
+	cursor: pointer;
+	color: getColour(gray, 500);
+	width: var(--global--meta--bubble--size);
+	height: var(--global--meta--bubble--size);
+	border-radius: 50%;
+	text-align: center;
+	overflow: hidden;
+	background-color: transparent;
+	line-height: calc(var(--global--meta--bubble--size) - 3px);
+	transition: background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
+
+	&:hover {
+		background-color: getColour(gray, 100);
+	}
+
+	&:active {
+		background-color: getColour(gray, 200);
+	}
+}
+
+.bubble {
+	font-weight: 700;
+
+	&.gap {
+		pointer-events: none;
+	}
+
+	&.selected {
+		transition: none;
+		color: white;
+		background-color: getColour(green, 900);
+	}
+
+	&.disabled {
+		background-color: getColour(gray, 300);
+	}
+}

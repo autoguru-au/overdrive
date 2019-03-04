@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HintText /> should match snapshot for active hint 1`] = `
+<p
+  class="hintText hintTextActive"
+>
+  Hello World!
+</p>
+`;
+
+exports[`<HintText /> should match snapshot for default hint 1`] = `
+<p
+  class="hintText"
+>
+  Hello World!
+</p>
+`;

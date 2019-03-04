@@ -1,0 +1,103 @@
+@import '~@autoguru/styles/preflight';
+
+@-webkit-keyframes rotate {
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes dash {
+	0% {
+		stroke-dasharray: 1, 200;
+		stroke-dashoffset: 0;
+	}
+
+	50% {
+		stroke-dasharray: 89, 200;
+		stroke-dashoffset: -35px;
+	}
+
+	100% {
+		stroke-dasharray: 89, 200;
+		stroke-dashoffset: -124px;
+	}
+}
+
+:root {
+	--progress--spinner--size-smal: 12px;
+	--progress--spinner--size-medium: 50px;
+	--progress--spinner--size-large: 80px;
+}
+
+.root {
+	position: relative;
+	margin: 0 auto;
+
+	&::before {
+		content: '';
+		display: block;
+		padding-top: 100%;
+	}
+}
+
+.circular {
+	-webkit-animation: rotate 2s linear infinite;
+	animation: rotate 2s linear infinite;
+	height: 100%;
+	-webkit-transform-origin: center center;
+	transform-origin: center center;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	overflow: hidden;
+}
+
+.path {
+	stroke-dasharray: 1, 200;
+	stroke-dashoffset: 0;
+	stroke-linecap: round;
+	-webkit-animation: dash 1.5s ease-in-out infinite;
+	animation: dash 1.5s ease-in-out infinite;
+
+	.variant-light & {
+		stroke: white;
+	}
+
+	.variant-primary & {
+		stroke: getColour(green, 600);
+	}
+
+	.variant-secondary & {
+		stroke: getColour(gray, 300);
+	}
+
+	.variant-warning & {
+		stroke: getColour(yellow, 900);
+	}
+
+	.variant-danger & {
+		stroke: getColour(red, 600);
+	}
+}
+
+.size {
+	&-small {
+		width: var(--progress--spinner--size-smal);
+		padding-top: var(--progress--spinner--size-smal);
+	}
+
+	&-medium {
+		width: var(--progress--spinner--size-medium);
+		padding-top: var(--progress--spinner--size-medium);
+	}
+
+	&-large {
+		width: var(--progress--spinner--size-large);
+		padding-top: var(--progress--spinner--size);
+	}
+}

@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Meta /> should match snapshot with label, icon for Primary variant 1`] = `
+<span
+  className="root variantPrimary"
+>
+  <Component
+    className="icon"
+  />
+  <DetailText
+    className="withIcon"
+    size="detail-2"
+  >
+    Hello World!
+  </DetailText>
+</span>
+`;
+
+exports[`<Meta /> should match snapshot with label, icon for Secondary variant 1`] = `
+<span
+  className="root variantPrimary"
+>
+  <Component
+    className="icon"
+  />
+  <DetailText
+    className="withIcon"
+    size="detail-2"
+  >
+    Hello World!
+  </DetailText>
+</span>
+`;
+
+exports[`<Meta /> should match snapshot without label 1`] = `
+<span
+  className="root variantPrimary"
+>
+  <DetailText
+    className=""
+    size="detail-2"
+  />
+</span>
+`;

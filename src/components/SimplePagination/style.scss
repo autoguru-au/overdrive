@@ -1,0 +1,36 @@
+@import '~@autoguru/styles/preflight';
+
+.pagination {
+	flex-direction: row;
+	box-sizing: border-box;
+	display: flex;
+	align-content: center;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.chevron {
+	color: getColour(gray, 500);
+	fill: currentColor;
+	position: relative;
+	margin-right: var(--global--space--6);
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.icon {
+	position: absolute;
+	left: calc(50% - 12px);
+	top: calc(50% - 12px);
+
+	.disabled & {
+		fill: currentColor;
+	}
+}
+
+.disabled {
+	pointer-events: none;
+}

@@ -1,0 +1,34 @@
+@import '~@autoguru/styles/preflight';
+
+:root {
+	--global--body--size-mobile: 16px;
+	--global--body--size-desktop: 18px;
+	--global--body--height-mobile: 24px;
+	--global--body--height-desktop: 26px;
+}
+
+@mixin variantDesktop() {
+	&.variantDesktop {
+		@content;
+	}
+
+	&:not(.variantMobile) {
+		@include isDesktop() {
+			// TODO update desktop query when rules are defined around screen sizes
+			@content;
+		}
+	}
+}
+
+.root {
+	padding: 0;
+	margin: 0;
+	font-weight: 400;
+	line-height: var(--global--body--height-mobile);
+	font-size: var(--global--body--size-mobile);
+
+	@include variantDesktop() {
+		line-height: var(--global--body--height-desktop);
+		font-size: var(--global--body--size-desktop);
+	}
+}

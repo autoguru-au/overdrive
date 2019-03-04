@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withModal() should have isOpen set to true when the content itself is clicked 1`] = `
+<p>
+  Hello World!
+</p>
+`;
+
+exports[`withModal() should match snapshot 1`] = `
+<MockedModal>
+  <NakedModal
+    isOpen={true}
+    onRequestClose={[Function]}
+  >
+    <ModalPortal
+      isOpen={true}
+      onRequestClose={[Function]}
+    >
+      <Portal
+        containerInfo={
+          <body
+            style="overflow: hidden;"
+          >
+            <div
+              class="modalPortal modalPortalIsOpen"
+            >
+              <div
+                class="modalPanel"
+              >
+                <div
+                  class="modalContent"
+                >
+                  <div
+                    class="root"
+                  >
+                    <p>
+                      Hello World!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </body>
+        }
+      >
+        <div
+          className="modalPortal modalPortalIsOpen"
+        >
+          <div
+            className="modalPanel"
+          >
+            <div
+              className="modalContent"
+            >
+              <Component
+                isOpen={true}
+                onRequestClose={[Function]}
+              >
+                <div
+                  className="root"
+                >
+                  <p>
+                    Hello World!
+                  </p>
+                </div>
+              </Component>
+            </div>
+          </div>
+        </div>
+      </Portal>
+    </ModalPortal>
+  </NakedModal>
+</MockedModal>
+`;

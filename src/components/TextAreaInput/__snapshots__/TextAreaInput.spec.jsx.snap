@@ -1,0 +1,221 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextAreaInput /> should match snapshot for active select input 1`] = `
+<EnhancedInput(TextAreaInput)
+  className="textarea-input-class"
+  placeholder="Hello World!"
+>
+  <div
+    className="root textarea-input-class"
+  >
+    <NotchedBase
+      isActive={true}
+      isEmpty={false}
+      placeholder="Hello World!"
+    >
+      <div
+        className="notchedBase notchedBaseShift notchedBaseActive"
+      >
+        <TextAreaInput
+          eventHandlers={
+            Object {
+              "onBlur": [Function],
+              "onChange": [Function],
+              "onFocus": [Function],
+            }
+          }
+          field={
+            Object {
+              "className": "input",
+              "disabled": false,
+              "id": undefined,
+              "name": undefined,
+              "value": "Test value",
+            }
+          }
+          validation={
+            Object {
+              "isTouched": undefined,
+              "isValid": undefined,
+            }
+          }
+        >
+          <textarea
+            autoComplete="off"
+            className="input"
+            disabled={false}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            value="Test value"
+          />
+        </TextAreaInput>
+        <div
+          className="notchedBaseBorder"
+        >
+          <div
+            className="notchedBaseBorderLeading"
+          />
+          <div
+            className="notchedBaseBorderNotch"
+            style={
+              Object {
+                "width": 8,
+              }
+            }
+          >
+            <label
+              className="notchedBasePlaceholder"
+            >
+              Hello World!
+            </label>
+          </div>
+          <div
+            className="notchedBaseBorderTrailing"
+          />
+        </div>
+      </div>
+    </NotchedBase>
+  </div>
+</EnhancedInput(TextAreaInput)>
+`;
+
+exports[`<TextAreaInput /> should match snapshot for default select input 1`] = `
+<div
+  class="root textarea-input-class"
+>
+  <div
+    class="notchedBase"
+  >
+    <textarea
+      autocomplete="off"
+      class="input"
+    />
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width:0"
+      >
+        <label
+          class="notchedBasePlaceholder"
+        >
+          Hello World!
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextAreaInput /> should match snapshot for touched invalid select input 1`] = `
+<div
+  class="root textarea-input-class invalid withStatus"
+>
+  <div
+    class="notchedBase"
+  >
+    <textarea
+      autocomplete="off"
+      class="input"
+    />
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width:0"
+      >
+        <label
+          class="notchedBasePlaceholder"
+        >
+          Hello World!
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextAreaInput /> should match snapshot for touched select input 1`] = `
+<div
+  class="root textarea-input-class"
+>
+  <div
+    class="notchedBase"
+  >
+    <textarea
+      autocomplete="off"
+      class="input"
+    />
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width:0"
+      >
+        <label
+          class="notchedBasePlaceholder"
+        >
+          Hello World!
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextAreaInput /> should match snapshot for touched valid select input 1`] = `
+<div
+  class="root textarea-input-class valid withStatus"
+>
+  <div
+    class="notchedBase"
+  >
+    <textarea
+      autocomplete="off"
+      class="input"
+    />
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width:0"
+      >
+        <label
+          class="notchedBasePlaceholder"
+        >
+          Hello World!
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+</div>
+`;

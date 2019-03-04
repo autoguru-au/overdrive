@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LinearProgressIndicator /> should match snapshot 1`] = `
+<div
+  className="root"
+>
+  <div
+    className="linearProgressBar"
+  >
+    <span
+      className="linearProgressBarInner"
+    />
+  </div>
+</div>
+`;

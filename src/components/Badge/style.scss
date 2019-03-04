@@ -1,0 +1,37 @@
+@import '~@autoguru/styles/preflight';
+
+.root {
+	font-weight: 700;
+	color: white;
+	font-size: 12px;
+	line-height: 12px;
+	letter-spacing: 0.5px;
+	padding: 4px;
+	border-radius: 4px;
+	max-width: 200px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-transform: uppercase;
+}
+
+.variant {
+	&-default {
+		background-color: getColour(gray, 600);
+		border-color: getColour(gray, 600);
+	}
+
+	&-success {
+		background-color: getColour(green, 600);
+		border-color: getColour(green, 600);
+	}
+
+	&-warning {
+		background-color: getColour(yellow, 900);
+		border-color: getColour(yellow, 900);
+	}
+
+	&-danger {
+		background-color: getColour(red, 600);
+		border-color: getColour(red, 600);
+	}
+}

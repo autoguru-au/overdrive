@@ -1,0 +1,313 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextInput /> should have some hintText 1`] = `
+<div
+  class="root"
+>
+  <div
+    class="notchedBase"
+  >
+    <input
+      autocomplete="off"
+      class="input"
+      id="id"
+      type="text"
+      value=""
+    />
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width:0"
+      >
+        <label
+          class="notchedBasePlaceholder"
+          for="id"
+        >
+          placeholder
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+  <p
+    class="hintText"
+  >
+    hint text
+  </p>
+</div>
+`;
+
+exports[`<TextInput /> should match snapshot 1`] = `
+<div
+  class="root"
+>
+  <div
+    class="notchedBase"
+  >
+    <input
+      autocomplete="off"
+      class="input"
+      id="id"
+      type="text"
+      value=""
+    />
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width:0"
+      >
+        <label
+          class="notchedBasePlaceholder"
+          for="id"
+        >
+          placeholder
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextInput /> should match snapshot for active text input 1`] = `
+<EnhancedInput(TextInput)
+  className="text-input-class"
+  placeholder="Hello World!"
+>
+  <div
+    className="root text-input-class"
+  >
+    <NotchedBase
+      isActive={true}
+      isEmpty={false}
+      placeholder="Hello World!"
+    >
+      <div
+        className="notchedBase notchedBaseShift notchedBaseActive"
+      >
+        <TextInput
+          eventHandlers={
+            Object {
+              "onBlur": [Function],
+              "onChange": [Function],
+              "onFocus": [Function],
+            }
+          }
+          field={
+            Object {
+              "className": "input",
+              "disabled": false,
+              "id": undefined,
+              "name": undefined,
+              "value": "Test value",
+            }
+          }
+          validation={
+            Object {
+              "isTouched": undefined,
+              "isValid": undefined,
+            }
+          }
+        >
+          <input
+            autoComplete="off"
+            className="input"
+            disabled={false}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            type="text"
+            value="Test value"
+          />
+        </TextInput>
+        <div
+          className="notchedBaseBorder"
+        >
+          <div
+            className="notchedBaseBorderLeading"
+          />
+          <div
+            className="notchedBaseBorderNotch"
+            style={
+              Object {
+                "width": 8,
+              }
+            }
+          >
+            <label
+              className="notchedBasePlaceholder"
+            >
+              Hello World!
+            </label>
+          </div>
+          <div
+            className="notchedBaseBorderTrailing"
+          />
+        </div>
+      </div>
+    </NotchedBase>
+  </div>
+</EnhancedInput(TextInput)>
+`;
+
+exports[`<TextInput /> should match snapshot for default text input 1`] = `
+<div
+  class="root text-input-class"
+>
+  <div
+    class="notchedBase"
+  >
+    <input
+      autocomplete="off"
+      class="input"
+      type="text"
+      value=""
+    />
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width:0"
+      >
+        <label
+          class="notchedBasePlaceholder"
+        >
+          Hello World!
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextInput /> should match snapshot for touched invalid text input 1`] = `
+<div
+  class="root text-input-class invalid withStatus"
+>
+  <div
+    class="notchedBase"
+  >
+    <input
+      autocomplete="off"
+      class="input"
+      type="text"
+      value=""
+    />
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width:0"
+      >
+        <label
+          class="notchedBasePlaceholder"
+        >
+          Hello World!
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextInput /> should match snapshot for touched text input 1`] = `
+<div
+  class="root text-input-class"
+>
+  <div
+    class="notchedBase"
+  >
+    <input
+      autocomplete="off"
+      class="input"
+      type="text"
+      value=""
+    />
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width:0"
+      >
+        <label
+          class="notchedBasePlaceholder"
+        >
+          Hello World!
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextInput /> should match snapshot for touched valid text input 1`] = `
+<div
+  class="root text-input-class valid withStatus"
+>
+  <div
+    class="notchedBase"
+  >
+    <input
+      autocomplete="off"
+      class="input"
+      type="text"
+      value=""
+    />
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width:0"
+      >
+        <label
+          class="notchedBasePlaceholder"
+        >
+          Hello World!
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+</div>
+`;

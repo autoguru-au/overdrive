@@ -1,0 +1,67 @@
+@import '~@autoguru/styles/preflight';
+
+$desktop: 769px;
+
+.modalPortal {
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	pointer-events: none;
+	height: 100%;
+
+	&:before {
+		position: fixed;
+		z-index: -1;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		content: '';
+		display: block;
+		background-color: getColour(gray, 900);
+		opacity: 0;
+		transition: opacity 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
+		pointer-events: none;
+
+		@at-root #{selector_replace(&, '.modalPortal', '.modalPortal--isOpen')} {
+			opacity: 0.8;
+		}
+	}
+
+	&--isOpen {
+		&,
+		&:before {
+			pointer-events: auto;
+		}
+	}
+}
+
+.modalPanel {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	height: 100%;
+	outline: none;
+
+	@include isDesktop($desktop) {
+		align-items: center;
+	}
+}
+
+.modalContent {
+	flex-direction: row;
+	box-sizing: border-box;
+	display: flex;
+	align-content: flex-end;
+	justify-content: center;
+	align-items: flex-end;
+	height: 100%;
+
+	@include isDesktop($desktop) {
+		height: auto;
+		align-items: center;
+	}
+}

@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Anchor /> should match snapshot with label, icon and to props 1`] = `
+<a
+  aria-disabled={false}
+  className="root"
+  disabled={false}
+  href="https://www.hellowrold.com"
+>
+  <Component
+    className="icon"
+    size={16}
+  />
+  <DetailText
+    className="label"
+    size="detail-2"
+  >
+    Hello World!
+  </DetailText>
+</a>
+`;
+
+exports[`<Anchor /> should match snapshot with label, icon custom component 1`] = `
+<a
+  aria-disabled={false}
+  className="root"
+  compnent={[Function]}
+  disabled={false}
+  to="https://www.hellowrold.com"
+>
+  <Component
+    className="icon"
+    size={16}
+  />
+  <DetailText
+    className="label"
+    size="detail-2"
+  >
+    Hello World!
+  </DetailText>
+</a>
+`;
+
+exports[`<Anchor /> should match snapshot without label 1`] = `
+<a
+  aria-disabled={false}
+  className="root"
+  disabled={false}
+>
+  <DetailText
+    className="label"
+    size="detail-2"
+  />
+</a>
+`;

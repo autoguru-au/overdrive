@@ -18,3 +18,5 @@ coverage/
 
 # OS
 .DS_Store
+
+storybook-static/

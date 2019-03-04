@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Badge /> should match snapshot with label 1`] = `
+<span
+  class="root variantDefault"
+>
+  Hello World!
+</span>
+`;
+
+exports[`<Badge /> should match snapshot without label 1`] = `
+<span
+  className="root variantDefault"
+/>
+`;

@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BulletText /> should match snapshot for default bullet text 1`] = `
+<li
+  className="root variantPrimary"
+>
+  <div
+    className="bullet"
+  >
+    <span
+      className="bulletText"
+    >
+      •
+    </span>
+  </div>
+  <Text>
+    Hello World!
+  </Text>
+</li>
+`;
+
+exports[`<BulletText /> should match snapshot for ordered bullet text 1`] = `
+<ol
+  className="root variantPrimary"
+>
+  <div
+    className="bullet"
+  >
+    <span
+      className="bulletText"
+    >
+      ?
+    </span>
+  </div>
+  <Text>
+    Hello World!
+  </Text>
+</ol>
+`;
+
+exports[`<BulletText /> should match snapshot for primary bullet text with custom bullet character 1`] = `
+<li
+  className="root variantPrimary"
+>
+  <div
+    className="bullet"
+  >
+    <span
+      className="bulletText"
+    >
+      ?
+    </span>
+  </div>
+  <Text>
+    Hello World!
+  </Text>
+</li>
+`;
+
+exports[`<BulletText /> should match snapshot for secondary bullet text with custom bullet character 1`] = `
+<li
+  className="root variantSecondary"
+>
+  <div
+    className="bullet"
+  >
+    <span
+      className="bulletText"
+    >
+      ?
+    </span>
+  </div>
+  <Text>
+    Hello World!
+  </Text>
+</li>
+`;
