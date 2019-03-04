@@ -135,3 +135,17 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+// Our additions
+
+button {
+	outline: none;
+	border: none;
+	-webkit-appearance: none;
+	font-family: inherit;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
