@@ -1,4 +1,4 @@
-@import '~@autoguru/styles/preflight';
+@import '../../theme/tokens/facade';
 
 :root {
 	--global--input--min--width: 280px;
@@ -38,10 +38,10 @@
 
 	&__placeholder {
 		$active_scaling_factor: 0.7777;
-		$active_padding_added: $space-2;
+		$active_padding_added: var(--global--space--2);
 
 		$size: 64px; // Hardcoded values are fixes for edge not supporting css variable inside transform
-		$font_size: $fontSize-6;
+		$font_size: var(--global--fontSize--6);
 
 		position: absolute;
 		top: 0;
@@ -55,7 +55,7 @@
 		white-space: nowrap;
 		transform-origin: top left;
 		transform: translate(
-				#{$space-5},
+				var(--global--space--5),
 				calc(((#{$size} - #{$font_size}) / 2))
 			)
 			scale(1);
@@ -66,7 +66,7 @@
 		.notched-base--shift & {
 			z-index: 2;
 			transform: translate(
-					calc(#{$space-3} + #{$active_padding_added}),
+					calc(var(--global--space--5) + #{$active_padding_added}),
 					calc(
 						-1 * (((#{$font_size}) * #{$active_scaling_factor}) / 2)
 					)
