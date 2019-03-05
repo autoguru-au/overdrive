@@ -6,7 +6,7 @@ import { ETabsSize } from './index';
 import { Tab } from './Tab';
 import ReactDOM from 'react-dom';
 
-describe.skip('<Tabs />', () => {
+describe('<Tabs />', () => {
 	const tabData = [
 		{
 			title: 'tab 1 title',
