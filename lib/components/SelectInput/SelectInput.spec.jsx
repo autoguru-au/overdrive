@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount, render } from 'enzyme';
-import { SelectInput } from './selectInput';
+import { SelectInput } from './SelectInput';
 
 const testLabel = 'Hello World!';
 describe('<SelectInput />', () => {

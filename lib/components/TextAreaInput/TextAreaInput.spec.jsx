@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount, render } from 'enzyme';
-import { TextAreaInput } from './textAreaInput';
+import { TextAreaInput } from './TextAreaInput';
 
 const testLabel = 'Hello World!';
 describe('<TextAreaInput />', () => {
