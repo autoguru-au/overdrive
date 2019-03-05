@@ -1,7 +1,7 @@
 # Overdrive
 
-[![Build Status](https://img.shields.io/travis/com/autoguru-au/overdrive.svg?style=flat-square)](https://travis-ci.com/autoguru-au/overdrive)
-[![Code Coverage](https://img.shields.io/codecov/c/gh/autoguru-au/overdrive.svg?style=flat-square)](https://codecov.io/gh/autoguru-au/overdrive)
+[![Build Status](https://img.shields.io/travis/com/autoguru-au/overdrive/master.svg?style=flat-square)](https://travis-ci.com/autoguru-au/overdrive)
+[![Code Coverage](https://img.shields.io/codecov/c/gh/autoguru-au/overdrive/master.svg?style=flat-square)](https://codecov.io/gh/autoguru-au/overdrive)
 [![Styled with Prettier](https://img.shields.io/badge/styled%20with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)
 
