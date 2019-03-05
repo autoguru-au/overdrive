@@ -13,6 +13,7 @@
   ],
   "main": "./lib/components/index.ts",
   "scripts": {
+    "build": "yarn run build:storybook",
     "build:storybook": "build-storybook",
     "format": "prettier --write \"{*,lib/**/*}.+(js|jsx|ts|tsx|css|scss|json|yml|md|mdx|html)\"",
     "lint": "concurrently \"yarn:lint:ts\" \"yarn:lint:styles\"",
