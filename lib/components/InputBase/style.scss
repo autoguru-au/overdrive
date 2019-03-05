@@ -66,7 +66,7 @@
 		.notched-base--shift & {
 			z-index: 2;
 			transform: translate(
-					calc(var(--global--space--5) + #{$active_padding_added}),
+					calc(var(--global--space--3) + #{$active_padding_added}),
 					calc(
 						-1 * (((#{$font_size}) * #{$active_scaling_factor}) / 2)
 					)
@@ -182,7 +182,7 @@
 }
 
 .input {
-	$input_base_height: var(--global--button--height-large);
+	$input_base_height: 64px;
 	$font_size: var(--global--fontSize--6);
 
 	position: relative;

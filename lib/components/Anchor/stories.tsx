@@ -6,10 +6,9 @@ import { Anchor } from '.';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
 
-const phoneNumber = text('Telephone number', '07 5612 5347');
 const baseProps = () => {
 	return {
-		label: phoneNumber,
+		label: text('Telephone number', '07 5612 5347'),
 	};
 };
 
@@ -18,7 +17,7 @@ storiesOf('Components|Type/Anchor', module)
 	.add('withIcon', () => (
 		<Anchor
 			{...baseProps()}
-			href={`tel:${phoneNumber}}`}
+			href={'123'}
 			icon={<Icon icon={Phone} size={16} />}
 		/>
 	))
