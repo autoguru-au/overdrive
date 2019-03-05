@@ -4,6 +4,14 @@
   "homepage": "https://overdrive.autoguru.io",
   "repository": "https://github.com/autoguru-au/overdrive",
   "license": "MIT",
+  "files": [
+    "lib/components/**/*",
+    "lib/theme/**/*"
+  ],
+  "sideEffects": [
+    "lib/theme/**/*"
+  ],
+  "main": "./lib/components/index.ts",
   "scripts": {
     "build:storybook": "build-storybook",
     "format": "prettier --write \"{*,lib/**/*}.+(js|jsx|ts|tsx|css|scss|json|yml|md|mdx|html)\"",
@@ -42,13 +50,13 @@
   },
   "dependencies": {
     "@autoguru/icons": "^1.0.2",
-    "@autoguru/utilities": "1.0.11",
+    "@autoguru/utilities": "1.0.12",
     "clsx": "^1.0.3"
   },
   "devDependencies": {
-    "@autoguru/babel-preset": "^1.0.10",
-    "@autoguru/jest-preset": "^1.0.10",
-    "@autoguru/tsconfig": "^1.0.10",
+    "@autoguru/babel-preset": "^1.0.12",
+    "@autoguru/jest-preset": "^1.0.12",
+    "@autoguru/tsconfig": "^1.0.12",
     "@babel/core": "^7.3.3",
     "@storybook/addon-actions": "^4.1.12",
     "@storybook/addon-knobs": "^4.1.12",

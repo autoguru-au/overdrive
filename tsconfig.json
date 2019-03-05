@@ -5,6 +5,6 @@
 		"jsx": "react",
 		"outDir": "./dist"
 	},
-	"include": ["./global.d.ts", "./lib/**/index.ts"],
+	"include": ["./global.d.ts", "./lib/components/index.ts"],
 	"exclude": ["./lib/**/stories.tsx"]
 }

@@ -8,13 +8,13 @@
 
 ### TODO:
 
--   [ ] all components that expose a a :root, needs to be refactored to use scss vars
--   [ ] isDesktop() => native @media but with screen vars
 -   [ ] heading scss needs to be uncommented and fixed
 -   [ ] detailtext scss needs to be uncommented and fixed
--   [ ] build something
 -   [ ] rid scripts/generateReExport.js
+-   [ ] all components that expose a a :root, needs to be refactored to use scss vars
+-   [ ] isDesktop() => native @media but with screen vars
 -   [ ] clean up repo, and comb commponents
+-   [ ] build something
 -   [ ] Travis
 -   [ ] Chromatic
 -   [ ] commitizen

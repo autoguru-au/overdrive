@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@autoguru/babel-preset@^1.0.10":
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/@autoguru/babel-preset/-/babel-preset-1.0.10.tgz#45f0cacd6e94b0aeced27766fe3778200257628d"
-  integrity sha512-/t5VJn+d4NhAkNMzrOoeBDPRQqcj2f+Fo4jGNwkMxbCHQYf9eDCx2ixPTvsXX6TrHBjV+MR9ecstGui0k1PKnQ==
+"@autoguru/babel-preset@^1.0.12":
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/@autoguru/babel-preset/-/babel-preset-1.0.12.tgz#c4a5d8829b8c58df5dff9016bdcf3368fefb0b0a"
+  integrity sha512-zDI3aP2QnjgppCfWgw9d9/W+M2zwe9xxczlJ2l5pWHQQGdkO1wgkxCKOnrBVZFXg2oYSwPaSGRYUxbJOl1CFgg==
   dependencies:
     "@babel/core" "^7.3.3"
     "@babel/plugin-proposal-class-properties" "^7.3.3"
@@ -21,25 +21,25 @@
   resolved "https://registry.yarnpkg.com/@autoguru/icons/-/icons-1.0.2.tgz#db32195632d578c39799ae8495651f532bf1aed6"
   integrity sha512-KMozLOopW1f23HPDMj48HY2Xv8KxFE92D6DZpJnCRgstDAwfPvP5TtP8bApzAJTaRsNeJc2Ksxc6r1ZB8KcKrg==
 
-"@autoguru/jest-preset@^1.0.10":
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/@autoguru/jest-preset/-/jest-preset-1.0.10.tgz#e18bfa40c683a7170c2f5b3638d6a79665556794"
-  integrity sha512-GC6YULu3aoMJwnrQWMiY4BG2R+M1xgh7uXsB+0VnAgNo4Fnlxrrehl4xBTCqCggcAcZD18uK3ltNO9Y1Yoml3g==
+"@autoguru/jest-preset@^1.0.12":
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/@autoguru/jest-preset/-/jest-preset-1.0.12.tgz#d2dc455a88c49767ec6bbae95afa033e53bd5741"
+  integrity sha512-obXa1+t6LNU1yJBo9d5dcRcXW3L840OrIPnFt4WWSnX5txh2IlUb45moFWiQ7SjlPX1NyRuQbxtfcxxWuiRejg==
   dependencies:
-    "@autoguru/babel-preset" "^1.0.10"
+    "@autoguru/babel-preset" "^1.0.12"
     "@babel/core" "^7.3.3"
     "@babel/preset-typescript" "^7.3.3"
     babel-jest "^24.1.0"
 
-"@autoguru/tsconfig@^1.0.10":
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/@autoguru/tsconfig/-/tsconfig-1.0.10.tgz#d2a72a403e2a474a63422b05ddd3570edc79fc6a"
-  integrity sha512-mTYsAR/Q6KaqLbXgWRV17t2ErmaNSDV8ehkcPIbZKhr82eOensaDb2+1TGIx7B5Ql0G3r8MIfg6EfipX12Qp+w==
+"@autoguru/tsconfig@^1.0.12":
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/@autoguru/tsconfig/-/tsconfig-1.0.12.tgz#3e10e8731fb7973212e45b88e604d9e68fa738f7"
+  integrity sha512-H/WEu/7+PWGJ+3Vw2yp/+1QYEy2gziZhj/YDVYTlnparnLe9FrvXfZfQEICyfcbnv/bXJG+pQEZL6E6+QSnlDA==
 
-"@autoguru/utilities@1.0.11":
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.11.tgz#997132d9598b66d873c7f9f61bf36a738ee8a131"
-  integrity sha512-+xagKBrIpJB20phMIAGMEplzgTKbkN9DM88nH8x3otnQD2gWE8KJ8k6/6WGA6dBwbk1Z+gj3/IwlGijQnK/4Fw==
+"@autoguru/utilities@1.0.12":
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.12.tgz#0711a26c592993ed8c24af28d1f680fe841983d2"
+  integrity sha512-ZwbqSAF5hNHGCwZnItPZpG5mnbU8FvgZDj/o/lYzU26lIVK28rJme+Q29r9U5sHbC8qHhxrnNIxZkmRDirCQFA==
 
 "@babel/code-frame@7.0.0", "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.0.0-beta.35":
   version "7.0.0"

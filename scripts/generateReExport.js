@@ -2,7 +2,7 @@ const fs = require('fs');
 const glob = require('glob');
 const path = require('path');
 
-const components = path.join(__dirname, '../src/components');
+const components = path.join(__dirname, '../lib/components');
 
 const componentEntryFiles = glob
 	.sync('*/index.+(ts|tsx)', { cwd: components })
