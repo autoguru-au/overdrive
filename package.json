@@ -19,7 +19,7 @@
     "lint:styles": "stylelint --ignore-path .gitignore --fix \"packages/**/*.+(scss|css)\"",
     "lint:ts": "tsc --noEmit && tslint --fix --project tsconfig.json",
     "start": "start-storybook -p 6006",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "husky": {
     "hooks": {
