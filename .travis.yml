@@ -2,8 +2,7 @@ language: node_js
 cache: yarn
 notifications:
   email: false
-before_install:
-  - export TZ=Australia/Brisbane
+env:
+  - TZ=Australia/Brisbane
 after_success:
-  - npm install -g codecov
-  - codecov
+  - curl -s https://codecov.io/bash | bash
