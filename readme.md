@@ -1,4 +1,8 @@
-# Overdrive
+<p align="center">
+  <a href="https://overdrive.autoguru.io/">
+    <img alt="@autoguru/overdrive" src="logo.png" width="100%">
+  </a>
+</p>
 
 [![Build Status](https://img.shields.io/travis/com/autoguru-au/overdrive/master.svg?style=flat-square)](https://travis-ci.com/autoguru-au/overdrive)
 [![Code Coverage](https://img.shields.io/codecov/c/gh/autoguru-au/overdrive/master.svg?style=flat-square)](https://codecov.io/gh/autoguru-au/overdrive)
