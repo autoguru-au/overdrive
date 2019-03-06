@@ -4,5 +4,9 @@ notifications:
   email: false
 env:
   - TZ=Australia/Brisbane
-after_success:
-  - curl -s https://codecov.io/bash | bash
+
+jobs:
+  include:
+    - stage: test
+      script: yarn test
+      after_success: curl -s https://codecov.io/bash | bash
