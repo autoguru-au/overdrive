@@ -1,29 +1,28 @@
-import { addDecorator, configure } from '@storybook/react';
+import { addDecorator, addParameters, configure } from '@storybook/react';
+import { create } from '@storybook/theming';
 import { withKnobs } from '@storybook/addon-knobs';
-import { withOptions } from '@storybook/addon-options';
-import { themes } from '@storybook/components';
+import { withNotes } from '@storybook/addon-notes';
 
 import './global.scss';
 
-addDecorator(
-	withOptions({
-		name: `${require('../package.json').name} Storybook`,
-		url: '/',
-		hierarchySeparator: /\//,
-		hierarchyRootSeparator: /\|/,
-		theme: {
-			...themes.normal,
-			mainBackground: '#f7f9fc',
-			mainTextColor: '#212338',
-			dimmedTextColor: '#495277',
-			successColor: '#36e5aa',
-			failColor: '#e85f5b',
-			warnColor: '#ffcf3d',
-		},
-	})
-);
-
+addDecorator(withNotes);
 addDecorator(withKnobs);
+
+addParameters({
+	options: {
+		theme: create({
+			base: 'light',
+			colorPrimary: '#212338',
+			colorSecondary: '#00dd95',
+			appBg: '#f7f9fc',
+			textColor: '#2e324d',
+		}),
+	},
+	backgrounds: [
+		{ name: 'light', value: '#f7f9fc' },
+		{ name: 'dark', value: '#2e324d' },
+	],
+});
 
 configure(
 	() => load(require.context('../lib', true, /.?stories.tsx?$/)),

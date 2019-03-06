@@ -1,4 +1,4 @@
-module.exports = (baseConfig, env, defaultConfig) => {
+module.exports = ({ config: defaultConfig }) => {
 	// Adds typescript support
 	defaultConfig.module.rules.push({
 		test: /\.tsx?$/,
