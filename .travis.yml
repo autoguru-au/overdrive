@@ -11,7 +11,8 @@ jobs:
       script: yarn test
       after_success: curl -s https://codecov.io/bash | bash
     - stage: deploy
-      script: |
+      script: yarn build
+      after_success: |
         if [ -n "$TRAVIS_PULL_REQUEST_SHA" ]; then
           npx surge -p ./storybook-static/ -d overdrive--${TRAVIS_PULL_REQUEST_SHA}.gh.autoguru.io
         elif [ "$TRAVIS_BRANCH" == "master" ]; then
