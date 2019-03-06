@@ -28,7 +28,7 @@ yarn add @autoguru/overdrive \
 
 2. Import and use any of the components, and higher order components we export.
 
-    ```js
+    ```jsx
     import { Button, EButtonVariant } '@autoguru/overdrive';
 
     <Button variant={EButtonVariant.Primary}>
