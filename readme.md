@@ -10,6 +10,11 @@
 	<a href="http://overdrive.autoguru.io" target="_blank"><img src="https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg"/></a>
 </p>
 
+<p align="center">
+	<img src="https://img.shields.io/github/license/autoguru-au/overdrive.svg"/>
+	<img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"/>
+</p>
+
 ---
 
 Overdrive is a product component library, and design system for AutoGuru. Built with React, TypeScript, Webpack, SCSS and Storybook.
