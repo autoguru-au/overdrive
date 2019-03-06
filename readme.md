@@ -13,6 +13,35 @@
 
 Overdrive is a product component library, and design system for AutoGuru. Built with React, TypeScript, Webpack, SCSS and Storybook.
 
+## Usage
+
+```sh
+yarn add @autoguru/overdrive \
+	react react-dom
+```
+
+1. Import the global/core stylesheet into your project.
+
+    ```js
+    import '@autoguru/overdrive/theme.css';
+    ```
+
+2. Import and use any of the components, and higher order components we export.
+
+    ```js
+    import { Button, EButtonVariant } '@autoguru/overdrive';
+
+    <Button variant={EButtonVariant.Primary}>
+    	Hello World
+    </Button>
+    ```
+
+    If you're using TypeScript, we export all prop interfaces, and enums also.
+
+    ```typescript
+    import { IButtonProps } from '@autoguru/overdrive';
+    ```
+
 ### TODO:
 
 -   [ ] heading scss needs to be uncommented and fixed
@@ -20,9 +49,7 @@ Overdrive is a product component library, and design system for AutoGuru. Built 
 -   [ ] all components that expose a a :root, needs to be refactored to use scss vars
 -   [ ] isDesktop() => native @media but with screen vars
 -   [ ] clean up repo, and comb commponents
--   [ ] Chromatic
--   [ ] commitizen
--   [ ] semantic release
+-   [ ] improve the need to import a root .css
 
 ## License
 
