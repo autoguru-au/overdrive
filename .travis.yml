@@ -2,8 +2,8 @@ language: node_js
 cache: yarn
 notifications:
   email: false
-script:
-  - export TZ=Australia/Brisbane
+env:
+  - TZ=Australia/Brisbane
 
 jobs:
   include:
