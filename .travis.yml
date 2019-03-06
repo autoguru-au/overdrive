@@ -11,7 +11,6 @@ jobs:
       script: yarn test
       after_success: curl -s https://codecov.io/bash | bash
     - stage: deploy
-      if: env(TRAVIS_SECURE_ENV_VARS) is present
       script: |
         if [ -n "$TRAVIS_PULL_REQUEST_SHA" ]; then
           npx surge -p ./storybook-static/ -d overdrive--${TRAVIS_PULL_REQUEST_SHA}.gh.autoguru.io
