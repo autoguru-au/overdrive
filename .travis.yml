@@ -2,11 +2,14 @@ language: node_js
 cache: yarn
 notifications:
   email: false
-env:
-  - TZ=Australia/Brisbane
+script:
+  - export TZ=Australia/Brisbane
 
 jobs:
   include:
     - stage: test
       script: yarn test
       after_success: curl -s https://codecov.io/bash | bash
+    - stage: deploy
+      script: echo 'test'
+      if: branch = master
