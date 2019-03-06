@@ -9,7 +9,9 @@ jobs:
   include:
     - stage: test
       script: yarn test
-      after_success: curl -s https://codecov.io/bash | bash
+      after_success:
+        - curl -s https://codecov.io/bash | bash
+        - yarn run chromatic
     - stage: deploy
       script: yarn build
       after_success: |
