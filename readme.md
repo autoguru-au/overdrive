@@ -11,7 +11,7 @@
 
 ---
 
-> A product component library
+Overdrive is a product component library, and design system for AutoGuru. Built with React, TypeScript, Webpack, SCSS and Storybook.
 
 ### TODO:
 
