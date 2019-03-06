@@ -4,12 +4,14 @@
   </a>
 </p>
 
-[![Build Status](https://img.shields.io/travis/com/autoguru-au/overdrive/master.svg?style=flat-square)](https://travis-ci.com/autoguru-au/overdrive)
-[![Code Coverage](https://img.shields.io/codecov/c/gh/autoguru-au/overdrive/master.svg?style=flat-square)](https://codecov.io/gh/autoguru-au/overdrive)
-[![Styled with Prettier](https://img.shields.io/badge/styled%20with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)
+[![Build Status](https://img.shields.io/travis/com/autoguru-au/overdrive/master.svg)](https://travis-ci.com/autoguru-au/overdrive)
+[![Code Coverage](https://img.shields.io/codecov/c/gh/autoguru-au/overdrive/master.svg)](https://codecov.io/gh/autoguru-au/overdrive)
+[![Storybook](https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg)](https://overdrive.autoguru.io/storybook)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 
-> Product component UI library for [AutoGuru](https://www.autoguru.com.au/)
+---
+
+> A product component library
 
 ### TODO:
 
