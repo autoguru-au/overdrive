@@ -4,10 +4,11 @@
   </a>
 </p>
 
-[![Build Status](https://img.shields.io/travis/com/autoguru-au/overdrive/master.svg)](https://travis-ci.com/autoguru-au/overdrive)
-[![Code Coverage](https://img.shields.io/codecov/c/gh/autoguru-au/overdrive/master.svg)](https://codecov.io/gh/autoguru-au/overdrive)
-[![Storybook](https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg)](http://overdrive.autoguru.io)
-![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+<p align="center">
+	<a href="https://travis-ci.com/autoguru-au/overdrive" target="_blank"><img src="https://img.shields.io/travis/com/autoguru-au/overdrive/master.svg"/></a>
+	<a href="https://codecov.io/gh/autoguru-au/overdrive" target="_blank"><img src="https://img.shields.io/codecov/c/gh/autoguru-au/overdrive/master.svg"/></a>
+	<a href="http://overdrive.autoguru.io" target="_blank"><img src="https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg"/></a>
+</p>
 
 ---
 
