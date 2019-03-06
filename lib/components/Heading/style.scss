@@ -1,5 +1,8 @@
-/*
 @import '../../theme/tokens/facade';
+
+@function calcTextLoaderMargin($textHeight, $lineHeight) {
+	@return calc(0.5 * (#{$lineHeight} - #{$textHeight}));
+}
 
 :root {
 	--global--heading--1--size-mobile: 30px;
@@ -184,4 +187,3 @@
 			0;
 	}
 }
-*/
