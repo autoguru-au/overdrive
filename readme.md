@@ -50,8 +50,6 @@ yarn add @autoguru/overdrive \
 
 ### TODO:
 
--   [ ] heading scss needs to be uncommented and fixed
--   [ ] detailtext scss needs to be uncommented and fixed
 -   [ ] all components that expose a a :root, needs to be refactored to use scss vars
 -   [ ] isDesktop() => native @media but with screen vars
 -   [ ] clean up repo, and comb commponents

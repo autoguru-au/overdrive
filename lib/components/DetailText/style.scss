@@ -1,5 +1,8 @@
-/*
 @import '../../theme/tokens/facade';
+
+@function calcTextLoaderMargin($textHeight, $lineHeight) {
+	@return calc(0.5 * (#{$lineHeight} - #{$textHeight}));
+}
 
 :root {
 	--global--detail--1--size: 18px;
@@ -59,4 +62,3 @@
 			0;
 	}
 }
-*/
