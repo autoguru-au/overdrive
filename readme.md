@@ -55,6 +55,10 @@ yarn add @autoguru/overdrive \
 -   [ ] clean up repo, and comb commponents
 -   [ ] improve the need to import a root .css
 
+## Thanks
+
+[Chromatic](https://www.chromaticqa.com) for providing component screenshot testing.
+
 ## License
 
 MIT &copy; [AutoGuru](https://www.autoguru.com.au/)
