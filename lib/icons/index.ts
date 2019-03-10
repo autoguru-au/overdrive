@@ -2,7 +2,7 @@
  * -----------------------------------------------------------------------------
  * THIS FILE IS GENERATED - Please do not edit.
  * Run to re-generate:
- *     node scripts/build.js
+ *     node scripts/buildIcons.js
  * -----------------------------------------------------------------------------
  */
 
