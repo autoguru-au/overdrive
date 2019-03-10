@@ -1,8 +1,8 @@
 import cx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
 import { LoadingBox } from '../LoadingBox';
-import { EHeadingSize } from './index';
 import styles from './style.scss';
+import { ESize as EHeadingSize } from './Heading';
 
 export interface IProps {
 	size?: EHeadingSize;

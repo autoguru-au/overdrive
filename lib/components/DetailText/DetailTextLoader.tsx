@@ -1,8 +1,8 @@
 import cx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
 import { LoadingBox } from '../LoadingBox';
-import { EDetailTextSize } from './index';
 import styles from './style.scss';
+import { ESize as EDetailTextSize } from './DetailText';
 
 export interface IProps {
 	size?: EDetailTextSize;
