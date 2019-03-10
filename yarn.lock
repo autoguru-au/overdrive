@@ -16,11 +16,6 @@
     "@babel/preset-env" "^7.1.6"
     "@babel/preset-react" "^7.0.0"
 
-"@autoguru/icons@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@autoguru/icons/-/icons-1.0.2.tgz#db32195632d578c39799ae8495651f532bf1aed6"
-  integrity sha512-KMozLOopW1f23HPDMj48HY2Xv8KxFE92D6DZpJnCRgstDAwfPvP5TtP8bApzAJTaRsNeJc2Ksxc6r1ZB8KcKrg==
-
 "@autoguru/jest-preset@^1.0.12":
   version "1.0.12"
   resolved "https://registry.yarnpkg.com/@autoguru/jest-preset/-/jest-preset-1.0.12.tgz#d2dc455a88c49767ec6bbae95afa033e53bd5741"

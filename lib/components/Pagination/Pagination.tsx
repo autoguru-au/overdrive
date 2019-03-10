@@ -1,6 +1,6 @@
-import { ChevronLeft, ChevronRight } from '@autoguru/icons';
 import cx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
+import { ChevronLeft, ChevronRight } from '../../icons';
 import { Icon } from '../Icon';
 import styles from './style.scss';
 import { Bubble } from './Bubble';

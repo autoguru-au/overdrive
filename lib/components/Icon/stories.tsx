@@ -1,4 +1,4 @@
-import { Calendar } from '@autoguru/icons';
+import { Calendar } from '../../icons';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { Icon } from './Icon';

@@ -1,6 +1,6 @@
-import { WindowClose } from '@autoguru/icons';
 import cx from 'clsx';
 import React from 'react';
+import { WindowClose } from '../../icons';
 import { EHeadingSize, Heading } from '../Heading';
 import { Icon } from '../Icon';
 import { EModalCloseCode, withModal } from '../ModalBase';

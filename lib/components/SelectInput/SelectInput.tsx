@@ -1,5 +1,5 @@
-import { ChevronDown } from '@autoguru/icons';
 import React, { memo } from 'react';
+import { ChevronDown } from '../../icons';
 import { Icon } from '../Icon';
 import { withEnhancedInput } from '../InputBase';
 import styles from './style.scss';

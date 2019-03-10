@@ -52,7 +52,6 @@
     "relative": true
   },
   "dependencies": {
-    "@autoguru/icons": "^1.0.2",
     "@autoguru/utilities": "1.0.12",
     "clsx": "^1.0.3"
   },
