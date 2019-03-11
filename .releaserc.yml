@@ -1,0 +1,4 @@
+release:
+  branch: master
+
+success: false # Disables success plugins, which avoids commenting on PR's once released.
