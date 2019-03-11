@@ -17,8 +17,11 @@ jobs:
           elif [[ $TRAVIS_EVENT_TYPE != 'pull_request' ||  $TRAVIS_PULL_REQUEST_SLUG != $TRAVIS_REPO_SLUG ]]; then
             yarn run chromatic
           fi
-    - stage: deploy
+    - stage: release
       script: yarn build
+      after_success: yarn semantic-release
+    - stage: deploy
+      script: yarn build:storybook
       after_success: |
         if [ -n "$TRAVIS_PULL_REQUEST_SHA" ]; then
           npx surge -p ./storybook-static/ -d overdrive--${TRAVIS_PULL_REQUEST_SHA}.surge.sh
