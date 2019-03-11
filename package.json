@@ -25,7 +25,7 @@
     "build": "yarn run build:storybook",
     "build:storybook": "build-storybook",
     "chromatic": "chromatic test --exit-zero-on-changes",
-    "format": "prettier --write \"{*,lib/**/*}.+(js|jsx|ts|tsx|css|scss|json|yml|md|mdx|html)\"",
+    "format": "prettier --write \"{*,{scripts,lib,.storybook}/**/*}.+(js|jsx|ts|tsx|css|scss|json|yml|md|mdx|html)\"",
     "lint": "concurrently \"yarn:lint:ts\" \"yarn:lint:styles\"",
     "lint:styles": "stylelint --ignore-path .gitignore --fix \"packages/**/*.+(scss|css)\"",
     "lint:ts": "tsc --noEmit && tslint --fix --project tsconfig.json",
