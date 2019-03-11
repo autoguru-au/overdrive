@@ -51,6 +51,11 @@ storiesOf('Components|Buttons', module)
 			Hello World
 		</Button>
 	))
+	.add('loadingState', () => (
+		<Button {...baseProps()} {...nonRoundedProps()} isLoading={true}>
+			Hello World
+		</Button>
+	))
 	.add('asAnchor', () => (
 		<Button
 			href="https://www.autoguru.com.au"
