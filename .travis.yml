@@ -1,9 +1,15 @@
 language: node_js
 cache: yarn
+
 notifications:
   email: false
+
 env:
   - TZ=Australia/Brisbane
+
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
 
 jobs:
   include:
@@ -19,11 +25,14 @@ jobs:
               yarn run chromatic;
             fi
           else
-            echo "Skipping internal PR because of http://docs.chromaticqa.com/setup_ci#travis";
+            echo "Skipping internal PR because of https://docs.chromaticqa.com/setup_ci#travis";
           fi
+
     - stage: release
       script: yarn build
       after_success: yarn semantic-release
+      if: branch = master # We only want to release when code hits master.
+
     - stage: deploy
       script: yarn build:storybook
       after_success: |
@@ -32,7 +41,3 @@ jobs:
         elif [ "$TRAVIS_BRANCH" == "master" ]; then
           npx surge -p ./storybook-static/ -d overdrive.autoguru.io
         fi
-
-branches:
-  except:
-    - /^v\d+\.\d+\.\d+$/
