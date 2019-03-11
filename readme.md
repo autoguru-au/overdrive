@@ -7,7 +7,7 @@
 <p align="center">
 	<a href="https://travis-ci.com/autoguru-au/overdrive" target="_blank"><img src="https://img.shields.io/travis/com/autoguru-au/overdrive/master.svg"/></a>
 	<a href="https://codecov.io/gh/autoguru-au/overdrive" target="_blank"><img src="https://img.shields.io/codecov/c/gh/autoguru-au/overdrive/master.svg"/></a>
-	<a href="https://yarnpkg.com/en/package/@autoguru/overdrive" target="_blank"><img src="https://img.shields.io/npm/v/@autoguru/overdrive.svg"/></a>
+	<a href="https://www.npmjs.com/package/@autoguru/overdrive" target="_blank"><img src="https://img.shields.io/npm/v/@autoguru/overdrive.svg"/></a>
 	<a href="http://overdrive.autoguru.io" target="_blank"><img src="https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg"/></a>
 </p>
 
