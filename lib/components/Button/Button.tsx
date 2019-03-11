@@ -1,5 +1,10 @@
 import cx from 'clsx';
-import { ComponentType, createElement, FunctionComponent } from 'react';
+import React, { ComponentType, createElement, FunctionComponent } from 'react';
+import {
+	EProgressSpinnerSize,
+	EProgressSpinnerVariant,
+	ProgressSpinner,
+} from '../ProgressSpinner';
 
 import styles from './style.scss';
 
@@ -20,6 +25,7 @@ export interface IProps {
 	component?: ComponentType;
 	disabled?: boolean;
 	isFullWidth?: boolean;
+	isLoading?: boolean;
 	rounded?: boolean;
 	size?: ESize;
 	variant?: EVariant;
@@ -37,12 +43,28 @@ const cssSizeMap: Map<ESize, string> = new Map([
 	[ESize.Large, styles.sizeLarge],
 ]);
 
+const progressSpinnerSizeMap: Map<ESize, EProgressSpinnerSize> = new Map([
+	[ESize.Small, EProgressSpinnerSize.Small],
+	[ESize.Medium, EProgressSpinnerSize.Medium],
+	[ESize.Large, EProgressSpinnerSize.Large],
+]);
+
+const progressSpinnerVariantMap: Map<
+	EVariant,
+	EProgressSpinnerVariant
+> = new Map([
+	[EVariant.Primary, EProgressSpinnerVariant.Light],
+	[EVariant.Secondary, EProgressSpinnerVariant.Secondary],
+	[EVariant.Danger, EProgressSpinnerVariant.Light],
+]);
+
 // TODO: Fix this any here, needs to be an abstract of the component that is being passed in.
 export const Button: FunctionComponent<IProps & any> = ({
 	children,
 	className = '',
 	component = 'button',
 	disabled = false,
+	isLoading = false,
 	isFullWidth = false,
 	rounded = false,
 	size = ESize.Medium,
@@ -62,11 +84,21 @@ export const Button: FunctionComponent<IProps & any> = ({
 				{
 					[styles.rounded]: rounded,
 					[styles.fullWidth]: isFullWidth,
+					[styles.loading]: isLoading,
 				}
 			),
-			'aria-disabled': disabled,
-			disabled,
+			'aria-disabled': disabled || isLoading,
+			disabled: disabled || isLoading,
 			...rest,
 		},
-		children
+		<>
+			<span className={styles.btnContent} children={children} />
+			{isLoading && (
+				<ProgressSpinner
+					className={styles.spinner}
+					variant={progressSpinnerVariantMap.get(variant)}
+					size={progressSpinnerSizeMap.get(size)}
+				/>
+			)}
+		</>
 	);

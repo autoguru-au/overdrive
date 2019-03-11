@@ -25,6 +25,7 @@ storiesOf('Components|Buttons', module)
 		<Button
 			{...baseProps()}
 			{...nonRoundedProps()}
+			isLoading={boolean('isLoading', false)}
 			disabled={boolean('Disabled', false)}>
 			Hello World
 		</Button>

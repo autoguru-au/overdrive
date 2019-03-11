@@ -26,8 +26,11 @@
 
 :root {
 	--progress--spinner--size-smal: 12px;
-	--progress--spinner--size-medium: 50px;
-	--progress--spinner--size-large: 80px;
+	--progress--spinner--size-medium: 16px;
+	--progress--spinner--size-large: 24px;
+	--progress--spinner--stroke--size-small: 4px;
+	--progress--spinner--stroke--size-medium: 5px;
+	--progress--spinner--stroke--size-large: 6px;
 }
 
 .root {
@@ -89,15 +92,27 @@
 	&-small {
 		width: var(--progress--spinner--size-smal);
 		padding-top: var(--progress--spinner--size-smal);
+
+		.path {
+			stroke-width: var(--progress--spinner--stroke--size-small);
+		}
 	}
 
 	&-medium {
 		width: var(--progress--spinner--size-medium);
 		padding-top: var(--progress--spinner--size-medium);
+
+		.path {
+			stroke-width: var(--progress--spinner--stroke--size-medium);
+		}
 	}
 
 	&-large {
 		width: var(--progress--spinner--size-large);
 		padding-top: var(--progress--spinner--size);
+
+		.path {
+			stroke-width: var(--progress--spinner--stroke--size-large);
+		}
 	}
 }
