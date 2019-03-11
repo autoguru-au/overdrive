@@ -19,8 +19,11 @@ jobs:
               yarn run chromatic
             fi
           fi
-    - stage: deploy
+    - stage: release
       script: yarn build
+      after_success: yarn semantic-release
+    - stage: deploy
+      script: yarn build:storybook
       after_success: |
         if [ -n "$TRAVIS_PULL_REQUEST_SHA" ]; then
           npx surge -p ./storybook-static/ -d overdrive--${TRAVIS_PULL_REQUEST_SHA}.surge.sh
