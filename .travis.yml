@@ -12,11 +12,14 @@ jobs:
       after_success:
         - curl -s https://codecov.io/bash | bash
         - |
-          if [[ $TRAVIS_EVENT_TYPE != 'pull_request' ||  $TRAVIS_PULL_REQUEST_SLUG != $TRAVIS_REPO_SLUG ]]; then
+          if [[ $TRAVIS_EVENT_TYPE != "pull_request" || $TRAVIS_PULL_REQUEST_SLUG != $TRAVIS_REPO_SLUG ]]; then
             if [ "$TRAVIS_BRANCH" == "master" ]; then
-              yarn run chromatic --auto-accept-changes
+              yarn run chromatic --auto-accept-changes;
             else
-              yarn run chromatic
+              yarn run chromatic;
+            fi
+          else
+            echo "Skipping internal PR because of http://docs.chromaticqa.com/setup_ci#travis";
           fi
     - stage: release
       script: yarn build
