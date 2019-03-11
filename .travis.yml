@@ -28,3 +28,7 @@ jobs:
         elif [ "$TRAVIS_BRANCH" == "master" ]; then
           npx surge -p ./storybook-static/ -d overdrive.autoguru.io
         fi
+
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
