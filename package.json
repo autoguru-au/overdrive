@@ -62,8 +62,8 @@
     "relative": true
   },
   "dependencies": {
-    "@autoguru/utilities": "1.0.12",
-    "clsx": "^1.0.3"
+    "@autoguru/utilities": "^1.0.0",
+    "clsx": "^1.0.0"
   },
   "devDependencies": {
     "@autoguru/babel-preset": "^1.0.12",
@@ -128,7 +128,7 @@
     "webpack-cli": "^3.2.3"
   },
   "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
   }
 }
