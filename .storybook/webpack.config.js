@@ -5,6 +5,12 @@ module.exports = ({ config: defaultConfig }) => {
 		use: [
 			{
 				loader: require.resolve('babel-loader'),
+				options: {
+					presets: [
+						require.resolve('@autoguru/babel-preset/web'),
+						require.resolve('@autoguru/babel-preset/react'),
+					],
+				},
 			},
 			{
 				loader: require.resolve('awesome-typescript-loader'),
