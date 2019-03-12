@@ -133,4 +133,38 @@ describe('<Button />', () => {
 			expect(button.hasClass('fullWidth')).toBeTruthy();
 		});
 	});
+
+	describe('when loading', () => {
+		it('should match snapshot for default button', () => {
+			expect(shallow(<Button isLoading={true} />)).toMatchSnapshot();
+		});
+
+		it('should match snapshot for small button', () => {
+			expect(
+				shallow(<Button size={EButtonSize.Small} isLoading={true} />)
+			).toMatchSnapshot();
+		});
+
+		it('should match snapshot for medium button', () => {
+			expect(
+				shallow(<Button size={EButtonSize.Medium} isLoading={true} />)
+			).toMatchSnapshot();
+		});
+
+		it('should match snapshot for large button', () => {
+			expect(
+				shallow(<Button size={EButtonSize.Large} isLoading={true} />)
+			).toMatchSnapshot();
+		});
+
+		it('should not apply loading styles to default button', () => {
+			const button = shallow(<Button />);
+			expect(button.hasClass('loading')).toBeFalsy();
+		});
+
+		it('should apply loading styles', () => {
+			const button = shallow(<Button isLoading={true} />);
+			expect(button.hasClass('loading')).toBeTruthy();
+		});
+	});
 });

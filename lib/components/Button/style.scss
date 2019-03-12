@@ -29,7 +29,10 @@ $widthSmall: 36px;
 	&[disabled],
 	&[aria-disabled='true'] {
 		cursor: not-allowed;
-		@content;
+
+		&:not(.loading) {
+			@content;
+		}
 	}
 }
 
@@ -177,4 +180,20 @@ $widthSmall: 36px;
 			padding: $verticalPadding 0;
 		}
 	}
+}
+
+.loading {
+	position: relative;
+
+	.btn-content {
+		visibility: hidden;
+	}
+}
+
+.spinner {
+	pointer-events: none;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 }
