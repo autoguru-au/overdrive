@@ -32,7 +32,7 @@
     "semantic-release": "semantic-release",
     "start": "yarn run storybook",
     "storybook": "start-storybook -p 6006",
-    "test": "jest --coverage"
+    "test": "jest"
   },
   "husky": {
     "hooks": {

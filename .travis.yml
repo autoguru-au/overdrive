@@ -16,7 +16,7 @@ branches:
 jobs:
   include:
     - stage: test
-      script: yarn test
+      script: yarn test --no-cache --ci --coverage
       after_success:
         - curl -s https://codecov.io/bash | bash
         - |
