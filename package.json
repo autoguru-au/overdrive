@@ -70,6 +70,7 @@
     "@autoguru/jest-preset": "^1.0.12",
     "@autoguru/tsconfig": "^1.0.12",
     "@babel/core": "^7.3.3",
+    "@octokit/rest": "^16.17.0",
     "@semantic-release/commit-analyzer": "^6.1.0",
     "@semantic-release/github": "^5.2.10",
     "@semantic-release/npm": "^5.1.4",
