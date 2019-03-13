@@ -14,11 +14,10 @@ Thanks seek: https://github.com/seek-oss/braid-design-system/blob/master/scripts
 			);
 		}
 
-		const octokit = require('@octokit/rest')();
+		const Octokit = require('@octokit/rest');
 
-		octokit.authenticate({
-			type: 'token',
-			token: GH_TOKEN,
+		const octokit = new Octokit({
+			auth: `token ${GH_TOKEN}`,
 		});
 
 		await octokit.repos.createStatus({
