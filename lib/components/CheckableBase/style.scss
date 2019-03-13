@@ -1,0 +1,58 @@
+@import '../../theme/tokens/facade';
+
+:root {
+	--od--CheckableBase--checkable-size: 20px;
+	--od--CheckableBase--checkable-padding: 16px;
+	--od--CheckableBase--default-colour: #{getColour(gray, 500)};
+	--od--CheckableBase--active-colour: #{getColour(green, 600)};
+}
+
+.root,
+.checkable,
+.native-input,
+label {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.root {
+	position: relative;
+	flex-direction: row;
+	box-sizing: border-box;
+	display: flex;
+	align-content: center;
+	justify-content: flex-start;
+	align-items: center;
+	cursor: pointer;
+}
+
+.checkable {
+	width: calc(
+		var(--od--CheckableBase--checkable-size) +
+			(var(--od--CheckableBase--checkable-padding) * 2)
+	);
+	height: calc(
+		var(--od--CheckableBase--checkable-size) +
+			(var(--od--CheckableBase--checkable-padding) * 2)
+	);
+	position: absolute;
+}
+
+.native-input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	cursor: inherit;
+	z-index: 1;
+}
+
+.label {
+	padding-left: calc(
+		var(--od--CheckableBase--checkable-size) +
+			(var(--od--CheckableBase--checkable-padding) * 2)
+	);
+}
