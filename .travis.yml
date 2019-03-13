@@ -33,7 +33,7 @@ jobs:
     - stage: release
       script: yarn build
       after_success: yarn semantic-release
-      if: branch = master # We only want to release when code hits master.
+      if: branch = master AND type = push # We only want to release when code hits master.
 
     - stage: deploy
       script: yarn build:storybook
