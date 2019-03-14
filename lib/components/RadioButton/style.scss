@@ -21,7 +21,7 @@ $strokeSize: 2px;
 	border: $strokeSize solid var(--od--CheckableBase--default-colour);
 
 	.selected & {
-		border-color: var(--od--CheckableBase--active-colour);
+		border-color: var(--od--CheckableBase--checked-colour);
 	}
 }
 
@@ -30,7 +30,13 @@ $strokeSize: 2px;
 
 	.selected & {
 		border-width: calc(#{$coreSize} / 2);
-		border-color: var(--od--CheckableBase--active-colour);
+		border-color: var(--od--CheckableBase--checked-colour);
+	}
+
+	.hovered:not(.selected) & {
+		border-width: calc(#{$coreSize} / 2);
+		opacity: 0.5;
+		border-color: var(--od--CheckableBase--default-colour);
 	}
 
 	width: $coreSize;

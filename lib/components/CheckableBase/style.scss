@@ -4,7 +4,11 @@
 	--od--CheckableBase--checkable-size: 20px;
 	--od--CheckableBase--checkable-padding: 16px;
 	--od--CheckableBase--default-colour: #{getColour(gray, 500)};
-	--od--CheckableBase--active-colour: #{getColour(green, 600)};
+	--od--CheckableBase--hovered-colour: #{getColour(gray, 300)};
+	--od--CheckableBase--active-colour: #{getColour(gray, 400)};
+	--od--CheckableBase--inactive-colour: #{getColour(gray, 300)};
+	--od--CheckableBase--checked-colour: #{getColour(green, 600)};
+	--od--CheckableBase--focused-outline-colour: #{getColour(blue, 400)};
 }
 
 .root,
@@ -12,10 +16,16 @@
 .native-input,
 label {
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	position: relative;
 }
 
 .root {
-	position: relative;
+	outline: none;
+	transition: background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
+		border-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
+	padding: var(--od--CheckableBase--checkable-padding)
+		var(--od--CheckableBase--checkable-padding)
+		var(--od--CheckableBase--checkable-padding) 0;
 	flex-direction: row;
 	box-sizing: border-box;
 	display: flex;
@@ -23,6 +33,27 @@ label {
 	justify-content: flex-start;
 	align-items: center;
 	cursor: pointer;
+	border-radius: 4px;
+	border: 3px solid transparent;
+
+	&.hovered,
+	&:hover {
+		background-color: var(--od--CheckableBase--hovered-colour);
+	}
+
+	&.active,
+	&:active {
+		background-color: var(--od--CheckableBase--active-colour);
+	}
+
+	&.focused,
+	&:focus {
+		&:not(.hovered):not(:hover):not(.active):not(:active) {
+			border-color: var(--od--CheckableBase--focused-outline-colour);
+			border-radius: 4px;
+			overflow: hidden;
+		}
+	}
 }
 
 .checkable {
