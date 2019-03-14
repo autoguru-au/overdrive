@@ -20,3 +20,6 @@ coverage/
 .DS_Store
 
 storybook-static/
+.rpt2_cache/
+
+/report.*.json

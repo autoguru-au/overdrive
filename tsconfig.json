@@ -2,8 +2,11 @@
 	"extends": "@autoguru/tsconfig/web",
 	"compilerOptions": {
 		"baseUrl": "./",
+		"rootDir": "./",
 		"jsx": "react",
-		"outDir": "./dist"
+		"outDir": "./dist",
+		"declaration": true,
+		"declarationDir": "./dist/"
 	},
 	"include": ["./global.d.ts", "./lib/components/index.ts"],
 	"exclude": ["./lib/**/stories.tsx"]
