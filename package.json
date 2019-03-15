@@ -67,9 +67,9 @@
     "clsx": "^1.0.0"
   },
   "devDependencies": {
-    "@autoguru/babel-preset": "^1.0.12",
-    "@autoguru/jest-preset": "^1.0.12",
-    "@autoguru/tsconfig": "^1.0.12",
+    "@autoguru/babel-preset": "^1.0.0",
+    "@autoguru/jest-preset": "^1.0.0",
+    "@autoguru/tsconfig": "^1.0.0",
     "@babel/core": "^7.3.3",
     "@octokit/rest": "^16.17.1",
     "@semantic-release/commit-analyzer": "^6.1.0",
