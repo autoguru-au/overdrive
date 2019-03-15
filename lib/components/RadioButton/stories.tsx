@@ -1,8 +1,9 @@
 import { text, boolean } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
+import { addParameters, storiesOf } from '@storybook/react';
 import React from 'react';
-
 import { RadioButton } from '.';
+import { RadioGroup } from './RadioGroup';
+import styles from '../CheckableBase/style.scss';
 
 const longLabel =
 	'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, ' +
@@ -12,6 +13,7 @@ const longLabel =
 	'sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.';
 const baseProps = () => ({
 	label: text('Checkbox label', 'check me!'),
+	onChange: checked => console.log('checked', checked),
 });
 
 const checked = () => ({
@@ -19,29 +21,56 @@ const checked = () => ({
 });
 
 storiesOf('Components|Radio Button', module).add('default', () => (
-	<RadioButton {...baseProps()} />
+	<RadioButton name="radio-name" value="1" {...baseProps()} />
 ));
 
 storiesOf('Components|Radio Button', module).add('unchecked', () => (
-	<RadioButton checked={false} {...checked()} {...baseProps()} />
+	<RadioButton name="radio-name" value="1" checked={false} {...baseProps()} />
 ));
 
 storiesOf('Components|Radio Button', module).add('checked', () => (
-	<RadioButton checked={true} {...checked()} {...baseProps()} />
+	<RadioButton name="radio-name" value="1" checked={true} {...baseProps()} />
 ));
 
 storiesOf('Components|Radio Button', module).add('hovered', () => (
-	<RadioButton hovered={true} {...checked()} {...baseProps()} />
+	<RadioButton
+		name="radio-name"
+		value="1"
+		className={styles.hovered}
+		{...checked()}
+		{...baseProps()}
+	/>
 ));
 
 storiesOf('Components|Radio Button', module).add('active', () => (
-	<RadioButton active={true} {...checked()} {...baseProps()} />
+	<RadioButton
+		name="radio-name"
+		value="1"
+		className={styles.active}
+		{...checked()}
+		{...baseProps()}
+	/>
 ));
 
 storiesOf('Components|Radio Button', module).add('focused', () => (
-	<RadioButton focused={true} {...checked()} {...baseProps()} />
+	<RadioButton
+		name="radio-name"
+		value="1"
+		className={styles.focused}
+		{...checked()}
+		{...baseProps()}
+	/>
 ));
 
-storiesOf('Components|Radio Button', module).add('multiple lines', () => (
-	<RadioButton {...checked()} label={longLabel} />
+storiesOf('Components|Radio Button', module)
+	.addParameters({ viewport: { defaultViewport: 'iphone6' } })
+	.add('multiple lines', () => (
+		<RadioButton
+			name="radio-name"
+			value="1"
+			{...checked()}
+			label={longLabel}
+		/>
+	));
+
 ));

@@ -1,4 +1,5 @@
 export {
 	usingCheckable,
-	IProps as IWithCHeckableProps,
+	IProps as IWithCheckableProps,
+	ISymbolProps as ICheckableProps,
 } from './using-checkable';

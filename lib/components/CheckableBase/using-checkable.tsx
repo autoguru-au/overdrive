@@ -6,29 +6,33 @@ import styles from './style.scss';
 export interface IProps {
 	className?: string;
 	checked?: boolean;
-	hovered?: boolean;
-	focused?: boolean;
-	active?: boolean;
 	label?: string;
+	name: string;
+	value: string;
+
+	onChange?(checked: boolean): void;
+	onClick?(checked: boolean): void;
 }
 
-interface ISymbolProps {
+export interface ISymbolProps {
 	className?: string;
+	value: string;
+	name: string;
 	checked: boolean;
-	hovered: boolean;
-	focused: boolean;
-	active: boolean;
 }
 
 export const usingCheckable = (
 	SymbolComponent: FunctionComponent<ISymbolProps>,
-	inputType: string
+	inputType: string,
+	clickHandler: (
+		checked: boolean,
+		setChecked: (checked: boolean) => void
+	) => void
 ): ComponentType<IProps> => {
 	interface IState {
+		value: string;
+		name: string;
 		checked: boolean;
-		hovered: boolean;
-		focused: boolean;
-		active: boolean;
 	}
 
 	return class WrappedCheckable extends PureComponent<IProps, IState> {
@@ -36,6 +40,8 @@ export const usingCheckable = (
 			nextProps: IProps
 		): Partial<IState> | null {
 			const propKeys: Array<string> = [
+				'value',
+				'name',
 				'checked',
 				'hovered',
 				'focused',
@@ -52,6 +58,10 @@ export const usingCheckable = (
 				{}
 			);
 
+			if (derivedState.value === 'ford') {
+				console.log({ derivedState });
+			}
+
 			return derivedState;
 		}
 
@@ -59,9 +69,8 @@ export const usingCheckable = (
 			super(props);
 
 			this.state = {
-				hovered: false,
-				focused: false,
-				active: false,
+				value: '',
+				name: '',
 				checked: false,
 			};
 		}
@@ -70,38 +79,33 @@ export const usingCheckable = (
 			return (
 				<div
 					className={cx([styles.root, this.props.className], {
-						[styles.hovered]: this.state.hovered,
-						[styles.focused]: this.state.focused,
-						[styles.active]: this.state.active,
 						[styles.checked]: this.state.checked,
 					})}
-					onMouseLeave={this.handleMouseLeave}
-					onMouseOver={this.handleMouseOver}
-					onMouseDown={this.handleMouseDown}
-					onMouseUp={this.handleMouseUp}
-					onMouseOut={this.handleMouseUp}
-					onFocus={this.handleFocus}
-					onBlur={this.handleBlur}
 					onClick={this.handleClick}>
 					<SymbolComponent
-						active={this.state.active}
-						hovered={this.state.hovered}
-						focused={this.state.focused}
+						value={this.state.value}
+						name={this.state.name}
 						checked={this.state.checked}
 						className={styles.checkable}
 					/>
+
 					<input
-						onChange={this.handleChange}
+						name={this.state.name}
+						value={this.state.value}
 						checked={this.state.checked}
+						onChange={this.handleChange}
 						type={inputType}
 						className={styles.nativeInput}
 					/>
+
+					<div className={styles.focusRect} />
+
 					{!!(
 						typeof this.props.label === 'string' &&
 						this.props.label.length > 0
 					) && (
 						<DetailText
-							size={EDetailTextSize.Detail1}
+							size={EDetailTextSize.Detail2}
 							children={this.props.label}
 							className={styles.label}
 						/>
@@ -110,60 +114,38 @@ export const usingCheckable = (
 			);
 		}
 
-		private handleMouseDown = e => {
+		public componentDidUpdate(_, prevState) {
+			if (prevState.checked !== this.state.checked) {
+				this.dispatchChange(this.state.checked);
+			}
+		}
+
+		private handleChange = e => {
 			console.log({ e });
-			this.setState({
-				active: true,
-				focused: false,
-			});
+			console.log(e.currentTarget);
 		};
 
-		private handleMouseUp = e => {
-			console.log({ e });
-			this.setState({
-				active: false,
-				focused: false,
-			});
-		};
+		private dispatchChange(checked) {
+			if (typeof this.props.onChange === 'function') {
+				this.props.onChange(checked);
+			}
+		}
 
-		private handleFocus = e => {
-			console.log({ e });
-			this.setState({
-				focused: true,
-			});
-		};
+		private dispatchClick(e) {
+			if (typeof this.props.onClick === 'function') {
+				this.props.onClick(e);
+			}
+		}
 
-		private handleBlur = e => {
-			console.log({ e });
+		private setChecked = (checked: boolean) => {
 			this.setState({
-				focused: false,
-			});
-		};
-
-		private handleMouseOver = e => {
-			console.log({ e });
-			this.setState({
-				hovered: true,
-			});
-		};
-
-		private handleMouseLeave = e => {
-			console.log({ e });
-			this.setState({
-				hovered: false,
-				focused: false,
+				checked,
 			});
 		};
 
 		private handleClick = e => {
-			console.log({ e });
-			this.setState({
-				checked: !this.state.checked,
-			});
-		};
-
-		private handleChange = e => {
-			console.log({ e });
+			clickHandler(this.state.checked, this.setChecked);
+			this.dispatchClick(e);
 		};
 	};
 };

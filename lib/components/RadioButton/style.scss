@@ -1,6 +1,6 @@
 @import '../../theme/tokens/facade';
 
-$coreSize: 10px;
+$coreSize: 8px;
 $strokeSize: 2px;
 
 .radio {
@@ -31,12 +31,6 @@ $strokeSize: 2px;
 	.selected & {
 		border-width: calc(#{$coreSize} / 2);
 		border-color: var(--od--CheckableBase--checked-colour);
-	}
-
-	.hovered:not(.selected) & {
-		border-width: calc(#{$coreSize} / 2);
-		opacity: 0.5;
-		border-color: var(--od--CheckableBase--default-colour);
 	}
 
 	width: $coreSize;
