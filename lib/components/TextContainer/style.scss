@@ -1,0 +1,35 @@
+.root {
+	display: block;
+	margin-bottom: var(--global--space--5);
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	> header {
+		display: block;
+
+		~ * {
+			display: block;
+			padding-top: var(--global--space--2);
+		}
+	}
+
+	header {
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+		place-content: center space-between;
+
+		> :last-child {
+			flex-shrink: 0;
+			margin-left: var(--global--space--4);
+		}
+
+		> * {
+			display: block;
+		}
+	}
+}
