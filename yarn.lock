@@ -31,7 +31,7 @@
   resolved "https://registry.yarnpkg.com/@autoguru/tsconfig/-/tsconfig-1.0.12.tgz#3e10e8731fb7973212e45b88e604d9e68fa738f7"
   integrity sha512-H/WEu/7+PWGJ+3Vw2yp/+1QYEy2gziZhj/YDVYTlnparnLe9FrvXfZfQEICyfcbnv/bXJG+pQEZL6E6+QSnlDA==
 
-"@autoguru/utilities@^1.0.0":
+"@autoguru/utilities@^1.0.13":
   version "1.0.13"
   resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.13.tgz#c8ee70957fdb3958ccd3f152d6fc8e5d1e4892ef"
   integrity sha512-rnFNdYRPK+lEJShPTEkgHvfxvGvxkdsBOOwKvZOTrelBgGhU8fBLbvofmaOjVETFc0GMk2109aMjd2AkkNNeyA==
@@ -4461,7 +4461,7 @@ clone@^1.0.2:
   resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.4.tgz#da309cc263df15994c688ca902179ca3c7cd7c7e"
   integrity sha1-2jCcwmPfFZlMaIypAheco8fNfH4=
 
-clsx@^1.0.0:
+clsx@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.0.3.tgz#e164004f4064b372888f20fdafbd436fb960bac9"
   integrity sha512-xLoSw6DMp7YvbEeLrQJBcWWRRerdHrU1WHoL1hYJOKUeDpVMRq7pv7NI2JHQbCRAe5ptINNzhdYmtfN6MsdCUw==

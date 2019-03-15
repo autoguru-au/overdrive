@@ -63,8 +63,8 @@
     "relative": true
   },
   "dependencies": {
-    "@autoguru/utilities": "^1.0.0",
-    "clsx": "^1.0.0"
+    "@autoguru/utilities": "^1.0.13",
+    "clsx": "^1.0.3"
   },
   "devDependencies": {
     "@autoguru/babel-preset": "^1.0.0",
