@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@autoguru/babel-preset@^1.0.0", "@autoguru/babel-preset@^1.0.12":
+"@autoguru/babel-preset@^1.0.12":
   version "1.0.12"
   resolved "https://registry.yarnpkg.com/@autoguru/babel-preset/-/babel-preset-1.0.12.tgz#c4a5d8829b8c58df5dff9016bdcf3368fefb0b0a"
   integrity sha512-zDI3aP2QnjgppCfWgw9d9/W+M2zwe9xxczlJ2l5pWHQQGdkO1wgkxCKOnrBVZFXg2oYSwPaSGRYUxbJOl1CFgg==
@@ -16,7 +16,14 @@
     "@babel/preset-env" "^7.1.6"
     "@babel/preset-react" "^7.0.0"
 
-"@autoguru/jest-preset@^1.0.0":
+"@autoguru/commitlint-config@^1.0.13":
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/@autoguru/commitlint-config/-/commitlint-config-1.0.13.tgz#4a745e1cb0bbd1ade9bb962448dd9df025d327d9"
+  integrity sha512-oHtDSlzLUJ+RiEEwwCKTDhytG5VSL7WxpX/MB+GcmvmTqJmY+7L+0Vw32uY33nyGVAf/bawi9tKEuCbRdIiB1w==
+  dependencies:
+    "@commitlint/config-conventional" "^7.5.0"
+
+"@autoguru/jest-preset@^1.0.13":
   version "1.0.13"
   resolved "https://registry.yarnpkg.com/@autoguru/jest-preset/-/jest-preset-1.0.13.tgz#c3098e227fb7090a4860c14338a11a6735eb5d9e"
   integrity sha512-Ta4Mv2UcQTesd6JDtGCedqfOyEIQY/WNJhexNhs1wRXtmhLi9I3AYCBZUnQEjX01sDkmvgR8bgjyv5V0GAUufA==
@@ -26,7 +33,7 @@
     "@babel/preset-typescript" "^7.3.3"
     babel-jest "^24.5.0"
 
-"@autoguru/tsconfig@^1.0.0":
+"@autoguru/tsconfig@^1.0.12":
   version "1.0.12"
   resolved "https://registry.yarnpkg.com/@autoguru/tsconfig/-/tsconfig-1.0.12.tgz#3e10e8731fb7973212e45b88e604d9e68fa738f7"
   integrity sha512-H/WEu/7+PWGJ+3Vw2yp/+1QYEy2gziZhj/YDVYTlnparnLe9FrvXfZfQEICyfcbnv/bXJG+pQEZL6E6+QSnlDA==
@@ -2030,7 +2037,7 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
-"@octokit/endpoint@^3.1.1":
+"@octokit/endpoint@^3.2.0":
   version "3.2.3"
   resolved "https://registry.yarnpkg.com/@octokit/endpoint/-/endpoint-3.2.3.tgz#bd9aea60cd94ce336656b57a5c9cb7f10be8f4f3"
   integrity sha512-yUPCt4vMIOclox13CUxzuKiPJIFo46b/6GhUnUTw5QySczN1L0DtSxgmIZrZV4SAb9EyAqrceoyrWoYVnfF2AA==
@@ -2045,12 +2052,12 @@
   resolved "https://registry.yarnpkg.com/@octokit/plugin-enterprise-rest/-/plugin-enterprise-rest-2.2.1.tgz#47954271289cfc65607a8cfb0257f0d47fb2d486"
   integrity sha512-Ssrh5D5uOqeS/Kjs6bbzn4ZaaaZQ2h6X/DgoDVv0Goa2ncpHwBN644hfYOL5ycigkpYbHKTjyb6cM49kPwQRPA==
 
-"@octokit/request@2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@octokit/request/-/request-2.4.1.tgz#98c4d6870e4abe3ccdd2b9799034b4ae3f441c30"
-  integrity sha512-nN8W24ZXEpJQJoVgMsGZeK9FOzxkc39Xn9ykseUpPpPMNEDFSvqfkCeqqKrjUiXRm72ubGLWG1SOz0aJPcgGww==
+"@octokit/request@2.4.2":
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/@octokit/request/-/request-2.4.2.tgz#87c36e820dd1e43b1629f4f35c95b00cd456320b"
+  integrity sha512-lxVlYYvwGbKSHXfbPk5vxEA8w4zHOH1wobado4a9EfsyD3Cbhuhus1w0Ye9Ro0eMubGO8kNy5d+xNFisM3Tvaw==
   dependencies:
-    "@octokit/endpoint" "^3.1.1"
+    "@octokit/endpoint" "^3.2.0"
     deprecation "^1.0.1"
     is-plain-object "^2.0.4"
     node-fetch "^2.3.0"

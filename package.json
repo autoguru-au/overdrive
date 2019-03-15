@@ -37,7 +37,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint --edit",
+      "commit-msg": "commitlint --edit  --extends @autoguru/commitlint-config",
       "pre-commit": "lint-staged"
     }
   },
@@ -68,12 +68,12 @@
     "clsx": "^1.0.3"
   },
   "devDependencies": {
-    "@autoguru/babel-preset": "^1.0.0",
-    "@autoguru/jest-preset": "^1.0.0",
-    "@autoguru/tsconfig": "^1.0.0",
+    "@autoguru/babel-preset": "^1.0.12",
+    "@autoguru/commitlint-config": "^1.0.13",
+    "@autoguru/jest-preset": "^1.0.13",
+    "@autoguru/tsconfig": "^1.0.12",
     "@babel/core": "^7.3.3",
     "@commitlint/cli": "^7.5.2",
-    "@commitlint/config-conventional": "^7.5.0",
     "@octokit/rest": "^16.17.1",
     "@semantic-release/commit-analyzer": "^6.1.0",
     "@semantic-release/github": "^5.2.10",
