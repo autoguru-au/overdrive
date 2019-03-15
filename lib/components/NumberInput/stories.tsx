@@ -13,6 +13,9 @@ const sharedKnobs = placeholder => ({
 });
 
 storiesOf('Components|Inputs/Number', module)
+	.addParameters({
+		chromatic: { delay: 300 },
+	})
 	.add('default', () => (
 		<NumberInput name="abc" {...sharedKnobs('How many?')} />
 	))

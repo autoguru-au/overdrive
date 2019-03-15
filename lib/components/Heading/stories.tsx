@@ -46,6 +46,8 @@ storiesOf('Components|Type/Heading', module)
 			Hello World
 		</Heading>
 	))
-	.add('loading', () => (
-		<HeadingLoader {...baseProps()} {...baseLoadingProps()} />
-	));
+	.add(
+		'loading',
+		() => <HeadingLoader {...baseProps()} {...baseLoadingProps()} />,
+		{ chromatic: { disable: true } }
+	);
