@@ -4,4 +4,9 @@ module.exports = {
 	setupFiles: [require.resolve('./jest.setup.js')],
 	snapshotSerializers: ['enzyme-to-json/serializer'],
 	moduleNameMapper: { '^.+\\.scss$': require.resolve('identity-obj-proxy') },
+	collectCoverageFrom: [
+		'lib/**/*.{ts,tsx}',
+		'!**/*stories*.{ts,tsx}',
+		'!lib/icons/**/*',
+	],
 };
