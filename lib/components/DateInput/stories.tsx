@@ -18,6 +18,9 @@ const isTouched = (touched: boolean) => boolean('isTouched', touched);
 const isValid = (valid: boolean) => boolean('isValid', valid);
 
 storiesOf('Components|Inputs/Date', module)
+	.addParameters({
+		chromatic: { delay: 300 },
+	})
 	.add('default', () => (
 		<DateInput name="date" {...sharedKnobs('What is your DOB?')} />
 	))

@@ -26,6 +26,9 @@ const selectOptions = optionsCSV =>
 		));
 
 storiesOf('Components|Inputs/Select', module)
+	.addParameters({
+		chromatic: { delay: 300 },
+	})
 	.add('default', () => (
 		<SelectInput name="abc" {...sharedKnobs('Select one')}>
 			<option disabled={true} />

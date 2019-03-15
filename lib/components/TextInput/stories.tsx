@@ -15,6 +15,9 @@ const isTouched = (touched: boolean) => boolean('isTouched', touched);
 const isValid = (valid: boolean) => boolean('isValid', valid);
 
 storiesOf('Components|Inputs/Text', module)
+	.addParameters({
+		chromatic: { delay: 300 },
+	})
 	.add('default', () => (
 		<TextInput name="abc" {...sharedKnobs('What is your first name?')} />
 	))

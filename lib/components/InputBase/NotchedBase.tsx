@@ -31,7 +31,9 @@ export const NotchedBase: FunctionComponent<IProps> = ({
 	}, [labelRef.current, placeholder]);
 
 	const notchedWidth =
-		labelWidth * ACTIVE_SCALING_FACTOR + ACTIVE_PADDING_ADDED;
+		Math.round(
+			(labelWidth * ACTIVE_SCALING_FACTOR + ACTIVE_PADDING_ADDED) * 100
+		) / 100;
 
 	// TODO: This will double warn, when placeholder gets updated, the setLabelWidth will trigger a double render
 	warning(
