@@ -6,6 +6,16 @@ $strokeSize: 2px;
 .radio {
 }
 
+.radio-group {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	align-content: stretch;
+	justify-content: stretch;
+	align-items: stretch;
+	padding: 0;
+}
+
 .outer-circle,
 .inner-circle {
 	position: absolute;

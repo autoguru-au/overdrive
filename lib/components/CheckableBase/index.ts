@@ -1,5 +1,1 @@
-export {
-	usingCheckable,
-	IProps as IWithCheckableProps,
-	ISymbolProps as ICheckableProps,
-} from './using-checkable';
+export { CheckableBase, IProps as ICheckableProps } from './checkable-base';
