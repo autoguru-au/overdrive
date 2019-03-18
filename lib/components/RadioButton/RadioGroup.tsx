@@ -26,6 +26,9 @@ export const RadioGroup: FunctionComponent<IProps> = ({
 	name,
 	value: incomingValue = '',
 }) => {
+	if (!name) {
+		throw new Error("RadioGroup component must have a 'name` prop");
+	}
 	const [value, setValue] = useState<string>(incomingValue);
 	const state: IRadioGroupContext = {
 		inputName: name,
