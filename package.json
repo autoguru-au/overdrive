@@ -24,7 +24,6 @@
   "types": "./dist/lib/components/index.d.ts",
   "scripts": {
     "build": "cross-env NODE_ENV=production node scripts/build.js",
-    "build:storybook": "build-storybook",
     "chromatic": "chromatic test --exit-zero-on-changes",
     "format": "prettier --write \"{*,{lib,config,scripts,.storybook}/**/*}.+(js|jsx|ts|tsx|css|scss|json|yml|md|mdx|html)\"",
     "lint": "concurrently \"yarn:lint:ts\" \"yarn:lint:styles\"",
@@ -33,11 +32,12 @@
     "semantic-release": "semantic-release",
     "start": "yarn run storybook",
     "storybook": "start-storybook -p 6006",
+    "storybook:build": "build-storybook",
     "test": "jest"
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint --edit  --extends @autoguru/commitlint-config",
+      "commit-msg": "commitlint --edit --extends @autoguru/commitlint-config",
       "pre-commit": "lint-staged"
     }
   },

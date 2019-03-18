@@ -36,7 +36,7 @@ jobs:
       if: branch = master AND type = push # We only want to release when code hits master.
 
     - stage: deploy
-      script: yarn build:storybook
+      script: yarn storybook:build
       after_success: |
         if [ -n "$TRAVIS_PULL_REQUEST_SHA" ]; then
           npx surge -p ./storybook-static/ -d overdrive--${TRAVIS_PULL_REQUEST_SHA}.surge.sh;
