@@ -3,7 +3,7 @@
 exports[`<NumberInput /> should match snapshot for active number input 1`] = `
 <EnhancedInput(NumberInput)
   className="number-input-class"
-  placeholder="Hello World!"
+  placeholder="placeholder something"
 >
   <div
     className="root number-input-class"
@@ -11,7 +11,7 @@ exports[`<NumberInput /> should match snapshot for active number input 1`] = `
     <NotchedBase
       isActive={true}
       isEmpty={false}
-      placeholder="Hello World!"
+      placeholder="placeholder something"
     >
       <div
         className="notchedBase notchedBaseShift notchedBaseActive"
@@ -68,7 +68,7 @@ exports[`<NumberInput /> should match snapshot for active number input 1`] = `
             <label
               className="notchedBasePlaceholder"
             >
-              Hello World!
+              placeholder something
             </label>
           </div>
           <div
@@ -107,7 +107,7 @@ exports[`<NumberInput /> should match snapshot for default number input 1`] = `
         <label
           class="notchedBasePlaceholder"
         >
-          Hello World!
+          placeholder something
         </label>
       </div>
       <div
@@ -144,7 +144,7 @@ exports[`<NumberInput /> should match snapshot for touched invalid number input 
         <label
           class="notchedBasePlaceholder"
         >
-          Hello World!
+          placeholder something
         </label>
       </div>
       <div
@@ -181,7 +181,7 @@ exports[`<NumberInput /> should match snapshot for touched number input 1`] = `
         <label
           class="notchedBasePlaceholder"
         >
-          Hello World!
+          placeholder something
         </label>
       </div>
       <div
@@ -218,7 +218,7 @@ exports[`<NumberInput /> should match snapshot for touched valid number input 1`
         <label
           class="notchedBasePlaceholder"
         >
-          Hello World!
+          placeholder something
         </label>
       </div>
       <div

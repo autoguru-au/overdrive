@@ -2,11 +2,10 @@ import React from 'react';
 import { TextInput } from './index';
 import { mount, render } from 'enzyme';
 
-const testLabel = 'Hello World!';
 describe('<TextInput />', () => {
 	it('should match snapshot', () => {
 		expect(
-			render(<TextInput placeholder="placeholder" id="id" />)
+			render(<TextInput placeholder="placeholder something" id="id" />)
 		).toMatchSnapshot();
 	});
 
@@ -32,7 +31,10 @@ describe('<TextInput />', () => {
 
 	it('should have input type of text', () => {
 		const textInput = mount(
-			<TextInput className="text-input-class" placeholder={testLabel} />
+			<TextInput
+				className="text-input-class"
+				placeholder="placeholder something"
+			/>
 		);
 		expect(textInput.find('input').prop('type')).toEqual('text');
 		textInput.unmount();
@@ -40,7 +42,10 @@ describe('<TextInput />', () => {
 
 	it('should pass on className to dom element', () => {
 		const textInput = mount(
-			<TextInput className="text-input-class" placeholder={testLabel} />
+			<TextInput
+				className="text-input-class"
+				placeholder="placeholder something"
+			/>
 		);
 		expect(textInput.hasClass('text-input-class')).toBeTruthy();
 		textInput.unmount();
@@ -48,14 +53,20 @@ describe('<TextInput />', () => {
 
 	it('should match snapshot for default text input', () => {
 		const textInput = render(
-			<TextInput className="text-input-class" placeholder={testLabel} />
+			<TextInput
+				className="text-input-class"
+				placeholder="placeholder something"
+			/>
 		);
 		expect(textInput).toMatchSnapshot();
 	});
 
 	it('should match snapshot for active text input', () => {
 		const textInput = mount(
-			<TextInput className="text-input-class" placeholder={testLabel} />
+			<TextInput
+				className="text-input-class"
+				placeholder="placeholder something"
+			/>
 		);
 
 		textInput.find('input').simulate('focus');
@@ -75,7 +86,7 @@ describe('<TextInput />', () => {
 			<TextInput
 				isTouched={true}
 				className="text-input-class"
-				placeholder={testLabel}
+				placeholder="placeholder something"
 			/>
 		);
 		expect(textInput).toMatchSnapshot();
@@ -87,7 +98,7 @@ describe('<TextInput />', () => {
 				isTouched={true}
 				isValid={true}
 				className="text-input-class"
-				placeholder={testLabel}
+				placeholder="placeholder something"
 			/>
 		);
 		expect(textInput).toMatchSnapshot();
@@ -99,21 +110,26 @@ describe('<TextInput />', () => {
 				isTouched={true}
 				isValid={false}
 				className="text-input-class"
-				placeholder={testLabel}
+				placeholder="placeholder something"
 			/>
 		);
 		expect(textInput).toMatchSnapshot();
 	});
 
 	it('should display placeholder text', () => {
-		const textInput = render(<TextInput placeholder={testLabel} />);
-		expect(textInput.find('label').text()).toEqual(testLabel);
+		const textInput = render(
+			<TextInput placeholder="placeholder something" />
+		);
+		expect(textInput.find('label').text()).toEqual('placeholder something');
 	});
 
 	it('should fire onFocus event', () => {
 		const spyedCallback = jest.fn();
 		const textInput = mount(
-			<TextInput onFocus={spyedCallback} placeholder={testLabel} />
+			<TextInput
+				onFocus={spyedCallback}
+				placeholder="placeholder something"
+			/>
 		);
 		textInput.find('input').simulate('focus');
 
@@ -124,7 +140,10 @@ describe('<TextInput />', () => {
 	it('should fire onBlur event', () => {
 		const spyedCallback = jest.fn();
 		const textInput = mount(
-			<TextInput onBlur={spyedCallback} placeholder={testLabel} />
+			<TextInput
+				onBlur={spyedCallback}
+				placeholder="placeholder something"
+			/>
 		);
 		textInput.find('input').simulate('blur');
 
@@ -135,7 +154,10 @@ describe('<TextInput />', () => {
 	it('should fire onChange event', () => {
 		const spyedCallback = jest.fn();
 		const textInput = mount(
-			<TextInput onChange={spyedCallback} placeholder={testLabel} />
+			<TextInput
+				onChange={spyedCallback}
+				placeholder="placeholder something"
+			/>
 		);
 		textInput.find('input').simulate('change');
 

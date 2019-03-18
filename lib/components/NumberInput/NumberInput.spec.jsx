@@ -2,17 +2,18 @@ import React from 'react';
 import { mount, render } from 'enzyme';
 import { NumberInput } from './NumberInput';
 
-const testLabel = 'Hello World!';
 describe('<NumberInput />', () => {
 	it('should not throw', () => {
-		expect(() => mount(<NumberInput />).unmount()).not.toThrow();
+		expect(() =>
+			mount(<NumberInput placeholder="placeholder something" />).unmount()
+		).not.toThrow();
 	});
 
 	it('should have input type of number', () => {
 		const numberInput = mount(
 			<NumberInput
 				className="number-input-class"
-				placeholder={testLabel}
+				placeholder="placeholder something"
 			/>
 		);
 		expect(numberInput.find('input').prop('type')).toEqual('number');
@@ -23,7 +24,7 @@ describe('<NumberInput />', () => {
 		const numberInput = mount(
 			<NumberInput
 				className="number-input-class"
-				placeholder={testLabel}
+				placeholder="placeholder something"
 			/>
 		);
 		expect(numberInput.hasClass('number-input-class')).toBeTruthy();
@@ -34,7 +35,7 @@ describe('<NumberInput />', () => {
 		const numberInput = render(
 			<NumberInput
 				className="number-input-class"
-				placeholder={testLabel}
+				placeholder="placeholder something"
 			/>
 		);
 		expect(numberInput).toMatchSnapshot();
@@ -44,7 +45,7 @@ describe('<NumberInput />', () => {
 		const numberInput = mount(
 			<NumberInput
 				className="number-input-class"
-				placeholder={testLabel}
+				placeholder="placeholder something"
 			/>
 		);
 
@@ -63,7 +64,7 @@ describe('<NumberInput />', () => {
 			<NumberInput
 				isTouched={true}
 				className="number-input-class"
-				placeholder={testLabel}
+				placeholder="placeholder something"
 			/>
 		);
 		expect(numberInput).toMatchSnapshot();
@@ -75,7 +76,7 @@ describe('<NumberInput />', () => {
 				isTouched={true}
 				isValid={true}
 				className="number-input-class"
-				placeholder={testLabel}
+				placeholder="placeholder something"
 			/>
 		);
 		expect(numberInput).toMatchSnapshot();
@@ -87,21 +88,28 @@ describe('<NumberInput />', () => {
 				isTouched={true}
 				isValid={false}
 				className="number-input-class"
-				placeholder={testLabel}
+				placeholder="placeholder something"
 			/>
 		);
 		expect(numberInput).toMatchSnapshot();
 	});
 
 	it('should display placeholder text', () => {
-		const numberInput = render(<NumberInput placeholder={testLabel} />);
-		expect(numberInput.find('label').text()).toEqual(testLabel);
+		const numberInput = render(
+			<NumberInput placeholder="placeholder something" />
+		);
+		expect(numberInput.find('label').text()).toEqual(
+			'placeholder something'
+		);
 	});
 
 	it('should fire onFocus event', () => {
 		const spyedCallback = jest.fn();
 		const numberInput = mount(
-			<NumberInput onFocus={spyedCallback} placeholder={testLabel} />
+			<NumberInput
+				onFocus={spyedCallback}
+				placeholder="placeholder something"
+			/>
 		);
 		numberInput.find('input').simulate('focus');
 
@@ -112,7 +120,10 @@ describe('<NumberInput />', () => {
 	it('should fire onBlur event', () => {
 		const spyedCallback = jest.fn();
 		const numberInput = mount(
-			<NumberInput onBlur={spyedCallback} placeholder={testLabel} />
+			<NumberInput
+				onBlur={spyedCallback}
+				placeholder="placeholder something"
+			/>
 		);
 		numberInput.find('input').simulate('blur');
 
@@ -123,7 +134,10 @@ describe('<NumberInput />', () => {
 	it('should fire onChange event', () => {
 		const spyedCallback = jest.fn();
 		const numberInput = mount(
-			<NumberInput onChange={spyedCallback} placeholder={testLabel} />
+			<NumberInput
+				onChange={spyedCallback}
+				placeholder="placeholder something"
+			/>
 		);
 		numberInput.find('input').simulate('change');
 
