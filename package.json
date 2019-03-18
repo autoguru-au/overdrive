@@ -111,7 +111,6 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.5.0",
     "jest-enzyme": "^7.0.2",
-    "jest-junit": "^6.3.0",
     "lerna": "^3.13.0",
     "lint-staged": "^8.1.5",
     "node-sass": "^4.11.0",
