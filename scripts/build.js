@@ -28,12 +28,12 @@ async function run() {
 			bundle.write({
 				format: 'cjs',
 				sourcemap: true,
-				file: resolve(distFolder, 'overdrive.js'),
+				file: resolve(distFolder, 'overdrive.cjs.js'),
 			}),
 			bundle.write({
 				format: 'esm',
 				sourcemap: true,
-				file: resolve(distFolder, 'overdrive.mjs'),
+				file: resolve(distFolder, 'overdrive.esm.js'),
 			}),
 		]);
 	} catch (e) {

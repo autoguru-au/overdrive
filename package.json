@@ -19,8 +19,8 @@
   "sideEffects": [
     "**/*.scss"
   ],
-  "main": "./dist/overdrive.js",
-  "module": "./dist/overdrive.mjs",
+  "main": "./dist/overdrive.cjs.js",
+  "module": "./dist/overdrive.esm.js",
   "types": "./dist/lib/components/index.d.ts",
   "scripts": {
     "build": "cross-env NODE_ENV=production node scripts/build.js",
