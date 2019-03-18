@@ -58,6 +58,10 @@
 	cursor: inherit;
 	z-index: 1;
 
+	.checked {
+		outline: none;
+	}
+
 	.hovered &,
 	&:hover {
 		+ div.focus-rect {
