@@ -61,9 +61,9 @@ export class RadioButton extends PureComponent<IProps, IState> {
 					if (this.props.checked) {
 						context.setValue(this.state.value);
 					}
-					this.setState({
-						setContextValue: context.setValue,
-					});
+
+					const checkClicked = e =>
+						this.handleClick(e, context.setValue);
 
 					return (
 						<CheckableBase
@@ -73,7 +73,7 @@ export class RadioButton extends PureComponent<IProps, IState> {
 							value={this.state.value}
 							label={this.props.label}
 							checked={this.state.value === context.value}
-							handleClick={this.handleClick}
+							handleClick={checkClicked}
 							handleChange={this.handleChange}>
 							<div
 								className={cx([checkableClass], {
@@ -94,8 +94,11 @@ export class RadioButton extends PureComponent<IProps, IState> {
 		this.dispatchChange(e);
 	};
 
-	private handleClick = e => {
-		this.state.setContextValue(this.state.value);
+	private handleClick = (
+		e,
+		setContextValue?: Dispatch<SetStateAction<string>>
+	) => {
+		setContextValue(this.state.value);
 		this.dispatchClick(e);
 	};
 
