@@ -1,9 +1,9 @@
 import cx from 'clsx';
 import React, { Dispatch, PureComponent, SetStateAction } from 'react';
-import styles from './style.scss';
-import { RadioContext } from './RadioGroup';
 import { CheckableBase } from '../CheckableBase';
 import { checkableClass } from '../CheckableBase/checkable-base';
+import styles from './style.scss';
+import { RadioContext } from './RadioGroup';
 
 export interface IProps {
 	className?: string;
