@@ -5,7 +5,11 @@ exports[`<Button /> should match snapshot for default button 1`] = `
   aria-disabled={false}
   className="root sizeMedium variantSecondary"
   disabled={false}
-/>
+>
+  <span
+    className="btnContent"
+  />
+</button>
 `;
 
 exports[`<Button /> when colour variants should match snapshot for Danger button 1`] = `
@@ -13,7 +17,11 @@ exports[`<Button /> when colour variants should match snapshot for Danger button
   aria-disabled={false}
   className="root sizeMedium variantDanger"
   disabled={false}
-/>
+>
+  <span
+    className="btnContent"
+  />
+</button>
 `;
 
 exports[`<Button /> when colour variants should match snapshot for Primary button 1`] = `
@@ -21,7 +29,11 @@ exports[`<Button /> when colour variants should match snapshot for Primary butto
   aria-disabled={false}
   className="root sizeMedium variantPrimary"
   disabled={false}
-/>
+>
+  <span
+    className="btnContent"
+  />
+</button>
 `;
 
 exports[`<Button /> when colour variants should match snapshot for Secondary button 1`] = `
@@ -29,7 +41,11 @@ exports[`<Button /> when colour variants should match snapshot for Secondary but
   aria-disabled={false}
   className="root sizeMedium variantSecondary"
   disabled={false}
-/>
+>
+  <span
+    className="btnContent"
+  />
+</button>
 `;
 
 exports[`<Button /> when isFullWidth should match snapshot 1`] = `
@@ -37,7 +53,79 @@ exports[`<Button /> when isFullWidth should match snapshot 1`] = `
   aria-disabled={false}
   className="root sizeMedium variantSecondary fullWidth"
   disabled={false}
-/>
+>
+  <span
+    className="btnContent"
+  />
+</button>
+`;
+
+exports[`<Button /> when loading should match snapshot for default button 1`] = `
+<button
+  aria-disabled={true}
+  className="root sizeMedium variantSecondary loading"
+  disabled={true}
+>
+  <span
+    className="btnContent"
+  />
+  <ProgressSpinnerComponent
+    className="spinner"
+    size="medium"
+    variant="secondary"
+  />
+</button>
+`;
+
+exports[`<Button /> when loading should match snapshot for large button 1`] = `
+<button
+  aria-disabled={true}
+  className="root sizeLarge variantSecondary loading"
+  disabled={true}
+>
+  <span
+    className="btnContent"
+  />
+  <ProgressSpinnerComponent
+    className="spinner"
+    size="large"
+    variant="secondary"
+  />
+</button>
+`;
+
+exports[`<Button /> when loading should match snapshot for medium button 1`] = `
+<button
+  aria-disabled={true}
+  className="root sizeMedium variantSecondary loading"
+  disabled={true}
+>
+  <span
+    className="btnContent"
+  />
+  <ProgressSpinnerComponent
+    className="spinner"
+    size="medium"
+    variant="secondary"
+  />
+</button>
+`;
+
+exports[`<Button /> when loading should match snapshot for small button 1`] = `
+<button
+  aria-disabled={true}
+  className="root sizeSmall variantSecondary loading"
+  disabled={true}
+>
+  <span
+    className="btnContent"
+  />
+  <ProgressSpinnerComponent
+    className="spinner"
+    size="small"
+    variant="secondary"
+  />
+</button>
 `;
 
 exports[`<Button /> when rounded should match snapshot 1`] = `
@@ -45,7 +133,11 @@ exports[`<Button /> when rounded should match snapshot 1`] = `
   aria-disabled={false}
   className="root sizeMedium variantSecondary rounded"
   disabled={false}
-/>
+>
+  <span
+    className="btnContent"
+  />
+</button>
 `;
 
 exports[`<Button /> when size variant should match snapshot for large button 1`] = `
@@ -53,7 +145,11 @@ exports[`<Button /> when size variant should match snapshot for large button 1`]
   aria-disabled={false}
   className="root sizeLarge variantSecondary"
   disabled={false}
-/>
+>
+  <span
+    className="btnContent"
+  />
+</button>
 `;
 
 exports[`<Button /> when size variant should match snapshot for medium button 1`] = `
@@ -61,7 +157,11 @@ exports[`<Button /> when size variant should match snapshot for medium button 1`
   aria-disabled={false}
   className="root sizeMedium variantSecondary"
   disabled={false}
-/>
+>
+  <span
+    className="btnContent"
+  />
+</button>
 `;
 
 exports[`<Button /> when size variant should match snapshot for small button 1`] = `
@@ -69,5 +169,9 @@ exports[`<Button /> when size variant should match snapshot for small button 1`]
   aria-disabled={false}
   className="root sizeSmall variantSecondary"
   disabled={false}
-/>
+>
+  <span
+    className="btnContent"
+  />
+</button>
 `;

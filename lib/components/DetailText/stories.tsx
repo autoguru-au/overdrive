@@ -18,4 +18,6 @@ storiesOf('Components|Type/DetailText', module)
 	.add('detail 3', () => (
 		<DetailText size={EDetailTextSize.Detail3}>Hello World</DetailText>
 	))
-	.add('loading', () => <DetailTextLoader {...baseLoadingProps()} />);
+	.add('loading', () => <DetailTextLoader {...baseLoadingProps()} />, {
+		chromatic: { disable: true },
+	});

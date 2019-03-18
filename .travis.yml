@@ -3,6 +3,8 @@ cache: yarn
 
 notifications:
   email: false
+  slack:
+    secure: gssROMW3BMcMo9hdoo+wJ5paBxRo1JrZgRv/mW20QOKXNrPHvJp8ibzOucdj/elKN/cZPsm3MwrAlH1QPgyTY95ThrBTifeqOvNMIyrIBb4ibuZV4cFQFJm2DHqS0LWvrKP2S39C+lJvqUTfVILV9BxDxiVAumGU1d+xZvvo+5uGucYeWFGHvuLPt1cxv9VkYo28zyFMOAKKwLfsK0vnnBvmwTPirjp9k0PsaJ7bIldugUw5JH1ufP9xs24CmKAqzr58FzyjERTVmJNModhtEXSdbj2kVVWkJKeqI+aERSBVUcKJuN+AWPlX2934r2pIVZb5EMBHCD17vy+R4V9yXuWOpv1KILOyFmgI9icOC5MI1jMUMJSc4YUVEO25jnYLSX2DxAPUQ5IjVZibaop5LTQVKidn2QfLezInLH/4kwpXMfXg0GeZpxLP8nQ5MPc45b5KVM5bTfcuIcPOYmu0lFYshxorYC8BZnqRppxBtlDJPTlV9MQItXiVQm7u2VSVMEc6MRLX2TfJq5zDaMcsMfIsHU8p2XRptA9apF/QdyqYyhQmF5w06DGAU+AOO0tt/HfScQViVfMloM988//RhkQKVXBpkDyuDpZM0rgzEnG+Zi1x5AbbdIDHq1A/nm83ehSigjIyCTDKeUyj94qPDDUHF8vxptFAPgLVAgg9VKk=
 
 env:
   - TZ=Australia/Brisbane
@@ -14,7 +16,7 @@ branches:
 jobs:
   include:
     - stage: test
-      script: yarn test
+      script: yarn test --no-cache --ci --coverage
       after_success:
         - curl -s https://codecov.io/bash | bash
         - |
@@ -31,13 +33,14 @@ jobs:
     - stage: release
       script: yarn build
       after_success: yarn semantic-release
-      if: branch = master # We only want to release when code hits master.
+      if: branch = master AND type = push # We only want to release when code hits master.
 
     - stage: deploy
-      script: yarn build:storybook
+      script: yarn storybook:build
       after_success: |
         if [ -n "$TRAVIS_PULL_REQUEST_SHA" ]; then
-          npx surge -p ./storybook-static/ -d overdrive--${TRAVIS_PULL_REQUEST_SHA}.surge.sh
+          npx surge -p ./storybook-static/ -d overdrive--${TRAVIS_PULL_REQUEST_SHA}.surge.sh;
+          node ./scripts/githubStatusPost.js;
         elif [ "$TRAVIS_BRANCH" == "master" ]; then
-          npx surge -p ./storybook-static/ -d overdrive.autoguru.io
+          npx surge -p ./storybook-static/ -d overdrive.autoguru.io;
         fi

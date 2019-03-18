@@ -16,11 +16,12 @@ export const Text: FunctionComponent<IProps> = ({
 	variant = null,
 	className = '',
 	children,
-}) => {
-	const cls = cx([styles.root, className], {
-		[styles.variantMobile]: !!variant && variant === EVariant.Mobile,
-		[styles.variantDesktop]: !!variant && variant === EVariant.Desktop,
-	});
-
-	return <p className={cls} children={children} />;
-};
+}) => (
+	<p
+		className={cx([styles.root, className], {
+			[styles.variantMobile]: !!variant && variant === EVariant.Mobile,
+			[styles.variantDesktop]: !!variant && variant === EVariant.Desktop,
+		})}
+		children={children}
+	/>
+);

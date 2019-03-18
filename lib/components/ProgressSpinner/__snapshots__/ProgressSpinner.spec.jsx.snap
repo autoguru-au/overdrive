@@ -15,7 +15,6 @@ exports[`<ProgressSpinner /> should match snapshot 1`] = `
       fill="none"
       r="20"
       strokeMiterlimit="10"
-      strokeWidth="5"
     />
   </svg>
 </div>

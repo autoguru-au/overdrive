@@ -56,7 +56,6 @@ const ProgressSpinnerComponent: FunctionComponent<IProps> = ({
 					cy="50"
 					r="20"
 					fill="none"
-					strokeWidth="5"
 					strokeMiterlimit="10"
 				/>
 			</svg>

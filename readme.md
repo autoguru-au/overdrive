@@ -31,7 +31,7 @@ yarn add @autoguru/overdrive \
 1. Import the global/core stylesheet into your project.
 
     ```js
-    import '@autoguru/overdrive/theme.css';
+    import '@autoguru/overdrive/overdrive.css';
     ```
 
 2. Import and use any of the components, and higher order components we export.
