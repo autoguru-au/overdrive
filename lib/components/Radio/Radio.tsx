@@ -25,7 +25,7 @@ export interface IState {
 	setContextValue?: Dispatch<SetStateAction<string>>;
 }
 
-export class RadioButton extends PureComponent<IProps, IState> {
+export class Radio extends PureComponent<IProps, IState> {
 	public static getDerivedStateFromProps(
 		nextProps: IProps
 	): Partial<IState> | null {
@@ -39,6 +39,7 @@ export class RadioButton extends PureComponent<IProps, IState> {
 			return state;
 		}, {});
 	}
+
 	constructor(props: IProps) {
 		super(props);
 

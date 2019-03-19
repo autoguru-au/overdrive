@@ -32,13 +32,13 @@ export const CheckableBase: FunctionComponent<IProps> = ({
 	<div
 		className={cx([styles.root, className], {
 			[styles.checked]: checked,
-		})}
-		onClick={handleClick}>
+		})}>
 		{children}
 		<input
 			name={inputName}
 			value={value}
 			checked={checked}
+			onClick={handleClick}
 			onChange={handleChange}
 			type={inputType}
 			className={styles.nativeInput}

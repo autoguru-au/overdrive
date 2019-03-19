@@ -1,7 +1,7 @@
 import { boolean, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import { RadioButton, RadioGroup } from '.';
+import { Radio, RadioGroup } from '.';
 import styles from '../CheckableBase/style.scss';
 
 const baseProps = () => ({
@@ -19,21 +19,21 @@ storiesOf('Components|Radio', module)
 	))
 	.add('default', () => (
 		<RadioGroup name="make">
-			<RadioButton label="Subaru" value="subaru" />
-			<RadioButton label="Kia" value="kia" />
-			<RadioButton label="Toyota" value="toyota" />
-			<RadioButton label="Holden" value="holden" />
-			<RadioButton label="Ford" value="ford" />
+			<Radio label="Subaru" value="subaru" />
+			<Radio label="Kia" value="kia" />
+			<Radio label="Toyota" value="toyota" />
+			<Radio label="Holden" value="holden" />
+			<Radio label="Ford" value="ford" />
 		</RadioGroup>
 	))
 	.add('unchecked', () => (
 		<RadioGroup name="radio-story">
-			<RadioButton name="radio-name" value="1" {...baseProps()} />
+			<Radio name="radio-name" value="1" {...baseProps()} />
 		</RadioGroup>
 	))
 	.add('checked', () => (
 		<RadioGroup name="radio-story">
-			<RadioButton
+			<Radio
 				name="radio-name"
 				value="1"
 				checked={true}
@@ -43,7 +43,7 @@ storiesOf('Components|Radio', module)
 	))
 	.add('hovered', () => (
 		<RadioGroup name="radio-story">
-			<RadioButton
+			<Radio
 				name="radio-name"
 				value="1"
 				className={styles.hovered}
@@ -54,7 +54,7 @@ storiesOf('Components|Radio', module)
 	))
 	.add('active', () => (
 		<RadioGroup name="radio-story">
-			<RadioButton
+			<Radio
 				name="radio-name"
 				value="1"
 				className={styles.active}
@@ -65,7 +65,7 @@ storiesOf('Components|Radio', module)
 	))
 	.add('focused', () => (
 		<RadioGroup name="radio-story">
-			<RadioButton
+			<Radio
 				name="radio-name"
 				value="1"
 				className={styles.focused}
@@ -76,12 +76,12 @@ storiesOf('Components|Radio', module)
 	))
 	.add('multiple lines', () => (
 		<RadioGroup name="radio-story">
-			<RadioButton
+			<Radio
 				name="radio-name"
 				value="1"
 				label="There is a very good reason why this thing is a multi-line, sometimes we need to show people a lot of things. And thus this exists."
 			/>
-			<RadioButton
+			<Radio
 				name="radio-name"
 				value="2"
 				label="Oh, and it also works when mixed."
