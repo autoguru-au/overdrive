@@ -1,7 +1,8 @@
+import { invariant } from '@autoguru/utilities';
 import cx from 'clsx';
 import React, { Dispatch, PureComponent, SetStateAction } from 'react';
 import { CheckableBase } from '../CheckableBase';
-import { checkableClass } from '../CheckableBase/checkable-base';
+import { checkableClass } from '../CheckableBase/CheckableBase';
 import styles from './style.scss';
 import { RadioContext } from './RadioGroup';
 
@@ -25,16 +26,6 @@ export interface IState {
 }
 
 export class RadioButton extends PureComponent<IProps, IState> {
-	constructor(props: IProps) {
-		super(props);
-
-		this.state = {
-			value: '',
-			name: '',
-			checked: false,
-		};
-	}
-
 	public static getDerivedStateFromProps(
 		nextProps: IProps
 	): Partial<IState> | null {
@@ -48,16 +39,25 @@ export class RadioButton extends PureComponent<IProps, IState> {
 			return state;
 		}, {});
 	}
+	constructor(props: IProps) {
+		super(props);
+
+		this.state = {
+			value: '',
+			name: '',
+			checked: false,
+		};
+	}
 
 	public render(): React.ReactNode {
 		return (
 			<RadioContext.Consumer>
 				{(context: any) => {
-					if (!context || !context.inputName) {
-						throw new Error(
-							'RadioButton component must be nested inside a RadioGroup'
-						);
-					}
+					invariant(
+						!context || !context.inputName,
+						'RadioButton component must be nested inside a RadioGroup'
+					);
+
 					if (this.props.checked) {
 						context.setValue(this.state.value);
 					}
