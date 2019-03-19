@@ -6,6 +6,7 @@ import styles from './style.scss';
 const ACTIVE_SCALING_FACTOR = 0.7777;
 const ACTIVE_PADDING_ADDED = 8;
 const NOTCHED_WARN_WIDTH = 170;
+const ROUGH_WIDTH_PER_CHARACTER = 10.2;
 
 export interface IProps {
 	id: string;
@@ -22,7 +23,11 @@ export const NotchedBase: FunctionComponent<IProps> = ({
 	children,
 }) => {
 	const labelRef = useRef<HTMLLabelElement>(null);
-	const [labelWidth, setLabelWidth] = useState<number>(0);
+	const [labelWidth, setLabelWidth] = useState<number>(
+		getNotchedComputedWidthForWidth(
+			placeholder.length * ROUGH_WIDTH_PER_CHARACTER
+		)
+	);
 
 	useEffect(() => {
 		if (labelRef.current) {
@@ -30,10 +35,7 @@ export const NotchedBase: FunctionComponent<IProps> = ({
 		}
 	}, [labelRef.current, placeholder]);
 
-	const notchedWidth =
-		Math.round(
-			(labelWidth * ACTIVE_SCALING_FACTOR + ACTIVE_PADDING_ADDED) * 100
-		) / 100;
+	const notchedWidth = getNotchedComputedWidthForWidth(labelWidth);
 
 	// TODO: This will double warn, when placeholder gets updated, the setLabelWidth will trigger a double render
 	warning(
@@ -65,3 +67,11 @@ export const NotchedBase: FunctionComponent<IProps> = ({
 		</div>
 	);
 };
+
+function getNotchedComputedWidthForWidth(width: number): number {
+	return (
+		Math.round(
+			(width * ACTIVE_SCALING_FACTOR + ACTIVE_PADDING_ADDED) * 100
+		) / 100
+	);
+}

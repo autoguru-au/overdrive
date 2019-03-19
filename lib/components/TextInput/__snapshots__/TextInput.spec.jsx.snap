@@ -72,7 +72,7 @@ exports[`<TextInput /> should match snapshot 1`] = `
           class="notchedBasePlaceholder"
           for="id"
         >
-          placeholder
+          placeholder something
         </label>
       </div>
       <div
@@ -86,7 +86,7 @@ exports[`<TextInput /> should match snapshot 1`] = `
 exports[`<TextInput /> should match snapshot for active text input 1`] = `
 <EnhancedInput(TextInput)
   className="text-input-class"
-  placeholder="Hello World!"
+  placeholder="placeholder something"
 >
   <div
     className="root text-input-class"
@@ -94,7 +94,7 @@ exports[`<TextInput /> should match snapshot for active text input 1`] = `
     <NotchedBase
       isActive={true}
       isEmpty={false}
-      placeholder="Hello World!"
+      placeholder="placeholder something"
     >
       <div
         className="notchedBase notchedBaseShift notchedBaseActive"
@@ -151,7 +151,7 @@ exports[`<TextInput /> should match snapshot for active text input 1`] = `
             <label
               className="notchedBasePlaceholder"
             >
-              Hello World!
+              placeholder something
             </label>
           </div>
           <div
@@ -190,7 +190,7 @@ exports[`<TextInput /> should match snapshot for default text input 1`] = `
         <label
           class="notchedBasePlaceholder"
         >
-          Hello World!
+          placeholder something
         </label>
       </div>
       <div
@@ -227,7 +227,7 @@ exports[`<TextInput /> should match snapshot for touched invalid text input 1`] 
         <label
           class="notchedBasePlaceholder"
         >
-          Hello World!
+          placeholder something
         </label>
       </div>
       <div
@@ -264,7 +264,7 @@ exports[`<TextInput /> should match snapshot for touched text input 1`] = `
         <label
           class="notchedBasePlaceholder"
         >
-          Hello World!
+          placeholder something
         </label>
       </div>
       <div
@@ -301,7 +301,7 @@ exports[`<TextInput /> should match snapshot for touched valid text input 1`] = 
         <label
           class="notchedBasePlaceholder"
         >
-          Hello World!
+          placeholder something
         </label>
       </div>
       <div

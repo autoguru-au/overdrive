@@ -12,12 +12,12 @@ exports[`<NotchedBase /> should match snapshot for active notch 1`] = `
     />
     <div
       class="notchedBaseBorderNotch"
-      style="width:8px"
+      style="width:143.77px"
     >
       <label
         class="notchedBasePlaceholder"
       >
-        Hello World!
+        placeholder something
       </label>
     </div>
     <div
@@ -39,12 +39,12 @@ exports[`<NotchedBase /> should match snapshot for default notch 1`] = `
     />
     <div
       class="notchedBaseBorderNotch"
-      style="width:8px"
+      style="width:143.77px"
     >
       <label
         class="notchedBasePlaceholder"
       >
-        Hello World!
+        placeholder something
       </label>
     </div>
     <div
@@ -66,12 +66,12 @@ exports[`<NotchedBase /> should match snapshot for dirty and active notch 1`] = 
     />
     <div
       class="notchedBaseBorderNotch"
-      style="width:8px"
+      style="width:143.77px"
     >
       <label
         class="notchedBasePlaceholder"
       >
-        Hello World!
+        placeholder something
       </label>
     </div>
     <div
@@ -93,12 +93,12 @@ exports[`<NotchedBase /> should match snapshot for dirty notch 1`] = `
     />
     <div
       class="notchedBaseBorderNotch"
-      style="width:8px"
+      style="width:143.77px"
     >
       <label
         class="notchedBasePlaceholder"
       >
-        Hello World!
+        placeholder something
       </label>
     </div>
     <div

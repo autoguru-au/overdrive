@@ -3,7 +3,7 @@
 exports[`<TextAreaInput /> should match snapshot for active select input 1`] = `
 <EnhancedInput(TextAreaInput)
   className="textarea-input-class"
-  placeholder="Hello World!"
+  placeholder="placeholder something"
 >
   <div
     className="root textarea-input-class"
@@ -11,7 +11,7 @@ exports[`<TextAreaInput /> should match snapshot for active select input 1`] = `
     <NotchedBase
       isActive={true}
       isEmpty={false}
-      placeholder="Hello World!"
+      placeholder="placeholder something"
     >
       <div
         className="notchedBase notchedBaseShift notchedBaseActive"
@@ -67,7 +67,7 @@ exports[`<TextAreaInput /> should match snapshot for active select input 1`] = `
             <label
               className="notchedBasePlaceholder"
             >
-              Hello World!
+              placeholder something
             </label>
           </div>
           <div
@@ -104,7 +104,7 @@ exports[`<TextAreaInput /> should match snapshot for default select input 1`] = 
         <label
           class="notchedBasePlaceholder"
         >
-          Hello World!
+          placeholder something
         </label>
       </div>
       <div
@@ -139,7 +139,7 @@ exports[`<TextAreaInput /> should match snapshot for touched invalid select inpu
         <label
           class="notchedBasePlaceholder"
         >
-          Hello World!
+          placeholder something
         </label>
       </div>
       <div
@@ -174,7 +174,7 @@ exports[`<TextAreaInput /> should match snapshot for touched select input 1`] = 
         <label
           class="notchedBasePlaceholder"
         >
-          Hello World!
+          placeholder something
         </label>
       </div>
       <div
@@ -209,7 +209,7 @@ exports[`<TextAreaInput /> should match snapshot for touched valid select input 
         <label
           class="notchedBasePlaceholder"
         >
-          Hello World!
+          placeholder something
         </label>
       </div>
       <div

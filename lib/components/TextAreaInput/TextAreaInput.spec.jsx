@@ -2,14 +2,19 @@ import React from 'react';
 import { mount, render } from 'enzyme';
 import { TextAreaInput } from './TextAreaInput';
 
-const testLabel = 'Hello World!';
 describe('<TextAreaInput />', () => {
 	it('should not throw', () => {
-		expect(() => mount(<TextAreaInput />).unmount()).not.toThrow();
+		expect(() =>
+			mount(
+				<TextAreaInput placeholder="placeholder something" />
+			).unmount()
+		).not.toThrow();
 	});
 
-	it('should have a select input', () => {
-		const textAreaInput = mount(<TextAreaInput placeholder={testLabel} />);
+	it('should have a textarea tag', () => {
+		const textAreaInput = mount(
+			<TextAreaInput placeholder="placeholder something" />
+		);
 		expect(textAreaInput.find('textarea').exists()).toEqual(true);
 		textAreaInput.unmount();
 	});
@@ -18,7 +23,7 @@ describe('<TextAreaInput />', () => {
 		const textAreaInput = mount(
 			<TextAreaInput
 				className="textarea-input-class"
-				placeholder={testLabel}
+				placeholder="placeholder something"
 			/>
 		);
 		expect(textAreaInput.hasClass('textarea-input-class')).toBeTruthy();
@@ -29,7 +34,7 @@ describe('<TextAreaInput />', () => {
 		const textAreaInput = render(
 			<TextAreaInput
 				className="textarea-input-class"
-				placeholder={testLabel}
+				placeholder="placeholder something"
 			/>
 		);
 		expect(textAreaInput).toMatchSnapshot();
@@ -39,7 +44,7 @@ describe('<TextAreaInput />', () => {
 		const textAreaInput = mount(
 			<TextAreaInput
 				className="textarea-input-class"
-				placeholder={testLabel}
+				placeholder="placeholder something"
 			/>
 		);
 
@@ -60,7 +65,7 @@ describe('<TextAreaInput />', () => {
 			<TextAreaInput
 				isTouched={true}
 				className="textarea-input-class"
-				placeholder={testLabel}
+				placeholder="placeholder something"
 			/>
 		);
 		expect(textAreaInput).toMatchSnapshot();
@@ -72,7 +77,7 @@ describe('<TextAreaInput />', () => {
 				isTouched={true}
 				isValid={true}
 				className="textarea-input-class"
-				placeholder={testLabel}
+				placeholder="placeholder something"
 			/>
 		);
 		expect(textAreaInput).toMatchSnapshot();
@@ -84,21 +89,28 @@ describe('<TextAreaInput />', () => {
 				isTouched={true}
 				isValid={false}
 				className="textarea-input-class"
-				placeholder={testLabel}
+				placeholder="placeholder something"
 			/>
 		);
 		expect(textAreaInput).toMatchSnapshot();
 	});
 
 	it('should display placeholder text', () => {
-		const textAreaInput = render(<TextAreaInput placeholder={testLabel} />);
-		expect(textAreaInput.find('label').text()).toEqual(testLabel);
+		const textAreaInput = render(
+			<TextAreaInput placeholder="placeholder something" />
+		);
+		expect(textAreaInput.find('label').text()).toEqual(
+			'placeholder something'
+		);
 	});
 
 	it('should fire onFocus event', () => {
 		const spyedCallback = jest.fn();
 		const textAreaInput = mount(
-			<TextAreaInput onFocus={spyedCallback} placeholder={testLabel} />
+			<TextAreaInput
+				onFocus={spyedCallback}
+				placeholder="placeholder something"
+			/>
 		);
 		textAreaInput.find('textarea').simulate('focus');
 
@@ -109,7 +121,10 @@ describe('<TextAreaInput />', () => {
 	it('should fire onBlur event', () => {
 		const spyedCallback = jest.fn();
 		const textAreaInput = mount(
-			<TextAreaInput onBlur={spyedCallback} placeholder={testLabel} />
+			<TextAreaInput
+				onBlur={spyedCallback}
+				placeholder="placeholder something"
+			/>
 		);
 		textAreaInput.find('textarea').simulate('blur');
 
@@ -120,7 +135,10 @@ describe('<TextAreaInput />', () => {
 	it('should fire onChange event', () => {
 		const spyedCallback = jest.fn();
 		const textAreaInput = mount(
-			<TextAreaInput onChange={spyedCallback} placeholder={testLabel} />
+			<TextAreaInput
+				onChange={spyedCallback}
+				placeholder="placeholder something"
+			/>
 		);
 		textAreaInput.find('textarea').simulate('change');
 
