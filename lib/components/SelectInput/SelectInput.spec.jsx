@@ -5,7 +5,9 @@ import { SelectInput } from './SelectInput';
 const testLabel = 'Hello World!';
 describe('<SelectInput />', () => {
 	it('should not throw', () => {
-		expect(() => mount(<SelectInput />).unmount()).not.toThrow();
+		expect(() =>
+			mount(<SelectInput placeholder={testLabel} />).unmount()
+		).not.toThrow();
 	});
 
 	it('should have a select input', () => {
