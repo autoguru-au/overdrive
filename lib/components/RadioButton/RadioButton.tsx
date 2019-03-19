@@ -25,6 +25,16 @@ export interface IState {
 }
 
 export class RadioButton extends PureComponent<IProps, IState> {
+	constructor(props: IProps) {
+		super(props);
+
+		this.state = {
+			value: '',
+			name: '',
+			checked: false,
+		};
+	}
+
 	public static getDerivedStateFromProps(
 		nextProps: IProps
 	): Partial<IState> | null {
@@ -37,16 +47,6 @@ export class RadioButton extends PureComponent<IProps, IState> {
 
 			return state;
 		}, {});
-	}
-
-	constructor(props: IProps) {
-		super(props);
-
-		this.state = {
-			value: '',
-			name: '',
-			checked: false,
-		};
 	}
 
 	public render(): React.ReactNode {
