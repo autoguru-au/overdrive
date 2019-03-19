@@ -8,6 +8,6 @@
 		"declaration": true,
 		"declarationDir": "./dist/"
 	},
-	"include": ["./global.d.ts", "./lib/components/index.ts"],
-	"exclude": ["./lib/**/stories.tsx"]
+	"include": ["./global.d.ts", "./lib/**/*"],
+	"exclude": ["./lib/**/*stories*.tsx"]
 }
