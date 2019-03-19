@@ -1,7 +1,7 @@
 @import '../../theme/tokens/facade';
 
 :root {
-	--global--meta--bubble--size: 36px;
+	--od--Pagination--bubble-size: 36px;
 }
 
 .pagination,
@@ -42,13 +42,14 @@
 	margin-right: 10px;
 	cursor: pointer;
 	color: getColour(gray, 500);
-	width: var(--global--meta--bubble--size);
-	height: var(--global--meta--bubble--size);
+	width: var(--od--Pagination--bubble-size);
+	height: var(--od--Pagination--bubble-size);
 	border-radius: 50%;
 	text-align: center;
+	font-size: var(--global--fontSize--4);
 	overflow: hidden;
 	background-color: transparent;
-	line-height: calc(var(--global--meta--bubble--size) - 3px);
+	line-height: calc(var(--od--Pagination--bubble-size) - 3px);
 	transition: background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 
 	&:hover {
