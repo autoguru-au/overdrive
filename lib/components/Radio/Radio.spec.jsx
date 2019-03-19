@@ -2,7 +2,6 @@ import React from 'react';
 import { Radio, RadioGroup } from './';
 import { mount, render } from 'enzyme';
 import { act } from 'react-dom/test-utils';
-import { EPageChangeDirection } from '../SimplePagination';
 
 describe('<RadioButton />', () => {
 	describe('When not nested in a RadioGroup', () => {
@@ -175,13 +174,15 @@ describe('<RadioButton />', () => {
 			const spyedChangeCallback = jest.fn();
 			act(() => {
 				group = mount(
-					<RadioGroup name="radio" value="2">
+					<RadioGroup
+						name="radio"
+						value="2"
+						onChange={spyedChangeCallback}>
 						<Radio value="1" label="radio label 1" />
 						<Radio
 							value="2"
 							label="radio label 2"
 							onClick={spyedClickCallback}
-							onChange={spyedChangeCallback}
 						/>
 						<Radio value="3" label="radio label 3" />
 						<Radio value="4" label="radio label 4" />
