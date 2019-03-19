@@ -24,7 +24,7 @@ export const NotchedBase: FunctionComponent<IProps> = ({
 }) => {
 	const labelRef = useRef<HTMLLabelElement>(null);
 	const [labelWidth, setLabelWidth] = useState<number>(
-		getNotchedComputedWidthFotWidth(
+		getNotchedComputedWidthForWidth(
 			placeholder.length * ROUGH_WIDTH_PER_CHARACTER
 		)
 	);
@@ -35,7 +35,7 @@ export const NotchedBase: FunctionComponent<IProps> = ({
 		}
 	}, [labelRef.current, placeholder]);
 
-	const notchedWidth = getNotchedComputedWidthFotWidth(labelWidth);
+	const notchedWidth = getNotchedComputedWidthForWidth(labelWidth);
 
 	// TODO: This will double warn, when placeholder gets updated, the setLabelWidth will trigger a double render
 	warning(
@@ -68,7 +68,7 @@ export const NotchedBase: FunctionComponent<IProps> = ({
 	);
 };
 
-function getNotchedComputedWidthFotWidth(width: number): number {
+function getNotchedComputedWidthForWidth(width: number): number {
 	return (
 		Math.round(
 			(width * ACTIVE_SCALING_FACTOR + ACTIVE_PADDING_ADDED) * 100
