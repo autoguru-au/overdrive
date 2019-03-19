@@ -15,7 +15,7 @@ export interface IProps {
 
 	handleClick(event): void;
 
-	handleChange(event): void;
+	handleChange?(event): void;
 }
 
 export const CheckableBase: FunctionComponent<IProps> = ({

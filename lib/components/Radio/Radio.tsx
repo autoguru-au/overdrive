@@ -1,6 +1,6 @@
 import { invariant } from '@autoguru/utilities';
 import cx from 'clsx';
-import React, { Dispatch, PureComponent, SetStateAction } from 'react';
+import React, { PureComponent } from 'react';
 import { CheckableBase } from '../CheckableBase';
 import { checkableClass } from '../CheckableBase/CheckableBase';
 import styles from './style.scss';
@@ -13,8 +13,6 @@ export interface IProps {
 	name?: string;
 	value: string;
 
-	onChange?(checked: boolean): void;
-
 	onClick?(checked: boolean): void;
 }
 
@@ -22,7 +20,6 @@ export interface IState {
 	value: string;
 	checked: boolean;
 	name: string;
-	setContextValue?: Dispatch<SetStateAction<string>>;
 }
 
 export class Radio extends PureComponent<IProps, IState> {
@@ -60,11 +57,11 @@ export class Radio extends PureComponent<IProps, IState> {
 					);
 
 					if (this.props.checked) {
-						context.setValue(this.state.value);
+						context.radioSelected(this.state.value);
 					}
 
 					const checkClicked = e =>
-						this.handleClick(e, context.setValue);
+						this.handleClick(e, context.radioSelected);
 
 					return (
 						<CheckableBase
@@ -74,8 +71,7 @@ export class Radio extends PureComponent<IProps, IState> {
 							value={this.state.value}
 							label={this.props.label}
 							checked={this.state.value === context.value}
-							handleClick={checkClicked}
-							handleChange={this.handleChange}>
+							handleClick={checkClicked}>
 							<div
 								className={cx([checkableClass], {
 									[styles.selected]:
@@ -91,23 +87,10 @@ export class Radio extends PureComponent<IProps, IState> {
 		);
 	}
 
-	private handleChange = e => {
-		this.dispatchChange(e);
-	};
-
-	private handleClick = (
-		e,
-		setContextValue?: Dispatch<SetStateAction<string>>
-	) => {
+	private handleClick = (e, setContextValue?: (value: string) => void) => {
 		setContextValue(this.state.value);
 		this.dispatchClick(e);
 	};
-
-	private dispatchChange(checked) {
-		if (typeof this.props.onChange === 'function') {
-			this.props.onChange(checked);
-		}
-	}
 
 	private dispatchClick(e) {
 		if (typeof this.props.onClick === 'function') {

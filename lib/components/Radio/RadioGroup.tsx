@@ -1,22 +1,21 @@
-import React, {
-	Dispatch,
-	FunctionComponent,
-	SetStateAction,
-	useState,
-} from 'react';
+import React, { FunctionComponent, useState } from 'react';
 
+import { invariant } from '@autoguru/utilities';
 import styles from './style.scss';
 
 export interface IProps {
 	className?: string;
 	value?: string;
 	name: string;
+
+	onChange?(value: string): void;
 }
 
 export interface IRadioGroupContext {
 	inputName: string;
 	value: string;
-	setValue: Dispatch<SetStateAction<string>>;
+
+	radioSelected(value: string): void;
 }
 
 export const RadioContext = React.createContext({});
@@ -25,15 +24,27 @@ export const RadioGroup: FunctionComponent<IProps> = ({
 	children,
 	name,
 	value: incomingValue = '',
+	onChange,
 }) => {
-	if (!name) {
-		throw new Error("RadioGroup component must have a 'name` prop");
-	}
+	invariant(!name, "RadioGroup component must have a 'name' prop");
+
 	const [value, setValue] = useState<string>(incomingValue);
+
+	const dispatchChange = (value: string) => {
+		if (typeof onChange === 'function') {
+			onChange(value);
+		}
+	};
+
+	const radioSelected = (value: string) => {
+		setValue(value);
+		dispatchChange(value);
+	};
+
 	const state: IRadioGroupContext = {
 		inputName: name,
 		value,
-		setValue,
+		radioSelected,
 	};
 
 	return (
