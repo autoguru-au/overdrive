@@ -93,6 +93,7 @@ exports[`<RadioButton /> When nested in a RadioGroup should match the snapshot f
       <input
         checked={false}
         className="nativeInput"
+        disabled={false}
         name="radio"
         onClick={[Function]}
         type="radio"

@@ -202,5 +202,30 @@ describe('<RadioButton />', () => {
 			expect(spyedClickCallback).toHaveBeenCalledTimes(1);
 			expect(spyedChangeCallback).toHaveBeenCalledTimes(1);
 		});
+
+		it('should disable the native radio element if disabled prop is set to true', () => {
+			let group;
+			act(() => {
+				group = mount(
+					<RadioGroup name="radio" value="2">
+						<Radio value="1" label="radio label 1" />
+						<Radio
+							value="2"
+							label="radio label 2"
+							disabled={true}
+						/>
+						<Radio value="3" label="radio label 3" />
+						<Radio value="4" label="radio label 4" />
+					</RadioGroup>
+				);
+			});
+
+			expect(
+				group
+					.find("div.radio>input[type='radio']")
+					.at(1)
+					.is('[disabled]')
+			).toBeTruthy();
+		});
 	});
 });

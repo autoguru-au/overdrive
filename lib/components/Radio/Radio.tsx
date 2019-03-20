@@ -9,6 +9,7 @@ import { RadioContext } from './RadioGroup';
 export interface IProps {
 	className?: string;
 	checked?: boolean;
+	disabled?: boolean;
 	label?: string;
 	name?: string;
 	value: string;
@@ -70,6 +71,7 @@ export class Radio extends PureComponent<IProps, IState> {
 							inputName={context.inputName}
 							value={this.state.value}
 							label={this.props.label}
+							disabled={this.props.disabled}
 							checked={this.state.value === context.value}
 							handleClick={checkClicked}>
 							<div

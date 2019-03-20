@@ -46,6 +46,15 @@
 	z-index: 1;
 }
 
+.disabled {
+	pointer-events: none;
+
+	.checkable,
+	.label {
+		opacity: 0.5;
+	}
+}
+
 .native-input {
 	position: absolute;
 	top: 0;
@@ -57,6 +66,10 @@
 	opacity: 0;
 	cursor: inherit;
 	z-index: 1;
+
+	&[disabled] {
+		pointer-events: none;
+	}
 
 	.checked {
 		outline: none;

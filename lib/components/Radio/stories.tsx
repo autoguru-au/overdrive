@@ -74,6 +74,17 @@ storiesOf('Components|Radio', module)
 			/>
 		</RadioGroup>
 	))
+	.add('disabled', () => (
+		<RadioGroup name="radio-story">
+			<Radio
+				name="radio-name"
+				value="1"
+				disabled={true}
+				{...checked()}
+				{...baseProps()}
+			/>
+		</RadioGroup>
+	))
 	.add('multiple lines', () => (
 		<RadioGroup name="radio-story">
 			<Radio

@@ -8,6 +8,7 @@ export const checkableClass = styles.checkable;
 export interface IProps {
 	className?: string;
 	checked?: boolean;
+	disabled?: boolean;
 	label?: string;
 	inputName: string;
 	inputType: string;
@@ -22,6 +23,7 @@ export const CheckableBase: FunctionComponent<IProps> = ({
 	className = '',
 	label = '',
 	checked = false,
+	disabled = false,
 	inputType,
 	inputName,
 	value,
@@ -32,12 +34,14 @@ export const CheckableBase: FunctionComponent<IProps> = ({
 	<div
 		className={cx([styles.root, className], {
 			[styles.checked]: checked,
+			[styles.disabled]: disabled === true,
 		})}>
 		{children}
 		<input
 			name={inputName}
 			value={value}
 			checked={checked}
+			disabled={disabled}
 			onClick={handleClick}
 			onChange={handleChange}
 			type={inputType}
