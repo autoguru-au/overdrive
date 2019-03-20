@@ -1,6 +1,8 @@
 @import '../../theme/tokens/facade';
 
 :root {
+	--od--CheckableBase--checkable--label--size: 16px;
+	--od--CheckableBase--checkable--label--height: 22px;
 	--od--CheckableBase--checkable-size: 16px;
 	--od--CheckableBase--checkable-padding: 12px;
 	--od--CheckableBase--default-colour: #{getColour(gray, 500)};
@@ -41,6 +43,14 @@
 	height: calc(
 		var(--od--CheckableBase--checkable-size) +
 			(var(--od--CheckableBase--checkable-padding) * 2)
+	);
+	left: var(--global--space--1);
+	top: calc(
+		50% -
+			(
+				var(--od--CheckableBase--checkable-size) +
+					(var(--od--CheckableBase--checkable-padding) * 2)
+			) * 0.5
 	);
 	position: absolute;
 	z-index: 1;
@@ -115,8 +125,11 @@
 }
 
 .label {
+	font-size: var(--od--CheckableBase--checkable--label--size);
+	line-height: var(--od--CheckableBase--checkable--label--height);
 	padding-left: calc(
 		var(--od--CheckableBase--checkable-size) +
-			(var(--od--CheckableBase--checkable-padding) * 2)
+			(var(--od--CheckableBase--checkable-padding) * 2) +
+			(var(--global--space--1))
 	);
 }

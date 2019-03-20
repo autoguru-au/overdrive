@@ -1,6 +1,5 @@
 import cx from 'clsx';
 import React, { FunctionComponent, SyntheticEvent } from 'react';
-import { DetailText, EDetailTextSize } from '../DetailText';
 import styles from './style.scss';
 
 export const checkableClass = styles.checkable;
@@ -58,11 +57,7 @@ export const CheckableBase: FunctionComponent<IProps> = ({
 			<div className={styles.focusRect} />
 
 			{!!(typeof label === 'string' && label.length > 0) && (
-				<DetailText
-					size={EDetailTextSize.Detail2}
-					children={label}
-					className={styles.label}
-				/>
+				<label children={label} className={styles.label} />
 			)}
 		</div>
 	);
