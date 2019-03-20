@@ -21,9 +21,7 @@
 }
 
 .root {
-	padding: var(--od--CheckableBase--checkable-padding)
-		var(--od--CheckableBase--checkable-padding)
-		var(--od--CheckableBase--checkable-padding) 0;
+	padding: var(--od--CheckableBase--checkable-padding) var(--od--CheckableBase--checkable-padding) var(--od--CheckableBase--checkable-padding) 0;
 	flex-direction: row;
 	box-sizing: border-box;
 	display: flex;
@@ -36,12 +34,14 @@
 .checkable {
 	width: calc(
 		var(--od--CheckableBase--checkable-size) +
-			(var(--od--CheckableBase--checkable-padding) * 2)
+		(var(--od--CheckableBase--checkable-padding) * 2)
 	);
 	height: calc(
 		var(--od--CheckableBase--checkable-size) +
-			(var(--od--CheckableBase--checkable-padding) * 2)
+		(var(--od--CheckableBase--checkable-padding) * 2)
 	);
+	top: var(--global--space--1);
+	left: var(--global--space--1);
 	position: absolute;
 	z-index: 1;
 }
@@ -92,8 +92,7 @@
 	.focused &,
 	&:focus:not(:hover):not(:active):not(:checked) {
 		+ div.focus-rect {
-			box-shadow: inset 0 0 0 2px
-				var(--od--CheckableBase--focused-outline-colour);
+			box-shadow: inset 0 0 0 2px var(--od--CheckableBase--focused-outline-colour);
 			border-radius: 4px;
 			overflow: hidden;
 		}
@@ -109,7 +108,7 @@
 	right: 0;
 	pointer-events: none;
 	transition: background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
-		box-shadow 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
+	box-shadow 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 	border-radius: 4px;
 	z-index: 0;
 }
@@ -117,6 +116,7 @@
 .label {
 	padding-left: calc(
 		var(--od--CheckableBase--checkable-size) +
-			(var(--od--CheckableBase--checkable-padding) * 2)
+		(var(--od--CheckableBase--checkable-padding) * 2) +
+		(var(--global--space--1))
 	);
 }
