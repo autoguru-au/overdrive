@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
+<div
+  class="root checkbox checked"
+>
+  <div
+    class="checkable selected"
+  >
+    <svg
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M448 149.333l-256 256L74.667 288l30.08-30.08L192 344.96l225.92-225.707 30.08 30.08z"
+      />
+    </svg>
+    <div
+      class="box"
+    />
+  </div>
+  <input
+    checked=""
+    class="nativeInput"
+    type="checkbox"
+    value="1"
+  />
+  <div
+    class="focusRect"
+  />
+  <span
+    class="root detail2 label"
+  >
+    check label 1
+  </span>
+</div>
+`;
+
+exports[`<CheckBox /> should match the snapshot for a focused check 1`] = `
+<CheckBox
+  label="check label 1"
+  value="1"
+>
+  <CheckableBase
+    checked={false}
+    className="checkbox"
+    handleChange={[Function]}
+    handleClick={[Function]}
+    inputType="checkbox"
+    label="check label 1"
+    value="1"
+  >
+    <div
+      className="root checkbox"
+    >
+      <div
+        className="checkable"
+      >
+        <div
+          className="box"
+        />
+      </div>
+      <input
+        checked={false}
+        className="nativeInput"
+        disabled={false}
+        onChange={[Function]}
+        onClick={[Function]}
+        type="checkbox"
+        value="1"
+      />
+      <div
+        className="focusRect"
+      />
+      <DetailText
+        className="label"
+        size="detail-2"
+      >
+        <span
+          className="root detail2 label"
+        >
+          check label 1
+        </span>
+      </DetailText>
+    </div>
+  </CheckableBase>
+</CheckBox>
+`;
+
+exports[`<CheckBox /> should match the snapshot for a single check 1`] = `
+<div
+  class="root checkbox"
+>
+  <div
+    class="checkable"
+  >
+    <div
+      class="box"
+    />
+  </div>
+  <input
+    class="nativeInput"
+    type="checkbox"
+    value="1"
+  />
+  <div
+    class="focusRect"
+  />
+  <span
+    class="root detail2 label"
+  >
+    check label 1
+  </span>
+</div>
+`;
+
+exports[`<CheckBox /> should match the snapshot for a single check with no value or label 1`] = `
+<div
+  class="root checkbox"
+>
+  <div
+    class="checkable"
+  >
+    <div
+      class="box"
+    />
+  </div>
+  <input
+    class="nativeInput"
+    type="checkbox"
+    value=""
+  />
+  <div
+    class="focusRect"
+  />
+</div>
+`;
