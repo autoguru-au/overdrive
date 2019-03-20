@@ -1,5 +1,5 @@
 import cx from 'clsx';
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, SyntheticEvent } from 'react';
 import { DetailText, EDetailTextSize } from '../DetailText';
 import styles from './style.scss';
 
@@ -16,7 +16,7 @@ export interface IProps {
 
 	handleClick(event): void;
 
-	handleChange?(event): void;
+	handleChange?(checked: boolean): void;
 }
 
 export const CheckableBase: FunctionComponent<IProps> = ({
@@ -30,32 +30,40 @@ export const CheckableBase: FunctionComponent<IProps> = ({
 	children,
 	handleClick,
 	handleChange,
-}) => (
-	<div
-		className={cx([styles.root, className], {
-			[styles.checked]: checked,
-			[styles.disabled]: disabled === true,
-		})}>
-		{children}
-		<input
-			name={inputName}
-			value={value}
-			checked={checked}
-			disabled={disabled}
-			onClick={handleClick}
-			onChange={handleChange}
-			type={inputType}
-			className={styles.nativeInput}
-		/>
+}) => {
+	const onChange = (e: SyntheticEvent) => {
+		if (typeof handleChange === 'function') {
+			handleChange((e.currentTarget as HTMLInputElement).checked);
+		}
+	};
 
-		<div className={styles.focusRect} />
-
-		{!!(typeof label === 'string' && label.length > 0) && (
-			<DetailText
-				size={EDetailTextSize.Detail2}
-				children={label}
-				className={styles.label}
+	return (
+		<div
+			className={cx([styles.root, className], {
+				[styles.checked]: checked,
+				[styles.disabled]: disabled === true,
+			})}>
+			{children}
+			<input
+				name={inputName}
+				value={value}
+				checked={checked}
+				disabled={disabled}
+				onClick={handleClick}
+				onChange={onChange}
+				type={inputType}
+				className={styles.nativeInput}
 			/>
-		)}
-	</div>
-);
+
+			<div className={styles.focusRect} />
+
+			{!!(typeof label === 'string' && label.length > 0) && (
+				<DetailText
+					size={EDetailTextSize.Detail2}
+					children={label}
+					className={styles.label}
+				/>
+			)}
+		</div>
+	);
+};
