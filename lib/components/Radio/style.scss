@@ -1,0 +1,57 @@
+@import '../../theme/tokens/facade';
+
+$coreSize: 8px;
+$strokeSize: 2px;
+
+.radio {
+	display: flex;
+}
+
+.radio-group {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	align-content: stretch;
+	justify-content: stretch;
+	align-items: stretch;
+	padding: 0;
+}
+
+.outer-circle,
+.inner-circle {
+	position: absolute;
+	border-radius: 50%;
+	transition: border-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
+}
+
+.outer-circle {
+	width: var(--od--CheckableBase--checkable-size);
+	height: var(--od--CheckableBase--checkable-size);
+	top: var(--od--CheckableBase--checkable-padding);
+	left: var(--od--CheckableBase--checkable-padding);
+	border: $strokeSize solid var(--od--CheckableBase--default-colour);
+
+	.selected & {
+		border-color: var(--od--CheckableBase--checked-colour);
+	}
+}
+
+.inner-circle {
+	border: 0 solid var(--od--CheckableBase--default-colour);
+
+	.selected & {
+		border-width: calc(#{$coreSize} / 2);
+		border-color: var(--od--CheckableBase--checked-colour);
+	}
+
+	width: $coreSize;
+	height: $coreSize;
+	top: calc(
+		var(--od--CheckableBase--checkable-padding) +
+			(var(--od--CheckableBase--checkable-size) - #{$coreSize}) * 0.5
+	);
+	left: calc(
+		var(--od--CheckableBase--checkable-padding) +
+			(var(--od--CheckableBase--checkable-size) - #{$coreSize}) * 0.5
+	);
+}

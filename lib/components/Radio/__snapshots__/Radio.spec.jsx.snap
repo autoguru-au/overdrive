@@ -1,0 +1,298 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot for a checked radio 1`] = `
+<div
+  class="radioGroup"
+>
+  <div
+    class="root radio"
+  >
+    <div
+      class="checkable"
+    >
+      <div
+        class="outerCircle"
+      />
+      <div
+        class="innerCircle"
+      />
+    </div>
+    <input
+      class="nativeInput"
+      name="radio"
+      type="radio"
+      value="1"
+    />
+    <div
+      class="focusRect"
+    />
+    <label
+      class="label"
+    >
+      radio label 1
+    </label>
+  </div>
+  <div
+    class="root radio"
+  >
+    <div
+      class="checkable"
+    >
+      <div
+        class="outerCircle"
+      />
+      <div
+        class="innerCircle"
+      />
+    </div>
+    <input
+      class="nativeInput"
+      name="radio"
+      type="radio"
+      value="2"
+    />
+    <div
+      class="focusRect"
+    />
+    <label
+      class="label"
+    >
+      radio label 2
+    </label>
+  </div>
+</div>
+`;
+
+exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot for a focused radio 1`] = `
+<Component
+  label="radio label 1"
+  value="1"
+>
+  <CheckableBase
+    checked={false}
+    className="radio"
+    disabled={false}
+    handleClick={[Function]}
+    inputName="radio"
+    inputType="radio"
+    label="radio label 1"
+    value="1"
+  >
+    <div
+      className="root radio"
+    >
+      <div
+        className="checkable"
+      >
+        <div
+          className="outerCircle"
+        />
+        <div
+          className="innerCircle"
+        />
+      </div>
+      <input
+        checked={false}
+        className="nativeInput"
+        disabled={false}
+        name="radio"
+        onChange={[Function]}
+        onClick={[Function]}
+        type="radio"
+        value="1"
+      />
+      <div
+        className="focusRect"
+      />
+      <label
+        className="label"
+      >
+        radio label 1
+      </label>
+    </div>
+  </CheckableBase>
+</Component>
+`;
+
+exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot for a group of radios 1`] = `
+<div
+  class="radioGroup"
+>
+  <div
+    class="root radio"
+  >
+    <div
+      class="checkable"
+    >
+      <div
+        class="outerCircle"
+      />
+      <div
+        class="innerCircle"
+      />
+    </div>
+    <input
+      class="nativeInput"
+      name="radio"
+      type="radio"
+      value="1"
+    />
+    <div
+      class="focusRect"
+    />
+    <label
+      class="label"
+    >
+      radio label 1
+    </label>
+  </div>
+  <div
+    class="root radio"
+  >
+    <div
+      class="checkable"
+    >
+      <div
+        class="outerCircle"
+      />
+      <div
+        class="innerCircle"
+      />
+    </div>
+    <input
+      class="nativeInput"
+      name="radio"
+      type="radio"
+      value="2"
+    />
+    <div
+      class="focusRect"
+    />
+    <label
+      class="label"
+    >
+      radio label 2
+    </label>
+  </div>
+  <div
+    class="root radio"
+  >
+    <div
+      class="checkable"
+    >
+      <div
+        class="outerCircle"
+      />
+      <div
+        class="innerCircle"
+      />
+    </div>
+    <input
+      class="nativeInput"
+      name="radio"
+      type="radio"
+      value="3"
+    />
+    <div
+      class="focusRect"
+    />
+    <label
+      class="label"
+    >
+      radio label 3
+    </label>
+  </div>
+  <div
+    class="root radio"
+  >
+    <div
+      class="checkable"
+    >
+      <div
+        class="outerCircle"
+      />
+      <div
+        class="innerCircle"
+      />
+    </div>
+    <input
+      class="nativeInput"
+      name="radio"
+      type="radio"
+      value="4"
+    />
+    <div
+      class="focusRect"
+    />
+    <label
+      class="label"
+    >
+      radio label 4
+    </label>
+  </div>
+</div>
+`;
+
+exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot for a single radio 1`] = `
+<div
+  class="radioGroup"
+>
+  <div
+    class="root radio"
+  >
+    <div
+      class="checkable"
+    >
+      <div
+        class="outerCircle"
+      />
+      <div
+        class="innerCircle"
+      />
+    </div>
+    <input
+      class="nativeInput"
+      name="radio"
+      type="radio"
+      value="1"
+    />
+    <div
+      class="focusRect"
+    />
+    <label
+      class="label"
+    >
+      radio label 1
+    </label>
+  </div>
+</div>
+`;
+
+exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot for a single radio with no value or label 1`] = `
+<div
+  class="radioGroup"
+>
+  <div
+    class="root radio"
+  >
+    <div
+      class="checkable"
+    >
+      <div
+        class="outerCircle"
+      />
+      <div
+        class="innerCircle"
+      />
+    </div>
+    <input
+      class="nativeInput"
+      name="radio"
+      type="radio"
+    />
+    <div
+      class="focusRect"
+    />
+  </div>
+</div>
+`;
