@@ -1,6 +1,5 @@
-import React, { FunctionComponent, useState } from 'react';
-
-import { invariant } from '@autoguru/utilities';
+import cx from 'clsx';
+import React, { FunctionComponent } from 'react';
 import styles from './style.scss';
 
 export interface IProps {
@@ -18,38 +17,20 @@ export interface IRadioGroupContext {
 	radioSelected(value: string): void;
 }
 
-export const RadioContext = React.createContext({});
+export const RadioContext = React.createContext<IRadioGroupContext>(null);
 
 export const RadioGroup: FunctionComponent<IProps> = ({
-	children,
+	value,
 	name,
-	value: incomingValue = '',
-	onChange,
-}) => {
-	invariant(!name, "RadioGroup component must have a 'name' prop");
-
-	const [value, setValue] = useState<string>(incomingValue);
-
-	const dispatchChange = (value: string) => {
-		if (typeof onChange === 'function') {
-			onChange(value);
-		}
-	};
-
-	const radioSelected = (value: string) => {
-		setValue(value);
-		dispatchChange(value);
-	};
-
-	const state: IRadioGroupContext = {
-		inputName: name,
-		value,
-		radioSelected,
-	};
-
-	return (
-		<RadioContext.Provider value={state}>
-			<div className={styles.radioGroup} children={children} />
-		</RadioContext.Provider>
-	);
-};
+	onChange = () => void 0,
+	children,
+	className = '',
+}) => (
+	<RadioContext.Provider
+		value={{ value, inputName: name, radioSelected: onChange }}>
+		<div
+			className={cx([styles.radioGroup, className])}
+			children={children}
+		/>
+	</RadioContext.Provider>
+);

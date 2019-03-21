@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<RadioButton /> When nested in a RadioGroup should match the snapshot for a checked radio 1`] = `
+exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot for a checked radio 1`] = `
 <div
   class="radioGroup"
 >
@@ -26,11 +26,11 @@ exports[`<RadioButton /> When nested in a RadioGroup should match the snapshot f
     <div
       class="focusRect"
     />
-    <span
-      class="root detail2 label"
+    <label
+      class="label"
     >
       radio label 1
-    </span>
+    </label>
   </div>
   <div
     class="root radio"
@@ -54,17 +54,17 @@ exports[`<RadioButton /> When nested in a RadioGroup should match the snapshot f
     <div
       class="focusRect"
     />
-    <span
-      class="root detail2 label"
+    <label
+      class="label"
     >
       radio label 2
-    </span>
+    </label>
   </div>
 </div>
 `;
 
-exports[`<RadioButton /> When nested in a RadioGroup should match the snapshot for a focused radio 1`] = `
-<Radio
+exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot for a focused radio 1`] = `
+<Component
   label="radio label 1"
   value="1"
 >
@@ -103,22 +103,17 @@ exports[`<RadioButton /> When nested in a RadioGroup should match the snapshot f
       <div
         className="focusRect"
       />
-      <DetailText
+      <label
         className="label"
-        size="detail-2"
       >
-        <span
-          className="root detail2 label"
-        >
-          radio label 1
-        </span>
-      </DetailText>
+        radio label 1
+      </label>
     </div>
   </CheckableBase>
-</Radio>
+</Component>
 `;
 
-exports[`<RadioButton /> When nested in a RadioGroup should match the snapshot for a group of radios 1`] = `
+exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot for a group of radios 1`] = `
 <div
   class="radioGroup"
 >
@@ -144,11 +139,11 @@ exports[`<RadioButton /> When nested in a RadioGroup should match the snapshot f
     <div
       class="focusRect"
     />
-    <span
-      class="root detail2 label"
+    <label
+      class="label"
     >
       radio label 1
-    </span>
+    </label>
   </div>
   <div
     class="root radio"
@@ -172,11 +167,11 @@ exports[`<RadioButton /> When nested in a RadioGroup should match the snapshot f
     <div
       class="focusRect"
     />
-    <span
-      class="root detail2 label"
+    <label
+      class="label"
     >
       radio label 2
-    </span>
+    </label>
   </div>
   <div
     class="root radio"
@@ -200,11 +195,11 @@ exports[`<RadioButton /> When nested in a RadioGroup should match the snapshot f
     <div
       class="focusRect"
     />
-    <span
-      class="root detail2 label"
+    <label
+      class="label"
     >
       radio label 3
-    </span>
+    </label>
   </div>
   <div
     class="root radio"
@@ -228,16 +223,16 @@ exports[`<RadioButton /> When nested in a RadioGroup should match the snapshot f
     <div
       class="focusRect"
     />
-    <span
-      class="root detail2 label"
+    <label
+      class="label"
     >
       radio label 4
-    </span>
+    </label>
   </div>
 </div>
 `;
 
-exports[`<RadioButton /> When nested in a RadioGroup should match the snapshot for a single radio 1`] = `
+exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot for a single radio 1`] = `
 <div
   class="radioGroup"
 >
@@ -263,16 +258,16 @@ exports[`<RadioButton /> When nested in a RadioGroup should match the snapshot f
     <div
       class="focusRect"
     />
-    <span
-      class="root detail2 label"
+    <label
+      class="label"
     >
       radio label 1
-    </span>
+    </label>
   </div>
 </div>
 `;
 
-exports[`<RadioButton /> When nested in a RadioGroup should match the snapshot for a single radio with no value or label 1`] = `
+exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot for a single radio with no value or label 1`] = `
 <div
   class="radioGroup"
 >
@@ -294,7 +289,6 @@ exports[`<RadioButton /> When nested in a RadioGroup should match the snapshot f
       class="nativeInput"
       name="radio"
       type="radio"
-      value=""
     />
     <div
       class="focusRect"

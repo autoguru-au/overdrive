@@ -1,23 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Radio, RadioGroup } from './';
 import { mount, render } from 'enzyme';
 import { act } from 'react-dom/test-utils';
 
 describe('<RadioButton />', () => {
-	describe('When not nested in a RadioGroup', () => {
+	describe('when not nested in a RadioGroup', () => {
 		it('should throw if a RadioButton element is not nested inside a RadioGroup', () =>
 			expect(() => render(<Radio value="1" />)).toThrow());
 	});
-	describe('When nested in a RadioGroup', () => {
-		it('should throw if a RadioGroup does not get a name prop', () =>
-			expect(() =>
-				render(
-					<RadioGroup>
-						<Radio />
-					</RadioGroup>
-				)
-			).toThrow());
 
+	describe('when nested in a RadioGroup', () => {
 		it('should not throw', () =>
 			expect(() =>
 				render(
@@ -99,14 +91,23 @@ describe('<RadioButton />', () => {
 		it('should select the radio after it has been clicked', () => {
 			let group;
 			act(() => {
-				group = mount(
-					<RadioGroup name="radio" value="2">
-						<Radio value="1" label="radio label 1" />
-						<Radio value="2" label="radio label 2" />
-						<Radio value="3" label="radio label 3" />
-						<Radio value="4" label="radio label 4" />
-					</RadioGroup>
-				);
+				const TestComponent = () => {
+					const [value, setValue] = useState();
+
+					return (
+						<RadioGroup
+							name="radio"
+							value={value}
+							onChange={setValue}>
+							<Radio value="1" label="radio label 1" />
+							<Radio value="2" label="radio label 2" />
+							<Radio value="3" label="radio label 3" />
+							<Radio value="4" label="radio label 4" />
+						</RadioGroup>
+					);
+				};
+
+				group = mount(<TestComponent />);
 			});
 
 			expect(
@@ -136,14 +137,23 @@ describe('<RadioButton />', () => {
 		it('should select the radio if the native radio element has been clicked', () => {
 			let group;
 			act(() => {
-				group = mount(
-					<RadioGroup name="radio" value="2">
-						<Radio value="1" label="radio label 1" />
-						<Radio value="2" label="radio label 2" />
-						<Radio value="3" label="radio label 3" />
-						<Radio value="4" label="radio label 4" />
-					</RadioGroup>
-				);
+				const TestComponent = () => {
+					const [value, setValue] = useState();
+
+					return (
+						<RadioGroup
+							name="radio"
+							value={value}
+							onChange={setValue}>
+							<Radio value="1" label="radio label 1" />
+							<Radio value="2" label="radio label 2" />
+							<Radio value="3" label="radio label 3" />
+							<Radio value="4" label="radio label 4" />
+						</RadioGroup>
+					);
+				};
+
+				group = mount(<TestComponent />);
 			});
 
 			expect(
@@ -170,7 +180,6 @@ describe('<RadioButton />', () => {
 
 		it('should call the onClick function passed down to the radio button when it has been clicked', () => {
 			let group;
-			const spyedClickCallback = jest.fn();
 			const spyedChangeCallback = jest.fn();
 			act(() => {
 				group = mount(
@@ -179,11 +188,7 @@ describe('<RadioButton />', () => {
 						value="2"
 						onChange={spyedChangeCallback}>
 						<Radio value="1" label="radio label 1" />
-						<Radio
-							value="2"
-							label="radio label 2"
-							onClick={spyedClickCallback}
-						/>
+						<Radio value="2" label="radio label 2" />
 						<Radio value="3" label="radio label 3" />
 						<Radio value="4" label="radio label 4" />
 					</RadioGroup>
@@ -199,7 +204,6 @@ describe('<RadioButton />', () => {
 
 			group.update();
 
-			expect(spyedClickCallback).toHaveBeenCalledTimes(1);
 			expect(spyedChangeCallback).toHaveBeenCalledTimes(1);
 		});
 
