@@ -27,7 +27,7 @@
     "chromatic": "chromatic test --exit-zero-on-changes",
     "format": "prettier --write \"{*,{lib,config,scripts,.storybook}/**/*}.+(js|jsx|ts|tsx|css|scss|json|yml|md|mdx|html)\"",
     "lint": "concurrently \"yarn:lint:ts\" \"yarn:lint:styles\"",
-    "lint:styles": "stylelint --ignore-path .gitignore --fix \"packages/**/*.+(scss|css)\"",
+    "lint:styles": "stylelint --ignore-path .gitignore --fix \"lib/**/*.+(scss|css)\"",
     "lint:ts": "tsc --noEmit && tslint --fix --project tsconfig.json",
     "semantic-release": "semantic-release",
     "start": "yarn run storybook",
