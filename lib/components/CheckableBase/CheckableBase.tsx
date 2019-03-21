@@ -1,5 +1,5 @@
 import cx from 'clsx';
-import React, { FunctionComponent, SyntheticEvent } from 'react';
+import React, { ChangeEvent, FunctionComponent } from 'react';
 import styles from './style.scss';
 
 export const checkableClass = styles.checkable;
@@ -30,9 +30,9 @@ export const CheckableBase: FunctionComponent<IProps> = ({
 	handleClick,
 	handleChange,
 }) => {
-	const onChange = (e: SyntheticEvent) => {
+	const onChange = (e: ChangeEvent<HTMLInputElement>) => {
 		if (typeof handleChange === 'function') {
-			handleChange((e.currentTarget as HTMLInputElement).checked);
+			handleChange(e.currentTarget.checked);
 		}
 	};
 
