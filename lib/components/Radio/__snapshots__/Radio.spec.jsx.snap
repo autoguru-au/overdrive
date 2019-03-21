@@ -71,6 +71,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
   <CheckableBase
     checked={false}
     className="radio"
+    disabled={false}
     handleClick={[Function]}
     inputName="radio"
     inputType="radio"
@@ -272,10 +273,10 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
   class="radioGroup"
 >
   <div
-    class="root radio checked"
+    class="root radio"
   >
     <div
-      class="checkable selected"
+      class="checkable"
     >
       <div
         class="outerCircle"
@@ -285,7 +286,6 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       />
     </div>
     <input
-      checked=""
       class="nativeInput"
       name="radio"
       type="radio"

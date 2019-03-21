@@ -6,14 +6,14 @@ import styles from './style.scss';
 import { RadioContext } from './RadioGroup';
 
 export interface IProps {
+	value: string;
 	className?: string;
 	disabled?: boolean;
 	label?: string;
-	value: string;
 }
 
 export const Radio: FunctionComponent<IProps> = memo(
-	({ className = '', value, label, disabled }) => {
+	({ value, className = '', label = '', disabled = false }) => {
 		const radioContext = useContext(RadioContext);
 
 		const isChecked = value === radioContext.value;

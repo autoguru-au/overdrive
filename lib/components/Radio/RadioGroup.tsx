@@ -3,9 +3,9 @@ import React, { FunctionComponent } from 'react';
 import styles from './style.scss';
 
 export interface IProps {
+	name: string;
 	className?: string;
 	value?: string;
-	name: string;
 
 	onChange?(value: string): void;
 }
@@ -20,11 +20,11 @@ export interface IRadioGroupContext {
 export const RadioContext = React.createContext<IRadioGroupContext>(null);
 
 export const RadioGroup: FunctionComponent<IProps> = ({
-	value,
 	name,
+	value = null,
+	className = '',
 	onChange = () => void 0,
 	children,
-	className = '',
 }) => (
 	<RadioContext.Provider
 		value={{ value, inputName: name, radioSelected: onChange }}>
