@@ -27,6 +27,11 @@ describe('<CheckBox />', () => {
 				.simulate('focus')
 		).toMatchSnapshot());
 
+	it('should pass on className to dom element', () => {
+		const check = mount(<CheckBox className="check-class" />);
+		expect(check.hasClass('check-class')).toBeTruthy();
+	});
+
 	it('should call the onClick function passed down to it when clicked', () => {
 		let checkBox;
 		const spyedClickCallback = jest.fn();
@@ -46,6 +51,22 @@ describe('<CheckBox />', () => {
 
 		checkBox.update();
 		expect(spyedClickCallback).toHaveBeenCalledTimes(1);
+	});
+
+	it('should pass the cheked value to the native element', () => {
+		const checkBoxUnchecked = mount(
+			<CheckBox value="1" label="check label 1" checked={false} />
+		);
+		const checkBoxChecked = mount(
+			<CheckBox value="1" label="check label 1" checked={true} />
+		);
+		expect(
+			checkBoxUnchecked.find("input[type='checkbox']").getDOMNode()
+				.checked
+		).toEqual(false);
+		expect(
+			checkBoxChecked.find("input[type='checkbox']").getDOMNode().checked
+		).toEqual(true);
 	});
 
 	it('should call the onChange function passed down to it when checked value has changes', () => {
