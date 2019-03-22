@@ -109,6 +109,7 @@
 		}
 	}
 
+	// The container per-se
 	&__border {
 		display: flex;
 		position: absolute;
@@ -120,12 +121,14 @@
 		height: 100%;
 		text-align: left;
 		pointer-events: none;
+		box-shadow: 0 4px 2px -6px rgba(0, 0, 0, 0.5),
+			0 2px 4px 0 rgba(0, 0, 0, 0.07);
 
 		&__leading,
 		&__notch,
 		&__trailing {
 			display: inline-flex;
-			border: 1px solid getColour(gray, 400);
+			border: 1px solid getColour(gray, 300);
 			transition: border-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 			pointer-events: none;
 
@@ -170,7 +173,8 @@
 		&__notch {
 			border-width: 0;
 			border-bottom-width: 1px;
-			transition: width 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
+			transition: width 0.15s linear,
+				border-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 		}
 
 		&__trailing {
@@ -181,6 +185,7 @@
 	}
 }
 
+// Applies to the native input
 .input {
 	$input_base_height: 64px;
 	$font_size: var(--global--fontSize--6);
