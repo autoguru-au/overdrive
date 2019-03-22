@@ -1,6 +1,6 @@
 import { boolean, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import React from 'react';
+import React, { useState } from 'react';
 import { CheckBox } from '.';
 import styles from '../CheckableBase/style.scss';
 
@@ -17,19 +17,71 @@ storiesOf('Components|CheckBox', module)
 	.addDecorator(story => (
 		<div style={{ maxWidth: '300px', width: '100%' }}>{story()}</div>
 	))
-	.add('default', () => (
-		<>
-			<CheckBox
-				label="Avocado"
-				value="Avocado"
-				onChange={checked => console.log({ checked })}
-			/>
-			<CheckBox label="Blueberries" value="Blueberries" />
-			<CheckBox label="Cherries" value="Cherries" />
-			<CheckBox label="Coconut" value="Coconut" />
-			<CheckBox label="Strawberries" value="Strawberries" />
-		</>
-	))
+	.add('default', () => {
+		const Example = () => {
+			const list: Array<{ label: string; value: string }> = [
+				{
+					label: 'Avocado',
+					value: 'avocado',
+				},
+				{
+					label: 'Blueberries',
+					value: 'blueberries',
+				},
+				{
+					label: 'Cherries',
+					value: 'cherries',
+				},
+				{
+					label: 'Coconut',
+					value: 'coconut',
+				},
+				{
+					label: 'Strawberries',
+					value: 'strawberries',
+				},
+			];
+
+			const [checkedValues, setCheckedValues] = useState(
+				list.reduce(
+					(values, item: { label: string; value: string }) => {
+						values[item.value] = false;
+
+						return values;
+					},
+					{}
+				)
+			);
+
+			return (
+				<>
+					{list.map((item: { label: string; value: string }) => {
+						const onClick = () =>
+							setCheckedValues({
+								...checkedValues,
+								[item.value]: !checkedValues[item.value],
+							});
+						const onChange = (checked: boolean) =>
+							console.log({ [item.value]: checked });
+
+						return (
+							<CheckBox
+								key={item.value}
+								label={item.label}
+								value={item.value}
+								name={`want-${item.value}`}
+								checked={checkedValues[item.value]}
+								onClick={onClick}
+								onChange={onChange}
+							/>
+						);
+					})}
+				</>
+			);
+		};
+
+		return <Example />;
+	})
 	.add('unchecked', () => (
 		<CheckBox name="check-name" value="1" {...baseProps()} />
 	))
@@ -76,11 +128,13 @@ storiesOf('Components|CheckBox', module)
 		<>
 			<CheckBox
 				name="check-name"
+				checked={boolean('first checked', false)}
 				value="1"
 				label="There is a very good reason why this thing is a multi-line, sometimes we need to show people a lot of things. And thus this exists."
 			/>
 			<CheckBox
 				name="check-name"
+				checked={boolean('second checked', false)}
 				value="2"
 				label="Oh, and it also works when mixed."
 			/>

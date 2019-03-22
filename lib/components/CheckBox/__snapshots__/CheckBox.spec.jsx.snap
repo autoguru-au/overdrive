@@ -22,30 +22,33 @@ exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
   <input
     checked=""
     class="nativeInput"
+    name=""
     type="checkbox"
     value="1"
   />
   <div
     class="focusRect"
   />
-  <span
-    class="root detail2 label"
+  <label
+    class="label"
   >
     check label 1
-  </span>
+  </label>
 </div>
 `;
 
 exports[`<CheckBox /> should match the snapshot for a focused check 1`] = `
-<CheckBox
+<Component
   label="check label 1"
   value="1"
 >
   <CheckableBase
     checked={false}
     className="checkbox"
+    disabled={false}
     handleChange={[Function]}
     handleClick={[Function]}
+    inputName=""
     inputType="checkbox"
     label="check label 1"
     value="1"
@@ -64,6 +67,7 @@ exports[`<CheckBox /> should match the snapshot for a focused check 1`] = `
         checked={false}
         className="nativeInput"
         disabled={false}
+        name=""
         onChange={[Function]}
         onClick={[Function]}
         type="checkbox"
@@ -72,19 +76,14 @@ exports[`<CheckBox /> should match the snapshot for a focused check 1`] = `
       <div
         className="focusRect"
       />
-      <DetailText
+      <label
         className="label"
-        size="detail-2"
       >
-        <span
-          className="root detail2 label"
-        >
-          check label 1
-        </span>
-      </DetailText>
+        check label 1
+      </label>
     </div>
   </CheckableBase>
-</CheckBox>
+</Component>
 `;
 
 exports[`<CheckBox /> should match the snapshot for a single check 1`] = `
@@ -100,17 +99,18 @@ exports[`<CheckBox /> should match the snapshot for a single check 1`] = `
   </div>
   <input
     class="nativeInput"
+    name=""
     type="checkbox"
     value="1"
   />
   <div
     class="focusRect"
   />
-  <span
-    class="root detail2 label"
+  <label
+    class="label"
   >
     check label 1
-  </span>
+  </label>
 </div>
 `;
 
@@ -127,8 +127,8 @@ exports[`<CheckBox /> should match the snapshot for a single check with no value
   </div>
   <input
     class="nativeInput"
+    name=""
     type="checkbox"
-    value=""
   />
   <div
     class="focusRect"

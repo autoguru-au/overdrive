@@ -2,7 +2,6 @@ import React from 'react';
 import { CheckBox } from './';
 import { mount, render } from 'enzyme';
 import { act } from 'react-dom/test-utils';
-import { Radio, RadioGroup } from '../Radio';
 
 describe('<CheckBox />', () => {
 	it('should not throw', () =>
