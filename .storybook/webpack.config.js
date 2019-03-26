@@ -56,9 +56,6 @@ module.exports = ({ config: defaultConfig }) => {
 				options: {
 					sourceMap: true,
 					plugins: [
-						require('css-mqpacker')({
-							sort: true,
-						}),
 						require('postcss-flexbugs-fixes'),
 						require('postcss-preset-env')({
 							autoprefixer: {
