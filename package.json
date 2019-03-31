@@ -75,7 +75,7 @@
     "@autoguru/tsconfig": "^1.0.12",
     "@babel/core": "^7.4.0",
     "@commitlint/cli": "^7.5.2",
-    "@octokit/rest": "^16.20.0",
+    "@octokit/rest": "^16.22.0",
     "@semantic-release/commit-analyzer": "^6.1.0",
     "@semantic-release/github": "^5.2.10",
     "@semantic-release/npm": "^5.1.4",
@@ -90,7 +90,7 @@
     "@storybook/core": "^5.0.3",
     "@storybook/react": "^5.0.3",
     "@storybook/theming": "^5.0.3",
-    "@types/node": "^11.11.0",
+    "@types/node": "^11.12.2",
     "@types/react": "^16.8.8",
     "@types/react-dom": "^16.8.3",
     "autoprefixer": "^9.4.10",
@@ -142,7 +142,7 @@
     "tslint": "^5.14.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^4.0.0",
-    "typescript": "~3.3.4000",
+    "typescript": "~3.4.1",
     "webpack": "^4.29.6"
   },
   "peerDependencies": {
