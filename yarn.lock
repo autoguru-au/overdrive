@@ -4113,9 +4113,9 @@ browserify-zlib@^0.2.0:
     pako "~1.0.5"
 
 browserslist-config-autoguru@^1.0.19:
-  version "1.0.19"
-  resolved "https://registry.yarnpkg.com/browserslist-config-autoguru/-/browserslist-config-autoguru-1.0.19.tgz#4379220bc4f3fea2b69d69096876c5a97b113136"
-  integrity sha512-5A47+alVaFP8kFeah4SsTPmGsC3o+Pl4CRbn5h/is2gDWyR9PkLMMOSy7tB5Iw7/YXsJh/w/wFCD4hz51sUmkg==
+  version "1.0.20"
+  resolved "https://registry.yarnpkg.com/browserslist-config-autoguru/-/browserslist-config-autoguru-1.0.20.tgz#a83f4211f93b518393900d7e8f167dfd81d7abfd"
+  integrity sha512-I6w7+45OA455673/mukFxGhk/uiSpX+Rts/elKfPHRXJI0jfxolRitCQ4pZoPpI2h+UMZEyAKsuX0S3+bvfSEw==
 
 browserslist@4.4.1:
   version "4.4.1"
