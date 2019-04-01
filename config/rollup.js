@@ -14,6 +14,10 @@ function createRollupConfig({ entry: input }) {
 
 		external: externalPackages,
 
+		treeshake: {
+			propertyReadSideEffects: false,
+		},
+
 		plugins: [
 			nodeResolve({
 				preferBuiltins: true,
@@ -21,14 +25,17 @@ function createRollupConfig({ entry: input }) {
 				jsnext: true,
 				main: true,
 			}),
-			typescript(),
+
 			postcss({
 				extract: true,
+				inject: false,
 				modules: {
 					camelCase: true,
 					generateScopedName: '_[hash:base64:5]',
 				},
 			}),
+
+			typescript(),
 		],
 	};
 }

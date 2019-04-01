@@ -26,14 +26,20 @@ async function run() {
 	try {
 		outputs = await Promise.all([
 			bundle.write({
-				format: 'cjs',
-				sourcemap: true,
 				file: resolve(distFolder, 'overdrive.cjs.js'),
+				format: 'cjs',
+				freeze: false,
+				name: 'overdrive',
+				sourcemap: true,
+				strict: true,
 			}),
 			bundle.write({
-				format: 'esm',
-				sourcemap: true,
+				esModule: false,
 				file: resolve(distFolder, 'overdrive.esm.js'),
+				format: 'esm',
+				name: 'overdrive',
+				sourcemap: true,
+				strict: true,
 			}),
 		]);
 	} catch (e) {
