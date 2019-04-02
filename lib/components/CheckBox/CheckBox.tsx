@@ -1,9 +1,9 @@
 import cx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
+import { CheckIcon } from '../../icons';
 import { CheckableBase } from '../CheckableBase';
 import { checkableClass } from '../CheckableBase/CheckableBase';
 import styles from './style.scss';
-import { CheckIcon } from '../../icons';
 
 export interface IProps {
 	className?: string;
