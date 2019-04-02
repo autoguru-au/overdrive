@@ -1,5 +1,4 @@
 import { boolean, text } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react';
 import React, { useState } from 'react';
 import { CheckBox } from '.';
@@ -7,7 +6,6 @@ import styles from '../CheckableBase/style.scss';
 
 const baseProps = () => ({
 	label: text('Checkbox label', 'check me!'),
-	onChange: checked => action('checked')(checked),
 });
 
 const checked = () => ({
