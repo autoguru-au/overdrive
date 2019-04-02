@@ -14,7 +14,6 @@ const Icon = (
 	</svg>
 );
 
-export default function Calendar() {
+export default function CalendarIcon() {
 	return Icon;
 }
-Calendar.displayName = 'CalendarIcon';

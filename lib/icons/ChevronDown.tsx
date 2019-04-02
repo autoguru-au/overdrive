@@ -14,7 +14,6 @@ const Icon = (
 	</svg>
 );
 
-export default function ChevronDown() {
+export default function ChevronDownIcon() {
 	return Icon;
 }
-ChevronDown.displayName = 'ChevronDownIcon';

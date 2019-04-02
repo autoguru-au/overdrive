@@ -1,8 +1,7 @@
 import cx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
-import { ChevronLeft, ChevronRight } from '../../icons';
 import { Button, EButtonSize, EButtonVariant } from '../Button';
-import { Icon } from '../Icon';
+import { ChevronLeftIcon, ChevronRightIcon, Icon } from '../Icon';
 import styles from './style.scss';
 
 export enum EChangeDirection {
@@ -45,7 +44,11 @@ export const SimplePaginationComponent: FunctionComponent<IProps> = ({
 				variant={EButtonVariant.Secondary}
 				className={chevronLeftCls}
 				onClick={handleClick(EChangeDirection.Previous)}>
-				<Icon className={styles.icon} size={24} icon={ChevronLeft} />
+				<Icon
+					className={styles.icon}
+					size={24}
+					icon={ChevronLeftIcon}
+				/>
 			</Button>
 			<Button
 				rounded={true}
@@ -54,7 +57,11 @@ export const SimplePaginationComponent: FunctionComponent<IProps> = ({
 				variant={EButtonVariant.Secondary}
 				className={chevronRightCls}
 				onClick={handleClick(EChangeDirection.Next)}>
-				<Icon className={styles.icon} size={24} icon={ChevronRight} />
+				<Icon
+					className={styles.icon}
+					size={24}
+					icon={ChevronRightIcon}
+				/>
 			</Button>
 		</div>
 	);

@@ -14,7 +14,6 @@ const Icon = (
 	</svg>
 );
 
-export default function WindowClose() {
+export default function WindowCloseIcon() {
 	return Icon;
 }
-WindowClose.displayName = 'WindowCloseIcon';

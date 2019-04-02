@@ -1,9 +1,9 @@
 import cx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
-import { Check } from '../../icons';
 import { CheckableBase } from '../CheckableBase';
 import { checkableClass } from '../CheckableBase/CheckableBase';
 import styles from './style.scss';
+import { CheckIcon } from '../../icons';
 
 export interface IProps {
 	className?: string;
@@ -43,7 +43,7 @@ export const CheckBox: FunctionComponent<IProps> = memo(
 				className={cx(checkableClass, {
 					[styles.selected]: checked,
 				})}>
-				{checked && <Check />}
+				{checked && <CheckIcon />}
 				<div className={styles.box} />
 			</div>
 		</CheckableBase>
