@@ -7,7 +7,7 @@ import styles from '../CheckableBase/style.scss';
 
 const baseProps = () => ({
 	label: text('Checkbox label', 'check me!'),
-	onChange: checked => console.log('checked', checked),
+	onChange: checked => action('checked')(checked),
 });
 
 const checked = () => ({
