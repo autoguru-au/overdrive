@@ -1,0 +1,46 @@
+@import '../../theme/tokens/facade';
+
+$strokeSize: 2px;
+$checkSize: 16px;
+
+.checkbox {
+	display: flex;
+}
+
+.box,
+svg {
+	position: absolute;
+	border-radius: 2px;
+}
+
+.box {
+	width: var(--od--CheckableBase--checkable-size);
+	height: var(--od--CheckableBase--checkable-size);
+	top: var(--od--CheckableBase--checkable-padding);
+	left: var(--od--CheckableBase--checkable-padding);
+	border: $strokeSize solid var(--od--CheckableBase--default-colour);
+	border-radius: 2px;
+	transition: border-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
+		background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
+	z-index: 0;
+
+	.selected & {
+		background-color: var(--od--CheckableBase--checked-colour);
+		border-color: var(--od--CheckableBase--checked-colour);
+	}
+}
+
+svg {
+	width: $checkSize;
+	height: $checkSize;
+	z-index: 1;
+	fill: white;
+	top: calc(
+		var(--od--CheckableBase--checkable-padding) +
+			(var(--od--CheckableBase--checkable-size) - #{$checkSize}) * 0.5
+	);
+	left: calc(
+		var(--od--CheckableBase--checkable-padding) +
+			(var(--od--CheckableBase--checkable-size) - #{$checkSize}) * 0.5
+	);
+}
