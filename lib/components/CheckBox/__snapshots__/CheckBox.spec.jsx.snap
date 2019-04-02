@@ -4,6 +4,13 @@ exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
 <div
   class="root checkbox checked"
 >
+  <input
+    checked=""
+    class="nativeInput"
+    name=""
+    type="checkbox"
+    value="1"
+  />
   <div
     class="checkable selected"
   >
@@ -19,13 +26,6 @@ exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
       class="box"
     />
   </div>
-  <input
-    checked=""
-    class="nativeInput"
-    name=""
-    type="checkbox"
-    value="1"
-  />
   <div
     class="focusRect"
   />
@@ -56,13 +56,6 @@ exports[`<CheckBox /> should match the snapshot for a focused check 1`] = `
     <div
       className="root checkbox"
     >
-      <div
-        className="checkable"
-      >
-        <div
-          className="box"
-        />
-      </div>
       <input
         checked={false}
         className="nativeInput"
@@ -73,6 +66,13 @@ exports[`<CheckBox /> should match the snapshot for a focused check 1`] = `
         type="checkbox"
         value="1"
       />
+      <div
+        className="checkable"
+      >
+        <div
+          className="box"
+        />
+      </div>
       <div
         className="focusRect"
       />
@@ -90,6 +90,12 @@ exports[`<CheckBox /> should match the snapshot for a single check 1`] = `
 <div
   class="root checkbox"
 >
+  <input
+    class="nativeInput"
+    name=""
+    type="checkbox"
+    value="1"
+  />
   <div
     class="checkable"
   >
@@ -97,12 +103,6 @@ exports[`<CheckBox /> should match the snapshot for a single check 1`] = `
       class="box"
     />
   </div>
-  <input
-    class="nativeInput"
-    name=""
-    type="checkbox"
-    value="1"
-  />
   <div
     class="focusRect"
   />
@@ -118,6 +118,11 @@ exports[`<CheckBox /> should match the snapshot for a single check with no value
 <div
   class="root checkbox"
 >
+  <input
+    class="nativeInput"
+    name=""
+    type="checkbox"
+  />
   <div
     class="checkable"
   >
@@ -125,11 +130,6 @@ exports[`<CheckBox /> should match the snapshot for a single check with no value
       class="box"
     />
   </div>
-  <input
-    class="nativeInput"
-    name=""
-    type="checkbox"
-  />
   <div
     class="focusRect"
   />

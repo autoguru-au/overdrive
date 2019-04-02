@@ -42,7 +42,6 @@ export const CheckableBase: FunctionComponent<IProps> = ({
 				[styles.checked]: checked,
 				[styles.disabled]: disabled === true,
 			})}>
-			{children}
 			<input
 				name={inputName}
 				value={value}
@@ -53,9 +52,8 @@ export const CheckableBase: FunctionComponent<IProps> = ({
 				type={inputType}
 				className={styles.nativeInput}
 			/>
-
+			{children}
 			<div className={styles.focusRect} />
-
 			{!!(typeof label === 'string' && label.length > 0) && (
 				<label children={label} className={styles.label} />
 			)}

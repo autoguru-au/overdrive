@@ -7,6 +7,12 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
   <div
     class="root radio"
   >
+    <input
+      class="nativeInput"
+      name="radio"
+      type="radio"
+      value="1"
+    />
     <div
       class="checkable"
     >
@@ -17,12 +23,6 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
         class="innerCircle"
       />
     </div>
-    <input
-      class="nativeInput"
-      name="radio"
-      type="radio"
-      value="1"
-    />
     <div
       class="focusRect"
     />
@@ -35,6 +35,12 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
   <div
     class="root radio"
   >
+    <input
+      class="nativeInput"
+      name="radio"
+      type="radio"
+      value="2"
+    />
     <div
       class="checkable"
     >
@@ -45,12 +51,6 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
         class="innerCircle"
       />
     </div>
-    <input
-      class="nativeInput"
-      name="radio"
-      type="radio"
-      value="2"
-    />
     <div
       class="focusRect"
     />
@@ -81,16 +81,6 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
     <div
       className="root radio"
     >
-      <div
-        className="checkable"
-      >
-        <div
-          className="outerCircle"
-        />
-        <div
-          className="innerCircle"
-        />
-      </div>
       <input
         checked={false}
         className="nativeInput"
@@ -101,6 +91,16 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
         type="radio"
         value="1"
       />
+      <div
+        className="checkable"
+      >
+        <div
+          className="outerCircle"
+        />
+        <div
+          className="innerCircle"
+        />
+      </div>
       <div
         className="focusRect"
       />
@@ -121,6 +121,12 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
   <div
     class="root radio"
   >
+    <input
+      class="nativeInput"
+      name="radio"
+      type="radio"
+      value="1"
+    />
     <div
       class="checkable"
     >
@@ -131,12 +137,6 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
         class="innerCircle"
       />
     </div>
-    <input
-      class="nativeInput"
-      name="radio"
-      type="radio"
-      value="1"
-    />
     <div
       class="focusRect"
     />
@@ -149,6 +149,12 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
   <div
     class="root radio"
   >
+    <input
+      class="nativeInput"
+      name="radio"
+      type="radio"
+      value="2"
+    />
     <div
       class="checkable"
     >
@@ -159,12 +165,6 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
         class="innerCircle"
       />
     </div>
-    <input
-      class="nativeInput"
-      name="radio"
-      type="radio"
-      value="2"
-    />
     <div
       class="focusRect"
     />
@@ -177,6 +177,12 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
   <div
     class="root radio"
   >
+    <input
+      class="nativeInput"
+      name="radio"
+      type="radio"
+      value="3"
+    />
     <div
       class="checkable"
     >
@@ -187,12 +193,6 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
         class="innerCircle"
       />
     </div>
-    <input
-      class="nativeInput"
-      name="radio"
-      type="radio"
-      value="3"
-    />
     <div
       class="focusRect"
     />
@@ -205,6 +205,12 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
   <div
     class="root radio"
   >
+    <input
+      class="nativeInput"
+      name="radio"
+      type="radio"
+      value="4"
+    />
     <div
       class="checkable"
     >
@@ -215,12 +221,6 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
         class="innerCircle"
       />
     </div>
-    <input
-      class="nativeInput"
-      name="radio"
-      type="radio"
-      value="4"
-    />
     <div
       class="focusRect"
     />
@@ -240,6 +240,12 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
   <div
     class="root radio"
   >
+    <input
+      class="nativeInput"
+      name="radio"
+      type="radio"
+      value="1"
+    />
     <div
       class="checkable"
     >
@@ -250,12 +256,6 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
         class="innerCircle"
       />
     </div>
-    <input
-      class="nativeInput"
-      name="radio"
-      type="radio"
-      value="1"
-    />
     <div
       class="focusRect"
     />
@@ -275,6 +275,11 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
   <div
     class="root radio"
   >
+    <input
+      class="nativeInput"
+      name="radio"
+      type="radio"
+    />
     <div
       class="checkable"
     >
@@ -285,11 +290,6 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
         class="innerCircle"
       />
     </div>
-    <input
-      class="nativeInput"
-      name="radio"
-      type="radio"
-    />
     <div
       class="focusRect"
     />

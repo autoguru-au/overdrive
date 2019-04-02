@@ -10,7 +10,7 @@
 	--od--CheckableBase--active-colour: #{getColour(gray, 200)};
 	--od--CheckableBase--inactive-colour: #{getColour(gray, 300)};
 	--od--CheckableBase--checked-colour: #{getColour(green, 600)};
-	--od--CheckableBase--focused-outline-colour: #{getColour(blue, 400)};
+	--od--CheckableBase--focused-outline-colour: #{getColour(green, 900)};
 }
 
 .root,
@@ -75,7 +75,7 @@
 	padding: 0;
 	opacity: 0;
 	cursor: inherit;
-	z-index: 1;
+	z-index: 2;
 
 	&[disabled] {
 		pointer-events: none;
@@ -87,25 +87,30 @@
 
 	.hovered &,
 	&:hover {
-		+ div.focus-rect {
+		~ div.focus-rect {
 			background-color: var(--od--CheckableBase--hovered-colour);
 		}
 	}
 
 	.active &,
 	&:active {
-		+ div.focus-rect {
+		~ div.focus-rect {
 			background-color: var(--od--CheckableBase--active-colour);
 		}
 	}
 
 	.focused &,
-	&:focus:not(:hover):not(:active):not(:checked) {
-		+ div.focus-rect {
-			box-shadow: inset 0 0 0 2px
+	&:focus:checked {
+		~ div:not(.focus-rect) > :first-child {
+			box-shadow: 0 0 0 2px
 				var(--od--CheckableBase--focused-outline-colour);
-			border-radius: 4px;
-			overflow: hidden;
+		}
+	}
+
+	.focused &,
+	&:focus:not(:checked) {
+		~ div:not(.focus-rect) > :first-child {
+			border-color: var(--od--CheckableBase--focused-outline-colour);
 		}
 	}
 }
