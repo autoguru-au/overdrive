@@ -1,4 +1,5 @@
 import { boolean, text } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react';
 import React, { useState } from 'react';
 import { CheckBox } from '.';
