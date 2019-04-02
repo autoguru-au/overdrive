@@ -40,7 +40,7 @@ export const CheckBox: FunctionComponent<IProps> = memo(
 			handleClick={onClick}
 			handleChange={onChange}>
 			<div
-				className={cx([checkableClass], {
+				className={cx(checkableClass, {
 					[styles.selected]: checked,
 				})}>
 				{checked && <Check />}
