@@ -18,8 +18,7 @@ const COMPONENT_TEMPLATE = `import React from 'react';
 
 const Icon = (%content%);
 
-export default function %name%() { return Icon; };
-%name%.displayName = '%name%Icon';
+export default function %name%Icon() { return Icon; };
 `;
 
 const root = path.join(__dirname, '../');
@@ -64,7 +63,7 @@ Promise.all(svgs)
 	.then(completed => {
 		const exports = completed.map(icon =>
 			format(
-				`export {default as %s} from './%s';`,
+				`export {default as %sIcon} from './%s';`,
 				icon.name,
 				path.parse(path.relative(outputFolderPath, icon.iconOutputPath))
 					.name

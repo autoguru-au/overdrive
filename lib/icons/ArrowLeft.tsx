@@ -14,7 +14,6 @@ const Icon = (
 	</svg>
 );
 
-export default function ArrowLeft() {
+export default function ArrowLeftIcon() {
 	return Icon;
 }
-ArrowLeft.displayName = 'ArrowLeftIcon';

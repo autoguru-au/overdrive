@@ -6,12 +6,12 @@
  * -----------------------------------------------------------------------------
  */
 
-export { default as AccountBox } from './AccountBox';
-export { default as ArrowLeft } from './ArrowLeft';
-export { default as Calendar } from './Calendar';
-export { default as Check } from './Check';
-export { default as ChevronDown } from './ChevronDown';
-export { default as ChevronLeft } from './ChevronLeft';
-export { default as ChevronRight } from './ChevronRight';
-export { default as Phone } from './Phone';
-export { default as WindowClose } from './WindowClose';
+export { default as AccountBoxIcon } from './AccountBox';
+export { default as ArrowLeftIcon } from './ArrowLeft';
+export { default as CalendarIcon } from './Calendar';
+export { default as CheckIcon } from './Check';
+export { default as ChevronDownIcon } from './ChevronDown';
+export { default as ChevronLeftIcon } from './ChevronLeft';
+export { default as ChevronRightIcon } from './ChevronRight';
+export { default as PhoneIcon } from './Phone';
+export { default as WindowCloseIcon } from './WindowClose';

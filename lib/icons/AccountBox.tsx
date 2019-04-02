@@ -14,7 +14,6 @@ const Icon = (
 	</svg>
 );
 
-export default function AccountBox() {
+export default function AccountBoxIcon() {
 	return Icon;
 }
-AccountBox.displayName = 'AccountBoxIcon';

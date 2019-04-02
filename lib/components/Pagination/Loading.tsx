@@ -1,7 +1,6 @@
 import cx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
-import { ChevronLeft, ChevronRight } from '../../icons';
-import { Icon } from '../Icon';
+import { ChevronLeftIcon, ChevronRightIcon, Icon } from '../Icon';
 import styles from './style.scss';
 import { Bubble } from './Bubble';
 
@@ -18,11 +17,19 @@ export const LoadingComponent: FunctionComponent<IProps> = ({
 
 	return (
 		<span className={cx([styles.loading, className])}>
-			<Icon size={25} icon={ChevronLeft} className={disabledChevCls} />
+			<Icon
+				size={25}
+				icon={ChevronLeftIcon}
+				className={disabledChevCls}
+			/>
 			{new Array(placeholderBubblesNum).fill('').map((_, index) => (
 				<Bubble key={index} className={styles.disabled} children={''} />
 			))}
-			<Icon size={25} icon={ChevronRight} className={disabledChevCls} />
+			<Icon
+				size={25}
+				icon={ChevronRightIcon}
+				className={disabledChevCls}
+			/>
 		</span>
 	);
 };
