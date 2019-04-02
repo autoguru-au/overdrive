@@ -1,7 +1,6 @@
 import cx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
-import { ChevronLeft, ChevronRight } from '../../icons';
-import { Icon } from '../Icon';
+import { ChevronLeftIcon, ChevronRightIcon, Icon } from '../Icon';
 import styles from './style.scss';
 import { Bubble } from './Bubble';
 import { PaginationLoading } from './Loading';
@@ -45,7 +44,7 @@ export const PaginationComponent: FunctionComponent<IProps> = ({
 	return total && pageSize && activePage && numPagesDisplayed ? (
 		<span className={cls}>
 			<a className={chevronLeftCls} onClick={handleClick(activePage - 1)}>
-				<Icon size={24} icon={ChevronLeft} />
+				<Icon size={24} icon={ChevronLeftIcon} />
 			</a>
 			{buildPagesList(
 				numPages,
@@ -64,7 +63,7 @@ export const PaginationComponent: FunctionComponent<IProps> = ({
 			<a
 				className={chevronRightCls}
 				onClick={handleClick(allowedActive + 1)}>
-				<Icon size={24} icon={ChevronRight} />
+				<Icon size={24} icon={ChevronRightIcon} />
 			</a>
 		</span>
 	) : (

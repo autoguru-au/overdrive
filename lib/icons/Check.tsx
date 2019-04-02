@@ -14,7 +14,6 @@ const Icon = (
 	</svg>
 );
 
-export default function Check() {
+export default function CheckIcon() {
 	return Icon;
 }
-Check.displayName = 'CheckIcon';

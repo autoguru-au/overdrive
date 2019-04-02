@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
-import { ChevronDown } from '../../icons';
-import { Icon } from '../Icon';
+import { ChevronDownIcon, Icon } from '../Icon';
 import { withEnhancedInput } from '../InputBase';
 import styles from './style.scss';
 
@@ -18,7 +17,7 @@ const SelectInputComponent = withEnhancedInput(function SelectInput({
 				{...rest}
 				autoComplete="off"
 			/>
-			<Icon className={styles.arrow} size={25} icon={ChevronDown} />
+			<Icon className={styles.arrow} size={25} icon={ChevronDownIcon} />
 		</>
 	);
 });

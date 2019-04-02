@@ -14,7 +14,6 @@ const Icon = (
 	</svg>
 );
 
-export default function Phone() {
+export default function PhoneIcon() {
 	return Icon;
 }
-Phone.displayName = 'PhoneIcon';
