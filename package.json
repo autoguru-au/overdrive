@@ -152,7 +152,7 @@
   },
   "renovate": {
     "extends": [
-      "autoguru:default"
+      "autoguru"
     ]
   }
 }
