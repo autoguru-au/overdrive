@@ -19,7 +19,7 @@
 
 ---
 
-Overdrive is a product component library, and design system for AutoGuru. Built with React, TypeScript, Webpack, SCSS and Storybook.
+Overdrive is a product component library, and design system for AutoGuru. Built with [React](https://github.com/facebook/react), [TypeScript](https://github.com/Microsoft/typescript), [webpack](https://github.com/webpack/webpack), [SCSS](https://sass-lang.com/), [CSS Modules](https://github.com/css-modules/postcss-modules) and [Storybook](https://github.com/storybooks/storybook).
 
 ## Usage
 
