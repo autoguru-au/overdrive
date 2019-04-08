@@ -20,10 +20,8 @@ function createRollupConfig({ entry: input }) {
 
 		plugins: [
 			nodeResolve({
+				mainFields: ['module', 'jsnext', 'main'],
 				preferBuiltins: true,
-				module: true,
-				jsnext: true,
-				main: true,
 			}),
 
 			postcss({
