@@ -13502,10 +13502,10 @@ renderkid@^2.0.1:
     strip-ansi "^3.0.0"
     utila "^0.4.0"
 
-renovate-config-autoguru@^1.0.31:
-  version "1.0.31"
-  resolved "https://registry.yarnpkg.com/renovate-config-autoguru/-/renovate-config-autoguru-1.0.31.tgz#ee888c42858802bbac735cd30b0bf189fa926ee9"
-  integrity sha512-NyIEWfVx2KE3jc1zeQAna+03TD61tYNcaYtv2UsVG8N59qV3occvp5SPZ6BKkD41EfvfWTIuS6JQqRV5KTk3jA==
+renovate-config-autoguru@^1.0.32:
+  version "1.0.32"
+  resolved "https://registry.yarnpkg.com/renovate-config-autoguru/-/renovate-config-autoguru-1.0.32.tgz#cf7b5f9b5a011efcfcd65498531acb08ed419cb4"
+  integrity sha512-4LTdmdN98G3zhvRa0guW2YL+nxEBJ1Mw4MHegdk2Oqzqej77cespzTz6oTEoR17R/coAeVD8Pld+Blm+uGAinA==
 
 repeat-element@^1.1.2:
   version "1.1.3"
