@@ -1,0 +1,30 @@
+.grid {
+	display: flex;
+}
+
+.wrap {
+	flex-wrap: wrap;
+}
+
+.no-wrap {
+	flex-wrap: nowrap;
+}
+
+.grid-item {
+	display: flex;
+}
+
+.outer-grid {
+	width: 100%;
+	overflow: hidden;
+}
+
+.direction {
+	&-row {
+		flex-direction: row;
+	}
+
+	&-column {
+		flex-direction: column;
+	}
+}
