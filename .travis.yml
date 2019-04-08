@@ -25,7 +25,7 @@ jobs:
           if [[ "$TRAVIS_BRANCH" == "master" && $TRAVIS_EVENT_TYPE == "push" ]]; then
             yarn run chromatic --auto-accept-changes;
           elif [[ $TRAVIS_EVENT_TYPE == "pull_request" ]]; then
-            yarn run chromatic; # This will fail on external PR's as Travis won't have the chromatic token
+            #yarn run chromatic; # This will fail on external PR's as Travis won't have the chromatic token
 
           else
             echo "Skipping chromatic, as it's more a regression tool...";
