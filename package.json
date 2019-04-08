@@ -122,7 +122,7 @@
     "prettier": "^1.16.4",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
-    "renovate-config-autoguru": "^1.0.24",
+    "renovate-config-autoguru": "^1.0.26",
     "resolve-url-loader": "^3.1.0",
     "rimraf": "^2.6.3",
     "rollup": "^1.9.0",
