@@ -16,7 +16,9 @@ branches:
 jobs:
   include:
     - stage: test
-      script: yarn test --no-cache --ci --coverage
+      script:
+        - yarn test --no-cache --ci --coverage
+        - yarn build # we also wan't to check that a build can happen
       after_success:
         - curl -s https://codecov.io/bash | bash
         - |
@@ -32,7 +34,7 @@ jobs:
     - stage: release
       script: yarn build
       after_success: yarn semantic-release
-      if: branch = master AND type = push # We only want to release when code hits master.
+      if: branch = master AND type = push # We only wan't to release when code hits master.
 
     - stage: deploy
       script: yarn storybook:build
