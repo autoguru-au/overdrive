@@ -41,9 +41,9 @@
   integrity sha512-H/WEu/7+PWGJ+3Vw2yp/+1QYEy2gziZhj/YDVYTlnparnLe9FrvXfZfQEICyfcbnv/bXJG+pQEZL6E6+QSnlDA==
 
 "@autoguru/utilities@^1.0.21":
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.21.tgz#e7df4d8e378864594ae6f36eb1fd526301239864"
-  integrity sha512-9VkokV7ztAqNZmhU+CAUGqPZ7P7pVct+lHcgKBTlPKAPHXODdqTlNFv6hnx0AeZ/1BSvZi/NlWvOwgPdDwTWZg==
+  version "1.0.25"
+  resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.25.tgz#2f0a48d3b12ebff40c42e86b7fd8a8f4eadb1cd3"
+  integrity sha512-Zarz5OEIAsehrqPAzNimbphghDJpqrhOcJ35kLURdaH1EIHawB0XAdNvdOn/SZ/rnyIN1XcYs0KEe5NAD86WPA==
 
 "@babel/code-frame@7.0.0", "@babel/code-frame@^7.0.0":
   version "7.0.0"
