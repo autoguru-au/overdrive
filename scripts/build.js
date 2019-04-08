@@ -22,30 +22,24 @@ async function run() {
 		})
 	);
 
-	let outputs;
-	try {
-		outputs = await Promise.all([
-			bundle.write({
-				file: resolve(distFolder, 'overdrive.cjs.js'),
-				format: 'cjs',
-				freeze: false,
-				name: 'overdrive',
-				sourcemap: true,
-				strict: true,
-			}),
-			bundle.write({
-				esModule: false,
-				file: resolve(distFolder, 'overdrive.esm.js'),
-				format: 'esm',
-				name: 'overdrive',
-				sourcemap: true,
-				strict: true,
-			}),
-		]);
-	} catch (e) {
-		console.error(e);
-		process.exit(1);
-	}
+	let outputs = await Promise.all([
+		bundle.write({
+			file: resolve(distFolder, 'overdrive.cjs.js'),
+			format: 'cjs',
+			freeze: false,
+			name: 'overdrive',
+			sourcemap: true,
+			strict: true,
+		}),
+		bundle.write({
+			esModule: false,
+			file: resolve(distFolder, 'overdrive.esm.js'),
+			format: 'esm',
+			name: 'overdrive',
+			sourcemap: true,
+			strict: true,
+		}),
+	]);
 
 	await copy(['./lib/theme/**/*', distFolder], { up: 1 });
 
@@ -76,7 +70,17 @@ run()
 	})
 	.catch(err => {
 		console.log('');
-		console.error(err);
+		console.log(`${chalk.red(err.message)}\n`);
+		console.log(
+			chalk.dim(
+				`==> ${relative(root, err.loc.file)}:${err.loc.line}:${
+					err.loc.column
+				}`
+			)
+		);
+		console.log(err.frame);
+		console.log('');
+		console.log(chalk.dim(err.stack));
 	});
 
 function copy(paths, config) {
