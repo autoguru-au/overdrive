@@ -14,6 +14,15 @@ export enum ELayoutPerpendicularAlign {
 	Stretch = 'stretch',
 }
 
+export enum EItemAlignSelf {
+	Auto = 'auto',
+	Start = 'start',
+	Baseline = 'baseline',
+	Center = 'center',
+	End = 'end',
+	Stretch = 'stretch',
+}
+
 export enum EGridSpace {
 	Space0 = 'space-0',
 	Space1 = 'space-1',

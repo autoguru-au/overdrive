@@ -1,6 +1,7 @@
 export {
 	ELayoutAlign as EGridLayoutAlign,
 	ELayoutPerpendicularAlign as EGridLayoutPerpendicularAlign,
+	EItemAlignSelf as EGridItemAlignSelf,
 	EGridSpace,
 } from './enums';
 

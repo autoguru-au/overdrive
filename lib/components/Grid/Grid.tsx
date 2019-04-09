@@ -1,5 +1,10 @@
 import cx from 'clsx';
-import { FlexDirectionProperty, FlexWrapProperty } from 'csstype';
+import {
+	FlexDirectionProperty,
+	FlexWrapProperty,
+	HeightProperty,
+	WidthProperty,
+} from 'csstype';
 import React, { FunctionComponent } from 'react';
 import { GridDefaults } from './defaults';
 import { EGridSpace, ELayoutAlign, ELayoutPerpendicularAlign } from './enums';
@@ -12,10 +17,13 @@ export interface IProps {
 	padding?: EGridSpace;
 	gutter?: EGridSpace;
 	layoutAlign?: ELayoutAlign;
+	width?: WidthProperty<string>;
+	height?: HeightProperty<string>;
 	layoutPerpendicularAlign?: ELayoutPerpendicularAlign;
 }
 
 export interface IGridContext {
+	direction: FlexDirectionProperty;
 	padding: EGridSpace;
 	gutter: EGridSpace;
 	gutterSpace?: string;
@@ -74,6 +82,8 @@ export const Grid: FunctionComponent<IProps> = ({
 	className = '',
 	direction = 'row',
 	wrap = 'wrap',
+	width = '100%',
+	height = '100%',
 	layoutAlign = ELayoutAlign.Start,
 	layoutPerpendicularAlign = ELayoutPerpendicularAlign.Start,
 	children,
@@ -82,6 +92,7 @@ export const Grid: FunctionComponent<IProps> = ({
 }) => {
 	const contextValue = {
 		...GridDefaults,
+		direction,
 		padding,
 		gutter,
 	};
@@ -96,7 +107,12 @@ export const Grid: FunctionComponent<IProps> = ({
 				...contextValue,
 				gutterSpace,
 			}}>
-			<div className={gridClass}>
+			<div
+				className={gridClass}
+				style={{
+					width,
+					height,
+				}}>
 				<div
 					className={styles.innerGrid}
 					style={{
@@ -110,7 +126,8 @@ export const Grid: FunctionComponent<IProps> = ({
 							contextValue.padding
 						)})`,
 						margin: `calc(var(${gutterSpace}) * -0.5)`,
-						width: `calc(100% + (var(${gutterSpace}))`,
+						width: `calc(${width} + (var(${gutterSpace}))`,
+						height: `calc(${height} + (var(${gutterSpace}))`,
 					}}
 					children={children}
 				/>
