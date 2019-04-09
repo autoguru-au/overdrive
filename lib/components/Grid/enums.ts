@@ -1,11 +1,17 @@
-export enum EDirection {
-	Column = 'Column',
-	Row = 'Row',
+export enum ELayoutAlign {
+	Start = 'start',
+	Center = 'center',
+	End = 'end',
+	SpaceAround = 'space-around',
+	SpaceBetween = 'space-between',
+	SpaceEvenly = 'space-evenly',
 }
 
-export enum EWrap {
-	Wrap = 'wrap',
-	NoWrap = 'nowrap',
+export enum ELayoutPerpendicularAlign {
+	Start = 'start',
+	Center = 'center',
+	End = 'end',
+	Stretch = 'stretch',
 }
 
 export enum EGridSpace {

@@ -1,3 +1,9 @@
-export { EDirection as EGridDirection, EGridSpace } from './enums';
+export {
+	ELayoutAlign as EGridLayoutAlign,
+	ELayoutPerpendicularAlign as EGridLayoutPerpendicularAlign,
+	EGridSpace,
+} from './enums';
 
-export { IGridContext } from './Grid';
+export { Grid, IProps as IGridProps, IGridContext } from './Grid';
+
+export { GridItem, IProps as IGridItemProps } from './GridItem';
