@@ -1,3 +1,4 @@
+import { invariant } from '@autoguru/utilities';
 import cx from 'clsx';
 import {
 	FlexBasisProperty,
@@ -9,7 +10,6 @@ import React, { FunctionComponent, useContext } from 'react';
 import { EItemAlignSelf } from './enums';
 import styles from './style.scss';
 import { GridContext } from './Grid';
-import { invariant } from '@autoguru/utilities';
 
 export interface IProps {
 	className?: string;

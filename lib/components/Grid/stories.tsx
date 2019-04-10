@@ -10,7 +10,6 @@ import {
 	GridItem,
 } from './index';
 import { Box } from '../Box';
-import { Text } from '../Text';
 import {
 	EBreakpointLabels,
 	getBreakpointMediaQuery,
