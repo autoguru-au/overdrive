@@ -320,6 +320,19 @@ storiesOf('Components|Grid/Row', module)
 			{getBoxes(60)}
 		</Grid>
 	))
+	.add('nowrap', () => (
+		<Grid
+			width="100%"
+			height={null}
+			direction={EGridDirection.Row}
+			layoutAlign={EGridLayoutAlign.Start}
+			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Center}
+			wrap={EWrap.NoWrap}
+			padding={EGridSpace.Space2}
+			gutter={EGridSpace.Space4}>
+			{getBoxes(60)}
+		</Grid>
+	))
 	.add('item align', () => {
 		const boxes = getBoxes(60, '60px');
 
@@ -441,6 +454,17 @@ storiesOf('Components|Grid/Column', module)
 			padding={EGridSpace.Space2}
 			gutter={EGridSpace.Space4}>
 			{getBoxes(4, '60px')}
+		</Grid>
+	))
+	.add('nowrap', () => (
+		<Grid
+			direction={EGridDirection.Column}
+			layoutAlign={EGridLayoutAlign.Start}
+			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Center}
+			wrap={EWrap.NoWrap}
+			padding={EGridSpace.Space2}
+			gutter={EGridSpace.Space4}>
+			{getBoxes(40, '60px')}
 		</Grid>
 	))
 	.add('item align', () => {
