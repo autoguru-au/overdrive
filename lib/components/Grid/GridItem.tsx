@@ -9,6 +9,7 @@ import React, { FunctionComponent, useContext } from 'react';
 import { EItemAlignSelf } from './enums';
 import styles from './style.scss';
 import { GridContext } from './Grid';
+import { invariant } from '@autoguru/utilities';
 
 export interface IProps {
 	className?: string;
@@ -42,6 +43,10 @@ export const GridItem: FunctionComponent<IProps> = ({
 	children,
 }) => {
 	const gridContext = useContext(GridContext);
+	invariant(
+		!gridContext || !Object.keys(gridContext).length,
+		'<GridItem> must be wrapped inside a <Grid> element'
+	);
 
 	const gridItemClass = cx([styles.gridItem, className], {});
 
