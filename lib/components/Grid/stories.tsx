@@ -11,6 +11,12 @@ import {
 } from './index';
 import { Box } from '../Box';
 import { Text } from '../Text';
+import {
+	EBreakpointLabels,
+	getBreakpointMediaQuery,
+	IBreakPoint,
+	useMedia,
+} from './breakpoint-utils';
 
 export enum EGridDirection {
 	Column = 'column',
@@ -94,12 +100,73 @@ const getBoxes = (
 			getBox(index, basis, addKnobs, false, index + 1, width, height)
 		);
 
+const MyResponsiveGrid = ({}) => {
+	const breakpoints: Array<IBreakPoint> = [
+		{
+			label: EBreakpointLabels.Mobile,
+			lower: 320,
+			upper: 650,
+		},
+		{
+			label: EBreakpointLabels.Desktop,
+			lower: 651,
+			upper: 1200,
+		},
+		{
+			label: EBreakpointLabels.LargeDesktop,
+			lower: 1201,
+		},
+	];
+
+	const queries = breakpoints.map(breakpoint =>
+		getBreakpointMediaQuery(breakpoint)
+	);
+	const values = ['100%', '30%', '10%'];
+	const columnWidth = useMedia(
+		// Media queries
+		queries,
+		// Column counts (relates to above media queries by array index)
+		values,
+		// Default column count
+		values[0]
+	);
+
+	return (
+		<Grid
+			width="100%"
+			height={null}
+			direction={select(
+				'Direction',
+				EGridDirection,
+				EGridDirection.Row,
+				'Grid'
+			)}
+			layoutAlign={select(
+				'Align',
+				EGridLayoutAlign,
+				EGridLayoutAlign.Center,
+				'Grid'
+			)}
+			layoutPerpendicularAlign={select(
+				'Perpendicular Align',
+				EGridLayoutPerpendicularAlign,
+				EGridLayoutPerpendicularAlign.Center,
+				'Grid'
+			)}
+			wrap={select('Wrap', EWrap, EWrap.Wrap, 'Grid')}
+			padding={select('Padding', EGridSpace, EGridSpace.Space2, 'Grid')}
+			gutter={select('Gutter', EGridSpace, EGridSpace.Space4, 'Grid')}>
+			{getBoxes(120, columnWidth, false)}
+		</Grid>
+	);
+};
+
 storiesOf('Components|Grid', module)
 	.addDecorator(decorate)
 	.add('default', () => (
 		<Grid
 			width="100%"
-			height="100%"
+			height={null}
 			direction={select(
 				'Direction',
 				EGridDirection,
@@ -123,7 +190,8 @@ storiesOf('Components|Grid', module)
 			gutter={select('Gutter', EGridSpace, EGridSpace.Space4, 'Grid')}>
 			{getBoxes(number('Boxes', 36, undefined, 'boxes'), '100px', true)}
 		</Grid>
-	));
+	))
+	.add('responsive', () => <MyResponsiveGrid />);
 
 storiesOf('Components|Grid/Row', module)
 	.addDecorator(decorate)
