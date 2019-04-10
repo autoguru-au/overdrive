@@ -70,8 +70,16 @@ const getBox = (
 		shrink={addKnobs ? select('Shrink', [0, 1], 0, 'Grid Item') : 0}
 		grow={addKnobs ? select('Grow', [0, 1], 0, 'Grid Item') : 0}>
 		<Box distance={1}>
-			<Text>
-				<span
+			<div
+				style={{
+					height: '100%',
+					flexDirection: 'row',
+					boxSizing: 'border-box',
+					display: 'flex',
+					placeContent: 'center',
+					alignItems: 'center',
+				}}>
+				<p
 					style={{
 						padding: '0 10px',
 						textAlign: 'center',
@@ -81,8 +89,8 @@ const getBox = (
 						height: `${Math.abs(Math.sin(index / 2)) * 40 + 30}px`,
 					}}>
 					{label}
-				</span>
-			</Text>
+				</p>
+			</div>
 		</Box>
 	</GridItem>
 );
@@ -197,108 +205,128 @@ storiesOf('Components|Grid/Row', module)
 	.addDecorator(decorate)
 	.add('start | start', () => (
 		<Grid
+			width="100%"
+			height={null}
 			direction={EGridDirection.Row}
 			layoutAlign={EGridLayoutAlign.Start}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Start}
 			wrap={EWrap.Wrap}
 			padding={EGridSpace.Space2}
 			gutter={EGridSpace.Space4}>
-			{getBoxes(20)}
+			{getBoxes(60)}
 		</Grid>
 	))
 	.add('center | start', () => (
 		<Grid
+			width="100%"
+			height={null}
 			direction={EGridDirection.Row}
 			layoutAlign={EGridLayoutAlign.Center}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Start}
 			wrap={EWrap.Wrap}
 			padding={EGridSpace.Space2}
 			gutter={EGridSpace.Space4}>
-			{getBoxes(20)}
+			{getBoxes(60)}
 		</Grid>
 	))
 	.add('end | start', () => (
 		<Grid
+			width="100%"
+			height={null}
 			direction={EGridDirection.Row}
 			layoutAlign={EGridLayoutAlign.End}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Start}
 			wrap={EWrap.Wrap}
 			padding={EGridSpace.Space2}
 			gutter={EGridSpace.Space4}>
-			{getBoxes(20)}
+			{getBoxes(60)}
 		</Grid>
 	))
 	.add('space-between | start', () => (
 		<Grid
+			width="100%"
+			height={null}
 			direction={EGridDirection.Row}
 			layoutAlign={EGridLayoutAlign.SpaceBetween}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Start}
 			wrap={EWrap.Wrap}
 			padding={EGridSpace.Space2}
 			gutter={EGridSpace.Space4}>
-			{getBoxes(20)}
+			{getBoxes(60)}
 		</Grid>
 	))
 	.add('space-around | start', () => (
 		<Grid
+			width="100%"
+			height={null}
 			direction={EGridDirection.Row}
 			layoutAlign={EGridLayoutAlign.SpaceAround}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Start}
 			wrap={EWrap.Wrap}
 			padding={EGridSpace.Space2}
 			gutter={EGridSpace.Space4}>
-			{getBoxes(20)}
+			{getBoxes(60)}
 		</Grid>
 	))
 	.add('space-evenly | start', () => (
 		<Grid
+			width="100%"
+			height={null}
 			direction={EGridDirection.Row}
 			layoutAlign={EGridLayoutAlign.SpaceEvenly}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Start}
 			wrap={EWrap.Wrap}
 			padding={EGridSpace.Space2}
 			gutter={EGridSpace.Space4}>
-			{getBoxes(20)}
+			{getBoxes(60)}
 		</Grid>
 	))
 	.add('start | center', () => (
 		<Grid
+			width="100%"
+			height={null}
 			direction={EGridDirection.Row}
 			layoutAlign={EGridLayoutAlign.Start}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Center}
 			wrap={EWrap.Wrap}
 			padding={EGridSpace.Space2}
 			gutter={EGridSpace.Space4}>
-			{getBoxes(20)}
+			{getBoxes(60)}
 		</Grid>
 	))
 	.add('start | end', () => (
 		<Grid
+			width="100%"
+			height={null}
 			direction={EGridDirection.Row}
 			layoutAlign={EGridLayoutAlign.Start}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.End}
 			wrap={EWrap.Wrap}
 			padding={EGridSpace.Space2}
 			gutter={EGridSpace.Space4}>
-			{getBoxes(20)}
+			{getBoxes(60)}
 		</Grid>
 	))
 	.add('start | stretch', () => (
 		<Grid
+			width="100%"
+			height={null}
 			direction={EGridDirection.Row}
 			layoutAlign={EGridLayoutAlign.Start}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Stretch}
 			wrap={EWrap.Wrap}
 			padding={EGridSpace.Space2}
 			gutter={EGridSpace.Space4}>
-			{getBoxes(20)}
+			{getBoxes(60)}
 		</Grid>
 	))
 	.add('item align', () => {
-		const boxes = getBoxes(20, '60px');
+		const boxes = getBoxes(60, '60px');
 
 		return (
 			<Grid
+				width="100%"
+				height={null}
 				direction={EGridDirection.Row}
 				layoutAlign={EGridLayoutAlign.Start}
 				layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Start}
@@ -308,7 +336,7 @@ storiesOf('Components|Grid/Row', module)
 				{[
 					...boxes.slice(0, 5),
 					getBox(6, '60px', false, true, 'Align'),
-					...boxes.slice(6, 19),
+					...boxes.slice(6, 60),
 				]}
 			</Grid>
 		);
