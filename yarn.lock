@@ -4238,13 +4238,13 @@ buffer@^4.3.0:
     ieee754 "^1.1.4"
     isarray "^1.0.0"
 
-build-header@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/build-header/-/build-header-1.0.1.tgz#f9d461a12638c467a5f719fc8681f5f7b01d4686"
-  integrity sha512-sDdehXT/TIc7laMGaA1TbQWEP7ci+CCP7iia/WRiiS+R61jxFUfJ/P1YP67bT/A0i02L5F1Hmdq90LFGRNRIeg==
+build-header@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/build-header/-/build-header-1.0.2.tgz#6efab755fae8218ece3aaef80bd879ec6c98a472"
+  integrity sha512-/4G0SWatMrOieL0KjjCs2iXhOQsFI/Eu/Ld9tAXV+rCxpYjRF/jhJrVGU0HGc8bcnjKdP5hcN3iKYp/tjDTNUg==
   dependencies:
-    env-ci "3.2.0"
-    kleur "3.0.3"
+    env-ci "^3.2.0"
+    kleur "^3.0.3"
 
 builtin-modules@^1.0.0, builtin-modules@^1.1.1:
   version "1.1.1"
@@ -6213,18 +6213,18 @@ entities@^1.1.1, entities@~1.1.1:
   resolved "https://registry.yarnpkg.com/entities/-/entities-1.1.2.tgz#bdfa735299664dfafd34529ed4f8522a275fea56"
   integrity sha512-f2LZMYl1Fzu7YSBKg+RoROelpOaNrcGmE9AZubeDfrCEia483oW4MI4VyFd5VNHIgQ/7qm1I0wUHK1eJnn2y2w==
 
-env-ci@3.2.0, env-ci@^3.0.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/env-ci/-/env-ci-3.2.0.tgz#982f02a0501ca8c43bf0765c5bd3d83ffb28b23a"
-  integrity sha512-TFjNiDlXrL8/pfHswdvJGEZzJcq3aBPb8Eka83hlGLwuNw9F9BC9S9ETlkfkItLRT9k5JgpGgeP+rL6/3cEbcw==
-  dependencies:
-    execa "^1.0.0"
-    java-properties "^0.2.9"
-
 env-ci@^2.1.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/env-ci/-/env-ci-2.6.0.tgz#3fc46537c972b4d3ab5f0b82d07dfc1491297662"
   integrity sha512-tnOi9qgtDxY3mvf69coXLHbSZtFMNGAJ1s/huirAhJZTx9rs/1qgFjl+6Z5ULQCfpDmlsf34L7wm+eJGwMazYg==
+  dependencies:
+    execa "^1.0.0"
+    java-properties "^0.2.9"
+
+env-ci@^3.0.0, env-ci@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/env-ci/-/env-ci-3.2.0.tgz#982f02a0501ca8c43bf0765c5bd3d83ffb28b23a"
+  integrity sha512-TFjNiDlXrL8/pfHswdvJGEZzJcq3aBPb8Eka83hlGLwuNw9F9BC9S9ETlkfkItLRT9k5JgpGgeP+rL6/3cEbcw==
   dependencies:
     execa "^1.0.0"
     java-properties "^0.2.9"
@@ -9171,7 +9171,7 @@ klaw@^1.0.0:
   optionalDependencies:
     graceful-fs "^4.1.9"
 
-kleur@3.0.3, kleur@^3.0.2, kleur@^3.0.3:
+kleur@^3.0.2, kleur@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
