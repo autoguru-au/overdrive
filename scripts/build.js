@@ -1,4 +1,4 @@
-const chalk = require('chalk');
+const { green, red, dim } = require('kleur');
 const { ensureDir } = require('fs-extra');
 const { join, resolve, relative } = require('path');
 const rimraf = require('rimraf');
@@ -12,10 +12,12 @@ const distFolder = resolve(root, 'dist');
 const entry = resolve(root, './lib/components/index.ts');
 
 async function run() {
+	console.log(require('build-header')());
+
 	rimraf.sync(distFolder);
 	await ensureDir(distFolder);
 
-	console.log(chalk.dim(`🎯 Bundling...`));
+	console.log(dim(`⚙️  Bundling...`));
 	const bundle = await rollup(
 		createRollupConfig({
 			entry,
@@ -66,13 +68,13 @@ run()
 				console.log('');
 			});
 
-		console.log(chalk.green(`✅ Success`));
+		console.log(green(`✅ Success`));
 	})
 	.catch(err => {
 		console.log('');
-		console.log(`${chalk.red(err.message)}\n`);
+		console.log(`${red(err.message)}\n`);
 		console.log(
-			chalk.dim(
+			dim(
 				`==> ${relative(root, err.loc.file)}:${err.loc.line}:${
 					err.loc.column
 				}`
@@ -80,7 +82,7 @@ run()
 		);
 		console.log(err.frame);
 		console.log('');
-		console.log(chalk.dim(err.stack));
+		console.log(dim(err.stack));
 	});
 
 function copy(paths, config) {
@@ -96,5 +98,5 @@ function copy(paths, config) {
 }
 
 function logLabel(label, value) {
-	console.log(`${chalk.underline.italic.dim(label)} ${value}`);
+	console.log(`${dim(label)} ${value}`);
 }
