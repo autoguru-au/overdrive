@@ -7,6 +7,7 @@
  */
 
 export { default as AccountBoxIcon } from './AccountBox';
+export { default as AlertIcon } from './Alert';
 export { default as ArrowLeftIcon } from './ArrowLeft';
 export { default as CalendarIcon } from './Calendar';
 export { default as CheckIcon } from './Check';

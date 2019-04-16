@@ -1,4 +1,4 @@
-const chalk = require('chalk');
+const { dim, cyan, green } = require('kleur');
 const glob = require('glob');
 const path = require('path');
 const { readFile, writeFile } = require('fs').promises;
@@ -45,7 +45,7 @@ svgs = svgs.map(item =>
 		const file = Buffer.from(prettier(format(BANNER_TEMPLATE, component)));
 
 		console.log(
-			`${chalk.dim('Icon:')} ${chalk.cyan(icon.name)} => ${path.relative(
+			`${dim('Icon:')} ${cyan(icon.name)} => ${path.relative(
 				root,
 				iconOutputPath
 			)}`
@@ -80,7 +80,7 @@ Promise.all(svgs)
 	.then(completed => {
 		const total = completed.length;
 
-		console.log(`⚡️ Finsihed ${chalk.green(total)} icons!`);
+		console.log(`⚡️ Finsihed ${green(total)} icons!`);
 	});
 
 function prettier(content) {
