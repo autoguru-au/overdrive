@@ -1,6 +1,12 @@
+import { number, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { select, text, number } from '@storybook/addon-knobs';
 import React from 'react';
+import { Box } from '../Box';
+import {
+	EBreakpointLabels,
+	getBreakpointMediaQuery,
+	IBreakPoint,
+} from './breakpoint-utils';
 import {
 	EGridItemAlignSelf,
 	EGridLayoutAlign,
@@ -9,12 +15,6 @@ import {
 	Grid,
 	GridItem,
 } from './index';
-import { Box } from '../Box';
-import {
-	EBreakpointLabels,
-	getBreakpointMediaQuery,
-	IBreakPoint,
-} from './breakpoint-utils';
 
 import { useEffect, useState } from 'react';
 

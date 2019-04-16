@@ -18,30 +18,26 @@ storiesOf('Components|Type/TextContainer', module)
 	))
 	.add('with interaction', () => (
 		<TextContainer
-			heading={
-				<>
-					<Heading>Reviews</Heading>
-					<Button
-						variant={EButtonVariant.Secondary}
-						size={EButtonSize.Small}>
-						Edit
-					</Button>
-				</>
+			heading={<Heading>Reviews</Heading>}
+			headingActions={
+				<Button
+					variant={EButtonVariant.Secondary}
+					size={EButtonSize.Small}>
+					Edit
+				</Button>
 			}>
 			<Text>All of our reviews are from verified customers.</Text>
 		</TextContainer>
 	))
 	.add('with long title', () => (
 		<TextContainer
-			heading={
-				<>
-					<Heading>Setup your personal settings</Heading>
-					<Button
-						variant={EButtonVariant.Secondary}
-						size={EButtonSize.Small}>
-						Edit
-					</Button>
-				</>
+			heading={<Heading>Setup your personal settings</Heading>}
+			headingActions={
+				<Button
+					variant={EButtonVariant.Secondary}
+					size={EButtonSize.Small}>
+					Edit
+				</Button>
 			}>
 			<Text>All of our reviews are from verified customers.</Text>
 		</TextContainer>
