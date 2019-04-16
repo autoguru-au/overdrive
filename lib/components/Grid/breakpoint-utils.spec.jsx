@@ -1,9 +1,4 @@
-import {
-	EBreakpointLabels,
-	getBreakpointMediaQuery,
-	IBreakPoint,
-	useMedia,
-} from './breakpoint-utils';
+import { EBreakpointLabels, getBreakpointMediaQuery } from './breakpoint-utils';
 
 const breakpoints = [
 	{

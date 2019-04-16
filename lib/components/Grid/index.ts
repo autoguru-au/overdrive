@@ -5,6 +5,7 @@ export {
 	EGridSpace,
 } from './enums';
 
-export { Grid, IProps as IGridProps, IGridContext } from './Grid';
+export { Grid } from './Grid';
+export { IProps as IGridProps, IGridContext } from './grid-utils';
 
 export { GridItem, IProps as IGridItemProps } from './GridItem';

@@ -1,5 +1,5 @@
 import { EGridSpace } from './enums';
-import { IGridContext } from './Grid';
+import { IGridContext } from './grid-utils';
 
 export const GridDefaults: IGridContext = {
 	direction: 'column',

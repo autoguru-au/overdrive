@@ -8,8 +8,8 @@ import {
 } from 'csstype';
 import React, { FunctionComponent, useContext } from 'react';
 import { EItemAlignSelf } from './enums';
+import { GridContext } from './grid-utils';
 import styles from './style.scss';
-import { GridContext } from './Grid';
 
 export interface IProps {
 	className?: string;
@@ -54,6 +54,18 @@ export const GridItem: FunctionComponent<IProps> = ({
 
 	const TagName = tagName as any;
 
+	const getMarginValue = context => {
+		if (!context.fullGrid) {
+			return gridContext.direction === 'row'
+				? `0 var(${context.gutterSpace})`
+				: `var(${context.gutterSpace}) 0`;
+		}
+
+		return context.fullGrid
+			? `calc(0.5 * var(${context.gutterSpace}))`
+			: undefined;
+	};
+
 	return (
 		<TagName
 			className={gridItemClass}
@@ -67,7 +79,7 @@ export const GridItem: FunctionComponent<IProps> = ({
 				[gridContext.direction === 'row'
 					? 'minWidth'
 					: 'minHeight']: basis,
-				margin: `calc(0.5 * var(${gridContext.gutterSpace}))`,
+				margin: getMarginValue(gridContext),
 			}}
 			children={children}
 		/>

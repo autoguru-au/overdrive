@@ -1,6 +1,6 @@
 import { number, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box } from '../Box';
 import {
 	EBreakpointLabels,
@@ -15,8 +15,6 @@ import {
 	Grid,
 	GridItem,
 } from './index';
-
-import { useEffect, useState } from 'react';
 
 // Hook from https://usehooks.com/useMedia/
 
@@ -368,7 +366,7 @@ storiesOf('Components|Grid/Row', module)
 			wrap={EWrap.NoWrap}
 			padding={EGridSpace.Space2}
 			gutter={EGridSpace.Space4}>
-			{getBoxes(60)}
+			{getBoxes(4)}
 		</Grid>
 	))
 	.add('item align', () => {
@@ -502,7 +500,7 @@ storiesOf('Components|Grid/Column', module)
 			wrap={EWrap.NoWrap}
 			padding={EGridSpace.Space2}
 			gutter={EGridSpace.Space4}>
-			{getBoxes(40, '60px')}
+			{getBoxes(5, '60px')}
 		</Grid>
 	))
 	.add('item align', () => {
