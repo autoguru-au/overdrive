@@ -57,8 +57,8 @@ export const GridItem: FunctionComponent<IProps> = ({
 	const getMarginValue = context => {
 		if (!context.fullGrid) {
 			return gridContext.direction === 'row'
-				? `0 var(${context.gutterSpace})`
-				: `var(${context.gutterSpace}) 0`;
+				? `0 calc(0.5 * var(${context.gutterSpace}))`
+				: `calc(0.5 * var(${context.gutterSpace})) 0`;
 		}
 
 		return context.fullGrid

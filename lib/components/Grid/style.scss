@@ -1,5 +1,5 @@
-.fullGrid,
-.lightGrid,
+.full-grid,
+.light-grid,
 .inner-grid,
 .grid-item {
 	display: flex;
@@ -13,17 +13,17 @@
 	min-height: 100%;
 }
 
-.lightGrid,
-.fullGrid {
+.light-grid,
+.full-grid {
 	width: 100%;
 	min-height: 100%;
 }
 
-.fullGrid {
+.full-grid {
 	overflow: hidden;
 }
 
-.lightGrid {
+.light-grid {
 	&.row {
 		:first-child {
 			margin-left: 0 !important;

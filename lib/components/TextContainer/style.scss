@@ -9,10 +9,10 @@
 	h5,
 	h6,
 	> header {
-		display: block;
+		display: flex;
 
 		~ * {
-			display: block;
+			display: flex;
 			padding-top: var(--global--space--2);
 		}
 	}

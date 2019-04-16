@@ -27,12 +27,12 @@ export const TextContainer: FunctionComponent<IProps> = ({
 				direction={EGridDirection.Row}
 				layoutAlign={EGridLayoutAlign.Start}
 				layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Center}
-				wrap={EWrap.Wrap}
+				wrap={EWrap.NoWrap}
 				padding={EGridSpace.Space0}
 				gutter={EGridSpace.Space4}
 				tagName="header">
 				{!!heading && (
-					<GridItem shrink={0} grow={1}>
+					<GridItem shrink={1} grow={1}>
 						{heading}
 					</GridItem>
 				)}
