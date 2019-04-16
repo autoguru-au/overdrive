@@ -121,8 +121,8 @@
 		height: 100%;
 		text-align: left;
 		pointer-events: none;
-		box-shadow: 0 4px 2px -6px rgba(0, 0, 0, 0.5),
-			0 2px 4px 0 rgba(0, 0, 0, 0.07);
+		box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.03),
+			0 4px 5px 0 rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.05);
 
 		&__leading,
 		&__notch,
