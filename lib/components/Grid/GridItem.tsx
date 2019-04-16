@@ -20,6 +20,7 @@ export interface IProps {
 	align?: EItemAlignSelf;
 	width?: WidthProperty<string>;
 	height?: HeightProperty<string>;
+	tagName?: string;
 }
 
 const alignSelfCssMap: Map<EItemAlignSelf, { [key: string]: string }> = new Map(
@@ -40,6 +41,7 @@ export const GridItem: FunctionComponent<IProps> = ({
 	width,
 	height,
 	basis = 'auto',
+	tagName = 'div',
 	children,
 }) => {
 	const gridContext = useContext(GridContext);
@@ -50,8 +52,10 @@ export const GridItem: FunctionComponent<IProps> = ({
 
 	const gridItemClass = cx([styles.gridItem, className], {});
 
+	const TagName = tagName as any;
+
 	return (
-		<div
+		<TagName
 			className={gridItemClass}
 			style={{
 				width,
