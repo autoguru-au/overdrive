@@ -49,11 +49,22 @@ $widthSmall: 36px;
 	border: 1px solid;
 	text-decoration: none;
 	cursor: pointer;
+	user-select: none;
 	transform: translate(0, 0);
 	border-radius: var(--global--space--1);
 	transition: color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
 		background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
-		border-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
+		border-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
+		box-shaddow 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
+		transform 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
+
+	@include isHoverState() {
+		transform: translate(0, -1px);
+	}
+
+	@include isActiveState() {
+		transform: translate(0, 1px);
+	}
 }
 
 .fullWidth {
@@ -69,15 +80,23 @@ $widthSmall: 36px;
 	&-primary {
 		background-color: getColour(green, 600);
 		border-color: getColour(green, 700);
+		box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.06),
+			0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
 
 		@include isHoverState() {
 			background-color: getColour(green, 700);
 			border-color: getColour(green, 800);
+			box-shadow: 0 3px 14px 2px rgba(0, 0, 0, 0.06),
+				0 8px 10px 1px rgba(0, 0, 0, 0.06),
+				0 5px 5px -3px rgba(0, 0, 0, 0.1);
 		}
 
 		@include isActiveState() {
 			background-color: getColour(green, 800);
 			border-color: getColour(green, 900);
+			box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.06),
+				0 2px 2px 0 rgba(0, 0, 0, 0.06),
+				0 3px 1px -2px rgba(0, 0, 0, 0.1);
 		}
 
 		@include isDisabledState() {
@@ -90,15 +109,23 @@ $widthSmall: 36px;
 		color: getColour(gray, 700);
 		background-color: white;
 		border-color: getColour(gray, 300);
+		box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.03),
+			0 4px 5px 0 rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.05);
 
 		@include isHoverState() {
 			background-color: getColour(gray, 100);
 			border-color: getColour(gray, 400);
+			box-shadow: 0 3px 14px 2px rgba(0, 0, 0, 0.03),
+				0 8px 10px 1px rgba(0, 0, 0, 0.03),
+				0 5px 5px -3px rgba(0, 0, 0, 0.05);
 		}
 
 		@include isActiveState() {
 			background-color: getColour(gray, 200);
 			border-color: getColour(gray, 500);
+			box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.03),
+				0 2px 2px 0 rgba(0, 0, 0, 0.03),
+				0 3px 1px -2px rgba(0, 0, 0, 0.05);
 		}
 
 		@include isDisabledState() {
@@ -111,15 +138,23 @@ $widthSmall: 36px;
 	&-danger {
 		background-color: getColour(red, 600);
 		border-color: getColour(red, 700);
+		box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.09),
+			0 4px 5px 0 rgba(0, 0, 0, 0.09), 0 2px 4px -1px rgba(0, 0, 0, 0.15);
 
 		@include isHoverState() {
 			background-color: getColour(red, 700);
 			border-color: getColour(red, 800);
+			box-shadow: 0 3px 14px 2px rgba(0, 0, 0, 0.09),
+				0 8px 10px 1px rgba(0, 0, 0, 0.09),
+				0 5px 5px -3px rgba(0, 0, 0, 0.15);
 		}
 
 		@include isActiveState() {
 			background-color: getColour(red, 800);
 			border-color: getColour(red, 900);
+			box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.09),
+				0 2px 2px 0 rgba(0, 0, 0, 0.09),
+				0 3px 1px -2px rgba(0, 0, 0, 0.15);
 		}
 
 		@include isDisabledState() {
