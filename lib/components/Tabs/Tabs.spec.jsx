@@ -1,8 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import { EVariant, Tabs } from './Tabs';
+import { Tabs } from './Tabs';
 import { act } from 'react-dom/test-utils';
-import { ETabsSize } from './index';
 import { Tab } from './Tab';
 import ReactDOM from 'react-dom';
 

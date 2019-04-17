@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import { EVariant, StandardModal } from './StandardModal';
+import { StandardModal } from './StandardModal';
 import { act } from 'react-dom/test-utils';
 import { EStandardModalSize } from './index';
 
