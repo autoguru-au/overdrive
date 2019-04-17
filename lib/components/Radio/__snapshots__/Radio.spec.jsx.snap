@@ -2,10 +2,11 @@
 
 exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot for a checked radio 1`] = `
 <div
-  class="radioGroup"
+  class="lightGrid radioGroup column"
+  style="flex-wrap:nowrap;flex-direction:column;justify-content:flex-start;align-content:stretch;align-items:stretch;padding:var(--global--space--0);width:100%"
 >
   <div
-    class="root radio"
+    class="root gridItem radio"
   >
     <input
       class="nativeInput"
@@ -33,7 +34,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
     </label>
   </div>
   <div
-    class="root radio"
+    class="root gridItem radio"
   >
     <input
       class="nativeInput"
@@ -68,58 +69,84 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
   label="radio label 1"
   value="1"
 >
-  <CheckableBase
+  <GridItem
+    Component={[Function]}
     checked={false}
     className="radio"
     disabled={false}
+    grow={1}
     handleClick={[Function]}
     inputName="radio"
     inputType="radio"
     label="radio label 1"
+    shrink={0}
     value="1"
   >
-    <div
-      className="root radio"
+    <CheckableBase
+      checked={false}
+      className="gridItem radio"
+      disabled={false}
+      handleClick={[Function]}
+      inputName="radio"
+      inputType="radio"
+      label="radio label 1"
+      style={
+        Object {
+          "flexBasis": "auto",
+          "flexGrow": 1,
+          "flexShrink": 0,
+          "height": undefined,
+          "margin": "calc(0.5 * var(--global--space--4)) 0",
+          "minHeight": "auto",
+          "width": undefined,
+        }
+      }
+      value="1"
     >
-      <input
-        checked={false}
-        className="nativeInput"
-        disabled={false}
-        name="radio"
-        onChange={[Function]}
-        onClick={[Function]}
-        type="radio"
-        value="1"
-      />
       <div
-        className="checkable"
+        className="root gridItem radio"
       >
-        <div
-          className="outerCircle"
+        <input
+          checked={false}
+          className="nativeInput"
+          disabled={false}
+          name="radio"
+          onChange={[Function]}
+          onClick={[Function]}
+          type="radio"
+          value="1"
         />
         <div
-          className="innerCircle"
+          className="checkable"
+        >
+          <div
+            className="outerCircle"
+          />
+          <div
+            className="innerCircle"
+          />
+        </div>
+        <div
+          className="focusRect"
         />
+        <label
+          className="label"
+        >
+          radio label 1
+        </label>
       </div>
-      <div
-        className="focusRect"
-      />
-      <label
-        className="label"
-      >
-        radio label 1
-      </label>
-    </div>
-  </CheckableBase>
+    </CheckableBase>
+  </GridItem>
 </Component>
 `;
 
 exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot for a group of radios 1`] = `
 <div
-  class="radioGroup"
+  class="lightGrid radioGroup column"
+  style="flex-wrap:nowrap;flex-direction:column;justify-content:flex-start;align-content:stretch;align-items:stretch;padding:var(--global--space--0);width:100%"
 >
   <div
-    class="root radio"
+    class="root gridItem radio"
   >
     <input
       class="nativeInput"
@@ -147,7 +174,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
     </label>
   </div>
   <div
-    class="root radio"
+    class="root gridItem radio"
   >
     <input
       class="nativeInput"
@@ -175,7 +202,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
     </label>
   </div>
   <div
-    class="root radio"
+    class="root gridItem radio"
   >
     <input
       class="nativeInput"
@@ -203,7 +230,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
     </label>
   </div>
   <div
-    class="root radio"
+    class="root gridItem radio"
   >
     <input
       class="nativeInput"
@@ -235,10 +262,11 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
 
 exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot for a single radio 1`] = `
 <div
-  class="radioGroup"
+  class="lightGrid radioGroup column"
+  style="flex-wrap:nowrap;flex-direction:column;justify-content:flex-start;align-content:stretch;align-items:stretch;padding:var(--global--space--0);width:100%"
 >
   <div
-    class="root radio"
+    class="root gridItem radio"
   >
     <input
       class="nativeInput"
@@ -270,10 +298,11 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
 
 exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot for a single radio with no value or label 1`] = `
 <div
-  class="radioGroup"
+  class="lightGrid radioGroup column"
+  style="flex-wrap:nowrap;flex-direction:column;justify-content:flex-start;align-content:stretch;align-items:stretch;padding:var(--global--space--0);width:100%"
 >
   <div
-    class="root radio"
+    class="root gridItem radio"
   >
     <input
       class="nativeInput"

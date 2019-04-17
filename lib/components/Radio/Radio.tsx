@@ -2,6 +2,7 @@ import cx from 'clsx';
 import React, { FunctionComponent, memo, useContext } from 'react';
 import { CheckableBase } from '../CheckableBase';
 import { checkableClass } from '../CheckableBase/CheckableBase';
+import { GridItem } from '../Grid';
 import styles from './style.scss';
 import { RadioContext } from './RadioGroup';
 
@@ -21,7 +22,10 @@ export const Radio: FunctionComponent<IProps> = memo(
 		const handleClick = () => radioContext.radioSelected(value);
 
 		return (
-			<CheckableBase
+			<GridItem
+				shrink={0}
+				grow={1}
+				Component={CheckableBase}
 				inputType="radio"
 				className={cx([styles.radio, className])}
 				inputName={radioContext.inputName}
@@ -37,7 +41,7 @@ export const Radio: FunctionComponent<IProps> = memo(
 					<div className={styles.outerCircle} />
 					<div className={styles.innerCircle} />
 				</div>
-			</CheckableBase>
+			</GridItem>
 		);
 	}
 );

@@ -1,21 +1,7 @@
 @import '../../theme/tokens/facade';
 
-$coreSize: 8px;
+$coreSize: var(--global--space--2);
 $strokeSize: 2px;
-
-.radio {
-	display: flex;
-}
-
-.radio-group {
-	display: flex;
-	position: relative;
-	flex-direction: column;
-	align-content: stretch;
-	justify-content: stretch;
-	align-items: stretch;
-	padding: 0;
-}
 
 .outer-circle,
 .inner-circle {

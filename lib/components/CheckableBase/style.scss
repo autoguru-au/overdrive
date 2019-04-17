@@ -1,10 +1,10 @@
 @import '../../theme/tokens/facade';
 
 :root {
-	--od--CheckableBase--checkable--label--size: 16px;
-	--od--CheckableBase--checkable--label--height: 22px;
-	--od--CheckableBase--checkable-size: 16px;
-	--od--CheckableBase--checkable-padding: 12px;
+	--od--CheckableBase--checkable--label--size: var(--global--space--4);
+	--od--CheckableBase--checkable--label--height: var(--global--space--6);
+	--od--CheckableBase--checkable-size: var(--global--space--4);
+	--od--CheckableBase--checkable-padding: var(--global--space--3);
 	--od--CheckableBase--default-colour: #{getColour(gray, 500)};
 	--od--CheckableBase--hovered-colour: #{getColour(gray, 100)};
 	--od--CheckableBase--active-colour: #{getColour(gray, 200)};
