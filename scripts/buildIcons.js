@@ -14,6 +14,8 @@ const BANNER_TEMPLATE = `/**
  
  %s`;
 
+// TODO Update icon component to accept className prop
+
 const COMPONENT_TEMPLATE = `import React from 'react';
 
 const Icon = (%content%);
