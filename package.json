@@ -114,7 +114,6 @@
     "jest": "^24.7.1",
     "jest-enzyme": "^7.0.2",
     "kleur": "^3.0.3",
-    "lerna": "^3.13.2",
     "lint-staged": "^8.1.5",
     "node-sass": "^4.11.0",
     "postcss-flexbugs-fixes": "^4.1.0",
