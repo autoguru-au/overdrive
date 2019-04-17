@@ -19,7 +19,7 @@ export const LightGrid: FunctionComponent<IProps> = ({
 	height = '100%',
 	layoutAlign = ELayoutAlign.Start,
 	layoutPerpendicularAlign = ELayoutPerpendicularAlign.Start,
-	tagName = 'div',
+	Component = 'div',
 	children,
 	gutter,
 	padding,
@@ -39,15 +39,13 @@ export const LightGrid: FunctionComponent<IProps> = ({
 
 	const gutterSpace = spaceSizeMap.get(contextValue.gutter);
 
-	const TagName = tagName as any;
-
 	return (
 		<GridContext.Provider
 			value={{
 				...contextValue,
 				gutterSpace,
 			}}>
-			<TagName
+			<Component
 				className={gridClass}
 				style={{
 					flexWrap: wrap,

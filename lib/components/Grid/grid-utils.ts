@@ -4,7 +4,7 @@ import {
 	HeightProperty,
 	WidthProperty,
 } from 'csstype';
-import React from 'react';
+import React, { ComponentType } from 'react';
 import { EGridSpace, ELayoutAlign, ELayoutPerpendicularAlign } from './enums';
 
 export interface IProps {
@@ -16,7 +16,7 @@ export interface IProps {
 	layoutAlign?: ELayoutAlign;
 	width?: WidthProperty<string>;
 	height?: HeightProperty<string>;
-	tagName?: string;
+	Component?: ComponentType<any> | string;
 	layoutPerpendicularAlign?: ELayoutPerpendicularAlign;
 }
 

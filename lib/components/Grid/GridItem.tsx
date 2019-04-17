@@ -6,13 +6,14 @@ import {
 	HeightProperty,
 	WidthProperty,
 } from 'csstype';
-import React, { FunctionComponent, useContext } from 'react';
+import React, { ComponentType, FunctionComponent, useContext } from 'react';
 import { EItemAlignSelf } from './enums';
 import { GridContext } from './grid-utils';
 import styles from './style.scss';
 
 export interface IProps {
 	className?: string;
+	Component?: ComponentType<any> | string;
 	flex?: FlexProperty<string>;
 	grow?: 0 | 1;
 	shrink?: 0 | 1;
@@ -20,7 +21,6 @@ export interface IProps {
 	align?: EItemAlignSelf;
 	width?: WidthProperty<string>;
 	height?: HeightProperty<string>;
-	tagName?: string;
 }
 
 const alignSelfCssMap: Map<EItemAlignSelf, { [key: string]: string }> = new Map(
@@ -41,7 +41,7 @@ export const GridItem: FunctionComponent<IProps> = ({
 	width,
 	height,
 	basis = 'auto',
-	tagName = 'div',
+	Component = 'div',
 	children,
 }) => {
 	const gridContext = useContext(GridContext);
@@ -51,8 +51,6 @@ export const GridItem: FunctionComponent<IProps> = ({
 	);
 
 	const gridItemClass = cx([styles.gridItem, className], {});
-
-	const TagName = tagName as any;
 
 	const getMarginValue = context => {
 		if (!context.fullGrid) {
@@ -67,7 +65,7 @@ export const GridItem: FunctionComponent<IProps> = ({
 	};
 
 	return (
-		<TagName
+		<Component
 			className={gridItemClass}
 			style={{
 				width,
