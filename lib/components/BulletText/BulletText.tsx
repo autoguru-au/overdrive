@@ -1,5 +1,13 @@
 import cx from 'clsx';
 import React, { FunctionComponent } from 'react';
+import {
+	EGridLayoutAlign,
+	EGridLayoutPerpendicularAlign,
+	EGridSpace,
+	Grid,
+	GridItem,
+} from '../Grid';
+import { EGridDirection, EWrap } from '../Grid/stories';
 import { Text } from '../Text';
 import styles from './style.scss';
 
@@ -27,14 +35,31 @@ export const BulletText: FunctionComponent<IProps> = ({
 		[styles.variantSecondary]: !!variant && variant === EVariant.Secondary,
 	});
 
-	const Tag = ordered ? 'ol' : 'li';
-
 	return (
-		<Tag className={cls}>
-			<div className={styles.bullet}>
+		<Grid
+			width="100%"
+			height={null}
+			direction={EGridDirection.Row}
+			layoutAlign={EGridLayoutAlign.Start}
+			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Center}
+			wrap={EWrap.NoWrap}
+			padding={EGridSpace.Space0}
+			gutter={EGridSpace.Space4}
+			Component={ordered ? 'ol' : 'li'}
+			className={cls}>
+			<GridItem
+				className={styles.bullet}
+				shrink={0}
+				grow={0}
+				basis="var(--bullet--size)">
 				<span className={styles.bulletText} children={bullet} />
-			</div>
-			<Text children={children} />
-		</Tag>
+			</GridItem>
+			<GridItem
+				Component={Text}
+				shrink={1}
+				grow={1}
+				children={children}
+			/>
+		</Grid>
 	);
 };

@@ -1,77 +1,141 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<BulletText /> should match snapshot for default bullet text 1`] = `
-<li
+<Grid
+  Component="li"
   className="root variantPrimary"
+  direction="row"
+  gutter="space-4"
+  height={null}
+  layoutAlign="start"
+  layoutPerpendicularAlign="center"
+  padding="space-0"
+  width="100%"
+  wrap="nowrap"
 >
-  <div
+  <GridItem
+    basis="var(--bullet--size)"
     className="bullet"
+    grow={0}
+    shrink={0}
   >
     <span
       className="bulletText"
     >
       •
     </span>
-  </div>
-  <Text>
+  </GridItem>
+  <GridItem
+    Component={[Function]}
+    grow={1}
+    shrink={1}
+  >
     Hello World!
-  </Text>
-</li>
+  </GridItem>
+</Grid>
 `;
 
 exports[`<BulletText /> should match snapshot for ordered bullet text 1`] = `
-<ol
+<Grid
+  Component="ol"
   className="root variantPrimary"
+  direction="row"
+  gutter="space-4"
+  height={null}
+  layoutAlign="start"
+  layoutPerpendicularAlign="center"
+  padding="space-0"
+  width="100%"
+  wrap="nowrap"
 >
-  <div
+  <GridItem
+    basis="var(--bullet--size)"
     className="bullet"
+    grow={0}
+    shrink={0}
   >
     <span
       className="bulletText"
     >
       ?
     </span>
-  </div>
-  <Text>
+  </GridItem>
+  <GridItem
+    Component={[Function]}
+    grow={1}
+    shrink={1}
+  >
     Hello World!
-  </Text>
-</ol>
+  </GridItem>
+</Grid>
 `;
 
 exports[`<BulletText /> should match snapshot for primary bullet text with custom bullet character 1`] = `
-<li
+<Grid
+  Component="li"
   className="root variantPrimary"
+  direction="row"
+  gutter="space-4"
+  height={null}
+  layoutAlign="start"
+  layoutPerpendicularAlign="center"
+  padding="space-0"
+  width="100%"
+  wrap="nowrap"
 >
-  <div
+  <GridItem
+    basis="var(--bullet--size)"
     className="bullet"
+    grow={0}
+    shrink={0}
   >
     <span
       className="bulletText"
     >
       ?
     </span>
-  </div>
-  <Text>
+  </GridItem>
+  <GridItem
+    Component={[Function]}
+    grow={1}
+    shrink={1}
+  >
     Hello World!
-  </Text>
-</li>
+  </GridItem>
+</Grid>
 `;
 
 exports[`<BulletText /> should match snapshot for secondary bullet text with custom bullet character 1`] = `
-<li
+<Grid
+  Component="li"
   className="root variantSecondary"
+  direction="row"
+  gutter="space-4"
+  height={null}
+  layoutAlign="start"
+  layoutPerpendicularAlign="center"
+  padding="space-0"
+  width="100%"
+  wrap="nowrap"
 >
-  <div
+  <GridItem
+    basis="var(--bullet--size)"
     className="bullet"
+    grow={0}
+    shrink={0}
   >
     <span
       className="bulletText"
     >
       ?
     </span>
-  </div>
-  <Text>
+  </GridItem>
+  <GridItem
+    Component={[Function]}
+    grow={1}
+    shrink={1}
+  >
     Hello World!
-  </Text>
-</li>
+  </GridItem>
+</Grid>
 `;

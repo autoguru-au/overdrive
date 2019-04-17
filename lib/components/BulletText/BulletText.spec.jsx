@@ -1,8 +1,8 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount, render, shallow } from 'enzyme';
 import { BulletText } from './BulletText';
-import { Text } from '../Text';
 import { EBulletTextVariant } from './index';
+import { GridItem } from '../Grid';
 
 const testLabel = 'Hello World!';
 describe('<BulletText />', () => {
@@ -72,45 +72,40 @@ describe('<BulletText />', () => {
 
 	it('should add a Text element', () => {
 		const bulletText = shallow(<BulletText />);
-		expect(bulletText.find(Text).exists()).toBeTruthy();
+		expect(bulletText.find(GridItem).exists()).toBeTruthy();
 	});
 
 	it('should pass the children a Text element', () => {
-		const bulletText = shallow(<BulletText>{testLabel}</BulletText>);
-		expect(
-			bulletText
-				.find(Text)
-				.render()
-				.text()
-		).toEqual(testLabel);
+		const bulletText = render(<BulletText>{testLabel}</BulletText>);
+		expect(bulletText.text().includes(testLabel)).toEqual(true);
 	});
 
 	it('should use li element for default bullet text', () => {
-		const bulletText = shallow(<BulletText>{testLabel}</BulletText>);
-		expect(bulletText.type()).toEqual('li');
+		const bulletText = render(<BulletText>{testLabel}</BulletText>);
+		expect(bulletText[0].name).toEqual('li');
 	});
 
 	it('should use li element for unordered bullet text', () => {
-		const bulletText = shallow(
+		const bulletText = render(
 			<BulletText ordered={false}>{testLabel}</BulletText>
 		);
-		expect(bulletText.type()).toEqual('li');
+		expect(bulletText[0].name).toEqual('li');
 	});
 
 	it('should use ol element for ordered bullet text', () => {
-		const bulletText = shallow(
+		const bulletText = render(
 			<BulletText ordered={true}>{testLabel}</BulletText>
 		);
-		expect(bulletText.type()).toEqual('ol');
+		expect(bulletText[0].name).toEqual('ol');
 	});
 
 	it('should use • as default bullet', () => {
-		const bulletText = shallow(<BulletText>{testLabel}</BulletText>);
+		const bulletText = render(<BulletText>{testLabel}</BulletText>);
 		expect(bulletText.find('div>span').text()).toEqual('•');
 	});
 
-	it('should use provided bullet charachter bullet', () => {
-		const bulletText = shallow(
+	it('should use provided bullet character bullet', () => {
+		const bulletText = render(
 			<BulletText bullet="#">{testLabel}</BulletText>
 		);
 		expect(bulletText.find('div>span').text()).toEqual('#');

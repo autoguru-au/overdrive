@@ -4,25 +4,11 @@
 	--bullet--size: 24px;
 }
 
-.root {
-	padding: 0;
-	margin: 0;
-	list-style: none;
-	flex-direction: row;
-	box-sizing: border-box;
-	display: flex;
-	align-content: flex-start;
-	align-items: flex-start;
-}
-
 .bullet {
-	margin: 2px var(--global--space--4) 0 0;
-	position: relative;
-	flex: var(--bullet--size) 0 0;
 	height: var(--bullet--size);
 	line-height: var(--bullet--size);
-	flex-shrink: 0;
 	border-radius: 50%;
+	position: relative;
 
 	.variant-primary & {
 		background-color: getColour(green, 200);
