@@ -1,7 +1,15 @@
 import cx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
 import { DetailText, EDetailTextSize } from '../DetailText';
-import { TIconPrimitiveType } from '../Icon';
+import {
+	EGridLayoutAlign,
+	EGridLayoutPerpendicularAlign,
+	EGridSpace,
+	Grid,
+	GridItem,
+} from '../Grid';
+import { EGridDirection, EWrap } from '../Grid/stories';
+import { Icon, TIconPrimitiveType } from '../Icon';
 import styles from './style.scss';
 
 export enum EVariant {
@@ -30,17 +38,35 @@ const MetaComponent: FunctionComponent<IProps> = ({
 	const cls = cx([styles.root, cssVariantMap.get(variant), className]);
 
 	return (
-		<span className={cls}>
-			{/* TODO: Should we be using a cloneElement here? */}
-			{icon && React.cloneElement(icon, { className: styles.icon })}
-			<DetailText
+		<Grid
+			width="inherit"
+			height="inherit"
+			direction={EGridDirection.Row}
+			layoutAlign={EGridLayoutAlign.Start}
+			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Center}
+			wrap={EWrap.NoWrap}
+			padding={EGridSpace.Space0}
+			gutter={EGridSpace.Space4}
+			Component="span"
+			className={cls}>
+			<GridItem
+				className={styles.icon}
+				shrink={0}
+				grow={0}
+				Component="span">
+				{icon && <Icon size={16} icon={icon} fill={'green'} />}
+			</GridItem>
+			<GridItem
+				Component={DetailText}
+				shrink={1}
+				grow={1}
 				className={cx({
 					[styles.withIcon]: !!icon,
 				})}
-				size={EDetailTextSize.Detail2}>
-				{label}
-			</DetailText>
-		</span>
+				size={EDetailTextSize.Detail2}
+				children={label}
+			/>
+		</Grid>
 	);
 };
 
