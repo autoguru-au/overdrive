@@ -30,7 +30,7 @@ export const TextContainer: FunctionComponent<IProps> = ({
 				wrap={EWrap.NoWrap}
 				padding={EGridSpace.Space0}
 				gutter={EGridSpace.Space4}
-				tagName="header">
+				Component="header">
 				{!!heading && (
 					<GridItem shrink={1} grow={1}>
 						{heading}
