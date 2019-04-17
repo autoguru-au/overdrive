@@ -11,7 +11,7 @@ import {
 } from './grid-utils';
 import styles from './style.scss';
 
-export const FullGrid: FunctionComponent<IProps> = ({
+export const FullGrid: FunctionComponent<IProps & any> = ({
 	className = '',
 	direction = 'row',
 	wrap = 'wrap',
@@ -23,6 +23,7 @@ export const FullGrid: FunctionComponent<IProps> = ({
 	children,
 	gutter,
 	padding,
+	...rest
 }) => {
 	const contextValue = {
 		...GridDefaults,
@@ -65,6 +66,7 @@ export const FullGrid: FunctionComponent<IProps> = ({
 						height: `calc(${height} + (var(${gutterSpace}))`,
 					}}
 					children={children}
+					{...rest}
 				/>
 			</Component>
 		</GridContext.Provider>

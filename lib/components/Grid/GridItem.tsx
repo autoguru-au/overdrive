@@ -33,7 +33,7 @@ const alignSelfCssMap: Map<EItemAlignSelf, { [key: string]: string }> = new Map(
 	]
 );
 
-export const GridItem: FunctionComponent<IProps> = ({
+export const GridItem: FunctionComponent<IProps & any> = ({
 	className = '',
 	align = EItemAlignSelf.Auto,
 	grow = 1,
@@ -43,7 +43,9 @@ export const GridItem: FunctionComponent<IProps> = ({
 	basis = 'auto',
 	Component = 'div',
 	children,
+	...rest
 }) => {
+	debugger;
 	const gridContext = useContext(GridContext);
 	invariant(
 		!gridContext || !Object.keys(gridContext).length,
@@ -80,6 +82,7 @@ export const GridItem: FunctionComponent<IProps> = ({
 				margin: getMarginValue(gridContext),
 			}}
 			children={children}
+			{...rest}
 		/>
 	);
 };

@@ -11,7 +11,7 @@ import {
 } from './grid-utils';
 import styles from './style.scss';
 
-export const LightGrid: FunctionComponent<IProps> = ({
+export const LightGrid: FunctionComponent<IProps & any> = ({
 	className = '',
 	direction = 'row',
 	wrap = 'wrap',
@@ -23,6 +23,7 @@ export const LightGrid: FunctionComponent<IProps> = ({
 	children,
 	gutter,
 	padding,
+	...rest
 }) => {
 	const contextValue = {
 		...GridDefaults,
@@ -59,6 +60,7 @@ export const LightGrid: FunctionComponent<IProps> = ({
 					height,
 				}}
 				children={children}
+				{...rest}
 			/>
 		</GridContext.Provider>
 	);
