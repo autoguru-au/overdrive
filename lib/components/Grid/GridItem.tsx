@@ -45,7 +45,6 @@ export const GridItem: FunctionComponent<IProps & any> = ({
 	children,
 	...rest
 }) => {
-	debugger;
 	const gridContext = useContext(GridContext);
 	invariant(
 		!gridContext || !Object.keys(gridContext).length,
