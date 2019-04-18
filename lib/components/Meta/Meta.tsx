@@ -49,13 +49,18 @@ const MetaComponent: FunctionComponent<IProps> = ({
 			gutter={EGridSpace.Space4}
 			Component="span"
 			className={cls}>
-			<GridItem
-				className={styles.icon}
-				shrink={0}
-				grow={0}
-				Component="span">
-				{icon && <Icon size={16} icon={icon} fill={'green'} />}
-			</GridItem>
+			{icon && (
+				<GridItem
+					className={styles.icon}
+					shrink={0}
+					grow={0}
+					Component={Icon}
+					size={16}
+					icon={icon}
+					display="block"
+					fill={'green'}
+				/>
+			)}
 			<GridItem
 				Component={DetailText}
 				shrink={1}
