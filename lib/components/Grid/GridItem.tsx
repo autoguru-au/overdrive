@@ -77,6 +77,7 @@ export const GridItem: FunctionComponent<IProps & any> = ({
 				flexGrow: grow,
 				flexShrink: shrink,
 				flexBasis: basis,
+				display,
 				...alignSelfCssMap.get(align),
 				[gridContext.direction === 'row'
 					? 'minWidth'
