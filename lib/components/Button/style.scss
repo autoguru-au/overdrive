@@ -55,7 +55,7 @@ $widthSmall: 36px;
 	transition: color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
 		background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
 		border-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
-		box-shaddow 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
+		box-shadow 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
 		transform 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 
 	@include isHoverState() {
