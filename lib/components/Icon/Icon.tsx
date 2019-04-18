@@ -5,7 +5,7 @@ import styles from './style.scss';
 export interface IProps {
 	className?: string;
 	size: number;
-
+	style?: CSSRuleList;
 	icon(): JSX.Element;
 }
 
@@ -13,9 +13,9 @@ export type TIconPrimitiveType = any; // TODO: fix me
 
 export const IconComponent: FunctionComponent<
 	IProps & SVGAttributes<SVGElement>
-> = ({ className = '', icon, size }) => (
+> = ({ className = '', icon, size, style }) => (
 	<i
-		style={{ width: size, height: size }}
+		style={{ ...style, width: size, height: size }}
 		className={cx([styles.root, className])}>
 		{icon()}
 	</i>
