@@ -46,7 +46,7 @@ storiesOf('Components|Pagination/Numbered', module)
 
 		return <Example />;
 	})
-	.add('loading', () => <Pagination {...baseProps(null)} />)
+	.add('loading', () => <Pagination {...baseProps(0)} />)
 	.add('less than max pages', () => (
 		<Pagination {...baseProps(1, 20, 10, 5)} />
 	))

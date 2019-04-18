@@ -2,11 +2,12 @@
 
 exports[`<Pagination /> should match snapshot for loading phase 1`] = `
 <span
-  class="loading pagination"
+  class="lightGrid loading pagination row"
+  style="flex-wrap:nowrap;flex-direction:row;justify-content:center;align-content:center;align-items:center;padding:var(--global--space--0);width:100%"
 >
   <i
-    class="root chevron disabled"
-    style="width:25px;height:25px"
+    class="root gridItem chevron disabled"
+    style="width:25px;height:25px;flex-grow:0;flex-shrink:0;flex-basis:auto;display:inline-block;min-width:auto;margin:0 calc(0.5 * var(--global--space--3))"
   >
     <svg
       viewBox="0 0 512 512"
@@ -18,17 +19,20 @@ exports[`<Pagination /> should match snapshot for loading phase 1`] = `
     </svg>
   </i>
   <button
-    class="bubble disabled"
+    class="bubble gridItem disabled"
+    style="flex-grow:0;flex-shrink:0;flex-basis:auto;display:flex;min-width:auto;margin:0 calc(0.5 * var(--global--space--3))"
   />
   <button
-    class="bubble disabled"
+    class="bubble gridItem disabled"
+    style="flex-grow:0;flex-shrink:0;flex-basis:auto;display:flex;min-width:auto;margin:0 calc(0.5 * var(--global--space--3))"
   />
   <button
-    class="bubble disabled"
+    class="bubble gridItem disabled"
+    style="flex-grow:0;flex-shrink:0;flex-basis:auto;display:flex;min-width:auto;margin:0 calc(0.5 * var(--global--space--3))"
   />
   <i
-    class="root chevron disabled"
-    style="width:25px;height:25px"
+    class="root gridItem chevron disabled"
+    style="width:25px;height:25px;flex-grow:0;flex-shrink:0;flex-basis:auto;display:inline-block;min-width:auto;margin:0 calc(0.5 * var(--global--space--3))"
   >
     <svg
       viewBox="0 0 512 512"

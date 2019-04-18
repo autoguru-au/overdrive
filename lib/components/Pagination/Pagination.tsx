@@ -1,5 +1,13 @@
 import cx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
+import {
+	EGridLayoutAlign,
+	EGridLayoutPerpendicularAlign,
+	EGridSpace,
+	Grid,
+	GridItem,
+} from '../Grid';
+import { EGridDirection, EWrap } from '../Grid/stories';
 import { ChevronLeftIcon, ChevronRightIcon, Icon } from '../Icon';
 import styles from './style.scss';
 import { Bubble } from './Bubble';
@@ -41,31 +49,59 @@ export const PaginationComponent: FunctionComponent<IProps> = ({
 	};
 	const allowedActive: number = withinBoundaries(activePage, numPages);
 
-	return total && pageSize && activePage && numPagesDisplayed ? (
-		<span className={cls}>
-			<a className={chevronLeftCls} onClick={handleClick(activePage - 1)}>
-				<Icon size={24} icon={ChevronLeftIcon} />
-			</a>
+	return total && pageSize && activePage > 0 && numPagesDisplayed ? (
+		<Grid
+			width="100%"
+			height={null}
+			direction={EGridDirection.Row}
+			layoutAlign={EGridLayoutAlign.Center}
+			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Center}
+			wrap={EWrap.NoWrap}
+			padding={EGridSpace.Space0}
+			gutter={EGridSpace.Space3}
+			Component={'span'}
+			className={cls}>
+			<GridItem
+				display="inline-block"
+				shrink={0}
+				grow={0}
+				className={chevronLeftCls}
+				onClick={handleClick(activePage - 1)}
+				Component={Icon}
+				size={24}
+				icon={ChevronLeftIcon}
+			/>
+
 			{buildPagesList(
 				numPages,
 				allowedActive,
 				numPagesDisplayed,
 				numPages - numPagesDisplayed
 			).map(num => (
-				<Bubble
+				<GridItem
+					display="inline-block"
+					Component={Bubble}
+					shrink={0}
+					grow={0}
 					onClick={handleClick(num)}
 					key={num}
 					selected={allowedActive === num}
-					gap={num < 0}>
-					{num}
-				</Bubble>
+					gap={num < 0}
+					children={num}
+				/>
 			))}
-			<a
+
+			<GridItem
+				display="inline-block"
+				shrink={0}
+				grow={0}
 				className={chevronRightCls}
-				onClick={handleClick(allowedActive + 1)}>
-				<Icon size={24} icon={ChevronRightIcon} />
-			</a>
-		</span>
+				onClick={handleClick(allowedActive + 1)}
+				Component={Icon}
+				size={24}
+				icon={ChevronRightIcon}
+			/>
+		</Grid>
 	) : (
 		<PaginationLoading className={cls} placeholderBubblesNum={3} />
 	);

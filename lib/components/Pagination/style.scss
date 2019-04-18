@@ -4,17 +4,6 @@
 	--od--Pagination--bubble-size: 36px;
 }
 
-.pagination,
-.loading {
-	flex-direction: row;
-	box-sizing: border-box;
-	display: flex;
-	align-content: center;
-	justify-content: flex-start;
-	align-items: center;
-	flex-wrap: wrap;
-}
-
 .chevron {
 	fill: getColour(gray, 500);
 
@@ -33,13 +22,6 @@
 
 .chevron,
 .bubble {
-	flex-direction: row;
-	box-sizing: border-box;
-	display: flex;
-	align-content: center;
-	justify-content: center;
-	align-items: center;
-	margin-right: 10px;
 	cursor: pointer;
 	color: getColour(gray, 500);
 	width: var(--od--Pagination--bubble-size);
