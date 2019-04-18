@@ -92,6 +92,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       label="radio label 1"
       style={
         Object {
+          "display": "flex",
           "flexBasis": "auto",
           "flexGrow": 1,
           "flexShrink": 0,
