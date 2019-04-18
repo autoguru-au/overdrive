@@ -1,5 +1,13 @@
 import cx from 'clsx';
 import React, { ChangeEvent, FunctionComponent } from 'react';
+import {
+	EGridLayoutAlign,
+	EGridLayoutPerpendicularAlign,
+	EGridSpace,
+	Grid,
+	GridItem,
+} from '../Grid';
+import { EGridDirection, EWrap } from '../Grid/stories';
 import styles from './style.scss';
 
 export const checkableClass = styles.checkable;
@@ -37,7 +45,15 @@ export const CheckableBase: FunctionComponent<IProps> = ({
 	};
 
 	return (
-		<div
+		<Grid
+			width="inherit"
+			height="inherit"
+			direction={EGridDirection.Row}
+			layoutAlign={EGridLayoutAlign.Start}
+			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Center}
+			wrap={EWrap.NoWrap}
+			padding={EGridSpace.Space3}
+			gutter={EGridSpace.Space0}
 			className={cx([styles.root, className], {
 				[styles.checked]: checked,
 				[styles.disabled]: disabled === true,
@@ -54,9 +70,13 @@ export const CheckableBase: FunctionComponent<IProps> = ({
 			/>
 			{children}
 			<div className={styles.focusRect} />
-			{!!(typeof label === 'string' && label.length > 0) && (
-				<label children={label} className={styles.label} />
-			)}
-		</div>
+			<GridItem
+				shrink={1}
+				grow={1}
+				Component="label"
+				children={label}
+				className={styles.label}
+			/>
+		</Grid>
 	);
 };

@@ -6,7 +6,8 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
   style="flex-wrap:nowrap;flex-direction:column;justify-content:flex-start;align-content:stretch;align-items:stretch;padding:var(--global--space--0);width:100%"
 >
   <div
-    class="root gridItem radio"
+    class="lightGrid root gridItem radio row"
+    style="flex-wrap:nowrap;flex-direction:row;justify-content:flex-start;align-content:center;align-items:center;padding:var(--global--space--3);width:inherit;height:inherit"
   >
     <input
       class="nativeInput"
@@ -28,13 +29,15 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       class="focusRect"
     />
     <label
-      class="label"
+      class="gridItem label"
+      style="flex-grow:1;flex-shrink:1;flex-basis:auto;display:flex;min-width:auto;margin:0 calc(0.5 * var(--global--space--0))"
     >
       radio label 1
     </label>
   </div>
   <div
-    class="root gridItem radio"
+    class="lightGrid root gridItem radio row"
+    style="flex-wrap:nowrap;flex-direction:row;justify-content:flex-start;align-content:center;align-items:center;padding:var(--global--space--3);width:inherit;height:inherit"
   >
     <input
       class="nativeInput"
@@ -56,7 +59,8 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       class="focusRect"
     />
     <label
-      class="label"
+      class="gridItem label"
+      style="flex-grow:1;flex-shrink:1;flex-basis:auto;display:flex;min-width:auto;margin:0 calc(0.5 * var(--global--space--0))"
     >
       radio label 2
     </label>
@@ -104,38 +108,93 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       }
       value="1"
     >
-      <div
+      <Grid
         className="root gridItem radio"
+        direction="row"
+        gutter="space-0"
+        height="inherit"
+        layoutAlign="start"
+        layoutPerpendicularAlign="center"
+        padding="space-3"
+        width="inherit"
+        wrap="nowrap"
       >
-        <input
-          checked={false}
-          className="nativeInput"
-          disabled={false}
-          name="radio"
-          onChange={[Function]}
-          onClick={[Function]}
-          type="radio"
-          value="1"
-        />
-        <div
-          className="checkable"
+        <LightGrid
+          className="root gridItem radio"
+          direction="row"
+          gutter="space-0"
+          height="inherit"
+          layoutAlign="start"
+          layoutPerpendicularAlign="center"
+          padding="space-3"
+          width="inherit"
+          wrap="nowrap"
         >
           <div
-            className="outerCircle"
-          />
-          <div
-            className="innerCircle"
-          />
-        </div>
-        <div
-          className="focusRect"
-        />
-        <label
-          className="label"
-        >
-          radio label 1
-        </label>
-      </div>
+            className="lightGrid root gridItem radio row"
+            style={
+              Object {
+                "alignContent": "center",
+                "alignItems": "center",
+                "flexDirection": "row",
+                "flexWrap": "nowrap",
+                "height": "inherit",
+                "justifyContent": "flex-start",
+                "padding": "var(--global--space--3)",
+                "width": "inherit",
+              }
+            }
+          >
+            <input
+              checked={false}
+              className="nativeInput"
+              disabled={false}
+              name="radio"
+              onChange={[Function]}
+              onClick={[Function]}
+              type="radio"
+              value="1"
+            />
+            <div
+              className="checkable"
+            >
+              <div
+                className="outerCircle"
+              />
+              <div
+                className="innerCircle"
+              />
+            </div>
+            <div
+              className="focusRect"
+            />
+            <GridItem
+              Component="label"
+              className="label"
+              grow={1}
+              shrink={1}
+            >
+              <label
+                className="gridItem label"
+                style={
+                  Object {
+                    "display": "flex",
+                    "flexBasis": "auto",
+                    "flexGrow": 1,
+                    "flexShrink": 1,
+                    "height": undefined,
+                    "margin": "0 calc(0.5 * var(--global--space--0))",
+                    "minWidth": "auto",
+                    "width": undefined,
+                  }
+                }
+              >
+                radio label 1
+              </label>
+            </GridItem>
+          </div>
+        </LightGrid>
+      </Grid>
     </CheckableBase>
   </GridItem>
 </Component>
@@ -147,7 +206,8 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
   style="flex-wrap:nowrap;flex-direction:column;justify-content:flex-start;align-content:stretch;align-items:stretch;padding:var(--global--space--0);width:100%"
 >
   <div
-    class="root gridItem radio"
+    class="lightGrid root gridItem radio row"
+    style="flex-wrap:nowrap;flex-direction:row;justify-content:flex-start;align-content:center;align-items:center;padding:var(--global--space--3);width:inherit;height:inherit"
   >
     <input
       class="nativeInput"
@@ -169,13 +229,15 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       class="focusRect"
     />
     <label
-      class="label"
+      class="gridItem label"
+      style="flex-grow:1;flex-shrink:1;flex-basis:auto;display:flex;min-width:auto;margin:0 calc(0.5 * var(--global--space--0))"
     >
       radio label 1
     </label>
   </div>
   <div
-    class="root gridItem radio"
+    class="lightGrid root gridItem radio row"
+    style="flex-wrap:nowrap;flex-direction:row;justify-content:flex-start;align-content:center;align-items:center;padding:var(--global--space--3);width:inherit;height:inherit"
   >
     <input
       class="nativeInput"
@@ -197,13 +259,15 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       class="focusRect"
     />
     <label
-      class="label"
+      class="gridItem label"
+      style="flex-grow:1;flex-shrink:1;flex-basis:auto;display:flex;min-width:auto;margin:0 calc(0.5 * var(--global--space--0))"
     >
       radio label 2
     </label>
   </div>
   <div
-    class="root gridItem radio"
+    class="lightGrid root gridItem radio row"
+    style="flex-wrap:nowrap;flex-direction:row;justify-content:flex-start;align-content:center;align-items:center;padding:var(--global--space--3);width:inherit;height:inherit"
   >
     <input
       class="nativeInput"
@@ -225,13 +289,15 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       class="focusRect"
     />
     <label
-      class="label"
+      class="gridItem label"
+      style="flex-grow:1;flex-shrink:1;flex-basis:auto;display:flex;min-width:auto;margin:0 calc(0.5 * var(--global--space--0))"
     >
       radio label 3
     </label>
   </div>
   <div
-    class="root gridItem radio"
+    class="lightGrid root gridItem radio row"
+    style="flex-wrap:nowrap;flex-direction:row;justify-content:flex-start;align-content:center;align-items:center;padding:var(--global--space--3);width:inherit;height:inherit"
   >
     <input
       class="nativeInput"
@@ -253,7 +319,8 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       class="focusRect"
     />
     <label
-      class="label"
+      class="gridItem label"
+      style="flex-grow:1;flex-shrink:1;flex-basis:auto;display:flex;min-width:auto;margin:0 calc(0.5 * var(--global--space--0))"
     >
       radio label 4
     </label>
@@ -267,7 +334,8 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
   style="flex-wrap:nowrap;flex-direction:column;justify-content:flex-start;align-content:stretch;align-items:stretch;padding:var(--global--space--0);width:100%"
 >
   <div
-    class="root gridItem radio"
+    class="lightGrid root gridItem radio row"
+    style="flex-wrap:nowrap;flex-direction:row;justify-content:flex-start;align-content:center;align-items:center;padding:var(--global--space--3);width:inherit;height:inherit"
   >
     <input
       class="nativeInput"
@@ -289,7 +357,8 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       class="focusRect"
     />
     <label
-      class="label"
+      class="gridItem label"
+      style="flex-grow:1;flex-shrink:1;flex-basis:auto;display:flex;min-width:auto;margin:0 calc(0.5 * var(--global--space--0))"
     >
       radio label 1
     </label>
@@ -303,7 +372,8 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
   style="flex-wrap:nowrap;flex-direction:column;justify-content:flex-start;align-content:stretch;align-items:stretch;padding:var(--global--space--0);width:100%"
 >
   <div
-    class="root gridItem radio"
+    class="lightGrid root gridItem radio row"
+    style="flex-wrap:nowrap;flex-direction:row;justify-content:flex-start;align-content:center;align-items:center;padding:var(--global--space--3);width:inherit;height:inherit"
   >
     <input
       class="nativeInput"
@@ -322,6 +392,10 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
     </div>
     <div
       class="focusRect"
+    />
+    <label
+      class="gridItem label"
+      style="flex-grow:1;flex-shrink:1;flex-basis:auto;display:flex;min-width:auto;margin:0 calc(0.5 * var(--global--space--0))"
     />
   </div>
 </div>

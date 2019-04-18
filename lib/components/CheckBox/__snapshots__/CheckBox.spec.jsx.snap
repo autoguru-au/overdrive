@@ -2,7 +2,8 @@
 
 exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
 <div
-  class="root checkbox checked"
+  class="lightGrid root checkbox checked row"
+  style="flex-wrap:nowrap;flex-direction:row;justify-content:flex-start;align-content:center;align-items:center;padding:var(--global--space--3);width:inherit;height:inherit"
 >
   <input
     checked=""
@@ -30,7 +31,8 @@ exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
     class="focusRect"
   />
   <label
-    class="label"
+    class="gridItem label"
+    style="flex-grow:1;flex-shrink:1;flex-basis:auto;display:flex;min-width:auto;margin:0 calc(0.5 * var(--global--space--0))"
   >
     check label 1
   </label>
@@ -53,42 +55,98 @@ exports[`<CheckBox /> should match the snapshot for a focused check 1`] = `
     label="check label 1"
     value="1"
   >
-    <div
+    <Grid
       className="root checkbox"
+      direction="row"
+      gutter="space-0"
+      height="inherit"
+      layoutAlign="start"
+      layoutPerpendicularAlign="center"
+      padding="space-3"
+      width="inherit"
+      wrap="nowrap"
     >
-      <input
-        checked={false}
-        className="nativeInput"
-        disabled={false}
-        name=""
-        onChange={[Function]}
-        onClick={[Function]}
-        type="checkbox"
-        value="1"
-      />
-      <div
-        className="checkable"
+      <LightGrid
+        className="root checkbox"
+        direction="row"
+        gutter="space-0"
+        height="inherit"
+        layoutAlign="start"
+        layoutPerpendicularAlign="center"
+        padding="space-3"
+        width="inherit"
+        wrap="nowrap"
       >
         <div
-          className="box"
-        />
-      </div>
-      <div
-        className="focusRect"
-      />
-      <label
-        className="label"
-      >
-        check label 1
-      </label>
-    </div>
+          className="lightGrid root checkbox row"
+          style={
+            Object {
+              "alignContent": "center",
+              "alignItems": "center",
+              "flexDirection": "row",
+              "flexWrap": "nowrap",
+              "height": "inherit",
+              "justifyContent": "flex-start",
+              "padding": "var(--global--space--3)",
+              "width": "inherit",
+            }
+          }
+        >
+          <input
+            checked={false}
+            className="nativeInput"
+            disabled={false}
+            name=""
+            onChange={[Function]}
+            onClick={[Function]}
+            type="checkbox"
+            value="1"
+          />
+          <div
+            className="checkable"
+          >
+            <div
+              className="box"
+            />
+          </div>
+          <div
+            className="focusRect"
+          />
+          <GridItem
+            Component="label"
+            className="label"
+            grow={1}
+            shrink={1}
+          >
+            <label
+              className="gridItem label"
+              style={
+                Object {
+                  "display": "flex",
+                  "flexBasis": "auto",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "height": undefined,
+                  "margin": "0 calc(0.5 * var(--global--space--0))",
+                  "minWidth": "auto",
+                  "width": undefined,
+                }
+              }
+            >
+              check label 1
+            </label>
+          </GridItem>
+        </div>
+      </LightGrid>
+    </Grid>
   </CheckableBase>
 </Component>
 `;
 
 exports[`<CheckBox /> should match the snapshot for a single check 1`] = `
 <div
-  class="root checkbox"
+  class="lightGrid root checkbox row"
+  style="flex-wrap:nowrap;flex-direction:row;justify-content:flex-start;align-content:center;align-items:center;padding:var(--global--space--3);width:inherit;height:inherit"
 >
   <input
     class="nativeInput"
@@ -107,7 +165,8 @@ exports[`<CheckBox /> should match the snapshot for a single check 1`] = `
     class="focusRect"
   />
   <label
-    class="label"
+    class="gridItem label"
+    style="flex-grow:1;flex-shrink:1;flex-basis:auto;display:flex;min-width:auto;margin:0 calc(0.5 * var(--global--space--0))"
   >
     check label 1
   </label>
@@ -116,7 +175,8 @@ exports[`<CheckBox /> should match the snapshot for a single check 1`] = `
 
 exports[`<CheckBox /> should match the snapshot for a single check with no value or label 1`] = `
 <div
-  class="root checkbox"
+  class="lightGrid root checkbox row"
+  style="flex-wrap:nowrap;flex-direction:row;justify-content:flex-start;align-content:center;align-items:center;padding:var(--global--space--3);width:inherit;height:inherit"
 >
   <input
     class="nativeInput"
@@ -132,6 +192,10 @@ exports[`<CheckBox /> should match the snapshot for a single check with no value
   </div>
   <div
     class="focusRect"
+  />
+  <label
+    class="gridItem label"
+    style="flex-grow:1;flex-shrink:1;flex-basis:auto;display:flex;min-width:auto;margin:0 calc(0.5 * var(--global--space--0))"
   />
 </div>
 `;

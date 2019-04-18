@@ -6,6 +6,7 @@ export interface IProps {
 	className?: string;
 	size: number;
 	style?: CSSRuleList;
+
 	icon(): JSX.Element;
 }
 
