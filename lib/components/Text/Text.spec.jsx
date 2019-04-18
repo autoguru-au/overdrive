@@ -40,7 +40,7 @@ describe('<Text />', () => {
 		text.unmount();
 	});
 
-	it('should use a span dom element ', () => {
+	it('should use a p dom tag', () => {
 		const text = shallow(<Text>{testLabel}</Text>);
 		expect(text.type()).toEqual('p');
 	});
