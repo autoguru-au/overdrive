@@ -1,13 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
-<div
-  class="pagination"
+<span
+  class="lightGrid pagination row"
+  style="flex-wrap:nowrap;flex-direction:row;justify-content:center;align-content:center;align-items:center;padding:var(--global--space--0);width:100%"
 >
   <button
     aria-disabled="true"
-    class="root sizeSmall variantSecondary chevron disabled rounded"
+    class="root sizeSmall variantSecondary gridItem chevron disabled rounded"
     disabled=""
+    style="flex-grow:0;flex-shrink:0;flex-basis:auto;display:inline-block;min-width:auto;margin:0 calc(0.5 * var(--global--space--3))"
   >
     <span
       class="btnContent"
@@ -29,7 +31,8 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
   </button>
   <button
     aria-disabled="false"
-    class="root sizeSmall variantSecondary chevron rounded"
+    class="root sizeSmall variantSecondary gridItem chevron rounded"
+    style="flex-grow:0;flex-shrink:0;flex-basis:auto;display:inline-block;min-width:auto;margin:0 calc(0.5 * var(--global--space--3))"
   >
     <span
       class="btnContent"
@@ -49,16 +52,18 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
       </i>
     </span>
   </button>
-</div>
+</span>
 `;
 
 exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 1`] = `
-<div
-  class="pagination"
+<span
+  class="lightGrid pagination row"
+  style="flex-wrap:nowrap;flex-direction:row;justify-content:center;align-content:center;align-items:center;padding:var(--global--space--0);width:100%"
 >
   <button
     aria-disabled="false"
-    class="root sizeSmall variantSecondary chevron rounded"
+    class="root sizeSmall variantSecondary gridItem chevron rounded"
+    style="flex-grow:0;flex-shrink:0;flex-basis:auto;display:inline-block;min-width:auto;margin:0 calc(0.5 * var(--global--space--3))"
   >
     <span
       class="btnContent"
@@ -80,7 +85,8 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
   </button>
   <button
     aria-disabled="false"
-    class="root sizeSmall variantSecondary chevron rounded"
+    class="root sizeSmall variantSecondary gridItem chevron rounded"
+    style="flex-grow:0;flex-shrink:0;flex-basis:auto;display:inline-block;min-width:auto;margin:0 calc(0.5 * var(--global--space--3))"
   >
     <span
       class="btnContent"
@@ -100,16 +106,18 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
       </i>
     </span>
   </button>
-</div>
+</span>
 `;
 
 exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
-<div
-  class="pagination"
+<span
+  class="lightGrid pagination row"
+  style="flex-wrap:nowrap;flex-direction:row;justify-content:center;align-content:center;align-items:center;padding:var(--global--space--0);width:100%"
 >
   <button
     aria-disabled="false"
-    class="root sizeSmall variantSecondary chevron rounded"
+    class="root sizeSmall variantSecondary gridItem chevron rounded"
+    style="flex-grow:0;flex-shrink:0;flex-basis:auto;display:inline-block;min-width:auto;margin:0 calc(0.5 * var(--global--space--3))"
   >
     <span
       class="btnContent"
@@ -131,8 +139,9 @@ exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
   </button>
   <button
     aria-disabled="true"
-    class="root sizeSmall variantSecondary chevron disabled rounded"
+    class="root sizeSmall variantSecondary gridItem chevron disabled rounded"
     disabled=""
+    style="flex-grow:0;flex-shrink:0;flex-basis:auto;display:inline-block;min-width:auto;margin:0 calc(0.5 * var(--global--space--3))"
   >
     <span
       class="btnContent"
@@ -152,5 +161,5 @@ exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
       </i>
     </span>
   </button>
-</div>
+</span>
 `;

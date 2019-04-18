@@ -1,6 +1,14 @@
 import cx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
 import { Button, EButtonSize, EButtonVariant } from '../Button';
+import {
+	EGridLayoutAlign,
+	EGridLayoutPerpendicularAlign,
+	EGridSpace,
+	Grid,
+	GridItem,
+} from '../Grid';
+import { EGridDirection, EWrap } from '../Grid/stories';
 import { ChevronLeftIcon, ChevronRightIcon, Icon } from '../Icon';
 import styles from './style.scss';
 
@@ -36,8 +44,22 @@ export const SimplePaginationComponent: FunctionComponent<IProps> = ({
 	};
 
 	return (
-		<div className={cls}>
-			<Button
+		<Grid
+			width="100%"
+			height={null}
+			direction={EGridDirection.Row}
+			layoutAlign={EGridLayoutAlign.Center}
+			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Center}
+			wrap={EWrap.NoWrap}
+			padding={EGridSpace.Space0}
+			gutter={EGridSpace.Space3}
+			Component={'span'}
+			className={cls}>
+			<GridItem
+				display="inline-block"
+				shrink={0}
+				grow={0}
+				Component={Button}
 				rounded={true}
 				disabled={!hasPrevious}
 				size={EButtonSize.Small}
@@ -49,8 +71,12 @@ export const SimplePaginationComponent: FunctionComponent<IProps> = ({
 					size={24}
 					icon={ChevronLeftIcon}
 				/>
-			</Button>
-			<Button
+			</GridItem>
+			<GridItem
+				display="inline-block"
+				shrink={0}
+				grow={0}
+				Component={Button}
 				rounded={true}
 				disabled={!hasNext}
 				size={EButtonSize.Small}
@@ -62,8 +88,8 @@ export const SimplePaginationComponent: FunctionComponent<IProps> = ({
 					size={24}
 					icon={ChevronRightIcon}
 				/>
-			</Button>
-		</div>
+			</GridItem>
+		</Grid>
 	);
 };
 
