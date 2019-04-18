@@ -1,6 +1,7 @@
 import { invariant } from '@autoguru/utilities';
 import cx from 'clsx';
 import {
+	DisplayProperty,
 	FlexBasisProperty,
 	FlexProperty,
 	HeightProperty,
@@ -18,6 +19,7 @@ export interface IProps {
 	grow?: 0 | 1;
 	shrink?: 0 | 1;
 	basis?: FlexBasisProperty<string>;
+	display?: DisplayProperty;
 	align?: EItemAlignSelf;
 	width?: WidthProperty<string>;
 	height?: HeightProperty<string>;
@@ -40,6 +42,7 @@ export const GridItem: FunctionComponent<IProps & any> = ({
 	shrink = 1,
 	width,
 	height,
+	display = 'flex',
 	basis = 'auto',
 	Component = 'div',
 	children,
