@@ -6,14 +6,6 @@
 
 .chevron {
 	fill: getColour(gray, 500);
-
-	&:last-child {
-		margin-right: 0;
-	}
-
-	&.disabled {
-		fill: getColour(gray, 300);
-	}
 }
 
 .disabled {
