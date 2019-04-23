@@ -5,6 +5,9 @@ import React from 'react';
 import { Tab, Tabs } from '.';
 
 storiesOf('Components|Tabs', module)
+	.addDecorator(story => (
+		<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
+	))
 	.add('default', () => (
 		<Tabs>
 			{(text('Tabs', 'Tab 1, Tab 2') as string)
@@ -22,4 +25,22 @@ storiesOf('Components|Tabs', module)
 			<Tab title={'A'}>a</Tab>
 			<Tab title={'B'}>b</Tab>
 		</Tabs>
+	))
+	.add('with number', () => (
+		<Tabs>
+			<Tab title="Leads" indication={getRandomInt(6, 10)}>
+				Content a
+			</Tab>
+			<Tab title="Claimed" indication={getRandomInt(1, 3)}>
+				Content b
+			</Tab>
+			<Tab title="Expired">Content c</Tab>
+		</Tabs>
 	));
+
+function getRandomInt(min, max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}

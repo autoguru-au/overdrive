@@ -5,12 +5,14 @@ import styles from './style.scss';
 
 export interface IProps {
 	active: boolean;
+	indication?: number;
 
 	onClick(e: React.MouseEvent<HTMLButtonElement>): void;
 }
 
 export const TabNavItem: FunctionComponent<IProps> = ({
 	children,
+	indication,
 	onClick,
 	active,
 }) => (
@@ -19,6 +21,9 @@ export const TabNavItem: FunctionComponent<IProps> = ({
 			[styles.navItemActive]: active,
 		})}
 		onClick={onClick}>
-		{children}
+		<span className={styles.navItemTitle}>{children}</span>
+		{!!indication && (
+			<span className={styles.navItemIndication}>{indication}</span>
+		)}
 	</button>
 );

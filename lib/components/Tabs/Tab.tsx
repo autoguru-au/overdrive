@@ -2,6 +2,7 @@ import { FunctionComponent } from 'react';
 
 export interface IProps {
 	title: string;
+	indication?: number;
 }
 
 export const Tab: FunctionComponent<IProps> = () => {
