@@ -101,11 +101,21 @@ describe('<Tabs />', () => {
 			</Tabs>
 		);
 
-		expect(tabs.state('active')).toEqual(0); // precondition
+		expect(
+			tabs
+				.find('.tabPane')
+				.at(0)
+				.hasClass('tabPaneActive')
+		).toEqual(true); // precondition
 
 		tabs.setProps({ active: 1 });
 
-		expect(tabs.state('active')).toEqual(1); // implication
+		expect(
+			tabs
+				.find('.tabPane')
+				.at(1)
+				.hasClass('tabPaneActive')
+		).toEqual(true);
 	});
 
 	describe('when rendered to the DOM', () => {
