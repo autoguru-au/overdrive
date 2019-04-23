@@ -93,6 +93,31 @@ describe('<Tabs />', () => {
 		tabs.unmount();
 	});
 
+	it('should allow the active to be updated outside', () => {
+		const tabs = mount(
+			<Tabs>
+				<Tab title="A">A</Tab>
+				<Tab title="B">B</Tab>
+			</Tabs>
+		);
+
+		expect(
+			tabs
+				.find('.tabPane')
+				.at(0)
+				.hasClass('tabPaneActive')
+		).toEqual(true); // precondition
+
+		tabs.setProps({ active: 1 });
+
+		expect(
+			tabs
+				.find('.tabPane')
+				.at(1)
+				.hasClass('tabPaneActive')
+		).toEqual(true);
+	});
+
 	describe('when rendered to the DOM', () => {
 		let container;
 
