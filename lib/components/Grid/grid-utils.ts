@@ -4,7 +4,7 @@ import {
 	HeightProperty,
 	WidthProperty,
 } from 'csstype';
-import React, { ComponentType } from 'react';
+import { ComponentType } from 'react';
 import { EGridSpace, ELayoutAlign, ELayoutPerpendicularAlign } from './enums';
 
 export interface IProps {
@@ -27,8 +27,6 @@ export interface IGridContext {
 	fullGrid?: boolean;
 	gutterSpace?: string;
 }
-
-export const GridContext = React.createContext<Partial<IGridContext>>({});
 
 export const spaceVarPrefix = '--global--space--';
 export const spaceSizeMap: Map<EGridSpace, string> = new Map([

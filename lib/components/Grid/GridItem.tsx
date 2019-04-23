@@ -8,8 +8,8 @@ import {
 	WidthProperty,
 } from 'csstype';
 import React, { ComponentType, FunctionComponent, useContext } from 'react';
+import { GridContext } from './context';
 import { EItemAlignSelf } from './enums';
-import { GridContext } from './grid-utils';
 import styles from './style.scss';
 
 export interface IProps {

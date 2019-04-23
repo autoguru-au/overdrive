@@ -1,9 +1,9 @@
 import cx from 'clsx';
 import React, { FunctionComponent } from 'react';
+import { GridContext } from './context';
 import { GridDefaults } from './defaults';
 import { ELayoutAlign, ELayoutPerpendicularAlign } from './enums';
 import {
-	GridContext,
 	IProps,
 	layoutAlignCssMap,
 	layoutPerpendicularAlignCssMap,
