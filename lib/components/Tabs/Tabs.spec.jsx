@@ -1,8 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import { EVariant, Tabs } from './Tabs';
+import { Tabs } from './Tabs';
 import { act } from 'react-dom/test-utils';
-import { ETabsSize } from './index';
 import { Tab } from './Tab';
 import ReactDOM from 'react-dom';
 
@@ -92,6 +91,21 @@ describe('<Tabs />', () => {
 		).toEqual(false);
 
 		tabs.unmount();
+	});
+
+	it('should allow the active to be updated outside', () => {
+		const tabs = mount(
+			<Tabs>
+				<Tab title="A">A</Tab>
+				<Tab title="B">B</Tab>
+			</Tabs>
+		);
+
+		expect(tabs.state('active')).toEqual(0); // precondition
+
+		tabs.setProps({ active: 1 });
+
+		expect(tabs.state('active')).toEqual(1); // implication
 	});
 
 	describe('when rendered to the DOM', () => {
