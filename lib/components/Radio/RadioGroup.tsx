@@ -6,7 +6,6 @@ import {
 	EGridSpace,
 	Grid,
 } from '../Grid';
-import { EGridDirection, EWrap } from '../Grid/stories';
 import styles from './style.scss';
 
 export interface IProps {
@@ -38,10 +37,10 @@ export const RadioGroup: FunctionComponent<IProps> = ({
 		<Grid
 			width="100%"
 			height={null}
-			direction={EGridDirection.Column}
+			direction={'column'}
 			layoutAlign={EGridLayoutAlign.Start}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Stretch}
-			wrap={EWrap.NoWrap}
+			wrap={'nowrap'}
 			padding={EGridSpace.Space0}
 			gutter={EGridSpace.Space4}
 			className={cx([styles.radioGroup, className])}

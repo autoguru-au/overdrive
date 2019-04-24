@@ -1,5 +1,6 @@
 import { number, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
+import { FlexDirectionProperty } from 'csstype';
 import React, { useEffect, useState } from 'react';
 import { Box } from '../Box';
 import {
@@ -16,52 +17,7 @@ import {
 	GridItem,
 } from './index';
 
-// Hook from https://usehooks.com/useMedia/
-
-export const useMedia = (queries, values, defaultValue) => {
-	// Array containing a media query list for each query
-	const mediaQueryLists = queries.map(q => window.matchMedia(q));
-
-	// Function that gets value based on matching media query
-	const getValue = () => {
-		// Get index of first media query that matches
-		const index = mediaQueryLists.findIndex(mql => mql.matches);
-
-		// Return related value or defaultValue if none
-		return typeof values[index] !== 'undefined'
-			? values[index]
-			: defaultValue;
-	};
-
-	// State and setter for matched value
-	const [value, setValue] = useState(getValue);
-
-	useEffect(() => {
-		// Event listener callback
-		// Note: By defining getValue outside of useEffect we ensure that it has ...
-		// ... current values of hook args (as this hook callback is created once on mount).
-
-		const handler = () => setValue(getValue);
-
-		// Set a listener for each media query with above handler as callback.
-		mediaQueryLists.forEach(mql => mql.addListener(handler));
-
-		// Remove listeners on cleanup
-		return () =>
-			mediaQueryLists.forEach(mql => mql.removeListener(handler));
-	}, []); // Empty array ensures effect is only run on mount and unmount
-
-	return value;
-};
-
-export enum EGridDirection {
-	Column = 'column',
-	ColumnReverse = 'column-reverse',
-	Row = 'row',
-	RowReverse = 'row-reverse',
-}
-
-export enum EWrap {
+enum EWrap {
 	Wrap = 'wrap',
 	NoWrap = 'nowrap',
 }
@@ -179,10 +135,10 @@ const MyResponsiveGrid = ({}) => {
 		<Grid
 			width="100%"
 			height={null}
-			direction={select(
+			direction={select<FlexDirectionProperty>(
 				'Direction',
-				EGridDirection,
-				EGridDirection.Row,
+				{}, // TODO: Fill me
+				'row',
 				'Grid'
 			)}
 			layoutAlign={select(
@@ -213,8 +169,8 @@ storiesOf('Components|Grid', module)
 			height={null}
 			direction={select(
 				'Direction',
-				EGridDirection,
-				EGridDirection.Row,
+				{}, // TODO: Fill me
+				'row',
 				'Grid'
 			)}
 			layoutAlign={select(
@@ -243,7 +199,7 @@ storiesOf('Components|Grid/Row', module)
 		<Grid
 			width="100%"
 			height={null}
-			direction={EGridDirection.Row}
+			direction={'row'}
 			layoutAlign={EGridLayoutAlign.Start}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Start}
 			wrap={EWrap.Wrap}
@@ -256,7 +212,7 @@ storiesOf('Components|Grid/Row', module)
 		<Grid
 			width="100%"
 			height={null}
-			direction={EGridDirection.Row}
+			direction={'row'}
 			layoutAlign={EGridLayoutAlign.Center}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Start}
 			wrap={EWrap.Wrap}
@@ -269,7 +225,7 @@ storiesOf('Components|Grid/Row', module)
 		<Grid
 			width="100%"
 			height={null}
-			direction={EGridDirection.Row}
+			direction={'row'}
 			layoutAlign={EGridLayoutAlign.End}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Start}
 			wrap={EWrap.Wrap}
@@ -282,7 +238,7 @@ storiesOf('Components|Grid/Row', module)
 		<Grid
 			width="100%"
 			height={null}
-			direction={EGridDirection.Row}
+			direction={'row'}
 			layoutAlign={EGridLayoutAlign.SpaceBetween}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Start}
 			wrap={EWrap.Wrap}
@@ -295,7 +251,7 @@ storiesOf('Components|Grid/Row', module)
 		<Grid
 			width="100%"
 			height={null}
-			direction={EGridDirection.Row}
+			direction={'row'}
 			layoutAlign={EGridLayoutAlign.SpaceAround}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Start}
 			wrap={EWrap.Wrap}
@@ -308,7 +264,7 @@ storiesOf('Components|Grid/Row', module)
 		<Grid
 			width="100%"
 			height={null}
-			direction={EGridDirection.Row}
+			direction={'row'}
 			layoutAlign={EGridLayoutAlign.SpaceEvenly}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Start}
 			wrap={EWrap.Wrap}
@@ -321,7 +277,7 @@ storiesOf('Components|Grid/Row', module)
 		<Grid
 			width="100%"
 			height={null}
-			direction={EGridDirection.Row}
+			direction={'row'}
 			layoutAlign={EGridLayoutAlign.Start}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Center}
 			wrap={EWrap.Wrap}
@@ -334,7 +290,7 @@ storiesOf('Components|Grid/Row', module)
 		<Grid
 			width="100%"
 			height={null}
-			direction={EGridDirection.Row}
+			direction={'row'}
 			layoutAlign={EGridLayoutAlign.Start}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.End}
 			wrap={EWrap.Wrap}
@@ -347,7 +303,7 @@ storiesOf('Components|Grid/Row', module)
 		<Grid
 			width="100%"
 			height={null}
-			direction={EGridDirection.Row}
+			direction={'row'}
 			layoutAlign={EGridLayoutAlign.Start}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Stretch}
 			wrap={EWrap.Wrap}
@@ -360,7 +316,7 @@ storiesOf('Components|Grid/Row', module)
 		<Grid
 			width="100%"
 			height={null}
-			direction={EGridDirection.Row}
+			direction={'row'}
 			layoutAlign={EGridLayoutAlign.Start}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Center}
 			wrap={EWrap.NoWrap}
@@ -376,7 +332,7 @@ storiesOf('Components|Grid/Row', module)
 			<Grid
 				width="100%"
 				height={null}
-				direction={EGridDirection.Row}
+				direction={'row'}
 				layoutAlign={EGridLayoutAlign.Start}
 				layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Start}
 				wrap={EWrap.Wrap}
@@ -395,7 +351,7 @@ storiesOf('Components|Grid/Column', module)
 	.addDecorator(decorate)
 	.add('start | start', () => (
 		<Grid
-			direction={EGridDirection.Column}
+			direction={'column'}
 			layoutAlign={EGridLayoutAlign.Start}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Start}
 			wrap={EWrap.Wrap}
@@ -406,7 +362,7 @@ storiesOf('Components|Grid/Column', module)
 	))
 	.add('center | start', () => (
 		<Grid
-			direction={EGridDirection.Column}
+			direction={'column'}
 			layoutAlign={EGridLayoutAlign.Center}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Start}
 			wrap={EWrap.Wrap}
@@ -417,7 +373,7 @@ storiesOf('Components|Grid/Column', module)
 	))
 	.add('end | start', () => (
 		<Grid
-			direction={EGridDirection.Column}
+			direction={'column'}
 			layoutAlign={EGridLayoutAlign.End}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Start}
 			wrap={EWrap.Wrap}
@@ -428,7 +384,7 @@ storiesOf('Components|Grid/Column', module)
 	))
 	.add('space-between | start', () => (
 		<Grid
-			direction={EGridDirection.Column}
+			direction={'column'}
 			layoutAlign={EGridLayoutAlign.SpaceBetween}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Start}
 			wrap={EWrap.Wrap}
@@ -439,7 +395,7 @@ storiesOf('Components|Grid/Column', module)
 	))
 	.add('space-around | start', () => (
 		<Grid
-			direction={EGridDirection.Column}
+			direction={'column'}
 			layoutAlign={EGridLayoutAlign.SpaceAround}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Start}
 			wrap={EWrap.Wrap}
@@ -450,7 +406,7 @@ storiesOf('Components|Grid/Column', module)
 	))
 	.add('space-evenly | start', () => (
 		<Grid
-			direction={EGridDirection.Column}
+			direction={'column'}
 			layoutAlign={EGridLayoutAlign.SpaceEvenly}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Start}
 			wrap={EWrap.Wrap}
@@ -461,7 +417,7 @@ storiesOf('Components|Grid/Column', module)
 	))
 	.add('start | center', () => (
 		<Grid
-			direction={EGridDirection.Column}
+			direction={'column'}
 			layoutAlign={EGridLayoutAlign.Start}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Center}
 			wrap={EWrap.Wrap}
@@ -472,7 +428,7 @@ storiesOf('Components|Grid/Column', module)
 	))
 	.add('start | end', () => (
 		<Grid
-			direction={EGridDirection.Column}
+			direction={'column'}
 			layoutAlign={EGridLayoutAlign.Start}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.End}
 			wrap={EWrap.Wrap}
@@ -483,7 +439,7 @@ storiesOf('Components|Grid/Column', module)
 	))
 	.add('start | stretch', () => (
 		<Grid
-			direction={EGridDirection.Column}
+			direction={'column'}
 			layoutAlign={EGridLayoutAlign.Start}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Stretch}
 			wrap={EWrap.Wrap}
@@ -494,7 +450,7 @@ storiesOf('Components|Grid/Column', module)
 	))
 	.add('nowrap', () => (
 		<Grid
-			direction={EGridDirection.Column}
+			direction={'column'}
 			layoutAlign={EGridLayoutAlign.Start}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Center}
 			wrap={EWrap.NoWrap}
@@ -509,7 +465,7 @@ storiesOf('Components|Grid/Column', module)
 		return (
 			<Grid
 				width="800px"
-				direction={EGridDirection.Column}
+				direction={'column'}
 				layoutAlign={EGridLayoutAlign.SpaceBetween}
 				layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Start}
 				wrap={EWrap.Wrap}
@@ -523,3 +479,30 @@ storiesOf('Components|Grid/Column', module)
 			</Grid>
 		);
 	});
+
+// Hook from https://usehooks.com/useMedia/
+
+export const useMedia = (queries, values, defaultValue) => {
+	const mediaQueryLists = queries.map(q => window.matchMedia(q));
+
+	const getValue = () => {
+		const index = mediaQueryLists.findIndex(mql => mql.matches);
+
+		return typeof values[index] !== 'undefined'
+			? values[index]
+			: defaultValue;
+	};
+
+	const [value, setValue] = useState(getValue);
+
+	useEffect(() => {
+		const handler = () => setValue(getValue);
+
+		mediaQueryLists.forEach(mql => mql.addListener(handler));
+
+		return () =>
+			mediaQueryLists.forEach(mql => mql.removeListener(handler));
+	}, []);
+
+	return value;
+};

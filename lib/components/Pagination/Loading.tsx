@@ -7,7 +7,6 @@ import {
 	Grid,
 	GridItem,
 } from '../Grid';
-import { EGridDirection, EWrap } from '../Grid/stories';
 import { ChevronLeftIcon, ChevronRightIcon, Icon } from '../Icon';
 import styles from './style.scss';
 import { Bubble } from './Bubble';
@@ -27,10 +26,10 @@ export const LoadingComponent: FunctionComponent<IProps> = ({
 		<Grid
 			width="100%"
 			height={null}
-			direction={EGridDirection.Row}
+			direction={'row'}
 			layoutAlign={EGridLayoutAlign.Center}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Center}
-			wrap={EWrap.NoWrap}
+			wrap={'nowrap'}
 			padding={EGridSpace.Space0}
 			gutter={EGridSpace.Space3}
 			Component={'span'}

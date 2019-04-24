@@ -7,7 +7,6 @@ import {
 	Grid,
 	GridItem,
 } from '../Grid';
-import { EGridDirection, EWrap } from '../Grid/stories';
 import styles from './style.scss';
 
 export const checkableClass = styles.checkable;
@@ -48,10 +47,10 @@ export const CheckableBase: FunctionComponent<IProps> = ({
 		<Grid
 			width="inherit"
 			height="inherit"
-			direction={EGridDirection.Row}
+			direction={'row'}
 			layoutAlign={EGridLayoutAlign.Start}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Center}
-			wrap={EWrap.NoWrap}
+			wrap={'nowrap'}
 			padding={EGridSpace.Space3}
 			gutter={EGridSpace.Space0}
 			className={cx([styles.root, className], {

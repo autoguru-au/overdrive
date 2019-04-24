@@ -7,7 +7,6 @@ import {
 	Grid,
 	GridItem,
 } from '../Grid';
-import { EGridDirection, EWrap } from '../Grid/stories';
 import { Text } from '../Text';
 import styles from './style.scss';
 
@@ -39,10 +38,10 @@ export const BulletText: FunctionComponent<IProps> = ({
 		<Grid
 			width="100%"
 			height={null}
-			direction={EGridDirection.Row}
+			direction={'row'}
 			layoutAlign={EGridLayoutAlign.Start}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Center}
-			wrap={EWrap.NoWrap}
+			wrap={'nowrap'}
 			padding={EGridSpace.Space0}
 			gutter={EGridSpace.Space4}
 			Component={ordered ? 'ol' : 'li'}

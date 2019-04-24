@@ -8,7 +8,6 @@ import {
 	Grid,
 	GridItem,
 } from '../Grid';
-import { EGridDirection, EWrap } from '../Grid/stories';
 import { Icon, TIconPrimitiveType } from '../Icon';
 import styles from './style.scss';
 
@@ -41,10 +40,10 @@ const MetaComponent: FunctionComponent<IProps> = ({
 		<Grid
 			width="inherit"
 			height="inherit"
-			direction={EGridDirection.Row}
+			direction={'row'}
 			layoutAlign={EGridLayoutAlign.Start}
 			layoutPerpendicularAlign={EGridLayoutPerpendicularAlign.Center}
-			wrap={EWrap.NoWrap}
+			wrap={'nowrap'}
 			padding={EGridSpace.Space0}
 			gutter={EGridSpace.Space4}
 			Component="span"
