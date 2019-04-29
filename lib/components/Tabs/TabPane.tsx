@@ -12,6 +12,6 @@ export const TabPane: FunctionComponent<IProps> = ({ children, active }) => (
 		className={cx(styles.tabPane, {
 			[styles.tabPaneActive]: active,
 		})}>
-		{children}
+		{active && children}
 	</div>
 );

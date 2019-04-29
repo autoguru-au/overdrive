@@ -1,15 +1,18 @@
 import { number, text } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 
 import { Tab, Tabs } from '.';
+
+const tabChanged = tabIndex => action('Tab selected')(tabIndex);
 
 storiesOf('Components|Tabs', module)
 	.addDecorator(story => (
 		<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
 	))
 	.add('default', () => (
-		<Tabs>
+		<Tabs onChange={tabChanged}>
 			{(text('Tabs', 'Tab 1, Tab 2') as string)
 				.split(',')
 				.map(item => item.trim())
@@ -21,13 +24,13 @@ storiesOf('Components|Tabs', module)
 		</Tabs>
 	))
 	.add('with external active', () => (
-		<Tabs active={number('Active', 0)}>
+		<Tabs active={number('Active', 0)} onChange={tabChanged}>
 			<Tab title={'A'}>a</Tab>
 			<Tab title={'B'}>b</Tab>
 		</Tabs>
 	))
 	.add('with number', () => (
-		<Tabs>
+		<Tabs onChange={tabChanged}>
 			<Tab title="Leads" indication="10">
 				Content a
 			</Tab>

@@ -15,9 +15,13 @@ type ComponentWithChildren<P> = P & { children?: ReactNode };
 
 export interface IProps {
 	active?: number;
+
+	onChange?(value: number): void;
 }
+
 export const Tabs: FunctionComponent<IProps> = ({
 	active: incomingActive = 0,
+	onChange = () => void 0,
 	children,
 }) => {
 	const [active, setActive] = useState(incomingActive);
@@ -28,7 +32,10 @@ export const Tabs: FunctionComponent<IProps> = ({
 		setPrevActive(incomingActive);
 	}
 
-	const setActiveCb = idx => () => setActive(idx);
+	const setActiveCb = idx => () => {
+		onChange(idx);
+		setActive(idx);
+	};
 
 	const tabsChildren = Children.toArray(children) as Array<
 		ReactElement<ComponentWithChildren<ITabProps>>

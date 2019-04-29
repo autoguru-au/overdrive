@@ -256,5 +256,33 @@ describe('<Tabs />', () => {
 				});
 			});
 		});
+
+		it('should call onChange callback with correct active tab index', done => {
+			const spyedCallback = jest.fn();
+
+			act(() => {
+				ReactDOM.render(
+					<Tabs onChange={spyedCallback}>
+						{tabData.map(tabData => (
+							<Tab key={tabData} title={tabData.title}>
+								{tabData.content}
+							</Tab>
+						))}
+					</Tabs>,
+					container
+				);
+			});
+
+			act(() => {
+				document
+					.querySelector('.tabs button:nth-child(2)')
+					.dispatchEvent(evt);
+
+				setTimeout(() => {
+					expect(spyedCallback).toHaveBeenCalledWith(1);
+					done();
+				});
+			});
+		});
 	});
 });
