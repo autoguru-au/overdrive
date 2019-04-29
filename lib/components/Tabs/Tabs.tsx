@@ -16,7 +16,7 @@ type ComponentWithChildren<P> = P & { children?: ReactNode };
 export interface IProps {
 	active?: number;
 
-	onChange?(value: string): void;
+	onChange?(value: number): void;
 }
 
 export const Tabs: FunctionComponent<IProps> = ({
