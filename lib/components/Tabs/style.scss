@@ -1,5 +1,7 @@
 @import '../../theme/tokens/facade';
 
+$lineBottomHeight: 2px;
+
 .nav-item {
 	$sel: &;
 
@@ -7,7 +9,7 @@
 	outline: none;
 	width: auto;
 	border: none;
-	margin: 0 0 -1px;
+	margin: 0 0 (-1 * $lineBottomHeight);
 	background: transparent;
 	font-size: var(--global--fontSize--4);
 	font-weight: 700;
@@ -15,7 +17,7 @@
 	padding: calc(var(--global--space--3) + 1px) 0;
 	color: getColour(gray, 500);
 	cursor: pointer;
-	border-bottom: 2px solid transparent;
+	border-bottom: $lineBottomHeight solid transparent;
 	transition: color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
 		background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 
@@ -76,7 +78,7 @@
 	&__nav {
 		display: flex;
 		flex-wrap: nowrap;
-		border-bottom: 2px solid getColour(gray, 300);
+		border-bottom: $lineBottomHeight solid getColour(gray, 300);
 	}
 
 	&__content {

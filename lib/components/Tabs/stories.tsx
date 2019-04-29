@@ -28,19 +28,12 @@ storiesOf('Components|Tabs', module)
 	))
 	.add('with number', () => (
 		<Tabs>
-			<Tab title="Leads" indication={getRandomInt(6, 10)}>
+			<Tab title="Leads" indication="10">
 				Content a
 			</Tab>
-			<Tab title="Claimed" indication={getRandomInt(1, 3)}>
+			<Tab title="Claimed" indication="3">
 				Content b
 			</Tab>
 			<Tab title="Expired">Content c</Tab>
 		</Tabs>
 	));
-
-function getRandomInt(min, max) {
-	min = Math.ceil(min);
-	max = Math.floor(max);
-
-	return Math.floor(Math.random() * (max - min + 1)) + min;
-}
