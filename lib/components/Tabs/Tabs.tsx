@@ -38,7 +38,8 @@ export const Tabs: FunctionComponent<IProps> = ({
 		<TabNavItem
 			key={idx}
 			onClick={setActiveCb(idx)}
-			active={active === idx}>
+			active={active === idx}
+			indication={child.props.indication}>
 			{child.props.title}
 		</TabNavItem>,
 		<TabPane key={idx} active={active === idx}>
