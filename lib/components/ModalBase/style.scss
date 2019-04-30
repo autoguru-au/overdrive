@@ -1,7 +1,5 @@
 @import '../../theme/tokens/facade';
 
-$desktop: 769px;
-
 .modalPortal {
 	position: fixed;
 	z-index: 9999;
@@ -46,7 +44,7 @@ $desktop: 769px;
 	height: 100%;
 	outline: none;
 
-	@include isDesktop($desktop) {
+	@include isDesktop() {
 		align-items: center;
 	}
 }
@@ -60,7 +58,7 @@ $desktop: 769px;
 	align-items: flex-end;
 	height: 100%;
 
-	@include isDesktop($desktop) {
+	@include isDesktop() {
 		height: auto;
 		align-items: center;
 	}

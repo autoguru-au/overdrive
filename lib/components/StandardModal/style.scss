@@ -1,7 +1,5 @@
 @import '../../theme/tokens/facade';
 
-$desktop: 769px;
-
 .modal {
 	display: flex;
 	flex-direction: column;
@@ -10,7 +8,7 @@ $desktop: 769px;
 	height: calc(100% - var(--global--space--8));
 	border-radius: var(--global--space--2) var(--global--space--2) 0 0;
 
-	@include isDesktop($desktop) {
+	@include isDesktop() {
 		height: auto;
 		max-height: calc(100vh - var(--global--space--9) * 2);
 		max-width: calc(100% - var(--global--space--9) * 2);
@@ -21,7 +19,7 @@ $desktop: 769px;
 
 	&--size {
 		&-standard {
-			@include isDesktop($desktop) {
+			@include isDesktop() {
 				max-width: 800px;
 			}
 		}

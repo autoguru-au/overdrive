@@ -1,0 +1,45 @@
+$screenSize: (
+	mobile-lower: 320px,
+	mobile-upper: 650px,
+	small-desktop-lower: 651px,
+	small-desktop-upper: 1200px,
+	large-desktop-lower: 1201px,
+) !default;
+
+@mixin generateGlobalScreenSizeVariables($space_map: $screenSize) {
+	:root {
+		@each $name, $value in $screenSize {
+			--global--screen-size--#{$name}: #{$value};
+		}
+	}
+}
+
+@mixin isMobile(
+	$sizeLower: map-get($screenSize, mobile-lower),
+	$sizeUpper: map-get($screenSize, mobile-upper)
+) {
+	@media screen and (min-width: $sizeLower) and (max-width: $sizeUpper) {
+		@content;
+	}
+}
+
+@mixin isDesktop($size: map-get($screenSize, small-desktop-lower)) {
+	@media screen and (min-width: $size) {
+		@content;
+	}
+}
+
+@mixin isSmallDesktop(
+	$sizeLower: map-get($screenSize, small-desktop-lower),
+	$sizeUpper: map-get($screenSize, small-desktop-upper)
+) {
+	@media screen and (min-width: $sizeLower) and (max-width: $sizeUpper) {
+		@content;
+	}
+}
+
+@mixin isLargeDesktop($size: map-get($screenSize, large-desktop-lower)) {
+	@media screen and (min-width: $size) {
+		@content;
+	}
+}

@@ -1,7 +1,4 @@
 @import 'color';
 @import 'space';
 @import 'fontSizes';
-
-@mixin isDesktop($test: 1) {
-	@content;
-}
+@import 'screen';
