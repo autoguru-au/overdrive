@@ -60,6 +60,7 @@ storiesOf('Components|Buttons', module)
 		<Button
 			href="https://www.autoguru.com.au"
 			target="_blank"
+			component="a"
 			{...baseProps()}
 			{...nonRoundedProps()}>
 			Hello World
