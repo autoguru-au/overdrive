@@ -21,6 +21,7 @@ async function run() {
 	const bundle = await rollup(
 		createRollupConfig({
 			entry,
+			outputPath: distFolder,
 		})
 	);
 
