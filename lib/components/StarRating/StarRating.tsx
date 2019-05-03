@@ -57,6 +57,7 @@ const getStarIconType = (index: number, ratingValue: number): EStarType => {
 	if (decimalPart <= 2) {
 		return EStarType.Empty;
 	}
+
 	if (decimalPart >= 8) {
 		return EStarType.Full;
 	}
@@ -78,7 +79,7 @@ const getStar = (
 			icon={star}
 			size={starSizeMap.get(size)}
 			key={index}
-			className={cx(styles.star, starCssMap.get(starType))}
+			className={cx([styles.star, starCssMap.get(starType)])}
 		/>
 	);
 };
@@ -87,7 +88,7 @@ const StarRatingComponent: FunctionComponent<IProps> = ({
 	className = '',
 	size = ESize.Medium,
 	ratingValue,
-	label,
+	label = ratingValue,
 }) => (
 	<span className={cx([styles.root, className])}>
 		<span className={styles.starList}>
@@ -96,7 +97,7 @@ const StarRatingComponent: FunctionComponent<IProps> = ({
 				.map((_, index) => getStar(index, ratingValue, size))}
 		</span>
 		<DetailText size={labelSizeMap.get(size)} className={styles.label}>
-			{label || ratingValue}
+			{label}
 		</DetailText>
 	</span>
 );
