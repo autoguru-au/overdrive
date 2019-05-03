@@ -15,4 +15,6 @@ export { default as ChevronDownIcon } from './ChevronDown';
 export { default as ChevronLeftIcon } from './ChevronLeft';
 export { default as ChevronRightIcon } from './ChevronRight';
 export { default as PhoneIcon } from './Phone';
+export { default as StarHalfIcon } from './StarHalf';
+export { default as StarIcon } from './Star';
 export { default as WindowCloseIcon } from './WindowClose';
