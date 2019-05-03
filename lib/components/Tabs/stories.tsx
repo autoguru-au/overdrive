@@ -31,10 +31,10 @@ storiesOf('Components|Tabs', module)
 	))
 	.add('with number', () => (
 		<Tabs onChange={tabChanged}>
-			<Tab title="Leads" indication="10">
+			<Tab title="Leads" indication={10}>
 				Content a
 			</Tab>
-			<Tab title="Claimed" indication="3">
+			<Tab title="Claimed" indication={3}>
 				Content b
 			</Tab>
 			<Tab title="Expired">Content c</Tab>
