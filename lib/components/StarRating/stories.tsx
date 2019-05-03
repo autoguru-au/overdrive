@@ -8,7 +8,7 @@ const baseProps = () => ({
 	size: select('Size', EStarRatingSize, EStarRatingSize.Medium),
 });
 
-storiesOf('Components|Rating', module)
+storiesOf('Components|StarRating', module)
 	.add('default', () => (
 		<StarRating {...baseProps()} label={text('Label', '')} />
 	))
