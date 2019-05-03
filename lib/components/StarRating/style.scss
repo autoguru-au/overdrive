@@ -1,0 +1,24 @@
+@import '../../theme/tokens/facade';
+
+.root,
+.star-list {
+	flex-direction: row;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: flex-start;
+}
+
+.full-star,
+.half-star {
+	fill: getColour(yellow, 500);
+}
+
+.empty-star {
+	fill: getColour(gray, 200);
+}
+
+.label {
+	margin-left: var(--global--space--2);
+}
