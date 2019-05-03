@@ -72,7 +72,7 @@ const getStarIconType = (index: number, ratingValue: number): EStarType => {
 
 const getStar = (
 	index: number,
-	ratingValue: number,
+	ratingValue: number = 0,
 	size: ESize
 ): ReactElement => {
 	const starType = getStarIconType(index, ratingValue);
