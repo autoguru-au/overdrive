@@ -1,16 +1,10 @@
 import cx from 'clsx';
-import React, {
-	AnchorHTMLAttributes,
-	FunctionComponent,
-	memo,
-	ReactElement,
-} from 'react';
+import React, { FunctionComponent, memo, ReactElement } from 'react';
 import { StarHalfIcon, StarIcon } from '../../icons';
 import { DetailText, EDetailTextSize } from '../DetailText';
 import { Icon } from '../Icon';
 import styles from './style.scss';
 
-type TAnchorPropType = IProps & AnchorHTMLAttributes<Element>;
 const totalStars = 5;
 
 export enum ESize {
@@ -89,7 +83,7 @@ const getStar = (
 	);
 };
 
-const StarRatingComponent: FunctionComponent<TAnchorPropType> = ({
+const StarRatingComponent: FunctionComponent<IProps> = ({
 	className = '',
 	size = ESize.Medium,
 	ratingValue,
