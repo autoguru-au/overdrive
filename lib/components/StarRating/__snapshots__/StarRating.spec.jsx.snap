@@ -1,0 +1,323 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StarRating /> should match snapshot for small size 1`] = `
+<span
+  class="root"
+>
+  <span
+    class="starList"
+  >
+    <i
+      class="root star fullStar"
+      style="width:16px;height:16px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+        />
+      </svg>
+    </i>
+    <i
+      class="root star fullStar"
+      style="width:16px;height:16px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+        />
+      </svg>
+    </i>
+    <i
+      class="root star fullStar"
+      style="width:16px;height:16px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+        />
+      </svg>
+    </i>
+    <i
+      class="root star fullStar"
+      style="width:16px;height:16px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+        />
+      </svg>
+    </i>
+    <i
+      class="root star emptyStar"
+      style="width:16px;height:16px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+        />
+      </svg>
+    </i>
+  </span>
+  <span
+    class="root detail3 label"
+  >
+    Hello World!
+  </span>
+</span>
+`;
+
+exports[`<StarRating /> should match snapshot with label 1`] = `
+<span
+  class="root"
+>
+  <span
+    class="starList"
+  >
+    <i
+      class="root star fullStar"
+      style="width:20px;height:20px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+        />
+      </svg>
+    </i>
+    <i
+      class="root star fullStar"
+      style="width:20px;height:20px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+        />
+      </svg>
+    </i>
+    <i
+      class="root star fullStar"
+      style="width:20px;height:20px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+        />
+      </svg>
+    </i>
+    <i
+      class="root star fullStar"
+      style="width:20px;height:20px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+        />
+      </svg>
+    </i>
+    <i
+      class="root star emptyStar"
+      style="width:20px;height:20px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+        />
+      </svg>
+    </i>
+  </span>
+  <span
+    class="root detail2 label"
+  >
+    Hello World!
+  </span>
+</span>
+`;
+
+exports[`<StarRating /> should match snapshot with value 1`] = `
+<span
+  class="root"
+>
+  <span
+    class="starList"
+  >
+    <i
+      class="root star fullStar"
+      style="width:20px;height:20px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+        />
+      </svg>
+    </i>
+    <i
+      class="root star fullStar"
+      style="width:20px;height:20px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+        />
+      </svg>
+    </i>
+    <i
+      class="root star halfStar"
+      style="width:20px;height:20px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 328.533v-198.4l36.48 85.974L385.92 224l-70.827 61.653 21.12 91.307m133.12-179.84l-153.386-13.013L256 42.667l-59.947 141.44L42.667 197.12l116.266 100.907L124.16 448 256 368.427 387.84 448l-34.987-149.973 116.48-100.907z"
+        />
+      </svg>
+    </i>
+    <i
+      class="root star emptyStar"
+      style="width:20px;height:20px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+        />
+      </svg>
+    </i>
+    <i
+      class="root star emptyStar"
+      style="width:20px;height:20px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+        />
+      </svg>
+    </i>
+  </span>
+  <span
+    class="root detail2 label"
+  >
+    2.7
+  </span>
+</span>
+`;
+
+exports[`<StarRating /> should match snapshot without value 1`] = `
+<span
+  class="root"
+>
+  <span
+    class="starList"
+  >
+    <i
+      class="root star emptyStar"
+      style="width:20px;height:20px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+        />
+      </svg>
+    </i>
+    <i
+      class="root star emptyStar"
+      style="width:20px;height:20px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+        />
+      </svg>
+    </i>
+    <i
+      class="root star emptyStar"
+      style="width:20px;height:20px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+        />
+      </svg>
+    </i>
+    <i
+      class="root star emptyStar"
+      style="width:20px;height:20px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+        />
+      </svg>
+    </i>
+    <i
+      class="root star emptyStar"
+      style="width:20px;height:20px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+        />
+      </svg>
+    </i>
+  </span>
+  <span
+    class="root detail2 label"
+  />
+</span>
+`;
