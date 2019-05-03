@@ -19,5 +19,5 @@ storiesOf('Components|Rating', module)
 		<StarRating ratingValue={1.6} size={EStarRatingSize.Medium} />
 	))
 	.add('with label', () => (
-		<StarRating ratingValue={3.9} label={text('Label', 'product rating')} />
+		<StarRating ratingValue={3.9} label="product rating" />
 	));
