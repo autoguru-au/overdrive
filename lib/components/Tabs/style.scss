@@ -44,7 +44,7 @@ $size: 20px;
 	&__indication {
 		display: inline-block;
 		vertical-align: middle;
-		border-radius: 0.5 * $size;
+		border-radius: calc(#{$size} / 2);
 		min-width: $size;
 		height: $size;
 		padding: 0 var(--global--space--1);
