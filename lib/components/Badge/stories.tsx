@@ -1,16 +1,16 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 
-import { Badge, EBadgeVariant } from '.';
+import { Badge, EBadgeColour } from '.';
 
 storiesOf('Components|Badge', module)
 	.add('default', () => <Badge label={'345 CREDITS'} />)
 	.add('success', () => (
-		<Badge variant={EBadgeVariant.Success} label={'ON PICK UP'} />
+		<Badge colour={EBadgeColour.Success} label={'ON PICK UP'} />
 	))
 	.add('warning', () => (
-		<Badge variant={EBadgeVariant.Warning} label={'APPROVED'} />
+		<Badge colour={EBadgeColour.Warning} label={'APPROVED'} />
 	))
 	.add('danger', () => (
-		<Badge variant={EBadgeVariant.Danger} label={'CANCELLED'} />
+		<Badge colour={EBadgeColour.Danger} label={'CANCELLED'} />
 	));

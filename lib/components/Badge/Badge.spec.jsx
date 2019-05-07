@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount, render, shallow } from 'enzyme';
-import { Badge, EVariant } from './Badge';
+import { Badge, EColour } from './Badge';
 
 const testLabel = 'Hello World!';
 describe('<Badge />', () => {
@@ -36,21 +36,21 @@ describe('<Badge />', () => {
 
 	it('should apply success variant style', () => {
 		const badge = mount(
-			<Badge variant={EVariant.Success} label={testLabel} />
+			<Badge colour={EColour.Success} label={testLabel} />
 		);
 		expect(badge.find('span').hasClass('variantSuccess')).toBeTruthy();
 	});
 
 	it('should apply warning variant style', () => {
 		const badge = mount(
-			<Badge variant={EVariant.Warning} label={testLabel} />
+			<Badge colour={EColour.Warning} label={testLabel} />
 		);
 		expect(badge.find('span').hasClass('variantWarning')).toBeTruthy();
 	});
 
 	it('should apply danger variant style', () => {
 		const badge = mount(
-			<Badge variant={EVariant.Danger} label={testLabel} />
+			<Badge colour={EColour.Danger} label={testLabel} />
 		);
 		expect(badge.find('span').hasClass('variantDanger')).toBeTruthy();
 	});

@@ -3,12 +3,12 @@ import React, { FunctionComponent, memo } from 'react';
 import styles from './style.scss';
 
 export interface IProps {
-	variant?: EVariant;
+	colour?: EColour;
 	className?: string;
 	label: string;
 }
 
-export enum EVariant {
+export enum EColour {
 	Default = 'default',
 	Success = 'success',
 	Warning = 'warning',
@@ -16,18 +16,18 @@ export enum EVariant {
 }
 
 const cssVariantMap = new Map([
-	[EVariant.Default, styles.variantDefault],
-	[EVariant.Success, styles.variantSuccess],
-	[EVariant.Warning, styles.variantWarning],
-	[EVariant.Danger, styles.variantDanger],
+	[EColour.Default, styles.variantDefault],
+	[EColour.Success, styles.variantSuccess],
+	[EColour.Warning, styles.variantWarning],
+	[EColour.Danger, styles.variantDanger],
 ]);
 
 const BadgeComponent: FunctionComponent<IProps> = ({
 	label,
-	variant = EVariant.Default,
+	colour = EColour.Default,
 	className = '',
 }) => {
-	const cls = cx([className, styles.root, cssVariantMap.get(variant)]);
+	const cls = cx([className, styles.root, cssVariantMap.get(colour)]);
 
 	return <span className={cls}>{label}</span>;
 };
