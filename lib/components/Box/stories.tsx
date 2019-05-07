@@ -10,8 +10,9 @@ const baseProps = (): IBoxProps => ({
 	strokeWidth: select('Stroke Width', [1, 4], 1),
 });
 
-storiesOf('Components|Box', module)
-	.addDecorator(story => (
-		<div style={{ width: 150, height: 150 }} children={story()} />
-	))
-	.add('default', () => <Box {...baseProps()} />);
+storiesOf('Components|Box', module).add('default', () => (
+	<Box
+		{...baseProps()}
+		children={<div style={{ width: 150, height: 150 }} />}
+	/>
+));
