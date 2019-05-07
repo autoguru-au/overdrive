@@ -1,5 +1,4 @@
 $screenSize: (
-	mobile-lower: 320px,
 	mobile-upper: 650px,
 	small-desktop-lower: 651px,
 	small-desktop-upper: 1200px,
@@ -14,11 +13,8 @@ $screenSize: (
 	}
 }
 
-@mixin isMobile(
-	$sizeLower: map-get($screenSize, mobile-lower),
-	$sizeUpper: map-get($screenSize, mobile-upper)
-) {
-	@media screen and (min-width: $sizeLower) and (max-width: $sizeUpper) {
+@mixin isMobile($sizeUpper: map-get($screenSize, mobile-upper)) {
+	@media screen and (max-width: $sizeUpper) {
 		@content;
 	}
 }
