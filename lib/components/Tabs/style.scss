@@ -1,6 +1,7 @@
 @import '../../theme/tokens/facade';
 
 $lineBottomHeight: 2px;
+$size: 20px;
 
 .nav-item {
 	$sel: &;
@@ -13,7 +14,7 @@ $lineBottomHeight: 2px;
 	background: transparent;
 	font-size: var(--global--fontSize--4);
 	font-weight: 700;
-	line-height: 18px;
+	line-height: $size;
 	padding: calc(var(--global--space--3) + 1px) 0;
 	color: getColour(gray, 500);
 	cursor: pointer;
@@ -43,9 +44,10 @@ $lineBottomHeight: 2px;
 	&__indication {
 		display: inline-block;
 		vertical-align: middle;
-		border-radius: 50%;
-		width: 18px;
-		height: 18px;
+		border-radius: calc(#{$size} / 2);
+		min-width: $size;
+		height: $size;
+		padding: 0 var(--global--space--1);
 		font-size: calc(var(--global--fontSize--4) * 0.8);
 		color: getColour(gray, 900);
 		background-color: getColour(gray, 300);
