@@ -1,5 +1,11 @@
 @import '../../theme/tokens/facade';
 
+@mixin invertBadge($colour) {
+	background-color: transparent;
+	border-color: transparent;
+	color: $colour;
+}
+
 .root {
 	font-weight: 700;
 	color: white;
@@ -14,24 +20,40 @@
 	text-transform: uppercase;
 }
 
-.variant {
+.colour {
 	&-default {
 		background-color: getColour(gray, 600);
 		border-color: getColour(gray, 600);
+
+		&.inverted {
+			@include invertBadge(getColour(gray, 600));
+		}
 	}
 
 	&-success {
 		background-color: getColour(green, 600);
 		border-color: getColour(green, 600);
+
+		&.inverted {
+			@include invertBadge(getColour(green, 600));
+		}
 	}
 
 	&-warning {
 		background-color: getColour(yellow, 900);
 		border-color: getColour(yellow, 900);
+
+		&.inverted {
+			@include invertBadge(getColour(yellow, 900));
+		}
 	}
 
 	&-danger {
 		background-color: getColour(red, 600);
 		border-color: getColour(red, 600);
+
+		&.inverted {
+			@include invertBadge(getColour(red, 600));
+		}
 	}
 }
