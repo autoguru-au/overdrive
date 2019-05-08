@@ -34,24 +34,38 @@ describe('<Badge />', () => {
 		expect(badge.find('span').hasClass('badge-class')).toBeTruthy();
 	});
 
-	it('should apply success variant style', () => {
+	it('should apply success colour style', () => {
 		const badge = mount(
 			<Badge colour={EColour.Success} label={testLabel} />
 		);
-		expect(badge.find('span').hasClass('variantSuccess')).toBeTruthy();
+		expect(badge.find('span').hasClass('colourSuccess')).toBeTruthy();
 	});
 
-	it('should apply warning variant style', () => {
+	it('should apply warning colour style', () => {
 		const badge = mount(
 			<Badge colour={EColour.Warning} label={testLabel} />
 		);
-		expect(badge.find('span').hasClass('variantWarning')).toBeTruthy();
+		expect(badge.find('span').hasClass('colourWarning')).toBeTruthy();
 	});
 
-	it('should apply danger variant style', () => {
+	it('should apply danger colour style', () => {
 		const badge = mount(
 			<Badge colour={EColour.Danger} label={testLabel} />
 		);
-		expect(badge.find('span').hasClass('variantDanger')).toBeTruthy();
+		expect(badge.find('span').hasClass('colourDanger')).toBeTruthy();
+	});
+
+	it('should not apply inverted style when inverted prop is set to false', () => {
+		const badge = mount(
+			<Badge colour={EColour.Default} invert={false} label={testLabel} />
+		);
+		expect(badge.find('span').hasClass('inverted')).not.toBeTruthy();
+	});
+
+	it('should apply inverted style when inverted prop is set to true', () => {
+		const badge = mount(
+			<Badge colour={EColour.Default} invert={true} label={testLabel} />
+		);
+		expect(badge.find('span').hasClass('inverted')).toBeTruthy();
 	});
 });

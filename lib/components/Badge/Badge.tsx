@@ -5,6 +5,7 @@ import styles from './style.scss';
 export interface IProps {
 	colour?: EColour;
 	className?: string;
+	invert?: boolean;
 	label: string;
 }
 
@@ -15,19 +16,22 @@ export enum EColour {
 	Danger = 'danger',
 }
 
-const cssVariantMap = new Map([
-	[EColour.Default, styles.variantDefault],
-	[EColour.Success, styles.variantSuccess],
-	[EColour.Warning, styles.variantWarning],
-	[EColour.Danger, styles.variantDanger],
+const cssColourMap = new Map([
+	[EColour.Default, styles.colourDefault],
+	[EColour.Success, styles.colourSuccess],
+	[EColour.Warning, styles.colourWarning],
+	[EColour.Danger, styles.colourDanger],
 ]);
 
 const BadgeComponent: FunctionComponent<IProps> = ({
 	label,
 	colour = EColour.Default,
+	invert = false,
 	className = '',
 }) => {
-	const cls = cx([className, styles.root, cssVariantMap.get(colour)]);
+	const cls = cx([className, styles.root, cssColourMap.get(colour)], {
+		[styles.inverted]: invert,
+	});
 
 	return <span className={cls}>{label}</span>;
 };
