@@ -22,7 +22,7 @@ const CustomBullet = ({}) => (
 		<Icon size={14} icon={CheckIcon} />
 	</span>
 );
-const testLabel = 'Hello World!';
+
 describe('<BulletText />', () => {
 	it('should not throw', () =>
 		expect(() => shallow(<BulletText />)).not.toThrow());
@@ -34,14 +34,16 @@ describe('<BulletText />', () => {
 	});
 
 	it('should match snapshot for default bullet text', () => {
-		expect(shallow(<BulletText>{testLabel}</BulletText>)).toMatchSnapshot();
+		expect(
+			shallow(<BulletText>Hello World!</BulletText>)
+		).toMatchSnapshot();
 	});
 
 	it('should match snapshot for primary bullet text with custom bullet character', () => {
 		expect(
 			shallow(
 				<BulletText variant={EBulletTextVariant.Primary} bullet={'?'}>
-					{testLabel}
+					Hello World!
 				</BulletText>
 			)
 		).toMatchSnapshot();
@@ -51,7 +53,7 @@ describe('<BulletText />', () => {
 		expect(
 			shallow(
 				<BulletText variant={EBulletTextVariant.Secondary} bullet={'?'}>
-					{testLabel}
+					Hello World!
 				</BulletText>
 			)
 		).toMatchSnapshot();
@@ -64,7 +66,7 @@ describe('<BulletText />', () => {
 					ordered={true}
 					variant={EBulletTextVariant.Primary}
 					bullet={'?'}>
-					{testLabel}
+					Hello World!
 				</BulletText>
 			)
 		).toMatchSnapshot();
@@ -81,7 +83,7 @@ describe('<BulletText />', () => {
 	it('should apply class for primary variant', () => {
 		const bulletText = shallow(
 			<BulletText variant={EBulletTextVariant.Primary} bullet={'*'}>
-				{testLabel}
+				Hello World!
 			</BulletText>
 		);
 		expect(bulletText.hasClass('variantPrimary')).toBeTruthy();
@@ -90,7 +92,7 @@ describe('<BulletText />', () => {
 	it('should apply class for secondary variant', () => {
 		const bulletText = shallow(
 			<BulletText variant={EBulletTextVariant.Secondary} bullet={'*'}>
-				{testLabel}
+				Hello World!
 			</BulletText>
 		);
 		expect(bulletText.hasClass('variantSecondary')).toBeTruthy();
@@ -102,42 +104,42 @@ describe('<BulletText />', () => {
 	});
 
 	it('should pass the children a Text element', () => {
-		const bulletText = shallow(<BulletText>{testLabel}</BulletText>);
+		const bulletText = shallow(<BulletText>Hello World!</BulletText>);
 		expect(
 			bulletText
 				.find(Text)
 				.render()
 				.text()
-		).toEqual(testLabel);
+		).toEqual('Hello World!');
 	});
 
 	it('should use li element for default bullet text', () => {
-		const bulletText = shallow(<BulletText>{testLabel}</BulletText>);
+		const bulletText = shallow(<BulletText>Hello World!</BulletText>);
 		expect(bulletText.type()).toEqual('li');
 	});
 
 	it('should use li element for unordered bullet text', () => {
 		const bulletText = shallow(
-			<BulletText ordered={false}>{testLabel}</BulletText>
+			<BulletText ordered={false}>Hello World!</BulletText>
 		);
 		expect(bulletText.type()).toEqual('li');
 	});
 
 	it('should use ol element for ordered bullet text', () => {
 		const bulletText = shallow(
-			<BulletText ordered={true}>{testLabel}</BulletText>
+			<BulletText ordered={true}>Hello World!</BulletText>
 		);
 		expect(bulletText.type()).toEqual('ol');
 	});
 
 	it('should use • as default bullet', () => {
-		const bulletText = shallow(<BulletText>{testLabel}</BulletText>);
+		const bulletText = shallow(<BulletText>Hello World!</BulletText>);
 		expect(bulletText.find('div>span').text()).toEqual('•');
 	});
 
 	it('should use provided bullet character bullet', () => {
 		const bulletText = shallow(
-			<BulletText bullet="#">{testLabel}</BulletText>
+			<BulletText bullet="#">Hello World!</BulletText>
 		);
 		expect(bulletText.find('div>span').text()).toEqual('#');
 	});
