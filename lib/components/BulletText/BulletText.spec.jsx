@@ -1,9 +1,27 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount, render, shallow } from 'enzyme';
 import { BulletText } from './BulletText';
 import { Text } from '../Text';
 import { EBulletTextVariant } from './index';
+import { CheckIcon, Icon } from '../Icon';
 
+const CustomBullet = ({}) => (
+	<span
+		style={{
+			width: '17px',
+			height: '17px',
+			backgroundColor: ' #00dd95',
+			fill: 'white',
+			borderRadius: '50%',
+			flexDirection: 'row',
+			display: 'flex',
+			alignContent: 'center',
+			justifyContent: 'center',
+			alignItems: 'center',
+		}}>
+		<Icon size={14} icon={CheckIcon} />
+	</span>
+);
 const testLabel = 'Hello World!';
 describe('<BulletText />', () => {
 	it('should not throw', () =>
@@ -48,6 +66,14 @@ describe('<BulletText />', () => {
 					bullet={'?'}>
 					{testLabel}
 				</BulletText>
+			)
+		).toMatchSnapshot();
+	});
+
+	it('should match snapshot for custom bullet text', () => {
+		expect(
+			render(
+				<BulletText bullet={<CustomBullet />}>Hello World</BulletText>
 			)
 		).toMatchSnapshot();
 	});
@@ -109,10 +135,17 @@ describe('<BulletText />', () => {
 		expect(bulletText.find('div>span').text()).toEqual('•');
 	});
 
-	it('should use provided bullet charachter bullet', () => {
+	it('should use provided bullet character bullet', () => {
 		const bulletText = shallow(
 			<BulletText bullet="#">{testLabel}</BulletText>
 		);
 		expect(bulletText.find('div>span').text()).toEqual('#');
+	});
+
+	it('should use provided custom bullet component', () => {
+		const bulletText = shallow(
+			<BulletText bullet={<CustomBullet />}>Hello World</BulletText>
+		);
+		expect(bulletText.find(CustomBullet)).toBeTruthy();
 	});
 });
