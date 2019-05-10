@@ -3,6 +3,8 @@ import { storiesOf } from '@storybook/react';
 import React from 'react';
 
 import { BulletText, EBulletTextVariant } from '.';
+import { CheckIcon } from '../../icons';
+import { Icon } from '../Icon';
 
 const baseProps = () => ({
 	variant: select('Variant', EBulletTextVariant, EBulletTextVariant.Primary),
@@ -12,6 +14,26 @@ const baseProps = () => ({
 
 storiesOf('Components|Type/BulletText', module)
 	.addDecorator(story => <ul style={{ width: 200 }} children={story()} />)
-	.add('default', () => (
-		<BulletText {...baseProps()}>Hello World</BulletText>
+	.add('default', () => <BulletText {...baseProps()}>Hello World</BulletText>)
+	.add('with custom element', () => (
+		<BulletText
+			bullet={
+				<span
+					style={{
+						width: '17px',
+						height: '17px',
+						backgroundColor: ' #00dd95',
+						fill: 'white',
+						borderRadius: '50%',
+						flexDirection: 'row',
+						display: 'flex',
+						alignContent: 'center',
+						justifyContent: 'center',
+						alignItems: 'center',
+					}}>
+					<Icon size={14} icon={CheckIcon} />
+				</span>
+			}>
+			Hello World
+		</BulletText>
 	));

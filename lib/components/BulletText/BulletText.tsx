@@ -1,10 +1,10 @@
 import cx from 'clsx';
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, isValidElement, ReactElement } from 'react';
 import { Text } from '../Text';
 import styles from './style.scss';
 
 export interface IProps {
-	bullet?: string;
+	bullet?: string | ReactElement;
 	ordered?: boolean;
 	variant?: EVariant;
 	className?: string;
@@ -20,7 +20,7 @@ export const BulletText: FunctionComponent<IProps> = ({
 	className = '',
 	children,
 	ordered = false,
-	bullet = '•',
+	bullet: Bullet = '•',
 }) => {
 	const cls = cx([styles.root, className], {
 		[styles.variantPrimary]: !!variant && variant === EVariant.Primary,
@@ -31,9 +31,13 @@ export const BulletText: FunctionComponent<IProps> = ({
 
 	return (
 		<Tag className={cls}>
-			<div className={styles.bullet}>
-				<span className={styles.bulletText} children={bullet} />
-			</div>
+			{isValidElement(Bullet) ? (
+				<div className={styles.customBullet}>{Bullet}</div>
+			) : (
+				<div className={styles.bullet}>
+					<span className={styles.bulletText} children={Bullet} />
+				</div>
+			)}
 			<Text children={children} />
 		</Tag>
 	);

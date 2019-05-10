@@ -1,5 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<BulletText /> should match snapshot for custom bullet text 1`] = `
+<li
+  class="root variantPrimary"
+>
+  <div
+    class="customBullet"
+  >
+    <span
+      style="width:17px;height:17px;background-color:#00dd95;fill:white;border-radius:50%;flex-direction:row;display:flex;align-content:center;justify-content:center;align-items:center"
+    >
+      <i
+        class="root"
+        style="width:14px;height:14px"
+      >
+        <svg
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M448 149.333l-256 256L74.667 288l30.08-30.08L192 344.96l225.92-225.707 30.08 30.08z"
+          />
+        </svg>
+      </i>
+    </span>
+  </div>
+  <p
+    class="root"
+  >
+    Hello World
+  </p>
+</li>
+`;
+
 exports[`<BulletText /> should match snapshot for default bullet text 1`] = `
 <li
   className="root variantPrimary"
