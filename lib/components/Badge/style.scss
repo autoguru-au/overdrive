@@ -35,7 +35,7 @@
 		border-color: getColour(green, 600);
 
 		&.inverted {
-			@include invertBadge(getColour(green, 600));
+			@include invertBadge(getColour(green, 900));
 		}
 	}
 
