@@ -9,6 +9,34 @@
 .root {
 }
 
+$active_scaling_factor: 0.7777;
+$active_padding_added: var(--global--space--2); // 8
+
+$size: 64px; // Hardcoded values are fixes for edge not supporting css variable inside transform
+$font_size: var(--global--fontSize--6); //18
+
+@function calcPlaceholderTranslate($notched) {
+	// TODO hard-coding these values is due to edge struggling width cal and variables mixed together
+	/* stylelint-disable */
+
+	@if $notched == true {
+		@return translate(
+			/*calc(var(--global--space--3) + #{$active_padding_added})
+			 calc(-1 * (((#{$font_size}) * #{$active_scaling_factor}) / 2))*/
+				(12px + 8px),
+			(-1 * (18px * $active_scaling_factor)/ 2)
+		);
+	} @else {
+		@return translate(
+			/*var(--global--space--5)
+			calc(((#{$size} - #{$font_size}) / 2))*/
+				20px,
+			((64px - 18)/2)
+		);
+	}
+	/* stylelint-enable */
+}
+
 .notched-base {
 	width: 100%;
 	min-width: var(--global--input--min--width);
@@ -37,12 +65,6 @@
 	}
 
 	&__placeholder {
-		$active_scaling_factor: 0.7777;
-		$active_padding_added: var(--global--space--2);
-
-		$size: 64px; // Hardcoded values are fixes for edge not supporting css variable inside transform
-		$font_size: var(--global--fontSize--6);
-
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -54,23 +76,14 @@
 		line-height: 1;
 		white-space: nowrap;
 		transform-origin: top left;
-		transform: translate(
-				var(--global--space--5),
-				calc(((#{$size} - #{$font_size}) / 2))
-			)
-			scale(1);
+		transform: calcPlaceholderTranslate(false) scale(1);
 		transition: color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
 			transform 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 		pointer-events: none;
 
 		.notched-base--shift & {
 			z-index: 2;
-			transform: translate(
-					calc(var(--global--space--3) + #{$active_padding_added}),
-					calc(
-						-1 * (((#{$font_size}) * #{$active_scaling_factor}) / 2)
-					)
-				)
+			transform: calcPlaceholderTranslate(true)
 				scale(#{$active_scaling_factor});
 
 			.root:hover & {
