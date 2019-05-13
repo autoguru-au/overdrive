@@ -2,6 +2,8 @@ import React, { memo } from 'react';
 
 import { withEnhancedInput } from '../InputBase';
 
+const isEdge =
+	navigator && navigator.userAgent && /edge/gi.test(navigator.userAgent);
 const NumberInputComponent = withEnhancedInput(function NumberInput({
 	field,
 	eventHandlers,
@@ -14,7 +16,7 @@ const NumberInputComponent = withEnhancedInput(function NumberInput({
 			{...field}
 			{...rest}
 			autoComplete="off"
-			type="number"
+			type={!isEdge ? 'number' : 'text'}
 		/>
 	);
 });
