@@ -13,22 +13,25 @@ $active_scaling_factor: 0.7777;
 $active_padding_added: var(--global--space--2); // 8
 
 $size: 64px; // Hardcoded values are fixes for edge not supporting css variable inside transform
-$font_size: var(--global--fontSize--6); // 24
+$font_size: var(--global--fontSize--6); //18
 
 @function calcPlaceholderTranslate($notched) {
 	// TODO hard-coding these values is due to edge struggling width cal and variables mixed together
 	/* stylelint-disable */
+
 	@if $notched == true {
 		@return translate(
-			20px,
-			// calc(var(--global--space--3) + #{$active_padding_added}),
-				-9.33324px // calc(-1 * (((#{$font_size}) * #{$active_scaling_factor}) / 2))
+			/*calc(var(--global--space--3) + #{$active_padding_added})
+			 calc(-1 * (((#{$font_size}) * #{$active_scaling_factor}) / 2))*/
+				(12px + 8px),
+			(-1 * (18px * $active_scaling_factor)/ 2)
 		);
 	} @else {
 		@return translate(
-			20px,
-			// var(--global--space--5),
-				20px // calc(((#{$size} - #{$font_size}) / 2))
+			/*var(--global--space--5)
+			calc(((#{$size} - #{$font_size}) / 2))*/
+				20px,
+			((64px - 18)/2)
 		);
 	}
 	/* stylelint-enable */
