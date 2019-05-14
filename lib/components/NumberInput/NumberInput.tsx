@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 import { withEnhancedInput } from '../InputBase';
 
 const isEdge =
-	navigator && navigator.userAgent && /edge/gi.test(navigator.userAgent);
+	/edge/i.test(navigator.userAgent);
 const NumberInputComponent = withEnhancedInput(function NumberInput({
 	field,
 	eventHandlers,
