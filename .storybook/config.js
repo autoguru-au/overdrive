@@ -2,6 +2,7 @@ import { addDecorator, addParameters, configure } from '@storybook/react';
 import { create } from '@storybook/theming';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withNotes } from '@storybook/addon-notes';
+import { withA11y } from '@storybook/addon-a11y';
 
 import 'storybook-chromatic';
 
@@ -9,6 +10,7 @@ import './global.scss';
 
 addDecorator(withNotes);
 addDecorator(withKnobs);
+addDecorator(withA11y);
 
 addParameters({
 	options: {

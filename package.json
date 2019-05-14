@@ -80,6 +80,7 @@
     "@semantic-release/github": "^5.2.10",
     "@semantic-release/npm": "^5.1.4",
     "@semantic-release/release-notes-generator": "^7.1.4",
+    "@storybook/addon-a11y": "^5.0.6",
     "@storybook/addon-actions": "^5.0.6",
     "@storybook/addon-backgrounds": "^5.0.6",
     "@storybook/addon-knobs": "^5.0.6",
