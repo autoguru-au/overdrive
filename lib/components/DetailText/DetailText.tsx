@@ -3,8 +3,9 @@ import React, { FunctionComponent } from 'react';
 import styles from './style.scss';
 
 export interface IProps {
-	size?: ESize;
 	className?: string;
+	muted?: boolean;
+	size?: ESize;
 }
 
 export enum ESize {
@@ -20,12 +21,15 @@ const cssSizeMap: Map<ESize, string> = new Map([
 ]);
 
 export const DetailText: FunctionComponent<IProps> = ({
-	size = ESize.Detail1,
-	className = '',
 	children,
+	className = '',
+	muted = false,
+	size = ESize.Detail1,
 }) => (
 	<span
-		className={cx([styles.root, cssSizeMap.get(size), className])}
+		className={cx([styles.root, cssSizeMap.get(size), className], {
+			[styles.muted]: muted,
+		})}
 		children={children}
 	/>
 );
