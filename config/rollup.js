@@ -30,7 +30,7 @@ function createRollupConfig({ entry: input, outputPath }) {
 				inject: false,
 				modules: {
 					camelCase: true,
-					generateScopedName: '_[hash:base64:5]',
+					generateScopedName: 'od-[hash:base64:5]',
 				},
 				plugins: [
 					require('postcss-flexbugs-fixes'),
