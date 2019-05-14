@@ -2,8 +2,8 @@ import React, { memo } from 'react';
 
 import { withEnhancedInput } from '../InputBase';
 
-const isEdge =
-	/edge/i.test(navigator.userAgent);
+const isEdge: boolean = navigator && /edge/i.test(navigator.userAgent);
+
 const NumberInputComponent = withEnhancedInput(function NumberInput({
 	field,
 	eventHandlers,
