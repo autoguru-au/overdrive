@@ -17,6 +17,7 @@ $font_size: var(--global--fontSize--6); //18
 
 @function calcPlaceholderTranslate($notched) {
 	// TODO hard-coding these values is due to edge struggling width cal and variables mixed together
+
 	/* stylelint-disable */
 
 	@if $notched == true {
