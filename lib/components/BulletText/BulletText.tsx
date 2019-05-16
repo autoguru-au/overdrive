@@ -38,7 +38,7 @@ export const BulletText: FunctionComponent<IProps> = ({
 					<span className={styles.bulletText} children={Bullet} />
 				</div>
 			)}
-			<Text children={children} />
+			<Text component="span">{children}</Text>
 		</Tag>
 	);
 };

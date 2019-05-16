@@ -1,1 +1,1 @@
-export { Text, EVariant as ETextVariant, IProps as ITextProps } from './Text';
+export { Text, IProps as ITextProps } from './Text';

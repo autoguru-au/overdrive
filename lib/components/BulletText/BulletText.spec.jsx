@@ -25,7 +25,7 @@ const CustomBullet = ({}) => (
 
 describe('<BulletText />', () => {
 	it('should not throw', () =>
-		expect(() => shallow(<BulletText />)).not.toThrow());
+		expect(() => render(<BulletText />)).not.toThrow());
 
 	it('should pass on className to dom element', () => {
 		const bulletText = mount(<BulletText className="bullet-class" />);

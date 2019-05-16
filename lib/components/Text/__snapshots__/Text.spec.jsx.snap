@@ -1,21 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Text /> should match snapshot for Desktop variant 1`] = `
-<p
-  class="root variantDesktop"
->
-  Hello World
-</p>
-`;
-
-exports[`<Text /> should match snapshot for Mobile variant 1`] = `
-<p
-  class="root variantMobile"
->
-  Hello World
-</p>
-`;
-
 exports[`<Text /> should match snapshot when empty 1`] = `
 <p
   class="root"

@@ -25,11 +25,11 @@ exports[`<BulletText /> should match snapshot for custom bullet text 1`] = `
       </i>
     </span>
   </div>
-  <p
+  <span
     class="root"
   >
     Hello World
-  </p>
+  </span>
 </li>
 `;
 
@@ -46,7 +46,9 @@ exports[`<BulletText /> should match snapshot for default bullet text 1`] = `
       •
     </span>
   </div>
-  <Text>
+  <Text
+    component="span"
+  >
     Hello World!
   </Text>
 </li>
@@ -65,7 +67,9 @@ exports[`<BulletText /> should match snapshot for ordered bullet text 1`] = `
       ?
     </span>
   </div>
-  <Text>
+  <Text
+    component="span"
+  >
     Hello World!
   </Text>
 </ol>
@@ -84,7 +88,9 @@ exports[`<BulletText /> should match snapshot for primary bullet text with custo
       ?
     </span>
   </div>
-  <Text>
+  <Text
+    component="span"
+  >
     Hello World!
   </Text>
 </li>
@@ -103,7 +109,9 @@ exports[`<BulletText /> should match snapshot for secondary bullet text with cus
       ?
     </span>
   </div>
-  <Text>
+  <Text
+    component="span"
+  >
     Hello World!
   </Text>
 </li>
