@@ -3,8 +3,6 @@ import { mount, render, shallow } from 'enzyme';
 import { DetailText, DetailTextLoader, EDetailTextSize } from './';
 import { LoadingBox } from '../LoadingBox';
 
-const testLabel = 'Hello World!';
-
 describe('<DetailTextLoader />', () => {
 	it('should not throw', () =>
 		expect(() => shallow(<DetailTextLoader />)).not.toThrow());
@@ -32,7 +30,7 @@ describe('<DetailText />', () => {
 		expect(
 			render(
 				<DetailText size={EDetailTextSize.Detail1}>
-					{testLabel}
+					Hello World
 				</DetailText>
 			)
 		).toMatchSnapshot();
@@ -42,7 +40,7 @@ describe('<DetailText />', () => {
 		expect(
 			render(
 				<DetailText size={EDetailTextSize.Detail2}>
-					{testLabel}
+					Hello World
 				</DetailText>
 			)
 		).toMatchSnapshot();
@@ -52,7 +50,7 @@ describe('<DetailText />', () => {
 		expect(
 			render(
 				<DetailText size={EDetailTextSize.Detail3}>
-					{testLabel}
+					Hello World
 				</DetailText>
 			)
 		).toMatchSnapshot();
@@ -60,7 +58,7 @@ describe('<DetailText />', () => {
 
 	it('should pass on className to dom element', () => {
 		const detailText = mount(
-			<DetailText className="detailText-class" label={testLabel} />
+			<DetailText className="detailText-class" label="Hello World" />
 		);
 		expect(
 			detailText.find('span').hasClass('detailText-class')
@@ -70,22 +68,22 @@ describe('<DetailText />', () => {
 
 	it('should use a span dom element ', () => {
 		const detailText = shallow(
-			<DetailText className="detailText-class">{testLabel}</DetailText>
+			<DetailText className="detailText-class">Hello World</DetailText>
 		);
 		expect(detailText.type()).toEqual('span');
 	});
 
 	it('should display the child text', () => {
 		const detailText = mount(
-			<DetailText className="detailText-class">{testLabel}</DetailText>
+			<DetailText className="detailText-class">Hello World</DetailText>
 		);
-		expect(detailText.text()).toEqual(testLabel);
+		expect(detailText.text()).toEqual('Hello World');
 		detailText.unmount();
 	});
 
 	it('should add a detail1 class for detail 1 size', () => {
 		const detailText = mount(
-			<DetailText size={EDetailTextSize.Detail1}>{testLabel}</DetailText>
+			<DetailText size={EDetailTextSize.Detail1}>Hello World</DetailText>
 		);
 		expect(detailText.find('span').hasClass('detail1')).toBeTruthy();
 		detailText.unmount();
@@ -93,7 +91,7 @@ describe('<DetailText />', () => {
 
 	it('should add a detail2 class for detail 2 size', () => {
 		const detailText = mount(
-			<DetailText size={EDetailTextSize.Detail2}>{testLabel}</DetailText>
+			<DetailText size={EDetailTextSize.Detail2}>Hello World</DetailText>
 		);
 		expect(detailText.find('span').hasClass('detail2')).toBeTruthy();
 		detailText.unmount();
@@ -101,9 +99,17 @@ describe('<DetailText />', () => {
 
 	it('should add a detail3 class for detail 3 size', () => {
 		const detailText = mount(
-			<DetailText size={EDetailTextSize.Detail3}>{testLabel}</DetailText>
+			<DetailText size={EDetailTextSize.Detail3}>Hello World</DetailText>
 		);
 		expect(detailText.find('span').hasClass('detail3')).toBeTruthy();
 		detailText.unmount();
+	});
+
+	describe('when muted', () => {
+		it('should match snapshot', () => {
+			expect(
+				render(<DetailText muted>Hello World</DetailText>)
+			).toMatchSnapshot();
+		});
 	});
 });
