@@ -10,7 +10,11 @@ const baseLoadingProps = () => ({
 
 storiesOf('Components|Type/DetailText', module)
 	.add('detail 1', () => (
-		<DetailText size={EDetailTextSize.Detail1}>Hello World</DetailText>
+		<DetailText
+			size={EDetailTextSize.Detail1}
+			muted={boolean('Muted', false)}>
+			Hello World
+		</DetailText>
 	))
 	.add('detail 2', () => (
 		<DetailText size={EDetailTextSize.Detail2}>Hello World</DetailText>

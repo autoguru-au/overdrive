@@ -4,7 +4,7 @@ exports[`<Text /> should match snapshot for Desktop variant 1`] = `
 <p
   class="root variantDesktop"
 >
-  Hello World!
+  Hello World
 </p>
 `;
 
@@ -12,7 +12,7 @@ exports[`<Text /> should match snapshot for Mobile variant 1`] = `
 <p
   class="root variantMobile"
 >
-  Hello World!
+  Hello World
 </p>
 `;
 
@@ -26,6 +26,14 @@ exports[`<Text /> should match snapshot with text 1`] = `
 <p
   class="root"
 >
-  Hello World!
+  Hello World
+</p>
+`;
+
+exports[`<Text /> when muted should match snapshot 1`] = `
+<p
+  class="root muted"
+>
+  Hello World
 </p>
 `;

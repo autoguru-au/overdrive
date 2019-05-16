@@ -25,9 +25,14 @@
 	font-weight: 400;
 	line-height: var(--global--body--height-mobile);
 	font-size: var(--global--body--size-mobile);
+	color: getColour(gray, 900);
 
 	@include variantDesktop() {
 		line-height: var(--global--body--height-desktop);
 		font-size: var(--global--body--size-desktop);
 	}
+}
+
+.muted {
+	color: getColour(gray, 500);
 }
