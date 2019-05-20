@@ -23,15 +23,27 @@ describe('<Button />', () => {
 		});
 	});
 
-	describe('when as anchor', () => {
+	describe('when custom component', () => {
 		it('should use html anchor element if href value exists', () => {
-			const button = shallow(<Button component="a" href="abc" />);
+			const button = shallow(<Button is="a" href="abc" />);
 			expect(button.type()).toEqual('a');
 		});
 
 		it('should pass href value to the DOM element', () => {
-			const button = mount(<Button component="a" href="/abcd" />);
+			const button = mount(<Button is="a" href="/abcd" />);
 			expect(button.html()).toContain(`href="/abcd"`);
+		});
+
+		describe('deprecated still work', () => {
+			it('should use html anchor element if href value exists', () => {
+				const button = shallow(<Button component="a" href="abc" />);
+				expect(button.type()).toEqual('a');
+			});
+
+			it('should pass href value to the DOM element', () => {
+				const button = mount(<Button component="a" href="/abcd" />);
+				expect(button.html()).toContain(`href="/abcd"`);
+			});
 		});
 	});
 

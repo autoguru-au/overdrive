@@ -26,34 +26,11 @@ describe('<Anchor />', () => {
 		expect(anchor).toMatchSnapshot();
 	});
 
-	it('should match snapshot with label, icon custom component', () => {
-		const anchor = shallow(
-			<Anchor
-				icon={TestIcon}
-				compnent={Button}
-				label={testLabel}
-				to={testLink}
-			/>
-		);
-		expect(anchor).toMatchSnapshot();
-	});
-
 	it('should add an a dom element', () => {
 		const anchor = shallow(
 			<Anchor className="anchor-class" label={testLabel} />
 		);
 		expect(anchor.type()).toEqual(`a`);
-	});
-
-	it('should add Button dom element if button component is passed down to it', () => {
-		const anchor = shallow(
-			<Anchor
-				className="anchor-class"
-				label={testLabel}
-				component={Button}
-			/>
-		);
-		expect(anchor.find(Button)).toBeTruthy();
 	});
 
 	it('should pass on className to dom element', () => {
@@ -81,5 +58,55 @@ describe('<Anchor />', () => {
 			<Anchor icon={TestIcon} label={testLabel} href={testLink} />
 		);
 		expect(anchor.find('a').prop('href')).toEqual(testLink);
+	});
+
+	describe('when custom component', () => {
+		it('should add Button dom element if button component is passed down to it', () => {
+			const anchor = shallow(
+				<Anchor
+					className="anchor-class"
+					label={testLabel}
+					is={<Button />}
+				/>
+			);
+			expect(anchor.find(Button)).toBeTruthy();
+		});
+
+		it('should match snapshot with label, icon custom component', () => {
+			const anchor = shallow(
+				<Anchor
+					icon={TestIcon}
+					is={<Button />}
+					label={testLabel}
+					to={testLink}
+				/>
+			);
+			expect(anchor).toMatchSnapshot();
+		});
+
+		describe('deprecated still work', () => {
+			it('should add Button dom element if button component is passed down to it', () => {
+				const anchor = shallow(
+					<Anchor
+						className="anchor-class"
+						label={testLabel}
+						component={Button}
+					/>
+				);
+				expect(anchor.find(Button)).toBeTruthy();
+			});
+
+			it('should match snapshot with label, icon custom component', () => {
+				const anchor = shallow(
+					<Anchor
+						icon={TestIcon}
+						compnent={Button}
+						label={testLabel}
+						to={testLink}
+					/>
+				);
+				expect(anchor).toMatchSnapshot();
+			});
+		});
 	});
 });
