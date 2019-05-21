@@ -1,8 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { Button, EButtonSize, EButtonVariant } from '../Button';
-import { Heading } from '../Heading';
-import { Text } from '../Text';
+import { Heading, Text } from '../Typography';
 import { TextContainer } from './TextContainer';
 
 storiesOf('Components|Type/TextContainer', module)

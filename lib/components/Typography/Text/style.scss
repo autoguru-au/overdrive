@@ -1,0 +1,17 @@
+@import '../../../theme/tokens/facade';
+
+.root {
+	padding: 0;
+	margin: 0;
+	font-weight: 400;
+	color: getColour(gray, 900);
+	line-height: 1;
+}
+
+.muted {
+	color: getColour(gray, 500);
+}
+
+.strong {
+	font-weight: 700;
+}

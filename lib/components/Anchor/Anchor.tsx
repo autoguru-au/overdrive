@@ -7,9 +7,9 @@ import React, {
 	memo,
 	ReactNode,
 } from 'react';
-import { DetailText, EDetailTextSize } from '../DetailText';
 import { TIconPrimitiveType } from '../Icon';
 import styles from './style.scss';
+import { Text } from '../Typography';
 
 export interface IProps {
 	className?: string;
@@ -57,9 +57,7 @@ const AnchorComponent: FunctionComponent<IProps & any> = ({
 					size: 16,
 					className: styles.icon,
 				})}
-			<DetailText className={styles.label} size={EDetailTextSize.Detail2}>
-				{label}
-			</DetailText>
+			<Text className={styles.label}>{label}</Text>
 		</>
 	);
 

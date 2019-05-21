@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount, render, shallow } from 'enzyme';
 import { BulletText } from './BulletText';
-import { Text } from '../Text';
+import { Text } from '../Typography/Text';
 import { EBulletTextVariant } from './index';
 import { CheckIcon, Icon } from '../Icon';
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import { mount, render, shallow } from 'enzyme';
-import { Text } from './';
+import { mount, render, shallow } from 'enzyme/build';
+import { Text } from './index';
 
 describe('<Text />', () => {
 	it('should not throw', () => expect(() => shallow(<Text />)).not.toThrow());
@@ -14,14 +14,9 @@ describe('<Text />', () => {
 	});
 
 	it('should pass on className to dom element', () => {
-		const text = mount(<Text className="text-class" label="Hello World" />);
+		const text = mount(<Text className="text-class" />);
 		expect(text.hasClass('text-class')).toBeTruthy();
 		text.unmount();
-	});
-
-	it('should use a p dom tag', () => {
-		const text = shallow(<Text>"Hello World"</Text>);
-		expect(text.type()).toEqual('p');
 	});
 
 	describe('when muted', () => {

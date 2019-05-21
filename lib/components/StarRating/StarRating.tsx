@@ -2,8 +2,8 @@ import { warning } from '@autoguru/utilities';
 import cx from 'clsx';
 import React, { FunctionComponent, memo, ReactElement } from 'react';
 import { StarHalfIcon, StarIcon } from '../../icons';
-import { DetailText, EDetailTextSize } from '../DetailText';
 import { Icon } from '../Icon';
+import { Text } from '../Typography';
 import styles from './style.scss';
 
 const totalStars = 5;
@@ -24,9 +24,9 @@ const starSizeMap: Map<ESize, number> = new Map([
 	[ESize.Small, 16],
 ]);
 
-const labelSizeMap: Map<ESize, EDetailTextSize> = new Map([
-	[ESize.Small, EDetailTextSize.Detail3],
-	[ESize.Medium, EDetailTextSize.Detail2],
+const labelSizeMap: Map<ESize, number> = new Map([
+	[ESize.Small, 3],
+	[ESize.Medium, 4],
 ]);
 
 const starCssMap: Map<EStarType, string> = new Map([
@@ -112,9 +112,9 @@ const StarRatingComponent: FunctionComponent<IProps> = ({
 					.fill(0)
 					.map((_, index) => getStar(index, rating, size))}
 			</span>
-			<DetailText size={labelSizeMap.get(size)} className={styles.label}>
+			<Text size={labelSizeMap.get(size)} className={styles.label}>
 				{label}
-			</DetailText>
+			</Text>
 		</span>
 	);
 };

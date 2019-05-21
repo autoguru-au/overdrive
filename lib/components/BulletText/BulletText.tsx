@@ -1,6 +1,6 @@
 import cx from 'clsx';
 import React, { FunctionComponent, isValidElement, ReactElement } from 'react';
-import { Text } from '../Text';
+import { Text } from '../Typography/Text';
 import styles from './style.scss';
 
 export interface IProps {
@@ -38,7 +38,7 @@ export const BulletText: FunctionComponent<IProps> = ({
 					<span className={styles.bulletText} children={Bullet} />
 				</div>
 			)}
-			<Text component="span">{children}</Text>
+			<Text is="span">{children}</Text>
 		</Tag>
 	);
 };

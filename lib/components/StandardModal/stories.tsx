@@ -3,7 +3,7 @@ import { boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { EStandardModalSize, StandardModal } from '.';
-import { Text } from '../Text';
+import { Text } from '../Typography/Text';
 
 storiesOf('Components|Modal/Standard', module).add('default', () => (
 	<StandardModal

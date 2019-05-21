@@ -1,0 +1,8 @@
+@import '../../../theme/tokens/facade';
+
+.root {
+	padding: 0;
+	margin: 0;
+	font-weight: 700;
+	color: getColour(gray, 900);
+}

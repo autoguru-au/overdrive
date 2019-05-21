@@ -11,12 +11,11 @@ exports[`<Anchor /> should match snapshot with label, icon and to props 1`] = `
     className="icon"
     size={16}
   />
-  <DetailText
+  <Text
     className="label"
-    size="detail-2"
   >
     Hello World!
-  </DetailText>
+  </Text>
 </a>
 `;
 
@@ -26,9 +25,8 @@ exports[`<Anchor /> should match snapshot without label 1`] = `
   className="root"
   disabled={false}
 >
-  <DetailText
+  <Text
     className="label"
-    size="detail-2"
   />
 </a>
 `;
@@ -45,12 +43,11 @@ exports[`<Anchor /> when custom component deprecated still work should match sna
     className="icon"
     size={16}
   />
-  <DetailText
+  <Text
     className="label"
-    size="detail-2"
   >
     Hello World!
-  </DetailText>
+  </Text>
 </a>
 `;
 
@@ -65,11 +62,10 @@ exports[`<Anchor /> when custom component should match snapshot with label, icon
     className="icon"
     size={16}
   />
-  <DetailText
+  <Text
     className="label"
-    size="detail-2"
   >
     Hello World!
-  </DetailText>
+  </Text>
 </Button>
 `;

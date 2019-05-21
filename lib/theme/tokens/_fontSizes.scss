@@ -1,14 +1,14 @@
 $fontSize: (
 	0: 0,
-	1: 8px,
-	2: 10px,
-	3: 12px,
-	4: 14px,
-	5: 16px,
-	6: 18px,
-	7: 22px,
-	8: 26px,
-	9: 30px,
+	1: 12px,
+	2: 14px,
+	3: 16px,
+	4: 18px,
+	5: 24px,
+	6: 30px,
+	7: 36px,
+	8: 42px,
+	9: 48px,
 ) !default;
 
 @mixin generateGlobalFontSizeVariables($fs_map: $fontSize) {

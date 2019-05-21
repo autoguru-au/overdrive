@@ -1,23 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Text /> should match snapshot when empty 1`] = `
-<p
-  class="root"
+<span
+  class="root sizeScale3"
 />
 `;
 
 exports[`<Text /> should match snapshot with text 1`] = `
-<p
-  class="root"
+<span
+  class="root sizeScale3"
 >
   Hello World
-</p>
+</span>
 `;
 
 exports[`<Text /> when muted should match snapshot 1`] = `
-<p
-  class="root muted"
+<span
+  class="root sizeScale3 muted"
 >
   Hello World
-</p>
+</span>
 `;
