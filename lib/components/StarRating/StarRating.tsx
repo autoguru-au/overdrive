@@ -1,3 +1,4 @@
+import { warning } from '@autoguru/utilities';
 import cx from 'clsx';
 import React, { FunctionComponent, memo, ReactElement } from 'react';
 import { StarHalfIcon, StarIcon } from '../../icons';
@@ -36,23 +37,24 @@ const starCssMap: Map<EStarType, string> = new Map([
 
 export interface IProps {
 	className?: string;
-	ratingValue: number;
+	ratingValue?: number; // @deprecated
+	rating: number;
 	size?: ESize;
 	label?: string;
 }
 
-const getStarIconType = (index: number, ratingValue: number): EStarType => {
-	if (index + 1 <= Math.floor(ratingValue)) {
+const getStarIconType = (index: number, rating: number): EStarType => {
+	if (index + 1 <= Math.floor(rating)) {
 		// Is definitely full star
 		return EStarType.Full;
 	}
 
-	if (index + 1 > Math.ceil(ratingValue)) {
+	if (index + 1 > Math.ceil(rating)) {
 		// Is definitely empty star
 		return EStarType.Empty;
 	}
 
-	const decimalPart = Math.round((ratingValue - index) * 1e1);
+	const decimalPart = Math.round((rating - index) * 1e1);
 
 	if (decimalPart <= 2) {
 		return EStarType.Empty;
@@ -67,10 +69,10 @@ const getStarIconType = (index: number, ratingValue: number): EStarType => {
 
 const getStar = (
 	index: number,
-	ratingValue: number = 0,
+	rating: number = 0,
 	size: ESize
 ): ReactElement => {
-	const starType = getStarIconType(index, ratingValue);
+	const starType = getStarIconType(index, rating);
 	const star: () => JSX.Element =
 		starType === EStarType.Half ? StarHalfIcon : StarIcon;
 
@@ -86,20 +88,35 @@ const getStar = (
 
 const StarRatingComponent: FunctionComponent<IProps> = ({
 	className = '',
+	rating,
+	ratingValue = void 0,
+	label = rating || ratingValue,
 	size = ESize.Medium,
-	ratingValue,
-	label = ratingValue,
-}) => (
-	<span className={cx([styles.root, className])}>
-		<span className={styles.starList}>
-			{new Array(totalStars)
-				.fill(0)
-				.map((_, index) => getStar(index, ratingValue, size))}
+}) => {
+	// @deprecated block
+	{
+		warning(
+			ratingValue !== void 0,
+			'The `ratingValue` prop is deprecated, please use the `rating` prop'
+		);
+
+		if (ratingValue !== void 0) {
+			rating = ratingValue;
+		}
+	}
+
+	return (
+		<span className={cx([styles.root, className])}>
+			<span className={styles.starList}>
+				{new Array(totalStars)
+					.fill(0)
+					.map((_, index) => getStar(index, rating, size))}
+			</span>
+			<DetailText size={labelSizeMap.get(size)} className={styles.label}>
+				{label}
+			</DetailText>
 		</span>
-		<DetailText size={labelSizeMap.get(size)} className={styles.label}>
-			{label}
-		</DetailText>
-	</span>
-);
+	);
+};
 
 export const StarRating = memo(StarRatingComponent);

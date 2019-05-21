@@ -21,12 +21,12 @@ describe('<StarRating />', () => {
 	});
 
 	it('should match snapshot with value', () => {
-		expect(render(<StarRating ratingValue={2.7} />)).toMatchSnapshot();
+		expect(render(<StarRating rating={2.7} />)).toMatchSnapshot();
 	});
 
 	it('should match snapshot with label', () => {
 		const rating = render(
-			<StarRating ratingValue={3.8} label={'Hello World!'} />
+			<StarRating rating={3.8} label={'Hello World!'} />
 		);
 		expect(rating).toMatchSnapshot();
 	});
@@ -34,7 +34,7 @@ describe('<StarRating />', () => {
 	it('should match snapshot for small size', () => {
 		const rating = render(
 			<StarRating
-				ratingValue={3.8}
+				rating={3.8}
 				label={'Hello World!'}
 				size={EStarRatingSize.Small}
 			/>
@@ -45,7 +45,7 @@ describe('<StarRating />', () => {
 	it('should add a span dom element', () => {
 		const rating = shallow(
 			<StarRating
-				ratingValue={2.6}
+				rating={2.6}
 				label={'Hello World!'}
 				size={EStarRatingSize.Small}
 			/>
@@ -64,7 +64,7 @@ describe('<StarRating />', () => {
 	});
 
 	it('should add a span element inside with the rating value if label is not provided value', () => {
-		const rating = mount(<StarRating ratingValue={4.1} />);
+		const rating = mount(<StarRating rating={4.1} />);
 		expect(
 			rating
 				.find('span')
@@ -86,7 +86,7 @@ describe('<StarRating />', () => {
 	});
 
 	it('should have correct star combination for rating 0', () => {
-		const rating = shallow(<StarRating ratingValue={0} />);
+		const rating = shallow(<StarRating rating={0} />);
 
 		getFullStarsNum(rating);
 		expect(getFullStarsNum(rating)).toEqual(0);
@@ -95,7 +95,7 @@ describe('<StarRating />', () => {
 	});
 
 	it('should have correct star combination for rating 1', () => {
-		const rating = shallow(<StarRating ratingValue={1} />);
+		const rating = shallow(<StarRating rating={1} />);
 
 		getFullStarsNum(rating);
 		expect(getFullStarsNum(rating)).toEqual(1);
@@ -104,7 +104,7 @@ describe('<StarRating />', () => {
 	});
 
 	it('should have correct star combination for rating 2', () => {
-		const rating = shallow(<StarRating ratingValue={2} />);
+		const rating = shallow(<StarRating rating={2} />);
 
 		getFullStarsNum(rating);
 		expect(getFullStarsNum(rating)).toEqual(2);
@@ -113,7 +113,7 @@ describe('<StarRating />', () => {
 	});
 
 	it('should have correct star combination for rating 3', () => {
-		const rating = shallow(<StarRating ratingValue={3} />);
+		const rating = shallow(<StarRating rating={3} />);
 
 		getFullStarsNum(rating);
 		expect(getFullStarsNum(rating)).toEqual(3);
@@ -122,7 +122,7 @@ describe('<StarRating />', () => {
 	});
 
 	it('should have correct star combination for rating 4', () => {
-		const rating = shallow(<StarRating ratingValue={4} />);
+		const rating = shallow(<StarRating rating={4} />);
 
 		getFullStarsNum(rating);
 		expect(getFullStarsNum(rating)).toEqual(4);
@@ -131,7 +131,7 @@ describe('<StarRating />', () => {
 	});
 
 	it('should have correct star combination for rating 5', () => {
-		const rating = shallow(<StarRating ratingValue={5} />);
+		const rating = shallow(<StarRating rating={5} />);
 
 		getFullStarsNum(rating);
 		expect(getFullStarsNum(rating)).toEqual(5);
@@ -140,7 +140,7 @@ describe('<StarRating />', () => {
 	});
 
 	it('should round down to 0 for decimals lower than 0.2', () => {
-		const rating = shallow(<StarRating ratingValue={3.1} />);
+		const rating = shallow(<StarRating rating={3.1} />);
 
 		getFullStarsNum(rating);
 		expect(getFullStarsNum(rating)).toEqual(3);
@@ -149,7 +149,7 @@ describe('<StarRating />', () => {
 	});
 
 	it('should round down to 0 for decimals equal to 0.2', () => {
-		const rating = shallow(<StarRating ratingValue={4.2} />);
+		const rating = shallow(<StarRating rating={4.2} />);
 
 		getFullStarsNum(rating);
 		expect(getFullStarsNum(rating)).toEqual(4);
@@ -158,7 +158,7 @@ describe('<StarRating />', () => {
 	});
 
 	it('should round down to 0.5 for decimals larger than 0.2 and smaller 0.5', () => {
-		const rating = shallow(<StarRating ratingValue={2.3} />);
+		const rating = shallow(<StarRating rating={2.3} />);
 
 		getFullStarsNum(rating);
 		expect(getFullStarsNum(rating)).toEqual(2);
@@ -167,7 +167,7 @@ describe('<StarRating />', () => {
 	});
 
 	it('should keep 0.5 decimals', () => {
-		const rating = shallow(<StarRating ratingValue={1.5} />);
+		const rating = shallow(<StarRating rating={1.5} />);
 
 		getFullStarsNum(rating);
 		expect(getFullStarsNum(rating)).toEqual(1);
@@ -176,7 +176,7 @@ describe('<StarRating />', () => {
 	});
 
 	it('should round u to 1 for decimals equal to 0.8', () => {
-		const rating = shallow(<StarRating ratingValue={4.8} />);
+		const rating = shallow(<StarRating rating={4.8} />);
 
 		getFullStarsNum(rating);
 		expect(getFullStarsNum(rating)).toEqual(5);
@@ -185,7 +185,7 @@ describe('<StarRating />', () => {
 	});
 
 	it('should round up to 1 for decimals larger than 0.8', () => {
-		const rating = shallow(<StarRating ratingValue={3.9} />);
+		const rating = shallow(<StarRating rating={3.9} />);
 
 		getFullStarsNum(rating);
 		expect(getFullStarsNum(rating)).toEqual(4);
