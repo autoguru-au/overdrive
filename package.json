@@ -59,6 +59,10 @@
         "stylelint --ignore-path .gitignore --fix",
         "prettier --write",
         "git add"
+      ],
+      "lib/components/**/index.ts": [
+        "node scripts/generateReExport",
+        "git add"
       ]
     },
     "relative": true
