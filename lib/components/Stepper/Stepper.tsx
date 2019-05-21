@@ -19,7 +19,7 @@ export interface IProps {
 
 	format?(value: number): string;
 
-	onChange(value: number): void;
+	onChange?(value: number): void;
 }
 
 enum EActionType {
