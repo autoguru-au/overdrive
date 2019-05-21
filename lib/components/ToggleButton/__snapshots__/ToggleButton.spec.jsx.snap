@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ToggleButton /> should match snapshot when toggled 1`] = `
+<div
+  aria-disabled="false"
+  aria-label="toggle value"
+  class="root toggled"
+>
+  <span
+    class="handle"
+  />
+</div>
+`;
+
+exports[`<ToggleButton /> should match snapshot when toggled and disabled 1`] = `
+<div
+  aria-disabled="true"
+  aria-label="toggle value"
+  class="root toggled"
+>
+  <span
+    class="handle"
+  />
+</div>
+`;
+
+exports[`<ToggleButton /> should match snapshot when un-toggled 1`] = `
+<div
+  aria-disabled="false"
+  aria-label="toggle value"
+  class="root"
+>
+  <span
+    class="handle"
+  />
+</div>
+`;
+
+exports[`<ToggleButton /> should match snapshot when un-toggled and disabled 1`] = `
+<div
+  aria-disabled="true"
+  aria-label="toggle value"
+  class="root"
+>
+  <span
+    class="handle"
+  />
+</div>
+`;
+
+exports[`<ToggleButton /> should match snapshot without props 1`] = `
+<div
+  aria-disabled="false"
+  aria-label="toggle value"
+  class="root"
+>
+  <span
+    class="handle"
+  />
+</div>
+`;
