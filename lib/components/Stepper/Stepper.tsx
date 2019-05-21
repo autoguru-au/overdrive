@@ -100,7 +100,7 @@ const StepperComponent: FunctionComponent<IProps> = ({
 				min,
 				max,
 			}),
-		[]
+		[step, min, max]
 	);
 	const onIncrement = useCallback(
 		() =>
