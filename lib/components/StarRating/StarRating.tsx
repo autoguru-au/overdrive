@@ -26,8 +26,8 @@ const starSizeMap: Map<ESize, number> = new Map([
 ]);
 
 const labelSizeMap: Map<ESize, TSizeScale> = new Map([
-	[ESize.Small, 3],
-	[ESize.Medium, 4],
+	[ESize.Small, 2],
+	[ESize.Medium, 3],
 ]);
 
 const starCssMap: Map<EStarType, string> = new Map([

@@ -23,8 +23,8 @@ $handleSize: 24px;
 }
 
 .root {
-	font-size: var(--global--fontSize--5);
-	line-height: var(--global--fontSize--5);
+	font-size: var(--global--fontSize--3);
+	line-height: 1;
 	color: getColour(gray, 900);
 	border-radius: 4px;
 	border: solid 1px getColour(gray, 300);

@@ -144,7 +144,7 @@ exports[`<TextInput /> should match snapshot for active text input 1`] = `
             className="notchedBaseBorderNotch"
             style={
               Object {
-                "width": 8,
+                "width": 16,
               }
             }
           >

@@ -12,8 +12,8 @@
 $active_scaling_factor: 0.7777;
 $active_padding_added: var(--global--space--2); // 8
 
-$size: 64px; // Hardcoded values are fixes for edge not supporting css variable inside transform
-$font_size: var(--global--fontSize--6); //18
+$input_height: 48px; // Hardcoded values are fixes for edge not supporting css variable inside transform
+$font_size: var(--global--fontSize--3); // 16
 
 @function calcPlaceholderTranslate($notched) {
 	// TODO hard-coding these values is due to edge struggling width cal and variables mixed together
@@ -24,15 +24,15 @@ $font_size: var(--global--fontSize--6); //18
 		@return translate(
 			/*calc(var(--global--space--3) + #{$active_padding_added})
 			 calc(-1 * (((#{$font_size}) * #{$active_scaling_factor}) / 2))*/
-				(12px + 8px),
-			(-1 * (18px * $active_scaling_factor)/ 2)
+				(8px + 8px),
+			(-1 * (16px * $active_scaling_factor)/ 2)
 		);
 	} @else {
 		@return translate(
 			/*var(--global--space--5)
 			calc(((#{$size} - #{$font_size}) / 2))*/
-				20px,
-			((64px - 18)/2)
+				16px,
+			(($input_height - 16px)/2)
 		);
 	}
 	/* stylelint-enable */
@@ -137,6 +137,7 @@ $font_size: var(--global--fontSize--6); //18
 		pointer-events: none;
 		box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.03),
 			0 4px 5px 0 rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.05);
+		border-radius: var(--global--space--1);
 
 		&__leading,
 		&__notch,
@@ -179,7 +180,7 @@ $font_size: var(--global--fontSize--6); //18
 		}
 
 		&__leading {
-			width: var(--global--space--4);
+			width: var(--global--space--2);
 			border-radius: var(--global--space--1) 0 0 var(--global--space--1);
 			border-right: none;
 		}
@@ -201,23 +202,23 @@ $font_size: var(--global--fontSize--6); //18
 
 // Applies to the native input
 .input {
-	$input_base_height: 64px;
-	$font_size: var(--global--fontSize--6);
+	$font_size: var(--global--fontSize--3);
 
 	position: relative;
 	display: flex;
 	z-index: 1;
 	margin: 0;
-	padding: calc(((#{$input_base_height} - #{$font_size}) / 2) - 3px)
-		calc(var(--global--space--5) - 1px);
+	padding: calc(((#{$input_height} - #{$font_size}) / 2) - 3px)
+		calc(var(--global--space--4) - 1px);
 	width: 100%;
-	height: $input_base_height;
+	height: $input_height;
 	align-self: flex-end;
 	line-height: 1;
 	font-size: #{$font_size};
+	color: getColour(gray, 900);
 
 	@at-root textarea.input {
-		$text_area_height: #{$input_base_height} * 2.5;
+		$text_area_height: #{$input_height} * 2.5;
 		$top_spacing: 8px;
 
 		height: calc(#{$text_area_height});
@@ -228,7 +229,7 @@ $font_size: var(--global--fontSize--6); //18
 			padding-top: 0;
 			margin-top: 8px;
 			height: calc(#{$text_area_height} - #{$top_spacing});
-			min-height: calc(#{$input_base_height} - #{$top_spacing});
+			min-height: calc(#{$input_height} - #{$top_spacing});
 		}
 	}
 
@@ -239,9 +240,9 @@ $font_size: var(--global--fontSize--6); //18
 
 .hint-text {
 	margin-top: var(--global--space--2);
-	margin-left: var(--global--space--5);
+	margin-left: var(--global--space--4);
 	color: getColour(gray, 400);
-	font-size: var(--global--fontSize--4);
+	font-size: var(--global--fontSize--1);
 	line-height: 1.14;
 	transition: color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 

@@ -22,7 +22,7 @@ exports[`<DateInput /> should have some hintText 1`] = `
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:82.08px"
+        style="width:96.31px"
       >
         <label
           class="notchedBasePlaceholder"
@@ -66,7 +66,7 @@ exports[`<DateInput /> should match snapshot 1`] = `
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:88.25px"
+        style="width:102.47px"
       >
         <label
           class="notchedBasePlaceholder"
@@ -104,7 +104,7 @@ exports[`<DateInput /> should match snapshot for active date input 1`] = `
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:88.25px"
+        style="width:102.47px"
       >
         <label
           class="notchedBasePlaceholder"
@@ -141,7 +141,7 @@ exports[`<DateInput /> should match snapshot for default date input 1`] = `
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:88.25px"
+        style="width:102.47px"
       >
         <label
           class="notchedBasePlaceholder"
@@ -178,7 +178,7 @@ exports[`<DateInput /> should match snapshot for touched date input 1`] = `
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:88.25px"
+        style="width:102.47px"
       >
         <label
           class="notchedBasePlaceholder"
@@ -215,7 +215,7 @@ exports[`<DateInput /> should match snapshot for touched invalid date input 1`] 
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:88.25px"
+        style="width:102.47px"
       >
         <label
           class="notchedBasePlaceholder"
@@ -252,7 +252,7 @@ exports[`<DateInput /> should match snapshot for touched valid date input 1`] = 
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:88.25px"
+        style="width:102.47px"
       >
         <label
           class="notchedBasePlaceholder"
