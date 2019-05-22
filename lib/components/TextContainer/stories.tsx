@@ -4,7 +4,7 @@ import { Button, EButtonSize, EButtonVariant } from '../Button';
 import { Heading, Text } from '../Typography';
 import { TextContainer } from './TextContainer';
 
-storiesOf('Components|Type/TextContainer', module)
+storiesOf('Components|TextContainer', module)
 	.addDecorator(story => <div style={{ maxWidth: 512 }}>{story()}</div>)
 	.add('default', () => (
 		<TextContainer>

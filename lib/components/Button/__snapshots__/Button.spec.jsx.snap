@@ -77,23 +77,6 @@ exports[`<Button /> when loading should match snapshot for default button 1`] = 
 </button>
 `;
 
-exports[`<Button /> when loading should match snapshot for large button 1`] = `
-<button
-  aria-disabled={true}
-  className="root sizeLarge variantSecondary loading"
-  disabled={true}
->
-  <span
-    className="btnContent"
-  />
-  <ProgressSpinnerComponent
-    className="spinner"
-    size="large"
-    variant="secondary"
-  />
-</button>
-`;
-
 exports[`<Button /> when loading should match snapshot for medium button 1`] = `
 <button
   aria-disabled={true}
@@ -132,18 +115,6 @@ exports[`<Button /> when rounded should match snapshot 1`] = `
 <button
   aria-disabled={false}
   className="root sizeMedium variantSecondary rounded"
-  disabled={false}
->
-  <span
-    className="btnContent"
-  />
-</button>
-`;
-
-exports[`<Button /> when size variant should match snapshot for large button 1`] = `
-<button
-  aria-disabled={false}
-  className="root sizeLarge variantSecondary"
   disabled={false}
 >
   <span

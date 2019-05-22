@@ -1,6 +1,6 @@
 @import '../../theme/tokens/facade';
 
-$lineBottomHeight: 2px;
+$lineBottomHeight: 1px;
 $size: 20px;
 
 .nav-item {
@@ -12,13 +12,13 @@ $size: 20px;
 	border: none;
 	margin: 0 0 (-1 * $lineBottomHeight);
 	background: transparent;
-	font-size: var(--global--fontSize--4);
+	font-size: var(--global--fontSize--3);
 	font-weight: 700;
 	line-height: $size;
 	padding: calc(var(--global--space--3) + 1px) 0;
 	color: getColour(gray, 500);
 	cursor: pointer;
-	border-bottom: $lineBottomHeight solid transparent;
+	border-bottom: #{$lineBottomHeight + 1px} solid transparent;
 	transition: color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
 		background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 
@@ -56,7 +56,7 @@ $size: 20px;
 			background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 
 		@at-root #{selector_nest($sel + '--active', &),
-		#{selector_nest($sel + ':hover', &)}} {
+			#{selector_nest($sel + ':hover', &)}} {
 			color: white;
 			background-color: getColour(green, 900);
 		}

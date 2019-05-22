@@ -27,9 +27,7 @@ $font_size: var(--global--fontSize--6); //18
 				(12px + 8px),
 			(-1 * (18px * $active_scaling_factor)/ 2)
 		);
-	}
-
-	@else {
+	} @else {
 		@return translate(
 			/*var(--global--space--5)
 			calc(((#{$size} - #{$font_size}) / 2))*/

@@ -8,8 +8,8 @@ import React, {
 	ReactNode,
 } from 'react';
 import { TIconPrimitiveType } from '../Icon';
-import styles from './style.scss';
 import { Text } from '../Typography';
+import styles from './style.scss';
 
 export interface IProps {
 	className?: string;

@@ -2,7 +2,6 @@
 
 $heightSmall: 36px;
 $heightMedium: 48px;
-$heightLarge: 64px;
 $widthSmall: 36px;
 
 @mixin isHoverState() {
@@ -168,7 +167,7 @@ $widthSmall: 36px;
 .size {
 	&-small {
 		$size: $heightSmall;
-		$font_size: var(--global--fontSize--3);
+		$font_size: var(--global--fontSize--2);
 		$verticalPadding: calc(((#{$size} - #{$font_size}) / 2) - 1px);
 
 		font-size: #{$font_size};
@@ -185,29 +184,12 @@ $widthSmall: 36px;
 
 	&-medium {
 		$size: $heightMedium;
-		$font_size: var(--global--fontSize--4);
+		$font_size: var(--global--fontSize--3);
 		$verticalPadding: calc(((#{$size} - #{$font_size}) / 2) - 1px);
 
 		font-size: #{$font_size};
 		padding: $verticalPadding calc(var(--global--space--4) - 1px);
 		min-width: 96px;
-
-		&.rounded {
-			width: $size;
-			height: $size;
-			min-width: auto;
-			padding: $verticalPadding 0;
-		}
-	}
-
-	&-large {
-		$size: $heightLarge;
-		$font_size: var(--global--fontSize--6);
-		$verticalPadding: calc(((#{$size} - #{$font_size}) / 2) - 1px);
-
-		font-size: #{$font_size};
-		padding: $verticalPadding calc(var(--global--space--5) - 1px);
-		min-width: 128px;
 
 		&.rounded {
 			width: $size;

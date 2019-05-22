@@ -4,6 +4,7 @@ import React, { FunctionComponent, memo, ReactElement } from 'react';
 import { StarHalfIcon, StarIcon } from '../../icons';
 import { Icon } from '../Icon';
 import { Text } from '../Typography';
+import { TSizeScale } from '../Typography/types';
 import styles from './style.scss';
 
 const totalStars = 5;
@@ -24,7 +25,7 @@ const starSizeMap: Map<ESize, number> = new Map([
 	[ESize.Small, 16],
 ]);
 
-const labelSizeMap: Map<ESize, number> = new Map([
+const labelSizeMap: Map<ESize, TSizeScale> = new Map([
 	[ESize.Small, 3],
 	[ESize.Medium, 4],
 ]);
