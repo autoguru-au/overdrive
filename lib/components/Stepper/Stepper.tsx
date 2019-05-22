@@ -98,7 +98,7 @@ const StepperComponent: FunctionComponent<IProps> = ({
 				min,
 				max,
 			}),
-		[]
+		[step, min, max]
 	);
 
 	if (prevValue !== value) {
