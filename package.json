@@ -28,7 +28,7 @@
     "format": "prettier --write \"{*,{lib,config,scripts,.storybook}/**/*}.+(js|jsx|ts|tsx|css|scss|json|yml|md|mdx|html)\"",
     "lint": "concurrently \"yarn:lint:ts\" \"yarn:lint:styles\"",
     "lint:styles": "stylelint --ignore-path .gitignore --fix \"lib/**/*.+(scss|css)\"",
-    "lint:ts": "tsc --noEmit && tslint --fix --project tsconfig.json",
+    "lint:ts": "tsc --noEmit && tslint --fix --project tsconfig.tslint.json",
     "semantic-release": "semantic-release",
     "start": "yarn run storybook",
     "storybook": "start-storybook -p 6006",
@@ -56,7 +56,7 @@
         "git add"
       ],
       "*.{ts,tsx}": [
-        "tslint --fix --project tsconfig.json",
+        "tslint --fix --project tsconfig.tslint.json",
         "prettier --write",
         "git add"
       ],

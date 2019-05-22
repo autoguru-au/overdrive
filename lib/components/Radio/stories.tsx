@@ -1,5 +1,5 @@
-import { text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
+import { text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React, { useState } from 'react';
 import { Radio, RadioGroup } from '.';

@@ -1,6 +1,6 @@
-import { CalendarIcon } from './';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
+import { CalendarIcon } from './';
 import { Icon } from './Icon';
 
 storiesOf('Components|Icon', module).add('default', () => (
