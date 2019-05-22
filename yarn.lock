@@ -41,10 +41,10 @@
   resolved "https://registry.yarnpkg.com/@autoguru/tsconfig/-/tsconfig-1.0.12.tgz#3e10e8731fb7973212e45b88e604d9e68fa738f7"
   integrity sha512-H/WEu/7+PWGJ+3Vw2yp/+1QYEy2gziZhj/YDVYTlnparnLe9FrvXfZfQEICyfcbnv/bXJG+pQEZL6E6+QSnlDA==
 
-"@autoguru/utilities@^1.0.38":
-  version "1.0.38"
-  resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.38.tgz#b61d6e8f4dcf07f335d3a3404ea0c5450741a65b"
-  integrity sha512-uMlU1FPY8u2Gro3r4aE9lKKwnnq6c+LjwxZWcjRcYLWfl3i3u9hXS+DZuEwAs78fpc4JZRJrrxMmIcuwBByyzw==
+"@autoguru/utilities@^1.0.40":
+  version "1.0.40"
+  resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.40.tgz#79aec61024f6cd434a5595165d8ddfb25366bc1c"
+  integrity sha512-ODBEu+15WDl8c5k0DWufJCfylLO4+5B26rSsSF6PckcJlxUD8hyrSox1LdQjwUfx6WNKXsmciTAqLRWxsXXerg==
 
 "@babel/code-frame@7.0.0", "@babel/code-frame@^7.0.0":
   version "7.0.0"
