@@ -1,0 +1,62 @@
+@import '../../theme/tokens/facade';
+
+@mixin isDisabledState() {
+	&[disabled],
+	&[aria-disabled='true'] {
+		cursor: not-allowed;
+
+		&:not(.loading) {
+			@content;
+		}
+	}
+}
+
+$handleSize: 24px;
+
+.root,
+.handle {
+	flex-direction: row;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.root {
+	font-size: var(--global--fontSize--5);
+	line-height: var(--global--fontSize--5);
+	color: getColour(gray, 900);
+	border-radius: 4px;
+	border: solid 1px getColour(gray, 300);
+	box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.03),
+		0 4px 5px 0 rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.05);
+	padding: calc(var(--global--space--3) - 1px)
+		calc(var(--global--space--2) - 1px);
+
+	@include isDisabledState() {
+		cursor: not-allowed;
+	}
+}
+
+.handle {
+	width: $handleSize;
+	height: $handleSize;
+	background-color: getColour(green, 700);
+	border-radius: 50%;
+	cursor: pointer;
+	outline: none;
+	fill: white;
+	padding: 0;
+
+	@include isDisabledState() {
+		background-color: getColour(green, 200);
+		border-color: getColour(green, 200);
+	}
+}
+
+.label {
+	min-width: 64px;
+	text-align: center;
+	padding: 0 var(--global--space--2);
+	flex: 1 0 auto;
+}

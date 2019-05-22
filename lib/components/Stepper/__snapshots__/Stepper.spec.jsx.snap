@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Stepper /> should match snapshot with label formatter 1`] = `
+<div
+  aria-disabled="false"
+  class="root"
+>
+  <button
+    aria-disabled="false"
+    aria-label="step down"
+    class="handle"
+  >
+    <i
+      class="root"
+      style="width:16px;height:16px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M405.333 277.333H106.667v-42.666h298.666v42.666z"
+        />
+      </svg>
+    </i>
+  </button>
+  <span
+    class="label"
+  >
+    25%
+  </span>
+  <button
+    aria-disabled="false"
+    aria-label="step up"
+    class="handle"
+  >
+    <i
+      class="root"
+      style="width:16px;height:16px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M405.333 277.333h-128v128h-42.666v-128h-128v-42.666h128v-128h42.666v128h128v42.666z"
+        />
+      </svg>
+    </i>
+  </button>
+</div>
+`;
+
+exports[`<Stepper /> should match snapshot with props 1`] = `
+<div
+  aria-disabled="false"
+  class="root"
+>
+  <button
+    aria-disabled="false"
+    aria-label="step down"
+    class="handle"
+  >
+    <i
+      class="root"
+      style="width:16px;height:16px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M405.333 277.333H106.667v-42.666h298.666v42.666z"
+        />
+      </svg>
+    </i>
+  </button>
+  <span
+    class="label"
+  >
+    19
+  </span>
+  <button
+    aria-disabled="false"
+    aria-label="step up"
+    class="handle"
+  >
+    <i
+      class="root"
+      style="width:16px;height:16px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M405.333 277.333h-128v128h-42.666v-128h-128v-42.666h128v-128h42.666v128h128v42.666z"
+        />
+      </svg>
+    </i>
+  </button>
+</div>
+`;
+
+exports[`<Stepper /> should match snapshot without props 1`] = `
+<div
+  aria-disabled="true"
+  class="root"
+>
+  <button
+    aria-disabled="true"
+    aria-label="step down"
+    class="handle"
+    disabled=""
+  >
+    <i
+      class="root"
+      style="width:16px;height:16px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M405.333 277.333H106.667v-42.666h298.666v42.666z"
+        />
+      </svg>
+    </i>
+  </button>
+  <span
+    class="label"
+  />
+  <button
+    aria-disabled="true"
+    aria-label="step up"
+    class="handle"
+    disabled=""
+  >
+    <i
+      class="root"
+      style="width:16px;height:16px"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M405.333 277.333h-128v128h-42.666v-128h-128v-42.666h128v-128h42.666v128h128v42.666z"
+        />
+      </svg>
+    </i>
+  </button>
+</div>
+`;
