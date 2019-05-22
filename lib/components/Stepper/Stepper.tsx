@@ -114,7 +114,7 @@ const StepperComponent: FunctionComponent<IProps> = ({
 
 	return (
 		<div
-			className={cx([className, styles.root])}
+			className={cx([styles.root, className])}
 			aria-disabled={isDisabled}>
 			<button
 				className={styles.handle}
