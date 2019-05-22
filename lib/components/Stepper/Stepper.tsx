@@ -1,3 +1,4 @@
+import { clamp } from '@autoguru/utilities';
 import cx from 'clsx';
 import React, {
 	FunctionComponent,
@@ -40,26 +41,15 @@ interface IState {
 	value: number;
 }
 
-const ensureValid = (value: number, min: number, max: number): number =>
-	Math.min(max, Math.max(value, min));
-
 const reducer = (state: IState, action: IAction) => {
 	switch (action.type) {
 		case EActionType.INCREMENT:
 			return {
-				value: ensureValid(
-					state.value + action.step,
-					action.min,
-					action.max
-				),
+				value: clamp(state.value + action.step, action.min, action.max),
 			};
 		case EActionType.DECREMENT:
 			return {
-				value: ensureValid(
-					state.value - action.step,
-					action.min,
-					action.max
-				),
+				value: clamp(state.value - action.step, action.min, action.max),
 			};
 		case EActionType.VALUE:
 			return { value: action.value };
@@ -80,8 +70,6 @@ const StepperComponent: FunctionComponent<IProps> = ({
 	format = value => value.toString(),
 	onChange,
 }) => {
-	const cls = cx([className, styles.root]);
-
 	const isDisabled: boolean = disabled || value === void 0 || value === null;
 
 	const [state, dispatch] = useReducer(reducer, { value });
@@ -125,7 +113,9 @@ const StepperComponent: FunctionComponent<IProps> = ({
 	}
 
 	return (
-		<div className={cls} aria-disabled={isDisabled}>
+		<div
+			className={cx([className, styles.root])}
+			aria-disabled={isDisabled}>
 			<button
 				className={styles.handle}
 				onClick={onDecrement}
