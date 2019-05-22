@@ -125,7 +125,7 @@ const StepperComponent: FunctionComponent<IProps> = ({
 				<Icon icon={MinusIcon} size={16} />
 			</button>
 			<span className={styles.label}>
-				{Number.isFinite(state.value) && format(state.value)}
+				{Number.isFinite(state.value) ? format(state.value) : ''}
 			</span>
 			<button
 				className={styles.handle}
