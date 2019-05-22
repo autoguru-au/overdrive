@@ -30,6 +30,7 @@ export * from './SelectInput';
 export * from './SimplePagination';
 export * from './StandardModal';
 export * from './StarRating';
+export * from './Stepper';
 export * from './Tabs';
 export * from './Text';
 export * from './TextAreaInput';
