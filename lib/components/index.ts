@@ -36,3 +36,4 @@ export * from './Text';
 export * from './TextAreaInput';
 export * from './TextContainer';
 export * from './TextInput';
+export * from './ToggleButton';
