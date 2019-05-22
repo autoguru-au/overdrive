@@ -18,10 +18,6 @@ const ToggleButtonComponent: FunctionComponent<IProps> = ({
 }) => {
 	const [toggled, setToggled] = useState<boolean>(incomingToggled);
 
-	const cls = cx([className, styles.root], {
-		[styles.toggled]: toggled,
-	});
-
 	const [prevValue, setPrevValue] = useState<boolean>(incomingToggled);
 
 	const onToggle = useCallback(() => {
@@ -41,7 +37,13 @@ const ToggleButtonComponent: FunctionComponent<IProps> = ({
 
 	return (
 		<div
-			className={cls}
+			className={cx(
+				styles.root,
+				{
+					[styles.toggled]: toggled,
+				},
+				className
+			)}
 			aria-disabled={disabled}
 			aria-label="toggle value"
 			onClick={onToggle}>
