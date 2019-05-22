@@ -83,7 +83,7 @@ describe('<ToggleButton />', () => {
 		wrapper.unmount();
 	});
 
-	it('should fire change if clicked while disabled', () => {
+	it('should not fire change if clicked while disabled', () => {
 		const spyedCallback = jest.fn();
 
 		const wrapper = mount(
