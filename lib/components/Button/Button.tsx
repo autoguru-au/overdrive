@@ -1,11 +1,17 @@
 import cx from 'clsx';
-import React, { ComponentType, createElement, FunctionComponent } from 'react';
+import React, {
+	cloneElement,
+	ComponentType,
+	FunctionComponent,
+	ReactNode,
+} from 'react';
 import {
 	EProgressSpinnerSize,
 	EProgressSpinnerVariant,
 	ProgressSpinner,
 } from '../ProgressSpinner';
 
+import { warning } from '@autoguru/utilities';
 import styles from './style.scss';
 
 export enum ESize {
@@ -22,7 +28,8 @@ export enum EVariant {
 
 export interface IProps {
 	className?: string;
-	component?: ComponentType;
+	is?: ComponentType | ReactNode;
+	component?: ComponentType; // @deprecated
 	disabled?: boolean;
 	isFullWidth?: boolean;
 	isLoading?: boolean;
@@ -62,7 +69,8 @@ const progressSpinnerVariantMap: Map<
 export const Button: FunctionComponent<IProps & any> = ({
 	children,
 	className = '',
-	component = 'button',
+	is: Component = 'button',
+	component = void 0,
 	disabled = false,
 	isLoading = false,
 	isFullWidth = false,
@@ -70,27 +78,39 @@ export const Button: FunctionComponent<IProps & any> = ({
 	size = ESize.Medium,
 	variant = EVariant.Secondary,
 	...rest
-}) =>
-	createElement<any>( // TODO: Rid this any
-		component,
-		{
-			className: cx(
-				[
-					styles.root,
-					cssSizeMap.get(size),
-					cssVariantMap.get(variant),
-					className,
-				],
-				{
-					[styles.rounded]: rounded,
-					[styles.fullWidth]: isFullWidth,
-					[styles.loading]: isLoading,
-				}
-			),
-			'aria-disabled': disabled || isLoading,
-			disabled: disabled || isLoading,
-			...rest,
-		},
+}) => {
+	// @deprecated block
+	{
+		warning(
+			component !== void 0,
+			`The \`component\` prop deprecated, please use the \`is\` prop instead.\n\nBefore:\n<Button component="{<Link/">}>\n\tHello\n</Button>\n\nAfter:\n<Button is="{<Link/">}>\n\tHello\n</Button>`
+		);
+
+		if (component !== void 0) {
+			Component = component;
+		}
+	}
+
+	const props = {
+		className: cx(
+			[
+				styles.root,
+				cssSizeMap.get(size),
+				cssVariantMap.get(variant),
+				className,
+			],
+			{
+				[styles.rounded]: rounded,
+				[styles.fullWidth]: isFullWidth,
+				[styles.loading]: isLoading,
+			}
+		),
+		'aria-disabled': disabled || isLoading,
+		disabled: disabled || isLoading,
+		...rest,
+	};
+
+	const childs = (
 		<>
 			<span className={styles.btnContent} children={children} />
 			{isLoading && (
@@ -102,3 +122,10 @@ export const Button: FunctionComponent<IProps & any> = ({
 			)}
 		</>
 	);
+
+	return typeof Component === 'string' ? (
+		<Component {...props}>{childs}</Component>
+	) : (
+		cloneElement(Component, props, childs)
+	);
+};

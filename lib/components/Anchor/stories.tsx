@@ -21,7 +21,7 @@ storiesOf('Components|Type/Anchor', module)
 	.add('withButton', () => (
 		<Anchor
 			{...baseProps()}
-			component={Button}
+			is={<Button />}
 			to={'./#eldorado'}
 			icon={<Icon icon={PhoneIcon} size={16} />}
 		/>

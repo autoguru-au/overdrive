@@ -20,7 +20,20 @@ exports[`<Anchor /> should match snapshot with label, icon and to props 1`] = `
 </a>
 `;
 
-exports[`<Anchor /> should match snapshot with label, icon custom component 1`] = `
+exports[`<Anchor /> should match snapshot without label 1`] = `
+<a
+  aria-disabled={false}
+  className="root"
+  disabled={false}
+>
+  <DetailText
+    className="label"
+    size="detail-2"
+  />
+</a>
+`;
+
+exports[`<Anchor /> when custom component deprecated still work should match snapshot with label, icon custom component 1`] = `
 <a
   aria-disabled={false}
   className="root"
@@ -41,15 +54,22 @@ exports[`<Anchor /> should match snapshot with label, icon custom component 1`] 
 </a>
 `;
 
-exports[`<Anchor /> should match snapshot without label 1`] = `
-<a
+exports[`<Anchor /> when custom component should match snapshot with label, icon custom component 1`] = `
+<Button
   aria-disabled={false}
   className="root"
   disabled={false}
+  to="https://www.hellowrold.com"
 >
+  <Component
+    className="icon"
+    size={16}
+  />
   <DetailText
     className="label"
     size="detail-2"
-  />
-</a>
+  >
+    Hello World!
+  </DetailText>
+</Button>
 `;
