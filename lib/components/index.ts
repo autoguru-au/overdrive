@@ -16,6 +16,7 @@ export * from './Button';
 export * from './CheckableBase';
 export * from './CheckBox';
 export * from './DateInput';
+export * from './Expandable';
 export * from './Flyout';
 export * from './Icon';
 export * from './InputBase';
