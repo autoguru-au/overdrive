@@ -1,0 +1,289 @@
+import React, { useState } from 'react';
+import { mount, shallow } from 'enzyme';
+import { Expandable } from './Expandable';
+import { act } from 'react-dom/test-utils';
+import { ExpandableItem } from './ExpandableItem';
+
+describe('<Expandable />', () => {
+	it('should not throw with no items', () =>
+		expect(() => shallow(<Expandable />)).not.toThrow());
+	it('should not throw with default item', () =>
+		expect(() =>
+			shallow(
+				<Expandable>
+					<ExpandableItem />
+				</Expandable>
+			)
+		).not.toThrow());
+
+	it('should match snapshot for list without items', () => {
+		let testComponent;
+		act(() => {
+			const TestComponent = () => {
+				return <Expandable />;
+			};
+			testComponent = mount(<TestComponent />);
+		});
+
+		expect(testComponent.html()).toMatchSnapshot();
+	});
+
+	it('should match snapshot for list with a closed item', () => {
+		let testComponent;
+		act(() => {
+			const TestComponent = () => {
+				return (
+					<Expandable>
+						<ExpandableItem
+							title={<h1>Title</h1>}
+							body={<p>Body</p>}
+						/>
+					</Expandable>
+				);
+			};
+			testComponent = mount(<TestComponent />);
+		});
+
+		expect(testComponent.html()).toMatchSnapshot();
+	});
+
+	it('should match snapshot for list with an open item', () => {
+		let testComponent;
+		act(() => {
+			const TestComponent = () => {
+				return (
+					<Expandable>
+						<ExpandableItem
+							open={true}
+							title={<h1>Title</h1>}
+							body={<p>Body</p>}
+						/>
+					</Expandable>
+				);
+			};
+			testComponent = mount(<TestComponent />);
+		});
+
+		expect(testComponent.html()).toMatchSnapshot();
+	});
+
+	it('should match snapshot for multi list with open and closed items', () => {
+		let testComponent;
+		act(() => {
+			const TestComponent = () => {
+				return (
+					<Expandable>
+						<ExpandableItem
+							open={true}
+							title={<h1>Title1</h1>}
+							body={<p>Body1</p>}
+						/>
+						<ExpandableItem
+							open={false}
+							title={<h1>Title2</h1>}
+							body={<p>Body2</p>}
+						/>
+						<ExpandableItem
+							open={true}
+							title={<h1>Title3</h1>}
+							body={<p>Body3</p>}
+						/>
+					</Expandable>
+				);
+			};
+			testComponent = mount(<TestComponent />);
+		});
+
+		expect(testComponent.html()).toMatchSnapshot();
+	});
+
+	it('should match snapshot for none-multi list with open and closed items', () => {
+		let testComponent;
+		act(() => {
+			const TestComponent = () => {
+				return (
+					<Expandable multi={false}>
+						<ExpandableItem
+							open={true}
+							title={<h1>Title1</h1>}
+							body={<p>Body1</p>}
+						/>
+						<ExpandableItem
+							open={false}
+							title={<h1>Title2</h1>}
+							body={<p>Body2</p>}
+						/>
+						<ExpandableItem
+							open={true}
+							title={<h1>Title3</h1>}
+							body={<p>Body3</p>}
+						/>
+					</Expandable>
+				);
+			};
+			testComponent = mount(<TestComponent />);
+		});
+
+		expect(testComponent.html()).toMatchSnapshot();
+	});
+
+	it('should pass on className to dom element', () => {
+		const expandable = shallow(
+			<Expandable className="expandable">
+				<ExpandableItem className="expandable-item" />
+				<ExpandableItem className="expandable-item" />
+			</Expandable>
+		);
+		expect(expandable.find('.expandable').length === 1).toBeTruthy();
+		expect(expandable.find('.expandable-item').length === 2).toBeTruthy();
+	});
+
+	it('should set correct aria-expanded tag value', () => {
+		let expandableItem;
+		let spyedCallback;
+		act(() => {
+			const TestComponent = () => {
+				const [open, setOpen] = useState(false);
+				if (!spyedCallback)
+					spyedCallback = jest.fn(() => setOpen(!open));
+
+				return (
+					<ExpandableItem
+						open={open}
+						onClick={spyedCallback}
+						className="expandable-item"
+					/>
+				);
+			};
+
+			expandableItem = mount(<TestComponent />);
+		});
+
+		expect(
+			expandableItem.find('article[aria-expanded="false"]').length === 1
+		).toBeTruthy();
+		expect(
+			expandableItem.find('article[aria-expanded="true"]').length === 0
+		).toBeTruthy();
+
+		act(() => {
+			expandableItem.find('article>header').simulate('click');
+		});
+
+		expandableItem.update();
+
+		expect(
+			expandableItem.find('article[aria-expanded="false"]').length === 0
+		).toBeTruthy();
+
+		expect(
+			expandableItem.find('article[aria-expanded="true"]').length === 1
+		).toBeTruthy();
+
+		expect(spyedCallback).toHaveBeenCalledTimes(1);
+	});
+
+	it('should fire onClick when an item is clicked', () => {
+		let expandables;
+		let spyedCallback;
+		act(() => {
+			const TestComponent = () => {
+				spyedCallback = jest.fn();
+
+				return (
+					<Expandable>
+						<ExpandableItem
+							onClick={spyedCallback}
+							className="expandable-item"
+						/>
+					</Expandable>
+				);
+			};
+
+			expandables = mount(<TestComponent />);
+		});
+
+		expect(expandables.find('article').hasClass('open')).not.toBeTruthy();
+
+		act(() => {
+			expandables.find('article>header').simulate('click');
+		});
+
+		expandables.update();
+
+		expect(expandables.find('article').hasClass('open')).toBeTruthy();
+
+		expect(spyedCallback).toHaveBeenCalledTimes(1);
+	});
+
+	it('should fire onChange on the list when an item is clicked', () => {
+		let expandables;
+		let spyedCallback;
+		act(() => {
+			const TestComponent = () => {
+				spyedCallback = jest.fn();
+
+				return (
+					<Expandable onChange={spyedCallback}>
+						<ExpandableItem className="expandable-item" />
+					</Expandable>
+				);
+			};
+
+			expandables = mount(<TestComponent />);
+		});
+
+		expect(expandables.find('article').hasClass('open')).not.toBeTruthy();
+
+		act(() => {
+			expandables.find('article>header').simulate('click');
+		});
+
+		expandables.update();
+
+		expect(expandables.find('article').hasClass('open')).toBeTruthy();
+
+		expect(spyedCallback).toHaveBeenCalledTimes(1);
+	});
+
+	it('should fire onChange on the list item when openStatus changes', () => {
+		let expandableItem;
+		let spyedCallback;
+		act(() => {
+			const TestComponent = () => {
+				const [open, setOpen] = useState(false);
+				if (!spyedCallback) spyedCallback = jest.fn();
+
+				return (
+					<ExpandableItem
+						open={open}
+						onChange={spyedCallback}
+						onClick={() => setOpen(!open)}
+						className="expandable-item"
+					/>
+				);
+			};
+
+			expandableItem = mount(<TestComponent />);
+		});
+
+		expect(spyedCallback).not.toHaveBeenCalled();
+
+		act(() => {
+			expandableItem.find('article>header').simulate('click');
+		});
+
+		expect(spyedCallback).toHaveBeenCalledTimes(1);
+		expect(spyedCallback).toHaveBeenCalledWith(true);
+		spyedCallback.mockReset();
+
+		expect(spyedCallback).not.toHaveBeenCalled();
+
+		act(() => {
+			expandableItem.find('article>header').simulate('click');
+		});
+
+		expect(spyedCallback).toHaveBeenCalledTimes(1);
+		expect(spyedCallback).toHaveBeenCalledWith(false);
+	});
+});

@@ -1,0 +1,44 @@
+@import '../../theme/tokens/facade';
+
+$titleHeight: 54px;
+$iconSize: 16px;
+$iconOffsetX: 3px;
+$iconOffsetY: 2px;
+
+.expandable {
+	width: 100%;
+	flex-direction: column;
+	box-sizing: border-box;
+	display: flex;
+	align-content: stretch;
+	justify-content: flex-start;
+	align-items: stretch;
+	max-width: 100%;
+
+	.expandable-item {
+		&:nth-child(even) {
+			.title {
+				background-color: getColour(gray, 100);
+			}
+		}
+	}
+}
+
+.title {
+	position: relative;
+	min-height: $titleHeight;
+	padding: var(--global--space--4) 0;
+	cursor: pointer;
+}
+
+.arrow {
+	transition: transform 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
+	will-change: transform;
+	position: absolute;
+	left: -$iconOffsetX;
+	top: 0.5 * ($titleHeight - $iconSize) + $iconOffsetY;
+
+	.open & {
+		transform: rotate(180deg);
+	}
+}
