@@ -1,5 +1,5 @@
 import cx from 'clsx';
-import React, { FunctionComponent } from 'react';
+import React, { createContext, FunctionComponent } from 'react';
 import styles from './style.scss';
 
 export interface IProps {
@@ -17,7 +17,7 @@ export interface IRadioGroupContext {
 	radioSelected(value: string): void;
 }
 
-export const RadioContext = React.createContext<IRadioGroupContext>(null);
+export const RadioContext = createContext<IRadioGroupContext>(null);
 
 export const RadioGroup: FunctionComponent<IProps> = ({
 	name,

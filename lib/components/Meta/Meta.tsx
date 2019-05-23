@@ -1,5 +1,5 @@
 import cx from 'clsx';
-import React, { FunctionComponent, memo } from 'react';
+import React, { cloneElement, FunctionComponent, memo } from 'react';
 import { DetailText, EDetailTextSize } from '../DetailText';
 import { TIconPrimitiveType } from '../Icon';
 import styles from './style.scss';
@@ -32,7 +32,7 @@ const MetaComponent: FunctionComponent<IProps> = ({
 	return (
 		<span className={cls}>
 			{/* TODO: Should we be using a cloneElement here? */}
-			{icon && React.cloneElement(icon, { className: styles.icon })}
+			{icon && cloneElement(icon, { className: styles.icon })}
 			<DetailText
 				className={cx({
 					[styles.withIcon]: !!icon,

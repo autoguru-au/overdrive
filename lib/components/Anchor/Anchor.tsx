@@ -53,7 +53,7 @@ const AnchorComponent: FunctionComponent<IProps & any> = ({
 	const childs = (
 		<>
 			{icon &&
-				React.cloneElement(icon, {
+				cloneElement(icon, {
 					size: 16,
 					className: styles.icon,
 				})}
