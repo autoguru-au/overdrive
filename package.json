@@ -78,11 +78,12 @@
     "clsx": "^1.0.4"
   },
   "devDependencies": {
-    "@autoguru/babel-preset": "^1.0.40",
+    "@autoguru/babel-preset": "^1.0.42",
     "@autoguru/commitlint-config": "^1.0.40",
-    "@autoguru/jest-preset": "^1.0.40",
+    "@autoguru/jest-preset": "^1.0.42",
     "@autoguru/tsconfig": "^1.0.12",
     "@babel/core": "^7.4.5",
+    "@babel/runtime-corejs3": "^7.4.5",
     "@commitlint/cli": "^7.5.2",
     "@octokit/rest": "^16.26.0",
     "@semantic-release/commit-analyzer": "^6.1.0",
@@ -110,7 +111,7 @@
     "build-header": "^1.0.2",
     "concurrently": "^4.1.0",
     "copyfiles": "^2.1.0",
-    "core-js": "^2.6.5",
+    "core-js": "^3.1.2",
     "cosmiconfig": "^5.2.1",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
@@ -154,7 +155,7 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^4.0.0",
     "typescript": "~3.4.2",
-    "webpack": "^4.32.0"
+    "webpack": "^4.32.2"
   },
   "peerDependencies": {
     "react": ">=16.8",
