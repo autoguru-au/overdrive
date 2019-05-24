@@ -132,10 +132,12 @@ describe('<Expandable />', () => {
 			<Expandable className="expandable">
 				<ExpandableItem className="expandable-item" />
 				<ExpandableItem className="expandable-item" />
+				<ExpandableItem className="expandable-item" />
+				<ExpandableItem className="expandable-item" />
 			</Expandable>
 		);
 		expect(expandable.find('.expandable').length === 1).toBeTruthy();
-		expect(expandable.find('.expandable-item').length === 2).toBeTruthy();
+		expect(expandable.find('.expandable-item').length === 4).toBeTruthy();
 	});
 
 	it('should set correct aria-expanded tag value', () => {
@@ -285,5 +287,101 @@ describe('<Expandable />', () => {
 
 		expect(spyedCallback).toHaveBeenCalledTimes(1);
 		expect(spyedCallback).toHaveBeenCalledWith(false);
+	});
+
+	it('should add correct gaps to opened list items', () => {
+		let expandables;
+		act(() => {
+			const TestComponent = () => {
+				return (
+					<Expandable multi={true}>
+						<ExpandableItem className="i1"/>
+						<ExpandableItem className="i2"/>
+						<ExpandableItem className="i3"/>
+						<ExpandableItem className="i4"/>
+						<ExpandableItem className="i5"/>
+					</Expandable>
+				);
+			};
+
+			expandables = mount(<TestComponent />);
+		});
+
+		expect(expandables.find('article.open').length === 0).toBeTruthy();
+
+		expandables.find('article.i1>header').simulate('click'); // Open first item
+		expandables.update();
+
+		expect(expandables.find('article.i1').hasClass('open')).toBeTruthy();
+		expect(
+			expandables.find('article.i1').hasClass('topGap')
+		).not.toBeTruthy();
+		expect(
+			expandables.find('article.i1').hasClass('bottomGap')
+		).toBeTruthy();
+
+		expandables.find('article.i2>header').simulate('click'); // Open second item
+		expandables.update();
+
+		expect(expandables.find('article.i1').hasClass('open')).toBeTruthy();
+		expect(
+			expandables.find('article.i1').hasClass('topGap')
+		).not.toBeTruthy();
+		expect(
+			expandables.find('article.i1').hasClass('bottomGap')
+		).toBeTruthy();
+
+		expect(expandables.find('article.i2').hasClass('open')).toBeTruthy();
+		expect(
+			expandables.find('article.i2').hasClass('topGap')
+		).not.toBeTruthy();
+		expect(
+			expandables.find('article.i2').hasClass('bottomGap')
+		).toBeTruthy();
+
+		expandables.find('article.i1>header').simulate('click'); // Close first item
+		expandables.update();
+
+		expect(
+			expandables.find('article.i1').hasClass('open')
+		).not.toBeTruthy();
+		expect(
+			expandables.find('article.i1').hasClass('topGap')
+		).not.toBeTruthy();
+		expect(
+			expandables.find('article.i1').hasClass('bottomGap')
+		).not.toBeTruthy();
+
+		expect(expandables.find('article.i2').hasClass('open')).toBeTruthy();
+		expect(expandables.find('article.i2').hasClass('topGap')).toBeTruthy();
+		expect(
+			expandables.find('article.i2').hasClass('bottomGap')
+		).toBeTruthy();
+
+		expandables.find('article.i5>header').simulate('click'); // Open last item
+		expandables.update();
+
+		expect(expandables.find('article.i5').hasClass('open')).toBeTruthy();
+		expect(expandables.find('article.i5').hasClass('topGap')).toBeTruthy();
+		expect(
+			expandables.find('article.i5').hasClass('bottomGap')
+		).not.toBeTruthy();
+
+		expandables.find('article.i4>header').simulate('click'); // Open one before last item
+		expandables.update();
+
+		expect(expandables.find('article.i4').hasClass('open')).toBeTruthy();
+		expect(expandables.find('article.i4').hasClass('topGap')).toBeTruthy();
+		expect(
+			expandables.find('article.i4').hasClass('bottomGap')
+		).toBeTruthy();
+
+		expect(expandables.find('article.i5').hasClass('open')).toBeTruthy();
+		expect(
+			expandables.find('article.i5').hasClass('topGap')
+		).not.toBeTruthy();
+		expect(
+			expandables.find('article.i5').hasClass('bottomGap')
+		).not.toBeTruthy();
 	});
 });

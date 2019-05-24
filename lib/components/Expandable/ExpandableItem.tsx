@@ -5,7 +5,6 @@ import React, {
 	memo,
 	useContext,
 	useRef,
-	useState,
 } from 'react';
 import { ChevronDownIcon, Icon } from '../Icon';
 import styles from './style.scss';
@@ -29,15 +28,14 @@ const expandableClicked = (id, expandableClicked: (id: string) => void) => {
 
 const ExpandableItemComponent: FunctionComponent<IProps> = ({
 	className = '',
-	id: incomingId,
+	id,
 	open = false,
 	title,
 	body,
 	onClick,
 	onChange = () => void 0,
 }) => {
-	const [id] = useState<string>(incomingId);
-
+	console.log('__________________REDDRAW');
 	const expandableContext: IExpandableContext = useContext(ExpandableContext);
 	const map =
 		expandableContext && expandableContext.openedItemsMap

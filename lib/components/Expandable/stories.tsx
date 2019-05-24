@@ -33,7 +33,8 @@ storiesOf('Components|Expandable', module)
 		<Expandable multi={boolean('multi', false)}>
 			{new Array(5).fill(0).map((_, index) => (
 				<ExpandableItem
-					key={Math.round(Math.random() * 1e6)}
+					className={`i${index + 1}`}
+					key={index}
 					title={
 						<div style={{ paddingLeft: '24px' }}>
 							<Text>Item {index + 1}</Text>
