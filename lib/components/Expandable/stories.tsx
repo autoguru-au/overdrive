@@ -8,7 +8,26 @@ import { ExpandableItem } from './ExpandableItem';
 
 storiesOf('Components|Expandable', module)
 	.addDecorator(story => (
-		<div style={{ maxWidth: '300px', width: '100%' }}>{story()}</div>
+		<div
+			style={{
+				height: '100%',
+				width: '100%',
+				backgroundColor: 'white',
+				flexDirection: 'row',
+				boxSizing: 'border-box',
+				display: 'flex',
+				placeContent: 'center',
+				alignItems: 'center',
+			}}>
+			<div
+				style={{
+					maxWidth: '300px',
+					width: '100%',
+					backgroundColor: 'white',
+				}}>
+				{story()}
+			</div>
+		</div>
 	))
 	.add('default list', () => (
 		<Expandable multi={boolean('multi', true)}>

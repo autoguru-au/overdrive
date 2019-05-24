@@ -1,9 +1,12 @@
 @import '../../theme/tokens/facade';
 
-$titleHeight: 54px;
+$titleHeight: 40px;
 $iconSize: 16px;
 $iconOffsetX: 3px;
-$iconOffsetY: 2px;
+$iconOffsetY: 0px;
+
+$itemBleed: var(--global--space--3);
+$itemPadding: var(--global--space--3);
 
 .expandable {
 	width: 100%;
@@ -14,12 +17,54 @@ $iconOffsetY: 2px;
 	justify-content: flex-start;
 	align-items: stretch;
 	max-width: 100%;
+}
 
-	.expandable-item {
-		&:nth-child(even) {
+.expandable-item {
+	margin: 0 calc(-1 * #{$itemBleed});
+	padding: 0 $itemBleed;
+	z-index: 0;
+	border-radius: 4px;
+	transition: background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
+		box-shadow 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
+		border-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
+	will-change: box-shadow;
+	border: solid 1px transparent;
+
+	.title {
+		background-color: white;
+	}
+
+	&:not(.open) {
+		&:nth-child(odd) {
 			.title {
 				background-color: getColour(gray, 100);
+
+				.open & {
+					background-color: white;
+				}
 			}
+		}
+
+		&:nth-child(even) {
+			.title {
+				background-color: white;
+			}
+		}
+	}
+
+	&.open {
+		background-color: white;
+		border-color: getColour(gray, 300);
+		box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.03),
+			0 4px 5px 0 rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.05);
+		z-index: 1;
+
+		&.top-gap {
+			margin-top: var(--global--space--4);
+		}
+
+		&.bottom-gap {
+			margin-bottom: var(--global--space--4);
 		}
 	}
 }
@@ -27,15 +72,21 @@ $iconOffsetY: 2px;
 .title {
 	position: relative;
 	min-height: $titleHeight;
-	padding: var(--global--space--4) 0;
 	cursor: pointer;
+}
+
+.body,
+.title {
+	padding: var(--global--space--2);
+	background-color: white;
+	width: 100%;
 }
 
 .arrow {
 	transition: transform 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 	will-change: transform;
 	position: absolute;
-	left: -$iconOffsetX;
+	left: -$iconOffsetX + $itemBleed;
 	top: 0.5 * ($titleHeight - $iconSize) + $iconOffsetY;
 
 	.open & {

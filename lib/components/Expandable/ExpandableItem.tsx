@@ -39,9 +39,13 @@ const ExpandableItemComponent: FunctionComponent<IProps> = ({
 	const [id] = useState<string>(incomingId);
 
 	const expandableContext: IExpandableContext = useContext(ExpandableContext);
-	const isOpen = expandableContext
-		? expandableContext.openedItemsMap[id]
-		: open;
+	const map =
+		expandableContext && expandableContext.openedItemsMap
+			? expandableContext.openedItemsMap[id]
+			: null;
+	const isOpen = expandableContext ? map && map.open : open;
+	const hasTopGap = map && map.topGap;
+	const hasBottomGap = map && map.bottomGap;
 
 	const prevOpen = useRef<boolean>(isOpen);
 
@@ -54,7 +58,11 @@ const ExpandableItemComponent: FunctionComponent<IProps> = ({
 		<article
 			className={cx(
 				styles.expandableItem,
-				{ [styles.open]: isOpen },
+				{
+					[styles.open]: isOpen,
+					[styles.topGap]: hasTopGap,
+					[styles.bottomGap]: hasBottomGap,
+				},
 				className
 			)}
 			aria-label="expandable item"

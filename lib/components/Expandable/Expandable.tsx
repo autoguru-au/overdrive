@@ -10,8 +10,16 @@ export interface IProps {
 	onChange?(): void;
 }
 
+export interface IListItemMap {
+	[index: string]: {
+		open: boolean;
+		topGap?: boolean;
+		bottomGap?: boolean;
+	};
+}
+
 export interface IExpandableContext {
-	openedItemsMap: { [key: string]: boolean };
+	openedItemsMap: IListItemMap;
 	multi: boolean;
 
 	expandableClicked(id: string): void;
@@ -19,13 +27,8 @@ export interface IExpandableContext {
 
 export const ExpandableContext = React.createContext<IExpandableContext>(null);
 
-export const Expandable: FunctionComponent<IProps> = ({
-	className = '',
-	multi = true,
-	children,
-	onChange = () => void 0,
-}) => {
-	const expandables = children
+const cloneChildren = (children: any): Array<any> =>
+	children
 		? Children.map(children, expandable => ({
 				...(expandable.props
 					? React.cloneElement(expandable, {
@@ -38,34 +41,97 @@ export const Expandable: FunctionComponent<IProps> = ({
 		  }))
 		: null;
 
-	const [openedItemsMap, setOpenedItemsMap] = useState<{
-		[key: string]: boolean;
-	}>( // Honor explicitly set to expanded list items considering the multi option
-		expandables
-			? expandables.reduce((map, child) => {
-					if (
-						child.props.id &&
-						(multi ||
-							!Object.keys(map).reduce(
-								(hasOpen, currentKey) =>
-									hasOpen ? true : map[currentKey],
-								false
-							))
-					) {
-						map[child.props.id] = child.props.open;
-					}
+const buildChildrenOpenMap = (
+	expandables: Array<any>,
+	multi: boolean
+): IListItemMap =>
+	expandables
+		? expandables.reduce((map, child) => {
+				if (
+					child.props.id &&
+					(multi ||
+						!Object.keys(map).reduce(
+							(hasOpen, currentKey) =>
+								hasOpen ? true : map[currentKey].open,
+							false
+						))
+				) {
+					map[child.props.id] = {
+						open: child.props.open,
+					};
+				}
 
-					return map;
-			  }, {})
-			: {}
+				return map;
+		  }, {})
+		: {};
+
+const updateMapGas = (
+	ids: Array<string>,
+	openedItemsMap: IListItemMap
+): IListItemMap =>
+	ids.reduce((map: IListItemMap, currentId, index) => {
+		map[currentId] = map[currentId] || { open: false };
+		map[currentId].topGap = false;
+		map[currentId].bottomGap = false;
+
+		if (index === 0 && openedItemsMap[currentId].open) {
+			map[currentId].topGap = false;
+			map[currentId].bottomGap = true;
+		} else if (openedItemsMap[currentId].open) {
+			map[currentId].topGap = openedItemsMap[ids[index - 1]].open
+				? false
+				: true;
+			map[currentId].bottomGap = true;
+		}
+
+		if (index === ids.length - 1) {
+			map[currentId].bottomGap = false;
+		}
+
+		return map;
+	}, openedItemsMap);
+
+const generateOpenedMapWithGaps = (
+	id: string,
+	expandables: Array<any>,
+	openedItemsMap: IListItemMap,
+	multi: boolean
+): IListItemMap => {
+	const ids = expandables.map(expandable => expandable.props.id);
+
+	const newOpenMap: IListItemMap = {
+		...(multi ? openedItemsMap : {}),
+		[id]: {
+			open: !(openedItemsMap[id] && openedItemsMap[id].open),
+		},
+	};
+
+	const openedMapWithGaps = updateMapGas(ids, newOpenMap);
+
+	console.log({ ids });
+	console.log({ newOpenMap });
+	console.log({ openedMapWithGaps });
+
+	return openedMapWithGaps;
+};
+
+export const Expandable: FunctionComponent<IProps> = ({
+	className = '',
+	multi = true,
+	children,
+	onChange = () => void 0,
+}) => {
+	const expandables: Array<any> = cloneChildren(children);
+
+	const [openedItemsMap, setOpenedItemsMap] = useState<IListItemMap>(
+		// Honor explicitly set to expanded list items considering the multi option
+		buildChildrenOpenMap(expandables, multi)
 	);
 
 	const expandableClicked = (id: string) => {
-		setOpenedItemsMap({
-			...(multi ? openedItemsMap : {}),
-			[id]: !openedItemsMap[id],
-		});
-
+		setOpenedItemsMap(
+			generateOpenedMapWithGaps(id, expandables, openedItemsMap, multi)
+		);
 		onChange();
 	};
 
