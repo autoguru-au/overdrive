@@ -30,7 +30,7 @@ storiesOf('Components|Expandable', module)
 		</div>
 	))
 	.add('default list', () => (
-		<Expandable multi={boolean('multi', true)}>
+		<Expandable multi={boolean('multi', false)}>
 			{new Array(5).fill(0).map((_, index) => (
 				<ExpandableItem
 					key={Math.round(Math.random() * 1e6)}

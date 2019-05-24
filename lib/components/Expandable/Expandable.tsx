@@ -117,7 +117,7 @@ const generateOpenedMapWithGaps = (
 
 export const Expandable: FunctionComponent<IProps> = ({
 	className = '',
-	multi = true,
+	multi = false,
 	children,
 	onChange = () => void 0,
 }) => {
