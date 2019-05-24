@@ -1,9 +1,30 @@
 @import '../../../theme/tokens/facade';
 
+$line_height_map: (
+	1: 16px,
+	2: 20px,
+	3: 22px,
+	4: 24px,
+	5: 30px,
+	6: 38px,
+);
+
 .root {
 	padding: 0;
 	margin: 0;
 	font-weight: 700;
 	color: getColour(gray, 900);
 	line-height: 1.2;
+}
+
+.sizeScale {
+	@each $name, $value in $fontSize {
+		&#{$name} {
+			font-size: var(--global--fontSize--#{$name});
+
+			@if map_has_key($line_height_map, $name) {
+				line-height: map_get($line_height_map, $name);
+			}
+		}
+	}
 }

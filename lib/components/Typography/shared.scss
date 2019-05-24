@@ -1,9 +1,0 @@
-@import '../../theme/tokens/facade';
-
-.sizeScale {
-	@each $name, $value in $fontSize {
-		&#{$name} {
-			font-size: var(--global--fontSize--#{$name});
-		}
-	}
-}

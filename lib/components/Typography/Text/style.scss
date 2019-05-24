@@ -1,11 +1,22 @@
 @import '../../../theme/tokens/facade';
 
+$line_height_map: (
+	1: 18px,
+	2: 20px,
+	3: 22px,
+	4: 24px,
+	5: 30px,
+	6: 36px,
+	7: 40px,
+	8: 46px,
+	9: 52px,
+);
+
 .root {
 	padding: 0;
 	margin: 0;
 	font-weight: 400;
 	color: getColour(gray, 900);
-	line-height: 1;
 }
 
 .muted {
@@ -14,4 +25,13 @@
 
 .strong {
 	font-weight: 700;
+}
+
+.sizeScale {
+	@each $name, $value in $fontSize {
+		&#{$name} {
+			font-size: var(--global--fontSize--#{$name});
+			line-height: map_get($line_height_map, $name);
+		}
+	}
 }

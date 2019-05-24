@@ -1,6 +1,5 @@
 import cx from 'clsx';
-import { createElement, FunctionComponent } from 'react';
-import sharedStyles from '../shared.scss';
+import React, { FunctionComponent } from 'react';
 import { TSizeScale } from '../types';
 import styles from './style.scss';
 
@@ -24,12 +23,13 @@ export const Heading: FunctionComponent<IProps> = ({
 	className = '',
 	is: Component = 'h1',
 	size = sizeScaleDefaults.get(Component),
-}) =>
-	createElement(Component as any, {
-		className: cx([
+}) => (
+	<Component
+		className={cx([
 			styles.root,
-			sharedStyles[`sizeScale${size}`],
+			{ [styles[`sizeScale${size}`]]: !!size },
 			className,
-		]),
-		children,
-	});
+		])}
+		children={children}
+	/>
+);

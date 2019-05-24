@@ -1,6 +1,5 @@
 import cx from 'clsx';
 import React, { FunctionComponent } from 'react';
-import sharedStyles from '../shared.scss';
 import { TSizeScale } from '../types';
 import styles from './style.scss';
 
@@ -22,11 +21,12 @@ export const Text: FunctionComponent<IProps> = ({
 }) => (
 	<Component
 		className={cx(
-			[styles.root, sharedStyles[`sizeScale${size}`], className],
+			[styles.root, styles[`sizeScale${size}`]],
 			{
 				[styles.muted]: muted,
 				[styles.strong]: strong,
-			}
+			},
+			className
 		)}
 		children={children}
 	/>

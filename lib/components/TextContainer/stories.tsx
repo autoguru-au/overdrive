@@ -15,6 +15,17 @@ storiesOf('Components|TextContainer', module)
 			</Text>
 		</TextContainer>
 	))
+	.add('with a lot of body', () => (
+		<TextContainer>
+			<Heading>Reviews</Heading>
+			<Text>
+				To avoid you coming to a halt in the middle of the road, because
+				of a banging, crash of pistons and valves fighting with each
+				other, let's investigate what the timing belt is, what it does,
+				and why it costs so much to replace or repair.
+			</Text>
+		</TextContainer>
+	))
 	.add('with interaction', () => (
 		<TextContainer
 			heading={

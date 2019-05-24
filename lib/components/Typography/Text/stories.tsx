@@ -16,4 +16,16 @@ storiesOf('Foundation|Typography/Text', module)
 	))
 	.add('default', () => <Text {...baseProps()}>Hello World</Text>, {
 		notes: 'Used for single text lines.',
-	});
+	})
+	.add(
+		'as paragraph',
+		() => (
+			<Text is="p" {...baseProps()}>
+				To avoid you coming to a halt in the middle of the road, because
+				of a banging, crash of pistons and valves fighting with each
+				other, let's investigate what the timing belt is, what it does,
+				and why it costs so much to replace or repair.
+			</Text>
+		),
+		{ notes: 'Used for multi-line "body" like content.' }
+	);
