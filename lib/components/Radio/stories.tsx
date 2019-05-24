@@ -10,7 +10,7 @@ const baseProps = () => ({
 	onChange: checked => console.log('checked', checked),
 });
 
-storiesOf('Components|Radio', module)
+storiesOf('Components|Inputs/Radio', module)
 	.addDecorator(story => (
 		<div style={{ maxWidth: '300px', width: '100%' }}>{story()}</div>
 	))

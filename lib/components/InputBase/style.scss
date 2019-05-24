@@ -219,18 +219,15 @@ $font_size: var(--global--fontSize--3); // 16
 
 	@at-root textarea.input {
 		$text_area_height: #{$input_height} * 2.5;
-		$top_spacing: 8px;
 
-		height: calc(#{$text_area_height});
-		min-height: calc(#{$text_area_height});
+		--top-spaceing: calc(((#{$input_height} - #{$font_size}) / 2) - 3px);
+
+		height: calc(#{$text_area_height} - var(--top-spaceing));
+		min-height: calc(#{$text_area_height} - var(--top-spaceing));
+		line-height: 1.2;
 		resize: vertical;
-
-		@at-root .notched-base--shift & {
-			padding-top: 0;
-			margin-top: 8px;
-			height: calc(#{$text_area_height} - #{$top_spacing});
-			min-height: calc(#{$input_height} - #{$top_spacing});
-		}
+		padding-top: 0;
+		margin-top: var(--top-spaceing);
 	}
 
 	&[disabled] {
