@@ -1,11 +1,6 @@
 import { wrapEvent } from '@autoguru/utilities';
 import cx from 'clsx';
-import React, {
-	FunctionComponent,
-	memo,
-	useContext,
-	useRef,
-} from 'react';
+import React, { FunctionComponent, memo, useContext, useRef } from 'react';
 import { ChevronDownIcon, Icon } from '../Icon';
 import styles from './style.scss';
 import { ExpandableContext, IExpandableContext } from './Expandable';
@@ -35,7 +30,6 @@ const ExpandableItemComponent: FunctionComponent<IProps> = ({
 	onClick,
 	onChange = () => void 0,
 }) => {
-	console.log('__________________REDDRAW');
 	const expandableContext: IExpandableContext = useContext(ExpandableContext);
 	const map =
 		expandableContext && expandableContext.openedItemsMap

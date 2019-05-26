@@ -295,11 +295,11 @@ describe('<Expandable />', () => {
 			const TestComponent = () => {
 				return (
 					<Expandable multi={true}>
-						<ExpandableItem className="i1"/>
-						<ExpandableItem className="i2"/>
-						<ExpandableItem className="i3"/>
-						<ExpandableItem className="i4"/>
-						<ExpandableItem className="i5"/>
+						<ExpandableItem className="i1" />
+						<ExpandableItem className="i2" />
+						<ExpandableItem className="i3" />
+						<ExpandableItem className="i4" />
+						<ExpandableItem className="i5" />
 					</Expandable>
 				);
 			};
