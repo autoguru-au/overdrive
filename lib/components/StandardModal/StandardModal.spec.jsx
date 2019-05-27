@@ -59,7 +59,7 @@ describe('<StandardModal />', () => {
 			</StandardModal>
 		);
 
-		expect(modal.find('header h5').text()).toEqual(testTitle);
+		expect(modal.find('header h4').text()).toEqual(testTitle);
 		modal.unmount();
 	});
 

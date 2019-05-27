@@ -41,7 +41,7 @@ export const StandardModal = withModal<IProps>(
 						<Icon size={20} icon={WindowCloseIcon} />
 					</button>
 					<div className={styles.headerTitle}>
-						<Heading is={'h5'} children={title} />
+						<Heading is={'h4'} children={title} />
 					</div>
 				</header>
 				<main className={styles.content}>{children}</main>
