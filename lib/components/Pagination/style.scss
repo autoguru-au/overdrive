@@ -33,24 +33,24 @@
 
 .chevron,
 .bubble {
-	flex-direction: row;
-	box-sizing: border-box;
 	display: flex;
+	width: var(--od--Pagination--bubble-size);
+	height: var(--od--Pagination--bubble-size);
+	margin-right: 10px;
+	flex-direction: row;
 	align-content: center;
 	justify-content: center;
 	align-items: center;
-	margin-right: 10px;
-	cursor: pointer;
 	color: getColour(gray, 500);
-	width: var(--od--Pagination--bubble-size);
-	height: var(--od--Pagination--bubble-size);
-	border-radius: 50%;
 	text-align: center;
 	font-size: var(--global--fontSize--4);
-	overflow: hidden;
-	background-color: transparent;
 	line-height: calc(var(--od--Pagination--bubble-size) - 3px);
+	border-radius: 50%;
+	background-color: transparent;
 	transition: background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
+	cursor: pointer;
+	overflow: hidden;
+	user-select: none;
 
 	&:hover {
 		background-color: getColour(gray, 100);

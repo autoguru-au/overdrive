@@ -1,5 +1,5 @@
 import cx from 'clsx';
-import React, { FunctionComponent, memo } from 'react';
+import React, { FunctionComponent, memo, useCallback, useMemo } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon, Icon } from '../Icon';
 import styles from './style.scss';
 import { Bubble } from './Bubble';
@@ -28,24 +28,42 @@ export const PaginationComponent: FunctionComponent<IProps> = ({
 	numPagesDisplayed = 5,
 	onChange = () => void 0,
 }) => {
-	const numPages: number = calcPagesNum(total, pageSize);
+	const numPages: number = useMemo(() => calcPagesNum(total, pageSize), [
+		total,
+		pageSize,
+	]);
+
+	const handleClick = useCallback(
+		num => () => {
+			onChange({ pageNumber: withinBoundaries(num, numPages) });
+		},
+		[numPages]
+	);
+
+	const allowedActive: number = useMemo(
+		() => withinBoundaries(activePage, numPages),
+		[activePage, numPages]
+	);
+
 	const cls = cx([styles.pagination, className]);
+
 	const chevronLeftCls = cx([styles.chevron], {
 		[styles.disabled]: activePage <= 1,
 	});
+
 	const chevronRightCls = cx([styles.chevron], {
 		[styles.disabled]: activePage >= numPages,
 	});
-	const handleClick = num => () => {
-		onChange({ pageNumber: withinBoundaries(num, numPages) });
-	};
-	const allowedActive: number = withinBoundaries(activePage, numPages);
 
 	return total && pageSize && activePage && numPagesDisplayed ? (
-		<span className={cls}>
-			<a className={chevronLeftCls} onClick={handleClick(activePage - 1)}>
+		<nav className={cls} aria-label="pagination">
+			<button
+				aria-disabled={activePage <= 1}
+				aria-label="navigate back"
+				className={chevronLeftCls}
+				onClick={handleClick(activePage - 1)}>
 				<Icon size={24} icon={ChevronLeftIcon} />
-			</a>
+			</button>
 			{buildPagesList(
 				numPages,
 				allowedActive,
@@ -53,19 +71,22 @@ export const PaginationComponent: FunctionComponent<IProps> = ({
 				numPages - numPagesDisplayed
 			).map(num => (
 				<Bubble
-					onClick={handleClick(num)}
+					gap={num < 0}
 					key={num}
+					onClick={handleClick(num)}
 					selected={allowedActive === num}
-					gap={num < 0}>
+					aria-current={allowedActive === num ? 'page' : 'false'}>
 					{num}
 				</Bubble>
 			))}
-			<a
+			<button
+				aria-disabled={activePage >= numPages}
+				aria-label="navigate forward"
 				className={chevronRightCls}
 				onClick={handleClick(allowedActive + 1)}>
 				<Icon size={24} icon={ChevronRightIcon} />
-			</a>
-		</span>
+			</button>
+		</nav>
 	) : (
 		<PaginationLoading className={cls} placeholderBubblesNum={3} />
 	);
