@@ -10,7 +10,7 @@ export interface IProps {
 	onChange?(value: boolean): void;
 }
 
-const ToggleButtonComponent: FunctionComponent<IProps> = ({
+const SwitchComponent: FunctionComponent<IProps> = ({
 	className = '',
 	disabled = false,
 	toggled: incomingToggled = false,
@@ -52,4 +52,4 @@ const ToggleButtonComponent: FunctionComponent<IProps> = ({
 	);
 };
 
-export const ToggleButton = memo(ToggleButtonComponent);
+export const Switch = memo(SwitchComponent);

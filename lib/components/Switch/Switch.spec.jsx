@@ -1,39 +1,39 @@
 import React, { useState } from 'react';
 import { mount, render, shallow } from 'enzyme';
-import { ToggleButton } from './ToggleButton';
+import { Switch } from './Switch';
 import { act } from 'react-dom/test-utils';
 
-describe('<ToggleButton />', () => {
+describe('<Switch />', () => {
 	it('should not throw', () =>
-		expect(() => shallow(<ToggleButton />)).not.toThrow());
+		expect(() => shallow(<Switch />)).not.toThrow());
 
 	it('should match snapshot without props', () => {
-		expect(render(<ToggleButton />)).toMatchSnapshot();
+		expect(render(<Switch />)).toMatchSnapshot();
 	});
 
 	it('should match snapshot when un-toggled', () => {
-		expect(render(<ToggleButton toggled={false} />)).toMatchSnapshot();
+		expect(render(<Switch toggled={false} />)).toMatchSnapshot();
 	});
 
 	it('should match snapshot when un-toggled and disabled', () => {
 		expect(
-			render(<ToggleButton toggled={false} disabled={true} />)
+			render(<Switch toggled={false} disabled={true} />)
 		).toMatchSnapshot();
 	});
 
 	it('should match snapshot when toggled', () => {
-		expect(render(<ToggleButton toggled={true} />)).toMatchSnapshot();
+		expect(render(<Switch toggled={true} />)).toMatchSnapshot();
 	});
 
 	it('should match snapshot when toggled and disabled', () => {
 		expect(
-			render(<ToggleButton toggled={true} disabled={true} />)
+			render(<Switch toggled={true} disabled={true} />)
 		).toMatchSnapshot();
 	});
 
 	it('should pass on className to dom element', () => {
 		const toggleButton = mount(
-			<ToggleButton className="toggleButton-class" value={10} />
+			<Switch className="toggleButton-class" value={10} />
 		);
 		expect(
 			toggleButton.find('div.toggleButton-class').length === 1
@@ -41,22 +41,22 @@ describe('<ToggleButton />', () => {
 	});
 
 	it('should set toggle to false by default', () => {
-		const toggleButton = mount(<ToggleButton />);
+		const toggleButton = mount(<Switch />);
 		expect(toggleButton.find('.toggled').length === 0).toBeTruthy();
 	});
 
 	it('should be toggled on when toggled prop is set to true', () => {
-		const toggleButton = mount(<ToggleButton toggled={true} />);
+		const toggleButton = mount(<Switch toggled={true} />);
 		expect(toggleButton.find('.toggled').length === 1).toBeTruthy();
 	});
 
 	it('should be enabled by default', () => {
-		const toggleButton = mount(<ToggleButton />);
+		const toggleButton = mount(<Switch />);
 		expect(toggleButton.find('[disabled]').length === 0).toBeTruthy();
 	});
 
 	it('should be disabled on when disabled prop is set to true', () => {
-		const toggleButton = mount(<ToggleButton disabled={true} />);
+		const toggleButton = mount(<Switch disabled={true} />);
 		expect(toggleButton.find('[disabled]').length === 1).toBeTruthy();
 	});
 
@@ -64,7 +64,7 @@ describe('<ToggleButton />', () => {
 		const spyedCallback = jest.fn();
 
 		const wrapper = mount(
-			<ToggleButton onChange={spyedCallback} toggled={false} />
+			<Switch onChange={spyedCallback} toggled={false} />
 		);
 
 		wrapper.find('div').simulate('click');
@@ -87,11 +87,7 @@ describe('<ToggleButton />', () => {
 		const spyedCallback = jest.fn();
 
 		const wrapper = mount(
-			<ToggleButton
-				onChange={spyedCallback}
-				toggled={false}
-				disabled={true}
-			/>
+			<Switch onChange={spyedCallback} toggled={false} disabled={true} />
 		);
 
 		wrapper.find('div').simulate('click');
@@ -107,7 +103,7 @@ describe('<ToggleButton />', () => {
 
 			getToggleSetter(toggledValue);
 
-			return <ToggleButton toggled={toggled} />;
+			return <Switch toggled={toggled} />;
 		};
 
 		let wrapper;
