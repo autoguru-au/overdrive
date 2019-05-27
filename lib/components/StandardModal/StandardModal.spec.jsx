@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import { EVariant, StandardModal } from './StandardModal';
+import { StandardModal } from './StandardModal';
 import { act } from 'react-dom/test-utils';
 import { EStandardModalSize } from './index';
 
@@ -59,7 +59,7 @@ describe('<StandardModal />', () => {
 			</StandardModal>
 		);
 
-		expect(modal.find('header h5').text()).toEqual(testTitle);
+		expect(modal.find('header h4').text()).toEqual(testTitle);
 		modal.unmount();
 	});
 

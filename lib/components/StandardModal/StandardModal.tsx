@@ -1,8 +1,8 @@
 import cx from 'clsx';
 import React from 'react';
-import { EHeadingSize, Heading } from '../Heading';
 import { Icon, WindowCloseIcon } from '../Icon';
 import { EModalCloseCode, withModal } from '../ModalBase';
+import { Heading } from '../Typography';
 import styles from './style.scss';
 
 export enum ESize {
@@ -41,10 +41,7 @@ export const StandardModal = withModal<IProps>(
 						<Icon size={20} icon={WindowCloseIcon} />
 					</button>
 					<div className={styles.headerTitle}>
-						<Heading
-							size={EHeadingSize.Heading5}
-							children={title}
-						/>
+						<Heading is={'h4'} children={title} />
 					</div>
 				</header>
 				<main className={styles.content}>{children}</main>

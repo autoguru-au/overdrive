@@ -36,7 +36,12 @@ module.exports = ({ config: defaultConfig }) => {
 		test: /\.scss$/,
 		sideEffects: true,
 		use: [
-			{ loader: require.resolve('style-loader') },
+			{
+				loader: require.resolve('style-loader'),
+				options: {
+					sourceMap: true,
+				},
+			},
 			{
 				loader: require.resolve('css-loader'),
 				options: {

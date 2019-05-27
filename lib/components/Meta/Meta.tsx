@@ -1,7 +1,7 @@
 import cx from 'clsx';
 import React, { cloneElement, FunctionComponent, memo } from 'react';
-import { DetailText, EDetailTextSize } from '../DetailText';
 import { TIconPrimitiveType } from '../Icon';
+import { Text } from '../Typography';
 import styles from './style.scss';
 
 export enum EVariant {
@@ -33,13 +33,12 @@ const MetaComponent: FunctionComponent<IProps> = ({
 		<span className={cls}>
 			{/* TODO: Should we be using a cloneElement here? */}
 			{icon && cloneElement(icon, { className: styles.icon })}
-			<DetailText
+			<Text
 				className={cx({
 					[styles.withIcon]: !!icon,
-				})}
-				size={EDetailTextSize.Detail2}>
+				})}>
 				{label}
-			</DetailText>
+			</Text>
 		</span>
 	);
 };

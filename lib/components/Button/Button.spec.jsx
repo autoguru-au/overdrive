@@ -106,17 +106,6 @@ describe('<Button />', () => {
 			const button = shallow(<Button size={EButtonSize.Medium} />);
 			expect(button.hasClass('sizeMedium')).toBeTruthy();
 		});
-
-		it('should match snapshot for large button', () => {
-			expect(
-				shallow(<Button size={EButtonSize.Large} />)
-			).toMatchSnapshot();
-		});
-
-		it('should apply large size styles', () => {
-			const button = shallow(<Button size={EButtonSize.Large} />);
-			expect(button.hasClass('sizeLarge')).toBeTruthy();
-		});
 	});
 
 	describe('when rounded', () => {
@@ -160,12 +149,6 @@ describe('<Button />', () => {
 		it('should match snapshot for medium button', () => {
 			expect(
 				shallow(<Button size={EButtonSize.Medium} isLoading={true} />)
-			).toMatchSnapshot();
-		});
-
-		it('should match snapshot for large button', () => {
-			expect(
-				shallow(<Button size={EButtonSize.Large} isLoading={true} />)
 			).toMatchSnapshot();
 		});
 

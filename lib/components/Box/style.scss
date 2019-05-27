@@ -37,16 +37,22 @@
 	}
 
 	&--1 {
-		box-shadow: 0 0 2px 0 rgba(black, 0.04), 0 2px 16px 0 rgba(black, 0.08);
+		box-shadow: var(--global--elevationBoxShadow--1);
 	}
 
 	&--2 {
-		box-shadow: 0 0 12px 0 rgba(black, 0.04),
-			0 12px 48px 0 rgba(black, 0.08);
+		box-shadow: var(--global--elevationBoxShadow--2);
 	}
 
 	&--3 {
-		box-shadow: 0 0 32px 0 rgba(black, 0.08),
-			0 24px 96px 0 rgba(black, 0.12);
+		box-shadow: var(--global--elevationBoxShadow--3);
+	}
+
+	&--4 {
+		box-shadow: var(--global--elevationBoxShadow--4);
+	}
+
+	&--5 {
+		box-shadow: var(--global--elevationBoxShadow--5);
 	}
 }

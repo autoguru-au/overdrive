@@ -12,7 +12,7 @@ const checked = () => ({
 	checked: boolean('checked', false),
 });
 
-storiesOf('Components|CheckBox', module)
+storiesOf('Components|Inputs/CheckBox', module)
 	.addDecorator(story => (
 		<div style={{ maxWidth: '300px', width: '100%' }}>{story()}</div>
 	))

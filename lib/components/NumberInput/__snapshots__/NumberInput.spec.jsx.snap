@@ -61,7 +61,7 @@ exports[`<NumberInput /> should match snapshot for active number input 1`] = `
             className="notchedBaseBorderNotch"
             style={
               Object {
-                "width": 8,
+                "width": 16,
               }
             }
           >

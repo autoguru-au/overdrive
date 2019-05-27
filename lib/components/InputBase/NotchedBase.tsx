@@ -4,7 +4,7 @@ import React, { FunctionComponent, useEffect, useRef, useState } from 'react';
 import styles from './style.scss';
 
 const ACTIVE_SCALING_FACTOR = 0.7777;
-const ACTIVE_PADDING_ADDED = 8;
+const ACTIVE_PADDING_ADDED = 16;
 const NOTCHED_WARN_WIDTH = 170;
 const ROUGH_WIDTH_PER_CHARACTER = 10.2;
 

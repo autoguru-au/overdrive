@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount, render, shallow } from 'enzyme';
 import { BulletText } from './BulletText';
-import { Text } from '../Text';
+import { Text } from '../Typography/Text';
 import { EBulletTextVariant } from './index';
 import { CheckIcon, Icon } from '../Icon';
 
@@ -25,7 +25,7 @@ const CustomBullet = ({}) => (
 
 describe('<BulletText />', () => {
 	it('should not throw', () =>
-		expect(() => shallow(<BulletText />)).not.toThrow());
+		expect(() => render(<BulletText />)).not.toThrow());
 
 	it('should pass on className to dom element', () => {
 		const bulletText = mount(<BulletText className="bullet-class" />);

@@ -9,7 +9,7 @@ const baseProps = () => ({
 	label: text('Telephone number', '07 5612 5347'),
 });
 
-storiesOf('Components|Type/Anchor', module)
+storiesOf('Foundation|Typography/Anchor', module)
 	.add('default', () => <Anchor {...baseProps()} />)
 	.add('withIcon', () => (
 		<Anchor

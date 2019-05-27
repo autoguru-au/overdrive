@@ -2,7 +2,6 @@
 
 $heightSmall: 36px;
 $heightMedium: 48px;
-$heightLarge: 64px;
 $widthSmall: 36px;
 
 @mixin isHoverState() {
@@ -81,6 +80,7 @@ $widthSmall: 36px;
 	&-primary {
 		background-color: getColour(green, 600);
 		border-color: getColour(green, 700);
+		// These are based of the elevationBoxShadow, the only change is the alpha, to compensate for colour things.
 		box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.06),
 			0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
 
@@ -103,6 +103,7 @@ $widthSmall: 36px;
 		@include isDisabledState() {
 			background-color: getColour(green, 200);
 			border-color: getColour(green, 200);
+			box-shadow: none;
 		}
 	}
 
@@ -110,29 +111,25 @@ $widthSmall: 36px;
 		color: getColour(gray, 700);
 		background-color: white;
 		border-color: getColour(gray, 300);
-		box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.03),
-			0 4px 5px 0 rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.05);
+		box-shadow: var(--global--elevationBoxShadow--2);
 
 		@include isHoverState() {
 			background-color: getColour(gray, 100);
 			border-color: getColour(gray, 400);
-			box-shadow: 0 3px 14px 2px rgba(0, 0, 0, 0.03),
-				0 8px 10px 1px rgba(0, 0, 0, 0.03),
-				0 5px 5px -3px rgba(0, 0, 0, 0.05);
+			box-shadow: var(--global--elevationBoxShadow--3);
 		}
 
 		@include isActiveState() {
 			background-color: getColour(gray, 200);
 			border-color: getColour(gray, 500);
-			box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.03),
-				0 2px 2px 0 rgba(0, 0, 0, 0.03),
-				0 3px 1px -2px rgba(0, 0, 0, 0.05);
+			box-shadow: var(--global--elevationBoxShadow--1);
 		}
 
 		@include isDisabledState() {
 			background-color: white;
 			border-color: getColour(gray, 200);
 			color: getColour(gray, 300);
+			box-shadow: none;
 		}
 	}
 
@@ -161,6 +158,7 @@ $widthSmall: 36px;
 		@include isDisabledState() {
 			background-color: getColour(red, 200);
 			border-color: getColour(red, 200);
+			box-shadow: none;
 		}
 	}
 }
@@ -168,7 +166,7 @@ $widthSmall: 36px;
 .size {
 	&-small {
 		$size: $heightSmall;
-		$font_size: var(--global--fontSize--3);
+		$font_size: var(--global--fontSize--2);
 		$verticalPadding: calc(((#{$size} - #{$font_size}) / 2) - 1px);
 
 		font-size: #{$font_size};
@@ -185,29 +183,12 @@ $widthSmall: 36px;
 
 	&-medium {
 		$size: $heightMedium;
-		$font_size: var(--global--fontSize--4);
+		$font_size: var(--global--fontSize--3);
 		$verticalPadding: calc(((#{$size} - #{$font_size}) / 2) - 1px);
 
 		font-size: #{$font_size};
 		padding: $verticalPadding calc(var(--global--space--4) - 1px);
 		min-width: 96px;
-
-		&.rounded {
-			width: $size;
-			height: $size;
-			min-width: auto;
-			padding: $verticalPadding 0;
-		}
-	}
-
-	&-large {
-		$size: $heightLarge;
-		$font_size: var(--global--fontSize--6);
-		$verticalPadding: calc(((#{$size} - #{$font_size}) / 2) - 1px);
-
-		font-size: #{$font_size};
-		padding: $verticalPadding calc(var(--global--space--5) - 1px);
-		min-width: 128px;
 
 		&.rounded {
 			width: $size;

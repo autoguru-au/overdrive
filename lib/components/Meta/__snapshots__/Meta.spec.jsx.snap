@@ -7,12 +7,11 @@ exports[`<Meta /> should match snapshot with label, icon for Primary variant 1`]
   <Component
     className="icon"
   />
-  <DetailText
+  <Text
     className="withIcon"
-    size="detail-2"
   >
     Hello World!
-  </DetailText>
+  </Text>
 </span>
 `;
 
@@ -23,12 +22,11 @@ exports[`<Meta /> should match snapshot with label, icon for Secondary variant 1
   <Component
     className="icon"
   />
-  <DetailText
+  <Text
     className="withIcon"
-    size="detail-2"
   >
     Hello World!
-  </DetailText>
+  </Text>
 </span>
 `;
 
@@ -36,9 +34,8 @@ exports[`<Meta /> should match snapshot without label 1`] = `
 <span
   className="root variantPrimary"
 >
-  <DetailText
+  <Text
     className=""
-    size="detail-2"
   />
 </span>
 `;

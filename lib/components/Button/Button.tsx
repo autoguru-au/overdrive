@@ -17,7 +17,6 @@ import styles from './style.scss';
 export enum ESize {
 	Small = 'small',
 	Medium = 'medium',
-	Large = 'large',
 }
 
 export enum EVariant {
@@ -47,13 +46,11 @@ const cssVariantMap: Map<EVariant, string> = new Map([
 const cssSizeMap: Map<ESize, string> = new Map([
 	[ESize.Small, styles.sizeSmall],
 	[ESize.Medium, styles.sizeMedium],
-	[ESize.Large, styles.sizeLarge],
 ]);
 
 const progressSpinnerSizeMap: Map<ESize, EProgressSpinnerSize> = new Map([
 	[ESize.Small, EProgressSpinnerSize.Small],
 	[ESize.Medium, EProgressSpinnerSize.Medium],
-	[ESize.Large, EProgressSpinnerSize.Large],
 ]);
 
 const progressSpinnerVariantMap: Map<
