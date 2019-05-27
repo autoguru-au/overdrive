@@ -14,7 +14,7 @@ describe('<Pagination />', () => {
 		expect(
 			render(<Pagination total={100} activePage={1} pageSize={10} />)
 				.find('button')
-				.last()
+				.slice(-2)
 				.text()
 		).toEqual('10');
 	});
@@ -23,7 +23,7 @@ describe('<Pagination />', () => {
 		expect(
 			render(<Pagination total={101} activePage={1} pageSize={10} />)
 				.find('button')
-				.last()
+				.slice(-2)
 				.text()
 		).toEqual('11');
 	});
@@ -31,7 +31,7 @@ describe('<Pagination />', () => {
 	it('should show ... in 4th bubble for 101 items and page size of 10', () => {
 		expect(
 			render(<Pagination total={101} activePage={1} pageSize={10} />)
-				.find('button:nth-of-type(4)')
+				.find('button:nth-of-type(5)')
 				.text()
 		).toEqual('...');
 	});
@@ -39,7 +39,7 @@ describe('<Pagination />', () => {
 	it('should show ... in 2nd bubble for 101 items and page size of 10', () => {
 		expect(
 			render(<Pagination total={101} activePage={9} pageSize={10} />)
-				.find('button:nth-of-type(2)')
+				.find('button:nth-of-type(3)')
 				.text()
 		).toEqual('...');
 	});
@@ -47,27 +47,27 @@ describe('<Pagination />', () => {
 	it('should show all pages if number of pages equals number of displayed pages', () => {
 		expect(
 			render(<Pagination total={50} activePage={1} pageSize={10} />)
-				.find('button:nth-of-type(1)')
+				.find('button:nth-of-type(2)')
 				.text()
 		).toEqual('1');
 		expect(
 			render(<Pagination total={50} activePage={1} pageSize={10} />)
-				.find('button:nth-of-type(2)')
+				.find('button:nth-of-type(3)')
 				.text()
 		).toEqual('2');
 		expect(
 			render(<Pagination total={50} activePage={1} pageSize={10} />)
-				.find('button:nth-of-type(3)')
+				.find('button:nth-of-type(4)')
 				.text()
 		).toEqual('3');
 		expect(
 			render(<Pagination total={50} activePage={1} pageSize={10} />)
-				.find('button:nth-of-type(4)')
+				.find('button:nth-of-type(5)')
 				.text()
 		).toEqual('4');
 		expect(
 			render(<Pagination total={50} activePage={1} pageSize={10} />)
-				.find('button:nth-of-type(5)')
+				.find('button:nth-of-type(6)')
 				.text()
 		).toEqual('5');
 	});
@@ -75,12 +75,12 @@ describe('<Pagination />', () => {
 	it('should show all pages if active page falls within pages num minus displayed pages num/+1', () => {
 		expect(
 			render(<Pagination total={95} activePage={6} pageSize={10} />)
-				.find('button:nth-of-type(1)')
+				.find('button:nth-of-type(2)')
 				.text()
 		).toEqual('6');
 		expect(
 			render(<Pagination total={95} activePage={7} pageSize={10} />)
-				.find('button:nth-of-type(1)')
+				.find('button:nth-of-type(2)')
 				.text()
 		).toEqual('6');
 	});
@@ -134,7 +134,7 @@ describe('<Pagination />', () => {
 
 			wrapper
 				.find('button')
-				.at(2)
+				.at(3)
 				.simulate('click');
 
 			expect(spyedCallback).toHaveBeenCalledWith({ pageNumber: 3 });
