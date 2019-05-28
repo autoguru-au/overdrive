@@ -7,6 +7,7 @@ import { TextInput } from '.';
 
 const sharedKnobs = placeholder => ({
 	placeholder: text('Placeholder', placeholder),
+	disabled: boolean('disabled', false),
 	onChange: action('onChange'),
 	onFocus: action('onFocus'),
 	onBlur: action('onBlur'),
@@ -42,5 +43,13 @@ storiesOf('Components|Inputs/Text', module)
 			isValid={isValid(false)}
 			isTouched={isTouched(false)}
 			hintText={text('Hint Text', 'Cannot be Bob The Builder.')}
+		/>
+	))
+	.add('disabled', () => (
+		<TextInput
+			placeholder="What is your first name?"
+			name="abc"
+			disabled={true}
+			hintText="Cannot be Bob The Builder."
 		/>
 	));

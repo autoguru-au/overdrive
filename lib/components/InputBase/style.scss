@@ -7,6 +7,9 @@
 }
 
 .root {
+	&.disabled {
+		cursor: not-allowed;
+	}
 }
 
 $active_scaling_factor: 0.7777;
@@ -87,34 +90,40 @@ $font_size: var(--global--fontSize--3); // 16
 			transform: calcPlaceholderTranslate(true)
 				scale(#{$active_scaling_factor});
 
-			.root:hover & {
+			.root:not(.disabled):hover & {
 				color: getColour(blue, 500);
 			}
 
-			.root.valid & {
+			.root:not(.disabled).valid & {
 				color: getColour(green, 600);
 			}
 
-			.root.valid:hover & {
+			.root:not(.disabled).valid:hover & {
 				color: getColour(green, 700);
 			}
 
-			.root.invalid & {
+			.root:not(.disabled).invalid & {
 				color: getColour(red, 600);
 			}
 
-			.root.invalid:hover & {
+			.root:not(.disabled).invalid:hover & {
 				color: getColour(red, 700);
 			}
 		}
 
-		.root.valid .notched-base--shift.notched-base--active &,
-		.root.valid:hover .notched-base--shift.notched-base--active & {
+		.root:not(.disabled).valid .notched-base--shift.notched-base--active &,
+		.root:not(.disabled).valid:hover
+			.notched-base--shift.notched-base--active
+			& {
 			color: getColour(green, 800);
 		}
 
-		.root.invalid .notched-base--shift.notched-base--active &,
-		.root.invalid:hover .notched-base--shift.notched-base--active & {
+		.root:not(.disabled).invalid
+			.notched-base--shift.notched-base--active
+			&,
+		.root:not(.disabled).invalid:hover
+			.notched-base--shift.notched-base--active
+			& {
 			color: getColour(red, 800);
 		}
 
@@ -147,34 +156,37 @@ $font_size: var(--global--fontSize--3); // 16
 			transition: border-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 			pointer-events: none;
 
-			.root.valid & {
+			.root:not(.disabled) & {
+			}
+
+			.root:not(.disabled).valid & {
 				border-color: getColour(green, 600);
 			}
 
-			.root.valid:hover & {
+			.root:not(.disabled).valid:hover & {
 				border-color: getColour(green, 700);
 			}
 
-			.root.valid .notched-base--active &,
-			.root.valid:hover .notched-base--active & {
+			.root:not(.disabled).valid .notched-base--active &,
+			.root:not(.disabled).valid:hover .notched-base--active & {
 				border-color: getColour(green, 800);
 			}
 
-			.root.invalid & {
+			.root:not(.disabled).invalid & {
 				border-color: getColour(red, 600);
 			}
 
-			.root.invalid:hover & {
+			.root:not(.disabled).invalid:hover & {
 				border-color: getColour(red, 700);
 			}
 
-			.root.invalid .notched-base--active &,
-			.root.invalid:hover .notched-base--active & {
+			.root:not(.disabled).invalid .notched-base--active &,
+			.root:not(.disabled).invalid:hover .notched-base--active & {
 				border-color: getColour(red, 800);
 			}
 
 			.notched-base--active &,
-			.root:hover & {
+			.root:not(.disabled):hover & {
 				border-color: getColour(blue, 500);
 			}
 		}
@@ -244,34 +256,34 @@ $font_size: var(--global--fontSize--3); // 16
 	transition: color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 
 	&--active,
-	.root:hover & {
+	.root:not(.disabled):hover & {
 		color: getColour(blue, 500);
 	}
 
-	.root.valid & {
+	.root:not(.disabled).valid & {
 		color: getColour(green, 600);
 	}
 
-	.root.valid:hover & {
+	.root:not(.disabled).valid:hover & {
 		color: getColour(green, 700);
 	}
 
-	.root.invalid & {
+	.root:not(.disabled).invalid & {
 		color: getColour(red, 600);
 	}
 
-	.root.invalid:hover & {
+	.root:not(.disabled).invalid:hover & {
 		color: getColour(red, 700);
 	}
 
 	&--active {
-		.root.invalid &,
-		.root.invalid:hover & {
+		.root:not(.disabled).invalid &,
+		.root:not(.disabled).invalid:hover & {
 			color: getColour(red, 800);
 		}
 
-		.root.valid &,
-		.root.valid:hover & {
+		.root:not(.disabled).valid &,
+		.root:not(.disabled).valid:hover & {
 			color: getColour(green, 800);
 		}
 	}

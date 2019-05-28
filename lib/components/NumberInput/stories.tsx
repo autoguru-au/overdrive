@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions';
-import { text } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 
@@ -7,6 +7,7 @@ import { NumberInput } from '.';
 
 const sharedKnobs = placeholder => ({
 	placeholder: text('Placeholder', placeholder),
+	disabled: boolean('disabled', false),
 	onChange: action('onChange'),
 	onFocus: action('onFocus'),
 	onBlur: action('onBlur'),
@@ -28,4 +29,7 @@ storiesOf('Components|Inputs/Number', module)
 			placeholder={'How many?'}
 			hintText={text('Hint Text', 'Must be greater than 10.')}
 		/>
+	))
+	.add('disabled', () => (
+		<NumberInput name="abc" placeholder="How many?" disabled={true} />
 	));

@@ -7,6 +7,7 @@ import { SelectInput } from '.';
 
 const sharedKnobs = placeholder => ({
 	placeholder: text('Placeholder', placeholder),
+	disabled: boolean('disabled', false),
 	onChange: action('onChange'),
 	onFocus: action('onFocus'),
 	onBlur: action('onBlur'),
@@ -59,5 +60,15 @@ storiesOf('Components|Inputs/Select', module)
 			hintText={text('Hint Text', 'Cannot select option 3')}>
 			<option disabled={true} />
 			{selectOptions('Option 1, Option 2, Option 3')}
+		</SelectInput>
+	))
+	.add('disabled', () => (
+		<SelectInput
+			name="abc"
+			placeholder="Select one"
+			value="Option 2"
+			disabled="true">
+			<option disabled={true} />
+			<option value="Option 2">Option 2</option>
 		</SelectInput>
 	));
