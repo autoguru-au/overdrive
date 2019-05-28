@@ -156,9 +156,6 @@ $font_size: var(--global--fontSize--3); // 16
 			transition: border-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 			pointer-events: none;
 
-			.root:not(.disabled) & {
-			}
-
 			.root:not(.disabled).valid & {
 				border-color: getColour(green, 600);
 			}
