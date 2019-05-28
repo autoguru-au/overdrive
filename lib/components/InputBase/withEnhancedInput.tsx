@@ -84,6 +84,12 @@ export function withEnhancedInput<IncomingProps = {}>(
 		}
 
 		public handleOnChange: ChangeEventHandler<HtmlPrimitive> = e => {
+			if (this.props.disabled) {
+				e.preventDefault();
+
+				return false;
+			}
+
 			this.setState({
 				value: e.target.value,
 			});
@@ -91,6 +97,8 @@ export function withEnhancedInput<IncomingProps = {}>(
 			if (this.props.onChange) {
 				this.props.onChange(e);
 			}
+
+			return true;
 		};
 
 		public handleOnFocus: FocusEventHandler<HtmlPrimitive> = e => {
@@ -175,6 +183,7 @@ export function withEnhancedInput<IncomingProps = {}>(
 						[styles.invalid]: shouldValidate && !isValid,
 						[styles.valid]: shouldValidate && isValid,
 						[styles.withStatus]: shouldValidate,
+						[styles.disabled]: disabled,
 					})}>
 					<NotchedBase
 						id={id}
