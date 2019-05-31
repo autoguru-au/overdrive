@@ -26,6 +26,7 @@
     "build": "cross-env NODE_ENV=production node scripts/build.js",
     "chromatic": "chromatic test --exit-zero-on-changes",
     "format": "prettier --write \"{*,{lib,config,scripts,.storybook}/**/*}.+(js|jsx|ts|tsx|css|scss|json|yml|md|mdx|html)\"",
+    "generate": "plop",
     "lint": "concurrently \"yarn:lint:ts\" \"yarn:lint:styles\"",
     "lint:styles": "stylelint --ignore-path .gitignore --fix \"lib/**/*.+(scss|css)\"",
     "lint:ts": "tsc --noEmit && tslint --fix --project tsconfig.tslint.json",
@@ -42,6 +43,9 @@
     }
   },
   "lint-staged": {
+    "ignore": [
+      "templates/**/*"
+    ],
     "linters": {
       "package.json": [
         "npx sort-package-json",
@@ -127,6 +131,7 @@
     "kleur": "^3.0.3",
     "lint-staged": "^8.1.7",
     "node-sass": "^4.11.0",
+    "plop": "^2.3.0",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.6.0",

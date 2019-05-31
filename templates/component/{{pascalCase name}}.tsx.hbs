@@ -1,0 +1,10 @@
+import clsx from 'clsx';
+import React, { FunctionComponent, memo } from 'react';
+
+import styles from './style.scss';
+
+interface IProps {}
+
+const {{pascalCase name}}Component:FunctionComponent<IProps> = () => <p className={clsx(styles.root)}>New {{name}}!</p>;
+
+export const {{pascalCase name}} = memo({{pascalCase name}}Component);
