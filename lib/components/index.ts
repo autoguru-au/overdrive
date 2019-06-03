@@ -22,6 +22,7 @@ export * from './Meta';
 export * from './ModalBase';
 export * from './NumberInput';
 export * from './Pagination';
+export * from './Positioner';
 export * from './ProgressSpinner';
 export * from './Radio';
 export * from './SelectInput';
