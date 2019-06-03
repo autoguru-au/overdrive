@@ -35,7 +35,12 @@ exports[`<Anchor /> when custom component deprecated still work should match sna
 <a
   aria-disabled={false}
   className="root"
-  compnent={[Function]}
+  compnent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "render": [Function],
+    }
+  }
   disabled={false}
   to="https://www.hellowrold.com"
 >
@@ -52,7 +57,7 @@ exports[`<Anchor /> when custom component deprecated still work should match sna
 `;
 
 exports[`<Anchor /> when custom component should match snapshot with label, icon custom component 1`] = `
-<Button
+<ForwardRef
   aria-disabled={false}
   className="root"
   disabled={false}
@@ -67,5 +72,5 @@ exports[`<Anchor /> when custom component should match snapshot with label, icon
   >
     Hello World!
   </Text>
-</Button>
+</ForwardRef>
 `;
