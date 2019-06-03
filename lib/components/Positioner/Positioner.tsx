@@ -14,11 +14,14 @@ interface IProps {
 	alignment?: EAlignment;
 	isOpen?: boolean;
 	triggerRef: RefObject<HTMLElement>;
+
+	onRequestClose?(): void;
 }
 
 export const Positioner: FunctionComponent<IProps> = ({
 	alignment = EAlignment.TOP_LEFT,
 	isOpen = false,
+	onRequestClose = () => void 0,
 	triggerRef,
 	children,
 }) => {
@@ -27,7 +30,8 @@ export const Positioner: FunctionComponent<IProps> = ({
 		alignment,
 		triggerRef,
 		positionerRef,
-		isOpen
+		isOpen,
+		onRequestClose
 	);
 
 	return createPortal(
@@ -47,11 +51,18 @@ function usePositionerEffect(
 	alignment: EAlignment,
 	triggerRef: RefObject<HTMLElement>,
 	positionerRef: RefObject<HTMLElement>,
-	isOpen: boolean
+	isOpen: boolean,
+	onRequestClose: () => void
 ) {
 	const [positionerPosition, setPositionerPosition] = useState<IPosition>(
 		null
 	);
+
+	if (typeof onRequestClose === 'function') {
+		useOutsideClick([positionerRef, triggerRef], () => {
+			onRequestClose();
+		});
+	}
 
 	useEffect(() => {
 		if (!triggerRef.current && !positionerRef.current) {
@@ -101,3 +112,34 @@ function usePositionerEffect(
 
 	return positionerPosition;
 }
+
+const defaultEvents = ['mousedown', 'touchstart'];
+
+const useOutsideClick = (
+	refs: Array<RefObject<HTMLElement>>,
+	onClickAway: (event: KeyboardEvent) => void
+) => {
+	useEffect(() => {
+		const handler = event => {
+			if (
+				refs
+					.filter(item => !!item.current)
+					.every(item => !item.current.contains(event.target))
+			) {
+				onClickAway(event);
+			}
+		};
+
+		defaultEvents.forEach(ev =>
+			document.addEventListener(ev, handler, {
+				passive: true,
+			})
+		);
+
+		return () => {
+			defaultEvents.forEach(ev =>
+				document.removeEventListener(ev, handler)
+			);
+		};
+	});
+};
