@@ -12,7 +12,7 @@ const NakedModal = withModal(({ children }) => (
 	<div className={styles.root}>{children}</div>
 ));
 
-storiesOf('Components|Modal', module)
+storiesOf('Utility|Modal', module)
 	.add('withModal default', () => (
 		<NakedModal
 			isOpen={boolean('isOpen', true)}

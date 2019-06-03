@@ -5,7 +5,7 @@ import React from 'react';
 import { EStandardModalSize, StandardModal } from '.';
 import { Text } from '../Typography/Text';
 
-storiesOf('Components|Modal/Standard', module).add('default', () => (
+storiesOf('Components|StandardModal', module).add('default', () => (
 	<StandardModal
 		title={'ModalBase Title'}
 		size={EStandardModalSize.Standard}
