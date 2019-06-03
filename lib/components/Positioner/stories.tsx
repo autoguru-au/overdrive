@@ -2,6 +2,7 @@ import { select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React, { createRef, useCallback, useRef, useState } from 'react';
 import { Box } from '../Box';
+import { Button, EButtonSize } from '../Button';
 import { EAlignment } from './alignment';
 import { Positioner } from './Positioner';
 
@@ -19,13 +20,14 @@ storiesOf('Utility|Positioner', module)
 
 			return (
 				<div>
-					<button
+					<Button
+						size={EButtonSize.Small}
 						ref={triggerRef}
 						onClick={useCallback(() => setIsOpen(!isOpen), [
 							isOpen,
 						])}>
 						Open me
-					</button>
+					</Button>
 					<Positioner
 						isOpen={isOpen}
 						triggerRef={triggerRef}
@@ -46,7 +48,7 @@ storiesOf('Utility|Positioner', module)
 	.add(
 		'illustrate a scroll',
 		() => {
-			const triggerRef = createRef();
+			const triggerRef = createRef<HTMLDivElement>();
 
 			return (
 				<div
@@ -60,14 +62,15 @@ storiesOf('Utility|Positioner', module)
 							height: 'calc(100vh*5)',
 							width: 'calc(100vw*5)',
 						}}>
-						<button
+						<Button
 							style={{
 								marginTop: 'calc((100vh*5) / 2)',
 								marginLeft: 'calc((100vw*5) / 2)',
 							}}
-							ref={triggerRef}>
+							ref={triggerRef}
+							size={EButtonSize.Small}>
 							I'm the trigger
-						</button>
+						</Button>
 						<Positioner
 							isOpen={true}
 							triggerRef={triggerRef}
