@@ -39,8 +39,7 @@ jobs:
       script: yarn storybook:build
       after_success: |
         if [ -n "$TRAVIS_PULL_REQUEST_SHA" ]; then
-          npx surge -p ./storybook-static/ -d overdrive--${TRAVIS_PULL_REQUEST_SHA}.surge.sh;
-          node ./scripts/githubStatusPost.js;
+          npx surge -p ./storybook-static/ -d overdrive--${TRAVIS_PULL_REQUEST_SHA}.surge.sh && node ./scripts/githubStatusPost.js;
         elif [ $TRAVIS_BRANCH == "master" ]; then
           npx surge -p ./storybook-static/ -d overdrive.autoguru.io;
         fi
