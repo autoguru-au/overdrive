@@ -20,7 +20,7 @@ export interface IAlignmentRect {
 	rect: IRect;
 }
 
-const DEFAULT_OFFSET: number = 8;
+const DEFAULT_OFFSET: number = 12;
 
 /**
  * @description
