@@ -14,6 +14,7 @@ export * from './Button';
 export * from './CheckBox';
 export * from './CheckableBase';
 export * from './DateInput';
+export * from './Flyout';
 export * from './Icon';
 export * from './InputBase';
 export * from './LinearProgressIndicator';
