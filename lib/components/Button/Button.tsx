@@ -2,8 +2,9 @@ import cx from 'clsx';
 import React, {
 	cloneElement,
 	ComponentType,
+	ElementType,
+	forwardRef,
 	FunctionComponent,
-	ReactNode,
 } from 'react';
 import {
 	EProgressSpinnerSize,
@@ -27,7 +28,7 @@ export enum EVariant {
 
 export interface IProps {
 	className?: string;
-	is?: ComponentType | ReactNode;
+	is?: ElementType;
 	component?: ComponentType; // @deprecated
 	disabled?: boolean;
 	isFullWidth?: boolean;
@@ -63,66 +64,72 @@ const progressSpinnerVariantMap: Map<
 ]);
 
 // TODO: Fix this any here, needs to be an abstract of the component that is being passed in.
-export const Button: FunctionComponent<IProps & any> = ({
-	children,
-	className = '',
-	is: Component = 'button',
-	component = void 0,
-	disabled = false,
-	isLoading = false,
-	isFullWidth = false,
-	rounded = false,
-	size = ESize.Medium,
-	variant = EVariant.Secondary,
-	...rest
-}) => {
-	// @deprecated block
-	{
-		warning(
-			component !== void 0,
-			`The \`component\` prop deprecated, please use the \`is\` prop instead.\n\nBefore:\n<Button component="{<Link/">}>\n\tHello\n</Button>\n\nAfter:\n<Button is="{<Link/">}>\n\tHello\n</Button>`
+export const Button: FunctionComponent<IProps & any> = forwardRef(
+	(
+		{
+			children,
+			className = '',
+			is: Component = 'button',
+			component = void 0,
+			disabled = false,
+			isLoading = false,
+			isFullWidth = false,
+			rounded = false,
+			size = ESize.Medium,
+			variant = EVariant.Secondary,
+			...rest
+		},
+		ref
+	) => {
+		// @deprecated block
+		{
+			warning(
+				component !== void 0,
+				`The \`component\` prop deprecated, please use the \`is\` prop instead.\n\nBefore:\n<Button component="{<Link/">}>\n\tHello\n</Button>\n\nAfter:\n<Button is="{<Link/">}>\n\tHello\n</Button>`
+			);
+
+			if (component !== void 0) {
+				Component = component;
+			}
+		}
+
+		const props = {
+			className: cx(
+				[
+					styles.root,
+					cssSizeMap.get(size),
+					cssVariantMap.get(variant),
+					className,
+				],
+				{
+					[styles.rounded]: rounded,
+					[styles.fullWidth]: isFullWidth,
+					[styles.loading]: isLoading,
+				}
+			),
+			'aria-disabled': disabled || isLoading,
+			disabled: disabled || isLoading,
+			ref,
+			...rest,
+		};
+
+		const childs = (
+			<>
+				<span className={styles.btnContent} children={children} />
+				{isLoading && (
+					<ProgressSpinner
+						className={styles.spinner}
+						variant={progressSpinnerVariantMap.get(variant)}
+						size={progressSpinnerSizeMap.get(size)}
+					/>
+				)}
+			</>
 		);
 
-		if (component !== void 0) {
-			Component = component;
-		}
+		return typeof Component === 'string' ? (
+			<Component {...props}>{childs}</Component>
+		) : (
+			cloneElement(Component, props, childs)
+		);
 	}
-
-	const props = {
-		className: cx(
-			[
-				styles.root,
-				cssSizeMap.get(size),
-				cssVariantMap.get(variant),
-				className,
-			],
-			{
-				[styles.rounded]: rounded,
-				[styles.fullWidth]: isFullWidth,
-				[styles.loading]: isLoading,
-			}
-		),
-		'aria-disabled': disabled || isLoading,
-		disabled: disabled || isLoading,
-		...rest,
-	};
-
-	const childs = (
-		<>
-			<span className={styles.btnContent} children={children} />
-			{isLoading && (
-				<ProgressSpinner
-					className={styles.spinner}
-					variant={progressSpinnerVariantMap.get(variant)}
-					size={progressSpinnerSizeMap.get(size)}
-				/>
-			)}
-		</>
-	);
-
-	return typeof Component === 'string' ? (
-		<Component {...props}>{childs}</Component>
-	) : (
-		cloneElement(Component, props, childs)
-	);
-};
+);

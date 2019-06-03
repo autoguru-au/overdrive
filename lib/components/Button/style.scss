@@ -50,7 +50,8 @@ $widthSmall: 36px;
 	text-decoration: none;
 	cursor: pointer;
 	user-select: none;
-	transform: translate(0, 0);
+	transform: translate(0, 0) scale(1);
+	will-change: transform;
 	border-radius: var(--global--space--1);
 	transition: color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
 		background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
@@ -59,11 +60,11 @@ $widthSmall: 36px;
 		transform 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 
 	@include isHoverState() {
-		transform: translate(0, -1px);
+		transform: translate(0, -1px) scale(1);
 	}
 
 	@include isActiveState() {
-		transform: translate(0, 1px);
+		transform: translate(0, 1px) scale(1);
 	}
 }
 
