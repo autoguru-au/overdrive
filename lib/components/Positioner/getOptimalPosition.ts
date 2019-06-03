@@ -404,3 +404,5 @@ const isAlignedHorizontal = (alignment: EAlignment): boolean => {
 			return false;
 	}
 };
+
+// Thanks to the wonderful guys over at Segment, and Evergreen for the technical inspiration for this file. <3
