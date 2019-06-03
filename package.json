@@ -84,7 +84,7 @@
     "@autoguru/tsconfig": "^1.0.12",
     "@babel/core": "^7.4.5",
     "@babel/runtime-corejs3": "^7.4.5",
-    "@commitlint/cli": "^7.5.2",
+    "@commitlint/cli": "^8.0.0",
     "@octokit/rest": "^16.27.0",
     "@semantic-release/commit-analyzer": "^6.1.0",
     "@semantic-release/github": "^5.2.10",
