@@ -12,14 +12,14 @@ import styles from './style.scss';
 
 interface IProps {
 	alignment?: EAlignment;
-	isOpen: boolean;
+	isOpen?: boolean;
 	triggerRef: RefObject<HTMLElement>;
 }
 
 export const Positioner: FunctionComponent<IProps> = ({
-	triggerRef,
-	isOpen,
 	alignment = EAlignment.TOP_LEFT,
+	isOpen = false,
+	triggerRef,
 	children,
 }) => {
 	const positionerRef = useRef<HTMLDivElement>(null);

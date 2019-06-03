@@ -361,7 +361,7 @@ export const makeRect = (
 	bottom: Math.ceil(position.top) + dimensions.height,
 });
 
-export const getViewportDimensions = (): IDimensions => ({
+const getViewportDimensions = (): IDimensions => ({
 	height: document.documentElement.clientHeight,
 	width: document.documentElement.clientWidth,
 });
