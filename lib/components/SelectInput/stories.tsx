@@ -67,7 +67,7 @@ storiesOf('Components|Inputs/Select', module)
 			name="abc"
 			placeholder="Select one"
 			value="Option 2"
-			disabled="true">
+			disabled={true}>
 			<option disabled={true} />
 			<option value="Option 2">Option 2</option>
 		</SelectInput>
