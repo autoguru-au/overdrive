@@ -88,7 +88,7 @@ const handleOverflow = (
 			rect.bottom - (viewportDimensions.height - viewportOffset)
 		);
 		rect.top -= delta;
-		rect.right -= delta;
+		rect.bottom -= delta;
 	}
 
 	return rect;
