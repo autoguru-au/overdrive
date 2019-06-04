@@ -1,5 +1,5 @@
 import { warning } from '@autoguru/utilities';
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, {
 	cloneElement,
 	ComponentType,
@@ -44,7 +44,7 @@ const AnchorComponent: FunctionComponent<IProps & any> = ({
 	}
 
 	const props = {
-		className: cx([className, styles.root]),
+		className: clsx([className, styles.root]),
 		'aria-disabled': disabled,
 		disabled,
 		...rest,

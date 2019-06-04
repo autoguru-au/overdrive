@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, { FunctionComponent, memo, SVGAttributes } from 'react';
 import styles from './style.scss';
 
@@ -16,7 +16,7 @@ export const IconComponent: FunctionComponent<
 > = ({ className = '', icon, size }) => (
 	<i
 		style={{ width: size, height: size }}
-		className={cx([styles.root, className])}>
+		className={clsx([styles.root, className])}>
 		{icon()}
 	</i>
 );

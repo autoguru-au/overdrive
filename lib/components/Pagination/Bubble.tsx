@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, { ButtonHTMLAttributes, FunctionComponent, memo } from 'react';
 import styles from './style.scss';
 
@@ -16,7 +16,7 @@ export const BubbleComponent: FunctionComponent<IProps> = ({
 	children,
 	...rest
 }) => {
-	const cls = cx([styles.bubble, className], {
+	const cls = clsx([styles.bubble, className], {
 		[styles.selected]: selected,
 		[styles.gap]: gap,
 	});

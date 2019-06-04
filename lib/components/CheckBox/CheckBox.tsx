@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
 import { CheckIcon } from '../../icons';
 import { CheckableBase } from '../CheckableBase';
@@ -31,7 +31,7 @@ export const CheckBox: FunctionComponent<IProps> = memo(
 	}) => (
 		<CheckableBase
 			inputType="checkbox"
-			className={cx([styles.checkbox, className])}
+			className={clsx([styles.checkbox, className])}
 			inputName={name}
 			value={value}
 			label={label}
@@ -40,7 +40,7 @@ export const CheckBox: FunctionComponent<IProps> = memo(
 			handleClick={onClick}
 			handleChange={onChange}>
 			<div
-				className={cx(checkableClass, {
+				className={clsx(checkableClass, {
 					[styles.selected]: checked,
 				})}>
 				{checked && <CheckIcon />}

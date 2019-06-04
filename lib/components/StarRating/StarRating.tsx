@@ -1,5 +1,5 @@
 import { warning } from '@autoguru/utilities';
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, { FunctionComponent, memo, ReactElement } from 'react';
 import { StarHalfIcon, StarIcon } from '../../icons';
 import { Icon } from '../Icon';
@@ -82,7 +82,7 @@ const getStar = (
 			icon={star}
 			size={starSizeMap.get(size)}
 			key={index}
-			className={cx([styles.star, starCssMap.get(starType)])}
+			className={clsx([styles.star, starCssMap.get(starType)])}
 		/>
 	);
 };
@@ -107,7 +107,7 @@ const StarRatingComponent: FunctionComponent<IProps> = ({
 	}
 
 	return (
-		<span className={cx([styles.root, className])}>
+		<span className={clsx([styles.root, className])}>
 			<span className={styles.starList}>
 				{new Array(totalStars)
 					.fill(0)

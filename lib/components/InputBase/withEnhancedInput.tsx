@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, {
 	ChangeEventHandler,
 	ComponentType,
@@ -179,7 +179,7 @@ export function withEnhancedInput<IncomingProps = {}>(
 
 			return (
 				<div
-					className={cx([styles.root, className], {
+					className={clsx([styles.root, className], {
 						[styles.invalid]: shouldValidate && !isValid,
 						[styles.valid]: shouldValidate && isValid,
 						[styles.withStatus]: shouldValidate,

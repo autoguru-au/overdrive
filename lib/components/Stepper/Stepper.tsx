@@ -1,5 +1,5 @@
 import { clamp } from '@autoguru/utilities';
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, {
 	FunctionComponent,
 	memo,
@@ -114,7 +114,7 @@ const StepperComponent: FunctionComponent<IProps> = ({
 
 	return (
 		<div
-			className={cx([styles.root, className])}
+			className={clsx([styles.root, className])}
 			aria-disabled={isDisabled}>
 			<button
 				className={styles.handle}

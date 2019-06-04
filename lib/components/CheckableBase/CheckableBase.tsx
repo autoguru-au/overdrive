@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, { ChangeEvent, FunctionComponent } from 'react';
 import styles from './style.scss';
 
@@ -38,7 +38,7 @@ export const CheckableBase: FunctionComponent<IProps> = ({
 
 	return (
 		<div
-			className={cx([styles.root, className], {
+			className={clsx([styles.root, className], {
 				[styles.checked]: checked,
 				[styles.disabled]: disabled === true,
 			})}>

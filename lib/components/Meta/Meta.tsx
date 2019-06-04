@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, { cloneElement, FunctionComponent, memo } from 'react';
 import { TIconPrimitiveType } from '../Icon';
 import { Text } from '../Typography';
@@ -27,14 +27,14 @@ const MetaComponent: FunctionComponent<IProps> = ({
 	label,
 	variant = EVariant.Primary,
 }) => {
-	const cls = cx([styles.root, cssVariantMap.get(variant), className]);
+	const cls = clsx([styles.root, cssVariantMap.get(variant), className]);
 
 	return (
 		<span className={cls}>
 			{/* TODO: Should we be using a cloneElement here? */}
 			{icon && cloneElement(icon, { className: styles.icon })}
 			<Text
-				className={cx({
+				className={clsx({
 					[styles.withIcon]: !!icon,
 				})}>
 				{label}

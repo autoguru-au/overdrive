@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
 import styles from './style.scss';
 
@@ -14,7 +14,7 @@ const LoadingBoxComponent: FunctionComponent<IProps> = ({
 	blinking = true,
 }) => (
 	<span
-		className={cx([styles.root, className], {
+		className={clsx([styles.root, className], {
 			[styles.blinking]: blinking,
 		})}
 		style={{ width: randomWidth ? getRandomIntWidth(60, 40) : void 0 }}

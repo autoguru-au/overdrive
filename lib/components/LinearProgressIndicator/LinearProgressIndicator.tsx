@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
 import styles from './style.scss';
 
@@ -9,7 +9,7 @@ export interface IProps {
 const LinearProgressIndicatorComponent: FunctionComponent<IProps> = ({
 	className = '',
 }) => {
-	const cls = cx([styles.root, className]);
+	const cls = clsx([styles.root, className]);
 
 	return (
 		<div className={cls}>

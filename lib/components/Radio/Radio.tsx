@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, { FunctionComponent, memo, useContext } from 'react';
 import { CheckableBase } from '../CheckableBase';
 import { checkableClass } from '../CheckableBase/CheckableBase';
@@ -23,7 +23,7 @@ export const Radio: FunctionComponent<IProps> = memo(
 		return (
 			<CheckableBase
 				inputType="radio"
-				className={cx([styles.radio, className])}
+				className={clsx([styles.radio, className])}
 				inputName={radioContext.inputName}
 				value={value}
 				label={label}
@@ -31,7 +31,7 @@ export const Radio: FunctionComponent<IProps> = memo(
 				checked={isChecked}
 				handleClick={handleClick}>
 				<div
-					className={cx([checkableClass], {
+					className={clsx([checkableClass], {
 						[styles.selected]: isChecked,
 					})}>
 					<div className={styles.outerCircle} />

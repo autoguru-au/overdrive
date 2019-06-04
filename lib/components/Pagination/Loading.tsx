@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon, Icon } from '../Icon';
 import styles from './style.scss';
@@ -13,10 +13,10 @@ export const LoadingComponent: FunctionComponent<IProps> = ({
 	className = '',
 	placeholderBubblesNum = 3,
 }) => {
-	const disabledChevCls = cx([styles.chevron, styles.disabled]);
+	const disabledChevCls = clsx([styles.chevron, styles.disabled]);
 
 	return (
-		<span className={cx([styles.loading, className])}>
+		<span className={clsx([styles.loading, className])}>
 			<Icon
 				size={25}
 				icon={ChevronLeftIcon}

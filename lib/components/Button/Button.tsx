@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, {
 	cloneElement,
 	ComponentType,
@@ -94,7 +94,7 @@ export const Button: FunctionComponent<IProps & any> = forwardRef(
 		}
 
 		const props = {
-			className: cx(
+			className: clsx(
 				[
 					styles.root,
 					cssSizeMap.get(size),

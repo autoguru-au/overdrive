@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, { FunctionComponent, memo, useCallback, useMemo } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon, Icon } from '../Icon';
 import styles from './style.scss';
@@ -45,13 +45,13 @@ export const PaginationComponent: FunctionComponent<IProps> = ({
 		[activePage, numPages]
 	);
 
-	const cls = cx([styles.pagination, className]);
+	const cls = clsx([styles.pagination, className]);
 
-	const chevronLeftCls = cx([styles.chevron], {
+	const chevronLeftCls = clsx([styles.chevron], {
 		[styles.disabled]: activePage <= 1,
 	});
 
-	const chevronRightCls = cx([styles.chevron], {
+	const chevronRightCls = clsx([styles.chevron], {
 		[styles.disabled]: activePage >= numPages,
 	});
 

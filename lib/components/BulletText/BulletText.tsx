@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, { FunctionComponent, isValidElement, ReactNode } from 'react';
 import { Text } from '../Typography/Text';
 import styles from './style.scss';
@@ -26,7 +26,7 @@ export const BulletText: FunctionComponent<IProps> = ({
 
 	return (
 		<Tag
-			className={cx(
+			className={clsx(
 				styles.root,
 				{
 					[styles.variantPrimary]: variant === EVariant.Primary,

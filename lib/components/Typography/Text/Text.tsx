@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, { FunctionComponent } from 'react';
 import { TSizeScale } from '../types';
 import styles from './style.scss';
@@ -20,7 +20,7 @@ export const Text: FunctionComponent<IProps> = ({
 	size = 3,
 }) => (
 	<Component
-		className={cx(
+		className={clsx(
 			[styles.root, styles[`sizeScale${size}`]],
 			{
 				[styles.muted]: muted,

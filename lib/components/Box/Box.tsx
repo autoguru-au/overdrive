@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, { FunctionComponent } from 'react';
 import styles from './style.scss';
 
@@ -24,7 +24,7 @@ export const Box: FunctionComponent<IProps> = ({
 	className = '',
 }) => (
 	<div
-		className={cx([
+		className={clsx([
 			styles.root,
 			styles[`variant--${variant}`],
 			styles[`borderColour--${borderColour}`],

@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, { FunctionComponent, MouseEvent } from 'react';
 
 import styles from './style.scss';
@@ -17,7 +17,7 @@ export const TabNavItem: FunctionComponent<IProps> = ({
 	active,
 }) => (
 	<button
-		className={cx(styles.navItem, {
+		className={clsx(styles.navItem, {
 			[styles.navItemActive]: active,
 		})}
 		onClick={onClick}>

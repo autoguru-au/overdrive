@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, { FunctionComponent, memo, useCallback, useState } from 'react';
 import styles from './style.scss';
 
@@ -37,7 +37,7 @@ const SwitchComponent: FunctionComponent<IProps> = ({
 
 	return (
 		<div
-			className={cx(
+			className={clsx(
 				styles.root,
 				{
 					[styles.toggled]: toggled,

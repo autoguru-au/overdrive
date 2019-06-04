@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
 import { Button, EButtonSize, EButtonVariant } from '../Button';
 import { ChevronLeftIcon, ChevronRightIcon, Icon } from '../Icon';
@@ -24,11 +24,11 @@ export const SimplePaginationComponent: FunctionComponent<IProps> = ({
 	hasPrevious,
 	onChange = () => void 0,
 }) => {
-	const cls = cx([styles.pagination, className]);
-	const chevronLeftCls = cx([styles.chevron], {
+	const cls = clsx([styles.pagination, className]);
+	const chevronLeftCls = clsx([styles.chevron], {
 		[styles.disabled]: !hasPrevious,
 	});
-	const chevronRightCls = cx([styles.chevron], {
+	const chevronRightCls = clsx([styles.chevron], {
 		[styles.disabled]: !hasNext,
 	});
 	const handleClick = (direction: EChangeDirection) => () => {

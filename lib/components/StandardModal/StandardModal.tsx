@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import clsx from 'clsx';
 import React from 'react';
 import { Icon, WindowCloseIcon } from '../Icon';
 import { EModalCloseCode, withModal } from '../ModalBase';
@@ -29,12 +29,13 @@ export const StandardModal = withModal<IProps>(
 
 		return (
 			<article
-				className={cx([
+				className={clsx([
 					styles.modal,
 					{ [styles.modalSizeStandard]: size === ESize.Standard },
 					className,
 				])}>
-				<header className={cx(styles.header, styles.headerWithBorder)}>
+				<header
+					className={clsx(styles.header, styles.headerWithBorder)}>
 					<button
 						className={styles.headerCloseButton}
 						onClick={closeButtonHandler}>

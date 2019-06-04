@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, { createContext, FunctionComponent } from 'react';
 import styles from './style.scss';
 
@@ -29,7 +29,7 @@ export const RadioGroup: FunctionComponent<IProps> = ({
 	<RadioContext.Provider
 		value={{ value, inputName: name, radioSelected: onChange }}>
 		<div
-			className={cx([styles.radioGroup, className])}
+			className={clsx([styles.radioGroup, className])}
 			children={children}
 		/>
 	</RadioContext.Provider>

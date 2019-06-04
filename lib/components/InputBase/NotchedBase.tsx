@@ -1,5 +1,5 @@
 import { warning } from '@autoguru/utilities';
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, { FunctionComponent, useEffect, useRef, useState } from 'react';
 import styles from './style.scss';
 
@@ -45,7 +45,7 @@ export const NotchedBase: FunctionComponent<IProps> = ({
 
 	return (
 		<div
-			className={cx(styles.notchedBase, {
+			className={clsx(styles.notchedBase, {
 				[styles.notchedBaseShift]: !isEmpty,
 				[styles.notchedBaseActive]: isActive,
 			})}>

@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, { FunctionComponent } from 'react';
 import { TSizeScale } from '../types';
 import styles from './style.scss';
@@ -25,7 +25,7 @@ export const Heading: FunctionComponent<IProps> = ({
 	size = sizeScaleDefaults.get(Component),
 }) => (
 	<Component
-		className={cx([
+		className={clsx([
 			styles.root,
 			{ [styles[`sizeScale${size}`]]: !!size },
 			className,

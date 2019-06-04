@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
 import styles from './style.scss';
 
@@ -29,7 +29,7 @@ const BadgeComponent: FunctionComponent<IProps> = ({
 	invert = false,
 	className = '',
 }) => {
-	const cls = cx([className, styles.root, cssColourMap.get(colour)], {
+	const cls = clsx([className, styles.root, cssColourMap.get(colour)], {
 		[styles.inverted]: invert,
 	});
 

@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, { FunctionComponent } from 'react';
 
 import styles from './style.scss';
@@ -9,7 +9,7 @@ export interface IProps {
 
 export const TabPane: FunctionComponent<IProps> = ({ children, active }) => (
 	<div
-		className={cx(styles.tabPane, {
+		className={clsx(styles.tabPane, {
 			[styles.tabPaneActive]: active,
 		})}>
 		{active && children}

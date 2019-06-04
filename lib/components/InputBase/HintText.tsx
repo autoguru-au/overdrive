@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, { FunctionComponent } from 'react';
 
 import styles from './style.scss';
@@ -9,7 +9,7 @@ export interface IProps {
 
 export const HintText: FunctionComponent<IProps> = ({ isActive, children }) => (
 	<p
-		className={cx(styles.hintText, {
+		className={clsx(styles.hintText, {
 			[styles.hintTextActive]: isActive,
 		})}>
 		{children}

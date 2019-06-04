@@ -1,5 +1,5 @@
 import { invariant } from '@autoguru/utilities';
-import cx from 'clsx';
+import clsx from 'clsx';
 import React, {
 	FunctionComponent,
 	RefObject,
@@ -52,7 +52,7 @@ export const ModalPortal: FunctionComponent<IProps> = ({
 
 	return createPortal(
 		<div
-			className={cx(styles.modalPortal, {
+			className={clsx(styles.modalPortal, {
 				[styles.modalPortalIsOpen]: isOpen,
 			})}>
 			<div className={styles.modalPanel}>
