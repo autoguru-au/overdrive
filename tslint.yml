@@ -4,6 +4,8 @@ extends:
   - tslint-config-prettier
 linterOptions:
   format: codeFrame
+  exclude:
+    - templates/**/*
 rules:
   array-type: [true, generic]
   arrow-parens: [true, ban-single-arg-parens]
