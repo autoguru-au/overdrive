@@ -1,6 +1,8 @@
 import React, {
 	FunctionComponent,
+	MouseEvent,
 	RefObject,
+	TouchEvent,
 	useEffect,
 	useRef,
 	useState,
@@ -117,7 +119,7 @@ const defaultEvents = ['mousedown', 'touchstart'];
 
 const useOutsideClick = (
 	refs: Array<RefObject<HTMLElement>>,
-	onClickAway: (event: KeyboardEvent) => void
+	onClickAway: (event: MouseEvent | TouchEvent) => void
 ) => {
 	useEffect(() => {
 		const handler = event => {
