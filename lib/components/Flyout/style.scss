@@ -1,0 +1,9 @@
+@import '../../theme/tokens/facade';
+
+.root {
+	overflow: hidden;
+	background-color: white;
+	border: 1px solid getColour(gray, 300);
+	border-radius: var(--global--space--1);
+	box-shadow: var(--global--elevationBoxShadow--4);
+}
