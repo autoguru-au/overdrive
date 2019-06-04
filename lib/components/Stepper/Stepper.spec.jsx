@@ -228,4 +228,136 @@ describe('<Stepper />', () => {
 		expect(onChangeHandler).toHaveBeenCalledTimes(2);
 		expect(onChangeHandler).toHaveBeenCalledWith(2);
 	});
+
+	describe('when keyboard enabled', () => {
+		it('should increment when ArrowRight is activated', () => {
+			const onChangeHandler = jest.fn();
+
+			const stepper = mount(
+				<Stepper
+					min={0}
+					max={100}
+					step={1}
+					value={1}
+					onChange={onChangeHandler}
+				/>,
+			);
+
+			stepper.simulate('keyDown', {
+				key: 'ArrowRight',
+			});
+
+			expect(onChangeHandler).toHaveBeenCalledWith(2);
+			stepper.unmount();
+		});
+
+		it('should decrement when ArrowLeft is activated', () => {
+			const onChangeHandler = jest.fn();
+
+			const stepper = mount(
+				<Stepper
+					min={0}
+					max={100}
+					step={1}
+					value={1}
+					onChange={onChangeHandler}
+				/>,
+			);
+
+			stepper.simulate('keyDown', {
+				key: 'ArrowLeft',
+			});
+
+			expect(onChangeHandler).toHaveBeenCalledWith(0);
+			stepper.unmount();
+		});
+
+		it('should have max value when End is activated', () => {
+			const onChangeHandler = jest.fn();
+
+			const stepper = mount(
+				<Stepper
+					min={0}
+					max={100}
+					step={1}
+					value={50}
+					onChange={onChangeHandler}
+				/>,
+			);
+
+			stepper.simulate('keyDown', {
+				key: 'End',
+			});
+
+			expect(onChangeHandler).toHaveBeenCalledWith(100);
+			stepper.unmount();
+		});
+
+		it('should have min value when Home is activated', () => {
+			const onChangeHandler = jest.fn();
+
+			const stepper = mount(
+				<Stepper
+					min={0}
+					max={100}
+					step={1}
+					value={50}
+					onChange={onChangeHandler}
+				/>,
+			);
+
+			stepper.simulate('keyDown', {
+				key: 'Home',
+			});
+
+			expect(onChangeHandler).toHaveBeenCalledWith(0);
+			stepper.unmount();
+		});
+	});
+
+	describe('when setting a value', () => {
+		it('should clamp min to a finite negative number', () => {
+			const onChangeHandler = jest.fn();
+
+			const stepper = mount(
+				<Stepper
+					max={100}
+					step={0.5}
+					value={1}
+					onChange={onChangeHandler}
+				/>,
+			);
+
+			stepper.simulate('keyDown', {
+				key: 'Home',
+			});
+
+			expect(onChangeHandler).toHaveBeenCalledWith(
+				Number.MIN_SAFE_INTEGER,
+			);
+			stepper.unmount();
+		});
+
+		it('should clamp max to a finite positive number', () => {
+			const onChangeHandler = jest.fn();
+
+			const stepper = mount(
+				<Stepper
+					min={0}
+					step={0.5}
+					value={1}
+					onChange={onChangeHandler}
+				/>,
+			);
+
+			stepper.simulate('keyDown', {
+				key: 'End',
+			});
+
+			expect(onChangeHandler).toHaveBeenCalledWith(
+				Number.MAX_SAFE_INTEGER,
+			);
+			stepper.unmount();
+		});
+	});
 });

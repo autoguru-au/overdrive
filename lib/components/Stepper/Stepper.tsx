@@ -2,6 +2,7 @@ import { clamp } from '@autoguru/utilities';
 import clsx from 'clsx';
 import React, {
 	FunctionComponent,
+	KeyboardEvent,
 	memo,
 	useCallback,
 	useReducer,
@@ -41,24 +42,27 @@ interface State {
 	value: number;
 }
 
-const reducer = (state: State, action: Action) => {
-	switch (action.type) {
-		case EActionType.INCREMENT:
-			return {
-				value: clamp(state.value + action.step, action.min, action.max),
-			};
-		case EActionType.DECREMENT:
-			return {
-				value: clamp(state.value - action.step, action.min, action.max),
-			};
-		case EActionType.VALUE:
-			return { value: action.value };
+const getValueOrSafeInteger = (value: number) =>
+	value < 0 ? Number.MIN_SAFE_INTEGER : Number.MAX_SAFE_INTEGER;
 
-		/* istanbul ignore next */
-		default:
-			// eslint-disable-next-line unicorn/error-message
-			throw new Error();
+const reducer = (state: State, action: Action) => {
+	if (action.type === EActionType.VALUE) {
+		return {
+			value: Number.isFinite(action.value)
+				? action.value
+				: getValueOrSafeInteger(action.value),
+		};
 	}
+
+	const direction = EActionType.DECREMENT === action.type ? -1 : 1;
+
+	return {
+		value: clamp(
+			state.value + direction * action.step,
+			action.min,
+			action.max,
+		),
+	};
 };
 
 const StepperComponent: FunctionComponent<Props> = ({
@@ -91,6 +95,7 @@ const StepperComponent: FunctionComponent<Props> = ({
 			}),
 		[step, min, max],
 	);
+
 	const onIncrement = useCallback(
 		() =>
 			dispatch({
@@ -100,6 +105,28 @@ const StepperComponent: FunctionComponent<Props> = ({
 				max,
 			}),
 		[step, min, max],
+	);
+
+	const keyDownHandler = useCallback(
+		(event: KeyboardEvent) => {
+			// eslint-disable-next-line default-case
+			switch (event.key) {
+				case 'ArrowLeft':
+					return onDecrement();
+				case 'ArrowRight':
+					return onIncrement();
+				case 'Home':
+				case 'End':
+					return dispatch({
+						type: EActionType.VALUE,
+						max,
+						min,
+						step,
+						value: event.key === 'Home' ? min : max,
+					});
+			}
+		},
+		[onDecrement, onIncrement],
 	);
 
 	if (prevValue.current !== value) {
@@ -116,11 +143,14 @@ const StepperComponent: FunctionComponent<Props> = ({
 	return (
 		<div
 			className={clsx([styles.root, className])}
-			aria-disabled={isDisabled}>
+			aria-disabled={isDisabled}
+			tabIndex={0}
+			onKeyDown={keyDownHandler}>
 			<button
 				className={styles.handle}
 				aria-label="step down"
 				disabled={isDisabled}
+				tabIndex={-1}
 				onClick={onDecrement}>
 				<Icon icon={MinusIcon} size={16} />
 			</button>
@@ -131,6 +161,7 @@ const StepperComponent: FunctionComponent<Props> = ({
 				className={styles.handle}
 				aria-label="step up"
 				disabled={isDisabled}
+				tabIndex={-1}
 				onClick={onIncrement}>
 				<Icon icon={PlusIcon} size={16} />
 			</button>
