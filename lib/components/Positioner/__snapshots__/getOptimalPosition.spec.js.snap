@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getOptimalPosition should match snapshot for all alignments 1`] = `
+Array [
+  Object {
+    "alignment": "top",
+    "rect": Object {
+      "bottom": 88,
+      "height": 5,
+      "left": 148,
+      "right": 153,
+      "top": 83,
+      "width": 5,
+    },
+  },
+  Object {
+    "alignment": "top_left",
+    "rect": Object {
+      "bottom": 88,
+      "height": 5,
+      "left": 100,
+      "right": 105,
+      "top": 83,
+      "width": 5,
+    },
+  },
+  Object {
+    "alignment": "top_right",
+    "rect": Object {
+      "bottom": 88,
+      "height": 5,
+      "left": 195,
+      "right": 200,
+      "top": 83,
+      "width": 5,
+    },
+  },
+  Object {
+    "alignment": "bottom",
+    "rect": Object {
+      "bottom": 167,
+      "height": 5,
+      "left": 148,
+      "right": 153,
+      "top": 162,
+      "width": 5,
+    },
+  },
+  Object {
+    "alignment": "bottom_left",
+    "rect": Object {
+      "bottom": 167,
+      "height": 5,
+      "left": 100,
+      "right": 105,
+      "top": 162,
+      "width": 5,
+    },
+  },
+  Object {
+    "alignment": "bottom_right",
+    "rect": Object {
+      "bottom": 167,
+      "height": 5,
+      "left": 195,
+      "right": 200,
+      "top": 162,
+      "width": 5,
+    },
+  },
+  Object {
+    "alignment": "left",
+    "rect": Object {
+      "bottom": 128,
+      "height": 5,
+      "left": 83,
+      "right": 88,
+      "top": 123,
+      "width": 5,
+    },
+  },
+  Object {
+    "alignment": "right",
+    "rect": Object {
+      "bottom": 128,
+      "height": 5,
+      "left": 212,
+      "right": 217,
+      "top": 123,
+      "width": 5,
+    },
+  },
+]
+`;

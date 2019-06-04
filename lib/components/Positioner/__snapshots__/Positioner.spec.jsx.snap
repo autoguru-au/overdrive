@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Positioner /> should match snapshot 1`] = `
+<Positioner
+  alignment="bottom"
+  isOpen={true}
+  triggerRef={
+    Object {
+      "current": null,
+    }
+  }
+>
+  <Portal
+    containerInfo={
+      <body>
+        <div
+          class="root"
+        >
+          Some body
+        </div>
+      </body>
+    }
+  >
+    <div
+      className="root"
+      style={Object {}}
+    >
+      Some body
+    </div>
+  </Portal>
+</Positioner>
+`;
