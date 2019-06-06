@@ -5,7 +5,7 @@ import React, {
 	memo,
 	useCallback,
 	useReducer,
-	useState,
+	useRef,
 } from 'react';
 import { Icon, MinusIcon, PlusIcon } from '../Icon';
 import styles from './style.scss';
@@ -74,7 +74,7 @@ const StepperComponent: FunctionComponent<IProps> = ({
 
 	const [state, dispatch] = useReducer(reducer, { value });
 
-	const [prevValue, setPrevValue] = useState(value);
+	const prevValue = useRef(value);
 
 	if (state.value !== value && typeof onChange === 'function') {
 		onChange(state.value);
@@ -101,7 +101,7 @@ const StepperComponent: FunctionComponent<IProps> = ({
 		[step, min, max]
 	);
 
-	if (prevValue !== value) {
+	if (prevValue.current !== value) {
 		dispatch({
 			type: EActionType.VALUE,
 			value,
@@ -109,7 +109,7 @@ const StepperComponent: FunctionComponent<IProps> = ({
 			min,
 			max,
 		});
-		setPrevValue(value);
+		prevValue.current = value;
 	}
 
 	return (
