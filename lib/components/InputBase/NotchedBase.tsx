@@ -25,8 +25,8 @@ export const NotchedBase: FunctionComponent<IProps> = ({
 	const labelRef = useRef<HTMLLabelElement>(null);
 	const [labelWidth, setLabelWidth] = useState<number>(
 		getNotchedComputedWidthForWidth(
-			placeholder.length * ROUGH_WIDTH_PER_CHARACTER
-		)
+			placeholder.length * ROUGH_WIDTH_PER_CHARACTER,
+		),
 	);
 
 	useEffect(() => {
@@ -40,7 +40,7 @@ export const NotchedBase: FunctionComponent<IProps> = ({
 	// TODO: This will double warn, when placeholder gets updated, the setLabelWidth will trigger a double render
 	warning(
 		notchedWidth > NOTCHED_WARN_WIDTH,
-		`The placeholder cannot exceed ${NOTCHED_WARN_WIDTH}px or roughly 20 characters, as it needs to fit into 280px container.`
+		`The placeholder cannot exceed ${NOTCHED_WARN_WIDTH}px or roughly 20 characters, as it needs to fit into 280px container.`,
 	);
 
 	return (
@@ -71,7 +71,7 @@ export const NotchedBase: FunctionComponent<IProps> = ({
 function getNotchedComputedWidthForWidth(width: number): number {
 	return (
 		Math.round(
-			(width * ACTIVE_SCALING_FACTOR + ACTIVE_PADDING_ADDED) * 100
+			(width * ACTIVE_SCALING_FACTOR + ACTIVE_PADDING_ADDED) * 100,
 		) / 100
 	);
 }

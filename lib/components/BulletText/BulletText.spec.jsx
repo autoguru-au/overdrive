@@ -35,7 +35,7 @@ describe('<BulletText />', () => {
 
 	it('should match snapshot for default bullet text', () => {
 		expect(
-			shallow(<BulletText>Hello World!</BulletText>)
+			shallow(<BulletText>Hello World!</BulletText>),
 		).toMatchSnapshot();
 	});
 
@@ -44,8 +44,8 @@ describe('<BulletText />', () => {
 			shallow(
 				<BulletText variant={EBulletTextVariant.Primary} bullet={'?'}>
 					Hello World!
-				</BulletText>
-			)
+				</BulletText>,
+			),
 		).toMatchSnapshot();
 	});
 
@@ -54,8 +54,8 @@ describe('<BulletText />', () => {
 			shallow(
 				<BulletText variant={EBulletTextVariant.Secondary} bullet={'?'}>
 					Hello World!
-				</BulletText>
-			)
+				</BulletText>,
+			),
 		).toMatchSnapshot();
 	});
 
@@ -67,16 +67,16 @@ describe('<BulletText />', () => {
 					variant={EBulletTextVariant.Primary}
 					bullet={'?'}>
 					Hello World!
-				</BulletText>
-			)
+				</BulletText>,
+			),
 		).toMatchSnapshot();
 	});
 
 	it('should match snapshot for custom bullet text', () => {
 		expect(
 			render(
-				<BulletText bullet={<CustomBullet />}>Hello World</BulletText>
-			)
+				<BulletText bullet={<CustomBullet />}>Hello World</BulletText>,
+			),
 		).toMatchSnapshot();
 	});
 
@@ -84,7 +84,7 @@ describe('<BulletText />', () => {
 		const bulletText = shallow(
 			<BulletText variant={EBulletTextVariant.Primary} bullet={'*'}>
 				Hello World!
-			</BulletText>
+			</BulletText>,
 		);
 		expect(bulletText.hasClass('variantPrimary')).toBeTruthy();
 	});
@@ -93,7 +93,7 @@ describe('<BulletText />', () => {
 		const bulletText = shallow(
 			<BulletText variant={EBulletTextVariant.Secondary} bullet={'*'}>
 				Hello World!
-			</BulletText>
+			</BulletText>,
 		);
 		expect(bulletText.hasClass('variantSecondary')).toBeTruthy();
 	});
@@ -109,7 +109,7 @@ describe('<BulletText />', () => {
 			bulletText
 				.find(Text)
 				.render()
-				.text()
+				.text(),
 		).toEqual('Hello World!');
 	});
 
@@ -120,14 +120,14 @@ describe('<BulletText />', () => {
 
 	it('should use li element for unordered bullet text', () => {
 		const bulletText = shallow(
-			<BulletText ordered={false}>Hello World!</BulletText>
+			<BulletText ordered={false}>Hello World!</BulletText>,
 		);
 		expect(bulletText.type()).toEqual('li');
 	});
 
 	it('should use ol element for ordered bullet text', () => {
 		const bulletText = shallow(
-			<BulletText ordered={true}>Hello World!</BulletText>
+			<BulletText ordered={true}>Hello World!</BulletText>,
 		);
 		expect(bulletText.type()).toEqual('ol');
 	});
@@ -139,14 +139,14 @@ describe('<BulletText />', () => {
 
 	it('should use provided bullet character bullet', () => {
 		const bulletText = shallow(
-			<BulletText bullet="#">Hello World!</BulletText>
+			<BulletText bullet="#">Hello World!</BulletText>,
 		);
 		expect(bulletText.find('div>span').text()).toEqual('#');
 	});
 
 	it('should use provided custom bullet component', () => {
 		const bulletText = shallow(
-			<BulletText bullet={<CustomBullet />}>Hello World</BulletText>
+			<BulletText bullet={<CustomBullet />}>Hello World</BulletText>,
 		);
 		expect(bulletText.find(CustomBullet)).toBeTruthy();
 	});

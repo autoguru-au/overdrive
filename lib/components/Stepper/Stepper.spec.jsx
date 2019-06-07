@@ -13,7 +13,7 @@ describe('<Stepper />', () => {
 
 	it('should match snapshot with props', () => {
 		expect(
-			render(<Stepper min={-20} max={20} value={19} step={1.5} />)
+			render(<Stepper min={-20} max={20} value={19} step={1.5} />),
 		).toMatchSnapshot();
 	});
 
@@ -26,8 +26,8 @@ describe('<Stepper />', () => {
 					value={25}
 					step={5}
 					format={value => `${value}%`}
-				/>
-			)
+				/>,
+			),
 		).toMatchSnapshot();
 	});
 
@@ -44,13 +44,13 @@ describe('<Stepper />', () => {
 				value={99}
 				step={0.5}
 				format={value => `$${value}`}
-			/>
+			/>,
 		);
 		expect(
 			stepper
 				.find('span')
 				.first()
-				.text()
+				.text(),
 		).toEqual('$99');
 	});
 
@@ -62,13 +62,13 @@ describe('<Stepper />', () => {
 				value={45}
 				step={1}
 				format={value => `${value}%`}
-			/>
+			/>,
 		);
 		expect(
 			stepper
 				.find('span')
 				.first()
-				.text()
+				.text(),
 		).toEqual('45%');
 	});
 
@@ -82,14 +82,14 @@ describe('<Stepper />', () => {
 				value={45}
 				step={5}
 				format={spyedCallback}
-			/>
+			/>,
 		);
 
 		expect(
 			wrapper
 				.find('span')
 				.first()
-				.text()
+				.text(),
 		).toEqual('45%');
 
 		wrapper
@@ -141,7 +141,7 @@ describe('<Stepper />', () => {
 					wrapper
 						.find('span')
 						.first()
-						.text()
+						.text(),
 				).toEqual('$16');
 
 				act(() => {
@@ -152,7 +152,7 @@ describe('<Stepper />', () => {
 					wrapper
 						.find('span')
 						.first()
-						.text()
+						.text(),
 				).toEqual('$199');
 
 				wrapper
@@ -164,7 +164,7 @@ describe('<Stepper />', () => {
 					wrapper
 						.find('span')
 						.first()
-						.text()
+						.text(),
 				).toEqual('$100');
 
 				act(() => {
@@ -180,7 +180,7 @@ describe('<Stepper />', () => {
 					wrapper
 						.find('span')
 						.first()
-						.text()
+						.text(),
 				).toEqual('$100');
 
 				expect(spyedCallback).toHaveBeenCalledTimes(7);
@@ -203,14 +203,14 @@ describe('<Stepper />', () => {
 				step={0.5}
 				value={1}
 				onChange={onChangeHandler}
-			/>
+			/>,
 		);
 
 		expect(
 			stepper
 				.find('span')
 				.first()
-				.text()
+				.text(),
 		).toEqual('1');
 
 		stepper

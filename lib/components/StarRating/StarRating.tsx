@@ -71,7 +71,7 @@ const getStarIconType = (index: number, rating: number): EStarType => {
 const getStar = (
 	index: number,
 	rating: number = 0,
-	size: ESize
+	size: ESize,
 ): ReactElement => {
 	const starType = getStarIconType(index, rating);
 	const star: () => JSX.Element =
@@ -98,7 +98,7 @@ const StarRatingComponent: FunctionComponent<IProps> = ({
 	{
 		warning(
 			ratingValue !== void 0,
-			'The `ratingValue` prop is deprecated, please use the `rating` prop'
+			'The `ratingValue` prop is deprecated, please use the `rating` prop',
 		);
 
 		if (ratingValue !== void 0) {

@@ -10,7 +10,7 @@ describe('<HintText />', () => {
 
 	it('should pass on className to dom element', () => {
 		const hint = mount(
-			<HintText className="hinted-class">{testLabel}</HintText>
+			<HintText className="hinted-class">{testLabel}</HintText>,
 		);
 		expect(hint.hasClass('hinted-class')).toBeTruthy();
 	});

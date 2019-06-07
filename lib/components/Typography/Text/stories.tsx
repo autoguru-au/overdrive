@@ -27,7 +27,7 @@ storiesOf('Foundation|Typography/Text', module)
 				and why it costs so much to replace or repair.
 			</Text>
 		),
-		{ notes: 'Used for multi-line "body" like content.' }
+		{ notes: 'Used for multi-line "body" like content.' },
 	)
 	.add("all the span's", () => (
 		<div>

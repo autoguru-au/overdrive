@@ -21,7 +21,7 @@ describe('<LinearProgressIndicator />', () => {
 		expect(
 			linearProgressIndicator
 				.find('div.root>div.linearProgressBar')
-				.exists()
+				.exists(),
 		).toEqual(true);
 		linearProgressIndicator.unmount();
 	});
@@ -31,21 +31,21 @@ describe('<LinearProgressIndicator />', () => {
 		expect(
 			linearProgressIndicator
 				.find(
-					'div.root>div.linearProgressBar>span.linearProgressBarInner'
+					'div.root>div.linearProgressBar>span.linearProgressBarInner',
 				)
-				.exists()
+				.exists(),
 		).toEqual(true);
 		linearProgressIndicator.unmount();
 	});
 
 	it('should pass on className to dom element', () => {
 		const linearProgressIndicator = shallow(
-			<LinearProgressIndicator className="linearProgressIndicator-class" />
+			<LinearProgressIndicator className="linearProgressIndicator-class" />,
 		);
 		expect(
 			linearProgressIndicator
 				.find('div.root')
-				.hasClass('linearProgressIndicator-class')
+				.hasClass('linearProgressIndicator-class'),
 		).toBeTruthy();
 	});
 });

@@ -26,7 +26,7 @@ describe('<StarRating />', () => {
 
 	it('should match snapshot with label', () => {
 		const rating = render(
-			<StarRating rating={3.8} label={'Hello World!'} />
+			<StarRating rating={3.8} label={'Hello World!'} />,
 		);
 		expect(rating).toMatchSnapshot();
 	});
@@ -37,7 +37,7 @@ describe('<StarRating />', () => {
 				rating={3.8}
 				label={'Hello World!'}
 				size={EStarRatingSize.Small}
-			/>
+			/>,
 		);
 		expect(rating).toMatchSnapshot();
 	});
@@ -48,7 +48,7 @@ describe('<StarRating />', () => {
 				rating={2.6}
 				label={'Hello World!'}
 				size={EStarRatingSize.Small}
-			/>
+			/>,
 		);
 		expect(rating.type()).toEqual(`span`);
 	});
@@ -59,7 +59,7 @@ describe('<StarRating />', () => {
 			rating
 				.find('span')
 				.at(0)
-				.hasClass('rating-class')
+				.hasClass('rating-class'),
 		).toBeTruthy();
 	});
 
@@ -69,7 +69,7 @@ describe('<StarRating />', () => {
 			rating
 				.find('span')
 				.at(2)
-				.text()
+				.text(),
 		).toEqual('4.1');
 		rating.unmount();
 	});
@@ -80,7 +80,7 @@ describe('<StarRating />', () => {
 			rating
 				.find('span')
 				.at(2)
-				.text()
+				.text(),
 		).toEqual('Hello World!');
 		rating.unmount();
 	});

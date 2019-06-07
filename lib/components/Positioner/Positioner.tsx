@@ -33,7 +33,7 @@ export const Positioner: FunctionComponent<IProps> = ({
 		triggerRef,
 		positionerRef,
 		isOpen,
-		onRequestClose
+		onRequestClose,
 	);
 
 	return createPortal(
@@ -45,7 +45,7 @@ export const Positioner: FunctionComponent<IProps> = ({
 			className={styles.root}>
 			{isOpen && children}
 		</div>,
-		document.body
+		document.body,
 	);
 };
 
@@ -54,10 +54,10 @@ function usePositionerEffect(
 	triggerRef: RefObject<HTMLElement>,
 	positionerRef: RefObject<HTMLElement>,
 	isOpen: boolean,
-	onRequestClose: () => void
+	onRequestClose: () => void,
 ) {
 	const [positionerPosition, setPositionerPosition] = useState<IPosition>(
-		null
+		null,
 	);
 
 	if (typeof onRequestClose === 'function') {
@@ -119,7 +119,7 @@ const defaultEvents = ['mousedown', 'touchstart'];
 
 const useOutsideClick = (
 	refs: Array<RefObject<HTMLElement>>,
-	onClickAway: (event: MouseEvent | TouchEvent) => void
+	onClickAway: (event: MouseEvent | TouchEvent) => void,
 ) => {
 	useEffect(() => {
 		const handler = event => {
@@ -135,12 +135,12 @@ const useOutsideClick = (
 		defaultEvents.forEach(ev =>
 			document.addEventListener(ev, handler, {
 				passive: true,
-			})
+			}),
 		);
 
 		return () => {
 			defaultEvents.forEach(ev =>
-				document.removeEventListener(ev, handler)
+				document.removeEventListener(ev, handler),
 			);
 		};
 	});

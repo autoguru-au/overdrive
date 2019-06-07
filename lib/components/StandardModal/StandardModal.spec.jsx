@@ -22,7 +22,7 @@ describe('<StandardModal />', () => {
 		const modal = mount(
 			<StandardModal title={testTitle} isOpen={true}>
 				<p>{testBodyText}</p>
-			</StandardModal>
+			</StandardModal>,
 		);
 
 		expect(modal.html()).toMatchSnapshot();
@@ -33,7 +33,7 @@ describe('<StandardModal />', () => {
 		const modal = mount(
 			<StandardModal title={testTitle} isOpen={true}>
 				<p>{testBodyText}</p>
-			</StandardModal>
+			</StandardModal>,
 		);
 		expect(modal.find('.modal').hasClass('modalSizeStandard')).toBeTruthy();
 		modal.unmount();
@@ -46,7 +46,7 @@ describe('<StandardModal />', () => {
 				isOpen={true}
 				size={EStandardModalSize.Standard}>
 				<p>{testBodyText}</p>
-			</StandardModal>
+			</StandardModal>,
 		);
 		expect(modal.find('.modal').hasClass('modalSizeStandard')).toBeTruthy();
 		modal.unmount();
@@ -56,7 +56,7 @@ describe('<StandardModal />', () => {
 		const modal = mount(
 			<StandardModal title={testTitle} isOpen={true}>
 				<p>{testBodyText}</p>
-			</StandardModal>
+			</StandardModal>,
 		);
 
 		expect(modal.find('header h4').text()).toEqual(testTitle);
@@ -67,7 +67,7 @@ describe('<StandardModal />', () => {
 		const modal = mount(
 			<StandardModal title={testTitle} isOpen={true}>
 				<p>{testBodyText}</p>
-			</StandardModal>
+			</StandardModal>,
 		);
 
 		expect(modal.find('.content').text()).toEqual(testBodyText);
@@ -86,7 +86,7 @@ describe('<StandardModal />', () => {
 					isOpen={true}
 					onRequestClose={mockCloseReq}>
 					<p>{testBodyText}</p>
-				</StandardModal>
+				</StandardModal>,
 			);
 		});
 

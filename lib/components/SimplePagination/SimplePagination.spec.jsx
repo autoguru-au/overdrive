@@ -7,7 +7,7 @@ describe('<SimplePagination />', () => {
 		expect(() => shallow(<SimplePagination />)).not.toThrow());
 	it('should not throw when onChange callback is undefined', () => {
 		const wrapper = mount(
-			<SimplePagination hasPrevious={true} hasNext={true} />
+			<SimplePagination hasPrevious={true} hasNext={true} />,
 		);
 		expect(() => {
 			wrapper
@@ -24,13 +24,13 @@ describe('<SimplePagination />', () => {
 
 	it('should match snapshot for hasPrevious', () => {
 		expect(
-			render(<SimplePagination hasPrevious={true} />)
+			render(<SimplePagination hasPrevious={true} />),
 		).toMatchSnapshot();
 	});
 
 	it('should match snapshot for hasNext and hasPrevious', () => {
 		expect(
-			render(<SimplePagination hasPrevious={true} hasNext={true} />)
+			render(<SimplePagination hasPrevious={true} hasNext={true} />),
 		).toMatchSnapshot();
 	});
 
@@ -42,7 +42,7 @@ describe('<SimplePagination />', () => {
 				hasPrevious={true}
 				hasNext={true}
 				onChange={spyedCallback}
-			/>
+			/>,
 		);
 
 		wrapper
@@ -62,7 +62,7 @@ describe('<SimplePagination />', () => {
 				hasPrevious={true}
 				hasNext={false}
 				onChange={spyedCallback}
-			/>
+			/>,
 		);
 
 		wrapper
@@ -71,7 +71,7 @@ describe('<SimplePagination />', () => {
 			.simulate('click');
 
 		expect(spyedCallback).not.toHaveBeenCalledWith(
-			EPageChangeDirection.Next
+			EPageChangeDirection.Next,
 		);
 		wrapper.unmount();
 	});
@@ -84,7 +84,7 @@ describe('<SimplePagination />', () => {
 				hasPrevious={true}
 				hasNext={true}
 				onChange={spyedCallback}
-			/>
+			/>,
 		);
 
 		wrapper
@@ -93,7 +93,7 @@ describe('<SimplePagination />', () => {
 			.simulate('click');
 
 		expect(spyedCallback).toHaveBeenCalledWith(
-			EPageChangeDirection.Previous
+			EPageChangeDirection.Previous,
 		);
 		wrapper.unmount();
 	});
@@ -106,7 +106,7 @@ describe('<SimplePagination />', () => {
 				hasPrevious={false}
 				hasNext={true}
 				onChange={spyedCallback}
-			/>
+			/>,
 		);
 
 		wrapper
@@ -115,7 +115,7 @@ describe('<SimplePagination />', () => {
 			.simulate('click');
 
 		expect(spyedCallback).not.toHaveBeenCalledWith(
-			EPageChangeDirection.Previous
+			EPageChangeDirection.Previous,
 		);
 		wrapper.unmount();
 	});

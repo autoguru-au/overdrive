@@ -64,7 +64,7 @@ describe('withModal()', () => {
 			const modal = mount(
 				<NakedModal isOpen={true}>
 					<p>Hello World!</p>
-				</NakedModal>
+				</NakedModal>,
 			);
 
 			expect(modal.find(ModalPortal).exists()).toBeTruthy();
@@ -77,7 +77,7 @@ describe('withModal()', () => {
 			const modal = mount(
 				<NakedModal isOpen={false}>
 					<p>Hello World!</p>
-				</NakedModal>
+				</NakedModal>,
 			);
 
 			expect(modal.find(ModalPortal).exists()).toBeTruthy();
@@ -88,7 +88,7 @@ describe('withModal()', () => {
 			const modal = mount(
 				<NakedModal isOpen={true}>
 					<p>Hello World!</p>
-				</NakedModal>
+				</NakedModal>,
 			);
 
 			expect(
@@ -96,7 +96,7 @@ describe('withModal()', () => {
 					.find(ModalPortal)
 					.render()
 					.html()
-					.includes('Hello World!')
+					.includes('Hello World!'),
 			).toBeTruthy();
 			modal.unmount();
 		});
@@ -108,7 +108,7 @@ describe('withModal()', () => {
 			const modal = mount(
 				<NakedModal isOpen={true}>
 					<p>Hello World!</p>
-				</NakedModal>
+				</NakedModal>,
 			);
 
 			expect(() => {
@@ -124,7 +124,7 @@ describe('withModal()', () => {
 			const modal = mount(
 				<NakedModal onRequestClose={cb} isOpen={true}>
 					<p>Hello World!</p>
-				</NakedModal>
+				</NakedModal>,
 			);
 
 			modal.find(ModalPortal).prop('onRequestClose')();
@@ -142,7 +142,7 @@ describe('withModal()', () => {
 				modal = mount(
 					<NakedModal onRequestClose={cb} isOpen={true}>
 						<p>Hello World!</p>
-					</NakedModal>
+					</NakedModal>,
 				);
 			});
 
@@ -151,7 +151,7 @@ describe('withModal()', () => {
 					new MouseEvent('mouseup', {
 						bubbles: true,
 						cancelable: true,
-					})
+					}),
 				);
 			});
 
@@ -168,7 +168,7 @@ describe('withModal()', () => {
 				modal = mount(
 					<NakedModal onRequestClose={cb} isOpen={false}>
 						<p>Hello World!</p>
-					</NakedModal>
+					</NakedModal>,
 				);
 			});
 
@@ -177,7 +177,7 @@ describe('withModal()', () => {
 					new MouseEvent('mouseup', {
 						bubbles: true,
 						cancelable: true,
-					})
+					}),
 				);
 			});
 
@@ -198,7 +198,7 @@ describe('withModal()', () => {
 
 		act(() => {
 			document.body.dispatchEvent(
-				new MouseEvent('mouseup', { bubbles: true, cancelable: true })
+				new MouseEvent('mouseup', { bubbles: true, cancelable: true }),
 			);
 		});
 
@@ -229,7 +229,7 @@ describe('withModal()', () => {
 					new MouseEvent('mouseup', {
 						bubbles: true,
 						cancelable: true,
-					})
+					}),
 				);
 		});
 
@@ -248,7 +248,7 @@ describe('withModal()', () => {
 			});
 
 			expect(
-				document.body.querySelector('.modalPortalIsOpen')
+				document.body.querySelector('.modalPortalIsOpen'),
 			).toBeTruthy();
 
 			act(() => {
@@ -256,12 +256,12 @@ describe('withModal()', () => {
 					new MouseEvent('mouseup', {
 						bubbles: true,
 						cancelable: true,
-					})
+					}),
 				);
 			});
 
 			expect(
-				document.body.querySelector('.modalPortalIsOpen')
+				document.body.querySelector('.modalPortalIsOpen'),
 			).toBeFalsy();
 
 			expect(document.body.querySelector('.modalPortal')).toBeTruthy();
@@ -281,7 +281,7 @@ describe('withModal()', () => {
 					new MouseEvent('mouseup', {
 						bubbles: true,
 						cancelable: true,
-					})
+					}),
 				);
 			});
 

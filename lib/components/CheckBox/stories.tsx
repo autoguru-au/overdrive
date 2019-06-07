@@ -48,8 +48,8 @@ storiesOf('Components|Inputs/CheckBox', module)
 
 						return values;
 					},
-					{}
-				)
+					{},
+				),
 			);
 
 			return (

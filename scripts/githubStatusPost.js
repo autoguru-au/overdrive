@@ -10,7 +10,7 @@ Thanks seek: https://github.com/seek-oss/braid-design-system/blob/master/scripts
 
 		if (!GH_TOKEN || !TRAVIS_PULL_REQUEST_SHA) {
 			throw new Error(
-				'GH_TOKEN and TRAVIS_PULL_REQUEST_SHA environment variables must be present'
+				'GH_TOKEN and TRAVIS_PULL_REQUEST_SHA environment variables must be present',
 			);
 		}
 

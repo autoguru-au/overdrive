@@ -48,5 +48,5 @@ export const StandardModal = withModal<IProps>(
 				<main className={styles.content}>{children}</main>
 			</article>
 		);
-	}
+	},
 );

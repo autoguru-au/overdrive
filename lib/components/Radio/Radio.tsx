@@ -39,5 +39,5 @@ export const Radio: FunctionComponent<IProps> = memo(
 				</div>
 			</CheckableBase>
 		);
-	}
+	},
 );

@@ -26,7 +26,7 @@ export const Text: FunctionComponent<IProps> = ({
 				[styles.muted]: muted,
 				[styles.strong]: strong,
 			},
-			className
+			className,
 		)}
 		children={children}
 	/>

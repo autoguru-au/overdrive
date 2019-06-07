@@ -37,12 +37,12 @@ export const PaginationComponent: FunctionComponent<IProps> = ({
 		num => () => {
 			onChange({ pageNumber: withinBoundaries(num, numPages) });
 		},
-		[numPages]
+		[numPages],
 	);
 
 	const allowedActive: number = useMemo(
 		() => withinBoundaries(activePage, numPages),
-		[activePage, numPages]
+		[activePage, numPages],
 	);
 
 	const cls = clsx([styles.pagination, className]);
@@ -68,7 +68,7 @@ export const PaginationComponent: FunctionComponent<IProps> = ({
 				numPages,
 				allowedActive,
 				numPagesDisplayed,
-				numPages - numPagesDisplayed
+				numPages - numPagesDisplayed,
 			).map(num => (
 				<Bubble
 					gap={num < 0}
@@ -107,7 +107,7 @@ function generateDefaultArray(numPages: number): Array<number> {
 function generateJumpForwardArray(
 	numPages: number,
 	activePage: number,
-	numPagesDisplayed: number
+	numPagesDisplayed: number,
 ): Array<number> {
 	return generateDefaultArray(numPagesDisplayed).map((_, index) => {
 		const num: number = index + 1;
@@ -125,16 +125,16 @@ function generateJumpForwardArray(
 
 function generateNoJumpArray(
 	numPagesDisplayed: number,
-	rightBoundary: number
+	rightBoundary: number,
 ): Array<number> {
 	return generateDefaultArray(numPagesDisplayed).map(
-		(_, index) => rightBoundary + index + 1
+		(_, index) => rightBoundary + index + 1,
 	);
 }
 
 function generateJumpBackwardArray(
 	numPages: number,
-	numPagesDisplayed: number
+	numPagesDisplayed: number,
 ): Array<number> {
 	return generateDefaultArray(numPagesDisplayed).map((_, index) => {
 		const num: number = index + 1;
@@ -154,7 +154,7 @@ function buildPagesList(
 	numPages: number,
 	activePage: number,
 	numPagesDisplayed: number,
-	rightBoundary: number
+	rightBoundary: number,
 ): Array<number> {
 	if (numPages <= numPagesDisplayed) {
 		return generateDefaultArray(numPages);
@@ -163,7 +163,7 @@ function buildPagesList(
 		return generateJumpForwardArray(
 			numPages,
 			activePage,
-			numPagesDisplayed
+			numPagesDisplayed,
 		);
 	}
 	if (activePage > rightBoundary && activePage <= rightBoundary + 2) {

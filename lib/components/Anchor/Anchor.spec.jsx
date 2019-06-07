@@ -21,21 +21,21 @@ describe('<Anchor />', () => {
 
 	it('should match snapshot with label, icon and to props', () => {
 		const anchor = shallow(
-			<Anchor icon={TestIcon} label={testLabel} href={testLink} />
+			<Anchor icon={TestIcon} label={testLabel} href={testLink} />,
 		);
 		expect(anchor).toMatchSnapshot();
 	});
 
 	it('should add an a dom element', () => {
 		const anchor = shallow(
-			<Anchor className="anchor-class" label={testLabel} />
+			<Anchor className="anchor-class" label={testLabel} />,
 		);
 		expect(anchor.type()).toEqual(`a`);
 	});
 
 	it('should pass on className to dom element', () => {
 		const anchor = shallow(
-			<Anchor className="anchor-class" label={testLabel} />
+			<Anchor className="anchor-class" label={testLabel} />,
 		);
 		expect(anchor.find('a').hasClass('anchor-class')).toBeTruthy();
 	});
@@ -48,14 +48,14 @@ describe('<Anchor />', () => {
 
 	it('should the icon passed in props', () => {
 		const anchor = shallow(
-			<Anchor icon={TestIcon} label={testLabel} href={testLink} />
+			<Anchor icon={TestIcon} label={testLabel} href={testLink} />,
 		);
 		expect(anchor.find('.icon').exists()).toBeTruthy();
 	});
 
 	it("should use the 'to' prop value for the a tag's href value", () => {
 		const anchor = shallow(
-			<Anchor icon={TestIcon} label={testLabel} href={testLink} />
+			<Anchor icon={TestIcon} label={testLabel} href={testLink} />,
 		);
 		expect(anchor.find('a').prop('href')).toEqual(testLink);
 	});
@@ -67,7 +67,7 @@ describe('<Anchor />', () => {
 					className="anchor-class"
 					label={testLabel}
 					is={<Button />}
-				/>
+				/>,
 			);
 			expect(anchor.find(Button)).toBeTruthy();
 		});
@@ -79,7 +79,7 @@ describe('<Anchor />', () => {
 					is={<Button />}
 					label={testLabel}
 					to={testLink}
-				/>
+				/>,
 			);
 			expect(anchor).toMatchSnapshot();
 		});
@@ -91,7 +91,7 @@ describe('<Anchor />', () => {
 						className="anchor-class"
 						label={testLabel}
 						component={Button}
-					/>
+					/>,
 				);
 				expect(anchor.find(Button)).toBeTruthy();
 			});
@@ -103,7 +103,7 @@ describe('<Anchor />', () => {
 						compnent={Button}
 						label={testLabel}
 						to={testLink}
-					/>
+					/>,
 				);
 				expect(anchor).toMatchSnapshot();
 			});

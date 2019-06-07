@@ -42,7 +42,7 @@ const SwitchComponent: FunctionComponent<IProps> = ({
 				{
 					[styles.toggled]: toggled,
 				},
-				className
+				className,
 			)}
 			aria-disabled={disabled}
 			aria-label="toggle value"

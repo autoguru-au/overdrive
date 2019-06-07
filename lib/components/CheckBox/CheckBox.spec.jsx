@@ -12,19 +12,19 @@ describe('<CheckBox />', () => {
 
 	it('should match the snapshot for a single check', () =>
 		expect(
-			render(<CheckBox value="1" label="check label 1" />)
+			render(<CheckBox value="1" label="check label 1" />),
 		).toMatchSnapshot());
 
 	it('should match the snapshot for a checked check', () =>
 		expect(
-			render(<CheckBox value="1" label="check label 1" checked={true} />)
+			render(<CheckBox value="1" label="check label 1" checked={true} />),
 		).toMatchSnapshot());
 
 	it('should match the snapshot for a focused check', () =>
 		expect(
 			mount(<CheckBox value="1" label="check label 1" />)
 				.find(CheckBox)
-				.simulate('focus')
+				.simulate('focus'),
 		).toMatchSnapshot());
 
 	it('should pass on className to dom element', () => {
@@ -41,7 +41,7 @@ describe('<CheckBox />', () => {
 					value="1"
 					label="check label 1"
 					onClick={spyedClickCallback}
-				/>
+				/>,
 			);
 		});
 
@@ -55,17 +55,17 @@ describe('<CheckBox />', () => {
 
 	it('should pass the cheked value to the native element', () => {
 		const checkBoxUnchecked = mount(
-			<CheckBox value="1" label="check label 1" checked={false} />
+			<CheckBox value="1" label="check label 1" checked={false} />,
 		);
 		const checkBoxChecked = mount(
-			<CheckBox value="1" label="check label 1" checked={true} />
+			<CheckBox value="1" label="check label 1" checked={true} />,
 		);
 		expect(
 			checkBoxUnchecked.find("input[type='checkbox']").getDOMNode()
-				.checked
+				.checked,
 		).toEqual(false);
 		expect(
-			checkBoxChecked.find("input[type='checkbox']").getDOMNode().checked
+			checkBoxChecked.find("input[type='checkbox']").getDOMNode().checked,
 		).toEqual(true);
 	});
 
@@ -78,7 +78,7 @@ describe('<CheckBox />', () => {
 					value="1"
 					label="check label 1"
 					onChange={spyedChangeCallback}
-				/>
+				/>,
 			);
 		});
 

@@ -5,7 +5,9 @@ import { NumberInput } from './NumberInput';
 describe('<NumberInput />', () => {
 	it('should not throw', () => {
 		expect(() =>
-			mount(<NumberInput placeholder="placeholder something" />).unmount()
+			mount(
+				<NumberInput placeholder="placeholder something" />,
+			).unmount(),
 		).not.toThrow();
 	});
 
@@ -14,7 +16,7 @@ describe('<NumberInput />', () => {
 			<NumberInput
 				className="number-input-class"
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		expect(numberInput.find('input').prop('type')).toEqual('number');
 		numberInput.unmount();
@@ -25,7 +27,7 @@ describe('<NumberInput />', () => {
 			<NumberInput
 				className="number-input-class"
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		expect(numberInput.hasClass('number-input-class')).toBeTruthy();
 		numberInput.unmount();
@@ -36,7 +38,7 @@ describe('<NumberInput />', () => {
 			<NumberInput
 				className="number-input-class"
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		expect(numberInput).toMatchSnapshot();
 	});
@@ -46,7 +48,7 @@ describe('<NumberInput />', () => {
 			<NumberInput
 				className="number-input-class"
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 
 		numberInput.find('input').simulate('focus');
@@ -65,7 +67,7 @@ describe('<NumberInput />', () => {
 				isTouched={true}
 				className="number-input-class"
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		expect(numberInput).toMatchSnapshot();
 	});
@@ -77,7 +79,7 @@ describe('<NumberInput />', () => {
 				isValid={true}
 				className="number-input-class"
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		expect(numberInput).toMatchSnapshot();
 	});
@@ -89,17 +91,17 @@ describe('<NumberInput />', () => {
 				isValid={false}
 				className="number-input-class"
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		expect(numberInput).toMatchSnapshot();
 	});
 
 	it('should display placeholder text', () => {
 		const numberInput = render(
-			<NumberInput placeholder="placeholder something" />
+			<NumberInput placeholder="placeholder something" />,
 		);
 		expect(numberInput.find('label').text()).toEqual(
-			'placeholder something'
+			'placeholder something',
 		);
 	});
 
@@ -109,7 +111,7 @@ describe('<NumberInput />', () => {
 			<NumberInput
 				onFocus={spyedCallback}
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		numberInput.find('input').simulate('focus');
 
@@ -123,7 +125,7 @@ describe('<NumberInput />', () => {
 			<NumberInput
 				onBlur={spyedCallback}
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		numberInput.find('input').simulate('blur');
 
@@ -137,7 +139,7 @@ describe('<NumberInput />', () => {
 			<NumberInput
 				onChange={spyedCallback}
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		numberInput.find('input').simulate('change');
 

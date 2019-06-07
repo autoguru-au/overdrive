@@ -22,7 +22,7 @@ async function run() {
 		createRollupConfig({
 			entry,
 			outputPath: distFolder,
-		})
+		}),
 	);
 
 	let outputs = await Promise.all([
@@ -62,7 +62,7 @@ run()
 				logLabel('Entry:', entryPath);
 				logLabel(
 					'Output:',
-					relative(root, resolve(distFolder, bundle.fileName))
+					relative(root, resolve(distFolder, bundle.fileName)),
 				);
 				logLabel('Externals:', bundle.imports.sort().join(', '));
 
@@ -78,8 +78,8 @@ run()
 			dim(
 				`==> ${relative(root, err.loc.file)}:${err.loc.line}:${
 					err.loc.column
-				}`
-			)
+				}`,
+			),
 		);
 		console.log(err.frame);
 		console.log('');

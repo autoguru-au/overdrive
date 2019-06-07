@@ -88,7 +88,7 @@ const StepperComponent: FunctionComponent<IProps> = ({
 				min,
 				max,
 			}),
-		[step, min, max]
+		[step, min, max],
 	);
 	const onIncrement = useCallback(
 		() =>
@@ -98,7 +98,7 @@ const StepperComponent: FunctionComponent<IProps> = ({
 				min,
 				max,
 			}),
-		[step, min, max]
+		[step, min, max],
 	);
 
 	if (prevValue.current !== value) {

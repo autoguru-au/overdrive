@@ -14,7 +14,7 @@ const baseProps = (
 	activePage: number = 3,
 	total: number = 99,
 	pageSize: number = 10,
-	numPagesDisplayed: number = 5
+	numPagesDisplayed: number = 5,
 ) => ({
 	activePage: number('Active Page', activePage, defaultNumberOptions),
 	total: number('Total Records', total, defaultNumberOptions),
@@ -22,7 +22,7 @@ const baseProps = (
 	numPagesDisplayed: number(
 		'Displayed Page Bubbles Number',
 		numPagesDisplayed,
-		defaultNumberOptions
+		defaultNumberOptions,
 	),
 });
 storiesOf('Components|Pagination/Numbered', module)

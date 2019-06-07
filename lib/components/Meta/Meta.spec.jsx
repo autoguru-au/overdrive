@@ -21,7 +21,7 @@ describe('<Meta />', () => {
 				icon={TestIcon}
 				label={'Hello World!'}
 				varian={EMetaVariant.Primary}
-			/>
+			/>,
 		);
 		expect(meta).toMatchSnapshot();
 	});
@@ -32,7 +32,7 @@ describe('<Meta />', () => {
 				icon={TestIcon}
 				label={'Hello World!'}
 				varian={EMetaVariant.Secondary}
-			/>
+			/>,
 		);
 		expect(meta).toMatchSnapshot();
 	});
@@ -44,14 +44,14 @@ describe('<Meta />', () => {
 
 	it('should add a span dom element', () => {
 		const meta = shallow(
-			<Meta className="meta-class" label={'Hello World!'} />
+			<Meta className="meta-class" label={'Hello World!'} />,
 		);
 		expect(meta.type()).toEqual(`span`);
 	});
 
 	it('should pass on className to dom element', () => {
 		const meta = shallow(
-			<Meta className="meta-class" label={'Hello World!'} />
+			<Meta className="meta-class" label={'Hello World!'} />,
 		);
 		expect(meta.find('span').hasClass('meta-class')).toBeTruthy();
 	});

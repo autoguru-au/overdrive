@@ -15,7 +15,7 @@ describe('<Pagination />', () => {
 			render(<Pagination total={100} activePage={1} pageSize={10} />)
 				.find('button')
 				.slice(-2)
-				.text()
+				.text(),
 		).toEqual('10');
 	});
 
@@ -24,7 +24,7 @@ describe('<Pagination />', () => {
 			render(<Pagination total={101} activePage={1} pageSize={10} />)
 				.find('button')
 				.slice(-2)
-				.text()
+				.text(),
 		).toEqual('11');
 	});
 
@@ -32,7 +32,7 @@ describe('<Pagination />', () => {
 		expect(
 			render(<Pagination total={101} activePage={1} pageSize={10} />)
 				.find('button:nth-of-type(5)')
-				.text()
+				.text(),
 		).toEqual('...');
 	});
 
@@ -40,7 +40,7 @@ describe('<Pagination />', () => {
 		expect(
 			render(<Pagination total={101} activePage={9} pageSize={10} />)
 				.find('button:nth-of-type(3)')
-				.text()
+				.text(),
 		).toEqual('...');
 	});
 
@@ -48,27 +48,27 @@ describe('<Pagination />', () => {
 		expect(
 			render(<Pagination total={50} activePage={1} pageSize={10} />)
 				.find('button:nth-of-type(2)')
-				.text()
+				.text(),
 		).toEqual('1');
 		expect(
 			render(<Pagination total={50} activePage={1} pageSize={10} />)
 				.find('button:nth-of-type(3)')
-				.text()
+				.text(),
 		).toEqual('2');
 		expect(
 			render(<Pagination total={50} activePage={1} pageSize={10} />)
 				.find('button:nth-of-type(4)')
-				.text()
+				.text(),
 		).toEqual('3');
 		expect(
 			render(<Pagination total={50} activePage={1} pageSize={10} />)
 				.find('button:nth-of-type(5)')
-				.text()
+				.text(),
 		).toEqual('4');
 		expect(
 			render(<Pagination total={50} activePage={1} pageSize={10} />)
 				.find('button:nth-of-type(6)')
-				.text()
+				.text(),
 		).toEqual('5');
 	});
 
@@ -76,19 +76,19 @@ describe('<Pagination />', () => {
 		expect(
 			render(<Pagination total={95} activePage={6} pageSize={10} />)
 				.find('button:nth-of-type(2)')
-				.text()
+				.text(),
 		).toEqual('6');
 		expect(
 			render(<Pagination total={95} activePage={7} pageSize={10} />)
 				.find('button:nth-of-type(2)')
-				.text()
+				.text(),
 		).toEqual('6');
 	});
 
 	describe('with an onChange handler', () => {
 		it('should have a default onChange handler', () => {
 			const wrapper = mount(
-				<Pagination total={95} activePage={7} pageSize={10} />
+				<Pagination total={95} activePage={7} pageSize={10} />,
 			);
 
 			// This test works, and is validated with code coverage.
@@ -109,7 +109,7 @@ describe('<Pagination />', () => {
 					activePage={7}
 					pageSize={10}
 					onChange={spyedCallback}
-				/>
+				/>,
 			);
 
 			wrapper
@@ -129,7 +129,7 @@ describe('<Pagination />', () => {
 					activePage={1}
 					pageSize={10}
 					onChange={spyedCallback}
-				/>
+				/>,
 			);
 
 			wrapper

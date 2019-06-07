@@ -27,7 +27,7 @@ export const ModalPortal: FunctionComponent<IProps> = ({
 	/* istanbul ignore next: our testing context has a document */
 	invariant(
 		typeof document === void 0,
-		'Modals only work on targets with a document'
+		'Modals only work on targets with a document',
 	);
 
 	useLayoutEffect(() => {
@@ -61,6 +61,6 @@ export const ModalPortal: FunctionComponent<IProps> = ({
 				</div>
 			</div>
 		</div>,
-		document.body
+		document.body,
 	);
 };

@@ -6,7 +6,7 @@ const testLabel = 'Hello World!';
 describe('<SelectInput />', () => {
 	it('should not throw', () => {
 		expect(() =>
-			mount(<SelectInput placeholder={testLabel} />).unmount()
+			mount(<SelectInput placeholder={testLabel} />).unmount(),
 		).not.toThrow();
 	});
 
@@ -22,7 +22,7 @@ describe('<SelectInput />', () => {
 				<option value="a">Value 1</option>
 				<option value="b">Value 2</option>
 				<option value="c">Value 3</option>
-			</SelectInput>
+			</SelectInput>,
 		);
 
 		expect(selectInput).toMatchSnapshot();
@@ -35,7 +35,7 @@ describe('<SelectInput />', () => {
 			<SelectInput
 				className="select-input-class"
 				placeholder={testLabel}
-			/>
+			/>,
 		);
 		expect(selectInput.hasClass('select-input-class')).toBeTruthy();
 		selectInput.unmount();
@@ -46,7 +46,7 @@ describe('<SelectInput />', () => {
 			<SelectInput
 				className="select-input-class"
 				placeholder={testLabel}
-			/>
+			/>,
 		);
 		expect(selectInput).toMatchSnapshot();
 	});
@@ -55,7 +55,7 @@ describe('<SelectInput />', () => {
 		const selectInput = mount(
 			<SelectInput className="select-input-class" placeholder={testLabel}>
 				<option value="value1">ValueA</option>
-			</SelectInput>
+			</SelectInput>,
 		);
 
 		selectInput.find('select').simulate('focus');
@@ -76,7 +76,7 @@ describe('<SelectInput />', () => {
 				isTouched={true}
 				className="select-input-class"
 				placeholder={testLabel}
-			/>
+			/>,
 		);
 		expect(selectInput).toMatchSnapshot();
 	});
@@ -88,7 +88,7 @@ describe('<SelectInput />', () => {
 				isValid={true}
 				className="select-input-class"
 				placeholder={testLabel}
-			/>
+			/>,
 		);
 		expect(selectInput).toMatchSnapshot();
 	});
@@ -100,7 +100,7 @@ describe('<SelectInput />', () => {
 				isValid={false}
 				className="select-input-class"
 				placeholder={testLabel}
-			/>
+			/>,
 		);
 		expect(selectInput).toMatchSnapshot();
 	});
@@ -113,7 +113,7 @@ describe('<SelectInput />', () => {
 	it('should fire onFocus event', () => {
 		const spyedCallback = jest.fn();
 		const selectInput = mount(
-			<SelectInput onFocus={spyedCallback} placeholder={testLabel} />
+			<SelectInput onFocus={spyedCallback} placeholder={testLabel} />,
 		);
 		selectInput.find('select').simulate('focus');
 
@@ -124,7 +124,7 @@ describe('<SelectInput />', () => {
 	it('should fire onBlur event', () => {
 		const spyedCallback = jest.fn();
 		const selectInput = mount(
-			<SelectInput onBlur={spyedCallback} placeholder={testLabel} />
+			<SelectInput onBlur={spyedCallback} placeholder={testLabel} />,
 		);
 		selectInput.find('select').simulate('blur');
 
@@ -135,7 +135,7 @@ describe('<SelectInput />', () => {
 	it('should fire onChange event', () => {
 		const spyedCallback = jest.fn();
 		const selectInput = mount(
-			<SelectInput onChange={spyedCallback} placeholder={testLabel} />
+			<SelectInput onChange={spyedCallback} placeholder={testLabel} />,
 		);
 		selectInput.find('select').simulate('change');
 

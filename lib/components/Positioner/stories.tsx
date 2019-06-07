@@ -89,5 +89,5 @@ storiesOf('Utility|Positioner', module)
 				</div>
 			);
 		},
-		{ chromatic: { disable: true } }
+		{ chromatic: { disable: true } },
 	);

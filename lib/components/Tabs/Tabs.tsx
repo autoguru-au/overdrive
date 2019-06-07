@@ -11,7 +11,7 @@ import { IProps as ITabProps } from './Tab';
 import { TabNavItem } from './TabNavItem';
 import { TabPane } from './TabPane';
 
-type ComponentWithChildren<P> = P & { children?: ReactNode };
+type ComponentWithChildren<P,> = P & { children?: ReactNode };
 
 export interface IProps {
 	active?: number;

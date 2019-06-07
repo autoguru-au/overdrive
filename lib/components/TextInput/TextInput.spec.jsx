@@ -5,7 +5,7 @@ import { mount, render } from 'enzyme';
 describe('<TextInput />', () => {
 	it('should match snapshot', () => {
 		expect(
-			render(<TextInput placeholder="placeholder something" id="id" />)
+			render(<TextInput placeholder="placeholder something" id="id" />),
 		).toMatchSnapshot();
 	});
 
@@ -21,7 +21,7 @@ describe('<TextInput />', () => {
 				placeholder="placeholder"
 				id="id"
 				hintText={hintText()}
-			/>
+			/>,
 		);
 
 		expect(rendered).toMatchSnapshot();
@@ -34,7 +34,7 @@ describe('<TextInput />', () => {
 			<TextInput
 				className="text-input-class"
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		expect(textInput.find('input').prop('type')).toEqual('text');
 		textInput.unmount();
@@ -45,7 +45,7 @@ describe('<TextInput />', () => {
 			<TextInput
 				className="text-input-class"
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		expect(textInput.hasClass('text-input-class')).toBeTruthy();
 		textInput.unmount();
@@ -56,7 +56,7 @@ describe('<TextInput />', () => {
 			<TextInput
 				className="text-input-class"
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		expect(textInput).toMatchSnapshot();
 	});
@@ -66,7 +66,7 @@ describe('<TextInput />', () => {
 			<TextInput
 				className="text-input-class"
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 
 		textInput.find('input').simulate('focus');
@@ -87,7 +87,7 @@ describe('<TextInput />', () => {
 				isTouched={true}
 				className="text-input-class"
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		expect(textInput).toMatchSnapshot();
 	});
@@ -99,7 +99,7 @@ describe('<TextInput />', () => {
 				isValid={true}
 				className="text-input-class"
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		expect(textInput).toMatchSnapshot();
 	});
@@ -111,14 +111,14 @@ describe('<TextInput />', () => {
 				isValid={false}
 				className="text-input-class"
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		expect(textInput).toMatchSnapshot();
 	});
 
 	it('should display placeholder text', () => {
 		const textInput = render(
-			<TextInput placeholder="placeholder something" />
+			<TextInput placeholder="placeholder something" />,
 		);
 		expect(textInput.find('label').text()).toEqual('placeholder something');
 	});
@@ -129,7 +129,7 @@ describe('<TextInput />', () => {
 			<TextInput
 				onFocus={spyedCallback}
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		textInput.find('input').simulate('focus');
 
@@ -143,7 +143,7 @@ describe('<TextInput />', () => {
 			<TextInput
 				onBlur={spyedCallback}
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		textInput.find('input').simulate('blur');
 
@@ -157,7 +157,7 @@ describe('<TextInput />', () => {
 			<TextInput
 				onChange={spyedCallback}
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		textInput.find('input').simulate('change');
 

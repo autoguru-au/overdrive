@@ -2,19 +2,19 @@ import React, { ComponentType, FunctionComponent } from 'react';
 import { ECloseCode } from './enums';
 import { ModalPortal } from './ModalPortal';
 
-export type TRequestCloseCallback<Payload> = (
+export type TRequestCloseCallback<Payload,> = (
 	e: ECloseCode,
-	payload?: Payload
+	payload?: Payload,
 ) => void;
 
-export interface IProps<Payload> {
+export interface IProps<Payload,> {
 	isOpen: boolean;
 
 	onRequestClose?: TRequestCloseCallback<Payload>;
 }
 
 export const withModal = <TIncomingProps extends {} = {}, Payload = any>(
-	WrappedComponent: ComponentType<IProps<Payload> & TIncomingProps>
+	WrappedComponent: ComponentType<IProps<Payload> & TIncomingProps>,
 ): FunctionComponent<IProps<Payload> & TIncomingProps> => ({
 	onRequestClose = () => void 0,
 	isOpen,
@@ -25,7 +25,7 @@ export const withModal = <TIncomingProps extends {} = {}, Payload = any>(
 			<WrappedComponent
 				onRequestClose={onRequestClose}
 				isOpen={isOpen}
-				{...rest as TIncomingProps}
+				{...(rest as TIncomingProps)}
 			/>
 		)}
 	</ModalPortal>

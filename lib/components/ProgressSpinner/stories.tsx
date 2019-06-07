@@ -14,7 +14,7 @@ const baseProps = () => ({
 	variant: select(
 		'Variant',
 		EProgressSpinnerVariant,
-		EProgressSpinnerVariant.Primary
+		EProgressSpinnerVariant.Primary,
 	),
 	onClick(e) {
 		e.preventDefault();

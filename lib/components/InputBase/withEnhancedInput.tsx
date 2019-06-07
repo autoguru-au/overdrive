@@ -38,20 +38,20 @@ export interface IValidationProps {
 }
 
 // An amalgamation of the HoC props, event handlers and the consumer props.
-export type EnhanceInputProps<IncomingProps = {}> = IncomingProps &
+export type EnhanceInputProps<IncomingProps = {},> = IncomingProps &
 	IEnhanceInputPrimitiveProps &
 	IEventHandlers &
 	IValidationProps;
 
 // The final props we send into thw wrapping component
-export type WrappedComponentProps<IncomingProps = {}> = {
+export type WrappedComponentProps<IncomingProps = {},> = {
 	validation: IValidationProps;
 	eventHandlers: IEventHandlers;
 	field: Omit<IEnhanceInputPrimitiveProps, 'placeholder' | 'hintText'>;
 } & IncomingProps;
 
-export function withEnhancedInput<IncomingProps = {}>(
-	WrappingComponent: ComponentType<WrappedComponentProps<IncomingProps>>
+export function withEnhancedInput<IncomingProps = {},>(
+	WrappingComponent: ComponentType<WrappedComponentProps<IncomingProps>>,
 ): ComponentType<EnhanceInputProps<IncomingProps>> {
 	type TProps = EnhanceInputProps<IncomingProps>;
 
@@ -65,7 +65,7 @@ export function withEnhancedInput<IncomingProps = {}>(
 			(WrappingComponent as any).name})`;
 
 		public static getDerivedStateFromProps(
-			nextProps: TProps
+			nextProps: TProps,
 		): Partial<IState> | null {
 			if ('value' in nextProps) {
 				return { value: nextProps.value || '' };

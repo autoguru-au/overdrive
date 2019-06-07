@@ -33,7 +33,7 @@ let svgs = glob.sync('*.svg', { cwd: iconsFolderPath }).map(icon =>
 			.toLowerCase()
 			.replace(/[^a-zA-Z0-9]+(.)/g, (match, chr) => chr.toUpperCase()),
 		content,
-	}))
+	})),
 );
 
 // Generate a file per icons, that exports a React Function Component.
@@ -42,15 +42,15 @@ svgs = svgs.map(item =>
 		const iconOutputPath = path.join(outputFolderPath, `${icon.name}.tsx`);
 		const component = COMPONENT_TEMPLATE.replace(
 			/%name%/g,
-			icon.name
+			icon.name,
 		).replace('%content%', icon.content.toString('utf8'));
 		const file = Buffer.from(prettier(format(BANNER_TEMPLATE, component)));
 
 		console.log(
 			`${dim('Icon:')} ${cyan(icon.name)} => ${path.relative(
 				root,
-				iconOutputPath
-			)}`
+				iconOutputPath,
+			)}`,
 		);
 
 		return writeFile(iconOutputPath, file).then(() => ({
@@ -58,7 +58,7 @@ svgs = svgs.map(item =>
 			file,
 			iconOutputPath,
 		}));
-	})
+	}),
 );
 
 Promise.all(svgs)
@@ -68,15 +68,15 @@ Promise.all(svgs)
 				`export {default as %sIcon} from './%s';`,
 				icon.name,
 				path.parse(path.relative(outputFolderPath, icon.iconOutputPath))
-					.name
-			)
+					.name,
+			),
 		);
 
 		const reexport = prettier(format(BANNER_TEMPLATE, exports.join('\n')));
 
 		return writeFile(
 			path.join(outputFolderPath, 'index.ts'),
-			reexport
+			reexport,
 		).then(() => completed);
 	})
 	.then(completed => {

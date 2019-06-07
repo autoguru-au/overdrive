@@ -26,8 +26,8 @@ describe('<Tabs />', () => {
 			shallow(
 				<Tab title="tab">
 					<p>Tab content</p>
-				</Tab>
-			)
+				</Tab>,
+			),
 		).toThrow());
 
 	it('should not throw', () => expect(() => shallow(<Tabs />)).not.toThrow());
@@ -41,8 +41,8 @@ describe('<Tabs />', () => {
 							{tabData.content}
 						</Tab>
 					))}
-				</Tabs>
-			)
+				</Tabs>,
+			),
 		).not.toThrow());
 
 	it('should match snapshot with nested tab items', () => {
@@ -53,7 +53,7 @@ describe('<Tabs />', () => {
 						{tabData.content}
 					</Tab>
 				))}
-			</Tabs>
+			</Tabs>,
 		);
 		expect(tabs.html()).toMatchSnapshot();
 
@@ -68,26 +68,26 @@ describe('<Tabs />', () => {
 						{tabData.content}
 					</Tab>
 				))}
-			</Tabs>
+			</Tabs>,
 		);
 
 		expect(
 			tabs
 				.find('.tabPane')
 				.at(0)
-				.hasClass('tabPaneActive')
+				.hasClass('tabPaneActive'),
 		).toEqual(true);
 		expect(
 			tabs
 				.find('.tabPane')
 				.at(1)
-				.hasClass('tabPaneActive')
+				.hasClass('tabPaneActive'),
 		).toEqual(false);
 		expect(
 			tabs
 				.find('.tabPane')
 				.at(2)
-				.hasClass('tabPaneActive')
+				.hasClass('tabPaneActive'),
 		).toEqual(false);
 
 		tabs.unmount();
@@ -98,14 +98,14 @@ describe('<Tabs />', () => {
 			<Tabs>
 				<Tab title="A">A</Tab>
 				<Tab title="B">B</Tab>
-			</Tabs>
+			</Tabs>,
 		);
 
 		expect(
 			tabs
 				.find('.tabPane')
 				.at(0)
-				.hasClass('tabPaneActive')
+				.hasClass('tabPaneActive'),
 		).toEqual(true); // precondition
 
 		tabs.setProps({ active: 1 });
@@ -114,7 +114,7 @@ describe('<Tabs />', () => {
 			tabs
 				.find('.tabPane')
 				.at(1)
-				.hasClass('tabPaneActive')
+				.hasClass('tabPaneActive'),
 		).toEqual(true);
 	});
 
@@ -147,7 +147,7 @@ describe('<Tabs />', () => {
 							</Tab>
 						))}
 					</Tabs>,
-					container
+					container,
 				);
 			});
 
@@ -160,17 +160,17 @@ describe('<Tabs />', () => {
 					expect(
 						document
 							.querySelector('.tabPane:nth-child(1)')
-							.className.includes('tabPaneActive')
+							.className.includes('tabPaneActive'),
 					).toEqual(true);
 					expect(
 						document
 							.querySelector('.tabPane:nth-child(2)')
-							.className.includes('tabPaneActive')
+							.className.includes('tabPaneActive'),
 					).toEqual(false);
 					expect(
 						document
 							.querySelector('.tabPane:nth-child(3)')
-							.className.includes('tabPaneActive')
+							.className.includes('tabPaneActive'),
 					).toEqual(false);
 					done();
 				});
@@ -187,7 +187,7 @@ describe('<Tabs />', () => {
 							</Tab>
 						))}
 					</Tabs>,
-					container
+					container,
 				);
 			});
 
@@ -200,17 +200,17 @@ describe('<Tabs />', () => {
 					expect(
 						document
 							.querySelector('.tabPane:nth-child(1)')
-							.className.includes('tabPaneActive')
+							.className.includes('tabPaneActive'),
 					).toEqual(false);
 					expect(
 						document
 							.querySelector('.tabPane:nth-child(2)')
-							.className.includes('tabPaneActive')
+							.className.includes('tabPaneActive'),
 					).toEqual(true);
 					expect(
 						document
 							.querySelector('.tabPane:nth-child(3)')
-							.className.includes('tabPaneActive')
+							.className.includes('tabPaneActive'),
 					).toEqual(false);
 					done();
 				});
@@ -227,7 +227,7 @@ describe('<Tabs />', () => {
 							</Tab>
 						))}
 					</Tabs>,
-					container
+					container,
 				);
 			});
 
@@ -240,17 +240,17 @@ describe('<Tabs />', () => {
 					expect(
 						document
 							.querySelector('.tabPane:nth-child(1)')
-							.className.includes('tabPaneActive')
+							.className.includes('tabPaneActive'),
 					).toEqual(false);
 					expect(
 						document
 							.querySelector('.tabPane:nth-child(2)')
-							.className.includes('tabPaneActive')
+							.className.includes('tabPaneActive'),
 					).toEqual(false);
 					expect(
 						document
 							.querySelector('.tabPane:nth-child(3)')
-							.className.includes('tabPaneActive')
+							.className.includes('tabPaneActive'),
 					).toEqual(true);
 					done();
 				});
@@ -269,7 +269,7 @@ describe('<Tabs />', () => {
 							</Tab>
 						))}
 					</Tabs>,
-					container
+					container,
 				);
 			});
 

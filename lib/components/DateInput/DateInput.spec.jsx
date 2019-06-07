@@ -9,8 +9,8 @@ describe('<DateInput />', () => {
 	it('should match snapshot', () => {
 		expect(
 			render(
-				<DateInput value={todayStr} placeholder={testLabel} id="id" />
-			)
+				<DateInput value={todayStr} placeholder={testLabel} id="id" />,
+			),
 		).toMatchSnapshot();
 	});
 
@@ -27,7 +27,7 @@ describe('<DateInput />', () => {
 				placeholder="placeholder"
 				id="id"
 				hintText={hintText()}
-			/>
+			/>,
 		);
 
 		expect(rendered).toMatchSnapshot();
@@ -41,7 +41,7 @@ describe('<DateInput />', () => {
 				className="date-input-class"
 				value={todayStr}
 				placeholder={testLabel}
-			/>
+			/>,
 		);
 		expect(dateInput.find('input').prop('type')).toEqual('date');
 		dateInput.unmount();
@@ -53,7 +53,7 @@ describe('<DateInput />', () => {
 				className="date-input-class"
 				value={todayStr}
 				placeholder={testLabel}
-			/>
+			/>,
 		);
 		expect(dateInput.hasClass('date-input-class')).toBeTruthy();
 		dateInput.unmount();
@@ -65,7 +65,7 @@ describe('<DateInput />', () => {
 				className="date-input-class"
 				value={todayStr}
 				placeholder={testLabel}
-			/>
+			/>,
 		);
 		expect(dateInput).toMatchSnapshot();
 	});
@@ -76,7 +76,7 @@ describe('<DateInput />', () => {
 				className="date-input-class"
 				value={todayStr}
 				placeholder={testLabel}
-			/>
+			/>,
 		);
 		expect(dateInput).toMatchSnapshot();
 	});
@@ -88,7 +88,7 @@ describe('<DateInput />', () => {
 				className="date-input-class"
 				value={todayStr}
 				placeholder={testLabel}
-			/>
+			/>,
 		);
 		expect(dateInput).toMatchSnapshot();
 	});
@@ -101,7 +101,7 @@ describe('<DateInput />', () => {
 				className="date-input-class"
 				value={todayStr}
 				placeholder={testLabel}
-			/>
+			/>,
 		);
 		expect(dateInput).toMatchSnapshot();
 	});
@@ -114,14 +114,14 @@ describe('<DateInput />', () => {
 				className="date-input-class"
 				value={todayStr}
 				placeholder={testLabel}
-			/>
+			/>,
 		);
 		expect(dateInput).toMatchSnapshot();
 	});
 
 	it('should display placeholder date', () => {
 		const dateInput = render(
-			<DateInput placeholder={testLabel} value={todayStr} />
+			<DateInput placeholder={testLabel} value={todayStr} />,
 		);
 		expect(dateInput.find('label').text()).toEqual(testLabel);
 	});
@@ -133,7 +133,7 @@ describe('<DateInput />', () => {
 				onFocus={spyedCallback}
 				placeholder={testLabel}
 				value={todayStr}
-			/>
+			/>,
 		);
 		dateInput.find('input').simulate('focus');
 
@@ -148,7 +148,7 @@ describe('<DateInput />', () => {
 				onBlur={spyedCallback}
 				placeholder={testLabel}
 				value={todayStr}
-			/>
+			/>,
 		);
 		dateInput.find('input').simulate('blur');
 
@@ -163,7 +163,7 @@ describe('<DateInput />', () => {
 				onChange={spyedCallback}
 				placeholder={testLabel}
 				value={todayStr}
-			/>
+			/>,
 		);
 		dateInput.find('input').simulate('change');
 

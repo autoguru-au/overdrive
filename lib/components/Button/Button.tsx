@@ -79,13 +79,13 @@ export const Button: FunctionComponent<IProps & any> = forwardRef(
 			variant = EVariant.Secondary,
 			...rest
 		},
-		ref
+		ref,
 	) => {
 		// @deprecated block
 		{
 			warning(
 				component !== void 0,
-				`The \`component\` prop deprecated, please use the \`is\` prop instead.\n\nBefore:\n<Button component="{<Link/">}>\n\tHello\n</Button>\n\nAfter:\n<Button is="{<Link/">}>\n\tHello\n</Button>`
+				`The \`component\` prop deprecated, please use the \`is\` prop instead.\n\nBefore:\n<Button component="{<Link/">}>\n\tHello\n</Button>\n\nAfter:\n<Button is="{<Link/">}>\n\tHello\n</Button>`,
 			);
 
 			if (component !== void 0) {
@@ -105,7 +105,7 @@ export const Button: FunctionComponent<IProps & any> = forwardRef(
 					[styles.rounded]: rounded,
 					[styles.fullWidth]: isFullWidth,
 					[styles.loading]: isLoading,
-				}
+				},
 			),
 			'aria-disabled': disabled || isLoading,
 			disabled: disabled || isLoading,
@@ -131,5 +131,5 @@ export const Button: FunctionComponent<IProps & any> = forwardRef(
 		) : (
 			cloneElement(Component, props, childs)
 		);
-	}
+	},
 );

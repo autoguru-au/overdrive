@@ -30,7 +30,7 @@ addParameters({
 
 configure(
 	() => load(require.context('../lib', true, /.?stories.tsx?$/)),
-	module
+	module,
 );
 
 function load(...reqs) {

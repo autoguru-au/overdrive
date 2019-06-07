@@ -17,7 +17,7 @@ describe('<Switch />', () => {
 
 	it('should match snapshot when un-toggled and disabled', () => {
 		expect(
-			render(<Switch toggled={false} disabled={true} />)
+			render(<Switch toggled={false} disabled={true} />),
 		).toMatchSnapshot();
 	});
 
@@ -27,16 +27,16 @@ describe('<Switch />', () => {
 
 	it('should match snapshot when toggled and disabled', () => {
 		expect(
-			render(<Switch toggled={true} disabled={true} />)
+			render(<Switch toggled={true} disabled={true} />),
 		).toMatchSnapshot();
 	});
 
 	it('should pass on className to dom element', () => {
 		const toggleButton = mount(
-			<Switch className="toggleButton-class" value={10} />
+			<Switch className="toggleButton-class" value={10} />,
 		);
 		expect(
-			toggleButton.find('div.toggleButton-class').length === 1
+			toggleButton.find('div.toggleButton-class').length === 1,
 		).toBeTruthy();
 	});
 
@@ -64,7 +64,7 @@ describe('<Switch />', () => {
 		const spyedCallback = jest.fn();
 
 		const wrapper = mount(
-			<Switch onChange={spyedCallback} toggled={false} />
+			<Switch onChange={spyedCallback} toggled={false} />,
 		);
 
 		wrapper.find('div').simulate('click');
@@ -87,7 +87,7 @@ describe('<Switch />', () => {
 		const spyedCallback = jest.fn();
 
 		const wrapper = mount(
-			<Switch onChange={spyedCallback} toggled={false} disabled={true} />
+			<Switch onChange={spyedCallback} toggled={false} disabled={true} />,
 		);
 
 		wrapper.find('div').simulate('click');

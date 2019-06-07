@@ -6,14 +6,14 @@ describe('<TextAreaInput />', () => {
 	it('should not throw', () => {
 		expect(() =>
 			mount(
-				<TextAreaInput placeholder="placeholder something" />
-			).unmount()
+				<TextAreaInput placeholder="placeholder something" />,
+			).unmount(),
 		).not.toThrow();
 	});
 
 	it('should have a textarea tag', () => {
 		const textAreaInput = mount(
-			<TextAreaInput placeholder="placeholder something" />
+			<TextAreaInput placeholder="placeholder something" />,
 		);
 		expect(textAreaInput.find('textarea').exists()).toEqual(true);
 		textAreaInput.unmount();
@@ -24,7 +24,7 @@ describe('<TextAreaInput />', () => {
 			<TextAreaInput
 				className="textarea-input-class"
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		expect(textAreaInput.hasClass('textarea-input-class')).toBeTruthy();
 		textAreaInput.unmount();
@@ -35,7 +35,7 @@ describe('<TextAreaInput />', () => {
 			<TextAreaInput
 				className="textarea-input-class"
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		expect(textAreaInput).toMatchSnapshot();
 	});
@@ -45,7 +45,7 @@ describe('<TextAreaInput />', () => {
 			<TextAreaInput
 				className="textarea-input-class"
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 
 		textAreaInput.find('textarea').simulate('focus');
@@ -66,7 +66,7 @@ describe('<TextAreaInput />', () => {
 				isTouched={true}
 				className="textarea-input-class"
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		expect(textAreaInput).toMatchSnapshot();
 	});
@@ -78,7 +78,7 @@ describe('<TextAreaInput />', () => {
 				isValid={true}
 				className="textarea-input-class"
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		expect(textAreaInput).toMatchSnapshot();
 	});
@@ -90,17 +90,17 @@ describe('<TextAreaInput />', () => {
 				isValid={false}
 				className="textarea-input-class"
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		expect(textAreaInput).toMatchSnapshot();
 	});
 
 	it('should display placeholder text', () => {
 		const textAreaInput = render(
-			<TextAreaInput placeholder="placeholder something" />
+			<TextAreaInput placeholder="placeholder something" />,
 		);
 		expect(textAreaInput.find('label').text()).toEqual(
-			'placeholder something'
+			'placeholder something',
 		);
 	});
 
@@ -110,7 +110,7 @@ describe('<TextAreaInput />', () => {
 			<TextAreaInput
 				onFocus={spyedCallback}
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		textAreaInput.find('textarea').simulate('focus');
 
@@ -124,7 +124,7 @@ describe('<TextAreaInput />', () => {
 			<TextAreaInput
 				onBlur={spyedCallback}
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		textAreaInput.find('textarea').simulate('blur');
 
@@ -138,7 +138,7 @@ describe('<TextAreaInput />', () => {
 			<TextAreaInput
 				onChange={spyedCallback}
 				placeholder="placeholder something"
-			/>
+			/>,
 		);
 		textAreaInput.find('textarea').simulate('change');
 

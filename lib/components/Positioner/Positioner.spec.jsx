@@ -6,7 +6,7 @@ import { EAlignment } from './alignment';
 describe('<Positioner />', () => {
 	it('should not throw', () =>
 		expect(() =>
-			mount(<Positioner triggerRef={createRef()} />).unmount()
+			mount(<Positioner triggerRef={createRef()} />).unmount(),
 		).not.toThrow());
 
 	it('should match snapshot', () => {
@@ -16,7 +16,7 @@ describe('<Positioner />', () => {
 				isOpen={true}
 				alignment={EAlignment.BOTTOM}>
 				Some body
-			</Positioner>
+			</Positioner>,
 		);
 
 		expect(wrapper).toMatchSnapshot();
@@ -32,7 +32,7 @@ describe('<Positioner />', () => {
 					isOpen={true}
 					alignment={EAlignment.BOTTOM}>
 					Some body
-				</Positioner>
+				</Positioner>,
 			);
 
 			expect(wrapper.text()).toContain('Some body');
@@ -45,7 +45,7 @@ describe('<Positioner />', () => {
 					isOpen={false}
 					alignment={EAlignment.BOTTOM}>
 					Some body
-				</Positioner>
+				</Positioner>,
 			);
 
 			expect(wrapper.text()).not.toContain('Some body');

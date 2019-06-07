@@ -47,5 +47,5 @@ export const CheckBox: FunctionComponent<IProps> = memo(
 				<div className={styles.box} />
 			</div>
 		</CheckableBase>
-	)
+	),
 );

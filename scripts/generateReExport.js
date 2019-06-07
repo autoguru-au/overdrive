@@ -29,5 +29,5 @@ fs.writeFileSync(
 		parser: 'babel',
 		...require('cosmiconfig')('prettier').searchSync(__dirname).config,
 	}),
-	'utf8'
+	'utf8',
 );

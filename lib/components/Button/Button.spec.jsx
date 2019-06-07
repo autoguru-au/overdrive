@@ -50,7 +50,7 @@ describe('<Button />', () => {
 	describe('when colour variants', () => {
 		it('should match snapshot for Primary button', () => {
 			expect(
-				shallow(<Button variant={EButtonVariant.Primary} />)
+				shallow(<Button variant={EButtonVariant.Primary} />),
 			).toMatchSnapshot();
 		});
 
@@ -61,20 +61,20 @@ describe('<Button />', () => {
 
 		it('should match snapshot for Secondary button', () => {
 			expect(
-				shallow(<Button variant={EButtonVariant.Secondary} />)
+				shallow(<Button variant={EButtonVariant.Secondary} />),
 			).toMatchSnapshot();
 		});
 
 		it('should apply Secondary variant styles', () => {
 			const button = shallow(
-				<Button variant={EButtonVariant.Secondary} />
+				<Button variant={EButtonVariant.Secondary} />,
 			);
 			expect(button.hasClass('variantSecondary')).toBeTruthy();
 		});
 
 		it('should match snapshot for Danger button', () => {
 			expect(
-				shallow(<Button variant={EButtonVariant.Danger} />)
+				shallow(<Button variant={EButtonVariant.Danger} />),
 			).toMatchSnapshot();
 		});
 
@@ -87,7 +87,7 @@ describe('<Button />', () => {
 	describe('when size variant', () => {
 		it('should match snapshot for small button', () => {
 			expect(
-				shallow(<Button size={EButtonSize.Small} />)
+				shallow(<Button size={EButtonSize.Small} />),
 			).toMatchSnapshot();
 		});
 
@@ -98,7 +98,7 @@ describe('<Button />', () => {
 
 		it('should match snapshot for medium button', () => {
 			expect(
-				shallow(<Button size={EButtonSize.Medium} />)
+				shallow(<Button size={EButtonSize.Medium} />),
 			).toMatchSnapshot();
 		});
 
@@ -142,13 +142,13 @@ describe('<Button />', () => {
 
 		it('should match snapshot for small button', () => {
 			expect(
-				shallow(<Button size={EButtonSize.Small} isLoading={true} />)
+				shallow(<Button size={EButtonSize.Small} isLoading={true} />),
 			).toMatchSnapshot();
 		});
 
 		it('should match snapshot for medium button', () => {
 			expect(
-				shallow(<Button size={EButtonSize.Medium} isLoading={true} />)
+				shallow(<Button size={EButtonSize.Medium} isLoading={true} />),
 			).toMatchSnapshot();
 		});
 

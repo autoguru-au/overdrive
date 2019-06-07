@@ -32,7 +32,7 @@ export const BulletText: FunctionComponent<IProps> = ({
 					[styles.variantPrimary]: variant === EVariant.Primary,
 					[styles.variantSecondary]: variant === EVariant.Secondary,
 				},
-				className
+				className,
 			)}>
 			{isValidElement(Bullet) ? (
 				<div className={styles.customBullet}>{Bullet}</div>
