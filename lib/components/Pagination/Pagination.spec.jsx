@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pagination } from './index';
+import { Pagination } from '.';
 import { mount, render, shallow } from 'enzyme';
 
 describe('<Pagination />', () => {

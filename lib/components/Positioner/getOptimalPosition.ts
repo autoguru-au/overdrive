@@ -1,26 +1,26 @@
 import { EAlignment } from './alignment';
 
-export interface IDimensions {
+export interface Dimensions {
 	width: number;
 	height: number;
 }
 
-export interface IPosition {
+export interface Position {
 	top: number;
 	left: number;
 }
 
-export interface IRect extends IDimensions, IPosition {
+export interface Rect extends Dimensions, Position {
 	right: number;
 	bottom: number;
 }
 
-export interface IAlignmentRect {
+export interface AlignmentRect {
 	alignment: EAlignment;
-	rect: IRect;
+	rect: Rect;
 }
 
-const DEFAULT_OFFSET: number = 12;
+const DEFAULT_OFFSET = 12;
 
 /**
  * @description
@@ -31,12 +31,12 @@ const DEFAULT_OFFSET: number = 12;
  */
 export const getOptimalPosition = (
 	preferredAlignment: EAlignment,
-	triggerRect: Readonly<IRect>, // The rect of the trigger
-	containerDimensions: Readonly<IDimensions>, // The width, height of the container
+	triggerRect: Readonly<Rect>, // The rect of the trigger
+	containerDimensions: Readonly<Dimensions>, // The width, height of the container
 	triggerOffset: number = DEFAULT_OFFSET, // The pixels to leave around the trigger
 	viewportOffset: number = DEFAULT_OFFSET, // The pixels to leave around the viewport
-	viewportDimensions: Readonly<IDimensions> = getViewportDimensions(),
-): IAlignmentRect => {
+	viewportDimensions: Readonly<Dimensions> = getViewportDimensions(),
+): AlignmentRect => {
 	const { rect, alignment } = getFittedPosition(
 		preferredAlignment,
 		containerDimensions,
@@ -57,10 +57,10 @@ export const getOptimalPosition = (
  * Given a computed rect, finally we need to handle the overflow viewport "locking" of this rect.
  */
 const handleOverflow = (
-	rect: IRect,
+	rect: Rect,
 	viewportOffset: number,
-	viewportDimensions: Readonly<IDimensions>,
-): IRect => {
+	viewportDimensions: Readonly<Dimensions>,
+): Rect => {
 	// Push rect to the right if overflowing on the left side of the viewport.
 	if (rect.left < viewportOffset) {
 		rect.right += Math.ceil(Math.abs(rect.left - viewportOffset));
@@ -113,12 +113,12 @@ const handleOverflow = (
  */
 const getFittedPosition = (
 	preferredAlignment: EAlignment,
-	containerDimensions: Readonly<IDimensions>,
-	triggerRect: Readonly<IRect>,
+	containerDimensions: Readonly<Dimensions>,
+	triggerRect: Readonly<Rect>,
 	triggerOffset: number,
 	viewportOffset: number,
-	viewportDimensions: Readonly<IDimensions>,
-): IAlignmentRect =>
+	viewportDimensions: Readonly<Dimensions>,
+): AlignmentRect =>
 	(isAlignedHorizontal(preferredAlignment)
 		? handleIsHorizontal
 		: handleIsVertical)(
@@ -135,11 +135,11 @@ const getFittedPosition = (
 const handleIsHorizontal = (
 	preferredAlignment: EAlignment,
 	viewportOffset: number,
-	viewportDimensions: Readonly<IDimensions>,
+	viewportDimensions: Readonly<Dimensions>,
 	genRectFn: ReturnType<RectForAlignmentFactoryFn>,
-): IAlignmentRect => {
-	const isFitsOnLeft = (rect: IRect): boolean => rect.left > viewportOffset;
-	const isFitsOnRight = (rect: IRect): boolean =>
+): AlignmentRect => {
+	const isFitsOnLeft = (rect: Rect): boolean => rect.left > viewportOffset;
+	const isFitsOnRight = (rect: Rect): boolean =>
 		rect.right < viewportDimensions.width - viewportOffset;
 
 	const leftRect = genRectFn(EAlignment.LEFT);
@@ -154,7 +154,9 @@ const handleIsHorizontal = (
 				alignment: EAlignment.LEFT,
 				rect: leftRect,
 			};
-		} else if (fitsOnRight) {
+		}
+
+		if (fitsOnRight) {
 			return {
 				alignment: EAlignment.RIGHT,
 				rect: rightRect,
@@ -168,7 +170,9 @@ const handleIsHorizontal = (
 				alignment: EAlignment.RIGHT,
 				rect: rightRect,
 			};
-		} else if (fitsOnLeft) {
+		}
+
+		if (fitsOnLeft) {
 			return {
 				alignment: EAlignment.LEFT,
 				rect: leftRect,
@@ -197,11 +201,11 @@ const handleIsHorizontal = (
 const handleIsVertical = (
 	preferredAlignment: EAlignment,
 	viewportOffset: number,
-	viewportDimensions: Readonly<IDimensions>,
+	viewportDimensions: Readonly<Dimensions>,
 	genRectFn: ReturnType<RectForAlignmentFactoryFn>,
-): IAlignmentRect => {
-	const isFitsOnTop = (rect: IRect): boolean => rect.top > viewportOffset;
-	const isFitsOnBottom = (rect: IRect): boolean =>
+): AlignmentRect => {
+	const isFitsOnTop = (rect: Rect): boolean => rect.top > viewportOffset;
+	const isFitsOnBottom = (rect: Rect): boolean =>
 		rect.bottom < viewportDimensions.height - viewportOffset;
 
 	const isTop = isAlignedOnTop(preferredAlignment);
@@ -219,7 +223,9 @@ const handleIsVertical = (
 				alignment: preferredAlignment,
 				rect: topRect,
 			};
-		} else if (isFitsOnBottom(bottomRect)) {
+		}
+
+		if (isFitsOnBottom(bottomRect)) {
 			return {
 				alignment: flipHorizontal(preferredAlignment),
 				rect: bottomRect,
@@ -231,7 +237,9 @@ const handleIsVertical = (
 				alignment: preferredAlignment,
 				rect: bottomRect,
 			};
-		} else if (isFitsOnTop(topRect)) {
+		}
+
+		if (isFitsOnTop(topRect)) {
 			return {
 				alignment: flipHorizontal(preferredAlignment),
 				rect: topRect,
@@ -260,10 +268,10 @@ const handleIsVertical = (
 };
 
 type RectForAlignmentFactoryFn = (
-	triggerRect: Readonly<IRect>,
+	triggerRect: Readonly<Rect>,
 	triggerOffset: number,
-	containerDimensions: Readonly<IDimensions>,
-) => (alignment: EAlignment) => IRect;
+	containerDimensions: Readonly<Dimensions>,
+) => (alignment: EAlignment) => Rect;
 const getRectForAlignmentFactory: RectForAlignmentFactoryFn = (
 	triggerRect,
 	triggerOffset,
@@ -282,10 +290,10 @@ const getRectForAlignmentFactory: RectForAlignmentFactoryFn = (
  */
 const getRectForAlignment = (
 	alignment: EAlignment,
-	triggerRect: Readonly<IRect>,
-	containerDimensions: Readonly<IDimensions>,
+	triggerRect: Readonly<Rect>,
+	containerDimensions: Readonly<Dimensions>,
 	triggerOffset: number,
-): IRect => {
+): Rect => {
 	const alignedTopY =
 		triggerRect.top - containerDimensions.height - triggerOffset;
 	const alignedBottomY = triggerRect.bottom + triggerOffset;
@@ -351,9 +359,9 @@ const getRectForAlignment = (
  * A helper function, that will "create" a Rect compatible object we use to pass around.
  */
 export const makeRect = (
-	dimensions: IDimensions,
-	position: IPosition,
-): Readonly<IRect> => ({
+	dimensions: Dimensions,
+	position: Position,
+): Readonly<Rect> => ({
 	...dimensions,
 	top: Math.ceil(position.top),
 	left: Math.ceil(position.left),
@@ -361,7 +369,7 @@ export const makeRect = (
 	bottom: Math.ceil(position.top) + dimensions.height,
 });
 
-const getViewportDimensions = (): IDimensions => ({
+const getViewportDimensions = (): Dimensions => ({
 	height: document.documentElement.clientHeight,
 	width: document.documentElement.clientWidth,
 });

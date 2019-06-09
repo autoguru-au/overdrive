@@ -2,13 +2,13 @@ import clsx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
 import styles from './style.scss';
 
-export interface IProps {
+export interface Props {
 	className?: string;
 	randomWidth?: boolean;
 	blinking?: boolean;
 }
 
-const LoadingBoxComponent: FunctionComponent<IProps> = ({
+const LoadingBoxComponent: FunctionComponent<Props> = ({
 	className = '',
 	randomWidth = false,
 	blinking = true,

@@ -1,1 +1,1 @@
-export { Stepper, IProps as IStepperProps } from './Stepper';
+export { Stepper, Props as IStepperProps } from './Stepper';

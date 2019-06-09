@@ -1,4 +1,4 @@
 export {
 	LinearProgressIndicator,
-	IProps as ILinearProgressIndicatorProps,
+	Props as ILinearProgressIndicatorProps,
 } from './LinearProgressIndicator';

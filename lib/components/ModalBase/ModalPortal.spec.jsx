@@ -5,7 +5,7 @@ import { act, renderIntoDocument } from 'react-dom/test-utils';
 import { mount } from 'enzyme';
 import { withModal } from './withModal';
 
-const NakedModal = withModal(({ onRequestClose, children }) => (
+const NakedModal = withModal(({ children }) => (
 	<div className={styles.root}>{children}</div>
 ));
 NakedModal.displayName = 'NakedModal';
@@ -20,6 +20,7 @@ function createMockedModal(defaultOpenState = true) {
 			</NakedModal>
 		);
 	};
+
 	MockedModalComponent.displayName = 'MockedModal';
 
 	return MockedModalComponent;
@@ -42,14 +43,14 @@ describe('withModal()', () => {
 
 	it('should match snapshot', () => {
 		const ModelComponent = createMockedModal(true);
-		let wrapper;
-		expect((wrapper = mount(<ModelComponent />))).toMatchSnapshot();
+		const wrapper = mount(<ModelComponent />);
+		expect(wrapper).toMatchSnapshot();
 		wrapper.unmount();
 	});
 
 	it('should not throw when open', () => {
 		const modal = (
-			<NakedModal isOpen={true}>
+			<NakedModal isOpen>
 				<p>Hello, I am a modal body!</p>
 			</NakedModal>
 		);
@@ -62,7 +63,7 @@ describe('withModal()', () => {
 			expect(document.body.innerHTML).toBe('');
 
 			const modal = mount(
-				<NakedModal isOpen={true}>
+				<NakedModal isOpen>
 					<p>Hello World!</p>
 				</NakedModal>,
 			);
@@ -86,7 +87,7 @@ describe('withModal()', () => {
 
 		it('should add children when open', () => {
 			const modal = mount(
-				<NakedModal isOpen={true}>
+				<NakedModal isOpen>
 					<p>Hello World!</p>
 				</NakedModal>,
 			);
@@ -104,9 +105,9 @@ describe('withModal()', () => {
 
 	describe('when onRequestClose', () => {
 		it('should not throw when not passed in', () => {
-			// tests if the onRequestClose is being defaulted.
+			// Tests if the onRequestClose is being defaulted.
 			const modal = mount(
-				<NakedModal isOpen={true}>
+				<NakedModal isOpen>
 					<p>Hello World!</p>
 				</NakedModal>,
 			);
@@ -122,7 +123,7 @@ describe('withModal()', () => {
 			const cb = jest.fn();
 
 			const modal = mount(
-				<NakedModal onRequestClose={cb} isOpen={true}>
+				<NakedModal isOpen onRequestClose={cb}>
 					<p>Hello World!</p>
 				</NakedModal>,
 			);
@@ -140,7 +141,7 @@ describe('withModal()', () => {
 
 			act(() => {
 				modal = mount(
-					<NakedModal onRequestClose={cb} isOpen={true}>
+					<NakedModal isOpen onRequestClose={cb}>
 						<p>Hello World!</p>
 					</NakedModal>,
 				);
@@ -166,7 +167,7 @@ describe('withModal()', () => {
 
 			act(() => {
 				modal = mount(
-					<NakedModal onRequestClose={cb} isOpen={false}>
+					<NakedModal isOpen={false} onRequestClose={cb}>
 						<p>Hello World!</p>
 					</NakedModal>,
 				);
@@ -218,7 +219,7 @@ describe('withModal()', () => {
 
 		expect(modal.find(ModalPortal).prop('isOpen')).toEqual(true);
 
-		// this is to confirm that the body is in fact the content
+		// This is to confirm that the body is in fact the content
 		expect(modal.find('p').getDOMNode()).toMatchSnapshot();
 
 		act(() => {

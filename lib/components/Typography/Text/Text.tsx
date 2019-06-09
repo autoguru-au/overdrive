@@ -3,7 +3,7 @@ import React, { FunctionComponent } from 'react';
 import { TSizeScale } from '../types';
 import styles from './style.scss';
 
-export interface IProps {
+export interface Props {
 	className?: string;
 	muted?: boolean;
 	strong?: boolean;
@@ -11,7 +11,7 @@ export interface IProps {
 	size?: TSizeScale;
 }
 
-export const Text: FunctionComponent<IProps> = ({
+export const Text: FunctionComponent<Props> = ({
 	children,
 	className = '',
 	muted = false,
@@ -20,6 +20,7 @@ export const Text: FunctionComponent<IProps> = ({
 	size = 3,
 }) => (
 	<Component
+		children={children}
 		className={clsx(
 			[styles.root, styles[`sizeScale${size}`]],
 			{
@@ -28,6 +29,5 @@ export const Text: FunctionComponent<IProps> = ({
 			},
 			className,
 		)}
-		children={children}
 	/>
 );

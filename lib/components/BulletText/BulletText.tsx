@@ -3,7 +3,7 @@ import React, { FunctionComponent, isValidElement, ReactNode } from 'react';
 import { Text } from '../Typography/Text';
 import styles from './style.scss';
 
-export interface IProps {
+export interface Props {
 	bullet?: ReactNode;
 	ordered?: boolean;
 	variant?: EVariant;
@@ -15,7 +15,7 @@ export enum EVariant {
 	Secondary = 'secondary',
 }
 
-export const BulletText: FunctionComponent<IProps> = ({
+export const BulletText: FunctionComponent<Props> = ({
 	variant = EVariant.Primary,
 	className = '',
 	children,
@@ -38,7 +38,7 @@ export const BulletText: FunctionComponent<IProps> = ({
 				<div className={styles.customBullet}>{Bullet}</div>
 			) : (
 				<div className={styles.bullet}>
-					<span className={styles.bulletText} children={Bullet} />
+					<span children={Bullet} className={styles.bulletText} />
 				</div>
 			)}
 			<Text is="span">{children}</Text>

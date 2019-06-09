@@ -2,5 +2,5 @@ export {
 	Button,
 	ESize as EButtonSize,
 	EVariant as EButtonVariant,
-	IProps as IButtonProps,
+	Props as IButtonProps,
 } from './Button';

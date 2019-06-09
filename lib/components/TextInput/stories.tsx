@@ -32,7 +32,7 @@ storiesOf('Components|Inputs/Text', module)
 	.add('with hint text', () => (
 		<TextInput
 			name="abc"
-			placeholder={'What is your first name?'}
+			placeholder="What is your first name?"
 			hintText={text('Hint Text', 'Cannot be Bob The Builder.')}
 		/>
 	))
@@ -47,9 +47,9 @@ storiesOf('Components|Inputs/Text', module)
 	))
 	.add('disabled', () => (
 		<TextInput
+			disabled
 			placeholder="What is your first name?"
 			name="abc"
-			disabled={true}
 			hintText="Cannot be Bob The Builder."
 		/>
 	));

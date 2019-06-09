@@ -4,7 +4,7 @@ import {
 	EProgressSpinnerSize,
 	EProgressSpinnerVariant,
 	ProgressSpinner,
-} from './';
+} from '.';
 
 describe('<ProgressSpinner />', () => {
 	it('should not throw', () =>

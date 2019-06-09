@@ -4,12 +4,12 @@ import { ChevronLeftIcon, ChevronRightIcon, Icon } from '../Icon';
 import styles from './style.scss';
 import { Bubble } from './Bubble';
 
-export interface IProps {
+export interface Props {
 	className?: string;
 	placeholderBubblesNum?: number;
 }
 
-export const LoadingComponent: FunctionComponent<IProps> = ({
+export const LoadingComponent: FunctionComponent<Props> = ({
 	className = '',
 	placeholderBubblesNum = 3,
 }) => {
@@ -23,7 +23,7 @@ export const LoadingComponent: FunctionComponent<IProps> = ({
 				className={disabledChevCls}
 			/>
 			{new Array(placeholderBubblesNum).fill('').map((_, index) => (
-				<Bubble key={index} className={styles.disabled} children={''} />
+				<Bubble key={index} children="" className={styles.disabled} />
 			))}
 			<Icon
 				size={25}

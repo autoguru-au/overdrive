@@ -134,8 +134,9 @@ describe('<Stepper />', () => {
 			);
 		};
 
-		let wrapper;
-		const onSetValue = setValue => {
+		const wrapper = mount(<StepperWrapper getValueSetter={onSetValue} />);
+
+		function onSetValue(setValue) {
 			setTimeout(() => {
 				expect(
 					wrapper
@@ -188,9 +189,7 @@ describe('<Stepper />', () => {
 				wrapper.unmount();
 				done();
 			}, 100);
-		};
-
-		wrapper = mount(<StepperWrapper getValueSetter={onSetValue} />);
+		}
 	});
 
 	it('should onChange when the value changes', () => {

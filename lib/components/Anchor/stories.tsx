@@ -14,7 +14,7 @@ storiesOf('Foundation|Typography/Anchor', module)
 	.add('withIcon', () => (
 		<Anchor
 			{...baseProps()}
-			href={'123'}
+			href="123"
 			icon={<Icon icon={PhoneIcon} size={16} />}
 		/>
 	))
@@ -22,7 +22,7 @@ storiesOf('Foundation|Typography/Anchor', module)
 		<Anchor
 			{...baseProps()}
 			is={<Button />}
-			to={'./#eldorado'}
+			to="./#eldorado"
 			icon={<Icon icon={PhoneIcon} size={16} />}
 		/>
 	));

@@ -1,1 +1,1 @@
-export { Anchor, IProps as ITelProps } from './Anchor';
+export { Anchor, Props as ITelProps } from './Anchor';

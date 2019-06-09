@@ -3,11 +3,11 @@ import React, { FunctionComponent } from 'react';
 
 import styles from './style.scss';
 
-export interface IProps {
+export interface Props {
 	isActive: boolean;
 }
 
-export const HintText: FunctionComponent<IProps> = ({ isActive, children }) => (
+export const HintText: FunctionComponent<Props> = ({ isActive, children }) => (
 	<p
 		className={clsx(styles.hintText, {
 			[styles.hintTextActive]: isActive,

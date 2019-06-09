@@ -15,14 +15,14 @@ type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 type HtmlPrimitive = HTMLInputElement & HTMLTextAreaElement & HTMLSelectElement;
 
 // The event handlers we'll allow the wrapped component to bind too
-export interface IEventHandlers<E extends HtmlPrimitive = HtmlPrimitive> {
+export interface EventHandlers<E extends HtmlPrimitive = HtmlPrimitive> {
 	onChange?: ChangeEventHandler<E>;
 	onBlur?: FocusEventHandler<E>;
 	onFocus?: FocusEventHandler<E>;
 }
 
 // The props will give the end consumer to send
-export interface IEnhanceInputPrimitiveProps {
+export interface EnhanceInputPrimitiveProps {
 	name: string;
 	placeholder: string;
 	className?: string;
@@ -32,22 +32,22 @@ export interface IEnhanceInputPrimitiveProps {
 	disabled?: boolean;
 }
 
-export interface IValidationProps {
+export interface ValidationProps {
 	isTouched?: boolean;
 	isValid?: boolean;
 }
 
 // An amalgamation of the HoC props, event handlers and the consumer props.
 export type EnhanceInputProps<IncomingProps = {},> = IncomingProps &
-	IEnhanceInputPrimitiveProps &
-	IEventHandlers &
-	IValidationProps;
+	EnhanceInputPrimitiveProps &
+	EventHandlers &
+	ValidationProps;
 
 // The final props we send into thw wrapping component
 export type WrappedComponentProps<IncomingProps = {},> = {
-	validation: IValidationProps;
-	eventHandlers: IEventHandlers;
-	field: Omit<IEnhanceInputPrimitiveProps, 'placeholder' | 'hintText'>;
+	validation: ValidationProps;
+	eventHandlers: EventHandlers;
+	field: Omit<EnhanceInputPrimitiveProps, 'placeholder' | 'hintText'>;
 } & IncomingProps;
 
 export function withEnhancedInput<IncomingProps = {},>(
@@ -55,24 +55,14 @@ export function withEnhancedInput<IncomingProps = {},>(
 ): ComponentType<EnhanceInputProps<IncomingProps>> {
 	type TProps = EnhanceInputProps<IncomingProps>;
 
-	interface IState {
+	interface State {
 		value: any;
 		isActive: boolean;
 	}
 
-	return class WrappedComponent extends PureComponent<TProps, IState> {
+	return class WrappedComponent extends PureComponent<TProps, State> {
 		public static displayName = `EnhancedInput(${WrappingComponent.displayName ||
 			(WrappingComponent as any).name})`;
-
-		public static getDerivedStateFromProps(
-			nextProps: TProps,
-		): Partial<IState> | null {
-			if ('value' in nextProps) {
-				return { value: nextProps.value || '' };
-			}
-
-			return null;
-		}
 
 		constructor(props: TProps) {
 			super(props);
@@ -81,6 +71,16 @@ export function withEnhancedInput<IncomingProps = {},>(
 				value: props.value || '',
 				isActive: false,
 			};
+		}
+
+		public static getDerivedStateFromProps(
+			nextProps: TProps,
+		): Partial<State> | null {
+			if ('value' in nextProps) {
+				return { value: nextProps.value || '' };
+			}
+
+			return null;
 		}
 
 		public handleOnChange: ChangeEventHandler<HtmlPrimitive> = e => {
@@ -121,7 +121,7 @@ export function withEnhancedInput<IncomingProps = {},>(
 
 		public render() {
 			const {
-				// IEnhanceInputPrimitiveProps
+				// EnhanceInputPrimitiveProps
 				placeholder,
 				name,
 				id = name,
@@ -129,7 +129,7 @@ export function withEnhancedInput<IncomingProps = {},>(
 				disabled = false,
 				className,
 
-				// IValidationProps
+				// ValidationProps
 				isTouched,
 				isValid,
 
@@ -153,7 +153,7 @@ export function withEnhancedInput<IncomingProps = {},>(
 
 			A & B != A _or_ P & Omit<P, 'firstName'> != P
 			 */
-			// tslint:disable: no-object-literal-type-assertion
+			// eslint-disable-next-line @typescript-eslint/no-object-literal-type-assertion
 			const wrappingComponent: WrappedComponentProps<IncomingProps> = {
 				validation: {
 					isTouched,
@@ -173,7 +173,6 @@ export function withEnhancedInput<IncomingProps = {},>(
 				},
 				...(rest as IncomingProps),
 			} as WrappedComponentProps<IncomingProps>;
-			// tslint:enable: no-object-literal-type-assertion
 
 			const shouldValidate: boolean = isValid !== void 0 && isTouched;
 
@@ -195,7 +194,7 @@ export function withEnhancedInput<IncomingProps = {},>(
 						placeholder={placeholder}>
 						<WrappingComponent {...wrappingComponent} />
 					</NotchedBase>
-					{!!hintText && !!hintText.length && (
+					{Boolean(hintText) && Boolean(hintText.length) && (
 						<HintText isActive={this.state.isActive}>
 							{hintText}
 						</HintText>

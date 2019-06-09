@@ -36,7 +36,7 @@ const starCssMap: Map<EStarType, string> = new Map([
 	[EStarType.Empty, styles.emptyStar],
 ]);
 
-export interface IProps {
+export interface Props {
 	className?: string;
 	ratingValue?: number; // @deprecated
 	rating: number;
@@ -79,15 +79,15 @@ const getStar = (
 
 	return (
 		<Icon
+			key={index}
 			icon={star}
 			size={starSizeMap.get(size)}
-			key={index}
 			className={clsx([styles.star, starCssMap.get(starType)])}
 		/>
 	);
 };
 
-const StarRatingComponent: FunctionComponent<IProps> = ({
+const StarRatingComponent: FunctionComponent<Props> = ({
 	className = '',
 	rating,
 	ratingValue = void 0,
@@ -95,15 +95,13 @@ const StarRatingComponent: FunctionComponent<IProps> = ({
 	size = ESize.Medium,
 }) => {
 	// @deprecated block
-	{
-		warning(
-			ratingValue !== void 0,
-			'The `ratingValue` prop is deprecated, please use the `rating` prop',
-		);
+	warning(
+		ratingValue !== void 0,
+		'The `ratingValue` prop is deprecated, please use the `rating` prop',
+	);
 
-		if (ratingValue !== void 0) {
-			rating = ratingValue;
-		}
+	if (ratingValue !== void 0) {
+		rating = ratingValue;
 	}
 
 	return (

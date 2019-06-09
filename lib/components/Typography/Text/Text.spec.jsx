@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount, render, shallow } from 'enzyme/build';
-import { Text } from './index';
+import { Text } from '.';
 
 describe('<Text />', () => {
 	it('should not throw', () => expect(() => shallow(<Text />)).not.toThrow());

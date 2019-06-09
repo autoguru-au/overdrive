@@ -6,9 +6,8 @@ const components = path.join(__dirname, '../lib/components');
 
 const componentEntryFiles = glob
 	.sync('*/index.+(ts|tsx)', { cwd: components })
-	.sort()
 	.map(item => item.replace(/\/index\.tsx?/, '')) // Removes the file extension, node includes the index files first.
-	.map(item => item.replace(/([\/\\]+)$/, ''))
+	.map(item => item.replace(/([/\\]+)$/, ''))
 	.map(item => `export * from './${item}';`)
 	.join('\n');
 

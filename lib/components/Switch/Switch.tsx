@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React, { FunctionComponent, memo, useCallback, useState } from 'react';
 import styles from './style.scss';
 
-export interface IProps {
+export interface Props {
 	className?: string;
 	disabled?: boolean;
 	toggled?: boolean;
@@ -10,7 +10,7 @@ export interface IProps {
 	onChange?(value: boolean): void;
 }
 
-const SwitchComponent: FunctionComponent<IProps> = ({
+const SwitchComponent: FunctionComponent<Props> = ({
 	className = '',
 	disabled = false,
 	toggled: incomingToggled = false,
@@ -24,9 +24,11 @@ const SwitchComponent: FunctionComponent<IProps> = ({
 		if (disabled) {
 			return;
 		}
+
 		if (typeof onChange === 'function') {
 			onChange(!toggled);
 		}
+
 		setToggled(!toggled);
 	}, [incomingToggled, disabled, toggled]);
 

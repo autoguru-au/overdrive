@@ -11,14 +11,14 @@ export enum EChangeDirection {
 
 type TOnChangeEventHandler = (event: EChangeDirection) => void;
 
-export interface IProps {
+export interface Props {
 	className?: string;
 	hasNext: boolean;
 	hasPrevious: boolean;
 	onChange?: TOnChangeEventHandler;
 }
 
-export const SimplePaginationComponent: FunctionComponent<IProps> = ({
+export const SimplePaginationComponent: FunctionComponent<Props> = ({
 	className = '',
 	hasNext,
 	hasPrevious,
@@ -38,7 +38,7 @@ export const SimplePaginationComponent: FunctionComponent<IProps> = ({
 	return (
 		<div className={cls}>
 			<Button
-				rounded={true}
+				rounded
 				disabled={!hasPrevious}
 				size={EButtonSize.Small}
 				variant={EButtonVariant.Secondary}
@@ -51,7 +51,7 @@ export const SimplePaginationComponent: FunctionComponent<IProps> = ({
 				/>
 			</Button>
 			<Button
-				rounded={true}
+				rounded
 				disabled={!hasNext}
 				size={EButtonSize.Small}
 				variant={EButtonVariant.Secondary}

@@ -16,7 +16,7 @@ const NumberInputComponent = withEnhancedInput(function NumberInput({
 			{...field}
 			{...rest}
 			autoComplete="off"
-			type={!isEdge ? 'number' : 'text'}
+			type={isEdge ? 'text' : 'number'}
 		/>
 	);
 });

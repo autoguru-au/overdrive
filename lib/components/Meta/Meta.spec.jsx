@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { EMetaVariant, Meta } from './';
+import { EMetaVariant, Meta } from '.';
 
 const TestIcon = () => (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -19,7 +19,7 @@ describe('<Meta />', () => {
 		const meta = shallow(
 			<Meta
 				icon={TestIcon}
-				label={'Hello World!'}
+				label="Hello World!"
 				varian={EMetaVariant.Primary}
 			/>,
 		);
@@ -30,7 +30,7 @@ describe('<Meta />', () => {
 		const meta = shallow(
 			<Meta
 				icon={TestIcon}
-				label={'Hello World!'}
+				label="Hello World!"
 				varian={EMetaVariant.Secondary}
 			/>,
 		);
@@ -38,20 +38,20 @@ describe('<Meta />', () => {
 	});
 
 	it('should add the icon passed in props', () => {
-		const meta = shallow(<Meta icon={TestIcon} label={'Hello World!'} />);
+		const meta = shallow(<Meta icon={TestIcon} label="Hello World!" />);
 		expect(meta.find('.icon').exists()).toBeTruthy();
 	});
 
 	it('should add a span dom element', () => {
 		const meta = shallow(
-			<Meta className="meta-class" label={'Hello World!'} />,
+			<Meta className="meta-class" label="Hello World!" />,
 		);
 		expect(meta.type()).toEqual(`span`);
 	});
 
 	it('should pass on className to dom element', () => {
 		const meta = shallow(
-			<Meta className="meta-class" label={'Hello World!'} />,
+			<Meta className="meta-class" label="Hello World!" />,
 		);
 		expect(meta.find('span').hasClass('meta-class')).toBeTruthy();
 	});
@@ -66,7 +66,7 @@ describe('<Meta />', () => {
 		expect(meta.hasClass('variantPrimary')).toBeTruthy();
 	});
 
-	it('should apply Primary variant styles', () => {
+	it('should apply Secondary variant styles', () => {
 		const meta = shallow(<Meta variant={EMetaVariant.Secondary} />);
 		expect(meta.hasClass('variantSecondary')).toBeTruthy();
 	});

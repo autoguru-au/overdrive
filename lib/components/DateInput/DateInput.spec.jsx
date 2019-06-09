@@ -1,5 +1,5 @@
 import React from 'react';
-import { DateInput } from './index';
+import { DateInput } from '.';
 import { mount, render } from 'enzyme';
 
 const todayStr = new Date(2019, 0, 22).toISOString().split('T')[0];
@@ -15,7 +15,7 @@ describe('<DateInput />', () => {
 	});
 
 	it('should throw when required props not provided', () => {
-		expect(() => render(<DateInput value={todayStr} />).toThrow());
+		expect(() => render(<DateInput value={todayStr} />)).toThrow();
 	});
 
 	it('should have some hintText', () => {
@@ -84,7 +84,7 @@ describe('<DateInput />', () => {
 	it('should match snapshot for touched date input', () => {
 		const dateInput = render(
 			<DateInput
-				isTouched={true}
+				isTouched
 				className="date-input-class"
 				value={todayStr}
 				placeholder={testLabel}
@@ -96,8 +96,8 @@ describe('<DateInput />', () => {
 	it('should match snapshot for touched valid date input', () => {
 		const dateInput = render(
 			<DateInput
-				isTouched={true}
-				isValid={true}
+				isTouched
+				isValid
 				className="date-input-class"
 				value={todayStr}
 				placeholder={testLabel}
@@ -109,7 +109,7 @@ describe('<DateInput />', () => {
 	it('should match snapshot for touched invalid date input', () => {
 		const dateInput = render(
 			<DateInput
-				isTouched={true}
+				isTouched
 				isValid={false}
 				className="date-input-class"
 				value={todayStr}
@@ -130,9 +130,9 @@ describe('<DateInput />', () => {
 		const spyedCallback = jest.fn();
 		const dateInput = mount(
 			<DateInput
-				onFocus={spyedCallback}
 				placeholder={testLabel}
 				value={todayStr}
+				onFocus={spyedCallback}
 			/>,
 		);
 		dateInput.find('input').simulate('focus');
@@ -145,9 +145,9 @@ describe('<DateInput />', () => {
 		const spyedCallback = jest.fn();
 		const dateInput = mount(
 			<DateInput
-				onBlur={spyedCallback}
 				placeholder={testLabel}
 				value={todayStr}
+				onBlur={spyedCallback}
 			/>,
 		);
 		dateInput.find('input').simulate('blur');
@@ -160,9 +160,9 @@ describe('<DateInput />', () => {
 		const spyedCallback = jest.fn();
 		const dateInput = mount(
 			<DateInput
-				onChange={spyedCallback}
 				placeholder={testLabel}
 				value={todayStr}
+				onChange={spyedCallback}
 			/>,
 		);
 		dateInput.find('input').simulate('change');

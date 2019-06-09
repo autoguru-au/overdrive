@@ -4,7 +4,7 @@ import styles from './style.scss';
 
 export const checkableClass = styles.checkable;
 
-export interface IProps {
+export interface Props {
 	className?: string;
 	checked?: boolean;
 	disabled?: boolean;
@@ -18,7 +18,7 @@ export interface IProps {
 	handleChange?(checked: boolean): void;
 }
 
-export const CheckableBase: FunctionComponent<IProps> = ({
+export const CheckableBase: FunctionComponent<Props> = ({
 	className = '',
 	label = '',
 	checked = false,
@@ -47,14 +47,14 @@ export const CheckableBase: FunctionComponent<IProps> = ({
 				value={value}
 				checked={checked}
 				disabled={disabled}
-				onClick={handleClick}
-				onChange={onChange}
 				type={inputType}
 				className={styles.nativeInput}
+				onClick={handleClick}
+				onChange={onChange}
 			/>
 			{children}
 			<div className={styles.focusRect} />
-			{!!(typeof label === 'string' && label.length > 0) && (
+			{Boolean(typeof label === 'string' && label.length > 0) && (
 				<label children={label} className={styles.label} />
 			)}
 		</div>

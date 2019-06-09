@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckBox } from './';
+import { CheckBox } from '.';
 import { mount, render } from 'enzyme';
 import { act } from 'react-dom/test-utils';
 
@@ -17,7 +17,7 @@ describe('<CheckBox />', () => {
 
 	it('should match the snapshot for a checked check', () =>
 		expect(
-			render(<CheckBox value="1" label="check label 1" checked={true} />),
+			render(<CheckBox checked value="1" label="check label 1" />),
 		).toMatchSnapshot());
 
 	it('should match the snapshot for a focused check', () =>
@@ -58,7 +58,7 @@ describe('<CheckBox />', () => {
 			<CheckBox value="1" label="check label 1" checked={false} />,
 		);
 		const checkBoxChecked = mount(
-			<CheckBox value="1" label="check label 1" checked={true} />,
+			<CheckBox checked value="1" label="check label 1" />,
 		);
 		expect(
 			checkBoxUnchecked.find("input[type='checkbox']").getDOMNode()

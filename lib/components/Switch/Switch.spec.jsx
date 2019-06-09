@@ -16,19 +16,15 @@ describe('<Switch />', () => {
 	});
 
 	it('should match snapshot when un-toggled and disabled', () => {
-		expect(
-			render(<Switch toggled={false} disabled={true} />),
-		).toMatchSnapshot();
+		expect(render(<Switch disabled toggled={false} />)).toMatchSnapshot();
 	});
 
 	it('should match snapshot when toggled', () => {
-		expect(render(<Switch toggled={true} />)).toMatchSnapshot();
+		expect(render(<Switch toggled />)).toMatchSnapshot();
 	});
 
 	it('should match snapshot when toggled and disabled', () => {
-		expect(
-			render(<Switch toggled={true} disabled={true} />),
-		).toMatchSnapshot();
+		expect(render(<Switch toggled disabled />)).toMatchSnapshot();
 	});
 
 	it('should pass on className to dom element', () => {
@@ -46,7 +42,7 @@ describe('<Switch />', () => {
 	});
 
 	it('should be toggled on when toggled prop is set to true', () => {
-		const toggleButton = mount(<Switch toggled={true} />);
+		const toggleButton = mount(<Switch toggled />);
 		expect(toggleButton.find('.toggled').length === 1).toBeTruthy();
 	});
 
@@ -56,7 +52,7 @@ describe('<Switch />', () => {
 	});
 
 	it('should be disabled on when disabled prop is set to true', () => {
-		const toggleButton = mount(<Switch disabled={true} />);
+		const toggleButton = mount(<Switch disabled />);
 		expect(toggleButton.find('[disabled]').length === 1).toBeTruthy();
 	});
 
@@ -64,7 +60,7 @@ describe('<Switch />', () => {
 		const spyedCallback = jest.fn();
 
 		const wrapper = mount(
-			<Switch onChange={spyedCallback} toggled={false} />,
+			<Switch toggled={false} onChange={spyedCallback} />,
 		);
 
 		wrapper.find('div').simulate('click');
@@ -87,7 +83,7 @@ describe('<Switch />', () => {
 		const spyedCallback = jest.fn();
 
 		const wrapper = mount(
-			<Switch onChange={spyedCallback} toggled={false} disabled={true} />,
+			<Switch disabled toggled={false} onChange={spyedCallback} />,
 		);
 
 		wrapper.find('div').simulate('click');
@@ -106,28 +102,29 @@ describe('<Switch />', () => {
 			return <Switch toggled={toggled} />;
 		};
 
-		let wrapper;
-		const onSetToggle = setToggle => {
+		const wrapper = mount(
+			<ToggleButtonWrapper getToggleSetter={onSetToggle} />,
+		);
+
+		function onSetToggle(setToggle) {
 			setTimeout(() => {
-				expect(wrapper.html().indexOf('toggled') === -1).toEqual(true);
+				expect(!wrapper.html().includes('toggled')).toEqual(true);
 
 				act(() => {
 					setToggle(true);
 				});
 
-				expect(wrapper.html().indexOf('toggled') >= 0).toEqual(true);
+				expect(wrapper.html().includes('toggled')).toEqual(true);
 
 				act(() => {
 					setToggle(false);
 				});
 
-				expect(wrapper.html().indexOf('toggled') === -1).toEqual(true);
+				expect(!wrapper.html().includes('toggled')).toEqual(true);
 
 				wrapper.unmount();
 				done();
 			}, 100);
-		};
-
-		wrapper = mount(<ToggleButtonWrapper getToggleSetter={onSetToggle} />);
+		}
 	});
 });

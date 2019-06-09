@@ -1,5 +1,5 @@
 export {
 	SimplePagination,
 	EChangeDirection as EPageChangeDirection,
-	IProps as ISimplePaginationProps,
+	Props as ISimplePaginationProps,
 } from './SimplePagination';

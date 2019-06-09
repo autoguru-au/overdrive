@@ -64,7 +64,7 @@ describe('<Badge />', () => {
 
 	it('should apply inverted style when inverted prop is set to true', () => {
 		const badge = mount(
-			<Badge colour={EColour.Default} invert={true} label={testLabel} />,
+			<Badge invert colour={EColour.Default} label={testLabel} />,
 		);
 		expect(badge.find('span').hasClass('inverted')).toBeTruthy();
 	});

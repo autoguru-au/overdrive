@@ -5,14 +5,14 @@ import { checkableClass } from '../CheckableBase/CheckableBase';
 import styles from './style.scss';
 import { RadioContext } from './RadioGroup';
 
-export interface IProps {
+export interface Props {
 	value: string;
 	className?: string;
 	disabled?: boolean;
 	label?: string;
 }
 
-export const Radio: FunctionComponent<IProps> = memo(
+export const Radio: FunctionComponent<Props> = memo(
 	({ value, className = '', label = '', disabled = false }) => {
 		const radioContext = useContext(RadioContext);
 

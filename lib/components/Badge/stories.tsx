@@ -9,26 +9,22 @@ const badgeProps = () => ({
 });
 
 storiesOf('Components|Badge', module)
-	.add('default', () => <Badge label={'345 CREDITS'} {...badgeProps()} />)
+	.add('default', () => <Badge label="345 CREDITS" {...badgeProps()} />)
 	.add('success', () => (
-		<Badge colour={EBadgeColour.Success} label={'ON PICK UP'} />
+		<Badge colour={EBadgeColour.Success} label="ON PICK UP" />
 	))
 	.add('success inverted', () => (
-		<Badge
-			colour={EBadgeColour.Success}
-			invert={true}
-			label={'ON PICK UP'}
-		/>
+		<Badge invert colour={EBadgeColour.Success} label="ON PICK UP" />
 	))
 	.add('warning', () => (
-		<Badge colour={EBadgeColour.Warning} label={'APPROVED'} />
+		<Badge colour={EBadgeColour.Warning} label="APPROVED" />
 	))
 	.add('warning inverted', () => (
-		<Badge colour={EBadgeColour.Warning} invert={true} label={'APPROVED'} />
+		<Badge invert colour={EBadgeColour.Warning} label="APPROVED" />
 	))
 	.add('danger', () => (
-		<Badge colour={EBadgeColour.Danger} label={'CANCELLED'} />
+		<Badge colour={EBadgeColour.Danger} label="CANCELLED" />
 	))
 	.add('danger inverted', () => (
-		<Badge colour={EBadgeColour.Danger} invert={true} label={'CANCELLED'} />
+		<Badge invert colour={EBadgeColour.Danger} label="CANCELLED" />
 	));

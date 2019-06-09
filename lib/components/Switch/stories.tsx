@@ -7,14 +7,12 @@ import { Switch } from './Switch';
 storiesOf('Components|Switch', module)
 	.add('default', () => (
 		<Switch
-			onChange={action('onChange')}
 			disabled={boolean('disabled', false)}
 			toggled={boolean('toggled', false)}
+			onChange={action('onChange')}
 		/>
 	))
 	.add('Un-toggled', () => <Switch toggled={false} />)
-	.add('Toggled', () => <Switch toggled={true} />)
-	.add('Disabled Un-toggled', () => (
-		<Switch disabled={true} toggled={false} />
-	))
-	.add('Disabled Toggled', () => <Switch disabled={true} toggled={true} />);
+	.add('Toggled', () => <Switch toggled />)
+	.add('Disabled Un-toggled', () => <Switch disabled toggled={false} />)
+	.add('Disabled Toggled', () => <Switch disabled toggled />);

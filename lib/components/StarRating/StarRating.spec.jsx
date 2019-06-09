@@ -1,13 +1,15 @@
 import React from 'react';
 import { mount, render, shallow } from 'enzyme';
-import { EStarRatingSize, StarRating } from './';
+import { EStarRatingSize, StarRating } from '.';
 
 const getFullStarsNum = el => {
 	return el.find('.fullStar').length;
 };
+
 const getHalfStarsNum = el => {
 	return el.find('.halfStar').length;
 };
+
 const getEmptyStarsNum = el => {
 	return el.find('.emptyStar').length;
 };
@@ -25,9 +27,7 @@ describe('<StarRating />', () => {
 	});
 
 	it('should match snapshot with label', () => {
-		const rating = render(
-			<StarRating rating={3.8} label={'Hello World!'} />,
-		);
+		const rating = render(<StarRating rating={3.8} label="Hello World!" />);
 		expect(rating).toMatchSnapshot();
 	});
 
@@ -35,7 +35,7 @@ describe('<StarRating />', () => {
 		const rating = render(
 			<StarRating
 				rating={3.8}
-				label={'Hello World!'}
+				label="Hello World!"
 				size={EStarRatingSize.Small}
 			/>,
 		);
@@ -46,7 +46,7 @@ describe('<StarRating />', () => {
 		const rating = shallow(
 			<StarRating
 				rating={2.6}
-				label={'Hello World!'}
+				label="Hello World!"
 				size={EStarRatingSize.Small}
 			/>,
 		);
@@ -75,7 +75,7 @@ describe('<StarRating />', () => {
 	});
 
 	it('should add a span element inside with the label text value', () => {
-		const rating = mount(<StarRating label={'Hello World!'} />);
+		const rating = mount(<StarRating label="Hello World!" />);
 		expect(
 			rating
 				.find('span')

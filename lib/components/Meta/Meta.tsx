@@ -9,7 +9,7 @@ export enum EVariant {
 	Secondary = 'secondary',
 }
 
-export interface IProps {
+export interface Props {
 	className?: string;
 	icon?: TIconPrimitiveType;
 	label: string;
@@ -21,7 +21,7 @@ const cssVariantMap: Map<EVariant, string> = new Map([
 	[EVariant.Secondary, styles.variantSecondary],
 ]);
 
-const MetaComponent: FunctionComponent<IProps> = ({
+const MetaComponent: FunctionComponent<Props> = ({
 	className = '',
 	icon = void 0,
 	label,
@@ -35,7 +35,7 @@ const MetaComponent: FunctionComponent<IProps> = ({
 			{icon && cloneElement(icon, { className: styles.icon })}
 			<Text
 				className={clsx({
-					[styles.withIcon]: !!icon,
+					[styles.withIcon]: Boolean(icon),
 				})}>
 				{label}
 			</Text>

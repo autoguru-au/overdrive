@@ -2,11 +2,11 @@ import clsx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
 import styles from './style.scss';
 
-export interface IProps {
+export interface Props {
 	className?: string;
 }
 
-const LinearProgressIndicatorComponent: FunctionComponent<IProps> = ({
+const LinearProgressIndicatorComponent: FunctionComponent<Props> = ({
 	className = '',
 }) => {
 	const cls = clsx([styles.root, className]);

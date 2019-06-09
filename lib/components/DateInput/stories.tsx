@@ -46,10 +46,10 @@ storiesOf('Components|Inputs/Date', module)
 	))
 	.add('disabled', () => (
 		<DateInput
+			disabled
 			placeholder="What si your DOB?"
 			value="1996-01-11"
 			name="abc"
-			disabled={true}
 			hintText={text('Hint Text', 'dd/mm/yyy')}
 		/>
 	));

@@ -1,14 +1,12 @@
 import React from 'react';
-import { EPageChangeDirection, SimplePagination } from './';
+import { EPageChangeDirection, SimplePagination } from '.';
 import { mount, render, shallow } from 'enzyme';
 
 describe('<SimplePagination />', () => {
 	it('should not throw', () =>
 		expect(() => shallow(<SimplePagination />)).not.toThrow());
 	it('should not throw when onChange callback is undefined', () => {
-		const wrapper = mount(
-			<SimplePagination hasPrevious={true} hasNext={true} />,
-		);
+		const wrapper = mount(<SimplePagination hasPrevious hasNext />);
 		expect(() => {
 			wrapper
 				.find('button')
@@ -19,18 +17,16 @@ describe('<SimplePagination />', () => {
 	});
 
 	it('should match snapshot for hasNext', () => {
-		expect(render(<SimplePagination hasNext={true} />)).toMatchSnapshot();
+		expect(render(<SimplePagination hasNext />)).toMatchSnapshot();
 	});
 
 	it('should match snapshot for hasPrevious', () => {
-		expect(
-			render(<SimplePagination hasPrevious={true} />),
-		).toMatchSnapshot();
+		expect(render(<SimplePagination hasPrevious />)).toMatchSnapshot();
 	});
 
 	it('should match snapshot for hasNext and hasPrevious', () => {
 		expect(
-			render(<SimplePagination hasPrevious={true} hasNext={true} />),
+			render(<SimplePagination hasPrevious hasNext />),
 		).toMatchSnapshot();
 	});
 
@@ -38,11 +34,7 @@ describe('<SimplePagination />', () => {
 		const spyedCallback = jest.fn();
 
 		const wrapper = mount(
-			<SimplePagination
-				hasPrevious={true}
-				hasNext={true}
-				onChange={spyedCallback}
-			/>,
+			<SimplePagination hasPrevious hasNext onChange={spyedCallback} />,
 		);
 
 		wrapper
@@ -59,7 +51,7 @@ describe('<SimplePagination />', () => {
 
 		const wrapper = mount(
 			<SimplePagination
-				hasPrevious={true}
+				hasPrevious
 				hasNext={false}
 				onChange={spyedCallback}
 			/>,
@@ -80,11 +72,7 @@ describe('<SimplePagination />', () => {
 		const spyedCallback = jest.fn();
 
 		const wrapper = mount(
-			<SimplePagination
-				hasPrevious={true}
-				hasNext={true}
-				onChange={spyedCallback}
-			/>,
+			<SimplePagination hasPrevious hasNext onChange={spyedCallback} />,
 		);
 
 		wrapper
@@ -103,8 +91,8 @@ describe('<SimplePagination />', () => {
 
 		const wrapper = mount(
 			<SimplePagination
+				hasNext
 				hasPrevious={false}
-				hasNext={true}
 				onChange={spyedCallback}
 			/>,
 		);

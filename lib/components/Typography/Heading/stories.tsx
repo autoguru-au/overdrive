@@ -2,7 +2,7 @@ import { select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 
-import { Heading } from './index';
+import { Heading } from '.';
 
 storiesOf('Foundation|Typography/Heading', module)
 	.addDecorator(story => (

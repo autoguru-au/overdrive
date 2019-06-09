@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import React from 'react';
 
 import { TSizeScale } from '../types';
-import { Text } from './index';
+import { Text } from '.';
 
 const baseProps = () => ({
 	size: select('Size', sizeScale, 3),
@@ -11,7 +11,7 @@ const baseProps = () => ({
 	strong: boolean('Strong', false),
 });
 
-const sizeScale: Array<TSizeScale> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const sizeScale: TSizeScale[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 storiesOf('Foundation|Typography/Text', module)
 	.add('default', () => <Text {...baseProps()}>Hello World</Text>, {
@@ -33,8 +33,8 @@ storiesOf('Foundation|Typography/Text', module)
 		<div>
 			<div>
 				{sizeScale.map(size => (
-					<div style={{ marginBottom: '20px' }} key={size}>
-						<Text is={'span'} size={size}>
+					<div key={size} style={{ marginBottom: '20px' }}>
+						<Text is="span" size={size}>
 							Size: {size}: Lorem ipsum dolor sit amet,
 							consectetur
 						</Text>
@@ -47,8 +47,8 @@ storiesOf('Foundation|Typography/Text', module)
 		<div>
 			<div>
 				{sizeScale.map(size => (
-					<div style={{ marginBottom: '20px' }} key={size}>
-						<Text is={'p'} size={size}>
+					<div key={size} style={{ marginBottom: '20px' }}>
+						<Text is="p" size={size}>
 							Size: {size}: Lorem ipsum dolor sit amet,
 							consectetur
 						</Text>

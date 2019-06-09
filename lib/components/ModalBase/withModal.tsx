@@ -7,15 +7,15 @@ export type TRequestCloseCallback<Payload,> = (
 	payload?: Payload,
 ) => void;
 
-export interface IProps<Payload,> {
+export interface Props<Payload,> {
 	isOpen: boolean;
 
 	onRequestClose?: TRequestCloseCallback<Payload>;
 }
 
 export const withModal = <TIncomingProps extends {} = {}, Payload = any>(
-	WrappedComponent: ComponentType<IProps<Payload> & TIncomingProps>,
-): FunctionComponent<IProps<Payload> & TIncomingProps> => ({
+	WrappedComponent: ComponentType<Props<Payload> & TIncomingProps>,
+): FunctionComponent<Props<Payload> & TIncomingProps> => ({
 	onRequestClose = () => void 0,
 	isOpen,
 	...rest
@@ -23,8 +23,8 @@ export const withModal = <TIncomingProps extends {} = {}, Payload = any>(
 	<ModalPortal isOpen={isOpen} onRequestClose={onRequestClose}>
 		{isOpen && (
 			<WrappedComponent
-				onRequestClose={onRequestClose}
 				isOpen={isOpen}
+				onRequestClose={onRequestClose}
 				{...(rest as TIncomingProps)}
 			/>
 		)}

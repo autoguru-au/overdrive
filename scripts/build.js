@@ -25,7 +25,7 @@ async function run() {
 		}),
 	);
 
-	let outputs = await Promise.all([
+	const outputs = await Promise.all([
 		bundle.write({
 			file: resolve(distFolder, 'overdrive.cjs.js'),
 			format: 'cjs',
@@ -71,19 +71,19 @@ run()
 
 		console.log(green(`✅ Success`));
 	})
-	.catch(err => {
+	.catch(error => {
 		console.log('');
-		console.log(`${red(err.message)}\n`);
+		console.log(`${red(error.message)}\n`);
 		console.log(
 			dim(
-				`==> ${relative(root, err.loc.file)}:${err.loc.line}:${
-					err.loc.column
+				`==> ${relative(root, error.loc.file)}:${error.loc.line}:${
+					error.loc.column
 				}`,
 			),
 		);
-		console.log(err.frame);
+		console.log(error.frame);
 		console.log('');
-		console.log(dim(err.stack));
+		console.log(dim(error.stack));
 	});
 
 function copy(paths, config) {
