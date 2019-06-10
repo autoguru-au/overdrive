@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Positioner /> should match snapshot 1`] = `
-<Positioner
+<Component
   alignment="bottom"
   isOpen={true}
   triggerRef={
@@ -25,8 +25,13 @@ exports[`<Positioner /> should match snapshot 1`] = `
       className="root"
       style={Object {}}
     >
-      Some body
+      <Component
+        alignment="bottom"
+        isOpen={true}
+      >
+        Some body
+      </Component>
     </div>
   </Portal>
-</Positioner>
+</Component>
 `;

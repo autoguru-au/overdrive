@@ -1,3 +1,3 @@
 export { getOptimalPosition } from './getOptimalPosition';
 export { EAlignment as EPositionerAlignment } from './alignment';
-export { Positioner } from './Positioner';
+export { Positioner, usingPositioner } from './Positioner';

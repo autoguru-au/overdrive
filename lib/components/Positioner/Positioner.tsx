@@ -1,16 +1,17 @@
 import React, {
+	ComponentType,
+	createRef,
 	FunctionComponent,
 	RefObject,
 	useEffect,
-	useRef,
 	useState,
 } from 'react';
 import { createPortal } from 'react-dom';
 import { EAlignment } from './alignment';
-import { getOptimalPosition, Position } from './getOptimalPosition';
+import { AlignmentRect, getOptimalPosition } from './getOptimalPosition';
 import styles from './style.scss';
 
-interface Props {
+export interface Props {
 	alignment?: EAlignment;
 	isOpen?: boolean;
 	triggerRef: RefObject<HTMLElement>;
@@ -18,34 +19,47 @@ interface Props {
 	onRequestClose?(): void;
 }
 
-export const Positioner: FunctionComponent<Props> = ({
-	alignment = EAlignment.TOP_LEFT,
-	isOpen = false,
-	onRequestClose = () => void 0,
-	triggerRef,
-	children,
-}) => {
-	const positionerRef = useRef<HTMLDivElement>(null);
-	const positionerPosition = usePositionerEffect(
-		alignment,
-		triggerRef,
-		positionerRef,
-		isOpen,
-		onRequestClose,
-	);
+export function usingPositioner<T extends {} = any>(
+	WrappingComponent: ComponentType<T & Pick<Props, 'isOpen' | 'alignment'>>,
+): FunctionComponent<Props & T> {
+	const positionerRef = createRef<HTMLDivElement>();
 
-	return createPortal(
-		<div
-			ref={positionerRef}
-			style={{
-				...positionerPosition,
-			}}
-			className={styles.root}>
-			{isOpen && children}
-		</div>,
-		document.body,
-	);
-};
+	return ({
+		alignment = EAlignment.TOP_LEFT,
+		isOpen = false,
+		onRequestClose = () => void 0,
+		triggerRef,
+		...rest
+	}) => {
+		const { alignment: derivedAlignment, rect } = usePositionerEffect(
+			alignment,
+			triggerRef,
+			positionerRef,
+			isOpen,
+			onRequestClose,
+		);
+
+		return createPortal(
+			<div
+				ref={positionerRef}
+				style={{
+					...rect,
+				}}
+				className={styles.root}>
+				{isOpen && (
+					<WrappingComponent
+						{...(rest as T)}
+						isOpen={isOpen}
+						alignment={derivedAlignment}
+					/>
+				)}
+			</div>,
+			document.body,
+		);
+	};
+}
+
+export const Positioner = usingPositioner(({ children }) => children);
 
 function usePositionerEffect(
 	alignment: EAlignment,
@@ -54,9 +68,10 @@ function usePositionerEffect(
 	isOpen: boolean,
 	onRequestClose: () => void,
 ) {
-	const [positionerPosition, setPositionerPosition] = useState<Position>(
-		null,
-	);
+	const [positionerResult, setPositionerResult] = useState<AlignmentRect>({
+		rect: null,
+		alignment,
+	});
 
 	useEffect(
 		() =>
@@ -92,15 +107,12 @@ function usePositionerEffect(
 			const height = Math.round(containerRect.height);
 			const width = Math.round(containerRect.width);
 
-			const { rect } = getOptimalPosition(alignment, triggerRect, {
-				height,
-				width,
-			});
-
-			setPositionerPosition({
-				top: rect.top,
-				left: rect.left,
-			});
+			setPositionerResult(
+				getOptimalPosition(alignment, triggerRect, {
+					height,
+					width,
+				}),
+			);
 
 			lastFrame = requestAnimationFrame(() => {
 				handler();
@@ -114,7 +126,7 @@ function usePositionerEffect(
 		};
 	}, [alignment, isOpen, positionerRef, triggerRef]);
 
-	return positionerPosition;
+	return positionerResult;
 }
 
 const outsideHandler = (
