@@ -2,12 +2,12 @@ import React, { ComponentType, FunctionComponent } from 'react';
 import { ECloseCode } from './enums';
 import { ModalPortal } from './ModalPortal';
 
-export type TRequestCloseCallback<Payload,> = (
+export type TRequestCloseCallback<Payload> = (
 	e: ECloseCode,
 	payload?: Payload,
 ) => void;
 
-export interface Props<Payload,> {
+export interface Props<Payload> {
 	isOpen: boolean;
 
 	onRequestClose?: TRequestCloseCallback<Payload>;

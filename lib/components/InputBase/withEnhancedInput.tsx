@@ -38,19 +38,19 @@ export interface ValidationProps {
 }
 
 // An amalgamation of the HoC props, event handlers and the consumer props.
-export type EnhanceInputProps<IncomingProps = {},> = IncomingProps &
+export type EnhanceInputProps<IncomingProps = {}> = IncomingProps &
 	EnhanceInputPrimitiveProps &
 	EventHandlers &
 	ValidationProps;
 
 // The final props we send into thw wrapping component
-export type WrappedComponentProps<IncomingProps = {},> = {
+export type WrappedComponentProps<IncomingProps = {}> = {
 	validation: ValidationProps;
 	eventHandlers: EventHandlers;
 	field: Omit<EnhanceInputPrimitiveProps, 'placeholder' | 'hintText'>;
 } & IncomingProps;
 
-export function withEnhancedInput<IncomingProps = {},>(
+export function withEnhancedInput<IncomingProps = {}>(
 	WrappingComponent: ComponentType<WrappedComponentProps<IncomingProps>>,
 ): ComponentType<EnhanceInputProps<IncomingProps>> {
 	type TProps = EnhanceInputProps<IncomingProps>;
