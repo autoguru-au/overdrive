@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import { Box } from './Box';
-import { EBoxVariant } from './index';
+import { EBoxVariant } from '.';
 
 describe('<Box />', () => {
 	it('should not throw', () => expect(() => shallow(<Box />)).not.toThrow());

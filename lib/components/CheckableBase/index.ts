@@ -1,1 +1,1 @@
-export { CheckableBase, IProps as ICheckableProps } from './CheckableBase';
+export { CheckableBase, Props as ICheckableProps } from './CheckableBase';

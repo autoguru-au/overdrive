@@ -12,8 +12,8 @@ describe('<Positioner />', () => {
 	it('should match snapshot', () => {
 		const wrapper = mount(
 			<Positioner
+				isOpen
 				triggerRef={createRef()}
-				isOpen={true}
 				alignment={EAlignment.BOTTOM}>
 				Some body
 			</Positioner>,
@@ -28,8 +28,8 @@ describe('<Positioner />', () => {
 		it('should render the body when open', () => {
 			const wrapper = mount(
 				<Positioner
+					isOpen
 					triggerRef={createRef()}
-					isOpen={true}
 					alignment={EAlignment.BOTTOM}>
 					Some body
 				</Positioner>,

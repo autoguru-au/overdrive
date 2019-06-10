@@ -1,7 +1,7 @@
 import { action } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 import { withModal } from '.';
 import { Button, EButtonSize, EButtonVariant } from '../Button';
@@ -32,9 +32,9 @@ storiesOf('Utility|Modal', module)
 			return (
 				<>
 					<Button
+						children="Click Me"
 						variant={EButtonVariant.Primary}
-						children={'Click Me'}
-						onClick={setIsOpen.bind(null, true)}
+						onClick={useCallback(() => setIsOpen(true), [])}
 					/>
 					<NakedModal isOpen={isOpen} onRequestClose={onRequestClose}>
 						<p>Hello, I am a modal body!</p>
@@ -52,17 +52,17 @@ storiesOf('Utility|Modal', module)
 			return (
 				<>
 					<Button
+						children="Click Me"
 						variant={EButtonVariant.Primary}
-						children={'Click Me'}
-						onClick={setIsOpen.bind(null, true)}
+						onClick={useCallback(() => setIsOpen(true), [])}
 					/>
 					<NakedModal isOpen={isOpen}>
 						<p>Hello, I am a modal body!</p>
 						<Button
+							children="Close Me"
+							isFullWidth
 							size={EButtonSize.Small}
-							isFullWidth={true}
-							onClick={setIsOpen.bind(null, false)}
-							children={'Close Me'}
+							onClick={useCallback(() => setIsOpen(false), [])}
 						/>
 					</NakedModal>
 				</>

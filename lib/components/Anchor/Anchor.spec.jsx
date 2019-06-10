@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import { Anchor } from './';
+import { Anchor } from '.';
 import { Button } from '../Button';
 
 const testLabel = 'Hello World!';

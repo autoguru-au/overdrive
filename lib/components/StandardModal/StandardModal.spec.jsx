@@ -2,7 +2,7 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import { StandardModal } from './StandardModal';
 import { act } from 'react-dom/test-utils';
-import { EStandardModalSize } from './index';
+import { EStandardModalSize } from '.';
 
 describe('<StandardModal />', () => {
 	const testTitle = 'Hello World!';
@@ -12,7 +12,7 @@ describe('<StandardModal />', () => {
 		expect(() => shallow(<StandardModal />)).not.toThrow());
 
 	it('should match snapshot without title and body', () => {
-		const modal = mount(<StandardModal isOpen={true} />);
+		const modal = mount(<StandardModal isOpen />);
 
 		expect(modal.html()).toMatchSnapshot();
 		modal.unmount();
@@ -20,7 +20,7 @@ describe('<StandardModal />', () => {
 
 	it('should match snapshot with title and body', () => {
 		const modal = mount(
-			<StandardModal title={testTitle} isOpen={true}>
+			<StandardModal isOpen title={testTitle}>
 				<p>{testBodyText}</p>
 			</StandardModal>,
 		);
@@ -31,7 +31,7 @@ describe('<StandardModal />', () => {
 
 	it('should add standard size class by default', () => {
 		const modal = mount(
-			<StandardModal title={testTitle} isOpen={true}>
+			<StandardModal isOpen title={testTitle}>
 				<p>{testBodyText}</p>
 			</StandardModal>,
 		);
@@ -42,8 +42,8 @@ describe('<StandardModal />', () => {
 	it('should add standard size class for standard size', () => {
 		const modal = mount(
 			<StandardModal
+				isOpen
 				title={testTitle}
-				isOpen={true}
 				size={EStandardModalSize.Standard}>
 				<p>{testBodyText}</p>
 			</StandardModal>,
@@ -54,7 +54,7 @@ describe('<StandardModal />', () => {
 
 	it('should add the title text to the modals title element', () => {
 		const modal = mount(
-			<StandardModal title={testTitle} isOpen={true}>
+			<StandardModal isOpen title={testTitle}>
 				<p>{testBodyText}</p>
 			</StandardModal>,
 		);
@@ -65,7 +65,7 @@ describe('<StandardModal />', () => {
 
 	it('should add child elements to the modals content container', () => {
 		const modal = mount(
-			<StandardModal title={testTitle} isOpen={true}>
+			<StandardModal isOpen title={testTitle}>
 				<p>{testBodyText}</p>
 			</StandardModal>,
 		);
@@ -82,8 +82,8 @@ describe('<StandardModal />', () => {
 		act(() => {
 			modal = mount(
 				<StandardModal
+					isOpen
 					title={testTitle}
-					isOpen={true}
 					onRequestClose={mockCloseReq}>
 					<p>{testBodyText}</p>
 				</StandardModal>,

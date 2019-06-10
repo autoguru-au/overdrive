@@ -15,6 +15,7 @@ dist/
 coverage/
 *.xml
 .awcache/
+.eslintcache
 
 # OS
 .DS_Store

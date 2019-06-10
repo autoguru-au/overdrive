@@ -11,13 +11,13 @@ import { createPortal } from 'react-dom';
 import { ECloseCode } from './enums';
 import styles from './style.scss';
 
-interface IProps {
+interface Props {
 	isOpen: boolean;
 
 	onRequestClose?(e: ECloseCode): void;
 }
 
-export const ModalPortal: FunctionComponent<IProps> = ({
+export const ModalPortal: FunctionComponent<Props> = ({
 	isOpen,
 	onRequestClose,
 	children,
@@ -35,7 +35,9 @@ export const ModalPortal: FunctionComponent<IProps> = ({
 			document.body.style.overflow = 'hidden';
 		}
 
-		return () => (document.body.style.overflow = null);
+		return () => {
+			document.body.style.overflow = null;
+		};
 	}, [isOpen]);
 
 	useEffect(() => {
@@ -48,7 +50,7 @@ export const ModalPortal: FunctionComponent<IProps> = ({
 		document.body.addEventListener('mouseup', callback);
 
 		return () => document.body.removeEventListener('mouseup', callback);
-	}, [contentRef.current, isOpen, onRequestClose]);
+	}, [isOpen, onRequestClose]);
 
 	return createPortal(
 		<div
@@ -56,7 +58,7 @@ export const ModalPortal: FunctionComponent<IProps> = ({
 				[styles.modalPortalIsOpen]: isOpen,
 			})}>
 			<div className={styles.modalPanel}>
-				<div className={styles.modalContent} ref={contentRef}>
+				<div ref={contentRef} className={styles.modalContent}>
 					{children}
 				</div>
 			</div>

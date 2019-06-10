@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import { LinearProgressIndicator } from './';
+import { LinearProgressIndicator } from '.';
 
 describe('<LinearProgressIndicator />', () => {
 	it('should not throw', () =>

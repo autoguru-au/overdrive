@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
 import styles from './style.scss';
 
-export interface IProps {
+export interface Props {
 	colour?: EColour;
 	className?: string;
 	invert?: boolean;
@@ -23,7 +23,7 @@ const cssColourMap = new Map([
 	[EColour.Danger, styles.colourDanger],
 ]);
 
-const BadgeComponent: FunctionComponent<IProps> = ({
+const BadgeComponent: FunctionComponent<Props> = ({
 	label,
 	colour = EColour.Default,
 	invert = false,

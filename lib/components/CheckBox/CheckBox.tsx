@@ -5,7 +5,7 @@ import { CheckableBase } from '../CheckableBase';
 import { checkableClass } from '../CheckableBase/CheckableBase';
 import styles from './style.scss';
 
-export interface IProps {
+export interface Props {
 	className?: string;
 	checked?: boolean;
 	disabled?: boolean;
@@ -18,7 +18,7 @@ export interface IProps {
 	onChange?(checked: boolean): void;
 }
 
-export const CheckBox: FunctionComponent<IProps> = memo(
+export const CheckBox: FunctionComponent<Props> = memo(
 	({
 		value,
 		className = '',

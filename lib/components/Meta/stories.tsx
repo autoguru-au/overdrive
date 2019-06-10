@@ -8,6 +8,6 @@ storiesOf('Components|Meta', module).add('default', () => (
 	<Meta
 		variant={select('Variant', EMetaVariant, EMetaVariant.Primary)}
 		icon={<Icon size={16} icon={CalendarIcon} />}
-		label={'Hello World'}
+		label="Hello World"
 	/>
 ));

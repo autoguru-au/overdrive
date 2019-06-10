@@ -64,7 +64,7 @@ describe('<NumberInput />', () => {
 	it('should match snapshot for touched number input', () => {
 		const numberInput = render(
 			<NumberInput
-				isTouched={true}
+				isTouched
 				className="number-input-class"
 				placeholder="placeholder something"
 			/>,
@@ -75,8 +75,8 @@ describe('<NumberInput />', () => {
 	it('should match snapshot for touched valid number input', () => {
 		const numberInput = render(
 			<NumberInput
-				isTouched={true}
-				isValid={true}
+				isTouched
+				isValid
 				className="number-input-class"
 				placeholder="placeholder something"
 			/>,
@@ -87,7 +87,7 @@ describe('<NumberInput />', () => {
 	it('should match snapshot for touched invalid number input', () => {
 		const numberInput = render(
 			<NumberInput
-				isTouched={true}
+				isTouched
 				isValid={false}
 				className="number-input-class"
 				placeholder="placeholder something"
@@ -109,8 +109,8 @@ describe('<NumberInput />', () => {
 		const spyedCallback = jest.fn();
 		const numberInput = mount(
 			<NumberInput
-				onFocus={spyedCallback}
 				placeholder="placeholder something"
+				onFocus={spyedCallback}
 			/>,
 		);
 		numberInput.find('input').simulate('focus');
@@ -123,8 +123,8 @@ describe('<NumberInput />', () => {
 		const spyedCallback = jest.fn();
 		const numberInput = mount(
 			<NumberInput
-				onBlur={spyedCallback}
 				placeholder="placeholder something"
+				onBlur={spyedCallback}
 			/>,
 		);
 		numberInput.find('input').simulate('blur');
@@ -137,8 +137,8 @@ describe('<NumberInput />', () => {
 		const spyedCallback = jest.fn();
 		const numberInput = mount(
 			<NumberInput
-				onChange={spyedCallback}
 				placeholder="placeholder something"
+				onChange={spyedCallback}
 			/>,
 		);
 		numberInput.find('input').simulate('change');

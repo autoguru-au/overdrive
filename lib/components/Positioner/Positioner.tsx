@@ -9,10 +9,10 @@ import React, {
 } from 'react';
 import { createPortal } from 'react-dom';
 import { EAlignment } from './alignment';
-import { getOptimalPosition, IPosition } from './getOptimalPosition';
+import { getOptimalPosition, Position } from './getOptimalPosition';
 import styles from './style.scss';
 
-interface IProps {
+interface Props {
 	alignment?: EAlignment;
 	isOpen?: boolean;
 	triggerRef: RefObject<HTMLElement>;
@@ -20,7 +20,7 @@ interface IProps {
 	onRequestClose?(): void;
 }
 
-export const Positioner: FunctionComponent<IProps> = ({
+export const Positioner: FunctionComponent<Props> = ({
 	alignment = EAlignment.TOP_LEFT,
 	isOpen = false,
 	onRequestClose = () => void 0,
@@ -56,15 +56,15 @@ function usePositionerEffect(
 	isOpen: boolean,
 	onRequestClose: () => void,
 ) {
-	const [positionerPosition, setPositionerPosition] = useState<IPosition>(
+	const [positionerPosition, setPositionerPosition] = useState<Position>(
 		null,
 	);
 
-	if (typeof onRequestClose === 'function') {
-		useOutsideClick([positionerRef, triggerRef], () => {
+	useOutsideClick([positionerRef, triggerRef], () => {
+		if (typeof onRequestClose === 'function') {
 			onRequestClose();
-		});
-	}
+		}
+	});
 
 	useEffect(() => {
 		if (!triggerRef.current && !positionerRef.current) {
@@ -80,7 +80,7 @@ function usePositionerEffect(
 				return;
 			}
 
-			if (!isOpen && !!lastFrame) {
+			if (!isOpen && Boolean(lastFrame)) {
 				return cancelAnimationFrame(lastFrame);
 			}
 
@@ -125,7 +125,7 @@ const useOutsideClick = (
 		const handler = event => {
 			if (
 				refs
-					.filter(item => !!item.current)
+					.filter(item => Boolean(item.current))
 					.every(item => !item.current.contains(event.target))
 			) {
 				onClickAway(event);

@@ -1,5 +1,5 @@
 export {
 	Pagination,
-	IProps as IPaginationProps,
+	Props as IPaginationProps,
 	TOnChangeEventHandler as TPaginationOnChangeEventHandler,
 } from './Pagination';

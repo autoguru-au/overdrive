@@ -1,16 +1,16 @@
 import React, { FunctionComponent, ReactElement } from 'react';
 import styles from './style.scss';
 
-export interface IProps {
+export interface Props {
 	heading?: ReactElement | null;
 }
 
-export const TextContainer: FunctionComponent<IProps> = ({
+export const TextContainer: FunctionComponent<Props> = ({
 	heading = null,
 	children,
 }) => (
 	<article className={styles.root}>
-		{!!heading && <header>{heading}</header>}
+		{Boolean(heading) && <header>{heading}</header>}
 		{children}
 	</article>
 );

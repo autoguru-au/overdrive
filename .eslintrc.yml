@@ -1,0 +1,20 @@
+extends:
+  - '@autoguru/eslint-config/typescript'
+  - '@autoguru/eslint-config/react'
+  - '@autoguru/eslint-config/jest'
+
+rules:
+  'jest/prefer-called-with': 'warn'
+
+overrides:
+  - files: 'lib/components/**/*'
+    env: { node: false, browser: true }
+  - files: '**/stories.tsx'
+    env: { node: true, browser: true }
+  - files: ['**/*.spec.{js,jsx}', 'jest.*.js']
+    env: { jest: true, node: true, browser: true }
+  - files: '{*,{scripts,config}/**/*}.js'
+    env: { node: true, browser: false }
+    rules:
+      '@typescript-eslint/no-var-requires': 'off'
+      'unicorn/no-process-exit': 'off'

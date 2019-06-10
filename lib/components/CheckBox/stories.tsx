@@ -85,7 +85,7 @@ storiesOf('Components|Inputs/CheckBox', module)
 		<CheckBox name="check-name" value="1" {...baseProps()} />
 	))
 	.add('checked', () => (
-		<CheckBox name="check-name" value="1" checked={true} {...baseProps()} />
+		<CheckBox checked name="check-name" value="1" {...baseProps()} />
 	))
 	.add('hovered', () => (
 		<CheckBox
@@ -116,9 +116,9 @@ storiesOf('Components|Inputs/CheckBox', module)
 	))
 	.add('disabled', () => (
 		<CheckBox
+			disabled
 			name="check-name"
 			value="1"
-			disabled={true}
 			{...checked()}
 			{...baseProps()}
 		/>

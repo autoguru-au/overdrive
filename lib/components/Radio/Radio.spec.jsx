@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Radio, RadioGroup } from './';
+import { Radio, RadioGroup } from '.';
 import { mount, render } from 'enzyme';
 import { act } from 'react-dom/test-utils';
 
@@ -41,7 +41,7 @@ describe('<RadioButton />', () => {
 			expect(
 				render(
 					<RadioGroup name="radio">
-						<Radio value="1" label="radio label 1" checked={true} />
+						<Radio checked value="1" label="radio label 1" />
 						<Radio
 							value="2"
 							label="radio label 2"
@@ -213,11 +213,7 @@ describe('<RadioButton />', () => {
 				group = mount(
 					<RadioGroup name="radio" value="2">
 						<Radio value="1" label="radio label 1" />
-						<Radio
-							value="2"
-							label="radio label 2"
-							disabled={true}
-						/>
+						<Radio disabled value="2" label="radio label 2" />
 						<Radio value="3" label="radio label 3" />
 						<Radio value="4" label="radio label 4" />
 					</RadioGroup>,

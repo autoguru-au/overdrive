@@ -9,7 +9,7 @@ storiesOf('Components|TextContainer', module)
 	.add('default', () => (
 		<TextContainer>
 			<Heading>Choose a credit pack</Heading>
-			<Text is="p" muted={true}>
+			<Text muted is="p">
 				To get started, choose a credit pack that will used for Auto
 				Top-Up.
 			</Text>
@@ -18,7 +18,7 @@ storiesOf('Components|TextContainer', module)
 	.add('with a lot of body', () => (
 		<TextContainer>
 			<Heading>Reviews</Heading>
-			<Text is="p" muted={true}>
+			<Text muted is="p">
 				To avoid you coming to a halt in the middle of the road, because
 				of a banging, crash of pistons and valves fighting with each
 				other, let's investigate what the timing belt is, what it does,
@@ -38,7 +38,7 @@ storiesOf('Components|TextContainer', module)
 					</Button>
 				</>
 			}>
-			<Text is="p" muted={true}>
+			<Text muted is="p">
 				All of our reviews are from verified customers.
 			</Text>
 		</TextContainer>
@@ -55,7 +55,7 @@ storiesOf('Components|TextContainer', module)
 					</Button>
 				</>
 			}>
-			<Text is="p" muted={true}>
+			<Text muted is="p">
 				All of our reviews are from verified customers.
 			</Text>
 		</TextContainer>
@@ -67,7 +67,7 @@ storiesOf('Components|TextContainer', module)
 	))
 	.add('with no title text', () => (
 		<TextContainer>
-			<Text is="p" muted={true}>
+			<Text muted is="p">
 				To get started, choose a credit pack that will used for Auto
 				Top-Up.
 			</Text>

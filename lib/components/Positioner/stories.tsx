@@ -21,8 +21,8 @@ storiesOf('Utility|Positioner', module)
 			return (
 				<div>
 					<Button
-						size={EButtonSize.Small}
 						ref={triggerRef}
+						size={EButtonSize.Small}
 						onClick={useCallback(() => setIsOpen(!isOpen), [
 							isOpen,
 						])}>
@@ -63,16 +63,16 @@ storiesOf('Utility|Positioner', module)
 							width: 'calc(100vw*5)',
 						}}>
 						<Button
+							ref={triggerRef}
 							style={{
 								marginTop: 'calc((100vh*5) / 2)',
 								marginLeft: 'calc((100vw*5) / 2)',
 							}}
-							ref={triggerRef}
 							size={EButtonSize.Small}>
 							I'm the trigger
 						</Button>
 						<Positioner
-							isOpen={true}
+							isOpen
 							triggerRef={triggerRef}
 							alignment={alignmentPicker()}>
 							<Box distance={1}>

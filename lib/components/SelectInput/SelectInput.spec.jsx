@@ -73,7 +73,7 @@ describe('<SelectInput />', () => {
 	it('should match snapshot for touched select input', () => {
 		const selectInput = render(
 			<SelectInput
-				isTouched={true}
+				isTouched
 				className="select-input-class"
 				placeholder={testLabel}
 			/>,
@@ -84,8 +84,8 @@ describe('<SelectInput />', () => {
 	it('should match snapshot for touched valid select input', () => {
 		const selectInput = render(
 			<SelectInput
-				isTouched={true}
-				isValid={true}
+				isTouched
+				isValid
 				className="select-input-class"
 				placeholder={testLabel}
 			/>,
@@ -96,7 +96,7 @@ describe('<SelectInput />', () => {
 	it('should match snapshot for touched invalid select input', () => {
 		const selectInput = render(
 			<SelectInput
-				isTouched={true}
+				isTouched
 				isValid={false}
 				className="select-input-class"
 				placeholder={testLabel}
@@ -113,7 +113,7 @@ describe('<SelectInput />', () => {
 	it('should fire onFocus event', () => {
 		const spyedCallback = jest.fn();
 		const selectInput = mount(
-			<SelectInput onFocus={spyedCallback} placeholder={testLabel} />,
+			<SelectInput placeholder={testLabel} onFocus={spyedCallback} />,
 		);
 		selectInput.find('select').simulate('focus');
 
@@ -124,7 +124,7 @@ describe('<SelectInput />', () => {
 	it('should fire onBlur event', () => {
 		const spyedCallback = jest.fn();
 		const selectInput = mount(
-			<SelectInput onBlur={spyedCallback} placeholder={testLabel} />,
+			<SelectInput placeholder={testLabel} onBlur={spyedCallback} />,
 		);
 		selectInput.find('select').simulate('blur');
 
@@ -135,7 +135,7 @@ describe('<SelectInput />', () => {
 	it('should fire onChange event', () => {
 		const spyedCallback = jest.fn();
 		const selectInput = mount(
-			<SelectInput onChange={spyedCallback} placeholder={testLabel} />,
+			<SelectInput placeholder={testLabel} onChange={spyedCallback} />,
 		);
 		selectInput.find('select').simulate('change');
 

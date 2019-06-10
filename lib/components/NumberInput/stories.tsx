@@ -26,10 +26,10 @@ storiesOf('Components|Inputs/Number', module)
 	.add('with hint text', () => (
 		<NumberInput
 			name="abc"
-			placeholder={'How many?'}
+			placeholder="How many?"
 			hintText={text('Hint Text', 'Must be greater than 10.')}
 		/>
 	))
 	.add('disabled', () => (
-		<NumberInput name="abc" placeholder="How many?" disabled={true} />
+		<NumberInput disabled name="abc" placeholder="How many?" />
 	));

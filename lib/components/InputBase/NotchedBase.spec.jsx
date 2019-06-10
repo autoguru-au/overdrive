@@ -31,14 +31,14 @@ describe('<NotchedBase />', () => {
 
 	it('should match snapshot for dirty notch', () => {
 		const notch = render(
-			<NotchedBase isDirty={true} placeholder="placeholder something" />,
+			<NotchedBase isDirty placeholder="placeholder something" />,
 		);
 		expect(notch).toMatchSnapshot();
 	});
 
 	it('should match snapshot for active notch', () => {
 		const notch = render(
-			<NotchedBase isActive={true} placeholder="placeholder something" />,
+			<NotchedBase isActive placeholder="placeholder something" />,
 		);
 		expect(notch).toMatchSnapshot();
 	});
@@ -46,8 +46,8 @@ describe('<NotchedBase />', () => {
 	it('should match snapshot for dirty and active notch', () => {
 		const notch = render(
 			<NotchedBase
-				isActive={true}
-				isDirty={true}
+				isActive
+				isDirty
 				placeholder="placeholder something"
 			/>,
 		);
@@ -89,7 +89,7 @@ describe('<NotchedBase />', () => {
 	it('should not shifted classname to dom element when isEmpty is true', () => {
 		const notch = mount(
 			<NotchedBase
-				isEmpty={true}
+				isEmpty
 				className="notched-class"
 				placeholder="placeholder something"
 			/>,
@@ -101,7 +101,7 @@ describe('<NotchedBase />', () => {
 	it('should add active style to dom element when isActive prop is true', () => {
 		const notch = mount(
 			<NotchedBase
-				isActive={true}
+				isActive
 				className="notched-class"
 				placeholder="placeholder something"
 			/>,
@@ -113,7 +113,7 @@ describe('<NotchedBase />', () => {
 	it('should not add dirty style to dom element when isEmpty prop is not true', () => {
 		const notch = mount(
 			<NotchedBase
-				isDirty={true}
+				isDirty
 				className="notched-class"
 				placeholder="placeholder something"
 			/>,

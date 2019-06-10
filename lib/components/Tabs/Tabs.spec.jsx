@@ -106,7 +106,7 @@ describe('<Tabs />', () => {
 				.find('.tabPane')
 				.at(0)
 				.hasClass('tabPaneActive'),
-		).toEqual(true); // precondition
+		).toEqual(true); // Precondition
 
 		tabs.setProps({ active: 1 });
 
@@ -129,12 +129,11 @@ describe('<Tabs />', () => {
 
 		beforeEach(function() {
 			container = document.createElement('div');
-			document.body.appendChild(container);
+			document.body.append(container);
 		});
 
 		afterEach(function() {
 			document.body.removeChild(container);
-			document = null;
 		});
 
 		it('should only display the first tab pane when tab 1 is clicked', done => {

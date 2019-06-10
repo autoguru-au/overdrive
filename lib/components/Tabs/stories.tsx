@@ -17,7 +17,7 @@ storiesOf('Components|Tabs', module)
 				.split(',')
 				.map(item => item.trim())
 				.map(item => (
-					<Tab title={item} key={item}>
+					<Tab key={item} title={item}>
 						Some Content for the <i>{item}</i> tab.
 					</Tab>
 				))}
@@ -25,8 +25,8 @@ storiesOf('Components|Tabs', module)
 	))
 	.add('with external active', () => (
 		<Tabs active={number('Active', 0)} onChange={tabChanged}>
-			<Tab title={'A'}>a</Tab>
-			<Tab title={'B'}>b</Tab>
+			<Tab title="A">a</Tab>
+			<Tab title="B">b</Tab>
 		</Tabs>
 	))
 	.add('with number', () => (

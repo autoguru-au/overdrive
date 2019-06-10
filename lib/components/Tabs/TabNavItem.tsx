@@ -3,14 +3,14 @@ import React, { FunctionComponent, MouseEvent } from 'react';
 
 import styles from './style.scss';
 
-export interface IProps {
+export interface Props {
 	active: boolean;
 	indication?: number;
 
 	onClick(e: MouseEvent<HTMLButtonElement>): void;
 }
 
-export const TabNavItem: FunctionComponent<IProps> = ({
+export const TabNavItem: FunctionComponent<Props> = ({
 	children,
 	indication,
 	onClick,
@@ -22,7 +22,7 @@ export const TabNavItem: FunctionComponent<IProps> = ({
 		})}
 		onClick={onClick}>
 		<span className={styles.navItemTitle}>{children}</span>
-		{!!indication && (
+		{Boolean(indication) && (
 			<span className={styles.navItemIndication}>{indication}</span>
 		)}
 	</button>

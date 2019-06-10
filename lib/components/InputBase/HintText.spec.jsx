@@ -21,7 +21,7 @@ describe('<HintText />', () => {
 	});
 
 	it('should match snapshot for active hint', () => {
-		const hint = render(<HintText isActive={true}>{testLabel}</HintText>);
+		const hint = render(<HintText isActive>{testLabel}</HintText>);
 		expect(hint).toMatchSnapshot();
 	});
 

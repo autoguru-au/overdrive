@@ -1,1 +1,1 @@
-export { Badge, EColour as EBadgeColour, IProps as IBadgeProps } from './Badge';
+export { Badge, EColour as EBadgeColour, Props as IBadgeProps } from './Badge';

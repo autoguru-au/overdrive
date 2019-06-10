@@ -1,2 +1,2 @@
-export { Radio, IProps as IRadioProps } from './Radio';
-export { RadioGroup, IProps as IRadioGroupProps } from './RadioGroup';
+export { Radio, Props as IRadioProps } from './Radio';
+export { RadioGroup, Props as IRadioGroupProps } from './RadioGroup';

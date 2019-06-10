@@ -32,8 +32,8 @@ Thanks seek: https://github.com/seek-oss/braid-design-system/blob/master/scripts
 		});
 
 		console.log('Successfully posted commit status to GitHub');
-	} catch (err) {
-		console.error(err);
+	} catch (error) {
+		console.error(error);
 		process.exit(1);
 	}
 })();

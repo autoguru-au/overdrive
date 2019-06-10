@@ -32,22 +32,22 @@ storiesOf('Components|Inputs/Select', module)
 	})
 	.add('default', () => (
 		<SelectInput name="abc" {...sharedKnobs('Select one')}>
-			<option disabled={true} />
+			<option disabled />
 			{selectOptions('Option 1, Option 2, Option 3')}
 		</SelectInput>
 	))
 	.add('with a value', () => (
 		<SelectInput name="abc" placeholder="Select one" value="Option 2">
-			<option disabled={true} />
+			<option disabled />
 			{selectOptions('Option 1, Option 2, Option 3')}
 		</SelectInput>
 	))
 	.add('with hint text', () => (
 		<SelectInput
 			name="abc"
-			placeholder={'Select one'}
+			placeholder="Select one"
 			hintText={text('Hint Text', 'Cannot select option 3')}>
-			<option disabled={true} />
+			<option disabled />
 			{selectOptions('Option 1, Option 2, Option 3')}
 		</SelectInput>
 	))
@@ -56,19 +56,19 @@ storiesOf('Components|Inputs/Select', module)
 			name="abc"
 			isValid={isValid(false)}
 			isTouched={isTouched(false)}
-			placeholder={'Select one'}
+			placeholder="Select one"
 			hintText={text('Hint Text', 'Cannot select option 3')}>
-			<option disabled={true} />
+			<option disabled />
 			{selectOptions('Option 1, Option 2, Option 3')}
 		</SelectInput>
 	))
 	.add('disabled', () => (
 		<SelectInput
+			disabled
 			name="abc"
 			placeholder="Select one"
-			value="Option 2"
-			disabled={true}>
-			<option disabled={true} />
+			value="Option 2">
+			<option disabled />
 			<option value="Option 2">Option 2</option>
 		</SelectInput>
 	));

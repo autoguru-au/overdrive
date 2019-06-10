@@ -3,7 +3,7 @@ import { EPositionerAlignment, Positioner } from '../Positioner';
 
 import styles from './style.scss';
 
-interface IProps {
+interface Props {
 	alignment?: EPositionerAlignment;
 	isOpen?: boolean;
 	triggerRef: RefObject<HTMLElement>;
@@ -11,7 +11,7 @@ interface IProps {
 	onRequestClose?(): void;
 }
 
-export const Flyout: FunctionComponent<IProps> = ({
+export const Flyout: FunctionComponent<Props> = ({
 	alignment = EPositionerAlignment.BOTTOM_LEFT,
 	isOpen = false,
 	onRequestClose = () => void 0,

@@ -29,13 +29,13 @@ const cssVariantMap: Map<EVariant, string> = new Map([
 	[EVariant.Danger, styles.variantDanger],
 ]);
 
-export interface IProps {
+export interface Props {
 	className?: string;
 	size?: ESize;
 	variant?: EVariant;
 }
 
-const ProgressSpinnerComponent: FunctionComponent<IProps> = ({
+const ProgressSpinnerComponent: FunctionComponent<Props> = ({
 	className = '',
 	variant = EVariant.Primary,
 	size = ESize.Medium,

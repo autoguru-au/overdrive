@@ -26,7 +26,7 @@ export enum EVariant {
 	Danger = 'danger',
 }
 
-export interface IProps {
+export interface Props {
 	className?: string;
 	is?: ElementType;
 	component?: ComponentType; // @deprecated
@@ -64,7 +64,7 @@ const progressSpinnerVariantMap: Map<
 ]);
 
 // TODO: Fix this any here, needs to be an abstract of the component that is being passed in.
-export const Button: FunctionComponent<IProps & any> = forwardRef(
+export const Button: FunctionComponent<Props & any> = forwardRef(
 	(
 		{
 			children,
@@ -82,15 +82,13 @@ export const Button: FunctionComponent<IProps & any> = forwardRef(
 		ref,
 	) => {
 		// @deprecated block
-		{
-			warning(
-				component !== void 0,
-				`The \`component\` prop deprecated, please use the \`is\` prop instead.\n\nBefore:\n<Button component="{<Link/">}>\n\tHello\n</Button>\n\nAfter:\n<Button is="{<Link/">}>\n\tHello\n</Button>`,
-			);
+		warning(
+			component !== void 0,
+			`The \`component\` prop deprecated, please use the \`is\` prop instead.\n\nBefore:\n<Button component="{<Link/">}>\n\tHello\n</Button>\n\nAfter:\n<Button is="{<Link/">}>\n\tHello\n</Button>`,
+		);
 
-			if (component !== void 0) {
-				Component = component;
-			}
+		if (component !== void 0) {
+			Component = component;
 		}
 
 		const props = {
@@ -115,7 +113,7 @@ export const Button: FunctionComponent<IProps & any> = forwardRef(
 
 		const childs = (
 			<>
-				<span className={styles.btnContent} children={children} />
+				<span children={children} className={styles.btnContent} />
 				{isLoading && (
 					<ProgressSpinner
 						className={styles.spinner}

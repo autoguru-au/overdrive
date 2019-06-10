@@ -2,10 +2,10 @@ import React from 'react';
 import { mount, render, shallow } from 'enzyme';
 import { BulletText } from './BulletText';
 import { Text } from '../Typography/Text';
-import { EBulletTextVariant } from './index';
+import { EBulletTextVariant } from '.';
 import { CheckIcon, Icon } from '../Icon';
 
-const CustomBullet = ({}) => (
+const CustomBullet = () => (
 	<span
 		style={{
 			width: '17px',
@@ -42,7 +42,7 @@ describe('<BulletText />', () => {
 	it('should match snapshot for primary bullet text with custom bullet character', () => {
 		expect(
 			shallow(
-				<BulletText variant={EBulletTextVariant.Primary} bullet={'?'}>
+				<BulletText variant={EBulletTextVariant.Primary} bullet="?">
 					Hello World!
 				</BulletText>,
 			),
@@ -52,7 +52,7 @@ describe('<BulletText />', () => {
 	it('should match snapshot for secondary bullet text with custom bullet character', () => {
 		expect(
 			shallow(
-				<BulletText variant={EBulletTextVariant.Secondary} bullet={'?'}>
+				<BulletText variant={EBulletTextVariant.Secondary} bullet="?">
 					Hello World!
 				</BulletText>,
 			),
@@ -63,9 +63,9 @@ describe('<BulletText />', () => {
 		expect(
 			shallow(
 				<BulletText
-					ordered={true}
+					ordered
 					variant={EBulletTextVariant.Primary}
-					bullet={'?'}>
+					bullet="?">
 					Hello World!
 				</BulletText>,
 			),
@@ -82,7 +82,7 @@ describe('<BulletText />', () => {
 
 	it('should apply class for primary variant', () => {
 		const bulletText = shallow(
-			<BulletText variant={EBulletTextVariant.Primary} bullet={'*'}>
+			<BulletText variant={EBulletTextVariant.Primary} bullet="*">
 				Hello World!
 			</BulletText>,
 		);
@@ -91,7 +91,7 @@ describe('<BulletText />', () => {
 
 	it('should apply class for secondary variant', () => {
 		const bulletText = shallow(
-			<BulletText variant={EBulletTextVariant.Secondary} bullet={'*'}>
+			<BulletText variant={EBulletTextVariant.Secondary} bullet="*">
 				Hello World!
 			</BulletText>,
 		);
@@ -127,7 +127,7 @@ describe('<BulletText />', () => {
 
 	it('should use ol element for ordered bullet text', () => {
 		const bulletText = shallow(
-			<BulletText ordered={true}>Hello World!</BulletText>,
+			<BulletText ordered>Hello World!</BulletText>,
 		);
 		expect(bulletText.type()).toEqual('ol');
 	});

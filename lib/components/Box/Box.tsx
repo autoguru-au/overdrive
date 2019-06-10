@@ -7,7 +7,7 @@ export enum EVariant {
 	four = 'four',
 }
 
-export interface IProps {
+export interface Props {
 	variant?: EVariant;
 	borderColour?: string;
 	strokeWidth?: 1 | 4;
@@ -15,7 +15,7 @@ export interface IProps {
 	className?: string;
 }
 
-export const Box: FunctionComponent<IProps> = ({
+export const Box: FunctionComponent<Props> = ({
 	variant = EVariant.default,
 	borderColour = 'gray-300',
 	strokeWidth = 1,

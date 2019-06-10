@@ -10,7 +10,7 @@ const TestIcon = () => (
 
 describe('<Icon />', () => {
 	it('should throw if no SVG icon is passe', () => {
-		expect(() => shallow(<Icon />).toThrow());
+		expect(() => shallow(<Icon />)).toThrow();
 	});
 
 	it('should not throw if SVG icon is passed', () => {

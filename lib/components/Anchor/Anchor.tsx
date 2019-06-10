@@ -11,7 +11,7 @@ import { TIconPrimitiveType } from '../Icon';
 import { Text } from '../Typography';
 import styles from './style.scss';
 
-export interface IProps {
+export interface Props {
 	className?: string;
 	icon?: TIconPrimitiveType;
 	is?: ComponentType | ReactNode;
@@ -22,7 +22,7 @@ export interface IProps {
 	label?: string;
 }
 
-const AnchorComponent: FunctionComponent<IProps & any> = ({
+const AnchorComponent: FunctionComponent<Props & any> = ({
 	className = '',
 	is: Component = 'a',
 	component = void 0,
@@ -32,15 +32,13 @@ const AnchorComponent: FunctionComponent<IProps & any> = ({
 	...rest
 }) => {
 	// @deprecated block
-	{
-		warning(
-			component !== void 0,
-			`The \`component\` prop deprecated, please use the \`is\` prop instead.\n\nBefore:\n<Anchor component="{<Link/">}>\n\tHello\n</Anchor>\n\nAfter:\n<Anchor is="{<Link/">}>\n\tHello\n</Anchor>`,
-		);
+	warning(
+		component !== void 0,
+		`The \`component\` prop deprecated, please use the \`is\` prop instead.\n\nBefore:\n<Anchor component="{<Link/">}>\n\tHello\n</Anchor>\n\nAfter:\n<Anchor is="{<Link/">}>\n\tHello\n</Anchor>`,
+	);
 
-		if (component !== void 0) {
-			Component = component;
-		}
+	if (component !== void 0) {
+		Component = component;
 	}
 
 	const props = {

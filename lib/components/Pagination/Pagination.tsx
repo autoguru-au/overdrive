@@ -5,13 +5,13 @@ import styles from './style.scss';
 import { Bubble } from './Bubble';
 import { PaginationLoading } from './Loading';
 
-interface IOnChangeObject {
+interface OnChangeObject {
 	pageNumber: number;
 }
 
-export type TOnChangeEventHandler = (event: IOnChangeObject) => void;
+export type TOnChangeEventHandler = (event: OnChangeObject) => void;
 
-export interface IProps {
+export interface Props {
 	className?: string;
 	numPagesDisplayed?: number;
 	activePage?: number;
@@ -20,7 +20,7 @@ export interface IProps {
 	onChange?: TOnChangeEventHandler;
 }
 
-export const PaginationComponent: FunctionComponent<IProps> = ({
+export const PaginationComponent: FunctionComponent<Props> = ({
 	className = '',
 	total = void 0,
 	pageSize = void 0,
@@ -71,11 +71,11 @@ export const PaginationComponent: FunctionComponent<IProps> = ({
 				numPages - numPagesDisplayed,
 			).map(num => (
 				<Bubble
-					gap={num < 0}
 					key={num}
-					onClick={handleClick(num)}
+					gap={num < 0}
 					selected={allowedActive === num}
-					aria-current={allowedActive === num ? 'page' : 'false'}>
+					aria-current={allowedActive === num ? 'page' : 'false'}
+					onClick={handleClick(num)}>
 					{num}
 				</Bubble>
 			))}
@@ -100,7 +100,7 @@ function withinBoundaries(activePage: number, numPages: number): number {
 	return Math.min(Math.max(1, activePage), numPages);
 }
 
-function generateDefaultArray(numPages: number): Array<number> {
+function generateDefaultArray(numPages: number): number[] {
 	return new Array<number>(numPages).fill(-1).map((_, index) => index + 1);
 }
 
@@ -108,13 +108,14 @@ function generateJumpForwardArray(
 	numPages: number,
 	activePage: number,
 	numPagesDisplayed: number,
-): Array<number> {
+): number[] {
 	return generateDefaultArray(numPagesDisplayed).map((_, index) => {
 		const num: number = index + 1;
 		const gapIndex: number = numPagesDisplayed - 1;
 		if (num < gapIndex) {
 			return activePage + index;
 		}
+
 		if (num === gapIndex) {
 			return -1;
 		}
@@ -126,7 +127,7 @@ function generateJumpForwardArray(
 function generateNoJumpArray(
 	numPagesDisplayed: number,
 	rightBoundary: number,
-): Array<number> {
+): number[] {
 	return generateDefaultArray(numPagesDisplayed).map(
 		(_, index) => rightBoundary + index + 1,
 	);
@@ -135,13 +136,14 @@ function generateNoJumpArray(
 function generateJumpBackwardArray(
 	numPages: number,
 	numPagesDisplayed: number,
-): Array<number> {
+): number[] {
 	return generateDefaultArray(numPagesDisplayed).map((_, index) => {
 		const num: number = index + 1;
-		const gapIndex: number = 2;
+		const gapIndex = 2;
 		if (num === 1) {
 			return 1;
 		}
+
 		if (num === gapIndex) {
 			return -1;
 		}
@@ -155,10 +157,11 @@ function buildPagesList(
 	activePage: number,
 	numPagesDisplayed: number,
 	rightBoundary: number,
-): Array<number> {
+): number[] {
 	if (numPages <= numPagesDisplayed) {
 		return generateDefaultArray(numPages);
 	}
+
 	if (activePage <= rightBoundary) {
 		return generateJumpForwardArray(
 			numPages,
@@ -166,6 +169,7 @@ function buildPagesList(
 			numPagesDisplayed,
 		);
 	}
+
 	if (activePage > rightBoundary && activePage <= rightBoundary + 2) {
 		return generateNoJumpArray(numPagesDisplayed, rightBoundary);
 	}

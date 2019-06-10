@@ -7,19 +7,19 @@ import React, {
 } from 'react';
 
 import styles from './style.scss';
-import { IProps as ITabProps } from './Tab';
+import { Props as ITabProps } from './Tab';
 import { TabNavItem } from './TabNavItem';
 import { TabPane } from './TabPane';
 
 type ComponentWithChildren<P,> = P & { children?: ReactNode };
 
-export interface IProps {
+export interface Props {
 	active?: number;
 
 	onChange?(value: number): void;
 }
 
-export const Tabs: FunctionComponent<IProps> = ({
+export const Tabs: FunctionComponent<Props> = ({
 	active: incomingActive = 0,
 	onChange = () => void 0,
 	children,
@@ -44,9 +44,9 @@ export const Tabs: FunctionComponent<IProps> = ({
 	const tabs = tabsChildren.map((child, idx) => [
 		<TabNavItem
 			key={idx}
-			onClick={setActiveCb(idx)}
 			active={active === idx}
-			indication={child.props.indication}>
+			indication={child.props.indication}
+			onClick={setActiveCb(idx)}>
 			{child.props.title}
 		</TabNavItem>,
 		<TabPane key={idx} active={active === idx}>

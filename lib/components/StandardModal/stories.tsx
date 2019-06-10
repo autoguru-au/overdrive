@@ -7,7 +7,7 @@ import { Text } from '../Typography/Text';
 
 storiesOf('Components|StandardModal', module).add('default', () => (
 	<StandardModal
-		title={'ModalBase Title'}
+		title="ModalBase Title"
 		size={EStandardModalSize.Standard}
 		isOpen={boolean('isOpen', true)}
 		onRequestClose={action('onRequestClose')}>

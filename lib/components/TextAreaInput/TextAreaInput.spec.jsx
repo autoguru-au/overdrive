@@ -63,7 +63,7 @@ describe('<TextAreaInput />', () => {
 	it('should match snapshot for touched select input', () => {
 		const textAreaInput = render(
 			<TextAreaInput
-				isTouched={true}
+				isTouched
 				className="textarea-input-class"
 				placeholder="placeholder something"
 			/>,
@@ -74,8 +74,8 @@ describe('<TextAreaInput />', () => {
 	it('should match snapshot for touched valid select input', () => {
 		const textAreaInput = render(
 			<TextAreaInput
-				isTouched={true}
-				isValid={true}
+				isTouched
+				isValid
 				className="textarea-input-class"
 				placeholder="placeholder something"
 			/>,
@@ -86,7 +86,7 @@ describe('<TextAreaInput />', () => {
 	it('should match snapshot for touched invalid select input', () => {
 		const textAreaInput = render(
 			<TextAreaInput
-				isTouched={true}
+				isTouched
 				isValid={false}
 				className="textarea-input-class"
 				placeholder="placeholder something"
@@ -108,8 +108,8 @@ describe('<TextAreaInput />', () => {
 		const spyedCallback = jest.fn();
 		const textAreaInput = mount(
 			<TextAreaInput
-				onFocus={spyedCallback}
 				placeholder="placeholder something"
+				onFocus={spyedCallback}
 			/>,
 		);
 		textAreaInput.find('textarea').simulate('focus');
@@ -122,8 +122,8 @@ describe('<TextAreaInput />', () => {
 		const spyedCallback = jest.fn();
 		const textAreaInput = mount(
 			<TextAreaInput
-				onBlur={spyedCallback}
 				placeholder="placeholder something"
+				onBlur={spyedCallback}
 			/>,
 		);
 		textAreaInput.find('textarea').simulate('blur');
@@ -136,8 +136,8 @@ describe('<TextAreaInput />', () => {
 		const spyedCallback = jest.fn();
 		const textAreaInput = mount(
 			<TextAreaInput
-				onChange={spyedCallback}
 				placeholder="placeholder something"
+				onChange={spyedCallback}
 			/>,
 		);
 		textAreaInput.find('textarea').simulate('change');

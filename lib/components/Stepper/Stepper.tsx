@@ -10,7 +10,7 @@ import React, {
 import { Icon, MinusIcon, PlusIcon } from '../Icon';
 import styles from './style.scss';
 
-export interface IProps {
+export interface Props {
 	className?: string;
 	disabled?: boolean;
 	value?: number;
@@ -29,7 +29,7 @@ enum EActionType {
 	VALUE,
 }
 
-interface IAction {
+interface Action {
 	type: EActionType;
 	value?: number;
 	min: number;
@@ -37,11 +37,11 @@ interface IAction {
 	step: number;
 }
 
-interface IState {
+interface State {
 	value: number;
 }
 
-const reducer = (state: IState, action: IAction) => {
+const reducer = (state: State, action: Action) => {
 	switch (action.type) {
 		case EActionType.INCREMENT:
 			return {
@@ -56,11 +56,12 @@ const reducer = (state: IState, action: IAction) => {
 
 		/* istanbul ignore next */
 		default:
+			// eslint-disable-next-line unicorn/error-message
 			throw new Error();
 	}
 };
 
-const StepperComponent: FunctionComponent<IProps> = ({
+const StepperComponent: FunctionComponent<Props> = ({
 	className = '',
 	disabled = false,
 	step = 1,
@@ -118,10 +119,10 @@ const StepperComponent: FunctionComponent<IProps> = ({
 			aria-disabled={isDisabled}>
 			<button
 				className={styles.handle}
-				onClick={onDecrement}
 				aria-label="step down"
 				aria-disabled={isDisabled}
-				disabled={isDisabled}>
+				disabled={isDisabled}
+				onClick={onDecrement}>
 				<Icon icon={MinusIcon} size={16} />
 			</button>
 			<span className={styles.label}>
@@ -129,10 +130,10 @@ const StepperComponent: FunctionComponent<IProps> = ({
 			</span>
 			<button
 				className={styles.handle}
-				onClick={onIncrement}
 				aria-label="step up"
 				aria-disabled={isDisabled}
-				disabled={isDisabled}>
+				disabled={isDisabled}
+				onClick={onIncrement}>
 				<Icon icon={PlusIcon} size={16} />
 			</button>
 		</div>

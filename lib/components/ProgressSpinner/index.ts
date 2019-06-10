@@ -2,5 +2,5 @@ export {
 	ProgressSpinner,
 	ESize as EProgressSpinnerSize,
 	EVariant as EProgressSpinnerVariant,
-	IProps as IProgressSpinnerProps,
+	Props as IProgressSpinnerProps,
 } from './ProgressSpinner';

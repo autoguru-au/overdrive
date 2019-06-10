@@ -47,12 +47,12 @@ storiesOf('Components|Buttons', module)
 		</Button>
 	))
 	.add('disabledState', () => (
-		<Button {...baseProps()} {...nonRoundedProps()} disabled={true}>
+		<Button {...baseProps()} {...nonRoundedProps()} disabled>
 			Hello World
 		</Button>
 	))
 	.add('loadingState', () => (
-		<Button {...baseProps()} {...nonRoundedProps()} isLoading={true}>
+		<Button {...baseProps()} {...nonRoundedProps()} isLoading>
 			Hello World
 		</Button>
 	))
@@ -67,7 +67,7 @@ storiesOf('Components|Buttons', module)
 		</Button>
 	))
 	.add('rounded', () => (
-		<Button rounded={true} {...baseProps()}>
+		<Button rounded {...baseProps()}>
 			2
 		</Button>
 	));

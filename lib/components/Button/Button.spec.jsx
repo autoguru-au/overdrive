@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import { Button } from './Button';
-import { EButtonSize, EButtonVariant } from './index';
+import { EButtonSize, EButtonVariant } from '.';
 
 describe('<Button />', () => {
 	it('should not throw', () =>
@@ -110,7 +110,7 @@ describe('<Button />', () => {
 
 	describe('when rounded', () => {
 		it('should match snapshot', () => {
-			expect(shallow(<Button rounded={true} />)).toMatchSnapshot();
+			expect(shallow(<Button rounded />)).toMatchSnapshot();
 		});
 
 		it('should not apply rounded styles to default button', () => {
@@ -119,36 +119,36 @@ describe('<Button />', () => {
 		});
 
 		it('should apply rounded styles', () => {
-			const button = shallow(<Button rounded={true} />);
+			const button = shallow(<Button rounded />);
 			expect(button.hasClass('rounded')).toBeTruthy();
 		});
 	});
 
 	describe('when isFullWidth', () => {
 		it('should match snapshot', () => {
-			expect(shallow(<Button isFullWidth={true} />)).toMatchSnapshot();
+			expect(shallow(<Button isFullWidth />)).toMatchSnapshot();
 		});
 
 		it('should apply styles', () => {
-			const button = shallow(<Button isFullWidth={true} />);
+			const button = shallow(<Button isFullWidth />);
 			expect(button.hasClass('fullWidth')).toBeTruthy();
 		});
 	});
 
 	describe('when loading', () => {
 		it('should match snapshot for default button', () => {
-			expect(shallow(<Button isLoading={true} />)).toMatchSnapshot();
+			expect(shallow(<Button isLoading />)).toMatchSnapshot();
 		});
 
 		it('should match snapshot for small button', () => {
 			expect(
-				shallow(<Button size={EButtonSize.Small} isLoading={true} />),
+				shallow(<Button isLoading size={EButtonSize.Small} />),
 			).toMatchSnapshot();
 		});
 
 		it('should match snapshot for medium button', () => {
 			expect(
-				shallow(<Button size={EButtonSize.Medium} isLoading={true} />),
+				shallow(<Button isLoading size={EButtonSize.Medium} />),
 			).toMatchSnapshot();
 		});
 
@@ -158,7 +158,7 @@ describe('<Button />', () => {
 		});
 
 		it('should apply loading styles', () => {
-			const button = shallow(<Button isLoading={true} />);
+			const button = shallow(<Button isLoading />);
 			expect(button.hasClass('loading')).toBeTruthy();
 		});
 	});

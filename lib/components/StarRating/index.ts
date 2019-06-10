@@ -1,5 +1,5 @@
 export {
 	StarRating,
-	IProps as IStarRatingProps,
+	Props as IStarRatingProps,
 	ESize as EStarRatingSize,
 } from './StarRating';

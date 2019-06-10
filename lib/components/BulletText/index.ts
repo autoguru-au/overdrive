@@ -1,5 +1,5 @@
 export {
 	BulletText,
 	EVariant as EBulletTextVariant,
-	IProps as IBulletTextProps,
+	Props as IBulletTextProps,
 } from './BulletText';

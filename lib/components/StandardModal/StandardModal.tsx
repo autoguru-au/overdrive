@@ -9,13 +9,13 @@ export enum ESize {
 	Standard = 'standard', // 800px wide
 }
 
-export interface IProps {
+export interface Props {
 	size?: ESize;
 	className?: string;
 	title: string;
 }
 
-export const StandardModal = withModal<IProps>(
+export const StandardModal = withModal<Props>(
 	({
 		size = ESize.Standard,
 		className = '',
@@ -42,7 +42,7 @@ export const StandardModal = withModal<IProps>(
 						<Icon size={20} icon={WindowCloseIcon} />
 					</button>
 					<div className={styles.headerTitle}>
-						<Heading is={'h4'} children={title} />
+						<Heading children={title} is="h4" />
 					</div>
 				</header>
 				<main className={styles.content}>{children}</main>

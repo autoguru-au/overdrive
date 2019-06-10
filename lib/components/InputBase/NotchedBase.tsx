@@ -8,14 +8,14 @@ const ACTIVE_PADDING_ADDED = 16;
 const NOTCHED_WARN_WIDTH = 170;
 const ROUGH_WIDTH_PER_CHARACTER = 10.2;
 
-export interface IProps {
+export interface Props {
 	id: string;
 	placeholder: string;
 	isEmpty: boolean;
 	isActive: boolean;
 }
 
-export const NotchedBase: FunctionComponent<IProps> = ({
+export const NotchedBase: FunctionComponent<Props> = ({
 	id,
 	placeholder,
 	isEmpty,
@@ -33,7 +33,7 @@ export const NotchedBase: FunctionComponent<IProps> = ({
 		if (labelRef.current) {
 			setLabelWidth(labelRef.current.offsetWidth);
 		}
-	}, [labelRef.current, placeholder]);
+	}, [placeholder]);
 
 	const notchedWidth = getNotchedComputedWidthForWidth(labelWidth);
 
@@ -54,7 +54,7 @@ export const NotchedBase: FunctionComponent<IProps> = ({
 				<div className={styles.notchedBaseBorderLeading} />
 				<div
 					className={styles.notchedBaseBorderNotch}
-					style={{ width: !isEmpty ? notchedWidth : 0 }}>
+					style={{ width: isEmpty ? 0 : notchedWidth }}>
 					<label
 						ref={labelRef}
 						htmlFor={id}

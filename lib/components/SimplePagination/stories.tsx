@@ -29,8 +29,8 @@ storiesOf('Components|Pagination/Simple', module)
 
 			return (
 				<SimplePagination
-					hasNext={true}
-					hasPrevious={true}
+					hasNext
+					hasPrevious
 					onChange={onChangeHandler}
 				/>
 			);
@@ -46,7 +46,7 @@ storiesOf('Components|Pagination/Simple', module)
 
 			return (
 				<SimplePagination
-					hasNext={true}
+					hasNext
 					hasPrevious={false}
 					onChange={onChangeHandler}
 				/>
@@ -63,8 +63,8 @@ storiesOf('Components|Pagination/Simple', module)
 
 			return (
 				<SimplePagination
+					hasPrevious
 					hasNext={false}
-					hasPrevious={true}
 					onChange={onChangeHandler}
 				/>
 			);

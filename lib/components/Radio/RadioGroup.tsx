@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React, { createContext, FunctionComponent } from 'react';
 import styles from './style.scss';
 
-export interface IProps {
+export interface Props {
 	name: string;
 	className?: string;
 	value?: string;
@@ -10,16 +10,16 @@ export interface IProps {
 	onChange?(value: string): void;
 }
 
-export interface IRadioGroupContext {
+export interface RadioGroupContext {
 	inputName: string;
 	value: string;
 
 	radioSelected(value: string): void;
 }
 
-export const RadioContext = createContext<IRadioGroupContext>(null);
+export const RadioContext = createContext<RadioGroupContext>(null);
 
-export const RadioGroup: FunctionComponent<IProps> = ({
+export const RadioGroup: FunctionComponent<Props> = ({
 	name,
 	value = null,
 	className = '',
@@ -29,8 +29,8 @@ export const RadioGroup: FunctionComponent<IProps> = ({
 	<RadioContext.Provider
 		value={{ value, inputName: name, radioSelected: onChange }}>
 		<div
-			className={clsx([styles.radioGroup, className])}
 			children={children}
+			className={clsx([styles.radioGroup, className])}
 		/>
 	</RadioContext.Provider>
 );

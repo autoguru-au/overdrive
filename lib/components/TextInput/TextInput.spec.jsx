@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextInput } from './index';
+import { TextInput } from '.';
 import { mount, render } from 'enzyme';
 
 describe('<TextInput />', () => {
@@ -10,7 +10,7 @@ describe('<TextInput />', () => {
 	});
 
 	it('should throw when required props not provided', () => {
-		expect(() => render(<TextInput />).toThrow());
+		expect(() => render(<TextInput />)).toThrow();
 	});
 
 	it('should have some hintText', () => {
@@ -84,7 +84,7 @@ describe('<TextInput />', () => {
 	it('should match snapshot for touched text input', () => {
 		const textInput = render(
 			<TextInput
-				isTouched={true}
+				isTouched
 				className="text-input-class"
 				placeholder="placeholder something"
 			/>,
@@ -95,8 +95,8 @@ describe('<TextInput />', () => {
 	it('should match snapshot for touched valid text input', () => {
 		const textInput = render(
 			<TextInput
-				isTouched={true}
-				isValid={true}
+				isTouched
+				isValid
 				className="text-input-class"
 				placeholder="placeholder something"
 			/>,
@@ -107,7 +107,7 @@ describe('<TextInput />', () => {
 	it('should match snapshot for touched invalid text input', () => {
 		const textInput = render(
 			<TextInput
-				isTouched={true}
+				isTouched
 				isValid={false}
 				className="text-input-class"
 				placeholder="placeholder something"
@@ -127,8 +127,8 @@ describe('<TextInput />', () => {
 		const spyedCallback = jest.fn();
 		const textInput = mount(
 			<TextInput
-				onFocus={spyedCallback}
 				placeholder="placeholder something"
+				onFocus={spyedCallback}
 			/>,
 		);
 		textInput.find('input').simulate('focus');
@@ -141,8 +141,8 @@ describe('<TextInput />', () => {
 		const spyedCallback = jest.fn();
 		const textInput = mount(
 			<TextInput
-				onBlur={spyedCallback}
 				placeholder="placeholder something"
+				onBlur={spyedCallback}
 			/>,
 		);
 		textInput.find('input').simulate('blur');
@@ -155,8 +155,8 @@ describe('<TextInput />', () => {
 		const spyedCallback = jest.fn();
 		const textInput = mount(
 			<TextInput
-				onChange={spyedCallback}
 				placeholder="placeholder something"
+				onChange={spyedCallback}
 			/>,
 		);
 		textInput.find('input').simulate('change');
