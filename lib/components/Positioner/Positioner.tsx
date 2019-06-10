@@ -1,8 +1,6 @@
 import React, {
 	FunctionComponent,
-	MouseEvent,
 	RefObject,
-	TouchEvent,
 	useEffect,
 	useRef,
 	useState,
@@ -60,11 +58,15 @@ function usePositionerEffect(
 		null,
 	);
 
-	useOutsideClick([positionerRef, triggerRef], () => {
-		if (typeof onRequestClose === 'function') {
-			onRequestClose();
-		}
-	});
+	useEffect(
+		() =>
+			outsideHandler([positionerRef, triggerRef], () => {
+				if (typeof onRequestClose === 'function') {
+					onRequestClose();
+				}
+			}),
+		[onRequestClose, positionerRef, triggerRef],
+	);
 
 	useEffect(() => {
 		if (!triggerRef.current && !positionerRef.current) {
@@ -115,33 +117,29 @@ function usePositionerEffect(
 	return positionerPosition;
 }
 
-const defaultEvents = ['mousedown', 'touchstart'];
-
-const useOutsideClick = (
+const outsideHandler = (
 	refs: Array<RefObject<HTMLElement>>,
-	onClickAway: (event: MouseEvent | TouchEvent) => void,
+	onClickAway: () => void,
 ) => {
-	useEffect(() => {
-		const handler = event => {
-			if (
-				refs
-					.filter(item => Boolean(item.current))
-					.every(item => !item.current.contains(event.target))
-			) {
-				onClickAway(event);
-			}
-		};
+	const defaultEvents = ['mousedown', 'touchstart'];
 
-		defaultEvents.forEach(ev =>
-			document.addEventListener(ev, handler, {
-				passive: true,
-			}),
-		);
+	const handler = event => {
+		if (
+			refs
+				.filter(item => Boolean(item.current))
+				.every(item => !item.current.contains(event.target))
+		) {
+			onClickAway();
+		}
+	};
 
-		return () => {
-			defaultEvents.forEach(ev =>
-				document.removeEventListener(ev, handler),
-			);
-		};
-	});
+	defaultEvents.forEach(ev =>
+		document.addEventListener(ev, handler, {
+			passive: true,
+		}),
+	);
+
+	return () => {
+		defaultEvents.forEach(ev => document.removeEventListener(ev, handler));
+	};
 };
