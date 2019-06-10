@@ -19,12 +19,16 @@ $line_height_map: (
 	color: getColour(gray, 900);
 }
 
-.muted {
-	color: getColour(gray, 500);
-}
-
 .strong {
 	font-weight: 700;
+}
+
+.white {
+	color: white;
+}
+
+.muted {
+	color: getColour(gray, 500);
 }
 
 .sizeScale {

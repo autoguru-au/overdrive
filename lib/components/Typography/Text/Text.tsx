@@ -5,19 +5,21 @@ import styles from './style.scss';
 
 export interface Props {
 	className?: string;
-	muted?: boolean;
-	strong?: boolean;
 	is?: 'p' | 'span';
+	muted?: boolean;
 	size?: TSizeScale;
+	strong?: boolean;
+	white?: boolean;
 }
 
 export const Text: FunctionComponent<Props> = ({
 	children,
 	className = '',
-	muted = false,
-	strong = false,
 	is: Component = 'span',
+	muted = false,
 	size = 3,
+	strong = false,
+	white = false,
 }) => (
 	<Component
 		children={children}
@@ -26,6 +28,7 @@ export const Text: FunctionComponent<Props> = ({
 			{
 				[styles.muted]: muted,
 				[styles.strong]: strong,
+				[styles.white]: white,
 			},
 			className,
 		)}
