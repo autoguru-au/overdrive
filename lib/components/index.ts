@@ -36,4 +36,5 @@ export * from './Tabs';
 export * from './TextAreaInput';
 export * from './TextContainer';
 export * from './TextInput';
+export * from './Tooltip';
 export * from './Typography';
