@@ -46,6 +46,7 @@ export function usingPositioner<T extends {} = any>(
 			<div
 				ref={positionerRef}
 				style={{
+					visibility: rect === null ? 'hidden' : 'visible',
 					...rect,
 				}}
 				className={styles.root}>
