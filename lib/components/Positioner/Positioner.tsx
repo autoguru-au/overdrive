@@ -2,8 +2,9 @@ import React, {
 	ComponentType,
 	createRef,
 	FunctionComponent,
+	ReactElement,
 	RefObject,
-	useEffect,
+	useLayoutEffect,
 	useState,
 } from 'react';
 import { createPortal } from 'react-dom';
@@ -19,8 +20,10 @@ export interface Props {
 	onRequestClose?(): void;
 }
 
+type WrappedComponent<T> = T & Pick<Props, 'isOpen' | 'alignment'>;
+
 export function usingPositioner<T extends {} = any>(
-	WrappingComponent: ComponentType<T & Pick<Props, 'isOpen' | 'alignment'>>,
+	WrappingComponent: ComponentType<WrappedComponent<T>>,
 ): FunctionComponent<Props & T> {
 	const positionerRef = createRef<HTMLDivElement>();
 
@@ -59,7 +62,9 @@ export function usingPositioner<T extends {} = any>(
 	};
 }
 
-export const Positioner = usingPositioner(({ children }) => children);
+export const Positioner = usingPositioner(
+	({ children }) => children as ReactElement,
+);
 
 function usePositionerEffect(
 	alignment: EAlignment,
@@ -73,7 +78,7 @@ function usePositionerEffect(
 		alignment,
 	});
 
-	useEffect(
+	useLayoutEffect(
 		() =>
 			outsideHandler([positionerRef, triggerRef], () => {
 				if (typeof onRequestClose === 'function') {
@@ -83,7 +88,7 @@ function usePositionerEffect(
 		[onRequestClose, positionerRef, triggerRef],
 	);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if (!triggerRef.current && !positionerRef.current) {
 			return void 0;
 		}
