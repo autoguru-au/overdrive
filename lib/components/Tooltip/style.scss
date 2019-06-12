@@ -1,0 +1,15 @@
+@import '../../theme/tokens/facade';
+
+.root {
+	overflow: hidden;
+	padding: var(--global--space--4);
+	width: 100%;
+	max-width: 256px;
+	color: white;
+	border: 1px solid getColour(gray, 800);
+	border-radius: var(--global--space--1);
+	background-color: getColour(gray, 900);
+	box-shadow: var(--global--elevationBoxShadow--4);
+	user-select: none;
+	pointer-events: none;
+}
