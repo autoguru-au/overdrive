@@ -46,10 +46,12 @@ module.exports = ({ config: defaultConfig }) => {
 				loader: require.resolve('css-loader'),
 				options: {
 					importLoaders: 2,
-					modules: true,
-					camelCase: true,
+					localsConvention: 'camelCase',
+					modules: {
+						localIdentName: '[local]-[hash:hex:7]',
+						hashPrefix: '_',
+					},
 					sourceMap: true,
-					localIdentName: '_[local]-[hash:hex:7]',
 				},
 			},
 			{
