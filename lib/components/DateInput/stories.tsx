@@ -4,8 +4,11 @@ import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { DateInput } from '.';
 import { formatDate } from './DateInput';
+import isChromatic from 'storybook-chromatic/isChromatic';
 
-const todayStr: string = formatDate();
+const todayStr: string = formatDate(
+	isChromatic() ? new Date(2019, 5, 1) : new Date(),
+);
 
 const sharedKnobs = placeholder => ({
 	value: text('Value', todayStr),
