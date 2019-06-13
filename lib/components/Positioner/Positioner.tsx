@@ -47,7 +47,10 @@ export function usingPositioner<T extends {} = any>(
 				ref={positionerRef}
 				style={{
 					visibility: rect === null ? 'hidden' : 'visible',
-					...rect,
+					...(rect && {
+						top: rect.top,
+						left: rect.left,
+					}),
 				}}
 				className={styles.root}>
 				{isOpen && (
