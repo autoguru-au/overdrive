@@ -22,13 +22,13 @@ export interface Props {
 
 type WrappedComponent<T> = T & Pick<Props, 'isOpen' | 'alignment'>;
 
-export function usingPositioner<T extends {} = any>(
+export function usingPositioner<T extends {} = {}>(
 	WrappingComponent: ComponentType<WrappedComponent<T>>,
 ): FunctionComponent<Props & T> {
 	const positionerRef = createRef<HTMLDivElement>();
 
 	return ({
-		alignment = EAlignment.TOP_LEFT,
+		alignment = EAlignment.BOTTOM_LEFT,
 		isOpen = false,
 		onRequestClose = () => void 0,
 		triggerRef,
