@@ -2,7 +2,7 @@
 	"extends": "@autoguru/tsconfig/web",
 	"compilerOptions": {
 		"baseUrl": "./",
-		"rootDir": "./",
+		"rootDir": "./lib/",
 		"jsx": "react",
 		"outDir": "./dist",
 		"declaration": true,

@@ -21,7 +21,7 @@
   ],
   "main": "./dist/overdrive.cjs.js",
   "module": "./dist/overdrive.esm.js",
-  "types": "./dist/lib/components/index.d.ts",
+  "types": "./dist/components/index.d.ts",
   "scripts": {
     "build": "cross-env NODE_ENV=production node scripts/build.js",
     "chromatic": "chromatic test --exit-zero-on-changes",
