@@ -1,10 +1,10 @@
 import React, {
 	ComponentType,
-	createRef,
 	FunctionComponent,
 	ReactElement,
 	RefObject,
 	useLayoutEffect,
+	useRef,
 	useState,
 } from 'react';
 import { createPortal } from 'react-dom';
@@ -25,8 +25,6 @@ type WrappedComponent<T> = T & Pick<Props, 'isOpen' | 'alignment'>;
 export function usingPositioner<T extends {} = {}>(
 	WrappingComponent: ComponentType<WrappedComponent<T>>,
 ): FunctionComponent<Props & T> {
-	const positionerRef = createRef<HTMLDivElement>();
-
 	return ({
 		alignment = EAlignment.BOTTOM_LEFT,
 		isOpen = false,
@@ -34,6 +32,7 @@ export function usingPositioner<T extends {} = {}>(
 		triggerRef,
 		...rest
 	}) => {
+		const positionerRef = useRef<HTMLDivElement>();
 		const { alignment: derivedAlignment, rect } = usePositionerEffect(
 			alignment,
 			triggerRef,
@@ -48,8 +47,7 @@ export function usingPositioner<T extends {} = {}>(
 				style={{
 					visibility: rect === null ? 'hidden' : 'visible',
 					...(rect && {
-						top: rect.top,
-						left: rect.left,
+						transform: `translate3d(${rect.left}px, ${rect.top}px, 0px)`,
 					}),
 				}}
 				className={styles.root}>
