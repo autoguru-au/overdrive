@@ -2,6 +2,7 @@ import React from 'react';
 import { CheckBox } from '.';
 import { mount, render } from 'enzyme';
 import { act } from 'react-dom/test-utils';
+import { Heading } from '../Typography/Heading';
 
 describe('<CheckBox />', () => {
 	it('should not throw', () =>
@@ -69,6 +70,19 @@ describe('<CheckBox />', () => {
 		).toEqual(true);
 	});
 
+	it('should not throw is onChange callback is not attached', () => {
+		let checkBox;
+		act(() => {
+			checkBox = mount(<CheckBox value="1" label="check label 1" />);
+		});
+
+		act(() => {
+			checkBox.find("input[type='checkbox']").simulate('change');
+		});
+
+		checkBox.update();
+	});
+
 	it('should call the onChange function passed down to it when checked value has changes', () => {
 		let checkBox;
 		const spyedChangeCallback = jest.fn();
@@ -86,7 +100,34 @@ describe('<CheckBox />', () => {
 			checkBox.find("input[type='checkbox']").simulate('change');
 		});
 
+		act(() => {
+			expect(() =>
+				checkBox.find("input[type='checkbox']").simulate('click'),
+			).not.toThrow();
+		});
+
 		checkBox.update();
 		expect(spyedChangeCallback).toHaveBeenCalledTimes(1);
+	});
+
+	describe('when with component child', () => {
+		it('should match the snapshot', () => {
+			const checkbox = render(
+				<CheckBox value="1" label="check label 1">
+					<Heading>Hello checkbox</Heading>
+				</CheckBox>,
+			);
+
+			expect(checkbox.html()).toMatchSnapshot();
+		});
+		it('Should render the component child', () => {
+			const checkbox = mount(
+				<CheckBox value="1" label="check label 1">
+					<Heading>Hello checkbox</Heading>
+				</CheckBox>,
+			);
+
+			expect(checkbox.find(Heading)).toBeTruthy();
+		});
 	});
 });

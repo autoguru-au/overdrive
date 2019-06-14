@@ -3,7 +3,12 @@ import { text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React, { useState } from 'react';
 import { Radio, RadioGroup } from '.';
+import { Text } from '../Typography/Text';
 import styles from '../CheckableBase/style.scss';
+import { Badge } from '../Badge';
+import { StarRating } from '../StarRating';
+import { Heading } from '../Typography/Heading';
+import { EColour } from '../Badge/Badge';
 
 const baseProps = () => ({
 	label: text('Checkbox label', 'check me!'),
@@ -12,7 +17,7 @@ const baseProps = () => ({
 
 storiesOf('Components|Inputs/Radio', module)
 	.addDecorator(story => (
-		<div style={{ maxWidth: '300px', width: '100%' }}>{story()}</div>
+		<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
 	))
 	.add('default', () => {
 		const Example = () => {
@@ -76,5 +81,101 @@ storiesOf('Components|Inputs/Radio', module)
 				label="There is a very good reason why this thing is a multi-line, sometimes we need to show people a lot of things. And thus this exists."
 			/>
 			<Radio value="2" label="Oh, and it also works when mixed." />
+		</RadioGroup>
+	))
+	.add('with component', () => (
+		<RadioGroup name="radio-story">
+			<Radio value="1">
+				<div
+					style={{
+						display: 'grid',
+						gridGap: '8px',
+						gridTemplateColumns: '1fr auto',
+					}}>
+					<Text>Cherries</Text>
+					<StarRating rating={4.3} />
+				</div>
+			</Radio>
+			<Radio value="2">
+				<div
+					style={{
+						display: 'grid',
+						gridGap: '8px',
+						gridTemplateColumns: '1fr auto',
+					}}>
+					<Text>Blue Berries</Text>
+					<StarRating rating={4.8} />
+				</div>
+			</Radio>
+			<Radio value="3">
+				<div
+					style={{
+						display: 'grid',
+						gridGap: '8px',
+						gridTemplateColumns: '1fr auto',
+					}}>
+					<Text>Bananas</Text>
+					<StarRating rating={1.8} />
+				</div>
+			</Radio>
+			<Radio value="3">
+				<div
+					style={{
+						display: 'grid',
+						gridGap: '8px',
+						gridTemplateColumns: '1fr auto',
+					}}>
+					<Text>Mangoes</Text>
+					<StarRating rating={1.3} />
+				</div>
+			</Radio>
+			<Radio value="4" label="Any other fruit" />
+		</RadioGroup>
+	))
+	.add('with multi-line component', () => (
+		<RadioGroup name="radio-story">
+			<Radio value="1">
+				<div
+					style={{
+						display: 'grid',
+						gridGap: '8px',
+						gridTemplateColumns: '1fr auto auto',
+					}}>
+					<Heading size={2}>Saved Credit Card</Heading>
+					<Badge colour={EColour.Default} label="SUBSCRIBE" />
+					<Badge colour={EColour.Default} label="AUTO TOP-UP" />
+					<div
+						style={{
+							gridColumn: '1/3',
+							display: 'grid',
+							gridGap: '8px',
+							gridTemplateColumns: 'auto auto',
+						}}>
+						<Text size={1}>Ending in 5678</Text>
+						<Text size={1}>Updated 12 Dec 2018</Text>
+					</div>
+				</div>
+			</Radio>
+			<Radio value="1">
+				<div
+					style={{
+						display: 'grid',
+						gridGap: '8px',
+						gridTemplateColumns: '1fr auto',
+					}}>
+					<Heading size={2}>Saved Debit Card</Heading>
+					<Badge colour={EColour.Default} label="SUBSCRIBE" />
+					<div
+						style={{
+							gridColumn: '1/3',
+							display: 'grid',
+							gridGap: '8px',
+							gridTemplateColumns: 'auto auto',
+						}}>
+						<Text size={1}>Ending in 1234</Text>
+						<Text size={1}>Updated 17 Oct 2019</Text>
+					</div>
+				</div>
+			</Radio>
 		</RadioGroup>
 	));

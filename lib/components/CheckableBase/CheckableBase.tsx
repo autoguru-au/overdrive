@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React, { ChangeEvent, FunctionComponent } from 'react';
+import React, { ChangeEvent, FunctionComponent, ReactNode } from 'react';
 import styles from './style.scss';
 
 export const checkableClass = styles.checkable;
@@ -8,7 +8,7 @@ export interface Props {
 	className?: string;
 	checked?: boolean;
 	disabled?: boolean;
-	label?: string;
+	label: ReactNode;
 	inputName: string;
 	inputType: string;
 	value: string;
@@ -54,9 +54,8 @@ export const CheckableBase: FunctionComponent<Props> = ({
 			/>
 			{children}
 			<div className={styles.focusRect} />
-			{Boolean(typeof label === 'string' && label.length > 0) && (
-				<label children={label} className={styles.label} />
-			)}
+
+			<label className={styles.label}>{label}</label>
 		</div>
 	);
 };

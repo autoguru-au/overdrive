@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React, { FunctionComponent, memo } from 'react';
+import React, { FunctionComponent, memo, ReactNode } from 'react';
 import { CheckIcon } from '../../icons';
 import { CheckableBase } from '../CheckableBase';
 import { checkableClass } from '../CheckableBase/CheckableBase';
@@ -12,6 +12,7 @@ export interface Props {
 	label?: string;
 	name?: string;
 	value: string;
+	children?: ReactNode;
 
 	onClick?(checked: boolean): void;
 
@@ -28,19 +29,20 @@ export const CheckBox: FunctionComponent<Props> = memo(
 		checked = false,
 		onClick = () => void 0,
 		onChange = () => void 0,
+		children = label,
 	}) => (
 		<CheckableBase
 			inputType="checkbox"
 			className={clsx([styles.checkbox, className])}
 			inputName={name}
 			value={value}
-			label={label}
+			label={children}
 			disabled={disabled}
 			checked={checked}
 			handleClick={onClick}
 			handleChange={onChange}>
 			<div
-				className={clsx(checkableClass, {
+				className={clsx(checkableClass, styles.base, {
 					[styles.selected]: checked,
 				})}>
 				{checked && <CheckIcon />}

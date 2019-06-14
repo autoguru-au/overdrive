@@ -132,6 +132,8 @@
 .label {
 	font-size: var(--od--CheckableBase--checkable--label--size);
 	line-height: var(--od--CheckableBase--checkable--label--height);
+	width: 100%;
+	position: ralative;
 	padding-left: calc(
 		var(--od--CheckableBase--checkable-size) +
 			(var(--od--CheckableBase--checkable-padding) * 2) +

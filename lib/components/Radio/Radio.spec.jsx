@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Radio, RadioGroup } from '.';
 import { mount, render } from 'enzyme';
 import { act } from 'react-dom/test-utils';
+import { Heading } from '../Typography/Heading';
 
 describe('<RadioButton />', () => {
 	describe('when not nested in a RadioGroup', () => {
@@ -12,7 +13,7 @@ describe('<RadioButton />', () => {
 	describe('when nested in a RadioGroup', () => {
 		it('should not throw', () =>
 			expect(() =>
-				render(
+				mount(
 					<RadioGroup name="radio">
 						<Radio />
 					</RadioGroup>,
@@ -21,7 +22,7 @@ describe('<RadioButton />', () => {
 
 		it('should match the snapshot for a single radio with no value or label', () =>
 			expect(
-				render(
+				mount(
 					<RadioGroup name="radio">
 						<Radio />
 					</RadioGroup>,
@@ -30,7 +31,7 @@ describe('<RadioButton />', () => {
 
 		it('should match the snapshot for a single radio', () =>
 			expect(
-				render(
+				mount(
 					<RadioGroup name="radio">
 						<Radio value="1" label="radio label 1" />
 					</RadioGroup>,
@@ -39,7 +40,7 @@ describe('<RadioButton />', () => {
 
 		it('should match the snapshot for a checked radio', () =>
 			expect(
-				render(
+				mount(
 					<RadioGroup name="radio">
 						<Radio checked value="1" label="radio label 1" />
 						<Radio
@@ -134,6 +135,40 @@ describe('<RadioButton />', () => {
 			).toBeTruthy();
 		});
 
+		it('should not throw is onChange callback is not attached', () => {
+			let group;
+			act(() => {
+				const TestComponent = () => {
+					return (
+						<RadioGroup name="radio" value="2">
+							<Radio value="1" label="radio label 1" />
+							<Radio value="2" label="radio label 2" />
+							<Radio value="3" label="radio label 3" />
+							<Radio value="4" label="radio label 4" />
+						</RadioGroup>
+					);
+				};
+
+				group = mount(<TestComponent />);
+			});
+
+			expect(
+				group
+					.find('div.radio')
+					.at(2)
+					.hasClass('checked'),
+			).not.toBeTruthy();
+
+			act(() => {
+				expect(() =>
+					group
+						.find("div.radio>input[type='radio']")
+						.at(3)
+						.simulate('click'),
+				).not.toThrow();
+			});
+		});
+
 		it('should select the radio if the native radio element has been clicked', () => {
 			let group;
 			act(() => {
@@ -226,6 +261,32 @@ describe('<RadioButton />', () => {
 					.at(1)
 					.is('[disabled]'),
 			).toBeTruthy();
+		});
+	});
+
+	describe('when with component child', () => {
+		it('should match the snapshot', () => {
+			const radio = render(
+				<RadioGroup name="radio" value="2">
+					<Radio value="1" label="radio label 1">
+						<Heading>Hello checkbox</Heading>
+					</Radio>
+				</RadioGroup>,
+			);
+
+			expect(radio.html()).toMatchSnapshot();
+		});
+
+		it('Should render the component child', () => {
+			const radio = mount(
+				<RadioGroup name="radio" value="2">
+					<Radio value="1" label="radio label 1">
+						<Heading>Hello checkbox</Heading>
+					</Radio>
+				</RadioGroup>,
+			);
+
+			expect(radio.find(Heading)).toBeTruthy();
 		});
 	});
 });
