@@ -8,7 +8,6 @@ import { StarRating } from '../StarRating';
 import { Heading } from '../Typography/Heading';
 import { Badge } from '../Badge';
 import { EColour } from '../Badge/Badge';
-import styles from './style.scss';
 
 const baseProps = () => ({
 	label: text('Checkbox label', 'check me!'),
@@ -93,33 +92,6 @@ storiesOf('Components|Inputs/CheckBox', module)
 	.add('checked', () => (
 		<CheckBox checked name="check-name" value="1" {...baseProps()} />
 	))
-	.add('hovered', () => (
-		<CheckBox
-			name="check-name"
-			value="1"
-			className={styles.hovered}
-			{...checked()}
-			{...baseProps()}
-		/>
-	))
-	.add('active', () => (
-		<CheckBox
-			name="check-name"
-			value="1"
-			className={styles.active}
-			{...checked()}
-			{...baseProps()}
-		/>
-	))
-	.add('focused', () => (
-		<CheckBox
-			name="check-name"
-			value="1"
-			className={styles.focused}
-			{...checked()}
-			{...baseProps()}
-		/>
-	))
 	.add('disabled', () => (
 		<CheckBox
 			disabled
@@ -145,55 +117,37 @@ storiesOf('Components|Inputs/CheckBox', module)
 			/>
 		</>
 	))
-	.add('with component', () => (
-		<>
-			<CheckBox value="1">
-				<div
-					style={{
-						display: 'grid',
-						gridGap: '8px',
-						gridTemplateColumns: '1fr auto',
-					}}>
-					<Text>Cherries</Text>
-					<StarRating rating={4.3} />
-				</div>
-			</CheckBox>
-			<CheckBox value="2">
-				<div
-					style={{
-						display: 'grid',
-						gridGap: '8px',
-						gridTemplateColumns: '1fr auto',
-					}}>
-					<Text>Blue Berries</Text>
-					<StarRating rating={4.8} />
-				</div>
-			</CheckBox>
-			<CheckBox value="3">
-				<div
-					style={{
-						display: 'grid',
-						gridGap: '8px',
-						gridTemplateColumns: '1fr auto',
-					}}>
-					<Text>Bananas</Text>
-					<StarRating rating={1.8} />
-				</div>
-			</CheckBox>
-			<CheckBox value="3">
-				<div
-					style={{
-						display: 'grid',
-						gridGap: '8px',
-						gridTemplateColumns: '1fr auto',
-					}}>
-					<Text>Mangoes</Text>
-					<StarRating rating={1.3} />
-				</div>
-			</CheckBox>
-			<CheckBox value="4" label="Any other fruit" />
-		</>
-	))
+	.add('with component', () => {
+		const Item = ({ label, rating }) => (
+			<div
+				style={{
+					display: 'grid',
+					gridGap: '8px',
+					gridTemplateColumns: '1fr auto',
+				}}>
+				<Text>{label}</Text>
+				<StarRating rating={rating} />
+			</div>
+		);
+
+		return (
+			<>
+				<CheckBox value="1">
+					<Item label="Cherries" rating="4.3" />
+				</CheckBox>
+				<CheckBox value="2">
+					<Item label="Berr" rating="4.8" />
+				</CheckBox>
+				<CheckBox value="3">
+					<Item label="Bananas" rating="1.8" />
+				</CheckBox>
+				<CheckBox value="3">
+					<Item label="Mangoes" rating="1.3" />
+				</CheckBox>
+				<CheckBox value="4" label="Any other fruit" />
+			</>
+		);
+	})
 	.add('with multi-line component', () => (
 		<>
 			<CheckBox value="1">
@@ -211,7 +165,7 @@ storiesOf('Components|Inputs/CheckBox', module)
 							gridColumn: '1/4',
 							display: 'grid',
 							gridGap: '8px',
-							gridTemplateColumns: 'auto auto',
+							gridTemplateColumns: '1fr auto',
 						}}>
 						<Text size={1}>Ending in 5678</Text>
 						<Text size={1}>Updated 12 Dec 2018</Text>
@@ -232,7 +186,7 @@ storiesOf('Components|Inputs/CheckBox', module)
 							gridColumn: '1/4',
 							display: 'grid',
 							gridGap: '8px',
-							gridTemplateColumns: 'auto auto',
+							gridTemplateColumns: '1fr auto',
 						}}>
 						<Text size={1}>Ending in 1234</Text>
 						<Text size={1}>Updated 17 Oct 2019</Text>

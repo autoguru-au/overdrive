@@ -34,17 +34,14 @@ describe('<CheckBox />', () => {
 	});
 
 	it('should call the onClick function passed down to it when clicked', () => {
-		let checkBox;
 		const spyedClickCallback = jest.fn();
-		act(() => {
-			checkBox = mount(
-				<CheckBox
-					value="1"
-					label="check label 1"
-					onClick={spyedClickCallback}
-				/>,
-			);
-		});
+		const checkBox = mount(
+			<CheckBox
+				value="1"
+				label="check label 1"
+				onClick={spyedClickCallback}
+			/>,
+		);
 
 		act(() => {
 			checkBox.find("input[type='checkbox']").simulate('click');
@@ -61,20 +58,19 @@ describe('<CheckBox />', () => {
 		const checkBoxChecked = mount(
 			<CheckBox checked value="1" label="check label 1" />,
 		);
+
 		expect(
 			checkBoxUnchecked.find("input[type='checkbox']").getDOMNode()
 				.checked,
 		).toEqual(false);
+
 		expect(
 			checkBoxChecked.find("input[type='checkbox']").getDOMNode().checked,
 		).toEqual(true);
 	});
 
 	it('should not throw is onChange callback is not attached', () => {
-		let checkBox;
-		act(() => {
-			checkBox = mount(<CheckBox value="1" label="check label 1" />);
-		});
+		const checkBox = mount(<CheckBox value="1" label="check label 1" />);
 
 		act(() => {
 			checkBox.find("input[type='checkbox']").simulate('change');
@@ -84,17 +80,14 @@ describe('<CheckBox />', () => {
 	});
 
 	it('should call the onChange function passed down to it when checked value has changes', () => {
-		let checkBox;
 		const spyedChangeCallback = jest.fn();
-		act(() => {
-			checkBox = mount(
-				<CheckBox
-					value="1"
-					label="check label 1"
-					onChange={spyedChangeCallback}
-				/>,
-			);
-		});
+		const checkBox = mount(
+			<CheckBox
+				value="1"
+				label="check label 1"
+				onChange={spyedChangeCallback}
+			/>,
+		);
 
 		act(() => {
 			checkBox.find("input[type='checkbox']").simulate('change');
