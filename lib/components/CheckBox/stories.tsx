@@ -3,10 +3,14 @@ import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react';
 import React, { useState } from 'react';
 import { CheckBox } from '.';
-import styles from '../CheckableBase/style.scss';
+import { Text } from '../Typography/Text';
+import { StarRating } from '../StarRating';
+import { Heading } from '../Typography/Heading';
+import { Badge } from '../Badge';
+import { EColour } from '../Badge/Badge';
 
 const baseProps = () => ({
-	label: text('Checkbox label', 'check me!'),
+	children: text('Checkbox label', 'check me!'),
 });
 
 const checked = () => ({
@@ -15,7 +19,7 @@ const checked = () => ({
 
 storiesOf('Components|Inputs/CheckBox', module)
 	.addDecorator(story => (
-		<div style={{ maxWidth: '300px', width: '100%' }}>{story()}</div>
+		<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
 	))
 	.add('default', () => {
 		const Example = () => {
@@ -67,7 +71,7 @@ storiesOf('Components|Inputs/CheckBox', module)
 						return (
 							<CheckBox
 								key={item.value}
-								label={item.label}
+								children={item.label}
 								value={item.value}
 								name={`want-${item.value}`}
 								checked={checkedValues[item.value]}
@@ -88,33 +92,6 @@ storiesOf('Components|Inputs/CheckBox', module)
 	.add('checked', () => (
 		<CheckBox checked name="check-name" value="1" {...baseProps()} />
 	))
-	.add('hovered', () => (
-		<CheckBox
-			name="check-name"
-			value="1"
-			className={styles.hovered}
-			{...checked()}
-			{...baseProps()}
-		/>
-	))
-	.add('active', () => (
-		<CheckBox
-			name="check-name"
-			value="1"
-			className={styles.active}
-			{...checked()}
-			{...baseProps()}
-		/>
-	))
-	.add('focused', () => (
-		<CheckBox
-			name="check-name"
-			value="1"
-			className={styles.focused}
-			{...checked()}
-			{...baseProps()}
-		/>
-	))
 	.add('disabled', () => (
 		<CheckBox
 			disabled
@@ -127,16 +104,94 @@ storiesOf('Components|Inputs/CheckBox', module)
 	.add('multiple lines', () => (
 		<>
 			<CheckBox
+				children="There is a very good reason why this thing is a multi-line, sometimes we need to show people a lot of things. And thus this exists."
 				name="check-name"
 				checked={boolean('first checked', false)}
 				value="1"
-				label="There is a very good reason why this thing is a multi-line, sometimes we need to show people a lot of things. And thus this exists."
 			/>
 			<CheckBox
+				children="Oh, and it also works when mixed."
 				name="check-name"
 				checked={boolean('second checked', false)}
 				value="2"
-				label="Oh, and it also works when mixed."
 			/>
+		</>
+	))
+	.add('with component', () => {
+		const Item = ({ label, rating }) => (
+			<div
+				style={{
+					display: 'grid',
+					gridGap: '8px',
+					gridTemplateColumns: '1fr auto',
+				}}>
+				<Text>{label}</Text>
+				<StarRating rating={rating} />
+			</div>
+		);
+
+		return (
+			<>
+				<CheckBox value="1">
+					<Item label="Cherries" rating="4.3" />
+				</CheckBox>
+				<CheckBox value="2">
+					<Item label="Berr" rating="4.8" />
+				</CheckBox>
+				<CheckBox value="3">
+					<Item label="Bananas" rating="1.8" />
+				</CheckBox>
+				<CheckBox value="3">
+					<Item label="Mangoes" rating="1.3" />
+				</CheckBox>
+				<CheckBox children="Any other fruit" value="4" />
+			</>
+		);
+	})
+	.add('with multi-line component', () => (
+		<>
+			<CheckBox value="1">
+				<div
+					style={{
+						display: 'grid',
+						gridGap: '8px',
+						gridTemplateColumns: '1fr auto auto',
+					}}>
+					<Heading size={2}>Saved Credit Card</Heading>
+					<Badge colour={EColour.Default} label="SUBSCRIBE" />
+					<Badge colour={EColour.Default} label="AUTO TOP-UP" />
+					<div
+						style={{
+							gridColumn: '1/4',
+							display: 'grid',
+							gridGap: '8px',
+							gridTemplateColumns: '1fr auto',
+						}}>
+						<Text size={1}>Ending in 5678</Text>
+						<Text size={1}>Updated 12 Dec 2018</Text>
+					</div>
+				</div>
+			</CheckBox>
+			<CheckBox value="1">
+				<div
+					style={{
+						display: 'grid',
+						gridGap: '8px',
+						gridTemplateColumns: '1fr auto',
+					}}>
+					<Heading size={2}>Saved Debit Card</Heading>
+					<Badge colour={EColour.Default} label="SUBSCRIBE" />
+					<div
+						style={{
+							gridColumn: '1/4',
+							display: 'grid',
+							gridGap: '8px',
+							gridTemplateColumns: '1fr auto',
+						}}>
+						<Text size={1}>Ending in 1234</Text>
+						<Text size={1}>Updated 17 Oct 2019</Text>
+					</div>
+				</div>
+			</CheckBox>
 		</>
 	));

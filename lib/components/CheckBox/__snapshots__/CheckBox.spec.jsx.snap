@@ -12,7 +12,7 @@ exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
     value="1"
   />
   <div
-    class="checkable selected"
+    class="checkable base selected"
   >
     <svg
       viewBox="0 0 512 512"
@@ -39,7 +39,6 @@ exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
 
 exports[`<CheckBox /> should match the snapshot for a focused check 1`] = `
 <Component
-  label="check label 1"
   value="1"
 >
   <CheckableBase
@@ -67,7 +66,7 @@ exports[`<CheckBox /> should match the snapshot for a focused check 1`] = `
         value="1"
       />
       <div
-        className="checkable"
+        className="checkable base"
       >
         <div
           className="box"
@@ -97,7 +96,7 @@ exports[`<CheckBox /> should match the snapshot for a single check 1`] = `
     value="1"
   />
   <div
-    class="checkable"
+    class="checkable base"
   >
     <div
       class="box"
@@ -124,7 +123,7 @@ exports[`<CheckBox /> should match the snapshot for a single check with no value
     type="checkbox"
   />
   <div
-    class="checkable"
+    class="checkable base"
   >
     <div
       class="box"
@@ -133,5 +132,10 @@ exports[`<CheckBox /> should match the snapshot for a single check with no value
   <div
     class="focusRect"
   />
+  <label
+    class="label"
+  />
 </div>
 `;
+
+exports[`<CheckBox /> when with component child should match the snapshot 1`] = `"<input type=\\"checkbox\\" name value=\\"1\\" class=\\"nativeInput\\"><div class=\\"checkable base\\"><div class=\\"box\\"></div></div><div class=\\"focusRect\\"></div><label class=\\"label\\"><h1 class=\\"root sizeScale6\\">Hello checkbox</h1></label>"`;

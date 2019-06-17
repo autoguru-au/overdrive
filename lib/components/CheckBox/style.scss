@@ -8,7 +8,7 @@ $checkSize: 16px;
 }
 
 .box,
-.checkbox svg {
+.base svg {
 	position: absolute;
 	border-radius: 2px;
 }
@@ -30,7 +30,7 @@ $checkSize: 16px;
 	}
 }
 
-.checkbox svg {
+.base svg {
 	width: $checkSize;
 	height: $checkSize;
 	z-index: 1;

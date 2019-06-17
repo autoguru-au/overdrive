@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React, { FunctionComponent, memo, useContext } from 'react';
+import React, { FunctionComponent, memo, ReactNode, useContext } from 'react';
 import { CheckableBase } from '../CheckableBase';
 import { checkableClass } from '../CheckableBase/CheckableBase';
 import styles from './style.scss';
@@ -9,11 +9,11 @@ export interface Props {
 	value: string;
 	className?: string;
 	disabled?: boolean;
-	label?: string;
+	children: ReactNode;
 }
 
 export const Radio: FunctionComponent<Props> = memo(
-	({ value, className = '', label = '', disabled = false }) => {
+	({ value, className = '', children, disabled = false }) => {
 		const radioContext = useContext(RadioContext);
 
 		const isChecked = value === radioContext.value;
@@ -26,7 +26,7 @@ export const Radio: FunctionComponent<Props> = memo(
 				className={clsx([styles.radio, className])}
 				inputName={radioContext.inputName}
 				value={value}
-				label={label}
+				label={children}
 				disabled={disabled}
 				checked={isChecked}
 				handleClick={handleClick}>
