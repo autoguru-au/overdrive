@@ -1,4 +1,5 @@
 import { boolean, text } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react';
 import React, { useState } from 'react';
 import { CheckBox } from '.';
@@ -61,7 +62,7 @@ storiesOf('Components|Inputs/CheckBox', module)
 								[item.value]: !checkedValues[item.value],
 							});
 						const onChange = (checked: boolean) =>
-							console.log({ [item.value]: checked });
+							action('onChange')({ [item.value]: checked });
 
 						return (
 							<CheckBox
