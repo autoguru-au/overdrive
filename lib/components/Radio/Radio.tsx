@@ -9,18 +9,11 @@ export interface Props {
 	value: string;
 	className?: string;
 	disabled?: boolean;
-	label?: string;
-	children?: ReactNode;
+	children: ReactNode;
 }
 
 export const Radio: FunctionComponent<Props> = memo(
-	({
-		value,
-		className = '',
-		label = '',
-		children = label,
-		disabled = false,
-	}) => {
+	({ value, className = '', children, disabled = false }) => {
 		const radioContext = useContext(RadioContext);
 
 		const isChecked = value === radioContext.value;

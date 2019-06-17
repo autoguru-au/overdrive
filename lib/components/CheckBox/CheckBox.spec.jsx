@@ -13,17 +13,17 @@ describe('<CheckBox />', () => {
 
 	it('should match the snapshot for a single check', () =>
 		expect(
-			render(<CheckBox value="1" label="check label 1" />),
+			render(<CheckBox children="check label 1" value="1" />),
 		).toMatchSnapshot());
 
 	it('should match the snapshot for a checked check', () =>
 		expect(
-			render(<CheckBox checked value="1" label="check label 1" />),
+			render(<CheckBox children="check label 1" checked value="1" />),
 		).toMatchSnapshot());
 
 	it('should match the snapshot for a focused check', () =>
 		expect(
-			mount(<CheckBox value="1" label="check label 1" />)
+			mount(<CheckBox children="check label 1" value="1" />)
 				.find(CheckBox)
 				.simulate('focus'),
 		).toMatchSnapshot());
@@ -37,8 +37,8 @@ describe('<CheckBox />', () => {
 		const spyedClickCallback = jest.fn();
 		const checkBox = mount(
 			<CheckBox
+				children="check label 1"
 				value="1"
-				label="check label 1"
 				onClick={spyedClickCallback}
 			/>,
 		);
@@ -53,10 +53,10 @@ describe('<CheckBox />', () => {
 
 	it('should pass the cheked value to the native element', () => {
 		const checkBoxUnchecked = mount(
-			<CheckBox value="1" label="check label 1" checked={false} />,
+			<CheckBox children="check label 1" value="1" checked={false} />,
 		);
 		const checkBoxChecked = mount(
-			<CheckBox checked value="1" label="check label 1" />,
+			<CheckBox children="check label 1" checked value="1" />,
 		);
 
 		expect(
@@ -70,7 +70,7 @@ describe('<CheckBox />', () => {
 	});
 
 	it('should not throw is onChange callback is not attached', () => {
-		const checkBox = mount(<CheckBox value="1" label="check label 1" />);
+		const checkBox = mount(<CheckBox children="check label 1" value="1" />);
 
 		act(() => {
 			checkBox.find("input[type='checkbox']").simulate('change');
@@ -83,8 +83,8 @@ describe('<CheckBox />', () => {
 		const spyedChangeCallback = jest.fn();
 		const checkBox = mount(
 			<CheckBox
+				children="check label 1"
 				value="1"
-				label="check label 1"
 				onChange={spyedChangeCallback}
 			/>,
 		);
@@ -106,7 +106,7 @@ describe('<CheckBox />', () => {
 	describe('when with component child', () => {
 		it('should match the snapshot', () => {
 			const checkbox = render(
-				<CheckBox value="1" label="check label 1">
+				<CheckBox children="check label 1" value="1">
 					<Heading>Hello checkbox</Heading>
 				</CheckBox>,
 			);
@@ -115,7 +115,7 @@ describe('<CheckBox />', () => {
 		});
 		it('Should render the component child', () => {
 			const checkbox = mount(
-				<CheckBox value="1" label="check label 1">
+				<CheckBox children="check label 1" value="1">
 					<Heading>Hello checkbox</Heading>
 				</CheckBox>,
 			);

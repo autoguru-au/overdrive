@@ -10,7 +10,7 @@ import { Badge } from '../Badge';
 import { EColour } from '../Badge/Badge';
 
 const baseProps = () => ({
-	label: text('Checkbox label', 'check me!'),
+	children: text('Checkbox label', 'check me!'),
 });
 
 const checked = () => ({
@@ -71,7 +71,7 @@ storiesOf('Components|Inputs/CheckBox', module)
 						return (
 							<CheckBox
 								key={item.value}
-								label={item.label}
+								children={item.label}
 								value={item.value}
 								name={`want-${item.value}`}
 								checked={checkedValues[item.value]}
@@ -104,16 +104,16 @@ storiesOf('Components|Inputs/CheckBox', module)
 	.add('multiple lines', () => (
 		<>
 			<CheckBox
+				children="There is a very good reason why this thing is a multi-line, sometimes we need to show people a lot of things. And thus this exists."
 				name="check-name"
 				checked={boolean('first checked', false)}
 				value="1"
-				label="There is a very good reason why this thing is a multi-line, sometimes we need to show people a lot of things. And thus this exists."
 			/>
 			<CheckBox
+				children="Oh, and it also works when mixed."
 				name="check-name"
 				checked={boolean('second checked', false)}
 				value="2"
-				label="Oh, and it also works when mixed."
 			/>
 		</>
 	))
@@ -144,7 +144,7 @@ storiesOf('Components|Inputs/CheckBox', module)
 				<CheckBox value="3">
 					<Item label="Mangoes" rating="1.3" />
 				</CheckBox>
-				<CheckBox value="4" label="Any other fruit" />
+				<CheckBox children="Any other fruit" value="4" />
 			</>
 		);
 	})

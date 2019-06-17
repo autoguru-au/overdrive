@@ -33,7 +33,7 @@ describe('<RadioButton />', () => {
 			expect(
 				mount(
 					<RadioGroup name="radio">
-						<Radio value="1" label="radio label 1" />
+						<Radio children="radio label 1" value="1" />
 					</RadioGroup>,
 				),
 			).toMatchSnapshot());
@@ -42,10 +42,10 @@ describe('<RadioButton />', () => {
 			expect(
 				mount(
 					<RadioGroup name="radio">
-						<Radio checked value="1" label="radio label 1" />
+						<Radio children="radio label 1" checked value="1" />
 						<Radio
+							children="radio label 2"
 							value="2"
-							label="radio label 2"
 							checked={false}
 						/>
 					</RadioGroup>,
@@ -56,7 +56,7 @@ describe('<RadioButton />', () => {
 			expect(
 				mount(
 					<RadioGroup name="radio">
-						<Radio value="1" label="radio label 1" />
+						<Radio children="radio label 1" value="1" />
 					</RadioGroup>,
 				)
 					.find(Radio)
@@ -67,10 +67,10 @@ describe('<RadioButton />', () => {
 			expect(
 				render(
 					<RadioGroup name="radio">
-						<Radio value="1" label="radio label 1" />
-						<Radio value="2" label="radio label 2" />
-						<Radio value="3" label="radio label 3" />
-						<Radio value="4" label="radio label 4" />
+						<Radio children="radio label 1" value="1" />
+						<Radio children="radio label 2" value="2" />
+						<Radio children="radio label 3" value="3" />
+						<Radio children="radio label 4" value="4" />
 					</RadioGroup>,
 				),
 			).toMatchSnapshot());
@@ -79,10 +79,10 @@ describe('<RadioButton />', () => {
 			expect(
 				render(
 					<RadioGroup name="radio" value="2">
-						<Radio value="1" label="radio label 1" />
-						<Radio value="2" label="radio label 2" />
-						<Radio value="3" label="radio label 3" />
-						<Radio value="4" label="radio label 4" />
+						<Radio children="radio label 1" value="1" />
+						<Radio children="radio label 2" value="2" />
+						<Radio children="radio label 3" value="3" />
+						<Radio children="radio label 4" value="4" />
 					</RadioGroup>,
 				)
 					.find('>div:nth-of-type(2)')
@@ -100,10 +100,10 @@ describe('<RadioButton />', () => {
 							name="radio"
 							value={value}
 							onChange={setValue}>
-							<Radio value="1" label="radio label 1" />
-							<Radio value="2" label="radio label 2" />
-							<Radio value="3" label="radio label 3" />
-							<Radio value="4" label="radio label 4" />
+							<Radio children="radio label 1" value="1" />
+							<Radio children="radio label 2" value="2" />
+							<Radio children="radio label 3" value="3" />
+							<Radio children="radio label 4" value="4" />
 						</RadioGroup>
 					);
 				};
@@ -141,10 +141,10 @@ describe('<RadioButton />', () => {
 				const TestComponent = () => {
 					return (
 						<RadioGroup name="radio" value="2">
-							<Radio value="1" label="radio label 1" />
-							<Radio value="2" label="radio label 2" />
-							<Radio value="3" label="radio label 3" />
-							<Radio value="4" label="radio label 4" />
+							<Radio children="radio label 1" value="1" />
+							<Radio children="radio label 2" value="2" />
+							<Radio children="radio label 3" value="3" />
+							<Radio children="radio label 4" value="4" />
 						</RadioGroup>
 					);
 				};
@@ -180,10 +180,10 @@ describe('<RadioButton />', () => {
 							name="radio"
 							value={value}
 							onChange={setValue}>
-							<Radio value="1" label="radio label 1" />
-							<Radio value="2" label="radio label 2" />
-							<Radio value="3" label="radio label 3" />
-							<Radio value="4" label="radio label 4" />
+							<Radio children="radio label 1" value="1" />
+							<Radio children="radio label 2" value="2" />
+							<Radio children="radio label 3" value="3" />
+							<Radio children="radio label 4" value="4" />
 						</RadioGroup>
 					);
 				};
@@ -222,10 +222,10 @@ describe('<RadioButton />', () => {
 						name="radio"
 						value="2"
 						onChange={spyedChangeCallback}>
-						<Radio value="1" label="radio label 1" />
-						<Radio value="2" label="radio label 2" />
-						<Radio value="3" label="radio label 3" />
-						<Radio value="4" label="radio label 4" />
+						<Radio children="radio label 1" value="1" />
+						<Radio children="radio label 2" value="2" />
+						<Radio children="radio label 3" value="3" />
+						<Radio children="radio label 4" value="4" />
 					</RadioGroup>,
 				);
 			});
@@ -247,10 +247,10 @@ describe('<RadioButton />', () => {
 			act(() => {
 				group = mount(
 					<RadioGroup name="radio" value="2">
-						<Radio value="1" label="radio label 1" />
-						<Radio disabled value="2" label="radio label 2" />
-						<Radio value="3" label="radio label 3" />
-						<Radio value="4" label="radio label 4" />
+						<Radio children="radio label 1" value="1" />
+						<Radio children="radio label 2" disabled value="2" />
+						<Radio children="radio label 3" value="3" />
+						<Radio children="radio label 4" value="4" />
 					</RadioGroup>,
 				);
 			});
@@ -268,7 +268,7 @@ describe('<RadioButton />', () => {
 		it('should match the snapshot', () => {
 			const radio = render(
 				<RadioGroup name="radio" value="2">
-					<Radio value="1" label="radio label 1">
+					<Radio children="radio label 1" value="1">
 						<Heading>Hello checkbox</Heading>
 					</Radio>
 				</RadioGroup>,
@@ -280,7 +280,7 @@ describe('<RadioButton />', () => {
 		it('Should render the component child', () => {
 			const radio = mount(
 				<RadioGroup name="radio" value="2">
-					<Radio value="1" label="radio label 1">
+					<Radio children="radio label 1" value="1">
 						<Heading>Hello checkbox</Heading>
 					</Radio>
 				</RadioGroup>,

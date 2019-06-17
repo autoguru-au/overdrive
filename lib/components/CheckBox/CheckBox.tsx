@@ -9,10 +9,9 @@ export interface Props {
 	className?: string;
 	checked?: boolean;
 	disabled?: boolean;
-	label?: string;
 	name?: string;
 	value: string;
-	children?: ReactNode;
+	children: ReactNode;
 
 	onClick?(checked: boolean): void;
 
@@ -24,12 +23,11 @@ export const CheckBox: FunctionComponent<Props> = memo(
 		value,
 		className = '',
 		name = '',
-		label = '',
 		disabled = false,
 		checked = false,
 		onClick = () => void 0,
 		onChange = () => void 0,
-		children = label,
+		children,
 	}) => (
 		<CheckableBase
 			inputType="checkbox"

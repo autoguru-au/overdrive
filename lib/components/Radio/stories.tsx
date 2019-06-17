@@ -11,7 +11,7 @@ import { Heading } from '../Typography/Heading';
 import { EColour } from '../Badge/Badge';
 
 const baseProps = () => ({
-	label: text('Checkbox label', 'check me!'),
+	children: text('Checkbox label', 'check me!'),
 	onChange: action('onChange'),
 });
 
@@ -33,11 +33,11 @@ storiesOf('Components|Inputs/Radio', module)
 					name="make"
 					value={value}
 					onChange={onChangeHandler}>
-					<Radio label="Subaru" value="subaru" />
-					<Radio label="Kia" value="kia" />
-					<Radio label="Toyota" value="toyota" />
-					<Radio label="Holden" value="holden" />
-					<Radio label="Ford" value="ford" />
+					<Radio children="Subaru" value="subaru" />
+					<Radio children="Kia" value="kia" />
+					<Radio children="Toyota" value="toyota" />
+					<Radio children="Holden" value="holden" />
+					<Radio children="Ford" value="ford" />
 				</RadioGroup>
 			);
 		};
@@ -77,10 +77,10 @@ storiesOf('Components|Inputs/Radio', module)
 	.add('multiple lines', () => (
 		<RadioGroup name="radio-story">
 			<Radio
+				children="There is a very good reason why this thing is a multi-line, sometimes we need to show people a lot of things. And thus this exists."
 				value="1"
-				label="There is a very good reason why this thing is a multi-line, sometimes we need to show people a lot of things. And thus this exists."
 			/>
-			<Radio value="2" label="Oh, and it also works when mixed." />
+			<Radio children="Oh, and it also works when mixed." value="2" />
 		</RadioGroup>
 	))
 	.add('with component', () => {
@@ -110,7 +110,7 @@ storiesOf('Components|Inputs/Radio', module)
 				<Radio value="3">
 					<Item label="Mangoes" rating="1.3" />
 				</Radio>
-				<Radio value="4" label="Any other fruit" />
+				<Radio children="Any other fruit" value="4" />
 			</RadioGroup>
 		);
 	})

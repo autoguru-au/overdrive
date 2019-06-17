@@ -39,7 +39,6 @@ exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
 
 exports[`<CheckBox /> should match the snapshot for a focused check 1`] = `
 <Component
-  label="check label 1"
   value="1"
 >
   <CheckableBase

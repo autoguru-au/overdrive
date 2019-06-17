@@ -9,7 +9,6 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
   >
     <Component
       checked={true}
-      label="radio label 1"
       value="1"
     >
       <CheckableBase
@@ -58,7 +57,6 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
     </Component>
     <Component
       checked={false}
-      label="radio label 2"
       value="2"
     >
       <CheckableBase
@@ -111,7 +109,6 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
 
 exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot for a focused radio 1`] = `
 <Component
-  label="radio label 1"
   value="1"
 >
   <CheckableBase
@@ -287,7 +284,6 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
     className="radioGroup"
   >
     <Component
-      label="radio label 1"
       value="1"
     >
       <CheckableBase
@@ -353,7 +349,6 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
         handleClick={[Function]}
         inputName="radio"
         inputType="radio"
-        label=""
       >
         <div
           className="root radio"
