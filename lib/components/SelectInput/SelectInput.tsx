@@ -3,12 +3,7 @@ import { ChevronDownIcon, Icon } from '../Icon';
 import { withEnhancedInput } from '../InputBase';
 import styles from './style.scss';
 
-const SelectInputComponent = withEnhancedInput(function SelectInput({
-	field,
-	eventHandlers,
-	validation,
-	...rest
-}) {
+function SelectInputComponent({ field, eventHandlers, validation, ...rest }) {
 	return (
 		<>
 			<select
@@ -20,6 +15,8 @@ const SelectInputComponent = withEnhancedInput(function SelectInput({
 			<Icon className={styles.arrow} size={25} icon={ChevronDownIcon} />
 		</>
 	);
-});
+}
 
-export const SelectInput = memo(SelectInputComponent);
+SelectInputComponent.primitiveType = 'select';
+
+export const SelectInput = memo(withEnhancedInput(SelectInputComponent));

@@ -51,7 +51,9 @@ export type WrappedComponentProps<IncomingProps = {}> = {
 } & IncomingProps;
 
 export function withEnhancedInput<IncomingProps = {}>(
-	WrappingComponent: ComponentType<WrappedComponentProps<IncomingProps>>,
+	WrappingComponent: ComponentType<WrappedComponentProps<IncomingProps>> & {
+		primitiveType: string;
+	},
 ): ComponentType<EnhanceInputProps<IncomingProps>> {
 	type TProps = EnhanceInputProps<IncomingProps>;
 
@@ -187,8 +189,10 @@ export function withEnhancedInput<IncomingProps = {}>(
 					<NotchedBase
 						id={id}
 						isEmpty={
-							this.state.value === '' ||
-							this.state.value === void 0
+							WrappingComponent.primitiveType === 'date' &&
+							this.state.value === ''
+								? false
+								: this.state.value === ''
 						}
 						isActive={this.state.isActive}
 						placeholder={placeholder}>

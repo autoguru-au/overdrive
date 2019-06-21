@@ -30,7 +30,7 @@ describe('<TextAreaInput />', () => {
 		textAreaInput.unmount();
 	});
 
-	it('should match snapshot for default select input', () => {
+	it('should match snapshot for default textarea input', () => {
 		const textAreaInput = render(
 			<TextAreaInput
 				className="textarea-input-class"

@@ -84,7 +84,7 @@ exports[`<TextInput /> should match snapshot 1`] = `
 `;
 
 exports[`<TextInput /> should match snapshot for active text input 1`] = `
-<EnhancedInput(TextInput)
+<EnhancedInput(TextInputComponent)
   className="text-input-class"
   placeholder="placeholder something"
 >
@@ -99,7 +99,7 @@ exports[`<TextInput /> should match snapshot for active text input 1`] = `
       <div
         className="notchedBase notchedBaseShift notchedBaseActive"
       >
-        <TextInput
+        <TextInputComponent
           eventHandlers={
             Object {
               "onBlur": [Function],
@@ -133,7 +133,7 @@ exports[`<TextInput /> should match snapshot for active text input 1`] = `
             type="text"
             value="Test value"
           />
-        </TextInput>
+        </TextInputComponent>
         <div
           className="notchedBaseBorder"
         >
@@ -161,7 +161,7 @@ exports[`<TextInput /> should match snapshot for active text input 1`] = `
       </div>
     </NotchedBase>
   </div>
-</EnhancedInput(TextInput)>
+</EnhancedInput(TextInputComponent)>
 `;
 
 exports[`<TextInput /> should match snapshot for default text input 1`] = `

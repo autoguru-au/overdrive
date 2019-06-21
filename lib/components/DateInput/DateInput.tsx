@@ -3,13 +3,7 @@ import React, { memo } from 'react';
 
 import { withEnhancedInput } from '../InputBase';
 
-// @deprecated
-const DateInputComponent = withEnhancedInput(function DateInput({
-	field,
-	eventHandlers,
-	validation,
-	...rest
-}) {
+function DateInputComponent({ field, eventHandlers, validation, ...rest }) {
 	warning(field.value === '', `Date Input does not support empty values.`);
 
 	return (
@@ -21,9 +15,11 @@ const DateInputComponent = withEnhancedInput(function DateInput({
 			type="date"
 		/>
 	);
-});
+}
 
-export const DateInput = memo(DateInputComponent);
+DateInputComponent.primitiveType = 'date';
+
+export const DateInput = memo(withEnhancedInput(DateInputComponent));
 
 // @deprecated
 export const formatDate = (date: Date = new Date()) => {

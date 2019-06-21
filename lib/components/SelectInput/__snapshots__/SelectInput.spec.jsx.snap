@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<SelectInput /> should match snapshot for active select input 1`] = `
-<EnhancedInput(SelectInput)
+<EnhancedInput(SelectInputComponent)
   className="select-input-class"
   placeholder="Hello World!"
 >
@@ -16,7 +16,7 @@ exports[`<SelectInput /> should match snapshot for active select input 1`] = `
       <div
         className="notchedBase notchedBaseShift notchedBaseActive"
       >
-        <SelectInput
+        <SelectInputComponent
           eventHandlers={
             Object {
               "onBlur": [Function],
@@ -79,7 +79,7 @@ exports[`<SelectInput /> should match snapshot for active select input 1`] = `
               </svg>
             </i>
           </IconComponent>
-        </SelectInput>
+        </SelectInputComponent>
         <div
           className="notchedBaseBorder"
         >
@@ -107,7 +107,7 @@ exports[`<SelectInput /> should match snapshot for active select input 1`] = `
       </div>
     </NotchedBase>
   </div>
-</EnhancedInput(SelectInput)>
+</EnhancedInput(SelectInputComponent)>
 `;
 
 exports[`<SelectInput /> should match snapshot for default select input 1`] = `
