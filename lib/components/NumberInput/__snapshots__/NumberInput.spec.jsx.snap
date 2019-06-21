@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<NumberInput /> should match snapshot for active number input 1`] = `
-<EnhancedInput(NumberInput)
+<EnhancedInput(NumberInputComponent)
   className="number-input-class"
   placeholder="placeholder something"
 >
@@ -16,7 +16,7 @@ exports[`<NumberInput /> should match snapshot for active number input 1`] = `
       <div
         className="notchedBase notchedBaseShift notchedBaseActive"
       >
-        <NumberInput
+        <NumberInputComponent
           eventHandlers={
             Object {
               "onBlur": [Function],
@@ -50,7 +50,7 @@ exports[`<NumberInput /> should match snapshot for active number input 1`] = `
             type="number"
             value={3}
           />
-        </NumberInput>
+        </NumberInputComponent>
         <div
           className="notchedBaseBorder"
         >
@@ -78,7 +78,7 @@ exports[`<NumberInput /> should match snapshot for active number input 1`] = `
       </div>
     </NotchedBase>
   </div>
-</EnhancedInput(NumberInput)>
+</EnhancedInput(NumberInputComponent)>
 `;
 
 exports[`<NumberInput /> should match snapshot for default number input 1`] = `

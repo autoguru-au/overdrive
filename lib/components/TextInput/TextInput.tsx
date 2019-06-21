@@ -2,12 +2,7 @@ import React, { memo } from 'react';
 
 import { withEnhancedInput } from '../InputBase';
 
-const TextInputComponent = withEnhancedInput(function TextInput({
-	field,
-	eventHandlers,
-	validation,
-	...rest
-}) {
+function TextInputComponent({ field, eventHandlers, validation, ...rest }) {
 	return (
 		<input
 			{...eventHandlers}
@@ -17,6 +12,8 @@ const TextInputComponent = withEnhancedInput(function TextInput({
 			type="text"
 		/>
 	);
-});
+}
 
-export const TextInput = memo(TextInputComponent);
+TextInputComponent.primitiveType = 'text';
+
+export const TextInput = memo(withEnhancedInput(TextInputComponent));

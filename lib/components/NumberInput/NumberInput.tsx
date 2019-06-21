@@ -4,21 +4,20 @@ import { withEnhancedInput } from '../InputBase';
 
 const isEdge: boolean = navigator && /edge/i.test(navigator.userAgent);
 
-const NumberInputComponent = withEnhancedInput(function NumberInput({
-	field,
-	eventHandlers,
-	validation,
-	...rest
-}) {
+const type = isEdge ? 'text' : 'number';
+
+function NumberInputComponent({ field, eventHandlers, validation, ...rest }) {
 	return (
 		<input
 			{...eventHandlers}
 			{...field}
 			{...rest}
 			autoComplete="off"
-			type={isEdge ? 'text' : 'number'}
+			type={type}
 		/>
 	);
-});
+}
 
-export const NumberInput = memo(NumberInputComponent);
+NumberInputComponent.primitiveType = type;
+
+export const NumberInput = memo(withEnhancedInput(NumberInputComponent));

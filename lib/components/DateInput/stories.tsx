@@ -11,7 +11,6 @@ const todayStr: string = formatDate(
 );
 
 const sharedKnobs = placeholder => ({
-	value: text('Value', todayStr),
 	placeholder: text('Placeholder', placeholder),
 	disabled: boolean('disabled', false),
 	onChange: action('onChange'),
@@ -29,7 +28,11 @@ storiesOf('Components|Inputs/Date', module)
 		<DateInput name="date" {...sharedKnobs('What is your DOB?')} />
 	))
 	.add('with a value', () => (
-		<DateInput {...sharedKnobs('What is your DOB?')} name="abc" />
+		<DateInput
+			value={todayStr}
+			{...sharedKnobs('What is your DOB?')}
+			name="abc"
+		/>
 	))
 	.add('with hint text', () => (
 		<DateInput
@@ -40,6 +43,7 @@ storiesOf('Components|Inputs/Date', module)
 	))
 	.add('with validation', () => (
 		<DateInput
+			value={todayStr}
 			{...sharedKnobs('What is your DOB?')}
 			name="abc"
 			isValid={isValid(false)}
@@ -50,8 +54,8 @@ storiesOf('Components|Inputs/Date', module)
 	.add('disabled', () => (
 		<DateInput
 			disabled
+			value={todayStr}
 			placeholder="What si your DOB?"
-			value="1996-01-11"
 			name="abc"
 			hintText={text('Hint Text', 'dd/mm/yyy')}
 		/>
