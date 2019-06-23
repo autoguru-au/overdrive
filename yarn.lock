@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@autoguru/babel-preset@^1.0.49":
-  version "1.0.49"
-  resolved "https://registry.yarnpkg.com/@autoguru/babel-preset/-/babel-preset-1.0.49.tgz#fdf32258ae145a2b63a4189340e23789a209349b"
-  integrity sha512-stwBZvgwaISTcp5MBAQtF1g+ZMLMm3aXIrvgq7zHWj90+t2P/xCc7uyDn1y+t6fIUkRy7DfOXHaEj3d+D6nVag==
+"@autoguru/babel-preset@^1.0.50":
+  version "1.0.50"
+  resolved "https://registry.yarnpkg.com/@autoguru/babel-preset/-/babel-preset-1.0.50.tgz#187071f746efbdc52f130ff71a28885f165daba6"
+  integrity sha512-26NTXh/TocWUkBpc/tqssrj9Re4DfT6Iz+7Ie7SFQLN+mRdl6qcvT+a8GaiNhEGTMAU4BGdAjQd9i/2rk0HzuQ==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.4.4"
     "@babel/plugin-proposal-export-default-from" "^7.2.0"
@@ -27,28 +27,28 @@
   dependencies:
     "@commitlint/config-conventional" "^8.0.0"
 
-"@autoguru/eslint-config@^1.0.49":
-  version "1.0.49"
-  resolved "https://registry.yarnpkg.com/@autoguru/eslint-config/-/eslint-config-1.0.49.tgz#419bf5d102276c81a50ff92ccbae59383e2814f1"
-  integrity sha512-AA8mskueZ7m8FDl1XdU5ntQx8BMROC89lOEccH3CA4JEd1dVjNjSdDvIQFf86YwGTdAIaLkuvBdcKkHjT9vWCA==
+"@autoguru/eslint-config@^1.0.50":
+  version "1.0.50"
+  resolved "https://registry.yarnpkg.com/@autoguru/eslint-config/-/eslint-config-1.0.50.tgz#c0433a213806028f5139050df472f52ba065ea38"
+  integrity sha512-a5jR/+BMDw6/Ejp7uMee5dYZaH2zCWdupepsNAzEreSA01r0P8Rz04eMikVLBS5n+jhYbggivVhoRU+Z4CzX4g==
   dependencies:
-    "@typescript-eslint/eslint-plugin" "^1.10.2"
-    "@typescript-eslint/parser" "^1.10.2"
+    "@typescript-eslint/eslint-plugin" "^1.11.0"
+    "@typescript-eslint/parser" "^1.11.0"
     eslint-config-kentcdodds "^14.3.3"
     eslint-config-prettier "^5.0.0"
     eslint-config-xo "^0.26.0"
     eslint-config-xo-react "^0.19.0"
     eslint-config-xo-typescript "^0.14.0"
-    eslint-plugin-react "^7.13.0"
+    eslint-plugin-react "^7.14.0"
     eslint-plugin-react-hooks "^1.6.0"
-    eslint-plugin-unicorn "^9.1.0"
+    eslint-plugin-unicorn "^9.1.1"
 
-"@autoguru/jest-preset@^1.0.49":
-  version "1.0.49"
-  resolved "https://registry.yarnpkg.com/@autoguru/jest-preset/-/jest-preset-1.0.49.tgz#f1b89338034cbf7dfc873d3764bd4c7eb2ddac2d"
-  integrity sha512-MZ4ofl0dgTG02u1Xhn6x01ln4s30SHmB4KnMbPE6p7xO0H4f4tF/EKSp21xhYhrXiGwwIPiGIEpZNr1qkGJwBQ==
+"@autoguru/jest-preset@^1.0.50":
+  version "1.0.50"
+  resolved "https://registry.yarnpkg.com/@autoguru/jest-preset/-/jest-preset-1.0.50.tgz#0c60475fa0443291fa094a0aa46f668d6af21503"
+  integrity sha512-mxN3NvL6j+zcS8niwBnaZu1dZ7nMovUfTr5wLhe+zCk52D38IK5xsaisj/hrAvrDOeHf+805ivivPp7ifXAOhA==
   dependencies:
-    "@autoguru/babel-preset" "^1.0.49"
+    "@autoguru/babel-preset" "^1.0.50"
     "@babel/core" "^7.4.5"
     "@babel/preset-typescript" "^7.3.3"
     babel-jest "^24.8.0"
@@ -58,10 +58,10 @@
   resolved "https://registry.yarnpkg.com/@autoguru/tsconfig/-/tsconfig-1.0.12.tgz#3e10e8731fb7973212e45b88e604d9e68fa738f7"
   integrity sha512-H/WEu/7+PWGJ+3Vw2yp/+1QYEy2gziZhj/YDVYTlnparnLe9FrvXfZfQEICyfcbnv/bXJG+pQEZL6E6+QSnlDA==
 
-"@autoguru/utilities@^1.0.49":
-  version "1.0.49"
-  resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.49.tgz#a8a7ee8fe8859deba18919d27ca5fe666797cb05"
-  integrity sha512-k7rfoG3RW4K3vC9vQtihUFw43B03A9DQ+9D3TuRiNZL4lrxRS/FxdgilR5T+kyha0ZQMu4jgqHXJcWe8Smb+CA==
+"@autoguru/utilities@^1.0.50":
+  version "1.0.50"
+  resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.50.tgz#9bfe0a171600016ef1c056fd540a542a5b607ce4"
+  integrity sha512-jpNdFUPs148C06oLROYUWZ4MD/aAeY5d69fK14+0O9FrD6BWzj5J495CiHaWpTt9bXjhTDsjf3jB3ZZ+sdsuAQ==
 
 "@babel/code-frame@7.0.0", "@babel/code-frame@^7.0.0":
   version "7.0.0"
@@ -2332,7 +2332,7 @@
   resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-12.0.12.tgz#45dd1d0638e8c8f153e87d296907659296873916"
   integrity sha512-SOhuU4wNBxhhTHxYaiG5NY4HBhDIDnJF60GU+2LqHAdKKer86//e4yg69aENCtQ04n0ovz+tq2YPME5t5yp4pw==
 
-"@typescript-eslint/eslint-plugin@^1.10.2":
+"@typescript-eslint/eslint-plugin@^1.11.0":
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-1.11.0.tgz#870f752c520db04db6d3668af7479026a6f2fb9a"
   integrity sha512-mXv9ccCou89C8/4avKHuPB2WkSZyY/XcTQUXd5LFZAcLw1I3mWYVjUu6eS9Ja0QkP/ClolbcW9tb3Ov/pMdcqw==
@@ -2351,7 +2351,7 @@
     "@typescript-eslint/typescript-estree" "1.11.0"
     eslint-scope "^4.0.0"
 
-"@typescript-eslint/parser@^1.10.2":
+"@typescript-eslint/parser@^1.11.0":
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-1.11.0.tgz#2f6d4f7e64eeb1e7c25b422f8df14d0c9e508e36"
   integrity sha512-5xBExyXaxVyczrZvbRKEXvaTUFFq7gIM9BynXukXZE0zF3IQP/FxF4mPmmh3gJ9egafZFqByCpPTFm3dk4SY7Q==
@@ -6154,7 +6154,7 @@ eslint-plugin-react-hooks@^1.6.0:
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-1.6.0.tgz#348efcda8fb426399ac7b8609607c7b4025a6f5f"
   integrity sha512-lHBVRIaz5ibnIgNG07JNiAuBUeKhEf8l4etNx5vfAEwqQ5tcuK3jV9yjmopPgQDagQb7HwIuQVsE3IVcGrRnag==
 
-eslint-plugin-react@^7.13.0:
+eslint-plugin-react@^7.13.0, eslint-plugin-react@^7.14.0:
   version "7.14.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.14.0.tgz#14f97c1add4d873fee2b6c52ac38cda96c70d1d1"
   integrity sha512-MbPYPGsOteqqnFZx4lGLw6izxcWv6onLsil/6iX6+CaZAzMxOwsPja1Xg25cVCJ4jwKBDhJXe+ZAn6HAjGHSCw==
@@ -6169,7 +6169,7 @@ eslint-plugin-react@^7.13.0:
     prop-types "^15.7.2"
     resolve "^1.10.1"
 
-eslint-plugin-unicorn@^9.1.0:
+eslint-plugin-unicorn@^9.1.1:
   version "9.1.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-unicorn/-/eslint-plugin-unicorn-9.1.1.tgz#1588a0473f9a0e37cfbbcf7552065a0b0a96ce26"
   integrity sha512-SHh/N54pRu5KXlS4Boa1qbWM7yTNl6VpuYJ8Qc1O3TJDr+CDUwEEdUtVlVSV/dBUE97BC8Xk0+Y5zphn21qlCA==
