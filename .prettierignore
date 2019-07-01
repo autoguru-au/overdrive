@@ -1,4 +1,10 @@
+/*
+!/lib/
+!/config/
+!/scripts/
+!/.storybook/
+!?*.*
+
 dist/
-.cache/
 storybook-static/
 templates/

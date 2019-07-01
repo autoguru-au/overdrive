@@ -10,7 +10,6 @@ node_modules/
 
 # Build things
 dist/
-.cache/
 *.tgz
 coverage/
 *.xml
