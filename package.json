@@ -43,34 +43,31 @@
     }
   },
   "lint-staged": {
-    "ignore": [
-      "templates/**/*"
+    "*.{js,jsx,ts,tsx,css,scss,json,yml,md,mdx,html}": [
+      "prettier --write",
+      "git add"
     ],
-    "linters": {
-      "package.json": [
-        "npx sort-package-json",
-        "git add"
-      ],
-      "*.{js,tsx,ts,tsx}": [
-        "eslint --cache --quiet --fix",
-        "jest --bail --findRelatedTests",
-        "git add"
-      ],
-      "*.{js,jsx,ts,tsx,css,scss,json,yml,md,mdx,html}": [
-        "prettier --write",
-        "git add"
-      ],
-      "*.{scss,css}": [
-        "stylelint --ignore-path .gitignore --fix",
-        "prettier --write",
-        "git add"
-      ],
-      "lib/components/**/index.ts": [
-        "node scripts/generateReExport",
-        "git add"
-      ]
-    },
-    "relative": true
+    "*.{js,tsx,ts,tsx}": [
+      "eslint --cache --quiet --fix",
+      "jest --bail --findRelatedTests",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{scss,css}": [
+      "stylelint --ignore-path .gitignore --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "lib/components/**/index.ts": [
+      "node scripts/generateReExport",
+      "prettier --write",
+      "git add"
+    ],
+    "package.json": [
+      "npx sort-package-json",
+      "prettier --write",
+      "git add"
+    ]
   },
   "browserslist": "extends browserslist-config-autoguru",
   "dependencies": {
@@ -127,7 +124,7 @@
     "jest": "^24.7.1",
     "jest-enzyme": "^7.0.2",
     "kleur": "^3.0.3",
-    "lint-staged": "^8.1.7",
+    "lint-staged": "^9.0.0",
     "node-sass": "^4.11.0",
     "plop": "^2.4.0",
     "postcss-flexbugs-fixes": "^4.1.0",
