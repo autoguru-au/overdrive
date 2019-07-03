@@ -27,7 +27,7 @@ const root = path.join(__dirname, '../');
 const iconsFolderPath = path.join(root, '/lib/icons/collection');
 const outputFolderPath = path.join(root, '/lib/icons');
 
-let svgs = glob.sync('*.svg', { cwd: iconsFolderPath }).map(icon =>
+let svgs = glob.sync('*.svg', { cwd: iconsFolderPath }).map(async icon =>
 	readFile(path.join(iconsFolderPath, icon)).then(content => ({
 		name: (' ' + path.basename(icon, '.svg'))
 			.toLowerCase()
@@ -37,8 +37,8 @@ let svgs = glob.sync('*.svg', { cwd: iconsFolderPath }).map(icon =>
 );
 
 // Generate a file per icons, that exports a React Function Component.
-svgs = svgs.map(item =>
-	item.then(icon => {
+svgs = svgs.map(async item =>
+	item.then(async icon => {
 		const iconOutputPath = path.join(outputFolderPath, `${icon.name}.tsx`);
 		const component = COMPONENT_TEMPLATE.replace(
 			/%name%/g,
@@ -62,7 +62,7 @@ svgs = svgs.map(item =>
 );
 
 Promise.all(svgs)
-	.then(completed => {
+	.then(async completed => {
 		const exports = completed.map(icon =>
 			format(
 				`export {default as %sIcon} from './%s';`,

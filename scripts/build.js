@@ -86,7 +86,7 @@ run()
 		console.log(dim(error.stack));
 	});
 
-function copy(paths, config) {
+async function copy(paths, config) {
 	return new Promise((resolve, reject) => {
 		copyfiles(paths, config, error => {
 			if (error) {
