@@ -120,7 +120,6 @@ const StepperComponent: FunctionComponent<Props> = ({
 			<button
 				className={styles.handle}
 				aria-label="step down"
-				aria-disabled={isDisabled}
 				disabled={isDisabled}
 				onClick={onDecrement}>
 				<Icon icon={MinusIcon} size={16} />
@@ -131,7 +130,6 @@ const StepperComponent: FunctionComponent<Props> = ({
 			<button
 				className={styles.handle}
 				aria-label="step up"
-				aria-disabled={isDisabled}
 				disabled={isDisabled}
 				onClick={onIncrement}>
 				<Icon icon={PlusIcon} size={16} />

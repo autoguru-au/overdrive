@@ -6,7 +6,6 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
   class="root"
 >
   <button
-    aria-disabled="false"
     aria-label="step down"
     class="handle"
   >
@@ -30,7 +29,6 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
     25%
   </span>
   <button
-    aria-disabled="false"
     aria-label="step up"
     class="handle"
   >
@@ -57,7 +55,6 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
   class="root"
 >
   <button
-    aria-disabled="false"
     aria-label="step down"
     class="handle"
   >
@@ -81,7 +78,6 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
     19
   </span>
   <button
-    aria-disabled="false"
     aria-label="step up"
     class="handle"
   >
@@ -108,7 +104,6 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
   class="root"
 >
   <button
-    aria-disabled="true"
     aria-label="step down"
     class="handle"
     disabled=""
@@ -131,7 +126,6 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
     class="label"
   />
   <button
-    aria-disabled="true"
     aria-label="step up"
     class="handle"
     disabled=""
