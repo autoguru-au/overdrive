@@ -1,11 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
-<div
+<nav
+  aria-label="pagination"
   class="pagination"
 >
   <button
     aria-disabled="true"
+    aria-label="previous page"
     class="root sizeSmall variantSecondary chevron disabled rounded"
     disabled=""
   >
@@ -29,6 +31,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
   </button>
   <button
     aria-disabled="false"
+    aria-label="next page"
     class="root sizeSmall variantSecondary chevron rounded"
   >
     <span
@@ -49,15 +52,17 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
       </i>
     </span>
   </button>
-</div>
+</nav>
 `;
 
 exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 1`] = `
-<div
+<nav
+  aria-label="pagination"
   class="pagination"
 >
   <button
     aria-disabled="false"
+    aria-label="previous page"
     class="root sizeSmall variantSecondary chevron rounded"
   >
     <span
@@ -80,6 +85,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
   </button>
   <button
     aria-disabled="false"
+    aria-label="next page"
     class="root sizeSmall variantSecondary chevron rounded"
   >
     <span
@@ -100,15 +106,17 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
       </i>
     </span>
   </button>
-</div>
+</nav>
 `;
 
 exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
-<div
+<nav
+  aria-label="pagination"
   class="pagination"
 >
   <button
     aria-disabled="false"
+    aria-label="previous page"
     class="root sizeSmall variantSecondary chevron rounded"
   >
     <span
@@ -131,6 +139,7 @@ exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
   </button>
   <button
     aria-disabled="true"
+    aria-label="next page"
     class="root sizeSmall variantSecondary chevron disabled rounded"
     disabled=""
   >
@@ -152,5 +161,5 @@ exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
       </i>
     </span>
   </button>
-</div>
+</nav>
 `;

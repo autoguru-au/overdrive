@@ -13,15 +13,15 @@ type TOnChangeEventHandler = (event: EChangeDirection) => void;
 
 export interface Props {
 	className?: string;
-	hasNext: boolean;
-	hasPrevious: boolean;
+	hasNext?: boolean;
+	hasPrevious?: boolean;
 	onChange?: TOnChangeEventHandler;
 }
 
 export const SimplePaginationComponent: FunctionComponent<Props> = ({
 	className = '',
-	hasNext,
-	hasPrevious,
+	hasNext = false,
+	hasPrevious = false,
 	onChange = () => void 0,
 }) => {
 	const cls = clsx([styles.pagination, className]);
@@ -36,13 +36,14 @@ export const SimplePaginationComponent: FunctionComponent<Props> = ({
 	};
 
 	return (
-		<div className={cls}>
+		<nav className={cls} aria-label="pagination">
 			<Button
 				rounded
 				disabled={!hasPrevious}
 				size={EButtonSize.Small}
 				variant={EButtonVariant.Secondary}
 				className={chevronLeftCls}
+				aria-label="previous page"
 				onClick={handleClick(EChangeDirection.Previous)}>
 				<Icon
 					className={styles.icon}
@@ -56,6 +57,7 @@ export const SimplePaginationComponent: FunctionComponent<Props> = ({
 				size={EButtonSize.Small}
 				variant={EButtonVariant.Secondary}
 				className={chevronRightCls}
+				aria-label="next page"
 				onClick={handleClick(EChangeDirection.Next)}>
 				<Icon
 					className={styles.icon}
@@ -63,7 +65,7 @@ export const SimplePaginationComponent: FunctionComponent<Props> = ({
 					icon={ChevronRightIcon}
 				/>
 			</Button>
-		</div>
+		</nav>
 	);
 };
 
