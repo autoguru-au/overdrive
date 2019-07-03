@@ -38,6 +38,7 @@ export const StandardModal = withModal<Props>(
 					className={clsx(styles.header, styles.headerWithBorder)}>
 					<button
 						className={styles.headerCloseButton}
+						aria-label="close"
 						onClick={closeButtonHandler}>
 						<Icon size={20} icon={WindowCloseIcon} />
 					</button>
