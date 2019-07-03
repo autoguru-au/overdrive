@@ -28,7 +28,10 @@ exports[`withModal() should match snapshot 1`] = `
                 class="modalPanel"
               >
                 <div
+                  aria-hidden="false"
+                  aria-modal="true"
                   class="modalContent"
+                  role="dialog"
                 >
                   <div
                     class="root"
@@ -50,7 +53,10 @@ exports[`withModal() should match snapshot 1`] = `
             className="modalPanel"
           >
             <div
+              aria-hidden={false}
+              aria-modal="true"
               className="modalContent"
+              role="dialog"
             >
               <Component
                 isOpen={true}

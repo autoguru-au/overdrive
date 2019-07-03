@@ -58,7 +58,12 @@ export const ModalPortal: FunctionComponent<Props> = ({
 				[styles.modalPortalIsOpen]: isOpen,
 			})}>
 			<div className={styles.modalPanel}>
-				<div ref={contentRef} className={styles.modalContent}>
+				<div
+					ref={contentRef}
+					className={styles.modalContent}
+					role="dialog"
+					aria-modal="true"
+					aria-hidden={!isOpen}>
 					{children}
 				</div>
 			</div>

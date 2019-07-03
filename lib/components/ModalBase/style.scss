@@ -9,6 +9,7 @@
 	left: 0;
 	pointer-events: none;
 	height: 100%;
+	display: none;
 
 	&:before {
 		position: fixed;
@@ -30,6 +31,8 @@
 	}
 
 	&--isOpen {
+		display: block;
+
 		&,
 		&:before {
 			pointer-events: auto;
