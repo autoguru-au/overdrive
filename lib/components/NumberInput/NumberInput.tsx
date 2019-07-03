@@ -2,7 +2,8 @@ import React, { memo } from 'react';
 
 import { withEnhancedInput } from '../InputBase';
 
-const isEdge: boolean = navigator && /edge/i.test(navigator.userAgent);
+const isEdge: boolean =
+	typeof navigator !== 'undefined' && /edge/i.test(navigator.userAgent);
 
 const type = isEdge ? 'text' : 'number';
 
