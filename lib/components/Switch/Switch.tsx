@@ -43,11 +43,12 @@ const SwitchComponent: FunctionComponent<Props> = ({
 				styles.root,
 				{
 					[styles.toggled]: toggled,
+					[styles.disabled]: disabled,
 				},
 				className,
 			)}
 			aria-disabled={disabled}
-			aria-label="toggle value"
+			aria-label={`toggle ${toggled ? 'on' : 'off'}`}
 			onClick={onToggle}>
 			<span className={styles.handle} />
 		</div>
