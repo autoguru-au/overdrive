@@ -74,8 +74,7 @@ const getStar = (
 	size: ESize,
 ): ReactElement => {
 	const starType = getStarIconType(index, rating);
-	const star: () => JSX.Element =
-		starType === EStarType.Half ? StarHalfIcon : StarIcon;
+	const star = starType === EStarType.Half ? StarHalfIcon : StarIcon;
 
 	return (
 		<Icon

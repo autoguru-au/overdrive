@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { EMetaVariant, Meta } from '.';
 
 const TestIcon = () => (
@@ -38,8 +38,9 @@ describe('<Meta />', () => {
 	});
 
 	it('should add the icon passed in props', () => {
-		const meta = shallow(<Meta icon={TestIcon} label="Hello World!" />);
+		const meta = mount(<Meta icon={TestIcon} label="Hello World!" />);
 		expect(meta.find('.icon').exists()).toBeTruthy();
+		meta.unmount();
 	});
 
 	it('should add a span dom element', () => {

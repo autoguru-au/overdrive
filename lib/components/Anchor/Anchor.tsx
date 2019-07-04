@@ -3,33 +3,45 @@ import clsx from 'clsx';
 import React, {
 	cloneElement,
 	ComponentType,
+	createElement,
 	FunctionComponent,
+	isValidElement,
 	memo,
 	ReactNode,
 } from 'react';
-import { TIconPrimitiveType } from '../Icon';
 import { Text } from '../Typography';
 import styles from './style.scss';
+import { IconType } from '../../icons';
 
 export interface Props {
-	className?: string;
-	icon?: TIconPrimitiveType;
-	is?: ComponentType | ReactNode;
-	component?: ComponentType; // @deprecated
-	disabled?: boolean;
+	rel?: string;
 	href?: string;
-	to?: string;
-	label?: string;
+	target?: string;
+
+	className?: string;
+	is?: ComponentType | ReactNode;
+	disabled?: boolean;
+
+	component?: ComponentType; // @deprecated
+	label?: string; // @deprecated
+
+	icon?(): IconType;
 }
 
 const AnchorComponent: FunctionComponent<Props & any> = ({
+	rel = void 0,
+	href = void 0,
+	target = void 0,
 	className = '',
+
 	is: Component = 'a',
 	component = void 0,
-	icon = void 0,
-	label,
 	disabled = false,
-	...rest
+
+	label = '',
+	children = label,
+
+	icon = void 0,
 }) => {
 	// @deprecated block
 	warning(
@@ -43,9 +55,10 @@ const AnchorComponent: FunctionComponent<Props & any> = ({
 
 	const props = {
 		className: clsx([className, styles.root]),
-		'aria-disabled': disabled,
 		disabled,
-		...rest,
+		rel,
+		href,
+		target,
 	};
 
 	const childs = (
@@ -55,15 +68,13 @@ const AnchorComponent: FunctionComponent<Props & any> = ({
 					size: 16,
 					className: styles.icon,
 				})}
-			<Text className={styles.label}>{label}</Text>
+			<Text className={styles.label}>{children}</Text>
 		</>
 	);
 
-	return typeof Component === 'string' ? (
-		<Component {...props}>{childs}</Component>
-	) : (
-		cloneElement(Component, props, childs)
-	);
+	return isValidElement(Component)
+		? cloneElement(Component, props, childs)
+		: createElement(Component, props, childs);
 };
 
 export const Anchor = memo(AnchorComponent);

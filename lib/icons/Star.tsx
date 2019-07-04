@@ -6,14 +6,12 @@
  * -----------------------------------------------------------------------------
  */
 
-import React from 'react';
+import React, { ReactElement, SVGAttributes } from 'react';
 
-const Icon = (
+const StarIcon: ReactElement<SVGAttributes<SVGElement>, 'svg'> = (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
 		<path d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z" />
 	</svg>
 );
 
-export default function StarIcon() {
-	return Icon;
-}
+export default StarIcon;
