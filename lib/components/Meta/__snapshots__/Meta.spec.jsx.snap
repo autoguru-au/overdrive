@@ -4,8 +4,8 @@ exports[`<Meta /> should match snapshot with label, icon for Primary variant 1`]
 <span
   className="root variantPrimary"
 >
-  <Component
-    className="icon"
+  <IconWrapper
+    icon={[Function]}
   />
   <Text
     className="withIcon"
@@ -19,8 +19,8 @@ exports[`<Meta /> should match snapshot with label, icon for Secondary variant 1
 <span
   className="root variantPrimary"
 >
-  <Component
-    className="icon"
+  <IconWrapper
+    icon={[Function]}
   />
   <Text
     className="withIcon"

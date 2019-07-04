@@ -20,3 +20,5 @@ export { default as PlusIcon } from './Plus';
 export { default as StarHalfIcon } from './StarHalf';
 export { default as StarIcon } from './Star';
 export { default as WindowCloseIcon } from './WindowClose';
+import { ReactElement, SVGAttributes } from 'react';
+export type IconType = ReactElement<SVGAttributes<SVGElement>, 'svg'>;

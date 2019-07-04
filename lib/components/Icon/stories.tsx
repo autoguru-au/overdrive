@@ -4,5 +4,5 @@ import { CalendarIcon } from '.';
 import { Icon } from './Icon';
 
 storiesOf('Foundation|Icon', module).add('default', () => (
-	<Icon size={25} icon={CalendarIcon} fill="green" />
+	<Icon size={25} icon={CalendarIcon} />
 ));

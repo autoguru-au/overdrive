@@ -16,11 +16,11 @@ const BANNER_TEMPLATE = `/**
 
 // TODO Update icon component to accept className prop
 
-const COMPONENT_TEMPLATE = `import React from 'react';
+const COMPONENT_TEMPLATE = `import React, { ReactElement, SVGAttributes } from 'react';
 
-const Icon = (%content%);
+const %name%Icon: ReactElement<SVGAttributes<SVGElement>, 'svg'> = (%content%);
 
-export default function %name%Icon() { return Icon; };
+export default %name%Icon;
 `;
 
 const root = path.join(__dirname, '../');
@@ -72,7 +72,11 @@ Promise.all(svgs)
 			),
 		);
 
-		const reexport = prettier(format(BANNER_TEMPLATE, exports.join('\n')));
+		const reexport = prettier(
+			format(BANNER_TEMPLATE, exports.join('\n')) +
+				`import { ReactElement, SVGAttributes } from 'react';
+					export type IconType = ReactElement<SVGAttributes<SVGElement>, 'svg'>;`,
+		);
 
 		return writeFile(
 			path.join(outputFolderPath, 'index.ts'),

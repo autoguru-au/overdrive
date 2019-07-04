@@ -1,8 +1,14 @@
 import clsx from 'clsx';
-import React, { cloneElement, FunctionComponent, memo } from 'react';
-import { TIconPrimitiveType } from '../Icon';
+import React, {
+	cloneElement,
+	createElement,
+	FunctionComponent,
+	isValidElement,
+	memo,
+} from 'react';
 import { Text } from '../Typography';
 import styles from './style.scss';
+import { IconType } from '../../icons';
 
 export enum EVariant {
 	Primary = 'primary',
@@ -11,7 +17,7 @@ export enum EVariant {
 
 export interface Props {
 	className?: string;
-	icon?: TIconPrimitiveType;
+	icon?: IconType;
 	label: string;
 	variant?: EVariant;
 }
@@ -26,21 +32,23 @@ const MetaComponent: FunctionComponent<Props> = ({
 	icon = void 0,
 	label,
 	variant = EVariant.Primary,
-}) => {
-	const cls = clsx([styles.root, cssVariantMap.get(variant), className]);
+}) => (
+	<span className={clsx(styles.root, cssVariantMap.get(variant), className)}>
+		{icon && <IconWrapper icon={icon} />}
+		<Text
+			className={clsx({
+				[styles.withIcon]: Boolean(icon),
+			})}>
+			{label}
+		</Text>
+	</span>
+);
 
-	return (
-		<span className={cls}>
-			{/* TODO: Should we be using a cloneElement here? */}
-			{icon && cloneElement(icon, { className: styles.icon })}
-			<Text
-				className={clsx({
-					[styles.withIcon]: Boolean(icon),
-				})}>
-				{label}
-			</Text>
-		</span>
-	);
-};
+const IconWrapper: FunctionComponent<{ icon: Props['icon'] }> = ({
+	icon: Icon,
+}) =>
+	isValidElement(Icon)
+		? cloneElement(Icon, { className: styles.icon })
+		: createElement(Icon, { className: styles.icon });
 
 export const Meta = memo(MetaComponent);

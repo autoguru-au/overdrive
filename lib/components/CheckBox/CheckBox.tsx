@@ -43,7 +43,7 @@ export const CheckBox: FunctionComponent<Props> = memo(
 				className={clsx(checkableClass, styles.base, {
 					[styles.selected]: checked,
 				})}>
-				{checked && <CheckIcon />}
+				{checked && CheckIcon}
 				<div className={styles.box} />
 			</div>
 		</CheckableBase>

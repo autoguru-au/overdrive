@@ -2,9 +2,11 @@ import clsx from 'clsx';
 import React, {
 	cloneElement,
 	ComponentType,
+	createElement,
 	ElementType,
 	forwardRef,
 	FunctionComponent,
+	isValidElement,
 } from 'react';
 import {
 	EProgressSpinnerSize,
@@ -124,10 +126,8 @@ export const Button: FunctionComponent<Props & any> = forwardRef(
 			</>
 		);
 
-		return typeof Component === 'string' ? (
-			<Component {...props}>{childs}</Component>
-		) : (
-			cloneElement(Component, props, childs)
-		);
+		return isValidElement(Component)
+			? cloneElement(Component, props, childs)
+			: createElement(Component, props, childs);
 	},
 );
