@@ -4,10 +4,12 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
 <div
   aria-disabled="false"
   class="root"
+  tabindex="0"
 >
   <button
     aria-label="step down"
     class="handle"
+    tabindex="-1"
   >
     <i
       class="root"
@@ -31,6 +33,7 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
   <button
     aria-label="step up"
     class="handle"
+    tabindex="-1"
   >
     <i
       class="root"
@@ -53,10 +56,12 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
 <div
   aria-disabled="false"
   class="root"
+  tabindex="0"
 >
   <button
     aria-label="step down"
     class="handle"
+    tabindex="-1"
   >
     <i
       class="root"
@@ -80,6 +85,7 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
   <button
     aria-label="step up"
     class="handle"
+    tabindex="-1"
   >
     <i
       class="root"
@@ -102,11 +108,13 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
 <div
   aria-disabled="true"
   class="root"
+  tabindex="0"
 >
   <button
     aria-label="step down"
     class="handle"
     disabled=""
+    tabindex="-1"
   >
     <i
       class="root"
@@ -129,6 +137,7 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
     aria-label="step up"
     class="handle"
     disabled=""
+    tabindex="-1"
   >
     <i
       class="root"

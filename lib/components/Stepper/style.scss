@@ -32,6 +32,12 @@ $handleSize: 24px;
 		0 4px 5px 0 rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.05);
 	padding: calc(var(--global--space--3) - 1px)
 		calc(var(--global--space--2) - 1px);
+	user-select: none;
+	outline: none;
+
+	&:focus {
+		border: 1px solid getColour(blue, 500);
+	}
 
 	@include isDisabledState() {
 		cursor: not-allowed;
