@@ -1,4 +1,3 @@
-import { invariant } from '@autoguru/utilities';
 import clsx from 'clsx';
 import React, {
 	FunctionComponent,
@@ -24,23 +23,19 @@ export const ModalPortal: FunctionComponent<Props> = ({
 }) => {
 	const contentRef: RefObject<HTMLDivElement> = useRef(null);
 
-	/* istanbul ignore next: our testing context has a document */
-	invariant(
-		typeof document === void 0,
-		'Modals only work on targets with a document',
-	);
-
 	useLayoutEffect(() => {
-		if (isOpen) {
-			document.body.style.overflow = 'hidden';
-		}
+		if (!isOpen || typeof document === 'undefined') return void 0;
+
+		document.documentElement.style.overflow = 'hidden';
 
 		return () => {
-			document.body.style.overflow = null;
+			document.documentElement.style.overflow = null;
 		};
 	}, [isOpen]);
 
 	useEffect(() => {
+		if (typeof document === 'undefined') return void 0;
+
 		function callback(e: any) {
 			if (!contentRef.current.contains(e.target) && isOpen) {
 				onRequestClose(ECloseCode.Overlay);

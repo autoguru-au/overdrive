@@ -18,9 +18,7 @@ exports[`withModal() should match snapshot 1`] = `
     >
       <Portal
         containerInfo={
-          <body
-            style="overflow: hidden;"
-          >
+          <body>
             <div
               class="modalPortal modalPortalIsOpen"
             >
