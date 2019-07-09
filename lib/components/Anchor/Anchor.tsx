@@ -42,6 +42,7 @@ const AnchorComponent: FunctionComponent<Props & any> = ({
 	children = label,
 
 	icon = void 0,
+	...rest
 }) => {
 	// @deprecated block
 	warning(
@@ -59,6 +60,7 @@ const AnchorComponent: FunctionComponent<Props & any> = ({
 		rel,
 		href,
 		target,
+		...rest,
 	};
 
 	const childs = (

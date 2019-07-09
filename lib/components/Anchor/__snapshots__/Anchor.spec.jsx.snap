@@ -32,7 +32,14 @@ exports[`<Anchor /> should match snapshot without label 1`] = `
 exports[`<Anchor /> when custom component deprecated still work should match snapshot with label, icon custom component 1`] = `
 <a
   className="root"
+  compnent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "render": [Function],
+    }
+  }
   disabled={false}
+  to="https://www.hellowrold.com"
 >
   <Component
     className="icon"
@@ -50,6 +57,7 @@ exports[`<Anchor /> when custom component should match snapshot with label, icon
 <ForwardRef
   className="root"
   disabled={false}
+  to="https://www.hellowrold.com"
 >
   <Component
     className="icon"
