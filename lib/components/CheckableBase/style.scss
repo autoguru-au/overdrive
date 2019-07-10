@@ -59,9 +59,12 @@
 .disabled {
 	pointer-events: none;
 
-	.checkable,
-	.label {
+	.checkable {
 		opacity: 0.5;
+	}
+
+	.label {
+		color: getColour(gray, 500);
 	}
 }
 
