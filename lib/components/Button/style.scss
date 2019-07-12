@@ -86,6 +86,7 @@ $widthSmall: 36px;
 			0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
 
 		@include isHoverState() {
+			color: white;
 			background-color: getColour(green, 700);
 			border-color: getColour(green, 800);
 			box-shadow: 0 3px 14px 2px rgba(0, 0, 0, 0.06),
@@ -94,6 +95,7 @@ $widthSmall: 36px;
 		}
 
 		@include isActiveState() {
+			color: white;
 			background-color: getColour(green, 800);
 			border-color: getColour(green, 900);
 			box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.06),
@@ -102,6 +104,7 @@ $widthSmall: 36px;
 		}
 
 		@include isDisabledState() {
+			color: white;
 			background-color: getColour(green, 200);
 			border-color: getColour(green, 200);
 			box-shadow: none;
@@ -115,12 +118,14 @@ $widthSmall: 36px;
 		box-shadow: var(--global--elevationBoxShadow--2);
 
 		@include isHoverState() {
+			color: getColour(gray, 700);
 			background-color: getColour(gray, 100);
 			border-color: getColour(gray, 400);
 			box-shadow: var(--global--elevationBoxShadow--3);
 		}
 
 		@include isActiveState() {
+			color: getColour(gray, 700);
 			background-color: getColour(gray, 200);
 			border-color: getColour(gray, 500);
 			box-shadow: var(--global--elevationBoxShadow--1);
@@ -141,6 +146,7 @@ $widthSmall: 36px;
 			0 4px 5px 0 rgba(0, 0, 0, 0.09), 0 2px 4px -1px rgba(0, 0, 0, 0.15);
 
 		@include isHoverState() {
+			color: white;
 			background-color: getColour(red, 700);
 			border-color: getColour(red, 800);
 			box-shadow: 0 3px 14px 2px rgba(0, 0, 0, 0.09),
@@ -149,6 +155,7 @@ $widthSmall: 36px;
 		}
 
 		@include isActiveState() {
+			color: white;
 			background-color: getColour(red, 800);
 			border-color: getColour(red, 900);
 			box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.09),
@@ -157,6 +164,7 @@ $widthSmall: 36px;
 		}
 
 		@include isDisabledState() {
+			color: white;
 			background-color: getColour(red, 200);
 			border-color: getColour(red, 200);
 			box-shadow: none;
