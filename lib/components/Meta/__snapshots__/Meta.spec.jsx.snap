@@ -2,40 +2,60 @@
 
 exports[`<Meta /> should match snapshot with label, icon for Primary variant 1`] = `
 <span
-  className="root variantPrimary"
+  class="root variantPrimary"
 >
-  <IconWrapper
-    icon={[Function]}
-  />
-  <Text
-    className="withIcon"
+  <svg
+    viewBox="0 0 512 512"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+    />
+  </svg>
+  <span
+    class="root sizeScale3 withIcon"
   >
     Hello World!
-  </Text>
+  </span>
 </span>
 `;
 
 exports[`<Meta /> should match snapshot with label, icon for Secondary variant 1`] = `
 <span
-  className="root variantPrimary"
+  class="root variantSecondary"
 >
-  <IconWrapper
-    icon={[Function]}
-  />
-  <Text
-    className="withIcon"
+  <svg
+    viewBox="0 0 512 512"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+    />
+  </svg>
+  <span
+    class="root sizeScale3 withIcon"
   >
     Hello World!
-  </Text>
+  </span>
 </span>
 `;
 
-exports[`<Meta /> should match snapshot without label 1`] = `
+exports[`<Meta /> should render with a JSX node too 1`] = `
 <span
-  className="root variantPrimary"
+  class="root variantPrimary"
 >
-  <Text
-    className=""
-  />
+  <svg
+    viewBox="0 0 512 512"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+    />
+  </svg>
+  <span
+    class="root sizeScale3 withIcon"
+  >
+    Hello World!
+  </span>
 </span>
 `;

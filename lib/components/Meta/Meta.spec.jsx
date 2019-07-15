@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { EMetaVariant, Meta } from '.';
 
 const TestIcon = () => (
@@ -9,66 +9,37 @@ const TestIcon = () => (
 );
 
 describe('<Meta />', () => {
-	it('should not throw', () => expect(() => shallow(<Meta />)).not.toThrow());
-
-	it('should match snapshot without label', () => {
-		expect(shallow(<Meta />)).toMatchSnapshot();
-	});
+	it('should not throw', () =>
+		expect(() => render(<Meta />).container.firstChild).not.toThrow());
 
 	it('should match snapshot with label, icon for Primary variant', () => {
-		const meta = shallow(
-			<Meta
-				icon={TestIcon}
-				label="Hello World!"
-				varian={EMetaVariant.Primary}
-			/>,
-		);
-		expect(meta).toMatchSnapshot();
+		expect(
+			render(
+				<Meta
+					icon={TestIcon}
+					label="Hello World!"
+					variant={EMetaVariant.Primary}
+				/>,
+			).container.firstChild,
+		).toMatchSnapshot();
 	});
 
 	it('should match snapshot with label, icon for Secondary variant', () => {
-		const meta = shallow(
-			<Meta
-				icon={TestIcon}
-				label="Hello World!"
-				varian={EMetaVariant.Secondary}
-			/>,
-		);
-		expect(meta).toMatchSnapshot();
+		expect(
+			render(
+				<Meta
+					icon={TestIcon}
+					label="Hello World!"
+					variant={EMetaVariant.Secondary}
+				/>,
+			).container.firstChild,
+		).toMatchSnapshot();
 	});
 
-	it('should add the icon passed in props', () => {
-		const meta = mount(<Meta icon={TestIcon} label="Hello World!" />);
-		expect(meta.find('.icon').exists()).toBeTruthy();
-		meta.unmount();
-	});
-
-	it('should add a span dom element', () => {
-		const meta = shallow(
-			<Meta className="meta-class" label="Hello World!" />,
-		);
-		expect(meta.type()).toEqual(`span`);
-	});
-
-	it('should pass on className to dom element', () => {
-		const meta = shallow(
-			<Meta className="meta-class" label="Hello World!" />,
-		);
-		expect(meta.find('span').hasClass('meta-class')).toBeTruthy();
-	});
-
-	it('should by default apply Primary variant styles', () => {
-		const meta = shallow(<Meta />);
-		expect(meta.hasClass('variantPrimary')).toBeTruthy();
-	});
-
-	it('should apply Primary variant styles', () => {
-		const meta = shallow(<Meta variant={EMetaVariant.Primary} />);
-		expect(meta.hasClass('variantPrimary')).toBeTruthy();
-	});
-
-	it('should apply Secondary variant styles', () => {
-		const meta = shallow(<Meta variant={EMetaVariant.Secondary} />);
-		expect(meta.hasClass('variantSecondary')).toBeTruthy();
+	it('should render with a JSX node too', () => {
+		expect(
+			render(<Meta icon={<TestIcon />} label="Hello World!" />).container
+				.firstChild,
+		).toMatchSnapshot();
 	});
 });

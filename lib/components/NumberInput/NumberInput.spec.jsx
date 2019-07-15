@@ -1,149 +1,162 @@
 import React from 'react';
-import { mount, render } from 'enzyme';
-import { NumberInput } from './NumberInput';
+import { NumberInput } from '.';
+import { fireEvent, render } from '@testing-library/react';
 
 describe('<NumberInput />', () => {
-	it('should not throw', () => {
-		expect(() =>
-			mount(
-				<NumberInput placeholder="placeholder something" />,
-			).unmount(),
-		).not.toThrow();
+	it('should match snapshot', () => {
+		expect(
+			render(<NumberInput placeholder="placeholder something" id="id" />)
+				.container.firstChild,
+		).toMatchSnapshot();
+	});
+
+	it('should have some hintText', () => {
+		const hintText = () => 'hint text';
+
+		const { container } = render(
+			<NumberInput
+				placeholder="placeholder"
+				id="id"
+				hintText={hintText()}
+			/>,
+		);
+
+		expect(container.firstChild).toMatchSnapshot();
+
+		expect(container).toHaveTextContent(hintText());
 	});
 
 	it('should have input type of number', () => {
-		const numberInput = mount(
+		const { container } = render(
 			<NumberInput
-				className="number-input-class"
+				className="input-class"
 				placeholder="placeholder something"
 			/>,
 		);
-		expect(numberInput.find('input').prop('type')).toEqual('number');
-		numberInput.unmount();
+		expect(
+			container.querySelector('input[type="number"]'),
+		).toBeInTheDocument();
 	});
 
 	it('should pass on className to dom element', () => {
-		const numberInput = mount(
+		const { container } = render(
 			<NumberInput
-				className="number-input-class"
+				className="input-class"
 				placeholder="placeholder something"
 			/>,
 		);
-		expect(numberInput.hasClass('number-input-class')).toBeTruthy();
-		numberInput.unmount();
+		expect(container.firstChild).toHaveClass('input-class');
 	});
 
-	it('should match snapshot for default number input', () => {
-		const numberInput = render(
+	it('should match snapshot when active', () => {
+		const { container } = render(
 			<NumberInput
-				className="number-input-class"
+				className="input-class"
 				placeholder="placeholder something"
 			/>,
 		);
-		expect(numberInput).toMatchSnapshot();
+
+		fireEvent.focus(container.querySelector('input'));
+
+		fireEvent.change(container.querySelector('input'), {
+			target: { value: 'value from the tests' },
+		});
+
+		expect(container.firstChild).toMatchSnapshot();
 	});
 
-	it('should match snapshot for active number input', () => {
-		const numberInput = mount(
-			<NumberInput
-				className="number-input-class"
-				placeholder="placeholder something"
-			/>,
-		);
-
-		numberInput.find('input').simulate('focus');
-
-		numberInput.find('input').simulate('change', { target: { value: 3 } });
-
-		// Snapshot confirms this
-		expect(numberInput).toMatchSnapshot();
-
-		numberInput.unmount();
+	it('should match snapshot when touched', () => {
+		expect(
+			render(
+				<NumberInput
+					isTouched
+					className="input-class"
+					placeholder="placeholder something"
+				/>,
+			).container.firstChild,
+		).toMatchSnapshot();
 	});
 
-	it('should match snapshot for touched number input', () => {
-		const numberInput = render(
-			<NumberInput
-				isTouched
-				className="number-input-class"
-				placeholder="placeholder something"
-			/>,
-		);
-		expect(numberInput).toMatchSnapshot();
+	it('should match snapshot when touched and valid', () => {
+		expect(
+			render(
+				<NumberInput
+					isTouched
+					isValid
+					className="input-class"
+					placeholder="placeholder something"
+				/>,
+			).container.firstChild,
+		).toMatchSnapshot();
 	});
 
-	it('should match snapshot for touched valid number input', () => {
-		const numberInput = render(
-			<NumberInput
-				isTouched
-				isValid
-				className="number-input-class"
-				placeholder="placeholder something"
-			/>,
-		);
-		expect(numberInput).toMatchSnapshot();
-	});
-
-	it('should match snapshot for touched invalid number input', () => {
-		const numberInput = render(
-			<NumberInput
-				isTouched
-				isValid={false}
-				className="number-input-class"
-				placeholder="placeholder something"
-			/>,
-		);
-		expect(numberInput).toMatchSnapshot();
+	it('should match snapshot when touched and invalid', () => {
+		expect(
+			render(
+				<NumberInput
+					isTouched
+					isValid={false}
+					className="input-class"
+					placeholder="placeholder something"
+				/>,
+			).container.firstChild,
+		).toMatchSnapshot();
 	});
 
 	it('should display placeholder text', () => {
-		const numberInput = render(
+		const { container } = render(
 			<NumberInput placeholder="placeholder something" />,
 		);
-		expect(numberInput.find('label').text()).toEqual(
+
+		expect(container.querySelector('label')).toHaveTextContent(
 			'placeholder something',
 		);
 	});
 
 	it('should fire onFocus event', () => {
 		const spyedCallback = jest.fn();
-		const numberInput = mount(
+
+		const { container } = render(
 			<NumberInput
 				placeholder="placeholder something"
 				onFocus={spyedCallback}
 			/>,
 		);
-		numberInput.find('input').simulate('focus');
 
-		expect(spyedCallback).toHaveBeenCalled();
-		numberInput.unmount();
+		fireEvent.focus(container.querySelector('input'));
+
+		expect(spyedCallback).toHaveBeenCalledTimes(1);
 	});
 
 	it('should fire onBlur event', () => {
 		const spyedCallback = jest.fn();
-		const numberInput = mount(
+
+		const { container } = render(
 			<NumberInput
 				placeholder="placeholder something"
 				onBlur={spyedCallback}
 			/>,
 		);
-		numberInput.find('input').simulate('blur');
 
-		expect(spyedCallback).toHaveBeenCalled();
-		numberInput.unmount();
+		fireEvent.blur(container.querySelector('input'));
+
+		expect(spyedCallback).toHaveBeenCalledTimes(1);
 	});
 
 	it('should fire onChange event', () => {
 		const spyedCallback = jest.fn();
-		const numberInput = mount(
+
+		const { container } = render(
 			<NumberInput
 				placeholder="placeholder something"
 				onChange={spyedCallback}
 			/>,
 		);
-		numberInput.find('input').simulate('change');
 
-		expect(spyedCallback).toHaveBeenCalled();
-		numberInput.unmount();
+		fireEvent.change(container.querySelector('input'), {
+			target: { value: 2 },
+		});
+
+		expect(spyedCallback).toHaveBeenCalledTimes(1);
 	});
 });

@@ -1,3 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Tabs /> should match snapshot with nested tab items 1`] = `"<div class=\\"tabs\\"><div class=\\"tabsNav\\"><button class=\\"navItem navItemActive\\"><span class=\\"navItemTitle\\">tab 1 title</span></button><button class=\\"navItem\\"><span class=\\"navItemTitle\\">tab 2 title</span></button><button class=\\"navItem\\"><span class=\\"navItemTitle\\">tab 3 title</span></button></div><div class=\\"tabsContent\\"><div class=\\"tabPane tabPaneActive\\">tab 1 content</div><div class=\\"tabPane\\"></div><div class=\\"tabPane\\"></div></div></div>"`;
+exports[`<Tabs /> should match snapshot with nested tab items 1`] = `
+<div
+  class="tabs"
+  role="tablist"
+>
+  <div
+    class="tabsNav"
+  >
+    <button
+      aria-selected="true"
+      class="navItem navItemActive"
+      id="tabItem:od-3:0"
+      role="tab"
+    >
+      <span
+        class="navItemTitle"
+      >
+        tab 1 title
+      </span>
+    </button>
+    <button
+      aria-selected="false"
+      class="navItem"
+      id="tabItem:od-3:1"
+      role="tab"
+    >
+      <span
+        class="navItemTitle"
+      >
+        tab 2 title
+      </span>
+    </button>
+    <button
+      aria-selected="false"
+      class="navItem"
+      id="tabItem:od-3:2"
+      role="tab"
+    >
+      <span
+        class="navItemTitle"
+      >
+        tab 3 title
+      </span>
+    </button>
+  </div>
+  <div
+    class="tabsContent"
+  >
+    <div
+      aria-labelledby="tabItem:od-3:0"
+      class="tabPane tabPaneActive"
+      id="tabPanel:od-3:0"
+      role="tabpanel"
+    >
+      tab 1 content
+    </div>
+  </div>
+</div>
+`;

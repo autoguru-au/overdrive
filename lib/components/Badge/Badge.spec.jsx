@@ -1,71 +1,66 @@
 import React from 'react';
-import { mount, render, shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Badge, EColour } from './Badge';
 
-const testLabel = 'Hello World!';
 describe('<Badge />', () => {
-	it('should not throw', () =>
-		expect(() => shallow(<Badge />)).not.toThrow());
-
-	it('should match snapshot without label', () => {
-		expect(shallow(<Badge />)).toMatchSnapshot();
-	});
+	it('should not throw', () => expect(() => render(<Badge />)).not.toThrow());
 
 	it('should match snapshot with label', () => {
-		expect(render(<Badge label={testLabel} />)).toMatchSnapshot();
+		expect(
+			render(<Badge label="Hello World!" />).container.firstChild,
+		).toMatchSnapshot();
 	});
 
 	it('should add a span element with the text value in it', () => {
-		const badge = mount(
-			<Badge className="badge-class" label={testLabel} />,
+		const { container } = render(
+			<Badge className="badge-class" label="Hello World!" />,
 		);
-		expect(
-			badge
-				.find('span')
-				.first()
-				.text(),
-		).toEqual(testLabel);
+		expect(container).toHaveTextContent('Hello World!');
 	});
 
 	it('should pass on className to dom element', () => {
-		const badge = mount(
-			<Badge className="badge-class" label={testLabel} />,
+		const { container } = render(
+			<Badge className="badge-class" label="Hello World!" />,
 		);
-		expect(badge.find('span').hasClass('badge-class')).toBeTruthy();
+		expect(container.querySelector('span')).toHaveClass('badge-class');
 	});
 
 	it('should apply success colour style', () => {
-		const badge = mount(
-			<Badge colour={EColour.Success} label={testLabel} />,
+		const { container } = render(
+			<Badge colour={EColour.Success} label="Hello World!" />,
 		);
-		expect(badge.find('span').hasClass('colourSuccess')).toBeTruthy();
-	});
-
-	it('should apply warning colour style', () => {
-		const badge = mount(
-			<Badge colour={EColour.Warning} label={testLabel} />,
-		);
-		expect(badge.find('span').hasClass('colourWarning')).toBeTruthy();
+		expect(container.querySelector('span')).toHaveClass('colourSuccess');
 	});
 
 	it('should apply danger colour style', () => {
-		const badge = mount(
-			<Badge colour={EColour.Danger} label={testLabel} />,
+		const { container } = render(
+			<Badge colour={EColour.Danger} label="Hello World!" />,
 		);
-		expect(badge.find('span').hasClass('colourDanger')).toBeTruthy();
+		expect(container.querySelector('span')).toHaveClass('colourDanger');
+	});
+
+	it('should apply warning colour style', () => {
+		const { container } = render(
+			<Badge colour={EColour.Warning} label="Hello World!" />,
+		);
+		expect(container.querySelector('span')).toHaveClass('colourWarning');
 	});
 
 	it('should not apply inverted style when inverted prop is set to false', () => {
-		const badge = mount(
-			<Badge colour={EColour.Default} invert={false} label={testLabel} />,
+		const { container } = render(
+			<Badge
+				colour={EColour.Default}
+				invert={false}
+				label="Hello World!"
+			/>,
 		);
-		expect(badge.find('span').hasClass('inverted')).not.toBeTruthy();
+		expect(container.querySelector('span')).not.toHaveClass('inverted');
 	});
 
-	it('should apply inverted style when inverted prop is set to true', () => {
-		const badge = mount(
-			<Badge invert colour={EColour.Default} label={testLabel} />,
+	it('should apply inverted style when inverted prop is set', () => {
+		const { container } = render(
+			<Badge invert colour={EColour.Default} label="Hello World!" />,
 		);
-		expect(badge.find('span').hasClass('inverted')).toBeTruthy();
+		expect(container.querySelector('span')).toHaveClass('inverted');
 	});
 });

@@ -1,292 +1,152 @@
 import React, { useState } from 'react';
 import styles from './stories.scss';
-import { ModalPortal } from './ModalPortal';
-import { act, renderIntoDocument } from 'react-dom/test-utils';
-import { mount } from 'enzyme';
+import { fireEvent, render } from '@testing-library/react';
 import { withModal } from './withModal';
 
 const NakedModal = withModal(({ children }) => (
 	<div className={styles.root}>{children}</div>
 ));
-NakedModal.displayName = 'NakedModal';
 
 function createMockedModal(defaultOpenState = true) {
-	const MockedModalComponent = () => {
+	return () => {
 		const [isOpen, setIsOpen] = useState(defaultOpenState);
 
 		return (
 			<NakedModal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
-				<p>Hello World!</p>
+				Hello World!
 			</NakedModal>
 		);
 	};
-
-	MockedModalComponent.displayName = 'MockedModal';
-
-	return MockedModalComponent;
 }
 
 describe('withModal()', () => {
-	afterEach(() => {
-		document.body.innerHTML = '';
+	it('should not throw when closed', () => {
+		expect(() =>
+			render(
+				<NakedModal isOpen={false}>
+					<p>Hello, I am a modal body!</p>
+				</NakedModal>,
+			),
+		).not.toThrow();
 	});
 
-	it('should not throw when closed', () => {
-		const modal = (
-			<NakedModal isOpen={false}>
-				<p>Hello, I am a modal body!</p>
-			</NakedModal>
-		);
-
-		expect(() => mount(modal).unmount()).not.toThrow();
+	it('should not throw when open', () => {
+		expect(() =>
+			render(
+				<NakedModal isOpen>
+					<p>Hello, I am a modal body!</p>
+				</NakedModal>,
+			),
+		).not.toThrow();
 	});
 
 	it('should match snapshot', () => {
 		const ModelComponent = createMockedModal(true);
-		const wrapper = mount(<ModelComponent />);
-		expect(wrapper).toMatchSnapshot();
-		wrapper.unmount();
-	});
-
-	it('should not throw when open', () => {
-		const modal = (
-			<NakedModal isOpen>
-				<p>Hello, I am a modal body!</p>
-			</NakedModal>
-		);
-
-		expect(() => mount(modal).unmount()).not.toThrow();
+		const { baseElement } = render(<ModelComponent />);
+		expect(baseElement).toMatchSnapshot();
 	});
 
 	describe('when portal', () => {
 		it('should be added when open', () => {
-			expect(document.body.innerHTML).toBe('');
-
-			const modal = mount(
-				<NakedModal isOpen>
-					<p>Hello World!</p>
-				</NakedModal>,
+			const { getByRole } = render(
+				<NakedModal isOpen>Hello World!</NakedModal>,
 			);
 
-			expect(modal.find(ModalPortal).exists()).toBeTruthy();
-			modal.unmount();
+			expect(getByRole('dialog')).toBeInTheDocument();
 		});
 
-		it('should be added portal when not open, but is mounted', () => {
-			expect(document.body.innerHTML).toBe('');
-
-			const modal = mount(
-				<NakedModal isOpen={false}>
-					<p>Hello World!</p>
-				</NakedModal>,
+		it('should not render children when closed', () => {
+			const { getByRole } = render(
+				<NakedModal isOpen={false}>Hello World!</NakedModal>,
 			);
 
-			expect(modal.find(ModalPortal).exists()).toBeTruthy();
-			modal.unmount();
+			expect(getByRole('dialog')).not.toHaveTextContent('Hello World!');
 		});
 
 		it('should add children when open', () => {
-			const modal = mount(
-				<NakedModal isOpen>
-					<p>Hello World!</p>
-				</NakedModal>,
+			const { getByRole } = render(
+				<NakedModal isOpen>Hello World!</NakedModal>,
 			);
 
-			expect(
-				modal
-					.find(ModalPortal)
-					.render()
-					.html()
-					.includes('Hello World!'),
-			).toBeTruthy();
-			modal.unmount();
+			expect(getByRole('dialog')).toHaveTextContent('Hello World!');
 		});
 	});
 
 	describe('when onRequestClose', () => {
 		it('should not throw when not passed in', () => {
-			// Tests if the onRequestClose is being defaulted.
-			const modal = mount(
-				<NakedModal isOpen>
-					<p>Hello World!</p>
-				</NakedModal>,
-			);
+			render(<NakedModal isOpen>Hello World!</NakedModal>);
 
 			expect(() => {
-				const portal = modal.find(ModalPortal);
-				portal.prop('onRequestClose')();
+				fireEvent.click(document.body);
 			}).not.toThrow();
-			modal.unmount();
 		});
 
 		it('should call our passed in onRequestClose callback', () => {
 			const cb = jest.fn();
 
-			const modal = mount(
+			render(
 				<NakedModal isOpen onRequestClose={cb}>
-					<p>Hello World!</p>
+					Hello World!
 				</NakedModal>,
 			);
 
-			modal.find(ModalPortal).prop('onRequestClose')();
+			fireEvent.mouseUp(document.body);
 
 			expect(cb).toHaveBeenCalledTimes(1);
-			modal.unmount();
-		});
-
-		it('should call when outside is clicked', () => {
-			const cb = jest.fn();
-
-			let modal;
-
-			act(() => {
-				modal = mount(
-					<NakedModal isOpen onRequestClose={cb}>
-						<p>Hello World!</p>
-					</NakedModal>,
-				);
-			});
-
-			act(() => {
-				document.body.dispatchEvent(
-					new MouseEvent('mouseup', {
-						bubbles: true,
-						cancelable: true,
-					}),
-				);
-			});
-
-			expect(cb).toHaveBeenCalledTimes(1);
-			modal.unmount();
 		});
 
 		it('should not be calling onRequestClose, if isOpen is false', () => {
 			const cb = jest.fn();
 
-			let modal;
+			render(
+				<NakedModal isOpen={false} onRequestClose={cb}>
+					Hello World!
+				</NakedModal>,
+			);
 
-			act(() => {
-				modal = mount(
-					<NakedModal isOpen={false} onRequestClose={cb}>
-						<p>Hello World!</p>
-					</NakedModal>,
-				);
-			});
-
-			act(() => {
-				document.body.dispatchEvent(
-					new MouseEvent('mouseup', {
-						bubbles: true,
-						cancelable: true,
-					}),
-				);
-			});
+			fireEvent.mouseUp(document.body);
 
 			expect(cb).toHaveBeenCalledTimes(0);
-			modal.unmount();
 		});
 	});
 
-	it('should have isOpen set to false when the outside is clicked', () => {
-		const MockedModalComponent = createMockedModal(true);
+	describe('when implemented', () => {
+		it('should have isOpen set to false when the outside is clicked', () => {
+			const MockedModalComponent = createMockedModal(true);
 
-		let modal;
-		act(() => {
-			modal = mount(<MockedModalComponent />);
+			const { getByRole } = render(<MockedModalComponent />);
+
+			expect(getByRole('dialog')).toHaveTextContent('Hello World!');
+
+			fireEvent.mouseUp(document.body);
+
+			expect(getByRole('dialog')).not.toHaveTextContent('Hello World!');
 		});
 
-		expect(modal.find(ModalPortal).prop('isOpen')).toEqual(true);
+		it('should have isOpen set to true when the content itself is clicked', () => {
+			const MockedModalComponent = createMockedModal(true);
 
-		act(() => {
-			document.body.dispatchEvent(
-				new MouseEvent('mouseup', { bubbles: true, cancelable: true }),
-			);
+			const { getByRole } = render(<MockedModalComponent />);
+
+			expect(getByRole('dialog')).toHaveTextContent('Hello World!');
+
+			fireEvent.mouseUp(getByRole('dialog').firstChild);
+
+			expect(getByRole('dialog')).toHaveTextContent('Hello World!');
 		});
 
-		modal.update();
+		it('should not be visible when closed', () => {
+			const MockedModalComponent = createMockedModal(true);
 
-		expect(modal.find(ModalPortal).prop('isOpen')).toEqual(false);
-		modal.unmount();
-	});
+			const { getByRole } = render(<MockedModalComponent />);
 
-	it('should have isOpen set to true when the content itself is clicked', () => {
-		const MockedModalComponent = createMockedModal(true);
+			expect(getByRole('dialog')).toHaveTextContent('Hello World!');
+			expect(getByRole('dialog')).toHaveAttribute('aria-hidden', 'false');
 
-		let modal;
-		act(() => {
-			modal = mount(<MockedModalComponent />);
-		});
+			fireEvent.mouseUp(document.body);
 
-		expect(modal.find(ModalPortal).prop('isOpen')).toEqual(true);
-
-		// This is to confirm that the body is in fact the content
-		expect(modal.find('p').getDOMNode()).toMatchSnapshot();
-
-		act(() => {
-			modal
-				.find('p')
-				.getDOMNode()
-				.dispatchEvent(
-					new MouseEvent('mouseup', {
-						bubbles: true,
-						cancelable: true,
-					}),
-				);
-		});
-
-		modal.update();
-
-		expect(modal.find(ModalPortal).prop('isOpen')).toEqual(true);
-		modal.unmount();
-	});
-
-	describe('when rendered to the DOM', () => {
-		it('should remove modalPortalIsOpen class from the portal when modal is closed', () => {
-			const MockedModalComponent = createMockedModal();
-
-			act(() => {
-				renderIntoDocument(<MockedModalComponent />);
-			});
-
-			expect(
-				document.body.querySelector('.modalPortalIsOpen'),
-			).toBeTruthy();
-
-			act(() => {
-				document.body.dispatchEvent(
-					new MouseEvent('mouseup', {
-						bubbles: true,
-						cancelable: true,
-					}),
-				);
-			});
-
-			expect(
-				document.body.querySelector('.modalPortalIsOpen'),
-			).toBeFalsy();
-
-			expect(document.body.querySelector('.modalPortal')).toBeTruthy();
-		});
-
-		it('should remove modal content class from the portal when modal is closed', () => {
-			const MockedModalComponent = createMockedModal();
-
-			act(() => {
-				renderIntoDocument(<MockedModalComponent />);
-			});
-
-			expect(document.body.querySelector('.modalContent')).toBeTruthy();
-
-			act(() => {
-				document.body.dispatchEvent(
-					new MouseEvent('mouseup', {
-						bubbles: true,
-						cancelable: true,
-					}),
-				);
-			});
-
-			expect(document.body.querySelector('p')).toBeFalsy();
+			expect(getByRole('dialog')).not.toHaveTextContent('Hello World!');
+			expect(getByRole('dialog')).toHaveAttribute('aria-hidden', 'true');
 		});
 	});
 });

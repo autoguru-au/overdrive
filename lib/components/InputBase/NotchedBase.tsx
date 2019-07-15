@@ -13,6 +13,7 @@ export interface Props {
 	placeholder: string;
 	isEmpty: boolean;
 	isActive: boolean;
+	className?: string;
 }
 
 export const NotchedBase: FunctionComponent<Props> = ({
@@ -21,6 +22,7 @@ export const NotchedBase: FunctionComponent<Props> = ({
 	isEmpty,
 	isActive,
 	children,
+	className = '',
 }) => {
 	const labelRef = useRef<HTMLLabelElement>(null);
 	const [labelWidth, setLabelWidth] = useState<number>(
@@ -45,10 +47,14 @@ export const NotchedBase: FunctionComponent<Props> = ({
 
 	return (
 		<div
-			className={clsx(styles.notchedBase, {
-				[styles.notchedBaseShift]: !isEmpty,
-				[styles.notchedBaseActive]: isActive,
-			})}>
+			className={clsx(
+				styles.notchedBase,
+				{
+					[styles.notchedBaseShift]: !isEmpty,
+					[styles.notchedBaseActive]: isActive,
+				},
+				className,
+			)}>
 			{children}
 			<div className={styles.notchedBaseBorder}>
 				<div className={styles.notchedBaseBorderLeading} />

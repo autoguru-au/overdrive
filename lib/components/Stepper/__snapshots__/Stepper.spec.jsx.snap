@@ -13,7 +13,7 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
   >
     <i
       class="root"
-      style="width:16px;height:16px"
+      style="width: 16px; height: 16px;"
     >
       <svg
         viewBox="0 0 512 512"
@@ -37,7 +37,7 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
   >
     <i
       class="root"
-      style="width:16px;height:16px"
+      style="width: 16px; height: 16px;"
     >
       <svg
         viewBox="0 0 512 512"
@@ -65,7 +65,7 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
   >
     <i
       class="root"
-      style="width:16px;height:16px"
+      style="width: 16px; height: 16px;"
     >
       <svg
         viewBox="0 0 512 512"
@@ -89,7 +89,7 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
   >
     <i
       class="root"
-      style="width:16px;height:16px"
+      style="width: 16px; height: 16px;"
     >
       <svg
         viewBox="0 0 512 512"
@@ -118,7 +118,7 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
   >
     <i
       class="root"
-      style="width:16px;height:16px"
+      style="width: 16px; height: 16px;"
     >
       <svg
         viewBox="0 0 512 512"
@@ -141,7 +141,7 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
   >
     <i
       class="root"
-      style="width:16px;height:16px"
+      style="width: 16px; height: 16px;"
     >
       <svg
         viewBox="0 0 512 512"

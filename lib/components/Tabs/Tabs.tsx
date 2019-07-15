@@ -3,6 +3,7 @@ import React, {
 	FunctionComponent,
 	ReactElement,
 	ReactNode,
+	useEffect,
 	useState,
 } from 'react';
 
@@ -41,25 +42,46 @@ export const Tabs: FunctionComponent<Props> = ({
 		ReactElement<ComponentWithChildren<ITabProps>>
 	>;
 
-	const tabs = tabsChildren.map((child, idx) => [
-		<TabNavItem
-			key={idx}
-			active={active === idx}
-			indication={child.props.indication}
-			onClick={setActiveCb(idx)}>
-			{child.props.title}
-		</TabNavItem>,
-		<TabPane key={idx} active={active === idx}>
-			{child.props.children}
-		</TabPane>,
-	]);
+	const tabId = useId();
+
+	const tabs = tabsChildren.map((child, idx) => {
+		const tabItemId = `tabItem:${tabId}:${idx}`;
+		const tabPanelId = `tabPanel:${tabId}:${idx}`;
+
+		return [
+			<TabNavItem
+				key={idx}
+				id={tabItemId}
+				active={active === idx}
+				indication={child.props.indication}
+				onClick={setActiveCb(idx)}>
+				{child.props.title}
+			</TabNavItem>,
+			<TabPane
+				key={idx}
+				id={tabPanelId}
+				controlledBy={tabItemId}
+				active={active === idx}>
+				{child.props.children}
+			</TabPane>,
+		];
+	});
 
 	return (
-		<div className={styles.tabs}>
+		<div className={styles.tabs} role="tablist">
 			<div className={styles.tabsNav}>{tabs.map(([item]) => item)}</div>
 			<div className={styles.tabsContent}>
 				{tabs.map(([, item]) => item)}
 			</div>
 		</div>
 	);
+};
+
+let id = 0;
+const genId = () => ++id;
+
+const useId = () => {
+	const [id, setId] = useState(null);
+	useEffect(() => setId(genId()), []);
+	return `od-${id}`;
 };

@@ -1,317 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<SelectInput /> should match snapshot for active select input 1`] = `
-<EnhancedInput(SelectInputComponent)
-  className="select-input-class"
-  placeholder="Hello World!"
->
-  <div
-    className="root select-input-class"
-  >
-    <NotchedBase
-      isActive={true}
-      isEmpty={false}
-      placeholder="Hello World!"
-    >
-      <div
-        className="notchedBase notchedBaseShift notchedBaseActive"
-      >
-        <SelectInputComponent
-          eventHandlers={
-            Object {
-              "onBlur": [Function],
-              "onChange": [Function],
-              "onFocus": [Function],
-            }
-          }
-          field={
-            Object {
-              "className": "input",
-              "disabled": false,
-              "id": undefined,
-              "name": undefined,
-              "value": "value1",
-            }
-          }
-          validation={
-            Object {
-              "isTouched": undefined,
-              "isValid": undefined,
-            }
-          }
-        >
-          <select
-            autoComplete="off"
-            className="input"
-            disabled={false}
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            value="value1"
-          >
-            <option
-              value="value1"
-            >
-              ValueA
-            </option>
-          </select>
-          <IconComponent
-            className="arrow"
-            icon={
-              <svg
-                viewBox="0 0 512 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M158.08 183.04L256 280.96l97.92-97.92L384 213.333l-128 128-128-128 30.08-30.293z"
-                />
-              </svg>
-            }
-            size={25}
-          >
-            <i
-              className="root arrow"
-              style={
-                Object {
-                  "height": 25,
-                  "width": 25,
-                }
-              }
-            >
-              <svg
-                viewBox="0 0 512 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M158.08 183.04L256 280.96l97.92-97.92L384 213.333l-128 128-128-128 30.08-30.293z"
-                />
-              </svg>
-            </i>
-          </IconComponent>
-        </SelectInputComponent>
-        <div
-          className="notchedBaseBorder"
-        >
-          <div
-            className="notchedBaseBorderLeading"
-          />
-          <div
-            className="notchedBaseBorderNotch"
-            style={
-              Object {
-                "width": 16,
-              }
-            }
-          >
-            <label
-              className="notchedBasePlaceholder"
-            >
-              Hello World!
-            </label>
-          </div>
-          <div
-            className="notchedBaseBorderTrailing"
-          />
-        </div>
-      </div>
-    </NotchedBase>
-  </div>
-</EnhancedInput(SelectInputComponent)>
-`;
-
-exports[`<SelectInput /> should match snapshot for default select input 1`] = `
-<div
-  class="root select-input-class"
->
-  <div
-    class="notchedBase"
-  >
-    <select
-      autocomplete="off"
-      class="input"
-    />
-    <i
-      class="root arrow"
-      style="width:25px;height:25px"
-    >
-      <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M158.08 183.04L256 280.96l97.92-97.92L384 213.333l-128 128-128-128 30.08-30.293z"
-        />
-      </svg>
-    </i>
-    <div
-      class="notchedBaseBorder"
-    >
-      <div
-        class="notchedBaseBorderLeading"
-      />
-      <div
-        class="notchedBaseBorderNotch"
-        style="width:0"
-      >
-        <label
-          class="notchedBasePlaceholder"
-        >
-          Hello World!
-        </label>
-      </div>
-      <div
-        class="notchedBaseBorderTrailing"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`<SelectInput /> should match snapshot for touched invalid select input 1`] = `
-<div
-  class="root select-input-class invalid withStatus"
->
-  <div
-    class="notchedBase"
-  >
-    <select
-      autocomplete="off"
-      class="input"
-    />
-    <i
-      class="root arrow"
-      style="width:25px;height:25px"
-    >
-      <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M158.08 183.04L256 280.96l97.92-97.92L384 213.333l-128 128-128-128 30.08-30.293z"
-        />
-      </svg>
-    </i>
-    <div
-      class="notchedBaseBorder"
-    >
-      <div
-        class="notchedBaseBorderLeading"
-      />
-      <div
-        class="notchedBaseBorderNotch"
-        style="width:0"
-      >
-        <label
-          class="notchedBasePlaceholder"
-        >
-          Hello World!
-        </label>
-      </div>
-      <div
-        class="notchedBaseBorderTrailing"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`<SelectInput /> should match snapshot for touched select input 1`] = `
-<div
-  class="root select-input-class"
->
-  <div
-    class="notchedBase"
-  >
-    <select
-      autocomplete="off"
-      class="input"
-    />
-    <i
-      class="root arrow"
-      style="width:25px;height:25px"
-    >
-      <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M158.08 183.04L256 280.96l97.92-97.92L384 213.333l-128 128-128-128 30.08-30.293z"
-        />
-      </svg>
-    </i>
-    <div
-      class="notchedBaseBorder"
-    >
-      <div
-        class="notchedBaseBorderLeading"
-      />
-      <div
-        class="notchedBaseBorderNotch"
-        style="width:0"
-      >
-        <label
-          class="notchedBasePlaceholder"
-        >
-          Hello World!
-        </label>
-      </div>
-      <div
-        class="notchedBaseBorderTrailing"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`<SelectInput /> should match snapshot for touched valid select input 1`] = `
-<div
-  class="root select-input-class valid withStatus"
->
-  <div
-    class="notchedBase"
-  >
-    <select
-      autocomplete="off"
-      class="input"
-    />
-    <i
-      class="root arrow"
-      style="width:25px;height:25px"
-    >
-      <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M158.08 183.04L256 280.96l97.92-97.92L384 213.333l-128 128-128-128 30.08-30.293z"
-        />
-      </svg>
-    </i>
-    <div
-      class="notchedBaseBorder"
-    >
-      <div
-        class="notchedBaseBorderLeading"
-      />
-      <div
-        class="notchedBaseBorderNotch"
-        style="width:0"
-      >
-        <label
-          class="notchedBasePlaceholder"
-        >
-          Hello World!
-        </label>
-      </div>
-      <div
-        class="notchedBaseBorderTrailing"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`<SelectInput /> should render some options 1`] = `
+exports[`<SelectInput /> should have some hintText 1`] = `
 <div
   class="root"
 >
@@ -340,7 +29,7 @@ exports[`<SelectInput /> should render some options 1`] = `
     </select>
     <i
       class="root arrow"
-      style="width:25px;height:25px"
+      style="width: 25px; height: 25px;"
     >
       <svg
         viewBox="0 0 512 512"
@@ -359,7 +48,332 @@ exports[`<SelectInput /> should render some options 1`] = `
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:0"
+        style="width: 0px;"
+      >
+        <label
+          class="notchedBasePlaceholder"
+        >
+          Hello World!
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+  <p
+    class="root sizeScale1 hintText"
+  >
+    hint text
+  </p>
+</div>
+`;
+
+exports[`<SelectInput /> should match snapshot 1`] = `
+<div
+  class="root"
+>
+  <div
+    class="notchedBase"
+  >
+    <select
+      autocomplete="off"
+      class="input"
+    >
+      <option
+        value="a"
+      >
+        Value 1
+      </option>
+      <option
+        value="b"
+      >
+        Value 2
+      </option>
+      <option
+        value="c"
+      >
+        Value 3
+      </option>
+    </select>
+    <i
+      class="root arrow"
+      style="width: 25px; height: 25px;"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M158.08 183.04L256 280.96l97.92-97.92L384 213.333l-128 128-128-128 30.08-30.293z"
+        />
+      </svg>
+    </i>
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width: 0px;"
+      >
+        <label
+          class="notchedBasePlaceholder"
+        >
+          Hello World!
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<SelectInput /> should match snapshot when active 1`] = `
+<div
+  class="root"
+>
+  <div
+    class="notchedBase notchedBaseShift notchedBaseActive"
+  >
+    <select
+      autocomplete="off"
+      class="input"
+    >
+      <option
+        value="a"
+      >
+        Value 1
+      </option>
+      <option
+        value="b"
+      >
+        Value 2
+      </option>
+      <option
+        value="c"
+      >
+        Value 3
+      </option>
+    </select>
+    <i
+      class="root arrow"
+      style="width: 25px; height: 25px;"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M158.08 183.04L256 280.96l97.92-97.92L384 213.333l-128 128-128-128 30.08-30.293z"
+        />
+      </svg>
+    </i>
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width: 16px;"
+      >
+        <label
+          class="notchedBasePlaceholder"
+        >
+          Hello World!
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<SelectInput /> should match snapshot when touched 1`] = `
+<div
+  class="root"
+>
+  <div
+    class="notchedBase"
+  >
+    <select
+      autocomplete="off"
+      class="input"
+    >
+      <option
+        value="a"
+      >
+        Value 1
+      </option>
+      <option
+        value="b"
+      >
+        Value 2
+      </option>
+      <option
+        value="c"
+      >
+        Value 3
+      </option>
+    </select>
+    <i
+      class="root arrow"
+      style="width: 25px; height: 25px;"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M158.08 183.04L256 280.96l97.92-97.92L384 213.333l-128 128-128-128 30.08-30.293z"
+        />
+      </svg>
+    </i>
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width: 0px;"
+      >
+        <label
+          class="notchedBasePlaceholder"
+        >
+          Hello World!
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
+<div
+  class="root invalid withStatus"
+>
+  <div
+    class="notchedBase"
+  >
+    <select
+      autocomplete="off"
+      class="input"
+    >
+      <option
+        value="a"
+      >
+        Value 1
+      </option>
+      <option
+        value="b"
+      >
+        Value 2
+      </option>
+      <option
+        value="c"
+      >
+        Value 3
+      </option>
+    </select>
+    <i
+      class="root arrow"
+      style="width: 25px; height: 25px;"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M158.08 183.04L256 280.96l97.92-97.92L384 213.333l-128 128-128-128 30.08-30.293z"
+        />
+      </svg>
+    </i>
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width: 0px;"
+      >
+        <label
+          class="notchedBasePlaceholder"
+        >
+          Hello World!
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
+<div
+  class="root valid withStatus"
+>
+  <div
+    class="notchedBase"
+  >
+    <select
+      autocomplete="off"
+      class="input"
+    >
+      <option
+        value="a"
+      >
+        Value 1
+      </option>
+      <option
+        value="b"
+      >
+        Value 2
+      </option>
+      <option
+        value="c"
+      >
+        Value 3
+      </option>
+    </select>
+    <i
+      class="root arrow"
+      style="width: 25px; height: 25px;"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M158.08 183.04L256 280.96l97.92-97.92L384 213.333l-128 128-128-128 30.08-30.293z"
+        />
+      </svg>
+    </i>
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width: 0px;"
       >
         <label
           class="notchedBasePlaceholder"

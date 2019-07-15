@@ -1,110 +1,91 @@
 import React from 'react';
 import { EPageChangeDirection, SimplePagination } from '.';
-import { mount, render, shallow } from 'enzyme';
+import { fireEvent, render } from '@testing-library/react';
 
 describe('<SimplePagination />', () => {
 	it('should not throw', () =>
-		expect(() => shallow(<SimplePagination />)).not.toThrow());
+		expect(() => render(<SimplePagination />)).not.toThrow());
+
 	it('should not throw when onChange callback is undefined', () => {
-		const wrapper = mount(<SimplePagination hasPrevious hasNext />);
+		const { getByLabelText } = render(
+			<SimplePagination hasPrevious hasNext />,
+		);
+
 		expect(() => {
-			wrapper
-				.find('button')
-				.at(0)
-				.simulate('click');
+			fireEvent.click(getByLabelText('previous page'));
 		}).not.toThrow();
-		wrapper.unmount();
 	});
 
 	it('should match snapshot for hasNext', () => {
-		expect(render(<SimplePagination hasNext />)).toMatchSnapshot();
+		expect(
+			render(<SimplePagination hasNext />).container.firstChild,
+		).toMatchSnapshot();
 	});
 
 	it('should match snapshot for hasPrevious', () => {
-		expect(render(<SimplePagination hasPrevious />)).toMatchSnapshot();
+		expect(
+			render(<SimplePagination hasPrevious />).container.firstChild,
+		).toMatchSnapshot();
 	});
 
 	it('should match snapshot for hasNext and hasPrevious', () => {
 		expect(
-			render(<SimplePagination hasPrevious hasNext />),
+			render(<SimplePagination hasPrevious hasNext />).container
+				.firstChild,
 		).toMatchSnapshot();
 	});
 
 	it('should fire change with the correct change direction for next button click', () => {
 		const spyedCallback = jest.fn();
 
-		const wrapper = mount(
+		const { getByLabelText } = render(
 			<SimplePagination hasPrevious hasNext onChange={spyedCallback} />,
 		);
 
-		wrapper
-			.find('button')
-			.at(1)
-			.simulate('click');
+		fireEvent.click(getByLabelText('next page'));
 
 		expect(spyedCallback).toHaveBeenCalledWith(EPageChangeDirection.Next);
-		wrapper.unmount();
 	});
 
 	it('should not fire change for next direction if hasNext is disabled but clicked', () => {
 		const spyedCallback = jest.fn();
 
-		const wrapper = mount(
-			<SimplePagination
-				hasPrevious
-				hasNext={false}
-				onChange={spyedCallback}
-			/>,
+		const { getByLabelText } = render(
+			<SimplePagination hasPrevious onChange={spyedCallback} />,
 		);
 
-		wrapper
-			.find('button')
-			.at(1)
-			.simulate('click');
+		fireEvent.click(getByLabelText('next page'));
 
 		expect(spyedCallback).not.toHaveBeenCalledWith(
 			EPageChangeDirection.Next,
 		);
-		wrapper.unmount();
 	});
 
 	it('should fire change with the correct change direction for previous button click', () => {
 		const spyedCallback = jest.fn();
 
-		const wrapper = mount(
+		const { getByLabelText } = render(
 			<SimplePagination hasPrevious hasNext onChange={spyedCallback} />,
 		);
 
-		wrapper
-			.find('button')
-			.at(0)
-			.simulate('click');
+		fireEvent.click(getByLabelText('previous page'));
 
 		expect(spyedCallback).toHaveBeenCalledWith(
 			EPageChangeDirection.Previous,
 		);
-		wrapper.unmount();
 	});
 
 	it('should not fire change for previous direction if hasPrevious is disabled but clicked', () => {
 		const spyedCallback = jest.fn();
 
-		const wrapper = mount(
-			<SimplePagination
-				hasNext
-				hasPrevious={false}
-				onChange={spyedCallback}
-			/>,
+		const { getByLabelText } = render(
+			<SimplePagination hasNext onChange={spyedCallback} />,
 		);
 
-		wrapper
-			.find('button')
-			.at(0)
-			.simulate('click');
+		fireEvent.click(getByLabelText('previous page'));
 
 		expect(spyedCallback).not.toHaveBeenCalledWith(
 			EPageChangeDirection.Previous,
 		);
-		wrapper.unmount();
 	});
 });

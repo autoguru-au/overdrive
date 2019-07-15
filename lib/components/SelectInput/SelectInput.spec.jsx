@@ -1,145 +1,177 @@
 import React from 'react';
-import { mount, render } from 'enzyme';
+import { fireEvent, render } from '@testing-library/react';
 import { SelectInput } from './SelectInput';
 
-const testLabel = 'Hello World!';
+// TODO: Confirm these tests are actually valid and working? ️¯\_(ツ)_/¯
 describe('<SelectInput />', () => {
-	it('should not throw', () => {
-		expect(() =>
-			mount(<SelectInput placeholder={testLabel} />).unmount(),
-		).not.toThrow();
+	it('should match snapshot', () => {
+		expect(
+			render(
+				<SelectInput placeholder="Hello World!">
+					<option value="a">Value 1</option>
+					<option value="b">Value 2</option>
+					<option value="c">Value 3</option>
+				</SelectInput>,
+			).container.firstChild,
+		).toMatchSnapshot();
 	});
 
-	it('should have a select input', () => {
-		const selectInput = mount(<SelectInput placeholder={testLabel} />);
-		expect(selectInput.find('select').exists()).toEqual(true);
-		selectInput.unmount();
-	});
+	it('should have some hintText', () => {
+		const hintText = () => 'hint text';
 
-	it('should render some options', () => {
-		const selectInput = render(
-			<SelectInput placeholder={testLabel}>
+		const { container } = render(
+			<SelectInput placeholder="Hello World!" hintText={hintText()}>
 				<option value="a">Value 1</option>
 				<option value="b">Value 2</option>
 				<option value="c">Value 3</option>
 			</SelectInput>,
 		);
 
-		expect(selectInput).toMatchSnapshot();
+		expect(container.firstChild).toMatchSnapshot();
 
-		expect(selectInput.find('option').length).toBe(3);
+		expect(container).toHaveTextContent(hintText());
+	});
+
+	it('should have an select element', () => {
+		const { container } = render(
+			<SelectInput placeholder="Hello World!">
+				<option value="a">Value 1</option>
+				<option value="b">Value 2</option>
+				<option value="c">Value 3</option>
+			</SelectInput>,
+		);
+		expect(container.querySelector('select')).toBeInTheDocument();
 	});
 
 	it('should pass on className to dom element', () => {
-		const selectInput = mount(
-			<SelectInput
-				className="select-input-class"
-				placeholder={testLabel}
-			/>,
+		const { container } = render(
+			<SelectInput placeholder="Hello World!" className="input-class">
+				<option value="a">Value 1</option>
+				<option value="b">Value 2</option>
+				<option value="c">Value 3</option>
+			</SelectInput>,
 		);
-		expect(selectInput.hasClass('select-input-class')).toBeTruthy();
-		selectInput.unmount();
+		expect(container.firstChild).toHaveClass('input-class');
 	});
 
-	it('should match snapshot for default select input', () => {
-		const selectInput = render(
-			<SelectInput
-				className="select-input-class"
-				placeholder={testLabel}
-			/>,
-		);
-		expect(selectInput).toMatchSnapshot();
-	});
-
-	it('should match snapshot for active select input', () => {
-		const selectInput = mount(
-			<SelectInput className="select-input-class" placeholder={testLabel}>
-				<option value="value1">ValueA</option>
+	it('should match snapshot when active', () => {
+		const { container } = render(
+			<SelectInput placeholder="Hello World!">
+				<option value="a">Value 1</option>
+				<option value="b">Value 2</option>
+				<option value="c">Value 3</option>
 			</SelectInput>,
 		);
 
-		selectInput.find('select').simulate('focus');
+		fireEvent.focus(container.querySelector('select'));
 
-		selectInput
-			.find('select')
-			.simulate('change', { target: { value: 'value1' } });
+		fireEvent.change(container.querySelector('select'), {
+			target: { value: 'value from the tests' },
+		});
 
-		// Snapshot confirms this
-		expect(selectInput).toMatchSnapshot();
-
-		selectInput.unmount();
+		expect(container.firstChild).toMatchSnapshot();
 	});
 
-	it('should match snapshot for touched select input', () => {
-		const selectInput = render(
-			<SelectInput
-				isTouched
-				className="select-input-class"
-				placeholder={testLabel}
-			/>,
-		);
-		expect(selectInput).toMatchSnapshot();
+	it('should match snapshot when touched', () => {
+		expect(
+			render(
+				<SelectInput isTouched placeholder="Hello World!">
+					<option value="a">Value 1</option>
+					<option value="b">Value 2</option>
+					<option value="c">Value 3</option>
+				</SelectInput>,
+			).container.firstChild,
+		).toMatchSnapshot();
 	});
 
-	it('should match snapshot for touched valid select input', () => {
-		const selectInput = render(
-			<SelectInput
-				isTouched
-				isValid
-				className="select-input-class"
-				placeholder={testLabel}
-			/>,
-		);
-		expect(selectInput).toMatchSnapshot();
+	it('should match snapshot when touched and valid', () => {
+		expect(
+			render(
+				<SelectInput isTouched isValid placeholder="Hello World!">
+					<option value="a">Value 1</option>
+					<option value="b">Value 2</option>
+					<option value="c">Value 3</option>
+				</SelectInput>,
+			).container.firstChild,
+		).toMatchSnapshot();
 	});
 
-	it('should match snapshot for touched invalid select input', () => {
-		const selectInput = render(
-			<SelectInput
-				isTouched
-				isValid={false}
-				className="select-input-class"
-				placeholder={testLabel}
-			/>,
-		);
-		expect(selectInput).toMatchSnapshot();
+	it('should match snapshot when touched and invalid', () => {
+		expect(
+			render(
+				<SelectInput
+					isTouched
+					placeholder="Hello World!"
+					isValid={false}>
+					<option value="a">Value 1</option>
+					<option value="b">Value 2</option>
+					<option value="c">Value 3</option>
+				</SelectInput>,
+			).container.firstChild,
+		).toMatchSnapshot();
 	});
 
 	it('should display placeholder text', () => {
-		const selectInput = render(<SelectInput placeholder={testLabel} />);
-		expect(selectInput.find('label').text()).toEqual(testLabel);
+		const { container } = render(
+			<SelectInput placeholder="placeholder something">
+				<option value="a">Value 1</option>
+				<option value="b">Value 2</option>
+				<option value="c">Value 3</option>
+			</SelectInput>,
+		);
+
+		expect(container.querySelector('label')).toHaveTextContent(
+			'placeholder something',
+		);
 	});
 
 	it('should fire onFocus event', () => {
 		const spyedCallback = jest.fn();
-		const selectInput = mount(
-			<SelectInput placeholder={testLabel} onFocus={spyedCallback} />,
-		);
-		selectInput.find('select').simulate('focus');
 
-		expect(spyedCallback).toHaveBeenCalled();
-		selectInput.unmount();
+		const { container } = render(
+			<SelectInput placeholder="Hello World!" onFocus={spyedCallback}>
+				<option value="a">Value 1</option>
+				<option value="b">Value 2</option>
+				<option value="c">Value 3</option>
+			</SelectInput>,
+		);
+
+		fireEvent.focus(container.querySelector('select'));
+
+		expect(spyedCallback).toHaveBeenCalledTimes(1);
 	});
 
 	it('should fire onBlur event', () => {
 		const spyedCallback = jest.fn();
-		const selectInput = mount(
-			<SelectInput placeholder={testLabel} onBlur={spyedCallback} />,
-		);
-		selectInput.find('select').simulate('blur');
 
-		expect(spyedCallback).toHaveBeenCalled();
-		selectInput.unmount();
+		const { container } = render(
+			<SelectInput placeholder="Hello World!" onBlur={spyedCallback}>
+				<option value="a">Value 1</option>
+				<option value="b">Value 2</option>
+				<option value="c">Value 3</option>
+			</SelectInput>,
+		);
+
+		fireEvent.blur(container.querySelector('select'));
+
+		expect(spyedCallback).toHaveBeenCalledTimes(1);
 	});
 
 	it('should fire onChange event', () => {
 		const spyedCallback = jest.fn();
-		const selectInput = mount(
-			<SelectInput placeholder={testLabel} onChange={spyedCallback} />,
-		);
-		selectInput.find('select').simulate('change');
 
-		expect(spyedCallback).toHaveBeenCalled();
-		selectInput.unmount();
+		const { container } = render(
+			<SelectInput placeholder="Hello World!" onChange={spyedCallback}>
+				<option value="a">Value 1</option>
+				<option value="b">Value 2</option>
+				<option value="c">Value 3</option>
+			</SelectInput>,
+		);
+
+		fireEvent.change(container.querySelector('select'), {
+			target: { value: 'test' },
+		});
+
+		expect(spyedCallback).toHaveBeenCalledTimes(1);
 	});
 });

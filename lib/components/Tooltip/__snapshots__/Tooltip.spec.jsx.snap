@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tolltip /> should match snapshot when closed 1`] = `
+<body>
+  <div>
+    <div>
+      trigger
+    </div>
+  </div>
+  <div
+    class="root"
+    style="visibility: hidden;"
+  />
+</body>
+`;
+
+exports[`<Tolltip /> should match snapshot when opened 1`] = `
+<body>
+  <div>
+    <div>
+      trigger
+    </div>
+  </div>
+  <div
+    class="root"
+    style="visibility: hidden;"
+  >
+    <div
+      class="root"
+    >
+      <span
+        class="root sizeScale3 white"
+      >
+        tooltip content
+      </span>
+    </div>
+  </div>
+</body>
+`;

@@ -6,7 +6,7 @@ exports[`<Pagination /> should match snapshot for loading phase 1`] = `
 >
   <i
     class="root chevron disabled"
-    style="width:25px;height:25px"
+    style="width: 25px; height: 25px;"
   >
     <svg
       viewBox="0 0 512 512"
@@ -28,7 +28,7 @@ exports[`<Pagination /> should match snapshot for loading phase 1`] = `
   />
   <i
     class="root chevron disabled"
-    style="width:25px;height:25px"
+    style="width: 25px; height: 25px;"
   >
     <svg
       viewBox="0 0 512 512"

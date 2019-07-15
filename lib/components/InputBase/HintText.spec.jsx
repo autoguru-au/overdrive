@@ -1,32 +1,35 @@
 import React from 'react';
-import { mount, render } from 'enzyme';
+import { render } from '@testing-library/react';
 import { HintText } from './HintText';
 
-const testLabel = 'Hello World!';
 describe('<HintText />', () => {
 	it('should not throw', () => {
-		expect(() => mount(<HintText />).unmount()).not.toThrow();
+		expect(() => render(<HintText />)).not.toThrow();
 	});
 
 	it('should pass on className to dom element', () => {
-		const hint = mount(
-			<HintText className="hinted-class">{testLabel}</HintText>,
-		);
-		expect(hint.hasClass('hinted-class')).toBeTruthy();
+		expect(
+			render(<HintText className="hinted-class">Hello World!</HintText>)
+				.container.firstChild,
+		).toHaveClass('hinted-class');
 	});
 
 	it('should match snapshot for default hint', () => {
-		const hint = render(<HintText>{testLabel}</HintText>);
-		expect(hint).toMatchSnapshot();
+		expect(
+			render(<HintText>Hello World!</HintText>).container.firstChild,
+		).toMatchSnapshot();
 	});
 
 	it('should match snapshot for active hint', () => {
-		const hint = render(<HintText isActive>{testLabel}</HintText>);
-		expect(hint).toMatchSnapshot();
+		expect(
+			render(<HintText isActive>Hello World!</HintText>).container
+				.firstChild,
+		).toMatchSnapshot();
 	});
 
 	it('should display children', () => {
-		const hint = render(<HintText>{testLabel}</HintText>);
-		expect(hint.text()).toEqual(testLabel);
+		expect(
+			render(<HintText>Hello World!</HintText>).container.firstChild,
+		).toHaveTextContent('Hello World!');
 	});
 });

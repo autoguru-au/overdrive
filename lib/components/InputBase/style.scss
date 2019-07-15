@@ -248,8 +248,6 @@ $font_size: var(--global--fontSize--3); // 16
 	margin-top: var(--global--space--2);
 	margin-left: var(--global--space--4);
 	color: getColour(gray, 400);
-	font-size: var(--global--fontSize--1);
-	line-height: 1.14;
 	transition: color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 
 	&--active,

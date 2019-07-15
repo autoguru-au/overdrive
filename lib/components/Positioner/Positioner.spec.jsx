@@ -1,16 +1,16 @@
 import React, { createRef } from 'react';
 import { Positioner } from './Positioner';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { EAlignment } from './alignment';
 
 describe('<Positioner />', () => {
 	it('should not throw', () =>
 		expect(() =>
-			mount(<Positioner triggerRef={createRef()} />).unmount(),
+			render(<Positioner triggerRef={createRef()} />),
 		).not.toThrow());
 
 	it('should match snapshot', () => {
-		const wrapper = mount(
+		const { baseElement } = render(
 			<Positioner
 				isOpen
 				triggerRef={createRef()}
@@ -19,14 +19,12 @@ describe('<Positioner />', () => {
 			</Positioner>,
 		);
 
-		expect(wrapper).toMatchSnapshot();
-
-		wrapper.unmount();
+		expect(baseElement).toMatchSnapshot();
 	});
 
 	describe('when #isOpen', () => {
 		it('should render the body when open', () => {
-			const wrapper = mount(
+			const { baseElement } = render(
 				<Positioner
 					isOpen
 					triggerRef={createRef()}
@@ -35,20 +33,19 @@ describe('<Positioner />', () => {
 				</Positioner>,
 			);
 
-			expect(wrapper.text()).toContain('Some body');
+			expect(baseElement).toHaveTextContent('Some body');
 		});
 
 		it('shouldnt have the body when closed', () => {
-			const wrapper = mount(
+			const { baseElement } = render(
 				<Positioner
 					triggerRef={createRef()}
-					isOpen={false}
 					alignment={EAlignment.BOTTOM}>
 					Some body
 				</Positioner>,
 			);
 
-			expect(wrapper.text()).not.toContain('Some body');
+			expect(baseElement).not.toHaveTextContent('Some body');
 		});
 	});
 });

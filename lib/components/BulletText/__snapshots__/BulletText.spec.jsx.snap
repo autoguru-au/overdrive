@@ -7,12 +7,10 @@ exports[`<BulletText /> should match snapshot for custom bullet text 1`] = `
   <div
     class="customBullet"
   >
-    <span
-      style="width:17px;height:17px;background-color:#00dd95;fill:white;border-radius:50%;flex-direction:row;display:flex;align-content:center;justify-content:center;align-items:center"
-    >
+    <span>
       <i
         class="root"
-        style="width:14px;height:14px"
+        style="width: 14px; height: 14px;"
       >
         <svg
           viewBox="0 0 512 512"
@@ -35,84 +33,84 @@ exports[`<BulletText /> should match snapshot for custom bullet text 1`] = `
 
 exports[`<BulletText /> should match snapshot for default bullet text 1`] = `
 <li
-  className="root variantPrimary"
+  class="root variantPrimary"
 >
   <div
-    className="bullet"
+    class="bullet"
   >
     <span
-      className="bulletText"
+      class="bulletText"
     >
       •
     </span>
   </div>
-  <Text
-    is="span"
+  <span
+    class="root sizeScale3"
   >
     Hello World!
-  </Text>
+  </span>
 </li>
 `;
 
 exports[`<BulletText /> should match snapshot for ordered bullet text 1`] = `
 <ol
-  className="root variantPrimary"
+  class="root variantPrimary"
 >
   <div
-    className="bullet"
+    class="bullet"
   >
     <span
-      className="bulletText"
+      class="bulletText"
     >
       ?
     </span>
   </div>
-  <Text
-    is="span"
+  <span
+    class="root sizeScale3"
   >
     Hello World!
-  </Text>
+  </span>
 </ol>
 `;
 
 exports[`<BulletText /> should match snapshot for primary bullet text with custom bullet character 1`] = `
 <li
-  className="root variantPrimary"
+  class="root variantPrimary"
 >
   <div
-    className="bullet"
+    class="bullet"
   >
     <span
-      className="bulletText"
+      class="bulletText"
     >
       ?
     </span>
   </div>
-  <Text
-    is="span"
+  <span
+    class="root sizeScale3"
   >
     Hello World!
-  </Text>
+  </span>
 </li>
 `;
 
 exports[`<BulletText /> should match snapshot for secondary bullet text with custom bullet character 1`] = `
 <li
-  className="root variantSecondary"
+  class="root variantSecondary"
 >
   <div
-    className="bullet"
+    class="bullet"
   >
     <span
-      className="bulletText"
+      class="bulletText"
     >
       ?
     </span>
   </div>
-  <Text
-    is="span"
+  <span
+    class="root sizeScale3"
   >
     Hello World!
-  </Text>
+  </span>
 </li>
 `;

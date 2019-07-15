@@ -2,71 +2,60 @@
 
 exports[`<Anchor /> should match snapshot with label, icon and to props 1`] = `
 <a
-  className="root"
-  disabled={false}
-  href="https://www.hellowrold.com"
+  class="root"
+  href="https://www.autoguru.com.au"
 >
-  <Component
-    className="icon"
-    size={16}
-  />
-  <Text
-    className="label"
+  <svg
+    class="icon"
+    size="16"
+    viewBox="0 0 512 512"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+    />
+  </svg>
+  <span
+    class="root sizeScale3 label"
   >
     Hello World!
-  </Text>
+  </span>
 </a>
 `;
 
 exports[`<Anchor /> should match snapshot without label 1`] = `
 <a
-  className="root"
-  disabled={false}
+  class="root"
 >
-  <Text
-    className="label"
+  <span
+    class="root sizeScale3 label"
   />
-</a>
-`;
-
-exports[`<Anchor /> when custom component deprecated still work should match snapshot with label, icon custom component 1`] = `
-<a
-  className="root"
-  compnent={
-    Object {
-      "$$typeof": Symbol(react.forward_ref),
-      "render": [Function],
-    }
-  }
-  disabled={false}
-  to="https://www.hellowrold.com"
->
-  <Component
-    className="icon"
-    size={16}
-  />
-  <Text
-    className="label"
-  >
-    Hello World!
-  </Text>
 </a>
 `;
 
 exports[`<Anchor /> when custom component should match snapshot with label, icon custom component 1`] = `
-<ForwardRef
-  className="root"
-  disabled={false}
-  to="https://www.hellowrold.com"
+<button
+  aria-disabled="false"
+  class="root sizeMedium variantSecondary root"
 >
-  <Component
-    className="icon"
-    size={16}
-  />
-  <Text
-    className="label"
+  <span
+    class="btnContent"
   >
-    Hello World!
-  </Text>
-</ForwardRef>
+    <svg
+      class="icon"
+      size="16"
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+      />
+    </svg>
+    <span
+      class="root sizeScale3 label"
+    >
+      Hello World!
+    </span>
+  </span>
+</button>
 `;

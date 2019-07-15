@@ -1,78 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`withModal() should have isOpen set to true when the content itself is clicked 1`] = `
-<p>
-  Hello World!
-</p>
-`;
-
 exports[`withModal() should match snapshot 1`] = `
-<MockedModal>
-  <NakedModal
-    isOpen={true}
-    onRequestClose={[Function]}
+<body>
+  <div />
+  <div
+    class="modalPortal modalPortalIsOpen"
   >
-    <ModalPortal
-      isOpen={true}
-      onRequestClose={[Function]}
+    <div
+      class="modalPanel"
     >
-      <Portal
-        containerInfo={
-          <body>
-            <div
-              class="modalPortal modalPortalIsOpen"
-            >
-              <div
-                class="modalPanel"
-              >
-                <div
-                  aria-hidden="false"
-                  aria-modal="true"
-                  class="modalContent"
-                  role="dialog"
-                >
-                  <div
-                    class="root"
-                  >
-                    <p>
-                      Hello World!
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </body>
-        }
+      <div
+        aria-hidden="false"
+        aria-modal="true"
+        class="modalContent"
+        role="dialog"
       >
         <div
-          className="modalPortal modalPortalIsOpen"
+          class="root"
         >
-          <div
-            className="modalPanel"
-          >
-            <div
-              aria-hidden={false}
-              aria-modal="true"
-              className="modalContent"
-              role="dialog"
-            >
-              <Component
-                isOpen={true}
-                onRequestClose={[Function]}
-              >
-                <div
-                  className="root"
-                >
-                  <p>
-                    Hello World!
-                  </p>
-                </div>
-              </Component>
-            </div>
-          </div>
+          Hello World!
         </div>
-      </Portal>
-    </ModalPortal>
-  </NakedModal>
-</MockedModal>
+      </div>
+    </div>
+  </div>
+</body>
 `;

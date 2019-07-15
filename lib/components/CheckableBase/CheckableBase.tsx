@@ -40,7 +40,7 @@ export const CheckableBase: FunctionComponent<Props> = ({
 		<div
 			className={clsx([styles.root, className], {
 				[styles.checked]: checked,
-				[styles.disabled]: disabled === true,
+				[styles.disabled]: disabled,
 			})}>
 			<input
 				name={inputName}
