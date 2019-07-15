@@ -1,148 +1,161 @@
 import React from 'react';
-import { mount, render } from 'enzyme';
-import { TextAreaInput } from './TextAreaInput';
+import { TextAreaInput } from '.';
+import { fireEvent, render } from '@testing-library/react';
 
 describe('<TextAreaInput />', () => {
-	it('should not throw', () => {
-		expect(() =>
-			mount(
-				<TextAreaInput placeholder="placeholder something" />,
-			).unmount(),
-		).not.toThrow();
+	it('should match snapshot', () => {
+		expect(
+			render(
+				<TextAreaInput placeholder="placeholder something" id="id" />,
+			).container.firstChild,
+		).toMatchSnapshot();
 	});
 
-	it('should have a textarea tag', () => {
-		const textAreaInput = mount(
-			<TextAreaInput placeholder="placeholder something" />,
+	it('should have some hintText', () => {
+		const hintText = () => 'hint text';
+
+		const { container } = render(
+			<TextAreaInput
+				placeholder="placeholder"
+				id="id"
+				hintText={hintText()}
+			/>,
 		);
-		expect(textAreaInput.find('textarea').exists()).toEqual(true);
-		textAreaInput.unmount();
+
+		expect(container.firstChild).toMatchSnapshot();
+
+		expect(container).toHaveTextContent(hintText());
+	});
+
+	it('should have input type of textarea', () => {
+		const { container } = render(
+			<TextAreaInput
+				className="input-class"
+				placeholder="placeholder something"
+			/>,
+		);
+		expect(container.querySelector('textarea')).toBeInTheDocument();
 	});
 
 	it('should pass on className to dom element', () => {
-		const textAreaInput = mount(
+		const { container } = render(
 			<TextAreaInput
-				className="textarea-input-class"
+				className="input-class"
 				placeholder="placeholder something"
 			/>,
 		);
-		expect(textAreaInput.hasClass('textarea-input-class')).toBeTruthy();
-		textAreaInput.unmount();
+		expect(container.firstChild).toHaveClass('input-class');
 	});
 
-	it('should match snapshot for default textarea input', () => {
-		const textAreaInput = render(
+	it('should match snapshot when active', () => {
+		const { container } = render(
 			<TextAreaInput
-				className="textarea-input-class"
+				className="input-class"
 				placeholder="placeholder something"
 			/>,
 		);
-		expect(textAreaInput).toMatchSnapshot();
+
+		fireEvent.focus(container.querySelector('textarea'));
+
+		fireEvent.change(container.querySelector('textarea'), {
+			target: { value: 'value from the tests' },
+		});
+
+		expect(container.firstChild).toMatchSnapshot();
 	});
 
-	it('should match snapshot for active select input', () => {
-		const textAreaInput = mount(
-			<TextAreaInput
-				className="textarea-input-class"
-				placeholder="placeholder something"
-			/>,
-		);
-
-		textAreaInput.find('textarea').simulate('focus');
-
-		textAreaInput
-			.find('textarea')
-			.simulate('change', { target: { value: 'Test value' } });
-
-		// Snapshot confirms this
-		expect(textAreaInput).toMatchSnapshot();
-
-		textAreaInput.unmount();
+	it('should match snapshot when touched', () => {
+		expect(
+			render(
+				<TextAreaInput
+					isTouched
+					className="input-class"
+					placeholder="placeholder something"
+				/>,
+			).container.firstChild,
+		).toMatchSnapshot();
 	});
 
-	it('should match snapshot for touched select input', () => {
-		const textAreaInput = render(
-			<TextAreaInput
-				isTouched
-				className="textarea-input-class"
-				placeholder="placeholder something"
-			/>,
-		);
-		expect(textAreaInput).toMatchSnapshot();
+	it('should match snapshot when touched and valid', () => {
+		expect(
+			render(
+				<TextAreaInput
+					isTouched
+					isValid
+					className="input-class"
+					placeholder="placeholder something"
+				/>,
+			).container.firstChild,
+		).toMatchSnapshot();
 	});
 
-	it('should match snapshot for touched valid select input', () => {
-		const textAreaInput = render(
-			<TextAreaInput
-				isTouched
-				isValid
-				className="textarea-input-class"
-				placeholder="placeholder something"
-			/>,
-		);
-		expect(textAreaInput).toMatchSnapshot();
-	});
-
-	it('should match snapshot for touched invalid select input', () => {
-		const textAreaInput = render(
-			<TextAreaInput
-				isTouched
-				isValid={false}
-				className="textarea-input-class"
-				placeholder="placeholder something"
-			/>,
-		);
-		expect(textAreaInput).toMatchSnapshot();
+	it('should match snapshot when touched and invalid', () => {
+		expect(
+			render(
+				<TextAreaInput
+					isTouched
+					isValid={false}
+					className="input-class"
+					placeholder="placeholder something"
+				/>,
+			).container.firstChild,
+		).toMatchSnapshot();
 	});
 
 	it('should display placeholder text', () => {
-		const textAreaInput = render(
+		const { container } = render(
 			<TextAreaInput placeholder="placeholder something" />,
 		);
-		expect(textAreaInput.find('label').text()).toEqual(
+
+		expect(container.querySelector('label')).toHaveTextContent(
 			'placeholder something',
 		);
 	});
 
 	it('should fire onFocus event', () => {
 		const spyedCallback = jest.fn();
-		const textAreaInput = mount(
+
+		const { container } = render(
 			<TextAreaInput
 				placeholder="placeholder something"
 				onFocus={spyedCallback}
 			/>,
 		);
-		textAreaInput.find('textarea').simulate('focus');
 
-		expect(spyedCallback).toHaveBeenCalled();
-		textAreaInput.unmount();
+		fireEvent.focus(container.querySelector('textarea'));
+
+		expect(spyedCallback).toHaveBeenCalledTimes(1);
 	});
 
 	it('should fire onBlur event', () => {
 		const spyedCallback = jest.fn();
-		const textAreaInput = mount(
+
+		const { container } = render(
 			<TextAreaInput
 				placeholder="placeholder something"
 				onBlur={spyedCallback}
 			/>,
 		);
-		textAreaInput.find('textarea').simulate('blur');
 
-		expect(spyedCallback).toHaveBeenCalled();
-		textAreaInput.unmount();
+		fireEvent.blur(container.querySelector('textarea'));
+
+		expect(spyedCallback).toHaveBeenCalledTimes(1);
 	});
 
 	it('should fire onChange event', () => {
 		const spyedCallback = jest.fn();
-		const textAreaInput = mount(
+
+		const { container } = render(
 			<TextAreaInput
 				placeholder="placeholder something"
 				onChange={spyedCallback}
 			/>,
 		);
-		textAreaInput.find('textarea').simulate('change');
 
-		expect(spyedCallback).toHaveBeenCalled();
-		textAreaInput.unmount();
+		fireEvent.change(container.querySelector('textarea'), {
+			target: { value: 'test' },
+		});
+
+		expect(spyedCallback).toHaveBeenCalledTimes(1);
 	});
 });

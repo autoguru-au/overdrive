@@ -22,7 +22,7 @@ exports[`<DateInput /> should have some hintText 1`] = `
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:96.31px"
+        style="width: 16px;"
       >
         <label
           class="notchedBasePlaceholder"
@@ -37,7 +37,7 @@ exports[`<DateInput /> should have some hintText 1`] = `
     </div>
   </div>
   <p
-    class="hintText"
+    class="root sizeScale1 hintText"
   >
     hint text
   </p>
@@ -66,13 +66,13 @@ exports[`<DateInput /> should match snapshot 1`] = `
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:102.47px"
+        style="width: 16px;"
       >
         <label
           class="notchedBasePlaceholder"
           for="id"
         >
-          Hello World!
+          placeholder something
         </label>
       </div>
       <div
@@ -83,9 +83,46 @@ exports[`<DateInput /> should match snapshot 1`] = `
 </div>
 `;
 
-exports[`<DateInput /> should match snapshot for active date input 1`] = `
+exports[`<DateInput /> should match snapshot when active 1`] = `
 <div
-  class="root date-input-class"
+  class="root input-class"
+>
+  <div
+    class="notchedBase notchedBaseShift notchedBaseActive"
+  >
+    <input
+      autocomplete="off"
+      class="input"
+      type="date"
+      value="2019-01-21"
+    />
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width: 16px;"
+      >
+        <label
+          class="notchedBasePlaceholder"
+        >
+          placeholder something
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<DateInput /> should match snapshot when touched 1`] = `
+<div
+  class="root input-class"
 >
   <div
     class="notchedBase notchedBaseShift"
@@ -104,12 +141,12 @@ exports[`<DateInput /> should match snapshot for active date input 1`] = `
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:102.47px"
+        style="width: 16px;"
       >
         <label
           class="notchedBasePlaceholder"
         >
-          Hello World!
+          placeholder something
         </label>
       </div>
       <div
@@ -120,9 +157,9 @@ exports[`<DateInput /> should match snapshot for active date input 1`] = `
 </div>
 `;
 
-exports[`<DateInput /> should match snapshot for default date input 1`] = `
+exports[`<DateInput /> should match snapshot when touched and invalid 1`] = `
 <div
-  class="root date-input-class"
+  class="root input-class invalid withStatus"
 >
   <div
     class="notchedBase notchedBaseShift"
@@ -141,12 +178,12 @@ exports[`<DateInput /> should match snapshot for default date input 1`] = `
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:102.47px"
+        style="width: 16px;"
       >
         <label
           class="notchedBasePlaceholder"
         >
-          Hello World!
+          placeholder something
         </label>
       </div>
       <div
@@ -157,9 +194,9 @@ exports[`<DateInput /> should match snapshot for default date input 1`] = `
 </div>
 `;
 
-exports[`<DateInput /> should match snapshot for touched date input 1`] = `
+exports[`<DateInput /> should match snapshot when touched and valid 1`] = `
 <div
-  class="root date-input-class"
+  class="root input-class valid withStatus"
 >
   <div
     class="notchedBase notchedBaseShift"
@@ -178,86 +215,12 @@ exports[`<DateInput /> should match snapshot for touched date input 1`] = `
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:102.47px"
+        style="width: 16px;"
       >
         <label
           class="notchedBasePlaceholder"
         >
-          Hello World!
-        </label>
-      </div>
-      <div
-        class="notchedBaseBorderTrailing"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`<DateInput /> should match snapshot for touched invalid date input 1`] = `
-<div
-  class="root date-input-class invalid withStatus"
->
-  <div
-    class="notchedBase notchedBaseShift"
-  >
-    <input
-      autocomplete="off"
-      class="input"
-      type="date"
-      value="2019-01-21"
-    />
-    <div
-      class="notchedBaseBorder"
-    >
-      <div
-        class="notchedBaseBorderLeading"
-      />
-      <div
-        class="notchedBaseBorderNotch"
-        style="width:102.47px"
-      >
-        <label
-          class="notchedBasePlaceholder"
-        >
-          Hello World!
-        </label>
-      </div>
-      <div
-        class="notchedBaseBorderTrailing"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`<DateInput /> should match snapshot for touched valid date input 1`] = `
-<div
-  class="root date-input-class valid withStatus"
->
-  <div
-    class="notchedBase notchedBaseShift"
-  >
-    <input
-      autocomplete="off"
-      class="input"
-      type="date"
-      value="2019-01-21"
-    />
-    <div
-      class="notchedBaseBorder"
-    >
-      <div
-        class="notchedBaseBorderLeading"
-      />
-      <div
-        class="notchedBaseBorderNotch"
-        style="width:102.47px"
-      >
-        <label
-          class="notchedBasePlaceholder"
-        >
-          Hello World!
+          placeholder something
         </label>
       </div>
       <div

@@ -37,54 +37,6 @@ exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
 </div>
 `;
 
-exports[`<CheckBox /> should match the snapshot for a focused check 1`] = `
-<Component
-  value="1"
->
-  <CheckableBase
-    checked={false}
-    className="checkbox"
-    disabled={false}
-    handleChange={[Function]}
-    handleClick={[Function]}
-    inputName=""
-    inputType="checkbox"
-    label="check label 1"
-    value="1"
-  >
-    <div
-      className="root checkbox"
-    >
-      <input
-        checked={false}
-        className="nativeInput"
-        disabled={false}
-        name=""
-        onChange={[Function]}
-        onClick={[Function]}
-        type="checkbox"
-        value="1"
-      />
-      <div
-        className="checkable base"
-      >
-        <div
-          className="box"
-        />
-      </div>
-      <div
-        className="focusRect"
-      />
-      <label
-        className="label"
-      >
-        check label 1
-      </label>
-    </div>
-  </CheckableBase>
-</Component>
-`;
-
 exports[`<CheckBox /> should match the snapshot for a single check 1`] = `
 <div
   class="root checkbox"
@@ -121,6 +73,7 @@ exports[`<CheckBox /> should match the snapshot for a single check with no value
     class="nativeInput"
     name=""
     type="checkbox"
+    value=""
   />
   <div
     class="checkable base"
@@ -138,4 +91,34 @@ exports[`<CheckBox /> should match the snapshot for a single check with no value
 </div>
 `;
 
-exports[`<CheckBox /> when with component child should match the snapshot 1`] = `"<input type=\\"checkbox\\" name value=\\"1\\" class=\\"nativeInput\\"><div class=\\"checkable base\\"><div class=\\"box\\"></div></div><div class=\\"focusRect\\"></div><label class=\\"label\\"><h1 class=\\"root sizeScale6\\">Hello checkbox</h1></label>"`;
+exports[`<CheckBox /> when with component child should match the snapshot 1`] = `
+<div
+  class="root checkbox"
+>
+  <input
+    class="nativeInput"
+    name=""
+    type="checkbox"
+    value="1"
+  />
+  <div
+    class="checkable base"
+  >
+    <div
+      class="box"
+    />
+  </div>
+  <div
+    class="focusRect"
+  />
+  <label
+    class="label"
+  >
+    <h1
+      class="root sizeScale6"
+    >
+      Hello checkbox
+    </h1>
+  </label>
+</div>
+`;

@@ -22,7 +22,7 @@ exports[`<TextInput /> should have some hintText 1`] = `
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:0"
+        style="width: 0px;"
       >
         <label
           class="notchedBasePlaceholder"
@@ -37,7 +37,7 @@ exports[`<TextInput /> should have some hintText 1`] = `
     </div>
   </div>
   <p
-    class="hintText"
+    class="root sizeScale1 hintText"
   >
     hint text
   </p>
@@ -66,7 +66,7 @@ exports[`<TextInput /> should match snapshot 1`] = `
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:0"
+        style="width: 0px;"
       >
         <label
           class="notchedBasePlaceholder"
@@ -83,99 +83,18 @@ exports[`<TextInput /> should match snapshot 1`] = `
 </div>
 `;
 
-exports[`<TextInput /> should match snapshot for active text input 1`] = `
-<EnhancedInput(TextInputComponent)
-  className="text-input-class"
-  placeholder="placeholder something"
->
-  <div
-    className="root text-input-class"
-  >
-    <NotchedBase
-      isActive={true}
-      isEmpty={false}
-      placeholder="placeholder something"
-    >
-      <div
-        className="notchedBase notchedBaseShift notchedBaseActive"
-      >
-        <TextInputComponent
-          eventHandlers={
-            Object {
-              "onBlur": [Function],
-              "onChange": [Function],
-              "onFocus": [Function],
-            }
-          }
-          field={
-            Object {
-              "className": "input",
-              "disabled": false,
-              "id": undefined,
-              "name": undefined,
-              "value": "Test value",
-            }
-          }
-          validation={
-            Object {
-              "isTouched": undefined,
-              "isValid": undefined,
-            }
-          }
-        >
-          <input
-            autoComplete="off"
-            className="input"
-            disabled={false}
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            type="text"
-            value="Test value"
-          />
-        </TextInputComponent>
-        <div
-          className="notchedBaseBorder"
-        >
-          <div
-            className="notchedBaseBorderLeading"
-          />
-          <div
-            className="notchedBaseBorderNotch"
-            style={
-              Object {
-                "width": 16,
-              }
-            }
-          >
-            <label
-              className="notchedBasePlaceholder"
-            >
-              placeholder something
-            </label>
-          </div>
-          <div
-            className="notchedBaseBorderTrailing"
-          />
-        </div>
-      </div>
-    </NotchedBase>
-  </div>
-</EnhancedInput(TextInputComponent)>
-`;
-
-exports[`<TextInput /> should match snapshot for default text input 1`] = `
+exports[`<TextInput /> should match snapshot when active 1`] = `
 <div
-  class="root text-input-class"
+  class="root input-class"
 >
   <div
-    class="notchedBase"
+    class="notchedBase notchedBaseShift notchedBaseActive"
   >
     <input
       autocomplete="off"
       class="input"
       type="text"
-      value=""
+      value="value from the tests"
     />
     <div
       class="notchedBaseBorder"
@@ -185,7 +104,7 @@ exports[`<TextInput /> should match snapshot for default text input 1`] = `
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:0"
+        style="width: 16px;"
       >
         <label
           class="notchedBasePlaceholder"
@@ -201,9 +120,9 @@ exports[`<TextInput /> should match snapshot for default text input 1`] = `
 </div>
 `;
 
-exports[`<TextInput /> should match snapshot for touched invalid text input 1`] = `
+exports[`<TextInput /> should match snapshot when touched 1`] = `
 <div
-  class="root text-input-class invalid withStatus"
+  class="root input-class"
 >
   <div
     class="notchedBase"
@@ -222,7 +141,7 @@ exports[`<TextInput /> should match snapshot for touched invalid text input 1`] 
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:0"
+        style="width: 0px;"
       >
         <label
           class="notchedBasePlaceholder"
@@ -238,9 +157,9 @@ exports[`<TextInput /> should match snapshot for touched invalid text input 1`] 
 </div>
 `;
 
-exports[`<TextInput /> should match snapshot for touched text input 1`] = `
+exports[`<TextInput /> should match snapshot when touched and invalid 1`] = `
 <div
-  class="root text-input-class"
+  class="root input-class invalid withStatus"
 >
   <div
     class="notchedBase"
@@ -259,7 +178,7 @@ exports[`<TextInput /> should match snapshot for touched text input 1`] = `
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:0"
+        style="width: 0px;"
       >
         <label
           class="notchedBasePlaceholder"
@@ -275,9 +194,9 @@ exports[`<TextInput /> should match snapshot for touched text input 1`] = `
 </div>
 `;
 
-exports[`<TextInput /> should match snapshot for touched valid text input 1`] = `
+exports[`<TextInput /> should match snapshot when touched and valid 1`] = `
 <div
-  class="root text-input-class valid withStatus"
+  class="root input-class valid withStatus"
 >
   <div
     class="notchedBase"
@@ -296,7 +215,7 @@ exports[`<TextInput /> should match snapshot for touched valid text input 1`] = 
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:0"
+        style="width: 0px;"
       >
         <label
           class="notchedBasePlaceholder"

@@ -1,88 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<TextAreaInput /> should match snapshot for active select input 1`] = `
-<EnhancedInput(TextAreaInputComponent)
-  className="textarea-input-class"
-  placeholder="placeholder something"
->
-  <div
-    className="root textarea-input-class"
-  >
-    <NotchedBase
-      isActive={true}
-      isEmpty={false}
-      placeholder="placeholder something"
-    >
-      <div
-        className="notchedBase notchedBaseShift notchedBaseActive"
-      >
-        <TextAreaInputComponent
-          eventHandlers={
-            Object {
-              "onBlur": [Function],
-              "onChange": [Function],
-              "onFocus": [Function],
-            }
-          }
-          field={
-            Object {
-              "className": "input",
-              "disabled": false,
-              "id": undefined,
-              "name": undefined,
-              "value": "Test value",
-            }
-          }
-          validation={
-            Object {
-              "isTouched": undefined,
-              "isValid": undefined,
-            }
-          }
-        >
-          <textarea
-            autoComplete="off"
-            className="input"
-            disabled={false}
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            value="Test value"
-          />
-        </TextAreaInputComponent>
-        <div
-          className="notchedBaseBorder"
-        >
-          <div
-            className="notchedBaseBorderLeading"
-          />
-          <div
-            className="notchedBaseBorderNotch"
-            style={
-              Object {
-                "width": 16,
-              }
-            }
-          >
-            <label
-              className="notchedBasePlaceholder"
-            >
-              placeholder something
-            </label>
-          </div>
-          <div
-            className="notchedBaseBorderTrailing"
-          />
-        </div>
-      </div>
-    </NotchedBase>
-  </div>
-</EnhancedInput(TextAreaInputComponent)>
-`;
-
-exports[`<TextAreaInput /> should match snapshot for default textarea input 1`] = `
+exports[`<TextAreaInput /> should have some hintText 1`] = `
 <div
-  class="root textarea-input-class"
+  class="root"
 >
   <div
     class="notchedBase"
@@ -90,6 +10,7 @@ exports[`<TextAreaInput /> should match snapshot for default textarea input 1`] 
     <textarea
       autocomplete="off"
       class="input"
+      id="id"
     />
     <div
       class="notchedBaseBorder"
@@ -99,7 +20,87 @@ exports[`<TextAreaInput /> should match snapshot for default textarea input 1`] 
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:0"
+        style="width: 0px;"
+      >
+        <label
+          class="notchedBasePlaceholder"
+          for="id"
+        >
+          placeholder
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+  <p
+    class="root sizeScale1 hintText"
+  >
+    hint text
+  </p>
+</div>
+`;
+
+exports[`<TextAreaInput /> should match snapshot 1`] = `
+<div
+  class="root"
+>
+  <div
+    class="notchedBase"
+  >
+    <textarea
+      autocomplete="off"
+      class="input"
+      id="id"
+    />
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width: 0px;"
+      >
+        <label
+          class="notchedBasePlaceholder"
+          for="id"
+        >
+          placeholder something
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextAreaInput /> should match snapshot when active 1`] = `
+<div
+  class="root input-class"
+>
+  <div
+    class="notchedBase notchedBaseShift notchedBaseActive"
+  >
+    <textarea
+      autocomplete="off"
+      class="input"
+    >
+      value from the tests
+    </textarea>
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width: 16px;"
       >
         <label
           class="notchedBasePlaceholder"
@@ -115,9 +116,9 @@ exports[`<TextAreaInput /> should match snapshot for default textarea input 1`] 
 </div>
 `;
 
-exports[`<TextAreaInput /> should match snapshot for touched invalid select input 1`] = `
+exports[`<TextAreaInput /> should match snapshot when touched 1`] = `
 <div
-  class="root textarea-input-class invalid withStatus"
+  class="root input-class"
 >
   <div
     class="notchedBase"
@@ -134,7 +135,7 @@ exports[`<TextAreaInput /> should match snapshot for touched invalid select inpu
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:0"
+        style="width: 0px;"
       >
         <label
           class="notchedBasePlaceholder"
@@ -150,9 +151,9 @@ exports[`<TextAreaInput /> should match snapshot for touched invalid select inpu
 </div>
 `;
 
-exports[`<TextAreaInput /> should match snapshot for touched select input 1`] = `
+exports[`<TextAreaInput /> should match snapshot when touched and invalid 1`] = `
 <div
-  class="root textarea-input-class"
+  class="root input-class invalid withStatus"
 >
   <div
     class="notchedBase"
@@ -169,7 +170,7 @@ exports[`<TextAreaInput /> should match snapshot for touched select input 1`] = 
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:0"
+        style="width: 0px;"
       >
         <label
           class="notchedBasePlaceholder"
@@ -185,9 +186,9 @@ exports[`<TextAreaInput /> should match snapshot for touched select input 1`] = 
 </div>
 `;
 
-exports[`<TextAreaInput /> should match snapshot for touched valid select input 1`] = `
+exports[`<TextAreaInput /> should match snapshot when touched and valid 1`] = `
 <div
-  class="root textarea-input-class valid withStatus"
+  class="root input-class valid withStatus"
 >
   <div
     class="notchedBase"
@@ -204,7 +205,7 @@ exports[`<TextAreaInput /> should match snapshot for touched valid select input 
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:0"
+        style="width: 0px;"
       >
         <label
           class="notchedBasePlaceholder"

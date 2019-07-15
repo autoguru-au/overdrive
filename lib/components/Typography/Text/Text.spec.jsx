@@ -1,27 +1,30 @@
 import React from 'react';
-import { mount, render, shallow } from 'enzyme/build';
+import { render } from '@testing-library/react';
 import { Text } from '.';
 
 describe('<Text />', () => {
-	it('should not throw', () => expect(() => shallow(<Text />)).not.toThrow());
+	it('should not throw', () => expect(() => render(<Text />)).not.toThrow());
 
 	it('should match snapshot when empty', () => {
-		expect(render(<Text />)).toMatchSnapshot();
+		expect(render(<Text />).container.firstChild).toMatchSnapshot();
 	});
 
 	it('should match snapshot with text', () => {
-		expect(render(<Text>Hello World</Text>)).toMatchSnapshot();
+		expect(
+			render(<Text>Hello World</Text>).container.firstChild,
+		).toMatchSnapshot();
 	});
 
 	it('should pass on className to dom element', () => {
-		const text = mount(<Text className="text-class" />);
-		expect(text.hasClass('text-class')).toBeTruthy();
-		text.unmount();
+		const { container } = render(<Text className="text-class" />);
+		expect(container.firstChild).toHaveClass('text-class');
 	});
 
 	describe('when muted', () => {
 		it('should match snapshot', () => {
-			expect(render(<Text muted>Hello World</Text>)).toMatchSnapshot();
+			expect(
+				render(<Text muted>Hello World</Text>).container.firstChild,
+			).toMatchSnapshot();
 		});
 	});
 });

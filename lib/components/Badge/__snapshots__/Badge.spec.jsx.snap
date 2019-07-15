@@ -7,9 +7,3 @@ exports[`<Badge /> should match snapshot with label 1`] = `
   Hello World!
 </span>
 `;
-
-exports[`<Badge /> should match snapshot without label 1`] = `
-<span
-  className="root colourDefault"
-/>
-`;

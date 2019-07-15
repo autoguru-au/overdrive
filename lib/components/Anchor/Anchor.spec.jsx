@@ -1,11 +1,9 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Anchor } from '.';
 import { Button } from '../Button';
 
-const testLabel = 'Hello World!';
-const testLink = 'https://www.hellowrold.com';
-const TestIcon = () => (
+const TestIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
 		<path d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z" />
 	</svg>
@@ -13,100 +11,86 @@ const TestIcon = () => (
 
 describe('<Anchor />', () => {
 	it('should not throw', () =>
-		expect(() => shallow(<Anchor />)).not.toThrow());
+		expect(() => render(<Anchor />)).not.toThrow());
 
 	it('should match snapshot without label', () => {
-		expect(shallow(<Anchor />)).toMatchSnapshot();
+		expect(render(<Anchor />).container.firstChild).toMatchSnapshot();
 	});
 
 	it('should match snapshot with label, icon and to props', () => {
-		const anchor = shallow(
-			<Anchor icon={TestIcon} label={testLabel} href={testLink} />,
-		);
-		expect(anchor).toMatchSnapshot();
+		expect(
+			render(
+				<Anchor
+					icon={TestIcon}
+					label="Hello World!"
+					href="https://www.autoguru.com.au"
+				/>,
+			).container.firstChild,
+		).toMatchSnapshot();
 	});
 
 	it('should add an a dom element', () => {
-		const anchor = shallow(
-			<Anchor className="anchor-class" label={testLabel} />,
+		const { container } = render(
+			<Anchor className="anchor-class" label="Hello World!" />,
 		);
-		expect(anchor.type()).toEqual(`a`);
+		expect(container.querySelector('a')).toBeTruthy();
 	});
 
-	it('should pass on className to dom element', () => {
-		const anchor = shallow(
-			<Anchor className="anchor-class" label={testLabel} />,
-		);
-		expect(anchor.find('a').hasClass('anchor-class')).toBeTruthy();
+	it('should pass on className', () => {
+		expect(
+			render(<Anchor className="test" />).container.firstChild,
+		).toHaveClass('test');
 	});
 
 	it('should add a span element inside the a tag with the the label text value', () => {
-		const anchor = mount(<Anchor label={testLabel} href={testLink} />);
-		expect(anchor.find('span').text()).toEqual(testLabel);
-		anchor.unmount();
+		const { container } = render(
+			<Anchor label="Hello World!" href="https://www.autoguru.com.au" />,
+		);
+		expect(container).toHaveTextContent('Hello World!');
 	});
 
 	it('should the icon passed in props', () => {
-		const anchor = shallow(
-			<Anchor icon={TestIcon} label={testLabel} href={testLink} />,
+		const { container } = render(
+			<Anchor
+				icon={TestIcon}
+				label="Hello World!"
+				href="https://www.autoguru.com.au"
+			/>,
 		);
-		expect(anchor.find('.icon').exists()).toBeTruthy();
+		expect(container.querySelector('.icon')).toBeTruthy();
 	});
 
-	it("should use the 'to' prop value for the a tag's href value", () => {
-		const anchor = shallow(
-			<Anchor icon={TestIcon} label={testLabel} href={testLink} />,
+	it('should use the listen to the href attribute', () => {
+		const { container } = render(
+			<Anchor
+				icon={TestIcon}
+				label="Hello World!"
+				href="https://www.autoguru.com.au"
+			/>,
 		);
-		expect(anchor.find('a').prop('href')).toEqual(testLink);
+		expect(container.firstChild).toHaveAttribute(
+			'href',
+			'https://www.autoguru.com.au',
+		);
 	});
 
 	describe('when custom component', () => {
 		it('should add Button dom element if button component is passed down to it', () => {
-			const anchor = shallow(
+			const { container } = render(
 				<Anchor
 					className="anchor-class"
-					label={testLabel}
+					label="Hello World!"
 					is={<Button />}
 				/>,
 			);
-			expect(anchor.find(Button)).toBeTruthy();
+			expect(container.querySelector('button')).toBeTruthy();
 		});
 
 		it('should match snapshot with label, icon custom component', () => {
-			const anchor = shallow(
-				<Anchor
-					icon={TestIcon}
-					is={<Button />}
-					label={testLabel}
-					to={testLink}
-				/>,
+			const { container } = render(
+				<Anchor icon={TestIcon} is={<Button />} label="Hello World!" />,
 			);
-			expect(anchor).toMatchSnapshot();
-		});
-
-		describe('deprecated still work', () => {
-			it('should add Button dom element if button component is passed down to it', () => {
-				const anchor = shallow(
-					<Anchor
-						className="anchor-class"
-						label={testLabel}
-						component={Button}
-					/>,
-				);
-				expect(anchor.find(Button)).toBeTruthy();
-			});
-
-			it('should match snapshot with label, icon custom component', () => {
-				const anchor = shallow(
-					<Anchor
-						icon={TestIcon}
-						compnent={Button}
-						label={testLabel}
-						to={testLink}
-					/>,
-				);
-				expect(anchor).toMatchSnapshot();
-			});
+			expect(container.firstChild).toMatchSnapshot();
 		});
 	});
 });

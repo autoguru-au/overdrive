@@ -1,9 +1,14 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { {{pascalCase name}} } from './{{pascalCase name}}';
+import { render } from '@testing-library/react';
+import { {{pascalCase name}} } from '.';
 
 describe('<{{pascalCase name}}/>', () => {
 	it('should not throw', () => {
-		expect(() => mount(<{{pascalCase name}} />).unmount()).not.toThrow();
+		expect(() => render(<{{pascalCase name}} />)).not.toThrow();
+	});
+
+	it('should match the snapshot', () => {
+		expect(render(<{{pascalCase name}} />).container.firstChild)
+			.toMatchSnapshot();
 	});
 });

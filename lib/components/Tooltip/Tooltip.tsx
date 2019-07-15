@@ -3,7 +3,7 @@ import React, {
 	cloneElement,
 	FunctionComponent,
 	ReactElement,
-	useEffect,
+	useCallback,
 	useRef,
 	useState,
 } from 'react';
@@ -27,81 +27,29 @@ export const Tooltip: FunctionComponent<Props> = ({
 	const childRef = useRef<HTMLDivElement>();
 	const triggerRef = useRef<HTMLElement>();
 
-	const enterHandlers = ['mouseenter', 'touchenter'];
-	const leaveHandlers = ['mouseleave', 'touchleave'];
+	const leaveTimer = useRef<number>();
 
-	useEffect(() => {
-		let leaveTimer;
-		let current = true;
-
-		if (triggerRef.current) {
-			const close = () => {
-				if (current) {
-					setIsOpen(false);
-				}
-			};
-
-			const open = () => {
-				if (current) {
-					setIsOpen(true);
-				}
-			};
-
-			const enterHandler = () => {
-				if (leaveTimer) {
-					clearTimeout(leaveTimer);
-				}
-
-				open();
-			};
-
-			const leaveHandler = () => {
-				leaveTimer = setTimeout(() => {
-					close();
-				}, 1e3 / 2);
-			};
-
-			enterHandlers.forEach(handler =>
-				triggerRef.current.addEventListener(handler, enterHandler, {
-					passive: true,
-				}),
-			);
-			leaveHandlers.forEach(handler =>
-				triggerRef.current.addEventListener(handler, leaveHandler, {
-					passive: true,
-				}),
-			);
-
-			return () => {
-				current = false;
-
-				if (triggerRef.current) {
-					enterHandlers.forEach(handler =>
-						triggerRef.current.removeEventListener(
-							handler,
-							enterHandler,
-						),
-					);
-					leaveHandlers.forEach(handler =>
-						triggerRef.current.removeEventListener(
-							handler,
-							leaveHandler,
-						),
-					);
-				}
-			};
+	const enterHandler = useCallback(() => {
+		if (leaveTimer.current) {
+			window.clearTimeout(leaveTimer.current);
 		}
 
-		return () => {
-			current = false;
-		};
-	}, [enterHandlers, leaveHandlers, triggerRef]);
+		setIsOpen(true);
+	}, [setIsOpen]);
+
+	const leaveHandler = useCallback(() => {
+		leaveTimer.current = window.setTimeout(() => {
+			setIsOpen(false);
+		}, 1e3 / 2);
+	}, [setIsOpen]);
 
 	return (
 		<>
 			{Children.only(children) &&
 				cloneElement(children, {
 					ref: triggerRef,
+					onMouseEnter: enterHandler,
+					onMouseLeave: leaveHandler,
 				})}
 			<Positioner
 				triggerRef={triggerRef}

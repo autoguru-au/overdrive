@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import { mount, render, shallow } from 'enzyme';
+import { act, fireEvent, render } from '@testing-library/react';
 import { Stepper } from './Stepper';
-import { act } from 'react-dom/test-utils';
 
 describe('<Stepper />', () => {
 	it('should not throw', () =>
-		expect(() => shallow(<Stepper />)).not.toThrow());
+		expect(() => render(<Stepper />)).not.toThrow());
 
 	it('should match snapshot without props', () => {
-		expect(render(<Stepper />)).toMatchSnapshot();
+		expect(render(<Stepper />).container.firstChild).toMatchSnapshot();
 	});
 
 	it('should match snapshot with props', () => {
 		expect(
-			render(<Stepper min={-20} max={20} value={19} step={1.5} />),
+			render(<Stepper min={-20} max={20} value={19} step={1.5} />)
+				.container.firstChild,
 		).toMatchSnapshot();
 	});
 
@@ -27,17 +27,19 @@ describe('<Stepper />', () => {
 					step={5}
 					format={value => `${value}%`}
 				/>,
-			),
+			).container.firstChild,
 		).toMatchSnapshot();
 	});
 
 	it('should pass on className to dom element', () => {
-		const stepper = mount(<Stepper className="stepper-class" value={10} />);
-		expect(stepper.find('div.stepper-class').length === 1).toBeTruthy();
+		expect(
+			render(<Stepper className="stepper-class" value={10} />).container
+				.firstChild,
+		).toHaveClass('stepper-class');
 	});
 
 	it('should add a span element with the formatted value in it', () => {
-		const stepper = mount(
+		const { container } = render(
 			<Stepper
 				min={0}
 				max={100}
@@ -46,16 +48,12 @@ describe('<Stepper />', () => {
 				format={value => `$${value}`}
 			/>,
 		);
-		expect(
-			stepper
-				.find('span')
-				.first()
-				.text(),
-		).toEqual('$99');
+
+		expect(container).toHaveTextContent('$99');
 	});
 
 	it('should display passed down value even when outside acceptable boundaries', () => {
-		const stepper = mount(
+		const { container } = render(
 			<Stepper
 				min={-100}
 				max={40}
@@ -64,18 +62,13 @@ describe('<Stepper />', () => {
 				format={value => `${value}%`}
 			/>,
 		);
-		expect(
-			stepper
-				.find('span')
-				.first()
-				.text(),
-		).toEqual('45%');
+		expect(container).toHaveTextContent('45%');
 	});
 
 	it('should fire change with the correct changed value after next and previous button click', () => {
 		const spyedCallback = jest.fn(value => `${value}%`);
 
-		const wrapper = mount(
+		const { container, getByLabelText } = render(
 			<Stepper
 				min={-100}
 				max={100}
@@ -85,39 +78,24 @@ describe('<Stepper />', () => {
 			/>,
 		);
 
-		expect(
-			wrapper
-				.find('span')
-				.first()
-				.text(),
-		).toEqual('45%');
+		expect(container).toHaveTextContent('45%');
 
-		wrapper
-			.find('button')
-			.at(1)
-			.simulate('click');
+		fireEvent.click(getByLabelText('step up'));
 
 		expect(spyedCallback).toHaveBeenCalledWith(50);
 
-		wrapper
-			.find('button')
-			.at(1)
-			.simulate('click');
+		fireEvent.click(getByLabelText('step up'));
 
 		expect(spyedCallback).toHaveBeenCalledWith(55);
 
-		wrapper
-			.find('button')
-			.at(0)
-			.simulate('click');
+		fireEvent.click(getByLabelText('step down'));
 
 		expect(spyedCallback).toHaveBeenCalledWith(50);
-
-		wrapper.unmount();
 	});
 
-	it('should update its value when and a value prop comes in', done => {
+	it('should update its value when and a value prop comes in', () => {
 		const spyedCallback = jest.fn(value => `$${value}`);
+
 		const StepperWrapper = ({ getValueSetter }) => {
 			const [value, setValue] = useState(16);
 
@@ -134,68 +112,39 @@ describe('<Stepper />', () => {
 			);
 		};
 
-		const wrapper = mount(<StepperWrapper getValueSetter={onSetValue} />);
+		let valueSetter;
+		const { container, getByLabelText } = render(
+			<StepperWrapper
+				getValueSetter={setter => {
+					valueSetter = setter;
+				}}
+			/>,
+		);
 
-		function onSetValue(setValue) {
-			setTimeout(() => {
-				expect(
-					wrapper
-						.find('span')
-						.first()
-						.text(),
-				).toEqual('$16');
+		expect(container).toHaveTextContent('$16');
 
-				act(() => {
-					setValue(199);
-				});
+		act(() => valueSetter(199));
 
-				expect(
-					wrapper
-						.find('span')
-						.first()
-						.text(),
-				).toEqual('$199');
+		expect(container).toHaveTextContent('$199');
 
-				wrapper
-					.find('button')
-					.at(1)
-					.simulate('click');
+		fireEvent.click(getByLabelText('step up'));
 
-				expect(
-					wrapper
-						.find('span')
-						.first()
-						.text(),
-				).toEqual('$100');
+		// This is true, because the ceiling is 100, so a plus on $199, is $100.
+		expect(container).toHaveTextContent('$100');
 
-				act(() => {
-					setValue(250);
-				});
+		act(() => valueSetter(250));
 
-				wrapper
-					.find('button')
-					.at(1)
-					.simulate('click');
+		fireEvent.click(getByLabelText('step up'));
 
-				expect(
-					wrapper
-						.find('span')
-						.first()
-						.text(),
-				).toEqual('$100');
+		expect(container).toHaveTextContent('$100');
 
-				expect(spyedCallback).toHaveBeenCalledTimes(7);
-
-				wrapper.unmount();
-				done();
-			}, 100);
-		}
+		expect(spyedCallback).toHaveBeenCalledTimes(7);
 	});
 
 	it('should onChange when the value changes', () => {
 		const onChangeHandler = jest.fn();
 
-		const stepper = mount(
+		const { container, getByLabelText } = render(
 			<Stepper
 				min={-100}
 				max={100}
@@ -205,25 +154,14 @@ describe('<Stepper />', () => {
 			/>,
 		);
 
-		expect(
-			stepper
-				.find('span')
-				.first()
-				.text(),
-		).toEqual('1');
+		expect(container).toHaveTextContent('1');
 
-		stepper
-			.find('button')
-			.at(1)
-			.simulate('click');
+		fireEvent.click(getByLabelText('step up'));
 
 		expect(onChangeHandler).toHaveBeenCalledTimes(1);
 		expect(onChangeHandler).toHaveBeenCalledWith(1.5);
 
-		stepper
-			.find('button')
-			.at(1)
-			.simulate('click');
+		fireEvent.click(getByLabelText('step up'));
 
 		expect(onChangeHandler).toHaveBeenCalledTimes(2);
 		expect(onChangeHandler).toHaveBeenCalledWith(2);
@@ -233,7 +171,7 @@ describe('<Stepper />', () => {
 		it('should increment when ArrowRight is activated', () => {
 			const onChangeHandler = jest.fn();
 
-			const stepper = mount(
+			const { container } = render(
 				<Stepper
 					min={0}
 					max={100}
@@ -243,18 +181,17 @@ describe('<Stepper />', () => {
 				/>,
 			);
 
-			stepper.simulate('keyDown', {
+			fireEvent.keyDown(container.firstChild, {
 				key: 'ArrowRight',
 			});
 
 			expect(onChangeHandler).toHaveBeenCalledWith(2);
-			stepper.unmount();
 		});
 
 		it('should decrement when ArrowLeft is activated', () => {
 			const onChangeHandler = jest.fn();
 
-			const stepper = mount(
+			const { container } = render(
 				<Stepper
 					min={0}
 					max={100}
@@ -264,18 +201,17 @@ describe('<Stepper />', () => {
 				/>,
 			);
 
-			stepper.simulate('keyDown', {
+			fireEvent.keyDown(container.firstChild, {
 				key: 'ArrowLeft',
 			});
 
 			expect(onChangeHandler).toHaveBeenCalledWith(0);
-			stepper.unmount();
 		});
 
 		it('should have max value when End is activated', () => {
 			const onChangeHandler = jest.fn();
 
-			const stepper = mount(
+			const { container } = render(
 				<Stepper
 					min={0}
 					max={100}
@@ -285,18 +221,17 @@ describe('<Stepper />', () => {
 				/>,
 			);
 
-			stepper.simulate('keyDown', {
+			fireEvent.keyDown(container.firstChild, {
 				key: 'End',
 			});
 
 			expect(onChangeHandler).toHaveBeenCalledWith(100);
-			stepper.unmount();
 		});
 
 		it('should have min value when Home is activated', () => {
 			const onChangeHandler = jest.fn();
 
-			const stepper = mount(
+			const { container } = render(
 				<Stepper
 					min={0}
 					max={100}
@@ -306,12 +241,11 @@ describe('<Stepper />', () => {
 				/>,
 			);
 
-			stepper.simulate('keyDown', {
+			fireEvent.keyDown(container.firstChild, {
 				key: 'Home',
 			});
 
 			expect(onChangeHandler).toHaveBeenCalledWith(0);
-			stepper.unmount();
 		});
 	});
 
@@ -319,7 +253,7 @@ describe('<Stepper />', () => {
 		it('should clamp min to a finite negative number', () => {
 			const onChangeHandler = jest.fn();
 
-			const stepper = mount(
+			const { container } = render(
 				<Stepper
 					max={100}
 					step={0.5}
@@ -328,20 +262,19 @@ describe('<Stepper />', () => {
 				/>,
 			);
 
-			stepper.simulate('keyDown', {
+			fireEvent.keyDown(container.firstChild, {
 				key: 'Home',
 			});
 
 			expect(onChangeHandler).toHaveBeenCalledWith(
 				Number.MIN_SAFE_INTEGER,
 			);
-			stepper.unmount();
 		});
 
 		it('should clamp max to a finite positive number', () => {
 			const onChangeHandler = jest.fn();
 
-			const stepper = mount(
+			const { container } = render(
 				<Stepper
 					min={0}
 					step={0.5}
@@ -350,14 +283,13 @@ describe('<Stepper />', () => {
 				/>,
 			);
 
-			stepper.simulate('keyDown', {
+			fireEvent.keyDown(container.firstChild, {
 				key: 'End',
 			});
 
 			expect(onChangeHandler).toHaveBeenCalledWith(
 				Number.MAX_SAFE_INTEGER,
 			);
-			stepper.unmount();
 		});
 	});
 });

@@ -1,22 +1,19 @@
 import React from 'react';
 import { TextInput } from '.';
-import { mount, render } from 'enzyme';
+import { fireEvent, render } from '@testing-library/react';
 
 describe('<TextInput />', () => {
 	it('should match snapshot', () => {
 		expect(
-			render(<TextInput placeholder="placeholder something" id="id" />),
+			render(<TextInput placeholder="placeholder something" id="id" />)
+				.container.firstChild,
 		).toMatchSnapshot();
-	});
-
-	it('should throw when required props not provided', () => {
-		expect(() => render(<TextInput />)).toThrow();
 	});
 
 	it('should have some hintText', () => {
 		const hintText = () => 'hint text';
 
-		const rendered = render(
+		const { container } = render(
 			<TextInput
 				placeholder="placeholder"
 				id="id"
@@ -24,144 +21,142 @@ describe('<TextInput />', () => {
 			/>,
 		);
 
-		expect(rendered).toMatchSnapshot();
+		expect(container.firstChild).toMatchSnapshot();
 
-		expect(rendered.find('.hintText').text()).toBe(hintText());
+		expect(container).toHaveTextContent(hintText());
 	});
 
 	it('should have input type of text', () => {
-		const textInput = mount(
+		const { container } = render(
 			<TextInput
-				className="text-input-class"
+				className="input-class"
 				placeholder="placeholder something"
 			/>,
 		);
-		expect(textInput.find('input').prop('type')).toEqual('text');
-		textInput.unmount();
+		expect(
+			container.querySelector('input[type="text"]'),
+		).toBeInTheDocument();
 	});
 
 	it('should pass on className to dom element', () => {
-		const textInput = mount(
+		const { container } = render(
 			<TextInput
-				className="text-input-class"
+				className="input-class"
 				placeholder="placeholder something"
 			/>,
 		);
-		expect(textInput.hasClass('text-input-class')).toBeTruthy();
-		textInput.unmount();
+		expect(container.firstChild).toHaveClass('input-class');
 	});
 
-	it('should match snapshot for default text input', () => {
-		const textInput = render(
+	it('should match snapshot when active', () => {
+		const { container } = render(
 			<TextInput
-				className="text-input-class"
+				className="input-class"
 				placeholder="placeholder something"
 			/>,
 		);
-		expect(textInput).toMatchSnapshot();
+
+		fireEvent.focus(container.querySelector('input'));
+
+		fireEvent.change(container.querySelector('input'), {
+			target: { value: 'value from the tests' },
+		});
+
+		expect(container.firstChild).toMatchSnapshot();
 	});
 
-	it('should match snapshot for active text input', () => {
-		const textInput = mount(
-			<TextInput
-				className="text-input-class"
-				placeholder="placeholder something"
-			/>,
-		);
-
-		textInput.find('input').simulate('focus');
-
-		textInput
-			.find('input')
-			.simulate('change', { target: { value: 'Test value' } });
-
-		// Snapshot confirms this
-		expect(textInput).toMatchSnapshot();
-
-		textInput.unmount();
+	it('should match snapshot when touched', () => {
+		expect(
+			render(
+				<TextInput
+					isTouched
+					className="input-class"
+					placeholder="placeholder something"
+				/>,
+			).container.firstChild,
+		).toMatchSnapshot();
 	});
 
-	it('should match snapshot for touched text input', () => {
-		const textInput = render(
-			<TextInput
-				isTouched
-				className="text-input-class"
-				placeholder="placeholder something"
-			/>,
-		);
-		expect(textInput).toMatchSnapshot();
+	it('should match snapshot when touched and valid', () => {
+		expect(
+			render(
+				<TextInput
+					isTouched
+					isValid
+					className="input-class"
+					placeholder="placeholder something"
+				/>,
+			).container.firstChild,
+		).toMatchSnapshot();
 	});
 
-	it('should match snapshot for touched valid text input', () => {
-		const textInput = render(
-			<TextInput
-				isTouched
-				isValid
-				className="text-input-class"
-				placeholder="placeholder something"
-			/>,
-		);
-		expect(textInput).toMatchSnapshot();
-	});
-
-	it('should match snapshot for touched invalid text input', () => {
-		const textInput = render(
-			<TextInput
-				isTouched
-				isValid={false}
-				className="text-input-class"
-				placeholder="placeholder something"
-			/>,
-		);
-		expect(textInput).toMatchSnapshot();
+	it('should match snapshot when touched and invalid', () => {
+		expect(
+			render(
+				<TextInput
+					isTouched
+					isValid={false}
+					className="input-class"
+					placeholder="placeholder something"
+				/>,
+			).container.firstChild,
+		).toMatchSnapshot();
 	});
 
 	it('should display placeholder text', () => {
-		const textInput = render(
+		const { container } = render(
 			<TextInput placeholder="placeholder something" />,
 		);
-		expect(textInput.find('label').text()).toEqual('placeholder something');
+
+		expect(container.querySelector('label')).toHaveTextContent(
+			'placeholder something',
+		);
 	});
 
 	it('should fire onFocus event', () => {
 		const spyedCallback = jest.fn();
-		const textInput = mount(
+
+		const { container } = render(
 			<TextInput
 				placeholder="placeholder something"
 				onFocus={spyedCallback}
 			/>,
 		);
-		textInput.find('input').simulate('focus');
 
-		expect(spyedCallback).toHaveBeenCalled();
-		textInput.unmount();
+		fireEvent.focus(container.querySelector('input'));
+
+		expect(spyedCallback).toHaveBeenCalledTimes(1);
 	});
 
 	it('should fire onBlur event', () => {
 		const spyedCallback = jest.fn();
-		const textInput = mount(
+
+		const { container } = render(
 			<TextInput
 				placeholder="placeholder something"
 				onBlur={spyedCallback}
 			/>,
 		);
-		textInput.find('input').simulate('blur');
 
-		expect(spyedCallback).toHaveBeenCalled();
-		textInput.unmount();
+		fireEvent.blur(container.querySelector('input'));
+
+		expect(spyedCallback).toHaveBeenCalledTimes(1);
 	});
 
 	it('should fire onChange event', () => {
 		const spyedCallback = jest.fn();
-		const textInput = mount(
+
+		const { container } = render(
 			<TextInput
 				placeholder="placeholder something"
 				onChange={spyedCallback}
 			/>,
 		);
-		textInput.find('input').simulate('change');
 
-		expect(spyedCallback).toHaveBeenCalled();
-		textInput.unmount();
+		fireEvent.change(container.querySelector('input'), {
+			target: { value: 'test' },
+		});
+
+		expect(spyedCallback).toHaveBeenCalledTimes(1);
 	});
 });

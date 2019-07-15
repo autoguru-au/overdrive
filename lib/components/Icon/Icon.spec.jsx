@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount, render, shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Icon } from './Icon';
 
 const TestIcon = (
@@ -10,26 +10,31 @@ const TestIcon = (
 
 describe('<Icon />', () => {
 	it('should not throw if SVG icon is passed', () => {
-		expect(() => shallow(<Icon icon={TestIcon} />)).not.toThrow();
+		expect(() => render(<Icon icon={TestIcon} />)).not.toThrow();
 	});
 
 	it('should pass on className to dom element', () => {
-		const icon = mount(<Icon icon={TestIcon} className="icon-class" />);
-		expect(icon.hasClass('icon-class')).toBeTruthy();
+		expect(
+			render(<Icon icon={TestIcon} className="icon-class" />).container
+				.firstChild,
+		).toHaveClass('icon-class');
 	});
 
 	it('should match snapshot for same icon', () => {
-		const icon = render(<Icon icon={TestIcon} />);
-		expect(icon).toMatchSnapshot();
+		expect(
+			render(<Icon icon={TestIcon} />).container.firstChild,
+		).toMatchSnapshot();
 	});
 
 	it('should an i tag for DOM element', () => {
-		const icon = shallow(<Icon icon={TestIcon} />);
-		expect(icon.type()).toEqual(`i`);
+		expect(
+			render(<Icon icon={TestIcon} />).container.querySelector('i'),
+		).toBeInTheDocument();
 	});
 
 	it('should nest the provided svg inside the i tag', () => {
-		const icon = render(<Icon icon={TestIcon} />);
-		expect(icon.find('i>svg')).toHaveLength(1);
+		expect(
+			render(<Icon icon={TestIcon} />).container.querySelector('i>svg'),
+		).toBeInTheDocument();
 	});
 });

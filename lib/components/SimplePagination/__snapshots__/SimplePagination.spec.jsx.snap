@@ -16,7 +16,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
     >
       <i
         class="root icon"
-        style="width:24px;height:24px"
+        style="width: 24px; height: 24px;"
       >
         <svg
           viewBox="0 0 512 512"
@@ -39,7 +39,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
     >
       <i
         class="root icon"
-        style="width:24px;height:24px"
+        style="width: 24px; height: 24px;"
       >
         <svg
           viewBox="0 0 512 512"
@@ -70,7 +70,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
     >
       <i
         class="root icon"
-        style="width:24px;height:24px"
+        style="width: 24px; height: 24px;"
       >
         <svg
           viewBox="0 0 512 512"
@@ -93,7 +93,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
     >
       <i
         class="root icon"
-        style="width:24px;height:24px"
+        style="width: 24px; height: 24px;"
       >
         <svg
           viewBox="0 0 512 512"
@@ -124,7 +124,7 @@ exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
     >
       <i
         class="root icon"
-        style="width:24px;height:24px"
+        style="width: 24px; height: 24px;"
       >
         <svg
           viewBox="0 0 512 512"
@@ -148,7 +148,7 @@ exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
     >
       <i
         class="root icon"
-        style="width:24px;height:24px"
+        style="width: 24px; height: 24px;"
       >
         <svg
           viewBox="0 0 512 512"

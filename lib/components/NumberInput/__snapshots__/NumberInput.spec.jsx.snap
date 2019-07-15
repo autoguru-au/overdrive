@@ -1,92 +1,94 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<NumberInput /> should match snapshot for active number input 1`] = `
-<EnhancedInput(NumberInputComponent)
-  className="number-input-class"
-  placeholder="placeholder something"
->
-  <div
-    className="root number-input-class"
-  >
-    <NotchedBase
-      isActive={true}
-      isEmpty={false}
-      placeholder="placeholder something"
-    >
-      <div
-        className="notchedBase notchedBaseShift notchedBaseActive"
-      >
-        <NumberInputComponent
-          eventHandlers={
-            Object {
-              "onBlur": [Function],
-              "onChange": [Function],
-              "onFocus": [Function],
-            }
-          }
-          field={
-            Object {
-              "className": "input",
-              "disabled": false,
-              "id": undefined,
-              "name": undefined,
-              "value": 3,
-            }
-          }
-          validation={
-            Object {
-              "isTouched": undefined,
-              "isValid": undefined,
-            }
-          }
-        >
-          <input
-            autoComplete="off"
-            className="input"
-            disabled={false}
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            type="number"
-            value={3}
-          />
-        </NumberInputComponent>
-        <div
-          className="notchedBaseBorder"
-        >
-          <div
-            className="notchedBaseBorderLeading"
-          />
-          <div
-            className="notchedBaseBorderNotch"
-            style={
-              Object {
-                "width": 16,
-              }
-            }
-          >
-            <label
-              className="notchedBasePlaceholder"
-            >
-              placeholder something
-            </label>
-          </div>
-          <div
-            className="notchedBaseBorderTrailing"
-          />
-        </div>
-      </div>
-    </NotchedBase>
-  </div>
-</EnhancedInput(NumberInputComponent)>
-`;
-
-exports[`<NumberInput /> should match snapshot for default number input 1`] = `
+exports[`<NumberInput /> should have some hintText 1`] = `
 <div
-  class="root number-input-class"
+  class="root"
 >
   <div
     class="notchedBase"
+  >
+    <input
+      autocomplete="off"
+      class="input"
+      id="id"
+      type="number"
+      value=""
+    />
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width: 0px;"
+      >
+        <label
+          class="notchedBasePlaceholder"
+          for="id"
+        >
+          placeholder
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+  <p
+    class="root sizeScale1 hintText"
+  >
+    hint text
+  </p>
+</div>
+`;
+
+exports[`<NumberInput /> should match snapshot 1`] = `
+<div
+  class="root"
+>
+  <div
+    class="notchedBase"
+  >
+    <input
+      autocomplete="off"
+      class="input"
+      id="id"
+      type="number"
+      value=""
+    />
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width: 0px;"
+      >
+        <label
+          class="notchedBasePlaceholder"
+          for="id"
+        >
+          placeholder something
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<NumberInput /> should match snapshot when active 1`] = `
+<div
+  class="root input-class"
+>
+  <div
+    class="notchedBase notchedBaseActive"
   >
     <input
       autocomplete="off"
@@ -102,7 +104,7 @@ exports[`<NumberInput /> should match snapshot for default number input 1`] = `
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:0"
+        style="width: 0px;"
       >
         <label
           class="notchedBasePlaceholder"
@@ -118,9 +120,9 @@ exports[`<NumberInput /> should match snapshot for default number input 1`] = `
 </div>
 `;
 
-exports[`<NumberInput /> should match snapshot for touched invalid number input 1`] = `
+exports[`<NumberInput /> should match snapshot when touched 1`] = `
 <div
-  class="root number-input-class invalid withStatus"
+  class="root input-class"
 >
   <div
     class="notchedBase"
@@ -139,7 +141,7 @@ exports[`<NumberInput /> should match snapshot for touched invalid number input 
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:0"
+        style="width: 0px;"
       >
         <label
           class="notchedBasePlaceholder"
@@ -155,9 +157,9 @@ exports[`<NumberInput /> should match snapshot for touched invalid number input 
 </div>
 `;
 
-exports[`<NumberInput /> should match snapshot for touched number input 1`] = `
+exports[`<NumberInput /> should match snapshot when touched and invalid 1`] = `
 <div
-  class="root number-input-class"
+  class="root input-class invalid withStatus"
 >
   <div
     class="notchedBase"
@@ -176,7 +178,7 @@ exports[`<NumberInput /> should match snapshot for touched number input 1`] = `
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:0"
+        style="width: 0px;"
       >
         <label
           class="notchedBasePlaceholder"
@@ -192,9 +194,9 @@ exports[`<NumberInput /> should match snapshot for touched number input 1`] = `
 </div>
 `;
 
-exports[`<NumberInput /> should match snapshot for touched valid number input 1`] = `
+exports[`<NumberInput /> should match snapshot when touched and valid 1`] = `
 <div
-  class="root number-input-class valid withStatus"
+  class="root input-class valid withStatus"
 >
   <div
     class="notchedBase"
@@ -213,7 +215,7 @@ exports[`<NumberInput /> should match snapshot for touched valid number input 1`
       />
       <div
         class="notchedBaseBorderNotch"
-        style="width:0"
+        style="width: 0px;"
       >
         <label
           class="notchedBasePlaceholder"

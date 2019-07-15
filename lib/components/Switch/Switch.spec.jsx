@@ -1,130 +1,137 @@
 import React, { useState } from 'react';
-import { mount, render, shallow } from 'enzyme';
+import { act, fireEvent, render } from '@testing-library/react';
 import { Switch } from './Switch';
-import { act } from 'react-dom/test-utils';
 
 describe('<Switch />', () => {
 	it('should not throw', () =>
-		expect(() => shallow(<Switch />)).not.toThrow());
+		expect(() => render(<Switch />)).not.toThrow());
 
 	it('should match snapshot without props', () => {
-		expect(render(<Switch />)).toMatchSnapshot();
+		expect(render(<Switch />).container.firstChild).toMatchSnapshot();
 	});
 
 	it('should match snapshot when un-toggled', () => {
-		expect(render(<Switch toggled={false} />)).toMatchSnapshot();
+		expect(
+			render(<Switch toggled={false} />).container.firstChild,
+		).toMatchSnapshot();
 	});
 
 	it('should match snapshot when un-toggled and disabled', () => {
-		expect(render(<Switch disabled toggled={false} />)).toMatchSnapshot();
+		expect(
+			render(<Switch disabled toggled={false} />).container.firstChild,
+		).toMatchSnapshot();
 	});
 
 	it('should match snapshot when toggled', () => {
-		expect(render(<Switch toggled />)).toMatchSnapshot();
+		expect(
+			render(<Switch toggled />).container.firstChild,
+		).toMatchSnapshot();
 	});
 
 	it('should match snapshot when toggled and disabled', () => {
-		expect(render(<Switch toggled disabled />)).toMatchSnapshot();
+		expect(
+			render(<Switch toggled disabled />).container.firstChild,
+		).toMatchSnapshot();
 	});
 
 	it('should pass on className to dom element', () => {
-		const toggleButton = mount(
-			<Switch className="toggleButton-class" value={10} />,
-		);
 		expect(
-			toggleButton.find('div.toggleButton-class').length === 1,
-		).toBeTruthy();
+			render(
+				<Switch className="toggleButton-class" value={10} />,
+			).container.querySelector('div'),
+		).toHaveClass('toggleButton-class');
 	});
 
 	it('should set toggle to false by default', () => {
-		const toggleButton = mount(<Switch />);
-		expect(toggleButton.find('.toggled').length === 0).toBeTruthy();
+		expect(render(<Switch />).container.firstChild).not.toHaveClass(
+			'toggled',
+		);
 	});
 
 	it('should be toggled on when toggled prop is set to true', () => {
-		const toggleButton = mount(<Switch toggled />);
-		expect(toggleButton.find('.toggled').length === 1).toBeTruthy();
+		expect(render(<Switch toggled />).container.firstChild).toHaveClass(
+			'toggled',
+		);
 	});
 
 	it('should be enabled by default', () => {
-		const toggleButton = mount(<Switch />);
-		expect(toggleButton.find('[disabled]').length === 0).toBeTruthy();
+		expect(
+			render(<Switch />).container.querySelector('.disabled'),
+		).not.toBeInTheDocument();
 	});
 
 	it('should be disabled on when disabled prop is set to true', () => {
-		const toggleButton = mount(<Switch disabled />);
-		expect(toggleButton.find('[disabled]').length === 1).toBeTruthy();
+		expect(
+			render(<Switch disabled />).container.querySelector('.disabled'),
+		).toBeInTheDocument();
+	});
+
+	it('should have aria-disabled attribute when disabled', () => {
+		const { container } = render(<Switch disabled />);
+
+		expect(container.firstChild).toHaveClass('disabled');
+		expect(container.firstChild).toHaveAttribute('aria-disabled', 'true');
 	});
 
 	it('should fire change with the correct changed value when clicked', () => {
 		const spyedCallback = jest.fn();
 
-		const wrapper = mount(
+		const { container } = render(
 			<Switch toggled={false} onChange={spyedCallback} />,
 		);
 
-		wrapper.find('div').simulate('click');
+		fireEvent.click(container.firstChild);
 
 		expect(spyedCallback).toHaveBeenCalledWith(true);
 
-		wrapper.find('div').simulate('click');
+		fireEvent.click(container.firstChild);
 
 		expect(spyedCallback).toHaveBeenCalledWith(false);
 
-		wrapper.find('div').simulate('click');
+		fireEvent.click(container.firstChild);
 
 		expect(spyedCallback).toHaveBeenCalledWith(true);
 		expect(spyedCallback).toHaveBeenCalledTimes(3);
-
-		wrapper.unmount();
 	});
 
 	it('should not fire change if clicked while disabled', () => {
 		const spyedCallback = jest.fn();
 
-		const wrapper = mount(
+		const { container } = render(
 			<Switch disabled toggled={false} onChange={spyedCallback} />,
 		);
 
-		wrapper.find('div').simulate('click');
+		fireEvent.click(container.firstChild);
 
 		expect(spyedCallback).not.toHaveBeenCalled();
-
-		wrapper.unmount();
 	});
 
-	it('should update its value when and a value prop comes in', done => {
-		const ToggleButtonWrapper = ({ getToggleSetter }) => {
+	it('should update its value when and a value prop comes in', () => {
+		const ToggleButtonWrapper = ({ setter }) => {
 			const [toggled, toggledValue] = useState(false);
 
-			getToggleSetter(toggledValue);
+			setter(toggledValue);
 
 			return <Switch toggled={toggled} />;
 		};
 
-		const wrapper = mount(
-			<ToggleButtonWrapper getToggleSetter={onSetToggle} />,
+		let setToggledValue;
+		const { container } = render(
+			<ToggleButtonWrapper
+				setter={setter => {
+					setToggledValue = setter;
+				}}
+			/>,
 		);
 
-		function onSetToggle(setToggle) {
-			setTimeout(() => {
-				expect(!wrapper.html().includes('toggled')).toEqual(true);
+		expect(container.firstChild).not.toHaveClass('toggled');
 
-				act(() => {
-					setToggle(true);
-				});
+		act(() => setToggledValue(true));
 
-				expect(wrapper.html().includes('toggled')).toEqual(true);
+		expect(container.firstChild).toHaveClass('toggled');
 
-				act(() => {
-					setToggle(false);
-				});
+		act(() => setToggledValue(false));
 
-				expect(!wrapper.html().includes('toggled')).toEqual(true);
-
-				wrapper.unmount();
-				done();
-			}, 100);
-		}
+		expect(container.firstChild).not.toHaveClass('toggled');
 	});
 });

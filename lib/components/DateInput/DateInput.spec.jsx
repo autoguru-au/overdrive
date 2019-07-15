@@ -1,27 +1,26 @@
 import React from 'react';
 import { DateInput } from '.';
-import { mount, render } from 'enzyme';
+import { fireEvent, render } from '@testing-library/react';
 
 const todayStr = new Date(2019, 0, 22).toISOString().split('T')[0];
-const testLabel = 'Hello World!';
 
 describe('<DateInput />', () => {
 	it('should match snapshot', () => {
 		expect(
 			render(
-				<DateInput value={todayStr} placeholder={testLabel} id="id" />,
-			),
+				<DateInput
+					value={todayStr}
+					placeholder="placeholder something"
+					id="id"
+				/>,
+			).container.firstChild,
 		).toMatchSnapshot();
-	});
-
-	it('should throw when required props not provided', () => {
-		expect(() => render(<DateInput value={todayStr} />)).toThrow();
 	});
 
 	it('should have some hintText', () => {
 		const hintText = () => 'hint text';
 
-		const rendered = render(
+		const { container } = render(
 			<DateInput
 				value={todayStr}
 				placeholder="placeholder"
@@ -30,144 +29,151 @@ describe('<DateInput />', () => {
 			/>,
 		);
 
-		expect(rendered).toMatchSnapshot();
+		expect(container.firstChild).toMatchSnapshot();
 
-		expect(rendered.find('.hintText').text()).toBe(hintText());
+		expect(container).toHaveTextContent(hintText());
 	});
 
-	it('should have input type of date', () => {
-		const dateInput = mount(
+	it('should have input type of text', () => {
+		const { container } = render(
 			<DateInput
-				className="date-input-class"
 				value={todayStr}
-				placeholder={testLabel}
+				className="input-class"
+				placeholder="placeholder something"
 			/>,
 		);
-		expect(dateInput.find('input').prop('type')).toEqual('date');
-		dateInput.unmount();
+		expect(
+			container.querySelector('input[type="date"]'),
+		).toBeInTheDocument();
 	});
 
 	it('should pass on className to dom element', () => {
-		const dateInput = mount(
+		const { container } = render(
 			<DateInput
-				className="date-input-class"
 				value={todayStr}
-				placeholder={testLabel}
+				className="input-class"
+				placeholder="placeholder something"
 			/>,
 		);
-		expect(dateInput.hasClass('date-input-class')).toBeTruthy();
-		dateInput.unmount();
+		expect(container.firstChild).toHaveClass('input-class');
 	});
 
-	it('should match snapshot for default date input', () => {
-		const dateInput = render(
+	it('should match snapshot when active', () => {
+		const { container } = render(
 			<DateInput
-				className="date-input-class"
 				value={todayStr}
-				placeholder={testLabel}
+				className="input-class"
+				placeholder="placeholder something"
 			/>,
 		);
-		expect(dateInput).toMatchSnapshot();
+
+		fireEvent.focus(container.querySelector('input'));
+
+		fireEvent.change(container.querySelector('input'), {
+			target: { value: 'value from the tests' },
+		});
+
+		expect(container.firstChild).toMatchSnapshot();
 	});
 
-	it('should match snapshot for active date input', () => {
-		const dateInput = render(
-			<DateInput
-				className="date-input-class"
-				value={todayStr}
-				placeholder={testLabel}
-			/>,
-		);
-		expect(dateInput).toMatchSnapshot();
+	it('should match snapshot when touched', () => {
+		expect(
+			render(
+				<DateInput
+					isTouched
+					value={todayStr}
+					className="input-class"
+					placeholder="placeholder something"
+				/>,
+			).container.firstChild,
+		).toMatchSnapshot();
 	});
 
-	it('should match snapshot for touched date input', () => {
-		const dateInput = render(
-			<DateInput
-				isTouched
-				className="date-input-class"
-				value={todayStr}
-				placeholder={testLabel}
-			/>,
-		);
-		expect(dateInput).toMatchSnapshot();
+	it('should match snapshot when touched and valid', () => {
+		expect(
+			render(
+				<DateInput
+					isTouched
+					isValid
+					value={todayStr}
+					className="input-class"
+					placeholder="placeholder something"
+				/>,
+			).container.firstChild,
+		).toMatchSnapshot();
 	});
 
-	it('should match snapshot for touched valid date input', () => {
-		const dateInput = render(
-			<DateInput
-				isTouched
-				isValid
-				className="date-input-class"
-				value={todayStr}
-				placeholder={testLabel}
-			/>,
-		);
-		expect(dateInput).toMatchSnapshot();
+	it('should match snapshot when touched and invalid', () => {
+		expect(
+			render(
+				<DateInput
+					isTouched
+					value={todayStr}
+					isValid={false}
+					className="input-class"
+					placeholder="placeholder something"
+				/>,
+			).container.firstChild,
+		).toMatchSnapshot();
 	});
 
-	it('should match snapshot for touched invalid date input', () => {
-		const dateInput = render(
-			<DateInput
-				isTouched
-				isValid={false}
-				className="date-input-class"
-				value={todayStr}
-				placeholder={testLabel}
-			/>,
+	it('should display placeholder text', () => {
+		const { container } = render(
+			<DateInput value={todayStr} placeholder="placeholder something" />,
 		);
-		expect(dateInput).toMatchSnapshot();
-	});
 
-	it('should display placeholder date', () => {
-		const dateInput = render(
-			<DateInput placeholder={testLabel} value={todayStr} />,
+		expect(container.querySelector('label')).toHaveTextContent(
+			'placeholder something',
 		);
-		expect(dateInput.find('label').text()).toEqual(testLabel);
 	});
 
 	it('should fire onFocus event', () => {
 		const spyedCallback = jest.fn();
-		const dateInput = mount(
+
+		const { container } = render(
 			<DateInput
-				placeholder={testLabel}
 				value={todayStr}
+				placeholder="placeholder something"
 				onFocus={spyedCallback}
 			/>,
 		);
-		dateInput.find('input').simulate('focus');
 
-		expect(spyedCallback).toHaveBeenCalled();
-		dateInput.unmount();
+		fireEvent.focus(container.querySelector('input'));
+
+		expect(spyedCallback).toHaveBeenCalledTimes(1);
 	});
 
 	it('should fire onBlur event', () => {
 		const spyedCallback = jest.fn();
-		const dateInput = mount(
+
+		const { container } = render(
 			<DateInput
-				placeholder={testLabel}
 				value={todayStr}
+				placeholder="placeholder something"
 				onBlur={spyedCallback}
 			/>,
 		);
-		dateInput.find('input').simulate('blur');
 
-		expect(spyedCallback).toHaveBeenCalled();
-		dateInput.unmount();
+		fireEvent.blur(container.querySelector('input'));
+
+		expect(spyedCallback).toHaveBeenCalledTimes(1);
 	});
 
 	it('should fire onChange event', () => {
 		const spyedCallback = jest.fn();
-		const dateInput = mount(
+
+		const { container } = render(
 			<DateInput
-				placeholder={testLabel}
 				value={todayStr}
+				placeholder="placeholder something"
 				onChange={spyedCallback}
 			/>,
 		);
-		dateInput.find('input').simulate('change');
 
-		expect(spyedCallback).toHaveBeenCalled();
-		dateInput.unmount();
+		fireEvent.change(container.querySelector('input'), {
+			target: { value: 'test' },
+		});
+
+		expect(spyedCallback).toHaveBeenCalledTimes(1);
 	});
 });

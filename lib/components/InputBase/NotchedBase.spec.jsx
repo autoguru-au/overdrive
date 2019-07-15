@@ -1,124 +1,112 @@
 import React from 'react';
-import { mount, render } from 'enzyme';
+import { render } from '@testing-library/react';
 import { NotchedBase } from './NotchedBase';
 
 describe('<NotchedBase />', () => {
 	it('should not throw', () => {
 		expect(() =>
-			mount(
-				<NotchedBase placeholder="placeholder something" />,
-			).unmount(),
+			render(<NotchedBase placeholder="placeholder something" />),
 		).not.toThrow();
 	});
 
 	it('should pass on className to dom element', () => {
-		const notch = mount(
-			<NotchedBase
-				className="notched-class"
-				placeholder="placeholder something"
-			/>,
-		);
-		expect(notch.hasClass('notched-class')).toBeTruthy();
-		notch.unmount();
+		expect(
+			render(
+				<NotchedBase
+					className="notched-class"
+					placeholder="placeholder something"
+				/>,
+			).container.firstChild,
+		).toHaveClass('notched-class');
 	});
 
 	it('should match snapshot for default notch', () => {
-		const notch = render(
-			<NotchedBase placeholder="placeholder something" />,
-		);
-		expect(notch).toMatchSnapshot();
+		expect(
+			render(<NotchedBase placeholder="placeholder something" />)
+				.container.firstChild,
+		).toMatchSnapshot();
 	});
 
 	it('should match snapshot for dirty notch', () => {
-		const notch = render(
-			<NotchedBase isDirty placeholder="placeholder something" />,
-		);
-		expect(notch).toMatchSnapshot();
+		expect(
+			render(<NotchedBase isDirty placeholder="placeholder something" />)
+				.container.firstChild,
+		).toMatchSnapshot();
 	});
 
 	it('should match snapshot for active notch', () => {
-		const notch = render(
-			<NotchedBase isActive placeholder="placeholder something" />,
-		);
-		expect(notch).toMatchSnapshot();
+		expect(
+			render(<NotchedBase isActive placeholder="placeholder something" />)
+				.container.firstChild,
+		).toMatchSnapshot();
 	});
 
 	it('should match snapshot for dirty and active notch', () => {
-		const notch = render(
-			<NotchedBase
-				isActive
-				isDirty
-				placeholder="placeholder something"
-			/>,
-		);
-		expect(notch).toMatchSnapshot();
+		expect(
+			render(
+				<NotchedBase
+					isActive
+					isDirty
+					placeholder="placeholder something"
+				/>,
+			).container.firstChild,
+		).toMatchSnapshot();
 	});
 
 	it('should display children', () => {
-		const notch = render(
-			<NotchedBase placeholder="placeholder something">
-				something children
-			</NotchedBase>,
-		);
-
-		expect(notch.text()).toMatch(/something\schildren/);
+		expect(
+			render(
+				<NotchedBase placeholder="placeholder something">
+					something children
+				</NotchedBase>,
+			).container,
+		).toHaveTextContent('something children');
 	});
 
 	it('should display placeholder text inside a label element', () => {
-		const notch = render(
-			<NotchedBase
-				placeholder="placeholder something"
-				className="notched-class"
-			/>,
-		);
-		expect(notch.find('label').text()).toEqual('placeholder something');
+		expect(
+			render(
+				<NotchedBase
+					placeholder="placeholder something"
+					className="notched-class"
+				/>,
+			).container.querySelector('label'),
+		).toHaveTextContent('placeholder something');
 	});
 
 	it('should add shifted classname to dom element when isEmpty is false', () => {
-		const notch = mount(
-			<NotchedBase
-				isEmpty={false}
-				className="notched-class"
-				placeholder="placeholder something"
-			/>,
-		);
-		expect(notch.html()).toContain('notchedBaseShift');
-		notch.unmount();
+		expect(
+			render(
+				<NotchedBase
+					isEmpty={false}
+					className="notched-class"
+					placeholder="placeholder something"
+				/>,
+			).container.firstChild,
+		).toHaveClass('notchedBaseShift');
 	});
 
 	it('should not shifted classname to dom element when isEmpty is true', () => {
-		const notch = mount(
-			<NotchedBase
-				isEmpty
-				className="notched-class"
-				placeholder="placeholder something"
-			/>,
-		);
-		expect(notch.html()).not.toContain('notchedBaseShift');
-		notch.unmount();
+		expect(
+			render(
+				<NotchedBase
+					isEmpty
+					className="notched-class"
+					placeholder="placeholder something"
+				/>,
+			).container.firstChild,
+		).not.toHaveClass('notchedBaseShift');
 	});
 
 	it('should add active style to dom element when isActive prop is true', () => {
-		const notch = mount(
-			<NotchedBase
-				isActive
-				className="notched-class"
-				placeholder="placeholder something"
-			/>,
-		);
-		expect(notch.html()).toContain('notchedBaseActive');
-		notch.unmount();
-	});
-
-	it('should not add dirty style to dom element when isEmpty prop is not true', () => {
-		const notch = mount(
-			<NotchedBase
-				isDirty
-				className="notched-class"
-				placeholder="placeholder something"
-			/>,
-		);
-		expect(notch.html()).not.toContain('notchedBaseActive');
-		notch.unmount();
+		expect(
+			render(
+				<NotchedBase
+					isActive
+					className="notched-class"
+					placeholder="placeholder something"
+				/>,
+			).container.firstChild,
+		).toHaveClass('notchedBaseActive');
 	});
 });

@@ -2,147 +2,198 @@
 
 exports[`<Button /> should match snapshot for default button 1`] = `
 <button
-  aria-disabled={false}
-  className="root sizeMedium variantSecondary"
-  disabled={false}
+  aria-disabled="false"
+  class="root sizeMedium variantSecondary"
 >
   <span
-    className="btnContent"
+    class="btnContent"
+  />
+</button>
+`;
+
+exports[`<Button /> when as button should use html button element by default 1`] = `
+<button
+  aria-disabled="false"
+  class="root sizeMedium variantSecondary"
+>
+  <span
+    class="btnContent"
   />
 </button>
 `;
 
 exports[`<Button /> when colour variants should match snapshot for Danger button 1`] = `
 <button
-  aria-disabled={false}
-  className="root sizeMedium variantDanger"
-  disabled={false}
+  aria-disabled="false"
+  class="root sizeMedium variantDanger"
 >
   <span
-    className="btnContent"
+    class="btnContent"
   />
 </button>
 `;
 
 exports[`<Button /> when colour variants should match snapshot for Primary button 1`] = `
 <button
-  aria-disabled={false}
-  className="root sizeMedium variantPrimary"
-  disabled={false}
+  aria-disabled="false"
+  class="root sizeMedium variantPrimary"
 >
   <span
-    className="btnContent"
+    class="btnContent"
   />
 </button>
 `;
 
 exports[`<Button /> when colour variants should match snapshot for Secondary button 1`] = `
 <button
-  aria-disabled={false}
-  className="root sizeMedium variantSecondary"
-  disabled={false}
+  aria-disabled="false"
+  class="root sizeMedium variantSecondary"
 >
   <span
-    className="btnContent"
+    class="btnContent"
   />
 </button>
 `;
 
-exports[`<Button /> when isFullWidth should match snapshot 1`] = `
-<button
-  aria-disabled={false}
-  className="root sizeMedium variantSecondary fullWidth"
-  disabled={false}
+exports[`<Button /> when custom component should use html anchor element if href value exists 1`] = `
+<a
+  aria-disabled="false"
+  class="root sizeMedium variantSecondary"
+  href="abc"
 >
   <span
-    className="btnContent"
+    class="btnContent"
+  />
+</a>
+`;
+
+exports[`<Button /> when isFullWidth should match snapshot 1`] = `
+<button
+  aria-disabled="false"
+  class="root sizeMedium variantSecondary fullWidth"
+>
+  <span
+    class="btnContent"
   />
 </button>
 `;
 
 exports[`<Button /> when loading should match snapshot for default button 1`] = `
 <button
-  aria-disabled={true}
-  className="root sizeMedium variantSecondary loading"
-  disabled={true}
+  aria-disabled="true"
+  class="root sizeMedium variantSecondary loading"
+  disabled=""
 >
   <span
-    className="btnContent"
+    class="btnContent"
   />
-  <ProgressSpinnerComponent
-    className="spinner"
-    size="medium"
-    variant="secondary"
-  />
+  <div
+    class="root sizeMedium variantSecondary spinner"
+  >
+    <svg
+      class="circular"
+      viewBox="25 25 50 50"
+    >
+      <circle
+        class="path"
+        cx="50"
+        cy="50"
+        fill="none"
+        r="20"
+        stroke-miterlimit="10"
+      />
+    </svg>
+  </div>
 </button>
 `;
 
 exports[`<Button /> when loading should match snapshot for medium button 1`] = `
 <button
-  aria-disabled={true}
-  className="root sizeMedium variantSecondary loading"
-  disabled={true}
+  aria-disabled="true"
+  class="root sizeMedium variantSecondary loading"
+  disabled=""
 >
   <span
-    className="btnContent"
+    class="btnContent"
   />
-  <ProgressSpinnerComponent
-    className="spinner"
-    size="medium"
-    variant="secondary"
-  />
+  <div
+    class="root sizeMedium variantSecondary spinner"
+  >
+    <svg
+      class="circular"
+      viewBox="25 25 50 50"
+    >
+      <circle
+        class="path"
+        cx="50"
+        cy="50"
+        fill="none"
+        r="20"
+        stroke-miterlimit="10"
+      />
+    </svg>
+  </div>
 </button>
 `;
 
 exports[`<Button /> when loading should match snapshot for small button 1`] = `
 <button
-  aria-disabled={true}
-  className="root sizeSmall variantSecondary loading"
-  disabled={true}
+  aria-disabled="true"
+  class="root sizeSmall variantSecondary loading"
+  disabled=""
 >
   <span
-    className="btnContent"
+    class="btnContent"
   />
-  <ProgressSpinnerComponent
-    className="spinner"
-    size="small"
-    variant="secondary"
-  />
+  <div
+    class="root sizeSmall variantSecondary spinner"
+  >
+    <svg
+      class="circular"
+      viewBox="25 25 50 50"
+    >
+      <circle
+        class="path"
+        cx="50"
+        cy="50"
+        fill="none"
+        r="20"
+        stroke-miterlimit="10"
+      />
+    </svg>
+  </div>
 </button>
 `;
 
 exports[`<Button /> when rounded should match snapshot 1`] = `
 <button
-  aria-disabled={false}
-  className="root sizeMedium variantSecondary rounded"
-  disabled={false}
+  aria-disabled="false"
+  class="root sizeMedium variantSecondary rounded"
 >
   <span
-    className="btnContent"
+    class="btnContent"
   />
 </button>
 `;
 
 exports[`<Button /> when size variant should match snapshot for medium button 1`] = `
 <button
-  aria-disabled={false}
-  className="root sizeMedium variantSecondary"
-  disabled={false}
+  aria-disabled="false"
+  class="root sizeMedium variantSecondary"
 >
   <span
-    className="btnContent"
+    class="btnContent"
   />
 </button>
 `;
 
 exports[`<Button /> when size variant should match snapshot for small button 1`] = `
 <button
-  aria-disabled={false}
-  className="root sizeSmall variantSecondary"
-  disabled={false}
+  aria-disabled="false"
+  class="root sizeSmall variantSecondary"
 >
   <span
-    className="btnContent"
+    class="btnContent"
   />
 </button>
 `;

@@ -2,7 +2,7 @@
 
 exports[`<HintText /> should match snapshot for active hint 1`] = `
 <p
-  class="hintText hintTextActive"
+  class="root sizeScale1 hintText hintTextActive"
 >
   Hello World!
 </p>
@@ -10,7 +10,7 @@ exports[`<HintText /> should match snapshot for active hint 1`] = `
 
 exports[`<HintText /> should match snapshot for default hint 1`] = `
 <p
-  class="hintText"
+  class="root sizeScale1 hintText"
 >
   Hello World!
 </p>
