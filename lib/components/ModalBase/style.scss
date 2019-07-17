@@ -58,11 +58,10 @@
 	display: flex;
 	align-content: flex-end;
 	justify-content: center;
+	height: auto;
 	align-items: flex-end;
-	height: 100%;
 
 	@include isDesktop() {
-		height: auto;
 		align-items: center;
 	}
 }
