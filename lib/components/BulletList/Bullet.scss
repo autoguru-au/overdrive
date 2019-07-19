@@ -1,0 +1,42 @@
+@import '../../theme/tokens/facade';
+
+.root {
+	display: inline-grid;
+	grid-template-columns: min-content 1fr;
+	grid-gap: var(--global--space--4);
+
+	&:not(:last-of-type) {
+		margin-bottom: var(--global--space--2);
+	}
+
+	&::before {
+		display: block;
+		margin-top: 8px;
+		width: 8px;
+		height: 8px;
+		background-color: getColour(gray, 900);
+		content: '';
+		align-self: flex-start;
+	}
+
+	&.circle::before {
+		border-radius: 50%;
+	}
+
+	&.disc::before {
+		border-radius: 50%;
+		border: 2px solid getColour(gray, 900);
+		background-color: transparent;
+	}
+
+	&.square::before {
+		border: 2px solid getColour(gray, 900);
+		background-color: transparent;
+	}
+}
+
+.noDot {
+	&::before {
+		visibility: hidden;
+	}
+}

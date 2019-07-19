@@ -9,6 +9,7 @@
 export * from './Anchor';
 export * from './Badge';
 export * from './Box';
+export * from './BulletList';
 export * from './BulletText';
 export * from './Button';
 export * from './CheckableBase';
