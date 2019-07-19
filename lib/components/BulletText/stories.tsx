@@ -12,7 +12,7 @@ const baseProps = () => ({
 	ordered: boolean('ordered', false),
 });
 
-storiesOf('Foundation|Typography/BulletText', module)
+storiesOf('Components|BulletText', module)
 	.addDecorator(story => <ul children={story()} style={{ width: 200 }} />)
 	.add('default', () => <BulletText {...baseProps()}>Hello World</BulletText>)
 	.add('with custom element', () => (
