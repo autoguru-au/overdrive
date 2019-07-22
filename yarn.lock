@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@autoguru/babel-preset@^1.0.53":
-  version "1.0.53"
-  resolved "https://registry.yarnpkg.com/@autoguru/babel-preset/-/babel-preset-1.0.53.tgz#4578205bb7736b77d01ae8800132bf592ca11cc9"
-  integrity sha512-m8iuv13U+l7Pa0xuLdPnP8k/1QP3nRvx2abIv+zalK03GKShKSKtZWcCCyQ+/qC8h9Bjh9Q4JE7o2f1Ju6tzOQ==
+"@autoguru/babel-preset@^1.0.54":
+  version "1.0.54"
+  resolved "https://registry.yarnpkg.com/@autoguru/babel-preset/-/babel-preset-1.0.54.tgz#a90e2824a70021c45bfbe6c464196a23b3cdf224"
+  integrity sha512-/nH3fEgo8uyT+rtC7nTTnmv4sG71eQZ6PsRKHj4rHA/+DZJfOGR7xT4iCUbrRYqx0RVZBIUuxWyYLrw4WzVp7Q==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.5.5"
     "@babel/plugin-proposal-export-default-from" "^7.5.2"
@@ -27,10 +27,10 @@
   dependencies:
     "@commitlint/config-conventional" "^8.1.0"
 
-"@autoguru/eslint-config@^1.0.53":
-  version "1.0.53"
-  resolved "https://registry.yarnpkg.com/@autoguru/eslint-config/-/eslint-config-1.0.53.tgz#1a86bff7b1fd425bf5fc4102d9e2352917464448"
-  integrity sha512-Mn7caGyCQY5HxX1/R7v4/9DKAmrIFv7aANNqnbSmpKFE+LMeJltfSi43JTcIJCr/BtufQAHfkKbPnvC+qI9M7A==
+"@autoguru/eslint-config@^1.0.55":
+  version "1.0.56"
+  resolved "https://registry.yarnpkg.com/@autoguru/eslint-config/-/eslint-config-1.0.56.tgz#06335e2786da203bb80a28b5cd98e5d54e2c725c"
+  integrity sha512-jbJWjV3nsb9855O3DDYrIgfv2QlFrdn2/Bm0lHpYltU5+Oe8u1kS7+a5UzkV+zL0nbgOKw61elAMF4B1mIHbQg==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^1.13.0"
     "@typescript-eslint/parser" "^1.13.0"
@@ -39,16 +39,17 @@
     eslint-config-xo "^0.26.0"
     eslint-config-xo-react "^0.20.0"
     eslint-config-xo-typescript "^0.15.0"
+    eslint-plugin-promise "^4.2.1"
     eslint-plugin-react "^7.14.2"
     eslint-plugin-react-hooks "^1.6.1"
     eslint-plugin-unicorn "^9.1.1"
 
-"@autoguru/jest-preset@^1.0.53":
-  version "1.0.53"
-  resolved "https://registry.yarnpkg.com/@autoguru/jest-preset/-/jest-preset-1.0.53.tgz#1d1e553f5704f95ebc7047f3e49708b09db6aa1b"
-  integrity sha512-lkFdHesskcPDCiH6Kot6M9OZozuXMf8O+R7Q4H5/14d3YGJL1Xcpt+GJgIe+VE3ApjOW1PaIK+XsMuFicdEc+w==
+"@autoguru/jest-preset@^1.0.54":
+  version "1.0.54"
+  resolved "https://registry.yarnpkg.com/@autoguru/jest-preset/-/jest-preset-1.0.54.tgz#f4ea47d45453ed61eef1157cc56582b81f9cb622"
+  integrity sha512-/I9JqigAtspdvr/V1lj6jyuKM7dB5usRJ26hq7/JJereMOSGrpYOcPXOxG+/lgrxeKi1wpm+ymQwWB6JTXYlRQ==
   dependencies:
-    "@autoguru/babel-preset" "^1.0.53"
+    "@autoguru/babel-preset" "^1.0.54"
     "@babel/core" "^7.5.5"
     "@babel/preset-typescript" "^7.3.3"
     babel-jest "^24.8.0"
@@ -2442,7 +2443,7 @@
     regexpp "^2.0.1"
     tsutils "^3.7.0"
 
-"@typescript-eslint/experimental-utils@1.13.0":
+"@typescript-eslint/experimental-utils@1.13.0", "@typescript-eslint/experimental-utils@^1.13.0":
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-1.13.0.tgz#b08c60d780c0067de2fb44b04b432f540138301e"
   integrity sha512-zmpS6SyqG4ZF64ffaJ6uah6tWWWgZ8m+c54XXgwFtUv0jNz8aJAVx8chMCvnk7yl6xwn8d+d96+tWp7fXzTuDg==
@@ -6109,9 +6110,11 @@ eslint-plugin-import@^2.17.1:
     resolve "^1.11.0"
 
 eslint-plugin-jest@^22.4.1:
-  version "22.13.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-22.13.0.tgz#d7d134c6e3c2f67cc50f5fa89a329db579d28428"
-  integrity sha512-bIr8LL7buUXS8Pk69SFgaDKgyvPQkDu6i8ko0lP54uccszlo4EOwtstDXOZl5Af3JwudbECxRUbCpL/2cKDkkg==
+  version "22.13.5"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-22.13.5.tgz#8495ba014376d6b9ed74601de85f9232f4653120"
+  integrity sha512-0SphCFkaHCW6PhTz7cCisuN/9ppBksSJgZVAnwJZ4OQAw8MOLY3DLjI+t4kkei6P3dZkefAfLT6ZPFKLlKbc1Q==
+  dependencies:
+    "@typescript-eslint/experimental-utils" "^1.13.0"
 
 eslint-plugin-jsx-a11y@^6.2.1:
   version "6.2.3"
@@ -6128,15 +6131,20 @@ eslint-plugin-jsx-a11y@^6.2.1:
     has "^1.0.3"
     jsx-ast-utils "^2.2.1"
 
+eslint-plugin-promise@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-promise/-/eslint-plugin-promise-4.2.1.tgz#845fd8b2260ad8f82564c1222fce44ad71d9418a"
+  integrity sha512-VoM09vT7bfA7D+upt+FjeBO5eHIJQBUWki1aPvB+vbNiHS3+oGIJGIeyBtKQTME6UPXXy3vV07OL1tHd3ANuDw==
+
 eslint-plugin-react-hooks@^1.6.0, eslint-plugin-react-hooks@^1.6.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-1.6.1.tgz#3c66a5515ea3e0a221ffc5d4e75c971c217b1a4c"
   integrity sha512-wHhmGJyVuijnYIJXZJHDUF2WM+rJYTjulUTqF9k61d3BTk8etydz+M4dXUVH7M76ZRS85rqBTCx0Es/lLsrjnA==
 
 eslint-plugin-react@^7.13.0, eslint-plugin-react@^7.14.2:
-  version "7.14.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.14.2.tgz#94c193cc77a899ac0ecbb2766fbef88685b7ecc1"
-  integrity sha512-jZdnKe3ip7FQOdjxks9XPN0pjUKZYq48OggNMd16Sk+8VXx6JOvXmlElxROCgp7tiUsTsze3jd78s/9AFJP2mA==
+  version "7.14.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.14.3.tgz#911030dd7e98ba49e1b2208599571846a66bdf13"
+  integrity sha512-EzdyyBWC4Uz2hPYBiEJrKCUi2Fn+BJ9B/pJQcjw5X+x/H2Nm59S4MJIvL4O5NEE0+WbnQwEBxWY03oUk+Bc3FA==
   dependencies:
     array-includes "^3.0.3"
     doctrine "^2.1.0"
@@ -10766,9 +10774,9 @@ npm-install-checks@~3.0.0:
     semver "^2.3.0 || 3.x || 4 || 5"
 
 npm-lifecycle@^3.0.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/npm-lifecycle/-/npm-lifecycle-3.1.0.tgz#684d8340e85c8ad1893c231e50903d1b78f46af4"
-  integrity sha512-G11f/KhHvvrBN9uPG9rj/3plT5eu2T4NKurP4diIDnHQHleppPhT2SaCJq0DQG2WHrAgI+8pH0kKQlwbAwHQNg==
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/npm-lifecycle/-/npm-lifecycle-3.1.2.tgz#06f2253ea3b9e122ce3e55e3496670a810afcc84"
+  integrity sha512-nhfOcoTHrW1lJJlM2o77vTE2RWR4YOVyj7YzmY0y5itsMjEuoJHteio/ez0BliENEPsNxIUQgwhyEW9dShj3Ww==
   dependencies:
     byline "^5.0.0"
     graceful-fs "^4.1.15"
@@ -12016,9 +12024,9 @@ postcss-initial@^3.0.0:
     postcss "^7.0.2"
 
 postcss-jsx@^0.36.1:
-  version "0.36.1"
-  resolved "https://registry.yarnpkg.com/postcss-jsx/-/postcss-jsx-0.36.1.tgz#ab5e469e7449b84bd1a5973ff555fbe84c39f91d"
-  integrity sha512-xaZpy01YR7ijsFUtu5rViYCFHurFIPHir+faiOQp8g/NfTfWqZCKDhKrydQZ4d8WlSAmVdXGwLjpFbsNUI26Sw==
+  version "0.36.2"
+  resolved "https://registry.yarnpkg.com/postcss-jsx/-/postcss-jsx-0.36.2.tgz#34bcd6752426a60b8df73f069e7595383060a794"
+  integrity sha512-7B8a8a6YDOQFqMQ9UmOo+IPPb2i14Z57Fvc9cOI11B3bWMSY2O6r2XJ3tlcQhUhv93TeN0ntxehTaSWJDQavlg==
   dependencies:
     "@babel/core" ">=7.2.2"
 

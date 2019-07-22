@@ -75,10 +75,10 @@
     "clsx": "^1.0.4"
   },
   "devDependencies": {
-    "@autoguru/babel-preset": "^1.0.53",
+    "@autoguru/babel-preset": "^1.0.54",
     "@autoguru/commitlint-config": "^1.0.53",
-    "@autoguru/eslint-config": "^1.0.53",
-    "@autoguru/jest-preset": "^1.0.53",
+    "@autoguru/eslint-config": "^1.0.55",
+    "@autoguru/jest-preset": "^1.0.54",
     "@autoguru/tsconfig": "^1.0.52",
     "@babel/core": "^7.5.5",
     "@babel/runtime-corejs3": "^7.5.5",
@@ -118,6 +118,7 @@
     "cssnano": "^4.1.10",
     "eslint": "^6.0.0",
     "fs-extra": "^8.0.1",
+    "glob": "^7.1.4",
     "husky": "^3.0.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.7.1",

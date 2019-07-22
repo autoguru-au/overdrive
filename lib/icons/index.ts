@@ -6,6 +6,7 @@
  * -----------------------------------------------------------------------------
  */
 
+import { ReactElement, SVGAttributes } from 'react';
 export { default as AccountBoxIcon } from './AccountBox';
 export { default as AlertIcon } from './Alert';
 export { default as ArrowLeftIcon } from './ArrowLeft';
@@ -20,5 +21,4 @@ export { default as PlusIcon } from './Plus';
 export { default as StarHalfIcon } from './StarHalf';
 export { default as StarIcon } from './Star';
 export { default as WindowCloseIcon } from './WindowClose';
-import { ReactElement, SVGAttributes } from 'react';
 export type IconType = ReactElement<SVGAttributes<SVGElement>, 'svg'>;
