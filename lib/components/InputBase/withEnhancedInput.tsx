@@ -5,9 +5,9 @@ import React, {
 	FocusEventHandler,
 	PureComponent,
 } from 'react';
-import styles from './style.scss';
 import { HintText } from './HintText';
 import { NotchedBase } from './NotchedBase';
+import styles from './style.scss';
 
 type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 
@@ -66,14 +66,10 @@ export function withEnhancedInput<IncomingProps = {}>(
 		public static displayName = `EnhancedInput(${WrappingComponent.displayName ||
 			(WrappingComponent as any).name})`;
 
-		constructor(props: TProps) {
-			super(props);
-
-			this.state = {
-				value: props.value || '',
-				isActive: false,
-			};
-		}
+		state = {
+			value: '',
+			isActive: false,
+		};
 
 		public static getDerivedStateFromProps(
 			nextProps: TProps,
