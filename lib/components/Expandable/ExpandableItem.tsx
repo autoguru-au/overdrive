@@ -1,16 +1,22 @@
 import { wrapEvent } from '@autoguru/utilities';
 import cx from 'clsx';
-import React, { FunctionComponent, memo, useContext, useRef } from 'react';
+import React, {
+	FunctionComponent,
+	memo,
+	ReactNode,
+	useContext,
+	useRef,
+} from 'react';
 import { ChevronDownIcon, Icon } from '../Icon';
+import { ExpandableContext } from './context';
 import styles from './style.scss';
-import { ExpandableContext, IExpandableContext } from './Expandable';
 
-export interface IProps {
+export interface Props {
 	className?: string;
 	id?: string;
 	open?: boolean;
-	title: JSX.Element;
-	body?: JSX.Element;
+	title: ReactNode;
+	body?: ReactNode;
 
 	onClick?(e: React.MouseEvent<HTMLElement, MouseEvent>): void;
 
@@ -21,7 +27,7 @@ const expandableClicked = (id, expandableClicked: (id: string) => void) => {
 	expandableClicked(id);
 };
 
-const ExpandableItemComponent: FunctionComponent<IProps> = ({
+const ExpandableItemComponent: FunctionComponent<Props> = ({
 	className = '',
 	id,
 	open = false,
@@ -30,7 +36,7 @@ const ExpandableItemComponent: FunctionComponent<IProps> = ({
 	onClick,
 	onChange = () => void 0,
 }) => {
-	const expandableContext: IExpandableContext = useContext(ExpandableContext);
+	const expandableContext: ExpandableContext = useContext(ExpandableContext);
 	const map =
 		expandableContext && expandableContext.openedItemsMap
 			? expandableContext.openedItemsMap[id]
@@ -55,7 +61,7 @@ const ExpandableItemComponent: FunctionComponent<IProps> = ({
 					[styles.topGap]: hasTopGap,
 					[styles.bottomGap]: hasBottomGap,
 				},
-				className
+				className,
 			)}
 			aria-label="expandable item"
 			aria-expanded={isOpen ? 'true' : 'false'}>
@@ -69,9 +75,9 @@ const ExpandableItemComponent: FunctionComponent<IProps> = ({
 							'function' &&
 						expandableClicked(
 							id,
-							expandableContext.expandableClicked
+							expandableContext.expandableClicked,
 						),
-					onClick
+					onClick,
 				)}>
 				<Icon
 					className={styles.arrow}

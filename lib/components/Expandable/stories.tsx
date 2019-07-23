@@ -2,7 +2,7 @@ import { action } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import { Text } from '../Text';
+import { Text } from '../Typography';
 import { Expandable } from './Expandable';
 import { ExpandableItem } from './ExpandableItem';
 
@@ -33,8 +33,8 @@ storiesOf('Components|Expandable', module)
 		<Expandable multi={boolean('multi', false)}>
 			{new Array(5).fill(0).map((_, index) => (
 				<ExpandableItem
-					className={`i${index + 1}`}
 					key={index}
+					className={`i${index + 1}`}
 					title={
 						<div style={{ paddingLeft: '24px' }}>
 							<Text>Item {index + 1}</Text>
@@ -47,7 +47,6 @@ storiesOf('Components|Expandable', module)
 	))
 	.add('default solo item', () => (
 		<ExpandableItem
-			onClick={action('onClick')}
 			open={boolean('open', false)}
 			title={
 				<div style={{ paddingLeft: '24px' }}>
@@ -55,10 +54,11 @@ storiesOf('Components|Expandable', module)
 				</div>
 			}
 			body={<Text>Solo Item Body</Text>}
+			onClick={action('onClick')}
 		/>
 	))
 	.add('with all items closed', () => (
-		<Expandable multi={true}>
+		<Expandable multi>
 			{new Array(5).fill(0).map((_, index) => (
 				<ExpandableItem
 					key={Math.round(Math.random() * 1e6)}
@@ -74,11 +74,11 @@ storiesOf('Components|Expandable', module)
 		</Expandable>
 	))
 	.add('multi list with all items set to expanded', () => (
-		<Expandable multi={true}>
+		<Expandable multi>
 			{new Array(5).fill(0).map((_, index) => (
 				<ExpandableItem
 					key={Math.round(Math.random() * 1e6)}
-					open={true}
+					open
 					title={
 						<div style={{ paddingLeft: '24px' }}>
 							<Text>Item {index + 1}</Text>
@@ -94,7 +94,7 @@ storiesOf('Components|Expandable', module)
 			{new Array(5).fill(0).map((_, index) => (
 				<ExpandableItem
 					key={Math.round(Math.random() * 1e6)}
-					open={true}
+					open
 					title={
 						<div style={{ paddingLeft: '24px' }}>
 							<Text>Item {index + 1}</Text>

@@ -1,4 +1,1 @@
-export {
-	ExpandableItem,
-	IProps as IExpandableItemProps,
-} from './ExpandableItem';
+export { ExpandableItem } from './ExpandableItem';
