@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextLink /> should allow as override 1`] = `
+<p>
+  <span
+    class="root sizeScale3 strong root strong"
+  >
+    Test
+  </span>
+</p>
+`;
+
+exports[`<TextLink /> should match the snapshot 1`] = `
+<a
+  rel="noopener noreferrer"
+>
+  <span
+    class="root sizeScale3 strong root strong"
+  />
+</a>
+`;
