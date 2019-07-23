@@ -24,7 +24,7 @@
   "types": "./dist/components/index.d.ts",
   "scripts": {
     "build": "cross-env NODE_ENV=production node scripts/build.js",
-    "chromatic": "chromatic test --exit-zero-on-changes",
+    "chromatic": "chromatic test --exit-zero-on-changes --build-script-name storybook:build",
     "format": "prettier --write \"**/*.+(js|jsx|ts|tsx|css|scss|json|yml|md|mdx|html)\"",
     "generate": "plop",
     "lint": "concurrently \"yarn:lint:ts\" \"yarn:lint:styles\"",
