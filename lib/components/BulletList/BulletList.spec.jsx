@@ -18,6 +18,18 @@ describe('<BulletList />', () => {
 		).toHaveClass('test-class');
 	});
 
+	it('should have the firstOccurrence class for the first and only first nested ul', () => {
+		const { container } = render(
+			<BulletList>
+				<BulletList>
+					<BulletList>test</BulletList>
+				</BulletList>
+			</BulletList>,
+		);
+
+		expect(container.querySelectorAll('.firstOccurrence').length).toBe(1);
+	});
+
 	it('should pass the correct nest value', () => {
 		const validate = expectation => (
 			<BulletListContext.Consumer>
