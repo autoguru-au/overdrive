@@ -1,0 +1,22 @@
+@import '../../theme/tokens/facade';
+
+.root {
+	$gap: var(--global--space--3);
+
+	width: 100%;
+	display: flex;
+	flex: 0 0 auto;
+	align-content: center;
+
+	&:not(.equalWidth) {
+		& > :not(:last-child) {
+			margin-right: $gap;
+		}
+	}
+
+	&.equalWidth {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+		grid-gap: $gap;
+	}
+}
