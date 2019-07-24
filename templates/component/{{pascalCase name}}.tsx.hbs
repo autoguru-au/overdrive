@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React, { ExoticComponent, memo } from 'react';
+import React, { memo, NamedExoticComponent } from 'react';
 
 import styles from './{{pascalCase name}}.scss';
 
@@ -7,7 +7,7 @@ interface Props {
 	example?: boolean;
 }
 
-export const {{pascalCase name}}: ExoticComponent<Props> = memo(() => {
+export const {{pascalCase name}}: NamedExoticComponent<Props> = memo(() => {
 	return (<p className={clsx(styles.root)}>
 		New component {{name}}! 🎉 Edit lib/components/{{pascalCase name}}/{{pascalCase name}}.tsx
 	</p>);
