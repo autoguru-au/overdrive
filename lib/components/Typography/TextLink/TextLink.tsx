@@ -10,7 +10,7 @@ import React, {
 	RefForwardingComponent,
 } from 'react';
 
-import { Text } from '..';
+import { Text } from '../Text';
 import styles from './TextLink.scss';
 
 type TextProps = Omit<ComponentProps<typeof Text>, 'is' | 'white'>;
