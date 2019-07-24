@@ -26,7 +26,7 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
     </i>
   </button>
   <span
-    class="label"
+    class="root sizeScale4 label"
   >
     25%
   </span>
@@ -78,7 +78,7 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
     </i>
   </button>
   <span
-    class="label"
+    class="root sizeScale4 label"
   >
     19
   </span>
@@ -131,7 +131,7 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
     </i>
   </button>
   <span
-    class="label"
+    class="root sizeScale4 label"
   />
   <button
     aria-label="step up"

@@ -16,7 +16,7 @@ export const HintText: FunctionComponent<Props> = ({
 }) => (
 	<Text
 		is="p"
-		size={1}
+		size={2}
 		className={clsx(
 			styles.hintText,
 			{

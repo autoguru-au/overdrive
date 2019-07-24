@@ -14,4 +14,14 @@ storiesOf('Foundation|Typography/Heading', module)
 			size={select('Size', [1, 2, 3, 4, 5, 6, 7, 8, 9])}>
 			Hello World
 		</Heading>
+	))
+	.add('all the sizes', () => (
+		<div>
+			<Heading is="h6">I am a heading</Heading>
+			<Heading is="h5">I am a heading</Heading>
+			<Heading is="h4">I am a heading</Heading>
+			<Heading is="h3">I am a heading</Heading>
+			<Heading is="h2">I am a heading</Heading>
+			<Heading is="h1">I am a heading</Heading>
+		</div>
 	));

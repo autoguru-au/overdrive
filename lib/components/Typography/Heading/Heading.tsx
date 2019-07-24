@@ -10,12 +10,12 @@ export interface Props {
 }
 
 const sizeScaleDefaults: Map<string, TSizeScale> = new Map([
-	['h1', 6],
-	['h2', 5],
-	['h3', 4],
-	['h4', 3],
-	['h5', 2],
-	['h6', 1],
+	['h1', 8],
+	['h2', 7],
+	['h3', 6],
+	['h4', 4],
+	['h5', 3],
+	['h6', 2],
 ]);
 
 export const Heading: FunctionComponent<Props> = ({

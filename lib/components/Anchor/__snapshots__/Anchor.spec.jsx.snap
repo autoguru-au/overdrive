@@ -16,7 +16,7 @@ exports[`<Anchor /> should match snapshot with label, icon and to props 1`] = `
     />
   </svg>
   <span
-    class="root sizeScale3 label"
+    class="root sizeScale4 label"
   >
     Hello World!
   </span>
@@ -28,7 +28,7 @@ exports[`<Anchor /> should match snapshot without label 1`] = `
   class="root"
 >
   <span
-    class="root sizeScale3 label"
+    class="root sizeScale4 label"
   />
 </a>
 `;
@@ -52,7 +52,7 @@ exports[`<Anchor /> when custom component should match snapshot with label, icon
       />
     </svg>
     <span
-      class="root sizeScale3 label"
+      class="root sizeScale4 label"
     >
       Hello World!
     </span>

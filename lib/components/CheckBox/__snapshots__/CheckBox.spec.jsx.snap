@@ -115,7 +115,7 @@ exports[`<CheckBox /> when with component child should match the snapshot 1`] = 
     class="label"
   >
     <h1
-      class="root sizeScale6"
+      class="root sizeScale8"
     >
       Hello checkbox
     </h1>

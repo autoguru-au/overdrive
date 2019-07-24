@@ -13,7 +13,7 @@ exports[`<Meta /> should match snapshot with label, icon for Primary variant 1`]
     />
   </svg>
   <span
-    class="root sizeScale3 withIcon"
+    class="root sizeScale4 withIcon"
   >
     Hello World!
   </span>
@@ -33,7 +33,7 @@ exports[`<Meta /> should match snapshot with label, icon for Secondary variant 1
     />
   </svg>
   <span
-    class="root sizeScale3 withIcon"
+    class="root sizeScale4 withIcon"
   >
     Hello World!
   </span>
@@ -53,7 +53,7 @@ exports[`<Meta /> should render with a JSX node too 1`] = `
     />
   </svg>
   <span
-    class="root sizeScale3 withIcon"
+    class="root sizeScale4 withIcon"
   >
     Hello World!
   </span>
