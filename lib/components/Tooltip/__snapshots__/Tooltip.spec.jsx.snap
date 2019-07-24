@@ -29,7 +29,7 @@ exports[`<Tolltip /> should match snapshot when opened 1`] = `
       class="root"
     >
       <span
-        class="root sizeScale3 white"
+        class="root sizeScale4 white"
       >
         tooltip content
       </span>

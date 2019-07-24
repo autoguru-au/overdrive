@@ -2,13 +2,13 @@
 
 exports[`<Text /> should match snapshot when empty 1`] = `
 <span
-  class="root sizeScale3"
+  class="root sizeScale4"
 />
 `;
 
 exports[`<Text /> should match snapshot with text 1`] = `
 <span
-  class="root sizeScale3"
+  class="root sizeScale4"
 >
   Hello World
 </span>
@@ -16,7 +16,7 @@ exports[`<Text /> should match snapshot with text 1`] = `
 
 exports[`<Text /> when muted should match snapshot 1`] = `
 <span
-  class="root sizeScale3 muted"
+  class="root sizeScale4 muted"
 >
   Hello World
 </span>

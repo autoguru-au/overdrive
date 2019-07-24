@@ -6,7 +6,7 @@ import { Text } from '.';
 import { TSizeScale } from '../types';
 
 const baseProps = () => ({
-	size: select('Size', sizeScale, 3),
+	size: select('Size', sizeScale, 4),
 	muted: boolean('Muted', false),
 	strong: boolean('Strong', false),
 });
@@ -35,8 +35,7 @@ storiesOf('Foundation|Typography/Text', module)
 				{sizeScale.map(size => (
 					<div key={size} style={{ marginBottom: '20px' }}>
 						<Text is="span" size={size}>
-							Size: {size}: Lorem ipsum dolor sit amet,
-							consectetur
+							Size {size}: Help people better care for their cars
 						</Text>
 					</div>
 				))}
@@ -49,8 +48,7 @@ storiesOf('Foundation|Typography/Text', module)
 				{sizeScale.map(size => (
 					<div key={size} style={{ marginBottom: '20px' }}>
 						<Text is="p" size={size}>
-							Size: {size}: Lorem ipsum dolor sit amet,
-							consectetur
+							Size {size}: Help people better care for their cars
 						</Text>
 					</div>
 				))}

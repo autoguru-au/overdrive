@@ -16,7 +16,7 @@ $active_scaling_factor: 0.7777;
 $active_padding_added: var(--global--space--2); // 8
 
 $input_height: 48px; // Hardcoded values are fixes for edge not supporting css variable inside transform
-$font_size: var(--global--fontSize--3); // 16
+$font_size: var(--global--fontSize--4); // 16
 
 @function calcPlaceholderTranslate($notched) {
 	// TODO hard-coding these values is due to edge struggling width cal and variables mixed together
@@ -211,8 +211,6 @@ $font_size: var(--global--fontSize--3); // 16
 
 // Applies to the native input
 .input {
-	$font_size: var(--global--fontSize--3);
-
 	position: relative;
 	display: flex;
 	z-index: 1;

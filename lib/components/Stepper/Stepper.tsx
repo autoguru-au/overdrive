@@ -9,6 +9,7 @@ import React, {
 	useRef,
 } from 'react';
 import { Icon, MinusIcon, PlusIcon } from '../Icon';
+import { Text } from '../Typography';
 import styles from './style.scss';
 
 export interface Props {
@@ -154,9 +155,9 @@ const StepperComponent: FunctionComponent<Props> = ({
 				onClick={onDecrement}>
 				<Icon icon={MinusIcon} size={16} />
 			</button>
-			<span className={styles.label}>
+			<Text is="span" className={styles.label} size={4}>
 				{Number.isFinite(state.value) ? format(state.value) : ''}
-			</span>
+			</Text>
 			<button
 				className={styles.handle}
 				aria-label="step up"

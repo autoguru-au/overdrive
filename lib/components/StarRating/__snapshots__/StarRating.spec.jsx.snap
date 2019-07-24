@@ -74,7 +74,7 @@ exports[`<StarRating /> should match snapshot for small size 1`] = `
     </i>
   </span>
   <span
-    class="root sizeScale2 label"
+    class="root sizeScale3 label"
   >
     Hello World!
   </span>
@@ -155,7 +155,7 @@ exports[`<StarRating /> should match snapshot with label 1`] = `
     </i>
   </span>
   <span
-    class="root sizeScale3 label"
+    class="root sizeScale4 label"
   >
     Hello World!
   </span>
@@ -236,7 +236,7 @@ exports[`<StarRating /> should match snapshot with value 1`] = `
     </i>
   </span>
   <span
-    class="root sizeScale3 label"
+    class="root sizeScale4 label"
   >
     2.7
   </span>
@@ -317,7 +317,7 @@ exports[`<StarRating /> should match snapshot without value 1`] = `
     </i>
   </span>
   <span
-    class="root sizeScale3 label"
+    class="root sizeScale4 label"
   />
 </span>
 `;

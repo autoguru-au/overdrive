@@ -2,13 +2,13 @@ import { action } from '@storybook/addon-actions';
 import { text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React, { useState } from 'react';
-import { Radio, RadioGroup } from '.';
-import { Text } from '../Typography/Text';
-import styles from '../CheckableBase/style.scss';
 import { Badge } from '../Badge';
+import { EColour } from '../Badge/Badge';
+import styles from '../CheckableBase/style.scss';
 import { StarRating } from '../StarRating';
 import { Heading } from '../Typography/Heading';
-import { EColour } from '../Badge/Badge';
+import { Text } from '../Typography/Text';
+import { Radio, RadioGroup } from '.';
 
 const baseProps = () => ({
 	children: text('Checkbox label', 'check me!'),
@@ -123,7 +123,7 @@ storiesOf('Components|Inputs/Radio', module)
 						gridGap: '8px',
 						gridTemplateColumns: '1fr auto auto',
 					}}>
-					<Heading size={2}>Saved Credit Card</Heading>
+					<Heading is="h5">Saved Credit Card</Heading>
 					<Badge colour={EColour.Default} label="SUBSCRIBE" />
 					<Badge colour={EColour.Default} label="AUTO TOP-UP" />
 					<div
@@ -133,8 +133,8 @@ storiesOf('Components|Inputs/Radio', module)
 							gridGap: '8px',
 							gridTemplateColumns: '1fr auto',
 						}}>
-						<Text size={1}>Ending in 5678</Text>
-						<Text size={1}>Updated 12 Dec 2018</Text>
+						<Text size={2}>Ending in 5678</Text>
+						<Text size={2}>Updated 12 Dec 2018</Text>
 					</div>
 				</div>
 			</Radio>
@@ -145,7 +145,7 @@ storiesOf('Components|Inputs/Radio', module)
 						gridGap: '8px',
 						gridTemplateColumns: '1fr auto',
 					}}>
-					<Heading size={2}>Saved Debit Card</Heading>
+					<Heading is="h5">Saved Debit Card</Heading>
 					<Badge colour={EColour.Default} label="SUBSCRIBE" />
 					<div
 						style={{
@@ -154,8 +154,8 @@ storiesOf('Components|Inputs/Radio', module)
 							gridGap: '8px',
 							gridTemplateColumns: '1fr auto',
 						}}>
-						<Text size={1}>Ending in 1234</Text>
-						<Text size={1}>Updated 17 Oct 2019</Text>
+						<Text size={2}>Ending in 1234</Text>
+						<Text size={2}>Updated 17 Oct 2019</Text>
 					</div>
 				</div>
 			</Radio>

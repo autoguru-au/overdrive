@@ -43,7 +43,7 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
               class="headerTitle"
             >
               <h4
-                class="root sizeScale3"
+                class="root sizeScale4"
               >
                 Hello World!
               </h4>
@@ -106,7 +106,7 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
               class="headerTitle"
             >
               <h4
-                class="root sizeScale3"
+                class="root sizeScale4"
               />
             </div>
           </header>
