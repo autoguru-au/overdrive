@@ -6,7 +6,6 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
   class="pagination"
 >
   <button
-    aria-disabled="true"
     aria-label="previous page"
     class="root sizeSmall variantSecondary chevron disabled rounded"
     disabled=""
@@ -30,7 +29,6 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
     </span>
   </button>
   <button
-    aria-disabled="false"
     aria-label="next page"
     class="root sizeSmall variantSecondary chevron rounded"
   >
@@ -61,7 +59,6 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
   class="pagination"
 >
   <button
-    aria-disabled="false"
     aria-label="previous page"
     class="root sizeSmall variantSecondary chevron rounded"
   >
@@ -84,7 +81,6 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
     </span>
   </button>
   <button
-    aria-disabled="false"
     aria-label="next page"
     class="root sizeSmall variantSecondary chevron rounded"
   >
@@ -115,7 +111,6 @@ exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
   class="pagination"
 >
   <button
-    aria-disabled="false"
     aria-label="previous page"
     class="root sizeSmall variantSecondary chevron rounded"
   >
@@ -138,7 +133,6 @@ exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
     </span>
   </button>
   <button
-    aria-disabled="true"
     aria-label="next page"
     class="root sizeSmall variantSecondary chevron disabled rounded"
     disabled=""

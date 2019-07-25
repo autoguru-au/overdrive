@@ -35,7 +35,6 @@ exports[`<Anchor /> should match snapshot without label 1`] = `
 
 exports[`<Anchor /> when custom component should match snapshot with label, icon custom component 1`] = `
 <button
-  aria-disabled="false"
   class="root sizeMedium variantSecondary root"
 >
   <span

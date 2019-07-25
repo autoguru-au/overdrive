@@ -2,7 +2,6 @@
 
 exports[`<Button /> should match snapshot for default button 1`] = `
 <button
-  aria-disabled="false"
   class="root sizeMedium variantSecondary"
 >
   <span
@@ -13,7 +12,6 @@ exports[`<Button /> should match snapshot for default button 1`] = `
 
 exports[`<Button /> when as button should use html button element by default 1`] = `
 <button
-  aria-disabled="false"
   class="root sizeMedium variantSecondary"
 >
   <span
@@ -24,7 +22,6 @@ exports[`<Button /> when as button should use html button element by default 1`]
 
 exports[`<Button /> when colour variants should match snapshot for Danger button 1`] = `
 <button
-  aria-disabled="false"
   class="root sizeMedium variantDanger"
 >
   <span
@@ -35,7 +32,6 @@ exports[`<Button /> when colour variants should match snapshot for Danger button
 
 exports[`<Button /> when colour variants should match snapshot for Primary button 1`] = `
 <button
-  aria-disabled="false"
   class="root sizeMedium variantPrimary"
 >
   <span
@@ -46,7 +42,6 @@ exports[`<Button /> when colour variants should match snapshot for Primary butto
 
 exports[`<Button /> when colour variants should match snapshot for Secondary button 1`] = `
 <button
-  aria-disabled="false"
   class="root sizeMedium variantSecondary"
 >
   <span
@@ -57,7 +52,6 @@ exports[`<Button /> when colour variants should match snapshot for Secondary but
 
 exports[`<Button /> when custom component should use html anchor element if href value exists 1`] = `
 <a
-  aria-disabled="false"
   class="root sizeMedium variantSecondary"
   href="abc"
 >
@@ -69,7 +63,6 @@ exports[`<Button /> when custom component should use html anchor element if href
 
 exports[`<Button /> when isFullWidth should match snapshot 1`] = `
 <button
-  aria-disabled="false"
   class="root sizeMedium variantSecondary fullWidth"
 >
   <span
@@ -80,7 +73,6 @@ exports[`<Button /> when isFullWidth should match snapshot 1`] = `
 
 exports[`<Button /> when loading should match snapshot for default button 1`] = `
 <button
-  aria-disabled="true"
   class="root sizeMedium variantSecondary loading"
   disabled=""
 >
@@ -109,7 +101,6 @@ exports[`<Button /> when loading should match snapshot for default button 1`] = 
 
 exports[`<Button /> when loading should match snapshot for medium button 1`] = `
 <button
-  aria-disabled="true"
   class="root sizeMedium variantSecondary loading"
   disabled=""
 >
@@ -138,7 +129,6 @@ exports[`<Button /> when loading should match snapshot for medium button 1`] = `
 
 exports[`<Button /> when loading should match snapshot for small button 1`] = `
 <button
-  aria-disabled="true"
   class="root sizeSmall variantSecondary loading"
   disabled=""
 >
@@ -167,7 +157,6 @@ exports[`<Button /> when loading should match snapshot for small button 1`] = `
 
 exports[`<Button /> when rounded should match snapshot 1`] = `
 <button
-  aria-disabled="false"
   class="root sizeMedium variantSecondary rounded"
 >
   <span
@@ -178,7 +167,6 @@ exports[`<Button /> when rounded should match snapshot 1`] = `
 
 exports[`<Button /> when size variant should match snapshot for medium button 1`] = `
 <button
-  aria-disabled="false"
   class="root sizeMedium variantSecondary"
 >
   <span
@@ -189,7 +177,6 @@ exports[`<Button /> when size variant should match snapshot for medium button 1`
 
 exports[`<Button /> when size variant should match snapshot for small button 1`] = `
 <button
-  aria-disabled="false"
   class="root sizeSmall variantSecondary"
 >
   <span
