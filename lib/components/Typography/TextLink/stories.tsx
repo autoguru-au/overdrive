@@ -1,9 +1,9 @@
 import { boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
+import { TextLink } from '.';
 
 import { Text } from '..';
-import { TextLink } from '.';
 
 storiesOf('Foundation|Typography/TextLink', module)
 	.addDecorator(story => (
@@ -11,9 +11,9 @@ storiesOf('Foundation|Typography/TextLink', module)
 	))
 	.add('default', () => (
 		<>
-			<Text is="p">
+			<Text muted is="p">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad,{' '}
-				<TextLink href="test" strong={boolean('Strong', true)}>
+				<TextLink muted href="test" strong={false}>
 					Hello
 				</TextLink>{' '}
 				autem consectetur consequuntur eius ex{' '}

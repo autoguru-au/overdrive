@@ -46,6 +46,7 @@ export const TextLink: RefForwardingComponent<
 				strong={strong}
 				className={clsx(styles.root, {
 					[styles.strong]: strong,
+					[styles.muted]: muted,
 				})}>
 				{children}
 			</Text>
