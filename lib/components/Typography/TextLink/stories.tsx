@@ -9,22 +9,19 @@ storiesOf('Foundation|Typography/TextLink', module)
 	.addDecorator(story => (
 		<div style={{ width: '100%', maxWidth: 300 }}>{story()}</div>
 	))
-	.add('default', () => {
-		return (
-			<>
-				<Text is="p">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Ad,{' '}
-					<TextLink href="test" strong={boolean('Strong', false)}>
-						Hello
-					</TextLink>{' '}
-					autem consectetur consequuntur eius ex{' '}
-					<TextLink href="test" strong={boolean('Strong', false)}>
-						Hello
-					</TextLink>{' '}
-					fugiat illo ipsum nobis numquam, officiis placeat quia,
-					quidem reprehenderit rerum temporibus veniam vero.
-				</Text>
-			</>
-		);
-	});
+	.add('default', () => (
+		<>
+			<Text is="p">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad,{' '}
+				<TextLink href="test" strong={boolean('Strong', true)}>
+					Hello
+				</TextLink>{' '}
+				autem consectetur consequuntur eius ex{' '}
+				<TextLink href="test" strong={boolean('Strong', true)}>
+					Hello
+				</TextLink>{' '}
+				fugiat illo ipsum nobis numquam, officiis placeat quia, quidem
+				reprehenderit rerum temporibus veniam vero.
+			</Text>
+		</>
+	));
