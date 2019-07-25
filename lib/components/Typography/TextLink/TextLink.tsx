@@ -56,13 +56,17 @@ export const TextLink: RefForwardingComponent<
 				<a
 					ref={ref as any}
 					rel={props.rel || 'noopener noreferrer'}
-					className={className}
+					className={clsx(className, styles.anchor)}
 					{...props}>
 					{body}
 				</a>
 			);
 		}
 
-		return cloneElement(as, { ref, className }, body);
+		return cloneElement(
+			as,
+			{ ref, className: clsx(className, styles.anchor) },
+			body,
+		);
 	},
 );
