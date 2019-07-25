@@ -5,8 +5,7 @@ $heightMedium: 48px;
 $widthSmall: 36px;
 
 @mixin isHoverState() {
-	&:not([disabled]),
-	&:not([aria-disabled='true']) {
+	&:not([disabled]) {
 		&.isHoverState,
 		&:hover {
 			@content;
@@ -15,8 +14,7 @@ $widthSmall: 36px;
 }
 
 @mixin isActiveState() {
-	&:not([disabled]),
-	&:not([aria-disabled='true']) {
+	&:not([disabled]) {
 		&.isActiveState,
 		&:active {
 			@content;
@@ -25,8 +23,7 @@ $widthSmall: 36px;
 }
 
 @mixin isDisabledState() {
-	&[disabled],
-	&[aria-disabled='true'] {
+	&[disabled] {
 		cursor: not-allowed;
 
 		&:not(.loading) {
@@ -53,18 +50,16 @@ $widthSmall: 36px;
 	transform: translate(0, 0) scale(1);
 	will-change: transform;
 	border-radius: var(--global--space--1);
-	transition: color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
-		background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
-		border-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
-		box-shadow 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
-		transform 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
-
-	@include isHoverState() {
-		transform: translate(0, -1px) scale(1);
-	}
+	transition-delay: 0s;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+	transition-property: color, background-color, border-color, box-shadow,
+		transform;
 
 	@include isActiveState() {
-		transform: translate(0, 1px) scale(1);
+		&:not(.root.minimal) {
+			transform: translate(0, 1px) scale(1);
+		}
 	}
 }
 
@@ -85,6 +80,13 @@ $widthSmall: 36px;
 		box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.06),
 			0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
 
+		&.minimal {
+			background-color: transparent;
+			box-shadow: none;
+			border-color: transparent;
+			color: getColour(gray, 700);
+		}
+
 		@include isHoverState() {
 			color: white;
 			background-color: getColour(green, 700);
@@ -92,6 +94,13 @@ $widthSmall: 36px;
 			box-shadow: 0 3px 14px 2px rgba(0, 0, 0, 0.06),
 				0 8px 10px 1px rgba(0, 0, 0, 0.06),
 				0 5px 5px -3px rgba(0, 0, 0, 0.1);
+
+			&.minimal {
+				color: getColour(green, 900);
+				background-color: getColour(green, 100);
+				box-shadow: none;
+				border-color: transparent;
+			}
 		}
 
 		@include isActiveState() {
@@ -101,6 +110,13 @@ $widthSmall: 36px;
 			box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.06),
 				0 2px 2px 0 rgba(0, 0, 0, 0.06),
 				0 3px 1px -2px rgba(0, 0, 0, 0.1);
+
+			&.minimal {
+				color: getColour(green, 900);
+				background-color: getColour(green, 200);
+				box-shadow: none;
+				border-color: transparent;
+			}
 		}
 
 		@include isDisabledState() {
@@ -108,6 +124,13 @@ $widthSmall: 36px;
 			background-color: getColour(green, 200);
 			border-color: getColour(green, 200);
 			box-shadow: none;
+
+			&.minimal {
+				color: getColour(green, 300);
+				background-color: getColour(green, 100);
+				box-shadow: none;
+				border-color: transparent;
+			}
 		}
 	}
 
@@ -117,11 +140,25 @@ $widthSmall: 36px;
 		border-color: getColour(gray, 300);
 		box-shadow: var(--global--elevationBoxShadow--2);
 
+		&.minimal {
+			background-color: transparent;
+			box-shadow: none;
+			border-color: transparent;
+			color: getColour(gray, 700);
+		}
+
 		@include isHoverState() {
 			color: getColour(gray, 700);
 			background-color: getColour(gray, 100);
 			border-color: getColour(gray, 400);
 			box-shadow: var(--global--elevationBoxShadow--3);
+
+			&.minimal {
+				color: getColour(gray, 900);
+				background-color: getColour(gray, 100);
+				box-shadow: none;
+				border-color: transparent;
+			}
 		}
 
 		@include isActiveState() {
@@ -129,6 +166,13 @@ $widthSmall: 36px;
 			background-color: getColour(gray, 200);
 			border-color: getColour(gray, 500);
 			box-shadow: var(--global--elevationBoxShadow--1);
+
+			&.minimal {
+				color: getColour(gray, 900);
+				background-color: getColour(gray, 200);
+				box-shadow: none;
+				border-color: transparent;
+			}
 		}
 
 		@include isDisabledState() {
@@ -136,6 +180,13 @@ $widthSmall: 36px;
 			border-color: getColour(gray, 200);
 			color: getColour(gray, 300);
 			box-shadow: none;
+
+			&.minimal {
+				color: getColour(gray, 300);
+				background-color: getColour(gray, 100);
+				box-shadow: none;
+				border-color: transparent;
+			}
 		}
 	}
 
@@ -145,6 +196,13 @@ $widthSmall: 36px;
 		box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.09),
 			0 4px 5px 0 rgba(0, 0, 0, 0.09), 0 2px 4px -1px rgba(0, 0, 0, 0.15);
 
+		&.minimal {
+			background-color: transparent;
+			box-shadow: none;
+			border-color: transparent;
+			color: getColour(gray, 700);
+		}
+
 		@include isHoverState() {
 			color: white;
 			background-color: getColour(red, 700);
@@ -152,6 +210,13 @@ $widthSmall: 36px;
 			box-shadow: 0 3px 14px 2px rgba(0, 0, 0, 0.09),
 				0 8px 10px 1px rgba(0, 0, 0, 0.09),
 				0 5px 5px -3px rgba(0, 0, 0, 0.15);
+
+			&.minimal {
+				color: getColour(red, 900);
+				background-color: getColour(red, 100);
+				box-shadow: none;
+				border-color: transparent;
+			}
 		}
 
 		@include isActiveState() {
@@ -161,6 +226,13 @@ $widthSmall: 36px;
 			box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.09),
 				0 2px 2px 0 rgba(0, 0, 0, 0.09),
 				0 3px 1px -2px rgba(0, 0, 0, 0.15);
+
+			&.minimal {
+				color: getColour(red, 900);
+				background-color: getColour(red, 200);
+				box-shadow: none;
+				border-color: transparent;
+			}
 		}
 
 		@include isDisabledState() {
@@ -168,6 +240,13 @@ $widthSmall: 36px;
 			background-color: getColour(red, 200);
 			border-color: getColour(red, 200);
 			box-shadow: none;
+
+			&.minimal {
+				color: getColour(red, 300);
+				background-color: getColour(red, 100);
+				box-shadow: none;
+				border-color: transparent;
+			}
 		}
 	}
 }

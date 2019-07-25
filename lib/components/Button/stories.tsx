@@ -10,9 +10,10 @@ const nonRoundedProps = () => ({
 	isFullWidth: boolean('Full Width', false),
 });
 
-const baseProps = () => ({
+const baseProps = (defaultVariant = EButtonVariant.Primary) => ({
 	size: select('Size', EButtonSize, EButtonSize.Medium),
-	variant: select('Variant', EButtonVariant, EButtonVariant.Primary),
+	variant: select('Variant', EButtonVariant, defaultVariant),
+	minimal: boolean('minimal', false),
 	onClick(e) {
 		e.preventDefault();
 

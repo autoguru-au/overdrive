@@ -30,11 +30,12 @@ export enum EVariant {
 
 export interface Props {
 	className?: string;
-	is?: ElementType;
 	component?: ComponentType; // @deprecated
 	disabled?: boolean;
+	is?: ElementType;
 	isFullWidth?: boolean;
 	isLoading?: boolean;
+	minimal?: boolean;
 	rounded?: boolean;
 	size?: ESize;
 	variant?: EVariant;
@@ -79,6 +80,7 @@ export const Button: FunctionComponent<Props & any> = forwardRef(
 			rounded = false,
 			size = ESize.Medium,
 			variant = EVariant.Secondary,
+			minimal = false,
 			...rest
 		},
 		ref,
@@ -105,9 +107,9 @@ export const Button: FunctionComponent<Props & any> = forwardRef(
 					[styles.rounded]: rounded,
 					[styles.fullWidth]: isFullWidth,
 					[styles.loading]: isLoading,
+					[styles.minimal]: minimal,
 				},
 			),
-			'aria-disabled': disabled || isLoading,
 			disabled: disabled || isLoading,
 			ref,
 			...rest,
