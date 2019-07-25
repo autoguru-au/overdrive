@@ -13,6 +13,18 @@
 @font-face {
 	font-family: 'AvertaStandard';
 	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: local('Averta Std Semibold'), local('AvertaStd-Semibold'),
+		url('https://cdn.autoguru.com.au/assets/fonts/avertastd-semibold-webfont.woff2')
+			format('woff2'),
+		url('https://cdn.autoguru.com.au/assets/fonts/avertastd-semibold-webfont.woff')
+			format('woff');
+}
+
+@font-face {
+	font-family: 'AvertaStandard';
+	font-style: normal;
 	font-weight: 700;
 	font-display: swap;
 	src: local('Averta Std Bold'), local('AvertaStd-Bold'),
@@ -23,7 +35,7 @@
 }
 
 :root {
-	font: 400 16px/1.2 'AvertaStandard', system-ui, sans-serif;
+	font: 400 16px/22px 'AvertaStandard', system-ui, sans-serif;
 }
 
 input,
