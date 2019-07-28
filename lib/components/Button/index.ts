@@ -1,6 +1,1 @@
-export {
-	Button,
-	ESize as EButtonSize,
-	EVariant as EButtonVariant,
-	Props as IButtonProps,
-} from './Button';
+export { Button, EButtonSize, EButtonVariant } from './Button';

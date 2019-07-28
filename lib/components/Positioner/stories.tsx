@@ -48,7 +48,7 @@ storiesOf('Utility|Positioner', module)
 	.add(
 		'illustrate a scroll',
 		() => {
-			const triggerRef = createRef<HTMLDivElement>();
+			const triggerRef = createRef<HTMLButtonElement>();
 
 			return (
 				<div
@@ -62,15 +62,16 @@ storiesOf('Utility|Positioner', module)
 							height: 'calc(100vh*5)',
 							width: 'calc(100vw*5)',
 						}}>
-						<Button
-							ref={triggerRef}
+						<div
 							style={{
 								marginTop: 'calc((100vh*5) / 2)',
 								marginLeft: 'calc((100vw*5) / 2)',
-							}}
-							size={EButtonSize.Small}>
-							I'm the trigger
-						</Button>
+							}}>
+							<Button ref={triggerRef} size={EButtonSize.Small}>
+								I'm the trigger
+							</Button>
+						</div>
+
 						<Positioner
 							isOpen
 							triggerRef={triggerRef}

@@ -1,74 +1,98 @@
-import { action } from '@storybook/addon-actions';
-import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
+import { AccountBoxIcon } from '../../icons';
+import { Actions } from '../Actions';
+import { Icon } from '../Icon';
+import { Button, EButtonSize, EButtonVariant } from './Button';
 
-import { Button, EButtonSize, EButtonVariant } from '.';
-import styles from './style.scss';
+const sizes = EButtonSize;
+const variants = EButtonVariant;
 
-const nonRoundedProps = () => ({
-	isFullWidth: boolean('Full Width', false),
+const stories = storiesOf('Components|Buttons', module).addDecorator(story => (
+	<div
+		style={{
+			display: 'grid',
+			gridGap: '12px',
+			gridAutoFlow: 'row dense',
+		}}>
+		{story()}
+	</div>
+));
+
+Object.entries(sizes).forEach(([, size]) => {
+	Object.entries(variants).forEach(([, variant]) => {
+		stories.add(`${variant} ${size}`, () => (
+			<>
+				<Actions equalWidth={false}>
+					<Button variant={variant} size={size}>
+						Login
+					</Button>
+					<Button variant={variant} size={size}>
+						<Icon icon={AccountBoxIcon} />
+						Login
+					</Button>
+					<Button isLoading variant={variant} size={size}>
+						Login
+					</Button>
+					<Button disabled variant={variant} size={size}>
+						Login
+					</Button>
+				</Actions>
+				<Actions equalWidth={false}>
+					<Button rounded variant={variant} size={size}>
+						Login
+					</Button>
+					<Button rounded variant={variant} size={size}>
+						<Icon icon={AccountBoxIcon} />
+						Login
+					</Button>
+					<Button rounded isLoading variant={variant} size={size}>
+						Login
+					</Button>
+					<Button rounded disabled variant={variant} size={size}>
+						Login
+					</Button>
+				</Actions>
+				<Actions equalWidth={false}>
+					<Button minimal variant={variant} size={size}>
+						Login
+					</Button>
+					<Button minimal variant={variant} size={size}>
+						<Icon icon={AccountBoxIcon} />
+						Login
+					</Button>
+					<Button minimal isLoading variant={variant} size={size}>
+						Login
+					</Button>
+					<Button minimal disabled variant={variant} size={size}>
+						Login
+					</Button>
+				</Actions>
+				<Actions equalWidth={false}>
+					<Button minimal rounded variant={variant} size={size}>
+						1
+					</Button>
+					<Button minimal rounded variant={variant} size={size}>
+						<Icon icon={AccountBoxIcon} />1
+					</Button>
+					<Button
+						minimal
+						rounded
+						isLoading
+						variant={variant}
+						size={size}>
+						1
+					</Button>
+					<Button
+						minimal
+						rounded
+						disabled
+						variant={variant}
+						size={size}>
+						1
+					</Button>
+				</Actions>
+			</>
+		));
+	});
 });
-
-const baseProps = (defaultVariant = EButtonVariant.Primary) => ({
-	size: select('Size', EButtonSize, EButtonSize.Medium),
-	variant: select('Variant', EButtonVariant, defaultVariant),
-	minimal: boolean('minimal', false),
-	onClick(e) {
-		e.preventDefault();
-
-		return action('Clicked')(e);
-	},
-});
-
-storiesOf('Components|Buttons', module)
-	.add('default', () => (
-		<Button
-			{...baseProps()}
-			{...nonRoundedProps()}
-			isLoading={boolean('isLoading', false)}
-			disabled={boolean('Disabled', false)}>
-			Hello World
-		</Button>
-	))
-	.add('hoverState', () => (
-		<Button
-			className={styles.isHoverState}
-			{...baseProps()}
-			{...nonRoundedProps()}>
-			Hello World
-		</Button>
-	))
-	.add('activeState', () => (
-		<Button
-			className={styles.isActiveState}
-			{...baseProps()}
-			{...nonRoundedProps()}>
-			Hello World
-		</Button>
-	))
-	.add('disabledState', () => (
-		<Button {...baseProps()} {...nonRoundedProps()} disabled>
-			Hello World
-		</Button>
-	))
-	.add('loadingState', () => (
-		<Button {...baseProps()} {...nonRoundedProps()} isLoading>
-			Hello World
-		</Button>
-	))
-	.add('asAnchor', () => (
-		<Button
-			href="https://www.autoguru.com.au"
-			target="_blank"
-			is="a"
-			{...baseProps()}
-			{...nonRoundedProps()}>
-			Hello World
-		</Button>
-	))
-	.add('rounded', () => (
-		<Button rounded {...baseProps()}>
-			2
-		</Button>
-	));

@@ -18,11 +18,15 @@ storiesOf('Foundation|Typography/Anchor', module)
 			icon={<Icon icon={PhoneIcon} size={16} />}
 		/>
 	))
-	.add('withButton', () => (
-		<Anchor
-			{...baseProps()}
-			is={<Button />}
-			to="./#eldorado"
-			icon={<Icon icon={PhoneIcon} size={16} />}
-		/>
-	));
+	.add(
+		'withButton',
+		() => (
+			<Anchor
+				{...baseProps()}
+				is={Button}
+				to="./#eldorado"
+				icon={<Icon icon={PhoneIcon} size={16} />}
+			/>
+		),
+		{ chromatic: { disable: true } },
+	);

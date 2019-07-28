@@ -94,7 +94,7 @@ describe('<Button />', () => {
 			expect(
 				render(<Button size={EButtonSize.Small} />).container
 					.firstChild,
-			).toHaveClass('sizeSmall');
+			).toHaveClass('small');
 		});
 
 		it('should match snapshot for medium button', () => {
@@ -108,7 +108,7 @@ describe('<Button />', () => {
 			expect(
 				render(<Button size={EButtonSize.Medium} />).container
 					.firstChild,
-			).toHaveClass('sizeMedium');
+			).toHaveClass('medium');
 		});
 	});
 

@@ -1,135 +1,107 @@
 import clsx from 'clsx';
 import React, {
+	AriaAttributes,
+	ButtonHTMLAttributes,
 	cloneElement,
-	ComponentType,
 	createElement,
-	ElementType,
 	forwardRef,
-	FunctionComponent,
 	isValidElement,
+	ReactElement,
 } from 'react';
-import {
-	EProgressSpinnerSize,
-	EProgressSpinnerVariant,
-	ProgressSpinner,
-} from '../ProgressSpinner';
+import { IconType } from '../../icons';
+import { ProgressSpinner } from '../ProgressSpinner';
 
-import { warning } from '@autoguru/utilities';
-import styles from './style.scss';
+import styles from './Button.scss';
 
-export enum ESize {
-	Small = 'small',
+export enum EButtonSize {
 	Medium = 'medium',
+	Small = 'small',
 }
 
-export enum EVariant {
+export enum EButtonVariant {
 	Primary = 'primary',
 	Secondary = 'secondary',
 	Danger = 'danger',
 }
 
-export interface Props {
-	className?: string;
-	component?: ComponentType; // @deprecated
+type ButtonPrimitive = ButtonHTMLAttributes<HTMLButtonElement>;
+
+type AllowedChildren = string | IconType;
+
+interface Props
+	extends Pick<ButtonPrimitive, 'id' | 'onClick' | 'type' | 'className'>,
+		Pick<AriaAttributes, 'aria-label'> {
+	children: AllowedChildren | AllowedChildren[];
 	disabled?: boolean;
-	is?: ElementType;
-	isFullWidth?: boolean;
+	is?: ReactElement;
 	isLoading?: boolean;
+	isFullWidth?: boolean;
 	minimal?: boolean;
 	rounded?: boolean;
-	size?: ESize;
-	variant?: EVariant;
+	size?: EButtonSize;
+	variant?: EButtonVariant;
 }
 
-const cssVariantMap: Map<EVariant, string> = new Map([
-	[EVariant.Primary, styles.variantPrimary],
-	[EVariant.Secondary, styles.variantSecondary],
-	[EVariant.Danger, styles.variantDanger],
-]);
-
-const cssSizeMap: Map<ESize, string> = new Map([
-	[ESize.Small, styles.sizeSmall],
-	[ESize.Medium, styles.sizeMedium],
-]);
-
-const progressSpinnerSizeMap: Map<ESize, EProgressSpinnerSize> = new Map([
-	[ESize.Small, EProgressSpinnerSize.Small],
-	[ESize.Medium, EProgressSpinnerSize.Medium],
-]);
-
-const progressSpinnerVariantMap: Map<
-	EVariant,
-	EProgressSpinnerVariant
-> = new Map([
-	[EVariant.Primary, EProgressSpinnerVariant.Light],
-	[EVariant.Secondary, EProgressSpinnerVariant.Secondary],
-	[EVariant.Danger, EProgressSpinnerVariant.Light],
-]);
-
-// TODO: Fix this any here, needs to be an abstract of the component that is being passed in.
-export const Button: FunctionComponent<Props & any> = forwardRef(
+export const Button = forwardRef<HTMLButtonElement, Props>(
 	(
 		{
 			children,
 			className = '',
-			is: Component = 'button',
-			component = void 0,
 			disabled = false,
+			id,
+			is: Component = 'button',
 			isLoading = false,
 			isFullWidth = false,
-			rounded = false,
-			size = ESize.Medium,
-			variant = EVariant.Secondary,
 			minimal = false,
-			...rest
+			onClick,
+			rounded = false,
+			size = EButtonSize.Medium,
+			type = 'button',
+			variant = EButtonVariant.Secondary,
+			'aria-label': ariaLabel,
 		},
 		ref,
 	) => {
-		// @deprecated block
-		warning(
-			component !== void 0,
-			`The \`component\` prop deprecated, please use the \`is\` prop instead.\n\nBefore:\n<Button component="{<Link/">}>\n\tHello\n</Button>\n\nAfter:\n<Button is="{<Link/">}>\n\tHello\n</Button>`,
-		);
-
-		if (component !== void 0) {
-			Component = component;
-		}
-
-		const props = {
-			className: clsx(
-				[
-					styles.root,
-					cssSizeMap.get(size),
-					cssVariantMap.get(variant),
-					className,
-				],
-				{
-					[styles.rounded]: rounded,
-					[styles.fullWidth]: isFullWidth,
-					[styles.loading]: isLoading,
-					[styles.minimal]: minimal,
-				},
-			),
+		const props: Partial<ButtonPrimitive> & { ref: typeof ref } = {
+			type: type as any,
+			id,
+			onClick,
 			disabled: disabled || isLoading,
+			'aria-label': ariaLabel,
+			className: clsx(
+				styles.root,
+				buttonVariantStyleMap[variant],
+				buttonSizeStyleMap[size],
+				{
+					[styles.loading]: isLoading,
+					[styles.fullWidth]: isFullWidth,
+					[styles.minimal]: minimal,
+					[styles.rounded]: rounded,
+				},
+				className,
+			),
 			ref,
-			...rest,
 		};
 
-		const childs = (
-			<>
-				<span children={children} className={styles.btnContent} />
-				{isLoading && (
-					<ProgressSpinner
-						className={styles.spinner}
-						variant={progressSpinnerVariantMap.get(variant)}
-						size={progressSpinnerSizeMap.get(size)}
-					/>
-				)}
-			</>
+		const child = isLoading ? (
+			<ProgressSpinner variant={null} />
+		) : (
+			<div className={styles.body}>{children}</div>
 		);
 
 		return isValidElement(Component)
-			? cloneElement(Component, props, childs)
-			: createElement(Component, props, childs);
+			? cloneElement(Component, props, child)
+			: createElement(Component, props, child);
 	},
 );
+
+const buttonVariantStyleMap: Record<EButtonVariant, string> = {
+	[EButtonVariant.Danger]: styles.variantDanger,
+	[EButtonVariant.Primary]: styles.variantPrimary,
+	[EButtonVariant.Secondary]: styles.variantSecondary,
+};
+
+const buttonSizeStyleMap: Record<EButtonSize, string> = {
+	[EButtonSize.Medium]: styles.medium,
+	[EButtonSize.Small]: styles.small,
+};
