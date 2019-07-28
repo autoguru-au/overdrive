@@ -35,10 +35,11 @@ exports[`<Anchor /> should match snapshot without label 1`] = `
 
 exports[`<Anchor /> when custom component should match snapshot with label, icon custom component 1`] = `
 <button
-  class="root sizeMedium variantSecondary root"
+  class="root variantSecondary medium root"
+  type="button"
 >
-  <span
-    class="btnContent"
+  <div
+    class="body"
   >
     <svg
       class="icon"
@@ -55,6 +56,6 @@ exports[`<Anchor /> when custom component should match snapshot with label, icon
     >
       Hello World!
     </span>
-  </span>
+  </div>
 </button>
 `;

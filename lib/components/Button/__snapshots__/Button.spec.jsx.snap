@@ -2,85 +2,90 @@
 
 exports[`<Button /> should match snapshot for default button 1`] = `
 <button
-  class="root sizeMedium variantSecondary"
+  class="root variantSecondary medium"
+  type="button"
 >
-  <span
-    class="btnContent"
+  <div
+    class="body"
   />
 </button>
 `;
 
 exports[`<Button /> when as button should use html button element by default 1`] = `
 <button
-  class="root sizeMedium variantSecondary"
+  class="root variantSecondary medium"
+  type="button"
 >
-  <span
-    class="btnContent"
+  <div
+    class="body"
   />
 </button>
 `;
 
 exports[`<Button /> when colour variants should match snapshot for Danger button 1`] = `
 <button
-  class="root sizeMedium variantDanger"
+  class="root variantDanger medium"
+  type="button"
 >
-  <span
-    class="btnContent"
+  <div
+    class="body"
   />
 </button>
 `;
 
 exports[`<Button /> when colour variants should match snapshot for Primary button 1`] = `
 <button
-  class="root sizeMedium variantPrimary"
+  class="root variantPrimary medium"
+  type="button"
 >
-  <span
-    class="btnContent"
+  <div
+    class="body"
   />
 </button>
 `;
 
 exports[`<Button /> when colour variants should match snapshot for Secondary button 1`] = `
 <button
-  class="root sizeMedium variantSecondary"
+  class="root variantSecondary medium"
+  type="button"
 >
-  <span
-    class="btnContent"
+  <div
+    class="body"
   />
 </button>
 `;
 
 exports[`<Button /> when custom component should use html anchor element if href value exists 1`] = `
 <a
-  class="root sizeMedium variantSecondary"
+  class="root variantSecondary medium"
   href="abc"
+  type="button"
 >
-  <span
-    class="btnContent"
+  <div
+    class="body"
   />
 </a>
 `;
 
 exports[`<Button /> when isFullWidth should match snapshot 1`] = `
 <button
-  class="root sizeMedium variantSecondary fullWidth"
+  class="root variantSecondary medium fullWidth"
+  type="button"
 >
-  <span
-    class="btnContent"
+  <div
+    class="body"
   />
 </button>
 `;
 
 exports[`<Button /> when loading should match snapshot for default button 1`] = `
 <button
-  class="root sizeMedium variantSecondary loading"
+  class="root variantSecondary medium loading"
   disabled=""
+  type="button"
 >
-  <span
-    class="btnContent"
-  />
   <div
-    class="root sizeMedium variantSecondary spinner"
+    class="root sizeMedium"
   >
     <svg
       class="circular"
@@ -101,14 +106,12 @@ exports[`<Button /> when loading should match snapshot for default button 1`] = 
 
 exports[`<Button /> when loading should match snapshot for medium button 1`] = `
 <button
-  class="root sizeMedium variantSecondary loading"
+  class="root variantSecondary medium loading"
   disabled=""
+  type="button"
 >
-  <span
-    class="btnContent"
-  />
   <div
-    class="root sizeMedium variantSecondary spinner"
+    class="root sizeMedium"
   >
     <svg
       class="circular"
@@ -129,14 +132,12 @@ exports[`<Button /> when loading should match snapshot for medium button 1`] = `
 
 exports[`<Button /> when loading should match snapshot for small button 1`] = `
 <button
-  class="root sizeSmall variantSecondary loading"
+  class="root variantSecondary small loading"
   disabled=""
+  type="button"
 >
-  <span
-    class="btnContent"
-  />
   <div
-    class="root sizeSmall variantSecondary spinner"
+    class="root sizeMedium"
   >
     <svg
       class="circular"
@@ -157,30 +158,33 @@ exports[`<Button /> when loading should match snapshot for small button 1`] = `
 
 exports[`<Button /> when rounded should match snapshot 1`] = `
 <button
-  class="root sizeMedium variantSecondary rounded"
+  class="root variantSecondary medium rounded"
+  type="button"
 >
-  <span
-    class="btnContent"
+  <div
+    class="body"
   />
 </button>
 `;
 
 exports[`<Button /> when size variant should match snapshot for medium button 1`] = `
 <button
-  class="root sizeMedium variantSecondary"
+  class="root variantSecondary medium"
+  type="button"
 >
-  <span
-    class="btnContent"
+  <div
+    class="body"
   />
 </button>
 `;
 
 exports[`<Button /> when size variant should match snapshot for small button 1`] = `
 <button
-  class="root sizeSmall variantSecondary"
+  class="root variantSecondary small"
+  type="button"
 >
-  <span
-    class="btnContent"
+  <div
+    class="body"
   />
 </button>
 `;

@@ -1,18 +1,18 @@
 import clsx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
-import styles from './style.scss';
 import { IconType } from '../../icons';
+import styles from './style.scss';
 
 export interface Props {
 	className?: string;
-	size: number;
+	size?: number;
 	icon: IconType;
 }
 
 export const IconComponent: FunctionComponent<Props> = ({
 	className = '',
 	icon,
-	size,
+	size = 16,
 }) => (
 	<i
 		style={{ width: size, height: size }}
