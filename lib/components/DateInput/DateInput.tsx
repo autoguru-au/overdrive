@@ -3,7 +3,14 @@ import React, { memo } from 'react';
 
 import { withEnhancedInput } from '../InputBase';
 
-function DateInputComponent({ field, eventHandlers, validation, ...rest }) {
+function DateInputComponent({
+	field,
+	eventHandlers,
+	validation,
+	suffixed,
+	prefixed,
+	...rest
+}) {
 	warning(field.value === '', `Date Input does not support empty values.`);
 
 	return (

@@ -2,7 +2,14 @@ import React, { memo } from 'react';
 
 import { withEnhancedInput } from '../InputBase';
 
-function TextAreaInputComponent({ field, eventHandlers, validation, ...rest }) {
+function TextAreaInputComponent({
+	field,
+	eventHandlers,
+	validation,
+	suffixed,
+	prefixed,
+	...rest
+}) {
 	return (
 		<textarea {...eventHandlers} {...field} {...rest} autoComplete="off" />
 	);

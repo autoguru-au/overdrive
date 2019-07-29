@@ -8,6 +8,7 @@ const SelectInputComponent = ({
 	field,
 	eventHandlers,
 	suffixed,
+	prefixed,
 	validation,
 	...rest
 }) => (
