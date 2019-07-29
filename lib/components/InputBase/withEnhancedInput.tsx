@@ -10,6 +10,7 @@ import { NotchedBase } from './NotchedBase';
 import styles from './style.scss';
 import { IconType } from '../../icons';
 import { Icon } from '../Icon';
+import { invariant } from '@autoguru/utilities';
 
 // The underlying primitive, ie, the binding active, or target element. eg, the thing the user will click into
 type HtmlPrimitive = HTMLInputElement & HTMLTextAreaElement & HTMLSelectElement;
@@ -58,6 +59,7 @@ export function withEnhancedInput<IncomingProps = {}>(
 	WrappingComponent: ComponentType<WrappedComponentProps<IncomingProps>> & {
 		primitiveType: string;
 	},
+	withIcon = true,
 ): ComponentType<EnhanceInputProps<IncomingProps>> {
 	type TProps = EnhanceInputProps<IncomingProps>;
 
@@ -148,6 +150,11 @@ export function withEnhancedInput<IncomingProps = {}>(
 				// IncomingProps
 				...rest
 			} = this.props;
+
+			invariant(
+				(prefixIcon || suffixIcon) && !withIcon,
+				'Icons are not supported for this component',
+			);
 
 			/*
 			Need to disable the type assertion here, as ts has no idea that P and an omitted P without its properties is just P
