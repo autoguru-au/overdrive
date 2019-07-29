@@ -1,5 +1,1 @@
-export {
-	StandardModal,
-	Props as IStandardModalProps,
-	ESize as EStandardModalSize,
-} from './StandardModal';
+export { StandardModal, ESize as EStandardModalSize } from './StandardModal';

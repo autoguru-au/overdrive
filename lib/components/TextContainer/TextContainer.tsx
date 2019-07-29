@@ -1,6 +1,6 @@
+import clsx from 'clsx';
 import React, { FunctionComponent, ReactElement } from 'react';
 import styles from './style.scss';
-import clsx from 'clsx';
 
 export interface Props {
 	heading?: ReactElement | null;

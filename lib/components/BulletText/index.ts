@@ -1,5 +1,1 @@
-export {
-	BulletText,
-	EVariant as EBulletTextVariant,
-	Props as IBulletTextProps,
-} from './BulletText';
+export { BulletText, EVariant as EBulletTextVariant } from './BulletText';

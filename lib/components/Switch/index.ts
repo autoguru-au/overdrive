@@ -1,1 +1,1 @@
-export { Switch, Props as IToggleButtonProps } from './Switch';
+export { Switch } from './Switch';

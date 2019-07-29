@@ -6,9 +6,9 @@ import React, {
 	isValidElement,
 	memo,
 } from 'react';
+import { IconType } from '../../icons';
 import { Text } from '../Typography';
 import styles from './style.scss';
-import { IconType } from '../../icons';
 
 export enum EVariant {
 	Primary = 'primary',

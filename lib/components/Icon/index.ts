@@ -1,2 +1,2 @@
-export { Icon, Props as IIconProps } from './Icon';
+export { Icon } from './Icon';
 export * from '../../icons';

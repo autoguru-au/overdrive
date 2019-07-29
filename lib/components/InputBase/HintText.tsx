@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import React, { FunctionComponent } from 'react';
+import { Text } from '../Typography';
 
 import styles from './style.scss';
-import { Text } from '../Typography';
 
 export interface Props {
 	isActive: boolean;

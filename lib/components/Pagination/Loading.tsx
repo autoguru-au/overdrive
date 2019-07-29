@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon, Icon } from '../Icon';
-import styles from './style.scss';
 import { Bubble } from './Bubble';
+import styles from './style.scss';
 
 export interface Props {
 	className?: string;
