@@ -4,6 +4,12 @@ import { storiesOf } from '@storybook/react';
 import React from 'react';
 
 import { TextInput } from '.';
+import {
+	CalendarIcon,
+	CheckIcon,
+	StarIcon,
+	AccountEditIcon,
+} from '../../icons';
 
 const sharedKnobs = placeholder => ({
 	placeholder: text('Placeholder', placeholder),
@@ -35,6 +41,51 @@ storiesOf('Components|Inputs/Text', module)
 			placeholder="What is your first name?"
 			hintText={text('Hint Text', 'Cannot be Bob The Builder.')}
 		/>
+	))
+	.add('with icon', () => (
+		<div style={{ display: 'grid', gridGap: '16px' }}>
+			<TextInput
+				name="abc"
+				placeholder="What month?"
+				prefixIcon={CalendarIcon}
+			/>
+			<TextInput
+				name="abc"
+				placeholder="How many days?"
+				suffixIcon={CheckIcon}
+			/>
+			<TextInput
+				name="abc"
+				placeholder="Your username?"
+				prefixIcon={AccountEditIcon}
+				suffixIcon={StarIcon}
+			/>
+			<TextInput
+				isTouched
+				isValid
+				name="abc"
+				placeholder="Your username?"
+				prefixIcon={AccountEditIcon}
+				suffixIcon={StarIcon}
+			/>
+			<TextInput
+				isTouched
+				name="abc"
+				placeholder="Your username?"
+				isValid={false}
+				prefixIcon={AccountEditIcon}
+				suffixIcon={StarIcon}
+			/>
+			<TextInput
+				isTouched
+				disabled
+				name="abc"
+				placeholder="Your username?"
+				isValid={false}
+				prefixIcon={AccountEditIcon}
+				suffixIcon={StarIcon}
+			/>
+		</div>
 	))
 	.add('with validation', () => (
 		<TextInput

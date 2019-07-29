@@ -8,6 +8,8 @@ import React, {
 import { HintText } from './HintText';
 import { NotchedBase } from './NotchedBase';
 import styles from './style.scss';
+import { IconType } from '../../icons';
+import { Icon } from '../Icon';
 
 type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 
@@ -21,7 +23,7 @@ export interface EventHandlers<E extends HtmlPrimitive = HtmlPrimitive> {
 	onFocus?: FocusEventHandler<E>;
 }
 
-// The props will give the end consumer to send
+// The prop`s will give the end consumer to send
 export interface EnhanceInputPrimitiveProps {
 	name: string;
 	placeholder: string;
@@ -30,6 +32,8 @@ export interface EnhanceInputPrimitiveProps {
 	value?: any;
 	hintText?: string;
 	disabled?: boolean;
+	prefixIcon?: IconType;
+	suffixIcon?: IconType;
 }
 
 export interface ValidationProps {
@@ -44,7 +48,9 @@ export type EnhanceInputProps<IncomingProps = {}> = IncomingProps &
 	ValidationProps;
 
 // The final props we send into thw wrapping component
-export type WrappedComponentProps<IncomingProps = {}> = {
+export type WrappedComponentProps<
+	IncomingProps = { prefixed: boolean; suffixed: boolean }
+> = {
 	validation: ValidationProps;
 	eventHandlers: EventHandlers;
 	field: Omit<EnhanceInputPrimitiveProps, 'placeholder' | 'hintText'>;
@@ -137,6 +143,10 @@ export function withEnhancedInput<IncomingProps = {}>(
 				onFocus,
 				onChange,
 
+				// Icons
+				prefixIcon,
+				suffixIcon,
+
 				// IncomingProps
 				...rest
 			} = this.props;
@@ -191,8 +201,32 @@ export function withEnhancedInput<IncomingProps = {}>(
 								: this.state.value === ''
 						}
 						isActive={this.state.isActive}
+						hasPrefix={Boolean(prefixIcon)}
+						hasSuffix={Boolean(suffixIcon)}
 						placeholder={placeholder}>
-						<WrappingComponent {...wrappingComponent} />
+						{prefixIcon && (
+							<label htmlFor={id}>
+								<Icon
+									icon={prefixIcon}
+									size={24}
+									className={styles.prefixIcon}
+								/>
+							</label>
+						)}
+						<WrappingComponent
+							{...wrappingComponent}
+							prefixed={Boolean(prefixIcon)}
+							suffixed={Boolean(suffixIcon)}
+						/>
+						{suffixIcon && (
+							<label htmlFor={id}>
+								<Icon
+									icon={suffixIcon}
+									size={24}
+									className={styles.suffixIcon}
+								/>
+							</label>
+						)}
 					</NotchedBase>
 					{Boolean(hintText) && Boolean(hintText.length) && (
 						<HintText isActive={this.state.isActive}>

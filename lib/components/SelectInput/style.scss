@@ -15,5 +15,8 @@ select {
 	right: var(--global--input--status--icon--gap);
 	top: calc(50% - (0.5 * var(--global--input--status--icon--size)));
 	transition: fill 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
-	fill: getColour(gray, 500);
+
+	&.suffixed {
+		right: calc(24px + var(--global--space--3) + var(--global--space--2));
+	}
 }

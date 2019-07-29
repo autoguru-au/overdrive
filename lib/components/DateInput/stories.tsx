@@ -5,6 +5,7 @@ import React from 'react';
 import { DateInput } from '.';
 import { formatDate } from './DateInput';
 import isChromatic from 'storybook-chromatic/isChromatic';
+import { CalendarIcon, StarIcon, AccountEditIcon } from '../../icons';
 
 const todayStr: string = formatDate(
 	isChromatic() ? new Date(2019, 5, 1) : new Date(),
@@ -40,6 +41,51 @@ storiesOf('Components|Inputs/Date', module)
 			{...sharedKnobs('What is your DOB?')}
 			hintText={text('Hint Text', 'dd/mm/yyy')}
 		/>
+	))
+	.add('with icon', () => (
+		<div style={{ display: 'grid', gridGap: '16px' }}>
+			<DateInput
+				name="abc"
+				placeholder="What date?"
+				prefixIcon={CalendarIcon}
+			/>
+			<DateInput
+				name="abc"
+				placeholder="What is your DOB?"
+				suffixIcon={CalendarIcon}
+			/>
+			<DateInput
+				name="abc"
+				placeholder="What is your DOB?"
+				prefixIcon={AccountEditIcon}
+				suffixIcon={StarIcon}
+			/>
+			<DateInput
+				isTouched
+				isValid
+				name="abc"
+				placeholder="What is your DOB?"
+				prefixIcon={AccountEditIcon}
+				suffixIcon={CalendarIcon}
+			/>
+			<DateInput
+				isTouched
+				name="abc"
+				placeholder="What is your DOB?"
+				isValid={false}
+				prefixIcon={AccountEditIcon}
+				suffixIcon={CalendarIcon}
+			/>
+			<DateInput
+				isTouched
+				disabled
+				name="abc"
+				placeholder="What is your DOB?"
+				isValid={false}
+				prefixIcon={AccountEditIcon}
+				suffixIcon={CalendarIcon}
+			/>
+		</div>
 	))
 	.add('with validation', () => (
 		<DateInput
