@@ -1,1 +1,1 @@
-export { Meta, Props as IMetaProps, EVariant as EMetaVariant } from './Meta';
+export { Meta, EVariant as EMetaVariant } from './Meta';

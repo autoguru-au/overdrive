@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import React, { FunctionComponent, memo, useCallback, useMemo } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon, Icon } from '../Icon';
-import styles from './style.scss';
 import { Bubble } from './Bubble';
 import { PaginationLoading } from './Loading';
+import styles from './style.scss';
 
 interface OnChangeObject {
 	pageNumber: number;

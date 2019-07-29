@@ -1,18 +1,16 @@
 import React, {
 	Children,
+	ComponentPropsWithoutRef,
 	FunctionComponent,
 	ReactElement,
-	ReactNode,
 	useEffect,
 	useState,
 } from 'react';
 
 import styles from './style.scss';
-import { Props as ITabProps } from './Tab';
+import { Tab } from './Tab';
 import { TabNavItem } from './TabNavItem';
 import { TabPane } from './TabPane';
-
-type ComponentWithChildren<P> = P & { children?: ReactNode };
 
 export interface Props {
 	active?: number;
@@ -39,7 +37,7 @@ export const Tabs: FunctionComponent<Props> = ({
 	};
 
 	const tabsChildren = Children.toArray(children) as Array<
-		ReactElement<ComponentWithChildren<ITabProps>>
+		ReactElement<ComponentPropsWithoutRef<typeof Tab>>
 	>;
 
 	const tabId = useId();

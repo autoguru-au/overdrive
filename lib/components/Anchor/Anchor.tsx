@@ -9,9 +9,9 @@ import React, {
 	memo,
 	ReactNode,
 } from 'react';
+import { IconType } from '../../icons';
 import { Text } from '../Typography';
 import styles from './style.scss';
-import { IconType } from '../../icons';
 
 export interface Props {
 	rel?: string;

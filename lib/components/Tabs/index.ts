@@ -1,2 +1,2 @@
-export { Tabs, Props as ITabsProps } from './Tabs';
-export { Tab, Props as ITabProps } from './Tab';
+export { Tabs } from './Tabs';
+export { Tab } from './Tab';

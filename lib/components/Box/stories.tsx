@@ -1,9 +1,9 @@
 import { select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import React from 'react';
-import { Box, EBoxVariant, IBoxProps } from '.';
+import React, { ComponentProps } from 'react';
+import { Box, EBoxVariant } from '.';
 
-const baseProps = (): IBoxProps => ({
+const baseProps = (): ComponentProps<typeof Box> => ({
 	distance: select('Distance', [0, 1, 2, 3, 4, 5], 1),
 	variant: select('Variant', EBoxVariant, EBoxVariant.default),
 	borderColour: text('Border Colour', 'gray-300'), // TODO: This needs to be programmatic

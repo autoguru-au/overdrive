@@ -1,4 +1,1 @@
-export {
-	LinearProgressIndicator,
-	Props as ILinearProgressIndicatorProps,
-} from './LinearProgressIndicator';
+export { LinearProgressIndicator } from './LinearProgressIndicator';

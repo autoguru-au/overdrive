@@ -1,5 +1,1 @@
-export {
-	StarRating,
-	Props as IStarRatingProps,
-	ESize as EStarRatingSize,
-} from './StarRating';
+export { StarRating, ESize as EStarRatingSize } from './StarRating';

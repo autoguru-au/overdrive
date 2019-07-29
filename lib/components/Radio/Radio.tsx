@@ -2,8 +2,8 @@ import clsx from 'clsx';
 import React, { FunctionComponent, memo, ReactNode, useContext } from 'react';
 import { CheckableBase } from '../CheckableBase';
 import { checkableClass } from '../CheckableBase/CheckableBase';
-import styles from './style.scss';
 import { RadioContext } from './RadioGroup';
+import styles from './style.scss';
 
 export interface Props {
 	value: string;
