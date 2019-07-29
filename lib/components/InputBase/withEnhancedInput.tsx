@@ -11,8 +11,6 @@ import styles from './style.scss';
 import { IconType } from '../../icons';
 import { Icon } from '../Icon';
 
-type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
-
 // The underlying primitive, ie, the binding active, or target element. eg, the thing the user will click into
 type HtmlPrimitive = HTMLInputElement & HTMLTextAreaElement & HTMLSelectElement;
 
@@ -48,12 +46,12 @@ export type EnhanceInputProps<IncomingProps = {}> = IncomingProps &
 	ValidationProps;
 
 // The final props we send into thw wrapping component
-export type WrappedComponentProps<
-	IncomingProps = { prefixed: boolean; suffixed: boolean }
-> = {
+export type WrappedComponentProps<IncomingProps = {}> = {
 	validation: ValidationProps;
 	eventHandlers: EventHandlers;
 	field: Omit<EnhanceInputPrimitiveProps, 'placeholder' | 'hintText'>;
+	prefixed: boolean;
+	suffixed: boolean;
 } & IncomingProps;
 
 export function withEnhancedInput<IncomingProps = {}>(
@@ -179,6 +177,8 @@ export function withEnhancedInput<IncomingProps = {}>(
 					value: this.state.value,
 					className: styles.input,
 				},
+				prefixed: Boolean(prefixIcon),
+				suffixed: Boolean(suffixIcon),
 				...(rest as IncomingProps),
 			} as WrappedComponentProps<IncomingProps>;
 
@@ -213,11 +213,7 @@ export function withEnhancedInput<IncomingProps = {}>(
 								/>
 							</label>
 						)}
-						<WrappingComponent
-							{...wrappingComponent}
-							prefixed={Boolean(prefixIcon)}
-							suffixed={Boolean(suffixIcon)}
-						/>
+						<WrappingComponent {...wrappingComponent} />
 						{suffixIcon && (
 							<label htmlFor={id}>
 								<Icon

@@ -124,6 +124,7 @@ svg {
 		white-space: nowrap;
 		transform-origin: top left;
 		transition: color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
+			fill 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
 			transform 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 		pointer-events: none;
 
