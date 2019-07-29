@@ -5,7 +5,7 @@ import React from 'react';
 import { DateInput } from '.';
 import { formatDate } from './DateInput';
 import isChromatic from 'storybook-chromatic/isChromatic';
-import { CalendarIcon, StarIcon, AccountEditIcon } from '../../icons';
+import { AccountEditIcon, CalendarIcon, StarIcon } from '../../icons';
 
 const todayStr: string = formatDate(
 	isChromatic() ? new Date(2019, 5, 1) : new Date(),

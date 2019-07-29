@@ -5,10 +5,10 @@ import React from 'react';
 
 import { SelectInput } from '.';
 import {
+	AccountEditIcon,
 	AlertIcon,
 	CalendarIcon,
 	StarIcon,
-	AccountEditIcon,
 } from '../../icons';
 
 const sharedKnobs = placeholder => ({
