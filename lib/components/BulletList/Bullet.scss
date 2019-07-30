@@ -1,6 +1,8 @@
 @import '../../theme/tokens/facade';
 
 .root {
+	$dotSize: 8px;
+
 	display: grid;
 	grid-template-columns: min-content 1fr;
 	grid-gap: var(--global--space--4);
@@ -11,9 +13,9 @@
 
 	&::before {
 		display: block;
-		margin-top: 8px;
-		width: 8px;
-		height: 8px;
+		margin-top: calc((1.6em - #{$dotSize}) / 2);
+		width: $dotSize;
+		height: $dotSize;
 		background-color: getColour(gray, 900);
 		content: '';
 		align-self: flex-start;
