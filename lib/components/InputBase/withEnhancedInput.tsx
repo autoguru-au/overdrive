@@ -1,3 +1,4 @@
+import { invariant } from '@autoguru/utilities';
 import clsx from 'clsx';
 import React, {
 	ChangeEventHandler,
@@ -5,12 +6,11 @@ import React, {
 	FocusEventHandler,
 	PureComponent,
 } from 'react';
+import { IconType } from '../../icons';
+import { Icon } from '../Icon';
 import { HintText } from './HintText';
 import { NotchedBase } from './NotchedBase';
 import styles from './style.scss';
-import { IconType } from '../../icons';
-import { Icon } from '../Icon';
-import { invariant } from '@autoguru/utilities';
 
 // The underlying primitive, ie, the binding active, or target element. eg, the thing the user will click into
 type HtmlPrimitive = HTMLInputElement & HTMLTextAreaElement & HTMLSelectElement;
@@ -62,18 +62,16 @@ interface EnhancedInputConfigs {
 	withForcedSuffixIconPadding?: boolean;
 }
 
-const defaultConfigs: EnhancedInputConfigs = {
-	withPrefixIcon: true,
-	withSuffixIcon: true,
-	withForcedPrefixIconPadding: false,
-	withForcedSuffixIconPadding: false,
-};
-
 export function withEnhancedInput<IncomingProps = {}>(
 	WrappingComponent: ComponentType<WrappedComponentProps<IncomingProps>> & {
 		primitiveType: string;
 	},
-	configs: EnhancedInputConfigs = defaultConfigs,
+	{
+		withPrefixIcon = true,
+		withSuffixIcon = true,
+		withForcedPrefixIconPadding = false,
+		withForcedSuffixIconPadding = false,
+	}: EnhancedInputConfigs = {},
 ): ComponentType<EnhanceInputProps<IncomingProps>> {
 	type TProps = EnhanceInputProps<IncomingProps>;
 
@@ -166,11 +164,11 @@ export function withEnhancedInput<IncomingProps = {}>(
 			} = this.props;
 
 			invariant(
-				prefixIcon && !configs.withPrefixIcon,
+				prefixIcon && !withPrefixIcon,
 				'prefix icon is not supported for this component',
 			);
 			invariant(
-				suffixIcon && !configs.withSuffixIcon,
+				suffixIcon && !withSuffixIcon,
 				'suffix icon is not supported for this component',
 			);
 
@@ -227,12 +225,10 @@ export function withEnhancedInput<IncomingProps = {}>(
 						}
 						isActive={this.state.isActive}
 						hasPrefix={
-							Boolean(prefixIcon) ||
-							configs.withForcedPrefixIconPadding
+							Boolean(prefixIcon) || withForcedPrefixIconPadding
 						}
 						hasSuffix={
-							Boolean(suffixIcon) ||
-							configs.withForcedSuffixIconPadding
+							Boolean(suffixIcon) || withForcedSuffixIconPadding
 						}
 						placeholder={placeholder}>
 						{Boolean(prefixIcon) && (
