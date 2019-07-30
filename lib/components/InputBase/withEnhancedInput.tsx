@@ -216,7 +216,7 @@ export function withEnhancedInput<IncomingProps = {}>(
 						hasPrefix={Boolean(prefixIcon)}
 						hasSuffix={Boolean(suffixIcon)}
 						placeholder={placeholder}>
-						{prefixIcon && (
+						{Boolean(prefixIcon) && (
 							<label htmlFor={id}>
 								<Icon
 									icon={prefixIcon}
@@ -226,7 +226,7 @@ export function withEnhancedInput<IncomingProps = {}>(
 							</label>
 						)}
 						<WrappingComponent {...wrappingComponent} />
-						{suffixIcon && (
+						{Boolean(suffixIcon) && (
 							<label htmlFor={id}>
 								<Icon
 									icon={suffixIcon}
