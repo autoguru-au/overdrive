@@ -236,11 +236,13 @@ export function withEnhancedInput<IncomingProps = {}>(
 							</label>
 						)}
 					</NotchedBase>
-					{Boolean(hintText) && Boolean(hintText.length) && (
-						<HintText isActive={this.state.isActive}>
-							{hintText}
-						</HintText>
-					)}
+					{Boolean(hintText) &&
+						Boolean(hintText.length) &&
+						!disabled && (
+							<HintText isActive={this.state.isActive}>
+								{hintText}
+							</HintText>
+						)}
 				</div>
 			);
 		}

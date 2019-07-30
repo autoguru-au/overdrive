@@ -13,6 +13,7 @@ import {
 
 const sharedKnobs = placeholder => ({
 	placeholder: text('Placeholder', placeholder),
+	hintText: text('Hint Text', 'Cannot be Bob The Builder.'),
 	disabled: boolean('disabled', false),
 	onChange: action('onChange'),
 	onFocus: action('onFocus'),
