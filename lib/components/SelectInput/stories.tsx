@@ -4,12 +4,7 @@ import { storiesOf } from '@storybook/react';
 import React from 'react';
 
 import { SelectInput } from '.';
-import {
-	AccountEditIcon,
-	AlertIcon,
-	CalendarIcon,
-	StarIcon,
-} from '../../icons';
+import { AccountEditIcon, CalendarIcon } from '../../icons';
 
 const sharedKnobs = placeholder => ({
 	placeholder: text('Placeholder', placeholder),
@@ -66,28 +61,13 @@ storiesOf('Components|Inputs/Select', module)
 				<option disabled />
 				{selectOptions('Option 1, Option 2, Option 3')}
 			</SelectInput>
-			<SelectInput
-				name="abc"
-				placeholder="Select one"
-				suffixIcon={AlertIcon}>
-				<option disabled />
-				{selectOptions('Option 1, Option 2, Option 3')}
-			</SelectInput>
-			<SelectInput
-				name="abc"
-				placeholder="Select one"
-				prefixIcon={AccountEditIcon}
-				suffixIcon={StarIcon}>
-				<option disabled />
-				{selectOptions('Option 1, Option 2, Option 3')}
-			</SelectInput>
+
 			<SelectInput
 				isTouched
 				isValid
 				name="abc"
 				placeholder="Select one"
-				prefixIcon={AccountEditIcon}
-				suffixIcon={StarIcon}>
+				prefixIcon={AccountEditIcon}>
 				<option disabled />
 				{selectOptions('Option 1, Option 2, Option 3')}
 			</SelectInput>
@@ -96,7 +76,6 @@ storiesOf('Components|Inputs/Select', module)
 				name="abc"
 				placeholder="Select one"
 				prefixIcon={AccountEditIcon}
-				suffixIcon={StarIcon}
 				isValid={false}>
 				<option disabled />
 				{selectOptions('Option 1, Option 2, Option 3')}
@@ -107,7 +86,6 @@ storiesOf('Components|Inputs/Select', module)
 				name="abc"
 				placeholder="Select one"
 				prefixIcon={AccountEditIcon}
-				suffixIcon={StarIcon}
 				isValid={false}>
 				<option disabled />
 				{selectOptions('Option 1, Option 2, Option 3')}

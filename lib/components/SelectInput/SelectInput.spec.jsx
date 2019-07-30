@@ -129,37 +129,6 @@ describe('<SelectInput />', () => {
 		).toMatchSnapshot();
 	});
 
-	it('should match snapshot with suffix icon', () => {
-		expect(
-			render(
-				<SelectInput
-					className="input-class"
-					placeholder="placeholder something"
-					suffixIcon={TestIcon}>
-					<option value="a">Value 1</option>
-					<option value="b">Value 2</option>
-					<option value="c">Value 3</option>
-				</SelectInput>,
-			).container.firstChild,
-		).toMatchSnapshot();
-	});
-
-	it('should match snapshot with both icons', () => {
-		expect(
-			render(
-				<SelectInput
-					className="input-class"
-					placeholder="placeholder something"
-					prefixIcon={TestIcon}
-					suffixIcon={TestIcon}>
-					<option value="a">Value 1</option>
-					<option value="b">Value 2</option>
-					<option value="c">Value 3</option>
-				</SelectInput>,
-			).container.firstChild,
-		).toMatchSnapshot();
-	});
-
 	it('should display placeholder text', () => {
 		const { container } = render(
 			<SelectInput placeholder="placeholder something">

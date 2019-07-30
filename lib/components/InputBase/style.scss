@@ -132,7 +132,7 @@ svg {
 			color: getColour(gray, 300);
 		}
 
-		&:not(.prefix) {
+		&:not(.prefixed) {
 			transform: calcPlaceholderTranslate(false, false) scale(1);
 		}
 

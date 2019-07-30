@@ -22,7 +22,7 @@ export interface EventHandlers<E extends HtmlPrimitive = HtmlPrimitive> {
 	onFocus?: FocusEventHandler<E>;
 }
 
-// The prop`s will give the end consumer to send
+// The props we'll give the end consumer to send
 export interface EnhanceInputPrimitiveProps {
 	name: string;
 	placeholder: string;
@@ -59,7 +59,8 @@ export function withEnhancedInput<IncomingProps = {}>(
 	WrappingComponent: ComponentType<WrappedComponentProps<IncomingProps>> & {
 		primitiveType: string;
 	},
-	withIcon = true,
+	withPrefixIcon = true,
+	withSufficIcon = true,
 ): ComponentType<EnhanceInputProps<IncomingProps>> {
 	type TProps = EnhanceInputProps<IncomingProps>;
 
@@ -152,8 +153,12 @@ export function withEnhancedInput<IncomingProps = {}>(
 			} = this.props;
 
 			invariant(
-				(prefixIcon || suffixIcon) && !withIcon,
-				'Icons are not supported for this component',
+				prefixIcon && !withPrefixIcon,
+				'prefix icon is not supported for this component',
+			);
+			invariant(
+				suffixIcon && !withSufficIcon,
+				'suffix icon is not supported for this component',
 			);
 
 			/*
