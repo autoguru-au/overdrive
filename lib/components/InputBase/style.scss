@@ -48,30 +48,6 @@ $font_size: var(--global--fontSize--4); // 16
 	/* stylelint-enable */
 }
 
-svg {
-	fill: getColour(gray, 300);
-
-	.root:not(.disabled):hover & {
-		fill: getColour(gray, 500);
-	}
-
-	.root:not(.disabled).valid & {
-		fill: getColour(green, 600);
-	}
-
-	.root:not(.disabled).valid:hover & {
-		fill: getColour(green, 700);
-	}
-
-	.root:not(.disabled).invalid & {
-		fill: getColour(red, 600);
-	}
-
-	.root:not(.disabled).invalid:hover & {
-		fill: getColour(red, 700);
-	}
-}
-
 .prefix-icon {
 	margin: 0 var(--global--space--3) 0 calc(var(--global--space--3) - 1px);
 }
@@ -91,6 +67,30 @@ svg {
 	justify-content: flex-start;
 	align-items: center;
 	grid-template-columns: auto 1fr auto;
+
+	svg {
+		fill: getColour(gray, 300);
+
+		.root:not(.disabled):hover & {
+			fill: getColour(gray, 500);
+		}
+
+		.root:not(.disabled).valid & {
+			fill: getColour(green, 600);
+		}
+
+		.root:not(.disabled).valid:hover & {
+			fill: getColour(green, 700);
+		}
+
+		.root:not(.disabled).invalid & {
+			fill: getColour(red, 600);
+		}
+
+		.root:not(.disabled).invalid:hover & {
+			fill: getColour(red, 700);
+		}
+	}
 
 	input,
 	textarea,
