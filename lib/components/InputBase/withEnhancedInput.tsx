@@ -60,7 +60,9 @@ export function withEnhancedInput<IncomingProps = {}>(
 		primitiveType: string;
 	},
 	withPrefixIcon = true,
-	withSufficIcon = true,
+	withSuffixIcon = true,
+	withPrefixIconPadding = false,
+	withSuffixIconPadding = false,
 ): ComponentType<EnhanceInputProps<IncomingProps>> {
 	type TProps = EnhanceInputProps<IncomingProps>;
 
@@ -157,7 +159,7 @@ export function withEnhancedInput<IncomingProps = {}>(
 				'prefix icon is not supported for this component',
 			);
 			invariant(
-				suffixIcon && !withSufficIcon,
+				suffixIcon && !withSuffixIcon,
 				'suffix icon is not supported for this component',
 			);
 
@@ -213,8 +215,8 @@ export function withEnhancedInput<IncomingProps = {}>(
 								: this.state.value === ''
 						}
 						isActive={this.state.isActive}
-						hasPrefix={Boolean(prefixIcon)}
-						hasSuffix={Boolean(suffixIcon)}
+						hasPrefix={Boolean(prefixIcon) || withPrefixIconPadding}
+						hasSuffix={Boolean(suffixIcon) || withSuffixIconPadding}
 						placeholder={placeholder}>
 						{Boolean(prefixIcon) && (
 							<label htmlFor={id}>

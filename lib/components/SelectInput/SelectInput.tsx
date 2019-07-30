@@ -25,5 +25,5 @@ const SelectInputComponent = ({
 SelectInputComponent.primitiveType = 'select';
 
 export const SelectInput = memo(
-	withEnhancedInput(SelectInputComponent, true, false),
+	withEnhancedInput(SelectInputComponent, true, false, false, true),
 );
