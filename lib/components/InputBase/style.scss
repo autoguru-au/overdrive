@@ -68,7 +68,7 @@ $font_size: var(--global--fontSize--4); // 16
 	align-items: center;
 	grid-template-columns: auto 1fr auto;
 
-	&.notched-base--shift.notched-base--active svg {
+	&.notched-base--active svg {
 		fill: getColour(blue, 500);
 	}
 
@@ -80,8 +80,7 @@ $font_size: var(--global--fontSize--4); // 16
 			fill: getColour(gray, 300);
 		}
 
-		.root:not(.disabled):hover &,
-		.notched-base--shift.notched-base--active & {
+		.root:not(.disabled):hover & {
 			fill: getColour(blue, 500);
 		}
 
@@ -134,6 +133,7 @@ $font_size: var(--global--fontSize--4); // 16
 		white-space: nowrap;
 		transform-origin: top left;
 		transition: color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
+			fill 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
 			transform 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 		pointer-events: none;
 
@@ -153,26 +153,26 @@ $font_size: var(--global--fontSize--4); // 16
 			z-index: 2;
 			transform: calcPlaceholderTranslate(true, false)
 				scale(#{$active_scaling_factor});
-		}
 
-		.root:not(.disabled):hover & {
-			color: getColour(blue, 500);
-		}
+			.root:not(.disabled):hover & {
+				color: getColour(blue, 500);
+			}
 
-		.root:not(.disabled).valid & {
-			color: getColour(green, 600);
-		}
+			.root:not(.disabled).valid & {
+				color: getColour(green, 600);
+			}
 
-		.root:not(.disabled).valid:hover & {
-			color: getColour(green, 700);
-		}
+			.root:not(.disabled).valid:hover & {
+				color: getColour(green, 700);
+			}
 
-		.root:not(.disabled).invalid & {
-			color: getColour(red, 600);
-		}
+			.root:not(.disabled).invalid & {
+				color: getColour(red, 600);
+			}
 
-		.root:not(.disabled).invalid:hover & {
-			color: getColour(red, 700);
+			.root:not(.disabled).invalid:hover & {
+				color: getColour(red, 700);
+			}
 		}
 
 		.root:not(.disabled).valid .notched-base--shift.notched-base--active &,
