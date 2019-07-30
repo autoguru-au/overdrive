@@ -18,5 +18,8 @@ const TextAreaInputComponent = ({
 TextAreaInputComponent.primitiveType = 'textarea';
 
 export const TextAreaInput = memo(
-	withEnhancedInput(TextAreaInputComponent, false, false),
+	withEnhancedInput(TextAreaInputComponent, {
+		withSuffixIcon: false,
+		withPrefixIcon: false,
+	}),
 );

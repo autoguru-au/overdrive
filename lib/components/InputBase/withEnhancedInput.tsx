@@ -55,14 +55,25 @@ export type WrappedComponentProps<IncomingProps = {}> = {
 	suffixed: boolean;
 } & IncomingProps;
 
+interface EnhancedInputConfigs {
+	withPrefixIcon?: boolean;
+	withSuffixIcon?: boolean;
+	withForcedPrefixIconPadding?: boolean;
+	withForcedSuffixIconPadding?: boolean;
+}
+
+const defaultConfigs: EnhancedInputConfigs = {
+	withPrefixIcon: true,
+	withSuffixIcon: true,
+	withForcedPrefixIconPadding: false,
+	withForcedSuffixIconPadding: false,
+};
+
 export function withEnhancedInput<IncomingProps = {}>(
 	WrappingComponent: ComponentType<WrappedComponentProps<IncomingProps>> & {
 		primitiveType: string;
 	},
-	withPrefixIcon = true,
-	withSuffixIcon = true,
-	withPrefixIconPadding = false,
-	withSuffixIconPadding = false,
+	configs: EnhancedInputConfigs = defaultConfigs,
 ): ComponentType<EnhanceInputProps<IncomingProps>> {
 	type TProps = EnhanceInputProps<IncomingProps>;
 
@@ -155,11 +166,11 @@ export function withEnhancedInput<IncomingProps = {}>(
 			} = this.props;
 
 			invariant(
-				prefixIcon && !withPrefixIcon,
+				prefixIcon && !configs.withPrefixIcon,
 				'prefix icon is not supported for this component',
 			);
 			invariant(
-				suffixIcon && !withSuffixIcon,
+				suffixIcon && !configs.withSuffixIcon,
 				'suffix icon is not supported for this component',
 			);
 
@@ -215,8 +226,14 @@ export function withEnhancedInput<IncomingProps = {}>(
 								: this.state.value === ''
 						}
 						isActive={this.state.isActive}
-						hasPrefix={Boolean(prefixIcon) || withPrefixIconPadding}
-						hasSuffix={Boolean(suffixIcon) || withSuffixIconPadding}
+						hasPrefix={
+							Boolean(prefixIcon) ||
+							configs.withForcedPrefixIconPadding
+						}
+						hasSuffix={
+							Boolean(suffixIcon) ||
+							configs.withForcedSuffixIconPadding
+						}
 						placeholder={placeholder}>
 						{Boolean(prefixIcon) && (
 							<label htmlFor={id}>
