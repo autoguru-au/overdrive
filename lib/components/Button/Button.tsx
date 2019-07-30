@@ -33,7 +33,7 @@ interface Props
 		Pick<AriaAttributes, 'aria-label'> {
 	children: AllowedChildren | AllowedChildren[];
 	disabled?: boolean;
-	is?: ReactElement;
+	is?: ReactElement | 'button';
 	isLoading?: boolean;
 	isFullWidth?: boolean;
 	minimal?: boolean;
