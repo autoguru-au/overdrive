@@ -103,4 +103,13 @@ storiesOf('Components|Inputs/Text', module)
 			name="abc"
 			hintText="Cannot be Bob The Builder."
 		/>
+	))
+	.add('disabled with value', () => (
+		<TextInput
+			disabled
+			placeholder="What is your first name?"
+			value="Bob The Builder"
+			name="abc"
+			hintText="Cannot be Bob The Builder."
+		/>
 	));

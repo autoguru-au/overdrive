@@ -128,7 +128,7 @@ $font_size: var(--global--fontSize--4); // 16
 			transform 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 		pointer-events: none;
 
-		.root.disabled & {
+		.disabled & {
 			color: getColour(gray, 300);
 		}
 
@@ -203,6 +203,10 @@ $font_size: var(--global--fontSize--4); // 16
 			0 4px 5px 0 rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.05);
 		border-radius: var(--global--space--1);
 
+		.disabled & {
+			box-shadow: none;
+		}
+
 		&__leading,
 		&__notch,
 		&__trailing {
@@ -210,6 +214,10 @@ $font_size: var(--global--fontSize--4); // 16
 			border: 1px solid getColour(gray, 300);
 			transition: border-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 			pointer-events: none;
+
+			.disabled & {
+				border-color: getColour(gray, 200);
+			}
 
 			.root:not(.disabled).valid & {
 				border-color: getColour(green, 600);
@@ -305,8 +313,11 @@ $font_size: var(--global--fontSize--4); // 16
 		margin-top: var(--top-spaceing);
 	}
 
-	&[disabled] {
+	.disabled & {
 		cursor: not-allowed;
+		color: getColour(gray, 300);
+		-webkit-text-fill-color: getColour(gray, 300);
+		opacity: 1;
 	}
 }
 
@@ -315,6 +326,10 @@ $font_size: var(--global--fontSize--4); // 16
 	margin-left: var(--global--space--4);
 	color: getColour(gray, 400);
 	transition: color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
+
+	.disabled & {
+		color: getColour(gray, 300);
+	}
 
 	&--active,
 	.root:not(.disabled):hover & {
