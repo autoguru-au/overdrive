@@ -3,7 +3,7 @@
 :root {
 	--global--input--min--width: 280px;
 	--global--input--status--icon--size: 24px;
-	--global--input--status--icon--gap: 20px;
+	--global--input--status--icon--gap: var(--global--space--3);
 }
 
 .root {
