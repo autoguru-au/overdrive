@@ -11,9 +11,7 @@ select {
 
 .arrow {
 	pointer-events: none;
-	position: absolute;
-	right: var(--global--input--status--icon--gap);
-	top: calc(50% - (0.5 * var(--global--input--status--icon--size)));
+	margin-right: calc(var(--global--input--status--icon--gap) - 1px);
+	margin-left: var(--global--input--status--icon--gap);
 	transition: fill 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
-	fill: getColour(gray, 500);
 }

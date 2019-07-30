@@ -5,7 +5,7 @@ exports[`<SelectInput /> should have some hintText 1`] = `
   class="root"
 >
   <div
-    class="notchedBase"
+    class="notchedBase suffixed"
   >
     <select
       autocomplete="off"
@@ -74,7 +74,7 @@ exports[`<SelectInput /> should match snapshot 1`] = `
   class="root"
 >
   <div
-    class="notchedBase"
+    class="notchedBase suffixed"
   >
     <select
       autocomplete="off"
@@ -138,7 +138,7 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
   class="root"
 >
   <div
-    class="notchedBase notchedBaseShift notchedBaseActive"
+    class="notchedBase notchedBaseShift notchedBaseActive suffixed"
   >
     <select
       autocomplete="off"
@@ -202,7 +202,7 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
   class="root"
 >
   <div
-    class="notchedBase"
+    class="notchedBase suffixed"
   >
     <select
       autocomplete="off"
@@ -266,7 +266,7 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
   class="root invalid withStatus"
 >
   <div
-    class="notchedBase"
+    class="notchedBase suffixed"
   >
     <select
       autocomplete="off"
@@ -330,7 +330,7 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
   class="root valid withStatus"
 >
   <div
-    class="notchedBase"
+    class="notchedBase suffixed"
   >
     <select
       autocomplete="off"
@@ -379,6 +379,69 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
           class="notchedBasePlaceholder"
         >
           Hello World!
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
+<div
+  class="root input-class"
+>
+  <div
+    class="notchedBase prefixed suffixed"
+  >
+    <label>
+      <i
+        class="root prefixIcon"
+        style="width: 24px; height: 24px;"
+      >
+        <svg
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+          />
+        </svg>
+      </i>
+    </label>
+    <select
+      autocomplete="off"
+      class="input"
+    />
+    <i
+      class="root arrow"
+      style="width: 25px; height: 25px;"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M158.08 183.04L256 280.96l97.92-97.92L384 213.333l-128 128-128-128 30.08-30.293z"
+        />
+      </svg>
+    </i>
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width: 0px;"
+      >
+        <label
+          class="notchedBasePlaceholder"
+        >
+          placeholder something
         </label>
       </div>
       <div

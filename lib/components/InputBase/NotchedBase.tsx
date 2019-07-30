@@ -13,6 +13,8 @@ export interface Props {
 	placeholder: string;
 	isEmpty: boolean;
 	isActive: boolean;
+	hasPrefix?: boolean;
+	hasSuffix?: boolean;
 	className?: string;
 }
 
@@ -22,6 +24,8 @@ export const NotchedBase: FunctionComponent<Props> = ({
 	isEmpty,
 	isActive,
 	children,
+	hasPrefix = false,
+	hasSuffix = false,
 	className = '',
 }) => {
 	const labelRef = useRef<HTMLLabelElement>(null);
@@ -52,6 +56,8 @@ export const NotchedBase: FunctionComponent<Props> = ({
 				{
 					[styles.notchedBaseShift]: !isEmpty,
 					[styles.notchedBaseActive]: isActive,
+					[styles.prefixed]: hasPrefix,
+					[styles.suffixed]: hasSuffix,
 				},
 				className,
 			)}>

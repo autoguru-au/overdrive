@@ -2,21 +2,32 @@ import React, { memo } from 'react';
 import { ChevronDownIcon, Icon } from '../Icon';
 import { withEnhancedInput } from '../InputBase';
 import styles from './style.scss';
+import clsx from 'clsx';
 
-function SelectInputComponent({ field, eventHandlers, validation, ...rest }) {
-	return (
-		<>
-			<select
-				{...eventHandlers}
-				{...field}
-				{...rest}
-				autoComplete="off"
-			/>
-			<Icon className={styles.arrow} size={25} icon={ChevronDownIcon} />
-		</>
-	);
-}
+const SelectInputComponent = ({
+	field,
+	eventHandlers,
+	suffixed,
+	prefixed,
+	validation,
+	...rest
+}) => (
+	<>
+		<select {...eventHandlers} {...field} {...rest} autoComplete="off" />
+		<Icon
+			className={clsx(styles.arrow, { [styles.suffixed]: suffixed })}
+			size={25}
+			icon={ChevronDownIcon}
+		/>
+	</>
+);
 
 SelectInputComponent.primitiveType = 'select';
 
-export const SelectInput = memo(withEnhancedInput(SelectInputComponent));
+export const SelectInput = memo(
+	withEnhancedInput(SelectInputComponent, {
+		withSuffixIcon: false,
+		withPrefixIcon: true,
+		withForcedSuffixIconPadding: true,
+	}),
+);

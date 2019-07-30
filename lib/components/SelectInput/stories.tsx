@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import React from 'react';
 
 import { SelectInput } from '.';
+import { AccountEditIcon, CalendarIcon } from '../../icons';
 
 const sharedKnobs = placeholder => ({
 	placeholder: text('Placeholder', placeholder),
@@ -50,6 +51,46 @@ storiesOf('Components|Inputs/Select', module)
 			<option disabled />
 			{selectOptions('Option 1, Option 2, Option 3')}
 		</SelectInput>
+	))
+	.add('with icon', () => (
+		<div style={{ display: 'grid', gridGap: '16px' }}>
+			<SelectInput
+				name="abc"
+				placeholder="Select one"
+				prefixIcon={CalendarIcon}>
+				<option disabled />
+				{selectOptions('Option 1, Option 2, Option 3')}
+			</SelectInput>
+
+			<SelectInput
+				isTouched
+				isValid
+				name="abc"
+				placeholder="Select one"
+				prefixIcon={AccountEditIcon}>
+				<option disabled />
+				{selectOptions('Option 1, Option 2, Option 3')}
+			</SelectInput>
+			<SelectInput
+				isTouched
+				name="abc"
+				placeholder="Select one"
+				prefixIcon={AccountEditIcon}
+				isValid={false}>
+				<option disabled />
+				{selectOptions('Option 1, Option 2, Option 3')}
+			</SelectInput>
+			<SelectInput
+				isTouched
+				disabled
+				name="abc"
+				placeholder="Select one"
+				prefixIcon={AccountEditIcon}
+				isValid={false}>
+				<option disabled />
+				{selectOptions('Option 1, Option 2, Option 3')}
+			</SelectInput>
+		</div>
 	))
 	.add('with validation', () => (
 		<SelectInput

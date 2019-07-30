@@ -7,7 +7,14 @@ const isEdge: boolean =
 
 const type = isEdge ? 'text' : 'number';
 
-function NumberInputComponent({ field, eventHandlers, validation, ...rest }) {
+function NumberInputComponent({
+	field,
+	eventHandlers,
+	validation,
+	suffixed,
+	prefixed,
+	...rest
+}) {
 	return (
 		<input
 			{...eventHandlers}

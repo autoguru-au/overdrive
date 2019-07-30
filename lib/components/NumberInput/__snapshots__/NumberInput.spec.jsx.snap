@@ -230,3 +230,174 @@ exports[`<NumberInput /> should match snapshot when touched and valid 1`] = `
   </div>
 </div>
 `;
+
+exports[`<NumberInput /> should match snapshot with both icons 1`] = `
+<div
+  class="root input-class"
+>
+  <div
+    class="notchedBase prefixed suffixed"
+  >
+    <label>
+      <i
+        class="root prefixIcon"
+        style="width: 24px; height: 24px;"
+      >
+        <svg
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+          />
+        </svg>
+      </i>
+    </label>
+    <input
+      autocomplete="off"
+      class="input"
+      type="number"
+      value=""
+    />
+    <label>
+      <i
+        class="root suffixIcon"
+        style="width: 24px; height: 24px;"
+      >
+        <svg
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+          />
+        </svg>
+      </i>
+    </label>
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width: 0px;"
+      >
+        <label
+          class="notchedBasePlaceholder"
+        >
+          placeholder something
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<NumberInput /> should match snapshot with prefix icon 1`] = `
+<div
+  class="root input-class"
+>
+  <div
+    class="notchedBase prefixed"
+  >
+    <label>
+      <i
+        class="root prefixIcon"
+        style="width: 24px; height: 24px;"
+      >
+        <svg
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+          />
+        </svg>
+      </i>
+    </label>
+    <input
+      autocomplete="off"
+      class="input"
+      type="number"
+      value=""
+    />
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width: 0px;"
+      >
+        <label
+          class="notchedBasePlaceholder"
+        >
+          placeholder something
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<NumberInput /> should match snapshot with suffix icon 1`] = `
+<div
+  class="root input-class"
+>
+  <div
+    class="notchedBase suffixed"
+  >
+    <input
+      autocomplete="off"
+      class="input"
+      type="number"
+      value=""
+    />
+    <label>
+      <i
+        class="root suffixIcon"
+        style="width: 24px; height: 24px;"
+      >
+        <svg
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+          />
+        </svg>
+      </i>
+    </label>
+    <div
+      class="notchedBaseBorder"
+    >
+      <div
+        class="notchedBaseBorderLeading"
+      />
+      <div
+        class="notchedBaseBorderNotch"
+        style="width: 0px;"
+      >
+        <label
+          class="notchedBasePlaceholder"
+        >
+          placeholder something
+        </label>
+      </div>
+      <div
+        class="notchedBaseBorderTrailing"
+      />
+    </div>
+  </div>
+</div>
+`;

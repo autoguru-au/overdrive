@@ -2,7 +2,14 @@ import React, { memo } from 'react';
 
 import { withEnhancedInput } from '../InputBase';
 
-function TextInputComponent({ field, eventHandlers, validation, ...rest }) {
+function TextInputComponent({
+	field,
+	eventHandlers,
+	validation,
+	suffixed,
+	prefixed,
+	...rest
+}) {
 	return (
 		<input
 			{...eventHandlers}

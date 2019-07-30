@@ -1,3 +1,4 @@
+import { invariant } from '@autoguru/utilities';
 import clsx from 'clsx';
 import React, {
 	ChangeEventHandler,
@@ -5,11 +6,11 @@ import React, {
 	FocusEventHandler,
 	PureComponent,
 } from 'react';
+import { IconType } from '../../icons';
+import { Icon } from '../Icon';
 import { HintText } from './HintText';
 import { NotchedBase } from './NotchedBase';
 import styles from './style.scss';
-
-type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 
 // The underlying primitive, ie, the binding active, or target element. eg, the thing the user will click into
 type HtmlPrimitive = HTMLInputElement & HTMLTextAreaElement & HTMLSelectElement;
@@ -21,7 +22,7 @@ export interface EventHandlers<E extends HtmlPrimitive = HtmlPrimitive> {
 	onFocus?: FocusEventHandler<E>;
 }
 
-// The props will give the end consumer to send
+// The props we'll give the end consumer to send
 export interface EnhanceInputPrimitiveProps {
 	name: string;
 	placeholder: string;
@@ -30,6 +31,8 @@ export interface EnhanceInputPrimitiveProps {
 	value?: any;
 	hintText?: string;
 	disabled?: boolean;
+	prefixIcon?: IconType;
+	suffixIcon?: IconType;
 }
 
 export interface ValidationProps {
@@ -48,12 +51,27 @@ export type WrappedComponentProps<IncomingProps = {}> = {
 	validation: ValidationProps;
 	eventHandlers: EventHandlers;
 	field: Omit<EnhanceInputPrimitiveProps, 'placeholder' | 'hintText'>;
+	prefixed: boolean;
+	suffixed: boolean;
 } & IncomingProps;
+
+interface EnhancedInputConfigs {
+	withPrefixIcon?: boolean;
+	withSuffixIcon?: boolean;
+	withForcedPrefixIconPadding?: boolean;
+	withForcedSuffixIconPadding?: boolean;
+}
 
 export function withEnhancedInput<IncomingProps = {}>(
 	WrappingComponent: ComponentType<WrappedComponentProps<IncomingProps>> & {
 		primitiveType: string;
 	},
+	{
+		withPrefixIcon = true,
+		withSuffixIcon = true,
+		withForcedPrefixIconPadding = false,
+		withForcedSuffixIconPadding = false,
+	}: EnhancedInputConfigs = {},
 ): ComponentType<EnhanceInputProps<IncomingProps>> {
 	type TProps = EnhanceInputProps<IncomingProps>;
 
@@ -137,9 +155,22 @@ export function withEnhancedInput<IncomingProps = {}>(
 				onFocus,
 				onChange,
 
+				// Icons
+				prefixIcon,
+				suffixIcon,
+
 				// IncomingProps
 				...rest
 			} = this.props;
+
+			invariant(
+				prefixIcon && !withPrefixIcon,
+				'prefix icon is not supported for this component',
+			);
+			invariant(
+				suffixIcon && !withSuffixIcon,
+				'suffix icon is not supported for this component',
+			);
 
 			/*
 			Need to disable the type assertion here, as ts has no idea that P and an omitted P without its properties is just P
@@ -169,6 +200,8 @@ export function withEnhancedInput<IncomingProps = {}>(
 					value: this.state.value,
 					className: styles.input,
 				},
+				prefixed: Boolean(prefixIcon),
+				suffixed: Boolean(suffixIcon),
 				...(rest as IncomingProps),
 			} as WrappedComponentProps<IncomingProps>;
 
@@ -191,14 +224,40 @@ export function withEnhancedInput<IncomingProps = {}>(
 								: this.state.value === ''
 						}
 						isActive={this.state.isActive}
+						hasPrefix={
+							Boolean(prefixIcon) || withForcedPrefixIconPadding
+						}
+						hasSuffix={
+							Boolean(suffixIcon) || withForcedSuffixIconPadding
+						}
 						placeholder={placeholder}>
+						{Boolean(prefixIcon) && (
+							<label htmlFor={id}>
+								<Icon
+									icon={prefixIcon}
+									size={24}
+									className={styles.prefixIcon}
+								/>
+							</label>
+						)}
 						<WrappingComponent {...wrappingComponent} />
+						{Boolean(suffixIcon) && (
+							<label htmlFor={id}>
+								<Icon
+									icon={suffixIcon}
+									size={24}
+									className={styles.suffixIcon}
+								/>
+							</label>
+						)}
 					</NotchedBase>
-					{Boolean(hintText) && Boolean(hintText.length) && (
-						<HintText isActive={this.state.isActive}>
-							{hintText}
-						</HintText>
-					)}
+					{!disabled &&
+						Boolean(hintText) &&
+						Boolean(hintText.length) && (
+							<HintText isActive={this.state.isActive}>
+								{hintText}
+							</HintText>
+						)}
 				</div>
 			);
 		}
