@@ -59,7 +59,6 @@ exports[`<Button /> when custom component should use html anchor element if href
 <a
   class="root variantSecondary medium"
   href="abc"
-  type="button"
 >
   <div
     class="body"
