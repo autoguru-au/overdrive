@@ -156,5 +156,9 @@
   "peerDependencies": {
     "react": ">=16.8",
     "react-dom": ">=16.8"
+  },
+  "volta": {
+    "node": "12.6.0",
+    "yarn": "1.17.3"
   }
 }
