@@ -71,7 +71,7 @@
   },
   "browserslist": "extends browserslist-config-autoguru",
   "dependencies": {
-    "@autoguru/utilities": "^1.0.59",
+    "@autoguru/utilities": "^1.0.60",
     "clsx": "^1.0.4"
   },
   "devDependencies": {
