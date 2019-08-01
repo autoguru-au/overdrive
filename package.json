@@ -71,14 +71,14 @@
   },
   "browserslist": "extends browserslist-config-autoguru",
   "dependencies": {
-    "@autoguru/utilities": "^1.0.59",
+    "@autoguru/utilities": "^1.0.60",
     "clsx": "^1.0.4"
   },
   "devDependencies": {
-    "@autoguru/babel-preset": "^1.0.58",
+    "@autoguru/babel-preset": "^1.0.60",
     "@autoguru/commitlint-config": "^1.0.53",
     "@autoguru/eslint-config": "^1.0.59",
-    "@autoguru/jest-preset": "^1.0.58",
+    "@autoguru/jest-preset": "^1.0.60",
     "@autoguru/tsconfig": "^1.0.52",
     "@babel/core": "^7.5.5",
     "@babel/runtime-corejs3": "^7.5.5",
@@ -101,7 +101,7 @@
     "@storybook/theming": "^5.1.10",
     "@testing-library/jest-dom": "^4.0.0",
     "@testing-library/react": "^8.0.5",
-    "@types/node": "^12.6.8",
+    "@types/node": "^12.6.9",
     "@types/react": "^16.8.24",
     "@types/react-dom": "^16.8.3",
     "autoprefixer": "^9.5.1",
@@ -135,7 +135,7 @@
     "renovate-config-autoguru": "^1.0.48",
     "resolve-url-loader": "^3.1.0",
     "rimraf": "^2.6.3",
-    "rollup": "^1.17.0",
+    "rollup": "^1.18.0",
     "rollup-plugin-node-resolve": "^5.0.0",
     "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-typescript2": "^0.22.0",
@@ -151,7 +151,7 @@
     "stylelint-scss": "^3.9.2",
     "tslib": "^1.10.0",
     "typescript": "~3.5.3",
-    "webpack": "^4.36.1"
+    "webpack": "^4.39.0"
   },
   "peerDependencies": {
     "react": ">=16.8",
