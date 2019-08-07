@@ -38,14 +38,11 @@ module.exports = ({ config: defaultConfig }) => {
 		use: [
 			{
 				loader: require.resolve('style-loader'),
-				options: {
-					sourceMap: true,
-				},
 			},
 			{
 				loader: require.resolve('css-loader'),
 				options: {
-					importLoaders: 2,
+					importLoaders: 3,
 					localsConvention: 'camelCase',
 					modules: {
 						localIdentName: '[local]-[hash:hex:7]',
