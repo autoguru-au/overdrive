@@ -15,7 +15,7 @@ $screenSize: (
 	}
 }
 
-@mixin isMobile($sizeUpper: map-get($screenSize, mobile-upper)) {
+@mixin isMobile($sizeUpper: map-get($screenSize, tablet-upper)) {
 	@media screen and (max-width: $sizeUpper) {
 		@content;
 	}
