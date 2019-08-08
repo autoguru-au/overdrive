@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Alert /> should match the snapshot 1`] = `
+<div
+  class="root info"
+  role="alert"
+>
+  <i
+    class="root icon"
+    style="width: 20px; height: 20px;"
+  >
+    <svg
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M277.333 192h-42.666v-42.667h42.666m0 213.334h-42.666v-128h42.666M256 42.667C138.24 42.667 42.667 138.24 42.667 256S138.24 469.333 256 469.333 469.333 373.76 469.333 256 373.76 42.667 256 42.667z"
+      />
+    </svg>
+  </i>
+  <div
+    class="content"
+  />
+  <button
+    aria-label="close"
+    class="root variantSecondary small minimal closeButton"
+    type="button"
+  >
+    <div
+      class="body"
+    >
+      <i
+        class="root"
+        style="width: 20px; height: 20px;"
+      >
+        <svg
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M287.147 256l118.186 118.187v31.146h-31.146L256 287.147 137.813 405.333h-31.146v-31.146L224.853 256 106.667 137.813v-31.146h31.146L256 224.853l118.187-118.186h31.146v31.146L287.147 256z"
+          />
+        </svg>
+      </i>
+    </div>
+  </button>
+</div>
+`;

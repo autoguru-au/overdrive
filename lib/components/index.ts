@@ -7,6 +7,7 @@
  */
 
 export * from './Actions';
+export * from './Alert';
 export * from './Anchor';
 export * from './Badge';
 export * from './Box';
