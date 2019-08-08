@@ -1,8 +1,8 @@
+import clsx from 'clsx';
 import React, { memo } from 'react';
 import { ChevronDownIcon, Icon } from '../Icon';
 import { withEnhancedInput } from '../InputBase';
 import styles from './style.scss';
-import clsx from 'clsx';
 
 const SelectInputComponent = ({
 	field,

@@ -24,7 +24,7 @@ export const ModalPortal: FunctionComponent<Props> = ({
 	const contentRef: RefObject<HTMLDivElement> = useRef(null);
 
 	useLayoutEffect(() => {
-		if (!isOpen || typeof document === 'undefined') return void 0;
+		if (!isOpen || typeof window === 'undefined') return void 0;
 
 		document.documentElement.style.overflow = 'hidden';
 
@@ -34,7 +34,7 @@ export const ModalPortal: FunctionComponent<Props> = ({
 	}, [isOpen]);
 
 	useEffect(() => {
-		if (typeof document === 'undefined') return void 0;
+		if (typeof window === 'undefined') return void 0;
 
 		function callback(e: any) {
 			if (!contentRef.current.contains(e.target) && isOpen) {

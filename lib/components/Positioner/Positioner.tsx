@@ -32,7 +32,7 @@ export function usingPositioner<T extends {} = {}>(
 		triggerRef,
 		...rest
 	}) => {
-		if (typeof document === 'undefined') return null;
+		if (typeof window === 'undefined') return null;
 
 		const positionerRef = useRef<HTMLDivElement>();
 		const { alignment: derivedAlignment, rect } = usePositionerEffect(

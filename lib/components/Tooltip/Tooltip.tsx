@@ -30,6 +30,8 @@ export const Tooltip: FunctionComponent<Props> = ({
 	const leaveTimer = useRef<number>();
 
 	const enterHandler = useCallback(() => {
+		if (typeof window === 'undefined') return;
+
 		if (leaveTimer.current) {
 			window.clearTimeout(leaveTimer.current);
 		}
@@ -38,6 +40,8 @@ export const Tooltip: FunctionComponent<Props> = ({
 	}, [setIsOpen]);
 
 	const leaveHandler = useCallback(() => {
+		if (typeof window === 'undefined') return;
+
 		leaveTimer.current = window.setTimeout(() => {
 			setIsOpen(false);
 		}, 1e3 / 2);
@@ -45,12 +49,11 @@ export const Tooltip: FunctionComponent<Props> = ({
 
 	return (
 		<>
-			{Children.only(children) &&
-				cloneElement(children, {
-					ref: triggerRef,
-					onMouseEnter: enterHandler,
-					onMouseLeave: leaveHandler,
-				})}
+			{cloneElement(Children.only(children), {
+				ref: triggerRef,
+				onMouseEnter: enterHandler,
+				onMouseLeave: leaveHandler,
+			})}
 			<Positioner
 				triggerRef={triggerRef}
 				alignment={alignment}

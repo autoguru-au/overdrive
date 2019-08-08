@@ -4,8 +4,8 @@ import { storiesOf } from '@storybook/react';
 import React from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 import { DateInput } from '.';
-import { formatDate } from './DateInput';
 import { AccountEditIcon, CalendarIcon, StarIcon } from '../../icons';
+import { formatDate } from './DateInput';
 
 const todayStr: string = formatDate(
 	isChromatic() ? new Date(2019, 5, 1) : new Date(),
