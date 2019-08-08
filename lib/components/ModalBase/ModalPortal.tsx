@@ -2,11 +2,12 @@ import clsx from 'clsx';
 import React, {
 	FunctionComponent,
 	RefObject,
-	useEffect,
+	useCallback,
 	useLayoutEffect,
 	useRef,
 } from 'react';
 import { createPortal } from 'react-dom';
+import { useOutsideClick } from '../OutsideClick';
 import { ECloseCode } from './enums';
 import styles from './style.scss';
 
@@ -33,19 +34,14 @@ export const ModalPortal: FunctionComponent<Props> = ({
 		};
 	}, [isOpen]);
 
-	useEffect(() => {
-		if (typeof window === 'undefined') return void 0;
-
-		function callback(e: any) {
-			if (!contentRef.current.contains(e.target) && isOpen) {
+	useOutsideClick(
+		[contentRef],
+		useCallback(() => {
+			if (isOpen) {
 				onRequestClose(ECloseCode.Overlay);
 			}
-		}
-
-		document.body.addEventListener('mouseup', callback);
-
-		return () => document.body.removeEventListener('mouseup', callback);
-	}, [isOpen, onRequestClose]);
+		}, [onRequestClose, isOpen]),
+	);
 
 	return createPortal(
 		<div

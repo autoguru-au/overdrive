@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions';
 import { select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React, { createRef, useCallback, useRef, useState } from 'react';
@@ -31,7 +32,8 @@ storiesOf('Utility|Positioner', module)
 					<Positioner
 						isOpen={isOpen}
 						triggerRef={triggerRef}
-						alignment={alignmentPicker()}>
+						alignment={alignmentPicker()}
+						onRequestClose={action('onRequestClose')}>
 						<Box distance={1}>
 							<div style={{ padding: 'var(--global--space--2)' }}>
 								Hello im from the consumer:{' '}
@@ -75,7 +77,8 @@ storiesOf('Utility|Positioner', module)
 						<Positioner
 							isOpen
 							triggerRef={triggerRef}
-							alignment={alignmentPicker()}>
+							alignment={alignmentPicker()}
+							onRequestClose={action('onRequestClose')}>
 							<Box distance={1}>
 								<div
 									style={{
