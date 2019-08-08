@@ -8,6 +8,7 @@ import React, {
 	useState,
 } from 'react';
 import { createPortal } from 'react-dom';
+import { useOutsideClick } from '../OutsideClick';
 import { EAlignment } from './alignment';
 import { AlignmentRect, getOptimalPosition } from './getOptimalPosition';
 import styles from './style.scss';
@@ -40,8 +41,9 @@ export function usingPositioner<T extends {} = {}>(
 			triggerRef,
 			positionerRef,
 			isOpen,
-			onRequestClose,
 		);
+
+		useOutsideClick([positionerRef, triggerRef], onRequestClose);
 
 		return createPortal(
 			<div
@@ -75,22 +77,11 @@ function usePositionerEffect(
 	triggerRef: RefObject<HTMLElement>,
 	positionerRef: RefObject<HTMLElement>,
 	isOpen: boolean,
-	onRequestClose: () => void,
 ) {
 	const [positionerResult, setPositionerResult] = useState<AlignmentRect>({
 		rect: null,
 		alignment,
 	});
-
-	useLayoutEffect(
-		() =>
-			outsideHandler([positionerRef, triggerRef], () => {
-				if (typeof onRequestClose === 'function') {
-					onRequestClose();
-				}
-			}),
-		[onRequestClose, positionerRef, triggerRef],
-	);
 
 	useLayoutEffect(() => {
 		if (!triggerRef.current && !positionerRef.current) {
@@ -137,30 +128,3 @@ function usePositionerEffect(
 
 	return positionerResult;
 }
-
-const outsideHandler = (
-	refs: Array<RefObject<HTMLElement>>,
-	onClickAway: () => void,
-) => {
-	const defaultEvents = ['mousedown', 'touchstart'];
-
-	const handler = event => {
-		if (
-			refs
-				.filter(item => Boolean(item.current))
-				.every(item => !item.current.contains(event.target))
-		) {
-			onClickAway();
-		}
-	};
-
-	defaultEvents.forEach(ev =>
-		document.addEventListener(ev, handler, {
-			passive: true,
-		}),
-	);
-
-	return () => {
-		defaultEvents.forEach(ev => document.removeEventListener(ev, handler));
-	};
-};
