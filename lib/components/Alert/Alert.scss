@@ -14,6 +14,8 @@ $buttonOffset: 8px;
 	overflow: hidden;
 	border: 1px solid getColour(gray, 300);
 	box-shadow: var(--global--elevationBoxShadow--4);
+	background-color: white;
+	max-width: 650px;
 
 	&::before {
 		position: absolute;
@@ -49,15 +51,6 @@ $buttonOffset: 8px;
 	}
 }
 
-.content {
-	margin: $buttonOffset - 1px 0;
-}
-
-.icon {
-	margin: $buttonOffset;
-	margin-right: 0;
-}
-
 .success {
 	.icon {
 		fill: getColour(green, 700);
@@ -86,4 +79,12 @@ $buttonOffset: 8px;
 	width: 36px;
 	height: 36px;
 	fill: getColour(gray, 400);
+}
+
+.content {
+	margin: $buttonOffset - 1px 0;
+}
+
+.icon {
+	margin: $buttonOffset 0 $buttonOffset $buttonOffset;
 }

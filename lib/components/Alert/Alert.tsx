@@ -23,24 +23,30 @@ export enum EAlertIntent {
 
 interface Props {
 	children: ReactChild;
+	className?: string;
 	intent?: EAlertIntent;
 
 	onRequestClose?(): void;
 }
 
 export const Alert: FunctionComponent<Props> = ({
+	children,
+	className = '',
 	intent = EAlertIntent.info,
 	onRequestClose = () => void 0,
-	children,
 }) => {
 	return (
 		<div
-			className={clsx(styles.root, {
-				[styles.success]: intent === EAlertIntent.success,
-				[styles.danger]: intent === EAlertIntent.danger,
-				[styles.warning]: intent === EAlertIntent.warning,
-				[styles.info]: intent === EAlertIntent.info,
-			})}
+			className={clsx(
+				styles.root,
+				{
+					[styles.success]: intent === EAlertIntent.success,
+					[styles.danger]: intent === EAlertIntent.danger,
+					[styles.warning]: intent === EAlertIntent.warning,
+					[styles.info]: intent === EAlertIntent.info,
+				},
+				className,
+			)}
 			role="alert">
 			<Icon
 				icon={IconMapForIntent[intent]}
