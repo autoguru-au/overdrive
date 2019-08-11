@@ -5,7 +5,6 @@ module.exports = {
 	testPathIgnorePatterns: ['/node_modules/', '/templates/component/'],
 	setupFilesAfterEnv: [
 		require.resolve('@testing-library/jest-dom/extend-expect'),
-		require.resolve('@testing-library/react/cleanup-after-each'),
 	],
 	collectCoverageFrom: [
 		'lib/**/*.{ts,tsx}',
