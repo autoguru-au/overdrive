@@ -8,7 +8,9 @@ describe('<Alert />', () => {
 	});
 
 	it('should match the snapshot', () => {
-		expect(render(<Alert />).container.firstChild).toMatchSnapshot();
+		expect(
+			render(<Alert onRequestClose={jest.fn()} />).container.firstChild,
+		).toMatchSnapshot();
 	});
 
 	it('should fire callback when X is clicked', () => {
