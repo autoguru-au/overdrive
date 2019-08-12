@@ -9,44 +9,46 @@ import { TextInput } from '../TextInput';
 const alignmentPicker = () =>
 	select('Alignment', EPositionerAlignment, EPositionerAlignment.BOTTOM_LEFT);
 
-storiesOf('Components|Flyout', module).add('default', () => {
-	const Impl = () => {
-		const triggerRef = useRef();
-		const [isOpen, setIsOpen] = useState(true);
-		const closer = useCallback(() => setIsOpen(false), []);
-		const toggle = useCallback(() => setIsOpen(!isOpen), [isOpen]);
+storiesOf('Components|Flyout', module)
+	.addParameters({ chromatic: { disable: true } })
+	.add('default', () => {
+		const Impl = () => {
+			const triggerRef = useRef();
+			const [isOpen, setIsOpen] = useState(true);
+			const closer = useCallback(() => setIsOpen(false), []);
+			const toggle = useCallback(() => setIsOpen(!isOpen), [isOpen]);
 
-		return (
-			<>
-				<Button ref={triggerRef} onClick={toggle}>
-					some trigger
-				</Button>
-				<Flyout
-					triggerRef={triggerRef}
-					alignment={alignmentPicker()}
-					isOpen={isOpen}
-					onRequestClose={closer}>
-					<div
-						style={{
-							display: 'grid',
-							gridTemplateRows: 'repeat(2, auto)',
-							gridGap: 'var(--global--space--4)',
-							padding: 'var(--global--space--4)',
-						}}>
-						<TextInput name="example" placeholder="example" />
-						<div>
-							<Button
-								size={EButtonSize.Small}
-								variant={EButtonVariant.Primary}
-								onClick={closer}>
-								Save
-							</Button>
+			return (
+				<>
+					<Button ref={triggerRef} onClick={toggle}>
+						some trigger
+					</Button>
+					<Flyout
+						triggerRef={triggerRef}
+						alignment={alignmentPicker()}
+						isOpen={isOpen}
+						onRequestClose={closer}>
+						<div
+							style={{
+								display: 'grid',
+								gridTemplateRows: 'repeat(2, auto)',
+								gridGap: 'var(--global--space--4)',
+								padding: 'var(--global--space--4)',
+							}}>
+							<TextInput name="example" placeholder="example" />
+							<div>
+								<Button
+									size={EButtonSize.Small}
+									variant={EButtonVariant.Primary}
+									onClick={closer}>
+									Save
+								</Button>
+							</div>
 						</div>
-					</div>
-				</Flyout>
-			</>
-		);
-	};
+					</Flyout>
+				</>
+			);
+		};
 
-	return <Impl />;
-});
+		return <Impl />;
+	});

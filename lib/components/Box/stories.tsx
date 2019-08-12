@@ -10,9 +10,11 @@ const baseProps = (): ComponentProps<typeof Box> => ({
 	strokeWidth: select('Stroke Width', [1, 4], 1),
 });
 
-storiesOf('Foundation|Box', module).add('default', () => (
-	<Box
-		{...baseProps()}
-		children={<div style={{ width: 150, height: 150 }} />}
-	/>
-));
+storiesOf('Foundation|Box', module)
+	.addParameters({ chromatic: { disable: true } })
+	.add('default', () => (
+		<Box
+			{...baseProps()}
+			children={<div style={{ width: 150, height: 150 }} />}
+		/>
+	));

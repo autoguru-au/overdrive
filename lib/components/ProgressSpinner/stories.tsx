@@ -23,6 +23,6 @@ const baseProps = () => ({
 	},
 });
 
-storiesOf('Components|Progress/Spinner', module).add('default', () => (
-	<ProgressSpinner {...baseProps()} />
-));
+storiesOf('Components|Progress/Spinner', module)
+	.addParameters({ chromatic: { disable: true } })
+	.add('default', () => <ProgressSpinner {...baseProps()} />);
