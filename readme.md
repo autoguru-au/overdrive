@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://overdrive.autoguru.io/">
+  <a href="http://overdrive.autoguru.io/">
     <img alt="@autoguru/overdrive" src="logo.png" width="100%">
   </a>
 </p>
@@ -19,7 +19,12 @@
 
 ---
 
-Overdrive is a product component library, and design system for AutoGuru. Built with [React](https://github.com/facebook/react), [TypeScript](https://github.com/Microsoft/typescript), [webpack](https://github.com/webpack/webpack), [SCSS](https://sass-lang.com/), [CSS Modules](https://github.com/css-modules/postcss-modules) and [Storybook](https://github.com/storybooks/storybook).
+Overdrive is a product component library, and design system for AutoGuru. Built
+with [React](https://github.com/facebook/react),
+[TypeScript](https://github.com/Microsoft/typescript),
+[webpack](https://github.com/webpack/webpack), [SCSS](https://sass-lang.com/),
+[CSS Modules](https://github.com/css-modules/postcss-modules) and
+[Storybook](https://github.com/storybooks/storybook).
 
 ## Usage
 
@@ -28,13 +33,17 @@ yarn add @autoguru/overdrive \
 	react react-dom
 ```
 
-1. Import the global/core stylesheet into your project.
+1. Import the component stylesheet into your project.
 
     ```js
+    import '@autoguru/overdrive/dist/theme/tokens/core.scss';
+    // Override any scss map token's here
+    import '@autoguru/overdrive/dist/theme/tokens/render.scss';
     import '@autoguru/overdrive/overdrive.css';
     ```
 
-2. Import and use any of the components, and higher order components we export.
+2. Import and use any of the components, higher order components and hooks we
+   export.
 
     ```jsx
     import { Button, EButtonVariant } '@autoguru/overdrive';
@@ -44,15 +53,10 @@ yarn add @autoguru/overdrive \
     </Button>
     ```
 
-    If you're using TypeScript, we export all prop interfaces, and enums also.
-
-    ```typescript
-    import { IButtonProps } from '@autoguru/overdrive';
-    ```
-
 ## Thanks
 
-[Chromatic](https://www.chromaticqa.com) for providing component screenshot testing.
+[Chromatic](https://www.chromaticqa.com) for providing component screenshot
+testing.
 
 ## License
 
