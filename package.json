@@ -29,7 +29,7 @@
     "generate": "plop",
     "lint": "concurrently \"yarn:lint:ts\" \"yarn:lint:styles\"",
     "lint:styles": "stylelint --ignore-path .gitignore --fix \"lib/**/*.+(scss|css)\"",
-    "lint:ts": "tsc --noEmit && eslint \"{*,{lib,config,scripts,.storybook}/**/*}.{js,jsx,ts,tsx}\" --cache --quiet --fix",
+    "lint:ts": "tsc --noEmit && eslint \"{*,{lib,config,scripts,.storybook}/**/*}.{js,jsx,ts,tsx}\" --cache --quiet",
     "semantic-release": "semantic-release",
     "start": "yarn run storybook",
     "storybook": "start-storybook -p 6006",
@@ -71,13 +71,13 @@
   },
   "browserslist": "extends browserslist-config-autoguru",
   "dependencies": {
-    "@autoguru/utilities": "^1.0.60",
+    "@autoguru/utilities": "^1.0.62",
     "clsx": "^1.0.4"
   },
   "devDependencies": {
     "@autoguru/babel-preset": "^1.0.60",
     "@autoguru/commitlint-config": "^1.0.53",
-    "@autoguru/eslint-config": "^1.0.59",
+    "@autoguru/eslint-plugin": "^1.0.62",
     "@autoguru/jest-preset": "^1.0.60",
     "@autoguru/tsconfig": "^1.0.52",
     "@babel/core": "^7.5.5",

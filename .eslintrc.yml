@@ -1,10 +1,7 @@
 extends:
-  - '@autoguru/eslint-config/typescript'
-  - '@autoguru/eslint-config/react'
-  - '@autoguru/eslint-config/jest'
-
-rules:
-  'jest/prefer-called-with': 'warn'
+  - 'plugin:@autoguru/typescript'
+  - 'plugin:@autoguru/react'
+  - 'plugin:@autoguru/jest'
 
 overrides:
   - files: 'lib/components/**/*'
@@ -16,5 +13,6 @@ overrides:
   - files: '{*,{scripts,config}/**/*}.js'
     env: { node: true, browser: false }
     rules:
+      '@typescript-eslint/require-await': 'off'
       '@typescript-eslint/no-var-requires': 'off'
       'unicorn/no-process-exit': 'off'

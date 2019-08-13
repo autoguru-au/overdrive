@@ -29,10 +29,10 @@
   dependencies:
     "@commitlint/config-conventional" "^8.1.0"
 
-"@autoguru/eslint-config@^1.0.59":
-  version "1.0.59"
-  resolved "https://registry.yarnpkg.com/@autoguru/eslint-config/-/eslint-config-1.0.59.tgz#85aa56586c784cf33a1ba695a0b58119320f55cc"
-  integrity sha512-efHukvndL1hEulARQMHOKc1fPS/hfbxZsbVENxx1eJbGrcpdsZT7DCwrqPVi+eRhb4TXGpvfOGojteP186r5TQ==
+"@autoguru/eslint-plugin@^1.0.62":
+  version "1.0.62"
+  resolved "https://registry.yarnpkg.com/@autoguru/eslint-plugin/-/eslint-plugin-1.0.62.tgz#dc0c3cef59039229f7df54fb46dc55f3fcf764ba"
+  integrity sha512-bbWM+S0tRT6i0Tedt33BZ+qAoTpnsgn9TNPyagL1ITkX1+r4ifqmmmzh29+f+ob9rH3v10ObDtZVd6cDzxVx4A==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^1.13.0"
     "@typescript-eslint/parser" "^1.13.0"
@@ -40,12 +40,14 @@
     eslint-config-prettier "^6.0.0"
     eslint-config-xo "^0.26.0"
     eslint-config-xo-react "^0.20.0"
-    eslint-config-xo-typescript "^0.15.0"
+    eslint-config-xo-typescript "^0.16.0"
     eslint-import-resolver-typescript "^1.1.1"
     eslint-plugin-promise "^4.2.1"
     eslint-plugin-react "^7.14.3"
-    eslint-plugin-react-hooks "^1.6.1"
+    eslint-plugin-react-hooks "^1.7.0"
     eslint-plugin-unicorn "^10.0.0"
+    jsx-ast-utils "^2.2.1"
+    ulid "^2.3.0"
 
 "@autoguru/jest-preset@^1.0.60":
   version "1.0.60"
@@ -62,10 +64,10 @@
   resolved "https://registry.yarnpkg.com/@autoguru/tsconfig/-/tsconfig-1.0.52.tgz#bd26d1ef14df854843088dd6d34348bc0d39a072"
   integrity sha512-lkZQXMmsZAZA7dPAXUbt8i1QwwZBxtYJVWQbQpVvKKrEhuiYl3SumfzFOdxnFP2eRKHZbz+Tb+8UHgsyICoeSA==
 
-"@autoguru/utilities@^1.0.60":
-  version "1.0.60"
-  resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.60.tgz#a81473c11db9ee09bd06caed808837793084020f"
-  integrity sha512-6jMXa9SYertsw45brg1KgWaDtJYV/JQ6kCyX/vznSjBo1gvU9VrWBGVSVBWrqsvXnmg+QeYuzg8KLXc/CPuuzg==
+"@autoguru/utilities@^1.0.62":
+  version "1.0.62"
+  resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.62.tgz#3e7a87aa8b6df2b5226fb736d8136e872dae22e8"
+  integrity sha512-CqwgDK28p0+8WOUSNnqUW38UQsr0HBM7AMIVap54oEyIiP5sJgTkFNcEsK0nEbipYcEvLNjOj1Rhy7tm/1P4hA==
 
 "@babel/code-frame@7.5.5", "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.5.5":
   version "7.5.5"
@@ -5904,10 +5906,10 @@ eslint-config-xo-react@^0.20.0:
   resolved "https://registry.yarnpkg.com/eslint-config-xo-react/-/eslint-config-xo-react-0.20.0.tgz#b20dc454ff3407eb90934d6691618c75f39f2f68"
   integrity sha512-or9vqE6WCsieEh9Bp6QZQEG7jOWLeGrAq/f/82D/f3mNICgYFW6SfEzKyWl34P3XkjIH/tNJDrf1hhPf5hWvxg==
 
-eslint-config-xo-typescript@^0.15.0:
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-xo-typescript/-/eslint-config-xo-typescript-0.15.0.tgz#95d765ff6eed0de72929315da71957f1510aae82"
-  integrity sha512-VDZj8JogA2qzgLQfp4nWPotJfO84dSkcze7n/3xiIpPIfa8oAdxGYv6N6RRdG2A4trMPQEiFESxFSIf/0155/A==
+eslint-config-xo-typescript@^0.16.0:
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-xo-typescript/-/eslint-config-xo-typescript-0.16.0.tgz#d71a7b9b521267d06ac29a0d7f457d97496b037e"
+  integrity sha512-ZRO9FNrxhOkVSstKvt/T3J03sGiVqqdy+WpzWhIz12VIEp6QzMGA29llIJ62qrQzwC4bbfXEAws5m96pSHT4rg==
 
 eslint-config-xo@^0.26.0:
   version "0.26.0"
@@ -6006,7 +6008,7 @@ eslint-plugin-promise@^4.2.1:
   resolved "https://registry.yarnpkg.com/eslint-plugin-promise/-/eslint-plugin-promise-4.2.1.tgz#845fd8b2260ad8f82564c1222fce44ad71d9418a"
   integrity sha512-VoM09vT7bfA7D+upt+FjeBO5eHIJQBUWki1aPvB+vbNiHS3+oGIJGIeyBtKQTME6UPXXy3vV07OL1tHd3ANuDw==
 
-eslint-plugin-react-hooks@^1.6.0, eslint-plugin-react-hooks@^1.6.1:
+eslint-plugin-react-hooks@^1.6.0, eslint-plugin-react-hooks@^1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-1.7.0.tgz#6210b6d5a37205f0b92858f895a4e827020a7d04"
   integrity sha512-iXTCFcOmlWvw4+TOE8CLWj6yX1GwzT0Y6cUfHHZqWnSk144VmVIRcVGtUAzrLES7C798lmvnt02C7rxaOX1HNA==
@@ -15617,6 +15619,11 @@ uid-number@0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/uid-number/-/uid-number-0.0.6.tgz#0ea10e8035e8eb5b8e4449f06da1c730663baa81"
   integrity sha1-DqEOgDXo61uOREnwbaHHMGY7qoE=
+
+ulid@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/ulid/-/ulid-2.3.0.tgz#93063522771a9774121a84d126ecd3eb9804071f"
+  integrity sha512-keqHubrlpvT6G2wH0OEfSW4mquYRcbe/J8NMmveoQOjUqmo+hXtO+ORCpWhdbZ7k72UtY61BL7haGxW6enBnjw==
 
 umask@^1.1.0, umask@~1.1.0:
   version "1.1.0"
