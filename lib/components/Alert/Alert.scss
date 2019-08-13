@@ -5,7 +5,7 @@ $buttonOffset: 8px;
 .root {
 	position: relative;
 	display: grid;
-	grid-template-columns: auto 1fr auto;
+	grid-template-columns: auto 1fr;
 	grid-gap: var(--global--space--2);
 	align-items: flex-start;
 	justify-content: center;
@@ -16,6 +16,18 @@ $buttonOffset: 8px;
 	box-shadow: var(--global--elevationBoxShadow--4);
 	background-color: white;
 	max-width: 650px;
+
+	&.inline {
+		box-shadow: var(--global--elevationBoxShadow--2);
+	}
+
+	&.dismissible {
+		grid-template-columns: auto 1fr auto;
+	}
+
+	&:not(.dismissible) {
+		padding-right: var(--global--space--4);
+	}
 
 	&::before {
 		position: absolute;

@@ -25,6 +25,8 @@ interface Props {
 	children: ReactChild;
 	className?: string;
 	intent?: EAlertIntent;
+	inline?: boolean;
+	dismissible?: boolean;
 
 	onRequestClose?(): void;
 }
@@ -33,7 +35,9 @@ export const Alert: FunctionComponent<Props> = ({
 	children,
 	className = '',
 	intent = EAlertIntent.info,
-	onRequestClose = () => void 0,
+	inline = false,
+	onRequestClose = null,
+	dismissible = typeof onRequestClose === 'function',
 }) => {
 	return (
 		<div
@@ -44,6 +48,8 @@ export const Alert: FunctionComponent<Props> = ({
 					[styles.danger]: intent === EAlertIntent.danger,
 					[styles.warning]: intent === EAlertIntent.warning,
 					[styles.info]: intent === EAlertIntent.info,
+					[styles.inline]: Boolean(inline),
+					[styles.dismissible]: Boolean(dismissible),
 				},
 				className,
 			)}
@@ -60,15 +66,17 @@ export const Alert: FunctionComponent<Props> = ({
 					children
 				)}
 			</div>
-			<Button
-				minimal
-				variant={EButtonVariant.Secondary}
-				size={EButtonSize.Small}
-				className={styles.closeButton}
-				aria-label="close"
-				onClick={onRequestClose}>
-				<Icon icon={WindowCloseIcon} size={20} />
-			</Button>
+			{dismissible && (
+				<Button
+					minimal
+					variant={EButtonVariant.Secondary}
+					size={EButtonSize.Small}
+					className={styles.closeButton}
+					aria-label="close"
+					onClick={onRequestClose}>
+					<Icon icon={WindowCloseIcon} size={20} />
+				</Button>
+			)}
 		</div>
 	);
 };

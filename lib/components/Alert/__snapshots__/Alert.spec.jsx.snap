@@ -2,7 +2,7 @@
 
 exports[`<Alert /> should match the snapshot 1`] = `
 <div
-  class="root info"
+  class="root info dismissible"
   role="alert"
 >
   <i
