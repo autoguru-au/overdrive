@@ -5,16 +5,14 @@
 </p>
 
 <div align="center">
-	<a href="https://travis-ci.com/autoguru-au/overdrive" target="_blank"><img src="https://img.shields.io/travis/com/autoguru-au/overdrive/master.svg?style=flat-square"/></a>
-	<a href="https://codecov.io/gh/autoguru-au/overdrive" target="_blank"><img src="https://img.shields.io/codecov/c/gh/autoguru-au/overdrive/master.svg?style=flat-square"/></a>
-	<a href="https://www.npmjs.com/package/@autoguru/overdrive" target="_blank"><img src="https://img.shields.io/npm/v/@autoguru/overdrive/latest.svg?style=flat-square"/></a>
-	<a href="http://overdrive.autoguru.io" target="_blank"><img src="https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg?style=flat-square"/></a>
+	<a href="https://travis-ci.com/autoguru-au/overdrive" target="_blank"><img src="https://img.shields.io/travis/com/autoguru-au/overdrive/master.svg?style=for-the-badge"/></a>
+	<a href="https://codecov.io/gh/autoguru-au/overdrive" target="_blank"><img src="https://img.shields.io/codecov/c/gh/autoguru-au/overdrive/master.svg?style=for-the-badge"/></a>
+	<a href="https://www.npmjs.com/package/@autoguru/overdrive" target="_blank"><img src="https://img.shields.io/npm/v/@autoguru/overdrive/latest.svg?style=for-the-badge"/></a>
 </div>
 
 <div align="center">
-	<a href="https://github.com/semantic-release/semantic-release" target="_blank"><img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square"/></a>
-	<img src="https://img.shields.io/github/license/autoguru-au/overdrive.svg?style=flat-square"/>
-	<img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square"/>
+	<img src="https://img.shields.io/github/license/autoguru-au/overdrive.svg?style=for-the-badge"/>
+	<img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge"/>
 </div>
 
 ---
