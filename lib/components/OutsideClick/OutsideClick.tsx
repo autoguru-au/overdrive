@@ -52,16 +52,19 @@ interface Props {
 
 export const OutsideClick: NamedExoticComponent<Props> = memo(
 	({ children, onOutsideClick = () => void 0 }) => {
+		const child = Children.only(children);
+
+		const rootClickRef = useRef<HTMLElement>();
+		const hasRef = Object.prototype.hasOwnProperty.call(child.props, 'ref');
+
 		warning(
-			true,
+			hasRef,
 			'This component overrides the child ref, use with caution.',
 		);
 
-		const rootClickRef = useRef<HTMLElement>();
-
 		useOutsideClick([rootClickRef], onOutsideClick);
 
-		return cloneElement(Children.only(children), {
+		return cloneElement(child, {
 			ref: rootClickRef,
 		});
 	},
