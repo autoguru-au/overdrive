@@ -95,7 +95,7 @@ const StarRatingComponent: FunctionComponent<Props> = ({
 }) => {
 	// @deprecated block
 	warning(
-		ratingValue !== void 0,
+		ratingValue === void 0,
 		'The `ratingValue` prop is deprecated, please use the `rating` prop',
 	);
 

@@ -58,7 +58,7 @@ export const OutsideClick: NamedExoticComponent<Props> = memo(
 		const hasRef = Object.prototype.hasOwnProperty.call(child.props, 'ref');
 
 		warning(
-			hasRef,
+			!hasRef,
 			'This component overrides the child ref, use with caution.',
 		);
 

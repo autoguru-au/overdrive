@@ -34,7 +34,7 @@ export const TextLink: RefForwardingComponent<
 		ref,
 	) => {
 		invariant(
-			as !== void 0 && props.href !== void 0,
+			!(as !== void 0 && props.href !== void 0),
 			'You cannot have both href and as defined.',
 		);
 

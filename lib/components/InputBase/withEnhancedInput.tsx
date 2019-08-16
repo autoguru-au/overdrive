@@ -164,11 +164,11 @@ export function withEnhancedInput<IncomingProps = {}>(
 			} = this.props;
 
 			invariant(
-				prefixIcon && !withPrefixIcon,
+				!(prefixIcon && !withPrefixIcon),
 				'prefix icon is not supported for this component',
 			);
 			invariant(
-				suffixIcon && !withSuffixIcon,
+				!(suffixIcon && !withSuffixIcon),
 				'suffix icon is not supported for this component',
 			);
 

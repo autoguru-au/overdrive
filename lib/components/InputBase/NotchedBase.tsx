@@ -45,7 +45,7 @@ export const NotchedBase: FunctionComponent<Props> = ({
 
 	// TODO: This will double warn, when placeholder gets updated, the setLabelWidth will trigger a double render
 	warning(
-		notchedWidth > NOTCHED_WARN_WIDTH,
+		!(notchedWidth > NOTCHED_WARN_WIDTH),
 		`The placeholder cannot exceed ${NOTCHED_WARN_WIDTH}px or roughly 20 characters, as it needs to fit into 280px container.`,
 	);
 

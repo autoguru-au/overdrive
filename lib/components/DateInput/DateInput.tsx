@@ -11,7 +11,7 @@ function DateInputComponent({
 	prefixed,
 	...rest
 }) {
-	warning(field.value === '', `Date Input does not support empty values.`);
+	warning(field.value !== '', `Date Input does not support empty values.`);
 
 	return (
 		<input

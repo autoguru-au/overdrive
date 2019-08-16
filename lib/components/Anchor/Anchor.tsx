@@ -46,7 +46,7 @@ const AnchorComponent: FunctionComponent<Props & any> = ({
 }) => {
 	// @deprecated block
 	warning(
-		component !== void 0,
+		component === void 0,
 		`The \`component\` prop deprecated, please use the \`is\` prop instead.\n\nBefore:\n<Anchor component="{<Link/">}>\n\tHello\n</Anchor>\n\nAfter:\n<Anchor is="{<Link/">}>\n\tHello\n</Anchor>`,
 	);
 
