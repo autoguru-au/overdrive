@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@autoguru/babel-preset@^1.0.63":
-  version "1.0.63"
-  resolved "https://registry.yarnpkg.com/@autoguru/babel-preset/-/babel-preset-1.0.63.tgz#5d600570e2c78b36bde572f24e7d8f5edb9d4faa"
-  integrity sha512-IZVs7P645pkuBEn8/7HnqPo94UhobJGNZutbjY4i4lpMN2y6Y7xfDkC3x/WJEDA7BPAPNncKc22iw1WgVebZaA==
+"@autoguru/babel-preset@^1.0.64":
+  version "1.0.64"
+  resolved "https://registry.yarnpkg.com/@autoguru/babel-preset/-/babel-preset-1.0.64.tgz#94c48eeb4125d984b5e19f91c6d4d36bda136053"
+  integrity sha512-+vBjwLa09qkjd4W4+FFv+a3lzGZfK9Jahzkn125htt6iQLmrGHbtMypVxSKo2ooPiJe65SkXwc+MVIglXKoh1A==
   dependencies:
     "@babel/helper-annotate-as-pure" "^7.0.0"
     "@babel/helper-plugin-utils" "^7.0.0"
@@ -50,25 +50,25 @@
     jsx-ast-utils "^2.2.1"
     ulid "^2.3.0"
 
-"@autoguru/jest-preset@^1.0.63":
-  version "1.0.63"
-  resolved "https://registry.yarnpkg.com/@autoguru/jest-preset/-/jest-preset-1.0.63.tgz#c148fe158dbbb8ec4e3166cb60acc2da17b29774"
-  integrity sha512-qU71oNf/RUN8ePG4EOkKlz/qJS39UCVnKoexfzxaIP64aL9pV1vXlgNfm/+dc1GsRhfCmHKWyJ0nNbY7kIIJ8A==
+"@autoguru/jest-preset@^1.0.64":
+  version "1.0.64"
+  resolved "https://registry.yarnpkg.com/@autoguru/jest-preset/-/jest-preset-1.0.64.tgz#e6f44d628dbc7a3dc8edfc99f0b07f167c8f1385"
+  integrity sha512-WKpEaKhxighf6NbXEZKQYQ9xa/gTg7mliPC7cEJ8lAxbx8B4tkgclU9NlgJ1ex2Xi+FE0Q4OqN0HT19Npfoapw==
   dependencies:
-    "@autoguru/babel-preset" "^1.0.63"
+    "@autoguru/babel-preset" "^1.0.64"
     "@babel/core" "^7.5.5"
     "@babel/preset-typescript" "^7.3.3"
-    babel-jest "^24.8.0"
+    babel-jest "^24.9.0"
 
 "@autoguru/tsconfig@^1.0.63":
   version "1.0.63"
   resolved "https://registry.yarnpkg.com/@autoguru/tsconfig/-/tsconfig-1.0.63.tgz#364d47d64d6228251510bb2e6f553e017d2908d0"
   integrity sha512-uFCHwkyrL0y1GjodDYRpSMKhkZn1jJQaVeP1JrTWpbmegogPvYVM+4NOWaDS6V/glG2E7Mb6KykSmJFGBHbVOg==
 
-"@autoguru/utilities@^1.0.63":
-  version "1.0.63"
-  resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.63.tgz#24ae39983f89e6dc72627903570fae429f3c38b2"
-  integrity sha512-vO+Nye7H3YwmmBowvOsh7v22HEQlWVKpt5NJpL37jnR4pN1yfy9F2LGaSyL925hvvUdJAAL7nDQIQRDXm4a6gA==
+"@autoguru/utilities@^1.0.64":
+  version "1.0.64"
+  resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.64.tgz#6d0ef7b0419f93e72bdde148abdaa016d78e3125"
+  integrity sha512-0j6O715I9N5hdvyHGmBqcOfA0xIqPOaXsKPyQ5lz8cXy5A+sJ0DLRTqU9ke/70u6v2I4hOwaRqs+54fe5z4hig==
   dependencies:
     tiny-invariant "^1.0.6"
     tiny-warning "^1.0.3"
@@ -3163,7 +3163,7 @@ babel-helper-to-multiple-sequence-expressions@^0.5.0:
   resolved "https://registry.yarnpkg.com/babel-helper-to-multiple-sequence-expressions/-/babel-helper-to-multiple-sequence-expressions-0.5.0.tgz#a3f924e3561882d42fcf48907aa98f7979a4588d"
   integrity sha512-m2CvfDW4+1qfDdsrtf4dwOslQC3yhbgyBFptncp4wvtdrDHqueW7slsYv4gArie056phvQFhT2nRcGS4bnm6mA==
 
-babel-jest@^24.8.0, babel-jest@^24.9.0:
+babel-jest@^24.9.0:
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/babel-jest/-/babel-jest-24.9.0.tgz#3fc327cb8467b89d14d7bc70e315104a783ccd54"
   integrity sha512-ntuddfyiN+EhMw58PTNL1ph4C9rECiQXjI4nMMBKBaNjXvqLdkXpPRcMSr4iyBrJg/+wz9brFUD6RhOAT6r4Iw==

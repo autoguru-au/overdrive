@@ -71,14 +71,14 @@
   },
   "browserslist": "extends browserslist-config-autoguru",
   "dependencies": {
-    "@autoguru/utilities": "^1.0.63",
+    "@autoguru/utilities": "^1.0.64",
     "clsx": "^1.0.4"
   },
   "devDependencies": {
-    "@autoguru/babel-preset": "^1.0.63",
+    "@autoguru/babel-preset": "^1.0.64",
     "@autoguru/commitlint-config": "^1.0.53",
     "@autoguru/eslint-plugin": "^1.0.62",
-    "@autoguru/jest-preset": "^1.0.63",
+    "@autoguru/jest-preset": "^1.0.64",
     "@autoguru/tsconfig": "^1.0.63",
     "@babel/core": "^7.5.5",
     "@babel/runtime-corejs3": "^7.5.5",
