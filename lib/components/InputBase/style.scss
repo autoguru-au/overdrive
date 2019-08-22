@@ -1,7 +1,6 @@
 @import '../../theme/tokens/facade';
 
 :root {
-	--global--input--min--width: 280px;
 	--global--input--status--icon--size: 24px;
 	--global--input--status--icon--gap: var(--global--space--3);
 }
@@ -58,7 +57,6 @@ $font_size: var(--global--fontSize--4); // 16
 
 .notched-base {
 	width: 100%;
-	min-width: var(--global--input--min--width);
 	position: relative;
 	display: inline-grid;
 	flex-direction: column;
