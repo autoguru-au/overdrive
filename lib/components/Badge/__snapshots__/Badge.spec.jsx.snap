@@ -2,7 +2,7 @@
 
 exports[`<Badge /> should match snapshot with label 1`] = `
 <span
-  class="root colourDefault"
+  class="root sizeScale2 root neutral"
 >
   Hello World!
 </span>

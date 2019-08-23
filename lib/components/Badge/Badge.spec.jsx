@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Badge, EColour } from './Badge';
+import { Badge, EBadgeColour } from './Badge';
 
 describe('<Badge />', () => {
 	it('should not throw', () => expect(() => render(<Badge />)).not.toThrow());
@@ -25,42 +25,39 @@ describe('<Badge />', () => {
 		expect(container.querySelector('span')).toHaveClass('badge-class');
 	});
 
-	it('should apply success colour style', () => {
+	it('should apply green colour style', () => {
 		const { container } = render(
-			<Badge colour={EColour.Success} label="Hello World!" />,
+			<Badge colour={EBadgeColour.Green} label="Hello World!" />,
 		);
-		expect(container.querySelector('span')).toHaveClass('colourSuccess');
+		expect(container.querySelector('span')).toHaveClass('green');
 	});
 
-	it('should apply danger colour style', () => {
+	it('should apply red colour style', () => {
 		const { container } = render(
-			<Badge colour={EColour.Danger} label="Hello World!" />,
+			<Badge colour={EBadgeColour.Red} label="Hello World!" />,
 		);
-		expect(container.querySelector('span')).toHaveClass('colourDanger');
+		expect(container.querySelector('span')).toHaveClass('red');
 	});
 
-	it('should apply warning colour style', () => {
-		const { container } = render(
-			<Badge colour={EColour.Warning} label="Hello World!" />,
-		);
-		expect(container.querySelector('span')).toHaveClass('colourWarning');
-	});
-
-	it('should not apply inverted style when inverted prop is set to false', () => {
+	it('should apply inverted style when inverted look is set', () => {
 		const { container } = render(
 			<Badge
-				colour={EColour.Default}
-				invert={false}
+				look="inverted"
+				colour={EBadgeColour.Neutral}
 				label="Hello World!"
 			/>,
 		);
-		expect(container.querySelector('span')).not.toHaveClass('inverted');
+		expect(container.querySelector('span')).toHaveClass('invert');
 	});
 
-	it('should apply inverted style when inverted prop is set', () => {
+	it('should apply minimal style when minimal look is set', () => {
 		const { container } = render(
-			<Badge invert colour={EColour.Default} label="Hello World!" />,
+			<Badge
+				look="minimal"
+				colour={EBadgeColour.Neutral}
+				label="Hello World!"
+			/>,
 		);
-		expect(container.querySelector('span')).toHaveClass('inverted');
+		expect(container.querySelector('span')).toHaveClass('minimal');
 	});
 });

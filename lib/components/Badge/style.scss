@@ -7,53 +7,87 @@
 }
 
 .root {
+	display: block;
 	font-weight: 500;
 	color: white;
-	font-size: 12px;
-	line-height: 12px;
 	letter-spacing: 0.5px;
-	padding: 4px;
+	padding: 2px 4px;
 	border-radius: 4px;
-	max-width: 200px;
-	white-space: nowrap;
 	overflow: hidden;
 	text-transform: uppercase;
 }
 
-.colour {
-	&-default {
-		background-color: getColour(gray, 600);
-		border-color: getColour(gray, 600);
+.neutral {
+	background-color: getColour(gray, 600);
+	border-color: getColour(gray, 600);
 
-		&.inverted {
-			@include invertBadge(getColour(gray, 600));
-		}
+	&.invert {
+		@include invertBadge(getColour(gray, 600));
 	}
 
-	&-success {
-		background-color: getColour(green, 600);
-		border-color: getColour(green, 600);
+	&.minimal {
+		background-color: getColour(gray, 200);
+		border-color: getColour(gray, 200);
+		color: getColour(gray, 800);
+	}
+}
 
-		&.inverted {
-			@include invertBadge(getColour(green, 900));
-		}
+.green {
+	background-color: getColour(green, 600);
+	border-color: getColour(green, 600);
+
+	&.invert {
+		@include invertBadge(getColour(green, 900));
 	}
 
-	&-warning {
-		background-color: getColour(yellow, 900);
-		border-color: getColour(yellow, 900);
+	&.minimal {
+		background-color: getColour(green, 200);
+		border-color: getColour(green, 200);
+		color: getColour(green, 900);
+	}
+}
 
-		&.inverted {
-			@include invertBadge(getColour(yellow, 900));
-		}
+.blue {
+	background-color: getColour(blue, 900);
+	border-color: getColour(blue, 900);
+
+	&.invert {
+		@include invertBadge(getColour(blue, 900));
 	}
 
-	&-danger {
-		background-color: getColour(red, 600);
-		border-color: getColour(red, 600);
+	&.minimal {
+		background-color: getColour(blue, 200);
+		border-color: getColour(blue, 200);
+		color: getColour(blue, 900);
+	}
+}
 
-		&.inverted {
-			@include invertBadge(getColour(red, 600));
-		}
+.yellow {
+	background-color: getColour(yellow, 900);
+	border-color: getColour(yellow, 900);
+
+	&.invert {
+		@include invertBadge(getColour(yellow, 900));
+	}
+
+	&.minimal {
+		background-color: getColour(yellow, 200);
+		border-color: getColour(yellow, 200);
+		color: getColour(yellow, 900);
+	}
+}
+
+.red {
+	background-color: getColour(red, 600);
+	border-color: getColour(red, 600);
+
+	&.invert {
+		@include invertBadge(getColour(red, 600));
+	}
+
+	&.minimal {
+		background-color: getColour(red, 200);
+		border-color: getColour(red, 200);
+		color: getColour(red, 800);
 	}
 }

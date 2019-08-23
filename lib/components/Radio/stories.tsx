@@ -3,8 +3,7 @@ import { text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React, { useState } from 'react';
 import { Radio, RadioGroup } from '.';
-import { Badge } from '../Badge';
-import { EColour } from '../Badge/Badge';
+import { Badge, EBadgeColour } from '../Badge';
 import styles from '../CheckableBase/style.scss';
 import { StarRating } from '../StarRating';
 import { Heading } from '../Typography/Heading';
@@ -124,8 +123,8 @@ storiesOf('Components|Inputs/Radio', module)
 						gridTemplateColumns: '1fr auto auto',
 					}}>
 					<Heading is="h5">Saved Credit Card</Heading>
-					<Badge colour={EColour.Default} label="SUBSCRIBE" />
-					<Badge colour={EColour.Default} label="AUTO TOP-UP" />
+					<Badge colour={EBadgeColour.Neutral} label="SUBSCRIBE" />
+					<Badge colour={EBadgeColour.Neutral} label="AUTO TOP-UP" />
 					<div
 						style={{
 							gridColumn: '1/4',
@@ -146,7 +145,7 @@ storiesOf('Components|Inputs/Radio', module)
 						gridTemplateColumns: '1fr auto',
 					}}>
 					<Heading is="h5">Saved Debit Card</Heading>
-					<Badge colour={EColour.Default} label="SUBSCRIBE" />
+					<Badge colour={EBadgeColour.Neutral} label="SUBSCRIBE" />
 					<div
 						style={{
 							gridColumn: '1/4',
