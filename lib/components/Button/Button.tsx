@@ -3,12 +3,15 @@ import React, {
 	AriaAttributes,
 	ButtonHTMLAttributes,
 	cloneElement,
+	ComponentProps,
 	createElement,
 	forwardRef,
 	isValidElement,
 	ReactElement,
+	useMemo,
 } from 'react';
 import { IconType } from '../../icons';
+import { Icon } from '../Icon';
 import { ProgressSpinner } from '../ProgressSpinner';
 
 import styles from './Button.scss';
@@ -62,6 +65,21 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 		},
 		ref,
 	) => {
+		const { isSingleIconChild, props: maybeIconProps } = useMemo(() => {
+			const maybeIcon =
+				isValidElement(children) && children.type === Icon;
+			const maybeProps = children as ReactElement<
+				ComponentProps<typeof Icon>
+			>;
+
+			return maybeIcon
+				? {
+						isSingleIconChild: true,
+						props: maybeProps.props,
+				  }
+				: { isSingleIconChild: false };
+		}, [children]);
+
 		const props: Partial<ButtonPrimitive> & { ref: typeof ref } = {
 			type: Component === 'button' ? (type as any) : void 0,
 			id,
@@ -77,6 +95,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 					[styles.fullWidth]: isFullWidth,
 					[styles.minimal]: minimal,
 					[styles.rounded]: rounded,
+					[styles.iconOnly]: isSingleIconChild && !isLoading,
 				},
 				className,
 			),
@@ -86,7 +105,17 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 		const child = isLoading ? (
 			<ProgressSpinner variant={null} />
 		) : (
-			<div className={styles.body}>{children}</div>
+			<div className={styles.body}>
+				{isSingleIconChild ? (
+					<Icon
+						icon={maybeIconProps.icon}
+						size={maybeIconProps.size || 20}
+						{...maybeIconProps}
+					/>
+				) : (
+					children
+				)}
+			</div>
 		);
 
 		return isValidElement(Component)

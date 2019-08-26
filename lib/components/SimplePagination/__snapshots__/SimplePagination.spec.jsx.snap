@@ -7,7 +7,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
 >
   <button
     aria-label="previous page"
-    class="root variantSecondary small rounded chevron disabled"
+    class="root variantSecondary small rounded iconOnly chevron disabled"
     disabled=""
     type="button"
   >
@@ -31,7 +31,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
   </button>
   <button
     aria-label="next page"
-    class="root variantSecondary small rounded chevron"
+    class="root variantSecondary small rounded iconOnly chevron"
     type="button"
   >
     <div
@@ -62,7 +62,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
 >
   <button
     aria-label="previous page"
-    class="root variantSecondary small rounded chevron"
+    class="root variantSecondary small rounded iconOnly chevron"
     type="button"
   >
     <div
@@ -85,7 +85,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
   </button>
   <button
     aria-label="next page"
-    class="root variantSecondary small rounded chevron"
+    class="root variantSecondary small rounded iconOnly chevron"
     type="button"
   >
     <div
@@ -116,7 +116,7 @@ exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
 >
   <button
     aria-label="previous page"
-    class="root variantSecondary small rounded chevron"
+    class="root variantSecondary small rounded iconOnly chevron"
     type="button"
   >
     <div
@@ -139,7 +139,7 @@ exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
   </button>
   <button
     aria-label="next page"
-    class="root variantSecondary small rounded chevron disabled"
+    class="root variantSecondary small rounded iconOnly chevron disabled"
     disabled=""
     type="button"
   >

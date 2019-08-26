@@ -31,6 +31,9 @@ Object.entries(sizes).forEach(([, size]) => {
 						<Icon icon={AccountBoxIcon} />
 						Login
 					</Button>
+					<Button variant={variant} size={size}>
+						<Icon icon={AccountBoxIcon} />
+					</Button>
 					<Button isLoading variant={variant} size={size}>
 						Login
 					</Button>
@@ -45,6 +48,9 @@ Object.entries(sizes).forEach(([, size]) => {
 					<Button rounded variant={variant} size={size}>
 						<Icon icon={AccountBoxIcon} />
 						Login
+					</Button>
+					<Button rounded variant={variant} size={size}>
+						<Icon icon={AccountBoxIcon} />
 					</Button>
 					<Button rounded isLoading variant={variant} size={size}>
 						Login
@@ -61,6 +67,9 @@ Object.entries(sizes).forEach(([, size]) => {
 						<Icon icon={AccountBoxIcon} />
 						Login
 					</Button>
+					<Button minimal variant={variant} size={size}>
+						<Icon icon={AccountBoxIcon} />
+					</Button>
 					<Button minimal isLoading variant={variant} size={size}>
 						Login
 					</Button>
@@ -74,6 +83,9 @@ Object.entries(sizes).forEach(([, size]) => {
 					</Button>
 					<Button minimal rounded variant={variant} size={size}>
 						<Icon icon={AccountBoxIcon} />1
+					</Button>
+					<Button minimal rounded variant={variant} size={size}>
+						<Icon icon={AccountBoxIcon} />
 					</Button>
 					<Button
 						minimal

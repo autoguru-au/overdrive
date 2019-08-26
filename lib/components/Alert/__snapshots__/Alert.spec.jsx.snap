@@ -23,7 +23,7 @@ exports[`<Alert /> should match the snapshot 1`] = `
   />
   <button
     aria-label="close"
-    class="root variantSecondary small minimal closeButton"
+    class="root variantSecondary small minimal iconOnly closeButton"
     type="button"
   >
     <div
