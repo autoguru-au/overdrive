@@ -16,14 +16,14 @@
 }
 
 .chevron {
-	fill: getColour(gray, 500);
+	color: getColour(gray, 500);
 
 	&:last-child {
 		margin-right: 0;
 	}
 
 	&.disabled {
-		fill: getColour(gray, 300);
+		color: getColour(gray, 300);
 	}
 }
 

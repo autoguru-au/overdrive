@@ -4,7 +4,12 @@ import { storiesOf } from '@storybook/react';
 import React from 'react';
 
 import { NumberInput } from '.';
-import { CalendarIcon, CurrencyUsdIcon, PlusIcon, StarIcon } from '../Icon';
+import {
+	CalendarIcon,
+	CurrencyUsdIcon,
+	PlusIcon,
+	StarIcon,
+} from '@autoguru/icons';
 
 const sharedKnobs = placeholder => ({
 	placeholder: text('Placeholder', placeholder),

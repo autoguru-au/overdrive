@@ -1,9 +1,9 @@
+import { CheckIcon } from '@autoguru/icons';
 import { boolean, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 
 import { BulletText, EBulletTextVariant } from '.';
-import { CheckIcon } from '../../icons';
 import { Icon } from '../Icon';
 
 const baseProps = () => ({
@@ -23,7 +23,7 @@ storiesOf('Components|BulletText', module)
 						width: '17px',
 						height: '17px',
 						backgroundColor: ' #00dd95',
-						fill: 'white',
+						color: 'white',
 						borderRadius: '50%',
 						flexDirection: 'row',
 						display: 'flex',

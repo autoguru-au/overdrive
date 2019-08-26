@@ -50,6 +50,11 @@
     jsx-ast-utils "^2.2.1"
     ulid "^2.3.0"
 
+"@autoguru/icons@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@autoguru/icons/-/icons-1.1.2.tgz#399edfa7225602207aa8c9b5c966f2b374f85070"
+  integrity sha512-vWg8fUz6tHOckhPQva8TcqA+OeK8jvEJCnUV2nkXG8W8QxqRs3eJcV8YzCJ3bSpRqGJkJOXKurdBteawMiF4Lw==
+
 "@autoguru/jest-preset@^1.0.64":
   version "1.0.64"
   resolved "https://registry.yarnpkg.com/@autoguru/jest-preset/-/jest-preset-1.0.64.tgz#e6f44d628dbc7a3dc8edfc99f0b07f167c8f1385"

@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import React from 'react';
 
 import { SelectInput } from '.';
-import { AccountEditIcon, CalendarIcon } from '../../icons';
+import { AccountEditIcon, CalendarIcon } from '@autoguru/icons';
 
 const sharedKnobs = placeholder => ({
 	placeholder: text('Placeholder', placeholder),

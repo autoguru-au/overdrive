@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
-import { Icon, WindowCloseIcon } from '../Icon';
+import { WindowCloseIcon } from '@autoguru/icons';
+import { Icon } from '../Icon';
 import { EModalCloseCode, withModal } from '../ModalBase';
 import { Heading } from '../Typography';
 import styles from './style.scss';

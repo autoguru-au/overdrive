@@ -1,7 +1,8 @@
 import clsx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
 import { Button, EButtonSize, EButtonVariant } from '../Button';
-import { ChevronLeftIcon, ChevronRightIcon, Icon } from '../Icon';
+import { ChevronLeftIcon, ChevronRightIcon } from '@autoguru/icons';
+import { Icon } from '../Icon';
 import styles from './style.scss';
 
 export enum EChangeDirection {

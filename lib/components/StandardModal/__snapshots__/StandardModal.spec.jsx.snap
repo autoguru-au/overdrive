@@ -30,11 +30,12 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
                 style="width: 20px; height: 20px;"
               >
                 <svg
-                  viewBox="0 0 512 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  baseProfile="full"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
                 >
                   <path
-                    d="M287.147 256l118.186 118.187v31.146h-31.146L256 287.147 137.813 405.333h-31.146v-31.146L224.853 256 106.667 137.813v-31.146h31.146L256 224.853l118.187-118.186h31.146v31.146L287.147 256z"
+                    d="M13.458 12L19 17.543V19h-1.457L12 13.457 6.458 19H5v-1.456L10.544 12 5 6.458V5h1.457L12 10.543 17.544 5H19v1.458L13.458 12z"
                   />
                 </svg>
               </i>
@@ -93,11 +94,12 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
                 style="width: 20px; height: 20px;"
               >
                 <svg
-                  viewBox="0 0 512 512"
-                  xmlns="http://www.w3.org/2000/svg"
+                  baseProfile="full"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
                 >
                   <path
-                    d="M287.147 256l118.186 118.187v31.146h-31.146L256 287.147 137.813 405.333h-31.146v-31.146L224.853 256 106.667 137.813v-31.146h31.146L256 224.853l118.187-118.186h31.146v31.146L287.147 256z"
+                    d="M13.458 12L19 17.543V19h-1.457L12 13.457 6.458 19H5v-1.456L10.544 12 5 6.458V5h1.457L12 10.543 17.544 5H19v1.458L13.458 12z"
                   />
                 </svg>
               </i>

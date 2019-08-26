@@ -1,7 +1,7 @@
+import { StarHalfIcon, StarIcon } from '@autoguru/icons';
 import { warning } from '@autoguru/utilities';
 import clsx from 'clsx';
 import React, { FunctionComponent, memo, ReactElement } from 'react';
-import { StarHalfIcon, StarIcon } from '../../icons';
 import { Icon } from '../Icon';
 import { Text } from '../Typography';
 import { TSizeScale } from '../Typography/types';

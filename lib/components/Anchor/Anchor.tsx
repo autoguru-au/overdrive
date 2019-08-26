@@ -1,3 +1,4 @@
+import { IconType } from '@autoguru/icons';
 import { warning } from '@autoguru/utilities';
 import clsx from 'clsx';
 import React, {
@@ -9,7 +10,6 @@ import React, {
 	memo,
 	ReactNode,
 } from 'react';
-import { IconType } from '../../icons';
 import { Text } from '../Typography';
 import styles from './style.scss';
 

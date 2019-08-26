@@ -1,6 +1,6 @@
+import { IconType } from '@autoguru/icons';
 import clsx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
-import { IconType } from '../../icons';
 import styles from './style.scss';
 
 export interface Props {

@@ -32,11 +32,12 @@ exports[`<SelectInput /> should have some hintText 1`] = `
       style="width: 25px; height: 25px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M158.08 183.04L256 280.96l97.92-97.92L384 213.333l-128 128-128-128 30.08-30.293z"
+          d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
         />
       </svg>
     </i>
@@ -101,11 +102,12 @@ exports[`<SelectInput /> should match snapshot 1`] = `
       style="width: 25px; height: 25px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M158.08 183.04L256 280.96l97.92-97.92L384 213.333l-128 128-128-128 30.08-30.293z"
+          d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
         />
       </svg>
     </i>
@@ -165,11 +167,12 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
       style="width: 25px; height: 25px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M158.08 183.04L256 280.96l97.92-97.92L384 213.333l-128 128-128-128 30.08-30.293z"
+          d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
         />
       </svg>
     </i>
@@ -229,11 +232,12 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
       style="width: 25px; height: 25px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M158.08 183.04L256 280.96l97.92-97.92L384 213.333l-128 128-128-128 30.08-30.293z"
+          d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
         />
       </svg>
     </i>
@@ -293,11 +297,12 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
       style="width: 25px; height: 25px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M158.08 183.04L256 280.96l97.92-97.92L384 213.333l-128 128-128-128 30.08-30.293z"
+          d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
         />
       </svg>
     </i>
@@ -357,11 +362,12 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
       style="width: 25px; height: 25px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M158.08 183.04L256 280.96l97.92-97.92L384 213.333l-128 128-128-128 30.08-30.293z"
+          d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
         />
       </svg>
     </i>
@@ -420,11 +426,12 @@ exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
       style="width: 25px; height: 25px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M158.08 183.04L256 280.96l97.92-97.92L384 213.333l-128 128-128-128 30.08-30.293z"
+          d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
         />
       </svg>
     </i>

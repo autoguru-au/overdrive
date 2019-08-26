@@ -1,3 +1,4 @@
+import { IconType } from '@autoguru/icons';
 import clsx from 'clsx';
 import React, {
 	cloneElement,
@@ -6,7 +7,6 @@ import React, {
 	isValidElement,
 	memo,
 } from 'react';
-import { IconType } from '../../icons';
 import { Text } from '../Typography';
 import styles from './style.scss';
 

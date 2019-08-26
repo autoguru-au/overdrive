@@ -10,11 +10,12 @@ exports[`<Alert /> should match the snapshot 1`] = `
     style="width: 20px; height: 20px;"
   >
     <svg
-      viewBox="0 0 512 512"
-      xmlns="http://www.w3.org/2000/svg"
+      baseProfile="full"
+      fill="currentColor"
+      viewBox="0 0 24 24"
     >
       <path
-        d="M277.333 192h-42.666v-42.667h42.666m0 213.334h-42.666v-128h42.666M256 42.667C138.24 42.667 42.667 138.24 42.667 256S138.24 469.333 256 469.333 469.333 373.76 469.333 256 373.76 42.667 256 42.667z"
+        d="M13 8.998h-2v-2h2m0 10h-2v-6h2m-1-9c-5.524 0-10 4.477-10 10s4.476 10 10 10c5.522 0 10-4.477 10-10s-4.478-10-10-10z"
       />
     </svg>
   </i>
@@ -30,15 +31,16 @@ exports[`<Alert /> should match the snapshot 1`] = `
       class="body"
     >
       <i
-        class="root"
+        class="root closeButtonIcon"
         style="width: 20px; height: 20px;"
       >
         <svg
-          viewBox="0 0 512 512"
-          xmlns="http://www.w3.org/2000/svg"
+          baseProfile="full"
+          fill="currentColor"
+          viewBox="0 0 24 24"
         >
           <path
-            d="M287.147 256l118.186 118.187v31.146h-31.146L256 287.147 137.813 405.333h-31.146v-31.146L224.853 256 106.667 137.813v-31.146h31.146L256 224.853l118.187-118.186h31.146v31.146L287.147 256z"
+            d="M13.458 12L19 17.543V19h-1.457L12 13.457 6.458 19H5v-1.456L10.544 12 5 6.458V5h1.457L12 10.543 17.544 5H19v1.458L13.458 12z"
           />
         </svg>
       </i>

@@ -65,38 +65,35 @@ $font_size: var(--global--fontSize--4); // 16
 	justify-content: flex-start;
 	align-items: center;
 	grid-template-columns: auto 1fr auto;
+	transition: fill 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
+	color: getColour(gray, 500);
 
-	&.notched-base--active svg {
-		fill: getColour(blue, 500);
+	&.notched-base--active {
+		color: getColour(blue, 500);
 	}
 
-	svg {
-		transition: fill 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
-		fill: getColour(gray, 500);
+	.disabled & {
+		color: getColour(gray, 300);
+	}
 
-		.disabled & {
-			fill: getColour(gray, 300);
-		}
+	.root:not(.disabled):hover & {
+		color: getColour(blue, 500);
+	}
 
-		.root:not(.disabled):hover & {
-			fill: getColour(blue, 500);
-		}
+	.root:not(.disabled).valid & {
+		color: getColour(green, 600);
+	}
 
-		.root:not(.disabled).valid & {
-			fill: getColour(green, 600);
-		}
+	.root:not(.disabled).valid:hover & {
+		color: getColour(green, 700);
+	}
 
-		.root:not(.disabled).valid:hover & {
-			fill: getColour(green, 700);
-		}
+	.root:not(.disabled).invalid & {
+		color: getColour(red, 600);
+	}
 
-		.root:not(.disabled).invalid & {
-			fill: getColour(red, 600);
-		}
-
-		.root:not(.disabled).invalid:hover & {
-			fill: getColour(red, 700);
-		}
+	.root:not(.disabled).invalid:hover & {
+		color: getColour(red, 700);
 	}
 
 	input,

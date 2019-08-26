@@ -1,3 +1,4 @@
+import { IconType } from '@autoguru/icons';
 import { invariant } from '@autoguru/utilities';
 import clsx from 'clsx';
 import React, {
@@ -6,7 +7,6 @@ import React, {
 	FocusEventHandler,
 	PureComponent,
 } from 'react';
-import { IconType } from '../../icons';
 import { Icon } from '../Icon';
 import { HintText } from './HintText';
 import { NotchedBase } from './NotchedBase';

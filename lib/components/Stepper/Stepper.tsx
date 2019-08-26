@@ -8,7 +8,8 @@ import React, {
 	useReducer,
 	useRef,
 } from 'react';
-import { Icon, MinusIcon, PlusIcon } from '../Icon';
+import { MinusIcon, PlusIcon } from '@autoguru/icons';
+import { Icon } from '../Icon';
 import { Text } from '../Typography';
 import styles from './style.scss';
 

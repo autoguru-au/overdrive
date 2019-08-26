@@ -1,3 +1,4 @@
+import { IconType } from '@autoguru/icons';
 import clsx from 'clsx';
 import React, {
 	AriaAttributes,
@@ -10,7 +11,6 @@ import React, {
 	ReactElement,
 	useMemo,
 } from 'react';
-import { IconType } from '../../icons';
 import { Icon } from '../Icon';
 import { ProgressSpinner } from '../ProgressSpinner';
 

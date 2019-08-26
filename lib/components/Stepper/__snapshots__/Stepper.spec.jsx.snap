@@ -16,11 +16,12 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
       style="width: 16px; height: 16px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M405.333 277.333H106.667v-42.666h298.666v42.666z"
+          d="M19 12.998H5V11l14-.002v2z"
         />
       </svg>
     </i>
@@ -40,11 +41,12 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
       style="width: 16px; height: 16px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M405.333 277.333h-128v128h-42.666v-128h-128v-42.666h128v-128h42.666v128h128v42.666z"
+          d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6v2z"
         />
       </svg>
     </i>
@@ -68,11 +70,12 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
       style="width: 16px; height: 16px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M405.333 277.333H106.667v-42.666h298.666v42.666z"
+          d="M19 12.998H5V11l14-.002v2z"
         />
       </svg>
     </i>
@@ -92,11 +95,12 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
       style="width: 16px; height: 16px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M405.333 277.333h-128v128h-42.666v-128h-128v-42.666h128v-128h42.666v128h128v42.666z"
+          d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6v2z"
         />
       </svg>
     </i>
@@ -121,11 +125,12 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
       style="width: 16px; height: 16px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M405.333 277.333H106.667v-42.666h298.666v42.666z"
+          d="M19 12.998H5V11l14-.002v2z"
         />
       </svg>
     </i>
@@ -144,11 +149,12 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
       style="width: 16px; height: 16px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M405.333 277.333h-128v128h-42.666v-128h-128v-42.666h128v-128h42.666v128h128v42.666z"
+          d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6v2z"
         />
       </svg>
     </i>

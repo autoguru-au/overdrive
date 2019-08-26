@@ -5,11 +5,11 @@ import {
 	AlertCircleIcon,
 	AlertIcon,
 	CheckCircleIcon,
-	Icon,
 	IconType,
 	InformationIcon,
 	WindowCloseIcon,
-} from '../Icon';
+} from '@autoguru/icons';
+import { Icon } from '../Icon';
 import { Text } from '../Typography/Text';
 
 import styles from './Alert.scss';
@@ -74,7 +74,11 @@ export const Alert: FunctionComponent<Props> = ({
 					className={styles.closeButton}
 					aria-label="close"
 					onClick={onRequestClose}>
-					<Icon icon={WindowCloseIcon} size={20} />
+					<Icon
+						className={styles.closeButtonIcon}
+						icon={WindowCloseIcon}
+						size={20}
+					/>
 				</Button>
 			)}
 		</div>
