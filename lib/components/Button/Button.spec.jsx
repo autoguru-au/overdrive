@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { Button } from './Button';
 import { EButtonSize, EButtonVariant } from '.';
+import { AccountBoxIcon, Icon } from '../Icon';
 
 describe('<Button />', () => {
 	it('should not throw', () =>
@@ -177,6 +178,21 @@ describe('<Button />', () => {
 			expect(
 				render(<Button isLoading />).container.firstChild,
 			).toHaveClass('loading');
+		});
+	});
+
+	describe('when icon only', () => {
+		it('should size to 20', () => {
+			const { container } = render(
+				<Button>
+					<Icon icon={AccountBoxIcon} />
+				</Button>,
+			);
+
+			expect(
+				container.querySelectorAll('svg').item(0).parentNode.style
+					.width,
+			).toBe('20px');
 		});
 	});
 });

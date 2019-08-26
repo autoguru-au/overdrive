@@ -90,6 +90,11 @@
 		min-width: $height;
 		border-radius: calc(#{$height} / 2);
 	}
+
+	&.iconOnly {
+		width: 36px;
+		height: 36px;
+	}
 }
 
 .medium {
@@ -108,6 +113,11 @@
 	&.rounded {
 		min-width: $height;
 		border-radius: calc(#{$height} / 2);
+	}
+
+	&.iconOnly {
+		width: 48px;
+		height: 48px;
 	}
 }
 
