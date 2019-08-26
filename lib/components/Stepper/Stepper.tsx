@@ -109,7 +109,7 @@ const StepperComponent: FunctionComponent<Props> = ({
 	);
 
 	const keyDownHandler = useCallback(
-		(event: KeyboardEvent) => {
+		(event: KeyboardEvent<HTMLDivElement>) => {
 			// eslint-disable-next-line default-case
 			switch (event.key) {
 				case 'ArrowLeft':
@@ -125,6 +125,9 @@ const StepperComponent: FunctionComponent<Props> = ({
 						step,
 						value: event.key === 'Home' ? min : max,
 					});
+				case 'Escape':
+					event.currentTarget.blur();
+					break;
 			}
 		},
 		[onDecrement, onIncrement],
