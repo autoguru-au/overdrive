@@ -21,7 +21,8 @@
 		display: flex;
 		align-items: center;
 		flex-direction: row;
-		place-content: center space-between;
+		align-content: center;
+		justify-content: space-between;
 
 		> :last-child {
 			flex-shrink: 0;
