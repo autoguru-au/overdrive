@@ -1,8 +1,7 @@
 @import '../../theme/tokens/facade';
 
-@-webkit-keyframes rotate {
+@keyframes rotate {
 	100% {
-		-webkit-transform: rotate(360deg);
 		transform: rotate(360deg);
 	}
 }
@@ -42,9 +41,7 @@
 }
 
 .circular {
-	-webkit-animation: rotate 2s linear infinite;
 	animation: rotate 2s linear infinite;
-	-webkit-transform-origin: center center;
 	transform-origin: center center;
 	margin: 0 auto;
 	overflow: hidden;
