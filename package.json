@@ -71,7 +71,7 @@
   },
   "browserslist": "extends browserslist-config-autoguru",
   "dependencies": {
-    "@autoguru/icons": "^1.1.2",
+    "@autoguru/icons": "^1.1.4",
     "@autoguru/utilities": "^1.0.64",
     "clsx": "^1.0.4"
   },
@@ -124,7 +124,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.7.1",
     "kleur": "^3.0.3",
-    "lint-staged": "^9.2.4",
+    "lint-staged": "^9.2.5",
     "node-sass": "^4.11.0",
     "plop": "^2.4.0",
     "postcss-flexbugs-fixes": "^4.1.0",
@@ -152,7 +152,7 @@
     "stylelint-scss": "^3.10.0",
     "tslib": "^1.10.0",
     "typescript": "~3.5.3",
-    "webpack": "^4.39.2"
+    "webpack": "^4.39.3"
   },
   "peerDependencies": {
     "react": ">=16.8",

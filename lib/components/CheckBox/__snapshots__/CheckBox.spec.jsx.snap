@@ -17,6 +17,7 @@ exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
     <svg
       baseProfile="full"
       fill="currentColor"
+      focusable="false"
       viewBox="0 0 24 24"
     >
       <path

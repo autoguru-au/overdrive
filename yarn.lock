@@ -50,10 +50,10 @@
     jsx-ast-utils "^2.2.1"
     ulid "^2.3.0"
 
-"@autoguru/icons@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@autoguru/icons/-/icons-1.1.2.tgz#399edfa7225602207aa8c9b5c966f2b374f85070"
-  integrity sha512-vWg8fUz6tHOckhPQva8TcqA+OeK8jvEJCnUV2nkXG8W8QxqRs3eJcV8YzCJ3bSpRqGJkJOXKurdBteawMiF4Lw==
+"@autoguru/icons@^1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@autoguru/icons/-/icons-1.1.4.tgz#34fca8dd4d64b51db9e247e49f67db579daeb960"
+  integrity sha512-Bnfb6zJAnuKGS/DSSSigvfpPxCqw0tnhH430M3AS2mMC8KWrTxnd6dahtcyZ6btl09vU0afVB1XZiSp4+ny+gw==
 
 "@autoguru/jest-preset@^1.0.64":
   version "1.0.64"
@@ -9295,10 +9295,10 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-lint-staged@^9.2.4:
-  version "9.2.4"
-  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-9.2.4.tgz#7a35839c9c6103ec98eabf43e35657c209509345"
-  integrity sha512-RAt5ogbLRiKy9+T3dKbbPKP6tN2I9VjEtTXQFxdkauUdMjIBsS70ikwwSgsBR8xVVCUSX7sVDyWCyem5xB8YDw==
+lint-staged@^9.2.5:
+  version "9.2.5"
+  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-9.2.5.tgz#5a3e1e0a539a403bd7f88542bc3d34ce52efdbb3"
+  integrity sha512-d99gTBFMJ29159+9iRvaMEQstmNcPAbQbhHSYw6D/1FncvFdIj8lWHztaq3Uq+tbZPABHXQ/fyN7Rp1QwF8HIw==
   dependencies:
     chalk "^2.4.2"
     commander "^2.20.0"
@@ -16181,10 +16181,10 @@ webpack-sources@^1.1.0, webpack-sources@^1.4.0, webpack-sources@^1.4.1:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack@^4.33.0, webpack@^4.38.0, webpack@^4.39.2:
-  version "4.39.2"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.39.2.tgz#c9aa5c1776d7c309d1b3911764f0288c8c2816aa"
-  integrity sha512-AKgTfz3xPSsEibH00JfZ9sHXGUwIQ6eZ9tLN8+VLzachk1Cw2LVmy+4R7ZiwTa9cZZ15tzySjeMui/UnSCAZhA==
+webpack@^4.33.0, webpack@^4.38.0, webpack@^4.39.2, webpack@^4.39.3:
+  version "4.39.3"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.39.3.tgz#a02179d1032156b713b6ec2da7e0df9d037def50"
+  integrity sha512-BXSI9M211JyCVc3JxHWDpze85CvjC842EvpRsVTc/d15YJGlox7GIDd38kJgWrb3ZluyvIjgenbLDMBQPDcxYQ==
   dependencies:
     "@webassemblyjs/ast" "1.8.5"
     "@webassemblyjs/helper-module-context" "1.8.5"

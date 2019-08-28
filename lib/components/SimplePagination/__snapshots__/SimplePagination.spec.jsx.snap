@@ -21,6 +21,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
         <svg
           baseProfile="full"
           fill="currentColor"
+          focusable="false"
           viewBox="0 0 24 24"
         >
           <path
@@ -45,6 +46,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
         <svg
           baseProfile="full"
           fill="currentColor"
+          focusable="false"
           viewBox="0 0 24 24"
         >
           <path
@@ -77,6 +79,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
         <svg
           baseProfile="full"
           fill="currentColor"
+          focusable="false"
           viewBox="0 0 24 24"
         >
           <path
@@ -101,6 +104,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
         <svg
           baseProfile="full"
           fill="currentColor"
+          focusable="false"
           viewBox="0 0 24 24"
         >
           <path
@@ -133,6 +137,7 @@ exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
         <svg
           baseProfile="full"
           fill="currentColor"
+          focusable="false"
           viewBox="0 0 24 24"
         >
           <path
@@ -158,6 +163,7 @@ exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
         <svg
           baseProfile="full"
           fill="currentColor"
+          focusable="false"
           viewBox="0 0 24 24"
         >
           <path

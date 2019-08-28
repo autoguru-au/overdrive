@@ -15,6 +15,7 @@ exports[`<BulletText /> should match snapshot for custom bullet text 1`] = `
         <svg
           baseProfile="full"
           fill="currentColor"
+          focusable="false"
           viewBox="0 0 24 24"
         >
           <path
