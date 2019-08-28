@@ -9,11 +9,12 @@ exports[`<Pagination /> should match snapshot for loading phase 1`] = `
     style="width: 25px; height: 25px;"
   >
     <svg
-      viewBox="0 0 512 512"
-      xmlns="http://www.w3.org/2000/svg"
+      baseProfile="full"
+      fill="currentColor"
+      viewBox="0 0 24 24"
     >
       <path
-        d="M328.747 353.707L231.04 256l97.707-97.92-30.08-30.08-128 128 128 128 30.08-30.293z"
+        d="M15.414 16.584l-4.586-4.586 4.586-4.586-1.415-1.414-6 6 6 6 1.415-1.414z"
       />
     </svg>
   </i>
@@ -31,11 +32,12 @@ exports[`<Pagination /> should match snapshot for loading phase 1`] = `
     style="width: 25px; height: 25px;"
   >
     <svg
-      viewBox="0 0 512 512"
-      xmlns="http://www.w3.org/2000/svg"
+      baseProfile="full"
+      fill="currentColor"
+      viewBox="0 0 24 24"
     >
       <path
-        d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+        d="M8.585 16.584l4.586-4.586-4.586-4.586L10 5.998l6 6-6 6-1.414-1.414z"
       />
     </svg>
   </i>

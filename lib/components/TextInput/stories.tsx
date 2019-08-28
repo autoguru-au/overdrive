@@ -9,7 +9,7 @@ import {
 	CalendarIcon,
 	CheckIcon,
 	StarIcon,
-} from '../../icons';
+} from '@autoguru/icons';
 
 const sharedKnobs = placeholder => ({
 	placeholder: text('Placeholder', placeholder),

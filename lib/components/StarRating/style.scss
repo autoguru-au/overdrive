@@ -12,11 +12,11 @@
 
 .full-star,
 .half-star {
-	fill: getColour(yellow, 500);
+	color: getColour(yellow, 500);
 }
 
 .empty-star {
-	fill: getColour(gray, 200);
+	color: getColour(gray, 200);
 }
 
 .label {

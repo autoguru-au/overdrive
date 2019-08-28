@@ -12,11 +12,12 @@ exports[`<StarRating /> should match snapshot for small size 1`] = `
       style="width: 16px; height: 16px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+          d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
         />
       </svg>
     </i>
@@ -25,11 +26,12 @@ exports[`<StarRating /> should match snapshot for small size 1`] = `
       style="width: 16px; height: 16px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+          d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
         />
       </svg>
     </i>
@@ -38,11 +40,12 @@ exports[`<StarRating /> should match snapshot for small size 1`] = `
       style="width: 16px; height: 16px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+          d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
         />
       </svg>
     </i>
@@ -51,11 +54,12 @@ exports[`<StarRating /> should match snapshot for small size 1`] = `
       style="width: 16px; height: 16px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+          d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
         />
       </svg>
     </i>
@@ -64,11 +68,12 @@ exports[`<StarRating /> should match snapshot for small size 1`] = `
       style="width: 16px; height: 16px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+          d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
         />
       </svg>
     </i>
@@ -93,11 +98,12 @@ exports[`<StarRating /> should match snapshot with label 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+          d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
         />
       </svg>
     </i>
@@ -106,11 +112,12 @@ exports[`<StarRating /> should match snapshot with label 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+          d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
         />
       </svg>
     </i>
@@ -119,11 +126,12 @@ exports[`<StarRating /> should match snapshot with label 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+          d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
         />
       </svg>
     </i>
@@ -132,11 +140,12 @@ exports[`<StarRating /> should match snapshot with label 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+          d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
         />
       </svg>
     </i>
@@ -145,11 +154,12 @@ exports[`<StarRating /> should match snapshot with label 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+          d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
         />
       </svg>
     </i>
@@ -174,11 +184,12 @@ exports[`<StarRating /> should match snapshot with value 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+          d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
         />
       </svg>
     </i>
@@ -187,11 +198,12 @@ exports[`<StarRating /> should match snapshot with value 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+          d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
         />
       </svg>
     </i>
@@ -200,11 +212,12 @@ exports[`<StarRating /> should match snapshot with value 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M256 328.533v-198.4l36.48 85.974L385.92 224l-70.827 61.653 21.12 91.307m133.12-179.84l-153.386-13.013L256 42.667l-59.947 141.44L42.667 197.12l116.266 100.907L124.16 448 256 368.427 387.84 448l-34.987-149.973 116.48-100.907z"
+          d="M12 15.396V6.095l1.71 4.036 4.38.376-3.323 2.878.995 4.281M22 9.244l-7.19-.617L11.998 2 9.19 8.627 2 9.244l5.454 4.726L5.82 21 12 17.272 18.18 21l-1.635-7.03L22 9.244z"
         />
       </svg>
     </i>
@@ -213,11 +226,12 @@ exports[`<StarRating /> should match snapshot with value 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+          d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
         />
       </svg>
     </i>
@@ -226,11 +240,12 @@ exports[`<StarRating /> should match snapshot with value 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+          d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
         />
       </svg>
     </i>
@@ -255,11 +270,12 @@ exports[`<StarRating /> should match snapshot without value 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+          d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
         />
       </svg>
     </i>
@@ -268,11 +284,12 @@ exports[`<StarRating /> should match snapshot without value 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+          d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
         />
       </svg>
     </i>
@@ -281,11 +298,12 @@ exports[`<StarRating /> should match snapshot without value 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+          d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
         />
       </svg>
     </i>
@@ -294,11 +312,12 @@ exports[`<StarRating /> should match snapshot without value 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+          d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
         />
       </svg>
     </i>
@@ -307,11 +326,12 @@ exports[`<StarRating /> should match snapshot without value 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        fill="currentColor"
+        viewBox="0 0 24 24"
       >
         <path
-          d="M256 368.427L387.84 448l-34.987-149.973 116.48-100.907-153.386-13.227L256 42.667l-59.947 141.226L42.667 197.12l116.266 100.907L124.16 448 256 368.427z"
+          d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
         />
       </svg>
     </i>

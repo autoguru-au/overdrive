@@ -13,11 +13,12 @@ exports[`<BulletText /> should match snapshot for custom bullet text 1`] = `
         style="width: 14px; height: 14px;"
       >
         <svg
-          viewBox="0 0 512 512"
-          xmlns="http://www.w3.org/2000/svg"
+          baseProfile="full"
+          fill="currentColor"
+          viewBox="0 0 24 24"
         >
           <path
-            d="M448 149.333l-256 256L74.667 288l30.08-30.08L192 344.96l225.92-225.707 30.08 30.08z"
+            d="M21 7L9 19l-5.5-5.5 1.414-1.414L9 16.172 19.586 5.586 21 7z"
           />
         </svg>
       </i>

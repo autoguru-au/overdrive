@@ -3,7 +3,8 @@ import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { Anchor } from '.';
 import { Button } from '../Button';
-import { Icon, PhoneIcon } from '../Icon';
+import { PhoneIcon } from '@autoguru/icons';
+import { Icon } from '../Icon';
 
 const baseProps = () => ({
 	label: text('Telephone number', '07 5612 5347'),

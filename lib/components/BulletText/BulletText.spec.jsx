@@ -2,7 +2,8 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { BulletText } from './BulletText';
 import { EBulletTextVariant } from '.';
-import { CheckIcon, Icon } from '../Icon';
+import { Icon } from '../Icon';
+import { CheckIcon } from '@autoguru/icons';
 
 const CustomBullet = () => (
 	<span>

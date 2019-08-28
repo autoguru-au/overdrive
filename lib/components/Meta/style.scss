@@ -23,11 +23,11 @@
 	flex-shrink: 0;
 
 	.variant-primary & {
-		fill: getColour(green, 900);
+		color: getColour(green, 900);
 	}
 
 	.variant-secondary & {
-		fill: getColour(gray, 900);
+		color: getColour(gray, 900);
 	}
 }
 

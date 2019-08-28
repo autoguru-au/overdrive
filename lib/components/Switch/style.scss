@@ -55,7 +55,7 @@ $borderSize: 1px;
 	border: #{$borderSize} solid getColour(gray, 300);
 	border-radius: 50%;
 	outline: none;
-	fill: white;
+	color: white;
 	padding: 0;
 	position: absolute;
 	left: $handleOffset - $borderSize;
