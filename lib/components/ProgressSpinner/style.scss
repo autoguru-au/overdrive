@@ -1,8 +1,7 @@
 @import '../../theme/tokens/facade';
 
-@-webkit-keyframes rotate {
+@keyframes rotate {
 	100% {
-		-webkit-transform: rotate(360deg);
 		transform: rotate(360deg);
 	}
 }
@@ -34,29 +33,17 @@
 }
 
 .root {
-	position: relative;
-	margin: 0 auto;
-
-	&::before {
-		content: '';
-		display: block;
-		padding-top: 100%;
-	}
+	display: grid;
+	grid-template-columns: 1fr;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
 }
 
 .circular {
-	-webkit-animation: rotate 2s linear infinite;
 	animation: rotate 2s linear infinite;
-	height: 100%;
-	-webkit-transform-origin: center center;
 	transform-origin: center center;
-	width: 100%;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: auto;
+	margin: 0 auto;
 	overflow: hidden;
 }
 
@@ -90,8 +77,10 @@
 
 .size {
 	&-small {
-		width: var(--progress--spinner--size-smal);
-		padding-top: var(--progress--spinner--size-smal);
+		.circular {
+			width: var(--progress--spinner--size-smal);
+			height: var(--progress--spinner--size-smal);
+		}
 
 		.path {
 			stroke-width: var(--progress--spinner--stroke--size-small);
@@ -99,8 +88,10 @@
 	}
 
 	&-medium {
-		width: var(--progress--spinner--size-medium);
-		padding-top: var(--progress--spinner--size-medium);
+		.circular {
+			width: var(--progress--spinner--size-medium);
+			height: var(--progress--spinner--size-medium);
+		}
 
 		.path {
 			stroke-width: var(--progress--spinner--stroke--size-medium);
@@ -108,8 +99,10 @@
 	}
 
 	&-large {
-		width: var(--progress--spinner--size-large);
-		padding-top: var(--progress--spinner--size);
+		.circular {
+			width: var(--progress--spinner--size-large);
+			height: var(--progress--spinner--size);
+		}
 
 		.path {
 			stroke-width: var(--progress--spinner--stroke--size-large);
