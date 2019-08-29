@@ -26,7 +26,7 @@ const SelectInputComponent = ({
 SelectInputComponent.primitiveType = 'select';
 
 export const SelectInput = memo(
-	withEnhancedInput(SelectInputComponent, {
+	withEnhancedInput<{}, HTMLSelectElement>(SelectInputComponent, {
 		withSuffixIcon: false,
 		withForcedSuffixIconPadding: true,
 	}),

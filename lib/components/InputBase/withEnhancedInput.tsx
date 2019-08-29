@@ -5,6 +5,7 @@ import React, {
 	ChangeEventHandler,
 	ComponentType,
 	FocusEventHandler,
+	KeyboardEventHandler,
 	PureComponent,
 } from 'react';
 import { Icon } from '../Icon';
@@ -12,14 +13,12 @@ import { HintText } from './HintText';
 import { NotchedBase } from './NotchedBase';
 import styles from './style.scss';
 
-// The underlying primitive, ie, the binding active, or target element. eg, the thing the user will click into
-type HtmlPrimitive = HTMLInputElement & HTMLTextAreaElement & HTMLSelectElement;
-
 // The event handlers we'll allow the wrapped component to bind too
-export interface EventHandlers<E extends HtmlPrimitive = HtmlPrimitive> {
-	onChange?: ChangeEventHandler<E>;
-	onBlur?: FocusEventHandler<E>;
-	onFocus?: FocusEventHandler<E>;
+export interface EventHandlers<PrimitiveElementType> {
+	onChange?: ChangeEventHandler<PrimitiveElementType>;
+	onBlur?: FocusEventHandler<PrimitiveElementType>;
+	onFocus?: FocusEventHandler<PrimitiveElementType>;
+	onKeyDown?: KeyboardEventHandler<PrimitiveElementType>;
 }
 
 // The props we'll give the end consumer to send
@@ -41,15 +40,18 @@ export interface ValidationProps {
 }
 
 // An amalgamation of the HoC props, event handlers and the consumer props.
-export type EnhanceInputProps<IncomingProps = {}> = IncomingProps &
+export type EnhanceInputProps<
+	IncomingProps,
+	PrimitiveElementType
+> = IncomingProps &
 	EnhanceInputPrimitiveProps &
-	EventHandlers &
+	EventHandlers<PrimitiveElementType> &
 	ValidationProps;
 
 // The final props we send into thw wrapping component
-export type WrappedComponentProps<IncomingProps = {}> = {
+export type WrappedComponentProps<IncomingProps, PrimitiveElementType> = {
 	validation: ValidationProps;
-	eventHandlers: EventHandlers;
+	eventHandlers: EventHandlers<PrimitiveElementType>;
 	field: Omit<EnhanceInputPrimitiveProps, 'placeholder' | 'hintText'>;
 	prefixed: boolean;
 	suffixed: boolean;
@@ -62,8 +64,13 @@ interface EnhancedInputConfigs {
 	withForcedSuffixIconPadding?: boolean;
 }
 
-export function withEnhancedInput<IncomingProps = {}>(
-	WrappingComponent: ComponentType<WrappedComponentProps<IncomingProps>> & {
+export function withEnhancedInput<
+	IncomingProps = {},
+	PrimitiveElementType = HTMLInputElement
+>(
+	WrappingComponent: ComponentType<
+		WrappedComponentProps<IncomingProps, PrimitiveElementType>
+	> & {
 		primitiveType: string;
 	},
 	{
@@ -72,8 +79,8 @@ export function withEnhancedInput<IncomingProps = {}>(
 		withForcedPrefixIconPadding = false,
 		withForcedSuffixIconPadding = false,
 	}: EnhancedInputConfigs = {},
-): ComponentType<EnhanceInputProps<IncomingProps>> {
-	type TProps = EnhanceInputProps<IncomingProps>;
+): ComponentType<EnhanceInputProps<IncomingProps, PrimitiveElementType>> {
+	type TProps = EnhanceInputProps<IncomingProps, PrimitiveElementType>;
 
 	interface State {
 		value: any;
@@ -99,7 +106,7 @@ export function withEnhancedInput<IncomingProps = {}>(
 			return null;
 		}
 
-		public handleOnChange: ChangeEventHandler<HtmlPrimitive> = e => {
+		public handleOnChange: ChangeEventHandler<PrimitiveElementType> = e => {
 			if (this.props.disabled) {
 				e.preventDefault();
 
@@ -107,7 +114,7 @@ export function withEnhancedInput<IncomingProps = {}>(
 			}
 
 			this.setState({
-				value: e.target.value,
+				value: ((e.target as unknown) as any).value,
 			});
 
 			if (this.props.onChange) {
@@ -117,7 +124,7 @@ export function withEnhancedInput<IncomingProps = {}>(
 			return true;
 		};
 
-		public handleOnFocus: FocusEventHandler<HtmlPrimitive> = e => {
+		public handleOnFocus: FocusEventHandler<PrimitiveElementType> = e => {
 			this.setState({
 				isActive: true,
 			});
@@ -126,7 +133,7 @@ export function withEnhancedInput<IncomingProps = {}>(
 			}
 		};
 
-		public handleOnBlur: FocusEventHandler<HtmlPrimitive> = e => {
+		public handleOnBlur: FocusEventHandler<PrimitiveElementType> = e => {
 			this.setState({
 				isActive: false,
 			});
@@ -153,6 +160,7 @@ export function withEnhancedInput<IncomingProps = {}>(
 				value: removeValue,
 				onBlur,
 				onFocus,
+				onKeyDown,
 				onChange,
 
 				// Icons
@@ -182,8 +190,11 @@ export function withEnhancedInput<IncomingProps = {}>(
 
 			A & B != A _or_ P & Omit<P, 'firstName'> != P
 			 */
-			// eslint-disable-next-line @typescript-eslint/no-object-literal-type-assertion
-			const wrappingComponent: WrappedComponentProps<IncomingProps> = {
+			const wrappingComponent: WrappedComponentProps<
+				IncomingProps,
+				PrimitiveElementType
+				// eslint-disable-next-line @typescript-eslint/no-object-literal-type-assertion
+			> = {
 				validation: {
 					isTouched,
 					isValid,
@@ -192,6 +203,7 @@ export function withEnhancedInput<IncomingProps = {}>(
 					onChange: this.handleOnChange,
 					onFocus: this.handleOnFocus,
 					onBlur: this.handleOnBlur,
+					onKeyDown,
 				},
 				field: {
 					name,
@@ -203,7 +215,7 @@ export function withEnhancedInput<IncomingProps = {}>(
 				prefixed: Boolean(prefixIcon),
 				suffixed: Boolean(suffixIcon),
 				...(rest as IncomingProps),
-			} as WrappedComponentProps<IncomingProps>;
+			} as WrappedComponentProps<IncomingProps, PrimitiveElementType>;
 
 			const shouldValidate: boolean = isValid !== void 0 && isTouched;
 

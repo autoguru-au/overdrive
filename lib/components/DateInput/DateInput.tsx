@@ -26,7 +26,9 @@ function DateInputComponent({
 
 DateInputComponent.primitiveType = 'date';
 
-export const DateInput = memo(withEnhancedInput(DateInputComponent));
+export const DateInput = memo(
+	withEnhancedInput<{}, HTMLInputElement>(DateInputComponent),
+);
 
 // @deprecated
 export const formatDate = (date: Date = new Date()) => {
