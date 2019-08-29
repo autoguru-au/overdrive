@@ -17,6 +17,7 @@ export interface Props {
 	alignment?: EAlignment;
 	isOpen?: boolean;
 	triggerRef: RefObject<HTMLElement>;
+	triggerOffset?: number;
 
 	onRequestClose?(): void;
 }
@@ -31,6 +32,7 @@ export function usingPositioner<T extends {} = {}>(
 		isOpen = false,
 		onRequestClose = () => void 0,
 		triggerRef,
+		triggerOffset, // This is defaulted in the getOptimalPosition
 		...rest
 	}) => {
 		if (typeof window === 'undefined') return null;
@@ -39,6 +41,7 @@ export function usingPositioner<T extends {} = {}>(
 		const { alignment: derivedAlignment, rect } = usePositionerEffect(
 			alignment,
 			triggerRef,
+			triggerOffset,
 			positionerRef,
 			isOpen,
 		);
@@ -75,6 +78,7 @@ export const Positioner = usingPositioner(
 function usePositionerEffect(
 	alignment: EAlignment,
 	triggerRef: RefObject<HTMLElement>,
+	triggerOffset: number,
 	positionerRef: RefObject<HTMLElement>,
 	isOpen: boolean,
 ) {
@@ -108,10 +112,15 @@ function usePositionerEffect(
 			const width = Math.round(containerRect.width);
 
 			setPositionerResult(
-				getOptimalPosition(alignment, triggerRect, {
-					height,
-					width,
-				}),
+				getOptimalPosition(
+					alignment,
+					triggerRect,
+					{
+						height,
+						width,
+					},
+					triggerOffset,
+				),
 			);
 
 			lastFrame = requestAnimationFrame(() => {
@@ -124,7 +133,7 @@ function usePositionerEffect(
 				cancelAnimationFrame(lastFrame);
 			}
 		};
-	}, [alignment, isOpen, positionerRef, triggerRef]);
+	}, [alignment, isOpen, positionerRef, triggerRef, triggerOffset]);
 
 	return positionerResult;
 }
