@@ -23,4 +23,6 @@ function TextInputComponent({
 
 TextInputComponent.primitiveType = 'text';
 
-export const TextInput = memo(withEnhancedInput(TextInputComponent));
+export const TextInput = memo(
+	withEnhancedInput<{}, HTMLInputElement>(TextInputComponent),
+);

@@ -28,4 +28,6 @@ function NumberInputComponent({
 
 NumberInputComponent.primitiveType = type;
 
-export const NumberInput = memo(withEnhancedInput(NumberInputComponent));
+export const NumberInput = memo(
+	withEnhancedInput<{}, HTMLInputElement>(NumberInputComponent),
+);
