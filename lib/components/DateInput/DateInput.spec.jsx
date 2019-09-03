@@ -76,7 +76,7 @@ describe('<DateInput />', () => {
 		fireEvent.focus(container.querySelector('input'));
 
 		fireEvent.change(container.querySelector('input'), {
-			target: { value: 'value from the tests' },
+			target: { value: '2019-02-05' },
 		});
 
 		expect(container.firstChild).toMatchSnapshot();

@@ -88,7 +88,9 @@ function usePositionerEffect(
 	});
 
 	useLayoutEffect(() => {
-		if (!triggerRef.current && !positionerRef.current) {
+		let current = true;
+
+		if (!triggerRef.current || !positionerRef.current) {
 			return void 0;
 		}
 
@@ -97,7 +99,7 @@ function usePositionerEffect(
 		});
 
 		function handler() {
-			if (!triggerRef.current && !positionerRef.current) {
+			if (!current && (!triggerRef.current || !positionerRef.current)) {
 				return;
 			}
 
@@ -129,6 +131,7 @@ function usePositionerEffect(
 		}
 
 		return () => {
+			current = false;
 			if (lastFrame) {
 				cancelAnimationFrame(lastFrame);
 			}

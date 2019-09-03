@@ -94,7 +94,7 @@ exports[`<DateInput /> should match snapshot when active 1`] = `
       autocomplete="off"
       class="input"
       type="date"
-      value="2019-01-21"
+      value="2019-02-05"
     />
     <div
       class="notchedBaseBorder"
