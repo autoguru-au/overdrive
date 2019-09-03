@@ -1,15 +1,15 @@
-import { action } from '@storybook/addon-actions';
-import { boolean, text } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
-import React from 'react';
-
-import { TextInput } from '.';
 import {
 	AccountEditIcon,
 	CalendarIcon,
 	CheckIcon,
 	StarIcon,
 } from '@autoguru/icons';
+import { action } from '@storybook/addon-actions';
+import { boolean, text } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react';
+import React from 'react';
+
+import { TextInput } from '.';
 
 const sharedKnobs = placeholder => ({
 	placeholder: text('Placeholder', placeholder),
