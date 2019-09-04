@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React, { memo } from 'react';
+import React, { memo, ReactNode } from 'react';
 import { ChevronDownIcon } from '@autoguru/icons';
 import { Icon } from '../Icon';
 import { withEnhancedInput } from '../InputBase';
@@ -26,7 +26,12 @@ const SelectInputComponent = ({
 SelectInputComponent.primitiveType = 'select';
 
 export const SelectInput = memo(
-	withEnhancedInput<{}, HTMLSelectElement>(SelectInputComponent, {
+	withEnhancedInput<
+		{
+			children: ReactNode[] | ReactNode;
+		},
+		HTMLSelectElement
+	>(SelectInputComponent, {
 		withSuffixIcon: false,
 		withForcedSuffixIconPadding: true,
 	}),
