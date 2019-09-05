@@ -16,7 +16,6 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
       style="width: 16px; height: 16px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -42,7 +41,6 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
       style="width: 16px; height: 16px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -72,7 +70,6 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
       style="width: 16px; height: 16px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -98,7 +95,6 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
       style="width: 16px; height: 16px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -129,7 +125,6 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
       style="width: 16px; height: 16px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -154,7 +149,6 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
       style="width: 16px; height: 16px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"

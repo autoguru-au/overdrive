@@ -13,7 +13,6 @@ exports[`<BulletText /> should match snapshot for custom bullet text 1`] = `
         style="width: 14px; height: 14px;"
       >
         <svg
-          baseProfile="full"
           fill="currentColor"
           focusable="false"
           viewBox="0 0 24 24"

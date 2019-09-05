@@ -12,7 +12,6 @@ exports[`<StarRating /> should match snapshot for small size 1`] = `
       style="width: 16px; height: 16px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -27,7 +26,6 @@ exports[`<StarRating /> should match snapshot for small size 1`] = `
       style="width: 16px; height: 16px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -42,7 +40,6 @@ exports[`<StarRating /> should match snapshot for small size 1`] = `
       style="width: 16px; height: 16px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -57,7 +54,6 @@ exports[`<StarRating /> should match snapshot for small size 1`] = `
       style="width: 16px; height: 16px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -72,7 +68,6 @@ exports[`<StarRating /> should match snapshot for small size 1`] = `
       style="width: 16px; height: 16px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -103,7 +98,6 @@ exports[`<StarRating /> should match snapshot with label 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -118,7 +112,6 @@ exports[`<StarRating /> should match snapshot with label 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -133,7 +126,6 @@ exports[`<StarRating /> should match snapshot with label 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -148,7 +140,6 @@ exports[`<StarRating /> should match snapshot with label 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -163,7 +154,6 @@ exports[`<StarRating /> should match snapshot with label 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -194,7 +184,6 @@ exports[`<StarRating /> should match snapshot with value 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -209,7 +198,6 @@ exports[`<StarRating /> should match snapshot with value 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -224,7 +212,6 @@ exports[`<StarRating /> should match snapshot with value 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -239,7 +226,6 @@ exports[`<StarRating /> should match snapshot with value 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -254,7 +240,6 @@ exports[`<StarRating /> should match snapshot with value 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -285,7 +270,6 @@ exports[`<StarRating /> should match snapshot without value 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -300,7 +284,6 @@ exports[`<StarRating /> should match snapshot without value 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -315,7 +298,6 @@ exports[`<StarRating /> should match snapshot without value 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -330,7 +312,6 @@ exports[`<StarRating /> should match snapshot without value 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -345,7 +326,6 @@ exports[`<StarRating /> should match snapshot without value 1`] = `
       style="width: 20px; height: 20px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"

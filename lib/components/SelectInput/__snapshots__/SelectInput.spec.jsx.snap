@@ -32,7 +32,6 @@ exports[`<SelectInput /> should have some hintText 1`] = `
       style="width: 25px; height: 25px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -103,7 +102,6 @@ exports[`<SelectInput /> should match snapshot 1`] = `
       style="width: 25px; height: 25px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -169,7 +167,6 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
       style="width: 25px; height: 25px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -235,7 +232,6 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
       style="width: 25px; height: 25px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -301,7 +297,6 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
       style="width: 25px; height: 25px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -367,7 +362,6 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
       style="width: 25px; height: 25px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -432,7 +426,6 @@ exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
       style="width: 25px; height: 25px;"
     >
       <svg
-        baseProfile="full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"

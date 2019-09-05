@@ -10,7 +10,6 @@ exports[`<Alert /> should match the snapshot 1`] = `
     style="width: 20px; height: 20px;"
   >
     <svg
-      baseProfile="full"
       fill="currentColor"
       focusable="false"
       viewBox="0 0 24 24"
@@ -36,7 +35,6 @@ exports[`<Alert /> should match the snapshot 1`] = `
         style="width: 20px; height: 20px;"
       >
         <svg
-          baseProfile="full"
           fill="currentColor"
           focusable="false"
           viewBox="0 0 24 24"

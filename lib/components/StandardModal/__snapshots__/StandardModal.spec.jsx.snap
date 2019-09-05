@@ -30,7 +30,6 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
                 style="width: 20px; height: 20px;"
               >
                 <svg
-                  baseProfile="full"
                   fill="currentColor"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -95,7 +94,6 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
                 style="width: 20px; height: 20px;"
               >
                 <svg
-                  baseProfile="full"
                   fill="currentColor"
                   focusable="false"
                   viewBox="0 0 24 24"
