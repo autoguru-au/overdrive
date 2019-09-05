@@ -30,22 +30,22 @@
   dependencies:
     "@commitlint/config-conventional" "^8.1.0"
 
-"@autoguru/eslint-plugin@^1.0.62":
-  version "1.0.62"
-  resolved "https://registry.yarnpkg.com/@autoguru/eslint-plugin/-/eslint-plugin-1.0.62.tgz#dc0c3cef59039229f7df54fb46dc55f3fcf764ba"
-  integrity sha512-bbWM+S0tRT6i0Tedt33BZ+qAoTpnsgn9TNPyagL1ITkX1+r4ifqmmmzh29+f+ob9rH3v10ObDtZVd6cDzxVx4A==
+"@autoguru/eslint-plugin@^1.0.65":
+  version "1.0.65"
+  resolved "https://registry.yarnpkg.com/@autoguru/eslint-plugin/-/eslint-plugin-1.0.65.tgz#d34e25f0720fd906fc173d205126034843a5f191"
+  integrity sha512-EISAtFQHk2UpFmI1JXgJq3zuT5DkrZNtau879o3taF8DMj5xQic+ABV1nEVxvVUot5MaIGZPtcFsDZS0tzRWPQ==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^1.13.0"
     "@typescript-eslint/parser" "^1.13.0"
     eslint-config-kentcdodds "^14.3.4"
-    eslint-config-prettier "^6.0.0"
+    eslint-config-prettier "^6.2.0"
     eslint-config-xo "^0.26.0"
     eslint-config-xo-react "^0.20.0"
     eslint-config-xo-typescript "^0.16.0"
     eslint-import-resolver-typescript "^1.1.1"
     eslint-plugin-promise "^4.2.1"
     eslint-plugin-react "^7.14.3"
-    eslint-plugin-react-hooks "^1.7.0"
+    eslint-plugin-react-hooks "^2.0.1"
     eslint-plugin-unicorn "^10.0.0"
     jsx-ast-utils "^2.2.1"
     ulid "^2.3.0"
@@ -70,10 +70,10 @@
   resolved "https://registry.yarnpkg.com/@autoguru/tsconfig/-/tsconfig-1.0.63.tgz#364d47d64d6228251510bb2e6f553e017d2908d0"
   integrity sha512-uFCHwkyrL0y1GjodDYRpSMKhkZn1jJQaVeP1JrTWpbmegogPvYVM+4NOWaDS6V/glG2E7Mb6KykSmJFGBHbVOg==
 
-"@autoguru/utilities@^1.0.64":
-  version "1.0.64"
-  resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.64.tgz#6d0ef7b0419f93e72bdde148abdaa016d78e3125"
-  integrity sha512-0j6O715I9N5hdvyHGmBqcOfA0xIqPOaXsKPyQ5lz8cXy5A+sJ0DLRTqU9ke/70u6v2I4hOwaRqs+54fe5z4hig==
+"@autoguru/utilities@^1.0.65":
+  version "1.0.65"
+  resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.65.tgz#eb92ded7ccc5f292d2eb0b2a2f58d09566703cb4"
+  integrity sha512-aPIt7/giFswu6bhGogMDkWD4LQ87t5m1dKJu9/RlqHMplsqLuy9umLPq8jdpdvQlY6weZtKbSr4em4rc7R6Txg==
   dependencies:
     tiny-invariant "^1.0.6"
     tiny-warning "^1.0.3"
@@ -3741,10 +3741,10 @@ browserify-zlib@^0.2.0:
   dependencies:
     pako "~1.0.5"
 
-browserslist-config-autoguru@^1.0.59:
-  version "1.0.59"
-  resolved "https://registry.yarnpkg.com/browserslist-config-autoguru/-/browserslist-config-autoguru-1.0.59.tgz#47cecab400592e39cfb3235eba974fcb9519f964"
-  integrity sha512-BxwBNkPbn83emyF38ADDeapgWOTKxweBGSfFaxl66Zh5U+S8AdUUeyeKTOJ5G+0g2j8ZqkOj7gmiUnMi/g+Bkw==
+browserslist-config-autoguru@^1.0.65:
+  version "1.0.65"
+  resolved "https://registry.yarnpkg.com/browserslist-config-autoguru/-/browserslist-config-autoguru-1.0.65.tgz#8e48a66d16235963dfcb3ed797af3972c7b5a310"
+  integrity sha512-oIleJy0Q35D54Pl+/rm+cmP87sgLBgEXp1tNLYfXaXFL8J6SkR3MxtgEgPmY1fQeibxxsXatV0u//1Y1p82P2w==
 
 browserslist@4.6.6:
   version "4.6.6"
@@ -5930,7 +5930,7 @@ eslint-config-kentcdodds@^14.3.4:
     semver "^6.3.0"
     webpack "^4.39.2"
 
-eslint-config-prettier@^6.0.0, eslint-config-prettier@^6.1.0:
+eslint-config-prettier@^6.1.0, eslint-config-prettier@^6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.2.0.tgz#80e0b8714e3f6868c4ac2a25fbf39c02e73527a7"
   integrity sha512-VLsgK/D+S/FEsda7Um1+N8FThec6LqE3vhcMyp8mlmto97y3fGf3DX7byJexGuOb1QY0Z/zz222U5t+xSfcZDQ==
@@ -6048,6 +6048,11 @@ eslint-plugin-react-hooks@^1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-1.7.0.tgz#6210b6d5a37205f0b92858f895a4e827020a7d04"
   integrity sha512-iXTCFcOmlWvw4+TOE8CLWj6yX1GwzT0Y6cUfHHZqWnSk144VmVIRcVGtUAzrLES7C798lmvnt02C7rxaOX1HNA==
+
+eslint-plugin-react-hooks@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-2.0.1.tgz#e898ec26a0a335af6f7b0ad1f0bedda7143ed756"
+  integrity sha512-xir+3KHKo86AasxlCV8AHRtIZPHljqCRRUYgASkbatmt0fad4+5GgC7zkT7o/06hdKM6MIwp8giHVXqBPaarHQ==
 
 eslint-plugin-react@^7.14.3:
   version "7.14.3"

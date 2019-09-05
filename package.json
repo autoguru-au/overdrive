@@ -72,13 +72,13 @@
   "browserslist": "extends browserslist-config-autoguru",
   "dependencies": {
     "@autoguru/icons": "^1.1.5",
-    "@autoguru/utilities": "^1.0.64",
+    "@autoguru/utilities": "^1.0.65",
     "clsx": "^1.0.4"
   },
   "devDependencies": {
     "@autoguru/babel-preset": "^1.0.64",
     "@autoguru/commitlint-config": "^1.0.53",
-    "@autoguru/eslint-plugin": "^1.0.62",
+    "@autoguru/eslint-plugin": "^1.0.65",
     "@autoguru/jest-preset": "^1.0.64",
     "@autoguru/tsconfig": "^1.0.63",
     "@babel/core": "^7.5.5",
@@ -108,7 +108,7 @@
     "autoprefixer": "^9.5.1",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.5",
-    "browserslist-config-autoguru": "^1.0.59",
+    "browserslist-config-autoguru": "^1.0.65",
     "build-header": "^1.0.2",
     "concurrently": "^4.1.0",
     "copyfiles": "^2.1.1",
