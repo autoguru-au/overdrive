@@ -84,7 +84,7 @@
     "@babel/core": "^7.5.5",
     "@babel/runtime-corejs3": "^7.5.5",
     "@commitlint/cli": "^8.1.0",
-    "@octokit/rest": "^16.28.8",
+    "@octokit/rest": "^16.28.9",
     "@semantic-release/commit-analyzer": "^6.3.0",
     "@semantic-release/github": "^5.4.0",
     "@semantic-release/npm": "^5.1.9",
@@ -101,8 +101,8 @@
     "@storybook/react": "^5.1.11",
     "@storybook/theming": "^5.1.11",
     "@testing-library/jest-dom": "^4.0.1",
-    "@testing-library/react": "^9.1.2",
-    "@types/node": "^12.7.2",
+    "@testing-library/react": "^9.1.4",
+    "@types/node": "^12.7.4",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "autoprefixer": "^9.5.1",
@@ -159,7 +159,7 @@
     "react-dom": ">=16.8"
   },
   "volta": {
-    "node": "12.9.0",
+    "node": "12.10.0",
     "yarn": "1.17.3"
   }
 }
