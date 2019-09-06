@@ -14,34 +14,50 @@ export const useOutsideClick = (
 	refs: Array<RefObject<HTMLElement>>,
 	onClickAway: () => void,
 ) => {
+	const callbackRef = useRef(onClickAway);
+
+	// So we don't have to re-bind events when a callback gets updated, simply call the callback when the event fires.
 	useEffect(() => {
-		if (typeof window === 'undefined' || typeof onClickAway !== 'function')
+		callbackRef.current = onClickAway;
+	}, [onClickAway]);
+
+	useEffect(() => {
+		if (
+			typeof document === 'undefined' ||
+			typeof onClickAway !== 'function'
+		)
 			return void 0;
 
-		const defaultEvents = ['mouseup', 'touchstart'];
+		return bindEvent(document, 'mouseup', event => {
+			const shouldClose = refs
+				.filter(item => Boolean(item.current))
+				.map(item => item.current)
+				.every(
+					element => !element.contains(event.target as HTMLElement),
+				);
 
-		const handler = event => {
-			if (
-				refs
-					.filter(item => Boolean(item.current))
-					.every(item => !item.current.contains(event.target))
-			) {
-				onClickAway();
+			if (shouldClose) {
+				callbackRef.current();
 			}
-		};
+		});
+	}, [refs]);
+};
 
-		defaultEvents.forEach(ev =>
-			document.body.addEventListener(ev, handler, {
-				passive: true,
-			}),
-		);
+const bindEvent = <
+	Node extends HTMLElement | HTMLDocument,
+	K extends keyof HTMLElementEventMap
+>(
+	node: Node,
+	event: K,
+	callback: (event: HTMLElementEventMap[K]) => unknown,
+) => {
+	node.addEventListener(event, callback as EventListener, {
+		passive: true,
+	});
 
-		return () => {
-			defaultEvents.forEach(ev =>
-				document.body.removeEventListener(ev, handler),
-			);
-		};
-	}, [onClickAway, refs]);
+	return () => {
+		node.removeEventListener(event, callback as EventListener);
+	};
 };
 
 interface Props {
