@@ -3,9 +3,9 @@ import React, {
 	ComponentPropsWithoutRef,
 	FunctionComponent,
 	ReactElement,
-	useEffect,
 	useState,
 } from 'react';
+import { useId } from '../../utils/useId';
 
 import styles from './style.scss';
 import { Tab } from './Tab';
@@ -73,13 +73,4 @@ export const Tabs: FunctionComponent<Props> = ({
 			</div>
 		</div>
 	);
-};
-
-let id = 0;
-const genId = () => ++id;
-
-const useId = () => {
-	const [id, setId] = useState(null);
-	useEffect(() => setId(genId()), []);
-	return `od-${id}`;
 };
