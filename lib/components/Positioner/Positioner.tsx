@@ -3,6 +3,7 @@ import React, {
 	FunctionComponent,
 	ReactElement,
 	RefObject,
+	useCallback,
 	useLayoutEffect,
 	useRef,
 	useState,
@@ -46,7 +47,12 @@ export function usingPositioner<T extends {} = {}>(
 			isOpen,
 		);
 
-		useOutsideClick([positionerRef, triggerRef], onRequestClose);
+		useOutsideClick(
+			[positionerRef, triggerRef],
+			useCallback(() => {
+				if (isOpen) onRequestClose();
+			}, [isOpen, onRequestClose]),
+		);
 
 		return createPortal(
 			<div
