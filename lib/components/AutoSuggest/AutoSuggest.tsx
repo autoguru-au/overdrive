@@ -35,7 +35,7 @@ interface State {
 	isFlyoutOpen: boolean;
 }
 
-const enum ActionTypes {
+enum ActionTypes {
 	INPUT_CHANGE,
 	INPUT_ESCAPE,
 	INPUT_ENTER,
