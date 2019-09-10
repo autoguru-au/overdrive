@@ -2,11 +2,14 @@ import { IconType } from '@autoguru/icons';
 import { invariant, wrapEvent } from '@autoguru/utilities';
 import clsx from 'clsx';
 import React, {
+	AriaAttributes,
 	ChangeEventHandler,
 	ComponentType,
 	FocusEventHandler,
 	forwardRef,
 	KeyboardEventHandler,
+	MouseEventHandler,
+	MutableRefObject,
 	RefObject,
 	useState,
 } from 'react';
@@ -21,10 +24,11 @@ export interface EventHandlers<PrimitiveElementType> {
 	onBlur?: FocusEventHandler<PrimitiveElementType>;
 	onFocus?: FocusEventHandler<PrimitiveElementType>;
 	onKeyDown?: KeyboardEventHandler<PrimitiveElementType>;
+	onClick?: MouseEventHandler<PrimitiveElementType>;
 }
 
 // The props we'll give the end consumer to send
-export interface EnhanceInputPrimitiveProps {
+export interface EnhanceInputPrimitiveProps extends AriaAttributes {
 	name: string;
 	placeholder: string;
 	className?: string;
@@ -34,6 +38,7 @@ export interface EnhanceInputPrimitiveProps {
 	disabled?: boolean;
 	prefixIcon?: IconType;
 	suffixIcon?: IconType;
+	wrapperRef?: MutableRefObject<HTMLDivElement>;
 }
 
 export interface ValidationProps {
@@ -88,7 +93,7 @@ export const withEnhancedInput = <
 		PrimitiveElementType,
 		EnhanceInputProps<IncomingProps, PrimitiveElementType>
 	>(({ // EnhanceInputPrimitiveProps
-		placeholder, name, id = name, hintText, disabled = false, className, isTouched, isValid, value: incomingValue = '', onBlur, onFocus, onKeyDown, onChange, prefixIcon, suffixIcon, ...rest }, ref) => {
+		placeholder, name, id = name, hintText, disabled = false, className, isTouched, isValid, value: incomingValue = '', onBlur, onFocus, onKeyDown, onChange, prefixIcon, suffixIcon, wrapperRef, ...rest }, ref) => {
 		// ValidationProps // Icons // IncomingProps
 		invariant(
 			!(prefixIcon && !withPrefixIcon),
@@ -150,8 +155,8 @@ export const withEnhancedInput = <
 				id,
 				disabled,
 				value,
-				ref,
 				className: styles.input,
+				ref,
 			},
 			prefixed: Boolean(prefixIcon),
 			suffixed: Boolean(suffixIcon),
@@ -184,25 +189,27 @@ export const withEnhancedInput = <
 						Boolean(suffixIcon) || withForcedSuffixIconPadding
 					}
 					placeholder={placeholder}>
-					{Boolean(prefixIcon) && (
-						<label htmlFor={id}>
-							<Icon
-								icon={prefixIcon}
-								size={24}
-								className={styles.prefixIcon}
-							/>
-						</label>
-					)}
-					<WrappingComponent {...wrappingComponent} />
-					{Boolean(suffixIcon) && (
-						<label htmlFor={id}>
-							<Icon
-								icon={suffixIcon}
-								size={24}
-								className={styles.suffixIcon}
-							/>
-						</label>
-					)}
+					<div ref={wrapperRef} className={styles.inputWrapper}>
+						{Boolean(prefixIcon) && (
+							<label htmlFor={id}>
+								<Icon
+									icon={prefixIcon}
+									size={24}
+									className={styles.prefixIcon}
+								/>
+							</label>
+						)}
+						<WrappingComponent {...wrappingComponent} />
+						{Boolean(suffixIcon) && (
+							<label htmlFor={id}>
+								<Icon
+									icon={suffixIcon}
+									size={24}
+									className={styles.suffixIcon}
+								/>
+							</label>
+						)}
+					</div>
 				</NotchedBase>
 				{!disabled && Boolean(hintText) && Boolean(hintText.length) && (
 					<HintText isActive={isActive}>{hintText}</HintText>

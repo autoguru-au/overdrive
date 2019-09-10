@@ -58,13 +58,7 @@ $font_size: var(--global--fontSize--4); // 16
 .notched-base {
 	width: 100%;
 	position: relative;
-	display: inline-grid;
-	flex-direction: column;
 	padding: 0;
-	align-content: center;
-	justify-content: flex-start;
-	align-items: center;
-	grid-template-columns: auto 1fr auto;
 	transition: fill 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 	color: getColour(gray, 500);
 
@@ -104,6 +98,11 @@ $font_size: var(--global--fontSize--4); // 16
 		outline: none;
 		border: none;
 		background: transparent;
+
+		// Edge adds a clear button on inputs, this removes it.
+		&::-ms-clear {
+			display: none;
+		}
 	}
 
 	input[type='number'] {
@@ -286,6 +285,12 @@ $font_size: var(--global--fontSize--4); // 16
 		calc(var(--global--space--4) - 1px);
 	grid-column-start: 1;
 	grid-column-end: 4;
+	width: 100%;
+	height: $input_height;
+	align-self: flex-end;
+	line-height: 1;
+	font-size: #{$font_size};
+	color: getColour(gray, 900);
 
 	.prefixed & {
 		grid-column-start: 2;
@@ -296,13 +301,6 @@ $font_size: var(--global--fontSize--4); // 16
 		grid-column-end: 3;
 		padding-right: 0;
 	}
-
-	width: 100%;
-	height: $input_height;
-	align-self: flex-end;
-	line-height: 1;
-	font-size: #{$font_size};
-	color: getColour(gray, 900);
 
 	@at-root textarea.input {
 		$text_area_height: #{$input_height} * 2.5;
@@ -367,4 +365,13 @@ $font_size: var(--global--fontSize--4); // 16
 			color: getColour(green, 800);
 		}
 	}
+}
+
+.inputWrapper {
+	display: grid;
+	flex-direction: column;
+	align-content: center;
+	justify-content: flex-start;
+	align-items: center;
+	grid-template-columns: auto 1fr auto;
 }

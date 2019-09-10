@@ -7,11 +7,15 @@ exports[`<TextAreaInput /> should have some hintText 1`] = `
   <div
     class="notchedBase"
   >
-    <textarea
-      autocomplete="off"
-      class="input"
-      id="id"
-    />
+    <div
+      class="inputWrapper"
+    >
+      <textarea
+        autocomplete="off"
+        class="input"
+        id="id"
+      />
+    </div>
     <div
       class="notchedBaseBorder"
     >
@@ -49,11 +53,15 @@ exports[`<TextAreaInput /> should match snapshot 1`] = `
   <div
     class="notchedBase"
   >
-    <textarea
-      autocomplete="off"
-      class="input"
-      id="id"
-    />
+    <div
+      class="inputWrapper"
+    >
+      <textarea
+        autocomplete="off"
+        class="input"
+        id="id"
+      />
+    </div>
     <div
       class="notchedBaseBorder"
     >
@@ -86,12 +94,16 @@ exports[`<TextAreaInput /> should match snapshot when active 1`] = `
   <div
     class="notchedBase notchedBaseShift notchedBaseActive"
   >
-    <textarea
-      autocomplete="off"
-      class="input"
+    <div
+      class="inputWrapper"
     >
-      value from the tests
-    </textarea>
+      <textarea
+        autocomplete="off"
+        class="input"
+      >
+        value from the tests
+      </textarea>
+    </div>
     <div
       class="notchedBaseBorder"
     >
@@ -123,10 +135,14 @@ exports[`<TextAreaInput /> should match snapshot when touched 1`] = `
   <div
     class="notchedBase"
   >
-    <textarea
-      autocomplete="off"
-      class="input"
-    />
+    <div
+      class="inputWrapper"
+    >
+      <textarea
+        autocomplete="off"
+        class="input"
+      />
+    </div>
     <div
       class="notchedBaseBorder"
     >
@@ -158,10 +174,14 @@ exports[`<TextAreaInput /> should match snapshot when touched and invalid 1`] = 
   <div
     class="notchedBase"
   >
-    <textarea
-      autocomplete="off"
-      class="input"
-    />
+    <div
+      class="inputWrapper"
+    >
+      <textarea
+        autocomplete="off"
+        class="input"
+      />
+    </div>
     <div
       class="notchedBaseBorder"
     >
@@ -193,10 +213,14 @@ exports[`<TextAreaInput /> should match snapshot when touched and valid 1`] = `
   <div
     class="notchedBase"
   >
-    <textarea
-      autocomplete="off"
-      class="input"
-    />
+    <div
+      class="inputWrapper"
+    >
+      <textarea
+        autocomplete="off"
+        class="input"
+      />
+    </div>
     <div
       class="notchedBaseBorder"
     >
