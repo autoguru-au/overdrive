@@ -16,7 +16,7 @@ function createRollupConfig({ entry: input, outputPath }) {
 		external: externalPackages,
 
 		treeshake: {
-			propertyReadSideEffects: false,
+			propertyReadSideEffects: true,
 		},
 
 		plugins: [
@@ -25,12 +25,16 @@ function createRollupConfig({ entry: input, outputPath }) {
 				preferBuiltins: true,
 			}),
 
+			typescript({
+				clean: true,
+			}),
+
 			postcss({
 				extract: join(outputPath, 'overdrive.css'),
 				inject: false,
 				modules: {
 					camelCase: true,
-					generateScopedName: 'od-[hash:base64:5]',
+					generateScopedName: 'od-[hash:base64:7]',
 				},
 				plugins: [
 					require('postcss-flexbugs-fixes'),
@@ -47,8 +51,6 @@ function createRollupConfig({ entry: input, outputPath }) {
 					}),
 				],
 			}),
-
-			typescript(),
 		],
 	};
 }

@@ -25,22 +25,28 @@ async function run() {
 		}),
 	);
 
+	const defaultOutputConfig = {
+		preferConst: true,
+		dir: resolve(distFolder),
+		name: 'overdrive',
+		sourcemap: true,
+		strict: true,
+		compact: false,
+		preserveModules: false,
+	};
+
 	const outputs = await Promise.all([
 		bundle.write({
-			file: resolve(distFolder, 'overdrive.cjs.js'),
+			...defaultOutputConfig,
+			entryFileNames: 'overdrive.cjs.js',
+			esModule: false,
 			format: 'cjs',
-			freeze: false,
-			name: 'overdrive',
-			sourcemap: true,
-			strict: true,
 		}),
 		bundle.write({
-			esModule: false,
-			file: resolve(distFolder, 'overdrive.esm.js'),
+			...defaultOutputConfig,
+			entryFileNames: 'overdrive.esm.js',
+			esModule: true,
 			format: 'esm',
-			name: 'overdrive',
-			sourcemap: true,
-			strict: true,
 		}),
 	]);
 
