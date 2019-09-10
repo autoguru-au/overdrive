@@ -9,6 +9,7 @@
 export * from './Actions';
 export * from './Alert';
 export * from './Anchor';
+export * from './AutoSuggest';
 export * from './Badge';
 export * from './Box';
 export * from './BulletList';

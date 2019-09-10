@@ -7,40 +7,44 @@ exports[`<SelectInput /> should have some hintText 1`] = `
   <div
     class="notchedBase suffixed"
   >
-    <select
-      autocomplete="off"
-      class="input"
+    <div
+      class="inputWrapper"
     >
-      <option
-        value="a"
+      <select
+        autocomplete="off"
+        class="input"
       >
-        Value 1
-      </option>
-      <option
-        value="b"
+        <option
+          value="a"
+        >
+          Value 1
+        </option>
+        <option
+          value="b"
+        >
+          Value 2
+        </option>
+        <option
+          value="c"
+        >
+          Value 3
+        </option>
+      </select>
+      <i
+        class="root arrow"
+        style="width: 25px; height: 25px;"
       >
-        Value 2
-      </option>
-      <option
-        value="c"
-      >
-        Value 3
-      </option>
-    </select>
-    <i
-      class="root arrow"
-      style="width: 25px; height: 25px;"
-    >
-      <svg
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
-        />
-      </svg>
-    </i>
+        <svg
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+          />
+        </svg>
+      </i>
+    </div>
     <div
       class="notchedBaseBorder"
     >
@@ -77,40 +81,44 @@ exports[`<SelectInput /> should match snapshot 1`] = `
   <div
     class="notchedBase suffixed"
   >
-    <select
-      autocomplete="off"
-      class="input"
+    <div
+      class="inputWrapper"
     >
-      <option
-        value="a"
+      <select
+        autocomplete="off"
+        class="input"
       >
-        Value 1
-      </option>
-      <option
-        value="b"
+        <option
+          value="a"
+        >
+          Value 1
+        </option>
+        <option
+          value="b"
+        >
+          Value 2
+        </option>
+        <option
+          value="c"
+        >
+          Value 3
+        </option>
+      </select>
+      <i
+        class="root arrow"
+        style="width: 25px; height: 25px;"
       >
-        Value 2
-      </option>
-      <option
-        value="c"
-      >
-        Value 3
-      </option>
-    </select>
-    <i
-      class="root arrow"
-      style="width: 25px; height: 25px;"
-    >
-      <svg
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
-        />
-      </svg>
-    </i>
+        <svg
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+          />
+        </svg>
+      </i>
+    </div>
     <div
       class="notchedBaseBorder"
     >
@@ -142,40 +150,44 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
   <div
     class="notchedBase notchedBaseShift notchedBaseActive suffixed"
   >
-    <select
-      autocomplete="off"
-      class="input"
+    <div
+      class="inputWrapper"
     >
-      <option
-        value="a"
+      <select
+        autocomplete="off"
+        class="input"
       >
-        Value 1
-      </option>
-      <option
-        value="b"
+        <option
+          value="a"
+        >
+          Value 1
+        </option>
+        <option
+          value="b"
+        >
+          Value 2
+        </option>
+        <option
+          value="c"
+        >
+          Value 3
+        </option>
+      </select>
+      <i
+        class="root arrow"
+        style="width: 25px; height: 25px;"
       >
-        Value 2
-      </option>
-      <option
-        value="c"
-      >
-        Value 3
-      </option>
-    </select>
-    <i
-      class="root arrow"
-      style="width: 25px; height: 25px;"
-    >
-      <svg
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
-        />
-      </svg>
-    </i>
+        <svg
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+          />
+        </svg>
+      </i>
+    </div>
     <div
       class="notchedBaseBorder"
     >
@@ -207,40 +219,44 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
   <div
     class="notchedBase suffixed"
   >
-    <select
-      autocomplete="off"
-      class="input"
+    <div
+      class="inputWrapper"
     >
-      <option
-        value="a"
+      <select
+        autocomplete="off"
+        class="input"
       >
-        Value 1
-      </option>
-      <option
-        value="b"
+        <option
+          value="a"
+        >
+          Value 1
+        </option>
+        <option
+          value="b"
+        >
+          Value 2
+        </option>
+        <option
+          value="c"
+        >
+          Value 3
+        </option>
+      </select>
+      <i
+        class="root arrow"
+        style="width: 25px; height: 25px;"
       >
-        Value 2
-      </option>
-      <option
-        value="c"
-      >
-        Value 3
-      </option>
-    </select>
-    <i
-      class="root arrow"
-      style="width: 25px; height: 25px;"
-    >
-      <svg
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
-        />
-      </svg>
-    </i>
+        <svg
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+          />
+        </svg>
+      </i>
+    </div>
     <div
       class="notchedBaseBorder"
     >
@@ -272,40 +288,44 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
   <div
     class="notchedBase suffixed"
   >
-    <select
-      autocomplete="off"
-      class="input"
+    <div
+      class="inputWrapper"
     >
-      <option
-        value="a"
+      <select
+        autocomplete="off"
+        class="input"
       >
-        Value 1
-      </option>
-      <option
-        value="b"
+        <option
+          value="a"
+        >
+          Value 1
+        </option>
+        <option
+          value="b"
+        >
+          Value 2
+        </option>
+        <option
+          value="c"
+        >
+          Value 3
+        </option>
+      </select>
+      <i
+        class="root arrow"
+        style="width: 25px; height: 25px;"
       >
-        Value 2
-      </option>
-      <option
-        value="c"
-      >
-        Value 3
-      </option>
-    </select>
-    <i
-      class="root arrow"
-      style="width: 25px; height: 25px;"
-    >
-      <svg
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
-        />
-      </svg>
-    </i>
+        <svg
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+          />
+        </svg>
+      </i>
+    </div>
     <div
       class="notchedBaseBorder"
     >
@@ -337,40 +357,44 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
   <div
     class="notchedBase suffixed"
   >
-    <select
-      autocomplete="off"
-      class="input"
+    <div
+      class="inputWrapper"
     >
-      <option
-        value="a"
+      <select
+        autocomplete="off"
+        class="input"
       >
-        Value 1
-      </option>
-      <option
-        value="b"
+        <option
+          value="a"
+        >
+          Value 1
+        </option>
+        <option
+          value="b"
+        >
+          Value 2
+        </option>
+        <option
+          value="c"
+        >
+          Value 3
+        </option>
+      </select>
+      <i
+        class="root arrow"
+        style="width: 25px; height: 25px;"
       >
-        Value 2
-      </option>
-      <option
-        value="c"
-      >
-        Value 3
-      </option>
-    </select>
-    <i
-      class="root arrow"
-      style="width: 25px; height: 25px;"
-    >
-      <svg
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
-        />
-      </svg>
-    </i>
+        <svg
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+          />
+        </svg>
+      </i>
+    </div>
     <div
       class="notchedBaseBorder"
     >
@@ -402,39 +426,43 @@ exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
   <div
     class="notchedBase prefixed suffixed"
   >
-    <label>
+    <div
+      class="inputWrapper"
+    >
+      <label>
+        <i
+          class="root prefixIcon"
+          style="width: 24px; height: 24px;"
+        >
+          <svg
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+            />
+          </svg>
+        </i>
+      </label>
+      <select
+        autocomplete="off"
+        class="input"
+      />
       <i
-        class="root prefixIcon"
-        style="width: 24px; height: 24px;"
+        class="root arrow"
+        style="width: 25px; height: 25px;"
       >
         <svg
-          viewBox="0 0 512 512"
-          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
         >
           <path
-            d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+            d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
           />
         </svg>
       </i>
-    </label>
-    <select
-      autocomplete="off"
-      class="input"
-    />
-    <i
-      class="root arrow"
-      style="width: 25px; height: 25px;"
-    >
-      <svg
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
-        />
-      </svg>
-    </i>
+    </div>
     <div
       class="notchedBaseBorder"
     >

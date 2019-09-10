@@ -11,7 +11,7 @@ import React, {
 import { createPortal } from 'react-dom';
 import { useOutsideClick } from '../OutsideClick';
 import { EAlignment } from './alignment';
-import { AlignmentRect, getOptimalPosition } from './getOptimalPosition';
+import { AlignmentRect, getOptimalPosition, Rect } from './getOptimalPosition';
 import styles from './style.scss';
 
 export interface Props {
@@ -23,7 +23,10 @@ export interface Props {
 	onRequestClose?(): void;
 }
 
-type WrappedComponent<T> = T & Pick<Props, 'isOpen' | 'alignment'>;
+type WrappedComponent<ExtraProps> = ExtraProps & { triggerRect: Rect } & Pick<
+		Props,
+		'isOpen' | 'alignment'
+	>;
 
 export function usingPositioner<T extends {} = {}>(
 	WrappingComponent: ComponentType<WrappedComponent<T>>,
@@ -39,7 +42,11 @@ export function usingPositioner<T extends {} = {}>(
 		if (typeof window === 'undefined') return null;
 
 		const positionerRef = useRef<HTMLDivElement>();
-		const { alignment: derivedAlignment, rect } = usePositionerEffect(
+		const {
+			alignment: derivedAlignment,
+			rect,
+			triggerRect,
+		} = usePositionerEffect(
 			alignment,
 			triggerRef,
 			triggerOffset,
@@ -67,8 +74,9 @@ export function usingPositioner<T extends {} = {}>(
 				{isOpen && (
 					<WrappingComponent
 						{...(rest as T)}
-						isOpen={isOpen}
 						alignment={derivedAlignment}
+						isOpen={isOpen}
+						triggerRect={triggerRect}
 					/>
 				)}
 			</div>,
@@ -81,15 +89,22 @@ export const Positioner = usingPositioner(
 	({ children }) => children as ReactElement,
 );
 
+interface PositionerEffectState extends AlignmentRect {
+	triggerRect: Rect;
+}
+
 function usePositionerEffect(
 	alignment: EAlignment,
 	triggerRef: RefObject<HTMLElement>,
 	triggerOffset: number,
 	positionerRef: RefObject<HTMLElement>,
 	isOpen: boolean,
-) {
-	const [positionerResult, setPositionerResult] = useState<AlignmentRect>({
+): PositionerEffectState {
+	const [positionerResult, setPositionerResult] = useState<
+		PositionerEffectState
+	>({
 		rect: null,
+		triggerRect: null,
 		alignment,
 	});
 
@@ -119,8 +134,9 @@ function usePositionerEffect(
 			const height = Math.round(containerRect.height);
 			const width = Math.round(containerRect.width);
 
-			setPositionerResult(
-				getOptimalPosition(
+			setPositionerResult({
+				triggerRect,
+				...getOptimalPosition(
 					alignment,
 					triggerRect,
 					{
@@ -129,7 +145,7 @@ function usePositionerEffect(
 					},
 					triggerOffset,
 				),
-			);
+			});
 
 			lastFrame = requestAnimationFrame(() => {
 				handler();
