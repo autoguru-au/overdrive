@@ -30,10 +30,10 @@
   dependencies:
     "@commitlint/config-conventional" "^8.1.0"
 
-"@autoguru/eslint-plugin@^1.0.69":
-  version "1.0.69"
-  resolved "https://registry.yarnpkg.com/@autoguru/eslint-plugin/-/eslint-plugin-1.0.69.tgz#1cb6ee9ae8ce912a7ac69fe7cc137892cf1e545e"
-  integrity sha512-AedDgenQ9Dc8VWbQjlbZ1fBErumMVJmMELnROc9s2LFEBFSzTp9FwVbEM3fQlaD97EowpY5J/Yg4pf4y90+qSA==
+"@autoguru/eslint-plugin@^1.0.70":
+  version "1.0.70"
+  resolved "https://registry.yarnpkg.com/@autoguru/eslint-plugin/-/eslint-plugin-1.0.70.tgz#dc02b0e1f3b5d5e0ee7822bc486fccc178a617e1"
+  integrity sha512-97vQI6fARBH5vzRpR5uawgwYOW4ruLG5iZu7/lWzSVs3YDkWas65bnjZ6BMYFh+5RYa/P+YWLEklXrbD+u4zig==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^1.13.0"
     "@typescript-eslint/parser" "^1.13.0"
@@ -71,10 +71,10 @@
   resolved "https://registry.yarnpkg.com/@autoguru/tsconfig/-/tsconfig-1.0.63.tgz#364d47d64d6228251510bb2e6f553e017d2908d0"
   integrity sha512-uFCHwkyrL0y1GjodDYRpSMKhkZn1jJQaVeP1JrTWpbmegogPvYVM+4NOWaDS6V/glG2E7Mb6KykSmJFGBHbVOg==
 
-"@autoguru/utilities@^1.0.69":
-  version "1.0.69"
-  resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.69.tgz#23b73b57901ad067fbf66e191be1ab7807185e98"
-  integrity sha512-JvA7lye1/oH7Dv3D1EoYT+HS+/LR26Dw5RY9bzU+je+3m9HSwv0c8uIg55QI/2yA8oBZtYpNQlgl5q6Tw5VbKQ==
+"@autoguru/utilities@^1.0.70":
+  version "1.0.70"
+  resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.70.tgz#8511359a9e773557a46bb9110567819b15f65534"
+  integrity sha512-wIpzK1RfvWTHC6Zq3lR6XJx/Dg0+zoIiE5UuYi3QsMX88ohRQLX15GDgedirA3EbcQ6IlNd2Dt8kPKxVOcIb8w==
   dependencies:
     tiny-invariant "^1.0.6"
     tiny-warning "^1.0.3"

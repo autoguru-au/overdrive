@@ -72,13 +72,13 @@
   "browserslist": "extends browserslist-config-autoguru",
   "dependencies": {
     "@autoguru/icons": "^1.1.6",
-    "@autoguru/utilities": "^1.0.69",
+    "@autoguru/utilities": "^1.0.70",
     "clsx": "^1.0.4"
   },
   "devDependencies": {
     "@autoguru/babel-preset": "^1.0.68",
     "@autoguru/commitlint-config": "^1.0.53",
-    "@autoguru/eslint-plugin": "^1.0.69",
+    "@autoguru/eslint-plugin": "^1.0.70",
     "@autoguru/jest-preset": "^1.0.68",
     "@autoguru/tsconfig": "^1.0.63",
     "@babel/core": "^7.5.5",
