@@ -1,10 +1,11 @@
+import { AccountEditIcon, CalendarIcon, StarIcon } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
 import { boolean, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
+
 import { DateInput } from '.';
-import { AccountEditIcon, CalendarIcon, StarIcon } from '@autoguru/icons';
 import { formatDate } from './DateInput';
 
 const todayStr: string = formatDate(

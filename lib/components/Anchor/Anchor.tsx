@@ -10,6 +10,7 @@ import React, {
 	memo,
 	ReactNode,
 } from 'react';
+
 import { Text } from '../Typography';
 import styles from './style.scss';
 

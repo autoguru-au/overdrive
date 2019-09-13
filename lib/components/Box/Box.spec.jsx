@@ -1,7 +1,8 @@
-import React from 'react';
 import { render } from '@testing-library/react';
-import { Box } from './Box';
+import React from 'react';
+
 import { EBoxVariant } from '.';
+import { Box } from './Box';
 
 describe('<Box />', () => {
 	it('should not throw', () => expect(() => render(<Box />)).not.toThrow());

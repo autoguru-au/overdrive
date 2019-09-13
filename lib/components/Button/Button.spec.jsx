@@ -1,9 +1,10 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import { Button } from './Button';
-import { EButtonSize, EButtonVariant } from '.';
-import { Icon } from '../Icon';
 import { AccountBoxIcon } from '@autoguru/icons';
+import { render } from '@testing-library/react';
+import React from 'react';
+
+import { Icon } from '../Icon';
+import { EButtonSize, EButtonVariant } from '.';
+import { Button } from './Button';
 
 describe('<Button />', () => {
 	it('should not throw', () =>

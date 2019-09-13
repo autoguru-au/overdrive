@@ -7,9 +7,9 @@ import React, {
 	useRef,
 	useState,
 } from 'react';
+
 import { EPositionerAlignment, Positioner } from '../Positioner';
 import { Text } from '../Typography';
-
 import styles from './style.scss';
 
 interface Props {

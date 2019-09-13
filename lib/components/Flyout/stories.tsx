@@ -1,10 +1,11 @@
 import { select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React, { useCallback, useRef, useState } from 'react';
-import { Flyout } from '.';
+
 import { Button, EButtonSize, EButtonVariant } from '../Button';
 import { EPositionerAlignment } from '../Positioner';
 import { TextInput } from '../TextInput';
+import { Flyout } from '.';
 
 const alignmentPicker = () =>
 	select('Alignment', EPositionerAlignment, EPositionerAlignment.BOTTOM_LEFT);

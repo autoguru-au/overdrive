@@ -1,7 +1,8 @@
-import React from 'react';
 import { render } from '@testing-library/react';
-import { Anchor } from '.';
+import React from 'react';
+
 import { Button } from '../Button';
+import { Anchor } from '.';
 
 const TestIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">

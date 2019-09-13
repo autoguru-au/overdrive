@@ -2,8 +2,8 @@ import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 
-import { Alert } from '.';
 import { Text } from '../Typography';
+import { Alert } from '.';
 import { EAlertIntent } from './Alert';
 
 storiesOf('Components|Alert', module)

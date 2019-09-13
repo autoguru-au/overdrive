@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import React, { FunctionComponent, useEffect, useRef, useState } from 'react';
+
 import styles from './style.scss';
 
 const ACTIVE_SCALING_FACTOR = 0.7777;

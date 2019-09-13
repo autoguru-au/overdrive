@@ -2,6 +2,7 @@ import { action } from '@storybook/addon-actions';
 import { boolean, number } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React, { useState } from 'react';
+
 import { Stepper } from './Stepper';
 
 const badgeProps = () => ({

@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React, { FunctionComponent } from 'react';
-import { Text } from '../Typography';
 
+import { Text } from '../Typography';
 import styles from './style.scss';
 
 export interface Props {

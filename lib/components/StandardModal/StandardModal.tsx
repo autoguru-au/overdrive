@@ -1,6 +1,7 @@
+import { WindowCloseIcon } from '@autoguru/icons';
 import clsx from 'clsx';
 import React from 'react';
-import { WindowCloseIcon } from '@autoguru/icons';
+
 import { Icon } from '../Icon';
 import { EModalCloseCode, withModal } from '../ModalBase';
 import { Heading } from '../Typography';

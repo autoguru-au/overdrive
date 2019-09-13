@@ -2,8 +2,9 @@ import { action } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import { EStandardModalSize, StandardModal } from '.';
+
 import { Text } from '../Typography/Text';
+import { EStandardModalSize, StandardModal } from '.';
 
 storiesOf('Components|StandardModal', module).add('default', () => (
 	<StandardModal

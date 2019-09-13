@@ -1,6 +1,7 @@
-import React from 'react';
-import { TextAreaInput } from '.';
 import { fireEvent, render } from '@testing-library/react';
+import React from 'react';
+
+import { TextAreaInput } from '.';
 
 describe('<TextAreaInput />', () => {
 	it('should match snapshot', () => {

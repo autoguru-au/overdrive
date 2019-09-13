@@ -1,6 +1,7 @@
 import { AccountBoxIcon } from '@autoguru/icons';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
+
 import { Actions } from '../Actions';
 import { Icon } from '../Icon';
 import { Button, EButtonSize, EButtonVariant } from './Button';

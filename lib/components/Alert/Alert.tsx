@@ -1,6 +1,3 @@
-import clsx from 'clsx';
-import React, { FunctionComponent, ReactChild } from 'react';
-import { Button, EButtonSize, EButtonVariant } from '../Button';
 import {
 	AlertCircleIcon,
 	AlertIcon,
@@ -9,9 +6,12 @@ import {
 	InformationIcon,
 	WindowCloseIcon,
 } from '@autoguru/icons';
+import clsx from 'clsx';
+import React, { FunctionComponent, ReactChild } from 'react';
+
+import { Button, EButtonSize, EButtonVariant } from '../Button';
 import { Icon } from '../Icon';
 import { Text } from '../Typography/Text';
-
 import styles from './Alert.scss';
 
 export enum EAlertIntent {

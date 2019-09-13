@@ -1,4 +1,5 @@
 import React, { ComponentType, FunctionComponent } from 'react';
+
 import { ECloseCode } from './enums';
 import { ModalPortal } from './ModalPortal';
 

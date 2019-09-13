@@ -1,6 +1,7 @@
 import { CheckIcon } from '@autoguru/icons';
 import clsx from 'clsx';
 import React, { FunctionComponent, memo, ReactNode } from 'react';
+
 import { CheckableBase } from '../CheckableBase';
 import { checkableClass } from '../CheckableBase/CheckableBase';
 import styles from './style.scss';

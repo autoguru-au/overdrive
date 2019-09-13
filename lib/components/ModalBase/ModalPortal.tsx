@@ -7,6 +7,7 @@ import React, {
 	useRef,
 } from 'react';
 import { createPortal } from 'react-dom';
+
 import { useOutsideClick } from '../OutsideClick';
 import { ECloseCode } from './enums';
 import styles from './style.scss';

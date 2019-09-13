@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import React, { ChangeEvent, FunctionComponent, ReactNode } from 'react';
+
 import styles from './style.scss';
 
 export const checkableClass = styles.checkable;

@@ -3,9 +3,8 @@ import { boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React, { useCallback, useState } from 'react';
 
-import { withModal } from '.';
 import { Button, EButtonSize, EButtonVariant } from '../Button';
-
+import { withModal } from '.';
 import styles from './stories.scss';
 
 const NakedModal = withModal(({ children }) => (

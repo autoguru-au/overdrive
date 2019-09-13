@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import React, { FunctionComponent, isValidElement, ReactNode } from 'react';
+
 import { Text } from '../Typography/Text';
 import styles from './style.scss';
 

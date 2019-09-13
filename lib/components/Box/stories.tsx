@@ -1,6 +1,7 @@
 import { select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React, { ComponentProps } from 'react';
+
 import { Box, EBoxVariant } from '.';
 
 const baseProps = (): ComponentProps<typeof Box> => ({

@@ -1,9 +1,9 @@
 import { boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import { TextLink } from '.';
 
 import { Text } from '..';
+import { TextLink } from '.';
 
 storiesOf('Foundation|Typography/TextLink', module)
 	.addDecorator(story => (

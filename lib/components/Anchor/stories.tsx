@@ -1,10 +1,11 @@
+import { PhoneIcon } from '@autoguru/icons';
 import { text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import { Anchor } from '.';
+
 import { Button } from '../Button';
-import { PhoneIcon } from '@autoguru/icons';
 import { Icon } from '../Icon';
+import { Anchor } from '.';
 
 const baseProps = () => ({
 	label: text('Telephone number', '07 5612 5347'),

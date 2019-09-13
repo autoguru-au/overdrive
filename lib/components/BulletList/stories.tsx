@@ -1,8 +1,8 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 
-import { Bullet, BulletList } from '.';
 import { Text } from '../Typography';
+import { Bullet, BulletList } from '.';
 
 storiesOf('Foundation|List/BulletList', module)
 	.addDecorator(story => (

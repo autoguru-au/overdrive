@@ -1,5 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
+
 import { Badge, EBadgeColour } from '.';
 
 storiesOf('Components|Badge', module).add('default', () => {

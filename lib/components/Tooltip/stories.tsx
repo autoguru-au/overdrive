@@ -1,8 +1,9 @@
 import { select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import { Tooltip } from '.';
+
 import { EPositionerAlignment } from '../Positioner';
+import { Tooltip } from '.';
 
 const alignmentPicker = () =>
 	select('Alignment', EPositionerAlignment, EPositionerAlignment.RIGHT);

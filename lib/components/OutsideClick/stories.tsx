@@ -1,8 +1,8 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 
-import { OutsideClick } from '.';
 import { Button } from '../Button';
+import { OutsideClick } from '.';
 
 storiesOf('Utility|OutsideClick', module)
 	.addParameters({ chromatic: { disable: true } })

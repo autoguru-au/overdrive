@@ -1,9 +1,10 @@
+import { CalendarIcon } from '@autoguru/icons';
 import { select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import { EMetaVariant, Meta } from '.';
-import { CalendarIcon } from '@autoguru/icons';
+
 import { Icon } from '../Icon';
+import { EMetaVariant, Meta } from '.';
 
 storiesOf('Components|Meta', module).add('default', () => (
 	<Meta

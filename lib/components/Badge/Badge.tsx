@@ -1,6 +1,7 @@
 import { warning } from '@autoguru/utilities';
 import clsx from 'clsx';
 import React, { memo } from 'react';
+
 import { Text } from '../Typography';
 import styles from './style.scss';
 

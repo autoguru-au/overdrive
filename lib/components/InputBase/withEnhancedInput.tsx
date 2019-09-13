@@ -13,6 +13,7 @@ import React, {
 	RefObject,
 	useState,
 } from 'react';
+
 import { Icon } from '../Icon';
 import { HintText } from './HintText';
 import { NotchedBase } from './NotchedBase';

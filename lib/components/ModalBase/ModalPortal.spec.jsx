@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import styles from './stories.scss';
 import { fireEvent, render } from '@testing-library/react';
+import React, { useState } from 'react';
+
+import styles from './stories.scss';
 import { withModal } from './withModal';
 
 const NakedModal = withModal(({ children }) => (

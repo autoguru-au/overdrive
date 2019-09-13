@@ -1,6 +1,7 @@
-import React from 'react';
-import { DateInput } from '.';
 import { fireEvent, render } from '@testing-library/react';
+import React from 'react';
+
+import { DateInput } from '.';
 
 const todayStr = new Date(2019, 0, 22).toISOString().split('T')[0];
 

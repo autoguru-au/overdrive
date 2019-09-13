@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import { Radio, RadioGroup } from '.';
 import { fireEvent, render } from '@testing-library/react';
+import React, { useState } from 'react';
+
 import { Heading } from '../Typography/Heading';
+import { Radio, RadioGroup } from '.';
 
 describe('<RadioButton />', () => {
 	describe('when not nested in a RadioGroup', () => {

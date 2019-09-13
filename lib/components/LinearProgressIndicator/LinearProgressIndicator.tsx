@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
+
 import styles from './style.scss';
 
 export interface Props {

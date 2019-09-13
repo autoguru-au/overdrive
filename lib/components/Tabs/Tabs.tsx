@@ -5,8 +5,8 @@ import React, {
 	ReactElement,
 	useState,
 } from 'react';
-import { useId } from '../../utils/useId';
 
+import { useId } from '../../utils/useId';
 import styles from './style.scss';
 import { Tab } from './Tab';
 import { TabNavItem } from './TabNavItem';

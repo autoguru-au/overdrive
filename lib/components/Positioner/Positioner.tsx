@@ -9,6 +9,7 @@ import React, {
 	useState,
 } from 'react';
 import { createPortal } from 'react-dom';
+
 import { useOutsideClick } from '../OutsideClick';
 import { EAlignment } from './alignment';
 import { AlignmentRect, getOptimalPosition, Rect } from './getOptimalPosition';

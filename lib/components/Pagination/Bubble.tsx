@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import React, { ButtonHTMLAttributes, FunctionComponent, memo } from 'react';
+
 import styles from './style.scss';
 
 export interface Props extends ButtonHTMLAttributes<Element> {

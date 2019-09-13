@@ -1,6 +1,7 @@
+import { ChevronDownIcon } from '@autoguru/icons';
 import clsx from 'clsx';
 import React, { memo, ReactNode } from 'react';
-import { ChevronDownIcon } from '@autoguru/icons';
+
 import { Icon } from '../Icon';
 import { withEnhancedInput } from '../InputBase';
 import styles from './style.scss';

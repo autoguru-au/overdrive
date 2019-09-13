@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
 import { act, fireEvent, render } from '@testing-library/react';
+import React, { useState } from 'react';
+
 import { Switch } from './Switch';
 
 describe('<Switch />', () => {

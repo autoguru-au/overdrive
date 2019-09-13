@@ -1,3 +1,4 @@
+import { MinusIcon, PlusIcon } from '@autoguru/icons';
 import { clamp } from '@autoguru/utilities';
 import clsx from 'clsx';
 import React, {
@@ -8,7 +9,7 @@ import React, {
 	useReducer,
 	useRef,
 } from 'react';
-import { MinusIcon, PlusIcon } from '@autoguru/icons';
+
 import { Icon } from '../Icon';
 import { Text } from '../Typography';
 import styles from './style.scss';

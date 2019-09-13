@@ -11,9 +11,9 @@ import React, {
 	ReactElement,
 	useMemo,
 } from 'react';
+
 import { Icon } from '../Icon';
 import { ProgressSpinner } from '../ProgressSpinner';
-
 import styles from './Button.scss';
 
 export enum EButtonSize {
