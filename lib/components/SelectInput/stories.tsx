@@ -18,7 +18,7 @@ const isTouched = (touched: boolean) => boolean('isTouched', touched);
 const isValid = (valid: boolean) => boolean('isValid', valid);
 
 const selectOptions = optionsCSV =>
-	(text('Options', optionsCSV) as string)
+	text('Options', optionsCSV)
 		.split(',')
 		.map(item => item.trim())
 		.map(item => (

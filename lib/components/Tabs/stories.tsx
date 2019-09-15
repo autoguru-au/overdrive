@@ -13,7 +13,7 @@ storiesOf('Components|Tabs', module)
 	))
 	.add('default', () => (
 		<Tabs onChange={tabChanged}>
-			{(text('Tabs', 'Tab 1, Tab 2') as string)
+			{text('Tabs', 'Tab 1, Tab 2')
 				.split(',')
 				.map(item => item.trim())
 				.map(item => (
