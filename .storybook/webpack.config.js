@@ -19,18 +19,6 @@ module.exports = ({ config: defaultConfig }) => {
 	});
 	defaultConfig.resolve.extensions.push('.ts', '.tsx');
 
-	// Adds the storysource things
-	defaultConfig.module.rules.push({
-		test: /\.tsx?$/,
-		use: [
-			{
-				loader: require.resolve('@storybook/addon-storysource/loader'),
-				options: { parser: 'typescript' },
-			},
-		],
-		enforce: 'pre',
-	});
-
 	// Adds scss support
 	defaultConfig.module.rules.push({
 		test: /\.scss$/,

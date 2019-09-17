@@ -8,7 +8,7 @@ import { BulletText, EBulletTextVariant } from '.';
 
 const baseProps = () => ({
 	variant: select('Variant', EBulletTextVariant, EBulletTextVariant.Primary),
-	bullet: text('Bullet'),
+	bullet: text('Bullet', '?'),
 	ordered: boolean('ordered', false),
 });
 
