@@ -1,5 +1,4 @@
 import { StarHalfIcon, StarIcon } from '@autoguru/icons';
-import { warning } from '@autoguru/utilities';
 import clsx from 'clsx';
 import React, { FunctionComponent, memo, ReactElement } from 'react';
 
@@ -39,11 +38,28 @@ const starCssMap: Map<EStarType, string> = new Map([
 
 export interface Props {
 	className?: string;
-	ratingValue?: number; // @deprecated
 	rating: number;
 	size?: ESize;
 	label?: string;
 }
+
+const StarRatingComponent: FunctionComponent<Props> = ({
+	className = '',
+	rating,
+	label = rating,
+	size = ESize.Medium,
+}) => (
+	<span className={clsx([styles.root, className])}>
+		<span className={styles.starList}>
+			{new Array(totalStars)
+				.fill(0)
+				.map((_, index) => getStar(index, rating, size))}
+		</span>
+		<Text size={labelSizeMap.get(size)} className={styles.label}>
+			{label}
+		</Text>
+	</span>
+);
 
 const getStarIconType = (index: number, rating: number): EStarType => {
 	if (index + 1 <= Math.floor(rating)) {
@@ -84,37 +100,6 @@ const getStar = (
 			size={starSizeMap.get(size)}
 			className={clsx([styles.star, starCssMap.get(starType)])}
 		/>
-	);
-};
-
-const StarRatingComponent: FunctionComponent<Props> = ({
-	className = '',
-	rating,
-	ratingValue = void 0,
-	label = rating || ratingValue,
-	size = ESize.Medium,
-}) => {
-	// @deprecated block
-	warning(
-		ratingValue === void 0,
-		'The `ratingValue` prop is deprecated, please use the `rating` prop',
-	);
-
-	if (ratingValue !== void 0) {
-		rating = ratingValue;
-	}
-
-	return (
-		<span className={clsx([styles.root, className])}>
-			<span className={styles.starList}>
-				{new Array(totalStars)
-					.fill(0)
-					.map((_, index) => getStar(index, rating, size))}
-			</span>
-			<Text size={labelSizeMap.get(size)} className={styles.label}>
-				{label}
-			</Text>
-		</span>
 	);
 };
 
