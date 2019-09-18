@@ -16,9 +16,7 @@
   "files": [
     "dist"
   ],
-  "sideEffects": [
-    "**/*.scss"
-  ],
+  "sideEffects": false,
   "main": "./dist/overdrive.cjs.js",
   "module": "./dist/overdrive.esm.js",
   "types": "./dist/components/index.d.ts",
