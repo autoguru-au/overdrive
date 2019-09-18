@@ -6,7 +6,7 @@ import { OutsideClick } from '.';
 
 storiesOf('Utility|OutsideClick', module)
 	.addParameters({ chromatic: { disable: true } })
-	.add('default', () => (
+	.add('standard', () => (
 		<OutsideClick
 			onOutsideClick={() => {
 				// eslint-disable-next-line no-alert

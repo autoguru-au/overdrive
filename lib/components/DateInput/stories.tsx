@@ -26,7 +26,7 @@ storiesOf('Components|Inputs/Date', module)
 	.addParameters({
 		chromatic: { delay: 300 },
 	})
-	.add('default', () => (
+	.add('standard', () => (
 		<DateInput name="date" {...sharedKnobs('What is your DOB?')} />
 	))
 	.add('with a value', () => (

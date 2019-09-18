@@ -3,7 +3,8 @@ import React from 'react';
 
 import { {{pascalCase name}} } from '.';
 
-storiesOf('Components|{{pascalCase name}}', module)
-	.add('default', () => (
-		<{{pascalCase name}}/>
-	));
+export default { title: 'Components|{{pascalCase name}}' };
+
+export const standard = () => (
+	<{{pascalCase name}}/>
+);

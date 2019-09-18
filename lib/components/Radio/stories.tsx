@@ -19,7 +19,7 @@ storiesOf('Components|Inputs/Radio', module)
 	.addDecorator(story => (
 		<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
 	))
-	.add('default', () => {
+	.add('standard', () => {
 		const Example = () => {
 			const [value, setValue] = useState('holden');
 

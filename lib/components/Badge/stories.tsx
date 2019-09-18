@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Badge, EBadgeColour } from '.';
 
-storiesOf('Components|Badge', module).add('default', () => {
+storiesOf('Components|Badge', module).add('standard', () => {
 	return (
 		<div
 			style={{

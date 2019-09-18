@@ -19,7 +19,7 @@ const mockSuggestions = [
 	'Porsche',
 ];
 
-storiesOf('Components|Inputs/AutoSuggest', module).add('default', () => {
+storiesOf('Components|Inputs/AutoSuggest', module).add('standard', () => {
 	const Impl = () => {
 		type SuggestionValue = AutoSuggestValue<Value>;
 		const [value, setValue] = useState<SuggestionValue>({

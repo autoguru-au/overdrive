@@ -6,7 +6,7 @@ import React from 'react';
 import { Switch } from './Switch';
 
 storiesOf('Components|Switch', module)
-	.add('default', () => (
+	.add('standard', () => (
 		<Switch
 			disabled={boolean('disabled', false)}
 			toggled={boolean('toggled', false)}

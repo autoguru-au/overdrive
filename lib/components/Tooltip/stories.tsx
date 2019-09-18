@@ -10,7 +10,7 @@ const alignmentPicker = () =>
 
 storiesOf('Components|Tooltip', module)
 	.addParameters({ chromatic: { disable: true } })
-	.add('default', () => (
+	.add('standard', () => (
 		<Tooltip alignment={alignmentPicker()} label="Im the tooltip body">
 			<div>Im the tooltip trigger</div>
 		</Tooltip>

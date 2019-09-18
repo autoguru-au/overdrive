@@ -31,7 +31,7 @@ storiesOf('Components|Inputs/Select', module)
 	.addParameters({
 		chromatic: { delay: 300 },
 	})
-	.add('default', () => (
+	.add('standard', () => (
 		<SelectInput name="abc" {...sharedKnobs('Select one')}>
 			<option disabled />
 			{selectOptions('Option 1, Option 2, Option 3')}

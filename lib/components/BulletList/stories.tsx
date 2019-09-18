@@ -8,7 +8,7 @@ storiesOf('Foundation|List/BulletList', module)
 	.addDecorator(story => (
 		<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
 	))
-	.add('default', () => (
+	.add('standard', () => (
 		<BulletList>
 			<Bullet>
 				<Text>

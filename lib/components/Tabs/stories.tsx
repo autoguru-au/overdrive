@@ -11,7 +11,7 @@ storiesOf('Components|Tabs', module)
 	.addDecorator(story => (
 		<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
 	))
-	.add('default', () => (
+	.add('standard', () => (
 		<Tabs onChange={tabChanged}>
 			{text('Tabs', 'Tab 1, Tab 2')
 				.split(',')

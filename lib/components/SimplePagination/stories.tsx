@@ -10,7 +10,7 @@ const baseProps = (hasNext: boolean = true, hasPrevious: boolean = true) => ({
 	hasPrevious: boolean('hasPrevious', hasPrevious),
 });
 storiesOf('Components|Pagination/Simple', module)
-	.add('default', () => (
+	.add('standard', () => (
 		<SimplePagination {...baseProps()} onChange={action('onChange')} />
 	))
 	.add('middle page', () => (

@@ -21,7 +21,7 @@ storiesOf('Components|Inputs/CheckBox', module)
 	.addDecorator(story => (
 		<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
 	))
-	.add('default', () => {
+	.add('standard', () => {
 		const Example = () => {
 			const list: Array<{ label: string; value: string }> = [
 				{

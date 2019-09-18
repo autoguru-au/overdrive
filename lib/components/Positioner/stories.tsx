@@ -13,7 +13,7 @@ const alignmentPicker = () =>
 
 storiesOf('Utility|Positioner', module)
 	.addParameters({ chromatic: { disable: true } })
-	.add('default', () => {
+	.add('standard', () => {
 		const Impl = () => {
 			const triggerRef = useRef();
 			const [isOpen, setIsOpen] = useState(true);

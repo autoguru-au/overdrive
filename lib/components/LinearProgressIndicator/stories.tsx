@@ -8,4 +8,4 @@ storiesOf('Components|Progress/Linear', module)
 	.addDecorator(story => (
 		<div style={{ width: '100vw', height: '100%' }}>{story()}</div>
 	))
-	.add('default', () => <LinearProgressIndicator />);
+	.add('standard', () => <LinearProgressIndicator />);

@@ -12,7 +12,7 @@ const badgeProps = () => ({
 	disabled: boolean('disabled', false),
 });
 
-storiesOf('Components|Inputs/Stepper', module).add('default', () => {
+storiesOf('Components|Inputs/Stepper', module).add('standard', () => {
 	const StepperWrapper = () => {
 		const [value, setValue] = useState(1);
 

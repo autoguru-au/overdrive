@@ -6,4 +6,4 @@ import { Icon } from './Icon';
 
 storiesOf('Foundation|Icon', module)
 	.addParameters({ chromatic: { disable: true } })
-	.add('default', () => <Icon size={25} icon={CalendarIcon} />);
+	.add('standard', () => <Icon size={25} icon={CalendarIcon} />);

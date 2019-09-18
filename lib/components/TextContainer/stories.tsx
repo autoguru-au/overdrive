@@ -7,7 +7,7 @@ import { TextContainer } from './TextContainer';
 
 storiesOf('Components|TextContainer', module)
 	.addDecorator(story => <div style={{ maxWidth: 512 }}>{story()}</div>)
-	.add('default', () => (
+	.add('standard', () => (
 		<TextContainer>
 			<Heading>Choose a credit pack</Heading>
 			<Text muted is="p">

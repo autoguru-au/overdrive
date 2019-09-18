@@ -26,7 +26,7 @@ const baseProps = (
 	),
 });
 storiesOf('Components|Pagination/Numbered', module)
-	.add('default', () => {
+	.add('standard', () => {
 		const Example = () => {
 			const [activePage, setActivePage] = useState(1);
 

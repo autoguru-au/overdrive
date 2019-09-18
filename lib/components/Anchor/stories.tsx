@@ -12,7 +12,7 @@ const baseProps = () => ({
 });
 
 storiesOf('Foundation|Typography/Anchor', module)
-	.add('default', () => <Anchor>07 5612 5347</Anchor>)
+	.add('standard', () => <Anchor>07 5612 5347</Anchor>)
 	.add('withIcon', () => (
 		<Anchor
 			{...baseProps()}

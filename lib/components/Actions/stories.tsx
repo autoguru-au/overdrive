@@ -9,7 +9,7 @@ storiesOf('Components|Actions', module)
 	.addDecorator(story => (
 		<div style={{ maxWidth: 300, width: '100%' }}>{story()}</div>
 	))
-	.add('default', () => (
+	.add('standard', () => (
 		<Actions equalWidth={boolean('Equal Width', true)}>
 			<Button>Login</Button>
 			<Button variant={EButtonVariant.Primary}>Sign up</Button>

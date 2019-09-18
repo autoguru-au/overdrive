@@ -10,7 +10,7 @@ const baseProps = () => ({
 });
 
 storiesOf('Components|StarRating', module)
-	.add('default', () => (
+	.add('standard', () => (
 		<StarRating {...baseProps()} label={text('Label', void 0)} />
 	))
 	.add('small size', () => (

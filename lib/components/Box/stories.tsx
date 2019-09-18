@@ -13,7 +13,7 @@ const baseProps = (): ComponentProps<typeof Box> => ({
 
 storiesOf('Foundation|Box', module)
 	.addParameters({ chromatic: { disable: true } })
-	.add('default', () => (
+	.add('standard', () => (
 		<Box
 			{...baseProps()}
 			children={<div style={{ width: 150, height: 150 }} />}

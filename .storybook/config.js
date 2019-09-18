@@ -1,14 +1,12 @@
 import { addDecorator, addParameters, configure } from '@storybook/react';
 import { create } from '@storybook/theming';
 import { withKnobs } from '@storybook/addon-knobs';
-import { withNotes } from '@storybook/addon-notes';
 import { withA11y } from '@storybook/addon-a11y';
 
 import 'storybook-chromatic';
 
 import './global.scss';
 
-addDecorator(withNotes);
 addDecorator(withKnobs);
 addDecorator(withA11y);
 
@@ -28,11 +26,4 @@ addParameters({
 	],
 });
 
-configure(
-	() => load(require.context('../lib', true, /.?stories.tsx?$/)),
-	module,
-);
-
-function load(...reqs) {
-	reqs.forEach(req => req.keys().forEach(fileName => req(fileName)));
-}
+configure(require.context('../lib', true, /.?stories.tsx$/), module);

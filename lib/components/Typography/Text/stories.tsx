@@ -14,21 +14,15 @@ const baseProps = () => ({
 const sizeScale: TSizeScale[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 storiesOf('Foundation|Typography/Text', module)
-	.add('default', () => <Text {...baseProps()}>Hello World</Text>, {
-		notes: 'Used for single text lines.',
-	})
-	.add(
-		'as paragraph',
-		() => (
-			<Text is="p" {...baseProps()}>
-				To avoid you coming to a halt in the middle of the road, because
-				of a banging, crash of pistons and valves fighting with each
-				other, let's investigate what the timing belt is, what it does,
-				and why it costs so much to replace or repair.
-			</Text>
-		),
-		{ notes: 'Used for multi-line "body" like content.' },
-	)
+	.add('standard', () => <Text {...baseProps()}>Hello World</Text>)
+	.add('as paragraph', () => (
+		<Text is="p" {...baseProps()}>
+			To avoid you coming to a halt in the middle of the road, because of
+			a banging, crash of pistons and valves fighting with each other,
+			let's investigate what the timing belt is, what it does, and why it
+			costs so much to replace or repair.
+		</Text>
+	))
 	.add("all the span's", () => (
 		<div>
 			<div>

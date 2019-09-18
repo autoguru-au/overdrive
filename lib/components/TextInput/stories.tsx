@@ -26,7 +26,7 @@ storiesOf('Components|Inputs/Text', module)
 	.addParameters({
 		chromatic: { delay: 300 },
 	})
-	.add('default', () => (
+	.add('standard', () => (
 		<TextInput name="abc" {...sharedKnobs('What is your first name?')} />
 	))
 	.add('with a value', () => (

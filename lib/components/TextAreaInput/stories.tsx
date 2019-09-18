@@ -17,7 +17,7 @@ storiesOf('Components|Inputs/Textarea', module)
 	.addParameters({
 		chromatic: { delay: 300 },
 	})
-	.add('default', () => (
+	.add('standard', () => (
 		<TextAreaInput name="abc" {...sharedKnobs('Tell us about your car.')} />
 	))
 	.add('with a value', () => (

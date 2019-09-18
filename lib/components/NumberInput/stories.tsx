@@ -23,7 +23,7 @@ storiesOf('Components|Inputs/Number', module)
 	.addParameters({
 		chromatic: { delay: 300 },
 	})
-	.add('default', () => (
+	.add('standard', () => (
 		<NumberInput name="abc" {...sharedKnobs('How many?')} />
 	))
 	.add('with a value', () => (
