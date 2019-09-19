@@ -70,7 +70,7 @@
   "browserslist": "extends browserslist-config-autoguru",
   "dependencies": {
     "@autoguru/icons": "^1.1.7",
-    "@autoguru/utilities": "^1.0.70",
+    "@autoguru/utilities": "^1.0.71",
     "clsx": "^1.0.4"
   },
   "devDependencies": {
