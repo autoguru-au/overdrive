@@ -291,7 +291,7 @@ export const AutoSuggest = <PayloadType extends unknown>({
 					id={suggestionListId}
 					aria-label={textInputProps.placeholder}
 					role="listbox">
-					<div style={{ height: 'var(--global--space--2)' }} />
+					<div style={{ height: 'var(--global--space--1)' }} />
 					{suggestions.map((suggestion, idx) => {
 						const highlight = state.highlightIndex === idx;
 
@@ -339,7 +339,7 @@ export const AutoSuggest = <PayloadType extends unknown>({
 							</li>
 						);
 					})}
-					<div style={{ height: 'var(--global--space--2)' }} />
+					<div style={{ height: 'var(--global--space--1)' }} />
 				</ul>
 			</SuggestionListFlyout>
 		</div>
