@@ -47,7 +47,11 @@ export const OrderedList: FunctionComponent<Props> & {
 
 	return (
 		<ol
-			className={clsx(styles.root, className)}
+			className={clsx(
+				styles.root,
+				{ [styles.firstOccurrence]: cycle === -1 },
+				className,
+			)}
 			style={{ listStyleType: cycles[myCycle] }}
 			start={start}>
 			<OrderedListContext.Provider value={myCycle}>

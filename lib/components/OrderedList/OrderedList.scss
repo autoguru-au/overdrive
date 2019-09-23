@@ -1,10 +1,13 @@
 @import '../../theme/tokens/facade';
 
 .root {
-	list-style-position: inside;
-	list-style-type: lower-roman;
+	list-style: outside lower-roman;
 	color: getColour(gray, 900);
-	padding-left: calc(var(--global--space--6));
+	padding-left: var(--global--space--6);
+
+	&.firstOccurrence {
+		padding-left: calc(var(--global--space--6) * 2);
+	}
 }
 
 .listItem {
