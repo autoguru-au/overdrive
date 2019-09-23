@@ -26,6 +26,7 @@ export * from './LoadingBox';
 export * from './Meta';
 export * from './ModalBase';
 export * from './NumberInput';
+export * from './OrderedList';
 export * from './OutsideClick';
 export * from './Pagination';
 export * from './Positioner';
