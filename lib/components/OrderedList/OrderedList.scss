@@ -1,0 +1,19 @@
+@import '../../theme/tokens/facade';
+
+.root {
+	list-style-position: inside;
+	color: getColour(gray, 900);
+	padding-left: calc(var(--global--space--6));
+}
+
+.listItem {
+	&:not(:last-of-type) {
+		margin-bottom: var(--global--space--2);
+	}
+
+	:last-of-type {
+		+ ol {
+			margin-top: var(--global--space--2);
+		}
+	}
+}
