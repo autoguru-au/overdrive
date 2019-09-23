@@ -8,16 +8,23 @@ import React, {
 
 import styles from './OrderedList.scss';
 
-const cycles: Array<OlHTMLAttributes<HTMLOListElement>['type']> = [
-	'1',
-	'i',
-	'a',
-	'A',
-	'I',
+type ListStyleType =
+	| 'decimal'
+	| 'lower-roman'
+	| 'lower-alpha'
+	| 'upper-alpha'
+	| 'lower-roman';
+
+const cycles: ListStyleType[] = [
+	'decimal',
+	'lower-roman',
+	'lower-alpha',
+	'upper-alpha',
+	'lower-roman',
 ];
 
-interface Props
-	extends Pick<OlHTMLAttributes<HTMLOListElement>, 'type' | 'start'> {
+interface Props extends Pick<OlHTMLAttributes<HTMLOListElement>, 'start'> {
+	type?: ListStyleType;
 	className?: string;
 }
 
@@ -41,7 +48,7 @@ export const OrderedList: FunctionComponent<Props> & {
 	return (
 		<ol
 			className={clsx(styles.root, className)}
-			type={cycles[myCycle]}
+			style={{ listStyleType: cycles[myCycle] }}
 			start={start}>
 			<OrderedListContext.Provider value={myCycle}>
 				{children}
