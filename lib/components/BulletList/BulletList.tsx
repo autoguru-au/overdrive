@@ -15,16 +15,16 @@ export const BulletList: FunctionComponent<Props> = ({
 }) => {
 	const stack = useContext(BulletListContext);
 	return (
-		<BulletListContext.Provider
-			value={stack + 1 >= bulletMap.length ? 0 : stack + 1}>
-			<ul
-				className={clsx(
-					styles.root,
-					{ [styles.firstOccurrence]: stack === -1 },
-					className,
-				)}>
+		<ul
+			className={clsx(
+				styles.root,
+				{ [styles.firstOccurrence]: stack === -1 },
+				className,
+			)}>
+			<BulletListContext.Provider
+				value={stack + 1 >= bulletMap.length ? 0 : stack + 1}>
 				{children}
-			</ul>
-		</BulletListContext.Provider>
+			</BulletListContext.Provider>
+		</ul>
 	);
 };
