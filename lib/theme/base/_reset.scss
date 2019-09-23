@@ -114,11 +114,6 @@ body {
 	line-height: 1;
 }
 
-ol,
-ul {
-	list-style: none;
-}
-
 blockquote,
 q {
 	quotes: none;
@@ -155,4 +150,12 @@ button {
 a {
 	text-decoration: none;
 	color: inherit;
+}
+
+body {
+	/*
+		Mobile Safari automatically scales text if it thinks the text will render too small.
+		@see https://stackoverflow.com/questions/3226001/some-font-sizes-rendered-larger-on-safari-iphone
+		*/
+	-webkit-text-size-adjust: none;
 }
