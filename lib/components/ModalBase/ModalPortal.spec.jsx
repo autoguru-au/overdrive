@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/react';
+import { act, fireEvent, render } from '@testing-library/react';
 import React, { useState } from 'react';
 
 import styles from './stories.scss';
@@ -61,7 +61,9 @@ describe('withModal()', () => {
 				<NakedModal isOpen={false}>Hello World!</NakedModal>,
 			);
 
-			expect(getByRole('dialog')).not.toHaveTextContent('Hello World!');
+			expect(getByRole('dialog', { hidden: true })).not.toHaveTextContent(
+				'Hello World!',
+			);
 		});
 
 		it('should add children when open', () => {
@@ -121,7 +123,9 @@ describe('withModal()', () => {
 
 			fireEvent.mouseUp(document.body);
 
-			expect(getByRole('dialog')).not.toHaveTextContent('Hello World!');
+			expect(getByRole('dialog', { hidden: true })).not.toHaveTextContent(
+				'Hello World!',
+			);
 		});
 
 		it('should have isOpen set to true when the content itself is clicked', () => {
@@ -141,13 +145,23 @@ describe('withModal()', () => {
 
 			const { getByRole } = render(<MockedModalComponent />);
 
-			expect(getByRole('dialog')).toHaveTextContent('Hello World!');
-			expect(getByRole('dialog')).toHaveAttribute('aria-hidden', 'false');
+			expect(getByRole('dialog', { hidden: true })).toHaveTextContent(
+				'Hello World!',
+			);
+			expect(getByRole('dialog', { hidden: true })).toHaveAttribute(
+				'aria-hidden',
+				'false',
+			);
 
 			fireEvent.mouseUp(document.body);
 
-			expect(getByRole('dialog')).not.toHaveTextContent('Hello World!');
-			expect(getByRole('dialog')).toHaveAttribute('aria-hidden', 'true');
+			expect(getByRole('dialog', { hidden: true })).not.toHaveTextContent(
+				'Hello World!',
+			);
+			expect(getByRole('dialog', { hidden: true })).toHaveAttribute(
+				'aria-hidden',
+				'true',
+			);
 		});
 	});
 });
