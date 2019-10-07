@@ -106,7 +106,7 @@
     "babel-loader": "^8.0.5",
     "browserslist-config-autoguru": "^1.0.65",
     "build-header": "^1.0.2",
-    "concurrently": "^4.1.0",
+    "concurrently": "^5.0.0",
     "copyfiles": "^2.1.1",
     "core-js": "^3.2.1",
     "cosmiconfig": "^5.2.1",
