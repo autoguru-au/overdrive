@@ -52,10 +52,12 @@
     jsx-ast-utils "^2.2.1"
     ulid "^2.3.0"
 
-"@autoguru/icons@^1.1.8":
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/@autoguru/icons/-/icons-1.1.8.tgz#b9f419b1124ec8d5c6364936ec2b3c4047cf0913"
-  integrity sha512-yNe1zM9aphv4B4RVZuf+Zg2x4UTXaaq7PdJ26dh5XkvEdu9XrC0776B6YCsOBtG5BA5h2/gq/HAaqSEY3+XhmA==
+"@autoguru/icons@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@autoguru/icons/-/icons-1.2.0.tgz#605721ff10e08a4c2c22e3a85c06b0d21d7572a1"
+  integrity sha512-PUOVNhUZr4BFpxZ8e5j4EpBODJ1/Bboin3eAdNFGKAnEjUuhpsEMDW/u0Nc9WVnD4K65lXgSxLSHE/bayaFKoQ==
+  dependencies:
+    tslib "^1.10.0"
 
 "@autoguru/jest-preset@^1.0.76":
   version "1.0.76"
