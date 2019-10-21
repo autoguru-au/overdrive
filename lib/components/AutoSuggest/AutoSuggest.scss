@@ -10,8 +10,9 @@
 .suggestionList {
 	display: grid;
 	overflow-y: auto;
-	max-height: 256px;
+	overscroll-behavior: contain;
 	-webkit-overflow-scrolling: touch;
+	max-height: 256px;
 	grid-auto-flow: row;
 	grid-gap: 0;
 }
