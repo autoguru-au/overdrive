@@ -1,48 +1,69 @@
-const { green, red, dim } = require('kleur');
-const { ensureDir } = require('fs-extra');
 const { join, resolve, relative } = require('path');
+const { green, red, dim, bgGreen } = require('kleur');
+const mri = require('mri');
+const { ensureDir } = require('fs-extra');
 const rimraf = require('rimraf');
-const { rollup } = require('rollup');
+const { rollup, watch: rollupWatch } = require('rollup');
 const copyfiles = require('copyfiles');
 const createRollupConfig = require('../config/rollup');
+
+const { watch: watchMode = false } = mri(process.argv, {
+	boolean: ['watch'],
+	alias: {
+		w: 'watch',
+	},
+});
 
 const root = join(__dirname, '..');
 
 const distFolder = resolve(root, 'dist');
 const entry = resolve(root, './lib/components/index.ts');
 
-async function run() {
-	console.log(require('build-header')());
+const defaultOutputConfig = {
+	preferConst: true,
+	dir: resolve(distFolder),
+	name: 'overdrive',
+	sourcemap: false,
+	strict: true,
+	freeze: !watchMode,
+	compact: false,
+	preserveModules: false,
+};
 
+const rollupConfig = createRollupConfig({
+	entry,
+	outputPath: distFolder,
+});
+
+async function preEverything() {
 	rimraf.sync(distFolder);
 	await ensureDir(distFolder);
+}
+
+async function buildBundle(bundle, config) {
+	const output = await bundle.write(config);
+
+	console.log(`${bgGreen(' BUILT ')} ${config.entryFileNames}`);
+
+	return output;
+}
+
+async function build() {
+	console.log(require('build-header')());
+
+	await preEverything();
 
 	console.log(dim(`⚙️  Bundling...`));
-	const bundle = await rollup(
-		createRollupConfig({
-			entry,
-			outputPath: distFolder,
-		}),
-	);
+	const bundle = await rollup(rollupConfig);
 
-	const defaultOutputConfig = {
-		preferConst: true,
-		dir: resolve(distFolder),
-		name: 'overdrive',
-		sourcemap: true,
-		strict: true,
-		compact: false,
-		preserveModules: false,
-	};
-
-	const outputs = await Promise.all([
-		bundle.write({
+	await Promise.all([
+		buildBundle(bundle, {
 			...defaultOutputConfig,
 			entryFileNames: 'overdrive.cjs.js',
 			esModule: false,
 			format: 'cjs',
 		}),
-		bundle.write({
+		buildBundle(bundle, {
 			...defaultOutputConfig,
 			entryFileNames: 'overdrive.esm.js',
 			esModule: true,
@@ -51,33 +72,44 @@ async function run() {
 	]);
 
 	await copy(['./lib/theme/**/*', distFolder], { up: 1 });
-
-	return outputs;
 }
 
-run()
-	.then(bundles => {
-		bundles
-			.reduce((result, { output }) => [...result, ...output], [])
-			.filter(bundle => bundle.isEntry)
-			.forEach(bundle => {
-				const entryPath = relative(root, bundle.facadeModuleId);
+async function watch() {
+	console.log(dim(`⚙️  Watching...`));
 
-				console.log('');
+	await preEverything();
 
-				logLabel('Entry:', entryPath);
-				logLabel(
-					'Output:',
-					relative(root, resolve(distFolder, bundle.fileName)),
+	rollupWatch({
+		...rollupConfig,
+		output: [
+			{
+				...defaultOutputConfig,
+				entryFileNames: 'overdrive.esm.js',
+				esModule: true,
+				format: 'esm',
+			},
+		],
+	}).on('event', event => {
+		switch (event.code) {
+			case 'BUNDLE_END':
+				return console.log(
+					`${dim(`✅ Changes ready!`)} ${green(
+						`${Math.round(event.duration / 60)}ms`,
+					)}`,
 				);
-				logLabel('Externals:', bundle.imports.sort().join(', '));
+			case 'ERROR':
+			case 'FATAL':
+				throw new Error(event);
+			default:
+			// ignore
+		}
+	});
+}
 
-				console.log('');
-			});
-
-		console.log(green(`✅ Success`));
-	})
-	.catch(error => {
+if (watchMode) {
+	watch().catch(error => console.error(error));
+} else {
+	build().catch(error => {
 		console.log('');
 		console.log(`${red(error.message)}\n`);
 		console.log(
@@ -91,6 +123,7 @@ run()
 		console.log('');
 		console.log(dim(error.stack));
 	});
+}
 
 async function copy(paths, config) {
 	return new Promise((resolve, reject) => {
@@ -102,8 +135,4 @@ async function copy(paths, config) {
 			}
 		});
 	});
-}
-
-function logLabel(label, value) {
-	console.log(`${dim(label)} ${value}`);
 }

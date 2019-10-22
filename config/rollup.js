@@ -2,32 +2,44 @@ const { dependencies, peerDependencies } = require('../package.json');
 const nodeResolve = require('rollup-plugin-node-resolve');
 const typescript = require('rollup-plugin-typescript2');
 const postcss = require('rollup-plugin-postcss');
+const prettier = require('rollup-plugin-prettier');
+const { terser } = require('rollup-plugin-terser');
 const { join } = require('path');
 
-const externalPackages = [
-	...Object.keys(dependencies || {}),
-	...Object.keys(peerDependencies || {}),
+const externals = [
+	...new Set([
+		...Object.keys(dependencies || {}),
+		...Object.keys(peerDependencies || {}),
+	]),
 ];
 
 function createRollupConfig({ entry: input, outputPath }) {
 	return {
 		input,
 
-		external: externalPackages,
+		external: externals,
 
 		treeshake: {
 			propertyReadSideEffects: true,
+			pureExternalModules: true,
 		},
 
 		plugins: [
 			nodeResolve({
-				mainFields: ['module', 'jsnext', 'main'],
+				mainFields: ['module', 'browser', 'main'],
 				preferBuiltins: true,
 			}),
 
 			typescript({
 				clean: true,
 			}),
+
+			// Remove 'use strict' from individual source files.
+			{
+				transform(source) {
+					return source.replace(/['"]use strict["']/g, '');
+				},
+			},
 
 			postcss({
 				extract: join(outputPath, 'overdrive.css'),
@@ -51,6 +63,35 @@ function createRollupConfig({ entry: input, outputPath }) {
 					}),
 				],
 			}),
+
+			terser({
+				parse: { ecma: 8 },
+				mangle: false,
+				module: true,
+				ie8: false,
+				safari10: false,
+				toplevel: true,
+				compress: {
+					ecma: 5,
+					warnings: false,
+					comparisons: true,
+					arguments: true,
+					inline: 2,
+					keep_fnames: true,
+					keep_infinity: true,
+					hoist_funs: true,
+					toplevel: true,
+					dead_code: true,
+					passes: 5,
+				},
+				output: {
+					ecma: 5,
+					comments: true,
+					ascii_only: true,
+				},
+			}),
+
+			prettier({ parser: 'babel' }),
 		],
 	};
 }
