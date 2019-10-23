@@ -24,9 +24,6 @@ ${componentEntryFiles}
 
 fs.writeFileSync(
 	path.join(components, '/index.ts'),
-	require('prettier').format(script, {
-		parser: 'babel',
-		...require('cosmiconfig')('prettier').searchSync(__dirname).config,
-	}),
+	require('./beautify').beautify(script),
 	'utf8',
 );

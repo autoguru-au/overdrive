@@ -1,11 +1,11 @@
 import { Context, createContext } from 'react';
 
-import BulletStyles from './Bullet.scss';
+import bulletStyles from './Bullet.scss';
 
 export const bulletMap: string[] = [
-	BulletStyles.circle,
-	BulletStyles.square,
-	BulletStyles.disc,
+	bulletStyles.circle,
+	bulletStyles.square,
+	bulletStyles.disc,
 ];
 
 export const BulletListContext: Context<number> = createContext(-1);

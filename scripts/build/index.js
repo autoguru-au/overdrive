@@ -52,7 +52,7 @@ async function build(bundleType, program, options) {
 	);
 
 	const fileMap = new Map();
-	const collectCss = [];
+	const collectCss = new Map();
 
 	for (const sourceFile of program.getSourceFiles()) {
 		program.emit(
@@ -99,7 +99,7 @@ async function build(bundleType, program, options) {
 			for (const [id, { node, importedAs }] of transformThese) {
 				const [, css, tokens] = await transformStyles(id);
 
-				collectCss.push(css);
+				collectCss.set(id, css);
 
 				s.overwrite(
 					node.start,
@@ -108,35 +108,18 @@ async function build(bundleType, program, options) {
 				);
 			}
 
-			const { code: optimizedCode } = minify(s.toString(), {
-				parse: { ecma: 8 },
-				mangle: false,
-				module: true,
-				ie8: false,
-				safari10: true,
-				toplevel: true,
-				compress: {
-					ecma: 5,
-					warnings: false,
-					comparisons: false,
-					inline: 2,
-					hoist_funs: true,
-					toplevel: true,
-					passes: 5,
-				},
-				output: {
-					ecma: 5,
-					comments: true,
-					ascii_only: true,
-				},
+			fileMap.set(outputName, {
+				sourceFileName,
+				code: require('../beautify').beautify(s.toString()),
 			});
-
-			fileMap.set(outputName, { sourceFileName, code: optimizedCode });
 		}
 
 		fileMap.set(join(distFolder, 'overdrive.css'), {
 			sourceFileName: null,
-			code: await optimizeCss(collectCss.join('\n')),
+			code: require('../beautify').beautify(
+				await optimizeCss([...collectCss.values()].join('\n')),
+				'css',
+			),
 		});
 	}
 
