@@ -16,6 +16,7 @@ coverage/
 *.xml
 .awcache/
 .eslintcache
+*.tsbuildinfo
 
 # OS
 .DS_Store
