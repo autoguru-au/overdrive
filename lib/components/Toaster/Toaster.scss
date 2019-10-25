@@ -1,0 +1,16 @@
+.root {
+	position: fixed;
+	top: var(--global--space--3);
+	left: 0;
+	right: 0;
+	display: grid;
+	grid-template-rows: 1fr;
+	justify-items: center;
+	align-items: center;
+}
+
+.alert {
+	&:not(:last-of-type) {
+		margin-bottom: var(--global--space--2);
+	}
+}

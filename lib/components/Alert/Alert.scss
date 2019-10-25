@@ -16,6 +16,7 @@ $buttonOffset: 8px;
 	box-shadow: var(--global--elevationBoxShadow--4);
 	background-color: white;
 	max-width: 650px;
+	min-width: 280px;
 
 	&.inline {
 		box-shadow: var(--global--elevationBoxShadow--2);
