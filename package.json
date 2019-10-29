@@ -90,6 +90,7 @@
     "@storybook/addon-backgrounds": "^5.2.4",
     "@storybook/addon-knobs": "^5.2.4",
     "@storybook/addon-viewport": "^5.2.4",
+    "postcss": "^7.0.21",
     "@storybook/components": "^5.2.4",
     "@storybook/core": "^5.2.4",
     "@storybook/react": "^5.2.4",
