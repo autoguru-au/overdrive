@@ -41,6 +41,7 @@ async function getTypeScriptEnvironment(entry, tsConfig, root) {
 			if (!fs.existsSync(fileName)) {
 				return undefined;
 			}
+
 			if (files.has(fileName)) {
 				return ts.ScriptSnapshot.fromString(files.get(fileName).text);
 			}
