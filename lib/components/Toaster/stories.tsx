@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Actions } from '../Actions';
 import { Button } from '../Button';
 import { Text } from '../Typography';
 import { toast } from '.';
@@ -7,17 +8,24 @@ import { toast } from '.';
 export default { title: 'Utility|Toaster' };
 
 export const standard = () => {
-	const doThing = () => {
-		delay(() => toast.success('test'));
-		delay(() => toast.danger(<Text>test</Text>));
-		delay(() => toast(<Text>test</Text>));
-	};
-
-	return <Button onClick={() => doThing()}>Toast 🍻</Button>;
+	return (
+		<Actions equalWidth={false}>
+			<Button onClick={() => toast.success('Successful message!')}>
+				Success
+			</Button>
+			<Button onClick={() => toast.danger('Danger  message!')}>
+				Danger
+			</Button>
+			<Button
+				onClick={() =>
+					toast.info(
+						<Text>
+							Im some text, which is <Text strong>bolded!</Text>
+						</Text>,
+					)
+				}>
+				Custom
+			</Button>
+		</Actions>
+	);
 };
-
-let count = 0;
-
-function delay(cb) {
-	setTimeout(() => cb(), 1e3 * ++count);
-}

@@ -7,9 +7,12 @@
 	grid-template-rows: 1fr;
 	justify-items: center;
 	align-items: center;
+	pointer-events: none;
 }
 
 .alert {
+	pointer-events: initial;
+
 	&:not(:last-of-type) {
 		margin-bottom: var(--global--space--2);
 	}
