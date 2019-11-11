@@ -29,18 +29,14 @@ $font_size: var(--global--fontSize--4); // 16
 				(8px + 8px),
 			(-1 * (16px * $active_scaling_factor)/ 2)
 		);
-	}
-
-	@else if $prefixed == true {
+	} @else if $prefixed == true {
 		@return translate(
 			/*var(--global--space--5)
 			calc(((#{$size} - #{$font_size}) / 2))*/
 				48px,
 			(($input_height - 16px)/2)
 		);
-	}
-
-	@else {
+	} @else {
 		@return translate(
 			/*var(--global--space--5)
 			calc(((#{$size} - #{$font_size}) / 2))*/
@@ -175,17 +171,17 @@ $font_size: var(--global--fontSize--4); // 16
 
 		.root:not(.disabled).valid .notched-base--shift.notched-base--active &,
 		.root:not(.disabled).valid:hover
-		.notched-base--shift.notched-base--active
-		& {
+			.notched-base--shift.notched-base--active
+			& {
 			color: getColour(green, 800);
 		}
 
 		.root:not(.disabled).invalid
-		.notched-base--shift.notched-base--active
-		&,
+			.notched-base--shift.notched-base--active
+			&,
 		.root:not(.disabled).invalid:hover
-		.notched-base--shift.notched-base--active
-		& {
+			.notched-base--shift.notched-base--active
+			& {
 			color: getColour(red, 800);
 		}
 

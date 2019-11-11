@@ -137,9 +137,9 @@ const ToastManager: FunctionComponent<{
 	);
 };
 
-const Toast: FunctionComponent<
-	MessageConfig & { dispatch: Dispatch<ReducerAction<ToastManagerReducer>> }
-> = ({ dispatch, duration, message, id, intent }) => {
+const Toast: FunctionComponent<MessageConfig & {
+	dispatch: Dispatch<ReducerAction<ToastManagerReducer>>;
+}> = ({ dispatch, duration, message, id, intent }) => {
 	useLayoutEffect(() => {
 		const timeout = setTimeout(() => {
 			dispatch({ type: ActionTypes.REMOVE, id });

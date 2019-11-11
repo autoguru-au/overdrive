@@ -93,30 +93,52 @@ export const withEnhancedInput = <
 	forwardRef<
 		PrimitiveElementType,
 		EnhanceInputProps<IncomingProps, PrimitiveElementType>
-	>(({ // EnhanceInputPrimitiveProps
-		placeholder, name, id = name, hintText, disabled = false, className, isTouched, isValid, value: incomingValue = '', onBlur, onFocus, onKeyDown, onChange, prefixIcon, suffixIcon, wrapperRef, ...rest }, ref) => {
-		// ValidationProps // Icons // IncomingProps
-		invariant(
-			!(prefixIcon && !withPrefixIcon),
-			'prefix icon is not supported for this component',
-		);
-		invariant(
-			!(suffixIcon && !withSuffixIcon),
-			'suffix icon is not supported for this component',
-		);
+	>(
+		(
+			{
+				// EnhanceInputPrimitiveProps
+				placeholder,
+				name,
+				id = name,
+				hintText,
+				disabled = false,
+				className,
+				isTouched,
+				isValid,
+				value: incomingValue = '',
+				onBlur,
+				onFocus,
+				onKeyDown,
+				onChange,
+				prefixIcon,
+				suffixIcon,
+				wrapperRef,
+				...rest
+			},
+			ref,
+		) => {
+			// ValidationProps // Icons // IncomingProps
+			invariant(
+				!(prefixIcon && !withPrefixIcon),
+				'prefix icon is not supported for this component',
+			);
+			invariant(
+				!(suffixIcon && !withSuffixIcon),
+				'suffix icon is not supported for this component',
+			);
 
-		const [value, setValue] = useState<string>(incomingValue);
-		const [previousValue, setPreviousValue] = useState<string>(
-			incomingValue,
-		);
-		const [isActive, setActive] = useState<boolean>(false);
+			const [value, setValue] = useState<string>(incomingValue);
+			const [previousValue, setPreviousValue] = useState<string>(
+				incomingValue,
+			);
+			const [isActive, setActive] = useState<boolean>(false);
 
-		if (incomingValue !== previousValue) {
-			setValue(incomingValue);
-			setPreviousValue(incomingValue);
-		}
+			if (incomingValue !== previousValue) {
+				setValue(incomingValue);
+				setPreviousValue(incomingValue);
+			}
 
-		/*
+			/*
 	Need to disable the type assertion here, as ts has no idea that P and an omitted P without its properties is just P
 	@see https://stackoverflow.com/a/53951825/2609301
 
@@ -126,95 +148,98 @@ export const withEnhancedInput = <
 
 	A & B != A _or_ P & Omit<P, 'firstName'> != P
 	 */
-		const wrappingComponent: WrappedComponentProps<
-			IncomingProps,
-			PrimitiveElementType
-			// eslint-disable-next-line @typescript-eslint/no-object-literal-type-assertion
-		> = {
-			validation: {
-				isTouched,
-				isValid,
-			},
-			eventHandlers: {
-				onChange: wrapEvent(event => {
-					if (disabled) {
-						event.preventDefault();
+			const wrappingComponent: WrappedComponentProps<
+				IncomingProps,
+				PrimitiveElementType
+				// eslint-disable-next-line @typescript-eslint/no-object-literal-type-assertion
+			> = {
+				validation: {
+					isTouched,
+					isValid,
+				},
+				eventHandlers: {
+					onChange: wrapEvent(event => {
+						if (disabled) {
+							event.preventDefault();
 
-						return false;
-					}
+							return false;
+						}
 
-					setValue(((event.target as unknown) as any).value);
+						setValue(((event.target as unknown) as any).value);
 
-					return true;
-				}, onChange),
-				onFocus: wrapEvent(() => setActive(true), onFocus),
-				onBlur: wrapEvent(() => setActive(false), onBlur),
-				onKeyDown,
-			},
-			field: {
-				name,
-				id,
-				disabled,
-				value,
-				className: styles.input,
-				ref,
-			},
-			prefixed: Boolean(prefixIcon),
-			suffixed: Boolean(suffixIcon),
-			...(rest as IncomingProps),
-		} as WrappedComponentProps<IncomingProps, PrimitiveElementType>;
+						return true;
+					}, onChange),
+					onFocus: wrapEvent(() => setActive(true), onFocus),
+					onBlur: wrapEvent(() => setActive(false), onBlur),
+					onKeyDown,
+				},
+				field: {
+					name,
+					id,
+					disabled,
+					value,
+					className: styles.input,
+					ref,
+				},
+				prefixed: Boolean(prefixIcon),
+				suffixed: Boolean(suffixIcon),
+				...(rest as IncomingProps),
+			} as WrappedComponentProps<IncomingProps, PrimitiveElementType>;
 
-		const shouldValidate: boolean = isValid !== void 0 && isTouched;
+			const shouldValidate: boolean = isValid !== void 0 && isTouched;
 
-		return (
-			<div
-				className={clsx([styles.root, className], {
-					[styles.invalid]: shouldValidate && !isValid,
-					[styles.valid]: shouldValidate && isValid,
-					[styles.withStatus]: shouldValidate,
-					[styles.disabled]: disabled,
-				})}>
-				<NotchedBase
-					id={id}
-					isEmpty={
-						WrappingComponent.primitiveType === 'date' &&
-						value === ''
-							? false
-							: value === ''
-					}
-					isActive={isActive}
-					hasPrefix={
-						Boolean(prefixIcon) || withForcedPrefixIconPadding
-					}
-					hasSuffix={
-						Boolean(suffixIcon) || withForcedSuffixIconPadding
-					}
-					placeholder={placeholder}>
-					<div ref={wrapperRef} className={styles.inputWrapper}>
-						{Boolean(prefixIcon) && (
-							<label htmlFor={id}>
-								<Icon
-									icon={prefixIcon}
-									size={24}
-									className={styles.prefixIcon}
-								/>
-							</label>
+			return (
+				<div
+					className={clsx([styles.root, className], {
+						[styles.invalid]: shouldValidate && !isValid,
+						[styles.valid]: shouldValidate && isValid,
+						[styles.withStatus]: shouldValidate,
+						[styles.disabled]: disabled,
+					})}>
+					<NotchedBase
+						id={id}
+						isEmpty={
+							WrappingComponent.primitiveType === 'date' &&
+							value === ''
+								? false
+								: value === ''
+						}
+						isActive={isActive}
+						hasPrefix={
+							Boolean(prefixIcon) || withForcedPrefixIconPadding
+						}
+						hasSuffix={
+							Boolean(suffixIcon) || withForcedSuffixIconPadding
+						}
+						placeholder={placeholder}>
+						<div ref={wrapperRef} className={styles.inputWrapper}>
+							{Boolean(prefixIcon) && (
+								<label htmlFor={id}>
+									<Icon
+										icon={prefixIcon}
+										size={24}
+										className={styles.prefixIcon}
+									/>
+								</label>
+							)}
+							<WrappingComponent {...wrappingComponent} />
+							{Boolean(suffixIcon) && (
+								<label htmlFor={id}>
+									<Icon
+										icon={suffixIcon}
+										size={24}
+										className={styles.suffixIcon}
+									/>
+								</label>
+							)}
+						</div>
+					</NotchedBase>
+					{!disabled &&
+						Boolean(hintText) &&
+						Boolean(hintText.length) && (
+							<HintText isActive={isActive}>{hintText}</HintText>
 						)}
-						<WrappingComponent {...wrappingComponent} />
-						{Boolean(suffixIcon) && (
-							<label htmlFor={id}>
-								<Icon
-									icon={suffixIcon}
-									size={24}
-									className={styles.suffixIcon}
-								/>
-							</label>
-						)}
-					</div>
-				</NotchedBase>
-				{!disabled && Boolean(hintText) && Boolean(hintText.length) && (
-					<HintText isActive={isActive}>{hintText}</HintText>
-				)}
-			</div>
-		);
-	});
+				</div>
+			);
+		},
+	);
