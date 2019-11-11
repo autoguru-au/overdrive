@@ -1,5 +1,4 @@
 import { IconType } from '@autoguru/icons';
-import { warning } from '@autoguru/utilities';
 import clsx from 'clsx';
 import React, {
 	cloneElement,
@@ -23,9 +22,6 @@ export interface Props {
 	is?: ComponentType | ReactNode;
 	disabled?: boolean;
 
-	component?: ComponentType; // @deprecated
-	label?: string; // @deprecated
-
 	icon?(): IconType;
 }
 
@@ -36,25 +32,13 @@ const AnchorComponent: FunctionComponent<Props & any> = ({
 	className = '',
 
 	is: Component = 'a',
-	component = void 0,
 	disabled = false,
 
-	label = '',
-	children = label,
+	children,
 
 	icon = void 0,
 	...rest
 }) => {
-	// @deprecated block
-	warning(
-		component === void 0,
-		`The \`component\` prop deprecated, please use the \`is\` prop instead.\n\nBefore:\n<Anchor component="{<Link/">}>\n\tHello\n</Anchor>\n\nAfter:\n<Anchor is="{<Link/">}>\n\tHello\n</Anchor>`,
-	);
-
-	if (component !== void 0) {
-		Component = component;
-	}
-
 	const props = {
 		className: clsx([className, styles.root]),
 		disabled,

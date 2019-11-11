@@ -21,18 +21,16 @@ describe('<Anchor />', () => {
 	it('should match snapshot with label, icon and to props', () => {
 		expect(
 			render(
-				<Anchor
-					icon={TestIcon}
-					label="Hello World!"
-					href="https://www.autoguru.com.au"
-				/>,
+				<Anchor icon={TestIcon} href="https://www.autoguru.com.au">
+					Hello World!
+				</Anchor>,
 			).container.firstChild,
 		).toMatchSnapshot();
 	});
 
 	it('should add an a dom element', () => {
 		const { container } = render(
-			<Anchor className="anchor-class" label="Hello World!" />,
+			<Anchor className="anchor-class">Hello World!</Anchor>,
 		);
 		expect(container.querySelector('a')).toBeTruthy();
 	});
@@ -45,29 +43,25 @@ describe('<Anchor />', () => {
 
 	it('should add a span element inside the a tag with the the label text value', () => {
 		const { container } = render(
-			<Anchor label="Hello World!" href="https://www.autoguru.com.au" />,
+			<Anchor href="https://www.autoguru.com.au">Hello World!</Anchor>,
 		);
 		expect(container).toHaveTextContent('Hello World!');
 	});
 
 	it('should the icon passed in props', () => {
 		const { container } = render(
-			<Anchor
-				icon={TestIcon}
-				label="Hello World!"
-				href="https://www.autoguru.com.au"
-			/>,
+			<Anchor icon={TestIcon} href="https://www.autoguru.com.au">
+				Hello World!
+			</Anchor>,
 		);
 		expect(container.querySelector('.icon')).toBeTruthy();
 	});
 
 	it('should use the listen to the href attribute', () => {
 		const { container } = render(
-			<Anchor
-				icon={TestIcon}
-				label="Hello World!"
-				href="https://www.autoguru.com.au"
-			/>,
+			<Anchor icon={TestIcon} href="https://www.autoguru.com.au">
+				Hello World!
+			</Anchor>,
 		);
 		expect(container.firstChild).toHaveAttribute(
 			'href',
@@ -78,18 +72,18 @@ describe('<Anchor />', () => {
 	describe('when custom component', () => {
 		it('should add Button dom element if button component is passed down to it', () => {
 			const { container } = render(
-				<Anchor
-					className="anchor-class"
-					label="Hello World!"
-					is={<Button />}
-				/>,
+				<Anchor className="anchor-class" is={<Button />}>
+					Hello World!
+				</Anchor>,
 			);
 			expect(container.querySelector('button')).toBeTruthy();
 		});
 
 		it('should match snapshot with label, icon custom component', () => {
 			const { container } = render(
-				<Anchor icon={TestIcon} is={<Button />} label="Hello World!" />,
+				<Anchor icon={TestIcon} is={<Button />}>
+					Hello World!
+				</Anchor>,
 			);
 			expect(container.firstChild).toMatchSnapshot();
 		});
