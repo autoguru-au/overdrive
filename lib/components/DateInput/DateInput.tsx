@@ -27,7 +27,10 @@ function DateInputComponent({
 DateInputComponent.primitiveType = 'date';
 
 export const DateInput = memo(
-	withEnhancedInput<{}, HTMLInputElement>(DateInputComponent),
+	withEnhancedInput<
+		Partial<Pick<HTMLInputElement, 'min' | 'max'>>,
+		HTMLInputElement
+	>(DateInputComponent),
 );
 
 // @deprecated
