@@ -1,7 +1,7 @@
 const prettier = require('prettier');
-const cosmiconfig = require('cosmiconfig');
+const { cosmiconfigSync } = require('cosmiconfig');
 
-const { config } = cosmiconfig('prettier').searchSync();
+const { config } = cosmiconfigSync('prettier');
 
 module.exports = {
 	beautify(code, parser = 'babel') {

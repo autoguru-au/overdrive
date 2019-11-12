@@ -3,15 +3,13 @@ extends:
   - 'plugin:@autoguru/react'
   - 'plugin:@autoguru/jest'
 
+env:
+  jest: true
+  node: true
+  browser: true
+
 overrides:
-  - files: 'lib/components/**/*'
-    env: { node: false, browser: true }
-  - files: '**/stories.tsx'
-    env: { node: true, browser: true }
-  - files: ['**/*.spec.{js,jsx}', 'jest.*.js']
-    env: { jest: true, node: true, browser: true }
   - files: '{*,{scripts,config}/**/*}.js'
-    env: { node: true, browser: false }
     rules:
       '@typescript-eslint/require-await': 'off'
       '@typescript-eslint/no-var-requires': 'off'

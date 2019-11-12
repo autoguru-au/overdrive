@@ -4,17 +4,20 @@ const ts = require('typescript');
 const files = new Map();
 
 async function getTypeScriptEnvironment(entry, tsConfig, root) {
-	const { config, error } = ts.readConfigFile(tsConfig, filename =>
-		fs.readFileSync(filename, 'utf8'),
+	const { config, error: configReadError } = ts.readConfigFile(
+		tsConfig,
+		filename => fs.readFileSync(filename, 'utf8'),
 	);
 
-	const { options, errors } = ts.parseJsonConfigFileContent(
-		config,
-		ts.sys,
-		root,
-		{},
-		tsConfig,
-	);
+	if (configReadError) throw configReadError;
+
+	const {
+		options,
+		errors: configParseErrors,
+	} = ts.parseJsonConfigFileContent(config, ts.sys, root, {}, tsConfig);
+
+	if (configParseErrors && configParseErrors.length > 0)
+		throw configParseErrors;
 
 	const host = {
 		getScriptFileNames: () => [entry],

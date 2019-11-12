@@ -90,7 +90,6 @@
     "@storybook/addon-backgrounds": "^5.2.4",
     "@storybook/addon-knobs": "^5.2.4",
     "@storybook/addon-viewport": "^5.2.4",
-    "postcss": "^7.0.21",
     "@storybook/components": "^5.2.4",
     "@storybook/core": "^5.2.4",
     "@storybook/react": "^5.2.4",
@@ -124,9 +123,9 @@
     "kleur": "^3.0.3",
     "lint-staged": "^9.2.5",
     "magic-string": "^0.25.4",
-    "mri": "^1.1.4",
     "node-sass": "^4.11.0",
     "plop": "^2.5.2",
+    "postcss": "^7.0.21",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-loader": "^3.0.0",
     "postcss-modules": "^1.4.1",
@@ -147,10 +146,10 @@
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-recommended-scss": "^4.0.0",
     "stylelint-scss": "^3.11.0",
-    "terser": "^4.3.9",
     "tslib": "^1.10.0",
     "typescript": "next",
-    "webpack": "^4.41.2"
+    "webpack": "^4.41.2",
+    "write": "^2.0.0"
   },
   "peerDependencies": {
     "react": ">=16.8",

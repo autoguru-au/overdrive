@@ -1,9 +1,7 @@
 const { join, resolve, parse } = require('path');
 const { dim, bgGreen, bgYellow } = require('kleur');
-const mri = require('mri');
 const rimraf = require('rimraf');
 const copyfiles = require('copyfiles');
-const { minify } = require('terser');
 
 const { transformStyles, optimizeCss } = require('./transformScss');
 const { getTypeScriptEnvironment } = require('./typescriptEnvironment');
@@ -13,13 +11,6 @@ const write = require('write');
 const { simple } = require('acorn-walk');
 const MagicString = require('magic-string');
 const resolveFile = require('enhanced-resolve');
-
-const { watch: watchMode = false } = mri(process.argv, {
-	boolean: ['watch'],
-	alias: {
-		w: 'watch',
-	},
-});
 
 const root = join(__dirname, '../../');
 
@@ -40,13 +31,17 @@ const bundles = ['esm'];
 	rimraf.sync(distFolder);
 
 	for (const bundleType of bundles) {
+		// eslint-disable-next-line no-await-in-loop
 		await build(bundleType, program, options);
 	}
 
 	await copy(['./lib/theme/**/*', distFolder], { up: 1 });
-})();
+})().catch(error => {
+	console.error(error);
+	process.exit(1);
+});
 
-async function build(bundleType, program, options) {
+async function build(bundleType, program, _options) {
 	console.log(
 		`${bgYellow(' BUILDING ')} ${bundleName} ${dim(`(${bundleType})`)}`,
 	);
@@ -97,6 +92,7 @@ async function build(bundleType, program, options) {
 			});
 
 			for (const [id, { node, importedAs }] of transformThese) {
+				// eslint-disable-next-line no-await-in-loop
 				const [, css, tokens] = await transformStyles(id);
 
 				collectCss.set(id, css);
@@ -117,6 +113,7 @@ async function build(bundleType, program, options) {
 		fileMap.set(join(distFolder, 'overdrive.css'), {
 			sourceFileName: null,
 			code: require('../beautify').beautify(
+				// eslint-disable-next-line no-await-in-loop
 				await optimizeCss([...collectCss.values()].join('\n')),
 				'css',
 			),
