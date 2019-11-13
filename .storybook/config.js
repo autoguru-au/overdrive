@@ -3,8 +3,6 @@ import { create } from '@storybook/theming';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withA11y } from '@storybook/addon-a11y';
 
-import 'storybook-chromatic';
-
 import './global.scss';
 
 addDecorator(withKnobs);
