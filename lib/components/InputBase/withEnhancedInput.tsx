@@ -70,8 +70,6 @@ export type WrappedComponentProps<IncomingProps, PrimitiveElementType> = {
 interface EnhancedInputConfigs {
 	withPrefixIcon?: boolean;
 	withSuffixIcon?: boolean;
-	withForcedPrefixIconPadding?: boolean;
-	withForcedSuffixIconPadding?: boolean;
 }
 
 export const withEnhancedInput = <
@@ -83,12 +81,7 @@ export const withEnhancedInput = <
 	> & {
 		primitiveType: string;
 	},
-	{
-		withPrefixIcon = true,
-		withSuffixIcon = true,
-		withForcedPrefixIconPadding = false,
-		withForcedSuffixIconPadding = false,
-	}: EnhancedInputConfigs = {},
+	{ withPrefixIcon = true, withSuffixIcon = true }: EnhancedInputConfigs = {},
 ) =>
 	forwardRef<
 		PrimitiveElementType,
@@ -139,15 +132,15 @@ export const withEnhancedInput = <
 			}
 
 			/*
-	Need to disable the type assertion here, as ts has no idea that P and an omitted P without its properties is just P
-	@see https://stackoverflow.com/a/53951825/2609301
+			Need to disable the type assertion here, as ts has no idea that P and an omitted P without its properties is just P
+			@see https://stackoverflow.com/a/53951825/2609301
 
-	type P = {firstName: string}
-	type A = P
-	type B = Omit<P, 'firstName'>
+			type P = {firstName: string}
+			type A = P
+			type B = Omit<P, 'firstName'>
 
-	A & B != A _or_ P & Omit<P, 'firstName'> != P
-	 */
+			A & B != A _or_ P & Omit<P, 'firstName'> != P
+			 */
 			const wrappingComponent: WrappedComponentProps<
 				IncomingProps,
 				PrimitiveElementType
@@ -205,12 +198,8 @@ export const withEnhancedInput = <
 								: value === ''
 						}
 						isActive={isActive}
-						hasPrefix={
-							Boolean(prefixIcon) || withForcedPrefixIconPadding
-						}
-						hasSuffix={
-							Boolean(suffixIcon) || withForcedSuffixIconPadding
-						}
+						hasPrefix={Boolean(prefixIcon)}
+						hasSuffix={Boolean(suffixIcon)}
 						placeholder={placeholder}>
 						<div ref={wrapperRef} className={styles.inputWrapper}>
 							{Boolean(prefixIcon) && (

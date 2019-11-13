@@ -5,7 +5,7 @@ exports[`<SelectInput /> should have some hintText 1`] = `
   class="root"
 >
   <div
-    class="notchedBase suffixed"
+    class="notchedBase"
   >
     <div
       class="inputWrapper"
@@ -79,7 +79,7 @@ exports[`<SelectInput /> should match snapshot 1`] = `
   class="root"
 >
   <div
-    class="notchedBase suffixed"
+    class="notchedBase"
   >
     <div
       class="inputWrapper"
@@ -148,7 +148,7 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
   class="root"
 >
   <div
-    class="notchedBase notchedBaseShift notchedBaseActive suffixed"
+    class="notchedBase notchedBaseShift notchedBaseActive"
   >
     <div
       class="inputWrapper"
@@ -217,7 +217,7 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
   class="root"
 >
   <div
-    class="notchedBase suffixed"
+    class="notchedBase"
   >
     <div
       class="inputWrapper"
@@ -286,7 +286,7 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
   class="root invalid withStatus"
 >
   <div
-    class="notchedBase suffixed"
+    class="notchedBase"
   >
     <div
       class="inputWrapper"
@@ -355,7 +355,7 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
   class="root valid withStatus"
 >
   <div
-    class="notchedBase suffixed"
+    class="notchedBase"
   >
     <div
       class="inputWrapper"
@@ -424,7 +424,7 @@ exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
   class="root input-class"
 >
   <div
-    class="notchedBase prefixed suffixed"
+    class="notchedBase prefixed"
   >
     <div
       class="inputWrapper"
