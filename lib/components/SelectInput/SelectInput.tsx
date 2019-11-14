@@ -29,11 +29,10 @@ SelectInputComponent.primitiveType = 'select';
 export const SelectInput = memo(
 	withEnhancedInput<
 		{
-			children: ReactNode[] | ReactNode;
+			children: ReactNode[];
 		},
 		HTMLSelectElement
 	>(SelectInputComponent, {
 		withSuffixIcon: false,
-		withForcedSuffixIconPadding: true,
 	}),
 );
