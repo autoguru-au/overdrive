@@ -9,7 +9,9 @@
 				@content;
 			}
 		}
-	} @else {
+	}
+
+	@else {
 		@at-root &.root:not([disabled]):#{$state} {
 			@content;
 		}

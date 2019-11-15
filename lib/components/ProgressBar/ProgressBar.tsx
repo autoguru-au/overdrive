@@ -1,5 +1,5 @@
 import { clamp } from '@autoguru/utilities';
-import React, { FunctionComponent, memo, NamedExoticComponent } from 'react';
+import React, { FunctionComponent, memo } from 'react';
 
 import { Text } from '../Typography';
 import styles from './ProgressBar.scss';
@@ -10,7 +10,6 @@ interface Props {
 	suffixText?: string;
 }
 const ProgressBarComponent: FunctionComponent<Props> = ({
-	className = '',
 	percentage = 0,
 	prefixText,
 	suffixText,

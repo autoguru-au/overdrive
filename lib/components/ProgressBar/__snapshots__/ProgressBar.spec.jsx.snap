@@ -2,11 +2,15 @@
 
 exports[`<ProgressBar /> should match the snapshot 1`] = `
 <div
-  class="barBackdrop"
+  class="progressBar"
 >
   <div
-    class="barCurrentStatus"
-    style="background-color: rgb(0, 221, 149); width: 50%;"
-  />
+    class="barBackdrop"
+  >
+    <div
+      class="barCurrentStatus"
+      style="background-color: rgb(0, 221, 149); width: 50%;"
+    />
+  </div>
 </div>
 `;
