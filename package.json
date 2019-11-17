@@ -140,7 +140,7 @@
     "semantic-release": "^15.13.27",
     "storybook-chromatic": "^3.0.3",
     "style-loader": "^1.0.0",
-    "stylelint": "^11.0.0",
+    "stylelint": "^12.0.0",
     "stylelint-config-css-modules": "^2.0.0",
     "stylelint-config-prettier": "^6.0.0",
     "stylelint-config-recommended": "^3.0.0",
