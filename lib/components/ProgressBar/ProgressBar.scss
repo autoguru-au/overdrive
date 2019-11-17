@@ -5,6 +5,13 @@
 	align-items: center;
 }
 
+// To pull them out of flow
+.prefix-text,
+.suffix-text {
+	margin-bottom: -99px;
+	margin-top: -99px;
+}
+
 .prefix-text {
 	padding-right: var(--global--space--2);
 }
