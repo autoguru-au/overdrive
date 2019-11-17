@@ -66,23 +66,23 @@
 	overflow: hidden;
 	width: 100%;
 	height: var(--progress--bar--size);
-	transform: translateZ(0);
 	transition: opacity 0.25s cubic-bezier(0.4, 0, 0.6, 1) 0ms;
+	transform: translateZ(0);
 	background-color: getColour(gray, 200);
 }
 
 .linearProgressBar {
-	animation: indeterminate-animation-translate 2s infinite linear;
 	position: absolute;
+	left: -54.888891%;
 	width: 100%;
 	height: 100%;
-	left: -54.888891%;
+	animation: indeterminate-animation-translate 2s infinite linear;
 }
 
 .linearProgressBarInner {
-	animation: indeterminate-animation 2s infinite linear;
 	position: absolute;
 	width: 100%;
 	height: 100%;
+	animation: indeterminate-animation 2s infinite linear;
 	background-color: getColour(green, 300);
 }

@@ -87,12 +87,12 @@ time,
 mark,
 audio,
 video {
+	font: inherit;
+	font-size: 100%;
 	margin: 0;
 	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
+	border: 0;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -133,17 +133,17 @@ q:after {
 }
 
 table {
-	border-collapse: collapse;
 	border-spacing: 0;
+	border-collapse: collapse;
 }
 
 // Our additions
 
 button {
-	outline: none;
-	border: none;
-	-webkit-appearance: none;
 	font-family: inherit;
+	border: none;
+	outline: none;
+	-webkit-appearance: none;
 }
 
 *,

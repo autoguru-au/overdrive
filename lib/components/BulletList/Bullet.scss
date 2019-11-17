@@ -13,12 +13,12 @@
 
 	&::before {
 		display: block;
-		margin-top: calc((1.6em - #{$dotSize}) / 2);
+		align-self: flex-start;
 		width: $dotSize;
 		height: $dotSize;
-		background-color: getColour(gray, 900);
+		margin-top: calc((1.6em - #{$dotSize}) / 2);
 		content: '';
-		align-self: flex-start;
+		background-color: getColour(gray, 900);
 	}
 
 	&.circle::before {
@@ -26,8 +26,8 @@
 	}
 
 	&.disc::before {
-		border-radius: 50%;
 		border: 2px solid getColour(gray, 900);
+		border-radius: 50%;
 		background-color: transparent;
 	}
 

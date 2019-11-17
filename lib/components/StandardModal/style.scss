@@ -2,18 +2,18 @@
 
 .modal {
 	display: flex;
+	overflow: hidden;
 	flex-direction: column;
-	background-color: white;
 	width: 100vw;
 	height: auto;
 	max-height: calc(100vh - var(--global--space--8));
 	border-radius: var(--global--space--2) var(--global--space--2) 0 0;
-	overflow: hidden;
+	background-color: white;
 
 	@include isDesktop() {
+		max-width: calc(100% - var(--global--space--9) * 2);
 		height: auto;
 		max-height: calc(100vh - var(--global--space--9) * 2);
-		max-width: calc(100% - var(--global--space--9) * 2);
 		border-radius: var(--global--space--1);
 		box-shadow: 0 0 32px 0 rgba(black, 0.08),
 			0 24px 96px 0 rgba(black, 0.012);
@@ -29,9 +29,9 @@
 }
 
 .header {
+	position: relative;
 	display: flex;
 	align-items: center;
-	position: relative;
 	width: 100%;
 	min-height: 60px;
 	padding: var(--global--space--6) var(--global--space--5);
@@ -47,10 +47,10 @@
 		bottom: 0;
 		display: block;
 		padding: var(--global--space--5);
+		cursor: pointer;
+		border: none;
 		outline: none;
 		background: none;
-		border: none;
-		cursor: pointer;
 	}
 
 	&__title {
@@ -59,9 +59,9 @@
 }
 
 .content {
+	overflow-y: auto;
 	flex-grow: 1;
 	height: 100%;
-	overflow-y: auto;
 	overscroll-behavior: contain;
 	-webkit-overflow-scrolling: touch;
 }

@@ -5,38 +5,38 @@
 }
 
 .root {
-	padding: 0;
-	margin: 0;
-	list-style: none;
-	flex-direction: row;
-	box-sizing: border-box;
 	display: flex;
 	align-content: center;
 	align-items: center;
+	flex-direction: row;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 
 .bullet {
-	height: var(--bullet--size);
 	line-height: var(--bullet--size);
-	border-radius: 50%;
 	flex: var(--bullet--size) 0 0;
+	height: var(--bullet--size);
+	border-radius: 50%;
 
 	.variant-primary & {
-		background-color: getColour(green, 200);
 		color: getColour(green, 900);
+		background-color: getColour(green, 200);
 	}
 
 	.variant-secondary & {
-		background-color: getColour(gray, 200);
 		color: getColour(gray, 900);
+		background-color: getColour(gray, 200);
 	}
 }
 
 .custom-bullet,
 .bullet {
 	position: relative;
-	margin: 2px var(--global--space--4) 0 0;
 	flex-shrink: 0;
+	margin: 2px var(--global--space--4) 0 0;
 }
 
 .custom-bullet {
@@ -44,9 +44,9 @@
 }
 
 .bullet-text {
+	font-size: 12px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	font-size: 12px;
 }

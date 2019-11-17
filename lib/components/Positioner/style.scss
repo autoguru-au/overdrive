@@ -1,15 +1,15 @@
 .root {
 	position: fixed;
+	z-index: 10;
 	top: 0;
 	left: 0;
-	z-index: 10;
-	will-change: transform;
+	user-select: none;
 	transform: translateZ(0);
 	pointer-events: none;
-	user-select: none;
+	will-change: transform;
 
 	> * {
-		pointer-events: auto;
 		user-select: auto;
+		pointer-events: auto;
 	}
 }

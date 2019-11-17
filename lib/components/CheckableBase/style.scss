@@ -17,25 +17,35 @@
 .checkable,
 .native-input,
 .label {
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	position: relative;
 	outline: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .root {
+	display: flex;
+	align-content: center;
+	align-items: center;
+	flex-direction: row;
+	justify-content: flex-start;
+	box-sizing: border-box;
 	padding: var(--od--CheckableBase--checkable-padding)
 		var(--od--CheckableBase--checkable-padding)
 		var(--od--CheckableBase--checkable-padding) 0;
-	flex-direction: row;
-	box-sizing: border-box;
-	display: flex;
-	align-content: center;
-	justify-content: flex-start;
-	align-items: center;
 	cursor: pointer;
 }
 
 .checkable {
+	position: absolute;
+	z-index: 1;
+	top: calc(
+		50% -
+			(
+				var(--od--CheckableBase--checkable-size) +
+					(var(--od--CheckableBase--checkable-padding) * 2)
+			) * 0.5
+	);
+	left: var(--global--space--1);
 	width: calc(
 		var(--od--CheckableBase--checkable-size) +
 			(var(--od--CheckableBase--checkable-padding) * 2)
@@ -44,16 +54,6 @@
 		var(--od--CheckableBase--checkable-size) +
 			(var(--od--CheckableBase--checkable-padding) * 2)
 	);
-	left: var(--global--space--1);
-	top: calc(
-		50% -
-			(
-				var(--od--CheckableBase--checkable-size) +
-					(var(--od--CheckableBase--checkable-padding) * 2)
-			) * 0.5
-	);
-	position: absolute;
-	z-index: 1;
 }
 
 .disabled {
@@ -70,15 +70,15 @@
 
 .native-input {
 	position: absolute;
+	z-index: 2;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	opacity: 0;
 	cursor: inherit;
-	z-index: 2;
+	opacity: 0;
 
 	&[disabled] {
 		pointer-events: none;
@@ -119,24 +119,24 @@
 }
 
 .focus-rect {
-	box-shadow: none;
 	position: absolute;
+	z-index: 0;
 	top: 0;
+	right: 0;
 	bottom: 0;
 	left: 0;
-	right: 0;
-	pointer-events: none;
 	transition: background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s,
 		box-shadow 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
+	pointer-events: none;
 	border-radius: 4px;
-	z-index: 0;
+	box-shadow: none;
 }
 
 .label {
 	font-size: var(--od--CheckableBase--checkable--label--size);
 	line-height: var(--od--CheckableBase--checkable--label--height);
-	width: 100%;
 	position: ralative;
+	width: 100%;
 	padding-left: calc(
 		var(--od--CheckableBase--checkable-size) +
 			(var(--od--CheckableBase--checkable-padding) * 2) +

@@ -8,27 +8,27 @@ $strokeSize: 2px;
 }
 
 .radio-group {
-	display: flex;
 	position: relative;
-	flex-direction: column;
+	display: flex;
 	align-content: stretch;
-	justify-content: stretch;
 	align-items: stretch;
+	flex-direction: column;
+	justify-content: stretch;
 	padding: 0;
 }
 
 .outer-circle,
 .inner-circle {
 	position: absolute;
-	border-radius: 50%;
 	transition: border-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
+	border-radius: 50%;
 }
 
 .outer-circle {
-	width: var(--od--CheckableBase--checkable-size);
-	height: var(--od--CheckableBase--checkable-size);
 	top: var(--od--CheckableBase--checkable-padding);
 	left: var(--od--CheckableBase--checkable-padding);
+	width: var(--od--CheckableBase--checkable-size);
+	height: var(--od--CheckableBase--checkable-size);
 	border: $strokeSize solid var(--od--CheckableBase--default-colour);
 
 	.selected & {
@@ -37,15 +37,6 @@ $strokeSize: 2px;
 }
 
 .inner-circle {
-	border: 0 solid var(--od--CheckableBase--default-colour);
-
-	.selected & {
-		border-width: calc(#{$coreSize} / 2);
-		border-color: var(--od--CheckableBase--checked-colour);
-	}
-
-	width: $coreSize;
-	height: $coreSize;
 	top: calc(
 		var(--od--CheckableBase--checkable-padding) +
 			(var(--od--CheckableBase--checkable-size) - #{$coreSize}) * 0.5
@@ -54,4 +45,12 @@ $strokeSize: 2px;
 		var(--od--CheckableBase--checkable-padding) +
 			(var(--od--CheckableBase--checkable-size) - #{$coreSize}) * 0.5
 	);
+	width: $coreSize;
+	height: $coreSize;
+	border: 0 solid var(--od--CheckableBase--default-colour);
+
+	.selected & {
+		border-width: calc(#{$coreSize} / 2);
+		border-color: var(--od--CheckableBase--checked-colour);
+	}
 }

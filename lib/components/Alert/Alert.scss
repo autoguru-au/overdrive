@@ -5,18 +5,18 @@ $buttonOffset: 8px;
 .root {
 	position: relative;
 	display: grid;
-	grid-template-columns: auto 1fr;
-	grid-gap: var(--global--space--2);
+	overflow: hidden;
 	align-items: flex-start;
 	justify-content: center;
-	padding: calc(var(--global--space--4) - #{$buttonOffset});
-	border-radius: var(--global--space--1);
-	overflow: hidden;
-	border: 1px solid getColour(gray, 300);
-	box-shadow: var(--global--elevationBoxShadow--4);
-	background-color: white;
-	max-width: 650px;
 	min-width: 280px;
+	max-width: 650px;
+	padding: calc(var(--global--space--4) - #{$buttonOffset});
+	border: 1px solid getColour(gray, 300);
+	border-radius: var(--global--space--1);
+	background-color: white;
+	box-shadow: var(--global--elevationBoxShadow--4);
+	grid-template-columns: auto 1fr;
+	grid-gap: var(--global--space--2);
 
 	&.inline {
 		box-shadow: var(--global--elevationBoxShadow--2);

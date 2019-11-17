@@ -7,9 +7,9 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
-	pointer-events: none;
-	height: 100%;
 	display: none;
+	height: 100%;
+	pointer-events: none;
 
 	&:before {
 		position: fixed;
@@ -18,12 +18,12 @@
 		right: 0;
 		bottom: 0;
 		left: 0;
-		content: '';
 		display: block;
-		background-color: getColour(gray, 900);
-		opacity: 0;
+		content: '';
 		transition: opacity 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 		pointer-events: none;
+		opacity: 0;
+		background-color: getColour(gray, 900);
 
 		@at-root #{selector_replace(&, '.modalPortal', '.modalPortal--isOpen')} {
 			opacity: 0.8;
@@ -42,8 +42,8 @@
 
 .modalPanel {
 	display: flex;
-	justify-content: center;
 	align-items: flex-end;
+	justify-content: center;
 	height: 100%;
 	outline: none;
 
@@ -53,13 +53,13 @@
 }
 
 .modalContent {
-	flex-direction: row;
-	box-sizing: border-box;
 	display: flex;
 	align-content: flex-end;
-	justify-content: center;
-	height: auto;
 	align-items: flex-end;
+	flex-direction: row;
+	justify-content: center;
+	box-sizing: border-box;
+	height: auto;
 
 	@include isDesktop() {
 		align-items: center;

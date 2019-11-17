@@ -19,9 +19,9 @@
 
 	header {
 		display: flex;
+		align-content: center;
 		align-items: center;
 		flex-direction: row;
-		align-content: center;
 		justify-content: space-between;
 
 		> :last-child {
