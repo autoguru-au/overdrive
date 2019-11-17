@@ -1,20 +1,26 @@
 import { clamp } from '@autoguru/utilities';
+import clsx from 'clsx';
 import React, { FunctionComponent, memo } from 'react';
 
 import { Text } from '../Typography';
 import styles from './ProgressBar.scss';
 
+type Colours = 'red' | 'green' | 'blue' | 'yellow' | 'neutral';
+
 interface Props {
-	percentage?: number;
+	value?: number;
 	prefixText?: string;
 	suffixText?: string;
+	colour?: Colours;
 }
+
 const ProgressBarComponent: FunctionComponent<Props> = ({
-	percentage = 0,
+	value = 0,
 	prefixText,
 	suffixText,
+	colour = 'green',
 }) => (
-	<div className={styles.progressBar}>
+	<div className={styles.root}>
 		{Boolean(prefixText) && (
 			<Text size={3} className={styles.prefixText}>
 				{prefixText}
@@ -22,10 +28,15 @@ const ProgressBarComponent: FunctionComponent<Props> = ({
 		)}
 		<div className={styles.barBackdrop}>
 			<div
-				className={styles.barCurrentStatus}
+				className={clsx(styles.barCurrentStatus, {
+					[styles.red]: colour === 'red',
+					[styles.green]: colour === 'green',
+					[styles.blue]: colour === 'blue',
+					[styles.yellow]: colour === 'yellow',
+					[styles.neutral]: colour === 'neutral',
+				})}
 				style={{
-					backgroundColor: '#00dd95',
-					width: clamp(percentage, 0, 1) * 100 + '%',
+					width: `${clamp(value, 0, 1) * 100}%`,
 				}}
 			/>
 		</div>

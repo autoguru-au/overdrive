@@ -1,18 +1,16 @@
 @import '../../theme/tokens/facade';
 
-.progress-bar {
+.root {
 	display: flex;
 	align-items: center;
 }
 
 .prefix-text {
-	color: getColour(gray, 900);
-	padding-right: var(--global--space--4);
+	padding-right: var(--global--space--2);
 }
 
 .suffix-text {
-	color: getColour(gray, 900);
-	padding-left: var(--global--space--4);
+	padding-left: var(--global--space--2);
 }
 
 .bar-backdrop {
@@ -25,6 +23,26 @@
 .bar-current-status {
 	height: var(--global--space--2);
 	border-radius: var(--global--space--1);
-	//background-color: getColour(green, 500);
-	width: 50%;
+	transition: width 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
+	will-change: width;
+}
+
+.red {
+	background-color: getColour(red, 500);
+}
+
+.green {
+	background-color: getColour(green, 500);
+}
+
+.blue {
+	background-color: getColour(blue, 500);
+}
+
+.yellow {
+	background-color: getColour(yellow, 600);
+}
+
+.neutral {
+	background-color: getColour(grey, 500);
 }
