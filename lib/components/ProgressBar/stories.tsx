@@ -6,7 +6,7 @@ import { ProgressBar } from '.';
 
 export default { title: 'Components|Progress/ProgressBar' };
 
-export const standard = () => {
+export const Standard = () => {
 	const [width, setWidth] = useState(0);
 
 	useEffect(() => {
