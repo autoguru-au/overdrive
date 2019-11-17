@@ -8,19 +8,19 @@
 }
 
 .root {
-	flex-direction: row;
-	box-sizing: border-box;
 	display: flex;
 	align-content: center;
-	justify-content: flex-start;
 	align-items: center;
-	color: getColour(gray, 900);
+	flex-direction: row;
+	justify-content: flex-start;
+	box-sizing: border-box;
 	text-decoration: none;
+	color: getColour(gray, 900);
 }
 
 .icon {
-	margin-right: 10px;
 	flex-shrink: 0;
+	margin-right: 10px;
 
 	.variant-primary & {
 		color: getColour(green, 900);

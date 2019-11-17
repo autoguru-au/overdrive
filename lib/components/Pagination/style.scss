@@ -6,13 +6,13 @@
 
 .pagination,
 .loading {
-	flex-direction: row;
-	box-sizing: border-box;
 	display: flex;
 	align-content: center;
-	justify-content: flex-start;
 	align-items: center;
+	flex-direction: row;
 	flex-wrap: wrap;
+	justify-content: flex-start;
+	box-sizing: border-box;
 }
 
 .chevron {
@@ -33,24 +33,24 @@
 
 .chevron,
 .bubble {
+	font-size: var(--global--fontSize--3);
+	line-height: calc(var(--od--Pagination--bubble-size) - 3px);
 	display: flex;
+	overflow: hidden;
+	align-content: center;
+	align-items: center;
+	flex-direction: row;
+	justify-content: center;
 	width: var(--od--Pagination--bubble-size);
 	height: var(--od--Pagination--bubble-size);
 	margin-right: 10px;
-	flex-direction: row;
-	align-content: center;
-	justify-content: center;
-	align-items: center;
-	color: getColour(gray, 500);
+	cursor: pointer;
+	user-select: none;
+	transition: background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 	text-align: center;
-	font-size: var(--global--fontSize--3);
-	line-height: calc(var(--od--Pagination--bubble-size) - 3px);
+	color: getColour(gray, 500);
 	border-radius: 50%;
 	background-color: transparent;
-	transition: background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
-	cursor: pointer;
-	overflow: hidden;
-	user-select: none;
 
 	&:hover {
 		background-color: getColour(gray, 100);

@@ -1,13 +1,13 @@
 .root {
 	position: fixed;
 	top: var(--global--space--3);
-	left: 0;
 	right: 0;
+	left: 0;
 	display: grid;
-	grid-template-rows: 1fr;
-	justify-items: center;
 	align-items: center;
 	pointer-events: none;
+	grid-template-rows: 1fr;
+	justify-items: center;
 }
 
 .alert {

@@ -3,10 +3,10 @@
 .root {
 	$gap: var(--global--space--3);
 
-	width: 100%;
 	display: flex;
-	flex: 0 0 auto;
 	align-content: center;
+	flex: 0 0 auto;
+	width: 100%;
 
 	&:not(.equalWidth) {
 		& > :not(:last-child) {

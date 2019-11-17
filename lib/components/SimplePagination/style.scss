@@ -1,20 +1,20 @@
 @import '../../theme/tokens/facade';
 
 .pagination {
-	flex-direction: row;
-	box-sizing: border-box;
 	display: flex;
 	align-content: center;
-	justify-content: flex-start;
 	align-items: center;
+	flex-direction: row;
 	flex-wrap: wrap;
+	justify-content: flex-start;
+	box-sizing: border-box;
 }
 
 .chevron {
-	color: getColour(gray, 500);
-	fill: currentColor;
 	position: relative;
 	margin-right: var(--global--space--6);
+	color: getColour(gray, 500);
+	fill: currentColor;
 
 	&:last-child {
 		margin-right: 0;
@@ -23,8 +23,8 @@
 
 .icon {
 	position: absolute;
-	left: calc(50% - 12px);
 	top: calc(50% - 12px);
+	left: calc(50% - 12px);
 
 	.disabled & {
 		fill: currentColor;

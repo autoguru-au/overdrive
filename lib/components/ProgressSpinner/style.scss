@@ -34,24 +34,24 @@
 
 .root {
 	display: grid;
-	grid-template-columns: 1fr;
 	align-content: center;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
+	grid-template-columns: 1fr;
 }
 
 .circular {
-	animation: rotate 2s linear infinite;
-	transform-origin: center center;
-	margin: 0 auto;
 	overflow: hidden;
+	margin: 0 auto;
+	transform-origin: center center;
+	animation: rotate 2s linear infinite;
 }
 
 .path {
+	animation: dash 1.5s ease-in-out infinite;
 	stroke-dasharray: 1, 200;
 	stroke-dashoffset: 0;
 	stroke-linecap: round;
-	animation: dash 1.5s ease-in-out infinite;
 	stroke: currentColor;
 
 	.variant-light & {

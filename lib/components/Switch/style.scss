@@ -18,22 +18,22 @@ $borderSize: 1px;
 .root {
 	font-size: var(--global--fontSize--5);
 	line-height: var(--global--fontSize--5);
-	background-color: getColour(gray, 100);
-	border: #{$borderSize} solid getColour(gray, 300);
-	border-radius: $handleSize + $handleOffset;
+	position: relative;
 	width: (2 * $handleSize) + $handleOffset - 2 * ($borderSize);
 	height: $handleSize + ($handleOffset * 2);
-	position: relative;
 	cursor: pointer;
 	transition: background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
+	border: #{$borderSize} solid getColour(gray, 300);
+	border-radius: $handleSize + $handleOffset;
+	background-color: getColour(gray, 100);
 
 	@include isDisabledState() {
-		background-color: getColour(gray, 10);
 		border-color: getColour(gray, 200);
+		background-color: getColour(gray, 10);
 
 		&.toggled {
-			background-color: getColour(green, 200);
 			border-color: getColour(green, 200);
+			background-color: getColour(green, 200);
 		}
 
 		.handle {
@@ -42,25 +42,25 @@ $borderSize: 1px;
 	}
 
 	&.toggled {
-		background-color: getColour(green, 600);
 		border-color: getColour(green, 700);
+		background-color: getColour(green, 600);
 	}
 }
 
 .handle {
+	position: absolute;
+	top: $handleOffset - $borderSize;
+	left: $handleOffset - $borderSize;
 	width: $handleSize;
 	height: $handleSize;
-	background-color: white;
-	box-shadow: var(--global--elevationBoxShadow--2);
+	padding: 0;
+	transition: transform 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
+	color: white;
 	border: #{$borderSize} solid getColour(gray, 300);
 	border-radius: 50%;
 	outline: none;
-	color: white;
-	padding: 0;
-	position: absolute;
-	left: $handleOffset - $borderSize;
-	top: $handleOffset - $borderSize;
-	transition: transform 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
+	background-color: white;
+	box-shadow: var(--global--elevationBoxShadow--2);
 	will-change: transform;
 
 	.toggled & {

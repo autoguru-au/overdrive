@@ -20,9 +20,9 @@
 }
 
 .root {
+	width: 100%;
 	min-height: var(--global--min--loading--box--height);
 	background-color: getColour(gray, 200);
-	width: 100%;
 }
 
 .blinking {

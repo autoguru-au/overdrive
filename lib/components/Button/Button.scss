@@ -19,28 +19,28 @@
 }
 
 .root {
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1;
 	display: inline-block;
 	overflow: hidden;
 	width: auto;
-	outline: none;
-	font-family: inherit;
-	line-height: 1;
-	font-weight: 500;
-	text-align: center;
-	color: white;
-	background: none;
-	border: none;
-	text-decoration: none;
 	cursor: pointer;
 	user-select: none;
-	transform: translate(0, 0) scale(1);
-	will-change: transform;
-	border-radius: var(--global--space--1);
 	transition-delay: 0s;
-	transition-duration: 0.2s;
 	transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+	transition-duration: 0.2s;
 	transition-property: color, background-color, border-color, box-shadow,
 		transform;
+	transform: translate(0, 0) scale(1);
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	border: none;
+	border-radius: var(--global--space--1);
+	outline: none;
+	background: none;
+	will-change: transform;
 
 	&[disabled] {
 		cursor: not-allowed;
@@ -59,11 +59,11 @@
 
 .body {
 	display: grid;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
 	grid-auto-flow: column dense;
 	grid-gap: var(--global--space--1);
-	justify-content: center;
-	align-items: center;
-	height: 100%;
 }
 
 // Sizes
@@ -77,11 +77,11 @@
 .small {
 	$height: 36px;
 
-	grid-gap: var(--global--space--1);
 	font-size: var(--global--fontSize--3);
 	line-height: var(--global--fontSize--3--lh);
 	min-width: 48px;
 	height: $height;
+	grid-gap: var(--global--space--1);
 
 	&:not(.loading) {
 		padding: 0 var(--global--space--3);
@@ -101,11 +101,11 @@
 .medium {
 	$height: 48px;
 
-	grid-gap: var(--global--space--2);
 	font-size: var(--global--fontSize--4);
 	line-height: var(--global--fontSize--4--lh);
 	min-width: 96px;
 	height: $height;
+	grid-gap: var(--global--space--2);
 
 	&:not(.loading) {
 		padding: 0 var(--global--space--4);

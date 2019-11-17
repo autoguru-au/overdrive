@@ -1,9 +1,9 @@
 @import '../../theme/tokens/facade';
 
 .root {
+	padding-left: var(--global--space--6);
 	list-style: outside lower-roman;
 	color: getColour(gray, 900);
-	padding-left: var(--global--space--6);
 
 	&.firstOccurrence {
 		padding-left: calc(var(--global--space--6) * 2);

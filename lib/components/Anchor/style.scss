@@ -1,16 +1,16 @@
 @import '../../theme/tokens/facade';
 
 .root {
-	flex-direction: row;
-	box-sizing: border-box;
+	font-size: var(--global--heading--5--size-desktop);
+	line-height: var(--global--heading--5--height-desktop);
 	display: flex;
 	align-content: center;
-	justify-content: flex-start;
 	align-items: center;
-	color: getColour(gray, 900);
+	flex-direction: row;
+	justify-content: flex-start;
+	box-sizing: border-box;
 	text-decoration: none;
-	line-height: var(--global--heading--5--height-desktop);
-	font-size: var(--global--heading--5--size-desktop);
+	color: getColour(gray, 900);
 
 	&,
 	.label {
@@ -18,9 +18,9 @@
 	}
 
 	.icon {
-		fill: currentColor;
-		margin-right: 10px;
-		flex-shrink: 0;
 		display: inline-block;
+		flex-shrink: 0;
+		margin-right: 10px;
+		fill: currentColor;
 	}
 }

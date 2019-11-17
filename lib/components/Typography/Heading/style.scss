@@ -1,11 +1,11 @@
 @import '../../../theme/tokens/facade';
 
 .root {
-	padding: 0;
-	margin: 0;
 	font-weight: 700;
-	color: getColour(gray, 900);
 	line-height: 1.2;
+	margin: 0;
+	padding: 0;
+	color: getColour(gray, 900);
 }
 
 .sizeScale {
