@@ -41,7 +41,7 @@ const bundles = ['esm'];
 	process.exit(1);
 });
 
-async function build(bundleType, program, _options) {
+async function build(bundleType, program) {
 	console.log(
 		`${bgYellow(' BUILDING ')} ${bundleName} ${dim(`(${bundleType})`)}`,
 	);

@@ -141,10 +141,10 @@ export const withEnhancedInput = <
 
 			A & B != A _or_ P & Omit<P, 'firstName'> != P
 			 */
+			// @ts-ignore
 			const wrappingComponent: WrappedComponentProps<
 				IncomingProps,
 				PrimitiveElementType
-				// eslint-disable-next-line @typescript-eslint/no-object-literal-type-assertion
 			> = {
 				validation: {
 					isTouched,
@@ -177,7 +177,7 @@ export const withEnhancedInput = <
 				prefixed: Boolean(prefixIcon),
 				suffixed: Boolean(suffixIcon),
 				...(rest as IncomingProps),
-			} as WrappedComponentProps<IncomingProps, PrimitiveElementType>;
+			};
 
 			const shouldValidate: boolean = isValid !== void 0 && isTouched;
 

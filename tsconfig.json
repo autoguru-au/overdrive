@@ -11,6 +11,11 @@
 		"sourceMap": false,
 		"inlineSourceMap": false
 	},
-	"include": ["./global.d.ts", "./index.ts"],
+	"include": [
+		"./global.d.ts",
+		"./index.ts",
+		"./lib/**/*.ts",
+		"./lib/**/*.tsx"
+	],
 	"exclude": ["./**/*stories*.tsx"]
 }

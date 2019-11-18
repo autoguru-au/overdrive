@@ -11,7 +11,7 @@ function DateInputComponent({
 	prefixed,
 	...rest
 }) {
-	warning(field.value !== '', `Date Input does not support empty values.`);
+	warning(field.value !== '', 'Date Input does not support empty values.');
 
 	return (
 		<input
@@ -27,10 +27,9 @@ function DateInputComponent({
 DateInputComponent.primitiveType = 'date';
 
 export const DateInput = memo(
-	withEnhancedInput<
-		Partial<Pick<HTMLInputElement, 'min' | 'max'>>,
-		HTMLInputElement
-	>(DateInputComponent),
+	withEnhancedInput<Partial<Pick<HTMLInputElement, 'min' | 'max'>>>(
+		DateInputComponent,
+	),
 );
 
 // @deprecated

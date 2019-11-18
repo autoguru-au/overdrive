@@ -38,12 +38,13 @@ export const OrderedList: FunctionComponent<Props> & {
 	Item: FunctionComponent<ItemProps>;
 } = ({ children, className = '', type = null, start }) => {
 	const cycle = useContext(OrderedListContext);
-	const myCycle =
-		type === null
-			? cycle + 1 > cycles.length
-				? 0
-				: cycle + 1
-			: cycles.indexOf(type);
+
+	let myCycle: number;
+	if (cycle + 1 > cycles.length) {
+		myCycle = type === null ? 0 : cycles.indexOf(type);
+	} else {
+		myCycle = type === null ? cycle + 1 : cycles.indexOf(type);
+	}
 
 	return (
 		<ol

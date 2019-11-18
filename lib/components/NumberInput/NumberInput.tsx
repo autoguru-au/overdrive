@@ -29,8 +29,7 @@ function NumberInputComponent({
 NumberInputComponent.primitiveType = type;
 
 export const NumberInput = memo(
-	withEnhancedInput<
-		Partial<Pick<HTMLInputElement, 'min' | 'max'>>,
-		HTMLInputElement
-	>(NumberInputComponent),
+	withEnhancedInput<Partial<Pick<HTMLInputElement, 'min' | 'max'>>>(
+		NumberInputComponent,
+	),
 );

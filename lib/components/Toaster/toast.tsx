@@ -62,7 +62,7 @@ const init = () => {
 	if (portalInstance === null && typeof window !== 'undefined') {
 		portalInstance = document.createElement('div');
 		portalInstance.className = styles.root;
-		portalInstance.setAttribute('data-toast-owner', 'overdrive');
+		portalInstance.dataset.toastOwner = 'overdrive';
 		document.body.append(portalInstance);
 
 		render(<ToastManager onMount={onMount} />, portalInstance);

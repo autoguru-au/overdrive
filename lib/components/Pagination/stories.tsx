@@ -11,10 +11,10 @@ const defaultNumberOptions = {
 };
 
 const baseProps = (
-	activePage: number = 3,
-	total: number = 99,
-	pageSize: number = 10,
-	numPagesDisplayed: number = 5,
+	activePage = 3,
+	total = 99,
+	pageSize = 10,
+	numPagesDisplayed = 5,
 ) => ({
 	activePage: number('Active Page', activePage, defaultNumberOptions),
 	total: number('Total Records', total, defaultNumberOptions),

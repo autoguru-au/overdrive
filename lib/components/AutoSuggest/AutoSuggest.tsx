@@ -242,7 +242,7 @@ export const AutoSuggest = <PayloadType extends unknown>({
 
 					dispatch({ type: ActionTypes.INPUT_BLUR });
 				}, onBlur)}
-				onKeyDown={wrapEvent(event => {
+				onKeyDown={wrapEvent<KeyboardEvent>(event => {
 					// eslint-disable-next-line default-case
 					switch (event.key) {
 						case 'ArrowUp':
@@ -389,12 +389,11 @@ const getNextIndex = <
 		const maybeNextIdx =
 			((returnIdx === null ? currentIndex : returnIdx) + direction) | 0;
 
-		returnIdx =
-			maybeNextIdx > maxIndex
-				? 0
-				: maybeNextIdx < 0
-				? maxIndex
-				: maybeNextIdx;
+		if (maybeNextIdx < 0) {
+			returnIdx = maybeNextIdx > maxIndex ? 0 : maxIndex;
+		} else {
+			returnIdx = maybeNextIdx > maxIndex ? 0 : maybeNextIdx;
+		}
 
 		shouldSkip = suggestions[returnIdx].skip;
 	} while (shouldSkip && itter <= maxIndex);

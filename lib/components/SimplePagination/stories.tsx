@@ -5,7 +5,7 @@ import React from 'react';
 
 import { SimplePagination } from './SimplePagination';
 
-const baseProps = (hasNext: boolean = true, hasPrevious: boolean = true) => ({
+const baseProps = (hasNext = true, hasPrevious = true) => ({
 	hasNext: boolean('hasNext', hasNext),
 	hasPrevious: boolean('hasPrevious', hasPrevious),
 });
