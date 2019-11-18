@@ -75,10 +75,10 @@
   resolved "https://registry.yarnpkg.com/@autoguru/tsconfig/-/tsconfig-1.0.77.tgz#496144a3585cc4fe4063cc463ec1d7ffe7013d8a"
   integrity sha512-+VbKXGyqjEBz8se0Lmk1ripcotKvdAMdpZzJy3S7jAoJJMDBIHJ7nQNyz8mnGu8xFebpcz1y4USiG7lru8Uo8A==
 
-"@autoguru/utilities@^1.0.79":
-  version "1.0.79"
-  resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.79.tgz#6f34b722e23ffc0455cc4d8a0be2ec0218ae1019"
-  integrity sha512-aCPHQyccWREFqmAaOyPlAKeVK19By+d1B7cKQZHoBKV4TPMPVExVO1co2NHBBzYiHCU06C8LzuAU7mvtp5VfmQ==
+"@autoguru/utilities@^1.0.80":
+  version "1.0.80"
+  resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.80.tgz#07181272c8216851c696be8dfaea84e4ad5856cb"
+  integrity sha512-GkftWJsZVGTvI76ZJWW0nDbk/IYoV2cqFtUWnJVnZBarJnCF6rRIVQzSTCE2UwKMaBxAHz5P1eoIHx0+2fy4Yg==
   dependencies:
     tiny-invariant "^1.0.6"
     tiny-warning "^1.0.3"
