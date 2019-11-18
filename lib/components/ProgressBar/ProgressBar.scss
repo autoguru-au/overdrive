@@ -1,0 +1,55 @@
+@import '../../theme/tokens/facade';
+
+.root {
+	display: flex;
+	align-items: center;
+}
+
+// To pull them out of flow
+.prefix-text,
+.suffix-text {
+	margin-bottom: -99px;
+	margin-top: -99px;
+}
+
+.prefix-text {
+	padding-right: var(--global--space--2);
+}
+
+.suffix-text {
+	padding-left: var(--global--space--2);
+}
+
+.bar-backdrop {
+	height: var(--global--space--2);
+	border-radius: var(--global--space--1);
+	background-color: getColour(gray, 100);
+	width: 100%;
+}
+
+.bar-current-status {
+	height: var(--global--space--2);
+	border-radius: var(--global--space--1);
+	transition: width 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
+	will-change: width;
+}
+
+.red {
+	background-color: getColour(red, 500);
+}
+
+.green {
+	background-color: getColour(green, 500);
+}
+
+.blue {
+	background-color: getColour(blue, 500);
+}
+
+.yellow {
+	background-color: getColour(yellow, 600);
+}
+
+.neutral {
+	background-color: getColour(grey, 500);
+}
