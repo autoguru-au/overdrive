@@ -27,22 +27,18 @@ export const Tooltip: FunctionComponent<Props> = ({
 	const childRef = useRef<HTMLDivElement>();
 	const triggerRef = useRef<HTMLElement>();
 
-	const leaveTimer = useRef<number>();
+	const leaveTimer = useRef<ReturnType<typeof setTimeout>>();
 
 	const enterHandler = useCallback(() => {
-		if (typeof window === 'undefined') return;
-
 		if (leaveTimer.current) {
-			window.clearTimeout(leaveTimer.current);
+			clearTimeout(leaveTimer.current);
 		}
 
 		setIsOpen(true);
 	}, [setIsOpen]);
 
 	const leaveHandler = useCallback(() => {
-		if (typeof window === 'undefined') return;
-
-		leaveTimer.current = window.setTimeout(() => {
+		leaveTimer.current = setTimeout(() => {
 			setIsOpen(false);
 		}, 1e3 / 2);
 	}, [setIsOpen]);

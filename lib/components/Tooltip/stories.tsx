@@ -1,17 +1,46 @@
 import { select } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
 import React from 'react';
 
 import { EPositionerAlignment } from '../Positioner';
 import { Tooltip } from '.';
 
-const alignmentPicker = () =>
-	select('Alignment', EPositionerAlignment, EPositionerAlignment.RIGHT);
+export default {
+	title: 'Components|Tooltip',
+	decorators: [
+		Story => (
+			<div style={{ marginLeft: 100, marginTop: 100 }}>
+				<Story />
+			</div>
+		),
+	],
+	parameters: { chromatic: { disable: true } },
+};
 
-storiesOf('Components|Tooltip', module)
-	.addParameters({ chromatic: { disable: true } })
-	.add('standard', () => (
+const alignmentPicker = () =>
+	select('Alignment', EPositionerAlignment, EPositionerAlignment.BOTTOM);
+
+export const Standard = () => (
+	<Tooltip alignment={alignmentPicker()} label="Im the tooltip body">
+		<div style={{ display: 'inline' }}>Im the tooltip trigger</div>
+	</Tooltip>
+);
+
+export const TooltipSideBySide = () => (
+	<>
 		<Tooltip alignment={alignmentPicker()} label="Im the tooltip body">
-			<div>Im the tooltip trigger</div>
+			<div style={{ display: 'inline-block' }}>
+				Im the tooltip trigger
+			</div>
 		</Tooltip>
-	));
+		<Tooltip alignment={alignmentPicker()} label="Im the tooltip body">
+			<div style={{ display: 'inline-block' }}>
+				Im the tooltip trigger
+			</div>
+		</Tooltip>
+		<Tooltip alignment={alignmentPicker()} label="Im the tooltip body">
+			<div style={{ display: 'inline-block' }}>
+				Im the tooltip trigger
+			</div>
+		</Tooltip>
+	</>
+);
