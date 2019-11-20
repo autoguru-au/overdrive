@@ -1,76 +1,33 @@
-import React, {
-	Children,
-	ComponentPropsWithoutRef,
-	FunctionComponent,
-	ReactElement,
-	useState,
-} from 'react';
+import React, { ContextType, FunctionComponent, useMemo } from 'react';
 
 import { useId } from '../../utils/useId';
+import { useUncontrolledState } from '../../utils/useUncontrolledState';
+import { TabsContext } from './context';
 import styles from './style.scss';
-import { Tab } from './Tab';
-import { TabNavItem } from './TabNavItem';
-import { TabPane } from './TabPane';
 
-export interface Props {
+export const Tabs: FunctionComponent<{
 	active?: number;
+	onChange?: (idx: number) => void;
+}> = ({ children, active = 0, onChange = null }) => {
+	const [activeState, setActiveState] = useUncontrolledState<number>(
+		active,
+		onChange,
+	);
 
-	onChange?(value: number): void;
-}
+	const id = useId();
 
-export const Tabs: FunctionComponent<Props> = ({
-	active: incomingActive = 0,
-	onChange = () => void 0,
-	children,
-}) => {
-	const [active, setActive] = useState(incomingActive);
-	const [prevActive, setPrevActive] = useState(null);
-
-	if (incomingActive !== prevActive) {
-		setActive(incomingActive);
-		setPrevActive(incomingActive);
-	}
-
-	const setActiveCb = idx => () => {
-		onChange(idx);
-		setActive(idx);
-	};
-
-	const tabsChildren = Children.toArray(children) as Array<
-		ReactElement<ComponentPropsWithoutRef<typeof Tab>>
-	>;
-
-	const tabId = useId();
-
-	const tabs = tabsChildren.map((child, idx) => {
-		const tabItemId = `tabItem:${tabId}:${idx}`;
-		const tabPanelId = `tabPanel:${tabId}:${idx}`;
-
-		return [
-			<TabNavItem
-				key={idx}
-				id={tabItemId}
-				active={active === idx}
-				indication={child.props.indication}
-				onClick={setActiveCb(idx)}>
-				{child.props.title}
-			</TabNavItem>,
-			<TabPane
-				key={idx}
-				id={tabPanelId}
-				controlledBy={tabItemId}
-				active={active === idx}>
-				{child.props.children}
-			</TabPane>,
-		];
-	});
+	const state = useMemo<ContextType<typeof TabsContext>>(
+		() => ({
+			id,
+			active: activeState,
+			onChange: setActiveState,
+		}),
+		[id, activeState, setActiveState],
+	);
 
 	return (
-		<div className={styles.tabs} role="tablist">
-			<div className={styles.tabsNav}>{tabs.map(([item]) => item)}</div>
-			<div className={styles.tabsContent}>
-				{tabs.map(([, item]) => item)}
-			</div>
-		</div>
+		<TabsContext.Provider value={state}>
+			<div className={styles.tabs}>{children}</div>
+		</TabsContext.Provider>
 	);
 };

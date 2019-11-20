@@ -1,29 +1,29 @@
-import clsx from 'clsx';
-import React, { FunctionComponent } from 'react';
+import { invariant } from '@autoguru/utilities';
+import React, { FunctionComponent, useContext } from 'react';
 
+import { IndexContext, TabsContext } from './context';
 import styles from './style.scss';
 
-export interface Props {
-	active: boolean;
-	controlledBy: string;
-	id: string;
-}
-
-export const TabPane: FunctionComponent<Props> = ({
-	active,
+export const TabPane: FunctionComponent<{ id?: string }> = ({
 	children,
-	controlledBy,
-	id,
-}) =>
-	active ? (
-		<div
-			role="tabpanel"
-			id={id}
-			aria-labelledby={controlledBy}
-			className={clsx(styles.tabPane, {
-				[styles.tabPaneActive]: active,
-			})}
-			hidden={!active}>
+	id: incomingId = null,
+}) => {
+	const myIndex = useContext(IndexContext);
+	const tabsContext = useContext(TabsContext);
+
+	invariant(
+		myIndex !== null && tabsContext.id !== null,
+		'This tab pane isnt nested beneath <Tabs /> or <TabPanes />>',
+	);
+
+	const myId =
+		typeof incomingId === 'string'
+			? incomingId
+			: `${tabsContext.id}-${myIndex}-tab`;
+
+	return (
+		<div className={styles.tabPane} tabIndex={0} role="tabpanel" id={myId}>
 			{children}
 		</div>
-	) : null;
+	);
+};
