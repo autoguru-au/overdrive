@@ -1,42 +1,82 @@
-import { action } from '@storybook/addon-actions';
-import { number, text } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { Tab, Tabs } from '.';
+import { ProgressBar } from '../ProgressBar';
+import { Stack } from '../Stack';
+import { Tab, TabList, TabPane, TabPanes, Tabs } from '.';
 
-const tabChanged = tabIndex => action('Tab selected')(tabIndex);
+export default { title: 'Components|Tabs' };
 
-storiesOf('Components|Tabs', module)
-	.addDecorator(story => (
-		<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
-	))
-	.add('standard', () => (
-		<Tabs onChange={tabChanged}>
-			{text('Tabs', 'Tab 1, Tab 2')
-				.split(',')
-				.map(item => item.trim())
-				.map(item => (
-					<Tab key={item} title={item}>
-						Some Content for the <i>{item}</i> tab.
-					</Tab>
-				))}
+export const Standard = () => (
+	<Tabs>
+		<TabList>
+			<Tab>Tab 1</Tab>
+			<Tab>Tab 2</Tab>
+		</TabList>
+
+		<TabPanes>
+			<TabPane>Content A</TabPane>
+			<TabPane>
+				<Stack>
+					<TestChild label="5" />
+					<TestChild label="4" />
+					<TestChild label="3" />
+					<TestChild label="2" />
+					<TestChild label="1" />
+				</Stack>
+			</TabPane>
+		</TabPanes>
+	</Tabs>
+);
+
+export const WithIndication = () => (
+	<Tabs>
+		<TabList>
+			<Tab indication={2}>Tab 1</Tab>
+			<Tab indication={0}>Tab 2</Tab>
+		</TabList>
+
+		<TabPanes>
+			<TabPane>Content A</TabPane>
+			<TabPane>Content B</TabPane>
+		</TabPanes>
+	</Tabs>
+);
+
+export const TabsWithoutPanes = () => (
+	<>
+		<Tabs>
+			<TabList>
+				<Tab id="tab-1" is={<a href="#tab-1" />}>
+					Tab 1
+				</Tab>
+				<Tab id="tab-2" is={<a href="#tab-2" />}>
+					Tab 2
+				</Tab>
+			</TabList>
 		</Tabs>
-	))
-	.add('with external active', () => (
-		<Tabs active={number('Active', 0)} onChange={tabChanged}>
-			<Tab title="A">a</Tab>
-			<Tab title="B">b</Tab>
-		</Tabs>
-	))
-	.add('with number', () => (
-		<Tabs onChange={tabChanged}>
-			<Tab title="Leads" indication={10}>
-				Content a
-			</Tab>
-			<Tab title="Claimed" indication={3}>
-				Content b
-			</Tab>
-			<Tab title="Expired">Content c</Tab>
-		</Tabs>
-	));
+
+		<ul>
+			<li id="tab-1">Tab 1 Content</li>
+			<li id="tab-2" style={{ marginTop: '120vh' }}>
+				Tab 2 Content
+			</li>
+		</ul>
+	</>
+);
+
+const TestChild = ({ label }) => {
+	const [thing, sething] = useState(0);
+
+	useEffect(() => {
+		const t = setInterval(() => {
+			sething(isChromatic() ? 0.5 : Math.random());
+		}, 1e3);
+
+		return () => {
+			clearInterval(t);
+		};
+	}, []);
+
+	return <ProgressBar value={thing} prefixText={label} />;
+};

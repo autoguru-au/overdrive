@@ -1,75 +1,61 @@
 import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
 
-import { Tab, Tabs } from '.';
+import { Tab, TabPane, TabPanes, Tabs } from '.';
+import { TabList } from './TabList';
 
-describe('<Tabs />', () => {
-	const tabData = [
-		{
-			title: 'tab 1 title',
-			content: 'tab 1 content',
-		},
-		{
-			title: 'tab 2 title',
-			content: 'tab 2 content',
-		},
-		{
-			title: 'tab 3 title',
-			content: 'tab 3 content',
-		},
-	];
+const tabData = [
+	{
+		title: 'tab 1 title',
+		content: 'tab 1 content',
+	},
+	{
+		title: 'tab 2 title',
+		content: 'tab 2 content',
+	},
+	{
+		title: 'tab 3 title',
+		content: 'tab 3 content',
+	},
+];
 
-	it('should throw if a tab element is not nested inside a Tabs element', () => {
-		jest.spyOn(console, 'error').mockImplementation(() => {});
-		expect(() => {
-			render(<Tab title="tab">content</Tab>);
-		}).toThrow();
-		console.error.mockRestore();
-	});
-
-	it('should not throw', () => {
-		expect(() => {
-			render(<Tabs />);
-		}).not.toThrow();
-	});
-
-	it('should not throw with nested tab items', () => {
-		return expect(() => {
-			render(
-				<Tabs>
-					{tabData.map(tabData => (
-						<Tab key={tabData} title={tabData.title}>
-							{tabData.content}
-						</Tab>
-					))}
-				</Tabs>,
-			);
-		}).not.toThrow();
-	});
-
-	it('should match snapshot with nested tab items', () => {
-		const { container } = render(
-			<Tabs>
-				{tabData.map(tabData => (
-					<Tab key={tabData} title={tabData.title}>
-						{tabData.content}
+const renderTabs = (
+	onChange = null,
+	custoId = null,
+	renderIndication = false,
+) =>
+	render(
+		<Tabs onChange={onChange}>
+			<TabList>
+				{tabData.map((tabData, idx) => (
+					<Tab
+						key={tabData.title}
+						id={custoId ? custoId(tabData, idx) : null}
+						indication={renderIndication ? 5 : null}>
+						{tabData.title}
 					</Tab>
 				))}
-			</Tabs>,
-		);
+			</TabList>
+			<TabPanes>
+				{tabData.map((tabData, idx) => (
+					<TabPane
+						key={tabData.title}
+						id={custoId ? custoId(tabData, idx) : null}>
+						{tabData.content}
+					</TabPane>
+				))}
+			</TabPanes>
+		</Tabs>,
+	);
+
+describe('<Tabs />', () => {
+	it('should match snapshot (high level)', () => {
+		const { container } = renderTabs();
 		expect(container.firstChild).toMatchSnapshot();
 	});
 
 	it('should display the first tab pane by default', () => {
-		const { container } = render(
-			<Tabs>
-				{tabData.map(tabData => (
-					<Tab key={tabData} title={tabData.title}>
-						{tabData.content}
-					</Tab>
-				))}
-			</Tabs>,
-		);
+		const { container } = renderTabs();
 
 		expect(
 			container.querySelector('[aria-selected="true"]'),
@@ -77,32 +63,19 @@ describe('<Tabs />', () => {
 	});
 
 	it('should allow the active to be updated outside', () => {
-		const { container } = render(
-			<Tabs>
-				<Tab title="A">A</Tab>
-				<Tab title="B">B</Tab>
-			</Tabs>,
-		);
+		const { getAllByRole, container } = renderTabs();
 
-		fireEvent.click(container.querySelector('[role="tab"]:nth-child(2)'));
+		fireEvent.click(getAllByRole('tab')[1]);
 
 		expect(
 			container.querySelector('[aria-selected="true"]'),
-		).toHaveTextContent('B');
+		).toHaveTextContent('tab 2 title');
 	});
 
-	it('should show content 2 and only content 2 when tab 2 is clicked', () => {
-		const { container, getAllByRole } = render(
-			<Tabs>
-				{tabData.map(tabData => (
-					<Tab key={tabData} title={tabData.title}>
-						{tabData.content}
-					</Tab>
-				))}
-			</Tabs>,
-		);
+	it('should show second content and only second content when second tab is clicked', () => {
+		const { getAllByRole } = renderTabs();
 
-		fireEvent.click(container.querySelector('[role="tab"]:nth-child(2)'));
+		fireEvent.click(getAllByRole('tab')[1]);
 
 		const tabPanels = getAllByRole('tabpanel');
 
@@ -114,18 +87,25 @@ describe('<Tabs />', () => {
 	it('should call onChange callback with correct active tab index', () => {
 		const spyedCallback = jest.fn();
 
-		const { container } = render(
-			<Tabs onChange={spyedCallback}>
-				{tabData.map(tabData => (
-					<Tab key={tabData} title={tabData.title}>
-						{tabData.content}
-					</Tab>
-				))}
-			</Tabs>,
-		);
+		const { getAllByRole } = renderTabs(spyedCallback);
 
-		fireEvent.click(container.querySelector('[role="tab"]:nth-child(2)'));
+		fireEvent.click(getAllByRole('tab')[1]);
 
 		expect(spyedCallback).toHaveBeenCalledWith(1);
+	});
+
+	it('should allow id overriding', () => {
+		const { container } = renderTabs(
+			null,
+			(tabData, idx) => `${tabData.title.replace(/\s/g, '-')}-${idx}`,
+		);
+
+		expect(container.firstChild).toMatchSnapshot();
+	});
+
+	it('should allow rendering indications', () => {
+		const { container } = renderTabs(null, null, true);
+
+		expect(container.firstChild).toMatchSnapshot();
 	});
 });

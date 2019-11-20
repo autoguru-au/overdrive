@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Tabs /> should match snapshot with nested tab items 1`] = `
+exports[`<Tabs /> should allow id overriding 1`] = `
 <div
   class="tabs"
-  role="tablist"
 >
   <div
-    class="tabsNav"
+    class="tabsList"
+    role="tablist"
   >
     <button
+      aria-controls="tab-1-title-0"
       aria-selected="true"
       class="navItem navItemActive"
-      id="tabItem:od-3:0"
       role="tab"
     >
       <span
@@ -21,10 +21,11 @@ exports[`<Tabs /> should match snapshot with nested tab items 1`] = `
       </span>
     </button>
     <button
+      aria-controls="tab-2-title-1"
       aria-selected="false"
       class="navItem"
-      id="tabItem:od-3:1"
       role="tab"
+      tabindex="-1"
     >
       <span
         class="navItemTitle"
@@ -33,10 +34,11 @@ exports[`<Tabs /> should match snapshot with nested tab items 1`] = `
       </span>
     </button>
     <button
+      aria-controls="tab-3-title-2"
       aria-selected="false"
       class="navItem"
-      id="tabItem:od-3:2"
       role="tab"
+      tabindex="-1"
     >
       <span
         class="navItemTitle"
@@ -46,13 +48,152 @@ exports[`<Tabs /> should match snapshot with nested tab items 1`] = `
     </button>
   </div>
   <div
-    class="tabsContent"
+    class="tabPanes"
   >
     <div
-      aria-labelledby="tabItem:od-3:0"
-      class="tabPane tabPaneActive"
-      id="tabPanel:od-3:0"
+      class="tabPane"
+      id="tab-1-title-0"
       role="tabpanel"
+      tabindex="0"
+    >
+      tab 1 content
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Tabs /> should allow rendering indications 1`] = `
+<div
+  class="tabs"
+>
+  <div
+    class="tabsList"
+    role="tablist"
+  >
+    <button
+      aria-controls="od-7-0-tab"
+      aria-selected="true"
+      class="navItem navItemActive"
+      role="tab"
+    >
+      <span
+        class="navItemTitle"
+      >
+        tab 1 title
+      </span>
+      <span
+        class="navItemIndication"
+      >
+        5
+      </span>
+    </button>
+    <button
+      aria-controls="od-7-1-tab"
+      aria-selected="false"
+      class="navItem"
+      role="tab"
+      tabindex="-1"
+    >
+      <span
+        class="navItemTitle"
+      >
+        tab 2 title
+      </span>
+      <span
+        class="navItemIndication"
+      >
+        5
+      </span>
+    </button>
+    <button
+      aria-controls="od-7-2-tab"
+      aria-selected="false"
+      class="navItem"
+      role="tab"
+      tabindex="-1"
+    >
+      <span
+        class="navItemTitle"
+      >
+        tab 3 title
+      </span>
+      <span
+        class="navItemIndication"
+      >
+        5
+      </span>
+    </button>
+  </div>
+  <div
+    class="tabPanes"
+  >
+    <div
+      class="tabPane"
+      id="od-7-0-tab"
+      role="tabpanel"
+      tabindex="0"
+    >
+      tab 1 content
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Tabs /> should match snapshot (high level) 1`] = `
+<div
+  class="tabs"
+>
+  <div
+    class="tabsList"
+    role="tablist"
+  >
+    <button
+      aria-controls="od-1-0-tab"
+      aria-selected="true"
+      class="navItem navItemActive"
+      role="tab"
+    >
+      <span
+        class="navItemTitle"
+      >
+        tab 1 title
+      </span>
+    </button>
+    <button
+      aria-controls="od-1-1-tab"
+      aria-selected="false"
+      class="navItem"
+      role="tab"
+      tabindex="-1"
+    >
+      <span
+        class="navItemTitle"
+      >
+        tab 2 title
+      </span>
+    </button>
+    <button
+      aria-controls="od-1-2-tab"
+      aria-selected="false"
+      class="navItem"
+      role="tab"
+      tabindex="-1"
+    >
+      <span
+        class="navItemTitle"
+      >
+        tab 3 title
+      </span>
+    </button>
+  </div>
+  <div
+    class="tabPanes"
+  >
+    <div
+      class="tabPane"
+      id="od-1-0-tab"
+      role="tabpanel"
+      tabindex="0"
     >
       tab 1 content
     </div>

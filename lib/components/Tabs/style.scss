@@ -63,33 +63,30 @@ $size: 20px;
 	}
 }
 
+.tab-panes {
+	padding: var(--global--space--6) 0;
+
+	&:after {
+		display: table;
+		clear: both;
+		content: '';
+	}
+}
+
 .tab-pane {
-	display: none;
+	display: block;
 	float: left;
 	width: 100%;
+	outline: none;
+}
 
-	&--active {
-		display: block;
-	}
+.tabsList {
+	display: flex;
+	flex-wrap: nowrap;
+	border-bottom: $lineBottomHeight solid getColour(gray, 300);
 }
 
 .tabs {
 	display: block;
 	width: 100%;
-
-	&__nav {
-		display: flex;
-		flex-wrap: nowrap;
-		border-bottom: $lineBottomHeight solid getColour(gray, 300);
-	}
-
-	&__content {
-		padding: var(--global--space--6) 0;
-
-		&:after {
-			display: table;
-			clear: both;
-			content: '';
-		}
-	}
 }
