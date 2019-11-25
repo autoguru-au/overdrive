@@ -39,7 +39,7 @@ exports[`<TextAreaInput /> should have some hintText 1`] = `
     </div>
   </div>
   <p
-    class="root sizeScale2 hintText"
+    class="root sizeScale2 alignLeft hintText"
   >
     hint text
   </p>

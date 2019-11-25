@@ -5,7 +5,7 @@ exports[`<TextLink /> should allow as override 1`] = `
   class="anchor"
 >
   <span
-    class="root sizeScale4 strong root strong"
+    class="root sizeScale4 strong alignLeft root strong"
   >
     Test
   </span>
@@ -18,7 +18,7 @@ exports[`<TextLink /> should match the snapshot 1`] = `
   rel="noopener noreferrer"
 >
   <span
-    class="root sizeScale4 strong root strong"
+    class="root sizeScale4 strong alignLeft root strong"
   />
 </a>
 `;

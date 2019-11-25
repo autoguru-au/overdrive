@@ -11,6 +11,7 @@ interface Props {
 	size?: TSizeScale;
 	strong?: boolean;
 	white?: boolean;
+	align?: 'left' | 'center' | 'right';
 }
 
 export const Text: FunctionComponent<Props> = ({
@@ -21,6 +22,7 @@ export const Text: FunctionComponent<Props> = ({
 	size = 4,
 	strong = false,
 	white = false,
+	align = 'left',
 }) => (
 	<Component
 		className={clsx(
@@ -29,6 +31,9 @@ export const Text: FunctionComponent<Props> = ({
 				[styles.muted]: muted,
 				[styles.strong]: strong,
 				[styles.white]: white,
+				[styles.alignLeft]: align === 'left',
+				[styles.alignCenter]: align === 'center',
+				[styles.alignRight]: align === 'right',
 			},
 			className,
 		)}>
