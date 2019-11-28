@@ -7,7 +7,7 @@ import { toast } from '.';
 
 export default { title: 'Utility|Toaster' };
 
-export const standard = () => {
+export const Standard = () => {
 	return (
 		<Actions equalWidth={false}>
 			<Button onClick={() => toast.success('Successful message!')}>

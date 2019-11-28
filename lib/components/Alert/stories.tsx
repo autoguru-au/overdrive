@@ -7,7 +7,7 @@ import { EAlertIntent } from './Alert';
 
 export default { title: 'Components|Alert' };
 
-export const standard = () => (
+export const Standard = () => (
 	<div
 		style={{
 			display: 'grid',
@@ -44,7 +44,7 @@ export const standard = () => (
 	</div>
 );
 
-export const inline = () => (
+export const Inline = () => (
 	<div
 		style={{
 			display: 'grid',
@@ -79,7 +79,7 @@ export const inline = () => (
 	</div>
 );
 
-export const nonDismissible = () => (
+export const NonDismissible = () => (
 	<div
 		style={{
 			display: 'grid',

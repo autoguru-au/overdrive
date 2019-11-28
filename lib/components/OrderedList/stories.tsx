@@ -5,7 +5,7 @@ import { OrderedList } from '.';
 
 export default { title: 'Foundation|List/OrderedList' };
 
-export const standard = () => (
+export const Standard = () => (
 	<OrderedList>
 		<OrderedList.Item>
 			<Text>Strawberry</Text>
