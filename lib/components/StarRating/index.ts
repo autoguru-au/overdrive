@@ -1,1 +1,1 @@
-export { StarRating, ESize as EStarRatingSize } from './StarRating';
+export { StarRating, EStarRatingSize } from './StarRating';

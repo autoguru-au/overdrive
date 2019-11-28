@@ -9,7 +9,7 @@ import styles from './style.scss';
 
 const totalStars = 5;
 
-export enum ESize {
+export enum EStarRatingSize {
 	Medium = 'medium',
 	Small = 'small',
 }
@@ -20,14 +20,14 @@ enum EStarType {
 	Empty,
 }
 
-const starSizeMap: Map<ESize, number> = new Map([
-	[ESize.Medium, 20],
-	[ESize.Small, 16],
+const starSizeMap: Map<EStarRatingSize, number> = new Map([
+	[EStarRatingSize.Medium, 20],
+	[EStarRatingSize.Small, 16],
 ]);
 
-const labelSizeMap: Map<ESize, TSizeScale> = new Map([
-	[ESize.Small, 3],
-	[ESize.Medium, 4],
+const labelSizeMap: Map<EStarRatingSize, TSizeScale> = new Map([
+	[EStarRatingSize.Small, 3],
+	[EStarRatingSize.Medium, 4],
 ]);
 
 const starCssMap: Map<EStarType, string> = new Map([
@@ -39,7 +39,7 @@ const starCssMap: Map<EStarType, string> = new Map([
 export interface Props {
 	className?: string;
 	rating: number;
-	size?: ESize;
+	size?: EStarRatingSize;
 	label?: string;
 }
 
@@ -47,7 +47,7 @@ const StarRatingComponent: FunctionComponent<Props> = ({
 	className = '',
 	rating,
 	label = rating,
-	size = ESize.Medium,
+	size = EStarRatingSize.Medium,
 }) => (
 	<span className={clsx([styles.root, className])}>
 		<span className={styles.starList}>
@@ -55,9 +55,11 @@ const StarRatingComponent: FunctionComponent<Props> = ({
 				.fill(0)
 				.map((_, index) => getStar(index, rating, size))}
 		</span>
-		<Text size={labelSizeMap.get(size)} className={styles.label}>
-			{label}
-		</Text>
+		{label !== null && (
+			<Text size={labelSizeMap.get(size)} className={styles.label}>
+				{label}
+			</Text>
+		)}
 	</span>
 );
 
@@ -88,7 +90,7 @@ const getStarIconType = (index: number, rating: number): EStarType => {
 const getStar = (
 	index: number,
 	rating = 0,
-	size: ESize = ESize.Medium,
+	size: EStarRatingSize = EStarRatingSize.Medium,
 ): ReactElement => {
 	const starType = getStarIconType(index, rating);
 	const star = starType === EStarType.Half ? StarHalfIcon : StarIcon;
