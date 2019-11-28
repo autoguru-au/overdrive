@@ -1,0 +1,215 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProgressBarGroup /> should match the snapshot 1`] = `
+<div
+  class="root"
+  style="grid-template-columns: 1fr;"
+>
+  <span
+    class="root sizeScale3 alignRight"
+  />
+  <div
+    class="root"
+  >
+    <div
+      class="bar green"
+      style="width: 16.666666666666664%;"
+    />
+  </div>
+  <span
+    class="root sizeScale3 alignLeft"
+  />
+  <span
+    class="root sizeScale3 alignRight"
+  />
+  <div
+    class="root"
+  >
+    <div
+      class="bar green"
+      style="width: 33.33333333333333%;"
+    />
+  </div>
+  <span
+    class="root sizeScale3 alignLeft"
+  />
+  <span
+    class="root sizeScale3 alignRight"
+  />
+  <div
+    class="root"
+  >
+    <div
+      class="bar green"
+      style="width: 50%;"
+    />
+  </div>
+  <span
+    class="root sizeScale3 alignLeft"
+  />
+</div>
+`;
+
+exports[`<ProgressBarGroup /> should should ignore extra labels 1`] = `
+<div
+  class="root"
+  style="grid-template-columns: auto 1fr;"
+>
+  <span
+    class="root sizeScale3 alignRight"
+  >
+    a
+  </span>
+  <div
+    class="root"
+  >
+    <div
+      class="bar green"
+      style="width: 16.666666666666664%;"
+    />
+  </div>
+  <span
+    class="root sizeScale3 alignLeft"
+  />
+  <span
+    class="root sizeScale3 alignRight"
+  >
+    b
+  </span>
+  <div
+    class="root"
+  >
+    <div
+      class="bar green"
+      style="width: 33.33333333333333%;"
+    />
+  </div>
+  <span
+    class="root sizeScale3 alignLeft"
+  />
+  <span
+    class="root sizeScale3 alignRight"
+  >
+    c
+  </span>
+  <div
+    class="root"
+  >
+    <div
+      class="bar green"
+      style="width: 50%;"
+    />
+  </div>
+  <span
+    class="root sizeScale3 alignLeft"
+  />
+</div>
+`;
+
+exports[`<ProgressBarGroup /> should should ignore not break when not enough labels 1`] = `
+<div
+  class="root"
+  style="grid-template-columns: auto 1fr;"
+>
+  <span
+    class="root sizeScale3 alignRight"
+  >
+    a
+  </span>
+  <div
+    class="root"
+  >
+    <div
+      class="bar green"
+      style="width: 16.666666666666664%;"
+    />
+  </div>
+  <span
+    class="root sizeScale3 alignLeft"
+  />
+  <span
+    class="root sizeScale3 alignRight"
+  />
+  <div
+    class="root"
+  >
+    <div
+      class="bar green"
+      style="width: 33.33333333333333%;"
+    />
+  </div>
+  <span
+    class="root sizeScale3 alignLeft"
+  />
+  <span
+    class="root sizeScale3 alignRight"
+  />
+  <div
+    class="root"
+  >
+    <div
+      class="bar green"
+      style="width: 50%;"
+    />
+  </div>
+  <span
+    class="root sizeScale3 alignLeft"
+  />
+</div>
+`;
+
+exports[`<ProgressBarGroup /> should should render a prefix for every value 1`] = `
+<div
+  class="root"
+  style="grid-template-columns: auto 1fr;"
+>
+  <span
+    class="root sizeScale3 alignRight"
+  >
+    a
+  </span>
+  <div
+    class="root"
+  >
+    <div
+      class="bar green"
+      style="width: 16.666666666666664%;"
+    />
+  </div>
+  <span
+    class="root sizeScale3 alignLeft"
+  />
+  <span
+    class="root sizeScale3 alignRight"
+  >
+    b
+  </span>
+  <div
+    class="root"
+  >
+    <div
+      class="bar green"
+      style="width: 33.33333333333333%;"
+    />
+  </div>
+  <span
+    class="root sizeScale3 alignLeft"
+  />
+  <span
+    class="root sizeScale3 alignRight"
+  >
+    c
+  </span>
+  <div
+    class="root"
+  >
+    <div
+      class="bar green"
+      style="width: 50%;"
+    />
+  </div>
+  <span
+    class="root sizeScale3 alignLeft"
+  />
+</div>
+`;

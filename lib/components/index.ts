@@ -31,6 +31,7 @@ export * from './OutsideClick';
 export * from './Pagination';
 export * from './Positioner';
 export * from './ProgressBar';
+export * from './ProgressBarGroup';
 export * from './ProgressSpinner';
 export * from './Radio';
 export * from './SelectInput';
