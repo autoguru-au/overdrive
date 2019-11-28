@@ -21,14 +21,9 @@ export const Standard = () => {
 		<>
 			<Stack spacing={2}>
 				{!isChromatic() && <ProgressBar value={width} colour="green" />}
-				<ProgressBar value={0.5} prefixText="5" colour="green" />
-				<ProgressBar value={0.4} suffixText="4" colour="blue" />
-				<ProgressBar
-					value={0.1}
-					prefixText="5"
-					suffixText="5"
-					colour="neutral"
-				/>
+				<ProgressBar value={0.5} colour="green" />
+				<ProgressBar value={0.4} colour="blue" />
+				<ProgressBar value={0.1} colour="neutral" />
 				<ProgressBar value={15} colour="red" />
 				<ProgressBar value={0.156} colour="yellow" />
 			</Stack>

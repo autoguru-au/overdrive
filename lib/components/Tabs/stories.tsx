@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { ProgressBar } from '../ProgressBar';
 import { Stack } from '../Stack';
+import { StarRating } from '../StarRating';
 import { Tab, TabList, TabPane, TabPanes, Tabs } from '.';
 
 export default { title: 'Components|Tabs' };
@@ -70,7 +70,7 @@ const TestChild = ({ label }) => {
 
 	useEffect(() => {
 		const t = setInterval(() => {
-			sething(isChromatic() ? 0.5 : Math.random());
+			sething(isChromatic() ? 0.5 : Math.random() * 5);
 		}, 1e3);
 
 		return () => {
@@ -78,5 +78,5 @@ const TestChild = ({ label }) => {
 		};
 	}, []);
 
-	return <ProgressBar value={thing} prefixText={label} />;
+	return <StarRating rating={thing} label={label} />;
 };
