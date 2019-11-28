@@ -1,15 +1,19 @@
 @import '../../theme/tokens/facade';
 
+$height: var(--global--space--2);
+
+.root,
+.bar {
+	height: $height;
+	border-radius: calc(#{$height} / 2);
+}
+
 .root {
-	height: var(--global--space--2);
-	border-radius: var(--global--space--1);
 	background-color: getColour(gray, 100);
 	width: 100%;
 }
 
 .bar {
-	height: var(--global--space--2);
-	border-radius: var(--global--space--1);
 	transition: width 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 	will-change: width;
 }
