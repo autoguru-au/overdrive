@@ -53,10 +53,10 @@
     jsx-ast-utils "^2.2.3"
     ulid "^2.3.0"
 
-"@autoguru/icons@^1.3.4":
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/@autoguru/icons/-/icons-1.3.4.tgz#be5c8d83ad1c9083b6ab7e5c1563f8f3e78288de"
-  integrity sha512-C+uz/r5QbpT/myU6Gi7fxP5ztt19sPiZ1bjDwjERZiZ9FxQN5NGnVlK0x/LEbkx65n5H5WY8T+a4HZljnChFRQ==
+"@autoguru/icons@^1.3.5":
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/@autoguru/icons/-/icons-1.3.5.tgz#4317b05b7b43992921c2356d5520eb7288b0df7c"
+  integrity sha512-uPvE5dfGtDxr5kfknZLv0iuGk862Owp3NhJ9Xz4EYyknUu/fe1KSlX8PqF6lmg6zn0oB2bWauVOOY2dvQAa3yw==
   dependencies:
     tslib "^1.10.0"
 
