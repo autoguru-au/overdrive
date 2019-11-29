@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import React, { Children, memo, NamedExoticComponent, ReactNode } from 'react';
 
 import styles from './Stack.scss';
@@ -14,16 +13,20 @@ const spaceMap = new Array(9)
 
 export const Stack: NamedExoticComponent<Props> = memo(
 	({ spacing = 2, children }) => {
+		const items = Children.toArray(children);
+
+		if (items.length < 2) {
+			return <>{items}</>;
+		}
+
 		return (
-			<>
-				{Children.toArray(children).map((child, idx) => (
-					<div
-						key={idx}
-						className={clsx(styles.child, spaceMap[spacing - 1])}>
+			<div className={spaceMap[spacing - 1]}>
+				{items.map((child, index) => (
+					<div key={index} className={styles.child}>
 						{child}
 					</div>
 				))}
-			</>
+			</div>
 		);
 	},
 );
