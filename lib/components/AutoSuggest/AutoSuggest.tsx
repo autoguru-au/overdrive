@@ -351,7 +351,7 @@ const getSuggestionId = (id: string, index: number) => `${id}-option-${index}`;
 const SuggestionListFlyout = usingPositioner(({ triggerRect, children }) => (
 	<div
 		className={styles.flyout}
-		style={{ width: triggerRect && triggerRect.width }}
+		style={{ width: triggerRect?.width }}
 		onMouseDown={event => event.preventDefault()}>
 		{children}
 	</div>

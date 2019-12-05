@@ -9,7 +9,8 @@
 		"declarationDir": "./dist/",
 		"incremental": true,
 		"sourceMap": false,
-		"inlineSourceMap": false
+		"inlineSourceMap": false,
+		"target": "es2019"
 	},
 	"include": [
 		"./global.d.ts",

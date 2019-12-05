@@ -19,6 +19,7 @@ overrides:
       - 'plugin:@autoguru/typescript'
     rules:
       'unicorn/consistent-function-scoping': 'off' # Yet
+      '@typescript-eslint/prefer-optional-chain': 'error'
     parser: '@typescript-eslint/parser'
     parserOptions:
       project: ['./tsconfig.stories.json', './tsconfig.json']
