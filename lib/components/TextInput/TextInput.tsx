@@ -1,26 +1,20 @@
-import React, { memo } from 'react';
+import React from 'react';
 
 import { withEnhancedInput } from '../InputBase';
 
-function TextInputComponent({
-	field,
-	eventHandlers,
-	validation,
-	suffixed,
-	prefixed,
-	...rest
-}) {
-	return (
+export const TextInput = withEnhancedInput<
+	Partial<Pick<HTMLInputElement, 'type'>>
+>(
+	({ field, eventHandlers, validation, suffixed, prefixed, ...rest }) => (
 		<input
 			{...eventHandlers}
 			{...field}
 			{...rest}
 			autoComplete="off"
-			type="text"
+			type={rest.type || 'text'}
 		/>
-	);
-}
-
-TextInputComponent.primitiveType = 'text';
-
-export const TextInput = memo(withEnhancedInput(TextInputComponent));
+	),
+	{
+		primitiveType: 'text',
+	},
+);

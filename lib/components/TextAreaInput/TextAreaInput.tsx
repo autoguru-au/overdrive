@@ -1,25 +1,14 @@
-import React, { memo } from 'react';
+import React from 'react';
 
 import { withEnhancedInput } from '../InputBase';
 
-const TextAreaInputComponent = ({
-	field,
-	eventHandlers,
-	validation,
-	suffixed,
-	prefixed,
-	...rest
-}) => {
-	return (
+export const TextAreaInput = withEnhancedInput<{}, HTMLTextAreaElement>(
+	({ field, eventHandlers, validation, suffixed, prefixed, ...rest }) => (
 		<textarea {...eventHandlers} {...field} {...rest} autoComplete="off" />
-	);
-};
-
-TextAreaInputComponent.primitiveType = 'textarea';
-
-export const TextAreaInput = memo(
-	withEnhancedInput<{}, HTMLTextAreaElement>(TextAreaInputComponent, {
+	),
+	{
+		primitiveType: 'textarea',
 		withSuffixIcon: false,
 		withPrefixIcon: false,
-	}),
+	},
 );

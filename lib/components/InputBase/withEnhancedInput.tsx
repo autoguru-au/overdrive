@@ -70,6 +70,7 @@ export type WrappedComponentProps<IncomingProps, PrimitiveElementType> = {
 interface EnhancedInputConfigs {
 	withPrefixIcon?: boolean;
 	withSuffixIcon?: boolean;
+	primitiveType: 'textarea' | 'text' | 'number' | 'date' | 'select';
 }
 
 export const withEnhancedInput = <
@@ -78,10 +79,12 @@ export const withEnhancedInput = <
 >(
 	WrappingComponent: ComponentType<
 		WrappedComponentProps<IncomingProps, PrimitiveElementType>
-	> & {
-		primitiveType: string;
-	},
-	{ withPrefixIcon = true, withSuffixIcon = true }: EnhancedInputConfigs = {},
+	>,
+	{
+		primitiveType = 'text',
+		withPrefixIcon = true,
+		withSuffixIcon = true,
+	}: EnhancedInputConfigs = {},
 ) =>
 	forwardRef<
 		PrimitiveElementType,
@@ -192,8 +195,7 @@ export const withEnhancedInput = <
 					<NotchedBase
 						id={id}
 						isEmpty={
-							WrappingComponent.primitiveType === 'date' &&
-							value === ''
+							primitiveType === 'date' && value === ''
 								? false
 								: value === ''
 						}

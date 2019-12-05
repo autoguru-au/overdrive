@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 
 import { withEnhancedInput } from '../InputBase';
 
@@ -7,15 +7,10 @@ const isEdge: boolean =
 
 const type = isEdge ? 'text' : 'number';
 
-function NumberInputComponent({
-	field,
-	eventHandlers,
-	validation,
-	suffixed,
-	prefixed,
-	...rest
-}) {
-	return (
+export const NumberInput = withEnhancedInput<
+	Partial<Pick<HTMLInputElement, 'min' | 'max'>>
+>(
+	({ field, eventHandlers, validation, suffixed, prefixed, ...rest }) => (
 		<input
 			{...eventHandlers}
 			{...field}
@@ -23,13 +18,8 @@ function NumberInputComponent({
 			autoComplete="off"
 			type={type}
 		/>
-	);
-}
-
-NumberInputComponent.primitiveType = type;
-
-export const NumberInput = memo(
-	withEnhancedInput<Partial<Pick<HTMLInputElement, 'min' | 'max'>>>(
-		NumberInputComponent,
 	),
+	{
+		primitiveType: type,
+	},
 );
