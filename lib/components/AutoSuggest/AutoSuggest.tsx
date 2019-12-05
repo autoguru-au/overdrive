@@ -242,7 +242,7 @@ export const AutoSuggest = <PayloadType extends unknown>({
 
 					dispatch({ type: ActionTypes.INPUT_BLUR });
 				}, onBlur)}
-				onKeyDown={wrapEvent<KeyboardEvent>(event => {
+				onKeyDown={wrapEvent(event => {
 					// eslint-disable-next-line default-case
 					switch (event.key) {
 						case 'ArrowUp':
