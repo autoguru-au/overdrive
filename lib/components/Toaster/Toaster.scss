@@ -1,5 +1,6 @@
 .root {
 	position: fixed;
+	z-index: 20;
 	top: var(--global--space--3);
 	right: 0;
 	left: 0;

@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Actions } from '../Actions';
 import { Button } from '../Button';
+import { StandardModal } from '../StandardModal';
 import { Text } from '../Typography';
 import { toast } from '.';
 
@@ -28,4 +29,22 @@ export const Standard = () => {
 			</Button>
 		</Actions>
 	);
+};
+
+export const InsideModal = () => {
+	return (
+		<StandardModal isOpen title="Test inside modal">
+			<div style={{ padding: 20 }}>
+				<Button onClick={() => toast.success('Successful message!')}>
+					Success
+				</Button>
+			</div>
+		</StandardModal>
+	);
+};
+
+InsideModal.story = {
+	parameters: {
+		chromatic: { disable: true },
+	},
 };
