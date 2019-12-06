@@ -1,8 +1,8 @@
 import { CarIcon } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
-import { storiesOf } from '@storybook/react';
 import React, { useEffect, useState } from 'react';
 
+import { StandardModal } from '../StandardModal';
 import { AutoSuggest } from '.';
 import { AutoSuggestValue } from './AutoSuggest';
 
@@ -19,49 +19,80 @@ const mockSuggestions = [
 	'Porsche',
 ];
 
-storiesOf('Components|Inputs/AutoSuggest', module).add('standard', () => {
-	const Impl = () => {
-		type SuggestionValue = AutoSuggestValue<Value>;
-		const [value, setValue] = useState<SuggestionValue>({
-			text: '',
-		});
-		const [suggestions, setSuggestions] = useState<SuggestionValue[]>([]);
+export default {
+	title: 'Components|Inputs/AutoSuggest',
+	component: AutoSuggest,
+	decorators: [
+		story => (
+			<div style={{ maxWidth: 500, margin: '0 auto' }}>{story()}</div>
+		),
+	],
+};
 
-		useEffect(() => {
-			setSuggestions(
-				value.text === ''
-					? mockSuggestions.map(item => ({ text: item }))
-					: mockSuggestions
-							.filter(item =>
-								item
-									.toLowerCase()
-									.startsWith(value.text.toLowerCase()),
-							)
-							.map(item => ({ text: item })),
-			);
-		}, [value.text]);
+const Impl = () => {
+	type SuggestionValue = AutoSuggestValue<Value>;
+	const [value, setValue] = useState<SuggestionValue>({
+		text: '',
+	});
+	const [suggestions, setSuggestions] = useState<SuggestionValue[]>([]);
 
-		return (
-			<AutoSuggest<Value>
-				name="example"
-				placeholder="Pick an exotic car brand"
-				value={value}
-				suggestions={[
-					{
-						text: 'Skip me',
-						skip: true,
-					},
-					...suggestions,
-				]}
-				hintText="Pick a car, any car"
-				prefixIcon={CarIcon}
-				onChange={thing => {
-					setValue(thing);
-					action('onChange')(thing);
-				}}
-			/>
+	useEffect(() => {
+		setSuggestions(
+			value.text === ''
+				? mockSuggestions.map(item => ({ text: item }))
+				: mockSuggestions
+						.filter(item =>
+							item
+								.toLowerCase()
+								.startsWith(value.text.toLowerCase()),
+						)
+						.map(item => ({ text: item })),
 		);
-	};
+	}, [value.text]);
 
-	return <Impl />;
-});
+	return (
+		<AutoSuggest
+			name="example"
+			placeholder="Pick an exotic car brand"
+			value={value}
+			suggestions={[
+				{
+					text: 'Skip me',
+					skip: true,
+				},
+				...suggestions,
+			]}
+			hintText="Pick a car, any car"
+			prefixIcon={CarIcon}
+			onChange={thing => {
+				setValue(thing);
+				action('onChange')(thing);
+			}}
+		/>
+	);
+};
+
+export const Standard = () => <Impl />;
+
+export const WithNoItems = () => (
+	<AutoSuggest
+		value={null}
+		suggestions={[]}
+		name="test"
+		placeholder="Pick nothing..."
+	/>
+);
+
+export const InsideModal = () => (
+	<StandardModal isOpen title="Test inside modal">
+		<div style={{ padding: 20 }}>
+			<Impl />
+		</div>
+	</StandardModal>
+);
+
+InsideModal.story = {
+	parameters: {
+		chromatic: { disable: true },
+	},
+};

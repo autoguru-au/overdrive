@@ -64,7 +64,7 @@ type Actions =
 interface Props<PayloadType>
 	extends Omit<
 		ComponentPropsWithoutRef<typeof TextInput>,
-		'onChange' | 'value'
+		'onChange' | 'value' | 'type'
 	> {
 	value: AutoSuggestValue<PayloadType>;
 	suggestions: Array<AutoSuggestValue<PayloadType>>;
@@ -189,7 +189,7 @@ export const AutoSuggest = <PayloadType extends unknown>({
 		isFlyoutOpen: false,
 	});
 
-	const shouldOpenFlyout = state.isFlyoutOpen && suggestions.length > -1;
+	const shouldOpenFlyout = suggestions.length > 0 && state.isFlyoutOpen;
 
 	useLayoutSuggestionVisible(
 		state.highlightIndex,
@@ -217,7 +217,7 @@ export const AutoSuggest = <PayloadType extends unknown>({
 						  )
 						: void 0
 				}
-				value={state.previewText || value.text}
+				value={state.previewText || value?.text}
 				onChange={event => {
 					dispatch({ type: ActionTypes.INPUT_CHANGE });
 					if (typeof onChange === 'function')
