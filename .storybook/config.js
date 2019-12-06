@@ -17,6 +17,7 @@ addParameters({
 			appBg: '#f7f9fc',
 			textColor: '#2e324d',
 		}),
+		showNav: true,
 	},
 	backgrounds: [
 		{ name: 'light', value: '#f7f9fc' },
