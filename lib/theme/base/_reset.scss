@@ -164,3 +164,11 @@ body {
 		*/
 	-webkit-text-size-adjust: none;
 }
+
+button {
+	cursor: pointer;
+	user-select: none;
+	border: none;
+	outline: none;
+	background: none;
+}
