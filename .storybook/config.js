@@ -18,6 +18,11 @@ addParameters({
 			textColor: '#2e324d',
 		}),
 		showNav: true,
+		storySort([, { id: idA }], [, { id: idB }]) {
+			if (idA > idB) return 1;
+			if (idB > idA) return -1;
+			return 0;
+		},
 	},
 	backgrounds: [
 		{ name: 'light', value: '#f7f9fc' },
