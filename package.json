@@ -134,7 +134,7 @@
     "prettier": "^1.18.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "renovate-config-autoguru": "^1.0.48",
+    "renovate-config-autoguru": "^1.0.83",
     "resolve-url-loader": "^3.1.0",
     "rimraf": "^3.0.0",
     "sass-loader": "^8.0.0",
@@ -149,7 +149,7 @@
     "stylelint-scss": "^3.11.0",
     "tslib": "^1.10.0",
     "typescript": "3.7.3",
-    "webpack": "^4.41.2",
+    "webpack": "^4.41.3",
     "write": "^2.0.0"
   },
   "peerDependencies": {
