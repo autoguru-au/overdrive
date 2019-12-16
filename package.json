@@ -73,7 +73,7 @@
   },
   "devDependencies": {
     "@autoguru/babel-preset": "^1.0.82",
-    "@autoguru/commitlint-config": "^1.0.53",
+    "@autoguru/commitlint-config": "^1.0.54",
     "@autoguru/eslint-plugin": "^1.0.82",
     "@autoguru/jest-preset": "^1.0.82",
     "@autoguru/tsconfig": "^1.0.77",
