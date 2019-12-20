@@ -2,13 +2,17 @@ import { wrapEvent } from '@autoguru/utilities';
 import clsx from 'clsx';
 import React, {
 	ComponentPropsWithoutRef,
+	forwardRef,
 	FunctionComponent,
+	MutableRefObject,
 	ReactElement,
 	Reducer,
 	useCallback,
 	useReducer,
 	useRef,
+	useState,
 } from 'react';
+import { createPortal } from 'react-dom';
 
 import { useId } from '../../utils/useId';
 import { usingPositioner } from '../Positioner';
@@ -66,6 +70,7 @@ interface Props<PayloadType>
 		ComponentPropsWithoutRef<typeof TextInput>,
 		'onChange' | 'value' | 'type'
 	> {
+	autoFocus?: boolean;
 	value: AutoSuggestValue<PayloadType>;
 	suggestions: Array<AutoSuggestValue<PayloadType>>;
 
@@ -75,6 +80,52 @@ interface Props<PayloadType>
 }
 
 export const AutoSuggest = <PayloadType extends unknown>({
+	autoFocus = false,
+	suggestions,
+	value,
+	onChange,
+	itemRenderer = defaultItemRenderer,
+	onBlur: incomingOnBlur,
+	onFocus: incomingOnFocus,
+	onKeyDown,
+	onClick,
+	...textInputProps
+}: Props<PayloadType>): ReturnType<FunctionComponent<Props<PayloadType>>> => {
+	const [isFullScreen] = useState<boolean>(true);
+	const [isFocused, setIsFocused] = useState<boolean>(false);
+
+	const props = {
+		suggestions,
+		value,
+		onChange,
+		itemRenderer,
+		onKeyDown,
+		onClick,
+		onFocus: wrapEvent(() => setIsFocused(true), incomingOnFocus),
+		onBlur: wrapEvent(() => setIsFocused(false), incomingOnBlur),
+		...textInputProps,
+	};
+
+	return isFullScreen && isFocused ? (
+		createPortal(
+			<div className={styles.fullScreenRoot}>
+				<AutoSuggestInput {...props} autoFocus inlineOptions />
+			</div>,
+			document.body,
+		)
+	) : (
+		<AutoSuggestInput
+			{...props}
+			autoFocus={autoFocus}
+			inlineOptions={false}
+		/>
+	);
+};
+
+const AutoSuggestInput = <PayloadType extends unknown>({
+	className = '',
+	inlineOptions = false,
+	autoFocus,
 	suggestions,
 	value,
 	onChange,
@@ -84,7 +135,10 @@ export const AutoSuggest = <PayloadType extends unknown>({
 	onKeyDown,
 	onClick,
 	...textInputProps
-}: Props<PayloadType>): ReturnType<FunctionComponent<Props<PayloadType>>> => {
+}: Props<PayloadType> & {
+	className?: string;
+	inlineOptions?: boolean;
+}): ReturnType<FunctionComponent<Props<PayloadType>>> => {
 	const triggerRef = useRef<HTMLDivElement>();
 	const highlightRef = useRef<HTMLLIElement>();
 	const suggestionListRef = useRef<HTMLUListElement>();
@@ -199,12 +253,14 @@ export const AutoSuggest = <PayloadType extends unknown>({
 
 	return (
 		<div
+			className={className}
 			role="combobox"
 			aria-haspopup="listbox"
 			aria-expanded={shouldOpenFlyout}
 			aria-owns={shouldOpenFlyout ? suggestionListId : void 0}
 			aria-label={textInputProps.placeholder}>
 			<TextInput
+				autoFocus={autoFocus}
 				wrapperRef={triggerRef}
 				{...textInputProps}
 				aria-autocomplete="list"
@@ -275,76 +331,131 @@ export const AutoSuggest = <PayloadType extends unknown>({
 				}, onKeyDown)}
 			/>
 
-			<SuggestionListFlyout
-				triggerRef={triggerRef}
-				alignment={EAlignment.BOTTOM}
-				isOpen={shouldOpenFlyout}
-				triggerOffset={4}
-				onRequestClose={() => {
-					dispatch({
-						type: ActionTypes.FLYOUT_CLOSE,
-					});
-				}}>
-				<ul
-					ref={suggestionListRef}
-					className={styles.suggestionList}
-					id={suggestionListId}
-					aria-label={textInputProps.placeholder}
-					role="listbox">
-					<div style={{ height: 'var(--global--space--1)' }} />
-					{suggestions.map((suggestion, idx) => {
-						const highlight = state.highlightIndex === idx;
-
-						return (
-							<li
-								key={suggestion.text.concat(String(idx))}
-								ref={highlight ? highlightRef : void 0}
-								id={getSuggestionId(suggestionListId, idx)}
-								role="option"
-								aria-selected={highlight}
-								aria-label={suggestion.text}
-								onMouseDown={event =>
-									/* This is so a blur doesnt fire from the input when you click */
-									event.preventDefault()
-								}
-								onMouseMove={() => {
-									if (suggestion.skip) return;
-
-									/*
-									This has to be mouse move, so if you're hovering an item, and then arrow keys, we =
-									dont want yo trigger a mouse enter and highlight it instead
-									 */
-									dispatch({
-										type:
-											ActionTypes.SUGGESTION_MOUSE_ENTER,
-										index: idx,
-									});
-								}}
-								onClick={() => {
-									if (suggestion.skip) return;
-
-									if (typeof onChange === 'function')
-										onChange(suggestion);
-
-									dispatch({
-										type:
-											ActionTypes.SUGGESTION_MOUSE_CLICK,
-									});
-								}}>
-								{itemRenderer({
-									suggestions,
-									highlight,
-									value: suggestion,
-								})}
-							</li>
-						);
-					})}
-					<div style={{ height: 'var(--global--space--1)' }} />
-				</ul>
-			</SuggestionListFlyout>
+			{inlineOptions ? (
+				<SuggestionsList
+					suggestionListId={suggestionListId}
+					placeholder={textInputProps.placeholder}
+					highlightIndex={state.highlightIndex}
+					suggestions={suggestions}
+					highlightRef={highlightRef}
+					itemRenderer={itemRenderer}
+					className={styles.inlineOptions}
+					dispatch={dispatch}
+					onChange={onChange}
+				/>
+			) : (
+				<SuggestionListFlyout
+					triggerRef={triggerRef}
+					alignment={EAlignment.BOTTOM}
+					isOpen={shouldOpenFlyout}
+					triggerOffset={4}
+					onRequestClose={() => {
+						dispatch({
+							type: ActionTypes.FLYOUT_CLOSE,
+						});
+					}}>
+					<SuggestionsList
+						suggestionListId={suggestionListId}
+						placeholder={textInputProps.placeholder}
+						highlightIndex={state.highlightIndex}
+						suggestions={suggestions}
+						highlightRef={highlightRef}
+						itemRenderer={itemRenderer}
+						dispatch={dispatch}
+						onChange={onChange}
+					/>
+				</SuggestionListFlyout>
+			)}
 		</div>
 	);
 };
+
+/* Interface SuggestionProps<PayloadType> extends Pick<Props<PayloadType>, 'suggestions'>{
+	className?: string;
+	suggestionListId: string;
+	placeholder: string;
+	highlightIndex: number;
+} */
+interface SuggestionProps {
+	className?: string;
+	suggestionListId: string;
+	placeholder: string;
+	highlightIndex: number;
+	suggestions: any[];
+	highlightRef: MutableRefObject<HTMLLIElement>;
+}
+
+const SuggestionsList = forwardRef<HTMLUListElement, SuggestionProps & any>(
+	(
+		{
+			className = '',
+			suggestionListId,
+			placeholder,
+			highlightIndex,
+			suggestions,
+			highlightRef,
+			itemRenderer,
+			onChange,
+			dispatch,
+		},
+		suggestionListRef,
+	) => (
+		<ul
+			ref={suggestionListRef}
+			className={clsx(styles.suggestionList, className)}
+			id={suggestionListId}
+			aria-label={placeholder}
+			role="listbox">
+			<div style={{ height: 'var(--global--space--1)' }} />
+			{suggestions.map((suggestion, idx) => {
+				const highlight = highlightIndex === idx;
+
+				return (
+					<li
+						key={suggestion.text.concat(String(idx))}
+						ref={highlight ? highlightRef : void 0}
+						id={getSuggestionId(suggestionListId, idx)}
+						role="option"
+						aria-selected={highlight}
+						aria-label={suggestion.text}
+						onMouseDown={event =>
+							/* This is so a blur doesnt fire from the input when you click */
+							event.preventDefault()
+						}
+						onMouseMove={() => {
+							if (suggestion.skip) return;
+
+							/*
+						This has to be mouse move, so if you're hovering an item, and then arrow keys, we =
+						dont want yo trigger a mouse enter and highlight it instead
+						 */
+							dispatch({
+								type: ActionTypes.SUGGESTION_MOUSE_ENTER,
+								index: idx,
+							});
+						}}
+						onClick={() => {
+							if (suggestion.skip) return;
+
+							if (typeof onChange === 'function')
+								onChange(suggestion);
+
+							dispatch({
+								type: ActionTypes.SUGGESTION_MOUSE_CLICK,
+							});
+						}}>
+						{itemRenderer({
+							suggestions,
+							highlight,
+							value: suggestion,
+						})}
+					</li>
+				);
+			})}
+			<div style={{ height: 'var(--global--space--1)' }} />
+		</ul>
+	),
+);
 
 const getSuggestionId = (id: string, index: number) => `${id}-option-${index}`;
 

@@ -1,5 +1,16 @@
 @import '../../theme/tokens/facade';
 
+.fullScreenRoot {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10;
+	background-color: white;
+	padding: var(--global--space--3);
+}
+
 .flyout {
 	border: 1px solid getColour(gray, 300);
 	border-radius: var(--global--space--1);
@@ -15,6 +26,11 @@
 	-webkit-overflow-scrolling: touch;
 	grid-auto-flow: row;
 	grid-gap: 0;
+
+	&.inlineOptions {
+		overflow-y: visible;
+		max-height: none;
+	}
 }
 
 .suggestion {

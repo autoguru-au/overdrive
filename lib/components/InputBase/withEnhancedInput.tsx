@@ -36,6 +36,7 @@ export interface EnhanceInputPrimitiveProps extends AriaAttributes {
 	id?: string;
 	value?: string;
 	hintText?: string;
+	autoFocus?: boolean;
 	disabled?: boolean;
 	prefixIcon?: IconType;
 	suffixIcon?: IconType;
@@ -109,6 +110,7 @@ export const withEnhancedInput = <
 				prefixIcon,
 				suffixIcon,
 				wrapperRef,
+				autoFocus,
 				...rest
 			},
 			ref,
@@ -174,6 +176,7 @@ export const withEnhancedInput = <
 					id,
 					disabled,
 					value,
+					autoFocus,
 					className: styles.input,
 					ref,
 				},
