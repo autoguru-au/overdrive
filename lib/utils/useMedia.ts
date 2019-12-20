@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+
 import { useLayoutEffect, useState } from 'react';
 
 import { useOverdriveContext } from '../components/OverdriveProvider';
@@ -10,7 +12,7 @@ export const useMedia = (
 	const theme = useTheme();
 	const { isServer } = useOverdriveContext();
 
-	if (isServer) queries.map(() => fallbackCase);
+	if (isServer) return queries.map(() => fallbackCase);
 
 	const [matches, setMatches] = useState([]);
 

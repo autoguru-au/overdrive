@@ -1,6 +1,6 @@
-type Breakpoint = 'mobile' | 'desktop' | 'tablet' | 'largeDesktop';
+type Breakpoint = 'mobile' | 'tablet' | 'desktop' | 'largeDesktop';
 
-interface Theme extends Readonly<Tokens> {}
+interface Theme extends Tokens {}
 
 interface Tokens {
 	breakpoints: Record<Breakpoint, [number, number]>;
