@@ -23,8 +23,7 @@ export const OverdriveProvider: FunctionComponent<Props> = ({
 	isServer,
 	children,
 }) => (
-	<overdriveContext.Provider
-		value={useMemo(() => ({ isServer }), [isServer])}>
+	<overdriveContext.Provider value={useMemo(() => ({ isServer }), [])}>
 		<ThemeProvider theme={theme}>{children}</ThemeProvider>
 	</overdriveContext.Provider>
 );

@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 
-import { useLayoutEffect, useState } from 'react';
+import { useCallback, useLayoutEffect, useMemo, useState } from 'react';
 
 import { useOverdriveContext } from '../components/OverdriveProvider';
 import { useTheme } from '../components/ThemeProvider';
@@ -14,32 +14,30 @@ export const useMedia = (
 
 	if (isServer) return queries.map(() => fallbackCase);
 
-	const [matches, setMatches] = useState([]);
+	const getQueries = useCallback(
+		() =>
+			queries.map(media => makeQueryString(...theme.breakpoints[media])),
+		[theme],
+	);
+	const matchesInit = useMemo(
+		() => getQueries().map(query => window.matchMedia(query).matches),
+		[getQueries],
+	);
+	const [matches, setMatches] = useState<readonly boolean[]>(matchesInit);
 
 	useLayoutEffect(() => {
 		let isMounted = true;
 
-		const matches = queries.map(media => {
-			const thisBP = theme.breakpoints[media];
-
-			const hasMax = thisBP[1] !== null;
-			const query = `screen and (min-width: ${thisBP[0]}px${
-				hasMax ? ` and max-width: ${thisBP[1] - 1}px` : ''
-			})`;
-
-			return window.matchMedia(query);
-		});
-
-		// Set all initial
-		setMatches(matches.map(matcher => matcher.matches));
+		const matchers = getQueries().map(query => window.matchMedia(query));
 
 		// Add listeners
-		const handlers = matches.map((matcher, idx) => {
+		const handlers = matchers.map((matcher, idx) => {
 			const handler = (e: MediaQueryListEvent) => {
 				if (!isMounted) return;
 				setMatches(prevState => {
-					prevState[idx] = e.matches;
-					return prevState;
+					const newState = prevState.slice();
+					newState[idx] = e.matches;
+					return newState;
 				});
 			};
 
@@ -54,4 +52,11 @@ export const useMedia = (
 	}, [...queries, theme]);
 
 	return matches;
+};
+
+const makeQueryString = (min, max = null) => {
+	const hasMax = max !== null;
+	return `screen and (min-width: ${min}px${
+		hasMax ? ` and max-width: ${max - 1}px` : ''
+	})`;
 };
