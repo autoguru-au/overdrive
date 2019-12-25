@@ -83,7 +83,7 @@ export const container = () => {
 				duration,
 			};
 
-			if (portalInstance === null || typeof dispatchFn === 'undefined') {
+			if (portalInstance ?? typeof dispatchFn === 'undefined') {
 				preMountQueue.push(config);
 			} else {
 				dispatchFn({ type: ActionTypes.ADD, config });

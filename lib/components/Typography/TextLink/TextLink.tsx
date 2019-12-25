@@ -56,7 +56,7 @@ export const TextLink: RefForwardingComponent<
 			return (
 				<a
 					ref={ref as any}
-					rel={props.rel || 'noopener noreferrer'}
+					rel={props.rel ?? 'noopener noreferrer'}
 					className={clsx(className, styles.anchor)}
 					{...props}>
 					{body}

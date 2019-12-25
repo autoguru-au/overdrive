@@ -31,7 +31,7 @@ export type AutoSuggestItemRenderer<PayloadType> = (props: {
 }) => ReactElement;
 
 interface State {
-	previewText: string;
+	previewText: string | null;
 	highlightIndex: number;
 	isFlyoutOpen: boolean;
 }
@@ -217,7 +217,7 @@ export const AutoSuggest = <PayloadType extends unknown>({
 						  )
 						: void 0
 				}
-				value={state.previewText || value?.text}
+				value={state.previewText ?? value?.text}
 				onChange={event => {
 					dispatch({ type: ActionTypes.INPUT_CHANGE });
 					if (typeof onChange === 'function')

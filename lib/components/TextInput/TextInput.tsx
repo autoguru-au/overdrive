@@ -11,7 +11,7 @@ export const TextInput = withEnhancedInput<
 			{...field}
 			{...rest}
 			autoComplete="off"
-			type={rest.type || 'text'}
+			type={rest.type ?? 'text'}
 		/>
 	),
 	{
