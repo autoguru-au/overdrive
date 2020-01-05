@@ -105,7 +105,7 @@
     "acorn-walk": "^7.0.0",
     "autoprefixer": "^9.6.5",
     "awesome-typescript-loader": "^5.2.1",
-    "babel-loader": "^8.0.5",
+    "babel-loader": "^8.0.6",
     "browserslist-config-autoguru": "^1.0.82",
     "concurrently": "^5.0.2",
     "copyfiles": "^2.1.1",
