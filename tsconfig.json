@@ -14,7 +14,6 @@
 	},
 	"include": [
 		"./global.d.ts",
-		"./lib/themes/theme.d.ts",
 		"./index.ts",
 		"./lib/**/*.ts",
 		"./lib/**/*.tsx"

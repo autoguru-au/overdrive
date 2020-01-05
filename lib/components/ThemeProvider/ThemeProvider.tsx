@@ -6,17 +6,15 @@ import React, {
 	useContext,
 } from 'react';
 
-const themeContext = createContext<Theme>(null);
+import { Tokens } from '../../themes/tokens';
+
+const themeContext = createContext<Tokens>(null);
 
 // TODO: Eventually this will be replaced with treat
-export const ThemeProvider: FunctionComponent<{ theme: Theme }> = ({
+export const ThemeProvider: FunctionComponent<{ theme: Tokens }> = ({
 	theme,
 	children,
-}) => {
-	return (
-		<themeContext.Provider value={theme}>{children}</themeContext.Provider>
-	);
-};
+}) => <themeContext.Provider value={theme}>{children}</themeContext.Provider>;
 
 export const useTheme = (): ContextType<typeof themeContext> => {
 	const ctx = useContext(themeContext);

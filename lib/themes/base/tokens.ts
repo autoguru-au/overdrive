@@ -1,4 +1,6 @@
-export const tokens: Theme = {
+import { Tokens } from '../tokens';
+
+export const tokens: Tokens = {
 	breakpoints: {
 		mobile: [0, 650],
 		tablet: [650, 850],

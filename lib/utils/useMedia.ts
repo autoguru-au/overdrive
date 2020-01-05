@@ -4,9 +4,10 @@ import { useCallback, useLayoutEffect, useMemo, useState } from 'react';
 
 import { useOverdriveContext } from '../components/OverdriveProvider';
 import { useTheme } from '../components/ThemeProvider';
+import { Tokens } from '../themes/tokens';
 
 export const useMedia = (
-	queries: ReadonlyArray<keyof Theme['breakpoints']>,
+	queries: ReadonlyArray<keyof Tokens['breakpoints']>,
 	fallbackCase = false,
 ): readonly boolean[] => {
 	const theme = useTheme();
@@ -16,7 +17,10 @@ export const useMedia = (
 
 	const getQueries = useCallback(
 		() =>
-			queries.map(media => makeQueryString(...theme.breakpoints[media])),
+			queries.map(media => {
+				const [min, max] = theme.breakpoints[media];
+				return makeQueryString(min, max);
+			}),
 		[theme],
 	);
 	const matchesInit = useMemo(

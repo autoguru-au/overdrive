@@ -1,1 +1,5 @@
-export { tokens as default } from './tokens';
+import { tokens } from './tokens';
+
+export default {
+	tokens,
+};
