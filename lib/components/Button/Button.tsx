@@ -109,7 +109,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 				{isSingleIconChild ? (
 					<Icon
 						icon={maybeIconProps.icon}
-						size={maybeIconProps.size || 20}
+						size={maybeIconProps.size ?? 20}
 						{...maybeIconProps}
 					/>
 				) : (

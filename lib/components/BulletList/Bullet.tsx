@@ -19,7 +19,7 @@ export const Bullet: FunctionComponent<Props> = ({ children, className }) => (
 	<li
 		className={clsx(
 			styles.root,
-			bulletMap[useContext(BulletListContext)] || '',
+			bulletMap[useContext(BulletListContext)] ?? '',
 			{
 				[styles.noDot]:
 					isValidElement(children) && children.type === BulletList,
