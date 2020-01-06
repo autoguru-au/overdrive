@@ -80,7 +80,7 @@
     "@babel/core": "^7.7.7",
     "@babel/plugin-proposal-optional-chaining": "^7.7.5",
     "@babel/runtime-corejs3": "^7.7.7",
-    "@commitlint/cli": "^8.2.0",
+    "@commitlint/cli": "^8.3.4",
     "@octokit/rest": "^16.36.0",
     "@semantic-release/commit-analyzer": "^6.3.3",
     "@semantic-release/github": "^5.5.5",
