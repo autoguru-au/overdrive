@@ -4,21 +4,21 @@ import React from 'react';
 import { OverdriveProvider } from '../components/OverdriveProvider';
 import { useMedia } from './useMedia';
 
-const render = (hook, theme, isServer) =>
+const render = (hook, tokens, isServer) =>
 	renderHook(hook, {
 		wrapper({ children }) {
 			return (
-				<OverdriveProvider theme={theme} isServer={isServer}>
+				<OverdriveProvider theme={{ tokens }} isServer={isServer}>
 					{children}
 				</OverdriveProvider>
 			);
 		},
 	});
 
-const makeTheme = () => ({
+const makeTokens = () => ({
 	breakpoints: {
-		desktop: [0, 400],
-		mobile: [401, null],
+		mobile: '(min-width: 401px)',
+		desktop: '(max-width: 400px)',
 	},
 });
 
@@ -39,7 +39,7 @@ describe('useMedia', () => {
 	it('should match to false on a server when passed false', () => {
 		const { result } = render(
 			() => useMedia(['desktop'], false),
-			makeTheme(),
+			makeTokens(),
 			true,
 		);
 
@@ -49,7 +49,7 @@ describe('useMedia', () => {
 	it('should match true on server when true passed', () => {
 		const { result } = render(
 			() => useMedia(['desktop'], true),
-			makeTheme(),
+			makeTokens(),
 			true,
 		);
 
@@ -63,7 +63,7 @@ describe('useMedia', () => {
 
 		const { result } = render(
 			() => useMedia(['desktop']),
-			makeTheme(),
+			makeTokens(),
 			false,
 		);
 
@@ -77,7 +77,7 @@ describe('useMedia', () => {
 
 		const { result } = render(
 			() => useMedia(['desktop'], false),
-			makeTheme(),
+			makeTokens(),
 			true,
 		);
 
@@ -91,7 +91,7 @@ describe('useMedia', () => {
 
 		const { result } = render(
 			() => useMedia(['desktop', 'mobile']),
-			makeTheme(),
+			makeTokens(),
 			false,
 		);
 
@@ -105,7 +105,7 @@ describe('useMedia', () => {
 
 		const { unmount } = render(
 			() => useMedia(['desktop', 'mobile']),
-			makeTheme(),
+			makeTokens(),
 			false,
 		);
 

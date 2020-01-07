@@ -2,9 +2,9 @@ import { Tokens } from '../tokens';
 
 export const tokens: Tokens = {
 	breakpoints: {
-		mobile: [0, 650],
-		tablet: [651, 1000],
-		desktop: [1001, null],
-		largeDesktop: [1201, null],
+		mobile: '(max-width: 650px)',
+		tablet: '(min-width: 651px) and (max-width: 1000px)',
+		desktop: '(min-width: 1001px)',
+		largeDesktop: '(min-width: 1201px)',
 	},
 };
