@@ -93,7 +93,6 @@ export const AutoSuggest = <PayloadType extends unknown>({
 	...textInputProps
 }: Props<PayloadType>): ReturnType<FunctionComponent<Props<PayloadType>>> => {
 	const [isDesktop] = useMedia(['desktop'], false);
-	const isFullScreen = !isDesktop;
 	const [isFocused, setIsFocused] = useState<boolean>(false);
 
 	const props = {
@@ -108,7 +107,7 @@ export const AutoSuggest = <PayloadType extends unknown>({
 		...textInputProps,
 	};
 
-	return isFullScreen && isFocused ? (
+	return !isDesktop && isFocused ? (
 		createPortal(
 			<div className={styles.fullScreenRoot}>
 				<AutoSuggestInput {...props} autoFocus inlineOptions />
