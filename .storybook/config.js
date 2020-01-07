@@ -4,9 +4,24 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { withA11y } from '@storybook/addon-a11y';
 
 import './global.scss';
+import { createElement } from 'react';
+import { OverdriveProvider } from '../lib/components/OverdriveProvider';
+import { baseTheme } from '../lib/themes';
 
 addDecorator(withKnobs);
 addDecorator(withA11y);
+
+// TODO: Allow for swapping themes with storybook?
+addDecorator(story =>
+	createElement(
+		OverdriveProvider,
+		{
+			theme: baseTheme,
+			isServer: false,
+		},
+		story(),
+	),
+);
 
 addParameters({
 	options: {
