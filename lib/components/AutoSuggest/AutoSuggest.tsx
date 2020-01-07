@@ -14,6 +14,7 @@ import React, {
 } from 'react';
 import { createPortal } from 'react-dom';
 
+import { useMedia } from '../..';
 import { useId } from '../../utils/useId';
 import { usingPositioner } from '../Positioner';
 import { EAlignment } from '../Positioner/alignment';
@@ -91,7 +92,8 @@ export const AutoSuggest = <PayloadType extends unknown>({
 	onClick,
 	...textInputProps
 }: Props<PayloadType>): ReturnType<FunctionComponent<Props<PayloadType>>> => {
-	const [isFullScreen] = useState<boolean>(true);
+	const [isDesktop] = useMedia(['desktop'], false);
+	const isFullScreen = !isDesktop;
 	const [isFocused, setIsFocused] = useState<boolean>(false);
 
 	const props = {
