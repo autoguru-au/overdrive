@@ -1,3 +1,4 @@
+import { CloseIcon } from '@autoguru/icons';
 import { wrapEvent } from '@autoguru/utilities';
 import clsx from 'clsx';
 import React, {
@@ -14,7 +15,7 @@ import React, {
 } from 'react';
 import { createPortal } from 'react-dom';
 
-import { useMedia } from '../..';
+import { Button, EButtonSize, Icon, useMedia } from '../..';
 import { useId } from '../../utils/useId';
 import { usingPositioner } from '../Positioner';
 import { EAlignment } from '../Positioner/alignment';
@@ -107,10 +108,19 @@ export const AutoSuggest = <PayloadType extends unknown>({
 		...textInputProps,
 	};
 
+	const closeModal = useCallback(() => setIsFocused(false), [setIsFocused]);
+
 	return !isDesktop && isFocused ? (
 		createPortal(
 			<div className={styles.fullScreenRoot}>
 				<AutoSuggestInput {...props} autoFocus inlineOptions />
+				<Button
+					minimal
+					rounded
+					size={EButtonSize.Medium}
+					onClick={closeModal}>
+					<Icon icon={CloseIcon} />
+				</Button>
 			</div>,
 			document.body,
 		)
@@ -371,12 +381,6 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 	);
 };
 
-/* Interface SuggestionProps<PayloadType> extends Pick<Props<PayloadType>, 'suggestions'>{
-	className?: string;
-	suggestionListId: string;
-	placeholder: string;
-	highlightIndex: number;
-} */
 interface SuggestionProps {
 	className?: string;
 	suggestionListId: string;

@@ -9,6 +9,9 @@
 	z-index: 10;
 	background-color: white;
 	padding: var(--global--space--3);
+	display: grid;
+	grid-gap: var(--global--space--1);
+	grid-template-columns: 1fr auto;
 }
 
 .flyout {
