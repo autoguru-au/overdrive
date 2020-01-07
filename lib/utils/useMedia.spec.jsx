@@ -18,7 +18,7 @@ const render = (hook, theme, isServer) =>
 const makeTheme = () => ({
 	breakpoints: {
 		desktop: [0, 400],
-		mobile: [400, null],
+		mobile: [401, null],
 	},
 });
 
@@ -57,7 +57,7 @@ describe('useMedia', () => {
 	});
 
 	it('should allow mocked #matchMedia', () => {
-		const { mock } = createMatchMedia('399');
+		const { mock } = createMatchMedia('400');
 
 		window.matchMedia = mock;
 
@@ -70,8 +70,22 @@ describe('useMedia', () => {
 		expect(result.current).toEqual([true]);
 	});
 
-	it('should allow more than media, but only match', () => {
-		const { mock } = createMatchMedia('399');
+	it('should use the fallback case when matchMedia would return true', () => {
+		const { mock } = createMatchMedia('400');
+
+		window.matchMedia = mock;
+
+		const { result } = render(
+			() => useMedia(['desktop'], false),
+			makeTheme(),
+			true,
+		);
+
+		expect(result.current).toEqual([false]);
+	});
+
+	it('should allow more than media, but only match for those that are true', () => {
+		const { mock } = createMatchMedia('400');
 
 		window.matchMedia = mock;
 

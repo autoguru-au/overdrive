@@ -34,8 +34,7 @@ export const useMedia = (
 
 		const matchers = getQueries().map(query => window.matchMedia(query));
 
-		// Add listeners
-		const handlers = matchers.map((matcher, idx) => {
+		const removeHandlersFn = matchers.map((matcher, idx) => {
 			const handler = (e: MediaQueryListEvent) => {
 				if (!isMounted) return;
 				setMatches(prevState => {
@@ -51,7 +50,7 @@ export const useMedia = (
 
 		return () => {
 			isMounted = false;
-			handlers.forEach(item => item());
+			removeHandlersFn.forEach(item => item());
 		};
 	}, [...queries, theme]);
 
@@ -61,6 +60,6 @@ export const useMedia = (
 const makeQueryString = (min, max = null) => {
 	const hasMax = max !== null;
 	return `screen and (min-width: ${min}px${
-		hasMax ? ` and max-width: ${max - 1}px` : ''
+		hasMax ? ` and max-width: ${max}px` : ''
 	})`;
 };
