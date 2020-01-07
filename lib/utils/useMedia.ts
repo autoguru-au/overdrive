@@ -16,17 +16,15 @@ export const useMedia = (
 	if (isServer) return queries.map(() => fallbackCase);
 
 	const getQueries = useCallback(
-		() =>
-			queries.map(media => {
-				const [min, max] = theme.breakpoints[media];
-				return makeQueryString(min, max);
-			}),
+		() => queries.map(media => theme.breakpoints[media]),
 		[theme],
 	);
+
 	const matchesInit = useMemo(
 		() => getQueries().map(query => window.matchMedia(query).matches),
 		[getQueries],
 	);
+
 	const [matches, setMatches] = useState<readonly boolean[]>(matchesInit);
 
 	useLayoutEffect(() => {
@@ -55,11 +53,4 @@ export const useMedia = (
 	}, [...queries, theme]);
 
 	return matches;
-};
-
-const makeQueryString = (min, max = null) => {
-	const hasMax = max !== null;
-	return `screen and (min-width: ${min}px${
-		hasMax ? ` and max-width: ${max}px` : ''
-	})`;
 };
