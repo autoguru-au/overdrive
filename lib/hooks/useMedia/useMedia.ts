@@ -2,9 +2,9 @@
 
 import { useCallback, useLayoutEffect, useMemo, useState } from 'react';
 
-import { useOverdriveContext } from '../components/OverdriveProvider';
-import { useTheme } from '../components/ThemeProvider';
-import { Tokens } from '../themes/tokens';
+import { useOverdriveContext } from '../../components/OverdriveProvider';
+import { useTheme } from '../../components/ThemeProvider';
+import { Tokens } from '../../themes/tokens';
 
 export const useMedia = (
 	queries: ReadonlyArray<keyof Tokens['breakpoints']>,

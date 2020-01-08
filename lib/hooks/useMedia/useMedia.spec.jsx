@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 import React from 'react';
 
-import { OverdriveProvider } from '../components/OverdriveProvider';
+import { OverdriveProvider } from '../../components/OverdriveProvider';
 import { useMedia } from './useMedia';
 
 const render = (hook, tokens, isServer) =>
