@@ -1,15 +1,22 @@
+import { CloseIcon } from '@autoguru/icons';
 import { wrapEvent } from '@autoguru/utilities';
 import clsx from 'clsx';
 import React, {
 	ComponentPropsWithoutRef,
+	Dispatch,
 	FunctionComponent,
+	MutableRefObject,
 	ReactElement,
 	Reducer,
+	Ref,
 	useCallback,
 	useReducer,
 	useRef,
+	useState,
 } from 'react';
+import { createPortal } from 'react-dom';
 
+import { Button, EButtonSize, Icon, useMedia } from '../..';
 import { useId } from '../../utils/useId';
 import { usingPositioner } from '../Positioner';
 import { EAlignment } from '../Positioner/alignment';
@@ -66,6 +73,7 @@ interface Props<PayloadType>
 		ComponentPropsWithoutRef<typeof TextInput>,
 		'onChange' | 'value' | 'type'
 	> {
+	autoFocus?: boolean;
 	value: AutoSuggestValue<PayloadType>;
 	suggestions: Array<AutoSuggestValue<PayloadType>>;
 
@@ -75,6 +83,61 @@ interface Props<PayloadType>
 }
 
 export const AutoSuggest = <PayloadType extends unknown>({
+	autoFocus = false,
+	suggestions,
+	value,
+	onChange,
+	itemRenderer = defaultItemRenderer,
+	onBlur: incomingOnBlur,
+	onFocus: incomingOnFocus,
+	onKeyDown,
+	onClick,
+	...textInputProps
+}: Props<PayloadType>): ReturnType<FunctionComponent<Props<PayloadType>>> => {
+	const [isDesktop] = useMedia(['desktop'], false);
+	const [isFocused, setIsFocused] = useState<boolean>(false);
+
+	const props = {
+		suggestions,
+		value,
+		onChange,
+		itemRenderer,
+		onKeyDown,
+		onClick,
+		onFocus: wrapEvent(() => setIsFocused(true), incomingOnFocus),
+		onBlur: wrapEvent(() => setIsFocused(false), incomingOnBlur),
+		...textInputProps,
+	};
+
+	const closeModal = useCallback(() => setIsFocused(false), [setIsFocused]);
+
+	return !isDesktop && isFocused ? (
+		createPortal(
+			<div className={styles.fullScreenRoot}>
+				<AutoSuggestInput {...props} autoFocus inlineOptions />
+				<Button
+					minimal
+					rounded
+					size={EButtonSize.Medium}
+					onClick={closeModal}>
+					<Icon icon={CloseIcon} />
+				</Button>
+			</div>,
+			document.body,
+		)
+	) : (
+		<AutoSuggestInput {...props} autoFocus={autoFocus} />
+	);
+};
+
+interface AutoSuggestInputProps<PayloadType extends unknown>
+	extends Props<PayloadType> {
+	inlineOptions?: boolean;
+}
+
+const AutoSuggestInput = <PayloadType extends unknown>({
+	inlineOptions = false,
+	autoFocus,
 	suggestions,
 	value,
 	onChange,
@@ -84,7 +147,9 @@ export const AutoSuggest = <PayloadType extends unknown>({
 	onKeyDown,
 	onClick,
 	...textInputProps
-}: Props<PayloadType>): ReturnType<FunctionComponent<Props<PayloadType>>> => {
+}: AutoSuggestInputProps<PayloadType>): ReturnType<FunctionComponent<
+	AutoSuggestInputProps<PayloadType>
+>> => {
 	const triggerRef = useRef<HTMLDivElement>();
 	const highlightRef = useRef<HTMLLIElement>();
 	const suggestionListRef = useRef<HTMLUListElement>();
@@ -205,6 +270,7 @@ export const AutoSuggest = <PayloadType extends unknown>({
 			aria-owns={shouldOpenFlyout ? suggestionListId : void 0}
 			aria-label={textInputProps.placeholder}>
 			<TextInput
+				autoFocus={autoFocus}
 				wrapperRef={triggerRef}
 				{...textInputProps}
 				aria-autocomplete="list"
@@ -275,76 +341,129 @@ export const AutoSuggest = <PayloadType extends unknown>({
 				}, onKeyDown)}
 			/>
 
-			<SuggestionListFlyout
-				triggerRef={triggerRef}
-				alignment={EAlignment.BOTTOM}
-				isOpen={shouldOpenFlyout}
-				triggerOffset={4}
-				onRequestClose={() => {
-					dispatch({
-						type: ActionTypes.FLYOUT_CLOSE,
-					});
-				}}>
-				<ul
-					ref={suggestionListRef}
-					className={styles.suggestionList}
-					id={suggestionListId}
-					aria-label={textInputProps.placeholder}
-					role="listbox">
-					<div style={{ height: 'var(--global--space--1)' }} />
-					{suggestions.map((suggestion, idx) => {
-						const highlight = state.highlightIndex === idx;
-
-						return (
-							<li
-								key={suggestion.text.concat(String(idx))}
-								ref={highlight ? highlightRef : void 0}
-								id={getSuggestionId(suggestionListId, idx)}
-								role="option"
-								aria-selected={highlight}
-								aria-label={suggestion.text}
-								onMouseDown={event =>
-									/* This is so a blur doesnt fire from the input when you click */
-									event.preventDefault()
-								}
-								onMouseMove={() => {
-									if (suggestion.skip) return;
-
-									/*
-									This has to be mouse move, so if you're hovering an item, and then arrow keys, we =
-									dont want yo trigger a mouse enter and highlight it instead
-									 */
-									dispatch({
-										type:
-											ActionTypes.SUGGESTION_MOUSE_ENTER,
-										index: idx,
-									});
-								}}
-								onClick={() => {
-									if (suggestion.skip) return;
-
-									if (typeof onChange === 'function')
-										onChange(suggestion);
-
-									dispatch({
-										type:
-											ActionTypes.SUGGESTION_MOUSE_CLICK,
-									});
-								}}>
-								{itemRenderer({
-									suggestions,
-									highlight,
-									value: suggestion,
-								})}
-							</li>
-						);
-					})}
-					<div style={{ height: 'var(--global--space--1)' }} />
-				</ul>
-			</SuggestionListFlyout>
+			{inlineOptions ? (
+				<SuggestionsList<PayloadType>
+					suggestionListRef={suggestionListRef}
+					suggestionListId={suggestionListId}
+					placeholder={textInputProps.placeholder}
+					highlightIndex={state.highlightIndex}
+					suggestions={suggestions}
+					highlightRef={highlightRef}
+					itemRenderer={itemRenderer}
+					className={styles.inlineOptions}
+					dispatch={dispatch}
+					onChange={onChange}
+				/>
+			) : (
+				<SuggestionListFlyout
+					triggerRef={triggerRef}
+					alignment={EAlignment.BOTTOM}
+					isOpen={shouldOpenFlyout}
+					triggerOffset={4}
+					onRequestClose={() => {
+						dispatch({
+							type: ActionTypes.FLYOUT_CLOSE,
+						});
+					}}>
+					<SuggestionsList<PayloadType>
+						suggestionListRef={suggestionListRef}
+						suggestionListId={suggestionListId}
+						placeholder={textInputProps.placeholder}
+						highlightIndex={state.highlightIndex}
+						suggestions={suggestions}
+						highlightRef={highlightRef}
+						itemRenderer={itemRenderer}
+						dispatch={dispatch}
+						onChange={onChange}
+					/>
+				</SuggestionListFlyout>
+			)}
 		</div>
 	);
 };
+
+interface SuggestionProps<PayloadType>
+	extends Pick<
+		Props<PayloadType>,
+		'suggestions' | 'itemRenderer' | 'onChange'
+	> {
+	className?: string;
+	suggestionListId: string;
+	placeholder: string;
+	highlightIndex: number;
+	dispatch: Dispatch<Actions>;
+	highlightRef: MutableRefObject<HTMLLIElement>;
+	suggestionListRef: Ref<HTMLUListElement>;
+}
+
+const SuggestionsList = <PayloadType extends unknown>({
+	className = '',
+	suggestionListId,
+	placeholder,
+	highlightIndex,
+	suggestions,
+	highlightRef,
+	itemRenderer,
+	onChange,
+	dispatch,
+	// TODO: For now the ref is passed as a prop, as opposed to using forwardRef
+	suggestionListRef,
+}: SuggestionProps<PayloadType>) => (
+	<ul
+		ref={suggestionListRef}
+		className={clsx(styles.suggestionList, className)}
+		id={suggestionListId}
+		aria-label={placeholder}
+		role="listbox">
+		<div style={{ height: 'var(--global--space--1)' }} />
+		{suggestions.map((suggestion, idx) => {
+			const highlight = highlightIndex === idx;
+
+			return (
+				<li
+					key={suggestion.text.concat(String(idx))}
+					ref={highlight ? highlightRef : void 0}
+					id={getSuggestionId(suggestionListId, idx)}
+					role="option"
+					aria-selected={highlight}
+					aria-label={suggestion.text}
+					onMouseDown={event =>
+						/* This is so a blur doesnt fire from the input when you click */
+						event.preventDefault()
+					}
+					onMouseMove={() => {
+						if (suggestion.skip) return;
+
+						/*
+					This has to be mouse move, so if you're hovering an item, and then arrow keys, we =
+					dont want yo trigger a mouse enter and highlight it instead
+					 */
+						dispatch({
+							type: ActionTypes.SUGGESTION_MOUSE_ENTER,
+							index: idx,
+						});
+					}}
+					onClick={() => {
+						if (suggestion.skip) return;
+
+						if (typeof onChange === 'function')
+							onChange(suggestion);
+
+						dispatch({
+							type: ActionTypes.SUGGESTION_MOUSE_CLICK,
+						});
+					}}>
+					{itemRenderer({
+						suggestions,
+						highlight,
+						value: suggestion,
+					})}
+				</li>
+			);
+		})}
+		<div style={{ height: 'var(--global--space--1)' }} />
+	</ul>
+);
 
 const getSuggestionId = (id: string, index: number) => `${id}-option-${index}`;
 
