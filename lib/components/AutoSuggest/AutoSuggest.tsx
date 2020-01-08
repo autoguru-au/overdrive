@@ -3,11 +3,12 @@ import { wrapEvent } from '@autoguru/utilities';
 import clsx from 'clsx';
 import React, {
 	ComponentPropsWithoutRef,
-	forwardRef,
+	Dispatch,
 	FunctionComponent,
 	MutableRefObject,
 	ReactElement,
 	Reducer,
+	Ref,
 	useCallback,
 	useReducer,
 	useRef,
@@ -125,16 +126,16 @@ export const AutoSuggest = <PayloadType extends unknown>({
 			document.body,
 		)
 	) : (
-		<AutoSuggestInput
-			{...props}
-			autoFocus={autoFocus}
-			inlineOptions={false}
-		/>
+		<AutoSuggestInput {...props} autoFocus={autoFocus} />
 	);
 };
 
+interface AutoSuggestInputProps<PayloadType extends unknown>
+	extends Props<PayloadType> {
+	inlineOptions?: boolean;
+}
+
 const AutoSuggestInput = <PayloadType extends unknown>({
-	className = '',
 	inlineOptions = false,
 	autoFocus,
 	suggestions,
@@ -146,10 +147,9 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 	onKeyDown,
 	onClick,
 	...textInputProps
-}: Props<PayloadType> & {
-	className?: string;
-	inlineOptions?: boolean;
-}): ReturnType<FunctionComponent<Props<PayloadType>>> => {
+}: AutoSuggestInputProps<PayloadType>): ReturnType<FunctionComponent<
+	AutoSuggestInputProps<PayloadType>
+>> => {
 	const triggerRef = useRef<HTMLDivElement>();
 	const highlightRef = useRef<HTMLLIElement>();
 	const suggestionListRef = useRef<HTMLUListElement>();
@@ -264,7 +264,6 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 
 	return (
 		<div
-			className={className}
 			role="combobox"
 			aria-haspopup="listbox"
 			aria-expanded={shouldOpenFlyout}
@@ -343,7 +342,8 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 			/>
 
 			{inlineOptions ? (
-				<SuggestionsList
+				<SuggestionsList<PayloadType>
+					suggestionListRef={suggestionListRef}
 					suggestionListId={suggestionListId}
 					placeholder={textInputProps.placeholder}
 					highlightIndex={state.highlightIndex}
@@ -365,7 +365,8 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 							type: ActionTypes.FLYOUT_CLOSE,
 						});
 					}}>
-					<SuggestionsList
+					<SuggestionsList<PayloadType>
+						suggestionListRef={suggestionListRef}
 						suggestionListId={suggestionListId}
 						placeholder={textInputProps.placeholder}
 						highlightIndex={state.highlightIndex}
@@ -381,85 +382,87 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 	);
 };
 
-interface SuggestionProps {
+interface SuggestionProps<PayloadType>
+	extends Pick<
+		Props<PayloadType>,
+		'suggestions' | 'itemRenderer' | 'onChange'
+	> {
 	className?: string;
 	suggestionListId: string;
 	placeholder: string;
 	highlightIndex: number;
-	suggestions: any[];
+	dispatch: Dispatch<Actions>;
 	highlightRef: MutableRefObject<HTMLLIElement>;
+	suggestionListRef: Ref<HTMLUListElement>;
 }
 
-const SuggestionsList = forwardRef<HTMLUListElement, SuggestionProps & any>(
-	(
-		{
-			className = '',
-			suggestionListId,
-			placeholder,
-			highlightIndex,
-			suggestions,
-			highlightRef,
-			itemRenderer,
-			onChange,
-			dispatch,
-		},
-		suggestionListRef,
-	) => (
-		<ul
-			ref={suggestionListRef}
-			className={clsx(styles.suggestionList, className)}
-			id={suggestionListId}
-			aria-label={placeholder}
-			role="listbox">
-			<div style={{ height: 'var(--global--space--1)' }} />
-			{suggestions.map((suggestion, idx) => {
-				const highlight = highlightIndex === idx;
+const SuggestionsList = <PayloadType extends unknown>({
+	className = '',
+	suggestionListId,
+	placeholder,
+	highlightIndex,
+	suggestions,
+	highlightRef,
+	itemRenderer,
+	onChange,
+	dispatch,
+	// TODO: For now the ref is passed as a prop, as opposed to using forwardRef
+	suggestionListRef,
+}: SuggestionProps<PayloadType>) => (
+	<ul
+		ref={suggestionListRef}
+		className={clsx(styles.suggestionList, className)}
+		id={suggestionListId}
+		aria-label={placeholder}
+		role="listbox">
+		<div style={{ height: 'var(--global--space--1)' }} />
+		{suggestions.map((suggestion, idx) => {
+			const highlight = highlightIndex === idx;
 
-				return (
-					<li
-						key={suggestion.text.concat(String(idx))}
-						ref={highlight ? highlightRef : void 0}
-						id={getSuggestionId(suggestionListId, idx)}
-						role="option"
-						aria-selected={highlight}
-						aria-label={suggestion.text}
-						onMouseDown={event =>
-							/* This is so a blur doesnt fire from the input when you click */
-							event.preventDefault()
-						}
-						onMouseMove={() => {
-							if (suggestion.skip) return;
+			return (
+				<li
+					key={suggestion.text.concat(String(idx))}
+					ref={highlight ? highlightRef : void 0}
+					id={getSuggestionId(suggestionListId, idx)}
+					role="option"
+					aria-selected={highlight}
+					aria-label={suggestion.text}
+					onMouseDown={event =>
+						/* This is so a blur doesnt fire from the input when you click */
+						event.preventDefault()
+					}
+					onMouseMove={() => {
+						if (suggestion.skip) return;
 
-							/*
-						This has to be mouse move, so if you're hovering an item, and then arrow keys, we =
-						dont want yo trigger a mouse enter and highlight it instead
-						 */
-							dispatch({
-								type: ActionTypes.SUGGESTION_MOUSE_ENTER,
-								index: idx,
-							});
-						}}
-						onClick={() => {
-							if (suggestion.skip) return;
+						/*
+					This has to be mouse move, so if you're hovering an item, and then arrow keys, we =
+					dont want yo trigger a mouse enter and highlight it instead
+					 */
+						dispatch({
+							type: ActionTypes.SUGGESTION_MOUSE_ENTER,
+							index: idx,
+						});
+					}}
+					onClick={() => {
+						if (suggestion.skip) return;
 
-							if (typeof onChange === 'function')
-								onChange(suggestion);
+						if (typeof onChange === 'function')
+							onChange(suggestion);
 
-							dispatch({
-								type: ActionTypes.SUGGESTION_MOUSE_CLICK,
-							});
-						}}>
-						{itemRenderer({
-							suggestions,
-							highlight,
-							value: suggestion,
-						})}
-					</li>
-				);
-			})}
-			<div style={{ height: 'var(--global--space--1)' }} />
-		</ul>
-	),
+						dispatch({
+							type: ActionTypes.SUGGESTION_MOUSE_CLICK,
+						});
+					}}>
+					{itemRenderer({
+						suggestions,
+						highlight,
+						value: suggestion,
+					})}
+				</li>
+			);
+		})}
+		<div style={{ height: 'var(--global--space--1)' }} />
+	</ul>
 );
 
 const getSuggestionId = (id: string, index: number) => `${id}-option-${index}`;
