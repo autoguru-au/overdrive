@@ -79,7 +79,6 @@ interface Props<PayloadType>
 
 	itemRenderer?: AutoSuggestItemRenderer<PayloadType>;
 
-	onSelection?(value: AutoSuggestValue<PayloadType>): void;
 	onChange?(value: AutoSuggestValue<PayloadType>): void;
 }
 
@@ -115,12 +114,7 @@ export const AutoSuggest = <PayloadType extends unknown>({
 	return !isDesktop && isFocused ? (
 		createPortal(
 			<div className={styles.fullScreenRoot}>
-				<AutoSuggestInput
-					{...props}
-					autoFocus
-					inlineOptions
-					onSelection={closeModal}
-				/>
+				<AutoSuggestInput {...props} autoFocus inlineOptions />
 				<Button
 					minimal
 					rounded
@@ -146,7 +140,6 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 	autoFocus,
 	suggestions,
 	value,
-	onSelection,
 	onChange,
 	itemRenderer = defaultItemRenderer,
 	onBlur,
@@ -335,10 +328,6 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 								event.preventDefault();
 								if (typeof onChange === 'function')
 									onChange(suggestions[state.highlightIndex]);
-								if (typeof onSelection === 'function')
-									onSelection(
-										suggestions[state.highlightIndex],
-									);
 							}
 
 							dispatch({ type: ActionTypes.INPUT_ENTER });
@@ -363,7 +352,6 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 					itemRenderer={itemRenderer}
 					className={styles.inlineOptions}
 					dispatch={dispatch}
-					onSelection={onSelection}
 					onChange={onChange}
 				/>
 			) : (
@@ -386,7 +374,6 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 						highlightRef={highlightRef}
 						itemRenderer={itemRenderer}
 						dispatch={dispatch}
-						onSelection={onSelection}
 						onChange={onChange}
 					/>
 				</SuggestionListFlyout>
@@ -398,7 +385,7 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 interface SuggestionProps<PayloadType>
 	extends Pick<
 		Props<PayloadType>,
-		'suggestions' | 'itemRenderer' | 'onChange' | 'onSelection'
+		'suggestions' | 'itemRenderer' | 'onChange'
 	> {
 	className?: string;
 	suggestionListId: string;
@@ -417,7 +404,6 @@ const SuggestionsList = <PayloadType extends unknown>({
 	suggestions,
 	highlightRef,
 	itemRenderer,
-	onSelection,
 	onChange,
 	dispatch,
 	// TODO: For now the ref is passed as a prop, as opposed to using forwardRef
@@ -462,9 +448,6 @@ const SuggestionsList = <PayloadType extends unknown>({
 
 						if (typeof onChange === 'function')
 							onChange(suggestion);
-
-						if (typeof onSelection === 'function')
-							onSelection(suggestion);
 
 						dispatch({
 							type: ActionTypes.SUGGESTION_MOUSE_CLICK,
