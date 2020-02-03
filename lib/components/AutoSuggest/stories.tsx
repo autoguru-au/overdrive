@@ -33,20 +33,21 @@ const Impl = () => {
 	type SuggestionValue = AutoSuggestValue<Value>;
 	const [value, setValue] = useState<SuggestionValue>({
 		text: '',
+		payload: null,
 	});
 	const [suggestions, setSuggestions] = useState<SuggestionValue[]>([]);
 
 	useEffect(() => {
 		setSuggestions(
 			value.text === ''
-				? mockSuggestions.map(item => ({ text: item }))
+				? mockSuggestions.map(item => ({ text: item, payload: item }))
 				: mockSuggestions
 						.filter(item =>
 							item
 								.toLowerCase()
 								.startsWith(value.text.toLowerCase()),
 						)
-						.map(item => ({ text: item })),
+						.map(item => ({ text: item, payload: item })),
 		);
 	}, [value.text]);
 
@@ -59,6 +60,7 @@ const Impl = () => {
 				{
 					text: 'Skip me',
 					skip: true,
+					payload: null,
 				},
 				...suggestions,
 			]}

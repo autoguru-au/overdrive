@@ -27,7 +27,7 @@ import { useLayoutSuggestionVisible } from './useLayoutSuggestionVisible';
 
 export interface AutoSuggestValue<PayloadType> {
 	text: string;
-	payload?: PayloadType;
+	payload: PayloadType | null;
 	skip?: boolean;
 }
 
@@ -86,7 +86,7 @@ export const AutoSuggest = <PayloadType extends unknown>({
 	autoFocus = false,
 	suggestions,
 	value,
-	onChange,
+	onChange: incomingOnChange,
 	itemRenderer = defaultItemRenderer,
 	onBlur: incomingOnBlur,
 	onFocus: incomingOnFocus,
@@ -100,7 +100,16 @@ export const AutoSuggest = <PayloadType extends unknown>({
 	const props = {
 		suggestions,
 		value,
-		onChange,
+		onChange: value => {
+			if (
+				typeof value.payload !== 'undefined' &&
+				value.payload !== null
+			) {
+				setIsFocused(false);
+			}
+
+			incomingOnChange(value);
+		},
 		itemRenderer,
 		onKeyDown,
 		onClick,
@@ -287,7 +296,7 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 				onChange={event => {
 					dispatch({ type: ActionTypes.INPUT_CHANGE });
 					if (typeof onChange === 'function')
-						onChange({ text: event.target.value });
+						onChange({ text: event.target.value, payload: void 0 });
 				}}
 				onFocus={wrapEvent(
 					() => dispatch({ type: ActionTypes.INPUT_FOCUS }),
