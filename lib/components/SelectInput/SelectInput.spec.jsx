@@ -73,7 +73,7 @@ describe('<SelectInput />', () => {
 		fireEvent.focus(container.querySelector('select'));
 
 		fireEvent.change(container.querySelector('select'), {
-			target: { value: 'value from the tests' },
+			target: { value: 'a' },
 		});
 
 		expect(container.firstChild).toMatchSnapshot();
