@@ -10,6 +10,7 @@ import React, {
 	Reducer,
 	Ref,
 	useCallback,
+	useEffect,
 	useReducer,
 	useRef,
 	useState,
@@ -88,7 +89,7 @@ export const AutoSuggest = <PayloadType extends unknown>({
 	value,
 	onChange: incomingOnChange,
 	itemRenderer = defaultItemRenderer,
-	onBlur: incomingOnBlur,
+	onBlur,
 	onFocus: incomingOnFocus,
 	onKeyDown,
 	onClick,
@@ -114,26 +115,19 @@ export const AutoSuggest = <PayloadType extends unknown>({
 		onKeyDown,
 		onClick,
 		onFocus: wrapEvent(() => setIsFocused(true), incomingOnFocus),
-		onBlur: wrapEvent(() => setIsFocused(false), incomingOnBlur),
+		onBlur,
 		...textInputProps,
 	};
 
 	const closeModal = useCallback(() => setIsFocused(false), [setIsFocused]);
 
 	return !isDesktop && isFocused ? (
-		createPortal(
-			<div className={styles.fullScreenRoot}>
-				<AutoSuggestInput {...props} autoFocus inlineOptions />
-				<Button
-					minimal
-					rounded
-					size={EButtonSize.Medium}
-					onClick={closeModal}>
-					<Icon icon={CloseIcon} />
-				</Button>
-			</div>,
-			document.body,
-		)
+		<AutoSuggestFullscreenInput
+			{...props}
+			inlineOptions
+			autoFocus={autoFocus}
+			closeModal={closeModal}
+		/>
 	) : (
 		<AutoSuggestInput {...props} autoFocus={autoFocus} />
 	);
@@ -143,6 +137,42 @@ interface AutoSuggestInputProps<PayloadType extends unknown>
 	extends Props<PayloadType> {
 	inlineOptions?: boolean;
 }
+
+interface AutoSuggestFullscreenInputProps<PayloadType extends unknown>
+	extends AutoSuggestInputProps<PayloadType> {
+	closeModal(): void;
+}
+
+const AutoSuggestFullscreenInput = <PayloadType extends unknown>({
+	autoFocus,
+	closeModal,
+
+	...props
+}: AutoSuggestFullscreenInputProps<PayloadType>): ReturnType<FunctionComponent<
+	AutoSuggestInputProps<PayloadType>
+>> => {
+	useEffect(() => {
+		document.documentElement.style.overflow = 'hidden';
+
+		return () => {
+			document.documentElement.style.overflow = null;
+		};
+	}, []);
+
+	return createPortal(
+		<div className={styles.fullScreenRoot}>
+			<AutoSuggestInput {...props} autoFocus inlineOptions />
+			<Button
+				minimal
+				rounded
+				size={EButtonSize.Medium}
+				onClick={closeModal}>
+				<Icon icon={CloseIcon} />
+			</Button>
+		</div>,
+		document.body,
+	);
+};
 
 const AutoSuggestInput = <PayloadType extends unknown>({
 	inlineOptions = false,
