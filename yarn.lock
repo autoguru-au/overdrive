@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@autoguru/babel-preset@1.0.87", "@autoguru/babel-preset@^1.0.87":
-  version "1.0.87"
-  resolved "https://registry.yarnpkg.com/@autoguru/babel-preset/-/babel-preset-1.0.87.tgz#38804ea5c0effac5850debcadc89a67ab7ec189a"
-  integrity sha512-acpZ3hcGSUwq7S4BgJaqBPgL21GJ2giWj3k4sBVndVB6U1ebWryP/ex7KBJ47OFa43X/2PRZUfc/sZ4Pj1r8EQ==
+"@autoguru/babel-preset@1.0.88", "@autoguru/babel-preset@^1.0.88":
+  version "1.0.88"
+  resolved "https://registry.yarnpkg.com/@autoguru/babel-preset/-/babel-preset-1.0.88.tgz#575ca7a81d68c7787c5665594f453eeeb9be9fdf"
+  integrity sha512-HX05w4q9CjHR4rVFvCP5XKGcy54pcPByAHdxL0GU1Y2qYaVfnDynthRJh0FljebCPV1a1Jqk09D3aObIpsvQiA==
   dependencies:
     "@babel/helper-annotate-as-pure" "^7.7.4"
     "@babel/helper-plugin-utils" "^7.0.0"
@@ -62,12 +62,12 @@
   dependencies:
     tslib "^1.10.0"
 
-"@autoguru/jest-preset@1.0.87":
-  version "1.0.87"
-  resolved "https://registry.yarnpkg.com/@autoguru/jest-preset/-/jest-preset-1.0.87.tgz#d06a600b3f6185cc70190eb651439b3c2c26d4d0"
-  integrity sha512-bW2A2UBhBnCiyagy3/b3WYegAWslbXwri6lET4e1Ae+2E3mBQuLTgV7/WxZpMo5sZxXmsRbLlXRqCtFp7Z/hfQ==
+"@autoguru/jest-preset@1.0.88":
+  version "1.0.88"
+  resolved "https://registry.yarnpkg.com/@autoguru/jest-preset/-/jest-preset-1.0.88.tgz#b78a46b1ec03ac7f35e2ea50fc4b11ee8cfa6888"
+  integrity sha512-ojuJPDVYu2ovrW7g5bUWxd4C7aHyuy6tzC67KyOV4ZAKmDvj5KXlOcsXP974QnAr07OJUYDKjlDgEUIdX/h7FA==
   dependencies:
-    "@autoguru/babel-preset" "^1.0.87"
+    "@autoguru/babel-preset" "^1.0.88"
     "@babel/core" "^7.7.5"
     "@babel/preset-typescript" "^7.7.4"
     babel-jest "^24.9.0"
@@ -77,10 +77,10 @@
   resolved "https://registry.yarnpkg.com/@autoguru/tsconfig/-/tsconfig-1.0.77.tgz#496144a3585cc4fe4063cc463ec1d7ffe7013d8a"
   integrity sha512-+VbKXGyqjEBz8se0Lmk1ripcotKvdAMdpZzJy3S7jAoJJMDBIHJ7nQNyz8mnGu8xFebpcz1y4USiG7lru8Uo8A==
 
-"@autoguru/utilities@1.0.85":
-  version "1.0.85"
-  resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.85.tgz#831efcdd80d1f0460af81c7befcf98624f689c29"
-  integrity sha512-oZo1sn2H5UExmc7OKKU2BRnV114sc4fo7fRIN5KrGRPBxUAyq9903GiV6sGrZhRoosLCJjL6LBnhj8AP6s8Ebg==
+"@autoguru/utilities@1.0.86":
+  version "1.0.86"
+  resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.86.tgz#77160f62fcc7401abee952bebc427b17adf72111"
+  integrity sha512-g9cPQ5kN88Nk9357naShyI0HSmwaiXnteyyTHoM4dNPCh/G/UADhc17Q9acDNWO5Jx0+/Y4iWv76T9ndc87ZSg==
   dependencies:
     tiny-invariant "^1.0.6"
     tiny-warning "^1.0.3"
