@@ -9,13 +9,19 @@ import { AutoSuggestValue } from './AutoSuggest';
 type Value = string;
 
 const mockSuggestions = [
+	'Alfa Romeo',
+	'Aston Martin',
 	'Bentley',
 	'BMW',
 	'Bugatti',
 	'Ferrari',
+	'Jaguar',
 	'Koenigsegg',
 	'Lamborghini',
+	'Lotus',
 	'Maserati',
+	'McLaren',
+	'Pontiac',
 	'Porsche',
 ];
 
@@ -33,20 +39,21 @@ const Impl = () => {
 	type SuggestionValue = AutoSuggestValue<Value>;
 	const [value, setValue] = useState<SuggestionValue>({
 		text: '',
+		payload: null,
 	});
 	const [suggestions, setSuggestions] = useState<SuggestionValue[]>([]);
 
 	useEffect(() => {
 		setSuggestions(
 			value.text === ''
-				? mockSuggestions.map(item => ({ text: item }))
+				? mockSuggestions.map(item => ({ text: item, payload: item }))
 				: mockSuggestions
 						.filter(item =>
 							item
 								.toLowerCase()
 								.startsWith(value.text.toLowerCase()),
 						)
-						.map(item => ({ text: item })),
+						.map(item => ({ text: item, payload: item })),
 		);
 	}, [value.text]);
 
@@ -59,6 +66,7 @@ const Impl = () => {
 				{
 					text: 'Skip me',
 					skip: true,
+					payload: null,
 				},
 				...suggestions,
 			]}
@@ -72,7 +80,12 @@ const Impl = () => {
 	);
 };
 
-export const Standard = () => <Impl />;
+export const Standard = () => (
+	<div>
+		<div style={{ height: '400px' }} />
+		<Impl />
+	</div>
+);
 
 export const WithNoItems = () => (
 	<AutoSuggest

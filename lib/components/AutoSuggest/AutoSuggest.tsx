@@ -10,6 +10,7 @@ import React, {
 	Reducer,
 	Ref,
 	useCallback,
+	useEffect,
 	useReducer,
 	useRef,
 	useState,
@@ -27,7 +28,7 @@ import { useLayoutSuggestionVisible } from './useLayoutSuggestionVisible';
 
 export interface AutoSuggestValue<PayloadType> {
 	text: string;
-	payload?: PayloadType;
+	payload: PayloadType | null;
 	skip?: boolean;
 }
 
@@ -86,9 +87,9 @@ export const AutoSuggest = <PayloadType extends unknown>({
 	autoFocus = false,
 	suggestions,
 	value,
-	onChange,
+	onChange: incomingOnChange,
 	itemRenderer = defaultItemRenderer,
-	onBlur: incomingOnBlur,
+	onBlur,
 	onFocus: incomingOnFocus,
 	onKeyDown,
 	onClick,
@@ -100,31 +101,33 @@ export const AutoSuggest = <PayloadType extends unknown>({
 	const props = {
 		suggestions,
 		value,
-		onChange,
+		onChange: value => {
+			if (
+				typeof value.payload !== 'undefined' &&
+				value.payload !== null
+			) {
+				setIsFocused(false);
+			}
+
+			incomingOnChange(value);
+		},
 		itemRenderer,
 		onKeyDown,
 		onClick,
 		onFocus: wrapEvent(() => setIsFocused(true), incomingOnFocus),
-		onBlur: wrapEvent(() => setIsFocused(false), incomingOnBlur),
+		onBlur,
 		...textInputProps,
 	};
 
 	const closeModal = useCallback(() => setIsFocused(false), [setIsFocused]);
 
 	return !isDesktop && isFocused ? (
-		createPortal(
-			<div className={styles.fullScreenRoot}>
-				<AutoSuggestInput {...props} autoFocus inlineOptions />
-				<Button
-					minimal
-					rounded
-					size={EButtonSize.Medium}
-					onClick={closeModal}>
-					<Icon icon={CloseIcon} />
-				</Button>
-			</div>,
-			document.body,
-		)
+		<AutoSuggestFullscreenInput
+			{...props}
+			inlineOptions
+			autoFocus={autoFocus}
+			closeModal={closeModal}
+		/>
 	) : (
 		<AutoSuggestInput {...props} autoFocus={autoFocus} />
 	);
@@ -134,6 +137,42 @@ interface AutoSuggestInputProps<PayloadType extends unknown>
 	extends Props<PayloadType> {
 	inlineOptions?: boolean;
 }
+
+interface AutoSuggestFullscreenInputProps<PayloadType extends unknown>
+	extends AutoSuggestInputProps<PayloadType> {
+	closeModal(): void;
+}
+
+const AutoSuggestFullscreenInput = <PayloadType extends unknown>({
+	autoFocus,
+	closeModal,
+
+	...props
+}: AutoSuggestFullscreenInputProps<PayloadType>): ReturnType<FunctionComponent<
+	AutoSuggestInputProps<PayloadType>
+>> => {
+	useEffect(() => {
+		document.documentElement.style.overflow = 'hidden';
+
+		return () => {
+			document.documentElement.style.overflow = null;
+		};
+	}, []);
+
+	return createPortal(
+		<div className={styles.fullScreenRoot}>
+			<AutoSuggestInput {...props} autoFocus inlineOptions />
+			<Button
+				minimal
+				rounded
+				size={EButtonSize.Medium}
+				onClick={closeModal}>
+				<Icon icon={CloseIcon} />
+			</Button>
+		</div>,
+		document.body,
+	);
+};
 
 const AutoSuggestInput = <PayloadType extends unknown>({
 	inlineOptions = false,
@@ -287,7 +326,7 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 				onChange={event => {
 					dispatch({ type: ActionTypes.INPUT_CHANGE });
 					if (typeof onChange === 'function')
-						onChange({ text: event.target.value });
+						onChange({ text: event.target.value, payload: void 0 });
 				}}
 				onFocus={wrapEvent(
 					() => dispatch({ type: ActionTypes.INPUT_FOCUS }),
