@@ -144,7 +144,6 @@ interface AutoSuggestFullscreenInputProps<PayloadType extends unknown>
 }
 
 const AutoSuggestFullscreenInput = <PayloadType extends unknown>({
-	autoFocus,
 	closeModal,
 
 	...props
@@ -161,7 +160,7 @@ const AutoSuggestFullscreenInput = <PayloadType extends unknown>({
 
 	return createPortal(
 		<div className={styles.fullScreenRoot}>
-			<AutoSuggestInput {...props} autoFocus inlineOptions />
+			<AutoSuggestInput {...props} inlineOptions />
 			<Button
 				minimal
 				rounded
