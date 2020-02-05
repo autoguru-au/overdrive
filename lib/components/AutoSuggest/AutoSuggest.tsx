@@ -153,10 +153,14 @@ const AutoSuggestFullscreenInput = <PayloadType extends unknown>({
 	const [showPortal, setShowPortal] = useState<boolean>(false);
 
 	useEffect(() => {
+		document.documentElement.style.position = 'fixed';
 		document.documentElement.style.overflow = 'hidden';
+		document.documentElement.style.maxHeight = '100%';
 
 		return () => {
+			document.documentElement.style.position = null;
 			document.documentElement.style.overflow = null;
+			document.documentElement.style.maxHeight = null;
 		};
 	}, []);
 
