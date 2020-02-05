@@ -150,6 +150,8 @@ const AutoSuggestFullscreenInput = <PayloadType extends unknown>({
 }: AutoSuggestFullscreenInputProps<PayloadType>): ReturnType<FunctionComponent<
 	AutoSuggestInputProps<PayloadType>
 >> => {
+	const [showPortal, setShowPortal] = useState<boolean>(false);
+
 	useEffect(() => {
 		document.documentElement.style.overflow = 'hidden';
 
@@ -158,18 +160,29 @@ const AutoSuggestFullscreenInput = <PayloadType extends unknown>({
 		};
 	}, []);
 
-	return createPortal(
-		<div className={styles.fullScreenRoot}>
-			<AutoSuggestInput {...props} inlineOptions />
-			<Button
-				minimal
-				rounded
-				size={EButtonSize.Medium}
-				onClick={closeModal}>
-				<Icon icon={CloseIcon} />
-			</Button>
-		</div>,
-		document.body,
+	useEffect(() => {
+		const cb = requestAnimationFrame(() => setShowPortal(true));
+
+		return () => {
+			cancelAnimationFrame(cb);
+		};
+	}, [setShowPortal]);
+
+	return (
+		showPortal &&
+		createPortal(
+			<div className={styles.fullScreenRoot}>
+				<AutoSuggestInput {...props} inlineOptions />
+				<Button
+					minimal
+					rounded
+					size={EButtonSize.Medium}
+					onClick={closeModal}>
+					<Icon icon={CloseIcon} />
+				</Button>
+			</div>,
+			document.body,
+		)
 	);
 };
 
