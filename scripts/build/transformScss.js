@@ -28,11 +28,6 @@ async function transformStyles(id) {
 				// Removed this on purpose
 			},
 		}),
-		require('cssnano')({
-			discardComments: {
-				removeAll: true,
-			},
-		}),
 	]).process(css.toString(), {
 		from: undefined,
 	});
@@ -48,21 +43,6 @@ async function transformStyles(id) {
 	return cache.set(id, returns).get(id);
 }
 
-async function optimizeCss(code) {
-	const { css: postcssOutput } = await postcss([
-		require('cssnano')({
-			discardComments: {
-				removeAll: true,
-			},
-		}),
-	]).process(code, {
-		from: undefined,
-	});
-
-	return postcssOutput;
-}
-
 module.exports = {
 	transformStyles,
-	optimizeCss,
 };

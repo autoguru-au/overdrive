@@ -3,7 +3,7 @@ const { dim, bgGreen, bgYellow } = require('kleur');
 const rimraf = require('rimraf');
 const copyfiles = require('copyfiles');
 
-const { transformStyles, optimizeCss } = require('./transformScss');
+const { transformStyles } = require('./transformScss');
 const { getTypeScriptEnvironment } = require('./typescriptEnvironment');
 
 const acorn = require('acorn');
@@ -113,8 +113,7 @@ async function build(bundleType, program) {
 		fileMap.set(join(distFolder, 'overdrive.css'), {
 			sourceFileName: null,
 			code: require('../beautify').beautify(
-				// eslint-disable-next-line no-await-in-loop
-				await optimizeCss([...collectCss.values()].join('\n')),
+				[...collectCss.values()].join('\n'),
 				'css',
 			),
 		});
