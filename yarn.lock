@@ -2,16 +2,17 @@
 # yarn lockfile v1
 
 
-"@autoguru/babel-preset@1.0.88", "@autoguru/babel-preset@^1.0.88":
-  version "1.0.88"
-  resolved "https://registry.yarnpkg.com/@autoguru/babel-preset/-/babel-preset-1.0.88.tgz#575ca7a81d68c7787c5665594f453eeeb9be9fdf"
-  integrity sha512-HX05w4q9CjHR4rVFvCP5XKGcy54pcPByAHdxL0GU1Y2qYaVfnDynthRJh0FljebCPV1a1Jqk09D3aObIpsvQiA==
+"@autoguru/babel-preset@1.0.90", "@autoguru/babel-preset@^1.0.90":
+  version "1.0.90"
+  resolved "https://registry.yarnpkg.com/@autoguru/babel-preset/-/babel-preset-1.0.90.tgz#750b78b3109925fa16baf04acfcb0177aa83aef6"
+  integrity sha512-HlbpoU+YnvVCuyu0d1csGVZD9vF12uAMyvY1OGCT/XEmQ4fwhRf7nJsxRJZboIg8jCg0FwqTi/EjzDVzU9V1yA==
   dependencies:
     "@babel/helper-annotate-as-pure" "^7.7.4"
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-proposal-class-properties" "^7.7.4"
     "@babel/plugin-proposal-export-default-from" "^7.7.4"
     "@babel/plugin-proposal-nullish-coalescing-operator" "^7.7.4"
+    "@babel/plugin-proposal-object-rest-spread" "^7.8.3"
     "@babel/plugin-proposal-optional-chaining" "^7.7.5"
     "@babel/plugin-syntax-dynamic-import" "^7.7.4"
     "@babel/plugin-transform-react-constant-elements" "^7.7.4"
@@ -21,7 +22,7 @@
     "@babel/plugin-transform-strict-mode" "^7.7.4"
     "@babel/preset-env" "^7.7.6"
     "@babel/preset-react" "^7.7.4"
-    "@babel/runtime-corejs3" "^7.7.6"
+    "@babel/runtime-corejs3" "^7.8.4"
     babel-plugin-dev-expression "^0.2.2"
     babel-plugin-macros "^2.8.0"
     babel-plugin-transform-react-remove-prop-types "^0.4.24"
@@ -62,12 +63,12 @@
   dependencies:
     tslib "^1.10.0"
 
-"@autoguru/jest-preset@1.0.88":
-  version "1.0.88"
-  resolved "https://registry.yarnpkg.com/@autoguru/jest-preset/-/jest-preset-1.0.88.tgz#b78a46b1ec03ac7f35e2ea50fc4b11ee8cfa6888"
-  integrity sha512-ojuJPDVYu2ovrW7g5bUWxd4C7aHyuy6tzC67KyOV4ZAKmDvj5KXlOcsXP974QnAr07OJUYDKjlDgEUIdX/h7FA==
+"@autoguru/jest-preset@1.0.90":
+  version "1.0.90"
+  resolved "https://registry.yarnpkg.com/@autoguru/jest-preset/-/jest-preset-1.0.90.tgz#20c1c786844eba5ab43381a706ecbff9ce3a5778"
+  integrity sha512-cK+4JvuJOcVCWBvq5+8q0TtTQmxiEiTBwIhbs0jFPomu6cNhxTh7z6to16wUUwKqy2iH7ZvgjercT4L9ErkDcQ==
   dependencies:
-    "@autoguru/babel-preset" "^1.0.88"
+    "@autoguru/babel-preset" "^1.0.90"
     "@babel/core" "^7.7.5"
     "@babel/preset-typescript" "^7.7.4"
     babel-jest "^24.9.0"
@@ -77,10 +78,10 @@
   resolved "https://registry.yarnpkg.com/@autoguru/tsconfig/-/tsconfig-1.0.77.tgz#496144a3585cc4fe4063cc463ec1d7ffe7013d8a"
   integrity sha512-+VbKXGyqjEBz8se0Lmk1ripcotKvdAMdpZzJy3S7jAoJJMDBIHJ7nQNyz8mnGu8xFebpcz1y4USiG7lru8Uo8A==
 
-"@autoguru/utilities@1.0.86":
-  version "1.0.86"
-  resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.86.tgz#77160f62fcc7401abee952bebc427b17adf72111"
-  integrity sha512-g9cPQ5kN88Nk9357naShyI0HSmwaiXnteyyTHoM4dNPCh/G/UADhc17Q9acDNWO5Jx0+/Y4iWv76T9ndc87ZSg==
+"@autoguru/utilities@1.0.88":
+  version "1.0.88"
+  resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.88.tgz#ca6f65619c194b3c440b4b9d05258c8b7961f750"
+  integrity sha512-iU8PxsOiJTzxwID7/W+5Hj9lhWuFrcnKfSluZHk4tZBiRCofo+f6i7n3oUiAeCY5GtH2P9jUNaNwv3NCsgkhSg==
   dependencies:
     tiny-invariant "^1.0.6"
     tiny-warning "^1.0.3"
@@ -945,7 +946,7 @@
     "@babel/helper-plugin-utils" "^7.8.3"
     "@babel/plugin-transform-typescript" "^7.8.3"
 
-"@babel/runtime-corejs3@7.8.4", "@babel/runtime-corejs3@^7.7.4", "@babel/runtime-corejs3@^7.7.6":
+"@babel/runtime-corejs3@7.8.4", "@babel/runtime-corejs3@^7.7.4", "@babel/runtime-corejs3@^7.8.4":
   version "7.8.4"
   resolved "https://registry.yarnpkg.com/@babel/runtime-corejs3/-/runtime-corejs3-7.8.4.tgz#ccc4e042e2fae419c67fa709567e5d2179ed3940"
   integrity sha512-+wpLqy5+fbQhvbllvlJEVRIpYj+COUWnnsm+I4jZlA8Lo7/MJmBhGTCHyk1/RWfOqBRJ2MbadddG6QltTKTlrg==
@@ -14433,10 +14434,10 @@ renderkid@^2.0.1:
     strip-ansi "^3.0.0"
     utila "^0.4.0"
 
-renovate-config-autoguru@1.0.86:
-  version "1.0.86"
-  resolved "https://registry.yarnpkg.com/renovate-config-autoguru/-/renovate-config-autoguru-1.0.86.tgz#5890a3a52a646ccf8701f194400de109641ae89f"
-  integrity sha512-DNrZTJSTkzDRj62689gnA7+wx1oUoeVlx1e2f9CovXg4zpjjG6TK3QQ9b//SaITmoQa0vO0P4y0Q/OvzIdzV/w==
+renovate-config-autoguru@1.0.87:
+  version "1.0.87"
+  resolved "https://registry.yarnpkg.com/renovate-config-autoguru/-/renovate-config-autoguru-1.0.87.tgz#1535bf437b07a31c7bf4ec82e26694e9675f7a00"
+  integrity sha512-/ZIG6wTM+ftWUiWJZtO71XyqI8f8U2A6XK4qAnnbkoJN8ZPw0MolvvJSeg26aC84oqbZ4CNtq/SbkbCRujg3ZA==
 
 repeat-element@^1.1.2:
   version "1.1.3"
