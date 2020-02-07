@@ -13,12 +13,12 @@
   "homepage": "https://overdrive.autoguru.io",
   "repository": "https://github.com/autoguru-au/overdrive",
   "license": "MIT",
-  "files": [
-    "dist"
-  ],
   "sideEffects": false,
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "cross-env NODE_ENV=production node scripts/build",
     "chromatic": "chromatic test --exit-zero-on-changes --build-script-name storybook:build",
@@ -34,35 +34,30 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint --edit --extends @autoguru/commitlint-config",
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint --edit --extends @autoguru/commitlint-config"
     }
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css,scss,json,yml,md,mdx,html}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "*.{js,tsx,ts,tsx}": [
       "eslint --cache --quiet --fix",
       "jest --bail --findRelatedTests",
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "*.{scss,css}": [
       "stylelint --ignore-path .gitignore --fix",
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "lib/components/**/index.ts": [
       "node scripts/generateReExport",
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "package.json": [
       "npx sort-package-json",
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "browserslist": "extends browserslist-config-autoguru",
