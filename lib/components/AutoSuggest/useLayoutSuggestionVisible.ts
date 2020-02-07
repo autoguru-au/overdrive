@@ -1,41 +1,50 @@
 import { RefObject, useLayoutEffect } from 'react';
 
+import { useOverdriveContext } from '../OverdriveProvider';
+
 export const useLayoutSuggestionVisible = (
 	highlightIndex: number,
 	highlightRef: RefObject<HTMLElement>,
 	suggestionListRef: RefObject<HTMLElement>,
 ) => {
-	useLayoutEffect(() => {
-		if (
-			highlightRef.current &&
-			suggestionListRef.current &&
-			highlightIndex > -1
-		) {
-			const highlightItem = highlightRef.current;
-			const suggestionListItem = suggestionListRef.current;
+	const { isServer } = useOverdriveContext();
 
-			const itemOffsetRelativeToContainer =
-				highlightItem.offsetParent === suggestionListItem
-					? highlightItem.offsetTop
-					: highlightItem.offsetTop - suggestionListItem.offsetTop;
-
-			let { scrollTop } = suggestionListItem;
-
-			if (itemOffsetRelativeToContainer < scrollTop) {
-				scrollTop = itemOffsetRelativeToContainer;
-			} else if (
-				itemOffsetRelativeToContainer + highlightItem.offsetHeight >
-				scrollTop + suggestionListItem.offsetHeight
+	if (!isServer) {
+		// Its okay to wrap this... As the value wont change once rendered.
+		// eslint-disable-next-line react-hooks/rules-of-hooks
+		useLayoutEffect(() => {
+			if (
+				highlightRef.current &&
+				suggestionListRef.current &&
+				highlightIndex > -1
 			) {
-				scrollTop =
-					itemOffsetRelativeToContainer +
-					highlightItem.offsetHeight -
-					suggestionListItem.offsetHeight;
-			}
+				const highlightItem = highlightRef.current;
+				const suggestionListItem = suggestionListRef.current;
 
-			if (scrollTop !== suggestionListItem.scrollTop) {
-				suggestionListItem.scrollTop = scrollTop;
+				const itemOffsetRelativeToContainer =
+					highlightItem.offsetParent === suggestionListItem
+						? highlightItem.offsetTop
+						: highlightItem.offsetTop -
+						  suggestionListItem.offsetTop;
+
+				let { scrollTop } = suggestionListItem;
+
+				if (itemOffsetRelativeToContainer < scrollTop) {
+					scrollTop = itemOffsetRelativeToContainer;
+				} else if (
+					itemOffsetRelativeToContainer + highlightItem.offsetHeight >
+					scrollTop + suggestionListItem.offsetHeight
+				) {
+					scrollTop =
+						itemOffsetRelativeToContainer +
+						highlightItem.offsetHeight -
+						suggestionListItem.offsetHeight;
+				}
+
+				if (scrollTop !== suggestionListItem.scrollTop) {
+					suggestionListItem.scrollTop = scrollTop;
+				}
 			}
-		}
-	}, [highlightIndex]);
+		}, [highlightIndex, highlightRef, suggestionListRef]);
+	}
 };
