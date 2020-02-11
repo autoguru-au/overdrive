@@ -2868,10 +2868,10 @@ acorn-jsx@^5.1.0:
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-5.1.0.tgz#294adb71b57398b0680015f0a38c563ee1db5384"
   integrity sha512-tMUqwBWfLFbJbizRmEcWSLw6HnFzfdJs2sOJEOwwtVPMoH/0Ay+E703oZz78VSXZiiDcZrQ5XKjPIUQixhmgVw==
 
-acorn-walk@7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/acorn-walk/-/acorn-walk-7.0.0.tgz#c8ba6f0f1aac4b0a9e32d1f0af12be769528f36b"
-  integrity sha512-7Bv1We7ZGuU79zZbb6rRqcpxo3OY+zrdtloZWoyD8fmGX+FeXRjE+iuGkZjSXLVovLzrsvMGMy0EkwA0E0umxg==
+acorn-walk@7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/acorn-walk/-/acorn-walk-7.1.0.tgz#48387aa9a83bba67a9909164acab4bbc5796cf87"
+  integrity sha512-4ufNLdC8gOf1dlOjC1nrn2NfzevyDtrDPp/DOtmoOHAFA/1pQc6bWf7oZ71qDURTODPLQ03+oFOvwxq5BvjXug==
 
 acorn-walk@^6.0.1:
   version "6.2.0"
@@ -3400,7 +3400,7 @@ atob@^2.1.2:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-autoprefixer@9.7.4, autoprefixer@^9.6.1, autoprefixer@^9.7.2, autoprefixer@^9.7.3:
+autoprefixer@9.7.4, autoprefixer@^9.6.1, autoprefixer@^9.7.2, autoprefixer@^9.7.4:
   version "9.7.4"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.7.4.tgz#f8bf3e06707d047f0641d87aee8cfb174b2a5378"
   integrity sha512-g0Ya30YrMBAEZk60lp+qfX5YQllG+S5W3GYCFvyHTvhOki0AEQJLPEcIuGRsqVwLi8FvXPVtwTGhfr38hVpm0g==
@@ -9786,10 +9786,10 @@ kleur@3.0.3, kleur@^3.0.3:
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
 
-known-css-properties@^0.17.0:
-  version "0.17.0"
-  resolved "https://registry.yarnpkg.com/known-css-properties/-/known-css-properties-0.17.0.tgz#1c535f530ee8e9e3e27bb6a718285780e1d07326"
-  integrity sha512-Vi3nxDGMm/z+lAaCjvAR1u+7fiv+sG6gU/iYDj5QOF8h76ytK9EW/EKfF0NeTyiGBi8Jy6Hklty/vxISrLox3w==
+known-css-properties@^0.18.0:
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/known-css-properties/-/known-css-properties-0.18.0.tgz#d6e00b56ee1d5b0d171fd86df1583cfb012c521f"
+  integrity sha512-69AgJ1rQa7VvUsd2kpvVq+VeObDuo3zrj0CzM5Slmf6yduQFAI2kXPDQJR2IE/u6MSAUOJrwSzjg5vlz8qcMiw==
 
 latest-version@^3.0.0:
   version "3.1.0"
@@ -10619,7 +10619,7 @@ material-colors@^1.2.1:
   resolved "https://registry.yarnpkg.com/material-colors/-/material-colors-1.2.6.tgz#6d1958871126992ceecc72f4bcc4d8f010865f46"
   integrity sha512-6qE4B9deFBIa9YSpOc9O0Sgc43zTeVYbgDT5veRKSlB2+ZuHNoVVxA1L/ckMUayV9Ay9y7Z/SZCLcGteW9i7bg==
 
-mathml-tag-names@^2.1.1:
+mathml-tag-names@^2.1.3:
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/mathml-tag-names/-/mathml-tag-names-2.1.3.tgz#4ddadd67308e780cf16a47685878ee27b736a0a3"
   integrity sha512-APMBEanjybaPzUrfqU0IMU5I0AswKMH7k8OTLs0vvV4KZpExkTkY87nR/zpbuTPj+gARop7aGUbl11pnDfW6xg==
@@ -12742,7 +12742,7 @@ postcss-initial@^3.0.0:
     lodash.template "^4.5.0"
     postcss "^7.0.2"
 
-postcss-jsx@^0.36.3:
+postcss-jsx@^0.36.4:
   version "0.36.4"
   resolved "https://registry.yarnpkg.com/postcss-jsx/-/postcss-jsx-0.36.4.tgz#37a68f300a39e5748d547f19a747b3257240bd50"
   integrity sha512-jwO/7qWUvYuWYnpOb0+4bIIgJt7003pgU3P6nETBLaOyBXuTD55ho21xnals5nBrlpTIFodyd3/jBi6UO3dHvA==
@@ -14676,10 +14676,10 @@ rimraf@2.6.3:
   dependencies:
     glob "^7.1.3"
 
-rimraf@3.0.1, rimraf@^3.0.0:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-3.0.1.tgz#48d3d4cb46c80d388ab26cd61b1b466ae9ae225a"
-  integrity sha512-IQ4ikL8SjBiEDZfk+DFVwqRK8md24RWMEJkdSlgNLkyyAImcjf8SWvU1qFMDOb4igBClbTQ/ugPqXcRwdFTxZw==
+rimraf@3.0.2, rimraf@^3.0.0:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-3.0.2.tgz#f1a5402ba6220ad52cc1282bac1ae3aa49fd061a"
+  integrity sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==
   dependencies:
     glob "^7.1.3"
 
@@ -15505,10 +15505,10 @@ store2@^2.7.1:
   resolved "https://registry.yarnpkg.com/store2/-/store2-2.10.0.tgz#46b82bb91878daf1b0d56dec2f1d41e54d5103cf"
   integrity sha512-tWEpK0snS2RPUq1i3R6OahfJNjWCQYNxq0+by1amCSuw0mXtymJpzmZIeYpA1UAa+7B0grCpNYIbDcd7AgTbFg==
 
-storybook-chromatic@3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/storybook-chromatic/-/storybook-chromatic-3.5.0.tgz#aeac6a7b9ed3dcafc20c0cc31b58dcda2d36fb92"
-  integrity sha512-K9mrq9JDzZIevOfoZzrwdbKOUw0iLxFs3Vo5sA2gbLi0F41OYDR6JMPJY/A2eOGtUuB4mrXlRM6I0e/vHoaoZw==
+storybook-chromatic@3.5.1:
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/storybook-chromatic/-/storybook-chromatic-3.5.1.tgz#40430509eedbd3fe3dd9f351600736cb227d917f"
+  integrity sha512-5tKfoWO+EhuAhBR9b2E/TRTwGWlPRlMMqvBpGG2t0nkcxwoPIS47SyefAHTzU6DJB6h/tD1HGUcQ9SB52fJdKw==
   dependencies:
     "@babel/preset-react" "^7.8.3"
     "@babel/runtime" "^7.8.3"
@@ -15926,12 +15926,12 @@ stylelint-scss@3.14.2:
     postcss-selector-parser "^6.0.2"
     postcss-value-parser "^4.0.2"
 
-stylelint@13.0.0:
-  version "13.0.0"
-  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-13.0.0.tgz#532007f7154c1a5ed14245d857a5884316f5111f"
-  integrity sha512-6sjgOJbM3iLhnUtmRO0J1vvxie9VnhIZX/2fCehjylv9Gl9u0ytehGCTm9Lhw2p1F8yaNZn5UprvhCB8C3g/Tg==
+stylelint@13.1.0:
+  version "13.1.0"
+  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-13.1.0.tgz#693fca947873ff34c92bf08cdaa6f3db1cac91e2"
+  integrity sha512-Ei+nCSQTyZYrsLSUIxq48/QfzCQD9r9sQiBqy7Z4IpIMcj+E0R6b0CHrSFeE7jNgREpBfJKJd6DpstuDrwUiew==
   dependencies:
-    autoprefixer "^9.7.3"
+    autoprefixer "^9.7.4"
     balanced-match "^1.0.0"
     chalk "^3.0.0"
     cosmiconfig "^6.0.0"
@@ -15946,17 +15946,17 @@ stylelint@13.0.0:
     ignore "^5.1.4"
     import-lazy "^4.0.0"
     imurmurhash "^0.1.4"
-    known-css-properties "^0.17.0"
+    known-css-properties "^0.18.0"
     leven "^3.1.0"
     lodash "^4.17.15"
     log-symbols "^3.0.0"
-    mathml-tag-names "^2.1.1"
+    mathml-tag-names "^2.1.3"
     meow "^6.0.0"
     micromatch "^4.0.2"
     normalize-selector "^0.2.0"
     postcss "^7.0.26"
     postcss-html "^0.36.0"
-    postcss-jsx "^0.36.3"
+    postcss-jsx "^0.36.4"
     postcss-less "^3.1.4"
     postcss-markdown "^0.36.0"
     postcss-media-query-parser "^0.2.3"
@@ -17187,10 +17187,10 @@ webpack-virtual-modules@^0.2.0:
   dependencies:
     debug "^3.0.0"
 
-webpack@4.41.5, webpack@^4.33.0, webpack@^4.38.0, webpack@^4.41.2:
-  version "4.41.5"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.41.5.tgz#3210f1886bce5310e62bb97204d18c263341b77c"
-  integrity sha512-wp0Co4vpyumnp3KlkmpM5LWuzvZYayDwM2n17EHFr4qxBBbRokC7DJawPJC7TfSFZ9HZ6GsdH40EBj4UV0nmpw==
+webpack@4.41.6, webpack@^4.33.0, webpack@^4.38.0, webpack@^4.41.2:
+  version "4.41.6"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.41.6.tgz#12f2f804bf6542ef166755050d4afbc8f66ba7e1"
+  integrity sha512-yxXfV0Zv9WMGRD+QexkZzmGIh54bsvEs+9aRWxnN8erLWEOehAKUTeNBoUbA6HPEZPlRo7KDi2ZcNveoZgK9MA==
   dependencies:
     "@webassemblyjs/ast" "1.8.5"
     "@webassemblyjs/helper-module-context" "1.8.5"
