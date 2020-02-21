@@ -8,6 +8,7 @@ import React, {
 	useMemo,
 } from 'react';
 
+import { PortalProvider } from '../Portal/PortalProvider';
 import { ThemeProvider } from '../ThemeProvider/ThemeProvider';
 
 interface Props
@@ -24,7 +25,9 @@ export const OverdriveProvider: FunctionComponent<Props> = ({
 	children,
 }) => (
 	<overdriveContext.Provider value={useMemo(() => ({ isServer }), [])}>
-		<ThemeProvider theme={theme}>{children}</ThemeProvider>
+		<ThemeProvider theme={theme}>
+			<PortalProvider>{children}</PortalProvider>
+		</ThemeProvider>
 	</overdriveContext.Provider>
 );
 
