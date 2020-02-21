@@ -11,6 +11,7 @@ import React, {
 
 import { useOutsideClick } from '../OutsideClick';
 import { Portal } from '../Portal';
+import { usePortalContext } from '../Portal/PortalProvider';
 import { EAlignment } from './alignment';
 import { AlignmentRect, getOptimalPosition, Rect } from './getOptimalPosition';
 import styles from './style.scss';
@@ -43,6 +44,7 @@ export function usingPositioner<T extends {} = {}>(
 		if (typeof window === 'undefined') return null;
 
 		const positionerRef = useRef<HTMLDivElement>();
+		const { portalInstanceRef } = usePortalContext();
 		const {
 			alignment: derivedAlignment,
 			rect,
@@ -56,7 +58,7 @@ export function usingPositioner<T extends {} = {}>(
 		);
 
 		useOutsideClick(
-			[positionerRef, triggerRef],
+			[portalInstanceRef, triggerRef],
 			useCallback(() => {
 				if (isOpen) onRequestClose();
 			}, [isOpen, onRequestClose]),

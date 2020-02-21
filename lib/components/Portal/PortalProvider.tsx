@@ -2,20 +2,25 @@ import React, {
 	Context,
 	createContext,
 	FunctionComponent,
+	RefObject,
 	useContext,
+	useRef,
 } from 'react';
 
 interface Props {
 	children;
 }
+
 export const PortalContext: Context<{
-	portalInstance: Element;
+	portalInstanceRef: RefObject<HTMLDivElement>;
 }> = createContext(null);
 
 export const usePortalContext = () => useContext(PortalContext);
 
-const buildPortalElement = (): Element => {
-	const element: Element = document.createElement('div');
+const buildPortalElement = (): HTMLDivElement => {
+	if (typeof window === 'undefined') return null;
+
+	const element: HTMLDivElement = document.createElement('div');
 	element.setAttribute('id', `od-portal-${Math.round(Math.random() * 1e6)}`);
 	document.body.append(element);
 
@@ -23,10 +28,13 @@ const buildPortalElement = (): Element => {
 };
 
 export const PortalProvider: FunctionComponent<Props> = ({ children }) => {
+	const rootElementRef = useRef<HTMLDivElement>(buildPortalElement());
 	const portalContext = usePortalContext();
-	const context = portalContext || {
-		portalInstance: buildPortalElement(),
-	};
+	const context = rootElementRef?.current
+		? portalContext ?? {
+				portalInstanceRef: rootElementRef,
+		  }
+		: null;
 
 	return (
 		<PortalContext.Provider value={context}>

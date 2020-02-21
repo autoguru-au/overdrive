@@ -1,14 +1,9 @@
 import clsx from 'clsx';
-import React, {
-	FunctionComponent,
-	RefObject,
-	useCallback,
-	useLayoutEffect,
-	useRef,
-} from 'react';
+import React, { FunctionComponent, useCallback, useLayoutEffect } from 'react';
 
 import { useOutsideClick } from '../OutsideClick';
 import { Portal } from '../Portal';
+import { usePortalContext } from '../Portal/PortalProvider';
 import { ECloseCode } from './enums';
 import styles from './style.scss';
 
@@ -23,7 +18,7 @@ export const ModalPortal: FunctionComponent<Props> = ({
 	onRequestClose,
 	children,
 }) => {
-	const contentRef: RefObject<HTMLDivElement> = useRef(null);
+	const { portalInstanceRef } = usePortalContext();
 
 	useLayoutEffect(() => {
 		if (!isOpen || typeof window === 'undefined') return void 0;
@@ -36,7 +31,7 @@ export const ModalPortal: FunctionComponent<Props> = ({
 	}, [isOpen]);
 
 	useOutsideClick(
-		[contentRef],
+		[portalInstanceRef],
 		useCallback(() => {
 			if (isOpen) {
 				onRequestClose(ECloseCode.Overlay);
@@ -52,7 +47,6 @@ export const ModalPortal: FunctionComponent<Props> = ({
 				})}>
 				<div className={styles.modalPanel}>
 					<div
-						ref={contentRef}
 						className={styles.modalContent}
 						role="dialog"
 						aria-modal="true"

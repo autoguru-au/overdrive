@@ -16,5 +16,5 @@ export const Portal: FunctionComponent<Props> = ({ children }) => {
 	const portalContext = usePortalContext();
 	invariant(portalContext, 'There is no portal context provided');
 
-	return createPortal(children, portalContext.portalInstance);
+	return createPortal(children, portalContext.portalInstanceRef.current);
 };
