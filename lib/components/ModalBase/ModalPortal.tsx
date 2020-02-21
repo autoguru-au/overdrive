@@ -6,9 +6,9 @@ import React, {
 	useLayoutEffect,
 	useRef,
 } from 'react';
-import { createPortal } from 'react-dom';
 
 import { useOutsideClick } from '../OutsideClick';
+import { Portal } from '../Portal';
 import { ECloseCode } from './enums';
 import styles from './style.scss';
 
@@ -44,22 +44,23 @@ export const ModalPortal: FunctionComponent<Props> = ({
 		}, [onRequestClose, isOpen]),
 	);
 
-	return createPortal(
-		<div
-			className={clsx(styles.modalPortal, {
-				[styles.modalPortalIsOpen]: isOpen,
-			})}>
-			<div className={styles.modalPanel}>
-				<div
-					ref={contentRef}
-					className={styles.modalContent}
-					role="dialog"
-					aria-modal="true"
-					aria-hidden={!isOpen}>
-					{children}
+	return (
+		<Portal>
+			<div
+				className={clsx(styles.modalPortal, {
+					[styles.modalPortalIsOpen]: isOpen,
+				})}>
+				<div className={styles.modalPanel}>
+					<div
+						ref={contentRef}
+						className={styles.modalContent}
+						role="dialog"
+						aria-modal="true"
+						aria-hidden={!isOpen}>
+						{children}
+					</div>
 				</div>
 			</div>
-		</div>,
-		document.body,
+		</Portal>
 	);
 };

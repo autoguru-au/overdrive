@@ -8,9 +8,9 @@ import React, {
 	useRef,
 	useState,
 } from 'react';
-import { createPortal } from 'react-dom';
 
 import { useOutsideClick } from '../OutsideClick';
+import { Portal } from '../Portal';
 import { EAlignment } from './alignment';
 import { AlignmentRect, getOptimalPosition, Rect } from './getOptimalPosition';
 import styles from './style.scss';
@@ -62,26 +62,27 @@ export function usingPositioner<T extends {} = {}>(
 			}, [isOpen, onRequestClose]),
 		);
 
-		return createPortal(
-			<div
-				ref={positionerRef}
-				style={{
-					visibility: rect === null ? 'hidden' : 'visible',
-					...(rect && {
-						transform: `translate3d(${rect.left}px, ${rect.top}px, 0px)`,
-					}),
-				}}
-				className={styles.root}>
-				{isOpen && (
-					<WrappingComponent
-						{...(rest as T)}
-						alignment={derivedAlignment}
-						isOpen={isOpen}
-						triggerRect={triggerRect}
-					/>
-				)}
-			</div>,
-			document.body,
+		return (
+			<Portal>
+				<div
+					ref={positionerRef}
+					style={{
+						visibility: rect === null ? 'hidden' : 'visible',
+						...(rect && {
+							transform: `translate3d(${rect.left}px, ${rect.top}px, 0px)`,
+						}),
+					}}
+					className={styles.root}>
+					{isOpen && (
+						<WrappingComponent
+							{...(rest as T)}
+							alignment={derivedAlignment}
+							isOpen={isOpen}
+							triggerRect={triggerRect}
+						/>
+					)}
+				</div>
+			</Portal>
 		);
 	};
 }

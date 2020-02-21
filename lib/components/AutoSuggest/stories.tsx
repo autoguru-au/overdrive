@@ -1,7 +1,8 @@
 import { CarIcon } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
-import React, { useEffect, useState } from 'react';
+import React, { FunctionComponent, useEffect, useState } from 'react';
 
+import { Button } from '../Button';
 import { StandardModal } from '../StandardModal';
 import { AutoSuggest } from '.';
 import { AutoSuggestValue } from './AutoSuggest';
@@ -30,7 +31,17 @@ export default {
 	component: AutoSuggest,
 	decorators: [
 		story => (
-			<div style={{ maxWidth: 500, margin: '0 auto' }}>{story()}</div>
+			<div
+				style={{
+					maxWidth: 500,
+					margin: '0 auto',
+					display: 'flex',
+					alignContent: 'center',
+					justifyContent: 'center',
+					alignItems: 'center',
+				}}>
+				{story()}
+			</div>
 		),
 	],
 };
@@ -96,13 +107,26 @@ export const WithNoItems = () => (
 	/>
 );
 
-export const InsideModal = () => (
-	<StandardModal isOpen title="Test inside modal">
-		<div style={{ padding: 20 }}>
-			<Impl />
-		</div>
-	</StandardModal>
-);
+export const InsideModal = () => <ModalForm />;
+
+const ModalForm: FunctionComponent = () => {
+	const [isOpen, setIsOpen] = useState<boolean>(true);
+	return (
+		<>
+			<StandardModal
+				isOpen={isOpen}
+				title="Test inside modal"
+				onRequestClose={() => setIsOpen(false)}>
+				<div style={{ padding: 20 }}>
+					<Impl />
+				</div>
+			</StandardModal>
+			{!isOpen && (
+				<Button onClick={() => setIsOpen(true)}>Re Open Modal</Button>
+			)}
+		</>
+	);
+};
 
 InsideModal.story = {
 	parameters: {

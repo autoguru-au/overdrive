@@ -15,10 +15,10 @@ import React, {
 	useRef,
 	useState,
 } from 'react';
-import { createPortal } from 'react-dom';
 
 import { Button, EButtonSize, Icon, useMedia } from '../..';
 import { useId } from '../../utils/useId';
+import { Portal } from '../Portal';
 import { usingPositioner } from '../Positioner';
 import { EAlignment } from '../Positioner/alignment';
 import { TextInput } from '../TextInput';
@@ -173,19 +173,19 @@ const AutoSuggestFullscreenInput = <PayloadType extends unknown>({
 	}, [setShowPortal]);
 
 	return (
-		showPortal &&
-		createPortal(
-			<div className={styles.fullScreenRoot}>
-				<AutoSuggestInput {...props} inlineOptions />
-				<Button
-					minimal
-					rounded
-					size={EButtonSize.Medium}
-					onClick={closeModal}>
-					<Icon icon={CloseIcon} />
-				</Button>
-			</div>,
-			document.body,
+		showPortal && (
+			<Portal>
+				<div className={styles.fullScreenRoot}>
+					<AutoSuggestInput {...props} inlineOptions />
+					<Button
+						minimal
+						rounded
+						size={EButtonSize.Medium}
+						onClick={closeModal}>
+						<Icon icon={CloseIcon} />
+					</Button>
+				</div>
+			</Portal>
 		)
 	);
 };
