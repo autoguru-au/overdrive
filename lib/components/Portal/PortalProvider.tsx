@@ -17,7 +17,6 @@ const buildPortalElement = (): HTMLDivElement => {
 	if (typeof window === 'undefined') return null;
 
 	const element: HTMLDivElement = document.createElement('div');
-	element.setAttribute('id', `od-portal-${Math.round(Math.random() * 1e6)}`);
 	document.body.append(element);
 
 	return element;
