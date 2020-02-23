@@ -1,11 +1,10 @@
 import { invariant } from '@autoguru/utilities';
-import { FunctionComponent, ReactNode } from 'react';
+import { FunctionComponent } from 'react';
 import { createPortal } from 'react-dom';
 
 import { usePortalContext } from './PortalProvider';
 
 interface Props {
-	children: ReactNode;
 	className?: string;
 }
 
