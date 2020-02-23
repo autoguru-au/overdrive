@@ -7,10 +7,6 @@ import React, {
 	useRef,
 } from 'react';
 
-interface Props {
-	children;
-}
-
 export const PortalContext: Context<{
 	portalInstanceRef: RefObject<HTMLDivElement>;
 }> = createContext(null);
@@ -27,7 +23,7 @@ const buildPortalElement = (): HTMLDivElement => {
 	return element;
 };
 
-export const PortalProvider: FunctionComponent<Props> = ({ children }) => {
+export const PortalProvider: FunctionComponent = ({ children }) => {
 	const rootElementRef = useRef<HTMLDivElement>(buildPortalElement());
 	const portalContext = usePortalContext();
 	const context = rootElementRef?.current
