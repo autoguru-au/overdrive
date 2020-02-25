@@ -1,19 +1,39 @@
-import { invariant } from '@autoguru/utilities';
-import { FunctionComponent } from 'react';
+import React, {
+	createContext,
+	useContext,
+	useLayoutEffect,
+	useState,
+} from 'react';
 import { createPortal } from 'react-dom';
 
-import { usePortalContext } from './PortalProvider';
+const PortalContext = createContext<HTMLElement>(
+	typeof document === 'undefined' ? null : document.body,
+);
 
-interface Props {
-	className?: string;
+export const usePortalContext = () => useContext(PortalContext);
+
+export function Portal({ children }) {
+	const context = useContext(PortalContext);
+	const [container] = useState(() => {
+		if (typeof document !== 'undefined') {
+			return document.createElement('div');
+		}
+
+		return null;
+	});
+
+	useLayoutEffect(() => {
+		if (container && context) {
+			context.appendChild(container);
+			return () => void context.removeChild(container);
+		}
+
+		return undefined;
+	}, [container, context]);
+
+	return (
+		<PortalContext.Provider value={container}>
+			{container && createPortal(children, container)}
+		</PortalContext.Provider>
+	);
 }
-
-export const Portal: FunctionComponent<Props> = ({ children }) => {
-	if (typeof window === 'undefined') return null;
-
-	// eslint-disable-next-line react-hooks/rules-of-hooks
-	const portalContext = usePortalContext();
-	invariant(portalContext, 'There is no portal context provided');
-
-	return createPortal(children, portalContext.portalInstanceRef.current);
-};

@@ -9,10 +9,11 @@ import {
 	useEffect,
 	useRef,
 } from 'react';
+import { findDOMNode } from 'react-dom';
 
 export const useOutsideClick = (
-	refs: Array<RefObject<HTMLElement>>,
 	onClickAway: () => void,
+	refs: Array<RefObject<HTMLElement>>,
 ) => {
 	const callbackRef = useRef(onClickAway);
 
@@ -28,10 +29,10 @@ export const useOutsideClick = (
 		)
 			return void 0;
 
-		return bindEvent(document, 'mouseup', event => {
+		return bindEvent(document, 'mousedown', event => {
 			const shouldClose = refs
 				.filter(item => Boolean(item.current))
-				.map(item => item.current)
+				.map(item => findDOMNode(item.current))
 				.every(
 					element => !element.contains(event.target as HTMLElement),
 				);
@@ -78,7 +79,7 @@ export const OutsideClick: NamedExoticComponent<Props> = memo(
 			'This component overrides the child ref, use with caution.',
 		);
 
-		useOutsideClick([rootClickRef], onOutsideClick);
+		useOutsideClick(onOutsideClick, [rootClickRef]);
 
 		return cloneElement(child, {
 			ref: rootClickRef,

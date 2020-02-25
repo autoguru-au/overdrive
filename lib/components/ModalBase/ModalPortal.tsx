@@ -1,9 +1,15 @@
 import clsx from 'clsx';
-import React, { FunctionComponent, useCallback, useLayoutEffect } from 'react';
+import React, {
+	FunctionComponent,
+	useCallback,
+	useEffect,
+	useLayoutEffect,
+	useRef,
+} from 'react';
 
 import { useOutsideClick } from '../OutsideClick';
 import { Portal } from '../Portal';
-import { usePortalContext } from '../Portal/PortalProvider';
+import { usePortalContext } from '../Portal/Portal';
 import { ECloseCode } from './enums';
 import styles from './style.scss';
 
@@ -18,7 +24,11 @@ export const ModalPortal: FunctionComponent<Props> = ({
 	onRequestClose,
 	children,
 }) => {
-	const { portalInstanceRef } = usePortalContext();
+	const portalNode = usePortalContext();
+	const portalNodeRef = useRef<HTMLElement>(portalNode);
+	useEffect(() => {
+		portalNodeRef.current = portalNode;
+	}, [portalNode]);
 
 	useLayoutEffect(() => {
 		if (!isOpen || typeof window === 'undefined') return void 0;
@@ -31,12 +41,12 @@ export const ModalPortal: FunctionComponent<Props> = ({
 	}, [isOpen]);
 
 	useOutsideClick(
-		[portalInstanceRef],
 		useCallback(() => {
 			if (isOpen) {
 				onRequestClose(ECloseCode.Overlay);
 			}
 		}, [onRequestClose, isOpen]),
+		[portalNodeRef],
 	);
 
 	return (

@@ -174,7 +174,7 @@ const AutoSuggestFullscreenInput = <PayloadType extends unknown>({
 
 	return (
 		showPortal && (
-			<Portal>
+			<Portal name={'autosuggest'}>
 				<div className={styles.fullScreenRoot}>
 					<AutoSuggestInput {...props} inlineOptions />
 					<Button
