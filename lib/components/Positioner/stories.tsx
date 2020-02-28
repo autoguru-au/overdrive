@@ -13,7 +13,7 @@ const alignmentPicker = () =>
 
 storiesOf('Utility|Positioner', module)
 	.addParameters({ chromatic: { disable: true } })
-	.add('standard', () => {
+	.add('Standard', () => {
 		const Impl = () => {
 			const triggerRef = useRef();
 			const [isOpen, setIsOpen] = useState(true);
@@ -46,7 +46,7 @@ storiesOf('Utility|Positioner', module)
 
 		return <Impl />;
 	})
-	.add('illustrate a scroll', () => {
+	.add('Illustrate A Scroll', () => {
 		const triggerRef = createRef<HTMLButtonElement>();
 
 		return (

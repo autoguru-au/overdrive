@@ -26,24 +26,24 @@ storiesOf('Components|Inputs/Text', module)
 	.addParameters({
 		chromatic: { delay: 300 },
 	})
-	.add('standard', () => (
+	.add('Standard', () => (
 		<TextInput name="abc" {...sharedKnobs('What is your first name?')} />
 	))
-	.add('with a value', () => (
+	.add('With A Value', () => (
 		<TextInput
 			name="abc"
 			placeholder="What is your first name?"
 			value="Bob The Builder"
 		/>
 	))
-	.add('with hint text', () => (
+	.add('With Hint Text', () => (
 		<TextInput
 			name="abc"
 			placeholder="What is your first name?"
 			hintText={text('Hint Text', 'Cannot be Bob The Builder.')}
 		/>
 	))
-	.add('with icon', () => (
+	.add('With Icon', () => (
 		<div style={{ display: 'grid', gridGap: '16px' }}>
 			<TextInput
 				name="abc"
@@ -88,7 +88,7 @@ storiesOf('Components|Inputs/Text', module)
 			/>
 		</div>
 	))
-	.add('with validation', () => (
+	.add('With Validation', () => (
 		<TextInput
 			{...sharedKnobs('What is your first name?')}
 			name="abc"
@@ -97,7 +97,7 @@ storiesOf('Components|Inputs/Text', module)
 			hintText={text('Hint Text', 'Cannot be Bob The Builder.')}
 		/>
 	))
-	.add('disabled', () => (
+	.add('Disabled', () => (
 		<TextInput
 			disabled
 			placeholder="What is your first name?"
@@ -105,7 +105,7 @@ storiesOf('Components|Inputs/Text', module)
 			hintText="Cannot be Bob The Builder."
 		/>
 	))
-	.add('disabled with value', () => (
+	.add('Disabled With Value', () => (
 		<TextInput
 			disabled
 			placeholder="What is your first name?"

@@ -21,7 +21,7 @@ storiesOf('Components|Inputs/CheckBox', module)
 	.addDecorator(story => (
 		<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
 	))
-	.add('standard', () => {
+	.add('Standard', () => {
 		const Example = () => {
 			const list: Array<{ label: string; value: string }> = [
 				{
@@ -86,13 +86,13 @@ storiesOf('Components|Inputs/CheckBox', module)
 
 		return <Example />;
 	})
-	.add('unchecked', () => (
+	.add('Unchecked', () => (
 		<CheckBox name="check-name" value="1" {...baseProps()} />
 	))
-	.add('checked', () => (
+	.add('Checked', () => (
 		<CheckBox checked name="check-name" value="1" {...baseProps()} />
 	))
-	.add('disabled', () => (
+	.add('Disabled', () => (
 		<CheckBox
 			disabled
 			name="check-name"
@@ -101,7 +101,7 @@ storiesOf('Components|Inputs/CheckBox', module)
 			{...baseProps()}
 		/>
 	))
-	.add('multiple lines', () => (
+	.add('Multiple Lines', () => (
 		<>
 			<CheckBox
 				children="There is a very good reason why this thing is a multi-line, sometimes we need to show people a lot of things. And thus this exists."
@@ -117,7 +117,7 @@ storiesOf('Components|Inputs/CheckBox', module)
 			/>
 		</>
 	))
-	.add('with component', () => {
+	.add('With Component', () => {
 		const Item = ({ label, rating }) => (
 			<div
 				style={{
@@ -148,7 +148,7 @@ storiesOf('Components|Inputs/CheckBox', module)
 			</>
 		);
 	})
-	.add('with multi-line component', () => (
+	.add('With Multi Line Component', () => (
 		<>
 			<CheckBox value="1">
 				<div

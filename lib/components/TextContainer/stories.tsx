@@ -7,7 +7,7 @@ import { TextContainer } from './TextContainer';
 
 storiesOf('Components|TextContainer', module)
 	.addDecorator(story => <div style={{ maxWidth: 512 }}>{story()}</div>)
-	.add('standard', () => (
+	.add('Standard', () => (
 		<TextContainer>
 			<Heading>Choose a credit pack</Heading>
 			<Text muted is="p">
@@ -16,7 +16,7 @@ storiesOf('Components|TextContainer', module)
 			</Text>
 		</TextContainer>
 	))
-	.add('with a lot of body', () => (
+	.add('With A Lot Of Body', () => (
 		<TextContainer>
 			<Heading>Reviews</Heading>
 			<Text muted is="p">
@@ -27,7 +27,7 @@ storiesOf('Components|TextContainer', module)
 			</Text>
 		</TextContainer>
 	))
-	.add('with interaction', () => (
+	.add('With Interaction', () => (
 		<TextContainer
 			heading={
 				<>
@@ -44,7 +44,7 @@ storiesOf('Components|TextContainer', module)
 			</Text>
 		</TextContainer>
 	))
-	.add('with long title', () => (
+	.add('With Long Title', () => (
 		<TextContainer
 			heading={
 				<>
@@ -61,12 +61,12 @@ storiesOf('Components|TextContainer', module)
 			</Text>
 		</TextContainer>
 	))
-	.add('with no body text', () => (
+	.add('With No Body Text', () => (
 		<TextContainer>
 			<Heading>Choose a credit pack</Heading>
 		</TextContainer>
 	))
-	.add('with no title text', () => (
+	.add('With No Title Text', () => (
 		<TextContainer>
 			<Text muted is="p">
 				To get started, choose a credit pack that will used for Auto

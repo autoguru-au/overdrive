@@ -9,7 +9,7 @@ storiesOf('Foundation|Typography/TextLink', module)
 	.addDecorator(story => (
 		<div style={{ width: '100%', maxWidth: 300 }}>{story()}</div>
 	))
-	.add('standard', () => (
+	.add('Standard', () => (
 		<>
 			<Text muted is="p">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad,{' '}

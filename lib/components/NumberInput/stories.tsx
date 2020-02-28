@@ -23,20 +23,20 @@ storiesOf('Components|Inputs/Number', module)
 	.addParameters({
 		chromatic: { delay: 300 },
 	})
-	.add('standard', () => (
+	.add('Standard', () => (
 		<NumberInput name="abc" {...sharedKnobs('How many?')} />
 	))
-	.add('with a value', () => (
+	.add('With A Value', () => (
 		<NumberInput name="abc" placeholder="How many" value="42" />
 	))
-	.add('with hint text', () => (
+	.add('With Hint Text', () => (
 		<NumberInput
 			name="abc"
 			placeholder="How many?"
 			hintText={text('Hint Text', 'Must be greater than 10.')}
 		/>
 	))
-	.add('with icon', () => (
+	.add('With Icon', () => (
 		<div style={{ display: 'grid', gridGap: '16px' }}>
 			<NumberInput
 				name="abc"
@@ -81,6 +81,6 @@ storiesOf('Components|Inputs/Number', module)
 			/>
 		</div>
 	))
-	.add('disabled', () => (
+	.add('Disabled', () => (
 		<NumberInput disabled name="abc" placeholder="How many?" />
 	));

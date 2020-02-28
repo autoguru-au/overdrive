@@ -14,10 +14,10 @@ const baseProps = () => ({
 
 storiesOf('Components|BulletText', module)
 	.addDecorator(story => <ul children={story()} style={{ width: 200 }} />)
-	.add('standard', () => (
+	.add('Standard', () => (
 		<BulletText {...baseProps()}>Hello World</BulletText>
 	))
-	.add('with custom element', () => (
+	.add('With Custom Element', () => (
 		<BulletText
 			bullet={
 				<span

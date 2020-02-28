@@ -12,14 +12,14 @@ const NakedModal = withModal(({ children }) => (
 ));
 
 storiesOf('Utility|Modal', module)
-	.add('withModal default', () => (
+	.add('WithModal Default', () => (
 		<NakedModal
 			isOpen={boolean('isOpen', true)}
 			onRequestClose={action('onRequestClose')}>
 			<p>Hello, I am a modal body!</p>
 		</NakedModal>
 	))
-	.add('withModal triggered with a button', () => {
+	.add('WithModal Triggered With A Button', () => {
 		const Example = () => {
 			const [isOpen, setIsOpen] = useState(false);
 

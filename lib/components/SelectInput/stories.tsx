@@ -31,19 +31,19 @@ storiesOf('Components|Inputs/Select', module)
 	.addParameters({
 		chromatic: { delay: 300 },
 	})
-	.add('standard', () => (
+	.add('Standard', () => (
 		<SelectInput name="abc" {...sharedKnobs('Select one')}>
 			<option disabled />
 			{selectOptions('Option 1, Option 2, Option 3')}
 		</SelectInput>
 	))
-	.add('with a value', () => (
+	.add('With A Value', () => (
 		<SelectInput name="abc" placeholder="Select one" value="Option 2">
 			<option disabled />
 			{selectOptions('Option 1, Option 2, Option 3')}
 		</SelectInput>
 	))
-	.add('with hint text', () => (
+	.add('With Hint Text', () => (
 		<SelectInput
 			name="abc"
 			placeholder="Select one"
@@ -52,7 +52,7 @@ storiesOf('Components|Inputs/Select', module)
 			{selectOptions('Option 1, Option 2, Option 3')}
 		</SelectInput>
 	))
-	.add('with icon', () => (
+	.add('With Icon', () => (
 		<div style={{ display: 'grid', gridGap: '16px' }}>
 			<SelectInput
 				name="abc"
@@ -92,7 +92,7 @@ storiesOf('Components|Inputs/Select', module)
 			</SelectInput>
 		</div>
 	))
-	.add('with validation', () => (
+	.add('With Validation', () => (
 		<SelectInput
 			name="abc"
 			isValid={isValid(false)}
@@ -103,7 +103,7 @@ storiesOf('Components|Inputs/Select', module)
 			{selectOptions('Option 1, Option 2, Option 3')}
 		</SelectInput>
 	))
-	.add('disabled', () => (
+	.add('Disabled', () => (
 		<SelectInput
 			disabled
 			name="abc"

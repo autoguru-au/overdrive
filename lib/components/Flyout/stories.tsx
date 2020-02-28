@@ -12,7 +12,7 @@ const alignmentPicker = () =>
 
 storiesOf('Components|Flyout', module)
 	.addParameters({ chromatic: { disable: true } })
-	.add('standard', () => {
+	.add('Standard', () => {
 		const Impl = () => {
 			const triggerRef = useRef();
 			const [isOpen, setIsOpen] = useState(true);
