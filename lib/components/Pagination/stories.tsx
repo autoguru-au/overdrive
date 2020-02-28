@@ -26,7 +26,7 @@ const baseProps = (
 	),
 });
 storiesOf('Components|Pagination/Numbered', module)
-	.add('standard', () => {
+	.add('Standard', () => {
 		const Example = () => {
 			const [activePage, setActivePage] = useState(1);
 
@@ -46,25 +46,25 @@ storiesOf('Components|Pagination/Numbered', module)
 
 		return <Example />;
 	})
-	.add('loading', () => <Pagination {...baseProps(null)} />)
+	.add('Loading', () => <Pagination {...baseProps(null)} />)
 	.add('less than max pages', () => (
 		<Pagination {...baseProps(1, 20, 10, 5)} />
 	))
-	.add('all pages fit', () => <Pagination {...baseProps(1, 45, 10, 5)} />)
-	.add('jump forward start', () => (
+	.add('All Pages fit', () => <Pagination {...baseProps(1, 45, 10, 5)} />)
+	.add('Jump Forward Start', () => (
 		<Pagination {...baseProps(1, 638, 10, 5)} />
 	))
-	.add('jump forward middle', () => (
+	.add('Jump Forward Middle', () => (
 		<Pagination {...baseProps(4, 638, 10, 5)} />
 	))
-	.add('last chunk start', () => (
+	.add('Last Chunk Start', () => (
 		<Pagination {...baseProps(60, 638, 10, 5)} />
 	))
-	.add('last chunk middle', () => (
+	.add('Last Chunk Middle', () => (
 		<Pagination {...baseProps(61, 638, 10, 5)} />
 	))
-	.add('jump back start', () => <Pagination {...baseProps(62, 638, 10, 5)} />)
-	.add('jump back middle', () => (
+	.add('Jump Back Start', () => <Pagination {...baseProps(62, 638, 10, 5)} />)
+	.add('Jump Back Middle', () => (
 		<Pagination {...baseProps(63, 638, 10, 5)} />
 	))
-	.add('jump back end', () => <Pagination {...baseProps(64, 638, 10, 5)} />);
+	.add('Jump Back End', () => <Pagination {...baseProps(64, 638, 10, 5)} />);

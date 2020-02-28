@@ -19,7 +19,7 @@ storiesOf('Components|Inputs/Radio', module)
 	.addDecorator(story => (
 		<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
 	))
-	.add('standard', () => {
+	.add('Standard', () => {
 		const Example = () => {
 			const [value, setValue] = useState('holden');
 
@@ -44,37 +44,37 @@ storiesOf('Components|Inputs/Radio', module)
 
 		return <Example />;
 	})
-	.add('unchecked', () => (
+	.add('Unchecked', () => (
 		<RadioGroup name="radio-story">
 			<Radio value="1" {...baseProps()} />
 		</RadioGroup>
 	))
-	.add('checked', () => (
+	.add('Checked', () => (
 		<RadioGroup name="radio-story" value="1">
 			<Radio value="1" {...baseProps()} />
 		</RadioGroup>
 	))
-	.add('hovered', () => (
+	.add('Hovered', () => (
 		<RadioGroup name="radio-story">
 			<Radio value="1" className={styles.hovered} {...baseProps()} />
 		</RadioGroup>
 	))
-	.add('active', () => (
+	.add('Active', () => (
 		<RadioGroup name="radio-story">
 			<Radio value="1" className={styles.active} {...baseProps()} />
 		</RadioGroup>
 	))
-	.add('focused', () => (
+	.add('Focused', () => (
 		<RadioGroup name="radio-story">
 			<Radio value="1" className={styles.focused} {...baseProps()} />
 		</RadioGroup>
 	))
-	.add('disabled', () => (
+	.add('Disabled', () => (
 		<RadioGroup name="radio-story">
 			<Radio disabled value="1" {...baseProps()} />
 		</RadioGroup>
 	))
-	.add('multiple lines', () => (
+	.add('Multiple Lines', () => (
 		<RadioGroup name="radio-story">
 			<Radio
 				children="There is a very good reason why this thing is a multi-line, sometimes we need to show people a lot of things. And thus this exists."
@@ -83,7 +83,7 @@ storiesOf('Components|Inputs/Radio', module)
 			<Radio children="Oh, and it also works when mixed." value="2" />
 		</RadioGroup>
 	))
-	.add('with component', () => {
+	.add('With Component', () => {
 		const Item = ({ label, rating }) => (
 			<div
 				style={{
@@ -114,7 +114,7 @@ storiesOf('Components|Inputs/Radio', module)
 			</RadioGroup>
 		);
 	})
-	.add('with multi-line component', () => (
+	.add('With Multi Line Component', () => (
 		<RadioGroup name="radio-story">
 			<Radio value="1">
 				<div

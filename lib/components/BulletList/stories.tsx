@@ -8,7 +8,7 @@ storiesOf('Foundation|List/BulletList', module)
 	.addDecorator(story => (
 		<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
 	))
-	.add('standard', () => (
+	.add('Standard', () => (
 		<BulletList>
 			<Bullet>
 				<Text>
@@ -28,7 +28,7 @@ storiesOf('Foundation|List/BulletList', module)
 			</Bullet>
 		</BulletList>
 	))
-	.add('nested', () => (
+	.add('Nested', () => (
 		<BulletList>
 			<Bullet>
 				<Text>

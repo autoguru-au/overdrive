@@ -36,24 +36,24 @@ storiesOf('Components|Inputs/Date', module)
 	.addParameters({
 		chromatic: { delay: 300 },
 	})
-	.add('standard', () => (
+	.add('Standard', () => (
 		<DateInput name="date" {...sharedKnobs('What is your DOB?')} />
 	))
-	.add('with a value', () => (
+	.add('With A Value', () => (
 		<DateInput
 			value={todayStr}
 			{...sharedKnobs('What is your DOB?')}
 			name="abc"
 		/>
 	))
-	.add('with hint text', () => (
+	.add('With Hint Text', () => (
 		<DateInput
 			name="abc"
 			{...sharedKnobs('What is your DOB?')}
 			hintText={text('Hint Text', 'dd/mm/yyy')}
 		/>
 	))
-	.add('with icon', () => (
+	.add('With Icon', () => (
 		<div style={{ display: 'grid', gridGap: '16px' }}>
 			<DateInput
 				name="abc"
@@ -98,7 +98,7 @@ storiesOf('Components|Inputs/Date', module)
 			/>
 		</div>
 	))
-	.add('with validation', () => (
+	.add('With Validation', () => (
 		<DateInput
 			value={todayStr}
 			{...sharedKnobs('What is your DOB?')}
@@ -108,7 +108,7 @@ storiesOf('Components|Inputs/Date', module)
 			hintText={text('Hint Text', 'dd/mm/yyy')}
 		/>
 	))
-	.add('disabled', () => (
+	.add('Disabled', () => (
 		<DateInput
 			disabled
 			value={todayStr}

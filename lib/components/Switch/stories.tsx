@@ -6,14 +6,14 @@ import React from 'react';
 import { Switch } from './Switch';
 
 storiesOf('Components|Switch', module)
-	.add('standard', () => (
+	.add('Standard', () => (
 		<Switch
 			disabled={boolean('disabled', false)}
 			toggled={boolean('toggled', false)}
 			onChange={action('onChange')}
 		/>
 	))
-	.add('Un-toggled', () => <Switch toggled={false} />)
+	.add('Un Toggled', () => <Switch toggled={false} />)
 	.add('Toggled', () => <Switch toggled />)
-	.add('Disabled Un-toggled', () => <Switch disabled toggled={false} />)
+	.add('Disabled Un Toggled', () => <Switch disabled toggled={false} />)
 	.add('Disabled Toggled', () => <Switch disabled toggled />);

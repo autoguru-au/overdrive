@@ -8,14 +8,14 @@ storiesOf('Foundation|Typography/Heading', module)
 	.addDecorator(story => (
 		<div style={{ maxWidth: '350px', width: '100%' }}>{story()}</div>
 	))
-	.add('standard', () => (
+	.add('Standard', () => (
 		<Heading
 			is={select('Tag', ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'], 'h1')}
 			size={select('Size', [1, 2, 3, 4, 5, 6, 7, 8, 9], 4)}>
 			Hello World
 		</Heading>
 	))
-	.add('all the sizes', () => (
+	.add('All The Sizes', () => (
 		<div>
 			<Heading is="h6">I am a heading</Heading>
 			<Heading is="h5">I am a heading</Heading>

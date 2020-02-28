@@ -14,8 +14,8 @@ const baseProps = () => ({
 const sizeScale: TSizeScale[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 storiesOf('Foundation|Typography/Text', module)
-	.add('standard', () => <Text {...baseProps()}>Hello World</Text>)
-	.add('as paragraph', () => (
+	.add('Standard', () => <Text {...baseProps()}>Hello World</Text>)
+	.add('As paragraph', () => (
 		<Text is="p" {...baseProps()}>
 			To avoid you coming to a halt in the middle of the road, because of
 			a banging, crash of pistons and valves fighting with each other,
@@ -23,7 +23,7 @@ storiesOf('Foundation|Typography/Text', module)
 			costs so much to replace or repair.
 		</Text>
 	))
-	.add("all the span's", () => (
+	.add("All The Span's", () => (
 		<div>
 			<div>
 				{sizeScale.map(size => (
@@ -36,7 +36,7 @@ storiesOf('Foundation|Typography/Text', module)
 			</div>
 		</div>
 	))
-	.add("all the p's", () => (
+	.add("All The p's", () => (
 		<div>
 			<div>
 				{sizeScale.map(size => (

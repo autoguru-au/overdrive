@@ -25,4 +25,4 @@ const baseProps = () => ({
 
 storiesOf('Components|Progress/Spinner', module)
 	.addParameters({ chromatic: { disable: true } })
-	.add('standard', () => <ProgressSpinner {...baseProps()} />);
+	.add('Standard', () => <ProgressSpinner {...baseProps()} />);

@@ -10,15 +10,15 @@ const baseProps = () => ({
 });
 
 storiesOf('Components|StarRating', module)
-	.add('standard', () => (
+	.add('Standard', () => (
 		<StarRating {...baseProps()} label={text('Label', void 0)} />
 	))
-	.add('small size', () => (
+	.add('Small Size', () => (
 		<StarRating rating={3.2} size={EStarRatingSize.Small} />
 	))
-	.add('medium size', () => (
+	.add('Medium Size', () => (
 		<StarRating rating={1.6} size={EStarRatingSize.Medium} />
 	))
-	.add('with label', () => (
+	.add('With Label', () => (
 		<StarRating rating={3.9} label="product rating" />
 	));

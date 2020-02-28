@@ -12,8 +12,8 @@ const baseProps = () => ({
 });
 
 storiesOf('Foundation|Typography/Anchor', module)
-	.add('standard', () => <Anchor>07 5612 5347</Anchor>)
-	.add('withIcon', () => (
+	.add('Standard', () => <Anchor>07 5612 5347</Anchor>)
+	.add('WithIcon', () => (
 		<Anchor
 			{...baseProps()}
 			href="123"
@@ -21,7 +21,7 @@ storiesOf('Foundation|Typography/Anchor', module)
 		/>
 	))
 	.add(
-		'withButton',
+		'WithButton',
 		() => (
 			<Anchor
 				{...baseProps()}
