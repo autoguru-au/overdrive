@@ -2,32 +2,7 @@
 # yarn lockfile v1
 
 
-"@autoguru/babel-preset@1.0.91":
-  version "1.0.91"
-  resolved "https://registry.yarnpkg.com/@autoguru/babel-preset/-/babel-preset-1.0.91.tgz#e4547edfb2ac940b3f47c347023a91a0d144b8c8"
-  integrity sha512-2zMl4H6FrGbZGxTs5UZtAIg2vSQudP5AP5o2sx0Zx2CzvnpgrgEaG/cEXj/uCkvvaj7rz1ybpxcfWCUKT3jcUQ==
-  dependencies:
-    "@babel/helper-annotate-as-pure" "^7.7.4"
-    "@babel/helper-plugin-utils" "^7.0.0"
-    "@babel/plugin-proposal-class-properties" "^7.7.4"
-    "@babel/plugin-proposal-export-default-from" "^7.7.4"
-    "@babel/plugin-proposal-nullish-coalescing-operator" "^7.7.4"
-    "@babel/plugin-proposal-object-rest-spread" "^7.8.3"
-    "@babel/plugin-proposal-optional-chaining" "^7.7.5"
-    "@babel/plugin-syntax-dynamic-import" "^7.7.4"
-    "@babel/plugin-transform-react-constant-elements" "^7.7.4"
-    "@babel/plugin-transform-react-inline-elements" "^7.7.4"
-    "@babel/plugin-transform-runtime" "^7.7.6"
-    "@babel/plugin-transform-spread" "^7.7.4"
-    "@babel/plugin-transform-strict-mode" "^7.7.4"
-    "@babel/preset-env" "^7.8.4"
-    "@babel/preset-react" "^7.7.4"
-    "@babel/runtime-corejs3" "^7.8.4"
-    babel-plugin-dev-expression "^0.2.2"
-    babel-plugin-macros "^2.8.0"
-    babel-plugin-transform-react-remove-prop-types "^0.4.24"
-
-"@autoguru/babel-preset@^1.0.91":
+"@autoguru/babel-preset@1.0.92", "@autoguru/babel-preset@^1.0.92":
   version "1.0.92"
   resolved "https://registry.yarnpkg.com/@autoguru/babel-preset/-/babel-preset-1.0.92.tgz#869b43bbc32bb4d671a1e87496073825808954b4"
   integrity sha512-1sL3naphDVW4PZX0u9W1TlugSHxGdBQI1jGy/qhd5FXsfr/dpLbD+8CM7m20JP713PIKr7JeKFFgusm4KeXUng==
@@ -88,25 +63,26 @@
   dependencies:
     tslib "^1.10.0"
 
-"@autoguru/jest-preset@1.0.91":
-  version "1.0.91"
-  resolved "https://registry.yarnpkg.com/@autoguru/jest-preset/-/jest-preset-1.0.91.tgz#9f860e2cb24d2a2a7c4f2f893af55ff070d4248f"
-  integrity sha512-zTDPhzj86P3CVifKY3Hrjn7IcsOtPWX/FOWv6II1hI4tGIamhmwPjdT2DFbMAW8P0A8EukIsOXhOnV0rFs0zLg==
+"@autoguru/jest-preset@1.0.92":
+  version "1.0.92"
+  resolved "https://registry.yarnpkg.com/@autoguru/jest-preset/-/jest-preset-1.0.92.tgz#c3ed6dc19f544b831c1322b16009e4828cdb5a1f"
+  integrity sha512-UntVDtNCPoteT7mq59PsIcfv2Cob1BNCOWR+Fyl3Yn8/FA9uKQ+KJPFuomqWMMKItaty6CtQUVcVmmXSLnvcqg==
   dependencies:
-    "@autoguru/babel-preset" "^1.0.91"
+    "@autoguru/babel-preset" "^1.0.92"
     "@babel/core" "^7.8.4"
     "@babel/preset-typescript" "^7.7.4"
     babel-jest "^25.1.0"
+    babel-plugin-treat "^1.1.0"
 
 "@autoguru/tsconfig@1.0.77":
   version "1.0.77"
   resolved "https://registry.yarnpkg.com/@autoguru/tsconfig/-/tsconfig-1.0.77.tgz#496144a3585cc4fe4063cc463ec1d7ffe7013d8a"
   integrity sha512-+VbKXGyqjEBz8se0Lmk1ripcotKvdAMdpZzJy3S7jAoJJMDBIHJ7nQNyz8mnGu8xFebpcz1y4USiG7lru8Uo8A==
 
-"@autoguru/utilities@1.0.89":
-  version "1.0.89"
-  resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.89.tgz#c6cd9877494ca067b882b29d2f12b466e0f68c32"
-  integrity sha512-RNhDx+zeOmt9mLa+gGvn0nn5LtkhqQd7VxzTkAzJpjgYkYyJSKO0Jh+BSk5l2sRcHgCLeMtV53EvHyuKY1P4WA==
+"@autoguru/utilities@1.0.90":
+  version "1.0.90"
+  resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.90.tgz#08cd3926ab8b72e19993e2207928644467dc87bc"
+  integrity sha512-FSS/cEt7jDUC6WnDxAj3ddQG3psvALRscN9n5NYvKlRWb9UhREizHbO8rd0ywAKHwkABMNLjQ41iKjPgjoJHXw==
   dependencies:
     tiny-invariant "^1.0.6"
     tiny-warning "^1.0.3"
@@ -3804,6 +3780,11 @@ babel-plugin-transform-undefined-to-void@^6.9.4:
   version "6.9.4"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-undefined-to-void/-/babel-plugin-transform-undefined-to-void-6.9.4.tgz#be241ca81404030678b748717322b89d0c8fe280"
   integrity sha1-viQcqBQEAwZ4t0hxcyK4nQyP4oA=
+
+babel-plugin-treat@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-treat/-/babel-plugin-treat-1.1.0.tgz#82fc26c9dc46cc075e13116e738456bc63ee0edc"
+  integrity sha512-7T5q8BD1P88E0pN803/Me/Hix19kmfJcR5vFEeXwQEoT1aQ3kmKsH95NCB4B3BvZr7gqlofDbGOhgNWYhPWAyw==
 
 babel-polyfill@6.26.0:
   version "6.26.0"
