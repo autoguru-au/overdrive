@@ -7,7 +7,6 @@ import React, {
 	forwardRef,
 	ReactElement,
 	ReactText,
-	RefForwardingComponent,
 } from 'react';
 
 import { Text } from '../Text';
@@ -25,10 +24,7 @@ interface Props extends TextProps, AnchorProps {
 	as?: ReactElement;
 }
 
-export const TextLink: RefForwardingComponent<
-	HTMLAnchorElement,
-	Props
-> = forwardRef(
+export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 	(
 		{ as, children, className, strong = true, muted, size, ...props },
 		ref,
