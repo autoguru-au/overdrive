@@ -31,6 +31,7 @@ export const Badge = memo<Props>(
 					styles.colours[colour][inverted ? 'inverted' : 'default'],
 					className,
 				)}
+				display="inline-block"
 				padding="1"
 				borderRadius="1">
 				<span className={styles.label}>{label}</span>

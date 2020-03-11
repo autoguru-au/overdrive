@@ -3,10 +3,7 @@ import { useStyles } from 'react-treat';
 import { Theme } from 'treat/theme';
 
 import * as resetStyleRefs from '../../reset/reset.treat';
-import {
-	resolveResponsiveStyle,
-	ResponsiveProp,
-} from '../../utils/responsiveProps';
+import { resolveResponsiveStyle, ResponsiveProp } from '../../utils';
 import * as styleRefs from './useBoxStyles.treat';
 
 interface Padding {

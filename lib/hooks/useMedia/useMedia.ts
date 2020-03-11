@@ -2,7 +2,7 @@
 
 import { useCallback, useLayoutEffect, useMemo, useState } from 'react';
 
-import { useRuntimeTokens } from '../../components/ThemeProvider';
+import { useRuntimeTokens } from '../..';
 import { RuntimeTokens } from '../../themes/makeTheme';
 import { isBrowser } from '../../utils';
 

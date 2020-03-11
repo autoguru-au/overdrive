@@ -1,4 +1,4 @@
-import { makeResponsiveStyle } from '../../utils/responsiveProps';
+import { makeResponsiveStyle } from '../../utils';
 
 export const size = makeResponsiveStyle(
 	({ icon }) => icon.size,
