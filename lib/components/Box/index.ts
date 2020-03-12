@@ -1,1 +1,2 @@
-export { Box, EVariant as EBoxVariant } from './Box';
+export { Box } from './Box';
+export { useBoxStyles } from './useBoxStyles';

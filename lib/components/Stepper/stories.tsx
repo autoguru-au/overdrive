@@ -1,7 +1,7 @@
 import { action } from '@storybook/addon-actions';
 import { boolean, number } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 
 import { Stepper } from './Stepper';
 
@@ -12,7 +12,9 @@ const badgeProps = () => ({
 	disabled: boolean('disabled', false),
 });
 
-storiesOf('Components|Inputs/Stepper', module).add('Standard', () => {
+export default { title: 'Components|Inputs/Stepper', component: Stepper };
+
+export const standard = () => {
 	const StepperWrapper = () => {
 		const [value, setValue] = useState(1);
 
@@ -34,4 +36,4 @@ storiesOf('Components|Inputs/Stepper', module).add('Standard', () => {
 	};
 
 	return <StepperWrapper />;
-});
+};

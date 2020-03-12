@@ -2,13 +2,13 @@
 
 exports[`<LinearProgressIndicator /> should match snapshot 1`] = `
 <div
-  class="root"
+  class="base backgroundColours_gray200_base root_base"
 >
   <div
     class="linearProgressBar"
   >
     <span
-      class="linearProgressBarInner"
+      class="base backgroundColours_green300_base linearProgressBarInner"
     />
   </div>
 </div>

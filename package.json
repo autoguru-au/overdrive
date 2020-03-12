@@ -13,19 +13,20 @@
   "homepage": "https://overdrive.autoguru.io",
   "repository": "https://github.com/autoguru-au/overdrive",
   "license": "MIT",
-  "sideEffects": false,
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
+  "sideEffects": [
+    "./reset.ts",
+    "./themes.ts",
+    "./lib/reset/**/*",
+    "./lib/theme/**/*",
+    "./lib/themes/**/*"
   ],
+  "main": "./index.ts",
   "scripts": {
-    "build": "cross-env NODE_ENV=production node scripts/build",
     "chromatic": "chromatic test --exit-zero-on-changes --build-script-name storybook:build",
-    "format": "prettier --write \"**/*.+(js|jsx|ts|tsx|css|scss|json|yml|md|mdx|html)\"",
-    "lint": "concurrently -r \"yarn:lint:ts\"",
-    "lint:ts": "tsc --noEmit && eslint \"{*,{lib,config,scripts,.storybook}/**/*}.{js,jsx,ts,tsx}\" --fix --cache --quiet",
-    "release": "yarn build && changeset publish",
+    "format": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|md|mdx|html)\"",
+    "generate": "plop",
+    "lint": "tsc --noEmit && eslint \"lib/**/*.+(ts|tsx)\" --fix --cache --quiet",
+    "release": "changeset publish",
     "start": "yarn run storybook",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
@@ -38,12 +39,12 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,css,scss,json,yml,md,mdx,html}": [
-      "prettier --write"
-    ],
-    "*.{js,tsx,ts,tsx}": [
+    "!(stories).{js,tsx,ts,tsx}": [
       "eslint --cache --quiet --fix",
       "jest --bail --findRelatedTests",
+      "prettier --write"
+    ],
+    "*.{js,jsx,ts,tsx,json,yml,md,mdx,html}": [
       "prettier --write"
     ],
     "lib/components/**/index.ts": [
@@ -57,18 +58,18 @@
   },
   "browserslist": "extends browserslist-config-autoguru",
   "dependencies": {
-    "@autoguru/icons": "1.3.8",
-    "@autoguru/utilities": "1.0.90",
-    "clsx": "1.1.0"
+    "@autoguru/icons": "^1.3.8",
+    "@autoguru/utilities": "^1.0.91",
+    "clsx": "^1.1.0",
+    "react-treat": "^1.2.4"
   },
   "devDependencies": {
-    "@autoguru/babel-preset": "1.0.92",
+    "@autoguru/babel-preset": "1.0.96",
     "@autoguru/commitlint-config": "1.0.55",
     "@autoguru/eslint-plugin": "1.0.84",
-    "@autoguru/jest-preset": "1.0.92",
+    "@autoguru/jest-preset": "1.0.96",
     "@autoguru/tsconfig": "1.0.77",
     "@babel/core": "7.8.7",
-    "@babel/plugin-proposal-optional-chaining": "7.8.3",
     "@babel/runtime-corejs3": "7.8.7",
     "@changesets/cli": "^2.6.1",
     "@commitlint/cli": "8.3.5",
@@ -78,69 +79,47 @@
     "@storybook/addon-backgrounds": "5.3.14",
     "@storybook/addon-knobs": "5.3.14",
     "@storybook/addon-viewport": "5.3.14",
-    "@storybook/components": "5.3.14",
-    "@storybook/core": "5.3.14",
     "@storybook/react": "5.3.14",
     "@storybook/theming": "5.3.14",
     "@testing-library/jest-dom": "5.1.1",
     "@testing-library/react": "9.5.0",
     "@testing-library/react-hooks": "3.2.1",
-    "@types/node": "13.9.0",
+    "@types/node": "12.12.29",
     "@types/react": "16.9.23",
     "@types/react-dom": "16.9.5",
     "@types/webpack-env": "1.15.1",
-    "acorn": "7.1.1",
-    "acorn-walk": "7.1.1",
-    "autoprefixer": "9.7.4",
-    "awesome-typescript-loader": "5.2.1",
     "babel-loader": "8.0.6",
-    "browserslist-config-autoguru": "1.0.85",
-    "concurrently": "5.1.0",
-    "copyfiles": "2.2.0",
+    "babel-plugin-treat": "^1.1.0",
+    "browserslist-config-autoguru": "1.0.87",
     "core-js": "3.6.4",
-    "cosmiconfig": "6.0.0",
-    "cross-env": "7.0.2",
-    "css-loader": "3.4.2",
-    "cssnano": "4.1.10",
-    "enhanced-resolve": "4.1.1",
+    "csstype": "^2.6.8",
     "eslint": "6.8.0",
-    "fs-extra": "8.1.0",
     "glob": "7.1.6",
     "husky": "4.2.3",
-    "identity-obj-proxy": "3.0.0",
     "jest": "25.1.0",
-    "kleur": "3.0.3",
     "lint-staged": "10.0.8",
     "magic-string": "0.25.7",
-    "node-sass": "4.13.1",
     "plop": "2.6.0",
-    "postcss": "7.0.27",
-    "postcss-flexbugs-fixes": "4.2.0",
-    "postcss-loader": "3.0.0",
-    "postcss-modules": "1.5.0",
-    "postcss-preset-env": "6.7.0",
     "prettier": "1.19.1",
     "react": "16.13.0",
     "react-dom": "16.13.0",
     "react-test-renderer": "16.13.0",
-    "renovate-config-autoguru": "1.0.87",
-    "resolve-url-loader": "3.1.1",
     "rimraf": "3.0.2",
-    "sass-loader": "8.0.2",
     "semantic-release": "17.0.4",
     "storybook-chromatic": "3.5.2",
     "style-loader": "1.1.3",
+    "treat": "^1.2.4",
+    "ts-loader": "^6.2.1",
     "tslib": "1.11.1",
     "typescript": "3.8.3",
-    "webpack": "4.42.0",
-    "write": "2.0.0"
+    "webpack": "4.42.0"
   },
   "peerDependencies": {
     "react": ">=16.8",
     "react-dom": ">=16.8"
   },
   "volta": {
-    "node": "13.9.0",
+    "node": "12.16.1",
     "yarn": "1.22.1"
   }
 }

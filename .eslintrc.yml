@@ -8,6 +8,9 @@ env:
   node: true
   browser: true
 
+rules:
+  unicorn/no-abusive-eslint-disable: off
+
 overrides:
   - files: '{*,{scripts,config}/**/*}.js'
     rules:
@@ -20,6 +23,7 @@ overrides:
     rules:
       'unicorn/consistent-function-scoping': 'off' # Yet
       '@typescript-eslint/prefer-optional-chain': 'error'
+      '@typescript-eslint/no-unnecessary-type-assertion': off
     parser: '@typescript-eslint/parser'
     parserOptions:
       project: ['./tsconfig.stories.json', './tsconfig.json']

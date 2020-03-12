@@ -2,18 +2,22 @@
 
 exports[`<Meta /> should match snapshot with label, icon for Primary variant 1`] = `
 <span
-  class="root variantPrimary"
+  class="base root_base"
 >
-  <svg
-    viewBox="0 0 512 512"
-    xmlns="http://www.w3.org/2000/svg"
+  <i
+    class="base display_block variant_default_base variant_primary_base small_mobile_base"
   >
-    <path
-      d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
-    />
-  </svg>
+    <svg
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+      />
+    </svg>
+  </i>
   <span
-    class="root sizeScale4 alignLeft withIcon"
+    class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
   >
     Hello World!
   </span>
@@ -22,38 +26,22 @@ exports[`<Meta /> should match snapshot with label, icon for Primary variant 1`]
 
 exports[`<Meta /> should match snapshot with label, icon for Secondary variant 1`] = `
 <span
-  class="root variantSecondary"
+  class="base root_base"
 >
-  <svg
-    viewBox="0 0 512 512"
-    xmlns="http://www.w3.org/2000/svg"
+  <i
+    class="base display_block variant_default_base variant_secondary_base small_mobile_base"
   >
-    <path
-      d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
-    />
-  </svg>
+    <svg
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+      />
+    </svg>
+  </i>
   <span
-    class="root sizeScale4 alignLeft withIcon"
-  >
-    Hello World!
-  </span>
-</span>
-`;
-
-exports[`<Meta /> should render with a JSX node too 1`] = `
-<span
-  class="root variantPrimary"
->
-  <svg
-    viewBox="0 0 512 512"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
-    />
-  </svg>
-  <span
-    class="root sizeScale4 alignLeft withIcon"
+    class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
   >
     Hello World!
   </span>

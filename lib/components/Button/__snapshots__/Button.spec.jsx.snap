@@ -2,96 +2,96 @@
 
 exports[`<Button /> should match snapshot for default button 1`] = `
 <button
-  class="root variantSecondary medium"
+  class="base appearance button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base themedButton_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled width_default"
   type="button"
 >
   <div
-    class="body"
+    class="body_base"
   />
 </button>
 `;
 
 exports[`<Button /> when as button should use html button element by default 1`] = `
 <button
-  class="root variantSecondary medium"
+  class="base appearance button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base themedButton_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled width_default"
   type="button"
 >
   <div
-    class="body"
+    class="body_base"
   />
 </button>
 `;
 
 exports[`<Button /> when colour variants should match snapshot for Danger button 1`] = `
 <button
-  class="root variantDanger medium"
+  class="base appearance button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base themedButton_base defaultStates_danger_base variant_danger_base size_medium_default_base enabled width_default"
   type="button"
 >
   <div
-    class="body"
+    class="body_base"
   />
 </button>
 `;
 
 exports[`<Button /> when colour variants should match snapshot for Primary button 1`] = `
 <button
-  class="root variantPrimary medium"
+  class="base appearance button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base themedButton_base defaultStates_primary_base variant_primary_base size_medium_default_base enabled width_default"
   type="button"
 >
   <div
-    class="body"
+    class="body_base"
   />
 </button>
 `;
 
 exports[`<Button /> when colour variants should match snapshot for Secondary button 1`] = `
 <button
-  class="root variantSecondary medium"
+  class="base appearance button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base themedButton_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled width_default"
   type="button"
 >
   <div
-    class="body"
+    class="body_base"
   />
 </button>
 `;
 
 exports[`<Button /> when custom component should use html anchor element if href value exists 1`] = `
 <a
-  class="root variantSecondary medium"
+  class="base none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base themedButton_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled width_default"
   href="abc"
 >
   <div
-    class="body"
+    class="body_base"
   />
 </a>
 `;
 
 exports[`<Button /> when isFullWidth should match snapshot 1`] = `
 <button
-  class="root variantSecondary medium fullWidth"
+  class="base appearance button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base themedButton_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled width_fullWidth"
   type="button"
 >
   <div
-    class="body"
+    class="body_base"
   />
 </button>
 `;
 
 exports[`<Button /> when loading should match snapshot for default button 1`] = `
 <button
-  class="root variantSecondary medium loading"
+  class="base appearance button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base themedButton_base variant_secondary_base size_medium_default_base loading width_default"
   disabled=""
   type="button"
 >
   <div
-    class="root sizeMedium"
+    class="base root size_medium_circular_base colours_secondary_base spinner"
   >
     <svg
       class="circular"
       viewBox="25 25 50 50"
     >
       <circle
-        class="path"
+        class="path_base size_medium_path_base"
         cx="50"
         cy="50"
         fill="none"
@@ -105,19 +105,19 @@ exports[`<Button /> when loading should match snapshot for default button 1`] = 
 
 exports[`<Button /> when loading should match snapshot for medium button 1`] = `
 <button
-  class="root variantSecondary medium loading"
+  class="base appearance button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base themedButton_base variant_secondary_base size_medium_default_base loading width_default"
   disabled=""
   type="button"
 >
   <div
-    class="root sizeMedium"
+    class="base root size_medium_circular_base colours_secondary_base spinner"
   >
     <svg
       class="circular"
       viewBox="25 25 50 50"
     >
       <circle
-        class="path"
+        class="path_base size_medium_path_base"
         cx="50"
         cy="50"
         fill="none"
@@ -131,19 +131,19 @@ exports[`<Button /> when loading should match snapshot for medium button 1`] = `
 
 exports[`<Button /> when loading should match snapshot for small button 1`] = `
 <button
-  class="root variantSecondary small loading"
+  class="base appearance button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base themedButton_base variant_secondary_base size_small_default_base loading width_default"
   disabled=""
   type="button"
 >
   <div
-    class="root sizeMedium"
+    class="base root size_medium_circular_base colours_secondary_base spinner"
   >
     <svg
       class="circular"
       viewBox="25 25 50 50"
     >
       <circle
-        class="path"
+        class="path_base size_medium_path_base"
         cx="50"
         cy="50"
         fill="none"
@@ -157,33 +157,33 @@ exports[`<Button /> when loading should match snapshot for small button 1`] = `
 
 exports[`<Button /> when rounded should match snapshot 1`] = `
 <button
-  class="root variantSecondary medium rounded"
+  class="base appearance button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base themedButton_base defaultStates_secondary_base variant_secondary_base size_medium_default_base size_medium_rounded_base enabled width_default"
   type="button"
 >
   <div
-    class="body"
+    class="body_base"
   />
 </button>
 `;
 
 exports[`<Button /> when size variant should match snapshot for medium button 1`] = `
 <button
-  class="root variantSecondary medium"
+  class="base appearance button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base themedButton_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled width_default"
   type="button"
 >
   <div
-    class="body"
+    class="body_base"
   />
 </button>
 `;
 
 exports[`<Button /> when size variant should match snapshot for small button 1`] = `
 <button
-  class="root variantSecondary small"
+  class="base appearance button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base themedButton_base defaultStates_secondary_base variant_secondary_base size_small_default_base enabled width_default"
   type="button"
 >
   <div
-    class="body"
+    class="body_base"
   />
 </button>
 `;

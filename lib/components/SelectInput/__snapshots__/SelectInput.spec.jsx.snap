@@ -2,72 +2,75 @@
 
 exports[`<SelectInput /> should have some hintText 1`] = `
 <div
-  class="root"
+  class="base"
 >
   <div
-    class="notchedBase"
+    class="base root_base"
   >
     <div
-      class="inputWrapper"
+      class="input_root"
     >
-      <select
-        autocomplete="off"
-        class="input"
+      <div
+        class="base root"
       >
-        <option
-          value="a"
+        <select
+          autocomplete="off"
+          class="base block appearance select base block appearance input width_full input_itself_root_base"
         >
-          Value 1
-        </option>
-        <option
-          value="b"
+          <option
+            value="a"
+          >
+            Value 1
+          </option>
+          <option
+            value="b"
+          >
+            Value 2
+          </option>
+          <option
+            value="c"
+          >
+            Value 3
+          </option>
+        </select>
+        <i
+          class="base display_block icon_base medium_mobile_base"
         >
-          Value 2
-        </option>
-        <option
-          value="c"
-        >
-          Value 3
-        </option>
-      </select>
-      <i
-        class="root arrow"
-        style="width: 25px; height: 25px;"
-      >
-        <svg
-          fill="currentColor"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
-          />
-        </svg>
-      </i>
+          <svg
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+            />
+          </svg>
+        </i>
+      </div>
     </div>
     <div
-      class="notchedBaseBorder"
+      class="borders_root_default_base"
     >
       <div
-        class="notchedBaseBorderLeading"
+        class="borderDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="notchedBaseBorderNotch"
+        class="borderDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="notchedBasePlaceholder"
+          class="placeholder_default_base placeholder_empty_base placeholderPlacement_default_base"
         >
           Hello World!
         </label>
       </div>
       <div
-        class="notchedBaseBorderTrailing"
+        class="borderDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>
   <p
-    class="root sizeScale2 alignLeft hintText"
+    class="base root_base sizes_2_base align_left fontWeight_normal_base hintText_base styleNode_base"
   >
     hint text
   </p>
@@ -76,67 +79,70 @@ exports[`<SelectInput /> should have some hintText 1`] = `
 
 exports[`<SelectInput /> should match snapshot 1`] = `
 <div
-  class="root"
+  class="base"
 >
   <div
-    class="notchedBase"
+    class="base root_base"
   >
     <div
-      class="inputWrapper"
+      class="input_root"
     >
-      <select
-        autocomplete="off"
-        class="input"
+      <div
+        class="base root"
       >
-        <option
-          value="a"
+        <select
+          autocomplete="off"
+          class="base block appearance select base block appearance input width_full input_itself_root_base"
         >
-          Value 1
-        </option>
-        <option
-          value="b"
+          <option
+            value="a"
+          >
+            Value 1
+          </option>
+          <option
+            value="b"
+          >
+            Value 2
+          </option>
+          <option
+            value="c"
+          >
+            Value 3
+          </option>
+        </select>
+        <i
+          class="base display_block icon_base medium_mobile_base"
         >
-          Value 2
-        </option>
-        <option
-          value="c"
-        >
-          Value 3
-        </option>
-      </select>
-      <i
-        class="root arrow"
-        style="width: 25px; height: 25px;"
-      >
-        <svg
-          fill="currentColor"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
-          />
-        </svg>
-      </i>
+          <svg
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+            />
+          </svg>
+        </i>
+      </div>
     </div>
     <div
-      class="notchedBaseBorder"
+      class="borders_root_default_base"
     >
       <div
-        class="notchedBaseBorderLeading"
+        class="borderDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="notchedBaseBorderNotch"
+        class="borderDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="notchedBasePlaceholder"
+          class="placeholder_default_base placeholder_empty_base placeholderPlacement_default_base"
         >
           Hello World!
         </label>
       </div>
       <div
-        class="notchedBaseBorderTrailing"
+        class="borderDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>
@@ -145,67 +151,70 @@ exports[`<SelectInput /> should match snapshot 1`] = `
 
 exports[`<SelectInput /> should match snapshot when active 1`] = `
 <div
-  class="root"
+  class="base"
 >
   <div
-    class="notchedBase notchedBaseShift notchedBaseActive"
+    class="base root_base"
   >
     <div
-      class="inputWrapper"
+      class="input_root"
     >
-      <select
-        autocomplete="off"
-        class="input"
+      <div
+        class="base root"
       >
-        <option
-          value="a"
+        <select
+          autocomplete="off"
+          class="base block appearance select base block appearance input width_full input_itself_root_base"
         >
-          Value 1
-        </option>
-        <option
-          value="b"
+          <option
+            value="a"
+          >
+            Value 1
+          </option>
+          <option
+            value="b"
+          >
+            Value 2
+          </option>
+          <option
+            value="c"
+          >
+            Value 3
+          </option>
+        </select>
+        <i
+          class="base display_block icon_base medium_mobile_base"
         >
-          Value 2
-        </option>
-        <option
-          value="c"
-        >
-          Value 3
-        </option>
-      </select>
-      <i
-        class="root arrow"
-        style="width: 25px; height: 25px;"
-      >
-        <svg
-          fill="currentColor"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
-          />
-        </svg>
-      </i>
+          <svg
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+            />
+          </svg>
+        </i>
+      </div>
     </div>
     <div
-      class="notchedBaseBorder"
+      class="borders_root_default_base"
     >
       <div
-        class="notchedBaseBorderLeading"
+        class="borderDefaults_base borders_leading_base activeBorderColour_base"
       />
       <div
-        class="notchedBaseBorderNotch"
+        class="borderDefaults_base borders_middle_base activeBorderColour_base"
         style="width: 16px;"
       >
         <label
-          class="notchedBasePlaceholder"
+          class="placeholder_default_base activeColour_base placeholderPlacement_shifted_base"
         >
           Hello World!
         </label>
       </div>
       <div
-        class="notchedBaseBorderTrailing"
+        class="borderDefaults_base borders_trailing_base activeBorderColour_base"
       />
     </div>
   </div>
@@ -214,67 +223,70 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
 
 exports[`<SelectInput /> should match snapshot when touched 1`] = `
 <div
-  class="root"
+  class="base"
 >
   <div
-    class="notchedBase"
+    class="base root_base"
   >
     <div
-      class="inputWrapper"
+      class="input_root"
     >
-      <select
-        autocomplete="off"
-        class="input"
+      <div
+        class="base root"
       >
-        <option
-          value="a"
+        <select
+          autocomplete="off"
+          class="base block appearance select base block appearance input width_full input_itself_root_base"
         >
-          Value 1
-        </option>
-        <option
-          value="b"
+          <option
+            value="a"
+          >
+            Value 1
+          </option>
+          <option
+            value="b"
+          >
+            Value 2
+          </option>
+          <option
+            value="c"
+          >
+            Value 3
+          </option>
+        </select>
+        <i
+          class="base display_block icon_base medium_mobile_base"
         >
-          Value 2
-        </option>
-        <option
-          value="c"
-        >
-          Value 3
-        </option>
-      </select>
-      <i
-        class="root arrow"
-        style="width: 25px; height: 25px;"
-      >
-        <svg
-          fill="currentColor"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
-          />
-        </svg>
-      </i>
+          <svg
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+            />
+          </svg>
+        </i>
+      </div>
     </div>
     <div
-      class="notchedBaseBorder"
+      class="borders_root_default_base"
     >
       <div
-        class="notchedBaseBorderLeading"
+        class="borderDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="notchedBaseBorderNotch"
+        class="borderDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="notchedBasePlaceholder"
+          class="placeholder_default_base placeholder_empty_base placeholderPlacement_default_base"
         >
           Hello World!
         </label>
       </div>
       <div
-        class="notchedBaseBorderTrailing"
+        class="borderDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>
@@ -283,67 +295,70 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
 
 exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
 <div
-  class="root invalid withStatus"
+  class="base"
 >
   <div
-    class="notchedBase"
+    class="base root_base"
   >
     <div
-      class="inputWrapper"
+      class="input_root"
     >
-      <select
-        autocomplete="off"
-        class="input"
+      <div
+        class="base root"
       >
-        <option
-          value="a"
+        <select
+          autocomplete="off"
+          class="base block appearance select base block appearance input width_full input_itself_root_base"
         >
-          Value 1
-        </option>
-        <option
-          value="b"
+          <option
+            value="a"
+          >
+            Value 1
+          </option>
+          <option
+            value="b"
+          >
+            Value 2
+          </option>
+          <option
+            value="c"
+          >
+            Value 3
+          </option>
+        </select>
+        <i
+          class="base display_block icon_base medium_mobile_base"
         >
-          Value 2
-        </option>
-        <option
-          value="c"
-        >
-          Value 3
-        </option>
-      </select>
-      <i
-        class="root arrow"
-        style="width: 25px; height: 25px;"
-      >
-        <svg
-          fill="currentColor"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
-          />
-        </svg>
-      </i>
+          <svg
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+            />
+          </svg>
+        </i>
+      </div>
     </div>
     <div
-      class="notchedBaseBorder"
+      class="borders_root_default_base"
     >
       <div
-        class="notchedBaseBorderLeading"
+        class="borderDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="notchedBaseBorderNotch"
+        class="borderDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="notchedBasePlaceholder"
+          class="placeholder_default_base placeholder_empty_base placeholderPlacement_default_base"
         >
           Hello World!
         </label>
       </div>
       <div
-        class="notchedBaseBorderTrailing"
+        class="borderDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>
@@ -352,67 +367,70 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
 
 exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
 <div
-  class="root valid withStatus"
+  class="base"
 >
   <div
-    class="notchedBase"
+    class="base root_base"
   >
     <div
-      class="inputWrapper"
+      class="input_root"
     >
-      <select
-        autocomplete="off"
-        class="input"
+      <div
+        class="base root"
       >
-        <option
-          value="a"
+        <select
+          autocomplete="off"
+          class="base block appearance select base block appearance input width_full input_itself_root_base"
         >
-          Value 1
-        </option>
-        <option
-          value="b"
+          <option
+            value="a"
+          >
+            Value 1
+          </option>
+          <option
+            value="b"
+          >
+            Value 2
+          </option>
+          <option
+            value="c"
+          >
+            Value 3
+          </option>
+        </select>
+        <i
+          class="base display_block icon_base medium_mobile_base"
         >
-          Value 2
-        </option>
-        <option
-          value="c"
-        >
-          Value 3
-        </option>
-      </select>
-      <i
-        class="root arrow"
-        style="width: 25px; height: 25px;"
-      >
-        <svg
-          fill="currentColor"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
-          />
-        </svg>
-      </i>
+          <svg
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+            />
+          </svg>
+        </i>
+      </div>
     </div>
     <div
-      class="notchedBaseBorder"
+      class="borders_root_default_base"
     >
       <div
-        class="notchedBaseBorderLeading"
+        class="borderDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="notchedBaseBorderNotch"
+        class="borderDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="notchedBasePlaceholder"
+          class="placeholder_default_base placeholder_empty_base placeholderPlacement_default_base"
         >
           Hello World!
         </label>
       </div>
       <div
-        class="notchedBaseBorderTrailing"
+        class="borderDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>
@@ -421,66 +439,66 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
 
 exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
 <div
-  class="root input-class"
+  class="base input-class"
 >
   <div
-    class="notchedBase prefixed"
+    class="base root_base"
   >
     <div
-      class="inputWrapper"
+      class="input_root"
     >
-      <label>
-        <i
-          class="root prefixIcon"
-          style="width: 24px; height: 24px;"
-        >
-          <svg
-            viewBox="0 0 512 512"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
-            />
-          </svg>
-        </i>
-      </label>
-      <select
-        autocomplete="off"
-        class="input"
-      />
       <i
-        class="root arrow"
-        style="width: 25px; height: 25px;"
+        class="base display_block iconRoot_base icon_prefix styleNode_base medium_mobile_base"
       >
         <svg
-          fill="currentColor"
-          focusable="false"
-          viewBox="0 0 24 24"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+            d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
           />
         </svg>
       </i>
+      <div
+        class="base root"
+      >
+        <select
+          autocomplete="off"
+          class="base block appearance select base block appearance input width_full input_itself_root_base input_itself_prefixed_base"
+        />
+        <i
+          class="base display_block icon_base medium_mobile_base"
+        >
+          <svg
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+            />
+          </svg>
+        </i>
+      </div>
     </div>
     <div
-      class="notchedBaseBorder"
+      class="borders_root_default_base"
     >
       <div
-        class="notchedBaseBorderLeading"
+        class="borderDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="notchedBaseBorderNotch"
+        class="borderDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="notchedBasePlaceholder"
+          class="placeholder_default_base placeholder_empty_base placeholderPlacement_defaultPrefixed_base"
         >
           placeholder something
         </label>
       </div>
       <div
-        class="notchedBaseBorderTrailing"
+        class="borderDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>

@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import React from 'react';
+import * as React from 'react';
 
 import { EStarRatingSize, StarRating } from '.';
 
@@ -15,7 +15,7 @@ const getEmptyStarsNum = el => {
 	return el.querySelectorAll('.emptyStar').length;
 };
 
-describe('<StarRating />', () => {
+describe.skip('<StarRating />', () => {
 	it('should not throw', () =>
 		expect(() => render(<StarRating />)).not.toThrow());
 
@@ -48,7 +48,7 @@ describe('<StarRating />', () => {
 		).toMatchSnapshot();
 	});
 
-	it('should pass on className to dom element', () => {
+	it.skip('should pass on className to dom element', () => {
 		expect(
 			render(<StarRating className="rating-class" />).container
 				.firstChild,

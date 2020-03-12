@@ -1,11 +1,19 @@
 import { StarHalfIcon, StarIcon } from '@autoguru/icons';
 import clsx from 'clsx';
-import React, { FunctionComponent, memo, ReactElement } from 'react';
+import * as React from 'react';
+import {
+	FunctionComponent,
+	memo,
+	NamedExoticComponent,
+	ReactElement,
+} from 'react';
+import { useStyles } from 'react-treat';
+import { Theme } from 'treat/theme';
 
+import { Column, Columns } from '../Columns';
 import { Icon } from '../Icon';
 import { Text } from '../Typography';
-import { TSizeScale } from '../Typography/types';
-import styles from './style.scss';
+import * as styleRefs from './StarRating.treat';
 
 const totalStars = 5;
 
@@ -20,47 +28,59 @@ enum EStarType {
 	Empty,
 }
 
-const starSizeMap: Map<EStarRatingSize, number> = new Map([
-	[EStarRatingSize.Medium, 20],
-	[EStarRatingSize.Small, 16],
+const starSizeMap: Map<EStarRatingSize, keyof Theme['icon']['size']> = new Map([
+	[EStarRatingSize.Medium, 'medium'],
+	[EStarRatingSize.Small, 'small'],
 ]);
 
-const labelSizeMap: Map<EStarRatingSize, TSizeScale> = new Map([
-	[EStarRatingSize.Small, 3],
-	[EStarRatingSize.Medium, 4],
+const labelSizeMap: Map<
+	EStarRatingSize,
+	keyof Theme['typography']['size']
+> = new Map([
+	[EStarRatingSize.Small, '3'],
+	[EStarRatingSize.Medium, '4'],
 ]);
 
-const starCssMap: Map<EStarType, string> = new Map([
-	[EStarType.Full, styles.fullStar],
-	[EStarType.Half, styles.halfStar],
-	[EStarType.Empty, styles.emptyStar],
-]);
-
-export interface Props {
+interface Props {
 	className?: string;
 	rating: number;
 	size?: EStarRatingSize;
 	label?: string;
 }
 
-const StarRatingComponent: FunctionComponent<Props> = ({
-	className = '',
-	rating,
-	label = rating,
-	size = EStarRatingSize.Medium,
-}) => (
-	<span className={clsx([styles.root, className])}>
-		<span className={styles.starList}>
-			{new Array(totalStars)
-				.fill(0)
-				.map((_, index) => getStar(index, rating, size))}
-		</span>
-		{label !== null && (
-			<Text size={labelSizeMap.get(size)} className={styles.label}>
-				{label}
-			</Text>
-		)}
-	</span>
+export const StarRating: NamedExoticComponent<Props> = memo(
+	({
+		className = '',
+		rating,
+		label = rating,
+		size = EStarRatingSize.Medium,
+	}) => {
+		const styles = useStyles(styleRefs);
+
+		return (
+			<Columns className={clsx([styles.starList, className])} space="2">
+				<Column className={styles.starList}>
+					{new Array(totalStars).fill(0).map((_, index) => (
+						<Star
+							key={index}
+							index={index}
+							rating={rating}
+							size={size}
+						/>
+					))}
+				</Column>
+				{label === null ? null : (
+					<Column>
+						<Text
+							size={labelSizeMap.get(size)}
+							className={styles.label}>
+							{label}
+						</Text>
+					</Column>
+				)}
+			</Columns>
+		);
+	},
 );
 
 const getStarIconType = (index: number, rating: number): EStarType => {
@@ -87,22 +107,28 @@ const getStarIconType = (index: number, rating: number): EStarType => {
 	return EStarType.Half;
 };
 
-const getStar = (
-	index: number,
+interface StarProps {
+	index: number;
+	rating: number;
+	size: EStarRatingSize;
+}
+
+const Star: FunctionComponent<StarProps> = ({
+	index,
 	rating = 0,
-	size: EStarRatingSize = EStarRatingSize.Medium,
-): ReactElement => {
+	size = EStarRatingSize.Medium,
+}): ReactElement => {
 	const starType = getStarIconType(index, rating);
 	const star = starType === EStarType.Half ? StarHalfIcon : StarIcon;
-
+	const styles = useStyles(styleRefs);
 	return (
 		<Icon
 			key={index}
 			icon={star}
 			size={starSizeMap.get(size)}
-			className={clsx([styles.star, starCssMap.get(starType)])}
+			className={clsx(styles.star.default, {
+				[styles.star.empty]: starType === EStarType.Empty,
+			})}
 		/>
 	);
 };
-
-export const StarRating = memo(StarRatingComponent);

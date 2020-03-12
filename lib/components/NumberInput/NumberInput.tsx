@@ -1,5 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 
+import { Box } from '../Box';
 import { withEnhancedInput } from '../InputBase';
 
 const isEdge: boolean =
@@ -11,7 +12,8 @@ export const NumberInput = withEnhancedInput<
 	Partial<Pick<HTMLInputElement, 'min' | 'max'>>
 >(
 	({ field, eventHandlers, validation, suffixed, prefixed, ...rest }) => (
-		<input
+		<Box
+			is="input"
 			{...eventHandlers}
 			{...field}
 			{...rest}

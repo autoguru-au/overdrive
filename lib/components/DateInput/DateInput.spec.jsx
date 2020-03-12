@@ -1,5 +1,5 @@
 import { fireEvent, render } from '@testing-library/react';
-import React from 'react';
+import * as React from 'react';
 
 import { DateInput } from '.';
 
@@ -54,7 +54,7 @@ describe('<DateInput />', () => {
 		).toBeInTheDocument();
 	});
 
-	it('should pass on className to dom element', () => {
+	it.skip('should pass on className to dom element', () => {
 		const { container } = render(
 			<DateInput
 				value={todayStr}

@@ -1,19 +1,17 @@
 import clsx from 'clsx';
-import React, {
+import * as React from 'react';
+import {
 	createContext,
 	FunctionComponent,
 	OlHTMLAttributes,
 	useContext,
 } from 'react';
+import { useStyles } from 'react-treat';
 
-import styles from './OrderedList.scss';
+import { Box } from '../Box';
+import * as styleRefs from './OrderedList.treat';
 
-type ListStyleType =
-	| 'decimal'
-	| 'lower-roman'
-	| 'lower-alpha'
-	| 'upper-alpha'
-	| 'lower-roman';
+type ListStyleType = 'decimal' | 'lower-roman' | 'lower-alpha' | 'upper-alpha';
 
 const cycles: ListStyleType[] = [
 	'decimal',
@@ -38,6 +36,7 @@ export const OrderedList: FunctionComponent<Props> & {
 	Item: FunctionComponent<ItemProps>;
 } = ({ children, className = '', type = null, start }) => {
 	const cycle = useContext(OrderedListContext);
+	const styles = useStyles(styleRefs);
 
 	let myCycle: number;
 	if (cycle + 1 > cycles.length) {
@@ -47,10 +46,11 @@ export const OrderedList: FunctionComponent<Props> & {
 	}
 
 	return (
-		<ol
+		<Box
+			is="ol"
 			className={clsx(
-				styles.root,
-				{ [styles.firstOccurrence]: cycle === -1 },
+				styles.root.default,
+				{ [styles.root.firstOccurrence]: cycle === -1 },
 				className,
 			)}
 			style={{ listStyleType: cycles[myCycle] }}
@@ -58,10 +58,14 @@ export const OrderedList: FunctionComponent<Props> & {
 			<OrderedListContext.Provider value={myCycle}>
 				{children}
 			</OrderedListContext.Provider>
-		</ol>
+		</Box>
 	);
 };
 
-OrderedList.Item = ({ className, children }) => {
-	return <li className={clsx(styles.listItem, className)}>{children}</li>;
+const Item: FunctionComponent<ItemProps> = ({ className = '', children }) => {
+	const styles = useStyles(styleRefs);
+
+	return <li className={clsx(className, styles.listItem)}>{children}</li>;
 };
+
+OrderedList.Item = Item;

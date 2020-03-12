@@ -2,116 +2,191 @@
 
 exports[`<BulletText /> should match snapshot for custom bullet text 1`] = `
 <li
-  class="root variantPrimary"
+  class="base root 3_mobile_base 3_mobile_base align_stretch root wrapping_noWrap"
 >
   <div
-    class="customBullet"
+    class="base 3_mobile_base 3_mobile_base align_centre"
   >
-    <span>
-      <i
-        class="root"
-        style="width: 14px; height: 14px;"
-      >
-        <svg
-          fill="currentColor"
-          focusable="false"
-          viewBox="0 0 24 24"
+    <div
+      class="base content customBullet"
+    >
+      <span>
+        <i
+          class="base display_block"
         >
-          <path
-            d="M21 7L9 19l-5.5-5.5 1.414-1.414L9 16.172 19.586 5.586 21 7z"
-          />
-        </svg>
-      </i>
-    </span>
+          <svg
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M21 7L9 19l-5.5-5.5 1.414-1.414L9 16.172 19.586 5.586 21 7z"
+            />
+          </svg>
+        </i>
+      </span>
+    </div>
   </div>
-  <span
-    class="root sizeScale4 alignLeft"
+  <div
+    class="base 3_mobile_base 3_mobile_base"
   >
-    Hello World
-  </span>
+    <div
+      class="base content"
+    >
+      <span
+        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+      >
+        Hello World
+      </span>
+    </div>
+  </div>
 </li>
 `;
 
 exports[`<BulletText /> should match snapshot for default bullet text 1`] = `
 <li
-  class="root variantPrimary"
+  class="base root 3_mobile_base 3_mobile_base align_stretch root wrapping_noWrap"
 >
   <div
-    class="bullet"
+    class="base 3_mobile_base 3_mobile_base align_centre"
   >
-    <span
-      class="bulletText"
+    <div
+      class="base content"
     >
-      •
-    </span>
+      <div
+        class="base pill_mobile_base bullet_base variant_primary_base"
+      >
+        <span
+          class="bulletText_base"
+        >
+          •
+        </span>
+      </div>
+    </div>
   </div>
-  <span
-    class="root sizeScale4 alignLeft"
+  <div
+    class="base 3_mobile_base 3_mobile_base"
   >
-    Hello World!
-  </span>
+    <div
+      class="base content"
+    >
+      <span
+        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+      >
+        Hello World!
+      </span>
+    </div>
+  </div>
 </li>
 `;
 
 exports[`<BulletText /> should match snapshot for ordered bullet text 1`] = `
-<ol
-  class="root variantPrimary"
+<li
+  class="base root 3_mobile_base 3_mobile_base align_stretch root wrapping_noWrap"
 >
   <div
-    class="bullet"
+    class="base 3_mobile_base 3_mobile_base align_centre"
   >
-    <span
-      class="bulletText"
+    <div
+      class="base content"
     >
-      ?
-    </span>
+      <div
+        class="base pill_mobile_base bullet_base variant_primary_base"
+      >
+        <span
+          class="bulletText_base"
+        >
+          ?
+        </span>
+      </div>
+    </div>
   </div>
-  <span
-    class="root sizeScale4 alignLeft"
+  <div
+    class="base 3_mobile_base 3_mobile_base"
   >
-    Hello World!
-  </span>
-</ol>
+    <div
+      class="base content"
+    >
+      <span
+        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+      >
+        Hello World!
+      </span>
+    </div>
+  </div>
+</li>
 `;
 
 exports[`<BulletText /> should match snapshot for primary bullet text with custom bullet character 1`] = `
 <li
-  class="root variantPrimary"
+  class="base root 3_mobile_base 3_mobile_base align_stretch root wrapping_noWrap"
 >
   <div
-    class="bullet"
+    class="base 3_mobile_base 3_mobile_base align_centre"
   >
-    <span
-      class="bulletText"
+    <div
+      class="base content"
     >
-      ?
-    </span>
+      <div
+        class="base pill_mobile_base bullet_base variant_primary_base"
+      >
+        <span
+          class="bulletText_base"
+        >
+          ?
+        </span>
+      </div>
+    </div>
   </div>
-  <span
-    class="root sizeScale4 alignLeft"
+  <div
+    class="base 3_mobile_base 3_mobile_base"
   >
-    Hello World!
-  </span>
+    <div
+      class="base content"
+    >
+      <span
+        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+      >
+        Hello World!
+      </span>
+    </div>
+  </div>
 </li>
 `;
 
 exports[`<BulletText /> should match snapshot for secondary bullet text with custom bullet character 1`] = `
 <li
-  class="root variantSecondary"
+  class="base root 3_mobile_base 3_mobile_base align_stretch root wrapping_noWrap"
 >
   <div
-    class="bullet"
+    class="base 3_mobile_base 3_mobile_base align_centre"
   >
-    <span
-      class="bulletText"
+    <div
+      class="base content"
     >
-      ?
-    </span>
+      <div
+        class="base pill_mobile_base bullet_base variant_secondary_base"
+      >
+        <span
+          class="bulletText_base"
+        >
+          ?
+        </span>
+      </div>
+    </div>
   </div>
-  <span
-    class="root sizeScale4 alignLeft"
+  <div
+    class="base 3_mobile_base 3_mobile_base"
   >
-    Hello World!
-  </span>
+    <div
+      class="base content"
+    >
+      <span
+        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+      >
+        Hello World!
+      </span>
+    </div>
+  </div>
 </li>
 `;

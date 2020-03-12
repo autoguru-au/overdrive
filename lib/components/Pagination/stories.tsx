@@ -1,6 +1,6 @@
 import { number } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 
 import { Pagination } from '.';
 
@@ -25,46 +25,54 @@ const baseProps = (
 		defaultNumberOptions,
 	),
 });
-storiesOf('Components|Pagination/Numbered', module)
-	.add('Standard', () => {
-		const Example = () => {
-			const [activePage, setActivePage] = useState(1);
 
-			const onChangeHandler = e => {
-				setActivePage(e.pageNumber);
-			};
+export default {
+	title: 'Components|Pagination/Numbered',
+	component: Pagination,
+};
 
-			return (
-				<Pagination
-					activePage={activePage}
-					pageSize={10}
-					total={100}
-					onChange={onChangeHandler}
-				/>
-			);
+export const standard = () => {
+	const Example = () => {
+		const [activePage, setActivePage] = useState(1);
+
+		const onChangeHandler = e => {
+			setActivePage(e.pageNumber);
 		};
 
-		return <Example />;
-	})
-	.add('Loading', () => <Pagination {...baseProps(null)} />)
-	.add('less than max pages', () => (
-		<Pagination {...baseProps(1, 20, 10, 5)} />
-	))
-	.add('All Pages fit', () => <Pagination {...baseProps(1, 45, 10, 5)} />)
-	.add('Jump Forward Start', () => (
-		<Pagination {...baseProps(1, 638, 10, 5)} />
-	))
-	.add('Jump Forward Middle', () => (
-		<Pagination {...baseProps(4, 638, 10, 5)} />
-	))
-	.add('Last Chunk Start', () => (
-		<Pagination {...baseProps(60, 638, 10, 5)} />
-	))
-	.add('Last Chunk Middle', () => (
-		<Pagination {...baseProps(61, 638, 10, 5)} />
-	))
-	.add('Jump Back Start', () => <Pagination {...baseProps(62, 638, 10, 5)} />)
-	.add('Jump Back Middle', () => (
-		<Pagination {...baseProps(63, 638, 10, 5)} />
-	))
-	.add('Jump Back End', () => <Pagination {...baseProps(64, 638, 10, 5)} />);
+		return (
+			<Pagination
+				activePage={activePage}
+				pageSize={10}
+				total={100}
+				onChange={onChangeHandler}
+			/>
+		);
+	};
+
+	return <Example />;
+};
+
+export const loading = () => <Pagination loading />;
+export const lessThanMaxPages = () => (
+	<Pagination {...baseProps(1, 20, 10, 5)} />
+);
+export const allPagesFit = () => <Pagination {...baseProps(1, 45, 10, 5)} />;
+export const jumpForwardStart = () => (
+	<Pagination {...baseProps(1, 638, 10, 5)} />
+);
+export const jumpForwardMiddle = () => (
+	<Pagination {...baseProps(4, 638, 10, 5)} />
+);
+export const lastChunkStart = () => (
+	<Pagination {...baseProps(60, 638, 10, 5)} />
+);
+export const lastChunkMiddle = () => (
+	<Pagination {...baseProps(61, 638, 10, 5)} />
+);
+export const jumpBackStart = () => (
+	<Pagination {...baseProps(62, 638, 10, 5)} />
+);
+export const jumpBackMiddle = () => (
+	<Pagination {...baseProps(63, 638, 10, 5)} />
+);
+export const jumpBackEnd = () => <Pagination {...baseProps(64, 638, 10, 5)} />;

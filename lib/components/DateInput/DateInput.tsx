@@ -1,6 +1,7 @@
 import { warning } from '@autoguru/utilities';
-import React from 'react';
+import * as React from 'react';
 
+import { Box } from '../Box';
 import { withEnhancedInput } from '../InputBase';
 
 export const DateInput = withEnhancedInput<
@@ -13,7 +14,8 @@ export const DateInput = withEnhancedInput<
 		);
 
 		return (
-			<input
+			<Box
+				is="input"
 				{...eventHandlers}
 				{...field}
 				{...rest}

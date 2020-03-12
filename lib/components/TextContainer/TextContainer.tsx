@@ -1,20 +1,34 @@
-import clsx from 'clsx';
-import React, { FunctionComponent, ReactElement } from 'react';
+import * as React from 'react';
+import { FunctionComponent, ReactElement } from 'react';
 
-import styles from './style.scss';
+import { Column, Columns } from '../Columns';
+import { Stack } from '../Stack';
 
-export interface Props {
-	heading?: ReactElement | null;
+interface Props {
+	heading?: ReactElement;
+	action?: ReactElement;
 	className?: string;
+	children: ReactElement | ReactElement[];
 }
 
 export const TextContainer: FunctionComponent<Props> = ({
-	heading = null,
+	heading,
 	className = '',
 	children,
+	action,
 }) => (
-	<article className={clsx(styles.root, className)}>
-		{Boolean(heading) && <header>{heading}</header>}
+	<Stack spacing="2" is="article" className={className}>
+		<TextContainerHeading heading={heading} action={action} />
 		{children}
-	</article>
+	</Stack>
+);
+
+const TextContainerHeading: FunctionComponent<Omit<
+	Props,
+	'className' | 'children'
+>> = ({ heading, action }) => (
+	<Columns noWrap align="centre" space="4">
+		<Column grow>{heading!}</Column>
+		{action ? <Column width="auto">{action!}</Column> : null}
+	</Columns>
 );

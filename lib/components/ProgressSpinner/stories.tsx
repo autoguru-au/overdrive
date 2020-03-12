@@ -1,28 +1,28 @@
-import { action } from '@storybook/addon-actions';
-import { select } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
-import React from 'react';
+import * as React from 'react';
 
-import {
-	EProgressSpinnerSize,
-	EProgressSpinnerVariant,
-	ProgressSpinner,
-} from '.';
+import { ProgressSpinner } from '.';
 
-const baseProps = () => ({
-	size: select('Size', EProgressSpinnerSize, EProgressSpinnerSize.Medium),
-	variant: select(
-		'Variant',
-		EProgressSpinnerVariant,
-		EProgressSpinnerVariant.Primary,
-	),
-	onClick(e) {
-		e.preventDefault();
+export default {
+	title: 'Components|Progress/Spinner',
+	component: ProgressSpinner,
+	decorators: [
+		story => (
+			<div
+				style={{
+					width: '100%',
+					height: '100%',
+					flexDirection: 'row',
+					display: 'flex',
+					alignItems: 'center',
+					justifyContent: 'center',
+				}}>
+				{story()}
+			</div>
+		),
+	],
+	parameters: { chromatic: { disable: true } },
+};
 
-		return action('Clicked')(e);
-	},
-});
-
-storiesOf('Components|Progress/Spinner', module)
-	.addParameters({ chromatic: { disable: true } })
-	.add('Standard', () => <ProgressSpinner {...baseProps()} />);
+export const Standard = () => (
+	<ProgressSpinner colour="primary" size="medium" />
+);

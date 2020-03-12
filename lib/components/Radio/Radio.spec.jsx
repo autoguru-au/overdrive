@@ -1,5 +1,6 @@
 import { fireEvent, render } from '@testing-library/react';
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 
 import { Heading } from '../Typography/Heading';
 import { Radio, RadioGroup } from '.';

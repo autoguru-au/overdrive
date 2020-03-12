@@ -1,9 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Badge /> should match snapshot with label 1`] = `
-<span
-  class="root sizeScale2 alignLeft root neutral"
+<div
+  class="base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base colours_neutral_default_base"
 >
-  Hello World!
-</span>
+  <span
+    class="label_base"
+  >
+    Hello World!
+  </span>
+</div>
 `;

@@ -4,10 +4,10 @@ exports[`<Switch /> should match snapshot when toggled 1`] = `
 <div
   aria-disabled="false"
   aria-label="toggle on"
-  class="root toggled"
+  class="base root_base toggled_base"
 >
   <span
-    class="handle"
+    class="handle_default_base handle_transition_base"
   />
 </div>
 `;
@@ -16,10 +16,10 @@ exports[`<Switch /> should match snapshot when toggled and disabled 1`] = `
 <div
   aria-disabled="true"
   aria-label="toggle on"
-  class="root toggled disabled"
+  class="base root_base toggled_base disabled_default_base disabled_toggled_base"
 >
   <span
-    class="handle"
+    class="handle_default_base handle_transition_base"
   />
 </div>
 `;
@@ -28,10 +28,10 @@ exports[`<Switch /> should match snapshot when un-toggled 1`] = `
 <div
   aria-disabled="false"
   aria-label="toggle off"
-  class="root"
+  class="base root_base"
 >
   <span
-    class="handle"
+    class="handle_default_base"
   />
 </div>
 `;
@@ -40,10 +40,10 @@ exports[`<Switch /> should match snapshot when un-toggled and disabled 1`] = `
 <div
   aria-disabled="true"
   aria-label="toggle off"
-  class="root disabled"
+  class="base root_base disabled_default_base"
 >
   <span
-    class="handle"
+    class="handle_default_base"
   />
 </div>
 `;
@@ -52,10 +52,10 @@ exports[`<Switch /> should match snapshot without props 1`] = `
 <div
   aria-disabled="false"
   aria-label="toggle off"
-  class="root"
+  class="base root_base"
 >
   <span
-    class="handle"
+    class="handle_default_base"
   />
 </div>
 `;

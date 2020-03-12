@@ -1,22 +1,26 @@
 import { invariant } from '@autoguru/utilities';
 import clsx from 'clsx';
-import React, {
+import * as React from 'react';
+import {
 	cloneElement,
 	createElement,
+	ElementType,
 	FunctionComponent,
 	isValidElement,
 	ReactElement,
 	ReactText,
 	useContext,
 } from 'react';
+import { useStyles } from 'react-treat';
 
+import { useBoxStyles } from '../Box';
 import { IndexContext, TabsContext } from './context';
-import styles from './style.scss';
+import * as styleRefs from './Tabs.treat';
 
 interface Props {
 	children: ReactText;
 	id?: string;
-	is?: ReactElement | 'button';
+	is?: ElementType | ReactElement;
 	indication?: number;
 }
 
@@ -29,8 +33,10 @@ export const Tab: FunctionComponent<Props> = ({
 	const myIndex = useContext(IndexContext);
 	const tabsContext = useContext(TabsContext);
 
+	const styles = useStyles(styleRefs);
+
 	invariant(
-		myIndex !== null && tabsContext.id !== null,
+		myIndex !== null && tabsContext !== null,
 		'This tab pane isnt nested beneath <Tabs /> or <TabPanes />>',
 	);
 
@@ -47,21 +53,33 @@ export const Tab: FunctionComponent<Props> = ({
 	);
 
 	const props = {
-		className: clsx(styles.navItem, {
-			[styles.navItemActive]: isActive,
-		}),
+		className: clsx(
+			useBoxStyles({
+				is: typeof Component === 'string' ? Component : undefined,
+				display: 'block',
+			}),
+			styles.navItem.default,
+			{
+				[styles.navItem.active]: isActive,
+			},
+		),
 		role: 'tab',
 		'aria-selected': isActive ? 'true' : 'false',
 		'aria-controls': controlsId,
 		tabIndex: isActive ? undefined : -1,
-		onClick: () => tabsContext.onChange(myIndex),
+		onClick: () => tabsContext.onChange?.(myIndex),
 	};
 
 	const child = (
 		<>
-			<span className={styles.navItemTitle}>{children}</span>
+			<span className={styles.tabItem}>{children}</span>
 			{typeof indication === 'number' && (
-				<span className={styles.navItemIndication}>{indication}</span>
+				<span
+					className={clsx(styles.navItemIndication.default, {
+						[styles.navItemIndication.active]: isActive,
+					})}>
+					{indication}
+				</span>
 			)}
 		</>
 	);

@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import * as React from 'react';
+import { useEffect, useState } from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
 import { Stack } from '../Stack';
@@ -66,7 +67,7 @@ export const TabsWithoutPanes = () => (
 );
 
 const TestChild = ({ label }) => {
-	const [thing, sething] = useState(0);
+	const [thing, sething] = useState(isChromatic() ? 0.5 : Math.random() * 5);
 
 	useEffect(() => {
 		const t = setInterval(() => {

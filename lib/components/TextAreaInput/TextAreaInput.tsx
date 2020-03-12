@@ -1,10 +1,17 @@
-import React from 'react';
+import * as React from 'react';
 
+import { Box } from '../Box';
 import { withEnhancedInput } from '../InputBase';
 
 export const TextAreaInput = withEnhancedInput<{}, HTMLTextAreaElement>(
 	({ field, eventHandlers, validation, suffixed, prefixed, ...rest }) => (
-		<textarea {...eventHandlers} {...field} {...rest} autoComplete="off" />
+		<Box
+			is="textarea"
+			{...eventHandlers}
+			{...field}
+			{...rest}
+			autoComplete="off"
+		/>
 	),
 	{
 		primitiveType: 'textarea',

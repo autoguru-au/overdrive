@@ -1,11 +1,14 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@autoguru/icons';
 import clsx from 'clsx';
-import React, { FunctionComponent, memo, useCallback, useMemo } from 'react';
+import * as React from 'react';
+import { FunctionComponent, memo, useCallback, useMemo } from 'react';
+import { useStyles } from 'react-treat';
 
+import { Box } from '../Box';
 import { Icon } from '../Icon';
 import { Bubble } from './Bubble';
 import { PaginationLoading } from './Loading';
-import styles from './style.scss';
+import * as styleRefs from './Pagination.treat';
 
 interface OnChangeObject {
 	pageNumber: number;
@@ -13,21 +16,23 @@ interface OnChangeObject {
 
 export type TOnChangeEventHandler = (event: OnChangeObject) => void;
 
-export interface Props {
+interface Props {
 	className?: string;
 	numPagesDisplayed?: number;
-	activePage?: number;
-	total?: number;
-	pageSize?: number;
+	activePage: number;
+	total: number;
+	pageSize: number;
+	loading?: boolean;
 	onChange?: TOnChangeEventHandler;
 }
 
 export const PaginationComponent: FunctionComponent<Props> = ({
 	className = '',
-	total = void 0,
-	pageSize = void 0,
-	activePage = void 0,
+	total,
+	pageSize,
+	activePage,
 	numPagesDisplayed = 5,
+	loading = false,
 	onChange = () => void 0,
 }) => {
 	const numPages: number = useMemo(() => calcPagesNum(total, pageSize), [
@@ -47,25 +52,40 @@ export const PaginationComponent: FunctionComponent<Props> = ({
 		[activePage, numPages],
 	);
 
-	const cls = clsx([styles.pagination, className]);
+	const styles = useStyles(styleRefs);
 
-	const chevronLeftCls = clsx([styles.chevron], {
-		[styles.disabled]: activePage <= 1,
-	});
+	const cls = clsx([styles.root, className]);
 
-	const chevronRightCls = clsx([styles.chevron], {
-		[styles.disabled]: activePage >= numPages,
-	});
+	const chevronLeftCls = clsx(
+		styles.chevron.default,
+		styles.activeItem.default,
+		{
+			[styles.chevron.disabled]: activePage <= 1,
+		},
+	);
 
-	return total && pageSize && activePage && numPagesDisplayed ? (
-		<nav className={cls} aria-label="pagination">
-			<button
+	const chevronRightCls = clsx(
+		styles.chevron.default,
+		styles.activeItem.default,
+		{
+			[styles.chevron.disabled]: activePage >= numPages,
+		},
+	);
+
+	return !loading && total && pageSize && activePage && numPagesDisplayed ? (
+		<Box is="nav" className={cls} aria-label="pagination">
+			<Box
+				is="button"
 				aria-disabled={activePage <= 1}
 				aria-label="navigate back"
 				className={chevronLeftCls}
 				onClick={handleClick(activePage - 1)}>
-				<Icon size={24} icon={ChevronLeftIcon} />
-			</button>
+				<Icon
+					size="medium"
+					className={styles.chevron.icon}
+					icon={ChevronLeftIcon}
+				/>
+			</Box>
 			{buildPagesList(
 				numPages,
 				allowedActive,
@@ -81,14 +101,19 @@ export const PaginationComponent: FunctionComponent<Props> = ({
 					{num}
 				</Bubble>
 			))}
-			<button
+			<Box
+				is="button"
 				aria-disabled={activePage >= numPages}
 				aria-label="navigate forward"
 				className={chevronRightCls}
 				onClick={handleClick(allowedActive + 1)}>
-				<Icon size={24} icon={ChevronRightIcon} />
-			</button>
-		</nav>
+				<Icon
+					size="medium"
+					className={styles.chevron.icon}
+					icon={ChevronRightIcon}
+				/>
+			</Box>
+		</Box>
 	) : (
 		<PaginationLoading className={cls} placeholderBubblesNum={3} />
 	);

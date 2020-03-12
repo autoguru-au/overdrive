@@ -1,48 +1,49 @@
 import clsx from 'clsx';
-import React, { FunctionComponent, isValidElement, ReactNode } from 'react';
+import * as React from 'react';
+import { FunctionComponent, isValidElement, ReactNode } from 'react';
+import { useStyles } from 'react-treat';
 
+import { Box } from '../Box';
+import { Column, Columns } from '../Columns';
 import { Text } from '../Typography/Text';
-import styles from './style.scss';
+import * as styleRefs from './BulletText.treat';
 
-export interface Props {
+interface Props {
 	bullet?: ReactNode;
-	ordered?: boolean;
-	variant?: EVariant;
+	variant?: keyof typeof styleRefs.variant;
 	className?: string;
 }
 
-export enum EVariant {
-	Primary = 'primary',
-	Secondary = 'secondary',
-}
-
 export const BulletText: FunctionComponent<Props> = ({
-	variant = EVariant.Primary,
+	variant = 'primary',
 	className = '',
 	children,
-	ordered = false,
 	bullet: Bullet = '•',
 }) => {
-	const Tag = ordered ? 'ol' : 'li';
+	const styles = useStyles(styleRefs);
 
 	return (
-		<Tag
-			className={clsx(
-				styles.root,
-				{
-					[styles.variantPrimary]: variant === EVariant.Primary,
-					[styles.variantSecondary]: variant === EVariant.Secondary,
-				},
-				className,
-			)}>
+		<Columns
+			noWrap
+			space="3"
+			className={clsx(styles.root, className)}
+			is="li">
 			{isValidElement(Bullet) ? (
-				<div className={styles.customBullet}>{Bullet}</div>
+				<Column alignSelf="centre" className={styles.customBullet}>
+					{Bullet}
+				</Column>
 			) : (
-				<div className={styles.bullet}>
-					<span children={Bullet} className={styles.bulletText} />
-				</div>
+				<Column alignSelf="centre">
+					<Box
+						className={clsx(styles.bullet, styles.variant[variant])}
+						borderRadius="pill">
+						<span className={styles.bulletText}>{Bullet}</span>
+					</Box>
+				</Column>
 			)}
-			<Text is="span">{children}</Text>
-		</Tag>
+			<Column>
+				<Text is="span">{children}</Text>
+			</Column>
+		</Columns>
 	);
 };

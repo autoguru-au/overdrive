@@ -1,38 +1,120 @@
+import { invariant } from '@autoguru/utilities';
 import clsx from 'clsx';
-import React, { FunctionComponent } from 'react';
+import {
+	AllHTMLAttributes,
+	createElement,
+	forwardRef,
+	isValidElement,
+} from 'react';
 
-import styles from './style.scss';
+import { BoxStyleProps, useBoxStyles } from './useBoxStyles';
 
-export enum EVariant {
-	default = 'default',
-	four = 'four',
-}
-
-export interface Props {
-	variant?: EVariant;
-	borderColour?: string;
-	strokeWidth?: 1 | 4;
-	distance?: 0 | 1 | 2 | 3 | 4 | 5;
+interface Props<Element extends keyof JSX.IntrinsicElements>
+	extends BoxStyleProps,
+		Omit<AllHTMLAttributes<Element>, 'width' | 'height'> {
+	is?: Element;
 	className?: string;
 }
 
-export const Box: FunctionComponent<Props> = ({
-	variant = EVariant.default,
-	borderColour = 'gray-300',
-	strokeWidth = 1,
-	distance = 0,
-	children,
-	className = '',
-}) => (
-	<div
-		className={clsx([
-			styles.root,
-			styles[`variant--${variant}`],
-			styles[`borderColour--${borderColour}`],
-			styles[`strokeWidth--${strokeWidth}`],
-			styles[`distance--${distance}`],
-			className,
-		])}>
-		{children}
-	</div>
+// TODO: Solve this any
+export const Box = forwardRef<HTMLElement, Props<any>>(
+	(
+		{
+			is: Component,
+
+			display,
+			padding,
+			paddingX,
+			paddingY,
+			paddingTop,
+			paddingBottom,
+			paddingLeft,
+			paddingRight,
+			margin,
+			marginX,
+			marginY,
+			marginTop,
+			marginBottom,
+			marginLeft,
+			marginRight,
+			boxShadow,
+			borderWidth,
+			borderWidthX,
+			borderWidthY,
+			borderWidthTop,
+			borderWidthRight,
+			borderWidthBottom,
+			borderWidthLeft,
+			borderColour,
+			borderColourX,
+			borderColourY,
+			borderColourTop,
+			borderColourRight,
+			borderColourBottom,
+			borderColourLeft,
+			borderRadius,
+			backgroundColour,
+
+			width,
+			position,
+
+			className = '',
+			children,
+
+			...allOtherProps
+		},
+		ref,
+	) => {
+		const cls = useBoxStyles({
+			is: Component,
+			display,
+			borderColour,
+			padding,
+			paddingX,
+			paddingY,
+			paddingTop,
+			paddingBottom,
+			paddingLeft,
+			paddingRight,
+			margin,
+			marginX,
+			marginY,
+			marginTop,
+			marginBottom,
+			marginLeft,
+			marginRight,
+			boxShadow,
+			borderWidth,
+			borderWidthX,
+			borderWidthY,
+			borderWidthTop,
+			borderWidthRight,
+			borderWidthBottom,
+			borderWidthLeft,
+			borderColourX,
+			borderColourY,
+			borderColourTop,
+			borderColourRight,
+			borderColourBottom,
+			borderColourLeft,
+			borderRadius,
+			backgroundColour,
+			width,
+			position,
+		});
+
+		invariant(!isValidElement(Component), 'Box only supports intrinsics');
+
+		return createElement(
+			Component ?? 'div',
+			{
+				className: clsx([cls, className]),
+				...allOtherProps,
+				ref,
+			},
+			children,
+		);
+	},
 );
+
+Box.displayName = 'Box';

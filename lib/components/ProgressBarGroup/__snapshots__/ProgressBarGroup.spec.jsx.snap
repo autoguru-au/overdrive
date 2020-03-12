@@ -2,214 +2,214 @@
 
 exports[`<ProgressBarGroup /> should match the snapshot 1`] = `
 <div
-  class="root"
+  class="base root_base"
   style="grid-template-columns: 1fr;"
 >
   <span
-    class="root sizeScale3 alignRight"
+    class="base root_base sizes_3_base align_right colours_light_base fontWeight_normal_base"
   />
   <div
-    class="root"
+    class="base backgroundColours_gray100_base container_base"
   >
     <div
-      class="bar green"
+      class="base backgroundColours_green500_base bar_base container_base"
       style="width: 16.666666666666664%;"
     />
   </div>
   <span
-    class="root sizeScale3 alignLeft"
+    class="base root_base sizes_3_base align_left colours_light_base fontWeight_normal_base"
   />
   <span
-    class="root sizeScale3 alignRight"
+    class="base root_base sizes_3_base align_right colours_light_base fontWeight_normal_base"
   />
   <div
-    class="root"
+    class="base backgroundColours_gray100_base container_base"
   >
     <div
-      class="bar green"
+      class="base backgroundColours_green500_base bar_base container_base"
       style="width: 33.33333333333333%;"
     />
   </div>
   <span
-    class="root sizeScale3 alignLeft"
+    class="base root_base sizes_3_base align_left colours_light_base fontWeight_normal_base"
   />
   <span
-    class="root sizeScale3 alignRight"
+    class="base root_base sizes_3_base align_right colours_light_base fontWeight_normal_base"
   />
   <div
-    class="root"
+    class="base backgroundColours_gray100_base container_base"
   >
     <div
-      class="bar green"
+      class="base backgroundColours_green500_base bar_base container_base"
       style="width: 50%;"
     />
   </div>
   <span
-    class="root sizeScale3 alignLeft"
+    class="base root_base sizes_3_base align_left colours_light_base fontWeight_normal_base"
   />
 </div>
 `;
 
 exports[`<ProgressBarGroup /> should should ignore extra labels 1`] = `
 <div
-  class="root"
+  class="base root_base"
   style="grid-template-columns: auto 1fr;"
 >
   <span
-    class="root sizeScale3 alignRight"
+    class="base root_base sizes_3_base align_right colours_light_base fontWeight_normal_base"
   >
     a
   </span>
   <div
-    class="root"
+    class="base backgroundColours_gray100_base container_base"
   >
     <div
-      class="bar green"
+      class="base backgroundColours_green500_base bar_base container_base"
       style="width: 16.666666666666664%;"
     />
   </div>
   <span
-    class="root sizeScale3 alignLeft"
+    class="base root_base sizes_3_base align_left colours_light_base fontWeight_normal_base"
   />
   <span
-    class="root sizeScale3 alignRight"
+    class="base root_base sizes_3_base align_right colours_light_base fontWeight_normal_base"
   >
     b
   </span>
   <div
-    class="root"
+    class="base backgroundColours_gray100_base container_base"
   >
     <div
-      class="bar green"
+      class="base backgroundColours_green500_base bar_base container_base"
       style="width: 33.33333333333333%;"
     />
   </div>
   <span
-    class="root sizeScale3 alignLeft"
+    class="base root_base sizes_3_base align_left colours_light_base fontWeight_normal_base"
   />
   <span
-    class="root sizeScale3 alignRight"
+    class="base root_base sizes_3_base align_right colours_light_base fontWeight_normal_base"
   >
     c
   </span>
   <div
-    class="root"
+    class="base backgroundColours_gray100_base container_base"
   >
     <div
-      class="bar green"
+      class="base backgroundColours_green500_base bar_base container_base"
       style="width: 50%;"
     />
   </div>
   <span
-    class="root sizeScale3 alignLeft"
+    class="base root_base sizes_3_base align_left colours_light_base fontWeight_normal_base"
   />
 </div>
 `;
 
 exports[`<ProgressBarGroup /> should should ignore not break when not enough labels 1`] = `
 <div
-  class="root"
+  class="base root_base"
   style="grid-template-columns: auto 1fr;"
 >
   <span
-    class="root sizeScale3 alignRight"
+    class="base root_base sizes_3_base align_right colours_light_base fontWeight_normal_base"
   >
     a
   </span>
   <div
-    class="root"
+    class="base backgroundColours_gray100_base container_base"
   >
     <div
-      class="bar green"
+      class="base backgroundColours_green500_base bar_base container_base"
       style="width: 16.666666666666664%;"
     />
   </div>
   <span
-    class="root sizeScale3 alignLeft"
+    class="base root_base sizes_3_base align_left colours_light_base fontWeight_normal_base"
   />
   <span
-    class="root sizeScale3 alignRight"
+    class="base root_base sizes_3_base align_right colours_light_base fontWeight_normal_base"
   />
   <div
-    class="root"
+    class="base backgroundColours_gray100_base container_base"
   >
     <div
-      class="bar green"
+      class="base backgroundColours_green500_base bar_base container_base"
       style="width: 33.33333333333333%;"
     />
   </div>
   <span
-    class="root sizeScale3 alignLeft"
+    class="base root_base sizes_3_base align_left colours_light_base fontWeight_normal_base"
   />
   <span
-    class="root sizeScale3 alignRight"
+    class="base root_base sizes_3_base align_right colours_light_base fontWeight_normal_base"
   />
   <div
-    class="root"
+    class="base backgroundColours_gray100_base container_base"
   >
     <div
-      class="bar green"
+      class="base backgroundColours_green500_base bar_base container_base"
       style="width: 50%;"
     />
   </div>
   <span
-    class="root sizeScale3 alignLeft"
+    class="base root_base sizes_3_base align_left colours_light_base fontWeight_normal_base"
   />
 </div>
 `;
 
 exports[`<ProgressBarGroup /> should should render a prefix for every value 1`] = `
 <div
-  class="root"
+  class="base root_base"
   style="grid-template-columns: auto 1fr;"
 >
   <span
-    class="root sizeScale3 alignRight"
+    class="base root_base sizes_3_base align_right colours_light_base fontWeight_normal_base"
   >
     a
   </span>
   <div
-    class="root"
+    class="base backgroundColours_gray100_base container_base"
   >
     <div
-      class="bar green"
+      class="base backgroundColours_green500_base bar_base container_base"
       style="width: 16.666666666666664%;"
     />
   </div>
   <span
-    class="root sizeScale3 alignLeft"
+    class="base root_base sizes_3_base align_left colours_light_base fontWeight_normal_base"
   />
   <span
-    class="root sizeScale3 alignRight"
+    class="base root_base sizes_3_base align_right colours_light_base fontWeight_normal_base"
   >
     b
   </span>
   <div
-    class="root"
+    class="base backgroundColours_gray100_base container_base"
   >
     <div
-      class="bar green"
+      class="base backgroundColours_green500_base bar_base container_base"
       style="width: 33.33333333333333%;"
     />
   </div>
   <span
-    class="root sizeScale3 alignLeft"
+    class="base root_base sizes_3_base align_left colours_light_base fontWeight_normal_base"
   />
   <span
-    class="root sizeScale3 alignRight"
+    class="base root_base sizes_3_base align_right colours_light_base fontWeight_normal_base"
   >
     c
   </span>
   <div
-    class="root"
+    class="base backgroundColours_gray100_base container_base"
   >
     <div
-      class="bar green"
+      class="base backgroundColours_green500_base bar_base container_base"
       style="width: 50%;"
     />
   </div>
   <span
-    class="root sizeScale3 alignLeft"
+    class="base root_base sizes_3_base align_left colours_light_base fontWeight_normal_base"
   />
 </div>
 `;

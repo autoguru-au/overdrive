@@ -1,11 +1,13 @@
 import clsx from 'clsx';
-import React, { ChangeEvent, FunctionComponent, ReactNode } from 'react';
+import * as React from 'react';
+import { ChangeEvent, FunctionComponent, ReactNode } from 'react';
+import { useStyles } from 'react-treat';
 
-import styles from './style.scss';
+import { Box } from '../Box';
+import { Text } from '../Typography';
+import * as styleRefs from './CheckableBase.treat';
 
-export const checkableClass = styles.checkable;
-
-export interface Props {
+interface Props {
 	className?: string;
 	checked?: boolean;
 	disabled?: boolean;
@@ -31,32 +33,39 @@ export const CheckableBase: FunctionComponent<Props> = ({
 	handleClick,
 	handleChange,
 }) => {
+	const styles = useStyles(styleRefs);
 	const onChange = (e: ChangeEvent<HTMLInputElement>) => {
 		if (typeof handleChange === 'function') {
 			handleChange(e.currentTarget.checked);
 		}
 	};
 
+	const nakedLabel = ['string', 'number'].includes(typeof label);
+
 	return (
-		<div
-			className={clsx([styles.root, className], {
-				[styles.checked]: checked,
-				[styles.disabled]: disabled,
-			})}>
+		<Box className={clsx(styles.root, styles.tappable, className)}>
 			<input
 				name={inputName}
 				value={value}
 				checked={checked}
 				disabled={disabled}
 				type={inputType}
-				className={styles.nativeInput}
+				className={clsx(styles.tappable, styles.nativeInput.default, {
+					[styles.nativeInput.disabled]: disabled,
+					[styles.nativeInput.checked]: checked,
+				})}
 				onClick={handleClick}
 				onChange={onChange}
 			/>
 			{children}
 			<div className={styles.focusRect} />
 
-			<label className={styles.label}>{label}</label>
-		</div>
+			<label
+				className={clsx(styles.tappable, styles.label.default, {
+					[styles.label.disabled]: disabled,
+				})}>
+				{nakedLabel ? <Text is="span">{label}</Text> : label}
+			</label>
+		</Box>
 	);
 };

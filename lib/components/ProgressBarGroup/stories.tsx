@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import * as React from 'react';
+import { useEffect, useState } from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
 import { ProgressBarGroup } from '.';
 
-export default { title: 'Components|Progress/ProgressBarGroup' };
+export default {
+	title: 'Components|Progress/ProgressBarGroup',
+	component: ProgressBarGroup,
+};
 
 export const Standard = () => {
 	const [things, setThings] = useState([48, 16, 24, 0, 3]);

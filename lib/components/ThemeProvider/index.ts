@@ -1,1 +1,1 @@
-export { useTheme } from './ThemeProvider';
+export { useRuntimeTokens } from './ThemeProvider';

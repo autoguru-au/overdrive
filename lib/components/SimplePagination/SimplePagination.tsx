@@ -1,10 +1,13 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@autoguru/icons';
 import clsx from 'clsx';
-import React, { FunctionComponent, memo } from 'react';
+import * as React from 'react';
+import { memo, NamedExoticComponent } from 'react';
+import { useStyles } from 'react-treat';
 
-import { Button, EButtonSize, EButtonVariant } from '../Button';
+import { Box } from '../Box';
+import { Button } from '../Button';
 import { Icon } from '../Icon';
-import styles from './style.scss';
+import * as styleRefs from './SimplePagination.treat';
 
 export enum EChangeDirection {
 	Previous = 'previous',
@@ -13,62 +16,67 @@ export enum EChangeDirection {
 
 type TOnChangeEventHandler = (event: EChangeDirection) => void;
 
-export interface Props {
+interface Props {
 	className?: string;
 	hasNext?: boolean;
 	hasPrevious?: boolean;
 	onChange?: TOnChangeEventHandler;
 }
 
-export const SimplePaginationComponent: FunctionComponent<Props> = ({
-	className = '',
-	hasNext = false,
-	hasPrevious = false,
-	onChange = () => void 0,
-}) => {
-	const cls = clsx([styles.pagination, className]);
-	const chevronLeftCls = clsx([styles.chevron], {
-		[styles.disabled]: !hasPrevious,
-	});
-	const chevronRightCls = clsx([styles.chevron], {
-		[styles.disabled]: !hasNext,
-	});
-	const handleClick = (direction: EChangeDirection) => () => {
-		onChange(direction);
-	};
+export const SimplePagination: NamedExoticComponent<Props> = memo(
+	({
+		className = '',
+		hasNext = false,
+		hasPrevious = false,
+		onChange = () => void 0,
+	}) => {
+		const styles = useStyles(styleRefs);
+		const cls = clsx([styles.pagination, className]);
+		const chevronLeftCls = clsx(styles.pagination, styles.chevron.default, {
+			[styles.chevron.disabled]: !hasPrevious,
+		});
+		const chevronRightCls = clsx(
+			styles.pagination,
+			styles.chevron.default,
+			{
+				[styles.chevron.disabled]: !hasNext,
+			},
+		);
+		const handleClick = (direction: EChangeDirection) => () => {
+			onChange(direction);
+		};
 
-	return (
-		<nav className={cls} aria-label="pagination">
-			<Button
-				rounded
-				disabled={!hasPrevious}
-				size={EButtonSize.Small}
-				variant={EButtonVariant.Secondary}
-				className={chevronLeftCls}
-				aria-label="previous page"
-				onClick={handleClick(EChangeDirection.Previous)}>
-				<Icon
-					className={styles.icon}
-					size={24}
-					icon={ChevronLeftIcon}
-				/>
-			</Button>
-			<Button
-				rounded
-				disabled={!hasNext}
-				size={EButtonSize.Small}
-				variant={EButtonVariant.Secondary}
-				className={chevronRightCls}
-				aria-label="next page"
-				onClick={handleClick(EChangeDirection.Next)}>
-				<Icon
-					className={styles.icon}
-					size={24}
-					icon={ChevronRightIcon}
-				/>
-			</Button>
-		</nav>
-	);
-};
-
-export const SimplePagination = memo(SimplePaginationComponent);
+		return (
+			<Box is="nav" className={cls} aria-label="pagination">
+				<Button
+					rounded
+					disabled={!hasPrevious}
+					size="small"
+					variant="secondary"
+					className={chevronLeftCls}
+					aria-label="previous page"
+					onClick={handleClick(EChangeDirection.Previous)}>
+					<Icon
+						className={styles.icon.default}
+						size="medium"
+						icon={ChevronLeftIcon}
+					/>
+				</Button>
+				<Button
+					rounded
+					disabled={!hasNext}
+					size="small"
+					variant="secondary"
+					className={chevronRightCls}
+					aria-label="next page"
+					onClick={handleClick(EChangeDirection.Next)}>
+					<Icon
+						className={styles.icon.default}
+						size="medium"
+						icon={ChevronRightIcon}
+					/>
+				</Button>
+			</Box>
+		);
+	},
+);

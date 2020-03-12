@@ -1,0 +1,29 @@
+@font-face {
+	font-family: 'AvertaStandard';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: local('Averta Std Regular'), local('AvertaStd-Regular'),
+	url('https://cdn.autoguru.com.au/assets/fonts/avertastd-regular-webfont.woff2') format('woff2'),
+	url('https://cdn.autoguru.com.au/assets/fonts/avertastd-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'AvertaStandard';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: local('Averta Std Semibold'), local('AvertaStd-Semibold'),
+	url('https://cdn.autoguru.com.au/assets/fonts/avertastd-semibold-webfont.woff2') format('woff2'),
+	url('https://cdn.autoguru.com.au/assets/fonts/avertastd-semibold-webfont.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'AvertaStandard';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: local('Averta Std Bold'), local('AvertaStd-Bold'),
+	url('https://cdn.autoguru.com.au/assets/fonts/avertastd-bold-webfont.woff2') format('woff2'),
+	url('https://cdn.autoguru.com.au/assets/fonts/avertastd-bold-webfont.woff') format('woff');
+}

@@ -1,32 +1,53 @@
-import React, { Children, memo, NamedExoticComponent, ReactNode } from 'react';
+import clsx from 'clsx';
+import * as React from 'react';
+import { Children, FunctionComponent, ReactNode } from 'react';
+import { useStyles } from 'react-treat';
 
-import styles from './Stack.scss';
+import { Box } from '../Box';
+import { BoxStyleProps } from '../Box/useBoxStyles';
+import { Divider } from './Divider';
+import * as styleRefs from './Stack.treat';
 
-interface Props {
-	spacing?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
-	children?: ReactNode;
+interface Props extends Pick<BoxStyleProps, 'is'> {
+	spacing?: keyof typeof styleRefs.child.spaces;
+	className?: string;
+	dividers?: boolean;
+
+	children: ReactNode[];
 }
 
-const spaceMap = new Array(9)
-	.fill(0)
-	.map((_, idx) => styles[`space${idx + 1}`]);
+export const Stack: FunctionComponent<Props> = ({
+	spacing = '2',
+	children,
+	is = 'div',
+	dividers = false,
+	className = '',
+}) => {
+	const styles = useStyles(styleRefs);
+	const items = Children.toArray(children);
 
-export const Stack: NamedExoticComponent<Props> = memo(
-	({ spacing = 2, children }) => {
-		const items = Children.toArray(children);
+	if (items.length < 2) {
+		return <>{items}</>;
+	}
 
-		if (items.length < 2) {
-			return <>{items}</>;
-		}
-
-		return (
-			<div className={spaceMap[spacing - 1]}>
-				{items.map((child, index) => (
-					<div key={index} className={styles.child}>
-						{child}
-					</div>
-				))}
-			</div>
-		);
-	},
-);
+	return (
+		<Box is={is} className={className}>
+			{items.map((child, idx) => (
+				<Box
+					key={idx}
+					is={['ul', 'ol'].includes(is) ? 'li' : 'div'}
+					className={clsx(
+						styles.child.default,
+						dividers ? undefined : styles.child.spaces[spacing],
+					)}>
+					{dividers && idx > 0 ? (
+						<Box paddingY={spacing} width="full">
+							<Divider />
+						</Box>
+					) : null}
+					{child}
+				</Box>
+			))}
+		</Box>
+	);
+};

@@ -1,11 +1,11 @@
 import { EAlignment } from './alignment';
 
-export interface Dimensions {
+interface Dimensions {
 	width: number;
 	height: number;
 }
 
-export interface Position {
+interface Position {
 	top: number;
 	left: number;
 }

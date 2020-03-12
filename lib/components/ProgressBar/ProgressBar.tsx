@@ -1,34 +1,45 @@
 import { clamp } from '@autoguru/utilities';
 import clsx from 'clsx';
-import React, { FunctionComponent, memo } from 'react';
+import * as React from 'react';
+import { ComponentProps, memo } from 'react';
+import { useStyles } from 'react-treat';
 
-import styles from './ProgressBar.scss';
+import { Box } from '../Box';
+import * as styleRefs from './ProgressBar.treat';
 
-type Colours = 'red' | 'green' | 'blue' | 'yellow' | 'neutral';
+// TODO: These should use the intent verbs
+const colours: ReadonlyArray<
+	'red' | 'green' | 'blue' | 'yellow' | 'neutral'
+> = ['red', 'green', 'blue', 'yellow', 'neutral'] as const;
 
 interface Props {
 	value?: number;
-	colour?: Colours;
+	colour?: typeof colours[number];
 }
 
-const ProgressBarComponent: FunctionComponent<Props> = ({
-	value = 0,
-	colour = 'green',
-}) => (
-	<div className={styles.root}>
-		<div
-			className={clsx(styles.bar, {
-				[styles.red]: colour === 'red',
-				[styles.green]: colour === 'green',
-				[styles.blue]: colour === 'blue',
-				[styles.yellow]: colour === 'yellow',
-				[styles.neutral]: colour === 'neutral',
-			})}
-			style={{
-				width: `${clamp(value, 0, 1) * 100}%`,
-			}}
-		/>
-	</div>
-);
+const backgroundColorMap: Record<
+	Required<Props>['colour'],
+	ComponentProps<typeof Box>['backgroundColour']
+> = {
+	red: 'red500',
+	green: 'green500',
+	blue: 'blue500',
+	yellow: 'yellow600',
+	neutral: 'gray500',
+};
 
-export const ProgressBar = memo(ProgressBarComponent);
+export const ProgressBar = memo<Props>(({ value = 0, colour = 'green' }) => {
+	const styles = useStyles(styleRefs);
+
+	return (
+		<Box className={styles.container} backgroundColour="gray100">
+			<Box
+				backgroundColour={backgroundColorMap[colour]}
+				className={clsx(styles.bar, styles.container)}
+				style={{
+					width: `${clamp(value, 0, 1) * 100}%`,
+				}}
+			/>
+		</Box>
+	);
+});

@@ -1,31 +1,24 @@
 import { IconType } from '@autoguru/icons';
 import clsx from 'clsx';
-import React, {
+import * as React from 'react';
+import {
 	AriaAttributes,
 	ButtonHTMLAttributes,
 	cloneElement,
 	ComponentProps,
 	createElement,
+	ElementType,
 	forwardRef,
 	isValidElement,
 	ReactElement,
 	useMemo,
 } from 'react';
+import { useStyles } from 'react-treat';
 
+import { Box, useBoxStyles } from '../Box';
 import { Icon } from '../Icon';
 import { ProgressSpinner } from '../ProgressSpinner';
-import styles from './Button.scss';
-
-export enum EButtonSize {
-	Medium = 'medium',
-	Small = 'small',
-}
-
-export enum EButtonVariant {
-	Primary = 'primary',
-	Secondary = 'secondary',
-	Danger = 'danger',
-}
+import * as styleRefs from './Button.treat';
 
 type ButtonPrimitive = ButtonHTMLAttributes<HTMLButtonElement>;
 
@@ -36,14 +29,33 @@ interface Props
 		Pick<AriaAttributes, 'aria-label'> {
 	children: AllowedChildren | AllowedChildren[];
 	disabled?: boolean;
-	is?: ReactElement | 'button';
+	is?: ElementType | ReactElement;
 	isLoading?: boolean;
 	isFullWidth?: boolean;
 	minimal?: boolean;
 	rounded?: boolean;
-	size?: EButtonSize;
-	variant?: EButtonVariant;
+	size?: keyof typeof styleRefs.size;
+	variant?: keyof typeof styleRefs.variant;
 }
+
+const getSpinnerColour: (
+	variant: keyof typeof styleRefs.variant,
+	minimal: boolean,
+) => ComponentProps<typeof ProgressSpinner>['colour'] = (variant, minimal) =>
+	minimal || variant === 'secondary' ? 'secondary' : 'light';
+
+const getBorderRadius: (
+	rounded: boolean,
+) => ComponentProps<typeof Box>['borderRadius'] = rounded =>
+	rounded ? 'pill' : '1';
+
+const getPadding: (
+	size: keyof typeof styleRefs.size,
+	loading: boolean,
+) => ComponentProps<typeof Box>['paddingX'] = (size, loading) => {
+	if (loading) return 'none';
+	return size === 'small' ? '3' : '4';
+};
 
 export const Button = forwardRef<HTMLButtonElement, Props>(
 	(
@@ -58,13 +70,14 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 			minimal = false,
 			onClick,
 			rounded = false,
-			size = EButtonSize.Medium,
+			size = 'medium',
 			type = 'button',
-			variant = EButtonVariant.Secondary,
+			variant = 'secondary',
 			'aria-label': ariaLabel,
 		},
 		ref,
 	) => {
+		const styles = useStyles(styleRefs);
 		const { isSingleIconChild, props: maybeIconProps } = useMemo(() => {
 			const maybeIcon =
 				isValidElement(children) && children.type === Icon;
@@ -87,29 +100,56 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 			disabled: disabled || isLoading,
 			'aria-label': ariaLabel,
 			className: clsx(
+				useBoxStyles({
+					is: typeof Component === 'string' ? Component : undefined,
+					display: 'inline-block',
+					borderRadius: getBorderRadius(rounded),
+					borderWidth: 'none',
+					paddingY: 'none',
+					paddingX: getPadding(size, isLoading),
+				}),
 				styles.root,
-				buttonVariantStyleMap[variant],
-				buttonSizeStyleMap[size],
+				styles.themedButton,
+				getButtonStates(
+					styles,
+					variant,
+					disabled || isLoading,
+					minimal,
+					rounded,
+				),
+				!minimal && styles.variant[variant],
+				getButtonSize(
+					styles,
+					size,
+					rounded,
+					isSingleIconChild && !isLoading,
+				),
 				{
+					[styles.disabled]: disabled,
+					[styles.enabled]: !disabled && !isLoading,
 					[styles.loading]: isLoading,
-					[styles.fullWidth]: isFullWidth,
-					[styles.minimal]: minimal,
-					[styles.rounded]: rounded,
-					[styles.iconOnly]: isSingleIconChild && !isLoading,
 				},
+				styles.width[isFullWidth ? 'fullWidth' : 'default'],
 				className,
 			),
 			ref,
 		};
 
 		const child = isLoading ? (
-			<ProgressSpinner variant={null} />
+			<ProgressSpinner
+				className={styles.spinner}
+				colour={getSpinnerColour(variant, minimal)}
+			/>
 		) : (
 			<div className={styles.body}>
-				{isSingleIconChild ? (
+				{isSingleIconChild && maybeIconProps ? (
 					<Icon
 						icon={maybeIconProps.icon}
-						size={maybeIconProps.size ?? 20}
+						size={
+							maybeIconProps.size ?? size === 'small'
+								? 'small'
+								: 'medium'
+						}
 						{...maybeIconProps}
 					/>
 				) : (
@@ -119,18 +159,42 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 		);
 
 		return isValidElement(Component)
-			? cloneElement(Component, props, child)
-			: createElement(Component, props, child);
+			? cloneElement(Component, { ref, ...props }, child)
+			: createElement(Component, { ref, ...props }, child);
 	},
 );
 
-const buttonVariantStyleMap: Record<EButtonVariant, string> = {
-	[EButtonVariant.Danger]: styles.variantDanger,
-	[EButtonVariant.Primary]: styles.variantPrimary,
-	[EButtonVariant.Secondary]: styles.variantSecondary,
+const getButtonStates: (
+	styles: typeof styleRefs,
+	variant: keyof typeof styleRefs.variant,
+	disabled: boolean,
+	minimal: boolean,
+	rounded: boolean,
+) => string = (styles, variant, disabled, minimal, rounded) => {
+	if (disabled)
+		return minimal
+			? clsx(styles.minimal.defaults, {
+					[styles.minimal.noneRounded]: !rounded,
+			  })
+			: '';
+
+	if (minimal)
+		return clsx(styles.minimal.defaults, styles.minimalStates[variant], {
+			[styles.minimal.noneRounded]: !rounded,
+		});
+	return styles.defaultStates[variant];
 };
 
-const buttonSizeStyleMap: Record<EButtonSize, string> = {
-	[EButtonSize.Medium]: styles.medium,
-	[EButtonSize.Small]: styles.small,
+const getButtonSize: (
+	styles: typeof styleRefs,
+	size: keyof typeof styles.size,
+	rounded: boolean,
+	iconOnly: boolean,
+) => string = (styles, size, rounded, iconOnly) => {
+	const currentSize = styles.size[size];
+
+	return clsx(currentSize.default, {
+		[currentSize.rounded]: rounded,
+		[currentSize.iconOnly]: iconOnly,
+	});
 };

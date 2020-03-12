@@ -1,11 +1,11 @@
-import { CloseIcon } from '@autoguru/icons';
+import { ChevronDownIcon, CloseIcon } from '@autoguru/icons';
 import { wrapEvent } from '@autoguru/utilities';
 import clsx from 'clsx';
-import React, {
+import * as React from 'react';
+import {
 	ComponentPropsWithoutRef,
 	Dispatch,
 	FunctionComponent,
-	MutableRefObject,
 	ReactElement,
 	Reducer,
 	Ref,
@@ -16,19 +16,25 @@ import React, {
 	useState,
 } from 'react';
 import { createPortal } from 'react-dom';
+import { useStyles } from 'react-treat';
 
-import { Button, EButtonSize, Icon, useMedia } from '../..';
-import { useId } from '../../utils/useId';
+import { useMedia } from '../../hooks/useMedia';
+import { useId } from '../../utils';
+import { Box } from '../Box';
+import { Button } from '../Button';
+import { Icon } from '../Icon';
+import { withEnhancedInput } from '../InputBase';
 import { usingPositioner } from '../Positioner';
 import { EAlignment } from '../Positioner/alignment';
+import * as selectStyleRefs from '../SelectInput/SelectInput.treat';
 import { TextInput } from '../TextInput';
 import { Text } from '../Typography';
-import styles from './AutoSuggest.scss';
+import * as styleRefs from './AutoSuggest.treat';
 import { useLayoutSuggestionVisible } from './useLayoutSuggestionVisible';
 
 export interface AutoSuggestValue<PayloadType> {
 	text: string;
-	payload: PayloadType | null;
+	payload: PayloadType | null | undefined;
 	skip?: boolean;
 }
 
@@ -109,7 +115,7 @@ export const AutoSuggest = <PayloadType extends unknown>({
 				setIsFocused(false);
 			}
 
-			incomingOnChange(value);
+			if (typeof incomingOnChange === 'function') incomingOnChange(value);
 		},
 		itemRenderer,
 		onKeyDown,
@@ -150,6 +156,7 @@ const AutoSuggestFullscreenInput = <PayloadType extends unknown>({
 }: AutoSuggestFullscreenInputProps<PayloadType>): ReturnType<FunctionComponent<
 	AutoSuggestInputProps<PayloadType>
 >> => {
+	const styles = useStyles(styleRefs);
 	const [showPortal, setShowPortal] = useState<boolean>(false);
 
 	useEffect(() => {
@@ -158,9 +165,9 @@ const AutoSuggestFullscreenInput = <PayloadType extends unknown>({
 		document.documentElement.style.maxHeight = '100%';
 
 		return () => {
-			document.documentElement.style.position = null;
-			document.documentElement.style.overflow = null;
-			document.documentElement.style.maxHeight = null;
+			document.documentElement.style.position = '';
+			document.documentElement.style.overflow = '';
+			document.documentElement.style.maxHeight = '';
 		};
 	}, []);
 
@@ -172,22 +179,17 @@ const AutoSuggestFullscreenInput = <PayloadType extends unknown>({
 		};
 	}, [setShowPortal]);
 
-	return (
-		showPortal &&
-		createPortal(
-			<div className={styles.fullScreenRoot}>
-				<AutoSuggestInput {...props} inlineOptions />
-				<Button
-					minimal
-					rounded
-					size={EButtonSize.Medium}
-					onClick={closeModal}>
-					<Icon icon={CloseIcon} />
-				</Button>
-			</div>,
-			document.body,
-		)
-	);
+	return showPortal
+		? createPortal(
+				<div className={styles.fullScreenRoot}>
+					<AutoSuggestInput {...props} inlineOptions />
+					<Button minimal rounded size="medium" onClick={closeModal}>
+						<Icon icon={CloseIcon} />
+					</Button>
+				</div>,
+				document.body,
+		  )
+		: null;
 };
 
 const AutoSuggestInput = <PayloadType extends unknown>({
@@ -205,9 +207,10 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 }: AutoSuggestInputProps<PayloadType>): ReturnType<FunctionComponent<
 	AutoSuggestInputProps<PayloadType>
 >> => {
-	const triggerRef = useRef<HTMLDivElement>();
-	const highlightRef = useRef<HTMLLIElement>();
-	const suggestionListRef = useRef<HTMLUListElement>();
+	const styles = useStyles(styleRefs);
+	const triggerRef = useRef<HTMLDivElement>(null);
+	const highlightRef = useRef<HTMLLIElement>(null);
+	const suggestionListRef = useRef<HTMLUListElement>(null);
 
 	const suggestionListId = useId();
 
@@ -318,22 +321,22 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 	);
 
 	return (
-		<div
+		<Box
 			role="combobox"
 			aria-haspopup="listbox"
 			aria-expanded={shouldOpenFlyout}
-			aria-owns={shouldOpenFlyout ? suggestionListId : void 0}
+			aria-owns={shouldOpenFlyout ? suggestionListId! : void 0}
 			aria-label={textInputProps.placeholder}>
-			<TextInput
+			<AutoSuggestInputPrimitive
 				autoFocus={autoFocus}
 				wrapperRef={triggerRef}
 				{...textInputProps}
 				aria-autocomplete="list"
-				aria-controls={shouldOpenFlyout ? suggestionListId : void 0}
+				aria-controls={shouldOpenFlyout ? suggestionListId! : void 0}
 				aria-activedescendant={
 					state.highlightIndex > -1
 						? getSuggestionId(
-								suggestionListId,
+								suggestionListId!,
 								state.highlightIndex,
 						  )
 						: void 0
@@ -399,13 +402,13 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 			{inlineOptions ? (
 				<SuggestionsList<PayloadType>
 					suggestionListRef={suggestionListRef}
-					suggestionListId={suggestionListId}
+					suggestionListId={suggestionListId!}
 					placeholder={textInputProps.placeholder}
 					highlightIndex={state.highlightIndex}
 					suggestions={suggestions}
 					highlightRef={highlightRef}
 					itemRenderer={itemRenderer}
-					className={styles.inlineOptions}
+					className={styles.suggestionList.inlineOptions}
 					dispatch={dispatch}
 					onChange={onChange}
 				/>
@@ -421,8 +424,9 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 						});
 					}}>
 					<SuggestionsList<PayloadType>
+						className={styles.suggestionList.blockOptions}
 						suggestionListRef={suggestionListRef}
-						suggestionListId={suggestionListId}
+						suggestionListId={suggestionListId!}
 						placeholder={textInputProps.placeholder}
 						highlightIndex={state.highlightIndex}
 						suggestions={suggestions}
@@ -433,7 +437,7 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 					/>
 				</SuggestionListFlyout>
 			)}
-		</div>
+		</Box>
 	);
 };
 
@@ -447,7 +451,7 @@ interface SuggestionProps<PayloadType>
 	placeholder: string;
 	highlightIndex: number;
 	dispatch: Dispatch<Actions>;
-	highlightRef: MutableRefObject<HTMLLIElement>;
+	highlightRef: Ref<HTMLLIElement>;
 	suggestionListRef: Ref<HTMLUListElement>;
 }
 
@@ -463,85 +467,147 @@ const SuggestionsList = <PayloadType extends unknown>({
 	dispatch,
 	// TODO: For now the ref is passed as a prop, as opposed to using forwardRef
 	suggestionListRef,
-}: SuggestionProps<PayloadType>) => (
-	<ul
-		ref={suggestionListRef}
-		className={clsx(styles.suggestionList, className)}
-		id={suggestionListId}
-		aria-label={placeholder}
-		role="listbox">
-		<div style={{ height: 'var(--global--space--1)' }} />
-		{suggestions.map((suggestion, idx) => {
-			const highlight = highlightIndex === idx;
+}: SuggestionProps<PayloadType>) => {
+	const styles = useStyles(styleRefs);
 
-			return (
-				<li
-					key={suggestion.text.concat(String(idx))}
-					ref={highlight ? highlightRef : void 0}
-					id={getSuggestionId(suggestionListId, idx)}
-					role="option"
-					aria-selected={highlight}
-					aria-label={suggestion.text}
-					onMouseDown={event =>
-						/* This is so a blur doesnt fire from the input when you click */
-						event.preventDefault()
-					}
-					onMouseMove={() => {
-						if (suggestion.skip) return;
+	return (
+		<Box
+			ref={suggestionListRef}
+			is="ul"
+			className={clsx(styles.suggestionList.defaults, className)}
+			id={suggestionListId}
+			aria-label={placeholder}
+			role="listbox">
+			<div className={styles.spacer} />
+			{suggestions.map((suggestion, idx) => {
+				const highlight = highlightIndex === idx;
 
-						/*
-					This has to be mouse move, so if you're hovering an item, and then arrow keys, we =
-					dont want yo trigger a mouse enter and highlight it instead
-					 */
-						dispatch({
-							type: ActionTypes.SUGGESTION_MOUSE_ENTER,
-							index: idx,
-						});
-					}}
-					onClick={() => {
-						if (suggestion.skip) return;
+				return (
+					<li
+						key={suggestion.text.concat(String(idx))}
+						ref={highlight ? highlightRef : void 0}
+						id={getSuggestionId(suggestionListId, idx)}
+						role="option"
+						aria-selected={highlight}
+						aria-label={suggestion.text}
+						className={clsx(styles.suggestionListItem.default, {
+							[styles.suggestionListItem.skipped]:
+								suggestion.skip,
+						})}
+						onMouseDown={event =>
+							/* This is so a blur doesnt fire from the input when you click */
+							event.preventDefault()
+						}
+						onMouseMove={() => {
+							if (suggestion.skip) return;
 
-						if (typeof onChange === 'function')
-							onChange(suggestion);
+							/*
+							This has to be mouse move, so if you're hovering an item, and then arrow keys, we =
+							dont want yo trigger a mouse enter and highlight it instead
+							 */
+							dispatch({
+								type: ActionTypes.SUGGESTION_MOUSE_ENTER,
+								index: idx,
+							});
+						}}
+						onClick={() => {
+							if (suggestion.skip) return;
 
-						dispatch({
-							type: ActionTypes.SUGGESTION_MOUSE_CLICK,
-						});
-					}}>
-					{itemRenderer({
-						suggestions,
-						highlight,
-						value: suggestion,
-					})}
-				</li>
-			);
-		})}
-		<div style={{ height: 'var(--global--space--1)' }} />
-	</ul>
+							if (typeof onChange === 'function')
+								onChange(suggestion);
+
+							dispatch({
+								type: ActionTypes.SUGGESTION_MOUSE_CLICK,
+							});
+						}}>
+						{typeof itemRenderer === 'function' &&
+							itemRenderer({
+								suggestions,
+								highlight,
+								value: suggestion,
+							})}
+					</li>
+				);
+			})}
+			<div className={styles.spacer} />
+		</Box>
+	);
+};
+
+const AutoSuggestInputPrimitive = withEnhancedInput(
+	({ field, eventHandlers, validation, suffixed, prefixed, ...rest }) => {
+		const styles = useStyles(selectStyleRefs);
+		const ref = useRef<HTMLInputElement>(null);
+
+		const focusHandler = useCallback(() => {
+			ref.current?.focus();
+		}, []);
+
+		return (
+			<Box className={styles.root}>
+				<Box
+					is="input"
+					{...eventHandlers}
+					{...field}
+					ref={ref}
+					autoComplete="off"
+					{...rest}
+					type="search"
+				/>
+				<Box className={styles.icon} onClick={focusHandler}>
+					<Icon size="medium" icon={ChevronDownIcon} />
+				</Box>
+			</Box>
+		);
+	},
+	{
+		primitiveType: 'text',
+		withPrefixIcon: true,
+		withSuffixIcon: false,
+	},
 );
 
 const getSuggestionId = (id: string, index: number) => `${id}-option-${index}`;
 
-const SuggestionListFlyout = usingPositioner(({ triggerRect, children }) => (
-	<div
-		className={styles.flyout}
-		style={{ width: triggerRect?.width }}
-		onMouseDown={event => event.preventDefault()}>
-		{children}
-	</div>
-));
+const SuggestionListFlyout = usingPositioner(({ triggerRect, children }) => {
+	const styles = useStyles(styleRefs);
+	return (
+		<div
+			className={styles.flyout}
+			style={{ width: triggerRect?.width }}
+			onMouseDown={event => event.preventDefault()}>
+			{children}
+		</div>
+	);
+});
 
 const defaultItemRenderer = <PayloadType extends unknown>({
 	value,
 	highlight,
 }: Parameters<AutoSuggestItemRenderer<PayloadType>>[0]) => (
-	<div
-		className={clsx(styles.suggestion, {
-			[styles.suggestionHighlight]: highlight,
-		})}>
-		<Text is="span">{value.text}</Text>
-	</div>
+	<DefaultSuggestion highlight={highlight} text={value.text} />
 );
+
+interface DefaultSuggestionProps {
+	text: string;
+	highlight: boolean;
+}
+
+const DefaultSuggestion: FunctionComponent<DefaultSuggestionProps> = ({
+	text,
+	highlight,
+}) => {
+	const styles = useStyles(styleRefs);
+
+	return (
+		<div
+			className={clsx(styles.suggestion, {
+				[styles.suggestionHighlight]: highlight,
+			})}>
+			<Text is="span">{text}</Text>
+		</div>
+	);
+};
 
 const getNextIndex = <
 	PayloadType extends unknown,
@@ -554,14 +620,14 @@ const getNextIndex = <
 	const maxIndex = suggestions.length - 1;
 
 	let itter = -1;
-	let returnIdx: number = null;
+	let returnIdx = -1;
 	let shouldSkip: boolean;
 
 	do {
 		++itter;
 
 		const maybeNextIdx =
-			((returnIdx === null ? currentIndex : returnIdx) + direction) | 0;
+			((returnIdx === -1 ? currentIndex : returnIdx) + direction) | 0;
 
 		if (maybeNextIdx < 0) {
 			returnIdx = maybeNextIdx > maxIndex ? 0 : maxIndex;
@@ -569,7 +635,7 @@ const getNextIndex = <
 			returnIdx = maybeNextIdx > maxIndex ? 0 : maybeNextIdx;
 		}
 
-		shouldSkip = suggestions[returnIdx].skip;
+		shouldSkip = suggestions[returnIdx].skip ?? false;
 	} while (shouldSkip && itter <= maxIndex);
 
 	return itter > maxIndex ? -1 : returnIdx;

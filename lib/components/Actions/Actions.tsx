@@ -1,25 +1,35 @@
-import clsx from 'clsx';
-import React, { memo, NamedExoticComponent, ReactChild } from 'react';
+import * as React from 'react';
+import {
+	Children,
+	ComponentProps,
+	FunctionComponent,
+	ReactElement,
+} from 'react';
 
-import styles from './Actions.scss';
+import { Column, Columns } from '../Columns';
 
-interface Props {
-	equalWidth?: boolean;
+interface Props
+	extends Partial<
+		Pick<ComponentProps<typeof Columns>, 'noWrap' | 'wrappingDirection'>
+	> {
 	className?: string;
-	children: ReactChild | ReactChild[];
+	children: ReactElement | ReactElement[];
 }
 
-export const Actions: NamedExoticComponent<Props> = memo(
-	({ className, children, equalWidth = true }) => (
-		<div
-			className={clsx(
-				styles.root,
-				{
-					[styles.equalWidth]: equalWidth,
-				},
-				className,
-			)}>
-			{children}
-		</div>
-	),
+// TODO: Has the potential to break on fragments
+export const Actions: FunctionComponent<Props> = ({
+	className,
+	children,
+	noWrap,
+	wrappingDirection,
+}) => (
+	<Columns
+		space="3"
+		noWrap={noWrap}
+		wrappingDirection={wrappingDirection}
+		className={className}>
+		{Children.map(children, (child, idx) => (
+			<Column key={idx}>{child}</Column>
+		))}
+	</Columns>
 );

@@ -1,1 +1,1 @@
-export { OverdriveProvider, useOverdriveContext } from './OverdriveProvider';
+export { OverdriveProvider } from './OverdriveProvider';

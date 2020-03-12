@@ -1,25 +1,41 @@
 import { IconType } from '@autoguru/icons';
 import clsx from 'clsx';
-import React, { FunctionComponent, memo } from 'react';
+import * as React from 'react';
+import { ComponentProps, memo, NamedExoticComponent } from 'react';
+import { useStyles } from 'react-treat';
 
-import styles from './style.scss';
+import {
+	resolveResponsiveStyle,
+	ResponsiveProp,
+} from '../../utils/responsiveProps';
+import { Box } from '../Box';
+import * as styleRefs from './Icon.treat';
 
-export interface Props {
+interface Props extends Pick<ComponentProps<typeof Box>, 'display'> {
 	className?: string;
-	size?: number;
+	size?: ResponsiveProp<keyof typeof styleRefs.size>;
 	icon: IconType;
 }
 
-export const IconComponent: FunctionComponent<Props> = ({
-	className = '',
-	icon,
-	size = 16,
-}) => (
-	<i
-		style={{ width: size, height: size }}
-		className={clsx([styles.root, className])}>
-		{icon}
-	</i>
-);
+export const Icon: NamedExoticComponent<Props> = memo(
+	({
+		className = '',
+		icon,
+		size = 'small' as ResponsiveProp<keyof typeof styleRefs.size>,
+		display,
+	}) => {
+		const styles = useStyles(styleRefs);
 
-export const Icon = memo(IconComponent);
+		return (
+			<Box
+				is="i"
+				display={display ?? 'block'}
+				className={clsx(
+					className,
+					resolveResponsiveStyle(size, styles.size),
+				)}>
+				{icon}
+			</Box>
+		);
+	},
+);

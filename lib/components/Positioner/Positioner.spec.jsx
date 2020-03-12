@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
-import React, { createRef } from 'react';
+import * as React from 'react';
+import { createRef } from 'react';
 
 import { EAlignment } from './alignment';
 import { Positioner } from './Positioner';

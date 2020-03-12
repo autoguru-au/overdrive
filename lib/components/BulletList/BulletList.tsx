@@ -1,11 +1,13 @@
 import clsx from 'clsx';
-import React, { FunctionComponent, ReactNode, useContext } from 'react';
+import * as React from 'react';
+import { FunctionComponent, useContext } from 'react';
+import { useStyles } from 'react-treat';
 
-import styles from './BulletList.scss';
+import { Box } from '../Box';
+import * as styleRefs from './BulletList.treat';
 import { BulletListContext, bulletMap } from './context';
 
 interface Props {
-	children: ReactNode;
 	className?: string;
 }
 
@@ -14,8 +16,11 @@ export const BulletList: FunctionComponent<Props> = ({
 	className,
 }) => {
 	const stack = useContext(BulletListContext);
+	const styles = useStyles(styleRefs);
+
 	return (
-		<ul
+		<Box
+			is="ul"
 			className={clsx(
 				styles.root,
 				{ [styles.firstOccurrence]: stack === -1 },
@@ -25,6 +30,6 @@ export const BulletList: FunctionComponent<Props> = ({
 				value={stack + 1 >= bulletMap.length ? 0 : stack + 1}>
 				{children}
 			</BulletListContext.Provider>
-		</ul>
+		</Box>
 	);
 };

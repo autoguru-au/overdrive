@@ -1,11 +1,10 @@
 import { action } from '@storybook/addon-actions';
-import React from 'react';
+import * as React from 'react';
 
 import { Text } from '../Typography';
 import { Alert } from '.';
-import { EAlertIntent } from './Alert';
 
-export default { title: 'Components|Alert' };
+export default { title: 'Components|Alert', component: Alert };
 
 export const Standard = () => (
 	<div
@@ -15,9 +14,7 @@ export const Standard = () => (
 			gridGap: '24px',
 		}}>
 		<div>
-			<Alert
-				intent={EAlertIntent.success}
-				onRequestClose={action('onRequestClose')}>
+			<Alert intent="success" onRequestClose={action('onRequestClose')}>
 				<Text>
 					Your invoice was sent to <Text strong>abc@supplier.co</Text>
 				</Text>
@@ -25,19 +22,19 @@ export const Standard = () => (
 		</div>
 
 		<div>
-			<Alert dismissible intent={EAlertIntent.warning}>
+			<Alert dismissible intent="warning">
 				This will affect job changes
 			</Alert>
 		</div>
 
 		<div>
-			<Alert dismissible intent={EAlertIntent.danger}>
+			<Alert dismissible intent="danger">
 				Something went wrong
 			</Alert>
 		</div>
 
 		<div>
-			<Alert dismissible intent={EAlertIntent.info}>
+			<Alert dismissible intent="information">
 				Something worth noting happened
 			</Alert>
 		</div>
@@ -52,7 +49,7 @@ export const Inline = () => (
 			gridGap: '24px',
 		}}>
 		<div>
-			<Alert inline intent={EAlertIntent.success}>
+			<Alert inline intent="success">
 				<Text>
 					Your invoice was sent to <Text strong>abc@supplier.co</Text>
 				</Text>
@@ -60,19 +57,19 @@ export const Inline = () => (
 		</div>
 
 		<div>
-			<Alert inline intent={EAlertIntent.warning}>
+			<Alert inline intent="warning">
 				This will affect job changes
 			</Alert>
 		</div>
 
 		<div>
-			<Alert inline intent={EAlertIntent.danger}>
+			<Alert inline intent="danger">
 				Something went wrong
 			</Alert>
 		</div>
 
 		<div>
-			<Alert inline intent={EAlertIntent.info}>
+			<Alert inline intent="information">
 				Something worth noting happened
 			</Alert>
 		</div>
@@ -87,7 +84,7 @@ export const NonDismissible = () => (
 			gridGap: '24px',
 		}}>
 		<div>
-			<Alert intent={EAlertIntent.success} dismissible={false}>
+			<Alert intent="success" dismissible={false}>
 				<Text>
 					Your invoice was sent to <Text strong>abc@supplier.co</Text>
 				</Text>
@@ -95,19 +92,19 @@ export const NonDismissible = () => (
 		</div>
 
 		<div>
-			<Alert intent={EAlertIntent.warning} dismissible={false}>
+			<Alert intent="warning" dismissible={false}>
 				This will affect job changes
 			</Alert>
 		</div>
 
 		<div>
-			<Alert intent={EAlertIntent.danger} dismissible={false}>
+			<Alert intent="danger" dismissible={false}>
 				Something went wrong
 			</Alert>
 		</div>
 
 		<div>
-			<Alert intent={EAlertIntent.info} dismissible={false}>
+			<Alert intent="information" dismissible={false}>
 				Something worth noting happened
 			</Alert>
 		</div>

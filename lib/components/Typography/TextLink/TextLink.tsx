@@ -1,69 +1,88 @@
 import { invariant } from '@autoguru/utilities';
 import clsx from 'clsx';
-import React, {
+import * as React from 'react';
+import {
 	AnchorHTMLAttributes,
 	cloneElement,
 	ComponentProps,
+	createElement,
+	ElementType,
 	forwardRef,
+	isValidElement,
 	ReactElement,
 	ReactText,
 } from 'react';
+import { useStyles } from 'react-treat';
 
+import { Box } from '../../Box';
 import { Text } from '../Text';
-import styles from './TextLink.scss';
+import * as styleRefs from './TextLink.treat';
 
-type TextProps = Omit<ComponentProps<typeof Text>, 'is' | 'white'>;
+type TextProps = Omit<ComponentProps<typeof Text>, 'is' | 'colour'>;
 type AnchorProps = Omit<
 	AnchorHTMLAttributes<HTMLAnchorElement>,
-	'children' | 'style' | 'as' | keyof TextProps
+	'children' | 'style' | 'is' | keyof TextProps
 >;
 
 interface Props extends TextProps, AnchorProps {
 	children: ReactText;
 	className?: string;
-	as?: ReactElement;
+	is?: ElementType | ReactElement;
+	muted?: boolean;
 }
 
 export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 	(
-		{ as, children, className, strong = true, muted, size, ...props },
+		{
+			is: Component,
+			children,
+			className,
+			fontWeight = 'bold',
+			strong,
+			muted = false,
+			size,
+			...props
+		},
 		ref,
 	) => {
 		invariant(
-			!(as !== void 0 && props.href !== void 0),
+			!(Component !== void 0 && props.href !== void 0),
 			'You cannot have both href and as defined.',
 		);
+
+		const styles = useStyles(styleRefs);
 
 		const body = (
 			<Text
 				is="span"
-				muted={muted}
+				colour={muted && ('muted' as any)}
 				size={size}
 				strong={strong}
+				fontWeight={fontWeight}
 				className={clsx(styles.root, {
-					[styles.strong]: strong,
 					[styles.muted]: muted,
 				})}>
 				{children}
 			</Text>
 		);
 
-		if (as === void 0) {
+		const allProps = {
+			rel: props.rel ?? 'noopener noreferrer',
+			...props,
+			ref,
+			className: clsx(className, styles.anchor),
+		};
+
+		if (Component === void 0) {
 			return (
-				<a
-					ref={ref as any}
-					rel={props.rel ?? 'noopener noreferrer'}
-					className={clsx(className, styles.anchor)}
-					{...props}>
+				<Box is="a" {...allProps}>
 					{body}
-				</a>
+				</Box>
 			);
 		}
 
-		return cloneElement(
-			as,
-			{ ref, className: clsx(className, styles.anchor) },
-			body,
-		);
+		return isValidElement(Component)
+			? cloneElement(Component, allProps, body)
+			: createElement(Component, allProps, body);
 	},
 );

@@ -1,20 +1,24 @@
 import { MinusIcon, PlusIcon } from '@autoguru/icons';
 import { clamp } from '@autoguru/utilities';
 import clsx from 'clsx';
-import React, {
-	FunctionComponent,
+import * as React from 'react';
+import {
 	KeyboardEvent,
 	memo,
+	NamedExoticComponent,
+	Reducer,
 	useCallback,
 	useReducer,
 	useRef,
 } from 'react';
+import { useStyles } from 'react-treat';
 
+import { Box } from '../Box';
 import { Icon } from '../Icon';
 import { Text } from '../Typography';
-import styles from './style.scss';
+import * as styleRefs from './Stepper.treat';
 
-export interface Props {
+interface Props {
 	className?: string;
 	disabled?: boolean;
 	value?: number;
@@ -33,13 +37,16 @@ enum EActionType {
 	VALUE,
 }
 
-interface Action {
-	type: EActionType;
-	value?: number;
-	min: number;
-	max: number;
-	step: number;
-}
+type Actions =
+	| { type: EActionType.INCREMENT; min: number; max: number; step: number }
+	| { type: EActionType.DECREMENT; min: number; max: number; step: number }
+	| {
+			type: EActionType.VALUE;
+			min: number;
+			max: number;
+			step: number;
+			value: number;
+	  };
 
 interface State {
 	value: number;
@@ -48,7 +55,7 @@ interface State {
 const getValueOrSafeInteger = (value: number) =>
 	value < 0 ? Number.MIN_SAFE_INTEGER : Number.MAX_SAFE_INTEGER;
 
-const reducer = (state: State, action: Action) => {
+const reducer: Reducer<State, Actions> = (state, action) => {
 	if (action.type === EActionType.VALUE) {
 		return {
 			value: Number.isFinite(action.value)
@@ -68,111 +75,136 @@ const reducer = (state: State, action: Action) => {
 	};
 };
 
-const StepperComponent: FunctionComponent<Props> = ({
-	className = '',
-	disabled = false,
-	step = 1,
-	min = Number.NEGATIVE_INFINITY,
-	max = Number.POSITIVE_INFINITY,
-	value,
-	format = value => value.toString(),
-	onChange,
-}) => {
-	const isDisabled: boolean = disabled || value === void 0 || value === null;
+export const Stepper: NamedExoticComponent<Props> = memo(
+	({
+		className = '',
+		disabled = false,
+		step = 1,
+		min = Number.NEGATIVE_INFINITY,
+		max = Number.POSITIVE_INFINITY,
+		value,
+		format = value => value.toString(),
+		onChange,
+	}) => {
+		const styles = useStyles(styleRefs);
 
-	const [state, dispatch] = useReducer(reducer, { value });
+		const isDisabled: boolean =
+			disabled || value === void 0 || value === null;
 
-	const prevValue = useRef(value);
+		const [state, dispatch] = useReducer(reducer, { value: value ?? 0 });
 
-	if (state.value !== value && typeof onChange === 'function') {
-		onChange(state.value);
-	}
+		const prevValue = useRef(value);
 
-	const onDecrement = useCallback(
-		() =>
+		if (state.value !== value && typeof onChange === 'function') {
+			onChange(state.value);
+		}
+
+		const onDecrement = useCallback(
+			() =>
+				dispatch({
+					type: EActionType.DECREMENT,
+					step,
+					min,
+					max,
+				}),
+			[step, min, max],
+		);
+
+		const onIncrement = useCallback(
+			() =>
+				dispatch({
+					type: EActionType.INCREMENT,
+					step,
+					min,
+					max,
+				}),
+			[step, min, max],
+		);
+
+		const keyDownHandler = useCallback(
+			(event: KeyboardEvent<HTMLDivElement>) => {
+				// eslint-disable-next-line default-case
+				switch (event.key) {
+					case 'ArrowLeft':
+						return onDecrement();
+					case 'ArrowRight':
+						return onIncrement();
+					case 'Home':
+					case 'End':
+						return dispatch({
+							type: EActionType.VALUE,
+							max,
+							min,
+							step,
+							value: event.key === 'Home' ? min : max,
+						});
+					case 'Escape':
+						event.currentTarget.blur();
+						break;
+				}
+			},
+			[onDecrement, onIncrement],
+		);
+
+		if (prevValue.current !== value && value !== undefined) {
 			dispatch({
-				type: EActionType.DECREMENT,
+				type: EActionType.VALUE,
+				value,
 				step,
 				min,
 				max,
-			}),
-		[step, min, max],
-	);
+			});
+			prevValue.current = value;
+		}
 
-	const onIncrement = useCallback(
-		() =>
-			dispatch({
-				type: EActionType.INCREMENT,
-				step,
-				min,
-				max,
-			}),
-		[step, min, max],
-	);
-
-	const keyDownHandler = useCallback(
-		(event: KeyboardEvent<HTMLDivElement>) => {
-			// eslint-disable-next-line default-case
-			switch (event.key) {
-				case 'ArrowLeft':
-					return onDecrement();
-				case 'ArrowRight':
-					return onIncrement();
-				case 'Home':
-				case 'End':
-					return dispatch({
-						type: EActionType.VALUE,
-						max,
-						min,
-						step,
-						value: event.key === 'Home' ? min : max,
-					});
-				case 'Escape':
-					event.currentTarget.blur();
-					break;
-			}
-		},
-		[onDecrement, onIncrement],
-	);
-
-	if (prevValue.current !== value) {
-		dispatch({
-			type: EActionType.VALUE,
-			value,
-			step,
-			min,
-			max,
-		});
-		prevValue.current = value;
-	}
-
-	return (
-		<div
-			className={clsx([styles.root, className])}
-			aria-disabled={isDisabled}
-			tabIndex={0}
-			onKeyDown={keyDownHandler}>
-			<button
-				className={styles.handle}
-				aria-label="step down"
-				disabled={isDisabled}
-				tabIndex={-1}
-				onClick={onDecrement}>
-				<Icon icon={MinusIcon} size={16} />
-			</button>
-			<Text is="span" className={styles.label} size={4}>
-				{Number.isFinite(state.value) ? format(state.value) : ''}
-			</Text>
-			<button
-				className={styles.handle}
-				aria-label="step up"
-				disabled={isDisabled}
-				tabIndex={-1}
-				onClick={onIncrement}>
-				<Icon icon={PlusIcon} size={16} />
-			</button>
-		</div>
-	);
-};
-
-export const Stepper = memo(StepperComponent);
+		return (
+			<Box
+				className={clsx(
+					styles.root,
+					styles.flexCenter,
+					{
+						[styles.disabled]: disabled,
+					},
+					className,
+				)}
+				aria-disabled={isDisabled}
+				tabIndex={0}
+				borderWidth="1"
+				borderColour="gray"
+				padding="3"
+				borderRadius="1"
+				boxShadow="2"
+				onKeyDown={keyDownHandler}>
+				<Box
+					is="button"
+					className={clsx(styles.handle.default, styles.flexCenter, {
+						[styles.handle.disabled]: disabled,
+					})}
+					aria-label="step down"
+					padding="none"
+					borderRadius="full"
+					disabled={isDisabled}
+					tabIndex={-1}
+					onClick={onDecrement}>
+					<Icon icon={MinusIcon} size="small" />
+				</Box>
+				<Text is="span" className={styles.label} size="4">
+					{Number.isFinite(state.value) ? format(state.value) : ''}
+				</Text>
+				<Box
+					is="button"
+					className={clsx(styles.handle.default, styles.flexCenter, {
+						[styles.handle.disabled]: disabled,
+					})}
+					padding="none"
+					borderRadius="full"
+					aria-label="step up"
+					disabled={isDisabled}
+					tabIndex={-1}
+					onClick={onIncrement}>
+					<Icon icon={PlusIcon} size="small" />
+				</Box>
+			</Box>
+		);
+	},
+);

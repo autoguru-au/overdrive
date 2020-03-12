@@ -2,22 +2,24 @@
 
 import { useCallback, useLayoutEffect, useMemo, useState } from 'react';
 
-import { useOverdriveContext } from '../../components/OverdriveProvider';
-import { useTheme } from '../../components/ThemeProvider';
-import { Tokens } from '../../themes/tokens';
+import { useRuntimeTokens } from '../../components/ThemeProvider';
+import { RuntimeTokens } from '../../themes/makeTheme';
+import { isBrowser } from '../../utils';
 
 export const useMedia = (
-	queries: ReadonlyArray<keyof Tokens['breakpoints']>,
+	queries: ReadonlyArray<keyof RuntimeTokens['breakpoints']>,
 	fallbackCase = false,
 ): readonly boolean[] => {
-	const theme = useTheme();
-	const { isServer } = useOverdriveContext();
+	const runtimeTokens = useRuntimeTokens();
 
-	if (isServer) return queries.map(() => fallbackCase);
+	if (!isBrowser) return queries.map(() => fallbackCase);
 
 	const getQueries = useCallback(
-		() => queries.map(media => theme.breakpoints[media]),
-		[theme],
+		() =>
+			queries.map(
+				media => `(min-width: ${runtimeTokens.breakpoints[media]}px)`,
+			),
+		[runtimeTokens],
 	);
 
 	const matchesInit = useMemo(
@@ -50,7 +52,7 @@ export const useMedia = (
 			isMounted = false;
 			removeHandlersFn.forEach(item => item());
 		};
-	}, [...queries, theme]);
+	}, [...queries, runtimeTokens]);
 
 	return matches;
 };

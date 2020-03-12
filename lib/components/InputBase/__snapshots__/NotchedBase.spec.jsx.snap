@@ -2,26 +2,26 @@
 
 exports[`<NotchedBase /> should match snapshot for active notch 1`] = `
 <div
-  class="notchedBase notchedBaseShift notchedBaseActive"
+  class="base root_base"
 >
   <div
-    class="notchedBaseBorder"
+    class="borders_root_default_base"
   >
     <div
-      class="notchedBaseBorderLeading"
+      class="borderDefaults_base borders_leading_base"
     />
     <div
-      class="notchedBaseBorderNotch"
+      class="borderDefaults_base borders_middle_base"
       style="width: 16px;"
     >
       <label
-        class="notchedBasePlaceholder"
+        class="placeholder_default_base placeholderPlacement_shifted_base"
       >
         placeholder something
       </label>
     </div>
     <div
-      class="notchedBaseBorderTrailing"
+      class="borderDefaults_base borders_trailing_base"
     />
   </div>
 </div>
@@ -29,26 +29,26 @@ exports[`<NotchedBase /> should match snapshot for active notch 1`] = `
 
 exports[`<NotchedBase /> should match snapshot for default notch 1`] = `
 <div
-  class="notchedBase notchedBaseShift"
+  class="base root_base"
 >
   <div
-    class="notchedBaseBorder"
+    class="borders_root_default_base"
   >
     <div
-      class="notchedBaseBorderLeading"
+      class="borderDefaults_base borders_leading_base"
     />
     <div
-      class="notchedBaseBorderNotch"
+      class="borderDefaults_base borders_middle_base"
       style="width: 16px;"
     >
       <label
-        class="notchedBasePlaceholder"
+        class="placeholder_default_base placeholderPlacement_shifted_base"
       >
         placeholder something
       </label>
     </div>
     <div
-      class="notchedBaseBorderTrailing"
+      class="borderDefaults_base borders_trailing_base"
     />
   </div>
 </div>
@@ -56,26 +56,26 @@ exports[`<NotchedBase /> should match snapshot for default notch 1`] = `
 
 exports[`<NotchedBase /> should match snapshot for dirty and active notch 1`] = `
 <div
-  class="notchedBase notchedBaseShift notchedBaseActive"
+  class="base root_base"
 >
   <div
-    class="notchedBaseBorder"
+    class="borders_root_default_base"
   >
     <div
-      class="notchedBaseBorderLeading"
+      class="borderDefaults_base borders_leading_base"
     />
     <div
-      class="notchedBaseBorderNotch"
+      class="borderDefaults_base borders_middle_base"
       style="width: 16px;"
     >
       <label
-        class="notchedBasePlaceholder"
+        class="placeholder_default_base placeholderPlacement_shifted_base"
       >
         placeholder something
       </label>
     </div>
     <div
-      class="notchedBaseBorderTrailing"
+      class="borderDefaults_base borders_trailing_base"
     />
   </div>
 </div>
@@ -83,26 +83,26 @@ exports[`<NotchedBase /> should match snapshot for dirty and active notch 1`] = 
 
 exports[`<NotchedBase /> should match snapshot for dirty notch 1`] = `
 <div
-  class="notchedBase notchedBaseShift"
+  class="base root_base"
 >
   <div
-    class="notchedBaseBorder"
+    class="borders_root_default_base"
   >
     <div
-      class="notchedBaseBorderLeading"
+      class="borderDefaults_base borders_leading_base"
     />
     <div
-      class="notchedBaseBorderNotch"
+      class="borderDefaults_base borders_middle_base"
       style="width: 16px;"
     >
       <label
-        class="notchedBasePlaceholder"
+        class="placeholder_default_base placeholderPlacement_shifted_base"
       >
         placeholder something
       </label>
     </div>
     <div
-      class="notchedBaseBorderTrailing"
+      class="borderDefaults_base borders_trailing_base"
     />
   </div>
 </div>

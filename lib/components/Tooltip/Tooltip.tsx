@@ -1,4 +1,5 @@
-import React, {
+import * as React from 'react';
+import {
 	Children,
 	cloneElement,
 	FunctionComponent,
@@ -7,10 +8,12 @@ import React, {
 	useRef,
 	useState,
 } from 'react';
+import { useStyles } from 'react-treat';
 
+import { Box } from '../Box';
 import { EPositionerAlignment, Positioner } from '../Positioner';
 import { Text } from '../Typography';
-import styles from './style.scss';
+import * as styleRefs from './Tooltip.treat';
 
 interface Props {
 	label: string;
@@ -23,9 +26,10 @@ export const Tooltip: FunctionComponent<Props> = ({
 	label,
 	children,
 }) => {
+	const styles = useStyles(styleRefs);
 	const [isOpen, setIsOpen] = useState(false);
-	const childRef = useRef<HTMLDivElement>();
-	const triggerRef = useRef<HTMLElement>();
+	const childRef = useRef<HTMLDivElement>(null);
+	const triggerRef = useRef<HTMLElement>(null);
 
 	const leaveTimer = useRef<ReturnType<typeof setTimeout>>();
 
@@ -54,9 +58,15 @@ export const Tooltip: FunctionComponent<Props> = ({
 				triggerRef={triggerRef}
 				alignment={alignment}
 				isOpen={isOpen}>
-				<div ref={childRef} className={styles.root}>
-					<Text white>{label}</Text>
-				</div>
+				<Box
+					ref={childRef}
+					className={styles.root}
+					borderRadius="1"
+					boxShadow="4"
+					backgroundColour="gray900"
+					padding="4">
+					<Text colour="white">{label}</Text>
+				</Box>
 			</Positioner>
 		</>
 	);

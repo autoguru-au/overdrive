@@ -2,12 +2,11 @@
 
 exports[`<Alert /> should match the snapshot 1`] = `
 <div
-  class="root info dismissible"
+  class="base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base 4_mobile_base 1_mobile_base backgroundColours_white_base root_base intent_success_base"
   role="alert"
 >
   <i
-    class="root icon"
-    style="width: 20px; height: 20px;"
+    class="base display_block icon_base medium_mobile_base"
   >
     <svg
       fill="currentColor"
@@ -15,24 +14,23 @@ exports[`<Alert /> should match the snapshot 1`] = `
       viewBox="0 0 24 24"
     >
       <path
-        d="M13 9h-2V7h2m0 10h-2v-6h2m-1-9A10 10 0 002 12a10 10 0 0010 10 10 10 0 0010-10A10 10 0 0012 2z"
+        d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm-1 14.502l7-7-1.414-1.414L11 13.674l-3.086-3.086L6.5 12.002l4.5 4.5z"
       />
     </svg>
   </i>
   <div
-    class="content"
+    class="base content_base"
   />
   <button
     aria-label="close"
-    class="root variantSecondary small minimal iconOnly closeButton"
+    class="base appearance button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base themedButton_base minimal_defaults_base minimalStates_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled width_default closeButton"
     type="button"
   >
     <div
-      class="body"
+      class="body_base"
     >
       <i
-        class="root closeButtonIcon"
-        style="width: 20px; height: 20px;"
+        class="base display_block closeButtonIcon_base medium_mobile_base"
       >
         <svg
           fill="currentColor"

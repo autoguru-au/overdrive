@@ -31,24 +31,25 @@ yarn add @autoguru/overdrive \
 	react react-dom
 ```
 
-1. Import the component stylesheet into your project.
+1. Import reset
 
     ```js
-    import '@autoguru/overdrive/dist/theme/tokens/core.scss';
-    // Override any scss map token's here
-    import '@autoguru/overdrive/dist/theme/tokens/render.scss';
-    import '@autoguru/overdrive/overdrive.css';
+    import '@autoguru/overdrive/reset';
     ```
 
-2. Import and use any of the components, higher order components and hooks we
-   export.
+2. Import and configure the `OverdriveProvider` complete with the theme you're
+   wanting to use.
 
     ```jsx
-    import { Button, EButtonVariant } '@autoguru/overdrive';
+    // It is important that the reset import happens before any of this.
+    import { baseTheme } from '@autoguru/overdrive/themes';
+    import { OverdriveProvider, Button } '@autoguru/overdrive';
 
-    <Button variant={EButtonVariant.Primary}>
-    	Hello World
-    </Button>
+    <OverdriveProvider theme={baseTheme}>
+        <Button variant="primary"'>
+            Hello World
+        </Button>
+    </OverdriveProvider>
     ```
 
 ## Thanks

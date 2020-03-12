@@ -1,15 +1,13 @@
 import { RefObject, useLayoutEffect } from 'react';
 
-import { useOverdriveContext } from '../OverdriveProvider';
+import { isBrowser } from '../../utils';
 
 export const useLayoutSuggestionVisible = (
 	highlightIndex: number,
 	highlightRef: RefObject<HTMLElement>,
 	suggestionListRef: RefObject<HTMLElement>,
 ) => {
-	const { isServer } = useOverdriveContext();
-
-	if (!isServer) {
+	if (isBrowser) {
 		// Its okay to wrap this... As the value wont change once rendered.
 		// eslint-disable-next-line react-hooks/rules-of-hooks
 		useLayoutEffect(() => {

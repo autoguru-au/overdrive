@@ -1,43 +1,58 @@
-import { storiesOf } from '@storybook/react';
-import React from 'react';
+import * as React from 'react';
+import { ComponentProps } from 'react';
 
-import { Badge, EBadgeColour } from '.';
+import { Badge } from '.';
 
-storiesOf('Components|Badge', module).add('Standard', () => {
-	return (
-		<div
-			style={{
-				display: 'grid',
-				gridAutoFlow: 'row dense',
-				gridGap: '10px',
-			}}>
-			<div style={{ display: 'flex', gap: '10px' }}>
-				{Object.entries(EBadgeColour).map(([name, colour]) => (
-					<Badge key={name} label={name} colour={colour} />
-				))}
+const colours: ReadonlyArray<ComponentProps<typeof Badge>['colour']> = [
+	'blue',
+	'red',
+	'green',
+	'yellow',
+	'neutral',
+] as const;
+
+export default {
+	title: 'Components/Badge',
+	component: Badge,
+	decorators: [
+		story => (
+			<div
+				style={{
+					display: 'grid',
+					gridAutoFlow: 'row dense',
+					gridGap: '10px',
+				}}>
+				<div
+					style={{
+						display: 'grid',
+						gap: '10px',
+						gridTemplateColumns:
+							'repeat(auto-fit, minmax(10px, max-content))',
+					}}>
+					{story()}
+				</div>
 			</div>
+		),
+	],
+};
 
-			<div style={{ display: 'flex', gap: '10px' }}>
-				{Object.entries(EBadgeColour).map(([name, colour]) => (
-					<Badge
-						key={name}
-						look="minimal"
-						label={name}
-						colour={colour}
-					/>
-				))}
-			</div>
+export const Standard = () => (
+	<>
+		{colours.map(colour => (
+			<Badge key={colour} label={colour} colour={colour} />
+		))}
+	</>
+);
 
-			<div style={{ display: 'flex', gap: '10px' }}>
-				{Object.entries(EBadgeColour).map(([name, colour]) => (
-					<Badge
-						key={name}
-						look="inverted"
-						label={name}
-						colour={colour}
-					/>
-				))}
-			</div>
-		</div>
-	);
-});
+export const Inverted = () => (
+	<>
+		{colours.map(colour => (
+			<Badge
+				key={colour}
+				label={colour}
+				colour={colour}
+				look="inverted"
+			/>
+		))}
+	</>
+);

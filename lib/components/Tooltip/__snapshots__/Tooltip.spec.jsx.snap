@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Tolltip /> should match snapshot when closed 1`] = `
-<body>
+<body
+  style="background-color: rgb(255, 255, 255); color: rgb(33, 35, 56);"
+>
   <div>
     <div>
       trigger
@@ -9,13 +11,15 @@ exports[`<Tolltip /> should match snapshot when closed 1`] = `
   </div>
   <div
     class="root"
-    style="visibility: hidden;"
+    style="visibility: visible;"
   />
 </body>
 `;
 
 exports[`<Tolltip /> should match snapshot when opened 1`] = `
-<body>
+<body
+  style="background-color: rgb(255, 255, 255); color: rgb(33, 35, 56);"
+>
   <div>
     <div>
       trigger
@@ -23,13 +27,13 @@ exports[`<Tolltip /> should match snapshot when opened 1`] = `
   </div>
   <div
     class="root"
-    style="visibility: hidden;"
+    style="visibility: visible;"
   >
     <div
-      class="root"
+      class="base 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base 1_mobile_base backgroundColours_gray900_base root"
     >
       <span
-        class="root sizeScale4 white alignLeft"
+        class="base root_base sizes_4_base align_left colours_white_base fontWeight_normal_base"
       >
         tooltip content
       </span>

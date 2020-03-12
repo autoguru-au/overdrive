@@ -1,19 +1,23 @@
 import clsx from 'clsx';
-import React, { FunctionComponent, useEffect, useRef, useState } from 'react';
+import * as React from 'react';
+import { FunctionComponent, useEffect, useRef, useState } from 'react';
+import { useStyles } from 'react-treat';
 
-import styles from './style.scss';
+import { Box } from '../Box';
+import * as styleRefs from './NotchedBase.treat';
 
 const ACTIVE_SCALING_FACTOR = 0.7777;
 const ACTIVE_PADDING_ADDED = 16;
 const ROUGH_WIDTH_PER_CHARACTER = 10.2;
 
-export interface Props {
+interface Props {
 	id: string;
 	placeholder: string;
 	isEmpty: boolean;
-	isActive: boolean;
-	hasPrefix?: boolean;
-	hasSuffix?: boolean;
+	disabled: boolean;
+	prefixed: boolean;
+	borderColourClassName: string;
+	placeholderColourClassName: string;
 	className?: string;
 }
 
@@ -21,12 +25,14 @@ export const NotchedBase: FunctionComponent<Props> = ({
 	id,
 	placeholder,
 	isEmpty,
-	isActive,
+	disabled,
+	prefixed,
 	children,
-	hasPrefix = false,
-	hasSuffix = false,
+	borderColourClassName,
+	placeholderColourClassName,
 	className = '',
 }) => {
+	const styles = useStyles(styleRefs);
 	const labelRef = useRef<HTMLLabelElement>(null);
 	const [labelWidth, setLabelWidth] = useState<number>(
 		getNotchedComputedWidthForWidth(
@@ -43,33 +49,50 @@ export const NotchedBase: FunctionComponent<Props> = ({
 	const notchedWidth = getNotchedComputedWidthForWidth(labelWidth);
 
 	return (
-		<div
-			className={clsx(
-				styles.notchedBase,
-				{
-					[styles.notchedBaseShift]: !isEmpty,
-					[styles.notchedBaseActive]: isActive,
-					[styles.prefixed]: hasPrefix,
-					[styles.suffixed]: hasSuffix,
-				},
-				className,
-			)}>
+		<Box className={clsx(styles.root, className)}>
 			{children}
-			<div className={styles.notchedBaseBorder}>
-				<div className={styles.notchedBaseBorderLeading} />
+			<div
+				className={clsx(styles.borders.root.default, {
+					[styles.borders.root.disabled]: disabled,
+				})}>
 				<div
-					className={styles.notchedBaseBorderNotch}
+					className={clsx(
+						styles.borders.leading,
+						borderColourClassName,
+					)}
+				/>
+				<div
+					className={clsx(
+						styles.borders.middle,
+						borderColourClassName,
+					)}
 					style={{ width: isEmpty ? 0 : notchedWidth }}>
 					<label
 						ref={labelRef}
 						htmlFor={id}
-						className={styles.notchedBasePlaceholder}>
+						className={clsx(
+							styles.placeholder.default,
+							placeholderColourClassName,
+							{
+								[styles.placeholder.empty]: isEmpty || disabled,
+								[styles.placeholderPlacement.default]:
+									isEmpty && !prefixed,
+								[styles.placeholderPlacement.defaultPrefixed]:
+									isEmpty && prefixed,
+								[styles.placeholderPlacement.shifted]: !isEmpty,
+							},
+						)}>
 						{placeholder}
 					</label>
 				</div>
-				<div className={styles.notchedBaseBorderTrailing} />
+				<div
+					className={clsx(
+						styles.borders.trailing,
+						borderColourClassName,
+					)}
+				/>
 			</div>
-		</div>
+		</Box>
 	);
 };
 
