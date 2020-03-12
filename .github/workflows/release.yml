@@ -1,0 +1,25 @@
+name: Release
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        with:
+          fetch-depth: 0
+      - name: Yarn cache
+        uses: actions/cache@v1
+        with:
+          path: node_modules/
+          key: ${{ hashFiles('yarn.lock') }}
+      - run: yarn install
+      - name: Create Release or Publish
+        uses: changesets/action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets. GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
