@@ -2,44 +2,50 @@
 
 exports[`<Pagination /> should match snapshot for loading phase 1`] = `
 <span
-  class="loading pagination"
+  class="root root"
 >
-  <i
-    class="root chevron disabled"
-    style="width: 25px; height: 25px;"
+  <span
+    class="activeItem_default_base chevron_default_base chevron_disabled_base"
   >
-    <svg
-      fill="currentColor"
-      focusable="false"
-      viewBox="0 0 24 24"
+    <i
+      class="base display_block chevron_icon_base medium_mobile_base"
     >
-      <path
-        d="M15.414 16.584l-4.586-4.586 4.586-4.586-1.415-1.414-6 6 6 6 1.415-1.414z"
-      />
-    </svg>
-  </i>
+      <svg
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M15.414 16.584l-4.586-4.586 4.586-4.586-1.415-1.414-6 6 6 6 1.415-1.414z"
+        />
+      </svg>
+    </i>
+  </span>
   <button
-    class="bubble disabled"
+    class="base appearance button bubble_disabled_base activeItem_default_base bubble_default_base"
   />
   <button
-    class="bubble disabled"
+    class="base appearance button bubble_disabled_base activeItem_default_base bubble_default_base"
   />
   <button
-    class="bubble disabled"
+    class="base appearance button bubble_disabled_base activeItem_default_base bubble_default_base"
   />
-  <i
-    class="root chevron disabled"
-    style="width: 25px; height: 25px;"
+  <span
+    class="activeItem_default_base chevron_default_base chevron_disabled_base"
   >
-    <svg
-      fill="currentColor"
-      focusable="false"
-      viewBox="0 0 24 24"
+    <i
+      class="base display_block chevron_icon_base medium_mobile_base"
     >
-      <path
-        d="M8.585 16.584l4.586-4.586-4.586-4.586L10 5.998l6 6-6 6-1.414-1.414z"
-      />
-    </svg>
-  </i>
+      <svg
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M8.585 16.584l4.586-4.586-4.586-4.586L10 5.998l6 6-6 6-1.414-1.414z"
+        />
+      </svg>
+    </i>
+  </span>
 </span>
 `;

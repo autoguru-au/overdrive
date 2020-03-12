@@ -1,16 +1,27 @@
-import React from 'react';
+import * as React from 'react';
 
 import { Actions } from '../Actions';
 import { Button } from '../Button';
 import { StandardModal } from '../StandardModal';
 import { Text } from '../Typography';
-import { toast } from '.';
+import { ToastProvider, useToast } from './Toast';
 
-export default { title: 'Utility|Toaster' };
+export default {
+	title: 'Utility|Toaster',
+	decorators: [
+		Story => (
+			<ToastProvider>
+				<Story />
+			</ToastProvider>
+		),
+	],
+};
 
 export const Standard = () => {
+	const toast = useToast();
+
 	return (
-		<Actions equalWidth={false}>
+		<Actions>
 			<Button onClick={() => toast.success('Successful message!')}>
 				Success
 			</Button>
@@ -19,7 +30,7 @@ export const Standard = () => {
 			</Button>
 			<Button
 				onClick={() =>
-					toast.info(
+					toast.information(
 						<Text>
 							Im some text, which is <Text strong>bolded!</Text>
 						</Text>,
@@ -32,6 +43,8 @@ export const Standard = () => {
 };
 
 export const InsideModal = () => {
+	const toast = useToast();
+
 	return (
 		<StandardModal isOpen title="Test inside modal">
 			<div style={{ padding: 20 }}>

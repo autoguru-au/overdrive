@@ -2,121 +2,137 @@
 
 exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
 <div
-  class="root checkbox checked"
+  class="base root_base tappable checkbox"
 >
   <input
     checked=""
-    class="nativeInput"
+    class="tappable nativeInput_default nativeInput_checked"
     name=""
     type="checkbox"
     value="1"
   />
   <div
-    class="checkable base selected"
+    class="checkable_base tappable"
   >
-    <svg
-      fill="currentColor"
-      focusable="false"
-      viewBox="0 0 24 24"
+    <i
+      class="base display_block icon_base small_mobile_base"
     >
-      <path
-        d="M21 7L9 19l-5.5-5.5 1.414-1.414L9 16.172 19.586 5.586 21 7z"
-      />
-    </svg>
+      <svg
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M21 7L9 19l-5.5-5.5 1.414-1.414L9 16.172 19.586 5.586 21 7z"
+        />
+      </svg>
+    </i>
     <div
-      class="box"
+      class="checkableItem_base base_default_base base_selected_base"
     />
   </div>
   <div
-    class="focusRect"
+    class="focusRect_base"
   />
   <label
-    class="label"
+    class="tappable label_default_base"
   >
-    check label 1
+    <span
+      class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+    >
+      check label 1
+    </span>
   </label>
 </div>
 `;
 
 exports[`<CheckBox /> should match the snapshot for a single check 1`] = `
 <div
-  class="root checkbox"
+  class="base root_base tappable checkbox"
 >
   <input
-    class="nativeInput"
+    class="tappable nativeInput_default"
     name=""
     type="checkbox"
     value="1"
   />
   <div
-    class="checkable base"
+    class="checkable_base tappable"
   >
     <div
-      class="box"
+      class="checkableItem_base base_default_base"
     />
   </div>
   <div
-    class="focusRect"
+    class="focusRect_base"
   />
   <label
-    class="label"
+    class="tappable label_default_base"
   >
-    check label 1
+    <span
+      class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+    >
+      check label 1
+    </span>
   </label>
 </div>
 `;
 
 exports[`<CheckBox /> should match the snapshot for a single check with no value or label 1`] = `
 <div
-  class="root checkbox"
+  class="base root_base tappable checkbox"
 >
   <input
-    class="nativeInput"
+    class="tappable nativeInput_default"
     name=""
     type="checkbox"
     value=""
   />
   <div
-    class="checkable base"
+    class="checkable_base tappable"
   >
     <div
-      class="box"
+      class="checkableItem_base base_default_base"
     />
   </div>
   <div
-    class="focusRect"
+    class="focusRect_base"
   />
   <label
-    class="label"
-  />
+    class="tappable label_default_base"
+  >
+    <span
+      class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+    />
+  </label>
 </div>
 `;
 
 exports[`<CheckBox /> when with component child should match the snapshot 1`] = `
 <div
-  class="root checkbox"
+  class="base root_base tappable checkbox"
 >
   <input
-    class="nativeInput"
+    class="tappable nativeInput_default"
     name=""
     type="checkbox"
     value="1"
   />
   <div
-    class="checkable base"
+    class="checkable_base tappable"
   >
     <div
-      class="box"
+      class="checkableItem_base base_default_base"
     />
   </div>
   <div
-    class="focusRect"
+    class="focusRect_base"
   />
   <label
-    class="label"
+    class="tappable label_default_base"
   >
     <h1
-      class="root sizeScale8"
+      class="root_base sizes_8_base colours_dark_base fontWeight_bold_base"
     >
       Hello checkbox
     </h1>

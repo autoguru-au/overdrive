@@ -2,14 +2,14 @@
 
 exports[`<ProgressSpinner /> should match snapshot 1`] = `
 <div
-  class="root sizeMedium variantPrimary"
+  class="base root size_medium_circular_base colours_primary_base"
 >
   <svg
     class="circular"
     viewBox="25 25 50 50"
   >
     <circle
-      class="path"
+      class="path_base size_medium_path_base"
       cx="50"
       cy="50"
       fill="none"

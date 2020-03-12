@@ -1,9 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 
 import { Text } from '../Typography';
 import { OrderedList } from '.';
 
-export default { title: 'Foundation|List/OrderedList' };
+export default { title: 'Foundation|List/OrderedList', component: OrderedList };
 
 export const Standard = () => (
 	<OrderedList>

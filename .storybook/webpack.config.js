@@ -1,3 +1,5 @@
+const TreatPlugin = require('treat/webpack-plugin');
+
 module.exports = ({ config: defaultConfig }) => {
 	delete defaultConfig.resolve.alias['core-js'];
 
@@ -9,60 +11,33 @@ module.exports = ({ config: defaultConfig }) => {
 				loader: require.resolve('babel-loader'),
 			},
 			{
-				loader: require.resolve('awesome-typescript-loader'),
+				loader: require.resolve('ts-loader'),
 				options: {
-					useCache: true,
-					errorsAsWarnings: true,
+					configFile: require.resolve('../tsconfig.stories.json'),
+					transpileOnly: true,
 				},
 			},
 		],
 	});
 	defaultConfig.resolve.extensions.push('.ts', '.tsx');
 
-	// Adds scss support
-	defaultConfig.module.rules.push({
-		test: /\.scss$/,
-		sideEffects: true,
-		use: [
-			{
-				loader: require.resolve('style-loader'),
-			},
-			{
-				loader: require.resolve('css-loader'),
-				options: {
-					importLoaders: 3,
-					localsConvention: 'camelCase',
-					modules: {
-						localIdentName: '[local]-[hash:hex:7]',
-						hashPrefix: '_',
+	defaultConfig.plugins.push(
+		new TreatPlugin({
+			localIdentName: '[name]-[local]_[hash:base64:5]',
+			themeIdentName: '_[name]-[local]_[hash:base64:4]',
+			outputLoaders: [
+				{
+					sideEffect: true,
+					loader: require.resolve('style-loader'),
+					options: {
+						attributes: {
+							treat: true,
+						},
 					},
-					sourceMap: true,
 				},
-			},
-			{
-				loader: require.resolve('postcss-loader'),
-				options: {
-					sourceMap: true,
-					plugins: [
-						require('postcss-flexbugs-fixes'),
-						require('postcss-preset-env')({
-							autoprefixer: {
-								flexbox: 'no-2009',
-							},
-							stage: 3,
-						}),
-						require('cssnano')(),
-					],
-				},
-			},
-			{ loader: require.resolve('resolve-url-loader') },
-			{
-				loader: require.resolve('sass-loader'),
-				options: { sourceMap: true },
-			},
-		],
-	});
-	defaultConfig.resolve.extensions.push('.scss');
+			],
+		}),
+	);
 
 	return defaultConfig;
 };

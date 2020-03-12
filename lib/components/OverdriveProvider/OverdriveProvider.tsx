@@ -1,40 +1,22 @@
-import { invariant } from '@autoguru/utilities';
-import React, {
-	ComponentProps,
-	ContextType,
-	createContext,
-	FunctionComponent,
-	useContext,
-	useMemo,
-} from 'react';
+import * as React from 'react';
+import { ComponentProps, FunctionComponent, useEffect } from 'react';
 
+import { isBrowser } from '../../utils';
 import { ThemeProvider } from '../ThemeProvider/ThemeProvider';
 
-interface Props
-	extends ComponentProps<typeof ThemeProvider>,
-		ContextType<typeof overdriveContext> {}
-
-const overdriveContext = createContext<{
-	isServer: boolean;
-}>(null);
+interface Props extends ComponentProps<typeof ThemeProvider> {}
 
 export const OverdriveProvider: FunctionComponent<Props> = ({
 	theme,
-	isServer,
 	children,
-}) => (
-	<overdriveContext.Provider value={useMemo(() => ({ isServer }), [])}>
-		<ThemeProvider theme={theme}>{children}</ThemeProvider>
-	</overdriveContext.Provider>
-);
+}) => {
+	useEffect(() => {
+		if (isBrowser) {
+			document.body.style.backgroundColor =
+				theme.runtimeTokens.body.backgroundColour;
+			document.body.style.color = theme.runtimeTokens.body.colour;
+		}
+	}, [theme]);
 
-export const useOverdriveContext = (): ContextType<typeof overdriveContext> => {
-	const ctx = useContext(overdriveContext);
-
-	invariant(
-		ctx,
-		'Please provide a <OverdriveProvider/> somewhere in the root.',
-	);
-
-	return ctx;
+	return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };

@@ -1,5 +1,6 @@
 import { fireEvent, render } from '@testing-library/react';
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 
 import styles from './stories.scss';
 import { withModal } from './withModal';

@@ -8,7 +8,6 @@
 
 export * from './Actions';
 export * from './Alert';
-export * from './Anchor';
 export * from './AutoSuggest';
 export * from './Badge';
 export * from './Box';
@@ -17,6 +16,7 @@ export * from './BulletText';
 export * from './Button';
 export * from './CheckableBase';
 export * from './CheckBox';
+export * from './Columns';
 export * from './DateInput';
 export * from './Flyout';
 export * from './Icon';

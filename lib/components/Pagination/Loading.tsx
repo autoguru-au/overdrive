@@ -1,12 +1,14 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@autoguru/icons';
 import clsx from 'clsx';
-import React, { FunctionComponent, memo } from 'react';
+import * as React from 'react';
+import { FunctionComponent, memo } from 'react';
+import { useStyles } from 'react-treat';
 
 import { Icon } from '../Icon';
 import { Bubble } from './Bubble';
-import styles from './style.scss';
+import * as styleRefs from './Pagination.treat';
 
-export interface Props {
+interface Props {
 	className?: string;
 	placeholderBubblesNum?: number;
 }
@@ -15,23 +17,35 @@ export const LoadingComponent: FunctionComponent<Props> = ({
 	className = '',
 	placeholderBubblesNum = 3,
 }) => {
-	const disabledChevCls = clsx([styles.chevron, styles.disabled]);
-
+	const styles = useStyles(styleRefs);
+	const disabledChevCls = clsx(
+		styles.activeItem.default,
+		styles.chevron.default,
+		styles.chevron.disabled,
+	);
 	return (
-		<span className={clsx([styles.loading, className])}>
-			<Icon
-				size={25}
-				icon={ChevronLeftIcon}
-				className={disabledChevCls}
-			/>
+		<span className={clsx([styles.root, className])}>
+			<span className={disabledChevCls}>
+				<Icon
+					className={styles.chevron.icon}
+					size="medium"
+					icon={ChevronLeftIcon}
+				/>
+			</span>
 			{new Array(placeholderBubblesNum).fill('').map((_, index) => (
-				<Bubble key={index} children="" className={styles.disabled} />
+				<Bubble
+					key={index}
+					children=""
+					className={styles.bubble.disabled}
+				/>
 			))}
-			<Icon
-				size={25}
-				icon={ChevronRightIcon}
-				className={disabledChevCls}
-			/>
+			<span className={disabledChevCls}>
+				<Icon
+					className={styles.chevron.icon}
+					size="medium"
+					icon={ChevronRightIcon}
+				/>
+			</span>
 		</span>
 	);
 };

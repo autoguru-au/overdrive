@@ -1,10 +1,10 @@
-import React, { ComponentType, FunctionComponent } from 'react';
+import * as React from 'react';
+import { ComponentType, FunctionComponent } from 'react';
 
-import { ECloseCode } from './enums';
 import { ModalPortal } from './ModalPortal';
 
 export type TRequestCloseCallback<Payload> = (
-	e: ECloseCode,
+	e: string,
 	payload?: Payload,
 ) => void;
 

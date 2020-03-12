@@ -1,6 +1,7 @@
 import { CarIcon } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
-import React, { useEffect, useState } from 'react';
+import * as React from 'react';
+import { useEffect, useState } from 'react';
 
 import { StandardModal } from '../StandardModal';
 import { AutoSuggest } from '.';
@@ -80,12 +81,7 @@ const Impl = () => {
 	);
 };
 
-export const Standard = () => (
-	<div>
-		<div style={{ height: '400px' }} />
-		<Impl />
-	</div>
-);
+export const Standard = () => <Impl />;
 
 export const WithNoItems = () => (
 	<AutoSuggest

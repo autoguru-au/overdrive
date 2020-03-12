@@ -1,28 +1,33 @@
 import { invariant } from '@autoguru/utilities';
-import React, {
-	ContextType,
-	createContext,
-	FunctionComponent,
-	useContext,
-} from 'react';
+import * as React from 'react';
+import { createContext, FunctionComponent, useContext } from 'react';
+import { TreatProvider } from 'react-treat';
+import { ThemeRef } from 'treat';
 
-import { Tokens } from '../../themes/tokens';
+import { RuntimeTokens } from '../../themes/makeTheme';
 
-const themeContext = createContext<Tokens>(null);
+const tokensContext = createContext<RuntimeTokens | null>(null);
 
-// TODO: Eventually this will be replaced with treat
-export const ThemeProvider: FunctionComponent<{
-	theme: { tokens: Tokens };
-}> = ({ theme, children }) => (
-	<themeContext.Provider value={theme.tokens}>
-		{children}
-	</themeContext.Provider>
+interface Props {
+	theme: {
+		themeRef: ThemeRef;
+		runtimeTokens: RuntimeTokens;
+	};
+}
+
+export const ThemeProvider: FunctionComponent<Props> = ({
+	theme,
+	children,
+}) => (
+	<TreatProvider theme={theme.themeRef}>
+		<tokensContext.Provider value={theme.runtimeTokens}>
+			{children}
+		</tokensContext.Provider>
+	</TreatProvider>
 );
 
-export const useTheme = (): ContextType<typeof themeContext> => {
-	const ctx = useContext(themeContext);
-
-	invariant(ctx, 'There is no theme provided!');
-
-	return ctx;
+export const useRuntimeTokens = (): RuntimeTokens => {
+	const tokens = useContext(tokensContext);
+	invariant(tokens !== null, 'You havn\'t provided a `OverdriveProvider`.');
+	return tokens;
 };

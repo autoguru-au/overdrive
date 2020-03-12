@@ -1,9 +1,14 @@
 import { CalendarIcon } from '@autoguru/icons';
-import { storiesOf } from '@storybook/react';
-import React from 'react';
+import * as React from 'react';
 
 import { Icon } from './Icon';
 
-storiesOf('Foundation|Icon', module)
-	.addParameters({ chromatic: { disable: true } })
-	.add('Standard', () => <Icon size={25} icon={CalendarIcon} />);
+export default {
+	title: 'Foundation|Icon',
+	component: Icon,
+	decorators: [],
+};
+
+export const standard = () => (
+	<Icon size={['small', 'medium', 'large']} icon={CalendarIcon} />
+);

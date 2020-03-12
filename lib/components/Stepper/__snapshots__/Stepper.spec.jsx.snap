@@ -3,17 +3,16 @@
 exports[`<Stepper /> should match snapshot with label formatter 1`] = `
 <div
   aria-disabled="false"
-  class="root"
+  class="base 3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base flexCenter"
   tabindex="0"
 >
   <button
     aria-label="step down"
-    class="handle"
+    class="base appearance button none_mobile_base none_mobile_base none_mobile_base none_mobile_base full_mobile_base handle_default_base flexCenter"
     tabindex="-1"
   >
     <i
-      class="root"
-      style="width: 16px; height: 16px;"
+      class="base display_block small_mobile_base"
     >
       <svg
         fill="currentColor"
@@ -27,18 +26,17 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
     </i>
   </button>
   <span
-    class="root sizeScale4 alignLeft label"
+    class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base label_base"
   >
     25%
   </span>
   <button
     aria-label="step up"
-    class="handle"
+    class="base appearance button none_mobile_base none_mobile_base none_mobile_base none_mobile_base full_mobile_base handle_default_base flexCenter"
     tabindex="-1"
   >
     <i
-      class="root"
-      style="width: 16px; height: 16px;"
+      class="base display_block small_mobile_base"
     >
       <svg
         fill="currentColor"
@@ -57,17 +55,16 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
 exports[`<Stepper /> should match snapshot with props 1`] = `
 <div
   aria-disabled="false"
-  class="root"
+  class="base 3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base flexCenter"
   tabindex="0"
 >
   <button
     aria-label="step down"
-    class="handle"
+    class="base appearance button none_mobile_base none_mobile_base none_mobile_base none_mobile_base full_mobile_base handle_default_base flexCenter"
     tabindex="-1"
   >
     <i
-      class="root"
-      style="width: 16px; height: 16px;"
+      class="base display_block small_mobile_base"
     >
       <svg
         fill="currentColor"
@@ -81,18 +78,17 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
     </i>
   </button>
   <span
-    class="root sizeScale4 alignLeft label"
+    class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base label_base"
   >
     19
   </span>
   <button
     aria-label="step up"
-    class="handle"
+    class="base appearance button none_mobile_base none_mobile_base none_mobile_base none_mobile_base full_mobile_base handle_default_base flexCenter"
     tabindex="-1"
   >
     <i
-      class="root"
-      style="width: 16px; height: 16px;"
+      class="base display_block small_mobile_base"
     >
       <svg
         fill="currentColor"
@@ -111,18 +107,17 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
 exports[`<Stepper /> should match snapshot without props 1`] = `
 <div
   aria-disabled="true"
-  class="root"
+  class="base 3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base flexCenter"
   tabindex="0"
 >
   <button
     aria-label="step down"
-    class="handle"
+    class="base appearance button none_mobile_base none_mobile_base none_mobile_base none_mobile_base full_mobile_base handle_default_base flexCenter"
     disabled=""
     tabindex="-1"
   >
     <i
-      class="root"
-      style="width: 16px; height: 16px;"
+      class="base display_block small_mobile_base"
     >
       <svg
         fill="currentColor"
@@ -136,17 +131,18 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
     </i>
   </button>
   <span
-    class="root sizeScale4 alignLeft label"
-  />
+    class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base label_base"
+  >
+    0
+  </span>
   <button
     aria-label="step up"
-    class="handle"
+    class="base appearance button none_mobile_base none_mobile_base none_mobile_base none_mobile_base full_mobile_base handle_default_base flexCenter"
     disabled=""
     tabindex="-1"
   >
     <i
-      class="root"
-      style="width: 16px; height: 16px;"
+      class="base display_block small_mobile_base"
     >
       <svg
         fill="currentColor"

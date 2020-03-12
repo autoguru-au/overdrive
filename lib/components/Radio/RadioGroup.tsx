@@ -1,37 +1,48 @@
 import clsx from 'clsx';
-import React, { createContext, FunctionComponent } from 'react';
+import * as React from 'react';
+import { createContext, FunctionComponent, useContext, useMemo } from 'react';
+import { useStyles } from 'react-treat';
 
-import styles from './style.scss';
+import * as styleRefs from './Radio.treat';
 
-export interface Props {
+interface Props {
 	name: string;
 	className?: string;
-	value?: string;
+	value: string;
 
 	onChange?(value: string): void;
 }
 
-export interface RadioGroupContext {
+interface RadioGroupContext {
 	inputName: string;
 	value: string;
 
-	radioSelected(value: string): void;
+	radioSelected?(value: string): void;
 }
 
-export const RadioContext = createContext<RadioGroupContext>(null);
+export const RadioContext = createContext<RadioGroupContext | null>(null);
+
+export const useRadioContext = (): RadioGroupContext =>
+	useContext(RadioContext)!;
 
 export const RadioGroup: FunctionComponent<Props> = ({
 	name,
-	value = null,
+	value,
 	className = '',
-	onChange = () => void 0,
+	onChange,
 	children,
-}) => (
-	<RadioContext.Provider
-		value={{ value, inputName: name, radioSelected: onChange }}>
-		<div
-			children={children}
-			className={clsx([styles.radioGroup, className])}
-		/>
-	</RadioContext.Provider>
-);
+}) => {
+	const styles = useStyles(styleRefs);
+	const contextValue = useMemo(
+		() => ({ value, inputName: name, radioSelected: onChange }),
+		[value, name, onChange],
+	);
+
+	return (
+		<RadioContext.Provider value={contextValue}>
+			<div className={clsx([styles.radioGroup, className])}>
+				{children}
+			</div>
+		</RadioContext.Provider>
+	);
+};

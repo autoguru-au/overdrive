@@ -1,11 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Positioner /> should match snapshot 1`] = `
-<body>
+<body
+  style="background-color: rgb(255, 255, 255); color: rgb(33, 35, 56);"
+>
   <div />
   <div
     class="root"
-    style="visibility: hidden;"
+    style="visibility: visible;"
   >
     Some body
   </div>

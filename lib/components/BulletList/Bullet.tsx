@@ -1,31 +1,56 @@
 import clsx from 'clsx';
-import React, {
+import * as React from 'react';
+import {
 	FunctionComponent,
 	isValidElement,
 	ReactChild,
 	useContext,
 } from 'react';
+import { useStyles } from 'react-treat';
 
-import styles from './Bullet.scss';
+import { Box } from '../Box';
+import * as styleRefs from './Bullet.treat';
 import { BulletList } from './BulletList';
-import { BulletListContext, bulletMap } from './context';
+import { BulletListContext, bulletMap, BulletType } from './context';
 
 interface Props {
 	children: ReactChild;
 	className?: string;
 }
 
-export const Bullet: FunctionComponent<Props> = ({ children, className }) => (
-	<li
-		className={clsx(
-			styles.root,
-			bulletMap[useContext(BulletListContext)] ?? '',
-			{
-				[styles.noDot]:
-					isValidElement(children) && children.type === BulletList,
-			},
-			className,
-		)}>
-		{children}
-	</li>
-);
+const getBulletCls = (styles: typeof styleRefs, type: BulletType): string => {
+	switch (type) {
+		case 'circle':
+			return styles.root.circle;
+		case 'square':
+			return styles.root.square;
+		case 'disc':
+			return styles.root.disc;
+		default:
+			return '';
+	}
+};
+
+export const Bullet: FunctionComponent<Props> = ({ children, className }) => {
+	const styles = useStyles(styleRefs);
+
+	return (
+		<Box
+			is="li"
+			className={clsx(
+				styles.root.default,
+				getBulletCls(
+					styles,
+					bulletMap[useContext(BulletListContext)],
+				) ?? '',
+				{
+					[styles.noDot]:
+						isValidElement(children) &&
+						children.type === BulletList,
+				},
+				className,
+			)}>
+			{children}
+		</Box>
+	);
+};

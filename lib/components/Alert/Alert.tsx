@@ -7,87 +7,82 @@ import {
 	WindowCloseIcon,
 } from '@autoguru/icons';
 import clsx from 'clsx';
-import React, { FunctionComponent, ReactChild } from 'react';
+import * as React from 'react';
+import { ComponentProps, FunctionComponent, ReactChild } from 'react';
+import { useStyles } from 'react-treat';
 
-import { Button, EButtonSize, EButtonVariant } from '../Button';
+import { Box } from '../Box';
+import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { Text } from '../Typography/Text';
-import styles from './Alert.scss';
-
-export enum EAlertIntent {
-	danger = 'danger',
-	info = 'info',
-	success = 'success',
-	warning = 'warning',
-}
+import * as styleRefs from './Alert.treat';
 
 interface Props {
 	children: ReactChild;
 	className?: string;
-	intent?: EAlertIntent;
+	intent?: keyof typeof styleRefs.intent;
 	inline?: boolean;
 	dismissible?: boolean;
 
-	onRequestClose?(): void;
+	onRequestClose?: ComponentProps<typeof Button>['onClick'];
 }
+
+const IconMapForIntent: Record<
+	keyof Omit<typeof styleRefs.intent, 'neutral'>,
+	IconType
+> = {
+	danger: AlertCircleIcon,
+	information: InformationIcon,
+	success: CheckCircleIcon,
+	warning: AlertIcon,
+};
 
 export const Alert: FunctionComponent<Props> = ({
 	children,
 	className = '',
-	intent = EAlertIntent.info,
+	intent = 'success',
 	inline = false,
-	onRequestClose = null,
+	onRequestClose,
 	dismissible = typeof onRequestClose === 'function',
 }) => {
+	const styles = useStyles(styleRefs);
+
 	return (
-		<div
-			className={clsx(
-				styles.root,
-				{
-					[styles.success]: intent === EAlertIntent.success,
-					[styles.danger]: intent === EAlertIntent.danger,
-					[styles.warning]: intent === EAlertIntent.warning,
-					[styles.info]: intent === EAlertIntent.info,
-					[styles.inline]: Boolean(inline),
-					[styles.dismissible]: Boolean(dismissible),
-				},
-				className,
-			)}
-			role="alert">
+		<Box
+			className={clsx(styles.root, styles.intent[intent], className)}
+			role="alert"
+			backgroundColour="white"
+			borderRadius="1"
+			boxShadow={inline ? '2' : '4'}
+			padding="2">
 			<Icon
 				icon={IconMapForIntent[intent]}
-				size={20}
+				size="medium"
 				className={styles.icon}
 			/>
-			<div className={styles.content}>
+			<Box className={styles.content}>
 				{typeof children === 'string' ? (
 					<Text>{children}</Text>
 				) : (
 					children
 				)}
-			</div>
+			</Box>
 			{dismissible && (
 				<Button
 					minimal
-					variant={EButtonVariant.Secondary}
-					size={EButtonSize.Small}
+					rounded
+					variant="secondary"
+					size="small"
 					className={styles.closeButton}
 					aria-label="close"
 					onClick={onRequestClose}>
 					<Icon
 						className={styles.closeButtonIcon}
 						icon={WindowCloseIcon}
-						size={20}
+						size="medium"
 					/>
 				</Button>
 			)}
-		</div>
+		</Box>
 	);
-};
-
-const IconMapForIntent: Record<EAlertIntent, IconType> = {
-	[EAlertIntent.danger]: AlertCircleIcon,
-	[EAlertIntent.info]: InformationIcon,
-	[EAlertIntent.success]: CheckCircleIcon,
-	[EAlertIntent.warning]: AlertIcon,
 };

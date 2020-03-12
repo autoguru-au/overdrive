@@ -30,10 +30,9 @@ export const useOutsideClick = (
 
 		return bindEvent(document, 'mouseup', event => {
 			const shouldClose = refs
-				.filter(item => Boolean(item.current))
 				.map(item => item.current)
 				.every(
-					element => !element.contains(event.target as HTMLElement),
+					element => !element?.contains(event.target as HTMLElement),
 				);
 
 			if (shouldClose) {
@@ -70,7 +69,7 @@ export const OutsideClick: NamedExoticComponent<Props> = memo(
 	({ children, onOutsideClick = () => void 0 }) => {
 		const child = Children.only(children);
 
-		const rootClickRef = useRef<HTMLElement>();
+		const rootClickRef = useRef<HTMLElement>(null);
 		const hasRef = Object.prototype.hasOwnProperty.call(child.props, 'ref');
 
 		warning(

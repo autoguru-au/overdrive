@@ -1,1 +1,1 @@
-export { Alert, EAlertIntent } from './Alert';
+export { Alert } from './Alert';

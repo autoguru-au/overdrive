@@ -14,7 +14,7 @@ Thanks seek: https://github.com/seek-oss/braid-design-system/blob/master/scripts
 			);
 		}
 
-		const Octokit = require('@octokit/rest');
+		const { Octokit } = require('@octokit/rest');
 
 		const octokit = new Octokit({
 			auth: `token ${GH_TOKEN}`,

@@ -1,8 +1,27 @@
-import React from 'react';
+import * as React from 'react';
+import { FunctionComponent } from 'react';
+import { useStyles } from 'react-treat';
 
+import { Box } from '../Box';
+import * as styleRefs from '../Flyout/Flyout.treat';
 import { usingPositioner } from '../Positioner';
-import styles from './style.scss';
 
 export const Flyout = usingPositioner(({ children }) => (
-	<div className={styles.root}>{children}</div>
+	<FlyoutComponent>{children}</FlyoutComponent>
 ));
+
+const FlyoutComponent: FunctionComponent = ({ children }) => {
+	const styles = useStyles(styleRefs);
+
+	return (
+		<Box
+			className={styles.root}
+			backgroundColour="white"
+			boxShadow="4"
+			borderRadius="1"
+			borderWidth="1"
+			borderColour="gray">
+			{children}
+		</Box>
+	);
+};

@@ -1,41 +1,44 @@
 import { CheckIcon } from '@autoguru/icons';
 import { boolean, select, text } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
-import React from 'react';
+import * as React from 'react';
 
 import { Icon } from '../Icon';
-import { BulletText, EBulletTextVariant } from '.';
+import { BulletText } from '.';
 
 const baseProps = () => ({
-	variant: select('Variant', EBulletTextVariant, EBulletTextVariant.Primary),
+	variant: select('Variant', ['primary', 'secondary'], 'primary'),
 	bullet: text('Bullet', '?'),
 	ordered: boolean('ordered', false),
 });
 
-storiesOf('Components|BulletText', module)
-	.addDecorator(story => <ul children={story()} style={{ width: 200 }} />)
-	.add('Standard', () => (
-		<BulletText {...baseProps()}>Hello World</BulletText>
-	))
-	.add('With Custom Element', () => (
-		<BulletText
-			bullet={
-				<span
-					style={{
-						width: '17px',
-						height: '17px',
-						backgroundColor: ' #00dd95',
-						color: 'white',
-						borderRadius: '50%',
-						flexDirection: 'row',
-						display: 'flex',
-						alignContent: 'center',
-						justifyContent: 'center',
-						alignItems: 'center',
-					}}>
-					<Icon size={14} icon={CheckIcon} />
-				</span>
-			}>
-			Hello World
-		</BulletText>
-	));
+export default {
+	title: 'Components|BulletText',
+	component: BulletText,
+};
+
+export const standard = () => (
+	<BulletText {...baseProps()}>Hello World</BulletText>
+);
+
+export const withCustomElement = () => (
+	<BulletText
+		bullet={
+			<span
+				style={{
+					width: '20px',
+					height: '20px',
+					backgroundColor: ' #00dd95',
+					color: 'white',
+					borderRadius: '50%',
+					flexDirection: 'row',
+					display: 'flex',
+					alignContent: 'center',
+					justifyContent: 'center',
+					alignItems: 'center',
+				}}>
+				<Icon size="small" icon={CheckIcon} />
+			</span>
+		}>
+		Hello World
+	</BulletText>
+);

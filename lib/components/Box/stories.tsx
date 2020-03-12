@@ -1,21 +1,39 @@
-import { select, text } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
-import React, { ComponentProps } from 'react';
+import * as React from 'react';
 
-import { Box, EBoxVariant } from '.';
+import { Box } from '.';
 
-const baseProps = (): ComponentProps<typeof Box> => ({
-	distance: select('Distance', [0, 1, 2, 3, 4, 5], 1),
-	variant: select('Variant', EBoxVariant, EBoxVariant.default),
-	borderColour: text('Border Colour', 'gray-300'), // TODO: This needs to be programmatic
-	strokeWidth: select('Stroke Width', [1, 4], 1),
-});
+export default {
+	title: 'Foundation|Box',
+	component: Box,
+	decorators: [
+		story => (
+			<div style={{ maxWidth: 500, margin: '0 auto' }}>{story()}</div>
+		),
+	],
+};
 
-storiesOf('Foundation|Box', module)
-	.addParameters({ chromatic: { disable: true } })
-	.add('Standard', () => (
+export const Standard = () => (
+	<>
 		<Box
-			{...baseProps()}
-			children={<div style={{ width: 150, height: 150 }} />}
-		/>
-	));
+			borderColour="dark"
+			borderWidth={['none', null, '1', '2']}
+			padding={['2', '4']}
+			marginBottom={['2', '4', '5', '8']}
+			marginX={['none', '3', '5']}
+			backgroundColour="green500"
+			borderRadius="pill"
+			boxShadow={['none', '1', '2', '3']}>
+			Box 1
+		</Box>
+		<Box
+			borderColour="dark"
+			borderWidth={['none', null, '1', '2']}
+			padding={['2', '4']}
+			marginX={['none', '3', '5']}
+			backgroundColour="green500"
+			borderRadius={['none', '1']}
+			boxShadow="2">
+			Box 2
+		</Box>
+	</>
+);

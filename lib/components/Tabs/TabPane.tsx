@@ -1,19 +1,24 @@
 import { invariant } from '@autoguru/utilities';
-import React, { FunctionComponent, useContext } from 'react';
+import * as React from 'react';
+import { FunctionComponent, useContext } from 'react';
+import { useStyles } from 'react-treat';
 
+import { Box } from '../Box';
 import { IndexContext, TabsContext } from './context';
-import styles from './style.scss';
+import * as styleRefs from './Tabs.treat';
 
 export const TabPane: FunctionComponent<{ id?: string }> = ({
 	children,
 	id: incomingId = null,
 }) => {
 	const myIndex = useContext(IndexContext);
-	const tabsContext = useContext(TabsContext);
+	const tabsContext = useContext(TabsContext)!;
+
+	const styles = useStyles(styleRefs);
 
 	invariant(
-		myIndex !== null && tabsContext.id !== null,
-		'This tab pane isnt nested beneath <Tabs /> or <TabPanes />>',
+		myIndex !== null && tabsContext !== null,
+		'This tab pane isnt nested beneath <Tabs /> or <TabPanes />',
 	);
 
 	const myId =
@@ -22,8 +27,8 @@ export const TabPane: FunctionComponent<{ id?: string }> = ({
 			: `${tabsContext.id}-${myIndex}-tab`;
 
 	return (
-		<div className={styles.tabPane} tabIndex={0} role="tabpanel" id={myId}>
+		<Box className={styles.tabPane} tabIndex={0} role="tabpanel" id={myId}>
 			{children}
-		</div>
+		</Box>
 	);
 };

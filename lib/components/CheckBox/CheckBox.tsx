@@ -1,12 +1,15 @@
 import { CheckIcon } from '@autoguru/icons';
 import clsx from 'clsx';
-import React, { FunctionComponent, memo, ReactNode } from 'react';
+import * as React from 'react';
+import { FunctionComponent, memo, ReactNode } from 'react';
+import { useStyles } from 'react-treat';
 
 import { CheckableBase } from '../CheckableBase';
-import { checkableClass } from '../CheckableBase/CheckableBase';
-import styles from './style.scss';
+import { useCheckableStyles } from '../CheckableBase/useCheckableStyles';
+import { Icon } from '../Icon';
+import * as styleRefs from './CheckBox.treat';
 
-export interface Props {
+interface Props {
 	className?: string;
 	checked?: boolean;
 	disabled?: boolean;
@@ -29,24 +32,36 @@ export const CheckBox: FunctionComponent<Props> = memo(
 		onClick = () => void 0,
 		onChange = () => void 0,
 		children,
-	}) => (
-		<CheckableBase
-			inputType="checkbox"
-			className={clsx([styles.checkbox, className])}
-			inputName={name}
-			value={value}
-			label={children}
-			disabled={disabled}
-			checked={checked}
-			handleClick={onClick}
-			handleChange={onChange}>
-			<div
-				className={clsx(checkableClass, styles.base, {
-					[styles.selected]: checked,
-				})}>
-				{checked && CheckIcon}
-				<div className={styles.box} />
-			</div>
-		</CheckableBase>
-	),
+	}) => {
+		const styles = useStyles(styleRefs);
+		const { checkable, checkableItem } = useCheckableStyles();
+
+		return (
+			<CheckableBase
+				inputType="checkbox"
+				className={clsx([styles.checkbox, className])}
+				inputName={name}
+				value={value}
+				label={children}
+				disabled={disabled}
+				checked={checked}
+				handleClick={onClick}
+				handleChange={onChange}>
+				<div className={checkable}>
+					{checked && (
+						<Icon
+							className={styles.icon}
+							icon={CheckIcon}
+							size="small"
+						/>
+					)}
+					<div
+						className={clsx(checkableItem, styles.base.default, {
+							[styles.base.selected]: checked,
+						})}
+					/>
+				</div>
+			</CheckableBase>
+		);
+	},
 );

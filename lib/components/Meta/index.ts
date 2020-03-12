@@ -1,1 +1,1 @@
-export { Meta, EVariant as EMetaVariant } from './Meta';
+export { Meta } from './Meta';

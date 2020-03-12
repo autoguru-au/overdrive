@@ -1,7 +1,7 @@
 import { createContext } from 'react';
 
 export const TabsContext = createContext<{
-	id: string;
+	id: string | null;
 	active: number;
 	onChange?: (idx: number) => void;
 }>({
@@ -9,4 +9,4 @@ export const TabsContext = createContext<{
 	id: null,
 });
 
-export const IndexContext = createContext<number>(null);
+export const IndexContext = createContext<number | null>(null);

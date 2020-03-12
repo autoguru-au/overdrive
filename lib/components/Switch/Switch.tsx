@@ -1,9 +1,12 @@
 import clsx from 'clsx';
-import React, { FunctionComponent, memo, useCallback, useState } from 'react';
+import * as React from 'react';
+import { FunctionComponent, memo, useCallback, useState } from 'react';
+import { useStyles } from 'react-treat';
 
-import styles from './style.scss';
+import { Box } from '../Box';
+import * as styleRefs from '../Switch/Switch.treat';
 
-export interface Props {
+interface Props {
 	className?: string;
 	disabled?: boolean;
 	toggled?: boolean;
@@ -17,6 +20,7 @@ const SwitchComponent: FunctionComponent<Props> = ({
 	toggled: incomingToggled = false,
 	onChange,
 }) => {
+	const styles = useStyles(styleRefs);
 	const [toggled, setToggled] = useState<boolean>(incomingToggled);
 
 	const [prevValue, setPrevValue] = useState<boolean>(incomingToggled);
@@ -39,20 +43,25 @@ const SwitchComponent: FunctionComponent<Props> = ({
 	}
 
 	return (
-		<div
+		<Box
 			className={clsx(
 				styles.root,
 				{
 					[styles.toggled]: toggled,
-					[styles.disabled]: disabled,
+					[styles.disabled.default]: disabled,
+					[styles.disabled.toggled]: toggled && disabled,
 				},
 				className,
 			)}
 			aria-disabled={disabled}
 			aria-label={`toggle ${toggled ? 'on' : 'off'}`}
 			onClick={onToggle}>
-			<span className={styles.handle} />
-		</div>
+			<span
+				className={clsx(styles.handle.default, {
+					[styles.handle.transition]: toggled,
+				})}
+			/>
+		</Box>
 	);
 };
 

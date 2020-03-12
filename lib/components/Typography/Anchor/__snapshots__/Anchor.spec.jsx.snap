@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Anchor /> should match snapshot with label, icon and to props 1`] = `
+<a
+  class="root_base base a"
+  href="https://www.autoguru.com.au"
+>
+  <i
+    class="base display_block icon_base iconWithText small_mobile_base"
+  >
+    <svg
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+      />
+    </svg>
+  </i>
+  <span
+    class="base root_base sizes_4_base align_left colours_link_base fontWeight_bold_base"
+  >
+    Hello World!
+  </span>
+</a>
+`;
+
+exports[`<Anchor /> should match snapshot without label 1`] = `
+<a
+  class="root_base base a"
+>
+  <span
+    class="base root_base sizes_4_base align_left colours_link_base fontWeight_bold_base"
+  />
+</a>
+`;
+
+exports[`<Anchor /> when custom component should match snapshot with label, icon custom component 1`] = `
+<button
+  class="base appearance button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base themedButton_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled width_default root_base base"
+  type="button"
+>
+  <div
+    class="body_base"
+  >
+    <i
+      class="base display_block icon_base iconWithText small_mobile_base"
+    >
+      <svg
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+        />
+      </svg>
+    </i>
+    <span
+      class="base root_base sizes_4_base align_left colours_link_base fontWeight_bold_base"
+    >
+      Hello World!
+    </span>
+  </div>
+</button>
+`;

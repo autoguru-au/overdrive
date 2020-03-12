@@ -1,24 +1,30 @@
 import clsx from 'clsx';
-import React, { FunctionComponent, memo } from 'react';
+import * as React from 'react';
+import { memo, NamedExoticComponent } from 'react';
+import { useStyles } from 'react-treat';
 
-import styles from './style.scss';
+import { Box } from '../Box';
+import * as styleRefs from './LinearProgressIndicator.treat';
 
-export interface Props {
+interface Props {
 	className?: string;
 }
 
-const LinearProgressIndicatorComponent: FunctionComponent<Props> = ({
-	className = '',
-}) => {
-	const cls = clsx([styles.root, className]);
-
-	return (
-		<div className={cls}>
-			<div className={styles.linearProgressBar}>
-				<span className={styles.linearProgressBarInner} />
-			</div>
-		</div>
-	);
-};
-
-export const LinearProgressIndicator = memo(LinearProgressIndicatorComponent);
+export const LinearProgressIndicator: NamedExoticComponent<Props> = memo(
+	({ className = '' }) => {
+		const styles = useStyles(styleRefs);
+		return (
+			<Box
+				className={clsx([styles.root, className])}
+				backgroundColour="gray200">
+				<div className={styles.linearProgressBar}>
+					<Box
+						is="span"
+						backgroundColour="green300"
+						className={styles.linearProgressBarInner}
+					/>
+				</div>
+			</Box>
+		);
+	},
+);

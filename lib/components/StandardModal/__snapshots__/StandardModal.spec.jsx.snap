@@ -1,33 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<StandardModal /> should match snapshot with title and body 1`] = `
-<body>
+<body
+  style="background-color: rgb(255, 255, 255); color: rgb(33, 35, 56);"
+>
   <div />
   <div
-    class="modalPortal modalPortalIsOpen"
+    class="base portal_default_base portal_open_base"
   >
     <div
-      class="modalPanel"
+      class="panel alignment_base"
     >
       <div
         aria-hidden="false"
         aria-modal="true"
-        class="modalContent"
+        class="content alignment_base"
         role="dialog"
       >
         <article
-          class="modal modalSizeStandard"
+          class="base block modal_base modalDesktopView_base modalSizeStandard_base"
         >
           <header
-            class="header headerWithBorder"
+            class="header_base headerWithBorder_base"
           >
             <button
               aria-label="close"
-              class="headerCloseButton"
+              class="headerCloseButton_base"
             >
               <i
-                class="root"
-                style="width: 20px; height: 20px;"
+                class="base display_block medium_mobile_base"
               >
                 <svg
                   fill="currentColor"
@@ -44,7 +45,7 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
               class="headerTitle"
             >
               <h4
-                class="root sizeScale4"
+                class="root_base sizes_4_base colours_dark_base fontWeight_bold_base"
               >
                 Hello World!
               </h4>
@@ -65,33 +66,34 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
 `;
 
 exports[`<StandardModal /> should match snapshot without title and body 1`] = `
-<body>
+<body
+  style="background-color: rgb(255, 255, 255); color: rgb(33, 35, 56);"
+>
   <div />
   <div
-    class="modalPortal modalPortalIsOpen"
+    class="base portal_default_base portal_open_base"
   >
     <div
-      class="modalPanel"
+      class="panel alignment_base"
     >
       <div
         aria-hidden="false"
         aria-modal="true"
-        class="modalContent"
+        class="content alignment_base"
         role="dialog"
       >
         <article
-          class="modal modalSizeStandard"
+          class="base block modal_base modalDesktopView_base modalSizeStandard_base"
         >
           <header
-            class="header headerWithBorder"
+            class="header_base headerWithBorder_base"
           >
             <button
               aria-label="close"
-              class="headerCloseButton"
+              class="headerCloseButton_base"
             >
               <i
-                class="root"
-                style="width: 20px; height: 20px;"
+                class="base display_block medium_mobile_base"
               >
                 <svg
                   fill="currentColor"
@@ -108,7 +110,7 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
               class="headerTitle"
             >
               <h4
-                class="root sizeScale4"
+                class="root_base sizes_4_base colours_dark_base fontWeight_bold_base"
               />
             </div>
           </header>

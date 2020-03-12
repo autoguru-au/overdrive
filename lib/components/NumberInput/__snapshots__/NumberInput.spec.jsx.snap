@@ -2,46 +2,46 @@
 
 exports[`<NumberInput /> should have some hintText 1`] = `
 <div
-  class="root"
+  class="base"
 >
   <div
-    class="notchedBase"
+    class="base root_base"
   >
     <div
-      class="inputWrapper"
+      class="input_root"
     >
       <input
         autocomplete="off"
-        class="input"
+        class="base block appearance input base block appearance input width_full input_itself_root_base"
         id="id"
         type="number"
         value=""
       />
     </div>
     <div
-      class="notchedBaseBorder"
+      class="borders_root_default_base"
     >
       <div
-        class="notchedBaseBorderLeading"
+        class="borderDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="notchedBaseBorderNotch"
+        class="borderDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="notchedBasePlaceholder"
+          class="placeholder_default_base placeholder_empty_base placeholderPlacement_default_base"
           for="id"
         >
           placeholder
         </label>
       </div>
       <div
-        class="notchedBaseBorderTrailing"
+        class="borderDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>
   <p
-    class="root sizeScale2 alignLeft hintText"
+    class="base root_base sizes_2_base align_left fontWeight_normal_base hintText_base styleNode_base"
   >
     hint text
   </p>
@@ -50,41 +50,41 @@ exports[`<NumberInput /> should have some hintText 1`] = `
 
 exports[`<NumberInput /> should match snapshot 1`] = `
 <div
-  class="root"
+  class="base"
 >
   <div
-    class="notchedBase"
+    class="base root_base"
   >
     <div
-      class="inputWrapper"
+      class="input_root"
     >
       <input
         autocomplete="off"
-        class="input"
+        class="base block appearance input base block appearance input width_full input_itself_root_base"
         id="id"
         type="number"
         value=""
       />
     </div>
     <div
-      class="notchedBaseBorder"
+      class="borders_root_default_base"
     >
       <div
-        class="notchedBaseBorderLeading"
+        class="borderDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="notchedBaseBorderNotch"
+        class="borderDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="notchedBasePlaceholder"
+          class="placeholder_default_base placeholder_empty_base placeholderPlacement_default_base"
           for="id"
         >
           placeholder something
         </label>
       </div>
       <div
-        class="notchedBaseBorderTrailing"
+        class="borderDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>
@@ -93,39 +93,39 @@ exports[`<NumberInput /> should match snapshot 1`] = `
 
 exports[`<NumberInput /> should match snapshot when active 1`] = `
 <div
-  class="root input-class"
+  class="base input-class"
 >
   <div
-    class="notchedBase notchedBaseActive"
+    class="base root_base"
   >
     <div
-      class="inputWrapper"
+      class="input_root"
     >
       <input
         autocomplete="off"
-        class="input"
+        class="base block appearance input base block appearance input width_full input_itself_root_base"
         type="number"
         value=""
       />
     </div>
     <div
-      class="notchedBaseBorder"
+      class="borders_root_default_base"
     >
       <div
-        class="notchedBaseBorderLeading"
+        class="borderDefaults_base borders_leading_base activeBorderColour_base"
       />
       <div
-        class="notchedBaseBorderNotch"
+        class="borderDefaults_base borders_middle_base activeBorderColour_base"
         style="width: 0px;"
       >
         <label
-          class="notchedBasePlaceholder"
+          class="placeholder_default_base placeholder_empty_base placeholderPlacement_default_base"
         >
           placeholder something
         </label>
       </div>
       <div
-        class="notchedBaseBorderTrailing"
+        class="borderDefaults_base borders_trailing_base activeBorderColour_base"
       />
     </div>
   </div>
@@ -134,39 +134,39 @@ exports[`<NumberInput /> should match snapshot when active 1`] = `
 
 exports[`<NumberInput /> should match snapshot when touched 1`] = `
 <div
-  class="root input-class"
+  class="base input-class"
 >
   <div
-    class="notchedBase"
+    class="base root_base"
   >
     <div
-      class="inputWrapper"
+      class="input_root"
     >
       <input
         autocomplete="off"
-        class="input"
+        class="base block appearance input base block appearance input width_full input_itself_root_base"
         type="number"
         value=""
       />
     </div>
     <div
-      class="notchedBaseBorder"
+      class="borders_root_default_base"
     >
       <div
-        class="notchedBaseBorderLeading"
+        class="borderDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="notchedBaseBorderNotch"
+        class="borderDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="notchedBasePlaceholder"
+          class="placeholder_default_base placeholder_empty_base placeholderPlacement_default_base"
         >
           placeholder something
         </label>
       </div>
       <div
-        class="notchedBaseBorderTrailing"
+        class="borderDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>
@@ -175,39 +175,39 @@ exports[`<NumberInput /> should match snapshot when touched 1`] = `
 
 exports[`<NumberInput /> should match snapshot when touched and invalid 1`] = `
 <div
-  class="root input-class invalid withStatus"
+  class="base input-class"
 >
   <div
-    class="notchedBase"
+    class="base root_base"
   >
     <div
-      class="inputWrapper"
+      class="input_root"
     >
       <input
         autocomplete="off"
-        class="input"
+        class="base block appearance input base block appearance input width_full input_itself_root_base"
         type="number"
         value=""
       />
     </div>
     <div
-      class="notchedBaseBorder"
+      class="borders_root_default_base"
     >
       <div
-        class="notchedBaseBorderLeading"
+        class="borderDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="notchedBaseBorderNotch"
+        class="borderDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="notchedBasePlaceholder"
+          class="placeholder_default_base placeholder_empty_base placeholderPlacement_default_base"
         >
           placeholder something
         </label>
       </div>
       <div
-        class="notchedBaseBorderTrailing"
+        class="borderDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>
@@ -216,39 +216,39 @@ exports[`<NumberInput /> should match snapshot when touched and invalid 1`] = `
 
 exports[`<NumberInput /> should match snapshot when touched and valid 1`] = `
 <div
-  class="root input-class valid withStatus"
+  class="base input-class"
 >
   <div
-    class="notchedBase"
+    class="base root_base"
   >
     <div
-      class="inputWrapper"
+      class="input_root"
     >
       <input
         autocomplete="off"
-        class="input"
+        class="base block appearance input base block appearance input width_full input_itself_root_base"
         type="number"
         value=""
       />
     </div>
     <div
-      class="notchedBaseBorder"
+      class="borders_root_default_base"
     >
       <div
-        class="notchedBaseBorderLeading"
+        class="borderDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="notchedBaseBorderNotch"
+        class="borderDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="notchedBasePlaceholder"
+          class="placeholder_default_base placeholder_empty_base placeholderPlacement_default_base"
         >
           placeholder something
         </label>
       </div>
       <div
-        class="notchedBaseBorderTrailing"
+        class="borderDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>
@@ -257,69 +257,63 @@ exports[`<NumberInput /> should match snapshot when touched and valid 1`] = `
 
 exports[`<NumberInput /> should match snapshot with both icons 1`] = `
 <div
-  class="root input-class"
+  class="base input-class"
 >
   <div
-    class="notchedBase prefixed suffixed"
+    class="base root_base"
   >
     <div
-      class="inputWrapper"
+      class="input_root"
     >
-      <label>
-        <i
-          class="root prefixIcon"
-          style="width: 24px; height: 24px;"
+      <i
+        class="base display_block iconRoot_base icon_prefix styleNode_base medium_mobile_base"
+      >
+        <svg
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <svg
-            viewBox="0 0 512 512"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
-            />
-          </svg>
-        </i>
-      </label>
+          <path
+            d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+          />
+        </svg>
+      </i>
+      <i
+        class="base display_block iconRoot_base icon_suffix styleNode_base medium_mobile_base"
+      >
+        <svg
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+          />
+        </svg>
+      </i>
       <input
         autocomplete="off"
-        class="input"
+        class="base block appearance input base block appearance input width_full input_itself_root_base input_itself_prefixed_base input_itself_suffixed_base"
         type="number"
         value=""
       />
-      <label>
-        <i
-          class="root suffixIcon"
-          style="width: 24px; height: 24px;"
-        >
-          <svg
-            viewBox="0 0 512 512"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
-            />
-          </svg>
-        </i>
-      </label>
     </div>
     <div
-      class="notchedBaseBorder"
+      class="borders_root_default_base"
     >
       <div
-        class="notchedBaseBorderLeading"
+        class="borderDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="notchedBaseBorderNotch"
+        class="borderDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="notchedBasePlaceholder"
+          class="placeholder_default_base placeholder_empty_base placeholderPlacement_defaultPrefixed_base"
         >
           placeholder something
         </label>
       </div>
       <div
-        class="notchedBaseBorderTrailing"
+        class="borderDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>
@@ -328,54 +322,51 @@ exports[`<NumberInput /> should match snapshot with both icons 1`] = `
 
 exports[`<NumberInput /> should match snapshot with prefix icon 1`] = `
 <div
-  class="root input-class"
+  class="base input-class"
 >
   <div
-    class="notchedBase prefixed"
+    class="base root_base"
   >
     <div
-      class="inputWrapper"
+      class="input_root"
     >
-      <label>
-        <i
-          class="root prefixIcon"
-          style="width: 24px; height: 24px;"
+      <i
+        class="base display_block iconRoot_base icon_prefix styleNode_base medium_mobile_base"
+      >
+        <svg
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <svg
-            viewBox="0 0 512 512"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
-            />
-          </svg>
-        </i>
-      </label>
+          <path
+            d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+          />
+        </svg>
+      </i>
       <input
         autocomplete="off"
-        class="input"
+        class="base block appearance input base block appearance input width_full input_itself_root_base input_itself_prefixed_base"
         type="number"
         value=""
       />
     </div>
     <div
-      class="notchedBaseBorder"
+      class="borders_root_default_base"
     >
       <div
-        class="notchedBaseBorderLeading"
+        class="borderDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="notchedBaseBorderNotch"
+        class="borderDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="notchedBasePlaceholder"
+          class="placeholder_default_base placeholder_empty_base placeholderPlacement_defaultPrefixed_base"
         >
           placeholder something
         </label>
       </div>
       <div
-        class="notchedBaseBorderTrailing"
+        class="borderDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>
@@ -384,54 +375,51 @@ exports[`<NumberInput /> should match snapshot with prefix icon 1`] = `
 
 exports[`<NumberInput /> should match snapshot with suffix icon 1`] = `
 <div
-  class="root input-class"
+  class="base input-class"
 >
   <div
-    class="notchedBase suffixed"
+    class="base root_base"
   >
     <div
-      class="inputWrapper"
+      class="input_root"
     >
+      <i
+        class="base display_block iconRoot_base icon_suffix styleNode_base medium_mobile_base"
+      >
+        <svg
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+          />
+        </svg>
+      </i>
       <input
         autocomplete="off"
-        class="input"
+        class="base block appearance input base block appearance input width_full input_itself_root_base input_itself_suffixed_base"
         type="number"
         value=""
       />
-      <label>
-        <i
-          class="root suffixIcon"
-          style="width: 24px; height: 24px;"
-        >
-          <svg
-            viewBox="0 0 512 512"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
-            />
-          </svg>
-        </i>
-      </label>
     </div>
     <div
-      class="notchedBaseBorder"
+      class="borders_root_default_base"
     >
       <div
-        class="notchedBaseBorderLeading"
+        class="borderDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="notchedBaseBorderNotch"
+        class="borderDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="notchedBasePlaceholder"
+          class="placeholder_default_base placeholder_empty_base placeholderPlacement_default_base"
         >
           placeholder something
         </label>
       </div>
       <div
-        class="notchedBaseBorderTrailing"
+        class="borderDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>

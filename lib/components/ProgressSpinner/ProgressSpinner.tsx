@@ -1,64 +1,40 @@
 import clsx from 'clsx';
-import React, { FunctionComponent, memo } from 'react';
+import * as React from 'react';
+import { memo } from 'react';
+import { useStyles } from 'react-treat';
 
-import styles from './style.scss';
+import { Box } from '../Box';
+import * as styleRefs from './ProgressSpinner.treat';
 
-export enum EVariant {
-	Light = 'light',
-	Primary = 'pending',
-	Secondary = 'secondary',
-	Warning = 'warning',
-	Danger = 'danger',
-}
-
-export enum ESize {
-	Small = 'small',
-	Medium = 'medium',
-	Large = 'large',
-}
-
-const cssSizeMap: Map<ESize, string> = new Map([
-	[ESize.Small, styles.sizeSmall],
-	[ESize.Medium, styles.sizeMedium],
-	[ESize.Large, styles.sizeLarge],
-]);
-const cssVariantMap: Map<EVariant, string> = new Map([
-	[EVariant.Light, styles.variantLight],
-	[EVariant.Primary, styles.variantPrimary],
-	[EVariant.Secondary, styles.variantSecondary],
-	[EVariant.Warning, styles.variantWarning],
-	[EVariant.Danger, styles.variantDanger],
-]);
-
-export interface Props {
+interface Props {
 	className?: string;
-	size?: ESize;
-	variant?: EVariant;
+	size?: keyof typeof styleRefs.size;
+	colour?: keyof typeof styleRefs.colours;
 }
 
-const ProgressSpinnerComponent: FunctionComponent<Props> = ({
-	className = '',
-	variant = EVariant.Primary,
-	size = ESize.Medium,
-}) => (
-	<div
-		className={clsx([
-			styles.root,
-			cssSizeMap.get(size),
-			cssVariantMap.get(variant),
-			className,
-		])}>
-		<svg className={styles.circular} viewBox="25 25 50 50">
-			<circle
-				className={styles.path}
-				cx="50"
-				cy="50"
-				r="20"
-				fill="none"
-				strokeMiterlimit="10"
-			/>
-		</svg>
-	</div>
-);
+export const ProgressSpinner = memo<Props>(
+	({ className = '', colour = 'primary', size = 'medium' }) => {
+		const styles = useStyles(styleRefs);
 
-export const ProgressSpinner = memo(ProgressSpinnerComponent);
+		return (
+			<Box
+				className={clsx([
+					styles.root,
+					styles.size[size].circular,
+					styles.colours[colour],
+					className,
+				])}>
+				<svg className={styles.circular} viewBox="25 25 50 50">
+					<circle
+						className={clsx(styles.path, styles.size[size].path)}
+						cx="50"
+						cy="50"
+						r="20"
+						fill="none"
+						strokeMiterlimit="10"
+					/>
+				</svg>
+			</Box>
+		);
+	},
+);

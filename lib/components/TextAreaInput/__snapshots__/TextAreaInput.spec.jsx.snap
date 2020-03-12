@@ -2,44 +2,44 @@
 
 exports[`<TextAreaInput /> should have some hintText 1`] = `
 <div
-  class="root"
+  class="base"
 >
   <div
-    class="notchedBase"
+    class="base root_base"
   >
     <div
-      class="inputWrapper"
+      class="input_root"
     >
       <textarea
         autocomplete="off"
-        class="input"
+        class="base base width_full types_textarea_base input_itself_root_base"
         id="id"
       />
     </div>
     <div
-      class="notchedBaseBorder"
+      class="borders_root_default_base"
     >
       <div
-        class="notchedBaseBorderLeading"
+        class="borderDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="notchedBaseBorderNotch"
+        class="borderDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="notchedBasePlaceholder"
+          class="placeholder_default_base placeholder_empty_base placeholderPlacement_default_base"
           for="id"
         >
           placeholder
         </label>
       </div>
       <div
-        class="notchedBaseBorderTrailing"
+        class="borderDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>
   <p
-    class="root sizeScale2 alignLeft hintText"
+    class="base root_base sizes_2_base align_left fontWeight_normal_base hintText_base styleNode_base"
   >
     hint text
   </p>
@@ -48,39 +48,39 @@ exports[`<TextAreaInput /> should have some hintText 1`] = `
 
 exports[`<TextAreaInput /> should match snapshot 1`] = `
 <div
-  class="root"
+  class="base"
 >
   <div
-    class="notchedBase"
+    class="base root_base"
   >
     <div
-      class="inputWrapper"
+      class="input_root"
     >
       <textarea
         autocomplete="off"
-        class="input"
+        class="base base width_full types_textarea_base input_itself_root_base"
         id="id"
       />
     </div>
     <div
-      class="notchedBaseBorder"
+      class="borders_root_default_base"
     >
       <div
-        class="notchedBaseBorderLeading"
+        class="borderDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="notchedBaseBorderNotch"
+        class="borderDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="notchedBasePlaceholder"
+          class="placeholder_default_base placeholder_empty_base placeholderPlacement_default_base"
           for="id"
         >
           placeholder something
         </label>
       </div>
       <div
-        class="notchedBaseBorderTrailing"
+        class="borderDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>
@@ -89,39 +89,39 @@ exports[`<TextAreaInput /> should match snapshot 1`] = `
 
 exports[`<TextAreaInput /> should match snapshot when active 1`] = `
 <div
-  class="root input-class"
+  class="base input-class"
 >
   <div
-    class="notchedBase notchedBaseShift notchedBaseActive"
+    class="base root_base"
   >
     <div
-      class="inputWrapper"
+      class="input_root"
     >
       <textarea
         autocomplete="off"
-        class="input"
+        class="base base width_full types_textarea_base input_itself_root_base"
       >
         value from the tests
       </textarea>
     </div>
     <div
-      class="notchedBaseBorder"
+      class="borders_root_default_base"
     >
       <div
-        class="notchedBaseBorderLeading"
+        class="borderDefaults_base borders_leading_base activeBorderColour_base"
       />
       <div
-        class="notchedBaseBorderNotch"
+        class="borderDefaults_base borders_middle_base activeBorderColour_base"
         style="width: 16px;"
       >
         <label
-          class="notchedBasePlaceholder"
+          class="placeholder_default_base activeColour_base placeholderPlacement_shifted_base"
         >
           placeholder something
         </label>
       </div>
       <div
-        class="notchedBaseBorderTrailing"
+        class="borderDefaults_base borders_trailing_base activeBorderColour_base"
       />
     </div>
   </div>
@@ -130,37 +130,37 @@ exports[`<TextAreaInput /> should match snapshot when active 1`] = `
 
 exports[`<TextAreaInput /> should match snapshot when touched 1`] = `
 <div
-  class="root input-class"
+  class="base input-class"
 >
   <div
-    class="notchedBase"
+    class="base root_base"
   >
     <div
-      class="inputWrapper"
+      class="input_root"
     >
       <textarea
         autocomplete="off"
-        class="input"
+        class="base base width_full types_textarea_base input_itself_root_base"
       />
     </div>
     <div
-      class="notchedBaseBorder"
+      class="borders_root_default_base"
     >
       <div
-        class="notchedBaseBorderLeading"
+        class="borderDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="notchedBaseBorderNotch"
+        class="borderDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="notchedBasePlaceholder"
+          class="placeholder_default_base placeholder_empty_base placeholderPlacement_default_base"
         >
           placeholder something
         </label>
       </div>
       <div
-        class="notchedBaseBorderTrailing"
+        class="borderDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>
@@ -169,37 +169,37 @@ exports[`<TextAreaInput /> should match snapshot when touched 1`] = `
 
 exports[`<TextAreaInput /> should match snapshot when touched and invalid 1`] = `
 <div
-  class="root input-class invalid withStatus"
+  class="base input-class"
 >
   <div
-    class="notchedBase"
+    class="base root_base"
   >
     <div
-      class="inputWrapper"
+      class="input_root"
     >
       <textarea
         autocomplete="off"
-        class="input"
+        class="base base width_full types_textarea_base input_itself_root_base"
       />
     </div>
     <div
-      class="notchedBaseBorder"
+      class="borders_root_default_base"
     >
       <div
-        class="notchedBaseBorderLeading"
+        class="borderDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="notchedBaseBorderNotch"
+        class="borderDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="notchedBasePlaceholder"
+          class="placeholder_default_base placeholder_empty_base placeholderPlacement_default_base"
         >
           placeholder something
         </label>
       </div>
       <div
-        class="notchedBaseBorderTrailing"
+        class="borderDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>
@@ -208,37 +208,37 @@ exports[`<TextAreaInput /> should match snapshot when touched and invalid 1`] = 
 
 exports[`<TextAreaInput /> should match snapshot when touched and valid 1`] = `
 <div
-  class="root input-class valid withStatus"
+  class="base input-class"
 >
   <div
-    class="notchedBase"
+    class="base root_base"
   >
     <div
-      class="inputWrapper"
+      class="input_root"
     >
       <textarea
         autocomplete="off"
-        class="input"
+        class="base base width_full types_textarea_base input_itself_root_base"
       />
     </div>
     <div
-      class="notchedBaseBorder"
+      class="borders_root_default_base"
     >
       <div
-        class="notchedBaseBorderLeading"
+        class="borderDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="notchedBaseBorderNotch"
+        class="borderDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="notchedBasePlaceholder"
+          class="placeholder_default_base placeholder_empty_base placeholderPlacement_default_base"
         >
           placeholder something
         </label>
       </div>
       <div
-        class="notchedBaseBorderTrailing"
+        class="borderDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>

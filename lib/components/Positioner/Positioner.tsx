@@ -1,4 +1,5 @@
-import React, {
+import * as React from 'react';
+import {
 	ComponentType,
 	FunctionComponent,
 	ReactElement,
@@ -9,11 +10,13 @@ import React, {
 	useState,
 } from 'react';
 import { createPortal } from 'react-dom';
+import { useStyles } from 'react-treat';
 
+import { isBrowser } from '../../utils';
 import { useOutsideClick } from '../OutsideClick';
 import { EAlignment } from './alignment';
 import { AlignmentRect, getOptimalPosition, Rect } from './getOptimalPosition';
-import styles from './style.scss';
+import * as styleRefs from './Positioner.treat';
 
 export interface Props {
 	alignment?: EAlignment;
@@ -24,7 +27,7 @@ export interface Props {
 	onRequestClose?(): void;
 }
 
-type WrappedComponent<ExtraProps> = ExtraProps & { triggerRect: Rect } & Pick<
+type WrappedComponent<ExtraProps> = ExtraProps & { triggerRect?: Rect } & Pick<
 		Props,
 		'isOpen' | 'alignment'
 	>;
@@ -40,20 +43,18 @@ export function usingPositioner<T extends {} = {}>(
 		triggerOffset, // This is defaulted in the getOptimalPosition
 		...rest
 	}) => {
-		if (typeof window === 'undefined') return null;
+		if (!isBrowser) return null;
+		const styles = useStyles(styleRefs);
 
-		const positionerRef = useRef<HTMLDivElement>();
-		const {
-			alignment: derivedAlignment,
-			rect,
-			triggerRect,
-		} = usePositionerEffect(
-			alignment,
-			triggerRef,
-			triggerOffset,
-			positionerRef,
-			isOpen,
-		);
+		const positionerRef = useRef<HTMLDivElement>(null);
+		const { alignment: derivedAlignment, rect, triggerRect } =
+			usePositionerEffect(
+				alignment,
+				triggerRef,
+				triggerOffset!,
+				positionerRef,
+				isOpen,
+			) ?? {};
 
 		useOutsideClick(
 			[positionerRef, triggerRef],
@@ -94,25 +95,22 @@ interface PositionerEffectState extends AlignmentRect {
 	triggerRect: Rect;
 }
 
-function usePositionerEffect(
+const usePositionerEffect = (
 	alignment: EAlignment,
 	triggerRef: RefObject<HTMLElement>,
 	triggerOffset: number,
 	positionerRef: RefObject<HTMLElement>,
 	isOpen: boolean,
-): PositionerEffectState {
-	const [positionerResult, setPositionerResult] = useState<
-		PositionerEffectState
-	>({
-		rect: null,
-		triggerRect: null,
-		alignment,
-	});
+): PositionerEffectState | null => {
+	const [
+		positionerResult,
+		setPositionerResult,
+	] = useState<PositionerEffectState | null>(null);
 
 	useLayoutEffect(() => {
 		let current = true;
 
-		if (!triggerRef.current || !positionerRef.current) {
+		if (!triggerRef.current && !positionerRef.current) {
 			return void 0;
 		}
 
@@ -121,7 +119,7 @@ function usePositionerEffect(
 		});
 
 		function handler() {
-			if (!current && (!triggerRef.current || !positionerRef.current)) {
+			if (!current && !triggerRef.current && !positionerRef.current) {
 				return;
 			}
 
@@ -129,8 +127,8 @@ function usePositionerEffect(
 				return cancelAnimationFrame(lastFrame);
 			}
 
-			const triggerRect = triggerRef.current.getBoundingClientRect();
-			const containerRect = positionerRef.current.getBoundingClientRect();
+			const triggerRect = triggerRef.current!.getBoundingClientRect();
+			const containerRect = positionerRef.current!.getBoundingClientRect();
 
 			const height = Math.round(containerRect.height);
 			const width = Math.round(containerRect.width);
@@ -162,4 +160,4 @@ function usePositionerEffect(
 	}, [alignment, isOpen, positionerRef, triggerRef, triggerOffset]);
 
 	return positionerResult;
-}
+};

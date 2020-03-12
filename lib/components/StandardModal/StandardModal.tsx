@@ -1,17 +1,19 @@
 import { WindowCloseIcon } from '@autoguru/icons';
 import clsx from 'clsx';
-import React from 'react';
+import * as React from 'react';
+import { useStyles } from 'react-treat';
 
+import { Box } from '../Box';
 import { Icon } from '../Icon';
-import { EModalCloseCode, withModal } from '../ModalBase';
+import { withModal } from '../ModalBase';
 import { Heading } from '../Typography';
-import styles from './style.scss';
+import * as styleRefs from './StandardModal.treat';
 
 export enum ESize {
 	Standard = 'standard', // 800px wide
 }
 
-export interface Props {
+interface Props {
 	size?: ESize;
 	className?: string;
 	title: string;
@@ -26,13 +28,17 @@ export const StandardModal = withModal<Props>(
 		children,
 	}) => {
 		const closeButtonHandler = () => {
-			onRequestClose(EModalCloseCode.Button);
+			onRequestClose?.('button');
 		};
 
+		const styles = useStyles(styleRefs);
+
 		return (
-			<article
+			<Box
+				is="article"
 				className={clsx([
 					styles.modal,
+					styles.modalDesktopView,
 					{ [styles.modalSizeStandard]: size === ESize.Standard },
 					className,
 				])}>
@@ -42,14 +48,14 @@ export const StandardModal = withModal<Props>(
 						className={styles.headerCloseButton}
 						aria-label="close"
 						onClick={closeButtonHandler}>
-						<Icon size={20} icon={WindowCloseIcon} />
+						<Icon size="medium" icon={WindowCloseIcon} />
 					</button>
 					<div className={styles.headerTitle}>
-						<Heading children={title} is="h4" />
+						<Heading is="h4">{title}</Heading>
 					</div>
 				</header>
 				<main className={styles.content}>{children}</main>
-			</article>
+			</Box>
 		);
 	},
 );

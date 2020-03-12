@@ -1,29 +1,28 @@
 import clsx from 'clsx';
-import React, { FunctionComponent } from 'react';
+import * as React from 'react';
+import { FunctionComponent } from 'react';
+import { useStyles } from 'react-treat';
 
 import { Text } from '../Typography';
-import styles from './style.scss';
+import * as styleRefs from './HintText.treat';
 
-export interface Props {
-	isActive: boolean;
+interface Props {
 	className?: string;
 }
 
 export const HintText: FunctionComponent<Props> = ({
-	isActive,
 	children,
 	className = '',
-}) => (
-	<Text
-		is="p"
-		size={2}
-		className={clsx(
-			styles.hintText,
-			{
-				[styles.hintTextActive]: isActive,
-			},
-			className,
-		)}>
-		{children}
-	</Text>
-);
+}) => {
+	const styles = useStyles(styleRefs);
+
+	return (
+		<Text
+			is="p"
+			size="2"
+			colour="unset"
+			className={clsx(styles.hintText, className)}>
+			{children}
+		</Text>
+	);
+};

@@ -1,1 +1,1 @@
-export { BulletText, EVariant as EBulletTextVariant } from './BulletText';
+export { BulletText } from './BulletText';

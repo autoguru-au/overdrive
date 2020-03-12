@@ -1,14 +1,14 @@
-import React, { ContextType, FunctionComponent, useMemo } from 'react';
+import * as React from 'react';
+import { ContextType, FunctionComponent, useMemo } from 'react';
 
-import { useId } from '../../utils/useId';
-import { useUncontrolledState } from '../../utils/useUncontrolledState';
+import { useId, useUncontrolledState } from '../../utils';
+import { Box } from '../Box';
 import { TabsContext } from './context';
-import styles from './style.scss';
 
 export const Tabs: FunctionComponent<{
 	active?: number;
 	onChange?: (idx: number) => void;
-}> = ({ children, active = 0, onChange = null }) => {
+}> = ({ children, active = 0, onChange }) => {
 	const [activeState, setActiveState] = useUncontrolledState<number>(
 		active,
 		onChange,
@@ -26,8 +26,10 @@ export const Tabs: FunctionComponent<{
 	);
 
 	return (
-		<TabsContext.Provider value={state}>
-			<div className={styles.tabs}>{children}</div>
-		</TabsContext.Provider>
+		<Box>
+			<TabsContext.Provider value={state}>
+				{children}
+			</TabsContext.Provider>
+		</Box>
 	);
 };

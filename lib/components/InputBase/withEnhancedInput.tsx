@@ -1,7 +1,8 @@
 import { IconType } from '@autoguru/icons';
 import { invariant, wrapEvent } from '@autoguru/utilities';
 import clsx from 'clsx';
-import React, {
+import * as React from 'react';
+import {
 	AriaAttributes,
 	ChangeEventHandler,
 	ComponentType,
@@ -9,15 +10,20 @@ import React, {
 	forwardRef,
 	KeyboardEventHandler,
 	MouseEventHandler,
-	MutableRefObject,
+	Ref,
 	RefObject,
+	useCallback,
 	useState,
 } from 'react';
+import { useStyles } from 'react-treat';
 
+import { useInputControlledState } from '../../utils';
+import { Box, useBoxStyles } from '../Box';
 import { Icon } from '../Icon';
 import { HintText } from './HintText';
+import * as inputStateStyleRefs from './InputState.treat';
 import { NotchedBase } from './NotchedBase';
-import styles from './style.scss';
+import * as styleRefs from './withEnhancedInput.treat';
 
 // The event handlers we'll allow the wrapped component to bind too
 export interface EventHandlers<PrimitiveElementType> {
@@ -26,6 +32,8 @@ export interface EventHandlers<PrimitiveElementType> {
 	onFocus?: FocusEventHandler<PrimitiveElementType>;
 	onKeyDown?: KeyboardEventHandler<PrimitiveElementType>;
 	onClick?: MouseEventHandler<PrimitiveElementType>;
+	onMouseEnter?: MouseEventHandler<PrimitiveElementType>;
+	onMouseLeave?: MouseEventHandler<PrimitiveElementType>;
 }
 
 // The props we'll give the end consumer to send
@@ -40,7 +48,7 @@ export interface EnhanceInputPrimitiveProps extends AriaAttributes {
 	disabled?: boolean;
 	prefixIcon?: IconType;
 	suffixIcon?: IconType;
-	wrapperRef?: MutableRefObject<HTMLDivElement>;
+	wrapperRef?: Ref<HTMLDivElement>;
 }
 
 export interface ValidationProps {
@@ -102,11 +110,15 @@ export const withEnhancedInput = <
 				className,
 				isTouched,
 				isValid,
+
 				value: incomingValue = '',
+				onChange: incomingOnChange,
+
+				onMouseLeave,
+				onMouseEnter,
 				onBlur,
 				onFocus,
 				onKeyDown,
-				onChange,
 				prefixIcon,
 				suffixIcon,
 				wrapperRef,
@@ -115,7 +127,6 @@ export const withEnhancedInput = <
 			},
 			ref,
 		) => {
-			// ValidationProps // Icons // IncomingProps
 			invariant(
 				!(prefixIcon && !withPrefixIcon),
 				'prefix icon is not supported for this component',
@@ -125,16 +136,43 @@ export const withEnhancedInput = <
 				'suffix icon is not supported for this component',
 			);
 
-			const [value, setValue] = useState<string>(incomingValue);
-			const [previousValue, setPreviousValue] = useState<string>(
-				incomingValue,
-			);
-			const [isActive, setActive] = useState<boolean>(false);
+			const styles = useStyles(styleRefs);
+			const inputStateStyles = useStyles(inputStateStyleRefs);
 
-			if (incomingValue !== previousValue) {
-				setValue(incomingValue);
-				setPreviousValue(incomingValue);
-			}
+			const [value, onChange] = useInputControlledState(
+				incomingValue,
+				incomingOnChange,
+			);
+
+			const [isActive, setActive] = useState<boolean>(false);
+			const [isHovered, setIsHovered] = useState<boolean>(false);
+
+			const isEmpty =
+				primitiveType === 'date' && value === '' ? false : value === '';
+
+			const derivedColours = derivedColourIntent(
+				{
+					isValid,
+					isHovered,
+					isActive,
+					isTouched,
+					disabled,
+				},
+				inputStateStyles,
+			);
+
+			const inputItselfClassName = clsx(
+				useBoxStyles({
+					is: primitiveType === 'textarea' ? 'textarea' : 'input',
+					width: 'full',
+				}),
+				styles.types[primitiveType!],
+				styles.input.itself.root,
+				{
+					[styles.input.itself.prefixed]: Boolean(prefixIcon),
+					[styles.input.itself.suffixed]: Boolean(suffixIcon),
+				},
+			);
 
 			/*
 			Need to disable the type assertion here, as ts has no idea that P and an omitted P without its properties is just P
@@ -163,12 +201,14 @@ export const withEnhancedInput = <
 							return false;
 						}
 
-						setValue(((event.target as unknown) as any).value);
-
 						return true;
 					}, onChange),
+					// Until https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within is more stable, the below
+					// will wrap now
 					onFocus: wrapEvent(() => setActive(true), onFocus),
 					onBlur: wrapEvent(() => setActive(false), onBlur),
+					onMouseEnter,
+					onMouseLeave,
 					onKeyDown,
 				},
 				field: {
@@ -177,7 +217,7 @@ export const withEnhancedInput = <
 					disabled,
 					value,
 					autoFocus,
-					className: styles.input,
+					className: inputItselfClassName,
 					ref,
 				},
 				prefixed: Boolean(prefixIcon),
@@ -185,55 +225,85 @@ export const withEnhancedInput = <
 				...(rest as IncomingProps),
 			};
 
-			const shouldValidate: boolean = isValid !== void 0 && isTouched;
+			const onMouseOver = useCallback(() => {
+				setIsHovered(true);
+			}, []);
+
+			const onMouseOut = useCallback(() => {
+				setIsHovered(false);
+			}, []);
 
 			return (
-				<div
-					className={clsx([styles.root, className], {
-						[styles.invalid]: shouldValidate && !isValid,
-						[styles.valid]: shouldValidate && isValid,
-						[styles.withStatus]: shouldValidate,
-						[styles.disabled]: disabled,
-					})}>
+				<Box
+					className={className}
+					onMouseEnter={onMouseOver}
+					onMouseLeave={onMouseOut}>
 					<NotchedBase
 						id={id}
-						isEmpty={
-							primitiveType === 'date' && value === ''
-								? false
-								: value === ''
-						}
-						isActive={isActive}
-						hasPrefix={Boolean(prefixIcon)}
-						hasSuffix={Boolean(suffixIcon)}
-						placeholder={placeholder}>
-						<div ref={wrapperRef} className={styles.inputWrapper}>
-							{Boolean(prefixIcon) && (
-								<label htmlFor={id}>
-									<Icon
-										icon={prefixIcon}
-										size={24}
-										className={styles.prefixIcon}
-									/>
-								</label>
+						prefixed={Boolean(prefixIcon)}
+						isEmpty={isEmpty}
+						disabled={disabled}
+						placeholder={placeholder}
+						placeholderColourClassName={clsx({
+							[derivedColours.colour]: !isEmpty,
+						})}
+						borderColourClassName={derivedColours.borderColour}>
+						<div
+							ref={wrapperRef}
+							className={clsx(styles.input.root)}>
+							{prefixIcon && (
+								<Icon
+									icon={prefixIcon}
+									size="medium"
+									className={clsx(
+										styles.icon.prefix,
+										derivedColours.colour,
+									)}
+								/>
+							)}
+							{suffixIcon && (
+								<Icon
+									icon={suffixIcon}
+									size="medium"
+									className={clsx(
+										styles.icon.suffix,
+										derivedColours.colour,
+									)}
+								/>
 							)}
 							<WrappingComponent {...wrappingComponent} />
-							{Boolean(suffixIcon) && (
-								<label htmlFor={id}>
-									<Icon
-										icon={suffixIcon}
-										size={24}
-										className={styles.suffixIcon}
-									/>
-								</label>
-							)}
 						</div>
 					</NotchedBase>
-					{!disabled &&
-						Boolean(hintText) &&
-						Boolean(hintText.length) && (
-							<HintText isActive={isActive}>{hintText}</HintText>
-						)}
-				</div>
+					{!disabled && hintText?.length && (
+						<HintText className={derivedColours.colour}>
+							{hintText}
+						</HintText>
+					)}
+				</Box>
 			);
 		},
 	);
+
+const stateNodeGetter = styles => (isHovered, isActive) => {
+	if (isHovered) return styles.hover;
+	if (isActive) return styles.active;
+	return styles.default;
+};
+
+const derivedColourIntent = (
+	{ isTouched, isValid, disabled, isHovered, isActive },
+	styles: typeof inputStateStyleRefs,
+): { borderColour: string; colour: string } => {
+	if (disabled) return styles.disabled;
+
+	if (isTouched === true) {
+		// Validation route
+		const node = stateNodeGetter(isValid ? styles.success : styles.error);
+
+		return node(isHovered, isActive);
+	}
+
+	const node = stateNodeGetter(isActive ? styles.active : styles.natural);
+
+	return node(isHovered, isActive);
+};

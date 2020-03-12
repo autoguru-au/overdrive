@@ -1,5 +1,6 @@
-import { tokens } from './tokens';
+import { runtimeTokens, theme } from './theme.treat';
 
 export default {
-	tokens,
+	themeRef: theme,
+	runtimeTokens,
 };

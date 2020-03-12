@@ -1,32 +1,41 @@
 import clsx from 'clsx';
-import React, { ButtonHTMLAttributes, FunctionComponent, memo } from 'react';
+import * as React from 'react';
+import { ButtonHTMLAttributes, FunctionComponent } from 'react';
+import { useStyles } from 'react-treat';
 
-import styles from './style.scss';
+import { Box } from '../Box';
+import * as styleRefs from './Pagination.treat';
 
-export interface Props extends ButtonHTMLAttributes<Element> {
+interface Props extends ButtonHTMLAttributes<Element> {
 	className?: string;
 	selected?: boolean;
 	gap?: boolean;
 	children;
 }
 
-export const BubbleComponent: FunctionComponent<Props> = ({
+export const Bubble: FunctionComponent<Props> = ({
 	className = '',
 	selected = false,
 	gap = false,
 	children,
 	...rest
 }) => {
-	const cls = clsx([styles.bubble, className], {
-		[styles.selected]: selected,
-		[styles.gap]: gap,
-	});
+	const styles = useStyles(styleRefs);
 
 	return (
-		<button className={cls} {...rest}>
+		<Box
+			is="button"
+			className={clsx(
+				className,
+				styles.activeItem.default,
+				styles.bubble.default,
+				{
+					[styles.activeItem.selected]: selected,
+					[styles.bubble.gap]: gap,
+				},
+			)}
+			{...rest}>
 			{gap ? '...' : children}
-		</button>
+		</Box>
 	);
 };
-
-export const Bubble = memo(BubbleComponent);

@@ -2,20 +2,20 @@
 
 exports[`<Tabs /> should allow id overriding 1`] = `
 <div
-  class="tabs"
+  class="base"
 >
   <div
-    class="tabsList"
+    class="base border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base none_mobile_base none_mobile_base 1_mobile_base none_mobile_base tabsList"
     role="tablist"
   >
     <button
       aria-controls="tab-1-title-0"
       aria-selected="true"
-      class="navItem navItemActive"
+      class="base appearance button display_block navItem_default_base navItem_active_base"
       role="tab"
     >
       <span
-        class="navItemTitle"
+        class="tabItem"
       >
         tab 1 title
       </span>
@@ -23,12 +23,12 @@ exports[`<Tabs /> should allow id overriding 1`] = `
     <button
       aria-controls="tab-2-title-1"
       aria-selected="false"
-      class="navItem"
+      class="base appearance button display_block navItem_default_base"
       role="tab"
       tabindex="-1"
     >
       <span
-        class="navItemTitle"
+        class="tabItem"
       >
         tab 2 title
       </span>
@@ -36,22 +36,22 @@ exports[`<Tabs /> should allow id overriding 1`] = `
     <button
       aria-controls="tab-3-title-2"
       aria-selected="false"
-      class="navItem"
+      class="base appearance button display_block navItem_default_base"
       role="tab"
       tabindex="-1"
     >
       <span
-        class="navItemTitle"
+        class="tabItem"
       >
         tab 3 title
       </span>
     </button>
   </div>
   <div
-    class="tabPanes"
+    class="base 6_mobile_base 6_mobile_base tabPanes"
   >
     <div
-      class="tabPane"
+      class="base tabPane"
       id="tab-1-title-0"
       role="tabpanel"
       tabindex="0"
@@ -64,72 +64,72 @@ exports[`<Tabs /> should allow id overriding 1`] = `
 
 exports[`<Tabs /> should allow rendering indications 1`] = `
 <div
-  class="tabs"
+  class="base"
 >
   <div
-    class="tabsList"
+    class="base border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base none_mobile_base none_mobile_base 1_mobile_base none_mobile_base tabsList"
     role="tablist"
   >
     <button
-      aria-controls="od-7-0-tab"
+      aria-controls="10-0-tab"
       aria-selected="true"
-      class="navItem navItemActive"
+      class="base appearance button display_block navItem_default_base navItem_active_base"
       role="tab"
     >
       <span
-        class="navItemTitle"
+        class="tabItem"
       >
         tab 1 title
       </span>
       <span
-        class="navItemIndication"
+        class="navItemIndication_default_base navItemIndication_active_base"
       >
         5
       </span>
     </button>
     <button
-      aria-controls="od-7-1-tab"
+      aria-controls="10-1-tab"
       aria-selected="false"
-      class="navItem"
+      class="base appearance button display_block navItem_default_base"
       role="tab"
       tabindex="-1"
     >
       <span
-        class="navItemTitle"
+        class="tabItem"
       >
         tab 2 title
       </span>
       <span
-        class="navItemIndication"
+        class="navItemIndication_default_base"
       >
         5
       </span>
     </button>
     <button
-      aria-controls="od-7-2-tab"
+      aria-controls="10-2-tab"
       aria-selected="false"
-      class="navItem"
+      class="base appearance button display_block navItem_default_base"
       role="tab"
       tabindex="-1"
     >
       <span
-        class="navItemTitle"
+        class="tabItem"
       >
         tab 3 title
       </span>
       <span
-        class="navItemIndication"
+        class="navItemIndication_default_base"
       >
         5
       </span>
     </button>
   </div>
   <div
-    class="tabPanes"
+    class="base 6_mobile_base 6_mobile_base tabPanes"
   >
     <div
-      class="tabPane"
-      id="od-7-0-tab"
+      class="base tabPane"
+      id="10-0-tab"
       role="tabpanel"
       tabindex="0"
     >
@@ -141,57 +141,57 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
 
 exports[`<Tabs /> should match snapshot (high level) 1`] = `
 <div
-  class="tabs"
+  class="base"
 >
   <div
-    class="tabsList"
+    class="base border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base none_mobile_base none_mobile_base 1_mobile_base none_mobile_base tabsList"
     role="tablist"
   >
     <button
-      aria-controls="od-1-0-tab"
+      aria-controls="1-0-tab"
       aria-selected="true"
-      class="navItem navItemActive"
+      class="base appearance button display_block navItem_default_base navItem_active_base"
       role="tab"
     >
       <span
-        class="navItemTitle"
+        class="tabItem"
       >
         tab 1 title
       </span>
     </button>
     <button
-      aria-controls="od-1-1-tab"
+      aria-controls="1-1-tab"
       aria-selected="false"
-      class="navItem"
+      class="base appearance button display_block navItem_default_base"
       role="tab"
       tabindex="-1"
     >
       <span
-        class="navItemTitle"
+        class="tabItem"
       >
         tab 2 title
       </span>
     </button>
     <button
-      aria-controls="od-1-2-tab"
+      aria-controls="1-2-tab"
       aria-selected="false"
-      class="navItem"
+      class="base appearance button display_block navItem_default_base"
       role="tab"
       tabindex="-1"
     >
       <span
-        class="navItemTitle"
+        class="tabItem"
       >
         tab 3 title
       </span>
     </button>
   </div>
   <div
-    class="tabPanes"
+    class="base 6_mobile_base 6_mobile_base tabPanes"
   >
     <div
-      class="tabPane"
-      id="od-1-0-tab"
+      class="base tabPane"
+      id="1-0-tab"
       role="tabpanel"
       tabindex="0"
     >

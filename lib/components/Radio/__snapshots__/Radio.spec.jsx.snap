@@ -5,59 +5,67 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
   class="radioGroup"
 >
   <div
-    class="root radio"
+    class="base root_base tappable radio"
   >
     <input
-      class="nativeInput"
+      class="tappable nativeInput_default"
       name="radio"
       type="radio"
       value="1"
     />
     <div
-      class="checkable"
+      class="checkable_base tappable"
     >
       <div
-        class="outerCircle"
+        class="checkableItem_base circle_default_base circle_outer_base"
       />
       <div
-        class="innerCircle"
+        class="circle_default_base circle_inner_base"
       />
     </div>
     <div
-      class="focusRect"
+      class="focusRect_base"
     />
     <label
-      class="label"
+      class="tappable label_default_base"
     >
-      radio label 1
+      <span
+        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+      >
+        radio label 1
+      </span>
     </label>
   </div>
   <div
-    class="root radio"
+    class="base root_base tappable radio"
   >
     <input
-      class="nativeInput"
+      class="tappable nativeInput_default"
       name="radio"
       type="radio"
       value="2"
     />
     <div
-      class="checkable"
+      class="checkable_base tappable"
     >
       <div
-        class="outerCircle"
+        class="checkableItem_base circle_default_base circle_outer_base"
       />
       <div
-        class="innerCircle"
+        class="circle_default_base circle_inner_base"
       />
     </div>
     <div
-      class="focusRect"
+      class="focusRect_base"
     />
     <label
-      class="label"
+      class="tappable label_default_base"
     >
-      radio label 2
+      <span
+        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+      >
+        radio label 2
+      </span>
     </label>
   </div>
 </div>
@@ -68,115 +76,131 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
   class="radioGroup"
 >
   <div
-    class="root radio"
+    class="base root_base tappable radio"
   >
     <input
-      class="nativeInput"
+      class="tappable nativeInput_default"
       name="radio"
       type="radio"
       value="1"
     />
     <div
-      class="checkable"
+      class="checkable_base tappable"
     >
       <div
-        class="outerCircle"
+        class="checkableItem_base circle_default_base circle_outer_base"
       />
       <div
-        class="innerCircle"
+        class="circle_default_base circle_inner_base"
       />
     </div>
     <div
-      class="focusRect"
+      class="focusRect_base"
     />
     <label
-      class="label"
+      class="tappable label_default_base"
     >
-      radio label 1
+      <span
+        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+      >
+        radio label 1
+      </span>
     </label>
   </div>
   <div
-    class="root radio"
+    class="base root_base tappable radio"
   >
     <input
-      class="nativeInput"
+      class="tappable nativeInput_default"
       name="radio"
       type="radio"
       value="2"
     />
     <div
-      class="checkable"
+      class="checkable_base tappable"
     >
       <div
-        class="outerCircle"
+        class="checkableItem_base circle_default_base circle_outer_base"
       />
       <div
-        class="innerCircle"
+        class="circle_default_base circle_inner_base"
       />
     </div>
     <div
-      class="focusRect"
+      class="focusRect_base"
     />
     <label
-      class="label"
+      class="tappable label_default_base"
     >
-      radio label 2
+      <span
+        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+      >
+        radio label 2
+      </span>
     </label>
   </div>
   <div
-    class="root radio"
+    class="base root_base tappable radio"
   >
     <input
-      class="nativeInput"
+      class="tappable nativeInput_default"
       name="radio"
       type="radio"
       value="3"
     />
     <div
-      class="checkable"
+      class="checkable_base tappable"
     >
       <div
-        class="outerCircle"
+        class="checkableItem_base circle_default_base circle_outer_base"
       />
       <div
-        class="innerCircle"
+        class="circle_default_base circle_inner_base"
       />
     </div>
     <div
-      class="focusRect"
+      class="focusRect_base"
     />
     <label
-      class="label"
+      class="tappable label_default_base"
     >
-      radio label 3
+      <span
+        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+      >
+        radio label 3
+      </span>
     </label>
   </div>
   <div
-    class="root radio"
+    class="base root_base tappable radio"
   >
     <input
-      class="nativeInput"
+      class="tappable nativeInput_default"
       name="radio"
       type="radio"
       value="4"
     />
     <div
-      class="checkable"
+      class="checkable_base tappable"
     >
       <div
-        class="outerCircle"
+        class="checkableItem_base circle_default_base circle_outer_base"
       />
       <div
-        class="innerCircle"
+        class="circle_default_base circle_inner_base"
       />
     </div>
     <div
-      class="focusRect"
+      class="focusRect_base"
     />
     <label
-      class="label"
+      class="tappable label_default_base"
     >
-      radio label 4
+      <span
+        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+      >
+        radio label 4
+      </span>
     </label>
   </div>
 </div>
@@ -187,31 +211,35 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
   class="radioGroup"
 >
   <div
-    class="root radio"
+    class="base root_base tappable radio"
   >
     <input
-      class="nativeInput"
+      class="tappable nativeInput_default"
       name="radio"
       type="radio"
       value="1"
     />
     <div
-      class="checkable"
+      class="checkable_base tappable"
     >
       <div
-        class="outerCircle"
+        class="checkableItem_base circle_default_base circle_outer_base"
       />
       <div
-        class="innerCircle"
+        class="circle_default_base circle_inner_base"
       />
     </div>
     <div
-      class="focusRect"
+      class="focusRect_base"
     />
     <label
-      class="label"
+      class="tappable label_default_base"
     >
-      radio label 1
+      <span
+        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+      >
+        radio label 1
+      </span>
     </label>
   </div>
 </div>
@@ -222,30 +250,35 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
   class="radioGroup"
 >
   <div
-    class="root radio"
+    class="base root_base tappable radio"
   >
     <input
-      class="nativeInput"
+      checked=""
+      class="tappable nativeInput_default nativeInput_checked"
       name="radio"
       type="radio"
       value=""
     />
     <div
-      class="checkable"
+      class="checkable_base tappable"
     >
       <div
-        class="outerCircle"
+        class="checkableItem_base circle_default_base circle_outer_base circle_selected_base"
       />
       <div
-        class="innerCircle"
+        class="circle_default_base circle_inner_base circle_selected_base circle_selectedInner_base"
       />
     </div>
     <div
-      class="focusRect"
+      class="focusRect_base"
     />
     <label
-      class="label"
-    />
+      class="tappable label_default_base"
+    >
+      <span
+        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+      />
+    </label>
   </div>
 </div>
 `;
@@ -255,32 +288,32 @@ exports[`<RadioButton /> when with component child should match the snapshot 1`]
   class="radioGroup"
 >
   <div
-    class="root radio"
+    class="base root_base tappable radio"
   >
     <input
-      class="nativeInput"
+      class="tappable nativeInput_default"
       name="radio"
       type="radio"
       value="1"
     />
     <div
-      class="checkable"
+      class="checkable_base tappable"
     >
       <div
-        class="outerCircle"
+        class="checkableItem_base circle_default_base circle_outer_base"
       />
       <div
-        class="innerCircle"
+        class="circle_default_base circle_inner_base"
       />
     </div>
     <div
-      class="focusRect"
+      class="focusRect_base"
     />
     <label
-      class="label"
+      class="tappable label_default_base"
     >
       <h1
-        class="root sizeScale8"
+        class="root_base sizes_8_base colours_dark_base fontWeight_bold_base"
       >
         Hello checkbox
       </h1>
@@ -291,7 +324,7 @@ exports[`<RadioButton /> when with component child should match the snapshot 1`]
 
 exports[`<RadioButton /> when with component child should render the component child 1`] = `
 <h1
-  class="root sizeScale8"
+  class="root_base sizes_8_base colours_dark_base fontWeight_bold_base"
 >
   Hello checkbox
 </h1>

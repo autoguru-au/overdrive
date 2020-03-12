@@ -1,5 +1,5 @@
 import { select } from '@storybook/addon-knobs';
-import React from 'react';
+import * as React from 'react';
 
 import { EPositionerAlignment } from '../Positioner';
 import { Tooltip } from '.';
