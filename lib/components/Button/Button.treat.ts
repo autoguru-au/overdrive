@@ -108,12 +108,14 @@ export const variant = {
 export const defaultStates = {
 	primary: style(theme => ({
 		':hover': {
+			color: theme.colours.gamut.white,
 			backgroundColor: theme.colours.gamut.green700,
 			boxShadow: `inset 0 0 0 1px ${theme.colours.gamut.green800}, ${theme.elevation['3']}`,
 		},
 		':active': {
 			transform: 'scale(0.97)',
 			boxShadow: `inset 0 0 0 1px ${theme.colours.gamut.green800}, ${theme.elevation['1']}`,
+			color: theme.colours.gamut.white,
 			backgroundColor: theme.colours.gamut.green800,
 		},
 	})),
