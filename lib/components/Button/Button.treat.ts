@@ -102,6 +102,7 @@ export const variant = {
 	danger: style(theme => ({
 		backgroundColor: theme.colours.intent.danger.background,
 		boxShadow: `inset 0 0 0 1px ${theme.colours.gamut.red700}, ${theme.elevation['2']}`,
+		color: theme.colours.gamut.white,
 	})),
 };
 
@@ -129,6 +130,7 @@ export const defaultStates = {
 			transform: 'scale(0.97)',
 			boxShadow: `inset 0 0 0 1px ${theme.colours.gamut.gray500}, ${theme.elevation['1']}`,
 			backgroundColor: theme.colours.gamut.gray300,
+			color: theme.colours.gamut.gray700,
 		},
 	})),
 	danger: style(theme => ({
