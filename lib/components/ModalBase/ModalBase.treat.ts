@@ -20,7 +20,7 @@ export const portal = styleMap(theme => ({
 			bottom: 0,
 			left: 0,
 			display: 'block',
-			content: '\' \'',
+			content: "' '",
 			transition: `opacity 0.2s ${theme.animation.easing.decelerate} 0s`,
 			pointerEvents: 'none',
 			opacity: 0,

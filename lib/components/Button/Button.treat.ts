@@ -102,18 +102,21 @@ export const variant = {
 	danger: style(theme => ({
 		backgroundColor: theme.colours.intent.danger.background,
 		boxShadow: `inset 0 0 0 1px ${theme.colours.gamut.red700}, ${theme.elevation['2']}`,
+		color: theme.colours.gamut.white,
 	})),
 };
 
 export const defaultStates = {
 	primary: style(theme => ({
 		':hover': {
+			color: theme.colours.gamut.white,
 			backgroundColor: theme.colours.gamut.green700,
 			boxShadow: `inset 0 0 0 1px ${theme.colours.gamut.green800}, ${theme.elevation['3']}`,
 		},
 		':active': {
 			transform: 'scale(0.97)',
 			boxShadow: `inset 0 0 0 1px ${theme.colours.gamut.green800}, ${theme.elevation['1']}`,
+			color: theme.colours.gamut.white,
 			backgroundColor: theme.colours.gamut.green800,
 		},
 	})),
@@ -127,6 +130,7 @@ export const defaultStates = {
 			transform: 'scale(0.97)',
 			boxShadow: `inset 0 0 0 1px ${theme.colours.gamut.gray500}, ${theme.elevation['1']}`,
 			backgroundColor: theme.colours.gamut.gray300,
+			color: theme.colours.gamut.gray700,
 		},
 	})),
 	danger: style(theme => ({
