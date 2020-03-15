@@ -17,9 +17,7 @@ exports[`withModal() should match snapshot 1`] = `
         class="content alignment_base"
         role="dialog"
       >
-        <div
-          class="root"
-        >
+        <div>
           Hello World!
         </div>
       </div>

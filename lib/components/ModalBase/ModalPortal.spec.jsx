@@ -2,12 +2,9 @@ import { fireEvent, render } from '@testing-library/react';
 import * as React from 'react';
 import { useState } from 'react';
 
-import styles from './stories.scss';
 import { withModal } from './withModal';
 
-const NakedModal = withModal(({ children }) => (
-	<div className={styles.root}>{children}</div>
-));
+const NakedModal = withModal(({ children }) => <div>{children}</div>);
 
 function createMockedModal(defaultOpenState = true) {
 	return () => {
