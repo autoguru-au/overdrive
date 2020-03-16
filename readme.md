@@ -46,7 +46,7 @@ yarn add @autoguru/overdrive \
     import { OverdriveProvider, Button } '@autoguru/overdrive';
 
     <OverdriveProvider theme={baseTheme}>
-        <Button variant="primary"'>
+        <Button variant="primary">
             Hello World
         </Button>
     </OverdriveProvider>
