@@ -33,8 +33,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint --edit --extends @autoguru/commitlint-config"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
@@ -64,14 +63,12 @@
   },
   "devDependencies": {
     "@autoguru/babel-preset": "1.0.96",
-    "@autoguru/commitlint-config": "1.0.56",
     "@autoguru/eslint-plugin": "1.0.84",
     "@autoguru/jest-preset": "1.0.96",
     "@autoguru/tsconfig": "1.0.77",
     "@babel/core": "7.8.7",
     "@babel/runtime-corejs3": "7.8.7",
     "@changesets/cli": "^2.6.1",
-    "@commitlint/cli": "8.3.5",
     "@octokit/rest": "17.1.0",
     "@storybook/addon-a11y": "5.3.17",
     "@storybook/addon-actions": "5.3.17",
