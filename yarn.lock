@@ -27,10 +27,10 @@
     babel-plugin-macros "^2.8.0"
     babel-plugin-transform-react-remove-prop-types "^0.4.24"
 
-"@autoguru/commitlint-config@1.0.55":
-  version "1.0.55"
-  resolved "https://registry.yarnpkg.com/@autoguru/commitlint-config/-/commitlint-config-1.0.55.tgz#b5d3c3fdb5c8a0e39467e89b5bd3625cebb6d1b3"
-  integrity sha512-QxqlJ9nkn11+vryR/MEJmxF7jRJ2yiK4pdE5Rp29dDeH80xjcQiLUXP/5Yyf7p49SYv/wVof3Y+2Ie7IDFq27Q==
+"@autoguru/commitlint-config@1.0.56":
+  version "1.0.56"
+  resolved "https://registry.yarnpkg.com/@autoguru/commitlint-config/-/commitlint-config-1.0.56.tgz#dec74dd40b330be062f151c5c9ff3b7443c143a9"
+  integrity sha512-b2uKLUgDpUKkleJqAr8maENl43rbReQlBf1mhbzysDi2j/lmzYw2piYrOwHSqViInG/KwQhnaMLBEvzJxnLPPw==
   dependencies:
     "@commitlint/config-conventional" "^8.2.0"
 
