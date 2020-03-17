@@ -16,7 +16,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - run: echo "::set-env name=node_version::${cat .nvmrc}"
+      - run: echo "::set-env name=node_version::$(cat .nvmrc)"
       - name: Setup Node ${{ env.node_version }}
         uses: actions/setup-node@master
         with:
