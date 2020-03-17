@@ -1,6 +1,6 @@
 import { style, styleMap } from 'treat';
 
-import { makeResponsiveStyle } from '../../utils/responsiveProps';
+import { makeResponsiveStyle } from '../../utils';
 
 export const root = style({
 	display: 'flex',

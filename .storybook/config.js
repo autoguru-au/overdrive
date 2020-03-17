@@ -1,6 +1,3 @@
-import '../lib/reset/font-face.css';
-import '../lib/reset';
-
 import { addDecorator, addParameters, configure } from '@storybook/react';
 import { create } from '@storybook/theming';
 import { withKnobs } from '@storybook/addon-knobs';

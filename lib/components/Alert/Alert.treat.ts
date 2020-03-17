@@ -1,6 +1,6 @@
 import { style, styleMap } from 'treat';
 
-import { mapTokenToProperty } from '../../utils/mapTokenToProperty';
+import { mapTokenToProperty } from '../../utils';
 
 export const root = style(theme => ({
 	position: 'relative',

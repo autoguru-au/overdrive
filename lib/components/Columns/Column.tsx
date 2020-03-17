@@ -4,10 +4,7 @@ import * as React from 'react';
 import { ComponentProps, forwardRef, ReactElement, useContext } from 'react';
 import { useStyles } from 'react-treat';
 
-import {
-	resolveResponsiveStyle,
-	ResponsiveProp,
-} from '../../utils/responsiveProps';
+import { resolveResponsiveStyle, ResponsiveProp } from '../../utils';
 import { Box } from '../Box';
 import * as styleRefs from './Column.treat';
 import { ColumnContext } from './Columns';
