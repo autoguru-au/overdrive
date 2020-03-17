@@ -8,16 +8,28 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    env:
+      TZ: Australia/Brisbane
+      CI: true
     steps:
       - uses: actions/checkout@master
         with:
           fetch-depth: 0
+
+      - run: echo "::set-env name=node_version::${cat .nvmrc}"
+      - name: Setup Node ${{ env.node_version }}
+        uses: actions/setup-node@master
+        with:
+          node-version: ${{ env.node_version }}
+
       - name: Yarn cache
         uses: actions/cache@v1
         with:
           path: node_modules/
-          key: ${{ hashFiles('yarn.lock') }}
-      - run: yarn install
+          key: ${{ hashFiles('yarn.lock') }}-${{ env.node_version }}
+
+      - run: yarn --frozen-lockfile
+
       - name: Create Release or Publish
         uses: changesets/action@master
         with:
