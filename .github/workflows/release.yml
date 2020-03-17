@@ -16,17 +16,22 @@ jobs:
         with:
           fetch-depth: 0
 
-      - run: echo "::set-env name=node_version::$(cat .nvmrc)"
-      - name: Setup Node ${{ env.node_version }}
+      - name: Setup environment
+        id: setups
+        run: |-
+          echo "::set-output name=yarn_cache::$(yarn cache dir)"
+          echo "::set-output name=node_version::$(cat .nvmrc)"
+
+      - name: Setup Node ${{ steps.setups.outputs.node_version }}
         uses: actions/setup-node@master
         with:
-          node-version: ${{ env.node_version }}
+          node-version: ${{ steps.setups.outputs.node_version }}
 
       - name: Yarn cache
         uses: actions/cache@v1
         with:
-          path: node_modules/
-          key: ${{ hashFiles('yarn.lock') }}-${{ env.node_version }}
+          path: ${{ steps.setups.outputs.yarn_cache }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}-node-${{ steps.setups.outputs.node_version }}
 
       - run: yarn --frozen-lockfile
 
