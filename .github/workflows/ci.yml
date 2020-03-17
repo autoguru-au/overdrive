@@ -1,0 +1,76 @@
+name: CI
+
+on: push
+
+jobs:
+  test:
+    name: Lint & Test
+    runs-on: ubuntu-latest
+    env:
+      TZ: Australia/Brisbane
+      CI: true
+    steps:
+      - uses: actions/checkout@master
+
+      - run: echo "::set-env name=node_version::$(cat .nvmrc)"
+      - name: Setup Node ${{ env.node_version }}
+        uses: actions/setup-node@master
+        with:
+          node-version: ${{ env.node_version }}
+
+      - name: Yarn cache
+        uses: actions/cache@v1
+        with:
+          path: node_modules/
+          key: ${{ hashFiles('yarn.lock') }}-${{ env.node_version }}
+
+      - run: yarn --frozen-lockfile
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Test
+        run: yarn test --no-cache --ci --coverage
+
+      - uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV }}
+
+      - name: Chromatic (master)
+        if: github.ref == 'refs/heads/master'
+        run: yarn run chromatic test --auto-accept-changes --exit-zero-on-changes
+        env:
+          CHROMATIC_APP_CODE: ${{ secrets.CHROMATIC_APP_CODE }}
+      - name: Chromatic (prs)
+        if: github.ref != 'refs/heads/master'
+        run: yarn run chromatic test --exit-zero-on-changes
+        env:
+          CHROMATIC_APP_CODE: ${{ secrets.CHROMATIC_APP_CODE }}
+
+  preview:
+    name: Preview
+    runs-on: ubuntu-latest
+    if: github.ref != 'refs/heads/master'
+    env:
+      TZ: Australia/Brisbane
+      CI: true
+    steps:
+      - uses: actions/checkout@master
+
+      - run: echo "::set-env name=node_version::$(cat .nvmrc)"
+      - name: Setup Node ${{ env.node_version }}
+        uses: actions/setup-node@master
+        with:
+          node-version: ${{ env.node_version }}
+
+      - name: Yarn cache
+        uses: actions/cache@v1
+        with:
+          path: node_modules/
+          key: ${{ hashFiles('yarn.lock') }}-${{ env.node_version }}
+
+      - run: yarn --frozen-lockfile
+
+      - name: Build Storybook
+        run: yarn storybook:build
+
