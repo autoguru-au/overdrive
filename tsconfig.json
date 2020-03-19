@@ -16,9 +16,8 @@
 	},
 	"include": [
 		"./lib/themes/treatTheme.d.ts",
-		"./reset.ts",
-		"./themes.ts",
-		"./index.ts"
+		"./lib/**/*.ts",
+		"./lib/**/*.tsx"
 	],
 	"exclude": ["./**/*stories*.tsx"]
 }
