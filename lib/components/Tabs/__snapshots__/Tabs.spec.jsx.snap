@@ -11,7 +11,7 @@ exports[`<Tabs /> should allow id overriding 1`] = `
     <button
       aria-controls="tab-1-title-0"
       aria-selected="true"
-      class="base appearance button display_block navItem_default_base navItem_active_base"
+      class="base appearance cursorPointer button display_block navItem_default_base navItem_active_base"
       role="tab"
     >
       <span
@@ -23,7 +23,7 @@ exports[`<Tabs /> should allow id overriding 1`] = `
     <button
       aria-controls="tab-2-title-1"
       aria-selected="false"
-      class="base appearance button display_block navItem_default_base"
+      class="base appearance cursorPointer button display_block navItem_default_base"
       role="tab"
       tabindex="-1"
     >
@@ -36,7 +36,7 @@ exports[`<Tabs /> should allow id overriding 1`] = `
     <button
       aria-controls="tab-3-title-2"
       aria-selected="false"
-      class="base appearance button display_block navItem_default_base"
+      class="base appearance cursorPointer button display_block navItem_default_base"
       role="tab"
       tabindex="-1"
     >
@@ -73,7 +73,7 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
     <button
       aria-controls="10-0-tab"
       aria-selected="true"
-      class="base appearance button display_block navItem_default_base navItem_active_base"
+      class="base appearance cursorPointer button display_block navItem_default_base navItem_active_base"
       role="tab"
     >
       <span
@@ -90,7 +90,7 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
     <button
       aria-controls="10-1-tab"
       aria-selected="false"
-      class="base appearance button display_block navItem_default_base"
+      class="base appearance cursorPointer button display_block navItem_default_base"
       role="tab"
       tabindex="-1"
     >
@@ -108,7 +108,7 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
     <button
       aria-controls="10-2-tab"
       aria-selected="false"
-      class="base appearance button display_block navItem_default_base"
+      class="base appearance cursorPointer button display_block navItem_default_base"
       role="tab"
       tabindex="-1"
     >
@@ -150,7 +150,7 @@ exports[`<Tabs /> should match snapshot (high level) 1`] = `
     <button
       aria-controls="1-0-tab"
       aria-selected="true"
-      class="base appearance button display_block navItem_default_base navItem_active_base"
+      class="base appearance cursorPointer button display_block navItem_default_base navItem_active_base"
       role="tab"
     >
       <span
@@ -162,7 +162,7 @@ exports[`<Tabs /> should match snapshot (high level) 1`] = `
     <button
       aria-controls="1-1-tab"
       aria-selected="false"
-      class="base appearance button display_block navItem_default_base"
+      class="base appearance cursorPointer button display_block navItem_default_base"
       role="tab"
       tabindex="-1"
     >
@@ -175,7 +175,7 @@ exports[`<Tabs /> should match snapshot (high level) 1`] = `
     <button
       aria-controls="1-2-tab"
       aria-selected="false"
-      class="base appearance button display_block navItem_default_base"
+      class="base appearance cursorPointer button display_block navItem_default_base"
       role="tab"
       tabindex="-1"
     >

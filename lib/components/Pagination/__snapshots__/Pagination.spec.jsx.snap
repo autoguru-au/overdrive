@@ -22,13 +22,13 @@ exports[`<Pagination /> should match snapshot for loading phase 1`] = `
     </i>
   </span>
   <button
-    class="base appearance button bubble_disabled_base activeItem_default_base bubble_default_base"
+    class="base appearance cursorPointer button bubble_disabled_base activeItem_default_base bubble_default_base"
   />
   <button
-    class="base appearance button bubble_disabled_base activeItem_default_base bubble_default_base"
+    class="base appearance cursorPointer button bubble_disabled_base activeItem_default_base bubble_default_base"
   />
   <button
-    class="base appearance button bubble_disabled_base activeItem_default_base bubble_default_base"
+    class="base appearance cursorPointer button bubble_disabled_base activeItem_default_base bubble_default_base"
   />
   <span
     class="activeItem_default_base chevron_default_base chevron_disabled_base"

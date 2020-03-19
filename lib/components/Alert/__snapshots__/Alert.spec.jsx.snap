@@ -23,7 +23,7 @@ exports[`<Alert /> should match the snapshot 1`] = `
   />
   <button
     aria-label="close"
-    class="base appearance button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base themedButton_base minimal_defaults_base minimalStates_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled width_default closeButton"
+    class="base appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base themedButton_base minimal_defaults_base minimalStates_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled width_default closeButton"
     type="button"
   >
     <div

@@ -2,7 +2,7 @@
 
 exports[`<Anchor /> should match snapshot with label, icon and to props 1`] = `
 <a
-  class="root_base base a"
+  class="root_base base cursorPointer a"
   href="https://www.autoguru.com.au"
 >
   <i
@@ -27,7 +27,7 @@ exports[`<Anchor /> should match snapshot with label, icon and to props 1`] = `
 
 exports[`<Anchor /> should match snapshot without label 1`] = `
 <a
-  class="root_base base a"
+  class="root_base base cursorPointer a"
 >
   <span
     class="base root_base sizes_4_base align_left colours_link_base fontWeight_bold_base"
@@ -37,7 +37,7 @@ exports[`<Anchor /> should match snapshot without label 1`] = `
 
 exports[`<Anchor /> when custom component should match snapshot with label, icon custom component 1`] = `
 <button
-  class="base appearance button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base themedButton_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled width_default root_base base"
+  class="base appearance cursorPointer button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base themedButton_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled width_default root_base base"
   type="button"
 >
   <div
