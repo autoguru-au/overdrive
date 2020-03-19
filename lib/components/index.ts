@@ -1,11 +1,3 @@
-/**
- * -----------------------------------------------------------------------------
- * THIS FILE IS GENERATED - Please do not edit.
- * Run to re-generate:
- *     node scripts/generateReExport.js
- * -----------------------------------------------------------------------------
- */
-
 export * from './Actions';
 export * from './Alert';
 export * from './AutoSuggest';
@@ -20,6 +12,7 @@ export * from './Columns';
 export * from './DateInput';
 export * from './Flyout';
 export * from './Icon';
+export * from './Inline';
 export * from './InputBase';
 export * from './LinearProgressIndicator';
 export * from './LoadingBox';
@@ -35,6 +28,7 @@ export * from './ProgressBar';
 export * from './ProgressBarGroup';
 export * from './ProgressSpinner';
 export * from './Radio';
+export * from './Section';
 export * from './SelectInput';
 export * from './SimplePagination';
 export * from './Stack';

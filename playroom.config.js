@@ -6,7 +6,7 @@ module.exports = {
 	outputPath: './.playroom/dist/',
 	frameComponent: './.playroom/frame.tsx',
 	themes: './lib/themes/index.ts',
-	widths: [320, 650, 1001],
+	widths: [320, 768, 1000, 1500],
 	port: 6007,
 	exampleCode: `<Box boxShadow="3" padding={["3", "6"]}>
   <Stack spacing="6">
