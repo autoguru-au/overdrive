@@ -7,7 +7,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
 >
   <button
     aria-label="previous page"
-    class="base appearance button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base themedButton_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base disabled width_default pagination chevron_default_base chevron_disabled_base"
+    class="base appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base themedButton_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base disabled width_default pagination chevron_default_base chevron_disabled_base"
     disabled=""
     type="button"
   >
@@ -31,7 +31,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
   </button>
   <button
     aria-label="next page"
-    class="base appearance button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base themedButton_base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled width_default pagination chevron_default_base"
+    class="base appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base themedButton_base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled width_default pagination chevron_default_base"
     type="button"
   >
     <div
@@ -62,7 +62,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
 >
   <button
     aria-label="previous page"
-    class="base appearance button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base themedButton_base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled width_default pagination chevron_default_base"
+    class="base appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base themedButton_base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled width_default pagination chevron_default_base"
     type="button"
   >
     <div
@@ -85,7 +85,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
   </button>
   <button
     aria-label="next page"
-    class="base appearance button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base themedButton_base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled width_default pagination chevron_default_base"
+    class="base appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base themedButton_base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled width_default pagination chevron_default_base"
     type="button"
   >
     <div
@@ -116,7 +116,7 @@ exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
 >
   <button
     aria-label="previous page"
-    class="base appearance button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base themedButton_base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled width_default pagination chevron_default_base"
+    class="base appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base themedButton_base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled width_default pagination chevron_default_base"
     type="button"
   >
     <div
@@ -139,7 +139,7 @@ exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
   </button>
   <button
     aria-label="next page"
-    class="base appearance button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base themedButton_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base disabled width_default pagination chevron_default_base chevron_disabled_base"
+    class="base appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inline-block border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base themedButton_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base disabled width_default pagination chevron_default_base chevron_disabled_base"
     disabled=""
     type="button"
   >

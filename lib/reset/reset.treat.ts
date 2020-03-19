@@ -12,15 +12,17 @@ const appearance = style({
 	appearance: 'none',
 });
 
+const cursorPointer = style({ cursor: 'pointer' });
+
 const block = style({ display: 'block' });
 const list = style({ listStyle: 'none' });
 
 const button = [
 	appearance,
+	cursorPointer,
 	style({
 		outline: 'none',
 		background: 'none',
-		cursor: 'pointer',
 		userSelect: 'none',
 	}),
 ];
@@ -54,10 +56,12 @@ const input = [
 	}),
 ];
 
-const a = style({
-	textDecoration: 'none',
-	color: 'inherit',
-});
+const a = [
+	cursorPointer,
+	style({
+		textDecoration: 'none',
+	}),
+];
 
 export const element = {
 	article: block,
