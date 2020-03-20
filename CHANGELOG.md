@@ -1,5 +1,28 @@
 # @autoguru/overdrive
 
+## 2.0.1
+
+### Patch Changes
+
+-   c66b727: Anchors are now cursor pointer by default
+
+    Seeing as we use `<TextLink />` or `<Box is="a" href="" />` in a few places,
+    it only makes sense to use `a { cursor: pointer }`.
+
+-   57b8cf3: ## `<Actions />`
+
+    Actions now filters out undefined or null children
+
+    Also removed the className prop, this will slowly start happening across the
+    stack.
+
+    ```diff
+    -<Actions className="test">
+    +<Actions>
+        ...
+    </Actions>
+    ```
+
 ## 2.0.0
 
 ### Major Changes
