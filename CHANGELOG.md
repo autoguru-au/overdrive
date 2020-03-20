@@ -9,11 +9,11 @@
     Seeing as we use `<TextLink />` or `<Box is="a" href="" />` in a few places,
     it only makes sense to use `a { cursor: pointer }`.
 
--   57b8cf3: ## `<Actions />`
+-   57b8cf3: Actions now filters out undefined or null children
 
-    Actions now filters out undefined or null children
+    `<Actions />`
 
-    Also removed the className prop, this will slowly start happening across the
+    Removed the className prop, this will slowly start happening across the
     stack.
 
     ```diff
