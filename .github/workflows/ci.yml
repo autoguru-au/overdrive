@@ -57,7 +57,6 @@ jobs:
   preview:
     name: Preview
     runs-on: ubuntu-latest
-    if: github.ref != 'refs/heads/master'
     env:
       TZ: Australia/Brisbane
       CI: true
