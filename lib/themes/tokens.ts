@@ -78,6 +78,10 @@ interface ForegroundColours {
 
 export interface Tokens {
 	breakpoints: Record<Breakpoints, number>;
+	contentWidth: {
+		medium: number;
+		large: number;
+	};
 	space: Record<SpaceScale, string>;
 	elevation: {
 		none: string;
