@@ -4,6 +4,16 @@
 
 Adds the Inline and Section layout components
 
+## Breakpoints
+
+Breakpoints have been amended to follow (mobile first):
+
+- `tablet` is iPad Mini width less 25%, so any device greater than 768px
+- `desktop` we are considering as iPad Pro width less 25%, so any device larger than 1024px
+- `largeDesktop` is taken as a 1920x1080 less 25%, so any device larger than 1440px
+
+all at landscape.
+
 ## `<Inline />`
 
 When you're wanting to `inline` something. Like a badge list; you can use use the `<Inline />` component to solve this.

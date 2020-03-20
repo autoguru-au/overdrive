@@ -27,10 +27,10 @@ addParameters({
 			return 0;
 		},
 	},
-	// TODO: Once we merge, uncomment this
-	/*chromatic: {
-		viewports: [320, 1001],
-	},*/
+	chromatic: {
+		// Mobile and large table and up
+		viewports: [320, 1024],
+	},
 });
 
 configure(require.context('../lib', true, /.?stories.tsx$/), module);

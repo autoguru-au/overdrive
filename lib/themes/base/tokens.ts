@@ -83,13 +83,13 @@ const makeColourGamut = () =>
 
 export const tokens: Tokens = {
 	breakpoints: {
-		mobile: 0, // TODO: Check. Can this just be 0?
-		tablet: 768,
-		desktop: 1000,
-		largeDesktop: 1200,
+		mobile: 0,
+		tablet: 768, // IPad mini width (1024 - 25%)
+		desktop: 1024, // IPad Pro width (1366 - 25%)
+		largeDesktop: 1440, // 1080p width (1920 - 25%)
 	},
 	contentWidth: {
-		large: 1300,
+		large: 1344,
 		medium: 940,
 	},
 	space: {
