@@ -11,6 +11,7 @@ node_modules/
 
 # Build things
 dist/
+/site-dist/
 *.tgz
 coverage/
 *.xml

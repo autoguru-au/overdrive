@@ -86,3 +86,28 @@ jobs:
       - name: Build Storybook
         run: yarn storybook:build
 
+      - name: Build Playroom
+        run: yarn playroom build
+
+      - name: Stage ready for deploy
+        run: |-
+          mkdir -p site-dist/playroom;
+          mv .playroom/dist/* site-dist/playroom;
+          mv storybook-static/* site-dist/;
+
+      - name: Deploy Site (master)
+        if: github.ref == 'refs/heads/master'
+        run: npx surge -p site-dist/ -d overdrive.autoguru.io
+        env:
+          SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+
+      - name: Deploy Site (pr)
+        if: github.ref != 'refs/heads/master'
+        run: >-
+          npx surge -p site-dist/ -d overdrive--${GITHUB_SHA}.surge.sh &&
+          node ./scripts/githubPostPreviewLink.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
