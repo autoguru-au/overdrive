@@ -73,7 +73,7 @@ const InternalToastProvider = ({ children }) => {
 	const styles = useStyles(styleRefs);
 	const [{ toasts }, dispatch] = useReducer(reducer, { toasts: [] });
 
-	const addToast: AddToastFn = useCallback(config => {
+	const addToast: AddToastFn = useCallback((config) => {
 		dispatch({
 			type: ActionTypes.ADD,
 			config: { ...config, id: getNewId() },
@@ -89,7 +89,7 @@ const InternalToastProvider = ({ children }) => {
 			{children}
 			{createPortal(
 				<div className={styles.root}>
-					{toasts.map(item => (
+					{toasts.map((item) => (
 						<Toast key={item.id} {...item} remove={removeToast} />
 					))}
 				</div>,
@@ -157,9 +157,11 @@ export const useToast = (): ToastFn => {
 	}, [addToast]);
 };
 
-const Toast: FunctionComponent<MessageConfig & {
-	remove: (id: number) => void;
-}> = ({ remove, duration, message, id, intent }) => {
+const Toast: FunctionComponent<
+	MessageConfig & {
+		remove: (id: number) => void;
+	}
+> = ({ remove, duration, message, id, intent }) => {
 	const styles = useStyles(styleRefs);
 
 	const dismiss = useCallback(() => {

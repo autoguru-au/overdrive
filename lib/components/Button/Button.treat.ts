@@ -57,7 +57,7 @@ export const spinner = style({
 const smallHeight = '36px';
 
 export const size = {
-	small: styleMap(theme => ({
+	small: styleMap((theme) => ({
 		default: {
 			fontSize: theme.typography.size['3'].fontSize,
 			lineHeight: theme.typography.size['3'].lineHeight,
@@ -72,7 +72,7 @@ export const size = {
 			width: smallHeight,
 		},
 	})),
-	medium: styleMap(theme => ({
+	medium: styleMap((theme) => ({
 		default: {
 			fontSize: theme.typography.size['4'].fontSize,
 			lineHeight: theme.typography.size['4'].lineHeight,
@@ -90,16 +90,16 @@ export const size = {
 };
 
 export const variant = {
-	primary: style(theme => ({
+	primary: style((theme) => ({
 		backgroundColor: theme.colours.intent.success.background,
 		boxShadow: `inset 0 0 0 1px ${theme.colours.gamut.green700}, ${theme.elevation['2']}`,
 	})),
-	secondary: style(theme => ({
+	secondary: style((theme) => ({
 		color: theme.colours.intent.neutral.background,
 		backgroundColor: theme.colours.gamut.white,
 		boxShadow: `inset 0 0 0 1px ${theme.colours.gamut.gray300}, ${theme.elevation['2']}`,
 	})),
-	danger: style(theme => ({
+	danger: style((theme) => ({
 		backgroundColor: theme.colours.intent.danger.background,
 		boxShadow: `inset 0 0 0 1px ${theme.colours.gamut.red700}, ${theme.elevation['2']}`,
 		color: theme.colours.gamut.white,
@@ -107,7 +107,7 @@ export const variant = {
 };
 
 export const defaultStates = {
-	primary: style(theme => ({
+	primary: style((theme) => ({
 		':hover': {
 			color: theme.colours.gamut.white,
 			backgroundColor: theme.colours.gamut.green700,
@@ -120,7 +120,7 @@ export const defaultStates = {
 			backgroundColor: theme.colours.gamut.green800,
 		},
 	})),
-	secondary: style(theme => ({
+	secondary: style((theme) => ({
 		':hover': {
 			color: theme.colours.gamut.gray700,
 			backgroundColor: theme.colours.gamut.gray200,
@@ -133,7 +133,7 @@ export const defaultStates = {
 			color: theme.colours.gamut.gray700,
 		},
 	})),
-	danger: style(theme => ({
+	danger: style((theme) => ({
 		':hover': {
 			backgroundColor: theme.colours.gamut.red700,
 			boxShadow: `inset 0 0 0 1px ${theme.colours.gamut.red800}, ${theme.elevation['3']}`,

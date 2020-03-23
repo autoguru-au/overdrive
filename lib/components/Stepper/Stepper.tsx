@@ -83,7 +83,7 @@ export const Stepper: NamedExoticComponent<Props> = memo(
 		min = Number.NEGATIVE_INFINITY,
 		max = Number.POSITIVE_INFINITY,
 		value,
-		format = value => value.toString(),
+		format = (value) => value.toString(),
 		onChange,
 	}) => {
 		const styles = useStyles(styleRefs);

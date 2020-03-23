@@ -1,6 +1,6 @@
 import { style, styleMap } from 'treat';
 
-export const listItem = style(theme => ({
+export const listItem = style((theme) => ({
 	selectors: {
 		'&:not(:last-of-type)': {
 			marginBottom: theme.space['2'],
@@ -8,7 +8,7 @@ export const listItem = style(theme => ({
 	},
 }));
 
-export const root = styleMap(theme => ({
+export const root = styleMap((theme) => ({
 	default: {
 		paddingLeft: theme.space['6'],
 		listStyle: 'outside lower-roman',

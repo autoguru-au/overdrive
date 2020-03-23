@@ -1,12 +1,12 @@
 import { style, styleMap, styleTree } from 'treat';
 
-const activeColour = style(theme => ({ color: theme.colours.gamut.blue600 }));
+const activeColour = style((theme) => ({ color: theme.colours.gamut.blue600 }));
 
-const activeBorderColour = style(theme => ({
+const activeBorderColour = style((theme) => ({
 	borderColor: theme.colours.gamut.blue600,
 }));
 
-export const disabled = styleMap(theme => ({
+export const disabled = styleMap((theme) => ({
 	colour: {
 		color: theme.colours.gamut.gray300,
 	},

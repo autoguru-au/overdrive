@@ -3,21 +3,21 @@ import { style, styleMap } from 'treat';
 import { makeResponsiveStyle, mapTokenToProperty } from '../../utils';
 
 export const padding = {
-	top: makeResponsiveStyle(theme => theme.space, 'paddingTop'),
-	right: makeResponsiveStyle(theme => theme.space, 'paddingRight'),
-	bottom: makeResponsiveStyle(theme => theme.space, 'paddingBottom'),
-	left: makeResponsiveStyle(theme => theme.space, 'paddingLeft'),
+	top: makeResponsiveStyle((theme) => theme.space, 'paddingTop'),
+	right: makeResponsiveStyle((theme) => theme.space, 'paddingRight'),
+	bottom: makeResponsiveStyle((theme) => theme.space, 'paddingBottom'),
+	left: makeResponsiveStyle((theme) => theme.space, 'paddingLeft'),
 };
 
 export const margin = {
-	top: makeResponsiveStyle(theme => theme.space, 'marginTop'),
-	right: makeResponsiveStyle(theme => theme.space, 'marginRight'),
-	bottom: makeResponsiveStyle(theme => theme.space, 'marginBottom'),
-	left: makeResponsiveStyle(theme => theme.space, 'marginLeft'),
+	top: makeResponsiveStyle((theme) => theme.space, 'marginTop'),
+	right: makeResponsiveStyle((theme) => theme.space, 'marginRight'),
+	bottom: makeResponsiveStyle((theme) => theme.space, 'marginBottom'),
+	left: makeResponsiveStyle((theme) => theme.space, 'marginLeft'),
 };
 
 export const boxShadow = makeResponsiveStyle(
-	theme => theme.elevation,
+	(theme) => theme.elevation,
 	'boxShadow',
 );
 
@@ -71,7 +71,7 @@ export const borderRadius = makeResponsiveStyle(
 	'borderRadius',
 );
 
-export const backgroundColours = styleMap(theme =>
+export const backgroundColours = styleMap((theme) =>
 	mapTokenToProperty(
 		{
 			...theme.colours.gamut,

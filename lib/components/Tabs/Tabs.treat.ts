@@ -29,7 +29,7 @@ export const tabPanes = style({
 });
 
 export const navItem = {
-	default: style(theme => ({
+	default: style((theme) => ({
 		fontSize: theme.typography.size['3'].fontSize,
 		fontWeight: 700,
 		lineHeight: size,
@@ -57,7 +57,7 @@ export const navItem = {
 			color: theme.colours.gamut.green900,
 		},
 	})),
-	active: style(theme => ({
+	active: style((theme) => ({
 		color: theme.colours.gamut.green900,
 		borderBottomColor: theme.colours.gamut.green900,
 	})),
@@ -68,7 +68,7 @@ export const tabItem = style({
 	verticalAlign: 'middle',
 });
 
-export const navItemIndication = styleMap(theme => ({
+export const navItemIndication = styleMap((theme) => ({
 	default: {
 		fontSize: theme.typography.size['2'].fontSize,
 		lineHeight: theme.typography.size['2'].lineHeight,

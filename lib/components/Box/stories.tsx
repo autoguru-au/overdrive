@@ -6,7 +6,7 @@ export default {
 	title: 'Foundation|Box',
 	component: Box,
 	decorators: [
-		story => (
+		(story) => (
 			<div style={{ maxWidth: 500, margin: '0 auto' }}>{story()}</div>
 		),
 	],

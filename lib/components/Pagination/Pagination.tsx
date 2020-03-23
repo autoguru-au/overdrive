@@ -41,7 +41,7 @@ export const PaginationComponent: FunctionComponent<Props> = ({
 	]);
 
 	const handleClick = useCallback(
-		num => () => {
+		(num) => () => {
 			onChange({ pageNumber: withinBoundaries(num, numPages) });
 		},
 		[numPages],
@@ -91,7 +91,7 @@ export const PaginationComponent: FunctionComponent<Props> = ({
 				allowedActive,
 				numPagesDisplayed,
 				numPages - numPagesDisplayed,
-			).map(num => (
+			).map((num) => (
 				<Bubble
 					key={num}
 					gap={num < 0}

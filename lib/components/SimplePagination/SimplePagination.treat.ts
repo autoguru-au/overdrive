@@ -10,7 +10,7 @@ export const pagination = style({
 	boxSizing: 'border-box',
 });
 
-export const chevron = styleMap(theme => ({
+export const chevron = styleMap((theme) => ({
 	default: {
 		position: 'relative',
 		marginRight: theme.space['6'],
@@ -25,7 +25,7 @@ export const chevron = styleMap(theme => ({
 	},
 }));
 
-export const icon = styleMap(theme => ({
+export const icon = styleMap((theme) => ({
 	default: {
 		position: 'absolute',
 		display: 'grid',

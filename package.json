@@ -101,7 +101,7 @@
     "magic-string": "0.25.7",
     "playroom": "0.15.1",
     "plop": "2.6.0",
-    "prettier": "1.19.1",
+    "prettier": "2",
     "react": "16.13.0",
     "react-dom": "16.13.0",
     "react-test-renderer": "16.13.0",

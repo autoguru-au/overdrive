@@ -6,7 +6,7 @@ export default {
 	title: 'Components|Loading/Box',
 	component: LoadingBox,
 	decorators: [
-		story => (
+		(story) => (
 			<div style={{ width: '50%', height: '100%', margin: '0 auto' }}>
 				{story()}
 			</div>

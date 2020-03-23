@@ -30,7 +30,7 @@ export default {
 	title: 'Components|Inputs/AutoSuggest',
 	component: AutoSuggest,
 	decorators: [
-		story => (
+		(story) => (
 			<div style={{ maxWidth: 500, margin: '0 auto' }}>{story()}</div>
 		),
 	],
@@ -47,14 +47,14 @@ const Impl = () => {
 	useEffect(() => {
 		setSuggestions(
 			value.text === ''
-				? mockSuggestions.map(item => ({ text: item, payload: item }))
+				? mockSuggestions.map((item) => ({ text: item, payload: item }))
 				: mockSuggestions
-						.filter(item =>
+						.filter((item) =>
 							item
 								.toLowerCase()
 								.startsWith(value.text.toLowerCase()),
 						)
-						.map(item => ({ text: item, payload: item })),
+						.map((item) => ({ text: item, payload: item })),
 		);
 	}, [value.text]);
 
@@ -73,7 +73,7 @@ const Impl = () => {
 			]}
 			hintText="Pick a car, any car"
 			prefixIcon={CarIcon}
-			onChange={thing => {
+			onChange={(thing) => {
 				setValue(thing);
 				action('onChange')(thing);
 			}}

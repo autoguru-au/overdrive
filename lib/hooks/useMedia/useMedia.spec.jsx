@@ -30,11 +30,11 @@ const makeTokens = () => ({
 	},
 });
 
-const createMatchMedia = includes => {
+const createMatchMedia = (includes) => {
 	const addListener = jest.fn();
 	const removeListener = jest.fn();
 
-	const mock = jest.fn(query => ({
+	const mock = jest.fn((query) => ({
 		matches: Boolean(query.includes(includes)),
 		addListener,
 		removeListener,

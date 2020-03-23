@@ -7,7 +7,7 @@ export default {
 	title: 'Foundation|Layout/Columns',
 	component: Columns,
 	decorators: [
-		story => (
+		(story) => (
 			<div style={{ width: '100%', margin: '0 auto' }}>{story()}</div>
 		),
 	],

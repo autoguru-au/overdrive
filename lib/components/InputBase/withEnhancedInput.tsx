@@ -194,7 +194,7 @@ export const withEnhancedInput = <
 					isValid,
 				},
 				eventHandlers: {
-					onChange: wrapEvent(event => {
+					onChange: wrapEvent((event) => {
 						if (disabled) {
 							event.preventDefault();
 
@@ -284,7 +284,7 @@ export const withEnhancedInput = <
 		},
 	);
 
-const stateNodeGetter = styles => (isHovered, isActive) => {
+const stateNodeGetter = (styles) => (isHovered, isActive) => {
 	if (isHovered) return styles.hover;
 	if (isActive) return styles.active;
 	return styles.default;

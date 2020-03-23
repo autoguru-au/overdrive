@@ -8,7 +8,9 @@ export default {
 	title: 'Components|Actions',
 	component: Actions,
 	decorators: [
-		story => <div style={{ maxWidth: 300, width: '100%' }}>{story()}</div>,
+		(story) => (
+			<div style={{ maxWidth: 300, width: '100%' }}>{story()}</div>
+		),
 	],
 };
 

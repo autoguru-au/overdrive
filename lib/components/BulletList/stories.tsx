@@ -7,7 +7,7 @@ export default {
 	title: 'Foundation|List/BulletList',
 	component: BulletList,
 	decorators: [
-		story => (
+		(story) => (
 			<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
 		),
 	],

@@ -25,7 +25,7 @@ export default {
 	title: 'Foundation|Typography/Heading',
 	component: Heading,
 	decorators: [
-		story => (
+		(story) => (
 			<div style={{ maxWidth: '350px', width: '100%' }}>{story()}</div>
 		),
 	],

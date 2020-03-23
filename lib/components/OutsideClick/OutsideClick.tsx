@@ -28,11 +28,12 @@ export const useOutsideClick = (
 		)
 			return void 0;
 
-		return bindEvent(document, 'mouseup', event => {
+		return bindEvent(document, 'mouseup', (event) => {
 			const shouldClose = refs
-				.map(item => item.current)
+				.map((item) => item.current)
 				.every(
-					element => !element?.contains(event.target as HTMLElement),
+					(element) =>
+						!element?.contains(event.target as HTMLElement),
 				);
 
 			if (shouldClose) {

@@ -18,12 +18,12 @@ export const standard = () => {
 	const StepperWrapper = () => {
 		const [value, setValue] = useState(1);
 
-		const onChangeHandler = changedValue => {
+		const onChangeHandler = (changedValue) => {
 			action('onChange')(changedValue);
 			setValue(changedValue);
 		};
 
-		const formatFn = input => `$${input}`;
+		const formatFn = (input) => `$${input}`;
 
 		return (
 			<Stepper

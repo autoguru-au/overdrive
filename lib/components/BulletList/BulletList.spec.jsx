@@ -32,9 +32,9 @@ describe('<BulletList />', () => {
 	});
 
 	it('should pass the correct nest value', () => {
-		const validate = expectation => (
+		const validate = (expectation) => (
 			<BulletListContext.Consumer>
-				{value => {
+				{(value) => {
 					expect(value).toBe(expectation);
 				}}
 			</BulletListContext.Consumer>

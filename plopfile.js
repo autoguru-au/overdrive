@@ -1,4 +1,4 @@
-module.exports = plop => {
+module.exports = (plop) => {
 	plop.setGenerator('component', {
 		description: 'Generate a new component',
 		prompts: [

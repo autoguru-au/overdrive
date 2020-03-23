@@ -15,7 +15,7 @@ export default {
 	title: 'Components/Badge',
 	component: Badge,
 	decorators: [
-		story => (
+		(story) => (
 			<div
 				style={{
 					display: 'grid',
@@ -38,7 +38,7 @@ export default {
 
 export const Standard = () => (
 	<>
-		{colours.map(colour => (
+		{colours.map((colour) => (
 			<Badge key={colour} label={colour} colour={colour} />
 		))}
 	</>
@@ -46,7 +46,7 @@ export const Standard = () => (
 
 export const Inverted = () => (
 	<>
-		{colours.map(colour => (
+		{colours.map((colour) => (
 			<Badge
 				key={colour}
 				label={colour}

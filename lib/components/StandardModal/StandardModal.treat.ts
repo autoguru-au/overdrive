@@ -1,6 +1,6 @@
 import { style } from 'treat';
 
-export const modal = style(theme => ({
+export const modal = style((theme) => ({
 	display: 'flex',
 	overflow: 'hidden',
 	flexDirection: 'column',
@@ -11,7 +11,7 @@ export const modal = style(theme => ({
 	backgroundColor: 'white',
 }));
 
-export const modalDesktopView = style(theme =>
+export const modalDesktopView = style((theme) =>
 	theme.utils.responsiveStyle({
 		desktop: {
 			maxWidth: `calc(100% - ${theme.space['9']} * 2)`,
@@ -24,7 +24,7 @@ export const modalDesktopView = style(theme =>
 	}),
 );
 
-export const modalSizeStandard = style(theme =>
+export const modalSizeStandard = style((theme) =>
 	theme.utils.responsiveStyle({
 		desktop: {
 			maxWidth: '800px',
@@ -32,7 +32,7 @@ export const modalSizeStandard = style(theme =>
 	}),
 );
 
-export const header = style(theme => ({
+export const header = style((theme) => ({
 	position: 'relative',
 	display: 'flex',
 	alignItems: 'center',
@@ -41,11 +41,11 @@ export const header = style(theme => ({
 	padding: `${theme.space['6']} ${theme.space['5']}`,
 }));
 
-export const headerWithBorder = style(theme => ({
+export const headerWithBorder = style((theme) => ({
 	borderBottom: `1px solid ${theme.colours.gamut.gray200}`,
 }));
 
-export const headerCloseButton = style(theme => ({
+export const headerCloseButton = style((theme) => ({
 	position: 'absolute',
 	top: 0,
 	right: 0,

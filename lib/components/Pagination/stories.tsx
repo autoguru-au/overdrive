@@ -35,7 +35,7 @@ export const standard = () => {
 	const Example = () => {
 		const [activePage, setActivePage] = useState(1);
 
-		const onChangeHandler = e => {
+		const onChangeHandler = (e) => {
 			setActivePage(e.pageNumber);
 		};
 

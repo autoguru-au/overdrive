@@ -9,7 +9,7 @@ import { ToastProvider, useToast } from './Toast';
 export default {
 	title: 'Utility|Toaster',
 	decorators: [
-		Story => (
+		(Story) => (
 			<ToastProvider>
 				<Story />
 			</ToastProvider>

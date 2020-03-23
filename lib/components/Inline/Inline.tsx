@@ -25,7 +25,7 @@ export const Inline: FunctionComponent<Props> = ({ children, space = '2' }) => {
 	return (
 		<Box className={negativeMarginTop}>
 			<Box className={clsx(styles.root, negativeMarginLeft)}>
-				{Children.map(children, child => (
+				{Children.map(children, (child) => (
 					<Box
 						display="inline-block"
 						paddingLeft={space}

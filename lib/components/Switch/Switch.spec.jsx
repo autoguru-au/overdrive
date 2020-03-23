@@ -114,7 +114,7 @@ describe('<Switch />', () => {
 		let setToggledValue;
 		const { container } = render(
 			<ToggleButtonWrapper
-				setter={setter => {
+				setter={(setter) => {
 					setToggledValue = setter;
 				}}
 			/>,

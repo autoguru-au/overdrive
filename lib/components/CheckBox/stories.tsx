@@ -21,7 +21,7 @@ export default {
 	title: 'Components|Inputs/CheckBox',
 	component: CheckBox,
 	decorators: [
-		story => (
+		(story) => (
 			<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
 		),
 	],

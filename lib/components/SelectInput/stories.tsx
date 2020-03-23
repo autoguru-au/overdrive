@@ -7,11 +7,11 @@ import { SelectInput } from '.';
 const isTouched = (touched: boolean) => boolean('isTouched', touched);
 const isValid = (valid: boolean) => boolean('isValid', valid);
 
-const selectOptions = optionsCSV =>
+const selectOptions = (optionsCSV) =>
 	text('Options', optionsCSV)
 		.split(',')
-		.map(item => item.trim())
-		.map(item => (
+		.map((item) => item.trim())
+		.map((item) => (
 			<option key={item} value={item}>
 				{item}
 			</option>

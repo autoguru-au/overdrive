@@ -7,6 +7,6 @@ export const root = style({
 	alignItems: 'center',
 });
 
-export const icon = style(theme => ({
+export const icon = style((theme) => ({
 	marginRight: theme.space['4'],
 }));

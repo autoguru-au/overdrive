@@ -4,7 +4,7 @@ export const checkbox = style({
 	display: 'flex',
 });
 
-export const icon = style(theme => ({
+export const icon = style((theme) => ({
 	position: 'absolute',
 	zIndex: 1,
 	top: theme.space['3'],
@@ -14,7 +14,7 @@ export const icon = style(theme => ({
 	color: theme.colours.gamut.white,
 }));
 
-export const base = styleMap(theme => ({
+export const base = styleMap((theme) => ({
 	default: {
 		zIndex: 0,
 		position: 'absolute',

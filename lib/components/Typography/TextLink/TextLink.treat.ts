@@ -1,6 +1,6 @@
 import { style } from 'treat';
 
-export const root = style(theme => ({
+export const root = style((theme) => ({
 	transitionDelay: '0s',
 	transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
 	transitionDuration: '0.2s',
@@ -11,7 +11,7 @@ export const root = style(theme => ({
 	},
 }));
 
-export const muted = style(theme => ({
+export const muted = style((theme) => ({
 	':hover': {
 		color: 'white',
 		boxShadow: `inset 0 -1.6em 0 0 ${theme.colours.gamut.gray500}`,

@@ -42,7 +42,7 @@ export const asParagraph = () => (
 
 export const allSpans = () => (
 	<>
-		{sizeScale.map(size => (
+		{sizeScale.map((size) => (
 			<div key={size} style={{ marginBottom: '20px' }}>
 				<Text is="span" size={size}>
 					Size {size}: Help people better care for their cars
@@ -54,7 +54,7 @@ export const allSpans = () => (
 
 export const allParagraphs = () => (
 	<>
-		{sizeScale.map(size => (
+		{sizeScale.map((size) => (
 			<div key={size} style={{ marginBottom: '20px' }}>
 				<Text is="p" size={size}>
 					Size {size}: Help people better care for their cars

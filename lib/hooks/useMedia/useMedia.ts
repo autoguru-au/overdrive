@@ -17,13 +17,13 @@ export const useMedia = (
 	const getQueries = useCallback(
 		() =>
 			queries.map(
-				media => `(min-width: ${runtimeTokens.breakpoints[media]}px)`,
+				(media) => `(min-width: ${runtimeTokens.breakpoints[media]}px)`,
 			),
 		[runtimeTokens],
 	);
 
 	const matchesInit = useMemo(
-		() => getQueries().map(query => window.matchMedia(query).matches),
+		() => getQueries().map((query) => window.matchMedia(query).matches),
 		[getQueries],
 	);
 
@@ -32,12 +32,12 @@ export const useMedia = (
 	useLayoutEffect(() => {
 		let isMounted = true;
 
-		const matchers = getQueries().map(query => window.matchMedia(query));
+		const matchers = getQueries().map((query) => window.matchMedia(query));
 
 		const removeHandlersFn = matchers.map((matcher, idx) => {
 			const handler = (e: MediaQueryListEvent) => {
 				if (!isMounted) return;
-				setMatches(prevState => {
+				setMatches((prevState) => {
 					const newState = prevState.slice();
 					newState[idx] = e.matches;
 					return newState;
@@ -50,7 +50,7 @@ export const useMedia = (
 
 		return () => {
 			isMounted = false;
-			removeHandlersFn.forEach(item => item());
+			removeHandlersFn.forEach((item) => item());
 		};
 	}, [...queries, runtimeTokens]);
 

@@ -28,7 +28,7 @@ export const useInputControlledState = <T, H>(
 	const [value, setValue] = useState<T>(incomingValue);
 
 	if (!handlers.has(setValue)) {
-		handlers.set(setValue, e => setValue(e.target.value));
+		handlers.set(setValue, (e) => setValue(e.target.value));
 	}
 
 	return [value, handlers.get(setValue)];

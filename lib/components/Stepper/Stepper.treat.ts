@@ -10,7 +10,7 @@ export const flexCenter = style({
 
 export const disabled = style({ cursor: 'not-allowed' });
 
-export const root = style(theme => ({
+export const root = style((theme) => ({
 	userSelect: 'none',
 	color: theme.colours.gamut.gray900,
 	outline: 'none',
@@ -22,7 +22,7 @@ export const root = style(theme => ({
 	},
 }));
 
-export const handle = styleMap(theme => ({
+export const handle = styleMap((theme) => ({
 	default: {
 		width: theme.space[6],
 		height: theme.space[6],
@@ -47,7 +47,7 @@ export const handle = styleMap(theme => ({
 	},
 }));
 
-export const label = style(theme => ({
+export const label = style((theme) => ({
 	flex: '1 0 auto',
 	minWidth: theme.space['8'],
 	padding: `0 ${theme.space['2']}`,

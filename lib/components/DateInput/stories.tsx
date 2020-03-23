@@ -9,10 +9,7 @@ import { DateInput } from '.';
 const formatDate = (date: Date = new Date()) => {
 	const year = date.getFullYear();
 	const month = (date.getMonth() + 1).toString().padStart(2, '0');
-	const day = date
-		.getDate()
-		.toString()
-		.padStart(2, '0');
+	const day = date.getDate().toString().padStart(2, '0');
 
 	return `${year}-${month}-${day}`;
 };
@@ -21,7 +18,7 @@ const todayStr: string = formatDate(
 	isChromatic() ? new Date(2019, 5, 1) : new Date(),
 );
 
-const sharedKnobs = placeholder => ({
+const sharedKnobs = (placeholder) => ({
 	placeholder: text('Placeholder', placeholder),
 	disabled: boolean('disabled', false),
 	onChange: action('onChange'),

@@ -12,7 +12,7 @@ export const customBullet = style({
 	flexShrink: 0,
 });
 
-export const bullet = style(theme => ({
+export const bullet = style((theme) => ({
 	position: 'relative',
 	flexShrink: 0,
 	lineHeight: theme.typography.size['2'].lineHeight,
@@ -20,7 +20,7 @@ export const bullet = style(theme => ({
 	height: bulletSize,
 }));
 
-export const bulletText = style(theme => ({
+export const bulletText = style((theme) => ({
 	fontSize: theme.typography.size['2'].fontSize,
 	position: 'absolute',
 	top: '50%',
@@ -29,11 +29,11 @@ export const bulletText = style(theme => ({
 }));
 
 export const variant = {
-	primary: style(theme => ({
+	primary: style((theme) => ({
 		color: theme.colours.gamut.green900,
 		backgroundColor: theme.colours.gamut.green200,
 	})),
-	secondary: style(theme => ({
+	secondary: style((theme) => ({
 		color: theme.colours.gamut.gray900,
 		backgroundColor: theme.colours.gamut.gray200,
 	})),

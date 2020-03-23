@@ -107,7 +107,7 @@ export const AutoSuggest = <PayloadType extends unknown>({
 	const props = {
 		suggestions,
 		value,
-		onChange: value => {
+		onChange: (value) => {
 			if (
 				typeof value.payload !== 'undefined' &&
 				value.payload !== null
@@ -153,9 +153,9 @@ const AutoSuggestFullscreenInput = <PayloadType extends unknown>({
 	closeModal,
 
 	...props
-}: AutoSuggestFullscreenInputProps<PayloadType>): ReturnType<FunctionComponent<
-	AutoSuggestInputProps<PayloadType>
->> => {
+}: AutoSuggestFullscreenInputProps<PayloadType>): ReturnType<
+	FunctionComponent<AutoSuggestInputProps<PayloadType>>
+> => {
 	const styles = useStyles(styleRefs);
 	const [showPortal, setShowPortal] = useState<boolean>(false);
 
@@ -204,9 +204,9 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 	onKeyDown,
 	onClick,
 	...textInputProps
-}: AutoSuggestInputProps<PayloadType>): ReturnType<FunctionComponent<
-	AutoSuggestInputProps<PayloadType>
->> => {
+}: AutoSuggestInputProps<PayloadType>): ReturnType<
+	FunctionComponent<AutoSuggestInputProps<PayloadType>>
+> => {
 	const styles = useStyles(styleRefs);
 	const triggerRef = useRef<HTMLDivElement>(null);
 	const highlightRef = useRef<HTMLLIElement>(null);
@@ -342,7 +342,7 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 						: void 0
 				}
 				value={state.previewText ?? value?.text}
-				onChange={event => {
+				onChange={(event) => {
 					dispatch({ type: ActionTypes.INPUT_CHANGE });
 					if (typeof onChange === 'function')
 						onChange({ text: event.target.value, payload: void 0 });
@@ -366,7 +366,7 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 
 					dispatch({ type: ActionTypes.INPUT_BLUR });
 				}, onBlur)}
-				onKeyDown={wrapEvent(event => {
+				onKeyDown={wrapEvent((event) => {
 					// eslint-disable-next-line default-case
 					switch (event.key) {
 						case 'ArrowUp':
@@ -494,7 +494,7 @@ const SuggestionsList = <PayloadType extends unknown>({
 							[styles.suggestionListItem.skipped]:
 								suggestion.skip,
 						})}
-						onMouseDown={event =>
+						onMouseDown={(event) =>
 							/* This is so a blur doesnt fire from the input when you click */
 							event.preventDefault()
 						}
@@ -575,7 +575,7 @@ const SuggestionListFlyout = usingPositioner(({ triggerRect, children }) => {
 		<div
 			className={styles.flyout}
 			style={{ width: triggerRect?.width }}
-			onMouseDown={event => event.preventDefault()}>
+			onMouseDown={(event) => event.preventDefault()}>
 			{children}
 		</div>
 	);

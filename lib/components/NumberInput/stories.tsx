@@ -10,7 +10,7 @@ import * as React from 'react';
 
 import { NumberInput } from '.';
 
-const sharedKnobs = placeholder => ({
+const sharedKnobs = (placeholder) => ({
 	placeholder: text('Placeholder', placeholder),
 	disabled: boolean('disabled', false),
 	onChange: action('onChange'),

@@ -1,6 +1,6 @@
 import { style, styleMap } from 'treat';
 
-export const root = style(theme => ({
+export const root = style((theme) => ({
 	display: 'flex',
 	alignContent: 'center',
 	alignItems: 'center',
@@ -11,7 +11,7 @@ export const root = style(theme => ({
 	color: theme.colours.gamut.gray900,
 }));
 
-export const variant = styleMap(theme => ({
+export const variant = styleMap((theme) => ({
 	default: {
 		flexShrink: 0,
 		marginRight: '10px',

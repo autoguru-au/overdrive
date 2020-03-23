@@ -27,7 +27,7 @@ describe('<Stepper />', () => {
 					max={100}
 					value={25}
 					step={5}
-					format={value => `${value}%`}
+					format={(value) => `${value}%`}
 				/>,
 			).container.firstChild,
 		).toMatchSnapshot();
@@ -47,7 +47,7 @@ describe('<Stepper />', () => {
 				max={100}
 				value={99}
 				step={0.5}
-				format={value => `$${value}`}
+				format={(value) => `$${value}`}
 			/>,
 		);
 
@@ -61,14 +61,14 @@ describe('<Stepper />', () => {
 				max={40}
 				value={45}
 				step={1}
-				format={value => `${value}%`}
+				format={(value) => `${value}%`}
 			/>,
 		);
 		expect(container).toHaveTextContent('45%');
 	});
 
 	it('should fire change with the correct changed value after next and previous button click', () => {
-		const spyedCallback = jest.fn(value => `${value}%`);
+		const spyedCallback = jest.fn((value) => `${value}%`);
 
 		const { container, getByLabelText } = render(
 			<Stepper
@@ -96,7 +96,7 @@ describe('<Stepper />', () => {
 	});
 
 	it('should update its value when and a value prop comes in', () => {
-		const spyedCallback = jest.fn(value => `$${value}`);
+		const spyedCallback = jest.fn((value) => `$${value}`);
 
 		const StepperWrapper = ({ getValueSetter }) => {
 			const [value, setValue] = useState(16);
@@ -117,7 +117,7 @@ describe('<Stepper />', () => {
 		let valueSetter;
 		const { container, getByLabelText } = render(
 			<StepperWrapper
-				getValueSetter={setter => {
+				getValueSetter={(setter) => {
 					valueSetter = setter;
 				}}
 			/>,

@@ -14,7 +14,7 @@ export const radio = style({
 	display: 'flex',
 });
 
-export const circle = styleMap(theme => ({
+export const circle = styleMap((theme) => ({
 	default: {
 		position: 'absolute',
 		transition: `border-color 0.2s ${theme.animation.easing.decelerate} 0s`,

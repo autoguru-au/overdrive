@@ -8,8 +8,8 @@ export const root = style({
 });
 
 export const space = {
-	spaceX: makeResponsiveStyle(theme => theme.space, 'paddingLeft'),
-	spaceY: makeResponsiveStyle(theme => theme.space, 'paddingTop'),
+	spaceX: makeResponsiveStyle((theme) => theme.space, 'paddingLeft'),
+	spaceY: makeResponsiveStyle((theme) => theme.space, 'paddingTop'),
 };
 
 export const wrapping = styleMap({

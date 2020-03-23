@@ -3,15 +3,15 @@ import * as React from 'react';
 
 import { EStarRatingSize, StarRating } from '.';
 
-const getFullStarsNum = el => {
+const getFullStarsNum = (el) => {
 	return el.querySelectorAll('.fullStar').length;
 };
 
-const getHalfStarsNum = el => {
+const getHalfStarsNum = (el) => {
 	return el.querySelectorAll('.halfStar').length;
 };
 
-const getEmptyStarsNum = el => {
+const getEmptyStarsNum = (el) => {
 	return el.querySelectorAll('.emptyStar').length;
 };
 

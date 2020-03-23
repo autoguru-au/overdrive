@@ -276,7 +276,7 @@ const getRectForAlignmentFactory: RectForAlignmentFactoryFn = (
 	triggerRect,
 	triggerOffset,
 	containerDimensions,
-) => alignment =>
+) => (alignment) =>
 	getRectForAlignment(
 		alignment,
 		triggerRect,

@@ -11,7 +11,7 @@ export const content = style({
 });
 
 export const width = makeResponsiveStyle(
-	_ => ({
+	(_) => ({
 		'1/2': getSizeStyle(1 / 2),
 		'1/3': getSizeStyle(1 / 3),
 		'2/3': getSizeStyle(2 / 3),

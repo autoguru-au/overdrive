@@ -3,7 +3,7 @@ import { Theme } from 'treat/theme';
 
 import { mapTokenToProperty } from '../../../utils';
 
-export const root = style(theme => ({
+export const root = style((theme) => ({
 	fontWeight: theme.typography.fontWeight.normal,
 	margin: 0,
 	padding: 0,
@@ -16,7 +16,7 @@ export const root = style(theme => ({
 	},
 }));
 
-export const sizes = styleMap(theme =>
+export const sizes = styleMap((theme) =>
 	Object.entries(theme.typography.size).reduce(
 		(result, [name, size]) => ({
 			...result,
@@ -29,7 +29,7 @@ export const sizes = styleMap(theme =>
 	),
 );
 
-export const colours = styleMap(theme =>
+export const colours = styleMap((theme) =>
 	mapTokenToProperty(theme.typography.colour, 'color'),
 );
 
@@ -45,6 +45,6 @@ export const align = styleMap({
 	},
 });
 
-export const fontWeight = styleMap(theme =>
+export const fontWeight = styleMap((theme) =>
 	mapTokenToProperty(theme.typography.fontWeight, 'fontWeight'),
 );

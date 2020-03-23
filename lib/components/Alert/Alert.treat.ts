@@ -2,7 +2,7 @@ import { style, styleMap } from 'treat';
 
 import { mapTokenToProperty } from '../../utils';
 
-export const root = style(theme => ({
+export const root = style((theme) => ({
 	position: 'relative',
 	display: 'grid',
 	overflow: 'hidden',
@@ -30,7 +30,7 @@ export const closeButton = style({
 	minWidth: 'auto',
 });
 
-export const closeButtonIcon = style(theme => ({
+export const closeButtonIcon = style((theme) => ({
 	color: theme.colours.gamut.gray400,
 }));
 
@@ -38,13 +38,13 @@ export const icon = style(({ space }) => ({
 	margin: `${space['2']} 0 ${space['2']} ${space['2']}`,
 }));
 
-export const content = style(theme => ({
+export const content = style((theme) => ({
 	margin: `calc(${theme.space['2']} - 1px) 0`,
 	color: theme.colours.gamut.gray900,
 }));
 
-export const intent = styleMap(theme =>
-	mapTokenToProperty(theme.colours.intent, value => ({
+export const intent = styleMap((theme) =>
+	mapTokenToProperty(theme.colours.intent, (value) => ({
 		color: value.background,
 		':before': {
 			backgroundColor: value.background,

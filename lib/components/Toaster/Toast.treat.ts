@@ -1,6 +1,6 @@
 import { style } from 'treat';
 
-export const root = style(theme => ({
+export const root = style((theme) => ({
 	position: 'fixed',
 	zIndex: 20,
 	top: theme.space['3'],
@@ -13,7 +13,7 @@ export const root = style(theme => ({
 	justifyItems: 'center',
 }));
 
-export const alert = style(theme => ({
+export const alert = style((theme) => ({
 	pointerEvents: 'initial',
 	marginBottom: theme.space['2'],
 	':last-of-type': {

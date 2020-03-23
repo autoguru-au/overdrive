@@ -7,7 +7,7 @@ import { TextContainer } from './TextContainer';
 export default {
 	title: 'Components|TextContainer',
 	component: TextContainer,
-	decorators: [story => <div style={{ maxWidth: 512 }}>{story()}</div>],
+	decorators: [(story) => <div style={{ maxWidth: 512 }}>{story()}</div>],
 };
 
 export const standard = () => (

@@ -1,6 +1,6 @@
 import { style, styleMap } from 'treat';
 
-export const root = style(theme => {
+export const root = style((theme) => {
 	const padding = theme.space['3'];
 
 	return {
@@ -21,7 +21,7 @@ export const tappable = style({
 	'-webkit-tap-highlight-color': 'rgba(0, 0, 0, 0)',
 });
 
-export const label = styleMap(theme => ({
+export const label = styleMap((theme) => ({
 	default: {
 		fontSize: theme.typography.size['4'].fontSize,
 		lineHeight: theme.typography.size['4'].lineHeight,
@@ -56,7 +56,7 @@ export const nativeInput = styleMap({
 	},
 });
 
-export const focusRect = style(theme => ({
+export const focusRect = style((theme) => ({
 	position: 'absolute',
 	zIndex: 0,
 	top: 0,
@@ -78,7 +78,7 @@ export const focusRect = style(theme => ({
 	},
 }));
 
-export const checkable = style(theme => ({
+export const checkable = style((theme) => ({
 	position: 'absolute',
 	zIndex: 1,
 	top: `calc(50% - (${theme.space['4']} + (${theme.space[3]} * 2)) * 0.5)`,
@@ -87,7 +87,7 @@ export const checkable = style(theme => ({
 	height: `calc(${theme.space['4']} + (${theme.space[3]} * 2))`,
 }));
 
-export const checkableItem = style(theme => ({
+export const checkableItem = style((theme) => ({
 	selectors: {
 		[`${nativeInput.default}:focus:checked ~${checkable} &`]: {
 			boxShadow: `0 0 0 2px ${theme.colours.gamut.green900}`,

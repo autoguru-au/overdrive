@@ -1,6 +1,6 @@
 import { style, styleMap } from 'treat';
 
-export const root = styleMap(theme => ({
+export const root = styleMap((theme) => ({
 	default: {
 		display: 'grid',
 		gridTemplateColumns: 'min-content 1fr',

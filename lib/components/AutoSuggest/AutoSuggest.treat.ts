@@ -1,6 +1,6 @@
 import { style, styleMap } from 'treat';
 
-export const fullScreenRoot = style(theme => ({
+export const fullScreenRoot = style((theme) => ({
 	position: 'fixed',
 	zIndex: 10,
 	top: 0,
@@ -58,18 +58,18 @@ export const suggestionList = {
 	}),
 };
 
-export const flyout = style(theme => ({
+export const flyout = style((theme) => ({
 	border: `1px solid ${theme.colours.gamut.gray200}`,
 	borderRadius: theme.space['1'],
 	backgroundColor: theme.colours.gamut.white,
 	boxShadow: theme.elevation['2'],
 }));
 
-export const spacer = style(theme => ({
+export const spacer = style((theme) => ({
 	height: theme.space['1'],
 }));
 
-export const suggestion = style(theme => ({
+export const suggestion = style((theme) => ({
 	display: 'block',
 	padding: `${theme.space['3']} calc(${theme.space['3']} + 1px)`,
 	width: '100%',
@@ -88,7 +88,7 @@ export const suggestionListItem = styleMap(() => ({
 	},
 }));
 
-export const suggestionHighlight = style(theme => ({
+export const suggestionHighlight = style((theme) => ({
 	color: theme.colours.gamut.blue500,
 	backgroundColor: theme.colours.gamut.gray100,
 }));

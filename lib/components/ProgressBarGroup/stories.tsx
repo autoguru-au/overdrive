@@ -31,7 +31,7 @@ export const Standard = () => {
 		<ProgressBarGroup
 			values={things}
 			prefixLabels={['5 star', '4 star', '3 star', '2 star', '1 star']}
-			suffixLabels={things.map(item => item.toString())}
+			suffixLabels={things.map((item) => item.toString())}
 		/>
 	);
 };

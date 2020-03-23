@@ -18,7 +18,7 @@ export default {
 	title: 'Components|Inputs/Radio',
 	component: Radio,
 	decorators: [
-		story => (
+		(story) => (
 			<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
 		),
 	],
@@ -28,7 +28,7 @@ export const standard = () => {
 	const Example = () => {
 		const [value, setValue] = useState('holden');
 
-		const onChangeHandler = val => {
+		const onChangeHandler = (val) => {
 			action('onChange')(val);
 			setValue(val);
 		};

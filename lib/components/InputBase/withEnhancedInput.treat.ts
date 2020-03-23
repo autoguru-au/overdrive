@@ -19,7 +19,7 @@ export const input = {
 		display: 'block',
 		height: '100%',
 	}),
-	itself: styleMap(theme => ({
+	itself: styleMap((theme) => ({
 		root: {
 			position: 'relative',
 			zIndex: 1,
@@ -48,7 +48,7 @@ export const input = {
 };
 
 export const types = {
-	textarea: style(theme => {
+	textarea: style((theme) => {
 		const textAreaHeight = `calc((${theme.space['8']} * 2.5))`;
 		const topSpacing = `calc(((${theme.space['8']} - ${theme.typography.size['4'].fontSize}) / 2) - 3px)`;
 

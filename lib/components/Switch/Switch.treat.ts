@@ -4,7 +4,7 @@ const handleSize = '24px';
 const handleOffset = '2px';
 const borderSize = '1px';
 
-export const root = style(theme => ({
+export const root = style((theme) => ({
 	fontSize: theme.typography.size['5'].fontSize,
 	lineHeight: theme.typography.size['5'].fontSize,
 	position: 'relative',
@@ -17,11 +17,11 @@ export const root = style(theme => ({
 	backgroundColor: theme.colours.gamut.gray100,
 }));
 
-export const handleRoot = style(theme => ({
+export const handleRoot = style((theme) => ({
 	borderColor: theme.colours.gamut.gray200,
 }));
 
-export const handle = styleMap(theme => ({
+export const handle = styleMap((theme) => ({
 	default: {
 		position: 'absolute',
 		top: `calc(${handleOffset} - ${borderSize})`,
@@ -43,12 +43,12 @@ export const handle = styleMap(theme => ({
 	},
 }));
 
-export const toggled = style(theme => ({
+export const toggled = style((theme) => ({
 	borderColor: theme.colours.gamut.green700,
 	backgroundColor: theme.colours.gamut.green600,
 }));
 
-export const disabled = styleMap(theme => ({
+export const disabled = styleMap((theme) => ({
 	default: {
 		selectors: {
 			'&[aria-disabled=true]': {

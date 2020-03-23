@@ -7,7 +7,7 @@ import { Tooltip } from '.';
 export default {
 	title: 'Components|Tooltip',
 	decorators: [
-		Story => (
+		(Story) => (
 			<div style={{ marginLeft: 100, marginTop: 100 }}>
 				<Story />
 			</div>

@@ -19,7 +19,7 @@ export default {
 	title: 'Foundation|Typography/TextLink',
 	component: TextLink,
 	decorators: [
-		story => (
+		(story) => (
 			<div
 				style={{
 					width: '100%',

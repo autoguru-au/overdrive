@@ -1,14 +1,14 @@
 import { style, styleMap } from 'treat';
 import { Theme } from 'treat/theme';
 
-export const root = style(theme => ({
+export const root = style((theme) => ({
 	position: 'relative',
 	width: '100%',
 	padding: 0,
 	transition: `fill 0.2s ${theme.animation.easing.decelerate} 0s`,
 }));
 
-const borderDefaults = style(theme => ({
+const borderDefaults = style((theme) => ({
 	borderWidth: '1px',
 	borderStyle: 'solid',
 	display: 'inline-flex',
@@ -17,7 +17,7 @@ const borderDefaults = style(theme => ({
 }));
 
 export const borders = {
-	root: styleMap(theme => ({
+	root: styleMap((theme) => ({
 		default: {
 			position: 'absolute',
 			zIndex: 2,
@@ -37,7 +37,7 @@ export const borders = {
 	})),
 	leading: [
 		borderDefaults,
-		style(theme => ({
+		style((theme) => ({
 			width: theme.space['2'],
 			borderRight: 'none',
 			borderRadius: `${theme.space['1']} 0 0 ${theme.space['1']}`,
@@ -45,7 +45,7 @@ export const borders = {
 	],
 	middle: [
 		borderDefaults,
-		style(theme => ({
+		style((theme) => ({
 			transition: `width 0.15s ${theme.animation.easing.decelerate}, border-color 0.2s ${theme.animation.easing.decelerate} 0s`,
 			borderTopWidth: 0,
 			borderRightWidth: 0,
@@ -54,7 +54,7 @@ export const borders = {
 	],
 	trailing: [
 		borderDefaults,
-		style(theme => ({
+		style((theme) => ({
 			flexGrow: 1,
 			borderLeft: 'none',
 			borderRadius: `0 ${theme.space['1']} ${theme.space['1']} 0`,
@@ -63,7 +63,7 @@ export const borders = {
 };
 
 export const placeholder = {
-	default: style(theme => ({
+	default: style((theme) => ({
 		fontSize: theme.typography.size['4'].fontSize,
 		lineHeight: 1,
 		position: 'absolute',
@@ -77,7 +77,7 @@ export const placeholder = {
 		whiteSpace: 'nowrap',
 		pointerEvents: 'none',
 	})),
-	empty: style(theme => ({ color: theme.colours.gamut.gray400 })),
+	empty: style((theme) => ({ color: theme.colours.gamut.gray400 })),
 };
 
 const active_scaling_factor = 0.7777;
@@ -99,7 +99,7 @@ const calcPlaceholderTranslate = (
 	}) / 2)`;
 };
 
-export const placeholderPlacement = styleMap(theme => ({
+export const placeholderPlacement = styleMap((theme) => ({
 	default: {
 		transform: `translate(${calcPlaceholderTranslate(
 			false,

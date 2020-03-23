@@ -12,7 +12,7 @@ export const root = style({
 	boxSizing: 'border-box',
 });
 
-export const bubble = styleMap(theme => ({
+export const bubble = styleMap((theme) => ({
 	default: {
 		fontWeight: theme.typography.fontWeight.bold,
 		color: theme.colours.gamut.gray500,
@@ -29,7 +29,7 @@ export const bubble = styleMap(theme => ({
 }));
 
 export const activeItem = {
-	default: style(theme => ({
+	default: style((theme) => ({
 		fontSize: theme.typography.size['3'].fontSize,
 		lineHeight: `calc(${paginationBubbleSize} - 3px)`,
 		display: 'flex',
@@ -58,14 +58,14 @@ export const activeItem = {
 			backgroundColor: theme.colours.gamut.gray200,
 		},
 	})),
-	selected: style(theme => ({
+	selected: style((theme) => ({
 		transition: 'none',
 		color: 'white',
 		backgroundColor: theme.colours.gamut.green900,
 	})),
 };
 
-export const chevron = styleMap(theme => ({
+export const chevron = styleMap((theme) => ({
 	default: {
 		color: theme.colours.gamut.gray500,
 		backgroundColor: 'transparent',

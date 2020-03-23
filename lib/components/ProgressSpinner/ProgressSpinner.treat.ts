@@ -22,7 +22,7 @@ export const circular = style({
 	},
 });
 
-export const path = style(theme => ({
+export const path = style((theme) => ({
 	strokeDasharray: '1, 200',
 	strokeDashoffset: 0,
 	strokeLinecap: 'round',
@@ -48,7 +48,7 @@ export const path = style(theme => ({
 	},
 }));
 
-export const colours = styleMap(theme => ({
+export const colours = styleMap((theme) => ({
 	light: {
 		stroke: 'white',
 	},
@@ -67,7 +67,7 @@ export const colours = styleMap(theme => ({
 }));
 
 export const size = {
-	small: styleMap(theme => ({
+	small: styleMap((theme) => ({
 		circular: {
 			width: theme.space['3'],
 			height: theme.space['3'],
@@ -77,7 +77,7 @@ export const size = {
 			strokeWidth: '4px',
 		},
 	})),
-	medium: styleMap(theme => ({
+	medium: styleMap((theme) => ({
 		circular: {
 			width: theme.space['4'],
 			height: theme.space['4'],
@@ -87,7 +87,7 @@ export const size = {
 			strokeWidth: '5px',
 		},
 	})),
-	large: styleMap(theme => ({
+	large: styleMap((theme) => ({
 		circular: {
 			width: theme.space['6'],
 			height: theme.space['6'],

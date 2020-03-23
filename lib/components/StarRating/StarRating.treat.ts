@@ -8,11 +8,11 @@ export const starList = style({
 	justifyContent: 'flex-start',
 	boxSizing: 'border-box',
 });
-export const label = style(theme => ({
+export const label = style((theme) => ({
 	marginLeft: theme.space['2'],
 }));
 
-export const star = styleMap(theme => ({
+export const star = styleMap((theme) => ({
 	default: {
 		position: 'relative',
 		color: theme.colours.gamut.yellow500,

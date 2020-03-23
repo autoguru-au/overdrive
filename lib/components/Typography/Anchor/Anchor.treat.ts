@@ -1,6 +1,6 @@
 import { style } from 'treat';
 
-export const root = style(theme => ({
+export const root = style((theme) => ({
 	fontSize: theme.typography.size['5'].fontSize,
 	lineHeight: theme.typography.size['5'].lineHeight,
 	display: 'flex',
@@ -14,7 +14,7 @@ export const root = style(theme => ({
 	cursor: 'pointer',
 }));
 
-export const icon = style(theme => ({
+export const icon = style((theme) => ({
 	display: 'grid',
 	flexShrink: 0,
 	color: theme.colours.foreground.link,

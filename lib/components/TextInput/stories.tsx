@@ -10,7 +10,7 @@ import * as React from 'react';
 
 import { TextInput } from '.';
 
-const sharedKnobs = placeholder => ({
+const sharedKnobs = (placeholder) => ({
 	placeholder: text('Placeholder', placeholder),
 	hintText: text('Hint Text', 'Cannot be Bob The Builder.'),
 	disabled: boolean('disabled', false),

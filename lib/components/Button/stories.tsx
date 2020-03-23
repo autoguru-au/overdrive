@@ -10,7 +10,7 @@ export default {
 	title: 'Components|Buttons',
 	component: Button,
 	decorators: [
-		story => (
+		(story) => (
 			<div
 				style={{
 					display: 'grid',

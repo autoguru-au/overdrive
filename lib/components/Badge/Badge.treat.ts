@@ -1,6 +1,6 @@
 import { style, styleMap } from 'treat';
 
-export const label = style(theme => ({
+export const label = style((theme) => ({
 	fontSize: theme.typography.size['2'].fontSize,
 	lineHeight: theme.typography.size['2'].fontSize,
 	display: 'flex',
@@ -12,7 +12,7 @@ export const label = style(theme => ({
 
 // TODO: Derive the inverted colours from a token
 export const colours = {
-	neutral: styleMap(theme => ({
+	neutral: styleMap((theme) => ({
 		default: {
 			backgroundColor: theme.colours.intent.neutral.background,
 			color: theme.typography.colour.white,
@@ -22,7 +22,7 @@ export const colours = {
 			color: theme.colours.gamut.gray800,
 		},
 	})),
-	green: styleMap(theme => ({
+	green: styleMap((theme) => ({
 		default: {
 			backgroundColor: theme.colours.intent.success.background,
 			color: theme.typography.colour.white,
@@ -32,7 +32,7 @@ export const colours = {
 			color: theme.colours.gamut.green900,
 		},
 	})),
-	blue: styleMap(theme => ({
+	blue: styleMap((theme) => ({
 		default: {
 			backgroundColor: theme.colours.intent.information.background,
 			color: theme.typography.colour.white,
@@ -42,7 +42,7 @@ export const colours = {
 			color: theme.colours.gamut.blue900,
 		},
 	})),
-	yellow: styleMap(theme => ({
+	yellow: styleMap((theme) => ({
 		default: {
 			backgroundColor: theme.colours.intent.warning.background,
 			color: theme.typography.colour.white,
@@ -52,7 +52,7 @@ export const colours = {
 			color: theme.colours.gamut.yellow900,
 		},
 	})),
-	red: styleMap(theme => ({
+	red: styleMap((theme) => ({
 		default: {
 			backgroundColor: theme.colours.intent.danger.background,
 			color: theme.typography.colour.white,

@@ -37,7 +37,7 @@ export const withModalTriggeredWithAButton = () => {
 	const Example = () => {
 		const [isOpen, setIsOpen] = useState(false);
 
-		const onRequestClose = e => {
+		const onRequestClose = (e) => {
 			action('onRequestClose')(e);
 			setIsOpen(false);
 		};

@@ -6,7 +6,7 @@ export default {
 	title: 'Components|Progress/Spinner',
 	component: ProgressSpinner,
 	decorators: [
-		story => (
+		(story) => (
 			<div
 				style={{
 					width: '100%',

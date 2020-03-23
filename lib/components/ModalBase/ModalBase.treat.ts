@@ -1,6 +1,6 @@
 import { style, styleMap } from 'treat';
 
-export const portal = styleMap(theme => ({
+export const portal = styleMap((theme) => ({
 	default: {
 		position: 'fixed',
 		zIndex: 10,
@@ -55,7 +55,7 @@ export const content = style({
 	height: 'auto',
 });
 
-export const alignment = style(theme =>
+export const alignment = style((theme) =>
 	theme.utils.responsiveStyle({
 		desktop: {
 			alignItems: 'center',

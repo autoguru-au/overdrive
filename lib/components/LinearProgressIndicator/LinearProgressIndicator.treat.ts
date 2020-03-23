@@ -1,6 +1,6 @@
 import { style } from 'treat';
 
-export const root = style(theme => ({
+export const root = style((theme) => ({
 	position: 'relative',
 	overflow: 'hidden',
 	width: '100%',
