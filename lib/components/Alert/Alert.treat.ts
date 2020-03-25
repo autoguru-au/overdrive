@@ -8,8 +8,6 @@ export const root = style((theme) => ({
 	overflow: 'hidden',
 	alignItems: 'flex-start',
 	justifyContent: 'center',
-	minWidth: '280px',
-	maxWidth: '640px',
 	border: `1px solid ${theme.colours.gamut.gray300}`,
 	gridTemplateColumns: 'auto 1fr auto',
 	gridGap: theme.space['2'],
@@ -51,3 +49,8 @@ export const intent = styleMap((theme) =>
 		},
 	})),
 );
+
+export const contained = style(() => ({
+	minWidth: '280px',
+	maxWidth: '640px',
+}));
