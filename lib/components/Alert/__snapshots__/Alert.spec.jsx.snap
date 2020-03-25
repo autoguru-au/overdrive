@@ -2,7 +2,7 @@
 
 exports[`<Alert /> should match the snapshot 1`] = `
 <div
-  class="base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base 4_mobile_base 1_mobile_base backgroundColours_white_base root_base intent_success_base"
+  class="base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base 4_mobile_base 1_mobile_base backgroundColours_white_base root_base intent_success_base contained_base"
   role="alert"
 >
   <i

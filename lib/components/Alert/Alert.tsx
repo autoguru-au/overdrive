@@ -49,11 +49,18 @@ export const Alert: FunctionComponent<Props> = ({
 
 	return (
 		<Box
-			className={clsx(styles.root, styles.intent[intent], className)}
+			className={clsx(
+				styles.root,
+				styles.intent[intent],
+				{
+					[styles.contained]: !inline,
+				},
+				className,
+			)}
 			role="alert"
 			backgroundColour="white"
 			borderRadius="1"
-			boxShadow={inline ? '2' : '4'}
+			boxShadow={inline ? 'none' : '4'}
 			padding="2">
 			<Icon
 				icon={IconMapForIntent[intent]}
