@@ -66,6 +66,28 @@ export const TabsWithoutPanes = () => (
 	</>
 );
 
+export const WithStretch = () => (
+	<Tabs>
+		<TabList stretch>
+			<Tab>Tab 1</Tab>
+			<Tab>Tab 2</Tab>
+		</TabList>
+
+		<TabPanes>
+			<TabPane>Content A</TabPane>
+			<TabPane>
+				<Stack>
+					<TestChild label="5" />
+					<TestChild label="4" />
+					<TestChild label="3" />
+					<TestChild label="2" />
+					<TestChild label="1" />
+				</Stack>
+			</TabPane>
+		</TabPanes>
+	</Tabs>
+);
+
 const TestChild = ({ label }) => {
 	const [thing, sething] = useState(isChromatic() ? 0.5 : Math.random() * 5);
 

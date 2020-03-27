@@ -3,10 +3,13 @@ import { style, styleMap } from 'treat';
 const lineBottomHeight = '1px';
 const size = '20px';
 
-export const tabsList = style({
-	display: 'flex',
-	flexWrap: 'nowrap',
-});
+export const tabsList = {
+	root: style({
+		display: 'flex',
+		flexWrap: 'nowrap',
+	}),
+	stretch: style({ justifyContent: 'space-between' }),
+};
 
 export const tabPane = style({
 	display: 'block',
