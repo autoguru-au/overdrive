@@ -10,8 +10,9 @@ import {
 import { useStyles } from 'react-treat';
 import { Theme } from 'treat/theme';
 
-import { Column, Columns } from '../Columns';
+import { Box } from '../Box';
 import { Icon } from '../Icon';
+import { Inline } from '../Inline';
 import { Text } from '../Typography';
 import * as styleRefs from './StarRating.treat';
 
@@ -42,7 +43,7 @@ const labelSizeMap: Map<
 ]);
 
 interface Props {
-	className?: string;
+	className?: string; // TODO: Remove this in the future
 	rating: number;
 	size?: EStarRatingSize;
 	label?: string;
@@ -54,12 +55,10 @@ export const StarRating: NamedExoticComponent<Props> = memo(
 		rating,
 		label = rating,
 		size = EStarRatingSize.Medium,
-	}) => {
-		const styles = useStyles(styleRefs);
-
-		return (
-			<Columns className={clsx([styles.starList, className])} space="2">
-				<Column className={styles.starList}>
+	}) => (
+		<Box className={className}>
+			<Inline space="2" alignY="center">
+				<Inline space="none" alignY="center">
 					{new Array(totalStars).fill(0).map((_, index) => (
 						<Star
 							key={index}
@@ -68,19 +67,13 @@ export const StarRating: NamedExoticComponent<Props> = memo(
 							size={size}
 						/>
 					))}
-				</Column>
+				</Inline>
 				{label === null ? null : (
-					<Column>
-						<Text
-							size={labelSizeMap.get(size)}
-							className={styles.label}>
-							{label}
-						</Text>
-					</Column>
+					<Text size={labelSizeMap.get(size)}>{label}</Text>
 				)}
-			</Columns>
-		);
-	},
+			</Inline>
+		</Box>
+	),
 );
 
 const getStarIconType = (index: number, rating: number): EStarType => {
