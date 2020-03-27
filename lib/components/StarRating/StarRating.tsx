@@ -57,7 +57,7 @@ export const StarRating: NamedExoticComponent<Props> = memo(
 		size = EStarRatingSize.Medium,
 	}) => (
 		<Box className={className}>
-			<Inline space="2" alignY="center">
+			<Inline space="4" alignY="center">
 				<Inline space="none" alignY="center">
 					{new Array(totalStars).fill(0).map((_, index) => (
 						<Star
