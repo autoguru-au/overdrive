@@ -1,16 +1,4 @@
-import { style, styleMap } from 'treat';
-
-export const starList = style({
-	display: 'flex',
-	alignContent: 'center',
-	alignItems: 'center',
-	flexDirection: 'row',
-	justifyContent: 'flex-start',
-	boxSizing: 'border-box',
-});
-export const label = style((theme) => ({
-	marginLeft: theme.space['2'],
-}));
+import { styleMap } from 'treat';
 
 export const star = styleMap((theme) => ({
 	default: {
