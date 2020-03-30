@@ -8,7 +8,9 @@ export const tabsList = {
 		display: 'flex',
 		flexWrap: 'nowrap',
 	}),
-	stretch: style({ justifyContent: 'space-between' }),
+	stretch: style({
+		justifyContent: 'space-between',
+	}),
 };
 
 export const tabPane = style({
@@ -58,6 +60,12 @@ export const navItem = {
 
 		':focus': {
 			color: theme.colours.gamut.green900,
+		},
+
+		selectors: {
+			[`${tabsList.stretch} &`]: {
+				flex: 'auto',
+			},
 		},
 	})),
 	active: style((theme) => ({
