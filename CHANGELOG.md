@@ -36,7 +36,7 @@
 
 -   3bcf649: Adds the Inline and Section layout components
 
-    ## Breakpoints
+    **Features**
 
     Breakpoints have been amended to follow (mobile first):
 
@@ -48,7 +48,7 @@
 
     all at landscape.
 
-    ## `<Inline />`
+    **`<Inline />`**
 
     When you're wanting to `inline` something. Like a badge list; you can use
     use the `<Inline />` component to solve this.
@@ -63,7 +63,7 @@
     </Inline>
     ```
 
-    ## `<Section />`
+    **`<Section />`**
 
     A component that wraps its children, setting a `max-width` and centering on
     the screen. This will generally sit high up in the component tree. It offers
@@ -114,7 +114,7 @@
 
 -   57b8cf3: Actions now filters out undefined or null children
 
-    `<Actions />`
+    **`<Actions />`**
 
     Removed the className prop, this will slowly start happening across the
     stack.
@@ -132,7 +132,7 @@
 
 -   8881bdd: Styles are now `treat` driven.
 
-    ## A few changes
+    **A few changes**
 
     -   `OverdriveProvider` must now be provider
     -   `ToastProvider` must also be provided when using a `useToast`
