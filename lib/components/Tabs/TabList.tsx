@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import * as React from 'react';
 import { Children, FunctionComponent } from 'react';
 import { useStyles } from 'react-treat';
@@ -6,7 +7,14 @@ import { Box } from '../Box';
 import { IndexContext } from './context';
 import * as styleRefs from './Tabs.treat';
 
-export const TabList: FunctionComponent = ({ children }) => {
+interface Props {
+	stretch?: boolean;
+}
+
+export const TabList: FunctionComponent<Props> = ({
+	children,
+	stretch = false,
+}) => {
 	const styles = useStyles(styleRefs);
 
 	return (
@@ -15,7 +23,9 @@ export const TabList: FunctionComponent = ({ children }) => {
 			borderWidthBottom="1"
 			borderColour="gray"
 			role="tablist"
-			className={styles.tabsList}>
+			className={clsx(styles.tabsList.root, {
+				[styles.tabsList.stretch]: stretch,
+			})}>
 			{Children.map(children, (child, index) => (
 				<IndexContext.Provider value={index}>
 					{child}

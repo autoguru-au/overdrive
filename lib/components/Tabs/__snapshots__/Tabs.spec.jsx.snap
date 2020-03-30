@@ -5,7 +5,7 @@ exports[`<Tabs /> should allow id overriding 1`] = `
   class="base"
 >
   <div
-    class="base border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base none_mobile_base none_mobile_base 1_mobile_base none_mobile_base tabsList"
+    class="base border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base none_mobile_base none_mobile_base 1_mobile_base none_mobile_base tabsList_root"
     role="tablist"
   >
     <button
@@ -67,7 +67,7 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
   class="base"
 >
   <div
-    class="base border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base none_mobile_base none_mobile_base 1_mobile_base none_mobile_base tabsList"
+    class="base border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base none_mobile_base none_mobile_base 1_mobile_base none_mobile_base tabsList_root"
     role="tablist"
   >
     <button
@@ -144,7 +144,7 @@ exports[`<Tabs /> should match snapshot (high level) 1`] = `
   class="base"
 >
   <div
-    class="base border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base none_mobile_base none_mobile_base 1_mobile_base none_mobile_base tabsList"
+    class="base border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base none_mobile_base none_mobile_base 1_mobile_base none_mobile_base tabsList_root"
     role="tablist"
   >
     <button
