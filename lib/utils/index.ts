@@ -77,5 +77,11 @@ export const setRef = <T>(ref: Ref<T>, value: T) => {
 export const isHtmlElement = (element: any): element is Element =>
 	element instanceof Element || element instanceof HTMLDocument;
 
+export const hex2rgba = (c, alpha = '1') =>
+	`rgb(${c
+		.slice(1)
+		.match(/../g)
+		.map((x) => Number(`0x${x}`))},${alpha})`;
+
 export { mapTokenToProperty } from './mapTokenToProperty';
 export * from './responsiveProps';

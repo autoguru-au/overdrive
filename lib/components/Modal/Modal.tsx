@@ -1,3 +1,4 @@
+import { warning } from '@autoguru/utilities';
 import clsx from 'clsx';
 import * as React from 'react';
 import {
@@ -5,16 +6,19 @@ import {
 	ComponentType,
 	FunctionComponent,
 	MouseEventHandler,
+	useEffect,
+	useState,
 } from 'react';
 import { useStyles } from 'react-treat';
+
 import { Box } from '../Box';
-import * as styleRefs from './Modal.treat';
 import { Portal } from '../Portal';
-import { warning } from '@autoguru/utilities';
+import * as styleRefs from './Modal.treat';
 
 export interface Props {
-	hideBackdrop?: boolean;
 	isOpen: boolean;
+	transition?: boolean;
+	hideBackdrop?: boolean;
 
 	onRequestClose?(e: 'backdrop' | 'escapeKeyDown' | string): void;
 }
@@ -22,10 +26,21 @@ export interface Props {
 export const Modal: FunctionComponent<Props> = ({
 	isOpen,
 	hideBackdrop = false,
+	transition = true,
 	onRequestClose,
 	children,
 }) => {
 	const styles = useStyles(styleRefs);
+
+	const [shouldRender, setRender] = useState(isOpen);
+
+	useEffect(() => {
+		if (isOpen) {
+			setRender(true);
+		} else if (!transition) {
+			setRender(false);
+		}
+	}, [isOpen, transition]);
 
 	const handleBackdropClick: ComponentProps<typeof Backdrop>['onClick'] = (
 		event,
@@ -34,15 +49,21 @@ export const Modal: FunctionComponent<Props> = ({
 		if (typeof onRequestClose === 'function') onRequestClose('backdrop');
 	};
 
+	const onAnimationEnd = () => {
+		if (!isOpen) setRender(false);
+	};
+
 	return (
 		<Portal>
-			{isOpen ? (
+			{shouldRender ? (
 				<Box
-					role={'presentation'}
-					className={clsx(styles.root.default, {
-						[styles.root.open]: isOpen,
-						[styles.root.hidden]: !isOpen,
-					})}>
+					role="presentation"
+					className={clsx(styles.root.default, [
+						transition && [
+							isOpen ? styles.root.fadeIn : styles.root.fadeOut,
+						],
+					])}
+					onAnimationEnd={onAnimationEnd}>
 					<Backdrop
 						invisible={hideBackdrop}
 						onClick={handleBackdropClick}
@@ -62,7 +83,7 @@ const Backdrop: FunctionComponent<{
 
 	return (
 		<div
-			aria-hidden={'true'}
+			aria-hidden="true"
 			className={clsx(styles.backdrop.root, {
 				[styles.backdrop.invisible]: invisible,
 			})}

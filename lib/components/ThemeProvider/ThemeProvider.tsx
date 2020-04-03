@@ -28,6 +28,6 @@ export const ThemeProvider: FunctionComponent<Props> = ({
 
 export const useRuntimeTokens = (): RuntimeTokens => {
 	const tokens = useContext(tokensContext);
-	invariant(tokens !== null, "You havn't provided a `OverdriveProvider`.");
+	invariant(tokens !== null, 'You havn\'t provided a `OverdriveProvider`.');
 	return tokens;
 };

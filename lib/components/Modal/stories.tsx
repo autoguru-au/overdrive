@@ -3,12 +3,12 @@ import { boolean } from '@storybook/addon-knobs';
 import * as React from 'react';
 import { useCallback, useState } from 'react';
 
+import { Box } from '../Box';
 import { Button } from '../Button';
 import { Modal } from './Modal';
-import { Box } from '../Box';
 
 const Body = ({ children }) => (
-	<Box backgroundColour={'white'} padding={'5'} borderRadius={'2'}>
+	<Box backgroundColour="white" padding="5" borderRadius="2">
 		{children}
 	</Box>
 );

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text } from '../Typography';
 
+import { Text } from '../Typography';
 import { Portal } from '.';
 
 export default {

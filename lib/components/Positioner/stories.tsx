@@ -65,7 +65,6 @@ export const illustrateAScroll = () => {
 			style={{
 				height: '100%',
 				width: '100%',
-				overflow: 'scroll',
 			}}>
 			<div
 				style={{
@@ -74,8 +73,8 @@ export const illustrateAScroll = () => {
 				}}>
 				<div
 					style={{
-						marginTop: 'calc((100vh*5) / 2)',
-						marginLeft: 'calc((100vw*5) / 2)',
+						paddingTop: 'calc((100vh*5) / 2)',
+						paddingLeft: 'calc((100vw*5) / 2)',
 					}}>
 					<Button ref={triggerRef} size="small">
 						I'm the trigger

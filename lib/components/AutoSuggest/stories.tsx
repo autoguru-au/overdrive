@@ -3,10 +3,10 @@ import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 
+import { Button } from '../Button';
 import { StandardModal } from '../StandardModal';
 import { AutoSuggest } from '.';
 import { AutoSuggestValue } from './AutoSuggest';
-import { Button } from '../Button';
 
 type Value = string;
 

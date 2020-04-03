@@ -11,10 +11,10 @@ import {
 import { useStyles } from 'react-treat';
 
 import { isBrowser } from '../../utils';
+import { Modal } from '../Modal';
 import { EAlignment } from './alignment';
 import { AlignmentRect, getOptimalPosition, Rect } from './getOptimalPosition';
 import * as styleRefs from './Positioner.treat';
-import { Modal } from '../Modal';
 
 export interface Props {
 	alignment?: EAlignment;
@@ -55,11 +55,18 @@ export function usingPositioner<T extends {} = {}>(
 			) ?? {};
 
 		return (
-			<Modal isOpen={isOpen} hideBackdrop onRequestClose={onRequestClose}>
+			<Modal
+				hideBackdrop
+				isOpen={isOpen}
+				transition={false}
+				onRequestClose={onRequestClose}>
 				<div
 					ref={positionerRef}
 					style={{
-						visibility: rect === null ? 'hidden' : 'visible',
+						visibility:
+							positionerRef?.current === null && rect?.left! > 0
+								? 'hidden'
+								: 'visible',
 						...(rect && {
 							transform: `translate3d(${rect.left}px, ${rect.top}px, 0px)`,
 						}),
@@ -107,11 +114,17 @@ const usePositionerEffect = (
 		}
 
 		let lastFrame = requestAnimationFrame(() => {
-			handler();
+			lastFrame = requestAnimationFrame(() => {
+				handler();
+			});
 		});
 
 		function handler() {
-			if (!current && !triggerRef.current && !positionerRef.current) {
+			if (
+				!current ||
+				triggerRef?.current === null ||
+				positionerRef?.current === null
+			) {
 				return;
 			}
 
@@ -149,7 +162,7 @@ const usePositionerEffect = (
 				cancelAnimationFrame(lastFrame);
 			}
 		};
-	}, [alignment, isOpen, positionerRef, triggerRef, triggerOffset]);
+	});
 
 	return positionerResult;
 };

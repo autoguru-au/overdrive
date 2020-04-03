@@ -1,7 +1,7 @@
 import { WindowCloseIcon } from '@autoguru/icons';
 import clsx from 'clsx';
 import * as React from 'react';
-import { ComponentProps, FunctionComponent } from 'react';
+import { ComponentProps, FunctionComponent, useLayoutEffect } from 'react';
 import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
@@ -38,6 +38,14 @@ export const StandardModal: FunctionComponent<Props> = ({
 		if (event.target !== event.currentTarget) return;
 		if (typeof onRequestClose === 'function') onRequestClose('backdrop');
 	};
+
+	useLayoutEffect(() => {
+		if (isOpen) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = '';
+		}
+	}, [isOpen]);
 
 	return (
 		<Modal isOpen={isOpen} onRequestClose={onRequestClose}>

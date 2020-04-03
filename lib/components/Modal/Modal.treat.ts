@@ -1,30 +1,49 @@
 import { style, styleMap } from 'treat';
 
+import { hex2rgba } from '../../utils';
+
 export const root = {
-	default: style((theme) => ({
+	default: style({
 		position: 'fixed',
-		inset: '0px',
+		overflow: 'hidden',
+		top: 0,
+		right: 0,
+		bottom: 0,
+		left: 0,
 		zIndex: 1000,
-		transition: `opacity 0.2s ${theme.animation.easing.decelerate}, visibility 0s linear`,
-	})),
-	hidden: style((theme) => ({
-		transition: `opacity 0.1s ${theme.animation.easing.decelerate} 0s, visibility 0s linear 0.1s`,
-		visibility: 'hidden',
-		opacity: 0,
-	})),
-	open: style({
-		transition: `visibility 0s linear`,
-		opacity: 1,
+		animationDuration: '0.2s',
+		animationTimingFunction: 'ease',
+	}),
+	fadeIn: style({
+		'@keyframes': {
+			from: {
+				opacity: 0,
+			},
+			to: {
+				opacity: 1,
+			},
+		},
+	}),
+	fadeOut: style({
+		'@keyframes': {
+			from: {
+				opacity: 1,
+			},
+			to: {
+				opacity: 0,
+			},
+		},
 	}),
 };
 
 const backdropRoot = styleMap((theme) => ({
 	default: {
-		backgroundColor: theme.colours.gamut.gray900,
-		opacity: 0.8,
+		backgroundColor: hex2rgba(theme.colours.gamut.gray900, '0.8'),
+		backdropFilter: 'blur(5px)',
 	},
 	invisible: {
 		backgroundColor: 'transparent',
+		backdropFilter: 'none',
 	},
 }));
 
@@ -32,8 +51,11 @@ export const backdrop = {
 	root: [
 		backdropRoot.default,
 		style({
-			position: 'fixed',
-			inset: '0px',
+			position: 'absolute',
+			top: 0,
+			right: 0,
+			bottom: 0,
+			left: 0,
 			zIndex: -1,
 		}),
 	],

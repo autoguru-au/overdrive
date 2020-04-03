@@ -24,7 +24,7 @@ export const modal = style((theme) => ({
 			maxHeight: `calc(100vh - ${theme.space['9']} * 2)`,
 			borderRadius: `${theme.space['1']}`,
 			boxShadow:
-				'0 0 32px 0 rgba(black, 0.08) 0 24px 96px 0 rgba(black, 0.012)',
+				'0 0 32px 0 rgba(0,0,0, 0.012), 0 24px 96px 0 rgba(0,0,0, 0.08)',
 			marginTop: 0,
 		},
 	}),

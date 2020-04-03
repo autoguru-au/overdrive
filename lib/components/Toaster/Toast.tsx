@@ -15,8 +15,8 @@ import {
 import { useStyles } from 'react-treat';
 
 import { Alert } from '../Alert';
-import * as styleRefs from './Toast.treat';
 import { Portal } from '../Portal';
+import * as styleRefs from './Toast.treat';
 
 type MessageType = ReactChild;
 type AlertIntent = Required<ComponentProps<typeof Alert>>['intent'];

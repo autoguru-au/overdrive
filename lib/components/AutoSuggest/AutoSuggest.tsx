@@ -23,6 +23,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { withEnhancedInput } from '../InputBase';
+import { Portal } from '../Portal';
 import { usingPositioner } from '../Positioner';
 import { EAlignment } from '../Positioner/alignment';
 import * as selectStyleRefs from '../SelectInput/SelectInput.treat';
@@ -30,7 +31,6 @@ import { TextInput } from '../TextInput';
 import { Text } from '../Typography';
 import * as styleRefs from './AutoSuggest.treat';
 import { useLayoutSuggestionVisible } from './useLayoutSuggestionVisible';
-import { Portal } from '../Portal';
 
 export interface AutoSuggestValue<PayloadType> {
 	text: string;
