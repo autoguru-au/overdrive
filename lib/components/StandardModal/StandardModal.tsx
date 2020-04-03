@@ -49,7 +49,12 @@ export const StandardModal: FunctionComponent<Props> = ({
 
 	return (
 		<Modal isOpen={isOpen} onRequestClose={onRequestClose}>
-			<Box className={styles.container} onClick={backdropHandler}>
+			<Box
+				className={styles.container}
+				aria-hidden={isOpen ? 'false' : 'true'}
+				role="dialog"
+				aria-modal="true"
+				onClick={backdropHandler}>
 				<Box
 					is="article"
 					className={clsx([

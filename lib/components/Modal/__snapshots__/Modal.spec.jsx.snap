@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Modal /> should match snapshot 1`] = `
+<body
+  style="background-color: rgb(255, 255, 255); color: rgb(33, 35, 56);"
+>
+  <div />
+  <div
+    class="base root_default root_fadeIn"
+    role="presentation"
+  >
+    <div
+      aria-hidden="true"
+      class="backdropRoot_default_base backdrop_root"
+    />
+    <div>
+      Hello World!
+    </div>
+  </div>
+</body>
+`;

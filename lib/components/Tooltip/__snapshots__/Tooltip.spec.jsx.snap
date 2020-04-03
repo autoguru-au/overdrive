@@ -9,10 +9,6 @@ exports[`<Tolltip /> should match snapshot when closed 1`] = `
       trigger
     </div>
   </div>
-  <div
-    class="root"
-    style="visibility: visible;"
-  />
 </body>
 `;
 
@@ -26,17 +22,26 @@ exports[`<Tolltip /> should match snapshot when opened 1`] = `
     </div>
   </div>
   <div
-    class="root"
-    style="visibility: visible;"
+    class="base root_default"
+    role="presentation"
   >
     <div
-      class="base 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base 1_mobile_base backgroundColours_gray900_base root"
+      aria-hidden="true"
+      class="backdropRoot_default_base backdrop_root backdropRoot_invisible_base"
+    />
+    <div
+      class="root"
+      style="visibility: visible;"
     >
-      <span
-        class="base root_base sizes_4_base align_left colours_white_base fontWeight_normal_base"
+      <div
+        class="base 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base 1_mobile_base backgroundColours_gray900_base root"
       >
-        tooltip content
-      </span>
+        <span
+          class="base root_base sizes_4_base align_left colours_white_base fontWeight_normal_base"
+        >
+          tooltip content
+        </span>
+      </div>
     </div>
   </div>
 </body>

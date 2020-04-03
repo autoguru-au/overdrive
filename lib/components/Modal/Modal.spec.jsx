@@ -22,8 +22,8 @@ function createMockedModal(defaultOpenState = true) {
 	};
 }
 
-// TODO: Come back to this
-describe.skip('withModal()', () => {
+// TODO: Come back to this guy
+describe.skip('<Modal />', () => {
 	it('should not throw when closed', () => {
 		expect(() =>
 			render(

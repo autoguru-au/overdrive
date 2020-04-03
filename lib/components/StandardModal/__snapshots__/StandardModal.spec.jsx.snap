@@ -2,64 +2,65 @@
 
 exports[`<StandardModal /> should match snapshot with title and body 1`] = `
 <body
-  style="background-color: rgb(255, 255, 255); color: rgb(33, 35, 56);"
+  style="background-color: rgb(255, 255, 255); color: rgb(33, 35, 56); overflow: hidden;"
 >
   <div />
   <div
-    class="base portal_default_base portal_open_base"
+    class="base root_default root_fadeIn"
+    role="presentation"
   >
     <div
-      class="panel alignment_base"
+      aria-hidden="true"
+      class="backdropRoot_default_base backdrop_root"
+    />
+    <div
+      aria-hidden="false"
+      aria-modal="true"
+      class="base container"
+      role="dialog"
     >
-      <div
-        aria-hidden="false"
-        aria-modal="true"
-        class="content alignment_base"
-        role="dialog"
+      <article
+        class="base block modal_base modalSizeStandard_base"
       >
-        <article
-          class="base block modal_base modalDesktopView_base modalSizeStandard_base"
+        <header
+          class="header_base headerWithBorder_base"
         >
-          <header
-            class="header_base headerWithBorder_base"
+          <button
+            aria-label="close"
+            class="headerCloseButton_base"
           >
-            <button
-              aria-label="close"
-              class="headerCloseButton_base"
+            <i
+              class="base display_block medium_mobile_base"
             >
-              <i
-                class="base display_block medium_mobile_base"
+              <svg
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M13.458 12L19 17.543V19h-1.457L12 13.457 6.458 19H5v-1.456L10.544 12 5 6.458V5h1.457L12 10.543 17.544 5H19v1.458L13.458 12z"
-                  />
-                </svg>
-              </i>
-            </button>
-            <div
-              class="headerTitle"
-            >
-              <h4
-                class="root_base sizes_4_base colours_dark_base fontWeight_bold_base"
-              >
-                Hello World!
-              </h4>
-            </div>
-          </header>
-          <main
-            class="content"
+                <path
+                  d="M13.458 12L19 17.543V19h-1.457L12 13.457 6.458 19H5v-1.456L10.544 12 5 6.458V5h1.457L12 10.543 17.544 5H19v1.458L13.458 12z"
+                />
+              </svg>
+            </i>
+          </button>
+          <div
+            class="headerTitle"
           >
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis convallis neque a laoreet maximus. Vestibulum hendrerit quam at mi venenatis faucibus at vel nisi. In ut risus et ipsum tincidunt tempor. Suspendisse potenti. Praesent faucibus posuere risus, at congue mauris porttitor ut. Donec sit amet elit vitae purus dictum aliquet quis ut ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum dui sapien, porttitor ac erat vel, malesuada rutrum mauris. Nam arcu tellus, pretium ut aliquet eget, ultrices vel est. Maecenas dapibus volutpat eros a volutpat.
-            </p>
-          </main>
-        </article>
-      </div>
+            <h4
+              class="root_base sizes_4_base colours_dark_base fontWeight_bold_base"
+            >
+              Hello World!
+            </h4>
+          </div>
+        </header>
+        <main
+          class="content"
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis convallis neque a laoreet maximus. Vestibulum hendrerit quam at mi venenatis faucibus at vel nisi. In ut risus et ipsum tincidunt tempor. Suspendisse potenti. Praesent faucibus posuere risus, at congue mauris porttitor ut. Donec sit amet elit vitae purus dictum aliquet quis ut ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum dui sapien, porttitor ac erat vel, malesuada rutrum mauris. Nam arcu tellus, pretium ut aliquet eget, ultrices vel est. Maecenas dapibus volutpat eros a volutpat.
+          </p>
+        </main>
+      </article>
     </div>
   </div>
 </body>
@@ -67,58 +68,59 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
 
 exports[`<StandardModal /> should match snapshot without title and body 1`] = `
 <body
-  style="background-color: rgb(255, 255, 255); color: rgb(33, 35, 56);"
+  style="background-color: rgb(255, 255, 255); color: rgb(33, 35, 56); overflow: hidden;"
 >
   <div />
   <div
-    class="base portal_default_base portal_open_base"
+    class="base root_default root_fadeIn"
+    role="presentation"
   >
     <div
-      class="panel alignment_base"
+      aria-hidden="true"
+      class="backdropRoot_default_base backdrop_root"
+    />
+    <div
+      aria-hidden="false"
+      aria-modal="true"
+      class="base container"
+      role="dialog"
     >
-      <div
-        aria-hidden="false"
-        aria-modal="true"
-        class="content alignment_base"
-        role="dialog"
+      <article
+        class="base block modal_base modalSizeStandard_base"
       >
-        <article
-          class="base block modal_base modalDesktopView_base modalSizeStandard_base"
+        <header
+          class="header_base headerWithBorder_base"
         >
-          <header
-            class="header_base headerWithBorder_base"
+          <button
+            aria-label="close"
+            class="headerCloseButton_base"
           >
-            <button
-              aria-label="close"
-              class="headerCloseButton_base"
+            <i
+              class="base display_block medium_mobile_base"
             >
-              <i
-                class="base display_block medium_mobile_base"
+              <svg
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M13.458 12L19 17.543V19h-1.457L12 13.457 6.458 19H5v-1.456L10.544 12 5 6.458V5h1.457L12 10.543 17.544 5H19v1.458L13.458 12z"
-                  />
-                </svg>
-              </i>
-            </button>
-            <div
-              class="headerTitle"
-            >
-              <h4
-                class="root_base sizes_4_base colours_dark_base fontWeight_bold_base"
-              />
-            </div>
-          </header>
-          <main
-            class="content"
-          />
-        </article>
-      </div>
+                <path
+                  d="M13.458 12L19 17.543V19h-1.457L12 13.457 6.458 19H5v-1.456L10.544 12 5 6.458V5h1.457L12 10.543 17.544 5H19v1.458L13.458 12z"
+                />
+              </svg>
+            </i>
+          </button>
+          <div
+            class="headerTitle"
+          >
+            <h4
+              class="root_base sizes_4_base colours_dark_base fontWeight_bold_base"
+            />
+          </div>
+        </header>
+        <main
+          class="content"
+        />
+      </article>
     </div>
   </div>
 </body>
