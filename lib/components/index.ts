@@ -23,6 +23,7 @@ export * from './OrderedList';
 export * from './OutsideClick';
 export * from './OverdriveProvider';
 export * from './Pagination';
+export * from './Portal';
 export * from './Positioner';
 export * from './ProgressBar';
 export * from './ProgressBarGroup';
