@@ -12,11 +12,11 @@ import {
 	useMemo,
 	useReducer,
 } from 'react';
-import { createPortal } from 'react-dom';
 import { useStyles } from 'react-treat';
 
 import { Alert } from '../Alert';
 import * as styleRefs from './Toast.treat';
+import { Portal } from '../Portal';
 
 type MessageType = ReactChild;
 type AlertIntent = Required<ComponentProps<typeof Alert>>['intent'];
@@ -87,14 +87,13 @@ const InternalToastProvider = ({ children }) => {
 	return (
 		<ToastControllerContext.Provider value={addToast}>
 			{children}
-			{createPortal(
+			<Portal>
 				<div className={styles.root}>
 					{toasts.map((item) => (
 						<Toast key={item.id} {...item} remove={removeToast} />
 					))}
-				</div>,
-				document.body,
-			)}
+				</div>
+			</Portal>
 		</ToastControllerContext.Provider>
 	);
 };

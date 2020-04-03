@@ -15,7 +15,6 @@ import {
 	useRef,
 	useState,
 } from 'react';
-import { createPortal } from 'react-dom';
 import { useStyles } from 'react-treat';
 
 import { useMedia } from '../../hooks/useMedia';
@@ -31,6 +30,7 @@ import { TextInput } from '../TextInput';
 import { Text } from '../Typography';
 import * as styleRefs from './AutoSuggest.treat';
 import { useLayoutSuggestionVisible } from './useLayoutSuggestionVisible';
+import { Portal } from '../Portal';
 
 export interface AutoSuggestValue<PayloadType> {
 	text: string;
@@ -179,17 +179,16 @@ const AutoSuggestFullscreenInput = <PayloadType extends unknown>({
 		};
 	}, [setShowPortal]);
 
-	return showPortal
-		? createPortal(
-				<div className={styles.fullScreenRoot}>
-					<AutoSuggestInput {...props} inlineOptions />
-					<Button minimal rounded size="medium" onClick={closeModal}>
-						<Icon icon={CloseIcon} />
-					</Button>
-				</div>,
-				document.body,
-		  )
-		: null;
+	return showPortal ? (
+		<Portal>
+			<div className={styles.fullScreenRoot}>
+				<AutoSuggestInput {...props} inlineOptions />
+				<Button minimal rounded size="medium" onClick={closeModal}>
+					<Icon icon={CloseIcon} />
+				</Button>
+			</div>
+		</Portal>
+	) : null;
 };
 
 const AutoSuggestInput = <PayloadType extends unknown>({
