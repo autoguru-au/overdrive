@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { Ref, useEffect, useLayoutEffect, useState } from 'react';
 
 export const isBrowser = typeof window !== 'undefined';
 
@@ -65,6 +65,17 @@ export const useId = (idFromProps?: string): string | null => {
 
 	return id === null ? null : String(id);
 };
+
+export const setRef = <T>(ref: Ref<T>, value: T) => {
+	if (typeof ref === 'function') {
+		ref(value);
+	} else if (ref) {
+		(ref as any).current = value;
+	}
+};
+
+export const isHtmlElement = (element: any): element is Element =>
+	element instanceof Element || element instanceof HTMLDocument;
 
 export { mapTokenToProperty } from './mapTokenToProperty';
 export * from './responsiveProps';
