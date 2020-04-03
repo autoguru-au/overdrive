@@ -2,9 +2,13 @@ import { fireEvent, render } from '@testing-library/react';
 import * as React from 'react';
 import { useState } from 'react';
 
-import { withModal } from '.';
+import { Modal } from '.';
 
-const NakedModal = withModal(({ children }) => <div>{children}</div>);
+const NakedModal = ({ children, ...props }) => (
+	<Modal {...props}>
+		<div>{children}</div>
+	</Modal>
+);
 
 function createMockedModal(defaultOpenState = true) {
 	return () => {

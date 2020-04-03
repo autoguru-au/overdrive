@@ -5,21 +5,17 @@ export const root = {
 		position: 'fixed',
 		inset: '0px',
 		zIndex: 1000,
+		transition: `opacity 0.2s ${theme.animation.easing.decelerate}, visibility 0s linear`,
 	})),
-	enter: style({
+	hidden: style((theme) => ({
+		transition: `opacity 0.1s ${theme.animation.easing.decelerate} 0s, visibility 0s linear 0.1s`,
+		visibility: 'hidden',
 		opacity: 0,
-	}),
-	exit: style({
+	})),
+	open: style({
+		transition: `visibility 0s linear`,
 		opacity: 1,
 	}),
-	active: style((theme) => ({
-		opacity: 1,
-		transition: `opacity 0.2s ${theme.animation.easing.decelerate}`,
-	})),
-	exitActive: style((theme) => ({
-		opacity: 0,
-		transition: `opacity 0.2s ${theme.animation.easing.decelerate}`,
-	})),
 };
 
 const backdropRoot = styleMap((theme) => ({

@@ -10,7 +10,6 @@ import { useStyles } from 'react-treat';
 import { Box } from '../Box';
 import * as styleRefs from './Modal.treat';
 import { Portal } from '../Portal';
-import { CSSTransition } from 'react-transition-group';
 import { warning } from '@autoguru/utilities';
 
 export interface Props {
@@ -37,34 +36,28 @@ export const Modal: FunctionComponent<Props> = ({
 
 	return (
 		<Portal>
-			<CSSTransition
-				timeout={200}
-				in={isOpen}
-				unmountOnExit
-				classNames={{
-					enter: styles.root.enter,
-					enterActive: styles.root.active,
-					exit: styles.root.exit,
-					exitActive: styles.root.exitActive,
-				}}>
-				<Box role={'presentation'} className={styles.root.default}>
+			{isOpen ? (
+				<Box
+					role={'presentation'}
+					className={clsx(styles.root.default, {
+						[styles.root.open]: isOpen,
+						[styles.root.hidden]: !isOpen,
+					})}>
 					<Backdrop
 						invisible={hideBackdrop}
-						open={isOpen}
 						onClick={handleBackdropClick}
 					/>
 					{children}
 				</Box>
-			</CSSTransition>
+			) : null}
 		</Portal>
 	);
 };
 
 const Backdrop: FunctionComponent<{
 	invisible: boolean;
-	open: boolean;
 	onClick: MouseEventHandler<HTMLDivElement>;
-}> = ({ onClick, invisible, open }) => {
+}> = ({ onClick, invisible }) => {
 	const styles = useStyles(styleRefs);
 
 	return (

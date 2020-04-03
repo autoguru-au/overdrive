@@ -10,7 +10,7 @@ import { createPortal } from 'react-dom';
 import { isHtmlElement, setRef } from '../../utils';
 
 interface Props {
-	children?: ReactElement | ReactElement[];
+	children?: ReactElement | ReactElement[] | null;
 	container?: Element;
 }
 

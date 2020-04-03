@@ -4,22 +4,13 @@ import * as React from 'react';
 import { useCallback, useState } from 'react';
 
 import { Button } from '../Button';
-import { withModal, Modal } from '.';
-import { Portal } from '../Portal';
+import { Modal } from './Modal';
+import { Box } from '../Box';
 
-const NakedModal = withModal(({ children, isOpen }) =>
-	isOpen ? (
-		<div
-			style={{
-				padding: '25px',
-				borderRadius: '4px',
-				backgroundColor: 'white',
-				display: 'grid',
-				gridGap: '16px',
-			}}>
-			{children}
-		</div>
-	) : null,
+const Body = ({ children }) => (
+	<Box backgroundColour={'white'} padding={'5'} borderRadius={'2'}>
+		{children}
+	</Box>
 );
 
 export default {
@@ -27,52 +18,52 @@ export default {
 	component: Modal,
 };
 
-export const withModalDefault = () => (
-	<NakedModal
+export const Standard = () => (
+	<Modal
 		isOpen={boolean('isOpen', true)}
 		onRequestClose={action('onRequestClose')}>
-		<p>Hello, I am a modal body!</p>
-	</NakedModal>
+		<Body>
+			<p>Hello, I am a modal body!</p>
+		</Body>
+	</Modal>
 );
 
-export const withModalTriggeredWithAButton = () => {
-	const Example = () => {
-		const [isOpen, setIsOpen] = useState(false);
+export const TriggeredWithAButton = () => {
+	const [isOpen, setIsOpen] = useState(false);
 
-		const onRequestClose = (e) => {
-			action('onRequestClose')(e);
-			setIsOpen(false);
-		};
-
-		return (
-			<>
-				<Button
-					children="Click Me"
-					variant="primary"
-					onClick={useCallback(() => setIsOpen(true), [])}
-				/>
-				<NakedModal isOpen={isOpen} onRequestClose={onRequestClose}>
-					<p>Hello, I am a modal body!</p>
-				</NakedModal>
-			</>
-		);
+	const onRequestClose = (e) => {
+		action('onRequestClose')(e);
+		setIsOpen(false);
 	};
 
-	return <Example />;
+	return (
+		<>
+			<Button
+				children="Click Me"
+				variant="primary"
+				onClick={useCallback(() => setIsOpen(true), [])}
+			/>
+			<Modal isOpen={isOpen} onRequestClose={onRequestClose}>
+				<Body>
+					<p>Hello, I am a modal body!</p>
+				</Body>
+			</Modal>
+		</>
+	);
 };
 
-export const withModalCloseWithInternalButton = () => {
-	const Example = () => {
-		const [isOpen, setIsOpen] = useState(false);
+export const CloseByInternalButton = () => {
+	const [isOpen, setIsOpen] = useState(false);
 
-		return (
-			<>
-				<Button
-					variant="primary"
-					onClick={useCallback(() => setIsOpen(true), [])}>
-					Click Me
-				</Button>
-				<NakedModal isOpen={isOpen}>
+	return (
+		<>
+			<Button
+				variant="primary"
+				onClick={useCallback(() => setIsOpen(true), [])}>
+				Click Me
+			</Button>
+			<Modal isOpen={isOpen}>
+				<Body>
 					<p>Hello, I am a modal body!</p>
 					<Button
 						children="Close Me"
@@ -80,10 +71,8 @@ export const withModalCloseWithInternalButton = () => {
 						size="small"
 						onClick={useCallback(() => setIsOpen(false), [])}
 					/>
-				</NakedModal>
-			</>
-		);
-	};
-
-	return <Example />;
+				</Body>
+			</Modal>
+		</>
+	);
 };
