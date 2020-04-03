@@ -2,11 +2,8 @@ import { style, styleMap } from 'treat';
 
 export const fullScreenRoot = style((theme) => ({
 	position: 'fixed',
-	zIndex: 10,
-	top: 0,
-	right: 0,
-	bottom: 0,
-	left: 0,
+	zIndex: 1001,
+	inset: '0px',
 	display: 'grid',
 	gridGap: `${theme.space['5']} ${theme.space['1']}`,
 	gridTemplateColumns: '1fr auto',

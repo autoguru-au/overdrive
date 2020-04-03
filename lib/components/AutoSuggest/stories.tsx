@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { StandardModal } from '../StandardModal';
 import { AutoSuggest } from '.';
 import { AutoSuggestValue } from './AutoSuggest';
+import { Button } from '../Button';
 
 type Value = string;
 
@@ -92,13 +93,23 @@ export const WithNoItems = () => (
 	/>
 );
 
-export const InsideModal = () => (
-	<StandardModal isOpen title="Test inside modal">
-		<div style={{ padding: 20 }}>
-			<Impl />
-		</div>
-	</StandardModal>
-);
+export const InsideModal = () => {
+	const [isOpen, setIsOpen] = useState(true);
+
+	return (
+		<>
+			<Button onClick={() => setIsOpen(true)}>Open</Button>
+			<StandardModal
+				isOpen={isOpen}
+				title="Test inside modal"
+				onRequestClose={() => setIsOpen(false)}>
+				<div style={{ padding: 20 }}>
+					<Impl />
+				</div>
+			</StandardModal>
+		</>
+	);
+};
 
 InsideModal.story = {
 	parameters: {

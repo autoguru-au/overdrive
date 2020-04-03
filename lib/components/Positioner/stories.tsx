@@ -25,19 +25,18 @@ export const standard = () => {
 		const triggerRef = useRef(null);
 		const [isOpen, setIsOpen] = useState(true);
 
+		const closeHandler = useCallback(() => setIsOpen((prev) => !prev), []);
+
 		return (
 			<div>
-				<Button
-					ref={triggerRef}
-					size="small"
-					onClick={useCallback(() => setIsOpen(!isOpen), [isOpen])}>
+				<Button ref={triggerRef} size="small" onClick={closeHandler}>
 					Open me
 				</Button>
 				<Positioner
 					isOpen={isOpen}
 					triggerRef={triggerRef}
 					alignment={alignmentPicker()}
-					onRequestClose={action('onRequestClose')}>
+					onRequestClose={closeHandler}>
 					<Box
 						boxShadow={1}
 						backgroundColour="white"

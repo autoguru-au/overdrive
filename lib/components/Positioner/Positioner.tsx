@@ -4,7 +4,6 @@ import {
 	FunctionComponent,
 	ReactElement,
 	RefObject,
-	useCallback,
 	useLayoutEffect,
 	useRef,
 	useState,
@@ -12,11 +11,10 @@ import {
 import { useStyles } from 'react-treat';
 
 import { isBrowser } from '../../utils';
-import { useOutsideClick } from '../OutsideClick';
 import { EAlignment } from './alignment';
 import { AlignmentRect, getOptimalPosition, Rect } from './getOptimalPosition';
 import * as styleRefs from './Positioner.treat';
-import { Portal } from '../Portal';
+import { Modal } from '../Modal';
 
 export interface Props {
 	alignment?: EAlignment;
@@ -56,15 +54,8 @@ export function usingPositioner<T extends {} = {}>(
 				isOpen,
 			) ?? {};
 
-		useOutsideClick(
-			[positionerRef, triggerRef],
-			useCallback(() => {
-				if (isOpen) onRequestClose();
-			}, [isOpen, onRequestClose]),
-		);
-
 		return (
-			<Portal>
+			<Modal isOpen={isOpen} hideBackdrop onRequestClose={onRequestClose}>
 				<div
 					ref={positionerRef}
 					style={{
@@ -83,7 +74,7 @@ export function usingPositioner<T extends {} = {}>(
 						/>
 					)}
 				</div>
-			</Portal>
+			</Modal>
 		);
 	};
 }

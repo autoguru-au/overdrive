@@ -17,7 +17,7 @@ export * from './InputBase';
 export * from './LinearProgressIndicator';
 export * from './LoadingBox';
 export * from './Meta';
-export * from './ModalBase';
+export * from './Modal';
 export * from './NumberInput';
 export * from './OrderedList';
 export * from './OutsideClick';

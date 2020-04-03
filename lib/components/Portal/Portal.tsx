@@ -32,7 +32,7 @@ export const Portal = forwardRef<Element, Props>(
 			}
 
 			return () => void setRef(ref, null);
-		}, []);
+		}, [ref, mountNode]);
 
 		return mountNode ? createPortal(children, mountNode) : mountNode;
 	},
