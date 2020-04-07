@@ -23,6 +23,7 @@ exports[`<Tolltip /> should match snapshot when opened 1`] = `
   </div>
   <div
     class="root"
+    role="none presentation"
     style="visibility: visible;"
   >
     <div

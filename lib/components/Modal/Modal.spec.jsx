@@ -4,7 +4,6 @@ import { useState } from 'react';
 
 import { Modal } from '.';
 
-
 function createMockedModal(defaultOpenState = true) {
 	return () => {
 		const [isOpen, setIsOpen] = useState(defaultOpenState);
@@ -46,9 +45,7 @@ describe('<Modal />', () => {
 
 	describe('when portal', () => {
 		it('should be added when open', () => {
-			const { getByRole } = render(
-				<Modal isOpen>Hello World!</Modal>,
-			);
+			const { getByRole } = render(<Modal isOpen>Hello World!</Modal>);
 
 			expect(getByRole('presentation')).toBeInTheDocument();
 		});
@@ -62,9 +59,7 @@ describe('<Modal />', () => {
 		});
 
 		it('should add children when open', () => {
-			const { getByRole } = render(
-				<Modal isOpen>Hello World!</Modal>,
-			);
+			const { getByRole } = render(<Modal isOpen>Hello World!</Modal>);
 
 			expect(getByRole('presentation')).toHaveTextContent('Hello World!');
 		});

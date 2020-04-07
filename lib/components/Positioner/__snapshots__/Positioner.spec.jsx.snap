@@ -15,6 +15,7 @@ exports[`<Positioner /> should match snapshot 1`] = `
     />
     <div
       class="root"
+      role="none presentation"
       style="visibility: visible;"
     >
       Some body

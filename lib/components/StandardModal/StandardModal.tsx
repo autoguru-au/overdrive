@@ -55,6 +55,7 @@ export const StandardModal: FunctionComponent<Props> = ({
 			<Box
 				className={styles.container}
 				aria-hidden={isOpen ? 'false' : 'true'}
+				role="none presentation"
 				onClick={backdropHandler}>
 				<Box
 					is="article"
@@ -77,7 +78,9 @@ export const StandardModal: FunctionComponent<Props> = ({
 							onClick={closeButtonHandler}>
 							<Icon size="medium" icon={WindowCloseIcon} />
 						</button>
-						<div className={styles.headerTitle} id={titleId ? `od-${titleId}` : undefined}>
+						<div
+							className={styles.headerTitle}
+							id={titleId ? `od-${titleId}` : undefined}>
 							<Heading is="h4">{title}</Heading>
 						</div>
 					</header>

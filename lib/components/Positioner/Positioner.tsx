@@ -30,8 +30,10 @@ export interface Props {
 	onRequestClose?(): void;
 }
 
-type WrappedComponent<ExtraProps> = ExtraProps & { triggerRect?: Rect } & Pick<Props,
-	'isOpen' | 'alignment'>;
+type WrappedComponent<ExtraProps> = ExtraProps & { triggerRect?: Rect } & Pick<
+		Props,
+		'isOpen' | 'alignment'
+	>;
 
 export function usingPositioner<T extends {} = {}>(
 	WrappingComponent: ComponentType<WrappedComponent<T>>,
@@ -49,13 +51,13 @@ export function usingPositioner<T extends {} = {}>(
 
 		const positionerRef = useRef<HTMLDivElement>(null);
 		const { alignment: derivedAlignment, rect, triggerRect } =
-		usePositionerEffect(
-			alignment,
-			triggerRef,
-			triggerOffset!,
-			positionerRef,
-			isOpen,
-		) ?? {};
+			usePositionerEffect(
+				alignment,
+				triggerRef,
+				triggerOffset!,
+				positionerRef,
+				isOpen,
+			) ?? {};
 
 		const child = useMemo(() => {
 			return isOpen ? (
@@ -68,17 +70,27 @@ export function usingPositioner<T extends {} = {}>(
 			) : null;
 		}, [isOpen, rest]);
 
-		return withBackdrop
-			? <Modal
+		return withBackdrop ? (
+			<Modal
 				hideBackdrop
 				isOpen={isOpen}
 				transition={false}
 				onRequestClose={onRequestClose}>
-				<PositionerBody positionerRef={positionerRef} rect={rect} child={child}/>
+				<PositionerBody
+					positionerRef={positionerRef}
+					rect={rect}
+					child={child}
+				/>
 			</Modal>
-			: <Portal>
-				<PositionerBody positionerRef={positionerRef} rect={rect} child={child}/>
+		) : (
+			<Portal>
+				<PositionerBody
+					positionerRef={positionerRef}
+					rect={rect}
+					child={child}
+				/>
 			</Portal>
+		);
 	};
 	returningComponent.displayName = `usingPositioner(${WrappingComponent.displayName})`;
 
@@ -86,15 +98,16 @@ export function usingPositioner<T extends {} = {}>(
 }
 
 const PositionerBody = memo<{
-	positionerRef: RefObject<HTMLDivElement>,
-	rect?: Rect,
-	child: ReactChild | null
+	positionerRef: RefObject<HTMLDivElement>;
+	rect?: Rect;
+	child: ReactChild | null;
 }>(({ rect, positionerRef, child }) => {
 	const styles = useStyles(styleRefs);
 
 	return (
 		<div
 			ref={positionerRef}
+			role="none presentation"
 			style={{
 				visibility:
 					positionerRef?.current === null && rect?.left! > 0

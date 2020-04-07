@@ -16,6 +16,7 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
     <div
       aria-hidden="false"
       class="base container"
+      role="none presentation"
     >
       <article
         aria-labelledby="od-4"
@@ -84,6 +85,7 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
     <div
       aria-hidden="false"
       class="base container"
+      role="none presentation"
     >
       <article
         aria-labelledby="od-3"
