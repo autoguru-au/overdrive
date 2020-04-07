@@ -4,12 +4,12 @@ import * as React from 'react';
 import { ComponentProps, FunctionComponent, useLayoutEffect } from 'react';
 import { useStyles } from 'react-treat';
 
+import { useId } from '../../utils';
 import { Box } from '../Box';
 import { Icon } from '../Icon';
 import { Modal } from '../Modal';
 import { Heading } from '../Typography';
 import * as styleRefs from './StandardModal.treat';
-import { useId } from '../../utils';
 
 export enum ESize {
 	Standard = 'standard', // 800px wide

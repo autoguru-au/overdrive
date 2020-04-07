@@ -15,10 +15,10 @@ import { useStyles } from 'react-treat';
 
 import { isBrowser } from '../../utils';
 import { Modal } from '../Modal';
+import { Portal } from '../Portal';
 import { EAlignment } from './alignment';
 import { AlignmentRect, getOptimalPosition, Rect } from './getOptimalPosition';
 import * as styleRefs from './Positioner.treat';
-import { Portal } from '../Portal';
 
 export interface Props {
 	alignment?: EAlignment;
@@ -38,7 +38,7 @@ type WrappedComponent<ExtraProps> = ExtraProps & { triggerRect?: Rect } & Pick<
 export function usingPositioner<T extends {} = {}>(
 	WrappingComponent: ComponentType<WrappedComponent<T>>,
 ): FunctionComponent<Props & T> {
-	const returningComponent: FunctionComponent<Props & T> = ({
+	const ReturningComponent: FunctionComponent<Props & T> = ({
 		alignment = EAlignment.BOTTOM_LEFT,
 		withBackdrop = true,
 		isOpen = false,
@@ -49,6 +49,7 @@ export function usingPositioner<T extends {} = {}>(
 	}) => {
 		if (!isBrowser) return null;
 
+		/* eslint-disable react-hooks/rules-of-hooks */
 		const positionerRef = useRef<HTMLDivElement>(null);
 		const { alignment: derivedAlignment, rect, triggerRect } =
 			usePositionerEffect(
@@ -69,6 +70,7 @@ export function usingPositioner<T extends {} = {}>(
 				/>
 			) : null;
 		}, [isOpen, rest]);
+		/* eslint-enable react-hooks/rules-of-hooks */
 
 		return withBackdrop ? (
 			<Modal
@@ -92,9 +94,10 @@ export function usingPositioner<T extends {} = {}>(
 			</Portal>
 		);
 	};
-	returningComponent.displayName = `usingPositioner(${WrappingComponent.displayName})`;
 
-	return returningComponent;
+	ReturningComponent.displayName = `usingPositioner(${WrappingComponent.displayName})`;
+
+	return ReturningComponent;
 }
 
 const PositionerBody = memo<{
