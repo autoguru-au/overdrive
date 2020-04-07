@@ -1,15 +1,9 @@
-import {
-	forwardRef,
-	ReactElement,
-	RefObject,
-	useLayoutEffect,
-	useState,
-} from 'react';
+import { forwardRef, ReactElement, RefObject, useLayoutEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import { isHtmlElement, setRef } from '../../utils';
 
-interface Props {
+export interface Props {
 	children?: ReactElement | ReactElement[] | null;
 	container?: Element;
 }

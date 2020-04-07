@@ -2,9 +2,12 @@ import * as React from 'react';
 import {
 	ComponentType,
 	FunctionComponent,
+	memo,
+	ReactChild,
 	ReactElement,
 	RefObject,
 	useLayoutEffect,
+	useMemo,
 	useRef,
 	useState,
 } from 'react';
@@ -15,26 +18,27 @@ import { Modal } from '../Modal';
 import { EAlignment } from './alignment';
 import { AlignmentRect, getOptimalPosition, Rect } from './getOptimalPosition';
 import * as styleRefs from './Positioner.treat';
+import { Portal } from '../Portal';
 
 export interface Props {
 	alignment?: EAlignment;
 	isOpen?: boolean;
 	triggerRef: RefObject<HTMLElement>;
 	triggerOffset?: number;
+	withBackdrop?: boolean;
 
 	onRequestClose?(): void;
 }
 
-type WrappedComponent<ExtraProps> = ExtraProps & { triggerRect?: Rect } & Pick<
-		Props,
-		'isOpen' | 'alignment'
-	>;
+type WrappedComponent<ExtraProps> = ExtraProps & { triggerRect?: Rect } & Pick<Props,
+	'isOpen' | 'alignment'>;
 
 export function usingPositioner<T extends {} = {}>(
 	WrappingComponent: ComponentType<WrappedComponent<T>>,
 ): FunctionComponent<Props & T> {
-	return ({
+	const returningComponent: FunctionComponent<Props & T> = ({
 		alignment = EAlignment.BOTTOM_LEFT,
+		withBackdrop = true,
 		isOpen = false,
 		onRequestClose = () => void 0,
 		triggerRef,
@@ -42,49 +46,69 @@ export function usingPositioner<T extends {} = {}>(
 		...rest
 	}) => {
 		if (!isBrowser) return null;
-		const styles = useStyles(styleRefs);
 
 		const positionerRef = useRef<HTMLDivElement>(null);
 		const { alignment: derivedAlignment, rect, triggerRect } =
-			usePositionerEffect(
-				alignment,
-				triggerRef,
-				triggerOffset!,
-				positionerRef,
-				isOpen,
-			) ?? {};
+		usePositionerEffect(
+			alignment,
+			triggerRef,
+			triggerOffset!,
+			positionerRef,
+			isOpen,
+		) ?? {};
 
-		return (
-			<Modal
+		const child = useMemo(() => {
+			return isOpen ? (
+				<WrappingComponent
+					{...(rest as T)}
+					alignment={derivedAlignment}
+					isOpen={isOpen}
+					triggerRect={triggerRect}
+				/>
+			) : null;
+		}, [isOpen, rest]);
+
+		return withBackdrop
+			? <Modal
 				hideBackdrop
 				isOpen={isOpen}
 				transition={false}
 				onRequestClose={onRequestClose}>
-				<div
-					ref={positionerRef}
-					style={{
-						visibility:
-							positionerRef?.current === null && rect?.left! > 0
-								? 'hidden'
-								: 'visible',
-						...(rect && {
-							transform: `translate3d(${rect.left}px, ${rect.top}px, 0px)`,
-						}),
-					}}
-					className={styles.root}>
-					{isOpen && (
-						<WrappingComponent
-							{...(rest as T)}
-							alignment={derivedAlignment}
-							isOpen={isOpen}
-							triggerRect={triggerRect}
-						/>
-					)}
-				</div>
+				<PositionerBody positionerRef={positionerRef} rect={rect} child={child}/>
 			</Modal>
-		);
+			: <Portal>
+				<PositionerBody positionerRef={positionerRef} rect={rect} child={child}/>
+			</Portal>
 	};
+	returningComponent.displayName = `usingPositioner(${WrappingComponent.displayName})`;
+
+	return returningComponent;
 }
+
+const PositionerBody = memo<{
+	positionerRef: RefObject<HTMLDivElement>,
+	rect?: Rect,
+	child: ReactChild | null
+}>(({ rect, positionerRef, child }) => {
+	const styles = useStyles(styleRefs);
+
+	return (
+		<div
+			ref={positionerRef}
+			style={{
+				visibility:
+					positionerRef?.current === null && rect?.left! > 0
+						? 'hidden'
+						: 'visible',
+				...(rect && {
+					transform: `translate3d(${rect.left}px, ${rect.top}px, 0px)`,
+				}),
+			}}
+			className={styles.root}>
+			{child}
+		</div>
+	);
+});
 
 export const Positioner = usingPositioner(
 	({ children }) => children as ReactElement,

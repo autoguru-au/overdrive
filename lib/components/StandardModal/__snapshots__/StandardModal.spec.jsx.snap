@@ -15,12 +15,13 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
     />
     <div
       aria-hidden="false"
-      aria-modal="true"
       class="base container"
-      role="dialog"
     >
       <article
+        aria-labelledby="od-4"
+        aria-modal="true"
         class="base block modal_base modalSizeStandard_base"
+        role="dialog"
       >
         <header
           class="header_base headerWithBorder_base"
@@ -45,6 +46,7 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
           </button>
           <div
             class="headerTitle"
+            id="od-4"
           >
             <h4
               class="root_base sizes_4_base colours_dark_base fontWeight_bold_base"
@@ -81,12 +83,13 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
     />
     <div
       aria-hidden="false"
-      aria-modal="true"
       class="base container"
-      role="dialog"
     >
       <article
+        aria-labelledby="od-3"
+        aria-modal="true"
         class="base block modal_base modalSizeStandard_base"
+        role="dialog"
       >
         <header
           class="header_base headerWithBorder_base"
@@ -111,6 +114,7 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
           </button>
           <div
             class="headerTitle"
+            id="od-3"
           >
             <h4
               class="root_base sizes_4_base colours_dark_base fontWeight_bold_base"

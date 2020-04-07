@@ -9,6 +9,7 @@ import { Icon } from '../Icon';
 import { Modal } from '../Modal';
 import { Heading } from '../Typography';
 import * as styleRefs from './StandardModal.treat';
+import { useId } from '../../utils';
 
 export enum ESize {
 	Standard = 'standard', // 800px wide
@@ -29,6 +30,8 @@ export const StandardModal: FunctionComponent<Props> = ({
 	children,
 }) => {
 	const styles = useStyles(styleRefs);
+
+	const titleId = useId();
 
 	const closeButtonHandler = () => {
 		if (typeof onRequestClose === 'function') onRequestClose('button');
@@ -52,11 +55,12 @@ export const StandardModal: FunctionComponent<Props> = ({
 			<Box
 				className={styles.container}
 				aria-hidden={isOpen ? 'false' : 'true'}
-				role="dialog"
-				aria-modal="true"
 				onClick={backdropHandler}>
 				<Box
 					is="article"
+					role="dialog"
+					aria-modal="true"
+					aria-labelledby={titleId ? `od-${titleId}` : undefined}
 					className={clsx([
 						styles.modal,
 						{ [styles.modalSizeStandard]: size === ESize.Standard },
@@ -73,7 +77,7 @@ export const StandardModal: FunctionComponent<Props> = ({
 							onClick={closeButtonHandler}>
 							<Icon size="medium" icon={WindowCloseIcon} />
 						</button>
-						<div className={styles.headerTitle}>
+						<div className={styles.headerTitle} id={titleId ? `od-${titleId}` : undefined}>
 							<Heading is="h4">{title}</Heading>
 						</div>
 					</header>

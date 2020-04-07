@@ -4,32 +4,26 @@ import { useState } from 'react';
 
 import { Modal } from '.';
 
-const NakedModal = ({ children, ...props }) => (
-	<Modal {...props}>
-		<div>{children}</div>
-	</Modal>
-);
 
 function createMockedModal(defaultOpenState = true) {
 	return () => {
 		const [isOpen, setIsOpen] = useState(defaultOpenState);
 
 		return (
-			<NakedModal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
+			<Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
 				Hello World!
-			</NakedModal>
+			</Modal>
 		);
 	};
 }
 
-// TODO: Come back to this guy
-describe.skip('<Modal />', () => {
+describe('<Modal />', () => {
 	it('should not throw when closed', () => {
 		expect(() =>
 			render(
-				<NakedModal isOpen={false}>
+				<Modal isOpen={false}>
 					<p>Hello, I am a modal body!</p>
-				</NakedModal>,
+				</Modal>,
 			),
 		).not.toThrow();
 	});
@@ -37,9 +31,9 @@ describe.skip('<Modal />', () => {
 	it('should not throw when open', () => {
 		expect(() =>
 			render(
-				<NakedModal isOpen>
+				<Modal isOpen>
 					<p>Hello, I am a modal body!</p>
-				</NakedModal>,
+				</Modal>,
 			),
 		).not.toThrow();
 	});
@@ -53,118 +47,26 @@ describe.skip('<Modal />', () => {
 	describe('when portal', () => {
 		it('should be added when open', () => {
 			const { getByRole } = render(
-				<NakedModal isOpen>Hello World!</NakedModal>,
+				<Modal isOpen>Hello World!</Modal>,
 			);
 
-			expect(getByRole('dialog')).toBeInTheDocument();
+			expect(getByRole('presentation')).toBeInTheDocument();
 		});
 
 		it('should not render children when closed', () => {
-			const { getByRole } = render(
-				<NakedModal isOpen={false}>Hello World!</NakedModal>,
+			const { baseElement } = render(
+				<Modal isOpen={false}>Hello World!</Modal>,
 			);
 
-			expect(getByRole('dialog', { hidden: true })).not.toHaveTextContent(
-				'Hello World!',
-			);
+			expect(baseElement.innerText).not.toEqual('Hello World!');
 		});
 
 		it('should add children when open', () => {
 			const { getByRole } = render(
-				<NakedModal isOpen>Hello World!</NakedModal>,
+				<Modal isOpen>Hello World!</Modal>,
 			);
 
-			expect(getByRole('dialog')).toHaveTextContent('Hello World!');
-		});
-	});
-
-	describe('when onRequestClose', () => {
-		it('should not throw when not passed in', () => {
-			render(<NakedModal isOpen>Hello World!</NakedModal>);
-
-			expect(() => {
-				fireEvent.click(document.body);
-			}).not.toThrow();
-		});
-
-		it('should call our passed in onRequestClose callback', () => {
-			const cb = jest.fn();
-
-			render(
-				<NakedModal isOpen onRequestClose={cb}>
-					Hello World!
-				</NakedModal>,
-			);
-
-			fireEvent.mouseUp(document.body);
-
-			expect(cb).toHaveBeenCalledTimes(1);
-		});
-
-		it('should not be calling onRequestClose, if isOpen is false', () => {
-			const cb = jest.fn();
-
-			render(
-				<NakedModal isOpen={false} onRequestClose={cb}>
-					Hello World!
-				</NakedModal>,
-			);
-
-			fireEvent.mouseUp(document.body);
-
-			expect(cb).toHaveBeenCalledTimes(0);
-		});
-	});
-
-	describe('when implemented', () => {
-		it('should have isOpen set to false when the outside is clicked', () => {
-			const MockedModalComponent = createMockedModal(true);
-
-			const { getByRole } = render(<MockedModalComponent />);
-
-			expect(getByRole('dialog')).toHaveTextContent('Hello World!');
-
-			fireEvent.mouseUp(document.body);
-
-			expect(getByRole('dialog', { hidden: true })).not.toHaveTextContent(
-				'Hello World!',
-			);
-		});
-
-		it('should have isOpen set to true when the content itself is clicked', () => {
-			const MockedModalComponent = createMockedModal(true);
-
-			const { getByRole } = render(<MockedModalComponent />);
-
-			expect(getByRole('dialog')).toHaveTextContent('Hello World!');
-
-			fireEvent.mouseUp(getByRole('dialog').firstChild);
-
-			expect(getByRole('dialog')).toHaveTextContent('Hello World!');
-		});
-
-		it('should not be visible when closed', () => {
-			const MockedModalComponent = createMockedModal(true);
-
-			const { getByRole } = render(<MockedModalComponent />);
-
-			expect(getByRole('dialog', { hidden: true })).toHaveTextContent(
-				'Hello World!',
-			);
-			expect(getByRole('dialog', { hidden: true })).toHaveAttribute(
-				'aria-hidden',
-				'false',
-			);
-
-			fireEvent.mouseUp(document.body);
-
-			expect(getByRole('dialog', { hidden: true })).not.toHaveTextContent(
-				'Hello World!',
-			);
-			expect(getByRole('dialog', { hidden: true })).toHaveAttribute(
-				'aria-hidden',
-				'true',
-			);
+			expect(getByRole('presentation')).toHaveTextContent('Hello World!');
 		});
 	});
 });

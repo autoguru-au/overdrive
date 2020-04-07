@@ -13,9 +13,7 @@ exports[`<Modal /> should match snapshot 1`] = `
       aria-hidden="true"
       class="backdropRoot_default_base backdrop_root"
     />
-    <div>
-      Hello World!
-    </div>
+    Hello World!
   </div>
 </body>
 `;

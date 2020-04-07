@@ -4,7 +4,8 @@ import { Text } from '../Typography';
 import { Portal } from '.';
 
 export default {
-	title: 'Components|Portal',
+	title: 'Utility|Portal',
+	component: Portal,
 	parameters: {
 		chromatic: { disable: true },
 	},

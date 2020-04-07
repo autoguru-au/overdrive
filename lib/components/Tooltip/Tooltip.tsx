@@ -55,6 +55,7 @@ export const Tooltip: FunctionComponent<Props> = ({
 				onMouseLeave: leaveHandler,
 			})}
 			<Positioner
+				withBackdrop={false}
 				triggerRef={triggerRef}
 				alignment={alignment}
 				isOpen={isOpen}>
