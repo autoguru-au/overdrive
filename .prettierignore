@@ -3,8 +3,11 @@
 !/config/
 !/scripts/
 !/.storybook/
+!/.changeset
 !?*.*
 
 dist/
 storybook-static/
 templates/
+
+CHANGELOG.md
