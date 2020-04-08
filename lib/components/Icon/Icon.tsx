@@ -8,7 +8,7 @@ import { resolveResponsiveStyle, ResponsiveProp } from '../../utils';
 import { Box } from '../Box';
 import * as styleRefs from './Icon.treat';
 
-interface Props extends Pick<ComponentProps<typeof Box>, 'display'> {
+export interface Props extends Pick<ComponentProps<typeof Box>, 'display'> {
 	className?: string;
 	size?: ResponsiveProp<keyof typeof styleRefs.size>;
 	icon: IconType;

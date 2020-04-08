@@ -22,7 +22,7 @@ export const Badge = memo<Props>(
 
 		invariant(
 			['string', 'number'].includes(typeof label),
-			'Badge `label` can only contain string\'s or number\'s',
+			"Badge `label` can only contain string's or number's",
 		);
 
 		return (
