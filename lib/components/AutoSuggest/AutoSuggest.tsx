@@ -15,7 +15,6 @@ import {
 	useRef,
 	useState,
 } from 'react';
-import { createPortal } from 'react-dom';
 import { useStyles } from 'react-treat';
 
 import { useMedia } from '../../hooks/useMedia';
@@ -24,6 +23,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { withEnhancedInput } from '../InputBase';
+import { Portal } from '../Portal';
 import { usingPositioner } from '../Positioner';
 import { EAlignment } from '../Positioner/alignment';
 import * as selectStyleRefs from '../SelectInput/SelectInput.treat';
@@ -179,17 +179,16 @@ const AutoSuggestFullscreenInput = <PayloadType extends unknown>({
 		};
 	}, [setShowPortal]);
 
-	return showPortal
-		? createPortal(
-				<div className={styles.fullScreenRoot}>
-					<AutoSuggestInput {...props} inlineOptions />
-					<Button minimal rounded size="medium" onClick={closeModal}>
-						<Icon icon={CloseIcon} />
-					</Button>
-				</div>,
-				document.body,
-		  )
-		: null;
+	return showPortal ? (
+		<Portal>
+			<div className={styles.fullScreenRoot}>
+				<AutoSuggestInput {...props} inlineOptions />
+				<Button minimal rounded size="medium" onClick={closeModal}>
+					<Icon icon={CloseIcon} />
+				</Button>
+			</div>
+		</Portal>
+	) : null;
 };
 
 const AutoSuggestInput = <PayloadType extends unknown>({

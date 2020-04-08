@@ -2,7 +2,7 @@ import { style, styleMap } from 'treat';
 
 export const fullScreenRoot = style((theme) => ({
 	position: 'fixed',
-	zIndex: 10,
+	zIndex: 1001,
 	top: 0,
 	right: 0,
 	bottom: 0,

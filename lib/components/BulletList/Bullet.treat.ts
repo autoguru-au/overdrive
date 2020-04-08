@@ -17,7 +17,7 @@ export const root = styleMap((theme) => ({
 			width: theme.space['2'],
 			height: theme.space['2'],
 			marginTop: `calc((1.6em - ${theme.space['2']}) / 2)`,
-			content: "' '",
+			content: '\' \'',
 			backgroundColor: theme.colours.gamut.gray900,
 		},
 	},

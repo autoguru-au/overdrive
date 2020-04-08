@@ -2,18 +2,20 @@ import * as React from 'react';
 import {
 	ComponentType,
 	FunctionComponent,
+	memo,
+	ReactChild,
 	ReactElement,
 	RefObject,
-	useCallback,
 	useLayoutEffect,
+	useMemo,
 	useRef,
 	useState,
 } from 'react';
-import { createPortal } from 'react-dom';
 import { useStyles } from 'react-treat';
 
 import { isBrowser } from '../../utils';
-import { useOutsideClick } from '../OutsideClick';
+import { Modal } from '../Modal';
+import { Portal } from '../Portal';
 import { EAlignment } from './alignment';
 import { AlignmentRect, getOptimalPosition, Rect } from './getOptimalPosition';
 import * as styleRefs from './Positioner.treat';
@@ -23,6 +25,7 @@ export interface Props {
 	isOpen?: boolean;
 	triggerRef: RefObject<HTMLElement>;
 	triggerOffset?: number;
+	withBackdrop?: boolean;
 
 	onRequestClose?(): void;
 }
@@ -35,8 +38,9 @@ type WrappedComponent<ExtraProps> = ExtraProps & { triggerRect?: Rect } & Pick<
 export function usingPositioner<T extends {} = {}>(
 	WrappingComponent: ComponentType<WrappedComponent<T>>,
 ): FunctionComponent<Props & T> {
-	return ({
+	const ReturningComponent: FunctionComponent<Props & T> = ({
 		alignment = EAlignment.BOTTOM_LEFT,
+		withBackdrop = true,
 		isOpen = false,
 		onRequestClose = () => void 0,
 		triggerRef,
@@ -44,8 +48,8 @@ export function usingPositioner<T extends {} = {}>(
 		...rest
 	}) => {
 		if (!isBrowser) return null;
-		const styles = useStyles(styleRefs);
 
+		/* eslint-disable react-hooks/rules-of-hooks */
 		const positionerRef = useRef<HTMLDivElement>(null);
 		const { alignment: derivedAlignment, rect, triggerRect } =
 			usePositionerEffect(
@@ -56,36 +60,71 @@ export function usingPositioner<T extends {} = {}>(
 				isOpen,
 			) ?? {};
 
-		useOutsideClick(
-			[positionerRef, triggerRef],
-			useCallback(() => {
-				if (isOpen) onRequestClose();
-			}, [isOpen, onRequestClose]),
-		);
+		const child = useMemo(() => {
+			return isOpen ? (
+				<WrappingComponent
+					{...(rest as T)}
+					alignment={derivedAlignment}
+					isOpen={isOpen}
+					triggerRect={triggerRect}
+				/>
+			) : null;
+		}, [isOpen, rest]);
+		/* eslint-enable react-hooks/rules-of-hooks */
 
-		return createPortal(
-			<div
-				ref={positionerRef}
-				style={{
-					visibility: rect === null ? 'hidden' : 'visible',
-					...(rect && {
-						transform: `translate3d(${rect.left}px, ${rect.top}px, 0px)`,
-					}),
-				}}
-				className={styles.root}>
-				{isOpen && (
-					<WrappingComponent
-						{...(rest as T)}
-						alignment={derivedAlignment}
-						isOpen={isOpen}
-						triggerRect={triggerRect}
-					/>
-				)}
-			</div>,
-			document.body,
+		return withBackdrop ? (
+			<Modal
+				hideBackdrop
+				isOpen={isOpen}
+				transition={false}
+				onRequestClose={onRequestClose}>
+				<PositionerBody
+					positionerRef={positionerRef}
+					rect={rect}
+					child={child}
+				/>
+			</Modal>
+		) : (
+			<Portal>
+				<PositionerBody
+					positionerRef={positionerRef}
+					rect={rect}
+					child={child}
+				/>
+			</Portal>
 		);
 	};
+
+	ReturningComponent.displayName = `usingPositioner(${WrappingComponent.displayName})`;
+
+	return ReturningComponent;
 }
+
+const PositionerBody = memo<{
+	positionerRef: RefObject<HTMLDivElement>;
+	rect?: Rect;
+	child: ReactChild | null;
+}>(({ rect, positionerRef, child }) => {
+	const styles = useStyles(styleRefs);
+
+	return (
+		<div
+			ref={positionerRef}
+			role="none presentation"
+			style={{
+				visibility:
+					positionerRef?.current === null && rect?.left! > 0
+						? 'hidden'
+						: 'visible',
+				...(rect && {
+					transform: `translate3d(${rect.left}px, ${rect.top}px, 0px)`,
+				}),
+			}}
+			className={styles.root}>
+			{child}
+		</div>
+	);
+});
 
 export const Positioner = usingPositioner(
 	({ children }) => children as ReactElement,
@@ -115,11 +154,17 @@ const usePositionerEffect = (
 		}
 
 		let lastFrame = requestAnimationFrame(() => {
-			handler();
+			lastFrame = requestAnimationFrame(() => {
+				handler();
+			});
 		});
 
 		function handler() {
-			if (!current && !triggerRef.current && !positionerRef.current) {
+			if (
+				!current ||
+				triggerRef?.current === null ||
+				positionerRef?.current === null
+			) {
 				return;
 			}
 
@@ -157,7 +202,7 @@ const usePositionerEffect = (
 				cancelAnimationFrame(lastFrame);
 			}
 		};
-	}, [alignment, isOpen, positionerRef, triggerRef, triggerOffset]);
+	});
 
 	return positionerResult;
 };

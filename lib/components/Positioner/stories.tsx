@@ -25,19 +25,18 @@ export const standard = () => {
 		const triggerRef = useRef(null);
 		const [isOpen, setIsOpen] = useState(true);
 
+		const closeHandler = useCallback(() => setIsOpen((prev) => !prev), []);
+
 		return (
 			<div>
-				<Button
-					ref={triggerRef}
-					size="small"
-					onClick={useCallback(() => setIsOpen(!isOpen), [isOpen])}>
+				<Button ref={triggerRef} size="small" onClick={closeHandler}>
 					Open me
 				</Button>
 				<Positioner
 					isOpen={isOpen}
 					triggerRef={triggerRef}
 					alignment={alignmentPicker()}
-					onRequestClose={action('onRequestClose')}>
+					onRequestClose={closeHandler}>
 					<Box
 						boxShadow={1}
 						backgroundColour="white"
@@ -66,7 +65,6 @@ export const illustrateAScroll = () => {
 			style={{
 				height: '100%',
 				width: '100%',
-				overflow: 'scroll',
 			}}>
 			<div
 				style={{
@@ -75,8 +73,8 @@ export const illustrateAScroll = () => {
 				}}>
 				<div
 					style={{
-						marginTop: 'calc((100vh*5) / 2)',
-						marginLeft: 'calc((100vw*5) / 2)',
+						paddingTop: 'calc((100vh*5) / 2)',
+						paddingLeft: 'calc((100vw*5) / 2)',
 					}}>
 					<Button ref={triggerRef} size="small">
 						I'm the trigger

@@ -1,28 +1,34 @@
 import { style } from 'treat';
 
+export const container = style({
+	height: '100%',
+	outline: '0',
+	display: 'flex',
+	alignItems: 'center',
+	justifyContent: 'center',
+});
+
 export const modal = style((theme) => ({
 	display: 'flex',
-	overflow: 'hidden',
 	flexDirection: 'column',
 	width: '100vw',
 	height: 'auto',
 	maxHeight: `calc(100vh - ${theme.space['8']})`,
 	borderRadius: `${theme.space['2']} ${theme.space['2']} 0 0`,
 	backgroundColor: 'white',
-}));
-
-export const modalDesktopView = style((theme) =>
-	theme.utils.responsiveStyle({
+	marginTop: theme.space['8'],
+	...theme.utils.responsiveStyle({
 		desktop: {
 			maxWidth: `calc(100% - ${theme.space['9']} * 2)`,
 			height: 'auto',
 			maxHeight: `calc(100vh - ${theme.space['9']} * 2)`,
 			borderRadius: `${theme.space['1']}`,
 			boxShadow:
-				'0 0 32px 0 rgba(black, 0.08) 0 24px 96px 0 rgba(black, 0.012)',
+				'0 0 32px 0 rgba(0,0,0, 0.012), 0 24px 96px 0 rgba(0,0,0, 0.08)',
+			marginTop: 0,
 		},
 	}),
-);
+}));
 
 export const modalSizeStandard = style((theme) =>
 	theme.utils.responsiveStyle({

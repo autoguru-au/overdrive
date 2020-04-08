@@ -9,10 +9,6 @@ exports[`<Tolltip /> should match snapshot when closed 1`] = `
       trigger
     </div>
   </div>
-  <div
-    class="root"
-    style="visibility: visible;"
-  />
 </body>
 `;
 
@@ -27,6 +23,7 @@ exports[`<Tolltip /> should match snapshot when opened 1`] = `
   </div>
   <div
     class="root"
+    role="none presentation"
     style="visibility: visible;"
   >
     <div
