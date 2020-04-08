@@ -48,6 +48,10 @@ export const StandardModal: FunctionComponent<Props> = ({
 		} else {
 			document.body.style.overflow = '';
 		}
+
+		return () => {
+			document.body.style.overflow = '';
+		};
 	}, [isOpen]);
 
 	return (

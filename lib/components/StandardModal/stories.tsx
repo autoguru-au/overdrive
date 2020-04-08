@@ -10,6 +10,9 @@ import { EStandardModalSize, StandardModal } from '.';
 export default {
 	title: 'Components|StandardModal',
 	component: StandardModal,
+	parameters: {
+		chromatic: { delay: 300 },
+	},
 };
 
 export const Standard = () => {

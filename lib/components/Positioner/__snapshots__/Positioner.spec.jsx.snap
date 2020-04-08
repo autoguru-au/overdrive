@@ -6,20 +6,10 @@ exports[`<Positioner /> should match snapshot 1`] = `
 >
   <div />
   <div
-    class="base root_default"
-    role="presentation"
+    class="root"
+    role="none presentation"
   >
-    <div
-      aria-hidden="true"
-      class="backdropRoot_default_base backdrop_root backdropRoot_invisible_base"
-    />
-    <div
-      class="root"
-      role="none presentation"
-      style="visibility: visible;"
-    >
-      Some body
-    </div>
+    Some body
   </div>
 </body>
 `;

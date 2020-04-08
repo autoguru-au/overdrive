@@ -416,12 +416,7 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 					triggerRef={triggerRef}
 					alignment={EAlignment.BOTTOM}
 					isOpen={shouldOpenFlyout}
-					triggerOffset={4}
-					onRequestClose={() => {
-						dispatch({
-							type: ActionTypes.FLYOUT_CLOSE,
-						});
-					}}>
+					triggerOffset={4}>
 					<SuggestionsList<PayloadType>
 						className={styles.suggestionList.blockOptions}
 						suggestionListRef={suggestionListRef}
@@ -568,12 +563,16 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 
 const getSuggestionId = (id: string, index: number) => `${id}-option-${index}`;
 
-const SuggestionListFlyout = usingPositioner(({ triggerRect, children }) => {
+const SuggestionListFlyout = usingPositioner(({ triggerRef, children }) => {
 	const styles = useStyles(styleRefs);
 	return (
 		<div
 			className={styles.flyout}
-			style={{ width: triggerRect?.width }}
+			style={{
+				width: triggerRef.current
+					? triggerRef.current.clientWidth
+					: undefined,
+			}}
 			onMouseDown={(event) => event.preventDefault()}>
 			{children}
 		</div>

@@ -1,24 +1,46 @@
+import type { Placement } from '@popperjs/core';
+import flip from '@popperjs/core/lib/modifiers/flip';
+import offset from '@popperjs/core/lib/modifiers/offset';
+import preventOverflow from '@popperjs/core/lib/modifiers/preventOverflow';
+import {
+	defaultModifiers,
+	popperGenerator,
+} from '@popperjs/core/lib/popper-lite';
 import * as React from 'react';
 import {
 	ComponentType,
 	FunctionComponent,
-	memo,
-	ReactChild,
 	ReactElement,
 	RefObject,
-	useLayoutEffect,
-	useMemo,
+	useCallback,
+	useEffect,
 	useRef,
-	useState,
 } from 'react';
 import { useStyles } from 'react-treat';
 
-import { isBrowser } from '../../utils';
-import { Modal } from '../Modal';
+import { isBrowser, setRef } from '../../utils';
 import { Portal } from '../Portal';
 import { EAlignment } from './alignment';
-import { AlignmentRect, getOptimalPosition, Rect } from './getOptimalPosition';
 import * as styleRefs from './Positioner.treat';
+
+const createPopper = popperGenerator({
+	defaultModifiers: [
+		...defaultModifiers,
+		offset,
+		{
+			...preventOverflow,
+			options: {
+				tether: false,
+				altAxis: true,
+				padding: 8,
+			},
+		},
+		flip,
+	],
+	defaultOptions: {
+		placement: 'bottom',
+	},
+});
 
 export interface Props {
 	alignment?: EAlignment;
@@ -26,71 +48,97 @@ export interface Props {
 	triggerRef: RefObject<HTMLElement>;
 	triggerOffset?: number;
 	withBackdrop?: boolean;
-
-	onRequestClose?(): void;
 }
 
-type WrappedComponent<ExtraProps> = ExtraProps & { triggerRect?: Rect } & Pick<
-		Props,
-		'isOpen' | 'alignment'
-	>;
+type WrappedComponent<ExtraProps> = ExtraProps &
+	Pick<Props, 'isOpen' | 'alignment' | 'triggerRef'>;
 
 export function usingPositioner<T extends {} = {}>(
 	WrappingComponent: ComponentType<WrappedComponent<T>>,
 ): FunctionComponent<Props & T> {
 	const ReturningComponent: FunctionComponent<Props & T> = ({
 		alignment = EAlignment.BOTTOM_LEFT,
-		withBackdrop = true,
 		isOpen = false,
-		onRequestClose = () => void 0,
 		triggerRef,
-		triggerOffset, // This is defaulted in the getOptimalPosition
+		triggerOffset = 4,
 		...rest
 	}) => {
 		if (!isBrowser) return null;
 
-		/* eslint-disable react-hooks/rules-of-hooks */
-		const positionerRef = useRef<HTMLDivElement>(null);
-		const { alignment: derivedAlignment, rect, triggerRect } =
-			usePositionerEffect(
-				alignment,
-				triggerRef,
-				triggerOffset!,
-				positionerRef,
-				isOpen,
-			) ?? {};
+		const placement = convertPlacement(alignment);
 
-		const child = useMemo(() => {
-			return isOpen ? (
-				<WrappingComponent
-					{...(rest as T)}
-					alignment={derivedAlignment}
-					isOpen={isOpen}
-					triggerRect={triggerRect}
-				/>
-			) : null;
-		}, [isOpen, rest]);
+		/* eslint-disable react-hooks/rules-of-hooks */
+		const styles = useStyles(styleRefs);
+
+		const referenceRef = useRef<HTMLDivElement>(null);
+
+		const popperInstanceRef = React.useRef<ReturnType<
+			typeof createPopper
+		> | null>(null);
+
+		useEffect(() => {
+			if (popperInstanceRef.current) {
+				popperInstanceRef.current.update();
+			}
+		});
+
+		const handleOpen = useCallback(() => {
+			if (!referenceRef.current || !triggerRef.current || !open) return;
+
+			if (popperInstanceRef.current) popperInstanceRef.current.destroy();
+
+			const popper = createPopper(
+				triggerRef.current,
+				referenceRef.current,
+				{
+					placement,
+					modifiers: [
+						{
+							name: 'offset',
+							options: {
+								offset: [0, triggerOffset],
+							},
+						},
+					],
+				},
+			);
+
+			setRef(popperInstanceRef, popper);
+		}, [isOpen, placement, triggerOffset]);
+
+		useEffect(() => {
+			handleOpen();
+
+			return () => {
+				if (popperInstanceRef.current) {
+					popperInstanceRef.current.destroy();
+				}
+			};
+		}, [handleOpen]);
+
+		const handleRef = useCallback(
+			(node) => {
+				setRef(referenceRef, node);
+				handleOpen();
+			},
+			[handleOpen],
+		);
 		/* eslint-enable react-hooks/rules-of-hooks */
 
-		return withBackdrop ? (
-			<Modal
-				hideBackdrop
-				isOpen={isOpen}
-				transition={false}
-				onRequestClose={onRequestClose}>
-				<PositionerBody
-					positionerRef={positionerRef}
-					rect={rect}
-					child={child}
-				/>
-			</Modal>
-		) : (
+		return (
 			<Portal>
-				<PositionerBody
-					positionerRef={positionerRef}
-					rect={rect}
-					child={child}
-				/>
+				<div
+					ref={handleRef}
+					role="none presentation"
+					className={styles.root}>
+					{isOpen ? (
+						<WrappingComponent
+							{...(rest as T)}
+							triggerRef={triggerRef}
+							isOpen={isOpen}
+						/>
+					) : null}
+				</div>
 			</Portal>
 		);
 	};
@@ -100,109 +148,21 @@ export function usingPositioner<T extends {} = {}>(
 	return ReturningComponent;
 }
 
-const PositionerBody = memo<{
-	positionerRef: RefObject<HTMLDivElement>;
-	rect?: Rect;
-	child: ReactChild | null;
-}>(({ rect, positionerRef, child }) => {
-	const styles = useStyles(styleRefs);
-
-	return (
-		<div
-			ref={positionerRef}
-			role="none presentation"
-			style={{
-				visibility:
-					positionerRef?.current === null && rect?.left! > 0
-						? 'hidden'
-						: 'visible',
-				...(rect && {
-					transform: `translate3d(${rect.left}px, ${rect.top}px, 0px)`,
-				}),
-			}}
-			className={styles.root}>
-			{child}
-		</div>
-	);
-});
-
 export const Positioner = usingPositioner(
 	({ children }) => children as ReactElement,
 );
 
-interface PositionerEffectState extends AlignmentRect {
-	triggerRect: Rect;
-}
-
-const usePositionerEffect = (
-	alignment: EAlignment,
-	triggerRef: RefObject<HTMLElement>,
-	triggerOffset: number,
-	positionerRef: RefObject<HTMLElement>,
-	isOpen: boolean,
-): PositionerEffectState | null => {
-	const [
-		positionerResult,
-		setPositionerResult,
-	] = useState<PositionerEffectState | null>(null);
-
-	useLayoutEffect(() => {
-		let current = true;
-
-		if (!triggerRef.current && !positionerRef.current) {
-			return void 0;
-		}
-
-		let lastFrame = requestAnimationFrame(() => {
-			lastFrame = requestAnimationFrame(() => {
-				handler();
-			});
-		});
-
-		function handler() {
-			if (
-				!current ||
-				triggerRef?.current === null ||
-				positionerRef?.current === null
-			) {
-				return;
-			}
-
-			if (!isOpen && Boolean(lastFrame)) {
-				return cancelAnimationFrame(lastFrame);
-			}
-
-			const triggerRect = triggerRef.current!.getBoundingClientRect();
-			const containerRect = positionerRef.current!.getBoundingClientRect();
-
-			const height = Math.round(containerRect.height);
-			const width = Math.round(containerRect.width);
-
-			setPositionerResult({
-				triggerRect,
-				...getOptimalPosition(
-					alignment,
-					triggerRect,
-					{
-						height,
-						width,
-					},
-					triggerOffset,
-				),
-			});
-
-			lastFrame = requestAnimationFrame(() => {
-				handler();
-			});
-		}
-
-		return () => {
-			current = false;
-			if (lastFrame) {
-				cancelAnimationFrame(lastFrame);
-			}
-		};
-	});
-
-	return positionerResult;
+const convertPlacement = (alignment: EAlignment): Placement => {
+	switch (alignment) {
+		case EAlignment.BOTTOM_LEFT:
+			return 'bottom-start';
+		case EAlignment.BOTTOM_RIGHT:
+			return 'bottom-end';
+		case EAlignment.TOP_LEFT:
+			return 'top-start';
+		case EAlignment.TOP_RIGHT:
+			return 'top-end';
+		default:
+			return alignment;
+	}
 };
