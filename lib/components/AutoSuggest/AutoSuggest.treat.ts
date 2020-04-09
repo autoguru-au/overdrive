@@ -58,13 +58,6 @@ export const suggestionList = {
 	}),
 };
 
-export const flyout = style((theme) => ({
-	border: `1px solid ${theme.colours.gamut.gray200}`,
-	borderRadius: theme.space['1'],
-	backgroundColor: theme.colours.gamut.white,
-	boxShadow: theme.elevation['2'],
-}));
-
 export const spacer = style((theme) => ({
 	height: theme.space['1'],
 }));
@@ -76,7 +69,7 @@ export const suggestion = style((theme) => ({
 	cursor: 'pointer',
 	textAlign: 'left',
 	outline: 'none',
-	backgroundColor: 'transparen',
+	backgroundColor: 'transparent',
 }));
 
 export const suggestionListItem = styleMap(() => ({

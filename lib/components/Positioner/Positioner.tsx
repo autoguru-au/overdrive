@@ -60,7 +60,7 @@ export function usingPositioner<T extends {} = {}>(
 		alignment = EAlignment.BOTTOM_LEFT,
 		isOpen = false,
 		triggerRef,
-		triggerOffset = 4,
+		triggerOffset = 12,
 		...rest
 	}) => {
 		if (!isBrowser) return null;
@@ -76,6 +76,7 @@ export function usingPositioner<T extends {} = {}>(
 			typeof createPopper
 		> | null>(null);
 
+		// Whenever this component get's re-rendered, we want to proc an update to the popper instance.
 		useEffect(() => {
 			if (popperInstanceRef.current) {
 				popperInstanceRef.current.update();
@@ -83,8 +84,9 @@ export function usingPositioner<T extends {} = {}>(
 		});
 
 		const handleOpen = useCallback(() => {
-			if (!referenceRef.current || !triggerRef.current || !open) return;
+			if (!referenceRef.current || !triggerRef.current || !isOpen) return;
 
+			// Delete the old instance, because we are about to create it again.
 			if (popperInstanceRef.current) popperInstanceRef.current.destroy();
 
 			const popper = createPopper(
@@ -106,16 +108,32 @@ export function usingPositioner<T extends {} = {}>(
 			setRef(popperInstanceRef, popper);
 		}, [isOpen, placement, triggerOffset]);
 
+		const handleClose = () => {
+			if (!popperInstanceRef.current) return;
+
+			popperInstanceRef.current.destroy();
+			// GC the popper instance
+			setRef(popperInstanceRef, null);
+		};
+
+		/*
+		When one the handleOpen reference changes, we want to fire it off again,
+		and when we un-mount to destroy the instance also.
+		 */
 		useEffect(() => {
 			handleOpen();
-
-			return () => {
-				if (popperInstanceRef.current) {
-					popperInstanceRef.current.destroy();
-				}
-			};
 		}, [handleOpen]);
 
+		// Close when component un-mounts;
+		useEffect(() => () => void handleClose(), []);
+
+		useEffect(() => {
+			if (!isOpen) {
+				handleClose();
+			}
+		}, [isOpen]);
+
+		// Gets applied to the positioner div, that on mount will run this callback
 		const handleRef = useCallback(
 			(node) => {
 				setRef(referenceRef, node);
