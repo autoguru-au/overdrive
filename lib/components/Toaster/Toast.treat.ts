@@ -2,7 +2,7 @@ import { style } from 'treat';
 
 export const root = style((theme) => ({
 	position: 'fixed',
-	zIndex: 20,
+	zIndex: 3000,
 	top: theme.space['3'],
 	right: 0,
 	left: 0,

@@ -5,6 +5,7 @@ module.exports = {
 		'/templates/component/',
 		'\\.treat\\.tsx?$',
 	],
+	transformIgnorePatterns: ['node_modules/(?!(@popperjs/core)/)'],
 	setupFilesAfterEnv: [
 		require.resolve('./scripts/test-setup-themes.js'),
 		require.resolve('@testing-library/jest-dom/extend-expect'),
