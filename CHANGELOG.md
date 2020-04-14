@@ -1,5 +1,65 @@
 # @autoguru/overdrive
 
+## 2.0.5
+
+### Patch Changes
+
+-   4df7e83: AutoSuggest: Introduce a autoWidth prop that either will size the
+    flyout to either the width of the children, or the input.
+
+    **FEATURES**
+
+    `<AutoSuggest>` can now be given a `autoWidth` prop that will auto the width
+    in relation to setting the width, or for it to be automatic.
+
+    -   `autoWidth={true}` means, size the flyout to the width of flyout
+        children "automatically"
+    -   `autoWidth={false}` means to set to the width of the select input.
+
+    eg:
+
+    ```jsx
+
+    // size to the width of the flyout children
+    <AutoSuggest
+        placeholder="How are you?"
+        suggestions={[{ text: "Im an item" }]}
+        autoWidth
+    />
+
+    // size to the width of the input (current behaviour)
+    <AutoSuggest
+        placeholder="How are you?"
+        suggestions={[{ text: "Im an item" }]}
+    />
+
+    ```
+
+-   378e5da: AutoSuggest: Input search types to remove the webkit clear button
+
+    **FEATURES**
+
+    When we reset input type searches, we incorrectly "hid" the webkit search
+    buttons, this aims to correct that.
+
+-   eb3cf9d: AutoSuggest: Support the usage of passing a ref down to the
+    implemented input
+
+    **FEATURES**
+
+    `<AutoSuggest>` can now be given a ref which will be passed down to the
+    underlying input.
+
+    eg:
+
+    ```tsx
+    const myRef = useRef<HTMLInputElement | null>(null);
+
+    <AutoSuggest ref={myRef} value={null} placeholder={'My AutoSuggest'} />;
+    ```
+
+-   bab9cd2: InputBase: Always full width the input wrapper
+
 ## 2.0.4
 
 ### Patch Changes
