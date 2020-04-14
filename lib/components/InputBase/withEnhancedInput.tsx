@@ -235,6 +235,7 @@ export const withEnhancedInput = <
 
 			return (
 				<Box
+					width="full"
 					className={className}
 					onMouseEnter={onMouseOver}
 					onMouseLeave={onMouseOut}>

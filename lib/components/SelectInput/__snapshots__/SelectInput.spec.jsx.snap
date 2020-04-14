@@ -2,7 +2,7 @@
 
 exports[`<SelectInput /> should have some hintText 1`] = `
 <div
-  class="base"
+  class="base width_full"
 >
   <div
     class="base root_base"
@@ -79,7 +79,7 @@ exports[`<SelectInput /> should have some hintText 1`] = `
 
 exports[`<SelectInput /> should match snapshot 1`] = `
 <div
-  class="base"
+  class="base width_full"
 >
   <div
     class="base root_base"
@@ -151,7 +151,7 @@ exports[`<SelectInput /> should match snapshot 1`] = `
 
 exports[`<SelectInput /> should match snapshot when active 1`] = `
 <div
-  class="base"
+  class="base width_full"
 >
   <div
     class="base root_base"
@@ -223,7 +223,7 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
 
 exports[`<SelectInput /> should match snapshot when touched 1`] = `
 <div
-  class="base"
+  class="base width_full"
 >
   <div
     class="base root_base"
@@ -295,7 +295,7 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
 
 exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
 <div
-  class="base"
+  class="base width_full"
 >
   <div
     class="base root_base"
@@ -367,7 +367,7 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
 
 exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
 <div
-  class="base"
+  class="base width_full"
 >
   <div
     class="base root_base"
@@ -439,7 +439,7 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
 
 exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
 <div
-  class="base input-class"
+  class="base width_full input-class"
 >
   <div
     class="base root_base"
