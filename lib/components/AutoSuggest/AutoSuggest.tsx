@@ -5,12 +5,14 @@ import * as React from 'react';
 import {
 	ComponentPropsWithoutRef,
 	Dispatch,
+	forwardRef,
 	FunctionComponent,
 	ReactElement,
 	Reducer,
 	Ref,
 	useCallback,
 	useEffect,
+	useMemo,
 	useReducer,
 	useRef,
 	useState,
@@ -18,7 +20,7 @@ import {
 import { useStyles } from 'react-treat';
 
 import { useMedia } from '../../hooks/useMedia';
-import { useId } from '../../utils';
+import { setRef, useId } from '../../utils';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
@@ -75,32 +77,138 @@ type Actions =
 	| { type: ActionTypes.SUGGESTION_MOUSE_ENTER; index: number }
 	| { type: ActionTypes.SUGGESTION_MOUSE_CLICK };
 
-interface Props<PayloadType>
+type Suggestions<PayloadType> = Array<AutoSuggestValue<PayloadType>>;
+
+export interface Props<PayloadType>
 	extends Omit<
 		ComponentPropsWithoutRef<typeof TextInput>,
 		'onChange' | 'value' | 'type'
 	> {
 	autoFocus?: boolean;
-	value: AutoSuggestValue<PayloadType>;
-	suggestions: Array<AutoSuggestValue<PayloadType>>;
+	value: AutoSuggestValue<PayloadType> | null;
+	suggestions: Suggestions<PayloadType>;
 
 	itemRenderer?: AutoSuggestItemRenderer<PayloadType>;
 
 	onChange?(value: AutoSuggestValue<PayloadType>): void;
 }
 
-export const AutoSuggest = <PayloadType extends unknown>({
-	autoFocus = false,
-	suggestions,
-	value,
-	onChange: incomingOnChange,
-	itemRenderer = defaultItemRenderer,
-	onBlur,
-	onFocus: incomingOnFocus,
-	onKeyDown,
-	onClick,
-	...textInputProps
-}: Props<PayloadType>): ReturnType<FunctionComponent<Props<PayloadType>>> => {
+interface AutoSuggestInputProps<PayloadType extends unknown>
+	extends Props<PayloadType> {
+	inlineOptions?: boolean;
+}
+
+interface AutoSuggestFullscreenInputProps<PayloadType extends unknown>
+	extends AutoSuggestInputProps<PayloadType> {
+	closeModal(): void;
+}
+
+const inputReducerFactory = <T extends Suggestions<unknown>>(
+	suggestions: T,
+): Reducer<State, Actions> => (prevState, action) => {
+	switch (action.type) {
+		default:
+		case ActionTypes.INPUT_CHANGE: {
+			return {
+				isFlyoutOpen: true,
+				highlightIndex: -1,
+				previewText: null,
+			};
+		}
+
+		case ActionTypes.FLYOUT_CLOSE:
+		case ActionTypes.SUGGESTION_MOUSE_CLICK:
+		case ActionTypes.INPUT_ESCAPE:
+		case ActionTypes.INPUT_BLUR: {
+			return {
+				isFlyoutOpen: false,
+				highlightIndex: -1,
+				previewText: null,
+			};
+		}
+
+		case ActionTypes.INPUT_FOCUS: {
+			return {
+				...prevState,
+				isFlyoutOpen: suggestions.length > -1,
+			};
+		}
+
+		case ActionTypes.INPUT_ARROW_DOWN: {
+			const nextIndex = getNextIndex(
+				1,
+				prevState.highlightIndex,
+				suggestions,
+			);
+			return {
+				isFlyoutOpen: true,
+				highlightIndex: nextIndex,
+				previewText:
+					nextIndex > -1 ? suggestions[nextIndex].text : null,
+			};
+		}
+
+		case ActionTypes.INPUT_ARROW_UP: {
+			const firstIndex = getNextIndex(1, -1, suggestions);
+
+			if (prevState.highlightIndex === firstIndex) {
+				return {
+					isFlyoutOpen: true,
+					highlightIndex: -1,
+					previewText: null,
+				};
+			}
+
+			const nextIndex = getNextIndex(
+				-1,
+				prevState.highlightIndex,
+				suggestions,
+			);
+
+			return {
+				isFlyoutOpen: true,
+				highlightIndex: nextIndex,
+				previewText:
+					nextIndex > -1 ? suggestions[nextIndex].text : null,
+			};
+		}
+
+		case ActionTypes.SUGGESTION_MOUSE_ENTER: {
+			return {
+				...prevState,
+				highlightIndex: action.index,
+			};
+		}
+
+		case ActionTypes.INPUT_ENTER: {
+			if (prevState.highlightIndex > -1) {
+				return {
+					highlightIndex: -1,
+					previewText: null,
+					isFlyoutOpen: false,
+				};
+			}
+
+			return prevState;
+		}
+	}
+};
+
+export const AutoSuggest = forwardRef(function AutoSuggest(
+	{
+		autoFocus = false,
+		suggestions,
+		value,
+		onChange: incomingOnChange,
+		itemRenderer = defaultItemRenderer,
+		onBlur,
+		onFocus: incomingOnFocus,
+		onKeyDown,
+		onClick,
+		...textInputProps
+	},
+	ref,
+) {
 	const [isDesktop] = useMedia(['desktop'], false);
 	const [isFocused, setIsFocused] = useState<boolean>(false);
 
@@ -135,77 +243,70 @@ export const AutoSuggest = <PayloadType extends unknown>({
 			closeModal={closeModal}
 		/>
 	) : (
-		<AutoSuggestInput {...props} autoFocus={autoFocus} />
+		<AutoSuggestInput ref={ref} {...props} autoFocus={autoFocus} />
 	);
-};
+}) as <PayloadType extends unknown>(
+	p: Props<PayloadType> & { ref?: Ref<HTMLInputElement> },
+) => ReactElement;
 
-interface AutoSuggestInputProps<PayloadType extends unknown>
-	extends Props<PayloadType> {
-	inlineOptions?: boolean;
-}
+const AutoSuggestFullscreenInput = forwardRef(
+	function AutoSuggestFullscreenInput({ closeModal, ...props }, ref) {
+		const styles = useStyles(styleRefs);
+		const [showPortal, setShowPortal] = useState<boolean>(false);
 
-interface AutoSuggestFullscreenInputProps<PayloadType extends unknown>
-	extends AutoSuggestInputProps<PayloadType> {
-	closeModal(): void;
-}
+		useEffect(() => {
+			document.documentElement.style.position = 'fixed';
+			document.documentElement.style.overflow = 'hidden';
+			document.documentElement.style.maxHeight = '100%';
 
-const AutoSuggestFullscreenInput = <PayloadType extends unknown>({
-	closeModal,
+			return () => {
+				document.documentElement.style.position = '';
+				document.documentElement.style.overflow = '';
+				document.documentElement.style.maxHeight = '';
+			};
+		}, []);
 
-	...props
-}: AutoSuggestFullscreenInputProps<PayloadType>): ReturnType<
-	FunctionComponent<AutoSuggestInputProps<PayloadType>>
-> => {
-	const styles = useStyles(styleRefs);
-	const [showPortal, setShowPortal] = useState<boolean>(false);
+		useEffect(() => {
+			const cb = requestAnimationFrame(() => setShowPortal(true));
 
-	useEffect(() => {
-		document.documentElement.style.position = 'fixed';
-		document.documentElement.style.overflow = 'hidden';
-		document.documentElement.style.maxHeight = '100%';
+			return () => {
+				cancelAnimationFrame(cb);
+			};
+		}, [setShowPortal]);
 
-		return () => {
-			document.documentElement.style.position = '';
-			document.documentElement.style.overflow = '';
-			document.documentElement.style.maxHeight = '';
-		};
-	}, []);
+		return showPortal ? (
+			<Portal>
+				<div className={styles.fullScreenRoot}>
+					<AutoSuggestInput ref={ref} {...props} inlineOptions />
+					<Button minimal rounded size="medium" onClick={closeModal}>
+						<Icon icon={CloseIcon} />
+					</Button>
+				</div>
+			</Portal>
+		) : null;
+	},
+) as <PayloadType extends unknown>(
+	p: AutoSuggestFullscreenInputProps<PayloadType> & {
+		ref?: Ref<HTMLInputElement>;
+	},
+) => ReactElement | null;
 
-	useEffect(() => {
-		const cb = requestAnimationFrame(() => setShowPortal(true));
-
-		return () => {
-			cancelAnimationFrame(cb);
-		};
-	}, [setShowPortal]);
-
-	return showPortal ? (
-		<Portal>
-			<div className={styles.fullScreenRoot}>
-				<AutoSuggestInput {...props} inlineOptions />
-				<Button minimal rounded size="medium" onClick={closeModal}>
-					<Icon icon={CloseIcon} />
-				</Button>
-			</div>
-		</Portal>
-	) : null;
-};
-
-const AutoSuggestInput = <PayloadType extends unknown>({
-	inlineOptions = false,
-	autoFocus,
-	suggestions,
-	value,
-	onChange,
-	itemRenderer = defaultItemRenderer,
-	onBlur,
-	onFocus,
-	onKeyDown,
-	onClick,
-	...textInputProps
-}: AutoSuggestInputProps<PayloadType>): ReturnType<
-	FunctionComponent<AutoSuggestInputProps<PayloadType>>
-> => {
+const AutoSuggestInput = forwardRef(function AutoSuggestInput(
+	{
+		inlineOptions = false,
+		autoFocus,
+		suggestions,
+		value,
+		onChange,
+		itemRenderer = defaultItemRenderer,
+		onBlur,
+		onFocus,
+		onKeyDown,
+		onClick,
+		...textInputProps
+	},
+	ref,
+) {
 	const styles = useStyles(styleRefs);
 	const triggerRef = useRef<HTMLDivElement>(null);
 	const highlightRef = useRef<HTMLLIElement>(null);
@@ -213,95 +314,9 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 
 	const suggestionListId = useId();
 
-	const reducer: Reducer<State, Actions> = useCallback(
-		(prevState, action) => {
-			switch (action.type) {
-				default:
-				case ActionTypes.INPUT_CHANGE: {
-					return {
-						isFlyoutOpen: true,
-						highlightIndex: -1,
-						previewText: null,
-					};
-				}
-
-				case ActionTypes.FLYOUT_CLOSE:
-				case ActionTypes.SUGGESTION_MOUSE_CLICK:
-				case ActionTypes.INPUT_ESCAPE:
-				case ActionTypes.INPUT_BLUR: {
-					return {
-						isFlyoutOpen: false,
-						highlightIndex: -1,
-						previewText: null,
-					};
-				}
-
-				case ActionTypes.INPUT_FOCUS: {
-					return {
-						...prevState,
-						isFlyoutOpen: suggestions.length > -1,
-					};
-				}
-
-				case ActionTypes.INPUT_ARROW_DOWN: {
-					const nextIndex = getNextIndex(
-						1,
-						prevState.highlightIndex,
-						suggestions,
-					);
-					return {
-						isFlyoutOpen: true,
-						highlightIndex: nextIndex,
-						previewText:
-							nextIndex > -1 ? suggestions[nextIndex].text : null,
-					};
-				}
-
-				case ActionTypes.INPUT_ARROW_UP: {
-					const firstIndex = getNextIndex(1, -1, suggestions);
-
-					if (prevState.highlightIndex === firstIndex) {
-						return {
-							isFlyoutOpen: true,
-							highlightIndex: -1,
-							previewText: null,
-						};
-					}
-
-					const nextIndex = getNextIndex(
-						-1,
-						prevState.highlightIndex,
-						suggestions,
-					);
-
-					return {
-						isFlyoutOpen: true,
-						highlightIndex: nextIndex,
-						previewText:
-							nextIndex > -1 ? suggestions[nextIndex].text : null,
-					};
-				}
-
-				case ActionTypes.SUGGESTION_MOUSE_ENTER: {
-					return {
-						...prevState,
-						highlightIndex: action.index,
-					};
-				}
-
-				case ActionTypes.INPUT_ENTER: {
-					if (prevState.highlightIndex > -1) {
-						return {
-							highlightIndex: -1,
-							previewText: null,
-							isFlyoutOpen: false,
-						};
-					}
-
-					return prevState;
-				}
-			}
-		},
+	// TODO: This'll re-paint as suggestions generally change often, move this to a Ref or something similar.
+	const reducer: Reducer<State, Actions> = useMemo(
+		() => inputReducerFactory(suggestions),
 		[suggestions],
 	);
 
@@ -330,6 +345,7 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 				autoFocus={autoFocus}
 				wrapperRef={triggerRef}
 				{...textInputProps}
+				ref={ref}
 				aria-autocomplete="list"
 				aria-controls={shouldOpenFlyout ? suggestionListId! : void 0}
 				aria-activedescendant={
@@ -354,8 +370,8 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 					if (
 						state.highlightIndex > -1 &&
 						/*
-						Cheap trick to check if an arrow or click was used or not. We only _commit_ if a click or arrow
-						 */
+							Cheap trick to check if an arrow or click was used or not. We only _commit_ if a click or arrow
+							 */
 						state.previewText ===
 							suggestions[state.highlightIndex].text
 					) {
@@ -399,7 +415,7 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 			/>
 
 			{inlineOptions ? (
-				<SuggestionsList<PayloadType>
+				<SuggestionsList
 					suggestionListRef={suggestionListRef}
 					suggestionListId={suggestionListId!}
 					placeholder={textInputProps.placeholder}
@@ -417,7 +433,7 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 					alignment={EAlignment.BOTTOM}
 					isOpen={shouldOpenFlyout}
 					triggerOffset={4}>
-					<SuggestionsList<PayloadType>
+					<SuggestionsList
 						className={styles.suggestionList.blockOptions}
 						suggestionListRef={suggestionListRef}
 						suggestionListId={suggestionListId!}
@@ -433,7 +449,9 @@ const AutoSuggestInput = <PayloadType extends unknown>({
 			)}
 		</Box>
 	);
-};
+}) as <PayloadType extends unknown>(
+	p: AutoSuggestInputProps<PayloadType> & { ref?: Ref<HTMLInputElement> },
+) => ReactElement;
 
 interface SuggestionProps<PayloadType>
 	extends Pick<
@@ -537,13 +555,23 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 			ref.current?.focus();
 		}, []);
 
+		// TODO: Eventually build a forkedRef helper for this
+		const handleRef = useCallback(
+			(node) => {
+				if (field.ref) setRef(field.ref, node);
+
+				setRef(ref, node);
+			},
+			[field],
+		);
+
 		return (
 			<Box className={styles.root}>
 				<Box
 					is="input"
 					{...eventHandlers}
 					{...field}
-					ref={ref}
+					ref={handleRef}
 					autoComplete="off"
 					{...rest}
 					type="search"
