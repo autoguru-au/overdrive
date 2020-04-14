@@ -44,8 +44,10 @@ const input = [
 	...field,
 	style({
 		selectors: {
-			'&::-webkit-clear-button, &::-ms-clear, &::-webkit-search-cancel-button': {
+			'&::-ms-clear': {
 				display: 'none',
+			},
+			'&::-webkit-clear-button, &::-webkit-search-cancel-button, &::-webkit-search-results-button': {
 				WebkitAppearance: 'none',
 			},
 			'&[type="number"]::-webkit-outer-spin-button, &[type="number"]::-webkit-inner-spin-button': {

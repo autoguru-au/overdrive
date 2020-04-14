@@ -14,14 +14,7 @@ export const fullScreenRoot = style((theme) => ({
 	gridTemplateRows: 'auto 1fr',
 	overflowY: 'auto',
 	maxHeight: '100vh',
-
-	height: '100%',
-	// @ts-ignore
-	// eslint-disable-next-line  no-dupe-keys
 	height: 'fill-available',
-	// @ts-ignore
-	// eslint-disable-next-line  no-dupe-keys
-	height: '-webkit-fill-available',
 
 	':before': {
 		content: '""',

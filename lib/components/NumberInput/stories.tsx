@@ -13,7 +13,6 @@ import { NumberInput } from '.';
 const sharedKnobs = (placeholder) => ({
 	placeholder: text('Placeholder', placeholder),
 	disabled: boolean('disabled', false),
-	onChange: action('onChange'),
 	onFocus: action('onFocus'),
 	onBlur: action('onBlur'),
 });
@@ -26,7 +25,7 @@ export default {
 	},
 };
 
-export const standard = () => (
+export const Standard = () => (
 	<NumberInput name="abc" {...sharedKnobs('How many?')} />
 );
 
