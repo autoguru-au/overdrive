@@ -85,6 +85,7 @@ export interface Props<PayloadType>
 		'onChange' | 'value' | 'type'
 	> {
 	autoFocus?: boolean;
+	autoWidth?: boolean;
 	value: AutoSuggestValue<PayloadType> | null;
 	suggestions: Suggestions<PayloadType>;
 
@@ -197,6 +198,7 @@ const inputReducerFactory = <T extends Suggestions<unknown>>(
 export const AutoSuggest = forwardRef(function AutoSuggest(
 	{
 		autoFocus = false,
+		autoWidth = false,
 		suggestions,
 		value,
 		onChange: incomingOnChange,
@@ -243,7 +245,12 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 			closeModal={closeModal}
 		/>
 	) : (
-		<AutoSuggestInput ref={ref} {...props} autoFocus={autoFocus} />
+		<AutoSuggestInput
+			ref={ref}
+			{...props}
+			autoFocus={autoFocus}
+			autoWidth={autoWidth}
+		/>
 	);
 }) as <PayloadType extends unknown>(
 	p: Props<PayloadType> & { ref?: Ref<HTMLInputElement> },
@@ -295,6 +302,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 	{
 		inlineOptions = false,
 		autoFocus,
+		autoWidth,
 		suggestions,
 		value,
 		onChange,
@@ -429,8 +437,9 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 				/>
 			) : (
 				<SuggestionListFlyout
+					autoWidth={autoWidth!}
 					triggerRef={triggerRef}
-					alignment={EAlignment.BOTTOM}
+					alignment={EAlignment.BOTTOM_LEFT}
 					isOpen={shouldOpenFlyout}
 					triggerOffset={4}>
 					<SuggestionsList
@@ -591,22 +600,25 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 
 const getSuggestionId = (id: string, index: number) => `${id}-option-${index}`;
 
-const SuggestionListFlyout = usingPositioner(({ triggerRef, children }) => (
-	<Box
-		borderWidth="1"
-		borderColour="gray"
-		borderRadius="1"
-		backgroundColour="white"
-		boxShadow="2"
-		style={{
-			width: triggerRef.current
-				? triggerRef.current.clientWidth
-				: undefined,
-		}}
-		onMouseDown={(event) => event.preventDefault()}>
-		{children}
-	</Box>
-));
+const SuggestionListFlyout = usingPositioner<{ autoWidth: boolean }>(
+	({ triggerRef, autoWidth, children }) => (
+		<Box
+			borderWidth="1"
+			borderColour="gray"
+			borderRadius="1"
+			backgroundColour="white"
+			boxShadow="2"
+			style={{
+				width:
+					triggerRef.current && !autoWidth
+						? triggerRef.current.clientWidth
+						: undefined,
+			}}
+			onMouseDown={(event) => event.preventDefault()}>
+			{children}
+		</Box>
+	),
+);
 
 const defaultItemRenderer = <PayloadType extends unknown>({
 	value,
