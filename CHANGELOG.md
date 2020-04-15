@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 2.0.6
+
+### Patch Changes
+
+-   d1c6b09: responsiveProps: Fix argument where void is not the same as
+    undefined
+
 ## 2.0.5
 
 ### Patch Changes
