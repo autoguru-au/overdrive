@@ -18,11 +18,13 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true
 	},
-	"files": [
+	"include": [
 		"./lib/themes/treatTheme.d.ts",
 		"./reset.ts",
 		"./themes.ts",
-		"./lib/index.ts"
+		"./index.ts",
+		"./lib/**/*.ts",
+		"./lib/**/*.tsx"
 	],
 	"exclude": ["./**/*stories*.tsx"]
 }
