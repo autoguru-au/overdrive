@@ -6,18 +6,23 @@
 		"jsx": "react",
 		"outDir": "./dist",
 		"declaration": true,
+		"declarationMap": true,
 		"declarationDir": "./dist/",
 		"isolatedModules": true,
 		"strict": true,
 		"sourceMap": false,
 		"inlineSourceMap": false,
 		"strictNullChecks": true,
-		"target": "es2019"
+		"target": "es2019",
+		"skipLibCheck": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true
 	},
-	"include": [
+	"files": [
 		"./lib/themes/treatTheme.d.ts",
-		"./lib/**/*.ts",
-		"./lib/**/*.tsx"
+		"./reset.ts",
+		"./themes.ts",
+		"./lib/index.ts"
 	],
 	"exclude": ["./**/*stories*.tsx"]
 }

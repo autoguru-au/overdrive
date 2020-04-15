@@ -15,7 +15,7 @@ const responsiveTokenOrder: ReadonlyArray<keyof Theme['breakpoints']> = [
 ] as const;
 
 export const resolveResponsiveStyle = <Tokens extends string | number>(
-	responsiveArgument: ResponsiveProp<Tokens> | null | void,
+	responsiveArgument: ResponsiveProp<Tokens> | null | undefined,
 	breakpointTokenMap: Record<Tokens, BreakpointStyleMap>,
 ) => {
 	if (responsiveArgument === void 0 || responsiveArgument === null)
