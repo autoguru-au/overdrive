@@ -2,4 +2,4 @@
 '@autoguru/overdrive': patch
 ---
 
-Tabs: Can now be provided a `width` prop
+Tabs: Now Always fills the width of its parent
