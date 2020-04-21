@@ -1,14 +1,21 @@
 import * as React from 'react';
-import { ContextType, FunctionComponent, useMemo } from 'react';
+import { ComponentProps, ContextType, FunctionComponent, useMemo } from 'react';
 
 import { useId, useUncontrolledState } from '../../utils';
 import { Box } from '../Box';
 import { TabsContext } from './context';
 
-export const Tabs: FunctionComponent<{
+interface Props extends Pick<ComponentProps<typeof Box>, 'width'> {
 	active?: number;
 	onChange?: (idx: number) => void;
-}> = ({ children, active = 0, onChange }) => {
+}
+
+export const Tabs: FunctionComponent<Props> = ({
+	children,
+	active = 0,
+	onChange,
+	width,
+}) => {
 	const [activeState, setActiveState] = useUncontrolledState<number>(
 		active,
 		onChange,
@@ -26,7 +33,7 @@ export const Tabs: FunctionComponent<{
 	);
 
 	return (
-		<Box>
+		<Box width={width}>
 			<TabsContext.Provider value={state}>
 				{children}
 			</TabsContext.Provider>
