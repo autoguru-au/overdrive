@@ -5,10 +5,16 @@ import { useId, useUncontrolledState } from '../../utils';
 import { Box } from '../Box';
 import { TabsContext } from './context';
 
-export const Tabs: FunctionComponent<{
+interface Props {
 	active?: number;
 	onChange?: (idx: number) => void;
-}> = ({ children, active = 0, onChange }) => {
+}
+
+export const Tabs: FunctionComponent<Props> = ({
+	children,
+	active = 0,
+	onChange,
+}) => {
 	const [activeState, setActiveState] = useUncontrolledState<number>(
 		active,
 		onChange,
@@ -26,7 +32,7 @@ export const Tabs: FunctionComponent<{
 	);
 
 	return (
-		<Box>
+		<Box width="full">
 			<TabsContext.Provider value={state}>
 				{children}
 			</TabsContext.Provider>
