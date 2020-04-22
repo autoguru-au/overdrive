@@ -2,4 +2,4 @@
 '@autoguru/overdrive': patch
 ---
 
-Tabs: Now Always fills the width of its parent
+Tabs: Now always fills the width of it's parent
