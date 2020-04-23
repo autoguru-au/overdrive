@@ -87,10 +87,25 @@ export const width = styleMap({
 	},
 });
 
-const positionRules = {
-	absolute: 'absolute',
-	fixed: 'fixed',
-	relative: 'relative',
-};
+export const position = styleMap(
+	mapTokenToProperty(
+		{
+			absolute: 'absolute',
+			fixed: 'fixed',
+			relative: 'relative',
+		},
+		'position',
+	),
+);
 
-export const position = styleMap(mapTokenToProperty(positionRules, 'position'));
+export const overflow = styleMap(
+	mapTokenToProperty(
+		{
+			hidden: 'hidden',
+			scroll: 'scroll',
+			visible: 'visible',
+			auto: 'auto',
+		},
+		'overflow',
+	),
+);

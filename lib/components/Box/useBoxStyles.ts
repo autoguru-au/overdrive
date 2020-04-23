@@ -57,6 +57,10 @@ export interface BoxStyleProps extends Padding, Margin, Border {
 	width?: keyof typeof styleRefs.width;
 
 	backgroundColour?: keyof typeof styleRefs.backgroundColours;
+
+	overflow?: keyof typeof styleRefs.overflow;
+
+	className?: Parameters<typeof clsx>[0];
 }
 
 export const useBoxStyles = ({
@@ -95,6 +99,8 @@ export const useBoxStyles = ({
 	backgroundColour,
 	width,
 	position,
+	overflow,
+	className,
 }: BoxStyleProps) => {
 	const resetStyles = useStyles(resetStyleRefs);
 	const styles = useStyles(styleRefs);
@@ -135,6 +141,7 @@ export const useBoxStyles = ({
 
 	return clsx(
 		resetStyles.base,
+
 		is &&
 			typeof is === 'string' &&
 			resetStyles.element[is as keyof typeof resetStyles.element],
@@ -150,9 +157,9 @@ export const useBoxStyles = ({
 		resolveResponsiveStyle(resolvedMarginLeft, styles.margin.left),
 
 		styles.display[display!],
-
 		styles.width[width!],
 		styles.position[position!],
+		styles.overflow[overflow!],
 
 		hasBorder && styles.border.style,
 		hasBorder &&
@@ -197,5 +204,7 @@ export const useBoxStyles = ({
 			resolveResponsiveStyle(borderRadius, styles.borderRadius),
 
 		backgroundColour && styles.backgroundColours[backgroundColour],
+
+		className,
 	);
 };
