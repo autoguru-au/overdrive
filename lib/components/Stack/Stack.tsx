@@ -8,7 +8,7 @@ import { BoxStyleProps } from '../Box/useBoxStyles';
 import { Divider } from './Divider';
 import * as styleRefs from './Stack.treat';
 
-interface Props extends Pick<BoxStyleProps, 'is'> {
+interface Props extends Pick<BoxStyleProps, 'is' | 'width'> {
 	spacing?: keyof typeof styleRefs.child.spaces;
 	className?: string;
 	dividers?: boolean;
@@ -20,6 +20,7 @@ export const Stack: FunctionComponent<Props> = ({
 	spacing = '2',
 	children,
 	is = 'div',
+	width,
 	dividers = false,
 	className = '',
 }) => {
@@ -31,7 +32,7 @@ export const Stack: FunctionComponent<Props> = ({
 	}
 
 	return (
-		<Box is={is} className={className}>
+		<Box is={is} className={className} width={width}>
 			{items.map((child, idx) => (
 				<Box
 					key={idx}
