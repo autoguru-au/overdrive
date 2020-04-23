@@ -11,9 +11,8 @@ import { BoxStyleProps, useBoxStyles } from './useBoxStyles';
 
 interface Props<Element extends keyof JSX.IntrinsicElements>
 	extends BoxStyleProps,
-		Omit<AllHTMLAttributes<Element>, 'width' | 'height'> {
+		Omit<AllHTMLAttributes<Element>, 'width' | 'height' | 'className'> {
 	is?: Element;
-	className?: string;
 }
 
 // TODO: Solve this any
@@ -22,7 +21,6 @@ export const Box = forwardRef<HTMLElement, Props<any>>(
 		{
 			is: Component,
 
-			display,
 			padding,
 			paddingX,
 			paddingY,
@@ -30,6 +28,7 @@ export const Box = forwardRef<HTMLElement, Props<any>>(
 			paddingBottom,
 			paddingLeft,
 			paddingRight,
+
 			margin,
 			marginX,
 			marginY,
@@ -37,14 +36,12 @@ export const Box = forwardRef<HTMLElement, Props<any>>(
 			marginBottom,
 			marginLeft,
 			marginRight,
-			boxShadow,
-			borderWidth,
-			borderWidthX,
-			borderWidthY,
-			borderWidthTop,
-			borderWidthRight,
-			borderWidthBottom,
-			borderWidthLeft,
+
+			display,
+			width,
+			position,
+			overflow,
+
 			borderColour,
 			borderColourX,
 			borderColourY,
@@ -52,55 +49,63 @@ export const Box = forwardRef<HTMLElement, Props<any>>(
 			borderColourRight,
 			borderColourBottom,
 			borderColourLeft,
+			borderWidth,
+			borderWidthX,
+			borderWidthY,
+			borderWidthTop,
+			borderWidthRight,
+			borderWidthBottom,
+			borderWidthLeft,
+
+			boxShadow,
 			borderRadius,
+
 			backgroundColour,
 
-			width,
-			position,
-
 			className = '',
-			children,
 
+			children,
 			...allOtherProps
 		},
 		ref,
 	) => {
 		const cls = useBoxStyles({
 			is: Component,
-			display,
+			backgroundColour,
 			borderColour,
-			padding,
-			paddingX,
-			paddingY,
-			paddingTop,
-			paddingBottom,
-			paddingLeft,
-			paddingRight,
+			borderColourBottom,
+			borderColourLeft,
+			borderColourRight,
+			borderColourTop,
+			borderColourX,
+			borderColourY,
+			borderRadius,
+			borderWidth,
+			borderWidthBottom,
+			borderWidthLeft,
+			borderWidthRight,
+			borderWidthTop,
+			borderWidthX,
+			borderWidthY,
+			boxShadow,
+			display,
 			margin,
-			marginX,
-			marginY,
-			marginTop,
 			marginBottom,
 			marginLeft,
 			marginRight,
-			boxShadow,
-			borderWidth,
-			borderWidthX,
-			borderWidthY,
-			borderWidthTop,
-			borderWidthRight,
-			borderWidthBottom,
-			borderWidthLeft,
-			borderColourX,
-			borderColourY,
-			borderColourTop,
-			borderColourRight,
-			borderColourBottom,
-			borderColourLeft,
-			borderRadius,
-			backgroundColour,
-			width,
+			marginTop,
+			marginX,
+			marginY,
+			overflow,
+			padding,
+			paddingBottom,
+			paddingLeft,
+			paddingRight,
+			paddingTop,
+			paddingX,
+			paddingY,
 			position,
+			width,
 		});
 
 		invariant(!isValidElement(Component), 'Box only supports intrinsics');
