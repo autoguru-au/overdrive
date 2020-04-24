@@ -71,7 +71,7 @@ type Intent = 'neutral' | 'danger' | 'warning' | 'success' | 'information';
 
 type BaseColours = 'white';
 
-interface ForegroundColours {
+export interface ForegroundColours {
 	body: string;
 	link: string;
 }

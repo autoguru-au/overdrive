@@ -20,8 +20,8 @@ interface Props extends ComponentProps<typeof Box> {
 	spaceX?: ResponsiveProp<keyof typeof styleRefs.space.spaceX>;
 	spaceY?: ResponsiveProp<keyof typeof styleRefs.space.spaceY>;
 	noWrap?: boolean;
-	wrappingDirection?: 'default' | 'reverse';
-	align?: 'top' | 'centre' | 'bottom' | 'stretch';
+	wrappingDirection?: keyof typeof styleRefs.wrapping;
+	align?: keyof typeof styleRefs.align;
 }
 
 interface ColumnContextValue {
