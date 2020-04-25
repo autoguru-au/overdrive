@@ -36,6 +36,12 @@ export const input = {
 					color: theme.colours.gamut.gray400,
 					cursor: 'not-allowed',
 				},
+				'&::placeholder': {
+					fontSize: theme.typography.size['4'].fontSize,
+					lineHeight: theme.typography.size['4'].lineHeight,
+					color: theme.colours.gamut.gray400,
+					opacity: 1,
+				},
 			},
 		},
 		prefixed: {

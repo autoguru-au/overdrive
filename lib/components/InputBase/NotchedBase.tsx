@@ -18,6 +18,7 @@ interface Props {
 	prefixed: boolean;
 	borderColourClassName: string;
 	placeholderColourClassName: string;
+	notch?: boolean;
 	className?: string;
 }
 
@@ -28,6 +29,7 @@ export const NotchedBase: FunctionComponent<Props> = ({
 	disabled,
 	prefixed,
 	children,
+	notch = true,
 	borderColourClassName,
 	placeholderColourClassName,
 	className = '',
@@ -49,49 +51,58 @@ export const NotchedBase: FunctionComponent<Props> = ({
 	const notchedWidth = getNotchedComputedWidthForWidth(labelWidth);
 
 	return (
-		<Box className={clsx(styles.root, className)}>
+		<Box
+			className={clsx(
+				styles.root,
+				!notch && [styles.borders.complete, borderColourClassName],
+				className,
+			)}>
 			{children}
-			<div
-				className={clsx(styles.borders.root.default, {
-					[styles.borders.root.disabled]: disabled,
-				})}>
+			{notch && (
 				<div
-					className={clsx(
-						styles.borders.leading,
-						borderColourClassName,
-					)}
-				/>
-				<div
-					className={clsx(
-						styles.borders.middle,
-						borderColourClassName,
-					)}
-					style={{ width: isEmpty ? 0 : notchedWidth }}>
-					<label
-						ref={labelRef}
-						htmlFor={id}
+					className={clsx(styles.borders.root.default, {
+						[styles.borders.root.disabled]: disabled,
+					})}>
+					<div
 						className={clsx(
-							styles.placeholder.default,
-							placeholderColourClassName,
-							{
-								[styles.placeholder.empty]: isEmpty || disabled,
-								[styles.placeholderPlacement.default]:
-									isEmpty && !prefixed,
-								[styles.placeholderPlacement.defaultPrefixed]:
-									isEmpty && prefixed,
-								[styles.placeholderPlacement.shifted]: !isEmpty,
-							},
-						)}>
-						{placeholder}
-					</label>
+							styles.borders.leading,
+							borderColourClassName,
+						)}
+					/>
+					<div
+						className={clsx(
+							styles.borders.middle,
+							borderColourClassName,
+						)}
+						style={{ width: isEmpty ? 0 : notchedWidth }}>
+						<label
+							ref={labelRef}
+							htmlFor={id}
+							className={clsx(
+								styles.placeholder.default.standard,
+								placeholderColourClassName,
+								{
+									[styles.placeholder.empty]:
+										isEmpty || disabled,
+									[styles.placeholderPlacement.default]:
+										isEmpty && !prefixed,
+									[styles.placeholderPlacement
+										.defaultPrefixed]: isEmpty && prefixed,
+									[styles.placeholderPlacement
+										.shifted]: !isEmpty,
+								},
+							)}>
+							{placeholder}
+						</label>
+					</div>
+					<div
+						className={clsx(
+							styles.borders.trailing,
+							borderColourClassName,
+						)}
+					/>
 				</div>
-				<div
-					className={clsx(
-						styles.borders.trailing,
-						borderColourClassName,
-					)}
-				/>
-			</div>
+			)}
 		</Box>
 	);
 };

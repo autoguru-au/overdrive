@@ -46,6 +46,7 @@ export interface EnhanceInputPrimitiveProps extends AriaAttributes {
 	hintText?: string;
 	autoFocus?: boolean;
 	disabled?: boolean;
+	notch?: boolean;
 	prefixIcon?: IconType;
 	suffixIcon?: IconType;
 	wrapperRef?: Ref<HTMLDivElement>;
@@ -110,6 +111,7 @@ export const withEnhancedInput = <
 				className,
 				isTouched,
 				isValid,
+				notch = true,
 
 				value: incomingValue = '',
 				onChange: incomingOnChange,
@@ -218,6 +220,7 @@ export const withEnhancedInput = <
 					value,
 					autoFocus,
 					className: inputItselfClassName,
+					placeholder: notch ? undefined : placeholder,
 					ref,
 				},
 				prefixed: Boolean(prefixIcon),
@@ -244,6 +247,7 @@ export const withEnhancedInput = <
 						prefixed={Boolean(prefixIcon)}
 						isEmpty={isEmpty}
 						disabled={disabled}
+						notch={notch}
 						placeholder={placeholder}
 						placeholderColourClassName={clsx({
 							[derivedColours.colour]: !isEmpty,
