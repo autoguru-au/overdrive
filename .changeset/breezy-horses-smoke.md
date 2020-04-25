@@ -6,7 +6,7 @@ InputBase: Allow for notchless inputs
 
 **FEATURES**
 
-Sometimes the notch behaviour won't work because of its context - much like an
+Sometimes the notch behavior won't work because of its context - much like an
 input that sites within a table, where the column already denotes what should be
 entered into the input.
 
