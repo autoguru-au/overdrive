@@ -5,23 +5,23 @@ exports[`<NotchedBase /> should match snapshot for active notch 1`] = `
   class="base root_base"
 >
   <div
-    class="borders_root_default_base"
+    class="borderVisualDefaults_base borders_root_default"
   >
     <div
-      class="borderDefaults_base borders_leading_base"
+      class="borderRegionDefaults_base borders_leading_base"
     />
     <div
-      class="borderDefaults_base borders_middle_base"
+      class="borderRegionDefaults_base borders_middle_base"
       style="width: 16px;"
     >
       <label
-        class="placeholder_default_base placeholderPlacement_shifted_base"
+        class="placeholder_default_standard_base placeholderPlacement_shifted_base"
       >
         placeholder something
       </label>
     </div>
     <div
-      class="borderDefaults_base borders_trailing_base"
+      class="borderRegionDefaults_base borders_trailing_base"
     />
   </div>
 </div>
@@ -32,23 +32,23 @@ exports[`<NotchedBase /> should match snapshot for default notch 1`] = `
   class="base root_base"
 >
   <div
-    class="borders_root_default_base"
+    class="borderVisualDefaults_base borders_root_default"
   >
     <div
-      class="borderDefaults_base borders_leading_base"
+      class="borderRegionDefaults_base borders_leading_base"
     />
     <div
-      class="borderDefaults_base borders_middle_base"
+      class="borderRegionDefaults_base borders_middle_base"
       style="width: 16px;"
     >
       <label
-        class="placeholder_default_base placeholderPlacement_shifted_base"
+        class="placeholder_default_standard_base placeholderPlacement_shifted_base"
       >
         placeholder something
       </label>
     </div>
     <div
-      class="borderDefaults_base borders_trailing_base"
+      class="borderRegionDefaults_base borders_trailing_base"
     />
   </div>
 </div>
@@ -59,23 +59,23 @@ exports[`<NotchedBase /> should match snapshot for dirty and active notch 1`] = 
   class="base root_base"
 >
   <div
-    class="borders_root_default_base"
+    class="borderVisualDefaults_base borders_root_default"
   >
     <div
-      class="borderDefaults_base borders_leading_base"
+      class="borderRegionDefaults_base borders_leading_base"
     />
     <div
-      class="borderDefaults_base borders_middle_base"
+      class="borderRegionDefaults_base borders_middle_base"
       style="width: 16px;"
     >
       <label
-        class="placeholder_default_base placeholderPlacement_shifted_base"
+        class="placeholder_default_standard_base placeholderPlacement_shifted_base"
       >
         placeholder something
       </label>
     </div>
     <div
-      class="borderDefaults_base borders_trailing_base"
+      class="borderRegionDefaults_base borders_trailing_base"
     />
   </div>
 </div>
@@ -86,23 +86,23 @@ exports[`<NotchedBase /> should match snapshot for dirty notch 1`] = `
   class="base root_base"
 >
   <div
-    class="borders_root_default_base"
+    class="borderVisualDefaults_base borders_root_default"
   >
     <div
-      class="borderDefaults_base borders_leading_base"
+      class="borderRegionDefaults_base borders_leading_base"
     />
     <div
-      class="borderDefaults_base borders_middle_base"
+      class="borderRegionDefaults_base borders_middle_base"
       style="width: 16px;"
     >
       <label
-        class="placeholder_default_base placeholderPlacement_shifted_base"
+        class="placeholder_default_standard_base placeholderPlacement_shifted_base"
       >
         placeholder something
       </label>
     </div>
     <div
-      class="borderDefaults_base borders_trailing_base"
+      class="borderRegionDefaults_base borders_trailing_base"
     />
   </div>
 </div>

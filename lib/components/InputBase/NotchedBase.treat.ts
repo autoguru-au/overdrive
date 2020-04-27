@@ -8,35 +8,47 @@ export const root = style((theme) => ({
 	transition: `fill 0.2s ${theme.animation.easing.decelerate} 0s`,
 }));
 
-const borderDefaults = style((theme) => ({
+const borderRegionDefaults = style((theme) => ({
 	borderWidth: '1px',
 	borderStyle: 'solid',
 	display: 'inline-flex',
 	transition: `border-color 0.2s ${theme.animation.easing.decelerate} 0s`,
-	pointerEvents: 'none',
+}));
+
+const borderVisualDefaults = style((theme) => ({
+	borderRadius: theme.space['1'],
+	boxShadow:
+		'0 1px 10px 0 rgba(0,0,0,.03), 0 4px 5px 0 rgba(0,0,0,.03), 0 2px 4px -1px rgba(0,0,0,.05)',
 }));
 
 export const borders = {
-	root: styleMap((theme) => ({
-		default: {
-			position: 'absolute',
-			zIndex: 2,
-			top: 0,
-			right: 0,
-			left: 0,
-			display: 'flex',
-			width: '100%',
-			height: '100%',
-			textAlign: 'left',
-			pointerEvents: 'none',
-			borderRadius: theme.space['1'],
-			boxShadow:
-				'0 1px 10px 0 rgba(0,0,0,.03), 0 4px 5px 0 rgba(0,0,0,.03), 0 2px 4px -1px rgba(0,0,0,.05)',
-		},
-		disabled: { boxShadow: 'none' },
-	})),
+	root: {
+		default: [
+			borderVisualDefaults,
+			style({
+				position: 'absolute',
+				zIndex: 2,
+				top: 0,
+				right: 0,
+				left: 0,
+				display: 'flex',
+				width: '100%',
+				height: '100%',
+				textAlign: 'left',
+				pointerEvents: 'none',
+			}),
+		],
+		disabled: style({ boxShadow: 'none' }),
+	},
+	complete: [
+		borderVisualDefaults,
+		borderRegionDefaults,
+		style((theme) => ({
+			borderRadius: `${theme.space['1']}`,
+		})),
+	],
 	leading: [
-		borderDefaults,
+		borderRegionDefaults,
 		style((theme) => ({
 			width: theme.space['2'],
 			borderRight: 'none',
@@ -44,7 +56,7 @@ export const borders = {
 		})),
 	],
 	middle: [
-		borderDefaults,
+		borderRegionDefaults,
 		style((theme) => ({
 			transition: `width 0.15s ${theme.animation.easing.decelerate}, border-color 0.2s ${theme.animation.easing.decelerate} 0s`,
 			borderTopWidth: 0,
@@ -53,7 +65,7 @@ export const borders = {
 		})),
 	],
 	trailing: [
-		borderDefaults,
+		borderRegionDefaults,
 		style((theme) => ({
 			flexGrow: 1,
 			borderLeft: 'none',
@@ -63,19 +75,22 @@ export const borders = {
 };
 
 export const placeholder = {
-	default: style((theme) => ({
-		fontSize: theme.typography.size['4'].fontSize,
-		lineHeight: 1,
-		position: 'absolute',
-		top: 0,
-		left: 0,
-		display: 'inline',
-		margin: 0,
-		padding: 0,
-		transition: `color 0.2s ${theme.animation.easing.decelerate} 0s, transform 0.2s ${theme.animation.easing.decelerate} 0s`,
-		transformOrigin: 'top left',
-		whiteSpace: 'nowrap',
-		pointerEvents: 'none',
+	default: styleMap((theme) => ({
+		standard: {
+			fontSize: theme.typography.size['4'].fontSize,
+			lineHeight: 1,
+			position: 'absolute',
+			top: 0,
+			left: 0,
+			display: 'inline',
+			margin: 0,
+			padding: 0,
+			transition: `color 0.2s ${theme.animation.easing.decelerate} 0s, transform 0.2s ${theme.animation.easing.decelerate} 0s`,
+			transformOrigin: 'top left',
+			whiteSpace: 'nowrap',
+			pointerEvents: 'none',
+		},
+		notNotched: { display: 'none' },
 	})),
 	empty: style((theme) => ({ color: theme.colours.gamut.gray400 })),
 };

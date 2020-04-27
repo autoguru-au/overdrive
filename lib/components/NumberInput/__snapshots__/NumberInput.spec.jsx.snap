@@ -19,24 +19,24 @@ exports[`<NumberInput /> should have some hintText 1`] = `
       />
     </div>
     <div
-      class="borders_root_default_base"
+      class="borderVisualDefaults_base borders_root_default"
     >
       <div
-        class="borderDefaults_base borders_leading_base styleNode_base"
+        class="borderRegionDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="borderDefaults_base borders_middle_base styleNode_base"
+        class="borderRegionDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="placeholder_default_base placeholder_empty_base placeholderPlacement_default_base"
+          class="placeholder_default_standard_base placeholder_empty_base placeholderPlacement_default_base"
           for="id"
         >
           placeholder
         </label>
       </div>
       <div
-        class="borderDefaults_base borders_trailing_base styleNode_base"
+        class="borderRegionDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>
@@ -67,24 +67,24 @@ exports[`<NumberInput /> should match snapshot 1`] = `
       />
     </div>
     <div
-      class="borders_root_default_base"
+      class="borderVisualDefaults_base borders_root_default"
     >
       <div
-        class="borderDefaults_base borders_leading_base styleNode_base"
+        class="borderRegionDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="borderDefaults_base borders_middle_base styleNode_base"
+        class="borderRegionDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="placeholder_default_base placeholder_empty_base placeholderPlacement_default_base"
+          class="placeholder_default_standard_base placeholder_empty_base placeholderPlacement_default_base"
           for="id"
         >
           placeholder something
         </label>
       </div>
       <div
-        class="borderDefaults_base borders_trailing_base styleNode_base"
+        class="borderRegionDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>
@@ -109,23 +109,23 @@ exports[`<NumberInput /> should match snapshot when active 1`] = `
       />
     </div>
     <div
-      class="borders_root_default_base"
+      class="borderVisualDefaults_base borders_root_default"
     >
       <div
-        class="borderDefaults_base borders_leading_base activeBorderColour_base"
+        class="borderRegionDefaults_base borders_leading_base activeBorderColour_base"
       />
       <div
-        class="borderDefaults_base borders_middle_base activeBorderColour_base"
+        class="borderRegionDefaults_base borders_middle_base activeBorderColour_base"
         style="width: 0px;"
       >
         <label
-          class="placeholder_default_base placeholder_empty_base placeholderPlacement_default_base"
+          class="placeholder_default_standard_base placeholder_empty_base placeholderPlacement_default_base"
         >
           placeholder something
         </label>
       </div>
       <div
-        class="borderDefaults_base borders_trailing_base activeBorderColour_base"
+        class="borderRegionDefaults_base borders_trailing_base activeBorderColour_base"
       />
     </div>
   </div>
@@ -150,23 +150,23 @@ exports[`<NumberInput /> should match snapshot when touched 1`] = `
       />
     </div>
     <div
-      class="borders_root_default_base"
+      class="borderVisualDefaults_base borders_root_default"
     >
       <div
-        class="borderDefaults_base borders_leading_base styleNode_base"
+        class="borderRegionDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="borderDefaults_base borders_middle_base styleNode_base"
+        class="borderRegionDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="placeholder_default_base placeholder_empty_base placeholderPlacement_default_base"
+          class="placeholder_default_standard_base placeholder_empty_base placeholderPlacement_default_base"
         >
           placeholder something
         </label>
       </div>
       <div
-        class="borderDefaults_base borders_trailing_base styleNode_base"
+        class="borderRegionDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>
@@ -191,23 +191,23 @@ exports[`<NumberInput /> should match snapshot when touched and invalid 1`] = `
       />
     </div>
     <div
-      class="borders_root_default_base"
+      class="borderVisualDefaults_base borders_root_default"
     >
       <div
-        class="borderDefaults_base borders_leading_base styleNode_base"
+        class="borderRegionDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="borderDefaults_base borders_middle_base styleNode_base"
+        class="borderRegionDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="placeholder_default_base placeholder_empty_base placeholderPlacement_default_base"
+          class="placeholder_default_standard_base placeholder_empty_base placeholderPlacement_default_base"
         >
           placeholder something
         </label>
       </div>
       <div
-        class="borderDefaults_base borders_trailing_base styleNode_base"
+        class="borderRegionDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>
@@ -232,23 +232,23 @@ exports[`<NumberInput /> should match snapshot when touched and valid 1`] = `
       />
     </div>
     <div
-      class="borders_root_default_base"
+      class="borderVisualDefaults_base borders_root_default"
     >
       <div
-        class="borderDefaults_base borders_leading_base styleNode_base"
+        class="borderRegionDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="borderDefaults_base borders_middle_base styleNode_base"
+        class="borderRegionDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="placeholder_default_base placeholder_empty_base placeholderPlacement_default_base"
+          class="placeholder_default_standard_base placeholder_empty_base placeholderPlacement_default_base"
         >
           placeholder something
         </label>
       </div>
       <div
-        class="borderDefaults_base borders_trailing_base styleNode_base"
+        class="borderRegionDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>
@@ -297,23 +297,23 @@ exports[`<NumberInput /> should match snapshot with both icons 1`] = `
       />
     </div>
     <div
-      class="borders_root_default_base"
+      class="borderVisualDefaults_base borders_root_default"
     >
       <div
-        class="borderDefaults_base borders_leading_base styleNode_base"
+        class="borderRegionDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="borderDefaults_base borders_middle_base styleNode_base"
+        class="borderRegionDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="placeholder_default_base placeholder_empty_base placeholderPlacement_defaultPrefixed_base"
+          class="placeholder_default_standard_base placeholder_empty_base placeholderPlacement_defaultPrefixed_base"
         >
           placeholder something
         </label>
       </div>
       <div
-        class="borderDefaults_base borders_trailing_base styleNode_base"
+        class="borderRegionDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>
@@ -350,23 +350,23 @@ exports[`<NumberInput /> should match snapshot with prefix icon 1`] = `
       />
     </div>
     <div
-      class="borders_root_default_base"
+      class="borderVisualDefaults_base borders_root_default"
     >
       <div
-        class="borderDefaults_base borders_leading_base styleNode_base"
+        class="borderRegionDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="borderDefaults_base borders_middle_base styleNode_base"
+        class="borderRegionDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="placeholder_default_base placeholder_empty_base placeholderPlacement_defaultPrefixed_base"
+          class="placeholder_default_standard_base placeholder_empty_base placeholderPlacement_defaultPrefixed_base"
         >
           placeholder something
         </label>
       </div>
       <div
-        class="borderDefaults_base borders_trailing_base styleNode_base"
+        class="borderRegionDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>
@@ -403,23 +403,23 @@ exports[`<NumberInput /> should match snapshot with suffix icon 1`] = `
       />
     </div>
     <div
-      class="borders_root_default_base"
+      class="borderVisualDefaults_base borders_root_default"
     >
       <div
-        class="borderDefaults_base borders_leading_base styleNode_base"
+        class="borderRegionDefaults_base borders_leading_base styleNode_base"
       />
       <div
-        class="borderDefaults_base borders_middle_base styleNode_base"
+        class="borderRegionDefaults_base borders_middle_base styleNode_base"
         style="width: 0px;"
       >
         <label
-          class="placeholder_default_base placeholder_empty_base placeholderPlacement_default_base"
+          class="placeholder_default_standard_base placeholder_empty_base placeholderPlacement_default_base"
         >
           placeholder something
         </label>
       </div>
       <div
-        class="borderDefaults_base borders_trailing_base styleNode_base"
+        class="borderRegionDefaults_base borders_trailing_base styleNode_base"
       />
     </div>
   </div>
