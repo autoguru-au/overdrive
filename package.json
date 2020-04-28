@@ -45,10 +45,6 @@
 		"*.{js,jsx,ts,tsx,json,yml,md,mdx,html}": [
 			"prettier --write"
 		],
-		"lib/components/**/index.ts": [
-			"node scripts/generateReExport",
-			"prettier --write"
-		],
 		"package.json": [
 			"npx sort-package-json",
 			"prettier --write"
