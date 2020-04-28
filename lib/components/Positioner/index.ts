@@ -1,2 +1,2 @@
 export { EAlignment as EPositionerAlignment } from './alignment';
-export { Positioner, usingPositioner } from './Positioner';
+export { Positioner } from './Positioner';

@@ -22,8 +22,8 @@ exports[`<Tolltip /> should match snapshot when opened 1`] = `
     </div>
   </div>
   <div
-    class="root"
-    role="none presentation"
+    aria-hidden="false"
+    class="base root"
     style="position: absolute; left: 0px; top: 0px; margin: 0px;"
   >
     <div

@@ -6,8 +6,8 @@ exports[`<Positioner /> should match snapshot 1`] = `
 >
   <div />
   <div
-    class="root"
-    role="none presentation"
+    aria-hidden="false"
+    class="base root"
   >
     Some body
   </div>

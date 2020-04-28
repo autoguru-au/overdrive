@@ -71,7 +71,7 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
     role="tablist"
   >
     <button
-      aria-controls="10-0-tab"
+      aria-controls="od-10-0-tab"
       aria-selected="true"
       class="base appearance cursorPointer button display_block navItem_default_base navItem_active_base"
       role="tab"
@@ -88,7 +88,7 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
       </span>
     </button>
     <button
-      aria-controls="10-1-tab"
+      aria-controls="od-10-1-tab"
       aria-selected="false"
       class="base appearance cursorPointer button display_block navItem_default_base"
       role="tab"
@@ -106,7 +106,7 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
       </span>
     </button>
     <button
-      aria-controls="10-2-tab"
+      aria-controls="od-10-2-tab"
       aria-selected="false"
       class="base appearance cursorPointer button display_block navItem_default_base"
       role="tab"
@@ -129,7 +129,7 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
   >
     <div
       class="base tabPane"
-      id="10-0-tab"
+      id="od-10-0-tab"
       role="tabpanel"
       tabindex="0"
     >
@@ -148,7 +148,7 @@ exports[`<Tabs /> should match snapshot (high level) 1`] = `
     role="tablist"
   >
     <button
-      aria-controls="1-0-tab"
+      aria-controls="od-1-0-tab"
       aria-selected="true"
       class="base appearance cursorPointer button display_block navItem_default_base navItem_active_base"
       role="tab"
@@ -160,7 +160,7 @@ exports[`<Tabs /> should match snapshot (high level) 1`] = `
       </span>
     </button>
     <button
-      aria-controls="1-1-tab"
+      aria-controls="od-1-1-tab"
       aria-selected="false"
       class="base appearance cursorPointer button display_block navItem_default_base"
       role="tab"
@@ -173,7 +173,7 @@ exports[`<Tabs /> should match snapshot (high level) 1`] = `
       </span>
     </button>
     <button
-      aria-controls="1-2-tab"
+      aria-controls="od-1-2-tab"
       aria-selected="false"
       class="base appearance cursorPointer button display_block navItem_default_base"
       role="tab"
@@ -191,7 +191,7 @@ exports[`<Tabs /> should match snapshot (high level) 1`] = `
   >
     <div
       class="base tabPane"
-      id="1-0-tab"
+      id="od-1-0-tab"
       role="tabpanel"
       tabindex="0"
     >

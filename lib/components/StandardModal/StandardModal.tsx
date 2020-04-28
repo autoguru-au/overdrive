@@ -65,7 +65,7 @@ export const StandardModal: FunctionComponent<Props> = ({
 					is="article"
 					role="dialog"
 					aria-modal="true"
-					aria-labelledby={titleId ? `od-${titleId}` : undefined}
+					aria-labelledby={titleId!}
 					className={clsx([
 						styles.modal,
 						{ [styles.modalSizeStandard]: size === ESize.Standard },
@@ -82,9 +82,7 @@ export const StandardModal: FunctionComponent<Props> = ({
 							onClick={closeButtonHandler}>
 							<Icon size="medium" icon={WindowCloseIcon} />
 						</button>
-						<div
-							className={styles.headerTitle}
-							id={titleId ? `od-${titleId}` : undefined}>
+						<div className={styles.headerTitle} id={titleId!}>
 							<Heading is="h4">{title}</Heading>
 						</div>
 					</header>

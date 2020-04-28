@@ -8,9 +8,8 @@ import {
 } from '@popperjs/core/lib/popper-lite';
 import * as React from 'react';
 import {
-	ComponentType,
+	ComponentPropsWithoutRef,
 	FunctionComponent,
-	ReactElement,
 	RefObject,
 	useCallback,
 	useEffect,
@@ -19,6 +18,7 @@ import {
 import { useStyles } from 'react-treat';
 
 import { isBrowser, setRef } from '../../utils';
+import { Box } from '../Box';
 import { Portal } from '../Portal';
 import { EAlignment } from './alignment';
 import * as styleRefs from './Positioner.treat';
@@ -42,133 +42,113 @@ const createPopper = popperGenerator({
 	},
 });
 
-export interface Props {
+export interface Props
+	extends Exclude<
+		ComponentPropsWithoutRef<typeof Box>,
+		'aria-hidden' | 'className'
+	> {
 	alignment?: EAlignment;
 	isOpen?: boolean;
 	triggerRef: RefObject<HTMLElement>;
 	triggerOffset?: number;
-	withBackdrop?: boolean;
 }
 
-type WrappedComponent<ExtraProps> = ExtraProps &
-	Pick<Props, 'isOpen' | 'alignment' | 'triggerRef'>;
+export const Positioner: FunctionComponent<Props> = ({
+	alignment = EAlignment.BOTTOM_LEFT,
+	isOpen = false,
+	triggerRef,
+	triggerOffset = 12,
+	children,
+	...boxProps
+}) => {
+	if (!isBrowser) return null;
 
-export function usingPositioner<T extends {} = {}>(
-	WrappingComponent: ComponentType<WrappedComponent<T>>,
-): FunctionComponent<Props & T> {
-	const ReturningComponent: FunctionComponent<Props & T> = ({
-		alignment = EAlignment.BOTTOM_LEFT,
-		isOpen = false,
-		triggerRef,
-		triggerOffset = 12,
-		...rest
-	}) => {
-		if (!isBrowser) return null;
+	const placement = convertPlacement(alignment);
 
-		const placement = convertPlacement(alignment);
+	/* eslint-disable react-hooks/rules-of-hooks */
+	const styles = useStyles(styleRefs);
 
-		/* eslint-disable react-hooks/rules-of-hooks */
-		const styles = useStyles(styleRefs);
+	const referenceRef = useRef<HTMLDivElement>(null);
 
-		const referenceRef = useRef<HTMLDivElement>(null);
+	const popperInstanceRef = React.useRef<ReturnType<
+		typeof createPopper
+	> | null>(null);
 
-		const popperInstanceRef = React.useRef<ReturnType<
-			typeof createPopper
-		> | null>(null);
+	// Whenever this component get's re-rendered, we want to proc an update to the popper instance.
+	useEffect(() => {
+		if (popperInstanceRef.current) {
+			popperInstanceRef.current.update();
+		}
+	});
 
-		// Whenever this component get's re-rendered, we want to proc an update to the popper instance.
-		useEffect(() => {
-			if (popperInstanceRef.current) {
-				popperInstanceRef.current.update();
-			}
+	const handleOpen = useCallback(() => {
+		if (!referenceRef.current || !triggerRef.current || !isOpen) return;
+
+		// Delete the old instance, because we are about to create it again.
+		if (popperInstanceRef.current) popperInstanceRef.current.destroy();
+
+		const popper = createPopper(triggerRef.current, referenceRef.current, {
+			placement,
+			modifiers: [
+				{
+					name: 'offset',
+					options: {
+						offset: [0, triggerOffset],
+					},
+				},
+			],
 		});
 
-		const handleOpen = useCallback(() => {
-			if (!referenceRef.current || !triggerRef.current || !isOpen) return;
+		setRef(popperInstanceRef, popper);
+	}, [isOpen, placement, triggerOffset]);
 
-			// Delete the old instance, because we are about to create it again.
-			if (popperInstanceRef.current) popperInstanceRef.current.destroy();
+	const handleClose = () => {
+		if (!popperInstanceRef.current) return;
 
-			const popper = createPopper(
-				triggerRef.current,
-				referenceRef.current,
-				{
-					placement,
-					modifiers: [
-						{
-							name: 'offset',
-							options: {
-								offset: [0, triggerOffset],
-							},
-						},
-					],
-				},
-			);
-
-			setRef(popperInstanceRef, popper);
-		}, [isOpen, placement, triggerOffset]);
-
-		const handleClose = () => {
-			if (!popperInstanceRef.current) return;
-
-			popperInstanceRef.current.destroy();
-			// GC the popper instance
-			setRef(popperInstanceRef, null);
-		};
-
-		/*
-		When one the handleOpen reference changes, we want to fire it off again,
-		and when we un-mount to destroy the instance also.
-		 */
-		useEffect(() => {
-			handleOpen();
-		}, [handleOpen]);
-
-		// Close when component un-mounts;
-		useEffect(() => () => void handleClose(), []);
-
-		useEffect(() => {
-			if (!isOpen) {
-				handleClose();
-			}
-		}, [isOpen]);
-
-		// Gets applied to the positioner div, that on mount will run this callback
-		const handleRef = useCallback(
-			(node) => {
-				setRef(referenceRef, node);
-				handleOpen();
-			},
-			[handleOpen],
-		);
-		/* eslint-enable react-hooks/rules-of-hooks */
-
-		return (
-			<Portal>
-				<div
-					ref={handleRef}
-					role="none presentation"
-					className={styles.root}>
-					{isOpen ? (
-						<WrappingComponent
-							{...(rest as T)}
-							triggerRef={triggerRef}
-							isOpen={isOpen}
-						/>
-					) : null}
-				</div>
-			</Portal>
-		);
+		popperInstanceRef.current.destroy();
+		// GC the popper instance
+		setRef(popperInstanceRef, null);
 	};
 
-	ReturningComponent.displayName = `usingPositioner(${WrappingComponent.displayName})`;
+	/*
+	When one the handleOpen reference changes, we want to fire it off again,
+	and when we un-mount to destroy the instance also.
+	 */
+	useEffect(() => {
+		handleOpen();
+	}, [handleOpen]);
 
-	return ReturningComponent;
-}
+	// Close when component un-mounts;
+	useEffect(() => () => void handleClose(), []);
 
-export const Positioner = usingPositioner(
-	({ children }) => children as ReactElement,
-);
+	useEffect(() => {
+		if (!isOpen) {
+			handleClose();
+		}
+	}, [isOpen]);
+
+	// Gets applied to the positioner div, that on mount will run this callback
+	const handleRef = useCallback(
+		(node) => {
+			setRef(referenceRef, node);
+			handleOpen();
+		},
+		[handleOpen],
+	);
+	/* eslint-enable react-hooks/rules-of-hooks */
+
+	return (
+		<Portal>
+			<Box
+				{...boxProps}
+				ref={handleRef}
+				className={styles.root}
+				aria-hidden={!isOpen}>
+				{isOpen ? children : null}
+			</Box>
+		</Portal>
+	);
+};
 
 const convertPlacement = (alignment: EAlignment): Placement => {
 	switch (alignment) {

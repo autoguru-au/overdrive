@@ -26,7 +26,7 @@ import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { withEnhancedInput } from '../InputBase';
 import { Portal } from '../Portal';
-import { usingPositioner } from '../Positioner';
+import { Positioner } from '../Positioner';
 import { EAlignment } from '../Positioner/alignment';
 import * as selectStyleRefs from '../SelectInput/SelectInput.treat';
 import { TextInput } from '../TextInput';
@@ -345,17 +345,17 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 	return (
 		<Box
 			role="combobox"
-			aria-haspopup="listbox"
+			aria-label={textInputProps.placeholder}
 			aria-expanded={shouldOpenFlyout}
-			aria-owns={shouldOpenFlyout ? suggestionListId! : void 0}
-			aria-label={textInputProps.placeholder}>
+			aria-owns={suggestionListId!}
+			aria-haspopup="listbox">
 			<AutoSuggestInputPrimitive
 				autoFocus={autoFocus}
 				wrapperRef={triggerRef}
 				{...textInputProps}
 				ref={ref}
 				aria-autocomplete="list"
-				aria-controls={shouldOpenFlyout ? suggestionListId! : void 0}
+				aria-controls={suggestionListId!}
 				aria-activedescendant={
 					state.highlightIndex > -1
 						? getSuggestionId(
@@ -437,6 +437,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 				/>
 			) : (
 				<SuggestionListFlyout
+					id={suggestionListId!}
 					autoWidth={autoWidth!}
 					triggerRef={triggerRef}
 					alignment={EAlignment.BOTTOM_LEFT}
@@ -581,6 +582,8 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 					{...eventHandlers}
 					{...field}
 					ref={handleRef}
+					autoCapitalize="none"
+					spellCheck="false"
 					autoComplete="off"
 					{...rest}
 					type="search"
@@ -600,8 +603,24 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 
 const getSuggestionId = (id: string, index: number) => `${id}-option-${index}`;
 
-const SuggestionListFlyout = usingPositioner<{ autoWidth: boolean }>(
-	({ triggerRef, autoWidth, children }) => (
+const SuggestionListFlyout: FunctionComponent<
+	ComponentPropsWithoutRef<typeof Positioner> & { autoWidth: boolean }
+> = ({
+	id,
+	alignment,
+	isOpen,
+	triggerOffset,
+	triggerRef,
+	autoWidth,
+	children,
+}) => (
+	<Positioner
+		id={id}
+		triggerRef={triggerRef}
+		alignment={alignment}
+		isOpen={isOpen}
+		triggerOffset={triggerOffset}
+		role="listbox">
 		<Box
 			borderWidth="1"
 			borderColour="gray"
@@ -617,7 +636,7 @@ const SuggestionListFlyout = usingPositioner<{ autoWidth: boolean }>(
 			onMouseDown={(event) => event.preventDefault()}>
 			{children}
 		</Box>
-	),
+	</Positioner>
 );
 
 const defaultItemRenderer = <PayloadType extends unknown>({
