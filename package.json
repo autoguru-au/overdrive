@@ -96,7 +96,7 @@
 		"jest": "25.2.7",
 		"lint-staged": "10.1.2",
 		"magic-string": "0.25.7",
-		"playroom": "0.16.1",
+		"playroom": "0.17.0",
 		"plop": "2.6.0",
 		"prettier": "2.0.4",
 		"react": "16.13.1",
