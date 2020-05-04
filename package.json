@@ -106,7 +106,7 @@
     "storybook-chromatic": "3.5.2",
     "style-loader": "1.2.1",
     "treat": "1.4.1",
-    "ts-loader": "6.2.2",
+    "ts-loader": "7.0.2",
     "tslib": "1.11.1",
     "typescript": "3.8.3",
     "webpack": "4.43.0"
