@@ -103,7 +103,7 @@
     "react-dom": "16.13.1",
     "react-test-renderer": "16.13.1",
     "rimraf": "3.0.2",
-    "storybook-chromatic": "3.5.2",
+    "storybook-chromatic": "3.5.5",
     "style-loader": "1.2.1",
     "treat": "1.4.1",
     "ts-loader": "6.2.2",
