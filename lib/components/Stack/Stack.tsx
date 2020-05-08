@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import * as React from 'react';
 import { Children, FunctionComponent, ReactNode } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
@@ -37,10 +36,10 @@ export const Stack: FunctionComponent<Props> = ({
 			{Children.map(items, (child, idx) => (
 				<Box
 					is={['ul', 'ol'].includes(is) ? 'li' : 'div'}
-					className={clsx(
+					className={[
 						styles.child.default,
 						dividers ? undefined : styles.child.spaces[spacing],
-					)}>
+					]}>
 					{dividers && idx > 0 ? (
 						<Box paddingY={spacing} width="full">
 							<Divider />

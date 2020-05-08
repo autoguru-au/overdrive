@@ -1,3 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Stack /> should correctly handle fragment nodes 1`] = `
+<div
+  class="base"
+>
+  <div
+    class="base child_default child_spaces_2_base"
+  >
+    <p>
+      line 0
+    </p>
+  </div>
+  <div
+    class="base child_default child_spaces_2_base"
+  >
+    <p>
+      Line 1
+    </p>
+  </div>
+  <div
+    class="base child_default child_spaces_2_base"
+  >
+    <p>
+      Line 2
+    </p>
+  </div>
+  <div
+    class="base child_default child_spaces_2_base"
+  >
+    <p>
+      Line 3
+    </p>
+  </div>
+  <div
+    class="base child_default child_spaces_2_base"
+  >
+    <p>
+      line 4
+    </p>
+  </div>
+</div>
+`;
+
 exports[`<Stack /> should match the snapshot 1`] = `null`;
