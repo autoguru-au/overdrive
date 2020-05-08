@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import * as React from 'react';
 import { Children, FunctionComponent } from 'react';
+import flattenChildren from 'react-keyed-flatten-children';
 import { useStyles } from 'react-treat';
 import { Theme } from 'treat/theme';
 
@@ -35,7 +36,7 @@ export const Inline: FunctionComponent<Props> = ({
 					negativeMarginLeft,
 					resolveResponsiveStyle(alignY, styles.align),
 				)}>
-				{Children.map(children, (child) => (
+				{Children.map(flattenChildren(children), (child) => (
 					<Box
 						display="inline-block"
 						paddingLeft={space}

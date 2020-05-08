@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import * as React from 'react';
 import { Children, FunctionComponent } from 'react';
+import flattenChildren from 'react-keyed-flatten-children';
 import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
@@ -26,7 +27,7 @@ export const TabList: FunctionComponent<Props> = ({
 			className={clsx(styles.tabsList.root, {
 				[styles.tabsList.stretch]: stretch,
 			})}>
-			{Children.map(children, (child, index) => (
+			{Children.map(flattenChildren(children), (child, index) => (
 				<IndexContext.Provider value={index}>
 					{child}
 				</IndexContext.Provider>

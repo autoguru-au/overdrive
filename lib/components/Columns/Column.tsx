@@ -1,7 +1,7 @@
 import { invariant } from '@autoguru/utilities';
 import clsx from 'clsx';
 import * as React from 'react';
-import { ComponentProps, forwardRef, ReactElement, useContext } from 'react';
+import { ComponentProps, forwardRef, ReactNode, useContext } from 'react';
 import { useStyles } from 'react-treat';
 
 import { resolveResponsiveStyle, ResponsiveProp } from '../../utils';
@@ -15,7 +15,7 @@ interface Props extends Omit<ComponentProps<typeof Box>, 'width'> {
 	grow?: boolean;
 	alignSelf?: keyof typeof styleRefs.align;
 	className?: string;
-	children: ReactElement | ReactElement[];
+	children: ReactNode | ReactNode[];
 }
 
 export const Column = forwardRef<HTMLElement, Props>(
