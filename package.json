@@ -94,7 +94,7 @@
 		"eslint": "6.8.0",
 		"glob": "7.1.6",
 		"husky": "4.2.5",
-		"jest": "25.5.3",
+		"jest": "25.5.4",
 		"lint-staged": "10.2.2",
 		"magic-string": "0.25.7",
 		"playroom": "0.17.3",
