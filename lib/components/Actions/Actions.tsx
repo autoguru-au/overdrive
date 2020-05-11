@@ -5,6 +5,7 @@ import {
 	FunctionComponent,
 	ReactElement,
 } from 'react';
+import flattenChildren from 'react-keyed-flatten-children';
 
 import { Column, Columns } from '../Columns';
 
@@ -21,10 +22,8 @@ export const Actions: FunctionComponent<Props> = ({
 	wrappingDirection,
 }) => (
 	<Columns space="3" noWrap={noWrap} wrappingDirection={wrappingDirection}>
-		{Children.map(children, (child, idx) =>
-			child !== undefined && child !== null ? (
-				<Column key={idx}>{child}</Column>
-			) : null,
-		)}
+		{Children.map(flattenChildren(children), (child) => (
+			<Column>{child}</Column>
+		))}
 	</Columns>
 );

@@ -59,6 +59,7 @@
     "@autoguru/utilities": "^1.0.96",
     "@popperjs/core": "^2.4.0",
     "clsx": "^1.1.0",
+    "react-keyed-flatten-children": "^1.2.0",
     "react-treat": "^1.4.1"
   },
   "devDependencies": {
