@@ -86,7 +86,7 @@ jobs:
         run: yarn storybook:build
 
       - name: Build Playroom
-        run: yarn playroom build
+        run: yarn playroom:build
 
       - name: Stage ready for deploy
         run: |-
