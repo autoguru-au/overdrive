@@ -144,7 +144,6 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 			<div className={styles.body}>
 				{isSingleIconChild && maybeIconProps ? (
 					<Icon
-						icon={maybeIconProps.icon}
 						size={
 							maybeIconProps.size ?? size === 'small'
 								? 'small'
