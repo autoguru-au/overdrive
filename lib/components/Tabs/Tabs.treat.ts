@@ -1,17 +1,9 @@
 import { style, styleMap } from 'treat';
 
+import { listWrapper } from './TabList.treat';
+
 const lineBottomHeight = '1px';
 const size = '20px';
-
-export const tabsList = {
-	root: style({
-		display: 'flex',
-		flexWrap: 'nowrap',
-	}),
-	stretch: style({
-		justifyContent: 'space-between',
-	}),
-};
 
 export const tabPane = style({
 	display: 'block',
@@ -48,7 +40,7 @@ export const navItem = {
 		outline: 'none',
 		background: 'transparent',
 		marginRight: theme.space['6'],
-		marginBottom: '-1px',
+		whiteSpace: 'nowrap',
 
 		':last-of-type': {
 			marginRight: 0,
@@ -63,7 +55,7 @@ export const navItem = {
 		},
 
 		selectors: {
-			[`${tabsList.stretch} &`]: {
+			[`${listWrapper.stretch} &`]: {
 				flex: 'auto',
 			},
 		},
@@ -75,7 +67,8 @@ export const navItem = {
 };
 
 export const tabItem = style({
-	display: 'inlineBlock',
+	display: 'inline-block',
+	width: 'max-content',
 	verticalAlign: 'middle',
 });
 
