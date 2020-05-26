@@ -14,7 +14,7 @@ import { useStyles } from 'react-treat';
 
 import { useBoxStyles } from '../Box';
 import { useTabIndex, useTabsContext } from './context';
-import * as styleRefs from './Tabs.treat';
+import * as styleRefs from './Tab.treat';
 
 interface Props {
 	children: ReactText;
@@ -61,9 +61,9 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 					is: typeof Component === 'string' ? Component : undefined,
 					display: 'block',
 				}),
-				styles.navItem.default,
+				styles.root.default,
 				{
-					[styles.navItem.active]: isActive,
+					[styles.root.active]: isActive,
 				},
 			),
 			role: 'tab',
@@ -76,11 +76,11 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 
 		const child = (
 			<>
-				<span className={styles.tabItem}>{children}</span>
+				<span className={styles.item}>{children}</span>
 				{typeof indication === 'number' && (
 					<span
-						className={clsx(styles.navItemIndication.default, {
-							[styles.navItemIndication.active]: isActive,
+						className={clsx(styles.indication.default, {
+							[styles.indication.active]: isActive,
 						})}>
 						{indication}
 					</span>

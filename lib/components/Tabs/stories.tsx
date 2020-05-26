@@ -93,7 +93,7 @@ export const Scrollable = () => {
 
 	useEffect(() => {
 		const ival = setInterval(() => {
-			setIndication(Math.floor(Math.random() * 10));
+			!isChromatic() && setIndication(Math.floor(Math.random() * 10));
 		}, 1e3);
 
 		return () => {

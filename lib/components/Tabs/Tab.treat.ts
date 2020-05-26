@@ -5,32 +5,11 @@ import { listWrapper } from './TabList.treat';
 const lineBottomHeight = '1px';
 const size = '20px';
 
-export const tabPane = style({
-	display: 'block',
-	float: 'left',
-	width: '100%',
-	outline: 'none',
-});
-
-export const tabPanes = style({
-	display: 'block',
-	float: 'left',
-	width: '100%',
-	outline: 'none',
-
-	':after': {
-		display: 'table',
-		clear: 'both',
-		content: '""',
-	},
-});
-
-export const navItem = {
+export const root = {
 	default: style((theme) => ({
 		fontSize: theme.typography.size['3'].fontSize,
-		fontWeight: 700,
-		lineHeight: size,
-		width: 'auto',
+		lineHeight: theme.typography.size['3'].lineHeight,
+		fontWeight: theme.typography.fontWeight.bold,
 		padding: `calc(${theme.space['3']} + ${lineBottomHeight}) 0`,
 		cursor: 'pointer',
 		transition: `color 0.2s ${theme.animation.easing.decelerate} 0s, background-color 0.2s ${theme.animation.easing.decelerate} 0s`,
@@ -66,13 +45,13 @@ export const navItem = {
 	})),
 };
 
-export const tabItem = style({
+export const item = style({
 	display: 'inline-block',
 	width: 'max-content',
 	verticalAlign: 'middle',
 });
 
-export const navItemIndication = styleMap((theme) => ({
+export const indication = styleMap((theme) => ({
 	default: {
 		fontSize: theme.typography.size['2'].fontSize,
 		lineHeight: theme.typography.size['2'].lineHeight,

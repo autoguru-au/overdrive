@@ -108,17 +108,18 @@ export const useEventCallback = <T extends Function>(fn: T) => {
 };
 
 // Taken from https://gist.github.com/gre/1650294
-const easeInOutCubic = (t) =>
+const easeInOutCubic = (t: number): number =>
 	t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
 
-export const animate = <T extends HTMLElement, P extends keyof T>(
+export const animate = <T extends HTMLElement>(
 	element: T,
-	property: P,
-	to: T[P],
+	property: keyof T,
+	to: number,
 	duration = 600,
 ): (() => void) | void => {
 	let start: number | null = null;
-	const from = element[property];
+	// @ts-ignore
+	const from: number = element[property];
 	if (start === from) return;
 
 	let cancelled = false;

@@ -5,7 +5,7 @@ import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
 import { useTabIndex, useTabsContext } from './context';
-import * as styleRefs from './Tabs.treat';
+import * as styleRefs from './TabPane.treat';
 
 export const TabPane: FunctionComponent<{ id?: string }> = ({
 	children,
@@ -27,7 +27,12 @@ export const TabPane: FunctionComponent<{ id?: string }> = ({
 			: `${tabsContext!.id}-${myIndex}-tab`;
 
 	return (
-		<Box className={styles.tabPane} tabIndex={0} role="tabpanel" id={myId}>
+		<Box
+			className={styles.root}
+			tabIndex={0}
+			role="tabpanel"
+			id={myId}
+			width="full">
 			{children}
 		</Box>
 	);
