@@ -20,6 +20,7 @@ export const listWrapper = styleMap({
 		// @ts-ignore
 		'-webkit-overflow-scrolling': 'auto',
 		overscrollBehavior: 'contain',
+		scrollBehavior: 'smooth',
 		scrollbarWidth: 'none',
 		selectors: {
 			'&::-webkit-scrollbar': {

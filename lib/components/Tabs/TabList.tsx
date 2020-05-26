@@ -4,7 +4,6 @@ import type { FunctionComponent } from 'react';
 import * as React from 'react';
 import {
 	Children,
-	cloneElement,
 	isValidElement,
 	useCallback,
 	useEffect,
@@ -42,23 +41,13 @@ export const TabList: FunctionComponent<Props> = ({
 	const wrapperRef = useRef<HTMLDivElement>(null);
 	const innerRef = useRef<HTMLDivElement>(null);
 
-	const tabsList = new Map<number, HTMLElement>();
-
 	const childs = useMemo(
 		() =>
 			Children.map(flattenChildren(children), (child, index) => {
 				if (!isValidElement(child)) return null;
 
 				return (
-					<TabIndexProvider index={index}>
-						{cloneElement(child, {
-							ref(el) {
-								if (el !== null) {
-									tabsList.set(index, el);
-								}
-							},
-						})}
-					</TabIndexProvider>
+					<TabIndexProvider index={index}>{child}</TabIndexProvider>
 				);
 			}),
 		[children],
