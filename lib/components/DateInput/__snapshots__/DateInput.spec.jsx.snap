@@ -8,7 +8,7 @@ exports[`<DateInput /> should have some hintText 1`] = `
     class="base root_base"
   >
     <div
-      class="input_root"
+      class="base width_full input_root"
     >
       <input
         autocomplete="off"
@@ -56,7 +56,7 @@ exports[`<DateInput /> should match snapshot 1`] = `
     class="base root_base"
   >
     <div
-      class="input_root"
+      class="base width_full input_root"
     >
       <input
         autocomplete="off"
@@ -99,7 +99,7 @@ exports[`<DateInput /> should match snapshot when active 1`] = `
     class="base root_base"
   >
     <div
-      class="input_root"
+      class="base width_full input_root"
     >
       <input
         autocomplete="off"
@@ -140,7 +140,7 @@ exports[`<DateInput /> should match snapshot when touched 1`] = `
     class="base root_base"
   >
     <div
-      class="input_root"
+      class="base width_full input_root"
     >
       <input
         autocomplete="off"
@@ -181,7 +181,7 @@ exports[`<DateInput /> should match snapshot when touched and invalid 1`] = `
     class="base root_base"
   >
     <div
-      class="input_root"
+      class="base width_full input_root"
     >
       <input
         autocomplete="off"
@@ -222,7 +222,7 @@ exports[`<DateInput /> should match snapshot when touched and valid 1`] = `
     class="base root_base"
   >
     <div
-      class="input_root"
+      class="base width_full input_root"
     >
       <input
         autocomplete="off"
@@ -263,7 +263,7 @@ exports[`<DateInput /> should match snapshot with both icons 1`] = `
     class="base root_base"
   >
     <div
-      class="input_root"
+      class="base width_full input_root"
     >
       <i
         class="base display_block iconRoot_base icon_prefix styleNode_base medium_mobile_base"
@@ -328,7 +328,7 @@ exports[`<DateInput /> should match snapshot with prefix icon 1`] = `
     class="base root_base"
   >
     <div
-      class="input_root"
+      class="base width_full input_root"
     >
       <i
         class="base display_block iconRoot_base icon_prefix styleNode_base medium_mobile_base"
@@ -381,7 +381,7 @@ exports[`<DateInput /> should match snapshot with suffix icon 1`] = `
     class="base root_base"
   >
     <div
-      class="input_root"
+      class="base width_full input_root"
     >
       <i
         class="base display_block iconRoot_base icon_suffix styleNode_base medium_mobile_base"

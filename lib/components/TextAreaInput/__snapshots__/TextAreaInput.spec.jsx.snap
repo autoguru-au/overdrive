@@ -8,7 +8,7 @@ exports[`<TextAreaInput /> should have some hintText 1`] = `
     class="base root_base"
   >
     <div
-      class="input_root"
+      class="base width_full input_root"
     >
       <textarea
         autocomplete="off"
@@ -54,7 +54,7 @@ exports[`<TextAreaInput /> should match snapshot 1`] = `
     class="base root_base"
   >
     <div
-      class="input_root"
+      class="base width_full input_root"
     >
       <textarea
         autocomplete="off"
@@ -95,7 +95,7 @@ exports[`<TextAreaInput /> should match snapshot when active 1`] = `
     class="base root_base"
   >
     <div
-      class="input_root"
+      class="base width_full input_root"
     >
       <textarea
         autocomplete="off"
@@ -136,7 +136,7 @@ exports[`<TextAreaInput /> should match snapshot when touched 1`] = `
     class="base root_base"
   >
     <div
-      class="input_root"
+      class="base width_full input_root"
     >
       <textarea
         autocomplete="off"
@@ -175,7 +175,7 @@ exports[`<TextAreaInput /> should match snapshot when touched and invalid 1`] = 
     class="base root_base"
   >
     <div
-      class="input_root"
+      class="base width_full input_root"
     >
       <textarea
         autocomplete="off"
@@ -214,7 +214,7 @@ exports[`<TextAreaInput /> should match snapshot when touched and valid 1`] = `
     class="base root_base"
   >
     <div
-      class="input_root"
+      class="base width_full input_root"
     >
       <textarea
         autocomplete="off"

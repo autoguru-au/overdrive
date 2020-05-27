@@ -253,9 +253,10 @@ export const withEnhancedInput = <
 							[derivedColours.colour]: !isEmpty,
 						})}
 						borderColourClassName={derivedColours.borderColour}>
-						<div
+						<Box
 							ref={wrapperRef}
-							className={clsx(styles.input.root)}>
+							width="full"
+							className={styles.input.root}>
 							{prefixIcon && (
 								<Icon
 									icon={prefixIcon}
@@ -277,7 +278,7 @@ export const withEnhancedInput = <
 								/>
 							)}
 							<WrappingComponent {...wrappingComponent} />
-						</div>
+						</Box>
 					</NotchedBase>
 					{!disabled && hintText?.length && (
 						<HintText className={derivedColours.colour}>
