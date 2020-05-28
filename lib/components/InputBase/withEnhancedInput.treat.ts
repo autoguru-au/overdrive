@@ -16,7 +16,6 @@ export const icon = {
 
 export const input = {
 	root: style({
-		display: 'block',
 		height: '100%',
 	}),
 	itself: styleMap((theme) => ({
