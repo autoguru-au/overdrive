@@ -1,5 +1,28 @@
 # @autoguru/overdrive
 
+## 2.0.10
+
+### Patch Changes
+
+-   0b6c621: Tabs: Adds `scrollable`, which scrolls the tabs horizontally on
+    smaller devices.
+
+    **FEATURES**
+
+    ```jsx
+    <Tabs>
+    	<TabList scrollable>
+    		<Tab>This</Tab>
+    		<Tab>Tab</Tab>
+    		<Tab>Might</Tab>
+    		<Tab>Scroll</Tab>
+    	</TabList>
+    </Tabs>
+    ```
+
+-   729dfdd: Input: Notchless inputs will no longer break when part of a flex
+    container
+
 ## 2.0.9
 
 ### Patch Changes
