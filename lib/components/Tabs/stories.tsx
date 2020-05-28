@@ -88,6 +88,50 @@ export const WithStretch = () => (
 	</Tabs>
 );
 
+export const Scrollable = () => {
+	const [indication, setIndication] = useState(10);
+
+	useEffect(() => {
+		const ival = setInterval(() => {
+			!isChromatic() && setIndication(Math.floor(Math.random() * 10));
+		}, 1e3);
+
+		return () => {
+			clearInterval(ival);
+		};
+	}, []);
+
+	return (
+		<Tabs>
+			<TabList scrollable>
+				<Tab>Hello</Tab>
+				<Tab indication={indication}>Why isnt</Tab>
+				<Tab>This a terribly</Tab>
+				<Tab>Long</Tab>
+				<Tab>Tab list</Tab>
+				<Tab>Hello</Tab>
+				<Tab>Why isnt</Tab>
+				<Tab>This a terribly</Tab>
+				<Tab>Long</Tab>
+				<Tab>Tab list</Tab>
+				<Tab>Hello</Tab>
+				<Tab>Why isnt</Tab>
+				<Tab>This a terribly</Tab>
+				<Tab>Long</Tab>
+				<Tab>Tab list</Tab>
+			</TabList>
+		</Tabs>
+	);
+};
+
+Scrollable.story = {
+	decorators: [
+		(story) => (
+			<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
+		),
+	],
+};
+
 const TestChild = ({ label }) => {
 	const [thing, sething] = useState(isChromatic() ? 0.5 : Math.random() * 5);
 

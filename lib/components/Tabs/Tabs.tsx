@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { ContextType, FunctionComponent, useMemo } from 'react';
+import { FunctionComponent } from 'react';
 
 import { useId, useUncontrolledState } from '../../utils';
 import { Box } from '../Box';
-import { TabsContext } from './context';
+import { TabsContextProvider } from './context';
 
 interface Props {
 	active?: number;
@@ -22,20 +22,14 @@ export const Tabs: FunctionComponent<Props> = ({
 
 	const id = useId();
 
-	const state = useMemo<ContextType<typeof TabsContext>>(
-		() => ({
-			id,
-			active: activeState,
-			onChange: setActiveState,
-		}),
-		[id, activeState, setActiveState],
-	);
-
 	return (
 		<Box width="full">
-			<TabsContext.Provider value={state}>
+			<TabsContextProvider
+				id={id}
+				active={activeState}
+				onChange={setActiveState}>
 				{children}
-			</TabsContext.Provider>
+			</TabsContextProvider>
 		</Box>
 	);
 };

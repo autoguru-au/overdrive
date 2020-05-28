@@ -1,4 +1,11 @@
-import { Ref, useEffect, useLayoutEffect, useState } from 'react';
+import {
+	Ref,
+	useCallback,
+	useEffect,
+	useLayoutEffect,
+	useRef,
+	useState,
+} from 'react';
 
 export const isBrowser = typeof window !== 'undefined';
 
@@ -85,3 +92,58 @@ export const hex2rgba = (c, alpha = '1') =>
 
 export { mapTokenToProperty } from './mapTokenToProperty';
 export * from './responsiveProps';
+
+export const ownerWindow = (node?: Node): Window =>
+	ownerDocument(node)?.defaultView || window;
+export const ownerDocument = (node?: Node): Document =>
+	node?.ownerDocument || document;
+
+export const useEventCallback = <T extends Function>(fn: T) => {
+	const ref = useRef(fn);
+	isomorphicLayoutEffect(() => {
+		ref.current = fn;
+	});
+
+	return useCallback((...args) => void ref.current(...args), []);
+};
+
+// Taken from https://gist.github.com/gre/1650294
+const easeInOutCubic = (t: number): number =>
+	t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+
+export const animate = <T extends HTMLElement>(
+	element: T,
+	property: keyof T,
+	to: number,
+	duration = 600,
+): (() => void) | void => {
+	let start: number | null = null;
+	// @ts-ignore
+	const from: number = element[property];
+	if (start === from) return;
+
+	let cancelled = false;
+
+	const cancel = () => {
+		cancelled = true;
+	};
+
+	const step = (timestamp: number) => {
+		if (cancelled) return;
+
+		if (start === null) {
+			start = timestamp;
+		}
+
+		const time = Math.min(1, (timestamp - start) / duration);
+		// @ts-ignore
+		element[property] = easeInOutCubic(time) * (to - from) + from;
+
+		if (time >= 1) return;
+		requestAnimationFrame(step);
+	};
+
+	requestAnimationFrame(step);
+
+	return cancel;
+};
