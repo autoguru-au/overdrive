@@ -139,7 +139,13 @@ export const TabList: FunctionComponent<Props> = ({
 					scrollable && styles.listWrapper.scroll,
 				]}
 				onScroll={handleOnScroll}>
-				<Box ref={innerRef} role="tablist" className={styles.list}>
+				<Box
+					ref={innerRef}
+					role="tablist"
+					className={[
+						styles.list.default,
+						stretch && styles.list.stretch,
+					]}>
 					{childs}
 				</Box>
 			</Box>
