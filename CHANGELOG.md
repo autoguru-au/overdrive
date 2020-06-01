@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.0.11
+
+### Patch Changes
+
+-   358fb4b: Tabs: Incorrectly importing treat files inside treat
+
 ## 2.0.10
 
 ### Patch Changes
