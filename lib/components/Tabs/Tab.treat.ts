@@ -1,12 +1,11 @@
 import { style, styleMap } from 'treat';
 
-import { listWrapper } from './TabList.treat';
-
 const lineBottomHeight = '1px';
 const size = '20px';
 
 export const root = {
 	default: style((theme) => ({
+		display: 'inline-block',
 		fontSize: theme.typography.size['3'].fontSize,
 		lineHeight: theme.typography.size['3'].lineHeight,
 		fontWeight: theme.typography.fontWeight.bold,
@@ -19,6 +18,7 @@ export const root = {
 		outline: 'none',
 		background: 'transparent',
 		marginRight: theme.space['6'],
+		flex: 'auto',
 		whiteSpace: 'nowrap',
 
 		':last-of-type': {
@@ -31,12 +31,6 @@ export const root = {
 
 		':focus': {
 			color: theme.colours.gamut.green900,
-		},
-
-		selectors: {
-			[`${listWrapper.stretch} &`]: {
-				flex: 'auto',
-			},
 		},
 	})),
 	active: style((theme) => ({

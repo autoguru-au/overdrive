@@ -31,8 +31,13 @@ export const listWrapper = styleMap({
 	stretch: {},
 });
 
-export const list = style({
-	display: 'inline-flex',
-	flexWrap: 'nowrap',
-	width: '100%',
-});
+export const list = {
+	default: style({
+		flexWrap: 'nowrap',
+		width: '100%',
+		whiteSpace: 'nowrap',
+	}),
+	stretch: style({
+		display: 'flex',
+	}),
+};

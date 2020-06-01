@@ -11,7 +11,7 @@ exports[`<Tabs /> should allow id overriding 1`] = `
       class="base"
     >
       <div
-        class="base list"
+        class="base list_default"
         role="tablist"
       >
         <button
@@ -81,7 +81,7 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
       class="base"
     >
       <div
-        class="base list"
+        class="base list_default"
         role="tablist"
       >
         <button
@@ -166,7 +166,7 @@ exports[`<Tabs /> should match snapshot (high level) 1`] = `
       class="base"
     >
       <div
-        class="base list"
+        class="base list_default"
         role="tablist"
       >
         <button
