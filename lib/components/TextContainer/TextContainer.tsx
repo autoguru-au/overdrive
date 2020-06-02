@@ -17,7 +17,7 @@ export const TextContainer: FunctionComponent<Props> = ({
 	children,
 	action,
 }) => (
-	<Stack spacing="2" is="article" className={className}>
+	<Stack space="2" is="article" className={className}>
 		<TextContainerHeading heading={heading} action={action} />
 		{children}
 	</Stack>

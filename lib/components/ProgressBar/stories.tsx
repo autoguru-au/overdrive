@@ -22,7 +22,7 @@ export const Standard = () => {
 	}, []);
 
 	return (
-		<Stack spacing={2}>
+		<Stack space={2}>
 			{!isChromatic() && <ProgressBar value={width} colour="green" />}
 			<ProgressBar value={0.5} colour="green" />
 			<ProgressBar value={0.4} colour="blue" />
