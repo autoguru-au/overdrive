@@ -9,7 +9,7 @@ trailingComma: all
 proseWrap: always
 
 overrides:
-  - files: ['**/package.json', '**/.*.yml', '**/*.yml']
+  - files: ['**/.*.yml', '**/*.yml']
     options:
       printWidth: 999
       tabWidth: 2
