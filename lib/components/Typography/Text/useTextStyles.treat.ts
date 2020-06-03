@@ -48,3 +48,5 @@ export const align = styleMap({
 export const fontWeight = styleMap((theme) =>
 	mapTokenToProperty(theme.typography.fontWeight, 'fontWeight'),
 );
+
+export const noWrap = style({ whiteSpace: 'nowrap' });

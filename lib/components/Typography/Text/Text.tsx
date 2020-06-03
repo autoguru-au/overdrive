@@ -20,6 +20,7 @@ export const Text: FunctionComponent<Props> = ({
 	colour,
 	align = 'left',
 	fontWeight = 'normal',
+	noWrap,
 }) => (
 	<Box
 		is={Component}
@@ -29,6 +30,7 @@ export const Text: FunctionComponent<Props> = ({
 				align,
 				colour: colour ?? (strong ? 'dark' : undefined),
 				fontWeight: strong ? 'bold' : fontWeight,
+				noWrap,
 			}),
 			className,
 		)}>
