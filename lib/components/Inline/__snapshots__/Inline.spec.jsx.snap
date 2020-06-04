@@ -1,11 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Inline /> should match the snapshot 1`] = `
-<div
-  class="base 2_mobile_base"
->
-  <div
-    class="base root 2_mobile_base"
-  />
-</div>
-`;
+exports[`<Inline /> should match the snapshot 1`] = `null`;

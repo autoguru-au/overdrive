@@ -1,50 +1,85 @@
-import clsx from 'clsx';
+import type {
+	ComponentType,
+	FunctionComponent,
+	ReactChild,
+	ReactElement,
+} from 'react';
 import * as React from 'react';
-import { Children, FunctionComponent } from 'react';
+import { Children, isValidElement } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 import { useStyles } from 'react-treat';
-import { Theme } from 'treat/theme';
+import type { Theme } from 'treat/theme';
 
-import {
-	useNegativeMarginLeft,
-	useNegativeMarginTop,
-} from '../../hooks/useNegativeMargin/useNegativeMargin';
 import { resolveResponsiveStyle, ResponsiveProp } from '../../utils';
 import { Box } from '../Box';
+import { BoxStyleProps } from '../Box/useBoxStyles';
+import { Text } from '../Typography';
 import * as styleRefs from './Inline.treat';
 
-interface Props {
+export interface Props extends Pick<BoxStyleProps, 'is'> {
 	space?: ResponsiveProp<keyof Theme['space']>;
 	alignY?: ResponsiveProp<keyof typeof styleRefs.align>;
+	dividers?: boolean | ComponentType | ReactChild;
 }
 
 export const Inline: FunctionComponent<Props> = ({
+	is = 'div',
 	children,
 	space = '2',
 	alignY,
+	dividers,
 }) => {
-	const negativeMarginLeft = useNegativeMarginLeft(space);
-	const negativeMarginTop = useNegativeMarginTop(space);
-
 	const styles = useStyles(styleRefs);
 
+	const items = flattenChildren(children);
+
+	if (items.length < 2) {
+		return <>{items}</>;
+	}
+
+	const divider = renderDivider(dividers);
+
 	return (
-		<Box className={negativeMarginTop}>
-			<Box
-				className={clsx(
-					styles.root,
-					negativeMarginLeft,
-					resolveResponsiveStyle(alignY, styles.align),
-				)}>
-				{Children.map(flattenChildren(children), (child) => (
+		<Box
+			is={is}
+			position="relative"
+			className={[
+				styles.root,
+				resolveResponsiveStyle(alignY, styles.align),
+			]}>
+			{Children.map(items, (child, idx) =>
+				child !== null && child !== undefined ? (
 					<Box
-						display="inline-block"
-						paddingLeft={space}
-						paddingTop={space}>
+						is={['ul', 'ol'].includes(is) ? 'li' : 'div'}
+						className={[
+							styles.child,
+							resolveResponsiveStyle(alignY, styles.align),
+						]}
+						paddingLeft={
+							/* eslint-disable-next-line */
+							dividers ? undefined : idx === 0 ? undefined : space
+						}>
 						{child}
+						{dividers && idx !== items.length - 1 ? (
+							<Box paddingX={space} display="inline-block">
+								{divider}
+							</Box>
+						) : null}
 					</Box>
-				))}
-			</Box>
+				) : null,
+			)}
 		</Box>
 	);
+};
+
+const renderDivider = (dividers: Props['dividers']): ReactElement | null => {
+	if (typeof dividers === 'boolean') {
+		return dividers ? <Text>•</Text> : null;
+	}
+
+	if (isValidElement(dividers)) {
+		return dividers;
+	}
+
+	return <Text>{dividers}</Text>;
 };
