@@ -1,9 +1,4 @@
-import type {
-	ComponentType,
-	FunctionComponent,
-	ReactChild,
-	ReactElement,
-} from 'react';
+import type { FunctionComponent, ReactChild, ReactElement } from 'react';
 import * as React from 'react';
 import { Children, isValidElement } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
@@ -19,7 +14,7 @@ import * as styleRefs from './Inline.treat';
 export interface Props extends Pick<BoxStyleProps, 'is'> {
 	space?: ResponsiveProp<keyof Theme['space']>;
 	alignY?: ResponsiveProp<keyof typeof styleRefs.align>;
-	dividers?: boolean | ComponentType | ReactChild;
+	dividers?: boolean | ReactChild;
 }
 
 export const Inline: FunctionComponent<Props> = ({

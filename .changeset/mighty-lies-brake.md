@@ -4,7 +4,7 @@
 
 Inline: Supports inline dividers between elements.
 
-Supports, text, numbers, elements or components.
+Supports, text, numbers or elements.
 
 **FEATURES**
 

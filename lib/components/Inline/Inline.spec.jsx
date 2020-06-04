@@ -14,8 +14,7 @@ describe('<Inline />', () => {
 		['default', true],
 		['no', false],
 		['custom element', <div>divider</div>],
-		['custom component', TestComponent],
-	])('should match snapshot for %s dividers', (value) => {
+	])('should match snapshot for %s dividers', (label, value) => {
 		const { container } = render(
 			<Inline dividers={value}>
 				<Text>A</Text>
@@ -25,5 +24,30 @@ describe('<Inline />', () => {
 		);
 
 		expect(container.firstChild).toMatchSnapshot();
+	});
+
+	it('should not be able to render components', () => {
+		expect(() =>
+			render(
+				<Inline dividers={TestComponent}>
+					<Text>A</Text>
+					<Text>B</Text>
+				</Inline>,
+			),
+		).not.toThrow();
+	});
+
+	it('should not render undefined children', () => {
+		const { container } = render(
+			<Inline>
+				{null}
+				<Text>A</Text>
+				<Text>B</Text>
+				<Text>C</Text>
+				{undefined}
+			</Inline>,
+		);
+
+		expect(container.firstChild.children).toHaveLength(3);
 	});
 });
