@@ -1,5 +1,55 @@
 # @autoguru/overdrive
 
+## 2.0.12
+
+### Patch Changes
+
+-   62c7111: Stack: A Renamed prop from spacing to space
+
+    eg:
+
+    ```diff
+    <Stack is="ul"
+    -    spacing="3">
+    +    space="3">
+        <li>line 1</li>
+        <li>line 2</li>
+        <li>line 3</li>
+    </Stack>
+    ```
+
+-   822863d: Inline: Supports inline dividers between elements.
+
+    Supports, text, numbers or elements.
+
+    **FEATURES**
+
+    ```jsx
+    <Inline dividers>
+    	<Text>Mazda</Text>
+    	<Text>CX3</Text>
+    	<Text>Petrol</Text>
+    	<Text>2020</Text>
+    </Inline>
+    ```
+
+-   a0fce92: Text: Exposes a new white-space nowrap prop
+
+    This is an **experimental** prop, we know of one use-case where this can be
+    used, but will likely also appear on the Box.
+
+    So do let us know if you're using this, and it hasnt worked in your
+    use-case.
+
+    **FEATURES**
+
+    You can now pass a `noWrap` prop to any `<Text />` which applies a
+    `white-space: nowrap` to itself.
+
+    ```jsx
+    <Text noWrap>I wont wrap</Text>
+    ```
+
 ## 2.0.11
 
 ### Patch Changes
