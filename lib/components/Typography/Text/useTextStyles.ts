@@ -9,6 +9,7 @@ export interface TextStyleProps {
 	colour?: keyof Theme['typography']['colour'] | 'unset';
 	align?: 'left' | 'center' | 'right';
 	fontWeight?: keyof Theme['typography']['fontWeight'];
+	noWrap?: boolean;
 }
 
 export const useTextStyles = ({
@@ -16,6 +17,7 @@ export const useTextStyles = ({
 	fontWeight,
 	colour,
 	align,
+	noWrap,
 }: TextStyleProps) => {
 	const styles = useStyles(styleRefs);
 
@@ -25,5 +27,6 @@ export const useTextStyles = ({
 		styles.align[align!],
 		colour !== 'unset' && styles.colours[colour ?? 'neutral'],
 		styles.fontWeight[fontWeight!],
+		noWrap && styles.noWrap,
 	);
 };
