@@ -1,11 +1,135 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Inline /> should match the snapshot 1`] = `
+exports[`<Inline /> should match snapshot for custom element dividers 1`] = `
 <div
-  class="base 2_mobile_base"
+  class="base position_relative flexShared root"
 >
   <div
-    class="base root 2_mobile_base"
-  />
+    class="base flexShared"
+  >
+    <span
+      class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+    >
+      A
+    </span>
+    <div
+      class="base 2_mobile_base 2_mobile_base display_inline-block"
+    >
+      <div>
+        divider
+      </div>
+    </div>
+  </div>
+  <div
+    class="base flexShared"
+  >
+    <span
+      class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+    >
+      B
+    </span>
+    <div
+      class="base 2_mobile_base 2_mobile_base display_inline-block"
+    >
+      <div>
+        divider
+      </div>
+    </div>
+  </div>
+  <div
+    class="base flexShared"
+  >
+    <span
+      class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+    >
+      C
+    </span>
+  </div>
+</div>
+`;
+
+exports[`<Inline /> should match snapshot for default dividers 1`] = `
+<div
+  class="base position_relative flexShared root"
+>
+  <div
+    class="base flexShared"
+  >
+    <span
+      class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+    >
+      A
+    </span>
+    <div
+      class="base 2_mobile_base 2_mobile_base display_inline-block"
+    >
+      <span
+        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+      >
+        •
+      </span>
+    </div>
+  </div>
+  <div
+    class="base flexShared"
+  >
+    <span
+      class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+    >
+      B
+    </span>
+    <div
+      class="base 2_mobile_base 2_mobile_base display_inline-block"
+    >
+      <span
+        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+      >
+        •
+      </span>
+    </div>
+  </div>
+  <div
+    class="base flexShared"
+  >
+    <span
+      class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+    >
+      C
+    </span>
+  </div>
+</div>
+`;
+
+exports[`<Inline /> should match snapshot for no dividers 1`] = `
+<div
+  class="base position_relative flexShared root"
+>
+  <div
+    class="base flexShared"
+  >
+    <span
+      class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+    >
+      A
+    </span>
+  </div>
+  <div
+    class="base 2_mobile_base flexShared"
+  >
+    <span
+      class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+    >
+      B
+    </span>
+  </div>
+  <div
+    class="base 2_mobile_base flexShared"
+  >
+    <span
+      class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+    >
+      C
+    </span>
+  </div>
 </div>
 `;

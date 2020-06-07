@@ -2,11 +2,23 @@ import { style } from 'treat';
 
 import { makeResponsiveStyle } from '../../utils';
 
-export const root = style({
-	display: 'flex',
-	justifyContent: 'flex-start',
-	flexWrap: 'wrap',
-});
+const flexShared = style(
+	{
+		display: 'flex',
+	},
+	'flexShared',
+);
+
+export const root = [
+	flexShared,
+	style(
+		{
+			justifyContent: 'flex-start',
+			flexWrap: 'wrap',
+		},
+		'root',
+	),
+];
 
 const alignRules = {
 	top: 'flex-start',
@@ -15,3 +27,5 @@ const alignRules = {
 };
 
 export const align = makeResponsiveStyle(() => alignRules, 'alignItems');
+
+export const child = [flexShared];
