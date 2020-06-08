@@ -64,10 +64,10 @@
 		"react-treat": "^1.4.1"
 	},
 	"devDependencies": {
-		"@autoguru/babel-preset": "1.0.96",
-		"@autoguru/eslint-plugin": "1.0.84",
-		"@autoguru/jest-preset": "1.0.96",
-		"@autoguru/tsconfig": "1.0.77",
+		"@autoguru/babel-preset": "1.0.97",
+		"@autoguru/eslint-plugin": "1.0.85",
+		"@autoguru/jest-preset": "1.0.97",
+		"@autoguru/tsconfig": "1.0.78",
 		"@babel/core": "7.10.2",
 		"@babel/runtime-corejs3": "7.10.2",
 		"@changesets/cli": "2.8.0",
@@ -88,7 +88,7 @@
 		"@types/webpack-env": "1.15.2",
 		"babel-loader": "8.1.0",
 		"babel-plugin-treat": "1.1.0",
-		"browserslist-config-autoguru": "1.0.87",
+		"browserslist-config-autoguru": "1.0.88",
 		"concurrently": "5.2.0",
 		"core-js": "3.6.5",
 		"csstype": "2.6.10",
