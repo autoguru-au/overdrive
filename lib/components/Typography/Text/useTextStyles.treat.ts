@@ -1,5 +1,5 @@
 import { Style, style, styleMap } from 'treat';
-import { Theme } from 'treat/theme';
+import type { Theme } from 'treat/theme';
 
 import { mapTokenToProperty } from '../../../utils';
 

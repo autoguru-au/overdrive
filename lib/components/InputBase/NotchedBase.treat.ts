@@ -1,5 +1,5 @@
 import { style, styleMap } from 'treat';
-import { Theme } from 'treat/theme';
+import type { Theme } from 'treat/theme';
 
 export const root = style((theme) => ({
 	position: 'relative',

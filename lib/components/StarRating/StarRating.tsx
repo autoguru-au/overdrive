@@ -8,7 +8,7 @@ import {
 	ReactElement,
 } from 'react';
 import { useStyles } from 'react-treat';
-import { Theme } from 'treat/theme';
+import type { Theme } from 'treat/theme';
 
 import { Box } from '../Box';
 import { Icon } from '../Icon';

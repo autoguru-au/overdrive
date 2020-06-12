@@ -3,7 +3,7 @@ import * as React from 'react';
 import { ComponentProps, createContext, forwardRef, useMemo } from 'react';
 import { useStyles } from 'react-treat';
 import { ClassRef } from 'treat';
-import { Theme } from 'treat/theme';
+import type { Theme } from 'treat/theme';
 
 import {
 	useNegativeMarginLeft,

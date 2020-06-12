@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import * as React from 'react';
 import { FunctionComponent } from 'react';
-import { Theme } from 'treat/theme';
+import type { Theme } from 'treat/theme';
 
 import { TextStyleProps, useTextStyles } from '../Text/useTextStyles';
 

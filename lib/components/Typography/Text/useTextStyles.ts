@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { useStyles } from 'react-treat';
-import { Theme } from 'treat/theme';
+import type { Theme } from 'treat/theme';
 
 import * as styleRefs from './useTextStyles.treat';
 
