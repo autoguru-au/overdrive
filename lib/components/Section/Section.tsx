@@ -7,7 +7,7 @@ import { Box } from '../Box';
 import * as styleRefs from './Section.treat';
 
 interface Props extends Pick<ComponentProps<typeof Box>, 'paddingX'> {
-	width: keyof typeof styleRefs.width;
+	width?: keyof typeof styleRefs.width;
 }
 
 export const Section: FunctionComponent<Props> = ({
