@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.0.13
+
+### Patch Changes
+
+-   292692f: Section: Typing update such that width prop is actually optional
+
 ## 2.0.12
 
 ### Patch Changes
