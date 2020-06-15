@@ -48,10 +48,19 @@ interface Border {
 	borderRadius?: ResponsiveProp<keyof typeof styleRefs.borderRadius>;
 }
 
-export interface BoxStyleProps extends Padding, Margin, Border {
+interface Flex {
+	alignItems?: ResponsiveProp<keyof typeof styleRefs.alignItems>;
+	flexDirection?: ResponsiveProp<keyof typeof styleRefs.flexDirection>;
+	flexGrow?: keyof typeof styleRefs.flexGrow;
+	flexShrink?: keyof typeof styleRefs.flexShrink;
+	flexWrap?: keyof typeof styleRefs.flexWrap;
+	justifyContent?: ResponsiveProp<keyof typeof styleRefs.justifyContent>;
+}
+
+export interface BoxStyleProps extends Padding, Margin, Border, Flex {
 	is?: keyof JSX.IntrinsicElements;
 	boxShadow?: ResponsiveProp<keyof typeof styleRefs.boxShadow>;
-	display?: 'block' | 'inline-block';
+	display?: keyof typeof styleRefs.display;
 
 	position?: keyof typeof styleRefs.position;
 	width?: keyof typeof styleRefs.width;
@@ -100,6 +109,12 @@ export const useBoxStyles = ({
 	width,
 	position,
 	overflow,
+	alignItems,
+	flexDirection,
+	flexGrow,
+	flexShrink,
+	flexWrap,
+	justifyContent,
 	className,
 }: BoxStyleProps) => {
 	const resetStyles = useStyles(resetStyleRefs);
@@ -204,6 +219,15 @@ export const useBoxStyles = ({
 			resolveResponsiveStyle(borderRadius, styles.borderRadius),
 
 		backgroundColour && styles.backgroundColours[backgroundColour],
+
+		alignItems && resolveResponsiveStyle(alignItems, styles.alignItems),
+		flexDirection &&
+			resolveResponsiveStyle(flexDirection, styles.flexDirection),
+		flexGrow && styles.flexGrow,
+		flexShrink && styles.flexShrink,
+		flexWrap && styles.flexWrap,
+		justifyContent &&
+			resolveResponsiveStyle(justifyContent, styles.justifyContent),
 
 		className,
 	);

@@ -21,13 +21,6 @@ export const boxShadow = makeResponsiveStyle(
 	'boxShadow',
 );
 
-export const display = styleMap(
-	mapTokenToProperty(
-		{ block: 'block', 'inline-block': 'inline-block' },
-		'display',
-	),
-);
-
 export const border = {
 	style: style({
 		borderStyle: 'solid',
@@ -108,4 +101,71 @@ export const overflow = styleMap(
 		},
 		'overflow',
 	),
+);
+
+export const display = styleMap(
+	mapTokenToProperty(
+		{ block: 'block', 'inline-block': 'inline-block', flex: 'flex' },
+		'display',
+	),
+);
+
+// Flex things
+
+export const alignItems = makeResponsiveStyle(
+	() => ({
+		flexStart: 'flex-start',
+		center: 'center',
+		flexEnd: 'flex-end',
+	}),
+	'alignItems',
+);
+
+export const flexDirection = makeResponsiveStyle(
+	() => ({
+		row: 'row',
+		rowReverse: 'row-reverse',
+		column: 'column',
+		columnReverse: 'column-reverse',
+	}),
+	'flexDirection',
+);
+
+export const flexGrow = styleMap(
+	mapTokenToProperty(
+		{
+			0: 0,
+			1: 1,
+		},
+		'flexGrow',
+	),
+);
+
+export const flexShrink = styleMap(
+	mapTokenToProperty(
+		{
+			0: 0,
+		},
+		'flexShrink',
+	),
+);
+
+export const flexWrap = styleMap(
+	mapTokenToProperty(
+		{
+			wrap: 'wrap',
+			nowrap: 'nowrap',
+		},
+		'flexWrap',
+	),
+);
+
+export const justifyContent = makeResponsiveStyle(
+	() => ({
+		flexStart: 'flex-start',
+		center: 'center',
+		flexEnd: 'flex-end',
+		spaceBetween: 'space-between',
+	}),
+	'justifyContent',
 );
