@@ -1,5 +1,29 @@
 # @autoguru/overdrive
 
+## 2.0.13
+
+### Patch Changes
+
+-   df453b2: Badge: Applies a whiteSpace nowrap to badges, and now truncates
+-   292692f: Section: Typing update such that width prop is actually optional
+-   52c424f: Inline: Now wrap properly, and support a prop to enable/disable it.
+-   e0a4291: Box: Introduces flex style props to `Box` and `useBoxStyles`
+
+    **FEATURES**
+
+    You can now send in `alignItems`,`flexDirection`, `flexGrow`, `flexShrink`,
+    `flexWrap`, `justifyContent` to Box and useBoxStyles for whatever you like.
+
+    We have specifically chosen `alignItems`, `flexDirection`, `justifyContent`
+    as Responsive candidates as we've found the others won't have a responsive
+    use case.
+
+    ```jsx
+    <Box display="flex" width="full" justifyContent="center">
+    	<Button>Hello</Button>
+    </Box>
+    ```
+
 ## 2.0.12
 
 ### Patch Changes
