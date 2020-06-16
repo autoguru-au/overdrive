@@ -71,7 +71,7 @@
 		"@babel/core": "7.10.2",
 		"@babel/runtime-corejs3": "7.10.2",
 		"@changesets/cli": "2.8.0",
-		"@octokit/rest": "17.9.2",
+		"@octokit/rest": "18.0.0",
 		"@storybook/addon-a11y": "5.3.19",
 		"@storybook/addon-actions": "5.3.19",
 		"@storybook/addon-backgrounds": "5.3.19",
