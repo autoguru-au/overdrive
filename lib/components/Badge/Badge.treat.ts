@@ -3,9 +3,9 @@ import { style, styleMap } from 'treat';
 export const label = style((theme) => ({
 	fontSize: theme.typography.size['2'].fontSize,
 	lineHeight: theme.typography.size['2'].fontSize,
-	display: 'flex',
+	whiteSpace: 'nowrap',
+	textOverflow: 'ellipsis',
 	fontWeight: theme.typography.fontWeight.semiBold,
-	overflow: 'hidden',
 	letterSpacing: '0.5px',
 	textTransform: 'uppercase',
 }));
