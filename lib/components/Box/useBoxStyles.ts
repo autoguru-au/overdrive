@@ -223,9 +223,9 @@ export const useBoxStyles = ({
 		alignItems && resolveResponsiveStyle(alignItems, styles.alignItems),
 		flexDirection &&
 			resolveResponsiveStyle(flexDirection, styles.flexDirection),
-		flexGrow && styles.flexGrow,
-		flexShrink && styles.flexShrink,
-		flexWrap && styles.flexWrap,
+		flexGrow && styles.flexGrow[flexGrow],
+		flexShrink && styles.flexShrink[flexShrink],
+		flexWrap && styles.flexWrap[flexWrap],
 		justifyContent &&
 			resolveResponsiveStyle(justifyContent, styles.justifyContent),
 
