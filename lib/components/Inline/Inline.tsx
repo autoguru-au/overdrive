@@ -2,18 +2,21 @@ import type { FunctionComponent, ReactChild, ReactElement } from 'react';
 import * as React from 'react';
 import { Children, isValidElement } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
-import { useStyles } from 'react-treat';
 import type { Theme } from 'treat/theme';
 
-import { resolveResponsiveStyle, ResponsiveProp } from '../../utils';
+import {
+	useNegativeMarginLeft,
+	useNegativeMarginTop,
+} from '../../hooks/useNegativeMargin/useNegativeMargin';
+import { ResponsiveProp } from '../../utils';
 import { Box } from '../Box';
 import { BoxStyleProps } from '../Box/useBoxStyles';
 import { Text } from '../Typography';
-import * as styleRefs from './Inline.treat';
 
 export interface Props extends Pick<BoxStyleProps, 'is'> {
 	space?: ResponsiveProp<keyof Theme['space']>;
-	alignY?: ResponsiveProp<keyof typeof styleRefs.align>;
+	alignY?: BoxStyleProps['alignItems'];
+	noWrap?: boolean;
 	dividers?: boolean | ReactChild;
 }
 
@@ -21,10 +24,12 @@ export const Inline: FunctionComponent<Props> = ({
 	is = 'div',
 	children,
 	space = '2',
-	alignY,
+	alignY = 'center',
+	noWrap,
 	dividers,
 }) => {
-	const styles = useStyles(styleRefs);
+	const negativeMarginLeft = useNegativeMarginLeft(space);
+	const negativeMarginTop = useNegativeMarginTop(space);
 
 	const items = flattenChildren(children);
 
@@ -34,31 +39,30 @@ export const Inline: FunctionComponent<Props> = ({
 
 	const divider = renderDivider(dividers);
 
+	const listItem = ['ul', 'ol'].includes(is) ? 'li' : 'div';
+
 	return (
 		<Box
 			is={is}
 			position="relative"
-			className={[
-				styles.root,
-				resolveResponsiveStyle(alignY, styles.align),
-			]}>
+			display="flex"
+			alignItems={alignY}
+			flexDirection="row"
+			flexWrap={noWrap ? 'nowrap' : 'wrap'}
+			className={[negativeMarginTop, !dividers && negativeMarginLeft]}>
 			{Children.map(items, (child, idx) =>
 				child !== null && child !== undefined ? (
 					<Box
-						is={['ul', 'ol'].includes(is) ? 'li' : 'div'}
-						className={[
-							styles.child,
-							resolveResponsiveStyle(alignY, styles.align),
-						]}
-						paddingLeft={
-							/* eslint-disable-next-line */
-							dividers ? undefined : idx === 0 ? undefined : space
-						}>
+						is={listItem}
+						display="flex"
+						flexDirection="row"
+						flexWrap="nowrap"
+						alignItems={alignY}
+						paddingTop={space}
+						paddingLeft={dividers ? undefined : space}>
 						{child}
 						{dividers && idx !== items.length - 1 ? (
-							<Box paddingX={space} display="inline-block">
-								{divider}
-							</Box>
+							<Box paddingX={space}>{divider}</Box>
 						) : null}
 					</Box>
 				) : null,

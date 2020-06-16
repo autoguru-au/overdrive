@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { Button } from '../Button';
+import { Stack } from '../Stack';
 import { Text } from '../Typography';
 import { Inline } from './Inline';
 
@@ -42,4 +44,30 @@ export const CustomDividers = () => (
 		<Text>Petrol</Text>
 		<Text>2020</Text>
 	</Inline>
+);
+
+export const DifferentSizeItems = () => (
+	<Stack>
+		<Inline dividers>
+			<Text>Mazda</Text>
+			<Text>CX3</Text>
+			<Text>Petrol</Text>
+			<Text>2020</Text>
+			<Button>Buy</Button>
+		</Inline>
+		<Inline dividers alignY="flexEnd">
+			<Text>Mazda</Text>
+			<Text>CX3</Text>
+			<Text>Petrol</Text>
+			<Text>2020</Text>
+			<Button>Buy</Button>
+		</Inline>
+		<Inline alignY="flexStart">
+			<Text>Mazda</Text>
+			<Text>CX3</Text>
+			<Text>Petrol</Text>
+			<Text>2020</Text>
+			<Button>Buy</Button>
+		</Inline>
+	</Stack>
 );
