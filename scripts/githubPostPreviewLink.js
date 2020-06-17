@@ -17,7 +17,7 @@
 			auth: `token ${GITHUB_TOKEN}`,
 		});
 
-		await octokit.repos.createStatus({
+		await octokit.repos.createCommitStatus({
 			owner: 'autoguru-au',
 			repo: 'overdrive',
 			sha: GITHUB_SHA,
