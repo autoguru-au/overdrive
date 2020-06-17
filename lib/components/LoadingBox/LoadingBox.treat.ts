@@ -1,8 +1,6 @@
 import { style } from 'treat';
 
 export const root = style((theme) => ({
-	width: '100%',
-	display: 'inline-block',
 	minHeight: theme.typography.size['3'].fontSize,
 }));
 
