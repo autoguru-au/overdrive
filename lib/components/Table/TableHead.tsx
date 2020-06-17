@@ -1,12 +1,16 @@
 import * as React from 'react';
-import { forwardRef } from 'react';
+import { forwardRef, ReactChild } from 'react';
 import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
 import { useTableContext } from './TableContext';
 import * as styleRefs from './TableHead.treat';
 
-export const TableHead = forwardRef<HTMLTableHeaderCellElement>(
+interface Props {
+	children: ReactChild | ReactChild[];
+}
+
+export const TableHead = forwardRef<HTMLTableHeaderCellElement, Props>(
 	({ children }, ref) => {
 		const styles = useStyles(styleRefs);
 		const { stickyHead } = useTableContext();

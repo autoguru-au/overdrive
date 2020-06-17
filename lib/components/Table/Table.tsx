@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { forwardRef } from 'react';
+import { forwardRef, ReactChild } from 'react';
 import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
@@ -7,7 +7,9 @@ import * as styleRefs from './Table.treat';
 import type { TableContext } from './TableContext';
 import { TableContextProvider } from './TableContext';
 
-interface Props extends Partial<TableContext> {}
+interface Props extends Partial<TableContext> {
+	children: ReactChild | ReactChild[];
+}
 
 export const Table = forwardRef<HTMLTableElement, Props>(
 	({ children, padding = '4', stickyHead = false }, ref) => {

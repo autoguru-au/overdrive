@@ -1,9 +1,13 @@
 import * as React from 'react';
-import { forwardRef } from 'react';
+import { forwardRef, ReactChild } from 'react';
 
 import { Box } from '../Box';
 
-export const TableBody = forwardRef<HTMLTableSectionElement>(
+interface Props {
+	children: ReactChild | ReactChild[];
+}
+
+export const TableBody = forwardRef<HTMLTableSectionElement, Props>(
 	({ children }, ref) => (
 		<Box ref={ref} is="tbody">
 			{children}
