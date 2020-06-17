@@ -45,3 +45,4 @@ export * from './ThemeProvider';
 export * from './Toaster';
 export * from './Tooltip';
 export * from './Typography';
+export * from './VisuallyHidden';
