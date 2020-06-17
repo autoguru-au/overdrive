@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Table /> when implemented should match snapshot 1`] = `
+<table
+  class="base table width_full"
+>
+  <thead
+    class="base vAlignMiddle backgroundColours_gray100_base"
+  >
+    <tr
+      class="base vAlignMiddle root"
+    >
+      <th
+        class="base vAlignMiddle 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base textAlign_left border_style border_colour_bottom_light_base 1_mobile_base"
+        scope="col"
+      >
+        <div
+          class="base center_mobile_base label_base"
+        >
+          <span
+            class="base textAlign_left root_base sizes_2_base colours_muted_base fontWeight_bold_base base"
+          >
+            hello
+          </span>
+        </div>
+      </th>
+      <th
+        aria-sort="ascending"
+        class="base vAlignMiddle 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base textAlign_left border_style border_colour_bottom_light_base 1_mobile_base"
+        scope="col"
+      >
+        <button
+          class="base appearance cursorPointer button display_inlineBlock textSelect"
+          tabindex="-1"
+        >
+          <div
+            class="base center_mobile_base label_base"
+          >
+            <span
+              class="base textAlign_left root_base sizes_2_base colours_muted_base fontWeight_bold_base base"
+            >
+              test
+              <span
+                class="base position_absolute overflow_hidden userSelect_none root"
+              >
+                 
+                sorted 
+                ascending
+              </span>
+            </span>
+            <i
+              class="base display_block small_mobile_base sorter_base sortDirection_up"
+              role="presentation"
+            >
+              <svg
+                class="base display_block width_full width_full"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M277.333 426.667h-42.666v-256L117.333 288 87.04 257.707 256 88.747l168.96 168.96L394.667 288 277.333 170.667v256z"
+                />
+              </svg>
+            </i>
+          </div>
+        </button>
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    class="base vAlignMiddle"
+  >
+    <tr
+      class="base vAlignMiddle root"
+    >
+      <td
+        class="base vAlignMiddle 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base border_style border_colour_bottom_light_base 1_mobile_base"
+      >
+        <span
+          class="base display_block textAlign_left root_base sizes_3_base colours_dark_base fontWeight_normal_base base"
+        >
+          first
+        </span>
+      </td>
+      <td
+        class="base vAlignMiddle 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base border_style border_colour_bottom_light_base 1_mobile_base"
+      >
+        <span
+          class="base display_block textAlign_left root_base sizes_3_base colours_dark_base fontWeight_normal_base base"
+        >
+          test
+        </span>
+      </td>
+    </tr>
+    <tr
+      class="base vAlignMiddle root"
+    >
+      <td
+        class="base vAlignMiddle 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base border_style border_colour_bottom_light_base 1_mobile_base"
+      >
+        <span
+          class="base display_block textAlign_left root_base sizes_3_base colours_dark_base fontWeight_normal_base base"
+        >
+          second
+        </span>
+      </td>
+      <td
+        class="base vAlignMiddle 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base border_style border_colour_bottom_light_base 1_mobile_base"
+      >
+        <span
+          class="base display_block textAlign_left root_base sizes_3_base colours_dark_base fontWeight_normal_base base"
+        >
+          test
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

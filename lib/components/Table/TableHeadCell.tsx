@@ -7,7 +7,7 @@ import { useStyles } from 'react-treat';
 import { Theme } from 'treat/theme';
 
 import { Box } from '../Box';
-import { BoxStyleProps } from '../Box/useBoxStyles';
+import type { BoxStyleProps } from '../Box/useBoxStyles';
 import { Icon } from '../Icon';
 import { Text } from '../Typography/Text';
 import { VisuallyHidden } from '../VisuallyHidden';
@@ -89,6 +89,7 @@ export const TableHeadCell = forwardRef<HTMLTableCellElement, Props>(
 					{children}
 					{sortDirection ? (
 						<VisuallyHidden is="span">
+							{' '}
 							sorted {sortToAria(sortDirection)}
 						</VisuallyHidden>
 					) : null}
