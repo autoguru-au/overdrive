@@ -13,8 +13,10 @@ exports[`<BulletText /> should match snapshot for custom bullet text 1`] = `
       <span>
         <i
           class="base display_block"
+          role="presentation"
         >
           <svg
+            class="base display_block width_full width_full"
             fill="currentColor"
             focusable="false"
             viewBox="0 0 24 24"

@@ -5,9 +5,11 @@ exports[`<Meta /> should match snapshot with label, icon for Primary variant 1`]
   class="base root_base"
 >
   <i
-    class="base display_block variant_default_base variant_primary_base small_mobile_base"
+    class="base display_block small_mobile_base variant_default_base variant_primary_base"
+    role="presentation"
   >
     <svg
+      class="base display_block width_full width_full"
       viewBox="0 0 512 512"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -29,9 +31,11 @@ exports[`<Meta /> should match snapshot with label, icon for Secondary variant 1
   class="base root_base"
 >
   <i
-    class="base display_block variant_default_base variant_secondary_base small_mobile_base"
+    class="base display_block small_mobile_base variant_default_base variant_secondary_base"
+    role="presentation"
   >
     <svg
+      class="base display_block width_full width_full"
       viewBox="0 0 512 512"
       xmlns="http://www.w3.org/2000/svg"
     >

@@ -15,9 +15,11 @@ exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
     class="checkable_base tappable"
   >
     <i
-      class="base display_block icon_base small_mobile_base"
+      class="base display_block small_mobile_base icon_base"
+      role="presentation"
     >
       <svg
+        class="base display_block width_full width_full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"

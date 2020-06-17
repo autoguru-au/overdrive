@@ -34,9 +34,11 @@ exports[`<SelectInput /> should have some hintText 1`] = `
           </option>
         </select>
         <i
-          class="base display_block icon_base medium_mobile_base"
+          class="base display_block medium_mobile_base icon_base"
+          role="presentation"
         >
           <svg
+            class="base display_block width_full width_full"
             fill="currentColor"
             focusable="false"
             viewBox="0 0 24 24"
@@ -111,9 +113,11 @@ exports[`<SelectInput /> should match snapshot 1`] = `
           </option>
         </select>
         <i
-          class="base display_block icon_base medium_mobile_base"
+          class="base display_block medium_mobile_base icon_base"
+          role="presentation"
         >
           <svg
+            class="base display_block width_full width_full"
             fill="currentColor"
             focusable="false"
             viewBox="0 0 24 24"
@@ -183,9 +187,11 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
           </option>
         </select>
         <i
-          class="base display_block icon_base medium_mobile_base"
+          class="base display_block medium_mobile_base icon_base"
+          role="presentation"
         >
           <svg
+            class="base display_block width_full width_full"
             fill="currentColor"
             focusable="false"
             viewBox="0 0 24 24"
@@ -255,9 +261,11 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
           </option>
         </select>
         <i
-          class="base display_block icon_base medium_mobile_base"
+          class="base display_block medium_mobile_base icon_base"
+          role="presentation"
         >
           <svg
+            class="base display_block width_full width_full"
             fill="currentColor"
             focusable="false"
             viewBox="0 0 24 24"
@@ -327,9 +335,11 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
           </option>
         </select>
         <i
-          class="base display_block icon_base medium_mobile_base"
+          class="base display_block medium_mobile_base icon_base"
+          role="presentation"
         >
           <svg
+            class="base display_block width_full width_full"
             fill="currentColor"
             focusable="false"
             viewBox="0 0 24 24"
@@ -399,9 +409,11 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
           </option>
         </select>
         <i
-          class="base display_block icon_base medium_mobile_base"
+          class="base display_block medium_mobile_base icon_base"
+          role="presentation"
         >
           <svg
+            class="base display_block width_full width_full"
             fill="currentColor"
             focusable="false"
             viewBox="0 0 24 24"
@@ -448,9 +460,11 @@ exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
       class="base width_full input_root"
     >
       <i
-        class="base display_block iconRoot_base icon_prefix styleNode_base medium_mobile_base"
+        class="base display_block medium_mobile_base iconRoot_base icon_prefix styleNode_base"
+        role="presentation"
       >
         <svg
+          class="base display_block width_full width_full"
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -467,9 +481,11 @@ exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
           class="base block appearance select base block appearance input width_full input_itself_root_base input_itself_prefixed_base"
         />
         <i
-          class="base display_block icon_base medium_mobile_base"
+          class="base display_block medium_mobile_base icon_base"
+          role="presentation"
         >
           <svg
+            class="base display_block width_full width_full"
             fill="currentColor"
             focusable="false"
             viewBox="0 0 24 24"

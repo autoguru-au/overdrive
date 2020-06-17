@@ -6,9 +6,11 @@ exports[`<Alert /> should match the snapshot 1`] = `
   role="alert"
 >
   <i
-    class="base display_block icon_base medium_mobile_base"
+    class="base display_block medium_mobile_base icon_base"
+    role="presentation"
   >
     <svg
+      class="base display_block width_full width_full"
       fill="currentColor"
       focusable="false"
       viewBox="0 0 24 24"
@@ -30,9 +32,11 @@ exports[`<Alert /> should match the snapshot 1`] = `
       class="body_base"
     >
       <i
-        class="base display_block closeButtonIcon_base medium_mobile_base"
+        class="base display_block medium_mobile_base closeButtonIcon_base"
+        role="presentation"
       >
         <svg
+          class="base display_block width_full width_full"
           fill="currentColor"
           focusable="false"
           viewBox="0 0 24 24"

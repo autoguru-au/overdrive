@@ -8,9 +8,11 @@ exports[`<Pagination /> should match snapshot for loading phase 1`] = `
     class="activeItem_default_base chevron_default_base chevron_disabled_base"
   >
     <i
-      class="base display_block chevron_icon_base medium_mobile_base"
+      class="base display_block medium_mobile_base chevron_icon_base"
+      role="presentation"
     >
       <svg
+        class="base display_block width_full width_full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -34,9 +36,11 @@ exports[`<Pagination /> should match snapshot for loading phase 1`] = `
     class="activeItem_default_base chevron_default_base chevron_disabled_base"
   >
     <i
-      class="base display_block chevron_icon_base medium_mobile_base"
+      class="base display_block medium_mobile_base chevron_icon_base"
+      role="presentation"
     >
       <svg
+        class="base display_block width_full width_full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"

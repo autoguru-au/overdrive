@@ -13,8 +13,10 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
   >
     <i
       class="base display_block small_mobile_base"
+      role="presentation"
     >
       <svg
+        class="base display_block width_full width_full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -37,8 +39,10 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
   >
     <i
       class="base display_block small_mobile_base"
+      role="presentation"
     >
       <svg
+        class="base display_block width_full width_full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -65,8 +69,10 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
   >
     <i
       class="base display_block small_mobile_base"
+      role="presentation"
     >
       <svg
+        class="base display_block width_full width_full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -89,8 +95,10 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
   >
     <i
       class="base display_block small_mobile_base"
+      role="presentation"
     >
       <svg
+        class="base display_block width_full width_full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -118,8 +126,10 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
   >
     <i
       class="base display_block small_mobile_base"
+      role="presentation"
     >
       <svg
+        class="base display_block width_full width_full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -143,8 +153,10 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
   >
     <i
       class="base display_block small_mobile_base"
+      role="presentation"
     >
       <svg
+        class="base display_block width_full width_full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
