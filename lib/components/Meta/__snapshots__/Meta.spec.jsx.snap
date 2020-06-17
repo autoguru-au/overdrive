@@ -19,7 +19,7 @@ exports[`<Meta /> should match snapshot with label, icon for Primary variant 1`]
     </svg>
   </i>
   <span
-    class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+    class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
   >
     Hello World!
   </span>
@@ -45,7 +45,7 @@ exports[`<Meta /> should match snapshot with label, icon for Secondary variant 1
     </svg>
   </i>
   <span
-    class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+    class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
   >
     Hello World!
   </span>

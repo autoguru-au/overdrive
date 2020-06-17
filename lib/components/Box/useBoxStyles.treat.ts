@@ -97,6 +97,17 @@ export const position = styleMap(
 	),
 );
 
+export const textAlign = styleMap(
+	mapTokenToProperty(
+		{
+			left: 'left',
+			center: 'center',
+			right: 'right',
+		},
+		'textAlign',
+	),
+);
+
 export const overflow = styleMap(
 	mapTokenToProperty(
 		{

@@ -36,7 +36,7 @@ exports[`<BulletText /> should match snapshot for custom bullet text 1`] = `
       class="base content"
     >
       <span
-        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
       >
         Hello World
       </span>
@@ -73,7 +73,7 @@ exports[`<BulletText /> should match snapshot for default bullet text 1`] = `
       class="base content"
     >
       <span
-        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
       >
         Hello World!
       </span>
@@ -110,7 +110,7 @@ exports[`<BulletText /> should match snapshot for ordered bullet text 1`] = `
       class="base content"
     >
       <span
-        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
       >
         Hello World!
       </span>
@@ -147,7 +147,7 @@ exports[`<BulletText /> should match snapshot for primary bullet text with custo
       class="base content"
     >
       <span
-        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
       >
         Hello World!
       </span>
@@ -184,7 +184,7 @@ exports[`<BulletText /> should match snapshot for secondary bullet text with cus
       class="base content"
     >
       <span
-        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
       >
         Hello World!
       </span>

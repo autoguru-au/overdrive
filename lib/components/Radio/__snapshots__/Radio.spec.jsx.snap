@@ -30,7 +30,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       class="tappable label_default_base"
     >
       <span
-        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
       >
         radio label 1
       </span>
@@ -62,7 +62,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       class="tappable label_default_base"
     >
       <span
-        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
       >
         radio label 2
       </span>
@@ -101,7 +101,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       class="tappable label_default_base"
     >
       <span
-        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
       >
         radio label 1
       </span>
@@ -133,7 +133,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       class="tappable label_default_base"
     >
       <span
-        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
       >
         radio label 2
       </span>
@@ -165,7 +165,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       class="tappable label_default_base"
     >
       <span
-        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
       >
         radio label 3
       </span>
@@ -197,7 +197,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       class="tappable label_default_base"
     >
       <span
-        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
       >
         radio label 4
       </span>
@@ -236,7 +236,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       class="tappable label_default_base"
     >
       <span
-        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
       >
         radio label 1
       </span>
@@ -276,7 +276,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       class="tappable label_default_base"
     >
       <span
-        class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base"
+        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
       />
     </label>
   </div>
@@ -313,7 +313,7 @@ exports[`<RadioButton /> when with component child should match the snapshot 1`]
       class="tappable label_default_base"
     >
       <h1
-        class="root_base sizes_8_base colours_dark_base fontWeight_bold_base"
+        class="root_base sizes_8_base colours_dark_base fontWeight_bold_base base"
       >
         Hello checkbox
       </h1>
@@ -324,7 +324,7 @@ exports[`<RadioButton /> when with component child should match the snapshot 1`]
 
 exports[`<RadioButton /> when with component child should render the component child 1`] = `
 <h1
-  class="root_base sizes_8_base colours_dark_base fontWeight_bold_base"
+  class="root_base sizes_8_base colours_dark_base fontWeight_bold_base base"
 >
   Hello checkbox
 </h1>

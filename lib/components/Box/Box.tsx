@@ -43,6 +43,7 @@ export const Box = forwardRef<HTMLElement, Props<any>>(
 			position,
 			overflow,
 			userSelect,
+			textAlign,
 
 			borderColour,
 			borderColourX,
@@ -121,6 +122,7 @@ export const Box = forwardRef<HTMLElement, Props<any>>(
 			paddingX,
 			paddingY,
 			position,
+			textAlign,
 			userSelect,
 			width,
 		});

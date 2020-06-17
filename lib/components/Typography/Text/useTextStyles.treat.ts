@@ -33,18 +33,6 @@ export const colours = styleMap((theme) =>
 	mapTokenToProperty(theme.typography.colour, 'color'),
 );
 
-export const align = styleMap({
-	left: {
-		textAlign: 'left',
-	},
-	center: {
-		textAlign: 'center',
-	},
-	right: {
-		textAlign: 'right',
-	},
-});
-
 export const fontWeight = styleMap((theme) =>
 	mapTokenToProperty(theme.typography.fontWeight, 'fontWeight'),
 );

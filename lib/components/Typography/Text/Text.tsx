@@ -30,10 +30,10 @@ export const Text: FunctionComponent<Props> = ({
 	<Box
 		is={Component}
 		display={display}
+		textAlign={align}
 		className={[
 			useTextStyles({
 				size,
-				align,
 				colour: colour ?? (strong ? 'dark' : undefined),
 				fontWeight: strong ? 'bold' : fontWeight,
 				noWrap,

@@ -28,7 +28,7 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
     </i>
   </button>
   <span
-    class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base label_base"
+    class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base label_base"
   >
     25%
   </span>
@@ -84,7 +84,7 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
     </i>
   </button>
   <span
-    class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base label_base"
+    class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base label_base"
   >
     19
   </span>
@@ -141,7 +141,7 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
     </i>
   </button>
   <span
-    class="base root_base sizes_4_base align_left colours_neutral_base fontWeight_normal_base label_base"
+    class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base label_base"
   >
     0
   </span>
