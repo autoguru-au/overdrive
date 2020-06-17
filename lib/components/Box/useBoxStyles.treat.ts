@@ -111,7 +111,13 @@ export const overflow = styleMap(
 
 export const display = styleMap(
 	mapTokenToProperty(
-		{ block: 'block', 'inline-block': 'inline-block', flex: 'flex' },
+		{
+			block: 'block',
+			flex: 'flex',
+			inline: 'inline',
+			inlineBlock: 'inline-block',
+			none: 'none',
+		},
 		'display',
 	),
 );

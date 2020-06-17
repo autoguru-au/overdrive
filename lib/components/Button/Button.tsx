@@ -102,7 +102,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 			className: clsx(
 				useBoxStyles({
 					is: typeof Component === 'string' ? Component : undefined,
-					display: 'inline-block',
+					display: 'inlineBlock',
 					borderRadius: getBorderRadius(rounded),
 					borderWidth: 'none',
 					paddingY: 'none',
