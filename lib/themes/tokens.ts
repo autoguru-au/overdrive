@@ -110,6 +110,7 @@ export interface Tokens {
 	border: {
 		width: Record<BorderWidthScale, string>;
 		colours: {
+			light: string;
 			gray: string;
 			dark: string;
 		};

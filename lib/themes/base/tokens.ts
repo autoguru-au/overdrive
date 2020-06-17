@@ -162,6 +162,7 @@ export const tokens: Tokens = {
 			'3': '4px',
 		},
 		colours: {
+			light: colours.gray['200'],
 			gray: colours.gray['300'],
 			dark: colours.gray['900'],
 		},
