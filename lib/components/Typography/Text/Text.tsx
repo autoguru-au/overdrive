@@ -1,30 +1,36 @@
-import clsx from 'clsx';
+import type { FunctionComponent } from 'react';
 import * as React from 'react';
-import { FunctionComponent } from 'react';
 
 import { Box } from '../../Box';
+import type { BoxStyleProps } from '../../Box/useBoxStyles';
 import { TextStyleProps, useTextStyles } from './useTextStyles';
 
 interface Props extends TextStyleProps {
 	className?: string;
 	is?: 'p' | 'span';
 	strong?: boolean;
+	display?: Extract<
+		BoxStyleProps['display'],
+		'inline' | 'inlineBlock' | 'block'
+	>;
 }
 
 export const Text: FunctionComponent<Props> = ({
 	children,
 	className = '',
 	is: Component = 'span',
-	size = '4',
-	strong = false,
-	colour,
 	align = 'left',
+	colour,
+	display,
 	fontWeight = 'normal',
 	noWrap,
+	size = '4',
+	strong = false,
 }) => (
 	<Box
 		is={Component}
-		className={clsx(
+		display={display}
+		className={[
 			useTextStyles({
 				size,
 				align,
@@ -33,7 +39,7 @@ export const Text: FunctionComponent<Props> = ({
 				noWrap,
 			}),
 			className,
-		)}>
+		]}>
 		{children}
 	</Box>
 );
