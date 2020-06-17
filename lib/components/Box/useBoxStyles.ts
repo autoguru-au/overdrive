@@ -64,6 +64,7 @@ export interface BoxStyleProps extends Padding, Margin, Border, Flex {
 
 	position?: keyof typeof styleRefs.position;
 	width?: keyof typeof styleRefs.width;
+	height?: keyof typeof styleRefs.height;
 
 	backgroundColour?: keyof typeof styleRefs.backgroundColours;
 
@@ -107,6 +108,7 @@ export const useBoxStyles = ({
 	borderRadius,
 	backgroundColour,
 	width,
+	height,
 	position,
 	overflow,
 	alignItems,
@@ -173,6 +175,7 @@ export const useBoxStyles = ({
 
 		styles.display[display!],
 		styles.width[width!],
+		styles.width[height!],
 		styles.position[position!],
 		styles.overflow[overflow!],
 
@@ -218,14 +221,14 @@ export const useBoxStyles = ({
 		borderRadius &&
 			resolveResponsiveStyle(borderRadius, styles.borderRadius),
 
-		backgroundColour && styles.backgroundColours[backgroundColour],
+		styles.backgroundColours[backgroundColour!],
 
 		alignItems && resolveResponsiveStyle(alignItems, styles.alignItems),
 		flexDirection &&
 			resolveResponsiveStyle(flexDirection, styles.flexDirection),
-		flexGrow && styles.flexGrow[flexGrow],
-		flexShrink && styles.flexShrink[flexShrink],
-		flexWrap && styles.flexWrap[flexWrap],
+		styles.flexGrow[flexGrow!],
+		styles.flexShrink[flexShrink!],
+		styles.flexWrap[flexWrap!],
 		justifyContent &&
 			resolveResponsiveStyle(justifyContent, styles.justifyContent),
 

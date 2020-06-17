@@ -80,6 +80,12 @@ export const width = styleMap({
 	},
 });
 
+export const height = styleMap({
+	full: {
+		height: '100%',
+	},
+});
+
 export const position = styleMap(
 	mapTokenToProperty(
 		{
