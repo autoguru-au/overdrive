@@ -362,13 +362,16 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 								suggestionListId!,
 								state.highlightIndex,
 						  )
-						: void 0
+						: undefined
 				}
 				value={state.previewText ?? value?.text}
 				onChange={(event) => {
 					dispatch({ type: ActionTypes.INPUT_CHANGE });
 					if (typeof onChange === 'function')
-						onChange({ text: event.target.value, payload: void 0 });
+						onChange({
+							text: event.target.value,
+							payload: undefined,
+						});
 				}}
 				onFocus={wrapEvent(
 					() => dispatch({ type: ActionTypes.INPUT_FOCUS }),
@@ -507,7 +510,7 @@ const SuggestionsList = <PayloadType extends unknown>({
 				return (
 					<li
 						key={suggestion.text.concat(String(idx))}
-						ref={highlight ? highlightRef : void 0}
+						ref={highlight ? highlightRef : undefined}
 						id={getSuggestionId(suggestionListId, idx)}
 						role="option"
 						aria-selected={highlight}

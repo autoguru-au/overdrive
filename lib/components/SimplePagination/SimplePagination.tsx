@@ -28,7 +28,7 @@ export const SimplePagination: NamedExoticComponent<Props> = memo(
 		className = '',
 		hasNext = false,
 		hasPrevious = false,
-		onChange = () => void 0,
+		onChange = () => undefined,
 	}) => {
 		const styles = useStyles(styleRefs);
 		const cls = clsx([styles.pagination, className]);

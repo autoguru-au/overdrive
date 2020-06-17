@@ -42,7 +42,7 @@ export const Anchor: FunctionComponent<Props> = ({
 
 	children,
 
-	icon = void 0,
+	icon = undefined,
 }) => {
 	const styles = useStyles(styleRefs);
 

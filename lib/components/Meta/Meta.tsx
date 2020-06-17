@@ -18,7 +18,7 @@ interface Props {
 
 export const Meta: FunctionComponent<Props> = ({
 	className = '',
-	icon = void 0,
+	icon = undefined,
 	label,
 	variant = 'primary',
 }) => {

@@ -26,7 +26,7 @@ export const useOutsideClick = (
 			typeof document === 'undefined' ||
 			typeof onClickAway !== 'function'
 		)
-			return void 0;
+			return undefined;
 
 		return bindEvent(document, 'mouseup', (event) => {
 			const shouldClose = refs
@@ -67,7 +67,7 @@ interface Props {
 }
 
 export const OutsideClick: NamedExoticComponent<Props> = memo(
-	({ children, onOutsideClick = () => void 0 }) => {
+	({ children, onOutsideClick = () => undefined }) => {
 		const child = Children.only(children);
 
 		const rootClickRef = useRef<HTMLElement>(null);

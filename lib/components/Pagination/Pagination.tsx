@@ -33,7 +33,7 @@ export const PaginationComponent: FunctionComponent<Props> = ({
 	activePage,
 	numPagesDisplayed = 5,
 	loading = false,
-	onChange = () => void 0,
+	onChange = () => undefined,
 }) => {
 	const numPages: number = useMemo(() => calcPagesNum(total, pageSize), [
 		total,

@@ -46,7 +46,7 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 		ref,
 	) => {
 		invariant(
-			!(Component !== void 0 && props.href !== void 0),
+			!(Component !== undefined && props.href !== undefined),
 			'You cannot have both href and as defined.',
 		);
 
@@ -73,7 +73,7 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 			className: clsx(className, styles.anchor),
 		};
 
-		if (Component === void 0) {
+		if (Component === undefined) {
 			return (
 				<Box is="a" {...allProps}>
 					{body}

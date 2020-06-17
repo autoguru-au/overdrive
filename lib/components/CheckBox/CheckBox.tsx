@@ -29,8 +29,8 @@ export const CheckBox: FunctionComponent<Props> = memo(
 		name = '',
 		disabled = false,
 		checked = false,
-		onClick = () => void 0,
-		onChange = () => void 0,
+		onClick = () => undefined,
+		onChange = () => undefined,
 		children,
 	}) => {
 		const styles = useStyles(styleRefs);

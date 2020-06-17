@@ -89,7 +89,7 @@ export const Stepper: NamedExoticComponent<Props> = memo(
 		const styles = useStyles(styleRefs);
 
 		const isDisabled: boolean =
-			disabled || value === void 0 || value === null;
+			disabled || value === undefined || value === null;
 
 		const [state, dispatch] = useReducer(reducer, { value: value ?? 0 });
 

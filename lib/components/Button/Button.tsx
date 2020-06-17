@@ -94,7 +94,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 		}, [children]);
 
 		const props: Partial<ButtonPrimitive> & { ref: typeof ref } = {
-			type: Component === 'button' ? (type as any) : void 0,
+			type: Component === 'button' ? (type as any) : undefined,
 			id,
 			onClick,
 			disabled: disabled || isLoading,

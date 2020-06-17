@@ -35,7 +35,7 @@ export const LoadingBox = memo<Props>(
 					className,
 				]}
 				style={{
-					width: randomWidth ? getRandomIntWidth(60, 40) : void 0,
+					width: randomWidth ? getRandomIntWidth(60, 40) : undefined,
 				}}
 			/>
 		);
