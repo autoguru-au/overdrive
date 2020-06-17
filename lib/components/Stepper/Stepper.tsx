@@ -1,6 +1,5 @@
 import { MinusIcon, PlusIcon } from '@autoguru/icons';
 import { clamp } from '@autoguru/utilities';
-import clsx from 'clsx';
 import * as React from 'react';
 import {
 	KeyboardEvent,
@@ -159,14 +158,13 @@ export const Stepper: NamedExoticComponent<Props> = memo(
 
 		return (
 			<Box
-				className={clsx(
+				className={[
 					styles.root,
 					styles.flexCenter,
-					{
-						[styles.disabled]: disabled,
-					},
+					disabled && styles.disabled,
 					className,
-				)}
+				]}
+				userSelect="none"
 				aria-disabled={isDisabled}
 				tabIndex={0}
 				borderWidth="1"
@@ -177,9 +175,11 @@ export const Stepper: NamedExoticComponent<Props> = memo(
 				onKeyDown={keyDownHandler}>
 				<Box
 					is="button"
-					className={clsx(styles.handle.default, styles.flexCenter, {
-						[styles.handle.disabled]: disabled,
-					})}
+					className={[
+						styles.handle.default,
+						styles.flexCenter,
+						disabled && styles.handle.disabled,
+					]}
 					aria-label="step down"
 					padding="none"
 					borderRadius="full"
@@ -193,9 +193,11 @@ export const Stepper: NamedExoticComponent<Props> = memo(
 				</Text>
 				<Box
 					is="button"
-					className={clsx(styles.handle.default, styles.flexCenter, {
-						[styles.handle.disabled]: disabled,
-					})}
+					className={[
+						styles.handle.default,
+						styles.flexCenter,
+						disabled && styles.handle.disabled,
+					]}
 					padding="none"
 					borderRadius="full"
 					aria-label="step up"

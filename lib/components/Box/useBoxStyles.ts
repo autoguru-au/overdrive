@@ -69,6 +69,7 @@ export interface BoxStyleProps extends Padding, Margin, Border, Flex {
 	backgroundColour?: keyof typeof styleRefs.backgroundColours;
 
 	overflow?: keyof typeof styleRefs.overflow;
+	userSelect?: keyof typeof styleRefs.userSelect;
 
 	className?: Parameters<typeof clsx>[0];
 }
@@ -111,6 +112,7 @@ export const useBoxStyles = ({
 	height,
 	position,
 	overflow,
+	userSelect,
 	alignItems,
 	flexDirection,
 	flexGrow,
@@ -178,6 +180,7 @@ export const useBoxStyles = ({
 		styles.width[height!],
 		styles.position[position!],
 		styles.overflow[overflow!],
+		styles.userSelect[userSelect!],
 
 		hasBorder && styles.border.style,
 		hasBorder &&

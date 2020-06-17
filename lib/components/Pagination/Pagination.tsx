@@ -79,6 +79,7 @@ export const PaginationComponent: FunctionComponent<Props> = ({
 				aria-disabled={activePage <= 1}
 				aria-label="navigate back"
 				className={chevronLeftCls}
+				userSelect="none"
 				onClick={handleClick(activePage - 1)}>
 				<Icon
 					size="medium"
@@ -106,6 +107,7 @@ export const PaginationComponent: FunctionComponent<Props> = ({
 				aria-disabled={activePage >= numPages}
 				aria-label="navigate forward"
 				className={chevronRightCls}
+				userSelect="none"
 				onClick={handleClick(allowedActive + 1)}>
 				<Icon
 					size="medium"

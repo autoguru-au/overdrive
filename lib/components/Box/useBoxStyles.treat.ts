@@ -122,6 +122,10 @@ export const display = styleMap(
 	),
 );
 
+export const userSelect = styleMap({
+	none: { userSelect: 'none' },
+});
+
 // Flex things
 
 export const alignItems = makeResponsiveStyle(

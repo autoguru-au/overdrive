@@ -42,7 +42,6 @@ export const activeItem = {
 		height: paginationBubbleSize,
 		marginRight: theme.space['3'],
 		cursor: 'pointer',
-		userSelect: 'none',
 		transition: `background-color 0.2s ${theme.animation.easing.decelerate} 0s`,
 		textAlign: 'center',
 		borderRadius: '50%',

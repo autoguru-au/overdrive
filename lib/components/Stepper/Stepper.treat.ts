@@ -11,7 +11,6 @@ export const flexCenter = style({
 export const disabled = style({ cursor: 'not-allowed' });
 
 export const root = style((theme) => ({
-	userSelect: 'none',
 	color: theme.colours.gamut.gray900,
 	outline: 'none',
 

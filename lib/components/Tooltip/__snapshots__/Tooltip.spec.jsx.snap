@@ -27,7 +27,7 @@ exports[`<Tolltip /> should match snapshot when opened 1`] = `
     style="position: absolute; left: 0px; top: 0px; margin: 0px;"
   >
     <div
-      class="base 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base 1_mobile_base backgroundColours_gray900_base root"
+      class="base 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base overflow_hidden userSelect_none 4_mobile_base 1_mobile_base backgroundColours_gray900_base root"
     >
       <span
         class="base root_base sizes_4_base align_left colours_white_base fontWeight_normal_base"

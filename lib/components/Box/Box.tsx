@@ -42,6 +42,7 @@ export const Box = forwardRef<HTMLElement, Props<any>>(
 			height,
 			position,
 			overflow,
+			userSelect,
 
 			borderColour,
 			borderColourX,
@@ -102,6 +103,7 @@ export const Box = forwardRef<HTMLElement, Props<any>>(
 			flexGrow,
 			flexShrink,
 			flexWrap,
+			height,
 			justifyContent,
 			margin,
 			marginBottom,
@@ -119,8 +121,8 @@ export const Box = forwardRef<HTMLElement, Props<any>>(
 			paddingX,
 			paddingY,
 			position,
+			userSelect,
 			width,
-			height,
 		});
 
 		invariant(!isValidElement(Component), 'Box only supports intrinsics');

@@ -3,7 +3,7 @@
 exports[`<Stepper /> should match snapshot with label formatter 1`] = `
 <div
   aria-disabled="false"
-  class="base 3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base flexCenter"
+  class="base 3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base userSelect_none border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base flexCenter"
   tabindex="0"
 >
   <button
@@ -59,7 +59,7 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
 exports[`<Stepper /> should match snapshot with props 1`] = `
 <div
   aria-disabled="false"
-  class="base 3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base flexCenter"
+  class="base 3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base userSelect_none border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base flexCenter"
   tabindex="0"
 >
   <button
@@ -115,7 +115,7 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
 exports[`<Stepper /> should match snapshot without props 1`] = `
 <div
   aria-disabled="true"
-  class="base 3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base flexCenter"
+  class="base 3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base userSelect_none border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base flexCenter"
   tabindex="0"
 >
   <button
