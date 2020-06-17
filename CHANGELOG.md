@@ -1,5 +1,21 @@
 # @autoguru/overdrive
 
+## 2.0.14
+
+### Patch Changes
+
+-   5428b9e: LoadingBox: Exposes height and display box props
+
+    **FEATURES**
+
+    ```jsx
+    <LoadingBox height="full" display="inlineBlock" />
+    ```
+
+-   e3e5aa9: Box: Display prop inline-block renamed to inlineBlock to be more
+    consistent
+-   a6530d5: Box: Supports sending in a height prop
+
 ## 2.0.13
 
 ### Patch Changes
