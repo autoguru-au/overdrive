@@ -3,8 +3,10 @@
 exports[`<Icon /> should match snapshot for same icon 1`] = `
 <i
   class="base display_block small_mobile_base"
+  role="presentation"
 >
   <svg
+    class="base display_block width_full width_full"
     viewBox="0 0 512 512"
     xmlns="http://www.w3.org/2000/svg"
   >

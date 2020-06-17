@@ -1,37 +1,42 @@
-import { IconType } from '@autoguru/icons';
-import clsx from 'clsx';
+import type { IconType } from '@autoguru/icons';
+import type { NamedExoticComponent } from 'react';
 import * as React from 'react';
-import { ComponentProps, memo, NamedExoticComponent } from 'react';
+import { cloneElement, memo } from 'react';
 import { useStyles } from 'react-treat';
 
 import { resolveResponsiveStyle, ResponsiveProp } from '../../utils';
-import { Box } from '../Box';
+import { Box, useBoxStyles } from '../Box';
+import { BoxStyleProps } from '../Box/useBoxStyles';
 import * as styleRefs from './Icon.treat';
 
-export interface Props extends Pick<ComponentProps<typeof Box>, 'display'> {
+export interface Props {
+	display?: Extract<BoxStyleProps['display'], 'block' | 'inlineBlock'>;
 	className?: string;
 	size?: ResponsiveProp<keyof typeof styleRefs.size>;
 	icon: IconType;
 }
 
 export const Icon: NamedExoticComponent<Props> = memo(
-	({
-		className = '',
-		icon,
-		size = 'small' as ResponsiveProp<keyof typeof styleRefs.size>,
-		display,
-	}) => {
+	({ className = '', icon, size = 'small', display = 'block' }) => {
 		const styles = useStyles(styleRefs);
 
 		return (
 			<Box
 				is="i"
-				display={display ?? 'block'}
-				className={clsx(
-					className,
+				display={display}
+				className={[
 					resolveResponsiveStyle(size, styles.size),
-				)}>
-				{icon}
+					className,
+				]}
+				role="presentation">
+				{cloneElement(icon, {
+					className: useBoxStyles({
+						is: 'svg',
+						display: 'block',
+						width: 'full',
+						height: 'full',
+					}),
+				})}
 			</Box>
 		);
 	},

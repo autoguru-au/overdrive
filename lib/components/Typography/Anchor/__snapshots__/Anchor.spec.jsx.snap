@@ -6,9 +6,11 @@ exports[`<Anchor /> should match snapshot with label, icon and to props 1`] = `
   href="https://www.autoguru.com.au"
 >
   <i
-    class="base display_block icon_base iconWithText small_mobile_base"
+    class="base display_block small_mobile_base icon_base iconWithText"
+    role="presentation"
   >
     <svg
+      class="base display_block width_full width_full"
       viewBox="0 0 512 512"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -44,9 +46,11 @@ exports[`<Anchor /> when custom component should match snapshot with label, icon
     class="body_base"
   >
     <i
-      class="base display_block icon_base iconWithText small_mobile_base"
+      class="base display_block small_mobile_base icon_base iconWithText"
+      role="presentation"
     >
       <svg
+        class="base display_block width_full width_full"
         viewBox="0 0 512 512"
         xmlns="http://www.w3.org/2000/svg"
       >
