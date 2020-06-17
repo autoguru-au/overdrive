@@ -47,10 +47,10 @@
     eslint-plugin-simple-import-sort "^4.0.0"
     eslint-plugin-unicorn "^13.0.0"
 
-"@autoguru/icons@^1.4.3":
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/@autoguru/icons/-/icons-1.4.3.tgz#7610f668c9163fa51b346bcf274b7f45b06d459a"
-  integrity sha512-VLDI5B/mvnfHSC3nvNen3H/cbevCNfPupe+bfnM9lvmjdXE8TOi1Kapk/AbTD/3O3bRPwvmyM4ciOKexd59g/Q==
+"@autoguru/icons@^1.4.4":
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@autoguru/icons/-/icons-1.4.4.tgz#5b1aa31415ac78003af3af71f1c6a6e12e139a80"
+  integrity sha512-TZ+dfmCHmCYaaGSg+11SjAWwZmny7EHi0cEPYfvDtB06fHdCoMyCmrvmyo4h+B/mybEMKmYSrA9LILYfprH0qA==
   dependencies:
     tslib "^1.10.0"
 
