@@ -24,3 +24,9 @@ export const label = style((theme) => ({
 }));
 
 export const textSelect = style({ userSelect: 'text' });
+
+export const sticky = style({
+	position: 'sticky',
+	top: 0,
+	zIndex: 1,
+});

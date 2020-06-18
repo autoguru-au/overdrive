@@ -5,13 +5,13 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
   class="base table width_full"
 >
   <thead
-    class="base vAlignMiddle backgroundColours_gray100_base"
+    class="base vAlignMiddle"
   >
     <tr
       class="base vAlignMiddle root"
     >
       <th
-        class="base vAlignMiddle 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base textAlign_left border_style border_colour_bottom_light_base 1_mobile_base"
+        class="base vAlignMiddle 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base textAlign_left border_style border_colour_bottom_light_base 1_mobile_base backgroundColours_gray100_base"
         scope="col"
       >
         <div
@@ -26,7 +26,7 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
       </th>
       <th
         aria-sort="ascending"
-        class="base vAlignMiddle 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base textAlign_left border_style border_colour_bottom_light_base 1_mobile_base"
+        class="base vAlignMiddle 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base textAlign_left border_style border_colour_bottom_light_base 1_mobile_base backgroundColours_gray100_base"
         scope="col"
       >
         <button
@@ -76,6 +76,8 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
     >
       <td
         class="base vAlignMiddle 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base border_style border_colour_bottom_light_base 1_mobile_base"
+        scope="row"
+        style="min-width: min-content;"
       >
         <span
           class="base display_block textAlign_left root_base sizes_3_base colours_dark_base fontWeight_normal_base base"
@@ -85,6 +87,8 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
       </td>
       <td
         class="base vAlignMiddle 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base border_style border_colour_bottom_light_base 1_mobile_base"
+        scope="row"
+        style="min-width: min-content;"
       >
         <span
           class="base display_block textAlign_left root_base sizes_3_base colours_dark_base fontWeight_normal_base base"
@@ -98,6 +102,8 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
     >
       <td
         class="base vAlignMiddle 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base border_style border_colour_bottom_light_base 1_mobile_base"
+        scope="row"
+        style="min-width: min-content;"
       >
         <span
           class="base display_block textAlign_left root_base sizes_3_base colours_dark_base fontWeight_normal_base base"
@@ -107,6 +113,8 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
       </td>
       <td
         class="base vAlignMiddle 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base border_style border_colour_bottom_light_base 1_mobile_base"
+        scope="row"
+        style="min-width: min-content;"
       >
         <span
           class="base display_block textAlign_left root_base sizes_3_base colours_dark_base fontWeight_normal_base base"

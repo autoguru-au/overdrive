@@ -104,12 +104,14 @@ export const TableHeadCell = forwardRef<HTMLTableCellElement, Props>(
 				is="th"
 				scope="col"
 				padding={padding}
+				backgroundColour="gray100"
 				borderColourBottom="light"
 				borderWidthBottom="1"
 				textAlign={align}
 				aria-sort={
 					sortDirection ? sortToAria(sortDirection) : undefined
 				}
+				className={tableContext.stickyHead && styles.sticky}
 				onClick={sortDirection ? sortClickHandler : undefined}>
 				{sortDirection ? (
 					<Box

@@ -24,10 +24,11 @@ export const TableCell = forwardRef<HTMLTableCellElement, Props>(
 			<Box
 				ref={ref}
 				is="td"
-				scope={undefined}
+				scope="row"
 				padding={padding}
 				borderColourBottom="light"
-				borderWidthBottom="1">
+				borderWidthBottom="1"
+				style={{ minWidth: 'min-content' }}>
 				{typeof children === 'string' ||
 				typeof children === 'number' ? (
 					<Text
