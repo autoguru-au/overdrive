@@ -18,11 +18,12 @@ export const root = style((theme) => ({
 		bottom: 0,
 		left: '-1000%',
 		right: '-1000%',
-		transition: `background-color 0.2s ${theme.animation.easing.standard}`,
+		transition: `background-color 0.2s ${theme.animation.easing.accelerate}`,
 	},
 
 	selectors: {
 		'&:hover:before': {
+			transitionTimingFunction: theme.animation.easing.decelerate,
 			backgroundColor: theme.colours.gamut.gray100,
 		},
 	},
