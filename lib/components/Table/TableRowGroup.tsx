@@ -7,7 +7,7 @@ interface Props {
 	children: ReactChild | ReactChild[];
 }
 
-export const TableRowGroup = forwardRef<HTMLTableHeaderCellElement, Props>(
+export const TableRowGroup = forwardRef<HTMLDivElement, Props>(
 	({ children }, ref) => (
 		<Box ref={ref} role="rowgroup" display="contents">
 			{children}

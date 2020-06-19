@@ -20,7 +20,7 @@ Worth noting we use the aria role grid here instead of table, as we have areas
 
 @see https://www.w3.org/TR/wai-aria-1.1/#table
  */
-export const Table = forwardRef<HTMLTableElement, Props>(
+export const Table = forwardRef<HTMLDivElement, Props>(
 	({ children, padding = '4', stickyHead = false, columnTemplate }, ref) => {
 		const styles = useStyles(styleRefs);
 

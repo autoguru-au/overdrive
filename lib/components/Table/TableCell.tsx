@@ -18,7 +18,7 @@ interface Props extends Partial<Pick<AriaAttributes, 'aria-label'>> {
 	children?: ReactChild | null;
 }
 
-export const TableCell = forwardRef<HTMLTableCellElement, Props>(
+export const TableCell = forwardRef<HTMLDivElement, Props>(
 	(
 		{
 			padding: incomingPadding,

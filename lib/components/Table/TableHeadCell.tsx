@@ -52,7 +52,7 @@ const sortToAria = (sort: Sort): AriaAttributes['aria-sort'] => {
 	return 'none';
 };
 
-export const TableHeadCell = forwardRef<HTMLTableCellElement, Props>(
+export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 	(
 		{
 			align = 'left',
