@@ -24,7 +24,9 @@ interface SortProps extends Pick<AriaAttributes, 'aria-label'> {
 	onClick: MouseEventHandler;
 }
 
-interface Props extends Partial<Pick<SortProps, 'sortDirection'>> {
+interface Props
+	extends Partial<Pick<SortProps, 'sortDirection'>>,
+		Partial<Pick<AriaAttributes, 'aria-label'>> {
 	align?: Alignment;
 	padding?: keyof Theme['space'];
 
@@ -53,11 +55,12 @@ const sortToAria = (sort: Sort): AriaAttributes['aria-sort'] => {
 export const TableHeadCell = forwardRef<HTMLTableCellElement, Props>(
 	(
 		{
-			children,
-			padding: incomingPadding,
 			align = 'left',
-			sortDirection,
 			onChange,
+			padding: incomingPadding,
+			sortDirection,
+			'aria-label': ariaLabel,
+			children,
 		},
 		ref,
 	) => {
@@ -117,6 +120,7 @@ export const TableHeadCell = forwardRef<HTMLTableCellElement, Props>(
 				aria-sort={
 					sortDirection ? sortToAria(sortDirection) : undefined
 				}
+				aria-label={ariaLabel}
 				className={tableContext.stickyHead && styles.sticky}
 				onClick={sortDirection ? sortClickHandler : undefined}>
 				{sortDirection ? (

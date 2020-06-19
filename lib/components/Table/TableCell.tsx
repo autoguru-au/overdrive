@@ -1,6 +1,6 @@
 import type { ReactChild } from 'react';
 import * as React from 'react';
-import { forwardRef } from 'react';
+import { AriaAttributes, forwardRef } from 'react';
 import { useStyles } from 'react-treat';
 import type { Theme } from 'treat/theme';
 
@@ -11,7 +11,7 @@ import { Text } from '../Typography/Text';
 import { useTableContext } from './context';
 import * as styleRefs from './TableCell.treat';
 
-interface Props {
+interface Props extends Partial<Pick<AriaAttributes, 'aria-label'>> {
 	align?: Alignment;
 	padding?: keyof Theme['space'];
 
@@ -19,7 +19,15 @@ interface Props {
 }
 
 export const TableCell = forwardRef<HTMLTableCellElement, Props>(
-	({ children, padding: incomingPadding, align = 'left' }, ref) => {
+	(
+		{
+			padding: incomingPadding,
+			align = 'left',
+			'aria-label': ariaLabel,
+			children,
+		},
+		ref,
+	) => {
 		const styles = useStyles(styleRefs);
 		const tableContext = useTableContext();
 
@@ -36,6 +44,7 @@ export const TableCell = forwardRef<HTMLTableCellElement, Props>(
 				padding={padding}
 				borderColourBottom="light"
 				borderWidthBottom="1"
+				aria-label={ariaLabel}
 				className={styles.root}>
 				{typeof children === 'string' ||
 				typeof children === 'number' ? (
