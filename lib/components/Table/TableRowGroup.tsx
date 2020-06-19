@@ -7,9 +7,9 @@ interface Props {
 	children: ReactChild | ReactChild[];
 }
 
-export const TableHead = forwardRef<HTMLTableHeaderCellElement, Props>(
+export const TableRowGroup = forwardRef<HTMLTableHeaderCellElement, Props>(
 	({ children }, ref) => (
-		<Box ref={ref} is="thead">
+		<Box ref={ref} role="rowgroup" display="contents">
 			{children}
 		</Box>
 	),

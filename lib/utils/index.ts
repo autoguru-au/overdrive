@@ -147,3 +147,11 @@ export const animate = <T extends HTMLElement>(
 
 	return cancel;
 };
+
+export type Alignment = 'left' | 'right' | 'center';
+export const alignmentToFlexAlignment = (align: Alignment) =>
+	({
+		center: 'center',
+		left: 'flexStart',
+		right: 'flexEnd',
+	}[align] as 'center' | 'flexStart' | 'flexEnd');

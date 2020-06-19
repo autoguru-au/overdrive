@@ -4,14 +4,15 @@ import type { AriaAttributes, MouseEventHandler } from 'react';
 import * as React from 'react';
 import { forwardRef, useCallback } from 'react';
 import { useStyles } from 'react-treat';
-import { Theme } from 'treat/theme';
+import type { Theme } from 'treat/theme';
 
+import type { Alignment } from '../../utils';
+import { alignmentToFlexAlignment } from '../../utils';
 import { Box } from '../Box';
-import type { BoxStyleProps } from '../Box/useBoxStyles';
 import { Icon } from '../Icon';
 import { Text } from '../Typography/Text';
 import { VisuallyHidden } from '../VisuallyHidden';
-import { useTableContext } from './TableContext';
+import { useTableContext } from './context';
 import * as styleRefs from './TableHeadCell.treat';
 
 type Sort = 'asc' | 'desc' | 'none';
@@ -24,12 +25,15 @@ interface SortProps extends Pick<AriaAttributes, 'aria-label'> {
 }
 
 interface Props extends Partial<Pick<SortProps, 'sortDirection'>> {
+	align?: Alignment;
 	padding?: keyof Theme['space'];
-	align?: BoxStyleProps['textAlign'];
+
 	onChange?: ChangeCallback;
+
 	children?: string | null;
 }
 
+// Moves the sort forward, asc->desc->none->asc->...
 const shiftSort = (sort: Sort): Sort => {
 	if (sort === 'asc') return 'desc';
 
@@ -66,7 +70,7 @@ export const TableHeadCell = forwardRef<HTMLTableCellElement, Props>(
 			if (typeof onChange === 'function') {
 				onChange(shiftSort(sortDirection ?? 'asc'));
 			}
-		}, [onChange]);
+		}, [onChange, sortDirection]);
 
 		const sorter =
 			undefined === sortDirection ? null : (
@@ -101,13 +105,15 @@ export const TableHeadCell = forwardRef<HTMLTableCellElement, Props>(
 		return (
 			<Box
 				ref={ref}
-				is="th"
+				role="columnheader"
 				scope="col"
+				display="flex"
+				alignItems="center"
+				justifyContent={alignmentToFlexAlignment(align)}
 				padding={padding}
 				backgroundColour="gray100"
 				borderColourBottom="light"
 				borderWidthBottom="1"
-				textAlign={align}
 				aria-sort={
 					sortDirection ? sortToAria(sortDirection) : undefined
 				}
@@ -116,8 +122,8 @@ export const TableHeadCell = forwardRef<HTMLTableCellElement, Props>(
 				{sortDirection ? (
 					<Box
 						is="button"
-						tabIndex={-1}
 						display="inlineBlock"
+						tabIndex={-1}
 						className={styles.textSelect}>
 						{child}
 					</Box>

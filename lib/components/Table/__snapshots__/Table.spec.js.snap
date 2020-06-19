@@ -1,17 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Table /> when implemented should match snapshot 1`] = `
-<table
-  class="base table width_full"
+<div
+  class="base width_full root"
+  role="grid"
 >
-  <thead
-    class="base vAlignMiddle"
+  <div
+    class="display_contents"
+    role="rowgroup"
   >
-    <tr
-      class="base vAlignMiddle root"
+    <div
+      class="display_contents"
+      role="row"
     >
-      <th
-        class="base vAlignMiddle 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base textAlign_left border_style border_colour_bottom_light_base 1_mobile_base backgroundColours_gray100_base"
+      <div
+        class="base 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base backgroundColours_gray100_base center_mobile_base flexStart_mobile_base"
+        role="columnheader"
         scope="col"
       >
         <div
@@ -20,13 +24,14 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
           <span
             class="base textAlign_left root_base sizes_2_base colours_muted_base fontWeight_bold_base base"
           >
-            hello
+            col 1
           </span>
         </div>
-      </th>
-      <th
+      </div>
+      <div
         aria-sort="ascending"
-        class="base vAlignMiddle 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base textAlign_left border_style border_colour_bottom_light_base 1_mobile_base backgroundColours_gray100_base"
+        class="base 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base backgroundColours_gray100_base center_mobile_base flexStart_mobile_base"
+        role="columnheader"
         scope="col"
       >
         <button
@@ -39,7 +44,7 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
             <span
               class="base textAlign_left root_base sizes_2_base colours_muted_base fontWeight_bold_base base"
             >
-              test
+              col 2
               <span
                 class="base position_absolute overflow_hidden userSelect_none root"
               >
@@ -65,64 +70,67 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
             </i>
           </div>
         </button>
-      </th>
-    </tr>
-  </thead>
-  <tbody
-    class="base vAlignMiddle"
+      </div>
+    </div>
+  </div>
+  <div
+    class="display_contents"
+    role="rowgroup"
   >
-    <tr
-      class="base vAlignMiddle root"
+    <div
+      class="display_contents"
+      role="row"
     >
-      <td
-        class="base vAlignMiddle 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base border_style border_colour_bottom_light_base 1_mobile_base"
+      <div
+        class="base 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base center_mobile_base flexStart_mobile_base root_base"
+        role="gridcell"
         scope="row"
-        style="min-width: min-content;"
       >
         <span
           class="base display_block textAlign_left root_base sizes_3_base colours_dark_base fontWeight_normal_base base"
         >
-          first
+          row 1, col 1
         </span>
-      </td>
-      <td
-        class="base vAlignMiddle 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base border_style border_colour_bottom_light_base 1_mobile_base"
+      </div>
+      <div
+        class="base 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base center_mobile_base flexStart_mobile_base root_base"
+        role="gridcell"
         scope="row"
-        style="min-width: min-content;"
       >
         <span
           class="base display_block textAlign_left root_base sizes_3_base colours_dark_base fontWeight_normal_base base"
         >
-          test
+          row 1, col 2
         </span>
-      </td>
-    </tr>
-    <tr
-      class="base vAlignMiddle root"
+      </div>
+    </div>
+    <div
+      class="display_contents"
+      role="row"
     >
-      <td
-        class="base vAlignMiddle 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base border_style border_colour_bottom_light_base 1_mobile_base"
+      <div
+        class="base 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base center_mobile_base flexStart_mobile_base root_base"
+        role="gridcell"
         scope="row"
-        style="min-width: min-content;"
       >
         <span
           class="base display_block textAlign_left root_base sizes_3_base colours_dark_base fontWeight_normal_base base"
         >
-          second
+          row 2, col 1
         </span>
-      </td>
-      <td
-        class="base vAlignMiddle 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base border_style border_colour_bottom_light_base 1_mobile_base"
+      </div>
+      <div
+        class="base 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base center_mobile_base flexStart_mobile_base root_base"
+        role="gridcell"
         scope="row"
-        style="min-width: min-content;"
       >
         <span
           class="base display_block textAlign_left root_base sizes_3_base colours_dark_base fontWeight_normal_base base"
         >
-          test
+          row 2, col 2
         </span>
-      </td>
-    </tr>
-  </tbody>
-</table>
+      </div>
+    </div>
+  </div>
+</div>
 `;
