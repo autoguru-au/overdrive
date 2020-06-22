@@ -22,7 +22,6 @@ globalStyle('body', {
 	border: 'none',
 });
 
-globalStyle('body, html', {
-	maxWidth: '100%',
+globalStyle('html', {
 	overflowX: 'hidden',
 });
