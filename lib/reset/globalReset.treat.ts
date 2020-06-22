@@ -21,3 +21,8 @@ globalStyle('body', {
 	padding: 0,
 	border: 'none',
 });
+
+globalStyle('body, html', {
+	maxWidth: '100%',
+	overflowX: 'hidden',
+});
