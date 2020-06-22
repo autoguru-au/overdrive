@@ -1,10 +1,14 @@
 import { style, styleMap } from 'treat';
 
-export const sorter = style((theme) => ({
-	color: theme.typography.colour.muted,
-	transformOrigin: 'center',
-	transition: `transform 0.3s ${theme.animation.easing.standard}`,
-}));
+export const sorter = [
+	style({
+		transformOrigin: 'center',
+	}),
+	style((theme) => ({
+		color: theme.typography.colour.muted,
+		transition: `transform 0.3s ${theme.animation.easing.standard}`,
+	})),
+];
 
 export const sortDirection = styleMap({
 	up: {
@@ -15,11 +19,15 @@ export const sortDirection = styleMap({
 	},
 });
 
-export const label = style((theme) => ({
-	display: 'grid',
-	gridAutoFlow: 'column',
-	gridGap: theme.space['1'],
-}));
+export const label = [
+	style({
+		display: 'grid',
+		gridAutoFlow: 'column',
+	}),
+	style((theme) => ({
+		gridGap: theme.space['1'],
+	})),
+];
 
 export const sticky = style({
 	position: 'sticky',

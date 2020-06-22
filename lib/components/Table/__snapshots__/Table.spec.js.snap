@@ -19,7 +19,7 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
         scope="col"
       >
         <div
-          class="base center_mobile_base label_base"
+          class="base center_mobile_base label label_base"
         >
           <span
             class="base textAlign_left root_base sizes_2_base colours_muted_base fontWeight_bold_base base"
@@ -39,7 +39,7 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
           tabindex="-1"
         >
           <div
-            class="base center_mobile_base label_base"
+            class="base center_mobile_base label label_base"
           >
             <span
               class="base textAlign_left root_base sizes_2_base colours_muted_base fontWeight_bold_base base"
@@ -54,7 +54,7 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
               </span>
             </span>
             <i
-              class="base display_block small_mobile_base sorter_base sortDirection_up"
+              class="base display_block small_mobile_base sorter sorter_base sortDirection_up"
               role="presentation"
             >
               <svg
