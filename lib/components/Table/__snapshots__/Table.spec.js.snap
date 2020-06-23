@@ -18,15 +18,11 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
         role="columnheader"
         scope="col"
       >
-        <div
-          class="base center_mobile_base label label_base"
+        <span
+          class="base textAlign_left root_base sizes_2_base colours_muted_base fontWeight_bold_base base"
         >
-          <span
-            class="base textAlign_left root_base sizes_2_base colours_muted_base fontWeight_bold_base base"
-          >
-            col 1
-          </span>
-        </div>
+          col 1
+        </span>
       </div>
       <div
         aria-sort="ascending"
@@ -35,39 +31,47 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
         scope="col"
       >
         <button
-          class="base appearance cursorPointer button display_inlineBlock textSelect"
+          class="base appearance cursorPointer button display_block width_full sorterButton"
           tabindex="-1"
         >
           <div
-            class="base center_mobile_base label label_base"
+            class="base display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap flexStart_mobile_base 1_mobile_base 1_mobile_base"
           >
-            <span
-              class="base textAlign_left root_base sizes_2_base colours_muted_base fontWeight_bold_base base"
+            <div
+              class="base 1_mobile_base 1_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
             >
-              col 2
               <span
-                class="base position_absolute overflow_hidden userSelect_none root"
+                class="base textAlign_left root_base sizes_2_base colours_muted_base fontWeight_bold_base base"
               >
-                 
-                sorted 
-                ascending
+                col 2
+                <span
+                  class="base position_absolute overflow_hidden userSelect_none root"
+                >
+                   
+                  sorted 
+                  ascending
+                </span>
               </span>
-            </span>
-            <i
-              class="base display_block small_mobile_base sorter sorter_base sortDirection_up"
-              role="presentation"
+            </div>
+            <div
+              class="base 1_mobile_base 1_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
             >
-              <svg
-                class="base display_block width_full height_full"
-                fill="currentColor"
-                focusable="false"
-                viewBox="0 0 512 512"
+              <i
+                class="base display_block small_mobile_base sorterRoot sorter_root_base asc"
+                role="presentation"
               >
-                <path
-                  d="M277.333 426.667h-42.666v-256L117.333 288 87.04 257.707 256 88.747l168.96 168.96L394.667 288 277.333 170.667v256z"
-                />
-              </svg>
-            </i>
+                <svg
+                  class="base display_block width_full height_full"
+                  fill="currentColor"
+                  focusable="false"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    d="M277.333 426.667h-42.666v-256L117.333 288 87.04 257.707 256 88.747l168.96 168.96L394.667 288 277.333 170.667v256z"
+                  />
+                </svg>
+              </i>
+            </div>
           </div>
         </button>
       </div>

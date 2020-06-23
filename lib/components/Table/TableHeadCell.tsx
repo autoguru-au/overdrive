@@ -10,6 +10,7 @@ import type { Alignment } from '../../utils';
 import { alignmentToFlexAlignment } from '../../utils';
 import { Box } from '../Box';
 import { Icon } from '../Icon';
+import { Inline } from '../Inline';
 import { Text } from '../Typography/Text';
 import { VisuallyHidden } from '../VisuallyHidden';
 import { useTableContext } from './context';
@@ -71,38 +72,42 @@ export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 
 		const sortClickHandler = useCallback(() => {
 			if (typeof onChange === 'function') {
-				onChange(shiftSort(sortDirection ?? 'asc'));
+				onChange(shiftSort(sortDirection ?? 'none'));
 			}
 		}, [onChange, sortDirection]);
 
-		const sorter =
-			undefined === sortDirection ? null : (
-				<Icon
-					icon={ArrowUpIcon}
-					size="small"
-					className={clsx([
-						styles.sorter,
-						sortDirection === 'asc'
-							? styles.sortDirection.up
-							: styles.sortDirection.down,
-					])}
-				/>
-			);
+		const shouldSort = typeof sortDirection === 'string';
+
+		const sorter = (
+			<Icon
+				icon={ArrowUpIcon}
+				size="small"
+				className={clsx([
+					styles.sorter.root,
+					styles.sorter[sortDirection ?? 'none'],
+				])}
+			/>
+		);
 
 		const child = (
-			<Box className={styles.label} alignItems="center">
-				{align === 'right' && sorter}
+			<Inline
+				alignY="center"
+				alignX={alignmentToFlexAlignment(align)}
+				space="1">
+				{align === 'right' && shouldSort ? sorter : null}
 				<Text strong size="2" is="span" colour="muted">
 					{children}
-					{sortDirection ? (
+					{shouldSort ? (
 						<VisuallyHidden is="span">
 							{' '}
-							sorted {sortToAria(sortDirection)}
+							sorted {sortToAria(sortDirection!)}
 						</VisuallyHidden>
 					) : null}
 				</Text>
-				{(align === 'left' || align === 'center') && sorter}
-			</Box>
+				{(align === 'left' || align === 'center') && shouldSort
+					? sorter
+					: null}
+			</Inline>
 		);
 
 		return (
@@ -117,18 +122,17 @@ export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 				backgroundColour="gray100"
 				borderColourBottom="light"
 				borderWidthBottom="1"
-				aria-sort={
-					sortDirection ? sortToAria(sortDirection) : undefined
-				}
+				aria-sort={shouldSort ? sortToAria(sortDirection!) : undefined}
 				aria-label={ariaLabel}
 				className={tableContext.stickyHead && styles.sticky}
 				onClick={sortDirection ? sortClickHandler : undefined}>
 				{sortDirection ? (
 					<Box
 						is="button"
-						display="inlineBlock"
+						display="block"
+						width="full"
 						tabIndex={-1}
-						className={styles.textSelect}>
+						className={styles.sorterButton}>
 						{child}
 					</Box>
 				) : (

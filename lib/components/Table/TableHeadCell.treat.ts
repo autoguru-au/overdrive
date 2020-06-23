@@ -1,38 +1,46 @@
 import { style, styleMap } from 'treat';
 
-export const sorter = [
-	style({
-		transformOrigin: 'center',
-	}),
-	style((theme) => ({
-		color: theme.typography.colour.muted,
-		transition: `transform 0.3s ${theme.animation.easing.standard}`,
-	})),
-];
+export const sorterButton = style({ userSelect: 'text' });
 
-export const sortDirection = styleMap({
-	up: {
-		transform: 'rotate(0)',
-	},
-	down: {
-		transform: 'rotate(180deg)',
-	},
+const sorterRoot = style({
+	transformOrigin: 'center',
+	transitionProperty: 'transform',
+	transitionDuration: '0.3s',
+	willChange: 'transform',
 });
 
-export const label = [
-	style({
-		display: 'grid',
-		gridAutoFlow: 'column',
+export const sorter = {
+	root: [
+		sorterRoot,
+		style((theme) => ({
+			color: theme.typography.colour.muted,
+			transitionTimingFunction: theme.animation.easing.standard,
+		})),
+	],
+	...styleMap({
+		none: {
+			opacity: '0',
+			transform: 'translateY(10%) rotateX(0)',
+			transitionProperty: 'transform, opacity',
+
+			selectors: {
+				[`${sorterButton}:hover &`]: {
+					opacity: '0.50',
+					transform: 'translateY(0px) rotateX(0)',
+				},
+			},
+		},
+		asc: {
+			transform: 'translateY(0px) rotateY(0)',
+		},
+		desc: {
+			transform: 'translateY(0px) rotateX(180deg)',
+		},
 	}),
-	style((theme) => ({
-		gridGap: theme.space['1'],
-	})),
-];
+};
 
 export const sticky = style({
 	position: 'sticky',
 	top: 0,
 	zIndex: 1,
 });
-
-export const textSelect = style({ userSelect: 'text' });
