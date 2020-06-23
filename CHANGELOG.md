@@ -1,5 +1,47 @@
 # @autoguru/overdrive
 
+## 2.0.15
+
+### Patch Changes
+
+-   5353a1a: Box: Added textAlign as a prop
+
+    Worth noting that we want to deprecate the use of `align` in our
+    `useTextStyles`. As it's now shifted to our box. The `align` prop will still
+    remain on the `Text` component.
+
+    **FEATURES**
+
+    ```jsx
+    <Box textAlign="center" />
+    ```
+
+-   715b035: Box: Added userSelect prop to disable selecting its content
+-   987a68b: VisuallyHidden: Added brand-new component to visually hide content
+
+    **FEATURES**
+
+    ```jsx
+    <VisuallyHidden>hello screen reader</VisuallyHidden>
+    <Text>
+        hello
+        <VisuallyHidden is="span">screen reader</VisuallyHidden>
+    </Text>
+    ```
+
+-   e2f4a5b: Text: Allow setting a display override
+
+    **FEATURES**
+
+    ```jsx
+    <Text is="span" display="inlineBlock">
+    	Im now block
+    </Text>
+    ```
+
+-   175cb09: Icon: Child svg's are cloned and positioned to the size of the
+    parent
+
 ## 2.0.14
 
 ### Patch Changes
