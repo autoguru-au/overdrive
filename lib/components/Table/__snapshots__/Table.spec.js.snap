@@ -6,11 +6,11 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
   role="grid"
 >
   <div
-    class="display_contents"
+    class="base display_contents"
     role="rowgroup"
   >
     <div
-      class="display_contents"
+      class="base display_contents"
       role="row"
     >
       <div
@@ -74,11 +74,11 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
     </div>
   </div>
   <div
-    class="display_contents"
+    class="base display_contents"
     role="rowgroup"
   >
     <div
-      class="display_contents"
+      class="base display_contents"
       role="row"
     >
       <div
@@ -105,7 +105,7 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="display_contents"
+      class="base display_contents"
       role="row"
     >
       <div

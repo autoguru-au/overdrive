@@ -160,8 +160,6 @@ export const useBoxStyles = ({
 		resolvedBorderWidthBottom ||
 		resolvedBorderWidthLeft;
 
-	if (display === 'contents') return styles.display.contents;
-
 	return clsx(
 		resetStyles.base,
 
