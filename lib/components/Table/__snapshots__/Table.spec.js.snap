@@ -58,7 +58,7 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
               role="presentation"
             >
               <svg
-                class="base display_block width_full width_full"
+                class="base display_block width_full height_full"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 512 512"
