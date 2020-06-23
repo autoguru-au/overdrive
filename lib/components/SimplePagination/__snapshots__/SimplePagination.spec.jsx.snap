@@ -19,7 +19,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
         role="presentation"
       >
         <svg
-          class="base display_block width_full width_full"
+          class="base display_block width_full height_full"
           fill="currentColor"
           focusable="false"
           viewBox="0 0 24 24"
@@ -44,7 +44,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
         role="presentation"
       >
         <svg
-          class="base display_block width_full width_full"
+          class="base display_block width_full height_full"
           fill="currentColor"
           focusable="false"
           viewBox="0 0 24 24"
@@ -77,7 +77,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
         role="presentation"
       >
         <svg
-          class="base display_block width_full width_full"
+          class="base display_block width_full height_full"
           fill="currentColor"
           focusable="false"
           viewBox="0 0 24 24"
@@ -102,7 +102,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
         role="presentation"
       >
         <svg
-          class="base display_block width_full width_full"
+          class="base display_block width_full height_full"
           fill="currentColor"
           focusable="false"
           viewBox="0 0 24 24"
@@ -135,7 +135,7 @@ exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
         role="presentation"
       >
         <svg
-          class="base display_block width_full width_full"
+          class="base display_block width_full height_full"
           fill="currentColor"
           focusable="false"
           viewBox="0 0 24 24"
@@ -161,7 +161,7 @@ exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
         role="presentation"
       >
         <svg
-          class="base display_block width_full width_full"
+          class="base display_block width_full height_full"
           fill="currentColor"
           focusable="false"
           viewBox="0 0 24 24"

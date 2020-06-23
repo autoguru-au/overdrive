@@ -36,7 +36,7 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
               role="presentation"
             >
               <svg
-                class="base display_block width_full width_full"
+                class="base display_block width_full height_full"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -107,7 +107,7 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
               role="presentation"
             >
               <svg
-                class="base display_block width_full width_full"
+                class="base display_block width_full height_full"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"

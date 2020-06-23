@@ -10,7 +10,7 @@ exports[`<Anchor /> should match snapshot with label, icon and to props 1`] = `
     role="presentation"
   >
     <svg
-      class="base display_block width_full width_full"
+      class="base display_block width_full height_full"
       viewBox="0 0 512 512"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -50,7 +50,7 @@ exports[`<Anchor /> when custom component should match snapshot with label, icon
       role="presentation"
     >
       <svg
-        class="base display_block width_full width_full"
+        class="base display_block width_full height_full"
         viewBox="0 0 512 512"
         xmlns="http://www.w3.org/2000/svg"
       >

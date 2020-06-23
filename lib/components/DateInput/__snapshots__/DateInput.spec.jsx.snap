@@ -270,7 +270,7 @@ exports[`<DateInput /> should match snapshot with both icons 1`] = `
         role="presentation"
       >
         <svg
-          class="base display_block width_full width_full"
+          class="base display_block width_full height_full"
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -284,7 +284,7 @@ exports[`<DateInput /> should match snapshot with both icons 1`] = `
         role="presentation"
       >
         <svg
-          class="base display_block width_full width_full"
+          class="base display_block width_full height_full"
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -339,7 +339,7 @@ exports[`<DateInput /> should match snapshot with prefix icon 1`] = `
         role="presentation"
       >
         <svg
-          class="base display_block width_full width_full"
+          class="base display_block width_full height_full"
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -394,7 +394,7 @@ exports[`<DateInput /> should match snapshot with suffix icon 1`] = `
         role="presentation"
       >
         <svg
-          class="base display_block width_full width_full"
+          class="base display_block width_full height_full"
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
         >

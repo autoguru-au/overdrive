@@ -16,7 +16,7 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
       role="presentation"
     >
       <svg
-        class="base display_block width_full width_full"
+        class="base display_block width_full height_full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -42,7 +42,7 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
       role="presentation"
     >
       <svg
-        class="base display_block width_full width_full"
+        class="base display_block width_full height_full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -72,7 +72,7 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
       role="presentation"
     >
       <svg
-        class="base display_block width_full width_full"
+        class="base display_block width_full height_full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -98,7 +98,7 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
       role="presentation"
     >
       <svg
-        class="base display_block width_full width_full"
+        class="base display_block width_full height_full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -129,7 +129,7 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
       role="presentation"
     >
       <svg
-        class="base display_block width_full width_full"
+        class="base display_block width_full height_full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -156,7 +156,7 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
       role="presentation"
     >
       <svg
-        class="base display_block width_full width_full"
+        class="base display_block width_full height_full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"

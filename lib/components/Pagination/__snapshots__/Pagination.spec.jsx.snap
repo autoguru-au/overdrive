@@ -12,7 +12,7 @@ exports[`<Pagination /> should match snapshot for loading phase 1`] = `
       role="presentation"
     >
       <svg
-        class="base display_block width_full width_full"
+        class="base display_block width_full height_full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
@@ -40,7 +40,7 @@ exports[`<Pagination /> should match snapshot for loading phase 1`] = `
       role="presentation"
     >
       <svg
-        class="base display_block width_full width_full"
+        class="base display_block width_full height_full"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"

@@ -38,7 +38,7 @@ exports[`<SelectInput /> should have some hintText 1`] = `
           role="presentation"
         >
           <svg
-            class="base display_block width_full width_full"
+            class="base display_block width_full height_full"
             fill="currentColor"
             focusable="false"
             viewBox="0 0 24 24"
@@ -117,7 +117,7 @@ exports[`<SelectInput /> should match snapshot 1`] = `
           role="presentation"
         >
           <svg
-            class="base display_block width_full width_full"
+            class="base display_block width_full height_full"
             fill="currentColor"
             focusable="false"
             viewBox="0 0 24 24"
@@ -191,7 +191,7 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
           role="presentation"
         >
           <svg
-            class="base display_block width_full width_full"
+            class="base display_block width_full height_full"
             fill="currentColor"
             focusable="false"
             viewBox="0 0 24 24"
@@ -265,7 +265,7 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
           role="presentation"
         >
           <svg
-            class="base display_block width_full width_full"
+            class="base display_block width_full height_full"
             fill="currentColor"
             focusable="false"
             viewBox="0 0 24 24"
@@ -339,7 +339,7 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
           role="presentation"
         >
           <svg
-            class="base display_block width_full width_full"
+            class="base display_block width_full height_full"
             fill="currentColor"
             focusable="false"
             viewBox="0 0 24 24"
@@ -413,7 +413,7 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
           role="presentation"
         >
           <svg
-            class="base display_block width_full width_full"
+            class="base display_block width_full height_full"
             fill="currentColor"
             focusable="false"
             viewBox="0 0 24 24"
@@ -464,7 +464,7 @@ exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
         role="presentation"
       >
         <svg
-          class="base display_block width_full width_full"
+          class="base display_block width_full height_full"
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -485,7 +485,7 @@ exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
           role="presentation"
         >
           <svg
-            class="base display_block width_full width_full"
+            class="base display_block width_full height_full"
             fill="currentColor"
             focusable="false"
             viewBox="0 0 24 24"

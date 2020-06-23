@@ -179,7 +179,7 @@ export const useBoxStyles = ({
 
 		styles.display[display!],
 		styles.width[width!],
-		styles.width[height!],
+		styles.height[height!],
 		styles.position[position!],
 		styles.overflow[overflow!],
 		styles.userSelect[userSelect!],
