@@ -1,6 +1,7 @@
 import { ArrowUpIcon } from '@autoguru/icons';
+import { invariant } from '@autoguru/utilities';
 import clsx from 'clsx';
-import type { AriaAttributes, MouseEventHandler } from 'react';
+import type { AriaAttributes } from 'react';
 import * as React from 'react';
 import { forwardRef, useCallback } from 'react';
 import { useStyles } from 'react-treat';
@@ -20,29 +21,63 @@ type Sort = 'asc' | 'desc' | 'none';
 
 type ChangeCallback = (sort: Sort) => void;
 
-interface SortProps extends Pick<AriaAttributes, 'aria-label'> {
-	sortDirection: Sort;
-	onClick: MouseEventHandler;
-}
-
-interface Props
-	extends Partial<Pick<SortProps, 'sortDirection'>>,
-		Partial<Pick<AriaAttributes, 'aria-label'>> {
+interface Props extends Partial<Pick<AriaAttributes, 'aria-label'>> {
 	align?: Alignment;
 	padding?: keyof Theme['space'];
 
 	onChange?: ChangeCallback;
+	sortDirection: Sort;
+	sortModes: number;
 
 	children?: string | null;
 }
 
+export enum SORT_MODES {
+	ASC = 1 << 1,
+	DESC = 1 << 2,
+	NONE = 1 << 3,
+}
+
+const sortToSortMode = (sort: Sort): SORT_MODES => {
+	if (sort === 'asc') return SORT_MODES.ASC;
+	if (sort === 'desc') return SORT_MODES.DESC;
+	return SORT_MODES.NONE;
+};
+
+const sortModeToSort = (sortMode: SORT_MODES): Sort => {
+	if (sortMode === SORT_MODES.ASC) return 'asc';
+	if (sortMode === SORT_MODES.DESC) return 'desc';
+	return 'none';
+};
+
+const sortFlow: SORT_MODES[] = [
+	SORT_MODES.ASC,
+	SORT_MODES.DESC,
+	SORT_MODES.NONE,
+];
+
+const sortFlowLength = sortFlow.length;
+const sortFlowRingLookup = (index) =>
+	sortFlow[((index % sortFlowLength) + sortFlowLength) % sortFlowLength];
+
 // Moves the sort forward, asc->desc->none->asc->...
-const shiftSort = (sort: Sort): Sort => {
-	if (sort === 'asc') return 'desc';
+const shiftSort = (sort: Sort, sortModes: number): Sort => {
+	let foundSort;
+	let trap = -1;
+	let findingIndex = sortFlow.lastIndexOf(sortToSortMode(sort));
 
-	if (sort === 'desc') return 'none';
+	do {
+		++trap;
+		++findingIndex;
 
-	return 'asc';
+		const maybeFoundSort = sortFlowRingLookup(findingIndex);
+
+		if (maybeFoundSort & sortModes) {
+			foundSort = maybeFoundSort;
+		}
+	} while (foundSort === undefined && trap <= sortFlow.length);
+
+	return sortModeToSort(foundSort);
 };
 
 const sortToAria = (sort: Sort): AriaAttributes['aria-sort'] => {
@@ -60,6 +95,7 @@ export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 			onChange,
 			padding: incomingPadding,
 			sortDirection,
+			sortModes = SORT_MODES.ASC | SORT_MODES.DESC | SORT_MODES.NONE,
 			'aria-label': ariaLabel,
 			children,
 		},
@@ -72,11 +108,18 @@ export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 
 		const sortClickHandler = useCallback(() => {
 			if (typeof onChange === 'function') {
-				onChange(shiftSort(sortDirection ?? 'none'));
+				onChange(shiftSort(sortDirection ?? 'none', sortModes));
 			}
 		}, [onChange, sortDirection]);
 
-		const shouldSort = typeof sortDirection === 'string';
+		const shouldSort = typeof sortDirection === 'string'!;
+
+		if (shouldSort) {
+			invariant(
+				sortModes !== undefined,
+				'sortModes are required to be given at least 1',
+			);
+		}
 
 		const sorter = (
 			<Icon

@@ -8,6 +8,7 @@ import { Inline } from '../Inline';
 import { Stack } from '../Stack';
 import { Text } from '../Typography';
 import { Table, TableCell, TableHeadCell, TableRow, TableRowGroup } from '.';
+import { SORT_MODES } from './TableHeadCell';
 
 export default {
 	title: 'Components|Table',
@@ -23,7 +24,6 @@ export const Standard = () => {
 
 	const sortSetter = (which) => (direction) => {
 		setSortDirection((prev) => {
-			console.log({ which, direction, prev });
 			return {
 				...prev,
 				[which]: direction,
@@ -40,6 +40,7 @@ export const Standard = () => {
 					<TableHeadCell>Vehicle</TableHeadCell>
 					<TableHeadCell
 						sortDirection={sortDirection.price}
+						sortModes={SORT_MODES.ASC | SORT_MODES.DESC}
 						align="right"
 						onChange={sortSetter('price')}>
 						Price
