@@ -27,7 +27,7 @@ interface Props extends Partial<Pick<AriaAttributes, 'aria-label'>> {
 
 	onChange?: ChangeCallback;
 	sortDirection: Sort;
-	sortModes: number;
+	sortModes?: number;
 
 	children?: string | null;
 }
