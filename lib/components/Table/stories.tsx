@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react';
 
+import { arrayRingLookup } from '../../utils';
 import { Actions } from '../Actions';
 import { Badge } from '../Badge';
 import { Button } from '../Button';
@@ -8,7 +9,6 @@ import { Inline } from '../Inline';
 import { Stack } from '../Stack';
 import { Text } from '../Typography';
 import { Table, TableCell, TableHeadCell, TableRow, TableRowGroup } from '.';
-import { arrayRingLookup } from '../../utils';
 
 export default {
 	title: 'Components|Table',

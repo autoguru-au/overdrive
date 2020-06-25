@@ -1,5 +1,4 @@
 import { ArrowUpIcon } from '@autoguru/icons';
-import { invariant } from '@autoguru/utilities';
 import clsx from 'clsx';
 import type { AriaAttributes } from 'react';
 import * as React from 'react';
