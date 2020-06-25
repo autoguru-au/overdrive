@@ -19,13 +19,11 @@ import * as styleRefs from './TableHeadCell.treat';
 
 type Sort = 'asc' | 'desc' | 'none';
 
-type ChangeCallback = (sort: Sort) => void;
-
 interface Props extends Partial<Pick<AriaAttributes, 'aria-label'>> {
 	align?: Alignment;
 	padding?: keyof Theme['space'];
 
-	onChange?: ChangeCallback;
+	onChange?: (sort: Sort, event: MouseEvent) => void;
 	sortDirection: Sort;
 	sortModes?: number;
 
@@ -106,11 +104,17 @@ export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 
 		const padding = incomingPadding ?? tableContext?.padding ?? 'none';
 
-		const sortClickHandler = useCallback(() => {
-			if (typeof onChange === 'function') {
-				onChange(shiftSort(sortDirection ?? 'none', sortModes));
-			}
-		}, [onChange, sortDirection]);
+		const sortClickHandler = useCallback(
+			(event) => {
+				if (typeof onChange === 'function') {
+					onChange(
+						shiftSort(sortDirection ?? 'none', sortModes),
+						event,
+					);
+				}
+			},
+			[onChange, sortDirection],
+		);
 
 		const shouldSort = typeof sortDirection === 'string'!;
 
