@@ -155,3 +155,22 @@ export const alignmentToFlexAlignment = (align: Alignment) =>
 		left: 'flexStart',
 		right: 'flexEnd',
 	}[align] as 'center' | 'flexStart' | 'flexEnd');
+
+/**
+ * @description
+ * A function that returns the first item in the array, if the index exceeds its maximum length
+ *
+ * @example
+ *
+ * ```js
+ *  const sortFlowRingLookup = arrayRingLookup(['asc', 'desc', 'none']);
+ *
+ *  expect(sortFlowRingLookup(4)).toBe('desc');
+ * ```
+ */
+export const arrayRingLookup = <T extends ArrayLike<unknown>>(
+	collection: T,
+) => {
+	const len = collection.length;
+	return (index) => collection[((index % len) + len) % len];
+};

@@ -8,25 +8,28 @@ import { Inline } from '../Inline';
 import { Stack } from '../Stack';
 import { Text } from '../Typography';
 import { Table, TableCell, TableHeadCell, TableRow, TableRowGroup } from '.';
-import { SORT_MODES } from './TableHeadCell';
+import { arrayRingLookup } from '../../utils';
 
 export default {
 	title: 'Components|Table',
 };
 
+const sortFlow = ['asc', 'desc', 'none'];
+const sortFlowRingLookup = arrayRingLookup(sortFlow);
+
 export const Standard = () => {
-	const [sortDirection, setSortDirection] = useState<
-		Record<string, 'asc' | 'desc' | 'none'>
-	>({
+	const [sort, setsort] = useState<Record<string, 'asc' | 'desc' | 'none'>>({
 		price: 'asc',
 		status: 'desc',
 	});
 
-	const sortSetter = (which) => (direction) => {
-		setSortDirection((prev) => {
+	const sortSetter = (which) => () => {
+		setsort((prev) => {
 			return {
 				...prev,
-				[which]: direction,
+				[which]: sortFlowRingLookup(
+					sortFlow.lastIndexOf(prev[which]) + 1,
+				),
 			};
 		});
 	};
@@ -39,16 +42,15 @@ export const Standard = () => {
 					<TableHeadCell>Mechanic Name</TableHeadCell>
 					<TableHeadCell>Vehicle</TableHeadCell>
 					<TableHeadCell
-						sortDirection={sortDirection.price}
-						sortModes={SORT_MODES.ASC | SORT_MODES.DESC}
+						sort={sort.price}
 						align="right"
-						onChange={sortSetter('price')}>
+						onSort={sortSetter('price')}>
 						Price
 					</TableHeadCell>
 					<TableHeadCell
-						sortDirection={sortDirection.status}
+						sort={sort.status}
 						align="left"
-						onChange={sortSetter('status')}>
+						onSort={sortSetter('status')}>
 						Status
 					</TableHeadCell>
 					<TableHeadCell>Age</TableHeadCell>

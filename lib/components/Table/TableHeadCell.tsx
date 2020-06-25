@@ -23,60 +23,11 @@ interface Props extends Partial<Pick<AriaAttributes, 'aria-label'>> {
 	align?: Alignment;
 	padding?: keyof Theme['space'];
 
-	onChange?: (sort: Sort, event: MouseEvent) => void;
-	sortDirection: Sort;
-	sortModes?: number;
+	sort?: Sort;
+	onSort?: (event: MouseEvent) => void;
 
 	children?: string | null;
 }
-
-export enum SORT_MODES {
-	ASC = 1 << 1,
-	DESC = 1 << 2,
-	NONE = 1 << 3,
-}
-
-const sortToSortMode = (sort: Sort): SORT_MODES => {
-	if (sort === 'asc') return SORT_MODES.ASC;
-	if (sort === 'desc') return SORT_MODES.DESC;
-	return SORT_MODES.NONE;
-};
-
-const sortModeToSort = (sortMode: SORT_MODES): Sort => {
-	if (sortMode === SORT_MODES.ASC) return 'asc';
-	if (sortMode === SORT_MODES.DESC) return 'desc';
-	return 'none';
-};
-
-const sortFlow: SORT_MODES[] = [
-	SORT_MODES.ASC,
-	SORT_MODES.DESC,
-	SORT_MODES.NONE,
-];
-
-const sortFlowLength = sortFlow.length;
-const sortFlowRingLookup = (index) =>
-	sortFlow[((index % sortFlowLength) + sortFlowLength) % sortFlowLength];
-
-// Moves the sort forward, asc->desc->none->asc->...
-const shiftSort = (sort: Sort, sortModes: number): Sort => {
-	let foundSort;
-	let trap = -1;
-	let findingIndex = sortFlow.lastIndexOf(sortToSortMode(sort));
-
-	do {
-		++trap;
-		++findingIndex;
-
-		const maybeFoundSort = sortFlowRingLookup(findingIndex);
-
-		if (maybeFoundSort & sortModes) {
-			foundSort = maybeFoundSort;
-		}
-	} while (foundSort === undefined && trap <= sortFlow.length);
-
-	return sortModeToSort(foundSort);
-};
 
 const sortToAria = (sort: Sort): AriaAttributes['aria-sort'] => {
 	if (sort === 'asc') return 'ascending';
@@ -90,10 +41,9 @@ export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 	(
 		{
 			align = 'left',
-			onChange,
+			onSort,
+			sort,
 			padding: incomingPadding,
-			sortDirection,
-			sortModes = SORT_MODES.ASC | SORT_MODES.DESC | SORT_MODES.NONE,
 			'aria-label': ariaLabel,
 			children,
 		},
@@ -106,24 +56,14 @@ export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 
 		const sortClickHandler = useCallback(
 			(event) => {
-				if (typeof onChange === 'function') {
-					onChange(
-						shiftSort(sortDirection ?? 'none', sortModes),
-						event,
-					);
+				if (typeof onSort === 'function') {
+					onSort(event);
 				}
 			},
-			[onChange, sortDirection],
+			[onSort],
 		);
 
-		const shouldSort = typeof sortDirection === 'string'!;
-
-		if (shouldSort) {
-			invariant(
-				sortModes !== undefined,
-				'sortModes are required to be given at least 1',
-			);
-		}
+		const shouldSort = typeof sort === 'string'!;
 
 		const sorter = (
 			<Icon
@@ -131,7 +71,7 @@ export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 				size="small"
 				className={clsx([
 					styles.sorter.root,
-					styles.sorter[sortDirection ?? 'none'],
+					styles.sorter[sort ?? 'none'],
 				])}
 			/>
 		);
@@ -147,7 +87,7 @@ export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 					{shouldSort ? (
 						<VisuallyHidden is="span">
 							{' '}
-							sorted {sortToAria(sortDirection!)}
+							sorted {sortToAria(sort!)}
 						</VisuallyHidden>
 					) : null}
 				</Text>
@@ -169,11 +109,11 @@ export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 				backgroundColour="gray100"
 				borderColourBottom="light"
 				borderWidthBottom="1"
-				aria-sort={shouldSort ? sortToAria(sortDirection!) : undefined}
+				aria-sort={shouldSort ? sortToAria(sort!) : undefined}
 				aria-label={ariaLabel}
 				className={tableContext.stickyHead && styles.sticky}
-				onClick={sortDirection ? sortClickHandler : undefined}>
-				{sortDirection ? (
+				onClick={sort ? sortClickHandler : undefined}>
+				{sort ? (
 					<Box
 						is="button"
 						display="block"
