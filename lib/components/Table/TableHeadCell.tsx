@@ -81,7 +81,7 @@ export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 				alignX={alignmentToFlexAlignment(align)}
 				space="1">
 				{align === 'right' && shouldSort ? sorter : null}
-				<Text strong size="2" is="span" colour="muted">
+				<Text strong size="2" is="span" className={styles.text}>
 					{children}
 					{shouldSort ? (
 						<VisuallyHidden is="span">
@@ -104,7 +104,7 @@ export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 				display="flex"
 				alignItems="center"
 				justifyContent={alignmentToFlexAlignment(align)}
-				padding={padding}
+				padding={sort ? undefined : padding}
 				backgroundColour="gray100"
 				borderColourBottom="light"
 				borderWidthBottom="1"
@@ -117,6 +117,7 @@ export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 						is="button"
 						display="block"
 						width="full"
+						padding={padding}
 						tabIndex={-1}
 						className={styles.sorterButton}>
 						{child}

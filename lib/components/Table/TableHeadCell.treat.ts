@@ -2,6 +2,15 @@ import { style, styleMap } from 'treat';
 
 export const sorterButton = style({ userSelect: 'text' });
 
+export const text = style((theme) => ({
+	color: theme.typography.colour.muted,
+	selectors: {
+		[`${sorterButton}:hover &`]: {
+			color: theme.typography.colour.dark,
+		},
+	},
+}));
+
 const sorterRoot = style({
 	transformOrigin: 'center',
 	transitionProperty: 'transform',
@@ -15,6 +24,11 @@ export const sorter = {
 		style((theme) => ({
 			color: theme.typography.colour.muted,
 			transitionTimingFunction: theme.animation.easing.standard,
+			selectors: {
+				[`${sorterButton}:hover &`]: {
+					color: theme.typography.colour.dark,
+				},
+			},
 		})),
 	],
 	...styleMap({

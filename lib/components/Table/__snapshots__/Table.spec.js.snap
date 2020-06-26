@@ -19,19 +19,19 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
         scope="col"
       >
         <span
-          class="base textAlign_left root_base sizes_2_base colours_muted_base fontWeight_bold_base base"
+          class="base textAlign_left root_base sizes_2_base colours_dark_base fontWeight_bold_base base text_base"
         >
           col 1
         </span>
       </div>
       <div
         aria-sort="ascending"
-        class="base 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base backgroundColours_gray100_base center_mobile_base flexStart_mobile_base"
+        class="base display_flex border_style border_colour_bottom_light_base 1_mobile_base backgroundColours_gray100_base center_mobile_base flexStart_mobile_base"
         role="columnheader"
         scope="col"
       >
         <button
-          class="base appearance cursorPointer button display_block width_full sorterButton"
+          class="base appearance cursorPointer button 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_block width_full sorterButton"
           tabindex="-1"
         >
           <div
@@ -41,7 +41,7 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
               class="base 1_mobile_base 1_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
             >
               <span
-                class="base textAlign_left root_base sizes_2_base colours_muted_base fontWeight_bold_base base"
+                class="base textAlign_left root_base sizes_2_base colours_dark_base fontWeight_bold_base base text_base"
               >
                 col 2
                 <span
