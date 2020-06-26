@@ -4,7 +4,7 @@ import { forwardRef, MouseEventHandler, ReactChild } from 'react';
 import { Box } from '../Box';
 
 interface Props {
-	onClick?: MouseEventHandler<HTMLTableRowElement>;
+	onClick?: MouseEventHandler<HTMLDivElement>;
 
 	children: ReactChild | ReactChild[];
 }
