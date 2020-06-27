@@ -130,6 +130,7 @@ export const Stepper: NamedExoticComponent<Props> = memo(
 						return onIncrement();
 					case 'Home':
 					case 'End':
+						event.preventDefault();
 						return dispatch({
 							type: EActionType.VALUE,
 							max,
