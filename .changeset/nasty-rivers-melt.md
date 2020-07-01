@@ -52,14 +52,14 @@ Please note! In order to remain structurally WAI-ARIA compliant; the
     <TableRowGroup>
         <TableRow>
 -            <TableHeadCell>Col 1</TableHeadCell>
-+            <TableHeadCell sortDirection="asc">Col 1</TableHeadCell>
++            <TableHeadCell sort="asc" onSortChange={}>Col 1</TableHeadCell>
 ```
 
-A column can only have _sort_ functionality when the `sortDirection` prop is set
-to either `asc | desc | none`. An `onChange` callback when applied to the cell
+A column can only have _sort_ functionality when the `sort` prop is set to
+either `asc | desc | none`. An `onSortChange` callback when applied to the cell
 that allows observing this. This callback will send the _new_ sort to have
 applied to it. This is a stateless component, so make sure you wire the value
-back into `sortDirection`.
+back into `sort`.
 
 ### Row Clicking
 
