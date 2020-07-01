@@ -16,6 +16,7 @@ import { Text } from '../Typography';
 export interface Props extends Pick<BoxStyleProps, 'is'> {
 	space?: ResponsiveProp<keyof Theme['space']>;
 	alignY?: BoxStyleProps['alignItems'];
+	alignX?: BoxStyleProps['justifyContent'];
 	noWrap?: boolean;
 	dividers?: boolean | ReactChild;
 }
@@ -25,6 +26,7 @@ export const Inline: FunctionComponent<Props> = ({
 	children,
 	space = '2',
 	alignY = 'center',
+	alignX,
 	noWrap,
 	dividers,
 }) => {
@@ -47,6 +49,7 @@ export const Inline: FunctionComponent<Props> = ({
 			position="relative"
 			display="flex"
 			alignItems={alignY}
+			justifyContent={alignX}
 			flexDirection="row"
 			flexWrap={noWrap ? 'nowrap' : 'wrap'}
 			className={[negativeMarginTop, !dividers && negativeMarginLeft]}>

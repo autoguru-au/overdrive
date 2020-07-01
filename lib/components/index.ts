@@ -37,6 +37,7 @@ export * from './StandardModal';
 export * from './StarRating';
 export * from './Stepper';
 export * from './Switch';
+export * from './Table';
 export * from './Tabs';
 export * from './TextAreaInput';
 export * from './TextContainer';

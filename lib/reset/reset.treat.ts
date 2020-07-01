@@ -17,6 +17,8 @@ const cursorPointer = style({ cursor: 'pointer' });
 const block = style({ display: 'block' });
 const list = style({ listStyle: 'none' });
 
+const vAlignMiddle = style({ verticalAlign: 'middle' });
+
 const button = [
 	appearance,
 	cursorPointer,
@@ -65,6 +67,8 @@ const a = [
 	}),
 ];
 
+const table = style({ borderSpacing: 0, borderCollapse: 'collapse' });
+
 export const element = {
 	article: block,
 	aside: block,
@@ -83,4 +87,11 @@ export const element = {
 	select,
 	input,
 	a,
+	table,
+	thead: vAlignMiddle,
+	tbody: vAlignMiddle,
+	tfoot: vAlignMiddle,
+	td: vAlignMiddle,
+	th: vAlignMiddle,
+	tr: vAlignMiddle,
 };

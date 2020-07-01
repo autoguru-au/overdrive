@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Table /> when implemented should match snapshot 1`] = `
+<div
+  class="base width_full root"
+  role="grid"
+>
+  <div
+    class="base display_contents"
+    role="rowgroup"
+  >
+    <div
+      class="base display_contents"
+      role="row"
+    >
+      <div
+        class="base 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base backgroundColours_gray100_base center_mobile_base flexStart_mobile_base"
+        role="columnheader"
+        scope="col"
+      >
+        <span
+          class="base textAlign_left root_base sizes_2_base colours_dark_base fontWeight_bold_base base text_base"
+        >
+          col 1
+        </span>
+      </div>
+      <div
+        aria-sort="ascending"
+        class="base display_flex border_style border_colour_bottom_light_base 1_mobile_base backgroundColours_gray100_base center_mobile_base flexStart_mobile_base"
+        role="columnheader"
+        scope="col"
+      >
+        <button
+          class="base appearance cursorPointer button 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_block width_full sorterButton"
+          tabindex="-1"
+        >
+          <div
+            class="base display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap flexStart_mobile_base 1_mobile_base 1_mobile_base"
+          >
+            <div
+              class="base 1_mobile_base 1_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+            >
+              <span
+                class="base textAlign_left root_base sizes_2_base colours_dark_base fontWeight_bold_base base text_base"
+              >
+                col 2
+                <span
+                  class="base position_absolute overflow_hidden userSelect_none root"
+                >
+                   
+                  sorted 
+                  ascending
+                </span>
+              </span>
+            </div>
+            <div
+              class="base 1_mobile_base 1_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+            >
+              <i
+                class="base display_block small_mobile_base sorterRoot sorter_root_base asc"
+                role="presentation"
+              >
+                <svg
+                  class="base display_block width_full height_full"
+                  fill="currentColor"
+                  focusable="false"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    d="M277.333 426.667h-42.666v-256L117.333 288 87.04 257.707 256 88.747l168.96 168.96L394.667 288 277.333 170.667v256z"
+                  />
+                </svg>
+              </i>
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    class="base display_contents"
+    role="rowgroup"
+  >
+    <div
+      class="base display_contents"
+      role="row"
+    >
+      <div
+        class="base 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base center_mobile_base flexStart_mobile_base root_base"
+        role="gridcell"
+        scope="row"
+      >
+        <span
+          class="base display_block textAlign_left root_base sizes_3_base colours_dark_base fontWeight_normal_base base"
+        >
+          row 1, col 1
+        </span>
+      </div>
+      <div
+        class="base 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base center_mobile_base flexStart_mobile_base root_base"
+        role="gridcell"
+        scope="row"
+      >
+        <span
+          class="base display_block textAlign_left root_base sizes_3_base colours_dark_base fontWeight_normal_base base"
+        >
+          row 1, col 2
+        </span>
+      </div>
+    </div>
+    <div
+      class="base display_contents"
+      role="row"
+    >
+      <div
+        class="base 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base center_mobile_base flexStart_mobile_base root_base"
+        role="gridcell"
+        scope="row"
+      >
+        <span
+          class="base display_block textAlign_left root_base sizes_3_base colours_dark_base fontWeight_normal_base base"
+        >
+          row 2, col 1
+        </span>
+      </div>
+      <div
+        class="base 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base center_mobile_base flexStart_mobile_base root_base"
+        role="gridcell"
+        scope="row"
+      >
+        <span
+          class="base display_block textAlign_left root_base sizes_3_base colours_dark_base fontWeight_normal_base base"
+        >
+          row 2, col 2
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

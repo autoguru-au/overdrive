@@ -6,7 +6,7 @@ globalStyle(':root', {
 });
 
 globalStyle('*, *:before, *:after', {
-	fontFamily: 'inherit',
+	font: 'inherit',
 	boxSizing: 'inherit',
 	WebkitTapHighlightColor: 'transparent',
 	// @ts-ignore
@@ -22,5 +22,6 @@ globalStyle('body', {
 	border: 'none',
 });
 
-// TODO: @deprecated move at some point
-globalStyle('table', { borderSpacing: 0, borderCollapse: 'collapse' });
+globalStyle('html', {
+	overflowX: 'hidden',
+});
