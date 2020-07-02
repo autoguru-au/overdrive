@@ -24,6 +24,7 @@ jobs:
         uses: actions/setup-node@master
         with:
           node-version: ${{ steps.setups.outputs.node_version }}
+          check-latest: true
 
       - name: Yarn cache
         uses: actions/cache@v1
@@ -104,8 +105,7 @@ jobs:
       - name: Deploy Site (pr)
         if: github.ref != 'refs/heads/main'
         run: >-
-          npx surge -p site-dist/ -d overdrive--${GITHUB_SHA}.surge.sh &&
-          node ./scripts/githubPostPreviewLink.js
+          npx surge -p site-dist/ -d overdrive--${GITHUB_SHA}.surge.sh && node ./scripts/githubPostPreviewLink.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}

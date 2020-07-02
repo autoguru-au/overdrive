@@ -26,6 +26,7 @@ jobs:
         uses: actions/setup-node@master
         with:
           node-version: ${{ steps.setups.outputs.node_version }}
+          check-latest: true
 
       - name: Yarn cache
         uses: actions/cache@v1
