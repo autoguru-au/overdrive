@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.0.17
+
+### Patch Changes
+
+-   fbee5c0: AutoSuggest: Now has a full width wrapping box
+
 ## 2.0.16
 
 ### Patch Changes
