@@ -348,7 +348,8 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 			aria-label={textInputProps.placeholder}
 			aria-expanded={shouldOpenFlyout}
 			aria-owns={suggestionListId!}
-			aria-haspopup="listbox">
+			aria-haspopup="listbox"
+			width="full">
 			<AutoSuggestInputPrimitive
 				autoFocus={autoFocus}
 				wrapperRef={triggerRef}
