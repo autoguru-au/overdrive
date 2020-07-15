@@ -4,8 +4,8 @@ import * as React from 'react';
 import { useEffect, useState } from 'react';
 
 import { Button } from '../Button/Button';
-import { AutoSuggest, AutoSuggestValue } from './AutoSuggest';
 import { StandardModal } from '../StandardModal/StandardModal';
+import { AutoSuggest, AutoSuggestValue } from './AutoSuggest';
 
 type Value = string;
 

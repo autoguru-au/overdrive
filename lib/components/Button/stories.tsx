@@ -2,10 +2,10 @@ import { AccountBoxIcon } from '@autoguru/icons';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
+import { Column } from '..';
 import { Columns } from '../Columns/Columns';
 import { Icon } from '../Icon/Icon';
 import { Button } from './Button';
-import { Column } from '..';
 
 export default {
 	title: 'Components|Buttons',

@@ -9,7 +9,9 @@ import type { RuntimeTokens } from '../../themes/makeTheme';
 const tokensContext = createContext<RuntimeTokens | null>(null);
 
 export interface Props {
+	// TODO: Make this into a ThemeConfig type
 	theme: {
+		name: string;
 		themeRef: ThemeRef;
 		runtimeTokens: RuntimeTokens;
 	};

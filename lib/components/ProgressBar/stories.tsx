@@ -2,8 +2,8 @@ import * as React from 'react';
 import { useEffect, useState } from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { ProgressBar } from './ProgressBar';
 import { Stack } from '../Stack/Stack';
+import { ProgressBar } from './ProgressBar';
 
 export default {
 	title: 'Components|Progress/ProgressBar',

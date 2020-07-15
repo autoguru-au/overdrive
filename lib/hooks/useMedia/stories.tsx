@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import { useMedia } from './useMedia';
+import { Stack } from '../../components/Stack/Stack';
 import { Text } from '../../components/Text/Text';
 import { useRuntimeTokens } from '../../components/ThemeProvider/ThemeProvider';
-import { Stack } from '../../components/Stack/Stack';
+import { useMedia } from './useMedia';
 
 export default {
 	title: 'Utility|Hooks/useMedia',

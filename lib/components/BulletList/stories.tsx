@@ -1,8 +1,8 @@
 import * as React from 'react';
 
 import { Text } from '../Text/Text';
-import { BulletList } from './BulletList';
 import { Bullet } from './Bullet';
+import { BulletList } from './BulletList';
 
 export default {
 	title: 'Foundation|List/BulletList',

@@ -1,18 +1,18 @@
 import * as React from 'react';
 import { useState } from 'react';
 
-import { Actions } from '../Actions/Actions';
 import { arrayRingLookup } from '../../utils';
+import { Actions } from '../Actions/Actions';
 import { Badge } from '../Badge/Badge';
 import { Button } from '../Button/Button';
 import { Inline } from '../Inline/Inline';
 import { Stack } from '../Stack/Stack';
+import { Text } from '../Text/Text';
 import { Table } from './Table';
 import { TableCell } from './TableCell';
 import { TableHeadCell } from './TableHeadCell';
 import { TableRow } from './TableRow';
 import { TableRowGroup } from './TableRowGroup';
-import { Text } from '../Text/Text';
 
 export default {
 	title: 'Components|Table',
