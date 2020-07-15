@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { Text } from '../Typography';
-import { OrderedList } from '.';
+import { Text } from '../Text/Text';
+import { OrderedList } from './OrderedList';
 
 export default { title: 'Foundation|List/OrderedList', component: OrderedList };
 

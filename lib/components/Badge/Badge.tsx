@@ -3,10 +3,10 @@ import * as React from 'react';
 import { memo } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 import * as styleRefs from './Badge.treat';
 
-interface Props {
+export interface Props {
 	label: string;
 	// TODO: These should use the intent verbs, and come from Box
 	colour?: keyof typeof styleRefs.colours;

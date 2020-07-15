@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { Text } from '../Typography';
-import { Portal } from '.';
+import { Text } from '../Text/Text';
+import { Portal } from './Portal';
 
 export default {
 	title: 'Utility|Portal',

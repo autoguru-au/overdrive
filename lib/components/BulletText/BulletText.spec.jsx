@@ -2,7 +2,7 @@ import { CheckIcon } from '@autoguru/icons';
 import { render } from '@testing-library/react';
 import * as React from 'react';
 
-import { Icon } from '../Icon';
+import { Icon } from '../Icon/Icon';
 import { BulletText } from './BulletText';
 
 const CustomBullet = () => (

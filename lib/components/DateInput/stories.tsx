@@ -4,7 +4,7 @@ import { boolean, text } from '@storybook/addon-knobs';
 import * as React from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { DateInput } from '.';
+import { DateInput } from './DateInput';
 
 const formatDate = (date: Date = new Date()) => {
 	const year = date.getFullYear();

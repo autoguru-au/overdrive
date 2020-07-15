@@ -2,10 +2,10 @@ import * as React from 'react';
 import { FunctionComponent } from 'react';
 
 import { useId, useUncontrolledState } from '../../utils';
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 import { TabsContextProvider } from './context';
 
-interface Props {
+export interface Props {
 	active?: number;
 	onChange?: (idx: number) => void;
 }

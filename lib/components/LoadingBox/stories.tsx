@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { LoadingBox } from '.';
+import { LoadingBox } from './LoadingBox';
 
 export default {
 	title: 'Components|Loading/Box',

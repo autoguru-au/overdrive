@@ -22,7 +22,9 @@ export default (storyFn) => {
 
 	return (
 		<Frame theme={theme}>
-			<StrictMode>{storyFn()}</StrictMode>
+			<StrictMode>
+				<div style={{ padding: 8 }}>{storyFn()}</div>
+			</StrictMode>
 		</Frame>
 	);
 };

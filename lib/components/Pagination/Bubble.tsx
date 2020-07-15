@@ -3,10 +3,10 @@ import * as React from 'react';
 import { ButtonHTMLAttributes, FunctionComponent } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 import * as styleRefs from './Pagination.treat';
 
-interface Props extends ButtonHTMLAttributes<Element> {
+export interface Props extends ButtonHTMLAttributes<Element> {
 	className?: string;
 	selected?: boolean;
 	gap?: boolean;

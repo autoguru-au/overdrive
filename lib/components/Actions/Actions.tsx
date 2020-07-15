@@ -7,9 +7,10 @@ import {
 } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 
-import { Column, Columns } from '../Columns';
+import { Column } from '../Columns/Column';
+import { Columns } from '../Columns/Columns';
 
-interface Props
+export interface Props
 	extends Partial<
 		Pick<ComponentProps<typeof Columns>, 'noWrap' | 'wrappingDirection'>
 	> {

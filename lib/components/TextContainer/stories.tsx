@@ -1,7 +1,8 @@
 import * as React from 'react';
 
-import { Button } from '../Button';
-import { Heading, Text } from '../Typography';
+import { Button } from '../Button/Button';
+import { Heading } from '../Heading/Heading';
+import { Text } from '../Text/Text';
 import { TextContainer } from './TextContainer';
 
 export default {

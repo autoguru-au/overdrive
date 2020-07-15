@@ -2,10 +2,10 @@ import * as React from 'react';
 import { ComponentPropsWithoutRef, FunctionComponent } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 import * as styleRefs from './VisuallyHidden.treat';
 
-interface Props {
+export interface Props {
 	is?: ComponentPropsWithoutRef<typeof Box>['is'];
 }
 

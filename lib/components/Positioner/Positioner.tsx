@@ -18,10 +18,12 @@ import {
 import { useStyles } from 'react-treat';
 
 import { isBrowser, setRef } from '../../utils';
-import { Box } from '../Box';
-import { Portal } from '../Portal';
+import { Box } from '../Box/Box';
+import { Portal } from '../Portal/Portal';
 import { EAlignment } from './alignment';
 import * as styleRefs from './Positioner.treat';
+
+export { EAlignment } from './alignment';
 
 const createPopper = popperGenerator({
 	defaultModifiers: [

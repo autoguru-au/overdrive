@@ -5,11 +5,11 @@ import { ComponentProps, forwardRef, ReactNode, useContext } from 'react';
 import { useStyles } from 'react-treat';
 
 import { resolveResponsiveStyle, ResponsiveProp } from '../../utils';
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 import * as styleRefs from './Column.treat';
 import { ColumnContext } from './Columns';
 
-interface Props extends Omit<ComponentProps<typeof Box>, 'width'> {
+export interface Props extends Omit<ComponentProps<typeof Box>, 'width'> {
 	width?: ResponsiveProp<keyof typeof styleRefs.width>;
 	noShrink?: boolean;
 	grow?: boolean;

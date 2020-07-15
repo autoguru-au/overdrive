@@ -1,7 +1,6 @@
 import { fireEvent, render } from '@testing-library/react';
 import * as React from 'react';
-
-import { EPageChangeDirection, SimplePagination } from '.';
+import { SimplePagination, EChangeDirection } from './SimplePagination';
 
 describe('<SimplePagination />', () => {
 	it('should not throw', () =>
@@ -45,7 +44,7 @@ describe('<SimplePagination />', () => {
 
 		fireEvent.click(getByLabelText('next page'));
 
-		expect(spyedCallback).toHaveBeenCalledWith(EPageChangeDirection.Next);
+		expect(spyedCallback).toHaveBeenCalledWith(EChangeDirection.Next);
 	});
 
 	it('should not fire change for next direction if hasNext is disabled but clicked', () => {
@@ -57,9 +56,7 @@ describe('<SimplePagination />', () => {
 
 		fireEvent.click(getByLabelText('next page'));
 
-		expect(spyedCallback).not.toHaveBeenCalledWith(
-			EPageChangeDirection.Next,
-		);
+		expect(spyedCallback).not.toHaveBeenCalledWith(EChangeDirection.Next);
 	});
 
 	it('should fire change with the correct change direction for previous button click', () => {
@@ -71,9 +68,7 @@ describe('<SimplePagination />', () => {
 
 		fireEvent.click(getByLabelText('previous page'));
 
-		expect(spyedCallback).toHaveBeenCalledWith(
-			EPageChangeDirection.Previous,
-		);
+		expect(spyedCallback).toHaveBeenCalledWith(EChangeDirection.Previous);
 	});
 
 	it('should not fire change for previous direction if hasPrevious is disabled but clicked', () => {
@@ -86,7 +81,7 @@ describe('<SimplePagination />', () => {
 		fireEvent.click(getByLabelText('previous page'));
 
 		expect(spyedCallback).not.toHaveBeenCalledWith(
-			EPageChangeDirection.Previous,
+			EChangeDirection.Previous,
 		);
 	});
 });

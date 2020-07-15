@@ -1,8 +1,8 @@
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 
-import { Text } from '../Typography';
-import { Alert } from '.';
+import { Text } from '../Text/Text';
+import { Alert } from './Alert';
 
 export default { title: 'Components|Alert', component: Alert };
 

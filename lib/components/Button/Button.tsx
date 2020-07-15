@@ -15,16 +15,17 @@ import {
 } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box, useBoxStyles } from '../Box';
-import { Icon } from '../Icon';
-import { ProgressSpinner } from '../ProgressSpinner';
+import { Box } from '../Box/Box';
+import { useBoxStyles } from '../Box/useBoxStyles';
+import { Icon } from '../Icon/Icon';
+import { ProgressSpinner } from '../ProgressSpinner/ProgressSpinner';
 import * as styleRefs from './Button.treat';
 
 type ButtonPrimitive = ButtonHTMLAttributes<HTMLButtonElement>;
 
 type AllowedChildren = string | IconType;
 
-interface Props
+export interface Props
 	extends Pick<ButtonPrimitive, 'id' | 'onClick' | 'type' | 'className'>,
 		Pick<AriaAttributes, 'aria-label'> {
 	children: AllowedChildren | AllowedChildren[];

@@ -1,8 +1,8 @@
 import { select } from '@storybook/addon-knobs';
 import * as React from 'react';
 
-import { EPositionerAlignment } from '../Positioner';
-import { Tooltip } from '.';
+import { EAlignment } from '../Positioner/alignment';
+import { Tooltip } from './Tooltip';
 
 export default {
 	title: 'Components|Tooltip',
@@ -17,7 +17,7 @@ export default {
 };
 
 const alignmentPicker = () =>
-	select('Alignment', EPositionerAlignment, EPositionerAlignment.BOTTOM);
+	select('Alignment', EAlignment, EAlignment.BOTTOM);
 
 export const Standard = () => (
 	<Tooltip alignment={alignmentPicker()} label="Im the tooltip body">

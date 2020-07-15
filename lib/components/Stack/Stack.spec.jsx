@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
 
-import { Stack } from '.';
+import { Stack } from './Stack';
 
 describe('<Stack />', () => {
 	it('should not throw', () => {

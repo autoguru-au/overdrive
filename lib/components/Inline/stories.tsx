@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import { Button } from '../Button';
-import { Stack } from '../Stack';
-import { Text } from '../Typography';
+import { Button } from '../Button/Button';
+import { Stack } from '../Stack/Stack';
+import { Text } from '../Text/Text';
 import { Inline } from './Inline';
 
 export default {

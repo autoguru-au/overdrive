@@ -1,8 +1,8 @@
 import { fireEvent, render } from '@testing-library/react';
 import * as React from 'react';
 
-import { Heading } from '../Typography/Heading';
-import { CheckBox } from '.';
+import { Heading } from '../Heading/Heading';
+import { CheckBox } from './CheckBox';
 
 describe('<CheckBox />', () => {
 	it('should not throw', () => {

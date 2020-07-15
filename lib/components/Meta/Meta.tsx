@@ -4,12 +4,12 @@ import * as React from 'react';
 import { FunctionComponent } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box';
-import { Icon } from '../Icon';
-import { Text } from '../Typography';
+import { Box } from '../Box/Box';
+import { Icon } from '../Icon/Icon';
+import { Text } from '../Text/Text';
 import * as styleRefs from './Meta.treat';
 
-interface Props {
+export interface Props {
 	className?: string;
 	icon: IconType;
 	label: string;

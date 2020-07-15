@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { FunctionComponent, ReactElement } from 'react';
 
-import { Column, Columns } from '../Columns';
-import { Stack } from '../Stack';
+import { Column } from '../Columns/Column';
+import { Columns } from '../Columns/Columns';
+import { Stack } from '../Stack/Stack';
 
-interface Props {
+export interface Props {
 	heading?: ReactElement;
 	action?: ReactElement;
 	className?: string;

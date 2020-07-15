@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import { Section } from '.';
+import { Section } from './Section';
 
 describe('<Section />', () => {
 	it('should not throw', () => {

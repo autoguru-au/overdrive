@@ -5,7 +5,7 @@ import { useStyles } from 'react-treat';
 
 import * as styleRefs from './Radio.treat';
 
-interface Props {
+export interface Props {
 	name: string;
 	className?: string;
 	value: string;

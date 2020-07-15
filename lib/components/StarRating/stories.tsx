@@ -1,7 +1,7 @@
 import { number, select, text } from '@storybook/addon-knobs';
 import * as React from 'react';
 
-import { EStarRatingSize, StarRating } from '.';
+import { EStarRatingSize, StarRating } from './StarRating';
 
 const baseProps = () => ({
 	rating: number('Rating', 2.7),
@@ -14,7 +14,7 @@ export default {
 };
 
 export const standard = () => (
-	<StarRating {...baseProps()} label={text('Label', undefined)} />
+	<StarRating {...baseProps()} label={text('Label', '')} />
 );
 
 export const smallSize = () => (

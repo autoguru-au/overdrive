@@ -1,8 +1,8 @@
 import { select } from '@storybook/addon-knobs';
 import * as React from 'react';
 
-import { Text } from '../Typography';
-import { Stack } from '.';
+import { Text } from '../Text/Text';
+import { Stack } from './Stack';
 
 export default { title: 'Foundation|Layout/Stack', component: Stack };
 

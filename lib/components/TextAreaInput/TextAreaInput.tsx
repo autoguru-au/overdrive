@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { Box } from '../Box';
-import { withEnhancedInput } from '../InputBase';
+import { Box } from '../Box/Box';
+import { withEnhancedInput } from '../private/InputBase/withEnhancedInput';
 
 export const TextAreaInput = withEnhancedInput<{}, HTMLTextAreaElement>(
 	({ field, eventHandlers, validation, suffixed, prefixed, ...rest }) => (

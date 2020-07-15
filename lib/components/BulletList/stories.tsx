@@ -1,7 +1,8 @@
 import * as React from 'react';
 
-import { Text } from '../Typography';
-import { Bullet, BulletList } from '.';
+import { Text } from '../Text/Text';
+import { BulletList } from './BulletList';
+import { Bullet } from './Bullet';
 
 export default {
 	title: 'Foundation|List/BulletList',

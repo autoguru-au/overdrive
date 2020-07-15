@@ -10,10 +10,10 @@ import {
 import { useStyles } from 'react-treat';
 import type { Theme } from 'treat/theme';
 
-import { Box } from '../Box';
-import { Icon } from '../Icon';
-import { Inline } from '../Inline';
-import { Text } from '../Typography';
+import { Box } from '../Box/Box';
+import { Icon } from '../Icon/Icon';
+import { Inline } from '../Inline/Inline';
+import { Text } from '../Text/Text';
 import * as styleRefs from './StarRating.treat';
 
 const totalStars = 5;
@@ -42,7 +42,7 @@ const labelSizeMap: Map<
 	[EStarRatingSize.Medium, '4'],
 ]);
 
-interface Props {
+export interface Props {
 	className?: string; // TODO: Remove this in the future
 	rating: number;
 	size?: EStarRatingSize;

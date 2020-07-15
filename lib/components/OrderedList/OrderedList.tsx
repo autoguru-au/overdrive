@@ -8,7 +8,7 @@ import {
 } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 import * as styleRefs from './OrderedList.treat';
 
 type ListStyleType = 'decimal' | 'lower-roman' | 'lower-alpha' | 'upper-alpha';
@@ -21,12 +21,13 @@ const cycles: ListStyleType[] = [
 	'lower-roman',
 ];
 
-interface Props extends Pick<OlHTMLAttributes<HTMLOListElement>, 'start'> {
+export interface Props
+	extends Pick<OlHTMLAttributes<HTMLOListElement>, 'start'> {
 	type?: ListStyleType;
 	className?: string;
 }
 
-interface ItemProps {
+export interface ItemProps {
 	className?: string;
 }
 

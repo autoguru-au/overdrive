@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { forwardRef, MouseEventHandler, ReactChild } from 'react';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 
-interface Props {
+export interface Props {
 	onClick?: MouseEventHandler<HTMLDivElement>;
 
 	children: ReactChild | ReactChild[];

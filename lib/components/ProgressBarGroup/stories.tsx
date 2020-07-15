@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useEffect, useState } from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { ProgressBarGroup } from '.';
+import { ProgressBarGroup } from './ProgressBarGroup';
 
 export default {
 	title: 'Components|Progress/ProgressBarGroup',
@@ -14,7 +14,7 @@ export const Standard = () => {
 
 	useEffect(() => {
 		const i = setInterval(() => {
-			const collect = [];
+			const collect: number[] = [];
 			const outOf = Math.round(Math.random() * 45);
 
 			for (let x = 0; x <= 4; x++) {

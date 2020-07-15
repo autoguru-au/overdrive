@@ -3,7 +3,7 @@ import * as React from 'react';
 import { FunctionComponent } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 import { useTabIndex, useTabsContext } from './context';
 import * as styleRefs from './TabPane.treat';
 

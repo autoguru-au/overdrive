@@ -4,11 +4,11 @@ import * as React from 'react';
 import { FunctionComponent, memo } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Icon } from '../Icon';
+import { Icon } from '../Icon/Icon';
 import { Bubble } from './Bubble';
 import * as styleRefs from './Pagination.treat';
 
-interface Props {
+export interface Props {
 	className?: string;
 	placeholderBubblesNum?: number;
 }

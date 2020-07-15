@@ -3,11 +3,12 @@ import { text } from '@storybook/addon-knobs';
 import * as React from 'react';
 import { useState } from 'react';
 
-import { Badge } from '../Badge';
-import { StarRating } from '../StarRating';
-import { Heading } from '../Typography/Heading';
-import { Text } from '../Typography/Text';
-import { Radio, RadioGroup } from '.';
+import { Badge } from '../Badge/Badge';
+import { Heading } from '../Heading/Heading';
+import { StarRating } from '../StarRating/StarRating';
+import { Text } from '../Text/Text';
+import { Radio } from './Radio';
+import { RadioGroup } from './RadioGroup';
 
 const baseProps = () => ({
 	children: text('Checkbox label', 'check me!'),

@@ -3,7 +3,7 @@ import { Children, FunctionComponent } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 import { TabIndexProvider, useTabsContext } from './context';
 import * as styleRefs from './TabPanes.treat';
 

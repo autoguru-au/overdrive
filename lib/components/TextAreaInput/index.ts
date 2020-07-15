@@ -1,1 +1,0 @@
-export { TextAreaInput } from './TextAreaInput';

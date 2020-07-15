@@ -3,12 +3,13 @@ import * as React from 'react';
 import { FunctionComponent, isValidElement, ReactNode } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box';
-import { Column, Columns } from '../Columns';
-import { Text } from '../Typography/Text';
+import { Box } from '../Box/Box';
+import { Column } from '../Columns/Column';
+import { Columns } from '../Columns/Columns';
+import { Text } from '../Text/Text';
 import * as styleRefs from './BulletText.treat';
 
-interface Props {
+export interface Props {
 	bullet?: ReactNode;
 	variant?: keyof typeof styleRefs.variant;
 	className?: string;

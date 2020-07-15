@@ -3,8 +3,8 @@ import { boolean } from '@storybook/addon-knobs';
 import * as React from 'react';
 import { useCallback, useState } from 'react';
 
-import { Box } from '../Box';
-import { Button } from '../Button';
+import { Box } from '../Box/Box';
+import { Button } from '../Button/Button';
 import { Modal } from './Modal';
 
 const Body = ({ children }) => (

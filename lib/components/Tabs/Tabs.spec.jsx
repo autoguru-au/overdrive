@@ -1,8 +1,11 @@
 import { fireEvent, render } from '@testing-library/react';
 import * as React from 'react';
 
-import { Tab, TabPane, TabPanes, Tabs } from '.';
 import { TabList } from './TabList';
+import { Tabs } from './Tabs';
+import { Tab } from './Tab';
+import { TabPanes } from './TabPanes';
+import { TabPane } from './TabPane';
 
 const tabData = [
 	{

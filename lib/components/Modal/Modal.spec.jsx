@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import * as React from 'react';
 import { useState } from 'react';
 
-import { Modal } from '.';
+import { Modal } from './Modal';
 
 function createMockedModal(defaultOpenState = true) {
 	return () => {

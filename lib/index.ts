@@ -1,4 +1,4 @@
 export * from './components';
-export * from './hooks';
 
+export { useMedia } from './hooks/useMedia';
 export { useId, arrayRingLookup } from './utils';

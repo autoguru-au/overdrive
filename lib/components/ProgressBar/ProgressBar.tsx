@@ -4,7 +4,7 @@ import * as React from 'react';
 import { ComponentProps, memo } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 import * as styleRefs from './ProgressBar.treat';
 
 // TODO: These should use the intent verbs
@@ -12,7 +12,7 @@ const colours: ReadonlyArray<
 	'red' | 'green' | 'blue' | 'yellow' | 'neutral'
 > = ['red', 'green', 'blue', 'yellow', 'neutral'] as const;
 
-interface Props {
+export interface Props {
 	value?: number;
 	colour?: typeof colours[number];
 }

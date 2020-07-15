@@ -3,10 +3,10 @@ import * as React from 'react';
 import { memo } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 import * as styleRefs from './ProgressSpinner.treat';
 
-interface Props {
+export interface Props {
 	className?: string;
 	size?: keyof typeof styleRefs.size;
 	colour?: keyof typeof styleRefs.colours;

@@ -12,11 +12,11 @@ import {
 } from 'react';
 import { useStyles } from 'react-treat';
 
-import { useBoxStyles } from '../Box';
+import { useBoxStyles } from '../Box/useBoxStyles';
 import { useTabIndex, useTabsContext } from './context';
 import * as styleRefs from './Tab.treat';
 
-interface Props {
+export interface Props {
 	children: ReactText;
 	id?: string;
 	is?: ElementType | ReactElement;

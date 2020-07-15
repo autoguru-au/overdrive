@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import { Actions } from '../Actions';
-import { Button } from '../Button';
-import { StandardModal } from '../StandardModal';
-import { Text } from '../Typography';
+import { Actions } from '../Actions/Actions';
+import { Button } from '../Button/Button';
+import { StandardModal } from '../StandardModal/StandardModal';
+import { Text } from '../Text/Text';
 import { ToastProvider, useToast } from './Toast';
 
 export default {

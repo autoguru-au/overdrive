@@ -3,11 +3,11 @@ import { boolean, text } from '@storybook/addon-knobs';
 import * as React from 'react';
 import { useState } from 'react';
 
-import { Badge } from '../Badge';
-import { StarRating } from '../StarRating';
-import { Heading } from '../Typography/Heading';
-import { Text } from '../Typography/Text';
-import { CheckBox } from '.';
+import { Heading } from '../Heading/Heading';
+import { Text } from '../Text/Text';
+import { Badge } from '../Badge/Badge';
+import { CheckBox } from './CheckBox';
+import { StarRating } from '../StarRating/StarRating';
 
 const baseProps = () => ({
 	children: text('Checkbox label', 'check me!'),
