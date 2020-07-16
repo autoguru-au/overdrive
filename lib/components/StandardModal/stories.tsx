@@ -11,7 +11,7 @@ export default {
 	title: 'Components|StandardModal',
 	component: StandardModal,
 	parameters: {
-		chromatic: { delay: 300 },
+		chromatic: { disable: true },
 	},
 };
 
