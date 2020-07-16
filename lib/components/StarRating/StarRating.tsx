@@ -13,7 +13,7 @@ import type { Theme } from 'treat/theme';
 import { Box } from '../Box';
 import { Icon } from '../Icon';
 import { Inline } from '../Inline';
-import { Text } from '../Typography';
+import { Text } from '../Text';
 import * as styleRefs from './StarRating.treat';
 
 const totalStars = 5;
@@ -42,7 +42,7 @@ const labelSizeMap: Map<
 	[EStarRatingSize.Medium, '4'],
 ]);
 
-interface Props {
+export interface Props {
 	className?: string; // TODO: Remove this in the future
 	rating: number;
 	size?: EStarRatingSize;

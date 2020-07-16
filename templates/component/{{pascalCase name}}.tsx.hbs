@@ -1,18 +1,18 @@
-import clsx from 'clsx';
 import * as React from 'react';
-import { memo, NamedExoticComponent } from 'react';
+import type { FunctionComponent } from 'react';
 import { useStyles } from 'react-treat';
+import clsx from 'clsx';
 
 import * as styleRefs from './{{pascalCase name}}.treat';
 
-interface Props {
+export interface Props {
 	example?: boolean;
 }
 
-export const {{pascalCase name}}: NamedExoticComponent<Props> = memo(() => {
+export const {{pascalCase name}}: FunctionComponent<Props> = () => {
 	const styles = useStyles(styleRefs);
 
 	return (<p className={clsx(styles.root)}>
 		New component {{name}}! 🎉 Edit lib/components/{{pascalCase name}}/{{pascalCase name}}.tsx
 	</p>);
-});
+};

@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
 import * as React from 'react';
 
-import { Alert } from '.';
+import { Alert } from './Alert';
 
 describe('<Alert />', () => {
 	it('should not throw', () => {

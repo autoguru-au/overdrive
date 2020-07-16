@@ -4,14 +4,14 @@ import { useState } from 'react';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
-import { Text } from '../Typography/Text';
-import { EStandardModalSize, StandardModal } from '.';
+import { Text } from '../Text';
+import { StandardModal } from '.';
 
 export default {
 	title: 'Components|StandardModal',
 	component: StandardModal,
 	parameters: {
-		chromatic: { delay: 300 },
+		chromatic: { disable: true },
 	},
 };
 
@@ -22,7 +22,7 @@ export const Standard = () => {
 		<>
 			<StandardModal
 				title="Title"
-				size={EStandardModalSize.Standard}
+				size="standard"
 				isOpen={isOpen}
 				onRequestClose={() => {
 					setIsOpen(false);

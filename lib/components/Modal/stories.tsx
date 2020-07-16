@@ -5,7 +5,7 @@ import { useCallback, useState } from 'react';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
-import { Modal } from './Modal';
+import { Modal } from '.';
 
 const Body = ({ children }) => (
 	<Box backgroundColour="white" padding="5" borderRadius="2">

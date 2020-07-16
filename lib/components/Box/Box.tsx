@@ -9,7 +9,7 @@ import {
 
 import { BoxStyleProps, useBoxStyles } from './useBoxStyles';
 
-interface Props<Element extends keyof JSX.IntrinsicElements>
+export interface Props<Element extends keyof JSX.IntrinsicElements>
 	extends BoxStyleProps,
 		Omit<AllHTMLAttributes<Element>, 'width' | 'height' | 'className'> {
 	is?: Element;

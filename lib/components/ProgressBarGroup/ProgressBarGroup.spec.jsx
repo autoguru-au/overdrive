@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
 
-import { ProgressBarGroup } from '.';
+import { ProgressBarGroup } from './ProgressBarGroup';
 
 describe('<ProgressBarGroup />', () => {
 	it('should not throw', () => {

@@ -14,7 +14,7 @@ export const Standard = () => {
 
 	useEffect(() => {
 		const i = setInterval(() => {
-			const collect = [];
+			const collect: number[] = [];
 			const outOf = Math.round(Math.random() * 45);
 
 			for (let x = 0; x <= 4; x++) {

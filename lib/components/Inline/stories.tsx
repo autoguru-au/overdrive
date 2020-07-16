@@ -2,8 +2,8 @@ import * as React from 'react';
 
 import { Button } from '../Button';
 import { Stack } from '../Stack';
-import { Text } from '../Typography';
-import { Inline } from './Inline';
+import { Text } from '../Text';
+import { Inline } from '.';
 
 export default {
 	title: 'Foundation|Layout/Inline',

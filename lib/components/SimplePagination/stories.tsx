@@ -2,7 +2,7 @@ import { action } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
 import * as React from 'react';
 
-import { SimplePagination } from './SimplePagination';
+import { SimplePagination } from '.';
 
 const baseProps = (hasNext = true, hasPrevious = true) => ({
 	hasNext: boolean('hasNext', hasNext),

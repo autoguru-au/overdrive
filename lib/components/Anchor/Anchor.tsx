@@ -11,12 +11,12 @@ import {
 } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Text } from '..';
-import { useBoxStyles } from '../../Box';
-import { Icon } from '../../Icon';
+import { useBoxStyles } from '../Box';
+import { Icon } from '../Icon';
+import { Text } from '../Text';
 import * as styleRefs from './Anchor.treat';
 
-interface Props {
+export interface Props {
 	rel?: string;
 	href?: string;
 	title?: string;

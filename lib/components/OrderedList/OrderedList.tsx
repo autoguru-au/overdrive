@@ -21,12 +21,13 @@ const cycles: ListStyleType[] = [
 	'lower-roman',
 ];
 
-interface Props extends Pick<OlHTMLAttributes<HTMLOListElement>, 'start'> {
+export interface Props
+	extends Pick<OlHTMLAttributes<HTMLOListElement>, 'start'> {
 	type?: ListStyleType;
 	className?: string;
 }
 
-interface ItemProps {
+export interface ItemProps {
 	className?: string;
 }
 

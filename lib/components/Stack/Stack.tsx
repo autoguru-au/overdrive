@@ -3,12 +3,12 @@ import { Children, FunctionComponent, ReactNode } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 import { useStyles } from 'react-treat';
 
+import type { BoxStyleProps } from '../Box';
 import { Box } from '../Box';
-import { BoxStyleProps } from '../Box/useBoxStyles';
 import { Divider } from './Divider';
 import * as styleRefs from './Stack.treat';
 
-interface Props extends Pick<BoxStyleProps, 'is' | 'width'> {
+export interface Props extends Pick<BoxStyleProps, 'is' | 'width'> {
 	space?: keyof typeof styleRefs.child.spaces;
 	className?: string;
 	dividers?: boolean;

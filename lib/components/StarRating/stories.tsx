@@ -14,7 +14,7 @@ export default {
 };
 
 export const standard = () => (
-	<StarRating {...baseProps()} label={text('Label', undefined)} />
+	<StarRating {...baseProps()} label={text('Label', '')} />
 );
 
 export const smallSize = () => (

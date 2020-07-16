@@ -8,7 +8,7 @@ import type { TableContext } from './context';
 import { TableContextProvider } from './context';
 import * as styleRefs from './Table.treat';
 
-interface Props extends Partial<TableContext> {
+export interface Props extends Partial<TableContext> {
 	columnTemplate: string;
 
 	children: ReactChild | ReactChild[];

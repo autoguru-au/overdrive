@@ -3,10 +3,10 @@ import * as React from 'react';
 import { FunctionComponent } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Text } from '../Typography';
+import { Text } from '../../Text';
 import * as styleRefs from './HintText.treat';
 
-interface Props {
+export interface Props {
 	className?: string;
 }
 

@@ -2,7 +2,7 @@ import { warning } from '@autoguru/utilities';
 import * as React from 'react';
 
 import { Box } from '../Box';
-import { withEnhancedInput } from '../InputBase';
+import { withEnhancedInput } from '../private/InputBase';
 
 export const DateInput = withEnhancedInput<
 	Partial<Pick<HTMLInputElement, 'min' | 'max'>>

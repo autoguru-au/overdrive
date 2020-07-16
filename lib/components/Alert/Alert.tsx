@@ -14,10 +14,10 @@ import { useStyles } from 'react-treat';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
-import { Text } from '../Typography/Text';
+import { Text } from '../Text';
 import * as styleRefs from './Alert.treat';
 
-interface Props {
+export interface Props {
 	children: ReactChild;
 	className?: string;
 	intent?: keyof typeof styleRefs.intent;

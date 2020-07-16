@@ -3,12 +3,12 @@ import * as React from 'react';
 import { useCallback, useRef, useState } from 'react';
 
 import { Button } from '../Button';
-import { EPositionerAlignment } from '../Positioner';
+import { EAlignment } from '../Positioner/alignment';
 import { TextInput } from '../TextInput';
 import { Flyout } from '.';
 
 const alignmentPicker = () =>
-	select('Alignment', EPositionerAlignment, EPositionerAlignment.BOTTOM_LEFT);
+	select('Alignment', EAlignment, EAlignment.BOTTOM_LEFT);
 
 export default {
 	title: 'Components|Flyout',

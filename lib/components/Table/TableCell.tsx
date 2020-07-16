@@ -7,11 +7,11 @@ import type { Theme } from 'treat/theme';
 import type { Alignment } from '../../utils';
 import { alignmentToFlexAlignment } from '../../utils';
 import { Box } from '../Box';
-import { Text } from '../Typography/Text';
+import { Text } from '../Text';
 import { useTableContext } from './context';
 import * as styleRefs from './TableCell.treat';
 
-interface Props extends Partial<Pick<AriaAttributes, 'aria-label'>> {
+export interface Props extends Partial<Pick<AriaAttributes, 'aria-label'>> {
 	align?: Alignment;
 	padding?: keyof Theme['space'];
 

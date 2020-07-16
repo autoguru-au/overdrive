@@ -17,9 +17,9 @@ import {
 } from 'react';
 import { useStyles } from 'react-treat';
 
-import { useInputControlledState } from '../../utils';
-import { Box, useBoxStyles } from '../Box';
-import { Icon } from '../Icon';
+import { useInputControlledState } from '../../../utils';
+import { Box, useBoxStyles } from '../../Box';
+import { Icon } from '../../Icon';
 import { HintText } from './HintText';
 import * as inputStateStyleRefs from './InputState.treat';
 import { NotchedBase } from './NotchedBase';

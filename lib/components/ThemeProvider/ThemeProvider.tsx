@@ -2,14 +2,16 @@ import { invariant } from '@autoguru/utilities';
 import * as React from 'react';
 import { createContext, FunctionComponent, useContext } from 'react';
 import { TreatProvider } from 'react-treat';
-import { ThemeRef } from 'treat';
+import type { ThemeRef } from 'treat';
 
-import { RuntimeTokens } from '../../themes/makeTheme';
+import type { RuntimeTokens } from '../../themes/makeTheme';
 
 const tokensContext = createContext<RuntimeTokens | null>(null);
 
-interface Props {
+export interface Props {
+	// TODO: Make this into a ThemeConfig type
 	theme: {
+		name: string;
 		themeRef: ThemeRef;
 		runtimeTokens: RuntimeTokens;
 	};

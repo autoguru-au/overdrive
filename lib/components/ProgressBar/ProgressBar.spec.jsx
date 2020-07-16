@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
 
-import { ProgressBar } from '.';
+import { ProgressBar } from './ProgressBar';
 
 describe('<ProgressBar />', () => {
 	it('should not throw', () => {

@@ -24,13 +24,13 @@ import { setRef, useId } from '../../utils';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
-import { withEnhancedInput } from '../InputBase';
 import { Portal } from '../Portal';
 import { Positioner } from '../Positioner';
 import { EAlignment } from '../Positioner/alignment';
+import { withEnhancedInput } from '../private/InputBase';
 import * as selectStyleRefs from '../SelectInput/SelectInput.treat';
+import { Text } from '../Text';
 import { TextInput } from '../TextInput';
-import { Text } from '../Typography';
 import * as styleRefs from './AutoSuggest.treat';
 import { useLayoutSuggestionVisible } from './useLayoutSuggestionVisible';
 

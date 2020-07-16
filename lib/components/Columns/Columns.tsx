@@ -13,7 +13,7 @@ import { resolveResponsiveStyle, ResponsiveProp } from '../../utils';
 import { Box } from '../Box';
 import * as styleRefs from './Columns.treat';
 
-interface Props extends ComponentProps<typeof Box> {
+export interface Props extends ComponentProps<typeof Box> {
 	className?: string;
 	columns?: number;
 	space?: ResponsiveProp<keyof Theme['space']>;

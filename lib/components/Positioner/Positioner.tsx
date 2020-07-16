@@ -23,6 +23,8 @@ import { Portal } from '../Portal';
 import { EAlignment } from './alignment';
 import * as styleRefs from './Positioner.treat';
 
+export { EAlignment } from './alignment';
+
 const createPopper = popperGenerator({
 	defaultModifiers: [
 		...defaultModifiers,

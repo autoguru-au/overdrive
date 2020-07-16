@@ -11,18 +11,19 @@ import {
 import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
-import { EPositionerAlignment, Positioner } from '../Positioner';
-import { Text } from '../Typography';
+import { Positioner } from '../Positioner';
+import { EAlignment } from '../Positioner/alignment';
+import { Text } from '../Text';
 import * as styleRefs from './Tooltip.treat';
 
-interface Props {
+export interface Props {
 	label: string;
-	alignment?: EPositionerAlignment;
+	alignment?: EAlignment;
 	children: ReactElement;
 }
 
 export const Tooltip: FunctionComponent<Props> = ({
-	alignment = EPositionerAlignment.RIGHT,
+	alignment = EAlignment.RIGHT,
 	label,
 	children,
 }) => {

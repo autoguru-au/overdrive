@@ -3,11 +3,11 @@ import * as React from 'react';
 import { ChangeEvent, FunctionComponent, ReactNode } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box';
-import { Text } from '../Typography';
+import { Box } from '../../Box';
+import { Text } from '../../Text';
 import * as styleRefs from './CheckableBase.treat';
 
-interface Props {
+export interface Props {
 	className?: string;
 	checked?: boolean;
 	disabled?: boolean;

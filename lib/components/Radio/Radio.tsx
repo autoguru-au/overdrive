@@ -3,12 +3,12 @@ import * as React from 'react';
 import { FunctionComponent, memo, ReactNode } from 'react';
 import { useStyles } from 'react-treat';
 
-import { CheckableBase } from '../CheckableBase';
-import { useCheckableStyles } from '../CheckableBase/useCheckableStyles';
+import { CheckableBase } from '../private/CheckableBase';
+import { useCheckableStyles } from '../private/CheckableBase/useCheckableStyles';
 import * as styleRefs from './Radio.treat';
 import { useRadioContext } from './RadioGroup';
 
-interface Props {
+export interface Props {
 	value: string;
 	className?: string;
 	disabled?: boolean;

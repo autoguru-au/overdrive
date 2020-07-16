@@ -4,9 +4,9 @@ import * as React from 'react';
 import { useState } from 'react';
 
 import { Badge } from '../Badge';
+import { Heading } from '../Heading';
 import { StarRating } from '../StarRating';
-import { Heading } from '../Typography/Heading';
-import { Text } from '../Typography/Text';
+import { Text } from '../Text';
 import { CheckBox } from '.';
 
 const baseProps = () => ({

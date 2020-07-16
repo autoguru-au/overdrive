@@ -1,7 +1,7 @@
 import { Style, style, styleMap } from 'treat';
 import type { Theme } from 'treat/theme';
 
-import { mapTokenToProperty } from '../../../utils';
+import { mapTokenToProperty } from '../../utils';
 
 export const root = style((theme) => ({
 	fontWeight: theme.typography.fontWeight.normal,

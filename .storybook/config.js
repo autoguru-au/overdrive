@@ -1,15 +1,20 @@
 import { addDecorator, addParameters, configure } from '@storybook/react';
 import { create } from '@storybook/theming';
 import { withKnobs } from '@storybook/addon-knobs';
+import { configureActions } from '@storybook/addon-actions';
 import { withA11y } from '@storybook/addon-a11y';
-import { tokens as baseThemeTokens } from '../lib/themes/base/tokens';
 
-import Wrapper from './Wrapper';
+import { tokens as baseThemeTokens } from '../lib/themes/base/tokens';
+import { withOverdriveProvider } from './provider';
+
+configureActions({
+	depth: 1,
+});
 
 addDecorator(withKnobs);
 addDecorator(withA11y);
 
-addDecorator(Wrapper);
+addDecorator(withOverdriveProvider);
 
 addParameters({
 	options: {
@@ -21,11 +26,8 @@ addParameters({
 			textColor: baseThemeTokens.colours.gamut.gray900,
 		}),
 		showNav: true,
-		storySort([, { id: idA }], [, { id: idB }]) {
-			if (idA > idB) return 1;
-			if (idB > idA) return -1;
-			return 0;
-		},
+		enableShortcuts: false,
+		storySort: (a, b) => a[1].kind.localeCompare(b[1].kind),
 	},
 	chromatic: {
 		// Mobile and large table and up

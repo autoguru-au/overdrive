@@ -3,9 +3,10 @@ import * as React from 'react';
 import { FunctionComponent } from 'react';
 import type { Theme } from 'treat/theme';
 
-import { TextStyleProps, useTextStyles } from '../Text/useTextStyles';
+import type { TextStyleProps } from '../Text';
+import { useTextStyles } from '../Text';
 
-interface Props extends TextStyleProps {
+export interface Props extends TextStyleProps {
 	className?: string;
 	is?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 	colour?: Exclude<keyof Theme['typography']['colour'], 'muted'>;

@@ -6,24 +6,26 @@ import { useStyles } from 'react-treat';
 
 import { useId } from '../../utils';
 import { Box } from '../Box';
+import { Heading } from '../Heading';
 import { Icon } from '../Icon';
 import { Modal } from '../Modal';
-import { Heading } from '../Typography';
 import * as styleRefs from './StandardModal.treat';
 
 export enum ESize {
 	Standard = 'standard', // 800px wide
 }
 
+type Size = 'standard';
+
 export interface Props extends ComponentProps<typeof Modal> {
-	size?: ESize;
+	size?: ESize | Size;
 	className?: string;
 	title: string;
 }
 
 export const StandardModal: FunctionComponent<Props> = ({
 	isOpen,
-	size = ESize.Standard,
+	size = 'standard',
 	className = '',
 	title,
 	onRequestClose,
@@ -68,7 +70,7 @@ export const StandardModal: FunctionComponent<Props> = ({
 					aria-labelledby={titleId!}
 					className={clsx([
 						styles.modal,
-						{ [styles.modalSizeStandard]: size === ESize.Standard },
+						{ [styles.modalSizeStandard]: size === 'standard' },
 						className,
 					])}>
 					<header

@@ -6,7 +6,7 @@ import { useStyles } from 'react-treat';
 import { Box } from '../Box';
 import * as styleRefs from './LinearProgressIndicator.treat';
 
-interface Props {
+export interface Props {
 	className?: string;
 }
 

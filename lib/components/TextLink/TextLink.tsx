@@ -14,7 +14,7 @@ import {
 } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../../Box';
+import { Box } from '../Box';
 import { Text } from '../Text';
 import * as styleRefs from './TextLink.treat';
 
@@ -24,7 +24,7 @@ type AnchorProps = Omit<
 	'children' | 'style' | 'is' | keyof TextProps
 >;
 
-interface Props extends TextProps, AnchorProps {
+export interface Props extends TextProps, AnchorProps {
 	children: ReactText;
 	className?: string;
 	is?: ElementType | ReactElement;

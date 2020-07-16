@@ -16,7 +16,7 @@ import { useBoxStyles } from '../Box';
 import { useTabIndex, useTabsContext } from './context';
 import * as styleRefs from './Tab.treat';
 
-interface Props {
+export interface Props {
 	children: ReactText;
 	id?: string;
 	is?: ElementType | ReactElement;

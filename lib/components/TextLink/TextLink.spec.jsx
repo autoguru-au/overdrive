@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
 
-import { TextLink } from '.';
+import { TextLink } from './TextLink';
 
 describe('<TextLink />', () => {
 	it('should not throw', () => {

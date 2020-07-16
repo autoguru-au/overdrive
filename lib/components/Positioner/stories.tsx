@@ -5,12 +5,11 @@ import { createRef, useCallback, useRef, useState } from 'react';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
-import { Text } from '../Typography';
-import { EAlignment } from './alignment';
-import { Positioner } from './Positioner';
+import { Text } from '../Text';
+import { EPositionerAlignment, Positioner } from '.';
 
 const alignmentPicker = () =>
-	select('Alignment', EAlignment, EAlignment.BOTTOM_LEFT);
+	select('Alignment', EPositionerAlignment, EPositionerAlignment.BOTTOM_LEFT);
 
 export default {
 	title: 'Utility|Positioner',

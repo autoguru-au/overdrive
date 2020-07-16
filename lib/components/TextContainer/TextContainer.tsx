@@ -4,7 +4,7 @@ import { FunctionComponent, ReactElement } from 'react';
 import { Column, Columns } from '../Columns';
 import { Stack } from '../Stack';
 
-interface Props {
+export interface Props {
 	heading?: ReactElement;
 	action?: ReactElement;
 	className?: string;

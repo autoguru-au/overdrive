@@ -7,7 +7,7 @@ import { Box } from '../Box';
 import * as styleRefs from './BulletList.treat';
 import { BulletListContext, bulletMap } from './context';
 
-interface Props {
+export interface Props {
 	className?: string;
 }
 

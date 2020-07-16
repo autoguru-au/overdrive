@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import { Portal } from '.';
+import { Portal } from './Portal';
 
 describe('<Portal />', () => {
 	it('should not throw', () => {

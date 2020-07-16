@@ -16,7 +16,7 @@ export enum EChangeDirection {
 
 type TOnChangeEventHandler = (event: EChangeDirection) => void;
 
-interface Props {
+export interface Props {
 	className?: string;
 	hasNext?: boolean;
 	hasPrevious?: boolean;

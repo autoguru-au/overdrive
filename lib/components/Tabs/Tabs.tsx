@@ -5,7 +5,7 @@ import { useId, useUncontrolledState } from '../../utils';
 import { Box } from '../Box';
 import { TabsContextProvider } from './context';
 
-interface Props {
+export interface Props {
 	active?: number;
 	onChange?: (idx: number) => void;
 }

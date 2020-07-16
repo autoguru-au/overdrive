@@ -1,7 +1,7 @@
 import { CalendarIcon } from '@autoguru/icons';
 import * as React from 'react';
 
-import { Icon } from './Icon';
+import { Icon } from '.';
 
 export default {
 	title: 'Foundation|Icon',

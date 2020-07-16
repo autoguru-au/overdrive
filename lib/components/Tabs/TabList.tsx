@@ -21,7 +21,7 @@ import { Icon } from '../Icon';
 import { TabIndexProvider } from './context';
 import * as styleRefs from './TabList.treat';
 
-interface Props {
+export interface Props {
 	stretch?: boolean;
 	scrollable?: boolean;
 }

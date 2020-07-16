@@ -12,7 +12,7 @@ const colours: ReadonlyArray<
 	'red' | 'green' | 'blue' | 'yellow' | 'neutral'
 > = ['red', 'green', 'blue', 'yellow', 'neutral'] as const;
 
-interface Props {
+export interface Props {
 	value?: number;
 	colour?: typeof colours[number];
 }

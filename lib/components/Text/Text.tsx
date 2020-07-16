@@ -1,11 +1,11 @@
 import type { FunctionComponent } from 'react';
 import * as React from 'react';
 
-import { Box } from '../../Box';
-import type { BoxStyleProps } from '../../Box/useBoxStyles';
+import type { BoxStyleProps } from '../Box';
+import { Box } from '../Box';
 import { TextStyleProps, useTextStyles } from './useTextStyles';
 
-interface Props extends TextStyleProps {
+export interface Props extends TextStyleProps {
 	className?: string;
 	is?: 'p' | 'span';
 	strong?: boolean;

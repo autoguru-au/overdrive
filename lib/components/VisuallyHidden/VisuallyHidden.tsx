@@ -5,7 +5,7 @@ import { useStyles } from 'react-treat';
 import { Box } from '../Box';
 import * as styleRefs from './VisuallyHidden.treat';
 
-interface Props {
+export interface Props {
 	is?: ComponentPropsWithoutRef<typeof Box>['is'];
 }
 

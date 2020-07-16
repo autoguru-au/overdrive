@@ -24,7 +24,7 @@ type ButtonPrimitive = ButtonHTMLAttributes<HTMLButtonElement>;
 
 type AllowedChildren = string | IconType;
 
-interface Props
+export interface Props
 	extends Pick<ButtonPrimitive, 'id' | 'onClick' | 'type' | 'className'>,
 		Pick<AriaAttributes, 'aria-label'> {
 	children: AllowedChildren | AllowedChildren[];

@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
 import * as React from 'react';
 
-import { Pagination } from '.';
+import { Pagination } from './Pagination';
 
 describe('<Pagination />', () => {
 	it('should not throw', () =>

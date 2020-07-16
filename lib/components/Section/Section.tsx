@@ -6,7 +6,7 @@ import { useStyles } from 'react-treat';
 import { Box } from '../Box';
 import * as styleRefs from './Section.treat';
 
-interface Props extends Pick<ComponentProps<typeof Box>, 'paddingX'> {
+export interface Props extends Pick<ComponentProps<typeof Box>, 'paddingX'> {
 	width?: keyof typeof styleRefs.width;
 }
 

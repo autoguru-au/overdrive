@@ -7,7 +7,7 @@ import { Badge } from '../Badge';
 import { Button } from '../Button';
 import { Inline } from '../Inline';
 import { Stack } from '../Stack';
-import { Text } from '../Typography';
+import { Text } from '../Text';
 import { Table, TableCell, TableHeadCell, TableRow, TableRowGroup } from '.';
 
 export default {

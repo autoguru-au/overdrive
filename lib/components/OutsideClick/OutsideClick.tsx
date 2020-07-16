@@ -60,7 +60,7 @@ const bindEvent = <
 	};
 };
 
-interface Props {
+export interface Props {
 	children: ReactElement;
 
 	onOutsideClick?(): void;

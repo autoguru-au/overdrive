@@ -6,10 +6,10 @@ import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
 import { Icon } from '../Icon';
-import { Text } from '../Typography';
+import { Text } from '../Text';
 import * as styleRefs from './Meta.treat';
 
-interface Props {
+export interface Props {
 	className?: string;
 	icon: IconType;
 	label: string;

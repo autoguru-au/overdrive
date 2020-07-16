@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
-
-import { Bullet, BulletList } from '.';
+import { Bullet } from './Bullet';
+import { BulletList } from './BulletList';
 
 describe('<Bullet />', () => {
 	it('should not throw', () => {

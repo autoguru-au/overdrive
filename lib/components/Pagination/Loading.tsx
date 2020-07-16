@@ -8,7 +8,7 @@ import { Icon } from '../Icon';
 import { Bubble } from './Bubble';
 import * as styleRefs from './Pagination.treat';
 
-interface Props {
+export interface Props {
 	className?: string;
 	placeholderBubblesNum?: number;
 }
