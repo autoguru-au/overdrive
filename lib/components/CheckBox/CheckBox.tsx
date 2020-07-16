@@ -4,7 +4,7 @@ import * as React from 'react';
 import { FunctionComponent, memo, ReactNode } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Icon } from '../Icon/Icon';
+import { Icon } from '../Icon';
 import { CheckableBase } from '../private/CheckableBase';
 import { useCheckableStyles } from '../private/CheckableBase/useCheckableStyles';
 import * as styleRefs from './CheckBox.treat';

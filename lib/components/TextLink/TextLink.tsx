@@ -14,8 +14,8 @@ import {
 } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box/Box';
-import { Text } from '../Text/Text';
+import { Box } from '../Box';
+import { Text } from '../Text';
 import * as styleRefs from './TextLink.treat';
 
 type TextProps = Omit<ComponentProps<typeof Text>, 'is' | 'colour'>;

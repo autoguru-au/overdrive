@@ -2,7 +2,8 @@ import clsx from 'clsx';
 import { useStyles } from 'react-treat';
 import type { Theme } from 'treat/theme';
 
-import { BoxStyleProps, useBoxStyles } from '../Box/useBoxStyles';
+import type { BoxStyleProps } from '../Box';
+import { useBoxStyles } from '../Box';
 import * as styleRefs from './useTextStyles.treat';
 
 export interface TextStyleProps {

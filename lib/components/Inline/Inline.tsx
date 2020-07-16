@@ -9,9 +9,9 @@ import {
 	useNegativeMarginTop,
 } from '../../hooks/useNegativeMargin/useNegativeMargin';
 import { ResponsiveProp } from '../../utils';
-import { Box } from '../Box/Box';
-import { BoxStyleProps } from '../Box/useBoxStyles';
-import { Text } from '../Text/Text';
+import type { BoxStyleProps } from '../Box';
+import { Box } from '../Box';
+import { Text } from '../Text';
 
 export interface Props extends Pick<BoxStyleProps, 'is'> {
 	space?: ResponsiveProp<keyof Theme['space']>;

@@ -5,8 +5,8 @@ import { cloneElement, memo } from 'react';
 import { useStyles } from 'react-treat';
 
 import { resolveResponsiveStyle, ResponsiveProp } from '../../utils';
-import { Box } from '../Box/Box';
-import { BoxStyleProps, useBoxStyles } from '../Box/useBoxStyles';
+import type { BoxStyleProps } from '../Box';
+import { Box, useBoxStyles } from '../Box';
 import * as styleRefs from './Icon.treat';
 
 export interface Props {

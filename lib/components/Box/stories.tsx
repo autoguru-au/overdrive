@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Box } from './Box';
+import { Box } from '.';
 
 export default {
 	title: 'Foundation|Box',

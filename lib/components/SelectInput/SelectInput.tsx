@@ -3,9 +3,9 @@ import * as React from 'react';
 import { ReactNode } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box/Box';
-import { Icon } from '../Icon/Icon';
-import { withEnhancedInput } from '../private/InputBase/withEnhancedInput';
+import { Box } from '../Box';
+import { Icon } from '../Icon';
+import { withEnhancedInput } from '../private/InputBase';
 import * as styleRefs from './SelectInput.treat';
 
 export const SelectInput = withEnhancedInput<

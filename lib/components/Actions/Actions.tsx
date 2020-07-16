@@ -7,8 +7,7 @@ import {
 } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 
-import { Column } from '../Columns/Column';
-import { Columns } from '../Columns/Columns';
+import { Column, Columns } from '../Columns';
 
 export interface Props
 	extends Partial<

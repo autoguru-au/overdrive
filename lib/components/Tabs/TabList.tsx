@@ -15,9 +15,9 @@ import flattenChildren from 'react-keyed-flatten-children';
 import { useStyles } from 'react-treat';
 
 import { animate, ownerWindow, useEventCallback } from '../../utils';
-import { Box } from '../Box/Box';
-import { Button } from '../Button/Button';
-import { Icon } from '../Icon/Icon';
+import { Box } from '../Box';
+import { Button } from '../Button';
+import { Icon } from '../Icon';
 import { TabIndexProvider } from './context';
 import * as styleRefs from './TabList.treat';
 

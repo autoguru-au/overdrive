@@ -10,7 +10,7 @@ import {
 	useNegativeMarginTop,
 } from '../../hooks/useNegativeMargin/useNegativeMargin';
 import { resolveResponsiveStyle, ResponsiveProp } from '../../utils';
-import { Box } from '../Box/Box';
+import { Box } from '../Box';
 import * as styleRefs from './Columns.treat';
 
 export interface Props extends ComponentProps<typeof Box> {

@@ -4,8 +4,8 @@ import * as React from 'react';
 import { FunctionComponent, memo, useCallback, useMemo } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box/Box';
-import { Icon } from '../Icon/Icon';
+import { Box } from '../Box';
+import { Icon } from '../Icon';
 import { Bubble } from './Bubble';
 import { PaginationLoading } from './Loading';
 import * as styleRefs from './Pagination.treat';

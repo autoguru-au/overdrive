@@ -2,9 +2,9 @@ import type { ComponentPropsWithoutRef, FunctionComponent } from 'react';
 import * as React from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box/Box';
+import { Box } from '../Box';
 import * as styleRefs from '../Flyout/Flyout.treat';
-import { Positioner } from '../Positioner/Positioner';
+import { Positioner } from '../Positioner';
 
 export const Flyout: FunctionComponent<ComponentPropsWithoutRef<
 	typeof Positioner

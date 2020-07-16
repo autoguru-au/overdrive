@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
 
-import { Actions } from './Actions';
+import { Actions } from '.';
 
 describe('<Actions />', () => {
 	it('should not throw', () => {

@@ -12,9 +12,9 @@ import {
 } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box/Box';
-import { Icon } from '../Icon/Icon';
-import { Text } from '../Text/Text';
+import { Box } from '../Box';
+import { Icon } from '../Icon';
+import { Text } from '../Text';
 import * as styleRefs from './Stepper.treat';
 
 export interface Props {

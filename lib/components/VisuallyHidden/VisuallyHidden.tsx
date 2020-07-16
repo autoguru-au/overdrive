@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ComponentPropsWithoutRef, FunctionComponent } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box/Box';
+import { Box } from '../Box';
 import * as styleRefs from './VisuallyHidden.treat';
 
 export interface Props {

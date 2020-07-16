@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { LinearProgressIndicator } from './LinearProgressIndicator';
+import { LinearProgressIndicator } from '.';
 
 export default {
 	title: 'Components|Progress/Linear',

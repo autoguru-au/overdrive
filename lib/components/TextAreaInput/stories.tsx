@@ -1,7 +1,7 @@
 import { text } from '@storybook/addon-knobs';
 import * as React from 'react';
 
-import { TextAreaInput } from './TextAreaInput';
+import { TextAreaInput } from '.';
 
 export default {
 	title: 'Components|Inputs/Textarea',

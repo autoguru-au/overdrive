@@ -21,16 +21,16 @@ import { useStyles } from 'react-treat';
 
 import { useMedia } from '../../hooks/useMedia';
 import { setRef, useId } from '../../utils';
-import { Box } from '../Box/Box';
-import { Button } from '../Button/Button';
-import { Icon } from '../Icon/Icon';
-import { Portal } from '../Portal/Portal';
+import { Box } from '../Box';
+import { Button } from '../Button';
+import { Icon } from '../Icon';
+import { Portal } from '../Portal';
+import { Positioner } from '../Positioner';
 import { EAlignment } from '../Positioner/alignment';
-import { Positioner } from '../Positioner/Positioner';
-import { withEnhancedInput } from '../private/InputBase/withEnhancedInput';
+import { withEnhancedInput } from '../private/InputBase';
 import * as selectStyleRefs from '../SelectInput/SelectInput.treat';
-import { Text } from '../Text/Text';
-import { TextInput } from '../TextInput/TextInput';
+import { Text } from '../Text';
+import { TextInput } from '../TextInput';
 import * as styleRefs from './AutoSuggest.treat';
 import { useLayoutSuggestionVisible } from './useLayoutSuggestionVisible';
 

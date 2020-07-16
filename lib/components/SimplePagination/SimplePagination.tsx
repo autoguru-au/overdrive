@@ -4,9 +4,9 @@ import * as React from 'react';
 import { memo, NamedExoticComponent } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box/Box';
-import { Button } from '../Button/Button';
-import { Icon } from '../Icon/Icon';
+import { Box } from '../Box';
+import { Button } from '../Button';
+import { Icon } from '../Icon';
 import * as styleRefs from './SimplePagination.treat';
 
 export enum EChangeDirection {

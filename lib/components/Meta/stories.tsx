@@ -1,7 +1,7 @@
 import { CalendarIcon } from '@autoguru/icons';
 import * as React from 'react';
 
-import { Meta } from './Meta';
+import { Meta } from '.';
 
 export default {
 	title: 'Components|Meta',

@@ -1,6 +1,6 @@
 import { fireEvent, render } from '@testing-library/react';
 import * as React from 'react';
-import { SimplePagination, EChangeDirection } from './SimplePagination';
+import { EChangeDirection, SimplePagination } from './SimplePagination';
 
 describe('<SimplePagination />', () => {
 	it('should not throw', () =>

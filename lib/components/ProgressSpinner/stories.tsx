@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { ProgressSpinner } from './ProgressSpinner';
+import { ProgressSpinner } from '.';
 
 export default {
 	title: 'Components|Progress/Spinner',

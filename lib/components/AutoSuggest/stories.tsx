@@ -3,9 +3,9 @@ import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 
-import { Button } from '../Button/Button';
-import { StandardModal } from '../StandardModal/StandardModal';
-import { AutoSuggest, AutoSuggestValue } from './AutoSuggest';
+import { Button } from '../Button';
+import { StandardModal } from '../StandardModal';
+import { AutoSuggest, AutoSuggestValue } from '.';
 
 type Value = string;
 

@@ -10,10 +10,10 @@ import {
 } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box/Box';
+import { Box } from '../Box';
+import { Positioner } from '../Positioner';
 import { EAlignment } from '../Positioner/alignment';
-import { Positioner } from '../Positioner/Positioner';
-import { Text } from '../Text/Text';
+import { Text } from '../Text';
 import * as styleRefs from './Tooltip.treat';
 
 export interface Props {

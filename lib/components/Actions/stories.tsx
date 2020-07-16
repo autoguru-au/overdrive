@@ -1,8 +1,8 @@
 import { boolean } from '@storybook/addon-knobs';
 import * as React from 'react';
 
-import { Button } from '../Button/Button';
-import { Actions } from './Actions';
+import { Button } from '../Button';
+import { Actions } from '.';
 
 export default {
 	title: 'Components|Actions',

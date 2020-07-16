@@ -8,7 +8,7 @@ import { action } from '@storybook/addon-actions';
 import { boolean, text } from '@storybook/addon-knobs';
 import * as React from 'react';
 
-import { NumberInput } from './NumberInput';
+import { NumberInput } from '.';
 
 const sharedKnobs = (placeholder) => ({
 	placeholder: text('Placeholder', placeholder),

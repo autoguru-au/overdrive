@@ -14,8 +14,8 @@ import {
 } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Alert } from '../Alert/Alert';
-import { Portal } from '../Portal/Portal';
+import { Alert } from '../Alert';
+import { Portal } from '../Portal';
 import * as styleRefs from './Toast.treat';
 
 type MessageType = ReactChild;

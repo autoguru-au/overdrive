@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useEffect, useState } from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 
-import { ProgressBarGroup } from './ProgressBarGroup';
+import { ProgressBarGroup } from '.';
 
 export default {
 	title: 'Components|Progress/ProgressBarGroup',

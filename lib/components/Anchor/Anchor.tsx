@@ -11,9 +11,9 @@ import {
 } from 'react';
 import { useStyles } from 'react-treat';
 
-import { useBoxStyles } from '../Box/useBoxStyles';
-import { Icon } from '../Icon/Icon';
-import { Text } from '../Text/Text';
+import { useBoxStyles } from '../Box';
+import { Icon } from '../Icon';
+import { Text } from '../Text';
 import * as styleRefs from './Anchor.treat';
 
 export interface Props {

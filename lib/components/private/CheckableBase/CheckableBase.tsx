@@ -3,8 +3,8 @@ import * as React from 'react';
 import { ChangeEvent, FunctionComponent, ReactNode } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../../Box/Box';
-import { Text } from '../../Text/Text';
+import { Box } from '../../Box';
+import { Text } from '../../Text';
 import * as styleRefs from './CheckableBase.treat';
 
 export interface Props {

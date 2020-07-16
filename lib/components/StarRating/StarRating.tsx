@@ -10,10 +10,10 @@ import {
 import { useStyles } from 'react-treat';
 import type { Theme } from 'treat/theme';
 
-import { Box } from '../Box/Box';
-import { Icon } from '../Icon/Icon';
-import { Inline } from '../Inline/Inline';
-import { Text } from '../Text/Text';
+import { Box } from '../Box';
+import { Icon } from '../Icon';
+import { Inline } from '../Inline';
+import { Text } from '../Text';
 import * as styleRefs from './StarRating.treat';
 
 const totalStars = 5;

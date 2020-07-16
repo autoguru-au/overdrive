@@ -3,7 +3,7 @@ import * as React from 'react';
 import { ButtonHTMLAttributes, FunctionComponent } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box/Box';
+import { Box } from '../Box';
 import * as styleRefs from './Pagination.treat';
 
 export interface Props extends ButtonHTMLAttributes<Element> {

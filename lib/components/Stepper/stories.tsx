@@ -3,7 +3,7 @@ import { boolean, number } from '@storybook/addon-knobs';
 import * as React from 'react';
 import { useState } from 'react';
 
-import { Stepper } from './Stepper';
+import { Stepper } from '.';
 
 const badgeProps = () => ({
 	min: number('min', 0),

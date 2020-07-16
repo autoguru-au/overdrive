@@ -1,7 +1,7 @@
 import { number, select, text } from '@storybook/addon-knobs';
 import * as React from 'react';
 
-import { EStarRatingSize, StarRating } from './StarRating';
+import { EStarRatingSize, StarRating } from '.';
 
 const baseProps = () => ({
 	rating: number('Rating', 2.7),

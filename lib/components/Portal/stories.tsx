@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { Text } from '../Text/Text';
-import { Portal } from './Portal';
+import { Text } from '../Text';
+import { Portal } from '.';
 
 export default {
 	title: 'Utility|Portal',

@@ -2,7 +2,7 @@ import { number } from '@storybook/addon-knobs';
 import * as React from 'react';
 import { useState } from 'react';
 
-import { Pagination } from './Pagination';
+import { Pagination } from '.';
 
 const defaultNumberOptions = {
 	min: 1,

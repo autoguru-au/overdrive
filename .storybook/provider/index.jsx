@@ -5,7 +5,7 @@ import addons, { makeDecorator } from '@storybook/addons';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
-import { OverdriveProvider } from '../../lib/components/OverdriveProvider/OverdriveProvider';
+import { OverdriveProvider } from '../../lib/components/OverdriveProvider';
 
 import * as themeRefs from '../../themes';
 import { Box, Heading, Stack } from '../../lib/components';

@@ -5,10 +5,10 @@ import { ComponentProps, FunctionComponent, useLayoutEffect } from 'react';
 import { useStyles } from 'react-treat';
 
 import { useId } from '../../utils';
-import { Box } from '../Box/Box';
-import { Heading } from '../Heading/Heading';
-import { Icon } from '../Icon/Icon';
-import { Modal } from '../Modal/Modal';
+import { Box } from '../Box';
+import { Heading } from '../Heading';
+import { Icon } from '../Icon';
+import { Modal } from '../Modal';
 import * as styleRefs from './StandardModal.treat';
 
 export enum ESize {

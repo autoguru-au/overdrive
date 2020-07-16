@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
-import { Badge } from './Badge';
+import { Badge } from '.';
 
 const colours: ReadonlyArray<ComponentProps<typeof Badge>['colour']> = [
 	'blue',

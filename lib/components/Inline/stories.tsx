@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import { Button } from '../Button/Button';
-import { Stack } from '../Stack/Stack';
-import { Text } from '../Text/Text';
-import { Inline } from './Inline';
+import { Button } from '../Button';
+import { Stack } from '../Stack';
+import { Text } from '../Text';
+import { Inline } from '.';
 
 export default {
 	title: 'Foundation|Layout/Inline',

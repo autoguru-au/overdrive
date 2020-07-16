@@ -12,7 +12,7 @@ import {
 } from 'react';
 import { useStyles } from 'react-treat';
 
-import { useBoxStyles } from '../Box/useBoxStyles';
+import { useBoxStyles } from '../Box';
 import { useTabIndex, useTabsContext } from './context';
 import * as styleRefs from './Tab.treat';
 

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { FunctionComponent } from 'react';
 
 import { useId, useUncontrolledState } from '../../utils';
-import { Box } from '../Box/Box';
+import { Box } from '../Box';
 import { TabsContextProvider } from './context';
 
 export interface Props {

@@ -3,11 +3,10 @@ import { select } from '@storybook/addon-knobs';
 import * as React from 'react';
 import { createRef, useCallback, useRef, useState } from 'react';
 
-import { Box } from '../Box/Box';
-import { Button } from '../Button/Button';
-import { Text } from '../Text/Text';
-import { EAlignment } from './alignment';
-import { Positioner } from './Positioner';
+import { Box } from '../Box';
+import { Button } from '../Button';
+import { Text } from '../Text';
+import { EAlignment, Positioner } from '.';
 
 const alignmentPicker = () =>
 	select('Alignment', EAlignment, EAlignment.BOTTOM_LEFT);

@@ -2,8 +2,8 @@ import * as React from 'react';
 import { memo } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box/Box';
-import type { BoxStyleProps } from '../Box/useBoxStyles';
+import type { BoxStyleProps } from '../Box';
+import { Box } from '../Box';
 import * as styleRefs from './LoadingBox.treat';
 
 export interface Props extends Pick<BoxStyleProps, 'height' | 'display'> {

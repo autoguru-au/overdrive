@@ -3,7 +3,8 @@ import * as React from 'react';
 import { FunctionComponent } from 'react';
 import type { Theme } from 'treat/theme';
 
-import { TextStyleProps, useTextStyles } from '../Text/useTextStyles';
+import type { TextStyleProps } from '../Text';
+import { useTextStyles } from '../Text';
 
 export interface Props extends TextStyleProps {
 	className?: string;

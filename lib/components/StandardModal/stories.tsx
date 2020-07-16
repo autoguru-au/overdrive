@@ -2,10 +2,10 @@ import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 import { useState } from 'react';
 
-import { Box } from '../Box/Box';
-import { Button } from '../Button/Button';
-import { Text } from '../Text/Text';
-import { StandardModal } from './StandardModal';
+import { Box } from '../Box';
+import { Button } from '../Button';
+import { Text } from '../Text';
+import { StandardModal } from '.';
 
 export default {
 	title: 'Components|StandardModal',

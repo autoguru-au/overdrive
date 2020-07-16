@@ -3,7 +3,7 @@ import * as React from 'react';
 import { forwardRef } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box/Box';
+import { Box } from '../Box';
 import type { TableContext } from './context';
 import { TableContextProvider } from './context';
 import * as styleRefs from './Table.treat';

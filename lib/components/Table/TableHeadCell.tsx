@@ -7,11 +7,11 @@ import { useStyles } from 'react-treat';
 import type { Theme } from 'treat/theme';
 
 import { Alignment, alignmentToFlexAlignment } from '../../utils';
-import { Box } from '../Box/Box';
-import { Icon } from '../Icon/Icon';
-import { Inline } from '../Inline/Inline';
-import { Text } from '../Text/Text';
-import { VisuallyHidden } from '../VisuallyHidden/VisuallyHidden';
+import { Box } from '../Box';
+import { Icon } from '../Icon';
+import { Inline } from '../Inline';
+import { Text } from '../Text';
+import { VisuallyHidden } from '../VisuallyHidden';
 import { useTableContext } from './context';
 import * as styleRefs from './TableHeadCell.treat';
 

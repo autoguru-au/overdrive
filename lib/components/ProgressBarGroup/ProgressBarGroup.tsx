@@ -2,9 +2,9 @@ import * as React from 'react';
 import { Fragment, FunctionComponent } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box/Box';
-import { ProgressBar } from '../ProgressBar/ProgressBar';
-import { Text } from '../Text/Text';
+import { Box } from '../Box';
+import { ProgressBar } from '../ProgressBar';
+import { Text } from '../Text';
 import * as styleRefs from './ProgressBarGroup.treat';
 
 export interface Props {

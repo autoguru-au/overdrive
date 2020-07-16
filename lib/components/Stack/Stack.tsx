@@ -3,8 +3,8 @@ import { Children, FunctionComponent, ReactNode } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box/Box';
-import { BoxStyleProps } from '../Box/useBoxStyles';
+import type { BoxStyleProps } from '../Box';
+import { Box } from '../Box';
 import { Divider } from './Divider';
 import * as styleRefs from './Stack.treat';
 

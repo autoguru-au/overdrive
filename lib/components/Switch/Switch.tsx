@@ -3,7 +3,7 @@ import * as React from 'react';
 import { FunctionComponent, memo, useCallback, useState } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box/Box';
+import { Box } from '../Box';
 import * as styleRefs from '../Switch/Switch.treat';
 
 export interface Props {

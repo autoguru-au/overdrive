@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { forwardRef, ReactChild } from 'react';
 
-import { Box } from '../Box/Box';
+import { Box } from '../Box';
 
 export interface Props {
 	children: ReactChild | ReactChild[];

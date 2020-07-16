@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import { Button } from '../Button/Button';
-import { Heading } from '../Heading/Heading';
-import { Text } from '../Text/Text';
-import { TextContainer } from './TextContainer';
+import { Button } from '../Button';
+import { Heading } from '../Heading';
+import { Text } from '../Text';
+import { TextContainer } from '.';
 
 export default {
 	title: 'Components|TextContainer',

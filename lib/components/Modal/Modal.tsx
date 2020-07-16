@@ -11,8 +11,8 @@ import {
 } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box/Box';
-import { Portal } from '../Portal/Portal';
+import { Box } from '../Box';
+import { Portal } from '../Portal';
 import * as styleRefs from './Modal.treat';
 
 export interface Props {

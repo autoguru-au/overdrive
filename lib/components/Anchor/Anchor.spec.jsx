@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
 
-import { Button } from '../Button/Button';
+import { Button } from '../Button';
 import { Anchor } from './Anchor';
 
 const TestIcon = (

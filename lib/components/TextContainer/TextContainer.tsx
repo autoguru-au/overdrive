@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { FunctionComponent, ReactElement } from 'react';
 
-import { Column } from '../Columns/Column';
-import { Columns } from '../Columns/Columns';
-import { Stack } from '../Stack/Stack';
+import { Column, Columns } from '../Columns';
+import { Stack } from '../Stack';
 
 export interface Props {
 	heading?: ReactElement;

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { FunctionComponent, useEffect, useRef, useState } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../../Box/Box';
+import { Box } from '../../Box';
 import * as styleRefs from './NotchedBase.treat';
 
 const ACTIVE_SCALING_FACTOR = 0.7777;
