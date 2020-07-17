@@ -4,6 +4,7 @@
 		"rootDir": "../",
 		"jsx": "react",
 		"outDir": "./dist",
+		"incremental": true,
 		"composite": true
 	},
 	"include": [
