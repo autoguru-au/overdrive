@@ -31,7 +31,9 @@ module.exports = {
 						{
 							loader: require.resolve('ts-loader'),
 							options: {
-								configFile: require.resolve('./tsconfig.json'),
+								configFile: require.resolve(
+									'./packages/overdrive/tsconfig.json',
+								),
 								transpileOnly: true,
 							},
 						},
