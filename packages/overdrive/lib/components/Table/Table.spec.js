@@ -191,8 +191,7 @@ describe('<Table />', () => {
 										sortFlow.lastIndexOf(prev) + 1,
 									),
 								)
-							}
-						>
+							}>
 							col 1
 						</TableHeadCell>
 					</Table>

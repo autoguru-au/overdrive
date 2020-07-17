@@ -15,8 +15,7 @@ const render = (hook, tokens) =>
 							...baseTheme.runtimeTokens,
 							...tokens,
 						},
-					}}
-				>
+					}}>
 					{children}
 				</OverdriveProvider>
 			);

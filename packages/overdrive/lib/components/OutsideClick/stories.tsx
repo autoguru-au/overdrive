@@ -1,7 +1,7 @@
 import * as React from 'react';
+import { OutsideClick } from '.';
 
 import { Button } from '../Button';
-import { OutsideClick } from '.';
 
 export default {
 	title: 'Utility|OutsideClick',
@@ -16,8 +16,7 @@ export const standard = () => (
 		onOutsideClick={() => {
 			// eslint-disable-next-line no-alert
 			alert('clicking outside');
-		}}
-	>
+		}}>
 		<Button>Click anywhere but here</Button>
 	</OutsideClick>
 );

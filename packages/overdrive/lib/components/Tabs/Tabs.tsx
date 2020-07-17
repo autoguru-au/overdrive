@@ -27,8 +27,7 @@ export const Tabs: FunctionComponent<Props> = ({
 			<TabsContextProvider
 				id={id}
 				active={activeState}
-				onChange={setActiveState}
-			>
+				onChange={setActiveState}>
 				{children}
 			</TabsContextProvider>
 		</Box>

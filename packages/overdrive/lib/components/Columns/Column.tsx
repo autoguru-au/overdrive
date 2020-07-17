@@ -52,14 +52,12 @@ export const Column = forwardRef<HTMLElement, Props>(
 					noShrink && styles.shrinkOff,
 					grow && styles.growOn,
 					styles.align[alignSelf!],
-				)}
-			>
+				)}>
 				<Box
 					ref={ref}
 					is={is}
 					className={clsx(styles.content, className)}
-					{...boxProps}
-				>
+					{...boxProps}>
 					{children}
 				</Box>
 			</Box>

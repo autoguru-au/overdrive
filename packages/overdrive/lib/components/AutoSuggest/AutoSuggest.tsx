@@ -349,8 +349,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 			aria-expanded={shouldOpenFlyout}
 			aria-owns={suggestionListId!}
 			aria-haspopup="listbox"
-			width="full"
-		>
+			width="full">
 			<AutoSuggestInputPrimitive
 				autoFocus={autoFocus}
 				wrapperRef={triggerRef}
@@ -447,8 +446,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 					triggerRef={triggerRef}
 					alignment={EAlignment.BOTTOM_LEFT}
 					isOpen={shouldOpenFlyout}
-					triggerOffset={4}
-				>
+					triggerOffset={4}>
 					<SuggestionsList
 						className={styles.suggestionList.blockOptions}
 						suggestionListRef={suggestionListRef}
@@ -505,8 +503,7 @@ const SuggestionsList = <PayloadType extends unknown>({
 			className={clsx(styles.suggestionList.defaults, className)}
 			id={suggestionListId}
 			aria-label={placeholder}
-			role="listbox"
-		>
+			role="listbox">
 			<div className={styles.spacer} />
 			{suggestions.map((suggestion, idx) => {
 				const highlight = highlightIndex === idx;
@@ -548,8 +545,7 @@ const SuggestionsList = <PayloadType extends unknown>({
 							dispatch({
 								type: ActionTypes.SUGGESTION_MOUSE_CLICK,
 							});
-						}}
-					>
+						}}>
 						{typeof itemRenderer === 'function' &&
 							itemRenderer({
 								suggestions,
@@ -628,8 +624,7 @@ const SuggestionListFlyout: FunctionComponent<
 		alignment={alignment}
 		isOpen={isOpen}
 		triggerOffset={triggerOffset}
-		role="listbox"
-	>
+		role="listbox">
 		<Box
 			borderWidth="1"
 			borderColour="gray"
@@ -642,8 +637,7 @@ const SuggestionListFlyout: FunctionComponent<
 						? triggerRef.current.clientWidth
 						: undefined,
 			}}
-			onMouseDown={(event) => event.preventDefault()}
-		>
+			onMouseDown={(event) => event.preventDefault()}>
 			{children}
 		</Box>
 	</Positioner>
@@ -671,8 +665,7 @@ const DefaultSuggestion: FunctionComponent<DefaultSuggestionProps> = ({
 		<div
 			className={clsx(styles.suggestion, {
 				[styles.suggestionHighlight]: highlight,
-			})}
-		>
+			})}>
 			<Text is="span">{text}</Text>
 		</div>
 	);

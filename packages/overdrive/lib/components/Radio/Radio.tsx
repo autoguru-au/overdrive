@@ -34,8 +34,7 @@ export const Radio: FunctionComponent<Props> = memo(
 				label={children}
 				disabled={disabled}
 				checked={isChecked}
-				handleClick={handleClick}
-			>
+				handleClick={handleClick}>
 				<div className={checkable}>
 					<div
 						className={clsx(

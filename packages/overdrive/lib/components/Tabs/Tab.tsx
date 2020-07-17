@@ -81,8 +81,7 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 					<span
 						className={clsx(styles.indication.default, {
 							[styles.indication.active]: isActive,
-						})}
-					>
+						})}>
 						{indication}
 					</span>
 				)}

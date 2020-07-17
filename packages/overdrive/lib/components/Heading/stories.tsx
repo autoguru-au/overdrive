@@ -34,8 +34,7 @@ export default {
 export const standard = () => (
 	<Heading
 		is={select('Tag', ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'], 'h1')}
-		{...baseProps()}
-	>
+		{...baseProps()}>
 		Hello World
 	</Heading>
 );

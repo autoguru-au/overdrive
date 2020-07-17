@@ -80,8 +80,7 @@ const PaginationComponent: FunctionComponent<Props> = ({
 				aria-label="navigate back"
 				className={chevronLeftCls}
 				userSelect="none"
-				onClick={handleClick(activePage - 1)}
-			>
+				onClick={handleClick(activePage - 1)}>
 				<Icon
 					size="medium"
 					className={styles.chevron.icon}
@@ -99,8 +98,7 @@ const PaginationComponent: FunctionComponent<Props> = ({
 					gap={num < 0}
 					selected={allowedActive === num}
 					aria-current={allowedActive === num ? 'page' : 'false'}
-					onClick={handleClick(num)}
-				>
+					onClick={handleClick(num)}>
 					{num}
 				</Bubble>
 			))}
@@ -110,8 +108,7 @@ const PaginationComponent: FunctionComponent<Props> = ({
 				aria-label="navigate forward"
 				className={chevronRightCls}
 				userSelect="none"
-				onClick={handleClick(allowedActive + 1)}
-			>
+				onClick={handleClick(allowedActive + 1)}>
 				<Icon
 					size="medium"
 					className={styles.chevron.icon}

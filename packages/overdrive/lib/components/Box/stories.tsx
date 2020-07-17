@@ -22,8 +22,7 @@ export const Standard = () => (
 			marginX={['none', '3', '5']}
 			backgroundColour="green500"
 			borderRadius="pill"
-			boxShadow={['none', '1', '2', '3']}
-		>
+			boxShadow={['none', '1', '2', '3']}>
 			Box 1
 		</Box>
 		<Box
@@ -33,8 +32,7 @@ export const Standard = () => (
 			marginX={['none', '3', '5']}
 			backgroundColour="green500"
 			borderRadius={['none', '1']}
-			boxShadow="2"
-		>
+			boxShadow="2">
 			Box 2
 		</Box>
 	</>

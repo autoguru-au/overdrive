@@ -241,8 +241,7 @@ export const withEnhancedInput = <
 					width="full"
 					className={className}
 					onMouseEnter={onMouseOver}
-					onMouseLeave={onMouseOut}
-				>
+					onMouseLeave={onMouseOut}>
 					<NotchedBase
 						id={id}
 						prefixed={Boolean(prefixIcon)}
@@ -253,13 +252,11 @@ export const withEnhancedInput = <
 						placeholderColourClassName={clsx({
 							[derivedColours.colour]: !isEmpty,
 						})}
-						borderColourClassName={derivedColours.borderColour}
-					>
+						borderColourClassName={derivedColours.borderColour}>
 						<Box
 							ref={wrapperRef}
 							width="full"
-							className={styles.input.root}
-						>
+							className={styles.input.root}>
 							{prefixIcon && (
 								<Icon
 									icon={prefixIcon}

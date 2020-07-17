@@ -17,16 +17,14 @@ export const Flyout: FunctionComponent<ComponentPropsWithoutRef<
 			isOpen={isOpen}
 			alignment={alignment}
 			triggerOffset={triggerOffset}
-			{...rest}
-		>
+			{...rest}>
 			<Box
 				className={styles.root}
 				backgroundColour="white"
 				boxShadow="4"
 				borderRadius="1"
 				borderWidth="1"
-				borderColour="gray"
-			>
+				borderColour="gray">
 				{children}
 			</Box>
 		</Positioner>

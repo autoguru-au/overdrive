@@ -56,15 +56,13 @@ export const NotchedBase: FunctionComponent<Props> = ({
 				styles.root,
 				!notch && [styles.borders.complete, borderColourClassName],
 				className,
-			)}
-		>
+			)}>
 			{children}
 			{notch && (
 				<div
 					className={clsx(styles.borders.root.default, {
 						[styles.borders.root.disabled]: disabled,
-					})}
-				>
+					})}>
 					<div
 						className={clsx(
 							styles.borders.leading,
@@ -76,8 +74,7 @@ export const NotchedBase: FunctionComponent<Props> = ({
 							styles.borders.middle,
 							borderColourClassName,
 						)}
-						style={{ width: isEmpty ? 0 : notchedWidth }}
-					>
+						style={{ width: isEmpty ? 0 : notchedWidth }}>
 						<label
 							ref={labelRef}
 							htmlFor={id}
@@ -94,8 +91,7 @@ export const NotchedBase: FunctionComponent<Props> = ({
 									[styles.placeholderPlacement
 										.shifted]: !isEmpty,
 								},
-							)}
-						>
+							)}>
 							{placeholder}
 						</label>
 					</div>

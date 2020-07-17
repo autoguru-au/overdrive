@@ -1,11 +1,11 @@
 import { select } from '@storybook/addon-knobs';
 import * as React from 'react';
 import { useCallback, useRef, useState } from 'react';
+import { Flyout } from '.';
 
 import { Button } from '../Button';
 import { EAlignment } from '../Positioner/alignment';
 import { TextInput } from '../TextInput';
-import { Flyout } from '.';
 
 const alignmentPicker = () =>
 	select('Alignment', EAlignment, EAlignment.BOTTOM_LEFT);
@@ -32,23 +32,20 @@ export const standard = () => {
 					triggerRef={triggerRef}
 					alignment={alignmentPicker()}
 					isOpen={isOpen}
-					onRequestClose={closer}
-				>
+					onRequestClose={closer}>
 					<div
 						style={{
 							display: 'grid',
 							gridTemplateRows: 'repeat(2, auto)',
 							gridGap: '16px',
 							padding: '16px',
-						}}
-					>
+						}}>
 						<TextInput name="example" placeholder="example" />
 						<div>
 							<Button
 								size="small"
 								variant="primary"
-								onClick={closer}
-							>
+								onClick={closer}>
 								Save
 							</Button>
 						</div>

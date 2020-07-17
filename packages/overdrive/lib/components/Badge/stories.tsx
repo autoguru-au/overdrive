@@ -21,16 +21,14 @@ export default {
 					display: 'grid',
 					gridAutoFlow: 'row dense',
 					gridGap: '10px',
-				}}
-			>
+				}}>
 				<div
 					style={{
 						display: 'grid',
 						gap: '10px',
 						gridTemplateColumns:
 							'repeat(auto-fit, minmax(10px, max-content))',
-					}}
-				>
+					}}>
 					{story()}
 				</div>
 			</div>

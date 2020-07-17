@@ -78,8 +78,7 @@ export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 			<Inline
 				alignY="center"
 				alignX={alignmentToFlexAlignment(align)}
-				space="1"
-			>
+				space="1">
 				{align === 'right' && shouldSort ? sorter : null}
 				<Text strong size="2" is="span" className={styles.text}>
 					{children}
@@ -111,8 +110,7 @@ export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 				aria-sort={shouldSort ? sortToAria(sort!) : undefined}
 				aria-label={ariaLabel}
 				className={tableContext.stickyHead && styles.sticky}
-				onClick={sort ? sortClickHandler : undefined}
-			>
+				onClick={sort ? sortClickHandler : undefined}>
 				{sort ? (
 					<Box
 						is="button"
@@ -120,8 +118,7 @@ export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 						width="full"
 						padding={padding}
 						tabIndex={-1}
-						className={styles.sorterButton}
-					>
+						className={styles.sorterButton}>
 						{child}
 					</Box>
 				) : (

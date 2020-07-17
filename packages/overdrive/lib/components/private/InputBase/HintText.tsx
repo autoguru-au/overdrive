@@ -21,8 +21,7 @@ export const HintText: FunctionComponent<Props> = ({
 			is="p"
 			size="2"
 			colour="unset"
-			className={clsx(styles.hintText, className)}
-		>
+			className={clsx(styles.hintText, className)}>
 			{children}
 		</Text>
 	);

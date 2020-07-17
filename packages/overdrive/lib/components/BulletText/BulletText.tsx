@@ -27,8 +27,7 @@ export const BulletText: FunctionComponent<Props> = ({
 			noWrap
 			space="3"
 			className={clsx(styles.root, className)}
-			is="li"
-		>
+			is="li">
 			{isValidElement(Bullet) ? (
 				<Column alignSelf="centre" className={styles.customBullet}>
 					{Bullet}
@@ -37,8 +36,7 @@ export const BulletText: FunctionComponent<Props> = ({
 				<Column alignSelf="centre">
 					<Box
 						className={clsx(styles.bullet, styles.variant[variant])}
-						borderRadius="pill"
-					>
+						borderRadius="pill">
 						<span className={styles.bulletText}>{Bullet}</span>
 					</Box>
 				</Column>

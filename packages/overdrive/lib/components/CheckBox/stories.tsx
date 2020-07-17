@@ -2,12 +2,12 @@ import { action } from '@storybook/addon-actions';
 import { boolean, text } from '@storybook/addon-knobs';
 import * as React from 'react';
 import { useState } from 'react';
+import { CheckBox } from '.';
 
 import { Badge } from '../Badge';
 import { Heading } from '../Heading';
 import { StarRating } from '../StarRating';
 import { Text } from '../Text';
-import { CheckBox } from '.';
 
 const baseProps = () => ({
 	children: text('Checkbox label', 'check me!'),
@@ -128,8 +128,7 @@ export const withComponent = () => {
 				display: 'grid',
 				gridGap: '8px',
 				gridTemplateColumns: '1fr auto',
-			}}
-		>
+			}}>
 			<Text>{label}</Text>
 			<StarRating rating={rating} />
 		</div>
@@ -162,8 +161,7 @@ export const withMultiLineComponent = () => (
 					display: 'grid',
 					gridGap: '8px',
 					gridTemplateColumns: '1fr auto auto',
-				}}
-			>
+				}}>
 				<Heading is="h5">Saved Credit Card</Heading>
 				<Badge colour="neutral" label="SUBSCRIBE" />
 				<Badge colour="neutral" label="AUTO TOP-UP" />
@@ -173,8 +171,7 @@ export const withMultiLineComponent = () => (
 						display: 'grid',
 						gridGap: '8px',
 						gridTemplateColumns: '1fr auto',
-					}}
-				>
+					}}>
 					<Text size={2}>Ending in 5678</Text>
 					<Text size={2}>Updated 12 Dec 2018</Text>
 				</div>
@@ -186,8 +183,7 @@ export const withMultiLineComponent = () => (
 					display: 'grid',
 					gridGap: '8px',
 					gridTemplateColumns: '1fr auto',
-				}}
-			>
+				}}>
 				<Heading is="h5">Saved Debit Card</Heading>
 				<Badge colour="neutral" label="SUBSCRIBE" />
 				<div
@@ -196,8 +192,7 @@ export const withMultiLineComponent = () => (
 						display: 'grid',
 						gridGap: '8px',
 						gridTemplateColumns: '1fr auto',
-					}}
-				>
+					}}>
 					<Text size={2}>Ending in 1234</Text>
 					<Text size={2}>Updated 17 Oct 2019</Text>
 				</div>

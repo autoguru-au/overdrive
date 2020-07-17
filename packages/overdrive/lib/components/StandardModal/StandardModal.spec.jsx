@@ -32,8 +32,7 @@ describe('<StandardModal />', () => {
 			<StandardModal
 				isOpen
 				title={testTitle}
-				onRequestClose={mockCloseReq}
-			>
+				onRequestClose={mockCloseReq}>
 				<p>{testBodyText}</p>
 			</StandardModal>,
 		);

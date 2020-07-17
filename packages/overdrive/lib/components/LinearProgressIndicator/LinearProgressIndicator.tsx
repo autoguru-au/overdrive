@@ -16,8 +16,7 @@ export const LinearProgressIndicator: NamedExoticComponent<Props> = memo(
 		return (
 			<Box
 				className={clsx([styles.root, className])}
-				backgroundColour="gray200"
-			>
+				backgroundColour="gray200">
 				<div className={styles.linearProgressBar}>
 					<Box
 						is="span"

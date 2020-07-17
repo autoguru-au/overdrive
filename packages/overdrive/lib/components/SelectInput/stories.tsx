@@ -41,8 +41,7 @@ export const withHintText = () => (
 	<SelectInput
 		name="abc"
 		placeholder="Select one"
-		hintText={text('Hint Text', 'Cannot select option 3')}
-	>
+		hintText={text('Hint Text', 'Cannot select option 3')}>
 		<option disabled />
 		{selectOptions('Option 1, Option 2, Option 3')}
 	</SelectInput>
@@ -52,8 +51,7 @@ export const withIcon = () => (
 		<SelectInput
 			name="abc"
 			placeholder="Select one"
-			prefixIcon={CalendarIcon}
-		>
+			prefixIcon={CalendarIcon}>
 			<option disabled />
 			{selectOptions('Option 1, Option 2, Option 3')}
 		</SelectInput>
@@ -63,8 +61,7 @@ export const withIcon = () => (
 			isValid
 			name="abc"
 			placeholder="Select one"
-			prefixIcon={AccountEditIcon}
-		>
+			prefixIcon={AccountEditIcon}>
 			<option disabled />
 			{selectOptions('Option 1, Option 2, Option 3')}
 		</SelectInput>
@@ -73,8 +70,7 @@ export const withIcon = () => (
 			name="abc"
 			placeholder="Select one"
 			prefixIcon={AccountEditIcon}
-			isValid={false}
-		>
+			isValid={false}>
 			<option disabled />
 			{selectOptions('Option 1, Option 2, Option 3')}
 		</SelectInput>
@@ -84,8 +80,7 @@ export const withIcon = () => (
 			name="abc"
 			placeholder="Select one"
 			prefixIcon={AccountEditIcon}
-			isValid={false}
-		>
+			isValid={false}>
 			<option disabled />
 			{selectOptions('Option 1, Option 2, Option 3')}
 		</SelectInput>
@@ -97,8 +92,7 @@ export const withValidation = () => (
 		isValid={isValid(false)}
 		isTouched={isTouched(false)}
 		placeholder="Select one"
-		hintText={text('Hint Text', 'Cannot select option 3')}
-	>
+		hintText={text('Hint Text', 'Cannot select option 3')}>
 		<option disabled />
 		{selectOptions('Option 1, Option 2, Option 3')}
 	</SelectInput>

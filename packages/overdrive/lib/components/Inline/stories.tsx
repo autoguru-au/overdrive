@@ -1,9 +1,9 @@
 import * as React from 'react';
+import { Inline } from '.';
 
 import { Button } from '../Button';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
-import { Inline } from '.';
 
 export default {
 	title: 'Foundation|Layout/Inline',
@@ -38,8 +38,7 @@ export const CustomDividers = () => (
 					height: '6px',
 				}}
 			/>
-		}
-	>
+		}>
 		<Text>Mazda</Text>
 		<Text>CX3</Text>
 		<Text>Petrol</Text>

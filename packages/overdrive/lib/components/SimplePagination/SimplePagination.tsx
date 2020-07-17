@@ -55,8 +55,7 @@ export const SimplePagination: NamedExoticComponent<Props> = memo(
 					variant="secondary"
 					className={chevronLeftCls}
 					aria-label="previous page"
-					onClick={handleClick(EChangeDirection.Previous)}
-				>
+					onClick={handleClick(EChangeDirection.Previous)}>
 					<Icon
 						className={styles.icon.default}
 						size="medium"
@@ -70,8 +69,7 @@ export const SimplePagination: NamedExoticComponent<Props> = memo(
 					variant="secondary"
 					className={chevronRightCls}
 					aria-label="next page"
-					onClick={handleClick(EChangeDirection.Next)}
-				>
+					onClick={handleClick(EChangeDirection.Next)}>
 					<Icon
 						className={styles.icon.default}
 						size="medium"

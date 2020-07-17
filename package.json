@@ -39,8 +39,9 @@
 	},
 	"browserslist": "extends browserslist-config-autoguru",
 	"prettier": {
-		"bracketSpacing": true,
 		"printWidth": 80,
+		"bracketSpacing": true,
+		"jsxBracketSameLine": true,
 		"proseWrap": "always",
 		"singleQuote": true,
 		"tabWidth": 4,

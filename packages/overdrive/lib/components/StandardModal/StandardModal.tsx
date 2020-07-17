@@ -62,8 +62,7 @@ export const StandardModal: FunctionComponent<Props> = ({
 				className={styles.container}
 				aria-hidden={isOpen ? 'false' : 'true'}
 				role="none presentation"
-				onClick={backdropHandler}
-			>
+				onClick={backdropHandler}>
 				<Box
 					is="article"
 					role="dialog"
@@ -73,16 +72,16 @@ export const StandardModal: FunctionComponent<Props> = ({
 						styles.modal,
 						{ [styles.modalSizeStandard]: size === 'standard' },
 						className,
-					])}
-				>
+					])}>
 					<header
-						className={clsx(styles.header, styles.headerWithBorder)}
-					>
+						className={clsx(
+							styles.header,
+							styles.headerWithBorder,
+						)}>
 						<button
 							className={styles.headerCloseButton}
 							aria-label="close"
-							onClick={closeButtonHandler}
-						>
+							onClick={closeButtonHandler}>
 							<Icon size="medium" icon={WindowCloseIcon} />
 						</button>
 						<div className={styles.headerTitle} id={titleId!}>

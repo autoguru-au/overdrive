@@ -16,8 +16,7 @@ describe('<Positioner />', () => {
 			<Positioner
 				isOpen
 				triggerRef={createRef()}
-				alignment={EAlignment.BOTTOM}
-			>
+				alignment={EAlignment.BOTTOM}>
 				Some body
 			</Positioner>,
 		);
@@ -31,8 +30,7 @@ describe('<Positioner />', () => {
 				<Positioner
 					isOpen
 					triggerRef={createRef()}
-					alignment={EAlignment.BOTTOM}
-				>
+					alignment={EAlignment.BOTTOM}>
 					Some body
 				</Positioner>,
 			);
@@ -44,8 +42,7 @@ describe('<Positioner />', () => {
 			const { baseElement } = render(
 				<Positioner
 					triggerRef={createRef()}
-					alignment={EAlignment.BOTTOM}
-				>
+					alignment={EAlignment.BOTTOM}>
 					Some body
 				</Positioner>,
 			);

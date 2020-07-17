@@ -63,8 +63,7 @@ export const CheckableBase: FunctionComponent<Props> = ({
 			<label
 				className={clsx(styles.tappable, styles.label.default, {
 					[styles.label.disabled]: disabled,
-				})}
-			>
+				})}>
 				{nakedLabel ? <Text is="span">{label}</Text> : label}
 			</label>
 		</Box>

@@ -58,8 +58,7 @@ export const Tooltip: FunctionComponent<Props> = ({
 			<Positioner
 				triggerRef={triggerRef}
 				alignment={alignment}
-				isOpen={isOpen}
-			>
+				isOpen={isOpen}>
 				<Box
 					ref={childRef}
 					className={styles.root}
@@ -68,8 +67,7 @@ export const Tooltip: FunctionComponent<Props> = ({
 					borderRadius="1"
 					boxShadow="4"
 					backgroundColour="gray900"
-					padding="4"
-				>
+					padding="4">
 					<Text colour="white">{label}</Text>
 				</Box>
 			</Positioner>

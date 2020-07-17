@@ -28,8 +28,7 @@ export const Icon: NamedExoticComponent<Props> = memo(
 					resolveResponsiveStyle(size, styles.size),
 					className,
 				]}
-				role="presentation"
-			>
+				role="presentation">
 				{cloneElement(icon, {
 					className: useBoxStyles({
 						is: 'svg',

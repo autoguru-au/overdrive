@@ -1,9 +1,9 @@
 import * as React from 'react';
+import { TextContainer } from '.';
 
 import { Button } from '../Button';
 import { Heading } from '../Heading';
 import { Text } from '../Text';
-import { TextContainer } from '.';
 
 export default {
 	title: 'Components|TextContainer',
@@ -37,8 +37,7 @@ export const withInteraction = () => (
 			<Button variant="secondary" size="small">
 				Edit
 			</Button>
-		}
-	>
+		}>
 		<Text muted is="p">
 			All of our reviews are from verified customers.
 		</Text>
@@ -51,8 +50,7 @@ export const withInteractionOnly = () => (
 			<Button variant="secondary" size="small">
 				Edit
 			</Button>
-		}
-	>
+		}>
 		<Text muted is="p">
 			All of our reviews are from verified customers.
 		</Text>
@@ -66,8 +64,7 @@ export const withLongTitle = () => (
 			<Button variant="secondary" size="small">
 				Edit
 			</Button>
-		}
-	>
+		}>
 		<Text muted is="p">
 			All of our reviews are from verified customers.
 		</Text>

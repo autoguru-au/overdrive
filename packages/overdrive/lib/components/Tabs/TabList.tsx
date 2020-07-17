@@ -121,16 +121,14 @@ export const TabList: FunctionComponent<Props> = ({
 			className={[
 				styles.root.default,
 				shouldShowScrollButtons && styles.root.scroll,
-			]}
-		>
+			]}>
 			{shouldShowScrollButtons ? (
 				<Button
 					minimal
 					rounded
 					size="small"
 					disabled={!displayScroll.start}
-					onClick={handleStartButton}
-				>
+					onClick={handleStartButton}>
 					<Icon icon={ArrowLeftIcon} />
 				</Button>
 			) : null}
@@ -140,16 +138,14 @@ export const TabList: FunctionComponent<Props> = ({
 					stretch && styles.listWrapper.stretch,
 					scrollable && styles.listWrapper.scroll,
 				]}
-				onScroll={handleOnScroll}
-			>
+				onScroll={handleOnScroll}>
 				<Box
 					ref={innerRef}
 					role="tablist"
 					className={[
 						styles.list.default,
 						stretch && styles.list.stretch,
-					]}
-				>
+					]}>
 					{childs}
 				</Box>
 			</Box>
@@ -159,8 +155,7 @@ export const TabList: FunctionComponent<Props> = ({
 					rounded
 					size="small"
 					disabled={!displayScroll.end}
-					onClick={handleEndButton}
-				>
+					onClick={handleEndButton}>
 					<Icon icon={ArrowRightIcon} />
 				</Button>
 			) : null}

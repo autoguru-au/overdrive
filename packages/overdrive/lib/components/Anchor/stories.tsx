@@ -1,8 +1,8 @@
 import { PhoneIcon } from '@autoguru/icons';
 import * as React from 'react';
+import { Anchor } from '.';
 
 import { Button } from '../Button';
-import { Anchor } from '.';
 
 export default {
 	title: 'Foundation|Typography/Anchor',

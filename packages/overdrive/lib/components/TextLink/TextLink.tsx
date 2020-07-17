@@ -61,8 +61,7 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 				fontWeight={fontWeight}
 				className={clsx(styles.root, {
 					[styles.muted]: muted,
-				})}
-			>
+				})}>
 				{children}
 			</Text>
 		);

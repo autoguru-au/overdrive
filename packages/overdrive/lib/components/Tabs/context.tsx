@@ -24,8 +24,7 @@ export const TabsContextProvider: FunctionComponent<ContextType<
 			active,
 			id,
 			onChange,
-		}}
-	>
+		}}>
 		{children}
 	</TabsContext.Provider>
 );

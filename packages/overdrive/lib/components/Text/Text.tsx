@@ -39,8 +39,7 @@ export const Text: FunctionComponent<Props> = ({
 				noWrap,
 			}),
 			className,
-		]}
-	>
+		]}>
 		{children}
 	</Box>
 );

@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
+import { Tab, TabList, TabPane, TabPanes, Tabs } from '.';
 
 import { Stack } from '../Stack';
 import { StarRating } from '../StarRating';
-import { Tab, TabList, TabPane, TabPanes, Tabs } from '.';
 
 export default { title: 'Components|Tabs' };
 

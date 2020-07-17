@@ -173,8 +173,7 @@ export const Stepper: NamedExoticComponent<Props> = memo(
 				padding="3"
 				borderRadius="1"
 				boxShadow="2"
-				onKeyDown={keyDownHandler}
-			>
+				onKeyDown={keyDownHandler}>
 				<Box
 					is="button"
 					className={[
@@ -187,8 +186,7 @@ export const Stepper: NamedExoticComponent<Props> = memo(
 					borderRadius="full"
 					disabled={isDisabled}
 					tabIndex={-1}
-					onClick={onDecrement}
-				>
+					onClick={onDecrement}>
 					<Icon icon={MinusIcon} size="small" />
 				</Box>
 				<Text is="span" className={styles.label} size="4">
@@ -206,8 +204,7 @@ export const Stepper: NamedExoticComponent<Props> = memo(
 					aria-label="step up"
 					disabled={isDisabled}
 					tabIndex={-1}
-					onClick={onIncrement}
-				>
+					onClick={onIncrement}>
 					<Icon icon={PlusIcon} size="small" />
 				</Box>
 			</Box>

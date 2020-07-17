@@ -32,8 +32,7 @@ export const TabPane: FunctionComponent<{ id?: string }> = ({
 			tabIndex={0}
 			role="tabpanel"
 			id={myId}
-			width="full"
-		>
+			width="full">
 			{children}
 		</Box>
 	);

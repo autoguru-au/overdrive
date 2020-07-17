@@ -49,8 +49,7 @@ export const Bullet: FunctionComponent<Props> = ({ children, className }) => {
 						children.type === BulletList,
 				},
 				className,
-			)}
-		>
+			)}>
 			{children}
 		</Box>
 	);

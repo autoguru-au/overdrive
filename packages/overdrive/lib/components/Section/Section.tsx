@@ -20,8 +20,7 @@ export const Section: FunctionComponent<Props> = ({
 	return (
 		<Box
 			className={clsx(styles.root, styles.width[width!])}
-			paddingX={paddingX}
-		>
+			paddingX={paddingX}>
 			{children}
 		</Box>
 	);

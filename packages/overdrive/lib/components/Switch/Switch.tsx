@@ -55,8 +55,7 @@ const SwitchComponent: FunctionComponent<Props> = ({
 			)}
 			aria-disabled={disabled}
 			aria-label={`toggle ${toggled ? 'on' : 'off'}`}
-			onClick={onToggle}
-		>
+			onClick={onToggle}>
 			<span
 				className={clsx(styles.handle.default, {
 					[styles.handle.transition]: toggled,

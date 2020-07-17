@@ -2,10 +2,10 @@ import { action } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
 import * as React from 'react';
 import { useCallback, useState } from 'react';
+import { Modal } from '.';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
-import { Modal } from '.';
 
 const Body = ({ children }) => (
 	<Box backgroundColour="white" padding="5" borderRadius="2">
@@ -24,8 +24,7 @@ export default {
 export const Standard = () => (
 	<Modal
 		isOpen={boolean('isOpen', true)}
-		onRequestClose={action('onRequestClose')}
-	>
+		onRequestClose={action('onRequestClose')}>
 		<Body>
 			<p>Hello, I am a modal body!</p>
 		</Body>
@@ -63,8 +62,7 @@ export const CloseByInternalButton = () => {
 		<>
 			<Button
 				variant="primary"
-				onClick={useCallback(() => setIsOpen(true), [])}
-			>
+				onClick={useCallback(() => setIsOpen(true), [])}>
 				Click Me
 			</Button>
 			<Modal isOpen={isOpen}>

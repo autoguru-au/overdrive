@@ -63,8 +63,7 @@ export const Modal: FunctionComponent<Props> = ({
 							isOpen ? styles.root.fadeIn : styles.root.fadeOut,
 						],
 					])}
-					onAnimationEnd={onAnimationEnd}
-				>
+					onAnimationEnd={onAnimationEnd}>
 					<Backdrop
 						invisible={hideBackdrop}
 						onClick={handleBackdropClick}

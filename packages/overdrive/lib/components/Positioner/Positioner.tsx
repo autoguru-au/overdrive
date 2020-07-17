@@ -145,8 +145,7 @@ export const Positioner: FunctionComponent<Props> = ({
 				{...boxProps}
 				ref={handleRef}
 				className={styles.root}
-				aria-hidden={!isOpen}
-			>
+				aria-hidden={!isOpen}>
 				{isOpen ? children : null}
 			</Box>
 		</Portal>

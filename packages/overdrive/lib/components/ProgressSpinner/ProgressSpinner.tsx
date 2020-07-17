@@ -23,8 +23,7 @@ export const ProgressSpinner = memo<Props>(
 					styles.size[size].circular,
 					styles.colours[colour],
 					className,
-				])}
-			>
+				])}>
 				<svg className={styles.circular} viewBox="25 25 50 50">
 					<circle
 						className={clsx(styles.path, styles.size[size].path)}

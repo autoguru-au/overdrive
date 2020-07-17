@@ -136,8 +136,7 @@ describe('<RadioButton />', () => {
 				<RadioGroup
 					name="radio"
 					value="2"
-					onChange={spyedChangeCallback}
-				>
+					onChange={spyedChangeCallback}>
 					<Radio children="radio label 1" value="1" />
 					<Radio children="radio label 2" value="2" />
 					<Radio children="radio label 3" value="3" />

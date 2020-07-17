@@ -31,8 +31,7 @@ export const ProgressBarGroup: FunctionComponent<Props> = ({
 				gridTemplateColumns: `${hasPrefixLabels ? 'auto ' : ''}1fr${
 					hasSuffixLabels ? ' auto' : ''
 				}`,
-			}}
-		>
+			}}>
 			{values.map((value, idx) => (
 				<Fragment key={idx}>
 					<Text size="3" align="right" colour="light">

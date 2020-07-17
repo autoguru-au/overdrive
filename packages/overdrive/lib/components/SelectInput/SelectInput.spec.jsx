@@ -109,8 +109,7 @@ describe('<SelectInput />', () => {
 				<SelectInput
 					isTouched
 					placeholder="Hello World!"
-					isValid={false}
-				>
+					isValid={false}>
 					<option value="a">Value 1</option>
 					<option value="b">Value 2</option>
 					<option value="c">Value 3</option>

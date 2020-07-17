@@ -1,8 +1,8 @@
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
+import { Alert } from '.';
 
 import { Text } from '../Text';
-import { Alert } from '.';
 
 export default { title: 'Components|Alert', component: Alert };
 
@@ -12,8 +12,7 @@ export const Standard = () => (
 			display: 'grid',
 			gridAutoFlow: 'row dense',
 			gridGap: '24px',
-		}}
-	>
+		}}>
 		<div>
 			<Alert intent="success" onRequestClose={action('onRequestClose')}>
 				<Text>
@@ -48,8 +47,7 @@ export const Inline = () => (
 			display: 'grid',
 			gridAutoFlow: 'row dense',
 			gridGap: '24px',
-		}}
-	>
+		}}>
 		<div>
 			<Alert inline intent="success">
 				<Text>
@@ -84,8 +82,7 @@ export const NonDismissible = () => (
 			display: 'grid',
 			gridAutoFlow: 'row dense',
 			gridGap: '24px',
-		}}
-	>
+		}}>
 		<div>
 			<Alert intent="success" dismissible={false}>
 				<Text>

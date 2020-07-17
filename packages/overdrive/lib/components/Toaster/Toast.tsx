@@ -182,8 +182,7 @@ const Toast: FunctionComponent<
 			dismissible
 			intent={intent}
 			className={styles.alert}
-			onRequestClose={dismiss}
-		>
+			onRequestClose={dismiss}>
 			{message}
 		</Alert>
 	);

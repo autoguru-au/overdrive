@@ -1,10 +1,10 @@
 import * as React from 'react';
+import { ToastProvider, useToast } from '.';
 
 import { Actions } from '../Actions';
 import { Button } from '../Button';
 import { StandardModal } from '../StandardModal';
 import { Text } from '../Text';
-import { ToastProvider, useToast } from '.';
 
 export default {
 	title: 'Utility|Toaster',
@@ -35,8 +35,7 @@ export const Standard = () => {
 							Im some text, which is <Text strong>bolded!</Text>
 						</Text>,
 					)
-				}
-			>
+				}>
 				Custom
 			</Button>
 		</Actions>

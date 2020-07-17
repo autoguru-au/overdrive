@@ -61,8 +61,7 @@ export const Alert: FunctionComponent<Props> = ({
 			backgroundColour="white"
 			borderRadius="1"
 			boxShadow={inline ? 'none' : '4'}
-			padding="2"
-		>
+			padding="2">
 			<Icon
 				icon={IconMapForIntent[intent]}
 				size="medium"
@@ -83,8 +82,7 @@ export const Alert: FunctionComponent<Props> = ({
 					size="small"
 					className={styles.closeButton}
 					aria-label="close"
-					onClick={onRequestClose}
-				>
+					onClick={onRequestClose}>
 					<Icon
 						className={styles.closeButtonIcon}
 						icon={WindowCloseIcon}

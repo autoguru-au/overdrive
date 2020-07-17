@@ -46,8 +46,7 @@ export const CheckBox: FunctionComponent<Props> = memo(
 				disabled={disabled}
 				checked={checked}
 				handleClick={onClick}
-				handleChange={onChange}
-			>
+				handleChange={onChange}>
 				<div className={checkable}>
 					{checked && (
 						<Icon

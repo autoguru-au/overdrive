@@ -2,11 +2,11 @@ import { action } from '@storybook/addon-actions';
 import { select } from '@storybook/addon-knobs';
 import * as React from 'react';
 import { createRef, useCallback, useRef, useState } from 'react';
+import { EPositionerAlignment, Positioner } from '.';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
-import { EPositionerAlignment, Positioner } from '.';
 
 const alignmentPicker = () =>
 	select('Alignment', EPositionerAlignment, EPositionerAlignment.BOTTOM_LEFT);
@@ -35,16 +35,14 @@ export const standard = () => {
 					isOpen={isOpen}
 					triggerRef={triggerRef}
 					alignment={alignmentPicker()}
-					onRequestClose={closeHandler}
-				>
+					onRequestClose={closeHandler}>
 					<Box
 						boxShadow={1}
 						backgroundColour="white"
 						borderRadius="1"
 						borderWidth={1}
 						borderColour="gray"
-						padding="2"
-					>
+						padding="2">
 						<Text is="p">
 							Hello im from the consumer:{' '}
 							{Math.ceil(Math.random() * 100)}
@@ -66,20 +64,17 @@ export const illustrateAScroll = () => {
 			style={{
 				height: '100%',
 				width: '100%',
-			}}
-		>
+			}}>
 			<div
 				style={{
 					height: 'calc(100vh*5)',
 					width: 'calc(100vw*5)',
-				}}
-			>
+				}}>
 				<div
 					style={{
 						paddingTop: 'calc((100vh*5) / 2)',
 						paddingLeft: 'calc((100vw*5) / 2)',
-					}}
-				>
+					}}>
 					<Button ref={triggerRef} size="small">
 						I'm the trigger
 					</Button>
@@ -89,16 +84,14 @@ export const illustrateAScroll = () => {
 					isOpen
 					triggerRef={triggerRef}
 					alignment={alignmentPicker()}
-					onRequestClose={action('onRequestClose')}
-				>
+					onRequestClose={action('onRequestClose')}>
 					<Box
 						boxShadow={1}
 						backgroundColour="white"
 						borderRadius="1"
 						borderWidth={1}
 						borderColour="gray"
-						padding="2"
-					>
+						padding="2">
 						<Text is="p">
 							Hello im from the consumer:{' '}
 							{Math.ceil(Math.random() * 100)}

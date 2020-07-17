@@ -35,14 +35,12 @@ export const Badge = memo<Props>(
 					]}
 					overflow="hidden"
 					padding="1"
-					borderRadius="1"
-				>
+					borderRadius="1">
 					<Box
 						is="span"
 						display="block"
 						className={styles.label}
-						overflow="hidden"
-					>
+						overflow="hidden">
 						{label}
 					</Box>
 				</Box>

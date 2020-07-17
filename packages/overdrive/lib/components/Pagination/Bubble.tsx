@@ -34,8 +34,7 @@ export const Bubble: FunctionComponent<Props> = ({
 					[styles.bubble.gap]: gap,
 				},
 			)}
-			{...rest}
-		>
+			{...rest}>
 			{gap ? '...' : children}
 		</Box>
 	);

@@ -34,8 +34,7 @@ const renderTabs = (
 					<Tab
 						key={tabData.title}
 						id={custoId ? custoId(tabData, idx) : null}
-						indication={renderIndication ? 5 : null}
-					>
+						indication={renderIndication ? 5 : null}>
 						{tabData.title}
 					</Tab>
 				))}
@@ -44,8 +43,7 @@ const renderTabs = (
 				{tabData.map((tabData, idx) => (
 					<TabPane
 						key={tabData.title}
-						id={custoId ? custoId(tabData, idx) : null}
-					>
+						id={custoId ? custoId(tabData, idx) : null}>
 						{tabData.content}
 					</TabPane>
 				))}

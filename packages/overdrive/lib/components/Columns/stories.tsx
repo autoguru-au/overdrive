@@ -1,7 +1,7 @@
 import * as React from 'react';
+import { Column, Columns } from '.';
 
 import { Box } from '../Box';
-import { Column, Columns } from '.';
 
 export default {
 	title: 'Foundation|Layout/Columns',
@@ -22,8 +22,7 @@ export const Standard = () => (
 				padding="4"
 				borderRadius="1"
 				backgroundColour="green100"
-				style={{ width: '100%', height: '100%' }}
-			>
+				style={{ width: '100%', height: '100%' }}>
 				Col 1
 			</Box>
 		</Column>
@@ -34,8 +33,7 @@ export const Standard = () => (
 				padding="4"
 				borderRadius="1"
 				backgroundColour="red100"
-				style={{ width: '100%', height: '100%' }}
-			>
+				style={{ width: '100%', height: '100%' }}>
 				Col 2
 			</Box>
 		</Column>
@@ -46,8 +44,7 @@ export const Standard = () => (
 				padding="4"
 				borderRadius="1"
 				backgroundColour="blue100"
-				style={{ width: '100%', height: '100%' }}
-			>
+				style={{ width: '100%', height: '100%' }}>
 				Col 3
 			</Box>
 		</Column>
@@ -58,8 +55,7 @@ export const Standard = () => (
 				padding="4"
 				borderRadius="1"
 				backgroundColour="yellow100"
-				style={{ width: '100%', height: '500px' }}
-			>
+				style={{ width: '100%', height: '500px' }}>
 				Col 4
 			</Box>
 		</Column>

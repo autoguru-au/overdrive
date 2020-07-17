@@ -25,11 +25,9 @@ export const BulletList: FunctionComponent<Props> = ({
 				styles.root,
 				{ [styles.firstOccurrence]: stack === -1 },
 				className,
-			)}
-		>
+			)}>
 			<BulletListContext.Provider
-				value={stack + 1 >= bulletMap.length ? 0 : stack + 1}
-			>
+				value={stack + 1 >= bulletMap.length ? 0 : stack + 1}>
 				{children}
 			</BulletListContext.Provider>
 		</Box>
