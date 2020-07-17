@@ -1,0 +1,14 @@
+{
+	"extends": "../packages/overdrive/tsconfig.json",
+	"compilerOptions": {
+		"rootDir": "../",
+		"jsx": "react",
+		"outDir": "./dist",
+		"composite": true
+	},
+	"include": [
+		"../packages/overdrive/lib/themes/treatTheme.d.ts",
+		"../packages/overdrive/lib/**/stories.tsx"
+	],
+	"exclude": []
+}

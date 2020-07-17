@@ -32,13 +32,15 @@ const ThemeProviderSetter = ({ api }) => {
 				alignSelf: 'center',
 				gridAutoFlow: 'column dense',
 				gridGap: 10,
-			}}>
+			}}
+		>
 			<label htmlFor="theme">Theme:</label>
 			<select
 				id="theme"
 				name="theme"
 				value={values.theme}
-				onChange={onThemeChange}>
+				onChange={onThemeChange}
+			>
 				{THEMES.map((theme) => (
 					<option value={theme} key={theme}>
 						{theme}

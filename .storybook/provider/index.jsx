@@ -1,14 +1,14 @@
-import '../../lib/reset/font-face.css';
-import '../../lib/reset';
+import '../../packages/overdrive/lib/reset/font-face.css';
+import '../../packages/overdrive/lib/reset';
 
 import addons, { makeDecorator } from '@storybook/addons';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
-import { OverdriveProvider } from '../../lib/components/OverdriveProvider';
+import { OverdriveProvider } from '../../packages/overdrive/lib/components/OverdriveProvider';
 
 import * as themeRefs from '../../themes';
-import { Box, Heading, Stack } from '../../lib/components';
+import { Box, Heading, Stack } from '../../packages/overdrive/lib/components';
 
 const THEMES = new Map(Object.entries(themeRefs));
 

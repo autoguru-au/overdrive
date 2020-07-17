@@ -1,8 +1,0 @@
-@import './facade';
-
-// Consumption of imports.
-@include generateGlobalColourVariables();
-@include generateGlobalSpaceVariables();
-@include generateGlobalFontSizeVariables();
-@include generateGlobalScreenSizeVariables();
-@include generateGlobalElevationBoxShadowVariables();

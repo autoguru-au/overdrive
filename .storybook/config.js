@@ -4,7 +4,6 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { configureActions } from '@storybook/addon-actions';
 import { withA11y } from '@storybook/addon-a11y';
 
-import { tokens as baseThemeTokens } from '../lib/themes/base/tokens';
 import { withOverdriveProvider } from './provider';
 
 configureActions({
@@ -20,10 +19,10 @@ addParameters({
 	options: {
 		theme: create({
 			base: 'light',
-			colorPrimary: baseThemeTokens.colours.gamut.gray700,
-			colorSecondary: baseThemeTokens.colours.gamut.green500,
-			appBg: baseThemeTokens.colours.gamut.gray100,
-			textColor: baseThemeTokens.colours.gamut.gray900,
+			colorPrimary: '#484c5f',
+			colorSecondary: '#00dd95',
+			appBg: '#fafbfc',
+			textColor: '#212338',
 		}),
 		showNav: true,
 		enableShortcuts: false,
@@ -35,4 +34,7 @@ addParameters({
 	},
 });
 
-configure(require.context('../lib', true, /.?stories.tsx$/), module);
+configure(
+	require.context('../packages/overdrive/lib', true, /.?stories.tsx$/),
+	module,
+);

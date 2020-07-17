@@ -1,8 +1,0 @@
-{
-	"extends": "./tsconfig.json",
-	"compilerOptions": {
-		"rootDir": "./"
-	},
-	"include": ["./lib/themes/treatTheme.d.ts", "./lib/**/stories.tsx"],
-	"exclude": []
-}
