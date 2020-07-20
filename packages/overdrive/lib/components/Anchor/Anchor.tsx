@@ -13,7 +13,7 @@ import { useStyles } from 'react-treat';
 
 import { useBoxStyles } from '../Box';
 import { Icon } from '../Icon';
-import { Text } from '../Text';
+import { Text, useTextStyles } from '../Text';
 import * as styleRefs from './Anchor.treat';
 
 export interface Props {
@@ -45,12 +45,22 @@ export const Anchor: FunctionComponent<Props> = ({
 	icon = undefined,
 }) => {
 	const styles = useStyles(styleRefs);
+	const textStyles = useTextStyles({
+		colour: 'link',
+	});
+	const iconWithTextStyles = useBoxStyles({ marginRight: '2' });
 
 	const props = {
 		className: clsx(
 			styles.root,
+			textStyles,
 			useBoxStyles({
 				is: typeof Component === 'string' ? Component : undefined,
+				display: 'flex',
+				alignContent: 'center',
+				alignItems: 'center',
+				flexDirection: 'row',
+				justifyContent: 'flexStart',
 			}),
 			className,
 		),
@@ -67,12 +77,12 @@ export const Anchor: FunctionComponent<Props> = ({
 				<Icon
 					icon={icon}
 					size="small"
-					className={clsx(styles.icon, {
-						[styles.iconWithText]: Boolean(children),
+					className={clsx(textStyles, {
+						[iconWithTextStyles]: Boolean(children),
 					})}
 				/>
 			)}
-			<Text fontWeight="bold" colour="link">
+			<Text fontWeight="bold" size="3" colour="link">
 				{children}
 			</Text>
 		</>
