@@ -4,6 +4,7 @@ import { memo } from 'react';
 import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
+import { useTextStyles } from '../Text';
 import * as styleRefs from './Badge.treat';
 
 export interface Props {
@@ -17,6 +18,12 @@ export interface Props {
 export const Badge = memo<Props>(
 	({ label, colour = 'neutral', look = 'standard', className = '' }) => {
 		const styles = useStyles(styleRefs);
+		const textStyles = useTextStyles({
+			size: '2',
+			noWrap: true,
+			fontWeight: 'semiBold',
+			colour: 'white',
+		});
 		const inverted = look === 'inverted';
 
 		invariant(
@@ -28,19 +35,24 @@ export const Badge = memo<Props>(
 			<Box display="flex">
 				<Box
 					className={[
-						styles.colours[colour][
-							inverted ? 'inverted' : 'default'
-						],
 						className,
+						inverted
+							? styles.colours.inverted[colour].background
+							: styles.colours.default[colour],
 					]}
 					overflow="hidden"
+					display="block"
 					padding="1"
 					borderRadius="1">
 					<Box
 						is="span"
 						display="block"
-						className={styles.label}
-						overflow="hidden">
+						overflow="hidden"
+						className={[
+							styles.label,
+							textStyles,
+							inverted && styles.colours.inverted[colour].text,
+						]}>
 						{label}
 					</Box>
 				</Box>
