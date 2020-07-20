@@ -11889,10 +11889,10 @@ pkg-up@^3.1.0:
   dependencies:
     find-up "^3.0.0"
 
-playroom@0.21.0:
-  version "0.21.0"
-  resolved "https://registry.yarnpkg.com/playroom/-/playroom-0.21.0.tgz#9c7278a9df3d6330316c7146f33bf4cf1cbbd09c"
-  integrity sha512-xABggZFo8ij4bhHEYfOOPThegX45mZG9RMmkQIpjwZ06ygtVHWHQH6yi6G3+57xriJrhwjnEPVf4FR5l4P2F0w==
+playroom@0.21.2:
+  version "0.21.2"
+  resolved "https://registry.yarnpkg.com/playroom/-/playroom-0.21.2.tgz#e898630599c8fcbce8a3084a053d7d22662e74a1"
+  integrity sha512-i93r8AVQovR2jJMNC/3hPW6n235btU6eB/EgoJWdSWKggIu7Zw/ZxGsvpmhFIDcE/GZTyKRM04yG03Ki1fViFw==
   dependencies:
     "@babel/cli" "^7.8.3"
     "@babel/core" "^7.8.3"
