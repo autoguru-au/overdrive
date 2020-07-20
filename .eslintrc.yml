@@ -1,28 +1,35 @@
 extends:
-  - 'plugin:@autoguru/base'
-  - 'plugin:@autoguru/react'
-  - 'plugin:@autoguru/jest'
+    - 'plugin:@autoguru/base'
+    - 'plugin:@autoguru/react'
+    - 'plugin:@autoguru/jest'
 
 env:
-  jest: true
-  node: true
-  browser: true
+    jest: true
+    node: true
+    browser: true
 
 rules:
-  unicorn/no-abusive-eslint-disable: off
+    unicorn/no-abusive-eslint-disable: off
 
 overrides:
-  - files: '{*,{scripts,config}/**/*}.js'
-    rules:
-      'unicorn/no-process-exit': 'off'
-  - files: ['**/*.ts', '**/*.tsx']
-    extends:
-      - 'plugin:@autoguru/typescript'
-    rules:
-      'unicorn/consistent-function-scoping': off # Yet
-      'react/require-default-props': warn
-      '@typescript-eslint/prefer-optional-chain': error
-      '@typescript-eslint/no-unnecessary-type-assertion': off
-    parser: '@typescript-eslint/parser'
-    parserOptions:
-      project: ['./tsconfig.stories.json', './tsconfig.json']
+    - files: '{*,{scripts,config}/**/*}.js'
+      rules:
+          'unicorn/no-process-exit': 'off'
+    - files: ['**/*.ts', '**/*.tsx']
+      extends:
+          - 'plugin:@autoguru/typescript'
+      rules:
+          'unicorn/consistent-function-scoping': off # Yet
+          'react/require-default-props': warn
+          '@typescript-eslint/prefer-optional-chain': error
+          '@typescript-eslint/no-unnecessary-type-assertion': off
+      parser: '@typescript-eslint/parser'
+      parserOptions:
+          project:
+              [
+                  './.storybook/tsconfig.stories.json',
+                  './packages/overdrive/tsconfig.json',
+              ]
+    - files: ['**/stories.tsx']
+      rules:
+          'import/no-extraneous-dependencies': off

@@ -1,10 +1,10 @@
-import '../lib/reset/font-face.css';
-import '../lib/reset';
+import '../packages/overdrive/lib/reset/font-face.css';
+import '../packages/overdrive/lib/reset';
 
 import * as React from 'react';
 import { StrictMode } from 'react';
 import * as Icons from '@autoguru/icons';
-import { OverdriveProvider } from '../lib/components';
+import { OverdriveProvider } from '@autoguru/overdrive';
 
 // @ts-ignore
 global.Icons = Icons;

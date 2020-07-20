@@ -1,0 +1,32 @@
+{
+	"extends": "@autoguru/tsconfig/web",
+	"compilerOptions": {
+		"baseUrl": "./",
+		"rootDir": "./",
+		"jsx": "react",
+		"outDir": "./dist",
+		"declaration": true,
+		"declarationMap": true,
+		"declarationDir": "./dist/",
+		"isolatedModules": true,
+		"strict": true,
+		"sourceMap": false,
+		"inlineSourceMap": false,
+		"strictNullChecks": true,
+		"target": "es2019",
+		"incremental": true,
+		"composite": true,
+		"skipLibCheck": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true
+	},
+	"include": [
+		"./lib/themes/treatTheme.d.ts",
+		"./reset.ts",
+		"./themes.ts",
+		"./index.ts",
+		"./lib/**/*.ts",
+		"./lib/**/*.tsx"
+	],
+	"exclude": ["./**/*stories*.tsx"]
+}

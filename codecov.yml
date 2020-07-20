@@ -1,7 +1,7 @@
 comment: false
 coverage:
-  status:
-    patch: off
-    project:
-      default:
-        threshold: 10
+    status:
+        patch: off
+        project:
+            default:
+                threshold: 10

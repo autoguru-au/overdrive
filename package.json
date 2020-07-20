@@ -1,35 +1,21 @@
 {
-	"name": "@autoguru/overdrive",
-	"version": "2.0.17",
-	"description": "Overdrive is a product component library, and design system for AutoGuru.",
-	"keywords": [
-		"component",
-		"design-system",
-		"react",
-		"storybook",
-		"styleguide",
-		"ui"
-	],
-	"homepage": "https://overdrive.autoguru.io",
-	"repository": "https://github.com/autoguru-au/overdrive",
+	"name": "overdrive",
+	"version": "0.1.0",
+	"private": true,
 	"license": "MIT",
-	"sideEffects": [
-		"./reset.ts",
-		"./themes.ts",
-		"./lib/reset/**/*",
-		"./lib/theme/**/*",
-		"./lib/themes/**/*"
+	"workspaces": [
+		"packages/*"
 	],
-	"main": "./index.ts",
 	"scripts": {
 		"chromatic": "chromatic test --exit-zero-on-changes --build-script-name storybook:build",
 		"format": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|md|mdx|html)\"",
-		"lint": "tsc --noEmit && eslint \"lib/**/*.+(ts|tsx)\" --fix --cache --quiet",
+		"lint": "eslint \"packages/**/*.+(ts|tsx)\" --fix --cache --quiet",
 		"playroom:build": "playroom build",
 		"release": "changeset publish",
 		"start": "concurrently -k \"playroom\" \"yarn:storybook\"",
 		"storybook": "start-storybook -p 6006",
 		"storybook:build": "build-storybook",
+		"postinstall": "manypkg check",
 		"test": "jest"
 	},
 	"husky": {
@@ -52,25 +38,28 @@
 		]
 	},
 	"browserslist": "extends browserslist-config-autoguru",
-	"resolutions": {
-		"webpack": "4.43.0"
+	"prettier": {
+		"printWidth": 80,
+		"bracketSpacing": true,
+		"jsxBracketSameLine": true,
+		"proseWrap": "always",
+		"singleQuote": true,
+		"tabWidth": 4,
+		"trailingComma": "all",
+		"useTabs": true
+	},
+	"volta": {
+		"node": "14.5.0",
+		"yarn": "1.22.4"
 	},
 	"dependencies": {
-		"@autoguru/icons": "^1.4.4",
-		"@autoguru/utilities": "^1.0.97",
-		"@popperjs/core": "^2.4.2",
-		"clsx": "^1.1.1",
-		"react-keyed-flatten-children": "^1.2.0",
-		"react-treat": "^1.4.3"
-	},
-	"devDependencies": {
 		"@autoguru/babel-preset": "1.0.97",
 		"@autoguru/eslint-plugin": "1.0.85",
 		"@autoguru/jest-preset": "1.0.97",
-		"@autoguru/tsconfig": "1.0.78",
 		"@babel/core": "7.10.4",
 		"@babel/runtime-corejs3": "7.10.4",
 		"@changesets/cli": "2.9.2",
+		"@manypkg/cli": "0.14.0",
 		"@octokit/rest": "18.0.0",
 		"@storybook/addon-a11y": "5.3.19",
 		"@storybook/addon-actions": "5.3.19",
@@ -112,13 +101,5 @@
 		"tslib": "2.0.0",
 		"typescript": "3.9.6",
 		"webpack": "4.43.0"
-	},
-	"peerDependencies": {
-		"react": ">=16.8",
-		"react-dom": ">=16.8"
-	},
-	"volta": {
-		"node": "14.5.0",
-		"yarn": "1.22.4"
 	}
 }
