@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Column, Columns } from '.';
 
 import { Box } from '../Box';
+import { Column, Columns } from '.';
 
 export default {
 	title: 'Foundation|Layout/Columns',

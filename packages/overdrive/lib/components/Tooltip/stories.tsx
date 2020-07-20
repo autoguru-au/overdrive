@@ -1,8 +1,8 @@
 import { select } from '@storybook/addon-knobs';
 import * as React from 'react';
-import { Tooltip } from '.';
 
 import { EAlignment } from '../Positioner/alignment';
+import { Tooltip } from '.';
 
 export default {
 	title: 'Components|Tooltip',

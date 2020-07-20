@@ -2,10 +2,10 @@ import { action } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
 import * as React from 'react';
 import { useCallback, useState } from 'react';
-import { Modal } from '.';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
+import { Modal } from '.';
 
 const Body = ({ children }) => (
 	<Box backgroundColour="white" padding="5" borderRadius="2">

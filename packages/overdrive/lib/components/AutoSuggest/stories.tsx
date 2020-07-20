@@ -2,10 +2,10 @@ import { CarIcon } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import { AutoSuggest, AutoSuggestValue } from '.';
 
 import { Button } from '../Button';
 import { StandardModal } from '../StandardModal';
+import { AutoSuggest, AutoSuggestValue } from '.';
 
 type Value = string;
 

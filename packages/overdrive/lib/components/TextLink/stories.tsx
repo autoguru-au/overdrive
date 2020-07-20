@@ -1,8 +1,8 @@
 import { boolean, select } from '@storybook/addon-knobs';
 import * as React from 'react';
-import { TextLink } from '.';
 
 import { Text } from '../Text';
+import { TextLink } from '.';
 
 const sizeScale = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 const alignOptions: ['left', 'center', 'right'] = ['left', 'center', 'right'];
