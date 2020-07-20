@@ -5,8 +5,6 @@ import { mapTokenToProperty } from '../../utils';
 
 export const root = style((theme) => ({
 	fontWeight: theme.typography.fontWeight.normal,
-	margin: 0,
-	padding: 0,
 
 	selectors: {
 		'&::selection': {

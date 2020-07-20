@@ -2,11 +2,11 @@ import { action } from '@storybook/addon-actions';
 import { select } from '@storybook/addon-knobs';
 import * as React from 'react';
 import { createRef, useCallback, useRef, useState } from 'react';
-import { EPositionerAlignment, Positioner } from '.';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
+import { EPositionerAlignment, Positioner } from '.';
 
 const alignmentPicker = () =>
 	select('Alignment', EPositionerAlignment, EPositionerAlignment.BOTTOM_LEFT);

@@ -2,12 +2,12 @@ import { action } from '@storybook/addon-actions';
 import { boolean, text } from '@storybook/addon-knobs';
 import * as React from 'react';
 import { useState } from 'react';
-import { CheckBox } from '.';
 
 import { Badge } from '../Badge';
 import { Heading } from '../Heading';
 import { StarRating } from '../StarRating';
 import { Text } from '../Text';
+import { CheckBox } from '.';
 
 const baseProps = () => ({
 	children: text('Checkbox label', 'check me!'),

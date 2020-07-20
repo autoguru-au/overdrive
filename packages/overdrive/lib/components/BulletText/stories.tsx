@@ -1,9 +1,9 @@
 import { CheckIcon } from '@autoguru/icons';
 import { boolean, select, text } from '@storybook/addon-knobs';
 import * as React from 'react';
-import { BulletText } from '.';
 
 import { Icon } from '../Icon';
+import { BulletText } from '.';
 
 const baseProps = () => ({
 	variant: select('Variant', ['primary', 'secondary'], 'primary'),

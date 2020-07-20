@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { OutsideClick } from '.';
 
 import { Button } from '../Button';
+import { OutsideClick } from '.';
 
 export default {
 	title: 'Utility|OutsideClick',
