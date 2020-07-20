@@ -1,6 +1,10 @@
-import clsx from 'clsx';
 import * as React from 'react';
-import { FunctionComponent, isValidElement, ReactNode } from 'react';
+import {
+	ElementType,
+	FunctionComponent,
+	isValidElement,
+	ReactNode,
+} from 'react';
 import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
@@ -10,39 +14,52 @@ import * as styleRefs from './BulletText.treat';
 
 export interface Props {
 	bullet?: ReactNode;
-	variant?: keyof typeof styleRefs.variant;
+	variant?: 'primary' | 'secondary';
 	className?: string;
+	is?: ElementType;
 }
 
 export const BulletText: FunctionComponent<Props> = ({
 	variant = 'primary',
 	className = '',
 	children,
+	is: Component = 'ul',
 	bullet: Bullet = '•',
 }) => {
 	const styles = useStyles(styleRefs);
 
 	return (
-		<Columns
-			noWrap
-			space="3"
-			className={clsx(styles.root, className)}
-			is="li">
+		<Columns noWrap space="3" className={className} is={Component}>
 			{isValidElement(Bullet) ? (
-				<Column alignSelf="centre" className={styles.customBullet}>
+				<Column alignSelf="centre" position="relative" flexShrink={0}>
 					{Bullet}
 				</Column>
 			) : (
 				<Column alignSelf="centre">
 					<Box
-						className={clsx(styles.bullet, styles.variant[variant])}
+						position="relative"
+						flexShrink={0}
+						display="flex"
+						alignItems="center"
+						justifyContent="center"
+						backgroundColour={
+							variant === 'primary' ? 'green200' : 'gray200'
+						}
+						className={styles.bullet}
 						borderRadius="pill">
-						<span className={styles.bulletText}>{Bullet}</span>
+						<Text
+							is="span"
+							size="2"
+							colour={variant === 'primary' ? 'success' : 'dark'}>
+							{Bullet}
+						</Text>
 					</Box>
 				</Column>
 			)}
 			<Column>
-				<Text is="span">{children}</Text>
+				<Text is="span" size="4">
+					{children}
+				</Text>
 			</Column>
 		</Columns>
 	);

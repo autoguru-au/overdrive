@@ -1,12 +1,12 @@
 import { CheckIcon } from '@autoguru/icons';
-import { boolean, select, text } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
 import * as React from 'react';
 
 import { Icon } from '../Icon';
+import { Stack } from '../Stack';
 import { BulletText } from '.';
 
 const baseProps = () => ({
-	variant: select('Variant', ['primary', 'secondary'], 'primary'),
 	bullet: text('Bullet', '?'),
 	ordered: boolean('ordered', false),
 });
@@ -17,7 +17,14 @@ export default {
 };
 
 export const standard = () => (
-	<BulletText {...baseProps()}>Hello World</BulletText>
+	<Stack is="ul" space="3">
+		<BulletText is="div" variant="primary" {...baseProps()}>
+			Hello World
+		</BulletText>
+		<BulletText is="div" variant="secondary" {...baseProps()}>
+			Hello World
+		</BulletText>
+	</Stack>
 );
 
 export const withCustomElement = () => (
