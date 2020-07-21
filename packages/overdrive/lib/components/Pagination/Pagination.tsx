@@ -1,13 +1,20 @@
-import { ChevronLeftIcon, ChevronRightIcon } from '@autoguru/icons';
+import { ChevronLeftIcon, ChevronRightIcon, IconType } from '@autoguru/icons';
 import clsx from 'clsx';
 import * as React from 'react';
-import { FunctionComponent, memo, useCallback, useMemo } from 'react';
+import {
+	FunctionComponent,
+	MouseEventHandler,
+	useCallback,
+	useMemo,
+} from 'react';
 import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
 import { Icon } from '../Icon';
+import { Inline } from '../Inline';
+import { useTextStyles } from '../Text';
 import { Bubble } from './Bubble';
-import { PaginationLoading } from './Loading';
+import { LoadingComponent as PaginationLoading } from './Loading';
 import * as styleRefs from './Pagination.treat';
 
 interface OnChangeObject {
@@ -17,7 +24,6 @@ interface OnChangeObject {
 export type TOnChangeEventHandler = (event: OnChangeObject) => void;
 
 export interface Props {
-	className?: string;
 	numPagesDisplayed?: number;
 	activePage: number;
 	total: number;
@@ -26,8 +32,44 @@ export interface Props {
 	onChange?: TOnChangeEventHandler;
 }
 
-const PaginationComponent: FunctionComponent<Props> = ({
-	className = '',
+interface NavButtonProps {
+	icon: IconType;
+	label: string;
+	disabled: boolean;
+	onClick: MouseEventHandler<HTMLButtonElement>;
+}
+
+const NavButton: FunctionComponent<NavButtonProps> = ({
+	icon,
+	disabled,
+	label,
+	onClick,
+}) => {
+	const styles = useStyles(styleRefs);
+	return (
+		<Box
+			is="button"
+			aria-disabled={disabled}
+			aria-label={label}
+			display="flex"
+			overflow="hidden"
+			alignItems="center"
+			flexDirection="row"
+			justifyContent="center"
+			textAlign="center"
+			borderRadius="pill"
+			padding="2"
+			userSelect="none"
+			className={clsx(useTextStyles({ colour: 'light' }), {
+				[styles.disabled]: disabled,
+			})}
+			onClick={onClick}>
+			<Icon size="medium" icon={icon} />
+		</Box>
+	);
+};
+
+export const Pagination: FunctionComponent<Props> = ({
 	total,
 	pageSize,
 	activePage,
@@ -52,41 +94,14 @@ const PaginationComponent: FunctionComponent<Props> = ({
 		[activePage, numPages],
 	);
 
-	const styles = useStyles(styleRefs);
-
-	const cls = clsx([styles.root, className]);
-
-	const chevronLeftCls = clsx(
-		styles.chevron.default,
-		styles.activeItem.default,
-		{
-			[styles.chevron.disabled]: activePage <= 1,
-		},
-	);
-
-	const chevronRightCls = clsx(
-		styles.chevron.default,
-		styles.activeItem.default,
-		{
-			[styles.chevron.disabled]: activePage >= numPages,
-		},
-	);
-
 	return !loading && total && pageSize && activePage && numPagesDisplayed ? (
-		<Box is="nav" className={cls} aria-label="pagination">
-			<Box
-				is="button"
-				aria-disabled={activePage <= 1}
-				aria-label="navigate back"
-				className={chevronLeftCls}
-				userSelect="none"
-				onClick={handleClick(activePage - 1)}>
-				<Icon
-					size="medium"
-					className={styles.chevron.icon}
-					icon={ChevronLeftIcon}
-				/>
-			</Box>
+		<Inline is="nav" space="3" aria-label="pagination">
+			<NavButton
+				disabled={activePage <= 1}
+				label="navigate back"
+				icon={ChevronLeftIcon}
+				onClick={handleClick(activePage - 1)}
+			/>
 			{buildPagesList(
 				numPages,
 				allowedActive,
@@ -102,22 +117,16 @@ const PaginationComponent: FunctionComponent<Props> = ({
 					{num}
 				</Bubble>
 			))}
-			<Box
-				is="button"
-				aria-disabled={activePage >= numPages}
-				aria-label="navigate forward"
-				className={chevronRightCls}
-				userSelect="none"
-				onClick={handleClick(allowedActive + 1)}>
-				<Icon
-					size="medium"
-					className={styles.chevron.icon}
-					icon={ChevronRightIcon}
-				/>
-			</Box>
-		</Box>
+
+			<NavButton
+				disabled={activePage >= numPages}
+				label="navigate forward"
+				icon={ChevronRightIcon}
+				onClick={handleClick(allowedActive + 1)}
+			/>
+		</Inline>
 	) : (
-		<PaginationLoading className={cls} placeholderBubblesNum={3} />
+		<PaginationLoading placeholderBubblesNum={3} />
 	);
 };
 
@@ -205,5 +214,3 @@ function buildPagesList(
 
 	return generateJumpBackwardArray(numPages, numPagesDisplayed);
 }
-
-export const Pagination = memo(PaginationComponent);

@@ -4,6 +4,7 @@ import { ButtonHTMLAttributes, FunctionComponent } from 'react';
 import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
+import { useTextStyles } from '../Text';
 import * as styleRefs from './Pagination.treat';
 
 export interface Props extends ButtonHTMLAttributes<Element> {
@@ -25,13 +26,25 @@ export const Bubble: FunctionComponent<Props> = ({
 	return (
 		<Box
 			is="button"
+			backgroundColour={selected ? 'green900' : 'transparent'}
+			display="flex"
+			overflow="hidden"
+			alignItems="center"
+			flexDirection="row"
+			justifyContent="center"
+			textAlign="center"
+			borderRadius="pill"
 			className={clsx(
 				className,
-				styles.activeItem.default,
-				styles.bubble.default,
+				styles.activeItem,
+				useTextStyles({
+					fontWeight: 'bold',
+					colour: selected ? 'white' : 'light',
+					size: '3',
+				}),
 				{
-					[styles.activeItem.selected]: selected,
-					[styles.bubble.gap]: gap,
+					[styles.selectedItem]: selected,
+					[styles.disabled]: gap,
 				},
 			)}
 			{...rest}>

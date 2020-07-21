@@ -1,7 +1,7 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@autoguru/icons';
 import clsx from 'clsx';
 import * as React from 'react';
-import { FunctionComponent, memo } from 'react';
+import { FunctionComponent } from 'react';
 import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
@@ -15,7 +15,6 @@ export interface Props {
 }
 
 export const LoadingComponent: FunctionComponent<Props> = ({
-	className = '',
 	placeholderBubblesNum = 3,
 }) => {
 	const styles = useStyles(styleRefs);
@@ -25,7 +24,13 @@ export const LoadingComponent: FunctionComponent<Props> = ({
 		styles.chevron.disabled,
 	);
 	return (
-		<Box is="span" className={[styles.root, className]}>
+		<Box
+			is="span"
+			display="flex"
+			alignItems="center"
+			flexDirection="row"
+			flexWrap="wrap"
+			justifyContent="flexStart">
 			<span className={disabledChevCls}>
 				<Icon
 					className={styles.chevron.icon}
@@ -50,5 +55,3 @@ export const LoadingComponent: FunctionComponent<Props> = ({
 		</Box>
 	);
 };
-
-export const PaginationLoading = memo(LoadingComponent);
