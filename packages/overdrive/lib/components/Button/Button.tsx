@@ -18,6 +18,7 @@ import { useStyles } from 'react-treat';
 import { Box, useBoxStyles } from '../Box';
 import { Icon } from '../Icon';
 import { ProgressSpinner } from '../ProgressSpinner';
+import { useTextStyles } from '../Text';
 import * as styleRefs from './Button.treat';
 
 type ButtonPrimitive = ButtonHTMLAttributes<HTMLButtonElement>;
@@ -103,13 +104,20 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 				useBoxStyles({
 					is: typeof Component === 'string' ? Component : undefined,
 					display: 'inlineBlock',
+					overflow: 'hidden',
 					borderRadius: getBorderRadius(rounded),
+					textAlign: 'center',
 					borderWidth: 'none',
 					paddingY: 'none',
 					paddingX: getPadding(size, isLoading),
+					width: isFullWidth ? 'full' : void 0,
 				}),
 				styles.root,
-				styles.themedButton,
+				useTextStyles({
+					colour: 'white',
+					fontWeight: 'semiBold',
+					size: size === 'medium' ? '4' : '3',
+				}),
 				getButtonStates(
 					styles,
 					variant,
@@ -129,7 +137,6 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 					[styles.enabled]: !disabled && !isLoading,
 					[styles.loading]: isLoading,
 				},
-				styles.width[isFullWidth ? 'fullWidth' : 'default'],
 				className,
 			),
 			ref,
@@ -141,7 +148,11 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 				colour={getSpinnerColour(variant, minimal)}
 			/>
 		) : (
-			<div className={styles.body}>
+			<Box
+				alignItems="center"
+				justifyContent="center"
+				height="full"
+				className={styles.body}>
 				{isSingleIconChild && maybeIconProps ? (
 					<Icon
 						size={
@@ -154,7 +165,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 				) : (
 					children
 				)}
-			</div>
+			</Box>
 		);
 
 		return isValidElement(Component)

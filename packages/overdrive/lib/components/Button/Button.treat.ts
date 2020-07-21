@@ -1,41 +1,20 @@
 import { style, styleMap } from 'treat';
 
 export const root = style(({ animation }) => ({
-	overflow: 'hidden',
 	transitionDelay: '0s',
 	transitionTimingFunction: animation.easing.standard,
 	transitionDuration: '0.1s',
 	transitionProperty:
 		'color, background-color, border-color, box-shadow, transform',
 	transform: 'translate3d(0, 0, 1) scale(1)',
-	textAlign: 'center',
-	textDecoration: 'none',
-	background: 'none',
 	willChange: 'transform',
-}));
-
-export const themedButton = style(({ typography }) => ({
-	color: typography.colour.white,
-	fontWeight: typography.fontWeight.semiBold,
 }));
 
 export const body = style(({ space }) => ({
 	display: 'grid',
-	alignItems: 'center',
-	justifyContent: 'center',
-	height: '100%',
 	gridAutoFlow: 'column dense',
 	gridGap: space['1'],
 }));
-
-export const width = styleMap({
-	default: {
-		width: 'auto',
-	},
-	fullWidth: {
-		width: '100%',
-	},
-});
 
 export const loading = style({
 	cursor: 'not-allowed',
@@ -59,8 +38,6 @@ const smallHeight = '36px';
 export const size = {
 	small: styleMap((theme) => ({
 		default: {
-			fontSize: theme.typography.size['3'].fontSize,
-			lineHeight: theme.typography.size['3'].lineHeight,
 			minWidth: theme.space['8'],
 			height: smallHeight,
 			gridGap: theme.space['1'],
@@ -74,8 +51,6 @@ export const size = {
 	})),
 	medium: styleMap((theme) => ({
 		default: {
-			fontSize: theme.typography.size['4'].fontSize,
-			lineHeight: theme.typography.size['4'].lineHeight,
 			minWidth: theme.space['9'],
 			height: theme.space['8'],
 			gridGap: theme.space['2'],
