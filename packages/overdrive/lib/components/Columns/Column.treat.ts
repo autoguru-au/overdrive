@@ -1,14 +1,8 @@
-import { style, styleMap } from 'treat';
+import { styleMap } from 'treat';
 
 import { makeResponsiveStyle } from '../../utils';
 
 const getSizeStyle = (scale: number) => `${scale * 100}%`;
-
-export const content = style({
-	display: 'flex',
-	height: '100%',
-	width: '100%',
-});
 
 export const width = makeResponsiveStyle(
 	(_) => ({
@@ -26,12 +20,6 @@ export const width = makeResponsiveStyle(
 	}),
 	'flexBasis',
 );
-
-export const shrinkOff = style({ flexShrink: 0 });
-
-export const growOn = style({
-	flexGrow: 1,
-});
 
 export const align = styleMap({
 	stretch: {

@@ -44,18 +44,21 @@ export const Column = forwardRef<HTMLElement, Props>(
 		return (
 			<Box
 				is={isList ? 'li' : 'div'}
+				flexGrow={grow ? 1 : 0}
+				flexShrink={noShrink ? 0 : void 0}
 				className={[
 					spaceXCls,
 					spaceYCls,
 					resolveResponsiveStyle(width, styles.width),
-					noShrink && styles.shrinkOff,
-					grow && styles.growOn,
 					styles.align[alignSelf!],
 				]}>
 				<Box
 					ref={ref}
 					is={is}
-					className={[styles.content, className]}
+					display="flex"
+					width="full"
+					height="full"
+					className={className}
 					{...boxProps}>
 					{children}
 				</Box>

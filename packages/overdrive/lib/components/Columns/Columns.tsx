@@ -60,8 +60,9 @@ export const Columns = forwardRef<HTMLElement, Props>(
 			<Box
 				ref={ref}
 				is={is}
+				display="flex"
+				flexDirection="row"
 				className={clsx(
-					styles.root,
 					marginLeftFix,
 					marginTopFix,
 					styles.align[align],
