@@ -58,6 +58,8 @@ export const Modal: FunctionComponent<Props> = ({
 			{shouldRender ? (
 				<Box
 					role="presentation"
+					position="fixed"
+					overflow="hidden"
 					className={[
 						styles.root.default,
 						transition &&
@@ -82,8 +84,9 @@ const Backdrop: FunctionComponent<{
 	const styles = useStyles(styleRefs);
 
 	return (
-		<div
+		<Box
 			aria-hidden="true"
+			position="absolute"
 			className={clsx(styles.backdrop.root, {
 				[styles.backdrop.invisible]: invisible,
 			})}
