@@ -4,9 +4,11 @@ import * as React from 'react';
 import { FunctionComponent, memo, ReactNode } from 'react';
 import { useStyles } from 'react-treat';
 
+import { Box, useBoxStyles } from '../Box';
 import { Icon } from '../Icon';
 import { CheckableBase } from '../private/CheckableBase';
 import { useCheckableStyles } from '../private/CheckableBase/useCheckableStyles';
+import { useTextStyles } from '../Text';
 import * as styleRefs from './CheckBox.treat';
 
 export interface Props {
@@ -34,12 +36,16 @@ export const CheckBox: FunctionComponent<Props> = memo(
 		children,
 	}) => {
 		const styles = useStyles(styleRefs);
+		const iconStyles = clsx(
+			useBoxStyles({ position: 'absolute' }),
+			useTextStyles({ colour: 'white' }),
+		);
 		const { checkable, checkableItem } = useCheckableStyles();
 
 		return (
 			<CheckableBase
 				inputType="checkbox"
-				className={clsx([styles.checkbox, className])}
+				className={className}
 				inputName={name}
 				value={value}
 				label={children}
@@ -50,12 +56,16 @@ export const CheckBox: FunctionComponent<Props> = memo(
 				<div className={checkable}>
 					{checked && (
 						<Icon
-							className={styles.icon}
+							className={clsx(styles.icon, iconStyles)}
 							icon={CheckIcon}
 							size="small"
 						/>
 					)}
-					<div
+					<Box
+						position="absolute"
+						borderWidth="2"
+						borderColour="gray"
+						backgroundColour={checked ? 'green600' : 'transparent'}
 						className={clsx(checkableItem, styles.base.default, {
 							[styles.base.selected]: checked,
 						})}

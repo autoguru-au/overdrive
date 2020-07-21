@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { useStyles } from 'react-treat';
 
+import { useBoxStyles } from '../../Box';
 import * as styleRefs from './CheckableBase.treat';
 
 export const useCheckableStyles: () => {
@@ -10,7 +11,10 @@ export const useCheckableStyles: () => {
 	const styles = useStyles(styleRefs);
 
 	return {
-		checkable: clsx(styles.checkable, styles.tappable),
+		checkable: clsx(
+			styles.checkable,
+			useBoxStyles({ is: 'button', position: 'absolute' }),
+		),
 		checkableItem: styles.checkableItem,
 	};
 };
