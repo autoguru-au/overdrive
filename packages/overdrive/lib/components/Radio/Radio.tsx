@@ -3,6 +3,7 @@ import * as React from 'react';
 import { FunctionComponent, memo, ReactNode } from 'react';
 import { useStyles } from 'react-treat';
 
+import { Box } from '../Box';
 import { CheckableBase } from '../private/CheckableBase';
 import { useCheckableStyles } from '../private/CheckableBase/useCheckableStyles';
 import * as styleRefs from './Radio.treat';
@@ -28,7 +29,7 @@ export const Radio: FunctionComponent<Props> = memo(
 		return (
 			<CheckableBase
 				inputType="radio"
-				className={clsx([styles.radio, className])}
+				className={className}
 				inputName={radioContext.inputName}
 				value={value}
 				label={children}
@@ -36,7 +37,11 @@ export const Radio: FunctionComponent<Props> = memo(
 				checked={isChecked}
 				handleClick={handleClick}>
 				<div className={checkable}>
-					<div
+					<Box
+						borderRadius="pill"
+						position="absolute"
+						borderWidth="2"
+						borderColour="gray"
 						className={clsx(
 							checkableItem,
 							styles.circle.default,
@@ -46,7 +51,11 @@ export const Radio: FunctionComponent<Props> = memo(
 							},
 						)}
 					/>
-					<div
+					<Box
+						borderRadius="pill"
+						position="absolute"
+						borderColour="gray"
+						borderWidth="none"
 						className={clsx(
 							styles.circle.default,
 							styles.circle.inner,

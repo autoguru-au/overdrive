@@ -1,9 +1,7 @@
-import clsx from 'clsx';
 import * as React from 'react';
 import { createContext, FunctionComponent, useContext, useMemo } from 'react';
-import { useStyles } from 'react-treat';
 
-import * as styleRefs from './Radio.treat';
+import { Box } from '../Box';
 
 export interface Props {
 	name: string;
@@ -32,7 +30,6 @@ export const RadioGroup: FunctionComponent<Props> = ({
 	onChange,
 	children,
 }) => {
-	const styles = useStyles(styleRefs);
 	const contextValue = useMemo(
 		() => ({ value, inputName: name, radioSelected: onChange }),
 		[value, name, onChange],
@@ -40,9 +37,15 @@ export const RadioGroup: FunctionComponent<Props> = ({
 
 	return (
 		<RadioContext.Provider value={contextValue}>
-			<div className={clsx([styles.radioGroup, className])}>
+			<Box
+				position="relative"
+				display="flex"
+				flexDirection="column"
+				width="full"
+				padding="none"
+				className={className}>
 				{children}
-			</div>
+			</Box>
 		</RadioContext.Provider>
 	);
 };
