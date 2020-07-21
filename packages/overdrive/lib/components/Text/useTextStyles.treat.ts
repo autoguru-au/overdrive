@@ -4,8 +4,6 @@ import type { Theme } from 'treat/theme';
 import { mapTokenToProperty } from '../../utils';
 
 export const root = style((theme) => ({
-	fontWeight: theme.typography.fontWeight.normal,
-
 	selectors: {
 		'&::selection': {
 			color: theme.typography.colour.white,
