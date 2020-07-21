@@ -144,7 +144,7 @@ export const Positioner: FunctionComponent<Props> = ({
 			<Box
 				{...boxProps}
 				ref={handleRef}
-				position='fixed'
+				position="fixed"
 				className={styles.root}
 				aria-hidden={!isOpen}>
 				{isOpen ? children : null}

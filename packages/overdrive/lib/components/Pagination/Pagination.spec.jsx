@@ -15,7 +15,7 @@ describe('<Pagination />', () => {
 		expect(
 			render(
 				<Pagination total={100} activePage={1} pageSize={10} />,
-			).container.querySelector('button:nth-last-child(2)'),
+			).container.querySelector(':nth-last-child(2)'),
 		).toHaveTextContent('10');
 	});
 
@@ -23,7 +23,7 @@ describe('<Pagination />', () => {
 		expect(
 			render(
 				<Pagination total={101} activePage={1} pageSize={10} />,
-			).container.querySelector('button:nth-last-child(2)'),
+			).container.querySelector(':nth-last-child(2)'),
 		).toHaveTextContent('11');
 	});
 
@@ -31,7 +31,7 @@ describe('<Pagination />', () => {
 		expect(
 			render(
 				<Pagination total={101} activePage={1} pageSize={10} />,
-			).container.querySelector('button:nth-of-type(5)'),
+			).container.querySelector(':nth-of-type(5)'),
 		).toHaveTextContent('...');
 	});
 
@@ -39,7 +39,7 @@ describe('<Pagination />', () => {
 		expect(
 			render(
 				<Pagination total={101} activePage={9} pageSize={10} />,
-			).container.querySelector('button:nth-of-type(3)'),
+			).container.querySelector(':nth-of-type(3)'),
 		).toHaveTextContent('...');
 	});
 
@@ -48,38 +48,38 @@ describe('<Pagination />', () => {
 			<Pagination total={50} activePage={1} pageSize={10} />,
 		);
 
-		expect(
-			container.querySelector('button:nth-of-type(2)'),
-		).toHaveTextContent('1');
+		expect(container.querySelector(':nth-of-type(2)')).toHaveTextContent(
+			'1',
+		);
 
-		expect(
-			container.querySelector('button:nth-of-type(3)'),
-		).toHaveTextContent('2');
+		expect(container.querySelector(':nth-of-type(3)')).toHaveTextContent(
+			'2',
+		);
 
-		expect(
-			container.querySelector('button:nth-of-type(4)'),
-		).toHaveTextContent('3');
+		expect(container.querySelector(':nth-of-type(4)')).toHaveTextContent(
+			'3',
+		);
 
-		expect(
-			container.querySelector('button:nth-of-type(5)'),
-		).toHaveTextContent('4');
+		expect(container.querySelector(':nth-of-type(5)')).toHaveTextContent(
+			'4',
+		);
 
-		expect(
-			container.querySelector('button:nth-of-type(6)'),
-		).toHaveTextContent('5');
+		expect(container.querySelector(':nth-of-type(6)')).toHaveTextContent(
+			'5',
+		);
 	});
 
 	it('should show all pages if active page falls within pages num minus displayed pages num/+1', () => {
 		expect(
 			render(
 				<Pagination total={95} activePage={6} pageSize={10} />,
-			).container.querySelector('button:nth-of-type(2)'),
+			).container.querySelector(':nth-of-type(2)'),
 		).toHaveTextContent('6');
 
 		expect(
 			render(
 				<Pagination total={95} activePage={7} pageSize={10} />,
-			).container.querySelector('button:nth-of-type(2)'),
+			).container.querySelector(':nth-of-type(2)'),
 		).toHaveTextContent('6');
 	});
 

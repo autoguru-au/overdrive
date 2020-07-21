@@ -14,7 +14,6 @@ import { Icon } from '../Icon';
 import { Inline } from '../Inline';
 import { useTextStyles } from '../Text';
 import { Bubble } from './Bubble';
-import { LoadingComponent as PaginationLoading } from './Loading';
 import * as styleRefs from './Pagination.treat';
 
 interface OnChangeObject {
@@ -34,16 +33,16 @@ export interface Props {
 
 interface NavButtonProps {
 	icon: IconType;
-	label: string;
 	disabled: boolean;
-	onClick: MouseEventHandler<HTMLButtonElement>;
+	label?: string;
+	onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 const NavButton: FunctionComponent<NavButtonProps> = ({
 	icon,
 	disabled,
-	label,
-	onClick,
+	label = '',
+	onClick = () => void 0,
 }) => {
 	const styles = useStyles(styleRefs);
 	return (
@@ -65,6 +64,33 @@ const NavButton: FunctionComponent<NavButtonProps> = ({
 			})}
 			onClick={onClick}>
 			<Icon size="medium" icon={icon} />
+		</Box>
+	);
+};
+
+interface LoadingComponentProps {
+	className?: string;
+	placeholderBubblesNum?: number;
+}
+
+const Loading: FunctionComponent<LoadingComponentProps> = ({
+	placeholderBubblesNum = 3,
+}) => {
+	const styles = useStyles(styleRefs);
+	return (
+		<Box
+			is="span"
+			display="flex"
+			alignItems="center"
+			flexDirection="row"
+			flexWrap="wrap"
+			justifyContent="flexStart">
+			<NavButton disabled icon={ChevronLeftIcon} />
+			{new Array(placeholderBubblesNum).fill('').map((_, index) => (
+				<Bubble key={index} children="" className={styles.disabled} />
+			))}
+
+			<NavButton disabled icon={ChevronRightIcon} />
 		</Box>
 	);
 };
@@ -126,7 +152,7 @@ export const Pagination: FunctionComponent<Props> = ({
 			/>
 		</Inline>
 	) : (
-		<PaginationLoading placeholderBubblesNum={3} />
+		<Loading placeholderBubblesNum={3} />
 	);
 };
 
