@@ -1,19 +1,13 @@
 import { style } from 'treat';
 
 export const root = style((theme) => ({
-	position: 'relative',
-	overflow: 'hidden',
-	width: '100%',
 	height: theme.space['1'],
 	transition: 'opacity 0.25s cubic-bezier(0.4, 0, 0.6, 1) 0ms',
 	transform: 'translateZ(0)',
 }));
 
 export const linearProgressBar = style({
-	position: 'absolute',
 	left: '-54.888891%',
-	width: '100%',
-	height: '100%',
 	animationDuration: '2s',
 	animationTimingFunction: 'linear',
 	animationIterationCount: 'infinite',
@@ -39,9 +33,6 @@ export const linearProgressBar = style({
 });
 
 export const linearProgressBarInner = style({
-	position: 'absolute',
-	width: '100%',
-	height: '100%',
 	animationDuration: '2s',
 	animationTimingFunction: 'linear',
 	animationIterationCount: 'infinite',
