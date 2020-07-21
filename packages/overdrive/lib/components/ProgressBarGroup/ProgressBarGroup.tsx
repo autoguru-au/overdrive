@@ -27,6 +27,7 @@ export const ProgressBarGroup: FunctionComponent<Props> = ({
 	return (
 		<Box
 			className={styles.root}
+			alignItems='center'
 			style={{
 				gridTemplateColumns: `${hasPrefixLabels ? 'auto ' : ''}1fr${
 					hasSuffixLabels ? ' auto' : ''
