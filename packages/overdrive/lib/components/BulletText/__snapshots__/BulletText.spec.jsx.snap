@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<BulletText /> should match snapshot for custom bullet text 1`] = `
-<li
-  class="base root 3_mobile_base 3_mobile_base align_stretch root wrapping_noWrap"
+<ul
+  class="base list display_flex row_mobile_base 3_mobile_base 3_mobile_base align_stretch wrapping_noWrap"
 >
-  <div
-    class="base 3_mobile_base 3_mobile_base align_centre"
+  <li
+    class="base flexGrow_0 3_mobile_base 3_mobile_base align_centre"
   >
     <div
-      class="base content customBullet"
+      class="base display_flex width_full height_full position_relative flexShrink_0"
     >
       <span>
         <i
@@ -28,12 +28,12 @@ exports[`<BulletText /> should match snapshot for custom bullet text 1`] = `
         </i>
       </span>
     </div>
-  </div>
-  <div
-    class="base 3_mobile_base 3_mobile_base"
+  </li>
+  <li
+    class="base flexGrow_0 3_mobile_base 3_mobile_base"
   >
     <div
-      class="base content"
+      class="base display_flex width_full height_full"
     >
       <span
         class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
@@ -41,36 +41,36 @@ exports[`<BulletText /> should match snapshot for custom bullet text 1`] = `
         Hello World
       </span>
     </div>
-  </div>
-</li>
+  </li>
+</ul>
 `;
 
 exports[`<BulletText /> should match snapshot for default bullet text 1`] = `
-<li
-  class="base root 3_mobile_base 3_mobile_base align_stretch root wrapping_noWrap"
+<ul
+  class="base list display_flex row_mobile_base 3_mobile_base 3_mobile_base align_stretch wrapping_noWrap"
 >
-  <div
-    class="base 3_mobile_base 3_mobile_base align_centre"
+  <li
+    class="base flexGrow_0 3_mobile_base 3_mobile_base align_centre"
   >
     <div
-      class="base content"
+      class="base display_flex width_full height_full"
     >
       <div
-        class="base pill_mobile_base bullet_base variant_primary_base"
+        class="base display_flex position_relative pill_mobile_base backgroundColours_green200_base center_mobile_base flexShrink_0 center_mobile_base bullet_base"
       >
         <span
-          class="bulletText_base"
+          class="base textAlign_left root_base sizes_2_base colours_success_base fontWeight_normal_base base"
         >
           •
         </span>
       </div>
     </div>
-  </div>
-  <div
-    class="base 3_mobile_base 3_mobile_base"
+  </li>
+  <li
+    class="base flexGrow_0 3_mobile_base 3_mobile_base"
   >
     <div
-      class="base content"
+      class="base display_flex width_full height_full"
     >
       <span
         class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
@@ -78,36 +78,36 @@ exports[`<BulletText /> should match snapshot for default bullet text 1`] = `
         Hello World!
       </span>
     </div>
-  </div>
-</li>
+  </li>
+</ul>
 `;
 
 exports[`<BulletText /> should match snapshot for ordered bullet text 1`] = `
-<li
-  class="base root 3_mobile_base 3_mobile_base align_stretch root wrapping_noWrap"
+<ul
+  class="base list display_flex row_mobile_base 3_mobile_base 3_mobile_base align_stretch wrapping_noWrap"
 >
-  <div
-    class="base 3_mobile_base 3_mobile_base align_centre"
+  <li
+    class="base flexGrow_0 3_mobile_base 3_mobile_base align_centre"
   >
     <div
-      class="base content"
+      class="base display_flex width_full height_full"
     >
       <div
-        class="base pill_mobile_base bullet_base variant_primary_base"
+        class="base display_flex position_relative pill_mobile_base backgroundColours_green200_base center_mobile_base flexShrink_0 center_mobile_base bullet_base"
       >
         <span
-          class="bulletText_base"
+          class="base textAlign_left root_base sizes_2_base colours_success_base fontWeight_normal_base base"
         >
           ?
         </span>
       </div>
     </div>
-  </div>
-  <div
-    class="base 3_mobile_base 3_mobile_base"
+  </li>
+  <li
+    class="base flexGrow_0 3_mobile_base 3_mobile_base"
   >
     <div
-      class="base content"
+      class="base display_flex width_full height_full"
     >
       <span
         class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
@@ -115,36 +115,36 @@ exports[`<BulletText /> should match snapshot for ordered bullet text 1`] = `
         Hello World!
       </span>
     </div>
-  </div>
-</li>
+  </li>
+</ul>
 `;
 
 exports[`<BulletText /> should match snapshot for primary bullet text with custom bullet character 1`] = `
-<li
-  class="base root 3_mobile_base 3_mobile_base align_stretch root wrapping_noWrap"
+<ul
+  class="base list display_flex row_mobile_base 3_mobile_base 3_mobile_base align_stretch wrapping_noWrap"
 >
-  <div
-    class="base 3_mobile_base 3_mobile_base align_centre"
+  <li
+    class="base flexGrow_0 3_mobile_base 3_mobile_base align_centre"
   >
     <div
-      class="base content"
+      class="base display_flex width_full height_full"
     >
       <div
-        class="base pill_mobile_base bullet_base variant_primary_base"
+        class="base display_flex position_relative pill_mobile_base backgroundColours_green200_base center_mobile_base flexShrink_0 center_mobile_base bullet_base"
       >
         <span
-          class="bulletText_base"
+          class="base textAlign_left root_base sizes_2_base colours_success_base fontWeight_normal_base base"
         >
           ?
         </span>
       </div>
     </div>
-  </div>
-  <div
-    class="base 3_mobile_base 3_mobile_base"
+  </li>
+  <li
+    class="base flexGrow_0 3_mobile_base 3_mobile_base"
   >
     <div
-      class="base content"
+      class="base display_flex width_full height_full"
     >
       <span
         class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
@@ -152,36 +152,36 @@ exports[`<BulletText /> should match snapshot for primary bullet text with custo
         Hello World!
       </span>
     </div>
-  </div>
-</li>
+  </li>
+</ul>
 `;
 
 exports[`<BulletText /> should match snapshot for secondary bullet text with custom bullet character 1`] = `
-<li
-  class="base root 3_mobile_base 3_mobile_base align_stretch root wrapping_noWrap"
+<ul
+  class="base list display_flex row_mobile_base 3_mobile_base 3_mobile_base align_stretch wrapping_noWrap"
 >
-  <div
-    class="base 3_mobile_base 3_mobile_base align_centre"
+  <li
+    class="base flexGrow_0 3_mobile_base 3_mobile_base align_centre"
   >
     <div
-      class="base content"
+      class="base display_flex width_full height_full"
     >
       <div
-        class="base pill_mobile_base bullet_base variant_secondary_base"
+        class="base display_flex position_relative pill_mobile_base backgroundColours_gray200_base center_mobile_base flexShrink_0 center_mobile_base bullet_base"
       >
         <span
-          class="bulletText_base"
+          class="base textAlign_left root_base sizes_2_base colours_dark_base fontWeight_normal_base base"
         >
           ?
         </span>
       </div>
     </div>
-  </div>
-  <div
-    class="base 3_mobile_base 3_mobile_base"
+  </li>
+  <li
+    class="base flexGrow_0 3_mobile_base 3_mobile_base"
   >
     <div
-      class="base content"
+      class="base display_flex width_full height_full"
     >
       <span
         class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
@@ -189,6 +189,6 @@ exports[`<BulletText /> should match snapshot for secondary bullet text with cus
         Hello World!
       </span>
     </div>
-  </div>
-</li>
+  </li>
+</ul>
 `;

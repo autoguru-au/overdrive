@@ -2,51 +2,75 @@
 
 exports[`<Alert /> should match the snapshot 1`] = `
 <div
-  class="base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base 4_mobile_base 1_mobile_base backgroundColours_white_base root_base intent_success_base contained_base"
+  class="base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base position_relative border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 4_mobile_base 1_mobile_base backgroundColours_white_base root_base intent_success_base contained_base"
   role="alert"
 >
-  <i
-    class="base display_block medium_mobile_base icon_base"
-    role="presentation"
-  >
-    <svg
-      class="base display_block width_full height_full"
-      fill="currentColor"
-      focusable="false"
-      viewBox="0 0 24 24"
-    >
-      <path
-        d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm-1 14.502l7-7-1.414-1.414L11 13.674l-3.086-3.086L6.5 12.002l4.5 4.5z"
-      />
-    </svg>
-  </i>
   <div
-    class="base content_base"
-  />
-  <button
-    aria-label="close"
-    class="base appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base themedButton_base minimal_defaults_base minimalStates_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled width_default closeButton"
-    type="button"
+    class="base display_flex row_mobile_base 2_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_stretch wrapping_noWrap"
   >
     <div
-      class="body_base"
+      class="base flexGrow_0 flexShrink_0 2_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_centre"
     >
-      <i
-        class="base display_block medium_mobile_base closeButtonIcon_base"
-        role="presentation"
+      <div
+        class="base display_flex width_full height_full"
       >
-        <svg
-          class="base display_block width_full height_full"
-          fill="currentColor"
-          focusable="false"
-          viewBox="0 0 24 24"
+        <i
+          class="base display_block medium_mobile_base base 2_mobile_base 2_mobile_base 2_mobile_base"
+          role="presentation"
         >
-          <path
-            d="M13.458 12L19 17.543V19h-1.457L12 13.457 6.458 19H5v-1.456L10.544 12 5 6.458V5h1.457L12 10.543 17.544 5H19v1.458L13.458 12z"
-          />
-        </svg>
-      </i>
+          <svg
+            class="base display_block width_full height_full"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm-1 14.502l7-7-1.414-1.414L11 13.674l-3.086-3.086L6.5 12.002l4.5 4.5z"
+            />
+          </svg>
+        </i>
+      </div>
     </div>
-  </button>
+    <div
+      class="base flexGrow_1 2_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base auto_mobile_base align_centre"
+    >
+      <div
+        class="base display_flex width_full height_full root_base colours_dark_base base"
+      />
+    </div>
+    <div
+      class="base flexGrow_0 flexShrink_0 2_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_centre"
+    >
+      <div
+        class="base display_flex width_full height_full"
+      >
+        <button
+          aria-label="close"
+          class="base appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base sizes_3_base colours_white_base fontWeight_semiBold_base base minimal_defaults_base minimalStates_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
+          type="button"
+        >
+          <div
+            class="base height_full center_mobile_base center_mobile_base body_base"
+          >
+            <i
+              class="base display_block medium_mobile_base root_base colours_muted_base base"
+              role="presentation"
+            >
+              <svg
+                class="base display_block width_full height_full"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M13.458 12L19 17.543V19h-1.457L12 13.457 6.458 19H5v-1.456L10.544 12 5 6.458V5h1.457L12 10.543 17.544 5H19v1.458L13.458 12z"
+                />
+              </svg>
+            </i>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 `;

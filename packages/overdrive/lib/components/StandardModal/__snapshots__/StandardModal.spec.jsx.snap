@@ -6,12 +6,12 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
 >
   <div />
   <div
-    class="base root_default root_fadeIn"
+    class="base position_fixed overflow_hidden root_default root_fadeIn"
     role="presentation"
   >
     <div
       aria-hidden="true"
-      class="backdropRoot_default_base backdrop_root"
+      class="base position_absolute backdropRoot_default_base backdrop_root"
     />
     <div
       aria-hidden="false"
@@ -25,7 +25,7 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
         role="dialog"
       >
         <header
-          class="header_base headerWithBorder_base"
+          class="base block header_base headerWithBorder_base"
         >
           <button
             aria-label="close"
@@ -52,7 +52,7 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
             id="od-4"
           >
             <h4
-              class="root_base sizes_4_base colours_dark_base fontWeight_bold_base base"
+              class="base root_base sizes_4_base colours_dark_base fontWeight_bold_base base"
             >
               Hello World!
             </h4>
@@ -77,12 +77,12 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
 >
   <div />
   <div
-    class="base root_default root_fadeIn"
+    class="base position_fixed overflow_hidden root_default root_fadeIn"
     role="presentation"
   >
     <div
       aria-hidden="true"
-      class="backdropRoot_default_base backdrop_root"
+      class="base position_absolute backdropRoot_default_base backdrop_root"
     />
     <div
       aria-hidden="false"
@@ -96,7 +96,7 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
         role="dialog"
       >
         <header
-          class="header_base headerWithBorder_base"
+          class="base block header_base headerWithBorder_base"
         >
           <button
             aria-label="close"
@@ -123,7 +123,7 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
             id="od-3"
           >
             <h4
-              class="root_base sizes_4_base colours_dark_base fontWeight_bold_base base"
+              class="base root_base sizes_4_base colours_dark_base fontWeight_bold_base base"
             />
           </div>
         </header>

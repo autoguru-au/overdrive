@@ -23,7 +23,7 @@ exports[`<Tolltip /> should match snapshot when opened 1`] = `
   </div>
   <div
     aria-hidden="false"
-    class="base root"
+    class="base position_fixed root"
     style="position: absolute; left: 0px; top: 0px; margin: 0px;"
   >
     <div

@@ -2,52 +2,68 @@
 
 exports[`<Meta /> should match snapshot with label, icon for Primary variant 1`] = `
 <span
-  class="base root_base"
+  class="base display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 2_mobile_base 2_mobile_base"
 >
-  <i
-    class="base display_block small_mobile_base variant_default_base variant_primary_base"
-    role="presentation"
+  <div
+    class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
-    <svg
-      class="base display_block width_full height_full"
-      viewBox="0 0 512 512"
-      xmlns="http://www.w3.org/2000/svg"
+    <i
+      class="base display_block small_mobile_base variant_primary_base"
+      role="presentation"
     >
-      <path
-        d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
-      />
-    </svg>
-  </i>
-  <span
-    class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
+      <svg
+        class="base display_block width_full height_full"
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+        />
+      </svg>
+    </i>
+  </div>
+  <div
+    class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
-    Hello World!
-  </span>
+    <span
+      class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
+    >
+      Hello World!
+    </span>
+  </div>
 </span>
 `;
 
 exports[`<Meta /> should match snapshot with label, icon for Secondary variant 1`] = `
 <span
-  class="base root_base"
+  class="base display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 2_mobile_base 2_mobile_base"
 >
-  <i
-    class="base display_block small_mobile_base variant_default_base variant_secondary_base"
-    role="presentation"
+  <div
+    class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
-    <svg
-      class="base display_block width_full height_full"
-      viewBox="0 0 512 512"
-      xmlns="http://www.w3.org/2000/svg"
+    <i
+      class="base display_block small_mobile_base variant_secondary_base"
+      role="presentation"
     >
-      <path
-        d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
-      />
-    </svg>
-  </i>
-  <span
-    class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
+      <svg
+        class="base display_block width_full height_full"
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+        />
+      </svg>
+    </i>
+  </div>
+  <div
+    class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
-    Hello World!
-  </span>
+    <span
+      class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
+    >
+      Hello World!
+    </span>
+  </div>
 </span>
 `;
