@@ -25,7 +25,7 @@ export const Meta: FunctionComponent<Props> = ({
 	const styles = useStyles(styleRefs);
 
 	return (
-		<Box is="span" className={clsx(styles.root, className)}>
+		<Box is="span" className={[styles.root, className]}>
 			{icon && (
 				<Icon
 					icon={icon}

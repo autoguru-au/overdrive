@@ -500,7 +500,7 @@ const SuggestionsList = <PayloadType extends unknown>({
 		<Box
 			ref={suggestionListRef}
 			is="ul"
-			className={clsx(styles.suggestionList.defaults, className)}
+			className={[styles.suggestionList.defaults, className]}
 			id={suggestionListId}
 			aria-label={placeholder}
 			role="listbox">
@@ -509,9 +509,10 @@ const SuggestionsList = <PayloadType extends unknown>({
 				const highlight = highlightIndex === idx;
 
 				return (
-					<li
+					<Box
 						key={suggestion.text.concat(String(idx))}
 						ref={highlight ? highlightRef : undefined}
+						is="li"
 						id={getSuggestionId(suggestionListId, idx)}
 						role="option"
 						aria-selected={highlight}
@@ -552,7 +553,7 @@ const SuggestionsList = <PayloadType extends unknown>({
 								highlight,
 								value: suggestion,
 							})}
-					</li>
+					</Box>
 				);
 			})}
 			<div className={styles.spacer} />

@@ -4,6 +4,7 @@ import * as React from 'react';
 import { FunctionComponent, memo } from 'react';
 import { useStyles } from 'react-treat';
 
+import { Box } from '../Box';
 import { Icon } from '../Icon';
 import { Bubble } from './Bubble';
 import * as styleRefs from './Pagination.treat';
@@ -24,7 +25,7 @@ export const LoadingComponent: FunctionComponent<Props> = ({
 		styles.chevron.disabled,
 	);
 	return (
-		<span className={clsx([styles.root, className])}>
+		<Box is="span" className={[styles.root, className]}>
 			<span className={disabledChevCls}>
 				<Icon
 					className={styles.chevron.icon}
@@ -46,7 +47,7 @@ export const LoadingComponent: FunctionComponent<Props> = ({
 					icon={ChevronRightIcon}
 				/>
 			</span>
-		</span>
+		</Box>
 	);
 };
 

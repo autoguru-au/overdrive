@@ -57,7 +57,6 @@ export const Anchor: FunctionComponent<Props> = ({
 			useBoxStyles({
 				is: typeof Component === 'string' ? Component : undefined,
 				display: 'flex',
-				alignContent: 'center',
 				alignItems: 'center',
 				flexDirection: 'row',
 				justifyContent: 'flexStart',

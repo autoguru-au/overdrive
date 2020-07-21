@@ -51,14 +51,9 @@ export const Alert: FunctionComponent<Props> = ({
 
 	return (
 		<Box
-			className={clsx(
-				styles.root,
-				styles.intent[intent],
-				{
-					[styles.contained]: !inline,
-				},
-				className,
-			)}
+			className={clsx(className, styles.root, styles.intent[intent], {
+				[styles.contained]: !inline,
+			})}
 			role="alert"
 			position="relative"
 			backgroundColour="white"

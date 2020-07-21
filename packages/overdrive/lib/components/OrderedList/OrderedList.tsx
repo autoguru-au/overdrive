@@ -66,7 +66,11 @@ export const OrderedList: FunctionComponent<Props> & {
 const Item: FunctionComponent<ItemProps> = ({ className = '', children }) => {
 	const styles = useStyles(styleRefs);
 
-	return <li className={clsx(className, styles.listItem)}>{children}</li>;
+	return (
+		<Box is="li" className={[className, styles.listItem]}>
+			{children}
+		</Box>
+	);
 };
 
 OrderedList.Item = Item;

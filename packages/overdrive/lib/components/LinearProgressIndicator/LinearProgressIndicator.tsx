@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import * as React from 'react';
 import { memo, NamedExoticComponent } from 'react';
 import { useStyles } from 'react-treat';
@@ -15,7 +14,7 @@ export const LinearProgressIndicator: NamedExoticComponent<Props> = memo(
 		const styles = useStyles(styleRefs);
 		return (
 			<Box
-				className={clsx([styles.root, className])}
+				className={[styles.root, className]}
 				backgroundColour="gray200">
 				<div className={styles.linearProgressBar}>
 					<Box

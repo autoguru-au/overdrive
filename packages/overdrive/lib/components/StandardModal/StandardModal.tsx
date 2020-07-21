@@ -73,11 +73,9 @@ export const StandardModal: FunctionComponent<Props> = ({
 						{ [styles.modalSizeStandard]: size === 'standard' },
 						className,
 					])}>
-					<header
-						className={clsx(
-							styles.header,
-							styles.headerWithBorder,
-						)}>
+					<Box
+						is="header"
+						className={[styles.header, styles.headerWithBorder]}>
 						<button
 							className={styles.headerCloseButton}
 							aria-label="close"
@@ -87,7 +85,7 @@ export const StandardModal: FunctionComponent<Props> = ({
 						<div className={styles.headerTitle} id={titleId!}>
 							<Heading is="h4">{title}</Heading>
 						</div>
-					</header>
+					</Box>
 					<main className={styles.content}>{children}</main>
 				</Box>
 			</Box>
