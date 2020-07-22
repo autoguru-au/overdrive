@@ -79,20 +79,19 @@ const Loading: FunctionComponent<LoadingComponentProps> = ({
 }) => {
 	const styles = useStyles(styleRefs);
 	return (
-		<Box
-			is="span"
-			display="flex"
-			alignItems="center"
-			flexDirection="row"
-			flexWrap="wrap"
-			justifyContent="flexStart">
+		<Inline is="span" space="3">
 			<NavButton disabled icon={ChevronLeftIcon} />
 			{new Array(placeholderBubblesNum).fill('').map((_, index) => (
-				<Bubble key={index} children="" className={styles.disabled} />
+				<Bubble
+					key={index}
+					children=""
+					disabled
+					className={styles.disabled}
+				/>
 			))}
 
 			<NavButton disabled icon={ChevronRightIcon} />
-		</Box>
+		</Inline>
 	);
 };
 

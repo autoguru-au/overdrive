@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import { ButtonHTMLAttributes, FunctionComponent } from 'react';
+import { ButtonHTMLAttributes, ComponentProps, FunctionComponent } from 'react';
 import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
@@ -10,6 +10,7 @@ import * as styleRefs from './Pagination.treat';
 export interface Props extends ButtonHTMLAttributes<Element> {
 	className?: string;
 	selected?: boolean;
+	disabled?: boolean;
 	gap?: boolean;
 	children;
 }
@@ -19,14 +20,18 @@ export const Bubble: FunctionComponent<Props> = ({
 	selected = false,
 	gap = false,
 	children,
+	disabled,
 	...rest
 }) => {
 	const styles = useStyles(styleRefs);
-
+	let backgroundColour: ComponentProps<typeof Box>['backgroundColour'] =
+		'transparent';
+	if (selected) backgroundColour = 'green900';
+	else if (disabled) backgroundColour = 'gray200';
 	return (
 		<Box
 			is="button"
-			backgroundColour={selected ? 'green900' : 'transparent'}
+			backgroundColour={backgroundColour}
 			display="flex"
 			overflow="hidden"
 			alignItems="center"
@@ -34,6 +39,7 @@ export const Bubble: FunctionComponent<Props> = ({
 			justifyContent="center"
 			textAlign="center"
 			borderRadius="pill"
+			pointerEvents={disabled ? 'none' : void 0}
 			className={clsx(
 				className,
 				styles.activeItem,

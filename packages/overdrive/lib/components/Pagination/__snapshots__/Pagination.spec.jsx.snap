@@ -2,58 +2,78 @@
 
 exports[`<Pagination /> should match snapshot for loading phase 1`] = `
 <span
-  class="base display_flex center_mobile_base row_mobile_base flexWrap_wrap flexStart_mobile_base"
+  class="base display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 3_mobile_base 3_mobile_base"
 >
-  <button
-    aria-disabled="true"
-    aria-label=""
-    class="base appearance cursorPointer button 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base display_flex overflow_hidden userSelect_none textAlign_center pointerEvents_none pill_mobile_base center_mobile_base row_mobile_base center_mobile_base root_base colours_light_base base disabled_base"
+  <div
+    class="base 3_mobile_base 3_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
-    <i
-      class="base display_block medium_mobile_base"
-      role="presentation"
+    <button
+      aria-disabled="true"
+      aria-label=""
+      class="base appearance cursorPointer button 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base display_flex overflow_hidden userSelect_none textAlign_center pointerEvents_none pill_mobile_base center_mobile_base row_mobile_base center_mobile_base root_base colours_light_base base disabled_base"
     >
-      <svg
-        class="base display_block width_full height_full"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
+      <i
+        class="base display_block medium_mobile_base"
+        role="presentation"
       >
-        <path
-          d="M15.414 16.584l-4.586-4.586 4.586-4.586-1.415-1.414-6 6 6 6 1.415-1.414z"
-        />
-      </svg>
-    </i>
-  </button>
-  <button
-    class="base appearance cursorPointer button display_flex overflow_hidden textAlign_center pill_mobile_base backgroundColours_transparent_base center_mobile_base row_mobile_base center_mobile_base disabled_base activeItem_base root_base sizes_3_base colours_light_base fontWeight_bold_base base"
-  />
-  <button
-    class="base appearance cursorPointer button display_flex overflow_hidden textAlign_center pill_mobile_base backgroundColours_transparent_base center_mobile_base row_mobile_base center_mobile_base disabled_base activeItem_base root_base sizes_3_base colours_light_base fontWeight_bold_base base"
-  />
-  <button
-    class="base appearance cursorPointer button display_flex overflow_hidden textAlign_center pill_mobile_base backgroundColours_transparent_base center_mobile_base row_mobile_base center_mobile_base disabled_base activeItem_base root_base sizes_3_base colours_light_base fontWeight_bold_base base"
-  />
-  <button
-    aria-disabled="true"
-    aria-label=""
-    class="base appearance cursorPointer button 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base display_flex overflow_hidden userSelect_none textAlign_center pointerEvents_none pill_mobile_base center_mobile_base row_mobile_base center_mobile_base root_base colours_light_base base disabled_base"
+        <svg
+          class="base display_block width_full height_full"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M15.414 16.584l-4.586-4.586 4.586-4.586-1.415-1.414-6 6 6 6 1.415-1.414z"
+          />
+        </svg>
+      </i>
+    </button>
+  </div>
+  <div
+    class="base 3_mobile_base 3_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
-    <i
-      class="base display_block medium_mobile_base"
-      role="presentation"
+    <button
+      class="base appearance cursorPointer button display_flex overflow_hidden textAlign_center pointerEvents_none pill_mobile_base backgroundColours_gray200_base center_mobile_base row_mobile_base center_mobile_base disabled_base activeItem_base root_base sizes_3_base colours_light_base fontWeight_bold_base base"
+    />
+  </div>
+  <div
+    class="base 3_mobile_base 3_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+  >
+    <button
+      class="base appearance cursorPointer button display_flex overflow_hidden textAlign_center pointerEvents_none pill_mobile_base backgroundColours_gray200_base center_mobile_base row_mobile_base center_mobile_base disabled_base activeItem_base root_base sizes_3_base colours_light_base fontWeight_bold_base base"
+    />
+  </div>
+  <div
+    class="base 3_mobile_base 3_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+  >
+    <button
+      class="base appearance cursorPointer button display_flex overflow_hidden textAlign_center pointerEvents_none pill_mobile_base backgroundColours_gray200_base center_mobile_base row_mobile_base center_mobile_base disabled_base activeItem_base root_base sizes_3_base colours_light_base fontWeight_bold_base base"
+    />
+  </div>
+  <div
+    class="base 3_mobile_base 3_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+  >
+    <button
+      aria-disabled="true"
+      aria-label=""
+      class="base appearance cursorPointer button 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base display_flex overflow_hidden userSelect_none textAlign_center pointerEvents_none pill_mobile_base center_mobile_base row_mobile_base center_mobile_base root_base colours_light_base base disabled_base"
     >
-      <svg
-        class="base display_block width_full height_full"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
+      <i
+        class="base display_block medium_mobile_base"
+        role="presentation"
       >
-        <path
-          d="M8.585 16.584l4.586-4.586-4.586-4.586L10 5.998l6 6-6 6-1.414-1.414z"
-        />
-      </svg>
-    </i>
-  </button>
+        <svg
+          class="base display_block width_full height_full"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M8.585 16.584l4.586-4.586-4.586-4.586L10 5.998l6 6-6 6-1.414-1.414z"
+          />
+        </svg>
+      </i>
+    </button>
+  </div>
 </span>
 `;
