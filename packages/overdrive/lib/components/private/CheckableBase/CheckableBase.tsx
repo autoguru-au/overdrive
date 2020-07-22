@@ -68,11 +68,11 @@ export const CheckableBase: FunctionComponent<Props> = ({
 				checked={checked}
 				disabled={disabled}
 				type={inputType}
+				pointerEvents={disabled ? 'none' : void 0}
 				className={clsx(
 					useBoxStyles({ is: 'button' }),
 					styles.nativeInput.default,
 					{
-						[styles.nativeInput.disabled]: disabled,
 						[styles.nativeInput.checked]: checked,
 					},
 				)}
@@ -84,6 +84,7 @@ export const CheckableBase: FunctionComponent<Props> = ({
 				is="label"
 				width="full"
 				position="relative"
+				pointerEvents={disabled ? 'none' : void 0}
 				className={clsx(
 					useBoxStyles({ is: 'button' }),
 					useTextStyles({ size: '4' }),

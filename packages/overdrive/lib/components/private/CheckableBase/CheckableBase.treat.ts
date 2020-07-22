@@ -10,7 +10,6 @@ export const label = styleMap((theme) => ({
 	},
 	disabled: {
 		color: theme.colours.gamut.gray500,
-		pointerEvents: 'none',
 	},
 }));
 
@@ -21,9 +20,6 @@ export const nativeInput = styleMap({
 		left: 0,
 		cursor: 'inherit',
 		opacity: 0,
-	},
-	disabled: {
-		pointerEvents: 'none',
 	},
 	checked: {
 		outline: 'none',

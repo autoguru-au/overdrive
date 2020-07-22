@@ -14,7 +14,7 @@ import {
 } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box';
+import { Box, useBoxStyles } from '../Box';
 import { Text } from '../Text';
 import * as styleRefs from './TextLink.treat';
 
@@ -61,7 +61,7 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 				fontWeight={fontWeight}
 				className={clsx(
 					styles.root,
-
+					useBoxStyles({ pointerEvents: 'none' }),
 					{
 						[styles.muted]: muted,
 					},

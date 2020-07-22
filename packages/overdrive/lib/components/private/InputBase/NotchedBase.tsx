@@ -59,10 +59,16 @@ export const NotchedBase: FunctionComponent<Props> = ({
 			)}>
 			{children}
 			{notch && (
-				<div
+				<Box
 					className={clsx(styles.borders.root.default, {
 						[styles.borders.root.disabled]: disabled,
-					})}>
+					})}
+					pointerEvents="none"
+					position="absolute"
+					display="flex"
+					width="full"
+					height="full"
+					textAlign="left">
 					<div
 						className={clsx(
 							styles.borders.leading,
@@ -75,8 +81,10 @@ export const NotchedBase: FunctionComponent<Props> = ({
 							borderColourClassName,
 						)}
 						style={{ width: isEmpty ? 0 : notchedWidth }}>
-						<label
+						<Box
 							ref={labelRef}
+							is="label"
+							pointerEvents="none"
 							htmlFor={id}
 							className={clsx(
 								styles.placeholder.default.standard,
@@ -93,7 +101,7 @@ export const NotchedBase: FunctionComponent<Props> = ({
 								},
 							)}>
 							{placeholder}
-						</label>
+						</Box>
 					</div>
 					<div
 						className={clsx(
@@ -101,7 +109,7 @@ export const NotchedBase: FunctionComponent<Props> = ({
 							borderColourClassName,
 						)}
 					/>
-				</div>
+				</Box>
 			)}
 		</Box>
 	);

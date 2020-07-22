@@ -6,7 +6,6 @@ export const root = style((theme) => ({
 	top: theme.space['3'],
 	right: 0,
 	left: 0,
-	pointerEvents: 'none',
 }));
 
 export const alert = style(() => ({

@@ -59,6 +59,7 @@ const NavButton: FunctionComponent<NavButtonProps> = ({
 			borderRadius="pill"
 			padding="2"
 			userSelect="none"
+			pointerEvents={disabled ? 'none' : void 0}
 			className={clsx(useTextStyles({ colour: 'light' }), {
 				[styles.disabled]: disabled,
 			})}

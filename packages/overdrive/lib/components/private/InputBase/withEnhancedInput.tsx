@@ -236,6 +236,8 @@ export const withEnhancedInput = <
 				setIsHovered(false);
 			}, []);
 
+			const iconStyles = useBoxStyles({ pointerEvents: 'none' });
+
 			return (
 				<Box
 					width="full"
@@ -262,6 +264,7 @@ export const withEnhancedInput = <
 									icon={prefixIcon}
 									size="medium"
 									className={clsx(
+										iconStyles,
 										styles.icon.prefix,
 										derivedColours.colour,
 									)}
@@ -272,6 +275,7 @@ export const withEnhancedInput = <
 									icon={suffixIcon}
 									size="medium"
 									className={clsx(
+										iconStyles,
 										styles.icon.suffix,
 										derivedColours.colour,
 									)}

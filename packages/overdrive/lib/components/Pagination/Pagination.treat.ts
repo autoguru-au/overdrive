@@ -4,7 +4,6 @@ const paginationBubbleSize = '36px';
 
 export const disabled = style((theme) => ({
 	color: theme.colours.gamut.gray300,
-	pointerEvents: 'none',
 }));
 
 export const selectedItem = style(() => ({

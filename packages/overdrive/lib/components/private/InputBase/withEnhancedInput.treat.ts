@@ -4,7 +4,6 @@ const iconRoot = style(({ space, animation }) => ({
 	position: 'absolute',
 	top: '50%',
 	transform: 'translate3d(0, -50%, 0)',
-	pointerEvents: 'none',
 	transition: `color 0.2s ${animation.easing.decelerate} 0s`,
 	margin: `0 calc(${space['3']} - 1px)`,
 }));
