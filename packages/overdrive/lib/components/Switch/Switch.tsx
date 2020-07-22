@@ -3,7 +3,8 @@ import * as React from 'react';
 import { FunctionComponent, memo, useCallback, useState } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box';
+import { Box, useBoxStyles } from '../Box';
+import { useTextStyles } from '../Text';
 import * as styleRefs from './Switch.treat';
 
 export interface Props {
@@ -44,8 +45,10 @@ const SwitchComponent: FunctionComponent<Props> = ({
 
 	return (
 		<Box
+			is="button"
 			className={clsx(
 				styles.root,
+				useTextStyles({ size: '5' }),
 				{
 					[styles.toggled]: toggled,
 					[styles.disabled.default]: disabled,
@@ -53,13 +56,28 @@ const SwitchComponent: FunctionComponent<Props> = ({
 				},
 				className,
 			)}
+			borderRadius="pill"
+			position="relative"
+			backgroundColour={toggled ? 'green600' : 'gray100'}
 			aria-disabled={disabled}
 			aria-label={`toggle ${toggled ? 'on' : 'off'}`}
 			onClick={onToggle}>
-			<span
-				className={clsx(styles.handle.default, {
-					[styles.handle.transition]: toggled,
-				})}
+			<Box
+				borderWidth="1"
+				borderColour="gray"
+				position="absolute"
+				borderRadius="pill"
+				backgroundColour="white"
+				padding="none"
+				boxShadow="2"
+				className={clsx(
+					styles.handle.default,
+					useBoxStyles({ is: 'button' }),
+					useTextStyles({ colour: 'white' }),
+					{
+						[styles.handle.transition]: toggled,
+					},
+				)}
 			/>
 		</Box>
 	);

@@ -23,6 +23,7 @@ import { useMedia } from '../../hooks/useMedia';
 import { setRef, useId } from '../../utils';
 import { Box, useBoxStyles } from '../Box';
 import { Button } from '../Button';
+import { Column, Columns } from '../Columns';
 import { Icon } from '../Icon';
 import { Portal } from '../Portal';
 import { Positioner } from '../Positioner';
@@ -32,7 +33,6 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import * as styleRefs from './AutoSuggest.treat';
 import { useLayoutSuggestionVisible } from './useLayoutSuggestionVisible';
-import { Column, Columns } from '../Columns';
 
 export interface AutoSuggestValue<PayloadType> {
 	text: string;
@@ -581,25 +581,27 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 
 		return (
 			<Columns noWrap>
-			<Column grow width="auto" alignSelf="centre">
-				<Box
-					is="input"
-					{...eventHandlers}
-					{...field}
-					ref={handleRef}
-					autoCapitalize="none"
-					spellCheck="false"
-					autoComplete="off"
-					{...rest}
-					type="search"
-				/>
-			</Column>
-			<Column noShrink alignSelf="centre">
-				<Box className={useBoxStyles({ marginRight: '4' })} onClick={focusHandler}>
-					<Icon size="medium" icon={ChevronDownIcon} />
-				</Box>
-			</Column>
-		</Columns>
+				<Column grow width="auto" alignSelf="centre">
+					<Box
+						is="input"
+						{...eventHandlers}
+						{...field}
+						ref={handleRef}
+						autoCapitalize="none"
+						spellCheck="false"
+						autoComplete="off"
+						{...rest}
+						type="search"
+					/>
+				</Column>
+				<Column noShrink alignSelf="centre">
+					<Box
+						className={useBoxStyles({ marginRight: '4' })}
+						onClick={focusHandler}>
+						<Icon size="medium" icon={ChevronDownIcon} />
+					</Box>
+				</Column>
+			</Columns>
 		);
 	},
 	{
