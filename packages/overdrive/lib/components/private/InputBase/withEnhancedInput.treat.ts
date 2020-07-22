@@ -1,7 +1,6 @@
 import { style, styleMap } from 'treat';
 
 const iconRoot = style(({ space, animation }) => ({
-	position: 'absolute',
 	top: '50%',
 	transform: 'translate3d(0, -50%, 0)',
 	transition: `color 0.2s ${animation.easing.decelerate} 0s`,
@@ -14,14 +13,9 @@ export const icon = {
 };
 
 export const input = {
-	root: style({
-		height: '100%',
-	}),
 	itself: styleMap((theme) => ({
 		root: {
-			position: 'relative',
 			zIndex: 1,
-			display: 'flex',
 			alignSelf: 'flex-end',
 			background: 'transparent',
 			outline: 'none',

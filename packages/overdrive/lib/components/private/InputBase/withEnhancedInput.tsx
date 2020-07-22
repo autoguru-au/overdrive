@@ -167,6 +167,8 @@ export const withEnhancedInput = <
 				useBoxStyles({
 					is: primitiveType === 'textarea' ? 'textarea' : 'input',
 					width: 'full',
+					position: 'relative',
+					display: 'flex',
 				}),
 				styles.types[primitiveType!],
 				styles.input.itself.root,
@@ -236,7 +238,7 @@ export const withEnhancedInput = <
 				setIsHovered(false);
 			}, []);
 
-			const iconStyles = useBoxStyles({ pointerEvents: 'none' });
+			const iconStyles = useBoxStyles({ pointerEvents: 'none', position: 'absolute' });
 
 			return (
 				<Box
@@ -258,7 +260,7 @@ export const withEnhancedInput = <
 						<Box
 							ref={wrapperRef}
 							width="full"
-							className={styles.input.root}>
+							height="full">
 							{prefixIcon && (
 								<Icon
 									icon={prefixIcon}
