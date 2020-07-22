@@ -60,6 +60,10 @@ export const StandardModal: FunctionComponent<Props> = ({
 		<Modal isOpen={isOpen} onRequestClose={onRequestClose}>
 			<Box
 				className={styles.container}
+				height="full"
+				display="flex"
+				alignItems="center"
+				justifyContent="center"
 				aria-hidden={isOpen ? 'false' : 'true'}
 				role="none presentation"
 				onClick={backdropHandler}>
@@ -68,6 +72,10 @@ export const StandardModal: FunctionComponent<Props> = ({
 					role="dialog"
 					aria-modal="true"
 					aria-labelledby={titleId!}
+					display="flex"
+					flexDirection="column"
+					backgroundColour="white"
+					marginTop="8"
 					className={clsx([
 						styles.modal,
 						{ [styles.modalSizeStandard]: size === 'standard' },
@@ -75,18 +83,35 @@ export const StandardModal: FunctionComponent<Props> = ({
 					])}>
 					<Box
 						is="header"
-						className={[styles.header, styles.headerWithBorder]}>
-						<button
+						position="relative"
+						display="flex"
+						alignItems="center"
+						width="full"
+						paddingY="6"
+						paddingX="5"
+						borderWidthBottom="1"
+						borderColour="light"
+						className={styles.header}>
+						<Box
+							is="button"
+							position="absolute"
+							padding="5"
 							className={styles.headerCloseButton}
 							aria-label="close"
 							onClick={closeButtonHandler}>
 							<Icon size="medium" icon={WindowCloseIcon} />
-						</button>
-						<div className={styles.headerTitle} id={titleId!}>
+						</Box>
+						<div id={titleId!}>
 							<Heading is="h4">{title}</Heading>
 						</div>
 					</Box>
-					<main className={styles.content}>{children}</main>
+					<Box
+						is="main"
+						flexGrow={1}
+						height="full"
+						className={styles.content}>
+						{children}
+					</Box>
 				</Box>
 			</Box>
 		</Modal>
