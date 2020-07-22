@@ -10,7 +10,7 @@ import {
 import { useStyles } from 'react-treat';
 import type { Theme } from 'treat/theme';
 
-import { Box } from '../Box';
+import { Box, useBoxStyles } from '../Box';
 import { Icon } from '../Icon';
 import { Inline } from '../Inline';
 import { Text } from '../Text';
@@ -119,9 +119,13 @@ const Star: FunctionComponent<StarProps> = ({
 			key={index}
 			icon={star}
 			size={starSizeMap.get(size)}
-			className={clsx(styles.star.default, {
-				[styles.star.empty]: starType === EStarType.Empty,
-			})}
+			className={clsx(
+				useBoxStyles({ position: 'relative' }),
+				styles.star.default,
+				{
+					[styles.star.empty]: starType === EStarType.Empty,
+				},
+			)}
 		/>
 	);
 };
