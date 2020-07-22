@@ -197,3 +197,7 @@ export const justifyContent = makeResponsiveStyle(
 	}),
 	'justifyContent',
 );
+
+export const pointerEvents = styleMap({
+	none: { pointerEvents: 'none' },
+});
