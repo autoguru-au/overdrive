@@ -238,7 +238,10 @@ export const withEnhancedInput = <
 				setIsHovered(false);
 			}, []);
 
-			const iconStyles = useBoxStyles({ pointerEvents: 'none', position: 'absolute' });
+			const iconStyles = useBoxStyles({
+				pointerEvents: 'none',
+				position: 'absolute',
+			});
 
 			return (
 				<Box
@@ -257,10 +260,7 @@ export const withEnhancedInput = <
 							[derivedColours.colour]: !isEmpty,
 						})}
 						borderColourClassName={derivedColours.borderColour}>
-						<Box
-							ref={wrapperRef}
-							width="full"
-							height="full">
+						<Box ref={wrapperRef} width="full" height="full">
 							{prefixIcon && (
 								<Icon
 									icon={prefixIcon}
