@@ -21,18 +21,18 @@ import { useStyles } from 'react-treat';
 
 import { useMedia } from '../../hooks/useMedia';
 import { setRef, useId } from '../../utils';
-import { Box } from '../Box';
+import { Box, useBoxStyles } from '../Box';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { Portal } from '../Portal';
 import { Positioner } from '../Positioner';
 import { EAlignment } from '../Positioner/alignment';
 import { withEnhancedInput } from '../private/InputBase';
-import * as selectStyleRefs from '../SelectInput/SelectInput.treat';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import * as styleRefs from './AutoSuggest.treat';
 import { useLayoutSuggestionVisible } from './useLayoutSuggestionVisible';
+import { Column, Columns } from '../Columns';
 
 export interface AutoSuggestValue<PayloadType> {
 	text: string;
@@ -563,7 +563,6 @@ const SuggestionsList = <PayloadType extends unknown>({
 
 const AutoSuggestInputPrimitive = withEnhancedInput(
 	({ field, eventHandlers, validation, suffixed, prefixed, ...rest }) => {
-		const styles = useStyles(selectStyleRefs);
 		const ref = useRef<HTMLInputElement>(null);
 
 		const focusHandler = useCallback(() => {
@@ -581,7 +580,8 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 		);
 
 		return (
-			<Box className={styles.root}>
+			<Columns noWrap>
+			<Column grow width="auto" alignSelf="centre">
 				<Box
 					is="input"
 					{...eventHandlers}
@@ -593,10 +593,13 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 					{...rest}
 					type="search"
 				/>
-				<Box className={styles.icon} onClick={focusHandler}>
+			</Column>
+			<Column noShrink alignSelf="centre">
+				<Box className={useBoxStyles({ marginRight: '4' })} onClick={focusHandler}>
 					<Icon size="medium" icon={ChevronDownIcon} />
 				</Box>
-			</Box>
+			</Column>
+		</Columns>
 		);
 	},
 	{
