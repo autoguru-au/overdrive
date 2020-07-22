@@ -13,6 +13,7 @@ import {
 import { useStyles } from 'react-treat';
 
 import { useBoxStyles } from '../Box';
+import { Text, useTextStyles } from '../Text';
 import { useTabIndex, useTabsContext } from './context';
 import * as styleRefs from './Tab.treat';
 
@@ -36,15 +37,20 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 		const myIndex = useTabIndex();
 		const tabsContext = useTabsContext();
 
-		const styles = useStyles(styleRefs);
-
 		invariant(
 			myIndex !== null && tabsContext !== null,
 			'This tab pane isnt nested beneath <Tabs /> or <TabPanes />>',
 		);
 
 		const isActive = myIndex === tabsContext!.active;
-
+		const styles = useStyles(styleRefs);
+		const indicationStyles = useBoxStyles({
+			display: 'inlineBlock',
+			paddingX: '1',
+			marginLeft: '2',
+			backgroundColour: isActive ? 'green900' : 'gray300',
+			borderRadius: 'pill',
+		});
 		const controlsId =
 			typeof incomingId === 'string'
 				? incomingId
@@ -58,8 +64,16 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 		const props = {
 			className: clsx(
 				useBoxStyles({
-					is: typeof Component === 'string' ? Component : undefined,
-					display: 'block',
+					is: typeof Component === 'string' ? Component : 'button',
+					display: 'inlineBlock',
+					backgroundColour: 'transparent',
+					marginRight: '6',
+				}),
+				useTextStyles({
+					noWrap: true,
+					size: '3',
+					fontWeight: 'bold',
+					colour: 'neutral',
 				}),
 				styles.root.default,
 				{
@@ -78,12 +92,19 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 			<>
 				<span className={styles.item}>{children}</span>
 				{typeof indication === 'number' && (
-					<span
-						className={clsx(styles.indication.default, {
-							[styles.indication.active]: isActive,
-						})}>
+					<Text
+						strong
+						is="span"
+						size="2"
+						align="center"
+						display="block"
+						colour={isActive ? 'white' : 'dark'}
+						className={clsx(
+							styles.indication.default,
+							indicationStyles,
+						)}>
 						{indication}
-					</span>
+					</Text>
 				)}
 			</>
 		);
