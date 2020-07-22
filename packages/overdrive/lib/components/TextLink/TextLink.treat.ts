@@ -17,8 +17,3 @@ export const muted = style((theme) => ({
 		boxShadow: `inset 0 -1.6em 0 0 ${theme.colours.gamut.gray500}`,
 	},
 }));
-
-export const anchor = style({
-	textDecoration: 'none',
-	outline: 'none',
-});

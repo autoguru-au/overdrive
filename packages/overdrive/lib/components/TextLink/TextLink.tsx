@@ -59,9 +59,13 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 				size={size}
 				strong={strong}
 				fontWeight={fontWeight}
-				className={clsx(styles.root, {
-					[styles.muted]: muted,
-				})}>
+				className={clsx(
+					styles.root,
+
+					{
+						[styles.muted]: muted,
+					},
+				)}>
 				{children}
 			</Text>
 		);
@@ -70,7 +74,7 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 			rel: props.rel ?? 'noopener noreferrer',
 			...props,
 			ref,
-			className: clsx(className, styles.anchor),
+			className: clsx(className),
 		};
 
 		if (Component === undefined) {
