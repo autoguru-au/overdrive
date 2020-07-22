@@ -3,7 +3,7 @@
 exports[`<TextLink /> should allow as override 1`] = `
 <a
   as="[object Object]"
-  class="base cursorPointer a anchor"
+  class="base cursorPointer a"
   rel="noopener noreferrer"
 >
   <span
@@ -16,7 +16,7 @@ exports[`<TextLink /> should allow as override 1`] = `
 
 exports[`<TextLink /> should match the snapshot 1`] = `
 <a
-  class="base cursorPointer a anchor"
+  class="base cursorPointer a"
   rel="noopener noreferrer"
 >
   <span
