@@ -20,7 +20,7 @@ exports[`<Anchor /> should match snapshot with label, icon and to props 1`] = `
     </svg>
   </i>
   <span
-    class="base textAlign_left root_base sizes_3_base colours_link_base fontWeight_bold_base base"
+    class="base textAlign_left root_base sizes_4_base colours_link_base fontWeight_bold_base base"
   >
     Hello World!
   </span>
@@ -32,7 +32,7 @@ exports[`<Anchor /> should match snapshot without label 1`] = `
   class="root root_base colours_link_base base base cursorPointer a display_flex center_mobile_base row_mobile_base flexStart_mobile_base"
 >
   <span
-    class="base textAlign_left root_base sizes_3_base colours_link_base fontWeight_bold_base base"
+    class="base textAlign_left root_base sizes_4_base colours_link_base fontWeight_bold_base base"
   />
 </a>
 `;
@@ -60,7 +60,7 @@ exports[`<Anchor /> when custom component should match snapshot with label, icon
       </svg>
     </i>
     <span
-      class="base textAlign_left root_base sizes_3_base colours_link_base fontWeight_bold_base base"
+      class="base textAlign_left root_base sizes_4_base colours_link_base fontWeight_bold_base base"
     >
       Hello World!
     </span>

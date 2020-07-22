@@ -81,7 +81,7 @@ export const Anchor: FunctionComponent<Props> = ({
 					})}
 				/>
 			)}
-			<Text fontWeight="bold" size="3" colour="link">
+			<Text fontWeight="bold" size="4" colour="link">
 				{children}
 			</Text>
 		</>
