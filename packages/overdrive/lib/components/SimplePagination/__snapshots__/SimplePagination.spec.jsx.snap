@@ -2,176 +2,197 @@
 
 exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
 <nav
-  aria-label="pagination"
-  class="base block pagination"
+  class="base block display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 6_mobile_base 6_mobile_base"
 >
-  <button
-    aria-label="previous page"
-    class="base appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base sizes_3_base colours_white_base fontWeight_semiBold_base base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base disabled pagination chevron_default_base chevron_disabled_base"
-    disabled=""
-    type="button"
+  <div
+    class="base 6_mobile_base 6_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
-    <div
-      class="base height_full center_mobile_base center_mobile_base body_base"
+    <button
+      aria-label="previous page"
+      class="base appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base sizes_3_base colours_white_base fontWeight_semiBold_base base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base disabled"
+      disabled=""
+      type="button"
     >
-      <i
-        class="base display_block medium_mobile_base icon_default_base"
-        role="presentation"
+      <div
+        class="base height_full center_mobile_base center_mobile_base body_base"
       >
-        <svg
-          class="base display_block width_full height_full"
-          fill="currentColor"
-          focusable="false"
-          viewBox="0 0 24 24"
+        <i
+          class="base display_block medium_mobile_base"
+          role="presentation"
         >
-          <path
-            d="M15.414 16.584l-4.586-4.586 4.586-4.586-1.415-1.414-6 6 6 6 1.415-1.414z"
-          />
-        </svg>
-      </i>
-    </div>
-  </button>
-  <button
-    aria-label="next page"
-    class="base appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base sizes_3_base colours_white_base fontWeight_semiBold_base base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled pagination chevron_default_base"
-    type="button"
+          <svg
+            class="base display_block width_full height_full"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M15.414 16.584l-4.586-4.586 4.586-4.586-1.415-1.414-6 6 6 6 1.415-1.414z"
+            />
+          </svg>
+        </i>
+      </div>
+    </button>
+  </div>
+  <div
+    class="base 6_mobile_base 6_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
-    <div
-      class="base height_full center_mobile_base center_mobile_base body_base"
+    <button
+      aria-label="next page"
+      class="base appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base sizes_3_base colours_white_base fontWeight_semiBold_base base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
+      type="button"
     >
-      <i
-        class="base display_block medium_mobile_base icon_default_base"
-        role="presentation"
+      <div
+        class="base height_full center_mobile_base center_mobile_base body_base"
       >
-        <svg
-          class="base display_block width_full height_full"
-          fill="currentColor"
-          focusable="false"
-          viewBox="0 0 24 24"
+        <i
+          class="base display_block medium_mobile_base"
+          role="presentation"
         >
-          <path
-            d="M8.585 16.584l4.586-4.586-4.586-4.586L10 5.998l6 6-6 6-1.414-1.414z"
-          />
-        </svg>
-      </i>
-    </div>
-  </button>
+          <svg
+            class="base display_block width_full height_full"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M8.585 16.584l4.586-4.586-4.586-4.586L10 5.998l6 6-6 6-1.414-1.414z"
+            />
+          </svg>
+        </i>
+      </div>
+    </button>
+  </div>
 </nav>
 `;
 
 exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 1`] = `
 <nav
-  aria-label="pagination"
-  class="base block pagination"
+  class="base block display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 6_mobile_base 6_mobile_base"
 >
-  <button
-    aria-label="previous page"
-    class="base appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base sizes_3_base colours_white_base fontWeight_semiBold_base base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled pagination chevron_default_base"
-    type="button"
+  <div
+    class="base 6_mobile_base 6_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
-    <div
-      class="base height_full center_mobile_base center_mobile_base body_base"
+    <button
+      aria-label="previous page"
+      class="base appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base sizes_3_base colours_white_base fontWeight_semiBold_base base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
+      type="button"
     >
-      <i
-        class="base display_block medium_mobile_base icon_default_base"
-        role="presentation"
+      <div
+        class="base height_full center_mobile_base center_mobile_base body_base"
       >
-        <svg
-          class="base display_block width_full height_full"
-          fill="currentColor"
-          focusable="false"
-          viewBox="0 0 24 24"
+        <i
+          class="base display_block medium_mobile_base"
+          role="presentation"
         >
-          <path
-            d="M15.414 16.584l-4.586-4.586 4.586-4.586-1.415-1.414-6 6 6 6 1.415-1.414z"
-          />
-        </svg>
-      </i>
-    </div>
-  </button>
-  <button
-    aria-label="next page"
-    class="base appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base sizes_3_base colours_white_base fontWeight_semiBold_base base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled pagination chevron_default_base"
-    type="button"
+          <svg
+            class="base display_block width_full height_full"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M15.414 16.584l-4.586-4.586 4.586-4.586-1.415-1.414-6 6 6 6 1.415-1.414z"
+            />
+          </svg>
+        </i>
+      </div>
+    </button>
+  </div>
+  <div
+    class="base 6_mobile_base 6_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
-    <div
-      class="base height_full center_mobile_base center_mobile_base body_base"
+    <button
+      aria-label="next page"
+      class="base appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base sizes_3_base colours_white_base fontWeight_semiBold_base base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
+      type="button"
     >
-      <i
-        class="base display_block medium_mobile_base icon_default_base"
-        role="presentation"
+      <div
+        class="base height_full center_mobile_base center_mobile_base body_base"
       >
-        <svg
-          class="base display_block width_full height_full"
-          fill="currentColor"
-          focusable="false"
-          viewBox="0 0 24 24"
+        <i
+          class="base display_block medium_mobile_base"
+          role="presentation"
         >
-          <path
-            d="M8.585 16.584l4.586-4.586-4.586-4.586L10 5.998l6 6-6 6-1.414-1.414z"
-          />
-        </svg>
-      </i>
-    </div>
-  </button>
+          <svg
+            class="base display_block width_full height_full"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M8.585 16.584l4.586-4.586-4.586-4.586L10 5.998l6 6-6 6-1.414-1.414z"
+            />
+          </svg>
+        </i>
+      </div>
+    </button>
+  </div>
 </nav>
 `;
 
 exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
 <nav
-  aria-label="pagination"
-  class="base block pagination"
+  class="base block display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 6_mobile_base 6_mobile_base"
 >
-  <button
-    aria-label="previous page"
-    class="base appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base sizes_3_base colours_white_base fontWeight_semiBold_base base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled pagination chevron_default_base"
-    type="button"
+  <div
+    class="base 6_mobile_base 6_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
-    <div
-      class="base height_full center_mobile_base center_mobile_base body_base"
+    <button
+      aria-label="previous page"
+      class="base appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base sizes_3_base colours_white_base fontWeight_semiBold_base base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
+      type="button"
     >
-      <i
-        class="base display_block medium_mobile_base icon_default_base"
-        role="presentation"
+      <div
+        class="base height_full center_mobile_base center_mobile_base body_base"
       >
-        <svg
-          class="base display_block width_full height_full"
-          fill="currentColor"
-          focusable="false"
-          viewBox="0 0 24 24"
+        <i
+          class="base display_block medium_mobile_base"
+          role="presentation"
         >
-          <path
-            d="M15.414 16.584l-4.586-4.586 4.586-4.586-1.415-1.414-6 6 6 6 1.415-1.414z"
-          />
-        </svg>
-      </i>
-    </div>
-  </button>
-  <button
-    aria-label="next page"
-    class="base appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base sizes_3_base colours_white_base fontWeight_semiBold_base base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base disabled pagination chevron_default_base chevron_disabled_base"
-    disabled=""
-    type="button"
+          <svg
+            class="base display_block width_full height_full"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M15.414 16.584l-4.586-4.586 4.586-4.586-1.415-1.414-6 6 6 6 1.415-1.414z"
+            />
+          </svg>
+        </i>
+      </div>
+    </button>
+  </div>
+  <div
+    class="base 6_mobile_base 6_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
-    <div
-      class="base height_full center_mobile_base center_mobile_base body_base"
+    <button
+      aria-label="next page"
+      class="base appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base sizes_3_base colours_white_base fontWeight_semiBold_base base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base disabled"
+      disabled=""
+      type="button"
     >
-      <i
-        class="base display_block medium_mobile_base icon_default_base"
-        role="presentation"
+      <div
+        class="base height_full center_mobile_base center_mobile_base body_base"
       >
-        <svg
-          class="base display_block width_full height_full"
-          fill="currentColor"
-          focusable="false"
-          viewBox="0 0 24 24"
+        <i
+          class="base display_block medium_mobile_base"
+          role="presentation"
         >
-          <path
-            d="M8.585 16.584l4.586-4.586-4.586-4.586L10 5.998l6 6-6 6-1.414-1.414z"
-          />
-        </svg>
-      </i>
-    </div>
-  </button>
+          <svg
+            class="base display_block width_full height_full"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M8.585 16.584l4.586-4.586-4.586-4.586L10 5.998l6 6-6 6-1.414-1.414z"
+            />
+          </svg>
+        </i>
+      </div>
+    </button>
+  </div>
 </nav>
 `;

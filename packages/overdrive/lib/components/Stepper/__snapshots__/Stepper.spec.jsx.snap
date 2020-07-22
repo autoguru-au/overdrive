@@ -3,169 +3,253 @@
 exports[`<Stepper /> should match snapshot with label formatter 1`] = `
 <div
   aria-disabled="false"
-  class="base 3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base userSelect_none border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base flexCenter"
+  class="base 3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base userSelect_none border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base base appearance cursorPointer button"
   tabindex="0"
 >
-  <button
-    aria-label="step down"
-    class="base appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base full_mobile_base handle_default_base flexCenter"
-    tabindex="-1"
+  <div
+    class="base display_flex width_full row_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_stretch wrapping_noWrap"
   >
-    <i
-      class="base display_block small_mobile_base"
-      role="presentation"
+    <div
+      class="base flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_centre"
     >
-      <svg
-        class="base display_block width_full height_full"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
+      <div
+        class="base display_flex width_full height_full"
       >
-        <path
-          d="M19 12.998H5V11l14-.002v2z"
-        />
-      </svg>
-    </i>
-  </button>
-  <span
-    class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base label_base"
-  >
-    25%
-  </span>
-  <button
-    aria-label="step up"
-    class="base appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base full_mobile_base handle_default_base flexCenter"
-    tabindex="-1"
-  >
-    <i
-      class="base display_block small_mobile_base"
-      role="presentation"
+        <button
+          aria-label="step down"
+          class="base appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base colours_white_base base"
+          tabindex="-1"
+        >
+          <i
+            class="base display_block small_mobile_base"
+            role="presentation"
+          >
+            <svg
+              class="base display_block width_full height_full"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 12.998H5V11l14-.002v2z"
+              />
+            </svg>
+          </i>
+        </button>
+      </div>
+    </div>
+    <div
+      class="base flexGrow_1 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base auto_mobile_base align_centre"
     >
-      <svg
-        class="base display_block width_full height_full"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
+      <div
+        class="base display_flex width_full height_full"
       >
-        <path
-          d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6v2z"
-        />
-      </svg>
-    </i>
-  </button>
+        <span
+          class="base display_block textAlign_center root_base sizes_4_base colours_dark_base fontWeight_normal_base base base 2_mobile_base 2_mobile_base width_full label_base"
+        >
+          25%
+        </span>
+      </div>
+    </div>
+    <div
+      class="base flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_centre"
+    >
+      <div
+        class="base display_flex width_full height_full"
+      >
+        <button
+          aria-label="step up"
+          class="base appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base colours_white_base base"
+          tabindex="-1"
+        >
+          <i
+            class="base display_block small_mobile_base"
+            role="presentation"
+          >
+            <svg
+              class="base display_block width_full height_full"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6v2z"
+              />
+            </svg>
+          </i>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`<Stepper /> should match snapshot with props 1`] = `
 <div
   aria-disabled="false"
-  class="base 3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base userSelect_none border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base flexCenter"
+  class="base 3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base userSelect_none border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base base appearance cursorPointer button"
   tabindex="0"
 >
-  <button
-    aria-label="step down"
-    class="base appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base full_mobile_base handle_default_base flexCenter"
-    tabindex="-1"
+  <div
+    class="base display_flex width_full row_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_stretch wrapping_noWrap"
   >
-    <i
-      class="base display_block small_mobile_base"
-      role="presentation"
+    <div
+      class="base flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_centre"
     >
-      <svg
-        class="base display_block width_full height_full"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
+      <div
+        class="base display_flex width_full height_full"
       >
-        <path
-          d="M19 12.998H5V11l14-.002v2z"
-        />
-      </svg>
-    </i>
-  </button>
-  <span
-    class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base label_base"
-  >
-    19
-  </span>
-  <button
-    aria-label="step up"
-    class="base appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base full_mobile_base handle_default_base flexCenter"
-    tabindex="-1"
-  >
-    <i
-      class="base display_block small_mobile_base"
-      role="presentation"
+        <button
+          aria-label="step down"
+          class="base appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base colours_white_base base"
+          tabindex="-1"
+        >
+          <i
+            class="base display_block small_mobile_base"
+            role="presentation"
+          >
+            <svg
+              class="base display_block width_full height_full"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 12.998H5V11l14-.002v2z"
+              />
+            </svg>
+          </i>
+        </button>
+      </div>
+    </div>
+    <div
+      class="base flexGrow_1 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base auto_mobile_base align_centre"
     >
-      <svg
-        class="base display_block width_full height_full"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
+      <div
+        class="base display_flex width_full height_full"
       >
-        <path
-          d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6v2z"
-        />
-      </svg>
-    </i>
-  </button>
+        <span
+          class="base display_block textAlign_center root_base sizes_4_base colours_dark_base fontWeight_normal_base base base 2_mobile_base 2_mobile_base width_full label_base"
+        >
+          19
+        </span>
+      </div>
+    </div>
+    <div
+      class="base flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_centre"
+    >
+      <div
+        class="base display_flex width_full height_full"
+      >
+        <button
+          aria-label="step up"
+          class="base appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base colours_white_base base"
+          tabindex="-1"
+        >
+          <i
+            class="base display_block small_mobile_base"
+            role="presentation"
+          >
+            <svg
+              class="base display_block width_full height_full"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6v2z"
+              />
+            </svg>
+          </i>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`<Stepper /> should match snapshot without props 1`] = `
 <div
   aria-disabled="true"
-  class="base 3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base userSelect_none border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base flexCenter"
+  class="base 3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base userSelect_none border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base base appearance cursorPointer button disabled"
   tabindex="0"
 >
-  <button
-    aria-label="step down"
-    class="base appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base full_mobile_base handle_default_base flexCenter"
-    disabled=""
-    tabindex="-1"
+  <div
+    class="base display_flex width_full row_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_stretch wrapping_noWrap"
   >
-    <i
-      class="base display_block small_mobile_base"
-      role="presentation"
+    <div
+      class="base flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_centre"
     >
-      <svg
-        class="base display_block width_full height_full"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
+      <div
+        class="base display_flex width_full height_full"
       >
-        <path
-          d="M19 12.998H5V11l14-.002v2z"
-        />
-      </svg>
-    </i>
-  </button>
-  <span
-    class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base label_base"
-  >
-    0
-  </span>
-  <button
-    aria-label="step up"
-    class="base appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base full_mobile_base handle_default_base flexCenter"
-    disabled=""
-    tabindex="-1"
-  >
-    <i
-      class="base display_block small_mobile_base"
-      role="presentation"
+        <button
+          aria-label="step down"
+          class="base appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base handle_disabled_base root_base colours_white_base base"
+          disabled=""
+          tabindex="-1"
+        >
+          <i
+            class="base display_block small_mobile_base"
+            role="presentation"
+          >
+            <svg
+              class="base display_block width_full height_full"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 12.998H5V11l14-.002v2z"
+              />
+            </svg>
+          </i>
+        </button>
+      </div>
+    </div>
+    <div
+      class="base flexGrow_1 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base auto_mobile_base align_centre"
     >
-      <svg
-        class="base display_block width_full height_full"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
+      <div
+        class="base display_flex width_full height_full"
       >
-        <path
-          d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6v2z"
-        />
-      </svg>
-    </i>
-  </button>
+        <span
+          class="base display_block textAlign_center root_base sizes_4_base colours_dark_base fontWeight_normal_base base base 2_mobile_base 2_mobile_base width_full label_base"
+        >
+          0
+        </span>
+      </div>
+    </div>
+    <div
+      class="base flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_centre"
+    >
+      <div
+        class="base display_flex width_full height_full"
+      >
+        <button
+          aria-label="step up"
+          class="base appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base handle_disabled_base root_base colours_white_base base"
+          disabled=""
+          tabindex="-1"
+        >
+          <i
+            class="base display_block small_mobile_base"
+            role="presentation"
+          >
+            <svg
+              class="base display_block width_full height_full"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6v2z"
+              />
+            </svg>
+          </i>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 `;
