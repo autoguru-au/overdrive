@@ -3,6 +3,7 @@ import * as React from 'react';
 import { FunctionComponent } from 'react';
 import { useStyles } from 'react-treat';
 
+import { useBoxStyles } from '../../Box';
 import { Text } from '../../Text';
 import * as styleRefs from './HintText.treat';
 
@@ -21,7 +22,14 @@ export const HintText: FunctionComponent<Props> = ({
 			is="p"
 			size="2"
 			colour="unset"
-			className={clsx(styles.hintText, className)}>
+			className={clsx(
+				useBoxStyles({
+					marginTop: '2',
+					marginLeft: '4',
+				}),
+				styles.hintText,
+				className,
+			)}>
 			{children}
 		</Text>
 	);
