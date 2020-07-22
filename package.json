@@ -88,7 +88,7 @@
 		"lint-staged": "10.2.11",
 		"magic-string": "0.25.7",
 		"playroom": "0.21.0",
-		"plop": "2.7.2",
+		"plop": "2.7.3",
 		"prettier": "2.0.5",
 		"react": "16.13.1",
 		"react-dom": "16.13.1",

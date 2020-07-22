@@ -11965,10 +11965,10 @@ please-upgrade-node@^3.2.0:
   dependencies:
     semver-compare "^1.0.0"
 
-plop@2.7.2:
-  version "2.7.2"
-  resolved "https://registry.yarnpkg.com/plop/-/plop-2.7.2.tgz#a677f7c3241930e43d0c0060adc4a9b06511af4d"
-  integrity sha512-0zlppkV4f4qycZTNi8AtITNqV1IbkmACo4Ld0ZusmVoIlNh9FZDh0FvJs1wNxXvPhkjEjKQqDCDAZlJ07myQ6g==
+plop@2.7.3:
+  version "2.7.3"
+  resolved "https://registry.yarnpkg.com/plop/-/plop-2.7.3.tgz#50a476cddb313fea5952c371b77268a88910a124"
+  integrity sha512-KM743uiqHxvqhH5bMM4wgGMfJy2BosY7RTjYx+eNWSPDkrXaue+wD+y5NOK1v5S9scC+10XYez+JNdr6jtyjIw==
   dependencies:
     "@types/liftoff" "^2.5.0"
     chalk "^1.1.3"
