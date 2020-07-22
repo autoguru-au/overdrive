@@ -31,9 +31,12 @@ export const ProgressBar = memo<Props>(({ value = 0, colour = 'green' }) => {
 	const styles = useStyles(styleRefs);
 
 	return (
-		<Box className={styles.container} borderRadius='1' backgroundColour="gray100">
+		<Box
+			className={styles.container}
+			borderRadius="1"
+			backgroundColour="gray100">
 			<Box
-				borderRadius='1'
+				borderRadius="1"
 				backgroundColour={backgroundColorMap[colour]}
 				className={[styles.bar, styles.container]}
 				style={{
