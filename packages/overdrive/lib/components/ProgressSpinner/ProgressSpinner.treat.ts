@@ -1,16 +1,6 @@
 import { style, styleMap } from 'treat';
 
-export const root = style({
-	display: 'grid',
-	alignContent: 'center',
-	alignItems: 'center',
-	justifyContent: 'center',
-	gridTemplateColumns: '1fr',
-});
-
 export const circular = style({
-	overflow: 'hidden',
-	margin: '0 auto',
 	transformOrigin: 'center center',
 	animationDuration: '2s',
 	animationTimingFunction: 'linear',
