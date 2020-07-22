@@ -2,9 +2,6 @@ import { style, styleMap } from 'treat';
 import type { Theme } from 'treat/theme';
 
 export const root = style((theme) => ({
-	position: 'relative',
-	width: '100%',
-	padding: 0,
 	transition: `fill 0.2s ${theme.animation.easing.decelerate} 0s`,
 }));
 
@@ -68,25 +65,13 @@ export const borders = {
 	],
 };
 
-export const placeholder = {
-	default: styleMap((theme) => ({
-		standard: {
-			fontSize: theme.typography.size['4'].fontSize,
-			lineHeight: 1,
-			position: 'absolute',
-			top: 0,
-			left: 0,
-			display: 'inline',
-			margin: 0,
-			padding: 0,
-			transition: `color 0.2s ${theme.animation.easing.decelerate} 0s, transform 0.2s ${theme.animation.easing.decelerate} 0s`,
-			transformOrigin: 'top left',
-			whiteSpace: 'nowrap',
-		},
-		notNotched: { display: 'none' },
-	})),
-	empty: style((theme) => ({ color: theme.colours.gamut.gray400 })),
-};
+export const placeholder = style((theme) => ({
+	lineHeight: 1,
+	top: 0,
+	left: 0,
+	transition: `color 0.2s ${theme.animation.easing.decelerate} 0s, transform 0.2s ${theme.animation.easing.decelerate} 0s`,
+	transformOrigin: 'top left',
+}));
 
 const active_scaling_factor = 0.7777;
 const calcPlaceholderTranslate = (

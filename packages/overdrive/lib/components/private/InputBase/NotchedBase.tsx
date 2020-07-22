@@ -4,6 +4,7 @@ import { FunctionComponent, useEffect, useRef, useState } from 'react';
 import { useStyles } from 'react-treat';
 
 import { Box } from '../../Box';
+import { useTextStyles } from '../../Text';
 import * as styleRefs from './NotchedBase.treat';
 
 const ACTIVE_SCALING_FACTOR = 0.7777;
@@ -35,6 +36,13 @@ export const NotchedBase: FunctionComponent<Props> = ({
 	className = '',
 }) => {
 	const styles = useStyles(styleRefs);
+	const labelStyles = useTextStyles({
+		noWrap: true,
+		size: '4',
+	});
+	const mutedLabelStyles = useTextStyles({
+		colour: 'muted',
+	});
 	const labelRef = useRef<HTMLLabelElement>(null);
 	const [labelWidth, setLabelWidth] = useState<number>(
 		getNotchedComputedWidthForWidth(
@@ -52,6 +60,9 @@ export const NotchedBase: FunctionComponent<Props> = ({
 
 	return (
 		<Box
+			position="relative"
+			width="full"
+			padding="none"
 			className={clsx(
 				styles.root,
 				!notch && [styles.borders.complete, borderColourClassName],
@@ -86,12 +97,16 @@ export const NotchedBase: FunctionComponent<Props> = ({
 							is="label"
 							pointerEvents="none"
 							htmlFor={id}
+							position="absolute"
+							display="inline"
+							margin="none"
+							padding="none"
 							className={clsx(
-								styles.placeholder.default.standard,
+								styles.placeholder,
 								placeholderColourClassName,
+								labelStyles,
 								{
-									[styles.placeholder.empty]:
-										isEmpty || disabled,
+									[mutedLabelStyles]: isEmpty || disabled,
 									[styles.placeholderPlacement.default]:
 										isEmpty && !prefixed,
 									[styles.placeholderPlacement
