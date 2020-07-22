@@ -20,17 +20,13 @@ export interface Props {
 }
 
 export const SimplePagination: NamedExoticComponent<Props> = memo(
-	({
-		hasNext = false,
-		hasPrevious = false,
-		onChange = () => undefined,
-	}) => {
+	({ hasNext = false, hasPrevious = false, onChange = () => undefined }) => {
 		const handleClick = (direction: EChangeDirection) => () => {
 			onChange(direction);
 		};
 
 		return (
-			<Inline is="nav" space='6' aria-label="pagination">
+			<Inline is="nav" space="6" aria-label="pagination">
 				<Button
 					rounded
 					disabled={!hasPrevious}
@@ -38,10 +34,7 @@ export const SimplePagination: NamedExoticComponent<Props> = memo(
 					variant="secondary"
 					aria-label="previous page"
 					onClick={handleClick(EChangeDirection.Previous)}>
-					<Icon
-						size="medium"
-						icon={ChevronLeftIcon}
-					/>
+					<Icon size="medium" icon={ChevronLeftIcon} />
 				</Button>
 				<Button
 					rounded
@@ -50,10 +43,7 @@ export const SimplePagination: NamedExoticComponent<Props> = memo(
 					variant="secondary"
 					aria-label="next page"
 					onClick={handleClick(EChangeDirection.Next)}>
-					<Icon
-						size="medium"
-						icon={ChevronRightIcon}
-					/>
+					<Icon size="medium" icon={ChevronRightIcon} />
 				</Button>
 			</Inline>
 		);
