@@ -15,7 +15,9 @@ import {
 import { useStyles } from 'react-treat';
 
 import { Alert } from '../Alert';
+import { Box } from '../Box';
 import { Portal } from '../Portal';
+import { Stack } from '../Stack';
 import * as styleRefs from './Toast.treat';
 
 type MessageType = ReactChild;
@@ -88,11 +90,23 @@ const InternalToastProvider = ({ children }) => {
 		<ToastControllerContext.Provider value={addToast}>
 			{children}
 			<Portal>
-				<div className={styles.root}>
-					{toasts.map((item) => (
-						<Toast key={item.id} {...item} remove={removeToast} />
-					))}
-				</div>
+				<Box
+					width="full"
+					display="flex"
+					position="fixed"
+					alignItems="center"
+					justifyContent="center"
+					className={styles.root}>
+					<Stack space="2">
+						{toasts.map((item) => (
+							<Toast
+								key={item.id}
+								{...item}
+								remove={removeToast}
+							/>
+						))}
+					</Stack>
+				</Box>
 			</Portal>
 		</ToastControllerContext.Provider>
 	);
