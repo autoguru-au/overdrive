@@ -73,7 +73,7 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 					noWrap: true,
 					size: '3',
 					fontWeight: 'bold',
-					colour: 'neutral',
+					colour: 'muted',
 				}),
 				styles.root.default,
 				{
