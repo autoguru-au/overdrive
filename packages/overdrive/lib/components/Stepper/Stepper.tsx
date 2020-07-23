@@ -212,7 +212,7 @@ export const Stepper: FunctionComponent<Props> = ({
 			borderRadius="1"
 			boxShadow="2"
 			onKeyDown={keyDownHandler}>
-			<Columns noWrap width="full">
+			<Columns noWrap>
 				<Column noShrink alignSelf="centre">
 					<Handle
 						icon={MinusIcon}
@@ -221,7 +221,7 @@ export const Stepper: FunctionComponent<Props> = ({
 						onClick={onDecrement}
 					/>
 				</Column>
-				<Column grow width="auto" alignSelf="centre">
+				<Column noShrink width="auto" alignSelf="centre">
 					<Text
 						is="span"
 						align="center"

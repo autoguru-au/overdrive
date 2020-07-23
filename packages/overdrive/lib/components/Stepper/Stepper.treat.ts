@@ -3,6 +3,7 @@ import { style, styleMap } from 'treat';
 export const disabled = style({ cursor: 'not-allowed' });
 
 export const root = style((theme) => ({
+	width: 'max-content',
 	selectors: {
 		[`&:not(${disabled}):focus`]: {
 			borderColor: theme.colours.gamut.blue500,
