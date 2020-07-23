@@ -83,6 +83,7 @@ export const StandardModal: FunctionComponent<Props> = ({
 					])}>
 					<Box
 						is="header"
+						flexShrink={0}
 						position="relative"
 						display="flex"
 						alignItems="center"
