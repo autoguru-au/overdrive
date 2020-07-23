@@ -24,24 +24,24 @@ export interface Props {
 }
 
 export const NotchedBase: FunctionComponent<Props> = ({
-	id,
-	placeholder,
-	isEmpty,
-	disabled,
-	prefixed,
-	children,
-	notch = true,
-	borderColourClassName,
-	placeholderColourClassName,
-	className = '',
-}) => {
+														  id,
+														  placeholder,
+														  isEmpty,
+														  disabled,
+														  prefixed,
+														  children,
+														  notch = true,
+														  borderColourClassName,
+														  placeholderColourClassName,
+														  className = '',
+													  }) => {
 	const styles = useStyles(styleRefs);
 	const labelStyles = useTextStyles({
 		noWrap: true,
 		size: '4',
 	});
 	const mutedLabelStyles = useTextStyles({
-		colour: 'muted',
+		colour: 'white',
 	});
 	const labelRef = useRef<HTMLLabelElement>(null);
 	const [labelWidth, setLabelWidth] = useState<number>(
@@ -102,13 +102,13 @@ export const NotchedBase: FunctionComponent<Props> = ({
 							margin="none"
 							padding="none"
 							className={clsx(
-								styles.placeholder,
+								styles.placeholder.default,
 								placeholderColourClassName,
 								labelStyles,
 								{
-									[mutedLabelStyles]: isEmpty || disabled,
+									[styles.placeholder.mutedLabelStyles]: isEmpty || disabled,
 									[styles.placeholderPlacement.default]:
-										isEmpty && !prefixed,
+									isEmpty && !prefixed,
 									[styles.placeholderPlacement
 										.defaultPrefixed]: isEmpty && prefixed,
 									[styles.placeholderPlacement

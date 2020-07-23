@@ -65,12 +65,17 @@ export const borders = {
 	],
 };
 
-export const placeholder = style((theme) => ({
-	lineHeight: 1,
-	top: 0,
-	left: 0,
-	transition: `color 0.2s ${theme.animation.easing.decelerate} 0s, transform 0.2s ${theme.animation.easing.decelerate} 0s`,
-	transformOrigin: 'top left',
+export const placeholder = styleMap((theme) => ({
+	default: {
+		lineHeight: 1,
+		top: 0,
+		left: 0,
+		transition: `color 0.2s ${theme.animation.easing.decelerate} 0s, transform 0.2s ${theme.animation.easing.decelerate} 0s`,
+		transformOrigin: 'top left',
+	},
+	mutedLabelStyles: {
+		color: theme.colours.gamut.gray400,
+	},
 }));
 
 const active_scaling_factor = 0.7777;
