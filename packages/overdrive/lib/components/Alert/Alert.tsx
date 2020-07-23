@@ -55,6 +55,7 @@ export const Alert: FunctionComponent<Props> = ({
 				[styles.contained]: !inline,
 			})}
 			role="alert"
+			overflow="hidden"
 			position="relative"
 			backgroundColour="white"
 			borderWidth="1"
