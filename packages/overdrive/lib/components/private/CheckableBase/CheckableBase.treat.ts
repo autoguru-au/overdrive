@@ -5,9 +5,6 @@ export const root = style({
 });
 
 export const label = styleMap((theme) => ({
-	default: {
-		paddingLeft: `calc(${theme.space['4']} + ${theme.space['1']} + (${theme.space['3']} * 2))`,
-	},
 	disabled: {
 		color: theme.colours.gamut.gray500,
 	},
@@ -27,9 +24,6 @@ export const nativeInput = styleMap({
 });
 
 export const checkable = style((theme) => ({
-	zIndex: 1,
-	top: `calc(50% - (${theme.space['4']} + (${theme.space[3]} * 2)) * 0.5)`,
-	left: theme.space['1'],
 	width: `calc(${theme.space['4']} + (${theme.space[3]} * 2))`,
 	height: `calc(${theme.space['4']} + (${theme.space[3]} * 2))`,
 }));

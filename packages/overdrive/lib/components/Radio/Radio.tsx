@@ -19,7 +19,7 @@ export interface Props {
 export const Radio: FunctionComponent<Props> = memo(
 	({ value, className = '', children, disabled = false }) => {
 		const styles = useStyles(styleRefs);
-		const { checkable, checkableItem } = useCheckableStyles();
+		const { checkableItem } = useCheckableStyles();
 		const radioContext = useRadioContext();
 
 		const isChecked = value === radioContext.value;
@@ -36,7 +36,6 @@ export const Radio: FunctionComponent<Props> = memo(
 				disabled={disabled}
 				checked={isChecked}
 				handleClick={handleClick}>
-				<div className={checkable}>
 					<Box
 						borderRadius="pill"
 						position="absolute"
@@ -65,7 +64,6 @@ export const Radio: FunctionComponent<Props> = memo(
 							},
 						)}
 					/>
-				</div>
 			</CheckableBase>
 		);
 	},

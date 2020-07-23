@@ -2,8 +2,8 @@ import { style, styleMap } from 'treat';
 
 export const icon = style((theme) => ({
 	zIndex: 1,
-	top: theme.space['3'],
-	left: theme.space['3'],
+	top: `calc(50% - 0.5*(${theme.space['4']}))`,
+	left: `calc(50% - 0.5*(${theme.space['4']}))`,
 	width: theme.space['4'],
 	height: theme.space['4'],
 }));

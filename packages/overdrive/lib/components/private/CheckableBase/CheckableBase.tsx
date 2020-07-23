@@ -79,16 +79,18 @@ export const CheckableBase: FunctionComponent<Props> = ({
 				onClick={handleClick}
 				onChange={onChange}
 			/>
-			{children}
+			<Box display="flex"
+				 alignItems="center"
+				 justifyContent="center"
+				 position="relative"
+				 className={[styles.checkable, useBoxStyles({ is: 'button' })]}>{children}</Box>
 			<Box
 				is="label"
 				width="full"
-				position="relative"
 				pointerEvents={disabled ? 'none' : void 0}
 				className={clsx(
 					useBoxStyles({ is: 'button' }),
 					useTextStyles({ size: '4' }),
-					styles.label.default,
 					{
 						[styles.label.disabled]: disabled,
 					},

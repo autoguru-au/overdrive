@@ -40,9 +40,6 @@ export const NotchedBase: FunctionComponent<Props> = ({
 		noWrap: true,
 		size: '4',
 	});
-	const mutedLabelStyles = useTextStyles({
-		colour: 'white',
-	});
 	const labelRef = useRef<HTMLLabelElement>(null);
 	const [labelWidth, setLabelWidth] = useState<number>(
 		getNotchedComputedWidthForWidth(
