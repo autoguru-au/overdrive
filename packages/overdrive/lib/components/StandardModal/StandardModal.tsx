@@ -10,6 +10,8 @@ import { Heading } from '../Heading';
 import { Icon } from '../Icon';
 import { Modal } from '../Modal';
 import * as styleRefs from './StandardModal.treat';
+import { Button } from '../Button';
+import { useTextStyles } from '../Text';
 
 export enum ESize {
 	Standard = 'standard', // 800px wide
@@ -24,13 +26,13 @@ export interface Props extends ComponentProps<typeof Modal> {
 }
 
 export const StandardModal: FunctionComponent<Props> = ({
-	isOpen,
-	size = 'standard',
-	className = '',
-	title,
-	onRequestClose,
-	children,
-}) => {
+															isOpen,
+															size = 'standard',
+															className = '',
+															title,
+															onRequestClose,
+															children,
+														}) => {
 	const styles = useStyles(styleRefs);
 
 	const titleId = useId();
@@ -87,24 +89,28 @@ export const StandardModal: FunctionComponent<Props> = ({
 						position="relative"
 						display="flex"
 						alignItems="center"
+						justifyContent="center"
 						width="full"
-						paddingY="6"
+						paddingY="3"
 						paddingX="5"
 						borderWidthBottom="1"
-						borderColour="light"
-						className={styles.header}>
-						<Box
-							is="button"
-							position="absolute"
-							padding="5"
-							className={styles.headerCloseButton}
+						borderColour="light">
+						<Box flexGrow={1} id={titleId!}>
+							<Heading is="h4">{title}</Heading>
+						</Box>
+						<Button
+							minimal
+							rounded
+							variant="secondary"
+							size="small"
 							aria-label="close"
 							onClick={closeButtonHandler}>
-							<Icon size="medium" icon={WindowCloseIcon} />
-						</Box>
-						<div id={titleId!}>
-							<Heading is="h4">{title}</Heading>
-						</div>
+							<Icon
+								className={useTextStyles({ colour: 'muted' })}
+								icon={WindowCloseIcon}
+								size="medium"
+							/>
+						</Button>
 					</Box>
 					<Box
 						is="main"

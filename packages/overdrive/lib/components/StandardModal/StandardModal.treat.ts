@@ -31,10 +31,6 @@ export const modalSizeStandard = style((theme) =>
 	}),
 );
 
-export const header = style(() => ({
-	minHeight: '60px',
-}));
-
 export const headerCloseButton = style(() => ({
 	top: 0,
 	right: 0,
