@@ -21,9 +21,8 @@ import { useStyles } from 'react-treat';
 
 import { useMedia } from '../../hooks/useMedia';
 import { setRef, useId } from '../../utils';
-import { Box, useBoxStyles } from '../Box';
+import { Box } from '../Box';
 import { Button } from '../Button';
-import { Column, Columns } from '../Columns';
 import { Icon } from '../Icon';
 import { Portal } from '../Portal';
 import { Positioner } from '../Positioner';
@@ -576,25 +575,25 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 		);
 
 		return (
-				<Box display='flex' flexWrap='nowrap' alignItems="center" justifyContent='center'>
-					<Box
-						is="input"
-						{...eventHandlers}
-						{...field}
-						ref={handleRef}
-						autoCapitalize="none"
-						spellCheck="false"
-						autoComplete="off"
-						flexGrow={1}
-						{...rest}
-						type="search"
-					/>
-					<Box flexShrink={0}
-						className={useBoxStyles({ marginRight: '4' })}
-						onClick={focusHandler}>
-						<Icon size="medium" icon={ChevronDownIcon} />
-					</Box>
+			<Box display='flex' flexWrap='nowrap' alignItems="center" justifyContent='center'>
+				<Box
+					is="input"
+					flexGrow={1}
+					{...eventHandlers}
+					{...field}
+					ref={handleRef}
+					autoCapitalize="none"
+					spellCheck="false"
+					autoComplete="off"
+					{...rest}
+					type="search"
+				/>
+				<Box flexShrink={0}
+					 marginRight='4'
+					 onClick={focusHandler}>
+					<Icon size="medium" icon={ChevronDownIcon}/>
 				</Box>
+			</Box>
 		);
 	},
 	{
