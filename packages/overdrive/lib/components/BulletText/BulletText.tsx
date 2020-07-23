@@ -1,66 +1,56 @@
 import * as React from 'react';
-import {
-	ElementType,
-	FunctionComponent,
-	isValidElement,
-	ReactNode,
-} from 'react';
+import { FunctionComponent, isValidElement, ReactNode } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box';
-import { Column, Columns } from '../Columns';
+import { Box, BoxStyleProps } from '../Box';
 import { Text } from '../Text';
 import * as styleRefs from './BulletText.treat';
+import { Inline } from '../Inline';
 
-export interface Props {
+export interface Props extends Partial<Pick<BoxStyleProps, 'is'>> {
 	bullet?: ReactNode;
 	variant?: 'primary' | 'secondary';
-	className?: string;
-	is?: ElementType;
 }
 
 export const BulletText: FunctionComponent<Props> = ({
-	variant = 'primary',
-	className = '',
-	children,
-	is: Component = 'li',
-	bullet: Bullet = '•',
-}) => {
+														 variant = 'primary',
+														 children,
+														 is: Component = 'li',
+														 bullet: Bullet = '•',
+													 }) => {
 	const styles = useStyles(styleRefs);
 
 	return (
-		<Columns noWrap space="3" className={className} is={Component}>
+		<Inline noWrap space="3" is={Component} alignX='flexStart' alignY='center'>
 			{isValidElement(Bullet) ? (
-				<Column alignSelf="centre" position="relative" flexShrink={0}>
+				<Box position="relative" flexShrink={0}>
 					{Bullet}
-				</Column>
+				</Box>
 			) : (
-				<Column alignSelf="centre">
-					<Box
-						position="relative"
-						flexShrink={0}
-						display="flex"
-						alignItems="center"
-						justifyContent="center"
-						backgroundColour={
-							variant === 'primary' ? 'green200' : 'gray200'
-						}
-						className={styles.bullet}
-						borderRadius="pill">
-						<Text
-							is="span"
-							size="2"
-							colour={variant === 'primary' ? 'success' : 'dark'}>
-							{Bullet}
-						</Text>
-					</Box>
-				</Column>
+				<Box
+					position="relative"
+					flexShrink={0}
+					display="flex"
+					alignItems="center"
+					justifyContent="center"
+					backgroundColour={
+						variant === 'primary' ? 'green200' : 'gray200'
+					}
+					className={styles.bullet}
+					borderRadius="pill">
+					<Text
+						is="span"
+						size="2"
+						colour={variant === 'primary' ? 'success' : 'dark'}>
+						{Bullet}
+					</Text>
+				</Box>
 			)}
-			<Column>
-				<Text is="span" size="4">
+			<Box flexGrow={1}>
+				<Text is="span" size="4" display='block'>
 					{children}
 				</Text>
-			</Column>
-		</Columns>
+			</Box>
+		</Inline>
 	);
 };
