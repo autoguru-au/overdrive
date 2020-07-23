@@ -23,7 +23,7 @@ export const BulletText: FunctionComponent<Props> = ({
 	variant = 'primary',
 	className = '',
 	children,
-	is: Component = 'ul',
+	is: Component = 'li',
 	bullet: Bullet = '•',
 }) => {
 	const styles = useStyles(styleRefs);
