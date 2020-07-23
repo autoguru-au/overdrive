@@ -79,11 +79,14 @@ export const CheckableBase: FunctionComponent<Props> = ({
 				onClick={handleClick}
 				onChange={onChange}
 			/>
-			<Box display="flex"
-				 alignItems="center"
-				 justifyContent="center"
-				 position="relative"
-				 className={[styles.checkable, useBoxStyles({ is: 'button' })]}>{children}</Box>
+			<Box
+				display="flex"
+				alignItems="center"
+				justifyContent="center"
+				position="relative"
+				className={[styles.checkable, useBoxStyles({ is: 'button' })]}>
+				{children}
+			</Box>
 			<Box
 				is="label"
 				width="full"

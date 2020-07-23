@@ -36,34 +36,34 @@ export const Radio: FunctionComponent<Props> = memo(
 				disabled={disabled}
 				checked={isChecked}
 				handleClick={handleClick}>
-					<Box
-						borderRadius="pill"
-						position="absolute"
-						borderWidth="2"
-						borderColour="gray"
-						className={clsx(
-							checkableItem,
-							styles.circle.default,
-							styles.circle.outer,
-							{
-								[styles.circle.selected]: isChecked,
-							},
-						)}
-					/>
-					<Box
-						borderRadius="pill"
-						position="absolute"
-						borderColour="gray"
-						borderWidth="none"
-						className={clsx(
-							styles.circle.default,
-							styles.circle.inner,
-							{
-								[styles.circle.selected]: isChecked,
-								[styles.circle.selectedInner]: isChecked,
-							},
-						)}
-					/>
+				<Box
+					borderRadius="pill"
+					position="absolute"
+					borderWidth="2"
+					borderColour="gray"
+					className={clsx(
+						checkableItem,
+						styles.circle.default,
+						styles.circle.outer,
+						{
+							[styles.circle.selected]: isChecked,
+						},
+					)}
+				/>
+				<Box
+					borderRadius="pill"
+					position="absolute"
+					borderColour="gray"
+					borderWidth="none"
+					className={clsx(
+						styles.circle.default,
+						styles.circle.inner,
+						{
+							[styles.circle.selected]: isChecked,
+							[styles.circle.selectedInner]: isChecked,
+						},
+					)}
+				/>
 			</CheckableBase>
 		);
 	},

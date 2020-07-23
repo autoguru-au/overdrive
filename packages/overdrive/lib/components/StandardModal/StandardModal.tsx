@@ -6,12 +6,12 @@ import { useStyles } from 'react-treat';
 
 import { useId } from '../../utils';
 import { Box } from '../Box';
+import { Button } from '../Button';
 import { Heading } from '../Heading';
 import { Icon } from '../Icon';
 import { Modal } from '../Modal';
-import * as styleRefs from './StandardModal.treat';
-import { Button } from '../Button';
 import { useTextStyles } from '../Text';
+import * as styleRefs from './StandardModal.treat';
 
 export enum ESize {
 	Standard = 'standard', // 800px wide
@@ -26,13 +26,13 @@ export interface Props extends ComponentProps<typeof Modal> {
 }
 
 export const StandardModal: FunctionComponent<Props> = ({
-															isOpen,
-															size = 'standard',
-															className = '',
-															title,
-															onRequestClose,
-															children,
-														}) => {
+	isOpen,
+	size = 'standard',
+	className = '',
+	title,
+	onRequestClose,
+	children,
+}) => {
 	const styles = useStyles(styleRefs);
 
 	const titleId = useId();

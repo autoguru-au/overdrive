@@ -38,7 +38,7 @@ export const CheckBox: FunctionComponent<Props> = memo(
 		const styles = useStyles(styleRefs);
 		const iconStyles = clsx(
 			useTextStyles({ colour: 'white' }),
-			useBoxStyles({position: 'absolute'}),
+			useBoxStyles({ position: 'absolute' }),
 		);
 		const { checkableItem } = useCheckableStyles();
 
@@ -53,21 +53,21 @@ export const CheckBox: FunctionComponent<Props> = memo(
 				checked={checked}
 				handleClick={onClick}
 				handleChange={onChange}>
-					{checked && (
-						<Icon
-							className={clsx(styles.icon, iconStyles)}
-							icon={CheckIcon}
-							size="small"
-						/>
-					)}
-					<Box
-						borderWidth="2"
-						borderColour="gray"
-						backgroundColour={checked ? 'green600' : 'transparent'}
-						className={clsx(checkableItem, styles.base.default, {
-							[styles.base.selected]: checked,
-						})}
+				{checked && (
+					<Icon
+						className={clsx(styles.icon, iconStyles)}
+						icon={CheckIcon}
+						size="small"
 					/>
+				)}
+				<Box
+					borderWidth="2"
+					borderColour="gray"
+					backgroundColour={checked ? 'green600' : 'transparent'}
+					className={clsx(checkableItem, styles.base.default, {
+						[styles.base.selected]: checked,
+					})}
+				/>
 			</CheckableBase>
 		);
 	},

@@ -13,9 +13,9 @@ import { useStyles } from 'react-treat';
 
 import { useBoxStyles } from '../Box';
 import { Icon } from '../Icon';
+import { Inline } from '../Inline';
 import { Text, useTextStyles } from '../Text';
 import * as styleRefs from './Anchor.treat';
-import { Inline } from '../Inline';
 
 export interface Props {
 	rel?: string;
@@ -68,14 +68,8 @@ export const Anchor: FunctionComponent<Props> = ({
 	};
 
 	const childs = (
-		<Inline space='2'>
-			{icon && (
-				<Icon
-					icon={icon}
-					size="small"
-					className={textStyles}
-				/>
-			)}
+		<Inline space="2">
+			{icon && <Icon icon={icon} size="small" className={textStyles} />}
 			<Text fontWeight="bold" size="4" colour="link">
 				{children}
 			</Text>

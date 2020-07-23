@@ -24,17 +24,17 @@ export interface Props {
 }
 
 export const NotchedBase: FunctionComponent<Props> = ({
-														  id,
-														  placeholder,
-														  isEmpty,
-														  disabled,
-														  prefixed,
-														  children,
-														  notch = true,
-														  borderColourClassName,
-														  placeholderColourClassName,
-														  className = '',
-													  }) => {
+	id,
+	placeholder,
+	isEmpty,
+	disabled,
+	prefixed,
+	children,
+	notch = true,
+	borderColourClassName,
+	placeholderColourClassName,
+	className = '',
+}) => {
 	const styles = useStyles(styleRefs);
 	const labelStyles = useTextStyles({
 		noWrap: true,
@@ -103,9 +103,10 @@ export const NotchedBase: FunctionComponent<Props> = ({
 								placeholderColourClassName,
 								labelStyles,
 								{
-									[styles.placeholder.mutedLabelStyles]: isEmpty || disabled,
+									[styles.placeholder.mutedLabelStyles]:
+										isEmpty || disabled,
 									[styles.placeholderPlacement.default]:
-									isEmpty && !prefixed,
+										isEmpty && !prefixed,
 									[styles.placeholderPlacement
 										.defaultPrefixed]: isEmpty && prefixed,
 									[styles.placeholderPlacement

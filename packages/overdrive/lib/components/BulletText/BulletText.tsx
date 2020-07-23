@@ -3,9 +3,9 @@ import { FunctionComponent, isValidElement, ReactNode } from 'react';
 import { useStyles } from 'react-treat';
 
 import { Box, BoxStyleProps } from '../Box';
+import { Inline } from '../Inline';
 import { Text } from '../Text';
 import * as styleRefs from './BulletText.treat';
-import { Inline } from '../Inline';
 
 export interface Props extends Partial<Pick<BoxStyleProps, 'is'>> {
 	bullet?: ReactNode;
@@ -13,15 +13,20 @@ export interface Props extends Partial<Pick<BoxStyleProps, 'is'>> {
 }
 
 export const BulletText: FunctionComponent<Props> = ({
-														 variant = 'primary',
-														 children,
-														 is: Component = 'li',
-														 bullet: Bullet = '•',
-													 }) => {
+	variant = 'primary',
+	children,
+	is: Component = 'li',
+	bullet: Bullet = '•',
+}) => {
 	const styles = useStyles(styleRefs);
 
 	return (
-		<Inline noWrap space="3" is={Component} alignX='flexStart' alignY='center'>
+		<Inline
+			noWrap
+			space="3"
+			is={Component}
+			alignX="flexStart"
+			alignY="center">
 			{isValidElement(Bullet) ? (
 				<Box position="relative" flexShrink={0}>
 					{Bullet}
@@ -47,7 +52,7 @@ export const BulletText: FunctionComponent<Props> = ({
 				</Box>
 			)}
 			<Box flexGrow={1}>
-				<Text is="span" size="4" display='block'>
+				<Text is="span" size="4" display="block">
 					{children}
 				</Text>
 			</Box>
