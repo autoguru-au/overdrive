@@ -7,6 +7,7 @@ export const container = style({
 export const modal = style((theme) => ({
 	width: '100vw',
 	height: 'auto',
+	minHeight: `calc(3 * ${theme.space['8']})`,
 	maxHeight: `calc(100vh - ${theme.space['8']})`,
 	borderRadius: `${theme.space['2']} ${theme.space['2']} 0 0`,
 	...theme.utils.responsiveStyle({
