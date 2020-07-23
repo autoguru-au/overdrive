@@ -89,7 +89,7 @@ export const withComponent = () => {
 	);
 
 	return (
-		<RadioGroup name="radio-story">
+		<RadioGroup value="2" name="radio-story">
 			<Radio value="1">
 				<Item label="Cherries" rating="4.3" />
 			</Radio>
@@ -108,7 +108,7 @@ export const withComponent = () => {
 };
 
 export const withMultiLineComponent = () => (
-	<RadioGroup name="radio-story">
+	<RadioGroup value="2" name="radio-story">
 		<Radio value="1">
 			<div
 				style={{
@@ -131,7 +131,7 @@ export const withMultiLineComponent = () => (
 				</div>
 			</div>
 		</Radio>
-		<Radio value="1">
+		<Radio value="2">
 			<div
 				style={{
 					display: 'grid',
