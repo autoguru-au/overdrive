@@ -63,7 +63,7 @@ export const Alert: FunctionComponent<Props> = ({
 			boxShadow={inline ? 'none' : '4'}
 			padding="2">
 			<Columns noWrap spaceX="2">
-				<Column noShrink alignSelf="centre">
+				<Column noShrink alignSelf="top">
 					<Icon
 						icon={IconMapForIntent[intent]}
 						size="medium"
@@ -85,7 +85,7 @@ export const Alert: FunctionComponent<Props> = ({
 						children
 					)}
 				</Column>
-				<Column noShrink alignSelf="centre">
+				<Column noShrink alignSelf="top">
 					{dismissible && (
 						<Button
 							minimal
