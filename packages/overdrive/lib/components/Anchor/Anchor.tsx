@@ -15,6 +15,7 @@ import { useBoxStyles } from '../Box';
 import { Icon } from '../Icon';
 import { Text, useTextStyles } from '../Text';
 import * as styleRefs from './Anchor.treat';
+import { Inline } from '../Inline';
 
 export interface Props {
 	rel?: string;
@@ -48,7 +49,6 @@ export const Anchor: FunctionComponent<Props> = ({
 	const textStyles = useTextStyles({
 		colour: 'link',
 	});
-	const iconWithTextStyles = useBoxStyles({ marginRight: '2' });
 
 	const props = {
 		className: clsx(
@@ -56,10 +56,7 @@ export const Anchor: FunctionComponent<Props> = ({
 			textStyles,
 			useBoxStyles({
 				is: typeof Component === 'string' ? Component : undefined,
-				display: 'flex',
-				alignItems: 'center',
-				flexDirection: 'row',
-				justifyContent: 'flexStart',
+				display: 'inline',
 			}),
 			className,
 		),
@@ -71,20 +68,18 @@ export const Anchor: FunctionComponent<Props> = ({
 	};
 
 	const childs = (
-		<>
+		<Inline space='2'>
 			{icon && (
 				<Icon
 					icon={icon}
 					size="small"
-					className={clsx(textStyles, {
-						[iconWithTextStyles]: Boolean(children),
-					})}
+					className={textStyles}
 				/>
 			)}
 			<Text fontWeight="bold" size="4" colour="link">
 				{children}
 			</Text>
-		</>
+		</Inline>
 	);
 
 	return isValidElement(Component)
