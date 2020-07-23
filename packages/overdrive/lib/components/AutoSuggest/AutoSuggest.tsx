@@ -80,10 +80,8 @@ type Actions =
 type Suggestions<PayloadType> = Array<AutoSuggestValue<PayloadType>>;
 
 export interface Props<PayloadType>
-	extends Omit<
-		ComponentPropsWithoutRef<typeof TextInput>,
-		'onChange' | 'value' | 'type'
-	> {
+	extends Omit<ComponentPropsWithoutRef<typeof TextInput>,
+		'onChange' | 'value' | 'type'> {
 	autoFocus?: boolean;
 	autoWidth?: boolean;
 	value: AutoSuggestValue<PayloadType> | null;
@@ -284,9 +282,9 @@ const AutoSuggestFullscreenInput = forwardRef(
 		return showPortal ? (
 			<Portal>
 				<div className={styles.fullScreenRoot}>
-					<AutoSuggestInput ref={ref} {...props} inlineOptions />
+					<AutoSuggestInput ref={ref} {...props} inlineOptions/>
 					<Button minimal rounded size="medium" onClick={closeModal}>
-						<Icon icon={CloseIcon} />
+						<Icon icon={CloseIcon}/>
 					</Button>
 				</div>
 			</Portal>
@@ -360,9 +358,9 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 				aria-activedescendant={
 					state.highlightIndex > -1
 						? getSuggestionId(
-								suggestionListId!,
-								state.highlightIndex,
-						  )
+						suggestionListId!,
+						state.highlightIndex,
+						)
 						: undefined
 				}
 				value={state.previewText ?? value?.text}
@@ -385,7 +383,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 							Cheap trick to check if an arrow or click was used or not. We only _commit_ if a click or arrow
 							 */
 						state.previewText ===
-							suggestions[state.highlightIndex].text
+						suggestions[state.highlightIndex].text
 					) {
 						if (typeof onChange === 'function')
 							onChange(suggestions[state.highlightIndex]);
@@ -468,10 +466,8 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 ) => ReactElement;
 
 interface SuggestionProps<PayloadType>
-	extends Pick<
-		Props<PayloadType>,
-		'suggestions' | 'itemRenderer' | 'onChange'
-	> {
+	extends Pick<Props<PayloadType>,
+		'suggestions' | 'itemRenderer' | 'onChange'> {
 	className?: string;
 	suggestionListId: string;
 	placeholder: string;
@@ -482,18 +478,18 @@ interface SuggestionProps<PayloadType>
 }
 
 const SuggestionsList = <PayloadType extends unknown>({
-	className = '',
-	suggestionListId,
-	placeholder,
-	highlightIndex,
-	suggestions,
-	highlightRef,
-	itemRenderer,
-	onChange,
-	dispatch,
-	// TODO: For now the ref is passed as a prop, as opposed to using forwardRef
-	suggestionListRef,
-}: SuggestionProps<PayloadType>) => {
+														  className = '',
+														  suggestionListId,
+														  placeholder,
+														  highlightIndex,
+														  suggestions,
+														  highlightRef,
+														  itemRenderer,
+														  onChange,
+														  dispatch,
+														  // TODO: For now the ref is passed as a prop, as opposed to using forwardRef
+														  suggestionListRef,
+													  }: SuggestionProps<PayloadType>) => {
 	const styles = useStyles(styleRefs);
 
 	return (
@@ -504,7 +500,7 @@ const SuggestionsList = <PayloadType extends unknown>({
 			id={suggestionListId}
 			aria-label={placeholder}
 			role="listbox">
-			<div className={styles.spacer} />
+			<div className={styles.spacer}/>
 			{suggestions.map((suggestion, idx) => {
 				const highlight = highlightIndex === idx;
 
@@ -519,7 +515,7 @@ const SuggestionsList = <PayloadType extends unknown>({
 						aria-label={suggestion.text}
 						className={clsx(styles.suggestionListItem.default, {
 							[styles.suggestionListItem.skipped]:
-								suggestion.skip,
+							suggestion.skip,
 						})}
 						onMouseDown={(event) =>
 							/* This is so a blur doesnt fire from the input when you click */
@@ -548,15 +544,15 @@ const SuggestionsList = <PayloadType extends unknown>({
 							});
 						}}>
 						{typeof itemRenderer === 'function' &&
-							itemRenderer({
-								suggestions,
-								highlight,
-								value: suggestion,
-							})}
+						itemRenderer({
+							suggestions,
+							highlight,
+							value: suggestion,
+						})}
 					</Box>
 				);
 			})}
-			<div className={styles.spacer} />
+			<div className={styles.spacer}/>
 		</Box>
 	);
 };
@@ -580,8 +576,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 		);
 
 		return (
-			<Columns noWrap>
-				<Column grow width="auto" alignSelf="centre">
+				<Box display='flex' flexWrap='nowrap' alignItems="center" justifyContent='center'>
 					<Box
 						is="input"
 						{...eventHandlers}
@@ -590,18 +585,16 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 						autoCapitalize="none"
 						spellCheck="false"
 						autoComplete="off"
+						flexGrow={1}
 						{...rest}
 						type="search"
 					/>
-				</Column>
-				<Column noShrink alignSelf="centre">
-					<Box
+					<Box flexShrink={0}
 						className={useBoxStyles({ marginRight: '4' })}
 						onClick={focusHandler}>
 						<Icon size="medium" icon={ChevronDownIcon} />
 					</Box>
-				</Column>
-			</Columns>
+				</Box>
 		);
 	},
 	{
@@ -613,17 +606,15 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 
 const getSuggestionId = (id: string, index: number) => `${id}-option-${index}`;
 
-const SuggestionListFlyout: FunctionComponent<
-	ComponentPropsWithoutRef<typeof Positioner> & { autoWidth: boolean }
-> = ({
-	id,
-	alignment,
-	isOpen,
-	triggerOffset,
-	triggerRef,
-	autoWidth,
-	children,
-}) => (
+const SuggestionListFlyout: FunctionComponent<ComponentPropsWithoutRef<typeof Positioner> & { autoWidth: boolean }> = ({
+																														   id,
+																														   alignment,
+																														   isOpen,
+																														   triggerOffset,
+																														   triggerRef,
+																														   autoWidth,
+																														   children,
+																													   }) => (
 	<Positioner
 		id={id}
 		triggerRef={triggerRef}
@@ -650,10 +641,10 @@ const SuggestionListFlyout: FunctionComponent<
 );
 
 const defaultItemRenderer = <PayloadType extends unknown>({
-	value,
-	highlight,
-}: Parameters<AutoSuggestItemRenderer<PayloadType>>[0]) => (
-	<DefaultSuggestion highlight={highlight} text={value.text} />
+															  value,
+															  highlight,
+														  }: Parameters<AutoSuggestItemRenderer<PayloadType>>[0]) => (
+	<DefaultSuggestion highlight={highlight} text={value.text}/>
 );
 
 interface DefaultSuggestionProps {
@@ -662,9 +653,9 @@ interface DefaultSuggestionProps {
 }
 
 const DefaultSuggestion: FunctionComponent<DefaultSuggestionProps> = ({
-	text,
-	highlight,
-}) => {
+																		  text,
+																		  highlight,
+																	  }) => {
 	const styles = useStyles(styleRefs);
 
 	return (
@@ -677,10 +668,8 @@ const DefaultSuggestion: FunctionComponent<DefaultSuggestionProps> = ({
 	);
 };
 
-const getNextIndex = <
-	PayloadType extends unknown,
-	Value extends AutoSuggestValue<PayloadType>
->(
+const getNextIndex = <PayloadType extends unknown,
+	Value extends AutoSuggestValue<PayloadType>>(
 	direction: 1 | -1,
 	currentIndex: number,
 	suggestions: Value[],
