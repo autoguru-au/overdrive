@@ -92,7 +92,8 @@ export const StandardModal: FunctionComponent<Props> = ({
 						justifyContent="center"
 						width="full"
 						paddingY="3"
-						paddingX="5"
+						paddingLeft="5"
+						paddingRight="2"
 						borderWidthBottom="1"
 						borderColour="light">
 						<Box flexGrow={1} id={titleId!}>
@@ -103,7 +104,7 @@ export const StandardModal: FunctionComponent<Props> = ({
 							rounded
 							variant="secondary"
 							size="small"
-							aria-label="close"
+							aria-label="closse"
 							onClick={closeButtonHandler}>
 							<Icon
 								className={useTextStyles({ colour: 'muted' })}
