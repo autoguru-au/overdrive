@@ -2,14 +2,14 @@
 
 exports[`<Alert /> should match the snapshot 1`] = `
 <div
-  class="base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base position_relative border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 4_mobile_base 1_mobile_base backgroundColours_white_base root_base intent_success_base contained_base"
+  class="base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base position_relative overflow_hidden border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 4_mobile_base 1_mobile_base backgroundColours_white_base root_base intent_success_base contained_base"
   role="alert"
 >
   <div
     class="base display_flex row_mobile_base 2_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_stretch wrapping_noWrap"
   >
     <div
-      class="base flexGrow_0 flexShrink_0 2_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_centre"
+      class="base flexGrow_0 flexShrink_0 2_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_top"
     >
       <div
         class="base display_flex width_full height_full"
@@ -39,7 +39,7 @@ exports[`<Alert /> should match the snapshot 1`] = `
       />
     </div>
     <div
-      class="base flexGrow_0 flexShrink_0 2_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_centre"
+      class="base flexGrow_0 flexShrink_0 2_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_top"
     >
       <div
         class="base display_flex width_full height_full"

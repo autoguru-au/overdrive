@@ -15,7 +15,7 @@ export interface Props extends Partial<Pick<BoxStyleProps, 'is'>> {
 export const BulletText: FunctionComponent<Props> = ({
 	variant = 'primary',
 	children,
-	is: Component = 'li',
+	is: Component = 'div',
 	bullet: Bullet = '•',
 }) => {
 	const styles = useStyles(styleRefs);

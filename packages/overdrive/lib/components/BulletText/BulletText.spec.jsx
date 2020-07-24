@@ -72,14 +72,6 @@ describe('<BulletText />', () => {
 		).toHaveTextContent('Hello World!');
 	});
 
-	it('should use li element for default bullet text', () => {
-		expect(
-			render(
-				<BulletText>Hello World!</BulletText>,
-			).container.querySelector('li'),
-		).toBeInTheDocument();
-	});
-
 	it('should use • as default bullet', () => {
 		expect(
 			render(

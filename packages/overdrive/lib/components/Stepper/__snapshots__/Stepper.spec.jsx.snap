@@ -7,7 +7,7 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
   tabindex="0"
 >
   <div
-    class="base display_flex width_full row_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_stretch wrapping_noWrap"
+    class="base display_flex row_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_stretch wrapping_noWrap"
   >
     <div
       class="base flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_centre"
@@ -39,7 +39,7 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
       </div>
     </div>
     <div
-      class="base flexGrow_1 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base auto_mobile_base align_centre"
+      class="base flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base auto_mobile_base align_centre"
     >
       <div
         class="base display_flex width_full height_full"
@@ -91,7 +91,7 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
   tabindex="0"
 >
   <div
-    class="base display_flex width_full row_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_stretch wrapping_noWrap"
+    class="base display_flex row_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_stretch wrapping_noWrap"
   >
     <div
       class="base flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_centre"
@@ -123,7 +123,7 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
       </div>
     </div>
     <div
-      class="base flexGrow_1 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base auto_mobile_base align_centre"
+      class="base flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base auto_mobile_base align_centre"
     >
       <div
         class="base display_flex width_full height_full"
@@ -175,7 +175,7 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
   tabindex="0"
 >
   <div
-    class="base display_flex width_full row_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_stretch wrapping_noWrap"
+    class="base display_flex row_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_stretch wrapping_noWrap"
   >
     <div
       class="base flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_centre"
@@ -208,7 +208,7 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
       </div>
     </div>
     <div
-      class="base flexGrow_1 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base auto_mobile_base align_centre"
+      class="base flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base auto_mobile_base align_centre"
     >
       <div
         class="base display_flex width_full height_full"

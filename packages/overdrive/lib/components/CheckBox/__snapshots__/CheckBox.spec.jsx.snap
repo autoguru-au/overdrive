@@ -12,10 +12,10 @@ exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
     value="1"
   />
   <div
-    class="checkable_base base appearance cursorPointer button position_absolute"
+    class="base display_flex position_relative center_mobile_base center_mobile_base checkable_base base appearance cursorPointer button"
   >
     <i
-      class="base display_block small_mobile_base icon_base base position_absolute root_base colours_white_base base"
+      class="base display_block small_mobile_base icon_base root_base colours_white_base base base position_absolute"
       role="presentation"
     >
       <svg
@@ -30,11 +30,11 @@ exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
       </svg>
     </i>
     <div
-      class="base position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base backgroundColours_green600_base checkableItem_base base_default_base base_selected_base"
+      class="base border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base backgroundColours_green600_base checkableItem_base base_default_base base_selected_base"
     />
   </div>
   <label
-    class="base width_full position_relative base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base label_default_base"
+    class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
   >
     <span
       class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
@@ -56,14 +56,14 @@ exports[`<CheckBox /> should match the snapshot for a single check 1`] = `
     value="1"
   />
   <div
-    class="checkable_base base appearance cursorPointer button position_absolute"
+    class="base display_flex position_relative center_mobile_base center_mobile_base checkable_base base appearance cursorPointer button"
   >
     <div
-      class="base position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base backgroundColours_transparent_base checkableItem_base base_default_base"
+      class="base border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base backgroundColours_transparent_base checkableItem_base base_default_base"
     />
   </div>
   <label
-    class="base width_full position_relative base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base label_default_base"
+    class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
   >
     <span
       class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
@@ -85,14 +85,14 @@ exports[`<CheckBox /> should match the snapshot for a single check with no value
     value=""
   />
   <div
-    class="checkable_base base appearance cursorPointer button position_absolute"
+    class="base display_flex position_relative center_mobile_base center_mobile_base checkable_base base appearance cursorPointer button"
   >
     <div
-      class="base position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base backgroundColours_transparent_base checkableItem_base base_default_base"
+      class="base border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base backgroundColours_transparent_base checkableItem_base base_default_base"
     />
   </div>
   <label
-    class="base width_full position_relative base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base label_default_base"
+    class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
   >
     <span
       class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
@@ -112,14 +112,14 @@ exports[`<CheckBox /> when with component child should match the snapshot 1`] = 
     value="1"
   />
   <div
-    class="checkable_base base appearance cursorPointer button position_absolute"
+    class="base display_flex position_relative center_mobile_base center_mobile_base checkable_base base appearance cursorPointer button"
   >
     <div
-      class="base position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base backgroundColours_transparent_base checkableItem_base base_default_base"
+      class="base border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base backgroundColours_transparent_base checkableItem_base base_default_base"
     />
   </div>
   <label
-    class="base width_full position_relative base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base label_default_base"
+    class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
   >
     <h1
       class="base root_base sizes_8_base colours_dark_base fontWeight_bold_base base"

@@ -14,7 +14,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       value="1"
     />
     <div
-      class="checkable_base base appearance cursorPointer button position_absolute"
+      class="base display_flex position_relative center_mobile_base center_mobile_base checkable_base base appearance cursorPointer button"
     >
       <div
         class="base position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base pill_mobile_base checkableItem_base circle_default_base circle_outer_base"
@@ -24,7 +24,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       />
     </div>
     <label
-      class="base width_full position_relative base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base label_default_base"
+      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
     >
       <span
         class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
@@ -43,7 +43,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       value="2"
     />
     <div
-      class="checkable_base base appearance cursorPointer button position_absolute"
+      class="base display_flex position_relative center_mobile_base center_mobile_base checkable_base base appearance cursorPointer button"
     >
       <div
         class="base position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base pill_mobile_base checkableItem_base circle_default_base circle_outer_base"
@@ -53,7 +53,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       />
     </div>
     <label
-      class="base width_full position_relative base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base label_default_base"
+      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
     >
       <span
         class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
@@ -79,7 +79,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       value="1"
     />
     <div
-      class="checkable_base base appearance cursorPointer button position_absolute"
+      class="base display_flex position_relative center_mobile_base center_mobile_base checkable_base base appearance cursorPointer button"
     >
       <div
         class="base position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base pill_mobile_base checkableItem_base circle_default_base circle_outer_base"
@@ -89,7 +89,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       />
     </div>
     <label
-      class="base width_full position_relative base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base label_default_base"
+      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
     >
       <span
         class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
@@ -108,7 +108,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       value="2"
     />
     <div
-      class="checkable_base base appearance cursorPointer button position_absolute"
+      class="base display_flex position_relative center_mobile_base center_mobile_base checkable_base base appearance cursorPointer button"
     >
       <div
         class="base position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base pill_mobile_base checkableItem_base circle_default_base circle_outer_base"
@@ -118,7 +118,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       />
     </div>
     <label
-      class="base width_full position_relative base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base label_default_base"
+      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
     >
       <span
         class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
@@ -137,7 +137,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       value="3"
     />
     <div
-      class="checkable_base base appearance cursorPointer button position_absolute"
+      class="base display_flex position_relative center_mobile_base center_mobile_base checkable_base base appearance cursorPointer button"
     >
       <div
         class="base position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base pill_mobile_base checkableItem_base circle_default_base circle_outer_base"
@@ -147,7 +147,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       />
     </div>
     <label
-      class="base width_full position_relative base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base label_default_base"
+      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
     >
       <span
         class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
@@ -166,7 +166,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       value="4"
     />
     <div
-      class="checkable_base base appearance cursorPointer button position_absolute"
+      class="base display_flex position_relative center_mobile_base center_mobile_base checkable_base base appearance cursorPointer button"
     >
       <div
         class="base position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base pill_mobile_base checkableItem_base circle_default_base circle_outer_base"
@@ -176,7 +176,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       />
     </div>
     <label
-      class="base width_full position_relative base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base label_default_base"
+      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
     >
       <span
         class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
@@ -202,7 +202,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       value="1"
     />
     <div
-      class="checkable_base base appearance cursorPointer button position_absolute"
+      class="base display_flex position_relative center_mobile_base center_mobile_base checkable_base base appearance cursorPointer button"
     >
       <div
         class="base position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base pill_mobile_base checkableItem_base circle_default_base circle_outer_base"
@@ -212,7 +212,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       />
     </div>
     <label
-      class="base width_full position_relative base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base label_default_base"
+      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
     >
       <span
         class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
@@ -239,7 +239,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       value=""
     />
     <div
-      class="checkable_base base appearance cursorPointer button position_absolute"
+      class="base display_flex position_relative center_mobile_base center_mobile_base checkable_base base appearance cursorPointer button"
     >
       <div
         class="base position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base pill_mobile_base checkableItem_base circle_default_base circle_outer_base circle_selected_base"
@@ -249,7 +249,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       />
     </div>
     <label
-      class="base width_full position_relative base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base label_default_base"
+      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
     >
       <span
         class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
@@ -273,7 +273,7 @@ exports[`<RadioButton /> when with component child should match the snapshot 1`]
       value="1"
     />
     <div
-      class="checkable_base base appearance cursorPointer button position_absolute"
+      class="base display_flex position_relative center_mobile_base center_mobile_base checkable_base base appearance cursorPointer button"
     >
       <div
         class="base position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base pill_mobile_base checkableItem_base circle_default_base circle_outer_base"
@@ -283,7 +283,7 @@ exports[`<RadioButton /> when with component child should match the snapshot 1`]
       />
     </div>
     <label
-      class="base width_full position_relative base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base label_default_base"
+      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
     >
       <h1
         class="base root_base sizes_8_base colours_dark_base fontWeight_bold_base base"
