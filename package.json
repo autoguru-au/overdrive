@@ -60,7 +60,7 @@
 		"@babel/runtime-corejs3": "7.10.5",
 		"@changesets/cli": "2.9.2",
 		"@manypkg/cli": "0.14.0",
-		"@octokit/rest": "18.0.1",
+		"@octokit/rest": "18.0.3",
 		"@storybook/addon-a11y": "5.3.19",
 		"@storybook/addon-actions": "5.3.19",
 		"@storybook/addon-backgrounds": "5.3.19",
