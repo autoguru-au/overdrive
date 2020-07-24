@@ -13,10 +13,10 @@ import {
 import { useStyles } from 'react-treat';
 
 import { useBoxStyles } from '../Box';
+import { Inline } from '../Inline';
 import { Text, useTextStyles } from '../Text';
 import { useTabIndex, useTabsContext } from './context';
 import * as styleRefs from './Tab.treat';
-import { Inline } from '../Inline';
 
 export interface Props {
 	children: ReactText;
@@ -89,7 +89,7 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 		};
 
 		const child = (
-			<Inline space='2' alignY='center'>
+			<Inline space="2" alignY="center">
 				<span className={styles.item}>{children}</span>
 				{typeof indication === 'number' && (
 					<Text
