@@ -16,6 +16,7 @@ import { useBoxStyles } from '../Box';
 import { Text, useTextStyles } from '../Text';
 import { useTabIndex, useTabsContext } from './context';
 import * as styleRefs from './Tab.treat';
+import { Inline } from '../Inline';
 
 export interface Props {
 	children: ReactText;
@@ -47,7 +48,6 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 		const indicationStyles = useBoxStyles({
 			display: 'inlineBlock',
 			paddingX: '1',
-			marginLeft: '2',
 			backgroundColour: isActive ? 'green900' : 'gray300',
 			borderRadius: 'pill',
 		});
@@ -89,7 +89,7 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 		};
 
 		const child = (
-			<>
+			<Inline space='2' alignY='center'>
 				<span className={styles.item}>{children}</span>
 				{typeof indication === 'number' && (
 					<Text
@@ -106,7 +106,7 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 						{indication}
 					</Text>
 				)}
-			</>
+			</Inline>
 		);
 
 		return isValidElement(Component)
