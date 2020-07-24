@@ -2,7 +2,7 @@
 
 exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
 <div
-  class="base 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root base appearance cursorPointer button"
+  class="base 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base base appearance cursorPointer button"
 >
   <input
     checked=""
@@ -47,7 +47,7 @@ exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
 
 exports[`<CheckBox /> should match the snapshot for a single check 1`] = `
 <div
-  class="base 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root base appearance cursorPointer button"
+  class="base 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base base appearance cursorPointer button"
 >
   <input
     class="base block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute base appearance cursorPointer button nativeInput_default"
@@ -76,7 +76,7 @@ exports[`<CheckBox /> should match the snapshot for a single check 1`] = `
 
 exports[`<CheckBox /> should match the snapshot for a single check with no value or label 1`] = `
 <div
-  class="base 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root base appearance cursorPointer button"
+  class="base 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base base appearance cursorPointer button"
 >
   <input
     class="base block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute base appearance cursorPointer button nativeInput_default"
@@ -103,7 +103,7 @@ exports[`<CheckBox /> should match the snapshot for a single check with no value
 
 exports[`<CheckBox /> when with component child should match the snapshot 1`] = `
 <div
-  class="base 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root base appearance cursorPointer button"
+  class="base 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base base appearance cursorPointer button"
 >
   <input
     class="base block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute base appearance cursorPointer button nativeInput_default"

@@ -104,7 +104,7 @@ export const StandardModal: FunctionComponent<Props> = ({
 							rounded
 							variant="secondary"
 							size="small"
-							aria-label="closse"
+							aria-label="close"
 							onClick={closeButtonHandler}>
 							<Icon
 								className={useTextStyles({ colour: 'muted' })}

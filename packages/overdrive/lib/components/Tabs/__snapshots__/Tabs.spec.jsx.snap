@@ -90,16 +90,28 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
           class="base appearance cursorPointer button 6_mobile_base display_inlineBlock backgroundColours_transparent_base root_base sizes_3_base colours_muted_base fontWeight_bold_base noWrap base root_default_base root_active_base"
           role="tab"
         >
-          <span
-            class="item"
+          <div
+            class="base display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 2_mobile_base 2_mobile_base"
           >
-            tab 1 title
-          </span>
-          <span
-            class="base display_block textAlign_center root_base sizes_2_base colours_white_base fontWeight_bold_base base indication_default_base base 1_mobile_base 1_mobile_base 2_mobile_base display_inlineBlock pill_mobile_base backgroundColours_green900_base"
-          >
-            5
-          </span>
+            <div
+              class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+            >
+              <span
+                class="item"
+              >
+                tab 1 title
+              </span>
+            </div>
+            <div
+              class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+            >
+              <span
+                class="base display_block textAlign_center root_base sizes_2_base colours_white_base fontWeight_bold_base base indication_default_base base 1_mobile_base 1_mobile_base display_inlineBlock pill_mobile_base backgroundColours_green900_base"
+              >
+                5
+              </span>
+            </div>
+          </div>
         </button>
         <button
           aria-controls="od-10-1-tab"
@@ -108,16 +120,28 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
           role="tab"
           tabindex="-1"
         >
-          <span
-            class="item"
+          <div
+            class="base display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 2_mobile_base 2_mobile_base"
           >
-            tab 2 title
-          </span>
-          <span
-            class="base display_block textAlign_center root_base sizes_2_base colours_dark_base fontWeight_bold_base base indication_default_base base 1_mobile_base 1_mobile_base 2_mobile_base display_inlineBlock pill_mobile_base backgroundColours_gray300_base"
-          >
-            5
-          </span>
+            <div
+              class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+            >
+              <span
+                class="item"
+              >
+                tab 2 title
+              </span>
+            </div>
+            <div
+              class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+            >
+              <span
+                class="base display_block textAlign_center root_base sizes_2_base colours_dark_base fontWeight_bold_base base indication_default_base base 1_mobile_base 1_mobile_base display_inlineBlock pill_mobile_base backgroundColours_gray300_base"
+              >
+                5
+              </span>
+            </div>
+          </div>
         </button>
         <button
           aria-controls="od-10-2-tab"
@@ -126,16 +150,28 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
           role="tab"
           tabindex="-1"
         >
-          <span
-            class="item"
+          <div
+            class="base display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 2_mobile_base 2_mobile_base"
           >
-            tab 3 title
-          </span>
-          <span
-            class="base display_block textAlign_center root_base sizes_2_base colours_dark_base fontWeight_bold_base base indication_default_base base 1_mobile_base 1_mobile_base 2_mobile_base display_inlineBlock pill_mobile_base backgroundColours_gray300_base"
-          >
-            5
-          </span>
+            <div
+              class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+            >
+              <span
+                class="item"
+              >
+                tab 3 title
+              </span>
+            </div>
+            <div
+              class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+            >
+              <span
+                class="base display_block textAlign_center root_base sizes_2_base colours_dark_base fontWeight_bold_base base indication_default_base base 1_mobile_base 1_mobile_base display_inlineBlock pill_mobile_base backgroundColours_gray300_base"
+              >
+                5
+              </span>
+            </div>
+          </div>
         </button>
       </div>
     </div>

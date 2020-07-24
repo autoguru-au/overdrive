@@ -25,7 +25,7 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
         role="dialog"
       >
         <header
-          class="base block 3_mobile_base 5_mobile_base 3_mobile_base 5_mobile_base display_flex width_full position_relative border_style border_colour_top_light_base border_colour_right_light_base border_colour_bottom_light_base border_colour_left_light_base 1_mobile_base center_mobile_base flexShrink_0 center_mobile_base"
+          class="base block 3_mobile_base 2_mobile_base 3_mobile_base 5_mobile_base display_flex width_full position_relative border_style border_colour_top_light_base border_colour_right_light_base border_colour_bottom_light_base border_colour_left_light_base 1_mobile_base center_mobile_base flexShrink_0 center_mobile_base"
         >
           <div
             class="base flexGrow_1"
@@ -101,7 +101,7 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
         role="dialog"
       >
         <header
-          class="base block 3_mobile_base 5_mobile_base 3_mobile_base 5_mobile_base display_flex width_full position_relative border_style border_colour_top_light_base border_colour_right_light_base border_colour_bottom_light_base border_colour_left_light_base 1_mobile_base center_mobile_base flexShrink_0 center_mobile_base"
+          class="base block 3_mobile_base 2_mobile_base 3_mobile_base 5_mobile_base display_flex width_full position_relative border_style border_colour_top_light_base border_colour_right_light_base border_colour_bottom_light_base border_colour_left_light_base 1_mobile_base center_mobile_base flexShrink_0 center_mobile_base"
         >
           <div
             class="base flexGrow_1"
