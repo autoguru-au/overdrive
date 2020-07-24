@@ -23,7 +23,7 @@ export const colours = {
 			backgroundColor: theme.colours.intent.warning.background,
 		},
 		red: {
-			backgroundColor: theme.colours.intent.warning.background,
+			backgroundColor: theme.colours.intent.danger.background,
 		},
 	})),
 	inverted: {
