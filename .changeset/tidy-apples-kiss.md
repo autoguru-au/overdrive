@@ -2,4 +2,5 @@
 '@autoguru/overdrive': patch
 ---
 
-Box: Css pointerEvents value can now be passed to box as 'none' or undefined
+Box: pointerEvents value can now be passed to `Box` and `useBoxStyles` as 'none'
+or undefined.
