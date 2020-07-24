@@ -26,6 +26,9 @@ export const nativeInput = styleMap({
 export const checkable = style((theme) => ({
 	width: `calc(${theme.space['4']} + (${theme.space[3]} * 2))`,
 	height: `calc(${theme.space['4']} + (${theme.space[3]} * 2))`,
+
+	marginTop: `calc(-1*${theme.space['3']})`,
+	marginBottom: `calc(-1*${theme.space['3']})`,
 }));
 
 export const checkableItem = style((theme) => ({
