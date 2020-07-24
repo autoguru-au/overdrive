@@ -167,6 +167,8 @@ export const withEnhancedInput = <
 				useBoxStyles({
 					is: primitiveType === 'textarea' ? 'textarea' : 'input',
 					width: 'full',
+					position: 'relative',
+					display: 'flex',
 				}),
 				styles.types[primitiveType!],
 				styles.input.itself.root,
@@ -236,6 +238,11 @@ export const withEnhancedInput = <
 				setIsHovered(false);
 			}, []);
 
+			const iconStyles = useBoxStyles({
+				pointerEvents: 'none',
+				position: 'absolute',
+			});
+
 			return (
 				<Box
 					width="full"
@@ -253,15 +260,13 @@ export const withEnhancedInput = <
 							[derivedColours.colour]: !isEmpty,
 						})}
 						borderColourClassName={derivedColours.borderColour}>
-						<Box
-							ref={wrapperRef}
-							width="full"
-							className={styles.input.root}>
+						<Box ref={wrapperRef} width="full" height="full">
 							{prefixIcon && (
 								<Icon
 									icon={prefixIcon}
 									size="medium"
 									className={clsx(
+										iconStyles,
 										styles.icon.prefix,
 										derivedColours.colour,
 									)}
@@ -272,6 +277,7 @@ export const withEnhancedInput = <
 									icon={suffixIcon}
 									size="medium"
 									className={clsx(
+										iconStyles,
 										styles.icon.suffix,
 										derivedColours.colour,
 									)}

@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import * as React from 'react';
 import {
 	FunctionComponent,
@@ -37,7 +36,7 @@ export const Bullet: FunctionComponent<Props> = ({ children, className }) => {
 	return (
 		<Box
 			is="li"
-			className={clsx(
+			className={[
 				styles.root.default,
 				getBulletCls(
 					styles,
@@ -49,7 +48,7 @@ export const Bullet: FunctionComponent<Props> = ({ children, className }) => {
 						children.type === BulletList,
 				},
 				className,
-			)}>
+			]}>
 			{children}
 		</Box>
 	);

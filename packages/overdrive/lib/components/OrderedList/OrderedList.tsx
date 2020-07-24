@@ -4,11 +4,14 @@ import {
 	createContext,
 	FunctionComponent,
 	OlHTMLAttributes,
+	ReactChild,
 	useContext,
 } from 'react';
 import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
+import { Stack } from '../Stack';
+import { useTextStyles } from '../Text';
 import * as styleRefs from './OrderedList.treat';
 
 type ListStyleType = 'decimal' | 'lower-roman' | 'lower-alpha' | 'upper-alpha';
@@ -25,6 +28,7 @@ export interface Props
 	extends Pick<OlHTMLAttributes<HTMLOListElement>, 'start'> {
 	type?: ListStyleType;
 	className?: string;
+	children?: ReactChild | ReactChild[];
 }
 
 export interface ItemProps {
@@ -49,24 +53,27 @@ export const OrderedList: FunctionComponent<Props> & {
 	return (
 		<Box
 			is="ol"
+			paddingLeft="6"
+			marginTop={myCycle > 0 ? '2' : 'none'}
 			className={clsx(
 				styles.root.default,
+				useTextStyles({ colour: 'dark' }),
 				{ [styles.root.firstOccurrence]: cycle === -1 },
 				className,
 			)}
 			style={{ listStyleType: cycles[myCycle] }}
 			start={start}>
 			<OrderedListContext.Provider value={myCycle}>
-				{children}
+				<Stack space="2">{children}</Stack>
 			</OrderedListContext.Provider>
 		</Box>
 	);
 };
 
-const Item: FunctionComponent<ItemProps> = ({ className = '', children }) => {
-	const styles = useStyles(styleRefs);
-
-	return <li className={clsx(className, styles.listItem)}>{children}</li>;
-};
+const Item: FunctionComponent<ItemProps> = ({ className = '', children }) => (
+	<Box is="li" className={className}>
+		{children}
+	</Box>
+);
 
 OrderedList.Item = Item;

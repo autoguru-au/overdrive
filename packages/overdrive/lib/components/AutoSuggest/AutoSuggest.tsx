@@ -28,7 +28,6 @@ import { Portal } from '../Portal';
 import { Positioner } from '../Positioner';
 import { EAlignment } from '../Positioner/alignment';
 import { withEnhancedInput } from '../private/InputBase';
-import * as selectStyleRefs from '../SelectInput/SelectInput.treat';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import * as styleRefs from './AutoSuggest.treat';
@@ -500,7 +499,7 @@ const SuggestionsList = <PayloadType extends unknown>({
 		<Box
 			ref={suggestionListRef}
 			is="ul"
-			className={clsx(styles.suggestionList.defaults, className)}
+			className={[styles.suggestionList.defaults, className]}
 			id={suggestionListId}
 			aria-label={placeholder}
 			role="listbox">
@@ -509,9 +508,10 @@ const SuggestionsList = <PayloadType extends unknown>({
 				const highlight = highlightIndex === idx;
 
 				return (
-					<li
+					<Box
 						key={suggestion.text.concat(String(idx))}
 						ref={highlight ? highlightRef : undefined}
+						is="li"
 						id={getSuggestionId(suggestionListId, idx)}
 						role="option"
 						aria-selected={highlight}
@@ -552,7 +552,7 @@ const SuggestionsList = <PayloadType extends unknown>({
 								highlight,
 								value: suggestion,
 							})}
-					</li>
+					</Box>
 				);
 			})}
 			<div className={styles.spacer} />
@@ -562,7 +562,6 @@ const SuggestionsList = <PayloadType extends unknown>({
 
 const AutoSuggestInputPrimitive = withEnhancedInput(
 	({ field, eventHandlers, validation, suffixed, prefixed, ...rest }) => {
-		const styles = useStyles(selectStyleRefs);
 		const ref = useRef<HTMLInputElement>(null);
 
 		const focusHandler = useCallback(() => {
@@ -580,9 +579,14 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 		);
 
 		return (
-			<Box className={styles.root}>
+			<Box
+				display="flex"
+				flexWrap="nowrap"
+				alignItems="center"
+				justifyContent="center">
 				<Box
 					is="input"
+					flexGrow={1}
 					{...eventHandlers}
 					{...field}
 					ref={handleRef}
@@ -592,7 +596,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 					{...rest}
 					type="search"
 				/>
-				<Box className={styles.icon} onClick={focusHandler}>
+				<Box flexShrink={0} marginRight="4" onClick={focusHandler}>
 					<Icon size="medium" icon={ChevronDownIcon} />
 				</Box>
 			</Box>

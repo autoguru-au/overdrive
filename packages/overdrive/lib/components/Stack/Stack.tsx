@@ -13,7 +13,7 @@ export interface Props extends Pick<BoxStyleProps, 'is' | 'width'> {
 	className?: string;
 	dividers?: boolean;
 
-	children: ReactNode[];
+	children: ReactNode | ReactNode[];
 }
 
 export const Stack: FunctionComponent<Props> = ({

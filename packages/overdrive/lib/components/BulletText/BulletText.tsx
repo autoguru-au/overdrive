@@ -1,49 +1,61 @@
-import clsx from 'clsx';
 import * as React from 'react';
 import { FunctionComponent, isValidElement, ReactNode } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box';
-import { Column, Columns } from '../Columns';
+import { Box, BoxStyleProps } from '../Box';
+import { Inline } from '../Inline';
 import { Text } from '../Text';
 import * as styleRefs from './BulletText.treat';
 
-export interface Props {
+export interface Props extends Partial<Pick<BoxStyleProps, 'is'>> {
 	bullet?: ReactNode;
-	variant?: keyof typeof styleRefs.variant;
-	className?: string;
+	variant?: 'primary' | 'secondary';
 }
 
 export const BulletText: FunctionComponent<Props> = ({
 	variant = 'primary',
-	className = '',
 	children,
+	is: Component = 'div',
 	bullet: Bullet = '•',
 }) => {
 	const styles = useStyles(styleRefs);
 
 	return (
-		<Columns
+		<Inline
 			noWrap
 			space="3"
-			className={clsx(styles.root, className)}
-			is="li">
+			is={Component}
+			alignX="flexStart"
+			alignY="center">
 			{isValidElement(Bullet) ? (
-				<Column alignSelf="centre" className={styles.customBullet}>
+				<Box position="relative" flexShrink={0}>
 					{Bullet}
-				</Column>
+				</Box>
 			) : (
-				<Column alignSelf="centre">
-					<Box
-						className={clsx(styles.bullet, styles.variant[variant])}
-						borderRadius="pill">
-						<span className={styles.bulletText}>{Bullet}</span>
-					</Box>
-				</Column>
+				<Box
+					position="relative"
+					flexShrink={0}
+					display="flex"
+					alignItems="center"
+					justifyContent="center"
+					backgroundColour={
+						variant === 'primary' ? 'green200' : 'gray200'
+					}
+					className={styles.bullet}
+					borderRadius="pill">
+					<Text
+						is="span"
+						size="2"
+						colour={variant === 'primary' ? 'success' : 'dark'}>
+						{Bullet}
+					</Text>
+				</Box>
 			)}
-			<Column>
-				<Text is="span">{children}</Text>
-			</Column>
-		</Columns>
+			<Box flexGrow={1}>
+				<Text is="span" size="4" display="block">
+					{children}
+				</Text>
+			</Box>
+		</Inline>
 	);
 };

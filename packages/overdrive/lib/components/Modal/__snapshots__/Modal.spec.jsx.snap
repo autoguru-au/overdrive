@@ -6,12 +6,12 @@ exports[`<Modal /> should match snapshot 1`] = `
 >
   <div />
   <div
-    class="base root_default root_fadeIn"
+    class="base position_fixed overflow_hidden root_default root_fadeIn"
     role="presentation"
   >
     <div
       aria-hidden="true"
-      class="backdropRoot_default_base backdrop_root"
+      class="base position_absolute backdropRoot_default_base backdrop_root"
     />
     Hello World!
   </div>

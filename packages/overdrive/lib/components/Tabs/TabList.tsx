@@ -18,6 +18,7 @@ import { animate, ownerWindow, useEventCallback } from '../../utils';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
+import { useTextStyles } from '../Text';
 import { TabIndexProvider } from './context';
 import * as styleRefs from './TabList.treat';
 
@@ -118,6 +119,8 @@ export const TabList: FunctionComponent<Props> = ({
 
 	return (
 		<Box
+			overflow="hidden"
+			alignItems="center"
 			className={[
 				styles.root.default,
 				shouldShowScrollButtons && styles.root.scroll,
@@ -134,18 +137,15 @@ export const TabList: FunctionComponent<Props> = ({
 			) : null}
 			<Box
 				ref={wrapperRef}
-				className={[
-					stretch && styles.listWrapper.stretch,
-					scrollable && styles.listWrapper.scroll,
-				]}
+				className={[scrollable && styles.listWrapperScroll]}
 				onScroll={handleOnScroll}>
 				<Box
 					ref={innerRef}
+					display={stretch ? 'flex' : 'block'}
+					flexWrap="nowrap"
+					width="full"
 					role="tablist"
-					className={[
-						styles.list.default,
-						stretch && styles.list.stretch,
-					]}>
+					className={useTextStyles({ noWrap: true })}>
 					{childs}
 				</Box>
 			</Box>

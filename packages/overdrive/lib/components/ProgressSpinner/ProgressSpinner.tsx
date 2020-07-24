@@ -3,7 +3,7 @@ import * as React from 'react';
 import { memo } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box';
+import { Box, useBoxStyles } from '../Box';
 import * as styleRefs from './ProgressSpinner.treat';
 
 export interface Props {
@@ -18,13 +18,17 @@ export const ProgressSpinner = memo<Props>(
 
 		return (
 			<Box
-				className={clsx([
-					styles.root,
+				className={[
 					styles.size[size].circular,
 					styles.colours[colour],
 					className,
-				])}>
-				<svg className={styles.circular} viewBox="25 25 50 50">
+				]}>
+				<svg
+					className={clsx(
+						useBoxStyles({ overflow: 'hidden' }),
+						styles.circular,
+					)}
+					viewBox="25 25 50 50">
 					<circle
 						className={clsx(styles.path, styles.size[size].path)}
 						cx="50"

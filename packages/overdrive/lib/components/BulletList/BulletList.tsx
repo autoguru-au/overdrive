@@ -21,11 +21,9 @@ export const BulletList: FunctionComponent<Props> = ({
 	return (
 		<Box
 			is="ul"
-			className={clsx(
-				styles.root,
-				{ [styles.firstOccurrence]: stack === -1 },
-				className,
-			)}>
+			className={clsx(className, styles.root, {
+				[styles.firstOccurrence]: stack === -1,
+			})}>
 			<BulletListContext.Provider
 				value={stack + 1 >= bulletMap.length ? 0 : stack + 1}>
 				{children}

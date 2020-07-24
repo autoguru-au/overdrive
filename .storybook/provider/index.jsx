@@ -5,10 +5,9 @@ import addons, { makeDecorator } from '@storybook/addons';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
-import { OverdriveProvider } from '@autoguru/overdrive';
+import { Box, Heading, OverdriveProvider, Stack } from '@autoguru/overdrive';
 
 import * as themeRefs from '@autoguru/overdrive/themes';
-import { Box, Heading, Stack } from '@autoguru/overdrive';
 
 const THEMES = new Map(Object.entries(themeRefs));
 

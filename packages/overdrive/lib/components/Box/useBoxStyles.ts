@@ -71,6 +71,7 @@ export interface BoxStyleProps extends Padding, Margin, Border, Flex {
 	overflow?: keyof typeof styleRefs.overflow;
 	userSelect?: keyof typeof styleRefs.userSelect;
 	textAlign?: keyof typeof styleRefs.textAlign;
+	pointerEvents?: keyof typeof styleRefs.pointerEvents;
 
 	className?: Parameters<typeof clsx>[0];
 }
@@ -115,6 +116,7 @@ export const useBoxStyles = ({
 	overflow,
 	userSelect,
 	textAlign,
+	pointerEvents,
 	alignItems,
 	flexDirection,
 	flexGrow,
@@ -184,6 +186,7 @@ export const useBoxStyles = ({
 		styles.overflow[overflow!],
 		styles.userSelect[userSelect!],
 		styles.textAlign[textAlign!],
+		styles.pointerEvents[pointerEvents!],
 
 		hasBorder && styles.border.style,
 		hasBorder &&

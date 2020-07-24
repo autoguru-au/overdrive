@@ -13,7 +13,8 @@ import { useStyles } from 'react-treat';
 
 import { useBoxStyles } from '../Box';
 import { Icon } from '../Icon';
-import { Text } from '../Text';
+import { Inline } from '../Inline';
+import { Text, useTextStyles } from '../Text';
 import * as styleRefs from './Anchor.treat';
 
 export interface Props {
@@ -45,12 +46,17 @@ export const Anchor: FunctionComponent<Props> = ({
 	icon = undefined,
 }) => {
 	const styles = useStyles(styleRefs);
+	const textStyles = useTextStyles({
+		colour: 'link',
+	});
 
 	const props = {
 		className: clsx(
 			styles.root,
+			textStyles,
 			useBoxStyles({
 				is: typeof Component === 'string' ? Component : undefined,
+				display: 'inline',
 			}),
 			className,
 		),
@@ -62,20 +68,12 @@ export const Anchor: FunctionComponent<Props> = ({
 	};
 
 	const childs = (
-		<>
-			{icon && (
-				<Icon
-					icon={icon}
-					size="small"
-					className={clsx(styles.icon, {
-						[styles.iconWithText]: Boolean(children),
-					})}
-				/>
-			)}
-			<Text fontWeight="bold" colour="link">
+		<Inline space="2">
+			{icon && <Icon icon={icon} size="small" className={textStyles} />}
+			<Text fontWeight="bold" size="4" colour="link">
 				{children}
 			</Text>
-		</>
+		</Inline>
 	);
 
 	return isValidElement(Component)

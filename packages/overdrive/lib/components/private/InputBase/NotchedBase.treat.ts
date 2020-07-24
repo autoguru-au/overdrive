@@ -2,9 +2,6 @@ import { style, styleMap } from 'treat';
 import type { Theme } from 'treat/theme';
 
 export const root = style((theme) => ({
-	position: 'relative',
-	width: '100%',
-	padding: 0,
 	transition: `fill 0.2s ${theme.animation.easing.decelerate} 0s`,
 }));
 
@@ -26,16 +23,10 @@ export const borders = {
 		default: [
 			borderVisualDefaults,
 			style({
-				position: 'absolute',
 				zIndex: 2,
 				top: 0,
 				right: 0,
 				left: 0,
-				display: 'flex',
-				width: '100%',
-				height: '100%',
-				textAlign: 'left',
-				pointerEvents: 'none',
 			}),
 		],
 		disabled: style({ boxShadow: 'none' }),
@@ -74,26 +65,18 @@ export const borders = {
 	],
 };
 
-export const placeholder = {
-	default: styleMap((theme) => ({
-		standard: {
-			fontSize: theme.typography.size['4'].fontSize,
-			lineHeight: 1,
-			position: 'absolute',
-			top: 0,
-			left: 0,
-			display: 'inline',
-			margin: 0,
-			padding: 0,
-			transition: `color 0.2s ${theme.animation.easing.decelerate} 0s, transform 0.2s ${theme.animation.easing.decelerate} 0s`,
-			transformOrigin: 'top left',
-			whiteSpace: 'nowrap',
-			pointerEvents: 'none',
-		},
-		notNotched: { display: 'none' },
-	})),
-	empty: style((theme) => ({ color: theme.colours.gamut.gray400 })),
-};
+export const placeholder = styleMap((theme) => ({
+	default: {
+		lineHeight: 1,
+		top: 0,
+		left: 0,
+		transition: `color 0.2s ${theme.animation.easing.decelerate} 0s, transform 0.2s ${theme.animation.easing.decelerate} 0s`,
+		transformOrigin: 'top left',
+	},
+	mutedLabelStyles: {
+		color: theme.colours.gamut.gray400,
+	},
+}));
 
 const active_scaling_factor = 0.7777;
 const calcPlaceholderTranslate = (

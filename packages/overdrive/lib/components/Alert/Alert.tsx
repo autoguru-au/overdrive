@@ -11,10 +11,11 @@ import * as React from 'react';
 import { ComponentProps, FunctionComponent, ReactChild } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box';
+import { Box, useBoxStyles } from '../Box';
 import { Button } from '../Button';
+import { Column, Columns } from '../Columns';
 import { Icon } from '../Icon';
-import { Text } from '../Text';
+import { Text, useTextStyles } from '../Text';
 import * as styleRefs from './Alert.treat';
 
 export interface Props {
@@ -46,50 +47,63 @@ export const Alert: FunctionComponent<Props> = ({
 	dismissible = typeof onRequestClose === 'function',
 }) => {
 	const styles = useStyles(styleRefs);
+	const dismissBtnStyles = useTextStyles({ colour: 'muted' });
 
 	return (
 		<Box
-			className={clsx(
-				styles.root,
-				styles.intent[intent],
-				{
-					[styles.contained]: !inline,
-				},
-				className,
-			)}
+			className={clsx(className, styles.root, styles.intent[intent], {
+				[styles.contained]: !inline,
+			})}
 			role="alert"
+			overflow="hidden"
+			position="relative"
 			backgroundColour="white"
+			borderWidth="1"
+			borderColour="gray"
 			borderRadius="1"
 			boxShadow={inline ? 'none' : '4'}
 			padding="2">
-			<Icon
-				icon={IconMapForIntent[intent]}
-				size="medium"
-				className={styles.icon}
-			/>
-			<Box className={styles.content}>
-				{typeof children === 'string' ? (
-					<Text>{children}</Text>
-				) : (
-					children
-				)}
-			</Box>
-			{dismissible && (
-				<Button
-					minimal
-					rounded
-					variant="secondary"
-					size="small"
-					className={styles.closeButton}
-					aria-label="close"
-					onClick={onRequestClose}>
+			<Columns noWrap spaceX="2">
+				<Column noShrink alignSelf="top">
 					<Icon
-						className={styles.closeButtonIcon}
-						icon={WindowCloseIcon}
+						icon={IconMapForIntent[intent]}
 						size="medium"
+						className={useBoxStyles({
+							marginY: '2',
+							marginLeft: '2',
+						})}
 					/>
-				</Button>
-			)}
+				</Column>
+
+				<Column
+					grow
+					width="auto"
+					alignSelf="centre"
+					className={useTextStyles({ colour: 'dark' })}>
+					{typeof children === 'string' ? (
+						<Text>{children}</Text>
+					) : (
+						children
+					)}
+				</Column>
+				<Column noShrink alignSelf="top">
+					{dismissible && (
+						<Button
+							minimal
+							rounded
+							variant="secondary"
+							size="small"
+							aria-label="close"
+							onClick={onRequestClose}>
+							<Icon
+								className={dismissBtnStyles}
+								icon={WindowCloseIcon}
+								size="medium"
+							/>
+						</Button>
+					)}
+				</Column>
+			</Columns>
 		</Box>
 	);
 };

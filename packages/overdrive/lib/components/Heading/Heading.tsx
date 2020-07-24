@@ -1,8 +1,8 @@
-import clsx from 'clsx';
 import * as React from 'react';
 import { FunctionComponent } from 'react';
 import type { Theme } from 'treat/theme';
 
+import { Box } from '../Box';
 import type { TextStyleProps } from '../Text';
 import { useTextStyles } from '../Text';
 
@@ -27,14 +27,14 @@ const sizeScaleDefaults: Map<
 export const Heading: FunctionComponent<Props> = ({
 	children,
 	className = '',
-	is: Component = 'h1',
+	is = 'h1',
 	colour = 'dark',
 	align,
-	size = sizeScaleDefaults.get(Component),
+	size = sizeScaleDefaults.get(is),
 }) => (
-	<Component
-		children={children}
-		className={clsx(
+	<Box
+		is={is}
+		className={[
 			useTextStyles({
 				size,
 				align,
@@ -42,6 +42,7 @@ export const Heading: FunctionComponent<Props> = ({
 				fontWeight: 'bold',
 			}),
 			className,
-		)}
-	/>
+		]}>
+		{children}
+	</Box>
 );

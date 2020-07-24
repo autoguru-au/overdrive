@@ -5,17 +5,17 @@ exports[`<SelectInput /> should have some hintText 1`] = `
   class="base width_full"
 >
   <div
-    class="base root_base"
+    class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full position_relative root_base"
   >
     <div
-      class="base width_full input_root"
+      class="base width_full height_full"
     >
       <div
-        class="base root"
+        class="base display_flex center_mobile_base flexWrap_nowrap center_mobile_base"
       >
         <select
           autocomplete="off"
-          class="base block appearance select base block appearance input width_full input_itself_root_base"
+          class="base block appearance select flexGrow_1 base block appearance input display_flex width_full position_relative input_itself_root_base"
         >
           <option
             value="a"
@@ -34,7 +34,7 @@ exports[`<SelectInput /> should have some hintText 1`] = `
           </option>
         </select>
         <i
-          class="base display_block medium_mobile_base icon_base"
+          class="base display_block medium_mobile_base base 4_mobile_base flexShrink_0"
           role="presentation"
         >
           <svg
@@ -51,7 +51,7 @@ exports[`<SelectInput /> should have some hintText 1`] = `
       </div>
     </div>
     <div
-      class="borderVisualDefaults_base borders_root_default"
+      class="base display_flex width_full height_full position_absolute textAlign_left pointerEvents_none borderVisualDefaults_base borders_root_default"
     >
       <div
         class="borderRegionDefaults_base borders_leading_base styleNode_base"
@@ -61,7 +61,7 @@ exports[`<SelectInput /> should have some hintText 1`] = `
         style="width: 0px;"
       >
         <label
-          class="placeholder_default_standard_base placeholder_empty_base placeholderPlacement_default_base"
+          class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base sizes_4_base colours_neutral_base noWrap base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
         >
           Hello World!
         </label>
@@ -72,7 +72,7 @@ exports[`<SelectInput /> should have some hintText 1`] = `
     </div>
   </div>
   <p
-    class="base textAlign_left root_base sizes_2_base fontWeight_normal_base base hintText_base styleNode_base"
+    class="base textAlign_left root_base sizes_2_base fontWeight_normal_base base base 2_mobile_base 4_mobile_base hintText_base styleNode_base"
   >
     hint text
   </p>
@@ -84,17 +84,17 @@ exports[`<SelectInput /> should match snapshot 1`] = `
   class="base width_full"
 >
   <div
-    class="base root_base"
+    class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full position_relative root_base"
   >
     <div
-      class="base width_full input_root"
+      class="base width_full height_full"
     >
       <div
-        class="base root"
+        class="base display_flex center_mobile_base flexWrap_nowrap center_mobile_base"
       >
         <select
           autocomplete="off"
-          class="base block appearance select base block appearance input width_full input_itself_root_base"
+          class="base block appearance select flexGrow_1 base block appearance input display_flex width_full position_relative input_itself_root_base"
         >
           <option
             value="a"
@@ -113,7 +113,7 @@ exports[`<SelectInput /> should match snapshot 1`] = `
           </option>
         </select>
         <i
-          class="base display_block medium_mobile_base icon_base"
+          class="base display_block medium_mobile_base base 4_mobile_base flexShrink_0"
           role="presentation"
         >
           <svg
@@ -130,7 +130,7 @@ exports[`<SelectInput /> should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="borderVisualDefaults_base borders_root_default"
+      class="base display_flex width_full height_full position_absolute textAlign_left pointerEvents_none borderVisualDefaults_base borders_root_default"
     >
       <div
         class="borderRegionDefaults_base borders_leading_base styleNode_base"
@@ -140,7 +140,7 @@ exports[`<SelectInput /> should match snapshot 1`] = `
         style="width: 0px;"
       >
         <label
-          class="placeholder_default_standard_base placeholder_empty_base placeholderPlacement_default_base"
+          class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base sizes_4_base colours_neutral_base noWrap base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
         >
           Hello World!
         </label>
@@ -158,17 +158,17 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
   class="base width_full"
 >
   <div
-    class="base root_base"
+    class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full position_relative root_base"
   >
     <div
-      class="base width_full input_root"
+      class="base width_full height_full"
     >
       <div
-        class="base root"
+        class="base display_flex center_mobile_base flexWrap_nowrap center_mobile_base"
       >
         <select
           autocomplete="off"
-          class="base block appearance select base block appearance input width_full input_itself_root_base"
+          class="base block appearance select flexGrow_1 base block appearance input display_flex width_full position_relative input_itself_root_base"
         >
           <option
             value="a"
@@ -187,7 +187,7 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
           </option>
         </select>
         <i
-          class="base display_block medium_mobile_base icon_base"
+          class="base display_block medium_mobile_base base 4_mobile_base flexShrink_0"
           role="presentation"
         >
           <svg
@@ -204,7 +204,7 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
       </div>
     </div>
     <div
-      class="borderVisualDefaults_base borders_root_default"
+      class="base display_flex width_full height_full position_absolute textAlign_left pointerEvents_none borderVisualDefaults_base borders_root_default"
     >
       <div
         class="borderRegionDefaults_base borders_leading_base activeBorderColour_base"
@@ -214,7 +214,7 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
         style="width: 16px;"
       >
         <label
-          class="placeholder_default_standard_base activeColour_base placeholderPlacement_shifted_base"
+          class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base activeColour_base root_base sizes_4_base colours_neutral_base noWrap base placeholderPlacement_shifted_base"
         >
           Hello World!
         </label>
@@ -232,17 +232,17 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
   class="base width_full"
 >
   <div
-    class="base root_base"
+    class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full position_relative root_base"
   >
     <div
-      class="base width_full input_root"
+      class="base width_full height_full"
     >
       <div
-        class="base root"
+        class="base display_flex center_mobile_base flexWrap_nowrap center_mobile_base"
       >
         <select
           autocomplete="off"
-          class="base block appearance select base block appearance input width_full input_itself_root_base"
+          class="base block appearance select flexGrow_1 base block appearance input display_flex width_full position_relative input_itself_root_base"
         >
           <option
             value="a"
@@ -261,7 +261,7 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
           </option>
         </select>
         <i
-          class="base display_block medium_mobile_base icon_base"
+          class="base display_block medium_mobile_base base 4_mobile_base flexShrink_0"
           role="presentation"
         >
           <svg
@@ -278,7 +278,7 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
       </div>
     </div>
     <div
-      class="borderVisualDefaults_base borders_root_default"
+      class="base display_flex width_full height_full position_absolute textAlign_left pointerEvents_none borderVisualDefaults_base borders_root_default"
     >
       <div
         class="borderRegionDefaults_base borders_leading_base styleNode_base"
@@ -288,7 +288,7 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
         style="width: 0px;"
       >
         <label
-          class="placeholder_default_standard_base placeholder_empty_base placeholderPlacement_default_base"
+          class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base sizes_4_base colours_neutral_base noWrap base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
         >
           Hello World!
         </label>
@@ -306,17 +306,17 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
   class="base width_full"
 >
   <div
-    class="base root_base"
+    class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full position_relative root_base"
   >
     <div
-      class="base width_full input_root"
+      class="base width_full height_full"
     >
       <div
-        class="base root"
+        class="base display_flex center_mobile_base flexWrap_nowrap center_mobile_base"
       >
         <select
           autocomplete="off"
-          class="base block appearance select base block appearance input width_full input_itself_root_base"
+          class="base block appearance select flexGrow_1 base block appearance input display_flex width_full position_relative input_itself_root_base"
         >
           <option
             value="a"
@@ -335,7 +335,7 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
           </option>
         </select>
         <i
-          class="base display_block medium_mobile_base icon_base"
+          class="base display_block medium_mobile_base base 4_mobile_base flexShrink_0"
           role="presentation"
         >
           <svg
@@ -352,7 +352,7 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
       </div>
     </div>
     <div
-      class="borderVisualDefaults_base borders_root_default"
+      class="base display_flex width_full height_full position_absolute textAlign_left pointerEvents_none borderVisualDefaults_base borders_root_default"
     >
       <div
         class="borderRegionDefaults_base borders_leading_base styleNode_base"
@@ -362,7 +362,7 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
         style="width: 0px;"
       >
         <label
-          class="placeholder_default_standard_base placeholder_empty_base placeholderPlacement_default_base"
+          class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base sizes_4_base colours_neutral_base noWrap base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
         >
           Hello World!
         </label>
@@ -380,17 +380,17 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
   class="base width_full"
 >
   <div
-    class="base root_base"
+    class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full position_relative root_base"
   >
     <div
-      class="base width_full input_root"
+      class="base width_full height_full"
     >
       <div
-        class="base root"
+        class="base display_flex center_mobile_base flexWrap_nowrap center_mobile_base"
       >
         <select
           autocomplete="off"
-          class="base block appearance select base block appearance input width_full input_itself_root_base"
+          class="base block appearance select flexGrow_1 base block appearance input display_flex width_full position_relative input_itself_root_base"
         >
           <option
             value="a"
@@ -409,7 +409,7 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
           </option>
         </select>
         <i
-          class="base display_block medium_mobile_base icon_base"
+          class="base display_block medium_mobile_base base 4_mobile_base flexShrink_0"
           role="presentation"
         >
           <svg
@@ -426,7 +426,7 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
       </div>
     </div>
     <div
-      class="borderVisualDefaults_base borders_root_default"
+      class="base display_flex width_full height_full position_absolute textAlign_left pointerEvents_none borderVisualDefaults_base borders_root_default"
     >
       <div
         class="borderRegionDefaults_base borders_leading_base styleNode_base"
@@ -436,7 +436,7 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
         style="width: 0px;"
       >
         <label
-          class="placeholder_default_standard_base placeholder_empty_base placeholderPlacement_default_base"
+          class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base sizes_4_base colours_neutral_base noWrap base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
         >
           Hello World!
         </label>
@@ -454,13 +454,13 @@ exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
   class="base width_full input-class"
 >
   <div
-    class="base root_base"
+    class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full position_relative root_base"
   >
     <div
-      class="base width_full input_root"
+      class="base width_full height_full"
     >
       <i
-        class="base display_block medium_mobile_base iconRoot_base icon_prefix styleNode_base"
+        class="base display_block medium_mobile_base base position_absolute pointerEvents_none iconRoot_base icon_prefix styleNode_base"
         role="presentation"
       >
         <svg
@@ -474,14 +474,14 @@ exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
         </svg>
       </i>
       <div
-        class="base root"
+        class="base display_flex center_mobile_base flexWrap_nowrap center_mobile_base"
       >
         <select
           autocomplete="off"
-          class="base block appearance select base block appearance input width_full input_itself_root_base input_itself_prefixed_base"
+          class="base block appearance select flexGrow_1 base block appearance input display_flex width_full position_relative input_itself_root_base input_itself_prefixed_base"
         />
         <i
-          class="base display_block medium_mobile_base icon_base"
+          class="base display_block medium_mobile_base base 4_mobile_base flexShrink_0"
           role="presentation"
         >
           <svg
@@ -498,7 +498,7 @@ exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
       </div>
     </div>
     <div
-      class="borderVisualDefaults_base borders_root_default"
+      class="base display_flex width_full height_full position_absolute textAlign_left pointerEvents_none borderVisualDefaults_base borders_root_default"
     >
       <div
         class="borderRegionDefaults_base borders_leading_base styleNode_base"
@@ -508,7 +508,7 @@ exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
         style="width: 0px;"
       >
         <label
-          class="placeholder_default_standard_base placeholder_empty_base placeholderPlacement_defaultPrefixed_base"
+          class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base sizes_4_base colours_neutral_base noWrap base placeholder_mutedLabelStyles_base placeholderPlacement_defaultPrefixed_base"
         >
           placeholder something
         </label>

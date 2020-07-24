@@ -2,7 +2,6 @@ import { style } from 'treat';
 
 export const container = style((theme) => ({
 	height: theme.space['2'],
-	borderRadius: theme.space['2'],
 }));
 
 export const bar = style((theme) => ({

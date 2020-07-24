@@ -14,7 +14,7 @@ import {
 } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../Box';
+import { Box, useBoxStyles } from '../Box';
 import { Text } from '../Text';
 import * as styleRefs from './TextLink.treat';
 
@@ -59,9 +59,13 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 				size={size}
 				strong={strong}
 				fontWeight={fontWeight}
-				className={clsx(styles.root, {
-					[styles.muted]: muted,
-				})}>
+				className={clsx(
+					styles.root,
+					useBoxStyles({ pointerEvents: 'none' }),
+					{
+						[styles.muted]: muted,
+					},
+				)}>
 				{children}
 			</Text>
 		);
@@ -70,7 +74,7 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 			rel: props.rel ?? 'noopener noreferrer',
 			...props,
 			ref,
-			className: clsx(className, styles.anchor),
+			className: clsx(className),
 		};
 
 		if (Component === undefined) {

@@ -58,11 +58,13 @@ export const Modal: FunctionComponent<Props> = ({
 			{shouldRender ? (
 				<Box
 					role="presentation"
-					className={clsx(styles.root.default, [
-						transition && [
-							isOpen ? styles.root.fadeIn : styles.root.fadeOut,
-						],
-					])}
+					position="fixed"
+					overflow="hidden"
+					className={[
+						styles.root.default,
+						transition &&
+							(isOpen ? styles.root.fadeIn : styles.root.fadeOut),
+					]}
 					onAnimationEnd={onAnimationEnd}>
 					<Backdrop
 						invisible={hideBackdrop}
@@ -82,8 +84,9 @@ const Backdrop: FunctionComponent<{
 	const styles = useStyles(styleRefs);
 
 	return (
-		<div
+		<Box
 			aria-hidden="true"
+			position="absolute"
 			className={clsx(styles.backdrop.root, {
 				[styles.backdrop.invisible]: invisible,
 			})}

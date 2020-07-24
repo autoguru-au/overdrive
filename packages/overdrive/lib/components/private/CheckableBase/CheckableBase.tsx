@@ -3,8 +3,8 @@ import * as React from 'react';
 import { ChangeEvent, FunctionComponent, ReactNode } from 'react';
 import { useStyles } from 'react-treat';
 
-import { Box } from '../../Box';
-import { Text } from '../../Text';
+import { Box, useBoxStyles } from '../../Box';
+import { Text, useTextStyles } from '../../Text';
 import * as styleRefs from './CheckableBase.treat';
 
 export interface Props {
@@ -43,29 +43,63 @@ export const CheckableBase: FunctionComponent<Props> = ({
 	const nakedLabel = ['string', 'number'].includes(typeof label);
 
 	return (
-		<Box className={clsx(styles.root, styles.tappable, className)}>
-			<input
+		<Box
+			display="flex"
+			alignItems="center"
+			flexDirection="row"
+			justifyContent="flexStart"
+			padding="3"
+			paddingLeft="none"
+			position="relative"
+			className={[
+				styles.root,
+				useBoxStyles({ is: 'button' }),
+				className,
+			]}>
+			<Box
+				is="input"
+				position="absolute"
+				width="full"
+				height="full"
+				margin="none"
+				padding="none"
 				name={inputName}
 				value={value}
 				checked={checked}
 				disabled={disabled}
 				type={inputType}
-				className={clsx(styles.tappable, styles.nativeInput.default, {
-					[styles.nativeInput.disabled]: disabled,
-					[styles.nativeInput.checked]: checked,
-				})}
+				pointerEvents={disabled ? 'none' : void 0}
+				className={clsx(
+					useBoxStyles({ is: 'button' }),
+					styles.nativeInput.default,
+					{
+						[styles.nativeInput.checked]: checked,
+					},
+				)}
 				onClick={handleClick}
 				onChange={onChange}
 			/>
-			{children}
-			<div className={styles.focusRect} />
-
-			<label
-				className={clsx(styles.tappable, styles.label.default, {
-					[styles.label.disabled]: disabled,
-				})}>
+			<Box
+				display="flex"
+				alignItems="center"
+				justifyContent="center"
+				position="relative"
+				className={[styles.checkable, useBoxStyles({ is: 'button' })]}>
+				{children}
+			</Box>
+			<Box
+				is="label"
+				width="full"
+				pointerEvents={disabled ? 'none' : void 0}
+				className={clsx(
+					useBoxStyles({ is: 'button' }),
+					useTextStyles({ size: '4' }),
+					{
+						[styles.label.disabled]: disabled,
+					},
+				)}>
 				{nakedLabel ? <Text is="span">{label}</Text> : label}
-			</label>
+			</Box>
 		</Box>
 	);
 };

@@ -4,8 +4,6 @@ import { hex2rgba } from '../../utils';
 
 export const root = {
 	default: style({
-		position: 'fixed',
-		overflow: 'hidden',
 		top: 0,
 		right: 0,
 		bottom: 0,
@@ -51,7 +49,6 @@ export const backdrop = {
 	root: [
 		backdropRoot.default,
 		style({
-			position: 'absolute',
 			top: 0,
 			right: 0,
 			bottom: 0,

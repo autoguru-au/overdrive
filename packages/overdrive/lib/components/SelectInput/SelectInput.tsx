@@ -1,12 +1,10 @@
 import { ChevronDownIcon } from '@autoguru/icons';
 import * as React from 'react';
 import { ReactNode } from 'react';
-import { useStyles } from 'react-treat';
 
-import { Box } from '../Box';
+import { Box, useBoxStyles } from '../Box';
 import { Icon } from '../Icon';
 import { withEnhancedInput } from '../private/InputBase';
-import * as styleRefs from './SelectInput.treat';
 
 export const SelectInput = withEnhancedInput<
 	{
@@ -14,26 +12,27 @@ export const SelectInput = withEnhancedInput<
 	},
 	HTMLSelectElement
 >(
-	({ field, eventHandlers, suffixed, prefixed, validation, ...rest }) => {
-		const styles = useStyles(styleRefs);
-
-		return (
-			<Box className={styles.root}>
-				<Box
-					is="select"
-					{...eventHandlers}
-					{...field}
-					{...rest}
-					autoComplete="off"
-				/>
-				<Icon
-					size="medium"
-					icon={ChevronDownIcon}
-					className={styles.icon}
-				/>
-			</Box>
-		);
-	},
+	({ field, eventHandlers, suffixed, prefixed, validation, ...rest }) => (
+		<Box
+			display="flex"
+			flexWrap="nowrap"
+			alignItems="center"
+			justifyContent="center">
+			<Box
+				is="select"
+				flexGrow={1}
+				{...eventHandlers}
+				{...field}
+				{...rest}
+				autoComplete="off"
+			/>
+			<Icon
+				size="medium"
+				icon={ChevronDownIcon}
+				className={useBoxStyles({ marginRight: '4', flexShrink: 0 })}
+			/>
+		</Box>
+	),
 	{
 		primitiveType: 'select',
 		withSuffixIcon: false,

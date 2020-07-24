@@ -2,34 +2,46 @@
 
 exports[`<Anchor /> should match snapshot with label, icon and to props 1`] = `
 <a
-  class="root_base base cursorPointer a"
+  class="root root_base colours_link_base base base cursorPointer a display_inline"
   href="https://www.autoguru.com.au"
 >
-  <i
-    class="base display_block small_mobile_base icon_base iconWithText"
-    role="presentation"
+  <div
+    class="base display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 2_mobile_base 2_mobile_base"
   >
-    <svg
-      class="base display_block width_full height_full"
-      viewBox="0 0 512 512"
-      xmlns="http://www.w3.org/2000/svg"
+    <div
+      class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
     >
-      <path
-        d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
-      />
-    </svg>
-  </i>
-  <span
-    class="base textAlign_left root_base sizes_4_base colours_link_base fontWeight_bold_base base"
-  >
-    Hello World!
-  </span>
+      <i
+        class="base display_block small_mobile_base root_base colours_link_base base"
+        role="presentation"
+      >
+        <svg
+          class="base display_block width_full height_full"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+          />
+        </svg>
+      </i>
+    </div>
+    <div
+      class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+    >
+      <span
+        class="base textAlign_left root_base sizes_4_base colours_link_base fontWeight_bold_base base"
+      >
+        Hello World!
+      </span>
+    </div>
+  </div>
 </a>
 `;
 
 exports[`<Anchor /> should match snapshot without label 1`] = `
 <a
-  class="root_base base cursorPointer a"
+  class="root root_base colours_link_base base base cursorPointer a display_inline"
 >
   <span
     class="base textAlign_left root_base sizes_4_base colours_link_base fontWeight_bold_base base"
@@ -39,31 +51,43 @@ exports[`<Anchor /> should match snapshot without label 1`] = `
 
 exports[`<Anchor /> when custom component should match snapshot with label, icon custom component 1`] = `
 <button
-  class="base appearance cursorPointer button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base themedButton_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled width_default root_base base"
+  class="base appearance cursorPointer button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base sizes_4_base colours_white_base fontWeight_semiBold_base base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled root root_base colours_link_base base base display_inline"
   type="button"
 >
   <div
-    class="body_base"
+    class="base height_full center_mobile_base center_mobile_base body_base"
   >
-    <i
-      class="base display_block small_mobile_base icon_base iconWithText"
-      role="presentation"
+    <div
+      class="base display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 2_mobile_base 2_mobile_base"
     >
-      <svg
-        class="base display_block width_full height_full"
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
       >
-        <path
-          d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
-        />
-      </svg>
-    </i>
-    <span
-      class="base textAlign_left root_base sizes_4_base colours_link_base fontWeight_bold_base base"
-    >
-      Hello World!
-    </span>
+        <i
+          class="base display_block small_mobile_base root_base colours_link_base base"
+          role="presentation"
+        >
+          <svg
+            class="base display_block width_full height_full"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+            />
+          </svg>
+        </i>
+      </div>
+      <div
+        class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+      >
+        <span
+          class="base textAlign_left root_base sizes_4_base colours_link_base fontWeight_bold_base base"
+        >
+          Hello World!
+        </span>
+      </div>
+    </div>
   </div>
 </button>
 `;

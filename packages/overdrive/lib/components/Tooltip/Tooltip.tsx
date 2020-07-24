@@ -62,6 +62,8 @@ export const Tooltip: FunctionComponent<Props> = ({
 				<Box
 					ref={childRef}
 					className={styles.root}
+					width="full"
+					pointerEvents="none"
 					userSelect="none"
 					overflow="hidden"
 					borderRadius="1"

@@ -20,6 +20,7 @@ export const Section: FunctionComponent<Props> = ({
 	return (
 		<Box
 			className={clsx(styles.root, styles.width[width!])}
+			width="full"
 			paddingX={paddingX}>
 			{children}
 		</Box>

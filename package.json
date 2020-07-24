@@ -9,7 +9,7 @@
 	"scripts": {
 		"chromatic": "chromatic test --exit-zero-on-changes --build-script-name storybook:build",
 		"format": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|md|mdx|html)\"",
-		"lint": "eslint \"packages/**/*.+(ts|tsx)\" --fix --cache --quiet",
+		"lint": "eslint \"packages/**/*.+(ts|tsx)\" --fix --quiet",
 		"playroom:build": "playroom build",
 		"release": "changeset publish",
 		"start": "concurrently -k \"playroom\" \"yarn:storybook\"",
@@ -25,7 +25,7 @@
 	},
 	"lint-staged": {
 		"!(stories).{js,tsx,ts,tsx}": [
-			"eslint --cache --quiet --fix",
+			"eslint --quiet --fix",
 			"jest --bail --findRelatedTests",
 			"prettier --write"
 		],

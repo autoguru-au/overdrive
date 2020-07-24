@@ -2,20 +2,20 @@
 
 exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
 <div
-  class="base root_base tappable checkbox"
+  class="base 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base base appearance cursorPointer button"
 >
   <input
     checked=""
-    class="tappable nativeInput_default nativeInput_checked"
+    class="base block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute base appearance cursorPointer button nativeInput_default nativeInput_checked"
     name=""
     type="checkbox"
     value="1"
   />
   <div
-    class="checkable_base tappable"
+    class="base display_flex position_relative center_mobile_base center_mobile_base checkable_base base appearance cursorPointer button"
   >
     <i
-      class="base display_block small_mobile_base icon_base"
+      class="base display_block small_mobile_base icon_base root_base colours_white_base base base position_absolute"
       role="presentation"
     >
       <svg
@@ -30,14 +30,11 @@ exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
       </svg>
     </i>
     <div
-      class="checkableItem_base base_default_base base_selected_base"
+      class="base border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base backgroundColours_green600_base checkableItem_base base_default_base base_selected_base"
     />
   </div>
-  <div
-    class="focusRect_base"
-  />
   <label
-    class="tappable label_default_base"
+    class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
   >
     <span
       class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
@@ -50,26 +47,23 @@ exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
 
 exports[`<CheckBox /> should match the snapshot for a single check 1`] = `
 <div
-  class="base root_base tappable checkbox"
+  class="base 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base base appearance cursorPointer button"
 >
   <input
-    class="tappable nativeInput_default"
+    class="base block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute base appearance cursorPointer button nativeInput_default"
     name=""
     type="checkbox"
     value="1"
   />
   <div
-    class="checkable_base tappable"
+    class="base display_flex position_relative center_mobile_base center_mobile_base checkable_base base appearance cursorPointer button"
   >
     <div
-      class="checkableItem_base base_default_base"
+      class="base border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base backgroundColours_transparent_base checkableItem_base base_default_base"
     />
   </div>
-  <div
-    class="focusRect_base"
-  />
   <label
-    class="tappable label_default_base"
+    class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
   >
     <span
       class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
@@ -82,26 +76,23 @@ exports[`<CheckBox /> should match the snapshot for a single check 1`] = `
 
 exports[`<CheckBox /> should match the snapshot for a single check with no value or label 1`] = `
 <div
-  class="base root_base tappable checkbox"
+  class="base 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base base appearance cursorPointer button"
 >
   <input
-    class="tappable nativeInput_default"
+    class="base block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute base appearance cursorPointer button nativeInput_default"
     name=""
     type="checkbox"
     value=""
   />
   <div
-    class="checkable_base tappable"
+    class="base display_flex position_relative center_mobile_base center_mobile_base checkable_base base appearance cursorPointer button"
   >
     <div
-      class="checkableItem_base base_default_base"
+      class="base border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base backgroundColours_transparent_base checkableItem_base base_default_base"
     />
   </div>
-  <div
-    class="focusRect_base"
-  />
   <label
-    class="tappable label_default_base"
+    class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
   >
     <span
       class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
@@ -112,29 +103,26 @@ exports[`<CheckBox /> should match the snapshot for a single check with no value
 
 exports[`<CheckBox /> when with component child should match the snapshot 1`] = `
 <div
-  class="base root_base tappable checkbox"
+  class="base 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base base appearance cursorPointer button"
 >
   <input
-    class="tappable nativeInput_default"
+    class="base block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute base appearance cursorPointer button nativeInput_default"
     name=""
     type="checkbox"
     value="1"
   />
   <div
-    class="checkable_base tappable"
+    class="base display_flex position_relative center_mobile_base center_mobile_base checkable_base base appearance cursorPointer button"
   >
     <div
-      class="checkableItem_base base_default_base"
+      class="base border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base backgroundColours_transparent_base checkableItem_base base_default_base"
     />
   </div>
-  <div
-    class="focusRect_base"
-  />
   <label
-    class="tappable label_default_base"
+    class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
   >
     <h1
-      class="root_base sizes_8_base colours_dark_base fontWeight_bold_base base"
+      class="base root_base sizes_8_base colours_dark_base fontWeight_bold_base base"
     >
       Hello checkbox
     </h1>

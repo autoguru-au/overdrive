@@ -1,5 +1,4 @@
 import { clamp } from '@autoguru/utilities';
-import clsx from 'clsx';
 import * as React from 'react';
 import { ComponentProps, memo } from 'react';
 import { useStyles } from 'react-treat';
@@ -32,10 +31,14 @@ export const ProgressBar = memo<Props>(({ value = 0, colour = 'green' }) => {
 	const styles = useStyles(styleRefs);
 
 	return (
-		<Box className={styles.container} backgroundColour="gray100">
+		<Box
+			className={styles.container}
+			borderRadius="1"
+			backgroundColour="gray100">
 			<Box
+				borderRadius="1"
 				backgroundColour={backgroundColorMap[colour]}
-				className={clsx(styles.bar, styles.container)}
+				className={[styles.bar, styles.container]}
 				style={{
 					width: `${clamp(value, 0, 1) * 100}%`,
 				}}
