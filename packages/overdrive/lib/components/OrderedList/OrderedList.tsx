@@ -28,6 +28,7 @@ export interface Props
 	extends Pick<OlHTMLAttributes<HTMLOListElement>, 'start'> {
 	type?: ListStyleType;
 	className?: string;
+	children?: ReactChild | ReactChild[];
 }
 
 export interface ItemProps {
@@ -63,7 +64,7 @@ export const OrderedList: FunctionComponent<Props> & {
 			style={{ listStyleType: cycles[myCycle] }}
 			start={start}>
 			<OrderedListContext.Provider value={myCycle}>
-				<Stack space="2">{children as ReactChild[]}</Stack>
+				<Stack space="2">{children}</Stack>
 			</OrderedListContext.Provider>
 		</Box>
 	);
