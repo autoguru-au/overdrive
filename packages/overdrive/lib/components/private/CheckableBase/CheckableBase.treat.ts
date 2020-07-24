@@ -1,8 +1,12 @@
 import { style, styleMap } from 'treat';
 
-export const root = style({
+export const root = style((theme) => ({
 	cursor: 'pointer',
-});
+	transition: `background-color 0.2s ${theme.animation.easing.decelerate} 0s`,
+	':hover': {
+		backgroundColor: theme.colours.gamut.gray100,
+	},
+}));
 
 export const label = styleMap((theme) => ({
 	disabled: {
