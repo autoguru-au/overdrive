@@ -7,7 +7,7 @@ import {
 	MouseEventHandler,
 	useCallback,
 	useLayoutEffect,
-	useState,
+	useRef,
 } from 'react';
 import { useStyles } from 'react-treat';
 
@@ -43,7 +43,7 @@ export const StandardModal: FunctionComponent<Props> = ({
 	const styles = useStyles(styleRefs);
 
 	const titleId = useId();
-	const [locked, setLocked] = useState<boolean>(true);
+	const locked = useRef<boolean>(true);
 
 	const closeButtonHandler = () => {
 		if (typeof onRequestClose === 'function') onRequestClose('button');
@@ -51,15 +51,13 @@ export const StandardModal: FunctionComponent<Props> = ({
 
 	const unlockModal = useCallback<MouseEventHandler<HTMLDivElement>>(
 		(event) => {
-			if (event.target !== event.currentTarget)
-				return void setLocked(true);
-			return void setLocked(false);
+			locked.current = event.target !== event.currentTarget;
 		},
 		[],
 	);
 
 	const backdropHandler = (event) => {
-		if (locked || event.target !== event.currentTarget) return;
+		if (locked.current || event.target !== event.currentTarget) return;
 		if (typeof onRequestClose === 'function') onRequestClose('backdrop');
 	};
 
