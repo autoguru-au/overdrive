@@ -1,7 +1,14 @@
 import { WindowCloseIcon } from '@autoguru/icons';
 import clsx from 'clsx';
 import * as React from 'react';
-import { ComponentProps, FunctionComponent, useLayoutEffect } from 'react';
+import {
+	ComponentProps,
+	FunctionComponent,
+	MouseEventHandler,
+	useCallback,
+	useLayoutEffect,
+	useState,
+} from 'react';
 import { useStyles } from 'react-treat';
 
 import { useId } from '../../utils';
@@ -36,13 +43,23 @@ export const StandardModal: FunctionComponent<Props> = ({
 	const styles = useStyles(styleRefs);
 
 	const titleId = useId();
+	const [locked, setLocked] = useState<boolean>(true);
 
 	const closeButtonHandler = () => {
 		if (typeof onRequestClose === 'function') onRequestClose('button');
 	};
 
+	const unlockModal = useCallback<MouseEventHandler<HTMLDivElement>>(
+		(event) => {
+			if (event.target !== event.currentTarget)
+				return void setLocked(true);
+			return void setLocked(false);
+		},
+		[],
+	);
+
 	const backdropHandler = (event) => {
-		if (event.target !== event.currentTarget) return;
+		if (locked || event.target !== event.currentTarget) return;
 		if (typeof onRequestClose === 'function') onRequestClose('backdrop');
 	};
 
@@ -68,6 +85,7 @@ export const StandardModal: FunctionComponent<Props> = ({
 				justifyContent="center"
 				aria-hidden={isOpen ? 'false' : 'true'}
 				role="none presentation"
+				onMouseDown={unlockModal}
 				onClick={backdropHandler}>
 				<Box
 					is="article"
