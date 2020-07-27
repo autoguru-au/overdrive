@@ -1,5 +1,5 @@
+import type { Ref } from 'react';
 import {
-	Ref,
 	useCallback,
 	useEffect,
 	useLayoutEffect,
@@ -98,6 +98,13 @@ export const ownerWindow = (node?: Node): Window =>
 export const ownerDocument = (node?: Node): Document =>
 	node?.ownerDocument || document;
 
+/**
+ * A method to be used when dealing with callbacks that depend on data, but you don't want to trigger re-renders.
+ *
+ * @see {@link https://github.com/facebook/react/issues/14099#issuecomment-440013892|facebook/react#14099}
+ *
+ * @param fn
+ */
 export const useEventCallback = <T extends Function>(fn: T) => {
 	const ref = useRef(fn);
 	isomorphicLayoutEffect(() => {
@@ -157,11 +164,9 @@ export const alignmentToFlexAlignment = (align: Alignment) =>
 	}[align] as 'center' | 'flexStart' | 'flexEnd');
 
 /**
- * @description
  * A function that returns the first item in the array, if the index exceeds its maximum length
  *
  * @example
- *
  * ```js
  *  const sortFlowRingLookup = arrayRingLookup(['asc', 'desc', 'none']);
  *
