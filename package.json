@@ -96,7 +96,7 @@
 		"rimraf": "3.0.2",
 		"storybook-chromatic": "4.0.2",
 		"style-loader": "1.2.1",
-		"treat": "1.4.3",
+		"treat": "1.5.1",
 		"ts-loader": "8.0.1",
 		"tslib": "2.0.0",
 		"typescript": "3.9.7",
