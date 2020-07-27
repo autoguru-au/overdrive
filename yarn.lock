@@ -15018,10 +15018,10 @@ tr46@^2.0.2:
   dependencies:
     punycode "^2.1.1"
 
-treat@1.4.3:
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/treat/-/treat-1.4.3.tgz#d634766fb8b8b29a5f8ffd69ab1f587b0d60457d"
-  integrity sha512-+LajJja73v1TDf367+axjuDR4nWn3FhvPkPSxvDaQUewJMILYVm3CEw+JuWXCIm6mGiQ1miVDpRrFuQ/FtKfYw==
+treat@1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/treat/-/treat-1.5.1.tgz#ff17af14f466400723a5f9fbe5040e1f97bbbf49"
+  integrity sha512-roVEhNzudKgGjZoNFbvTqIsGZVu2LwDuU9d9LeSHDSWWkvFDwxniq/J67LPipnT/KkXaWH0lKsaQmeHXxHigcg==
   dependencies:
     "@hapi/joi" "^15.0.3"
     "@types/object-hash" "^1.2.0"
