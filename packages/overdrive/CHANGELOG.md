@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.0.20
+
+### Patch Changes
+
+-   bf51bbe: Fix: Added missing re-exports from our "to-monorepo" migration
+
 ## 2.0.19
 
 ### Patch Changes
