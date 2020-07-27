@@ -10,7 +10,7 @@ import * as styleRefs from './Badge.treat';
 export interface Props {
 	label: string;
 	// TODO: These should use the intent verbs, and come from Box
-	colour?: keyof typeof styleRefs.colours;
+	colour?: keyof typeof styleRefs.colours.default;
 	className?: string;
 	look?: 'standard' | 'inverted';
 }

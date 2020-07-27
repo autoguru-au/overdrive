@@ -44,6 +44,7 @@ export * from './Text';
 export * from './TextAreaInput';
 export * from './TextContainer';
 export * from './TextInput';
+export * from './TextLink';
 export * from './ThemeProvider';
 export * from './Toaster';
 export * from './Tooltip';
