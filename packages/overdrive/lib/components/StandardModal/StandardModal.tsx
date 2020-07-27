@@ -1,17 +1,15 @@
 import { WindowCloseIcon } from '@autoguru/icons';
 import clsx from 'clsx';
-import * as React from 'react';
-import {
+import type {
 	ComponentProps,
 	FunctionComponent,
 	MouseEventHandler,
-	useCallback,
-	useLayoutEffect,
-	useRef,
 } from 'react';
+import * as React from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import { useStyles } from 'react-treat';
 
-import { useId } from '../../utils';
+import { useEventCallback, useId } from '../../utils';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Heading } from '../Heading';
@@ -45,21 +43,25 @@ export const StandardModal: FunctionComponent<Props> = ({
 	const titleId = useId();
 	const locked = useRef<boolean>(true);
 
-	const closeButtonHandler = () => {
+	const closeButtonHandler = useEventCallback<
+		MouseEventHandler<HTMLButtonElement>
+	>(() => {
 		if (typeof onRequestClose === 'function') onRequestClose('button');
-	};
+	});
 
-	const unlockModal = useCallback<MouseEventHandler<HTMLDivElement>>(
+	const unlockModal = useEventCallback<MouseEventHandler<HTMLDivElement>>(
 		(event) => {
 			locked.current = event.target !== event.currentTarget;
 		},
-		[],
 	);
 
-	const backdropHandler = (event) => {
-		if (locked.current || event.target !== event.currentTarget) return;
-		if (typeof onRequestClose === 'function') onRequestClose('backdrop');
-	};
+	const backdropHandler = useEventCallback<MouseEventHandler<HTMLDivElement>>(
+		(event) => {
+			if (locked.current || event.target !== event.currentTarget) return;
+			if (typeof onRequestClose === 'function')
+				onRequestClose('backdrop');
+		},
+	);
 
 	useLayoutEffect(() => {
 		if (isOpen) {
