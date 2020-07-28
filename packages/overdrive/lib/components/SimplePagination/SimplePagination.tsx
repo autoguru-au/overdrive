@@ -26,7 +26,12 @@ export const SimplePagination: NamedExoticComponent<Props> = memo(
 		};
 
 		return (
-			<Inline is="nav" space="6" aria-label="pagination">
+			<Inline
+				is="nav"
+				space="6"
+				aria-label="pagination"
+				alignX="center"
+				alignY="center">
 				<Button
 					rounded
 					disabled={!hasPrevious}
