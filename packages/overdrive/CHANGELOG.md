@@ -1,5 +1,13 @@
 # @autoguru/overdrive
 
+## 2.0.21
+
+### Patch Changes
+
+-   47335f6: Meta: FIxed issue where the icon and label would wrap
+-   230367f: SimplePagination: Should be centered in it's parent. Seeing as it's
+    parent spans 100% width, this centering is now explicit.
+
 ## 2.0.20
 
 ### Patch Changes
