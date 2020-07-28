@@ -2,7 +2,7 @@
 
 exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
 <nav
-  class="base block display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 6_mobile_base 6_mobile_base"
+  class="base block display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap center_mobile_base 6_mobile_base 6_mobile_base"
 >
   <div
     class="base 6_mobile_base 6_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
@@ -68,7 +68,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
 
 exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 1`] = `
 <nav
-  class="base block display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 6_mobile_base 6_mobile_base"
+  class="base block display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap center_mobile_base 6_mobile_base 6_mobile_base"
 >
   <div
     class="base 6_mobile_base 6_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
@@ -133,7 +133,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
 
 exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
 <nav
-  class="base block display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 6_mobile_base 6_mobile_base"
+  class="base block display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap center_mobile_base 6_mobile_base 6_mobile_base"
 >
   <div
     class="base 6_mobile_base 6_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
