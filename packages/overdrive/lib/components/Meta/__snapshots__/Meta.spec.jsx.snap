@@ -2,7 +2,7 @@
 
 exports[`<Meta /> should match snapshot with label, icon for Primary variant 1`] = `
 <span
-  class="base display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 2_mobile_base 2_mobile_base"
+  class="base display_flex position_relative center_mobile_base row_mobile_base flexWrap_nowrap 2_mobile_base 2_mobile_base"
 >
   <div
     class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
@@ -36,7 +36,7 @@ exports[`<Meta /> should match snapshot with label, icon for Primary variant 1`]
 
 exports[`<Meta /> should match snapshot with label, icon for Secondary variant 1`] = `
 <span
-  class="base display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 2_mobile_base 2_mobile_base"
+  class="base display_flex position_relative center_mobile_base row_mobile_base flexWrap_nowrap 2_mobile_base 2_mobile_base"
 >
   <div
     class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
