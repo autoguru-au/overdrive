@@ -22,7 +22,7 @@ export const Meta: FunctionComponent<Props> = ({
 	const styles = useStyles(styleRefs);
 
 	return (
-		<Inline is="span" space="2" alignY="center">
+		<Inline noWrap is="span" space="2" alignY="center">
 			{icon && <Icon icon={icon} className={styles.variant[variant]} />}
 			<Text>{label}</Text>
 		</Inline>
