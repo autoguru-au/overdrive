@@ -80,7 +80,7 @@
 		"browserslist-config-autoguru": "1.0.88",
 		"concurrently": "5.2.0",
 		"core-js": "3.6.5",
-		"csstype": "2.6.11",
+		"csstype": "2.6.13",
 		"eslint": "7.5.0",
 		"glob": "7.1.6",
 		"husky": "4.2.5",
