@@ -17,7 +17,7 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
       >
         <button
           aria-label="step down"
-          class="base appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base colours_white_base base"
+          class="base appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base colours_white_base"
           tabindex="-1"
         >
           <i
@@ -45,7 +45,7 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
         class="base display_flex width_full height_full"
       >
         <span
-          class="base display_block textAlign_center root_base sizes_4_base colours_dark_base fontWeight_normal_base base base 2_mobile_base 2_mobile_base width_full label_base"
+          class="base display_block textAlign_center root_base sizes_4_base colours_dark_base fontWeight_normal_base 2_mobile_base 2_mobile_base width_full label_base"
         >
           25%
         </span>
@@ -59,7 +59,7 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
       >
         <button
           aria-label="step up"
-          class="base appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base colours_white_base base"
+          class="base appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base colours_white_base"
           tabindex="-1"
         >
           <i
@@ -101,7 +101,7 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
       >
         <button
           aria-label="step down"
-          class="base appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base colours_white_base base"
+          class="base appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base colours_white_base"
           tabindex="-1"
         >
           <i
@@ -129,7 +129,7 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
         class="base display_flex width_full height_full"
       >
         <span
-          class="base display_block textAlign_center root_base sizes_4_base colours_dark_base fontWeight_normal_base base base 2_mobile_base 2_mobile_base width_full label_base"
+          class="base display_block textAlign_center root_base sizes_4_base colours_dark_base fontWeight_normal_base 2_mobile_base 2_mobile_base width_full label_base"
         >
           19
         </span>
@@ -143,7 +143,7 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
       >
         <button
           aria-label="step up"
-          class="base appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base colours_white_base base"
+          class="base appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base colours_white_base"
           tabindex="-1"
         >
           <i
@@ -185,7 +185,7 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
       >
         <button
           aria-label="step down"
-          class="base appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base handle_disabled_base root_base colours_white_base base"
+          class="base appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base handle_disabled_base root_base colours_white_base"
           disabled=""
           tabindex="-1"
         >
@@ -214,7 +214,7 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
         class="base display_flex width_full height_full"
       >
         <span
-          class="base display_block textAlign_center root_base sizes_4_base colours_dark_base fontWeight_normal_base base base 2_mobile_base 2_mobile_base width_full label_base"
+          class="base display_block textAlign_center root_base sizes_4_base colours_dark_base fontWeight_normal_base 2_mobile_base 2_mobile_base width_full label_base"
         >
           0
         </span>
@@ -228,7 +228,7 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
       >
         <button
           aria-label="step up"
-          class="base appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base handle_disabled_base root_base colours_white_base base"
+          class="base appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base handle_disabled_base root_base colours_white_base"
           disabled=""
           tabindex="-1"
         >

@@ -4,10 +4,10 @@ exports[`<Switch /> should match snapshot when toggled 1`] = `
 <button
   aria-disabled="false"
   aria-label="toggle on"
-  class="base appearance cursorPointer button position_relative pill_mobile_base backgroundColours_green600_base root_base root_base sizes_5_base colours_neutral_base base toggled_base"
+  class="base appearance cursorPointer button position_relative pill_mobile_base backgroundColours_green600_base root_base root_base sizes_5_base colours_neutral_base toggled_base"
 >
   <div
-    class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base pill_mobile_base backgroundColours_white_base handle_default_base base appearance cursorPointer button root_base colours_white_base base handle_transition_base"
+    class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base pill_mobile_base backgroundColours_white_base handle_default_base base appearance cursorPointer button root_base colours_white_base handle_transition_base"
   />
 </button>
 `;
@@ -16,10 +16,10 @@ exports[`<Switch /> should match snapshot when toggled and disabled 1`] = `
 <button
   aria-disabled="true"
   aria-label="toggle on"
-  class="base appearance cursorPointer button position_relative pill_mobile_base backgroundColours_green600_base root_base root_base sizes_5_base colours_neutral_base base toggled_base disabled_default_base disabled_toggled_base"
+  class="base appearance cursorPointer button position_relative pill_mobile_base backgroundColours_green600_base root_base root_base sizes_5_base colours_neutral_base toggled_base disabled_default_base disabled_toggled_base"
 >
   <div
-    class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base pill_mobile_base backgroundColours_white_base handle_default_base base appearance cursorPointer button root_base colours_white_base base handle_transition_base"
+    class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base pill_mobile_base backgroundColours_white_base handle_default_base base appearance cursorPointer button root_base colours_white_base handle_transition_base"
   />
 </button>
 `;
@@ -28,10 +28,10 @@ exports[`<Switch /> should match snapshot when un-toggled 1`] = `
 <button
   aria-disabled="false"
   aria-label="toggle off"
-  class="base appearance cursorPointer button position_relative pill_mobile_base backgroundColours_gray100_base root_base root_base sizes_5_base colours_neutral_base base"
+  class="base appearance cursorPointer button position_relative pill_mobile_base backgroundColours_gray100_base root_base root_base sizes_5_base colours_neutral_base"
 >
   <div
-    class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base pill_mobile_base backgroundColours_white_base handle_default_base base appearance cursorPointer button root_base colours_white_base base"
+    class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base pill_mobile_base backgroundColours_white_base handle_default_base base appearance cursorPointer button root_base colours_white_base"
   />
 </button>
 `;
@@ -40,10 +40,10 @@ exports[`<Switch /> should match snapshot when un-toggled and disabled 1`] = `
 <button
   aria-disabled="true"
   aria-label="toggle off"
-  class="base appearance cursorPointer button position_relative pill_mobile_base backgroundColours_gray100_base root_base root_base sizes_5_base colours_neutral_base base disabled_default_base"
+  class="base appearance cursorPointer button position_relative pill_mobile_base backgroundColours_gray100_base root_base root_base sizes_5_base colours_neutral_base disabled_default_base"
 >
   <div
-    class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base pill_mobile_base backgroundColours_white_base handle_default_base base appearance cursorPointer button root_base colours_white_base base"
+    class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base pill_mobile_base backgroundColours_white_base handle_default_base base appearance cursorPointer button root_base colours_white_base"
   />
 </button>
 `;
@@ -52,10 +52,10 @@ exports[`<Switch /> should match snapshot without props 1`] = `
 <button
   aria-disabled="false"
   aria-label="toggle off"
-  class="base appearance cursorPointer button position_relative pill_mobile_base backgroundColours_gray100_base root_base root_base sizes_5_base colours_neutral_base base"
+  class="base appearance cursorPointer button position_relative pill_mobile_base backgroundColours_gray100_base root_base root_base sizes_5_base colours_neutral_base"
 >
   <div
-    class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base pill_mobile_base backgroundColours_white_base handle_default_base base appearance cursorPointer button root_base colours_white_base base"
+    class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base pill_mobile_base backgroundColours_white_base handle_default_base base appearance cursorPointer button root_base colours_white_base"
   />
 </button>
 `;

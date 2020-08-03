@@ -2,7 +2,7 @@
 
 exports[`<Anchor /> should match snapshot with label, icon and to props 1`] = `
 <a
-  class="root root_base colours_link_base base base cursorPointer a display_inline"
+  class="root root_base colours_link_base base cursorPointer a display_inline"
   href="https://www.autoguru.com.au"
 >
   <div
@@ -12,7 +12,7 @@ exports[`<Anchor /> should match snapshot with label, icon and to props 1`] = `
       class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
     >
       <i
-        class="base display_block small_mobile_base root_base colours_link_base base"
+        class="base display_block small_mobile_base root_base colours_link_base"
         role="presentation"
       >
         <svg
@@ -30,7 +30,7 @@ exports[`<Anchor /> should match snapshot with label, icon and to props 1`] = `
       class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
     >
       <span
-        class="base textAlign_left root_base sizes_4_base colours_link_base fontWeight_bold_base base"
+        class="base textAlign_left root_base sizes_4_base colours_link_base fontWeight_bold_base"
       >
         Hello World!
       </span>
@@ -41,17 +41,17 @@ exports[`<Anchor /> should match snapshot with label, icon and to props 1`] = `
 
 exports[`<Anchor /> should match snapshot without label 1`] = `
 <a
-  class="root root_base colours_link_base base base cursorPointer a display_inline"
+  class="root root_base colours_link_base base cursorPointer a display_inline"
 >
   <span
-    class="base textAlign_left root_base sizes_4_base colours_link_base fontWeight_bold_base base"
+    class="base textAlign_left root_base sizes_4_base colours_link_base fontWeight_bold_base"
   />
 </a>
 `;
 
 exports[`<Anchor /> when custom component should match snapshot with label, icon custom component 1`] = `
 <button
-  class="base appearance cursorPointer button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base sizes_4_base colours_white_base fontWeight_semiBold_base base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled root root_base colours_link_base base base display_inline"
+  class="base appearance cursorPointer button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base sizes_4_base colours_white_base fontWeight_semiBold_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled root root_base colours_link_base display_inline"
   type="button"
 >
   <div
@@ -64,7 +64,7 @@ exports[`<Anchor /> when custom component should match snapshot with label, icon
         class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
       >
         <i
-          class="base display_block small_mobile_base root_base colours_link_base base"
+          class="base display_block small_mobile_base root_base colours_link_base"
           role="presentation"
         >
           <svg
@@ -82,7 +82,7 @@ exports[`<Anchor /> when custom component should match snapshot with label, icon
         class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
       >
         <span
-          class="base textAlign_left root_base sizes_4_base colours_link_base fontWeight_bold_base base"
+          class="base textAlign_left root_base sizes_4_base colours_link_base fontWeight_bold_base"
         >
           Hello World!
         </span>

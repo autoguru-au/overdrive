@@ -19,7 +19,7 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
         scope="col"
       >
         <span
-          class="base textAlign_left root_base sizes_2_base colours_dark_base fontWeight_bold_base base text_base"
+          class="base textAlign_left root_base sizes_2_base colours_dark_base fontWeight_bold_base text_base"
         >
           col 1
         </span>
@@ -41,7 +41,7 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
               class="base 1_mobile_base 1_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
             >
               <span
-                class="base textAlign_left root_base sizes_2_base colours_dark_base fontWeight_bold_base base text_base"
+                class="base textAlign_left root_base sizes_2_base colours_dark_base fontWeight_bold_base text_base"
               >
                 col 2
                 <span
@@ -91,7 +91,7 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
         scope="row"
       >
         <span
-          class="base display_block textAlign_left root_base sizes_3_base colours_dark_base fontWeight_normal_base base"
+          class="base display_block textAlign_left root_base sizes_3_base colours_dark_base fontWeight_normal_base"
         >
           row 1, col 1
         </span>
@@ -102,7 +102,7 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
         scope="row"
       >
         <span
-          class="base display_block textAlign_left root_base sizes_3_base colours_dark_base fontWeight_normal_base base"
+          class="base display_block textAlign_left root_base sizes_3_base colours_dark_base fontWeight_normal_base"
         >
           row 1, col 2
         </span>
@@ -118,7 +118,7 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
         scope="row"
       >
         <span
-          class="base display_block textAlign_left root_base sizes_3_base colours_dark_base fontWeight_normal_base base"
+          class="base display_block textAlign_left root_base sizes_3_base colours_dark_base fontWeight_normal_base"
         >
           row 2, col 1
         </span>
@@ -129,7 +129,7 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
         scope="row"
       >
         <span
-          class="base display_block textAlign_left root_base sizes_3_base colours_dark_base fontWeight_normal_base base"
+          class="base display_block textAlign_left root_base sizes_3_base colours_dark_base fontWeight_normal_base"
         >
           row 2, col 2
         </span>

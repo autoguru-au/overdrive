@@ -15,7 +15,7 @@ exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
     class="base display_flex position_relative center_mobile_base center_mobile_base checkable_base base appearance cursorPointer button"
   >
     <i
-      class="base display_block small_mobile_base icon_base root_base colours_white_base base base position_absolute"
+      class="base display_block small_mobile_base icon_base root_base colours_white_base position_absolute"
       role="presentation"
     >
       <svg
@@ -34,10 +34,10 @@ exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
     />
   </div>
   <label
-    class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
+    class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base"
   >
     <span
-      class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
+      class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
     >
       check label 1
     </span>
@@ -63,10 +63,10 @@ exports[`<CheckBox /> should match the snapshot for a single check 1`] = `
     />
   </div>
   <label
-    class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
+    class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base"
   >
     <span
-      class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
+      class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
     >
       check label 1
     </span>
@@ -92,10 +92,10 @@ exports[`<CheckBox /> should match the snapshot for a single check with no value
     />
   </div>
   <label
-    class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
+    class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base"
   >
     <span
-      class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
+      class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
     />
   </label>
 </div>
@@ -119,10 +119,10 @@ exports[`<CheckBox /> when with component child should match the snapshot 1`] = 
     />
   </div>
   <label
-    class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
+    class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base"
   >
     <h1
-      class="base root_base sizes_8_base colours_dark_base fontWeight_bold_base base"
+      class="base root_base sizes_8_base colours_dark_base fontWeight_bold_base"
     >
       Hello checkbox
     </h1>

@@ -8,7 +8,7 @@ exports[`<Badge /> should match snapshot with label 1`] = `
     class="base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base display_block overflow_hidden 1_mobile_base colours_default_neutral_base"
   >
     <span
-      class="base display_block overflow_hidden label_base root_base sizes_2_base colours_white_base fontWeight_semiBold_base noWrap base"
+      class="base display_block overflow_hidden label_base root_base sizes_2_base colours_white_base fontWeight_semiBold_base noWrap"
     >
       Hello World!
     </span>

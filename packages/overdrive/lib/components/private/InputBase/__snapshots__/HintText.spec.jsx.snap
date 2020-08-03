@@ -2,7 +2,7 @@
 
 exports[`<HintText /> should match snapshot for active hint 1`] = `
 <p
-  class="base textAlign_left root_base sizes_2_base fontWeight_normal_base base base 2_mobile_base 4_mobile_base hintText_base"
+  class="base textAlign_left root_base sizes_2_base fontWeight_normal_base 2_mobile_base 4_mobile_base hintText_base"
 >
   Hello World!
 </p>
@@ -10,7 +10,7 @@ exports[`<HintText /> should match snapshot for active hint 1`] = `
 
 exports[`<HintText /> should match snapshot for default hint 1`] = `
 <p
-  class="base textAlign_left root_base sizes_2_base fontWeight_normal_base base base 2_mobile_base 4_mobile_base hintText_base"
+  class="base textAlign_left root_base sizes_2_base fontWeight_normal_base 2_mobile_base 4_mobile_base hintText_base"
 >
   Hello World!
 </p>
