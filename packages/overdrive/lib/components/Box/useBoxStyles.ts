@@ -1,10 +1,11 @@
 import clsx from 'clsx';
-import { ElementType } from 'react';
+import type { ElementType } from 'react';
 import { useStyles } from 'react-treat';
 import type { Theme } from 'treat/theme';
 
 import * as resetStyleRefs from '../../reset/reset.treat';
-import { resolveResponsiveStyle, ResponsiveProp } from '../../utils';
+import type { ResponsiveProp } from '../../utils';
+import { resolveResponsiveStyle } from '../../utils';
 import * as styleRefs from './useBoxStyles.treat';
 
 interface Padding {
