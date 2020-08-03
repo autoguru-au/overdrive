@@ -1,25 +1,26 @@
-import { invariant } from '@autoguru/utilities';
 import clsx from 'clsx';
 import {
 	AllHTMLAttributes,
 	createElement,
+	ElementType,
 	forwardRef,
-	isValidElement,
 } from 'react';
 
 import { BoxStyleProps, useBoxStyles } from './useBoxStyles';
 
-export interface Props<Element extends keyof JSX.IntrinsicElements>
-	extends BoxStyleProps,
-		Omit<AllHTMLAttributes<Element>, 'width' | 'height' | 'className'> {
-	is?: Element;
+export interface Props
+	extends Omit<BoxStyleProps, 'is'>,
+		Omit<
+			AllHTMLAttributes<HTMLElement>,
+			'width' | 'height' | 'className' | 'is'
+		> {
+	is?: ElementType;
 }
 
-// TODO: Solve this any
-export const Box = forwardRef<HTMLElement, Props<any>>(
+export const Box = forwardRef<HTMLElement, Props>(
 	(
 		{
-			is: Component,
+			is: Component = 'div',
 
 			padding,
 			paddingX,
@@ -129,10 +130,8 @@ export const Box = forwardRef<HTMLElement, Props<any>>(
 			width,
 		});
 
-		invariant(!isValidElement(Component), 'Box only supports intrinsics');
-
 		return createElement(
-			Component ?? 'div',
+			Component,
 			{
 				className: clsx([cls, className]),
 				...allOtherProps,

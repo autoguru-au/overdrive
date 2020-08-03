@@ -15,7 +15,7 @@ exports[`<Alert /> should match the snapshot 1`] = `
         class="base display_flex width_full height_full"
       >
         <i
-          class="base display_block medium_mobile_base base 2_mobile_base 2_mobile_base 2_mobile_base"
+          class="base display_block medium_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base"
           role="presentation"
         >
           <svg
@@ -35,7 +35,7 @@ exports[`<Alert /> should match the snapshot 1`] = `
       class="base flexGrow_1 2_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base auto_mobile_base align_centre"
     >
       <div
-        class="base display_flex width_full height_full root_base colours_dark_base base"
+        class="base display_flex width_full height_full root_base colours_dark_base"
       />
     </div>
     <div
@@ -46,14 +46,14 @@ exports[`<Alert /> should match the snapshot 1`] = `
       >
         <button
           aria-label="close"
-          class="base appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base sizes_3_base colours_white_base fontWeight_semiBold_base base minimal_defaults_base minimalStates_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
+          class="base appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base sizes_3_base colours_white_base fontWeight_semiBold_base minimal_defaults_base minimalStates_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
           type="button"
         >
           <div
             class="base height_full center_mobile_base center_mobile_base body_base"
           >
             <i
-              class="base display_block medium_mobile_base root_base colours_muted_base base"
+              class="base display_block medium_mobile_base root_base colours_muted_base"
               role="presentation"
             >
               <svg

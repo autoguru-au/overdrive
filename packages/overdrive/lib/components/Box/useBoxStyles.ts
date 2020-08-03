@@ -1,9 +1,11 @@
 import clsx from 'clsx';
+import type { ElementType } from 'react';
 import { useStyles } from 'react-treat';
 import type { Theme } from 'treat/theme';
 
 import * as resetStyleRefs from '../../reset/reset.treat';
-import { resolveResponsiveStyle, ResponsiveProp } from '../../utils';
+import type { ResponsiveProp } from '../../utils';
+import { resolveResponsiveStyle } from '../../utils';
 import * as styleRefs from './useBoxStyles.treat';
 
 interface Padding {
@@ -58,7 +60,7 @@ interface Flex {
 }
 
 export interface BoxStyleProps extends Padding, Margin, Border, Flex {
-	is?: keyof JSX.IntrinsicElements;
+	is?: ElementType;
 	boxShadow?: ResponsiveProp<keyof typeof styleRefs.boxShadow>;
 	display?: keyof typeof styleRefs.display;
 
@@ -163,11 +165,10 @@ export const useBoxStyles = ({
 		resolvedBorderWidthLeft;
 
 	return clsx(
-		resetStyles.base,
-
-		is &&
-			typeof is === 'string' &&
+		typeof is === 'string' && [
+			resetStyles.base,
 			resetStyles.element[is as keyof typeof resetStyles.element],
+		],
 
 		resolveResponsiveStyle(resolvedPaddingTop, styles.padding.top),
 		resolveResponsiveStyle(resolvedPaddingRight, styles.padding.right),

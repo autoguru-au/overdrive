@@ -24,10 +24,10 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       />
     </div>
     <label
-      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
+      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base"
     >
       <span
-        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
+        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
       >
         radio label 1
       </span>
@@ -53,10 +53,10 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       />
     </div>
     <label
-      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
+      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base"
     >
       <span
-        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
+        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
       >
         radio label 2
       </span>
@@ -89,10 +89,10 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       />
     </div>
     <label
-      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
+      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base"
     >
       <span
-        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
+        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
       >
         radio label 1
       </span>
@@ -118,10 +118,10 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       />
     </div>
     <label
-      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
+      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base"
     >
       <span
-        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
+        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
       >
         radio label 2
       </span>
@@ -147,10 +147,10 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       />
     </div>
     <label
-      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
+      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base"
     >
       <span
-        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
+        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
       >
         radio label 3
       </span>
@@ -176,10 +176,10 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       />
     </div>
     <label
-      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
+      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base"
     >
       <span
-        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
+        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
       >
         radio label 4
       </span>
@@ -212,10 +212,10 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       />
     </div>
     <label
-      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
+      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base"
     >
       <span
-        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
+        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
       >
         radio label 1
       </span>
@@ -249,10 +249,10 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       />
     </div>
     <label
-      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
+      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base"
     >
       <span
-        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base base"
+        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
       />
     </label>
   </div>
@@ -283,10 +283,10 @@ exports[`<RadioButton /> when with component child should match the snapshot 1`]
       />
     </div>
     <label
-      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base base"
+      class="base width_full base appearance cursorPointer button root_base sizes_4_base colours_neutral_base"
     >
       <h1
-        class="base root_base sizes_8_base colours_dark_base fontWeight_bold_base base"
+        class="base root_base sizes_8_base colours_dark_base fontWeight_bold_base"
       >
         Hello checkbox
       </h1>
@@ -297,7 +297,7 @@ exports[`<RadioButton /> when with component child should match the snapshot 1`]
 
 exports[`<RadioButton /> when with component child should render the component child 1`] = `
 <h1
-  class="base root_base sizes_8_base colours_dark_base fontWeight_bold_base base"
+  class="base root_base sizes_8_base colours_dark_base fontWeight_bold_base"
 >
   Hello checkbox
 </h1>

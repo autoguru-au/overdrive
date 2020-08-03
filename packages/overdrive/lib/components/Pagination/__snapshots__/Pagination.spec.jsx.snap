@@ -10,7 +10,7 @@ exports[`<Pagination /> should match snapshot for loading phase 1`] = `
     <button
       aria-disabled="true"
       aria-label=""
-      class="base appearance cursorPointer button 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base display_flex overflow_hidden userSelect_none textAlign_center pointerEvents_none pill_mobile_base center_mobile_base row_mobile_base center_mobile_base root_base colours_light_base base disabled_base"
+      class="base appearance cursorPointer button 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base display_flex overflow_hidden userSelect_none textAlign_center pointerEvents_none pill_mobile_base center_mobile_base row_mobile_base center_mobile_base root_base colours_light_base disabled_base"
     >
       <i
         class="base display_block medium_mobile_base"
@@ -33,21 +33,21 @@ exports[`<Pagination /> should match snapshot for loading phase 1`] = `
     class="base 3_mobile_base 3_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <button
-      class="base appearance cursorPointer button display_flex overflow_hidden textAlign_center pointerEvents_none pill_mobile_base backgroundColours_gray200_base center_mobile_base row_mobile_base center_mobile_base disabled_base activeItem_base root_base sizes_3_base colours_light_base fontWeight_bold_base base"
+      class="base appearance cursorPointer button display_flex overflow_hidden textAlign_center pointerEvents_none pill_mobile_base backgroundColours_gray200_base center_mobile_base row_mobile_base center_mobile_base disabled_base activeItem_base root_base sizes_3_base colours_light_base fontWeight_bold_base"
     />
   </div>
   <div
     class="base 3_mobile_base 3_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <button
-      class="base appearance cursorPointer button display_flex overflow_hidden textAlign_center pointerEvents_none pill_mobile_base backgroundColours_gray200_base center_mobile_base row_mobile_base center_mobile_base disabled_base activeItem_base root_base sizes_3_base colours_light_base fontWeight_bold_base base"
+      class="base appearance cursorPointer button display_flex overflow_hidden textAlign_center pointerEvents_none pill_mobile_base backgroundColours_gray200_base center_mobile_base row_mobile_base center_mobile_base disabled_base activeItem_base root_base sizes_3_base colours_light_base fontWeight_bold_base"
     />
   </div>
   <div
     class="base 3_mobile_base 3_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <button
-      class="base appearance cursorPointer button display_flex overflow_hidden textAlign_center pointerEvents_none pill_mobile_base backgroundColours_gray200_base center_mobile_base row_mobile_base center_mobile_base disabled_base activeItem_base root_base sizes_3_base colours_light_base fontWeight_bold_base base"
+      class="base appearance cursorPointer button display_flex overflow_hidden textAlign_center pointerEvents_none pill_mobile_base backgroundColours_gray200_base center_mobile_base row_mobile_base center_mobile_base disabled_base activeItem_base root_base sizes_3_base colours_light_base fontWeight_bold_base"
     />
   </div>
   <div
@@ -56,7 +56,7 @@ exports[`<Pagination /> should match snapshot for loading phase 1`] = `
     <button
       aria-disabled="true"
       aria-label=""
-      class="base appearance cursorPointer button 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base display_flex overflow_hidden userSelect_none textAlign_center pointerEvents_none pill_mobile_base center_mobile_base row_mobile_base center_mobile_base root_base colours_light_base base disabled_base"
+      class="base appearance cursorPointer button 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base display_flex overflow_hidden userSelect_none textAlign_center pointerEvents_none pill_mobile_base center_mobile_base row_mobile_base center_mobile_base root_base colours_light_base disabled_base"
     >
       <i
         class="base display_block medium_mobile_base"
