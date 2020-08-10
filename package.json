@@ -58,7 +58,7 @@
 		"@autoguru/jest-preset": "1.0.97",
 		"@babel/core": "7.11.1",
 		"@babel/runtime-corejs3": "7.11.2",
-		"@changesets/cli": "2.9.2",
+		"@changesets/cli": "2.10.0",
 		"@manypkg/cli": "0.14.0",
 		"@octokit/rest": "18.0.1",
 		"@storybook/addon-a11y": "5.3.19",
