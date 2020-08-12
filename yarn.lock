@@ -1804,13 +1804,13 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@manypkg/cli@0.14.0":
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/@manypkg/cli/-/cli-0.14.0.tgz#0fc56a621d0f61c2a7cc46ca2c8da0b4ac635080"
-  integrity sha512-orXFFDjc0n1dNi+nWQvmz+HUBZqMUl+nislQVwe/vUefaSrtnwHWME/NqBreKRnE4j0PecMFLPL6sI7DCesSzg==
+"@manypkg/cli@0.15.0":
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/@manypkg/cli/-/cli-0.15.0.tgz#7ba225c933bb5126af20663666cc360a6ff4406a"
+  integrity sha512-Ax/SpP/SusLIMIY0zbwRl6JqjijmPAuM469IZAQmq9S0U7xkoloT/jJ+HRn47Y3aokMgjjC8E0KW0y3+BcPp6Q==
   dependencies:
     "@babel/runtime" "^7.5.5"
-    "@manypkg/get-packages" "^1.1.0"
+    "@manypkg/get-packages" "^1.1.1"
     chalk "^2.4.2"
     detect-indent "^6.0.0"
     find-up "^4.1.0"
@@ -1835,10 +1835,10 @@
     find-up "^4.1.0"
     fs-extra "^8.1.0"
 
-"@manypkg/get-packages@^1.0.1", "@manypkg/get-packages@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@manypkg/get-packages/-/get-packages-1.1.0.tgz#ca3b2168728e3453083d3916e974efb25cbbce00"
-  integrity sha512-s1Bceeu/zy769nFJRa0F6WzHKf0J21vrRN1jrTeZJ+q3LDxspV3JbQkgCLgYVlWD0d81cXK1gCwR1+oJhBejHQ==
+"@manypkg/get-packages@^1.0.1", "@manypkg/get-packages@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@manypkg/get-packages/-/get-packages-1.1.1.tgz#7c7e72d0061ab2e61d2ce4da58ce91290a60ac8d"
+  integrity sha512-J6VClfQSVgR6958eIDTGjfdCrELy1eT+SHeoSMomnvRQVktZMnEA5edIr5ovRFNw5y+Bk/jyoevPzGYod96mhw==
   dependencies:
     "@babel/runtime" "^7.5.5"
     "@manypkg/find-root" "^1.1.0"
