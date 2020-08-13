@@ -68,7 +68,7 @@ export const allParagraphs = () => (
 export const spansWithTransform = () => (
 	<Stack>
 		<Text>
-			This text <Text tranform="uppercase">here</Text> should be
+			This text <Text transform="uppercase">here</Text> should be
 			uppercase.
 		</Text>
 	</Stack>
