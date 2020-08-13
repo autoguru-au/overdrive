@@ -25,7 +25,7 @@ const baseProps = () => ({
 });
 
 export default {
-	title: 'Foundation|Typography/Text',
+	title: 'Foundation/Typography/Text',
 	component: Text,
 	decorators: [],
 };

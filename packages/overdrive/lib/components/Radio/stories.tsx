@@ -15,7 +15,7 @@ const baseProps = () => ({
 });
 
 export default {
-	title: 'Components|Inputs/Radio',
+	title: 'Components/Inputs/Radio',
 	component: Radio,
 	decorators: [
 		(story) => (

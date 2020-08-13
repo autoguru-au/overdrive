@@ -6,7 +6,7 @@ import { Stack } from '../Stack';
 import { StarRating } from '../StarRating';
 import { Tab, TabList, TabPane, TabPanes, Tabs } from '.';
 
-export default { title: 'Components|Tabs' };
+export default { title: 'Components/Tabs' };
 
 export const Standard = () => (
 	<Tabs>

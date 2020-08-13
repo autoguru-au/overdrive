@@ -4,7 +4,7 @@ import * as React from 'react';
 import { Meta } from '.';
 
 export default {
-	title: 'Components|Meta',
+	title: 'Components/Meta',
 	component: Meta,
 };
 

@@ -10,7 +10,7 @@ const baseProps = (hasNext = true, hasPrevious = true) => ({
 });
 
 export default {
-	title: 'Components|Pagination/Simple',
+	title: 'Components/Pagination/Simple',
 	component: SimplePagination,
 };
 

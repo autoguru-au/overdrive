@@ -6,7 +6,7 @@ import { Text } from '../Text';
 import { TextContainer } from '.';
 
 export default {
-	title: 'Components|TextContainer',
+	title: 'Components/TextContainer',
 	component: TextContainer,
 	decorators: [(story) => <div style={{ maxWidth: 512 }}>{story()}</div>],
 };

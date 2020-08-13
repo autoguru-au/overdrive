@@ -21,7 +21,7 @@ const isTouched = (touched: boolean) => boolean('isTouched', touched);
 const isValid = (valid: boolean) => boolean('isValid', valid);
 
 export default {
-	title: 'Components|Inputs/Text',
+	title: 'Components/Inputs/Text',
 	component: TextInput,
 	parameters: {
 		chromatic: { delay: 300 },

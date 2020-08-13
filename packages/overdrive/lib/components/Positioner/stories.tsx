@@ -12,7 +12,7 @@ const alignmentPicker = () =>
 	select('Alignment', EPositionerAlignment, EPositionerAlignment.BOTTOM_LEFT);
 
 export default {
-	title: 'Utility|Positioner',
+	title: 'Utility/Positioner',
 	component: Positioner,
 	parameters: {
 		chromatic: { disable: true },

@@ -22,7 +22,7 @@ const baseProps = () => ({
 });
 
 export default {
-	title: 'Foundation|Typography/Heading',
+	title: 'Foundation/Typography/Heading',
 	component: Heading,
 	decorators: [
 		(story) => (

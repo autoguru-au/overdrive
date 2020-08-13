@@ -3,7 +3,7 @@ import * as React from 'react';
 import { LoadingBox } from '.';
 
 export default {
-	title: 'Components|Loading/Box',
+	title: 'Components/Loading/Box',
 	component: LoadingBox,
 	decorators: [
 		(story) => (

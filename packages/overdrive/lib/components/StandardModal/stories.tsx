@@ -8,7 +8,7 @@ import { Text } from '../Text';
 import { StandardModal } from '.';
 
 export default {
-	title: 'Components|StandardModal',
+	title: 'Components/StandardModal',
 	component: StandardModal,
 	parameters: {
 		chromatic: { disable: true },

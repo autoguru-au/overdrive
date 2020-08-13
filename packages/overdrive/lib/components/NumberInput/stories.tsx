@@ -18,7 +18,7 @@ const sharedKnobs = (placeholder) => ({
 });
 
 export default {
-	title: 'Components|Inputs/Number',
+	title: 'Components/Inputs/Number',
 	component: NumberInput,
 	parameters: {
 		chromatic: { delay: 300 },

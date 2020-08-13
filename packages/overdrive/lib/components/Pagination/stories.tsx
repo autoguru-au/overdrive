@@ -27,7 +27,7 @@ const baseProps = (
 });
 
 export default {
-	title: 'Components|Pagination/Numbered',
+	title: 'Components/Pagination/Numbered',
 	component: Pagination,
 };
 

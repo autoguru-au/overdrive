@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Box } from '.';
 
 export default {
-	title: 'Foundation|Box',
+	title: 'Foundation/Box',
 	component: Box,
 	decorators: [
 		(story) => (

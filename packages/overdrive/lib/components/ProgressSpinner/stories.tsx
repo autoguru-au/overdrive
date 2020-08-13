@@ -3,7 +3,7 @@ import * as React from 'react';
 import { ProgressSpinner } from '.';
 
 export default {
-	title: 'Components|Progress/Spinner',
+	title: 'Components/Progress/Spinner',
 	component: ProgressSpinner,
 	decorators: [
 		(story) => (

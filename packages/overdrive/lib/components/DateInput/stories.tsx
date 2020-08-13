@@ -29,7 +29,7 @@ const isTouched = (touched: boolean) => boolean('isTouched', touched);
 const isValid = (valid: boolean) => boolean('isValid', valid);
 
 export default {
-	title: 'Components|Inputs/Date',
+	title: 'Components/Inputs/Date',
 	component: DateInput,
 	parameters: { chromatic: { delay: 300 } },
 };

@@ -4,7 +4,7 @@ import * as React from 'react';
 import { Text } from '../Text';
 import { Stack } from '.';
 
-export default { title: 'Foundation|Layout/Stack', component: Stack };
+export default { title: 'Foundation/Layout/Stack', component: Stack };
 
 export const Standard = () => (
 	<Stack space={select('Spacing', [1, 2, 3, 4, 5, 6, 7, 8, 9], 4)}>

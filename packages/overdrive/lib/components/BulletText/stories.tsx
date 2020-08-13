@@ -12,7 +12,7 @@ const baseProps = () => ({
 });
 
 export default {
-	title: 'Components|BulletText',
+	title: 'Components/BulletText',
 	component: BulletText,
 };
 

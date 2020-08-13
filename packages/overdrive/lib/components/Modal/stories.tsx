@@ -14,7 +14,7 @@ const Body = ({ children }) => (
 );
 
 export default {
-	title: 'Utility|Modal',
+	title: 'Utility/Modal',
 	component: Modal,
 	parameters: {
 		chromatic: { disable: true },

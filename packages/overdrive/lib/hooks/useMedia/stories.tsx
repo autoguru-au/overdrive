@@ -6,7 +6,7 @@ import { useRuntimeTokens } from '../../components/ThemeProvider/ThemeProvider';
 import { useMedia } from './useMedia';
 
 export default {
-	title: 'Utility|Hooks/useMedia',
+	title: 'Utility/Hooks/useMedia',
 	parameters: {
 		chromatic: { disable: true },
 	},

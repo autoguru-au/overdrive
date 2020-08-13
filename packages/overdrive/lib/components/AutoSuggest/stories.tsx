@@ -27,7 +27,7 @@ const mockSuggestions = [
 ];
 
 export default {
-	title: 'Components|Inputs/AutoSuggest',
+	title: 'Components/Inputs/AutoSuggest',
 	component: AutoSuggest,
 	decorators: [
 		(story) => (

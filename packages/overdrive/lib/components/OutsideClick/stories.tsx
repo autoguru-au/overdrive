@@ -4,7 +4,7 @@ import { Button } from '../Button';
 import { OutsideClick } from '.';
 
 export default {
-	title: 'Utility|OutsideClick',
+	title: 'Utility/OutsideClick',
 	component: OutsideClick,
 	parameters: {
 		chromatic: { disable: true },

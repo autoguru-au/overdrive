@@ -4,7 +4,7 @@ import * as React from 'react';
 import { TextAreaInput } from '.';
 
 export default {
-	title: 'Components|Inputs/Textarea',
+	title: 'Components/Inputs/Textarea',
 	component: TextAreaInput,
 	parameters: {
 		chromatic: { delay: 300 },

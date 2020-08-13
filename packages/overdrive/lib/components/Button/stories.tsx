@@ -7,7 +7,7 @@ import { Icon } from '../Icon';
 import { Button } from '.';
 
 export default {
-	title: 'Components|Buttons',
+	title: 'Components/Buttons',
 	component: Button,
 	decorators: [
 		(story) => (

@@ -11,7 +11,7 @@ const alignmentPicker = () =>
 	select('Alignment', EAlignment, EAlignment.BOTTOM_LEFT);
 
 export default {
-	title: 'Components|Flyout',
+	title: 'Components/Flyout',
 	component: Flyout,
 	parameters: { chromatic: { disable: true } },
 };

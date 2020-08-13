@@ -18,7 +18,7 @@ const selectOptions = (optionsCSV) =>
 		));
 
 export default {
-	title: 'Components|Inputs/Select',
+	title: 'Components/Inputs/Select',
 	component: SelectInput,
 	parameters: {
 		chromatic: { delay: 300 },

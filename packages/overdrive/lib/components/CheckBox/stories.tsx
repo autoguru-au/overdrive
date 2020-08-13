@@ -18,7 +18,7 @@ const checkedFn = () => ({
 });
 
 export default {
-	title: 'Components|Inputs/CheckBox',
+	title: 'Components/Inputs/CheckBox',
 	component: CheckBox,
 	decorators: [
 		(story) => (

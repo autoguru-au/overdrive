@@ -4,7 +4,7 @@ import { Text } from '../Text';
 import { Portal } from '.';
 
 export default {
-	title: 'Utility|Portal',
+	title: 'Utility/Portal',
 	component: Portal,
 	parameters: {
 		chromatic: { disable: true },

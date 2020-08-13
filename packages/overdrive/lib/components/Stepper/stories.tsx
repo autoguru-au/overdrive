@@ -12,7 +12,7 @@ const badgeProps = () => ({
 	disabled: boolean('disabled', false),
 });
 
-export default { title: 'Components|Inputs/Stepper', component: Stepper };
+export default { title: 'Components/Inputs/Stepper', component: Stepper };
 
 export const standard = () => {
 	const StepperWrapper = () => {

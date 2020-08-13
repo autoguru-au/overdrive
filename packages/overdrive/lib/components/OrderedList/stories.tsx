@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Text } from '../Text';
 import { OrderedList } from '.';
 
-export default { title: 'Foundation|List/OrderedList', component: OrderedList };
+export default { title: 'Foundation/List/OrderedList', component: OrderedList };
 
 export const Standard = () => (
 	<OrderedList>

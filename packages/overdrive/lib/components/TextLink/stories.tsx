@@ -16,7 +16,7 @@ const baseProps = () => ({
 });
 
 export default {
-	title: 'Foundation|Typography/TextLink',
+	title: 'Foundation/Typography/TextLink',
 	component: TextLink,
 	decorators: [
 		(story) => (

@@ -4,7 +4,7 @@ import { Text } from '../Text';
 import { Bullet, BulletList } from '.';
 
 export default {
-	title: 'Foundation|List/BulletList',
+	title: 'Foundation/List/BulletList',
 	component: BulletList,
 	decorators: [
 		(story) => (

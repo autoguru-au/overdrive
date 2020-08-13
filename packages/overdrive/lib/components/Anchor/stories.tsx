@@ -5,7 +5,7 @@ import { Button } from '../Button';
 import { Anchor } from '.';
 
 export default {
-	title: 'Foundation|Typography/Anchor',
+	title: 'Foundation/Typography/Anchor',
 	component: Anchor,
 	decorators: [],
 };

@@ -5,7 +5,7 @@ import { EAlignment } from '../Positioner/alignment';
 import { Tooltip } from '.';
 
 export default {
-	title: 'Components|Tooltip',
+	title: 'Components/Tooltip',
 	decorators: [
 		(Story) => (
 			<div style={{ marginLeft: 100, marginTop: 100 }}>

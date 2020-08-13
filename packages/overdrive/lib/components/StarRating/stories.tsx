@@ -9,7 +9,7 @@ const baseProps = () => ({
 });
 
 export default {
-	title: 'Components|StarRating',
+	title: 'Components/StarRating',
 	component: StarRating,
 };
 

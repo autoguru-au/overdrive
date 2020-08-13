@@ -6,7 +6,7 @@ import { Stack } from '../Stack';
 import { ProgressBar } from '.';
 
 export default {
-	title: 'Components|Progress/ProgressBar',
+	title: 'Components/Progress/ProgressBar',
 	component: ProgressBar,
 };
 

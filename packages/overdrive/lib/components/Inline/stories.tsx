@@ -6,7 +6,7 @@ import { Text } from '../Text';
 import { Inline } from '.';
 
 export default {
-	title: 'Foundation|Layout/Inline',
+	title: 'Foundation/Layout/Inline',
 	component: Inline,
 };
 

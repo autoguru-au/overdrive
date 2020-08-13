@@ -4,7 +4,7 @@ import * as React from 'react';
 import { Text } from '../Text';
 import { Alert } from '.';
 
-export default { title: 'Components|Alert', component: Alert };
+export default { title: 'Components/Alert', component: Alert };
 
 export const Standard = () => (
 	<div

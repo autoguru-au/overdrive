@@ -5,7 +5,7 @@ import { Button } from '../Button';
 import { Actions } from '.';
 
 export default {
-	title: 'Components|Actions',
+	title: 'Components/Actions',
 	component: Actions,
 	decorators: [
 		(story) => (

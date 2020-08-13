@@ -5,7 +5,7 @@ import isChromatic from 'storybook-chromatic/isChromatic';
 import { ProgressBarGroup } from '.';
 
 export default {
-	title: 'Components|Progress/ProgressBarGroup',
+	title: 'Components/Progress/ProgressBarGroup',
 	component: ProgressBarGroup,
 };
 

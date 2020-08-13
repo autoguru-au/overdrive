@@ -4,7 +4,7 @@ import { Box } from '../Box';
 import { Column, Columns } from '.';
 
 export default {
-	title: 'Foundation|Layout/Columns',
+	title: 'Foundation/Layout/Columns',
 	component: Columns,
 	decorators: [
 		(story) => (

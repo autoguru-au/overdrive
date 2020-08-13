@@ -11,7 +11,7 @@ import { Text } from '../Text';
 import { Table, TableCell, TableHeadCell, TableRow, TableRowGroup } from '.';
 
 export default {
-	title: 'Components|Table',
+	title: 'Components/Table',
 };
 
 const sortFlow = ['asc', 'desc', 'none'];
