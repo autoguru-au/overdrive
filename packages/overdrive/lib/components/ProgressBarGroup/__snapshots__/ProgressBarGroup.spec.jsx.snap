@@ -6,7 +6,7 @@ exports[`<ProgressBarGroup /> should match the snapshot 1`] = `
   style="grid-template-columns: 1fr;"
 >
   <span
-    class="base textAlign_right root_base sizes_3_base colours_light_base fontWeight_normal_base"
+    class="base textAlign_right root_base colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <div
     class="base 1_mobile_base backgroundColours_gray100_base container_base"
@@ -17,10 +17,10 @@ exports[`<ProgressBarGroup /> should match the snapshot 1`] = `
     />
   </div>
   <span
-    class="base textAlign_left root_base sizes_3_base colours_light_base fontWeight_normal_base"
+    class="base textAlign_left root_base colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <span
-    class="base textAlign_right root_base sizes_3_base colours_light_base fontWeight_normal_base"
+    class="base textAlign_right root_base colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <div
     class="base 1_mobile_base backgroundColours_gray100_base container_base"
@@ -31,10 +31,10 @@ exports[`<ProgressBarGroup /> should match the snapshot 1`] = `
     />
   </div>
   <span
-    class="base textAlign_left root_base sizes_3_base colours_light_base fontWeight_normal_base"
+    class="base textAlign_left root_base colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <span
-    class="base textAlign_right root_base sizes_3_base colours_light_base fontWeight_normal_base"
+    class="base textAlign_right root_base colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <div
     class="base 1_mobile_base backgroundColours_gray100_base container_base"
@@ -45,7 +45,7 @@ exports[`<ProgressBarGroup /> should match the snapshot 1`] = `
     />
   </div>
   <span
-    class="base textAlign_left root_base sizes_3_base colours_light_base fontWeight_normal_base"
+    class="base textAlign_left root_base colours_light_base fontWeight_normal_base sizes_3_base"
   />
 </div>
 `;
@@ -56,7 +56,7 @@ exports[`<ProgressBarGroup /> should should ignore extra labels 1`] = `
   style="grid-template-columns: auto 1fr;"
 >
   <span
-    class="base textAlign_right root_base sizes_3_base colours_light_base fontWeight_normal_base"
+    class="base textAlign_right root_base colours_light_base fontWeight_normal_base sizes_3_base"
   >
     a
   </span>
@@ -69,10 +69,10 @@ exports[`<ProgressBarGroup /> should should ignore extra labels 1`] = `
     />
   </div>
   <span
-    class="base textAlign_left root_base sizes_3_base colours_light_base fontWeight_normal_base"
+    class="base textAlign_left root_base colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <span
-    class="base textAlign_right root_base sizes_3_base colours_light_base fontWeight_normal_base"
+    class="base textAlign_right root_base colours_light_base fontWeight_normal_base sizes_3_base"
   >
     b
   </span>
@@ -85,10 +85,10 @@ exports[`<ProgressBarGroup /> should should ignore extra labels 1`] = `
     />
   </div>
   <span
-    class="base textAlign_left root_base sizes_3_base colours_light_base fontWeight_normal_base"
+    class="base textAlign_left root_base colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <span
-    class="base textAlign_right root_base sizes_3_base colours_light_base fontWeight_normal_base"
+    class="base textAlign_right root_base colours_light_base fontWeight_normal_base sizes_3_base"
   >
     c
   </span>
@@ -101,7 +101,7 @@ exports[`<ProgressBarGroup /> should should ignore extra labels 1`] = `
     />
   </div>
   <span
-    class="base textAlign_left root_base sizes_3_base colours_light_base fontWeight_normal_base"
+    class="base textAlign_left root_base colours_light_base fontWeight_normal_base sizes_3_base"
   />
 </div>
 `;
@@ -112,7 +112,7 @@ exports[`<ProgressBarGroup /> should should ignore not break when not enough lab
   style="grid-template-columns: auto 1fr;"
 >
   <span
-    class="base textAlign_right root_base sizes_3_base colours_light_base fontWeight_normal_base"
+    class="base textAlign_right root_base colours_light_base fontWeight_normal_base sizes_3_base"
   >
     a
   </span>
@@ -125,10 +125,10 @@ exports[`<ProgressBarGroup /> should should ignore not break when not enough lab
     />
   </div>
   <span
-    class="base textAlign_left root_base sizes_3_base colours_light_base fontWeight_normal_base"
+    class="base textAlign_left root_base colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <span
-    class="base textAlign_right root_base sizes_3_base colours_light_base fontWeight_normal_base"
+    class="base textAlign_right root_base colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <div
     class="base 1_mobile_base backgroundColours_gray100_base container_base"
@@ -139,10 +139,10 @@ exports[`<ProgressBarGroup /> should should ignore not break when not enough lab
     />
   </div>
   <span
-    class="base textAlign_left root_base sizes_3_base colours_light_base fontWeight_normal_base"
+    class="base textAlign_left root_base colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <span
-    class="base textAlign_right root_base sizes_3_base colours_light_base fontWeight_normal_base"
+    class="base textAlign_right root_base colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <div
     class="base 1_mobile_base backgroundColours_gray100_base container_base"
@@ -153,7 +153,7 @@ exports[`<ProgressBarGroup /> should should ignore not break when not enough lab
     />
   </div>
   <span
-    class="base textAlign_left root_base sizes_3_base colours_light_base fontWeight_normal_base"
+    class="base textAlign_left root_base colours_light_base fontWeight_normal_base sizes_3_base"
   />
 </div>
 `;
@@ -164,7 +164,7 @@ exports[`<ProgressBarGroup /> should should render a prefix for every value 1`] 
   style="grid-template-columns: auto 1fr;"
 >
   <span
-    class="base textAlign_right root_base sizes_3_base colours_light_base fontWeight_normal_base"
+    class="base textAlign_right root_base colours_light_base fontWeight_normal_base sizes_3_base"
   >
     a
   </span>
@@ -177,10 +177,10 @@ exports[`<ProgressBarGroup /> should should render a prefix for every value 1`] 
     />
   </div>
   <span
-    class="base textAlign_left root_base sizes_3_base colours_light_base fontWeight_normal_base"
+    class="base textAlign_left root_base colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <span
-    class="base textAlign_right root_base sizes_3_base colours_light_base fontWeight_normal_base"
+    class="base textAlign_right root_base colours_light_base fontWeight_normal_base sizes_3_base"
   >
     b
   </span>
@@ -193,10 +193,10 @@ exports[`<ProgressBarGroup /> should should render a prefix for every value 1`] 
     />
   </div>
   <span
-    class="base textAlign_left root_base sizes_3_base colours_light_base fontWeight_normal_base"
+    class="base textAlign_left root_base colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <span
-    class="base textAlign_right root_base sizes_3_base colours_light_base fontWeight_normal_base"
+    class="base textAlign_right root_base colours_light_base fontWeight_normal_base sizes_3_base"
   >
     c
   </span>
@@ -209,7 +209,7 @@ exports[`<ProgressBarGroup /> should should render a prefix for every value 1`] 
     />
   </div>
   <span
-    class="base textAlign_left root_base sizes_3_base colours_light_base fontWeight_normal_base"
+    class="base textAlign_left root_base colours_light_base fontWeight_normal_base sizes_3_base"
   />
 </div>
 `;

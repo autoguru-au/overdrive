@@ -1,6 +1,7 @@
 import { select } from '@storybook/addon-knobs';
 import * as React from 'react';
 
+import { Stack } from '../Stack';
 import { Text } from '.';
 
 const sizeScale = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -62,4 +63,13 @@ export const allParagraphs = () => (
 			</div>
 		))}
 	</>
+);
+
+export const spansWithTransform = () => (
+	<Stack>
+		<Text>
+			This text <Text transform="uppercase">here</Text> should be
+			uppercase.
+		</Text>
+	</Stack>
 );

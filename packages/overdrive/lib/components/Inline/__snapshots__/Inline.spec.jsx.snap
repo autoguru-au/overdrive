@@ -8,7 +8,7 @@ exports[`<Inline /> should match snapshot for custom element dividers 1`] = `
     class="base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <span
-      class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
+      class="base textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
     >
       A
     </span>
@@ -24,7 +24,7 @@ exports[`<Inline /> should match snapshot for custom element dividers 1`] = `
     class="base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <span
-      class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
+      class="base textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
     >
       B
     </span>
@@ -40,7 +40,7 @@ exports[`<Inline /> should match snapshot for custom element dividers 1`] = `
     class="base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <span
-      class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
+      class="base textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
     >
       C
     </span>
@@ -56,7 +56,7 @@ exports[`<Inline /> should match snapshot for default dividers 1`] = `
     class="base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <span
-      class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
+      class="base textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
     >
       A
     </span>
@@ -64,7 +64,7 @@ exports[`<Inline /> should match snapshot for default dividers 1`] = `
       class="base 2_mobile_base 2_mobile_base"
     >
       <span
-        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
+        class="base textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
       >
         •
       </span>
@@ -74,7 +74,7 @@ exports[`<Inline /> should match snapshot for default dividers 1`] = `
     class="base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <span
-      class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
+      class="base textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
     >
       B
     </span>
@@ -82,7 +82,7 @@ exports[`<Inline /> should match snapshot for default dividers 1`] = `
       class="base 2_mobile_base 2_mobile_base"
     >
       <span
-        class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
+        class="base textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
       >
         •
       </span>
@@ -92,7 +92,7 @@ exports[`<Inline /> should match snapshot for default dividers 1`] = `
     class="base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <span
-      class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
+      class="base textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
     >
       C
     </span>
@@ -108,7 +108,7 @@ exports[`<Inline /> should match snapshot for no dividers 1`] = `
     class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <span
-      class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
+      class="base textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
     >
       A
     </span>
@@ -117,7 +117,7 @@ exports[`<Inline /> should match snapshot for no dividers 1`] = `
     class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <span
-      class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
+      class="base textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
     >
       B
     </span>
@@ -126,7 +126,7 @@ exports[`<Inline /> should match snapshot for no dividers 1`] = `
     class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <span
-      class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
+      class="base textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
     >
       C
     </span>

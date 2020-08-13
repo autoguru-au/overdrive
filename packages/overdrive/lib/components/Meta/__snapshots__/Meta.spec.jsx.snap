@@ -26,7 +26,7 @@ exports[`<Meta /> should match snapshot with label, icon for Primary variant 1`]
     class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <span
-      class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
+      class="base textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
     >
       Hello World!
     </span>
@@ -60,7 +60,7 @@ exports[`<Meta /> should match snapshot with label, icon for Secondary variant 1
     class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <span
-      class="base textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
+      class="base textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
     >
       Hello World!
     </span>

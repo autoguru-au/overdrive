@@ -45,7 +45,7 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
         class="base display_flex width_full height_full"
       >
         <span
-          class="base display_block textAlign_center root_base sizes_4_base colours_dark_base fontWeight_normal_base 2_mobile_base 2_mobile_base width_full label_base"
+          class="base display_block textAlign_center root_base colours_dark_base fontWeight_normal_base sizes_4_base 2_mobile_base 2_mobile_base width_full label_base"
         >
           25%
         </span>
@@ -129,7 +129,7 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
         class="base display_flex width_full height_full"
       >
         <span
-          class="base display_block textAlign_center root_base sizes_4_base colours_dark_base fontWeight_normal_base 2_mobile_base 2_mobile_base width_full label_base"
+          class="base display_block textAlign_center root_base colours_dark_base fontWeight_normal_base sizes_4_base 2_mobile_base 2_mobile_base width_full label_base"
         >
           19
         </span>
@@ -214,7 +214,7 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
         class="base display_flex width_full height_full"
       >
         <span
-          class="base display_block textAlign_center root_base sizes_4_base colours_dark_base fontWeight_normal_base 2_mobile_base 2_mobile_base width_full label_base"
+          class="base display_block textAlign_center root_base colours_dark_base fontWeight_normal_base sizes_4_base 2_mobile_base 2_mobile_base width_full label_base"
         >
           0
         </span>

@@ -36,7 +36,7 @@ exports[`<BulletText /> should match snapshot for custom bullet text 1`] = `
       class="base flexGrow_1"
     >
       <span
-        class="base display_block textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
+        class="base display_block textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
       >
         Hello World
       </span>
@@ -56,7 +56,7 @@ exports[`<BulletText /> should match snapshot for default bullet text 1`] = `
       class="base display_flex position_relative pill_mobile_base backgroundColours_green200_base center_mobile_base flexShrink_0 center_mobile_base bullet_base"
     >
       <span
-        class="base textAlign_left root_base sizes_2_base colours_success_base fontWeight_normal_base"
+        class="base textAlign_left root_base colours_success_base fontWeight_normal_base sizes_2_base"
       >
         •
       </span>
@@ -69,7 +69,7 @@ exports[`<BulletText /> should match snapshot for default bullet text 1`] = `
       class="base flexGrow_1"
     >
       <span
-        class="base display_block textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
+        class="base display_block textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
       >
         Hello World!
       </span>
@@ -89,7 +89,7 @@ exports[`<BulletText /> should match snapshot for ordered bullet text 1`] = `
       class="base display_flex position_relative pill_mobile_base backgroundColours_green200_base center_mobile_base flexShrink_0 center_mobile_base bullet_base"
     >
       <span
-        class="base textAlign_left root_base sizes_2_base colours_success_base fontWeight_normal_base"
+        class="base textAlign_left root_base colours_success_base fontWeight_normal_base sizes_2_base"
       >
         ?
       </span>
@@ -102,7 +102,7 @@ exports[`<BulletText /> should match snapshot for ordered bullet text 1`] = `
       class="base flexGrow_1"
     >
       <span
-        class="base display_block textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
+        class="base display_block textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
       >
         Hello World!
       </span>
@@ -122,7 +122,7 @@ exports[`<BulletText /> should match snapshot for primary bullet text with custo
       class="base display_flex position_relative pill_mobile_base backgroundColours_green200_base center_mobile_base flexShrink_0 center_mobile_base bullet_base"
     >
       <span
-        class="base textAlign_left root_base sizes_2_base colours_success_base fontWeight_normal_base"
+        class="base textAlign_left root_base colours_success_base fontWeight_normal_base sizes_2_base"
       >
         ?
       </span>
@@ -135,7 +135,7 @@ exports[`<BulletText /> should match snapshot for primary bullet text with custo
       class="base flexGrow_1"
     >
       <span
-        class="base display_block textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
+        class="base display_block textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
       >
         Hello World!
       </span>
@@ -155,7 +155,7 @@ exports[`<BulletText /> should match snapshot for secondary bullet text with cus
       class="base display_flex position_relative pill_mobile_base backgroundColours_gray200_base center_mobile_base flexShrink_0 center_mobile_base bullet_base"
     >
       <span
-        class="base textAlign_left root_base sizes_2_base colours_dark_base fontWeight_normal_base"
+        class="base textAlign_left root_base colours_dark_base fontWeight_normal_base sizes_2_base"
       >
         ?
       </span>
@@ -168,7 +168,7 @@ exports[`<BulletText /> should match snapshot for secondary bullet text with cus
       class="base flexGrow_1"
     >
       <span
-        class="base display_block textAlign_left root_base sizes_4_base colours_neutral_base fontWeight_normal_base"
+        class="base display_block textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
       >
         Hello World!
       </span>
