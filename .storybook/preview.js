@@ -11,22 +11,6 @@ import * as React from 'react';
 
 addDecorator(withKnobs);
 
-export const globalTypes = {
-	theme: {
-		name: 'Theme',
-		description: 'Global theme for components',
-		defaultValue: themes.baseTheme,
-		toolbar: {
-			icon: 'grid',
-			items: Object.entries(themes).map(([, theme]) => ({
-				value: theme,
-				title: theme.name,
-				right: theme.themeRef,
-			})),
-		},
-	},
-};
-
 const withThemeProvider = (Story, context) => {
 	return !isChromatic() ? (
 		<OverdriveProvider theme={context.globals.theme}>
@@ -59,6 +43,29 @@ const withThemeProvider = (Story, context) => {
 			</div>
 		))
 	);
+};
+
+export const globalTypes = {
+	theme: {
+		name: 'Theme',
+		description: 'Global theme for components',
+		defaultValue: themes.baseTheme,
+		toolbar: {
+			icon: 'grid',
+			items: Object.entries(themes).map(([, theme]) => ({
+				value: theme,
+				title: theme.name,
+				right: theme.themeRef,
+			})),
+		},
+	},
+};
+
+export const parameters = {
+	chromatic: {
+		// Mobile and large table and up
+		viewports: [320, 1024],
+	},
 };
 
 export const decorators = [withThemeProvider];
