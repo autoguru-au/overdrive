@@ -12,7 +12,8 @@ module.exports = (plop) => {
 			return [
 				{
 					type: 'addMany',
-					destination: 'lib/components/{{ pascalCase name }}',
+					destination:
+						'packages/overdrive/lib/components/{{ pascalCase name }}',
 					base: 'templates/component/',
 					templateFiles: 'templates/component/**/*',
 				},
