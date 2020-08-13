@@ -1,5 +1,13 @@
 # @autoguru/overdrive
 
+## 2.0.22
+
+### Patch Changes
+
+-   5c913cc: Box: Allow non-intrinsics as Box `is` prop as well. With this
+    change you can send things in like `svg`'s, or other components themselves.
+-   e11909f: Text: Adds a `text-transform` prop to allow uppercasing text
+
 ## 2.0.21
 
 ### Patch Changes
