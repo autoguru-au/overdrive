@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 2.0.23
+
+### Patch Changes
+
+-   c585765: **Heading:** Adds an `id` prop which is applied directly to the
+    underlying element
+
 ## 2.0.22
 
 ### Patch Changes
