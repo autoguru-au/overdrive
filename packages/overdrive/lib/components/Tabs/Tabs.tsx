@@ -1,35 +1,47 @@
+import type { FunctionComponent } from 'react';
 import * as React from 'react';
-import { FunctionComponent } from 'react';
+import { createContext, useMemo } from 'react';
 
 import { useId, useUncontrolledState } from '../../utils';
-import { Box } from '../Box';
-import { TabsContextProvider } from './context';
+
+interface TabsContextValue {
+	id?: string;
+	activeIndex: number;
+	onChange?: (index: number) => void;
+}
+
+export const TabsContext = createContext<TabsContextValue | null>(null);
 
 export interface Props {
-	active?: number;
-	onChange?: (idx: number) => void;
+	id?: string | null;
+	active: number;
+	onChange?: (index: number) => void;
 }
 
 export const Tabs: FunctionComponent<Props> = ({
-	children,
+	id: incomingId,
 	active = 0,
 	onChange,
+	children,
 }) => {
 	const [activeState, setActiveState] = useUncontrolledState<number>(
 		active,
 		onChange,
 	);
 
-	const id = useId();
+	const id = useId(incomingId ?? undefined)!;
 
 	return (
-		<Box width="full">
-			<TabsContextProvider
-				id={id}
-				active={activeState}
-				onChange={setActiveState}>
-				{children}
-			</TabsContextProvider>
-		</Box>
+		<TabsContext.Provider
+			value={useMemo(
+				() => ({
+					id,
+					activeIndex: activeState,
+					onChange: setActiveState,
+				}),
+				[id, activeState],
+			)}>
+			{children}
+		</TabsContext.Provider>
 	);
 };

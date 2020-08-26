@@ -4,10 +4,10 @@ import type { FunctionComponent } from 'react';
 import * as React from 'react';
 import {
 	Children,
+	createContext,
 	isValidElement,
 	useCallback,
 	useEffect,
-	useMemo,
 	useRef,
 	useState,
 } from 'react';
@@ -19,13 +19,14 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { useTextStyles } from '../Text';
-import { TabIndexProvider } from './context';
 import * as styleRefs from './TabList.treat';
 
 export interface Props {
 	stretch?: boolean;
 	scrollable?: boolean;
 }
+
+export const TabListContext = createContext<number | null>(null);
 
 export const TabList: FunctionComponent<Props> = ({
 	children,
@@ -42,17 +43,15 @@ export const TabList: FunctionComponent<Props> = ({
 	const wrapperRef = useRef<HTMLDivElement>(null);
 	const innerRef = useRef<HTMLDivElement>(null);
 
-	const childs = useMemo(
-		() =>
-			Children.map(flattenChildren(children), (child, index) => {
-				if (!isValidElement(child)) return null;
+	const tabs = Children.map(flattenChildren(children), (child, index) => {
+		if (!isValidElement(child)) return null;
 
-				return (
-					<TabIndexProvider index={index}>{child}</TabIndexProvider>
-				);
-			}),
-		[children],
-	);
+		return (
+			<TabListContext.Provider value={index}>
+				{child}
+			</TabListContext.Provider>
+		);
+	});
 
 	const [displayScroll, setDisplayScroll] = useState({
 		start: false,
@@ -112,7 +111,7 @@ export const TabList: FunctionComponent<Props> = ({
 
 	useEffect(() => {
 		updateScrollButtonState();
-	}, [childs]);
+	}, [children]);
 
 	const shouldShowScrollButtons =
 		scrollable && (displayScroll.start || displayScroll.end);
@@ -145,8 +144,9 @@ export const TabList: FunctionComponent<Props> = ({
 					flexWrap="nowrap"
 					width="full"
 					role="tablist"
+					aria-orientation="horizontal"
 					className={useTextStyles({ noWrap: true })}>
-					{childs}
+					{tabs}
 				</Box>
 			</Box>
 			{shouldShowScrollButtons ? (
