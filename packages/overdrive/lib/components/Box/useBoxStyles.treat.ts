@@ -126,6 +126,7 @@ export const display = styleMap(
 			contents: 'contents',
 			block: 'block',
 			flex: 'flex',
+			inlineFlex: 'inline-flex',
 			inline: 'inline',
 			inlineBlock: 'inline-block',
 			none: 'none',
