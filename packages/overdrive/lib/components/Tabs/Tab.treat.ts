@@ -28,7 +28,7 @@ export const root = {
 };
 
 export const item = style({
-	display: 'inline-block',
+	display: 'inline-flex',
 	width: 'max-content',
 	verticalAlign: 'middle',
 });
@@ -37,6 +37,7 @@ export const indication = styleMap((theme) => ({
 	default: {
 		minWidth: size,
 		height: size,
+		lineHeight: size,
 		transition: `color 0.2s ${theme.animation.easing.decelerate} 0s, backgroundColor 0.2s ${theme.animation.easing.decelerate} 0s`,
 	},
 }));

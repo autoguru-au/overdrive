@@ -69,7 +69,8 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 			className: clsx(
 				useBoxStyles({
 					is: typeof Component === 'string' ? Component : 'button',
-					display: 'inlineBlock',
+					display: 'inlineFlex',
+					justifyContent: 'center',
 					backgroundColour: 'transparent',
 					marginRight: '6',
 				}),
@@ -93,7 +94,7 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 		};
 
 		const child = (
-			<Inline space="2" alignY="center">
+			<Inline noWrap space="2" alignY="center" alignX="center">
 				<span className={styles.item}>{children}</span>
 				{typeof indication === 'number' && (
 					<Text
