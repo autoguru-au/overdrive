@@ -15,6 +15,7 @@ interface TabPanesContextValue {
 export const TabPanesContext = createContext<TabPanesContextValue | null>(null);
 
 interface Props {
+	/** Render tab panels even when visually hidden. */
 	renderInactivePanes?: boolean;
 }
 
