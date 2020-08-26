@@ -9,6 +9,8 @@ certain cases you'd want to preserve the local state within those tabs as a user
 switches between tabs. Setting `renderInactivePanes` on TabPanes will be
 rendered but visually hidden.
 
+**Example:**
+
 ```jsx
 <Tabs active={0}>
 	<TabList>
