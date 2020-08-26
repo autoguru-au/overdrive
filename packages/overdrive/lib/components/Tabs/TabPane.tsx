@@ -1,39 +1,47 @@
 import { invariant } from '@autoguru/utilities';
+import type { FunctionComponent } from 'react';
 import * as React from 'react';
-import { FunctionComponent } from 'react';
+import { useContext } from 'react';
 import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
-import { useTabIndex, useTabsContext } from './context';
 import * as styleRefs from './TabPane.treat';
+import { TabPanesContext } from './TabPanes';
+import { TabsContext } from './Tabs';
 
 export const TabPane: FunctionComponent<{ id?: string }> = ({
 	children,
 	id: incomingId = null,
 }) => {
-	const myIndex = useTabIndex();
-	const tabsContext = useTabsContext();
+	const tabPanesContext = useContext(TabPanesContext);
+	const tabsContext = useContext(TabsContext);
 
 	const styles = useStyles(styleRefs);
 
 	invariant(
-		myIndex !== null && tabsContext !== null,
-		'This tab pane isnt nested beneath <Tabs /> or <TabPanes />',
+		tabPanesContext !== null && tabsContext !== null,
+		'TabPane rendered outside Tabs or TabPanes',
 	);
+
+	const { paneIndex, renderInactive } = tabPanesContext;
 
 	const myId =
 		typeof incomingId === 'string'
 			? incomingId
-			: `${tabsContext!.id}-${myIndex}-tab`;
+			: `${tabsContext!.id}-${paneIndex}-tab`;
+
+	const isActive = tabsContext!.activeIndex === paneIndex;
 
 	return (
 		<Box
+			display={isActive ? undefined : 'none'}
+			aria-hidden={isActive ? undefined : true}
 			className={styles.root}
 			tabIndex={0}
 			role="tabpanel"
 			id={myId}
 			width="full">
-			{children}
+			{isActive || renderInactive ? children : undefined}
 		</Box>
 	);
 };

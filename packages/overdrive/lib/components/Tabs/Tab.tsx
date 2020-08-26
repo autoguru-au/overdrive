@@ -9,14 +9,16 @@ import {
 	isValidElement,
 	ReactElement,
 	ReactText,
+	useContext,
 } from 'react';
 import { useStyles } from 'react-treat';
 
 import { useBoxStyles } from '../Box';
 import { Inline } from '../Inline';
 import { Text, useTextStyles } from '../Text';
-import { useTabIndex, useTabsContext } from './context';
 import * as styleRefs from './Tab.treat';
+import { TabListContext } from './TabList';
+import { TabsContext } from './Tabs';
 
 export interface Props {
 	children: ReactText;
@@ -35,15 +37,16 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 		},
 		ref,
 	) => {
-		const myIndex = useTabIndex();
-		const tabsContext = useTabsContext();
+		const tabsContext = useContext(TabsContext);
+		const tabListContext = useContext(TabListContext);
 
 		invariant(
-			myIndex !== null && tabsContext !== null,
+			tabsContext !== null && tabListContext !== null,
 			'This tab pane isnt nested beneath <Tabs /> or <TabPanes />>',
 		);
 
-		const isActive = myIndex === tabsContext!.active;
+		const isActive = tabsContext.activeIndex === tabListContext;
+
 		const styles = useStyles(styleRefs);
 		const indicationStyles = useBoxStyles({
 			display: 'inlineBlock',
@@ -51,10 +54,11 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 			backgroundColour: isActive ? 'green900' : 'gray300',
 			borderRadius: 'pill',
 		});
+
 		const controlsId =
 			typeof incomingId === 'string'
 				? incomingId
-				: `${tabsContext!.id}-${myIndex}-tab`;
+				: `${tabsContext!.id}-${tabListContext}-tab`;
 
 		invariant(
 			typeof children === 'string' || typeof children === 'number',
@@ -84,7 +88,7 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 			'aria-selected': isActive ? 'true' : 'false',
 			'aria-controls': controlsId,
 			tabIndex: isActive ? undefined : -1,
-			onClick: () => tabsContext.onChange?.(myIndex),
+			onClick: () => tabsContext.onChange?.(tabListContext),
 			ref,
 		};
 

@@ -1,5 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import * as React from 'react';
+import { useState } from 'react';
 
 import { TabList } from './TabList';
 import { Tabs } from './Tabs';
@@ -26,6 +28,7 @@ const renderTabs = (
 	onChange = null,
 	custoId = null,
 	renderIndication = false,
+	renderInactivePanes = false,
 ) =>
 	render(
 		<Tabs onChange={onChange}>
@@ -39,17 +42,36 @@ const renderTabs = (
 					</Tab>
 				))}
 			</TabList>
-			<TabPanes>
+			<TabPanes renderInactivePanes={renderInactivePanes}>
 				{tabData.map((tabData, idx) => (
 					<TabPane
 						key={tabData.title}
 						id={custoId ? custoId(tabData, idx) : null}>
-						{tabData.content}
+						<TestPane
+							testId={custoId ? custoId(tabData, idx) : null}>
+							{tabData.content}
+						</TestPane>
 					</TabPane>
 				))}
 			</TabPanes>
 		</Tabs>,
 	);
+
+const TestPane = ({ children, testId }) => {
+	const [checked, setChecked] = useState(false);
+
+	return (
+		<>
+			<input
+				type="checkbox"
+				data-testid={`checkbox-${testId}`}
+				checked={checked}
+				onChange={() => setChecked((prev) => !prev)}
+			/>
+			{children}
+		</>
+	);
+};
 
 describe('<Tabs />', () => {
 	it('should match snapshot (high level)', () => {
@@ -75,16 +97,30 @@ describe('<Tabs />', () => {
 		).toHaveTextContent('tab 2 title');
 	});
 
-	it('should show second content and only second content when second tab is clicked', () => {
+	it('should switch content when tabs change', () => {
 		const { getAllByRole } = renderTabs();
 
-		fireEvent.click(getAllByRole('tab')[1]);
+		const [tab1, tab2] = getAllByRole('tab');
+		let visiblePanes = getAllByRole('tabpanel');
 
-		const tabPanels = getAllByRole('tabpanel');
+		expect(tab1.getAttribute('aria-selected')).toBe('true');
+		expect(visiblePanes[0]).toHaveTextContent(tabData[0].content);
 
-		expect(tabPanels).toHaveLength(1);
+		userEvent.click(tab2);
 
-		expect(tabPanels[0]).toHaveTextContent('tab 2 content');
+		visiblePanes = getAllByRole('tabpanel');
+
+		expect(tab1.getAttribute('aria-selected')).toBe('false');
+		expect(tab2.getAttribute('aria-selected')).toBe('true');
+		expect(visiblePanes[0]).toHaveTextContent(tabData[1].content);
+
+		userEvent.click(tab1);
+
+		visiblePanes = getAllByRole('tabpanel');
+
+		expect(tab1.getAttribute('aria-selected')).toBe('true');
+		expect(tab2.getAttribute('aria-selected')).toBe('false');
+		expect(visiblePanes[0]).toHaveTextContent(tabData[0].content);
 	});
 
 	it('should call onChange callback with correct active tab index', () => {
@@ -110,5 +146,29 @@ describe('<Tabs />', () => {
 		const { container } = renderTabs(null, null, true);
 
 		expect(container.firstChild).toMatchSnapshot();
+	});
+
+	it('should persist state between tab changes', () => {
+		const { getAllByRole, getByTestId } = renderTabs(
+			null,
+			(_, index) => `testCase-${index + 1}`,
+			false,
+			true,
+		);
+
+		const [tab1, tab2] = getAllByRole('tab');
+
+		let checkbox = getByTestId('checkbox-testCase-1');
+
+		userEvent.click(checkbox);
+
+		expect(checkbox).toBeChecked();
+
+		userEvent.click(tab2);
+		userEvent.click(tab1);
+
+		checkbox = getByTestId('checkbox-testCase-1');
+
+		expect(checkbox).toBeChecked();
 	});
 });
