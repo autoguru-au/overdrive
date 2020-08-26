@@ -76,7 +76,7 @@
 		"browserslist-config-autoguru": "1.0.88",
 		"concurrently": "5.3.0",
 		"core-js": "3.6.5",
-		"csstype": "3.0.2",
+		"csstype": "3.0.3",
 		"eslint": "7.7.0",
 		"glob": "7.1.6",
 		"husky": "4.2.5",
