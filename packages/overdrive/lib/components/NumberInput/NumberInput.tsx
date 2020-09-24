@@ -9,7 +9,7 @@ const isEdge: boolean =
 const type = isEdge ? 'text' : 'number';
 
 export const NumberInput = withEnhancedInput<
-	Partial<Pick<HTMLInputElement, 'min' | 'max'>>
+	Partial<Pick<HTMLInputElement, 'min' | 'max' | 'step'>>
 >(
 	({ field, eventHandlers, validation, suffixed, prefixed, ...rest }) => (
 		<Box
