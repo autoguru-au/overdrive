@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.0.25
+
+### Patch Changes
+
+-   4ce4fc6: **NumberInput:** Adds support for the html `step` attribute.
+
 ## 2.0.24
 
 ### Patch Changes
