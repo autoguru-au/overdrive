@@ -1,6 +1,6 @@
+import isChromatic from 'chromatic/isChromatic';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import isChromatic from 'chromatic/isChromatic';
 
 import { Stack } from '../Stack';
 import { StarRating } from '../StarRating';
