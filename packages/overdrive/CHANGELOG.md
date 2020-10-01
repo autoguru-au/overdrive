@@ -1,5 +1,13 @@
 # @autoguru/overdrive
 
+## 2.0.26
+
+### Patch Changes
+
+-   dd3da7e: **Modal**: Introduces a focus-trap as well as correct some
+    Concurrent Mode flickering.
+-   dd3da7e: **Box:** Adds `opacity` prop
+
 ## 2.0.25
 
 ### Patch Changes
