@@ -2,37 +2,33 @@ import { style, styleMap } from 'treat';
 
 import { hex2rgba } from '../../utils';
 
-export const root = {
-	default: style({
-		top: 0,
-		right: 0,
-		bottom: 0,
-		left: 0,
-		zIndex: 1000,
-		animationDuration: '0.2s',
-		animationTimingFunction: 'ease',
-	}),
-	fadeIn: style({
-		'@keyframes': {
-			from: {
-				opacity: 0,
-			},
-			to: {
-				opacity: 1,
-			},
+const reducedMotion = style({
+	'@media': {
+		'screen and (prefers-reduced-motion)': {
+			transform: 'none !important',
 		},
+	},
+});
+
+const place = style({
+	top: 0,
+	right: 0,
+	bottom: 0,
+	left: 0,
+});
+
+export const root = [place, style({ zIndex: 1000 })];
+
+export const transition = style((theme) => ({
+	transition: `transform .175s ${theme.animation.easing.standard}, opacity 0.3s ${theme.animation.easing.standard}`,
+}));
+
+export const entry = [
+	reducedMotion,
+	style({
+		transform: 'scale(.95)',
 	}),
-	fadeOut: style({
-		'@keyframes': {
-			from: {
-				opacity: 1,
-			},
-			to: {
-				opacity: 0,
-			},
-		},
-	}),
-};
+];
 
 const backdropRoot = styleMap((theme) => ({
 	default: {
@@ -48,12 +44,9 @@ const backdropRoot = styleMap((theme) => ({
 export const backdrop = {
 	root: [
 		backdropRoot.default,
+		place,
 		style({
-			top: 0,
-			right: 0,
-			bottom: 0,
-			left: 0,
-			zIndex: -1,
+			zIndex: 999,
 		}),
 	],
 	invisible: backdropRoot.invisible,

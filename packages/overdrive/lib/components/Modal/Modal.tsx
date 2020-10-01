@@ -1,97 +1,147 @@
 import { warning } from '@autoguru/utilities';
-import clsx from 'clsx';
-import * as React from 'react';
-import {
+import type {
 	ComponentProps,
 	ComponentType,
 	FunctionComponent,
-	MouseEventHandler,
-	useEffect,
-	useState,
+	Reducer,
 } from 'react';
+import * as React from 'react';
+import { useEffect, useReducer } from 'react';
+import FocusLock from 'react-focus-lock';
 import { useStyles } from 'react-treat';
 
+import { useEventCallback } from '../../utils';
 import { Box } from '../Box';
 import { Portal } from '../Portal';
 import * as styleRefs from './Modal.treat';
 
 export interface Props {
 	isOpen: boolean;
-	transition?: boolean;
 	hideBackdrop?: boolean;
 
 	onRequestClose?(e: 'backdrop' | 'escapeKeyDown' | string): void;
 }
 
+type Action = 'OPEN_MODAL' | 'CLOSE_MODAL' | 'ANIMATION_COMPLETE';
+
+type State = 'INITIAL' | 'OPEN' | 'OPENING' | 'CLOSED' | 'CLOSING';
+
+const reducer: Reducer<State, Action> = (prevState, action) => {
+	switch (action) {
+		case 'OPEN_MODAL': {
+			switch (prevState) {
+				case 'INITIAL':
+				case 'CLOSING':
+				case 'CLOSED': {
+					return 'OPENING';
+				}
+
+				default:
+					return prevState;
+			}
+		}
+
+		case 'CLOSE_MODAL': {
+			switch (prevState) {
+				case 'OPEN':
+				case 'OPENING': {
+					return 'CLOSING';
+				}
+
+				default:
+					return prevState;
+			}
+		}
+
+		case 'ANIMATION_COMPLETE': {
+			switch (prevState) {
+				case 'CLOSING': {
+					return 'CLOSED';
+				}
+
+				case 'OPENING': {
+					return 'OPEN';
+				}
+
+				default:
+					return prevState;
+			}
+		}
+
+		default:
+			return prevState;
+	}
+};
+
 export const Modal: FunctionComponent<Props> = ({
 	isOpen,
 	hideBackdrop = false,
-	transition = true,
 	onRequestClose,
 	children,
 }) => {
 	const styles = useStyles(styleRefs);
 
-	const [shouldRender, setRender] = useState(isOpen);
+	const [state, dispatch] = useReducer(reducer, 'INITIAL');
 
-	useEffect(() => {
-		if (isOpen) {
-			setRender(true);
-		} else if (!transition) {
-			setRender(false);
-		}
-	}, [isOpen, transition]);
-
-	const handleBackdropClick: ComponentProps<typeof Backdrop>['onClick'] = (
-		event,
-	) => {
+	const handleBackdropClick: ComponentProps<
+		typeof Backdrop
+	>['onClick'] = useEventCallback((event) => {
 		if (event.target !== event.currentTarget) return;
 		if (typeof onRequestClose === 'function') onRequestClose('backdrop');
-	};
+	});
 
-	const onAnimationEnd = () => {
-		if (!isOpen) setRender(false);
-	};
+	useEffect(() => {
+		dispatch(isOpen ? 'OPEN_MODAL' : 'CLOSE_MODAL');
+	}, [isOpen]);
+
+	useEffect(() => {
+		if (state === 'CLOSING') {
+			const timer = setTimeout(() => {
+				dispatch('ANIMATION_COMPLETE');
+			}, 300);
+			return () => clearTimeout(timer);
+		}
+
+		return undefined;
+	}, [state]);
 
 	return (
 		<Portal>
-			{shouldRender ? (
-				<Box
-					role="presentation"
-					position="fixed"
-					overflow="hidden"
-					className={[
-						styles.root.default,
-						transition &&
-							(isOpen ? styles.root.fadeIn : styles.root.fadeOut),
-					]}
-					onAnimationEnd={onAnimationEnd}>
-					<Backdrop
-						invisible={hideBackdrop}
+			{state === 'OPENING' || state === 'OPEN' || state === 'CLOSING' ? (
+				<FocusLock
+					returnFocus
+					autoFocus={false}
+					onActivation={() => {
+						dispatch('ANIMATION_COMPLETE');
+					}}>
+					<Box
+						aria-hidden="true"
+						position="fixed"
+						pointerEvents={state === 'CLOSING' ? 'none' : undefined}
+						opacity={state === 'OPEN' ? undefined : 0}
+						className={[
+							styles.backdrop.root,
+							styles.transition,
+							hideBackdrop && styles.backdrop.invisible,
+						]}
 						onClick={handleBackdropClick}
 					/>
-					{children}
-				</Box>
+
+					<Box
+						role="presentation"
+						position="fixed"
+						overflow="hidden"
+						opacity={state === 'OPEN' ? undefined : 0}
+						className={[
+							styles.root,
+							styles.transition,
+							state === 'OPENING' && styles.entry,
+						]}>
+						{children}
+					</Box>
+				</FocusLock>
 			) : null}
 		</Portal>
-	);
-};
-
-const Backdrop: FunctionComponent<{
-	invisible: boolean;
-	onClick: MouseEventHandler<HTMLDivElement>;
-}> = ({ onClick, invisible }) => {
-	const styles = useStyles(styleRefs);
-
-	return (
-		<Box
-			aria-hidden="true"
-			position="absolute"
-			className={clsx(styles.backdrop.root, {
-				[styles.backdrop.invisible]: invisible,
-			})}
-			onClick={onClick}
-		/>
 	);
 };
 

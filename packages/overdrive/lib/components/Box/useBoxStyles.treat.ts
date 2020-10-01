@@ -135,6 +135,11 @@ export const display = styleMap(
 	),
 );
 
+export const opacity = styleMap({
+	0: { opacity: 0 },
+	1: { opacity: 1 },
+});
+
 export const userSelect = styleMap({
 	none: { userSelect: 'none' },
 });
