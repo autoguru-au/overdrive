@@ -4,7 +4,7 @@
 
 ### Patch Changes
 
--   dd3da7e: **Modal**: Introduces a focus-trap as well as correct some
+-   dd3da7e: **Modal:** Introduces a focus-trap as well as correct some
     Concurrent Mode flickering.
 -   dd3da7e: **Box:** Adds `opacity` prop
 
@@ -19,7 +19,7 @@
 ### Patch Changes
 
 -   8914008: **Box:** Adds `inlineFlex` as a display prop
--   5bbe87a: **Tabs**: Adds new renderInactivePanes prop to render tabs that are
+-   5bbe87a: **Tabs:** Adds new renderInactivePanes prop to render tabs that are
     inactive.
 
     By default, TabPanes themselves only render when they are active. Sometimes
