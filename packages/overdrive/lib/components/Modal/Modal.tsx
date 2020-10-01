@@ -118,9 +118,7 @@ export const Modal: FunctionComponent<Props> = ({
 						aria-hidden="true"
 						position="fixed"
 						pointerEvents={state === 'CLOSING' ? 'none' : undefined}
-						style={{
-							opacity: state === 'OPEN' ? undefined : 0,
-						}}
+						opacity={state === 'OPEN' ? undefined : 0}
 						className={[
 							styles.backdrop.root,
 							styles.transition,
@@ -133,9 +131,7 @@ export const Modal: FunctionComponent<Props> = ({
 						role="presentation"
 						position="fixed"
 						overflow="hidden"
-						style={{
-							opacity: state === 'OPEN' ? undefined : 0,
-						}}
+						opacity={state === 'OPEN' ? undefined : 0}
 						className={[
 							styles.root,
 							styles.transition,

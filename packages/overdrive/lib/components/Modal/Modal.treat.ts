@@ -10,13 +10,14 @@ const reducedMotion = style({
 	},
 });
 
-export const root = style({
+const place = style({
 	top: 0,
 	right: 0,
 	bottom: 0,
 	left: 0,
-	zIndex: 1000,
 });
+
+export const root = [place, style({ zIndex: 1000 })];
 
 export const transition = style((theme) => ({
 	transition: `transform .175s ${theme.animation.easing.standard}, opacity 0.3s ${theme.animation.easing.standard}`,
@@ -43,11 +44,8 @@ const backdropRoot = styleMap((theme) => ({
 export const backdrop = {
 	root: [
 		backdropRoot.default,
+		place,
 		style({
-			top: 0,
-			right: 0,
-			bottom: 0,
-			left: 0,
 			zIndex: 999,
 		}),
 	],

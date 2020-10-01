@@ -20,13 +20,11 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
   >
     <div
       aria-hidden="true"
-      class="base position_fixed backdropRoot_default_base backdrop_root transition_base"
-      style=""
+      class="base position_fixed backdropRoot_default_base place backdrop_root transition_base"
     />
     <div
-      class="base position_fixed overflow_hidden root transition_base"
+      class="base position_fixed overflow_hidden place root transition_base"
       role="presentation"
-      style=""
     >
       <div
         aria-hidden="false"
@@ -117,13 +115,11 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
   >
     <div
       aria-hidden="true"
-      class="base position_fixed backdropRoot_default_base backdrop_root transition_base"
-      style=""
+      class="base position_fixed backdropRoot_default_base place backdrop_root transition_base"
     />
     <div
-      class="base position_fixed overflow_hidden root transition_base"
+      class="base position_fixed overflow_hidden place root transition_base"
       role="presentation"
-      style=""
     >
       <div
         aria-hidden="false"
