@@ -10,6 +10,7 @@ import {
 	forwardRef,
 	KeyboardEventHandler,
 	MouseEventHandler,
+	ReactNode,
 	Ref,
 	RefObject,
 	useCallback,
@@ -40,13 +41,14 @@ export interface EventHandlers<PrimitiveElementType> {
 export interface EnhanceInputPrimitiveProps extends AriaAttributes {
 	name: string;
 	placeholder: string;
-	className?: string;
 	id?: string;
+	className?: string;
 	value?: string;
-	hintText?: string;
+	hintText?: ReactNode;
 	autoFocus?: boolean;
 	disabled?: boolean;
 	notch?: boolean;
+	reserveHintSpace?: boolean;
 	prefixIcon?: IconType;
 	suffixIcon?: IconType;
 	wrapperRef?: Ref<HTMLDivElement>;
@@ -112,6 +114,7 @@ export const withEnhancedInput = <
 				isTouched,
 				isValid,
 				notch = true,
+				reserveHintSpace = false,
 
 				value: incomingValue = '',
 				onChange: incomingOnChange,
@@ -261,7 +264,7 @@ export const withEnhancedInput = <
 						})}
 						borderColourClassName={derivedColours.borderColour}>
 						<Box ref={wrapperRef} width="full" height="full">
-							{prefixIcon && (
+							{prefixIcon ? (
 								<Icon
 									icon={prefixIcon}
 									size="medium"
@@ -271,8 +274,8 @@ export const withEnhancedInput = <
 										derivedColours.colour,
 									)}
 								/>
-							)}
-							{suffixIcon && (
+							) : null}
+							{suffixIcon ? (
 								<Icon
 									icon={suffixIcon}
 									size="medium"
@@ -282,15 +285,18 @@ export const withEnhancedInput = <
 										derivedColours.colour,
 									)}
 								/>
-							)}
+							) : null}
 							<WrappingComponent {...wrappingComponent} />
 						</Box>
 					</NotchedBase>
-					{!disabled && hintText?.length && (
-						<HintText className={derivedColours.colour}>
-							{hintText}
-						</HintText>
-					)}
+					{hintText || reserveHintSpace ? (
+						<HintText
+							className={derivedColours.colour}
+							hintText={hintText}
+							disabled={disabled}
+							reserveHintSpace={reserveHintSpace}
+						/>
+					) : null}
 				</Box>
 			);
 		},
