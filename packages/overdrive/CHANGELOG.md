@@ -1,5 +1,15 @@
 # @autoguru/overdrive
 
+## 2.0.27
+
+### Patch Changes
+
+-   648ec6a: **Inputs:** Introduces `reserveHintSpace` prop—to _reserve_ the
+    space that would otherwise be occupied by the hint text.
+
+    Super useful in stacked forms with validation, so that page layout shifts
+    don't occur.
+
 ## 2.0.26
 
 ### Patch Changes
