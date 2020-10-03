@@ -9,7 +9,7 @@
 	"scripts": {
 		"chromatic": "chromatic test --exit-zero-on-changes --build-script-name storybook:build",
 		"format": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|md|mdx|html)\"",
-		"postinstall": "manypkg check",
+		"postinstall": "patch-package && manypkg check",
 		"lint": "eslint \"packages/**/*.+(ts|tsx)\" --fix --quiet",
 		"playroom:build": "playroom build",
 		"release": "changeset publish",
@@ -84,7 +84,8 @@
 		"jest": "26.4.2",
 		"lint-staged": "10.4.0",
 		"magic-string": "0.25.7",
-		"playroom": "0.21.0",
+		"patch-package": "6.2.2",
+		"playroom": "0.21.7",
 		"plop": "2.7.4",
 		"prettier": "2.1.2",
 		"react": "16.13.1",

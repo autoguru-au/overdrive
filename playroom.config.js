@@ -1,12 +1,21 @@
 const TreatPlugin = require('treat/webpack-plugin');
+const { join } = require('path');
+
+const ourCodeFiles = [
+	join(__dirname, './packages/'),
+	join(__dirname, './.playroom/'),
+	/@autoguru\/.*/,
+];
 
 module.exports = {
 	title: 'Overdrive',
-	components: './packages/overdrive/lib/components/index.ts',
+	components: './.playroom/components.ts',
 	outputPath: './.playroom/dist/',
 	frameComponent: './.playroom/frame.tsx',
 	themes: './packages/overdrive/lib/themes/index.ts',
 	widths: [320, 768, 1024, 1500],
+	paramType: 'search',
+	baseUrl: '/playroom/',
 	port: 6007,
 	openBrowser: true,
 	webpackConfig: () => ({
@@ -14,7 +23,7 @@ module.exports = {
 			rules: [
 				{
 					test: /\.css$/,
-					exclude: /node_modules/,
+					include: ourCodeFiles,
 					use: [
 						{
 							loader: require.resolve('style-loader'),
@@ -26,7 +35,7 @@ module.exports = {
 				},
 				{
 					test: /\.tsx?$/,
-					exclude: /node_modules/,
+					include: ourCodeFiles,
 					use: [
 						{
 							loader: require.resolve('ts-loader'),
