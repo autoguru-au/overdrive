@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import type { ElementType } from 'react';
+import type { JSXElementConstructor } from 'react';
 import { useStyles } from 'react-treat';
 import type { Theme } from 'treat/theme';
 
@@ -60,7 +60,7 @@ interface Flex {
 }
 
 export interface BoxStyleProps extends Padding, Margin, Border, Flex {
-	is?: ElementType;
+	is?: keyof JSX.IntrinsicElements | JSXElementConstructor<any>;
 	boxShadow?: ResponsiveProp<keyof typeof styleRefs.boxShadow>;
 	display?: keyof typeof styleRefs.display;
 

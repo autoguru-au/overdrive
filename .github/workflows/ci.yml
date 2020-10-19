@@ -42,6 +42,9 @@ jobs:
             - name: Test
               run: yarn test --no-cache --ci --coverage
 
+            - name: Type Check
+              run: yarn tsc -b
+
             - uses: codecov/codecov-action@v1
               with:
                   token: ${{ secrets.CODECOV }}
@@ -55,7 +58,9 @@ jobs:
                   CHROMATIC_APP_CODE: ${{ secrets.CHROMATIC_APP_CODE }}
             - name: Chromatic (prs)
               if: github.ref != 'refs/heads/main'
-              run: yarn run chromatic test --exit-zero-on-changes
+              run:
+                  yarn run chromatic test --exit-zero-on-changes
+                  --exit-once-uploaded
               env:
                   CHROMATIC_APP_CODE: ${{ secrets.CHROMATIC_APP_CODE }}
 
