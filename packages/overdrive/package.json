@@ -22,7 +22,7 @@
 	],
 	"main": "./index.ts",
 	"dependencies": {
-		"@autoguru/icons": "^1.4.5",
+		"@autoguru/icons": "^1.4.6",
 		"@autoguru/utilities": "^1.0.97",
 		"@popperjs/core": "^2.5.3",
 		"clsx": "^1.1.1",
@@ -33,10 +33,10 @@
 	},
 	"devDependencies": {
 		"@autoguru/tsconfig": "1.0.78",
-		"@types/react": "16.9.49",
+		"@types/react": "16.9.53",
 		"@types/react-dom": "16.9.8",
-		"react": "16.13.1",
-		"react-dom": "16.13.1",
+		"react": "16.14.0",
+		"react-dom": "16.14.0",
 		"treat": "1.6.0"
 	},
 	"peerDependencies": {

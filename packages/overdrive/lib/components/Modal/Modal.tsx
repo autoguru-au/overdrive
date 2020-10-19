@@ -1,10 +1,5 @@
 import { warning } from '@autoguru/utilities';
-import type {
-	ComponentProps,
-	ComponentType,
-	FunctionComponent,
-	Reducer,
-} from 'react';
+import type { ComponentType, FunctionComponent, Reducer } from 'react';
 import * as React from 'react';
 import { useEffect, useReducer } from 'react';
 import FocusLock from 'react-focus-lock';
@@ -83,9 +78,7 @@ export const Modal: FunctionComponent<Props> = ({
 
 	const [state, dispatch] = useReducer(reducer, 'INITIAL');
 
-	const handleBackdropClick: ComponentProps<
-		typeof Backdrop
-	>['onClick'] = useEventCallback((event) => {
+	const handleBackdropClick = useEventCallback((event) => {
 		if (event.target !== event.currentTarget) return;
 		if (typeof onRequestClose === 'function') onRequestClose('backdrop');
 	});

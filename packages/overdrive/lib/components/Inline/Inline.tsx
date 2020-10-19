@@ -8,7 +8,7 @@ import {
 	useNegativeMarginLeft,
 	useNegativeMarginTop,
 } from '../../hooks/useNegativeMargin/useNegativeMargin';
-import { ResponsiveProp } from '../../utils';
+import type { ResponsiveProp } from '../../utils';
 import type { BoxStyleProps } from '../Box';
 import { Box } from '../Box';
 import { Text } from '../Text';
@@ -20,6 +20,11 @@ export interface Props extends Pick<BoxStyleProps, 'is'> {
 	noWrap?: boolean;
 	dividers?: boolean | ReactChild;
 }
+
+const supportedListTypes: ReadonlyArray<keyof JSX.IntrinsicElements> = [
+	'ul',
+	'ol',
+] as const;
 
 export const Inline: FunctionComponent<Props> = ({
 	is = 'div',
@@ -41,7 +46,9 @@ export const Inline: FunctionComponent<Props> = ({
 
 	const divider = renderDivider(dividers);
 
-	const listItem = ['ul', 'ol'].includes(is) ? 'li' : 'div';
+	let listItem: typeof is = 'div';
+	if (typeof is === 'string')
+		listItem = supportedListTypes.includes(is) ? 'li' : 'div';
 
 	return (
 		<Box

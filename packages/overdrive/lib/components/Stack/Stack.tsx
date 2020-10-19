@@ -16,6 +16,11 @@ export interface Props extends Pick<BoxStyleProps, 'is' | 'width'> {
 	children: ReactNode | ReactNode[];
 }
 
+const supportedListTypes: ReadonlyArray<keyof JSX.IntrinsicElements> = [
+	'ul',
+	'ol',
+] as const;
+
 export const Stack: FunctionComponent<Props> = ({
 	space = '2',
 	children,
@@ -31,11 +36,15 @@ export const Stack: FunctionComponent<Props> = ({
 		return <>{items}</>;
 	}
 
+	let listItem: typeof is = 'div';
+	if (typeof is === 'string')
+		listItem = supportedListTypes.includes(is) ? 'li' : 'div';
+
 	return (
 		<Box is={is} className={className} width={width}>
 			{Children.map(items, (child, idx) => (
 				<Box
-					is={['ul', 'ol'].includes(is) ? 'li' : 'div'}
+					is={listItem}
 					className={[
 						styles.child.default,
 						dividers ? undefined : styles.child.spaces[space],

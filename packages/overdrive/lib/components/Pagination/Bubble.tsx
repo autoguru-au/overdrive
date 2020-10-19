@@ -1,18 +1,22 @@
 import clsx from 'clsx';
+import type {
+	ComponentProps,
+	FunctionComponent,
+	MouseEventHandler,
+} from 'react';
 import * as React from 'react';
-import { ButtonHTMLAttributes, ComponentProps, FunctionComponent } from 'react';
 import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
 import { useTextStyles } from '../Text';
 import * as styleRefs from './Pagination.treat';
 
-export interface Props extends ButtonHTMLAttributes<Element> {
-	className?: string;
+export interface Props {
 	selected?: boolean;
 	disabled?: boolean;
 	gap?: boolean;
-	children;
+	onClick?: MouseEventHandler<HTMLButtonElement>;
+	className?: string;
 }
 
 export const Bubble: FunctionComponent<Props> = ({
@@ -21,7 +25,7 @@ export const Bubble: FunctionComponent<Props> = ({
 	gap = false,
 	children,
 	disabled,
-	...rest
+	onClick,
 }) => {
 	const styles = useStyles(styleRefs);
 	let backgroundColour: ComponentProps<typeof Box>['backgroundColour'] =
@@ -53,7 +57,7 @@ export const Bubble: FunctionComponent<Props> = ({
 					[styles.disabled]: gap,
 				},
 			)}
-			{...rest}>
+			onClick={onClick}>
 			{gap ? '...' : children}
 		</Box>
 	);

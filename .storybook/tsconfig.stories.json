@@ -9,6 +9,8 @@
 	},
 	"include": [
 		"../packages/overdrive/lib/themes/treatTheme.d.ts",
+		"../packages/overdrive/lib/**/*.ts",
+		"../packages/overdrive/lib/**/*.tsx",
 		"../packages/overdrive/lib/**/stories.tsx"
 	],
 	"exclude": []

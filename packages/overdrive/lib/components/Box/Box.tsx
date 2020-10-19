@@ -1,22 +1,21 @@
 import clsx from 'clsx';
-import {
-	AllHTMLAttributes,
-	createElement,
-	ElementType,
-	forwardRef,
-} from 'react';
+import type { AllHTMLAttributes } from 'react';
+import * as React from 'react';
+import { forwardRef } from 'react';
 
-import { BoxStyleProps, useBoxStyles } from './useBoxStyles';
+import type { BoxStyleProps } from './useBoxStyles';
+import { useBoxStyles } from './useBoxStyles';
 
 export interface Props
-	extends Omit<BoxStyleProps, 'is'>,
+	extends BoxStyleProps,
 		Omit<
 			AllHTMLAttributes<HTMLElement>,
 			'width' | 'height' | 'className' | 'is'
-		> {
-	is?: ElementType;
-}
+		> {}
 
+/**
+ * Box is a general purpose container with no specific semantics.
+ */
 export const Box = forwardRef<HTMLElement, Props>(
 	(
 		{
@@ -132,14 +131,13 @@ export const Box = forwardRef<HTMLElement, Props>(
 			width,
 		});
 
-		return createElement(
-			Component,
-			{
-				className: clsx([cls, className]),
-				...allOtherProps,
-				ref,
-			},
-			children,
+		return (
+			<Component
+				ref={ref}
+				className={clsx(cls, className)}
+				{...allOtherProps}>
+				{children}
+			</Component>
 		);
 	},
 );
