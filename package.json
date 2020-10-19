@@ -96,7 +96,7 @@
 		"treat": "1.6.0",
 		"ts-loader": "8.0.5",
 		"tslib": "2.0.3",
-		"typescript": "3.9.7",
+		"typescript": "4.0.3",
 		"webpack": "4.44.2"
 	},
 	"volta": {
