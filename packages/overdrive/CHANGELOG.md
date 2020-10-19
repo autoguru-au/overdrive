@@ -1,5 +1,15 @@
 # @autoguru/overdrive
 
+## 2.1.1
+
+### Minor Changes
+
+-   052a024: Corrected types to be more type safe and accurate.
+
+    Notably `<Box>`. Seeing as we `createElement`, we fixed types to only allow
+    `IntrinsicElements | JSXElementConstructor`. As such, any `"button"` or
+    `TextLink` prop values will work. However, `<TextLink />` will not.
+
 ## 2.0.27
 
 ### Patch Changes
