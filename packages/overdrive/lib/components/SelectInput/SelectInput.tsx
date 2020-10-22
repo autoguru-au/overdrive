@@ -1,22 +1,21 @@
 import { ChevronDownIcon } from '@autoguru/icons';
 import * as React from 'react';
 import { ReactNode } from 'react';
+import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
 import { Icon } from '../Icon';
 import { withEnhancedInput } from '../private/InputBase';
-import { useStyles } from 'react-treat';
 import * as styleRefs from './SelectInput.treat';
 
 export const SelectInput = withEnhancedInput<
 	{
 		children: ReactNode[];
-		c
+		c;
 	},
 	HTMLSelectElement
 >(
 	({ field, eventHandlers, suffixed, prefixed, validation, ...rest }) => {
-
 		const styles = useStyles(styleRefs);
 		return (
 			<Box
@@ -31,7 +30,11 @@ export const SelectInput = withEnhancedInput<
 					{...eventHandlers}
 					{...field}
 					{...rest}
-					className={[styles.input, styles.paddedInput, field.className]}
+					className={[
+						styles.input,
+						styles.paddedInput,
+						field.className,
+					]}
 					autoComplete="off"
 				/>
 				<Box
@@ -39,16 +42,12 @@ export const SelectInput = withEnhancedInput<
 					display="flex"
 					alignItems="center"
 					height="full"
-					marginRight= '4'
+					marginRight="4"
 					flexShrink={0}
-					pointerEvents='none'
-					position='absolute'>
-					<Icon
-						size="medium"
-						icon={ChevronDownIcon}
-					/>
+					pointerEvents="none"
+					position="absolute">
+					<Icon size="medium" icon={ChevronDownIcon} />
 				</Box>
-
 			</Box>
 		);
 	},

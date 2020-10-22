@@ -13,4 +13,3 @@ export const arrow = style({
 	top: '0',
 	right: '0',
 });
-
