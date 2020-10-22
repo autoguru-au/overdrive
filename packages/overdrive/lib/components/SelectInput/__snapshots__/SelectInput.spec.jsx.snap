@@ -11,11 +11,11 @@ exports[`<SelectInput /> should have some hintText 1`] = `
       class="base width_full height_full"
     >
       <div
-        class="base display_flex center_mobile_base flexWrap_nowrap center_mobile_base"
+        class="base display_flex position_relative center_mobile_base flexWrap_nowrap center_mobile_base"
       >
         <select
           autocomplete="off"
-          class="base block appearance select flexGrow_1 base block appearance input display_flex width_full position_relative input_itself_root_base"
+          class="base block appearance select flexGrow_1 input paddedInput_base base block appearance input display_flex width_full position_relative input_itself_root_base"
         >
           <option
             value="a"
@@ -33,21 +33,25 @@ exports[`<SelectInput /> should have some hintText 1`] = `
             Value 3
           </option>
         </select>
-        <i
-          class="base display_block medium_mobile_base 4_mobile_base flexShrink_0"
-          role="presentation"
+        <div
+          class="base 4_mobile_base display_flex height_full position_absolute pointerEvents_none center_mobile_base flexShrink_0 arrow"
         >
-          <svg
-            class="base display_block width_full height_full"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
+          <i
+            class="base display_block medium_mobile_base"
+            role="presentation"
           >
-            <path
-              d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
-            />
-          </svg>
-        </i>
+            <svg
+              class="base display_block width_full height_full"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+              />
+            </svg>
+          </i>
+        </div>
       </div>
     </div>
     <div
@@ -90,11 +94,11 @@ exports[`<SelectInput /> should match snapshot 1`] = `
       class="base width_full height_full"
     >
       <div
-        class="base display_flex center_mobile_base flexWrap_nowrap center_mobile_base"
+        class="base display_flex position_relative center_mobile_base flexWrap_nowrap center_mobile_base"
       >
         <select
           autocomplete="off"
-          class="base block appearance select flexGrow_1 base block appearance input display_flex width_full position_relative input_itself_root_base"
+          class="base block appearance select flexGrow_1 input paddedInput_base base block appearance input display_flex width_full position_relative input_itself_root_base"
         >
           <option
             value="a"
@@ -112,21 +116,25 @@ exports[`<SelectInput /> should match snapshot 1`] = `
             Value 3
           </option>
         </select>
-        <i
-          class="base display_block medium_mobile_base 4_mobile_base flexShrink_0"
-          role="presentation"
+        <div
+          class="base 4_mobile_base display_flex height_full position_absolute pointerEvents_none center_mobile_base flexShrink_0 arrow"
         >
-          <svg
-            class="base display_block width_full height_full"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
+          <i
+            class="base display_block medium_mobile_base"
+            role="presentation"
           >
-            <path
-              d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
-            />
-          </svg>
-        </i>
+            <svg
+              class="base display_block width_full height_full"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+              />
+            </svg>
+          </i>
+        </div>
       </div>
     </div>
     <div
@@ -164,11 +172,11 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
       class="base width_full height_full"
     >
       <div
-        class="base display_flex center_mobile_base flexWrap_nowrap center_mobile_base"
+        class="base display_flex position_relative center_mobile_base flexWrap_nowrap center_mobile_base"
       >
         <select
           autocomplete="off"
-          class="base block appearance select flexGrow_1 base block appearance input display_flex width_full position_relative input_itself_root_base"
+          class="base block appearance select flexGrow_1 input paddedInput_base base block appearance input display_flex width_full position_relative input_itself_root_base"
         >
           <option
             value="a"
@@ -186,21 +194,25 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
             Value 3
           </option>
         </select>
-        <i
-          class="base display_block medium_mobile_base 4_mobile_base flexShrink_0"
-          role="presentation"
+        <div
+          class="base 4_mobile_base display_flex height_full position_absolute pointerEvents_none center_mobile_base flexShrink_0 arrow"
         >
-          <svg
-            class="base display_block width_full height_full"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
+          <i
+            class="base display_block medium_mobile_base"
+            role="presentation"
           >
-            <path
-              d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
-            />
-          </svg>
-        </i>
+            <svg
+              class="base display_block width_full height_full"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+              />
+            </svg>
+          </i>
+        </div>
       </div>
     </div>
     <div
@@ -238,11 +250,11 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
       class="base width_full height_full"
     >
       <div
-        class="base display_flex center_mobile_base flexWrap_nowrap center_mobile_base"
+        class="base display_flex position_relative center_mobile_base flexWrap_nowrap center_mobile_base"
       >
         <select
           autocomplete="off"
-          class="base block appearance select flexGrow_1 base block appearance input display_flex width_full position_relative input_itself_root_base"
+          class="base block appearance select flexGrow_1 input paddedInput_base base block appearance input display_flex width_full position_relative input_itself_root_base"
         >
           <option
             value="a"
@@ -260,21 +272,25 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
             Value 3
           </option>
         </select>
-        <i
-          class="base display_block medium_mobile_base 4_mobile_base flexShrink_0"
-          role="presentation"
+        <div
+          class="base 4_mobile_base display_flex height_full position_absolute pointerEvents_none center_mobile_base flexShrink_0 arrow"
         >
-          <svg
-            class="base display_block width_full height_full"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
+          <i
+            class="base display_block medium_mobile_base"
+            role="presentation"
           >
-            <path
-              d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
-            />
-          </svg>
-        </i>
+            <svg
+              class="base display_block width_full height_full"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+              />
+            </svg>
+          </i>
+        </div>
       </div>
     </div>
     <div
@@ -312,11 +328,11 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
       class="base width_full height_full"
     >
       <div
-        class="base display_flex center_mobile_base flexWrap_nowrap center_mobile_base"
+        class="base display_flex position_relative center_mobile_base flexWrap_nowrap center_mobile_base"
       >
         <select
           autocomplete="off"
-          class="base block appearance select flexGrow_1 base block appearance input display_flex width_full position_relative input_itself_root_base"
+          class="base block appearance select flexGrow_1 input paddedInput_base base block appearance input display_flex width_full position_relative input_itself_root_base"
         >
           <option
             value="a"
@@ -334,21 +350,25 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
             Value 3
           </option>
         </select>
-        <i
-          class="base display_block medium_mobile_base 4_mobile_base flexShrink_0"
-          role="presentation"
+        <div
+          class="base 4_mobile_base display_flex height_full position_absolute pointerEvents_none center_mobile_base flexShrink_0 arrow"
         >
-          <svg
-            class="base display_block width_full height_full"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
+          <i
+            class="base display_block medium_mobile_base"
+            role="presentation"
           >
-            <path
-              d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
-            />
-          </svg>
-        </i>
+            <svg
+              class="base display_block width_full height_full"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+              />
+            </svg>
+          </i>
+        </div>
       </div>
     </div>
     <div
@@ -386,11 +406,11 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
       class="base width_full height_full"
     >
       <div
-        class="base display_flex center_mobile_base flexWrap_nowrap center_mobile_base"
+        class="base display_flex position_relative center_mobile_base flexWrap_nowrap center_mobile_base"
       >
         <select
           autocomplete="off"
-          class="base block appearance select flexGrow_1 base block appearance input display_flex width_full position_relative input_itself_root_base"
+          class="base block appearance select flexGrow_1 input paddedInput_base base block appearance input display_flex width_full position_relative input_itself_root_base"
         >
           <option
             value="a"
@@ -408,21 +428,25 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
             Value 3
           </option>
         </select>
-        <i
-          class="base display_block medium_mobile_base 4_mobile_base flexShrink_0"
-          role="presentation"
+        <div
+          class="base 4_mobile_base display_flex height_full position_absolute pointerEvents_none center_mobile_base flexShrink_0 arrow"
         >
-          <svg
-            class="base display_block width_full height_full"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
+          <i
+            class="base display_block medium_mobile_base"
+            role="presentation"
           >
-            <path
-              d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
-            />
-          </svg>
-        </i>
+            <svg
+              class="base display_block width_full height_full"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+              />
+            </svg>
+          </i>
+        </div>
       </div>
     </div>
     <div
@@ -474,27 +498,31 @@ exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
         </svg>
       </i>
       <div
-        class="base display_flex center_mobile_base flexWrap_nowrap center_mobile_base"
+        class="base display_flex position_relative center_mobile_base flexWrap_nowrap center_mobile_base"
       >
         <select
           autocomplete="off"
-          class="base block appearance select flexGrow_1 base block appearance input display_flex width_full position_relative input_itself_root_base input_itself_prefixed_base"
+          class="base block appearance select flexGrow_1 input paddedInput_base base block appearance input display_flex width_full position_relative input_itself_root_base input_itself_prefixed_base"
         />
-        <i
-          class="base display_block medium_mobile_base 4_mobile_base flexShrink_0"
-          role="presentation"
+        <div
+          class="base 4_mobile_base display_flex height_full position_absolute pointerEvents_none center_mobile_base flexShrink_0 arrow"
         >
-          <svg
-            class="base display_block width_full height_full"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
+          <i
+            class="base display_block medium_mobile_base"
+            role="presentation"
           >
-            <path
-              d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
-            />
-          </svg>
-        </i>
+            <svg
+              class="base display_block width_full height_full"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+              />
+            </svg>
+          </i>
+        </div>
       </div>
     </div>
     <div
