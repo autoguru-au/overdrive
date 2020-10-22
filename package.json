@@ -50,7 +50,7 @@
 	},
 	"dependencies": {
 		"@autoguru/babel-preset": "1.0.97",
-		"@autoguru/eslint-plugin": "1.0.85",
+		"@autoguru/eslint-plugin": "1.1.1",
 		"@autoguru/jest-preset": "1.0.97",
 		"@babel/core": "7.12.3",
 		"@babel/runtime-corejs3": "7.12.1",
