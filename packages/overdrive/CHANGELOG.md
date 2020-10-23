@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 2.1.2
+
+### Patch Changes
+
+-   1d4b39e: **SelectInput**: Increases target click area to cover the full
+    width of component.
+
 ## 2.1.1
 
 ### Minor Changes
