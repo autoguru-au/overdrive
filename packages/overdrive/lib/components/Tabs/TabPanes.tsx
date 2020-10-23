@@ -5,6 +5,7 @@ import flattenChildren from 'react-keyed-flatten-children';
 import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
+
 import * as styleRefs from './TabPanes.treat';
 
 interface TabPanesContextValue {

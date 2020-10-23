@@ -9,11 +9,14 @@ import {
 } from 'react';
 import { useStyles } from 'react-treat';
 
+import { noop } from '../../utils';
 import { Box } from '../Box';
 import { Icon } from '../Icon';
 import { Inline } from '../Inline';
 import { useTextStyles } from '../Text';
+
 import { Bubble } from './Bubble';
+
 import * as styleRefs from './Pagination.treat';
 
 interface OnChangeObject {
@@ -42,7 +45,7 @@ const NavButton: FunctionComponent<NavButtonProps> = ({
 	icon,
 	disabled,
 	label = '',
-	onClick = () => void 0,
+	onClick = noop,
 }) => {
 	const styles = useStyles(styleRefs);
 	return (
@@ -101,7 +104,7 @@ export const Pagination: FunctionComponent<Props> = ({
 	activePage,
 	numPagesDisplayed = 5,
 	loading = false,
-	onChange = () => undefined,
+	onChange = noop,
 }) => {
 	const numPages: number = useMemo(() => calcPagesNum(total, pageSize), [
 		total,

@@ -5,7 +5,9 @@ import { useStyles } from 'react-treat';
 
 import type { BoxStyleProps } from '../Box';
 import { Box } from '../Box';
+
 import { Divider } from './Divider';
+
 import * as styleRefs from './Stack.treat';
 
 export interface Props extends Pick<BoxStyleProps, 'is' | 'width'> {

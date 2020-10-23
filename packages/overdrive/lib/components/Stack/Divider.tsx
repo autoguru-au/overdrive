@@ -3,6 +3,7 @@ import { FunctionComponent } from 'react';
 import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
+
 import * as styleRefs from './Divider.treat';
 
 export const Divider: FunctionComponent = () => {

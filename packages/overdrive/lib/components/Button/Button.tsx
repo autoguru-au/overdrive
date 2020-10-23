@@ -19,6 +19,7 @@ import { Box, useBoxStyles } from '../Box';
 import { Icon } from '../Icon';
 import { ProgressSpinner } from '../ProgressSpinner';
 import { useTextStyles } from '../Text';
+
 import * as styleRefs from './Button.treat';
 
 type ButtonPrimitive = ButtonHTMLAttributes<HTMLButtonElement>;

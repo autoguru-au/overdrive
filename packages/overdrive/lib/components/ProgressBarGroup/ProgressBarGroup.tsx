@@ -5,6 +5,7 @@ import { useStyles } from 'react-treat';
 import { Box } from '../Box';
 import { ProgressBar } from '../ProgressBar';
 import { Text } from '../Text';
+
 import * as styleRefs from './ProgressBarGroup.treat';
 
 export interface Props {

@@ -6,8 +6,10 @@ import { useStyles } from 'react-treat';
 import { Box } from '../Box';
 import { CheckableBase } from '../private/CheckableBase';
 import { useCheckableStyles } from '../private/CheckableBase/useCheckableStyles';
-import * as styleRefs from './Radio.treat';
+
 import { useRadioContext } from './RadioGroup';
+
+import * as styleRefs from './Radio.treat';
 
 export interface Props {
 	value: string;

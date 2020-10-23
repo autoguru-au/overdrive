@@ -19,6 +19,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { useTextStyles } from '../Text';
+
 import * as styleRefs from './TabList.treat';
 
 export interface Props {
@@ -92,9 +93,9 @@ export const TabList: FunctionComponent<Props> = ({
 	};
 
 	const handleStartButton = () =>
-		void scrollToItem(-wrapperRef.current?.clientWidth!);
+		void scrollToItem(-wrapperRef.current!.clientWidth!);
 	const handleEndButton = () =>
-		void scrollToItem(wrapperRef.current?.clientWidth!);
+		void scrollToItem(wrapperRef.current!.clientWidth!);
 
 	useEffect(() => {
 		const win = ownerWindow(wrapperRef.current!);

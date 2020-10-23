@@ -2,6 +2,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@autoguru/icons';
 import * as React from 'react';
 import { memo, NamedExoticComponent } from 'react';
 
+import { noop } from '../../utils';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { Inline } from '../Inline';
@@ -20,7 +21,7 @@ export interface Props {
 }
 
 export const SimplePagination: NamedExoticComponent<Props> = memo(
-	({ hasNext = false, hasPrevious = false, onChange = () => undefined }) => {
+	({ hasNext = false, hasPrevious = false, onChange = noop }) => {
 		const handleClick = (direction: EChangeDirection) => () => {
 			onChange(direction);
 		};

@@ -4,8 +4,10 @@ import { FunctionComponent, useContext } from 'react';
 import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
-import * as styleRefs from './BulletList.treat';
+
 import { BulletListContext, bulletMap } from './context';
+
+import * as styleRefs from './BulletList.treat';
 
 export interface Props {
 	className?: string;

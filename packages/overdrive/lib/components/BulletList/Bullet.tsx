@@ -8,9 +8,11 @@ import {
 import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
-import * as styleRefs from './Bullet.treat';
+
 import { BulletList } from './BulletList';
 import { BulletListContext, bulletMap, BulletType } from './context';
+
+import * as styleRefs from './Bullet.treat';
 
 export interface Props {
 	children: ReactChild;

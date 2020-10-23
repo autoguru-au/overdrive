@@ -5,6 +5,7 @@ import { useStyles } from 'react-treat';
 
 import { Box } from '../../Box';
 import { useTextStyles } from '../../Text';
+
 import * as styleRefs from './NotchedBase.treat';
 
 const ACTIVE_SCALING_FACTOR = 0.7777;

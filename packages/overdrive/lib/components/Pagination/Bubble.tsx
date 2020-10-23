@@ -9,6 +9,7 @@ import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
 import { useTextStyles } from '../Text';
+
 import * as styleRefs from './Pagination.treat';
 
 export interface Props {

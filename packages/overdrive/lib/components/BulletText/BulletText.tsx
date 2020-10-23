@@ -5,6 +5,7 @@ import { useStyles } from 'react-treat';
 import { Box, BoxStyleProps } from '../Box';
 import { Inline } from '../Inline';
 import { Text } from '../Text';
+
 import * as styleRefs from './BulletText.treat';
 
 export interface Props extends Partial<Pick<BoxStyleProps, 'is'>> {

@@ -5,6 +5,7 @@ import { useStyles } from 'react-treat';
 
 import { Box, useBoxStyles } from '../Box';
 import { useTextStyles } from '../Text';
+
 import * as styleRefs from './Switch.treat';
 
 export interface Props {

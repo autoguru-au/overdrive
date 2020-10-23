@@ -3,6 +3,7 @@ import { useStyles } from 'react-treat';
 
 import type { BoxStyleProps } from '../Box';
 import { useBoxStyles } from '../Box';
+
 import * as styleRefs from './useTextStyles.treat';
 
 export interface TextStyleProps {

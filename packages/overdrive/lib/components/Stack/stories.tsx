@@ -2,6 +2,7 @@ import { select } from '@storybook/addon-knobs';
 import * as React from 'react';
 
 import { Text } from '../Text';
+
 import { Stack } from '.';
 
 export default { title: 'Foundation/Layout/Stack', component: Stack };

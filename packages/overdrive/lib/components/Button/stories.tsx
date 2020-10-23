@@ -4,6 +4,7 @@ import { ComponentProps } from 'react';
 
 import { Column, Columns } from '../Columns';
 import { Icon } from '../Icon';
+
 import { Button } from '.';
 
 export default {

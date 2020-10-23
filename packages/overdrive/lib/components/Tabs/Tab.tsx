@@ -16,9 +16,11 @@ import { useStyles } from 'react-treat';
 import { useBoxStyles } from '../Box';
 import { Inline } from '../Inline';
 import { Text, useTextStyles } from '../Text';
-import * as styleRefs from './Tab.treat';
+
 import { TabListContext } from './TabList';
 import { TabsContext } from './Tabs';
+
+import * as styleRefs from './Tab.treat';
 
 export interface Props {
 	children: ReactText;

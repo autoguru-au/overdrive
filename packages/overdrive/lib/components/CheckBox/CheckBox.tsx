@@ -4,11 +4,13 @@ import * as React from 'react';
 import { FunctionComponent, memo, ReactNode } from 'react';
 import { useStyles } from 'react-treat';
 
+import { noop } from '../../utils';
 import { Box, useBoxStyles } from '../Box';
 import { Icon } from '../Icon';
+import { useTextStyles } from '../Text';
 import { CheckableBase } from '../private/CheckableBase';
 import { useCheckableStyles } from '../private/CheckableBase/useCheckableStyles';
-import { useTextStyles } from '../Text';
+
 import * as styleRefs from './CheckBox.treat';
 
 export interface Props {
@@ -31,8 +33,8 @@ export const CheckBox: FunctionComponent<Props> = memo(
 		name = '',
 		disabled = false,
 		checked = false,
-		onClick = () => undefined,
-		onChange = () => undefined,
+		onClick = noop,
+		onChange = noop,
 		children,
 	}) => {
 		const styles = useStyles(styleRefs);

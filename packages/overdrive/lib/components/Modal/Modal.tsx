@@ -8,6 +8,7 @@ import { useStyles } from 'react-treat';
 import { useEventCallback } from '../../utils';
 import { Box } from '../Box';
 import { Portal } from '../Portal';
+
 import * as styleRefs from './Modal.treat';
 
 export interface Props {
@@ -95,7 +96,7 @@ export const Modal: FunctionComponent<Props> = ({
 			return () => clearTimeout(timer);
 		}
 
-		return undefined;
+		return;
 	}, [state]);
 
 	return (

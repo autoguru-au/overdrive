@@ -179,3 +179,6 @@ export const arrayRingLookup = <T extends ArrayLike<unknown>>(
 	const len = collection.length;
 	return (index) => collection[((index % len) + len) % len];
 };
+
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+export const noop = () => {};

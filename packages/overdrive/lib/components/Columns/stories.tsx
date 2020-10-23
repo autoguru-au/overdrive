@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { Box } from '../Box';
+
 import { Column, Columns } from '.';
 
 export default {

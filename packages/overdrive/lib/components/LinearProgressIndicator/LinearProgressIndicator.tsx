@@ -3,6 +3,7 @@ import { memo, NamedExoticComponent } from 'react';
 import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
+
 import * as styleRefs from './LinearProgressIndicator.treat';
 
 export interface Props {

@@ -15,6 +15,7 @@ import { useBoxStyles } from '../Box';
 import { Icon } from '../Icon';
 import { Inline } from '../Inline';
 import { Text, useTextStyles } from '../Text';
+
 import * as styleRefs from './Anchor.treat';
 
 export interface Props {
@@ -43,7 +44,7 @@ export const Anchor: FunctionComponent<Props> = ({
 
 	children,
 
-	icon = undefined,
+	icon,
 }) => {
 	const styles = useStyles(styleRefs);
 	const textStyles = useTextStyles({

@@ -5,9 +5,11 @@ import { useContext } from 'react';
 import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
-import * as styleRefs from './TabPane.treat';
+
 import { TabPanesContext } from './TabPanes';
 import { TabsContext } from './Tabs';
+
+import * as styleRefs from './TabPane.treat';
 
 export const TabPane: FunctionComponent<{ id?: string }> = ({
 	children,

@@ -6,6 +6,7 @@ import { useStyles } from 'react-treat';
 import { Box } from '../Box';
 import { Icon } from '../Icon';
 import { withEnhancedInput } from '../private/InputBase';
+
 import * as styleRefs from './SelectInput.treat';
 
 export const SelectInput = withEnhancedInput<

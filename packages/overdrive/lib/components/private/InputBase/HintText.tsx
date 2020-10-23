@@ -5,6 +5,7 @@ import { useStyles } from 'react-treat';
 
 import { useBoxStyles } from '../../Box';
 import { Text } from '../../Text';
+
 import * as styleRefs from './HintText.treat';
 
 export interface Props {

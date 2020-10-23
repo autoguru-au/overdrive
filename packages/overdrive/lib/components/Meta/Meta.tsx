@@ -6,6 +6,7 @@ import { useStyles } from 'react-treat';
 import { Inline } from '..';
 import { Icon } from '../Icon';
 import { Text } from '../Text';
+
 import * as styleRefs from './Meta.treat';
 
 export interface Props {
@@ -15,7 +16,7 @@ export interface Props {
 }
 
 export const Meta: FunctionComponent<Props> = ({
-	icon = undefined,
+	icon,
 	label,
 	variant = 'primary',
 }) => {

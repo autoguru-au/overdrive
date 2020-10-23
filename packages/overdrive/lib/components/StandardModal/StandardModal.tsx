@@ -16,6 +16,7 @@ import { Heading } from '../Heading';
 import { Icon } from '../Icon';
 import { Modal } from '../Modal';
 import { useTextStyles } from '../Text';
+
 import * as styleRefs from './StandardModal.treat';
 
 export enum ESize {

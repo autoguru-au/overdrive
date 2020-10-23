@@ -16,6 +16,7 @@ import { Button } from '../Button';
 import { Column, Columns } from '../Columns';
 import { Icon } from '../Icon';
 import { Text, useTextStyles } from '../Text';
+
 import * as styleRefs from './Alert.treat';
 
 export interface Props {

@@ -21,9 +21,11 @@ import { useStyles } from 'react-treat';
 import { useInputControlledState } from '../../../utils';
 import { Box, useBoxStyles } from '../../Box';
 import { Icon } from '../../Icon';
+
 import { HintText } from './HintText';
-import * as inputStateStyleRefs from './InputState.treat';
 import { NotchedBase } from './NotchedBase';
+
+import * as inputStateStyleRefs from './InputState.treat';
 import * as styleRefs from './withEnhancedInput.treat';
 
 // The event handlers we'll allow the wrapped component to bind too

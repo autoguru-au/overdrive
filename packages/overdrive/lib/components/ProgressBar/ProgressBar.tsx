@@ -4,6 +4,7 @@ import { ComponentProps, memo } from 'react';
 import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
+
 import * as styleRefs from './ProgressBar.treat';
 
 // TODO: These should use the intent verbs

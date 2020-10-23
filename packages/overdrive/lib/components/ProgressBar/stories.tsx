@@ -3,6 +3,7 @@ import * as React from 'react';
 import { useEffect, useState } from 'react';
 
 import { Stack } from '../Stack';
+
 import { ProgressBar } from '.';
 
 export default {

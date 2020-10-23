@@ -48,9 +48,13 @@
 		"trailingComma": "all",
 		"useTabs": true
 	},
+	"resolutions": {
+		"react": "17.0.1",
+		"react-dom": "17.0.1"
+	},
 	"dependencies": {
 		"@autoguru/babel-preset": "1.0.97",
-		"@autoguru/eslint-plugin": "1.0.85",
+		"@autoguru/eslint-plugin": "1.1.1",
 		"@autoguru/jest-preset": "1.0.97",
 		"@babel/core": "7.12.3",
 		"@babel/runtime-corejs3": "7.12.1",
@@ -66,8 +70,8 @@
 		"@testing-library/jest-dom": "5.11.4",
 		"@testing-library/react": "11.1.0",
 		"@testing-library/react-hooks": "3.4.2",
-		"@testing-library/user-event": "12.1.8",
-		"@types/node": "14.11.10",
+		"@testing-library/user-event": "12.1.10",
+		"@types/node": "14.14.2",
 		"@types/react": "16.9.53",
 		"@types/react-dom": "16.9.8",
 		"@types/webpack-env": "1.15.3",
@@ -78,29 +82,29 @@
 		"concurrently": "5.3.0",
 		"core-js": "3.6.5",
 		"csstype": "3.0.3",
-		"eslint": "7.10.0",
+		"eslint": "7.11.0",
 		"glob": "7.1.6",
 		"husky": "4.3.0",
-		"jest": "26.5.3",
+		"jest": "26.6.0",
 		"lint-staged": "10.4.2",
 		"magic-string": "0.25.7",
 		"patch-package": "6.2.2",
 		"playroom": "0.22.3",
 		"plop": "2.7.4",
 		"prettier": "2.1.2",
-		"react": "16.14.0",
-		"react-dom": "16.14.0",
-		"react-test-renderer": "16.14.0",
+		"react": "17.0.1",
+		"react-dom": "17.0.1",
+		"react-test-renderer": "17.0.1",
 		"rimraf": "3.0.2",
 		"style-loader": "1.2.1",
-		"treat": "1.6.0",
-		"ts-loader": "8.0.5",
+		"treat": "1.6.1",
+		"ts-loader": "8.0.6",
 		"tslib": "2.0.3",
-		"typescript": "3.9.7",
+		"typescript": "4.0.3",
 		"webpack": "4.44.2"
 	},
 	"volta": {
-		"node": "14.8.0",
-		"yarn": "1.22.4"
+		"node": "15.0.1",
+		"yarn": "1.22.5"
 	}
 }

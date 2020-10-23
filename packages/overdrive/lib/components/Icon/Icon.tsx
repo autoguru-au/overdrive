@@ -7,6 +7,7 @@ import { useStyles } from 'react-treat';
 import { resolveResponsiveStyle, ResponsiveProp } from '../../utils';
 import type { BoxStyleProps } from '../Box';
 import { Box, useBoxStyles } from '../Box';
+
 import * as styleRefs from './Icon.treat';
 
 export interface Props {

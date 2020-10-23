@@ -3,9 +3,10 @@ import type { JSXElementConstructor } from 'react';
 import { useStyles } from 'react-treat';
 import type { Theme } from 'treat/theme';
 
-import * as resetStyleRefs from '../../reset/reset.treat';
 import type { ResponsiveProp } from '../../utils';
 import { resolveResponsiveStyle } from '../../utils';
+
+import * as resetStyleRefs from '../../reset/reset.treat';
 import * as styleRefs from './useBoxStyles.treat';
 
 interface Padding {

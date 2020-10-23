@@ -14,6 +14,7 @@ import { Box } from '../Box';
 import { Positioner } from '../Positioner';
 import { EAlignment } from '../Positioner/alignment';
 import { Text } from '../Text';
+
 import * as styleRefs from './Tooltip.treat';
 
 export interface Props {

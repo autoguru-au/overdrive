@@ -4,6 +4,7 @@ import { memo } from 'react';
 import { useStyles } from 'react-treat';
 
 import { Box, useBoxStyles } from '../Box';
+
 import * as styleRefs from './ProgressSpinner.treat';
 
 export interface Props {

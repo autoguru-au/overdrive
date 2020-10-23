@@ -2,6 +2,7 @@ import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 
 import { Text } from '../Text';
+
 import { Alert } from '.';
 
 export default { title: 'Components/Alert', component: Alert };

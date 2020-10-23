@@ -8,6 +8,7 @@ import { Button } from '../Button';
 import { Inline } from '../Inline';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
+
 import { Table, TableCell, TableHeadCell, TableRow, TableRowGroup } from '.';
 
 export default {

@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 
 import { Button } from '../Button';
 import { StandardModal } from '../StandardModal';
+
 import { AutoSuggest, AutoSuggestValue } from '.';
 
 type Value = string;

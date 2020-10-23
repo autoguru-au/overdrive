@@ -18,6 +18,7 @@ import { Alert } from '../Alert';
 import { Box } from '../Box';
 import { Portal } from '../Portal';
 import { Stack } from '../Stack';
+
 import * as styleRefs from './Toast.treat';
 
 type MessageType = ReactChild;

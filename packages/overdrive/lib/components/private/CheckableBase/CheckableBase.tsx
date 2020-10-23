@@ -5,6 +5,7 @@ import { useStyles } from 'react-treat';
 
 import { Box, useBoxStyles } from '../../Box';
 import { Text, useTextStyles } from '../../Text';
+
 import * as styleRefs from './CheckableBase.treat';
 
 export interface Props {

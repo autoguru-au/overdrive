@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import { Inline } from './Inline';
 import { Text } from '../Text';
 
-const TestComponent = () => <div>divider component</div>;
+const TestComponent = () => <div>divider component from test</div>;
 
 describe('<Inline />', () => {
 	it('should not throw', () => {
@@ -27,14 +27,18 @@ describe('<Inline />', () => {
 	});
 
 	it('should not be able to render components', () => {
-		expect(() =>
-			render(
-				<Inline dividers={TestComponent}>
-					<Text>A</Text>
-					<Text>B</Text>
-				</Inline>,
-			),
-		).not.toThrow();
+		const component = (
+			<Inline dividers={<TestComponent />}>
+				<Text>A</Text>
+				<Text>B</Text>
+			</Inline>
+		);
+
+		expect(() => render(component)).not.toThrow();
+
+		const { container } = render(component);
+
+		expect(container.firstChild).toMatchSnapshot();
 	});
 
 	it('should not render undefined children', () => {
@@ -44,7 +48,7 @@ describe('<Inline />', () => {
 				<Text>A</Text>
 				<Text>B</Text>
 				<Text>C</Text>
-				{undefined}
+				{false}
 			</Inline>,
 		);
 

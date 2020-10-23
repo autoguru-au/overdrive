@@ -10,6 +10,8 @@ import {
 	useRef,
 } from 'react';
 
+import { noop } from '../../utils';
+
 export const useOutsideClick = (
 	refs: Array<RefObject<HTMLElement>>,
 	onClickAway: () => void,
@@ -26,7 +28,7 @@ export const useOutsideClick = (
 			typeof document === 'undefined' ||
 			typeof onClickAway !== 'function'
 		)
-			return undefined;
+			return;
 
 		return bindEvent(document, 'mouseup', (event) => {
 			const shouldClose = refs
@@ -67,7 +69,7 @@ export interface Props {
 }
 
 export const OutsideClick: NamedExoticComponent<Props> = memo(
-	({ children, onOutsideClick = () => undefined }) => {
+	({ children, onOutsideClick = noop }) => {
 		const child = Children.only(children);
 
 		const rootClickRef = useRef<HTMLElement>(null);

@@ -27,11 +27,13 @@ import { Icon } from '../Icon';
 import { Portal } from '../Portal';
 import { Positioner } from '../Positioner';
 import { EAlignment } from '../Positioner/alignment';
-import { withEnhancedInput } from '../private/InputBase';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
-import * as styleRefs from './AutoSuggest.treat';
+import { withEnhancedInput } from '../private/InputBase';
+
 import { useLayoutSuggestionVisible } from './useLayoutSuggestionVisible';
+
+import * as styleRefs from './AutoSuggest.treat';
 
 export interface AutoSuggestValue<PayloadType> {
 	text: string;
@@ -692,8 +694,9 @@ const getNextIndex = <
 	do {
 		++itter;
 
-		const maybeNextIdx =
-			((returnIdx === -1 ? currentIndex : returnIdx) + direction) | 0;
+		const maybeNextIdx = Math.trunc(
+			(returnIdx === -1 ? currentIndex : returnIdx) + direction,
+		);
 
 		if (maybeNextIdx < 0) {
 			returnIdx = maybeNextIdx > maxIndex ? 0 : maxIndex;

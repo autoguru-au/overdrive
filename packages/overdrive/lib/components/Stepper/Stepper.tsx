@@ -17,6 +17,7 @@ import { Box, useBoxStyles } from '../Box';
 import { Column, Columns } from '../Columns';
 import { Icon } from '../Icon';
 import { Text, useTextStyles } from '../Text';
+
 import * as styleRefs from './Stepper.treat';
 
 export interface Props {

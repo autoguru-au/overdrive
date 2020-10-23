@@ -3,6 +3,7 @@ import * as React from 'react';
 
 import type { BoxStyleProps } from '../Box';
 import { Box } from '../Box';
+
 import { TextStyleProps, useTextStyles } from './useTextStyles';
 
 export interface Props extends TextStyleProps {

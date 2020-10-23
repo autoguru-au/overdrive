@@ -5,6 +5,7 @@ import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
 import { useTextStyles } from '../Text';
+
 import * as styleRefs from './Badge.treat';
 
 export interface Props {

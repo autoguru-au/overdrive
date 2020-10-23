@@ -5,6 +5,7 @@ import { useCallback, useRef, useState } from 'react';
 import { Button } from '../Button';
 import { EAlignment } from '../Positioner/alignment';
 import { TextInput } from '../TextInput';
+
 import { Flyout } from '.';
 
 const alignmentPicker = () =>

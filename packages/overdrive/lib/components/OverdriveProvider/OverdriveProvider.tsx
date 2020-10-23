@@ -4,7 +4,7 @@ import { ComponentProps, FunctionComponent, useEffect } from 'react';
 import { isBrowser } from '../../utils';
 import { ThemeProvider } from '../ThemeProvider/ThemeProvider';
 
-export interface Props extends ComponentProps<typeof ThemeProvider> {}
+export type Props = ComponentProps<typeof ThemeProvider>;
 
 export const OverdriveProvider: FunctionComponent<Props> = ({
 	theme,

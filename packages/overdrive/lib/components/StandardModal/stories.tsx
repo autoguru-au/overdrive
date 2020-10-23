@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
+
 import { StandardModal } from '.';
 
 export default {

@@ -4,6 +4,7 @@ import { ComponentProps, FunctionComponent } from 'react';
 import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
+
 import * as styleRefs from './Section.treat';
 
 export interface Props extends Pick<ComponentProps<typeof Box>, 'paddingX'> {

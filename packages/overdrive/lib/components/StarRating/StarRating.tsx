@@ -14,6 +14,7 @@ import { Box, useBoxStyles } from '../Box';
 import { Icon } from '../Icon';
 import { Inline } from '../Inline';
 import { Text } from '../Text';
+
 import * as styleRefs from './StarRating.treat';
 
 const totalStars = 5;

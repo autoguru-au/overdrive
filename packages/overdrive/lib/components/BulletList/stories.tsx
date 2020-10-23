@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { Text } from '../Text';
+
 import { Bullet, BulletList } from '.';
 
 export default {

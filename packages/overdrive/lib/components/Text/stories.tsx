@@ -2,6 +2,7 @@ import { select } from '@storybook/addon-knobs';
 import * as React from 'react';
 
 import { Stack } from '../Stack';
+
 import { Text } from '.';
 
 const sizeScale = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];

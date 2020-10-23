@@ -133,3 +133,35 @@ exports[`<Inline /> should match snapshot for no dividers 1`] = `
   </div>
 </div>
 `;
+
+exports[`<Inline /> should not be able to render components 1`] = `
+<div
+  class="base display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 2_mobile_base"
+>
+  <div
+    class="base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+  >
+    <span
+      class="base textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
+    >
+      A
+    </span>
+    <div
+      class="base 2_mobile_base 2_mobile_base"
+    >
+      <div>
+        divider component from test
+      </div>
+    </div>
+  </div>
+  <div
+    class="base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+  >
+    <span
+      class="base textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
+    >
+      B
+    </span>
+  </div>
+</div>
+`;

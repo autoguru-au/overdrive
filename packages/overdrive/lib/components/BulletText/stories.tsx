@@ -4,6 +4,7 @@ import * as React from 'react';
 
 import { Icon } from '../Icon';
 import { Stack } from '../Stack';
+
 import { BulletText } from '.';
 
 const baseProps = () => ({

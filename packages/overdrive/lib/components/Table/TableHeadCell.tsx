@@ -12,7 +12,9 @@ import { Icon } from '../Icon';
 import { Inline } from '../Inline';
 import { Text } from '../Text';
 import { VisuallyHidden } from '../VisuallyHidden';
+
 import { useTableContext } from './context';
+
 import * as styleRefs from './TableHeadCell.treat';
 
 type Sort = 'asc' | 'desc' | 'none';

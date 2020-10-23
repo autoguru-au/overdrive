@@ -4,6 +4,7 @@ import { useStyles } from 'react-treat';
 
 import type { BoxStyleProps } from '../Box';
 import { Box } from '../Box';
+
 import * as styleRefs from './LoadingBox.treat';
 
 export interface Props

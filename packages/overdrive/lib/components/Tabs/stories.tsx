@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 import { Stack } from '../Stack';
 import { StarRating } from '../StarRating';
+
 import { Tab, TabList, TabPane, TabPanes, Tabs } from '.';
 
 export default { title: 'Components/Tabs' };

@@ -8,7 +8,9 @@ import type { Alignment } from '../../utils';
 import { alignmentToFlexAlignment } from '../../utils';
 import { Box } from '../Box';
 import { Text } from '../Text';
+
 import { useTableContext } from './context';
+
 import * as styleRefs from './TableCell.treat';
 
 export interface Props extends Partial<Pick<AriaAttributes, 'aria-label'>> {
