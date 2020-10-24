@@ -101,7 +101,7 @@
 		"ts-loader": "8.0.6",
 		"tslib": "2.0.3",
 		"typescript": "4.0.3",
-		"webpack": "4.44.2"
+		"webpack": "5.2.0"
 	},
 	"volta": {
 		"node": "15.0.1",
