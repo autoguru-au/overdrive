@@ -12,7 +12,6 @@ import * as styleRefs from './SelectInput.treat';
 export const SelectInput = withEnhancedInput<
 	{
 		children: ReactNode[];
-		c;
 	},
 	HTMLSelectElement
 >(
