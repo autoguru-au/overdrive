@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.1.3
+
+### Patch Changes
+
+-   c81a433: **SelectInput**: Fixes wrong prop type needed
+
 ## 2.1.2
 
 ### Patch Changes
