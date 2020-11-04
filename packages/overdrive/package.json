@@ -24,7 +24,7 @@
 	"dependencies": {
 		"@autoguru/icons": "^1.4.6",
 		"@autoguru/utilities": "^1.0.97",
-		"@popperjs/core": "^2.5.3",
+		"@popperjs/core": "^2.5.4",
 		"clsx": "^1.1.1",
 		"csstype": "3.0.4",
 		"react-focus-lock": "^2.4.1",
@@ -33,8 +33,8 @@
 	},
 	"devDependencies": {
 		"@autoguru/tsconfig": "1.0.78",
-		"@types/react": "16.9.53",
-		"@types/react-dom": "16.9.8",
+		"@types/react": "16.9.55",
+		"@types/react-dom": "16.9.9",
 		"react": "17.0.1",
 		"react-dom": "17.0.1",
 		"treat": "1.6.1"
