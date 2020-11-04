@@ -685,6 +685,8 @@ const getNextIndex = <
 	currentIndex: number,
 	suggestions: Value[],
 ): number => {
+	if (!Array.isArray(suggestions) || suggestions.length === 0) return -1;
+
 	const maxIndex = suggestions.length - 1;
 
 	let itter = -1;
@@ -704,7 +706,7 @@ const getNextIndex = <
 			returnIdx = maybeNextIdx > maxIndex ? 0 : maybeNextIdx;
 		}
 
-		shouldSkip = suggestions[returnIdx].skip ?? false;
+		shouldSkip = suggestions[returnIdx]?.skip ?? false;
 	} while (shouldSkip && itter <= maxIndex);
 
 	return itter > maxIndex ? -1 : returnIdx;
