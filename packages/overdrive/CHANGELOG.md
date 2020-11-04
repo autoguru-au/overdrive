@@ -1,5 +1,14 @@
 # @autoguru/overdrive
 
+## 2.1.4
+
+### Patch Changes
+
+-   a54636d: **AutoSuggest**: Fix's it so if Suggestions is ever undefined or
+    empty, that the nextFn doesnt fail
+-   dec98ef: **StandardModal**: The main region to be wrapped in a flex to allow
+    stretching children
+
 ## 2.1.3
 
 ### Patch Changes
