@@ -134,6 +134,8 @@ export const StandardModal: FunctionComponent<Props> = ({
 					</Box>
 					<Box
 						is="main"
+						display="flex"
+						flexDirection="column"
 						flexGrow={1}
 						height="full"
 						className={styles.content}>

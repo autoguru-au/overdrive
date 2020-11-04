@@ -77,7 +77,7 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
             </button>
           </header>
           <main
-            class="base height_full flexGrow_1 content"
+            class="base display_flex height_full column_mobile_base flexGrow_1 content"
           >
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis convallis neque a laoreet maximus. Vestibulum hendrerit quam at mi venenatis faucibus at vel nisi. In ut risus et ipsum tincidunt tempor. Suspendisse potenti. Praesent faucibus posuere risus, at congue mauris porttitor ut. Donec sit amet elit vitae purus dictum aliquet quis ut ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum dui sapien, porttitor ac erat vel, malesuada rutrum mauris. Nam arcu tellus, pretium ut aliquet eget, ultrices vel est. Maecenas dapibus volutpat eros a volutpat.
@@ -170,7 +170,7 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
             </button>
           </header>
           <main
-            class="base height_full flexGrow_1 content"
+            class="base display_flex height_full column_mobile_base flexGrow_1 content"
           />
         </article>
       </div>
