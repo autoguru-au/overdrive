@@ -23,7 +23,6 @@ export const Badge = memo<Props>(
 			size: '2',
 			noWrap: true,
 			fontWeight: 'semiBold',
-			colour: 'white',
 		});
 		const inverted = look === 'inverted';
 

@@ -5,6 +5,7 @@ export const label = style(({ typography }) => ({
 	textOverflow: 'ellipsis',
 	letterSpacing: '0.5px',
 	textTransform: 'uppercase',
+	colour: 'white',
 }));
 
 // TODO: Derive the inverted colours from a token
