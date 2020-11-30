@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 2.1.6
+
+### Patch Changes
+
+-   463422c: **Badge**: Fixes default text style colour incorrect style ordering
+    ordering
+
 ## 2.1.5
 
 ### Patch Changes
