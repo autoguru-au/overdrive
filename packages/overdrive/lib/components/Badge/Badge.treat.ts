@@ -1,11 +1,10 @@
 import { style, styleMap } from 'treat';
 
-export const label = style(({ typography, colours }) => ({
+export const label = style(({ typography }) => ({
 	lineHeight: typography.size['2'].fontSize,
 	textOverflow: 'ellipsis',
 	letterSpacing: '0.5px',
 	textTransform: 'uppercase',
-	color: colours.gamut.white,
 }));
 
 // TODO: Derive the inverted colours from a token

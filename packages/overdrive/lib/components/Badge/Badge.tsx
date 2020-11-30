@@ -23,6 +23,7 @@ export const Badge = memo<Props>(
 			size: '2',
 			noWrap: true,
 			fontWeight: 'semiBold',
+			colour: 'unset',
 		});
 		const inverted = look === 'inverted';
 
@@ -49,9 +50,11 @@ export const Badge = memo<Props>(
 						display="block"
 						overflow="hidden"
 						className={[
-							styles.label,
 							textStyles,
-							inverted && styles.colours.inverted[colour].text,
+							styles.label,
+							inverted
+								? styles.colours.inverted[colour].text
+								: useTextStyles({ colour: 'white' }),
 						]}>
 						{label}
 					</Box>
