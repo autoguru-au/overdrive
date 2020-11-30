@@ -1,4 +1,5 @@
 import { invariant } from '@autoguru/utilities';
+import clsx from 'clsx';
 import * as React from 'react';
 import { memo } from 'react';
 import { useStyles } from 'react-treat';
@@ -48,11 +49,10 @@ export const Badge = memo<Props>(
 						is="span"
 						display="block"
 						overflow="hidden"
-						className={[
-							styles.label,
-							textStyles,
-							inverted && styles.colours.inverted[colour].text,
-						]}>
+						className={clsx(styles.label, textStyles, {
+							[styles.colours.inverted[colour].text]: inverted,
+							[styles.colours.default.text]: !inverted,
+						})}>
 						{label}
 					</Box>
 				</Box>
