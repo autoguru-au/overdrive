@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 2.1.5
+
+### Patch Changes
+
+-   42057f4: **Badge**: Fixes inverted text style colours and incorrect ordering
+    caused by [treat](https://github.com/seek-oss/treat)
+
 ## 2.1.4
 
 ### Patch Changes
