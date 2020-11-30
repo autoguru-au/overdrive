@@ -10,9 +10,6 @@ export const label = style(({ typography }) => ({
 // TODO: Derive the inverted colours from a token
 export const colours = {
 	default: styleMap((theme) => ({
-		defaultText: {
-			color: theme.colours.gamut.white,
-		},
 		neutral: {
 			backgroundColor: theme.colours.intent.neutral.background,
 		},
