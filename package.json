@@ -80,7 +80,7 @@
 		"browserslist-config-autoguru": "1.0.88",
 		"chromatic": "5.4.0",
 		"concurrently": "5.3.0",
-		"core-js": "3.7.0",
+		"core-js": "3.8.1",
 		"csstype": "^3.0.5",
 		"eslint": "7.14.0",
 		"glob": "7.1.6",
