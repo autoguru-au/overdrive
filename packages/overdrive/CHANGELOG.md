@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.1.7
+
+### Patch Changes
+
+-   977a99f: **Section**: Introduces a new small option for width values
+
 ## 2.1.6
 
 ### Patch Changes
