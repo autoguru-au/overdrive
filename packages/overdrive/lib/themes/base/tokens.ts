@@ -89,6 +89,7 @@ export const tokens: Tokens = {
 		largeDesktop: 1440, // 1080p width (1920 - 25%)
 	},
 	contentWidth: {
+		small: 592,
 		large: 1344,
 		medium: 940,
 	},

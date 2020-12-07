@@ -79,6 +79,7 @@ export interface ForegroundColours {
 export interface Tokens {
 	breakpoints: Record<Breakpoints, number>;
 	contentWidth: {
+		small: number;
 		medium: number;
 		large: number;
 	};
