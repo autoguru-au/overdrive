@@ -7,15 +7,19 @@ export const container = style({
 export const modal = style((theme) => ({
 	width: '100vw',
 	height: 'auto',
+	alignSelf: 'flex-end',
 	minHeight: `calc(3 * ${theme.space['8']})`,
 	maxHeight: `calc(100vh - ${theme.space['8']})`,
 	borderRadius: `${theme.space['2']} ${theme.space['2']} 0 0`,
 	...theme.utils.responsiveStyle({
+		tablet: {
+			alignSelf: 'center',
+			borderRadius: `${theme.space['1']}`,
+		},
 		desktop: {
 			maxWidth: `calc(100% - ${theme.space['9']} * 2)`,
 			height: 'auto',
 			maxHeight: `calc(100vh - ${theme.space['9']} * 2)`,
-			borderRadius: `${theme.space['1']}`,
 			boxShadow:
 				'0 0 32px 0 rgba(0,0,0, 0.012), 0 24px 96px 0 rgba(0,0,0, 0.08)',
 			marginTop: 0,
