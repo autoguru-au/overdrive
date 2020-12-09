@@ -1,5 +1,13 @@
 # @autoguru/overdrive
 
+## 2.1.8
+
+### Patch Changes
+
+-   d9b96c6: **StandardModal**: Fixes mobile view to be pinned to the bottom and
+    table view is all rounded corners
+-   99bc4f9: **Stepper**: Fixes extra re-render on each change
+
 ## 2.1.7
 
 ### Patch Changes
