@@ -186,13 +186,14 @@ export const Stepper: FunctionComponent<Props> = ({
 	);
 
 	if (prevValue.current !== value && value !== undefined) {
-		dispatch({
-			type: EActionType.VALUE,
-			value,
-			step,
-			min,
-			max,
-		});
+		if (value !== state.value)
+			dispatch({
+				type: EActionType.VALUE,
+				value,
+				step,
+				min,
+				max,
+			});
 		prevValue.current = value;
 	}
 
