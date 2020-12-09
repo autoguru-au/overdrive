@@ -96,7 +96,7 @@ export const Modal: FunctionComponent<Props> = ({
 			return () => clearTimeout(timer);
 		}
 
-		return;
+		return null;
 	}, [state]);
 
 	return (
