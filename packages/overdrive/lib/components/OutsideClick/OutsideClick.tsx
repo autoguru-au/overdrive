@@ -28,7 +28,7 @@ export const useOutsideClick = (
 			typeof document === 'undefined' ||
 			typeof onClickAway !== 'function'
 		)
-			return;
+			return undefined;
 
 		return bindEvent(document, 'mouseup', (event) => {
 			const shouldClose = refs

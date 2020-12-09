@@ -4,7 +4,6 @@ import {
 	createContext,
 	FunctionComponent,
 	OlHTMLAttributes,
-	ReactChild,
 	useContext,
 } from 'react';
 import { useStyles } from 'react-treat';
@@ -29,7 +28,6 @@ export interface Props
 	extends Pick<OlHTMLAttributes<HTMLOListElement>, 'start'> {
 	type?: ListStyleType;
 	className?: string;
-	children?: ReactChild | ReactChild[];
 }
 
 export interface ItemProps {
