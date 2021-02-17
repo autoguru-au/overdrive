@@ -26,6 +26,9 @@ const sizeScaleDefaults = {
 export const Heading: FunctionComponent<Props> = ({
 	is = 'h1',
 	align,
+	fontWeight = 'bold',
+	noWrap,
+	transform,
 	colour = 'dark',
 	size = sizeScaleDefaults[is],
 	id,
@@ -40,7 +43,9 @@ export const Heading: FunctionComponent<Props> = ({
 				size,
 				align,
 				colour,
-				fontWeight: 'bold',
+				noWrap,
+				transform,
+				fontWeight,
 			}),
 			className,
 		]}>
