@@ -1,5 +1,13 @@
 # @autoguru/overdrive
 
+## 2.1.9
+
+### Patch Changes
+
+-   252f512: Upgrades treat to latest
+-   ca5cb40: **Heading**: Heading component _should_ pass all text style props
+    down
+
 ## 2.1.8
 
 ### Patch Changes
