@@ -51,16 +51,12 @@ jobs:
 
             - name: Chromatic (main)
               if: github.ref == 'refs/heads/main'
-              run:
-                  yarn run chromatic test --auto-accept-changes
-                  --exit-zero-on-changes
+              run: yarn run chromatic test --auto-accept-changes
               env:
                   CHROMATIC_APP_CODE: ${{ secrets.CHROMATIC_APP_CODE }}
             - name: Chromatic (prs)
               if: github.ref != 'refs/heads/main'
-              run:
-                  yarn run chromatic test --exit-zero-on-changes
-                  --exit-once-uploaded
+              run: yarn run chromatic test --exit-once-uploaded
               env:
                   CHROMATIC_APP_CODE: ${{ secrets.CHROMATIC_APP_CODE }}
 
