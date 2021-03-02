@@ -26,20 +26,21 @@ export const useLayoutSuggestionVisible = (
 						  suggestionListItem.offsetTop;
 
 				let { scrollTop } = suggestionListItem;
+				const { offsetHeight } = suggestionListItem;
 
 				if (itemOffsetRelativeToContainer < scrollTop) {
 					scrollTop = itemOffsetRelativeToContainer;
 				} else if (
 					itemOffsetRelativeToContainer + highlightItem.offsetHeight >
-					scrollTop + suggestionListItem.offsetHeight
+					scrollTop + offsetHeight
 				) {
 					scrollTop =
 						itemOffsetRelativeToContainer +
 						highlightItem.offsetHeight -
-						suggestionListItem.offsetHeight;
+						offsetHeight;
 				}
 
-				if (scrollTop !== suggestionListItem.scrollTop) {
+				if (scrollTop !== scrollTop) {
 					suggestionListItem.scrollTop = scrollTop;
 				}
 			}

@@ -84,14 +84,16 @@ const Loading: FunctionComponent<LoadingComponentProps> = ({
 	return (
 		<Inline is="span" space="3">
 			<NavButton disabled icon={ChevronLeftIcon} />
-			{new Array(placeholderBubblesNum).fill('').map((_, index) => (
-				<Bubble
-					key={index}
-					children=""
-					disabled
-					className={styles.disabled}
-				/>
-			))}
+			{Array.from({ length: placeholderBubblesNum })
+				.fill('')
+				.map((_, index) => (
+					<Bubble
+						key={index}
+						children=""
+						disabled
+						className={styles.disabled}
+					/>
+				))}
 
 			<NavButton disabled icon={ChevronRightIcon} />
 		</Inline>
@@ -168,7 +170,9 @@ function withinBoundaries(activePage: number, numPages: number): number {
 }
 
 function generateDefaultArray(numPages: number): number[] {
-	return new Array<number>(numPages).fill(-1).map((_, index) => index + 1);
+	return Array.from({ length: numPages })
+		.fill(-1)
+		.map((_, index) => index + 1);
 }
 
 function generateJumpForwardArray(
