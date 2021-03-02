@@ -1,5 +1,5 @@
 import { createTheme, Style } from 'treat';
-import { StyleWithSelectors } from 'treat/lib/types/types';
+import type { StyleWithSelectors } from 'treat/dist/declarations/src/types';
 
 import { Tokens } from './tokens';
 

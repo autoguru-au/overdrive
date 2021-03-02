@@ -1,4 +1,4 @@
-const TreatPlugin = require('treat/webpack-plugin');
+const { TreatPlugin } = require('treat/webpack-plugin');
 const { join } = require('path');
 
 const ourCodeFiles = [

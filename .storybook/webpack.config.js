@@ -1,4 +1,4 @@
-const TreatPlugin = require('treat/webpack-plugin');
+const { TreatPlugin } = require('treat/webpack-plugin');
 
 module.exports = ({ config: defaultConfig }) => {
 	delete defaultConfig.resolve.alias['core-js'];
