@@ -1,0 +1,42 @@
+diff --git a/node_modules/treat/dist/treat.cjs.dev.js b/node_modules/treat/dist/treat.cjs.dev.js
+index dc28ed4..6677fa6 100644
+--- a/node_modules/treat/dist/treat.cjs.dev.js
++++ b/node_modules/treat/dist/treat.cjs.dev.js
+@@ -399,11 +399,11 @@ function styleTree(makeStyleTree) {
+   return referenceTree;
+ }
+ 
+-const createTheme$1 = typeof window === 'undefined' ? createTheme : null;
+-const style$1 = typeof window === 'undefined' ? style : null;
+-const styleMap$1 = typeof window === 'undefined' ? styleMap : null;
+-const styleTree$1 = typeof window === 'undefined' ? styleTree : null;
+-const globalStyle$1 = typeof window === 'undefined' ? globalStyle : null;
++const createTheme$1 = createTheme;
++const style$1 = style;
++const styleMap$1 = styleMap;
++const styleTree$1 = styleTree;
++const globalStyle$1 = globalStyle;
+ 
+ exports.createTheme = createTheme$1;
+ exports.globalStyle = globalStyle$1;
+diff --git a/node_modules/treat/dist/treat.cjs.prod.js b/node_modules/treat/dist/treat.cjs.prod.js
+index f00b7b2..7272113 100644
+--- a/node_modules/treat/dist/treat.cjs.prod.js
++++ b/node_modules/treat/dist/treat.cjs.prod.js
+@@ -399,11 +399,11 @@ function styleTree(makeStyleTree) {
+   return referenceTree;
+ }
+ 
+-const createTheme$1 = typeof window === 'undefined' ? createTheme : null;
+-const style$1 = typeof window === 'undefined' ? style : null;
+-const styleMap$1 = typeof window === 'undefined' ? styleMap : null;
+-const styleTree$1 = typeof window === 'undefined' ? styleTree : null;
+-const globalStyle$1 = typeof window === 'undefined' ? globalStyle : null;
++const createTheme$1 = createTheme;
++const style$1 = style;
++const styleMap$1 = styleMap;
++const styleTree$1 = styleTree;
++const globalStyle$1 = globalStyle;
+ 
+ exports.createTheme = createTheme$1;
+ exports.globalStyle = globalStyle$1;
