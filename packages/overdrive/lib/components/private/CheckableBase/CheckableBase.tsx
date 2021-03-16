@@ -56,6 +56,7 @@ export const CheckableBase: FunctionComponent<Props> = ({
 				styles.root,
 				useBoxStyles({ is: 'button' }),
 				className,
+				{ [styles.disabled]: disabled },
 			]}>
 			<Box
 				is="input"

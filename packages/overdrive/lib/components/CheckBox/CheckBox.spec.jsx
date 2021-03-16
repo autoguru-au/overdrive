@@ -27,6 +27,13 @@ describe('<CheckBox />', () => {
 		).toMatchSnapshot();
 	});
 
+	it('should match the snapshot for a disable checkbox', () => {
+		expect(
+			render(<CheckBox disabled children="check label 1" value="1" />).container
+				.firstChild,
+		).toMatchSnapshot();
+	});
+
 	it.skip('should pass on className to dom element', () => {
 		expect(
 			render(<CheckBox className="check-class" />).container.firstChild,
