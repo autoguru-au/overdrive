@@ -1,5 +1,13 @@
 # @autoguru/overdrive
 
+## 2.2.0
+
+### Minor Changes
+
+-   667876a: **Checkboxes**: Disabled mode gets reduced opacity
+
+    **Radio**: Disabled mode gets reduced opacity
+
 ## 2.1.9
 
 ### Patch Changes
