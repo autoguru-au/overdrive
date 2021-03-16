@@ -45,3 +45,8 @@ export const checkableItem = style((theme) => ({
 		},
 	},
 }));
+
+export const disabled = style({
+	opacity: 0.6,
+	pointerEvents: 'none',
+});

@@ -386,11 +386,10 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 							Cheap trick to check if an arrow or click was used or not. We only _commit_ if a click or arrow
 							 */
 						state.previewText ===
-							suggestions[state.highlightIndex].text
-					) {
-						if (typeof onChange === 'function')
-							onChange(suggestions[state.highlightIndex]);
-					}
+							suggestions[state.highlightIndex].text &&
+						typeof onChange === 'function'
+					)
+						onChange(suggestions[state.highlightIndex]);
 
 					dispatch({ type: ActionTypes.INPUT_BLUR });
 				}, onBlur)}

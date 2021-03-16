@@ -60,14 +60,16 @@ export const StarRating: NamedExoticComponent<Props> = memo(
 		<Box className={className}>
 			<Inline space="4" alignY="center">
 				<Inline space="none" alignY="center">
-					{new Array(totalStars).fill(0).map((_, index) => (
-						<Star
-							key={index}
-							index={index}
-							rating={rating}
-							size={size}
-						/>
-					))}
+					{Array.from({ length: totalStars })
+						.fill(0)
+						.map((_, index) => (
+							<Star
+								key={index}
+								index={index}
+								rating={rating}
+								size={size}
+							/>
+						))}
 				</Inline>
 				{label === null ? null : (
 					<Text size={labelSizeMap.get(size)}>{label}</Text>
