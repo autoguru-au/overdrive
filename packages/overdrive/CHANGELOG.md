@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 2.2.1
+
+### Patch Changes
+
+-   0e10140: useBoxStyles: Base reset styles now spread individually into
+    element type reset styles
+
 ## 2.2.0
 
 ### Minor Changes
