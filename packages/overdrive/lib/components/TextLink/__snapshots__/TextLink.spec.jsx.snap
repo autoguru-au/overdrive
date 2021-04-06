@@ -3,11 +3,11 @@
 exports[`<TextLink /> should allow as override 1`] = `
 <a
   as="[object Object]"
-  class="base cursorPointer a"
+  class="cursorPointer a"
   rel="noopener noreferrer"
 >
   <span
-    class="base textAlign_left root_base fontWeight_bold_base sizes_4_base root_base pointerEvents_none"
+    class="textAlign_left root_base fontWeight_bold_base sizes_4_base root_base pointerEvents_none"
   >
     Test
   </span>
@@ -16,11 +16,11 @@ exports[`<TextLink /> should allow as override 1`] = `
 
 exports[`<TextLink /> should match the snapshot 1`] = `
 <a
-  class="base cursorPointer a"
+  class="cursorPointer a"
   rel="noopener noreferrer"
 >
   <span
-    class="base textAlign_left root_base fontWeight_bold_base sizes_4_base root_base pointerEvents_none"
+    class="textAlign_left root_base fontWeight_bold_base sizes_4_base root_base pointerEvents_none"
   />
 </a>
 `;

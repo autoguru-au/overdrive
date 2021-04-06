@@ -29,8 +29,8 @@ describe('<CheckBox />', () => {
 
 	it('should match the snapshot for a disable checkbox', () => {
 		expect(
-			render(<CheckBox disabled children="check label 1" value="1" />).container
-				.firstChild,
+			render(<CheckBox disabled children="check label 1" value="1" />)
+				.container.firstChild,
 		).toMatchSnapshot();
 	});
 

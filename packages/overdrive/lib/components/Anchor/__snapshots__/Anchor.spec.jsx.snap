@@ -2,21 +2,21 @@
 
 exports[`<Anchor /> should match snapshot with label, icon and to props 1`] = `
 <a
-  class="root root_base colours_link_base base cursorPointer a display_inline"
+  class="root root_base colours_link_base cursorPointer a display_inline"
   href="https://www.autoguru.com.au"
 >
   <div
-    class="base display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 2_mobile_base 2_mobile_base"
+    class="display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 2_mobile_base 2_mobile_base"
   >
     <div
-      class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+      class="2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
     >
       <i
-        class="base display_block small_mobile_base root_base colours_link_base"
+        class="display_block small_mobile_base root_base colours_link_base"
         role="presentation"
       >
         <svg
-          class="base display_block width_full height_full"
+          class="display_block width_full height_full"
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -27,10 +27,10 @@ exports[`<Anchor /> should match snapshot with label, icon and to props 1`] = `
       </i>
     </div>
     <div
-      class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+      class="2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
     >
       <span
-        class="base textAlign_left root_base colours_link_base fontWeight_bold_base sizes_4_base"
+        class="textAlign_left root_base colours_link_base fontWeight_bold_base sizes_4_base"
       >
         Hello World!
       </span>
@@ -41,34 +41,34 @@ exports[`<Anchor /> should match snapshot with label, icon and to props 1`] = `
 
 exports[`<Anchor /> should match snapshot without label 1`] = `
 <a
-  class="root root_base colours_link_base base cursorPointer a display_inline"
+  class="root root_base colours_link_base cursorPointer a display_inline"
 >
   <span
-    class="base textAlign_left root_base colours_link_base fontWeight_bold_base sizes_4_base"
+    class="textAlign_left root_base colours_link_base fontWeight_bold_base sizes_4_base"
   />
 </a>
 `;
 
 exports[`<Anchor /> when custom component should match snapshot with label, icon custom component 1`] = `
 <button
-  class="base appearance cursorPointer button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_4_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled root root_base colours_link_base display_inline"
+  class="appearance cursorPointer button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_4_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled root root_base colours_link_base display_inline"
   type="button"
 >
   <div
-    class="base height_full center_mobile_base center_mobile_base body_base"
+    class="height_full center_mobile_base center_mobile_base body_base"
   >
     <div
-      class="base display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 2_mobile_base 2_mobile_base"
+      class="display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 2_mobile_base 2_mobile_base"
     >
       <div
-        class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+        class="2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
       >
         <i
-          class="base display_block small_mobile_base root_base colours_link_base"
+          class="display_block small_mobile_base root_base colours_link_base"
           role="presentation"
         >
           <svg
-            class="base display_block width_full height_full"
+            class="display_block width_full height_full"
             viewBox="0 0 512 512"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -79,10 +79,10 @@ exports[`<Anchor /> when custom component should match snapshot with label, icon
         </i>
       </div>
       <div
-        class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+        class="2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
       >
         <span
-          class="base textAlign_left root_base colours_link_base fontWeight_bold_base sizes_4_base"
+          class="textAlign_left root_base colours_link_base fontWeight_bold_base sizes_4_base"
         >
           Hello World!
         </span>

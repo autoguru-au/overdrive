@@ -170,7 +170,6 @@ export const useBoxStyles = ({
 
 	return clsx(
 		typeof is === 'string' && [
-			resetStyles.base,
 			resetStyles.element[is as keyof typeof resetStyles.element],
 		],
 

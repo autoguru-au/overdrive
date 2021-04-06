@@ -1,12 +1,12 @@
 import { style } from 'treat';
 
-export const base = style({
+export const base = {
 	margin: 0,
 	padding: 0,
 	border: 0,
 	fontSize: '100%',
 	verticalAlign: 'baseline',
-});
+};
 
 const appearance = style({
 	appearance: 'none',
@@ -14,15 +14,16 @@ const appearance = style({
 
 const cursorPointer = style({ cursor: 'pointer' });
 
-const block = style({ display: 'block' });
-const list = style({ listStyle: 'none' });
+const block = style({ ...base, display: 'block' });
+const list = style({ ...base, listStyle: 'none' });
 
-const vAlignMiddle = style({ verticalAlign: 'middle' });
+const vAlignMiddle = style({ ...base, verticalAlign: 'middle' });
 
 const button = [
 	appearance,
 	cursorPointer,
 	style({
+		...base,
 		outline: 'none',
 		background: 'none',
 		userSelect: 'none',
@@ -63,11 +64,12 @@ const input = [
 const a = [
 	cursorPointer,
 	style({
+		...base,
 		textDecoration: 'none',
 	}),
 ];
 
-const table = style({ borderSpacing: 0, borderCollapse: 'collapse' });
+const table = style({ ...base, borderSpacing: 0, borderCollapse: 'collapse' });
 
 export const element = {
 	article: block,

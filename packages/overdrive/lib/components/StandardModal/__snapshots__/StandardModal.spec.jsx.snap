@@ -20,50 +20,50 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
   >
     <div
       aria-hidden="true"
-      class="base position_fixed backdropRoot_default_base place backdrop_root transition_base"
+      class="position_fixed backdropRoot_default_base place backdrop_root transition_base"
     />
     <div
-      class="base position_fixed overflow_hidden place root transition_base"
+      class="position_fixed overflow_hidden place root transition_base"
       role="presentation"
     >
       <div
         aria-hidden="false"
-        class="base display_flex height_full center_mobile_base center_mobile_base container"
+        class="display_flex height_full center_mobile_base center_mobile_base container"
         role="none presentation"
       >
         <article
           aria-labelledby="od-4"
           aria-modal="true"
-          class="base block 8_mobile_base display_flex backgroundColours_white_base column_mobile_base modal_base modalSizeStandard_base"
+          class="block 8_mobile_base display_flex backgroundColours_white_base column_mobile_base modal_base modalSizeStandard_base"
           role="dialog"
         >
           <header
-            class="base block 3_mobile_base 2_mobile_base 3_mobile_base 5_mobile_base display_flex width_full position_relative border_style border_colour_top_light_base border_colour_right_light_base border_colour_bottom_light_base border_colour_left_light_base 1_mobile_base center_mobile_base flexShrink_0 center_mobile_base"
+            class="block 3_mobile_base 2_mobile_base 3_mobile_base 5_mobile_base display_flex width_full position_relative border_style border_colour_top_light_base border_colour_right_light_base border_colour_bottom_light_base border_colour_left_light_base 1_mobile_base center_mobile_base flexShrink_0 center_mobile_base"
           >
             <div
-              class="base flexGrow_1"
+              class="flexGrow_1"
               id="od-4"
             >
               <h4
-                class="base root_base colours_dark_base fontWeight_bold_base sizes_4_base"
+                class="root_base colours_dark_base fontWeight_bold_base sizes_4_base"
               >
                 Hello World!
               </h4>
             </div>
             <button
               aria-label="close"
-              class="base appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_3_base minimal_defaults_base minimalStates_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
+              class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_3_base minimal_defaults_base minimalStates_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
               type="button"
             >
               <div
-                class="base height_full center_mobile_base center_mobile_base body_base"
+                class="height_full center_mobile_base center_mobile_base body_base"
               >
                 <i
-                  class="base display_block medium_mobile_base root_base colours_muted_base"
+                  class="display_block medium_mobile_base root_base colours_muted_base"
                   role="presentation"
                 >
                   <svg
-                    class="base display_block width_full height_full"
+                    class="display_block width_full height_full"
                     fill="currentColor"
                     focusable="false"
                     viewBox="0 0 24 24"
@@ -77,7 +77,7 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
             </button>
           </header>
           <main
-            class="base display_flex height_full column_mobile_base flexGrow_1 content"
+            class="display_flex height_full column_mobile_base flexGrow_1 content"
           >
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis convallis neque a laoreet maximus. Vestibulum hendrerit quam at mi venenatis faucibus at vel nisi. In ut risus et ipsum tincidunt tempor. Suspendisse potenti. Praesent faucibus posuere risus, at congue mauris porttitor ut. Donec sit amet elit vitae purus dictum aliquet quis ut ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum dui sapien, porttitor ac erat vel, malesuada rutrum mauris. Nam arcu tellus, pretium ut aliquet eget, ultrices vel est. Maecenas dapibus volutpat eros a volutpat.
@@ -115,48 +115,48 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
   >
     <div
       aria-hidden="true"
-      class="base position_fixed backdropRoot_default_base place backdrop_root transition_base"
+      class="position_fixed backdropRoot_default_base place backdrop_root transition_base"
     />
     <div
-      class="base position_fixed overflow_hidden place root transition_base"
+      class="position_fixed overflow_hidden place root transition_base"
       role="presentation"
     >
       <div
         aria-hidden="false"
-        class="base display_flex height_full center_mobile_base center_mobile_base container"
+        class="display_flex height_full center_mobile_base center_mobile_base container"
         role="none presentation"
       >
         <article
           aria-labelledby="od-3"
           aria-modal="true"
-          class="base block 8_mobile_base display_flex backgroundColours_white_base column_mobile_base modal_base modalSizeStandard_base"
+          class="block 8_mobile_base display_flex backgroundColours_white_base column_mobile_base modal_base modalSizeStandard_base"
           role="dialog"
         >
           <header
-            class="base block 3_mobile_base 2_mobile_base 3_mobile_base 5_mobile_base display_flex width_full position_relative border_style border_colour_top_light_base border_colour_right_light_base border_colour_bottom_light_base border_colour_left_light_base 1_mobile_base center_mobile_base flexShrink_0 center_mobile_base"
+            class="block 3_mobile_base 2_mobile_base 3_mobile_base 5_mobile_base display_flex width_full position_relative border_style border_colour_top_light_base border_colour_right_light_base border_colour_bottom_light_base border_colour_left_light_base 1_mobile_base center_mobile_base flexShrink_0 center_mobile_base"
           >
             <div
-              class="base flexGrow_1"
+              class="flexGrow_1"
               id="od-3"
             >
               <h4
-                class="base root_base colours_dark_base fontWeight_bold_base sizes_4_base"
+                class="root_base colours_dark_base fontWeight_bold_base sizes_4_base"
               />
             </div>
             <button
               aria-label="close"
-              class="base appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_3_base minimal_defaults_base minimalStates_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
+              class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_3_base minimal_defaults_base minimalStates_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
               type="button"
             >
               <div
-                class="base height_full center_mobile_base center_mobile_base body_base"
+                class="height_full center_mobile_base center_mobile_base body_base"
               >
                 <i
-                  class="base display_block medium_mobile_base root_base colours_muted_base"
+                  class="display_block medium_mobile_base root_base colours_muted_base"
                   role="presentation"
                 >
                   <svg
-                    class="base display_block width_full height_full"
+                    class="display_block width_full height_full"
                     fill="currentColor"
                     focusable="false"
                     viewBox="0 0 24 24"
@@ -170,7 +170,7 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
             </button>
           </header>
           <main
-            class="base display_flex height_full column_mobile_base flexGrow_1 content"
+            class="display_flex height_full column_mobile_base flexGrow_1 content"
           />
         </article>
       </div>

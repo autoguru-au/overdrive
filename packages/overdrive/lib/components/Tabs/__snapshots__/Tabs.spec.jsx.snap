@@ -2,20 +2,20 @@
 
 exports[`<Tabs /> should allow id overriding 1`] = `
 <div
-  class="base overflow_hidden center_mobile_base root_default_base"
+  class="overflow_hidden center_mobile_base root_default_base"
 >
   <div
-    class="base"
+    class=""
   >
     <div
       aria-orientation="horizontal"
-      class="base display_block width_full flexWrap_nowrap root_base colours_neutral_base noWrap"
+      class="display_block width_full flexWrap_nowrap root_base colours_neutral_base noWrap"
       role="tablist"
     >
       <button
         aria-controls="tab-1-title-0"
         aria-selected="true"
-        class="base appearance cursorPointer button 6_mobile_base display_inlineFlex backgroundColours_transparent_base center_mobile_base root_base colours_muted_base fontWeight_bold_base noWrap sizes_3_base root_default_base root_active_base"
+        class="appearance cursorPointer button 6_mobile_base display_inlineFlex backgroundColours_transparent_base center_mobile_base root_base colours_muted_base fontWeight_bold_base noWrap sizes_3_base root_default_base root_active_base"
         role="tab"
       >
         <span
@@ -27,7 +27,7 @@ exports[`<Tabs /> should allow id overriding 1`] = `
       <button
         aria-controls="tab-2-title-1"
         aria-selected="false"
-        class="base appearance cursorPointer button 6_mobile_base display_inlineFlex backgroundColours_transparent_base center_mobile_base root_base colours_muted_base fontWeight_bold_base noWrap sizes_3_base root_default_base"
+        class="appearance cursorPointer button 6_mobile_base display_inlineFlex backgroundColours_transparent_base center_mobile_base root_base colours_muted_base fontWeight_bold_base noWrap sizes_3_base root_default_base"
         role="tab"
         tabindex="-1"
       >
@@ -40,7 +40,7 @@ exports[`<Tabs /> should allow id overriding 1`] = `
       <button
         aria-controls="tab-3-title-2"
         aria-selected="false"
-        class="base appearance cursorPointer button 6_mobile_base display_inlineFlex backgroundColours_transparent_base center_mobile_base root_base colours_muted_base fontWeight_bold_base noWrap sizes_3_base root_default_base"
+        class="appearance cursorPointer button 6_mobile_base display_inlineFlex backgroundColours_transparent_base center_mobile_base root_base colours_muted_base fontWeight_bold_base noWrap sizes_3_base root_default_base"
         role="tab"
         tabindex="-1"
       >
@@ -57,27 +57,27 @@ exports[`<Tabs /> should allow id overriding 1`] = `
 
 exports[`<Tabs /> should allow rendering indications 1`] = `
 <div
-  class="base overflow_hidden center_mobile_base root_default_base"
+  class="overflow_hidden center_mobile_base root_default_base"
 >
   <div
-    class="base"
+    class=""
   >
     <div
       aria-orientation="horizontal"
-      class="base display_block width_full flexWrap_nowrap root_base colours_neutral_base noWrap"
+      class="display_block width_full flexWrap_nowrap root_base colours_neutral_base noWrap"
       role="tablist"
     >
       <button
         aria-controls="od-11-0-tab"
         aria-selected="true"
-        class="base appearance cursorPointer button 6_mobile_base display_inlineFlex backgroundColours_transparent_base center_mobile_base root_base colours_muted_base fontWeight_bold_base noWrap sizes_3_base root_default_base root_active_base"
+        class="appearance cursorPointer button 6_mobile_base display_inlineFlex backgroundColours_transparent_base center_mobile_base root_base colours_muted_base fontWeight_bold_base noWrap sizes_3_base root_default_base root_active_base"
         role="tab"
       >
         <div
-          class="base display_flex position_relative center_mobile_base row_mobile_base flexWrap_nowrap center_mobile_base 2_mobile_base 2_mobile_base"
+          class="display_flex position_relative center_mobile_base row_mobile_base flexWrap_nowrap center_mobile_base 2_mobile_base 2_mobile_base"
         >
           <div
-            class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+            class="2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
           >
             <span
               class="item"
@@ -86,10 +86,10 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
             </span>
           </div>
           <div
-            class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+            class="2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
           >
             <span
-              class="base display_block textAlign_center root_base colours_white_base fontWeight_bold_base sizes_2_base indication_default_base 1_mobile_base 1_mobile_base display_inlineBlock pill_mobile_base backgroundColours_green900_base"
+              class="display_block textAlign_center root_base colours_white_base fontWeight_bold_base sizes_2_base indication_default_base 1_mobile_base 1_mobile_base display_inlineBlock pill_mobile_base backgroundColours_green900_base"
             >
               5
             </span>
@@ -99,15 +99,15 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
       <button
         aria-controls="od-11-1-tab"
         aria-selected="false"
-        class="base appearance cursorPointer button 6_mobile_base display_inlineFlex backgroundColours_transparent_base center_mobile_base root_base colours_muted_base fontWeight_bold_base noWrap sizes_3_base root_default_base"
+        class="appearance cursorPointer button 6_mobile_base display_inlineFlex backgroundColours_transparent_base center_mobile_base root_base colours_muted_base fontWeight_bold_base noWrap sizes_3_base root_default_base"
         role="tab"
         tabindex="-1"
       >
         <div
-          class="base display_flex position_relative center_mobile_base row_mobile_base flexWrap_nowrap center_mobile_base 2_mobile_base 2_mobile_base"
+          class="display_flex position_relative center_mobile_base row_mobile_base flexWrap_nowrap center_mobile_base 2_mobile_base 2_mobile_base"
         >
           <div
-            class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+            class="2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
           >
             <span
               class="item"
@@ -116,10 +116,10 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
             </span>
           </div>
           <div
-            class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+            class="2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
           >
             <span
-              class="base display_block textAlign_center root_base colours_dark_base fontWeight_bold_base sizes_2_base indication_default_base 1_mobile_base 1_mobile_base display_inlineBlock pill_mobile_base backgroundColours_gray300_base"
+              class="display_block textAlign_center root_base colours_dark_base fontWeight_bold_base sizes_2_base indication_default_base 1_mobile_base 1_mobile_base display_inlineBlock pill_mobile_base backgroundColours_gray300_base"
             >
               5
             </span>
@@ -129,15 +129,15 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
       <button
         aria-controls="od-11-2-tab"
         aria-selected="false"
-        class="base appearance cursorPointer button 6_mobile_base display_inlineFlex backgroundColours_transparent_base center_mobile_base root_base colours_muted_base fontWeight_bold_base noWrap sizes_3_base root_default_base"
+        class="appearance cursorPointer button 6_mobile_base display_inlineFlex backgroundColours_transparent_base center_mobile_base root_base colours_muted_base fontWeight_bold_base noWrap sizes_3_base root_default_base"
         role="tab"
         tabindex="-1"
       >
         <div
-          class="base display_flex position_relative center_mobile_base row_mobile_base flexWrap_nowrap center_mobile_base 2_mobile_base 2_mobile_base"
+          class="display_flex position_relative center_mobile_base row_mobile_base flexWrap_nowrap center_mobile_base 2_mobile_base 2_mobile_base"
         >
           <div
-            class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+            class="2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
           >
             <span
               class="item"
@@ -146,10 +146,10 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
             </span>
           </div>
           <div
-            class="base 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+            class="2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
           >
             <span
-              class="base display_block textAlign_center root_base colours_dark_base fontWeight_bold_base sizes_2_base indication_default_base 1_mobile_base 1_mobile_base display_inlineBlock pill_mobile_base backgroundColours_gray300_base"
+              class="display_block textAlign_center root_base colours_dark_base fontWeight_bold_base sizes_2_base indication_default_base 1_mobile_base 1_mobile_base display_inlineBlock pill_mobile_base backgroundColours_gray300_base"
             >
               5
             </span>
@@ -163,20 +163,20 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
 
 exports[`<Tabs /> should match snapshot (high level) 1`] = `
 <div
-  class="base overflow_hidden center_mobile_base root_default_base"
+  class="overflow_hidden center_mobile_base root_default_base"
 >
   <div
-    class="base"
+    class=""
   >
     <div
       aria-orientation="horizontal"
-      class="base display_block width_full flexWrap_nowrap root_base colours_neutral_base noWrap"
+      class="display_block width_full flexWrap_nowrap root_base colours_neutral_base noWrap"
       role="tablist"
     >
       <button
         aria-controls="od-1-0-tab"
         aria-selected="true"
-        class="base appearance cursorPointer button 6_mobile_base display_inlineFlex backgroundColours_transparent_base center_mobile_base root_base colours_muted_base fontWeight_bold_base noWrap sizes_3_base root_default_base root_active_base"
+        class="appearance cursorPointer button 6_mobile_base display_inlineFlex backgroundColours_transparent_base center_mobile_base root_base colours_muted_base fontWeight_bold_base noWrap sizes_3_base root_default_base root_active_base"
         role="tab"
       >
         <span
@@ -188,7 +188,7 @@ exports[`<Tabs /> should match snapshot (high level) 1`] = `
       <button
         aria-controls="od-1-1-tab"
         aria-selected="false"
-        class="base appearance cursorPointer button 6_mobile_base display_inlineFlex backgroundColours_transparent_base center_mobile_base root_base colours_muted_base fontWeight_bold_base noWrap sizes_3_base root_default_base"
+        class="appearance cursorPointer button 6_mobile_base display_inlineFlex backgroundColours_transparent_base center_mobile_base root_base colours_muted_base fontWeight_bold_base noWrap sizes_3_base root_default_base"
         role="tab"
         tabindex="-1"
       >
@@ -201,7 +201,7 @@ exports[`<Tabs /> should match snapshot (high level) 1`] = `
       <button
         aria-controls="od-1-2-tab"
         aria-selected="false"
-        class="base appearance cursorPointer button 6_mobile_base display_inlineFlex backgroundColours_transparent_base center_mobile_base root_base colours_muted_base fontWeight_bold_base noWrap sizes_3_base root_default_base"
+        class="appearance cursorPointer button 6_mobile_base display_inlineFlex backgroundColours_transparent_base center_mobile_base root_base colours_muted_base fontWeight_bold_base noWrap sizes_3_base root_default_base"
         role="tab"
         tabindex="-1"
       >
