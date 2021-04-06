@@ -2,22 +2,22 @@
 
 exports[`<TextAreaInput /> should have some hintText 1`] = `
 <div
-  class="base width_full"
+  class="width_full"
 >
   <div
-    class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full position_relative root_base"
+    class="none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full position_relative root_base"
   >
     <div
-      class="base width_full height_full"
+      class="width_full height_full"
     >
       <textarea
         autocomplete="off"
-        class="base base display_flex width_full position_relative types_textarea_base input_itself_root_base"
+        class="display_flex width_full position_relative types_textarea_base input_itself_root_base"
         id="id"
       />
     </div>
     <div
-      class="base display_flex width_full height_full position_absolute textAlign_left pointerEvents_none borderVisualDefaults_base borders_root_default"
+      class="display_flex width_full height_full position_absolute textAlign_left pointerEvents_none borderVisualDefaults_base borders_root_default"
     >
       <div
         class="borderRegionDefaults_base borders_leading_base styleNode_base"
@@ -27,7 +27,7 @@ exports[`<TextAreaInput /> should have some hintText 1`] = `
         style="width: 0px;"
       >
         <label
-          class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base colours_neutral_base noWrap sizes_4_base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
+          class="none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base colours_neutral_base noWrap sizes_4_base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
           for="id"
         >
           placeholder
@@ -39,7 +39,7 @@ exports[`<TextAreaInput /> should have some hintText 1`] = `
     </div>
   </div>
   <p
-    class="base textAlign_left root_base fontWeight_normal_base sizes_2_base 2_mobile_base 4_mobile_base hintText_base styleNode_base"
+    class="textAlign_left root_base fontWeight_normal_base sizes_2_base 2_mobile_base 4_mobile_base hintText_base styleNode_base"
   >
     hint text
   </p>
@@ -48,22 +48,22 @@ exports[`<TextAreaInput /> should have some hintText 1`] = `
 
 exports[`<TextAreaInput /> should match snapshot 1`] = `
 <div
-  class="base width_full"
+  class="width_full"
 >
   <div
-    class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full position_relative root_base"
+    class="none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full position_relative root_base"
   >
     <div
-      class="base width_full height_full"
+      class="width_full height_full"
     >
       <textarea
         autocomplete="off"
-        class="base base display_flex width_full position_relative types_textarea_base input_itself_root_base"
+        class="display_flex width_full position_relative types_textarea_base input_itself_root_base"
         id="id"
       />
     </div>
     <div
-      class="base display_flex width_full height_full position_absolute textAlign_left pointerEvents_none borderVisualDefaults_base borders_root_default"
+      class="display_flex width_full height_full position_absolute textAlign_left pointerEvents_none borderVisualDefaults_base borders_root_default"
     >
       <div
         class="borderRegionDefaults_base borders_leading_base styleNode_base"
@@ -73,7 +73,7 @@ exports[`<TextAreaInput /> should match snapshot 1`] = `
         style="width: 0px;"
       >
         <label
-          class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base colours_neutral_base noWrap sizes_4_base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
+          class="none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base colours_neutral_base noWrap sizes_4_base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
           for="id"
         >
           placeholder something
@@ -89,23 +89,23 @@ exports[`<TextAreaInput /> should match snapshot 1`] = `
 
 exports[`<TextAreaInput /> should match snapshot when active 1`] = `
 <div
-  class="base width_full input-class"
+  class="width_full input-class"
 >
   <div
-    class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full position_relative root_base"
+    class="none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full position_relative root_base"
   >
     <div
-      class="base width_full height_full"
+      class="width_full height_full"
     >
       <textarea
         autocomplete="off"
-        class="base base display_flex width_full position_relative types_textarea_base input_itself_root_base"
+        class="display_flex width_full position_relative types_textarea_base input_itself_root_base"
       >
         value from the tests
       </textarea>
     </div>
     <div
-      class="base display_flex width_full height_full position_absolute textAlign_left pointerEvents_none borderVisualDefaults_base borders_root_default"
+      class="display_flex width_full height_full position_absolute textAlign_left pointerEvents_none borderVisualDefaults_base borders_root_default"
     >
       <div
         class="borderRegionDefaults_base borders_leading_base activeBorderColour_base"
@@ -115,7 +115,7 @@ exports[`<TextAreaInput /> should match snapshot when active 1`] = `
         style="width: 16px;"
       >
         <label
-          class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base activeColour_base root_base colours_neutral_base noWrap sizes_4_base placeholderPlacement_shifted_base"
+          class="none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base activeColour_base root_base colours_neutral_base noWrap sizes_4_base placeholderPlacement_shifted_base"
         >
           placeholder something
         </label>
@@ -130,21 +130,21 @@ exports[`<TextAreaInput /> should match snapshot when active 1`] = `
 
 exports[`<TextAreaInput /> should match snapshot when touched 1`] = `
 <div
-  class="base width_full input-class"
+  class="width_full input-class"
 >
   <div
-    class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full position_relative root_base"
+    class="none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full position_relative root_base"
   >
     <div
-      class="base width_full height_full"
+      class="width_full height_full"
     >
       <textarea
         autocomplete="off"
-        class="base base display_flex width_full position_relative types_textarea_base input_itself_root_base"
+        class="display_flex width_full position_relative types_textarea_base input_itself_root_base"
       />
     </div>
     <div
-      class="base display_flex width_full height_full position_absolute textAlign_left pointerEvents_none borderVisualDefaults_base borders_root_default"
+      class="display_flex width_full height_full position_absolute textAlign_left pointerEvents_none borderVisualDefaults_base borders_root_default"
     >
       <div
         class="borderRegionDefaults_base borders_leading_base styleNode_base"
@@ -154,7 +154,7 @@ exports[`<TextAreaInput /> should match snapshot when touched 1`] = `
         style="width: 0px;"
       >
         <label
-          class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base colours_neutral_base noWrap sizes_4_base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
+          class="none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base colours_neutral_base noWrap sizes_4_base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
         >
           placeholder something
         </label>
@@ -169,21 +169,21 @@ exports[`<TextAreaInput /> should match snapshot when touched 1`] = `
 
 exports[`<TextAreaInput /> should match snapshot when touched and invalid 1`] = `
 <div
-  class="base width_full input-class"
+  class="width_full input-class"
 >
   <div
-    class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full position_relative root_base"
+    class="none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full position_relative root_base"
   >
     <div
-      class="base width_full height_full"
+      class="width_full height_full"
     >
       <textarea
         autocomplete="off"
-        class="base base display_flex width_full position_relative types_textarea_base input_itself_root_base"
+        class="display_flex width_full position_relative types_textarea_base input_itself_root_base"
       />
     </div>
     <div
-      class="base display_flex width_full height_full position_absolute textAlign_left pointerEvents_none borderVisualDefaults_base borders_root_default"
+      class="display_flex width_full height_full position_absolute textAlign_left pointerEvents_none borderVisualDefaults_base borders_root_default"
     >
       <div
         class="borderRegionDefaults_base borders_leading_base styleNode_base"
@@ -193,7 +193,7 @@ exports[`<TextAreaInput /> should match snapshot when touched and invalid 1`] = 
         style="width: 0px;"
       >
         <label
-          class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base colours_neutral_base noWrap sizes_4_base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
+          class="none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base colours_neutral_base noWrap sizes_4_base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
         >
           placeholder something
         </label>
@@ -208,21 +208,21 @@ exports[`<TextAreaInput /> should match snapshot when touched and invalid 1`] = 
 
 exports[`<TextAreaInput /> should match snapshot when touched and valid 1`] = `
 <div
-  class="base width_full input-class"
+  class="width_full input-class"
 >
   <div
-    class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full position_relative root_base"
+    class="none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full position_relative root_base"
   >
     <div
-      class="base width_full height_full"
+      class="width_full height_full"
     >
       <textarea
         autocomplete="off"
-        class="base base display_flex width_full position_relative types_textarea_base input_itself_root_base"
+        class="display_flex width_full position_relative types_textarea_base input_itself_root_base"
       />
     </div>
     <div
-      class="base display_flex width_full height_full position_absolute textAlign_left pointerEvents_none borderVisualDefaults_base borders_root_default"
+      class="display_flex width_full height_full position_absolute textAlign_left pointerEvents_none borderVisualDefaults_base borders_root_default"
     >
       <div
         class="borderRegionDefaults_base borders_leading_base styleNode_base"
@@ -232,7 +232,7 @@ exports[`<TextAreaInput /> should match snapshot when touched and valid 1`] = `
         style="width: 0px;"
       >
         <label
-          class="base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base colours_neutral_base noWrap sizes_4_base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
+          class="none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base colours_neutral_base noWrap sizes_4_base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
         >
           placeholder something
         </label>

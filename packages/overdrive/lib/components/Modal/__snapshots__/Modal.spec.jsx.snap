@@ -20,10 +20,10 @@ exports[`<Modal /> should match snapshot 1`] = `
   >
     <div
       aria-hidden="true"
-      class="base position_fixed backdropRoot_default_base place backdrop_root transition_base"
+      class="position_fixed backdropRoot_default_base place backdrop_root transition_base"
     />
     <div
-      class="base position_fixed overflow_hidden place root transition_base"
+      class="position_fixed overflow_hidden place root transition_base"
       role="presentation"
     >
       Hello World!

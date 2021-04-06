@@ -2,6 +2,6 @@
 
 exports[`<Actions /> should match the snapshot 1`] = `
 <div
-  class="base display_flex row_mobile_base 3_mobile_base 3_mobile_base align_stretch wrapping_wrap"
+  class="display_flex row_mobile_base 3_mobile_base 3_mobile_base align_stretch wrapping_wrap"
 />
 `;

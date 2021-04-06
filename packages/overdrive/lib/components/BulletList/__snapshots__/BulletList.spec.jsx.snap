@@ -2,6 +2,6 @@
 
 exports[`<BulletList /> should match the snapshot 1`] = `
 <ul
-  class="base list root firstOccurrence_base"
+  class="list root firstOccurrence_base"
 />
 `;
