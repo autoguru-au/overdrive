@@ -3,7 +3,8 @@ import { style } from 'treat';
 export const base = {
 	margin: 0,
 	padding: 0,
-	border: 0,
+	border: 'none',
+	borderWidth: 0,
 	fontSize: '100%',
 	verticalAlign: 'baseline',
 };
@@ -72,6 +73,7 @@ const a = [
 const table = style({ ...base, borderSpacing: 0, borderCollapse: 'collapse' });
 
 export const element = {
+	div: block,
 	article: block,
 	aside: block,
 	details: block,

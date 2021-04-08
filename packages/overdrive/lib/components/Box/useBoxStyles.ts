@@ -169,9 +169,9 @@ export const useBoxStyles = ({
 		resolvedBorderWidthLeft;
 
 	return clsx(
-		typeof is === 'string' && [
-			resetStyles.element[is as keyof typeof resetStyles.element],
-		],
+		typeof is === 'string'
+			? [resetStyles.element[is as keyof typeof resetStyles.element]]
+			: [resetStyles.element.div],
 
 		resolveResponsiveStyle(resolvedPaddingTop, styles.padding.top),
 		resolveResponsiveStyle(resolvedPaddingRight, styles.padding.right),

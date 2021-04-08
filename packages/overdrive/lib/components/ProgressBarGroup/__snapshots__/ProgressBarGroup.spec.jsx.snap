@@ -2,214 +2,214 @@
 
 exports[`<ProgressBarGroup /> should match the snapshot 1`] = `
 <div
-  class="center_mobile_base root_base"
+  class="block center_mobile_base root_base"
   style="grid-template-columns: 1fr;"
 >
   <span
-    class="textAlign_right root_base colours_light_base fontWeight_normal_base sizes_3_base"
+    class="textAlign_right root_base block colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <div
-    class="1_mobile_base backgroundColours_gray100_base container_base"
+    class="block 1_mobile_base backgroundColours_gray100_base container_base"
   >
     <div
-      class="1_mobile_base backgroundColours_green500_base bar_base container_base"
+      class="block 1_mobile_base backgroundColours_green500_base bar_base container_base"
       style="width: 16.666666666666664%;"
     />
   </div>
   <span
-    class="textAlign_left root_base colours_light_base fontWeight_normal_base sizes_3_base"
+    class="textAlign_left root_base block colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <span
-    class="textAlign_right root_base colours_light_base fontWeight_normal_base sizes_3_base"
+    class="textAlign_right root_base block colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <div
-    class="1_mobile_base backgroundColours_gray100_base container_base"
+    class="block 1_mobile_base backgroundColours_gray100_base container_base"
   >
     <div
-      class="1_mobile_base backgroundColours_green500_base bar_base container_base"
+      class="block 1_mobile_base backgroundColours_green500_base bar_base container_base"
       style="width: 33.33333333333333%;"
     />
   </div>
   <span
-    class="textAlign_left root_base colours_light_base fontWeight_normal_base sizes_3_base"
+    class="textAlign_left root_base block colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <span
-    class="textAlign_right root_base colours_light_base fontWeight_normal_base sizes_3_base"
+    class="textAlign_right root_base block colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <div
-    class="1_mobile_base backgroundColours_gray100_base container_base"
+    class="block 1_mobile_base backgroundColours_gray100_base container_base"
   >
     <div
-      class="1_mobile_base backgroundColours_green500_base bar_base container_base"
+      class="block 1_mobile_base backgroundColours_green500_base bar_base container_base"
       style="width: 50%;"
     />
   </div>
   <span
-    class="textAlign_left root_base colours_light_base fontWeight_normal_base sizes_3_base"
+    class="textAlign_left root_base block colours_light_base fontWeight_normal_base sizes_3_base"
   />
 </div>
 `;
 
 exports[`<ProgressBarGroup /> should should ignore extra labels 1`] = `
 <div
-  class="center_mobile_base root_base"
+  class="block center_mobile_base root_base"
   style="grid-template-columns: auto 1fr;"
 >
   <span
-    class="textAlign_right root_base colours_light_base fontWeight_normal_base sizes_3_base"
+    class="textAlign_right root_base block colours_light_base fontWeight_normal_base sizes_3_base"
   >
     a
   </span>
   <div
-    class="1_mobile_base backgroundColours_gray100_base container_base"
+    class="block 1_mobile_base backgroundColours_gray100_base container_base"
   >
     <div
-      class="1_mobile_base backgroundColours_green500_base bar_base container_base"
+      class="block 1_mobile_base backgroundColours_green500_base bar_base container_base"
       style="width: 16.666666666666664%;"
     />
   </div>
   <span
-    class="textAlign_left root_base colours_light_base fontWeight_normal_base sizes_3_base"
+    class="textAlign_left root_base block colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <span
-    class="textAlign_right root_base colours_light_base fontWeight_normal_base sizes_3_base"
+    class="textAlign_right root_base block colours_light_base fontWeight_normal_base sizes_3_base"
   >
     b
   </span>
   <div
-    class="1_mobile_base backgroundColours_gray100_base container_base"
+    class="block 1_mobile_base backgroundColours_gray100_base container_base"
   >
     <div
-      class="1_mobile_base backgroundColours_green500_base bar_base container_base"
+      class="block 1_mobile_base backgroundColours_green500_base bar_base container_base"
       style="width: 33.33333333333333%;"
     />
   </div>
   <span
-    class="textAlign_left root_base colours_light_base fontWeight_normal_base sizes_3_base"
+    class="textAlign_left root_base block colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <span
-    class="textAlign_right root_base colours_light_base fontWeight_normal_base sizes_3_base"
+    class="textAlign_right root_base block colours_light_base fontWeight_normal_base sizes_3_base"
   >
     c
   </span>
   <div
-    class="1_mobile_base backgroundColours_gray100_base container_base"
+    class="block 1_mobile_base backgroundColours_gray100_base container_base"
   >
     <div
-      class="1_mobile_base backgroundColours_green500_base bar_base container_base"
+      class="block 1_mobile_base backgroundColours_green500_base bar_base container_base"
       style="width: 50%;"
     />
   </div>
   <span
-    class="textAlign_left root_base colours_light_base fontWeight_normal_base sizes_3_base"
+    class="textAlign_left root_base block colours_light_base fontWeight_normal_base sizes_3_base"
   />
 </div>
 `;
 
 exports[`<ProgressBarGroup /> should should ignore not break when not enough labels 1`] = `
 <div
-  class="center_mobile_base root_base"
+  class="block center_mobile_base root_base"
   style="grid-template-columns: auto 1fr;"
 >
   <span
-    class="textAlign_right root_base colours_light_base fontWeight_normal_base sizes_3_base"
+    class="textAlign_right root_base block colours_light_base fontWeight_normal_base sizes_3_base"
   >
     a
   </span>
   <div
-    class="1_mobile_base backgroundColours_gray100_base container_base"
+    class="block 1_mobile_base backgroundColours_gray100_base container_base"
   >
     <div
-      class="1_mobile_base backgroundColours_green500_base bar_base container_base"
+      class="block 1_mobile_base backgroundColours_green500_base bar_base container_base"
       style="width: 16.666666666666664%;"
     />
   </div>
   <span
-    class="textAlign_left root_base colours_light_base fontWeight_normal_base sizes_3_base"
+    class="textAlign_left root_base block colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <span
-    class="textAlign_right root_base colours_light_base fontWeight_normal_base sizes_3_base"
+    class="textAlign_right root_base block colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <div
-    class="1_mobile_base backgroundColours_gray100_base container_base"
+    class="block 1_mobile_base backgroundColours_gray100_base container_base"
   >
     <div
-      class="1_mobile_base backgroundColours_green500_base bar_base container_base"
+      class="block 1_mobile_base backgroundColours_green500_base bar_base container_base"
       style="width: 33.33333333333333%;"
     />
   </div>
   <span
-    class="textAlign_left root_base colours_light_base fontWeight_normal_base sizes_3_base"
+    class="textAlign_left root_base block colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <span
-    class="textAlign_right root_base colours_light_base fontWeight_normal_base sizes_3_base"
+    class="textAlign_right root_base block colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <div
-    class="1_mobile_base backgroundColours_gray100_base container_base"
+    class="block 1_mobile_base backgroundColours_gray100_base container_base"
   >
     <div
-      class="1_mobile_base backgroundColours_green500_base bar_base container_base"
+      class="block 1_mobile_base backgroundColours_green500_base bar_base container_base"
       style="width: 50%;"
     />
   </div>
   <span
-    class="textAlign_left root_base colours_light_base fontWeight_normal_base sizes_3_base"
+    class="textAlign_left root_base block colours_light_base fontWeight_normal_base sizes_3_base"
   />
 </div>
 `;
 
 exports[`<ProgressBarGroup /> should should render a prefix for every value 1`] = `
 <div
-  class="center_mobile_base root_base"
+  class="block center_mobile_base root_base"
   style="grid-template-columns: auto 1fr;"
 >
   <span
-    class="textAlign_right root_base colours_light_base fontWeight_normal_base sizes_3_base"
+    class="textAlign_right root_base block colours_light_base fontWeight_normal_base sizes_3_base"
   >
     a
   </span>
   <div
-    class="1_mobile_base backgroundColours_gray100_base container_base"
+    class="block 1_mobile_base backgroundColours_gray100_base container_base"
   >
     <div
-      class="1_mobile_base backgroundColours_green500_base bar_base container_base"
+      class="block 1_mobile_base backgroundColours_green500_base bar_base container_base"
       style="width: 16.666666666666664%;"
     />
   </div>
   <span
-    class="textAlign_left root_base colours_light_base fontWeight_normal_base sizes_3_base"
+    class="textAlign_left root_base block colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <span
-    class="textAlign_right root_base colours_light_base fontWeight_normal_base sizes_3_base"
+    class="textAlign_right root_base block colours_light_base fontWeight_normal_base sizes_3_base"
   >
     b
   </span>
   <div
-    class="1_mobile_base backgroundColours_gray100_base container_base"
+    class="block 1_mobile_base backgroundColours_gray100_base container_base"
   >
     <div
-      class="1_mobile_base backgroundColours_green500_base bar_base container_base"
+      class="block 1_mobile_base backgroundColours_green500_base bar_base container_base"
       style="width: 33.33333333333333%;"
     />
   </div>
   <span
-    class="textAlign_left root_base colours_light_base fontWeight_normal_base sizes_3_base"
+    class="textAlign_left root_base block colours_light_base fontWeight_normal_base sizes_3_base"
   />
   <span
-    class="textAlign_right root_base colours_light_base fontWeight_normal_base sizes_3_base"
+    class="textAlign_right root_base block colours_light_base fontWeight_normal_base sizes_3_base"
   >
     c
   </span>
   <div
-    class="1_mobile_base backgroundColours_gray100_base container_base"
+    class="block 1_mobile_base backgroundColours_gray100_base container_base"
   >
     <div
-      class="1_mobile_base backgroundColours_green500_base bar_base container_base"
+      class="block 1_mobile_base backgroundColours_green500_base bar_base container_base"
       style="width: 50%;"
     />
   </div>
   <span
-    class="textAlign_left root_base colours_light_base fontWeight_normal_base sizes_3_base"
+    class="textAlign_left root_base block colours_light_base fontWeight_normal_base sizes_3_base"
   />
 </div>
 `;

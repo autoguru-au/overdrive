@@ -3,21 +3,21 @@
 exports[`<Stepper /> should match snapshot with label formatter 1`] = `
 <div
   aria-disabled="false"
-  class="3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base userSelect_none border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base appearance cursorPointer button"
+  class="block 3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base userSelect_none border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base appearance cursorPointer button"
   tabindex="0"
 >
   <div
-    class="display_flex row_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_stretch wrapping_noWrap"
+    class="block display_flex row_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_stretch wrapping_noWrap"
   >
     <div
-      class="flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_centre"
+      class="block flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_centre"
     >
       <div
-        class="display_flex width_full height_full"
+        class="block display_flex width_full height_full"
       >
         <button
           aria-label="step down"
-          class="appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base colours_white_base"
+          class="appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base block colours_white_base"
           tabindex="-1"
         >
           <i
@@ -39,27 +39,27 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
       </div>
     </div>
     <div
-      class="flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base auto_mobile_base align_centre"
+      class="block flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base auto_mobile_base align_centre"
     >
       <div
-        class="display_flex width_full height_full"
+        class="block display_flex width_full height_full"
       >
         <span
-          class="display_block textAlign_center root_base colours_dark_base fontWeight_normal_base sizes_4_base 2_mobile_base 2_mobile_base width_full label_base"
+          class="display_block textAlign_center root_base block colours_dark_base fontWeight_normal_base sizes_4_base block 2_mobile_base 2_mobile_base width_full label_base"
         >
           25%
         </span>
       </div>
     </div>
     <div
-      class="flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_centre"
+      class="block flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_centre"
     >
       <div
-        class="display_flex width_full height_full"
+        class="block display_flex width_full height_full"
       >
         <button
           aria-label="step up"
-          class="appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base colours_white_base"
+          class="appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base block colours_white_base"
           tabindex="-1"
         >
           <i
@@ -87,21 +87,21 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
 exports[`<Stepper /> should match snapshot with props 1`] = `
 <div
   aria-disabled="false"
-  class="3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base userSelect_none border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base appearance cursorPointer button"
+  class="block 3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base userSelect_none border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base appearance cursorPointer button"
   tabindex="0"
 >
   <div
-    class="display_flex row_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_stretch wrapping_noWrap"
+    class="block display_flex row_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_stretch wrapping_noWrap"
   >
     <div
-      class="flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_centre"
+      class="block flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_centre"
     >
       <div
-        class="display_flex width_full height_full"
+        class="block display_flex width_full height_full"
       >
         <button
           aria-label="step down"
-          class="appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base colours_white_base"
+          class="appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base block colours_white_base"
           tabindex="-1"
         >
           <i
@@ -123,27 +123,27 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
       </div>
     </div>
     <div
-      class="flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base auto_mobile_base align_centre"
+      class="block flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base auto_mobile_base align_centre"
     >
       <div
-        class="display_flex width_full height_full"
+        class="block display_flex width_full height_full"
       >
         <span
-          class="display_block textAlign_center root_base colours_dark_base fontWeight_normal_base sizes_4_base 2_mobile_base 2_mobile_base width_full label_base"
+          class="display_block textAlign_center root_base block colours_dark_base fontWeight_normal_base sizes_4_base block 2_mobile_base 2_mobile_base width_full label_base"
         >
           19
         </span>
       </div>
     </div>
     <div
-      class="flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_centre"
+      class="block flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_centre"
     >
       <div
-        class="display_flex width_full height_full"
+        class="block display_flex width_full height_full"
       >
         <button
           aria-label="step up"
-          class="appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base colours_white_base"
+          class="appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base block colours_white_base"
           tabindex="-1"
         >
           <i
@@ -171,21 +171,21 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
 exports[`<Stepper /> should match snapshot without props 1`] = `
 <div
   aria-disabled="true"
-  class="3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base userSelect_none border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base appearance cursorPointer button disabled"
+  class="block 3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base userSelect_none border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base appearance cursorPointer button disabled"
   tabindex="0"
 >
   <div
-    class="display_flex row_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_stretch wrapping_noWrap"
+    class="block display_flex row_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_stretch wrapping_noWrap"
   >
     <div
-      class="flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_centre"
+      class="block flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_centre"
     >
       <div
-        class="display_flex width_full height_full"
+        class="block display_flex width_full height_full"
       >
         <button
           aria-label="step down"
-          class="appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base handle_disabled_base root_base colours_white_base"
+          class="appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base handle_disabled_base root_base block colours_white_base"
           disabled=""
           tabindex="-1"
         >
@@ -208,27 +208,27 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
       </div>
     </div>
     <div
-      class="flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base auto_mobile_base align_centre"
+      class="block flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base auto_mobile_base align_centre"
     >
       <div
-        class="display_flex width_full height_full"
+        class="block display_flex width_full height_full"
       >
         <span
-          class="display_block textAlign_center root_base colours_dark_base fontWeight_normal_base sizes_4_base 2_mobile_base 2_mobile_base width_full label_base"
+          class="display_block textAlign_center root_base block colours_dark_base fontWeight_normal_base sizes_4_base block 2_mobile_base 2_mobile_base width_full label_base"
         >
           0
         </span>
       </div>
     </div>
     <div
-      class="flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_centre"
+      class="block flexGrow_0 flexShrink_0 none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_centre"
     >
       <div
-        class="display_flex width_full height_full"
+        class="block display_flex width_full height_full"
       >
         <button
           aria-label="step up"
-          class="appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base handle_disabled_base root_base colours_white_base"
+          class="appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base handle_disabled_base root_base block colours_white_base"
           disabled=""
           tabindex="-1"
         >

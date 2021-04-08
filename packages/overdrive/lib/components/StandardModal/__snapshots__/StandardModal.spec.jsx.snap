@@ -20,15 +20,15 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
   >
     <div
       aria-hidden="true"
-      class="position_fixed backdropRoot_default_base place backdrop_root transition_base"
+      class="block position_fixed backdropRoot_default_base place backdrop_root transition_base"
     />
     <div
-      class="position_fixed overflow_hidden place root transition_base"
+      class="block position_fixed overflow_hidden place root transition_base"
       role="presentation"
     >
       <div
         aria-hidden="false"
-        class="display_flex height_full center_mobile_base center_mobile_base container"
+        class="block display_flex height_full center_mobile_base center_mobile_base container"
         role="none presentation"
       >
         <article
@@ -41,25 +41,25 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
             class="block 3_mobile_base 2_mobile_base 3_mobile_base 5_mobile_base display_flex width_full position_relative border_style border_colour_top_light_base border_colour_right_light_base border_colour_bottom_light_base border_colour_left_light_base 1_mobile_base center_mobile_base flexShrink_0 center_mobile_base"
           >
             <div
-              class="flexGrow_1"
+              class="block flexGrow_1"
               id="od-4"
             >
               <h4
-                class="root_base colours_dark_base fontWeight_bold_base sizes_4_base"
+                class="root_base block colours_dark_base fontWeight_bold_base sizes_4_base"
               >
                 Hello World!
               </h4>
             </div>
             <button
               aria-label="close"
-              class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_3_base minimal_defaults_base minimalStates_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
+              class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base minimal_defaults_base minimalStates_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
               type="button"
             >
               <div
-                class="height_full center_mobile_base center_mobile_base body_base"
+                class="block height_full center_mobile_base center_mobile_base body_base"
               >
                 <i
-                  class="display_block medium_mobile_base root_base colours_muted_base"
+                  class="display_block medium_mobile_base root_base block colours_muted_base"
                   role="presentation"
                 >
                   <svg
@@ -115,15 +115,15 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
   >
     <div
       aria-hidden="true"
-      class="position_fixed backdropRoot_default_base place backdrop_root transition_base"
+      class="block position_fixed backdropRoot_default_base place backdrop_root transition_base"
     />
     <div
-      class="position_fixed overflow_hidden place root transition_base"
+      class="block position_fixed overflow_hidden place root transition_base"
       role="presentation"
     >
       <div
         aria-hidden="false"
-        class="display_flex height_full center_mobile_base center_mobile_base container"
+        class="block display_flex height_full center_mobile_base center_mobile_base container"
         role="none presentation"
       >
         <article
@@ -136,23 +136,23 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
             class="block 3_mobile_base 2_mobile_base 3_mobile_base 5_mobile_base display_flex width_full position_relative border_style border_colour_top_light_base border_colour_right_light_base border_colour_bottom_light_base border_colour_left_light_base 1_mobile_base center_mobile_base flexShrink_0 center_mobile_base"
           >
             <div
-              class="flexGrow_1"
+              class="block flexGrow_1"
               id="od-3"
             >
               <h4
-                class="root_base colours_dark_base fontWeight_bold_base sizes_4_base"
+                class="root_base block colours_dark_base fontWeight_bold_base sizes_4_base"
               />
             </div>
             <button
               aria-label="close"
-              class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_3_base minimal_defaults_base minimalStates_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
+              class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base minimal_defaults_base minimalStates_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
               type="button"
             >
               <div
-                class="height_full center_mobile_base center_mobile_base body_base"
+                class="block height_full center_mobile_base center_mobile_base body_base"
               >
                 <i
-                  class="display_block medium_mobile_base root_base colours_muted_base"
+                  class="display_block medium_mobile_base root_base block colours_muted_base"
                   role="presentation"
                 >
                   <svg
