@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 2.2.2
+
+### Patch Changes
+
+-   a3274cb: useBoxStyles: Applies base reset styles to div elements
+-   a3274cb: TextAreaInput: Gets base input reset styles
+
 ## 2.2.1
 
 ### Patch Changes
