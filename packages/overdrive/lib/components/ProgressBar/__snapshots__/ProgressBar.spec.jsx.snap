@@ -2,10 +2,10 @@
 
 exports[`<ProgressBar /> should match the snapshot 1`] = `
 <div
-  class="1_mobile_base backgroundColours_gray100_base container_base"
+  class="block 1_mobile_base backgroundColours_gray100_base container_base"
 >
   <div
-    class="1_mobile_base backgroundColours_green500_base bar_base container_base"
+    class="block 1_mobile_base backgroundColours_green500_base bar_base container_base"
     style="width: 0%;"
   />
 </div>

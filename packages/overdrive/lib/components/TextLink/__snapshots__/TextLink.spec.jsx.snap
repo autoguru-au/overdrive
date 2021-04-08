@@ -7,7 +7,7 @@ exports[`<TextLink /> should allow as override 1`] = `
   rel="noopener noreferrer"
 >
   <span
-    class="textAlign_left root_base fontWeight_bold_base sizes_4_base root_base pointerEvents_none"
+    class="textAlign_left root_base block fontWeight_bold_base sizes_4_base root_base block pointerEvents_none"
   >
     Test
   </span>
@@ -20,7 +20,7 @@ exports[`<TextLink /> should match the snapshot 1`] = `
   rel="noopener noreferrer"
 >
   <span
-    class="textAlign_left root_base fontWeight_bold_base sizes_4_base root_base pointerEvents_none"
+    class="textAlign_left root_base block fontWeight_bold_base sizes_4_base root_base block pointerEvents_none"
   />
 </a>
 `;

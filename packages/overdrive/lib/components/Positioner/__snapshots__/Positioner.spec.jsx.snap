@@ -7,7 +7,7 @@ exports[`<Positioner /> should match snapshot 1`] = `
   <div />
   <div
     aria-hidden="false"
-    class="position_fixed root"
+    class="block position_fixed root"
   >
     Some body
   </div>

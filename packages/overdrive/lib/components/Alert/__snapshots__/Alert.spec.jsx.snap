@@ -2,20 +2,20 @@
 
 exports[`<Alert /> should match the snapshot 1`] = `
 <div
-  class="2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base position_relative overflow_hidden border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 4_mobile_base 1_mobile_base backgroundColours_white_base root_base intent_success_base contained_base"
+  class="block 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base position_relative overflow_hidden border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 4_mobile_base 1_mobile_base backgroundColours_white_base root_base intent_success_base contained_base"
   role="alert"
 >
   <div
-    class="display_flex row_mobile_base 2_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_stretch wrapping_noWrap"
+    class="block display_flex row_mobile_base 2_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_stretch wrapping_noWrap"
   >
     <div
-      class="flexGrow_0 flexShrink_0 2_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_top"
+      class="block flexGrow_0 flexShrink_0 2_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_top"
     >
       <div
-        class="display_flex width_full height_full"
+        class="block display_flex width_full height_full"
       >
         <i
-          class="display_block medium_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base"
+          class="display_block medium_mobile_base block 2_mobile_base 2_mobile_base 2_mobile_base"
           role="presentation"
         >
           <svg
@@ -32,28 +32,28 @@ exports[`<Alert /> should match the snapshot 1`] = `
       </div>
     </div>
     <div
-      class="flexGrow_1 2_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base auto_mobile_base align_centre"
+      class="block flexGrow_1 2_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base auto_mobile_base align_centre"
     >
       <div
-        class="display_flex width_full height_full root_base colours_dark_base"
+        class="block display_flex width_full height_full root_base block colours_dark_base"
       />
     </div>
     <div
-      class="flexGrow_0 flexShrink_0 2_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_top"
+      class="block flexGrow_0 flexShrink_0 2_mobile_base none_mobile_base none_tablet_base none_desktop_base none_largeDesktop_base align_top"
     >
       <div
-        class="display_flex width_full height_full"
+        class="block display_flex width_full height_full"
       >
         <button
           aria-label="close"
-          class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_3_base minimal_defaults_base minimalStates_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
+          class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base minimal_defaults_base minimalStates_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
           type="button"
         >
           <div
-            class="height_full center_mobile_base center_mobile_base body_base"
+            class="block height_full center_mobile_base center_mobile_base body_base"
           >
             <i
-              class="display_block medium_mobile_base root_base colours_muted_base"
+              class="display_block medium_mobile_base root_base block colours_muted_base"
               role="presentation"
             >
               <svg

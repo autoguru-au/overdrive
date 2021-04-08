@@ -2,31 +2,31 @@
 
 exports[`<Table /> when implemented should match snapshot 1`] = `
 <div
-  class="width_full root"
+  class="block width_full root"
   role="grid"
 >
   <div
-    class="display_contents"
+    class="block display_contents"
     role="rowgroup"
   >
     <div
-      class="display_contents"
+      class="block display_contents"
       role="row"
     >
       <div
-        class="4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base backgroundColours_gray100_base center_mobile_base flexStart_mobile_base"
+        class="block 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base backgroundColours_gray100_base center_mobile_base flexStart_mobile_base"
         role="columnheader"
         scope="col"
       >
         <span
-          class="textAlign_left root_base colours_dark_base fontWeight_bold_base sizes_2_base text_base"
+          class="textAlign_left root_base block colours_dark_base fontWeight_bold_base sizes_2_base text_base"
         >
           col 1
         </span>
       </div>
       <div
         aria-sort="ascending"
-        class="display_flex border_style border_colour_bottom_light_base 1_mobile_base backgroundColours_gray100_base center_mobile_base flexStart_mobile_base"
+        class="block display_flex border_style border_colour_bottom_light_base 1_mobile_base backgroundColours_gray100_base center_mobile_base flexStart_mobile_base"
         role="columnheader"
         scope="col"
       >
@@ -35,13 +35,13 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
           tabindex="-1"
         >
           <div
-            class="display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap flexStart_mobile_base 1_mobile_base 1_mobile_base"
+            class="block display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap flexStart_mobile_base 1_mobile_base 1_mobile_base"
           >
             <div
-              class="1_mobile_base 1_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+              class="block 1_mobile_base 1_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
             >
               <span
-                class="textAlign_left root_base colours_dark_base fontWeight_bold_base sizes_2_base text_base"
+                class="textAlign_left root_base block colours_dark_base fontWeight_bold_base sizes_2_base text_base"
               >
                 col 2
                 <span
@@ -54,7 +54,7 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
               </span>
             </div>
             <div
-              class="1_mobile_base 1_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+              class="block 1_mobile_base 1_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
             >
               <i
                 class="display_block small_mobile_base sorterRoot sorter_root_base asc"
@@ -78,58 +78,58 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
     </div>
   </div>
   <div
-    class="display_contents"
+    class="block display_contents"
     role="rowgroup"
   >
     <div
-      class="display_contents"
+      class="block display_contents"
       role="row"
     >
       <div
-        class="4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base center_mobile_base flexStart_mobile_base root_base"
+        class="block 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base center_mobile_base flexStart_mobile_base root_base"
         role="gridcell"
         scope="row"
       >
         <span
-          class="display_block textAlign_left root_base colours_dark_base fontWeight_normal_base sizes_3_base"
+          class="display_block textAlign_left root_base block colours_dark_base fontWeight_normal_base sizes_3_base"
         >
           row 1, col 1
         </span>
       </div>
       <div
-        class="4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base center_mobile_base flexStart_mobile_base root_base"
+        class="block 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base center_mobile_base flexStart_mobile_base root_base"
         role="gridcell"
         scope="row"
       >
         <span
-          class="display_block textAlign_left root_base colours_dark_base fontWeight_normal_base sizes_3_base"
+          class="display_block textAlign_left root_base block colours_dark_base fontWeight_normal_base sizes_3_base"
         >
           row 1, col 2
         </span>
       </div>
     </div>
     <div
-      class="display_contents"
+      class="block display_contents"
       role="row"
     >
       <div
-        class="4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base center_mobile_base flexStart_mobile_base root_base"
+        class="block 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base center_mobile_base flexStart_mobile_base root_base"
         role="gridcell"
         scope="row"
       >
         <span
-          class="display_block textAlign_left root_base colours_dark_base fontWeight_normal_base sizes_3_base"
+          class="display_block textAlign_left root_base block colours_dark_base fontWeight_normal_base sizes_3_base"
         >
           row 2, col 1
         </span>
       </div>
       <div
-        class="4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base center_mobile_base flexStart_mobile_base root_base"
+        class="block 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base center_mobile_base flexStart_mobile_base root_base"
         role="gridcell"
         scope="row"
       >
         <span
-          class="display_block textAlign_left root_base colours_dark_base fontWeight_normal_base sizes_3_base"
+          class="display_block textAlign_left root_base block colours_dark_base fontWeight_normal_base sizes_3_base"
         >
           row 2, col 2
         </span>

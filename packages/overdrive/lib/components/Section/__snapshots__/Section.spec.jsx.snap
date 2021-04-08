@@ -2,6 +2,6 @@
 
 exports[`<Section /> should match the snapshot 1`] = `
 <div
-  class="width_full root width_medium_base"
+  class="block width_full root width_medium_base"
 />
 `;

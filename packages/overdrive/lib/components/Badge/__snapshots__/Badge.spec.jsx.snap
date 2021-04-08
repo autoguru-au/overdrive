@@ -2,13 +2,13 @@
 
 exports[`<Badge /> should match snapshot with label 1`] = `
 <div
-  class="display_flex"
+  class="block display_flex"
 >
   <div
-    class="1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base display_block overflow_hidden 1_mobile_base colours_default_neutral_base"
+    class="block 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base display_block overflow_hidden 1_mobile_base colours_default_neutral_base"
   >
     <span
-      class="display_block overflow_hidden root_base fontWeight_semiBold_base noWrap sizes_2_base label_base root_base colours_white_base"
+      class="display_block overflow_hidden root_base block fontWeight_semiBold_base noWrap sizes_2_base label_base root_base block colours_white_base"
     >
       Hello World!
     </span>

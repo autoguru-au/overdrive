@@ -2,92 +2,92 @@
 
 exports[`<Button /> should match snapshot for default button 1`] = `
 <button
-  class="appearance cursorPointer button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_4_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled"
+  class="appearance cursorPointer button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_4_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled"
   type="button"
 >
   <div
-    class="height_full center_mobile_base center_mobile_base body_base"
+    class="block height_full center_mobile_base center_mobile_base body_base"
   />
 </button>
 `;
 
 exports[`<Button /> when as button should use html button element by default 1`] = `
 <button
-  class="appearance cursorPointer button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_4_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled"
+  class="appearance cursorPointer button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_4_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled"
   type="button"
 >
   <div
-    class="height_full center_mobile_base center_mobile_base body_base"
+    class="block height_full center_mobile_base center_mobile_base body_base"
   />
 </button>
 `;
 
 exports[`<Button /> when colour variants should match snapshot for Danger button 1`] = `
 <button
-  class="appearance cursorPointer button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_4_base defaultStates_danger_base variant_danger_base size_medium_default_base enabled"
+  class="appearance cursorPointer button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_4_base defaultStates_danger_base variant_danger_base size_medium_default_base enabled"
   type="button"
 >
   <div
-    class="height_full center_mobile_base center_mobile_base body_base"
+    class="block height_full center_mobile_base center_mobile_base body_base"
   />
 </button>
 `;
 
 exports[`<Button /> when colour variants should match snapshot for Primary button 1`] = `
 <button
-  class="appearance cursorPointer button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_4_base defaultStates_primary_base variant_primary_base size_medium_default_base enabled"
+  class="appearance cursorPointer button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_4_base defaultStates_primary_base variant_primary_base size_medium_default_base enabled"
   type="button"
 >
   <div
-    class="height_full center_mobile_base center_mobile_base body_base"
+    class="block height_full center_mobile_base center_mobile_base body_base"
   />
 </button>
 `;
 
 exports[`<Button /> when colour variants should match snapshot for Secondary button 1`] = `
 <button
-  class="appearance cursorPointer button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_4_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled"
+  class="appearance cursorPointer button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_4_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled"
   type="button"
 >
   <div
-    class="height_full center_mobile_base center_mobile_base body_base"
+    class="block height_full center_mobile_base center_mobile_base body_base"
   />
 </button>
 `;
 
 exports[`<Button /> when custom component should use html anchor element if href value exists 1`] = `
 <a
-  class="none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_4_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled"
+  class="block none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_4_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled"
   href="abc"
 >
   <div
-    class="height_full center_mobile_base center_mobile_base body_base"
+    class="block height_full center_mobile_base center_mobile_base body_base"
   />
 </a>
 `;
 
 exports[`<Button /> when isFullWidth should match snapshot 1`] = `
 <button
-  class="appearance cursorPointer button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock width_full overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_4_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled"
+  class="appearance cursorPointer button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock width_full overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_4_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled"
   type="button"
 >
   <div
-    class="height_full center_mobile_base center_mobile_base body_base"
+    class="block height_full center_mobile_base center_mobile_base body_base"
   />
 </button>
 `;
 
 exports[`<Button /> when loading should match snapshot for default button 1`] = `
 <button
-  class="appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_4_base variant_secondary_base size_medium_default_base loading"
+  class="appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_4_base variant_secondary_base size_medium_default_base loading"
   disabled=""
   type="button"
 >
   <div
-    class="size_medium_circular_base colours_secondary_base spinner"
+    class="block size_medium_circular_base colours_secondary_base spinner"
   >
     <svg
-      class="overflow_hidden circular"
+      class="block overflow_hidden circular"
       viewBox="25 25 50 50"
     >
       <circle
@@ -105,15 +105,15 @@ exports[`<Button /> when loading should match snapshot for default button 1`] = 
 
 exports[`<Button /> when loading should match snapshot for medium button 1`] = `
 <button
-  class="appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_4_base variant_secondary_base size_medium_default_base loading"
+  class="appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_4_base variant_secondary_base size_medium_default_base loading"
   disabled=""
   type="button"
 >
   <div
-    class="size_medium_circular_base colours_secondary_base spinner"
+    class="block size_medium_circular_base colours_secondary_base spinner"
   >
     <svg
-      class="overflow_hidden circular"
+      class="block overflow_hidden circular"
       viewBox="25 25 50 50"
     >
       <circle
@@ -131,15 +131,15 @@ exports[`<Button /> when loading should match snapshot for medium button 1`] = `
 
 exports[`<Button /> when loading should match snapshot for small button 1`] = `
 <button
-  class="appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_3_base variant_secondary_base size_small_default_base loading"
+  class="appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base variant_secondary_base size_small_default_base loading"
   disabled=""
   type="button"
 >
   <div
-    class="size_medium_circular_base colours_secondary_base spinner"
+    class="block size_medium_circular_base colours_secondary_base spinner"
   >
     <svg
-      class="overflow_hidden circular"
+      class="block overflow_hidden circular"
       viewBox="25 25 50 50"
     >
       <circle
@@ -157,33 +157,33 @@ exports[`<Button /> when loading should match snapshot for small button 1`] = `
 
 exports[`<Button /> when rounded should match snapshot 1`] = `
 <button
-  class="appearance cursorPointer button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_4_base defaultStates_secondary_base variant_secondary_base size_medium_default_base size_medium_rounded_base enabled"
+  class="appearance cursorPointer button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_4_base defaultStates_secondary_base variant_secondary_base size_medium_default_base size_medium_rounded_base enabled"
   type="button"
 >
   <div
-    class="height_full center_mobile_base center_mobile_base body_base"
+    class="block height_full center_mobile_base center_mobile_base body_base"
   />
 </button>
 `;
 
 exports[`<Button /> when size variant should match snapshot for medium button 1`] = `
 <button
-  class="appearance cursorPointer button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_4_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled"
+  class="appearance cursorPointer button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_4_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled"
   type="button"
 >
   <div
-    class="height_full center_mobile_base center_mobile_base body_base"
+    class="block height_full center_mobile_base center_mobile_base body_base"
   />
 </button>
 `;
 
 exports[`<Button /> when size variant should match snapshot for small button 1`] = `
 <button
-  class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_3_base defaultStates_secondary_base variant_secondary_base size_small_default_base enabled"
+  class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base defaultStates_secondary_base variant_secondary_base size_small_default_base enabled"
   type="button"
 >
   <div
-    class="height_full center_mobile_base center_mobile_base body_base"
+    class="block height_full center_mobile_base center_mobile_base body_base"
   />
 </button>
 `;

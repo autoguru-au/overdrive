@@ -5,7 +5,7 @@ exports[`<Meta /> should match snapshot with label, icon for Primary variant 1`]
   class="display_flex position_relative center_mobile_base row_mobile_base flexWrap_nowrap 2_mobile_base 2_mobile_base"
 >
   <div
-    class="2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+    class="block 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <i
       class="display_block small_mobile_base variant_primary_base"
@@ -23,10 +23,10 @@ exports[`<Meta /> should match snapshot with label, icon for Primary variant 1`]
     </i>
   </div>
   <div
-    class="2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+    class="block 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <span
-      class="textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
+      class="textAlign_left root_base block colours_neutral_base fontWeight_normal_base sizes_4_base"
     >
       Hello World!
     </span>
@@ -39,7 +39,7 @@ exports[`<Meta /> should match snapshot with label, icon for Secondary variant 1
   class="display_flex position_relative center_mobile_base row_mobile_base flexWrap_nowrap 2_mobile_base 2_mobile_base"
 >
   <div
-    class="2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+    class="block 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <i
       class="display_block small_mobile_base variant_secondary_base"
@@ -57,10 +57,10 @@ exports[`<Meta /> should match snapshot with label, icon for Secondary variant 1
     </i>
   </div>
   <div
-    class="2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+    class="block 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <span
-      class="textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
+      class="textAlign_left root_base block colours_neutral_base fontWeight_normal_base sizes_4_base"
     >
       Hello World!
     </span>

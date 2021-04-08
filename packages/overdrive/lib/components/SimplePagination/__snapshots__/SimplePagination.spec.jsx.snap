@@ -5,16 +5,16 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
   class="block display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap center_mobile_base 6_mobile_base 6_mobile_base"
 >
   <div
-    class="6_mobile_base 6_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+    class="block 6_mobile_base 6_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <button
       aria-label="previous page"
-      class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_3_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base disabled"
+      class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base disabled"
       disabled=""
       type="button"
     >
       <div
-        class="height_full center_mobile_base center_mobile_base body_base"
+        class="block height_full center_mobile_base center_mobile_base body_base"
       >
         <i
           class="display_block medium_mobile_base"
@@ -35,15 +35,15 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
     </button>
   </div>
   <div
-    class="6_mobile_base 6_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+    class="block 6_mobile_base 6_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <button
       aria-label="next page"
-      class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_3_base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
+      class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
       type="button"
     >
       <div
-        class="height_full center_mobile_base center_mobile_base body_base"
+        class="block height_full center_mobile_base center_mobile_base body_base"
       >
         <i
           class="display_block medium_mobile_base"
@@ -71,15 +71,15 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
   class="block display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap center_mobile_base 6_mobile_base 6_mobile_base"
 >
   <div
-    class="6_mobile_base 6_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+    class="block 6_mobile_base 6_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <button
       aria-label="previous page"
-      class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_3_base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
+      class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
       type="button"
     >
       <div
-        class="height_full center_mobile_base center_mobile_base body_base"
+        class="block height_full center_mobile_base center_mobile_base body_base"
       >
         <i
           class="display_block medium_mobile_base"
@@ -100,15 +100,15 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
     </button>
   </div>
   <div
-    class="6_mobile_base 6_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+    class="block 6_mobile_base 6_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <button
       aria-label="next page"
-      class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_3_base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
+      class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
       type="button"
     >
       <div
-        class="height_full center_mobile_base center_mobile_base body_base"
+        class="block height_full center_mobile_base center_mobile_base body_base"
       >
         <i
           class="display_block medium_mobile_base"
@@ -136,15 +136,15 @@ exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
   class="block display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap center_mobile_base 6_mobile_base 6_mobile_base"
 >
   <div
-    class="6_mobile_base 6_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+    class="block 6_mobile_base 6_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <button
       aria-label="previous page"
-      class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_3_base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
+      class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
       type="button"
     >
       <div
-        class="height_full center_mobile_base center_mobile_base body_base"
+        class="block height_full center_mobile_base center_mobile_base body_base"
       >
         <i
           class="display_block medium_mobile_base"
@@ -165,16 +165,16 @@ exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
     </button>
   </div>
   <div
-    class="6_mobile_base 6_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+    class="block 6_mobile_base 6_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <button
       aria-label="next page"
-      class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base colours_white_base fontWeight_semiBold_base sizes_3_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base disabled"
+      class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base disabled"
       disabled=""
       type="button"
     >
       <div
-        class="height_full center_mobile_base center_mobile_base body_base"
+        class="block height_full center_mobile_base center_mobile_base body_base"
       >
         <i
           class="display_block medium_mobile_base"

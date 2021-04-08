@@ -2,18 +2,18 @@
 
 exports[`<Inline /> should match snapshot for custom element dividers 1`] = `
 <div
-  class="display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 2_mobile_base"
+  class="block display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 2_mobile_base"
 >
   <div
-    class="2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+    class="block 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <span
-      class="textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
+      class="textAlign_left root_base block colours_neutral_base fontWeight_normal_base sizes_4_base"
     >
       A
     </span>
     <div
-      class="2_mobile_base 2_mobile_base"
+      class="block 2_mobile_base 2_mobile_base"
     >
       <div>
         divider
@@ -21,15 +21,15 @@ exports[`<Inline /> should match snapshot for custom element dividers 1`] = `
     </div>
   </div>
   <div
-    class="2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+    class="block 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <span
-      class="textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
+      class="textAlign_left root_base block colours_neutral_base fontWeight_normal_base sizes_4_base"
     >
       B
     </span>
     <div
-      class="2_mobile_base 2_mobile_base"
+      class="block 2_mobile_base 2_mobile_base"
     >
       <div>
         divider
@@ -37,10 +37,10 @@ exports[`<Inline /> should match snapshot for custom element dividers 1`] = `
     </div>
   </div>
   <div
-    class="2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+    class="block 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <span
-      class="textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
+      class="textAlign_left root_base block colours_neutral_base fontWeight_normal_base sizes_4_base"
     >
       C
     </span>
@@ -50,49 +50,49 @@ exports[`<Inline /> should match snapshot for custom element dividers 1`] = `
 
 exports[`<Inline /> should match snapshot for default dividers 1`] = `
 <div
-  class="display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 2_mobile_base"
+  class="block display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 2_mobile_base"
 >
   <div
-    class="2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+    class="block 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <span
-      class="textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
+      class="textAlign_left root_base block colours_neutral_base fontWeight_normal_base sizes_4_base"
     >
       A
     </span>
     <div
-      class="2_mobile_base 2_mobile_base"
+      class="block 2_mobile_base 2_mobile_base"
     >
       <span
-        class="textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
+        class="textAlign_left root_base block colours_neutral_base fontWeight_normal_base sizes_4_base"
       >
         •
       </span>
     </div>
   </div>
   <div
-    class="2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+    class="block 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <span
-      class="textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
+      class="textAlign_left root_base block colours_neutral_base fontWeight_normal_base sizes_4_base"
     >
       B
     </span>
     <div
-      class="2_mobile_base 2_mobile_base"
+      class="block 2_mobile_base 2_mobile_base"
     >
       <span
-        class="textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
+        class="textAlign_left root_base block colours_neutral_base fontWeight_normal_base sizes_4_base"
       >
         •
       </span>
     </div>
   </div>
   <div
-    class="2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+    class="block 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <span
-      class="textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
+      class="textAlign_left root_base block colours_neutral_base fontWeight_normal_base sizes_4_base"
     >
       C
     </span>
@@ -102,31 +102,31 @@ exports[`<Inline /> should match snapshot for default dividers 1`] = `
 
 exports[`<Inline /> should match snapshot for no dividers 1`] = `
 <div
-  class="display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 2_mobile_base 2_mobile_base"
+  class="block display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 2_mobile_base 2_mobile_base"
 >
   <div
-    class="2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+    class="block 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <span
-      class="textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
+      class="textAlign_left root_base block colours_neutral_base fontWeight_normal_base sizes_4_base"
     >
       A
     </span>
   </div>
   <div
-    class="2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+    class="block 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <span
-      class="textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
+      class="textAlign_left root_base block colours_neutral_base fontWeight_normal_base sizes_4_base"
     >
       B
     </span>
   </div>
   <div
-    class="2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+    class="block 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <span
-      class="textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
+      class="textAlign_left root_base block colours_neutral_base fontWeight_normal_base sizes_4_base"
     >
       C
     </span>
@@ -136,18 +136,18 @@ exports[`<Inline /> should match snapshot for no dividers 1`] = `
 
 exports[`<Inline /> should not be able to render components 1`] = `
 <div
-  class="display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 2_mobile_base"
+  class="block display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap 2_mobile_base"
 >
   <div
-    class="2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+    class="block 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <span
-      class="textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
+      class="textAlign_left root_base block colours_neutral_base fontWeight_normal_base sizes_4_base"
     >
       A
     </span>
     <div
-      class="2_mobile_base 2_mobile_base"
+      class="block 2_mobile_base 2_mobile_base"
     >
       <div>
         divider component from test
@@ -155,10 +155,10 @@ exports[`<Inline /> should not be able to render components 1`] = `
     </div>
   </div>
   <div
-    class="2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+    class="block 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
   >
     <span
-      class="textAlign_left root_base colours_neutral_base fontWeight_normal_base sizes_4_base"
+      class="textAlign_left root_base block colours_neutral_base fontWeight_normal_base sizes_4_base"
     >
       B
     </span>
