@@ -90,6 +90,7 @@ export const element = {
 	button,
 	select,
 	input,
+	textarea: input,
 	a,
 	table,
 	thead: vAlignMiddle,
