@@ -28,6 +28,7 @@ export const ProgressSpinner = memo<Props>(
 					className={clsx(
 						useBoxStyles({
 							is: 'svg',
+							display: 'block',
 							overflow: 'hidden',
 						}),
 						styles.circular,
