@@ -1,5 +1,13 @@
 # @autoguru/overdrive
 
+## 2.2.4
+
+### Patch Changes
+
+-   ee67f76: TextLink: Gets inline reset styles
+
+    ProgressSpinner: Gets svg and block resets for the animates SVG
+
 ## 2.2.3
 
 ### Patch Changes
