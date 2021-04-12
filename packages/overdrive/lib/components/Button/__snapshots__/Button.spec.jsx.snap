@@ -87,7 +87,7 @@ exports[`<Button /> when loading should match snapshot for default button 1`] = 
     class="block size_medium_circular_base colours_secondary_base spinner"
   >
     <svg
-      class="overflow_hidden circular"
+      class="display_block overflow_hidden circular"
       viewBox="25 25 50 50"
     >
       <circle
@@ -113,7 +113,7 @@ exports[`<Button /> when loading should match snapshot for medium button 1`] = `
     class="block size_medium_circular_base colours_secondary_base spinner"
   >
     <svg
-      class="overflow_hidden circular"
+      class="display_block overflow_hidden circular"
       viewBox="25 25 50 50"
     >
       <circle
@@ -139,7 +139,7 @@ exports[`<Button /> when loading should match snapshot for small button 1`] = `
     class="block size_medium_circular_base colours_secondary_base spinner"
   >
     <svg
-      class="overflow_hidden circular"
+      class="display_block overflow_hidden circular"
       viewBox="25 25 50 50"
     >
       <circle
