@@ -35,6 +35,7 @@ export const Text: FunctionComponent<Props> = ({
 		textAlign={align}
 		className={[
 			useTextStyles({
+				is: Component,
 				size,
 				colour: colour ?? (strong ? 'dark' : undefined),
 				fontWeight: strong ? 'bold' : fontWeight,

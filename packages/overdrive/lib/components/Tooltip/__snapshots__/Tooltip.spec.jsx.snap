@@ -30,7 +30,7 @@ exports[`<Tolltip /> should match snapshot when opened 1`] = `
       class="block 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base width_full overflow_hidden userSelect_none pointerEvents_none 4_mobile_base 1_mobile_base backgroundColours_gray900_base root"
     >
       <span
-        class="textAlign_left root_base block colours_white_base fontWeight_normal_base sizes_4_base"
+        class="inlineText textAlign_left root_base inlineText colours_white_base fontWeight_normal_base sizes_4_base"
       >
         tooltip content
       </span>

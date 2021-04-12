@@ -8,7 +8,7 @@ exports[`<LinearProgressIndicator /> should match snapshot 1`] = `
     class="block width_full height_full position_absolute linearProgressBar"
   >
     <span
-      class="width_full height_full position_absolute backgroundColours_green300_base linearProgressBarInner"
+      class="inlineText width_full height_full position_absolute backgroundColours_green300_base linearProgressBarInner"
     />
   </div>
 </div>

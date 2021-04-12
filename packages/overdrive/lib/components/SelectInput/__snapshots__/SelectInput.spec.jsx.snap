@@ -65,7 +65,7 @@ exports[`<SelectInput /> should have some hintText 1`] = `
         style="width: 0px;"
       >
         <label
-          class="none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base block colours_neutral_base noWrap sizes_4_base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
+          class="inlineText none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base block colours_neutral_base noWrap sizes_4_base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
         >
           Hello World!
         </label>
@@ -76,7 +76,7 @@ exports[`<SelectInput /> should have some hintText 1`] = `
     </div>
   </div>
   <p
-    class="textAlign_left root_base block fontWeight_normal_base sizes_2_base block 2_mobile_base 4_mobile_base hintText_base styleNode_base"
+    class="block textAlign_left root_base block fontWeight_normal_base sizes_2_base block 2_mobile_base 4_mobile_base hintText_base styleNode_base"
   >
     hint text
   </p>
@@ -148,7 +148,7 @@ exports[`<SelectInput /> should match snapshot 1`] = `
         style="width: 0px;"
       >
         <label
-          class="none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base block colours_neutral_base noWrap sizes_4_base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
+          class="inlineText none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base block colours_neutral_base noWrap sizes_4_base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
         >
           Hello World!
         </label>
@@ -226,7 +226,7 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
         style="width: 16px;"
       >
         <label
-          class="none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base activeColour_base root_base block colours_neutral_base noWrap sizes_4_base placeholderPlacement_shifted_base"
+          class="inlineText none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base activeColour_base root_base block colours_neutral_base noWrap sizes_4_base placeholderPlacement_shifted_base"
         >
           Hello World!
         </label>
@@ -304,7 +304,7 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
         style="width: 0px;"
       >
         <label
-          class="none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base block colours_neutral_base noWrap sizes_4_base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
+          class="inlineText none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base block colours_neutral_base noWrap sizes_4_base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
         >
           Hello World!
         </label>
@@ -382,7 +382,7 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
         style="width: 0px;"
       >
         <label
-          class="none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base block colours_neutral_base noWrap sizes_4_base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
+          class="inlineText none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base block colours_neutral_base noWrap sizes_4_base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
         >
           Hello World!
         </label>
@@ -460,7 +460,7 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
         style="width: 0px;"
       >
         <label
-          class="none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base block colours_neutral_base noWrap sizes_4_base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
+          class="inlineText none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base block colours_neutral_base noWrap sizes_4_base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
         >
           Hello World!
         </label>
@@ -536,7 +536,7 @@ exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
         style="width: 0px;"
       >
         <label
-          class="none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base block colours_neutral_base noWrap sizes_4_base placeholder_mutedLabelStyles_base placeholderPlacement_defaultPrefixed_base"
+          class="inlineText none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base block colours_neutral_base noWrap sizes_4_base placeholder_mutedLabelStyles_base placeholderPlacement_defaultPrefixed_base"
         >
           placeholder something
         </label>
