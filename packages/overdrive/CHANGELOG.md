@@ -1,5 +1,15 @@
 # @autoguru/overdrive
 
+## 2.2.3
+
+### Patch Changes
+
+-   340da9a: Text: Gets explicit reset styles for span and p
+
+    field: Gets explicit reset styles
+
+    fieldset: Gets explicit reset styles
+
 ## 2.2.2
 
 ### Patch Changes
