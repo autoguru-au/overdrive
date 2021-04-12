@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { ComponentProps } from 'react';
 import { useStyles } from 'react-treat';
 
 import type { BoxStyleProps } from '../Box';
@@ -6,7 +7,6 @@ import { useBoxStyles } from '../Box';
 import { Text } from '../Text';
 
 import * as styleRefs from './useTextStyles.treat';
-import { ComponentProps } from 'react';
 
 export interface TextStyleProps {
 	/** @deprecated Because when you go `useTextStyles` for alignment, you should be using `useBoxStyles` */

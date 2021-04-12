@@ -230,7 +230,11 @@ export const Stepper: FunctionComponent<Props> = ({
 						colour="dark"
 						display="block"
 						className={clsx(
-							useBoxStyles({ paddingX: '2', width: 'full' }),
+							useBoxStyles({
+								paddingX: '2',
+								width: 'full',
+								is: 'span',
+							}),
 							styles.label,
 						)}
 						size="4">

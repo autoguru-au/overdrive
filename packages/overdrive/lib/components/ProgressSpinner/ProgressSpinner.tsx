@@ -26,7 +26,11 @@ export const ProgressSpinner = memo<Props>(
 				]}>
 				<svg
 					className={clsx(
-						useBoxStyles({ overflow: 'hidden' }),
+						useBoxStyles({
+							is: 'svg',
+							display: 'block',
+							overflow: 'hidden',
+						}),
 						styles.circular,
 					)}
 					viewBox="25 25 50 50">

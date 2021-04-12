@@ -23,6 +23,7 @@ export const HintText: FunctionComponent<Props> = ({
 }) => {
 	const styles = useStyles(styleRefs);
 	const boxStyles = useBoxStyles({
+		is: 'p',
 		marginTop: '2',
 		marginLeft: '4',
 	});
