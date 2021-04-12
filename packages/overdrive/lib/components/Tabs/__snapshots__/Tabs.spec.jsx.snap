@@ -89,7 +89,7 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
             class="block 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
           >
             <span
-              class="display_block textAlign_center root_base block colours_white_base fontWeight_bold_base sizes_2_base indication_default_base block 1_mobile_base 1_mobile_base display_inlineBlock pill_mobile_base backgroundColours_green900_base"
+              class="inlineText display_block textAlign_center root_base inlineText colours_white_base fontWeight_bold_base sizes_2_base indication_default_base block 1_mobile_base 1_mobile_base display_inlineBlock pill_mobile_base backgroundColours_green900_base"
             >
               5
             </span>
@@ -119,7 +119,7 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
             class="block 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
           >
             <span
-              class="display_block textAlign_center root_base block colours_dark_base fontWeight_bold_base sizes_2_base indication_default_base block 1_mobile_base 1_mobile_base display_inlineBlock pill_mobile_base backgroundColours_gray300_base"
+              class="inlineText display_block textAlign_center root_base inlineText colours_dark_base fontWeight_bold_base sizes_2_base indication_default_base block 1_mobile_base 1_mobile_base display_inlineBlock pill_mobile_base backgroundColours_gray300_base"
             >
               5
             </span>
@@ -149,7 +149,7 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
             class="block 2_mobile_base 2_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
           >
             <span
-              class="display_block textAlign_center root_base block colours_dark_base fontWeight_bold_base sizes_2_base indication_default_base block 1_mobile_base 1_mobile_base display_inlineBlock pill_mobile_base backgroundColours_gray300_base"
+              class="inlineText display_block textAlign_center root_base inlineText colours_dark_base fontWeight_bold_base sizes_2_base indication_default_base block 1_mobile_base 1_mobile_base display_inlineBlock pill_mobile_base backgroundColours_gray300_base"
             >
               5
             </span>

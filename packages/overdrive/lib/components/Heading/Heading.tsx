@@ -7,7 +7,7 @@ import type { TextStyleProps } from '../Text';
 import { useTextStyles } from '../Text';
 
 export interface Props
-	extends TextStyleProps,
+	extends Omit<TextStyleProps, 'is'>,
 		Pick<ComponentProps<typeof Box>, 'id'> {
 	className?: string;
 	is?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';

@@ -15,6 +15,7 @@ const appearance = style({
 
 const cursorPointer = style({ cursor: 'pointer' });
 
+const inlineText = style({ ...base });
 const block = style({ ...base, display: 'block' });
 const list = style({ ...base, listStyle: 'none' });
 
@@ -74,6 +75,9 @@ const table = style({ ...base, borderSpacing: 0, borderCollapse: 'collapse' });
 
 export const element = {
 	div: block,
+	p: block,
+	span: inlineText,
+	label: inlineText,
 	article: block,
 	aside: block,
 	details: block,
@@ -91,6 +95,8 @@ export const element = {
 	select,
 	input,
 	textarea: input,
+	fieldset: block,
+	field: block,
 	a,
 	table,
 	thead: vAlignMiddle,
