@@ -131,8 +131,6 @@ export const Box = forwardRef<HTMLElement, Props>(
 			width,
 		});
 
-		if (Component === 'span') console.log({ cls, className });
-
 		return (
 			<Component
 				ref={ref}
