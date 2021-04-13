@@ -385,6 +385,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 						/*
 							Cheap trick to check if an arrow or click was used or not. We only _commit_ if a click or arrow
 							 */
+						state.highlightIndex &&
 						state.previewText ===
 							suggestions[state.highlightIndex].text &&
 						typeof onChange === 'function'
