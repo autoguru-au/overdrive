@@ -60,7 +60,7 @@
 		"babel-loader": "8.2.2",
 		"babel-plugin-treat": "1.6.2",
 		"browserslist-config-autoguru": "1.0.89",
-		"chromatic": "5.6.3",
+		"chromatic": "5.7.1",
 		"concurrently": "6.0.0",
 		"core-js": "3.9.1",
 		"csstype": "^3.0.7",
