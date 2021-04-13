@@ -32,7 +32,7 @@
 		"react-treat": "^2.0.1"
 	},
 	"devDependencies": {
-		"@autoguru/tsconfig": "1.0.78",
+		"@autoguru/tsconfig": "1.0.79",
 		"@types/react": "17.0.2",
 		"@types/react-dom": "17.0.1",
 		"react": "17.0.1",
