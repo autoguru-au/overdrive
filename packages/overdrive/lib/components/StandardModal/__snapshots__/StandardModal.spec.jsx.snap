@@ -45,7 +45,7 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
               id="od-4"
             >
               <h4
-                class="root_base block colours_dark_base fontWeight_bold_base sizes_4_base"
+                class="blockText root_base block colours_dark_base fontWeight_bold_base sizes_4_base"
               >
                 Hello World!
               </h4>
@@ -140,7 +140,7 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
               id="od-3"
             >
               <h4
-                class="root_base block colours_dark_base fontWeight_bold_base sizes_4_base"
+                class="blockText root_base block colours_dark_base fontWeight_bold_base sizes_4_base"
               />
             </div>
             <button

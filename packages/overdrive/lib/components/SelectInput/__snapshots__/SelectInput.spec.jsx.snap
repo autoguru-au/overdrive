@@ -76,7 +76,7 @@ exports[`<SelectInput /> should have some hintText 1`] = `
     </div>
   </div>
   <p
-    class="block textAlign_left root_base block fontWeight_normal_base sizes_2_base block 2_mobile_base 4_mobile_base hintText_base styleNode_base"
+    class="blockText textAlign_left root_base blockText fontWeight_normal_base sizes_2_base blockText 2_mobile_base 4_mobile_base hintText_base styleNode_base"
   >
     hint text
   </p>
