@@ -1,5 +1,15 @@
 # @autoguru/overdrive
 
+## 2.2.5
+
+### Patch Changes
+
+-   075e32e: useBoxStyles: Borders paddings and margins are no longer rest on
+    block elements
+-   075e32e: Heading: Gets explicit reset styles
+-   6068142: AutoSuggest: Fixed undefined error caused by blurring out of
+    AutoSuggest
+
 ## 2.2.4
 
 ### Patch Changes
