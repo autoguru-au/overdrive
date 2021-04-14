@@ -8,7 +8,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
     class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button"
   >
     <input
-      class="block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
+      class="nakedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
       name="radio"
       type="radio"
       value="1"
@@ -37,7 +37,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
     class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button"
   >
     <input
-      class="block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
+      class="nakedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
       name="radio"
       type="radio"
       value="2"
@@ -73,7 +73,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
     class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button"
   >
     <input
-      class="block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
+      class="nakedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
       name="radio"
       type="radio"
       value="1"
@@ -102,7 +102,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
     class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button"
   >
     <input
-      class="block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
+      class="nakedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
       name="radio"
       type="radio"
       value="2"
@@ -131,7 +131,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
     class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button"
   >
     <input
-      class="block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
+      class="nakedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
       name="radio"
       type="radio"
       value="3"
@@ -160,7 +160,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
     class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button"
   >
     <input
-      class="block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
+      class="nakedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
       name="radio"
       type="radio"
       value="4"
@@ -196,7 +196,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
     class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button"
   >
     <input
-      class="block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
+      class="nakedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
       name="radio"
       type="radio"
       value="1"
@@ -233,7 +233,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
   >
     <input
       checked=""
-      class="block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default nativeInput_checked"
+      class="nakedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default nativeInput_checked"
       name="radio"
       type="radio"
       value=""
@@ -267,7 +267,7 @@ exports[`<RadioButton /> when with component child should match the snapshot 1`]
     class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button"
   >
     <input
-      class="block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
+      class="nakedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
       name="radio"
       type="radio"
       value="1"

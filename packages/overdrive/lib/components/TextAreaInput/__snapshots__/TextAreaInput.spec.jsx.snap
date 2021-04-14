@@ -12,7 +12,7 @@ exports[`<TextAreaInput /> should have some hintText 1`] = `
     >
       <textarea
         autocomplete="off"
-        class="block appearance input block appearance input display_flex width_full position_relative types_textarea_base input_itself_root_base"
+        class="nakedBlockElement appearance input nakedBlockElement appearance input display_flex width_full position_relative types_textarea_base input_itself_root_base"
         id="id"
       />
     </div>
@@ -58,7 +58,7 @@ exports[`<TextAreaInput /> should match snapshot 1`] = `
     >
       <textarea
         autocomplete="off"
-        class="block appearance input block appearance input display_flex width_full position_relative types_textarea_base input_itself_root_base"
+        class="nakedBlockElement appearance input nakedBlockElement appearance input display_flex width_full position_relative types_textarea_base input_itself_root_base"
         id="id"
       />
     </div>
@@ -99,7 +99,7 @@ exports[`<TextAreaInput /> should match snapshot when active 1`] = `
     >
       <textarea
         autocomplete="off"
-        class="block appearance input block appearance input display_flex width_full position_relative types_textarea_base input_itself_root_base"
+        class="nakedBlockElement appearance input nakedBlockElement appearance input display_flex width_full position_relative types_textarea_base input_itself_root_base"
       >
         value from the tests
       </textarea>
@@ -140,7 +140,7 @@ exports[`<TextAreaInput /> should match snapshot when touched 1`] = `
     >
       <textarea
         autocomplete="off"
-        class="block appearance input block appearance input display_flex width_full position_relative types_textarea_base input_itself_root_base"
+        class="nakedBlockElement appearance input nakedBlockElement appearance input display_flex width_full position_relative types_textarea_base input_itself_root_base"
       />
     </div>
     <div
@@ -179,7 +179,7 @@ exports[`<TextAreaInput /> should match snapshot when touched and invalid 1`] = 
     >
       <textarea
         autocomplete="off"
-        class="block appearance input block appearance input display_flex width_full position_relative types_textarea_base input_itself_root_base"
+        class="nakedBlockElement appearance input nakedBlockElement appearance input display_flex width_full position_relative types_textarea_base input_itself_root_base"
       />
     </div>
     <div
@@ -218,7 +218,7 @@ exports[`<TextAreaInput /> should match snapshot when touched and valid 1`] = `
     >
       <textarea
         autocomplete="off"
-        class="block appearance input block appearance input display_flex width_full position_relative types_textarea_base input_itself_root_base"
+        class="nakedBlockElement appearance input nakedBlockElement appearance input display_flex width_full position_relative types_textarea_base input_itself_root_base"
       />
     </div>
     <div

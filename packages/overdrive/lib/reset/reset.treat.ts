@@ -24,19 +24,23 @@ const list = style({ ...base, ...naked, listStyle: 'none' });
 
 const vAlignMiddle = style({ ...base, verticalAlign: 'middle' });
 
+const nakedBlockElement = style({
+	...base,
+	...naked,
+});
+
 const button = [
 	appearance,
 	cursorPointer,
+	nakedBlockElement,
 	style({
-		...base,
-		...naked,
 		outline: 'none',
 		background: 'none',
 		userSelect: 'none',
 	}),
 ];
 
-const field = [block, appearance];
+const field = [nakedBlockElement, appearance];
 
 const select = [
 	...field,

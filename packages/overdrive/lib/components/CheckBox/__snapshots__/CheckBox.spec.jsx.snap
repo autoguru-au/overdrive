@@ -6,7 +6,7 @@ exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
 >
   <input
     checked=""
-    class="block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default nativeInput_checked"
+    class="nakedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default nativeInput_checked"
     name=""
     type="checkbox"
     value="1"
@@ -50,7 +50,7 @@ exports[`<CheckBox /> should match the snapshot for a disable checkbox 1`] = `
   class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button disabled"
 >
   <input
-    class="block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute pointerEvents_none appearance cursorPointer button nativeInput_default"
+    class="nakedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute pointerEvents_none appearance cursorPointer button nativeInput_default"
     disabled=""
     name=""
     type="checkbox"
@@ -80,7 +80,7 @@ exports[`<CheckBox /> should match the snapshot for a single check 1`] = `
   class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button"
 >
   <input
-    class="block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
+    class="nakedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
     name=""
     type="checkbox"
     value="1"
@@ -109,7 +109,7 @@ exports[`<CheckBox /> should match the snapshot for a single check with no value
   class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button"
 >
   <input
-    class="block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
+    class="nakedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
     name=""
     type="checkbox"
     value=""
@@ -136,7 +136,7 @@ exports[`<CheckBox /> when with component child should match the snapshot 1`] = 
   class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button"
 >
   <input
-    class="block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
+    class="nakedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
     name=""
     type="checkbox"
     value="1"
