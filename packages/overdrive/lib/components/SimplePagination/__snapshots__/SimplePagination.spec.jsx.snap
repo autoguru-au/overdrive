@@ -9,7 +9,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
   >
     <button
       aria-label="previous page"
-      class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base disabled"
+      class="appearance cursorPointer trimmedBlockElement button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base disabled"
       disabled=""
       type="button"
     >
@@ -39,7 +39,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
   >
     <button
       aria-label="next page"
-      class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
+      class="appearance cursorPointer trimmedBlockElement button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
       type="button"
     >
       <div
@@ -75,7 +75,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
   >
     <button
       aria-label="previous page"
-      class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
+      class="appearance cursorPointer trimmedBlockElement button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
       type="button"
     >
       <div
@@ -104,7 +104,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
   >
     <button
       aria-label="next page"
-      class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
+      class="appearance cursorPointer trimmedBlockElement button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
       type="button"
     >
       <div
@@ -140,7 +140,7 @@ exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
   >
     <button
       aria-label="previous page"
-      class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
+      class="appearance cursorPointer trimmedBlockElement button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base defaultStates_secondary_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
       type="button"
     >
       <div
@@ -169,7 +169,7 @@ exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
   >
     <button
       aria-label="next page"
-      class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base disabled"
+      class="appearance cursorPointer trimmedBlockElement button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base variant_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base disabled"
       disabled=""
       type="button"
     >

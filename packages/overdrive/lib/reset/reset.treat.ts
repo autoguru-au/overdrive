@@ -3,13 +3,12 @@ import { style } from 'treat';
 export const base = {
 	fontSize: '100%',
 	verticalAlign: 'baseline',
+	borderWidth: 0,
 };
 
-export const naked = {
+export const trimmed = {
 	margin: 0,
 	padding: 0,
-	border: 'none',
-	borderWidth: 0,
 };
 
 const appearance = style({
@@ -20,19 +19,17 @@ const cursorPointer = style({ cursor: 'pointer' });
 
 const inlineText = style({ ...base });
 const block = style({ ...base, display: 'block' });
-const list = style({ ...base, ...naked, listStyle: 'none' });
+const list = style({ ...base, ...trimmed, listStyle: 'none' });
 
-const vAlignMiddle = style({ ...base, verticalAlign: 'middle' });
-
-const nakedBlockElement = style({
+const trimmedBlockElement = style({
 	...base,
-	...naked,
+	...trimmed,
 });
 
 const button = [
 	appearance,
 	cursorPointer,
-	nakedBlockElement,
+	trimmedBlockElement,
 	style({
 		outline: 'none',
 		background: 'none',
@@ -40,7 +37,7 @@ const button = [
 	}),
 ];
 
-const field = [nakedBlockElement, appearance];
+const field = [trimmedBlockElement, appearance];
 
 const select = [
 	...field,
@@ -75,21 +72,24 @@ const a = [
 	cursorPointer,
 	style({
 		...base,
-		...naked,
+		...trimmed,
 		textDecoration: 'none',
 	}),
 ];
 
-const table = style({
-	...base,
-	...naked,
-	borderSpacing: 0,
-	borderCollapse: 'collapse',
-});
+const table = [
+	trimmedBlockElement,
+	style({
+		borderSpacing: 0,
+		borderCollapse: 'collapse',
+	}),
+];
+
+const vAlignMiddle = [trimmedBlockElement, style({ verticalAlign: 'middle' })];
 
 const blockText = style({
 	...base,
-	...naked,
+	...trimmed,
 });
 
 export const element = {

@@ -2,17 +2,17 @@
 
 exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
 <div
-  class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button"
+  class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer trimmedBlockElement button"
 >
   <input
     checked=""
-    class="nakedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default nativeInput_checked"
+    class="trimmedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer trimmedBlockElement button nativeInput_default nativeInput_checked"
     name=""
     type="checkbox"
     value="1"
   />
   <div
-    class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer button"
+    class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer trimmedBlockElement button"
   >
     <i
       class="display_block small_mobile_base icon_base root_base block colours_white_base block position_absolute"
@@ -34,7 +34,7 @@ exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
     />
   </div>
   <label
-    class="inlineText width_full appearance cursorPointer button root_base block colours_neutral_base sizes_4_base"
+    class="inlineText width_full appearance cursorPointer trimmedBlockElement button root_base block colours_neutral_base sizes_4_base"
   >
     <span
       class="inlineText textAlign_left root_base inlineText colours_neutral_base fontWeight_normal_base sizes_4_base"
@@ -47,24 +47,24 @@ exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
 
 exports[`<CheckBox /> should match the snapshot for a disable checkbox 1`] = `
 <div
-  class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button disabled"
+  class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer trimmedBlockElement button disabled"
 >
   <input
-    class="nakedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute pointerEvents_none appearance cursorPointer button nativeInput_default"
+    class="trimmedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute pointerEvents_none appearance cursorPointer trimmedBlockElement button nativeInput_default"
     disabled=""
     name=""
     type="checkbox"
     value="1"
   />
   <div
-    class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer button"
+    class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer trimmedBlockElement button"
   >
     <div
       class="block border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base backgroundColours_transparent_base checkableItem_base base_default_base"
     />
   </div>
   <label
-    class="inlineText width_full pointerEvents_none appearance cursorPointer button root_base block colours_neutral_base sizes_4_base label_disabled_base"
+    class="inlineText width_full pointerEvents_none appearance cursorPointer trimmedBlockElement button root_base block colours_neutral_base sizes_4_base label_disabled_base"
   >
     <span
       class="inlineText textAlign_left root_base inlineText colours_neutral_base fontWeight_normal_base sizes_4_base"
@@ -77,23 +77,23 @@ exports[`<CheckBox /> should match the snapshot for a disable checkbox 1`] = `
 
 exports[`<CheckBox /> should match the snapshot for a single check 1`] = `
 <div
-  class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button"
+  class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer trimmedBlockElement button"
 >
   <input
-    class="nakedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
+    class="trimmedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer trimmedBlockElement button nativeInput_default"
     name=""
     type="checkbox"
     value="1"
   />
   <div
-    class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer button"
+    class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer trimmedBlockElement button"
   >
     <div
       class="block border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base backgroundColours_transparent_base checkableItem_base base_default_base"
     />
   </div>
   <label
-    class="inlineText width_full appearance cursorPointer button root_base block colours_neutral_base sizes_4_base"
+    class="inlineText width_full appearance cursorPointer trimmedBlockElement button root_base block colours_neutral_base sizes_4_base"
   >
     <span
       class="inlineText textAlign_left root_base inlineText colours_neutral_base fontWeight_normal_base sizes_4_base"
@@ -106,23 +106,23 @@ exports[`<CheckBox /> should match the snapshot for a single check 1`] = `
 
 exports[`<CheckBox /> should match the snapshot for a single check with no value or label 1`] = `
 <div
-  class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button"
+  class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer trimmedBlockElement button"
 >
   <input
-    class="nakedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
+    class="trimmedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer trimmedBlockElement button nativeInput_default"
     name=""
     type="checkbox"
     value=""
   />
   <div
-    class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer button"
+    class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer trimmedBlockElement button"
   >
     <div
       class="block border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base backgroundColours_transparent_base checkableItem_base base_default_base"
     />
   </div>
   <label
-    class="inlineText width_full appearance cursorPointer button root_base block colours_neutral_base sizes_4_base"
+    class="inlineText width_full appearance cursorPointer trimmedBlockElement button root_base block colours_neutral_base sizes_4_base"
   >
     <span
       class="inlineText textAlign_left root_base inlineText colours_neutral_base fontWeight_normal_base sizes_4_base"
@@ -133,23 +133,23 @@ exports[`<CheckBox /> should match the snapshot for a single check with no value
 
 exports[`<CheckBox /> when with component child should match the snapshot 1`] = `
 <div
-  class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button"
+  class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer trimmedBlockElement button"
 >
   <input
-    class="nakedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
+    class="trimmedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer trimmedBlockElement button nativeInput_default"
     name=""
     type="checkbox"
     value="1"
   />
   <div
-    class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer button"
+    class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer trimmedBlockElement button"
   >
     <div
       class="block border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base backgroundColours_transparent_base checkableItem_base base_default_base"
     />
   </div>
   <label
-    class="inlineText width_full appearance cursorPointer button root_base block colours_neutral_base sizes_4_base"
+    class="inlineText width_full appearance cursorPointer trimmedBlockElement button root_base block colours_neutral_base sizes_4_base"
   >
     <h1
       class="blockText root_base block colours_dark_base fontWeight_bold_base sizes_8_base"

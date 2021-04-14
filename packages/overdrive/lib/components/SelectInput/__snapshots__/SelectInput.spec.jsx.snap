@@ -15,7 +15,7 @@ exports[`<SelectInput /> should have some hintText 1`] = `
       >
         <select
           autocomplete="off"
-          class="nakedBlockElement appearance select flexGrow_1 input paddedInput_base nakedBlockElement appearance input display_flex width_full position_relative input_itself_root_base"
+          class="trimmedBlockElement appearance select flexGrow_1 input paddedInput_base trimmedBlockElement appearance input display_flex width_full position_relative input_itself_root_base"
         >
           <option
             value="a"
@@ -98,7 +98,7 @@ exports[`<SelectInput /> should match snapshot 1`] = `
       >
         <select
           autocomplete="off"
-          class="nakedBlockElement appearance select flexGrow_1 input paddedInput_base nakedBlockElement appearance input display_flex width_full position_relative input_itself_root_base"
+          class="trimmedBlockElement appearance select flexGrow_1 input paddedInput_base trimmedBlockElement appearance input display_flex width_full position_relative input_itself_root_base"
         >
           <option
             value="a"
@@ -176,7 +176,7 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
       >
         <select
           autocomplete="off"
-          class="nakedBlockElement appearance select flexGrow_1 input paddedInput_base nakedBlockElement appearance input display_flex width_full position_relative input_itself_root_base"
+          class="trimmedBlockElement appearance select flexGrow_1 input paddedInput_base trimmedBlockElement appearance input display_flex width_full position_relative input_itself_root_base"
         >
           <option
             value="a"
@@ -254,7 +254,7 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
       >
         <select
           autocomplete="off"
-          class="nakedBlockElement appearance select flexGrow_1 input paddedInput_base nakedBlockElement appearance input display_flex width_full position_relative input_itself_root_base"
+          class="trimmedBlockElement appearance select flexGrow_1 input paddedInput_base trimmedBlockElement appearance input display_flex width_full position_relative input_itself_root_base"
         >
           <option
             value="a"
@@ -332,7 +332,7 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
       >
         <select
           autocomplete="off"
-          class="nakedBlockElement appearance select flexGrow_1 input paddedInput_base nakedBlockElement appearance input display_flex width_full position_relative input_itself_root_base"
+          class="trimmedBlockElement appearance select flexGrow_1 input paddedInput_base trimmedBlockElement appearance input display_flex width_full position_relative input_itself_root_base"
         >
           <option
             value="a"
@@ -410,7 +410,7 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
       >
         <select
           autocomplete="off"
-          class="nakedBlockElement appearance select flexGrow_1 input paddedInput_base nakedBlockElement appearance input display_flex width_full position_relative input_itself_root_base"
+          class="trimmedBlockElement appearance select flexGrow_1 input paddedInput_base trimmedBlockElement appearance input display_flex width_full position_relative input_itself_root_base"
         >
           <option
             value="a"
@@ -502,7 +502,7 @@ exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
       >
         <select
           autocomplete="off"
-          class="nakedBlockElement appearance select flexGrow_1 input paddedInput_base nakedBlockElement appearance input display_flex width_full position_relative input_itself_root_base input_itself_prefixed_base"
+          class="trimmedBlockElement appearance select flexGrow_1 input paddedInput_base trimmedBlockElement appearance input display_flex width_full position_relative input_itself_root_base input_itself_prefixed_base"
         />
         <div
           class="block 4_mobile_base display_flex height_full position_absolute pointerEvents_none center_mobile_base flexShrink_0 arrow"
