@@ -14,9 +14,9 @@ addDecorator(withKnobs);
 const withThemeProvider = (Story, context) => {
 	return !isChromatic() ? (
 		<OverdriveProvider theme={context.globals.theme}>
-			<div style={{ padding: 8 }}>
+			<Box padding='2'>
 				<Story {...context} />
-			</div>
+			</Box>
 		</OverdriveProvider>
 	) : (
 		Object.entries(themes).map(([, theme], i) => (
