@@ -5,16 +5,16 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
   class="block none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex width_full position_relative column_mobile_base"
 >
   <div
-    class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button"
+    class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer trimmedBlockElement button"
   >
     <input
-      class="block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
+      class="trimmedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer trimmedBlockElement button nativeInput_default"
       name="radio"
       type="radio"
       value="1"
     />
     <div
-      class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer button"
+      class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer trimmedBlockElement button"
     >
       <div
         class="block position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base pill_mobile_base checkableItem_base circle_default_base circle_outer_base"
@@ -24,7 +24,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       />
     </div>
     <label
-      class="inlineText width_full appearance cursorPointer button root_base block colours_neutral_base sizes_4_base"
+      class="inlineText width_full appearance cursorPointer trimmedBlockElement button root_base block colours_neutral_base sizes_4_base"
     >
       <span
         class="inlineText textAlign_left root_base inlineText colours_neutral_base fontWeight_normal_base sizes_4_base"
@@ -34,16 +34,16 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
     </label>
   </div>
   <div
-    class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button"
+    class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer trimmedBlockElement button"
   >
     <input
-      class="block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
+      class="trimmedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer trimmedBlockElement button nativeInput_default"
       name="radio"
       type="radio"
       value="2"
     />
     <div
-      class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer button"
+      class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer trimmedBlockElement button"
     >
       <div
         class="block position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base pill_mobile_base checkableItem_base circle_default_base circle_outer_base"
@@ -53,7 +53,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       />
     </div>
     <label
-      class="inlineText width_full appearance cursorPointer button root_base block colours_neutral_base sizes_4_base"
+      class="inlineText width_full appearance cursorPointer trimmedBlockElement button root_base block colours_neutral_base sizes_4_base"
     >
       <span
         class="inlineText textAlign_left root_base inlineText colours_neutral_base fontWeight_normal_base sizes_4_base"
@@ -70,16 +70,16 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
   class="block none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex width_full position_relative column_mobile_base"
 >
   <div
-    class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button"
+    class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer trimmedBlockElement button"
   >
     <input
-      class="block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
+      class="trimmedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer trimmedBlockElement button nativeInput_default"
       name="radio"
       type="radio"
       value="1"
     />
     <div
-      class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer button"
+      class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer trimmedBlockElement button"
     >
       <div
         class="block position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base pill_mobile_base checkableItem_base circle_default_base circle_outer_base"
@@ -89,7 +89,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       />
     </div>
     <label
-      class="inlineText width_full appearance cursorPointer button root_base block colours_neutral_base sizes_4_base"
+      class="inlineText width_full appearance cursorPointer trimmedBlockElement button root_base block colours_neutral_base sizes_4_base"
     >
       <span
         class="inlineText textAlign_left root_base inlineText colours_neutral_base fontWeight_normal_base sizes_4_base"
@@ -99,16 +99,16 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
     </label>
   </div>
   <div
-    class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button"
+    class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer trimmedBlockElement button"
   >
     <input
-      class="block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
+      class="trimmedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer trimmedBlockElement button nativeInput_default"
       name="radio"
       type="radio"
       value="2"
     />
     <div
-      class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer button"
+      class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer trimmedBlockElement button"
     >
       <div
         class="block position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base pill_mobile_base checkableItem_base circle_default_base circle_outer_base"
@@ -118,7 +118,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       />
     </div>
     <label
-      class="inlineText width_full appearance cursorPointer button root_base block colours_neutral_base sizes_4_base"
+      class="inlineText width_full appearance cursorPointer trimmedBlockElement button root_base block colours_neutral_base sizes_4_base"
     >
       <span
         class="inlineText textAlign_left root_base inlineText colours_neutral_base fontWeight_normal_base sizes_4_base"
@@ -128,16 +128,16 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
     </label>
   </div>
   <div
-    class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button"
+    class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer trimmedBlockElement button"
   >
     <input
-      class="block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
+      class="trimmedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer trimmedBlockElement button nativeInput_default"
       name="radio"
       type="radio"
       value="3"
     />
     <div
-      class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer button"
+      class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer trimmedBlockElement button"
     >
       <div
         class="block position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base pill_mobile_base checkableItem_base circle_default_base circle_outer_base"
@@ -147,7 +147,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       />
     </div>
     <label
-      class="inlineText width_full appearance cursorPointer button root_base block colours_neutral_base sizes_4_base"
+      class="inlineText width_full appearance cursorPointer trimmedBlockElement button root_base block colours_neutral_base sizes_4_base"
     >
       <span
         class="inlineText textAlign_left root_base inlineText colours_neutral_base fontWeight_normal_base sizes_4_base"
@@ -157,16 +157,16 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
     </label>
   </div>
   <div
-    class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button"
+    class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer trimmedBlockElement button"
   >
     <input
-      class="block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
+      class="trimmedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer trimmedBlockElement button nativeInput_default"
       name="radio"
       type="radio"
       value="4"
     />
     <div
-      class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer button"
+      class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer trimmedBlockElement button"
     >
       <div
         class="block position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base pill_mobile_base checkableItem_base circle_default_base circle_outer_base"
@@ -176,7 +176,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       />
     </div>
     <label
-      class="inlineText width_full appearance cursorPointer button root_base block colours_neutral_base sizes_4_base"
+      class="inlineText width_full appearance cursorPointer trimmedBlockElement button root_base block colours_neutral_base sizes_4_base"
     >
       <span
         class="inlineText textAlign_left root_base inlineText colours_neutral_base fontWeight_normal_base sizes_4_base"
@@ -193,16 +193,16 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
   class="block none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex width_full position_relative column_mobile_base"
 >
   <div
-    class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button"
+    class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer trimmedBlockElement button"
   >
     <input
-      class="block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
+      class="trimmedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer trimmedBlockElement button nativeInput_default"
       name="radio"
       type="radio"
       value="1"
     />
     <div
-      class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer button"
+      class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer trimmedBlockElement button"
     >
       <div
         class="block position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base pill_mobile_base checkableItem_base circle_default_base circle_outer_base"
@@ -212,7 +212,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       />
     </div>
     <label
-      class="inlineText width_full appearance cursorPointer button root_base block colours_neutral_base sizes_4_base"
+      class="inlineText width_full appearance cursorPointer trimmedBlockElement button root_base block colours_neutral_base sizes_4_base"
     >
       <span
         class="inlineText textAlign_left root_base inlineText colours_neutral_base fontWeight_normal_base sizes_4_base"
@@ -229,17 +229,17 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
   class="block none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex width_full position_relative column_mobile_base"
 >
   <div
-    class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button"
+    class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer trimmedBlockElement button"
   >
     <input
       checked=""
-      class="block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default nativeInput_checked"
+      class="trimmedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer trimmedBlockElement button nativeInput_default nativeInput_checked"
       name="radio"
       type="radio"
       value=""
     />
     <div
-      class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer button"
+      class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer trimmedBlockElement button"
     >
       <div
         class="block position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base pill_mobile_base checkableItem_base circle_default_base circle_outer_base circle_selected_base"
@@ -249,7 +249,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
       />
     </div>
     <label
-      class="inlineText width_full appearance cursorPointer button root_base block colours_neutral_base sizes_4_base"
+      class="inlineText width_full appearance cursorPointer trimmedBlockElement button root_base block colours_neutral_base sizes_4_base"
     >
       <span
         class="inlineText textAlign_left root_base inlineText colours_neutral_base fontWeight_normal_base sizes_4_base"
@@ -264,16 +264,16 @@ exports[`<RadioButton /> when with component child should match the snapshot 1`]
   class="block none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex width_full position_relative column_mobile_base"
 >
   <div
-    class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer button"
+    class="block 3_mobile_base 3_mobile_base 3_mobile_base none_mobile_base display_flex position_relative center_mobile_base row_mobile_base flexStart_mobile_base root_base appearance cursorPointer trimmedBlockElement button"
   >
     <input
-      class="block appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer button nativeInput_default"
+      class="trimmedBlockElement appearance input none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full height_full position_absolute appearance cursorPointer trimmedBlockElement button nativeInput_default"
       name="radio"
       type="radio"
       value="1"
     />
     <div
-      class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer button"
+      class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer trimmedBlockElement button"
     >
       <div
         class="block position_absolute border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base pill_mobile_base checkableItem_base circle_default_base circle_outer_base"
@@ -283,10 +283,10 @@ exports[`<RadioButton /> when with component child should match the snapshot 1`]
       />
     </div>
     <label
-      class="inlineText width_full appearance cursorPointer button root_base block colours_neutral_base sizes_4_base"
+      class="inlineText width_full appearance cursorPointer trimmedBlockElement button root_base block colours_neutral_base sizes_4_base"
     >
       <h1
-        class="root_base block colours_dark_base fontWeight_bold_base sizes_8_base"
+        class="blockText root_base block colours_dark_base fontWeight_bold_base sizes_8_base"
       >
         Hello checkbox
       </h1>
@@ -297,7 +297,7 @@ exports[`<RadioButton /> when with component child should match the snapshot 1`]
 
 exports[`<RadioButton /> when with component child should render the component child 1`] = `
 <h1
-  class="root_base block colours_dark_base fontWeight_bold_base sizes_8_base"
+  class="blockText root_base block colours_dark_base fontWeight_bold_base sizes_8_base"
 >
   Hello checkbox
 </h1>

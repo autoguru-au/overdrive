@@ -12,7 +12,7 @@ exports[`<DateInput /> should have some hintText 1`] = `
     >
       <input
         autocomplete="off"
-        class="block appearance input block appearance input display_flex width_full position_relative input_itself_root_base"
+        class="trimmedBlockElement appearance input trimmedBlockElement appearance input display_flex width_full position_relative input_itself_root_base"
         id="id"
         type="date"
         value="2019-01-21"
@@ -41,7 +41,7 @@ exports[`<DateInput /> should have some hintText 1`] = `
     </div>
   </div>
   <p
-    class="block textAlign_left root_base block fontWeight_normal_base sizes_2_base block 2_mobile_base 4_mobile_base hintText_base styleNode_base"
+    class="blockText textAlign_left root_base blockText fontWeight_normal_base sizes_2_base blockText 2_mobile_base 4_mobile_base hintText_base styleNode_base"
   >
     hint text
   </p>
@@ -60,7 +60,7 @@ exports[`<DateInput /> should match snapshot 1`] = `
     >
       <input
         autocomplete="off"
-        class="block appearance input block appearance input display_flex width_full position_relative input_itself_root_base"
+        class="trimmedBlockElement appearance input trimmedBlockElement appearance input display_flex width_full position_relative input_itself_root_base"
         id="id"
         type="date"
         value="2019-01-21"
@@ -103,7 +103,7 @@ exports[`<DateInput /> should match snapshot when active 1`] = `
     >
       <input
         autocomplete="off"
-        class="block appearance input block appearance input display_flex width_full position_relative input_itself_root_base"
+        class="trimmedBlockElement appearance input trimmedBlockElement appearance input display_flex width_full position_relative input_itself_root_base"
         type="date"
         value="2019-02-05"
       />
@@ -144,7 +144,7 @@ exports[`<DateInput /> should match snapshot when touched 1`] = `
     >
       <input
         autocomplete="off"
-        class="block appearance input block appearance input display_flex width_full position_relative input_itself_root_base"
+        class="trimmedBlockElement appearance input trimmedBlockElement appearance input display_flex width_full position_relative input_itself_root_base"
         type="date"
         value="2019-01-21"
       />
@@ -185,7 +185,7 @@ exports[`<DateInput /> should match snapshot when touched and invalid 1`] = `
     >
       <input
         autocomplete="off"
-        class="block appearance input block appearance input display_flex width_full position_relative input_itself_root_base"
+        class="trimmedBlockElement appearance input trimmedBlockElement appearance input display_flex width_full position_relative input_itself_root_base"
         type="date"
         value="2019-01-21"
       />
@@ -226,7 +226,7 @@ exports[`<DateInput /> should match snapshot when touched and valid 1`] = `
     >
       <input
         autocomplete="off"
-        class="block appearance input block appearance input display_flex width_full position_relative input_itself_root_base"
+        class="trimmedBlockElement appearance input trimmedBlockElement appearance input display_flex width_full position_relative input_itself_root_base"
         type="date"
         value="2019-01-21"
       />
@@ -295,7 +295,7 @@ exports[`<DateInput /> should match snapshot with both icons 1`] = `
       </i>
       <input
         autocomplete="off"
-        class="block appearance input block appearance input display_flex width_full position_relative input_itself_root_base input_itself_prefixed_base input_itself_suffixed_base"
+        class="trimmedBlockElement appearance input trimmedBlockElement appearance input display_flex width_full position_relative input_itself_root_base input_itself_prefixed_base input_itself_suffixed_base"
         type="date"
         value=""
       />
@@ -350,7 +350,7 @@ exports[`<DateInput /> should match snapshot with prefix icon 1`] = `
       </i>
       <input
         autocomplete="off"
-        class="block appearance input block appearance input display_flex width_full position_relative input_itself_root_base input_itself_prefixed_base"
+        class="trimmedBlockElement appearance input trimmedBlockElement appearance input display_flex width_full position_relative input_itself_root_base input_itself_prefixed_base"
         type="date"
         value=""
       />
@@ -405,7 +405,7 @@ exports[`<DateInput /> should match snapshot with suffix icon 1`] = `
       </i>
       <input
         autocomplete="off"
-        class="block appearance input block appearance input display_flex width_full position_relative input_itself_root_base input_itself_suffixed_base"
+        class="trimmedBlockElement appearance input trimmedBlockElement appearance input display_flex width_full position_relative input_itself_root_base input_itself_suffixed_base"
         type="date"
         value=""
       />

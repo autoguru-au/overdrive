@@ -51,7 +51,7 @@ exports[`<Anchor /> should match snapshot without label 1`] = `
 
 exports[`<Anchor /> when custom component should match snapshot with label, icon custom component 1`] = `
 <button
-  class="appearance cursorPointer button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_4_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled root root_base block colours_link_base block display_inline"
+  class="appearance cursorPointer trimmedBlockElement button none_mobile_base 4_mobile_base none_mobile_base 4_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base 1_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_4_base defaultStates_secondary_base variant_secondary_base size_medium_default_base enabled root root_base block colours_link_base block display_inline"
   type="button"
 >
   <div

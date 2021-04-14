@@ -3,7 +3,7 @@
 exports[`<Stepper /> should match snapshot with label formatter 1`] = `
 <div
   aria-disabled="false"
-  class="block 3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base userSelect_none border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base appearance cursorPointer button"
+  class="block 3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base userSelect_none border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base appearance cursorPointer trimmedBlockElement button"
   tabindex="0"
 >
   <div
@@ -17,7 +17,7 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
       >
         <button
           aria-label="step down"
-          class="appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base block colours_white_base"
+          class="appearance cursorPointer trimmedBlockElement button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base block colours_white_base"
           tabindex="-1"
         >
           <i
@@ -59,7 +59,7 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
       >
         <button
           aria-label="step up"
-          class="appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base block colours_white_base"
+          class="appearance cursorPointer trimmedBlockElement button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base block colours_white_base"
           tabindex="-1"
         >
           <i
@@ -87,7 +87,7 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
 exports[`<Stepper /> should match snapshot with props 1`] = `
 <div
   aria-disabled="false"
-  class="block 3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base userSelect_none border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base appearance cursorPointer button"
+  class="block 3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base userSelect_none border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base appearance cursorPointer trimmedBlockElement button"
   tabindex="0"
 >
   <div
@@ -101,7 +101,7 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
       >
         <button
           aria-label="step down"
-          class="appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base block colours_white_base"
+          class="appearance cursorPointer trimmedBlockElement button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base block colours_white_base"
           tabindex="-1"
         >
           <i
@@ -143,7 +143,7 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
       >
         <button
           aria-label="step up"
-          class="appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base block colours_white_base"
+          class="appearance cursorPointer trimmedBlockElement button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base block colours_white_base"
           tabindex="-1"
         >
           <i
@@ -171,7 +171,7 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
 exports[`<Stepper /> should match snapshot without props 1`] = `
 <div
   aria-disabled="true"
-  class="block 3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base userSelect_none border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base appearance cursorPointer button disabled"
+  class="block 3_mobile_base 3_mobile_base 3_mobile_base 3_mobile_base userSelect_none border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base 2_mobile_base 1_mobile_base root_base appearance cursorPointer trimmedBlockElement button disabled"
   tabindex="0"
 >
   <div
@@ -185,7 +185,7 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
       >
         <button
           aria-label="step down"
-          class="appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base handle_disabled_base root_base block colours_white_base"
+          class="appearance cursorPointer trimmedBlockElement button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base handle_disabled_base root_base block colours_white_base"
           disabled=""
           tabindex="-1"
         >
@@ -228,7 +228,7 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
       >
         <button
           aria-label="step up"
-          class="appearance cursorPointer button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base handle_disabled_base root_base block colours_white_base"
+          class="appearance cursorPointer trimmedBlockElement button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base handle_disabled_base root_base block colours_white_base"
           disabled=""
           tabindex="-1"
         >

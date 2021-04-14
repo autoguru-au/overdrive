@@ -31,7 +31,7 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
         scope="col"
       >
         <button
-          class="appearance cursorPointer button 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_block width_full sorterButton"
+          class="appearance cursorPointer trimmedBlockElement button 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_block width_full sorterButton"
           tabindex="-1"
         >
           <div

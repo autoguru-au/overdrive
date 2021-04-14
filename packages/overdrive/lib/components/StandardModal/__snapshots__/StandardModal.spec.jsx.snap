@@ -45,14 +45,14 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
               id="od-4"
             >
               <h4
-                class="root_base block colours_dark_base fontWeight_bold_base sizes_4_base"
+                class="blockText root_base block colours_dark_base fontWeight_bold_base sizes_4_base"
               >
                 Hello World!
               </h4>
             </div>
             <button
               aria-label="close"
-              class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base minimal_defaults_base minimalStates_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
+              class="appearance cursorPointer trimmedBlockElement button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base minimal_defaults_base minimalStates_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
               type="button"
             >
               <div
@@ -140,12 +140,12 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
               id="od-3"
             >
               <h4
-                class="root_base block colours_dark_base fontWeight_bold_base sizes_4_base"
+                class="blockText root_base block colours_dark_base fontWeight_bold_base sizes_4_base"
               />
             </div>
             <button
               aria-label="close"
-              class="appearance cursorPointer button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base minimal_defaults_base minimalStates_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
+              class="appearance cursorPointer trimmedBlockElement button none_mobile_base 3_mobile_base none_mobile_base 3_mobile_base display_inlineBlock overflow_hidden textAlign_center border_style none_mobile_base none_mobile_base none_mobile_base none_mobile_base pill_mobile_base root_base root_base block colours_white_base fontWeight_semiBold_base sizes_3_base minimal_defaults_base minimalStates_secondary_base size_small_default_base size_small_rounded_base size_small_iconOnly_base enabled"
               type="button"
             >
               <div
