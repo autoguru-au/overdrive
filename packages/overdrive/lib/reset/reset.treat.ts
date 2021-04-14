@@ -1,12 +1,15 @@
 import { style } from 'treat';
 
 export const base = {
+	fontSize: '100%',
+	verticalAlign: 'baseline',
+};
+
+export const naked = {
 	margin: 0,
 	padding: 0,
 	border: 'none',
 	borderWidth: 0,
-	fontSize: '100%',
-	verticalAlign: 'baseline',
 };
 
 const appearance = style({
@@ -17,7 +20,7 @@ const cursorPointer = style({ cursor: 'pointer' });
 
 const inlineText = style({ ...base });
 const block = style({ ...base, display: 'block' });
-const list = style({ ...base, listStyle: 'none' });
+const list = style({ ...base, ...naked, listStyle: 'none' });
 
 const vAlignMiddle = style({ ...base, verticalAlign: 'middle' });
 
@@ -26,6 +29,7 @@ const button = [
 	cursorPointer,
 	style({
 		...base,
+		...naked,
 		outline: 'none',
 		background: 'none',
 		userSelect: 'none',
@@ -67,11 +71,17 @@ const a = [
 	cursorPointer,
 	style({
 		...base,
+		...naked,
 		textDecoration: 'none',
 	}),
 ];
 
-const table = style({ ...base, borderSpacing: 0, borderCollapse: 'collapse' });
+const table = style({
+	...base,
+	...naked,
+	borderSpacing: 0,
+	borderCollapse: 'collapse',
+});
 
 export const element = {
 	div: block,
