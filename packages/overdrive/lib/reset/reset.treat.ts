@@ -83,9 +83,20 @@ const table = style({
 	borderCollapse: 'collapse',
 });
 
+const blockText = style({
+	...base,
+	...naked,
+});
+
 export const element = {
 	div: block,
-	p: block,
+	p: blockText,
+	h1: blockText,
+	h2: blockText,
+	h3: blockText,
+	h4: blockText,
+	h5: blockText,
+	h6: blockText,
 	span: inlineText,
 	label: inlineText,
 	article: block,
