@@ -1,5 +1,14 @@
 # @autoguru/overdrive
 
+## 2.2.6
+
+### Patch Changes
+
+-   b328760: Box: Gets padding reset for field and fieldset elements
+
+    AutoSuggest: Gets fix for exception when clicking outside an open
+    AutoSuggest
+
 ## 2.2.5
 
 ### Patch Changes
