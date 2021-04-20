@@ -387,7 +387,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 							 */
 						state.highlightIndex &&
 						state.previewText ===
-							suggestions[state.highlightIndex].text &&
+							suggestions[state.highlightIndex]?.text &&
 						typeof onChange === 'function'
 					)
 						onChange(suggestions[state.highlightIndex]);
