@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.2.7
+
+### Patch Changes
+
+-   e004bff: Text: Gets capitalise text transform prop
+
 ## 2.2.6
 
 ### Patch Changes
