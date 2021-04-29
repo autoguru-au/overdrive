@@ -35,6 +35,9 @@ export const fontWeight = styleMap((theme) =>
 
 export const noWrap = style({ whiteSpace: 'nowrap' });
 
-export const transform = styleMap({
-	uppercase: { textTransform: 'uppercase' },
-});
+export const transform = styleMap(
+	mapTokenToProperty(
+		{ uppercase: 'uppercase', capitalize: 'capitalize' },
+		'textTransform',
+	),
+);
