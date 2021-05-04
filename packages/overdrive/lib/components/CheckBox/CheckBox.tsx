@@ -1,7 +1,7 @@
 import { CheckIcon } from '@autoguru/icons';
 import clsx from 'clsx';
 import * as React from 'react';
-import { FunctionComponent, memo, ReactNode } from 'react';
+import { forwardRef, ReactNode } from 'react';
 import { useStyles } from 'react-treat';
 
 import { noop } from '../../utils';
@@ -26,17 +26,20 @@ export interface Props {
 	onChange?(checked: boolean): void;
 }
 
-export const CheckBox: FunctionComponent<Props> = memo(
-	({
-		value,
-		className = '',
-		name = '',
-		disabled = false,
-		checked = false,
-		onClick = noop,
-		onChange = noop,
-		children,
-	}) => {
+export const CheckBox = forwardRef<HTMLInputElement, Props>(
+	(
+		{
+			value,
+			className = '',
+			name = '',
+			disabled = false,
+			checked = false,
+			onClick = noop,
+			onChange = noop,
+			children,
+		},
+		ref,
+	) => {
 		const styles = useStyles(styleRefs);
 		const iconStyles = clsx(
 			useTextStyles({ colour: 'white' }),
@@ -46,6 +49,7 @@ export const CheckBox: FunctionComponent<Props> = memo(
 
 		return (
 			<CheckableBase
+				ref={ref}
 				inputType="checkbox"
 				className={className}
 				inputName={name}
@@ -55,13 +59,13 @@ export const CheckBox: FunctionComponent<Props> = memo(
 				checked={checked}
 				handleClick={onClick}
 				handleChange={onChange}>
-				{checked && (
+				{checked ? (
 					<Icon
 						className={clsx(styles.icon, iconStyles)}
 						icon={CheckIcon}
 						size="small"
 					/>
-				)}
+				) : null}
 				<Box
 					borderWidth="2"
 					borderColour="gray"
