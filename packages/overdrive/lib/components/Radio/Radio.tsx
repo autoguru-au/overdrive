@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import { FunctionComponent, memo, ReactNode } from 'react';
+import { forwardRef, ReactNode } from 'react';
 import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
@@ -18,8 +18,8 @@ export interface Props {
 	children: ReactNode;
 }
 
-export const Radio: FunctionComponent<Props> = memo(
-	({ value, className = '', children, disabled = false }) => {
+export const Radio = forwardRef<HTMLInputElement, Props>(
+	({ value, className = '', children, disabled = false }, ref) => {
 		const styles = useStyles(styleRefs);
 		const { checkableItem } = useCheckableStyles();
 		const radioContext = useRadioContext();
@@ -30,6 +30,7 @@ export const Radio: FunctionComponent<Props> = memo(
 
 		return (
 			<CheckableBase
+				ref={ref}
 				inputType="radio"
 				className={className}
 				inputName={radioContext.inputName}
