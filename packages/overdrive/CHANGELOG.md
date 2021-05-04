@@ -1,5 +1,15 @@
 # @autoguru/overdrive
 
+## 2.2.8
+
+### Patch Changes
+
+-   75d6708: Checkbox: Accepts ref
+
+    RadioGroup: Accepts ref
+
+    Radio: Accepts ref
+
 ## 2.2.7
 
 ### Patch Changes
