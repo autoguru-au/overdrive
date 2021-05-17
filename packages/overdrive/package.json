@@ -22,8 +22,8 @@
 	],
 	"main": "./index.ts",
 	"dependencies": {
-		"@autoguru/icons": "^1.5.0",
-		"@autoguru/utilities": "^1.0.97",
+		"@autoguru/icons": "^1.7.4",
+		"@autoguru/utilities": "^1.0.98",
 		"@popperjs/core": "^2.7.0",
 		"clsx": "^1.1.1",
 		"csstype": "^3.0.7",

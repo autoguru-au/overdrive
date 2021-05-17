@@ -115,3 +115,24 @@ export const disabled = () => (
 		hintText={text('Hint Text', 'dd/mm/yyy')}
 	/>
 );
+
+export const loading = () => (
+	<DateInput
+		isLoading
+		value={todayStr}
+		placeholder="What si your DOB?"
+		name="abc"
+		hintText={text('Hint Text', 'dd/mm/yyy')}
+	/>
+);
+
+export const loadingWithIcon = () => (
+	<DateInput
+		isLoading
+		value={todayStr}
+		prefixIcon={AccountEditIcon}
+		placeholder="What si your DOB?"
+		name="abc"
+		hintText={text('Hint Text', 'dd/mm/yyy')}
+	/>
+);

@@ -90,3 +90,17 @@ export const withIcon = () => (
 export const disabled = () => (
 	<NumberInput disabled name="abc" placeholder="How many?" />
 );
+
+export const loading = () => (
+	<NumberInput isLoading name="abc" placeholder="How many?" />
+);
+
+export const loadingWithIcon = () => (
+	<NumberInput
+		isLoading
+		prefixIcon={PlusIcon}
+		suffixIcon={StarIcon}
+		name="abc"
+		placeholder="How many?"
+	/>
+);

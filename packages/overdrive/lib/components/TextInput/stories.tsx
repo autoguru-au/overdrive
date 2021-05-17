@@ -126,3 +126,24 @@ export const disabledWithValue = () => (
 		hintText="Cannot be Bob The Builder."
 	/>
 );
+
+export const loading = () => (
+	<TextInput
+		isLoading
+		placeholder="What is your first name?"
+		value="Bob The Builder"
+		name="abc"
+		hintText="Cannot be Bob The Builder."
+	/>
+);
+
+export const loadingWithIcon = () => (
+	<TextInput
+		isLoading
+		prefixIcon={AccountEditIcon}
+		placeholder="What is your first name?"
+		value="Bob The Builder"
+		name="abc"
+		hintText="Cannot be Bob The Builder."
+	/>
+);

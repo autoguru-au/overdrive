@@ -1,4 +1,4 @@
-import { CarIcon } from '@autoguru/icons';
+import { CarIcon, PlusIcon } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
@@ -110,6 +110,36 @@ export const InsideModal = () => {
 		</>
 	);
 };
+
+export const withIcon = () => (
+	<AutoSuggest
+		value={null}
+		suggestions={[]}
+		prefixIcon={PlusIcon}
+		name="test"
+		placeholder="Pick nothing..."
+	/>
+);
+
+export const loading = () => (
+	<AutoSuggest
+		value={null}
+		suggestions={[]}
+		isLoading
+		name="test"
+		placeholder="Pick nothing..."
+	/>
+);
+export const loadingWithIcon = () => (
+	<AutoSuggest
+		value={null}
+		suggestions={[]}
+		prefixIcon={PlusIcon}
+		isLoading
+		name="test"
+		placeholder="Pick nothing..."
+	/>
+);
 
 InsideModal.story = {
 	parameters: {

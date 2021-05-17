@@ -45,6 +45,7 @@ exports[`<SelectInput /> should have some hintText 1`] = `
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
@@ -128,6 +129,7 @@ exports[`<SelectInput /> should match snapshot 1`] = `
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
@@ -206,6 +208,7 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
@@ -284,6 +287,7 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
@@ -362,6 +366,7 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
@@ -440,6 +445,7 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
@@ -516,6 +522,7 @@ exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"

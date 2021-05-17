@@ -302,6 +302,7 @@ const AutoSuggestFullscreenInput = forwardRef(
 const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 	{
 		inlineOptions = false,
+		isLoading,
 		autoFocus,
 		autoWidth,
 		suggestions,
@@ -352,6 +353,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 			aria-haspopup="listbox"
 			width="full">
 			<AutoSuggestInputPrimitive
+				isLoading={isLoading}
 				autoFocus={autoFocus}
 				wrapperRef={triggerRef}
 				{...textInputProps}
@@ -563,7 +565,15 @@ const SuggestionsList = <PayloadType extends unknown>({
 };
 
 const AutoSuggestInputPrimitive = withEnhancedInput(
-	({ field, eventHandlers, validation, suffixed, prefixed, ...rest }) => {
+	({
+		field,
+		eventHandlers,
+		validation,
+		suffixed,
+		prefixed,
+		isLoading,
+		...rest
+	}) => {
 		const ref = useRef<HTMLInputElement>(null);
 
 		const focusHandler = useCallback(() => {
@@ -598,9 +608,11 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 					{...rest}
 					type="search"
 				/>
-				<Box flexShrink={0} marginRight="4" onClick={focusHandler}>
-					<Icon size="medium" icon={ChevronDownIcon} />
-				</Box>
+				{isLoading ? null : (
+					<Box flexShrink={0} marginRight="4" onClick={focusHandler}>
+						<Icon size="medium" icon={ChevronDownIcon} />
+					</Box>
+				)}
 			</Box>
 		);
 	},
