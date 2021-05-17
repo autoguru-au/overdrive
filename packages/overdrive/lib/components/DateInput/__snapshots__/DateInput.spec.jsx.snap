@@ -132,6 +132,79 @@ exports[`<DateInput /> should match snapshot when active 1`] = `
 </div>
 `;
 
+exports[`<DateInput /> should match snapshot when loading 1`] = `
+<div
+  class="block width_full input-class"
+>
+  <div
+    class="block none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full position_relative root_base"
+  >
+    <div
+      class="block width_full height_full"
+    >
+      <i
+        class="display_block medium_mobile_base block position_absolute pointerEvents_none iconRoot_base icon_prefix styleNode_base"
+        role="presentation"
+      >
+        <svg
+          class="display_block width_full height_full"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+          />
+        </svg>
+      </i>
+      <div
+        class="block size_medium_circular_base colours_primary_base block position_absolute pointerEvents_none iconRoot_base icon_suffix styleNode_base"
+      >
+        <svg
+          class="display_block overflow_hidden circular"
+          viewBox="25 25 50 50"
+        >
+          <circle
+            class="path_base size_medium_path_base"
+            cx="50"
+            cy="50"
+            fill="none"
+            r="20"
+            stroke-miterlimit="10"
+          />
+        </svg>
+      </div>
+      <input
+        aria-busy="true"
+        autocomplete="off"
+        class="trimmedBlockElement appearance input trimmedBlockElement appearance input display_flex width_full position_relative input_itself_root_base input_itself_prefixed_base input_itself_suffixed_base"
+        type="date"
+        value="2019-01-21"
+      />
+    </div>
+    <div
+      class="block display_flex width_full height_full position_absolute textAlign_left pointerEvents_none borderVisualDefaults_base borders_root_default"
+    >
+      <div
+        class="borderRegionDefaults_base borders_leading_base styleNode_base"
+      />
+      <div
+        class="borderRegionDefaults_base borders_middle_base styleNode_base"
+        style="width: 16px;"
+      >
+        <label
+          class="inlineText none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base styleNode_base root_base block colours_neutral_base noWrap sizes_4_base placeholderPlacement_shifted_base"
+        >
+          placeholder something
+        </label>
+      </div>
+      <div
+        class="borderRegionDefaults_base borders_trailing_base styleNode_base"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`<DateInput /> should match snapshot when touched 1`] = `
 <div
   class="block width_full input-class"

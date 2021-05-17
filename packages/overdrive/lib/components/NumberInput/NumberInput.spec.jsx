@@ -17,6 +17,13 @@ describe('<NumberInput />', () => {
 		).toMatchSnapshot();
 	});
 
+	it('should match snapshot when loading', () => {
+		expect(
+			render(<NumberInput placeholder="placeholder something" id="id" />)
+				.container.firstChild,
+		).toMatchSnapshot();
+	});
+
 	it('should have some hintText', () => {
 		const hintText = () => 'hint text';
 

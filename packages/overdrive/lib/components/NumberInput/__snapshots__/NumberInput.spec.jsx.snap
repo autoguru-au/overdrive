@@ -132,6 +132,49 @@ exports[`<NumberInput /> should match snapshot when active 1`] = `
 </div>
 `;
 
+exports[`<NumberInput /> should match snapshot when loading 1`] = `
+<div
+  class="block width_full"
+>
+  <div
+    class="block none_mobile_base none_mobile_base none_mobile_base none_mobile_base width_full position_relative root_base"
+  >
+    <div
+      class="block width_full height_full"
+    >
+      <input
+        autocomplete="off"
+        class="trimmedBlockElement appearance input trimmedBlockElement appearance input display_flex width_full position_relative input_itself_root_base"
+        id="id"
+        type="number"
+        value=""
+      />
+    </div>
+    <div
+      class="block display_flex width_full height_full position_absolute textAlign_left pointerEvents_none borderVisualDefaults_base borders_root_default"
+    >
+      <div
+        class="borderRegionDefaults_base borders_leading_base styleNode_base"
+      />
+      <div
+        class="borderRegionDefaults_base borders_middle_base styleNode_base"
+        style="width: 0px;"
+      >
+        <label
+          class="inlineText none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_inline position_absolute pointerEvents_none placeholder_default_base root_base block colours_neutral_base noWrap sizes_4_base placeholder_mutedLabelStyles_base placeholderPlacement_default_base"
+          for="id"
+        >
+          placeholder something
+        </label>
+      </div>
+      <div
+        class="borderRegionDefaults_base borders_trailing_base styleNode_base"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`<NumberInput /> should match snapshot when touched 1`] = `
 <div
   class="block width_full input-class"

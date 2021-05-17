@@ -12,6 +12,14 @@ describe('<TextAreaInput />', () => {
 		).toMatchSnapshot();
 	});
 
+	it('should match snapshot when loading', () => {
+		expect(
+			render(
+				<TextAreaInput isLoading placeholder="placeholder something" id="id" />,
+			).container.firstChild,
+		).toMatchSnapshot();
+	});
+
 	it('should have some hintText', () => {
 		const hintText = () => 'hint text';
 

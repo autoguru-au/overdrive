@@ -164,6 +164,22 @@ describe('<DateInput />', () => {
 		).toMatchSnapshot();
 	});
 
+
+	it('should match snapshot when loading', () => {
+		expect(
+			render(
+				<DateInput
+					isLoading
+					className="input-class"
+					placeholder="placeholder something"
+					value={todayStr}
+					prefixIcon={TestIcon}
+					suffixIcon={TestIcon}
+				/>,
+			).container.firstChild,
+		).toMatchSnapshot();
+	});
+
 	it('should display placeholder text', () => {
 		const { container } = render(
 			<DateInput value={todayStr} placeholder="placeholder something" />,
