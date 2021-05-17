@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.3.0
+
+### Minor Changes
+
+-   f4eb420: Input fields: Get a loading state
+
 ## 2.2.8
 
 ### Patch Changes
