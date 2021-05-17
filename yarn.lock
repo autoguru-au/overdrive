@@ -66,12 +66,12 @@
     eslint-plugin-react-hooks "^4.2.0"
     eslint-plugin-unicorn "^28.0.2"
 
-"@autoguru/icons@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@autoguru/icons/-/icons-1.5.0.tgz#be316eacbbdfeb04f7b89883b84de26e4f779af9"
-  integrity sha512-MivFdTFttiRHFN3nrvpdgyt5GDdbnwy128cV0vfjrh8HUCQ+Ja4ylKmhbc/I5OsGRnst3UqoZTUmEHH4rUwApA==
+"@autoguru/icons@^1.7.4":
+  version "1.7.4"
+  resolved "https://registry.yarnpkg.com/@autoguru/icons/-/icons-1.7.4.tgz#91833425a2d5750237442ca7f4df45b2e55fbe34"
+  integrity sha512-ZzG22m1Sl43h1ym2Cy+VIxaQowm3ks+3qtEHQt/znyy+TVWDM7URPkM7lE4BkTiBcpATn/6pazjsaKLvjB2RmQ==
   dependencies:
-    tslib "^1.10.0"
+    tslib "^2.1.0"
 
 "@autoguru/jest-preset@1.0.98":
   version "1.0.98"
@@ -89,7 +89,7 @@
   resolved "https://registry.yarnpkg.com/@autoguru/tsconfig/-/tsconfig-1.0.79.tgz#b7b92930e6c369e467cd2870293ec5203d08fb7b"
   integrity sha512-22mjKCPODiy/hYJJdi6Rk6dsDSwVVcHxxPQgt3se2cPJrgicG8h5pFhTiWUrZtajT1O+TpqA+0f2dnMAgKlXFQ==
 
-"@autoguru/utilities@^1.0.97":
+"@autoguru/utilities@^1.0.98":
   version "1.0.98"
   resolved "https://registry.yarnpkg.com/@autoguru/utilities/-/utilities-1.0.98.tgz#4efc60604a927a2856f5b024fafe61f23819e931"
   integrity sha512-Dd5mog9mm9nicXi4BTXKafc0h3PTv/jbIO774h6+TKiip6+Wj3RYjfntxbU/t3Uu7ejzOWE1DXY/lXsa8ALDsQ==
@@ -15086,6 +15086,11 @@ tslib@^1.10.0, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
+
+tslib@^2.1.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.2.0.tgz#fb2c475977e35e241311ede2693cee1ec6698f5c"
+  integrity sha512-gS9GVHRU+RGn5KQM2rllAlR3dU6m7AcpJKdtH8gFvQiC4Otgk98XnmMU+nZenHt/+VhnBPWwgrJsyrdcw6i23w==
 
 tsutils@^3.17.1:
   version "3.20.0"

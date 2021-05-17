@@ -1,4 +1,5 @@
 import { IconType } from '@autoguru/icons';
+import { ProgressSpinner } from '../../ProgressSpinner';
 import { invariant, wrapEvent } from '@autoguru/utilities';
 import clsx from 'clsx';
 import * as React from 'react';
@@ -54,6 +55,7 @@ export interface EnhanceInputPrimitiveProps extends AriaAttributes {
 	prefixIcon?: IconType;
 	suffixIcon?: IconType;
 	wrapperRef?: Ref<HTMLDivElement>;
+	isLoading?: boolean;
 }
 
 export interface ValidationProps {
@@ -79,6 +81,7 @@ export type WrappedComponentProps<IncomingProps, PrimitiveElementType> = {
 	};
 	prefixed: boolean;
 	suffixed: boolean;
+	isLoading: boolean;
 } & IncomingProps;
 
 interface EnhancedInputConfigs {
@@ -115,6 +118,7 @@ export const withEnhancedInput = <
 				className,
 				isTouched,
 				isValid,
+				isLoading = false,
 				notch = true,
 				reserveHintSpace = false,
 
@@ -179,7 +183,9 @@ export const withEnhancedInput = <
 				styles.input.itself.root,
 				{
 					[styles.input.itself.prefixed]: Boolean(prefixIcon),
-					[styles.input.itself.suffixed]: Boolean(suffixIcon),
+					[styles.input.itself.suffixed]: Boolean(
+						suffixIcon || isLoading,
+					),
 				},
 			);
 
@@ -232,7 +238,9 @@ export const withEnhancedInput = <
 				},
 				prefixed: Boolean(prefixIcon),
 				suffixed: Boolean(suffixIcon),
+				isLoading: isLoading,
 				...(rest as IncomingProps),
+				'aria-label': isLoading ? 'Loading' : rest['aria-label'],
 			};
 
 			const onMouseOver = useCallback(() => {
@@ -277,7 +285,16 @@ export const withEnhancedInput = <
 									)}
 								/>
 							) : null}
-							{suffixIcon ? (
+							{isLoading ? (
+								<ProgressSpinner
+									className={clsx(
+										iconStyles,
+										styles.icon.suffix,
+										derivedColours.colour,
+									)}
+								/>
+							) : null}
+							{suffixIcon && !isLoading ? (
 								<Icon
 									icon={suffixIcon}
 									size="medium"

@@ -15,7 +15,15 @@ export const SelectInput = withEnhancedInput<
 	},
 	HTMLSelectElement
 >(
-	({ field, eventHandlers, suffixed, prefixed, validation, ...rest }) => {
+	({
+		field,
+		eventHandlers,
+		suffixed,
+		prefixed,
+		validation,
+		isLoading,
+		...rest
+	}) => {
 		const styles = useStyles(styleRefs);
 		return (
 			<Box
@@ -37,17 +45,19 @@ export const SelectInput = withEnhancedInput<
 					]}
 					autoComplete="off"
 				/>
-				<Box
-					className={styles.arrow}
-					display="flex"
-					alignItems="center"
-					height="full"
-					marginRight="4"
-					flexShrink={0}
-					pointerEvents="none"
-					position="absolute">
-					<Icon size="medium" icon={ChevronDownIcon} />
-				</Box>
+				{isLoading ? null : (
+					<Box
+						className={styles.arrow}
+						display="flex"
+						alignItems="center"
+						height="full"
+						marginRight="4"
+						flexShrink={0}
+						pointerEvents="none"
+						position="absolute">
+						<Icon size="medium" icon={ChevronDownIcon} />
+					</Box>
+				)}
 			</Box>
 		);
 	},

@@ -23,6 +23,7 @@ exports[`<Alert /> should match the snapshot 1`] = `
             fill="currentColor"
             focusable="false"
             viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path
               d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm-1 14.502l7-7-1.414-1.414L11 13.674l-3.086-3.086L6.5 12.002l4.5 4.5z"
@@ -61,6 +62,7 @@ exports[`<Alert /> should match the snapshot 1`] = `
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   d="M13.458 12L19 17.543V19h-1.457L12 13.457 6.458 19H5v-1.456L10.544 12 5 6.458V5h1.457L12 10.543 17.544 5H19v1.458L13.458 12z"

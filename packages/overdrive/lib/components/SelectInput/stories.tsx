@@ -103,3 +103,22 @@ export const disabled = () => (
 		<option value="Option 2">Option 2</option>
 	</SelectInput>
 );
+
+export const loading = () => (
+	<SelectInput isLoading name="abc" placeholder="Select one" value="Option 2">
+		<option disabled />
+		<option value="Option 2">Option 2</option>
+	</SelectInput>
+);
+
+export const loadingWithIcon = () => (
+	<SelectInput
+		isLoading
+		prefixIcon={AccountEditIcon}
+		name="abc"
+		placeholder="Select one"
+		value="Option 2">
+		<option disabled />
+		<option value="Option 2">Option 2</option>
+	</SelectInput>
+);

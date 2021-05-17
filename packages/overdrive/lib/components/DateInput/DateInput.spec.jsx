@@ -131,6 +131,7 @@ describe('<DateInput />', () => {
 					className="input-class"
 					placeholder="placeholder something"
 					prefixIcon={TestIcon}
+					value={todayStr}
 				/>,
 			).container.firstChild,
 		).toMatchSnapshot();
@@ -142,6 +143,7 @@ describe('<DateInput />', () => {
 				<DateInput
 					className="input-class"
 					placeholder="placeholder something"
+					value={todayStr}
 					suffixIcon={TestIcon}
 				/>,
 			).container.firstChild,
@@ -154,6 +156,7 @@ describe('<DateInput />', () => {
 				<DateInput
 					className="input-class"
 					placeholder="placeholder something"
+					value={todayStr}
 					prefixIcon={TestIcon}
 					suffixIcon={TestIcon}
 				/>,

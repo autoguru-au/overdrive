@@ -297,7 +297,7 @@ exports[`<DateInput /> should match snapshot with both icons 1`] = `
         autocomplete="off"
         class="trimmedBlockElement appearance input trimmedBlockElement appearance input display_flex width_full position_relative input_itself_root_base input_itself_prefixed_base input_itself_suffixed_base"
         type="date"
-        value=""
+        value="2019-01-21"
       />
     </div>
     <div
@@ -352,7 +352,7 @@ exports[`<DateInput /> should match snapshot with prefix icon 1`] = `
         autocomplete="off"
         class="trimmedBlockElement appearance input trimmedBlockElement appearance input display_flex width_full position_relative input_itself_root_base input_itself_prefixed_base"
         type="date"
-        value=""
+        value="2019-01-21"
       />
     </div>
     <div
@@ -407,7 +407,7 @@ exports[`<DateInput /> should match snapshot with suffix icon 1`] = `
         autocomplete="off"
         class="trimmedBlockElement appearance input trimmedBlockElement appearance input display_flex width_full position_relative input_itself_root_base input_itself_suffixed_base"
         type="date"
-        value=""
+        value="2019-01-21"
       />
     </div>
     <div

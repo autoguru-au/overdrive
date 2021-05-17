@@ -6,7 +6,15 @@ import { withEnhancedInput } from '../private/InputBase';
 export const TextInput = withEnhancedInput<
 	Partial<Pick<HTMLInputElement, 'type'>>
 >(
-	({ field, eventHandlers, validation, suffixed, prefixed, ...rest }) => (
+	({
+		field,
+		eventHandlers,
+		validation,
+		suffixed,
+		prefixed,
+		isLoading,
+		...rest
+	}) => (
 		<Box
 			is="input"
 			{...eventHandlers}
