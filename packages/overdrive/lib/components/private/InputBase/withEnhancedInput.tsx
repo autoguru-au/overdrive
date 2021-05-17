@@ -238,9 +238,9 @@ export const withEnhancedInput = <
 				},
 				prefixed: Boolean(prefixIcon),
 				suffixed: Boolean(suffixIcon),
-				isLoading: isLoading,
+				isLoading,
+				'aria-busy': isLoading || void 0,
 				...(rest as IncomingProps),
-				'aria-label': isLoading ? 'Loading' : rest['aria-label'],
 			};
 
 			const onMouseOver = useCallback(() => {
