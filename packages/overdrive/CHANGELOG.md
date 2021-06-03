@@ -1,5 +1,13 @@
 # @autoguru/overdrive
 
+## 2.3.1
+
+### Patch Changes
+
+-   a631d85: SelectInput: Gets option to be passed a custom field icon
+
+    AutoSuggest: Gets option to be passed a custom field icon
+
 ## 2.3.0
 
 ### Minor Changes
