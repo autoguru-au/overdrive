@@ -52,6 +52,7 @@ export interface EnhanceInputPrimitiveProps extends AriaAttributes {
 	disabled?: boolean;
 	notch?: boolean;
 	reserveHintSpace?: boolean;
+	fieldIcon?: IconType;
 	prefixIcon?: IconType;
 	suffixIcon?: IconType;
 	wrapperRef?: Ref<HTMLDivElement>;
@@ -76,9 +77,13 @@ export type EnhanceInputProps<
 export type WrappedComponentProps<IncomingProps, PrimitiveElementType> = {
 	validation: ValidationProps;
 	eventHandlers: EventHandlers<PrimitiveElementType>;
-	field: Omit<EnhanceInputPrimitiveProps, 'placeholder' | 'hintText'> & {
+	field: Omit<
+		EnhanceInputPrimitiveProps,
+		'placeholder' | 'hintText' | 'fieldIcon'
+	> & {
 		ref: RefObject<PrimitiveElementType>;
 	};
+	fieldIcon?: EnhanceInputPrimitiveProps['fieldIcon'];
 	prefixed: boolean;
 	suffixed: boolean;
 	isLoading: boolean;

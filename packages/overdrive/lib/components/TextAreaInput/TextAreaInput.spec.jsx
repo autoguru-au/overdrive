@@ -15,7 +15,11 @@ describe('<TextAreaInput />', () => {
 	it('should match snapshot when loading', () => {
 		expect(
 			render(
-				<TextAreaInput isLoading placeholder="placeholder something" id="id" />,
+				<TextAreaInput
+					isLoading
+					placeholder="placeholder something"
+					id="id"
+				/>,
 			).container.firstChild,
 		).toMatchSnapshot();
 	});

@@ -1,4 +1,4 @@
-import { CarIcon, PlusIcon } from '@autoguru/icons';
+import { CarIcon, MagnifyIcon, PlusIcon } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
@@ -130,6 +130,17 @@ export const loading = () => (
 		placeholder="Pick nothing..."
 	/>
 );
+
+export const withCustomIcon = () => (
+	<AutoSuggest
+		value={null}
+		suggestions={[]}
+		fieldIcon={MagnifyIcon}
+		name="test"
+		placeholder="Search items..."
+	/>
+);
+
 export const loadingWithIcon = () => (
 	<AutoSuggest
 		value={null}

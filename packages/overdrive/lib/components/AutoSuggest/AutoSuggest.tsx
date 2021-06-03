@@ -1,4 +1,4 @@
-import { ChevronDownIcon, CloseIcon } from '@autoguru/icons';
+import { ChevronDownIcon, CloseIcon, IconType } from '@autoguru/icons';
 import { wrapEvent } from '@autoguru/utilities';
 import clsx from 'clsx';
 import * as React from 'react';
@@ -87,6 +87,7 @@ export interface Props<PayloadType>
 	> {
 	autoFocus?: boolean;
 	autoWidth?: boolean;
+	fieldIcon?: IconType;
 	value: AutoSuggestValue<PayloadType> | null;
 	suggestions: Suggestions<PayloadType>;
 
@@ -200,6 +201,7 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 	{
 		autoFocus = false,
 		autoWidth = false,
+		fieldIcon,
 		suggestions,
 		value,
 		onChange: incomingOnChange,
@@ -242,6 +244,7 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 		<AutoSuggestFullscreenInput
 			{...props}
 			inlineOptions
+			fieldIcon={fieldIcon}
 			autoFocus={autoFocus}
 			closeModal={closeModal}
 		/>
@@ -249,6 +252,7 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 		<AutoSuggestInput
 			ref={ref}
 			{...props}
+			fieldIcon={fieldIcon}
 			autoFocus={autoFocus}
 			autoWidth={autoWidth}
 		/>
@@ -302,6 +306,7 @@ const AutoSuggestFullscreenInput = forwardRef(
 const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 	{
 		inlineOptions = false,
+		fieldIcon,
 		isLoading,
 		autoFocus,
 		autoWidth,
@@ -355,6 +360,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 			<AutoSuggestInputPrimitive
 				isLoading={isLoading}
 				autoFocus={autoFocus}
+				fieldIcon={fieldIcon}
 				wrapperRef={triggerRef}
 				{...textInputProps}
 				ref={ref}
@@ -572,6 +578,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 		suffixed,
 		prefixed,
 		isLoading,
+		fieldIcon = ChevronDownIcon,
 		...rest
 	}) => {
 		const ref = useRef<HTMLInputElement>(null);
@@ -610,7 +617,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 				/>
 				{isLoading ? null : (
 					<Box flexShrink={0} marginRight="4" onClick={focusHandler}>
-						<Icon size="medium" icon={ChevronDownIcon} />
+						<Icon size="medium" icon={fieldIcon} />
 					</Box>
 				)}
 			</Box>

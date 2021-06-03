@@ -22,6 +22,7 @@ export const SelectInput = withEnhancedInput<
 		prefixed,
 		validation,
 		isLoading,
+		fieldIcon = ChevronDownIcon,
 		...rest
 	}) => {
 		const styles = useStyles(styleRefs);
@@ -55,7 +56,7 @@ export const SelectInput = withEnhancedInput<
 						flexShrink={0}
 						pointerEvents="none"
 						position="absolute">
-						<Icon size="medium" icon={ChevronDownIcon} />
+						<Icon size="medium" icon={fieldIcon} />
 					</Box>
 				)}
 			</Box>
