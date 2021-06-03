@@ -130,6 +130,18 @@ describe('<SelectInput />', () => {
 		).toMatchSnapshot();
 	});
 
+	it('should match snapshot with custom icon', () => {
+		expect(
+			render(
+				<SelectInput
+					className="input-class"
+					placeholder="placeholder something"
+					fieldIcon={TestIcon}
+				/>,
+			).container.firstChild,
+		).toMatchSnapshot();
+	});
+
 	it('should display placeholder text', () => {
 		const { container } = render(
 			<SelectInput placeholder="placeholder something">

@@ -1,4 +1,4 @@
-import { AccountEditIcon, CalendarIcon } from '@autoguru/icons';
+import { AccountEditIcon, AccountIcon, CalendarIcon } from '@autoguru/icons';
 import { boolean, text } from '@storybook/addon-knobs';
 import * as React from 'react';
 
@@ -111,6 +111,16 @@ export const loading = () => (
 	</SelectInput>
 );
 
+export const withCustomIcon = () => (
+	<SelectInput
+		fieldIcon={AccountIcon}
+		name="abc"
+		placeholder="Select a user"
+		value="Option 2">
+		<option disabled />
+		<option value="Option 2">Option 2</option>
+	</SelectInput>
+);
 export const loadingWithIcon = () => (
 	<SelectInput
 		isLoading

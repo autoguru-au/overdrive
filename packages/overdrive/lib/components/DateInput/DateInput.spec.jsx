@@ -164,7 +164,6 @@ describe('<DateInput />', () => {
 		).toMatchSnapshot();
 	});
 
-
 	it('should match snapshot when loading', () => {
 		expect(
 			render(

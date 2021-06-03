@@ -4,7 +4,15 @@ import { Box } from '../Box';
 import { withEnhancedInput } from '../private/InputBase';
 
 export const TextAreaInput = withEnhancedInput<{}, HTMLTextAreaElement>(
-	({ field, eventHandlers, validation, isLoading, suffixed, prefixed, ...rest }) => (
+	({
+		field,
+		eventHandlers,
+		validation,
+		isLoading,
+		suffixed,
+		prefixed,
+		...rest
+	}) => (
 		<Box
 			is="textarea"
 			{...eventHandlers}

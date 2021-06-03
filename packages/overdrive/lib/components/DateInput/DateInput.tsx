@@ -7,7 +7,15 @@ import { withEnhancedInput } from '../private/InputBase';
 export const DateInput = withEnhancedInput<
 	Partial<Pick<HTMLInputElement, 'min' | 'max'>>
 >(
-	({ field, eventHandlers, validation, isLoading, suffixed, prefixed, ...rest }) => {
+	({
+		field,
+		eventHandlers,
+		validation,
+		isLoading,
+		suffixed,
+		prefixed,
+		...rest
+	}) => {
 		warning(
 			field.value !== '',
 			'Date Input does not support empty values.',

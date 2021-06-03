@@ -19,8 +19,13 @@ describe('<TextInput />', () => {
 
 	it('should match snapshot when loading', () => {
 		expect(
-			render(<TextInput isLoading placeholder="placeholder something" id="id" />)
-				.container.firstChild,
+			render(
+				<TextInput
+					isLoading
+					placeholder="placeholder something"
+					id="id"
+				/>,
+			).container.firstChild,
 		).toMatchSnapshot();
 	});
 
