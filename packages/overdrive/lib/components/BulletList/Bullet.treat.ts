@@ -18,7 +18,7 @@ export const root = styleMap((theme) => ({
 			height: theme.space['2'],
 			marginTop: `calc((1.6em - ${theme.space['2']}) / 2)`,
 			content: "' '",
-			backgroundColor: theme.colours.gamut.gray900,
+			backgroundColor: theme.typography.colour.dark,
 		},
 	},
 	circle: {
@@ -28,14 +28,14 @@ export const root = styleMap((theme) => ({
 	},
 	disc: {
 		':before': {
-			border: `2px solid ${theme.colours.gamut.gray900}`,
+			border: `2px solid ${theme.typography.colour.dark}`,
 			borderRadius: '50%',
 			backgroundColor: 'transparent',
 		},
 	},
 	square: {
 		':before': {
-			border: `2px solid ${theme.colours.gamut.gray900}`,
+			border: `2px solid ${theme.typography.colour.dark}`,
 			backgroundColor: 'transparent',
 		},
 	},
