@@ -1,4 +1,5 @@
 import { style, styleMap } from 'treat';
+import { shadedColour } from '../../themes/helpers';
 
 export const root = style(({ animation }) => ({
 	transitionDelay: '0s',
@@ -63,20 +64,20 @@ export const size = {
 		},
 	})),
 };
-
 export const variant = {
 	primary: style((theme) => ({
-		backgroundColor: theme.colours.intent.success.background,
-		boxShadow: `inset 0 0 0 1px ${theme.colours.gamut.green700}, ${theme.elevation['2']}`,
+		color: theme.colours.intent.primary.foreground,
+		backgroundColor: theme.colours.intent.primary.background,
+		boxShadow: `inset 0 0 0 1px ${shadedColour(theme.colours.intent.primary.background, theme.shadeIntensity.slight, 'backward', theme.isDark)}, ${theme.elevation['2']}`,
 	})),
 	secondary: style((theme) => ({
-		color: theme.colours.intent.neutral.background,
-		backgroundColor: theme.colours.gamut.white,
-		boxShadow: `inset 0 0 0 1px ${theme.colours.gamut.gray300}, ${theme.elevation['2']}`,
+		color: theme.colours.intent.secondary.foreground,
+		backgroundColor: theme.colours.intent.secondary.background,
+		boxShadow: `inset 0 0 0 1px ${shadedColour(theme.colours.intent.secondary.background, theme.shadeIntensity.medium, 'backward', theme.isDark)}, ${theme.elevation['2']}`,
 	})),
 	danger: style((theme) => ({
 		backgroundColor: theme.colours.intent.danger.background,
-		boxShadow: `inset 0 0 0 1px ${theme.colours.gamut.red700}, ${theme.elevation['2']}`,
+		boxShadow: `inset 0 0 0 1px ${shadedColour(theme.colours.intent.danger.background, theme.shadeIntensity.slight, 'backward', theme.isDark)}, ${theme.elevation['2']}`,
 		color: theme.colours.gamut.white,
 	})),
 };
@@ -84,15 +85,15 @@ export const variant = {
 export const defaultStates = {
 	primary: style((theme) => ({
 		':hover': {
-			color: theme.colours.gamut.white,
-			backgroundColor: theme.colours.gamut.green700,
-			boxShadow: `inset 0 0 0 1px ${theme.colours.gamut.green800}, ${theme.elevation['3']}`,
+			color: theme.colours.intent.primary.foreground,
+			backgroundColor: shadedColour(theme.colours.intent.primary.background, theme.shadeIntensity.slight, 'backward', theme.isDark),
+			boxShadow: `inset 0 0 0 1px ${shadedColour(theme.colours.intent.primary.background, theme.shadeIntensity.slight, 'backward', theme.isDark)}, ${theme.elevation['3']}`,
 		},
 		':active': {
 			transform: 'scale(0.97)',
-			boxShadow: `inset 0 0 0 1px ${theme.colours.gamut.green800}, ${theme.elevation['1']}`,
-			color: theme.colours.gamut.white,
-			backgroundColor: theme.colours.gamut.green800,
+			boxShadow: `inset 0 0 0 1px ${shadedColour(theme.colours.intent.primary.background, theme.shadeIntensity.medium, 'backward', theme.isDark)}, ${theme.elevation['1']}`,
+			color: theme.colours.intent.primary.foreground,
+			backgroundColor: shadedColour(theme.colours.intent.primary.background, theme.shadeIntensity.medium, 'backward', theme.isDark),
 		},
 	})),
 	secondary: style((theme) => ({

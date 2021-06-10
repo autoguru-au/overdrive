@@ -66,6 +66,12 @@ const colours: ColourMap = {
 const white = '#fff';
 
 export const tokens: Tokens = {
+	isDark: false,
+	shadeIntensity: {
+		slight: 0.05,
+		medium: 0.15,
+		intense: 0.2,
+	},
 	breakpoints: {
 		mobile: 0,
 		tablet: 768, // IPad mini width (1024 - 25%)
@@ -104,6 +110,14 @@ export const tokens: Tokens = {
 			neutralDark: colours.gray['800'],
 		},
 		intent: {
+			primary: {
+				background: colours.green['600'],
+				foreground: white,
+			},
+			secondary: {
+				background: white,
+				foreground: colours.gray['700'],
+			},
 			danger: {
 				background: colours.red['600'],
 				foreground: colours.red['200'],
