@@ -5,6 +5,9 @@ type IconSizeScale = 'small' | 'medium' | 'large';
 
 type Breakpoints = 'mobile' | 'tablet' | 'desktop' | 'largeDesktop';
 
+type ColourValue = Record<number, string>;
+export type ColourMap = Record<any, ColourValue>;
+
 type ColourReds =
 	| 'red900'
 	| 'red800'
@@ -59,6 +62,10 @@ type ColourYellows =
 	| 'yellow300'
 	| 'yellow200'
 	| 'yellow100';
+
+export interface Colours {
+	colours
+}
 
 export type ColourGamut =
 	| ColourGrays

@@ -1,6 +1,7 @@
-import { ColourGamut, Tokens } from '../tokens';
+import { ColourMap, Tokens } from '../tokens';
+import { buildColourGamut } from '../makeTheme';
 
-const colours = {
+const colours: ColourMap = {
 	gray: {
 		900: '#212338',
 		800: '#34384c',
@@ -64,23 +65,6 @@ const colours = {
 
 const white = '#fff';
 
-const makeColourGamut = () =>
-	Object.entries(colours).reduce(
-		(result, [name, colourGrades]) => ({
-			...result,
-			...Object.entries(colourGrades).reduce(
-				(grades, [colourGradeName, colour]) => {
-					return {
-						...grades,
-						[`${name}${colourGradeName}`]: colour,
-					};
-				},
-				{} as Record<Partial<ColourGamut>, string>,
-			),
-		}),
-		{} as Record<ColourGamut, string>,
-	);
-
 export const tokens: Tokens = {
 	breakpoints: {
 		mobile: 0,
@@ -107,7 +91,7 @@ export const tokens: Tokens = {
 	},
 	colours: {
 		gamut: {
-			...makeColourGamut(),
+			...buildColourGamut(colours),
 			white,
 		},
 		foreground: {
