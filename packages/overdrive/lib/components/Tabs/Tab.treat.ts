@@ -1,4 +1,5 @@
 import { style, styleMap } from 'treat';
+
 import { shadedColour } from '../../themes/helpers';
 
 const lineBottomHeight = '1px';

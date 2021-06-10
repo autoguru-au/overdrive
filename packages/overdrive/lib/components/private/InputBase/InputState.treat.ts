@@ -1,4 +1,5 @@
 import { style, styleMap, styleTree } from 'treat';
+
 import { shadedColour } from '../../../themes/helpers';
 
 const activeColour = style(({ typography, shadeIntensity, isDark }) => ({

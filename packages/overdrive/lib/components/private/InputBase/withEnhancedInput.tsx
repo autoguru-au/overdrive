@@ -1,5 +1,4 @@
 import { IconType } from '@autoguru/icons';
-import { ProgressSpinner } from '../../ProgressSpinner';
 import { invariant, wrapEvent } from '@autoguru/utilities';
 import clsx from 'clsx';
 import * as React from 'react';
@@ -22,6 +21,7 @@ import { useStyles } from 'react-treat';
 import { useInputControlledState } from '../../../utils';
 import { Box, useBoxStyles } from '../../Box';
 import { Icon } from '../../Icon';
+import { ProgressSpinner } from '../../ProgressSpinner';
 
 import { HintText } from './HintText';
 import { NotchedBase } from './NotchedBase';

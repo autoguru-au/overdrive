@@ -1,4 +1,5 @@
 import { styleMap } from 'treat';
+
 import { shadedColour } from '../../themes/helpers';
 
 export const variant = styleMap(

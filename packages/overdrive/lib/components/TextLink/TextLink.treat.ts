@@ -1,4 +1,5 @@
 import { style } from 'treat';
+
 import { shadedColour } from '../../themes/helpers';
 
 export const root = style(({ typography, shadeIntensity, isDark }) => ({

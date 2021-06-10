@@ -1,4 +1,5 @@
 import { style, styleMap } from 'treat';
+
 import { shadedColour } from '../../themes/helpers';
 
 const handleSize = '24px';

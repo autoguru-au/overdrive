@@ -1,5 +1,6 @@
 import { style, styleMap } from 'treat';
 import type { Theme } from 'treat/theme';
+
 import { shadedColour } from '../../../themes/helpers';
 
 export const root = style((theme) => ({
