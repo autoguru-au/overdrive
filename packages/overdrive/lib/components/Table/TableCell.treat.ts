@@ -25,7 +25,12 @@ export const root = style(({ animation, border, shadeIntensity, isDark }) => ({
 	selectors: {
 		'&:hover:before': {
 			transitionTimingFunction: animation.easing.decelerate,
-			backgroundColor: shadedColour(border.colours.light, shadeIntensity.slight, 'forward', isDark),
+			backgroundColor: shadedColour(
+				border.colours.light,
+				shadeIntensity.slight,
+				'forward',
+				isDark,
+			),
 		},
 	},
 }));

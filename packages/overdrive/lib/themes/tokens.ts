@@ -64,7 +64,7 @@ type ColourYellows =
 	| 'yellow100';
 
 export interface Colours {
-	colours
+	colours;
 }
 
 export type ColourGamut =
@@ -74,7 +74,15 @@ export type ColourGamut =
 	| ColourReds
 	| ColourYellows;
 
-type Intent = 'primary' | 'secondary' | 'shine' | 'neutral' | 'danger' | 'warning' | 'success' | 'information';
+type Intent =
+	| 'primary'
+	| 'secondary'
+	| 'shine'
+	| 'neutral'
+	| 'danger'
+	| 'warning'
+	| 'success'
+	| 'information';
 
 type ShadeIntensityLevel = 'slight' | 'medium' | 'intense';
 type TransparencyLevel = 'slight' | 'medium' | 'intense';

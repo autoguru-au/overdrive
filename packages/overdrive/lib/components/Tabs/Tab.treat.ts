@@ -15,16 +15,36 @@ export const root = {
 		},
 
 		':hover': {
-			color: shadedColour(colours.intent.primary.background, shadeIntensity.medium, 'backward', isDark),
+			color: shadedColour(
+				colours.intent.primary.background,
+				shadeIntensity.medium,
+				'backward',
+				isDark,
+			),
 		},
 
 		':focus': {
-			color: shadedColour(colours.intent.primary.background, shadeIntensity.medium, 'backward', isDark),
+			color: shadedColour(
+				colours.intent.primary.background,
+				shadeIntensity.medium,
+				'backward',
+				isDark,
+			),
 		},
 	})),
 	active: style(({ shadeIntensity, colours, isDark }) => ({
-		color: shadedColour(colours.intent.primary.background, shadeIntensity.medium, 'backward', isDark),
-		borderBottomColor: shadedColour(colours.intent.primary.background, shadeIntensity.medium, 'backward', isDark),
+		color: shadedColour(
+			colours.intent.primary.background,
+			shadeIntensity.medium,
+			'backward',
+			isDark,
+		),
+		borderBottomColor: shadedColour(
+			colours.intent.primary.background,
+			shadeIntensity.medium,
+			'backward',
+			isDark,
+		),
 	})),
 };
 

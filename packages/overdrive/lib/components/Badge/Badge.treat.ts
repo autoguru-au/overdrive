@@ -28,44 +28,100 @@ export const colours = {
 		},
 	})),
 	inverted: {
-		neutral: styleMap(({ colours, shadeIntensity, isDark, transparency }) => ({
+		neutral: styleMap(
+			({ colours, shadeIntensity, isDark, transparency }) => ({
+				background: {
+					backgroundColor: shadedColour(
+						colours.intent.neutral.background,
+						shadeIntensity.slight,
+						'backward',
+						isDark,
+						transparency.intense,
+					),
+				},
+				text: {
+					color: colours.intent.neutral.background,
+				},
+			}),
+		),
+		green: styleMap(
+			({ colours, shadeIntensity, isDark, transparency }) => ({
+				background: {
+					backgroundColor: shadedColour(
+						colours.intent.success.background,
+						shadeIntensity.slight,
+						'backward',
+						isDark,
+						transparency.intense,
+					),
+				},
+				text: {
+					color: shadedColour(
+						colours.intent.success.background,
+						shadeIntensity.medium,
+						'backward',
+						isDark,
+					),
+				},
+			}),
+		),
+		blue: styleMap(({ colours, shadeIntensity, isDark, transparency }) => ({
 			background: {
-				backgroundColor: shadedColour(colours.intent.neutral.background, shadeIntensity.slight, 'backward', isDark, transparency.intense),
+				backgroundColor: shadedColour(
+					colours.intent.information.background,
+					shadeIntensity.slight,
+					'backward',
+					isDark,
+					transparency.intense,
+				),
 			},
 			text: {
-				color: colours.intent.neutral.background,
+				color: shadedColour(
+					colours.intent.information.background,
+					shadeIntensity.slight,
+					'backward',
+					isDark,
+				),
 			},
 		})),
-		green: styleMap(({ colours, shadeIntensity, isDark, transparency } ) => ({
+		yellow: styleMap(
+			({ colours, shadeIntensity, isDark, transparency }) => ({
+				background: {
+					backgroundColor: shadedColour(
+						colours.intent.warning.background,
+						shadeIntensity.slight,
+						'backward',
+						isDark,
+						transparency.intense,
+					),
+				},
+				text: {
+					color: shadedColour(
+						colours.intent.warning.background,
+						shadeIntensity.slight,
+						'backward',
+						isDark,
+					),
+				},
+			}),
+		),
+		red: styleMap(({ colours, shadeIntensity, isDark, transparency }) => ({
 			background: {
-				backgroundColor: shadedColour(colours.intent.success.background, shadeIntensity.slight, 'backward', isDark, transparency.intense),
+				backgroundColor: shadedColour(
+					colours.intent.danger.background,
+					shadeIntensity.slight,
+					'backward',
+					isDark,
+					transparency.intense,
+				),
 			},
 			text: {
-				color: shadedColour(colours.intent.success.background, shadeIntensity.medium, 'backward', isDark),
-			},
-		})),
-		blue:  styleMap(({ colours, shadeIntensity, isDark, transparency } ) => ({
-			background: {
-				backgroundColor: shadedColour(colours.intent.information.background, shadeIntensity.slight, 'backward', isDark, transparency.intense),
-			},
-			text: {
-				color: shadedColour(colours.intent.information.background, shadeIntensity.slight, 'backward', isDark),
-			},
-		})),
-		yellow: styleMap(({ colours, shadeIntensity, isDark, transparency } ) => ({
-			background: {
-				backgroundColor: shadedColour(colours.intent.warning.background, shadeIntensity.slight, 'backward', isDark, transparency.intense),
-			},
-			text: {
-				color: shadedColour(colours.intent.warning.background, shadeIntensity.slight, 'backward', isDark),
-			},
-		})),
-		red: styleMap(({ colours, shadeIntensity, isDark, transparency } ) => ({
-			background: {
-				backgroundColor: shadedColour(colours.intent.danger.background, shadeIntensity.slight, 'backward', isDark, transparency.intense),
-			},
-			text: {
-				color: shadedColour(colours.intent.danger.background, shadeIntensity.slight, 'backward', isDark),
+				color: shadedColour(
+					colours.intent.danger.background,
+					shadeIntensity.slight,
+					'backward',
+					isDark,
+				),
 			},
 		})),
 	},

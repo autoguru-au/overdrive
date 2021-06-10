@@ -66,18 +66,25 @@ export const borders = {
 	],
 };
 
-export const placeholder = styleMap(({ animation,  typography, isDark, shadeIntensity }) => ({
-	default: {
-		lineHeight: 1,
-		top: 0,
-		left: 0,
-		transition: `color 0.2s ${animation.easing.decelerate} 0s, transform 0.2s ${animation.easing.decelerate} 0s`,
-		transformOrigin: 'top left',
-	},
-	mutedLabelStyles: {
-		color: shadedColour(typography.colour.muted, shadeIntensity.medium, 'forward', isDark),
-	},
-}));
+export const placeholder = styleMap(
+	({ animation, typography, isDark, shadeIntensity }) => ({
+		default: {
+			lineHeight: 1,
+			top: 0,
+			left: 0,
+			transition: `color 0.2s ${animation.easing.decelerate} 0s, transform 0.2s ${animation.easing.decelerate} 0s`,
+			transformOrigin: 'top left',
+		},
+		mutedLabelStyles: {
+			color: shadedColour(
+				typography.colour.muted,
+				shadeIntensity.medium,
+				'forward',
+				isDark,
+			),
+		},
+	}),
+);
 
 const active_scaling_factor = 0.7777;
 const calcPlaceholderTranslate = (

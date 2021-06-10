@@ -26,13 +26,23 @@ export const input = {
 			padding: `calc(((${space['8']} - ${typography.size['4'].fontSize}) / 2) - 3px) calc(${space['4']} - 1px)`,
 			selectors: {
 				'&[disabled]': {
-					color: shadedColour(typography.colour.muted, shadeIntensity.medium, 'forward', isDark),
+					color: shadedColour(
+						typography.colour.muted,
+						shadeIntensity.medium,
+						'forward',
+						isDark,
+					),
 					cursor: 'not-allowed',
 				},
 				'&::placeholder': {
 					fontSize: typography.size['4'].fontSize,
 					lineHeight: typography.size['4'].lineHeight,
-					color: shadedColour(typography.colour.muted, shadeIntensity.medium, 'forward', isDark),
+					color: shadedColour(
+						typography.colour.muted,
+						shadeIntensity.medium,
+						'forward',
+						isDark,
+					),
 					opacity: 1,
 				},
 			},
