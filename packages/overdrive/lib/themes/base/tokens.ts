@@ -75,7 +75,7 @@ export const tokens: Tokens = {
 	transparency: {
 		slight: 0.25,
 		medium: 0.5,
-		intense: 0.95,
+		intense: 0.90,
 	},
 	breakpoints: {
 		mobile: 0,
