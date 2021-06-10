@@ -1,6 +1,5 @@
 import { style, styleMap } from 'treat';
 
-import { hex2rgba } from '../../utils';
 import { shadedColour } from '../../themes/helpers';
 
 const reducedMotion = style({
