@@ -72,6 +72,11 @@ export const tokens: Tokens = {
 		medium: 0.15,
 		intense: 0.2,
 	},
+	transparency: {
+		slight: 0.25,
+		medium: 0.5,
+		intense: 0.95,
+	},
 	breakpoints: {
 		mobile: 0,
 		tablet: 768, // IPad mini width (1024 - 25%)
@@ -120,7 +125,7 @@ export const tokens: Tokens = {
 			},
 			danger: {
 				background: colours.red['600'],
-				foreground: colours.red['200'],
+				foreground: white,
 			},
 			warning: {
 				background: colours.yellow['800'],
@@ -212,6 +217,8 @@ export const tokens: Tokens = {
 			},
 		},
 		colour: {
+			primary: colours.green['600'],
+			secondary: colours.gray['700'],
 			link: colours.green['600'],
 			dark: colours.gray['900'],
 			white,

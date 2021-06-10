@@ -37,11 +37,11 @@ export const spinner = style({
 const smallHeight = '36px';
 
 export const size = {
-	small: styleMap((theme) => ({
+	small: styleMap(({ space }) => ({
 		default: {
-			minWidth: theme.space['8'],
+			minWidth: space['8'],
 			height: smallHeight,
-			gridGap: theme.space['1'],
+			gridGap: space['1'],
 		},
 		rounded: {
 			minWidth: smallHeight,
@@ -50,81 +50,83 @@ export const size = {
 			width: smallHeight,
 		},
 	})),
-	medium: styleMap((theme) => ({
+	medium: styleMap(({ space }) => ({
 		default: {
-			minWidth: theme.space['9'],
-			height: theme.space['8'],
-			gridGap: theme.space['2'],
+			minWidth: space['9'],
+			height: space['8'],
+			gridGap: space['2'],
 		},
 		rounded: {
-			minWidth: theme.space['8'],
+			minWidth: space['8'],
 		},
 		iconOnly: {
-			width: theme.space['8'],
+			width: space['8'],
 		},
 	})),
 };
 export const variant = {
-	primary: style((theme) => ({
-		color: theme.colours.intent.primary.foreground,
-		backgroundColor: theme.colours.intent.primary.background,
-		boxShadow: `inset 0 0 0 1px ${shadedColour(theme.colours.intent.primary.background, theme.shadeIntensity.slight, 'backward', theme.isDark)}, ${theme.elevation['2']}`,
+	primary: style(({ colours, shadeIntensity, isDark,elevation }) => ({
+		color: colours.intent.primary.foreground,
+		backgroundColor: colours.intent.primary.background,
+		boxShadow: `inset 0 0 0 1px ${shadedColour(colours.intent.primary.background, shadeIntensity.slight, 'backward', isDark)}, ${elevation['2']}`,
 	})),
-	secondary: style((theme) => ({
-		color: theme.colours.intent.secondary.foreground,
-		backgroundColor: theme.colours.intent.secondary.background,
-		boxShadow: `inset 0 0 0 1px ${shadedColour(theme.colours.intent.secondary.background, theme.shadeIntensity.medium, 'backward', theme.isDark)}, ${theme.elevation['2']}`,
+	secondary: style(({ colours, shadeIntensity, isDark,elevation }) => ({
+		color: colours.intent.secondary.foreground,
+		backgroundColor: colours.intent.secondary.background,
+		boxShadow: `inset 0 0 0 1px ${shadedColour(colours.intent.secondary.background, shadeIntensity.medium, 'backward', isDark)}, ${elevation['2']}`,
 	})),
-	danger: style((theme) => ({
-		backgroundColor: theme.colours.intent.danger.background,
-		boxShadow: `inset 0 0 0 1px ${shadedColour(theme.colours.intent.danger.background, theme.shadeIntensity.slight, 'backward', theme.isDark)}, ${theme.elevation['2']}`,
-		color: theme.colours.gamut.white,
+	danger: style(({ colours, shadeIntensity, isDark,elevation }) => ({
+		backgroundColor: colours.intent.danger.background,
+		color: colours.intent.danger.foreground,
+		boxShadow: `inset 0 0 0 1px ${shadedColour(colours.intent.danger.background, shadeIntensity.slight, 'backward', isDark)}, ${elevation['2']}`,
 	})),
 };
 
 export const defaultStates = {
-	primary: style((theme) => ({
+	primary: style(({ colours, shadeIntensity, isDark,elevation }) => ({
 		':hover': {
-			color: theme.colours.intent.primary.foreground,
-			backgroundColor: shadedColour(theme.colours.intent.primary.background, theme.shadeIntensity.slight, 'backward', theme.isDark),
-			boxShadow: `inset 0 0 0 1px ${shadedColour(theme.colours.intent.primary.background, theme.shadeIntensity.slight, 'backward', theme.isDark)}, ${theme.elevation['3']}`,
+			color: colours.intent.primary.foreground,
+			backgroundColor: shadedColour(colours.intent.primary.background, shadeIntensity.slight, 'backward', isDark),
+			boxShadow: `inset 0 0 0 1px ${shadedColour(colours.intent.primary.background, shadeIntensity.slight, 'backward', isDark)}, ${elevation['3']}`,
 		},
 		':active': {
 			transform: 'scale(0.97)',
-			boxShadow: `inset 0 0 0 1px ${shadedColour(theme.colours.intent.primary.background, theme.shadeIntensity.medium, 'backward', theme.isDark)}, ${theme.elevation['1']}`,
-			color: theme.colours.intent.primary.foreground,
-			backgroundColor: shadedColour(theme.colours.intent.primary.background, theme.shadeIntensity.medium, 'backward', theme.isDark),
+			boxShadow: `inset 0 0 0 1px ${shadedColour(colours.intent.primary.background, shadeIntensity.medium, 'backward', isDark)}, ${elevation['1']}`,
+			color: colours.intent.primary.foreground,
+			backgroundColor: shadedColour(colours.intent.primary.background, shadeIntensity.medium, 'backward', isDark),
 		},
 	})),
-	secondary: style((theme) => ({
+	secondary: style(({ colours, isDark, shadeIntensity, elevation }) => ({
 		':hover': {
-			color: theme.colours.gamut.gray700,
-			backgroundColor: theme.colours.gamut.gray200,
-			boxShadow: `inset 0 0 0 1px ${theme.colours.gamut.gray400}, ${theme.elevation['3']}`,
+			color: colours.intent.secondary.foreground,
+			backgroundColor: shadedColour(colours.intent.secondary.background, shadeIntensity.slight, 'backward', isDark),
+			boxShadow: `inset 0 0 0 1px ${shadedColour(colours.intent.secondary.background, shadeIntensity.medium, 'backward', isDark)}, ${elevation['3']}`,
 		},
 		':active': {
 			transform: 'scale(0.97)',
-			boxShadow: `inset 0 0 0 1px ${theme.colours.gamut.gray500}, ${theme.elevation['1']}`,
-			backgroundColor: theme.colours.gamut.gray300,
-			color: theme.colours.gamut.gray700,
-		},
+			color: colours.intent.secondary.foreground,
+			backgroundColor: shadedColour(colours.intent.secondary.background, shadeIntensity.medium, 'backward', isDark),
+			boxShadow: `inset 0 0 0 1px ${shadedColour(colours.intent.secondary.background, shadeIntensity.intense, 'backward', isDark)}, ${elevation['1']}`,
+			},
 	})),
-	danger: style((theme) => ({
+	danger: style(({ colours, shadeIntensity, isDark,elevation }) => ({
 		':hover': {
-			backgroundColor: theme.colours.gamut.red700,
-			boxShadow: `inset 0 0 0 1px ${theme.colours.gamut.red800}, ${theme.elevation['3']}`,
+			color: colours.intent.danger.foreground,
+			backgroundColor: shadedColour(colours.intent.danger.background, shadeIntensity.slight, 'backward', isDark),
+			boxShadow: `inset 0 0 0 1px ${shadedColour(colours.intent.danger.background, shadeIntensity.medium, 'backward', isDark)}, ${elevation['3']}`,
 		},
 		':active': {
 			transform: 'scale(0.97)',
-			boxShadow: `inset 0 0 0 1px ${theme.colours.gamut.red900}, ${theme.elevation['1']}`,
-			backgroundColor: theme.colours.gamut.red800,
+			color: colours.intent.danger.foreground,
+			backgroundColor: shadedColour(colours.intent.danger.background, shadeIntensity.medium, 'backward', isDark),
+			boxShadow: `inset 0 0 0 1px ${shadedColour(colours.intent.danger.background, shadeIntensity.intense, 'backward', isDark)}, ${elevation['1']}`,
 		},
 	})),
 };
 
 export const minimal = {
-	defaults: style(({ colours }) => ({
-		color: colours.gamut.gray700,
+	defaults: style(({ typography }) => ({
+		color: typography.colour.neutral,
 	})),
 	noneRounded: style({
 		minWidth: '50px',
@@ -132,39 +134,39 @@ export const minimal = {
 };
 
 export const minimalStates = {
-	primary: style(({ colours }) => ({
+	primary: style(({ colours, isDark, shadeIntensity, transparency }) => ({
 		':hover': {
-			color: colours.gamut.green900,
-			backgroundColor: colours.gamut.green100,
+			color: shadedColour(colours.intent.primary.background, shadeIntensity.medium, 'backward', isDark),
+			backgroundColor: shadedColour(colours.intent.primary.background, shadeIntensity.intense, 'forward', isDark, transparency.intense),
 			boxShadow: 'none',
 		},
 		':active': {
-			color: colours.gamut.green900,
-			backgroundColor: colours.gamut.green200,
+			color: shadedColour(colours.intent.primary.background, shadeIntensity.medium, 'backward', isDark),
+			backgroundColor: shadedColour(colours.intent.primary.background, shadeIntensity.intense, 'backward', isDark, transparency.intense),
 			boxShadow: 'none',
 		},
 	})),
-	secondary: style(({ colours }) => ({
+	secondary: style(({ colours, typography, shadeIntensity, isDark, transparency }) => ({
 		':hover': {
-			color: colours.gamut.gray900,
-			backgroundColor: colours.gamut.gray100,
+			color: shadedColour(typography.colour.secondary, shadeIntensity.medium, 'backward', isDark),
+			backgroundColor: shadedColour(colours.intent.secondary.foreground, shadeIntensity.intense, 'forward', isDark, transparency.intense),
 			boxShadow: 'none',
 		},
 		':active': {
-			color: colours.gamut.gray900,
-			backgroundColor: colours.gamut.gray100,
+			color: shadedColour(typography.colour.secondary, shadeIntensity.medium, 'backward', isDark),
+			backgroundColor: shadedColour(colours.intent.secondary.foreground, shadeIntensity.medium, 'backward', isDark, transparency.intense),
 			boxShadow: 'none',
 		},
 	})),
-	danger: style(({ colours }) => ({
+	danger: style(({ colours, shadeIntensity, isDark, transparency }) => ({
 		':hover': {
-			color: colours.gamut.red900,
-			backgroundColor: colours.gamut.red100,
+			color: shadedColour(colours.intent.danger.background, shadeIntensity.medium, 'backward', isDark),
+			backgroundColor: shadedColour(colours.intent.danger.background, shadeIntensity.intense, 'forward', isDark, transparency.intense),
 			boxShadow: 'none',
 		},
 		':active': {
-			color: colours.gamut.red900,
-			backgroundColor: colours.gamut.red200,
+			color: shadedColour(colours.intent.danger.background, shadeIntensity.medium, 'backward', isDark),
+			backgroundColor: shadedColour(colours.intent.danger.background, shadeIntensity.medium, 'backward', isDark, transparency.intense),
 			boxShadow: 'none',
 		},
 	})),

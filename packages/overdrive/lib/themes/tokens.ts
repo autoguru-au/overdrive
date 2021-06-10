@@ -77,6 +77,7 @@ export type ColourGamut =
 type Intent = 'primary' | 'secondary' | 'neutral' | 'danger' | 'warning' | 'success' | 'information';
 
 type ShadeIntensityLevel = 'slight' | 'medium' | 'intense';
+type TransparencyLevel = 'slight' | 'medium' | 'intense';
 
 type BaseColours = 'white';
 
@@ -89,6 +90,7 @@ export interface Tokens {
 	isDark: boolean;
 	breakpoints: Record<Breakpoints, number>;
 	shadeIntensity: Record<ShadeIntensityLevel, number>;
+	transparency: Record<TransparencyLevel, number>;
 	contentWidth: {
 		small: number;
 		medium: number;
