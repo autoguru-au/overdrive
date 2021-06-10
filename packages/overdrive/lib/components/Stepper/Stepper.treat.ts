@@ -1,36 +1,37 @@
 import { style, styleMap } from 'treat';
+import { shadedColour } from '../../themes/helpers';
 
 export const disabled = style({ cursor: 'not-allowed' });
 
-export const root = style((theme) => ({
+export const root = style(({ colours, shadeIntensity, isDark }) => ({
 	width: 'max-content',
 	selectors: {
 		[`&:not(${disabled}):focus`]: {
-			borderColor: theme.colours.gamut.blue500,
+			borderColor: shadedColour(colours.intent.information.background, shadeIntensity.medium, 'forward', isDark)
 		},
 	},
 }));
 
-export const handle = styleMap((theme) => ({
+export const handle = styleMap(({ space, animation, colours, shadeIntensity, isDark, transparency }) => ({
 	default: {
-		width: theme.space[6],
-		height: theme.space[6],
-		transition: `background-color 0.1s ${theme.animation.easing.standard}`,
+		width: space[6],
+		height: space[6],
+		transition: `background-color 0.1s ${animation.easing.standard}`,
 		selectors: {
 			[`${root}:not(${disabled}) &:hover`]: {
-				backgroundColor: theme.colours.gamut.green700,
+				backgroundColor: shadedColour(colours.intent.primary.background, shadeIntensity.medium, 'backward', isDark),
 			},
 			[`${root}:not(${disabled}) &:active`]: {
-				backgroundColor: theme.colours.gamut.green800,
+				backgroundColor: shadedColour(colours.intent.primary.background, shadeIntensity.intense, 'backward', isDark),
 			},
 		},
 	},
 	disabled: {
-		borderColor: theme.colours.gamut.green200,
-		backgroundColor: theme.colours.gamut.green200,
+		borderColor: shadedColour(colours.background.neutral, shadeIntensity.intense, 'forward', isDark, transparency.medium),
+		backgroundColor: shadedColour(colours.background.neutral, shadeIntensity.intense, 'forward', isDark, transparency.medium),
 	},
 }));
 
-export const label = style((theme) => ({
-	minWidth: theme.space['8'],
+export const label = style(({ space }) => ({
+	minWidth: space['8'],
 }));
