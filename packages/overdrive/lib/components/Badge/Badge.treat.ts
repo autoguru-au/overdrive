@@ -1,4 +1,5 @@
 import { style, styleMap } from 'treat';
+import { shadedColour } from '../../themes/helpers';
 
 export const label = style(({ typography }) => ({
 	lineHeight: typography.size['2'].fontSize,
@@ -27,44 +28,44 @@ export const colours = {
 		},
 	})),
 	inverted: {
-		neutral: styleMap((theme) => ({
+		neutral: styleMap(({ colours, shadeIntensity, isDark, transparency }) => ({
 			background: {
-				backgroundColor: theme.colours.gamut.gray200,
+				backgroundColor: shadedColour(colours.intent.neutral.background, shadeIntensity.slight, 'backward', isDark, transparency.intense),
 			},
 			text: {
-				color: theme.colours.gamut.gray800,
+				color: colours.intent.neutral.background,
 			},
 		})),
-		green: styleMap((theme) => ({
+		green: styleMap(({ colours, shadeIntensity, isDark, transparency } ) => ({
 			background: {
-				backgroundColor: theme.colours.gamut.green200,
+				backgroundColor: shadedColour(colours.intent.success.background, shadeIntensity.slight, 'backward', isDark, transparency.intense),
 			},
 			text: {
-				color: theme.colours.gamut.green900,
+				color: shadedColour(colours.intent.success.background, shadeIntensity.medium, 'backward', isDark),
 			},
 		})),
-		blue: styleMap((theme) => ({
+		blue:  styleMap(({ colours, shadeIntensity, isDark, transparency } ) => ({
 			background: {
-				backgroundColor: theme.colours.gamut.blue200,
+				backgroundColor: shadedColour(colours.intent.information.background, shadeIntensity.slight, 'backward', isDark, transparency.intense),
 			},
 			text: {
-				color: theme.colours.gamut.blue900,
+				color: shadedColour(colours.intent.information.background, shadeIntensity.slight, 'backward', isDark),
 			},
 		})),
-		yellow: styleMap((theme) => ({
+		yellow: styleMap(({ colours, shadeIntensity, isDark, transparency } ) => ({
 			background: {
-				backgroundColor: theme.colours.gamut.yellow200,
+				backgroundColor: shadedColour(colours.intent.warning.background, shadeIntensity.slight, 'backward', isDark, transparency.intense),
 			},
 			text: {
-				color: theme.colours.gamut.yellow900,
+				color: shadedColour(colours.intent.warning.background, shadeIntensity.slight, 'backward', isDark),
 			},
 		})),
-		red: styleMap((theme) => ({
+		red: styleMap(({ colours, shadeIntensity, isDark, transparency } ) => ({
 			background: {
-				backgroundColor: theme.colours.gamut.red200,
+				backgroundColor: shadedColour(colours.intent.danger.background, shadeIntensity.slight, 'backward', isDark, transparency.intense),
 			},
 			text: {
-				color: theme.colours.gamut.red800,
+				color: shadedColour(colours.intent.danger.background, shadeIntensity.slight, 'backward', isDark),
 			},
 		})),
 	},
