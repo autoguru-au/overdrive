@@ -1,12 +1,13 @@
 import { style, styleMap } from 'treat';
+import { shadedColour } from '../../themes/helpers';
 
 const lineBottomHeight = '1px';
 const size = '20px';
 
 export const root = {
-	default: style((theme) => ({
-		padding: `calc(${theme.space['3']} + ${lineBottomHeight}) 0`,
-		transition: `color 0.2s ${theme.animation.easing.decelerate} 0s, background-color 0.2s ${theme.animation.easing.decelerate} 0s`,
+	default: style(({ space, shadeIntensity, animation, colours, isDark }) => ({
+		padding: `calc(${space['3']} + ${lineBottomHeight}) 0`,
+		transition: `color 0.2s ${animation.easing.decelerate} 0s, background-color 0.2s ${animation.easing.decelerate} 0s`,
 		borderBottom: `calc(${lineBottomHeight} + ${lineBottomHeight}) solid transparent`,
 		flex: 'auto',
 		':last-of-type': {
@@ -14,16 +15,16 @@ export const root = {
 		},
 
 		':hover': {
-			color: theme.colours.gamut.green900,
+			color: shadedColour(colours.intent.primary.background, shadeIntensity.medium, 'backward', isDark),
 		},
 
 		':focus': {
-			color: theme.colours.gamut.green900,
+			color: shadedColour(colours.intent.primary.background, shadeIntensity.medium, 'backward', isDark),
 		},
 	})),
-	active: style((theme) => ({
-		color: theme.colours.gamut.green900,
-		borderBottomColor: theme.colours.gamut.green900,
+	active: style(({ shadeIntensity, colours, isDark }) => ({
+		color: shadedColour(colours.intent.primary.background, shadeIntensity.medium, 'backward', isDark),
+		borderBottomColor: shadedColour(colours.intent.primary.background, shadeIntensity.medium, 'backward', isDark),
 	})),
 };
 
@@ -33,11 +34,11 @@ export const item = style({
 	verticalAlign: 'middle',
 });
 
-export const indication = styleMap((theme) => ({
+export const indication = styleMap(({ animation }) => ({
 	default: {
 		minWidth: size,
 		height: size,
 		lineHeight: size,
-		transition: `color 0.2s ${theme.animation.easing.decelerate} 0s, backgroundColor 0.2s ${theme.animation.easing.decelerate} 0s`,
+		transition: `color 0.2s ${animation.easing.decelerate} 0s, backgroundColor 0.2s ${animation.easing.decelerate} 0s`,
 	},
 }));
