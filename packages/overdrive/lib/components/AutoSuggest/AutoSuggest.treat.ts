@@ -75,7 +75,7 @@ export const suggestionListItem = styleMap(() => ({
 	},
 }));
 
-export const suggestionHighlight = style(({ colours, typography, shadeIntensity, isDark }) => ({
+export const suggestionHighlight = style(({ colours, typography, shadeIntensity, isDark, transparency }) => ({
 	color: typography.colour.information,
-	backgroundColor: shadedColour(colours.intent.secondary.background, shadeIntensity.slight, 'backward', isDark),
+	backgroundColor: shadedColour(colours.background.body, shadeIntensity.slight, 'backward', isDark, transparency.medium),
 }));
