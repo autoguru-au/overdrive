@@ -38,21 +38,21 @@ export const path = style((theme) => ({
 	},
 }));
 
-export const colours = styleMap((theme) => ({
+export const colours = styleMap(({ typography }) => ({
 	light: {
-		stroke: 'white',
+		stroke: typography.colour.white,
 	},
 	primary: {
-		stroke: theme.colours.gamut.green600,
+		stroke: typography.colour.primary,
 	},
 	secondary: {
-		stroke: theme.colours.gamut.gray700,
+		stroke: typography.colour.secondary,
 	},
 	warning: {
-		stroke: theme.colours.gamut.yellow900,
+		stroke: typography.colour.warning,
 	},
 	danger: {
-		stroke: theme.colours.gamut.red600,
+		stroke: typography.colour.danger,
 	},
 }));
 
