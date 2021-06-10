@@ -123,6 +123,10 @@ export const tokens: Tokens = {
 				background: white,
 				foreground: colours.gray['700'],
 			},
+			shine: {
+				background: colours.gray['200'],
+				foreground: colours.yellow['500'],
+			},
 			danger: {
 				background: colours.red['600'],
 				foreground: white,
