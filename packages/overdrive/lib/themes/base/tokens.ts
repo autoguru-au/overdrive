@@ -70,7 +70,7 @@ export const tokens: Tokens = {
 	shadeIntensity: {
 		slight: 0.05,
 		medium: 0.15,
-		intense: 0.2,
+		intense: 0.3,
 	},
 	transparency: {
 		slight: 0.25,
