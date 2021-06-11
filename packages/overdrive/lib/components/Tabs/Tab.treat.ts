@@ -55,11 +55,21 @@ export const item = style({
 	verticalAlign: 'middle',
 });
 
-export const indication = styleMap(({ animation }) => ({
+export const indication = styleMap(({ shadeIntensity, isDark, animation, colours }) => ({
 	default: {
+		backgroundColor: colours.background.light,
 		minWidth: size,
 		height: size,
 		lineHeight: size,
 		transition: `color 0.2s ${animation.easing.decelerate} 0s, backgroundColor 0.2s ${animation.easing.decelerate} 0s`,
 	},
+	active: {
+		backgroundColor: shadedColour(
+			colours.intent.primary.background,
+			shadeIntensity.medium,
+			'backward',
+			isDark,
+		),
+	},
 }));
+
