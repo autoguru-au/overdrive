@@ -223,6 +223,7 @@ export const tokens: Tokens = {
 		colour: {
 			primary: colours.green['600'],
 			secondary: colours.gray['700'],
+			shine: colours.yellow['500'],
 			link: colours.green['600'],
 			dark: colours.gray['900'],
 			white,

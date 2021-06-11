@@ -1,7 +1,7 @@
 import { runtimeTokens, theme } from './theme.treat';
 
 export default {
-	name: 'baseTheme',
+	name: 'flatRed',
 	themeRef: theme,
 	runtimeTokens,
 };

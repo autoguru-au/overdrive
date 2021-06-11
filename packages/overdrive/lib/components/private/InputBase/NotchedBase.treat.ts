@@ -14,10 +14,9 @@ const borderRegionDefaults = style((theme) => ({
 	transition: `border-color 0.2s ${theme.animation.easing.decelerate} 0s`,
 }));
 
-const borderVisualDefaults = style((theme) => ({
-	borderRadius: theme.space['1'],
-	boxShadow:
-		'0 1px 10px 0 rgba(0,0,0,.03), 0 4px 5px 0 rgba(0,0,0,.03), 0 2px 4px -1px rgba(0,0,0,.05)',
+const borderVisualDefaults = style(({ space, elevation }) => ({
+	borderRadius: space['1'],
+	boxShadow: elevation['2'],
 }));
 
 export const borders = {
@@ -37,7 +36,7 @@ export const borders = {
 		borderVisualDefaults,
 		borderRegionDefaults,
 		style((theme) => ({
-			borderRadius: `${theme.space['1']}`,
+			borderRadius: `${theme.border.radius['1']}`,
 		})),
 	],
 	leading: [
@@ -45,7 +44,7 @@ export const borders = {
 		style((theme) => ({
 			width: theme.space['2'],
 			borderRight: 'none',
-			borderRadius: `${theme.space['1']} 0 0 ${theme.space['1']}`,
+			borderRadius: `${theme.border.radius['1']} 0 0 ${theme.border.radius['1']}`,
 		})),
 	],
 	middle: [
@@ -62,7 +61,7 @@ export const borders = {
 		style((theme) => ({
 			flexGrow: 1,
 			borderLeft: 'none',
-			borderRadius: `0 ${theme.space['1']} ${theme.space['1']} 0`,
+			borderRadius: `0 ${theme.border.radius['1']} ${theme.border.radius['1']} 0`,
 		})),
 	],
 };
