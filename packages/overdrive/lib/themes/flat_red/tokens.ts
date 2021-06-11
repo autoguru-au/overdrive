@@ -174,6 +174,7 @@ export const tokens: Tokens = {
 			none: 'none',
 			pill: `${1e9}px`,
 			full: '50%',
+			min: 'none',
 			'1': 'none',
 		},
 	},

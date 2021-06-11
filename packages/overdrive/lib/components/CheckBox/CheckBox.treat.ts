@@ -8,10 +8,10 @@ export const icon = style((theme) => ({
 	height: theme.space['4'],
 }));
 
-export const base = styleMap(({ space, animation, colours }) => ({
+export const base = styleMap(({ space, border, animation, colours }) => ({
 	default: {
 		zIndex: 0,
-		borderRadius: '2px',
+		borderRadius: border.radius['min'],
 		top: space['3'],
 		left: space['3'],
 		width: space['4'],
@@ -21,5 +21,6 @@ export const base = styleMap(({ space, animation, colours }) => ({
 
 	selected: {
 		borderColor: colours.intent.primary.background,
+		backgroundColor: colours.intent.primary.background,
 	},
 }));

@@ -102,7 +102,6 @@ const Handle: FunctionComponent<HandleProps> = ({
 			aria-label={label}
 			padding="none"
 			borderRadius="full"
-			backgroundColour="green600"
 			display="flex"
 			alignItems="center"
 			justifyContent="center"

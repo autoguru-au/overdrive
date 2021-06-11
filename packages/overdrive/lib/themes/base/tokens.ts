@@ -179,6 +179,7 @@ export const tokens: Tokens = {
 			pill: `${1e9}px`,
 			full: '50%',
 			'1': '4px',
+			min: '2px',
 		},
 	},
 	typography: {

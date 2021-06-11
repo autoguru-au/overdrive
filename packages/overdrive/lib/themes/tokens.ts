@@ -139,6 +139,7 @@ export interface Tokens {
 		radius: {
 			none: string;
 			'1': string;
+			min: string;
 			pill: string;
 			full: string;
 		};

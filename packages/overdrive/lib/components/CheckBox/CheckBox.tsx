@@ -69,7 +69,6 @@ export const CheckBox = forwardRef<HTMLInputElement, Props>(
 				<Box
 					borderWidth="2"
 					borderColour="gray"
-					backgroundColour={checked ? 'green600' : 'transparent'}
 					className={clsx(checkableItem, styles.base.default, {
 						[styles.base.selected]: checked,
 					})}
