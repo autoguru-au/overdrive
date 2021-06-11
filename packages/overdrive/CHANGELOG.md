@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.4.1
+
+### Patch Changes
+
+-   dd39f3a: Overdrive Themes: Gets a new flat theme added
+
 ## 2.4.0
 
 ### Minor Changes
