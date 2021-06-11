@@ -1,34 +1,79 @@
 import { style, styleMap, styleTree } from 'treat';
 
-const activeColour = style((theme) => ({ color: theme.colours.gamut.blue600 }));
+import { shadedColour } from '../../../themes/helpers';
 
-const activeBorderColour = style((theme) => ({
-	borderColor: theme.colours.gamut.blue600,
+const activeColour = style(({ typography, shadeIntensity, isDark }) => ({
+	color: shadedColour(
+		typography.colour.information,
+		shadeIntensity.slight,
+		'backward',
+		isDark,
+	),
 }));
 
-export const disabled = styleMap((theme) => ({
-	colour: {
-		color: theme.colours.gamut.gray300,
-	},
-	borderColour: {
-		borderColor: theme.colours.gamut.gray200,
-	},
+const activeBorderColour = style(({ typography, shadeIntensity, isDark }) => ({
+	borderColor: shadedColour(
+		typography.colour.information,
+		shadeIntensity.slight,
+		'backward',
+		isDark,
+	),
 }));
 
-export const natural = styleTree((theme, styleNode) => ({
-	default: {
-		colour: styleNode({ color: theme.colours.gamut.gray400 }),
-		borderColour: styleNode({ borderColor: theme.colours.gamut.gray300 }),
-	},
-	hover: {
-		colour: activeColour,
-		borderColour: activeBorderColour,
-	},
-	active: {
-		colour: activeColour,
-		borderColour: activeBorderColour,
-	},
-}));
+export const disabled = styleMap(
+	({ typography, shadeIntensity, isDark, transparency }) => ({
+		colour: {
+			color: shadedColour(
+				typography.colour.muted,
+				shadeIntensity.intense,
+				'forward',
+				isDark,
+				transparency.medium,
+			),
+		},
+		borderColour: {
+			borderColor: shadedColour(
+				typography.colour.muted,
+				null,
+				'forward',
+				isDark,
+				transparency.intense,
+			),
+		},
+	}),
+);
+
+export const natural = styleTree(
+	({ typography, shadeIntensity, isDark, transparency }, styleNode) => ({
+		default: {
+			colour: styleNode({
+				color: shadedColour(
+					typography.colour.muted,
+					shadeIntensity.medium,
+					'forward',
+					isDark,
+				),
+			}),
+			borderColour: styleNode({
+				borderColor: shadedColour(
+					typography.colour.muted,
+					shadeIntensity.intense,
+					'forward',
+					isDark,
+					transparency.medium,
+				),
+			}),
+		},
+		hover: {
+			colour: activeColour,
+			borderColour: activeBorderColour,
+		},
+		active: {
+			colour: activeColour,
+			borderColour: activeBorderColour,
+		},
+	}),
+);
 
 export const active = {
 	default: {
@@ -45,32 +90,92 @@ export const active = {
 	},
 };
 
-export const success = styleTree((theme, styleNode) => ({
-	default: {
-		colour: styleNode({ color: theme.colours.gamut.green600 }),
-		borderColour: styleNode({ borderColor: theme.colours.gamut.green600 }),
-	},
-	hover: {
-		colour: styleNode({ color: theme.colours.gamut.green500 }),
-		borderColour: styleNode({ borderColor: theme.colours.gamut.green500 }),
-	},
-	active: {
-		colour: styleNode({ color: theme.colours.gamut.green700 }),
-		borderColour: styleNode({ borderColor: theme.colours.gamut.green700 }),
-	},
-}));
+export const success = styleTree(
+	({ typography, shadeIntensity, isDark }, styleNode) => ({
+		default: {
+			colour: styleNode({ color: typography.colour.success }),
+			borderColour: styleNode({ borderColor: typography.colour.success }),
+		},
+		hover: {
+			colour: styleNode({
+				color: shadedColour(
+					typography.colour.success,
+					shadeIntensity.medium,
+					'forward',
+					isDark,
+				),
+			}),
+			borderColour: styleNode({
+				borderColor: shadedColour(
+					typography.colour.success,
+					shadeIntensity.medium,
+					'forward',
+					isDark,
+				),
+			}),
+		},
+		active: {
+			colour: styleNode({
+				color: shadedColour(
+					typography.colour.success,
+					shadeIntensity.medium,
+					'backward',
+					isDark,
+				),
+			}),
+			borderColour: styleNode({
+				borderColor: shadedColour(
+					typography.colour.success,
+					shadeIntensity.medium,
+					'backward',
+					isDark,
+				),
+			}),
+		},
+	}),
+);
 
-export const error = styleTree((theme, styleNode) => ({
-	default: {
-		colour: styleNode({ color: theme.colours.gamut.red700 }),
-		borderColour: styleNode({ borderColor: theme.colours.gamut.red700 }),
-	},
-	hover: {
-		colour: styleNode({ color: theme.colours.gamut.red600 }),
-		borderColour: styleNode({ borderColor: theme.colours.gamut.red600 }),
-	},
-	active: {
-		colour: styleNode({ color: theme.colours.gamut.red800 }),
-		borderColour: styleNode({ borderColor: theme.colours.gamut.red800 }),
-	},
-}));
+export const error = styleTree(
+	({ typography, shadeIntensity, isDark }, styleNode) => ({
+		default: {
+			colour: styleNode({
+				color: shadedColour(
+					typography.colour.danger,
+					shadeIntensity.slight,
+					'backward',
+					isDark,
+				),
+			}),
+			borderColour: styleNode({
+				borderColor: shadedColour(
+					typography.colour.danger,
+					shadeIntensity.slight,
+					'backward',
+					isDark,
+				),
+			}),
+		},
+		hover: {
+			colour: styleNode({ color: typography.colour.danger }),
+			borderColour: styleNode({ borderColor: typography.colour.danger }),
+		},
+		active: {
+			colour: styleNode({
+				color: shadedColour(
+					typography.colour.danger,
+					shadeIntensity.medium,
+					'backward',
+					isDark,
+				),
+			}),
+			borderColour: styleNode({
+				borderColor: shadedColour(
+					typography.colour.danger,
+					shadeIntensity.medium,
+					'backward',
+					isDark,
+				),
+			}),
+		},
+	}),
+);

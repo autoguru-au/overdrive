@@ -8,6 +8,9 @@ export default {
 	component: Meta,
 };
 
-export const standard = () => (
+export const primary = () => (
 	<Meta variant="primary" icon={CalendarIcon} label="Hello World" />
+);
+export const secondary = () => (
+	<Meta variant="secondary" icon={CalendarIcon} label="Hello World" />
 );

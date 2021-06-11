@@ -42,9 +42,6 @@ jobs:
             - name: Test
               run: yarn test --no-cache --ci --coverage
 
-            - name: Type Check
-              run: yarn tsc -b
-
             - uses: codecov/codecov-action@v1
               with:
                   token: ${{ secrets.CODECOV }}

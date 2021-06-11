@@ -1,10 +1,19 @@
 import { styleMap } from 'treat';
 
-export const variant = styleMap((theme) => ({
-	primary: {
-		color: theme.colours.gamut.green900,
-	},
-	secondary: {
-		color: theme.colours.gamut.gray900,
-	},
-}));
+import { shadedColour } from '../../themes/helpers';
+
+export const variant = styleMap(
+	({ colours, typography, shadeIntensity, isDark }) => ({
+		primary: {
+			color: shadedColour(
+				colours.intent.primary.background,
+				shadeIntensity.medium,
+				'backward',
+				isDark,
+			),
+		},
+		secondary: {
+			color: typography.colour.dark,
+		},
+	}),
+);

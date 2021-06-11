@@ -1,6 +1,8 @@
 import { style, styleMap } from 'treat';
 import type { Theme } from 'treat/theme';
 
+import { shadedColour } from '../../../themes/helpers';
+
 export const root = style((theme) => ({
 	transition: `fill 0.2s ${theme.animation.easing.decelerate} 0s`,
 }));
@@ -65,18 +67,25 @@ export const borders = {
 	],
 };
 
-export const placeholder = styleMap((theme) => ({
-	default: {
-		lineHeight: 1,
-		top: 0,
-		left: 0,
-		transition: `color 0.2s ${theme.animation.easing.decelerate} 0s, transform 0.2s ${theme.animation.easing.decelerate} 0s`,
-		transformOrigin: 'top left',
-	},
-	mutedLabelStyles: {
-		color: theme.colours.gamut.gray400,
-	},
-}));
+export const placeholder = styleMap(
+	({ animation, typography, isDark, shadeIntensity }) => ({
+		default: {
+			lineHeight: 1,
+			top: 0,
+			left: 0,
+			transition: `color 0.2s ${animation.easing.decelerate} 0s, transform 0.2s ${animation.easing.decelerate} 0s`,
+			transformOrigin: 'top left',
+		},
+		mutedLabelStyles: {
+			color: shadedColour(
+				typography.colour.muted,
+				shadeIntensity.medium,
+				'forward',
+				isDark,
+			),
+		},
+	}),
+);
 
 const active_scaling_factor = 0.7777;
 const calcPlaceholderTranslate = (

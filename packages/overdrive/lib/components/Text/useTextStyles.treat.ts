@@ -3,11 +3,11 @@ import type { Theme } from 'treat/theme';
 
 import { mapTokenToProperty } from '../../utils';
 
-export const root = style((theme) => ({
+export const root = style(({ typography }) => ({
 	selectors: {
 		'&::selection': {
-			color: theme.typography.colour.white,
-			background: theme.colours.gamut.green600,
+			color: typography.colour.white,
+			background: typography.colour.primary,
 		},
 	},
 }));

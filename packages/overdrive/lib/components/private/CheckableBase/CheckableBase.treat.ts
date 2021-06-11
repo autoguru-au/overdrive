@@ -1,18 +1,36 @@
 import { style, styleMap } from 'treat';
 
-export const root = style((theme) => ({
-	cursor: 'pointer',
-	transition: `background-color 0.2s ${theme.animation.easing.decelerate} 0s`,
-	':hover': {
-		backgroundColor: theme.colours.gamut.gray100,
-	},
-}));
+import { shadedColour } from '../../../themes/helpers';
 
-export const label = styleMap((theme) => ({
-	disabled: {
-		color: theme.colours.gamut.gray500,
-	},
-}));
+export const root = style(
+	({ animation, colours, shadeIntensity, isDark, transparency }) => ({
+		cursor: 'pointer',
+		transition: `background-color 0.2s ${animation.easing.decelerate} 0s`,
+		':hover': {
+			backgroundColor: shadedColour(
+				colours.background.body,
+				shadeIntensity.slight,
+				'backward',
+				isDark,
+				transparency.medium,
+			),
+		},
+	}),
+);
+
+export const label = styleMap(
+	({ typography, shadeIntensity, isDark, transparency }) => ({
+		disabled: {
+			color: shadedColour(
+				typography.colour.dark,
+				shadeIntensity.slight,
+				'backward',
+				isDark,
+				transparency.slight,
+			),
+		},
+	}),
+);
 
 export const nativeInput = styleMap({
 	default: {
@@ -35,13 +53,23 @@ export const checkable = style((theme) => ({
 	marginBottom: `calc(-1*${theme.space['3']})`,
 }));
 
-export const checkableItem = style((theme) => ({
+export const checkableItem = style(({ colours, shadeIntensity, isDark }) => ({
 	selectors: {
 		[`${nativeInput.default}:focus:checked ~${checkable} &`]: {
-			boxShadow: `0 0 0 2px ${theme.colours.gamut.green900}`,
+			boxShadow: `0 0 0 2px ${shadedColour(
+				colours.intent.primary.background,
+				shadeIntensity.slight,
+				'backward',
+				isDark,
+			)}`,
 		},
 		[`${nativeInput.default}:focus:not(:checked) ~${checkable} >&`]: {
-			borderColor: theme.colours.gamut.green900,
+			borderColor: shadedColour(
+				colours.intent.primary.background,
+				shadeIntensity.slight,
+				'backward',
+				isDark,
+			),
 		},
 	},
 }));

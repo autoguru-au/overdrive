@@ -1,5 +1,7 @@
 import { style, styleMap } from 'treat';
 
+import { shadedColour } from '../../themes/helpers';
+
 export const fullScreenRoot = style((theme) => ({
 	position: 'fixed',
 	zIndex: 1001,
@@ -20,7 +22,7 @@ export const fullScreenRoot = style((theme) => ({
 		content: '""',
 		position: 'fixed',
 		zIndex: 0,
-		backgroundColor: theme.colours.gamut.white,
+		backgroundColor: theme.colours.intent.secondary.background,
 		pointerEvents: 'none',
 		top: 0,
 		left: 0,
@@ -74,7 +76,15 @@ export const suggestionListItem = styleMap(() => ({
 	},
 }));
 
-export const suggestionHighlight = style((theme) => ({
-	color: theme.colours.gamut.blue500,
-	backgroundColor: theme.colours.gamut.gray100,
-}));
+export const suggestionHighlight = style(
+	({ colours, typography, shadeIntensity, isDark, transparency }) => ({
+		color: typography.colour.information,
+		backgroundColor: shadedColour(
+			colours.background.body,
+			shadeIntensity.slight,
+			'backward',
+			isDark,
+			transparency.medium,
+		),
+	}),
+);

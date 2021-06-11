@@ -1,6 +1,6 @@
 import { style, styleMap } from 'treat';
 
-import { hex2rgba } from '../../utils';
+import { shadedColour } from '../../themes/helpers';
 
 const reducedMotion = style({
 	'@media': {
@@ -30,16 +30,24 @@ export const entry = [
 	}),
 ];
 
-const backdropRoot = styleMap((theme) => ({
-	default: {
-		backgroundColor: hex2rgba(theme.colours.gamut.gray900, '0.8'),
-		backdropFilter: 'blur(5px)',
-	},
-	invisible: {
-		backgroundColor: 'transparent',
-		backdropFilter: 'none',
-	},
-}));
+const backdropRoot = styleMap(
+	({ colours, shadeIntensity, isDark, transparency }) => ({
+		default: {
+			backgroundColor: shadedColour(
+				colours.intent.neutral.background,
+				shadeIntensity.intense,
+				'backward',
+				isDark,
+				transparency.slight,
+			),
+			backdropFilter: 'blur(5px)',
+		},
+		invisible: {
+			backgroundColor: 'transparent',
+			backdropFilter: 'none',
+		},
+	}),
+);
 
 export const backdrop = {
 	root: [

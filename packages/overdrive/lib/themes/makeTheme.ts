@@ -1,7 +1,7 @@
 import { createTheme, Style } from 'treat';
 import type { StyleWithSelectors } from 'treat/dist/declarations/src/types';
 
-import { Tokens } from './tokens';
+import { ColourGamut, ColourMap, Tokens } from './tokens';
 
 export const makeRuntimeTokens = (tokens: Tokens) => ({
 	breakpoints: tokens.breakpoints,
@@ -48,3 +48,20 @@ export type OverdriveTheme = ReturnType<typeof decorateTokens>;
 
 export const makeTheme = (tokens: Tokens, debugName) =>
 	createTheme(decorateTokens(tokens), debugName);
+
+export const buildColourGamut = (colours: ColourMap) =>
+	Object.entries(colours).reduce(
+		(result, [name, colourGrades]) => ({
+			...result,
+			...Object.entries(colourGrades).reduce(
+				(grades, [colourGradeName, colour]) => {
+					return {
+						...grades,
+						[`${name}${colourGradeName}`]: colour,
+					};
+				},
+				{} as Record<Partial<ColourGamut>, string>,
+			),
+		}),
+		{} as Record<ColourGamut, string>,
+	);

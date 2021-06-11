@@ -1,6 +1,8 @@
 import { style } from 'treat';
 
-export const root = style((theme) => ({
+import { shadedColour } from '../../themes/helpers';
+
+export const root = style(({ animation, border, shadeIntensity, isDark }) => ({
 	position: 'relative',
 
 	/*
@@ -18,13 +20,18 @@ export const root = style((theme) => ({
 		bottom: 0,
 		left: '-1000%',
 		right: '-1000%',
-		transition: `background-color 0.2s ${theme.animation.easing.accelerate}`,
+		transition: `background-color 0.2s ${animation.easing.accelerate}`,
 	},
 
 	selectors: {
 		'&:hover:before': {
-			transitionTimingFunction: theme.animation.easing.decelerate,
-			backgroundColor: theme.colours.gamut.gray100,
+			transitionTimingFunction: animation.easing.decelerate,
+			backgroundColor: shadedColour(
+				border.colours.light,
+				shadeIntensity.slight,
+				'forward',
+				isDark,
+			),
 		},
 	},
 }));

@@ -1,6 +1,7 @@
-import { ColourGamut, Tokens } from '../tokens';
+import { buildColourGamut } from '../makeTheme';
+import { ColourMap, Tokens } from '../tokens';
 
-const colours = {
+const colours: ColourMap = {
 	gray: {
 		900: '#212338',
 		800: '#34384c',
@@ -64,24 +65,18 @@ const colours = {
 
 const white = '#fff';
 
-const makeColourGamut = () =>
-	Object.entries(colours).reduce(
-		(result, [name, colourGrades]) => ({
-			...result,
-			...Object.entries(colourGrades).reduce(
-				(grades, [colourGradeName, colour]) => {
-					return {
-						...grades,
-						[`${name}${colourGradeName}`]: colour,
-					};
-				},
-				{} as Record<Partial<ColourGamut>, string>,
-			),
-		}),
-		{} as Record<ColourGamut, string>,
-	);
-
 export const tokens: Tokens = {
+	isDark: false,
+	shadeIntensity: {
+		slight: 0.05,
+		medium: 0.15,
+		intense: 0.3,
+	},
+	transparency: {
+		slight: 0.25,
+		medium: 0.5,
+		intense: 0.9,
+	},
 	breakpoints: {
 		mobile: 0,
 		tablet: 768, // IPad mini width (1024 - 25%)
@@ -107,7 +102,7 @@ export const tokens: Tokens = {
 	},
 	colours: {
 		gamut: {
-			...makeColourGamut(),
+			...buildColourGamut(colours),
 			white,
 		},
 		foreground: {
@@ -120,9 +115,21 @@ export const tokens: Tokens = {
 			neutralDark: colours.gray['800'],
 		},
 		intent: {
+			primary: {
+				background: colours.green['600'],
+				foreground: white,
+			},
+			secondary: {
+				background: white,
+				foreground: colours.gray['700'],
+			},
+			shine: {
+				background: colours.gray['200'],
+				foreground: colours.yellow['500'],
+			},
 			danger: {
 				background: colours.red['600'],
-				foreground: colours.red['200'],
+				foreground: white,
 			},
 			warning: {
 				background: colours.yellow['800'],
@@ -214,6 +221,8 @@ export const tokens: Tokens = {
 			},
 		},
 		colour: {
+			primary: colours.green['600'],
+			secondary: colours.gray['700'],
 			link: colours.green['600'],
 			dark: colours.gray['900'],
 			white,

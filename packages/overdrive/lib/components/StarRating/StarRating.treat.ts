@@ -1,10 +1,10 @@
 import { styleMap } from 'treat';
 
-export const star = styleMap((theme) => ({
+export const star = styleMap(({ colours }) => ({
 	default: {
-		color: theme.colours.gamut.yellow500,
+		color: colours.intent.shine.foreground,
 	},
 	empty: {
-		color: theme.colours.gamut.gray200,
+		color: colours.intent.shine.background,
 	},
 }));
