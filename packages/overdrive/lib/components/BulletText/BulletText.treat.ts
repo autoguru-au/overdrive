@@ -8,17 +8,15 @@ export const bullet = style((theme) => ({
 	height: theme.space['6'],
 }));
 
-export const primary = style(
-	({ colours, shadeIntensity, isDark, transparency }) => ({
-		backgroundColor: shadedColour(
-			colours.intent.primary.background,
-			null,
-			'forward',
-			isDark,
-			transparency.intense,
-		),
-	}),
-);
+export const primary = style(({ colours, isDark, transparency }) => ({
+	backgroundColor: shadedColour(
+		colours.intent.primary.background,
+		null,
+		'forward',
+		isDark,
+		transparency.intense,
+	),
+}));
 
 export const secondary = style(({ colours }) => ({
 	backgroundColor: colours.background.light,
