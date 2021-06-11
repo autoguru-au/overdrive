@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import * as React from 'react';
 import { FunctionComponent, isValidElement, ReactNode } from 'react';
 import { useStyles } from 'react-treat';
@@ -39,15 +40,18 @@ export const BulletText: FunctionComponent<Props> = ({
 					display="flex"
 					alignItems="center"
 					justifyContent="center"
-					backgroundColour={
-						variant === 'primary' ? 'green200' : 'gray200'
-					}
-					className={styles.bullet}
+					className={clsx(styles.bullet, {
+						[styles.primary]: variant === 'primary',
+						[styles.secondary]: variant !== 'primary',
+					})}
 					borderRadius="pill">
 					<Text
+						className={clsx({
+							[styles.primaryText]: variant === 'primary',
+							[styles.secondaryText]: variant !== 'primary',
+						})}
 						is="span"
-						size="2"
-						colour={variant === 'primary' ? 'success' : 'dark'}>
+						size="2">
 						{Bullet}
 					</Text>
 				</Box>

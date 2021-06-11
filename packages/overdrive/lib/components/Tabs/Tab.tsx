@@ -53,7 +53,6 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 		const indicationStyles = useBoxStyles({
 			display: 'inlineBlock',
 			paddingX: '1',
-			backgroundColour: isActive ? 'green900' : 'gray300',
 			borderRadius: 'pill',
 		});
 
@@ -109,6 +108,7 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 						className={clsx(
 							styles.indication.default,
 							indicationStyles,
+							{ [styles.indication.active]: isActive },
 						)}>
 						{indication}
 					</Text>

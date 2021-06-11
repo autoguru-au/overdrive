@@ -17,7 +17,7 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
       >
         <button
           aria-label="step down"
-          class="appearance cursorPointer trimmedBlockElement button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base block colours_white_base"
+          class="appearance cursorPointer trimmedBlockElement button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base center_mobile_base center_mobile_base handle_default_base root_base block colours_white_base"
           tabindex="-1"
         >
           <i
@@ -60,7 +60,7 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
       >
         <button
           aria-label="step up"
-          class="appearance cursorPointer trimmedBlockElement button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base block colours_white_base"
+          class="appearance cursorPointer trimmedBlockElement button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base center_mobile_base center_mobile_base handle_default_base root_base block colours_white_base"
           tabindex="-1"
         >
           <i
@@ -103,7 +103,7 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
       >
         <button
           aria-label="step down"
-          class="appearance cursorPointer trimmedBlockElement button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base block colours_white_base"
+          class="appearance cursorPointer trimmedBlockElement button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base center_mobile_base center_mobile_base handle_default_base root_base block colours_white_base"
           tabindex="-1"
         >
           <i
@@ -146,7 +146,7 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
       >
         <button
           aria-label="step up"
-          class="appearance cursorPointer trimmedBlockElement button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base root_base block colours_white_base"
+          class="appearance cursorPointer trimmedBlockElement button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base center_mobile_base center_mobile_base handle_default_base root_base block colours_white_base"
           tabindex="-1"
         >
           <i
@@ -189,7 +189,7 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
       >
         <button
           aria-label="step down"
-          class="appearance cursorPointer trimmedBlockElement button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base handle_disabled_base root_base block colours_white_base"
+          class="appearance cursorPointer trimmedBlockElement button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base center_mobile_base center_mobile_base handle_default_base handle_disabled_base root_base block colours_white_base"
           disabled=""
           tabindex="-1"
         >
@@ -233,7 +233,7 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
       >
         <button
           aria-label="step up"
-          class="appearance cursorPointer trimmedBlockElement button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base backgroundColours_green600_base center_mobile_base center_mobile_base handle_default_base handle_disabled_base root_base block colours_white_base"
+          class="appearance cursorPointer trimmedBlockElement button none_mobile_base none_mobile_base none_mobile_base none_mobile_base display_flex full_mobile_base center_mobile_base center_mobile_base handle_default_base handle_disabled_base root_base block colours_white_base"
           disabled=""
           tabindex="-1"
         >

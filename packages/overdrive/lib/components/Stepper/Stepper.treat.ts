@@ -23,6 +23,7 @@ export const handle = styleMap(
 		default: {
 			width: space[6],
 			height: space[6],
+			backgroundColor: colours.intent.primary.background,
 			transition: `background-color 0.1s ${animation.easing.standard}`,
 			selectors: {
 				[`${root}:not(${disabled}) &:hover`]: {

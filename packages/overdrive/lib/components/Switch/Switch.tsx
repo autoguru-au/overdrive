@@ -59,13 +59,11 @@ const SwitchComponent: FunctionComponent<Props> = ({
 			)}
 			borderRadius="pill"
 			position="relative"
-			backgroundColour={toggled ? 'green600' : 'gray100'}
 			aria-disabled={disabled}
 			aria-label={`toggle ${toggled ? 'on' : 'off'}`}
 			onClick={onToggle}>
 			<Box
 				borderWidth="1"
-				borderColour="gray"
 				position="absolute"
 				borderRadius="pill"
 				backgroundColour="white"

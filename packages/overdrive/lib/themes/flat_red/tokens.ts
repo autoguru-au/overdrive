@@ -3,67 +3,68 @@ import { ColourMap, Tokens } from '../tokens';
 
 const colours: ColourMap = {
 	gray: {
-		900: '#212338',
-		800: '#34384c',
-		700: '#484c5f',
-		600: '#5c6172',
-		500: '#6c7283',
-		400: '#8f95a1',
-		300: '#d4d9dd',
-		200: '#eef0f2',
-		100: '#fafbfc',
+		900: '#262938',
+		800: '#393d4f',
+		700: '#4a4f65',
+		600: '#5b627b',
+		500: '#6a6f8c',
+		400: '#7f849e',
+		300: '#9599b1',
+		200: '#b3b6c9',
+		100: '#cfd3e2',
 	},
 
 	green: {
-		900: '#078171',
-		800: '#05987a',
-		700: '#03af83',
-		600: '#01c68c',
-		500: '#00dd95',
-		400: '#36e5aa',
-		300: '#71edc2',
-		200: '#e3f8f0',
-		100: '#f2fdf9',
+		900: '#007800',
+		800: '#009b00',
+		700: '#00af00',
+		600: '#00c400',
+		500: '#00d500',
+		400: '#52dc42',
+		300: '#7ce36a',
+		200: '#a6ec98',
+		100: '#cbf4c1',
 	},
 
 	blue: {
-		900: '#0d47a1',
-		800: '#0d4bb7',
-		700: '#0d50ce',
-		600: '#0d54e5',
-		500: '#0d59fc',
-		400: '#4680fc',
-		300: '#80a7fd',
-		200: '#e1edfe',
-		100: '#f3f8ff',
+		900: '#1a259c',
+		800: '#3530aa',
+		700: '#4336b2',
+		600: '#523ebb',
+		500: '#5c43c2',
+		400: '#765ecb',
+		300: '#8f7ad5',
+		200: '#b0a1e0',
+		100: '#cfc6ec',
 	},
 
 	yellow: {
-		900: '#f38e29',
-		800: '#f69a1f',
-		700: '#f9a715',
-		600: '#fcb30b',
-		500: '#ffc001',
-		400: '#ffcf3d',
-		300: '#ffde79',
-		200: '#ffedb5',
-		100: '#fffcf2',
+		900: '#cb5300',
+		800: '#d56b00',
+		700: '#db7903',
+		600: '#e18807',
+		500: '#e5930b',
+		400: '#e8a229',
+		300: '#ebb24e',
+		200: '#f0c880',
+		100: '#f6ddb2',
 	},
 
 	red: {
-		900: '#780502',
-		800: '#96110e',
-		700: '#b51e1a',
-		600: '#d42b26',
-		500: '#e12e28',
-		400: '#e85f5b',
-		300: '#ef918e',
-		200: '#ffd4d4',
-		100: '#fdf4f4',
+		900: '#d50000',
+		800: '#ED0C06',
+		700: '#fb1e0d',
+		600: '#ff2813',
+		500: '#ff3018',
+		400: '#ff5a3c',
+		300: '#ff7d5f',
+		200: '#ffa48d',
+		100: '#ffc8ba',
 	},
 };
 
 const white = '#fff';
+const flatElevation = '0 0 0 0 rgba(0, 0, 0, 0.0)';
 
 export const tokens: Tokens = {
 	isDark: false,
@@ -117,7 +118,7 @@ export const tokens: Tokens = {
 		},
 		intent: {
 			primary: {
-				background: colours.green['600'],
+				background: colours.red['800'],
 				foreground: white,
 			},
 			secondary: {
@@ -152,16 +153,11 @@ export const tokens: Tokens = {
 	},
 	elevation: {
 		none: 'none',
-		'1':
-			'0 1px 5px 0 rgba(0, 0, 0, 0.03), 0 2px 2px 0 rgba(0, 0, 0, 0.03), 0 3px 1px -2px rgba(0, 0, 0, 0.05)',
-		'2':
-			'0 1px 10px 0 rgba(0, 0, 0, 0.03),  0 4px 5px 0 rgba(0, 0, 0, 0.03),  0 2px 4px -1px rgba(0, 0, 0, 0.05)',
-		'3':
-			'0 3px 14px 2px rgba(0, 0, 0, 0.03),  0 8px 10px 1px rgba(0, 0, 0, 0.03),  0 5px 5px -3px rgba(0, 0, 0, 0.05)',
-		'4':
-			'0 6px 30px 5px rgba(0, 0, 0, 0.03), 0 16px 24px 2px rgba(0, 0, 0, 0.03), 0 8px 10px -5px rgba(0, 0, 0, 0.05)',
-		'5':
-			'0 9px 46px 8px rgba(0, 0, 0, 0.03), 0 24px 38px 3px rgba(0, 0, 0, 0.03), 0 11px 15px -7px rgba(0, 0, 0, 0.05)',
+		'1': flatElevation,
+		'2': flatElevation,
+		'3': flatElevation,
+		'4': flatElevation,
+		'5': flatElevation,
 	},
 	border: {
 		width: {
@@ -179,8 +175,8 @@ export const tokens: Tokens = {
 			none: 'none',
 			pill: `${1e9}px`,
 			full: '50%',
-			'1': '4px',
-			min: '2px',
+			min: 'none',
+			'1': 'none',
 		},
 	},
 	typography: {
@@ -223,7 +219,7 @@ export const tokens: Tokens = {
 			},
 		},
 		colour: {
-			primary: colours.green['600'],
+			primary: colours.red['800'],
 			secondary: colours.gray['700'],
 			shine: colours.yellow['500'],
 			link: colours.green['600'],

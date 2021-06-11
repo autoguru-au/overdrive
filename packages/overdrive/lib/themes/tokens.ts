@@ -118,6 +118,7 @@ export interface Tokens {
 		foreground: ForegroundColours;
 		background: {
 			body: string;
+			light: string;
 			neutral: string;
 			neutralDark: string;
 		};
@@ -139,6 +140,7 @@ export interface Tokens {
 		radius: {
 			none: string;
 			'1': string;
+			min: string;
 			pill: string;
 			full: string;
 		};
