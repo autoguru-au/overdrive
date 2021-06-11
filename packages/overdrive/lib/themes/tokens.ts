@@ -118,6 +118,7 @@ export interface Tokens {
 		foreground: ForegroundColours;
 		background: {
 			body: string;
+			light: string;
 			neutral: string;
 			neutralDark: string;
 		};

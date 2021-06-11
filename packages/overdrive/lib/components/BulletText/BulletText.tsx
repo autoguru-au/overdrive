@@ -7,6 +7,7 @@ import { Inline } from '../Inline';
 import { Text } from '../Text';
 
 import * as styleRefs from './BulletText.treat';
+import clsx from 'clsx';
 
 export interface Props extends Partial<Pick<BoxStyleProps, 'is'>> {
 	bullet?: ReactNode;
@@ -34,20 +35,26 @@ export const BulletText: FunctionComponent<Props> = ({
 				</Box>
 			) : (
 				<Box
-					position="relative"
+					position='relative'
 					flexShrink={0}
-					display="flex"
-					alignItems="center"
-					justifyContent="center"
-					backgroundColour={
-						variant === 'primary' ? 'green200' : 'gray200'
-					}
-					className={styles.bullet}
-					borderRadius="pill">
+					display='flex'
+					alignItems='center'
+					justifyContent='center'
+					className={clsx(
+						styles.bullet, {
+							[styles.primary]: variant === 'primary',
+							[styles.secondary]: variant !== 'primary',
+						},
+					)}
+					borderRadius='pill'>
 					<Text
-						is="span"
-						size="2"
-						colour={variant === 'primary' ? 'success' : 'dark'}>
+						className={clsx({
+							[styles.primaryText]: variant === 'primary',
+							[styles.secondaryText]: variant !== 'primary',
+						},
+					)}
+						is='span'
+						size='2'>
 						{Bullet}
 					</Text>
 				</Box>

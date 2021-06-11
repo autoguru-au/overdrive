@@ -112,6 +112,7 @@ export const tokens: Tokens = {
 		},
 		background: {
 			body: white,
+			light: colours.gray['200'],
 			neutral: colours.gray['400'],
 			neutralDark: colours.gray['800'],
 		},
