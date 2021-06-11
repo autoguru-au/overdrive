@@ -10,11 +10,12 @@ export const root = style(({ border }) => ({
 	width: `calc((2 * ${handleSize}) + ${handleOffset} - 2 * ${borderSize})`,
 	height: `calc(${handleSize} + (${handleOffset} * 2))`,
 	transition: 'background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
-	border: `${borderSize} solid ${border.colours.gray}`,
+	border: `${borderSize} solid ${border.colours.light}`,
 }));
 
-export const handle = styleMap(() => ({
+export const handle = styleMap(({border, colours, shadeIntensity, isDark }) => ({
 	default: {
+		borderColor: border.colours.gray,
 		top: `calc(${handleOffset} - ${borderSize})`,
 		left: `calc(${handleOffset} - ${borderSize})`,
 		width: `${handleSize}`,
@@ -24,6 +25,12 @@ export const handle = styleMap(() => ({
 	},
 	transition: {
 		transform: `translateX(calc(${handleSize} - (2 * ${handleOffset})))`,
+		borderColor: shadedColour(
+			colours.intent.primary.background,
+			shadeIntensity.slight,
+			'backward',
+			isDark,
+		),
 	},
 }));
 
@@ -34,6 +41,7 @@ export const toggled = style(({ colours, isDark, shadeIntensity }) => ({
 		'backward',
 		isDark,
 	),
+	backgroundColor: colours.intent.primary.background,
 }));
 
 export const disabled = styleMap(
@@ -48,6 +56,7 @@ export const disabled = styleMap(
 						shadeIntensity.slight,
 						'forward',
 						isDark,
+						transparency.intense,
 					),
 				},
 			},
