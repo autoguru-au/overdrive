@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import * as React from 'react';
 import { FunctionComponent, isValidElement, ReactNode } from 'react';
 import { useStyles } from 'react-treat';
@@ -7,7 +8,6 @@ import { Inline } from '../Inline';
 import { Text } from '../Text';
 
 import * as styleRefs from './BulletText.treat';
-import clsx from 'clsx';
 
 export interface Props extends Partial<Pick<BoxStyleProps, 'is'>> {
 	bullet?: ReactNode;
@@ -35,26 +35,23 @@ export const BulletText: FunctionComponent<Props> = ({
 				</Box>
 			) : (
 				<Box
-					position='relative'
+					position="relative"
 					flexShrink={0}
-					display='flex'
-					alignItems='center'
-					justifyContent='center'
-					className={clsx(
-						styles.bullet, {
-							[styles.primary]: variant === 'primary',
-							[styles.secondary]: variant !== 'primary',
-						},
-					)}
-					borderRadius='pill'>
+					display="flex"
+					alignItems="center"
+					justifyContent="center"
+					className={clsx(styles.bullet, {
+						[styles.primary]: variant === 'primary',
+						[styles.secondary]: variant !== 'primary',
+					})}
+					borderRadius="pill">
 					<Text
 						className={clsx({
 							[styles.primaryText]: variant === 'primary',
 							[styles.secondaryText]: variant !== 'primary',
-						},
-					)}
-						is='span'
-						size='2'>
+						})}
+						is="span"
+						size="2">
 						{Bullet}
 					</Text>
 				</Box>

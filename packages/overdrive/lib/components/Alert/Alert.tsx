@@ -30,7 +30,10 @@ export interface Props {
 }
 
 const IconMapForIntent: Record<
-	keyof Omit<typeof styleRefs.intent, 'neutral' | 'shine' | 'primary' | 'secondary'>,
+	keyof Omit<
+		typeof styleRefs.intent,
+		'neutral' | 'shine' | 'primary' | 'secondary'
+	>,
 	IconType
 > = {
 	danger: AlertCircleIcon,

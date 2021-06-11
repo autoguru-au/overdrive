@@ -31,7 +31,7 @@ exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
       </svg>
     </i>
     <div
-      class="block border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base backgroundColours_green600_base checkableItem_base base_default_base base_selected_base"
+      class="block border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base checkableItem_base base_default_base base_selected_base"
     />
   </div>
   <label
@@ -61,7 +61,7 @@ exports[`<CheckBox /> should match the snapshot for a disable checkbox 1`] = `
     class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer trimmedBlockElement button"
   >
     <div
-      class="block border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base backgroundColours_transparent_base checkableItem_base base_default_base"
+      class="block border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base checkableItem_base base_default_base"
     />
   </div>
   <label
@@ -90,7 +90,7 @@ exports[`<CheckBox /> should match the snapshot for a single check 1`] = `
     class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer trimmedBlockElement button"
   >
     <div
-      class="block border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base backgroundColours_transparent_base checkableItem_base base_default_base"
+      class="block border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base checkableItem_base base_default_base"
     />
   </div>
   <label
@@ -119,7 +119,7 @@ exports[`<CheckBox /> should match the snapshot for a single check with no value
     class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer trimmedBlockElement button"
   >
     <div
-      class="block border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base backgroundColours_transparent_base checkableItem_base base_default_base"
+      class="block border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base checkableItem_base base_default_base"
     />
   </div>
   <label
@@ -146,7 +146,7 @@ exports[`<CheckBox /> when with component child should match the snapshot 1`] = 
     class="block display_flex position_relative center_mobile_base center_mobile_base checkable_base appearance cursorPointer trimmedBlockElement button"
   >
     <div
-      class="block border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base backgroundColours_transparent_base checkableItem_base base_default_base"
+      class="block border_style border_colour_top_gray_base border_colour_right_gray_base border_colour_bottom_gray_base border_colour_left_gray_base 2_mobile_base 2_mobile_base 2_mobile_base 2_mobile_base checkableItem_base base_default_base"
     />
   </div>
   <label
