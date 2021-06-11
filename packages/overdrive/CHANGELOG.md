@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 2.4.0
+
+### Minor Changes
+
+-   4c96195: Theming: All explicitly set component colours now use theme based
+    colours
+
 ## 2.3.1
 
 ### Patch Changes
