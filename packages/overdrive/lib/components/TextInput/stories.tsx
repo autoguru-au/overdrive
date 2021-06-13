@@ -44,6 +44,15 @@ export const withAValue = () => (
 	/>
 );
 
+export const withoutNotch = () => (
+	<TextInput
+		notch={false}
+		name="abc"
+		placeholder="What is your first name?"
+		value="Bob The Builder"
+	/>
+);
+
 export const withHintText = () => (
 	<TextInput
 		name="abc"

@@ -14,8 +14,8 @@ const borderRegionDefaults = style((theme) => ({
 	transition: `border-color 0.2s ${theme.animation.easing.decelerate} 0s`,
 }));
 
-const borderVisualDefaults = style(({ space, elevation }) => ({
-	borderRadius: space['1'],
+const borderVisualDefaults = style(({ border, elevation }) => ({
+	borderRadius: border.radius['1'],
 	boxShadow: elevation['2'],
 }));
 
