@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.4.2
+
+### Patch Changes
+
+-   e7fe560: Inputs: Get stories with no notch
+
 ## 2.4.1
 
 ### Patch Changes
