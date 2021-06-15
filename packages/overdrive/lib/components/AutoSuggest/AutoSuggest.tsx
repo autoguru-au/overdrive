@@ -270,11 +270,13 @@ const AutoSuggestFullscreenInput = forwardRef(
 			document.documentElement.style.position = 'fixed';
 			document.documentElement.style.overflow = 'hidden';
 			document.documentElement.style.maxHeight = '100%';
+			document.documentElement.style.width = '100%';
 
 			return () => {
 				document.documentElement.style.position = '';
 				document.documentElement.style.overflow = '';
 				document.documentElement.style.maxHeight = '';
+				document.documentElement.style.width = '';
 			};
 		}, []);
 
