@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 2.4.3
+
+### Patch Changes
+
+-   a3908d9: AutoSuggest: Gets fix for fullscreen veiw resizing html tag width
+    to 0
+
 ## 2.4.2
 
 ### Patch Changes
