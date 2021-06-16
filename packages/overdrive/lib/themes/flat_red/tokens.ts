@@ -3,15 +3,15 @@ import { ColourMap, Tokens } from '../tokens';
 
 const colours: ColourMap = {
 	gray: {
-		900: '#262938',
-		800: '#393d4f',
-		700: '#4a4f65',
-		600: '#5b627b',
-		500: '#6a6f8c',
-		400: '#7f849e',
-		300: '#9599b1',
-		200: '#b3b6c9',
-		100: '#cfd3e2',
+		900: '#263238',
+		800: '#37474F',
+		700: '#455A64',
+		600: '#607D8B',
+		500: '#78909C',
+		400: '#90A4AE',
+		300: '#B0BEC5',
+		200: '#CFD8DC',
+		100: '#ECEFF1',
 	},
 
 	green: {
@@ -112,7 +112,7 @@ export const tokens: Tokens = {
 		},
 		background: {
 			body: white,
-			light: colours.gray['200'],
+			light: colours.gray['100'],
 			neutral: colours.gray['400'],
 			neutralDark: colours.gray['800'],
 		},
@@ -123,7 +123,7 @@ export const tokens: Tokens = {
 			},
 			secondary: {
 				background: white,
-				foreground: colours.gray['700'],
+				foreground: colours.blue['800'],
 			},
 			shine: {
 				background: colours.gray['200'],

@@ -37,7 +37,7 @@ export default {
 	],
 };
 
-const Impl = ({ notch = true}) => {
+const Impl = ({ notch = true }) => {
 	type SuggestionValue = AutoSuggestValue<Value>;
 	const [value, setValue] = useState<SuggestionValue>({
 		text: '',
@@ -84,7 +84,7 @@ const Impl = ({ notch = true}) => {
 };
 
 export const Standard = () => <Impl />;
-export const withoutNotch = () => <Impl notch={false}/>;
+export const withoutNotch = () => <Impl notch={false} />;
 
 export const WithNoItems = () => (
 	<AutoSuggest
