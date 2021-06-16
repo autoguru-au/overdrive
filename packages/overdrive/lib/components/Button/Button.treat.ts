@@ -76,10 +76,10 @@ export const variant = {
 			isDark,
 		)}, ${elevation['2']}`,
 	})),
-	secondary: style(({ colours, border, elevation }) => ({
+	secondary: style(({ colours, elevation }) => ({
 		color: colours.intent.secondary.foreground,
 		backgroundColor: colours.intent.secondary.background,
-		boxShadow: `inset 0 0 0 1px ${border.colours.gray}, ${elevation['2']}`,
+		boxShadow: `inset 0 0 0 1px ${colours.intent.secondary.foreground}, ${elevation['2']}`,
 	})),
 	danger: style(({ colours, shadeIntensity, isDark, elevation }) => ({
 		backgroundColor: colours.intent.danger.background,
