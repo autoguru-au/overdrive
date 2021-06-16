@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.4.4
+
+### Patch Changes
+
+-   97f8b2d: Button: Uses theme secondary colour for secondary variation border
+
 ## 2.4.3
 
 ### Patch Changes
