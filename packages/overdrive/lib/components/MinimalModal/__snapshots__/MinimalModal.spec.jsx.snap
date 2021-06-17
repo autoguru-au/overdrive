@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MinimalModal /> should match snapshot with body 1`] = `
+<body
+  style="background-color: rgb(255, 255, 255); color: rgb(33, 35, 56); overflow: hidden;"
+>
+  <div />
+  <div
+    data-focus-guard="true"
+    style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+    tabindex="0"
+  />
+  <div
+    data-focus-guard="true"
+    style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+    tabindex="1"
+  />
+  <div
+    data-focus-lock-disabled="false"
+  >
+    <div
+      aria-hidden="true"
+      class="block position_fixed backdropRoot_default_base place backdrop_root transition_base"
+    />
+    <div
+      class="block position_fixed overflow_hidden place root transition_base"
+      role="presentation"
+    >
+      <div
+        aria-hidden="false"
+        class="block display_flex height_full center_mobile_base center_mobile_base container"
+        role="none presentation"
+      >
+        <article
+          aria-labelledby="od-4"
+          aria-modal="true"
+          class="block display_flex column_mobile_base"
+          role="dialog"
+        >
+          <main
+            class="display_flex height_full column_mobile_base flexGrow_1 content"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis convallis neque a laoreet maximus. Vestibulum hendrerit quam at mi venenatis faucibus at vel nisi. In ut risus et ipsum tincidunt tempor. Suspendisse potenti. Praesent faucibus posuere risus, at congue mauris porttitor ut. Donec sit amet elit vitae purus dictum aliquet quis ut ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum dui sapien, porttitor ac erat vel, malesuada rutrum mauris. Nam arcu tellus, pretium ut aliquet eget, ultrices vel est. Maecenas dapibus volutpat eros a volutpat.
+            </p>
+          </main>
+        </article>
+      </div>
+    </div>
+  </div>
+  <div
+    data-focus-guard="true"
+    style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+    tabindex="0"
+  />
+</body>
+`;
+
+exports[`<MinimalModal /> should match snapshot without title and body 1`] = `
+<body
+  style="background-color: rgb(255, 255, 255); color: rgb(33, 35, 56); overflow: hidden;"
+>
+  <div />
+  <div
+    data-focus-guard="true"
+    style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+    tabindex="0"
+  />
+  <div
+    data-focus-guard="true"
+    style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+    tabindex="1"
+  />
+  <div
+    data-focus-lock-disabled="false"
+  >
+    <div
+      aria-hidden="true"
+      class="block position_fixed backdropRoot_default_base place backdrop_root transition_base"
+    />
+    <div
+      class="block position_fixed overflow_hidden place root transition_base"
+      role="presentation"
+    >
+      <div
+        aria-hidden="false"
+        class="block display_flex height_full center_mobile_base center_mobile_base container"
+        role="none presentation"
+      >
+        <article
+          aria-labelledby="od-3"
+          aria-modal="true"
+          class="block display_flex column_mobile_base"
+          role="dialog"
+        >
+          <main
+            class="display_flex height_full column_mobile_base flexGrow_1 content"
+          />
+        </article>
+      </div>
+    </div>
+  </div>
+  <div
+    data-focus-guard="true"
+    style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+    tabindex="0"
+  />
+</body>
+`;
