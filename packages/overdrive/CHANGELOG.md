@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 2.5.0
+
+### Minor Changes
+
+-   9411d17: MinimalModal: New MinimalModal component with StandardModal
+    features but without any baked in UI
+
 ## 2.4.4
 
 ### Patch Changes
