@@ -11,6 +11,9 @@ import { MinimalModal } from '.';
 export default {
 	title: 'Components/MinimalModal',
 	component: MinimalModal,
+	parameters: {
+		chromatic: { disable: true },
+	},
 };
 
 export const Standard = () => {
