@@ -49,3 +49,4 @@ export * from './ThemeProvider';
 export * from './Toaster';
 export * from './Tooltip';
 export * from './VisuallyHidden';
+export * from './MinimalModal';
