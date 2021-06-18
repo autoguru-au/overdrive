@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.5.1
+
+### Patch Changes
+
+-   7072055: Toaster: gets primary, secondary and shine variants
+
 ## 2.5.0
 
 ### Minor Changes
