@@ -136,6 +136,24 @@ export const useToast = (): ToastFn => {
 				intent: 'information',
 			});
 
+		fn.primary = (message, duration = DEFAULT_DURATION) =>
+			void addToast({
+				message,
+				duration,
+				intent: 'primary',
+			});
+		fn.secondary = (message, duration = DEFAULT_DURATION) =>
+			void addToast({
+				message,
+				duration,
+				intent: 'secondary',
+			});
+		fn.shine = (message, duration = DEFAULT_DURATION) =>
+			void addToast({
+				message,
+				duration,
+				intent: 'shine',
+			});
 		fn.success = (message, duration = DEFAULT_DURATION) =>
 			void addToast({
 				message,
