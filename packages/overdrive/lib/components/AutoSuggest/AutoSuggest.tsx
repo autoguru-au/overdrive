@@ -87,6 +87,7 @@ export interface Props<PayloadType>
 	> {
 	autoFocus?: boolean;
 	autoWidth?: boolean;
+	inlineOptions?: boolean;
 	fieldIcon?: IconType;
 	value: AutoSuggestValue<PayloadType> | null;
 	suggestions: Suggestions<PayloadType>;
@@ -201,6 +202,7 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 	{
 		autoFocus = false,
 		autoWidth = false,
+		inlineOptions = false,
 		fieldIcon,
 		suggestions,
 		value,
@@ -240,7 +242,7 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 
 	const closeModal = useCallback(() => setIsFocused(false), [setIsFocused]);
 
-	return !isDesktop && isFocused ? (
+	return !inlineOptions && !isDesktop && isFocused ? (
 		<AutoSuggestFullscreenInput
 			{...props}
 			inlineOptions
@@ -252,6 +254,7 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 		<AutoSuggestInput
 			ref={ref}
 			{...props}
+			inlineOptions={inlineOptions}
 			fieldIcon={fieldIcon}
 			autoFocus={autoFocus}
 			autoWidth={autoWidth}
@@ -377,6 +380,14 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 						: undefined
 				}
 				value={state.previewText ?? value?.text}
+				onReset={() => {
+					dispatch({ type: ActionTypes.INPUT_CHANGE });
+					if (typeof onChange === 'function')
+						onChange({
+							text: '',
+							payload: undefined,
+						});
+				}}
 				onChange={(event) => {
 					dispatch({ type: ActionTypes.INPUT_CHANGE });
 					if (typeof onChange === 'function')
@@ -584,10 +595,11 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 		...rest
 	}) => {
 		const ref = useRef<HTMLInputElement>(null);
-
 		const focusHandler = useCallback(() => {
 			ref.current?.focus();
 		}, []);
+
+		const { onReset, ...inputEventHandlers } = eventHandlers;
 
 		// TODO: Eventually build a forkedRef helper for this
 		const handleRef = useCallback(
@@ -599,6 +611,29 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 			[field],
 		);
 
+		const suffix = useMemo(
+			() =>
+				isLoading ? null : field.value ? (
+					<Box
+						is="button"
+						paddingY="3"
+						paddingRight="4"
+						flexShrink={0}
+						onClick={onReset}>
+						<Icon size="medium" icon={CloseIcon} />
+					</Box>
+				) : fieldIcon ? (
+					<Box
+						flexShrink={0}
+						paddingY="3"
+						paddingRight="4"
+						onClick={focusHandler}>
+						<Icon size="medium" icon={fieldIcon} />
+					</Box>
+				) : null,
+			[field.value, isLoading, fieldIcon],
+		);
+
 		return (
 			<Box
 				display="flex"
@@ -608,7 +643,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 				<Box
 					is="input"
 					flexGrow={1}
-					{...eventHandlers}
+					{...inputEventHandlers}
 					{...field}
 					ref={handleRef}
 					autoCapitalize="none"
@@ -617,11 +652,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 					{...rest}
 					type="search"
 				/>
-				{isLoading ? null : (
-					<Box flexShrink={0} marginRight="4" onClick={focusHandler}>
-						<Icon size="medium" icon={fieldIcon} />
-					</Box>
-				)}
+				{suffix}
 			</Box>
 		);
 	},

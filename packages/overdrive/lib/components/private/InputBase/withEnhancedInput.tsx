@@ -38,6 +38,7 @@ export interface EventHandlers<PrimitiveElementType> {
 	onClick?: MouseEventHandler<PrimitiveElementType>;
 	onMouseEnter?: MouseEventHandler<PrimitiveElementType>;
 	onMouseLeave?: MouseEventHandler<PrimitiveElementType>;
+	onReset?(): void;
 }
 
 // The props we'll give the end consumer to send
@@ -129,6 +130,7 @@ export const withEnhancedInput = <
 
 				value: incomingValue = '',
 				onChange: incomingOnChange,
+				onReset,
 
 				onMouseLeave,
 				onMouseEnter,
@@ -230,6 +232,7 @@ export const withEnhancedInput = <
 					onMouseEnter,
 					onMouseLeave,
 					onKeyDown,
+					onReset,
 				},
 				field: {
 					name,
