@@ -294,7 +294,12 @@ const AutoSuggestFullscreenInput = forwardRef(
 		return showPortal ? (
 			<Portal>
 				<div className={styles.fullScreenRoot}>
-					<AutoSuggestInput ref={ref} {...props} inlineOptions />
+					<AutoSuggestInput
+						ref={ref}
+						{...props}
+						inlineOptions
+						noScroll
+					/>
 					<Button minimal rounded size="medium" onClick={closeModal}>
 						<Icon icon={CloseIcon} />
 					</Button>
@@ -311,6 +316,7 @@ const AutoSuggestFullscreenInput = forwardRef(
 const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 	{
 		inlineOptions = false,
+		noScroll = false,
 		fieldIcon,
 		isLoading,
 		autoFocus,
@@ -361,7 +367,8 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 			aria-expanded={shouldOpenFlyout}
 			aria-owns={suggestionListId!}
 			aria-haspopup="listbox"
-			width="full">
+			width="full"
+			height={inlineOptions ? 'full' : null}>
 			<AutoSuggestInputPrimitive
 				isLoading={isLoading}
 				autoFocus={autoFocus}
@@ -457,7 +464,11 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 					suggestions={suggestions}
 					highlightRef={highlightRef}
 					itemRenderer={itemRenderer}
-					className={styles.suggestionList.inlineOptions}
+					className={
+						noScroll
+							? styles.suggestionList.inlineOptionsNoScroll
+							: styles.suggestionList.inlineOptions
+					}
 					dispatch={dispatch}
 					onChange={onChange}
 				/>

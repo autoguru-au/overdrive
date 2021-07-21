@@ -48,6 +48,11 @@ export const suggestionList = {
 		maxHeight: '256px',
 	}),
 	inlineOptions: style({
+		overflowY: 'auto',
+		height: '100%',
+		maxHeight: '100%',
+	}),
+	inlineOptionsNoScroll: style({
 		overflowY: 'visible',
 		maxHeight: 'none',
 	}),
