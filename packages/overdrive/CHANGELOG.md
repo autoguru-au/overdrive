@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 2.6.0
+
+### Minor Changes
+
+-   b625d7c: AutoSuggest: Gets a clear input button when with value
+-   b625d7c: AutoSuggest: Gets enforced inline options view
+
 ## 2.5.1
 
 ### Patch Changes
