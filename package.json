@@ -65,7 +65,7 @@
 		"core-js": "3.9.1",
 		"csstype": "^3.0.7",
 		"eslint": "7.21.0",
-		"glob": "7.1.6",
+		"glob": "7.1.7",
 		"jest": "26.6.3",
 		"magic-string": "0.25.7",
 		"patch-package": "6.4.2",
