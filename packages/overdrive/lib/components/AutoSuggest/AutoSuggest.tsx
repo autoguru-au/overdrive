@@ -230,7 +230,7 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 				value.payload !== null
 			) {
 				setShowModal(false);
-				setIsFocused(false);
+				if (!isDesktop) setIsFocused(false);
 			}
 
 			if (typeof incomingOnChange === 'function') incomingOnChange(value);
@@ -630,6 +630,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 		className,
 		...rest
 	}) => {
+		let focusTimeout;
 		const ref = useRef<HTMLInputElement>(null);
 		const focusHandler = useCallback(() => {
 			ref.current?.focus();
@@ -647,6 +648,11 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 			[field],
 		);
 
+		const onRquestReset = useCallback(() => {
+			onReset();
+			focusTimeout = setTimeout(() => ref.current.focus(), 100);
+		}, [onReset, focusTimeout]);
+
 		const suffix = useMemo(
 			() =>
 				isLoading ? null : field.value && isFocused ? (
@@ -655,7 +661,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 						paddingY="3"
 						paddingRight="4"
 						flexShrink={0}
-						onMouseDown={onReset}>
+						onMouseDown={onRquestReset}>
 						<Icon size="medium" icon={CloseIcon} />
 					</Box>
 				) : fieldIcon ? (
@@ -667,7 +673,12 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 						<Icon size="medium" icon={fieldIcon} />
 					</Box>
 				) : null,
-			[field.value, isLoading, fieldIcon, isFocused],
+			[field.value, isLoading, fieldIcon, isFocused, onRquestReset],
+		);
+
+		useEffect(
+			() => () => (focusTimeout ? clearTimeout(focusTimeout) : void 0),
+			[],
 		);
 
 		return (
