@@ -655,7 +655,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 						paddingY="3"
 						paddingRight="4"
 						flexShrink={0}
-						onClick={onReset}>
+						onMouseDown={onReset}>
 						<Icon size="medium" icon={CloseIcon} />
 					</Box>
 				) : fieldIcon ? (
