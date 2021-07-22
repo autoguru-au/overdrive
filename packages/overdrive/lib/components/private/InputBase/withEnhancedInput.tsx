@@ -38,6 +38,7 @@ export interface EventHandlers<PrimitiveElementType> {
 	onClick?: MouseEventHandler<PrimitiveElementType>;
 	onMouseEnter?: MouseEventHandler<PrimitiveElementType>;
 	onMouseLeave?: MouseEventHandler<PrimitiveElementType>;
+
 	onReset?(): void;
 }
 

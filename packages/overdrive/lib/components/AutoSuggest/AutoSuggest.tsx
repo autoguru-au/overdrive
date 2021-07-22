@@ -648,9 +648,9 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 			[field],
 		);
 
-		const onRquestReset = useCallback(() => {
-			onReset();
-			focusTimeout = setTimeout(() => ref.current.focus(), 100);
+		const onRequestReset = useCallback(() => {
+			if (typeof onReset === 'function') onReset();
+			focusTimeout = setTimeout(() => ref.current?.focus(), 100);
 		}, [onReset, focusTimeout]);
 
 		const suffix = useMemo(
@@ -661,7 +661,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 						paddingY="3"
 						paddingRight="4"
 						flexShrink={0}
-						onMouseDown={onRquestReset}>
+						onMouseDown={onRequestReset}>
 						<Icon size="medium" icon={CloseIcon} />
 					</Box>
 				) : fieldIcon ? (
@@ -673,7 +673,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 						<Icon size="medium" icon={fieldIcon} />
 					</Box>
 				) : null,
-			[field.value, isLoading, fieldIcon, isFocused, onRquestReset],
+			[field.value, isLoading, fieldIcon, isFocused, onRequestReset],
 		);
 
 		useEffect(
