@@ -58,6 +58,7 @@ export interface EnhanceInputPrimitiveProps extends AriaAttributes {
 	suffixIcon?: IconType;
 	wrapperRef?: Ref<HTMLDivElement>;
 	isLoading?: boolean;
+	isFocused?: boolean;
 }
 
 export interface ValidationProps {
@@ -85,6 +86,8 @@ export type WrappedComponentProps<IncomingProps, PrimitiveElementType> = {
 		ref: RefObject<PrimitiveElementType>;
 	};
 	fieldIcon?: EnhanceInputPrimitiveProps['fieldIcon'];
+	isFocused?: boolean;
+	className?: boolean;
 	prefixed: boolean;
 	suffixed: boolean;
 	isLoading: boolean;
