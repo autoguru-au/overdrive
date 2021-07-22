@@ -5,15 +5,11 @@ import { shadedColour } from '../../themes/helpers';
 export const fullScreenRoot = style((theme) => ({
 	position: 'fixed',
 	zIndex: 1001,
-	top: 0,
-	right: 0,
-	bottom: 0,
-	left: 0,
-	display: 'grid',
-	gridGap: `${theme.space['5']} ${theme.space['1']}`,
-	gridTemplateColumns: '1fr auto',
-	padding: theme.space['5'],
-	gridTemplateRows: 'auto 1fr',
+	top: theme.space['5'],
+	right: theme.space['5'],
+	bottom: theme.space['5'],
+	left: theme.space['5'],
+	paddingBottom: theme.space['5'],
 	overflowY: 'auto',
 	maxHeight: '100vh',
 	height: 'fill-available',
@@ -48,10 +44,31 @@ export const suggestionList = {
 		maxHeight: '256px',
 	}),
 	inlineOptions: style({
+		overflowY: 'auto',
+		maxHeight: '100%',
+	}),
+	inlineOptionsNoScroll: style({
 		overflowY: 'visible',
 		maxHeight: 'none',
 	}),
 };
+
+export const input = style({
+	position: 'sticky',
+	top: 0,
+	zIndex: 2,
+	backgroundColor: 'white',
+});
+export const fullScreenInput = style({
+	width: 'calc(100% - 40px)',
+});
+
+export const fullScreenCloseBtn = style((theme) => ({
+	position: 'fixed',
+	top: theme.space['5'],
+	right: theme.space['2'],
+	zIndex: 3,
+}));
 
 export const spacer = style((theme) => ({
 	height: theme.space['1'],

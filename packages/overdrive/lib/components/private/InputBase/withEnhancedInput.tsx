@@ -38,6 +38,8 @@ export interface EventHandlers<PrimitiveElementType> {
 	onClick?: MouseEventHandler<PrimitiveElementType>;
 	onMouseEnter?: MouseEventHandler<PrimitiveElementType>;
 	onMouseLeave?: MouseEventHandler<PrimitiveElementType>;
+
+	onReset?(): void;
 }
 
 // The props we'll give the end consumer to send
@@ -57,6 +59,7 @@ export interface EnhanceInputPrimitiveProps extends AriaAttributes {
 	suffixIcon?: IconType;
 	wrapperRef?: Ref<HTMLDivElement>;
 	isLoading?: boolean;
+	isFocused?: boolean;
 }
 
 export interface ValidationProps {
@@ -84,6 +87,8 @@ export type WrappedComponentProps<IncomingProps, PrimitiveElementType> = {
 		ref: RefObject<PrimitiveElementType>;
 	};
 	fieldIcon?: EnhanceInputPrimitiveProps['fieldIcon'];
+	isFocused?: boolean;
+	className?: boolean;
 	prefixed: boolean;
 	suffixed: boolean;
 	isLoading: boolean;
@@ -129,6 +134,7 @@ export const withEnhancedInput = <
 
 				value: incomingValue = '',
 				onChange: incomingOnChange,
+				onReset,
 
 				onMouseLeave,
 				onMouseEnter,
@@ -230,6 +236,7 @@ export const withEnhancedInput = <
 					onMouseEnter,
 					onMouseLeave,
 					onKeyDown,
+					onReset,
 				},
 				field: {
 					name,

@@ -87,6 +87,7 @@ export interface Props<PayloadType>
 	> {
 	autoFocus?: boolean;
 	autoWidth?: boolean;
+	inlineOptions?: boolean;
 	fieldIcon?: IconType;
 	value: AutoSuggestValue<PayloadType> | null;
 	suggestions: Suggestions<PayloadType>;
@@ -98,7 +99,8 @@ export interface Props<PayloadType>
 
 interface AutoSuggestInputProps<PayloadType extends unknown>
 	extends Props<PayloadType> {
-	inlineOptions?: boolean;
+	noScroll?: boolean;
+	isFocused?: boolean;
 }
 
 interface AutoSuggestFullscreenInputProps<PayloadType extends unknown>
@@ -201,12 +203,13 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 	{
 		autoFocus = false,
 		autoWidth = false,
+		inlineOptions = false,
 		fieldIcon,
 		suggestions,
 		value,
 		onChange: incomingOnChange,
 		itemRenderer = defaultItemRenderer,
-		onBlur,
+		onBlur: incomingOnBlur,
 		onFocus: incomingOnFocus,
 		onKeyDown,
 		onClick,
@@ -216,6 +219,7 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 ) {
 	const [isDesktop] = useMedia(['desktop'], false);
 	const [isFocused, setIsFocused] = useState<boolean>(false);
+	const [showModal, setShowModal] = useState<boolean>(false);
 
 	const props = {
 		suggestions,
@@ -225,7 +229,8 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 				typeof value.payload !== 'undefined' &&
 				value.payload !== null
 			) {
-				setIsFocused(false);
+				setShowModal(false);
+				if (!isDesktop) setIsFocused(false);
 			}
 
 			if (typeof incomingOnChange === 'function') incomingOnChange(value);
@@ -233,16 +238,23 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 		itemRenderer,
 		onKeyDown,
 		onClick,
-		onFocus: wrapEvent(() => setIsFocused(true), incomingOnFocus),
-		onBlur,
+		onFocus: wrapEvent(() => {
+			setIsFocused(true);
+			setShowModal(true);
+		}, incomingOnFocus),
+		onBlur: wrapEvent(() => setIsFocused(false), incomingOnBlur),
 		...textInputProps,
 	};
 
-	const closeModal = useCallback(() => setIsFocused(false), [setIsFocused]);
+	const closeModal = useCallback(() => {
+		setShowModal(false);
+		setIsFocused(false);
+	}, [setShowModal]);
 
-	return !isDesktop && isFocused ? (
+	return !inlineOptions && !isDesktop && showModal ? (
 		<AutoSuggestFullscreenInput
 			{...props}
+			isFocused={isFocused}
 			inlineOptions
 			fieldIcon={fieldIcon}
 			autoFocus={autoFocus}
@@ -252,6 +264,8 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 		<AutoSuggestInput
 			ref={ref}
 			{...props}
+			isFocused={isFocused}
+			inlineOptions={inlineOptions}
 			fieldIcon={fieldIcon}
 			autoFocus={autoFocus}
 			autoWidth={autoWidth}
@@ -291,8 +305,19 @@ const AutoSuggestFullscreenInput = forwardRef(
 		return showPortal ? (
 			<Portal>
 				<div className={styles.fullScreenRoot}>
-					<AutoSuggestInput ref={ref} {...props} inlineOptions />
-					<Button minimal rounded size="medium" onClick={closeModal}>
+					<AutoSuggestInput
+						ref={ref}
+						{...props}
+						className={styles.fullScreenInput}
+						inlineOptions
+						noScroll
+					/>
+					<Button
+						minimal
+						rounded
+						className={styles.fullScreenCloseBtn}
+						size="medium"
+						onClick={closeModal}>
 						<Icon icon={CloseIcon} />
 					</Button>
 				</div>
@@ -308,6 +333,8 @@ const AutoSuggestFullscreenInput = forwardRef(
 const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 	{
 		inlineOptions = false,
+		noScroll = false,
+		isFocused = false,
 		fieldIcon,
 		isLoading,
 		autoFocus,
@@ -320,6 +347,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 		onFocus,
 		onKeyDown,
 		onClick,
+		className,
 		...textInputProps
 	},
 	ref,
@@ -359,84 +387,97 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 			aria-owns={suggestionListId!}
 			aria-haspopup="listbox"
 			width="full">
-			<AutoSuggestInputPrimitive
-				isLoading={isLoading}
-				autoFocus={autoFocus}
-				fieldIcon={fieldIcon}
-				wrapperRef={triggerRef}
-				{...textInputProps}
-				ref={ref}
-				aria-autocomplete="list"
-				aria-controls={suggestionListId!}
-				aria-activedescendant={
-					state.highlightIndex > -1
-						? getSuggestionId(
-								suggestionListId!,
-								state.highlightIndex,
-						  )
-						: undefined
-				}
-				value={state.previewText ?? value?.text}
-				onChange={(event) => {
-					dispatch({ type: ActionTypes.INPUT_CHANGE });
-					if (typeof onChange === 'function')
-						onChange({
-							text: event.target.value,
-							payload: undefined,
-						});
-				}}
-				onFocus={wrapEvent(
-					() => dispatch({ type: ActionTypes.INPUT_FOCUS }),
-					onFocus,
-				)}
-				onBlur={wrapEvent(() => {
-					if (
-						state.highlightIndex > -1 &&
-						/*
-							Cheap trick to check if an arrow or click was used or not. We only _commit_ if a click or arrow
-							 */
-						state.highlightIndex &&
-						state.previewText ===
-							suggestions[state.highlightIndex]?.text &&
-						typeof onChange === 'function'
-					)
-						onChange(suggestions[state.highlightIndex]);
-
-					dispatch({ type: ActionTypes.INPUT_BLUR });
-				}, onBlur)}
-				onKeyDown={wrapEvent((event) => {
-					// eslint-disable-next-line default-case
-					switch (event.key) {
-						case 'ArrowUp':
-						case 'ArrowDown': {
-							event.preventDefault();
-							dispatch({
-								type:
-									event.key === 'ArrowDown'
-										? ActionTypes.INPUT_ARROW_DOWN
-										: ActionTypes.INPUT_ARROW_UP,
+			<Box backgroundColour="white" className={styles.input}>
+				<AutoSuggestInputPrimitive
+					className={className}
+					isFocused={isFocused}
+					isLoading={isLoading}
+					autoFocus={autoFocus}
+					fieldIcon={fieldIcon}
+					wrapperRef={triggerRef}
+					{...textInputProps}
+					ref={ref}
+					aria-autocomplete="list"
+					aria-controls={suggestionListId!}
+					aria-activedescendant={
+						state.highlightIndex > -1
+							? getSuggestionId(
+									suggestionListId!,
+									state.highlightIndex,
+							  )
+							: undefined
+					}
+					value={state.previewText ?? value?.text}
+					onReset={() => {
+						dispatch({ type: ActionTypes.INPUT_CHANGE });
+						if (typeof onChange === 'function')
+							onChange({
+								text: '',
+								payload: undefined,
 							});
-							return;
-						}
+					}}
+					onChange={(event) => {
+						dispatch({ type: ActionTypes.INPUT_CHANGE });
+						if (typeof onChange === 'function')
+							onChange({
+								text: event.target.value,
+								payload: undefined,
+							});
+					}}
+					onFocus={wrapEvent(
+						() => dispatch({ type: ActionTypes.INPUT_FOCUS }),
+						onFocus,
+					)}
+					onBlur={wrapEvent(() => {
+						if (
+							state.highlightIndex > -1 &&
+							/*
+								Cheap trick to check if an arrow or click was used or not. We only _commit_ if a click or arrow
+								 */
+							state.highlightIndex &&
+							state.previewText ===
+								suggestions[state.highlightIndex]?.text &&
+							typeof onChange === 'function'
+						)
+							onChange(suggestions[state.highlightIndex]);
 
-						case 'Enter': {
-							if (state.highlightIndex > -1) {
+						dispatch({ type: ActionTypes.INPUT_BLUR });
+					}, onBlur)}
+					onKeyDown={wrapEvent((event) => {
+						// eslint-disable-next-line default-case
+						switch (event.key) {
+							case 'ArrowUp':
+							case 'ArrowDown': {
 								event.preventDefault();
-								if (typeof onChange === 'function')
-									onChange(suggestions[state.highlightIndex]);
+								dispatch({
+									type:
+										event.key === 'ArrowDown'
+											? ActionTypes.INPUT_ARROW_DOWN
+											: ActionTypes.INPUT_ARROW_UP,
+								});
+								return;
 							}
 
-							dispatch({ type: ActionTypes.INPUT_ENTER });
-							return;
-						}
+							case 'Enter': {
+								if (state.highlightIndex > -1) {
+									event.preventDefault();
+									if (typeof onChange === 'function')
+										onChange(
+											suggestions[state.highlightIndex],
+										);
+								}
 
-						case 'Escape': {
-							dispatch({ type: ActionTypes.INPUT_ESCAPE });
-						}
-					}
-				}, onKeyDown)}
-			/>
+								dispatch({ type: ActionTypes.INPUT_ENTER });
+								return;
+							}
 
+							case 'Escape': {
+								dispatch({ type: ActionTypes.INPUT_ESCAPE });
+							}
+						}
+					}, onKeyDown)}
+				/>
+			</Box>
 			{inlineOptions ? (
 				<SuggestionsList
 					suggestionListRef={suggestionListRef}
@@ -446,7 +487,11 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 					suggestions={suggestions}
 					highlightRef={highlightRef}
 					itemRenderer={itemRenderer}
-					className={styles.suggestionList.inlineOptions}
+					className={
+						noScroll
+							? styles.suggestionList.inlineOptionsNoScroll
+							: styles.suggestionList.inlineOptions
+					}
 					dispatch={dispatch}
 					onChange={onChange}
 				/>
@@ -581,13 +626,17 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 		prefixed,
 		isLoading,
 		fieldIcon = ChevronDownIcon,
+		isFocused,
+		className,
 		...rest
 	}) => {
+		let focusTimeout;
 		const ref = useRef<HTMLInputElement>(null);
-
 		const focusHandler = useCallback(() => {
 			ref.current?.focus();
 		}, []);
+
+		const { onReset, ...inputEventHandlers } = eventHandlers;
 
 		// TODO: Eventually build a forkedRef helper for this
 		const handleRef = useCallback(
@@ -599,16 +648,50 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 			[field],
 		);
 
+		const onRequestReset = useCallback(() => {
+			if (typeof onReset === 'function') onReset();
+			focusTimeout = setTimeout(() => ref.current?.focus(), 100);
+		}, [onReset, focusTimeout]);
+
+		const suffix = useMemo(
+			() =>
+				isLoading ? null : field.value && isFocused ? (
+					<Box
+						is="button"
+						paddingY="3"
+						paddingRight="4"
+						flexShrink={0}
+						onMouseDown={onRequestReset}>
+						<Icon size="medium" icon={CloseIcon} />
+					</Box>
+				) : fieldIcon ? (
+					<Box
+						flexShrink={0}
+						paddingY="3"
+						paddingRight="4"
+						onClick={focusHandler}>
+						<Icon size="medium" icon={fieldIcon} />
+					</Box>
+				) : null,
+			[field.value, isLoading, fieldIcon, isFocused, onRequestReset],
+		);
+
+		useEffect(
+			() => () => (focusTimeout ? clearTimeout(focusTimeout) : void 0),
+			[],
+		);
+
 		return (
 			<Box
 				display="flex"
 				flexWrap="nowrap"
 				alignItems="center"
-				justifyContent="center">
+				justifyContent="center"
+				className={className}>
 				<Box
 					is="input"
 					flexGrow={1}
-					{...eventHandlers}
+					{...inputEventHandlers}
 					{...field}
 					ref={handleRef}
 					autoCapitalize="none"
@@ -617,11 +700,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 					{...rest}
 					type="search"
 				/>
-				{isLoading ? null : (
-					<Box flexShrink={0} marginRight="4" onClick={focusHandler}>
-						<Icon size="medium" icon={fieldIcon} />
-					</Box>
-				)}
+				{suffix}
 			</Box>
 		);
 	},
