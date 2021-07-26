@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.6.1
+
+### Patch Changes
+
+-   d2ba68a: AutoSuggest: Gets white background for results ul element
+
 ## 2.6.0
 
 ### Minor Changes
