@@ -35,9 +35,9 @@
 		"webpack": "4.46.0"
 	},
 	"dependencies": {
-		"@autoguru/babel-preset": "1.1.0",
-		"@autoguru/eslint-plugin": "1.1.5",
-		"@autoguru/jest-preset": "1.0.98",
+		"@autoguru/babel-preset": "1.2.0",
+		"@autoguru/eslint-plugin": "1.3.0",
+		"@autoguru/jest-preset": "1.1.0",
 		"@babel/core": "7.13.15",
 		"@babel/runtime-corejs3": "7.13.10",
 		"@changesets/cli": "2.16.0",
