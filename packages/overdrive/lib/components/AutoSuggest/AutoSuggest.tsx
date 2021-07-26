@@ -556,6 +556,7 @@ const SuggestionsList = <PayloadType extends unknown>({
 		<Box
 			ref={suggestionListRef}
 			is="ul"
+			backgroundColour="white"
 			className={[styles.suggestionList.defaults, className]}
 			id={suggestionListId}
 			aria-label={placeholder}
