@@ -59,7 +59,7 @@
 		"@types/webpack-env": "1.16.0",
 		"babel-loader": "8.2.2",
 		"babel-plugin-treat": "1.6.2",
-		"browserslist-config-autoguru": "1.0.89",
+		"browserslist-config-autoguru": "2.0.0",
 		"chromatic": "5.7.1",
 		"concurrently": "6.0.0",
 		"core-js": "3.9.1",
