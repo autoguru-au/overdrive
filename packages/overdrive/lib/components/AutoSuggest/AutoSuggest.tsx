@@ -387,7 +387,10 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 			aria-owns={suggestionListId!}
 			aria-haspopup="listbox"
 			width="full">
-			<Box backgroundColour="white" className={styles.input}>
+			<Box
+				backgroundColour="white"
+				borderRadius="1"
+				className={styles.input}>
 				<AutoSuggestInputPrimitive
 					className={className}
 					isFocused={isFocused}
