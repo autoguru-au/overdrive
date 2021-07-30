@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.6.2
+
+### Patch Changes
+
+-   23780cc: Autosuggest: Gets a fix for white background under round edges
+
 ## 2.6.1
 
 ### Patch Changes
