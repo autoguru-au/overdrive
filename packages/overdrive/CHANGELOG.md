@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.6.3
+
+### Patch Changes
+
+-   f6e8135: AutoSuggest: Gets increased results fylout maxHeight value
+
 ## 2.6.2
 
 ### Patch Changes
