@@ -31,7 +31,7 @@ export const suggestionList = {
 	defaults: style({
 		display: 'grid',
 		overflowY: 'auto',
-		maxHeight: '256px',
+		maxHeight: '384px',
 		overscrollBehavior: 'contain',
 		// @ts-ignore
 		'-webkit-overflow-scrolling': 'touch',
@@ -41,7 +41,7 @@ export const suggestionList = {
 	}),
 	blockOptions: style({
 		overflowY: 'auto',
-		maxHeight: '256px',
+		maxHeight: '384px',
 	}),
 	inlineOptions: style({
 		overflowY: 'auto',
