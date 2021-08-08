@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.7.0-next.0
+
+### Minor Changes
+
+-   Upgraded to react v18 alpha
+
 ## 2.6.3
 
 ### Patch Changes
