@@ -1,4 +1,4 @@
-import { boolean } from '@storybook/addon-knobs';
+import { boolean } from '@storybook/addon-controls';
 import * as React from 'react';
 
 import { Button } from '../Button';
