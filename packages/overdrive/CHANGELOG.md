@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.7.0-next.1
+
+### Patch Changes
+
+-   ded7b5d: Inputs: Get their hover states going to a darker shade
+
 ## 2.7.0-next.0
 
 ### Minor Changes

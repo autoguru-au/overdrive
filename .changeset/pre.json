@@ -5,6 +5,7 @@
     "@autoguru/overdrive": "2.6.3"
   },
   "changesets": [
-    "beige-parents-lie"
+    "beige-parents-lie",
+    "sour-bulldogs-doubt"
   ]
 }
