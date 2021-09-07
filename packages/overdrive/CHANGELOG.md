@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 2.7.0-next.2
+
+### Minor Changes
+
+-   7033333: Hooks: New useAttachedBoxes helper hook
+-   f15d951: Hooks: New useResponsiveValue value hook
+
 ## 2.7.0-next.1
 
 ### Patch Changes

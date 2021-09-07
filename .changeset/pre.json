@@ -1,8 +1,13 @@
 {
-	"mode": "pre",
-	"tag": "next",
-	"initialVersions": {
-		"@autoguru/overdrive": "2.6.3"
-	},
-	"changesets": ["beige-parents-lie", "sour-bulldogs-doubt"]
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "@autoguru/overdrive": "2.6.3"
+  },
+  "changesets": [
+    "beige-parents-lie",
+    "pretty-suits-protect",
+    "sour-bulldogs-doubt",
+    "tall-kangaroos-shop"
+  ]
 }
