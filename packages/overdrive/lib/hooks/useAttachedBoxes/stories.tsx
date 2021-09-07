@@ -6,9 +6,6 @@ import { Box } from '../../components';
 
 export default {
 	title: 'Foundation/Layout/Attached Boxes',
-	parameters: {
-		chromatic: { disable: true },
-	},
 };
 
 const columnCount = [2, 3, 4, 5];
