@@ -8,11 +8,13 @@ import { ResponsiveProp } from '../../../dist/lib/utils';
 import { useMedia } from '../useMedia';
 import { getEarliestKnownToken, resolveResponsiveStyle } from '../../utils';
 
-interface Props extends Omit<ComponentProps<typeof Box>, 'borderRadius'> {
+interface Props extends Pick<ComponentProps<typeof Box>, 'backgroundColour'> {
 	count: number;
 	columnCount: ResponsiveProp<number>;
 	gap?: ResponsiveProp<keyof typeof styleRefs.grid.gaps>;
 }
+
+type AttachedBoxProps = Omit<ComponentProps<typeof Box>, 'borderRadius'>;
 
 function useResponsiveValue<T extends string | number>(
 	responsiveValue: ResponsiveProp<T>,
@@ -30,7 +32,7 @@ function useResponsiveValue<T extends string | number>(
 }
 
 type Returns = [
-	boxes: FunctionComponent[],
+	boxes: FunctionComponent<AttachedBoxProps>[],
 	wrapperCls: string,
 	style: ComponentProps<typeof Box>['style'],
 ];
@@ -52,39 +54,42 @@ export const useAttachedBoxes = ({
 		: count - columnCount;
 
 	return [
-		Array.from({ length: count }).map((_, index) => ({ children }) => {
-			isLastItem = index === count - 1;
+		Array.from({ length: count }).map(
+			(_, index) => ({ children, ...rest }: AttachedBoxProps) => {
+				isLastItem = index === count - 1;
 
-			if (isLastItem && decimals) {
-				//is last item and is not a perfect division
-				colStart = Math.round(decimals / (1 / columnCount));
-				extend = Math.round((1 - decimals) / (1 / columnCount));
-			}
+				if (isLastItem && decimals) {
+					//is last item and is not a perfect division
+					colStart = Math.round(decimals / (1 / columnCount));
+					extend = Math.round((1 - decimals) / (1 / columnCount));
+				}
 
-			return (
-				<Box
-					backgroundColour={backgroundColour}
-					className={clsx({
-						[styles.grid.topLeft]: index === 0,
-						[styles.grid.topRight]: index === topRightIndex,
-						[styles.grid.bottomLeft]: index === bottomLeftIndex,
-						[styles.grid.bottomRight]: isLastItem,
-					})}
-					style={
-						isLastItem && decimals
-							? {
-									gridColumn: `${colStart}/${
-										colStart + 1 + extend
-									}`,
-							  }
-							: void 0
-					}
-					paddingX="3"
-					paddingY="5">
-					{children}
-				</Box>
-			);
-		}),
+				return (
+					<Box
+						backgroundColour={backgroundColour}
+						className={clsx({
+							[styles.grid.topLeft]: index === 0,
+							[styles.grid.topRight]: index === topRightIndex,
+							[styles.grid.bottomLeft]: index === bottomLeftIndex,
+							[styles.grid.bottomRight]: isLastItem,
+						})}
+						style={
+							isLastItem && decimals
+								? {
+										gridColumn: `${colStart}/${
+											colStart + 1 + extend
+										}`,
+								  }
+								: void 0
+						}
+						paddingX="3"
+						paddingY="5"
+						{...rest}>
+						{children}
+					</Box>
+				);
+			},
+		),
 		clsx(
 			styles.grid.default,
 			resolveResponsiveStyle(gap, styles.grid.gaps),

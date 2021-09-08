@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 2.7.0-next.3
+
+### Patch Changes
+
+-   Attached Boxes: Accept default box props
+-   8b1f6df: useResponsiveValue: Gets exported from libs root
+
 ## 2.7.0-next.2
 
 ### Minor Changes
