@@ -55,7 +55,11 @@ export const useAttachedBoxes = ({
 
 	return [
 		Array.from({ length: count }).map(
-			(_, index) => ({ children, ...rest }: AttachedBoxProps) => {
+			(_, index) => ({
+				children,
+				className,
+				...rest
+			}: AttachedBoxProps) => {
 				isLastItem = index === count - 1;
 
 				if (isLastItem && decimals) {
@@ -67,7 +71,7 @@ export const useAttachedBoxes = ({
 				return (
 					<Box
 						backgroundColour={backgroundColour}
-						className={clsx({
+						className={clsx(className, {
 							[styles.grid.topLeft]: index === 0,
 							[styles.grid.topRight]: index === topRightIndex,
 							[styles.grid.bottomLeft]: index === bottomLeftIndex,
@@ -82,8 +86,6 @@ export const useAttachedBoxes = ({
 								  }
 								: void 0
 						}
-						paddingX="3"
-						paddingY="5"
 						{...rest}>
 						{children}
 					</Box>

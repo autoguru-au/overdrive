@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 2.7.0-next.4
+
+### Patch Changes
+
+-   AttachedBoxes: Do not get default paddings
+-   AttachedBoxes: Accept external classnames
+
 ## 2.7.0-next.3
 
 ### Patch Changes
