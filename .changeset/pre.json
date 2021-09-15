@@ -1,17 +1,18 @@
 {
-	"mode": "pre",
-	"tag": "next",
-	"initialVersions": {
-		"@autoguru/overdrive": "2.6.3"
-	},
-	"changesets": [
-		"beige-parents-lie",
-		"famous-insects-thank",
-		"khaki-students-serve",
-		"pretty-suits-protect",
-		"sour-bulldogs-doubt",
-		"spicy-crews-hug",
-		"tall-kangaroos-shop",
-		"three-plums-battle"
-	]
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "@autoguru/overdrive": "2.6.3"
+  },
+  "changesets": [
+    "beige-parents-lie",
+    "famous-insects-thank",
+    "khaki-students-serve",
+    "pretty-suits-protect",
+    "short-scissors-hear",
+    "sour-bulldogs-doubt",
+    "spicy-crews-hug",
+    "tall-kangaroos-shop",
+    "three-plums-battle"
+  ]
 }

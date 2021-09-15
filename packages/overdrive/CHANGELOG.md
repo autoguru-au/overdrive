@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.7.0-next.5
+
+### Patch Changes
+
+-   LoadingBox Accepts default Box props
+
 ## 2.7.0-next.4
 
 ### Patch Changes

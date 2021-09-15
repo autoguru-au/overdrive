@@ -1,14 +1,12 @@
 import * as React from 'react';
-import { FunctionComponent } from 'react';
+import { ComponentProps, FunctionComponent } from 'react';
 import { useStyles } from 'react-treat';
 
-import type { BoxStyleProps } from '../Box';
 import { Box } from '../Box';
 
 import * as styleRefs from './LoadingBox.treat';
 
-export interface Props
-	extends Partial<Pick<BoxStyleProps, 'height' | 'display'>> {
+export interface Props extends Omit<ComponentProps<typeof Box>, 'width'> {
 	className?: string;
 	randomWidth?: boolean;
 	blinking?: boolean;
@@ -18,18 +16,20 @@ export const LoadingBox: FunctionComponent<Props> = ({
 	className = '',
 	randomWidth = false,
 	blinking = true,
-	display = 'block',
-	height,
+	backgroundColour = 'gray200',
+	display= 'block',
+	is = 'span',
+	...boxStyles
 }) => {
 	const styles = useStyles(styleRefs);
 
 	return (
 		<Box
-			is="span"
-			width={randomWidth ? undefined : 'full'}
-			backgroundColour="gray200"
+			is={is}
 			display={display}
-			height={height}
+			width={randomWidth ? undefined : 'full'}
+			backgroundColour={backgroundColour}
+			{...boxStyles}
 			className={[styles.root, blinking && styles.blinking, className]}
 			style={{
 				width: randomWidth ? getRandomIntWidth(60, 40) : undefined,
