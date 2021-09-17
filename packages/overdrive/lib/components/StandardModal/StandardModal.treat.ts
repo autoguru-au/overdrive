@@ -27,9 +27,37 @@ export const modal = style((theme) => ({
 	}),
 }));
 
+export const modalSizeSkinny = style((theme) =>
+	theme.utils.responsiveStyle({
+		tablet: {
+			maxWidth: '420px',
+		},
+		desktop: {
+			maxWidth: '420px',
+		},
+		largeDesktop: {
+			maxWidth: '420px',
+		},
+	}),
+);
+
+export const modalSizeNarrow = style((theme) =>
+	theme.utils.responsiveStyle({
+		tablet: {
+			maxWidth: '600px',
+		},
+		desktop: {
+			maxWidth: '600px',
+		},
+		largeDesktop: {
+			maxWidth: '600px',
+		},
+	}),
+);
+
 export const modalSizeStandard = style((theme) =>
 	theme.utils.responsiveStyle({
-		desktop: {
+		tablet: {
 			maxWidth: '800px',
 		},
 	}),

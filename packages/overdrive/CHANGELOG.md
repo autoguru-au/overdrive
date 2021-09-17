@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.7.0-next.6
+
+### Patch Changes
+
+-   StandardModal: Gets narrow and skinny sizes
+
 ## 2.7.0-next.5
 
 ### Patch Changes

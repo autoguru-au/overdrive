@@ -17,7 +17,7 @@ export const LoadingBox: FunctionComponent<Props> = ({
 	randomWidth = false,
 	blinking = true,
 	backgroundColour = 'gray200',
-	display= 'block',
+	display = 'block',
 	is = 'span',
 	...boxStyles
 }) => {
