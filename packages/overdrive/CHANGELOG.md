@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.7.0-next.7
+
+### Patch Changes
+
+-   StandardModal: Hides it's frame overflow
+
 ## 2.7.0-next.6
 
 ### Patch Changes

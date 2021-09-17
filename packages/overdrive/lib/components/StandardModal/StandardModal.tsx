@@ -88,6 +88,7 @@ export const StandardModal: FunctionComponent<Props> = ({
 				onClick={backdropHandler}>
 				<Box
 					is="article"
+					overflow='hidden'
 					role="dialog"
 					aria-modal="true"
 					aria-labelledby={titleId!}
