@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 2.7.0-next.8
+
+### Patch Changes
+
+-   NumberInput: Gets new preventMouseWheel prop to prevent value change while
+    scrolling
+
 ## 2.7.0-next.7
 
 ### Patch Changes

@@ -10,9 +10,9 @@ import {
 	forwardRef,
 	KeyboardEventHandler,
 	MouseEventHandler,
+	MutableRefObject,
 	ReactNode,
 	Ref,
-	RefObject,
 	useCallback,
 	useState,
 } from 'react';
@@ -84,7 +84,7 @@ export type WrappedComponentProps<IncomingProps, PrimitiveElementType> = {
 		EnhanceInputPrimitiveProps,
 		'placeholder' | 'hintText' | 'fieldIcon'
 	> & {
-		ref: RefObject<PrimitiveElementType>;
+		ref: MutableRefObject<PrimitiveElementType>;
 	};
 	fieldIcon?: EnhanceInputPrimitiveProps['fieldIcon'];
 	isFocused?: boolean;
