@@ -1,6 +1,6 @@
 {
   "name": "@autoguru/overdrive",
-  "version": "2.7.0-next.13",
+  "version": "2.7.0-next.14",
   "description": "Overdrive is a product component library, and design system for AutoGuru.",
   "keywords": [
     "component",
@@ -28,10 +28,15 @@
   "files": [
     "dist/",
     "lib/",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "readme.md",
+    "reset.ts",
+    "themes.ts",
+    "themes.ts",
+    "tsconfig.json"
   ],
   "types": "./dist/index.d.ts",
-  "main": "./dist/index.js",
+  "main": "index.ts",
   "dependencies": {
     "@autoguru/icons": "^1.7.4",
     "@autoguru/utilities": "^1.0.98",

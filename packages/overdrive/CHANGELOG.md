@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.7.0-next.14
+
+### Patch Changes
+
+-   Sets index.ts as main entry file
+
 ## 2.7.0-next.13
 
 ### Patch Changes
