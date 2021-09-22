@@ -1,5 +1,29 @@
 # @autoguru/overdrive
 
+## 2.7.0-next.13
+
+### Patch Changes
+
+-   Fixes main file
+
+## 2.7.0-next.12
+
+### Patch Changes
+
+-   Overdrive index main index files fixed
+
+## 2.7.0-next.11
+
+### Patch Changes
+
+-   Overdrive: Gets files list added to package.json
+
+## 2.7.0-next.10
+
+### Patch Changes
+
+-   Adds relese script
+
 ## 2.7.0-next.9
 
 ### Minor Changes
