@@ -4,7 +4,7 @@ import { useStyles } from 'react-treat';
 import * as styleRefs from './useAttachedBoxes.treat';
 import clsx from 'clsx';
 import { Box } from '../../components';
-import { ResponsiveProp } from '../../../dist/lib/utils';
+import { ResponsiveProp } from '../../../lib/utils';
 import { useMedia } from '../useMedia';
 import { getEarliestKnownToken, resolveResponsiveStyle } from '../../utils';
 

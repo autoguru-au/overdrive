@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.7.0-next.9
+
+### Minor Changes
+
+-   Overdsrive: Gets compiled into javascripts and typescript types
+
 ## 2.7.0-next.8
 
 ### Patch Changes
