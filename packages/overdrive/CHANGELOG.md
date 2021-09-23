@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.7.0-next.15
+
+### Patch Changes
+
+-   Adds more utils root export
+
 ## 2.7.0-next.14
 
 ### Patch Changes
