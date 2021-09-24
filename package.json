@@ -12,7 +12,7 @@
 		"postinstall": "patch-package && manypkg check",
 		"lint": "eslint \"packages/**/*.+(ts|tsx)\" --fix --quiet",
 		"playroom:build": "playroom build",
-		"release": "yarn workspaces run build && changeset publish",
+		"release": "changeset publish",
 		"start": "concurrently -k \"playroom\" \"yarn:storybook\"",
 		"storybook": "start-storybook -p 6006",
 		"storybook:build": "build-storybook",

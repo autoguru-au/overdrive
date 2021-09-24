@@ -1,6 +1,6 @@
 {
   "name": "@autoguru/overdrive",
-  "version": "2.7.0-next.15",
+  "version": "2.7.0-next.16",
   "description": "Overdrive is a product component library, and design system for AutoGuru.",
   "keywords": [
     "component",
@@ -14,28 +14,18 @@
   "repository": "autoguru-au/overdrive",
   "license": "MIT",
   "sideEffects": [
-    "./dist/reset.js",
-    "./dist/themes.js",
-    "./dist/lib/reset/**/*",
-    "./dist/lib/theme/**/*",
-    "./dist/lib/themes/**/*"
+    "./reset.ts",
+    "./themes.ts",
+    "./lib/reset/**/*",
+    "./lib/theme/**/*",
+    "./lib/themes/**/*"
   ],
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "yarn run build",
     "watch": "tsc --watch"
   },
-  "files": [
-    "dist/",
-    "lib/",
-    "CHANGELOG.md",
-    "readme.md",
-    "reset.ts",
-    "themes.ts",
-    "themes.ts",
-    "tsconfig.json"
-  ],
-  "types": "./dist/index.d.ts",
+  "types": "./dist/main.d.ts",
   "main": "index.ts",
   "dependencies": {
     "@autoguru/icons": "^1.7.4",

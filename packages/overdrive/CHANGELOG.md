@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.7.0-next.16
+
+### Patch Changes
+
+-   Publish command: Nolonger compiles to JS
+
 ## 2.7.0-next.15
 
 ### Patch Changes
