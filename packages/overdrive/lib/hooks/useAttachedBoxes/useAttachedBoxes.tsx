@@ -1,12 +1,17 @@
+import clsx from 'clsx';
 import * as React from 'react';
 import { ComponentProps, FunctionComponent } from 'react';
 import { useStyles } from 'react-treat';
-import * as styleRefs from './useAttachedBoxes.treat';
-import clsx from 'clsx';
+
+import {
+	getEarliestKnownToken,
+	resolveResponsiveStyle,
+	ResponsiveProp,
+} from '../../../lib/utils';
 import { Box } from '../../components';
-import { ResponsiveProp } from '../../../lib/utils';
 import { useMedia } from '../useMedia';
-import { getEarliestKnownToken, resolveResponsiveStyle } from '../../utils';
+
+import * as styleRefs from './useAttachedBoxes.treat';
 
 interface Props extends Pick<ComponentProps<typeof Box>, 'backgroundColour'> {
 	count: number;

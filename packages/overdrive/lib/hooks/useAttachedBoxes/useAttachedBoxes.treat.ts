@@ -1,4 +1,5 @@
 import { style } from 'treat';
+
 import { makeResponsiveStyle } from '../../utils';
 
 export const grid = {

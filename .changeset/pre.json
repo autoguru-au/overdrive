@@ -1,29 +1,30 @@
 {
-  "mode": "pre",
-  "tag": "next",
-  "initialVersions": {
-    "@autoguru/overdrive": "2.6.3"
-  },
-  "changesets": [
-    "beige-parents-lie",
-    "beige-years-travel",
-    "famous-insects-thank",
-    "gentle-mugs-fly",
-    "itchy-pandas-smash",
-    "khaki-students-serve",
-    "long-cougars-wonder",
-    "lovely-plants-kneel",
-    "modern-icons-wash",
-    "nervous-rivers-kick",
-    "ninety-otters-poke",
-    "pretty-suits-protect",
-    "short-scissors-hear",
-    "silent-books-shop",
-    "sour-bulldogs-doubt",
-    "spicy-crews-hug",
-    "tall-kangaroos-shop",
-    "three-plums-battle",
-    "tricky-cats-enjoy",
-    "wise-rivers-cry"
-  ]
+	"mode": "pre",
+	"tag": "next",
+	"initialVersions": {
+		"@autoguru/overdrive": "2.6.3"
+	},
+	"changesets": [
+		"beige-parents-lie",
+		"beige-years-travel",
+		"famous-insects-thank",
+		"gentle-mugs-fly",
+		"hungry-clouds-flow",
+		"itchy-pandas-smash",
+		"khaki-students-serve",
+		"long-cougars-wonder",
+		"lovely-plants-kneel",
+		"modern-icons-wash",
+		"nervous-rivers-kick",
+		"ninety-otters-poke",
+		"pretty-suits-protect",
+		"short-scissors-hear",
+		"silent-books-shop",
+		"sour-bulldogs-doubt",
+		"spicy-crews-hug",
+		"tall-kangaroos-shop",
+		"three-plums-battle",
+		"tricky-cats-enjoy",
+		"wise-rivers-cry"
+	]
 }

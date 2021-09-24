@@ -1,8 +1,9 @@
 import * as React from 'react';
+
+import { Box } from '../../components';
 import { Text } from '../../components/Text/Text';
 
 import { useAttachedBoxes } from './';
-import { Box } from '../../components';
 
 export default {
 	title: 'Foundation/Layout/Attached Boxes',

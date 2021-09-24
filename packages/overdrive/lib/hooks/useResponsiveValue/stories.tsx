@@ -1,8 +1,9 @@
 import * as React from 'react';
+
+import { Stack } from '../../components';
 import { Text } from '../../components/Text/Text';
 
 import { useResponsiveValue } from './';
-import { Stack } from '../../components';
 
 export default {
 	title: 'Utility/Hooks/useResponsiveValue',

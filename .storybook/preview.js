@@ -3,7 +3,6 @@ import '@autoguru/overdrive/reset';
 
 import { addDecorator } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
-import { withA11y } from '@storybook/addon-a11y';
 import * as themes from '../packages/overdrive/themes';
 import isChromatic from 'chromatic/isChromatic';
 import { Box, Heading, OverdriveProvider, Stack } from '@autoguru/overdrive';
