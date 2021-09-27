@@ -1,6 +1,6 @@
 import { styleMap } from 'treat';
+import { makeResponsiveStyle } from '../../utils/responsiveProps';
 
-import { makeResponsiveStyle } from '../../utils';
 
 const getSizeStyle = (scale: number) => `${scale * 100}%`;
 

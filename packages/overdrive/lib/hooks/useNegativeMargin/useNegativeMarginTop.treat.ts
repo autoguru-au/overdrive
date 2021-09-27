@@ -1,4 +1,4 @@
-import { makeResponsiveStyle } from '../../utils';
+import { makeResponsiveStyle } from '../../utils/responsiveProps';
 
 export const negativeMarginTop = makeResponsiveStyle(
 	(theme) => theme.space,

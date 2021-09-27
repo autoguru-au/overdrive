@@ -1,6 +1,6 @@
 import { styleMap } from 'treat';
+import { makeResponsiveStyle } from '../../utils/responsiveProps';
 
-import { makeResponsiveStyle } from '../../utils';
 
 export const space = {
 	spaceX: makeResponsiveStyle((theme) => theme.space, 'paddingLeft'),

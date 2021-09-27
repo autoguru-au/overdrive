@@ -29,7 +29,9 @@ const createUtils = (tokens: Tokens) => ({
 
 			Object.assign(styles, {
 				'@media': {
+					// @ts-ignore
 					...styles['@media'],
+					// @ts-ignore
 					[`screen and (min-width: ${tokens.breakpoints[query]}px)`]: style,
 				},
 			});
@@ -46,6 +48,7 @@ const decorateTokens = (tokens: Tokens) => ({
 
 export type OverdriveTheme = ReturnType<typeof decorateTokens>;
 
+// @ts-ignore
 export const makeTheme = (tokens: Tokens, debugName) =>
 	createTheme(decorateTokens(tokens), debugName);
 

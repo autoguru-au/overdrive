@@ -90,9 +90,6 @@ export const hex2rgba = (c, alpha = '1') =>
 		.match(/../g)
 		.map((x) => Number(`0x${x}`))},${alpha})`;
 
-export { mapTokenToProperty } from './mapTokenToProperty';
-export * from './responsiveProps';
-
 export const ownerWindow = (node?: Node): Window =>
 	ownerDocument(node)?.defaultView || window;
 export const ownerDocument = (node?: Node): Document =>

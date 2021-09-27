@@ -13908,7 +13908,7 @@ react-docgen@^5.0.0:
     node-dir "^0.1.10"
     strip-indent "^3.0.0"
 
-react-dom@^18.0.0-alpha-19092ac8c-20210803:
+react-dom@^18.0.0-alpha-19092ac8c-20210803, react-dom@^18.0.0-alpha-b9934d6db-20210805:
   version "18.0.0-alpha-19092ac8c-20210803"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.0.0-alpha-19092ac8c-20210803.tgz#5d256af2631cf0e03d170432640dd45974c87db0"
   integrity sha512-mgTRMbdkY7cBiHgdGwEg41821MxLOaJw5hFLYF1iw5qL3sSehIAUjHL212vrGhPtS1hkgMzVUzrdxA/fqaGvzg==
@@ -14142,7 +14142,7 @@ react-use@^13.22.3:
     ts-easing "^0.2.0"
     tslib "^1.10.0"
 
-react@^18.0.0-alpha-19092ac8c-20210803:
+react@^18.0.0-alpha-19092ac8c-20210803, react@^18.0.0-alpha-b9934d6db-20210805:
   version "18.0.0-alpha-ed6c091fe-20210701"
   resolved "https://registry.yarnpkg.com/react/-/react-18.0.0-alpha-ed6c091fe-20210701.tgz#238c16a3262b0d30f5c9483335b42a28656c1e81"
   integrity sha512-zfb1gZyRC0AxtNLb48jM1zPhP60OS79Jekj28Qve/HaogOp9a/hjoC6THx4YXtEdP4bq6Z/OS+ecAeJ8I4JSug==
@@ -14785,6 +14785,14 @@ scheduler@0.21.0-alpha-b9934d6db-20210805:
   version "0.21.0-alpha-b9934d6db-20210805"
   resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.21.0-alpha-b9934d6db-20210805.tgz#7ac11ca3ad2a76721ce84f03568f645962301581"
   integrity sha512-IvRrsjVunWHAV7ijYqMx3yTZ+vxNdT9E+m/TBKbZ7x+uWkQD9fsbSksXyvaRxUGsdhErNhremaSEF1UcBB+LYg==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+
+scheduler@0.21.0-alpha-fd5e01c2e-20210913:
+  version "0.21.0-alpha-fd5e01c2e-20210913"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.21.0-alpha-fd5e01c2e-20210913.tgz#b44ab3a8bddc6ed85ab4ec656419544288be4616"
+  integrity sha512-ylcV55/U6e67/3tjL16ognZk14UX/J4/C1N0XLZjqKV+XYS0QSxdwin/kdqxueCCbDLh0xLroq/G2lVTbFHP0Q==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
@@ -16292,15 +16300,15 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@4.2.2:
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.2.2.tgz#1450f020618f872db0ea17317d16d8da8ddb8c4c"
-  integrity sha512-tbb+NVrLfnsJy3M59lsDgrzWIflR4d4TIUjz+heUnHZwdF7YsrMTKoRERiIvI2lvBG95dfpLxB21WZhys1bgaQ==
-
 typescript@^4.0.0:
   version "4.2.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.2.4.tgz#8610b59747de028fda898a8aef0e103f156d0961"
   integrity sha512-V+evlYHZnQkaz8TRBuxTA92yZBPotr5H+WhQ7bD3hZUndx5tGOa1fuCgeSjxAzM1RiN5IzvadIXTVefuuwZCRg==
+
+typescript@^4.4.3:
+  version "4.4.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.4.3.tgz#bdc5407caa2b109efd4f82fe130656f977a29324"
+  integrity sha512-4xfscpisVgqqDfPaJo5vkd+Qd/ItkoagnHpufr+i2QCHBsNYp+G7UAoyFl8aPtx879u38wPV65rZ8qbGZijalA==
 
 typical@^4.0.0:
   version "4.0.0"

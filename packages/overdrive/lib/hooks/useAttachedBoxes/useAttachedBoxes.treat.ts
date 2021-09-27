@@ -1,6 +1,6 @@
 import { style } from 'treat';
+import { makeResponsiveStyle } from '../../utils/responsiveProps';
 
-import { makeResponsiveStyle } from '../../utils';
 
 export const grid = {
 	default: style({

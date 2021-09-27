@@ -7,7 +7,7 @@ import {
 	getEarliestKnownToken,
 	resolveResponsiveStyle,
 	ResponsiveProp,
-} from '../../../lib/utils';
+} from '../../../lib/utils/responsiveProps';
 import { Box } from '../../components';
 import { useMedia } from '../useMedia';
 

@@ -136,22 +136,28 @@ export const useToast = (): ToastFn => {
 				intent: 'information',
 			});
 
+		// @ts-ignore
 		fn.primary = (message, duration = DEFAULT_DURATION) =>
 			void addToast({
 				message,
 				duration,
+				// @ts-ignore
 				intent: 'primary',
 			});
+		// @ts-ignore
 		fn.secondary = (message, duration = DEFAULT_DURATION) =>
 			void addToast({
 				message,
 				duration,
+				// @ts-ignore
 				intent: 'secondary',
 			});
+		// @ts-ignore
 		fn.shine = (message, duration = DEFAULT_DURATION) =>
 			void addToast({
 				message,
 				duration,
+				// @ts-ignore
 				intent: 'shine',
 			});
 		fn.success = (message, duration = DEFAULT_DURATION) =>
@@ -160,10 +166,12 @@ export const useToast = (): ToastFn => {
 				duration,
 				intent: 'success',
 			});
+		// @ts-ignore
 		fn.neutral = (message, duration = DEFAULT_DURATION) =>
 			void addToast({
 				message,
 				duration,
+				// @ts-ignore
 				intent: 'neutral',
 			});
 		fn.danger = (message, duration = DEFAULT_DURATION) =>
