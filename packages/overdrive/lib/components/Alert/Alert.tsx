@@ -22,7 +22,7 @@ import * as styleRefs from './Alert.treat';
 type Intent = keyof Omit<
 	typeof styleRefs.intent,
 	'neutral' | 'shine' | 'primary' | 'secondary'
-	>
+>;
 export interface Props {
 	children: ReactChild;
 	className?: string;
@@ -33,10 +33,7 @@ export interface Props {
 	onRequestClose?: ComponentProps<typeof Button>['onClick'];
 }
 
-const iconMapForIntent: Record<
-	Intent,
-	IconType
-> = {
+const iconMapForIntent: Record<Intent, IconType> = {
 	danger: AlertCircleIcon,
 	information: InformationIcon,
 	success: CheckCircleIcon,

@@ -10,10 +10,7 @@ export const OverdriveProvider: FunctionComponent<Props> = ({
 	theme,
 	children,
 }) => {
-	console.log({theme, useEffect})
 	useEffect(() => {
-
-		console.log({isBrowser})
 		if (isBrowser) {
 			document.body.style.backgroundColor =
 				theme.runtimeTokens.body.backgroundColour;

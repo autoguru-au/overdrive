@@ -1,6 +1,6 @@
 import { style, styleMap } from 'treat';
 
-import {mapTokenToProperty } from '../../utils/mapTokenToProperty';
+import { mapTokenToProperty } from '../../utils/mapTokenToProperty';
 import { makeResponsiveStyle } from '../../utils/responsiveProps';
 
 export const padding = {

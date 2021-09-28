@@ -9,7 +9,10 @@ import {
 	useNegativeMarginLeft,
 	useNegativeMarginTop,
 } from '../../hooks/useNegativeMargin/useNegativeMargin';
-import { resolveResponsiveStyle, ResponsiveProp } from '../../utils/responsiveProps';
+import {
+	resolveResponsiveStyle,
+	ResponsiveProp,
+} from '../../utils/responsiveProps';
 import { Box } from '../Box';
 
 import * as styleRefs from './Columns.treat';

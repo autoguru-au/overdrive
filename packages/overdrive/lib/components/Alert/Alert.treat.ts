@@ -1,7 +1,6 @@
 import { style, styleMap } from 'treat';
 import { mapTokenToProperty } from '../../utils/mapTokenToProperty';
 
-
 export const root = style((theme) => ({
 	':before': {
 		position: 'absolute',

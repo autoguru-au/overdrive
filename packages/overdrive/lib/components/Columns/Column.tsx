@@ -3,7 +3,10 @@ import * as React from 'react';
 import { ComponentProps, forwardRef, ReactNode, useContext } from 'react';
 import { useStyles } from 'react-treat';
 
-import { resolveResponsiveStyle, ResponsiveProp } from '../../utils/responsiveProps';
+import {
+	resolveResponsiveStyle,
+	ResponsiveProp,
+} from '../../utils/responsiveProps';
 import { Box } from '../Box';
 
 import { ColumnContext } from './Columns';

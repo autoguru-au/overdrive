@@ -4,7 +4,10 @@ import * as React from 'react';
 import { cloneElement, memo } from 'react';
 import { useStyles } from 'react-treat';
 
-import { resolveResponsiveStyle, ResponsiveProp } from '../../utils/responsiveProps';
+import {
+	resolveResponsiveStyle,
+	ResponsiveProp,
+} from '../../utils/responsiveProps';
 import type { BoxStyleProps } from '../Box';
 import { Box, useBoxStyles } from '../Box';
 
