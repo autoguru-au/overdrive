@@ -1,4 +1,5 @@
 import { styleMap } from 'treat';
+
 import { makeResponsiveStyle } from '../../utils/responsiveProps';
 
 export const space = {

@@ -23,6 +23,7 @@ type Intent = keyof Omit<
 	typeof styleRefs.intent,
 	'neutral' | 'shine' | 'primary' | 'secondary'
 >;
+
 export interface Props {
 	children: ReactChild;
 	className?: string;

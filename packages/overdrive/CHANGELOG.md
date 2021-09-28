@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.7.0-next.18
+
+### Patch Changes
+
+- Overdrive: Multiple export changes
+
 ## 2.7.0-next.17
 
 ### Patch Changes
@@ -361,19 +367,7 @@
   **Example:**
 
   ```jsx
-  <Tabs active={0}>
-	  <TabList>
-		  <Tab>tab 1</Tab>
-		  <Tab>tab 2</Tab>
-	  </TabList>
-	  <TabPanes>
-		  <TabPane>tab 1 content</TabPane>
-		  <TabPane>
-			  {/* Will still be in the DOM, and React comeponet to have state retained */}
-			  tab 2 content
-		  </TabPane>
-	  </TabPanes>
-  </Tabs>
+  <Tabs active={0}>> > > > > > > } t > ></Tabs>
   ```
 
 - 7131a5f: **Tabs:** Fixes a visual quirk when indications are mixed with non-indicators
@@ -431,10 +425,7 @@
   **FEATURES**
 
   ```jsx
-  <Stack is="ul">
-	  <BulletText>Point A</BulletText>
-	  <BulletText>Point B</BulletText>
-  </Stack>
+  <Stack is="ul">> ></Stack>
   ```
 
   which already wraps each child in an `li`.
@@ -474,22 +465,7 @@
 
   ```jsx
   <Table columnTemplate="repeat(2, auto)">
-	  <TableRowGroup>
-		  <TableRow>
-			  <TableHeadCell>Col 1</TableHeadCell>
-			  <TableHeadCell>Col 2</TableHeadCell>
-		  </TableRow>
-	  </TableRowGroup>
-	  <TableRowGroup>
-		  <TableRow>
-			  <TableCell>Row 1, Col 1</TableCell>
-			  <TableCell>Row 1, Col 2</TableCell>
-		  </TableRow>
-		  <TableRow>
-			  <TableCell>Row 2, Col 1</TableCell>
-			  <TableCell>Row 2, Col 2</TableCell>
-		  </TableRow>
-	  </TableRowGroup>
+	  > > > > > > > > > > > > > > > >
   </Table>
   ```
 
@@ -498,17 +474,17 @@
   ```diff
   -<Table columnTemplate="repeat(2, auto)">
   +<Table stickyHead columnTemplate="repeat(2, auto)">
-	  <TableRowGroup>
-		  <TableRow>
-			  <TableHeadCell>Col 1</TableHeadCell>
+  >
+  >
+  >
   ```
 
   ### Sorting Columns
 
   ```diff
   <Table columnTemplate="repeat(2, auto)">
-	  <TableRowGroup>
-		  <TableRow>
+  >
+  >
   -            <TableHeadCell>Col 1</TableHeadCell>
   +            <TableHeadCell sort="asc" onSortChange={}>Col 1</TableHeadCell>
   ```
@@ -521,10 +497,10 @@
 
   ```diff
   <Table columnTemplate="repeat(2, auto)">
-	  <TableRowGroup>
+  >
   -        <TableRow>
   +        <TableRow onClick={}>
-			  <TableHeadCell>Col 1</TableHeadCell>
+  >
   ```
 
   Please note; that if you're also tracking clicks of cell buttons, to check the currentTarget of whether to apply the
@@ -553,8 +529,8 @@
   ```jsx
   <VisuallyHidden>hello screen reader</VisuallyHidden>
   <Text>
-	  hello
-	  <VisuallyHidden is="span">screen reader</VisuallyHidden>
+  o
+  >
   </Text>
   ```
 
@@ -564,7 +540,7 @@
 
   ```jsx
   <Text is="span" display="inlineBlock">
-	  Im now block
+	  k
   </Text>
   ```
 
@@ -604,7 +580,7 @@
 
   ```jsx
   <Box display="flex" width="full" justifyContent="center">
-	  <Button>Hello</Button>
+	  >
   </Box>
   ```
 
@@ -620,9 +596,9 @@
   <Stack is="ul"
   -    spacing="3">
   +    space="3">
-	  <li>line 1</li>
-	  <li>line 2</li>
-	  <li>line 3</li>
+  >
+  >
+  >
   </Stack>
   ```
 
@@ -633,12 +609,7 @@
   **FEATURES**
 
   ```jsx
-  <Inline dividers>
-	  <Text>Mazda</Text>
-	  <Text>CX3</Text>
-	  <Text>Petrol</Text>
-	  <Text>2020</Text>
-  </Inline>
+  <Inline dividers>> > > ></Inline>
   ```
 
 - a0fce92: Text: Exposes a new white-space nowrap prop
@@ -672,14 +643,7 @@
   **FEATURES**
 
   ```jsx
-  <Tabs>
-	  <TabList scrollable>
-		  <Tab>This</Tab>
-		  <Tab>Tab</Tab>
-		  <Tab>Might</Tab>
-		  <Tab>Scroll</Tab>
-	  </TabList>
-  </Tabs>
+  <Tabs>> > > > > ></Tabs>
   ```
 
 - 729dfdd: Input: Notchless inputs will no longer break when part of a flex container
@@ -693,17 +657,7 @@
   Will now support fragments and otherwise boolean children that previously would not have worked:
 
   ```jsx
-  <Stack>
-	  <p>line 0</p>
-	  {isEnabled && (
-		  <>
-			  <p>Line 1</p>
-			  <p>Line 2</p>
-			  <p>Line 3</p>
-		  </>
-	  )}
-	  <p>line 4</p>
-  </Stack>
+  <Stack>> ( > > > > > } ></Stack>
   ```
 
   > which would have the past not had lines 1-3 spaced evenly.
@@ -747,12 +701,12 @@
   ```diff
   - <Box className={clsx(styles.one, styles.two)}>
   + <Box className={[styles.one, styles.two]}>
-	  Hello
+  o
   </Box>
 
   - <Box className={clsx({[styles.one]: maybeDoMe}, styles.two)}>
   + <Box className={[{[styles.one]: maybeDoMe}, styles.two]}>
-	  Hello
+  o
   </Box>
   ```
 
@@ -777,8 +731,8 @@
   `<AutoSuggest>` can now be given a `autoWidth` prop that will auto the width in relation to setting the width, or for
   it to be automatic.
 
-	- `autoWidth={true}` means, size the flyout to the width of flyout children "automatically"
-	- `autoWidth={false}` means to set to the width of the select input.
+      	- `autoWidth={true}` means, size the flyout to the width of flyout children "automatically"
+      	- `autoWidth={false}` means to set to the width of the select input.
 
   eg:
 
@@ -786,15 +740,15 @@
 
   // size to the width of the flyout children
   <AutoSuggest
-	  placeholder="How are you?"
-	  suggestions={[{ text: "Im an item" }]}
-	  autoWidth
+  "
+  }
+  h
   />
 
   // size to the width of the input (current behaviour)
   <AutoSuggest
-	  placeholder="How are you?"
-	  suggestions={[{ text: "Im an item" }]}
+  "
+  }
   />
 
   ```
@@ -861,16 +815,16 @@
   ```jsx
   // Input
   <div>
-	  some sibling
-	  <Portal>
-		  <div>my child</div>
-	  </Portal>
+  g
+  >
+  >
+  >
   </div>
 
   // Result
   <body>
-	  <div>some sibling>
-	  <div>my child</div>
+  >
+  >
   </body>
   ```
 
@@ -882,8 +836,8 @@
   fadeIn/fadeOut animation, a
   `transition?: boolean` can also be provided.
 
-	- Removes `<ModalPortal />` in favor of `<Modal />`
-	- Deprecated `withModal`, which could simply just use the Modal component
+      	- Removes `<ModalPortal />` in favor of `<Modal />`
+      	- Deprecated `withModal`, which could simply just use the Modal component
 
   Worth noting that a `role="presentation"` is applied to the `Modal`, so consumers should be applying
   a `role="none presentation"` to their direct parent, if you wish content to be read out.
@@ -892,7 +846,7 @@
 
   ```jsx
   <Modal isOpen={true} onRequestClose={function() {}}>
-	  <div>some content</div>
+	  >
   </Modal>
   ```
 
@@ -913,10 +867,10 @@
 
   ```
   <Tabs>
-	  <TabList stretch>
-		  <Tab>Tab a</Tab>
-		  <Tab>Tab b</Tab>
-	  </TabList>
+  >
+  >
+  >
+  >
   </Tabs>
   ```
 
@@ -935,9 +889,9 @@
 
   Breakpoints have been amended to follow (mobile first):
 
-	- `tablet` is iPad Mini width less 25%, so any device greater than 768px
-	- `desktop` we are considering as iPad Pro width less 25%, so any device larger than 1024px
-	- `largeDesktop` is taken as a 1920x1080 less 25%, so any device larger than 1440px
+      	- `tablet` is iPad Mini width less 25%, so any device greater than 768px
+      	- `desktop` we are considering as iPad Pro width less 25%, so any device larger than 1024px
+      	- `largeDesktop` is taken as a 1920x1080 less 25%, so any device larger than 1440px
 
   all at landscape.
 
@@ -949,11 +903,7 @@
   eg:
 
   ```jsx
-  <Inline>
-	  <Badge colour="green" label="Success" />
-	  <Badge colour="red" label="Danger" />
-	  <Badge colour="blue" label="Information" />
-  </Inline>
+  <Inline>> > ></Inline>
   ```
 
   **`<Section />`**
@@ -973,10 +923,7 @@
 
   ```jsx
   <Section width="medium" paddingX={['3', , 'none']}>
-	  <Columns space="3">
-		  <Column width="2/3">...</Column>
-		  <Column width="1/3">...</Column>
-	  </Columns>
+	  > > > >
   </Section>
   ```
 
@@ -1012,7 +959,7 @@
   ```diff
   -<Actions className="test">
   +<Actions>
-	  ...
+  .
   </Actions>
   ```
 
@@ -1024,9 +971,9 @@
 
   **A few changes**
 
-	- `OverdriveProvider` must now be provider
-	- `ToastProvider` must also be provided when using a `useToast`
-	- `@autoguru/overdrive/reset` must be given first.
+      	- `OverdriveProvider` must now be provider
+      	- `ToastProvider` must also be provided when using a `useToast`
+      	- `@autoguru/overdrive/reset` must be given first.
 
   ... and a whole series of other things. Please consult to the PR (#273) to get a better idea of what's changed.
 
