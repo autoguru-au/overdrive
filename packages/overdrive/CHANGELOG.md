@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 3.0.0-next.0
+
+### Major Changes
+
+-   Overdrive: Migrates styling away from treat to vanilla extract
+
 ## 2.7.0
 
 ### Minor Changes
