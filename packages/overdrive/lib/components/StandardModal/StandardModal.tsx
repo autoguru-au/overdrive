@@ -20,10 +20,12 @@ import { useTextStyles } from '../Text';
 import * as styleRefs from './StandardModal.treat';
 
 export enum ESize {
+	Skinny = 'skinny', // 420px wide
+	Narrow = 'narrow', // 600px wide
 	Standard = 'standard', // 800px wide
 }
 
-type Size = 'standard';
+type Size = 'skinny' | 'narrow' | 'standard';
 
 export interface Props extends ComponentProps<typeof Modal> {
 	size?: ESize | Size;
@@ -86,6 +88,7 @@ export const StandardModal: FunctionComponent<Props> = ({
 				onClick={backdropHandler}>
 				<Box
 					is="article"
+					overflow="hidden"
 					role="dialog"
 					aria-modal="true"
 					aria-labelledby={titleId!}
@@ -96,6 +99,8 @@ export const StandardModal: FunctionComponent<Props> = ({
 					className={clsx([
 						styles.modal,
 						{ [styles.modalSizeStandard]: size === 'standard' },
+						{ [styles.modalSizeNarrow]: size === 'narrow' },
+						{ [styles.modalSizeSkinny]: size === 'skinny' },
 						className,
 					])}>
 					<Box

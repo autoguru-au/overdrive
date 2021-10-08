@@ -19,23 +19,22 @@ import { Text, useTextStyles } from '../Text';
 
 import * as styleRefs from './Alert.treat';
 
+type Intent = keyof Omit<
+	typeof styleRefs.intent,
+	'neutral' | 'shine' | 'primary' | 'secondary'
+>;
+
 export interface Props {
 	children: ReactChild;
 	className?: string;
-	intent?: keyof typeof styleRefs.intent;
+	intent?: Intent;
 	inline?: boolean;
 	dismissible?: boolean;
 
 	onRequestClose?: ComponentProps<typeof Button>['onClick'];
 }
 
-const IconMapForIntent: Record<
-	keyof Omit<
-		typeof styleRefs.intent,
-		'neutral' | 'shine' | 'primary' | 'secondary'
-	>,
-	IconType
-> = {
+const iconMapForIntent: Record<Intent, IconType> = {
 	danger: AlertCircleIcon,
 	information: InformationIcon,
 	success: CheckCircleIcon,
@@ -70,7 +69,7 @@ export const Alert: FunctionComponent<Props> = ({
 			<Columns noWrap spaceX="2">
 				<Column noShrink alignSelf="top">
 					<Icon
-						icon={IconMapForIntent[intent]}
+						icon={iconMapForIntent[intent]}
 						size="medium"
 						className={useBoxStyles({
 							marginY: '2',

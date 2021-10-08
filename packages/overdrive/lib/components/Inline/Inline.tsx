@@ -8,7 +8,7 @@ import {
 	useNegativeMarginLeft,
 	useNegativeMarginTop,
 } from '../../hooks/useNegativeMargin/useNegativeMargin';
-import type { ResponsiveProp } from '../../utils';
+import type { ResponsiveProp } from '../../utils/responsiveProps';
 import type { BoxStyleProps } from '../Box';
 import { Box } from '../Box';
 import { Text } from '../Text';

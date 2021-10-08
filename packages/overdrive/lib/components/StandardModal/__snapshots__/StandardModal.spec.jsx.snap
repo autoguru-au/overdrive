@@ -34,7 +34,7 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
         <article
           aria-labelledby="od-4"
           aria-modal="true"
-          class="block 8_mobile_base display_flex backgroundColours_white_base column_mobile_base modal_base modalSizeStandard_base"
+          class="block 8_mobile_base display_flex overflow_hidden backgroundColours_white_base column_mobile_base modal_base modalSizeStandard_base"
           role="dialog"
         >
           <header
@@ -130,7 +130,7 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
         <article
           aria-labelledby="od-3"
           aria-modal="true"
-          class="block 8_mobile_base display_flex backgroundColours_white_base column_mobile_base modal_base modalSizeStandard_base"
+          class="block 8_mobile_base display_flex overflow_hidden backgroundColours_white_base column_mobile_base modal_base modalSizeStandard_base"
           role="dialog"
         >
           <header

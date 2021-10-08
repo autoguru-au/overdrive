@@ -100,16 +100,16 @@ export const success = styleTree(
 			colour: styleNode({
 				color: shadedColour(
 					typography.colour.success,
-					shadeIntensity.medium,
-					'forward',
+					shadeIntensity.slight,
+					'backward',
 					isDark,
 				),
 			}),
 			borderColour: styleNode({
 				borderColor: shadedColour(
 					typography.colour.success,
-					shadeIntensity.medium,
-					'forward',
+					shadeIntensity.slight,
+					'backward',
 					isDark,
 				),
 			}),

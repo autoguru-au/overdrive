@@ -1,6 +1,7 @@
 import { style, styleMap } from 'treat';
 
-import { makeResponsiveStyle, mapTokenToProperty } from '../../utils';
+import { mapTokenToProperty } from '../../utils/mapTokenToProperty';
+import { makeResponsiveStyle } from '../../utils/responsiveProps';
 
 export const padding = {
 	top: makeResponsiveStyle((theme) => theme.space, 'paddingTop'),

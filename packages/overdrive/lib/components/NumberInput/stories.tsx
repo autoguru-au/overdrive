@@ -32,6 +32,14 @@ export const Standard = () => (
 export const withAValue = () => (
 	<NumberInput name="abc" placeholder="How many" value="42" />
 );
+export const withMouseWheelPrevented = () => (
+	<NumberInput
+		preventMouseWheel
+		name="abc"
+		placeholder="How many"
+		value="42"
+	/>
+);
 export const withoutNotch = () => (
 	<NumberInput notch={false} name="abc" placeholder="How many" value="42" />
 );

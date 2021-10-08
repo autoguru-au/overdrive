@@ -14,13 +14,21 @@ export interface Props {
 	colour?: keyof typeof styleRefs.colours.default;
 	className?: string;
 	look?: 'standard' | 'inverted';
+	size?: 'standard' | 'large';
 }
 
 export const Badge = memo<Props>(
-	({ label, colour = 'neutral', look = 'standard', className = '' }) => {
+	({
+		label,
+		colour = 'neutral',
+		look = 'standard',
+		size = 'standard',
+		className = '',
+	}) => {
+		const isStandardSize = size === 'standard';
 		const styles = useStyles(styleRefs);
 		const textStyles = useTextStyles({
-			size: '2',
+			size: isStandardSize ? '2' : '4',
 			noWrap: true,
 			fontWeight: 'semiBold',
 			colour: 'unset',
@@ -43,7 +51,8 @@ export const Badge = memo<Props>(
 					]}
 					overflow="hidden"
 					display="block"
-					padding="1"
+					paddingX={isStandardSize ? '1' : '4'}
+					paddingY={isStandardSize ? '1' : '2'}
 					borderRadius="1">
 					<Box
 						is="span"

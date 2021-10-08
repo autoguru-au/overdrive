@@ -44,11 +44,33 @@ export const Standard = () => (
 	</>
 );
 
+export const StandardLarge = () => (
+	<>
+		{colours.map((colour) => (
+			<Badge key={colour} size="large" label={colour} colour={colour} />
+		))}
+	</>
+);
+
 export const Inverted = () => (
 	<>
 		{colours.map((colour) => (
 			<Badge
 				key={colour}
+				label={colour}
+				colour={colour}
+				look="inverted"
+			/>
+		))}
+	</>
+);
+
+export const InvertedLarge = () => (
+	<>
+		{colours.map((colour) => (
+			<Badge
+				key={colour}
+				size="large"
 				label={colour}
 				colour={colour}
 				look="inverted"

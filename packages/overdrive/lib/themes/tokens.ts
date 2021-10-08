@@ -63,10 +63,6 @@ type ColourYellows =
 	| 'yellow200'
 	| 'yellow100';
 
-export interface Colours {
-	colours;
-}
-
 export type ColourGamut =
 	| ColourGrays
 	| ColourBlues
