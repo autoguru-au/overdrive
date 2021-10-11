@@ -1,5 +1,5 @@
-import { boolean } from '@storybook/addon-knobs';
 import * as React from 'react';
+import { ComponentProps } from 'react';
 
 import { Button } from '../Button';
 
@@ -15,17 +15,31 @@ export default {
 	],
 };
 
-export const standard = () => (
-	<Actions noWrap={boolean('No Wrap', false)}>
+const template = (args) => (
+	<Actions {...args}>
 		<Button>Login</Button>
-		<Button variant="primary">Sign up</Button>
-		<Button variant="secondary">Action 1</Button>
-		<Button variant="secondary">Action 2</Button>
-		<Button isLoading variant="secondary">
+		<Button variant='primary'>Sign up</Button>
+		<Button variant='secondary'>Action 1</Button>
+		<Button variant='secondary'>Action 2</Button>
+		<Button isLoading variant='secondary'>
 			Action 3
 		</Button>
-		<Button minimal variant="secondary">
+		<Button minimal variant='secondary'>
 			Action 4
 		</Button>
 	</Actions>
 );
+
+const standardProps: ComponentProps<typeof Actions> = {
+	noWrap: false,
+};
+const noWrapProps: ComponentProps<typeof Actions> = {
+	noWrap: true,
+};
+
+export const standard = template.bind(standardProps);
+export const noWrap = template.bind(noWrapProps);
+
+standard.args = standardProps;
+noWrap.args = noWrapProps;
+
