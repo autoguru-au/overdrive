@@ -1,4 +1,4 @@
-import '../packages/overdrive/lib/reset/font-face.css';
+import '../packages/overdrive/lib/reset/globalFonts.css';
 import '../packages/overdrive/lib/reset';
 
 import * as React from 'react';

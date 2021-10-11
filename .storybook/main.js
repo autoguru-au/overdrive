@@ -1,5 +1,10 @@
+const resolve = require('path').resolve;
 module.exports = {
-	stories: ['../packages/overdrive/lib/**/stories.tsx'],
+	core: {
+		builder: 'webpack5',
+	},
+	//stories: ['../packages/overdrive/lib/**/stories.tsx'],
+	stories: ['../packages/overdrive/lib/components/Text/stories.tsx'],
 	addons: [
 		{
 			name: '@storybook/addon-essentials',
@@ -9,6 +14,8 @@ module.exports = {
 			},
 		},
 		'@storybook/addon-knobs',
+		resolve('./.storybook/vanilla-extract'),
+		'@storybook/addon-controls',
 		'@storybook/addon-a11y',
 	],
 };

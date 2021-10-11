@@ -1,1 +1,1 @@
-import './globalReset.treat';
+import './globalReset.css';

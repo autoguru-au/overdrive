@@ -1,4 +1,4 @@
-import '@autoguru/overdrive/lib/reset/font-face.css';
+import '@autoguru/overdrive/lib/reset/globalFonts.css';
 import '@autoguru/overdrive/reset';
 
 import { addDecorator } from '@storybook/react';
