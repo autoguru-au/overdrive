@@ -18,13 +18,13 @@ export default {
 const template = (args) => (
 	<Actions {...args}>
 		<Button>Login</Button>
-		<Button variant='primary'>Sign up</Button>
-		<Button variant='secondary'>Action 1</Button>
-		<Button variant='secondary'>Action 2</Button>
-		<Button isLoading variant='secondary'>
+		<Button variant="primary">Sign up</Button>
+		<Button variant="secondary">Action 1</Button>
+		<Button variant="secondary">Action 2</Button>
+		<Button isLoading variant="secondary">
 			Action 3
 		</Button>
-		<Button minimal variant='secondary'>
+		<Button minimal variant="secondary">
 			Action 4
 		</Button>
 	</Actions>
@@ -42,4 +42,3 @@ export const noWrap = template.bind(noWrapProps);
 
 standard.args = standardProps;
 noWrap.args = noWrapProps;
-

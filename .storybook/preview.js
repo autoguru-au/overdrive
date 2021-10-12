@@ -1,7 +1,5 @@
 import '@autoguru/overdrive/lib/reset/globalFonts.css';
 import '@autoguru/overdrive/reset';
-
-import { addDecorator } from '@storybook/react';
 import * as themes from '../packages/overdrive/themes';
 import isChromatic from 'chromatic/isChromatic';
 import { Box, Heading, OverdriveProvider, Stack } from '@autoguru/overdrive';

@@ -8,10 +8,6 @@ import { Text } from '../Text';
 
 import { CheckBox } from '.';
 
-const checkedFn = () => ({
-	checked: boolean('checked', false),
-});
-
 export default {
 	title: 'Components/Inputs/CheckBox',
 	component: CheckBox,
@@ -75,7 +71,7 @@ list.args = {
 	coconut: true,
 	strawberries: false,
 };
-const Template = (args) => (<CheckBox {...args} />);
+const Template = (args) => <CheckBox {...args} />;
 
 const uncheckedProps: ComponentProps<typeof CheckBox> = {
 	checked: false,
@@ -109,7 +105,8 @@ const multipleLinesProps: ComponentProps<typeof CheckBox> = {
 	checked: false,
 	disabled: false,
 	name: 'check-name',
-	children: 'There is a very good reason why this thing is a multi-line, sometimes we need to show people a lot of things. And thus this exists.',
+	children:
+		'There is a very good reason why this thing is a multi-line, sometimes we need to show people a lot of things. And thus this exists.',
 	value: '1',
 };
 
@@ -129,7 +126,7 @@ const withComponentProps: ComponentProps<typeof CheckBox> = {
 	checked: false,
 	disabled: false,
 	name: 'check-name',
-	children: (<Item label='Cherries' rating='4.3' />),
+	children: <Item label="Cherries" rating="4.3" />,
 	value: '1',
 };
 
@@ -137,26 +134,28 @@ const withMultiLineComponentProps: ComponentProps<typeof CheckBox> = {
 	checked: false,
 	disabled: false,
 	name: 'check-name',
-	children: (<div
-		style={{
-			display: 'grid',
-			gridGap: '8px',
-			gridTemplateColumns: '1fr auto auto',
-		}}>
-		<Heading is='h5'>Saved Credit Card</Heading>
-		<Badge colour='neutral' label='SUBSCRIBE' />
-		<Badge colour='neutral' label='AUTO TOP-UP' />
+	children: (
 		<div
 			style={{
-				gridColumn: '1/4',
 				display: 'grid',
 				gridGap: '8px',
-				gridTemplateColumns: '1fr auto',
+				gridTemplateColumns: '1fr auto auto',
 			}}>
-			<Text size={2}>Ending in 5678</Text>
-			<Text size={2}>Updated 12 Dec 2018</Text>
+			<Heading is="h5">Saved Credit Card</Heading>
+			<Badge colour="neutral" label="SUBSCRIBE" />
+			<Badge colour="neutral" label="AUTO TOP-UP" />
+			<div
+				style={{
+					gridColumn: '1/4',
+					display: 'grid',
+					gridGap: '8px',
+					gridTemplateColumns: '1fr auto',
+				}}>
+				<Text size={2}>Ending in 5678</Text>
+				<Text size={2}>Updated 12 Dec 2018</Text>
+			</div>
 		</div>
-	</div>),
+	),
 	value: '1',
 };
 
@@ -179,6 +178,8 @@ export const withComponent = Template.bind(withComponentProps);
 withComponent.args = withComponentProps;
 withComponent.argTypes = { children: { control: { disable: true } } };
 
-export const withMultiLineComponent = Template.bind(withMultiLineComponentProps);
+export const withMultiLineComponent = Template.bind(
+	withMultiLineComponentProps,
+);
 withMultiLineComponent.args = withMultiLineComponentProps;
 withMultiLineComponent.argTypes = { children: { control: { disable: true } } };

@@ -5,10 +5,12 @@ module.exports = {
 	},
 	// stories: ['../packages/overdrive/lib/**/stories.@(tsx|mdx)'],
 	stories: [
-		'../packages/overdrive/lib/components/Text/stories.tsx',
+		/*'../packages/overdrive/lib/components/Text/stories.tsx',*/
 		'../packages/overdrive/lib/components/Actions/stories.tsx',
 		'../packages/overdrive/lib/components/BulletText/stories.tsx',
 		'../packages/overdrive/lib/components/CheckBox/stories.tsx',
+		'../packages/overdrive/lib/components/DateInput/stories.tsx',
+		'../packages/overdrive/lib/components/Flyout/stories.tsx',
 	],
 	addons: [
 		{
@@ -16,11 +18,12 @@ module.exports = {
 			options: {
 				controls: true,
 				backgrounds: true,
-				//docs: true,
-				docs: false, // TODO: Fix this back
+				docs: true,
 			},
 		},
 		resolve('./.storybook/vanilla-extract'),
 		'@storybook/addon-a11y',
 	],
 };
+
+//https://github.com/storybookjs/storybook/blob/f9f3256a3c823cea2a882542575d71e085120b13/lib/components/src/controls/types.ts
