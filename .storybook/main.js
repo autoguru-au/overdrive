@@ -5,7 +5,7 @@ module.exports = {
 	},
 	// stories: ['../packages/overdrive/lib/**/stories.@(tsx|mdx)'],
 	stories: [
-		/*'../packages/overdrive/lib/components/Text/stories.tsx',*/
+		'../packages/overdrive/lib/components/Text/stories.tsx',
 		'../packages/overdrive/lib/components/Actions/stories.tsx',
 		'../packages/overdrive/lib/components/BulletText/stories.tsx',
 		'../packages/overdrive/lib/components/CheckBox/stories.tsx',

@@ -3,7 +3,11 @@ import { ComponentProps } from 'react';
 
 import { Heading } from '.';
 import { ArgTypes } from '@storybook/react';
+import { Text } from '../Text';
 
+const noWrapOptions: Array<ComponentProps<typeof Heading>['noWrap']> = [false, true];
+const transformOptions: Array<ComponentProps<typeof Text>['transform']> = ['uppercase', 'capitalize', undefined];
+const weightOptions: Array<ComponentProps<typeof Text>['fontWeight']> = ['normal', 'semiBold', 'bold'];
 const headingTypeOptions: Array<ComponentProps<typeof Heading>['is']> = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
 const sizeScale: Array<ComponentProps<typeof Heading>['size']> = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 const alignOptions: Array<ComponentProps<typeof Heading>['align']> = ['left', 'center', 'right'];
@@ -40,6 +44,27 @@ const AllColoursTemplate = (args) => (
 );
 
 const sharedArgTypes: ArgTypes = {
+	noWrap:{
+		options: noWrapOptions,
+		defaultValue: false,
+		control: {
+			type: 'boolean',
+		},
+	},
+	transform:{
+		options: transformOptions,
+		defaultValue: null,
+		control: {
+			type: 'select',
+		},
+	},
+	weight:{
+		options: weightOptions,
+		defaultValue: null,
+		control: {
+			type: 'select',
+		},
+	},
 	size: {
 		options: sizeScale,
 		defaultValue: void 0,

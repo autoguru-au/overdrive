@@ -1,30 +1,18 @@
-import { select } from '@storybook/addon-knobs';
 import * as React from 'react';
-
-import { Stack } from '../Stack';
+import { ComponentProps } from 'react';
 
 import { Text } from '.';
+import { Heading } from '../Heading';
+import { ArgTypes } from '@storybook/react';
 
-const sizeScale = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
-const alignOptions: ['left', 'center', 'right'] = ['left', 'center', 'right'];
-const fontWeightOptions = ['normal', 'semiBold', 'bold'];
-const colourOptions = [
-	'dark',
-	'white',
-	'muted',
-	'light',
-	'danger',
-	'warning',
-	'success',
-	'information',
-];
+const textTypeOptions: Array<ComponentProps<typeof Text>['is']> = ['span', 'p'];
+const noWrapOptions: Array<ComponentProps<typeof Heading>['noWrap']> = [false, true];
+const transformOptions: Array<ComponentProps<typeof Text>['transform']> = ['uppercase', 'capitalize', undefined];
+const weightOptions: Array<ComponentProps<typeof Text>['fontWeight']> = ['normal', 'semiBold', 'bold'];
+const sizeScale: Array<ComponentProps<typeof Text>['size']> = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
+const alignOptions: Array<ComponentProps<typeof Text>['align']> = ['left', 'center', 'right'];
+const colourOptions: Array<ComponentProps<typeof Text>['colour']> = ['dark', 'light', 'neutral', 'primary', 'secondary', 'white', 'information', 'link', 'success', 'danger', 'warning', 'shine'];
 
-const baseProps = () => ({
-	size: select('Size', sizeScale, '4'),
-	align: select('align', alignOptions, 'left'),
-	colour: select('Colour', colourOptions, 'dark'),
-	fontWeight: select('Font Weight', fontWeightOptions, 'normal'),
-});
 
 export default {
 	title: 'Foundation/Typography/Text',
@@ -32,45 +20,122 @@ export default {
 	decorators: [],
 };
 
-export const standard = () => <Text {...baseProps()}>Hello World</Text>;
-export const asParagraph = () => (
-	<Text is="p" {...baseProps()}>
-		To avoid you coming to a halt in the middle of the road, because of a
-		banging, crash of pistons and valves fighting with each other, let's
-		investigate what the timing belt is, what it does, and why it costs so
-		much to replace or repair.
-	</Text>
+
+const Template = (args) => (
+	<div style={{ maxWidth: '350px', width: '100%' }}><Text {...args} /></div>
 );
 
-export const allSpans = () => (
-	<>
-		{sizeScale.map((size) => (
-			<div key={size} style={{ marginBottom: '20px' }}>
-				<Text is="span" size={size}>
-					Size {size}: Help people better care for their cars
-				</Text>
+const AllTypesTemplate = (args) => (
+	<div style={{ maxWidth: '350px', width: '100%' }}>
+		{textTypeOptions.map(is => (
+			<Text key={is} {...args} is={is} />
+		))}
+	</div>
+);
+
+const AllSizesTemplate = (args) => (
+	<div style={{ maxWidth: '350px', width: '100%' }}>
+		{sizeScale.map(size => (
+			<Text key={size} {...args} size={size} />
+		))}
+	</div>
+);
+
+const AllColoursTemplate = (args) => (
+	<div style={{ maxWidth: '350px', width: '100%' }}>
+		{colourOptions.map(colour => (
+			<div style={{ marginBottom: 8 }}>
+				{sizeScale.map((size, index) => (
+					<Text key={`${size}-${index}`} {...args} colour={colour} size={size} />
+				))}
 			</div>
 		))}
-	</>
+	</div>
 );
 
-export const allParagraphs = () => (
-	<>
-		{sizeScale.map((size) => (
-			<div key={size} style={{ marginBottom: '20px' }}>
-				<Text is="p" size={size}>
-					Size {size}: Help people better care for their cars
-				</Text>
-			</div>
-		))}
-	</>
-);
+const sharedArgTypes: ArgTypes = {
+	noWrap: {
+		options: noWrapOptions,
+		defaultValue: false,
+		control: {
+			type: 'boolean',
+		},
+	},
+	transform: {
+		options: transformOptions,
+		defaultValue: null,
+		control: {
+			type: 'select',
+		},
+	},
+	weight: {
+		options: weightOptions,
+		defaultValue: null,
+		control: {
+			type: 'select',
+		},
+	},
+	size: {
+		options: sizeScale,
+		defaultValue: void 0,
+		control: {
+			type: 'select',
+		},
+	},
+	align: {
+		options: alignOptions,
+		defaultValue: 'left',
+		control: {
+			type: 'select',
+		},
+	},
+};
+const colourArgTypes: ArgTypes = {
+	colour: {
+		options: colourOptions,
+		defaultValue: void 0,
+		control: {
+			type: 'select',
+		},
+	},
+};
+const argTypes: ArgTypes = {
+	...sharedArgTypes,
+	...colourArgTypes,
+	is: {
+		options: textTypeOptions,
+		defaultValue: 'span',
+		table: {
+			type: { summary: 'text' },
+			defaultValue: 'span',
+		},
+		description: 'HTML text tag to be used',
+		control: {
+			type: 'select',
+		},
+	},
+};
 
-export const spansWithTransform = () => (
-	<Stack>
-		<Text>
-			This text <Text transform="uppercase">here</Text> should be
-			uppercase.
-		</Text>
-	</Stack>
-);
+const standardProps: ComponentProps<typeof Heading> = {
+	is: 'span',
+	children: 'Help people better care for their cars',
+};
+const allTypesProps: ComponentProps<typeof Heading> = {
+	children: 'To avoid you coming to a halt in the middle of the road, because of a banging, crash of pistons and valves fighting with each other, let investigate what the timing belt is, what it does, and why it costs so much to replace or repair.',
+};
+
+export const standard = Template.bind(standardProps);
+standard.args = standardProps;
+standard.argTypes = argTypes;
+
+export const allTypes = AllTypesTemplate.bind(allTypesProps);
+allTypes.args = allTypesProps;
+allTypes.argTypes = { ...sharedArgTypes, colourArgTypes };
+
+export const allSizes = AllSizesTemplate.bind(allTypesProps);
+allSizes.args = allTypesProps;
+allSizes.argTypes = argTypes;
+
+export const allColours = AllColoursTemplate.bind(allTypesProps);
+allColours.args = allTypesProps;
+allColours.argTypes = argTypes;
