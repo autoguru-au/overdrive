@@ -6,7 +6,10 @@ import { Positioner } from '../Positioner';
 
 export const Flyout: FunctionComponent<
 	ComponentPropsWithoutRef<typeof Positioner>
-> = ({ children, triggerRef, isOpen, alignment, triggerOffset, ...rest }) => (
+> = ({
+							  children,
+							  triggerRef,
+							  isOpen, alignment, triggerOffset, ...rest }) => (
 	<Positioner
 		triggerRef={triggerRef}
 		isOpen={isOpen}

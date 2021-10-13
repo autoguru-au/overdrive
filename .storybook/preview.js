@@ -4,6 +4,8 @@ import * as themes from '../packages/overdrive/themes';
 import isChromatic from 'chromatic/isChromatic';
 import { Box, Heading, OverdriveProvider, Stack } from '@autoguru/overdrive';
 import * as React from 'react';
+import { addParameters } from '@storybook/react';
+import { DocsPage, DocsContainer } from '@storybook/addon-docs';
 
 const withThemeProvider = (Story, context) => {
 	return !isChromatic() ? (
@@ -55,11 +57,15 @@ export const globalTypes = {
 	},
 };
 
-export const parameters = {
+addParameters({
+	docs: {
+		container: DocsContainer,
+		page: DocsPage,
+	},
 	chromatic: {
 		// Mobile and large table and up
 		viewports: [320, 1024],
 	},
-};
+});
 
 export const decorators = [withThemeProvider];

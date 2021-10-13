@@ -14,8 +14,9 @@
 		"playroom:build": "playroom build",
 		"release": "changeset publish",
 		"start": "concurrently -k \"playroom\" \"yarn:storybook\"",
-		"storybook": "start-storybook -p 6006",
-		"storybook:build": "build-storybook",
+    "storybook:extract": "npx sb extract",
+		"storybook": "start-storybook -p 6006 -s ./storybook-static &&  yarn run storybook:extract",
+		"storybook:build": "build-storybook && yarn run storybook:extract",
 		"test": "jest"
 	},
 	"browserslist": "extends browserslist-config-autoguru",
