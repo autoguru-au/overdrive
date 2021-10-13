@@ -27,14 +27,19 @@ const AllTypesTemplate = (args) => (
 	</div>
 );
 
+const AllColoursTemplate = (args) => (
+	<div style={{ maxWidth: '350px', width: '100%' }}>
+		{colourOptions.map(colour => (
+			<div style={{marginBottom: 8}}>
+				{headingTypeOptions.map((is, index)=> (
+					<Heading key={`${is}-${index}`} {...args} colour={colour} is={is} />
+				))}
+			</div>
+		))}
+	</div>
+);
+
 const sharedArgTypes: ArgTypes = {
-	colour: {
-		options: colourOptions,
-		defaultValue: void 0,
-		control: {
-			type: 'select',
-		},
-	},
 	size: {
 		options: sizeScale,
 		defaultValue: void 0,
@@ -50,8 +55,18 @@ const sharedArgTypes: ArgTypes = {
 		},
 	},
 };
+const colourArgTypes: ArgTypes = {
+	colour: {
+		options: colourOptions,
+		defaultValue: void 0,
+		control: {
+			type: 'select',
+		},
+	},
+};
 const argTypes: ArgTypes = {
 	...sharedArgTypes,
+	...colourArgTypes,
 	is: {
 		options: headingTypeOptions,
 		defaultValue: 'h1',
@@ -79,4 +94,8 @@ standard.argTypes = argTypes;
 
 export const allTypes = AllTypesTemplate.bind(allTypesProps);
 allTypes.args = allTypesProps;
-allTypes.argTypes = sharedArgTypes;
+allTypes.argTypes = { ...sharedArgTypes, colourArgTypes };
+
+export const allColours = AllColoursTemplate.bind(allTypesProps);
+allColours.args = allTypesProps;
+allColours.argTypes = sharedArgTypes;

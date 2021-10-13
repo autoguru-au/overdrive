@@ -19,7 +19,7 @@ module.exports = {
 			options: {
 				controls: true,
 				backgrounds: true,
-				docs: false,
+				docs: false // TODO: Fix this back on,
 			},
 		},
 		resolve('./.storybook/vanilla-extract'),
