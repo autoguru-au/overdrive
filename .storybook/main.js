@@ -14,6 +14,7 @@ module.exports = {
 		'../packages/overdrive/lib/components/Heading/stories.tsx',
 		'../packages/overdrive/lib/components/Modal/stories.tsx',
 		'../packages/overdrive/lib/components/NumberInput/stories.tsx',
+		'../packages/overdrive/lib/components/TextInput/stories.tsx',
 	],
 	addons: [
 		{

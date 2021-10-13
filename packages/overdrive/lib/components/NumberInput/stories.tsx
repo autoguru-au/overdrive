@@ -2,7 +2,7 @@ import {
 	AccountEditIcon,
 	AlertCircleIcon,
 	CalendarIcon,
-	CarMultipleIcon,
+	CarMultipleIcon, CheckIcon,
 	CurrencyUsdIcon,
 	PlusIcon,
 	StarIcon,
@@ -29,7 +29,7 @@ const defaultPlaceholder = 'How many?';
 const iconOptions = {
 	CalendarIcon, AccountEditIcon, AlertCircleIcon, CarMultipleIcon, CurrencyUsdIcon,
 	PlusIcon,
-	StarIcon,
+	StarIcon,CheckIcon,
 };
 
 const argTypes: ArgTypes = {
@@ -61,7 +61,7 @@ const Template = (args) => <NumberInput {...args} />;
 const sharedProps: ComponentProps<typeof NumberInput> = {
 	disabled: false,
 	name: 'number',
-	placeholder: 'Placeholder',
+	placeholder: defaultPlaceholder,
 	isValid: false,
 	isTouched: false,
 	isLoading: false,
