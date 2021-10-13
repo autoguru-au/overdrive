@@ -32,6 +32,7 @@ const Template: FunctionComponent<typeof sharedProps> = ({
 			style={{
 				height: '100vh',
 				widht: '100vw',
+				maxHeight: '350px',
 			}}
 			display="flex"
 			alignItems="center"
@@ -79,13 +80,14 @@ const argTypes: ArgTypes = {
 	},
 };
 
-export const Closed = Template.bind(sharedProps);
-
-Closed.args = sharedProps;
-Closed.argTypes = argTypes;
 
 const openProps = { ...sharedProps, isOpen: true };
 export const Open = Template.bind(openProps);
 
 Open.args = openProps;
 Open.argTypes = argTypes;
+
+export const Closed = Template.bind(sharedProps);
+
+Closed.args = sharedProps;
+Closed.argTypes = argTypes;

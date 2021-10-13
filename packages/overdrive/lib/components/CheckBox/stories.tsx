@@ -41,28 +41,22 @@ const listData: Array<{ label: string; value: string }> = [
 	},
 ];
 
-export const list = ({ disabled, ...args }) => {
-	const Example = () => {
-		return (
-			<>
-				{listData.map((item: { label: string; value: string }) => {
-					return (
-						<CheckBox
-							key={item.value}
-							disabled={disabled}
-							children={item.label}
-							value={item.value}
-							name={`want-${item.value}`}
-							checked={args[item.value]}
-						/>
-					);
-				})}
-			</>
-		);
-	};
-
-	return <Example />;
-};
+export const list = ({ disabled, ...args }) => (
+	<>
+		{listData.map((item: { label: string; value: string }) => {
+			return (
+				<CheckBox
+					key={item.value}
+					disabled={disabled}
+					children={item.label}
+					value={item.value}
+					name={`want-${item.value}`}
+					checked={args[item.value]}
+				/>
+			);
+		})}
+	</>
+);
 list.args = {
 	disabled: false,
 	avocado: true,

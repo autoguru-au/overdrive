@@ -1,51 +1,82 @@
-import { select } from '@storybook/addon-knobs';
 import * as React from 'react';
+import { ComponentProps } from 'react';
 
 import { Heading } from '.';
+import { ArgTypes } from '@storybook/react';
 
-const sizeScale = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
-const alignOptions: ['left', 'center', 'right'] = ['left', 'center', 'right'];
-const colourOptions = [
-	'dark',
-	'white',
-	'light',
-	'danger',
-	'warning',
-	'success',
-	'information',
-];
-
-const baseProps = () => ({
-	size: select('Size', sizeScale, '4'),
-	align: select('align', alignOptions, 'left'),
-	colour: select('Colour', colourOptions, 'dark'),
-});
+const headingTypeOptions: Array<ComponentProps<typeof Heading>['is']> = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+const sizeScale: Array<ComponentProps<typeof Heading>['size']> = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
+const alignOptions: Array<ComponentProps<typeof Heading>['align']> = ['left', 'center', 'right'];
+const colourOptions: Array<ComponentProps<typeof Heading>['colour']> = ['dark', 'light', 'neutral', 'primary', 'secondary', 'white', 'information', 'link', 'success', 'danger', 'warning', 'shine'];
 
 export default {
 	title: 'Foundation/Typography/Heading',
 	component: Heading,
-	decorators: [
-		(story) => (
-			<div style={{ maxWidth: '350px', width: '100%' }}>{story()}</div>
-		),
-	],
 };
 
-export const standard = () => (
-	<Heading
-		is={select('Tag', ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'], 'h1')}
-		{...baseProps()}>
-		Hello World
-	</Heading>
+
+const Template = (args) => (
+	<div style={{ maxWidth: '350px', width: '100%' }}><Heading {...args} /></div>
 );
 
-export const allSizes = () => (
-	<div>
-		<Heading is="h6">I am a heading</Heading>
-		<Heading is="h5">I am a heading</Heading>
-		<Heading is="h4">I am a heading</Heading>
-		<Heading is="h3">I am a heading</Heading>
-		<Heading is="h2">I am a heading</Heading>
-		<Heading is="h1">I am a heading</Heading>
+const AllTypesTemplate = (args) => (
+	<div style={{ maxWidth: '350px', width: '100%' }}>
+		{headingTypeOptions.map(is => (
+			<Heading key={is} {...args} is={is} />
+		))}
 	</div>
 );
+
+const sharedArgTypes: ArgTypes = {
+	colour: {
+		options: colourOptions,
+		defaultValue: void 0,
+		control: {
+			type: 'select',
+		},
+	},
+	size: {
+		options: sizeScale,
+		defaultValue: void 0,
+		control: {
+			type: 'select',
+		},
+	},
+	align: {
+		options: alignOptions,
+		defaultValue: 'left',
+		control: {
+			type: 'select',
+		},
+	},
+};
+const argTypes: ArgTypes = {
+	...sharedArgTypes,
+	is: {
+		options: headingTypeOptions,
+		defaultValue: 'h1',
+		table: {
+			type: { summary: 'heading' },
+			defaultValue: 'h1',
+		},
+		description: 'HTML heading tag to be used',
+		control: {
+			type: 'select',
+		},
+	},
+};
+
+const standardProps: ComponentProps<typeof Heading> = {
+	is: 'h1',
+	children: 'I am a heading',
+};
+const allTypesProps: ComponentProps<typeof Heading> = {
+	children: 'I am a heading',
+};
+export const standard = Template.bind(standardProps);
+standard.args = standardProps;
+standard.argTypes = argTypes;
+
+export const allTypes = AllTypesTemplate.bind(allTypesProps);
+allTypes.args = allTypesProps;
+allTypes.argTypes = sharedArgTypes;

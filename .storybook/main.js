@@ -11,6 +11,7 @@ module.exports = {
 		'../packages/overdrive/lib/components/CheckBox/stories.tsx',
 		'../packages/overdrive/lib/components/DateInput/stories.tsx',
 		'../packages/overdrive/lib/components/Flyout/stories.tsx',
+		'../packages/overdrive/lib/components/Heading/stories.tsx',
 	],
 	addons: [
 		{
@@ -18,7 +19,7 @@ module.exports = {
 			options: {
 				controls: true,
 				backgrounds: true,
-				docs: true,
+				docs: false,
 			},
 		},
 		resolve('./.storybook/vanilla-extract'),
