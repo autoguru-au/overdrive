@@ -4,9 +4,15 @@ import * as React from 'react';
 import { ComponentProps } from 'react';
 
 import { DateInput } from '.';
-import { AccountEditIcon, AlertCircleIcon, CalendarIcon, CarMultipleIcon } from '@autoguru/icons';
+import {
+	AccountEditIcon,
+	AlertCircleIcon,
+	CalendarIcon,
+	CarMultipleIcon,
+	CurrencyUsdIcon,
+	PlusIcon, StarIcon,
+} from '@autoguru/icons';
 import { ArgTypes, Meta } from '@storybook/react';
-import { alert } from '../Toaster/Toast.treat';
 
 const formatDate = (date: Date = new Date()) => {
 	const year = date.getFullYear();
@@ -26,7 +32,9 @@ export default {
 	parameters: { chromatic: { delay: 300 } },
 } as Meta<typeof sharedProps>;
 
-const iconOptions = { CalendarIcon, AccountEditIcon, AlertCircleIcon, CarMultipleIcon }
+const iconOptions = { CalendarIcon, AccountEditIcon, AlertCircleIcon, CarMultipleIcon ,CurrencyUsdIcon,
+	PlusIcon,
+	StarIcon,}
 
 const argTypes: ArgTypes = {
 	value: {
