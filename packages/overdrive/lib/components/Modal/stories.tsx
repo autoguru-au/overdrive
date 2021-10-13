@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions';
-import { boolean } from '@storybook/addon-knobs';
 import * as React from 'react';
 import { useCallback, useState } from 'react';
 
@@ -22,15 +21,22 @@ export default {
 	},
 };
 
-export const Standard = () => (
+const Template = (args) => (
 	<Modal
-		isOpen={boolean('isOpen', true)}
-		onRequestClose={action('onRequestClose')}>
+		{...args}>
 		<Body>
 			<p>Hello, I am a modal body!</p>
 		</Body>
 	</Modal>
 );
+
+const standardProps = {
+	isOpen: true,
+	onRequestClose: action('onRequestClose'),
+};
+
+export const standard = Template.bind(standardProps);
+standard.args = standardProps;
 
 export const TriggeredWithAButton = () => {
 	const [isOpen, setIsOpen] = useState(false);

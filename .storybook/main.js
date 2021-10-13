@@ -12,6 +12,7 @@ module.exports = {
 		'../packages/overdrive/lib/components/DateInput/stories.tsx',
 		'../packages/overdrive/lib/components/Flyout/stories.tsx',
 		'../packages/overdrive/lib/components/Heading/stories.tsx',
+		'../packages/overdrive/lib/components/Modal/stories.tsx',
 	],
 	addons: [
 		{
