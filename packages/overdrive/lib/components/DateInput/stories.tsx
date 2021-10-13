@@ -10,7 +10,8 @@ import {
 	CalendarIcon,
 	CarMultipleIcon,
 	CurrencyUsdIcon,
-	PlusIcon, StarIcon,
+	PlusIcon,
+	StarIcon,
 } from '@autoguru/icons';
 import { ArgTypes, Meta } from '@storybook/react';
 
@@ -32,9 +33,15 @@ export default {
 	parameters: { chromatic: { delay: 300 } },
 } as Meta<typeof sharedProps>;
 
-const iconOptions = { CalendarIcon, AccountEditIcon, AlertCircleIcon, CarMultipleIcon ,CurrencyUsdIcon,
+const iconOptions = {
+	CalendarIcon,
+	AccountEditIcon,
+	AlertCircleIcon,
+	CarMultipleIcon,
+	CurrencyUsdIcon,
 	PlusIcon,
-	StarIcon,}
+	StarIcon,
+};
 
 const argTypes: ArgTypes = {
 	value: {

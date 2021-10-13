@@ -6,13 +6,50 @@ import { Heading } from '../Heading';
 import { ArgTypes } from '@storybook/react';
 
 const textTypeOptions: Array<ComponentProps<typeof Text>['is']> = ['span', 'p'];
-const noWrapOptions: Array<ComponentProps<typeof Heading>['noWrap']> = [false, true];
-const transformOptions: Array<ComponentProps<typeof Text>['transform']> = ['uppercase', 'capitalize', undefined];
-const weightOptions: Array<ComponentProps<typeof Text>['fontWeight']> = ['normal', 'semiBold', 'bold'];
-const sizeScale: Array<ComponentProps<typeof Text>['size']> = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
-const alignOptions: Array<ComponentProps<typeof Text>['align']> = ['left', 'center', 'right'];
-const colourOptions: Array<ComponentProps<typeof Text>['colour']> = ['dark', 'light', 'neutral', 'primary', 'secondary', 'white', 'information', 'link', 'success', 'danger', 'warning', 'shine'];
-
+const noWrapOptions: Array<ComponentProps<typeof Heading>['noWrap']> = [
+	false,
+	true,
+];
+const transformOptions: Array<ComponentProps<typeof Text>['transform']> = [
+	'uppercase',
+	'capitalize',
+	undefined,
+];
+const weightOptions: Array<ComponentProps<typeof Text>['fontWeight']> = [
+	'normal',
+	'semiBold',
+	'bold',
+];
+const sizeScale: Array<ComponentProps<typeof Text>['size']> = [
+	'1',
+	'2',
+	'3',
+	'4',
+	'5',
+	'6',
+	'7',
+	'8',
+	'9',
+];
+const alignOptions: Array<ComponentProps<typeof Text>['align']> = [
+	'left',
+	'center',
+	'right',
+];
+const colourOptions: Array<ComponentProps<typeof Text>['colour']> = [
+	'dark',
+	'light',
+	'neutral',
+	'primary',
+	'secondary',
+	'white',
+	'information',
+	'link',
+	'success',
+	'danger',
+	'warning',
+	'shine',
+];
 
 export default {
 	title: 'Foundation/Typography/Text',
@@ -20,14 +57,15 @@ export default {
 	decorators: [],
 };
 
-
 const Template = (args) => (
-	<div style={{ maxWidth: '350px', width: '100%' }}><Text {...args} /></div>
+	<div style={{ maxWidth: '350px', width: '100%' }}>
+		<Text {...args} />
+	</div>
 );
 
 const AllTypesTemplate = (args) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>
-		{textTypeOptions.map(is => (
+		{textTypeOptions.map((is) => (
 			<Text key={is} {...args} is={is} />
 		))}
 	</div>
@@ -35,7 +73,7 @@ const AllTypesTemplate = (args) => (
 
 const AllSizesTemplate = (args) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>
-		{sizeScale.map(size => (
+		{sizeScale.map((size) => (
 			<Text key={size} {...args} size={size} />
 		))}
 	</div>
@@ -43,10 +81,15 @@ const AllSizesTemplate = (args) => (
 
 const AllColoursTemplate = (args) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>
-		{colourOptions.map(colour => (
+		{colourOptions.map((colour) => (
 			<div style={{ marginBottom: 8 }}>
 				{sizeScale.map((size, index) => (
-					<Text key={`${size}-${index}`} {...args} colour={colour} size={size} />
+					<Text
+						key={`${size}-${index}`}
+						{...args}
+						colour={colour}
+						size={size}
+					/>
 				))}
 			</div>
 		))}
@@ -121,7 +164,8 @@ const standardProps: ComponentProps<typeof Heading> = {
 	children: 'Help people better care for their cars',
 };
 const allTypesProps: ComponentProps<typeof Heading> = {
-	children: 'To avoid you coming to a halt in the middle of the road, because of a banging, crash of pistons and valves fighting with each other, let investigate what the timing belt is, what it does, and why it costs so much to replace or repair.',
+	children:
+		'To avoid you coming to a halt in the middle of the road, because of a banging, crash of pistons and valves fighting with each other, let investigate what the timing belt is, what it does, and why it costs so much to replace or repair.',
 };
 
 export const standard = Template.bind(standardProps);

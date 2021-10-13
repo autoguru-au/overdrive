@@ -1,7 +1,5 @@
-import { action } from '@storybook/addon-actions';
-import { text } from '@storybook/addon-knobs';
 import * as React from 'react';
-import { useState } from 'react';
+import { ComponentProps } from 'react';
 
 import { Badge } from '../Badge';
 import { Heading } from '../Heading';
@@ -9,11 +7,7 @@ import { StarRating } from '../StarRating';
 import { Text } from '../Text';
 
 import { Radio, RadioGroup } from '.';
-
-const baseProps = () => ({
-	children: text('Checkbox label', 'check me!'),
-	onChange: action('onChange'),
-});
+import { ArgTypes } from '@storybook/react';
 
 export default {
 	title: 'Components/Inputs/Radio',
@@ -25,133 +19,177 @@ export default {
 	],
 };
 
-export const standard = () => {
-	const Example = () => {
-		const [value, setValue] = useState('holden');
+const listData: Array<{ label: string; value: string }> = [
+	{
+		label: 'Avocado',
+		value: 'avocado',
+	},
+	{
+		label: 'Blueberries',
+		value: 'blueberries',
+	},
+	{
+		label: 'Cherries',
+		value: 'cherries',
+	},
+	{
+		label: 'Coconut',
+		value: 'coconut',
+	},
+	{
+		label: 'Strawberries',
+		value: 'strawberries',
+	},
+];
 
-		const onChangeHandler = (val) => {
-			action('onChange')(val);
-			setValue(val);
-		};
-
-		return (
-			<RadioGroup name="make" value={value} onChange={onChangeHandler}>
-				<Radio children="Subaru" value="subaru" />
-				<Radio children="Kia" value="kia" />
-				<Radio children="Toyota" value="toyota" />
-				<Radio children="Holden" value="holden" />
-				<Radio children="Ford" value="ford" />
-			</RadioGroup>
-		);
-	};
-
-	return <Example />;
+const argTypes: ArgTypes = {
+	value: {
+		options: [
+			'avocado',
+			'blueberries',
+			'cherries',
+			'coconut',
+			'strawberries',
+		],
+		defaultValue: null,
+		control: {
+			type: 'select',
+		},
+	},
 };
 
-export const unchecked = () => (
-	<RadioGroup name="radio-story">
-		<Radio value="1" {...baseProps()} />
+export const list = ({ value, ...args }) => (
+	<RadioGroup value={value} name="favourite fruit">
+		{listData.map((item: { label: string; value: string }) => {
+			return (
+				<Radio
+					key={item.value}
+					children={item.label}
+					value={item.value}
+					{...args}
+				/>
+			);
+		})}
+	</RadioGroup>
+);
+list.args = {
+	value: 'avocado',
+	disabled: false,
+};
+list.argTypes = argTypes;
+
+const Template = ({ value, ...args }) => (
+	<RadioGroup value={value} name="favourite fruit">
+		<Radio value="avocado" {...args} />
 	</RadioGroup>
 );
 
-export const checked = () => (
-	<RadioGroup name="radio-story" value="1">
-		<Radio value="1" {...baseProps()} />
-	</RadioGroup>
+const uncheckedProps: ComponentProps<typeof Radio> = {
+	disabled: false,
+	children: 'check me!',
+	value: 'berry',
+};
+const checkedProps: ComponentProps<typeof Radio> = {
+	checked: true,
+	disabled: false,
+	children: 'check me!',
+	value: 'avocado',
+};
+const disabledProps: ComponentProps<typeof Radio> = {
+	disabled: true,
+	children: 'check me!',
+	value: 'berry',
+};
+const disabledCheckedProps: ComponentProps<typeof Radio> = {
+	checked: true,
+	disabled: true,
+	children: 'check me!',
+	value: 'avocado',
+};
+const multipleLinesProps: ComponentProps<typeof Radio> = {
+	disabled: false,
+	children:
+		'There is a very good reason why this thing is a multi-line, sometimes we need to show people a lot of things. And thus this exists.',
+	value: 'berry',
+};
+
+const Item = ({ label, rating }) => (
+	<div
+		style={{
+			display: 'grid',
+			gridGap: '8px',
+			gridTemplateColumns: '1fr auto',
+		}}>
+		<Text>{label}</Text>
+		<StarRating rating={rating} />
+	</div>
 );
 
-export const disabled = () => (
-	<RadioGroup name="radio-story">
-		<Radio disabled value="1" {...baseProps()} />
-	</RadioGroup>
-);
+const withComponentProps: ComponentProps<typeof Radio> = {
+	disabled: false,
+	children: <Item label="Avocados" rating="4.3" />,
+	value: 'berry',
+};
 
-export const multipleLines = () => (
-	<RadioGroup name="radio-story">
-		<Radio
-			children="There is a very good reason why this thing is a multi-line, sometimes we need to show people a lot of things. And thus this exists."
-			value="1"
-		/>
-		<Radio children="Oh, and it also works when mixed." value="2" />
-	</RadioGroup>
-);
-
-export const withComponent = () => {
-	const Item = ({ label, rating }) => (
+const withMultiLineComponentProps: ComponentProps<typeof Radio> = {
+	disabled: false,
+	children: (
 		<div
 			style={{
 				display: 'grid',
 				gridGap: '8px',
-				gridTemplateColumns: '1fr auto',
+				gridTemplateColumns: '1fr auto auto',
 			}}>
-			<Text>{label}</Text>
-			<StarRating rating={rating} />
-		</div>
-	);
-
-	return (
-		<RadioGroup value="2" name="radio-story">
-			<Radio value="1">
-				<Item label="Cherries" rating="4.3" />
-			</Radio>
-			<Radio value="2">
-				<Item label="Berries" rating="4.8" />
-			</Radio>
-			<Radio value="3">
-				<Item label="Bananas" rating="1.8" />
-			</Radio>
-			<Radio value="3">
-				<Item label="Mangoes" rating="1.3" />
-			</Radio>
-			<Radio children="Any other fruit" value="4" />
-		</RadioGroup>
-	);
-};
-
-export const withMultiLineComponent = () => (
-	<RadioGroup value="2" name="radio-story">
-		<Radio value="1">
+			<Heading is="h5">Your last order</Heading>
+			<Badge colour="neutral" label="SUBSCRIBE" />
+			<Badge colour="neutral" label="AUTO TOP-UP" />
 			<div
 				style={{
-					display: 'grid',
-					gridGap: '8px',
-					gridTemplateColumns: '1fr auto auto',
-				}}>
-				<Heading is="h5">Saved Credit Card</Heading>
-				<Badge colour="neutral" label="SUBSCRIBE" />
-				<Badge colour="neutral" label="AUTO TOP-UP" />
-				<div
-					style={{
-						gridColumn: '1/4',
-						display: 'grid',
-						gridGap: '8px',
-						gridTemplateColumns: '1fr auto',
-					}}>
-					<Text size={2}>Ending in 5678</Text>
-					<Text size={2}>Updated 12 Dec 2018</Text>
-				</div>
-			</div>
-		</Radio>
-		<Radio value="2">
-			<div
-				style={{
+					gridColumn: '1/4',
 					display: 'grid',
 					gridGap: '8px',
 					gridTemplateColumns: '1fr auto',
 				}}>
-				<Heading is="h5">Saved Debit Card</Heading>
-				<Badge colour="neutral" label="SUBSCRIBE" />
-				<div
-					style={{
-						gridColumn: '1/4',
-						display: 'grid',
-						gridGap: '8px',
-						gridTemplateColumns: '1fr auto',
-					}}>
-					<Text size={2}>Ending in 1234</Text>
-					<Text size={2}>Updated 17 Oct 2019</Text>
-				</div>
+				<Text size={2}>Ending in 5678</Text>
+				<Text size={2}>Updated 12 Dec 2018</Text>
 			</div>
-		</Radio>
-	</RadioGroup>
+		</div>
+	),
+	value: '1',
+};
+
+export const unchecked = Template.bind(uncheckedProps);
+unchecked.args = uncheckedProps;
+unchecked.argTypes = argTypes;
+
+export const checked = Template.bind(checkedProps);
+checked.args = checkedProps;
+checked.argTypes = argTypes;
+
+export const disabled = Template.bind(disabledProps);
+disabled.args = disabledProps;
+disabled.argTypes = argTypes;
+
+export const disabledChecked = Template.bind(disabledCheckedProps);
+disabledChecked.args = disabledCheckedProps;
+disabledChecked.argTypes = argTypes;
+
+export const multipleLines = Template.bind(multipleLinesProps);
+multipleLines.args = multipleLinesProps;
+multipleLines.argTypes = argTypes;
+
+export const withComponent = Template.bind(withComponentProps);
+withComponent.args = withComponentProps;
+withComponent.argTypes = {
+	...argTypes,
+	children: { control: { disable: true } },
+};
+
+export const withMultiLineComponent = Template.bind(
+	withMultiLineComponentProps,
 );
+withMultiLineComponent.args = withMultiLineComponentProps;
+withMultiLineComponent.argTypes = {
+	...argTypes,
+	children: { control: { disable: true } },
+};

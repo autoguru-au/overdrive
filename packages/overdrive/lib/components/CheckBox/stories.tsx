@@ -120,7 +120,7 @@ const withComponentProps: ComponentProps<typeof CheckBox> = {
 	checked: false,
 	disabled: false,
 	name: 'check-name',
-	children: <Item label="Cherries" rating="4.3" />,
+	children: <Item label="Avocados" rating="4.3" />,
 	value: '1',
 };
 
@@ -135,7 +135,7 @@ const withMultiLineComponentProps: ComponentProps<typeof CheckBox> = {
 				gridGap: '8px',
 				gridTemplateColumns: '1fr auto auto',
 			}}>
-			<Heading is="h5">Saved Credit Card</Heading>
+			<Heading is="h5">Your last order</Heading>
 			<Badge colour="neutral" label="SUBSCRIBE" />
 			<Badge colour="neutral" label="AUTO TOP-UP" />
 			<div

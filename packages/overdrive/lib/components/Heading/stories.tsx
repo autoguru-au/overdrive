@@ -5,27 +5,73 @@ import { Heading } from '.';
 import { ArgTypes } from '@storybook/react';
 import { Text } from '../Text';
 
-const noWrapOptions: Array<ComponentProps<typeof Heading>['noWrap']> = [false, true];
-const transformOptions: Array<ComponentProps<typeof Text>['transform']> = ['uppercase', 'capitalize', undefined];
-const weightOptions: Array<ComponentProps<typeof Text>['fontWeight']> = ['normal', 'semiBold', 'bold'];
-const headingTypeOptions: Array<ComponentProps<typeof Heading>['is']> = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
-const sizeScale: Array<ComponentProps<typeof Heading>['size']> = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
-const alignOptions: Array<ComponentProps<typeof Heading>['align']> = ['left', 'center', 'right'];
-const colourOptions: Array<ComponentProps<typeof Heading>['colour']> = ['dark', 'light', 'neutral', 'primary', 'secondary', 'white', 'information', 'link', 'success', 'danger', 'warning', 'shine'];
+const noWrapOptions: Array<ComponentProps<typeof Heading>['noWrap']> = [
+	false,
+	true,
+];
+const transformOptions: Array<ComponentProps<typeof Text>['transform']> = [
+	'uppercase',
+	'capitalize',
+	undefined,
+];
+const weightOptions: Array<ComponentProps<typeof Text>['fontWeight']> = [
+	'normal',
+	'semiBold',
+	'bold',
+];
+const headingTypeOptions: Array<ComponentProps<typeof Heading>['is']> = [
+	'h1',
+	'h2',
+	'h3',
+	'h4',
+	'h5',
+	'h6',
+];
+const sizeScale: Array<ComponentProps<typeof Heading>['size']> = [
+	'1',
+	'2',
+	'3',
+	'4',
+	'5',
+	'6',
+	'7',
+	'8',
+	'9',
+];
+const alignOptions: Array<ComponentProps<typeof Heading>['align']> = [
+	'left',
+	'center',
+	'right',
+];
+const colourOptions: Array<ComponentProps<typeof Heading>['colour']> = [
+	'dark',
+	'light',
+	'neutral',
+	'primary',
+	'secondary',
+	'white',
+	'information',
+	'link',
+	'success',
+	'danger',
+	'warning',
+	'shine',
+];
 
 export default {
 	title: 'Foundation/Typography/Heading',
 	component: Heading,
 };
 
-
 const Template = (args) => (
-	<div style={{ maxWidth: '350px', width: '100%' }}><Heading {...args} /></div>
+	<div style={{ maxWidth: '350px', width: '100%' }}>
+		<Heading {...args} />
+	</div>
 );
 
 const AllTypesTemplate = (args) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>
-		{headingTypeOptions.map(is => (
+		{headingTypeOptions.map((is) => (
 			<Heading key={is} {...args} is={is} />
 		))}
 	</div>
@@ -33,10 +79,15 @@ const AllTypesTemplate = (args) => (
 
 const AllColoursTemplate = (args) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>
-		{colourOptions.map(colour => (
-			<div style={{marginBottom: 8}}>
-				{headingTypeOptions.map((is, index)=> (
-					<Heading key={`${is}-${index}`} {...args} colour={colour} is={is} />
+		{colourOptions.map((colour) => (
+			<div style={{ marginBottom: 8 }}>
+				{headingTypeOptions.map((is, index) => (
+					<Heading
+						key={`${is}-${index}`}
+						{...args}
+						colour={colour}
+						is={is}
+					/>
 				))}
 			</div>
 		))}
@@ -44,21 +95,21 @@ const AllColoursTemplate = (args) => (
 );
 
 const sharedArgTypes: ArgTypes = {
-	noWrap:{
+	noWrap: {
 		options: noWrapOptions,
 		defaultValue: false,
 		control: {
 			type: 'boolean',
 		},
 	},
-	transform:{
+	transform: {
 		options: transformOptions,
 		defaultValue: null,
 		control: {
 			type: 'select',
 		},
 	},
-	weight:{
+	weight: {
 		options: weightOptions,
 		defaultValue: null,
 		control: {

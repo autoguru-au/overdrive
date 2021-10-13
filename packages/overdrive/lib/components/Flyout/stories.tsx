@@ -80,7 +80,6 @@ const argTypes: ArgTypes = {
 	},
 };
 
-
 const openProps = { ...sharedProps, isOpen: true };
 export const Open = Template.bind(openProps);
 

@@ -22,8 +22,7 @@ export default {
 };
 
 const Template = (args) => (
-	<Modal
-		{...args}>
+	<Modal {...args}>
 		<Body>
 			<p>Hello, I am a modal body!</p>
 		</Body>

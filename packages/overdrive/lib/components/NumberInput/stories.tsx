@@ -2,7 +2,8 @@ import {
 	AccountEditIcon,
 	AlertCircleIcon,
 	CalendarIcon,
-	CarMultipleIcon, CheckIcon,
+	CarMultipleIcon,
+	CheckIcon,
 	CurrencyUsdIcon,
 	PlusIcon,
 	StarIcon,
@@ -27,9 +28,14 @@ const defaultValue = isChromatic() ? 42 : Math.round(Math.random() * 100);
 const defaultPlaceholder = 'How many?';
 
 const iconOptions = {
-	CalendarIcon, AccountEditIcon, AlertCircleIcon, CarMultipleIcon, CurrencyUsdIcon,
+	CalendarIcon,
+	AccountEditIcon,
+	AlertCircleIcon,
+	CarMultipleIcon,
+	CurrencyUsdIcon,
 	PlusIcon,
-	StarIcon,CheckIcon,
+	StarIcon,
+	CheckIcon,
 };
 
 const argTypes: ArgTypes = {

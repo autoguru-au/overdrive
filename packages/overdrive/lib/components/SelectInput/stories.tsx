@@ -31,12 +31,16 @@ export default {
 	},
 };
 
-
 const defaultValue = valueOptions[4];
 const defaultPlaceholder = 'What is the make of your car?';
 
 const iconOptions = {
-	CarIcon, CarMultipleIcon, CalendarIcon, AccountEditIcon, AlertCircleIcon, CarMultipleIcon, CurrencyUsdIcon,
+	CarIcon,
+	CarMultipleIcon,
+	CalendarIcon,
+	AccountEditIcon,
+	AlertCircleIcon,
+	CurrencyUsdIcon,
 	PlusIcon,
 	StarIcon,
 	CheckIcon,
@@ -62,9 +66,7 @@ const argTypes: ArgTypes = {
 
 const Template = (args) => (
 	<SelectInput {...args}>
-		<option disabled>
-			Select an option
-		</option>
+		<option disabled>Select an option</option>
 		{selectOptions}
 	</SelectInput>
 );

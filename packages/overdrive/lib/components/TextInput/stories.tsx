@@ -1,15 +1,19 @@
 import {
-	AccountEditIcon, AlertCircleIcon,
-	CalendarIcon, CarMultipleIcon,
-	CheckIcon, CurrencyUsdIcon, PlusIcon,
+	AccountEditIcon,
+	AlertCircleIcon,
+	CalendarIcon,
+	CarMultipleIcon,
+	CheckIcon,
+	CurrencyUsdIcon,
+	PlusIcon,
 	StarIcon,
 } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
+import { ComponentProps } from 'react';
 
 import { TextInput } from '.';
 import { ArgTypes } from '@storybook/react';
-import { ComponentProps } from 'react';
 
 export default {
 	title: 'Components/Inputs/Text',
@@ -19,15 +23,18 @@ export default {
 	},
 };
 
-
 const defaultValue = 'Jane Doe';
 const defaultPlaceholder = 'What is your first name?';
 
 const iconOptions = {
-	CalendarIcon, AccountEditIcon, AlertCircleIcon, CarMultipleIcon, CurrencyUsdIcon,
+	CalendarIcon,
+	AccountEditIcon,
+	AlertCircleIcon,
+	CarMultipleIcon,
+	CurrencyUsdIcon,
 	PlusIcon,
 	StarIcon,
-	CheckIcon
+	CheckIcon,
 };
 
 const argTypes: ArgTypes = {
@@ -59,7 +66,7 @@ const Template = (args) => <TextInput {...args} />;
 const sharedProps: ComponentProps<typeof TextInput> = {
 	disabled: false,
 	name: 'text',
-	placeholder:  defaultPlaceholder,
+	placeholder: defaultPlaceholder,
 	isValid: false,
 	isTouched: false,
 	isLoading: false,
