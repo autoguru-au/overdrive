@@ -4,8 +4,9 @@ import * as React from 'react';
 import { ComponentProps } from 'react';
 
 import { DateInput } from '.';
-import { AccountEditIcon, CalendarIcon } from '@autoguru/icons';
+import { AccountEditIcon, AlertCircleIcon, CalendarIcon, CarMultipleIcon } from '@autoguru/icons';
 import { ArgTypes, Meta } from '@storybook/react';
+import { alert } from '../Toaster/Toast.treat';
 
 const formatDate = (date: Date = new Date()) => {
 	const year = date.getFullYear();
@@ -25,6 +26,8 @@ export default {
 	parameters: { chromatic: { delay: 300 } },
 } as Meta<typeof sharedProps>;
 
+const iconOptions = { CalendarIcon, AccountEditIcon, AlertCircleIcon, CarMultipleIcon }
+
 const argTypes: ArgTypes = {
 	value: {
 		control: {
@@ -34,7 +37,7 @@ const argTypes: ArgTypes = {
 	prefixIcon: {
 		defaultValue: null,
 		description: 'Input prefix Icon',
-		options: { CalendarIcon, AccountEditIcon },
+		options: iconOptions,
 		control: {
 			type: 'select',
 		},
@@ -90,17 +93,27 @@ const validProps: ComponentProps<typeof DateInput> = {
 };
 const invalidProps: ComponentProps<typeof DateInput> = {
 	...sharedProps,
-	value: '12/10/2050',
+	value: '2050-10-13',
 	placeholder: 'What is your DOB?',
 	isTouched: true,
 	isValid: false,
 	hintText: 'Invalid date of birth',
 };
+const noNotchProps: ComponentProps<typeof DateInput> = {
+	...sharedProps,
+	placeholder: 'What is your DOB?',
+	notch: false,
+};
+const noNotchWithValueProps: ComponentProps<typeof DateInput> = {
+	...sharedProps,
+	value: todayStr,
+	placeholder: 'What is your DOB?',
+	notch: false,
+};
 const loadingProps: ComponentProps<typeof DateInput> = {
 	...sharedProps,
 	isLoading: true,
 };
-
 export const standard = Template.bind(standardProps);
 standard.args = standardProps;
 standard.argTypes = argTypes;
@@ -113,9 +126,17 @@ export const withHintText = Template.bind(withHintTextProps);
 withHintText.args = withHintTextProps;
 withHintText.argTypes = argTypes;
 
-export const withIcon = Template.bind(withIconProps);
-withIcon.args = withIconProps;
-withIcon.argTypes = argTypes;
+export const notchDisabled = Template.bind(noNotchProps);
+notchDisabled.args = noNotchProps;
+notchDisabled.argTypes = argTypes;
+
+export const notchDisabledWithValue = Template.bind(noNotchWithValueProps);
+notchDisabledWithValue.args = noNotchWithValueProps;
+notchDisabledWithValue.argTypes = argTypes;
+
+export const withPrefixIcon = Template.bind(withIconProps);
+withPrefixIcon.args = withIconProps;
+withPrefixIcon.argTypes = argTypes;
 
 export const disabled = Template.bind(disabledProps);
 disabled.args = disabledProps;
