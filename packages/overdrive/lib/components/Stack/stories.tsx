@@ -1,10 +1,10 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
 import { Text } from '../Text';
 
 import { Stack } from '.';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 const spacingOptions: ComponentProps<typeof Stack>['space'] = [
 	1,

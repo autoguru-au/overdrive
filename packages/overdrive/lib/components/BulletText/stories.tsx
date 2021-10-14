@@ -1,11 +1,11 @@
 import { CheckIcon } from '@autoguru/icons';
+import { ArgTypes } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
 import { Icon } from '../Icon';
 
 import { BulletText } from '.';
-import { ArgTypes } from '@storybook/react';
 
 export default {
 	title: 'Components/BulletText',

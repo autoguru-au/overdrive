@@ -9,12 +9,12 @@ import {
 	PlusIcon,
 	StarIcon,
 } from '@autoguru/icons';
+import { action } from '@storybook/addon-actions';
+import { ArgTypes } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
 import { SelectInput } from '.';
-import { ArgTypes } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 
 const valueOptions = ['Kia', 'Toyota', 'BMW', 'Mitsubishi', 'Hyundai'];
 const selectOptions = valueOptions.map((item) => (

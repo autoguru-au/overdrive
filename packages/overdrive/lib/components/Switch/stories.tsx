@@ -1,8 +1,8 @@
 import { action } from '@storybook/addon-actions';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 
 import { Switch } from '.';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
 	title: 'Components/Switch',

@@ -1,9 +1,11 @@
+import { action } from '@storybook/addon-actions';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 
-import { Pagination } from '.';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Box } from '../Box';
-import { action } from '@storybook/addon-actions';
+
+import { Pagination } from '.';
+
 
 export default {
 	title: 'Components/Pagination/Numbered',

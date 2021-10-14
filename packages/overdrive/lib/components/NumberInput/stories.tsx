@@ -9,12 +9,12 @@ import {
 	StarIcon,
 } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
+import { ArgTypes } from '@storybook/react';
+import isChromatic from 'chromatic/isChromatic';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
 import { NumberInput } from '.';
-import { ArgTypes } from '@storybook/react';
-import isChromatic from 'chromatic/isChromatic';
 
 export default {
 	title: 'Components/Inputs/Number',

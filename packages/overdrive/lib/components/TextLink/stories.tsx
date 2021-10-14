@@ -1,11 +1,11 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
+import { Heading } from '../Heading';
 import { Text } from '../Text';
 
 import { TextLink } from '.';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Heading } from '../Heading';
 
 const sizeScale = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 const alignOptions: ['left', 'center', 'right'] = ['left', 'center', 'right'];

@@ -1,8 +1,9 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 
-import { EStarRatingSize, StarRating } from '.';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Stack } from '../Stack';
+
+import { EStarRatingSize, StarRating } from '.';
 
 export default {
 	title: 'Components/StarRating',

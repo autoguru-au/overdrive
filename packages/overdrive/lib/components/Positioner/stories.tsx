@@ -1,3 +1,5 @@
+import { action } from '@storybook/addon-actions';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { useRef } from 'react';
 
@@ -5,10 +7,10 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
 
-import { Positioner } from '.';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import { EAlignment } from './alignment';
+
+import { Positioner } from '.';
+
 
 export default {
 	title: 'Utility/Positioner',

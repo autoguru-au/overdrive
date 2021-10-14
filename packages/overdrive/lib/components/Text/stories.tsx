@@ -1,9 +1,10 @@
+import { ArgTypes, ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
-import { Text } from '.';
 import { Heading } from '../Heading';
-import { ArgTypes, ComponentMeta, ComponentStory } from '@storybook/react';
+
+import { Text } from '.';
 
 const textTypeOptions: Array<ComponentProps<typeof Text>['is']> = ['span', 'p'];
 const noWrapOptions: Array<ComponentProps<typeof Heading>['noWrap']> = [
@@ -81,8 +82,8 @@ const AllSizesTemplate: ComponentStory<typeof Text> = (args) => (
 
 const AllColoursTemplate: ComponentStory<typeof Text> = (args) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>
-		{colourOptions.map((colour) => (
-			<div style={{ marginBottom: 8 }}>
+		{colourOptions.map((colour, index) => (
+			<div key={index} style={{ marginBottom: 8 }}>
 				{sizeScale.map((size, index) => (
 					<Text
 						key={`${size}-${index}`}

@@ -1,9 +1,3 @@
-import { action } from '@storybook/addon-actions';
-import isChromatic from 'chromatic/isChromatic';
-import * as React from 'react';
-import { ComponentProps } from 'react';
-
-import { DateInput } from '.';
 import {
 	AccountEditIcon,
 	AlertCircleIcon,
@@ -13,7 +7,13 @@ import {
 	PlusIcon,
 	StarIcon,
 } from '@autoguru/icons';
+import { action } from '@storybook/addon-actions';
 import { ArgTypes, Meta } from '@storybook/react';
+import isChromatic from 'chromatic/isChromatic';
+import * as React from 'react';
+import { ComponentProps } from 'react';
+
+import { DateInput } from '.';
 
 const formatDate = (date: Date = new Date()) => {
 	const year = date.getFullYear();

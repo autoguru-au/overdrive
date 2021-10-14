@@ -1,14 +1,15 @@
+import { action } from '@storybook/addon-actions';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps, useRef } from 'react';
 
+import { Box } from '../Box';
 import { Button } from '../Button';
 import { EAlignment } from '../Positioner/alignment';
 import { TextInput } from '../TextInput';
 
 import { Flyout } from '.';
-import { action } from '@storybook/addon-actions';
-import { Box } from '../Box';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+
 
 export default {
 	title: 'Components/Flyout',

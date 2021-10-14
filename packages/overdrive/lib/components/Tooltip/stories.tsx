@@ -1,10 +1,10 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 
+import { Positioner } from '../Positioner';
 import { EAlignment } from '../Positioner/alignment';
 
 import { Tooltip } from '.';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Positioner } from '../Positioner';
 
 export default {
 	title: 'Components/Tooltip',

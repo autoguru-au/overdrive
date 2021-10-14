@@ -1,9 +1,10 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
-import { Heading } from '.';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Text } from '../Text';
+
+import { Heading } from '.';
 
 const noWrapOptions: Array<ComponentProps<typeof Heading>['noWrap']> = [
 	false,
@@ -135,8 +136,8 @@ const AllTypesTemplate: ComponentStory<typeof Heading> = (args) => (
 
 const AllColoursTemplate: ComponentStory<typeof Heading> = (args) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>
-		{colourOptions.map((colour) => (
-			<div style={{ marginBottom: 8 }}>
+		{colourOptions.map((colour, index) => (
+			<div key={index} style={{ marginBottom: 8 }}>
 				{headingTypeOptions.map((is, index) => (
 					<Heading
 						key={`${is}-${index}`}

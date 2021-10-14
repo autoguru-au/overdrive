@@ -1,3 +1,4 @@
+import { ArgTypes } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -7,7 +8,6 @@ import { StarRating } from '../StarRating';
 import { Text } from '../Text';
 
 import { Radio, RadioGroup } from '.';
-import { ArgTypes } from '@storybook/react';
 
 export default {
 	title: 'Components/Inputs/Radio',

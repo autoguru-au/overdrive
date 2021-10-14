@@ -1,9 +1,9 @@
+import { action } from '@storybook/addon-actions';
+import { ArgTypes } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
 import { TextAreaInput } from '.';
-import { ArgTypes } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 
 export default {
 	title: 'Components/Inputs/Textarea',
