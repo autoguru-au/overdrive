@@ -65,27 +65,28 @@ const colours: ColourMap = {
 
 const white = '#fff';
 
-export const tokens = {
+export const tokens: Tokens = {
+	isDark: false,
 	shadeIntensity: {
-		slight: '0.05',
-		medium: '0.15',
-		intense: '0.3',
+		slight: 0.05,
+		medium: 0.15,
+		intense: 0.3,
 	},
 	transparency: {
-		slight: '0.25',
-		medium: '0.5',
-		intense: '0.9',
+		slight: 0.25,
+		medium: 0.5,
+		intense: 0.9,
 	},
 	breakpoints: {
-		mobile: '0px',
-		tablet: '768px', // IPad mini width (1024 - 25%)
-		desktop: '1024px', // IPad Pro width (1366 - 25%)
-		largeDesktop: '1440px', // 1080p width (1920 - 25%)
+		mobile: 0,
+		tablet: 768, // IPad mini width (1024 - 25%)
+		desktop: 1024, // IPad Pro width (1366 - 25%)
+		largeDesktop: 1440, // 1080p width (1920 - 25%)
 	},
 	contentWidth: {
-		small: '592px',
-		large: '1344px',
-		medium: '940px',
+		small: 592,
+		large: 1344,
+		medium: 940,
 	},
 	space: {
 		'1': '4px',
@@ -237,9 +238,9 @@ export const tokens = {
 			information: colours.blue['500'],
 		},
 		fontWeight: {
-			normal: '400',
-			semiBold: '500',
-			bold: '700',
+			normal: 400,
+			semiBold: 500,
+			bold: 700,
 		},
 	},
 	animation: {
