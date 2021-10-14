@@ -27,6 +27,7 @@ module.exports = {
 		'../packages/overdrive/lib/components/SimplePagination/stories.tsx',
 		'../packages/overdrive/lib/components/Stack/stories.tsx',
 		'../packages/overdrive/lib/components/StarRating/stories.tsx',
+		'../packages/overdrive/lib/components/Stepper/stories.tsx',
 	],
 	addons: [
 		/*{
