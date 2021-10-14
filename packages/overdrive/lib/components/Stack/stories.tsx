@@ -5,7 +5,6 @@ import { Text } from '../Text';
 
 import { Stack } from '.';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 
 const spacingOptions: ComponentProps<typeof Stack>['space'] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const widthOptions: ComponentProps<typeof Stack>['width'] = ['full', null];
