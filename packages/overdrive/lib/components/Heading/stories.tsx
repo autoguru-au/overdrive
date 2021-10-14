@@ -138,14 +138,11 @@ const AllColoursTemplate: ComponentStory<typeof Heading> = (args) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>
 		{colourOptions.map((colour, index) => (
 			<div key={index} style={{ marginBottom: 8 }}>
-				{headingTypeOptions.map((is, index) => (
-					<Heading
-						key={`${is}-${index}`}
-						{...args}
-						colour={colour}
-						is={is}
-					/>
-				))}
+				<Heading
+					key={index}
+					{...args}
+					colour={colour}
+				/>
 			</div>
 		))}
 	</div>

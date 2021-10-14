@@ -146,3 +146,6 @@ export const illustrateAScroll: ComponentStory<
 	typeof Positioner
 > = WithScrollTemplate.bind(illustrateAScrollProps);
 illustrateAScroll.args = openProps;
+illustrateAScroll.parameters = {
+	chromatic: { disableSnapshot: true },
+};
