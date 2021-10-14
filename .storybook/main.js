@@ -24,6 +24,7 @@ module.exports = {
 		'../packages/overdrive/lib/components/Text/stories.tsx',
 		'../packages/overdrive/lib/components/Pagination/stories.tsx',
 		'../packages/overdrive/lib/components/Positioner/stories.tsx',
+		'../packages/overdrive/lib/components/SimplePagination/stories.tsx',
 	],
 	addons: [
 		/*{
