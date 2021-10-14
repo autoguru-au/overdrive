@@ -39,9 +39,9 @@ const sharedProps: ComponentProps<typeof Flyout> = {
 };
 
 const Template: ComponentStory<typeof Flyout> = ({
-													 onRequestClose,
-													 ...args
-												 }) => {
+	onRequestClose,
+	...args
+}) => {
 	const triggerRef = useRef<HTMLElement>(null);
 	return (
 		<Box
@@ -50,8 +50,8 @@ const Template: ComponentStory<typeof Flyout> = ({
 				widht: '100vw',
 				maxHeight: '350px',
 			}}
-			display='flex'
-			alignItems='center'
+			display="flex"
+			alignItems="center"
 			justifyContent="center">
 			<Button ref={triggerRef}>some trigger</Button>
 			<Flyout

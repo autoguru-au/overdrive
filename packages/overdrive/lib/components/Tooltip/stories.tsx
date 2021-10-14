@@ -29,17 +29,17 @@ export default {
 	},
 } as ComponentMeta<typeof Positioner>;
 
-
 const Template: ComponentStory<typeof Tooltip> = (args) => (
 	<Tooltip {...args}>
 		<div style={{ display: 'inline' }}>Im the tooltip trigger</div>
 	</Tooltip>
 );
 
-
 const standardProps = {
 	label: 'Im the tooltip body',
 };
 
-export const standard: ComponentStory<typeof Tooltip> = Template.bind(standardProps);
+export const standard: ComponentStory<typeof Tooltip> = Template.bind(
+	standardProps,
+);
 standard.args = standardProps;

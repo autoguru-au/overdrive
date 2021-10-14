@@ -4,7 +4,6 @@ import * as React from 'react';
 import { Stepper } from '.';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-
 export default {
 	title: 'Components/Inputs/Stepper',
 	component: Stepper,
@@ -25,7 +24,10 @@ const standardProps = {
 export const standard = Template.bind(standardProps);
 standard.args = standardProps;
 
-const formatter = new Intl.NumberFormat('en-AU', { style: 'currency', currency: 'AUD' })
+const formatter = new Intl.NumberFormat('en-AU', {
+	style: 'currency',
+	currency: 'AUD',
+});
 const withFormattingProps = {
 	value: 32,
 	min: 0,

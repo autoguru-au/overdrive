@@ -3,19 +3,13 @@ import * as React from 'react';
 
 import { Switch } from '.';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Stack } from '../Stack';
-import { Text } from '../Text';
-import { SimplePagination } from '../SimplePagination';
 
 export default {
 	title: 'Components/Switch',
 	component: Switch,
-}as ComponentMeta<typeof Switch>;
+} as ComponentMeta<typeof Switch>;
 
-const Template: ComponentStory<typeof Switch> = (args) => (
-	<Switch {...args}/>
-);
-
+const Template: ComponentStory<typeof Switch> = (args) => <Switch {...args} />;
 
 const standardProps = {
 	disabled: false,
@@ -23,7 +17,9 @@ const standardProps = {
 	onChange: action('onChange'),
 };
 
-export const untoggled: ComponentStory<typeof Switch> = Template.bind(standardProps);
+export const untoggled: ComponentStory<typeof Switch> = Template.bind(
+	standardProps,
+);
 untoggled.args = standardProps;
 
 /*

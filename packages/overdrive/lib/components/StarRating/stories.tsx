@@ -4,7 +4,6 @@ import { EStarRatingSize, StarRating } from '.';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Stack } from '../Stack';
 
-
 export default {
 	title: 'Components/StarRating',
 	component: StarRating,

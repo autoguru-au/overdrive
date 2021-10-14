@@ -5,12 +5,10 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Box } from '../Box';
 import { action } from '@storybook/addon-actions';
 
-
 export default {
 	title: 'Components/Pagination/Numbered',
 	component: Pagination,
 } as ComponentMeta<typeof Pagination>;
-
 
 const Template: ComponentStory<typeof Pagination> = (args) => (
 	<Box
@@ -19,13 +17,10 @@ const Template: ComponentStory<typeof Pagination> = (args) => (
 			widht: '100vw',
 			maxHeight: '350px',
 		}}
-		display='flex'
-		alignItems='center'
-		justifyContent='center'>
-		<Pagination
-			{...args}
-		/>
-
+		display="flex"
+		alignItems="center"
+		justifyContent="center">
+		<Pagination {...args} />
 	</Box>
 );
 
@@ -37,14 +32,18 @@ const standardProps = {
 	loading: false,
 	onChange: action('onChange'),
 };
-export const standard: ComponentStory<typeof Pagination> = Template.bind( standardProps );
+export const standard: ComponentStory<typeof Pagination> = Template.bind(
+	standardProps,
+);
 standard.args = standardProps;
 
 const loadingProps = {
 	...standardProps,
 	loading: true,
 };
-export const loading: ComponentStory<typeof Pagination> = Template.bind( loadingProps );
+export const loading: ComponentStory<typeof Pagination> = Template.bind(
+	loadingProps,
+);
 loading.args = loadingProps;
 
 const lessThanMaxPagesProps = {
@@ -54,7 +53,9 @@ const lessThanMaxPagesProps = {
 	pageSize: 10,
 	numPagesDisplayed: 5,
 };
-export const lessThanMaxPages: ComponentStory<typeof Pagination> = Template.bind( lessThanMaxPagesProps );
+export const lessThanMaxPages: ComponentStory<
+	typeof Pagination
+> = Template.bind(lessThanMaxPagesProps);
 lessThanMaxPages.args = lessThanMaxPagesProps;
 
 const allPagesFitProps = {
@@ -64,7 +65,9 @@ const allPagesFitProps = {
 	pageSize: 10,
 	numPagesDisplayed: 5,
 };
-export const allPagesFit: ComponentStory<typeof Pagination> = Template.bind( allPagesFitProps );
+export const allPagesFit: ComponentStory<typeof Pagination> = Template.bind(
+	allPagesFitProps,
+);
 allPagesFit.args = allPagesFitProps;
 
 const jumpForwardStartProps = {
@@ -74,7 +77,9 @@ const jumpForwardStartProps = {
 	pageSize: 10,
 	numPagesDisplayed: 5,
 };
-export const jumpForwardStart: ComponentStory<typeof Pagination> = Template.bind( jumpForwardStartProps );
+export const jumpForwardStart: ComponentStory<
+	typeof Pagination
+> = Template.bind(jumpForwardStartProps);
 jumpForwardStart.args = jumpForwardStartProps;
 
 const jumpForwardMiddleProps = {
@@ -84,7 +89,9 @@ const jumpForwardMiddleProps = {
 	pageSize: 10,
 	numPagesDisplayed: 5,
 };
-export const jumpForwardMiddle: ComponentStory<typeof Pagination> = Template.bind( jumpForwardMiddleProps );
+export const jumpForwardMiddle: ComponentStory<
+	typeof Pagination
+> = Template.bind(jumpForwardMiddleProps);
 jumpForwardMiddle.args = jumpForwardMiddleProps;
 
 const lastChunkStartProps = {
@@ -94,7 +101,9 @@ const lastChunkStartProps = {
 	pageSize: 10,
 	numPagesDisplayed: 5,
 };
-export const lastChunkStart: ComponentStory<typeof Pagination> = Template.bind( lastChunkStartProps );
+export const lastChunkStart: ComponentStory<typeof Pagination> = Template.bind(
+	lastChunkStartProps,
+);
 lastChunkStart.args = lastChunkStartProps;
 
 const lastChunkMiddleProps = {
@@ -104,7 +113,9 @@ const lastChunkMiddleProps = {
 	pageSize: 10,
 	numPagesDisplayed: 5,
 };
-export const lastChunkMiddle: ComponentStory<typeof Pagination> = Template.bind( lastChunkMiddleProps );
+export const lastChunkMiddle: ComponentStory<typeof Pagination> = Template.bind(
+	lastChunkMiddleProps,
+);
 lastChunkMiddle.args = lastChunkMiddleProps;
 
 const jumpBackStartProps = {
@@ -114,7 +125,9 @@ const jumpBackStartProps = {
 	pageSize: 10,
 	numPagesDisplayed: 5,
 };
-export const jumpBackStart: ComponentStory<typeof Pagination> = Template.bind( jumpBackStartProps );
+export const jumpBackStart: ComponentStory<typeof Pagination> = Template.bind(
+	jumpBackStartProps,
+);
 jumpBackStart.args = lastChunkMiddleProps;
 
 const jumpBackMiddleProps = {
@@ -124,7 +137,9 @@ const jumpBackMiddleProps = {
 	pageSize: 10,
 	numPagesDisplayed: 5,
 };
-export const jumpBackMiddle: ComponentStory<typeof Pagination> = Template.bind( jumpBackMiddleProps );
+export const jumpBackMiddle: ComponentStory<typeof Pagination> = Template.bind(
+	jumpBackMiddleProps,
+);
 jumpBackMiddle.args = jumpBackMiddleProps;
 
 const jumpBackEndProps = {
@@ -134,5 +149,7 @@ const jumpBackEndProps = {
 	pageSize: 10,
 	numPagesDisplayed: 5,
 };
-export const jumpBackEnd: ComponentStory<typeof Pagination> = Template.bind( jumpBackEndProps );
+export const jumpBackEnd: ComponentStory<typeof Pagination> = Template.bind(
+	jumpBackEndProps,
+);
 jumpBackEnd.args = jumpBackEndProps;

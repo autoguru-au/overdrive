@@ -5,7 +5,6 @@ import { Heading } from '.';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Text } from '../Text';
 
-
 const noWrapOptions: Array<ComponentProps<typeof Heading>['noWrap']> = [
 	false,
 	true,
@@ -126,7 +125,7 @@ const Template: ComponentStory<typeof Heading> = (args) => (
 	</div>
 );
 
-const AllTypesTemplate: ComponentStory<typeof Heading>  = (args) => (
+const AllTypesTemplate: ComponentStory<typeof Heading> = (args) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>
 		{headingTypeOptions.map((is) => (
 			<Heading key={is} {...args} is={is} />
@@ -134,7 +133,7 @@ const AllTypesTemplate: ComponentStory<typeof Heading>  = (args) => (
 	</div>
 );
 
-const AllColoursTemplate: ComponentStory<typeof Heading>  = (args) => (
+const AllColoursTemplate: ComponentStory<typeof Heading> = (args) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>
 		{colourOptions.map((colour) => (
 			<div style={{ marginBottom: 8 }}>
@@ -150,7 +149,6 @@ const AllColoursTemplate: ComponentStory<typeof Heading>  = (args) => (
 		))}
 	</div>
 );
-
 
 const standardProps: ComponentProps<typeof Heading> = {
 	is: 'h1',

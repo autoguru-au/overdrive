@@ -6,7 +6,17 @@ import { Text } from '../Text';
 import { Stack } from '.';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-const spacingOptions: ComponentProps<typeof Stack>['space'] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const spacingOptions: ComponentProps<typeof Stack>['space'] = [
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+];
 const widthOptions: ComponentProps<typeof Stack>['width'] = ['full', null];
 export default {
 	title: 'Foundation/Layout/Stack',
@@ -26,7 +36,7 @@ export default {
 				type: 'select',
 			},
 		},
-	}
+	},
 } as ComponentMeta<typeof Stack>;
 
 const Template: ComponentStory<typeof Stack> = (args) => (

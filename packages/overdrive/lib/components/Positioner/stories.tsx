@@ -34,12 +34,15 @@ export default {
 	},
 } as ComponentMeta<typeof Positioner>;
 
-const Template: ComponentStory<typeof Positioner> = ({ onRequestClose, ...args }) => {
+const Template: ComponentStory<typeof Positioner> = ({
+	onRequestClose,
+	...args
+}) => {
 	const triggerRef = useRef(null);
 
 	return (
 		<div>
-			<Button ref={triggerRef} size='small' onClick={onRequestClose}>
+			<Button ref={triggerRef} size="small" onClick={onRequestClose}>
 				Open me
 			</Button>
 			<Positioner
@@ -48,12 +51,12 @@ const Template: ComponentStory<typeof Positioner> = ({ onRequestClose, ...args }
 				onRequestClose={onRequestClose}>
 				<Box
 					boxShadow={1}
-					backgroundColour='white'
-					borderRadius='1'
+					backgroundColour="white"
+					borderRadius="1"
 					borderWidth={1}
-					borderColour='gray'
-					padding='2'>
-					<Text is='p'>
+					borderColour="gray"
+					padding="2">
+					<Text is="p">
 						Hello im from the consumer:{' '}
 						{Math.ceil(Math.random() * 100)}
 					</Text>
@@ -63,50 +66,52 @@ const Template: ComponentStory<typeof Positioner> = ({ onRequestClose, ...args }
 	);
 };
 
-const WithScrollTemplate: ComponentStory<typeof Positioner> = ({ onRequestClose, ...args }) => {
+const WithScrollTemplate: ComponentStory<typeof Positioner> = ({
+	onRequestClose,
+	...args
+}) => {
 	const triggerRef = useRef(null);
 
 	return (
+		<div
+			style={{
+				height: '100%',
+				width: '100%',
+			}}>
 			<div
 				style={{
-					height: '100%',
-					width: '100%',
+					height: 'calc(100vh*5)',
+					width: 'calc(100vw*5)',
 				}}>
 				<div
 					style={{
-						height: 'calc(100vh*5)',
-						width: 'calc(100vw*5)',
+						paddingTop: 'calc((100vh*5) / 2)',
+						paddingLeft: 'calc((100vw*5) / 2)',
 					}}>
-					<div
-						style={{
-							paddingTop: 'calc((100vh*5) / 2)',
-							paddingLeft: 'calc((100vw*5) / 2)',
-						}}>
-						<Button ref={triggerRef} size="small">
-							I'm the trigger
-						</Button>
-					</div>
-
-					<Positioner
-						{...args}
-						triggerRef={triggerRef}
-						onRequestClose={onRequestClose}>
-						<Box
-							boxShadow={1}
-							backgroundColour="white"
-							borderRadius="1"
-							borderWidth={1}
-							borderColour="gray"
-							padding="2">
-							<Text is="p">
-								Hello im from the consumer:{' '}
-								{Math.ceil(Math.random() * 100)}
-							</Text>
-						</Box>
-					</Positioner>
+					<Button ref={triggerRef} size="small">
+						I'm the trigger
+					</Button>
 				</div>
-			</div>
 
+				<Positioner
+					{...args}
+					triggerRef={triggerRef}
+					onRequestClose={onRequestClose}>
+					<Box
+						boxShadow={1}
+						backgroundColour="white"
+						borderRadius="1"
+						borderWidth={1}
+						borderColour="gray"
+						padding="2">
+						<Text is="p">
+							Hello im from the consumer:{' '}
+							{Math.ceil(Math.random() * 100)}
+						</Text>
+					</Box>
+				</Positioner>
+			</div>
+		</div>
 	);
 };
 
@@ -117,7 +122,9 @@ const standardProps = {
 	onRequestClose: action('onChange'),
 };
 
-export const closed: ComponentStory<typeof Positioner> = Template.bind(standardProps);
+export const closed: ComponentStory<typeof Positioner> = Template.bind(
+	standardProps,
+);
 closed.args = standardProps;
 
 const openProps = {
@@ -133,5 +140,7 @@ const illustrateAScrollProps = {
 	isOpen: true,
 };
 
-export const illustrateAScroll: ComponentStory<typeof Positioner> = WithScrollTemplate.bind(illustrateAScrollProps);
+export const illustrateAScroll: ComponentStory<
+	typeof Positioner
+> = WithScrollTemplate.bind(illustrateAScrollProps);
 illustrateAScroll.args = openProps;
