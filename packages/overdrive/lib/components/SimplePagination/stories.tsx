@@ -3,9 +3,7 @@ import * as React from 'react';
 
 import { SimplePagination } from '.';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Pagination } from '../Pagination';
 import { Box } from '../Box';
-import { template } from '@babel/core';
 
 export default {
 	title: 'Components/Pagination/Simple',
