@@ -10,7 +10,6 @@ import { TextInput } from '../TextInput';
 
 import { Flyout } from '.';
 
-
 export default {
 	title: 'Components/Flyout',
 	component: Flyout,

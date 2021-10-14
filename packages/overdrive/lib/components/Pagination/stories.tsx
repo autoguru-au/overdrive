@@ -6,7 +6,6 @@ import { Box } from '../Box';
 
 import { Pagination } from '.';
 
-
 export default {
 	title: 'Components/Pagination/Numbered',
 	component: Pagination,

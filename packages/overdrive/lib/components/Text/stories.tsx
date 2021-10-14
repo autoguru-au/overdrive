@@ -84,11 +84,7 @@ const AllColoursTemplate: ComponentStory<typeof Text> = (args) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>
 		{colourOptions.map((colour, index) => (
 			<div key={index} style={{ marginBottom: 8 }}>
-				<Text
-					key={index}
-					{...args}
-					colour={colour}
-				/>
+				<Text key={index} {...args} colour={colour} />
 			</div>
 		))}
 	</div>

@@ -31,6 +31,7 @@
 		"useTabs": true
 	},
 	"resolutions": {
+		"postcss": "^8.3.9",
 		"react": "^18.0.0-alpha-19092ac8c-20210803",
 		"react-dom": "^18.0.0-alpha-19092ac8c-20210803",
 		"webpack": "^5.58.1",
@@ -81,6 +82,7 @@
 		"patch-package": "6.4.7",
 		"playroom": "^0.27.7",
 		"plop": "2.7.4",
+		"postcss": "^8.3.9",
 		"prettier": "2.2.1",
 		"react": "^18.0.0-alpha-b9934d6db-20210805",
 		"react-dom": "^18.0.0-alpha-b9934d6db-20210805",

@@ -11,7 +11,6 @@ import { EAlignment } from './alignment';
 
 import { Positioner } from '.';
 
-
 export default {
 	title: 'Utility/Positioner',
 	component: Positioner,
