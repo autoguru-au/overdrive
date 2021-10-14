@@ -29,6 +29,7 @@ module.exports = {
 		'../packages/overdrive/lib/components/StarRating/stories.tsx',
 		'../packages/overdrive/lib/components/Stepper/stories.tsx',
 		'../packages/overdrive/lib/components/Switch/stories.tsx',
+		'../packages/overdrive/lib/components/Tooltip/stories.tsx',
 	],
 	addons: [
 		/*{

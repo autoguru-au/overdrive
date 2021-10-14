@@ -1,9 +1,10 @@
-import { select } from '@storybook/addon-knobs';
 import * as React from 'react';
 
 import { EAlignment } from '../Positioner/alignment';
 
 import { Tooltip } from '.';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Positioner } from '../Positioner';
 
 export default {
 	title: 'Components/Tooltip',
@@ -14,34 +15,31 @@ export default {
 			</div>
 		),
 	],
-	parameters: { chromatic: { disable: true } },
-};
+	parameters: {
+		chromatic: { disable: true },
+	},
+	argTypes: {
+		alignment: {
+			options: EAlignment,
+			defaultValue: EAlignment.RIGHT,
+			control: {
+				type: 'select',
+			},
+		},
+	},
+} as ComponentMeta<typeof Positioner>;
 
-const alignmentPicker = () =>
-	select('Alignment', EAlignment, EAlignment.BOTTOM);
 
-export const Standard = () => (
-	<Tooltip alignment={alignmentPicker()} label="Im the tooltip body">
+const Template: ComponentStory<typeof Tooltip> = (args) => (
+	<Tooltip {...args}>
 		<div style={{ display: 'inline' }}>Im the tooltip trigger</div>
 	</Tooltip>
 );
 
-export const TooltipSideBySide = () => (
-	<>
-		<Tooltip alignment={alignmentPicker()} label="Im the tooltip body">
-			<div style={{ display: 'inline-block' }}>
-				Im the tooltip trigger
-			</div>
-		</Tooltip>
-		<Tooltip alignment={alignmentPicker()} label="Im the tooltip body">
-			<div style={{ display: 'inline-block' }}>
-				Im the tooltip trigger
-			</div>
-		</Tooltip>
-		<Tooltip alignment={alignmentPicker()} label="Im the tooltip body">
-			<div style={{ display: 'inline-block' }}>
-				Im the tooltip trigger
-			</div>
-		</Tooltip>
-	</>
-);
+
+const standardProps = {
+	label: 'Im the tooltip body',
+};
+
+export const standard: ComponentStory<typeof Tooltip> = Template.bind(standardProps);
+standard.args = standardProps;
