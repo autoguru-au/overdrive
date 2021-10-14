@@ -30,25 +30,9 @@ module.exports = {
 		'../packages/overdrive/lib/components/Stepper/stories.tsx',
 		'../packages/overdrive/lib/components/Switch/stories.tsx',
 		'../packages/overdrive/lib/components/Tooltip/stories.tsx',
+		'../packages/overdrive/lib/components/TextLink/stories.tsx',
 	],
 	addons: [
-		/*{
-			name: '@storybook/addon-docs',
-			options: {
-				configureJSX: false,
-				babelOptions: {},
-				sourceLoaderOptions: null,
-				transcludeMarkdown: false,
-			},
-		},
-		{
-			name: '@storybook/addon-essentials',
-			options: {
-				docs: false, // TODO: Fix this back on,
-				controls: true,
-				backgrounds: true,
-			},
-		},*/
 		"@storybook/addon-links",
 		"@storybook/addon-essentials",
 		resolve('./.storybook/vanilla-extract'),
