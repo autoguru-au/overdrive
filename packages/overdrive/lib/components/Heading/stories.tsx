@@ -2,8 +2,9 @@ import * as React from 'react';
 import { ComponentProps } from 'react';
 
 import { Heading } from '.';
-import { ArgTypes } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Text } from '../Text';
+
 
 const noWrapOptions: Array<ComponentProps<typeof Heading>['noWrap']> = [
 	false,
@@ -60,16 +61,72 @@ const colourOptions: Array<ComponentProps<typeof Heading>['colour']> = [
 
 export default {
 	title: 'Foundation/Typography/Heading',
-	component: Heading,
-};
+	// component: Heading, Breaks the docs when enabled!
+	argTypes: {
+		noWrap: {
+			options: noWrapOptions,
+			defaultValue: false,
+			control: {
+				type: 'boolean',
+			},
+		},
+		transform: {
+			options: transformOptions,
+			defaultValue: null,
+			control: {
+				type: 'select',
+			},
+		},
+		weight: {
+			options: weightOptions,
+			defaultValue: null,
+			control: {
+				type: 'select',
+			},
+		},
+		size: {
+			options: sizeScale,
+			defaultValue: void 0,
+			control: {
+				type: 'select',
+			},
+		},
+		align: {
+			options: alignOptions,
+			defaultValue: 'left',
+			control: {
+				type: 'select',
+			},
+		},
+		colour: {
+			options: colourOptions,
+			defaultValue: void 0,
+			control: {
+				type: 'select',
+			},
+		},
+		is: {
+			options: headingTypeOptions,
+			defaultValue: 'h1',
+			table: {
+				type: { summary: 'heading' },
+				defaultValue: 'h1',
+			},
+			description: 'HTML heading tag to be used',
+			control: {
+				type: 'select',
+			},
+		},
+	},
+} as ComponentMeta<typeof Heading>;
 
-const Template = (args) => (
+const Template: ComponentStory<typeof Heading> = (args) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>
 		<Heading {...args} />
 	</div>
 );
 
-const AllTypesTemplate = (args) => (
+const AllTypesTemplate: ComponentStory<typeof Heading>  = (args) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>
 		{headingTypeOptions.map((is) => (
 			<Heading key={is} {...args} is={is} />
@@ -77,7 +134,7 @@ const AllTypesTemplate = (args) => (
 	</div>
 );
 
-const AllColoursTemplate = (args) => (
+const AllColoursTemplate: ComponentStory<typeof Heading>  = (args) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>
 		{colourOptions.map((colour) => (
 			<div style={{ marginBottom: 8 }}>
@@ -94,68 +151,6 @@ const AllColoursTemplate = (args) => (
 	</div>
 );
 
-const sharedArgTypes: ArgTypes = {
-	noWrap: {
-		options: noWrapOptions,
-		defaultValue: false,
-		control: {
-			type: 'boolean',
-		},
-	},
-	transform: {
-		options: transformOptions,
-		defaultValue: null,
-		control: {
-			type: 'select',
-		},
-	},
-	weight: {
-		options: weightOptions,
-		defaultValue: null,
-		control: {
-			type: 'select',
-		},
-	},
-	size: {
-		options: sizeScale,
-		defaultValue: void 0,
-		control: {
-			type: 'select',
-		},
-	},
-	align: {
-		options: alignOptions,
-		defaultValue: 'left',
-		control: {
-			type: 'select',
-		},
-	},
-};
-const colourArgTypes: ArgTypes = {
-	colour: {
-		options: colourOptions,
-		defaultValue: void 0,
-		control: {
-			type: 'select',
-		},
-	},
-};
-const argTypes: ArgTypes = {
-	...sharedArgTypes,
-	...colourArgTypes,
-	is: {
-		options: headingTypeOptions,
-		defaultValue: 'h1',
-		table: {
-			type: { summary: 'heading' },
-			defaultValue: 'h1',
-		},
-		description: 'HTML heading tag to be used',
-		control: {
-			type: 'select',
-		},
-	},
-};
 
 const standardProps: ComponentProps<typeof Heading> = {
 	is: 'h1',
@@ -166,12 +161,9 @@ const allTypesProps: ComponentProps<typeof Heading> = {
 };
 export const standard = Template.bind(standardProps);
 standard.args = standardProps;
-standard.argTypes = argTypes;
 
 export const allTypes = AllTypesTemplate.bind(allTypesProps);
 allTypes.args = allTypesProps;
-allTypes.argTypes = { ...sharedArgTypes, colourArgTypes };
 
 export const allColours = AllColoursTemplate.bind(allTypesProps);
 allColours.args = allTypesProps;
-allColours.argTypes = sharedArgTypes;

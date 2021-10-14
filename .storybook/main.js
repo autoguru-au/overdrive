@@ -3,13 +3,15 @@ module.exports = {
 	core: {
 		builder: 'webpack5',
 	},
-	// stories: ['../packages/overdrive/lib/**/stories.@(tsx|mdx)'],
+	features: {
+		buildStoriesJson: true,
+		//storyStoreV7: true,
+	},
+	// stories: ['../packages/overdrive/**/*.stories.*'],
 	stories: [
-		'../packages/overdrive/lib/components/Text/stories.tsx',
 		'../packages/overdrive/lib/components/Actions/stories.tsx',
 		'../packages/overdrive/lib/components/BulletText/stories.tsx',
 		'../packages/overdrive/lib/components/Flyout/stories.tsx',
-		'../packages/overdrive/lib/components/Heading/stories.tsx',
 		'../packages/overdrive/lib/components/Modal/stories.tsx',
 		'../packages/overdrive/lib/components/Radio/stories.tsx',
 		'../packages/overdrive/lib/components/CheckBox/stories.tsx',
@@ -18,16 +20,29 @@ module.exports = {
 		'../packages/overdrive/lib/components/TextInput/stories.tsx',
 		'../packages/overdrive/lib/components/TextAreaInput/stories.tsx',
 		'../packages/overdrive/lib/components/SelectInput/stories.tsx',
+		'../packages/overdrive/lib/components/Heading/stories.tsx',
+		'../packages/overdrive/lib/components/Text/stories.tsx',
 	],
 	addons: [
+		/*{
+			name: '@storybook/addon-docs',
+			options: {
+				configureJSX: false,
+				babelOptions: {},
+				sourceLoaderOptions: null,
+				transcludeMarkdown: false,
+			},
+		},
 		{
 			name: '@storybook/addon-essentials',
 			options: {
+				docs: false, // TODO: Fix this back on,
 				controls: true,
 				backgrounds: true,
-				docs: false, // TODO: Fix this back on,
 			},
-		},
+		},*/
+		"@storybook/addon-links",
+		"@storybook/addon-essentials",
 		resolve('./.storybook/vanilla-extract'),
 		'@storybook/addon-a11y',
 	],

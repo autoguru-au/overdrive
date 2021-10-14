@@ -57,7 +57,14 @@ export const globalTypes = {
 	},
 };
 
-addParameters({
+export const parameters = {
+	actions: { argTypesRegex: "^on[A-Z].*" },
+	controls: {
+		matchers: {
+			color: /(background|color)$/i,
+			date: /Date$/,
+		},
+	},
 	docs: {
 		container: DocsContainer,
 		page: DocsPage,
@@ -66,6 +73,6 @@ addParameters({
 		// Mobile and large table and up
 		viewports: [320, 1024],
 	},
-});
+};
 
 export const decorators = [withThemeProvider];

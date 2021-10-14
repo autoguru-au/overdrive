@@ -53,7 +53,7 @@ const colourOptions: Array<ComponentProps<typeof Text>['colour']> = [
 
 export default {
 	title: 'Foundation/Typography/Text',
-	component: Text,
+	//component: Text, Breaks the docs when enabled!
 	decorators: [],
 };
 
