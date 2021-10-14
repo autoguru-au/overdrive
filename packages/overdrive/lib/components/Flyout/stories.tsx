@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ComponentProps, FunctionComponent, useRef } from 'react';
+import { ComponentProps, useRef } from 'react';
 
 import { Button } from '../Button';
 import { EAlignment } from '../Positioner/alignment';
@@ -8,12 +8,28 @@ import { TextInput } from '../TextInput';
 import { Flyout } from '.';
 import { action } from '@storybook/addon-actions';
 import { Box } from '../Box';
-import { ArgTypes } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
 	title: 'Components/Flyout',
 	component: Flyout,
-};
+	argTypes: {
+		alignment: {
+			options: EAlignment,
+			defaultValue: EAlignment.BOTTOM_LEFT,
+			control: {
+				type: 'select',
+			},
+		},
+		triggerOffset: {
+			control: {
+				type: 'range',
+				min: 0,
+				max: 400,
+			},
+		},
+	},
+} as ComponentMeta<typeof Flyout>;
 
 const sharedProps: ComponentProps<typeof Flyout> = {
 	alignment: EAlignment.BOTTOM_LEFT,
@@ -22,10 +38,10 @@ const sharedProps: ComponentProps<typeof Flyout> = {
 	onRequestClose: action('onRequestClose'),
 };
 
-const Template: FunctionComponent<typeof sharedProps> = ({
-	onRequestClose,
-	...args
-}) => {
+const Template: ComponentStory<typeof Flyout> = ({
+													 onRequestClose,
+													 ...args
+												 }) => {
 	const triggerRef = useRef<HTMLElement>(null);
 	return (
 		<Box
@@ -34,8 +50,8 @@ const Template: FunctionComponent<typeof sharedProps> = ({
 				widht: '100vw',
 				maxHeight: '350px',
 			}}
-			display="flex"
-			alignItems="center"
+			display='flex'
+			alignItems='center'
 			justifyContent="center">
 			<Button ref={triggerRef}>some trigger</Button>
 			<Flyout
@@ -63,30 +79,10 @@ const Template: FunctionComponent<typeof sharedProps> = ({
 		</Box>
 	);
 };
-const argTypes: ArgTypes = {
-	alignment: {
-		options: EAlignment,
-		defaultValue: EAlignment.BOTTOM_LEFT,
-		control: {
-			type: 'select',
-		},
-	},
-	triggerOffset: {
-		control: {
-			type: 'range',
-			min: 0,
-			max: 200,
-		},
-	},
-};
 
 const openProps = { ...sharedProps, isOpen: true };
 export const Open = Template.bind(openProps);
-
 Open.args = openProps;
-Open.argTypes = argTypes;
 
 export const Closed = Template.bind(sharedProps);
-
 Closed.args = sharedProps;
-Closed.argTypes = argTypes;

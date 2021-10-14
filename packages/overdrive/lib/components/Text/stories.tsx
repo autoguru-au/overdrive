@@ -3,7 +3,7 @@ import { ComponentProps } from 'react';
 
 import { Text } from '.';
 import { Heading } from '../Heading';
-import { ArgTypes } from '@storybook/react';
+import { ArgTypes, ComponentMeta, ComponentStory } from '@storybook/react';
 
 const textTypeOptions: Array<ComponentProps<typeof Text>['is']> = ['span', 'p'];
 const noWrapOptions: Array<ComponentProps<typeof Heading>['noWrap']> = [
@@ -55,15 +55,15 @@ export default {
 	title: 'Foundation/Typography/Text',
 	//component: Text, Breaks the docs when enabled!
 	decorators: [],
-};
+} as ComponentMeta<typeof Text>;
 
-const Template = (args) => (
+const Template: ComponentStory<typeof Text> = (args) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>
 		<Text {...args} />
 	</div>
 );
 
-const AllTypesTemplate = (args) => (
+const AllTypesTemplate: ComponentStory<typeof Text> = (args) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>
 		{textTypeOptions.map((is) => (
 			<Text key={is} {...args} is={is} />
@@ -71,7 +71,7 @@ const AllTypesTemplate = (args) => (
 	</div>
 );
 
-const AllSizesTemplate = (args) => (
+const AllSizesTemplate: ComponentStory<typeof Text> = (args) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>
 		{sizeScale.map((size) => (
 			<Text key={size} {...args} size={size} />
@@ -79,7 +79,7 @@ const AllSizesTemplate = (args) => (
 	</div>
 );
 
-const AllColoursTemplate = (args) => (
+const AllColoursTemplate: ComponentStory<typeof Text> = (args) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>
 		{colourOptions.map((colour) => (
 			<div style={{ marginBottom: 8 }}>

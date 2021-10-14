@@ -22,6 +22,7 @@ module.exports = {
 		'../packages/overdrive/lib/components/SelectInput/stories.tsx',
 		'../packages/overdrive/lib/components/Heading/stories.tsx',
 		'../packages/overdrive/lib/components/Text/stories.tsx',
+		'../packages/overdrive/lib/components/Pagination/stories.tsx',
 	],
 	addons: [
 		/*{
