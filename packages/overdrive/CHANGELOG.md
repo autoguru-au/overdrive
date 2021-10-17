@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 2.7.1
+
+### Patch Changes
+
+-   4213192: StandardModal: Gets fix for desktop sizes
+
 ## 2.7.0
 
 ### Minor Changes
