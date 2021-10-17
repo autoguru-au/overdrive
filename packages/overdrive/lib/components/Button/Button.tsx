@@ -169,12 +169,11 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 			</Box>
 		);
 
-
 		return isValidElement(Component)
-			// @ts-ignore
-			? cloneElement(Component, { ref, ...props }, child)
-			// @ts-ignore
-			: createElement(Component, { ref, ...props }, child);
+			? // @ts-ignore
+			  cloneElement(Component, { ref, ...props }, child)
+			: // @ts-ignore
+			  createElement(Component, { ref, ...props }, child);
 	},
 );
 
