@@ -36,7 +36,7 @@ export const modalSizeSkinny = style((theme) =>
 			maxWidth: '420px',
 		},
 		largeDesktop: {
-			maxWidth: '420px',
+			width: '420px',
 		},
 	}),
 );
@@ -50,7 +50,7 @@ export const modalSizeNarrow = style((theme) =>
 			maxWidth: '600px',
 		},
 		largeDesktop: {
-			maxWidth: '600px',
+			width: '600px',
 		},
 	}),
 );
@@ -58,7 +58,7 @@ export const modalSizeNarrow = style((theme) =>
 export const modalSizeStandard = style((theme) =>
 	theme.utils.responsiveStyle({
 		tablet: {
-			maxWidth: '800px',
+			width: '800px',
 		},
 	}),
 );
