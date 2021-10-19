@@ -4,6 +4,7 @@ import { ComponentProps } from 'react';
 import { Button } from '../Button';
 
 import { Actions } from '.';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
 	title: 'Components/Actions',
@@ -13,18 +14,18 @@ export default {
 			<div style={{ maxWidth: 300, width: '100%' }}>{story()}</div>
 		),
 	],
-};
+} as ComponentMeta<typeof Actions>;
 
-const template = (args) => (
+const template: ComponentStory<typeof Actions> = (args) => (
 	<Actions {...args}>
 		<Button>Login</Button>
-		<Button variant="primary">Sign up</Button>
-		<Button variant="secondary">Action 1</Button>
-		<Button variant="secondary">Action 2</Button>
-		<Button isLoading variant="secondary">
+		<Button variant='primary'>Sign up</Button>
+		<Button variant='secondary'>Action 1</Button>
+		<Button variant='secondary'>Action 2</Button>
+		<Button isLoading variant='secondary'>
 			Action 3
 		</Button>
-		<Button minimal variant="secondary">
+		<Button minimal variant='secondary'>
 			Action 4
 		</Button>
 	</Actions>

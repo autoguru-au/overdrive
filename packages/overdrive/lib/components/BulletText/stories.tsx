@@ -1,5 +1,5 @@
 import { CheckIcon } from '@autoguru/icons';
-import { ArgTypes } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -10,39 +10,39 @@ import { BulletText } from '.';
 export default {
 	title: 'Components/BulletText',
 	component: BulletText,
-};
+	argTypes: {
+		variant: {
+			options: ['primary', 'secondary'],
+			defaultValue: 'primary',
+			control: {
+				type: 'select',
+			},
+		},
+		bullet: {
+			table: {
+				type: { summary: 'Any custom react element' },
+				defaultValue: void 0,
+			},
+			description: 'Any custom react element',
+			control: {
+				disable: true,
+			},
+		},
+		is: {
+			table: {
+				type: { summary: 'div' },
+				defaultValue: 'div',
+			},
+			description: 'HTML dom tag to be used',
+			control: {
+				disable: true,
+			},
+		},
+	},
+} as ComponentMeta<typeof BulletText>;
 
-const template = (args) => <BulletText is="div" {...args} />;
+const template: ComponentStory<typeof BulletText> = (args) => <BulletText is='div' {...args} />;
 
-const argTypes: ArgTypes = {
-	variant: {
-		options: ['primary', 'secondary'],
-		defaultValue: 'primary',
-		control: {
-			type: 'select',
-		},
-	},
-	bullet: {
-		table: {
-			type: { summary: 'Any custom react element' },
-			defaultValue: void 0,
-		},
-		description: 'Any custom react element',
-		control: {
-			disable: true,
-		},
-	},
-	is: {
-		table: {
-			type: { summary: 'div' },
-			defaultValue: 'div',
-		},
-		description: 'HTML dom tag to be used',
-		control: {
-			disable: true,
-		},
-	},
-};
 
 const primaryProps: ComponentProps<typeof BulletText> = {
 	variant: 'primary',
@@ -83,6 +83,3 @@ export const withCustomBullet = template.bind(withCustomBulletProps);
 primary.args = primaryProps;
 secondary.args = secondaryProps;
 withCustomBullet.args = withCustomBulletProps;
-primary.argTypes = argTypes;
-secondary.argTypes = argTypes;
-withCustomBullet.argTypes = argTypes;

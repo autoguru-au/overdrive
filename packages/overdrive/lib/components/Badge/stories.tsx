@@ -2,6 +2,7 @@ import * as React from 'react';
 import { ComponentProps } from 'react';
 
 import { Badge } from '.';
+import { ComponentStory } from '@storybook/react';
 
 const colours: ReadonlyArray<ComponentProps<typeof Badge>['colour']> = [
 	'blue',
@@ -36,13 +37,25 @@ export default {
 	],
 };
 
-export const Standard = () => (
+const template: ComponentStory<typeof Badge> = (args) => (<Badge {...args} />);
+
+const standardProps: ComponentProps<typeof Badge> = {
+	label: 'TITANIUM',
+	colour: 'neutral',
+	look: 'standard',
+	size: 'standard',
+};
+export const Neutral = template.bind(standardProps);
+Neutral.args = standardProps;
+
+/*export const Standard = () => (
 	<>
 		{colours.map((colour) => (
 			<Badge key={colour} label={colour} colour={colour} />
 		))}
 	</>
-);
+);*/
+/*
 
 export const StandardLarge = () => (
 	<>
@@ -78,3 +91,4 @@ export const InvertedLarge = () => (
 		))}
 	</>
 );
+*/
