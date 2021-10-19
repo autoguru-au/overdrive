@@ -65,7 +65,8 @@ const colours: ColourMap = {
 
 const white = '#fff';
 
-export const tokens = {
+export const tokens:Tokens = {
+	mode: 'light',
 	shadeIntensity: {
 		slight: '0.05',
 		medium: '0.15',

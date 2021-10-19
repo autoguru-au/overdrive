@@ -91,14 +91,14 @@ export interface ForegroundColours {
 }
 
 export interface Tokens {
-	mode: 'light'|'dark';
-	breakpoints: Record<Breakpoints, string>;
-	shadeIntensity: Record<ShadeIntensityLevel, string>;
-	transparency: Record<TransparencyLevel, string>;
+	isDark: boolean;
+	breakpoints: Record<Breakpoints, number>;
+	shadeIntensity: Record<ShadeIntensityLevel, number>;
+	transparency: Record<TransparencyLevel, number>;
 	contentWidth: {
-		small: string;
-		medium: string;
-		large: string;
+		small: number;
+		medium: number;
+		large: number;
 	};
 	space: Record<SpaceScale, string>;
 	elevation: {
@@ -160,7 +160,7 @@ export interface Tokens {
 			| BaseColours,
 			string
 		>;
-		fontWeight: Record<'normal' | 'semiBold' | 'bold', string>;
+		fontWeight: Record<'normal' | 'semiBold' | 'bold', number>;
 	};
 	animation: {
 		easing: {
