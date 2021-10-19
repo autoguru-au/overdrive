@@ -5,8 +5,8 @@ type IconSizeScale = 'small' | 'medium' | 'large';
 
 type Breakpoints = 'mobile' | 'tablet' | 'desktop' | 'largeDesktop';
 
-type ColourValue = Record<number, string>;
-export type ColourMap = Record<any, ColourValue>;
+type ColourValue = Record<string, string>;
+export type ColourMap = Record<string, ColourValue>;
 
 type ColourReds =
 	| 'red900'
@@ -85,11 +85,6 @@ type TransparencyLevel = 'slight' | 'medium' | 'intense';
 
 type BaseColours = 'white';
 
-export interface ForegroundColours {
-	body: string;
-	link: string;
-}
-
 export interface Tokens {
 	mode: 'light'|'dark';
 	breakpoints: Record<Breakpoints, string>;
@@ -111,7 +106,10 @@ export interface Tokens {
 	};
 	colours: {
 		gamut: Record<ColourGamut | BaseColours, string>;
-		foreground: ForegroundColours;
+		foreground: {
+			'body': string;
+			'link': string;
+		};
 		background: {
 			body: string;
 			light: string;
@@ -151,7 +149,7 @@ export interface Tokens {
 		>;
 		// TODO: Deprecate these in favour of foreground colours
 		colour: Record<
-			| Exclude<keyof ForegroundColours, 'body'>
+			| 'link'
 			| Exclude<Intent, 'neutral'>
 			| 'dark'
 			| 'light'
