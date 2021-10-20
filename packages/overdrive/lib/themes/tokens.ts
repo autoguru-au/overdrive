@@ -88,6 +88,10 @@ type BaseColours = 'white';
 
 export interface Tokens extends VanillaTokens{
 	mode: 'light'|'dark';
+	body: {
+		colour: string;
+		backgroundColour: string;
+	}
 	breakpoints: Record<Breakpoints, string>;
 	shadeIntensity: Record<ShadeIntensityLevel, string>;
 	transparency: Record<TransparencyLevel, string>;

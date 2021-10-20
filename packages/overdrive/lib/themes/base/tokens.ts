@@ -67,6 +67,10 @@ const white = '#fff';
 
 export const tokens: Tokens = {
 	mode: 'light',
+	body: {
+		backgroundColour: white,
+		colour: colours.gray['900'],
+	},
 	shadeIntensity: {
 		slight: '0.05',
 		medium: '0.15',

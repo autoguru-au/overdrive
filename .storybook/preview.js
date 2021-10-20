@@ -2,7 +2,7 @@ import '@autoguru/overdrive/lib/reset/globalFonts.css';
 import '@autoguru/overdrive/reset';
 import * as themes from '../packages/overdrive/themes';
 import isChromatic from 'chromatic/isChromatic';
-import { Box, Heading, OverdriveLegacyProvider, Stack } from '@autoguru/overdrive';
+import { Box, Heading, OverdriveLegacyProvider, OverdriveProvider, Stack, useTheme } from '@autoguru/overdrive';
 import * as React from 'react';
 import { DocsContainer, DocsPage } from '@storybook/addon-docs';
 
@@ -10,9 +10,11 @@ import { vars } from '@autoguru/overdrive/lib/themes/base/vars.css';
 const withThemeProvider = (Story, context) => {
 	return !isChromatic() ? (
 		<OverdriveLegacyProvider theme={context.globals.theme}>
-			<Box className={vars} padding="2">
-				<Story {...context} />
-			</Box>
+			<OverdriveProvider theme={vars}>
+				<Box className={vars} padding="2">
+					<Story {...context} />
+				</Box>
+			</OverdriveProvider>
 		</OverdriveLegacyProvider>
 	) : (
 		Object.entries(themes).map(([, theme], i) => (
