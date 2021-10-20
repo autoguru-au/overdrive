@@ -1,6 +1,6 @@
 import { invariant } from '@autoguru/utilities';
 import * as React from 'react';
-import { memo } from 'react';
+import { FunctionComponent } from 'react';
 import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
@@ -17,14 +17,14 @@ export interface Props {
 	size?: 'standard' | 'large';
 }
 
-export const Badge = memo<Props>(
+export const Badge: FunctionComponent<Props> =
 	({
-		label,
-		colour = 'neutral',
-		look = 'standard',
-		size = 'standard',
-		className = '',
-	}) => {
+		 label,
+		 colour = 'neutral',
+		 look = 'standard',
+		 size = 'standard',
+		 className = '',
+	 }) => {
 		const isStandardSize = size === 'standard';
 		const styles = useStyles(styleRefs);
 		const textStyles = useTextStyles({
@@ -70,5 +70,4 @@ export const Badge = memo<Props>(
 				</Box>
 			</Box>
 		);
-	},
-);
+	};

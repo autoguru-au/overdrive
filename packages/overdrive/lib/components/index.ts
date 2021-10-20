@@ -1,4 +1,4 @@
-export * from './OverdriveProvider';
+export * from './OverdriveLegacyProvider';
 
 export * from './Actions';
 export * from './Alert';

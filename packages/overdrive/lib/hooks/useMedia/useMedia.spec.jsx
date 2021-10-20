@@ -3,13 +3,13 @@ import * as React from 'react';
 
 import { baseTheme } from '../../themes';
 import { useMedia } from './useMedia';
-import { OverdriveProvider } from '../../components/OverdriveProvider/OverdriveProvider';
+import { OverdriveLegacyProvider } from '../../components/OverdriveLegacyProvider/OverdriveProvider';
 
 const render = (hook, tokens) =>
 	renderHook(hook, {
 		wrapper({ children }) {
 			return (
-				<OverdriveProvider
+				<OverdriveLegacyProvider
 					theme={{
 						runtimeTokens: {
 							...baseTheme.runtimeTokens,
@@ -17,7 +17,7 @@ const render = (hook, tokens) =>
 						},
 					}}>
 					{children}
-				</OverdriveProvider>
+				</OverdriveLegacyProvider>
 			);
 		},
 	});

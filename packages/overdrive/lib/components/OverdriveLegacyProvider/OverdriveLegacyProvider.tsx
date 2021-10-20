@@ -6,7 +6,7 @@ import { ThemeProvider } from '../ThemeProvider/ThemeProvider';
 
 export type Props = ComponentProps<typeof ThemeProvider>;
 
-export const OverdriveProvider: FunctionComponent<Props> = ({
+export const OverdriveLegacyProvider: FunctionComponent<Props> = ({
 	theme,
 	children,
 }) => {
