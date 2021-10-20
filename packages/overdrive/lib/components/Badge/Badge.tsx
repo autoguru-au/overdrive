@@ -1,21 +1,19 @@
 import { invariant } from '@autoguru/utilities';
 import * as React from 'react';
 import { FunctionComponent } from 'react';
-import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
 import { useTextStyles } from '../Text';
 
-import * as styleRefs from './Badge.treat';
 import * as styles from './Badge.css';
 
 export interface Props {
 	label: string;
 	// TODO: These should use the intent verbs, and come from Box
-	colour?: keyof typeof styleRefs.colours.default;
+	colour?: keyof typeof styles.colours.default;
 	className?: string;
 	look?: 'standard' | 'inverted';
-	size?: 'standard' | 'large';
+	size?: keyof typeof styles.labelSize;
 }
 
 export const Badge: FunctionComponent<Props> =
@@ -27,9 +25,7 @@ export const Badge: FunctionComponent<Props> =
 		 className = '',
 	 }) => {
 		const isStandardSize = size === 'standard';
-		const legacyStyles = useStyles(styleRefs);
 		const textStyles = useTextStyles({
-			size: isStandardSize ? '2' : '4',
 			noWrap: true,
 			fontWeight: 'semiBold',
 			colour: 'unset',
@@ -46,9 +42,10 @@ export const Badge: FunctionComponent<Props> =
 				<Box
 					className={[
 						className,
+						styles.labelSize[size],
 						inverted
-							? legacyStyles.colours.inverted[colour].background
-							: legacyStyles.colours.default[colour],
+							? styles.colours.inverted[colour].background
+							: styles.colours.default[colour],
 					]}
 					overflow="hidden"
 					display="block"
@@ -63,7 +60,7 @@ export const Badge: FunctionComponent<Props> =
 							textStyles,
 							styles.label,
 							inverted
-								? legacyStyles.colours.inverted[colour].text
+								? styles.colours.inverted[colour].text
 								: useTextStyles({ colour: 'white' }),
 						]}>
 						{label}

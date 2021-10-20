@@ -73,8 +73,8 @@ export const invertedAllColours = templateAllColours.bind(invertedProps);
 invertedAllColours.args = invertedProps;
 
 const invertedLargeProps: ComponentProps<typeof Badge> = {
-	...invertedProps,
-	size: 'large'
+	...standardLargeProps,
+	look: 'inverted',
 };
 export const invertedLargeAllColours = templateAllColours.bind(invertedLargeProps);
 invertedLargeAllColours.args = invertedLargeProps;

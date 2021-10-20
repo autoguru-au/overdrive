@@ -6,8 +6,15 @@ type IconSizeScale = 'small' | 'medium' | 'large';
 type Breakpoints = 'mobile' | 'tablet' | 'desktop' | 'largeDesktop';
 
 type ColourValue = Record<string, string>;
+
+interface ColourIntensityMap extends VanillaTokens {
+	standard: string;
+	mild: string;
+	strong: string;
+}
+
 export type ColourMap = Record<string, ColourValue>;
-import {Tokens as VanillaTokens} from '@vanilla-extract/css/dist/declarations/src/types';
+import { Tokens as VanillaTokens } from '@vanilla-extract/css/dist/declarations/src/types';
 
 type ColourReds =
 	| 'red900'
@@ -93,8 +100,6 @@ export interface Tokens extends VanillaTokens{
 		backgroundColour: string;
 	}
 	breakpoints: Record<Breakpoints, string>;
-	shadeIntensity: Record<ShadeIntensityLevel, string>;
-	transparency: Record<TransparencyLevel, string>;
 	contentWidth: {
 		small: string;
 		medium: string;
@@ -125,7 +130,7 @@ export interface Tokens extends VanillaTokens{
 			Intent,
 			{
 				foreground: string;
-				background: string;
+				background: ColourIntensityMap;
 			}
 		>;
 	};

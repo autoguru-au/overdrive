@@ -71,16 +71,6 @@ export const tokens: Tokens = {
 		backgroundColour: white,
 		colour: colours.gray['900'],
 	},
-	shadeIntensity: {
-		slight: '0.05',
-		medium: '0.15',
-		intense: '0.3',
-	},
-	transparency: {
-		slight: '0.25',
-		medium: '0.5',
-		intense: '0.9',
-	},
 	breakpoints: {
 		mobile: '0px',
 		tablet: '768px', // IPad mini width (1024 - 25%)
@@ -141,7 +131,11 @@ export const tokens: Tokens = {
 				foreground: colours.yellow['200'],
 			},
 			neutral: {
-				background: colours.gray['700'],
+				background: {
+					standard: colours.gray['700'],
+					mild: colours.gray['300'],
+					strong: colours.gray['900'],
+				},
 				foreground: white,
 			},
 			success: {

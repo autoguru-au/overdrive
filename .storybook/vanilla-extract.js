@@ -10,8 +10,6 @@ module.exports = {
 			...baseConfig,
 			plugins: [
 				...plugins,
-				new VanillaExtractPlugin(),
-				new MiniCssExtractPlugin(),
 				new TreatPlugin({
 					localIdentName: '[name]-[local]_[hash:base64:5]',
 					themeIdentName: '_[name]-[local]_[hash:base64:4]',
@@ -27,6 +25,9 @@ module.exports = {
 						},
 					],
 				}),
+				new VanillaExtractPlugin(),
+				new MiniCssExtractPlugin(),
+
 			],
 			module: {
 				...module,
