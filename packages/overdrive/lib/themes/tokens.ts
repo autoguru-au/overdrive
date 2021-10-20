@@ -7,6 +7,7 @@ type Breakpoints = 'mobile' | 'tablet' | 'desktop' | 'largeDesktop';
 
 type ColourValue = Record<string, string>;
 export type ColourMap = Record<string, ColourValue>;
+import {Tokens as VanillaTokens} from '@vanilla-extract/css/dist/declarations/src/types';
 
 type ColourReds =
 	| 'red900'
@@ -85,7 +86,7 @@ type TransparencyLevel = 'slight' | 'medium' | 'intense';
 
 type BaseColours = 'white';
 
-export interface Tokens {
+export interface Tokens extends VanillaTokens{
 	mode: 'light'|'dark';
 	breakpoints: Record<Breakpoints, string>;
 	shadeIntensity: Record<ShadeIntensityLevel, string>;

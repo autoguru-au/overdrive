@@ -2,11 +2,11 @@ import * as React from 'react';
 import { ComponentProps, FunctionComponent, useEffect } from 'react';
 
 import { isBrowser } from '../../utils';
-import { ThemeLegacyProvider } from '../ThemeLegacyProvider/ThemeLegacyProvider';
+import { ThemeProvider } from '../ThemeProvider/ThemeProvider';
 
-export type Props = ComponentProps<typeof ThemeLegacyProvider>;
+export type Props = ComponentProps<typeof ThemeProvider>;
 
-export const OverdriveLegacyProvider: FunctionComponent<Props> = ({
+export const OverdriveProvider: FunctionComponent<Props> = ({
 	theme,
 	children,
 }) => {
@@ -18,5 +18,5 @@ export const OverdriveLegacyProvider: FunctionComponent<Props> = ({
 		}
 	}, [theme]);
 
-	return <ThemeLegacyProvider theme={theme}>{children}</ThemeLegacyProvider>;
+	return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };

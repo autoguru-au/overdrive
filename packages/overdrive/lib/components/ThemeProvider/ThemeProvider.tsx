@@ -1,35 +1,28 @@
 import { invariant } from '@autoguru/utilities';
 import * as React from 'react';
 import { createContext, FunctionComponent, useContext } from 'react';
-import { TreatProvider } from 'react-treat';
-import type { ThemeRef } from 'treat';
+import { ThemeVars } from '@vanilla-extract/css/dist/declarations/src/types';
+import { Tokens } from '../../themes/tokens';
 
-import type { RuntimeTokens } from '../../themes/makeTheme';
-
-const tokensContext = createContext<RuntimeTokens | null>(null);
+const themeContext = createContext<ThemeVars<Tokens> | null>(null);
 
 export interface Props {
-	// TODO: Get rid of theme provider post vanilla extract migration
-	theme: {
-		name: string;
-		themeRef: ThemeRef;
-		runtimeTokens: RuntimeTokens;
-	};
+	theme: ThemeVars<Tokens>;
 }
 
 export const ThemeProvider: FunctionComponent<Props> = ({
-	theme,
-	children,
-}) => (
-	<TreatProvider theme={theme.themeRef}>
-		<tokensContext.Provider value={theme.runtimeTokens}>
-			{children}
-		</tokensContext.Provider>
-	</TreatProvider>
+															theme,
+															children,
+														}) => (
+	<themeContext.Provider value={theme}>
+		{children}
+	</themeContext.Provider>
 );
 
-export const useRuntimeTokens = (): RuntimeTokens => {
-	const tokens = useContext(tokensContext);
-	invariant(tokens !== null, "You havn't provided a `OverdriveProvider`.");
-	return tokens;
+export const useTheme = () => {
+	const themeClass = useContext(themeContext);
+
+	invariant(themeClass !== null, 'You haven\'t provided an `OverdriveProvider`.');
+
+	return themeClass;
 };
