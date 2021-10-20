@@ -7,6 +7,7 @@ import { Box } from '../Box';
 import { useTextStyles } from '../Text';
 
 import * as styleRefs from './Badge.treat';
+import * as styles from './Badge.css';
 
 export interface Props {
 	label: string;
@@ -26,7 +27,7 @@ export const Badge: FunctionComponent<Props> =
 		 className = '',
 	 }) => {
 		const isStandardSize = size === 'standard';
-		const styles = useStyles(styleRefs);
+		const legacyStyles = useStyles(styleRefs);
 		const textStyles = useTextStyles({
 			size: isStandardSize ? '2' : '4',
 			noWrap: true,
@@ -46,8 +47,8 @@ export const Badge: FunctionComponent<Props> =
 					className={[
 						className,
 						inverted
-							? styles.colours.inverted[colour].background
-							: styles.colours.default[colour],
+							? legacyStyles.colours.inverted[colour].background
+							: legacyStyles.colours.default[colour],
 					]}
 					overflow="hidden"
 					display="block"
@@ -62,7 +63,7 @@ export const Badge: FunctionComponent<Props> =
 							textStyles,
 							styles.label,
 							inverted
-								? styles.colours.inverted[colour].text
+								? legacyStyles.colours.inverted[colour].text
 								: useTextStyles({ colour: 'white' }),
 						]}>
 						{label}

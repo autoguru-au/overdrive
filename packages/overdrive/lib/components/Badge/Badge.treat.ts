@@ -1,13 +1,6 @@
-import { style, styleMap } from 'treat';
+import { styleMap } from 'treat';
 
 import { shadedColour } from '../../themes/helpers';
-
-export const label = style(({ typography }) => ({
-	lineHeight: typography.size['2'].fontSize,
-	textOverflow: 'ellipsis',
-	letterSpacing: '0.5px',
-	textTransform: 'uppercase',
-}));
 
 // TODO: Derive the inverted colours from a token
 export const colours = {
