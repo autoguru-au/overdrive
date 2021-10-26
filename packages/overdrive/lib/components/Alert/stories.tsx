@@ -1,13 +1,29 @@
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
+import { ComponentProps } from 'react';
 
 import { Text } from '../Text';
 
 import { Alert } from '.';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-export default { title: 'Components/Alert', component: Alert };
+const onRequestClose = action('onRequestClose');
+type Intent = ComponentProps<typeof Alert>['intent'];
+export default {
+	title: 'Components/Alert',
+	component: Alert,
+	argTypes: {
+		intent: {
+			options: ['information', 'success', 'warning', 'danger'] as Intent[],
+			defaultValue: 'primary',
+			control: {
+				type: 'select',
+			},
+		},
+	},
+} as ComponentMeta<typeof Alert>;
 
-export const Standard = () => (
+const template: ComponentStory<typeof Alert> = (args) => (
 	<div
 		style={{
 			display: 'grid',
@@ -15,7 +31,24 @@ export const Standard = () => (
 			gridGap: '24px',
 		}}>
 		<div>
-			<Alert intent="success" onRequestClose={action('onRequestClose')}>
+			<Alert {...args} onRequestClose={onRequestClose}>
+				<Text>
+					Your invoice was sent to <Text strong>abc@supplier.co</Text>
+				</Text>
+			</Alert>
+		</div>
+	</div>
+);
+
+const templateAllIntents: ComponentStory<typeof Alert> = (args) => (
+	<div
+		style={{
+			display: 'grid',
+			gridAutoFlow: 'row dense',
+			gridGap: '24px',
+		}}>
+		<div>
+			<Alert {...args} intent="success" onRequestClose={onRequestClose}>
 				<Text>
 					Your invoice was sent to <Text strong>abc@supplier.co</Text>
 				</Text>
@@ -23,25 +56,25 @@ export const Standard = () => (
 		</div>
 
 		<div>
-			<Alert dismissible intent="warning">
+			<Alert {...args} intent="warning" onRequestClose={onRequestClose}>
 				This will affect job changes
 			</Alert>
 		</div>
 
 		<div>
-			<Alert dismissible intent="danger">
+			<Alert {...args} intent="danger" onRequestClose={onRequestClose}>
 				Something went wrong
 			</Alert>
 		</div>
 
 		<div>
-			<Alert dismissible intent="information">
+			<Alert {...args} intent="information" onRequestClose={onRequestClose}>
 				Something worth noting happened
 			</Alert>
 		</div>
 
 		<div>
-			<Alert dismissible intent="information">
+			<Alert {...args} intent="information" onRequestClose={onRequestClose}>
 				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
 				commodo ligula eget dolor. Aenean massa. Cum sociis natoque
 				penatibus et magnis dis parturient montes, nascetur ridiculus
@@ -58,72 +91,32 @@ export const Standard = () => (
 	</div>
 );
 
-export const Inline = () => (
-	<div
-		style={{
-			display: 'grid',
-			gridAutoFlow: 'row dense',
-			gridGap: '24px',
-		}}>
-		<div>
-			<Alert inline intent="success">
-				<Text>
-					Your invoice was sent to <Text strong>abc@supplier.co</Text>
-				</Text>
-			</Alert>
-		</div>
+const standardProps: Omit<ComponentProps<typeof Alert>, 'onRequestClose' | 'children'> = {
+	dismissible: void 0,
+	intent: void 0,
+	inline: void 0,
+	className: void 0,
+};
 
-		<div>
-			<Alert inline intent="warning">
-				This will affect job changes
-			</Alert>
-		</div>
+export const Standard = template.bind(standardProps);
+Standard.args = standardProps;
 
-		<div>
-			<Alert inline intent="danger">
-				Something went wrong
-			</Alert>
-		</div>
+export const StandardAllIntents = templateAllIntents.bind(standardProps);
+StandardAllIntents.args = standardProps;
 
-		<div>
-			<Alert inline intent="information">
-				Something worth noting happened
-			</Alert>
-		</div>
-	</div>
-);
+const inlineProps: typeof standardProps= {
+	...standardProps,
+	inline: true,
+};
 
-export const NonDismissible = () => (
-	<div
-		style={{
-			display: 'grid',
-			gridAutoFlow: 'row dense',
-			gridGap: '24px',
-		}}>
-		<div>
-			<Alert intent="success" dismissible={false}>
-				<Text>
-					Your invoice was sent to <Text strong>abc@supplier.co</Text>
-				</Text>
-			</Alert>
-		</div>
+export const InlineAllIntents = templateAllIntents.bind(inlineProps);
+InlineAllIntents.args = inlineProps;
 
-		<div>
-			<Alert intent="warning" dismissible={false}>
-				This will affect job changes
-			</Alert>
-		</div>
+const noneDismissibleProps: typeof standardProps= {
+	...standardProps,
+	dismissible: false,
+};
 
-		<div>
-			<Alert intent="danger" dismissible={false}>
-				Something went wrong
-			</Alert>
-		</div>
 
-		<div>
-			<Alert intent="information" dismissible={false}>
-				Something worth noting happened
-			</Alert>
-		</div>
-	</div>
-);
+export const NoneDismissibleAllIntents = templateAllIntents.bind(noneDismissibleProps);
+NoneDismissibleAllIntents.args = noneDismissibleProps;

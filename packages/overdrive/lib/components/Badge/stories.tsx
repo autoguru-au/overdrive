@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ComponentProps } from 'react';
 
 import { Badge } from '.';
-import { ComponentStory } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 const colours: ReadonlyArray<ComponentProps<typeof Badge>['colour']> = [
 	'blue',
@@ -35,7 +35,7 @@ export default {
 			</div>
 		),
 	],
-};
+} as ComponentMeta<typeof Badge>;
 
 const template: ComponentStory<typeof Badge> = (args) => <Badge {...args} />;
 const templateAllColours: ComponentStory<typeof Badge> = (args) => (
