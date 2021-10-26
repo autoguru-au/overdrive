@@ -111,39 +111,67 @@ export const tokens: Tokens = {
 		},
 		intent: {
 			primary: {
-				background: colours.green['600'],
+				background: {
+					standard: colours.green['600'],
+					mild: colours.green['300'],
+					strong: colours.green['900'],
+				},
 				foreground: white,
 			},
 			secondary: {
-				background: white,
+				background: {
+					standard: white,
+					mild: white,
+					strong: white,
+				},
 				foreground: colours.gray['700'],
 			},
 			shine: {
-				background: colours.gray['200'],
+				background: {
+					standard: colours.gray['200'],
+					mild: colours.gray['100'],
+					strong: colours.gray['300'],
+				},
 				foreground: colours.yellow['500'],
 			},
 			danger: {
-				background: colours.red['600'],
+				background: {
+					standard: colours.red['600'],
+					mild: colours.red['200'],
+					strong: colours.red['800'],
+				},
 				foreground: white,
 			},
 			warning: {
-				background: colours.yellow['800'],
+				background: {
+					standard: colours.yellow['800'],
+					mild: colours.yellow['200'],
+					strong: colours.yellow['900'],
+				},
 				foreground: colours.yellow['200'],
 			},
 			neutral: {
 				background: {
 					standard: colours.gray['700'],
-					mild: colours.gray['300'],
+					mild: colours.gray['200'],
 					strong: colours.gray['900'],
 				},
 				foreground: white,
 			},
 			success: {
-				background: colours.green['600'],
+				background: {
+					standard: colours.green['700'],
+					mild: colours.green['200'],
+					strong: colours.green['900'],
+				},
 				foreground: colours.green['200'],
 			},
 			information: {
-				background: colours.blue['900'],
+				background: {
+					standard: colours.blue['800'],
+					mild: colours.blue['200'],
+					strong: colours.blue['900'],
+				},
 				foreground: colours.blue['200'],
 			},
 		},

@@ -47,70 +47,37 @@ export const colours = {
 				color: vars.colours.intent.neutral.background.standard,
 			},
 		}),
-		/*green: styleVariants({
+		green: styleVariants({
 			background: {
-				backgroundColor: shadedColour(
-					vars.colours.intent.success.background,
-					vars.shadeIntensity.slight,
-					'backward',
-					vars.mode === 'dark',
-					vars.transparency.intense,
-				),
+				backgroundColor: vars.colours.intent.success.background.mild,
 			},
 			text: {
-				color: shadedColour(
-					vars.colours.intent.success.background,
-					vars.shadeIntensity.medium,
-					'backward',
-					vars.mode === 'dark',
-				),
+				color: vars.colours.intent.success.background.standard,
 			},
 		}),
 		blue: styleVariants({
 			background: {
-				backgroundColor: vars.colours.intent.information.background,
+				backgroundColor: vars.colours.intent.information.background.mild,
 			},
 			text: {
-				color: vars.colours.intent.information.background,
+				color: vars.colours.intent.information.background.standard,
 			},
 		}),
 		yellow: styleVariants({
 			background: {
-				backgroundColor: shadedColour(
-					vars.colours.intent.warning.background,
-					vars.shadeIntensity.slight,
-					'backward',
-					vars.mode === 'dark',
-					vars.transparency.intense,
-				),
+				backgroundColor: vars.colours.intent.warning.background.mild,
 			},
 			text: {
-				color: shadedColour(
-					vars.colours.intent.warning.background,
-					vars.shadeIntensity.slight,
-					'backward',
-					vars.mode === 'dark',
-				),
+				color: vars.colours.intent.warning.background.standard,
 			},
 		}),
 		red: styleVariants({
 			background: {
-				backgroundColor: shadedColour(
-					vars.colours.intent.danger.background,
-					vars.shadeIntensity.slight,
-					'backward',
-					vars.mode === 'dark',
-					vars.transparency.intense,
-				),
+				backgroundColor: vars.colours.intent.danger.background.mild,
 			},
 			text: {
-				color: shadedColour(
-					vars.colours.intent.danger.background,
-					vars.shadeIntensity.slight,
-					'backward',
-					vars.mode === 'dark',
-				),
+				color: vars.colours.intent.danger.background.standard,
 			},
-		}),*/
+		}),
 	},
 };

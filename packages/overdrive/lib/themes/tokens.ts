@@ -88,9 +88,6 @@ type Intent =
 	| 'success'
 	| 'information';
 
-type ShadeIntensityLevel = 'slight' | 'medium' | 'intense';
-type TransparencyLevel = 'slight' | 'medium' | 'intense';
-
 type BaseColours = 'white';
 
 export interface Tokens extends VanillaTokens{
