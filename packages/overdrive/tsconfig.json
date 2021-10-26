@@ -28,5 +28,5 @@
 		"./lib/**/*.ts",
 		"./lib/**/*.tsx"
 	],
-	"exclude": ["./**/*stories*.tsx"]
+	"exclude": []
 }

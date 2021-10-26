@@ -52,7 +52,9 @@ export type OverdriveTheme = ReturnType<typeof decorateTokens>;
 export const makeTheme = (tokens: Tokens, debugName) =>
 	createTheme(decorateTokens(tokens), debugName);
 
-export const buildColourGamut = (colours: ColourMap):Record<ColourGamut, string> =>
+export const buildColourGamut = (
+	colours: ColourMap,
+): Record<ColourGamut, string> =>
 	Object.entries(colours).reduce(
 		(result, [name, colourGrades]) => ({
 			...result,

@@ -16,56 +16,55 @@ export interface Props {
 	size?: keyof typeof styles.labelSize;
 }
 
-export const Badge: FunctionComponent<Props> =
-	({
-		 label,
-		 colour = 'neutral',
-		 look = 'standard',
-		 size = 'standard',
-		 className = '',
-	 }) => {
-		const isStandardSize = size === 'standard';
-		const textStyles = useTextStyles({
-			noWrap: true,
-			fontWeight: 'semiBold',
-			colour: 'unset',
-		});
-		const inverted = look === 'inverted';
+export const Badge: FunctionComponent<Props> = ({
+	label,
+	colour = 'neutral',
+	look = 'standard',
+	size = 'standard',
+	className = '',
+}) => {
+	const isStandardSize = size === 'standard';
+	const textStyles = useTextStyles({
+		noWrap: true,
+		fontWeight: 'semiBold',
+		colour: 'unset',
+	});
+	const inverted = look === 'inverted';
 
-		invariant(
-			['string', 'number'].includes(typeof label),
-			"Badge `label` can only contain string's or number's",
-		);
+	invariant(
+		['string', 'number'].includes(typeof label),
+		"Badge `label` can only contain string's or number's",
+	);
 
-		return (
-			<Box display="flex">
+	return (
+		<Box display="flex">
+			<Box
+				className={[
+					className,
+					styles.labelSize[size],
+					inverted
+						? styles.colours.inverted[colour].background
+						: styles.colours.default[colour],
+				]}
+				overflow="hidden"
+				display="block"
+				paddingX={isStandardSize ? '1' : '4'}
+				paddingY={isStandardSize ? '1' : '2'}
+				borderRadius="1">
 				<Box
-					className={[
-						className,
-						styles.labelSize[size],
-						inverted
-							? styles.colours.inverted[colour].background
-							: styles.colours.default[colour],
-					]}
-					overflow="hidden"
+					is="span"
 					display="block"
-					paddingX={isStandardSize ? '1' : '4'}
-					paddingY={isStandardSize ? '1' : '2'}
-					borderRadius="1">
-					<Box
-						is="span"
-						display="block"
-						overflow="hidden"
-						className={[
-							textStyles,
-							styles.label,
-							inverted
-								? styles.colours.inverted[colour].text
-								: useTextStyles({ colour: 'white' }),
-						]}>
-						{label}
-					</Box>
+					overflow="hidden"
+					className={[
+						textStyles,
+						styles.label,
+						inverted
+							? styles.colours.inverted[colour].text
+							: useTextStyles({ colour: 'white' }),
+					]}>
+					{label}
 				</Box>
 			</Box>
-		);
-	};
+		</Box>
+	);
+};

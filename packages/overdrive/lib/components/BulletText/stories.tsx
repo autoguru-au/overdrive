@@ -41,8 +41,9 @@ export default {
 	},
 } as ComponentMeta<typeof BulletText>;
 
-const template: ComponentStory<typeof BulletText> = (args) => <BulletText is='div' {...args} />;
-
+const template: ComponentStory<typeof BulletText> = (args) => (
+	<BulletText is="div" {...args} />
+);
 
 const primaryProps: ComponentProps<typeof BulletText> = {
 	variant: 'primary',

@@ -2,7 +2,14 @@ import '@autoguru/overdrive/lib/reset/globalFonts.css';
 import '@autoguru/overdrive/reset';
 import * as themes from '../packages/overdrive/themes';
 import isChromatic from 'chromatic/isChromatic';
-import { Box, Heading, OverdriveLegacyProvider, OverdriveProvider, Stack, useTheme } from '@autoguru/overdrive';
+import {
+	Box,
+	Heading,
+	OverdriveLegacyProvider,
+	OverdriveProvider,
+	Stack,
+	useTheme,
+} from '@autoguru/overdrive';
 import * as React from 'react';
 import { DocsContainer, DocsPage } from '@storybook/addon-docs';
 

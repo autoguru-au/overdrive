@@ -90,12 +90,12 @@ type Intent =
 
 type BaseColours = 'white';
 
-export interface Tokens extends VanillaTokens{
-	mode: 'light'|'dark';
+export interface Tokens extends VanillaTokens {
+	mode: 'light' | 'dark';
 	body: {
 		colour: string;
 		backgroundColour: string;
-	}
+	};
 	breakpoints: Record<Breakpoints, string>;
 	contentWidth: {
 		small: string;
@@ -114,8 +114,8 @@ export interface Tokens extends VanillaTokens{
 	colours: {
 		gamut: Record<ColourGamut | BaseColours, string>;
 		foreground: {
-			'body': string;
-			'link': string;
+			body: string;
+			link: string;
 		};
 		background: {
 			body: string;

@@ -7,16 +7,20 @@ export const shadedColour = (
 	isDarkTheme = false,
 	transparency: number | string | null = 0,
 ): string => {
-	const intensityValue = typeof intensity === 'string' ? Number(intensity) : intensity;
-	const transparencyValue = typeof transparency === 'string' ? Number(transparency) : transparency;
+	const intensityValue =
+		typeof intensity === 'string' ? Number(intensity) : intensity;
+	const transparencyValue =
+		typeof transparency === 'string' ? Number(transparency) : transparency;
 
 	return colord(colour)
 		[
-		(!isDarkTheme && direction === 'backward') ||
-		(isDarkTheme && direction === 'forward')
-			? 'darken'
-			: 'lighten'
+			(!isDarkTheme && direction === 'backward') ||
+			(isDarkTheme && direction === 'forward')
+				? 'darken'
+				: 'lighten'
 		](intensityValue || void 0)
-		.alpha(typeof transparencyValue === 'number' ? 1 - transparencyValue : 1)
+		.alpha(
+			typeof transparencyValue === 'number' ? 1 - transparencyValue : 1,
+		)
 		.toHex();
 };

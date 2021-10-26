@@ -27,7 +27,6 @@ module.exports = {
 				}),
 				new VanillaExtractPlugin(),
 				new MiniCssExtractPlugin(),
-
 			],
 			module: {
 				...module,

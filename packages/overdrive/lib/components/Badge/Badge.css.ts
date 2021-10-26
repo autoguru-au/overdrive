@@ -12,12 +12,11 @@ export const labelSize = styleVariants({
 		fontSize: vars.typography.size['2'].fontSize,
 		lineHeight: vars.typography.size['2'].fontSize,
 	},
-	large:{
+	large: {
 		fontSize: vars.typography.size['4'].fontSize,
 		lineHeight: vars.typography.size['4'].fontSize,
-	}
+	},
 });
-
 
 // TODO: Derive the inverted colours from a token
 export const colours = {
@@ -29,7 +28,8 @@ export const colours = {
 			backgroundColor: vars.colours.intent.success.background.standard,
 		},
 		blue: {
-			backgroundColor: vars.colours.intent.information.background.standard,
+			backgroundColor:
+				vars.colours.intent.information.background.standard,
 		},
 		yellow: {
 			backgroundColor: vars.colours.intent.warning.background.standard,
@@ -57,7 +57,8 @@ export const colours = {
 		}),
 		blue: styleVariants({
 			background: {
-				backgroundColor: vars.colours.intent.information.background.mild,
+				backgroundColor:
+					vars.colours.intent.information.background.mild,
 			},
 			text: {
 				color: vars.colours.intent.information.background.standard,

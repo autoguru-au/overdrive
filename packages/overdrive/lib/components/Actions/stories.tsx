@@ -19,27 +19,31 @@ export default {
 const template: ComponentStory<typeof Actions> = (args) => (
 	<Actions {...args}>
 		<Button>Login</Button>
-		<Button variant='primary'>Sign up</Button>
-		<Button variant='secondary'>Action 1</Button>
-		<Button variant='secondary'>Action 2</Button>
-		<Button isLoading variant='secondary'>
+		<Button variant="primary">Sign up</Button>
+		<Button variant="secondary">Action 1</Button>
+		<Button variant="secondary">Action 2</Button>
+		<Button isLoading variant="secondary">
 			Action 3
 		</Button>
-		<Button minimal variant='secondary'>
+		<Button minimal variant="secondary">
 			Action 4
 		</Button>
 	</Actions>
 );
 
-const standardProps: ComponentProps<typeof Actions> = {
+const standardProps: Pick<ComponentProps<typeof Actions>, 'noWrap'> = {
 	noWrap: false,
 };
-const noWrapProps: ComponentProps<typeof Actions> = {
+const noWrapProps: typeof standardProps = {
 	noWrap: true,
 };
 
-export const standard = template.bind(standardProps);
-export const noWrap = template.bind(noWrapProps);
+export const standard: ComponentStory<typeof Actions> = template.bind(
+	standardProps,
+);
+export const noWrap: ComponentStory<typeof Actions> = template.bind(
+	noWrapProps,
+);
 
 standard.args = standardProps;
 noWrap.args = noWrapProps;

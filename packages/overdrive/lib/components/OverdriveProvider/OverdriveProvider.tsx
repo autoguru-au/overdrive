@@ -7,13 +7,12 @@ import { ThemeProvider } from '../ThemeProvider/ThemeProvider';
 export type Props = ComponentProps<typeof ThemeProvider>;
 
 export const OverdriveProvider: FunctionComponent<Props> = ({
-																theme,
-																children,
-															}) => {
+	theme,
+	children,
+}) => {
 	useEffect(() => {
 		if (isBrowser) {
-			document.body.style.backgroundColor =
-				theme.body.backgroundColour;
+			document.body.style.backgroundColor = theme.body.backgroundColour;
 			document.body.style.color = theme.body.colour;
 		}
 	}, [theme]);

@@ -37,11 +37,13 @@ export default {
 	],
 };
 
-const template: ComponentStory<typeof Badge> = (args) => (<Badge {...args} />);
+const template: ComponentStory<typeof Badge> = (args) => <Badge {...args} />;
 const templateAllColours: ComponentStory<typeof Badge> = (args) => (
-	<>{
-		colours.map((colour)=>(<Badge key={colour} {...args} colour={colour}/>))
-	}</>
+	<>
+		{colours.map((colour) => (
+			<Badge key={colour} {...args} colour={colour} />
+		))}
+	</>
 );
 
 const standardProps: ComponentProps<typeof Badge> = {
@@ -56,9 +58,11 @@ standardAllColours.args = standardProps;
 
 const standardLargeProps: ComponentProps<typeof Badge> = {
 	...standardProps,
-	size: 'large'
+	size: 'large',
 };
-export const standardLargeAllColours = templateAllColours.bind(standardLargeProps);
+export const standardLargeAllColours = templateAllColours.bind(
+	standardLargeProps,
+);
 standardLargeAllColours.args = standardLargeProps;
 
 const invertedProps: ComponentProps<typeof Badge> = {
@@ -76,5 +80,7 @@ const invertedLargeProps: ComponentProps<typeof Badge> = {
 	...standardLargeProps,
 	look: 'inverted',
 };
-export const invertedLargeAllColours = templateAllColours.bind(invertedLargeProps);
+export const invertedLargeAllColours = templateAllColours.bind(
+	invertedLargeProps,
+);
 invertedLargeAllColours.args = invertedLargeProps;
