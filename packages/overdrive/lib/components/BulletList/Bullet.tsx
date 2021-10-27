@@ -1,25 +1,19 @@
 import * as React from 'react';
-import {
-	FunctionComponent,
-	isValidElement,
-	ReactChild,
-	useContext,
-} from 'react';
-import { useStyles } from 'react-treat';
+import { FunctionComponent, isValidElement, ReactChild, useContext } from 'react';
 
 import { Box } from '../Box';
 
 import { BulletList } from './BulletList';
 import { BulletListContext, bulletMap, BulletType } from './context';
 
-import * as styleRefs from './Bullet.treat';
+import * as styles from './Bullet.css';
 
 export interface Props {
 	children: ReactChild;
 	className?: string;
 }
 
-const getBulletCls = (styles: typeof styleRefs, type: BulletType): string => {
+const getBulletCls = (styles: typeof style, type: BulletType): string => {
 	switch (type) {
 		case 'circle':
 			return styles.root.circle;
@@ -32,26 +26,22 @@ const getBulletCls = (styles: typeof styleRefs, type: BulletType): string => {
 	}
 };
 
-export const Bullet: FunctionComponent<Props> = ({ children, className }) => {
-	const styles = useStyles(styleRefs);
-
-	return (
-		<Box
-			is="li"
-			className={[
-				styles.root.default,
-				getBulletCls(
-					styles,
-					bulletMap[useContext(BulletListContext)],
-				) ?? '',
-				{
-					[styles.noDot]:
-						isValidElement(children) &&
-						children.type === BulletList,
-				},
-				className,
-			]}>
-			{children}
-		</Box>
-	);
-};
+export const Bullet: FunctionComponent<Props> = ({ children, className }) => (
+	<Box
+		is='li'
+		className={[
+			styles.root.default,
+			getBulletCls(
+				styles,
+				bulletMap[useContext(BulletListContext)],
+			) ?? '',
+			{
+				[styles.noDot]:
+				isValidElement(children) &&
+				children.type === BulletList,
+			},
+			className,
+		]}>
+		{children}
+	</Box>
+);

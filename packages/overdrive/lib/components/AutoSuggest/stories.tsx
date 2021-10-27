@@ -103,14 +103,6 @@ const Template: ComponentStory<typeof AutoSuggest> = (args) => (
 	<AutoSuggest {...args} />
 );
 
-const InsideModalTemplate: ComponentStory<typeof AutoSuggest> = (args) => (
-	<StandardModal isOpen={true} title="Test inside modal">
-		<div style={{ padding: 20 }}>
-			<AutoSuggest {...args} />
-		</div>
-	</StandardModal>
-);
-
 const standardProps: Omit<ComponentProps<typeof AutoSuggest>, 'children'> = {
 	value: null,
 	suggestions: mockSuggestions,
@@ -195,5 +187,3 @@ const invalidProps: typeof withHintTextProps = {
 export const invalid = Template.bind(invalidProps);
 invalid.args = invalidProps;
 
-export const insideModal = InsideModalTemplate.bind(standardProps);
-insideModal.args = standardProps;

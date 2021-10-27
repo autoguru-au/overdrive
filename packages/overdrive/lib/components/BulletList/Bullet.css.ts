@@ -1,11 +1,12 @@
-import { style, styleMap } from 'treat';
+import { style, styleVariants } from '@vanilla-extract/css';
+import { vars } from '../../themes/base/vars.css';
 
-export const root = styleMap((theme) => ({
+export const root = styleVariants({
 	default: {
 		display: 'grid',
 		gridTemplateColumns: 'min-content 1fr',
-		gridGap: theme.space['4'],
-		marginBottom: theme.space['2'],
+		gridGap: vars.space['4'],
+		marginBottom: vars.space['2'],
 
 		':last-of-type': {
 			marginBottom: 0,
@@ -14,11 +15,11 @@ export const root = styleMap((theme) => ({
 		':before': {
 			display: 'block',
 			alignSelf: 'flex-start',
-			width: theme.space['2'],
-			height: theme.space['2'],
-			marginTop: `calc((1.6em - ${theme.space['2']}) / 2)`,
+			width: vars.space['2'],
+			height: vars.space['2'],
+			marginTop: `calc((1.6em - ${vars.space['2']}) / 2)`,
 			content: "' '",
-			backgroundColor: theme.typography.colour.dark,
+			backgroundColor: vars.typography.colour.dark,
 		},
 	},
 	circle: {
@@ -28,18 +29,18 @@ export const root = styleMap((theme) => ({
 	},
 	disc: {
 		':before': {
-			border: `2px solid ${theme.typography.colour.dark}`,
+			border: `2px solid ${vars.typography.colour.dark}`,
 			borderRadius: '50%',
 			backgroundColor: 'transparent',
 		},
 	},
 	square: {
 		':before': {
-			border: `2px solid ${theme.typography.colour.dark}`,
+			border: `2px solid ${vars.typography.colour.dark}`,
 			backgroundColor: 'transparent',
 		},
 	},
-}));
+});
 
 export const noDot = style({
 	':before': {
