@@ -83,7 +83,7 @@ type Suggestions<PayloadType> = Array<AutoSuggestValue<PayloadType>>;
 export interface Props<PayloadType>
 	extends Omit<
 		ComponentPropsWithoutRef<typeof TextInput>,
-		'onChange' | 'value' | 'type'
+		'onChange' | 'value' | 'type' | 'suffixIcon'
 	> {
 	autoFocus?: boolean;
 	autoWidth?: boolean;

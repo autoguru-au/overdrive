@@ -10,7 +10,7 @@ import {
 	StarIcon,
 } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
-import { ArgTypes } from '@storybook/react';
+import { ArgTypes, ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -29,7 +29,7 @@ export default {
 	parameters: {
 		chromatic: { delay: 300 },
 	},
-};
+} as ComponentMeta<typeof SelectInput>;
 
 const defaultValue = valueOptions[4];
 const defaultPlaceholder = 'What is the make of your car?';
@@ -64,14 +64,14 @@ const argTypes: ArgTypes = {
 	},
 };
 
-const Template = (args) => (
+const Template: ComponentStory<typeof SelectInput> = (args) => (
 	<SelectInput {...args}>
 		<option disabled>Select an option</option>
 		{selectOptions}
 	</SelectInput>
 );
 
-const sharedProps: ComponentProps<typeof SelectInput> = {
+const sharedProps: Omit<ComponentProps<typeof SelectInput>, 'children'> = {
 	disabled: false,
 	name: 'text',
 	placeholder: defaultPlaceholder,
@@ -82,59 +82,59 @@ const sharedProps: ComponentProps<typeof SelectInput> = {
 	reserveHintSpace: false,
 	hintText: '',
 	notch: true,
-	prefixIcon: null,
+	prefixIcon: void 0,
 	onChange: action('onChange'),
 	onFocus: action('onFocus'),
 	onBlur: action('onBlur'),
 };
 
-const standardProps: ComponentProps<typeof SelectInput> = sharedProps;
-const withAValueProps: ComponentProps<typeof SelectInput> = {
+const standardProps: typeof sharedProps = sharedProps;
+const withAValueProps: typeof sharedProps = {
 	...sharedProps,
 	value: defaultValue,
 	placeholder: defaultPlaceholder,
 };
-const withHintTextProps: ComponentProps<typeof SelectInput> = {
+const withHintTextProps: typeof sharedProps = {
 	...sharedProps,
 	hintText: 'Hint Text',
 	placeholder: defaultPlaceholder,
 };
-const withPrefixIconProps: ComponentProps<typeof SelectInput> = {
+const withPrefixIconProps: typeof sharedProps = {
 	...sharedProps,
 	prefixIcon: CarIcon,
 };
-const disabledProps: ComponentProps<typeof SelectInput> = {
+const disabledProps: typeof sharedProps = {
 	...sharedProps,
 	value: defaultValue,
 	placeholder: defaultPlaceholder,
 	disabled: true,
 };
-const validProps: ComponentProps<typeof SelectInput> = {
+const validProps: typeof sharedProps = {
 	...sharedProps,
 	value: defaultValue,
 	placeholder: defaultPlaceholder,
 	isTouched: true,
 	isValid: true,
 };
-const invalidProps: ComponentProps<typeof SelectInput> = {
+const invalidProps: typeof sharedProps = {
 	...sharedProps,
 	placeholder: defaultPlaceholder,
 	isTouched: true,
 	isValid: false,
 	hintText: 'Vehicle make is mandatory',
 };
-const noNotchProps: ComponentProps<typeof SelectInput> = {
+const noNotchProps: typeof sharedProps = {
 	...sharedProps,
 	placeholder: defaultPlaceholder,
 	notch: false,
 };
-const noNotchWithValueProps: ComponentProps<typeof SelectInput> = {
+const noNotchWithValueProps: typeof sharedProps = {
 	...sharedProps,
 	value: defaultValue,
 	placeholder: defaultPlaceholder,
 	notch: false,
 };
-const loadingProps: ComponentProps<typeof SelectInput> = {
+const loadingProps: typeof sharedProps = {
 	...sharedProps,
 	isLoading: true,
 };

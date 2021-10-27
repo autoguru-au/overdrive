@@ -14,7 +14,12 @@ export default {
 	component: Alert,
 	argTypes: {
 		intent: {
-			options: ['information', 'success', 'warning', 'danger'] as Intent[],
+			options: [
+				'information',
+				'success',
+				'warning',
+				'danger',
+			] as Intent[],
 			defaultValue: 'primary',
 			control: {
 				type: 'select',
@@ -68,13 +73,19 @@ const templateAllIntents: ComponentStory<typeof Alert> = (args) => (
 		</div>
 
 		<div>
-			<Alert {...args} intent="information" onRequestClose={onRequestClose}>
+			<Alert
+				{...args}
+				intent="information"
+				onRequestClose={onRequestClose}>
 				Something worth noting happened
 			</Alert>
 		</div>
 
 		<div>
-			<Alert {...args} intent="information" onRequestClose={onRequestClose}>
+			<Alert
+				{...args}
+				intent="information"
+				onRequestClose={onRequestClose}>
 				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
 				commodo ligula eget dolor. Aenean massa. Cum sociis natoque
 				penatibus et magnis dis parturient montes, nascetur ridiculus
@@ -91,7 +102,10 @@ const templateAllIntents: ComponentStory<typeof Alert> = (args) => (
 	</div>
 );
 
-const standardProps: Omit<ComponentProps<typeof Alert>, 'onRequestClose' | 'children'> = {
+const standardProps: Omit<
+	ComponentProps<typeof Alert>,
+	'onRequestClose' | 'children'
+> = {
 	dismissible: void 0,
 	intent: void 0,
 	inline: void 0,
@@ -104,7 +118,7 @@ Standard.args = standardProps;
 export const StandardAllIntents = templateAllIntents.bind(standardProps);
 StandardAllIntents.args = standardProps;
 
-const inlineProps: typeof standardProps= {
+const inlineProps: typeof standardProps = {
 	...standardProps,
 	inline: true,
 };
@@ -112,11 +126,12 @@ const inlineProps: typeof standardProps= {
 export const InlineAllIntents = templateAllIntents.bind(inlineProps);
 InlineAllIntents.args = inlineProps;
 
-const noneDismissibleProps: typeof standardProps= {
+const noneDismissibleProps: typeof standardProps = {
 	...standardProps,
 	dismissible: false,
 };
 
-
-export const NoneDismissibleAllIntents = templateAllIntents.bind(noneDismissibleProps);
+export const NoneDismissibleAllIntents = templateAllIntents.bind(
+	noneDismissibleProps,
+);
 NoneDismissibleAllIntents.args = noneDismissibleProps;
