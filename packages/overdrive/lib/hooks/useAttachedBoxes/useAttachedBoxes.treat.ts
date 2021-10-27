@@ -1,12 +1,12 @@
 import { style } from 'treat';
 
-import { makeResponsiveStyle } from '../../utils/responsiveProps';
+import { makeResponsiveStyle_legacy } from '../../utils/responsiveProps_legacy';
 
 export const grid = {
 	default: style({
 		display: 'grid',
 	}),
-	gaps: makeResponsiveStyle(({ space }) => space, 'gridGap'),
+	gaps: makeResponsiveStyle_legacy(({ space }) => space, 'gridGap'),
 	topLeft: style(({ border }) => ({
 		borderTopLeftRadius: border.radius['1'],
 	})),

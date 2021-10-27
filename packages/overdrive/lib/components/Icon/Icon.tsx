@@ -5,9 +5,9 @@ import { cloneElement, memo } from 'react';
 import { useStyles } from 'react-treat';
 
 import {
-	resolveResponsiveStyle,
+	resolveResponsiveStyle_legacy,
 	ResponsiveProp,
-} from '../../utils/responsiveProps';
+} from '../../utils/responsiveProps_legacy';
 import type { BoxStyleProps } from '../Box';
 import { Box, useBoxStyles } from '../Box';
 
@@ -29,7 +29,7 @@ export const Icon: NamedExoticComponent<Props> = memo(
 				is="i"
 				display={display}
 				className={[
-					resolveResponsiveStyle(size, styles.size),
+					resolveResponsiveStyle_legacy(size, styles.size),
 					className,
 				]}
 				role="presentation">

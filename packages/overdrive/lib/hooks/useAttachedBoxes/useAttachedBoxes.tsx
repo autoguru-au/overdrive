@@ -5,9 +5,9 @@ import { useStyles } from 'react-treat';
 
 import {
 	getEarliestKnownToken,
-	resolveResponsiveStyle,
+	resolveResponsiveStyle_legacy,
 	ResponsiveProp,
-} from '../../../lib/utils/responsiveProps';
+} from '../../utils/responsiveProps_legacy';
 import { Box } from '../../components';
 import { useMedia } from '../useMedia';
 
@@ -99,7 +99,7 @@ export const useAttachedBoxes = ({
 		),
 		clsx(
 			styles.grid.default,
-			resolveResponsiveStyle(gap, styles.grid.gaps),
+			resolveResponsiveStyle_legacy(gap, styles.grid.gaps),
 		),
 		{
 			gridTemplateColumns: `repeat(${columnCount}, 1fr)`,

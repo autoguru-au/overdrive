@@ -1,6 +1,6 @@
-import { makeResponsiveStyle } from '../../utils/responsiveProps';
+import { makeResponsiveStyle_legacy } from '../../utils/responsiveProps_legacy';
 
-export const size = makeResponsiveStyle(
+export const size = makeResponsiveStyle_legacy(
 	({ icon }) => icon.size,
 	(value) => ({
 		width: value,

@@ -10,9 +10,9 @@ import {
 	useNegativeMarginTop,
 } from '../../hooks/useNegativeMargin/useNegativeMargin';
 import {
-	resolveResponsiveStyle,
+	resolveResponsiveStyle_legacy,
 	ResponsiveProp,
-} from '../../utils/responsiveProps';
+} from '../../utils/responsiveProps_legacy';
 import { Box } from '../Box';
 
 import * as styleRefs from './Columns.treat';
@@ -82,11 +82,11 @@ export const Columns = forwardRef<HTMLElement, Props>(
 				<ColumnContext.Provider
 					value={useMemo(
 						() => ({
-							spaceXCls: resolveResponsiveStyle(
+							spaceXCls: resolveResponsiveStyle_legacy(
 								resolvedSpaceX,
 								styles.space.spaceX,
 							),
-							spaceYCls: resolveResponsiveStyle(
+							spaceYCls: resolveResponsiveStyle_legacy(
 								resolvedSpaceY,
 								styles.space.spaceY,
 							),

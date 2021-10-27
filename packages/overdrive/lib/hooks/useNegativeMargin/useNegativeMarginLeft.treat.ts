@@ -1,6 +1,6 @@
-import { makeResponsiveStyle } from '../../utils/responsiveProps';
+import { makeResponsiveStyle_legacy } from '../../utils/responsiveProps_legacy';
 
-export const negativeMarginLeft = makeResponsiveStyle(
+export const negativeMarginLeft = makeResponsiveStyle_legacy(
 	(theme) => theme.space,
 	(value) => ({
 		marginLeft: `calc(-1 * ${value})`,

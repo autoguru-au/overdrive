@@ -1,10 +1,10 @@
 import { styleMap } from 'treat';
 
-import { makeResponsiveStyle } from '../../utils/responsiveProps';
+import { makeResponsiveStyle_legacy } from '../../utils/responsiveProps_legacy';
 
 const getSizeStyle = (scale: number) => `${scale * 100}%`;
 
-export const width = makeResponsiveStyle(
+export const width = makeResponsiveStyle_legacy(
 	(_) => ({
 		'1/2': getSizeStyle(1 / 2),
 		'1/3': getSizeStyle(1 / 3),

@@ -1,15 +1,11 @@
-import { CSSProperties } from '@vanilla-extract/css';
 import clsx from 'clsx';
 import { Properties } from 'csstype';
+import { ClassRef, CSSProperties, styleTree } from 'treat';
 import { Theme } from 'treat/theme';
-
-import { vars } from '../themes/base/vars.css';
-
-import { responsiveStyle } from './responsiveStyle';
 
 export type ResponsiveProp<T> = T | T[];
 
-type BreakpointStyleMap = Record<keyof Theme['breakpoints'], any>;
+type BreakpointStyleMap = Record<keyof Theme['breakpoints'], ClassRef>;
 
 const responsiveTokenOrder: ReadonlyArray<keyof Theme['breakpoints']> = [
 	'mobile',
@@ -18,7 +14,7 @@ const responsiveTokenOrder: ReadonlyArray<keyof Theme['breakpoints']> = [
 	'largeDesktop',
 ] as const;
 
-export const resolveResponsiveStyle = <Tokens extends string | number>(
+export const resolveResponsiveStyle_legacy = <Tokens extends string | number>(
 	responsiveArgument: ResponsiveProp<Tokens> | null | undefined,
 	breakpointTokenMap: Record<Tokens, BreakpointStyleMap>,
 ) => {
@@ -33,39 +29,34 @@ export const resolveResponsiveStyle = <Tokens extends string | number>(
 	return clsx([...buildClassFor(responsiveArgument, breakpointTokenMap)]);
 };
 
-export const makeResponsiveStyle1 = <Token extends Record<string | number, any>>(
-	tokens,
+export const makeResponsiveStyle_legacy = <Token extends Record<string | number, any>>(
+	getTokens: (theme: Theme) => Token,
 	property: ((value: any) => CSSProperties) | keyof Properties,
-)=>{
-	console.log('tokens')
-	console.log(tokens)
-}
-export const makeResponsiveStyle = <Token extends Record<string | number, any>>(
-	tokens,
-	property: ((value: any) => CSSProperties) | keyof Properties,
-): Record<keyof Token, any> =>{
-	console.log('tokens')
-	console.log(tokens);
-	if(typeof tokens === 'undefined')
-		return {};
-	return  Object.entries(tokens || {}).reduce((results, [key, value]) => {
+): Record<keyof Token, BreakpointStyleMap> => {
+	return styleTree((theme, styleNode) => {
+		const tokens = getTokens(theme);
+		const breakpoints = Object.keys(theme.breakpoints);
 
-		const breakpoints = Object.keys(vars.breakpoints);
-		return {
-			...results,
-			[key]: breakpoints.reduce((bpList, bp) => {
-				return {
-					...bpList,
-					[bp]: responsiveStyle({
-						[bp]:
-							typeof property === 'string'
-								? { [property]: value }
-								: property(value),
-					}),
-				};
-			}, {}),
-		};
-	}, {} as Record<keyof Token, BreakpointStyleMap>)
+		return Object.entries(tokens).reduce((results, [key, value]) => {
+			return {
+				...results,
+				[key]: breakpoints.reduce((bpList, bp) => {
+					return {
+						...bpList,
+						[bp]: styleNode(
+							theme.utils.responsiveStyle({
+								[bp]:
+									typeof property === 'string'
+										? { [property]: value }
+										: property(value),
+							}),
+							`${key}_${bp}`,
+						),
+					};
+				}, {}),
+			};
+		}, {} as Record<keyof Token, BreakpointStyleMap>);
+	});
 };
 
 function* buildClassFor<Tokens extends string | number>(

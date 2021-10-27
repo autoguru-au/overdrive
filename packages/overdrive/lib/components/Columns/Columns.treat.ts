@@ -1,10 +1,10 @@
 import { styleMap } from 'treat';
 
-import { makeResponsiveStyle } from '../../utils/responsiveProps';
+import { makeResponsiveStyle_legacy } from '../../utils/responsiveProps_legacy';
 
 export const space = {
-	spaceX: makeResponsiveStyle((theme) => theme.space, 'paddingLeft'),
-	spaceY: makeResponsiveStyle((theme) => theme.space, 'paddingTop'),
+	spaceX: makeResponsiveStyle_legacy((theme) => theme.space, 'paddingLeft'),
+	spaceY: makeResponsiveStyle_legacy((theme) => theme.space, 'paddingTop'),
 };
 
 export const wrapping = styleMap({

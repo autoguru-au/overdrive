@@ -4,9 +4,9 @@ import { ComponentProps, forwardRef, ReactNode, useContext } from 'react';
 import { useStyles } from 'react-treat';
 
 import {
-	resolveResponsiveStyle,
+	resolveResponsiveStyle_legacy,
 	ResponsiveProp,
-} from '../../utils/responsiveProps';
+} from '../../utils/responsiveProps_legacy';
 import { Box } from '../Box';
 
 import { ColumnContext } from './Columns';
@@ -54,7 +54,7 @@ export const Column = forwardRef<HTMLElement, Props>(
 				className={[
 					spaceXCls,
 					spaceYCls,
-					resolveResponsiveStyle(width, styles.width),
+					resolveResponsiveStyle_legacy(width, styles.width),
 					styles.align[alignSelf!],
 				]}>
 				<Box

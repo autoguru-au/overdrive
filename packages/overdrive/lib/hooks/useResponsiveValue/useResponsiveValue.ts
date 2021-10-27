@@ -2,7 +2,7 @@ import { useMedia } from '../..';
 import {
 	getEarliestKnownToken,
 	ResponsiveProp,
-} from '../../utils/responsiveProps';
+} from '../../utils/responsiveProps_legacy';
 
 export function useResponsiveValue<T extends string | number | boolean>(
 	responsiveValue: ResponsiveProp<T>,
