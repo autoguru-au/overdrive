@@ -13,14 +13,13 @@ import {
 	ReactElement,
 	useMemo,
 } from 'react';
-import { useStyles } from 'react-treat';
 
 import { Box, useBoxStyles } from '../Box';
 import { Icon } from '../Icon';
 import { ProgressSpinner } from '../ProgressSpinner';
 import { useTextStyles } from '../Text';
 
-import * as styleRefs from './Button.treat';
+import * as styles from './Button.css';
 
 type ButtonPrimitive = ButtonHTMLAttributes<HTMLButtonElement>;
 
@@ -36,12 +35,12 @@ export interface Props
 	isFullWidth?: boolean;
 	minimal?: boolean;
 	rounded?: boolean;
-	size?: keyof typeof styleRefs.size;
-	variant?: keyof typeof styleRefs.variant;
+	size?: keyof typeof styles.size;
+	variant?: keyof typeof styles.variant;
 }
 
 const getSpinnerColour: (
-	variant: keyof typeof styleRefs.variant,
+	variant: keyof typeof styles.variant,
 	minimal: boolean,
 ) => ComponentProps<typeof ProgressSpinner>['colour'] = (variant, minimal) =>
 	minimal || variant === 'secondary' ? 'secondary' : 'light';
@@ -52,7 +51,7 @@ const getBorderRadius: (
 	rounded ? 'pill' : '1';
 
 const getPadding: (
-	size: keyof typeof styleRefs.size,
+	size: keyof typeof styles.size,
 	loading: boolean,
 ) => ComponentProps<typeof Box>['paddingX'] = (size, loading) => {
 	if (loading) return 'none';
@@ -79,7 +78,6 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 		},
 		ref,
 	) => {
-		const styles = useStyles(styleRefs);
 		const { isSingleIconChild, props: maybeIconProps } = useMemo(() => {
 			const maybeIcon =
 				isValidElement(children) && children.type === Icon;
@@ -113,12 +111,12 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 					paddingX: getPadding(size, isLoading),
 					width: isFullWidth ? 'full' : void 0,
 				}),
-				styles.root,
 				useTextStyles({
 					colour: 'white',
 					fontWeight: 'semiBold',
 					size: size === 'medium' ? '4' : '3',
 				}),
+				styles.root,
 				getButtonStates(
 					styles,
 					variant,
@@ -178,16 +176,16 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 );
 
 const getButtonStates: (
-	styles: typeof styleRefs,
-	variant: keyof typeof styleRefs.variant,
+	buttonStyles: typeof styles,
+	variant: keyof typeof styles.variant,
 	disabled: boolean,
 	minimal: boolean,
 	rounded: boolean,
-) => string = (styles, variant, disabled, minimal, rounded) => {
+) => string = (buttonStyles, variant, disabled, minimal, rounded) => {
 	if (disabled)
 		return minimal
-			? clsx(styles.minimal.defaults, {
-					[styles.minimal.noneRounded]: !rounded,
+			? clsx(buttonStyles.minimal.defaults, {
+					[buttonStyles.minimal.noneRounded]: !rounded,
 			  })
 			: '';
 
@@ -199,12 +197,12 @@ const getButtonStates: (
 };
 
 const getButtonSize: (
-	styles: typeof styleRefs,
+	buttonStyles: typeof styles,
 	size: keyof typeof styles.size,
 	rounded: boolean,
 	iconOnly: boolean,
-) => string = (styles, size, rounded, iconOnly) => {
-	const currentSize = styles.size[size];
+) => string = (buttonStyles, size, rounded, iconOnly) => {
+	const currentSize = buttonStyles.size[size];
 
 	return clsx(currentSize.default, {
 		[currentSize.rounded]: rounded,

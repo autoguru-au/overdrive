@@ -7,7 +7,6 @@ import { Icon } from '../Icon';
 
 import { Button } from '.';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Anchor } from '../Anchor';
 
 export default {
 	title: 'Components/Buttons',
