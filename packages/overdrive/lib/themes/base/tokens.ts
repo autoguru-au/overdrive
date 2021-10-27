@@ -113,7 +113,7 @@ export const tokens: Tokens = {
 			primary: {
 				background: {
 					standard: colours.green['600'],
-					mild: colours.green['300'],
+					mild: colours.green['200'],
 					strong: colours.green['900'],
 				},
 				foreground: white,

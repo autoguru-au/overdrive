@@ -25,7 +25,7 @@ export default {
 			},
 			description: 'Any custom react element',
 			control: {
-				disable: true,
+				type: 'select',
 			},
 		},
 		is: {
