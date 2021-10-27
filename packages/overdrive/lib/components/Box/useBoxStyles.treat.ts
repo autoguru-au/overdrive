@@ -1,6 +1,6 @@
 import { style, styleMap } from 'treat';
 
-import { mapTokenToProperty } from '../../utils/mapTokenToProperty';
+import { mapTokenToProperty_Legacy } from '../../utils/mapTokenToProperty_Legacy';
 import { makeResponsiveStyle } from '../../utils/responsiveProps';
 
 export const padding = {
@@ -28,16 +28,16 @@ export const border = {
 	}),
 	colour: {
 		top: styleMap(({ border }) =>
-			mapTokenToProperty(border.colours, 'borderTopColor'),
+			mapTokenToProperty_Legacy(border.colours, 'borderTopColor'),
 		),
 		right: styleMap(({ border }) =>
-			mapTokenToProperty(border.colours, 'borderRightColor'),
+			mapTokenToProperty_Legacy(border.colours, 'borderRightColor'),
 		),
 		bottom: styleMap(({ border }) =>
-			mapTokenToProperty(border.colours, 'borderBottomColor'),
+			mapTokenToProperty_Legacy(border.colours, 'borderBottomColor'),
 		),
 		left: styleMap(({ border }) =>
-			mapTokenToProperty(border.colours, 'borderLeftColor'),
+			mapTokenToProperty_Legacy(border.colours, 'borderLeftColor'),
 		),
 	},
 	width: {
@@ -66,7 +66,7 @@ export const borderRadius = makeResponsiveStyle(
 );
 
 export const backgroundColours = styleMap((theme) =>
-	mapTokenToProperty(
+	mapTokenToProperty_Legacy(
 		{
 			...theme.colours.gamut,
 			transparent: 'transparent',
@@ -88,7 +88,7 @@ export const height = styleMap({
 });
 
 export const position = styleMap(
-	mapTokenToProperty(
+	mapTokenToProperty_Legacy(
 		{
 			absolute: 'absolute',
 			fixed: 'fixed',
@@ -99,7 +99,7 @@ export const position = styleMap(
 );
 
 export const textAlign = styleMap(
-	mapTokenToProperty(
+	mapTokenToProperty_Legacy(
 		{
 			left: 'left',
 			center: 'center',
@@ -110,7 +110,7 @@ export const textAlign = styleMap(
 );
 
 export const overflow = styleMap(
-	mapTokenToProperty(
+	mapTokenToProperty_Legacy(
 		{
 			hidden: 'hidden',
 			scroll: 'scroll',
@@ -122,7 +122,7 @@ export const overflow = styleMap(
 );
 
 export const display = styleMap(
-	mapTokenToProperty(
+	mapTokenToProperty_Legacy(
 		{
 			contents: 'contents',
 			block: 'block',
@@ -167,7 +167,7 @@ export const flexDirection = makeResponsiveStyle(
 );
 
 export const flexGrow = styleMap(
-	mapTokenToProperty(
+	mapTokenToProperty_Legacy(
 		{
 			0: 0,
 			1: 1,
@@ -177,7 +177,7 @@ export const flexGrow = styleMap(
 );
 
 export const flexShrink = styleMap(
-	mapTokenToProperty(
+	mapTokenToProperty_Legacy(
 		{
 			0: 0,
 		},
@@ -186,7 +186,7 @@ export const flexShrink = styleMap(
 );
 
 export const flexWrap = styleMap(
-	mapTokenToProperty(
+	mapTokenToProperty_Legacy(
 		{
 			wrap: 'wrap',
 			nowrap: 'nowrap',

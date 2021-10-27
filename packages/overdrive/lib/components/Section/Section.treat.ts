@@ -1,10 +1,10 @@
 import { style, styleMap } from 'treat';
 
-import { mapTokenToProperty } from '../../utils/mapTokenToProperty';
+import { mapTokenToProperty_Legacy } from '../../utils/mapTokenToProperty_Legacy';
 
 export const root = style({
 	margin: '0 auto',
 });
 export const width = styleMap(({ contentWidth }) =>
-	mapTokenToProperty(contentWidth, 'maxWidth'),
+	mapTokenToProperty_Legacy(contentWidth, 'maxWidth'),
 );

@@ -9,7 +9,6 @@ import * as styles from './Badge.css';
 
 export interface Props {
 	label: string;
-	// TODO: These should use the intent verbs, and come from Box
 	colour?: keyof typeof styles.colours.default;
 	className?: string;
 	look?: 'standard' | 'inverted';

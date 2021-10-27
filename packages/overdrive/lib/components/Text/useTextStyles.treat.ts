@@ -1,7 +1,7 @@
 import { Style, style, styleMap } from 'treat';
 import type { Theme } from 'treat/theme';
 
-import { mapTokenToProperty } from '../../utils/mapTokenToProperty';
+import { mapTokenToProperty_Legacy } from '../../utils/mapTokenToProperty_Legacy';
 
 export const root = style(({ typography }) => ({
 	selectors: {
@@ -26,17 +26,17 @@ export const sizes = styleMap((theme) =>
 );
 
 export const colours = styleMap((theme) =>
-	mapTokenToProperty(theme.typography.colour, 'color'),
+	mapTokenToProperty_Legacy(theme.typography.colour, 'color'),
 );
 
 export const fontWeight = styleMap((theme) =>
-	mapTokenToProperty(theme.typography.fontWeight, 'fontWeight'),
+	mapTokenToProperty_Legacy(theme.typography.fontWeight, 'fontWeight'),
 );
 
 export const noWrap = style({ whiteSpace: 'nowrap' });
 
 export const transform = styleMap(
-	mapTokenToProperty(
+	mapTokenToProperty_Legacy(
 		{ uppercase: 'uppercase', capitalize: 'capitalize' },
 		'textTransform',
 	),

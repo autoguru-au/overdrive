@@ -1,10 +1,10 @@
 import { style, styleMap } from 'treat';
 
-import { mapTokenToProperty } from '../../utils/mapTokenToProperty';
+import { mapTokenToProperty_Legacy } from '../../utils/mapTokenToProperty_Legacy';
 
 export const child = {
 	spaces: styleMap((theme) =>
-		mapTokenToProperty(theme.space, (value) => ({
+		mapTokenToProperty_Legacy(theme.space, (value) => ({
 			paddingBottom: value,
 		})),
 	),

@@ -9,7 +9,6 @@ import {
 import clsx from 'clsx';
 import * as React from 'react';
 import { ComponentProps, FunctionComponent, ReactChild } from 'react';
-import { useStyles } from 'react-treat';
 
 import { Box, useBoxStyles } from '../Box';
 import { Button } from '../Button';
@@ -17,10 +16,10 @@ import { Column, Columns } from '../Columns';
 import { Icon } from '../Icon';
 import { Text, useTextStyles } from '../Text';
 
-import * as styleRefs from './Alert.treat';
+import * as styles from './Alert.css';
 
 type Intent = keyof Omit<
-	typeof styleRefs.intent,
+	typeof styles.intent,
 	'neutral' | 'shine' | 'primary' | 'secondary'
 >;
 
@@ -49,7 +48,6 @@ export const Alert: FunctionComponent<Props> = ({
 	onRequestClose,
 	dismissible = typeof onRequestClose === 'function',
 }) => {
-	const styles = useStyles(styleRefs);
 	const dismissBtnStyles = useTextStyles({ colour: 'muted' });
 
 	return (
