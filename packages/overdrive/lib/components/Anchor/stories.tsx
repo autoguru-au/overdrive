@@ -3,9 +3,13 @@ import {
 	AlertCircleIcon,
 	CalendarIcon,
 	CarIcon,
-	CarMultipleIcon, CheckIcon, CurrencyUsdIcon,
+	CarMultipleIcon,
+	CheckIcon,
+	CurrencyUsdIcon,
 	MagnifyIcon,
-	PhoneIcon, PlusIcon, StarIcon,
+	PhoneIcon,
+	PlusIcon,
+	StarIcon,
 } from '@autoguru/icons';
 import * as React from 'react';
 import { ComponentProps } from 'react';
