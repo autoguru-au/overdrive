@@ -1,22 +1,13 @@
 import { IconType } from '@autoguru/icons';
 import clsx from 'clsx';
 import * as React from 'react';
-import {
-	cloneElement,
-	createElement,
-	ElementType,
-	FunctionComponent,
-	isValidElement,
-	ReactElement,
-} from 'react';
-import { useStyles } from 'react-treat';
+import { cloneElement, createElement, ElementType, FunctionComponent, isValidElement, ReactElement } from 'react';
 
+import * as styles from './Anchor.css'
 import { useBoxStyles } from '../Box';
 import { Icon } from '../Icon';
 import { Inline } from '../Inline';
 import { Text, useTextStyles } from '../Text';
-
-import * as styleRefs from './Anchor.treat';
 
 export interface Props {
 	rel?: string;
@@ -46,7 +37,6 @@ export const Anchor: FunctionComponent<Props> = ({
 
 	icon,
 }) => {
-	const styles = useStyles(styleRefs);
 	const textStyles = useTextStyles({
 		colour: 'link',
 	});

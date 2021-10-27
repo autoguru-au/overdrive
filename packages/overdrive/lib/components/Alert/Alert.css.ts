@@ -26,8 +26,6 @@ export const intent = styleVariants(
 	),
 );
 
-console.log(intent);
-
 export const contained = style({
 	minWidth: '280px',
 	maxWidth: '640px',
