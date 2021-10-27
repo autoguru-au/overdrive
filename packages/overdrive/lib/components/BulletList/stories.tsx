@@ -1,8 +1,11 @@
 import * as React from 'react';
+import { ComponentProps } from 'react';
 
 import { Text } from '../Text';
 
 import { Bullet, BulletList } from '.';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Anchor } from '../Anchor';
 
 export default {
 	title: 'Foundation/List/BulletList',
@@ -12,10 +15,10 @@ export default {
 			<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
 		),
 	],
-};
+} as ComponentMeta<typeof BulletList>;
 
-export const standard = () => (
-	<BulletList>
+const StandardBulletListTemplate: ComponentStory<typeof BulletList> = (args) => (
+	<BulletList {...args}>
 		<Bullet>
 			<Text>
 				For some, it could be argued that air-conditioning is the most
@@ -33,8 +36,8 @@ export const standard = () => (
 		</Bullet>
 	</BulletList>
 );
-export const nested = () => (
-	<BulletList>
+const NestedBulletListTemplate: ComponentStory<typeof BulletList> = (args) => (
+	<BulletList {...args}>
 		<Bullet>
 			<Text>
 				For some, it could be argued that air-conditioning is the most
@@ -43,7 +46,7 @@ export const nested = () => (
 			</Text>
 		</Bullet>
 		<Bullet>
-			<BulletList>
+			<BulletList {...args}>
 				<Bullet>
 					<Text>
 						For some, it could be argued that air-conditioning is
@@ -52,7 +55,7 @@ export const nested = () => (
 					</Text>
 				</Bullet>
 				<Bullet>
-					<BulletList>
+					<BulletList {...args}>
 						<Bullet>
 							<Text>
 								For some, it could be argued that
@@ -87,3 +90,12 @@ export const nested = () => (
 		</Bullet>
 	</BulletList>
 );
+
+const standardProps: ComponentProps<typeof BulletList> = {};
+
+
+export const standard = StandardBulletListTemplate.bind(standardProps);
+standard.args = {};
+
+export const nested  = NestedBulletListTemplate.bind(standardProps);
+nested.args = {};
