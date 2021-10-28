@@ -38,7 +38,7 @@ export const useMedia = (
 			const handler = (e: MediaQueryListEvent) => {
 				if (!isMounted) return;
 				setMatches((prevState) => {
-					const newState = prevState.slice();
+					const newState = [...prevState];
 					newState[idx] = e.matches;
 					return newState;
 				});

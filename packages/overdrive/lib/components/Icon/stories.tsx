@@ -16,7 +16,6 @@ import { ComponentProps } from 'react';
 
 import { Icon } from '.';
 
-
 const iconOptions = {
 	MagnifyIcon,
 	CarIcon,
@@ -50,10 +49,7 @@ export default {
 	},
 } as ComponentMeta<typeof Icon>;
 
-
-const template: ComponentStory<typeof Icon> = (args) => (
-	<Icon {...args} />
-);
+const template: ComponentStory<typeof Icon> = (args) => <Icon {...args} />;
 
 const standardProps: ComponentProps<typeof Icon> = {
 	icon: CalendarIcon,

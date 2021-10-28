@@ -1,7 +1,9 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
-import { Inline } from './Inline';
+import * as React from 'react';
+
 import { Text } from '../Text';
+
+import { Inline } from './Inline';
 
 const TestComponent = () => <div>divider component from test</div>;
 

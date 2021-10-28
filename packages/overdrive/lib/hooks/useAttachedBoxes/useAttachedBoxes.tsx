@@ -3,12 +3,12 @@ import * as React from 'react';
 import { ComponentProps, FunctionComponent } from 'react';
 import { useStyles } from 'react-treat';
 
+import { Box } from '../../components';
 import {
 	getEarliestKnownToken,
 	resolveResponsiveStyle_legacy,
 	ResponsiveProp,
 } from '../../utils/responsiveProps_legacy';
-import { Box } from '../../components';
 import { useMedia } from '../useMedia';
 
 import * as styleRefs from './useAttachedBoxes.treat';

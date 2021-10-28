@@ -3,13 +3,11 @@ import type { JSXElementConstructor } from 'react';
 import { useStyles } from 'react-treat';
 import type { Theme } from 'treat/theme';
 
-import { ResponsiveProp } from '../../utils/responsiveProps.css';
+import * as resetStyleRefs from '../../reset/reset.css';
 import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
+import { ResponsiveProp } from '../../utils/responsiveProps.css';
 
 import * as styles from './useBoxStyles.css';
-
-import * as resetStyleRefs from '../../reset/reset.css';
-
 
 interface Padding {
 	padding?: ResponsiveProp<keyof Theme['space']>;

@@ -55,7 +55,7 @@ describe('<Modal />', () => {
 				<Modal isOpen={false}>Hello World!</Modal>,
 			);
 
-			expect(baseElement.innerText).not.toEqual('Hello World!');
+			expect(baseElement.textContent).not.toEqual('Hello World!');
 		});
 
 		it('should add children when open', () => {

@@ -1,9 +1,10 @@
 import { renderHook } from '@testing-library/react-hooks';
 import * as React from 'react';
 
-import { baseTheme } from '../../themes';
-import { useMedia } from './useMedia';
 import { OverdriveLegacyProvider } from '../../components/OverdriveLegacyProvider/OverdriveProvider';
+import { baseTheme } from '../../themes';
+
+import { useMedia } from './useMedia';
 
 const render = (hook, tokens) =>
 	renderHook(hook, {

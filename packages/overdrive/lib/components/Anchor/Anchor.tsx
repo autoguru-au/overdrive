@@ -1,13 +1,21 @@
 import { IconType } from '@autoguru/icons';
 import clsx from 'clsx';
 import * as React from 'react';
-import { cloneElement, createElement, ElementType, FunctionComponent, isValidElement, ReactElement } from 'react';
+import {
+	cloneElement,
+	createElement,
+	ElementType,
+	FunctionComponent,
+	isValidElement,
+	ReactElement,
+} from 'react';
 
-import * as styles from './Anchor.css'
 import { useBoxStyles } from '../Box';
 import { Icon } from '../Icon';
 import { Inline } from '../Inline';
 import { Text, useTextStyles } from '../Text';
+
+import * as styles from './Anchor.css';
 
 export interface Props {
 	rel?: string;

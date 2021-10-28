@@ -1,4 +1,5 @@
 import { style, styleVariants } from '@vanilla-extract/css';
+
 import { vars } from '../../themes/base/vars.css';
 
 export const root = style({
@@ -100,7 +101,7 @@ export const defaultStates = {
 		':hover': {
 			color: vars.colours.intent.secondary.foreground,
 			backgroundColor: vars.colours.intent.secondary.background.strong,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.secondary.background.strong}, ${vars.elevation['3']}`,
+			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.secondary.foreground}, ${vars.elevation['3']}`,
 		},
 		':active': {
 			transform: 'scale(0.97)',
@@ -149,12 +150,12 @@ export const minimalStates = {
 	secondary: style({
 		':hover': {
 			color: vars.typography.colour.secondary,
-			backgroundColor: vars.colours.intent.secondary.foreground,
+			backgroundColor: vars.colours.intent.secondary.background.strong,
 			boxShadow: 'none',
 		},
 		':active': {
 			color: vars.typography.colour.secondary,
-			backgroundColor: vars.colours.intent.secondary.foreground,
+			backgroundColor: vars.colours.intent.secondary.background.strong,
 			boxShadow: 'none',
 		},
 	}),

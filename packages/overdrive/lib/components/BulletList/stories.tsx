@@ -1,11 +1,11 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
+import { Anchor } from '../Anchor';
 import { Text } from '../Text';
 
 import { Bullet, BulletList } from '.';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Anchor } from '../Anchor';
 
 export default {
 	title: 'Foundation/List/BulletList',
@@ -17,7 +17,9 @@ export default {
 	],
 } as ComponentMeta<typeof BulletList>;
 
-const StandardBulletListTemplate: ComponentStory<typeof BulletList> = (args) => (
+const StandardBulletListTemplate: ComponentStory<typeof BulletList> = (
+	args,
+) => (
 	<BulletList {...args}>
 		<Bullet>
 			<Text>
@@ -93,9 +95,8 @@ const NestedBulletListTemplate: ComponentStory<typeof BulletList> = (args) => (
 
 const standardProps: ComponentProps<typeof BulletList> = {};
 
-
 export const standard = StandardBulletListTemplate.bind(standardProps);
 standard.args = {};
 
-export const nested  = NestedBulletListTemplate.bind(standardProps);
+export const nested = NestedBulletListTemplate.bind(standardProps);
 nested.args = {};

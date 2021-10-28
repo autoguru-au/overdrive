@@ -11,13 +11,13 @@ import {
 	PlusIcon,
 	StarIcon,
 } from '@autoguru/icons';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
 import { Button } from '../Button';
 
 import { Anchor } from '.';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 const iconOptions = {
 	MagnifyIcon,
@@ -36,7 +36,7 @@ export default {
 	title: 'Foundation/Typography/Anchor',
 	component: Anchor,
 	decorators: [],
-	argTypes:{
+	argTypes: {
 		icon: {
 			defaultValue: void 0,
 			description: 'Input field Icon',
@@ -45,31 +45,29 @@ export default {
 				type: 'select',
 			},
 		},
-		is:{
-			control:{
+		is: {
+			control: {
 				disable: true,
-			}
+			},
 		},
-		children:{
+		children: {
 			defaultValue: '07 5612 5347',
-			control:{
+			control: {
 				type: 'string',
-			}
-		}
-	}
+			},
+		},
+	},
 } as ComponentMeta<typeof Anchor>;
 
-const Template: ComponentStory<typeof Anchor> = (args) => (<Anchor {...args} />);
+const Template: ComponentStory<typeof Anchor> = (args) => <Anchor {...args} />;
 
 const standardProps: ComponentProps<typeof Anchor> = {
 	href: 'tel:07 5612 5347',
 	children: '07 5612 5347',
 };
 
-
 export const standard = Template.bind(standardProps);
 standard.args = standardProps;
-
 
 const withIconProps: typeof standardProps = {
 	...standardProps,
@@ -77,7 +75,6 @@ const withIconProps: typeof standardProps = {
 };
 export const withIcon = Template.bind(withIconProps);
 withIcon.args = withIconProps;
-
 
 const withButtonProps: ComponentProps<typeof Anchor> = {
 	...withIconProps,

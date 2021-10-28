@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
-import { vars } from '../../themes/base/vars.css';
 
+import { vars } from '../../themes/base/vars.css';
 
 export const bullet = style({
 	lineHeight: vars.typography.size['2'].lineHeight,

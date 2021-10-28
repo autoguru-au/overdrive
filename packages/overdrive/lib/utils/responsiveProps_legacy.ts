@@ -29,7 +29,9 @@ export const resolveResponsiveStyle_legacy = <Tokens extends string | number>(
 	return clsx([...buildClassFor(responsiveArgument, breakpointTokenMap)]);
 };
 
-export const makeResponsiveStyle_legacy = <Token extends Record<string | number, any>>(
+export const makeResponsiveStyle_legacy = <
+	Token extends Record<string | number, any>
+>(
 	getTokens: (theme: Theme) => Token,
 	property: ((value: any) => CSSProperties) | keyof Properties,
 ): Record<keyof Token, BreakpointStyleMap> => {

@@ -1,7 +1,6 @@
 import { buildColourGamut } from '../makeTheme';
 import { BreakPoints, ColourMap, Tokens } from '../tokens';
 
-
 export const breakpoints: BreakPoints = {
 	mobile: '0px',
 	tablet: '768px', // IPad mini width (1024 - 25%)
@@ -124,7 +123,7 @@ export const tokens: Tokens = {
 				background: {
 					standard: white,
 					mild: white,
-					strong: white,
+					strong: colours.gray['200'],
 				},
 				foreground: colours.gray['700'],
 			},

@@ -18,38 +18,31 @@ export const margin = {
 	left: makeResponsiveStyle(vars.space, 'marginLeft'),
 };
 
-export const boxShadow = makeResponsiveStyle(
-	vars.elevation,
-	'boxShadow',
-);
+export const boxShadow = makeResponsiveStyle(vars.elevation, 'boxShadow');
 
 export const border = {
 	style: style({
 		borderStyle: 'solid',
 	}),
 	colour: {
-		top: styleVariants(mapTokenToProperty(vars.border.colours, 'borderTopColor')),
-		right: styleVariants(mapTokenToProperty(vars.border.colours, 'borderRightColor')),
-		bottom: styleVariants(mapTokenToProperty(vars.border.colours, 'borderBottomColor')),
-		left: styleVariants(mapTokenToProperty(vars.border.colours, 'borderLeftColor')),
+		top: styleVariants(
+			mapTokenToProperty(vars.border.colours, 'borderTopColor'),
+		),
+		right: styleVariants(
+			mapTokenToProperty(vars.border.colours, 'borderRightColor'),
+		),
+		bottom: styleVariants(
+			mapTokenToProperty(vars.border.colours, 'borderBottomColor'),
+		),
+		left: styleVariants(
+			mapTokenToProperty(vars.border.colours, 'borderLeftColor'),
+		),
 	},
 	width: {
-		top: makeResponsiveStyle(
-			vars.border.width,
-			'borderTopWidth',
-		),
-		right: makeResponsiveStyle(
-			vars.border.width,
-			'borderRightWidth',
-		),
-		bottom: makeResponsiveStyle(
-			vars.border.width,
-			'borderBottomWidth',
-		),
-		left: makeResponsiveStyle(
-			vars.border.width,
-			'borderLeftWidth',
-		),
+		top: makeResponsiveStyle(vars.border.width, 'borderTopWidth'),
+		right: makeResponsiveStyle(vars.border.width, 'borderRightWidth'),
+		bottom: makeResponsiveStyle(vars.border.width, 'borderBottomWidth'),
+		left: makeResponsiveStyle(vars.border.width, 'borderLeftWidth'),
 	},
 };
 
@@ -58,13 +51,15 @@ export const borderRadius = makeResponsiveStyle(
 	'borderRadius',
 );
 
-export const backgroundColours = styleVariants(mapTokenToProperty(
-	{
-		...vars.colours.gamut,
-		transparent: 'transparent',
-	},
-	'backgroundColor',
-));
+export const backgroundColours = styleVariants(
+	mapTokenToProperty(
+		{
+			...vars.colours.gamut,
+			transparent: 'transparent',
+		},
+		'backgroundColor',
+	),
+);
 
 export const width = styleVariants({
 	full: {

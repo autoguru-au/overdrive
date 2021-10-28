@@ -1,4 +1,5 @@
 import { AccountBoxIcon } from '@autoguru/icons';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -6,7 +7,6 @@ import { Column, Columns } from '../Columns';
 import { Icon } from '../Icon';
 
 import { Button } from '.';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
 	title: 'Components/Buttons',
@@ -23,20 +23,19 @@ export default {
 			</div>
 		),
 	],
-	argTypes:{
+	argTypes: {
 		is: {
 			options: ['button', 'a'],
 		},
-	}
+	},
 } as ComponentMeta<typeof Button>;
-
 
 const Template: ComponentStory<typeof Button> = (args) => (
 	<div
 		style={{
-			width: 200
+			width: 200,
 		}}>
-	<Button {...args} />
+		<Button {...args} />
 	</div>
 );
 
@@ -44,9 +43,7 @@ const TemplateMulti: ComponentStory<typeof Button> = (args) => (
 	<>
 		<Columns space="3">
 			<Column>
-				<Button {...args}>
-					Login
-				</Button>
+				<Button {...args}>Login</Button>
 			</Column>
 			<Column>
 				<Button {...args}>
@@ -169,28 +166,28 @@ const standardProps: ComponentProps<typeof Button> = {
 export const standard = Template.bind(standardProps);
 standard.args = standardProps;
 
-const primarySmallProps: Omit<ComponentProps<typeof Button>, 'children'>= {
+const primarySmallProps: Omit<ComponentProps<typeof Button>, 'children'> = {
 	size: 'small',
 	variant: 'primary',
 };
 export const primarySmall = TemplateMulti.bind(primarySmallProps);
 primarySmall.args = primarySmallProps;
 
-const primaryMediumProps: Omit<ComponentProps<typeof Button>, 'children'>= {
+const primaryMediumProps: Omit<ComponentProps<typeof Button>, 'children'> = {
 	size: 'medium',
 	variant: 'primary',
 };
 export const primaryMedium = TemplateMulti.bind(primaryMediumProps);
 primaryMedium.args = primaryMediumProps;
 
-const secondarySmallProps: Omit<ComponentProps<typeof Button>, 'children'>= {
+const secondarySmallProps: Omit<ComponentProps<typeof Button>, 'children'> = {
 	size: 'small',
 	variant: 'secondary',
 };
 export const secondarySmall = TemplateMulti.bind(secondarySmallProps);
 secondarySmall.args = secondarySmallProps;
 
-const secondaryMediumProps: Omit<ComponentProps<typeof Button>, 'children'>= {
+const secondaryMediumProps: Omit<ComponentProps<typeof Button>, 'children'> = {
 	size: 'medium',
 	variant: 'secondary',
 };

@@ -1,7 +1,8 @@
-const { TreatPlugin } = require('treat/webpack-plugin');
+const { join } = require('path');
+
 const { VanillaExtractPlugin } = require('@vanilla-extract/webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { join } = require('path');
+const { TreatPlugin } = require('treat/webpack-plugin');
 
 const ourCodeFiles = [
 	join(__dirname, './packages/'),

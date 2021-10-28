@@ -1,5 +1,5 @@
-import { buildColourGamut } from '../makeTheme';
 import { ColourMap, Tokens } from '../legacyTokens';
+import { buildColourGamut } from '../makeTheme';
 
 const colours: ColourMap = {
 	gray: {

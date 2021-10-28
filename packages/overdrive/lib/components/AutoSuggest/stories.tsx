@@ -17,7 +17,6 @@ import { ComponentProps } from 'react';
 
 import { AutoSuggest } from '.';
 
-
 const mockSuggestions = [
 	'Alfa Romeo',
 	'Aston Martin',
@@ -186,4 +185,3 @@ const invalidProps: typeof withHintTextProps = {
 };
 export const invalid = Template.bind(invalidProps);
 invalid.args = invalidProps;
-

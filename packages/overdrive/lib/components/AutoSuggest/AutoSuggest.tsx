@@ -30,9 +30,8 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { withEnhancedInput } from '../private/InputBase';
 
-import { useLayoutSuggestionVisible } from './useLayoutSuggestionVisible';
-
 import * as styles from './AutoSuggest.css';
+import { useLayoutSuggestionVisible } from './useLayoutSuggestionVisible';
 
 export interface AutoSuggestValue<PayloadType> {
 	text: string;
@@ -539,25 +538,25 @@ interface SuggestionProps<PayloadType>
 
 const SuggestionsList = <PayloadType extends unknown>({
 	className = '',
-														  suggestionListId,
-														  placeholder,
-														  highlightIndex,
-														  suggestions,
-														  highlightRef,
-														  itemRenderer,
-														  onChange,
-														  dispatch,
-														  // TODO: For now the ref is passed as a prop, as opposed to using forwardRef
-														  suggestionListRef,
-													  }: SuggestionProps<PayloadType>) => (
+	suggestionListId,
+	placeholder,
+	highlightIndex,
+	suggestions,
+	highlightRef,
+	itemRenderer,
+	onChange,
+	dispatch,
+	// TODO: For now the ref is passed as a prop, as opposed to using forwardRef
+	suggestionListRef,
+}: SuggestionProps<PayloadType>) => (
 	<Box
 		ref={suggestionListRef}
-		is='ul'
-		backgroundColour='white'
+		is="ul"
+		backgroundColour="white"
 		className={[styles.suggestionList.defaults, className]}
 		id={suggestionListId}
 		aria-label={placeholder}
-		role='listbox'>
+		role="listbox">
 		<div className={styles.spacer} />
 		{suggestions.map((suggestion, idx) => {
 			const highlight = highlightIndex === idx;
@@ -566,14 +565,13 @@ const SuggestionsList = <PayloadType extends unknown>({
 				<Box
 					key={suggestion.text.concat(String(idx))}
 					ref={highlight ? highlightRef : undefined}
-					is='li'
+					is="li"
 					id={getSuggestionId(suggestionListId, idx)}
-					role='option'
+					role="option"
 					aria-selected={highlight}
 					aria-label={suggestion.text}
 					className={clsx(styles.suggestionListItem.default, {
-						[styles.suggestionListItem.skipped]:
-						suggestion.skip,
+						[styles.suggestionListItem.skipped]: suggestion.skip,
 					})}
 					onMouseDown={(event) =>
 						/* This is so a blur doesnt fire from the input when you click */
@@ -602,17 +600,17 @@ const SuggestionsList = <PayloadType extends unknown>({
 						});
 					}}>
 					{typeof itemRenderer === 'function' &&
-					itemRenderer({
-						suggestions,
-						highlight,
-						value: suggestion,
-					})}
+						itemRenderer({
+							suggestions,
+							highlight,
+							value: suggestion,
+						})}
 				</Box>
 			);
 		})}
 		<div className={styles.spacer} />
 	</Box>
-)
+);
 
 const AutoSuggestInputPrimitive = withEnhancedInput(
 	({
@@ -759,14 +757,14 @@ interface DefaultSuggestionProps {
 }
 
 const DefaultSuggestion: FunctionComponent<DefaultSuggestionProps> = ({
-																		  text,
-																		  highlight,
-																	  }) => (
+	text,
+	highlight,
+}) => (
 	<div
 		className={clsx(styles.suggestion, {
 			[styles.suggestionHighlight]: highlight,
 		})}>
-		<Text is='span'>{text}</Text>
+		<Text is="span">{text}</Text>
 	</div>
 );
 
