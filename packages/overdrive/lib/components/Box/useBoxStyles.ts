@@ -8,7 +8,7 @@ import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
 
 import * as styles from './useBoxStyles.css';
 
-import * as resetStyleRefs from '../../reset/reset.treat';
+import * as resetStyleRefs from '../../reset/reset.css';
 
 
 interface Padding {
