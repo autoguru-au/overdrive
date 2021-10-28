@@ -1,6 +1,6 @@
 import { useStyles } from 'react-treat';
 
-import * as styleRefs from './CheckableBase.treat';
+import * as styleRefs from './CheckableBase.css';
 
 export const useCheckableStyles: () => {
 	checkableItem: string;
