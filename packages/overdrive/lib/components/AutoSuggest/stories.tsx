@@ -11,12 +11,12 @@ import {
 	StarIcon,
 } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
 import { AutoSuggest } from '.';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { StandardModal } from '../StandardModal';
+
 
 const mockSuggestions = [
 	'Alfa Romeo',

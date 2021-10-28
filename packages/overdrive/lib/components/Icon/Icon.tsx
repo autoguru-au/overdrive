@@ -13,7 +13,7 @@ import * as styles from './Icon.css';
 export interface Props {
 	display?: Extract<BoxStyleProps['display'], 'block' | 'inlineBlock'>;
 	className?: string;
-	size?: ResponsiveProp<keyof typeof styles.size>;
+	size?: ResponsiveProp<keyof typeof styles.size|string>;
 	icon: IconType;
 }
 
