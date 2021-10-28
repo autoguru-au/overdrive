@@ -33,27 +33,21 @@ export const resolveResponsiveStyle = <Tokens extends string | number>(
 	return clsx([...buildClassFor(responsiveArgument, breakpointTokenMap)]);
 };
 
-export const makeResponsiveStyle1 = <Token extends Record<string | number, any>>(
-	tokens,
-	property: ((value: any) => CSSProperties) | keyof Properties,
-)=>{
-	console.log('tokens')
-	console.log(tokens)
-}
 export const makeResponsiveStyle = <Token extends Record<string | number, any>>(
 	tokens,
 	property: ((value: any) => CSSProperties) | keyof Properties,
 ): Record<keyof Token, any> =>{
-	console.log('tokens')
-	console.log(tokens);
-	if(typeof tokens === 'undefined')
-		return {};
-	return  Object.entries(tokens || {}).reduce((results, [key, value]) => {
+	console.log({ tokens });
+	return Object.entries(tokens || {})
+		.reduce((results, [key, value]) => {
 
-		const breakpoints = Object.keys(vars.breakpoints);
-		return {
-			...results,
-			[key]: breakpoints.reduce((bpList, bp) => {
+			console.log({ key });
+			console.log({ value });
+			const breakpoints = Object.keys(vars.breakpoints);
+			console.log({ breakpoints });
+			results[key] = breakpoints.reduce((bpList, bp) => {
+
+				console.log({ bpList, bp });
 				return {
 					...bpList,
 					[bp]: responsiveStyle({
@@ -63,8 +57,23 @@ export const makeResponsiveStyle = <Token extends Record<string | number, any>>(
 								: property(value),
 					}),
 				};
-			}, {}),
-		};
+			}, {});
+			console.log({ results });
+			return results;
+			/*return {
+				...results,
+				[key]: breakpoints.reduce((bpList, bp) => {
+					return {
+						...bpList,
+						[bp]: responsiveStyle({
+							[bp]:
+								typeof property === 'string'
+									? { [property]: value }
+									: property(value),
+						}),
+					};
+				}, {}),
+			};*/
 	}, {} as Record<keyof Token, BreakpointStyleMap>)
 };
 

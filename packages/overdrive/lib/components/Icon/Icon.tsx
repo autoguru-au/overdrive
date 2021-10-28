@@ -1,35 +1,31 @@
 import type { IconType } from '@autoguru/icons';
-import type { NamedExoticComponent } from 'react';
+import type { FunctionComponent } from 'react';
 import * as React from 'react';
-import { cloneElement, memo } from 'react';
-import { useStyles } from 'react-treat';
+import { cloneElement } from 'react';
 
-import {
-	resolveResponsiveStyle_legacy,
-	ResponsiveProp,
-} from '../../utils/responsiveProps_legacy';
+import { resolveResponsiveStyle, ResponsiveProp } from '../../utils/responsiveProps';
 import type { BoxStyleProps } from '../Box';
 import { Box, useBoxStyles } from '../Box';
 
-import * as styleRefs from './Icon.treat';
+import * as styles from './Icon.css';
 
 export interface Props {
 	display?: Extract<BoxStyleProps['display'], 'block' | 'inlineBlock'>;
 	className?: string;
-	size?: ResponsiveProp<keyof typeof styleRefs.size>;
+	size?: ResponsiveProp<keyof typeof styles.size>;
 	icon: IconType;
 }
 
-export const Icon: NamedExoticComponent<Props> = memo(
+export const Icon: FunctionComponent<Props> =
 	({ className = '', icon, size = 'small', display = 'block' }) => {
-		const styles = useStyles(styleRefs);
+		//const styles = useStyles(styleRefs);
 
 		return (
 			<Box
-				is="i"
+				is='i'
 				display={display}
 				className={[
-					resolveResponsiveStyle_legacy(size, styles.size),
+					resolveResponsiveStyle(size, styles.size),
 					className,
 				]}
 				role="presentation">
@@ -43,5 +39,4 @@ export const Icon: NamedExoticComponent<Props> = memo(
 				})}
 			</Box>
 		);
-	},
-);
+	};
