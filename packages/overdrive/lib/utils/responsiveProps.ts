@@ -22,6 +22,7 @@ export const resolveResponsiveStyle = <Tokens extends string | number>(
 	responsiveArgument: ResponsiveProp<Tokens> | null | undefined,
 	breakpointTokenMap: Record<Tokens, BreakpointStyleMap>,
 ) => {
+	console.log({responsiveArgument, breakpointTokenMap});
 	if (responsiveArgument === void 0 || responsiveArgument === null)
 		return void 0;
 
@@ -37,20 +38,20 @@ export const makeResponsiveStyle = <Token extends Record<string | number, any>>(
 	tokens,
 	property: ((value: any) => CSSProperties) | keyof Properties,
 ): Record<keyof Token, any> =>{
-	console.log({ tokens });
-	return Object.entries(tokens || {})
+	//console.log({ tokens });
+	const map =  Object.entries(tokens || {})
 		.reduce((results, [key, value]) => {
 
-			console.log({ key });
-			console.log({ value });
+			//console.log({ key });
+			//console.log({ value });
 			const breakpoints = Object.keys(vars.breakpoints);
 			console.log({ breakpoints });
 			results[key] = breakpoints.reduce((bpList, bp) => {
 
-				console.log({ bpList, bp });
+				//console.log({ bpList, bp });
 				return {
 					...bpList,
-					[bp]: responsiveStyle({
+					...responsiveStyle({
 						[bp]:
 							typeof property === 'string'
 								? { [property]: value }
@@ -58,7 +59,7 @@ export const makeResponsiveStyle = <Token extends Record<string | number, any>>(
 					}),
 				};
 			}, {});
-			console.log({ results });
+			//console.log({ results });
 			return results;
 			/*return {
 				...results,
@@ -74,7 +75,10 @@ export const makeResponsiveStyle = <Token extends Record<string | number, any>>(
 					};
 				}, {}),
 			};*/
-	}, {} as Record<keyof Token, BreakpointStyleMap>)
+	}, {} as Record<keyof Token, BreakpointStyleMap>);
+	console.log({map});
+	console.log(JSON.stringify(map));
+	return map;
 };
 
 function* buildClassFor<Tokens extends string | number>(

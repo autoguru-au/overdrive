@@ -20,12 +20,14 @@ export const Icon: FunctionComponent<Props> =
 	({ className = '', icon, size = 'small', display = 'block' }) => {
 		//const styles = useStyles(styleRefs);
 
+		console.log(size, styles.size)
 		return (
 			<Box
 				is='i'
 				display={display}
 				className={[
-					resolveResponsiveStyle(size, styles.size),
+					styles.size[size],
+					//resolveResponsiveStyle(size, styles.size),
 					className,
 				]}
 				role="presentation">
