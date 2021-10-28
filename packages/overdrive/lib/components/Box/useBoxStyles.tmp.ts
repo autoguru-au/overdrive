@@ -10,7 +10,6 @@ export const padding = {
 	bottom: makeResponsiveStyle(vars.space, 'paddingBottom'),
 	left: makeResponsiveStyle(vars.space, 'paddingLeft'),
 };
-console.log({ padding });
 
 export const margin = {
 	top: makeResponsiveStyle(vars.space, 'marginTop'),

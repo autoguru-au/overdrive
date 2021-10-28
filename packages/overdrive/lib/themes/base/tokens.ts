@@ -1,6 +1,14 @@
 import { buildColourGamut } from '../makeTheme';
 import { BreakPoints, ColourMap, Tokens } from '../tokens';
 
+
+export const breakpoints: BreakPoints = {
+	mobile: '0px',
+	tablet: '768px', // IPad mini width (1024 - 25%)
+	desktop: '1024px', // IPad Pro width (1366 - 25%)
+	largeDesktop: '1440px', // 1080p width (1920 - 25%)
+};
+
 const colours: ColourMap = {
 	gray: {
 		'900': '#212338',

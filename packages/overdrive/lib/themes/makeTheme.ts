@@ -41,6 +41,7 @@ const createUtils = (tokens: Tokens) => ({
 	},
 });
 
+// @ts-ignore
 const decorateTokens = (tokens: Tokens) => ({
 	...tokens,
 	utils: createUtils(tokens),

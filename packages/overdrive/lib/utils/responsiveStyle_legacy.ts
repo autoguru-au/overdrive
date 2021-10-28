@@ -5,8 +5,6 @@ import type { StyleWithSelectors, CSSProperties } from '@vanilla-extract/css/dis
 export const responsiveStyle_legacy = (
 	breakpoints: Partial<Record<keyof Tokens['breakpoints'], StyleWithSelectors>>,
 ): CSSProperties => {
-
-	console.log({responsiveStyle:breakpoints})
 	const styles = {};
 
 	for (const [query, style] of Object.entries(breakpoints)) {
@@ -24,8 +22,6 @@ export const responsiveStyle_legacy = (
 			},
 		});
 	}
-
-	console.log({styles})
 
 	return styles;
 };

@@ -2,7 +2,7 @@ import { CSSProperties } from '@vanilla-extract/css';
 import clsx from 'clsx';
 import { Properties } from 'csstype';
 
-import { breakpoints } from '../themes/base/vars.css';
+import { breakpoints } from '../themes/base/tokens';
 
 import { responsiveStyle } from './responsiveStyle';
 
@@ -21,7 +21,6 @@ export const resolveResponsiveStyle = <Tokens extends string | number>(
 	responsiveArgument: ResponsiveProp<Tokens> | null | undefined,
 	breakpointTokenMap: Record<Tokens, BreakpointStyleMap>,
 ) => {
-	console.log({responsiveArgument, breakpointTokenMap});
 	if (responsiveArgument === void 0 || responsiveArgument === null)
 		return void 0;
 
@@ -36,18 +35,12 @@ export const resolveResponsiveStyle = <Tokens extends string | number>(
 export const makeResponsiveStyle = <Token extends Record<string | number, any>>(
 	tokens,
 	property: ((value: any) => CSSProperties) | keyof Properties,
-): Record<keyof Token, any> =>{
-	//console.log({ tokens });
-	const map =  Object.entries(tokens || {})
-		.reduce((results, [key, value]) => {
-
-			//console.log({ key });
-			//console.log({ value });
-			const breakpointsKeys = Object.keys(breakpoints);
-			console.log({ breakpointsKeys });
-			results[key] = breakpointsKeys.reduce((bpList, bp) => {
-
-				//console.log({ bpList, bp });
+): Record<keyof Token, any> => Object.entries(tokens || {})
+	.reduce((results, [key, value]) => {
+		const breakpointsKeys = Object.keys(breakpoints);
+		return {
+			...results,
+			[key]: breakpointsKeys.reduce((bpList, bp) => {
 				return {
 					...bpList,
 					[bp]: responsiveStyle({
@@ -57,28 +50,9 @@ export const makeResponsiveStyle = <Token extends Record<string | number, any>>(
 								: property(value),
 					}),
 				};
-			}, {});
-			//console.log({ results });
-			return results;
-			/*return {
-				...results,
-				[key]: breakpoints.reduce((bpList, bp) => {
-					return {
-						...bpList,
-						[bp]: responsiveStyle({
-							[bp]:
-								typeof property === 'string'
-									? { [property]: value }
-									: property(value),
-						}),
-					};
-				}, {}),
-			};*/
+			}, {}),
+		};
 	}, {} as Record<keyof Token, BreakpointStyleMap>);
-	console.log({map});
-	console.log(JSON.stringify(map));
-	return map;
-};
 
 function* buildClassFor<Tokens extends string | number>(
 	responsiveArgument: Tokens[],

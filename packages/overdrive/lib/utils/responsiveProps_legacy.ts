@@ -21,9 +21,6 @@ export const resolveResponsiveStyle_legacy = <Tokens extends string | number>(
 	if (responsiveArgument === void 0 || responsiveArgument === null)
 		return void 0;
 
-
-	console.log({responsiveArgument, breakpointTokenMap});
-
 	if (!Array.isArray(responsiveArgument))
 		return breakpointTokenMap[responsiveArgument]
 			? breakpointTokenMap[responsiveArgument].mobile

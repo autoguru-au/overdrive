@@ -1,5 +1,5 @@
-import { Properties } from 'csstype';
 import { CSSProperties } from '@vanilla-extract/css';
+import { Properties } from 'csstype';
 
 type PropValue<T> = T extends Record<string | number, infer U> ? U : never;
 
