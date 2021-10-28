@@ -1,8 +1,8 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
+import { vars } from '../../themes/base/vars.css';
 import { mapTokenToProperty } from '../../utils/mapTokenToProperty';
 import { makeResponsiveStyle } from '../../utils/responsiveProps';
-import { vars } from '../../themes/base/vars.css';
 
 export const padding = {
 	top: makeResponsiveStyle(vars.space, 'paddingTop'),

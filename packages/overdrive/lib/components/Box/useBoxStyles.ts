@@ -6,8 +6,10 @@ import type { Theme } from 'treat/theme';
 import type { ResponsiveProp } from '../../utils/responsiveProps_legacy';
 import { resolveResponsiveStyle_legacy as resolveResponsiveStyle } from '../../utils/responsiveProps_legacy';
 
+import * as styles from './useBoxStyles.css';
+
 import * as resetStyleRefs from '../../reset/reset.treat';
-import * as styleRefs from './useBoxStyles.treat';
+
 
 interface Padding {
 	padding?: ResponsiveProp<keyof Theme['space']>;
@@ -48,35 +50,35 @@ interface Border {
 	borderColourLeft?: keyof Theme['border']['colours'];
 
 	// TODO: Should this also house X,Y,T,R,B,L?
-	borderRadius?: ResponsiveProp<keyof typeof styleRefs.borderRadius>;
+	borderRadius?: ResponsiveProp<keyof typeof styles.borderRadius>;
 }
 
 interface Flex {
-	alignItems?: ResponsiveProp<keyof typeof styleRefs.alignItems>;
-	flexDirection?: ResponsiveProp<keyof typeof styleRefs.flexDirection>;
-	flexGrow?: keyof typeof styleRefs.flexGrow;
-	flexShrink?: keyof typeof styleRefs.flexShrink;
-	flexWrap?: keyof typeof styleRefs.flexWrap;
-	justifyContent?: ResponsiveProp<keyof typeof styleRefs.justifyContent>;
+	alignItems?: ResponsiveProp<keyof typeof styles.alignItems>;
+	flexDirection?: ResponsiveProp<keyof typeof styles.flexDirection>;
+	flexGrow?: keyof typeof styles.flexGrow;
+	flexShrink?: keyof typeof styles.flexShrink;
+	flexWrap?: keyof typeof styles.flexWrap;
+	justifyContent?: ResponsiveProp<keyof typeof styles.justifyContent>;
 }
 
 export interface BoxStyleProps extends Padding, Margin, Border, Flex {
 	is?: keyof JSX.IntrinsicElements | JSXElementConstructor<any>;
-	boxShadow?: ResponsiveProp<keyof typeof styleRefs.boxShadow>;
-	display?: keyof typeof styleRefs.display;
+	boxShadow?: ResponsiveProp<keyof typeof styles.boxShadow>;
+	display?: keyof typeof styles.display;
 
-	position?: keyof typeof styleRefs.position;
+	position?: keyof typeof styles.position;
 
-	width?: keyof typeof styleRefs.width;
-	height?: keyof typeof styleRefs.height;
+	width?: keyof typeof styles.width;
+	height?: keyof typeof styles.height;
 
-	backgroundColour?: keyof typeof styleRefs.backgroundColours;
-	opacity?: keyof typeof styleRefs.opacity;
+	backgroundColour?: keyof typeof styles.backgroundColours;
+	opacity?: keyof typeof styles.opacity;
 
-	overflow?: keyof typeof styleRefs.overflow;
-	userSelect?: keyof typeof styleRefs.userSelect;
-	textAlign?: keyof typeof styleRefs.textAlign;
-	pointerEvents?: keyof typeof styleRefs.pointerEvents;
+	overflow?: keyof typeof styles.overflow;
+	userSelect?: keyof typeof styles.userSelect;
+	textAlign?: keyof typeof styles.textAlign;
+	pointerEvents?: keyof typeof styles.pointerEvents;
 
 	className?: Parameters<typeof clsx>[0];
 }
@@ -132,7 +134,6 @@ export const useBoxStyles = ({
 	className,
 }: BoxStyleProps) => {
 	const resetStyles = useStyles(resetStyleRefs);
-	const styles = useStyles(styleRefs);
 
 	const resolvedPaddingTop = paddingTop || paddingY || padding;
 	const resolvedPaddingRight = paddingRight || paddingX || padding;
