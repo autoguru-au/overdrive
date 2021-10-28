@@ -1,7 +1,8 @@
-import { style, styleVariants } from '@vanilla-extract/css';
+import { style, StyleRule, styleVariants } from '@vanilla-extract/css';
 
 import { vars } from '../../themes/base/vars.css';
 import { mapTokenToProperty_Legacy } from '../../utils/mapTokenToProperty_Legacy';
+import { Tokens } from '../../themes/tokens';
 
 export const root = style({
 	selectors: {
@@ -20,7 +21,7 @@ export const sizes = styleVariants(Object.entries(vars.typography.size).reduce(
 			lineHeight: size.lineHeight,
 		},
 	}),
-	{},
+	{} as Record<keyof Tokens['typography']['size'], StyleRule>,
 ));
 
 export const colours = styleVariants(mapTokenToProperty_Legacy(vars.typography.colour, 'color'));
