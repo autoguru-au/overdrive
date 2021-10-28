@@ -1,10 +1,6 @@
-import { CSSProperties } from '@vanilla-extract/css';
 import clsx from 'clsx';
-import { Properties } from 'csstype';
 
 import { breakpoints } from '../themes/base/tokens';
-
-import { responsiveStyle } from './responsiveStyle';
 
 export type ResponsiveProp<T> = T | T[];
 
@@ -32,28 +28,6 @@ export const resolveResponsiveStyle = <Tokens extends string | number>(
 	return clsx([...buildClassFor(responsiveArgument, breakpointTokenMap)]);
 };
 
-export const makeResponsiveStyle = <Token extends Record<string | number, any>>(
-	tokens,
-	property: ((value: any) => CSSProperties) | keyof Properties,
-): Record<keyof Token, any> => Object.entries(tokens || {})
-	.reduce((results, [key, value]) => {
-		const breakpointsKeys = Object.keys(breakpoints);
-		return {
-			...results,
-			[key]: breakpointsKeys.reduce((bpList, bp) => {
-				return {
-					...bpList,
-					[bp]: responsiveStyle({
-						[bp]:
-							typeof property === 'string'
-								? { [property]: value }
-								: property(value),
-					}),
-				};
-			}, {}),
-		};
-	}, {} as Record<keyof Token, BreakpointStyleMap>);
-
 function* buildClassFor<Tokens extends string | number>(
 	responsiveArgument: Tokens[],
 	breakpointTokenMap: Record<Tokens, BreakpointStyleMap>,
@@ -68,9 +42,9 @@ function* buildClassFor<Tokens extends string | number>(
 		const orderToken = responsiveTokenOrder[counter];
 		const result =
 			breakpointTokenMap[
-				responsiveArgument?.[counter] ??
-					getEarliestKnownToken(responsiveArgument, counter)
-			];
+			responsiveArgument?.[counter] ??
+			getEarliestKnownToken(responsiveArgument, counter)
+				];
 		yield result ? result[orderToken] : void 0;
 		++counter;
 	}

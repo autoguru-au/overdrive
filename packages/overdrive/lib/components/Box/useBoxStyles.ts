@@ -3,8 +3,8 @@ import type { JSXElementConstructor } from 'react';
 import { useStyles } from 'react-treat';
 import type { Theme } from 'treat/theme';
 
-import type { ResponsiveProp } from '../../utils/responsiveProps_legacy';
-import { resolveResponsiveStyle_legacy as resolveResponsiveStyle } from '../../utils/responsiveProps_legacy';
+import { ResponsiveProp } from '../../utils/responsiveProps.css';
+import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
 
 import * as styles from './useBoxStyles.css';
 

@@ -2,9 +2,8 @@ import type { IconType } from '@autoguru/icons';
 import type { FunctionComponent } from 'react';
 import * as React from 'react';
 import { cloneElement } from 'react';
-
-//import { resolveResponsiveStyle_legacy as resolveResponsiveStyle, ResponsiveProp } from '../../utils/responsiveProps_legacy';
-import { resolveResponsiveStyle, ResponsiveProp } from '../../utils/responsiveProps';
+import { ResponsiveProp } from '../../utils/responsiveProps.css';
+import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
 import type { BoxStyleProps } from '../Box';
 import { Box, useBoxStyles } from '../Box';
 
