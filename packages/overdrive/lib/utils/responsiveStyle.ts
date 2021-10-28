@@ -1,16 +1,16 @@
 import { Tokens } from '../themes/tokens';
 
 import type { CSSProperties, StyleWithSelectors } from '@vanilla-extract/css/dist/declarations/src/types';
-import { vars } from '../themes/base/vars.css';
+import { breakpoints } from '../themes/base/vars.css';
 
 export const responsiveStyle = (
-	breakpoints: Partial<Record<keyof Tokens['breakpoints'], StyleWithSelectors>>,
+	breakpointsEntries: Partial<Record<keyof typeof breakpoints, StyleWithSelectors>>,
 ): CSSProperties => {
 
-	// console.log({ responsiveStyle: breakpoints });
+	// console.log({ responsiveStyle: breakpointsEntries });
 	const styles = {};
 
-	for (const [query, style] of Object.entries(breakpoints)) {
+	for (const [query, style] of Object.entries(breakpointsEntries)) {
 		if (query === 'mobile') {
 			Object.assign(styles, style);
 			continue;
@@ -21,7 +21,7 @@ export const responsiveStyle = (
 				// @ts-ignore
 				...styles['@media'],
 				// @ts-ignore
-				[`screen and (min-width: ${vars.breakpoints[query]}px)`]: style,
+				[`screen and (min-width: ${breakpoints[query]}px)`]: style,
 			},
 		});
 	}

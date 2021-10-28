@@ -1,5 +1,5 @@
 import { buildColourGamut } from '../makeTheme';
-import { ColourMap, Tokens } from '../tokens';
+import { BreakPoints, ColourMap, Tokens } from '../tokens';
 
 const colours: ColourMap = {
 	gray: {
@@ -70,12 +70,6 @@ export const tokens: Tokens = {
 	body: {
 		backgroundColour: white,
 		colour: colours.gray['900'],
-	},
-	breakpoints: {
-		mobile: '0px',
-		tablet: '768px', // IPad mini width (1024 - 25%)
-		desktop: '1024px', // IPad Pro width (1366 - 25%)
-		largeDesktop: '1440px', // 1080p width (1920 - 25%)
 	},
 	contentWidth: {
 		small: '592px',

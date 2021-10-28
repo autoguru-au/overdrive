@@ -9,10 +9,13 @@ console.log(styleVariants(makeResponsiveStyle(
 		height: value,
 	}),
 )));
-export const size = styleVariants(makeResponsiveStyle(
+export const size = Object.entries(makeResponsiveStyle(
 	vars.icon.size,
 	(value) => ({
 		width: value,
 		height: value,
 	}),
-));
+)).reduce((map, [key, value]) => {
+	map[key] = styleVariants(value);
+	return map;
+}, {});

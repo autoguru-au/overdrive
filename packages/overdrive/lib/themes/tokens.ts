@@ -3,7 +3,7 @@ type TextSizeScale = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';
 type BorderWidthScale = '1' | '2' | '3' | 'none';
 type IconSizeScale = 'small' | 'medium' | 'large';
 
-type Breakpoints = 'mobile' | 'tablet' | 'desktop' | 'largeDesktop';
+type DeviceSize = 'mobile' | 'tablet' | 'desktop' | 'largeDesktop';
 
 type ColourValue = Record<string, string>;
 
@@ -90,13 +90,14 @@ type Intent =
 
 type BaseColours = 'white';
 
+export type BreakPoints = Record<DeviceSize, string>;
+
 export interface Tokens extends VanillaTokens {
 	mode: 'light' | 'dark';
 	body: {
 		colour: string;
 		backgroundColour: string;
 	};
-	breakpoints: Record<Breakpoints, string>;
 	contentWidth: {
 		small: string;
 		medium: string;

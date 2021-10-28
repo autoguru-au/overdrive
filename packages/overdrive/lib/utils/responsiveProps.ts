@@ -1,17 +1,16 @@
 import { CSSProperties } from '@vanilla-extract/css';
 import clsx from 'clsx';
 import { Properties } from 'csstype';
-import { Theme } from 'treat/theme';
 
-import { vars } from '../themes/base/vars.css';
+import { breakpoints } from '../themes/base/vars.css';
 
 import { responsiveStyle } from './responsiveStyle';
 
 export type ResponsiveProp<T> = T | T[];
 
-type BreakpointStyleMap = Record<keyof Theme['breakpoints'], any>;
+type BreakpointStyleMap = Record<keyof typeof breakpoints, any>;
 
-const responsiveTokenOrder: ReadonlyArray<keyof Theme['breakpoints']> = [
+const responsiveTokenOrder: ReadonlyArray<keyof typeof breakpoints> = [
 	'mobile',
 	'tablet',
 	'desktop',
@@ -44,14 +43,14 @@ export const makeResponsiveStyle = <Token extends Record<string | number, any>>(
 
 			//console.log({ key });
 			//console.log({ value });
-			const breakpoints = Object.keys(vars.breakpoints);
-			console.log({ breakpoints });
-			results[key] = breakpoints.reduce((bpList, bp) => {
+			const breakpointsKeys = Object.keys(breakpoints);
+			console.log({ breakpointsKeys });
+			results[key] = breakpointsKeys.reduce((bpList, bp) => {
 
 				//console.log({ bpList, bp });
 				return {
 					...bpList,
-					...responsiveStyle({
+					[bp]: responsiveStyle({
 						[bp]:
 							typeof property === 'string'
 								? { [property]: value }
