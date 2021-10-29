@@ -3,11 +3,12 @@ import * as React from 'react';
 import { Text } from '../Text';
 
 import { OrderedList } from '.';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-export default { title: 'Foundation/List/OrderedList', component: OrderedList };
+export default { title: 'Foundation/List/OrderedList', component: OrderedList } as ComponentMeta<typeof OrderedList>;
 
-export const Standard = () => (
-	<OrderedList>
+export const Template: ComponentStory<typeof OrderedList> = (args) => (
+	<OrderedList {...args}>
 		<OrderedList.Item>
 			<Text>Strawberry</Text>
 		</OrderedList.Item>
@@ -41,3 +42,5 @@ export const Standard = () => (
 		</OrderedList.Item>
 	</OrderedList>
 );
+
+export const standard = Template.bind({});
