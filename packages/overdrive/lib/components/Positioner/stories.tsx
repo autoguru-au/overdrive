@@ -1,4 +1,3 @@
-import { action } from '@storybook/addon-actions';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { useRef } from 'react';
@@ -35,29 +34,25 @@ export default {
 	},
 } as ComponentMeta<typeof Positioner>;
 
-const Template: ComponentStory<typeof Positioner> = ({
-	onRequestClose,
-	...args
-}) => {
+const Template: ComponentStory<typeof Positioner> = (args) => {
 	const triggerRef = useRef(null);
 
 	return (
 		<div>
-			<Button ref={triggerRef} size="small" onClick={onRequestClose}>
+			<Button ref={triggerRef} size='small'>
 				Open me
 			</Button>
 			<Positioner
 				{...args}
-				triggerRef={triggerRef}
-				onRequestClose={onRequestClose}>
+				triggerRef={triggerRef}>
 				<Box
 					boxShadow={1}
-					backgroundColour="white"
-					borderRadius="1"
-					borderWidth={1}
-					borderColour="gray"
-					padding="2">
-					<Text is="p">
+					backgroundColour='white'
+					borderRadius='1'
+					borderWidth='1'
+					borderColour='gray'
+					padding='2'>
+					<Text is='p'>
 						Hello im from the consumer:{' '}
 						{Math.ceil(Math.random() * 100)}
 					</Text>
@@ -67,10 +62,7 @@ const Template: ComponentStory<typeof Positioner> = ({
 	);
 };
 
-const WithScrollTemplate: ComponentStory<typeof Positioner> = ({
-	onRequestClose,
-	...args
-}) => {
+const WithScrollTemplate: ComponentStory<typeof Positioner> = (args) => {
 	const triggerRef = useRef(null);
 
 	return (
@@ -96,16 +88,15 @@ const WithScrollTemplate: ComponentStory<typeof Positioner> = ({
 
 				<Positioner
 					{...args}
-					triggerRef={triggerRef}
-					onRequestClose={onRequestClose}>
+					triggerRef={triggerRef}>
 					<Box
 						boxShadow={1}
-						backgroundColour="white"
-						borderRadius="1"
-						borderWidth={1}
-						borderColour="gray"
-						padding="2">
-						<Text is="p">
+						backgroundColour='white'
+						borderRadius='1'
+						borderWidth='1'
+						borderColour='gray'
+						padding='2'>
+						<Text is='p'>
 							Hello im from the consumer:{' '}
 							{Math.ceil(Math.random() * 100)}
 						</Text>
@@ -120,7 +111,6 @@ const standardProps = {
 	alignment: EAlignment.BOTTOM_LEFT,
 	isOpen: false,
 	triggerOffset: 12,
-	onRequestClose: action('onChange'),
 };
 
 export const closed: ComponentStory<typeof Positioner> = Template.bind(
