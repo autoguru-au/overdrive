@@ -1,18 +1,51 @@
 import * as React from 'react';
+import { ComponentProps } from 'react';
 
 import { Button } from '../Button';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
 
 import { Inline } from '.';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { scaleOptions } from '../Box/stories';
 
 export default {
 	title: 'Foundation/Layout/Inline',
 	component: Inline,
-};
+	argTypes: {
+		alignY: {
+			options: [
+				'flexStart',
+				'center',
+				'flexEnd',
+			],
+			control: {
+				type: 'select',
+			},
+		},
+		alignX: {
+			options: [
+				'flexStart',
+				'center',
+				'flexEnd',
+				'spaceBetween',
+			],
+			control: {
+				type: 'select',
+			},
+		},
+		space: {
+			options: scaleOptions,
+			control: {
+				type: 'select',
+			},
+		},
+	},
+} as ComponentMeta<typeof Inline>;
 
-export const Standard = () => (
-	<Inline>
+
+const Template: ComponentStory<typeof Inline> = (args) => (
+	<Inline {...args}>
 		<Text>Mazda</Text>
 		<Text>CX3</Text>
 		<Text>Petrol</Text>
@@ -20,50 +53,23 @@ export const Standard = () => (
 	</Inline>
 );
 
-export const Dividers = () => (
-	<Inline dividers>
-		<Text>Mazda</Text>
-		<Text>CX3</Text>
-		<Text>Petrol</Text>
-		<Text>2020</Text>
-	</Inline>
-);
-
-export const CustomDividers = () => (
-	<Inline
-		dividers={
-			<div
-				style={{
-					backgroundColor: 'red',
-					width: '6px',
-					height: '6px',
-				}}
-			/>
-		}>
-		<Text>Mazda</Text>
-		<Text>CX3</Text>
-		<Text>Petrol</Text>
-		<Text>2020</Text>
-	</Inline>
-);
-
-export const DifferentSizeItems = () => (
+const DiffSizeTemplate: ComponentStory<typeof Inline> = (args) => (
 	<Stack>
-		<Inline dividers>
+		<Inline {...args}>
 			<Text>Mazda</Text>
 			<Text>CX3</Text>
 			<Text>Petrol</Text>
 			<Text>2020</Text>
 			<Button>Buy</Button>
 		</Inline>
-		<Inline dividers alignY="flexEnd">
+		<Inline {...args}>
 			<Text>Mazda</Text>
 			<Text>CX3</Text>
 			<Text>Petrol</Text>
 			<Text>2020</Text>
 			<Button>Buy</Button>
 		</Inline>
-		<Inline alignY="flexStart">
+		<Inline {...args}>
 			<Text>Mazda</Text>
 			<Text>CX3</Text>
 			<Text>Petrol</Text>
@@ -72,3 +78,33 @@ export const DifferentSizeItems = () => (
 		</Inline>
 	</Stack>
 );
+
+
+const standardProps: ComponentProps<typeof Inline> = {};
+export const standard = Template.bind(standardProps);
+standard.args = standardProps;
+
+const dividersProps: ComponentProps<typeof Inline> = {
+	dividers: true,
+};
+export const dividers = Template.bind(dividersProps);
+dividers.args = dividersProps;
+
+const customDividersProps: ComponentProps<typeof Inline> = {
+	dividers: (
+		<div
+			style={{
+				backgroundColor: 'red',
+				width: '6px',
+				height: '6px',
+			}}
+		/>),
+};
+export const customDividers = Template.bind(customDividersProps);
+customDividers.args = customDividersProps;
+
+const differentSizeItemsProps: ComponentProps<typeof Inline> = {
+	dividers: true,
+};
+export const differentSizeItems = DiffSizeTemplate.bind(differentSizeItemsProps);
+differentSizeItems.args = differentSizeItemsProps;

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { ComponentProps } from 'react';
 
 import { Box } from '../Box';
-import { boxArgTypes } from '../Box/stories';
+import { boxArgTypes, scaleOptions } from '../Box/stories';
 
 import { Column, Columns } from '.';
 
@@ -19,6 +19,25 @@ export default {
 		noWrap: {
 			control: {
 				type: 'boolean ',
+			},
+		},
+		space: {
+			options: scaleOptions,
+			control: {
+				type: 'select',
+			},
+		},
+		spaceX: {
+			options: scaleOptions,
+			control: {
+				type: 'select',
+			},
+		},
+
+		spaceY: {
+			options: scaleOptions,
+			control: {
+				type: 'select',
 			},
 		},
 		...boxArgTypes

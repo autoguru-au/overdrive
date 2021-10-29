@@ -72,7 +72,7 @@ const sharedProps: ComponentProps<typeof DateInput> = {
 	reserveHintSpace: false,
 	hintText: '',
 	notch: true,
-	prefixIcon: null,
+	prefixIcon: void 0,
 	onChange: action('onChange'),
 	onFocus: action('onFocus'),
 	onBlur: action('onBlur'),

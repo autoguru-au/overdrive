@@ -8,7 +8,7 @@ import { Icon } from '../Icon';
 
 import { Box } from '.';
 
-const scaleOptions: Array<keyof Tokens['space']> = [
+export const scaleOptions: Array<keyof Tokens['space']> = [
 	'none',
 	'1',
 	'2',
@@ -74,23 +74,23 @@ export const boxArgTypes: Partial<ArgTypes<ComponentProps<typeof Box>>> = {
 			type: 'select',
 		},
 	},
-	flexDirection: {
-		options: [
-			'row',
-			'rowReverse',
-			'column',
-			'columnReverse',
-		],
-		control: {
-			type: 'select',
-		},
-	},
 	justifyContent: {
 		options: [
 			'flexStart',
 			'center',
 			'flexEnd',
 			'spaceBetween',
+		],
+		control: {
+			type: 'select',
+		},
+	},
+	flexDirection: {
+		options: [
+			'row',
+			'rowReverse',
+			'column',
+			'columnReverse',
 		],
 		control: {
 			type: 'select',
