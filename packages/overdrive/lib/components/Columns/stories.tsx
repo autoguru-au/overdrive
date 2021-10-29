@@ -33,7 +33,6 @@ export default {
 				type: 'select',
 			},
 		},
-
 		spaceY: {
 			options: scaleOptions,
 			control: {
