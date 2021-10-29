@@ -9,7 +9,7 @@ import {
 	StarIcon,
 } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
-import { ArgTypes } from '@storybook/react';
+import { ArgTypes, ComponentMeta, ComponentStory } from '@storybook/react';
 import isChromatic from 'chromatic/isChromatic';
 import * as React from 'react';
 import { ComponentProps } from 'react';
@@ -22,7 +22,7 @@ export default {
 	parameters: {
 		chromatic: { delay: 300 },
 	},
-};
+} as ComponentMeta<typeof NumberInput>;
 
 const defaultValue = isChromatic() ? 42 : Math.round(Math.random() * 100);
 const defaultPlaceholder = 'How many?';
@@ -62,7 +62,7 @@ const argTypes: ArgTypes = {
 	},
 };
 
-const Template = (args) => <NumberInput {...args} />;
+const Template: ComponentStory<typeof NumberInput> = (args) => <NumberInput {...args} />;
 
 const sharedProps: ComponentProps<typeof NumberInput> = {
 	disabled: false,
