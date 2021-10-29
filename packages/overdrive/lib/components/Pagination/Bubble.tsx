@@ -1,5 +1,9 @@
 import clsx from 'clsx';
-import type { ComponentProps, FunctionComponent, MouseEventHandler } from 'react';
+import type {
+	ComponentProps,
+	FunctionComponent,
+	MouseEventHandler,
+} from 'react';
 import * as React from 'react';
 import { useStyles } from 'react-treat';
 
@@ -17,13 +21,13 @@ export interface Props {
 }
 
 export const Bubble: FunctionComponent<Props> = ({
-													 className = '',
-													 selected = false,
-													 gap = false,
-													 children,
-													 disabled,
-													 onClick,
-												 }) => {
+	className = '',
+	selected = false,
+	gap = false,
+	children,
+	disabled,
+	onClick,
+}) => {
 	const styles = useStyles(styleRefs);
 	let backgroundColour: ComponentProps<typeof Box>['backgroundColour'] =
 		'transparent';
@@ -31,15 +35,15 @@ export const Bubble: FunctionComponent<Props> = ({
 	else if (disabled) backgroundColour = 'gray200';
 	return (
 		<Box
-			is='button'
+			is="button"
 			backgroundColour={backgroundColour}
-			display='flex'
-			overflow='hidden'
-			alignItems='center'
-			flexDirection='row'
-			justifyContent='center'
-			textAlign='center'
-			borderRadius='pill'
+			display="flex"
+			overflow="hidden"
+			alignItems="center"
+			flexDirection="row"
+			justifyContent="center"
+			textAlign="center"
+			borderRadius="pill"
 			pointerEvents={disabled ? 'none' : void 0}
 			className={clsx(
 				className,

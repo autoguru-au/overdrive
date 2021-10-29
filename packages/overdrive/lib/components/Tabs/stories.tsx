@@ -20,11 +20,11 @@ export const Standard = () => (
 			<TabPane>Content A</TabPane>
 			<TabPane>
 				<Stack>
-					<TestChild label='5' />
-					<TestChild label='4' />
-					<TestChild label='3' />
-					<TestChild label='2' />
-					<TestChild label='1' />
+					<TestChild label="5" />
+					<TestChild label="4" />
+					<TestChild label="3" />
+					<TestChild label="2" />
+					<TestChild label="1" />
 				</Stack>
 			</TabPane>
 		</TabPanes>
@@ -49,18 +49,18 @@ export const TabsWithoutPanes = () => (
 	<>
 		<Tabs>
 			<TabList>
-				<Tab id='tab-1' is={<a href='#tab-1' />}>
+				<Tab id="tab-1" is={<a href="#tab-1" />}>
 					Tab 1
 				</Tab>
-				<Tab id='tab-2' is={<a href='#tab-2' />}>
+				<Tab id="tab-2" is={<a href="#tab-2" />}>
 					Tab 2
 				</Tab>
 			</TabList>
 		</Tabs>
 
 		<ul>
-			<li id='tab-1'>Tab 1 Content</li>
-			<li id='tab-2' style={{ marginTop: '120vh' }}>
+			<li id="tab-1">Tab 1 Content</li>
+			<li id="tab-2" style={{ marginTop: '120vh' }}>
 				Tab 2 Content
 			</li>
 		</ul>
@@ -78,11 +78,11 @@ export const WithStretch = () => (
 			<TabPane>Content A</TabPane>
 			<TabPane>
 				<Stack>
-					<TestChild label='5' />
-					<TestChild label='4' />
-					<TestChild label='3' />
-					<TestChild label='2' />
-					<TestChild label='1' />
+					<TestChild label="5" />
+					<TestChild label="4" />
+					<TestChild label="3" />
+					<TestChild label="2" />
+					<TestChild label="1" />
 				</Stack>
 			</TabPane>
 		</TabPanes>

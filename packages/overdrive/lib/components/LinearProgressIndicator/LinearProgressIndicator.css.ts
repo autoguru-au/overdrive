@@ -14,8 +14,7 @@ const layerOneAnim = keyframes({
 		transform: 'translateX(0)',
 	},
 	'25%': {
-		animationTimingFunction:
-			'cubic-bezier(0.31033, 0.28406, 0.8, 0.73371)',
+		animationTimingFunction: 'cubic-bezier(0.31033, 0.28406, 0.8, 0.73371)',
 		transform: 'translateX(37.65191%)',
 	},
 	'48.35%': {

@@ -12,17 +12,16 @@ export interface Props {
 }
 
 export const ThemeProvider: FunctionComponent<Props> = ({
-															theme,
-															children,
-														}) => <themeContext.Provider
-	value={theme}>{children}</themeContext.Provider>;
+	theme,
+	children,
+}) => <themeContext.Provider value={theme}>{children}</themeContext.Provider>;
 
 export const useTheme = () => {
 	const themeClass = useContext(themeContext);
 
 	invariant(
 		themeClass !== null,
-		'You haven\'t provided an `OverdriveProvider`.',
+		"You haven't provided an `OverdriveProvider`.",
 	);
 
 	return themeClass;

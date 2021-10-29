@@ -24,7 +24,7 @@ export const One = () => {
 		<Box className={wrapperCls} style={wrapperStyle}>
 			{attachedBoxes.map((AttachedBox, index) => (
 				<AttachedBox key={index}>
-					<Text is='p' colour='white' align='center'>
+					<Text is="p" colour="white" align="center">
 						{index + 1}
 					</Text>
 				</AttachedBox>
@@ -45,7 +45,7 @@ export const Five = () => {
 		<Box className={wrapperCls} style={wrapperStyle}>
 			{attachedBoxes.map((AttachedBox, index) => (
 				<AttachedBox key={index}>
-					<Text is='p' colour='white' align='center'>
+					<Text is="p" colour="white" align="center">
 						{index + 1}
 					</Text>
 				</AttachedBox>
@@ -66,7 +66,7 @@ export const Seven = () => {
 		<Box className={wrapperCls} style={wrapperStyle}>
 			{attachedBoxes.map((AttachedBox, index) => (
 				<AttachedBox key={index}>
-					<Text is='p' colour='white' align='center'>
+					<Text is="p" colour="white" align="center">
 						{index + 1}
 					</Text>
 				</AttachedBox>
@@ -86,7 +86,7 @@ export const TwentyThree = () => {
 		<Box className={wrapperCls} style={wrapperStyle}>
 			{attachedBoxes.map((AttachedBox, index) => (
 				<AttachedBox key={index}>
-					<Text is='p' colour='white' align='center'>
+					<Text is="p" colour="white" align="center">
 						{index + 1}
 					</Text>
 				</AttachedBox>

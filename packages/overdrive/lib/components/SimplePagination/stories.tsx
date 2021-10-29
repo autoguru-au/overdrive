@@ -18,9 +18,9 @@ const Template: ComponentStory<typeof SimplePagination> = (args) => (
 			widht: '100vw',
 			maxHeight: '120px',
 		}}
-		display='flex'
-		alignItems='center'
-		justifyContent='center'>
+		display="flex"
+		alignItems="center"
+		justifyContent="center">
 		<SimplePagination {...args} />
 	</Box>
 );
@@ -31,7 +31,9 @@ const standardProps = {
 	onChange: action('onChange'),
 };
 
-export const middlePage: ComponentStory<typeof SimplePagination> = Template.bind(standardProps);
+export const middlePage: ComponentStory<
+	typeof SimplePagination
+> = Template.bind(standardProps);
 middlePage.args = standardProps;
 
 const firstPageProps = {

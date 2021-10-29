@@ -1,6 +1,11 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import { createContext, FunctionComponent, OlHTMLAttributes, useContext } from 'react';
+import {
+	createContext,
+	FunctionComponent,
+	OlHTMLAttributes,
+	useContext,
+} from 'react';
 
 import { Box } from '../Box';
 import { Stack } from '../Stack';
@@ -44,8 +49,8 @@ export const OrderedList: FunctionComponent<Props> & {
 
 	return (
 		<Box
-			is='ol'
-			paddingLeft='6'
+			is="ol"
+			paddingLeft="6"
 			marginTop={myCycle > 0 ? '2' : 'none'}
 			className={clsx(
 				styles.root.default,
@@ -56,14 +61,14 @@ export const OrderedList: FunctionComponent<Props> & {
 			style={{ listStyleType: cycles[myCycle] }}
 			start={start}>
 			<OrderedListContext.Provider value={myCycle}>
-				<Stack space='2'>{children}</Stack>
+				<Stack space="2">{children}</Stack>
 			</OrderedListContext.Provider>
 		</Box>
 	);
 };
 
 const Item: FunctionComponent<ItemProps> = ({ className = '', children }) => (
-	<Box is='li' className={className}>
+	<Box is="li" className={className}>
 		{children}
 	</Box>
 );

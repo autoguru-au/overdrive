@@ -31,7 +31,7 @@ describe.skip('<StarRating />', () => {
 
 	it('should match snapshot with label', () => {
 		expect(
-			render(<StarRating rating={3.8} label='Hello World!' />).container
+			render(<StarRating rating={3.8} label="Hello World!" />).container
 				.firstChild,
 		).toMatchSnapshot();
 	});
@@ -41,7 +41,7 @@ describe.skip('<StarRating />', () => {
 			render(
 				<StarRating
 					rating={3.8}
-					label='Hello World!'
+					label="Hello World!"
 					size={EStarRatingSize.Small}
 				/>,
 			).container.firstChild,
@@ -50,7 +50,7 @@ describe.skip('<StarRating />', () => {
 
 	it.skip('should pass on className to dom element', () => {
 		expect(
-			render(<StarRating className='rating-class' />).container
+			render(<StarRating className="rating-class" />).container
 				.firstChild,
 		).toHaveClass('rating-class');
 	});
@@ -63,7 +63,7 @@ describe.skip('<StarRating />', () => {
 	});
 
 	it('should add a span element inside with the label text value', () => {
-		const { container } = render(<StarRating label='Hello World!' />);
+		const { container } = render(<StarRating label="Hello World!" />);
 		expect(container.querySelector('span:nth-child(2)')).toHaveTextContent(
 			'Hello World!',
 		);

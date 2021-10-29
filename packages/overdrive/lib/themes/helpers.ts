@@ -14,10 +14,10 @@ export const shadedColour = (
 
 	return colord(colour)
 		[
-		(!isDarkTheme && direction === 'backward') ||
-		(isDarkTheme && direction === 'forward')
-			? 'darken'
-			: 'lighten'
+			(!isDarkTheme && direction === 'backward') ||
+			(isDarkTheme && direction === 'forward')
+				? 'darken'
+				: 'lighten'
 		](intensityValue || void 0)
 		.alpha(
 			typeof transparencyValue === 'number' ? 1 - transparencyValue : 1,

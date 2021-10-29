@@ -10,7 +10,7 @@ import { RadioGroup } from './RadioGroup';
 describe('<RadioButton />', () => {
 	describe('when not nested in a RadioGroup', () => {
 		it.skip('should throw if a RadioButton element is not nested inside a RadioGroup', () => {
-			expect(() => render(<Radio value='1' />)).toThrow();
+			expect(() => render(<Radio value="1" />)).toThrow();
 		});
 	});
 
@@ -18,7 +18,7 @@ describe('<RadioButton />', () => {
 		it('should not throw', () =>
 			expect(() => {
 				render(
-					<RadioGroup name='radio'>
+					<RadioGroup name="radio">
 						<Radio />
 					</RadioGroup>,
 				);
@@ -27,7 +27,7 @@ describe('<RadioButton />', () => {
 		it('should match the snapshot for a single radio with no value or label', () => {
 			expect(
 				render(
-					<RadioGroup name='radio'>
+					<RadioGroup name="radio">
 						<Radio />
 					</RadioGroup>,
 				).container.firstChild,
@@ -37,8 +37,8 @@ describe('<RadioButton />', () => {
 		it('should match the snapshot for a single radio', () => {
 			expect(
 				render(
-					<RadioGroup name='radio'>
-						<Radio children='radio label 1' value='1' />
+					<RadioGroup name="radio">
+						<Radio children="radio label 1" value="1" />
 					</RadioGroup>,
 				).container.firstChild,
 			).toMatchSnapshot();
@@ -47,11 +47,11 @@ describe('<RadioButton />', () => {
 		it('should match the snapshot for a checked radio', () => {
 			expect(
 				render(
-					<RadioGroup name='radio'>
-						<Radio children='radio label 1' checked value='1' />
+					<RadioGroup name="radio">
+						<Radio children="radio label 1" checked value="1" />
 						<Radio
-							children='radio label 2'
-							value='2'
+							children="radio label 2"
+							value="2"
 							checked={false}
 						/>
 					</RadioGroup>,
@@ -62,11 +62,11 @@ describe('<RadioButton />', () => {
 		it('should match the snapshot for a group of radios', () => {
 			expect(
 				render(
-					<RadioGroup name='radio'>
-						<Radio children='radio label 1' value='1' />
-						<Radio children='radio label 2' value='2' />
-						<Radio children='radio label 3' value='3' />
-						<Radio children='radio label 4' value='4' />
+					<RadioGroup name="radio">
+						<Radio children="radio label 1" value="1" />
+						<Radio children="radio label 2" value="2" />
+						<Radio children="radio label 3" value="3" />
+						<Radio children="radio label 4" value="4" />
 					</RadioGroup>,
 				).container.firstChild,
 			).toMatchSnapshot();
@@ -74,11 +74,11 @@ describe('<RadioButton />', () => {
 
 		it('should automatically select the radio with value equal to the value of its radiogroup', () => {
 			const { container } = render(
-				<RadioGroup name='radio' value='2'>
-					<Radio children='radio label 1' value='1' />
-					<Radio children='radio label 2' value='2' />
-					<Radio children='radio label 3' value='3' />
-					<Radio children='radio label 4' value='4' />
+				<RadioGroup name="radio" value="2">
+					<Radio children="radio label 1" value="1" />
+					<Radio children="radio label 2" value="2" />
+					<Radio children="radio label 3" value="3" />
+					<Radio children="radio label 4" value="4" />
 				</RadioGroup>,
 			);
 
@@ -92,11 +92,11 @@ describe('<RadioButton />', () => {
 				const [value, setValue] = useState('2');
 
 				return (
-					<RadioGroup name='radio' value={value} onChange={setValue}>
-						<Radio children='radio label 1' value='1' />
-						<Radio children='radio label 2' value='2' />
-						<Radio children='radio label 3' value='3' />
-						<Radio children='radio label 4' value='4' />
+					<RadioGroup name="radio" value={value} onChange={setValue}>
+						<Radio children="radio label 1" value="1" />
+						<Radio children="radio label 2" value="2" />
+						<Radio children="radio label 3" value="3" />
+						<Radio children="radio label 4" value="4" />
 					</RadioGroup>
 				);
 			};
@@ -113,11 +113,11 @@ describe('<RadioButton />', () => {
 
 		it('should not throw is onChange callback is not attached', () => {
 			const { container } = render(
-				<RadioGroup name='radio' value='2'>
-					<Radio children='radio label 1' value='1' />
-					<Radio children='radio label 2' value='2' />
-					<Radio children='radio label 3' value='3' />
-					<Radio children='radio label 4' value='4' />
+				<RadioGroup name="radio" value="2">
+					<Radio children="radio label 1" value="1" />
+					<Radio children="radio label 2" value="2" />
+					<Radio children="radio label 3" value="3" />
+					<Radio children="radio label 4" value="4" />
 				</RadioGroup>,
 			);
 
@@ -135,13 +135,13 @@ describe('<RadioButton />', () => {
 
 			const { container } = render(
 				<RadioGroup
-					name='radio'
-					value='2'
+					name="radio"
+					value="2"
 					onChange={spyedChangeCallback}>
-					<Radio children='radio label 1' value='1' />
-					<Radio children='radio label 2' value='2' />
-					<Radio children='radio label 3' value='3' />
-					<Radio children='radio label 4' value='4' />
+					<Radio children="radio label 1" value="1" />
+					<Radio children="radio label 2" value="2" />
+					<Radio children="radio label 3" value="3" />
+					<Radio children="radio label 4" value="4" />
 				</RadioGroup>,
 			);
 
@@ -152,15 +152,15 @@ describe('<RadioButton />', () => {
 
 		it('should disable the native radio element if disabled prop is set to true', () => {
 			const { container } = render(
-				<RadioGroup name='radio' value='2'>
-					<Radio children='radio label 1' value='1' />
-					<Radio children='radio label 2' disabled value='2' />
-					<Radio children='radio label 3' value='3' />
-					<Radio children='radio label 4' value='4' />
+				<RadioGroup name="radio" value="2">
+					<Radio children="radio label 1" value="1" />
+					<Radio children="radio label 2" disabled value="2" />
+					<Radio children="radio label 3" value="3" />
+					<Radio children="radio label 4" value="4" />
 				</RadioGroup>,
 			);
 
-			expect(container.querySelector('input[value=\'2\']')).toHaveAttribute(
+			expect(container.querySelector("input[value='2']")).toHaveAttribute(
 				'disabled',
 			);
 		});
@@ -169,8 +169,8 @@ describe('<RadioButton />', () => {
 	describe('when with component child', () => {
 		it('should match the snapshot', () => {
 			const { container } = render(
-				<RadioGroup name='radio' value='2'>
-					<Radio children='radio label 1' value='1'>
+				<RadioGroup name="radio" value="2">
+					<Radio children="radio label 1" value="1">
 						<Heading>Hello checkbox</Heading>
 					</Radio>
 				</RadioGroup>,
@@ -181,8 +181,8 @@ describe('<RadioButton />', () => {
 
 		it('should render the component child', () => {
 			const { getByText } = render(
-				<RadioGroup name='radio' value='2'>
-					<Radio children='radio label 1' value='1'>
+				<RadioGroup name="radio" value="2">
+					<Radio children="radio label 1" value="1">
 						<Heading>Hello checkbox</Heading>
 					</Radio>
 				</RadioGroup>,

@@ -7,11 +7,11 @@ import {
 	PlusIcon,
 	StarIcon,
 } from '@autoguru/icons';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
 import { Meta } from '.';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 const iconOptions = {
 	CalendarIcon,
@@ -35,11 +35,7 @@ export default {
 	},
 } as ComponentMeta<typeof Meta>;
 
-
-const Template: ComponentStory<typeof Meta> = (args) => (
-	<Meta {...args} />
-);
-
+const Template: ComponentStory<typeof Meta> = (args) => <Meta {...args} />;
 
 const standardProps: ComponentProps<typeof Meta> = {
 	variant: 'primary',

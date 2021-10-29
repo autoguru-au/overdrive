@@ -1,5 +1,10 @@
 import * as React from 'react';
-import { FunctionComponent, isValidElement, ReactChild, useContext } from 'react';
+import {
+	FunctionComponent,
+	isValidElement,
+	ReactChild,
+	useContext,
+} from 'react';
 
 import { Box } from '../Box';
 
@@ -27,14 +32,14 @@ const getBulletCls = (styles: typeof style, type: BulletType): string => {
 
 export const Bullet: FunctionComponent<Props> = ({ children, className }) => (
 	<Box
-		is='li'
+		is="li"
 		className={[
 			styles.root.default,
 			getBulletCls(styles, bulletMap[useContext(BulletListContext)]) ??
-			'',
+				'',
 			{
 				[styles.noDot]:
-				isValidElement(children) && children.type === BulletList,
+					isValidElement(children) && children.type === BulletList,
 			},
 			className,
 		]}>

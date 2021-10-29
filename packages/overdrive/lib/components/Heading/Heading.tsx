@@ -24,17 +24,17 @@ const sizeScaleDefaults = {
 } as const;
 
 export const Heading: FunctionComponent<Props> = ({
-													  is = 'h1',
-													  align,
-													  fontWeight = 'bold',
-													  noWrap,
-													  transform,
-													  colour = 'dark',
-													  size = sizeScaleDefaults[is],
-													  id,
-													  className = '',
-													  children,
-												  }) => (
+	is = 'h1',
+	align,
+	fontWeight = 'bold',
+	noWrap,
+	transform,
+	colour = 'dark',
+	size = sizeScaleDefaults[is],
+	id,
+	className = '',
+	children,
+}) => (
 	<Box
 		id={id}
 		is={is}

@@ -14,41 +14,41 @@ export interface Props extends Partial<Pick<BoxStyleProps, 'is'>> {
 }
 
 export const BulletText: FunctionComponent<Props> = ({
-														 variant = 'primary',
-														 children,
-														 is: Component = 'div',
-														 bullet: Bullet = '•',
-													 }) => (
-	<Inline noWrap space='3' is={Component} alignX='flexStart' alignY='center'>
+	variant = 'primary',
+	children,
+	is: Component = 'div',
+	bullet: Bullet = '•',
+}) => (
+	<Inline noWrap space="3" is={Component} alignX="flexStart" alignY="center">
 		{isValidElement(Bullet) ? (
-			<Box position='relative' flexShrink={0}>
+			<Box position="relative" flexShrink={0}>
 				{Bullet}
 			</Box>
 		) : (
 			<Box
-				position='relative'
+				position="relative"
 				flexShrink={0}
-				display='flex'
-				alignItems='center'
-				justifyContent='center'
+				display="flex"
+				alignItems="center"
+				justifyContent="center"
 				className={clsx(styles.bullet, {
 					[styles.primary]: variant === 'primary',
 					[styles.secondary]: variant !== 'primary',
 				})}
-				borderRadius='pill'>
+				borderRadius="pill">
 				<Text
 					className={clsx({
 						[styles.primaryText]: variant === 'primary',
 						[styles.secondaryText]: variant !== 'primary',
 					})}
-					is='span'
-					size='2'>
+					is="span"
+					size="2">
 					{Bullet}
 				</Text>
 			</Box>
 		)}
 		<Box flexGrow={1}>
-			<Text is='span' size='4' display='block'>
+			<Text is="span" size="4" display="block">
 				{children}
 			</Text>
 		</Box>

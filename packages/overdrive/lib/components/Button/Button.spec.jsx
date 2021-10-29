@@ -16,7 +16,7 @@ describe('<Button />', () => {
 
 	it.skip('should pass on className to dom element', () => {
 		expect(
-			render(<Button className='button-class' />).container.firstChild,
+			render(<Button className="button-class" />).container.firstChild,
 		).toHaveClass('button-class');
 	});
 
@@ -29,13 +29,13 @@ describe('<Button />', () => {
 	describe('when custom component', () => {
 		it('should use html anchor element if href value exists', () => {
 			expect(
-				render(<Button is={<a href='abc' />} />).container.firstChild,
+				render(<Button is={<a href="abc" />} />).container.firstChild,
 			).toMatchSnapshot();
 		});
 
 		it('should render passed in component', () => {
 			expect(
-				render(<Button is={<a href='/abcd' />}>Link button</Button>)
+				render(<Button is={<a href="/abcd" />}>Link button</Button>)
 					.container.firstChild,
 			).toHaveAttribute('href', '/abcd');
 		});
@@ -44,37 +44,37 @@ describe('<Button />', () => {
 	describe('when colour variants', () => {
 		it('should match snapshot for Primary button', () => {
 			expect(
-				render(<Button variant='primary' />).container.firstChild,
+				render(<Button variant="primary" />).container.firstChild,
 			).toMatchSnapshot();
 		});
 
 		it.skip('should apply Primary variant styles', () => {
 			expect(
-				render(<Button variant='primary' />).container.firstChild,
+				render(<Button variant="primary" />).container.firstChild,
 			).toHaveClass('variantPrimary');
 		});
 
 		it('should match snapshot for Secondary button', () => {
 			expect(
-				render(<Button variant='secondary' />).container.firstChild,
+				render(<Button variant="secondary" />).container.firstChild,
 			).toMatchSnapshot();
 		});
 
 		it.skip('should apply Secondary variant styles', () => {
 			expect(
-				render(<Button variant='secondary' />).container.firstChild,
+				render(<Button variant="secondary" />).container.firstChild,
 			).toHaveClass('variantSecondary');
 		});
 
 		it('should match snapshot for Danger button', () => {
 			expect(
-				render(<Button variant='danger' />).container.firstChild,
+				render(<Button variant="danger" />).container.firstChild,
 			).toMatchSnapshot();
 		});
 
 		it.skip('should apply Danger variant styles', () => {
 			expect(
-				render(<Button variant='danger' />).container.firstChild,
+				render(<Button variant="danger" />).container.firstChild,
 			).toHaveClass('variantDanger');
 		});
 	});
@@ -82,25 +82,25 @@ describe('<Button />', () => {
 	describe('when size variant', () => {
 		it('should match snapshot for small button', () => {
 			expect(
-				render(<Button size='small' />).container.firstChild,
+				render(<Button size="small" />).container.firstChild,
 			).toMatchSnapshot();
 		});
 
 		it.skip('should apply small size styles', () => {
 			expect(
-				render(<Button size='small' />).container.firstChild,
+				render(<Button size="small" />).container.firstChild,
 			).toHaveClass('small');
 		});
 
 		it('should match snapshot for medium button', () => {
 			expect(
-				render(<Button size='medium' />).container.firstChild,
+				render(<Button size="medium" />).container.firstChild,
 			).toMatchSnapshot();
 		});
 
 		it.skip('should apply medium size styles', () => {
 			expect(
-				render(<Button size='medium' />).container.firstChild,
+				render(<Button size="medium" />).container.firstChild,
 			).toHaveClass('medium');
 		});
 	});
@@ -148,13 +148,13 @@ describe('<Button />', () => {
 
 		it('should match snapshot for small button', () => {
 			expect(
-				render(<Button isLoading size='small' />).container.firstChild,
+				render(<Button isLoading size="small" />).container.firstChild,
 			).toMatchSnapshot();
 		});
 
 		it('should match snapshot for medium button', () => {
 			expect(
-				render(<Button isLoading size='medium' />).container.firstChild,
+				render(<Button isLoading size="medium" />).container.firstChild,
 			).toMatchSnapshot();
 		});
 

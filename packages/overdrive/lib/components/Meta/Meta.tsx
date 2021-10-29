@@ -15,11 +15,11 @@ export interface Props {
 }
 
 export const Meta: FunctionComponent<Props> = ({
-												   icon,
-												   label,
-												   variant = 'primary',
-											   }) => (
-	<Inline noWrap is='span' space='2' alignY='center'>
+	icon,
+	label,
+	variant = 'primary',
+}) => (
+	<Inline noWrap is="span" space="2" alignY="center">
 		{icon && <Icon icon={icon} className={styles.variant[variant]} />}
 		<Text>{label}</Text>
 	</Inline>

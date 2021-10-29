@@ -24,13 +24,13 @@ const supportedListTypes: ReadonlyArray<keyof JSX.IntrinsicElements> = [
 ] as const;
 
 export const Stack: FunctionComponent<Props> = ({
-													space = '2',
-													children,
-													is = 'div',
-													width,
-													dividers = false,
-													className = '',
-												}) => {
+	space = '2',
+	children,
+	is = 'div',
+	width,
+	dividers = false,
+	className = '',
+}) => {
 	const styles = useStyles(styleRefs);
 	const items = flattenChildren(children);
 
@@ -52,7 +52,7 @@ export const Stack: FunctionComponent<Props> = ({
 						dividers ? undefined : styles.child.spaces[space],
 					]}>
 					{dividers && idx > 0 ? (
-						<Box paddingY={space} width='full'>
+						<Box paddingY={space} width="full">
 							<Divider />
 						</Box>
 					) : null}

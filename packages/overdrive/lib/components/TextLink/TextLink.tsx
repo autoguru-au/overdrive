@@ -20,8 +20,10 @@ import { Text } from '../Text';
 import * as styleRefs from './TextLink.treat';
 
 type TextProps = Omit<ComponentProps<typeof Text>, 'is' | 'colour'>;
-type AnchorProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>,
-	'children' | 'style' | 'is' | keyof TextProps>;
+type AnchorProps = Omit<
+	AnchorHTMLAttributes<HTMLAnchorElement>,
+	'children' | 'style' | 'is' | keyof TextProps
+>;
 
 export interface Props extends TextProps, AnchorProps {
 	children: ReactText;
@@ -53,7 +55,7 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 
 		const body = (
 			<Text
-				is='span'
+				is="span"
 				colour={muted && ('muted' as any)}
 				size={size}
 				strong={strong}
@@ -81,7 +83,7 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 
 		if (Component === undefined) {
 			return (
-				<Box is='a' {...allProps}>
+				<Box is="a" {...allProps}>
 					{body}
 				</Box>
 			);

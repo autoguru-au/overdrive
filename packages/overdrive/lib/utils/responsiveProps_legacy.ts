@@ -29,7 +29,9 @@ export const resolveResponsiveStyle_legacy = <Tokens extends string | number>(
 	return clsx([...buildClassFor(responsiveArgument, breakpointTokenMap)]);
 };
 
-export const makeResponsiveStyle_legacy = <Token extends Record<string | number, any>>(
+export const makeResponsiveStyle_legacy = <
+	Token extends Record<string | number, any>
+>(
 	getTokens: (theme: Theme) => Token,
 	property: ((value: any) => CSSProperties) | keyof Properties,
 ): Record<keyof Token, BreakpointStyleMap> => {
@@ -73,9 +75,9 @@ function* buildClassFor<Tokens extends string | number>(
 		const orderToken = responsiveTokenOrder[counter];
 		const result =
 			breakpointTokenMap[
-			responsiveArgument?.[counter] ??
-			getEarliestKnownToken(responsiveArgument, counter)
-				];
+				responsiveArgument?.[counter] ??
+					getEarliestKnownToken(responsiveArgument, counter)
+			];
 		yield result ? result[orderToken] : void 0;
 		++counter;
 	}

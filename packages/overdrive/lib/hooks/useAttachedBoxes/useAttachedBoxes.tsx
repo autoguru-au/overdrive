@@ -42,11 +42,11 @@ type Returns = [
 	style: ComponentProps<typeof Box>['style'],
 ];
 export const useAttachedBoxes = ({
-									 count,
-									 columnCount: incomingColumnCount,
-									 gap = '1',
-									 backgroundColour = 'gray900',
-								 }: Props): Returns => {
+	count,
+	columnCount: incomingColumnCount,
+	gap = '1',
+	backgroundColour = 'gray900',
+}: Props): Returns => {
 	const columnCount: number = useResponsiveValue<number>(incomingColumnCount);
 	const styles = useStyles(styleRefs);
 	const decimals: number = (count / columnCount) % 1;
@@ -61,10 +61,10 @@ export const useAttachedBoxes = ({
 	return [
 		Array.from({ length: count }).map(
 			(_, index) => ({
-							   children,
-							   className,
-							   ...rest
-						   }: AttachedBoxProps) => {
+				children,
+				className,
+				...rest
+			}: AttachedBoxProps) => {
 				isLastItem = index === count - 1;
 
 				if (isLastItem && decimals) {
@@ -85,10 +85,10 @@ export const useAttachedBoxes = ({
 						style={
 							isLastItem && decimals
 								? {
-									gridColumn: `${colStart}/${
-										colStart + 1 + extend
-									}`,
-								}
+										gridColumn: `${colStart}/${
+											colStart + 1 + extend
+										}`,
+								  }
 								: void 0
 						}
 						{...rest}>

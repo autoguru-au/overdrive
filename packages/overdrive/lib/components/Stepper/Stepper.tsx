@@ -2,7 +2,15 @@ import { IconType, MinusIcon, PlusIcon } from '@autoguru/icons';
 import { clamp } from '@autoguru/utilities';
 import clsx from 'clsx';
 import * as React from 'react';
-import { FunctionComponent, KeyboardEvent, MouseEventHandler, Reducer, useCallback, useReducer, useRef } from 'react';
+import {
+	FunctionComponent,
+	KeyboardEvent,
+	MouseEventHandler,
+	Reducer,
+	useCallback,
+	useReducer,
+	useRef,
+} from 'react';
 import { useStyles } from 'react-treat';
 
 import { Box, useBoxStyles } from '../Box';
@@ -35,12 +43,12 @@ type Actions =
 	| { type: EActionType.INCREMENT; min: number; max: number; step: number }
 	| { type: EActionType.DECREMENT; min: number; max: number; step: number }
 	| {
-	type: EActionType.VALUE;
-	min: number;
-	max: number;
-	step: number;
-	value: number;
-};
+			type: EActionType.VALUE;
+			min: number;
+			max: number;
+			step: number;
+			value: number;
+	  };
 
 interface State {
 	value: number;
@@ -77,44 +85,44 @@ interface HandleProps {
 }
 
 const Handle: FunctionComponent<HandleProps> = ({
-													disabled,
-													icon,
-													label,
-													onClick,
-												}) => {
+	disabled,
+	icon,
+	label,
+	onClick,
+}) => {
 	const styles = useStyles(styleRefs);
 	return (
 		<Box
-			is='button'
+			is="button"
 			className={[
 				styles.handle.default,
 				disabled && styles.handle.disabled,
 				useTextStyles({ colour: 'white' }),
 			]}
 			aria-label={label}
-			padding='none'
-			borderRadius='full'
-			display='flex'
-			alignItems='center'
-			justifyContent='center'
+			padding="none"
+			borderRadius="full"
+			display="flex"
+			alignItems="center"
+			justifyContent="center"
 			disabled={disabled}
 			tabIndex={-1}
 			onClick={onClick}>
-			<Icon icon={icon} size='small' />
+			<Icon icon={icon} size="small" />
 		</Box>
 	);
 };
 
 export const Stepper: FunctionComponent<Props> = ({
-													  className = '',
-													  disabled: incomingDisabled = false,
-													  step = 1,
-													  min = Number.NEGATIVE_INFINITY,
-													  max = Number.POSITIVE_INFINITY,
-													  value,
-													  format = (value) => value.toString(),
-													  onChange,
-												  }) => {
+	className = '',
+	disabled: incomingDisabled = false,
+	step = 1,
+	min = Number.NEGATIVE_INFINITY,
+	max = Number.POSITIVE_INFINITY,
+	value,
+	format = (value) => value.toString(),
+	onChange,
+}) => {
 	const styles = useStyles(styleRefs);
 
 	const disabled: boolean =
@@ -196,30 +204,30 @@ export const Stepper: FunctionComponent<Props> = ({
 				disabled && styles.disabled,
 				className,
 			]}
-			userSelect='none'
+			userSelect="none"
 			aria-disabled={disabled}
 			tabIndex={0}
-			borderWidth='1'
-			borderColour='gray'
-			padding='3'
-			borderRadius='1'
-			boxShadow='2'
+			borderWidth="1"
+			borderColour="gray"
+			padding="3"
+			borderRadius="1"
+			boxShadow="2"
 			onKeyDown={keyDownHandler}>
 			<Columns noWrap>
-				<Column noShrink alignSelf='centre'>
+				<Column noShrink alignSelf="centre">
 					<Handle
 						icon={MinusIcon}
-						label='step down'
+						label="step down"
 						disabled={disabled}
 						onClick={onDecrement}
 					/>
 				</Column>
-				<Column noShrink width='auto' alignSelf='centre'>
+				<Column noShrink width="auto" alignSelf="centre">
 					<Text
-						is='span'
-						align='center'
-						colour='dark'
-						display='block'
+						is="span"
+						align="center"
+						colour="dark"
+						display="block"
 						className={clsx(
 							useBoxStyles({
 								paddingX: '2',
@@ -228,16 +236,16 @@ export const Stepper: FunctionComponent<Props> = ({
 							}),
 							styles.label,
 						)}
-						size='4'>
+						size="4">
 						{Number.isFinite(state.value)
 							? format(state.value)
 							: ''}
 					</Text>
 				</Column>
-				<Column noShrink alignSelf='centre'>
+				<Column noShrink alignSelf="centre">
 					<Handle
 						icon={PlusIcon}
-						label='step up'
+						label="step up"
 						disabled={disabled}
 						onClick={onIncrement}
 					/>

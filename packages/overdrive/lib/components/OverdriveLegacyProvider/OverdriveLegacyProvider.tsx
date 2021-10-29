@@ -7,9 +7,9 @@ import { ThemeLegacyProvider } from '../ThemeLegacyProvider/ThemeLegacyProvider'
 export type Props = ComponentProps<typeof ThemeLegacyProvider>;
 
 export const OverdriveLegacyProvider: FunctionComponent<Props> = ({
-																	  theme,
-																	  children,
-																  }) => {
+	theme,
+	children,
+}) => {
 	useEffect(() => {
 		if (isBrowser) {
 			document.body.style.backgroundColor =

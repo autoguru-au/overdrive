@@ -6,8 +6,8 @@ import { DateInput } from './DateInput';
 const todayStr = new Date(2019, 0, 22).toISOString().split('T')[0];
 
 const TestIcon = (
-	<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
-		<path d='M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z' />
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+		<path d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z" />
 	</svg>
 );
 
@@ -17,8 +17,8 @@ describe('<DateInput />', () => {
 			render(
 				<DateInput
 					value={todayStr}
-					placeholder='placeholder something'
-					id='id'
+					placeholder="placeholder something"
+					id="id"
 				/>,
 			).container.firstChild,
 		).toMatchSnapshot();
@@ -30,8 +30,8 @@ describe('<DateInput />', () => {
 		const { container } = render(
 			<DateInput
 				value={todayStr}
-				placeholder='placeholder'
-				id='id'
+				placeholder="placeholder"
+				id="id"
 				hintText={hintText()}
 			/>,
 		);
@@ -45,8 +45,8 @@ describe('<DateInput />', () => {
 		const { container } = render(
 			<DateInput
 				value={todayStr}
-				className='input-class'
-				placeholder='placeholder something'
+				className="input-class"
+				placeholder="placeholder something"
 			/>,
 		);
 		expect(
@@ -58,8 +58,8 @@ describe('<DateInput />', () => {
 		const { container } = render(
 			<DateInput
 				value={todayStr}
-				className='input-class'
-				placeholder='placeholder something'
+				className="input-class"
+				placeholder="placeholder something"
 			/>,
 		);
 		expect(container.firstChild).toHaveClass('input-class');
@@ -69,8 +69,8 @@ describe('<DateInput />', () => {
 		const { container } = render(
 			<DateInput
 				value={todayStr}
-				className='input-class'
-				placeholder='placeholder something'
+				className="input-class"
+				placeholder="placeholder something"
 			/>,
 		);
 
@@ -89,8 +89,8 @@ describe('<DateInput />', () => {
 				<DateInput
 					isTouched
 					value={todayStr}
-					className='input-class'
-					placeholder='placeholder something'
+					className="input-class"
+					placeholder="placeholder something"
 				/>,
 			).container.firstChild,
 		).toMatchSnapshot();
@@ -103,8 +103,8 @@ describe('<DateInput />', () => {
 					isTouched
 					isValid
 					value={todayStr}
-					className='input-class'
-					placeholder='placeholder something'
+					className="input-class"
+					placeholder="placeholder something"
 				/>,
 			).container.firstChild,
 		).toMatchSnapshot();
@@ -117,8 +117,8 @@ describe('<DateInput />', () => {
 					isTouched
 					value={todayStr}
 					isValid={false}
-					className='input-class'
-					placeholder='placeholder something'
+					className="input-class"
+					placeholder="placeholder something"
 				/>,
 			).container.firstChild,
 		).toMatchSnapshot();
@@ -128,8 +128,8 @@ describe('<DateInput />', () => {
 		expect(
 			render(
 				<DateInput
-					className='input-class'
-					placeholder='placeholder something'
+					className="input-class"
+					placeholder="placeholder something"
 					prefixIcon={TestIcon}
 					value={todayStr}
 				/>,
@@ -141,8 +141,8 @@ describe('<DateInput />', () => {
 		expect(
 			render(
 				<DateInput
-					className='input-class'
-					placeholder='placeholder something'
+					className="input-class"
+					placeholder="placeholder something"
 					value={todayStr}
 					suffixIcon={TestIcon}
 				/>,
@@ -154,8 +154,8 @@ describe('<DateInput />', () => {
 		expect(
 			render(
 				<DateInput
-					className='input-class'
-					placeholder='placeholder something'
+					className="input-class"
+					placeholder="placeholder something"
 					value={todayStr}
 					prefixIcon={TestIcon}
 					suffixIcon={TestIcon}
@@ -169,8 +169,8 @@ describe('<DateInput />', () => {
 			render(
 				<DateInput
 					isLoading
-					className='input-class'
-					placeholder='placeholder something'
+					className="input-class"
+					placeholder="placeholder something"
 					value={todayStr}
 					prefixIcon={TestIcon}
 					suffixIcon={TestIcon}
@@ -181,7 +181,7 @@ describe('<DateInput />', () => {
 
 	it('should display placeholder text', () => {
 		const { container } = render(
-			<DateInput value={todayStr} placeholder='placeholder something' />,
+			<DateInput value={todayStr} placeholder="placeholder something" />,
 		);
 
 		expect(container.querySelector('label')).toHaveTextContent(
@@ -195,7 +195,7 @@ describe('<DateInput />', () => {
 		const { container } = render(
 			<DateInput
 				value={todayStr}
-				placeholder='placeholder something'
+				placeholder="placeholder something"
 				onFocus={spyedCallback}
 			/>,
 		);
@@ -211,7 +211,7 @@ describe('<DateInput />', () => {
 		const { container } = render(
 			<DateInput
 				value={todayStr}
-				placeholder='placeholder something'
+				placeholder="placeholder something"
 				onBlur={spyedCallback}
 			/>,
 		);
@@ -227,7 +227,7 @@ describe('<DateInput />', () => {
 		const { container } = render(
 			<DateInput
 				value={todayStr}
-				placeholder='placeholder something'
+				placeholder="placeholder something"
 				onChange={spyedCallback}
 			/>,
 		);

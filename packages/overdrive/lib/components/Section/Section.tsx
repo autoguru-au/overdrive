@@ -12,16 +12,16 @@ export interface Props extends Pick<ComponentProps<typeof Box>, 'paddingX'> {
 }
 
 export const Section: FunctionComponent<Props> = ({
-													  children,
-													  width = 'medium',
-													  paddingX,
-												  }) => {
+	children,
+	width = 'medium',
+	paddingX,
+}) => {
 	const styles = useStyles(styleRefs);
 
 	return (
 		<Box
 			className={clsx(styles.root, styles.width[width!])}
-			width='full'
+			width="full"
 			paddingX={paddingX}>
 			{children}
 		</Box>

@@ -62,7 +62,9 @@ const argTypes: ArgTypes = {
 	},
 };
 
-const Template: ComponentStory<typeof NumberInput> = (args) => <NumberInput {...args} />;
+const Template: ComponentStory<typeof NumberInput> = (args) => (
+	<NumberInput {...args} />
+);
 
 const sharedProps: ComponentProps<typeof NumberInput> = {
 	disabled: false,

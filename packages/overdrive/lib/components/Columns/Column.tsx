@@ -2,12 +2,14 @@ import { invariant } from '@autoguru/utilities';
 import * as React from 'react';
 import { ComponentProps, forwardRef, ReactNode, useContext } from 'react';
 
-import { resolveResponsiveStyle_legacy, ResponsiveProp } from '../../utils/responsiveProps_legacy';
+import {
+	resolveResponsiveStyle_legacy,
+	ResponsiveProp,
+} from '../../utils/responsiveProps_legacy';
 import { Box } from '../Box';
 
 import * as styles from './Column.css';
 import { ColumnContext } from './Columns';
-
 
 export interface Props extends Omit<ComponentProps<typeof Box>, 'width'> {
 	width?: ResponsiveProp<keyof typeof styles.width>;
@@ -55,9 +57,9 @@ export const Column = forwardRef<HTMLElement, Props>(
 				<Box
 					ref={ref}
 					is={is}
-					display='flex'
-					width='full'
-					height='full'
+					display="flex"
+					width="full"
+					height="full"
 					className={className}
 					{...boxProps}>
 					{children}

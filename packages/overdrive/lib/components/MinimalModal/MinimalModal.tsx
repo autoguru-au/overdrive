@@ -1,4 +1,8 @@
-import type { ComponentProps, FunctionComponent, MouseEventHandler } from 'react';
+import type {
+	ComponentProps,
+	FunctionComponent,
+	MouseEventHandler,
+} from 'react';
 import * as React from 'react';
 import { useLayoutEffect, useRef } from 'react';
 
@@ -13,12 +17,11 @@ export interface Props extends ComponentProps<typeof Modal> {
 }
 
 export const MinimalModal: FunctionComponent<Props> = ({
-														   isOpen,
-														   className = '',
-														   onRequestClose,
-														   children,
-													   }) => {
-
+	isOpen,
+	className = '',
+	onRequestClose,
+	children,
+}) => {
 	const titleId = useId();
 	const locked = useRef<boolean>(true);
 
@@ -48,27 +51,27 @@ export const MinimalModal: FunctionComponent<Props> = ({
 		<Modal isOpen={isOpen} onRequestClose={onRequestClose}>
 			<Box
 				className={[styles.container, className]}
-				height='full'
-				display='flex'
-				alignItems='center'
-				justifyContent='center'
+				height="full"
+				display="flex"
+				alignItems="center"
+				justifyContent="center"
 				aria-hidden={isOpen ? 'false' : 'true'}
-				role='none presentation'
+				role="none presentation"
 				onMouseDown={unlockModal}
 				onClick={backdropHandler}>
 				<Box
-					is='article'
-					role='dialog'
-					aria-modal='true'
+					is="article"
+					role="dialog"
+					aria-modal="true"
 					aria-labelledby={titleId!}
-					display='flex'
-					flexDirection='column'>
+					display="flex"
+					flexDirection="column">
 					<Box
-						is='main'
-						display='flex'
-						flexDirection='column'
+						is="main"
+						display="flex"
+						flexDirection="column"
 						flexGrow={1}
-						height='full'
+						height="full"
 						className={styles.content}>
 						{children}
 					</Box>

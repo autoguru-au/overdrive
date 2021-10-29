@@ -16,6 +16,8 @@ export default {
 	},
 } as ComponentMeta<typeof LinearProgressIndicator>;
 
-const Template: ComponentStory<typeof LinearProgressIndicator> = (args) => (<LinearProgressIndicator {...args} />);
+const Template: ComponentStory<typeof LinearProgressIndicator> = (args) => (
+	<LinearProgressIndicator {...args} />
+);
 
 export const standard = Template.bind({});

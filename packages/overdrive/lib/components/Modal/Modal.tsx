@@ -7,9 +7,9 @@ import FocusLock from 'react-focus-lock';
 import { useEventCallback } from '../../utils';
 import { Box } from '../Box';
 import { Portal } from '../Portal';
+import { useTheme } from '../ThemeProvider';
 
 import * as styles from './Modal.css';
-import { useTheme } from '../ThemeProvider';
 
 export interface Props {
 	isOpen: boolean;
@@ -70,11 +70,11 @@ const reducer: Reducer<State, Action> = (prevState, action) => {
 };
 
 export const Modal: FunctionComponent<Props> = ({
-													isOpen,
-													hideBackdrop = false,
-													onRequestClose,
-													children,
-												}) => {
+	isOpen,
+	hideBackdrop = false,
+	onRequestClose,
+	children,
+}) => {
 	const themeClass = useTheme();
 	const [state, dispatch] = useReducer(reducer, 'INITIAL');
 
@@ -108,8 +108,8 @@ export const Modal: FunctionComponent<Props> = ({
 						dispatch('ANIMATION_COMPLETE');
 					}}>
 					<Box
-						aria-hidden='true'
-						position='fixed'
+						aria-hidden="true"
+						position="fixed"
 						pointerEvents={state === 'CLOSING' ? 'none' : undefined}
 						opacity={state === 'OPEN' ? undefined : 0}
 						className={[
@@ -122,9 +122,9 @@ export const Modal: FunctionComponent<Props> = ({
 					/>
 
 					<Box
-						role='presentation'
-						position='fixed'
-						overflow='hidden'
+						role="presentation"
+						position="fixed"
+						overflow="hidden"
 						opacity={state === 'OPEN' ? undefined : 0}
 						className={[
 							themeClass,
@@ -143,10 +143,10 @@ export const Modal: FunctionComponent<Props> = ({
 export const withModal = <TIncomingProps extends {} = {}>(
 	WrappedComponent: ComponentType<Props & TIncomingProps>,
 ): FunctionComponent<Props & TIncomingProps> => ({
-													 onRequestClose,
-													 isOpen,
-													 ...rest
-												 }) => {
+	onRequestClose,
+	isOpen,
+	...rest
+}) => {
 	// TODO: Deprecate me
 	warning(
 		false,

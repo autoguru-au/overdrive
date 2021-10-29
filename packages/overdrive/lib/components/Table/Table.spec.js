@@ -15,8 +15,8 @@ describe('<Table />', () => {
 	describe('when pure table', () => {
 		it('should render children', () => {
 			const { getByTestId } = render(
-				<Table columnTemplate=''>
-					<div data-testid='child' />
+				<Table columnTemplate="">
+					<div data-testid="child" />
 				</Table>,
 			);
 
@@ -31,7 +31,7 @@ describe('<Table />', () => {
 
 			let ctx;
 			render(
-				<Table columnTemplate=''>
+				<Table columnTemplate="">
 					<Child
 						cb={(c) => {
 							ctx = c;
@@ -47,7 +47,7 @@ describe('<Table />', () => {
 	describe('when <TableCell />', () => {
 		it('should render a text node', () => {
 			const { getByText } = render(
-				<Table columnTemplate=''>
+				<Table columnTemplate="">
 					<TableRowGroup>
 						<TableRow>
 							<TableCell>test child</TableCell>
@@ -61,11 +61,11 @@ describe('<Table />', () => {
 
 		it('should render a custom component', () => {
 			const { getByTestId, container } = render(
-				<Table columnTemplate=''>
+				<Table columnTemplate="">
 					<TableRowGroup>
 						<TableRow>
 							<TableCell>
-								<div data-testid='custo-child' />
+								<div data-testid="custo-child" />
 							</TableCell>
 						</TableRow>
 					</TableRowGroup>
@@ -80,7 +80,7 @@ describe('<Table />', () => {
 	describe('when <TableHeadCell />', () => {
 		it('should render a text node', () => {
 			const { getByText } = render(
-				<Table columnTemplate=''>
+				<Table columnTemplate="">
 					<TableRowGroup>
 						<TableRow>
 							<TableHeadCell>test child</TableHeadCell>
@@ -94,10 +94,10 @@ describe('<Table />', () => {
 
 		it('should render an icon when sorted', () => {
 			const { container } = render(
-				<Table columnTemplate=''>
+				<Table columnTemplate="">
 					<TableRowGroup>
 						<TableRow>
-							<TableHeadCell sort='asc'>test child</TableHeadCell>
+							<TableHeadCell sort="asc">test child</TableHeadCell>
 						</TableRow>
 					</TableRowGroup>
 				</Table>,
@@ -110,10 +110,10 @@ describe('<Table />', () => {
 			const spyedCallback = jest.fn();
 
 			const { getByRole } = render(
-				<Table columnTemplate=''>
+				<Table columnTemplate="">
 					<TableRowGroup>
 						<TableRow>
-							<TableHeadCell sort='asc' onSort={spyedCallback} />
+							<TableHeadCell sort="asc" onSort={spyedCallback} />
 						</TableRow>
 					</TableRowGroup>
 				</Table>,
@@ -132,7 +132,7 @@ describe('<Table />', () => {
 			const spyedCallback = jest.fn();
 
 			const { getByRole } = render(
-				<Table columnTemplate=''>
+				<Table columnTemplate="">
 					<TableRowGroup>
 						<TableRow onClick={spyedCallback}>test</TableRow>
 					</TableRowGroup>
@@ -150,11 +150,11 @@ describe('<Table />', () => {
 	describe('when implemented', () => {
 		it('should match snapshot', () => {
 			const { container } = render(
-				<Table columnTemplate=''>
+				<Table columnTemplate="">
 					<TableRowGroup>
 						<TableRow>
 							<TableHeadCell>col 1</TableHeadCell>
-							<TableHeadCell sort='asc'>col 2</TableHeadCell>
+							<TableHeadCell sort="asc">col 2</TableHeadCell>
 						</TableRow>
 					</TableRowGroup>
 					<TableRowGroup>
@@ -183,7 +183,7 @@ describe('<Table />', () => {
 				const [sort, setsort] = useState(defaultsort);
 
 				return (
-					<Table columnTemplate=''>
+					<Table columnTemplate="">
 						<TableHeadCell
 							sort={sort}
 							onSort={() =>

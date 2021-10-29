@@ -14,22 +14,13 @@ export default {
 	component: Inline,
 	argTypes: {
 		alignY: {
-			options: [
-				'flexStart',
-				'center',
-				'flexEnd',
-			],
+			options: ['flexStart', 'center', 'flexEnd'],
 			control: {
 				type: 'select',
 			},
 		},
 		alignX: {
-			options: [
-				'flexStart',
-				'center',
-				'flexEnd',
-				'spaceBetween',
-			],
+			options: ['flexStart', 'center', 'flexEnd', 'spaceBetween'],
 			control: {
 				type: 'select',
 			},
@@ -42,7 +33,6 @@ export default {
 		},
 	},
 } as ComponentMeta<typeof Inline>;
-
 
 const Template: ComponentStory<typeof Inline> = (args) => (
 	<Inline {...args}>
@@ -79,7 +69,6 @@ const DiffSizeTemplate: ComponentStory<typeof Inline> = (args) => (
 	</Stack>
 );
 
-
 const standardProps: ComponentProps<typeof Inline> = {};
 export const standard = Template.bind(standardProps);
 standard.args = standardProps;
@@ -98,7 +87,8 @@ const customDividersProps: ComponentProps<typeof Inline> = {
 				width: '6px',
 				height: '6px',
 			}}
-		/>),
+		/>
+	),
 };
 export const customDividers = Template.bind(customDividersProps);
 customDividers.args = customDividersProps;
@@ -106,5 +96,7 @@ customDividers.args = customDividersProps;
 const differentSizeItemsProps: ComponentProps<typeof Inline> = {
 	dividers: true,
 };
-export const differentSizeItems = DiffSizeTemplate.bind(differentSizeItemsProps);
+export const differentSizeItems = DiffSizeTemplate.bind(
+	differentSizeItemsProps,
+);
 differentSizeItems.args = differentSizeItemsProps;

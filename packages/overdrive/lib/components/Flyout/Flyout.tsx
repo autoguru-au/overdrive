@@ -4,14 +4,9 @@ import * as React from 'react';
 import { Box } from '../Box';
 import { Positioner } from '../Positioner';
 
-export const Flyout: FunctionComponent<ComponentPropsWithoutRef<typeof Positioner>> = ({
-																						   children,
-																						   triggerRef,
-																						   isOpen,
-																						   alignment,
-																						   triggerOffset,
-																						   ...rest
-																					   }) => (
+export const Flyout: FunctionComponent<
+	ComponentPropsWithoutRef<typeof Positioner>
+> = ({ children, triggerRef, isOpen, alignment, triggerOffset, ...rest }) => (
 	<Positioner
 		triggerRef={triggerRef}
 		isOpen={isOpen}
@@ -19,12 +14,12 @@ export const Flyout: FunctionComponent<ComponentPropsWithoutRef<typeof Positione
 		triggerOffset={triggerOffset}
 		{...rest}>
 		<Box
-			overflow='hidden'
-			backgroundColour='white'
-			boxShadow='4'
-			borderRadius='1'
-			borderWidth='1'
-			borderColour='gray'>
+			overflow="hidden"
+			backgroundColour="white"
+			boxShadow="4"
+			borderRadius="1"
+			borderWidth="1"
+			borderColour="gray">
 			{children}
 		</Box>
 	</Positioner>

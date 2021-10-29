@@ -16,15 +16,15 @@ interface Props
 
 export const NumberInput = withEnhancedInput<Props>(
 	({
-		 field: { ref, ...incomingFieldProps },
-		 eventHandlers,
-		 validation,
-		 isLoading,
-		 suffixed,
-		 prefixed,
-		 preventMouseWheel = false,
-		 ...rest
-	 }) => {
+		field: { ref, ...incomingFieldProps },
+		eventHandlers,
+		validation,
+		isLoading,
+		suffixed,
+		prefixed,
+		preventMouseWheel = false,
+		...rest
+	}) => {
 		const inputRef = useRef<HTMLInputElement>(ref?.current);
 
 		const preventWheel = useCallback<EventListener>((e) => {
@@ -75,12 +75,12 @@ export const NumberInput = withEnhancedInput<Props>(
 
 		return (
 			<Box
-				is='input'
+				is="input"
 				ref={inputRef}
 				{...eventHandlers}
 				{...incomingFieldProps}
 				{...rest}
-				autoComplete='off'
+				autoComplete="off"
 				type={type}
 			/>
 		);

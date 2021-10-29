@@ -82,55 +82,55 @@ export interface BoxStyleProps extends Padding, Margin, Border, Flex {
 }
 
 export const useBoxStyles = ({
-								 is,
-								 display,
-								 padding,
-								 paddingX,
-								 paddingY,
-								 paddingTop,
-								 paddingBottom,
-								 paddingLeft,
-								 paddingRight,
-								 margin,
-								 marginX,
-								 marginY,
-								 marginTop,
-								 marginBottom,
-								 marginLeft,
-								 marginRight,
-								 boxShadow,
-								 borderWidth,
-								 borderWidthX,
-								 borderWidthY,
-								 borderWidthTop,
-								 borderWidthRight,
-								 borderWidthBottom,
-								 borderWidthLeft,
-								 borderColour,
-								 borderColourX,
-								 borderColourY,
-								 borderColourTop,
-								 borderColourRight,
-								 borderColourBottom,
-								 borderColourLeft,
-								 borderRadius,
-								 backgroundColour,
-								 opacity,
-								 width,
-								 height,
-								 position,
-								 overflow,
-								 userSelect,
-								 textAlign,
-								 pointerEvents,
-								 alignItems,
-								 flexDirection,
-								 flexGrow,
-								 flexShrink,
-								 flexWrap,
-								 justifyContent,
-								 className,
-							 }: BoxStyleProps) => {
+	is,
+	display,
+	padding,
+	paddingX,
+	paddingY,
+	paddingTop,
+	paddingBottom,
+	paddingLeft,
+	paddingRight,
+	margin,
+	marginX,
+	marginY,
+	marginTop,
+	marginBottom,
+	marginLeft,
+	marginRight,
+	boxShadow,
+	borderWidth,
+	borderWidthX,
+	borderWidthY,
+	borderWidthTop,
+	borderWidthRight,
+	borderWidthBottom,
+	borderWidthLeft,
+	borderColour,
+	borderColourX,
+	borderColourY,
+	borderColourTop,
+	borderColourRight,
+	borderColourBottom,
+	borderColourLeft,
+	borderRadius,
+	backgroundColour,
+	opacity,
+	width,
+	height,
+	position,
+	overflow,
+	userSelect,
+	textAlign,
+	pointerEvents,
+	alignItems,
+	flexDirection,
+	flexGrow,
+	flexShrink,
+	flexWrap,
+	justifyContent,
+	className,
+}: BoxStyleProps) => {
 	const resetStyles = useStyles(resetStyleRefs);
 
 	const resolvedPaddingTop = paddingTop || paddingY || padding;
@@ -193,57 +193,57 @@ export const useBoxStyles = ({
 
 		hasBorder && styles.border.style,
 		hasBorder &&
-		resolvedBorderColourTop &&
-		styles.border.colour.top[resolvedBorderColourTop],
+			resolvedBorderColourTop &&
+			styles.border.colour.top[resolvedBorderColourTop],
 		hasBorder &&
-		resolvedBorderColourRight &&
-		styles.border.colour.right[resolvedBorderColourRight],
+			resolvedBorderColourRight &&
+			styles.border.colour.right[resolvedBorderColourRight],
 		hasBorder &&
-		resolvedBorderColourBottom &&
-		styles.border.colour.bottom[resolvedBorderColourBottom],
+			resolvedBorderColourBottom &&
+			styles.border.colour.bottom[resolvedBorderColourBottom],
 		hasBorder &&
-		resolvedBorderColourLeft &&
-		styles.border.colour.left[resolvedBorderColourLeft],
+			resolvedBorderColourLeft &&
+			styles.border.colour.left[resolvedBorderColourLeft],
 
 		hasBorder &&
-		resolvedBorderWidthTop &&
-		resolveResponsiveStyle(
-			resolvedBorderWidthTop,
-			styles.border.width.top,
-		),
+			resolvedBorderWidthTop &&
+			resolveResponsiveStyle(
+				resolvedBorderWidthTop,
+				styles.border.width.top,
+			),
 		hasBorder &&
-		resolvedBorderWidthRight &&
-		resolveResponsiveStyle(
-			resolvedBorderWidthRight,
-			styles.border.width.right,
-		),
+			resolvedBorderWidthRight &&
+			resolveResponsiveStyle(
+				resolvedBorderWidthRight,
+				styles.border.width.right,
+			),
 		hasBorder &&
-		resolvedBorderWidthBottom &&
-		resolveResponsiveStyle(
-			resolvedBorderWidthBottom,
-			styles.border.width.bottom,
-		),
+			resolvedBorderWidthBottom &&
+			resolveResponsiveStyle(
+				resolvedBorderWidthBottom,
+				styles.border.width.bottom,
+			),
 		hasBorder &&
-		resolvedBorderWidthLeft &&
-		resolveResponsiveStyle(
-			resolvedBorderWidthLeft,
-			styles.border.width.left,
-		),
+			resolvedBorderWidthLeft &&
+			resolveResponsiveStyle(
+				resolvedBorderWidthLeft,
+				styles.border.width.left,
+			),
 		resolveResponsiveStyle(boxShadow, styles.boxShadow),
 		borderRadius &&
-		resolveResponsiveStyle(borderRadius, styles.borderRadius),
+			resolveResponsiveStyle(borderRadius, styles.borderRadius),
 
 		styles.backgroundColours[backgroundColour!],
 		styles.opacity[opacity!],
 
 		alignItems && resolveResponsiveStyle(alignItems, styles.alignItems),
 		flexDirection &&
-		resolveResponsiveStyle(flexDirection, styles.flexDirection),
+			resolveResponsiveStyle(flexDirection, styles.flexDirection),
 		styles.flexGrow[flexGrow!],
 		styles.flexShrink[flexShrink!],
 		styles.flexWrap[flexWrap!],
 		justifyContent &&
-		resolveResponsiveStyle(justifyContent, styles.justifyContent),
+			resolveResponsiveStyle(justifyContent, styles.justifyContent),
 
 		className,
 	);

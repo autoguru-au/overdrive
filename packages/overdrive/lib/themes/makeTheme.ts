@@ -15,7 +15,9 @@ export type RuntimeTokens = ReturnType<typeof makeRuntimeTokens>;
 
 const createUtils = (tokens: Tokens) => ({
 	responsiveStyle(
-		breakpoints: Partial<Record<keyof Tokens['breakpoints'], StyleWithSelectors>>,
+		breakpoints: Partial<
+			Record<keyof Tokens['breakpoints'], StyleWithSelectors>
+		>,
 	): Style {
 		const styles = {};
 

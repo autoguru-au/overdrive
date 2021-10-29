@@ -21,13 +21,13 @@ interface Props {
 }
 
 export const TabPanes: FunctionComponent<Props> = ({
-													   renderInactivePanes = false,
-													   children,
-												   }) => {
+	renderInactivePanes = false,
+	children,
+}) => {
 	const styles = useStyles(styleRefs);
 
 	return (
-		<Box paddingY='6' className={styles.root} width='full'>
+		<Box paddingY="6" className={styles.root} width="full">
 			{Children.map(flattenChildren(children), (child, index) => (
 				<TabPanesContext.Provider
 					value={{

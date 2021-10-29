@@ -1,7 +1,9 @@
-import { Tokens } from '../../themes/tokens';
-import { ComponentProps } from 'react';
-import { Box } from './Box';
 import { ArgTypes } from '@storybook/csf/dist/story';
+import { ComponentProps } from 'react';
+
+import { Tokens } from '../../themes/tokens';
+
+import { Box } from './Box';
 
 export const scaleOptions: Array<keyof Tokens['space']> = [
 	'none',
@@ -60,33 +62,19 @@ export const boxArgTypes: Partial<ArgTypes<ComponentProps<typeof Box>>> = {
 		},
 	},
 	alignItems: {
-		options: [
-			'flexStart',
-			'center',
-			'flexEnd',
-		],
+		options: ['flexStart', 'center', 'flexEnd'],
 		control: {
 			type: 'select',
 		},
 	},
 	justifyContent: {
-		options: [
-			'flexStart',
-			'center',
-			'flexEnd',
-			'spaceBetween',
-		],
+		options: ['flexStart', 'center', 'flexEnd', 'spaceBetween'],
 		control: {
 			type: 'select',
 		},
 	},
 	flexDirection: {
-		options: [
-			'row',
-			'rowReverse',
-			'column',
-			'columnReverse',
-		],
+		options: ['row', 'rowReverse', 'column', 'columnReverse'],
 		control: {
 			type: 'select',
 		},
@@ -100,7 +88,7 @@ export const boxArgTypes: Partial<ArgTypes<ComponentProps<typeof Box>>> = {
 	pointerEvents: {
 		options: {
 			default: undefined,
-			'none': 'none',
+			none: 'none',
 		},
 	},
 	...scaledProps.reduce((argTypes, prop) => {

@@ -59,7 +59,9 @@ const argTypes: Partial<ArgTypes<ComponentProps<typeof DateInput>>> = {
 	},
 };
 
-const Template: ComponentStory<typeof DateInput> = (args) => <DateInput {...args} />;
+const Template: ComponentStory<typeof DateInput> = (args) => (
+	<DateInput {...args} />
+);
 
 const sharedProps: ComponentProps<typeof DateInput> = {
 	disabled: false,

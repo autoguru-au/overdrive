@@ -2,8 +2,9 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
-import { LoadingBox } from '.';
 import { boxArgTypes } from '../Box/argTypes';
+
+import { LoadingBox } from '.';
 
 export default {
 	title: 'Components/Loading/Box',
@@ -19,16 +20,13 @@ export default {
 	argTypes: boxArgTypes,
 } as ComponentMeta<typeof LoadingBox>;
 
-
 const Template: ComponentStory<typeof LoadingBox> = (args) => (
 	<LoadingBox {...args} />
 );
 
-
 const standardProps: ComponentProps<typeof LoadingBox> = {};
 export const standard = Template.bind(standardProps);
 standard.args = standardProps;
-
 
 const blinkingOffProps: ComponentProps<typeof LoadingBox> = {
 	blinking: false,

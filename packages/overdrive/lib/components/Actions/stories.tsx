@@ -19,13 +19,13 @@ export default {
 const template: ComponentStory<typeof Actions> = (args) => (
 	<Actions {...args}>
 		<Button>Login</Button>
-		<Button variant='primary'>Sign up</Button>
-		<Button variant='secondary'>Action 1</Button>
-		<Button variant='secondary'>Action 2</Button>
-		<Button isLoading variant='secondary'>
+		<Button variant="primary">Sign up</Button>
+		<Button variant="secondary">Action 1</Button>
+		<Button variant="secondary">Action 2</Button>
+		<Button isLoading variant="secondary">
 			Action 3
 		</Button>
-		<Button minimal variant='secondary'>
+		<Button minimal variant="secondary">
 			Action 4
 		</Button>
 	</Actions>

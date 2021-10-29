@@ -4,8 +4,14 @@ import { ComponentProps, createContext, forwardRef, useMemo } from 'react';
 import { ClassRef } from 'treat';
 import type { Theme } from 'treat/theme';
 
-import { useNegativeMarginLeft, useNegativeMarginTop } from '../../hooks/useNegativeMargin/useNegativeMargin';
-import { resolveResponsiveStyle_legacy, ResponsiveProp } from '../../utils/responsiveProps_legacy';
+import {
+	useNegativeMarginLeft,
+	useNegativeMarginTop,
+} from '../../hooks/useNegativeMargin/useNegativeMargin';
+import {
+	resolveResponsiveStyle_legacy,
+	ResponsiveProp,
+} from '../../utils/responsiveProps_legacy';
 import { Box } from '../Box';
 
 import * as styles from './Columns.css';
@@ -55,8 +61,8 @@ export const Columns = forwardRef<HTMLElement, Props>(
 			<Box
 				ref={ref}
 				is={is}
-				display='flex'
-				flexDirection='row'
+				display="flex"
+				flexDirection="row"
 				className={clsx(
 					marginLeftFix,
 					marginTopFix,
@@ -66,7 +72,7 @@ export const Columns = forwardRef<HTMLElement, Props>(
 						[styles.wrapping.wrap]: !noWrap,
 						[styles.wrapping.noWrap]: noWrap,
 						[styles.wrapping.reverseWrap]:
-						wrappingDirection === 'reverse',
+							wrappingDirection === 'reverse',
 					},
 				)}
 				{...boxProps}>

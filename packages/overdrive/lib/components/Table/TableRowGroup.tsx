@@ -9,7 +9,7 @@ export interface Props {
 
 export const TableRowGroup = forwardRef<HTMLDivElement, Props>(
 	({ children }, ref) => (
-		<Box ref={ref} role='rowgroup' display='contents'>
+		<Box ref={ref} role="rowgroup" display="contents">
 			{children}
 		</Box>
 	),

@@ -25,17 +25,17 @@ export interface Props {
 }
 
 export const NotchedBase: FunctionComponent<Props> = ({
-														  id,
-														  placeholder,
-														  isEmpty,
-														  disabled,
-														  prefixed,
-														  children,
-														  notch = true,
-														  borderColourClassName,
-														  placeholderColourClassName,
-														  className = '',
-													  }) => {
+	id,
+	placeholder,
+	isEmpty,
+	disabled,
+	prefixed,
+	children,
+	notch = true,
+	borderColourClassName,
+	placeholderColourClassName,
+	className = '',
+}) => {
 	const styles = useStyles(styleRefs);
 	const labelStyles = useTextStyles({
 		noWrap: true,
@@ -58,9 +58,9 @@ export const NotchedBase: FunctionComponent<Props> = ({
 
 	return (
 		<Box
-			position='relative'
-			width='full'
-			padding='none'
+			position="relative"
+			width="full"
+			padding="none"
 			className={clsx(
 				styles.root,
 				!notch && [styles.borders.complete, borderColourClassName],
@@ -72,12 +72,12 @@ export const NotchedBase: FunctionComponent<Props> = ({
 					className={clsx(styles.borders.root.default, {
 						[styles.borders.root.disabled]: disabled,
 					})}
-					pointerEvents='none'
-					position='absolute'
-					display='flex'
-					width='full'
-					height='full'
-					textAlign='left'>
+					pointerEvents="none"
+					position="absolute"
+					display="flex"
+					width="full"
+					height="full"
+					textAlign="left">
 					<div
 						className={clsx(
 							styles.borders.leading,
@@ -92,22 +92,22 @@ export const NotchedBase: FunctionComponent<Props> = ({
 						style={{ width: isEmpty ? 0 : notchedWidth }}>
 						<Box
 							ref={labelRef}
-							is='label'
-							pointerEvents='none'
+							is="label"
+							pointerEvents="none"
 							htmlFor={id}
-							position='absolute'
-							display='inline'
-							margin='none'
-							padding='none'
+							position="absolute"
+							display="inline"
+							margin="none"
+							padding="none"
 							className={clsx(
 								styles.placeholder.default,
 								placeholderColourClassName,
 								labelStyles,
 								{
 									[styles.placeholder.mutedLabelStyles]:
-									isEmpty || disabled,
+										isEmpty || disabled,
 									[styles.placeholderPlacement.default]:
-									isEmpty && !prefixed,
+										isEmpty && !prefixed,
 									[styles.placeholderPlacement
 										.defaultPrefixed]: isEmpty && prefixed,
 									[styles.placeholderPlacement

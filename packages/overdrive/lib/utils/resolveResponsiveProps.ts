@@ -42,9 +42,9 @@ function* buildClassFor<Tokens extends string | number>(
 		const orderToken = responsiveTokenOrder[counter];
 		const result =
 			breakpointTokenMap[
-			responsiveArgument?.[counter] ??
-			getEarliestKnownToken(responsiveArgument, counter)
-				];
+				responsiveArgument?.[counter] ??
+					getEarliestKnownToken(responsiveArgument, counter)
+			];
 		yield result ? result[orderToken] : void 0;
 		++counter;
 	}

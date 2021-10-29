@@ -1,10 +1,12 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
+
 import { Icon } from '../Icon';
 
-import { Box } from '.';
 import { boxArgTypes } from './argTypes';
+
+import { Box } from '.';
 
 export default {
 	title: 'Foundation/Box',

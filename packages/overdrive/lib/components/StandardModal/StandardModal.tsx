@@ -1,6 +1,10 @@
 import { WindowCloseIcon } from '@autoguru/icons';
 import clsx from 'clsx';
-import type { ComponentProps, FunctionComponent, MouseEventHandler } from 'react';
+import type {
+	ComponentProps,
+	FunctionComponent,
+	MouseEventHandler,
+} from 'react';
 import * as React from 'react';
 import { useLayoutEffect, useRef } from 'react';
 import { useStyles } from 'react-treat';
@@ -30,19 +34,21 @@ export interface Props extends ComponentProps<typeof Modal> {
 }
 
 export const StandardModal: FunctionComponent<Props> = ({
-															isOpen,
-															size = 'standard',
-															className = '',
-															title,
-															onRequestClose,
-															children,
-														}) => {
+	isOpen,
+	size = 'standard',
+	className = '',
+	title,
+	onRequestClose,
+	children,
+}) => {
 	const styles = useStyles(styleRefs);
 
 	const titleId = useId();
 	const locked = useRef<boolean>(true);
 
-	const closeButtonHandler = useEventCallback<MouseEventHandler<HTMLButtonElement>>(() => {
+	const closeButtonHandler = useEventCallback<
+		MouseEventHandler<HTMLButtonElement>
+	>(() => {
 		if (typeof onRequestClose === 'function') onRequestClose('button');
 	});
 
@@ -72,24 +78,24 @@ export const StandardModal: FunctionComponent<Props> = ({
 		<Modal isOpen={isOpen} onRequestClose={onRequestClose}>
 			<Box
 				className={styles.container}
-				height='full'
-				display='flex'
-				alignItems='center'
-				justifyContent='center'
+				height="full"
+				display="flex"
+				alignItems="center"
+				justifyContent="center"
 				aria-hidden={isOpen ? 'false' : 'true'}
-				role='none presentation'
+				role="none presentation"
 				onMouseDown={unlockModal}
 				onClick={backdropHandler}>
 				<Box
-					is='article'
-					overflow='hidden'
-					role='dialog'
-					aria-modal='true'
+					is="article"
+					overflow="hidden"
+					role="dialog"
+					aria-modal="true"
 					aria-labelledby={titleId!}
-					display='flex'
-					flexDirection='column'
-					backgroundColour='white'
-					marginTop='8'
+					display="flex"
+					flexDirection="column"
+					backgroundColour="white"
+					marginTop="8"
 					className={clsx([
 						styles.modal,
 						{ [styles.modalSizeStandard]: size === 'standard' },
@@ -98,41 +104,41 @@ export const StandardModal: FunctionComponent<Props> = ({
 						className,
 					])}>
 					<Box
-						is='header'
+						is="header"
 						flexShrink={0}
-						position='relative'
-						display='flex'
-						alignItems='center'
-						justifyContent='center'
-						width='full'
-						paddingY='3'
-						paddingLeft='5'
-						paddingRight='2'
-						borderWidthBottom='1'
-						borderColour='light'>
+						position="relative"
+						display="flex"
+						alignItems="center"
+						justifyContent="center"
+						width="full"
+						paddingY="3"
+						paddingLeft="5"
+						paddingRight="2"
+						borderWidthBottom="1"
+						borderColour="light">
 						<Box flexGrow={1} id={titleId!}>
-							<Heading is='h4'>{title}</Heading>
+							<Heading is="h4">{title}</Heading>
 						</Box>
 						<Button
 							minimal
 							rounded
-							variant='secondary'
-							size='small'
-							aria-label='close'
+							variant="secondary"
+							size="small"
+							aria-label="close"
 							onClick={closeButtonHandler}>
 							<Icon
 								className={useTextStyles({ colour: 'muted' })}
 								icon={WindowCloseIcon}
-								size='medium'
+								size="medium"
 							/>
 						</Button>
 					</Box>
 					<Box
-						is='main'
-						display='flex'
-						flexDirection='column'
+						is="main"
+						display="flex"
+						flexDirection="column"
 						flexGrow={1}
-						height='full'
+						height="full"
 						className={styles.content}>
 						{children}
 					</Box>

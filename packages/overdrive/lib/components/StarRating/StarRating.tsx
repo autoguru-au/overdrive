@@ -1,7 +1,12 @@
 import { StarHalfIcon, StarIcon } from '@autoguru/icons';
 import clsx from 'clsx';
 import * as React from 'react';
-import { FunctionComponent, memo, NamedExoticComponent, ReactElement } from 'react';
+import {
+	FunctionComponent,
+	memo,
+	NamedExoticComponent,
+	ReactElement,
+} from 'react';
 import { useStyles } from 'react-treat';
 import type { Theme } from 'treat/theme';
 
@@ -30,8 +35,10 @@ const starSizeMap: Map<EStarRatingSize, keyof Theme['icon']['size']> = new Map([
 	[EStarRatingSize.Small, 'small'],
 ]);
 
-const labelSizeMap: Map<EStarRatingSize,
-	keyof Theme['typography']['size']> = new Map([
+const labelSizeMap: Map<
+	EStarRatingSize,
+	keyof Theme['typography']['size']
+> = new Map([
 	[EStarRatingSize.Small, '3'],
 	[EStarRatingSize.Medium, '4'],
 ]);
@@ -45,14 +52,14 @@ export interface Props {
 
 export const StarRating: NamedExoticComponent<Props> = memo(
 	({
-		 className = '',
-		 rating,
-		 label = rating,
-		 size = EStarRatingSize.Medium,
-	 }) => (
+		className = '',
+		rating,
+		label = rating,
+		size = EStarRatingSize.Medium,
+	}) => (
 		<Box className={className}>
-			<Inline space='4' alignY='center'>
-				<Inline space='none' alignY='center'>
+			<Inline space="4" alignY="center">
+				<Inline space="none" alignY="center">
 					{Array.from({ length: totalStars })
 						.fill(0)
 						.map((_, index) => (
@@ -103,10 +110,10 @@ interface StarProps {
 }
 
 const Star: FunctionComponent<StarProps> = ({
-												index,
-												rating = 0,
-												size = EStarRatingSize.Medium,
-											}): ReactElement => {
+	index,
+	rating = 0,
+	size = EStarRatingSize.Medium,
+}): ReactElement => {
 	const starType = getStarIconType(index, rating);
 	const star = starType === EStarType.Half ? StarHalfIcon : StarIcon;
 	const styles = useStyles(styleRefs);

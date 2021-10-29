@@ -41,7 +41,7 @@ const Template: ComponentStory<typeof Button> = (args) => (
 
 const TemplateMulti: ComponentStory<typeof Button> = (args) => (
 	<>
-		<Columns space='3'>
+		<Columns space="3">
 			<Column>
 				<Button {...args}>Login</Button>
 			</Column>
@@ -67,7 +67,7 @@ const TemplateMulti: ComponentStory<typeof Button> = (args) => (
 				</Button>
 			</Column>
 		</Columns>
-		<Columns space='3'>
+		<Columns space="3">
 			<Column>
 				<Button rounded {...args}>
 					Login
@@ -95,7 +95,7 @@ const TemplateMulti: ComponentStory<typeof Button> = (args) => (
 				</Button>
 			</Column>
 		</Columns>
-		<Columns space='3'>
+		<Columns space="3">
 			<Column>
 				<Button minimal {...args}>
 					Login
@@ -123,7 +123,7 @@ const TemplateMulti: ComponentStory<typeof Button> = (args) => (
 				</Button>
 			</Column>
 		</Columns>
-		<Columns space='3'>
+		<Columns space="3">
 			<Column>
 				<Button minimal rounded {...args}>
 					1

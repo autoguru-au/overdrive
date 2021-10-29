@@ -16,28 +16,28 @@ describe('<CheckBox />', () => {
 
 	it('should match the snapshot for a single check', () => {
 		expect(
-			render(<CheckBox children='check label 1' value='1' />).container
+			render(<CheckBox children="check label 1" value="1" />).container
 				.firstChild,
 		).toMatchSnapshot();
 	});
 
 	it('should match the snapshot for a checked check', () => {
 		expect(
-			render(<CheckBox children='check label 1' checked value='1' />)
+			render(<CheckBox children="check label 1" checked value="1" />)
 				.container.firstChild,
 		).toMatchSnapshot();
 	});
 
 	it('should match the snapshot for a disable checkbox', () => {
 		expect(
-			render(<CheckBox disabled children='check label 1' value='1' />)
+			render(<CheckBox disabled children="check label 1" value="1" />)
 				.container.firstChild,
 		).toMatchSnapshot();
 	});
 
 	it.skip('should pass on className to dom element', () => {
 		expect(
-			render(<CheckBox className='check-class' />).container.firstChild,
+			render(<CheckBox className="check-class" />).container.firstChild,
 		).toHaveClass('check-class');
 	});
 
@@ -46,8 +46,8 @@ describe('<CheckBox />', () => {
 
 		const { container } = render(
 			<CheckBox
-				children='check label 1'
-				value='1'
+				children="check label 1"
+				value="1"
 				onClick={spyedClickCallback}
 			/>,
 		);
@@ -59,7 +59,7 @@ describe('<CheckBox />', () => {
 
 	it('should pass the checked value to the native element', () => {
 		const { container } = render(
-			<CheckBox children='check label 1' checked value='1' />,
+			<CheckBox children="check label 1" checked value="1" />,
 		);
 
 		expect(container.querySelector('input')).toHaveAttribute('checked', '');
@@ -67,7 +67,7 @@ describe('<CheckBox />', () => {
 
 	it('should not throw is onChange callback is not attached', () => {
 		const { container } = render(
-			<CheckBox children='check label 1' value='1' />,
+			<CheckBox children="check label 1" value="1" />,
 		);
 
 		expect(() => {
@@ -79,8 +79,8 @@ describe('<CheckBox />', () => {
 		const spyedChangeCallback = jest.fn();
 		const { container } = render(
 			<CheckBox
-				children='check label 1'
-				value='1'
+				children="check label 1"
+				value="1"
 				onChange={spyedChangeCallback}
 			/>,
 		);
@@ -96,7 +96,7 @@ describe('<CheckBox />', () => {
 		it('should match the snapshot', () => {
 			expect(
 				render(
-					<CheckBox children='check label 1' value='1'>
+					<CheckBox children="check label 1" value="1">
 						<Heading>Hello checkbox</Heading>
 					</CheckBox>,
 				).container.firstChild,

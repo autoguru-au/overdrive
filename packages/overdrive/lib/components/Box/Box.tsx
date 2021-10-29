@@ -8,9 +8,10 @@ import { useBoxStyles } from './useBoxStyles';
 
 export interface Props
 	extends BoxStyleProps,
-		Omit<AllHTMLAttributes<HTMLElement>,
-			'width' | 'height' | 'className' | 'is'> {
-}
+		Omit<
+			AllHTMLAttributes<HTMLElement>,
+			'width' | 'height' | 'className' | 'is'
+		> {}
 
 /**
  * Box is a general purpose container with no specific semantics.

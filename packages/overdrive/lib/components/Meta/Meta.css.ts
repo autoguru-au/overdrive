@@ -1,4 +1,5 @@
 import { styleVariants } from '@vanilla-extract/css';
+
 import { vars } from '../../themes/base/vars.css';
 
 export const variant = styleVariants({

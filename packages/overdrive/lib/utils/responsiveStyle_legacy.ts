@@ -1,9 +1,14 @@
-import type { CSSProperties, StyleWithSelectors } from '@vanilla-extract/css/dist/declarations/src/types';
+import type {
+	CSSProperties,
+	StyleWithSelectors,
+} from '@vanilla-extract/css/dist/declarations/src/types';
 
 import { Tokens } from '../themes/tokens';
 
 export const responsiveStyle_legacy = (
-	breakpoints: Partial<Record<keyof Tokens['breakpoints'], StyleWithSelectors>>,
+	breakpoints: Partial<
+		Record<keyof Tokens['breakpoints'], StyleWithSelectors>
+	>,
 ): CSSProperties => {
 	const styles = {};
 

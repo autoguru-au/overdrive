@@ -118,11 +118,13 @@ export interface Tokens {
 			neutral: string;
 			neutralDark: string;
 		};
-		intent: Record<Intent,
+		intent: Record<
+			Intent,
 			{
 				foreground: string;
 				background: string;
-			}>;
+			}
+		>;
 	};
 	border: {
 		width: Record<BorderWidthScale, string>;
@@ -140,20 +142,24 @@ export interface Tokens {
 		};
 	};
 	typography: {
-		size: Record<TextSizeScale,
+		size: Record<
+			TextSizeScale,
 			{
 				fontSize: string;
 				lineHeight: string;
-			}>;
+			}
+		>;
 		// TODO: Deprecate these in favour of foreground colours
-		colour: Record<| Exclude<keyof ForegroundColours, 'body'>
+		colour: Record<
+			| Exclude<keyof ForegroundColours, 'body'>
 			| Exclude<Intent, 'neutral'>
 			| 'dark'
 			| 'light'
 			| 'neutral'
 			| 'muted' // TODO: Deprecate this colour
 			| BaseColours,
-			string>;
+			string
+		>;
 		fontWeight: Record<'normal' | 'semiBold' | 'bold', number>;
 	};
 	animation: {

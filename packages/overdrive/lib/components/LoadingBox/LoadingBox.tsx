@@ -12,14 +12,14 @@ export interface Props extends Omit<ComponentProps<typeof Box>, 'width'> {
 }
 
 export const LoadingBox: FunctionComponent<Props> = ({
-														 className = '',
-														 randomWidth = false,
-														 blinking = true,
-														 backgroundColour = 'gray200',
-														 display = 'block',
-														 is = 'span',
-														 ...boxStyles
-													 }) => (
+	className = '',
+	randomWidth = false,
+	blinking = true,
+	backgroundColour = 'gray200',
+	display = 'block',
+	is = 'span',
+	...boxStyles
+}) => (
 	<Box
 		is={is}
 		display={display}

@@ -39,20 +39,18 @@ const Template: ComponentStory<typeof Positioner> = (args) => {
 
 	return (
 		<div>
-			<Button ref={triggerRef} size='small'>
+			<Button ref={triggerRef} size="small">
 				Open me
 			</Button>
-			<Positioner
-				{...args}
-				triggerRef={triggerRef}>
+			<Positioner {...args} triggerRef={triggerRef}>
 				<Box
 					boxShadow={1}
-					backgroundColour='white'
-					borderRadius='1'
-					borderWidth='1'
-					borderColour='gray'
-					padding='2'>
-					<Text is='p'>
+					backgroundColour="white"
+					borderRadius="1"
+					borderWidth="1"
+					borderColour="gray"
+					padding="2">
+					<Text is="p">
 						Hello im from the consumer:{' '}
 						{Math.ceil(Math.random() * 100)}
 					</Text>
@@ -81,22 +79,20 @@ const WithScrollTemplate: ComponentStory<typeof Positioner> = (args) => {
 						paddingTop: 'calc((100vh*5) / 2)',
 						paddingLeft: 'calc((100vw*5) / 2)',
 					}}>
-					<Button ref={triggerRef} size='small'>
+					<Button ref={triggerRef} size="small">
 						I'm the trigger
 					</Button>
 				</div>
 
-				<Positioner
-					{...args}
-					triggerRef={triggerRef}>
+				<Positioner {...args} triggerRef={triggerRef}>
 					<Box
 						boxShadow={1}
-						backgroundColour='white'
-						borderRadius='1'
-						borderWidth='1'
-						borderColour='gray'
-						padding='2'>
-						<Text is='p'>
+						backgroundColour="white"
+						borderRadius="1"
+						borderWidth="1"
+						borderColour="gray"
+						padding="2">
+						<Text is="p">
 							Hello im from the consumer:{' '}
 							{Math.ceil(Math.random() * 100)}
 						</Text>
@@ -131,7 +127,9 @@ const illustrateAScrollProps = {
 	isOpen: true,
 };
 
-export const illustrateAScroll: ComponentStory<typeof Positioner> = WithScrollTemplate.bind(illustrateAScrollProps);
+export const illustrateAScroll: ComponentStory<
+	typeof Positioner
+> = WithScrollTemplate.bind(illustrateAScrollProps);
 illustrateAScroll.args = openProps;
 illustrateAScroll.parameters = {
 	chromatic: { disableSnapshot: true },
