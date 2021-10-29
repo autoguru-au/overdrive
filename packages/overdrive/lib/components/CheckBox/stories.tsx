@@ -7,6 +7,7 @@ import { StarRating } from '../StarRating';
 import { Text } from '../Text';
 
 import { CheckBox } from '.';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
 	title: 'Components/Inputs/CheckBox',
@@ -16,7 +17,7 @@ export default {
 			<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
 		),
 	],
-};
+} as ComponentMeta<typeof CheckBox>;
 
 const listData: Array<{ label: string; value: string }> = [
 	{
@@ -65,7 +66,7 @@ list.args = {
 	coconut: true,
 	strawberries: false,
 };
-const Template = (args) => <CheckBox {...args} />;
+const Template: ComponentStory<typeof CheckBox> = (args) => <CheckBox {...args} />;
 
 const uncheckedProps: ComponentProps<typeof CheckBox> = {
 	checked: false,

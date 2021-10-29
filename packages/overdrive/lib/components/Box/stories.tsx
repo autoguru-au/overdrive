@@ -6,6 +6,7 @@ import { Tokens } from '../../themes/tokens';
 import { Icon } from '../Icon';
 
 import { Box } from '.';
+import { ArgTypes } from '@storybook/csf/dist/story';
 
 const scaleOptions: Array<keyof Tokens['space']> = [
 	'none',
@@ -50,6 +51,74 @@ const borderRadiusOptions: Array<keyof Tokens['border']['radius']> = [
 	'pill',
 ];
 
+export const boxArgTypes: Partial<ArgTypes<ComponentProps<typeof Box>>> = {
+	boxShadow: {
+		options: boxShadowOptions,
+		control: {
+			type: 'select',
+		},
+	},
+	borderRadius: {
+		options: borderRadiusOptions,
+		control: {
+			type: 'select',
+		},
+	},
+	alignItems: {
+		options: [
+			'flexStart',
+			'center',
+			'flexEnd',
+		],
+		control: {
+			type: 'select',
+		},
+	},
+	flexDirection: {
+		options: [
+			'row',
+			'rowReverse',
+			'column',
+			'columnReverse',
+		],
+		control: {
+			type: 'select',
+		},
+	},
+	justifyContent: {
+		options: [
+			'flexStart',
+			'center',
+			'flexEnd',
+			'spaceBetween',
+		],
+		control: {
+			type: 'select',
+		},
+	},
+	flexShrink: {
+		options: {
+			default: undefined,
+			'1': '1'
+		},
+	},
+	pointerEvents: {
+		options: {
+			default: undefined,
+			'none': 'none',
+		},
+	},
+	...scaledProps.reduce((argTypes, prop) => {
+		argTypes[prop] = {
+			options: scaleOptions,
+			control: {
+				type: 'select',
+			},
+		};
+		return argTypes;
+	}, {}),
+};
+
 export default {
 	title: 'Foundation/Box',
 	component: Box,
@@ -58,29 +127,7 @@ export default {
 			<div style={{ maxWidth: 500, margin: '0 auto' }}>{story()}</div>
 		),
 	],
-	argTypes: {
-		boxShadow: {
-			options: boxShadowOptions,
-			control: {
-				type: 'select',
-			},
-		},
-		borderRadius: {
-			options: borderRadiusOptions,
-			control: {
-				type: 'select',
-			},
-		},
-		...scaledProps.reduce((argTypes, prop) => {
-			argTypes[prop] = {
-				options: scaleOptions,
-				control: {
-					type: 'select',
-				},
-			};
-			return argTypes;
-		}, {}),
-	},
+	argTypes: boxArgTypes,
 } as ComponentMeta<typeof Icon>;
 
 const template: ComponentStory<typeof Box> = (args) => (
