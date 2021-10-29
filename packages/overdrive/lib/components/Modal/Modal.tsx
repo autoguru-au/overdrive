@@ -9,6 +9,7 @@ import { Box } from '../Box';
 import { Portal } from '../Portal';
 
 import * as styles from './Modal.css';
+import { useTheme } from '../ThemeProvider';
 
 export interface Props {
 	isOpen: boolean;
@@ -74,6 +75,7 @@ export const Modal: FunctionComponent<Props> = ({
 	onRequestClose,
 	children,
 }) => {
+	const themeClass = useTheme();
 	const [state, dispatch] = useReducer(reducer, 'INITIAL');
 
 	const handleBackdropClick = useEventCallback((event) => {
@@ -111,6 +113,7 @@ export const Modal: FunctionComponent<Props> = ({
 						pointerEvents={state === 'CLOSING' ? 'none' : undefined}
 						opacity={state === 'OPEN' ? undefined : 0}
 						className={[
+							themeClass,
 							styles.backdrop.root,
 							styles.transition,
 							hideBackdrop && styles.backdrop.invisible,
@@ -124,6 +127,7 @@ export const Modal: FunctionComponent<Props> = ({
 						overflow="hidden"
 						opacity={state === 'OPEN' ? undefined : 0}
 						className={[
+							themeClass,
 							styles.root,
 							styles.transition,
 							state === 'OPENING' && styles.entry,

@@ -2,7 +2,7 @@ import { style, styleVariants } from '@vanilla-extract/css';
 import { vars } from '../../themes/base/vars.css';
 
 
-export const root = ({
+export const root = style({
 	top: 0,
 	right: 0,
 	bottom: 0,
@@ -30,7 +30,8 @@ export const backdrop = styleVariants({
 		bottom: 0,
 		left: 0,
 		zIndex: 999,
-		backgroundColor: vars.colours.intent.neutral.background.strong,
+		backgroundColor: vars.colours.intent.neutral.background.standard,
+		opacity: 0.75,
 		backdropFilter: 'blur(5px)',
 	},
 	invisible: {
