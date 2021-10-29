@@ -3,13 +3,12 @@ import type { ComponentType, FunctionComponent, Reducer } from 'react';
 import * as React from 'react';
 import { useEffect, useReducer } from 'react';
 import FocusLock from 'react-focus-lock';
-import { useStyles } from 'react-treat';
 
 import { useEventCallback } from '../../utils';
 import { Box } from '../Box';
 import { Portal } from '../Portal';
 
-import * as styleRefs from './Modal.treat';
+import * as styles from './Modal.css';
 
 export interface Props {
 	isOpen: boolean;
@@ -75,8 +74,6 @@ export const Modal: FunctionComponent<Props> = ({
 	onRequestClose,
 	children,
 }) => {
-	const styles = useStyles(styleRefs);
-
 	const [state, dispatch] = useReducer(reducer, 'INITIAL');
 
 	const handleBackdropClick = useEventCallback((event) => {

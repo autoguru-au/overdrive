@@ -2,9 +2,8 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
-import { boxArgTypes } from '../Box/stories';
-
 import { LoadingBox } from '.';
+import { boxArgTypes } from '../Box/argTypes';
 
 export default {
 	title: 'Components/Loading/Box',

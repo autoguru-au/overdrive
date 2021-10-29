@@ -3,9 +3,9 @@ import * as React from 'react';
 import { ComponentProps } from 'react';
 
 import { Box } from '../Box';
-import { boxArgTypes, scaleOptions } from '../Box/stories';
 
 import { Column, Columns } from '.';
+import { boxArgTypes, scaleOptions } from '../Box/argTypes';
 
 export default {
 	title: 'Foundation/Layout/Columns',
