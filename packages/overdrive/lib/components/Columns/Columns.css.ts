@@ -1,13 +1,13 @@
-import { styleMap } from 'treat';
-
-import { makeResponsiveStyle_legacy } from '../../utils/responsiveProps_legacy';
+import { styleVariants } from '@vanilla-extract/css';
+import { makeResponsiveStyle } from '../../utils/responsiveProps.css';
+import { vars } from '../../themes/base/vars.css';
 
 export const space = {
-	spaceX: makeResponsiveStyle_legacy((theme) => theme.space, 'paddingLeft'),
-	spaceY: makeResponsiveStyle_legacy((theme) => theme.space, 'paddingTop'),
+	spaceX: makeResponsiveStyle(vars.space, 'paddingLeft'),
+	spaceY: makeResponsiveStyle(vars.space, 'paddingTop'),
 };
 
-export const wrapping = styleMap({
+export const wrapping = styleVariants({
 	wrap: {
 		flexWrap: 'wrap',
 	},
@@ -19,7 +19,7 @@ export const wrapping = styleMap({
 	},
 });
 
-export const align = styleMap({
+export const align = styleVariants({
 	stretch: {
 		alignContent: 'stretch',
 		alignItems: 'stretch',
