@@ -8,7 +8,7 @@ import {
 	StarIcon,
 } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
-import { ArgTypes, Meta } from '@storybook/react';
+import { ArgTypes, ComponentMeta, ComponentStory } from '@storybook/react';
 import isChromatic from 'chromatic/isChromatic';
 import * as React from 'react';
 import { ComponentProps } from 'react';
@@ -31,7 +31,7 @@ export default {
 	title: 'Components/Inputs/Date',
 	component: DateInput,
 	parameters: { chromatic: { delay: 300 } },
-} as Meta<typeof sharedProps>;
+} as ComponentMeta<typeof DateInput>;
 
 const iconOptions = {
 	CalendarIcon,
@@ -43,7 +43,7 @@ const iconOptions = {
 	StarIcon,
 };
 
-const argTypes: ArgTypes = {
+const argTypes: Partial<ArgTypes<ComponentProps<typeof DateInput>>> = {
 	value: {
 		control: {
 			type: 'date',
@@ -59,7 +59,7 @@ const argTypes: ArgTypes = {
 	},
 };
 
-const Template = (args) => <DateInput {...args} />;
+const Template: ComponentStory<typeof DateInput> = (args) => <DateInput {...args} />;
 
 const sharedProps: ComponentProps<typeof DateInput> = {
 	disabled: false,
