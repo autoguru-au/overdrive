@@ -1,3 +1,4 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -7,7 +8,6 @@ import { StarRating } from '../StarRating';
 import { Text } from '../Text';
 
 import { CheckBox } from '.';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
 	title: 'Components/Inputs/CheckBox',

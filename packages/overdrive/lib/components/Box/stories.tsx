@@ -1,3 +1,4 @@
+import { ArgTypes } from '@storybook/csf/dist/story';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
@@ -6,7 +7,6 @@ import { Tokens } from '../../themes/tokens';
 import { Icon } from '../Icon';
 
 import { Box } from '.';
-import { ArgTypes } from '@storybook/csf/dist/story';
 
 const scaleOptions: Array<keyof Tokens['space']> = [
 	'none',
