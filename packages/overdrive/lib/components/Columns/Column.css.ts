@@ -1,4 +1,5 @@
 import { styleVariants } from '@vanilla-extract/css';
+
 import { makeResponsiveStyle } from '../../utils/responsiveProps.css';
 
 const getSizeStyle = (scale: number) => `${scale * 100}%`;

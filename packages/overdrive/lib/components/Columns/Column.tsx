@@ -5,9 +5,9 @@ import { ComponentProps, forwardRef, ReactNode, useContext } from 'react';
 import { resolveResponsiveStyle_legacy, ResponsiveProp } from '../../utils/responsiveProps_legacy';
 import { Box } from '../Box';
 
+import * as styles from './Column.css';
 import { ColumnContext } from './Columns';
 
-import * as styles from './Column.css';
 
 export interface Props extends Omit<ComponentProps<typeof Box>, 'width'> {
 	width?: ResponsiveProp<keyof typeof styles.width>;

@@ -1,9 +1,10 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
-import { LoadingBox } from '.';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { boxArgTypes } from '../Box/stories';
+
+import { LoadingBox } from '.';
 
 export default {
 	title: 'Components/Loading/Box',

@@ -1,7 +1,7 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 
 import { LinearProgressIndicator } from '.';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
 	title: 'Components/Progress/Linear',

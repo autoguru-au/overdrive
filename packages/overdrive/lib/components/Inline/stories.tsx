@@ -1,13 +1,13 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
+import { scaleOptions } from '../Box/stories';
 import { Button } from '../Button';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
 
 import { Inline } from '.';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { scaleOptions } from '../Box/stories';
 
 export default {
 	title: 'Foundation/Layout/Inline',

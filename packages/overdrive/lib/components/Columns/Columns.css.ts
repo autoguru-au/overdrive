@@ -1,6 +1,7 @@
 import { styleVariants } from '@vanilla-extract/css';
-import { makeResponsiveStyle } from '../../utils/responsiveProps.css';
+
 import { vars } from '../../themes/base/vars.css';
+import { makeResponsiveStyle } from '../../utils/responsiveProps.css';
 
 export const space = {
 	spaceX: makeResponsiveStyle(vars.space, 'paddingLeft'),
