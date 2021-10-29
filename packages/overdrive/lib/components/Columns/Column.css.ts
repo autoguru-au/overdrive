@@ -1,11 +1,10 @@
-import { styleMap } from 'treat';
-
-import { makeResponsiveStyle_legacy } from '../../utils/responsiveProps_legacy';
+import { styleVariants } from '@vanilla-extract/css';
+import { makeResponsiveStyle } from '../../utils/responsiveProps.css';
 
 const getSizeStyle = (scale: number) => `${scale * 100}%`;
 
-export const width = makeResponsiveStyle_legacy(
-	(_) => ({
+export const width = makeResponsiveStyle(
+	{
 		'1/2': getSizeStyle(1 / 2),
 		'1/3': getSizeStyle(1 / 3),
 		'2/3': getSizeStyle(2 / 3),
@@ -17,11 +16,11 @@ export const width = makeResponsiveStyle_legacy(
 		'4/5': getSizeStyle(4 / 5),
 		full: getSizeStyle(1),
 		auto: 'auto',
-	}),
+	},
 	'flexBasis',
 );
 
-export const align = styleMap({
+export const align = styleVariants({
 	stretch: {
 		alignSelf: 'stretch',
 	},
