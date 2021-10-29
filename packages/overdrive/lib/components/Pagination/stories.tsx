@@ -18,9 +18,9 @@ const Template: ComponentStory<typeof Pagination> = (args) => (
 			widht: '100vw',
 			maxHeight: '350px',
 		}}
-		display="flex"
-		alignItems="center"
-		justifyContent="center">
+		display='flex'
+		alignItems='center'
+		justifyContent='center'>
 		<Pagination {...args} />
 	</Box>
 );
@@ -54,9 +54,7 @@ const lessThanMaxPagesProps = {
 	pageSize: 10,
 	numPagesDisplayed: 5,
 };
-export const lessThanMaxPages: ComponentStory<
-	typeof Pagination
-> = Template.bind(lessThanMaxPagesProps);
+export const lessThanMaxPages: ComponentStory<typeof Pagination> = Template.bind(lessThanMaxPagesProps);
 lessThanMaxPages.args = lessThanMaxPagesProps;
 
 const allPagesFitProps = {
@@ -78,9 +76,7 @@ const jumpForwardStartProps = {
 	pageSize: 10,
 	numPagesDisplayed: 5,
 };
-export const jumpForwardStart: ComponentStory<
-	typeof Pagination
-> = Template.bind(jumpForwardStartProps);
+export const jumpForwardStart: ComponentStory<typeof Pagination> = Template.bind(jumpForwardStartProps);
 jumpForwardStart.args = jumpForwardStartProps;
 
 const jumpForwardMiddleProps = {
@@ -90,9 +86,7 @@ const jumpForwardMiddleProps = {
 	pageSize: 10,
 	numPagesDisplayed: 5,
 };
-export const jumpForwardMiddle: ComponentStory<
-	typeof Pagination
-> = Template.bind(jumpForwardMiddleProps);
+export const jumpForwardMiddle: ComponentStory<typeof Pagination> = Template.bind(jumpForwardMiddleProps);
 jumpForwardMiddle.args = jumpForwardMiddleProps;
 
 const lastChunkStartProps = {

@@ -94,7 +94,7 @@ export const boxArgTypes: Partial<ArgTypes<ComponentProps<typeof Box>>> = {
 	flexShrink: {
 		options: {
 			default: undefined,
-			'1': '1'
+			'1': '1',
 		},
 	},
 	pointerEvents: {

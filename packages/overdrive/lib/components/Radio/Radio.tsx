@@ -31,7 +31,7 @@ export const Radio = forwardRef<HTMLInputElement, Props>(
 		return (
 			<CheckableBase
 				ref={ref}
-				inputType="radio"
+				inputType='radio'
 				className={className}
 				inputName={radioContext.inputName}
 				value={value}
@@ -40,10 +40,10 @@ export const Radio = forwardRef<HTMLInputElement, Props>(
 				checked={isChecked}
 				handleClick={handleClick}>
 				<Box
-					borderRadius="pill"
-					position="absolute"
-					borderWidth="2"
-					borderColour="gray"
+					borderRadius='pill'
+					position='absolute'
+					borderWidth='2'
+					borderColour='gray'
 					className={clsx(
 						checkableItem,
 						styles.circle.default,
@@ -54,10 +54,10 @@ export const Radio = forwardRef<HTMLInputElement, Props>(
 					)}
 				/>
 				<Box
-					borderRadius="pill"
-					position="absolute"
-					borderColour="gray"
-					borderWidth="none"
+					borderRadius='pill'
+					position='absolute'
+					borderColour='gray'
+					borderWidth='none'
 					className={clsx(
 						styles.circle.default,
 						styles.circle.inner,

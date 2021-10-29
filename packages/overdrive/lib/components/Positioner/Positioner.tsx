@@ -2,19 +2,9 @@ import type { Placement } from '@popperjs/core';
 import flip from '@popperjs/core/lib/modifiers/flip';
 import offset from '@popperjs/core/lib/modifiers/offset';
 import preventOverflow from '@popperjs/core/lib/modifiers/preventOverflow';
-import {
-	defaultModifiers,
-	popperGenerator,
-} from '@popperjs/core/lib/popper-lite';
+import { defaultModifiers, popperGenerator } from '@popperjs/core/lib/popper-lite';
 import * as React from 'react';
-import {
-	ComponentPropsWithoutRef,
-	FunctionComponent,
-	RefObject,
-	useCallback,
-	useEffect,
-	useRef,
-} from 'react';
+import { ComponentPropsWithoutRef, FunctionComponent, RefObject, useCallback, useEffect, useRef } from 'react';
 import { useStyles } from 'react-treat';
 
 import { isBrowser, setRef } from '../../utils';
@@ -47,10 +37,8 @@ const createPopper = popperGenerator({
 });
 
 export interface Props
-	extends Exclude<
-		ComponentPropsWithoutRef<typeof Box>,
-		'aria-hidden' | 'className'
-	> {
+	extends Exclude<ComponentPropsWithoutRef<typeof Box>,
+		'aria-hidden' | 'className'> {
 	alignment?: EAlignment;
 	isOpen?: boolean;
 	triggerRef: RefObject<HTMLElement>;
@@ -58,13 +46,13 @@ export interface Props
 }
 
 export const Positioner: FunctionComponent<Props> = ({
-	alignment = EAlignment.BOTTOM_LEFT,
-	isOpen = false,
-	triggerRef,
-	triggerOffset = 12,
-	children,
-	...boxProps
-}) => {
+														 alignment = EAlignment.BOTTOM_LEFT,
+														 isOpen = false,
+														 triggerRef,
+														 triggerOffset = 12,
+														 children,
+														 ...boxProps
+													 }) => {
 	if (!isBrowser) return null;
 
 	const placement = convertPlacement(alignment);
@@ -74,9 +62,7 @@ export const Positioner: FunctionComponent<Props> = ({
 
 	const referenceRef = useRef<HTMLDivElement>(null);
 
-	const popperInstanceRef = React.useRef<ReturnType<
-		typeof createPopper
-	> | null>(null);
+	const popperInstanceRef = React.useRef<ReturnType<typeof createPopper> | null>(null);
 
 	// Whenever this component get's re-rendered, we want to proc an update to the popper instance.
 	useEffect(() => {
@@ -146,7 +132,7 @@ export const Positioner: FunctionComponent<Props> = ({
 			<Box
 				{...boxProps}
 				ref={handleRef}
-				position="fixed"
+				position='fixed'
 				className={styles.root}
 				aria-hidden={!isOpen}>
 				{isOpen ? children : null}

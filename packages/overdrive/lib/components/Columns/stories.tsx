@@ -39,7 +39,7 @@ export default {
 				type: 'select',
 			},
 		},
-		...boxArgTypes
+		...boxArgTypes,
 	},
 } as ComponentMeta<typeof Columns>;
 const Template: ComponentStory<typeof Columns> = (args) => (

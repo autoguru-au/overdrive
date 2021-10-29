@@ -7,7 +7,7 @@ describe('<Tolltip />', () => {
 	it('should not throw', () => {
 		expect(() => {
 			render(
-				<Tooltip label="Test">
+				<Tooltip label='Test'>
 					<div>trigger</div>
 				</Tooltip>,
 			);
@@ -16,7 +16,7 @@ describe('<Tolltip />', () => {
 
 	it('should have body when open', () => {
 		const { container, getByText } = render(
-			<Tooltip label="tooltip content">
+			<Tooltip label='tooltip content'>
 				<div>trigger</div>
 			</Tooltip>,
 		);
@@ -29,7 +29,7 @@ describe('<Tolltip />', () => {
 	// TODO: This is skipped, as the `style="visibility: visible;"` shouldnt be there
 	it.skip('should match snapshot when closed', () => {
 		const { baseElement } = render(
-			<Tooltip label="tooltip content">
+			<Tooltip label='tooltip content'>
 				<div>trigger</div>
 			</Tooltip>,
 		);
@@ -39,7 +39,7 @@ describe('<Tolltip />', () => {
 
 	it('should match snapshot when opened', () => {
 		const { baseElement, getByText } = render(
-			<Tooltip label="tooltip content">
+			<Tooltip label='tooltip content'>
 				<div>trigger</div>
 			</Tooltip>,
 		);

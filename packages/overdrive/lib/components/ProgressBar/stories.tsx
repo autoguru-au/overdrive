@@ -24,12 +24,12 @@ export const Standard = () => {
 
 	return (
 		<Stack space={2}>
-			{!isChromatic() && <ProgressBar value={width} colour="green" />}
-			<ProgressBar value={0.5} colour="green" />
-			<ProgressBar value={0.4} colour="blue" />
-			<ProgressBar value={0.1} colour="neutral" />
-			<ProgressBar value={15} colour="red" />
-			<ProgressBar value={0.156} colour="yellow" />
+			{!isChromatic() && <ProgressBar value={width} colour='green' />}
+			<ProgressBar value={0.5} colour='green' />
+			<ProgressBar value={0.4} colour='blue' />
+			<ProgressBar value={0.1} colour='neutral' />
+			<ProgressBar value={15} colour='red' />
+			<ProgressBar value={0.156} colour='yellow' />
 		</Stack>
 	);
 };

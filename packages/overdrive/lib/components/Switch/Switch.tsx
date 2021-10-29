@@ -17,11 +17,11 @@ export interface Props {
 }
 
 const SwitchComponent: FunctionComponent<Props> = ({
-	className = '',
-	disabled = false,
-	toggled: incomingToggled = false,
-	onChange,
-}) => {
+													   className = '',
+													   disabled = false,
+													   toggled: incomingToggled = false,
+													   onChange,
+												   }) => {
 	const styles = useStyles(styleRefs);
 	const [toggled, setToggled] = useState<boolean>(incomingToggled);
 
@@ -46,7 +46,7 @@ const SwitchComponent: FunctionComponent<Props> = ({
 
 	return (
 		<Box
-			is="button"
+			is='button'
 			className={clsx(
 				styles.root,
 				useTextStyles({ size: '5' }),
@@ -57,18 +57,18 @@ const SwitchComponent: FunctionComponent<Props> = ({
 				},
 				className,
 			)}
-			borderRadius="pill"
-			position="relative"
+			borderRadius='pill'
+			position='relative'
 			aria-disabled={disabled}
 			aria-label={`toggle ${toggled ? 'on' : 'off'}`}
 			onClick={onToggle}>
 			<Box
-				borderWidth="1"
-				position="absolute"
-				borderRadius="pill"
-				backgroundColour="white"
-				padding="none"
-				boxShadow="2"
+				borderWidth='1'
+				position='absolute'
+				borderRadius='pill'
+				backgroundColour='white'
+				padding='none'
+				boxShadow='2'
 				className={clsx(
 					styles.handle.default,
 					useBoxStyles({ is: 'button' }),

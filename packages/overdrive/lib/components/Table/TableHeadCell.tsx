@@ -68,7 +68,7 @@ export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 		const sorter = (
 			<Icon
 				icon={ArrowUpIcon}
-				size="small"
+				size='small'
 				className={clsx([
 					styles.sorter.root,
 					styles.sorter[sort ?? 'none'],
@@ -78,14 +78,14 @@ export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 
 		const child = (
 			<Inline
-				alignY="center"
+				alignY='center'
 				alignX={alignmentToFlexAlignment(align)}
-				space="1">
+				space='1'>
 				{align === 'right' && shouldSort ? sorter : null}
-				<Text strong size="2" is="span" className={styles.text}>
+				<Text strong size='2' is='span' className={styles.text}>
 					{children}
 					{shouldSort ? (
-						<VisuallyHidden is="span">
+						<VisuallyHidden is='span'>
 							{' '}
 							sorted {sortToAria(sort!)}
 						</VisuallyHidden>
@@ -100,24 +100,24 @@ export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 		return (
 			<Box
 				ref={ref}
-				role="columnheader"
-				scope="col"
-				display="flex"
-				alignItems="center"
+				role='columnheader'
+				scope='col'
+				display='flex'
+				alignItems='center'
 				justifyContent={alignmentToFlexAlignment(align)}
 				padding={sort ? undefined : padding}
-				backgroundColour="gray100"
-				borderColourBottom="light"
-				borderWidthBottom="1"
+				backgroundColour='gray100'
+				borderColourBottom='light'
+				borderWidthBottom='1'
 				aria-sort={shouldSort ? sortToAria(sort!) : undefined}
 				aria-label={ariaLabel}
 				className={tableContext.stickyHead && styles.sticky}
 				onClick={sort ? sortClickHandler : undefined}>
 				{sort ? (
 					<Box
-						is="button"
-						display="block"
-						width="full"
+						is='button'
+						display='block'
+						width='full'
 						padding={padding}
 						tabIndex={-1}
 						className={styles.sorterButton}>

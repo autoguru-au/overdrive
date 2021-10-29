@@ -16,12 +16,12 @@ export interface Props {
 }
 
 export const Badge: FunctionComponent<Props> = ({
-	label,
-	colour = 'neutral',
-	look = 'standard',
-	size = 'standard',
-	className = '',
-}) => {
+													label,
+													colour = 'neutral',
+													look = 'standard',
+													size = 'standard',
+													className = '',
+												}) => {
 	const isStandardSize = size === 'standard';
 	const textStyles = useTextStyles({
 		noWrap: true,
@@ -32,11 +32,11 @@ export const Badge: FunctionComponent<Props> = ({
 
 	invariant(
 		['string', 'number'].includes(typeof label),
-		"Badge `label` can only contain string's or number's",
+		'Badge `label` can only contain string\'s or number\'s',
 	);
 
 	return (
-		<Box display="flex">
+		<Box display='flex'>
 			<Box
 				className={[
 					className,
@@ -45,15 +45,15 @@ export const Badge: FunctionComponent<Props> = ({
 						? styles.colours.inverted[colour].background
 						: styles.colours.default[colour],
 				]}
-				overflow="hidden"
-				display="block"
+				overflow='hidden'
+				display='block'
 				paddingX={isStandardSize ? '1' : '4'}
 				paddingY={isStandardSize ? '1' : '2'}
-				borderRadius="1">
+				borderRadius='1'>
 				<Box
-					is="span"
-					display="block"
-					overflow="hidden"
+					is='span'
+					display='block'
+					overflow='hidden'
 					className={[
 						textStyles,
 						styles.label,

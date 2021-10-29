@@ -19,7 +19,7 @@ export const root = styleVariants({
 			width: vars.space['2'],
 			height: vars.space['2'],
 			marginTop: `calc((1.6em - ${vars.space['2']}) / 2)`,
-			content: "' '",
+			content: '\' \'',
 			backgroundColor: vars.typography.colour.dark,
 		},
 	},

@@ -10,8 +10,8 @@ export const Divider: FunctionComponent = () => {
 	const styles = useStyles(styleRefs);
 
 	return (
-		<Box position="relative">
-			<Box position="absolute" className={styles.line} width="full" />
+		<Box position='relative'>
+			<Box position='absolute' className={styles.line} width='full' />
 		</Box>
 	);
 };

@@ -1,11 +1,5 @@
 import type { Ref } from 'react';
-import {
-	useCallback,
-	useEffect,
-	useLayoutEffect,
-	useRef,
-	useState,
-} from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 export const isBrowser = typeof window !== 'undefined';
 
@@ -178,4 +172,5 @@ export const arrayRingLookup = <T extends ArrayLike<unknown>>(
 };
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
-export const noop = () => {};
+export const noop = () => {
+};

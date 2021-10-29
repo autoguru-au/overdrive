@@ -12,10 +12,10 @@ export interface TableContext {
 const tableContext = createContext<TableContext | null>(null);
 
 export const TableContextProvider: FunctionComponent<TableContext> = ({
-	padding,
-	stickyHead,
-	children,
-}) => {
+																		  padding,
+																		  stickyHead,
+																		  children,
+																	  }) => {
 	const value = useMemo(
 		() => ({
 			padding,
@@ -33,7 +33,7 @@ export const useTableContext = () => {
 
 	invariant(
 		ctx !== null,
-		"Make sure you've got a <Table /> component in your tree",
+		'Make sure you\'ve got a <Table /> component in your tree',
 	);
 
 	return ctx;

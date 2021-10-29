@@ -81,15 +81,13 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 		const { isSingleIconChild, props: maybeIconProps } = useMemo(() => {
 			const maybeIcon =
 				isValidElement(children) && children.type === Icon;
-			const maybeProps = children as ReactElement<
-				ComponentProps<typeof Icon>
-			>;
+			const maybeProps = children as ReactElement<ComponentProps<typeof Icon>>;
 
 			return maybeIcon
 				? {
-						isSingleIconChild: true,
-						props: maybeProps.props,
-				  }
+					isSingleIconChild: true,
+					props: maybeProps.props,
+				}
 				: { isSingleIconChild: false };
 		}, [children]);
 
@@ -148,9 +146,9 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 			/>
 		) : (
 			<Box
-				alignItems="center"
-				justifyContent="center"
-				height="full"
+				alignItems='center'
+				justifyContent='center'
+				height='full'
 				className={styles.body}>
 				{isSingleIconChild && maybeIconProps ? (
 					<Icon
@@ -169,9 +167,9 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 
 		return isValidElement(Component)
 			? // @ts-ignore
-			  cloneElement(Component, { ref, ...props }, child)
+			cloneElement(Component, { ref, ...props }, child)
 			: // @ts-ignore
-			  createElement(Component, { ref, ...props }, child);
+			createElement(Component, { ref, ...props }, child);
 	},
 );
 
@@ -185,8 +183,8 @@ const getButtonStates: (
 	if (disabled)
 		return minimal
 			? clsx(buttonStyles.minimal.defaults, {
-					[buttonStyles.minimal.noneRounded]: !rounded,
-			  })
+				[buttonStyles.minimal.noneRounded]: !rounded,
+			})
 			: '';
 
 	if (minimal)

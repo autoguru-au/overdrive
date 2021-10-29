@@ -19,11 +19,11 @@ export interface Props {
 }
 
 export const Tabs: FunctionComponent<Props> = ({
-	id: incomingId,
-	active = 0,
-	onChange,
-	children,
-}) => {
+												   id: incomingId,
+												   active = 0,
+												   onChange,
+												   children,
+											   }) => {
 	const [activeState, setActiveState] = useUncontrolledState<number>(
 		active,
 		onChange,

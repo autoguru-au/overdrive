@@ -7,7 +7,7 @@ describe('<TextAreaInput />', () => {
 	it('should match snapshot', () => {
 		expect(
 			render(
-				<TextAreaInput placeholder="placeholder something" id="id" />,
+				<TextAreaInput placeholder='placeholder something' id='id' />,
 			).container.firstChild,
 		).toMatchSnapshot();
 	});
@@ -17,8 +17,8 @@ describe('<TextAreaInput />', () => {
 			render(
 				<TextAreaInput
 					isLoading
-					placeholder="placeholder something"
-					id="id"
+					placeholder='placeholder something'
+					id='id'
 				/>,
 			).container.firstChild,
 		).toMatchSnapshot();
@@ -29,8 +29,8 @@ describe('<TextAreaInput />', () => {
 
 		const { container } = render(
 			<TextAreaInput
-				placeholder="placeholder"
-				id="id"
+				placeholder='placeholder'
+				id='id'
 				hintText={hintText()}
 			/>,
 		);
@@ -43,8 +43,8 @@ describe('<TextAreaInput />', () => {
 	it('should have input type of textarea', () => {
 		const { container } = render(
 			<TextAreaInput
-				className="input-class"
-				placeholder="placeholder something"
+				className='input-class'
+				placeholder='placeholder something'
 			/>,
 		);
 		expect(container.querySelector('textarea')).toBeInTheDocument();
@@ -53,8 +53,8 @@ describe('<TextAreaInput />', () => {
 	it('should pass on className to dom element', () => {
 		const { container } = render(
 			<TextAreaInput
-				className="input-class"
-				placeholder="placeholder something"
+				className='input-class'
+				placeholder='placeholder something'
 			/>,
 		);
 		expect(container.firstChild).toHaveClass('input-class');
@@ -63,8 +63,8 @@ describe('<TextAreaInput />', () => {
 	it('should match snapshot when active', () => {
 		const { container } = render(
 			<TextAreaInput
-				className="input-class"
-				placeholder="placeholder something"
+				className='input-class'
+				placeholder='placeholder something'
 			/>,
 		);
 
@@ -82,8 +82,8 @@ describe('<TextAreaInput />', () => {
 			render(
 				<TextAreaInput
 					isTouched
-					className="input-class"
-					placeholder="placeholder something"
+					className='input-class'
+					placeholder='placeholder something'
 				/>,
 			).container.firstChild,
 		).toMatchSnapshot();
@@ -95,8 +95,8 @@ describe('<TextAreaInput />', () => {
 				<TextAreaInput
 					isTouched
 					isValid
-					className="input-class"
-					placeholder="placeholder something"
+					className='input-class'
+					placeholder='placeholder something'
 				/>,
 			).container.firstChild,
 		).toMatchSnapshot();
@@ -108,8 +108,8 @@ describe('<TextAreaInput />', () => {
 				<TextAreaInput
 					isTouched
 					isValid={false}
-					className="input-class"
-					placeholder="placeholder something"
+					className='input-class'
+					placeholder='placeholder something'
 				/>,
 			).container.firstChild,
 		).toMatchSnapshot();
@@ -117,7 +117,7 @@ describe('<TextAreaInput />', () => {
 
 	it('should display placeholder text', () => {
 		const { container } = render(
-			<TextAreaInput placeholder="placeholder something" />,
+			<TextAreaInput placeholder='placeholder something' />,
 		);
 
 		expect(container.querySelector('label')).toHaveTextContent(
@@ -130,7 +130,7 @@ describe('<TextAreaInput />', () => {
 
 		const { container } = render(
 			<TextAreaInput
-				placeholder="placeholder something"
+				placeholder='placeholder something'
 				onFocus={spyedCallback}
 			/>,
 		);
@@ -145,7 +145,7 @@ describe('<TextAreaInput />', () => {
 
 		const { container } = render(
 			<TextAreaInput
-				placeholder="placeholder something"
+				placeholder='placeholder something'
 				onBlur={spyedCallback}
 			/>,
 		);
@@ -160,7 +160,7 @@ describe('<TextAreaInput />', () => {
 
 		const { container } = render(
 			<TextAreaInput
-				placeholder="placeholder something"
+				placeholder='placeholder something'
 				onChange={spyedCallback}
 			/>,
 		);

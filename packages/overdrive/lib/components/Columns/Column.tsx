@@ -55,9 +55,9 @@ export const Column = forwardRef<HTMLElement, Props>(
 				<Box
 					ref={ref}
 					is={is}
-					display="flex"
-					width="full"
-					height="full"
+					display='flex'
+					width='full'
+					height='full'
 					className={className}
 					{...boxProps}>
 					{children}

@@ -22,8 +22,8 @@ export const Standard = () => {
 	return (
 		<>
 			<StandardModal
-				title="Title"
-				size="standard"
+				title='Title'
+				size='standard'
 				isOpen={isOpen}
 				onRequestClose={() => {
 					setIsOpen(false);

@@ -24,5 +24,5 @@ export default {
 };
 
 export const Standard = () => (
-	<ProgressSpinner colour="primary" size="medium" />
+	<ProgressSpinner colour='primary' size='medium' />
 );

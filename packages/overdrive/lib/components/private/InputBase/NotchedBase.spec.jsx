@@ -6,7 +6,7 @@ import { NotchedBase } from './NotchedBase';
 describe('<NotchedBase />', () => {
 	it('should not throw', () => {
 		expect(() =>
-			render(<NotchedBase placeholder="placeholder something" />),
+			render(<NotchedBase placeholder='placeholder something' />),
 		).not.toThrow();
 	});
 
@@ -14,8 +14,8 @@ describe('<NotchedBase />', () => {
 		expect(
 			render(
 				<NotchedBase
-					className="notched-class"
-					placeholder="placeholder something"
+					className='notched-class'
+					placeholder='placeholder something'
 				/>,
 			).container.firstChild,
 		).toHaveClass('notched-class');
@@ -23,21 +23,21 @@ describe('<NotchedBase />', () => {
 
 	it('should match snapshot for default notch', () => {
 		expect(
-			render(<NotchedBase placeholder="placeholder something" />)
+			render(<NotchedBase placeholder='placeholder something' />)
 				.container.firstChild,
 		).toMatchSnapshot();
 	});
 
 	it('should match snapshot for dirty notch', () => {
 		expect(
-			render(<NotchedBase isDirty placeholder="placeholder something" />)
+			render(<NotchedBase isDirty placeholder='placeholder something' />)
 				.container.firstChild,
 		).toMatchSnapshot();
 	});
 
 	it('should match snapshot for active notch', () => {
 		expect(
-			render(<NotchedBase isActive placeholder="placeholder something" />)
+			render(<NotchedBase isActive placeholder='placeholder something' />)
 				.container.firstChild,
 		).toMatchSnapshot();
 	});
@@ -48,7 +48,7 @@ describe('<NotchedBase />', () => {
 				<NotchedBase
 					isActive
 					isDirty
-					placeholder="placeholder something"
+					placeholder='placeholder something'
 				/>,
 			).container.firstChild,
 		).toMatchSnapshot();
@@ -57,7 +57,7 @@ describe('<NotchedBase />', () => {
 	it('should display children', () => {
 		expect(
 			render(
-				<NotchedBase placeholder="placeholder something">
+				<NotchedBase placeholder='placeholder something'>
 					something children
 				</NotchedBase>,
 			).container,
@@ -68,8 +68,8 @@ describe('<NotchedBase />', () => {
 		expect(
 			render(
 				<NotchedBase
-					placeholder="placeholder something"
-					className="notched-class"
+					placeholder='placeholder something'
+					className='notched-class'
 				/>,
 			).container.querySelector('label'),
 		).toHaveTextContent('placeholder something');
@@ -80,8 +80,8 @@ describe('<NotchedBase />', () => {
 			render(
 				<NotchedBase
 					isEmpty={false}
-					className="notched-class"
-					placeholder="placeholder something"
+					className='notched-class'
+					placeholder='placeholder something'
 				/>,
 			).container.firstChild,
 		).toHaveClass('notchedBaseShift');
@@ -92,8 +92,8 @@ describe('<NotchedBase />', () => {
 			render(
 				<NotchedBase
 					isEmpty
-					className="notched-class"
-					placeholder="placeholder something"
+					className='notched-class'
+					placeholder='placeholder something'
 				/>,
 			).container.firstChild,
 		).not.toHaveClass('notchedBaseShift');
@@ -104,8 +104,8 @@ describe('<NotchedBase />', () => {
 			render(
 				<NotchedBase
 					isActive
-					className="notched-class"
-					placeholder="placeholder something"
+					className='notched-class'
+					placeholder='placeholder something'
 				/>,
 			).container.firstChild,
 		).toHaveClass('notchedBaseActive');

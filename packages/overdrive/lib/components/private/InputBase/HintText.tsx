@@ -16,11 +16,11 @@ export interface Props {
 }
 
 export const HintText: FunctionComponent<Props> = ({
-	reserveHintSpace,
-	disabled,
-	hintText,
-	className = '',
-}) => {
+													   reserveHintSpace,
+													   disabled,
+													   hintText,
+													   className = '',
+												   }) => {
 	const styles = useStyles(styleRefs);
 	const boxStyles = useBoxStyles({
 		is: 'p',
@@ -34,9 +34,9 @@ export const HintText: FunctionComponent<Props> = ({
 
 	return (
 		<Text
-			is="p"
-			size="2"
-			colour="unset"
+			is='p'
+			size='2'
+			colour='unset'
 			className={clsx(boxStyles, styles.hintText, className)}>
 			{showHintText ? hintText : '\u00A0'}
 		</Text>

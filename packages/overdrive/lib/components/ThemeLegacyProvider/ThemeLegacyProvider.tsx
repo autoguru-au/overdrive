@@ -18,9 +18,9 @@ export interface Props {
 }
 
 export const ThemeLegacyProvider: FunctionComponent<Props> = ({
-	theme,
-	children,
-}) => (
+																  theme,
+																  children,
+															  }) => (
 	<TreatProvider theme={theme.themeRef}>
 		<tokensContext.Provider value={theme.runtimeTokens}>
 			{children}
@@ -30,6 +30,6 @@ export const ThemeLegacyProvider: FunctionComponent<Props> = ({
 
 export const useRuntimeTokens = (): RuntimeTokens => {
 	const tokens = useContext(tokensContext);
-	invariant(tokens !== null, "You havn't provided a `OverdriveProvider`.");
+	invariant(tokens !== null, 'You havn\'t provided a `OverdriveProvider`.');
 	return tokens;
 };

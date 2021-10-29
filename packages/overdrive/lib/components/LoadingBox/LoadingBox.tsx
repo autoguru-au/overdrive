@@ -31,7 +31,7 @@ export const LoadingBox: FunctionComponent<Props> = ({
 			width: randomWidth ? getRandomIntWidth(60, 40) : undefined,
 		}}
 	/>
-)
+);
 
 const getRandomIntWidth = (max: number, min: number) =>
 	`${Math.random() * (max - min) + min}%`;

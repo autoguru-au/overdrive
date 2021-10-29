@@ -15,7 +15,7 @@ describe('<Bullet />', () => {
 
 	it.skip('should pass down className', () => {
 		expect(
-			render(<Bullet className="test-class" />).container.firstChild,
+			render(<Bullet className='test-class' />).container.firstChild,
 		).toHaveClass('test-class');
 	});
 

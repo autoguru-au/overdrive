@@ -2,15 +2,7 @@ import { ArrowLeftIcon, ArrowRightIcon } from '@autoguru/icons';
 import { invariant } from '@autoguru/utilities';
 import type { FunctionComponent } from 'react';
 import * as React from 'react';
-import {
-	Children,
-	createContext,
-	isValidElement,
-	useCallback,
-	useEffect,
-	useRef,
-	useState,
-} from 'react';
+import { Children, createContext, isValidElement, useCallback, useEffect, useRef, useState } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 import { useStyles } from 'react-treat';
 
@@ -30,10 +22,10 @@ export interface Props {
 export const TabListContext = createContext<number | null>(null);
 
 export const TabList: FunctionComponent<Props> = ({
-	children,
-	stretch = false,
-	scrollable = false,
-}) => {
+													  children,
+													  stretch = false,
+													  scrollable = false,
+												  }) => {
 	invariant(
 		!(stretch && scrollable),
 		'Tabs: `stretch={true}` and `scrollable={true}` cannot be used at the same time.',
@@ -119,8 +111,8 @@ export const TabList: FunctionComponent<Props> = ({
 
 	return (
 		<Box
-			overflow="hidden"
-			alignItems="center"
+			overflow='hidden'
+			alignItems='center'
 			className={[
 				styles.root.default,
 				shouldShowScrollButtons && styles.root.scroll,
@@ -129,7 +121,7 @@ export const TabList: FunctionComponent<Props> = ({
 				<Button
 					minimal
 					rounded
-					size="small"
+					size='small'
 					disabled={!displayScroll.start}
 					onClick={handleStartButton}>
 					<Icon icon={ArrowLeftIcon} />
@@ -142,10 +134,10 @@ export const TabList: FunctionComponent<Props> = ({
 				<Box
 					ref={innerRef}
 					display={stretch ? 'flex' : 'block'}
-					flexWrap="nowrap"
-					width="full"
-					role="tablist"
-					aria-orientation="horizontal"
+					flexWrap='nowrap'
+					width='full'
+					role='tablist'
+					aria-orientation='horizontal'
 					className={useTextStyles({ noWrap: true })}>
 					{tabs}
 				</Box>
@@ -154,7 +146,7 @@ export const TabList: FunctionComponent<Props> = ({
 				<Button
 					minimal
 					rounded
-					size="small"
+					size='small'
 					disabled={!displayScroll.end}
 					onClick={handleEndButton}>
 					<Icon icon={ArrowRightIcon} />

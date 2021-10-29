@@ -34,9 +34,7 @@ interface MessageConfig {
 type AddToastFn = (config: Omit<MessageConfig, 'id'>) => void;
 
 interface ToastFn
-	extends Required<
-		Record<AlertIntent, (message: MessageType, duration?: number) => void>
-	> {
+	extends Required<Record<AlertIntent, (message: MessageType, duration?: number) => void>> {
 	(message: MessageType, duration?: number): void;
 }
 
@@ -92,13 +90,13 @@ const InternalToastProvider = ({ children }) => {
 			{children}
 			<Portal>
 				<Box
-					width="full"
-					display="flex"
-					position="fixed"
-					alignItems="center"
-					justifyContent="center"
+					width='full'
+					display='flex'
+					position='fixed'
+					alignItems='center'
+					justifyContent='center'
 					className={styles.root}>
-					<Stack space="2">
+					<Stack space='2'>
 						{toasts.map((item) => (
 							<Toast
 								key={item.id}
@@ -197,11 +195,9 @@ export const useToast = (): ToastFn => {
 	}, [addToast]);
 };
 
-const Toast: FunctionComponent<
-	MessageConfig & {
-		remove: (id: number) => void;
-	}
-> = ({ remove, duration, message, id, intent }) => {
+const Toast: FunctionComponent<MessageConfig & {
+	remove: (id: number) => void;
+}> = ({ remove, duration, message, id, intent }) => {
 	const styles = useStyles(styleRefs);
 
 	const dismiss = useCallback(() => {

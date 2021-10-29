@@ -84,7 +84,7 @@ const Template: ComponentStory<typeof TextLink> = (args) => (
 );
 
 const InsideParagraphTemplate: ComponentStory<typeof TextLink> = (args) => (
-	<Text is="p">
+	<Text is='p'>
 		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad,{' '}
 		<TextLink {...args}>Hello</TextLink> autem consectetur consequuntur eius
 		fugiat illo ipsum nobis numquam, officiis placeat quia, quidem
@@ -104,7 +104,5 @@ export const standard: ComponentStory<typeof TextLink> = Template.bind(
 );
 standard.args = standardProps;
 
-export const insideParagraph: ComponentStory<
-	typeof TextLink
-> = InsideParagraphTemplate.bind(standardProps);
+export const insideParagraph: ComponentStory<typeof TextLink> = InsideParagraphTemplate.bind(standardProps);
 insideParagraph.args = standardProps;

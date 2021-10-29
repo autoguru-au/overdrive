@@ -68,10 +68,8 @@ export interface ValidationProps {
 }
 
 // An amalgamation of the HoC props, event handlers and the consumer props.
-export type EnhanceInputProps<
-	IncomingProps,
-	PrimitiveElementType
-> = IncomingProps &
+export type EnhanceInputProps<IncomingProps,
+	PrimitiveElementType> = IncomingProps &
 	EnhanceInputPrimitiveProps &
 	EventHandlers<PrimitiveElementType> &
 	ValidationProps;
@@ -80,10 +78,8 @@ export type EnhanceInputProps<
 export type WrappedComponentProps<IncomingProps, PrimitiveElementType> = {
 	validation: ValidationProps;
 	eventHandlers: EventHandlers<PrimitiveElementType>;
-	field: Omit<
-		EnhanceInputPrimitiveProps,
-		'placeholder' | 'hintText' | 'fieldIcon'
-	> & {
+	field: Omit<EnhanceInputPrimitiveProps,
+		'placeholder' | 'hintText' | 'fieldIcon'> & {
 		ref: MutableRefObject<PrimitiveElementType>;
 	};
 	fieldIcon?: EnhanceInputPrimitiveProps['fieldIcon'];
@@ -100,23 +96,17 @@ interface EnhancedInputConfigs {
 	primitiveType: 'textarea' | 'text' | 'number' | 'date' | 'select';
 }
 
-export const withEnhancedInput = <
-	IncomingProps extends {} = {},
-	PrimitiveElementType extends HTMLElement = HTMLInputElement
->(
-	WrappingComponent: ComponentType<
-		WrappedComponentProps<IncomingProps, PrimitiveElementType>
-	>,
+export const withEnhancedInput = <IncomingProps extends {} = {},
+	PrimitiveElementType extends HTMLElement = HTMLInputElement>(
+	WrappingComponent: ComponentType<WrappedComponentProps<IncomingProps, PrimitiveElementType>>,
 	{
 		primitiveType = 'text',
 		withPrefixIcon = true,
 		withSuffixIcon = true,
 	}: EnhancedInputConfigs = { primitiveType: 'text' },
 ) =>
-	forwardRef<
-		PrimitiveElementType,
-		EnhanceInputProps<IncomingProps, PrimitiveElementType>
-	>(
+	forwardRef<PrimitiveElementType,
+		EnhanceInputProps<IncomingProps, PrimitiveElementType>>(
 		(
 			{
 				// EnhanceInputPrimitiveProps
@@ -211,10 +201,8 @@ export const withEnhancedInput = <
 			A & B != A _or_ P & Omit<P, 'firstName'> != P
 			 */
 			// @ts-ignore
-			const wrappingComponent: WrappedComponentProps<
-				IncomingProps,
-				PrimitiveElementType
-			> = {
+			const wrappingComponent: WrappedComponentProps<IncomingProps,
+				PrimitiveElementType> = {
 				validation: {
 					isTouched,
 					isValid,
@@ -270,7 +258,7 @@ export const withEnhancedInput = <
 
 			return (
 				<Box
-					width="full"
+					width='full'
 					className={className}
 					onMouseEnter={onMouseOver}
 					onMouseLeave={onMouseOut}>
@@ -285,11 +273,11 @@ export const withEnhancedInput = <
 							[derivedColours.colour]: !isEmpty,
 						})}
 						borderColourClassName={derivedColours.borderColour}>
-						<Box ref={wrapperRef} width="full" height="full">
+						<Box ref={wrapperRef} width='full' height='full'>
 							{prefixIcon ? (
 								<Icon
 									icon={prefixIcon}
-									size="medium"
+									size='medium'
 									className={clsx(
 										iconStyles,
 										styles.icon.prefix,
@@ -309,7 +297,7 @@ export const withEnhancedInput = <
 							{suffixIcon && !isLoading ? (
 								<Icon
 									icon={suffixIcon}
-									size="medium"
+									size='medium'
 									className={clsx(
 										iconStyles,
 										styles.icon.suffix,

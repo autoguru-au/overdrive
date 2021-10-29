@@ -14,7 +14,7 @@ export default {
 
 export const standard = () => (
 	<TextContainer heading={<Heading>Choose a credit pack</Heading>}>
-		<Text muted is="p">
+		<Text muted is='p'>
 			To get started, choose a credit pack that will used for Auto Top-Up.
 		</Text>
 	</TextContainer>
@@ -22,7 +22,7 @@ export const standard = () => (
 
 export const withALotOfBody = () => (
 	<TextContainer heading={<Heading>Reviews</Heading>}>
-		<Text muted is="p">
+		<Text muted is='p'>
 			To avoid you coming to a halt in the middle of the road, because of
 			a banging, crash of pistons and valves fighting with each other,
 			let's investigate what the timing belt is, what it does, and why it
@@ -35,11 +35,11 @@ export const withInteraction = () => (
 	<TextContainer
 		heading={<Heading>Reviews</Heading>}
 		action={
-			<Button variant="secondary" size="small">
+			<Button variant='secondary' size='small'>
 				Edit
 			</Button>
 		}>
-		<Text muted is="p">
+		<Text muted is='p'>
 			All of our reviews are from verified customers.
 		</Text>
 	</TextContainer>
@@ -48,11 +48,11 @@ export const withInteraction = () => (
 export const withInteractionOnly = () => (
 	<TextContainer
 		action={
-			<Button variant="secondary" size="small">
+			<Button variant='secondary' size='small'>
 				Edit
 			</Button>
 		}>
-		<Text muted is="p">
+		<Text muted is='p'>
 			All of our reviews are from verified customers.
 		</Text>
 	</TextContainer>
@@ -62,11 +62,11 @@ export const withLongTitle = () => (
 	<TextContainer
 		heading={<Heading>Setup your personal settings</Heading>}
 		action={
-			<Button variant="secondary" size="small">
+			<Button variant='secondary' size='small'>
 				Edit
 			</Button>
 		}>
-		<Text muted is="p">
+		<Text muted is='p'>
 			All of our reviews are from verified customers.
 		</Text>
 	</TextContainer>
@@ -80,7 +80,7 @@ export const withNoBodyText = () => (
 
 export const withNoTitleText = () => (
 	<TextContainer>
-		<Text muted is="p">
+		<Text muted is='p'>
 			To get started, choose a credit pack that will used for Auto Top-Up.
 		</Text>
 	</TextContainer>

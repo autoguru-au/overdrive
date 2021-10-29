@@ -1,10 +1,7 @@
 import { useStyles } from 'react-treat';
 import { Theme } from 'treat/theme';
 
-import {
-	resolveResponsiveStyle_legacy,
-	ResponsiveProp,
-} from '../../utils/responsiveProps_legacy';
+import { resolveResponsiveStyle_legacy, ResponsiveProp } from '../../utils/responsiveProps_legacy';
 
 import * as styleRefs from './useNegativeMarginLeft.treat';
 

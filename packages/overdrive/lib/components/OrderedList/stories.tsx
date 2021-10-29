@@ -7,7 +7,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default { title: 'Foundation/List/OrderedList', component: OrderedList } as ComponentMeta<typeof OrderedList>;
 
-export const Template: ComponentStory<typeof OrderedList> = (args) => (
+const Template: ComponentStory<typeof OrderedList> = (args) => (
 	<OrderedList {...args}>
 		<OrderedList.Item>
 			<Text>Strawberry</Text>

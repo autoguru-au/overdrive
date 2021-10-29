@@ -48,7 +48,7 @@ export const CheckBox = forwardRef<HTMLInputElement, Props>(
 		return (
 			<CheckableBase
 				ref={ref}
-				inputType="checkbox"
+				inputType='checkbox'
 				className={className}
 				inputName={name}
 				value={value}
@@ -61,12 +61,12 @@ export const CheckBox = forwardRef<HTMLInputElement, Props>(
 					<Icon
 						className={clsx(styles.icon, iconStyles)}
 						icon={CheckIcon}
-						size="small"
+						size='small'
 					/>
 				) : null}
 				<Box
-					borderWidth="2"
-					borderColour="gray"
+					borderWidth='2'
+					borderColour='gray'
 					className={clsx(checkableItem, styles.base.default, {
 						[styles.base.selected]: checked,
 					})}

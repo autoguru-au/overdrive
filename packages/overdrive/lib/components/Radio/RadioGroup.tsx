@@ -1,11 +1,5 @@
 import * as React from 'react';
-import {
-	createContext,
-	forwardRef,
-	ReactNode,
-	useContext,
-	useMemo,
-} from 'react';
+import { createContext, forwardRef, ReactNode, useContext, useMemo } from 'react';
 
 import { Box } from '../Box';
 
@@ -41,11 +35,11 @@ export const RadioGroup = forwardRef<HTMLDivElement, Props>(
 			<RadioContext.Provider value={contextValue}>
 				<Box
 					ref={ref}
-					position="relative"
-					display="flex"
-					flexDirection="column"
-					width="full"
-					padding="none"
+					position='relative'
+					display='flex'
+					flexDirection='column'
+					width='full'
+					padding='none'
 					className={className}>
 					{children}
 				</Box>

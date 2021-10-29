@@ -59,7 +59,7 @@ const argTypes: ArgTypes = {
 };
 
 export const list = ({ value, ...args }) => (
-	<RadioGroup value={value} name="favourite fruit">
+	<RadioGroup value={value} name='favourite fruit'>
 		{listData.map((item: { label: string; value: string }) => {
 			return (
 				<Radio
@@ -79,8 +79,8 @@ list.args = {
 list.argTypes = argTypes;
 
 const Template = ({ value, ...args }) => (
-	<RadioGroup value={value} name="favourite fruit">
-		<Radio value="avocado" {...args} />
+	<RadioGroup value={value} name='favourite fruit'>
+		<Radio value='avocado' {...args} />
 	</RadioGroup>
 );
 
@@ -127,7 +127,7 @@ const Item = ({ label, rating }) => (
 
 const withComponentProps: ComponentProps<typeof Radio> = {
 	disabled: false,
-	children: <Item label="Avocados" rating="4.3" />,
+	children: <Item label='Avocados' rating='4.3' />,
 	value: 'berry',
 };
 
@@ -140,9 +140,9 @@ const withMultiLineComponentProps: ComponentProps<typeof Radio> = {
 				gridGap: '8px',
 				gridTemplateColumns: '1fr auto auto',
 			}}>
-			<Heading is="h5">Your last order</Heading>
-			<Badge colour="neutral" label="SUBSCRIBE" />
-			<Badge colour="neutral" label="AUTO TOP-UP" />
+			<Heading is='h5'>Your last order</Heading>
+			<Badge colour='neutral' label='SUBSCRIBE' />
+			<Badge colour='neutral' label='AUTO TOP-UP' />
 			<div
 				style={{
 					gridColumn: '1/4',

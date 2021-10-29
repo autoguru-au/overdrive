@@ -42,7 +42,7 @@ export default {
 } as ComponentMeta<typeof BulletText>;
 
 const template: ComponentStory<typeof BulletText> = (args) => (
-	<BulletText is="div" {...args} />
+	<BulletText is='div' {...args} />
 );
 
 const primaryProps: ComponentProps<typeof BulletText> = {
@@ -72,7 +72,7 @@ const withCustomBulletProps: ComponentProps<typeof BulletText> = {
 				justifyContent: 'center',
 				alignItems: 'center',
 			}}>
-			<Icon size="small" icon={CheckIcon} />
+			<Icon size='small' icon={CheckIcon} />
 		</span>
 	),
 };

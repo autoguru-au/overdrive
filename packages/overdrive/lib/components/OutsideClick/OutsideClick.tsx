@@ -1,14 +1,5 @@
 import { warning } from '@autoguru/utilities';
-import {
-	Children,
-	cloneElement,
-	memo,
-	NamedExoticComponent,
-	ReactElement,
-	RefObject,
-	useEffect,
-	useRef,
-} from 'react';
+import { Children, cloneElement, memo, NamedExoticComponent, ReactElement, RefObject, useEffect, useRef } from 'react';
 
 import { noop } from '../../utils';
 
@@ -45,10 +36,8 @@ export const useOutsideClick = (
 	}, [refs]);
 };
 
-const bindEvent = <
-	Node extends HTMLElement | HTMLDocument,
-	K extends keyof HTMLElementEventMap
->(
+const bindEvent = <Node extends HTMLElement | HTMLDocument,
+	K extends keyof HTMLElementEventMap>(
 	node: Node,
 	event: K,
 	callback: (event: HTMLElementEventMap[K]) => unknown,

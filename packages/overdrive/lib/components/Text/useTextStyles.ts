@@ -19,14 +19,14 @@ export interface TextStyleProps {
 }
 
 export const useTextStyles = ({
-	align,
-	colour,
-	fontWeight,
-	is,
-	noWrap,
-	size,
-	transform,
-}: TextStyleProps) => {
+								  align,
+								  colour,
+								  fontWeight,
+								  is,
+								  noWrap,
+								  size,
+								  transform,
+							  }: TextStyleProps) => {
 	return clsx(
 		styles.root,
 		useBoxStyles({ is, textAlign: align }),

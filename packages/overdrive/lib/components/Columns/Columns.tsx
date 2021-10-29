@@ -55,8 +55,8 @@ export const Columns = forwardRef<HTMLElement, Props>(
 			<Box
 				ref={ref}
 				is={is}
-				display="flex"
-				flexDirection="row"
+				display='flex'
+				flexDirection='row'
 				className={clsx(
 					marginLeftFix,
 					marginTopFix,
@@ -66,7 +66,7 @@ export const Columns = forwardRef<HTMLElement, Props>(
 						[styles.wrapping.wrap]: !noWrap,
 						[styles.wrapping.noWrap]: noWrap,
 						[styles.wrapping.reverseWrap]:
-							wrappingDirection === 'reverse',
+						wrappingDirection === 'reverse',
 					},
 				)}
 				{...boxProps}>

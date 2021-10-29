@@ -39,7 +39,7 @@ describe('<Switch />', () => {
 	it.skip('should pass on className to dom element', () => {
 		expect(
 			render(
-				<Switch className="toggleButton-class" value={10} />,
+				<Switch className='toggleButton-class' value={10} />,
 			).container.querySelector('div'),
 		).toHaveClass('toggleButton-class');
 	});

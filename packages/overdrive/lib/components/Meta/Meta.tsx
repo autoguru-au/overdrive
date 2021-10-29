@@ -23,4 +23,4 @@ export const Meta: FunctionComponent<Props> = ({
 		{icon && <Icon icon={icon} className={styles.variant[variant]} />}
 		<Text>{label}</Text>
 	</Inline>
-)
+);

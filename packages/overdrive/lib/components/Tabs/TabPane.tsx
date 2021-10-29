@@ -12,9 +12,9 @@ import { TabsContext } from './Tabs';
 import * as styleRefs from './TabPane.treat';
 
 export const TabPane: FunctionComponent<{ id?: string }> = ({
-	children,
-	id: incomingId = null,
-}) => {
+																children,
+																id: incomingId = null,
+															}) => {
 	const tabPanesContext = useContext(TabPanesContext);
 	const tabsContext = useContext(TabsContext);
 
@@ -40,9 +40,9 @@ export const TabPane: FunctionComponent<{ id?: string }> = ({
 			aria-hidden={isActive ? undefined : true}
 			className={styles.root}
 			tabIndex={0}
-			role="tabpanel"
+			role='tabpanel'
 			id={myId}
-			width="full">
+			width='full'>
 			{isActive || renderInactive ? children : undefined}
 		</Box>
 	);

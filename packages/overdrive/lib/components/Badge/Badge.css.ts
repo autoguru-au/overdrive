@@ -30,7 +30,7 @@ export const colours = {
 		},
 		blue: {
 			backgroundColor:
-				vars.colours.intent.information.background.standard,
+			vars.colours.intent.information.background.standard,
 		},
 		yellow: {
 			backgroundColor: vars.colours.intent.warning.background.standard,
@@ -59,7 +59,7 @@ export const colours = {
 		blue: styleVariants({
 			background: {
 				backgroundColor:
-					vars.colours.intent.information.background.mild,
+				vars.colours.intent.information.background.mild,
 			},
 			text: {
 				color: vars.colours.intent.information.background.standard,

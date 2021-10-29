@@ -1,8 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
-
-import { Anchor } from '../Anchor';
 import { Text } from '../Text';
 
 import { Bullet, BulletList } from '.';

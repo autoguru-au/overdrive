@@ -53,7 +53,7 @@ const templateAllIntents: ComponentStory<typeof Alert> = (args) => (
 			gridGap: '24px',
 		}}>
 		<div>
-			<Alert {...args} intent="success" onRequestClose={onRequestClose}>
+			<Alert {...args} intent='success' onRequestClose={onRequestClose}>
 				<Text>
 					Your invoice was sent to <Text strong>abc@supplier.co</Text>
 				</Text>
@@ -61,13 +61,13 @@ const templateAllIntents: ComponentStory<typeof Alert> = (args) => (
 		</div>
 
 		<div>
-			<Alert {...args} intent="warning" onRequestClose={onRequestClose}>
+			<Alert {...args} intent='warning' onRequestClose={onRequestClose}>
 				This will affect job changes
 			</Alert>
 		</div>
 
 		<div>
-			<Alert {...args} intent="danger" onRequestClose={onRequestClose}>
+			<Alert {...args} intent='danger' onRequestClose={onRequestClose}>
 				Something went wrong
 			</Alert>
 		</div>
@@ -75,7 +75,7 @@ const templateAllIntents: ComponentStory<typeof Alert> = (args) => (
 		<div>
 			<Alert
 				{...args}
-				intent="information"
+				intent='information'
 				onRequestClose={onRequestClose}>
 				Something worth noting happened
 			</Alert>
@@ -84,7 +84,7 @@ const templateAllIntents: ComponentStory<typeof Alert> = (args) => (
 		<div>
 			<Alert
 				{...args}
-				intent="information"
+				intent='information'
 				onRequestClose={onRequestClose}>
 				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
 				commodo ligula eget dolor. Aenean massa. Cum sociis natoque
@@ -102,10 +102,8 @@ const templateAllIntents: ComponentStory<typeof Alert> = (args) => (
 	</div>
 );
 
-const standardProps: Omit<
-	ComponentProps<typeof Alert>,
-	'onRequestClose' | 'children'
-> = {
+const standardProps: Omit<ComponentProps<typeof Alert>,
+	'onRequestClose' | 'children'> = {
 	dismissible: void 0,
 	intent: void 0,
 	inline: void 0,

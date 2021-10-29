@@ -35,7 +35,7 @@ describe('<Stepper />', () => {
 
 	it.skip('should pass on className to dom element', () => {
 		expect(
-			render(<Stepper className="stepper-class" value={10} />).container
+			render(<Stepper className='stepper-class' value={10} />).container
 				.firstChild,
 		).toHaveClass('stepper-class');
 	});

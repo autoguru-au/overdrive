@@ -4,22 +4,22 @@ import * as React from 'react';
 import { NumberInput } from './NumberInput';
 
 const TestIcon = (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-		<path d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z" />
+	<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+		<path d='M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z' />
 	</svg>
 );
 
 describe('<NumberInput />', () => {
 	it('should match snapshot', () => {
 		expect(
-			render(<NumberInput placeholder="placeholder something" id="id" />)
+			render(<NumberInput placeholder='placeholder something' id='id' />)
 				.container.firstChild,
 		).toMatchSnapshot();
 	});
 
 	it('should match snapshot when loading', () => {
 		expect(
-			render(<NumberInput placeholder="placeholder something" id="id" />)
+			render(<NumberInput placeholder='placeholder something' id='id' />)
 				.container.firstChild,
 		).toMatchSnapshot();
 	});
@@ -29,8 +29,8 @@ describe('<NumberInput />', () => {
 
 		const { container } = render(
 			<NumberInput
-				placeholder="placeholder"
-				id="id"
+				placeholder='placeholder'
+				id='id'
 				hintText={hintText()}
 			/>,
 		);
@@ -43,8 +43,8 @@ describe('<NumberInput />', () => {
 	it('should have input type of number', () => {
 		const { container } = render(
 			<NumberInput
-				className="input-class"
-				placeholder="placeholder something"
+				className='input-class'
+				placeholder='placeholder something'
 			/>,
 		);
 		expect(
@@ -55,8 +55,8 @@ describe('<NumberInput />', () => {
 	it.skip('should pass on className to dom element', () => {
 		const { container } = render(
 			<NumberInput
-				className="input-class"
-				placeholder="placeholder something"
+				className='input-class'
+				placeholder='placeholder something'
 			/>,
 		);
 		expect(container.firstChild).toHaveClass('input-class');
@@ -65,8 +65,8 @@ describe('<NumberInput />', () => {
 	it('should match snapshot when active', () => {
 		const { container } = render(
 			<NumberInput
-				className="input-class"
-				placeholder="placeholder something"
+				className='input-class'
+				placeholder='placeholder something'
 			/>,
 		);
 
@@ -84,8 +84,8 @@ describe('<NumberInput />', () => {
 			render(
 				<NumberInput
 					isTouched
-					className="input-class"
-					placeholder="placeholder something"
+					className='input-class'
+					placeholder='placeholder something'
 				/>,
 			).container.firstChild,
 		).toMatchSnapshot();
@@ -97,8 +97,8 @@ describe('<NumberInput />', () => {
 				<NumberInput
 					isTouched
 					isValid
-					className="input-class"
-					placeholder="placeholder something"
+					className='input-class'
+					placeholder='placeholder something'
 				/>,
 			).container.firstChild,
 		).toMatchSnapshot();
@@ -110,8 +110,8 @@ describe('<NumberInput />', () => {
 				<NumberInput
 					isTouched
 					isValid={false}
-					className="input-class"
-					placeholder="placeholder something"
+					className='input-class'
+					placeholder='placeholder something'
 				/>,
 			).container.firstChild,
 		).toMatchSnapshot();
@@ -121,8 +121,8 @@ describe('<NumberInput />', () => {
 		expect(
 			render(
 				<NumberInput
-					className="input-class"
-					placeholder="placeholder something"
+					className='input-class'
+					placeholder='placeholder something'
 					prefixIcon={TestIcon}
 				/>,
 			).container.firstChild,
@@ -133,8 +133,8 @@ describe('<NumberInput />', () => {
 		expect(
 			render(
 				<NumberInput
-					className="input-class"
-					placeholder="placeholder something"
+					className='input-class'
+					placeholder='placeholder something'
 					suffixIcon={TestIcon}
 				/>,
 			).container.firstChild,
@@ -145,8 +145,8 @@ describe('<NumberInput />', () => {
 		expect(
 			render(
 				<NumberInput
-					className="input-class"
-					placeholder="placeholder something"
+					className='input-class'
+					placeholder='placeholder something'
 					prefixIcon={TestIcon}
 					suffixIcon={TestIcon}
 				/>,
@@ -156,7 +156,7 @@ describe('<NumberInput />', () => {
 
 	it('should display placeholder text', () => {
 		const { container } = render(
-			<NumberInput placeholder="placeholder something" />,
+			<NumberInput placeholder='placeholder something' />,
 		);
 
 		expect(container.querySelector('label')).toHaveTextContent(
@@ -169,7 +169,7 @@ describe('<NumberInput />', () => {
 
 		const { container } = render(
 			<NumberInput
-				placeholder="placeholder something"
+				placeholder='placeholder something'
 				onFocus={spyedCallback}
 			/>,
 		);
@@ -184,7 +184,7 @@ describe('<NumberInput />', () => {
 
 		const { container } = render(
 			<NumberInput
-				placeholder="placeholder something"
+				placeholder='placeholder something'
 				onBlur={spyedCallback}
 			/>,
 		);
@@ -199,7 +199,7 @@ describe('<NumberInput />', () => {
 
 		const { container } = render(
 			<NumberInput
-				placeholder="placeholder something"
+				placeholder='placeholder something'
 				onChange={spyedCallback}
 			/>,
 		);

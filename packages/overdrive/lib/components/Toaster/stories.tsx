@@ -47,7 +47,7 @@ export const InsideModal = () => {
 	const toast = useToast();
 
 	return (
-		<StandardModal isOpen title="Test inside modal">
+		<StandardModal isOpen title='Test inside modal'>
 			<div style={{ padding: 20 }}>
 				<Button onClick={() => toast.success('Successful message!')}>
 					Success

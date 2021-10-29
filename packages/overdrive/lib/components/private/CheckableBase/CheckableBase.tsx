@@ -48,13 +48,13 @@ export const CheckableBase = forwardRef<HTMLInputElement, Props>(
 
 		return (
 			<Box
-				display="flex"
-				alignItems="center"
-				flexDirection="row"
-				justifyContent="flexStart"
-				padding="3"
-				paddingLeft="none"
-				position="relative"
+				display='flex'
+				alignItems='center'
+				flexDirection='row'
+				justifyContent='flexStart'
+				padding='3'
+				paddingLeft='none'
+				position='relative'
 				className={[
 					styles.root,
 					useBoxStyles({ is: 'button' }),
@@ -63,12 +63,12 @@ export const CheckableBase = forwardRef<HTMLInputElement, Props>(
 				]}>
 				<Box
 					ref={ref}
-					is="input"
-					position="absolute"
-					width="full"
-					height="full"
-					margin="none"
-					padding="none"
+					is='input'
+					position='absolute'
+					width='full'
+					height='full'
+					margin='none'
+					padding='none'
 					name={inputName}
 					value={value}
 					checked={checked}
@@ -86,10 +86,10 @@ export const CheckableBase = forwardRef<HTMLInputElement, Props>(
 					onChange={onChange}
 				/>
 				<Box
-					display="flex"
-					alignItems="center"
-					justifyContent="center"
-					position="relative"
+					display='flex'
+					alignItems='center'
+					justifyContent='center'
+					position='relative'
 					className={[
 						styles.checkable,
 						useBoxStyles({ is: 'button' }),
@@ -97,8 +97,8 @@ export const CheckableBase = forwardRef<HTMLInputElement, Props>(
 					{children}
 				</Box>
 				<Box
-					is="label"
-					width="full"
+					is='label'
+					width='full'
 					pointerEvents={disabled ? 'none' : void 0}
 					className={clsx(
 						useBoxStyles({ is: 'button' }),
@@ -107,7 +107,7 @@ export const CheckableBase = forwardRef<HTMLInputElement, Props>(
 							[styles.label.disabled]: disabled,
 						},
 					)}>
-					{nakedLabel ? <Text is="span">{label}</Text> : label}
+					{nakedLabel ? <Text is='span'>{label}</Text> : label}
 				</Box>
 			</Box>
 		);

@@ -63,7 +63,7 @@ const TestPane = ({ children, testId }) => {
 	return (
 		<>
 			<input
-				type="checkbox"
+				type='checkbox'
 				data-testid={`checkbox-${testId}`}
 				checked={checked}
 				onChange={() => setChecked((prev) => !prev)}

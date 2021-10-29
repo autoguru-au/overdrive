@@ -4,18 +4,16 @@ import * as React from 'react';
 import { Box } from '../Box';
 import { withEnhancedInput } from '../private/InputBase';
 
-export const DateInput = withEnhancedInput<
-	Partial<Pick<HTMLInputElement, 'min' | 'max'>>
->(
+export const DateInput = withEnhancedInput<Partial<Pick<HTMLInputElement, 'min' | 'max'>>>(
 	({
-		field,
-		eventHandlers,
-		validation,
-		isLoading,
-		suffixed,
-		prefixed,
-		...rest
-	}) => {
+		 field,
+		 eventHandlers,
+		 validation,
+		 isLoading,
+		 suffixed,
+		 prefixed,
+		 ...rest
+	 }) => {
 		warning(
 			field.value !== '',
 			'Date Input does not support empty values.',
@@ -23,12 +21,12 @@ export const DateInput = withEnhancedInput<
 
 		return (
 			<Box
-				is="input"
+				is='input'
 				{...eventHandlers}
 				{...field}
 				{...rest}
-				autoComplete="off"
-				type="date"
+				autoComplete='off'
+				type='date'
 			/>
 		);
 	},

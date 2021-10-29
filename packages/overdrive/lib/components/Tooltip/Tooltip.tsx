@@ -1,13 +1,5 @@
 import * as React from 'react';
-import {
-	Children,
-	cloneElement,
-	FunctionComponent,
-	ReactElement,
-	useCallback,
-	useRef,
-	useState,
-} from 'react';
+import { Children, cloneElement, FunctionComponent, ReactElement, useCallback, useRef, useState } from 'react';
 import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
@@ -24,10 +16,10 @@ export interface Props {
 }
 
 export const Tooltip: FunctionComponent<Props> = ({
-	alignment = EAlignment.RIGHT,
-	label,
-	children,
-}) => {
+													  alignment = EAlignment.RIGHT,
+													  label,
+													  children,
+												  }) => {
 	const styles = useStyles(styleRefs);
 	const [isOpen, setIsOpen] = useState(false);
 	const childRef = useRef<HTMLDivElement>(null);
@@ -63,15 +55,15 @@ export const Tooltip: FunctionComponent<Props> = ({
 				<Box
 					ref={childRef}
 					className={styles.root}
-					width="full"
-					pointerEvents="none"
-					userSelect="none"
-					overflow="hidden"
-					borderRadius="1"
-					boxShadow="4"
-					backgroundColour="gray900"
-					padding="4">
-					<Text colour="white">{label}</Text>
+					width='full'
+					pointerEvents='none'
+					userSelect='none'
+					overflow='hidden'
+					borderRadius='1'
+					boxShadow='4'
+					backgroundColour='gray900'
+					padding='4'>
+					<Text colour='white'>{label}</Text>
 				</Box>
 			</Positioner>
 		</>

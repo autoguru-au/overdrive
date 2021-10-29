@@ -18,7 +18,7 @@ describe('<BulletText />', () => {
 
 	it.skip('should pass on className to dom element', () => {
 		expect(
-			render(<BulletText className="bullet-class" />).container
+			render(<BulletText className='bullet-class' />).container
 				.firstChild,
 		).toHaveClass('bullet-class');
 	});
@@ -32,7 +32,7 @@ describe('<BulletText />', () => {
 	it('should match snapshot for primary bullet text with custom bullet character', () => {
 		expect(
 			render(
-				<BulletText variant="primary" bullet="?">
+				<BulletText variant='primary' bullet='?'>
 					Hello World!
 				</BulletText>,
 			).container.firstChild,
@@ -42,7 +42,7 @@ describe('<BulletText />', () => {
 	it('should match snapshot for secondary bullet text with custom bullet character', () => {
 		expect(
 			render(
-				<BulletText variant="secondary" bullet="?">
+				<BulletText variant='secondary' bullet='?'>
 					Hello World!
 				</BulletText>,
 			).container.firstChild,
@@ -52,7 +52,7 @@ describe('<BulletText />', () => {
 	it('should match snapshot for ordered bullet text', () => {
 		expect(
 			render(
-				<BulletText ordered variant="primary" bullet="?">
+				<BulletText ordered variant='primary' bullet='?'>
 					Hello World!
 				</BulletText>,
 			).container.firstChild,
@@ -84,7 +84,7 @@ describe('<BulletText />', () => {
 	it('should use provided bullet character bullet', () => {
 		expect(
 			render(
-				<BulletText bullet="#">Hello World!</BulletText>,
+				<BulletText bullet='#'>Hello World!</BulletText>,
 			).container.querySelector('span'),
 		).toHaveTextContent('#');
 	});

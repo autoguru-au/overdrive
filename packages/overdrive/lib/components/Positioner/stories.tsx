@@ -81,7 +81,7 @@ const WithScrollTemplate: ComponentStory<typeof Positioner> = (args) => {
 						paddingTop: 'calc((100vh*5) / 2)',
 						paddingLeft: 'calc((100vw*5) / 2)',
 					}}>
-					<Button ref={triggerRef} size="small">
+					<Button ref={triggerRef} size='small'>
 						I'm the trigger
 					</Button>
 				</div>
@@ -131,9 +131,7 @@ const illustrateAScrollProps = {
 	isOpen: true,
 };
 
-export const illustrateAScroll: ComponentStory<
-	typeof Positioner
-> = WithScrollTemplate.bind(illustrateAScrollProps);
+export const illustrateAScroll: ComponentStory<typeof Positioner> = WithScrollTemplate.bind(illustrateAScrollProps);
 illustrateAScroll.args = openProps;
 illustrateAScroll.parameters = {
 	chromatic: { disableSnapshot: true },

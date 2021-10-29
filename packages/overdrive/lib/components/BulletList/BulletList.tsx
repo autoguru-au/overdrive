@@ -12,13 +12,13 @@ export interface Props {
 }
 
 export const BulletList: FunctionComponent<Props> = ({
-	children,
-	className,
-}) => {
+														 children,
+														 className,
+													 }) => {
 	const stack = useContext(BulletListContext);
 	return (
 		<Box
-			is="ul"
+			is='ul'
 			className={clsx(className, styles.root, {
 				[styles.firstOccurrence]: stack === -1,
 			})}>

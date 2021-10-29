@@ -1,14 +1,9 @@
-import type {
-	CSSProperties,
-	StyleWithSelectors,
-} from '@vanilla-extract/css/dist/declarations/src/types';
+import type { CSSProperties, StyleWithSelectors } from '@vanilla-extract/css/dist/declarations/src/types';
 
 import { breakpoints } from '../themes/base/tokens';
 
 export const responsiveStyle = (
-	breakpointsEntries: Partial<
-		Record<keyof typeof breakpoints, StyleWithSelectors>
-	>,
+	breakpointsEntries: Partial<Record<keyof typeof breakpoints, StyleWithSelectors>>,
 ): CSSProperties => {
 	const styles = {};
 

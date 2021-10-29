@@ -1,12 +1,7 @@
 import { ChevronLeftIcon, ChevronRightIcon, IconType } from '@autoguru/icons';
 import clsx from 'clsx';
 import * as React from 'react';
-import {
-	FunctionComponent,
-	MouseEventHandler,
-	useCallback,
-	useMemo,
-} from 'react';
+import { FunctionComponent, MouseEventHandler, useCallback, useMemo } from 'react';
 import { useStyles } from 'react-treat';
 
 import { noop } from '../../utils';
@@ -42,32 +37,32 @@ interface NavButtonProps {
 }
 
 const NavButton: FunctionComponent<NavButtonProps> = ({
-	icon,
-	disabled,
-	label = '',
-	onClick = noop,
-}) => {
+														  icon,
+														  disabled,
+														  label = '',
+														  onClick = noop,
+													  }) => {
 	const styles = useStyles(styleRefs);
 	return (
 		<Box
-			is="button"
+			is='button'
 			aria-disabled={disabled}
 			aria-label={label}
-			display="flex"
-			overflow="hidden"
-			alignItems="center"
-			flexDirection="row"
-			justifyContent="center"
-			textAlign="center"
-			borderRadius="pill"
-			padding="2"
-			userSelect="none"
+			display='flex'
+			overflow='hidden'
+			alignItems='center'
+			flexDirection='row'
+			justifyContent='center'
+			textAlign='center'
+			borderRadius='pill'
+			padding='2'
+			userSelect='none'
 			pointerEvents={disabled ? 'none' : void 0}
 			className={clsx(useTextStyles({ colour: 'light' }), {
 				[styles.disabled]: disabled,
 			})}
 			onClick={onClick}>
-			<Icon size="medium" icon={icon} />
+			<Icon size='medium' icon={icon} />
 		</Box>
 	);
 };
@@ -78,18 +73,18 @@ interface LoadingComponentProps {
 }
 
 const Loading: FunctionComponent<LoadingComponentProps> = ({
-	placeholderBubblesNum = 3,
-}) => {
+															   placeholderBubblesNum = 3,
+														   }) => {
 	const styles = useStyles(styleRefs);
 	return (
-		<Inline is="span" space="3">
+		<Inline is='span' space='3'>
 			<NavButton disabled icon={ChevronLeftIcon} />
 			{Array.from({ length: placeholderBubblesNum })
 				.fill('')
 				.map((_, index) => (
 					<Bubble
 						key={index}
-						children=""
+						children=''
 						disabled
 						className={styles.disabled}
 					/>
@@ -101,13 +96,13 @@ const Loading: FunctionComponent<LoadingComponentProps> = ({
 };
 
 export const Pagination: FunctionComponent<Props> = ({
-	total,
-	pageSize,
-	activePage,
-	numPagesDisplayed = 5,
-	loading = false,
-	onChange = noop,
-}) => {
+														 total,
+														 pageSize,
+														 activePage,
+														 numPagesDisplayed = 5,
+														 loading = false,
+														 onChange = noop,
+													 }) => {
 	const numPages: number = useMemo(() => calcPagesNum(total, pageSize), [
 		total,
 		pageSize,
@@ -126,10 +121,10 @@ export const Pagination: FunctionComponent<Props> = ({
 	);
 
 	return !loading && total && pageSize && activePage && numPagesDisplayed ? (
-		<Inline is="nav" space="3" aria-label="pagination">
+		<Inline is='nav' space='3' aria-label='pagination'>
 			<NavButton
 				disabled={activePage <= 1}
-				label="navigate back"
+				label='navigate back'
 				icon={ChevronLeftIcon}
 				onClick={handleClick(activePage - 1)}
 			/>
@@ -151,7 +146,7 @@ export const Pagination: FunctionComponent<Props> = ({
 
 			<NavButton
 				disabled={activePage >= numPages}
-				label="navigate forward"
+				label='navigate forward'
 				icon={ChevronRightIcon}
 				onClick={handleClick(allowedActive + 1)}
 			/>
