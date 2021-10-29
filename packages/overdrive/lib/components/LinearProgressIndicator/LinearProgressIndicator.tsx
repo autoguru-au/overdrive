@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { memo, NamedExoticComponent } from 'react';
-import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
 
-import * as styleRefs from './LinearProgressIndicator.treat';
+import * as styles from './LinearProgressIndicator.css';
 
 export interface Props {
 	className?: string;
@@ -12,7 +11,6 @@ export interface Props {
 
 export const LinearProgressIndicator: NamedExoticComponent<Props> = memo(
 	({ className = '' }) => {
-		const styles = useStyles(styleRefs);
 		return (
 			<Box
 				position="relative"

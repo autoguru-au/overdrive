@@ -1,6 +1,9 @@
 import * as React from 'react';
+import { ComponentProps } from 'react';
 
 import { LoadingBox } from '.';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { boxArgTypes } from '../Box/stories';
 
 export default {
 	title: 'Components/Loading/Box',
@@ -13,8 +16,28 @@ export default {
 		),
 	],
 	parameters: { chromatic: { disable: true } },
-};
+	argTypes: boxArgTypes,
+} as ComponentMeta<typeof LoadingBox>;
 
-export const standard = () => <LoadingBox />;
-export const blinkingOff = () => <LoadingBox blinking={false} />;
-export const randumWidth = () => <LoadingBox randomWidth />;
+
+const Template: ComponentStory<typeof LoadingBox> = (args) => (
+	<LoadingBox {...args} />
+);
+
+
+const standardProps: ComponentProps<typeof LoadingBox> = {};
+export const standard = Template.bind(standardProps);
+standard.args = standardProps;
+
+
+const blinkingOffProps: ComponentProps<typeof LoadingBox> = {
+	blinking: false,
+};
+export const blinkingOff = Template.bind(blinkingOffProps);
+blinkingOff.args = blinkingOffProps;
+
+const randomWidthProps: ComponentProps<typeof LoadingBox> = {
+	randomWidth: true,
+};
+export const randomWidth = Template.bind(randomWidthProps);
+randomWidth.args = randomWidthProps;
