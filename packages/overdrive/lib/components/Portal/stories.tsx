@@ -1,8 +1,12 @@
 import * as React from 'react';
+import { ComponentProps } from 'react';
 
 import { Text } from '../Text';
 
 import { Portal } from '.';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Stack } from '../Stack';
+import { Heading } from '../Heading';
 
 export default {
 	title: 'Utility/Portal',
@@ -10,21 +14,42 @@ export default {
 	parameters: {
 		chromatic: { disable: true },
 	},
-};
+	argTypes: {
+		children: {
+			control: {
+				disable: true,
+			},
+		},
+		container: {
+			control: {
+				disable: true,
+			},
+		},
+	},
+} as ComponentMeta<typeof Portal>;
 
-export const Standard = () => (
-	<Portal>
-		<Text>Im in a portal at the root.</Text>
+const StandardTemplate: ComponentStory<typeof Portal> = (...args) => (
+	<Portal {...args}>
+		<Text colour='primary'>Im in a portal at the root.</Text>
 	</Portal>
 );
 
-export const Nested = () => (
-	<Portal>
-		<div>
-			test child 1
-			<Portal>
-				<div>test child 2</div>
+const NestedTemplate: ComponentStory<typeof Portal> = (...args) => (
+	<Portal {...args}>
+		<Stack space='5'>
+			<Heading is='h3' colour='information'>test child 1</Heading>
+			<Portal {...args}>
+				<Text colour='primary'>test child 2</Text>
 			</Portal>
-		</div>
+		</Stack>
 	</Portal>
 );
+
+const standardProps: Omit<ComponentProps<typeof Portal>, 'children'> = {
+	container: document?.getElementsByTagName('body')[0],
+};
+export const standard = StandardTemplate.bind(standardProps);
+standard.args = standardProps;
+
+export const nested = NestedTemplate.bind(standardProps);
+nested.args = standardProps;
