@@ -15,7 +15,7 @@ const Template: ComponentStory<typeof Pagination> = (args) => (
 	<Box
 		style={{
 			height: '100vh',
-			widht: '100vw',
+			width: '100vw',
 			maxHeight: '350px',
 		}}
 		display="flex"

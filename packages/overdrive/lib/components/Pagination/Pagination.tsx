@@ -7,7 +7,6 @@ import {
 	useCallback,
 	useMemo,
 } from 'react';
-import { useStyles } from 'react-treat';
 
 import { noop } from '../../utils';
 import { Box } from '../Box';
@@ -17,7 +16,7 @@ import { useTextStyles } from '../Text';
 
 import { Bubble } from './Bubble';
 
-import * as styleRefs from './Pagination.treat';
+import * as styles from './Pagination.css';
 
 interface OnChangeObject {
 	pageNumber: number;
@@ -46,31 +45,28 @@ const NavButton: FunctionComponent<NavButtonProps> = ({
 	disabled,
 	label = '',
 	onClick = noop,
-}) => {
-	const styles = useStyles(styleRefs);
-	return (
-		<Box
-			is="button"
-			aria-disabled={disabled}
-			aria-label={label}
-			display="flex"
-			overflow="hidden"
-			alignItems="center"
-			flexDirection="row"
-			justifyContent="center"
-			textAlign="center"
-			borderRadius="pill"
-			padding="2"
-			userSelect="none"
-			pointerEvents={disabled ? 'none' : void 0}
-			className={clsx(useTextStyles({ colour: 'light' }), {
-				[styles.disabled]: disabled,
-			})}
-			onClick={onClick}>
-			<Icon size="medium" icon={icon} />
-		</Box>
-	);
-};
+}) => (
+	<Box
+		is="button"
+		aria-disabled={disabled}
+		aria-label={label}
+		display="flex"
+		overflow="hidden"
+		alignItems="center"
+		flexDirection="row"
+		justifyContent="center"
+		textAlign="center"
+		borderRadius="pill"
+		padding="2"
+		userSelect="none"
+		pointerEvents={disabled ? 'none' : void 0}
+		className={clsx(useTextStyles({ colour: 'light' }), {
+			[styles.disabled]: disabled,
+		})}
+		onClick={onClick}>
+		<Icon size="medium" icon={icon} />
+	</Box>
+);
 
 interface LoadingComponentProps {
 	className?: string;
@@ -79,26 +75,23 @@ interface LoadingComponentProps {
 
 const Loading: FunctionComponent<LoadingComponentProps> = ({
 	placeholderBubblesNum = 3,
-}) => {
-	const styles = useStyles(styleRefs);
-	return (
-		<Inline is="span" space="3">
-			<NavButton disabled icon={ChevronLeftIcon} />
-			{Array.from({ length: placeholderBubblesNum })
-				.fill('')
-				.map((_, index) => (
-					<Bubble
-						key={index}
-						children=""
-						disabled
-						className={styles.disabled}
-					/>
-				))}
+}) => (
+	<Inline is="span" space="3">
+		<NavButton disabled icon={ChevronLeftIcon} />
+		{Array.from({ length: placeholderBubblesNum })
+			.fill('')
+			.map((_, index) => (
+				<Bubble
+					key={index}
+					children=""
+					disabled
+					className={styles.disabled}
+				/>
+			))}
 
-			<NavButton disabled icon={ChevronRightIcon} />
-		</Inline>
-	);
-};
+		<NavButton disabled icon={ChevronRightIcon} />
+	</Inline>
+)
 
 export const Pagination: FunctionComponent<Props> = ({
 	total,
