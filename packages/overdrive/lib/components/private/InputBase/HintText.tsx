@@ -1,12 +1,11 @@
 import clsx from 'clsx';
 import * as React from 'react';
 import { FunctionComponent, ReactNode } from 'react';
-import { useStyles } from 'react-treat';
 
 import { useBoxStyles } from '../../Box';
 import { Text } from '../../Text';
 
-import * as styleRefs from './HintText.treat';
+import * as styles from './HintText.css';
 
 export interface Props {
 	hintText: ReactNode;
@@ -21,7 +20,6 @@ export const HintText: FunctionComponent<Props> = ({
 	hintText,
 	className = '',
 }) => {
-	const styles = useStyles(styleRefs);
 	const boxStyles = useBoxStyles({
 		is: 'p',
 		marginTop: '2',
