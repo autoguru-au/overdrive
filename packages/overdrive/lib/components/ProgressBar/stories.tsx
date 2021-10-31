@@ -1,35 +1,39 @@
-import isChromatic from 'chromatic/isChromatic';
 import * as React from 'react';
-import { useEffect, useState } from 'react';
+import { ComponentProps } from 'react';
 
 import { Stack } from '../Stack';
 
 import { ProgressBar } from '.';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
 	title: 'Components/Progress/ProgressBar',
 	component: ProgressBar,
+} as ComponentMeta<typeof ProgressBar>;
+
+const Template: ComponentStory<typeof ProgressBar> = (args) => (
+	<ProgressBar {...args} />
+);
+
+const AllColoursTemplate: ComponentStory<typeof ProgressBar> = (args) => (
+	<Stack space='2'>
+		<ProgressBar value={0.5} colour='green' {...args} />
+		<ProgressBar value={0.4} colour='blue'  {...args} />
+		<ProgressBar value={0.1} colour='neutral'  {...args} />
+		<ProgressBar value={15} colour='red'  {...args} />
+		<ProgressBar value={0.156} colour='yellow'  {...args} />
+	</Stack>
+);
+
+const standardProps: ComponentProps<typeof ProgressBar> = {};
+export const standard = Template.bind(standardProps);
+standard.args = standardProps;
+
+const withValueProps: ComponentProps<typeof ProgressBar> = {
+	value: 0.3,
 };
+export const withValue = Template.bind(withValueProps);
+withValue.args = withValueProps;
 
-export const Standard = () => {
-	const [width, setWidth] = useState(0);
-
-	useEffect(() => {
-		const i = setInterval(() => {
-			setWidth(Math.random());
-		}, 1e3);
-
-		return () => clearInterval(i);
-	}, []);
-
-	return (
-		<Stack space={2}>
-			{!isChromatic() && <ProgressBar value={width} colour="green" />}
-			<ProgressBar value={0.5} colour="green" />
-			<ProgressBar value={0.4} colour="blue" />
-			<ProgressBar value={0.1} colour="neutral" />
-			<ProgressBar value={15} colour="red" />
-			<ProgressBar value={0.156} colour="yellow" />
-		</Stack>
-	);
-};
+export const allColours = AllColoursTemplate.bind(standardProps);
+allColours.args = standardProps;
