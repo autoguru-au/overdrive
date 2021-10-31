@@ -1,12 +1,11 @@
 import clsx from 'clsx';
 import * as React from 'react';
 import { FunctionComponent, useEffect, useRef, useState } from 'react';
-import { useStyles } from 'react-treat';
 
 import { Box } from '../../Box';
 import { useTextStyles } from '../../Text';
 
-import * as styleRefs from './NotchedBase.treat';
+import * as styles from './NotchedBase.css';
 
 const ACTIVE_SCALING_FACTOR = 0.7777;
 const ACTIVE_PADDING_ADDED = 16;
@@ -36,7 +35,6 @@ export const NotchedBase: FunctionComponent<Props> = ({
 	placeholderColourClassName,
 	className = '',
 }) => {
-	const styles = useStyles(styleRefs);
 	const labelStyles = useTextStyles({
 		noWrap: true,
 		size: '4',
@@ -119,6 +117,7 @@ export const NotchedBase: FunctionComponent<Props> = ({
 					</div>
 					<div
 						className={clsx(
+							'chromatic-ignore',
 							styles.borders.trailing,
 							borderColourClassName,
 						)}
