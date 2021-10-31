@@ -1,14 +1,5 @@
 import { warning } from '@autoguru/utilities';
-import {
-	Children,
-	cloneElement,
-	memo,
-	NamedExoticComponent,
-	ReactElement,
-	RefObject,
-	useEffect,
-	useRef,
-} from 'react';
+import { Children, cloneElement, FunctionComponent, ReactElement, RefObject, useEffect, useRef } from 'react';
 
 import { noop } from '../../utils';
 
@@ -68,7 +59,7 @@ export interface Props {
 	onOutsideClick?(): void;
 }
 
-export const OutsideClick: NamedExoticComponent<Props> = memo(
+export const OutsideClick: FunctionComponent<Props> =
 	({ children, onOutsideClick = noop }) => {
 		const child = Children.only(children);
 
@@ -85,5 +76,4 @@ export const OutsideClick: NamedExoticComponent<Props> = memo(
 		return cloneElement(child, {
 			ref: rootClickRef,
 		});
-	},
-);
+	};
