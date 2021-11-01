@@ -1,14 +1,13 @@
 import * as React from 'react';
-import { Fragment, FunctionComponent } from 'react';
-import { useStyles } from 'react-treat';
+import { ComponentProps, Fragment, FunctionComponent } from 'react';
 
 import { Box } from '../Box';
 import { ProgressBar } from '../ProgressBar';
 import { Text } from '../Text';
 
-import * as styleRefs from './ProgressBarGroup.treat';
+import * as styles from './ProgressBarGroup.css';
 
-export interface Props {
+export interface Props extends Pick<ComponentProps<typeof ProgressBar>, 'colour'> {
 	prefixLabels?: string[];
 	suffixLabels?: string[];
 	count?: number;
@@ -16,19 +15,19 @@ export interface Props {
 }
 
 export const ProgressBarGroup: FunctionComponent<Props> = ({
-	prefixLabels,
-	suffixLabels,
-	values,
-	count = values.reduce((result, item) => result + item, 0),
-}) => {
-	const styles = useStyles(styleRefs);
+															   prefixLabels,
+															   suffixLabels,
+															   values,
+															   count = values.reduce((result, item) => result + item, 0),
+															   colour,
+														   }) => {
 	const hasPrefixLabels = Array.isArray(prefixLabels);
 	const hasSuffixLabels = Array.isArray(suffixLabels);
 
 	return (
 		<Box
 			className={styles.root}
-			alignItems="center"
+			alignItems='center'
 			style={{
 				gridTemplateColumns: `${hasPrefixLabels ? 'auto ' : ''}1fr${
 					hasSuffixLabels ? ' auto' : ''
@@ -36,11 +35,11 @@ export const ProgressBarGroup: FunctionComponent<Props> = ({
 			}}>
 			{values.map((value, idx) => (
 				<Fragment key={idx}>
-					<Text size="3" align="right" colour="light">
+					<Text size='3' align='right' colour='light'>
 						{hasPrefixLabels ? prefixLabels![idx] : ''}
 					</Text>
-					<ProgressBar value={value / count} />
-					<Text size="3" align="left" colour="light">
+					<ProgressBar colour={colour} value={value / count} />
+					<Text size='3' align='left' colour='light'>
 						{hasSuffixLabels ? suffixLabels![idx] : ''}
 					</Text>
 				</Fragment>
