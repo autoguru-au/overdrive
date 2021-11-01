@@ -1,6 +1,6 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@autoguru/icons';
 import * as React from 'react';
-import { memo, NamedExoticComponent } from 'react';
+import { FunctionComponent } from 'react';
 
 import { noop } from '../../utils';
 import { Button } from '../Button';
@@ -20,7 +20,7 @@ export interface Props {
 	onChange?: TOnChangeEventHandler;
 }
 
-export const SimplePagination: NamedExoticComponent<Props> = memo(
+export const SimplePagination: FunctionComponent<Props> =
 	({ hasNext = false, hasPrevious = false, onChange = noop }) => {
 		const handleClick = (direction: EChangeDirection) => () => {
 			onChange(direction);
@@ -28,9 +28,9 @@ export const SimplePagination: NamedExoticComponent<Props> = memo(
 
 		return (
 			<Inline
-				is="nav"
-				space="6"
-				aria-label="pagination"
+				is='nav'
+				space='6'
+				aria-label='pagination'
 				alignX="center"
 				alignY="center">
 				<Button
@@ -45,13 +45,12 @@ export const SimplePagination: NamedExoticComponent<Props> = memo(
 				<Button
 					rounded
 					disabled={!hasNext}
-					size="small"
-					variant="secondary"
-					aria-label="next page"
+					size='small'
+					variant='secondary'
+					aria-label='next page'
 					onClick={handleClick(EChangeDirection.Next)}>
-					<Icon size="medium" icon={ChevronRightIcon} />
+					<Icon size='medium' icon={ChevronRightIcon} />
 				</Button>
 			</Inline>
 		);
-	},
-);
+	};
