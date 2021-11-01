@@ -1,8 +1,6 @@
 import { useMedia } from '../..';
-import {
-	getEarliestKnownToken,
-	ResponsiveProp,
-} from '../../utils/responsiveProps_legacy';
+import { ResponsiveProp } from '../../utils/responsiveProps.css';
+import { getEarliestKnownToken } from '../../utils/resolveResponsiveProps';
 
 export function useResponsiveValue<T extends string | number | boolean>(
 	responsiveValue: ResponsiveProp<T>,
