@@ -3,11 +3,11 @@
 import { useCallback, useLayoutEffect, useMemo, useState } from 'react';
 
 import { useRuntimeTokens } from '../..';
-import { RuntimeTokens } from '../../themes/makeTheme';
 import { isBrowser } from '../../utils';
+import { BreakPoints } from '../../themes/tokens';
 
 export const useMedia = (
-	queries: ReadonlyArray<keyof RuntimeTokens['breakpoints']>,
+	queries: ReadonlyArray<keyof BreakPoints>,
 	fallbackCase = false,
 ): readonly boolean[] => {
 	const runtimeTokens = useRuntimeTokens();

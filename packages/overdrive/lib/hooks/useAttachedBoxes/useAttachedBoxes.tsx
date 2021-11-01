@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import * as React from 'react';
 import { ComponentProps, FunctionComponent } from 'react';
-import { useStyles } from 'react-treat';
 
 import { Box } from '../../components';
 import {
@@ -11,12 +10,12 @@ import {
 } from '../../utils/responsiveProps_legacy';
 import { useMedia } from '../useMedia';
 
-import * as styleRefs from './useAttachedBoxes.treat';
+import * as styles from './useAttachedBoxes.css';
 
 interface Props extends Pick<ComponentProps<typeof Box>, 'backgroundColour'> {
 	count: number;
 	columnCount: ResponsiveProp<number>;
-	gap?: ResponsiveProp<keyof typeof styleRefs.grid.gaps>;
+	gap?: ResponsiveProp<keyof typeof styles.grid.gaps>;
 }
 
 type AttachedBoxProps = Omit<ComponentProps<typeof Box>, 'borderRadius'>;
@@ -48,7 +47,6 @@ export const useAttachedBoxes = ({
 	backgroundColour = 'gray900',
 }: Props): Returns => {
 	const columnCount: number = useResponsiveValue<number>(incomingColumnCount);
-	const styles = useStyles(styleRefs);
 	const decimals: number = (count / columnCount) % 1;
 	let colStart: number;
 	let extend: number;
