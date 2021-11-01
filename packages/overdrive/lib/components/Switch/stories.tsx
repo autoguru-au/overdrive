@@ -21,10 +21,3 @@ export const untoggled: ComponentStory<typeof Switch> = Template.bind(
 	standardProps,
 );
 untoggled.args = standardProps;
-
-/*
-export const untoggled = () => <Switch toggled={false} />;
-export const toggled = () => <Switch toggled />;
-export const disabledUntoggled = () => <Switch disabled toggled={false} />;
-export const disabledToggled = () => <Switch disabled toggled />;
-*/

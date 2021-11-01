@@ -1,12 +1,11 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import { FunctionComponent, memo, useCallback, useState } from 'react';
-import { useStyles } from 'react-treat';
+import { FunctionComponent, useCallback, useState } from 'react';
 
 import { Box, useBoxStyles } from '../Box';
 import { useTextStyles } from '../Text';
 
-import * as styleRefs from './Switch.treat';
+import * as styles from './Switch.css';
 
 export interface Props {
 	className?: string;
@@ -16,13 +15,12 @@ export interface Props {
 	onChange?(value: boolean): void;
 }
 
-const SwitchComponent: FunctionComponent<Props> = ({
-	className = '',
-	disabled = false,
-	toggled: incomingToggled = false,
-	onChange,
-}) => {
-	const styles = useStyles(styleRefs);
+export const Switch: FunctionComponent<Props> = ({
+													 className = '',
+													 disabled = false,
+													 toggled: incomingToggled = false,
+													 onChange,
+												 }) => {
 	const [toggled, setToggled] = useState<boolean>(incomingToggled);
 
 	const [prevValue, setPrevValue] = useState<boolean>(incomingToggled);
@@ -81,5 +79,3 @@ const SwitchComponent: FunctionComponent<Props> = ({
 		</Box>
 	);
 };
-
-export const Switch = memo(SwitchComponent);
