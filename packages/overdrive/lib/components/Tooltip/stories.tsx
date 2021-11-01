@@ -1,7 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
-
-import { Positioner } from '../Positioner';
+import { ComponentProps } from 'react';
 import { EAlignment } from '../Positioner/alignment';
 
 import { Tooltip } from '.';
@@ -27,7 +26,7 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof Positioner>;
+} as ComponentMeta<typeof Tooltip>;
 
 const Template: ComponentStory<typeof Tooltip> = (args) => (
 	<Tooltip {...args}>
@@ -35,7 +34,7 @@ const Template: ComponentStory<typeof Tooltip> = (args) => (
 	</Tooltip>
 );
 
-const standardProps = {
+const standardProps:Omit<ComponentProps<typeof Tooltip>, 'children'> = {
 	label: 'Im the tooltip body',
 };
 
@@ -44,8 +43,9 @@ export const standard: ComponentStory<typeof Tooltip> = Template.bind(
 );
 standard.args = standardProps;
 
-const withLongTextProps = {
+const withLongTextProps:Omit<ComponentProps<typeof Tooltip>, 'children'> = {
 	label: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
+	alignment: EAlignment.BOTTOM
 };
 
 export const withLongText: ComponentStory<typeof Tooltip> = Template.bind(
