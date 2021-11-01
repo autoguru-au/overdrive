@@ -4,6 +4,7 @@ import * as React from 'react';
 import { createContext, FunctionComponent, useContext } from 'react';
 
 import { Tokens } from '../../themes/tokens';
+import { RuntimeTokens } from '../../themes/makeTheme';
 
 const themeContext = createContext<ThemeVars<Tokens> | null>(null);
 
@@ -25,4 +26,10 @@ export const useTheme = () => {
 	);
 
 	return themeClass;
+};
+
+export const useRuntimeTokens = (): RuntimeTokens => {
+	const tokens = useContext(tokensContext);
+	invariant(tokens !== null, "You havn't provided a `OverdriveProvider`.");
+	return tokens;
 };
