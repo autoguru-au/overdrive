@@ -11,7 +11,6 @@ import {
 	ReactText,
 	useContext,
 } from 'react';
-import { useStyles } from 'react-treat';
 
 import { useBoxStyles } from '../Box';
 import { Inline } from '../Inline';
@@ -20,7 +19,7 @@ import { Text, useTextStyles } from '../Text';
 import { TabListContext } from './TabList';
 import { TabsContext } from './Tabs';
 
-import * as styleRefs from './Tab.treat';
+import * as styles from './Tab.css';
 
 export interface Props {
 	children: ReactText;
@@ -49,7 +48,6 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 
 		const isActive = tabsContext.activeIndex === tabListContext;
 
-		const styles = useStyles(styleRefs);
 		const indicationStyles = useBoxStyles({
 			display: 'inlineBlock',
 			paddingX: '1',
