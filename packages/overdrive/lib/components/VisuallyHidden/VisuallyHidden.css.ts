@@ -1,4 +1,4 @@
-import { style } from 'treat';
+import { style } from '@vanilla-extract/css';
 
 export const root = style({
 	clip: 'rect(1px, 1px, 1px, 1px)',
