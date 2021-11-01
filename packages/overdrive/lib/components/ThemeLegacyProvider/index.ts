@@ -1,1 +1,0 @@
-export { useRuntimeTokens } from './ThemeLegacyProvider';

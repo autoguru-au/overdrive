@@ -4,7 +4,6 @@ module.exports = {
 		require.resolve('@autoguru/babel-preset/react'),
 	],
 	plugins: [
-		require.resolve('babel-plugin-treat'),
 		require.resolve('@vanilla-extract/babel-plugin'),
 	],
 };

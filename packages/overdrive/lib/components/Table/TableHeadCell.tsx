@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import type { AriaAttributes } from 'react';
 import * as React from 'react';
 import { forwardRef, useCallback } from 'react';
-import type { Theme } from 'treat/theme';
 
 import { Alignment, alignmentToFlexAlignment } from '../../utils';
 import { Box } from '../Box';
@@ -15,12 +14,13 @@ import { VisuallyHidden } from '../VisuallyHidden';
 import { useTableContext } from './context';
 
 import * as styles from './TableHeadCell.css';
+import { Tokens } from '../../themes/tokens';
 
 type Sort = 'asc' | 'desc' | 'none';
 
 export interface Props extends Partial<Pick<AriaAttributes, 'aria-label'>> {
 	align?: Alignment;
-	padding?: keyof Theme['space'];
+	padding?: keyof Tokens['space'];
 
 	sort?: Sort;
 	onSort?: (event: MouseEvent) => void;

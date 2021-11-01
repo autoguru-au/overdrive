@@ -1,24 +1,18 @@
 import { renderHook } from '@testing-library/react-hooks';
 import * as React from 'react';
 
-import { OverdriveLegacyProvider } from '../../components/OverdriveLegacyProvider/OverdriveProvider';
-import { baseTheme } from '../../themes';
-
 import { useMedia } from './useMedia';
+import { OverdriveProvider } from '../../components';
+import { vars } from '../../themes/base/vars.css';
 
 const render = (hook, tokens) =>
 	renderHook(hook, {
 		wrapper({ children }) {
 			return (
-				<OverdriveLegacyProvider
-					theme={{
-						runtimeTokens: {
-							...baseTheme.runtimeTokens,
-							...tokens,
-						},
-					}}>
+				<OverdriveProvider
+					theme={vars}>
 					{children}
-				</OverdriveLegacyProvider>
+				</OverdriveProvider>
 			);
 		},
 	});

@@ -1,25 +1,19 @@
 import clsx from 'clsx';
 import * as React from 'react';
 import { ComponentProps, createContext, forwardRef, useMemo } from 'react';
-import { ClassRef } from 'treat';
-import type { Theme } from 'treat/theme';
 
-import {
-	useNegativeMarginLeft,
-	useNegativeMarginTop,
-} from '../../hooks/useNegativeMargin/useNegativeMargin';
-import {
-	resolveResponsiveStyle_legacy,
-	ResponsiveProp,
-} from '../../utils/responsiveProps_legacy';
+import { useNegativeMarginLeft, useNegativeMarginTop } from '../../hooks/useNegativeMargin/useNegativeMargin';
 import { Box } from '../Box';
 
 import * as styles from './Columns.css';
+import { ResponsiveProp } from '../../utils/responsiveProps.css';
+import { Tokens } from '../../themes/tokens';
+import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
 
 export interface Props extends ComponentProps<typeof Box> {
 	className?: string;
 	columns?: number;
-	space?: ResponsiveProp<keyof Theme['space']>;
+	space?: ResponsiveProp<keyof Tokens['space']>;
 	spaceX?: ResponsiveProp<keyof typeof styles.space.spaceX>;
 	spaceY?: ResponsiveProp<keyof typeof styles.space.spaceY>;
 	noWrap?: boolean;
@@ -28,8 +22,8 @@ export interface Props extends ComponentProps<typeof Box> {
 }
 
 interface ColumnContextValue {
-	spaceXCls?: ClassRef;
-	spaceYCls?: ClassRef;
+	spaceXCls;
+	spaceYCls;
 	isList: boolean;
 }
 
@@ -79,11 +73,11 @@ export const Columns = forwardRef<HTMLElement, Props>(
 				<ColumnContext.Provider
 					value={useMemo(
 						() => ({
-							spaceXCls: resolveResponsiveStyle_legacy(
+							spaceXCls: resolveResponsiveStyle(
 								resolvedSpaceX,
 								styles.space.spaceX,
 							),
-							spaceYCls: resolveResponsiveStyle_legacy(
+							spaceYCls: resolveResponsiveStyle(
 								resolvedSpaceY,
 								styles.space.spaceY,
 							),

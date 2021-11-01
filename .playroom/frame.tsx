@@ -3,11 +3,12 @@ import '../packages/overdrive/lib/reset';
 
 import * as React from 'react';
 import { StrictMode } from 'react';
-import { OverdriveLegacyProvider } from '@autoguru/overdrive';
+import { OverdriveProvider } from '@autoguru/overdrive';
+import { vars } from '@autoguru/overdrive/lib/themes/base/vars.css';
 
-export default ({ theme, children }) =>
+export default ({ children }) =>
 	<StrictMode>
-		<OverdriveLegacyProvider theme={theme}>
+		<OverdriveProvider theme={vars}>
 			{children}
-		</OverdriveLegacyProvider>
+		</OverdriveProvider>
 	</StrictMode>

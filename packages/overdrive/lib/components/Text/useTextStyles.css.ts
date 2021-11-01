@@ -2,7 +2,7 @@ import { style, StyleRule, styleVariants } from '@vanilla-extract/css';
 
 import { vars } from '../../themes/base/vars.css';
 import { Tokens } from '../../themes/tokens';
-import { mapTokenToProperty_Legacy } from '../../utils/mapTokenToProperty_Legacy';
+import { mapTokenToProperty } from '../../utils/mapTokenToProperty';
 
 export const root = style({
 	selectors: {
@@ -27,17 +27,17 @@ export const sizes = styleVariants(
 );
 
 export const colours = styleVariants(
-	mapTokenToProperty_Legacy(vars.typography.colour, 'color'),
+	mapTokenToProperty(vars.typography.colour, 'color'),
 );
 
 export const fontWeight = styleVariants(
-	mapTokenToProperty_Legacy(vars.typography.fontWeight, 'fontWeight'),
+	mapTokenToProperty(vars.typography.fontWeight, 'fontWeight'),
 );
 
 export const noWrap = style({ whiteSpace: 'nowrap' });
 
 export const transform = styleVariants(
-	mapTokenToProperty_Legacy(
+	mapTokenToProperty(
 		{ uppercase: 'uppercase', capitalize: 'capitalize' },
 		'textTransform',
 	),

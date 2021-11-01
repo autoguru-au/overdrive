@@ -1,6 +1,5 @@
 const { VanillaExtractPlugin } = require('@vanilla-extract/webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { TreatPlugin } = require('treat/webpack-plugin');
 
 module.exports = {
 	webpackFinal(baseConfig, options) {
@@ -10,21 +9,6 @@ module.exports = {
 			...baseConfig,
 			plugins: [
 				...plugins,
-				new TreatPlugin({
-					localIdentName: '[name]-[local]_[hash:base64:5]',
-					themeIdentName: '_[name]-[local]_[hash:base64:4]',
-					outputLoaders: [
-						{
-							sideEffect: true,
-							loader: require.resolve('style-loader'),
-							options: {
-								attributes: {
-									treat: true,
-								},
-							},
-						},
-					],
-				}),
 				new VanillaExtractPlugin(),
 				new MiniCssExtractPlugin(),
 			],

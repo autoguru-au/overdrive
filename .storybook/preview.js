@@ -5,7 +5,6 @@ import isChromatic from 'chromatic/isChromatic';
 import {
 	Box,
 	Heading,
-	OverdriveLegacyProvider,
 	OverdriveProvider,
 	Stack,
 	useTheme,
@@ -16,17 +15,15 @@ import { DocsContainer, DocsPage } from '@storybook/addon-docs';
 import { vars } from '@autoguru/overdrive/lib/themes/base/vars.css';
 const withThemeProvider = (Story, context) => {
 	return !isChromatic() ? (
-		<OverdriveLegacyProvider theme={context.globals.theme}>
+
 			<OverdriveProvider theme={vars}>
 				<Box className={vars} padding="2">
 					<Story {...context} />
 				</Box>
 			</OverdriveProvider>
-		</OverdriveLegacyProvider>
 	) : (
 		Object.entries(themes).map(([, theme], i) => (
 			<div key={i} data-theme={theme.name}>
-				<OverdriveLegacyProvider theme={theme}>
 					<Box className={vars} padding="5">
 						<Stack space="3">
 							<Heading is="h5" colour="light">
@@ -36,7 +33,6 @@ const withThemeProvider = (Story, context) => {
 							<Story {...context} />
 						</Stack>
 					</Box>
-				</OverdriveLegacyProvider>
 				<hr
 					style={{
 						margin: 0,

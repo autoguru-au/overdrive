@@ -2,7 +2,6 @@ const { join } = require('path');
 
 const { VanillaExtractPlugin } = require('@vanilla-extract/webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { TreatPlugin } = require('treat/webpack-plugin');
 
 const ourCodeFiles = [
 	join(__dirname, './packages/'),
@@ -68,18 +67,6 @@ module.exports = {
 		plugins: [
 			new VanillaExtractPlugin(),
 			new MiniCssExtractPlugin(),
-			new TreatPlugin({
-				outputLoaders: [
-					{
-						loader: require.resolve('style-loader'),
-						options: {
-							attributes: {
-								treat: true,
-							},
-						},
-					},
-				],
-			}),
 		],
 		resolve: {
 			extensions: ['.tsx', '.ts', '.js', '.mjs', '.json'],

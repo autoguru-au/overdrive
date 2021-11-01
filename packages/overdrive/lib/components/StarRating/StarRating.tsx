@@ -2,7 +2,6 @@ import { StarHalfIcon, StarIcon } from '@autoguru/icons';
 import clsx from 'clsx';
 import * as React from 'react';
 import { FunctionComponent, memo, NamedExoticComponent } from 'react';
-import type { Theme } from 'treat/theme';
 
 import { Box, useBoxStyles } from '../Box';
 import { Icon } from '../Icon';
@@ -10,6 +9,7 @@ import { Inline } from '../Inline';
 import { Text } from '../Text';
 
 import * as styles from './StarRating.css';
+import { Tokens } from '../../themes/tokens';
 
 const totalStars = 5;
 
@@ -24,14 +24,14 @@ enum EStarType {
 	Empty,
 }
 
-const starSizeMap: Map<EStarRatingSize, keyof Theme['icon']['size']> = new Map([
+const starSizeMap: Map<EStarRatingSize, keyof Tokens['icon']['size']> = new Map([
 	[EStarRatingSize.Medium, 'medium'],
 	[EStarRatingSize.Small, 'small'],
 ]);
 
 const labelSizeMap: Map<
 	EStarRatingSize,
-	keyof Theme['typography']['size']
+	keyof Tokens['typography']['size']
 > = new Map([
 	[EStarRatingSize.Small, '3'],
 	[EStarRatingSize.Medium, '4'],

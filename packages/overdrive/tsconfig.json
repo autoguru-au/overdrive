@@ -21,7 +21,6 @@
 		"noUnusedParameters": true
 	},
 	"include": [
-		"./lib/themes/treatTheme.d.ts",
 		"./reset.ts",
 		"./themes.ts",
 		"./index.ts",

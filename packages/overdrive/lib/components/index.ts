@@ -1,6 +1,4 @@
 export * from './OverdriveProvider';
-export * from './OverdriveLegacyProvider';
-export * from './ThemeLegacyProvider';
 export * from './ThemeProvider';
 
 export * from './Actions';

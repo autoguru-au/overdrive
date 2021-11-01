@@ -1,1 +1,0 @@
-export { OverdriveLegacyProvider } from './OverdriveLegacyProvider';

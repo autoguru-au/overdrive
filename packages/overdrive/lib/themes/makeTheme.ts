@@ -1,6 +1,3 @@
-import { createTheme, Style } from 'treat';
-import type { StyleWithSelectors } from 'treat/dist/declarations/src/types';
-
 import { ColourGamut, ColourMap, Tokens } from './tokens';
 
 export const makeRuntimeTokens = (tokens: Tokens) => ({
@@ -10,48 +7,6 @@ export const makeRuntimeTokens = (tokens: Tokens) => ({
 		backgroundColour: tokens.colours.background.body,
 	},
 });
-
-export type RuntimeTokens = ReturnType<typeof makeRuntimeTokens>;
-
-const createUtils = (tokens: Tokens) => ({
-	responsiveStyle(
-		breakpoints: Partial<
-			Record<keyof Tokens['breakpoints'], StyleWithSelectors>
-		>,
-	): Style {
-		const styles = {};
-
-		for (const [query, style] of Object.entries(breakpoints)) {
-			if (query === 'mobile') {
-				Object.assign(styles, style);
-				continue;
-			}
-
-			Object.assign(styles, {
-				'@media': {
-					// @ts-ignore
-					...styles['@media'],
-					// @ts-ignore
-					[`screen and (min-width: ${tokens.breakpoints[query]}px)`]: style,
-				},
-			});
-		}
-
-		return styles;
-	},
-});
-
-// @ts-ignore
-const decorateTokens = (tokens: Tokens) => ({
-	...tokens,
-	utils: createUtils(tokens),
-});
-
-export type OverdriveTheme = ReturnType<typeof decorateTokens>;
-
-// @ts-ignore
-export const makeTheme = (tokens: Tokens, debugName) =>
-	createTheme(decorateTokens(tokens), debugName);
 
 export const buildColourGamut = (
 	colours: ColourMap,

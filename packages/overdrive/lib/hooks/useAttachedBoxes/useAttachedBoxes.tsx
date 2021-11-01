@@ -3,14 +3,11 @@ import * as React from 'react';
 import { ComponentProps, FunctionComponent } from 'react';
 
 import { Box } from '../../components';
-import {
-	getEarliestKnownToken,
-	resolveResponsiveStyle_legacy,
-	ResponsiveProp,
-} from '../../utils/responsiveProps_legacy';
 import { useMedia } from '../useMedia';
 
 import * as styles from './useAttachedBoxes.css';
+import { ResponsiveProp } from '../../utils/responsiveProps.css';
+import { getEarliestKnownToken, resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
 
 interface Props extends Pick<ComponentProps<typeof Box>, 'backgroundColour'> {
 	count: number;
@@ -97,7 +94,7 @@ export const useAttachedBoxes = ({
 		),
 		clsx(
 			styles.grid.default,
-			resolveResponsiveStyle_legacy(gap, styles.grid.gaps),
+			resolveResponsiveStyle(gap, styles.grid.gaps),
 		),
 		{
 			gridTemplateColumns: `repeat(${columnCount}, 1fr)`,
