@@ -11,14 +11,13 @@ import {
 	useReducer,
 	useRef,
 } from 'react';
-import { useStyles } from 'react-treat';
 
 import { Box, useBoxStyles } from '../Box';
 import { Column, Columns } from '../Columns';
 import { Icon } from '../Icon';
 import { Text, useTextStyles } from '../Text';
 
-import * as styleRefs from './Stepper.treat';
+import * as styles from './Stepper.css';
 
 export interface Props {
 	className?: string;
@@ -89,29 +88,26 @@ const Handle: FunctionComponent<HandleProps> = ({
 	icon,
 	label,
 	onClick,
-}) => {
-	const styles = useStyles(styleRefs);
-	return (
-		<Box
-			is="button"
-			className={[
-				styles.handle.default,
-				disabled && styles.handle.disabled,
-				useTextStyles({ colour: 'white' }),
-			]}
-			aria-label={label}
-			padding="none"
-			borderRadius="full"
-			display="flex"
-			alignItems="center"
-			justifyContent="center"
-			disabled={disabled}
-			tabIndex={-1}
-			onClick={onClick}>
-			<Icon icon={icon} size="small" />
-		</Box>
-	);
-};
+}) => (
+	<Box
+		is="button"
+		className={[
+			styles.handle.default,
+			disabled && styles.handle.disabled,
+			useTextStyles({ colour: 'white' }),
+		]}
+		aria-label={label}
+		padding="none"
+		borderRadius="full"
+		display="flex"
+		alignItems="center"
+		justifyContent="center"
+		disabled={disabled}
+		tabIndex={-1}
+		onClick={onClick}>
+		<Icon icon={icon} size="small" />
+	</Box>
+);
 
 export const Stepper: FunctionComponent<Props> = ({
 	className = '',
@@ -123,8 +119,6 @@ export const Stepper: FunctionComponent<Props> = ({
 	format = (value) => value.toString(),
 	onChange,
 }) => {
-	const styles = useStyles(styleRefs);
-
 	const disabled: boolean =
 		incomingDisabled || value === undefined || value === null;
 
