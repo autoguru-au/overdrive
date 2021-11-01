@@ -6,17 +6,20 @@ import { Text } from '../Text';
 
 import { Stack } from '.';
 
-const spacingOptions: ComponentProps<typeof Stack>['space'] = [
-	1,
-	2,
-	3,
-	4,
-	5,
-	6,
-	7,
-	8,
-	9,
-];
+const spacingOptions: Record<string, ComponentProps<typeof Stack>['space']> = {
+	none: 'none',
+	1: '1',
+	2: '2',
+	3: '3',
+	4: '4',
+	5: '5',
+	6: '6',
+	7: '7',
+	8: '8',
+	9: '9',
+};
+
+// @ts-ignore
 const widthOptions: ComponentProps<typeof Stack>['width'] = ['full', null];
 export default {
 	title: 'Foundation/Layout/Stack',
@@ -46,27 +49,28 @@ const Template: ComponentStory<typeof Stack> = (args) => (
 		<Text>Line 3</Text>
 	</Stack>
 );
-const standardProps = {
-	space: 1,
+
+const standardProps: Omit<ComponentProps<typeof Stack>, 'children'> = {
+	space: '1',
 	dividers: false,
-	width: null,
+	width: void 0,
 	is: 'div',
 };
 export const standard = Template.bind(standardProps);
 standard.args = standardProps;
 
-const asSectionProps = {
+const asSectionProps: Omit<ComponentProps<typeof Stack>, 'children'> = {
 	...standardProps,
 	is: 'section',
 };
 export const asSection = Template.bind(asSectionProps);
 asSection.args = asSectionProps;
 
-const withDividersProps = {
+const withDividersProps: Omit<ComponentProps<typeof Stack>, 'children'> = {
 	...standardProps,
 	is: 'div',
 	dividers: true,
-	space: 3,
+	space: '3',
 };
 export const withDividers = Template.bind(withDividersProps);
 withDividers.args = withDividersProps;
