@@ -15,7 +15,6 @@ import {
 	useEffect,
 	useRef,
 } from 'react';
-import { useStyles } from 'react-treat';
 
 import { isBrowser, setRef } from '../../utils';
 import { Box } from '../Box';
@@ -23,7 +22,7 @@ import { Portal } from '../Portal';
 
 import { EAlignment } from './alignment';
 
-import * as styleRefs from './Positioner.treat';
+import * as styles from './Positioner.css';
 
 export { EAlignment } from './alignment';
 
@@ -68,9 +67,6 @@ export const Positioner: FunctionComponent<Props> = ({
 	if (!isBrowser) return null;
 
 	const placement = convertPlacement(alignment);
-
-	/* eslint-disable react-hooks/rules-of-hooks */
-	const styles = useStyles(styleRefs);
 
 	const referenceRef = useRef<HTMLDivElement>(null);
 
