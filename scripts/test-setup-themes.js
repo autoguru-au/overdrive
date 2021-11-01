@@ -1,4 +1,5 @@
 import { baseThemeVars } from '@autoguru/overdrive/lib/themes';
+import { tokens } from '@autoguru/overdrive/lib/themes/base/tokens';
 
 jest.mock('@testing-library/react', () => {
 	const originalModule = jest.requireActual('@testing-library/react');
@@ -7,6 +8,9 @@ jest.mock('@testing-library/react', () => {
 	);
 	const { baseThemeVars } = jest.requireActual(
 		'../packages/overdrive/lib/themes/',
+	);
+	const { tokens } = jest.requireActual(
+		'../packages/overdrive/lib/themes/base/tokens',
 	);
 	const React = jest.requireActual('react');
 
@@ -18,7 +22,7 @@ jest.mock('@testing-library/react', () => {
 				wrapper({ children }) {
 					return React.createElement(
 						OverdriveProvider,
-						{ theme: baseThemeVars },
+						{ theme: baseThemeVars, tokens:tokens },
 						[children],
 					);
 				},

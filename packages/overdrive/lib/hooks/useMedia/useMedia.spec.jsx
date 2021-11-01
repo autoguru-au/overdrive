@@ -4,12 +4,14 @@ import * as React from 'react';
 import { useMedia } from './useMedia';
 import { OverdriveProvider } from '../../components';
 import { vars } from '../../themes/base/vars.css';
+import { tokens } from '../../themes/base/tokens';
 
 const render = (hook, tokens) =>
 	renderHook(hook, {
 		wrapper({ children }) {
 			return (
 				<OverdriveProvider
+					tokens={tokens}
 					theme={vars}>
 					{children}
 				</OverdriveProvider>

@@ -1,21 +1,32 @@
 import { invariant } from '@autoguru/utilities';
 import { ThemeVars } from '@vanilla-extract/css/dist/declarations/src/types';
 import * as React from 'react';
-import { createContext, FunctionComponent, useContext } from 'react';
+import { createContext, FunctionComponent, useContext, useMemo } from 'react';
 
-import { Tokens } from '../../themes/tokens';
-import { RuntimeTokens } from '../../themes/makeTheme';
+import { BreakPoints, Tokens } from '../../themes/tokens';
+import { makeRuntimeTokens, RuntimeTokens } from '../../themes/makeTheme';
 
-const themeContext = createContext<ThemeVars<Tokens> | null>(null);
+type ThemeContextType = ThemeVars<Tokens>;
+const themeContext = createContext<ThemeContextType | null>(null);
+const runtimeTokensContext = createContext<RuntimeTokens | null>(null);
 
 export interface Props {
 	theme: ThemeVars<Tokens>;
+	tokens: Tokens;
 }
 
 export const ThemeProvider: FunctionComponent<Props> = ({
-	theme,
-	children,
-}) => <themeContext.Provider value={theme}>{children}</themeContext.Provider>;
+															theme,
+															tokens,
+															children,
+														}) => (
+	<themeContext.Provider value={theme}>
+		<runtimeTokensContext.Provider
+			value={useMemo(() => makeRuntimeTokens(tokens), [theme])}>
+			{children}
+		</runtimeTokensContext.Provider>
+	</themeContext.Provider>
+);
 
 export const useTheme = () => {
 	const themeClass = useContext(themeContext);
@@ -29,7 +40,7 @@ export const useTheme = () => {
 };
 
 export const useRuntimeTokens = (): RuntimeTokens => {
-	const tokens = useContext(tokensContext);
-	invariant(tokens !== null, "You havn't provided a `OverdriveProvider`.");
+	const tokens = useContext(runtimeTokensContext);
+	invariant(tokens !== null, "You haven't provided a `OverdriveProvider`.");
 	return tokens;
 };

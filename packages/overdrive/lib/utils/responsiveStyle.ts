@@ -2,8 +2,7 @@ import type {
 	CSSProperties,
 	StyleWithSelectors,
 } from '@vanilla-extract/css/dist/declarations/src/types';
-
-import { breakpoints } from '../themes/base/tokens';
+import { breakpoints } from '../themes/makeTheme';
 
 export const responsiveStyle = (
 	breakpointsEntries: Partial<

@@ -1,12 +1,21 @@
-import { ColourGamut, ColourMap, Tokens } from './tokens';
+import { BreakPoints, ColourGamut, ColourMap, Tokens } from './tokens';
+
+export const breakpoints: BreakPoints = {
+	mobile: '0px',
+	tablet: '768px', // IPad mini width (1024 - 25%)
+	desktop: '1024px', // IPad Pro width (1366 - 25%)
+	largeDesktop: '1440px', // 1080p width (1920 - 25%)
+};
 
 export const makeRuntimeTokens = (tokens: Tokens) => ({
-	breakpoints: tokens.breakpoints,
+	breakpoints,
 	body: {
 		colour: tokens.colours.foreground.body,
 		backgroundColour: tokens.colours.background.body,
 	},
 });
+
+export type RuntimeTokens = ReturnType<typeof makeRuntimeTokens>;
 
 export const buildColourGamut = (
 	colours: ColourMap,

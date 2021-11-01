@@ -4,7 +4,7 @@ import { Stack } from '../../components/Stack/Stack';
 import { Text } from '../../components/Text/Text';
 
 import { useMedia } from './useMedia';
-import { breakpoints } from '../../themes/base/tokens';
+import { breakpoints } from '../../themes/makeTheme';
 
 export default {
 	title: 'Utility/Hooks/useMedia',
