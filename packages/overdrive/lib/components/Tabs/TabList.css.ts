@@ -1,15 +1,16 @@
-import { style, styleMap } from 'treat';
+import { style, styleVariants } from '@vanilla-extract/css';
+import { vars } from '../../themes/base/vars.css';
 
-export const root = styleMap((theme) => ({
+export const root = styleVariants({
 	default: {
-		boxShadow: `inset 0 -1px 0 0 ${theme.border.colours.gray}`,
+		boxShadow: `inset 0 -1px 0 0 ${vars.border.colours.gray}`,
 	},
 	scroll: {
 		display: 'grid',
 		gridTemplateColumns: 'auto 1fr auto',
-		gridGap: theme.space['2'],
+		gridGap: vars.space['2'],
 	},
-}));
+});
 
 export const listWrapperScroll = style({
 	overflowX: 'auto',
