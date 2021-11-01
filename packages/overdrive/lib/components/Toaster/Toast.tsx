@@ -12,14 +12,13 @@ import {
 	useMemo,
 	useReducer,
 } from 'react';
-import { useStyles } from 'react-treat';
 
 import { Alert } from '../Alert';
 import { Box } from '../Box';
 import { Portal } from '../Portal';
 import { Stack } from '../Stack';
 
-import * as styleRefs from './Toast.treat';
+import * as styles from './Toast.css';
 
 type MessageType = ReactChild;
 type AlertIntent = Required<ComponentProps<typeof Alert>>['intent'];
@@ -73,7 +72,6 @@ const reducer: Reducer<{ toasts: MessageConfig[] }, Actions> = (
 const ToastControllerContext = createContext<AddToastFn | null>(null);
 
 const InternalToastProvider = ({ children }) => {
-	const styles = useStyles(styleRefs);
 	const [{ toasts }, dispatch] = useReducer(reducer, { toasts: [] });
 
 	const addToast: AddToastFn = useCallback((config) => {
@@ -202,8 +200,6 @@ const Toast: FunctionComponent<
 		remove: (id: number) => void;
 	}
 > = ({ remove, duration, message, id, intent }) => {
-	const styles = useStyles(styleRefs);
-
 	const dismiss = useCallback(() => {
 		remove(id);
 	}, [id, remove]);

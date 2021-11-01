@@ -43,3 +43,12 @@ export const standard: ComponentStory<typeof Tooltip> = Template.bind(
 	standardProps,
 );
 standard.args = standardProps;
+
+const withLongTextProps = {
+	label: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
+};
+
+export const withLongText: ComponentStory<typeof Tooltip> = Template.bind(
+	withLongTextProps,
+);
+withLongText.args = withLongTextProps;
