@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { ComponentProps, useState } from 'react';
 
 import { arrayRingLookup } from '../../utils';
 import { Actions } from '../Actions';
@@ -10,15 +10,16 @@ import { Stack } from '../Stack';
 import { Text } from '../Text';
 
 import { Table, TableCell, TableHeadCell, TableRow, TableRowGroup } from '.';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
 	title: 'Components/Table',
-};
+} as ComponentMeta<typeof Table>;
 
 const sortFlow = ['asc', 'desc', 'none'];
 const sortFlowRingLookup = arrayRingLookup(sortFlow);
 
-export const Standard = () => {
+const Template: ComponentStory<typeof Table> = (args) => {
 	const [sort, setsort] = useState<Record<string, 'asc' | 'desc' | 'none'>>({
 		price: 'asc',
 		status: 'desc',
@@ -36,7 +37,7 @@ export const Standard = () => {
 	};
 
 	return (
-		<Table columnTemplate="repeat(7, auto)">
+		<Table {...args}>
 			<TableRowGroup>
 				<TableRow>
 					<TableHeadCell>ID</TableHeadCell>
@@ -44,7 +45,7 @@ export const Standard = () => {
 					<TableHeadCell>Vehicle</TableHeadCell>
 					<TableHeadCell
 						sort={sort.price}
-						align="right"
+						align='right'
 						onSort={sortSetter('price')}>
 						Price
 					</TableHeadCell>
@@ -209,7 +210,7 @@ export const Standard = () => {
 							<Button size="small" variant="danger">
 								Delete
 							</Button>
-							<Button size="small">View</Button>
+							<Button size='small'>View</Button>
 						</Actions>
 					</TableCell>
 				</TableRow>
@@ -217,3 +218,9 @@ export const Standard = () => {
 		</Table>
 	);
 };
+
+const standardProps: Omit<ComponentProps<typeof Table>, 'children'> = {
+	columnTemplate: 'repeat(7, auto)',
+};
+export const standard = Template.bind(standardProps);
+standard.args = standardProps;
