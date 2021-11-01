@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions';
-import { ArgTypes } from '@storybook/react';
+import { ArgTypes, ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -11,7 +11,7 @@ export default {
 	parameters: {
 		chromatic: { delay: 300 },
 	},
-};
+} as ComponentMeta<typeof TextAreaInput>;
 
 const defaultValue =
 	'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae pulvinar odio. Duis laoreet lacus vel consequat congue. Ut euismod enim non eros lacinia mollis. Vestibulum libero quam, aliquet non justo laoreet, egestas molestie ante. Quisque urna leo, consectetur id dui aliquet, placerat iaculis augue. Pellentesque sed vestibulum augue, quis porta lectus.';
@@ -25,7 +25,7 @@ const argTypes: ArgTypes = {
 	},
 };
 
-const Template = (args) => <TextAreaInput {...args} />;
+const Template: ComponentStory<typeof TextAreaInput> = (args) => <TextAreaInput {...args} />;
 
 const sharedProps: ComponentProps<typeof TextAreaInput> = {
 	disabled: false,
@@ -38,7 +38,7 @@ const sharedProps: ComponentProps<typeof TextAreaInput> = {
 	reserveHintSpace: false,
 	hintText: '',
 	notch: true,
-	prefixIcon: null,
+	prefixIcon: void 0,
 	onChange: action('onChange'),
 	onFocus: action('onFocus'),
 	onBlur: action('onBlur'),

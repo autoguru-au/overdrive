@@ -1,87 +1,146 @@
 import * as React from 'react';
+import { ComponentProps } from 'react';
 
 import { Button } from '../Button';
 import { Heading } from '../Heading';
 import { Text } from '../Text';
 
 import { TextContainer } from '.';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
 	title: 'Components/TextContainer',
 	component: TextContainer,
 	decorators: [(story) => <div style={{ maxWidth: 512 }}>{story()}</div>],
-};
+	argTypes: {
+		children: {
+			control: {
+				disable: true,
+			},
+		},
+		action: {
+			control: {
+				disable: true,
+			},
+		},
+		heading: {
+			control: {
+				disable: true,
+			},
+		},
+	},
+} as ComponentMeta<typeof TextContainer>;
 
-export const standard = () => (
-	<TextContainer heading={<Heading>Choose a credit pack</Heading>}>
-		<Text muted is="p">
-			To get started, choose a credit pack that will used for Auto Top-Up.
-		</Text>
-	</TextContainer>
+
+const Template: ComponentStory<typeof TextContainer> = (args) => (
+	<TextContainer {...args} />
 );
 
-export const withALotOfBody = () => (
-	<TextContainer heading={<Heading>Reviews</Heading>}>
-		<Text muted is="p">
+const standardProps: ComponentProps<typeof TextContainer> = {
+	heading: (
+		<Heading>Choose a credit pack</Heading>
+	),
+	children: (
+		<Text colour='muted' is='p'>
+			To get started, choose a credit pack that will used for Auto Top-Up.
+		</Text>
+	),
+};
+export const standard = Template.bind(standardProps);
+standard.args = standardProps;
+
+const withALotOfBodyProps: ComponentProps<typeof TextContainer> = {
+	heading: (
+		<Heading>Reviews</Heading>
+	),
+	children: (
+		<Text colour='muted' is='p'>
 			To avoid you coming to a halt in the middle of the road, because of
 			a banging, crash of pistons and valves fighting with each other,
 			let's investigate what the timing belt is, what it does, and why it
 			costs so much to replace or repair.
 		</Text>
-	</TextContainer>
-);
+	),
+};
+export const withALotOfBody = Template.bind(withALotOfBodyProps);
+withALotOfBody.args = withALotOfBodyProps;
 
-export const withInteraction = () => (
-	<TextContainer
-		heading={<Heading>Reviews</Heading>}
-		action={
-			<Button variant="secondary" size="small">
-				Edit
-			</Button>
-		}>
-		<Text muted is="p">
-			All of our reviews are from verified customers.
+const withInteractionProps: ComponentProps<typeof TextContainer> = {
+	heading: (
+		<Heading>Reviews</Heading>
+	),
+	children: (
+		<Text colour='muted' is='p'>
+			To avoid you coming to a halt in the middle of the road, because of
+			a banging, crash of pistons and valves fighting with each other,
+			let's investigate what the timing belt is, what it does, and why it
+			costs so much to replace or repair.
 		</Text>
-	</TextContainer>
-);
+	),
+	action: (
+		<Button variant='secondary' size='small'>
+			Edit
+		</Button>
+	),
+};
+export const withInteraction = Template.bind(withInteractionProps);
+withInteraction.args = withInteractionProps;
 
-export const withInteractionOnly = () => (
-	<TextContainer
-		action={
-			<Button variant="secondary" size="small">
-				Edit
-			</Button>
-		}>
-		<Text muted is="p">
-			All of our reviews are from verified customers.
+
+const withInteractionOnlyProps: ComponentProps<typeof TextContainer> = {
+	heading: void 0,
+	children: (
+		<Text colour='muted' is='p'>
+			To avoid you coming to a halt in the middle of the road, because of
+			a banging, crash of pistons and valves fighting with each other,
+			let's investigate what the timing belt is, what it does, and why it
+			costs so much to replace or repair.
 		</Text>
-	</TextContainer>
-);
+	),
+	action: (
+		<Button variant='secondary' size='small'>
+			Edit
+		</Button>
+	),
+};
+export const withInteractionOnly = Template.bind(withInteractionOnlyProps);
+withInteractionOnly.args = withInteractionOnlyProps;
 
-export const withLongTitle = () => (
-	<TextContainer
-		heading={<Heading>Setup your personal settings</Heading>}
-		action={
-			<Button variant="secondary" size="small">
-				Edit
-			</Button>
-		}>
-		<Text muted is="p">
-			All of our reviews are from verified customers.
+const withLongTitleProps: ComponentProps<typeof TextContainer> = {
+	heading: (
+		<Heading>Setup your personal settings</Heading>
+	),
+	children: (
+		<Text colour='muted' is='p'>
+			To avoid you coming to a halt in the middle of the road, because of
+			a banging, crash of pistons and valves fighting with each other,
+			let's investigate what the timing belt is, what it does, and why it
+			costs so much to replace or repair.
 		</Text>
-	</TextContainer>
-);
+	),
+	action: (
+		<Button variant='secondary' size='small'>
+			Edit
+		</Button>
+	),
+};
+export const withLongTitle = Template.bind(withLongTitleProps);
+withLongTitle.args = withLongTitleProps;
 
-export const withNoBodyText = () => (
-	<TextContainer>
+const withNoBodyTextProps: ComponentProps<typeof TextContainer> = {
+	children: (
 		<Heading>Choose a credit pack</Heading>
-	</TextContainer>
-);
+	),
+};
+export const withNoBodyText = Template.bind(withNoBodyTextProps);
+withNoBodyText.args = withNoBodyTextProps;
 
-export const withNoTitleText = () => (
-	<TextContainer>
-		<Text muted is="p">
+const withNoTitleTextProps: ComponentProps<typeof TextContainer> = {
+	children: (
+		<Text colour='muted' is='p'>
 			To get started, choose a credit pack that will used for Auto Top-Up.
 		</Text>
-	</TextContainer>
-);
+	),
+};
+export const withNoTitleText = Template.bind(withNoTitleTextProps);
+withNoTitleText.args = withNoTitleTextProps;
