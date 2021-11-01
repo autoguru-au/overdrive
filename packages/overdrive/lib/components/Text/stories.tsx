@@ -90,7 +90,7 @@ const AllColoursTemplate: ComponentStory<typeof Text> = (args) => (
 	</div>
 );
 
-const sharedArgTypes: ArgTypes = {
+const sharedArgTypes: ArgTypes<Partial<ComponentProps<typeof Text>>> = {
 	noWrap: {
 		options: noWrapOptions,
 		defaultValue: false,
@@ -105,7 +105,7 @@ const sharedArgTypes: ArgTypes = {
 			type: 'select',
 		},
 	},
-	weight: {
+	fontWeight: {
 		options: weightOptions,
 		defaultValue: null,
 		control: {
@@ -127,7 +127,7 @@ const sharedArgTypes: ArgTypes = {
 		},
 	},
 };
-const colourArgTypes: ArgTypes = {
+const colourArgTypes: ArgTypes<Partial<ComponentProps<typeof Text>>> = {
 	colour: {
 		options: colourOptions,
 		defaultValue: void 0,
@@ -136,7 +136,7 @@ const colourArgTypes: ArgTypes = {
 		},
 	},
 };
-const argTypes: ArgTypes = {
+const argTypes: ArgTypes<Partial<ComponentProps<typeof Text>>> = {
 	...sharedArgTypes,
 	...colourArgTypes,
 	is: {
@@ -153,11 +153,11 @@ const argTypes: ArgTypes = {
 	},
 };
 
-const standardProps: ComponentProps<typeof Heading> = {
+const standardProps: ComponentProps<typeof Text> = {
 	is: 'span',
 	children: 'Help people better care for their cars',
 };
-const allTypesProps: ComponentProps<typeof Heading> = {
+const allTypesProps: ComponentProps<typeof Text> = {
 	children:
 		'To avoid you coming to a halt in the middle of the road, because of a banging, crash of pistons and valves fighting with each other, let investigate what the timing belt is, what it does, and why it costs so much to replace or repair.',
 };
@@ -168,7 +168,7 @@ standard.argTypes = argTypes;
 
 export const allTypes = AllTypesTemplate.bind(allTypesProps);
 allTypes.args = allTypesProps;
-allTypes.argTypes = { ...sharedArgTypes, colourArgTypes };
+allTypes.argTypes = { ...sharedArgTypes, ...colourArgTypes };
 
 export const allSizes = AllSizesTemplate.bind(allTypesProps);
 allSizes.args = allTypesProps;

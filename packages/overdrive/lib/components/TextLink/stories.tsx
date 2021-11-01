@@ -92,7 +92,7 @@ const InsideParagraphTemplate: ComponentStory<typeof TextLink> = (args) => (
 	</Text>
 );
 
-const standardProps = {
+const standardProps: Omit<ComponentProps<typeof TextLink>, 'children'> = {
 	muted: false,
 	size: '4',
 	align: 'left',

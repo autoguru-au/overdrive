@@ -12,12 +12,11 @@ import {
 	ReactElement,
 	ReactText,
 } from 'react';
-import { useStyles } from 'react-treat';
 
 import { Box, useBoxStyles } from '../Box';
 import { Text } from '../Text';
 
-import * as styleRefs from './TextLink.treat';
+import * as styles from './TextLink.css';
 
 type TextProps = Omit<ComponentProps<typeof Text>, 'is' | 'colour'>;
 type AnchorProps = Omit<
@@ -51,8 +50,6 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 			'You cannot have both href and as defined.',
 		);
 
-		const styles = useStyles(styleRefs);
-
 		const body = (
 			<Text
 				is="span"
@@ -78,7 +75,7 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 			rel: props.rel ?? 'noopener noreferrer',
 			...props,
 			ref,
-			className: className,
+			className,
 		};
 
 		if (Component === undefined) {

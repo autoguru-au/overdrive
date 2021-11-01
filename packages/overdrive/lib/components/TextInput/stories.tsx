@@ -9,7 +9,7 @@ import {
 	StarIcon,
 } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
-import { ArgTypes } from '@storybook/react';
+import { ArgTypes, ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -21,7 +21,7 @@ export default {
 	parameters: {
 		chromatic: { delay: 300 },
 	},
-};
+} as ComponentMeta<typeof TextInput>;
 
 const defaultValue = 'Jane Doe';
 const defaultPlaceholder = 'What is your first name?';
@@ -37,7 +37,7 @@ const iconOptions = {
 	CheckIcon,
 };
 
-const argTypes: ArgTypes = {
+const argTypes: ArgTypes<Partial<ComponentProps<typeof TextInput>>> = {
 	value: {
 		control: {
 			type: 'string',
@@ -61,7 +61,7 @@ const argTypes: ArgTypes = {
 	},
 };
 
-const Template = (args) => <TextInput {...args} />;
+const Template: ComponentStory<typeof TextInput> = (args) => <TextInput {...args} />;
 
 const sharedProps: ComponentProps<typeof TextInput> = {
 	disabled: false,
@@ -74,7 +74,7 @@ const sharedProps: ComponentProps<typeof TextInput> = {
 	reserveHintSpace: false,
 	hintText: '',
 	notch: true,
-	prefixIcon: null,
+	prefixIcon: void 0,
 	onChange: action('onChange'),
 	onFocus: action('onFocus'),
 	onBlur: action('onBlur'),
