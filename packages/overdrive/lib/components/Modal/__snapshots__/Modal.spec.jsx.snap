@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Modal /> should match snapshot 1`] = `
-<body
-  style="background-color: rgb(255, 255, 255); color: rgb(33, 35, 56);"
->
+<body>
   <div />
   <div
     data-focus-guard="true"
@@ -20,10 +18,10 @@ exports[`<Modal /> should match snapshot 1`] = `
   >
     <div
       aria-hidden="true"
-      class="block position_fixed backdropRoot_default_base place backdrop_root transition_base"
+      class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06dn mode body contentWidth space colours elevation border typography animation icon Modal_backdrop_root__p7g8yg3 Modal_transition__p7g8yg1"
     />
     <div
-      class="block position_fixed overflow_hidden place root transition_base"
+      class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06dn useBoxStyles_overflow_hidden__7o6k06ds mode body contentWidth space colours elevation border typography animation icon Modal_root__p7g8yg0 Modal_transition__p7g8yg1"
       role="presentation"
     >
       Hello World!

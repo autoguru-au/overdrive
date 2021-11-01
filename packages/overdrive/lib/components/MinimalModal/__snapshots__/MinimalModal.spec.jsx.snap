@@ -2,7 +2,7 @@
 
 exports[`<MinimalModal /> should match snapshot with body 1`] = `
 <body
-  style="background-color: rgb(255, 255, 255); color: rgb(33, 35, 56); overflow: hidden;"
+  style="overflow: hidden;"
 >
   <div />
   <div
@@ -20,25 +20,25 @@ exports[`<MinimalModal /> should match snapshot with body 1`] = `
   >
     <div
       aria-hidden="true"
-      class="block position_fixed backdropRoot_default_base place backdrop_root transition_base"
+      class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06dn mode body contentWidth space colours elevation border typography animation icon Modal_backdrop_root__p7g8yg3 Modal_transition__p7g8yg1"
     />
     <div
-      class="block position_fixed overflow_hidden place root transition_base"
+      class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06dn useBoxStyles_overflow_hidden__7o6k06ds mode body contentWidth space colours elevation border typography animation icon Modal_root__p7g8yg0 Modal_transition__p7g8yg1"
       role="presentation"
     >
       <div
         aria-hidden="false"
-        class="block display_flex height_full center_mobile_base center_mobile_base container"
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_height_full__7o6k06dl useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 MinimalModal_container__1psw41b0"
         role="none presentation"
       >
         <article
           aria-labelledby="od-4"
           aria-modal="true"
-          class="block display_flex column_mobile_base"
+          class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_makeResponsiveStyle_key_bp__7o6k06eq"
           role="dialog"
         >
           <main
-            class="display_flex height_full column_mobile_base flexGrow_1 content"
+            class="useBoxStyles_display_flex__7o6k06dy useBoxStyles_height_full__7o6k06dl useBoxStyles_makeResponsiveStyle_key_bp__7o6k06eq useBoxStyles_flexGrow_1__7o6k06ez MinimalModal_content__1psw41b1"
           >
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis convallis neque a laoreet maximus. Vestibulum hendrerit quam at mi venenatis faucibus at vel nisi. In ut risus et ipsum tincidunt tempor. Suspendisse potenti. Praesent faucibus posuere risus, at congue mauris porttitor ut. Donec sit amet elit vitae purus dictum aliquet quis ut ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum dui sapien, porttitor ac erat vel, malesuada rutrum mauris. Nam arcu tellus, pretium ut aliquet eget, ultrices vel est. Maecenas dapibus volutpat eros a volutpat.
@@ -58,7 +58,7 @@ exports[`<MinimalModal /> should match snapshot with body 1`] = `
 
 exports[`<MinimalModal /> should match snapshot without title and body 1`] = `
 <body
-  style="background-color: rgb(255, 255, 255); color: rgb(33, 35, 56); overflow: hidden;"
+  style="overflow: hidden;"
 >
   <div />
   <div
@@ -76,25 +76,25 @@ exports[`<MinimalModal /> should match snapshot without title and body 1`] = `
   >
     <div
       aria-hidden="true"
-      class="block position_fixed backdropRoot_default_base place backdrop_root transition_base"
+      class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06dn mode body contentWidth space colours elevation border typography animation icon Modal_backdrop_root__p7g8yg3 Modal_transition__p7g8yg1"
     />
     <div
-      class="block position_fixed overflow_hidden place root transition_base"
+      class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06dn useBoxStyles_overflow_hidden__7o6k06ds mode body contentWidth space colours elevation border typography animation icon Modal_root__p7g8yg0 Modal_transition__p7g8yg1"
       role="presentation"
     >
       <div
         aria-hidden="false"
-        class="block display_flex height_full center_mobile_base center_mobile_base container"
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_height_full__7o6k06dl useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 MinimalModal_container__1psw41b0"
         role="none presentation"
       >
         <article
           aria-labelledby="od-3"
           aria-modal="true"
-          class="block display_flex column_mobile_base"
+          class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_makeResponsiveStyle_key_bp__7o6k06eq"
           role="dialog"
         >
           <main
-            class="display_flex height_full column_mobile_base flexGrow_1 content"
+            class="useBoxStyles_display_flex__7o6k06dy useBoxStyles_height_full__7o6k06dl useBoxStyles_makeResponsiveStyle_key_bp__7o6k06eq useBoxStyles_flexGrow_1__7o6k06ez MinimalModal_content__1psw41b1"
           />
         </article>
       </div>

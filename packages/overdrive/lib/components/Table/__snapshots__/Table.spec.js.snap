@@ -2,50 +2,50 @@
 
 exports[`<Table /> when implemented should match snapshot 1`] = `
 <div
-  class="block width_full root"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk Table_root__1wk7r060"
   role="grid"
 >
   <div
-    class="block display_contents"
+    class="reset_block__6swfds3 useBoxStyles_display_contents__7o6k06dw"
     role="rowgroup"
   >
     <div
-      class="block display_contents"
+      class="reset_block__6swfds3 useBoxStyles_display_contents__7o6k06dw"
       role="row"
     >
       <div
-        class="block 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base backgroundColours_gray100_base center_mobile_base flexStart_mobile_base"
+        class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c useBoxStyles_makeResponsiveStyle_key_bp__7o6k061g useBoxStyles_makeResponsiveStyle_key_bp__7o6k062k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063o useBoxStyles_display_flex__7o6k06dy useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_bottom_light__7o6k069r useBoxStyles_makeResponsiveStyle_key_bp__7o6k06at useBoxStyles_backgroundColours_gray100__7o6k06c9 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f3"
         role="columnheader"
         scope="col"
       >
         <span
-          class="inlineText textAlign_left root_base inlineText colours_dark_base fontWeight_bold_base sizes_2_base text_base"
+          class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06dp useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7ie useTextStyles_fontWeight_bold__w6to7ip useTextStyles_sizes_2__w6to7i2 TableHeadCell_text__4skrdd1"
         >
           col 1
         </span>
       </div>
       <div
         aria-sort="ascending"
-        class="block display_flex border_style border_colour_bottom_light_base 1_mobile_base backgroundColours_gray100_base center_mobile_base flexStart_mobile_base"
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_bottom_light__7o6k069r useBoxStyles_makeResponsiveStyle_key_bp__7o6k06at useBoxStyles_backgroundColours_gray100__7o6k06c9 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f3"
         role="columnheader"
         scope="col"
       >
         <button
-          class="appearance cursorPointer trimmedBlockElement button 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_block width_full sorterButton"
+          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c useBoxStyles_makeResponsiveStyle_key_bp__7o6k061g useBoxStyles_makeResponsiveStyle_key_bp__7o6k062k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063o useBoxStyles_display_block__7o6k06dx useBoxStyles_width_full__7o6k06dk TableHeadCell_sorterButton__4skrdd0"
           tabindex="-1"
         >
           <div
-            class="block display_flex position_relative center_mobile_base row_mobile_base flexWrap_wrap flexStart_mobile_base 1_mobile_base 1_mobile_base"
+            class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_position_relative__7o6k06do useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ei useBoxStyles_flexWrap_wrap__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f3 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y40 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq0"
           >
             <div
-              class="block 1_mobile_base 1_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+              class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k060 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063c useBoxStyles_display_flex__7o6k06dy useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ei useBoxStyles_flexWrap_nowrap__7o6k06f2"
             >
               <span
-                class="inlineText textAlign_left root_base inlineText colours_dark_base fontWeight_bold_base sizes_2_base text_base"
+                class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06dp useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7ie useTextStyles_fontWeight_bold__w6to7ip useTextStyles_sizes_2__w6to7i2 TableHeadCell_text__4skrdd1"
               >
                 col 2
                 <span
-                  class="inlineText position_absolute overflow_hidden userSelect_none root"
+                  class="reset_inlineText__6swfds2 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_overflow_hidden__7o6k06ds useBoxStyles_userSelect_none__7o6k06e5 VisuallyHidden_root__t2xf5v0"
                 >
                    
                   sorted 
@@ -54,14 +54,14 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
               </span>
             </div>
             <div
-              class="block 1_mobile_base 1_mobile_base display_flex center_mobile_base row_mobile_base flexWrap_nowrap"
+              class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k060 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063c useBoxStyles_display_flex__7o6k06dy useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ei useBoxStyles_flexWrap_nowrap__7o6k06f2"
             >
               <i
-                class="display_block small_mobile_base sorterRoot sorter_root_base asc"
+                class="useBoxStyles_display_block__7o6k06dx Icon_makeResponsiveStyle_key_bp__14sz1q60 TableHeadCell_sorterRoot__4skrdd2 TableHeadCell_sorter_root__4skrdd3 TableHeadCell_sorter_asc__4skrdd5"
                 role="presentation"
               >
                 <svg
-                  class="display_block width_full height_full"
+                  class="useBoxStyles_display_block__7o6k06dx useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
                   fill="currentColor"
                   focusable="false"
                   viewBox="0 0 512 512"
@@ -79,58 +79,58 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
     </div>
   </div>
   <div
-    class="block display_contents"
+    class="reset_block__6swfds3 useBoxStyles_display_contents__7o6k06dw"
     role="rowgroup"
   >
     <div
-      class="block display_contents"
+      class="reset_block__6swfds3 useBoxStyles_display_contents__7o6k06dw"
       role="row"
     >
       <div
-        class="block 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base center_mobile_base flexStart_mobile_base root_base"
+        class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c useBoxStyles_makeResponsiveStyle_key_bp__7o6k061g useBoxStyles_makeResponsiveStyle_key_bp__7o6k062k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063o useBoxStyles_display_flex__7o6k06dy useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_bottom_light__7o6k069r useBoxStyles_makeResponsiveStyle_key_bp__7o6k06at useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f3 TableCell_root__13mgwvq0"
         role="gridcell"
         scope="row"
       >
         <span
-          class="inlineText display_block textAlign_left root_base inlineText colours_dark_base fontWeight_normal_base sizes_3_base"
+          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06dx useBoxStyles_textAlign_left__7o6k06dp useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7ie useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_3__w6to7i3"
         >
           row 1, col 1
         </span>
       </div>
       <div
-        class="block 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base center_mobile_base flexStart_mobile_base root_base"
+        class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c useBoxStyles_makeResponsiveStyle_key_bp__7o6k061g useBoxStyles_makeResponsiveStyle_key_bp__7o6k062k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063o useBoxStyles_display_flex__7o6k06dy useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_bottom_light__7o6k069r useBoxStyles_makeResponsiveStyle_key_bp__7o6k06at useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f3 TableCell_root__13mgwvq0"
         role="gridcell"
         scope="row"
       >
         <span
-          class="inlineText display_block textAlign_left root_base inlineText colours_dark_base fontWeight_normal_base sizes_3_base"
+          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06dx useBoxStyles_textAlign_left__7o6k06dp useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7ie useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_3__w6to7i3"
         >
           row 1, col 2
         </span>
       </div>
     </div>
     <div
-      class="block display_contents"
+      class="reset_block__6swfds3 useBoxStyles_display_contents__7o6k06dw"
       role="row"
     >
       <div
-        class="block 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base center_mobile_base flexStart_mobile_base root_base"
+        class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c useBoxStyles_makeResponsiveStyle_key_bp__7o6k061g useBoxStyles_makeResponsiveStyle_key_bp__7o6k062k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063o useBoxStyles_display_flex__7o6k06dy useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_bottom_light__7o6k069r useBoxStyles_makeResponsiveStyle_key_bp__7o6k06at useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f3 TableCell_root__13mgwvq0"
         role="gridcell"
         scope="row"
       >
         <span
-          class="inlineText display_block textAlign_left root_base inlineText colours_dark_base fontWeight_normal_base sizes_3_base"
+          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06dx useBoxStyles_textAlign_left__7o6k06dp useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7ie useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_3__w6to7i3"
         >
           row 2, col 1
         </span>
       </div>
       <div
-        class="block 4_mobile_base 4_mobile_base 4_mobile_base 4_mobile_base display_flex border_style border_colour_bottom_light_base 1_mobile_base center_mobile_base flexStart_mobile_base root_base"
+        class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c useBoxStyles_makeResponsiveStyle_key_bp__7o6k061g useBoxStyles_makeResponsiveStyle_key_bp__7o6k062k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063o useBoxStyles_display_flex__7o6k06dy useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_bottom_light__7o6k069r useBoxStyles_makeResponsiveStyle_key_bp__7o6k06at useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f3 TableCell_root__13mgwvq0"
         role="gridcell"
         scope="row"
       >
         <span
-          class="inlineText display_block textAlign_left root_base inlineText colours_dark_base fontWeight_normal_base sizes_3_base"
+          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06dx useBoxStyles_textAlign_left__7o6k06dp useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7ie useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_3__w6to7i3"
         >
           row 2, col 2
         </span>

@@ -1,13 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Positioner /> should match snapshot 1`] = `
-<body
-  style="background-color: rgb(255, 255, 255); color: rgb(33, 35, 56);"
->
+<body>
   <div />
   <div
     aria-hidden="false"
-    class="block position_fixed root"
+    class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06dn Positioner_root__lgdvlw0"
   >
     Some body
   </div>
