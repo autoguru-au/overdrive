@@ -1,12 +1,12 @@
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
-import { useState } from 'react';
+import { ComponentProps } from 'react';
 
 import { Box } from '../Box';
-import { Button } from '../Button';
 import { Text } from '../Text';
 
 import { StandardModal } from '.';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
 	title: 'Components/StandardModal',
@@ -14,42 +14,33 @@ export default {
 	parameters: {
 		chromatic: { disable: true },
 	},
-};
+} as ComponentMeta<typeof StandardModal>;
 
-export const Standard = () => {
-	const [isOpen, setIsOpen] = useState(true);
-
-	return (
-		<>
-			<StandardModal
-				title="Title"
-				size="standard"
-				isOpen={isOpen}
-				onRequestClose={() => {
-					setIsOpen(false);
-					action('onRequestClose');
-				}}>
-				<Box paddingX={4} paddingY={3}>
-					<Text>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Duis convallis neque a laoreet maximus. Vestibulum
-						hendrerit quam at mi venenatis faucibus at vel nisi. In
-						ut risus et ipsum tincidunt tempor. Suspendisse potenti.
-						Praesent faucibus posuere risus, at congue mauris
-						porttitor ut. Donec sit amet elit vitae purus dictum
-						aliquet quis ut ligula. Orci varius natoque penatibus et
-						magnis dis parturient montes, nascetur ridiculus mus.
-						Vestibulum dui sapien, porttitor ac erat vel, malesuada
-						rutrum mauris. Nam arcu tellus, pretium ut aliquet eget,
-						ultrices vel est. Maecenas dapibus volutpat eros a
-						volutpat.
-					</Text>
-					<br />
-					<Text>
-						Sed ante dui, sagittis sit amet tortor nec, egestas
-						tincidunt mauris. Phasellus sed felis arcu. Etiam sit
-						amet pharetra risus, a posuere magna. Pellentesque
-						finibus arcu vitae orci luctus sagittis. Proin porta
+const Template: ComponentStory<typeof StandardModal> = (args) => (
+	<>
+		<StandardModal
+			{...args}>
+			<Box paddingX='4' paddingY='3'>
+				<Text>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					Duis convallis neque a laoreet maximus. Vestibulum
+					hendrerit quam at mi venenatis faucibus at vel nisi. In
+					ut risus et ipsum tincidunt tempor. Suspendisse potenti.
+					Praesent faucibus posuere risus, at congue mauris
+					porttitor ut. Donec sit amet elit vitae purus dictum
+					aliquet quis ut ligula. Orci varius natoque penatibus et
+					magnis dis parturient montes, nascetur ridiculus mus.
+					Vestibulum dui sapien, porttitor ac erat vel, malesuada
+					rutrum mauris. Nam arcu tellus, pretium ut aliquet eget,
+					ultrices vel est. Maecenas dapibus volutpat eros a
+					volutpat.
+				</Text>
+				<br />
+				<Text>
+					Sed ante dui, sagittis sit amet tortor nec, egestas
+					tincidunt mauris. Phasellus sed felis arcu. Etiam sit
+					amet pharetra risus, a posuere magna. Pellentesque
+					finibus arcu vitae orci luctus sagittis. Proin porta
 						metus ut dapibus pharetra. Sed interdum mi et tristique
 						aliquam. Curabitur finibus at dolor eu fermentum. Cras
 						diam mauris, malesuada quis lacinia eu, porttitor at
@@ -108,7 +99,6 @@ export const Standard = () => {
 					</Text>
 				</Box>
 			</StandardModal>
-			<Button onClick={() => setIsOpen(true)}>Open</Button>
 			<Text>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
 				convallis neque a laoreet maximus. Vestibulum hendrerit quam at
@@ -159,25 +149,33 @@ export const Standard = () => {
 				magna cursus metus pellentesque tempor. Donec blandit elementum
 				feugiat. Sed nec congue est.
 			</Text>
-			<br />
-			<Text>
-				Nulla quam magna, aliquet et odio non, porta condimentum tellus.
-				Maecenas fringilla sodales erat eu facilisis. Nunc rutrum purus
-				quis diam tempus laoreet. Fusce gravida arcu et lectus ultricies
-				suscipit. Quisque sagittis tempus diam, malesuada posuere lorem
-				sagittis et. Duis eget eros nibh. Aenean at augue tincidunt nunc
-				consequat porta.
-			</Text>
-			<br />
-			<Text>
-				Nunc ac congue lacus, ac vulputate lectus. Suspendisse vel
-				malesuada tellus. In nec fringilla elit. Cras vitae metus et leo
-				convallis consectetur. Cras quis congue sapien, vitae aliquet
-				ante. Integer sed lorem pretium, vestibulum arcu eu, imperdiet
-				mauris. Nam blandit pharetra feugiat. Maecenas eget ante metus.
-				Vivamus pretium ipsum justo, a faucibus ex dictum non.
-				Vestibulum et dui diam.
-			</Text>
-		</>
-	);
+		<br />
+		<Text>
+			Nulla quam magna, aliquet et odio non, porta condimentum tellus.
+			Maecenas fringilla sodales erat eu facilisis. Nunc rutrum purus
+			quis diam tempus laoreet. Fusce gravida arcu et lectus ultricies
+			suscipit. Quisque sagittis tempus diam, malesuada posuere lorem
+			sagittis et. Duis eget eros nibh. Aenean at augue tincidunt nunc
+			consequat porta.
+		</Text>
+		<br />
+		<Text>
+			Nunc ac congue lacus, ac vulputate lectus. Suspendisse vel
+			malesuada tellus. In nec fringilla elit. Cras vitae metus et leo
+			convallis consectetur. Cras quis congue sapien, vitae aliquet
+			ante. Integer sed lorem pretium, vestibulum arcu eu, imperdiet
+			mauris. Nam blandit pharetra feugiat. Maecenas eget ante metus.
+			Vivamus pretium ipsum justo, a faucibus ex dictum non.
+			Vestibulum et dui diam.
+		</Text>
+	</>
+
+);
+
+const standardProps: ComponentProps<typeof StandardModal> = {
+	title: 'Title',
+	isOpen: true,
+	onRequestClose: action('onChange'),
 };
+export const Standard = Template.bind(standardProps);
+Standard.args = standardProps;
