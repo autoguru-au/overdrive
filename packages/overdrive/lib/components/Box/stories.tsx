@@ -2,8 +2,6 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
-import { Icon } from '../Icon';
-
 import { boxArgTypes } from './argTypes';
 
 import { Box } from '.';
@@ -17,7 +15,7 @@ export default {
 		),
 	],
 	argTypes: boxArgTypes,
-} as ComponentMeta<typeof Icon>;
+} as ComponentMeta<typeof Box>;
 
 const template: ComponentStory<typeof Box> = (args) => (
 	<>
@@ -28,7 +26,7 @@ const template: ComponentStory<typeof Box> = (args) => (
 
 const standardProps: ComponentProps<typeof Box> = {
 	borderColour: 'dark',
-	borderWidth: ['none', null, '1', '2'],
+	borderWidth: ['none', 'none', '1', '2'],
 	padding: ['2', '4'],
 	marginBottom: ['2', '4', '5', '8'],
 	marginX: ['none', '3', '5'],
