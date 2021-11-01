@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import type { AriaAttributes } from 'react';
 import * as React from 'react';
 import { forwardRef, useCallback } from 'react';
-import { useStyles } from 'react-treat';
 import type { Theme } from 'treat/theme';
 
 import { Alignment, alignmentToFlexAlignment } from '../../utils';
@@ -15,7 +14,7 @@ import { VisuallyHidden } from '../VisuallyHidden';
 
 import { useTableContext } from './context';
 
-import * as styleRefs from './TableHeadCell.treat';
+import * as styles from './TableHeadCell.css';
 
 type Sort = 'asc' | 'desc' | 'none';
 
@@ -50,7 +49,6 @@ export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 		ref,
 	) => {
 		const tableContext = useTableContext();
-		const styles = useStyles(styleRefs);
 
 		const padding = incomingPadding ?? tableContext?.padding ?? 'none';
 

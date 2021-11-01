@@ -1,15 +1,16 @@
-import { style, styleMap } from 'treat';
+import { style, styleVariants } from '@vanilla-extract/css';
+import { vars } from '../../themes/base/vars.css';
 
 export const sorterButton = style({ userSelect: 'text' });
 
-export const text = style((theme) => ({
-	color: theme.typography.colour.muted,
+export const text = style({
+	color: vars.typography.colour.muted,
 	selectors: {
 		[`${sorterButton}:hover &`]: {
-			color: theme.typography.colour.dark,
+			color: vars.typography.colour.dark,
 		},
 	},
-}));
+});
 
 const sorterRoot = style({
 	transformOrigin: 'center',
@@ -21,17 +22,17 @@ const sorterRoot = style({
 export const sorter = {
 	root: [
 		sorterRoot,
-		style((theme) => ({
-			color: theme.typography.colour.muted,
-			transitionTimingFunction: theme.animation.easing.standard,
+		style({
+			color: vars.typography.colour.muted,
+			transitionTimingFunction: vars.animation.easing.standard,
 			selectors: {
 				[`${sorterButton}:hover &`]: {
-					color: theme.typography.colour.dark,
+					color: vars.typography.colour.dark,
 				},
 			},
-		})),
+		}),
 	],
-	...styleMap({
+	...styleVariants({
 		none: {
 			opacity: '0',
 			transform: 'translateY(10%) rotateX(0)',
