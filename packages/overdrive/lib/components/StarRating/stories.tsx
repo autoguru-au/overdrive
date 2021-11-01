@@ -1,8 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 
-import { Stack } from '../Stack';
-
 import { EStarRatingSize, StarRating } from '.';
 
 export default {
@@ -24,7 +22,7 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof Stack>;
+} as ComponentMeta<typeof StarRating>;
 
 const Template: ComponentStory<typeof StarRating> = (args) => (
 	<StarRating {...args} />

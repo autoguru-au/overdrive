@@ -1,13 +1,7 @@
 import { StarHalfIcon, StarIcon } from '@autoguru/icons';
 import clsx from 'clsx';
 import * as React from 'react';
-import {
-	FunctionComponent,
-	memo,
-	NamedExoticComponent,
-	ReactElement,
-} from 'react';
-import { useStyles } from 'react-treat';
+import { FunctionComponent, memo, NamedExoticComponent } from 'react';
 import type { Theme } from 'treat/theme';
 
 import { Box, useBoxStyles } from '../Box';
@@ -15,7 +9,7 @@ import { Icon } from '../Icon';
 import { Inline } from '../Inline';
 import { Text } from '../Text';
 
-import * as styleRefs from './StarRating.treat';
+import * as styles from './StarRating.css';
 
 const totalStars = 5;
 
@@ -110,13 +104,12 @@ interface StarProps {
 }
 
 const Star: FunctionComponent<StarProps> = ({
-	index,
-	rating = 0,
-	size = EStarRatingSize.Medium,
-}): ReactElement => {
+												index,
+												rating = 0,
+												size = EStarRatingSize.Medium,
+											}) => {
 	const starType = getStarIconType(index, rating);
 	const star = starType === EStarType.Half ? StarHalfIcon : StarIcon;
-	const styles = useStyles(styleRefs);
 	return (
 		<Icon
 			key={index}
