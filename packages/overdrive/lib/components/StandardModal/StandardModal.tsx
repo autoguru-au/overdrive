@@ -7,7 +7,6 @@ import type {
 } from 'react';
 import * as React from 'react';
 import { useLayoutEffect, useRef } from 'react';
-import { useStyles } from 'react-treat';
 
 import { useEventCallback, useId } from '../../utils';
 import { Box } from '../Box';
@@ -17,7 +16,7 @@ import { Icon } from '../Icon';
 import { Modal } from '../Modal';
 import { useTextStyles } from '../Text';
 
-import * as styleRefs from './StandardModal.treat';
+import * as styles from './StandardModal.css';
 
 export enum ESize {
 	Skinny = 'skinny', // 420px wide
@@ -41,7 +40,6 @@ export const StandardModal: FunctionComponent<Props> = ({
 	onRequestClose,
 	children,
 }) => {
-	const styles = useStyles(styleRefs);
 
 	const titleId = useId();
 	const locked = useRef<boolean>(true);
