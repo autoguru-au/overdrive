@@ -22,7 +22,7 @@ export const ThemeProvider: FunctionComponent<Props> = ({
 														}) => (
 	<themeContext.Provider value={theme}>
 		<runtimeTokensContext.Provider
-			value={useMemo(() => makeRuntimeTokens(tokens), [theme])}>
+			value={useMemo(() => makeRuntimeTokens(tokens), [tokens])}>
 			{children}
 		</runtimeTokensContext.Provider>
 	</themeContext.Provider>
