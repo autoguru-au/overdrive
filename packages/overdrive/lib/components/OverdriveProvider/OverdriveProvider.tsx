@@ -5,7 +5,10 @@ import { isBrowser } from '../../utils';
 import { ThemeProvider } from '../ThemeProvider/ThemeProvider';
 
 export interface Props extends ComponentProps<typeof ThemeProvider> {
-	noBodyLevelTheming: boolean; // When set to false theme className must be present in a parent dom element of your app including portals.
+	// When set to true theme className must be present in a
+	// parent dom element of your components including portals.
+	// OD Portal component automatically adds theme class to the mounting node
+	noBodyLevelTheming: boolean;
 }
 
 export const OverdriveProvider: FunctionComponent<Props> = ({
@@ -15,18 +18,19 @@ export const OverdriveProvider: FunctionComponent<Props> = ({
 																tokens,
 																children,
 															}) => {
-	console.log({
-		vars,
-		themeClass,
-		tokens,
-	});
 	useEffect(() => {
-		if (isBrowser) {
-			if (!noBodyLevelTheming)
-				document.body.classList.add(themeClass);
+		if (!isBrowser)
+			return;
+		if (!noBodyLevelTheming) {// Body has theme class applied to it so we use css vars to apply body styles
+			document.body.classList.add(themeClass);
 			document.body.style.backgroundColor = vars.body.backgroundColour;
 			document.body.style.color = vars.body.colour;
+		} else {
+			document.body.style.backgroundColor = tokens.body.backgroundColour;
+			document.body.style.color = tokens.body.colour;
 		}
+
+
 	}, [vars]);
 
 	return <ThemeProvider vars={vars} themeClass={themeClass} tokens={tokens}>{children}</ThemeProvider>;
