@@ -1,8 +1,9 @@
 import { tokens } from './tokens';
-import { vars as themeRef } from './vars.css';
+import { themeRef, vars } from './vars.css';
 
 export default {
 	name: 'baseTheme',
 	themeRef,
 	tokens,
+	vars,
 };

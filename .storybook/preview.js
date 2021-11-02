@@ -16,7 +16,7 @@ const withThemeProvider = (Story, context) => {
 	const {themeRef, tokens, vars} = context.globals.theme
 
 	return !isChromatic() ? (
-			<OverdriveProvider theme={themeRef} tokens={tokens} vars={vars}>
+			<OverdriveProvider themeClass={themeRef} tokens={tokens} vars={vars}>
 				<Box className={themeRef} padding="2">
 					<Story {...context} />
 				</Box>
