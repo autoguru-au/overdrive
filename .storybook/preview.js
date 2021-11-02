@@ -11,20 +11,18 @@ import {
 import * as React from 'react';
 import { DocsContainer, DocsPage } from '@storybook/addon-docs';
 
-import { vars } from '@autoguru/overdrive/lib/themes/base/vars.css';
-import { tokens } from '@autoguru/overdrive/lib/themes/base/tokens';
 
 const withThemeProvider = (Story, context) => {
 	return !isChromatic() ? (
-			<OverdriveProvider theme={vars} tokens={tokens}>
-				<Box className={vars} padding="2">
+			<OverdriveProvider theme={context.globals.theme.themeRef} tokens={context.globals.theme.tokens}>
+				<Box className={context.globals.theme.themeRef} padding="2">
 					<Story {...context} />
 				</Box>
 			</OverdriveProvider>
 	) : (
 		Object.entries(themes).map(([, theme], i) => (
 			<div key={i} data-theme={theme.name}>
-					<Box className={vars} padding="5">
+					<Box className={context.globals.theme.themeRef} padding="5">
 						<Stack space="3">
 							<Heading is="h5" colour="light">
 								Theme :: {theme.name}
@@ -53,10 +51,10 @@ export const globalTypes = {
 		defaultValue: themes.baseTheme,
 		toolbar: {
 			icon: 'grid',
-			items: Object.entries(themes).map(([, theme]) => ({
+			items: Object.entries(themes).map(([key, theme]) => ({
+				key,
 				value: theme,
-				title: theme.name,
-				right: theme.themeRef,
+				title: theme.name
 			})),
 		},
 	},
