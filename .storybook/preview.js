@@ -7,16 +7,15 @@ import {
 	Heading,
 	OverdriveProvider,
 	Stack,
-	useTheme,
 } from '@autoguru/overdrive';
 import * as React from 'react';
 import { DocsContainer, DocsPage } from '@storybook/addon-docs';
 
 import { vars } from '@autoguru/overdrive/lib/themes/base/vars.css';
 import { tokens } from '@autoguru/overdrive/lib/themes/base/tokens';
+
 const withThemeProvider = (Story, context) => {
 	return !isChromatic() ? (
-
 			<OverdriveProvider theme={vars} tokens={tokens}>
 				<Box className={vars} padding="2">
 					<Story {...context} />

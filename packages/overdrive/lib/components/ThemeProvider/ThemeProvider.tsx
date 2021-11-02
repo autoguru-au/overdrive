@@ -3,7 +3,7 @@ import { ThemeVars } from '@vanilla-extract/css/dist/declarations/src/types';
 import * as React from 'react';
 import { createContext, FunctionComponent, useContext, useMemo } from 'react';
 
-import { BreakPoints, Tokens } from '../../themes/tokens';
+import { Tokens } from '../../themes/tokens';
 import { makeRuntimeTokens, RuntimeTokens } from '../../themes/makeTheme';
 
 type ThemeContextType = ThemeVars<Tokens>;
