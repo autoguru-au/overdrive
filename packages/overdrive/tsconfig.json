@@ -12,7 +12,7 @@
 		"strict": true,
 		"sourceMap": false,
 		"inlineSourceMap": false,
-		"strictNullChecks": true,
+		"strictNullChecks": false,
 		"target": "es2019",
 		"incremental": true,
 		"composite": true,

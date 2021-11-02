@@ -1,5 +1,6 @@
 import { buildColourGamut } from '../makeTheme';
-import {ColourMap, Tokens } from '../tokens';
+import { ColourMap, Tokens } from '../tokens';
+import { tokens as baseTokens } from '../base/tokens';
 
 const colours: ColourMap = {
 	gray: {
@@ -63,33 +64,11 @@ const colours: ColourMap = {
 	},
 };
 
-
 const white = '#fff';
 const flatElevation = '0 0 0 0 rgba(0, 0, 0, 0.0)';
 
 export const tokens: Tokens = {
-	mode: 'light',
-	body: {
-		backgroundColour: white,
-		colour: colours.gray['900'],
-	},
-	contentWidth: {
-		small: '592px',
-		large: '1344px',
-		medium: '940px',
-	},
-	space: {
-		'1': '4px',
-		'2': '8px',
-		'3': '12px',
-		'4': '16px',
-		'5': '20px',
-		'6': '24px',
-		'7': '32px',
-		'8': '48px',
-		'9': '96px',
-		none: '0px',
-	},
+	...baseTokens,
 	colours: {
 		gamut: {
 			...buildColourGamut(colours),
@@ -198,80 +177,6 @@ export const tokens: Tokens = {
 			full: '50%',
 			min: 'none',
 			'1': 'none',
-		},
-	},
-	typography: {
-		size: {
-			'1': {
-				fontSize: '10px',
-				lineHeight: '12px',
-			},
-			'2': {
-				fontSize: '12px',
-				lineHeight: '18px',
-			},
-			'3': {
-				fontSize: '14px',
-				lineHeight: '20px',
-			},
-			'4': {
-				fontSize: '16px',
-				lineHeight: '22px',
-			},
-			'5': {
-				fontSize: '18px',
-				lineHeight: '26px',
-			},
-			'6': {
-				fontSize: '20px',
-				lineHeight: '28px',
-			},
-			'7': {
-				fontSize: '24px',
-				lineHeight: '30px',
-			},
-			'8': {
-				fontSize: '30px',
-				lineHeight: '40px',
-			},
-			'9': {
-				fontSize: '40px',
-				lineHeight: '48px',
-			},
-		},
-		colour: {
-			primary: colours.green['600'],
-			secondary: colours.gray['700'],
-			shine: colours.yellow['500'],
-			link: colours.green['600'],
-			dark: colours.gray['900'],
-			white,
-			muted: colours.gray['500'],
-			neutral: colours.gray['700'],
-			light: colours.gray['600'],
-			danger: colours.red['600'],
-			warning: colours.yellow['800'],
-			success: colours.green['600'],
-			information: colours.blue['500'],
-		},
-		fontWeight: {
-			normal: '400',
-			semiBold: '500',
-			bold: '700',
-		},
-	},
-	animation: {
-		easing: {
-			standard: 'cubic-bezier(0.4, 0.0, 0.2, 1)',
-			decelerate: 'cubic-bezier(0.0, 0.0, 0.2, 1)',
-			accelerate: 'cubic-bezier(0.4, 0.0, 1, 1)',
-		},
-	},
-	icon: {
-		size: {
-			small: '16px',
-			medium: '20px',
-			large: '32px',
 		},
 	},
 };

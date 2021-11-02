@@ -6,21 +6,27 @@ import { createContext, FunctionComponent, useContext, useMemo } from 'react';
 import { Tokens } from '../../themes/tokens';
 import { makeRuntimeTokens, RuntimeTokens } from '../../themes/makeTheme';
 
-type ThemeContextType = ThemeVars<Tokens>;
+type ThemeContextType = {
+	vars: ThemeVars<Tokens>;
+	themeClass: string;
+};
 const themeContext = createContext<ThemeContextType | null>(null);
 const runtimeTokensContext = createContext<RuntimeTokens | null>(null);
 
 export interface Props {
-	theme: ThemeVars<Tokens>;
+	vars: ThemeVars<Tokens>;
+	themeClass: string;
 	tokens: Tokens;
 }
 
 export const ThemeProvider: FunctionComponent<Props> = ({
-															theme,
+															vars,
 															tokens,
+															themeClass,
 															children,
 														}) => (
-	<themeContext.Provider value={theme}>
+	<themeContext.Provider value={
+		useMemo(()=>({ vars, themeClass }), [vars, tokens,])}>
 		<runtimeTokensContext.Provider
 			value={useMemo(() => makeRuntimeTokens(tokens), [tokens])}>
 			{children}
@@ -29,14 +35,14 @@ export const ThemeProvider: FunctionComponent<Props> = ({
 );
 
 export const useTheme = () => {
-	const themeClass = useContext(themeContext);
+	const theme = useContext(themeContext);
 
 	invariant(
-		themeClass !== null,
+		theme !== null,
 		"You haven't provided an `OverdriveProvider`.",
 	);
 
-	return themeClass;
+	return theme;
 };
 
 export const useRuntimeTokens = (): RuntimeTokens => {

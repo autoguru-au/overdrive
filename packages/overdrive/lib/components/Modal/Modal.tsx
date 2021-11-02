@@ -75,7 +75,7 @@ export const Modal: FunctionComponent<Props> = ({
 	onRequestClose,
 	children,
 }) => {
-	const themeClass = useTheme();
+	const themeClass  = useTheme()?.themeClass;
 	const [state, dispatch] = useReducer(reducer, 'INITIAL');
 
 	const handleBackdropClick = useEventCallback((event) => {

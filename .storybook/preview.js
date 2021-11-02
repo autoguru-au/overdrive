@@ -13,9 +13,11 @@ import { DocsContainer, DocsPage } from '@storybook/addon-docs';
 
 
 const withThemeProvider = (Story, context) => {
+	const {themeRef, tokens, vars} = context.globals.theme
+
 	return !isChromatic() ? (
-			<OverdriveProvider theme={context.globals.theme.themeRef} tokens={context.globals.theme.tokens}>
-				<Box className={context.globals.theme.themeRef} padding="2">
+			<OverdriveProvider theme={themeRef} tokens={tokens} vars={vars}>
+				<Box className={themeRef} padding="2">
 					<Story {...context} />
 				</Box>
 			</OverdriveProvider>
