@@ -2,12 +2,7 @@ import '@autoguru/overdrive/lib/reset/globalFonts.css';
 import '@autoguru/overdrive/reset';
 import * as themes from '../packages/overdrive/themes';
 import isChromatic from 'chromatic/isChromatic';
-import {
-	Box,
-	Heading,
-	OverdriveProvider,
-	Stack,
-} from '@autoguru/overdrive';
+import { Box, Heading, OverdriveProvider, Stack } from '@autoguru/overdrive';
 import * as React from 'react';
 import { DocsContainer, DocsPage } from '@storybook/addon-docs';
 
@@ -24,23 +19,25 @@ const withThemeProvider = (Story, context) => {
 	) : (
 		Object.entries(themes).map(([, theme], i) => (
 			<div key={i} data-theme={theme.name}>
-					<Box className={context.globals.theme.themeRef} padding="5">
-						<Stack space="3">
-							<Heading is="h5" colour="light">
+				<OverdriveProvider themeClass={themeRef} tokens={tokens} vars={vars}>
+					<Box className={context.globals.theme.themeRef} padding='5'>
+						<Stack space='3'>
+							<Heading is='h5' colour='light'>
 								Theme :: {theme.name}
 							</Heading>
 
 							<Story {...context} />
 						</Stack>
 					</Box>
-				<hr
-					style={{
-						margin: 0,
-						border: 0,
-						height: 1,
-						background: '#eee',
-					}}
-				/>
+					<hr
+						style={{
+							margin: 0,
+							border: 0,
+							height: 1,
+							background: '#eee',
+						}}
+					/>
+				</OverdriveProvider>
 			</div>
 		))
 	);
