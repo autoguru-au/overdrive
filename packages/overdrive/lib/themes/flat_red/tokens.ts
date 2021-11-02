@@ -65,6 +65,7 @@ const colours: ColourMap = {
 };
 
 const white = '#fff';
+const secondaryForeground= colours.blue['800'];
 const flatElevation = '0 0 0 0 rgba(0, 0, 0, 0.0)';
 
 export const tokens: Tokens = {
@@ -87,9 +88,9 @@ export const tokens: Tokens = {
 		intent: {
 			primary: {
 				background: {
-					standard: colours.green['600'],
-					mild: colours.green['200'],
-					strong: colours.green['900'],
+					standard: colours.red['600'],
+					mild: colours.red['200'],
+					strong: colours.red['900'],
 				},
 				foreground: white,
 			},
@@ -97,9 +98,9 @@ export const tokens: Tokens = {
 				background: {
 					standard: white,
 					mild: white,
-					strong: colours.gray['200'],
+					strong: colours.blue['200'],
 				},
-				foreground: colours.gray['700'],
+				foreground: secondaryForeground,
 			},
 			shine: {
 				background: {

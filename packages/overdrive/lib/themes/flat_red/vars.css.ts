@@ -1,9 +1,9 @@
-import { createGlobalTheme } from '@vanilla-extract/css';
-
-import type { Tokens } from '../tokens';
+import {vars as baseVars} from '../base/vars.css';
+import { createTheme } from '@vanilla-extract/css';
 
 import { tokens } from './tokens';
+import { Tokens } from '../tokens';
 
-export const vars = createGlobalTheme<Tokens>(':root', {
-	...tokens,
-});
+// Pass baseVars to your custom themes for css vars hashes to be consistent between both themes
+// @ts-ignore
+export const themeRef = createTheme<Tokens>(baseVars, tokens, 'flatRed');

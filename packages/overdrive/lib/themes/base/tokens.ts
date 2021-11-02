@@ -64,6 +64,7 @@ const colours: ColourMap = {
 };
 
 const white = '#fff';
+const secondaryForeground = colours.gray['700'];
 
 export const tokens: Tokens = {
 	mode: 'light',
@@ -118,7 +119,7 @@ export const tokens: Tokens = {
 					mild: white,
 					strong: colours.gray['200'],
 				},
-				foreground: colours.gray['700'],
+				foreground: secondaryForeground,
 			},
 			shine: {
 				background: {

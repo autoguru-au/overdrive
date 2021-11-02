@@ -1,8 +1,10 @@
 import { tokens } from './tokens';
-import { vars as themeRef } from './vars.css';
+import { themeRef } from './vars.css';
+import { vars } from '../base/vars.css';
 
 export default {
 	name: 'flatRedTheme',
 	themeRef,
 	tokens,
+	vars,
 };
