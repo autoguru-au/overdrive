@@ -2,6 +2,7 @@
 
 exports[`<StandardModal /> should match snapshot with title and body 1`] = `
 <body
+  class="vars_OD_Base__1gqkyza0"
   style="overflow: hidden;"
 >
   <div />
@@ -20,10 +21,10 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
   >
     <div
       aria-hidden="true"
-      class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06dn mode body contentWidth space colours elevation border typography animation icon Modal_backdrop_root__p7g8yg3 Modal_transition__p7g8yg1"
+      class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06dn Modal_backdrop_root__p7g8yg3 Modal_transition__p7g8yg1"
     />
     <div
-      class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06dn useBoxStyles_overflow_hidden__7o6k06ds mode body contentWidth space colours elevation border typography animation icon Modal_root__p7g8yg0 Modal_transition__p7g8yg1"
+      class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06dn useBoxStyles_overflow_hidden__7o6k06ds Modal_root__p7g8yg0 Modal_transition__p7g8yg1"
       role="presentation"
     >
       <div
@@ -98,6 +99,7 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
 
 exports[`<StandardModal /> should match snapshot without title and body 1`] = `
 <body
+  class="vars_OD_Base__1gqkyza0"
   style="overflow: hidden;"
 >
   <div />
@@ -116,10 +118,10 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
   >
     <div
       aria-hidden="true"
-      class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06dn mode body contentWidth space colours elevation border typography animation icon Modal_backdrop_root__p7g8yg3 Modal_transition__p7g8yg1"
+      class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06dn Modal_backdrop_root__p7g8yg3 Modal_transition__p7g8yg1"
     />
     <div
-      class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06dn useBoxStyles_overflow_hidden__7o6k06ds mode body contentWidth space colours elevation border typography animation icon Modal_root__p7g8yg0 Modal_transition__p7g8yg1"
+      class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06dn useBoxStyles_overflow_hidden__7o6k06ds Modal_root__p7g8yg0 Modal_transition__p7g8yg1"
       role="presentation"
     >
       <div

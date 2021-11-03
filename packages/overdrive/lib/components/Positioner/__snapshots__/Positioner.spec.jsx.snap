@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Positioner /> should match snapshot 1`] = `
-<body>
+<body
+  class="vars_OD_Base__1gqkyza0"
+>
   <div />
   <div
     aria-hidden="false"

@@ -13,7 +13,9 @@ exports[`<Tolltip /> should match snapshot when closed 1`] = `
 `;
 
 exports[`<Tolltip /> should match snapshot when opened 1`] = `
-<body>
+<body
+  class="vars_OD_Base__1gqkyza0"
+>
   <div>
     <div>
       trigger
