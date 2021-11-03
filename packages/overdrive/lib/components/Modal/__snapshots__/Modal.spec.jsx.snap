@@ -6,33 +6,37 @@ exports[`<Modal /> should match snapshot 1`] = `
 >
   <div />
   <div
-    data-focus-guard="true"
-    style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-    tabindex="0"
-  />
-  <div
-    data-focus-guard="true"
-    style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-    tabindex="1"
-  />
-  <div
-    data-focus-lock-disabled="false"
+    class="vars_OD_Base__1gqkyza0"
   >
     <div
-      aria-hidden="true"
-      class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06dn Modal_backdrop_root__p7g8yg3 Modal_transition__p7g8yg1"
+      data-focus-guard="true"
+      style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+      tabindex="0"
     />
     <div
-      class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06dn useBoxStyles_overflow_hidden__7o6k06ds Modal_root__p7g8yg0 Modal_transition__p7g8yg1"
-      role="presentation"
+      data-focus-guard="true"
+      style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+      tabindex="1"
+    />
+    <div
+      data-focus-lock-disabled="false"
     >
-      Hello World!
+      <div
+        aria-hidden="true"
+        class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06dn Modal_backdrop_root__p7g8yg3 Modal_transition__p7g8yg1"
+      />
+      <div
+        class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06dn useBoxStyles_overflow_hidden__7o6k06ds Modal_root__p7g8yg0 Modal_transition__p7g8yg1"
+        role="presentation"
+      >
+        Hello World!
+      </div>
     </div>
+    <div
+      data-focus-guard="true"
+      style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+      tabindex="0"
+    />
   </div>
-  <div
-    data-focus-guard="true"
-    style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-    tabindex="0"
-  />
 </body>
 `;

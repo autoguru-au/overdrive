@@ -1,4 +1,5 @@
 import type { ReactNode, Ref, RefObject } from 'react';
+import * as React from 'react';
 import { forwardRef, useLayoutEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 

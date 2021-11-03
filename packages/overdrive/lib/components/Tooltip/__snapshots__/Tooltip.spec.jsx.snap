@@ -22,18 +22,22 @@ exports[`<Tolltip /> should match snapshot when opened 1`] = `
     </div>
   </div>
   <div
-    aria-hidden="false"
-    class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06dn Positioner_root__lgdvlw0"
-    style="position: absolute; left: 0px; top: 0px; margin: 0px;"
+    class="vars_OD_Base__1gqkyza0"
   >
     <div
-      class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c useBoxStyles_makeResponsiveStyle_key_bp__7o6k061g useBoxStyles_makeResponsiveStyle_key_bp__7o6k062k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063o useBoxStyles_width_full__7o6k06dk useBoxStyles_overflow_hidden__7o6k06ds useBoxStyles_userSelect_none__7o6k06e5 useBoxStyles_pointerEvents_none__7o6k06fj useBoxStyles_makeResponsiveStyle_key_bp__7o6k0698 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp useBoxStyles_backgroundColours_gray900__7o6k06ch Tooltip_root__1im63pj0"
+      aria-hidden="false"
+      class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06dn Positioner_root__lgdvlw0"
+      style="position: absolute; left: 0px; top: 0px; margin: 0px;"
     >
-      <span
-        class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06dp useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_white__w6to7if useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_4__w6to7i4"
+      <div
+        class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c useBoxStyles_makeResponsiveStyle_key_bp__7o6k061g useBoxStyles_makeResponsiveStyle_key_bp__7o6k062k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063o useBoxStyles_width_full__7o6k06dk useBoxStyles_overflow_hidden__7o6k06ds useBoxStyles_userSelect_none__7o6k06e5 useBoxStyles_pointerEvents_none__7o6k06fj useBoxStyles_makeResponsiveStyle_key_bp__7o6k0698 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp useBoxStyles_backgroundColours_gray900__7o6k06ch Tooltip_root__1im63pj0"
       >
-        tooltip content
-      </span>
+        <span
+          class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06dp useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_white__w6to7if useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_4__w6to7i4"
+        >
+          tooltip content
+        </span>
+      </div>
     </div>
   </div>
 </body>
