@@ -25,17 +25,15 @@ function Portal({ children, container }: Props, ref: Ref<typeof container>) {
 
 	useLayoutEffect(() => {
 		if (mountNode) {
-			mountNode.classList.add(themeClass);
 			setRef(ref, mountNode);
 		}
 
 		return () => {
-			mountNode?.classList.remove(themeClass);
 			void setRef(ref, null);
 		};
-	}, [ref, mountNode, themeClass]);
+	}, [ref, mountNode]);
 
-	return mountNode ? createPortal(children, mountNode) : null;
+	return mountNode ? createPortal(<div className={themeClass}>{children}</div>, mountNode) : null;
 }
 
 const _Portal = forwardRef(Portal);
