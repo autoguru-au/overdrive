@@ -132,7 +132,7 @@ export const tokens: Tokens = {
 			danger: {
 				background: {
 					standard: colours.red['600'],
-					mild: colours.red['200'],
+					mild: colours.red['100'],
 					strong: colours.red['800'],
 				},
 				foreground: white,
@@ -140,7 +140,7 @@ export const tokens: Tokens = {
 			warning: {
 				background: {
 					standard: colours.yellow['800'],
-					mild: colours.yellow['200'],
+					mild: colours.yellow['100'],
 					strong: colours.yellow['900'],
 				},
 				foreground: colours.yellow['200'],
@@ -250,7 +250,7 @@ export const tokens: Tokens = {
 			link: colours.green['600'],
 			dark: colours.gray['900'],
 			white,
-			muted: colours.gray['500'],
+			muted: colours.gray['400'],
 			neutral: colours.gray['700'],
 			light: colours.gray['600'],
 			danger: colours.red['600'],

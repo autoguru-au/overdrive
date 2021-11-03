@@ -89,7 +89,7 @@ export const tokens: Tokens = {
 			primary: {
 				background: {
 					standard: colours.red['600'],
-					mild: colours.red['200'],
+					mild: colours.red['100'],
 					strong: colours.red['900'],
 				},
 				foreground: white,
@@ -98,7 +98,7 @@ export const tokens: Tokens = {
 				background: {
 					standard: white,
 					mild: white,
-					strong: colours.blue['200'],
+					strong: colours.gray['100'],
 				},
 				foreground: secondaryForeground,
 			},
@@ -113,7 +113,7 @@ export const tokens: Tokens = {
 			danger: {
 				background: {
 					standard: colours.red['600'],
-					mild: colours.red['200'],
+					mild: colours.red['100'],
 					strong: colours.red['800'],
 				},
 				foreground: white,
@@ -121,7 +121,7 @@ export const tokens: Tokens = {
 			warning: {
 				background: {
 					standard: colours.yellow['800'],
-					mild: colours.yellow['200'],
+					mild: colours.yellow['100'],
 					strong: colours.yellow['900'],
 				},
 				foreground: colours.yellow['200'],
@@ -129,7 +129,7 @@ export const tokens: Tokens = {
 			neutral: {
 				background: {
 					standard: colours.gray['700'],
-					mild: colours.gray['200'],
+					mild: colours.gray['100'],
 					strong: colours.gray['900'],
 				},
 				foreground: white,
@@ -137,7 +137,7 @@ export const tokens: Tokens = {
 			success: {
 				background: {
 					standard: colours.green['700'],
-					mild: colours.green['200'],
+					mild: colours.green['100'],
 					strong: colours.green['900'],
 				},
 				foreground: colours.green['200'],
@@ -145,7 +145,7 @@ export const tokens: Tokens = {
 			information: {
 				background: {
 					standard: colours.blue['800'],
-					mild: colours.blue['200'],
+					mild: colours.blue['100'],
 					strong: colours.blue['900'],
 				},
 				foreground: colours.blue['200'],
