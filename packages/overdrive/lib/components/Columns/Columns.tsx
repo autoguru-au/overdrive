@@ -51,7 +51,9 @@ export const Columns = forwardRef<HTMLElement, Props>(
 		const resolvedSpaceX = spaceX || space || ['none'];
 		const resolvedSpaceY = spaceY || space || ['none'];
 
+		// @ts-ignore
 		const marginLeftFix = useNegativeMarginLeft(resolvedSpaceX);
+		// @ts-ignore
 		const marginTopFix = useNegativeMarginTop(resolvedSpaceY);
 
 		return (
