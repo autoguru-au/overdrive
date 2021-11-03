@@ -1,0 +1,11 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "@autoguru/overdrive": "2.7.1"
+  },
+  "changesets": [
+    "chatty-readers-lick",
+    "friendly-squids-repeat"
+  ]
+}

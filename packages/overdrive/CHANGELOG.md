@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 3.0.0-next.0
+
+### Major Changes
+
+-   eb36462: Overdrive: Migrates styling away from treat to vanilla extract
+-   aaac596: Migrate to vanilla extract
+
 ## 3.0.0-next.1
 
 ### Major Changes
@@ -934,7 +941,7 @@
     eg:
 
     ```jsx
-    <Modal isOpen={true} onRequestClose={function () {}}>
+    <Modal isOpen={true} onRequestClose={function() {}}>
     	>
     </Modal>
     ```
