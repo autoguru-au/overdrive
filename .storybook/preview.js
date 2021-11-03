@@ -21,14 +21,14 @@ const withThemeProvider = (Story, context) => {
 		</OverdriveProvider>
 	) : (
 		Object.entries(themes).map(([, theme], i) => (
-			<div key={i} data-theme={theme.name}>
+			<div key={i} className={theme.themeRef} data-theme={theme.name}>
 				<OverdriveProvider
 					noBodyLevelTheming
-					themeClass={themeRef}
+					themeClass={theme.themeRef}
 					tokens={tokens}
 					vars={vars}>
-					<Box className={themeRef} padding="5">
-						<Stack space="3">
+					<Box width='full' padding="5">
+						<Stack  width='full' space="3">
 							<Heading is="h5" colour="light">
 								Theme :: {theme.name}
 							</Heading>
