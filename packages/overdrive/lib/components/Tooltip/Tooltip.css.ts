@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+
 import { responsiveStyle } from '../../utils/responsiveStyle';
 
 export const root = style({

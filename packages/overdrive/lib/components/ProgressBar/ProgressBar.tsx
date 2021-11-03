@@ -27,13 +27,16 @@ const backgroundColorMap: Record<
 	neutral: 'gray500',
 };
 
-export const ProgressBar: FunctionComponent<Props> = ({ value = 0, colour = 'green' }) => (
+export const ProgressBar: FunctionComponent<Props> = ({
+	value = 0,
+	colour = 'green',
+}) => (
 	<Box
 		className={styles.container}
-		borderRadius='1'
-		backgroundColour='gray100'>
+		borderRadius="1"
+		backgroundColour="gray100">
 		<Box
-			borderRadius='1'
+			borderRadius="1"
 			backgroundColour={backgroundColorMap[colour]}
 			className={[styles.bar, styles.container]}
 			style={{

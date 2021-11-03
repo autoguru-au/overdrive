@@ -3,11 +3,14 @@ import * as React from 'react';
 import { ComponentProps, FunctionComponent } from 'react';
 
 import { Box } from '../../components';
+import {
+	getEarliestKnownToken,
+	resolveResponsiveStyle,
+} from '../../utils/resolveResponsiveProps';
+import { ResponsiveProp } from '../../utils/responsiveProps.css';
 import { useMedia } from '../useMedia';
 
 import * as styles from './useAttachedBoxes.css';
-import { ResponsiveProp } from '../../utils/responsiveProps.css';
-import { getEarliestKnownToken, resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
 
 interface Props extends Pick<ComponentProps<typeof Box>, 'backgroundColour'> {
 	count: number;

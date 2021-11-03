@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+
 import { vars } from '../../themes/base/vars.css';
 import { responsiveStyle } from '../../utils/responsiveStyle';
 
@@ -29,35 +30,41 @@ export const modal = style({
 	}),
 });
 
-export const modalSizeSkinny = style(responsiveStyle({
-	tablet: {
-		maxWidth: '420px',
-	},
-	desktop: {
-		maxWidth: '420px',
-	},
-	largeDesktop: {
-		width: '420px',
-	},
-}));
+export const modalSizeSkinny = style(
+	responsiveStyle({
+		tablet: {
+			maxWidth: '420px',
+		},
+		desktop: {
+			maxWidth: '420px',
+		},
+		largeDesktop: {
+			width: '420px',
+		},
+	}),
+);
 
-export const modalSizeNarrow = style(responsiveStyle({
-	tablet: {
-		maxWidth: '600px',
-	},
-	desktop: {
-		maxWidth: '600px',
-	},
-	largeDesktop: {
-		width: '600px',
-	},
-}));
+export const modalSizeNarrow = style(
+	responsiveStyle({
+		tablet: {
+			maxWidth: '600px',
+		},
+		desktop: {
+			maxWidth: '600px',
+		},
+		largeDesktop: {
+			width: '600px',
+		},
+	}),
+);
 
-export const modalSizeStandard = style(responsiveStyle({
-	tablet: {
-		width: '800px',
-	},
-}));
+export const modalSizeStandard = style(
+	responsiveStyle({
+		tablet: {
+			width: '800px',
+		},
+	}),
+);
 
 export const headerCloseButton = style({
 	top: 0,

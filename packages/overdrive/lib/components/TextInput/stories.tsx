@@ -61,7 +61,9 @@ const argTypes: ArgTypes<Partial<ComponentProps<typeof TextInput>>> = {
 	},
 };
 
-const Template: ComponentStory<typeof TextInput> = (args) => <TextInput {...args} />;
+const Template: ComponentStory<typeof TextInput> = (args) => (
+	<TextInput {...args} />
+);
 
 const sharedProps: ComponentProps<typeof TextInput> = {
 	disabled: false,

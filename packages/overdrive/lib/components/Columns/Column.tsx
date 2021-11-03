@@ -2,12 +2,12 @@ import { invariant } from '@autoguru/utilities';
 import * as React from 'react';
 import { ComponentProps, forwardRef, ReactNode, useContext } from 'react';
 
+import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
+import { ResponsiveProp } from '../../utils/responsiveProps.css';
 import { Box } from '../Box';
 
 import * as styles from './Column.css';
 import { ColumnContext } from './Columns';
-import { ResponsiveProp } from '../../utils/responsiveProps.css';
-import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
 
 export interface Props extends Omit<ComponentProps<typeof Box>, 'width'> {
 	width?: ResponsiveProp<keyof typeof styles.width>;

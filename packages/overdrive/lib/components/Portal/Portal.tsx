@@ -13,7 +13,7 @@ export interface Props {
 type RefValue<T> = T extends RefObject<infer T> ? T : never;
 
 function Portal({ children, container }: Props, ref: Ref<typeof container>) {
-	const themeClass  = useTheme()?.themeClass;
+	const themeClass = useTheme()?.themeClass;
 
 	const [mountNode, setMountNode] = useState<RefValue<typeof ref> | null>(
 		null,

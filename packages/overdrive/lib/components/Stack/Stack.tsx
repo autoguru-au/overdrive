@@ -6,7 +6,6 @@ import type { BoxStyleProps } from '../Box';
 import { Box } from '../Box';
 
 import { Divider } from './Divider';
-
 import * as styles from './Stack.css';
 
 export interface Props extends Pick<BoxStyleProps, 'is' | 'width'> {

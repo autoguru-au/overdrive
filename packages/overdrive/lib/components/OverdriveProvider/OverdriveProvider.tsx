@@ -12,16 +12,16 @@ export interface Props extends ComponentProps<typeof ThemeProvider> {
 }
 
 export const OverdriveProvider: FunctionComponent<Props> = ({
-																noBodyLevelTheming = false,
-																vars,
-																themeClass,
-																tokens,
-																children,
-															}) => {
+	noBodyLevelTheming = false,
+	vars,
+	themeClass,
+	tokens,
+	children,
+}) => {
 	useEffect(() => {
-		if (!isBrowser)
-			return;
-		if (!noBodyLevelTheming) {// Body has theme class applied to it so we use css vars to apply body styles
+		if (!isBrowser) return;
+		if (!noBodyLevelTheming) {
+			// Body has theme class applied to it so we use css vars to apply body styles
 			document.body.classList.add(themeClass);
 			document.body.style.backgroundColor = vars.body.backgroundColour;
 			document.body.style.color = vars.body.colour;
@@ -29,9 +29,11 @@ export const OverdriveProvider: FunctionComponent<Props> = ({
 			document.body.style.backgroundColor = tokens.body.backgroundColour;
 			document.body.style.color = tokens.body.colour;
 		}
-
-
 	}, [vars]);
 
-	return <ThemeProvider vars={vars} themeClass={themeClass} tokens={tokens}>{children}</ThemeProvider>;
+	return (
+		<ThemeProvider vars={vars} themeClass={themeClass} tokens={tokens}>
+			{children}
+		</ThemeProvider>
+	);
 };

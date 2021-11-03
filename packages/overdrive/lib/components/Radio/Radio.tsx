@@ -6,9 +6,8 @@ import { Box } from '../Box';
 import { CheckableBase } from '../private/CheckableBase';
 import { useCheckableStyles } from '../private/CheckableBase/useCheckableStyles';
 
-import { useRadioContext } from './RadioGroup';
-
 import * as styles from './Radio.css';
+import { useRadioContext } from './RadioGroup';
 
 export interface Props {
 	value: string;

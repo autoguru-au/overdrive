@@ -1,6 +1,6 @@
+import { tokens as baseTokens } from '../base/tokens';
 import { buildColourGamut } from '../makeTheme';
 import { ColourMap, Tokens } from '../tokens';
-import { tokens as baseTokens } from '../base/tokens';
 
 const colours: ColourMap = {
 	gray: {
@@ -65,7 +65,7 @@ const colours: ColourMap = {
 };
 
 const white = '#fff';
-const secondaryForeground= colours.blue['800'];
+const secondaryForeground = colours.blue['800'];
 const flatElevation = '0 0 0 0 rgba(0, 0, 0, 0.0)';
 
 export const tokens: Tokens = {

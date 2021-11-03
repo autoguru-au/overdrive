@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+
 import { vars } from '../../themes/base/vars.css';
 
 const paginationBubbleSize = '36px';

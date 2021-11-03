@@ -3,12 +3,15 @@ import * as React from 'react';
 import { Children, isValidElement } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 
-import { useNegativeMarginLeft, useNegativeMarginTop } from '../../hooks/useNegativeMargin/useNegativeMargin';
+import {
+	useNegativeMarginLeft,
+	useNegativeMarginTop,
+} from '../../hooks/useNegativeMargin/useNegativeMargin';
+import { Tokens } from '../../themes/tokens';
+import { ResponsiveProp } from '../../utils/responsiveProps.css';
 import type { BoxStyleProps } from '../Box';
 import { Box } from '../Box';
 import { Text } from '../Text';
-import { ResponsiveProp } from '../../utils/responsiveProps.css';
-import { Tokens } from '../../themes/tokens';
 
 export interface Props extends Pick<BoxStyleProps, 'is'> {
 	space?: ResponsiveProp<keyof Tokens['space']>;

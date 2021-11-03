@@ -36,11 +36,7 @@ export const SelectInput = withEnhancedInput<
 				{...eventHandlers}
 				{...field}
 				{...rest}
-				className={[
-					styles.input,
-					styles.paddedInput,
-					field.className,
-				]}
+				className={[styles.input, styles.paddedInput, field.className]}
 				autoComplete="off"
 			/>
 			{isLoading ? null : (

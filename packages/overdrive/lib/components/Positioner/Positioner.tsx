@@ -20,9 +20,8 @@ import { isBrowser, setRef } from '../../utils';
 import { Box } from '../Box';
 import { Portal } from '../Portal';
 
-import { EAlignment } from './alignment';
-
 import * as styles from './Positioner.css';
+import { EAlignment } from './alignment';
 
 export { EAlignment } from './alignment';
 

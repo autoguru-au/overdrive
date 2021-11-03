@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import { breakpoints } from '../themes/makeTheme';
 
+import { breakpoints } from '../themes/makeTheme';
 
 export type ResponsiveProp<T> = T | T[];
 

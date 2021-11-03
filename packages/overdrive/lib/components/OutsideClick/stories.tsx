@@ -1,11 +1,11 @@
+import { action } from '@storybook/addon-actions';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
 import { Button } from '../Button';
 
 import { OutsideClick } from '.';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 
 export default {
 	title: 'Utility/OutsideClick',
@@ -17,9 +17,9 @@ export default {
 		children: {
 			control: {
 				disable: true,
-			}
-		}
-	}
+			},
+		},
+	},
 } as ComponentMeta<typeof OutsideClick>;
 
 const Template: ComponentStory<typeof OutsideClick> = (args) => (
@@ -36,4 +36,3 @@ const standardProps: Omit<ComponentProps<typeof OutsideClick>, 'children'> = {
 };
 export const standard = Template.bind(standardProps);
 standard.args = standardProps;
-

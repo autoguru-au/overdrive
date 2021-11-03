@@ -2,11 +2,11 @@ import clsx from 'clsx';
 import type { JSXElementConstructor } from 'react';
 
 import * as resetStyles from '../../reset/reset.css';
+import { Tokens } from '../../themes/tokens';
 import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
 import { ResponsiveProp } from '../../utils/responsiveProps.css';
 
 import * as styles from './useBoxStyles.css';
-import { Tokens } from '../../themes/tokens';
 
 interface Padding {
 	padding?: ResponsiveProp<keyof Tokens['space']>;
@@ -130,7 +130,6 @@ export const useBoxStyles = ({
 	justifyContent,
 	className,
 }: BoxStyleProps) => {
-
 	const resolvedPaddingTop = paddingTop || paddingY || padding;
 	const resolvedPaddingRight = paddingRight || paddingX || padding;
 	const resolvedPaddingBottom = paddingBottom || paddingY || padding;

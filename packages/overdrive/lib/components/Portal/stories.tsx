@@ -1,12 +1,12 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
+import { Heading } from '../Heading';
+import { Stack } from '../Stack';
 import { Text } from '../Text';
 
 import { Portal } from '.';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Stack } from '../Stack';
-import { Heading } from '../Heading';
 
 export default {
 	title: 'Utility/Portal',
@@ -30,16 +30,18 @@ export default {
 
 const StandardTemplate: ComponentStory<typeof Portal> = (...args) => (
 	<Portal {...args}>
-		<Text colour='primary'>Im in a portal at the root.</Text>
+		<Text colour="primary">Im in a portal at the root.</Text>
 	</Portal>
 );
 
 const NestedTemplate: ComponentStory<typeof Portal> = (...args) => (
 	<Portal {...args}>
-		<Stack space='5'>
-			<Heading is='h3' colour='information'>test child 1</Heading>
+		<Stack space="5">
+			<Heading is="h3" colour="information">
+				test child 1
+			</Heading>
 			<Portal {...args}>
-				<Text colour='primary'>test child 2</Text>
+				<Text colour="primary">test child 2</Text>
 			</Portal>
 		</Stack>
 	</Portal>

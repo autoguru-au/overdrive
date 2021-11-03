@@ -58,8 +58,12 @@ const argTypes: ArgTypes = {
 	},
 };
 
-export const list: ComponentStory<typeof Radio> = ({ value, children, ...args }) => (
-	<RadioGroup value={value} name='favourite fruit'>
+export const list: ComponentStory<typeof Radio> = ({
+	value,
+	children,
+	...args
+}) => (
+	<RadioGroup value={value} name="favourite fruit">
 		{listData.map((item: { label: string; value: string }) => {
 			return (
 				<Radio
@@ -79,8 +83,8 @@ list.args = {
 list.argTypes = argTypes;
 
 const Template: ComponentStory<typeof Radio> = ({ value, ...args }) => (
-	<RadioGroup value={value} name='favourite fruit'>
-		<Radio value='avocado' {...args} />
+	<RadioGroup value={value} name="favourite fruit">
+		<Radio value="avocado" {...args} />
 	</RadioGroup>
 );
 
@@ -90,7 +94,7 @@ const uncheckedProps: ComponentProps<typeof Radio> = {
 	value: 'berry',
 };
 const checkedProps: ComponentProps<typeof Radio> = {
-// @ts-ignore
+	// @ts-ignore
 	checked: true,
 	disabled: false,
 	children: 'check me!',
@@ -102,7 +106,7 @@ const disabledProps: ComponentProps<typeof Radio> = {
 	value: 'berry',
 };
 const disabledCheckedProps: ComponentProps<typeof Radio> = {
-// @ts-ignore
+	// @ts-ignore
 	checked: true,
 	disabled: true,
 	children: 'check me!',
@@ -143,8 +147,8 @@ const withMultiLineComponentProps: ComponentProps<typeof Radio> = {
 				gridTemplateColumns: '1fr auto auto',
 			}}>
 			<Heading is="h5">Your last order</Heading>
-			<Badge colour='neutral' label='SUBSCRIBE' />
-			<Badge colour='neutral' label='AUTO TOP-UP' />
+			<Badge colour="neutral" label="SUBSCRIBE" />
+			<Badge colour="neutral" label="AUTO TOP-UP" />
 			<div
 				style={{
 					gridColumn: '1/4',
@@ -152,8 +156,8 @@ const withMultiLineComponentProps: ComponentProps<typeof Radio> = {
 					gridGap: '8px',
 					gridTemplateColumns: '1fr auto',
 				}}>
-				<Text size='2'>Ending in 5678</Text>
-				<Text size='2'>Updated 12 Dec 2018</Text>
+				<Text size="2">Ending in 5678</Text>
+				<Text size="2">Updated 12 Dec 2018</Text>
 			</div>
 		</div>
 	),

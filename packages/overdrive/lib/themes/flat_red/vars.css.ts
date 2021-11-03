@@ -1,8 +1,9 @@
-import {vars as baseVars} from '../base/vars.css';
 import { createTheme } from '@vanilla-extract/css';
 
-import { tokens } from './tokens';
+import { vars as baseVars } from '../base/vars.css';
 import { Tokens } from '../tokens';
+
+import { tokens } from './tokens';
 
 // Pass baseVars to your custom themes for css vars hashes to be consistent between both themes
 // @ts-ignore

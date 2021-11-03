@@ -12,7 +12,11 @@ export interface Props {
 	colour?: keyof typeof styles.colours;
 }
 
-export const ProgressSpinner: FunctionComponent<Props> = ({ className = '', colour = 'primary', size = 'medium' }) => (
+export const ProgressSpinner: FunctionComponent<Props> = ({
+	className = '',
+	colour = 'primary',
+	size = 'medium',
+}) => (
 	<Box
 		className={[
 			styles.size[size].circular,
@@ -28,14 +32,14 @@ export const ProgressSpinner: FunctionComponent<Props> = ({ className = '', colo
 				}),
 				styles.circular,
 			)}
-			viewBox='25 25 50 50'>
+			viewBox="25 25 50 50">
 			<circle
 				className={clsx(styles.path, styles.size[size].path)}
-				cx='50'
-				cy='50'
-				r='20'
-				fill='none'
-				strokeMiterlimit='10'
+				cx="50"
+				cy="50"
+				r="20"
+				fill="none"
+				strokeMiterlimit="10"
 			/>
 		</svg>
 	</Box>

@@ -40,7 +40,6 @@ export const StandardModal: FunctionComponent<Props> = ({
 	onRequestClose,
 	children,
 }) => {
-
 	const titleId = useId();
 	const locked = useRef<boolean>(true);
 

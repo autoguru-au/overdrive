@@ -25,7 +25,9 @@ const argTypes: ArgTypes = {
 	},
 };
 
-const Template: ComponentStory<typeof TextAreaInput> = (args) => <TextAreaInput {...args} />;
+const Template: ComponentStory<typeof TextAreaInput> = (args) => (
+	<TextAreaInput {...args} />
+);
 
 const sharedProps: ComponentProps<typeof TextAreaInput> = {
 	disabled: false,

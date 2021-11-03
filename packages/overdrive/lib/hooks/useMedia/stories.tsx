@@ -2,9 +2,9 @@ import * as React from 'react';
 
 import { Stack } from '../../components/Stack/Stack';
 import { Text } from '../../components/Text/Text';
+import { breakpoints } from '../../themes/makeTheme';
 
 import { useMedia } from './useMedia';
-import { breakpoints } from '../../themes/makeTheme';
 
 export default {
 	title: 'Utility/Hooks/useMedia',

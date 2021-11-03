@@ -4,10 +4,9 @@ import { forwardRef } from 'react';
 
 import { Box } from '../Box';
 
+import * as styles from './Table.css';
 import type { TableContext } from './context';
 import { TableContextProvider } from './context';
-
-import * as styles from './Table.css';
 
 export interface Props extends Partial<TableContext> {
 	columnTemplate: string;
@@ -22,7 +21,7 @@ Worth noting we use the aria role grid here instead of table, as we have areas
 @see https://www.w3.org/TR/wai-aria-1.1/#table
  */
 export const Table = forwardRef<HTMLDivElement, Props>(
-	({ children, padding = '4', stickyHead = false, columnTemplate }, ref) =>(
+	({ children, padding = '4', stickyHead = false, columnTemplate }, ref) => (
 		<TableContextProvider padding={padding} stickyHead={stickyHead}>
 			<Box
 				ref={ref}

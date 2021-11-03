@@ -64,10 +64,7 @@ module.exports = {
 				},
 			],
 		},
-		plugins: [
-			new VanillaExtractPlugin(),
-			new MiniCssExtractPlugin(),
-		],
+		plugins: [new VanillaExtractPlugin(), new MiniCssExtractPlugin()],
 		resolve: {
 			extensions: ['.tsx', '.ts', '.js', '.mjs', '.json'],
 		},

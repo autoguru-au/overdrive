@@ -34,4 +34,4 @@ export const TabPanes: FunctionComponent<Props> = ({
 			</TabPanesContext.Provider>
 		))}
 	</Box>
-)
+);

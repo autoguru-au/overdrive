@@ -1,10 +1,10 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
 import { Stack } from '../Stack';
 
 import { ProgressBar } from '.';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
 	title: 'Components/Progress/ProgressBar',
@@ -16,12 +16,12 @@ const Template: ComponentStory<typeof ProgressBar> = (args) => (
 );
 
 const AllColoursTemplate: ComponentStory<typeof ProgressBar> = (args) => (
-	<Stack space='2'>
-		<ProgressBar value={0.5} colour='green' {...args} />
-		<ProgressBar value={0.4} colour='blue'  {...args} />
-		<ProgressBar value={0.1} colour='neutral'  {...args} />
-		<ProgressBar value={15} colour='red'  {...args} />
-		<ProgressBar value={0.156} colour='yellow'  {...args} />
+	<Stack space="2">
+		<ProgressBar value={0.5} colour="green" {...args} />
+		<ProgressBar value={0.4} colour="blue" {...args} />
+		<ProgressBar value={0.1} colour="neutral" {...args} />
+		<ProgressBar value={15} colour="red" {...args} />
+		<ProgressBar value={0.156} colour="yellow" {...args} />
 	</Stack>
 );
 

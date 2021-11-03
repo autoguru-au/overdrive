@@ -16,11 +16,11 @@ export interface Props {
 }
 
 export const Switch: FunctionComponent<Props> = ({
-													 className = '',
-													 disabled = false,
-													 toggled: incomingToggled = false,
-													 onChange,
-												 }) => {
+	className = '',
+	disabled = false,
+	toggled: incomingToggled = false,
+	onChange,
+}) => {
 	const [toggled, setToggled] = useState<boolean>(incomingToggled);
 
 	const [prevValue, setPrevValue] = useState<boolean>(incomingToggled);

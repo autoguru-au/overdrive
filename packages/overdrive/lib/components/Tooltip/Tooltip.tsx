@@ -1,5 +1,13 @@
 import * as React from 'react';
-import { Children, cloneElement, FunctionComponent, ReactElement, useCallback, useRef, useState } from 'react';
+import {
+	Children,
+	cloneElement,
+	FunctionComponent,
+	ReactElement,
+	useCallback,
+	useRef,
+	useState,
+} from 'react';
 
 import { Box } from '../Box';
 import { Positioner } from '../Positioner';

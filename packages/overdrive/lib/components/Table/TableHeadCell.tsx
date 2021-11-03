@@ -4,6 +4,7 @@ import type { AriaAttributes } from 'react';
 import * as React from 'react';
 import { forwardRef, useCallback } from 'react';
 
+import { Tokens } from '../../themes/tokens';
 import { Alignment, alignmentToFlexAlignment } from '../../utils';
 import { Box } from '../Box';
 import { Icon } from '../Icon';
@@ -11,10 +12,8 @@ import { Inline } from '../Inline';
 import { Text } from '../Text';
 import { VisuallyHidden } from '../VisuallyHidden';
 
-import { useTableContext } from './context';
-
 import * as styles from './TableHeadCell.css';
-import { Tokens } from '../../themes/tokens';
+import { useTableContext } from './context';
 
 type Sort = 'asc' | 'desc' | 'none';
 

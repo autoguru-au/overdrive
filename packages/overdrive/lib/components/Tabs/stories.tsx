@@ -1,3 +1,5 @@
+import { action } from '@storybook/addon-actions';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import isChromatic from 'chromatic/isChromatic';
 import * as React from 'react';
 import { ComponentProps, useEffect, useState } from 'react';
@@ -6,8 +8,6 @@ import { Stack } from '../Stack';
 import { StarRating } from '../StarRating';
 
 import { Tab, TabList, TabPane, TabPanes, Tabs } from '.';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 
 const TestChild = ({ label }) => {
 	const [thing, sething] = useState(isChromatic() ? 0.5 : Math.random() * 5);
@@ -25,7 +25,6 @@ const TestChild = ({ label }) => {
 	return <StarRating rating={thing} label={label} />;
 };
 
-
 export default {
 	title: 'Components/Tabs',
 	decorators: [
@@ -42,32 +41,32 @@ export default {
 	},
 } as ComponentMeta<typeof Tabs>;
 
-const Template: ComponentStory<typeof Tabs> = (args) => (
-	<Tabs {...args} />
-);
+const Template: ComponentStory<typeof Tabs> = (args) => <Tabs {...args} />;
 
 const standardProps: ComponentProps<typeof Tabs> = {
 	active: 0,
 	onChange: action('onChange'),
-	children: (<>
-		<TabList>
-			<Tab>Tab 1</Tab>
-			<Tab>Tab 2</Tab>
-		</TabList>
+	children: (
+		<>
+			<TabList>
+				<Tab>Tab 1</Tab>
+				<Tab>Tab 2</Tab>
+			</TabList>
 
-		<TabPanes>
-			<TabPane>Content A</TabPane>
-			<TabPane>
-				<Stack>
-					<TestChild label='5' />
-					<TestChild label='4' />
-					<TestChild label='3' />
-					<TestChild label='2' />
-					<TestChild label='1' />
-				</Stack>
-			</TabPane>
-		</TabPanes>
-	</>),
+			<TabPanes>
+				<TabPane>Content A</TabPane>
+				<TabPane>
+					<Stack>
+						<TestChild label="5" />
+						<TestChild label="4" />
+						<TestChild label="3" />
+						<TestChild label="2" />
+						<TestChild label="1" />
+					</Stack>
+				</TabPane>
+			</TabPanes>
+		</>
+	),
 };
 export const standard = Template.bind(standardProps);
 standard.args = standardProps;
@@ -75,31 +74,32 @@ standard.args = standardProps;
 const withIndicationProps: ComponentProps<typeof Tabs> = {
 	active: 0,
 	onChange: action('onChange'),
-	children: (<>
-		<TabList>
-			<Tab indication={2}>Tab 1</Tab>
-			<Tab indication={0}>Tab 2</Tab>
-		</TabList>
+	children: (
+		<>
+			<TabList>
+				<Tab indication={2}>Tab 1</Tab>
+				<Tab indication={0}>Tab 2</Tab>
+			</TabList>
 
-		<TabPanes>
-			<TabPane>Content A</TabPane>
-			<TabPane>Content B</TabPane>
-		</TabPanes>
-	</>),
+			<TabPanes>
+				<TabPane>Content A</TabPane>
+				<TabPane>Content B</TabPane>
+			</TabPanes>
+		</>
+	),
 };
 export const withIndication = Template.bind(withIndicationProps);
 withIndication.args = withIndicationProps;
-
 
 const tabsWithoutPanesProps: ComponentProps<typeof Tabs> = {
 	active: 0,
 	onChange: action('onChange'),
 	children: (
 		<TabList>
-			<Tab id='tab-1' is={<a href='/#tab-1' />}>
+			<Tab id="tab-1" is={<a href="/#tab-1" />}>
 				Tab 1
 			</Tab>
-			<Tab id='tab-2' is={<a href='/#tab-2' />}>
+			<Tab id="tab-2" is={<a href="/#tab-2" />}>
 				Tab 2
 			</Tab>
 		</TabList>
@@ -122,11 +122,11 @@ const withStretchProps: ComponentProps<typeof Tabs> = {
 				<TabPane>Content A</TabPane>
 				<TabPane>
 					<Stack>
-						<TestChild label='5' />
-						<TestChild label='4' />
-						<TestChild label='3' />
-						<TestChild label='2' />
-						<TestChild label='1' />
+						<TestChild label="5" />
+						<TestChild label="4" />
+						<TestChild label="3" />
+						<TestChild label="2" />
+						<TestChild label="1" />
 					</Stack>
 				</TabPane>
 			</TabPanes>
@@ -135,7 +135,6 @@ const withStretchProps: ComponentProps<typeof Tabs> = {
 };
 export const withStretch = Template.bind(withStretchProps);
 withStretch.args = withStretchProps;
-
 
 const scrollableProps: ComponentProps<typeof Tabs> = {
 	active: 0,

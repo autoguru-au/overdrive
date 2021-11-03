@@ -1,5 +1,13 @@
 import { warning } from '@autoguru/utilities';
-import { Children, cloneElement, FunctionComponent, ReactElement, RefObject, useEffect, useRef } from 'react';
+import {
+	Children,
+	cloneElement,
+	FunctionComponent,
+	ReactElement,
+	RefObject,
+	useEffect,
+	useRef,
+} from 'react';
 
 import { noop } from '../../utils';
 
@@ -59,21 +67,23 @@ export interface Props {
 	onOutsideClick?(): void;
 }
 
-export const OutsideClick: FunctionComponent<Props> =
-	({ children, onOutsideClick = noop }) => {
-		const child = Children.only(children);
+export const OutsideClick: FunctionComponent<Props> = ({
+	children,
+	onOutsideClick = noop,
+}) => {
+	const child = Children.only(children);
 
-		const rootClickRef = useRef<HTMLElement>(null);
-		const hasRef = Object.prototype.hasOwnProperty.call(child.props, 'ref');
+	const rootClickRef = useRef<HTMLElement>(null);
+	const hasRef = Object.prototype.hasOwnProperty.call(child.props, 'ref');
 
-		warning(
-			!hasRef,
-			'This component overrides the child ref, use with caution.',
-		);
+	warning(
+		!hasRef,
+		'This component overrides the child ref, use with caution.',
+	);
 
-		useOutsideClick([rootClickRef], onOutsideClick);
+	useOutsideClick([rootClickRef], onOutsideClick);
 
-		return cloneElement(child, {
-			ref: rootClickRef,
-		});
-	};
+	return cloneElement(child, {
+		ref: rootClickRef,
+	});
+};

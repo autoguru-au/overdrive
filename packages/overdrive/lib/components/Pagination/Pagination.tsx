@@ -15,7 +15,6 @@ import { Inline } from '../Inline';
 import { useTextStyles } from '../Text';
 
 import { Bubble } from './Bubble';
-
 import * as styles from './Pagination.css';
 
 interface OnChangeObject {
@@ -91,7 +90,7 @@ const Loading: FunctionComponent<LoadingComponentProps> = ({
 
 		<NavButton disabled icon={ChevronRightIcon} />
 	</Inline>
-)
+);
 
 export const Pagination: FunctionComponent<Props> = ({
 	total,

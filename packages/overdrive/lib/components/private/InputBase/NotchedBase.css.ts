@@ -1,4 +1,5 @@
 import { style, styleVariants } from '@vanilla-extract/css';
+
 import { vars } from '../../../themes/base/vars.css';
 
 export const root = style({
@@ -90,9 +91,7 @@ const calcPlaceholderTranslate = (
 		prefixed
 			? `calc(${vars.space['7']} + ${vars.space['3']})`
 			: vars.typography.size['4'].fontSize
-	}, calc((${vars.space['8']} - ${
-		vars.typography.size['4'].fontSize
-	}) / 2)`;
+	}, calc((${vars.space['8']} - ${vars.typography.size['4'].fontSize}) / 2)`;
 };
 
 export const placeholderPlacement = styleVariants({

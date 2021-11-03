@@ -3,13 +3,13 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { FunctionComponent, memo, NamedExoticComponent } from 'react';
 
+import { Tokens } from '../../themes/tokens';
 import { Box, useBoxStyles } from '../Box';
 import { Icon } from '../Icon';
 import { Inline } from '../Inline';
 import { Text } from '../Text';
 
 import * as styles from './StarRating.css';
-import { Tokens } from '../../themes/tokens';
 
 const totalStars = 5;
 
@@ -24,10 +24,12 @@ enum EStarType {
 	Empty,
 }
 
-const starSizeMap: Map<EStarRatingSize, keyof Tokens['icon']['size']> = new Map([
-	[EStarRatingSize.Medium, 'medium'],
-	[EStarRatingSize.Small, 'small'],
-]);
+const starSizeMap: Map<EStarRatingSize, keyof Tokens['icon']['size']> = new Map(
+	[
+		[EStarRatingSize.Medium, 'medium'],
+		[EStarRatingSize.Small, 'small'],
+	],
+);
 
 const labelSizeMap: Map<
 	EStarRatingSize,
@@ -104,10 +106,10 @@ interface StarProps {
 }
 
 const Star: FunctionComponent<StarProps> = ({
-												index,
-												rating = 0,
-												size = EStarRatingSize.Medium,
-											}) => {
+	index,
+	rating = 0,
+	size = EStarRatingSize.Medium,
+}) => {
 	const starType = getStarIconType(index, rating);
 	const star = starType === EStarType.Half ? StarHalfIcon : StarIcon;
 	return (

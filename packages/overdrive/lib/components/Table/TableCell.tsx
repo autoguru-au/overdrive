@@ -2,15 +2,14 @@ import type { ReactChild } from 'react';
 import * as React from 'react';
 import { AriaAttributes, forwardRef } from 'react';
 
+import { Tokens } from '../../themes/tokens';
 import type { Alignment } from '../../utils';
 import { alignmentToFlexAlignment } from '../../utils';
 import { Box } from '../Box';
 import { Text } from '../Text';
 
-import { useTableContext } from './context';
-
 import * as styles from './TableCell.css';
-import { Tokens } from '../../themes/tokens';
+import { useTableContext } from './context';
 
 export interface Props extends Partial<Pick<AriaAttributes, 'aria-label'>> {
 	align?: Alignment;

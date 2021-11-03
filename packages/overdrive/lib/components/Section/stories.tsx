@@ -2,9 +2,10 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
-import { Section } from '.';
 import { Box } from '../Box';
 import { boxArgTypes } from '../Box/argTypes';
+
+import { Section } from '.';
 
 export default {
 	title: 'Foundation/Section',

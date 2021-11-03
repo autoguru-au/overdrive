@@ -1,9 +1,9 @@
 import { CSSProperties, style } from '@vanilla-extract/css';
 import { Properties } from 'csstype';
 
+import { breakpoints } from '../themes/makeTheme';
 
 import { responsiveStyle } from './responsiveStyle';
-import { breakpoints } from '../themes/makeTheme';
 
 export type ResponsiveProp<T> = T | T[];
 

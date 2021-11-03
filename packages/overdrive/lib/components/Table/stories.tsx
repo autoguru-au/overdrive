@@ -1,3 +1,4 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps, useState } from 'react';
 
@@ -10,7 +11,6 @@ import { Stack } from '../Stack';
 import { Text } from '../Text';
 
 import { Table, TableCell, TableHeadCell, TableRow, TableRowGroup } from '.';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
 	title: 'Components/Table',
@@ -45,7 +45,7 @@ const Template: ComponentStory<typeof Table> = (args) => {
 					<TableHeadCell>Vehicle</TableHeadCell>
 					<TableHeadCell
 						sort={sort.price}
-						align='right'
+						align="right"
 						onSort={sortSetter('price')}>
 						Price
 					</TableHeadCell>
@@ -210,7 +210,7 @@ const Template: ComponentStory<typeof Table> = (args) => {
 							<Button size="small" variant="danger">
 								Delete
 							</Button>
-							<Button size='small'>View</Button>
+							<Button size="small">View</Button>
 						</Actions>
 					</TableCell>
 				</TableRow>

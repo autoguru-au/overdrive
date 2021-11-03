@@ -3,8 +3,8 @@
 import { useCallback, useLayoutEffect, useMemo, useState } from 'react';
 
 import { useRuntimeTokens } from '../..';
-import { isBrowser } from '../../utils';
 import type { BreakPoints } from '../../themes/tokens';
+import { isBrowser } from '../../utils';
 
 export const useMedia = (
 	queries: ReadonlyArray<keyof BreakPoints>,
@@ -15,10 +15,7 @@ export const useMedia = (
 	if (!isBrowser) return queries.map(() => fallbackCase);
 
 	const getQueries = useCallback(
-		() =>
-			queries.map(
-				(media) => `(min-width: ${breakpoints[media]}px)`,
-			),
+		() => queries.map((media) => `(min-width: ${breakpoints[media]}px)`),
 		[breakpoints],
 	);
 

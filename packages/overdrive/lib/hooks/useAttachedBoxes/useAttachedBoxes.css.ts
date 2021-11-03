@@ -1,6 +1,7 @@
 import { style } from '@vanilla-extract/css';
-import { makeResponsiveStyle } from '../../utils/responsiveProps.css';
+
 import { vars } from '../../themes/base/vars.css';
+import { makeResponsiveStyle } from '../../utils/responsiveProps.css';
 
 export const grid = {
 	default: style({

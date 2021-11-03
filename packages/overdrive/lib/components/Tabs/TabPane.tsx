@@ -5,10 +5,9 @@ import { useContext } from 'react';
 
 import { Box } from '../Box';
 
+import * as styles from './TabPane.css';
 import { TabPanesContext } from './TabPanes';
 import { TabsContext } from './Tabs';
-
-import * as styles from './TabPane.css';
 
 export const TabPane: FunctionComponent<{ id?: string }> = ({
 	children,

@@ -2,16 +2,17 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
-import { VisuallyHidden } from '.';
 import { Text } from '../Text';
+
+import { VisuallyHidden } from '.';
 
 export default {
 	title: 'Utility/VisuallyHidden',
 	argTypes: {
 		is: {
 			options: ['button', 'a', 'div'],
-			control:{
-				type: 'select'
+			control: {
+				type: 'select',
 			},
 		},
 	},
