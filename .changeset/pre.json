@@ -6,6 +6,7 @@
   },
   "changesets": [
     "chatty-readers-lick",
-    "friendly-squids-repeat"
+    "friendly-squids-repeat",
+    "olive-squids-heal"
   ]
 }

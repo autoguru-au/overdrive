@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 3.0.0-next.1
+
+### Patch Changes
+
+-   Multiple theming fixes
+
 ## 3.0.0-next.0
 
 ### Major Changes
