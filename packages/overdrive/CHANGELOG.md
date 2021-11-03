@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 3.0.0-next.1
+
+### Major Changes
+
+-   Migrate to vanilla extract
+
 ## 3.0.0-next.0
 
 ### Major Changes
@@ -928,7 +934,7 @@
     eg:
 
     ```jsx
-    <Modal isOpen={true} onRequestClose={function () {}}>
+    <Modal isOpen={true} onRequestClose={function() {}}>
     	>
     </Modal>
     ```
