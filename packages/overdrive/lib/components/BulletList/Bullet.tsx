@@ -17,7 +17,7 @@ export interface Props {
 	className?: string;
 }
 
-const getBulletCls = (styles: typeof style, type: BulletType): string => {
+const getBulletCls = (styles, type: BulletType): string => {
 	switch (type) {
 		case 'circle':
 			return styles.root.circle;

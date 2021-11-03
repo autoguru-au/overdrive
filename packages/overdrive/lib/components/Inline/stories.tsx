@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
-import { scaleOptions } from '../Box/stories';
+import { scaleOptions } from '../Box/argTypes';
 import { Button } from '../Button';
 import { Stack } from '../Stack';
 import { Text } from '../Text';

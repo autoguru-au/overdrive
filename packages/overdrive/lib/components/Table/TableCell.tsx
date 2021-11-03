@@ -40,6 +40,7 @@ export const TableCell = forwardRef<HTMLDivElement, Props>(
 				display="flex"
 				alignItems="center"
 				justifyContent={alignmentToFlexAlignment(align)}
+				// @ts-expect-error
 				padding={padding}
 				borderColourBottom="light"
 				borderWidthBottom="1"

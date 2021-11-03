@@ -1,4 +1,3 @@
-import { action } from '@storybook/addon-actions';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps, useRef } from 'react';
@@ -31,33 +30,26 @@ export default {
 	},
 } as ComponentMeta<typeof Flyout>;
 
-const sharedProps: ComponentProps<typeof Flyout> = {
+const sharedProps: Omit<ComponentProps<typeof Flyout>, 'triggerRef'> = {
 	alignment: EAlignment.BOTTOM_LEFT,
 	isOpen: false,
 	triggerOffset: 12,
-	onRequestClose: action('onRequestClose'),
 };
 
-const Template: ComponentStory<typeof Flyout> = ({
-	onRequestClose,
-	...args
-}) => {
-	const triggerRef = useRef<HTMLElement>(null);
+const Template: ComponentStory<typeof Flyout> = ({ ...args }) => {
+	const triggerRef = useRef<HTMLButtonElement>(null);
 	return (
 		<Box
 			style={{
 				height: '100vh',
-				widht: '100vw',
+				width: '100vw',
 				maxHeight: '350px',
 			}}
 			display="flex"
 			alignItems="center"
 			justifyContent="center">
 			<Button ref={triggerRef}>some trigger</Button>
-			<Flyout
-				{...args}
-				triggerRef={triggerRef}
-				onRequestClose={onRequestClose}>
+			<Flyout {...args} triggerRef={triggerRef}>
 				<div
 					style={{
 						display: 'grid',
@@ -67,10 +59,7 @@ const Template: ComponentStory<typeof Flyout> = ({
 					}}>
 					<TextInput name="example" placeholder="example" />
 					<div>
-						<Button
-							size="small"
-							variant="primary"
-							onClick={onRequestClose}>
+						<Button size="small" variant="primary">
 							Save
 						</Button>
 					</div>

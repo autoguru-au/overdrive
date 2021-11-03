@@ -1,10 +1,9 @@
 import { ArrowUpIcon } from '@autoguru/icons';
 import clsx from 'clsx';
-import type { AriaAttributes } from 'react';
+import type { AriaAttributes, ComponentProps } from 'react';
 import * as React from 'react';
 import { forwardRef, useCallback } from 'react';
 
-import { Tokens } from '../../themes/tokens';
 import { Alignment, alignmentToFlexAlignment } from '../../utils';
 import { Box } from '../Box';
 import { Icon } from '../Icon';
@@ -17,9 +16,10 @@ import { useTableContext } from './context';
 
 type Sort = 'asc' | 'desc' | 'none';
 
-export interface Props extends Partial<Pick<AriaAttributes, 'aria-label'>> {
+export interface Props
+	extends Partial<Pick<AriaAttributes, 'aria-label'>>,
+		Pick<ComponentProps<typeof Box>, 'padding'> {
 	align?: Alignment;
-	padding?: keyof Tokens['space'];
 
 	sort?: Sort;
 	onSort?: (event: MouseEvent) => void;

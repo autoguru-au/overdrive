@@ -5,14 +5,14 @@ import { breakpoints } from '../themes/makeTheme';
 
 import { responsiveStyle } from './responsiveStyle';
 
-export type ResponsiveProp<T> = T | T[];
+export type ResponsiveProp<T extends any> = T | T[];
 
 type BreakpointStyleMap = Record<keyof typeof breakpoints, any>;
 
 export const makeResponsiveStyle = <Token extends Record<string | number, any>>(
 	tokens,
 	property: ((value: any) => CSSProperties) | keyof Properties,
-): Record<keyof Token, any> =>
+): Record<keyof Token, ResponsiveProp<any>> =>
 	Object.entries(tokens || {}).reduce((results, [key, value]) => {
 		const breakpointsKeys = Object.keys(breakpoints);
 		return {

@@ -148,8 +148,8 @@ const withMultiLineComponentProps: ComponentProps<typeof CheckBox> = {
 					gridGap: '8px',
 					gridTemplateColumns: '1fr auto',
 				}}>
-				<Text size={2}>Ending in 5678</Text>
-				<Text size={2}>Updated 12 Dec 2018</Text>
+				<Text size="2">Ending in 5678</Text>
+				<Text size="2">Updated 12 Dec 2018</Text>
 			</div>
 		</div>
 	),

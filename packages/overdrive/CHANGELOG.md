@@ -934,7 +934,7 @@
     eg:
 
     ```jsx
-    <Modal isOpen={true} onRequestClose={function() {}}>
+    <Modal isOpen={true} onRequestClose={function () {}}>
     	>
     </Modal>
     ```

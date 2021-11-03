@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ComponentProps, FunctionComponent } from 'react';
-import type { Theme } from 'treat/theme';
 
+import { Tokens } from '../../themes/tokens';
 import { Box } from '../Box';
 import type { TextStyleProps } from '../Text';
 import { useTextStyles } from '../Text';
@@ -11,7 +11,7 @@ export interface Props
 		Pick<ComponentProps<typeof Box>, 'id'> {
 	className?: string;
 	is?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-	colour?: Exclude<keyof Theme['typography']['colour'], 'muted'>;
+	colour?: Exclude<keyof Tokens['typography']['colour'], 'muted'>;
 }
 
 const sizeScaleDefaults = {

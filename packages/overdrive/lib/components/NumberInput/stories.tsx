@@ -24,7 +24,9 @@ export default {
 	},
 } as ComponentMeta<typeof NumberInput>;
 
-const defaultValue = isChromatic() ? 42 : Math.round(Math.random() * 100);
+const defaultValue = isChromatic()
+	? '42'
+	: Math.round(Math.random() * 100).toString();
 const defaultPlaceholder = 'How many?';
 
 const iconOptions = {
