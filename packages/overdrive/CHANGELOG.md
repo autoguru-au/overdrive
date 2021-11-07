@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 3.0.0-next.2
+
+### Patch Changes
+
+-   Compiles Overdrive package into JS
+
 ## 3.0.0-next.1
 
 ### Patch Changes
