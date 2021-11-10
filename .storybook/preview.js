@@ -1,4 +1,4 @@
-import * as themes from '@autoguru/overdrive/themes';
+import * as themes from '@autoguru/overdrive/lib/themes';
 import isChromatic from 'chromatic/isChromatic';
 import { Box, Heading, OverdriveProvider, Stack } from '@autoguru/overdrive';
 import * as React from 'react';

@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 3.0.0-next.7
+
+### Patch Changes
+
+-   Adds inhouse babel config
+
 ## 3.0.0-next.6
 
 ### Patch Changes

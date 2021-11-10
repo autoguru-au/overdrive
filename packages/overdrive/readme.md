@@ -36,7 +36,7 @@ yarn add @autoguru/overdrive \
 
     ```jsx
     // It is important that the reset import happens before any of this.
-    import { baseTheme } from '@autoguru/overdrive/themes';
+    import { baseTheme } from '@autoguru/overdrive/lib/themes';
     import { OverdriveProvider, Button } '@autoguru/overdrive';
 
     <OverdriveProvider theme={baseTheme}>
