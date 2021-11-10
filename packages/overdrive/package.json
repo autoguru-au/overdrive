@@ -1,6 +1,6 @@
 {
 	"name": "@autoguru/overdrive",
-	"version": "3.0.0-next.2",
+	"version": "3.0.0-next.6",
 	"description": "Overdrive is a product component library, and design system for AutoGuru.",
 	"keywords": [
 		"component",
@@ -14,27 +14,30 @@
 	"repository": "autoguru-au/overdrive",
 	"license": "MIT",
 	"sideEffects": [
-		"./dist/reset.js",
-		"./dist/themes.js",
-		"./dist/lib/reset/**/*",
-		"./dist/lib/theme/**/*",
-		"./dist/lib/themes/**/*"
+		"./themes.js",
+		"./lib/reset/**/*",
+		"./lib/theme/**/*",
+		"./lib/themes/**/*"
 	],
+	"files": [
+		"dist"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
 	"scripts": {
 		"build": "tsc",
 		"prepublishOnly": "yarn run build",
 		"watch": "tsc --watch"
 	},
-	"types": "./dist/main.d.ts",
-	"main": "./dist/index.js",
-	"files": [
-		"dist"
-	],
+	"types": "./dist/index.d.ts",
+  "type": "module",
+  "main": "./dist/index.js",
 	"devDependencies": {
 		"@autoguru/icons": "^1.7.4",
 		"@autoguru/tsconfig": "1.0.79",
 		"@autoguru/utilities": "^1.0.98",
-		"@popperjs/core": "^2.7.0",
+		"@popperjs/core": "^2.10.2",
 		"@types/react": "^17.0.16",
 		"@types/react-dom": "^17.0.9",
 		"clsx": "^1.1.1",
@@ -49,7 +52,7 @@
 	"peerDependencies": {
 		"@autoguru/icons": "^1.7.4",
 		"@autoguru/utilities": "^1.0.98",
-		"@popperjs/core": "^2.7.0",
+		"@popperjs/core": "^2.10.2",
 		"clsx": "^1.1.1",
 		"colord": "^2.0.1",
 		"csstype": "^3.0.7",

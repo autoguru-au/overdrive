@@ -16,13 +16,14 @@ import { ComponentProps } from 'react';
 
 import { NumberInput } from '.';
 
-export default {
+const meta:ComponentMeta<typeof NumberInput> = {
 	title: 'Components/Inputs/Number',
 	component: NumberInput,
 	parameters: {
 		chromatic: { delay: 300 },
 	},
-} as ComponentMeta<typeof NumberInput>;
+};
+export default meta;
 
 const defaultValue = isChromatic()
 	? '42'
@@ -145,6 +146,7 @@ const loadingProps: ComponentProps<typeof NumberInput> = {
 	...sharedProps,
 	isLoading: true,
 };
+
 export const standard = Template.bind(standardProps);
 standard.args = standardProps;
 standard.argTypes = argTypes;

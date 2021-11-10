@@ -1,5 +1,29 @@
 # @autoguru/overdrive
 
+## 3.0.0-next.6
+
+### Patch Changes
+
+-   OverdriveProvider: Imports global fonts
+
+## 3.0.0-next.5
+
+### Patch Changes
+
+-   OverdriveProvider: Imports reset styles
+
+## 3.0.0-next.4
+
+### Patch Changes
+
+-   Compiles released package to JS
+
+## 3.0.0-next.3
+
+### Patch Changes
+
+-   Reverts compiling to js
+
 ## 3.0.0-next.2
 
 ### Patch Changes

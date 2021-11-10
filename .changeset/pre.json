@@ -5,9 +5,13 @@
     "@autoguru/overdrive": "2.7.1"
   },
   "changesets": [
+    "big-pugs-scream",
     "chatty-readers-lick",
+    "clever-chicken-develop",
     "friendly-squids-repeat",
+    "light-beans-tell",
     "mean-rabbits-buy",
-    "olive-squids-heal"
+    "olive-squids-heal",
+    "rare-cougars-join"
   ]
 }

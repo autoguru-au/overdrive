@@ -1,6 +1,4 @@
-import '@autoguru/overdrive/lib/reset/globalFonts.css';
-import '@autoguru/overdrive/reset';
-import * as themes from '../packages/overdrive/themes';
+import * as themes from '@autoguru/overdrive/themes';
 import isChromatic from 'chromatic/isChromatic';
 import { Box, Heading, OverdriveProvider, Stack } from '@autoguru/overdrive';
 import * as React from 'react';
