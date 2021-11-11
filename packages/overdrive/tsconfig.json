@@ -5,7 +5,7 @@
 		"rootDir": "./lib/",
 		"outDir": "./dist/",
 		"declaration": true,
-		"emitDeclarationOnly": true,
+		"emitDeclarationOnly": false,
 		"declarationMap": true,
 		"declarationDir": "./dist/",
 		"isolatedModules": true,

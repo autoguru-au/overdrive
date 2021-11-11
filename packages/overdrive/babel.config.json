@@ -9,7 +9,6 @@
 		"@babel/preset-typescript"
 	],
 	"plugins": [
-		"babel-plugin-add-import-extension",
 		"@vanilla-extract/babel-plugin",
 		"babel-plugin-macros",
 		[
@@ -68,7 +67,8 @@
 				"loose": true
 			}
 		],
-		"babel-plugin-dev-expression"
+		"babel-plugin-dev-expression",
+		"babel-plugin-add-import-extension"
 	],
 	"comments": false,
 	"minified": false
