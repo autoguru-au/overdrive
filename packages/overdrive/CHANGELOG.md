@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 3.0.0-next.9
+
+### Patch Changes
+
+-   ec17939: Adds babel react preset
+
 ## 3.0.0-next.8
 
 ### Patch Changes
