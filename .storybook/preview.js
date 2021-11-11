@@ -1,3 +1,5 @@
+import '@autoguru/overdrive/lib/reset/globalFonts.css';
+import '@autoguru/overdrive/lib/reset/globalReset.css';
 import * as themes from '@autoguru/overdrive/lib/themes';
 import isChromatic from 'chromatic/isChromatic';
 import { Box, Heading, OverdriveProvider, Stack } from '@autoguru/overdrive';
@@ -25,8 +27,8 @@ const withThemeProvider = (Story, context) => {
 					themeClass={theme.themeRef}
 					tokens={tokens}
 					vars={vars}>
-					<Box width='full' padding="5">
-						<Stack  width='full' space="3">
+					<Box width="full" padding="5">
+						<Stack width="full" space="3">
 							<Heading is="h5" colour="light">
 								Theme :: {theme.name}
 							</Heading>

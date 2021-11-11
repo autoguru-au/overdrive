@@ -34,7 +34,9 @@ function Portal({ children, container }: Props, ref: Ref<typeof container>) {
 		};
 	}, [ref, mountNode]);
 
-	return mountNode ? createPortal(<div className={themeClass}>{children}</div>, mountNode) : null;
+	return mountNode
+		? createPortal(<div className={themeClass}>{children}</div>, mountNode)
+		: null;
 }
 
 const _Portal = forwardRef(Portal);

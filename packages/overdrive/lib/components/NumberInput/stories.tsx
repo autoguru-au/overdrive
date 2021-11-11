@@ -16,7 +16,7 @@ import { ComponentProps } from 'react';
 
 import { NumberInput } from '.';
 
-const meta:ComponentMeta<typeof NumberInput> = {
+const meta: ComponentMeta<typeof NumberInput> = {
 	title: 'Components/Inputs/Number',
 	component: NumberInput,
 	parameters: {

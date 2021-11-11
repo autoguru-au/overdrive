@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 3.0.0-next.8
+
+### Patch Changes
+
+-   Overdrive: Gets file extentions for imports
+
 ## 3.0.0-next.7
 
 ### Patch Changes

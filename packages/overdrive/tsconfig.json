@@ -35,11 +35,7 @@
 		"downlevelIteration": true,
 		"esModuleInterop": false
 	},
-	"include": [
-		"./index.ts",
-		"./**/*.ts",
-		"./**/*.tsx"
-	],
+	"include": ["./index.ts", "./**/*.ts", "./**/*.tsx"],
 	"ts-node": {
 		"compilerOptions": {
 			"module": "ESNext",
@@ -47,7 +43,5 @@
 			"noImplicitAny": false
 		}
 	},
-	"exclude": [
-		"./**/*stories*.tsx"
-	]
+	"exclude": ["./**/*stories*.tsx"]
 }

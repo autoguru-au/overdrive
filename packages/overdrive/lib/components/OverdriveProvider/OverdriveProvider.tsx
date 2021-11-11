@@ -1,6 +1,4 @@
 import * as React from 'react';
-import '../../reset/globalReset.css';
-import '../../reset/globalFonts.css';
 import { ComponentProps, FunctionComponent, useEffect } from 'react';
 
 import { isBrowser } from '../../utils';
