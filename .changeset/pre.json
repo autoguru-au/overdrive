@@ -1,21 +1,21 @@
 {
-  "mode": "pre",
-  "tag": "next",
-  "initialVersions": {
-    "@autoguru/overdrive": "2.7.1"
-  },
-  "changesets": [
-    "big-pugs-scream",
-    "chatty-readers-lick",
-    "clever-chicken-develop",
-    "eleven-shoes-provide",
-    "friendly-squids-repeat",
-    "funny-pandas-admire",
-    "light-beans-tell",
-    "mean-rabbits-buy",
-    "nervous-lobsters-turn",
-    "olive-squids-heal",
-    "rare-cougars-join",
-    "spotty-ties-teach"
-  ]
+	"mode": "pre",
+	"tag": "next",
+	"initialVersions": {
+		"@autoguru/overdrive": "2.7.1"
+	},
+	"changesets": [
+		"big-pugs-scream",
+		"chatty-readers-lick",
+		"clever-chicken-develop",
+		"eleven-shoes-provide",
+		"friendly-squids-repeat",
+		"funny-pandas-admire",
+		"light-beans-tell",
+		"mean-rabbits-buy",
+		"nervous-lobsters-turn",
+		"olive-squids-heal",
+		"rare-cougars-join",
+		"spotty-ties-teach"
+	]
 }

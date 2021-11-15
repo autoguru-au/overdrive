@@ -16,6 +16,9 @@
 	"repository": "autoguru-au/overdrive",
 	"license": "MIT",
 	"sideEffects": [
+		"./lib/reset/**/*",
+		"./lib/theme/**/*",
+		"./lib/themes/**/*",
 		"./dist/reset/**/*",
 		"./dist/theme/**/*",
 		"./dist/themes/**/*"
