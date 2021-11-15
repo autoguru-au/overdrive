@@ -12,7 +12,7 @@ export const fullScreenRoot = style({
 	paddingBottom: vars.space['5'],
 	overflowY: 'auto',
 	maxHeight: '100vh',
-	height: 'fill-available',
+	height: 'stretch',
 
 	':before': {
 		content: '""',
