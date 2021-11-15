@@ -1,6 +1,6 @@
 {
 	"name": "@autoguru/overdrive",
-	"version": "3.0.0-next.9",
+	"version": "3.0.0-next.10",
 	"description": "Overdrive is a product component library, and design system for AutoGuru.",
 	"types": "./dist/index.d.ts",
 	"main": "./dist/index.js",
@@ -16,10 +16,9 @@
 	"repository": "autoguru-au/overdrive",
 	"license": "MIT",
 	"sideEffects": [
-		"./themes.js",
-		"./lib/reset/**/*",
-		"./lib/theme/**/*",
-		"./lib/themes/**/*"
+		"./dist/reset/**/*",
+		"./dist/theme/**/*",
+		"./dist/themes/**/*"
 	],
 	"files": [
 		"dist"

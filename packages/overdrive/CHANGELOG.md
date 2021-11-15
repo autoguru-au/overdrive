@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 3.0.0-next.10
+
+### Patch Changes
+
+-   fixes list of files with sideeffects
+
 ## 3.0.0-next.9
 
 ### Patch Changes
