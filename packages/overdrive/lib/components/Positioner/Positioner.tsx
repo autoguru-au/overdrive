@@ -1,4 +1,6 @@
 import type { Placement } from '@popperjs/core';
+import { flip, offset, popperGenerator, preventOverflow } from '@popperjs/core';
+import { defaultModifiers } from '@popperjs/core/lib/popper';
 import * as React from 'react';
 import {
 	ComponentPropsWithoutRef,
@@ -15,8 +17,6 @@ import { Portal } from '../Portal';
 
 import * as styles from './Positioner.css';
 import { EAlignment } from './alignment';
-import { flip, offset, popperGenerator, preventOverflow } from '@popperjs/core';
-import { defaultModifiers } from '@popperjs/core/lib/popper';
 
 export { EAlignment } from './alignment';
 

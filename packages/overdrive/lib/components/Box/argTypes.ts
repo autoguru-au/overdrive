@@ -1,9 +1,9 @@
+import { ArgTypes } from '@storybook/react';
 import { ComponentProps } from 'react';
 
 import { Tokens } from '../../themes/tokens';
 
 import { Box } from './Box';
-import { ArgTypes } from '@storybook/react';
 
 export const scaleOptions: Array<keyof Tokens['space']> = [
 	'none',
