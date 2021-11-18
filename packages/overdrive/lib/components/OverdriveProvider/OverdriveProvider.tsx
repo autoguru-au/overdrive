@@ -16,6 +16,7 @@ export const OverdriveProvider: FunctionComponent<Props> = ({
 	vars,
 	themeClass,
 	tokens,
+	breakpoints,
 	children,
 }) => {
 	useEffect(() => {
@@ -32,7 +33,7 @@ export const OverdriveProvider: FunctionComponent<Props> = ({
 	}, [vars]);
 
 	return (
-		<ThemeProvider vars={vars} themeClass={themeClass} tokens={tokens}>
+		<ThemeProvider vars={vars} themeClass={themeClass} tokens={tokens} breakpoints={breakpoints}>
 			{children}
 		</ThemeProvider>
 	);
