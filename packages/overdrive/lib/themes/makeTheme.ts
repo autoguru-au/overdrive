@@ -7,8 +7,8 @@ export const breakpoints: BreakPoints = {
 	largeDesktop: '1440px', // 1080p width (1920 - 25%)
 };
 
-export const makeRuntimeTokens = (tokens: Tokens) => ({
-	breakpoints,
+export const makeRuntimeTokens = (tokens: Tokens, runtimeBreakpoints: BreakPoints = breakpoints) => ({
+	breakpoints: runtimeBreakpoints,
 	body: {
 		colour: tokens.colours.foreground.body,
 		backgroundColour: tokens.colours.background.body,

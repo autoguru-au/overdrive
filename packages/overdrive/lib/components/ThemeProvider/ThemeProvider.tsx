@@ -4,7 +4,7 @@ import * as React from 'react';
 import { createContext, FunctionComponent, useContext, useMemo } from 'react';
 
 import { makeRuntimeTokens, RuntimeTokens } from '../../themes/makeTheme';
-import { Tokens } from '../../themes/tokens';
+import { BreakPoints, Tokens } from '../../themes/tokens';
 
 type ThemeContextType = {
 	vars: ThemeVars<Tokens>;
@@ -17,6 +17,7 @@ export interface Props {
 	vars: ThemeVars<Tokens>;
 	themeClass: string;
 	tokens: Tokens;
+	breakpoints?: BreakPoints;
 }
 
 export const ThemeProvider: FunctionComponent<Props> = ({
@@ -24,11 +25,12 @@ export const ThemeProvider: FunctionComponent<Props> = ({
 	tokens,
 	themeClass,
 	children,
+	breakpoints,
 }) => (
 	<themeContext.Provider
 		value={useMemo(() => ({ vars, themeClass }), [vars, tokens])}>
 		<runtimeTokensContext.Provider
-			value={useMemo(() => makeRuntimeTokens(tokens), [tokens])}>
+			value={useMemo(() => makeRuntimeTokens(tokens, breakpoints), [tokens])}>
 			{children}
 		</runtimeTokensContext.Provider>
 	</themeContext.Provider>

@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 3.0.0-next.12
+
+### Patch Changes
+
+-   Accept custom runtime breakpoint tokens
+
 ## 3.0.0-next.11
 
 ### Patch Changes
