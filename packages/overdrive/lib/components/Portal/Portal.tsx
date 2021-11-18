@@ -35,9 +35,10 @@ function Portal({ children, container, noThemedWrapper }: Props, ref: Ref<typeof
 		};
 	}, [ref, mountNode]);
 
+
 	return useMemo(() => {
 		mountNode
-			? createPortal(noThemedWrapper ? { children } : (
+			? createPortal(noThemedWrapper ?  children : (
 				<div className={themeClass}>{children}</div>
 			), mountNode)
 			: null;
