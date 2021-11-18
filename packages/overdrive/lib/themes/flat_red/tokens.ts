@@ -180,4 +180,11 @@ export const tokens: Tokens = {
 			'1': 'none',
 		},
 	},
+	typography:{
+		...baseTokens.typography,
+		colour: {
+			...baseTokens.typography.colour,
+			primary: colours.red['600'],
+		},
+	}
 };
