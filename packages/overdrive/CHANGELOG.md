@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 3.0.0-next.14
+
+### Patch Changes
+
+-   Portal: Makes theme wrapping optional
+
 ## 3.0.0-next.13
 
 ### Patch Changes
