@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 3.0.0-next.16
+
+### Patch Changes
+
+-   Portal: Removes memo
+
 ## 3.0.0-next.15
 
 ### Patch Changes

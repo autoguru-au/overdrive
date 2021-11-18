@@ -1,6 +1,6 @@
 import type { ReactNode, Ref, RefObject } from 'react';
 import * as React from 'react';
-import { forwardRef, useLayoutEffect, useMemo, useState } from 'react';
+import { forwardRef, useLayoutEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import { isHtmlElement, setRef } from '../../utils';
@@ -36,15 +36,13 @@ function Portal({ children, container, noThemedWrapper }: Props, ref: Ref<typeof
 	}, [ref, mountNode]);
 
 
-	return useMemo(() => {
-		mountNode
-			? createPortal(noThemedWrapper ?  children : (
-				<div className={themeClass}>{children}</div>
-			), mountNode)
-			: null;
-	}, [mountNode, children, themeClass, noThemedWrapper]);
+	if (!mountNode)
+		return null;
+
+	return noThemedWrapper
+		? createPortal(children, mountNode) :
+		createPortal(<div className={themeClass}>{children}</div>, mountNode);
 }
 
-// @ts-ignore
 const _Portal = forwardRef(Portal);
 export { _Portal as Portal };
