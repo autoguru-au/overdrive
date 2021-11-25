@@ -15,7 +15,7 @@ export const useMedia = (
 	if (!isBrowser) return queries.map(() => fallbackCase);
 
 	const getQueries = useCallback(
-		() => queries.map((media) => `(min-width: ${breakpoints[media]}px)`),
+		() => queries.map((media) => `(min-width: ${breakpoints[media]})`),
 		[breakpoints],
 	);
 

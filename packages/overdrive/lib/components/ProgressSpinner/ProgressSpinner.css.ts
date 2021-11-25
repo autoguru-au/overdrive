@@ -8,11 +8,11 @@ const spinAnim = keyframes({
 	},
 });
 export const circular = style({
+	animationName: spinAnim,
 	transformOrigin: 'center center',
 	animationDuration: '2s',
 	animationTimingFunction: 'linear',
 	animationIterationCount: 'infinite',
-	animationName: spinAnim,
 });
 
 const stokeAnim = keyframes({
