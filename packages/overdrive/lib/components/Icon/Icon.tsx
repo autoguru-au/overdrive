@@ -1,5 +1,5 @@
 import type { IconType } from '@autoguru/icons';
-import type { FunctionComponent } from 'react';
+import type { FunctionComponent, ReactElement, SVGAttributes } from 'react';
 import * as React from 'react';
 import { cloneElement } from 'react';
 
@@ -14,7 +14,7 @@ export interface Props {
 	display?: Extract<BoxStyleProps['display'], 'block' | 'inlineBlock'>;
 	className?: string;
 	size?: ResponsiveProp<keyof typeof styles.size | string>;
-	icon: IconType;
+	icon: IconType | ReactElement<SVGAttributes<SVGElement>, 'svg'>;
 }
 
 export const Icon: FunctionComponent<Props> = ({

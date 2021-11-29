@@ -13,7 +13,7 @@ import { Box } from '../Box';
 
 import * as styles from './Columns.css';
 
-export interface Props extends ComponentProps<typeof Box> {
+export interface Props extends Omit<ComponentProps<typeof Box>, 'css'> {
 	className?: string;
 	columns?: number;
 	space?: ResponsiveProp<keyof Tokens['space']>;
