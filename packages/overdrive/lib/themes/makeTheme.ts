@@ -1,10 +1,14 @@
-import { createTheme, Style } from 'treat';
-import type { StyleWithSelectors } from 'treat/dist/declarations/src/types';
+import { BreakPoints, ColourGamut, ColourMap, Tokens } from './tokens';
 
-import { ColourGamut, ColourMap, Tokens } from './tokens';
+export const breakpoints: BreakPoints = {
+	mobile: '0px',
+	tablet: '768px', // IPad mini width (1024 - 25%)
+	desktop: '1024px', // IPad Pro width (1366 - 25%)
+	largeDesktop: '1440px', // 1080p width (1920 - 25%)
+};
 
-export const makeRuntimeTokens = (tokens: Tokens) => ({
-	breakpoints: tokens.breakpoints,
+export const makeRuntimeTokens = (tokens: Tokens, runtimeBreakpoints: BreakPoints = breakpoints) => ({
+	breakpoints: runtimeBreakpoints,
 	body: {
 		colour: tokens.colours.foreground.body,
 		backgroundColour: tokens.colours.background.body,
@@ -13,46 +17,9 @@ export const makeRuntimeTokens = (tokens: Tokens) => ({
 
 export type RuntimeTokens = ReturnType<typeof makeRuntimeTokens>;
 
-const createUtils = (tokens: Tokens) => ({
-	responsiveStyle(
-		breakpoints: Partial<
-			Record<keyof Tokens['breakpoints'], StyleWithSelectors>
-		>,
-	): Style {
-		const styles = {};
-
-		for (const [query, style] of Object.entries(breakpoints)) {
-			if (query === 'mobile') {
-				Object.assign(styles, style);
-				continue;
-			}
-
-			Object.assign(styles, {
-				'@media': {
-					// @ts-ignore
-					...styles['@media'],
-					// @ts-ignore
-					[`screen and (min-width: ${tokens.breakpoints[query]}px)`]: style,
-				},
-			});
-		}
-
-		return styles;
-	},
-});
-
-const decorateTokens = (tokens: Tokens) => ({
-	...tokens,
-	utils: createUtils(tokens),
-});
-
-export type OverdriveTheme = ReturnType<typeof decorateTokens>;
-
-// @ts-ignore
-export const makeTheme = (tokens: Tokens, debugName) =>
-	createTheme(decorateTokens(tokens), debugName);
-
-export const buildColourGamut = (colours: ColourMap) =>
+export const buildColourGamut = (
+	colours: ColourMap,
+): Record<ColourGamut, string> =>
 	Object.entries(colours).reduce(
 		(result, [name, colourGrades]) => ({
 			...result,

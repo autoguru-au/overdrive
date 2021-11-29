@@ -1,22 +1,21 @@
 import clsx from 'clsx';
 import { ComponentProps } from 'react';
-import { useStyles } from 'react-treat';
 
 import type { BoxStyleProps } from '../Box';
 import { useBoxStyles } from '../Box';
 import { Text } from '../Text';
 
-import * as styleRefs from './useTextStyles.treat';
+import * as styles from './useTextStyles.css';
 
 export interface TextStyleProps {
 	/** @deprecated Because when you go `useTextStyles` for alignment, you should be using `useBoxStyles` */
 	align?: BoxStyleProps['textAlign'];
-	colour?: keyof typeof styleRefs.colours | 'unset';
-	fontWeight?: keyof typeof styleRefs.fontWeight;
+	colour?: keyof typeof styles.colours | 'unset';
+	fontWeight?: keyof typeof styles.fontWeight;
 	is?: ComponentProps<typeof Text>['is'];
 	noWrap?: boolean;
-	size?: keyof typeof styleRefs.sizes;
-	transform?: keyof typeof styleRefs.transform;
+	size?: keyof typeof styles.sizes;
+	transform?: keyof typeof styles.transform;
 }
 
 export const useTextStyles = ({
@@ -28,8 +27,6 @@ export const useTextStyles = ({
 	size,
 	transform,
 }: TextStyleProps) => {
-	const styles = useStyles(styleRefs);
-
 	return clsx(
 		styles.root,
 		useBoxStyles({ is, textAlign: align }),

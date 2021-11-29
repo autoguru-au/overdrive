@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { Fragment, FunctionComponent } from 'react';
-import { useStyles } from 'react-treat';
+import { ComponentProps, Fragment, FunctionComponent } from 'react';
 
 import { Box } from '../Box';
 import { ProgressBar } from '../ProgressBar';
 import { Text } from '../Text';
 
-import * as styleRefs from './ProgressBarGroup.treat';
+import * as styles from './ProgressBarGroup.css';
 
-export interface Props {
+export interface Props
+	extends Pick<ComponentProps<typeof ProgressBar>, 'colour'> {
 	prefixLabels?: string[];
 	suffixLabels?: string[];
 	count?: number;
@@ -20,8 +20,8 @@ export const ProgressBarGroup: FunctionComponent<Props> = ({
 	suffixLabels,
 	values,
 	count = values.reduce((result, item) => result + item, 0),
+	colour,
 }) => {
-	const styles = useStyles(styleRefs);
 	const hasPrefixLabels = Array.isArray(prefixLabels);
 	const hasSuffixLabels = Array.isArray(suffixLabels);
 
@@ -39,7 +39,7 @@ export const ProgressBarGroup: FunctionComponent<Props> = ({
 					<Text size="3" align="right" colour="light">
 						{hasPrefixLabels ? prefixLabels![idx] : ''}
 					</Text>
-					<ProgressBar value={value / count} />
+					<ProgressBar colour={colour} value={value / count} />
 					<Text size="3" align="left" colour="light">
 						{hasSuffixLabels ? suffixLabels![idx] : ''}
 					</Text>

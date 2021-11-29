@@ -5,13 +5,12 @@ import type {
 } from 'react';
 import * as React from 'react';
 import { useLayoutEffect, useRef } from 'react';
-import { useStyles } from 'react-treat';
 
 import { useEventCallback, useId } from '../../utils';
 import { Box } from '../Box';
 import { Modal } from '../Modal';
 
-import * as styleRefs from './MinimalModal.treat';
+import * as styles from './MinimalModal.css';
 
 export interface Props extends ComponentProps<typeof Modal> {
 	className?: string;
@@ -23,8 +22,6 @@ export const MinimalModal: FunctionComponent<Props> = ({
 	onRequestClose,
 	children,
 }) => {
-	const styles = useStyles(styleRefs);
-
 	const titleId = useId();
 	const locked = useRef<boolean>(true);
 

@@ -2,8 +2,7 @@ import { warning } from '@autoguru/utilities';
 import {
 	Children,
 	cloneElement,
-	memo,
-	NamedExoticComponent,
+	FunctionComponent,
 	ReactElement,
 	RefObject,
 	useEffect,
@@ -68,22 +67,23 @@ export interface Props {
 	onOutsideClick?(): void;
 }
 
-export const OutsideClick: NamedExoticComponent<Props> = memo(
-	({ children, onOutsideClick = noop }) => {
-		const child = Children.only(children);
+export const OutsideClick: FunctionComponent<Props> = ({
+	children,
+	onOutsideClick = noop,
+}) => {
+	const child = Children.only(children);
 
-		const rootClickRef = useRef<HTMLElement>(null);
-		const hasRef = Object.prototype.hasOwnProperty.call(child.props, 'ref');
+	const rootClickRef = useRef<HTMLElement>(null);
+	const hasRef = Object.prototype.hasOwnProperty.call(child.props, 'ref');
 
-		warning(
-			!hasRef,
-			'This component overrides the child ref, use with caution.',
-		);
+	warning(
+		!hasRef,
+		'This component overrides the child ref, use with caution.',
+	);
 
-		useOutsideClick([rootClickRef], onOutsideClick);
+	useOutsideClick([rootClickRef], onOutsideClick);
 
-		return cloneElement(child, {
-			ref: rootClickRef,
-		});
-	},
-);
+	return cloneElement(child, {
+		ref: rootClickRef,
+	});
+};

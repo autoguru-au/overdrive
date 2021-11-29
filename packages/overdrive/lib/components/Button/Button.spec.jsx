@@ -3,6 +3,7 @@ import { render } from '@testing-library/react';
 import * as React from 'react';
 
 import { Icon } from '../Icon';
+
 import { Button } from './Button';
 
 describe('<Button />', () => {

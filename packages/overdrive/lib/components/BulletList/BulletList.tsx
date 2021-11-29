@@ -1,13 +1,11 @@
 import clsx from 'clsx';
 import * as React from 'react';
 import { FunctionComponent, useContext } from 'react';
-import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
 
+import * as styles from './BulletList.css';
 import { BulletListContext, bulletMap } from './context';
-
-import * as styleRefs from './BulletList.treat';
 
 export interface Props {
 	className?: string;
@@ -18,8 +16,6 @@ export const BulletList: FunctionComponent<Props> = ({
 	className,
 }) => {
 	const stack = useContext(BulletListContext);
-	const styles = useStyles(styleRefs);
-
 	return (
 		<Box
 			is="ul"

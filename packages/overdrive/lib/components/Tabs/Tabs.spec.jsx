@@ -3,11 +3,11 @@ import userEvent from '@testing-library/user-event';
 import * as React from 'react';
 import { useState } from 'react';
 
-import { TabList } from './TabList';
-import { Tabs } from './Tabs';
 import { Tab } from './Tab';
-import { TabPanes } from './TabPanes';
+import { TabList } from './TabList';
 import { TabPane } from './TabPane';
+import { TabPanes } from './TabPanes';
+import { Tabs } from './Tabs';
 
 const tabData = [
 	{

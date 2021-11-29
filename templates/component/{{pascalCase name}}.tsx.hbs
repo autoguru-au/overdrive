@@ -1,9 +1,8 @@
 import * as React from 'react';
 import type { FunctionComponent } from 'react';
-import { useStyles } from 'react-treat';
 import clsx from 'clsx';
 
-import * as styleRefs from './{{pascalCase name}}.treat';
+import * as styles from './{{pascalCase name}}.css';
 
 export interface Props {
 example?: boolean;
@@ -11,8 +10,6 @@ example?: boolean;
 
 export const {{pascalCase name}}: FunctionComponent
 <Props> = () => {
-	const styles = useStyles(styleRefs);
-
 	return (<p className={clsx(styles.root)}>
 		New component {{name}}! 🎉 Edit lib/components/{{pascalCase name}}/{{pascalCase name}}.tsx
 	</p>);

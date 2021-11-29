@@ -2,7 +2,6 @@ import { CheckIcon } from '@autoguru/icons';
 import clsx from 'clsx';
 import * as React from 'react';
 import { forwardRef, ReactNode } from 'react';
-import { useStyles } from 'react-treat';
 
 import { noop } from '../../utils';
 import { Box, useBoxStyles } from '../Box';
@@ -11,7 +10,7 @@ import { useTextStyles } from '../Text';
 import { CheckableBase } from '../private/CheckableBase';
 import { useCheckableStyles } from '../private/CheckableBase/useCheckableStyles';
 
-import * as styleRefs from './CheckBox.treat';
+import * as styles from './CheckBox.css';
 
 export interface Props {
 	className?: string;
@@ -40,7 +39,6 @@ export const CheckBox = forwardRef<HTMLInputElement, Props>(
 		},
 		ref,
 	) => {
-		const styles = useStyles(styleRefs);
 		const iconStyles = clsx(
 			useTextStyles({ colour: 'white' }),
 			useBoxStyles({ position: 'absolute' }),

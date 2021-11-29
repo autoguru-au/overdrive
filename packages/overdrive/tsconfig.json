@@ -2,31 +2,46 @@
 	"extends": "@autoguru/tsconfig/web",
 	"compilerOptions": {
 		"baseUrl": "./",
-		"rootDir": "./",
-		"jsx": "react",
-		"outDir": "./dist",
+		"rootDir": "./lib/",
+		"outDir": "./dist/",
 		"declaration": true,
+		"emitDeclarationOnly": false,
 		"declarationMap": true,
 		"declarationDir": "./dist/",
 		"isolatedModules": true,
 		"strict": true,
 		"sourceMap": false,
 		"inlineSourceMap": false,
-		"strictNullChecks": true,
-		"target": "es2019",
+		"strictNullChecks": false,
 		"incremental": true,
 		"composite": true,
 		"skipLibCheck": true,
+		"allowJs": true,
+		"target": "esnext",
+		"module": "esnext",
+		"moduleResolution": "node",
+		"jsx": "react",
+		"lib": ["dom"],
+		"noFallthroughCasesInSwitch": true,
+		"suppressImplicitAnyIndexErrors": true,
+		"strictFunctionTypes": true,
+		"forceConsistentCasingInFileNames": true,
+		"noImplicitReturns": true,
 		"noUnusedLocals": true,
-		"noUnusedParameters": true
+		"noUnusedParameters": true,
+		"stripInternal": true,
+		"resolveJsonModule": true,
+		"allowSyntheticDefaultImports": true,
+		"downlevelIteration": true,
+		"esModuleInterop": false
 	},
-	"include": [
-		"./lib/themes/treatTheme.d.ts",
-		"./reset.ts",
-		"./themes.ts",
-		"./index.ts",
-		"./lib/**/*.ts",
-		"./lib/**/*.tsx"
-	],
+	"include": ["./index.ts", "./**/*.ts", "./**/*.tsx"],
+	"ts-node": {
+		"compilerOptions": {
+			"module": "ESNext",
+			"resolveJsonModule": true,
+			"noImplicitAny": false
+		}
+	},
 	"exclude": ["./**/*stories*.tsx"]
 }

@@ -1,10 +1,8 @@
 import { ArrowUpIcon } from '@autoguru/icons';
 import clsx from 'clsx';
-import type { AriaAttributes } from 'react';
+import type { AriaAttributes, ComponentProps } from 'react';
 import * as React from 'react';
 import { forwardRef, useCallback } from 'react';
-import { useStyles } from 'react-treat';
-import type { Theme } from 'treat/theme';
 
 import { Alignment, alignmentToFlexAlignment } from '../../utils';
 import { Box } from '../Box';
@@ -13,15 +11,15 @@ import { Inline } from '../Inline';
 import { Text } from '../Text';
 import { VisuallyHidden } from '../VisuallyHidden';
 
+import * as styles from './TableHeadCell.css';
 import { useTableContext } from './context';
-
-import * as styleRefs from './TableHeadCell.treat';
 
 type Sort = 'asc' | 'desc' | 'none';
 
-export interface Props extends Partial<Pick<AriaAttributes, 'aria-label'>> {
+export interface Props
+	extends Partial<Pick<AriaAttributes, 'aria-label'>>,
+		Pick<ComponentProps<typeof Box>, 'padding'> {
 	align?: Alignment;
-	padding?: keyof Theme['space'];
 
 	sort?: Sort;
 	onSort?: (event: MouseEvent) => void;
@@ -50,7 +48,6 @@ export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 		ref,
 	) => {
 		const tableContext = useTableContext();
-		const styles = useStyles(styleRefs);
 
 		const padding = incomingPadding ?? tableContext?.padding ?? 'none';
 

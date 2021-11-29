@@ -6,13 +6,12 @@ import {
 	OlHTMLAttributes,
 	useContext,
 } from 'react';
-import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
 import { Stack } from '../Stack';
 import { useTextStyles } from '../Text';
 
-import * as styleRefs from './OrderedList.treat';
+import * as styles from './OrderedList.css';
 
 type ListStyleType = 'decimal' | 'lower-roman' | 'lower-alpha' | 'upper-alpha';
 
@@ -40,7 +39,6 @@ export const OrderedList: FunctionComponent<Props> & {
 	Item: FunctionComponent<ItemProps>;
 } = ({ children, className = '', type = null, start }) => {
 	const cycle = useContext(OrderedListContext);
-	const styles = useStyles(styleRefs);
 
 	let myCycle: number;
 	if (cycle + 1 > cycles.length) {

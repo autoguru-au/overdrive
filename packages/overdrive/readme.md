@@ -14,7 +14,7 @@
 Overdrive is a product component library, and design system for AutoGuru. Built
 with [React](https://github.com/facebook/react),
 [TypeScript](https://github.com/Microsoft/typescript),
-[Treat](https://seek-oss.github.io/treat/),
+[Vanilla Extract](https://seek-oss.github.io/vanilla-extract/),
 [Playroom](https://github.com/seek-oss/playroom/) and
 [Storybook](https://github.com/storybooks/storybook).
 
@@ -36,7 +36,7 @@ yarn add @autoguru/overdrive \
 
     ```jsx
     // It is important that the reset import happens before any of this.
-    import { baseTheme } from '@autoguru/overdrive/themes';
+    import { baseTheme } from '@autoguru/overdrive/lib/themes';
     import { OverdriveProvider, Button } '@autoguru/overdrive';
 
     <OverdriveProvider theme={baseTheme}>

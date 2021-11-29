@@ -1,3 +1,4 @@
+import { tokens as baseTokens } from '../base/tokens';
 import { buildColourGamut } from '../makeTheme';
 import { ColourMap, Tokens } from '../tokens';
 
@@ -64,43 +65,11 @@ const colours: ColourMap = {
 };
 
 const white = '#fff';
+const secondaryForeground = colours.blue['800'];
 const flatElevation = '0 0 0 0 rgba(0, 0, 0, 0.0)';
 
 export const tokens: Tokens = {
-	isDark: false,
-	shadeIntensity: {
-		slight: 0.05,
-		medium: 0.15,
-		intense: 0.3,
-	},
-	transparency: {
-		slight: 0.25,
-		medium: 0.5,
-		intense: 0.9,
-	},
-	breakpoints: {
-		mobile: 0,
-		tablet: 768, // IPad mini width (1024 - 25%)
-		desktop: 1024, // IPad Pro width (1366 - 25%)
-		largeDesktop: 1440, // 1080p width (1920 - 25%)
-	},
-	contentWidth: {
-		small: 592,
-		large: 1344,
-		medium: 940,
-	},
-	space: {
-		'1': '4px',
-		'2': '8px',
-		'3': '12px',
-		'4': '16px',
-		'5': '20px',
-		'6': '24px',
-		'7': '32px',
-		'8': '48px',
-		'9': '96px',
-		none: '0px',
-	},
+	...baseTokens,
 	colours: {
 		gamut: {
 			...buildColourGamut(colours),
@@ -112,41 +81,73 @@ export const tokens: Tokens = {
 		},
 		background: {
 			body: white,
-			light: colours.gray['100'],
+			light: colours.gray['200'],
 			neutral: colours.gray['400'],
 			neutralDark: colours.gray['800'],
 		},
 		intent: {
 			primary: {
-				background: colours.red['800'],
+				background: {
+					standard: colours.red['600'],
+					mild: colours.red['100'],
+					strong: colours.red['900'],
+				},
 				foreground: white,
 			},
 			secondary: {
-				background: white,
-				foreground: colours.blue['800'],
+				background: {
+					standard: white,
+					mild: white,
+					strong: colours.gray['100'],
+				},
+				foreground: secondaryForeground,
 			},
 			shine: {
-				background: colours.gray['200'],
+				background: {
+					standard: colours.gray['200'],
+					mild: colours.gray['100'],
+					strong: colours.gray['300'],
+				},
 				foreground: colours.yellow['500'],
 			},
 			danger: {
-				background: colours.red['600'],
+				background: {
+					standard: colours.red['600'],
+					mild: colours.red['100'],
+					strong: colours.red['800'],
+				},
 				foreground: white,
 			},
 			warning: {
-				background: colours.yellow['800'],
+				background: {
+					standard: colours.yellow['800'],
+					mild: colours.yellow['100'],
+					strong: colours.yellow['900'],
+				},
 				foreground: colours.yellow['200'],
 			},
 			neutral: {
-				background: colours.gray['700'],
+				background: {
+					standard: colours.gray['700'],
+					mild: colours.gray['100'],
+					strong: colours.gray['900'],
+				},
 				foreground: white,
 			},
 			success: {
-				background: colours.green['600'],
+				background: {
+					standard: colours.green['700'],
+					mild: colours.green['100'],
+					strong: colours.green['900'],
+				},
 				foreground: colours.green['200'],
 			},
 			information: {
-				background: colours.blue['900'],
+				background: {
+					standard: colours.blue['800'],
+					mild: colours.blue['100'],
+					strong: colours.blue['900'],
+				},
 				foreground: colours.blue['200'],
 			},
 		},
@@ -179,78 +180,11 @@ export const tokens: Tokens = {
 			'1': 'none',
 		},
 	},
-	typography: {
-		size: {
-			'1': {
-				fontSize: '10px',
-				lineHeight: '12px',
-			},
-			'2': {
-				fontSize: '12px',
-				lineHeight: '18px',
-			},
-			'3': {
-				fontSize: '14px',
-				lineHeight: '20px',
-			},
-			'4': {
-				fontSize: '16px',
-				lineHeight: '22px',
-			},
-			'5': {
-				fontSize: '18px',
-				lineHeight: '26px',
-			},
-			'6': {
-				fontSize: '20px',
-				lineHeight: '28px',
-			},
-			'7': {
-				fontSize: '24px',
-				lineHeight: '30px',
-			},
-			'8': {
-				fontSize: '30px',
-				lineHeight: '40px',
-			},
-			'9': {
-				fontSize: '40px',
-				lineHeight: '48px',
-			},
-		},
+	typography:{
+		...baseTokens.typography,
 		colour: {
-			primary: colours.red['800'],
-			secondary: colours.gray['700'],
-			shine: colours.yellow['500'],
-			link: colours.green['600'],
-			dark: colours.gray['900'],
-			white,
-			muted: colours.gray['500'],
-			neutral: colours.gray['700'],
-			light: colours.gray['600'],
-			danger: colours.red['600'],
-			warning: colours.yellow['800'],
-			success: colours.green['600'],
-			information: colours.blue['500'],
+			...baseTokens.typography.colour,
+			primary: colours.red['600'],
 		},
-		fontWeight: {
-			normal: 400,
-			semiBold: 500,
-			bold: 700,
-		},
-	},
-	animation: {
-		easing: {
-			standard: 'cubic-bezier(0.4, 0.0, 0.2, 1)',
-			decelerate: 'cubic-bezier(0.0, 0.0, 0.2, 1)',
-			accelerate: 'cubic-bezier(0.4, 0.0, 1, 1)',
-		},
-	},
-	icon: {
-		size: {
-			small: '16px',
-			medium: '20px',
-			large: '32px',
-		},
-	},
+	}
 };

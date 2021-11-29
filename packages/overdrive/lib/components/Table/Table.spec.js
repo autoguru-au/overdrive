@@ -2,13 +2,14 @@ import { fireEvent, render } from '@testing-library/react';
 import * as React from 'react';
 import { useState } from 'react';
 
-import { useTableContext } from './context';
 import { arrayRingLookup } from '../../utils';
+
 import { Table } from './Table';
-import { TableRow } from './TableRow';
-import { TableRowGroup } from './TableRowGroup';
 import { TableCell } from './TableCell';
 import { TableHeadCell } from './TableHeadCell';
+import { TableRow } from './TableRow';
+import { TableRowGroup } from './TableRowGroup';
+import { useTableContext } from './context';
 
 describe('<Table />', () => {
 	describe('when pure table', () => {

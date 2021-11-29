@@ -12,7 +12,6 @@ import {
 	useState,
 } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
-import { useStyles } from 'react-treat';
 
 import { animate, ownerWindow, useEventCallback } from '../../utils';
 import { Box } from '../Box';
@@ -20,7 +19,7 @@ import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { useTextStyles } from '../Text';
 
-import * as styleRefs from './TabList.treat';
+import * as styles from './TabList.css';
 
 export interface Props {
 	stretch?: boolean;
@@ -38,8 +37,6 @@ export const TabList: FunctionComponent<Props> = ({
 		!(stretch && scrollable),
 		'Tabs: `stretch={true}` and `scrollable={true}` cannot be used at the same time.',
 	);
-
-	const styles = useStyles(styleRefs);
 
 	const wrapperRef = useRef<HTMLDivElement>(null);
 	const innerRef = useRef<HTMLDivElement>(null);

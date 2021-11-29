@@ -1,36 +1,32 @@
 import clsx from 'clsx';
 import * as React from 'react';
 import { ComponentProps, createContext, forwardRef, useMemo } from 'react';
-import { useStyles } from 'react-treat';
-import { ClassRef } from 'treat';
-import type { Theme } from 'treat/theme';
 
 import {
 	useNegativeMarginLeft,
 	useNegativeMarginTop,
 } from '../../hooks/useNegativeMargin/useNegativeMargin';
-import {
-	resolveResponsiveStyle,
-	ResponsiveProp,
-} from '../../utils/responsiveProps';
+import { Tokens } from '../../themes/tokens';
+import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
+import { ResponsiveProp } from '../../utils/responsiveProps.css';
 import { Box } from '../Box';
 
-import * as styleRefs from './Columns.treat';
+import * as styles from './Columns.css';
 
 export interface Props extends ComponentProps<typeof Box> {
 	className?: string;
 	columns?: number;
-	space?: ResponsiveProp<keyof Theme['space']>;
-	spaceX?: ResponsiveProp<keyof typeof styleRefs.space.spaceX>;
-	spaceY?: ResponsiveProp<keyof typeof styleRefs.space.spaceY>;
+	space?: ResponsiveProp<keyof Tokens['space']>;
+	spaceX?: ResponsiveProp<keyof typeof styles.space.spaceX>;
+	spaceY?: ResponsiveProp<keyof typeof styles.space.spaceY>;
 	noWrap?: boolean;
-	wrappingDirection?: keyof typeof styleRefs.wrapping;
-	align?: keyof typeof styleRefs.align;
+	wrappingDirection?: keyof typeof styles.wrapping;
+	align?: keyof typeof styles.align;
 }
 
 interface ColumnContextValue {
-	spaceXCls?: ClassRef;
-	spaceYCls?: ClassRef;
+	spaceXCls;
+	spaceYCls;
 	isList: boolean;
 }
 
@@ -55,10 +51,10 @@ export const Columns = forwardRef<HTMLElement, Props>(
 		const resolvedSpaceX = spaceX || space || ['none'];
 		const resolvedSpaceY = spaceY || space || ['none'];
 
+		// @ts-ignore
 		const marginLeftFix = useNegativeMarginLeft(resolvedSpaceX);
+		// @ts-ignore
 		const marginTopFix = useNegativeMarginTop(resolvedSpaceY);
-
-		const styles = useStyles(styleRefs);
 
 		return (
 			<Box

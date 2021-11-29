@@ -1,5 +1,7 @@
-import { text } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
+import { ArgTypes, ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
+import { ComponentProps } from 'react';
 
 import { TextAreaInput } from '.';
 
@@ -9,39 +11,120 @@ export default {
 	parameters: {
 		chromatic: { delay: 300 },
 	},
+} as ComponentMeta<typeof TextAreaInput>;
+
+const defaultValue =
+	'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae pulvinar odio. Duis laoreet lacus vel consequat congue. Ut euismod enim non eros lacinia mollis. Vestibulum libero quam, aliquet non justo laoreet, egestas molestie ante. Quisque urna leo, consectetur id dui aliquet, placerat iaculis augue. Pellentesque sed vestibulum augue, quis porta lectus.';
+const defaultPlaceholder = 'Tell us about your car.';
+
+const argTypes: ArgTypes = {
+	value: {
+		control: {
+			type: 'string',
+		},
+	},
 };
 
-export const standard = () => (
-	<TextAreaInput name="abc" placeholder="Tell us about your car." />
+const Template: ComponentStory<typeof TextAreaInput> = (args) => (
+	<TextAreaInput {...args} />
 );
-export const withAValue = () => (
-	<TextAreaInput
-		name="abc"
-		placeholder="Tell us about your car."
-		value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae pulvinar odio. Duis laoreet lacus vel consequat congue. Ut euismod enim non eros lacinia mollis. Vestibulum libero quam, aliquet non justo laoreet, egestas molestie ante. Quisque urna leo, consectetur id dui aliquet, placerat iaculis augue. Pellentesque sed vestibulum augue, quis porta lectus."
-	/>
-);
-export const withHintText = () => (
-	<TextAreaInput
-		name="abc"
-		placeholder="How many?"
-		hintText={text('Hint Text', 'Must be greater than 10.')}
-	/>
-);
-export const disabled = () => (
-	<TextAreaInput
-		disabled
-		name="abc"
-		placeholder="Tell us about your car."
-		value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae pulvinar odio. Duis laoreet lacus vel consequat congue. Ut euismod enim non eros lacinia mollis. Vestibulum libero quam, aliquet non justo laoreet, egestas molestie ante. Quisque urna leo, consectetur id dui aliquet, placerat iaculis augue. Pellentesque sed vestibulum augue, quis porta lectus."
-	/>
-);
-export const loading = () => (
-	<TextAreaInput
-		isLoading
-		name="abc"
-		placeholder="Tell us about your car."
-		value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae pulvinar odio. Duis laoreet lacus vel consequat congue. Ut euismod enim non eros lacinia mollis. Vestibulum libero quam, aliquet non justo laoreet, egestas molestie ante. Quisque urna leo, consectetur id dui aliquet, placerat iaculis augue. Pellentesque sed vestibulum augue, quis porta lectus."
-	/>
-);
-// TODO: A test here to limit the value to 100 chars
+
+const sharedProps: ComponentProps<typeof TextAreaInput> = {
+	disabled: false,
+	name: 'text',
+	placeholder: defaultPlaceholder,
+	isValid: false,
+	isTouched: false,
+	isLoading: false,
+	isFocused: false,
+	reserveHintSpace: false,
+	hintText: '',
+	notch: true,
+	prefixIcon: void 0,
+	onChange: action('onChange'),
+	onFocus: action('onFocus'),
+	onBlur: action('onBlur'),
+};
+
+const standardProps: ComponentProps<typeof TextAreaInput> = sharedProps;
+const withAValueProps: ComponentProps<typeof TextAreaInput> = {
+	...sharedProps,
+	value: defaultValue,
+	placeholder: defaultPlaceholder,
+};
+const withHintTextProps: ComponentProps<typeof TextAreaInput> = {
+	...sharedProps,
+	hintText: 'Hint Text',
+	placeholder: defaultPlaceholder,
+};
+const disabledProps: ComponentProps<typeof TextAreaInput> = {
+	...sharedProps,
+	value: defaultValue,
+	placeholder: defaultPlaceholder,
+	disabled: true,
+};
+const validProps: ComponentProps<typeof TextAreaInput> = {
+	...sharedProps,
+	value: defaultValue,
+	placeholder: defaultPlaceholder,
+	isTouched: true,
+	isValid: true,
+};
+const invalidProps: ComponentProps<typeof TextAreaInput> = {
+	...sharedProps,
+	value: 'Bob the builder',
+	placeholder: defaultPlaceholder,
+	isTouched: true,
+	isValid: false,
+	hintText: 'Cannot be Bob the builder',
+};
+const noNotchProps: ComponentProps<typeof TextAreaInput> = {
+	...sharedProps,
+	placeholder: defaultPlaceholder,
+	notch: false,
+};
+const noNotchWithValueProps: ComponentProps<typeof TextAreaInput> = {
+	...sharedProps,
+	value: defaultValue,
+	placeholder: defaultPlaceholder,
+	notch: false,
+};
+const loadingProps: ComponentProps<typeof TextAreaInput> = {
+	...sharedProps,
+	isLoading: true,
+};
+export const standard = Template.bind(standardProps);
+standard.args = standardProps;
+standard.argTypes = argTypes;
+
+export const withAValue = Template.bind(withAValueProps);
+withAValue.args = withAValueProps;
+withAValue.argTypes = argTypes;
+
+export const withHintText = Template.bind(withHintTextProps);
+withHintText.args = withHintTextProps;
+withHintText.argTypes = argTypes;
+
+export const notchDisabled = Template.bind(noNotchProps);
+notchDisabled.args = noNotchProps;
+notchDisabled.argTypes = argTypes;
+
+export const notchDisabledWithValue = Template.bind(noNotchWithValueProps);
+notchDisabledWithValue.args = noNotchWithValueProps;
+notchDisabledWithValue.argTypes = argTypes;
+
+export const disabled = Template.bind(disabledProps);
+disabled.args = disabledProps;
+disabled.argTypes = argTypes;
+
+export const valid = Template.bind(validProps);
+valid.args = validProps;
+valid.argTypes = argTypes;
+
+export const invalid = Template.bind(invalidProps);
+invalid.args = invalidProps;
+invalid.argTypes = argTypes;
+
+export const loading = Template.bind(loadingProps);
+loading.args = loadingProps;
+loading.argTypes = argTypes;

@@ -1,16 +1,9 @@
-import { useStyles } from 'react-treat';
-import { Theme } from 'treat/theme';
+import { Tokens } from '../../themes/tokens';
+import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
+import { ResponsiveProp } from '../../utils/responsiveProps.css';
 
-import {
-	resolveResponsiveStyle,
-	ResponsiveProp,
-} from '../../utils/responsiveProps';
-
-import * as styleRefs from './useNegativeMarginTop.treat';
+import * as styles from './useNegativeMarginTop.css';
 
 export const useNegativeMarginTop = (
-	space: ResponsiveProp<keyof Theme['space']>,
-) => {
-	const styles = useStyles(styleRefs);
-	return resolveResponsiveStyle(space, styles.negativeMarginTop);
-};
+	space: ResponsiveProp<keyof Tokens['space']>,
+) => resolveResponsiveStyle(space, styles.negativeMarginTop);

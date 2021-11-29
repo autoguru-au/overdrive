@@ -17,7 +17,6 @@ import {
 	useRef,
 	useState,
 } from 'react';
-import { useStyles } from 'react-treat';
 
 import { useMedia } from '../../hooks/useMedia';
 import { setRef, useId } from '../../utils';
@@ -31,9 +30,8 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { withEnhancedInput } from '../private/InputBase';
 
+import * as styles from './AutoSuggest.css';
 import { useLayoutSuggestionVisible } from './useLayoutSuggestionVisible';
-
-import * as styleRefs from './AutoSuggest.treat';
 
 export interface AutoSuggestValue<PayloadType> {
 	text: string;
@@ -83,7 +81,7 @@ type Suggestions<PayloadType> = Array<AutoSuggestValue<PayloadType>>;
 export interface Props<PayloadType>
 	extends Omit<
 		ComponentPropsWithoutRef<typeof TextInput>,
-		'onChange' | 'value' | 'type'
+		'onChange' | 'value' | 'type' | 'suffixIcon'
 	> {
 	autoFocus?: boolean;
 	autoWidth?: boolean;
@@ -277,7 +275,6 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 
 const AutoSuggestFullscreenInput = forwardRef(
 	function AutoSuggestFullscreenInput({ closeModal, ...props }, ref) {
-		const styles = useStyles(styleRefs);
 		const [showPortal, setShowPortal] = useState<boolean>(false);
 
 		useEffect(() => {
@@ -352,7 +349,6 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 	},
 	ref,
 ) {
-	const styles = useStyles(styleRefs);
 	const triggerRef = useRef<HTMLDivElement>(null);
 	const highlightRef = useRef<HTMLLIElement>(null);
 	const suggestionListRef = useRef<HTMLUListElement>(null);
@@ -552,74 +548,69 @@ const SuggestionsList = <PayloadType extends unknown>({
 	dispatch,
 	// TODO: For now the ref is passed as a prop, as opposed to using forwardRef
 	suggestionListRef,
-}: SuggestionProps<PayloadType>) => {
-	const styles = useStyles(styleRefs);
+}: SuggestionProps<PayloadType>) => (
+	<Box
+		ref={suggestionListRef}
+		is="ul"
+		backgroundColour="white"
+		className={[styles.suggestionList.defaults, className]}
+		id={suggestionListId}
+		aria-label={placeholder}
+		role="listbox">
+		<div className={styles.spacer} />
+		{suggestions.map((suggestion, idx) => {
+			const highlight = highlightIndex === idx;
 
-	return (
-		<Box
-			ref={suggestionListRef}
-			is="ul"
-			backgroundColour="white"
-			className={[styles.suggestionList.defaults, className]}
-			id={suggestionListId}
-			aria-label={placeholder}
-			role="listbox">
-			<div className={styles.spacer} />
-			{suggestions.map((suggestion, idx) => {
-				const highlight = highlightIndex === idx;
+			return (
+				<Box
+					key={suggestion.text.concat(String(idx))}
+					ref={highlight ? highlightRef : undefined}
+					is="li"
+					id={getSuggestionId(suggestionListId, idx)}
+					role="option"
+					aria-selected={highlight}
+					aria-label={suggestion.text}
+					className={clsx(styles.suggestionListItem.default, {
+						[styles.suggestionListItem.skipped]: suggestion.skip,
+					})}
+					onMouseDown={(event) =>
+						/* This is so a blur doesnt fire from the input when you click */
+						event.preventDefault()
+					}
+					onMouseMove={() => {
+						if (suggestion.skip) return;
 
-				return (
-					<Box
-						key={suggestion.text.concat(String(idx))}
-						ref={highlight ? highlightRef : undefined}
-						is="li"
-						id={getSuggestionId(suggestionListId, idx)}
-						role="option"
-						aria-selected={highlight}
-						aria-label={suggestion.text}
-						className={clsx(styles.suggestionListItem.default, {
-							[styles.suggestionListItem.skipped]:
-								suggestion.skip,
+						/*
+						This has to be mouse move, so if you're hovering an item, and then arrow keys, we =
+						dont want yo trigger a mouse enter and highlight it instead
+						 */
+						dispatch({
+							type: ActionTypes.SUGGESTION_MOUSE_ENTER,
+							index: idx,
+						});
+					}}
+					onClick={() => {
+						if (suggestion.skip) return;
+
+						if (typeof onChange === 'function')
+							onChange(suggestion);
+
+						dispatch({
+							type: ActionTypes.SUGGESTION_MOUSE_CLICK,
+						});
+					}}>
+					{typeof itemRenderer === 'function' &&
+						itemRenderer({
+							suggestions,
+							highlight,
+							value: suggestion,
 						})}
-						onMouseDown={(event) =>
-							/* This is so a blur doesnt fire from the input when you click */
-							event.preventDefault()
-						}
-						onMouseMove={() => {
-							if (suggestion.skip) return;
-
-							/*
-							This has to be mouse move, so if you're hovering an item, and then arrow keys, we =
-							dont want yo trigger a mouse enter and highlight it instead
-							 */
-							dispatch({
-								type: ActionTypes.SUGGESTION_MOUSE_ENTER,
-								index: idx,
-							});
-						}}
-						onClick={() => {
-							if (suggestion.skip) return;
-
-							if (typeof onChange === 'function')
-								onChange(suggestion);
-
-							dispatch({
-								type: ActionTypes.SUGGESTION_MOUSE_CLICK,
-							});
-						}}>
-						{typeof itemRenderer === 'function' &&
-							itemRenderer({
-								suggestions,
-								highlight,
-								value: suggestion,
-							})}
-					</Box>
-				);
-			})}
-			<div className={styles.spacer} />
-		</Box>
-	);
-};
+				</Box>
+			);
+		})}
+		<div className={styles.spacer} />
+	</Box>
+);
 
 const AutoSuggestInputPrimitive = withEnhancedInput(
 	({
@@ -768,18 +759,14 @@ interface DefaultSuggestionProps {
 const DefaultSuggestion: FunctionComponent<DefaultSuggestionProps> = ({
 	text,
 	highlight,
-}) => {
-	const styles = useStyles(styleRefs);
-
-	return (
-		<div
-			className={clsx(styles.suggestion, {
-				[styles.suggestionHighlight]: highlight,
-			})}>
-			<Text is="span">{text}</Text>
-		</div>
-	);
-};
+}) => (
+	<div
+		className={clsx(styles.suggestion, {
+			[styles.suggestionHighlight]: highlight,
+		})}>
+		<Text is="span">{text}</Text>
+	</div>
+);
 
 const getNextIndex = <
 	PayloadType extends unknown,

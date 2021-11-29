@@ -1,12 +1,20 @@
+import { Tokens as VanillaTokens } from '@vanilla-extract/css/dist/declarations/src/types';
 type SpaceScale = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'none';
 type TextSizeScale = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';
 type BorderWidthScale = '1' | '2' | '3' | 'none';
 type IconSizeScale = 'small' | 'medium' | 'large';
 
-type Breakpoints = 'mobile' | 'tablet' | 'desktop' | 'largeDesktop';
+type DeviceSize = 'mobile' | 'tablet' | 'desktop' | 'largeDesktop';
 
-type ColourValue = Record<number, string>;
-export type ColourMap = Record<any, ColourValue>;
+type ColourValue = Record<string, string>;
+
+interface ColourIntensityMap extends VanillaTokens {
+	standard: string;
+	mild: string;
+	strong: string;
+}
+
+export type ColourMap = Record<string, ColourValue>;
 
 type ColourReds =
 	| 'red900'
@@ -80,25 +88,20 @@ type Intent =
 	| 'success'
 	| 'information';
 
-type ShadeIntensityLevel = 'slight' | 'medium' | 'intense';
-type TransparencyLevel = 'slight' | 'medium' | 'intense';
-
 type BaseColours = 'white';
 
-export interface ForegroundColours {
-	body: string;
-	link: string;
-}
+export type BreakPoints = Record<DeviceSize, string>;
 
-export interface Tokens {
-	isDark: boolean;
-	breakpoints: Record<Breakpoints, number>;
-	shadeIntensity: Record<ShadeIntensityLevel, number>;
-	transparency: Record<TransparencyLevel, number>;
+export interface Tokens extends VanillaTokens {
+	mode: 'light' | 'dark';
+	body: {
+		colour: string;
+		backgroundColour: string;
+	};
 	contentWidth: {
-		small: number;
-		medium: number;
-		large: number;
+		small: string;
+		medium: string;
+		large: string;
 	};
 	space: Record<SpaceScale, string>;
 	elevation: {
@@ -111,7 +114,10 @@ export interface Tokens {
 	};
 	colours: {
 		gamut: Record<ColourGamut | BaseColours, string>;
-		foreground: ForegroundColours;
+		foreground: {
+			body: string;
+			link: string;
+		};
 		background: {
 			body: string;
 			light: string;
@@ -122,7 +128,7 @@ export interface Tokens {
 			Intent,
 			{
 				foreground: string;
-				background: string;
+				background: ColourIntensityMap;
 			}
 		>;
 	};
@@ -151,7 +157,7 @@ export interface Tokens {
 		>;
 		// TODO: Deprecate these in favour of foreground colours
 		colour: Record<
-			| Exclude<keyof ForegroundColours, 'body'>
+			| 'link'
 			| Exclude<Intent, 'neutral'>
 			| 'dark'
 			| 'light'
@@ -160,7 +166,7 @@ export interface Tokens {
 			| BaseColours,
 			string
 		>;
-		fontWeight: Record<'normal' | 'semiBold' | 'bold', number>;
+		fontWeight: Record<'normal' | 'semiBold' | 'bold', string>;
 	};
 	animation: {
 		easing: {

@@ -1,3 +1,4 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -34,47 +35,52 @@ export default {
 			</div>
 		),
 	],
+} as ComponentMeta<typeof Badge>;
+
+const template: ComponentStory<typeof Badge> = (args) => <Badge {...args} />;
+const templateAllColours: ComponentStory<typeof Badge> = (args) => (
+	<>
+		{colours.map((colour) => (
+			<Badge key={colour} {...args} colour={colour} />
+		))}
+	</>
+);
+
+const standardProps: ComponentProps<typeof Badge> = {
+	label: 'TITANIUM',
 };
 
-export const Standard = () => (
-	<>
-		{colours.map((colour) => (
-			<Badge key={colour} label={colour} colour={colour} />
-		))}
-	</>
-);
+export const standard = template.bind(standardProps);
+standard.args = standardProps;
 
-export const StandardLarge = () => (
-	<>
-		{colours.map((colour) => (
-			<Badge key={colour} size="large" label={colour} colour={colour} />
-		))}
-	</>
-);
+export const standardAllColours = templateAllColours.bind(standardProps);
+standardAllColours.args = standardProps;
 
-export const Inverted = () => (
-	<>
-		{colours.map((colour) => (
-			<Badge
-				key={colour}
-				label={colour}
-				colour={colour}
-				look="inverted"
-			/>
-		))}
-	</>
+const standardLargeProps: ComponentProps<typeof Badge> = {
+	...standardProps,
+	size: 'large',
+};
+export const standardLargeAllColours = templateAllColours.bind(
+	standardLargeProps,
 );
+standardLargeAllColours.args = standardLargeProps;
 
-export const InvertedLarge = () => (
-	<>
-		{colours.map((colour) => (
-			<Badge
-				key={colour}
-				size="large"
-				label={colour}
-				colour={colour}
-				look="inverted"
-			/>
-		))}
-	</>
+const invertedProps: ComponentProps<typeof Badge> = {
+	...standardProps,
+	look: 'inverted',
+};
+
+export const inverted = template.bind(invertedProps);
+inverted.args = invertedProps;
+
+export const invertedAllColours = templateAllColours.bind(invertedProps);
+invertedAllColours.args = invertedProps;
+
+const invertedLargeProps: ComponentProps<typeof Badge> = {
+	...standardLargeProps,
+	look: 'inverted',
+};
+export const invertedLargeAllColours = templateAllColours.bind(
+	invertedLargeProps,
 );
+invertedLargeAllColours.args = invertedLargeProps;

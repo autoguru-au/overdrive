@@ -1,64 +1,67 @@
-import { action } from '@storybook/addon-actions';
-import { select } from '@storybook/addon-knobs';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
-import { createRef, useCallback, useRef, useState } from 'react';
+import { useRef } from 'react';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
 
-import { EPositionerAlignment, Positioner } from '.';
+import { EAlignment } from './alignment';
 
-const alignmentPicker = () =>
-	select('Alignment', EPositionerAlignment, EPositionerAlignment.BOTTOM_LEFT);
+import { Positioner } from '.';
 
 export default {
 	title: 'Utility/Positioner',
 	component: Positioner,
 	parameters: {
-		chromatic: { disable: true },
+		chromatic: { disable: false },
 	},
+	argTypes: {
+		alignment: {
+			options: EAlignment,
+			defaultValue: EAlignment.BOTTOM_LEFT,
+			control: {
+				type: 'select',
+			},
+		},
+		triggerOffset: {
+			control: {
+				type: 'range',
+				min: 0,
+				max: 400,
+			},
+		},
+	},
+} as ComponentMeta<typeof Positioner>;
+
+const Template: ComponentStory<typeof Positioner> = (args) => {
+	const triggerRef = useRef(null);
+
+	return (
+		<div>
+			<Button ref={triggerRef} size="small">
+				Open me
+			</Button>
+			<Positioner {...args} triggerRef={triggerRef}>
+				<Box
+					boxShadow={1}
+					backgroundColour="white"
+					borderRadius="1"
+					borderWidth="1"
+					borderColour="gray"
+					padding="2">
+					<Text is="p">
+						Hello im from the consumer:{' '}
+						{Math.ceil(Math.random() * 100)}
+					</Text>
+				</Box>
+			</Positioner>
+		</div>
+	);
 };
 
-export const standard = () => {
-	const Impl = () => {
-		const triggerRef = useRef(null);
-		const [isOpen, setIsOpen] = useState(true);
-
-		const closeHandler = useCallback(() => setIsOpen((prev) => !prev), []);
-
-		return (
-			<div>
-				<Button ref={triggerRef} size="small" onClick={closeHandler}>
-					Open me
-				</Button>
-				<Positioner
-					isOpen={isOpen}
-					triggerRef={triggerRef}
-					alignment={alignmentPicker()}
-					onRequestClose={closeHandler}>
-					<Box
-						boxShadow={1}
-						backgroundColour="white"
-						borderRadius="1"
-						borderWidth={1}
-						borderColour="gray"
-						padding="2">
-						<Text is="p">
-							Hello im from the consumer:{' '}
-							{Math.ceil(Math.random() * 100)}
-						</Text>
-					</Box>
-				</Positioner>
-			</div>
-		);
-	};
-
-	return <Impl />;
-};
-
-export const illustrateAScroll = () => {
-	const triggerRef = createRef<HTMLButtonElement>();
+const WithScrollTemplate: ComponentStory<typeof Positioner> = (args) => {
+	const triggerRef = useRef(null);
 
 	return (
 		<div
@@ -81,16 +84,12 @@ export const illustrateAScroll = () => {
 					</Button>
 				</div>
 
-				<Positioner
-					isOpen
-					triggerRef={triggerRef}
-					alignment={alignmentPicker()}
-					onRequestClose={action('onRequestClose')}>
+				<Positioner {...args} triggerRef={triggerRef}>
 					<Box
 						boxShadow={1}
 						backgroundColour="white"
 						borderRadius="1"
-						borderWidth={1}
+						borderWidth="1"
 						borderColour="gray"
 						padding="2">
 						<Text is="p">
@@ -102,4 +101,36 @@ export const illustrateAScroll = () => {
 			</div>
 		</div>
 	);
+};
+
+const standardProps = {
+	alignment: EAlignment.BOTTOM_LEFT,
+	isOpen: false,
+	triggerOffset: 12,
+};
+
+export const closed: ComponentStory<typeof Positioner> = Template.bind(
+	standardProps,
+);
+closed.args = standardProps;
+
+const openProps = {
+	...standardProps,
+	isOpen: true,
+};
+
+export const open: ComponentStory<typeof Positioner> = Template.bind(openProps);
+open.args = openProps;
+
+const illustrateAScrollProps = {
+	...standardProps,
+	isOpen: true,
+};
+
+export const illustrateAScroll: ComponentStory<
+	typeof Positioner
+> = WithScrollTemplate.bind(illustrateAScrollProps);
+illustrateAScroll.args = openProps;
+illustrateAScroll.parameters = {
+	chromatic: { disableSnapshot: true },
 };

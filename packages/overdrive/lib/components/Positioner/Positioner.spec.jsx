@@ -2,8 +2,8 @@ import { render } from '@testing-library/react';
 import * as React from 'react';
 import { createRef } from 'react';
 
-import { EAlignment } from './alignment';
 import { Positioner } from './Positioner';
+import { EAlignment } from './alignment';
 
 describe('<Positioner />', () => {
 	it('should not throw', () =>

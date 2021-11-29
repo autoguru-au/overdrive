@@ -29,8 +29,8 @@
 		});
 
 		console.log('Successfully posted commit status to GitHub');
-	} catch (err) {
-		console.error(err);
+	} catch (error) {
+		console.error(error);
 		process.exit(1); // eslint-disable-line no-process-exit
 	}
 })();

@@ -2,19 +2,19 @@ import type { FunctionComponent, ReactChild, ReactElement } from 'react';
 import * as React from 'react';
 import { Children, isValidElement } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
-import type { Theme } from 'treat/theme';
 
 import {
 	useNegativeMarginLeft,
 	useNegativeMarginTop,
 } from '../../hooks/useNegativeMargin/useNegativeMargin';
-import type { ResponsiveProp } from '../../utils/responsiveProps';
+import { Tokens } from '../../themes/tokens';
+import { ResponsiveProp } from '../../utils/responsiveProps.css';
 import type { BoxStyleProps } from '../Box';
 import { Box } from '../Box';
 import { Text } from '../Text';
 
 export interface Props extends Pick<BoxStyleProps, 'is'> {
-	space?: ResponsiveProp<keyof Theme['space']>;
+	space?: ResponsiveProp<keyof Tokens['space']>;
 	alignY?: BoxStyleProps['alignItems'];
 	alignX?: BoxStyleProps['justifyContent'];
 	noWrap?: boolean;

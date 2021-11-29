@@ -1,14 +1,21 @@
-import { CarIcon, MagnifyIcon, PlusIcon } from '@autoguru/icons';
+import {
+	AccountEditIcon,
+	AlertCircleIcon,
+	CalendarIcon,
+	CarIcon,
+	CarMultipleIcon,
+	CheckIcon,
+	CurrencyUsdIcon,
+	MagnifyIcon,
+	PlusIcon,
+	StarIcon,
+} from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
-import { useEffect, useState } from 'react';
+import { ComponentProps } from 'react';
 
-import { Button } from '../Button';
-import { StandardModal } from '../StandardModal';
-
-import { AutoSuggest, AutoSuggestValue } from '.';
-
-type Value = string;
+import { AutoSuggest } from '.';
 
 const mockSuggestions = [
 	'Alfa Romeo',
@@ -25,137 +32,156 @@ const mockSuggestions = [
 	'McLaren',
 	'Pontiac',
 	'Porsche',
-];
+].map((item) => ({ text: item, payload: item }));
+
+const iconOptions = {
+	MagnifyIcon,
+	CarIcon,
+	CarMultipleIcon,
+	CalendarIcon,
+	AccountEditIcon,
+	AlertCircleIcon,
+	CurrencyUsdIcon,
+	PlusIcon,
+	StarIcon,
+	CheckIcon,
+};
 
 export default {
 	title: 'Components/Inputs/AutoSuggest',
 	component: AutoSuggest,
 	decorators: [
 		(story) => (
-			<div style={{ maxWidth: 500, margin: '0 auto' }}>{story()}</div>
+			<div style={{ maxWidth: 900, margin: '0 auto' }}>{story()}</div>
 		),
 	],
-};
-
-const Impl = ({ notch = true }) => {
-	type SuggestionValue = AutoSuggestValue<Value>;
-	const [value, setValue] = useState<SuggestionValue>({
-		text: '',
-		payload: null,
-	});
-	const [suggestions, setSuggestions] = useState<SuggestionValue[]>([]);
-
-	useEffect(() => {
-		setSuggestions(
-			value.text === ''
-				? mockSuggestions.map((item) => ({ text: item, payload: item }))
-				: mockSuggestions
-						.filter((item) =>
-							item
-								.toLowerCase()
-								.startsWith(value.text.toLowerCase()),
-						)
-						.map((item) => ({ text: item, payload: item })),
-		);
-	}, [value.text]);
-
-	return (
-		<AutoSuggest
-			notch={notch}
-			name="example"
-			placeholder="Pick an exotic car brand"
-			value={value}
-			suggestions={[
-				{
-					text: 'Skip me',
-					skip: true,
-					payload: null,
-				},
-				...suggestions,
-			]}
-			hintText="Pick a car, any car"
-			prefixIcon={CarIcon}
-			onChange={(thing) => {
-				setValue(thing);
-				action('onChange')(thing);
-			}}
-		/>
-	);
-};
-
-export const Standard = () => <Impl />;
-export const withoutNotch = () => <Impl notch={false} />;
-
-export const WithNoItems = () => (
-	<AutoSuggest
-		value={null}
-		suggestions={[]}
-		name="test"
-		placeholder="Pick nothing..."
-	/>
-);
-
-export const InsideModal = () => {
-	const [isOpen, setIsOpen] = useState(true);
-
-	return (
-		<>
-			<Button onClick={() => setIsOpen(true)}>Open</Button>
-			<StandardModal
-				isOpen={isOpen}
-				title="Test inside modal"
-				onRequestClose={() => setIsOpen(false)}>
-				<div style={{ padding: 20 }}>
-					<Impl />
-				</div>
-			</StandardModal>
-		</>
-	);
-};
-
-export const withIcon = () => (
-	<AutoSuggest
-		value={null}
-		suggestions={[]}
-		prefixIcon={PlusIcon}
-		name="test"
-		placeholder="Pick nothing..."
-	/>
-);
-
-export const loading = () => (
-	<AutoSuggest
-		value={null}
-		suggestions={[]}
-		isLoading
-		name="test"
-		placeholder="Pick nothing..."
-	/>
-);
-
-export const withCustomIcon = () => (
-	<AutoSuggest
-		value={null}
-		suggestions={[]}
-		fieldIcon={MagnifyIcon}
-		name="test"
-		placeholder="Search items..."
-	/>
-);
-
-export const loadingWithIcon = () => (
-	<AutoSuggest
-		value={null}
-		suggestions={[]}
-		prefixIcon={PlusIcon}
-		isLoading
-		name="test"
-		placeholder="Pick nothing..."
-	/>
-);
-
-InsideModal.story = {
-	parameters: {
-		chromatic: { disable: true },
+	argTypes: {
+		value: {
+			options: {
+				unselected: null,
+				...mockSuggestions.reduce(
+					(map, item) => ({ ...map, [item.text]: item }),
+					{},
+				),
+			},
+			defaultValue: null,
+			control: {
+				type: 'select',
+			},
+		},
+		fieldIcon: {
+			defaultValue: void 0,
+			description: 'Input field Icon',
+			options: iconOptions,
+			control: {
+				type: 'select',
+			},
+		},
+		prefixIcon: {
+			defaultValue: void 0,
+			description: 'Input prefix Icon',
+			options: iconOptions,
+			control: {
+				type: 'select',
+			},
+		},
+		wrapperRef: {
+			control: {
+				disable: true,
+			},
+		},
+		ref: {
+			control: {
+				disable: true,
+			},
+		},
 	},
+} as ComponentMeta<typeof AutoSuggest>;
+
+const Template: ComponentStory<typeof AutoSuggest> = (args) => (
+	<AutoSuggest {...args} />
+);
+
+const standardProps: Omit<ComponentProps<typeof AutoSuggest>, 'children'> = {
+	value: null,
+	suggestions: mockSuggestions,
+	disabled: void 0,
+	name: 'text',
+	placeholder: 'Pick an exotic car brand',
+	isValid: void 0,
+	isTouched: void 0,
+	isLoading: void 0,
+	isFocused: void 0,
+	reserveHintSpace: void 0,
+	hintText: '',
+	notch: true,
+	prefixIcon: void 0,
+	onReset: () => action('onReset')(),
+	onChange: (thing) => action('onChange')(thing),
+	onFocus: (thing) => action('onFocus')(thing),
+	onBlur: (thing) => action('onBlur')(thing),
 };
+
+export const standard = Template.bind(standardProps);
+standard.args = standardProps;
+
+const withValueProps: typeof standardProps = {
+	...standardProps,
+	value: mockSuggestions[3],
+};
+
+export const withValue = Template.bind(withValueProps);
+withValue.args = withValueProps;
+
+const withoutNotchProps: typeof withValueProps = {
+	...withValueProps,
+	notch: false,
+};
+export const withoutNotch = Template.bind(withoutNotchProps);
+withoutNotch.args = withoutNotchProps;
+
+const withNoItemsProps: typeof standardProps = {
+	...standardProps,
+	suggestions: [],
+};
+export const withNoItems = Template.bind(withNoItemsProps);
+withNoItems.args = withNoItemsProps;
+
+const withIconProps: typeof withValueProps = {
+	...withValueProps,
+	prefixIcon: CarIcon,
+};
+export const withIcon = Template.bind(withIconProps);
+withIcon.args = withIconProps;
+
+const disabledProps: typeof withIconProps = {
+	...withIconProps,
+	disabled: true,
+};
+export const disabled = Template.bind(disabledProps);
+disabled.args = disabledProps;
+
+const withHintTextProps: typeof withIconProps = {
+	...withIconProps,
+	hintText: 'Choose a sports car make',
+};
+export const withHintText = Template.bind(withHintTextProps);
+withHintText.args = withHintTextProps;
+
+const validProps: typeof withHintTextProps = {
+	...withHintTextProps,
+	value: mockSuggestions[8],
+	isTouched: true,
+	isValid: true,
+};
+export const valid = Template.bind(validProps);
+valid.args = validProps;
+
+const invalidProps: typeof withHintTextProps = {
+	...withHintTextProps,
+	value: mockSuggestions[3],
+	isTouched: true,
+	isValid: false,
+};
+export const invalid = Template.bind(invalidProps);
+invalid.args = invalidProps;

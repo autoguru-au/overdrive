@@ -1,21 +1,19 @@
 import type { ReactChild } from 'react';
 import * as React from 'react';
 import { AriaAttributes, forwardRef } from 'react';
-import { useStyles } from 'react-treat';
-import type { Theme } from 'treat/theme';
 
+import { Tokens } from '../../themes/tokens';
 import type { Alignment } from '../../utils';
 import { alignmentToFlexAlignment } from '../../utils';
 import { Box } from '../Box';
 import { Text } from '../Text';
 
+import * as styles from './TableCell.css';
 import { useTableContext } from './context';
-
-import * as styleRefs from './TableCell.treat';
 
 export interface Props extends Partial<Pick<AriaAttributes, 'aria-label'>> {
 	align?: Alignment;
-	padding?: keyof Theme['space'];
+	padding?: keyof Tokens['space'];
 
 	children?: ReactChild | null;
 }
@@ -30,7 +28,6 @@ export const TableCell = forwardRef<HTMLDivElement, Props>(
 		},
 		ref,
 	) => {
-		const styles = useStyles(styleRefs);
 		const tableContext = useTableContext();
 
 		const padding = incomingPadding ?? tableContext?.padding ?? 'none';

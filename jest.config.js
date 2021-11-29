@@ -3,7 +3,7 @@ module.exports = {
 	testPathIgnorePatterns: [
 		'/node_modules/',
 		'/templates/component/',
-		'\\.treat\\.tsx?$',
+		'\\.css\\.tsx?$',
 	],
 	transformIgnorePatterns: ['node_modules/(?!(@popperjs/core)/)'],
 	setupFilesAfterEnv: [
@@ -13,6 +13,6 @@ module.exports = {
 	collectCoverageFrom: [
 		'lib/**/*.{ts,tsx}',
 		'!**/*stories*.{ts,tsx}',
-		'!**/*.treat.ts',
+		'!**/*.css.ts',
 	],
 };

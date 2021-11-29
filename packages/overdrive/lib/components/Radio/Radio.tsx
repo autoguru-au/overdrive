@@ -1,15 +1,13 @@
 import clsx from 'clsx';
 import * as React from 'react';
 import { forwardRef, ReactNode } from 'react';
-import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
 import { CheckableBase } from '../private/CheckableBase';
 import { useCheckableStyles } from '../private/CheckableBase/useCheckableStyles';
 
+import * as styles from './Radio.css';
 import { useRadioContext } from './RadioGroup';
-
-import * as styleRefs from './Radio.treat';
 
 export interface Props {
 	value: string;
@@ -20,7 +18,6 @@ export interface Props {
 
 export const Radio = forwardRef<HTMLInputElement, Props>(
 	({ value, className = '', children, disabled = false }, ref) => {
-		const styles = useStyles(styleRefs);
 		const { checkableItem } = useCheckableStyles();
 		const radioContext = useRadioContext();
 

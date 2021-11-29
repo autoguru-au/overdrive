@@ -1,82 +1,81 @@
 import clsx from 'clsx';
 import type { JSXElementConstructor } from 'react';
-import { useStyles } from 'react-treat';
-import type { Theme } from 'treat/theme';
 
-import type { ResponsiveProp } from '../../utils/responsiveProps';
-import { resolveResponsiveStyle } from '../../utils/responsiveProps';
+import * as resetStyles from '../../reset/reset.css';
+import { Tokens } from '../../themes/tokens';
+import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
+import { ResponsiveProp } from '../../utils/responsiveProps.css';
 
-import * as resetStyleRefs from '../../reset/reset.treat';
-import * as styleRefs from './useBoxStyles.treat';
+import * as styles from './useBoxStyles.css';
 
 interface Padding {
-	padding?: ResponsiveProp<keyof Theme['space']>;
-	paddingX?: ResponsiveProp<keyof Theme['space']>;
-	paddingY?: ResponsiveProp<keyof Theme['space']>;
-	paddingTop?: ResponsiveProp<keyof Theme['space']>;
-	paddingRight?: ResponsiveProp<keyof Theme['space']>;
-	paddingBottom?: ResponsiveProp<keyof Theme['space']>;
-	paddingLeft?: ResponsiveProp<keyof Theme['space']>;
+	padding?: ResponsiveProp<keyof Tokens['space']>;
+	paddingX?: ResponsiveProp<keyof Tokens['space']>;
+	paddingY?: ResponsiveProp<keyof Tokens['space']>;
+	paddingTop?: ResponsiveProp<keyof Tokens['space']>;
+	paddingRight?: ResponsiveProp<keyof Tokens['space']>;
+	paddingBottom?: ResponsiveProp<keyof Tokens['space']>;
+	paddingLeft?: ResponsiveProp<keyof Tokens['space']>;
 }
 
 interface Margin {
-	margin?: ResponsiveProp<keyof Theme['space']>;
-	marginX?: ResponsiveProp<keyof Theme['space']>;
-	marginY?: ResponsiveProp<keyof Theme['space']>;
-	marginTop?: ResponsiveProp<keyof Theme['space']>;
-	marginRight?: ResponsiveProp<keyof Theme['space']>;
-	marginBottom?: ResponsiveProp<keyof Theme['space']>;
-	marginLeft?: ResponsiveProp<keyof Theme['space']>;
+	margin?: ResponsiveProp<keyof Tokens['space']>;
+	marginX?: ResponsiveProp<keyof Tokens['space']>;
+	marginY?: ResponsiveProp<keyof Tokens['space']>;
+	marginTop?: ResponsiveProp<keyof Tokens['space']>;
+	marginRight?: ResponsiveProp<keyof Tokens['space']>;
+	marginBottom?: ResponsiveProp<keyof Tokens['space']>;
+	marginLeft?: ResponsiveProp<keyof Tokens['space']>;
 }
 
 // TODO: Investigate this further, ie do we really need to be able to define all edges?
 interface Border {
-	borderWidth?: ResponsiveProp<keyof Theme['border']['width']>;
-	borderWidthX?: ResponsiveProp<keyof Theme['border']['width']>;
-	borderWidthY?: ResponsiveProp<keyof Theme['border']['width']>;
-	borderWidthTop?: ResponsiveProp<keyof Theme['border']['width']>;
-	borderWidthRight?: ResponsiveProp<keyof Theme['border']['width']>;
-	borderWidthBottom?: ResponsiveProp<keyof Theme['border']['width']>;
-	borderWidthLeft?: ResponsiveProp<keyof Theme['border']['width']>;
+	borderWidth?: ResponsiveProp<keyof Tokens['border']['width']>;
+	borderWidthX?: ResponsiveProp<keyof Tokens['border']['width']>;
+	borderWidthY?: ResponsiveProp<keyof Tokens['border']['width']>;
+	borderWidthTop?: ResponsiveProp<keyof Tokens['border']['width']>;
+	borderWidthRight?: ResponsiveProp<keyof Tokens['border']['width']>;
+	borderWidthBottom?: ResponsiveProp<keyof Tokens['border']['width']>;
+	borderWidthLeft?: ResponsiveProp<keyof Tokens['border']['width']>;
 
-	borderColour?: keyof Theme['border']['colours'];
-	borderColourX?: keyof Theme['border']['colours'];
-	borderColourY?: keyof Theme['border']['colours'];
-	borderColourTop?: keyof Theme['border']['colours'];
-	borderColourRight?: keyof Theme['border']['colours'];
-	borderColourBottom?: keyof Theme['border']['colours'];
-	borderColourLeft?: keyof Theme['border']['colours'];
+	borderColour?: keyof Tokens['border']['colours'];
+	borderColourX?: keyof Tokens['border']['colours'];
+	borderColourY?: keyof Tokens['border']['colours'];
+	borderColourTop?: keyof Tokens['border']['colours'];
+	borderColourRight?: keyof Tokens['border']['colours'];
+	borderColourBottom?: keyof Tokens['border']['colours'];
+	borderColourLeft?: keyof Tokens['border']['colours'];
 
 	// TODO: Should this also house X,Y,T,R,B,L?
-	borderRadius?: ResponsiveProp<keyof typeof styleRefs.borderRadius>;
+	borderRadius?: ResponsiveProp<keyof typeof styles.borderRadius>;
 }
 
 interface Flex {
-	alignItems?: ResponsiveProp<keyof typeof styleRefs.alignItems>;
-	flexDirection?: ResponsiveProp<keyof typeof styleRefs.flexDirection>;
-	flexGrow?: keyof typeof styleRefs.flexGrow;
-	flexShrink?: keyof typeof styleRefs.flexShrink;
-	flexWrap?: keyof typeof styleRefs.flexWrap;
-	justifyContent?: ResponsiveProp<keyof typeof styleRefs.justifyContent>;
+	alignItems?: ResponsiveProp<keyof typeof styles.alignItems>;
+	flexDirection?: ResponsiveProp<keyof typeof styles.flexDirection>;
+	flexGrow?: keyof typeof styles.flexGrow;
+	flexShrink?: keyof typeof styles.flexShrink;
+	flexWrap?: keyof typeof styles.flexWrap;
+	justifyContent?: ResponsiveProp<keyof typeof styles.justifyContent>;
 }
 
 export interface BoxStyleProps extends Padding, Margin, Border, Flex {
 	is?: keyof JSX.IntrinsicElements | JSXElementConstructor<any>;
-	boxShadow?: ResponsiveProp<keyof typeof styleRefs.boxShadow>;
-	display?: keyof typeof styleRefs.display;
+	boxShadow?: ResponsiveProp<keyof typeof styles.boxShadow>;
+	display?: keyof typeof styles.display;
 
-	position?: keyof typeof styleRefs.position;
+	position?: keyof typeof styles.position;
 
-	width?: keyof typeof styleRefs.width;
-	height?: keyof typeof styleRefs.height;
+	width?: keyof typeof styles.width;
+	height?: keyof typeof styles.height;
 
-	backgroundColour?: keyof typeof styleRefs.backgroundColours;
-	opacity?: keyof typeof styleRefs.opacity;
+	backgroundColour?: keyof typeof styles.backgroundColours;
+	opacity?: keyof typeof styles.opacity;
 
-	overflow?: keyof typeof styleRefs.overflow;
-	userSelect?: keyof typeof styleRefs.userSelect;
-	textAlign?: keyof typeof styleRefs.textAlign;
-	pointerEvents?: keyof typeof styleRefs.pointerEvents;
+	overflow?: keyof typeof styles.overflow;
+	userSelect?: keyof typeof styles.userSelect;
+	textAlign?: keyof typeof styles.textAlign;
+	pointerEvents?: keyof typeof styles.pointerEvents;
 
 	className?: Parameters<typeof clsx>[0];
 }
@@ -131,9 +130,6 @@ export const useBoxStyles = ({
 	justifyContent,
 	className,
 }: BoxStyleProps) => {
-	const resetStyles = useStyles(resetStyleRefs);
-	const styles = useStyles(styleRefs);
-
 	const resolvedPaddingTop = paddingTop || paddingY || padding;
 	const resolvedPaddingRight = paddingRight || paddingX || padding;
 	const resolvedPaddingBottom = paddingBottom || paddingY || padding;

@@ -16,7 +16,6 @@ import {
 	useCallback,
 	useState,
 } from 'react';
-import { useStyles } from 'react-treat';
 
 import { useInputControlledState } from '../../../utils';
 import { Box, useBoxStyles } from '../../Box';
@@ -24,10 +23,9 @@ import { Icon } from '../../Icon';
 import { ProgressSpinner } from '../../ProgressSpinner';
 
 import { HintText } from './HintText';
+import * as inputStateStyles from './InputState.css';
 import { NotchedBase } from './NotchedBase';
-
-import * as inputStateStyleRefs from './InputState.treat';
-import * as styleRefs from './withEnhancedInput.treat';
+import * as styles from './withEnhancedInput.css';
 
 // The event handlers we'll allow the wrapped component to bind too
 export interface EventHandlers<PrimitiveElementType> {
@@ -157,9 +155,6 @@ export const withEnhancedInput = <
 				!(suffixIcon && !withSuffixIcon),
 				'suffix icon is not supported for this component',
 			);
-
-			const styles = useStyles(styleRefs);
-			const inputStateStyles = useStyles(inputStateStyleRefs);
 
 			const [value, onChange] = useInputControlledState(
 				incomingValue,
@@ -341,7 +336,7 @@ const stateNodeGetter = (styles) => (isHovered, isActive) => {
 
 const derivedColourIntent = (
 	{ isTouched, isValid, disabled, isHovered, isActive },
-	styles: typeof inputStateStyleRefs,
+	styles: typeof inputStateStyles,
 ): { borderColour: string; colour: string } => {
 	if (disabled) return styles.disabled;
 

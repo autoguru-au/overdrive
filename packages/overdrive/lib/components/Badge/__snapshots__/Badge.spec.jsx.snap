@@ -2,13 +2,13 @@
 
 exports[`<Badge /> should match snapshot with label 1`] = `
 <div
-  class="block display_flex"
+  class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy"
 >
   <div
-    class="block 1_mobile_base 1_mobile_base 1_mobile_base 1_mobile_base display_block overflow_hidden 1_mobile_base colours_default_neutral_base"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k060 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0614 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0628 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063c useBoxStyles_display_block__7o6k06dx useBoxStyles_overflow_hidden__7o6k06ds useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp Badge_labelSize_standard__19rwmn11 Badge_colours_default_neutral__19rwmn13"
   >
     <span
-      class="inlineText display_block overflow_hidden root_base block fontWeight_semiBold_base noWrap sizes_2_base label_base root_base block colours_white_base"
+      class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06dx useBoxStyles_overflow_hidden__7o6k06ds useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_fontWeight_semiBold__w6to7io useTextStyles_noWrap__w6to7iq Badge_label__19rwmn10 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if"
     >
       Hello World!
     </span>

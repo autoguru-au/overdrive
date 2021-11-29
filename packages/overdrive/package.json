@@ -1,7 +1,9 @@
 {
 	"name": "@autoguru/overdrive",
-	"version": "2.7.1",
+	"version": "3.0.0",
 	"description": "Overdrive is a product component library, and design system for AutoGuru.",
+	"types": "dist/index.d.ts",
+	"main": "dist/index.js",
 	"keywords": [
 		"component",
 		"design-system",
@@ -14,24 +16,30 @@
 	"repository": "autoguru-au/overdrive",
 	"license": "MIT",
 	"sideEffects": [
-		"./reset.ts",
-		"./themes.ts",
 		"./lib/reset/**/*",
 		"./lib/theme/**/*",
-		"./lib/themes/**/*"
+		"./lib/themes/**/*",
+		"./dist/reset/**/*",
+		"./dist/theme/**/*",
+		"./dist/themes/**/*"
 	],
+	"files": [
+		"dist"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
 	"scripts": {
-		"build": "tsc",
+		"typecheck": "tsc",
+		"build": "babel lib --out-dir dist --extensions '.ts,.tsx, .css' && tsc",
 		"prepublishOnly": "yarn run build",
 		"watch": "tsc --watch"
 	},
-	"types": "./dist/main.d.ts",
-	"main": "index.ts",
 	"devDependencies": {
 		"@autoguru/icons": "^1.7.4",
 		"@autoguru/tsconfig": "1.0.79",
 		"@autoguru/utilities": "^1.0.98",
-		"@popperjs/core": "^2.7.0",
+		"@popperjs/core": "^2.10.2",
 		"@types/react": "^17.0.16",
 		"@types/react-dom": "^17.0.9",
 		"clsx": "^1.1.1",
@@ -41,22 +49,18 @@
 		"react": "^18.0.0-alpha-b9934d6db-20210805",
 		"react-dom": "^18.0.0-alpha-b9934d6db-20210805",
 		"react-focus-lock": "^2.5.0",
-		"react-keyed-flatten-children": "^1.3.0",
-		"react-treat": "^2.0.1",
-		"treat": "2.0.4"
+		"react-keyed-flatten-children": "^1.3.0"
 	},
 	"peerDependencies": {
 		"@autoguru/icons": "^1.7.4",
 		"@autoguru/utilities": "^1.0.98",
-		"@popperjs/core": "^2.7.0",
+		"@popperjs/core": "^2.10.2",
 		"clsx": "^1.1.1",
 		"colord": "^2.0.1",
 		"csstype": "^3.0.7",
 		"react": ">=16.8",
 		"react-dom": ">=16.8",
 		"react-focus-lock": "^2.5.0",
-		"react-keyed-flatten-children": "^1.3.0",
-		"react-treat": "^2.0.1",
-		"treat": "2.0.4"
+		"react-keyed-flatten-children": "^1.3.0"
 	}
 }

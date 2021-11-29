@@ -2,10 +2,11 @@ import { invariant } from '@autoguru/utilities';
 import type { FunctionComponent } from 'react';
 import * as React from 'react';
 import { createContext, useContext, useMemo } from 'react';
-import type { Theme } from 'treat/theme';
+
+import { Tokens } from '../../themes/tokens';
 
 export interface TableContext {
-	padding?: keyof Theme['space'];
+	padding?: keyof Tokens['space'];
 	stickyHead?: boolean;
 }
 

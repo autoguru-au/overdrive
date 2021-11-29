@@ -9,14 +9,13 @@ import {
 	isValidElement,
 	ReactElement,
 } from 'react';
-import { useStyles } from 'react-treat';
 
 import { useBoxStyles } from '../Box';
 import { Icon } from '../Icon';
 import { Inline } from '../Inline';
 import { Text, useTextStyles } from '../Text';
 
-import * as styleRefs from './Anchor.treat';
+import * as styles from './Anchor.css';
 
 export interface Props {
 	rel?: string;
@@ -46,7 +45,6 @@ export const Anchor: FunctionComponent<Props> = ({
 
 	icon,
 }) => {
-	const styles = useStyles(styleRefs);
 	const textStyles = useTextStyles({
 		colour: 'link',
 	});

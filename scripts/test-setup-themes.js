@@ -3,8 +3,11 @@ jest.mock('@testing-library/react', () => {
 	const { OverdriveProvider } = jest.requireActual(
 		'../packages/overdrive/lib/components/OverdriveProvider/OverdriveProvider',
 	);
-	const { baseTheme } = jest.requireActual(
-		'../packages/overdrive/lib/themes/index',
+	const { themeRef, vars } = jest.requireActual(
+		'../packages/overdrive/lib/themes/base/vars.css',
+	);
+	const { tokens } = jest.requireActual(
+		'../packages/overdrive/lib/themes/base/tokens',
 	);
 	const React = jest.requireActual('react');
 
@@ -16,7 +19,7 @@ jest.mock('@testing-library/react', () => {
 				wrapper({ children }) {
 					return React.createElement(
 						OverdriveProvider,
-						{ theme: baseTheme },
+						{ themeClass: themeRef, tokens, vars },
 						[children],
 					);
 				},

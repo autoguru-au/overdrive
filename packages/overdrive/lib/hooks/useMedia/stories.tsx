@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { Stack } from '../../components/Stack/Stack';
 import { Text } from '../../components/Text/Text';
-import { useRuntimeTokens } from '../../components/ThemeProvider/ThemeProvider';
+import { breakpoints } from '../../themes/makeTheme';
 
 import { useMedia } from './useMedia';
 
@@ -15,7 +15,6 @@ export default {
 
 export const Standard = () => {
 	const Impl = () => {
-		const { breakpoints } = useRuntimeTokens();
 		const [isMobile, isTable, isDesktop, isLargeDesktop] = useMedia([
 			'mobile',
 			'tablet',

@@ -2,38 +2,38 @@
 
 exports[`<Stack /> should correctly handle fragment nodes 1`] = `
 <div
-  class="block"
+  class="reset_block__6swfds3"
 >
   <div
-    class="block child_default child_spaces_2_base"
+    class="reset_block__6swfds3 Stack_child_default__1hhisnca Stack_child_spaces_2__1hhisnc1"
   >
     <p>
       line 0
     </p>
   </div>
   <div
-    class="block child_default child_spaces_2_base"
+    class="reset_block__6swfds3 Stack_child_default__1hhisnca Stack_child_spaces_2__1hhisnc1"
   >
     <p>
       Line 1
     </p>
   </div>
   <div
-    class="block child_default child_spaces_2_base"
+    class="reset_block__6swfds3 Stack_child_default__1hhisnca Stack_child_spaces_2__1hhisnc1"
   >
     <p>
       Line 2
     </p>
   </div>
   <div
-    class="block child_default child_spaces_2_base"
+    class="reset_block__6swfds3 Stack_child_default__1hhisnca Stack_child_spaces_2__1hhisnc1"
   >
     <p>
       Line 3
     </p>
   </div>
   <div
-    class="block child_default child_spaces_2_base"
+    class="reset_block__6swfds3 Stack_child_default__1hhisnca Stack_child_spaces_2__1hhisnc1"
   >
     <p>
       line 4

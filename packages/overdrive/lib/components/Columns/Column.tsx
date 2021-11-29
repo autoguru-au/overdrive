@@ -1,23 +1,19 @@
 import { invariant } from '@autoguru/utilities';
 import * as React from 'react';
 import { ComponentProps, forwardRef, ReactNode, useContext } from 'react';
-import { useStyles } from 'react-treat';
 
-import {
-	resolveResponsiveStyle,
-	ResponsiveProp,
-} from '../../utils/responsiveProps';
+import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
+import { ResponsiveProp } from '../../utils/responsiveProps.css';
 import { Box } from '../Box';
 
+import * as styles from './Column.css';
 import { ColumnContext } from './Columns';
 
-import * as styleRefs from './Column.treat';
-
 export interface Props extends Omit<ComponentProps<typeof Box>, 'width'> {
-	width?: ResponsiveProp<keyof typeof styleRefs.width>;
+	width?: ResponsiveProp<keyof typeof styles.width>;
 	noShrink?: boolean;
 	grow?: boolean;
-	alignSelf?: keyof typeof styleRefs.align;
+	alignSelf?: keyof typeof styles.align;
 	className?: string;
 	children: ReactNode | ReactNode[];
 }
@@ -37,7 +33,6 @@ export const Column = forwardRef<HTMLElement, Props>(
 		},
 		ref,
 	) => {
-		const styles = useStyles(styleRefs);
 		const columnsContext = useContext(ColumnContext);
 		invariant(
 			columnsContext !== null,

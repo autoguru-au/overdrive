@@ -1,11 +1,6 @@
 import type { Placement } from '@popperjs/core';
-import flip from '@popperjs/core/lib/modifiers/flip';
-import offset from '@popperjs/core/lib/modifiers/offset';
-import preventOverflow from '@popperjs/core/lib/modifiers/preventOverflow';
-import {
-	defaultModifiers,
-	popperGenerator,
-} from '@popperjs/core/lib/popper-lite';
+import { flip, offset, popperGenerator, preventOverflow } from '@popperjs/core';
+import { defaultModifiers } from '@popperjs/core/lib/popper';
 import * as React from 'react';
 import {
 	ComponentPropsWithoutRef,
@@ -15,15 +10,13 @@ import {
 	useEffect,
 	useRef,
 } from 'react';
-import { useStyles } from 'react-treat';
 
 import { isBrowser, setRef } from '../../utils';
 import { Box } from '../Box';
 import { Portal } from '../Portal';
 
+import * as styles from './Positioner.css';
 import { EAlignment } from './alignment';
-
-import * as styleRefs from './Positioner.treat';
 
 export { EAlignment } from './alignment';
 
@@ -68,9 +61,6 @@ export const Positioner: FunctionComponent<Props> = ({
 	if (!isBrowser) return null;
 
 	const placement = convertPlacement(alignment);
-
-	/* eslint-disable react-hooks/rules-of-hooks */
-	const styles = useStyles(styleRefs);
 
 	const referenceRef = useRef<HTMLDivElement>(null);
 

@@ -8,14 +8,13 @@ import {
 	useRef,
 	useState,
 } from 'react';
-import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
 import { Positioner } from '../Positioner';
 import { EAlignment } from '../Positioner/alignment';
 import { Text } from '../Text';
 
-import * as styleRefs from './Tooltip.treat';
+import * as styles from './Tooltip.css';
 
 export interface Props {
 	label: string;
@@ -28,7 +27,6 @@ export const Tooltip: FunctionComponent<Props> = ({
 	label,
 	children,
 }) => {
-	const styles = useStyles(styleRefs);
 	const [isOpen, setIsOpen] = useState(false);
 	const childRef = useRef<HTMLDivElement>(null);
 	const triggerRef = useRef<HTMLElement>(null);

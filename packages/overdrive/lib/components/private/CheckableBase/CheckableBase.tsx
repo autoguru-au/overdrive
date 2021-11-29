@@ -1,12 +1,11 @@
 import clsx from 'clsx';
 import * as React from 'react';
 import { ChangeEvent, forwardRef, ReactNode } from 'react';
-import { useStyles } from 'react-treat';
 
 import { Box, useBoxStyles } from '../../Box';
 import { Text, useTextStyles } from '../../Text';
 
-import * as styleRefs from './CheckableBase.treat';
+import * as styles from './CheckableBase.css';
 
 export interface Props {
 	className?: string;
@@ -39,7 +38,6 @@ export const CheckableBase = forwardRef<HTMLInputElement, Props>(
 		},
 		ref,
 	) => {
-		const styles = useStyles(styleRefs);
 		const onChange = (e: ChangeEvent<HTMLInputElement>) => {
 			if (typeof handleChange === 'function') {
 				handleChange(e.currentTarget.checked);

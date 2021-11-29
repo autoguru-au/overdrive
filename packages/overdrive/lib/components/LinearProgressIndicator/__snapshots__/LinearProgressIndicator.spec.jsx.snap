@@ -2,13 +2,13 @@
 
 exports[`<LinearProgressIndicator /> should match snapshot 1`] = `
 <div
-  class="block width_full position_relative overflow_hidden backgroundColours_gray200_base root_base"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do useBoxStyles_overflow_hidden__7o6k06ds useBoxStyles_backgroundColours_gray200__7o6k06ca LinearProgressIndicator_root__1ct7t0x0"
 >
   <div
-    class="block width_full height_full position_absolute linearProgressBar"
+    class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm LinearProgressIndicator_linearProgressBar__1ct7t0x2"
   >
     <span
-      class="inlineText width_full height_full position_absolute backgroundColours_green300_base linearProgressBarInner"
+      class="reset_inlineText__6swfds2 useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_backgroundColours_green300__7o6k06ck LinearProgressIndicator_linearProgressBarInner__1ct7t0x4"
     />
   </div>
 </div>

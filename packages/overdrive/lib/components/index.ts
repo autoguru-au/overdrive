@@ -1,4 +1,5 @@
 export * from './OverdriveProvider';
+export * from './ThemeProvider';
 
 export * from './Actions';
 export * from './Alert';
@@ -45,7 +46,6 @@ export * from './TextAreaInput';
 export * from './TextContainer';
 export * from './TextInput';
 export * from './TextLink';
-export * from './ThemeProvider';
 export * from './Toaster';
 export * from './Tooltip';
 export * from './VisuallyHidden';

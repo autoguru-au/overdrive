@@ -1,7 +1,9 @@
-import { runtimeTokens, theme } from './theme.treat';
+import { tokens } from './tokens';
+import { themeRef, vars } from './vars.css';
 
 export default {
 	name: 'baseTheme',
-	themeRef: theme,
-	runtimeTokens,
+	themeRef,
+	tokens,
+	vars,
 };

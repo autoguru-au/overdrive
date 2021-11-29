@@ -1,7 +1,11 @@
-import { runtimeTokens, theme } from './theme.treat';
+import { vars } from '../base/vars.css';
+
+import { tokens } from './tokens';
+import { themeRef } from './vars.css';
 
 export default {
-	name: 'flatRed',
-	themeRef: theme,
-	runtimeTokens,
+	name: 'flatRedTheme',
+	themeRef,
+	tokens,
+	vars,
 };

@@ -1,4 +1,6 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
+import { ComponentProps } from 'react';
 
 import { ProgressSpinner } from '.';
 
@@ -21,8 +23,15 @@ export default {
 		),
 	],
 	parameters: { chromatic: { disable: true } },
-};
+} as ComponentMeta<typeof ProgressSpinner>;
 
 export const Standard = () => (
 	<ProgressSpinner colour="primary" size="medium" />
 );
+
+const Template: ComponentStory<typeof ProgressSpinner> = (args) => (
+	<ProgressSpinner {...args} />
+);
+const standardProps: ComponentProps<typeof ProgressSpinner> = {};
+export const standard = Template.bind(standardProps);
+standard.args = standardProps;

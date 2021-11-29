@@ -1,21 +1,27 @@
-import { AccountEditIcon, AccountIcon, CalendarIcon } from '@autoguru/icons';
-import { boolean, text } from '@storybook/addon-knobs';
+import {
+	AccountEditIcon,
+	AlertCircleIcon,
+	CalendarIcon,
+	CarIcon,
+	CarMultipleIcon,
+	CheckIcon,
+	CurrencyUsdIcon,
+	PlusIcon,
+	StarIcon,
+} from '@autoguru/icons';
+import { action } from '@storybook/addon-actions';
+import { ArgTypes, ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
+import { ComponentProps } from 'react';
 
 import { SelectInput } from '.';
 
-const isTouched = (touched: boolean) => boolean('isTouched', touched);
-const isValid = (valid: boolean) => boolean('isValid', valid);
-
-const selectOptions = (optionsCSV) =>
-	text('Options', optionsCSV)
-		.split(',')
-		.map((item) => item.trim())
-		.map((item) => (
-			<option key={item} value={item}>
-				{item}
-			</option>
-		));
+const valueOptions = ['Kia', 'Toyota', 'BMW', 'Mitsubishi', 'Hyundai'];
+const selectOptions = valueOptions.map((item) => (
+	<option key={item} value={item}>
+		{item}
+	</option>
+));
 
 export default {
 	title: 'Components/Inputs/Select',
@@ -23,112 +29,151 @@ export default {
 	parameters: {
 		chromatic: { delay: 300 },
 	},
+} as ComponentMeta<typeof SelectInput>;
+
+const defaultValue = valueOptions[4];
+const defaultPlaceholder = 'What is the make of your car?';
+
+const iconOptions = {
+	CarIcon,
+	CarMultipleIcon,
+	CalendarIcon,
+	AccountEditIcon,
+	AlertCircleIcon,
+	CurrencyUsdIcon,
+	PlusIcon,
+	StarIcon,
+	CheckIcon,
 };
 
-export const standard = () => (
-	<SelectInput name="abc" placeholder="Select one">
-		<option disabled />
-		{selectOptions('Option 1, Option 2, Option 3')}
-	</SelectInput>
-);
-export const withAValue = () => (
-	<SelectInput name="abc" placeholder="Select one" value="Option 2">
-		<option disabled />
-		{selectOptions('Option 1, Option 2, Option 3')}
-	</SelectInput>
-);
-export const withHintText = () => (
-	<SelectInput
-		name="abc"
-		placeholder="Select one"
-		hintText={text('Hint Text', 'Cannot select option 3')}>
-		<option disabled />
-		{selectOptions('Option 1, Option 2, Option 3')}
-	</SelectInput>
-);
-export const withIcon = () => (
-	<div style={{ display: 'grid', gridGap: '16px' }}>
-		<SelectInput
-			name="abc"
-			placeholder="Select one"
-			prefixIcon={CalendarIcon}>
-			<option disabled />
-			{selectOptions('Option 1, Option 2, Option 3')}
-		</SelectInput>
+const argTypes: ArgTypes = {
+	value: {
+		options: valueOptions,
+		defaultValue: null,
+		control: {
+			type: 'select',
+		},
+	},
+	prefixIcon: {
+		defaultValue: null,
+		description: 'Input prefix Icon',
+		options: iconOptions,
+		control: {
+			type: 'select',
+		},
+	},
+};
 
-		<SelectInput
-			isTouched
-			isValid
-			name="abc"
-			placeholder="Select one"
-			prefixIcon={AccountEditIcon}>
-			<option disabled />
-			{selectOptions('Option 1, Option 2, Option 3')}
-		</SelectInput>
-		<SelectInput
-			isTouched
-			name="abc"
-			placeholder="Select one"
-			prefixIcon={AccountEditIcon}
-			isValid={false}>
-			<option disabled />
-			{selectOptions('Option 1, Option 2, Option 3')}
-		</SelectInput>
-		<SelectInput
-			isTouched
-			disabled
-			name="abc"
-			placeholder="Select one"
-			prefixIcon={AccountEditIcon}
-			isValid={false}>
-			<option disabled />
-			{selectOptions('Option 1, Option 2, Option 3')}
-		</SelectInput>
-	</div>
-);
-export const withValidation = () => (
-	<SelectInput
-		name="abc"
-		isValid={isValid(false)}
-		isTouched={isTouched(false)}
-		placeholder="Select one"
-		hintText={text('Hint Text', 'Cannot select option 3')}>
-		<option disabled />
-		{selectOptions('Option 1, Option 2, Option 3')}
-	</SelectInput>
-);
-export const disabled = () => (
-	<SelectInput disabled name="abc" placeholder="Select one" value="Option 2">
-		<option disabled />
-		<option value="Option 2">Option 2</option>
+const Template: ComponentStory<typeof SelectInput> = (args) => (
+	<SelectInput {...args}>
+		<option disabled>Select an option</option>
+		{selectOptions}
 	</SelectInput>
 );
 
-export const loading = () => (
-	<SelectInput isLoading name="abc" placeholder="Select one" value="Option 2">
-		<option disabled />
-		<option value="Option 2">Option 2</option>
-	</SelectInput>
-);
+const sharedProps: Omit<ComponentProps<typeof SelectInput>, 'children'> = {
+	disabled: false,
+	name: 'text',
+	placeholder: defaultPlaceholder,
+	isValid: false,
+	isTouched: false,
+	isLoading: false,
+	isFocused: false,
+	reserveHintSpace: false,
+	hintText: '',
+	notch: true,
+	prefixIcon: void 0,
+	onChange: action('onChange'),
+	onFocus: action('onFocus'),
+	onBlur: action('onBlur'),
+};
 
-export const withCustomIcon = () => (
-	<SelectInput
-		fieldIcon={AccountIcon}
-		name="abc"
-		placeholder="Select a user"
-		value="Option 2">
-		<option disabled />
-		<option value="Option 2">Option 2</option>
-	</SelectInput>
-);
-export const loadingWithIcon = () => (
-	<SelectInput
-		isLoading
-		prefixIcon={AccountEditIcon}
-		name="abc"
-		placeholder="Select one"
-		value="Option 2">
-		<option disabled />
-		<option value="Option 2">Option 2</option>
-	</SelectInput>
-);
+const standardProps: typeof sharedProps = sharedProps;
+const withAValueProps: typeof sharedProps = {
+	...sharedProps,
+	value: defaultValue,
+	placeholder: defaultPlaceholder,
+};
+const withHintTextProps: typeof sharedProps = {
+	...sharedProps,
+	hintText: 'Hint Text',
+	placeholder: defaultPlaceholder,
+};
+const withPrefixIconProps: typeof sharedProps = {
+	...sharedProps,
+	prefixIcon: CarIcon,
+};
+const disabledProps: typeof sharedProps = {
+	...sharedProps,
+	value: defaultValue,
+	placeholder: defaultPlaceholder,
+	disabled: true,
+};
+const validProps: typeof sharedProps = {
+	...sharedProps,
+	value: defaultValue,
+	placeholder: defaultPlaceholder,
+	isTouched: true,
+	isValid: true,
+};
+const invalidProps: typeof sharedProps = {
+	...sharedProps,
+	placeholder: defaultPlaceholder,
+	isTouched: true,
+	isValid: false,
+	hintText: 'Vehicle make is mandatory',
+};
+const noNotchProps: typeof sharedProps = {
+	...sharedProps,
+	placeholder: defaultPlaceholder,
+	notch: false,
+};
+const noNotchWithValueProps: typeof sharedProps = {
+	...sharedProps,
+	value: defaultValue,
+	placeholder: defaultPlaceholder,
+	notch: false,
+};
+const loadingProps: typeof sharedProps = {
+	...sharedProps,
+	isLoading: true,
+};
+export const standard = Template.bind(standardProps);
+standard.args = standardProps;
+standard.argTypes = argTypes;
+
+export const withAValue = Template.bind(withAValueProps);
+withAValue.args = withAValueProps;
+withAValue.argTypes = argTypes;
+
+export const withHintText = Template.bind(withHintTextProps);
+withHintText.args = withHintTextProps;
+withHintText.argTypes = argTypes;
+
+export const notchDisabled = Template.bind(noNotchProps);
+notchDisabled.args = noNotchProps;
+notchDisabled.argTypes = argTypes;
+
+export const notchDisabledWithValue = Template.bind(noNotchWithValueProps);
+notchDisabledWithValue.args = noNotchWithValueProps;
+notchDisabledWithValue.argTypes = argTypes;
+
+export const withPrefixIcon = Template.bind(withPrefixIconProps);
+withPrefixIcon.args = withPrefixIconProps;
+withPrefixIcon.argTypes = argTypes;
+
+export const disabled = Template.bind(disabledProps);
+disabled.args = disabledProps;
+disabled.argTypes = argTypes;
+
+export const valid = Template.bind(validProps);
+valid.args = validProps;
+valid.argTypes = argTypes;
+
+export const invalid = Template.bind(invalidProps);
+invalid.args = invalidProps;
+invalid.argTypes = argTypes;
+
+export const loading = Template.bind(loadingProps);
+loading.args = loadingProps;
+loading.argTypes = argTypes;

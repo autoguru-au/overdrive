@@ -1,5 +1,6 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
-import { useState } from 'react';
+import { ComponentProps, useState } from 'react';
 
 import { arrayRingLookup } from '../../utils';
 import { Actions } from '../Actions';
@@ -13,12 +14,12 @@ import { Table, TableCell, TableHeadCell, TableRow, TableRowGroup } from '.';
 
 export default {
 	title: 'Components/Table',
-};
+} as ComponentMeta<typeof Table>;
 
 const sortFlow = ['asc', 'desc', 'none'];
 const sortFlowRingLookup = arrayRingLookup(sortFlow);
 
-export const Standard = () => {
+const Template: ComponentStory<typeof Table> = (args) => {
 	const [sort, setsort] = useState<Record<string, 'asc' | 'desc' | 'none'>>({
 		price: 'asc',
 		status: 'desc',
@@ -36,7 +37,7 @@ export const Standard = () => {
 	};
 
 	return (
-		<Table columnTemplate="repeat(7, auto)">
+		<Table {...args}>
 			<TableRowGroup>
 				<TableRow>
 					<TableHeadCell>ID</TableHeadCell>
@@ -217,3 +218,9 @@ export const Standard = () => {
 		</Table>
 	);
 };
+
+const standardProps: Omit<ComponentProps<typeof Table>, 'children'> = {
+	columnTemplate: 'repeat(7, auto)',
+};
+export const standard = Template.bind(standardProps);
+standard.args = standardProps;

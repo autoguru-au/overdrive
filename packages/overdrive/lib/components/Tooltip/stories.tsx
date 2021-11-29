@@ -1,5 +1,6 @@
-import { select } from '@storybook/addon-knobs';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
+import { ComponentProps } from 'react';
 
 import { EAlignment } from '../Positioner/alignment';
 
@@ -14,34 +15,42 @@ export default {
 			</div>
 		),
 	],
-	parameters: { chromatic: { disable: true } },
-};
+	parameters: {
+		chromatic: { disable: true },
+	},
+	argTypes: {
+		alignment: {
+			options: EAlignment,
+			defaultValue: EAlignment.RIGHT,
+			control: {
+				type: 'select',
+			},
+		},
+	},
+} as ComponentMeta<typeof Tooltip>;
 
-const alignmentPicker = () =>
-	select('Alignment', EAlignment, EAlignment.BOTTOM);
-
-export const Standard = () => (
-	<Tooltip alignment={alignmentPicker()} label="Im the tooltip body">
+const Template: ComponentStory<typeof Tooltip> = (args) => (
+	<Tooltip {...args}>
 		<div style={{ display: 'inline' }}>Im the tooltip trigger</div>
 	</Tooltip>
 );
 
-export const TooltipSideBySide = () => (
-	<>
-		<Tooltip alignment={alignmentPicker()} label="Im the tooltip body">
-			<div style={{ display: 'inline-block' }}>
-				Im the tooltip trigger
-			</div>
-		</Tooltip>
-		<Tooltip alignment={alignmentPicker()} label="Im the tooltip body">
-			<div style={{ display: 'inline-block' }}>
-				Im the tooltip trigger
-			</div>
-		</Tooltip>
-		<Tooltip alignment={alignmentPicker()} label="Im the tooltip body">
-			<div style={{ display: 'inline-block' }}>
-				Im the tooltip trigger
-			</div>
-		</Tooltip>
-	</>
+const standardProps: Omit<ComponentProps<typeof Tooltip>, 'children'> = {
+	label: 'Im the tooltip body',
+};
+
+export const standard: ComponentStory<typeof Tooltip> = Template.bind(
+	standardProps,
 );
+standard.args = standardProps;
+
+const withLongTextProps: Omit<ComponentProps<typeof Tooltip>, 'children'> = {
+	label:
+		'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
+	alignment: EAlignment.BOTTOM,
+};
+
+export const withLongText: ComponentStory<typeof Tooltip> = Template.bind(
+	withLongTextProps,
+);
+withLongText.args = withLongTextProps;

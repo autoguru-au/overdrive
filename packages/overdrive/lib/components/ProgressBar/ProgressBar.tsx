@@ -1,11 +1,10 @@
 import { clamp } from '@autoguru/utilities';
 import * as React from 'react';
-import { ComponentProps, memo } from 'react';
-import { useStyles } from 'react-treat';
+import { ComponentProps, FunctionComponent } from 'react';
 
 import { Box } from '../Box';
 
-import * as styleRefs from './ProgressBar.treat';
+import * as styles from './ProgressBar.css';
 
 // TODO: These should use the intent verbs
 const colours: ReadonlyArray<
@@ -28,22 +27,21 @@ const backgroundColorMap: Record<
 	neutral: 'gray500',
 };
 
-export const ProgressBar = memo<Props>(({ value = 0, colour = 'green' }) => {
-	const styles = useStyles(styleRefs);
-
-	return (
+export const ProgressBar: FunctionComponent<Props> = ({
+	value = 0,
+	colour = 'green',
+}) => (
+	<Box
+		className={styles.container}
+		borderRadius="1"
+		backgroundColour="gray100">
 		<Box
-			className={styles.container}
 			borderRadius="1"
-			backgroundColour="gray100">
-			<Box
-				borderRadius="1"
-				backgroundColour={backgroundColorMap[colour]}
-				className={[styles.bar, styles.container]}
-				style={{
-					width: `${clamp(value, 0, 1) * 100}%`,
-				}}
-			/>
-		</Box>
-	);
-});
+			backgroundColour={backgroundColorMap[colour]}
+			className={[styles.bar, styles.container]}
+			style={{
+				width: `${clamp(value, 0, 1) * 100}%`,
+			}}
+		/>
+	</Box>
+);

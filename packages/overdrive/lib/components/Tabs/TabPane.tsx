@@ -2,14 +2,12 @@ import { invariant } from '@autoguru/utilities';
 import type { FunctionComponent } from 'react';
 import * as React from 'react';
 import { useContext } from 'react';
-import { useStyles } from 'react-treat';
 
 import { Box } from '../Box';
 
+import * as styles from './TabPane.css';
 import { TabPanesContext } from './TabPanes';
 import { TabsContext } from './Tabs';
-
-import * as styleRefs from './TabPane.treat';
 
 export const TabPane: FunctionComponent<{ id?: string }> = ({
 	children,
@@ -17,8 +15,6 @@ export const TabPane: FunctionComponent<{ id?: string }> = ({
 }) => {
 	const tabPanesContext = useContext(TabPanesContext);
 	const tabsContext = useContext(TabsContext);
-
-	const styles = useStyles(styleRefs);
 
 	invariant(
 		tabPanesContext !== null && tabsContext !== null,

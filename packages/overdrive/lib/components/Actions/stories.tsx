@@ -1,5 +1,6 @@
-import { boolean } from '@storybook/addon-knobs';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
+import { ComponentProps } from 'react';
 
 import { Button } from '../Button';
 
@@ -13,10 +14,10 @@ export default {
 			<div style={{ maxWidth: 300, width: '100%' }}>{story()}</div>
 		),
 	],
-};
+} as ComponentMeta<typeof Actions>;
 
-export const standard = () => (
-	<Actions noWrap={boolean('No Wrap', false)}>
+const template: ComponentStory<typeof Actions> = (args) => (
+	<Actions {...args}>
 		<Button>Login</Button>
 		<Button variant="primary">Sign up</Button>
 		<Button variant="secondary">Action 1</Button>
@@ -29,3 +30,20 @@ export const standard = () => (
 		</Button>
 	</Actions>
 );
+
+const standardProps: Pick<ComponentProps<typeof Actions>, 'noWrap'> = {
+	noWrap: false,
+};
+const noWrapProps: typeof standardProps = {
+	noWrap: true,
+};
+
+export const standard: ComponentStory<typeof Actions> = template.bind(
+	standardProps,
+);
+export const noWrap: ComponentStory<typeof Actions> = template.bind(
+	noWrapProps,
+);
+
+standard.args = standardProps;
+noWrap.args = noWrapProps;

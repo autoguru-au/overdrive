@@ -3,90 +3,79 @@ import { ColourMap, Tokens } from '../tokens';
 
 const colours: ColourMap = {
 	gray: {
-		900: '#212338',
-		800: '#34384c',
-		700: '#484c5f',
-		600: '#5c6172',
-		500: '#6c7283',
-		400: '#8f95a1',
-		300: '#d4d9dd',
-		200: '#eef0f2',
-		100: '#fafbfc',
+		'900': '#212338',
+		'800': '#34384c',
+		'700': '#484c5f',
+		'600': '#5c6172',
+		'500': '#6c7283',
+		'400': '#8f95a1',
+		'300': '#d4d9dd',
+		'200': '#eef0f2',
+		'100': '#fafbfc',
 	},
 
 	green: {
-		900: '#078171',
-		800: '#05987a',
-		700: '#03af83',
-		600: '#01c68c',
-		500: '#00dd95',
-		400: '#36e5aa',
-		300: '#71edc2',
-		200: '#e3f8f0',
-		100: '#f2fdf9',
+		'900': '#078171',
+		'800': '#05987a',
+		'700': '#03af83',
+		'600': '#01c68c',
+		'500': '#00dd95',
+		'400': '#36e5aa',
+		'300': '#71edc2',
+		'200': '#e3f8f0',
+		'100': '#f2fdf9',
 	},
 
 	blue: {
-		900: '#0d47a1',
-		800: '#0d4bb7',
-		700: '#0d50ce',
-		600: '#0d54e5',
-		500: '#0d59fc',
-		400: '#4680fc',
-		300: '#80a7fd',
-		200: '#e1edfe',
-		100: '#f3f8ff',
+		'900': '#0d47a1',
+		'800': '#0d4bb7',
+		'700': '#0d50ce',
+		'600': '#0d54e5',
+		'500': '#0d59fc',
+		'400': '#4680fc',
+		'300': '#80a7fd',
+		'200': '#e1edfe',
+		'100': '#f3f8ff',
 	},
 
 	yellow: {
-		900: '#f38e29',
-		800: '#f69a1f',
-		700: '#f9a715',
-		600: '#fcb30b',
-		500: '#ffc001',
-		400: '#ffcf3d',
-		300: '#ffde79',
-		200: '#ffedb5',
-		100: '#fffcf2',
+		'900': '#f38e29',
+		'800': '#f69a1f',
+		'700': '#f9a715',
+		'600': '#fcb30b',
+		'500': '#ffc001',
+		'400': '#ffcf3d',
+		'300': '#ffde79',
+		'200': '#ffedb5',
+		'100': '#fffcf2',
 	},
 
 	red: {
-		900: '#780502',
-		800: '#96110e',
-		700: '#b51e1a',
-		600: '#d42b26',
-		500: '#e12e28',
-		400: '#e85f5b',
-		300: '#ef918e',
-		200: '#ffd4d4',
-		100: '#fdf4f4',
+		'900': '#780502',
+		'800': '#96110e',
+		'700': '#b51e1a',
+		'600': '#d42b26',
+		'500': '#e12e28',
+		'400': '#e85f5b',
+		'300': '#ef918e',
+		'200': '#ffd4d4',
+		'100': '#fdf4f4',
 	},
 };
 
 const white = '#fff';
+const secondaryForeground = colours.gray['700'];
 
 export const tokens: Tokens = {
-	isDark: false,
-	shadeIntensity: {
-		slight: 0.05,
-		medium: 0.15,
-		intense: 0.3,
-	},
-	transparency: {
-		slight: 0.25,
-		medium: 0.5,
-		intense: 0.9,
-	},
-	breakpoints: {
-		mobile: 0,
-		tablet: 768, // IPad mini width (1024 - 25%)
-		desktop: 1024, // IPad Pro width (1366 - 25%)
-		largeDesktop: 1440, // 1080p width (1920 - 25%)
+	mode: 'light',
+	body: {
+		backgroundColour: white,
+		colour: colours.gray['900'],
 	},
 	contentWidth: {
-		small: 592,
-		large: 1344,
-		medium: 940,
+		small: '592px',
+		large: '1344px',
+		medium: '940px',
 	},
 	space: {
 		'1': '4px',
@@ -117,35 +106,67 @@ export const tokens: Tokens = {
 		},
 		intent: {
 			primary: {
-				background: colours.green['600'],
+				background: {
+					standard: colours.green['600'],
+					mild: colours.green['200'],
+					strong: colours.green['900'],
+				},
 				foreground: white,
 			},
 			secondary: {
-				background: white,
-				foreground: colours.gray['700'],
+				background: {
+					standard: white,
+					mild: white,
+					strong: colours.gray['200'],
+				},
+				foreground: secondaryForeground,
 			},
 			shine: {
-				background: colours.gray['200'],
+				background: {
+					standard: colours.gray['200'],
+					mild: colours.gray['100'],
+					strong: colours.gray['300'],
+				},
 				foreground: colours.yellow['500'],
 			},
 			danger: {
-				background: colours.red['600'],
+				background: {
+					standard: colours.red['600'],
+					mild: colours.red['100'],
+					strong: colours.red['800'],
+				},
 				foreground: white,
 			},
 			warning: {
-				background: colours.yellow['800'],
+				background: {
+					standard: colours.yellow['800'],
+					mild: colours.yellow['100'],
+					strong: colours.yellow['900'],
+				},
 				foreground: colours.yellow['200'],
 			},
 			neutral: {
-				background: colours.gray['700'],
+				background: {
+					standard: colours.gray['700'],
+					mild: colours.gray['200'],
+					strong: colours.gray['900'],
+				},
 				foreground: white,
 			},
 			success: {
-				background: colours.green['600'],
+				background: {
+					standard: colours.green['700'],
+					mild: colours.green['200'],
+					strong: colours.green['900'],
+				},
 				foreground: colours.green['200'],
 			},
 			information: {
-				background: colours.blue['900'],
+				background: {
+					standard: colours.blue['800'],
+					mild: colours.blue['200'],
+					strong: colours.blue['900'],
+				},
 				foreground: colours.blue['200'],
 			},
 		},
@@ -229,7 +250,7 @@ export const tokens: Tokens = {
 			link: colours.green['600'],
 			dark: colours.gray['900'],
 			white,
-			muted: colours.gray['500'],
+			muted: colours.gray['400'],
 			neutral: colours.gray['700'],
 			light: colours.gray['600'],
 			danger: colours.red['600'],
@@ -238,9 +259,9 @@ export const tokens: Tokens = {
 			information: colours.blue['500'],
 		},
 		fontWeight: {
-			normal: 400,
-			semiBold: 500,
-			bold: 700,
+			normal: '400',
+			semiBold: '500',
+			bold: '700',
 		},
 	},
 	animation: {

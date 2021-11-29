@@ -1,0 +1,76 @@
+{
+	"presets": [
+		[
+			"@babel/preset-env",
+			{
+				"modules": false
+			}
+		],
+		"@babel/preset-typescript",
+		["@babel/preset-react", { "runtime": "automatic" }]
+	],
+	"plugins": [
+		"@vanilla-extract/babel-plugin",
+		"babel-plugin-macros",
+		[
+			"@babel/plugin-transform-runtime",
+			{
+				"useESModules": true
+			}
+		],
+		[
+			"@babel/plugin-transform-strict-mode",
+			{
+				"loose": false
+			}
+		],
+		[
+			"@babel/plugin-proposal-export-default-from",
+			{
+				"loose": false
+			}
+		],
+		"@babel/plugin-syntax-dynamic-import",
+		[
+			"@babel/plugin-proposal-class-properties",
+			{
+				"loose": false
+			}
+		],
+		[
+			"@babel/plugin-proposal-object-rest-spread",
+			{
+				"loose": false,
+				"useBuiltIns": true
+			}
+		],
+		[
+			"@babel/plugin-proposal-optional-chaining",
+			{
+				"loose": false
+			}
+		],
+		[
+			"@babel/plugin-proposal-nullish-coalescing-operator",
+			{
+				"loose": false
+			}
+		],
+		[
+			"@babel/plugin-transform-spread",
+			{
+				"loose": false
+			}
+		],
+		[
+			"@babel/plugin-transform-classes",
+			{
+				"loose": true
+			}
+		],
+		"babel-plugin-dev-expression",
+		"babel-plugin-add-import-extension"
+	],
+	"comments": false,
+	"minified": false
+}
