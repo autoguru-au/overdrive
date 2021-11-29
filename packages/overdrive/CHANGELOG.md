@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.0.0
+
+### Major Changes
+
+-   dd12f20: Migrates Overdrive to vanilla extract
+
 ## 3.0.0
 
 ### Major Changes
