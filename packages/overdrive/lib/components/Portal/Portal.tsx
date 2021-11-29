@@ -14,7 +14,10 @@ export interface Props {
 
 type RefValue<T> = T extends RefObject<infer T> ? T : never;
 
-function Portal({ children, container, noThemedWrapper }: Props, ref: Ref<typeof container>) {
+function Portal(
+	{ children, container, noThemedWrapper }: Props,
+	ref: Ref<typeof container>,
+) {
 	const themeClass = useTheme()?.themeClass;
 
 	const [mountNode, setMountNode] = useState<RefValue<typeof ref> | null>(
@@ -35,13 +38,11 @@ function Portal({ children, container, noThemedWrapper }: Props, ref: Ref<typeof
 		};
 	}, [ref, mountNode]);
 
-
-	if (!mountNode)
-		return null;
+	if (!mountNode) return null;
 
 	return noThemedWrapper
-		? createPortal(children, mountNode) :
-		createPortal(<div className={themeClass}>{children}</div>, mountNode);
+		? createPortal(children, mountNode)
+		: createPortal(<div className={themeClass}>{children}</div>, mountNode);
 }
 
 const _Portal = forwardRef(Portal);

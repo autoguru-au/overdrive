@@ -33,7 +33,11 @@ export const OverdriveProvider: FunctionComponent<Props> = ({
 	}, [vars]);
 
 	return (
-		<ThemeProvider vars={vars} themeClass={themeClass} tokens={tokens} breakpoints={breakpoints}>
+		<ThemeProvider
+			vars={vars}
+			themeClass={themeClass}
+			tokens={tokens}
+			breakpoints={breakpoints}>
 			{children}
 		</ThemeProvider>
 	);

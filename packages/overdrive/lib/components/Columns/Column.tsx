@@ -9,7 +9,8 @@ import { Box } from '../Box';
 import * as styles from './Column.css';
 import { ColumnContext } from './Columns';
 
-export interface Props extends Omit<ComponentProps<typeof Box>, 'width'> {
+export interface Props
+	extends Omit<ComponentProps<typeof Box>, 'width' | 'css'> {
 	width?: ResponsiveProp<keyof typeof styles.width>;
 	noShrink?: boolean;
 	grow?: boolean;
