@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 3.0.0-next.18
+
+### Patch Changes
+
+-   Fixes type generation for released package
+
 ## 3.0.0-next.17
 
 ### Patch Changes

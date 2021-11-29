@@ -1,9 +1,9 @@
 {
 	"name": "@autoguru/overdrive",
-	"version": "3.0.0-next.17",
+	"version": "3.0.0-next.18",
 	"description": "Overdrive is a product component library, and design system for AutoGuru.",
-	"types": "./dist/index.d.ts",
-	"main": "./dist/index.js",
+	"types": "dist/index.d.ts",
+	"main": "dist/index.js",
 	"keywords": [
 		"component",
 		"design-system",
@@ -31,7 +31,7 @@
 	},
 	"scripts": {
 		"typecheck": "tsc",
-		"build": "babel lib --out-dir dist --extensions '.ts,.tsx, .css'",
+		"build": "babel lib --out-dir dist --extensions '.ts,.tsx, .css' && tsc",
 		"prepublishOnly": "yarn run build",
 		"watch": "tsc --watch"
 	},
