@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.0.1
+
+### Patch Changes
+
+-   e2cebc8: Applies type fixes
+
 ## 4.0.0
 
 ### Major Changes
