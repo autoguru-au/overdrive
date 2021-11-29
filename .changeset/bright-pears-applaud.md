@@ -2,4 +2,4 @@
 '@autoguru/overdrive': major
 ---
 
-Migrate to vanilla extract
+Migrates Overdrive to vanilla extract

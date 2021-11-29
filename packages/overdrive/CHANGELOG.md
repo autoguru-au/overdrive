@@ -1,5 +1,33 @@
 # @autoguru/overdrive
 
+## 3.0.0
+
+### Major Changes
+
+-   eb36462: Overdrive: Migrates styling away from treat to vanilla extract
+-   aaac596: Migrate to vanilla extract
+
+### Patch Changes
+
+-   4324095: OverdriveProvider: Imports reset styles
+-   4324095: OverdriveProvider: Imports global fonts
+-   2623174: fixes list of files with side effects
+-   03ca973: Autosuggest: Replaces deprecated fill-available with stretch
+-   56edcaf: Overdrive: Gets file extentions for imports
+-   2fbe7bf: OverdriveProvider: Accepts runtime breakpoint token
+-   4324095: Compiles released package to JS
+-   4858d44: Compiles Overdrive package into JS
+-   36736c3: useMedia
+-   ec17939: Adds babel react preset
+-   965c7ed: Portal: Makes theme wrapping optional
+-   19d14a1: Multiple theming fixes
+-   aa5d74b: Portal: Removes memo
+-   4324095: Reverts compiling to js
+-   713b1a3: Oderdrive: Fixed type generation for released package
+-   4b3b1ec: Adds inhouse babel config
+-   ca4e971: Portal: Fixes unwrapped version
+-   158d3bb: Accept custom runtime breakpoint tokens
+
 ## 3.0.0-next.18
 
 ### Patch Changes
