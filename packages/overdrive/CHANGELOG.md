@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.0.2
+
+### Patch Changes
+
+-   f7bfcdb: Tabs Get a more distinct colour for unselected tab labels
+
 ## 4.0.1
 
 ### Patch Changes
