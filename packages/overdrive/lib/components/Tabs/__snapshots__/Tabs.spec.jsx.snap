@@ -15,7 +15,7 @@ exports[`<Tabs /> should allow id overriding 1`] = `
       <button
         aria-controls="tab-1-title-0"
         aria-selected="true"
-        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06dz useBoxStyles_backgroundColours_transparent__7o6k06dj useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_muted__w6to7ig useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0 Tab_root_active__vlp0oc1"
+        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06dz useBoxStyles_backgroundColours_transparent__7o6k06dj useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_light__w6to7ii useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0 Tab_root_active__vlp0oc1"
         role="tab"
       >
         <span
@@ -27,7 +27,7 @@ exports[`<Tabs /> should allow id overriding 1`] = `
       <button
         aria-controls="tab-2-title-1"
         aria-selected="false"
-        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06dz useBoxStyles_backgroundColours_transparent__7o6k06dj useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_muted__w6to7ig useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0"
+        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06dz useBoxStyles_backgroundColours_transparent__7o6k06dj useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_light__w6to7ii useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0"
         role="tab"
         tabindex="-1"
       >
@@ -40,7 +40,7 @@ exports[`<Tabs /> should allow id overriding 1`] = `
       <button
         aria-controls="tab-3-title-2"
         aria-selected="false"
-        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06dz useBoxStyles_backgroundColours_transparent__7o6k06dj useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_muted__w6to7ig useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0"
+        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06dz useBoxStyles_backgroundColours_transparent__7o6k06dj useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_light__w6to7ii useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0"
         role="tab"
         tabindex="-1"
       >
@@ -70,7 +70,7 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
       <button
         aria-controls="od-11-0-tab"
         aria-selected="true"
-        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06dz useBoxStyles_backgroundColours_transparent__7o6k06dj useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_muted__w6to7ig useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0 Tab_root_active__vlp0oc1"
+        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06dz useBoxStyles_backgroundColours_transparent__7o6k06dj useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_light__w6to7ii useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0 Tab_root_active__vlp0oc1"
         role="tab"
       >
         <div
@@ -99,7 +99,7 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
       <button
         aria-controls="od-11-1-tab"
         aria-selected="false"
-        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06dz useBoxStyles_backgroundColours_transparent__7o6k06dj useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_muted__w6to7ig useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0"
+        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06dz useBoxStyles_backgroundColours_transparent__7o6k06dj useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_light__w6to7ii useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0"
         role="tab"
         tabindex="-1"
       >
@@ -129,7 +129,7 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
       <button
         aria-controls="od-11-2-tab"
         aria-selected="false"
-        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06dz useBoxStyles_backgroundColours_transparent__7o6k06dj useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_muted__w6to7ig useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0"
+        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06dz useBoxStyles_backgroundColours_transparent__7o6k06dj useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_light__w6to7ii useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0"
         role="tab"
         tabindex="-1"
       >
@@ -176,7 +176,7 @@ exports[`<Tabs /> should match snapshot (high level) 1`] = `
       <button
         aria-controls="od-1-0-tab"
         aria-selected="true"
-        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06dz useBoxStyles_backgroundColours_transparent__7o6k06dj useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_muted__w6to7ig useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0 Tab_root_active__vlp0oc1"
+        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06dz useBoxStyles_backgroundColours_transparent__7o6k06dj useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_light__w6to7ii useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0 Tab_root_active__vlp0oc1"
         role="tab"
       >
         <span
@@ -188,7 +188,7 @@ exports[`<Tabs /> should match snapshot (high level) 1`] = `
       <button
         aria-controls="od-1-1-tab"
         aria-selected="false"
-        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06dz useBoxStyles_backgroundColours_transparent__7o6k06dj useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_muted__w6to7ig useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0"
+        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06dz useBoxStyles_backgroundColours_transparent__7o6k06dj useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_light__w6to7ii useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0"
         role="tab"
         tabindex="-1"
       >
@@ -201,7 +201,7 @@ exports[`<Tabs /> should match snapshot (high level) 1`] = `
       <button
         aria-controls="od-1-2-tab"
         aria-selected="false"
-        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06dz useBoxStyles_backgroundColours_transparent__7o6k06dj useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_muted__w6to7ig useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0"
+        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06dz useBoxStyles_backgroundColours_transparent__7o6k06dj useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_light__w6to7ii useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0"
         role="tab"
         tabindex="-1"
       >
