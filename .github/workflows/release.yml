@@ -39,7 +39,7 @@ jobs:
             - run: yarn --frozen-lockfile
 
             - name: Create Release or Publish
-              uses: changesets/action@main
+              uses: changesets/action@v1
               with:
                   publish: yarn release
               env:
