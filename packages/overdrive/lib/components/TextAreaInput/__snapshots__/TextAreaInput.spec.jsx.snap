@@ -12,7 +12,7 @@ exports[`<TextAreaInput /> should have some hintText 1`] = `
     >
       <textarea
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do height minHeight lineHeight resize withEnhancedInput_input_itself_root__bd4oid3"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_types_textarea__bd4oid6 withEnhancedInput_input_itself_root__bd4oid3"
         id="id"
       />
     </div>
@@ -58,7 +58,7 @@ exports[`<TextAreaInput /> should match snapshot 1`] = `
     >
       <textarea
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do height minHeight lineHeight resize withEnhancedInput_input_itself_root__bd4oid3"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_types_textarea__bd4oid6 withEnhancedInput_input_itself_root__bd4oid3"
         id="id"
       />
     </div>
@@ -99,7 +99,7 @@ exports[`<TextAreaInput /> should match snapshot when active 1`] = `
     >
       <textarea
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do height minHeight lineHeight resize withEnhancedInput_input_itself_root__bd4oid3"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_types_textarea__bd4oid6 withEnhancedInput_input_itself_root__bd4oid3"
       >
         value from the tests
       </textarea>
@@ -158,7 +158,7 @@ exports[`<TextAreaInput /> should match snapshot when loading 1`] = `
       <textarea
         aria-busy="true"
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do height minHeight lineHeight resize withEnhancedInput_input_itself_root__bd4oid3 withEnhancedInput_input_itself_suffixed__bd4oid5"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_types_textarea__bd4oid6 withEnhancedInput_input_itself_root__bd4oid3 withEnhancedInput_input_itself_suffixed__bd4oid5"
         id="id"
       />
     </div>
@@ -199,7 +199,7 @@ exports[`<TextAreaInput /> should match snapshot when touched 1`] = `
     >
       <textarea
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do height minHeight lineHeight resize withEnhancedInput_input_itself_root__bd4oid3"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_types_textarea__bd4oid6 withEnhancedInput_input_itself_root__bd4oid3"
       />
     </div>
     <div
@@ -238,7 +238,7 @@ exports[`<TextAreaInput /> should match snapshot when touched and invalid 1`] = 
     >
       <textarea
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do height minHeight lineHeight resize withEnhancedInput_input_itself_root__bd4oid3"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_types_textarea__bd4oid6 withEnhancedInput_input_itself_root__bd4oid3"
       />
     </div>
     <div
@@ -277,7 +277,7 @@ exports[`<TextAreaInput /> should match snapshot when touched and valid 1`] = `
     >
       <textarea
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do height minHeight lineHeight resize withEnhancedInput_input_itself_root__bd4oid3"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_types_textarea__bd4oid6 withEnhancedInput_input_itself_root__bd4oid3"
       />
     </div>
     <div
