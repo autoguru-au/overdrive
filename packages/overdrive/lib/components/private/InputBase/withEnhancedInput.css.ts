@@ -1,5 +1,4 @@
 import { style, styleVariants } from '@vanilla-extract/css';
-
 import { vars } from '../../../themes/base/vars.css';
 
 const iconRoot = style({
@@ -47,13 +46,13 @@ export const input = {
 	}),
 };
 
-const textAreaHeight = `calc((${vars.space['8']} * 2.5))`;
-const topSpacing = `calc(((${vars.space['8']} - ${vars.typography.size['4'].fontSize}) / 2) - 3px)`;
-export const types = {
+const textAreaHeight = '107px';
+
+export const types = styleVariants({
 	textarea: {
-		height: `calc(${textAreaHeight} - ${topSpacing})`,
-		minHeight: `calc(${textAreaHeight} - ${topSpacing})`,
+		height: textAreaHeight,
+		minHeight: textAreaHeight,
 		lineHeight: 1.2,
 		resize: 'vertical',
 	},
-};
+});
