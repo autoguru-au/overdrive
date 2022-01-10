@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.0.3
+
+### Patch Changes
+
+-   7f65be1: TextArea: Fixed min height
+
 ## 4.0.2
 
 ### Patch Changes
