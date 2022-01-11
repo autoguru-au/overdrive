@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.0.4
+
+### Patch Changes
+
+-   1ac5083: Adds babel preset env
+
 ## 4.0.3
 
 ### Patch Changes
