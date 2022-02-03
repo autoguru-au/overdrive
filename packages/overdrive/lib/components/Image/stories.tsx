@@ -12,6 +12,10 @@ const eagerOptions: Array<ComponentProps<typeof Image>['eager']> = [
 	false,
 	true,
 ];
+const unoptimisedOptions: Array<ComponentProps<typeof Image>['unoptimised']> = [
+	false,
+	true,
+];
 const sizeOptions: Array<ComponentProps<typeof Image>['imageWidth']> = [
 	'1',
 	'2',
@@ -34,13 +38,6 @@ export default {
 	title: 'Foundation/Image/Image',
 	// component: Heading, Breaks the docs when enabled!
 	argTypes: {
-		eager: {
-			options: eagerOptions,
-			defaultValue: false,
-			control: {
-				type: 'boolean',
-			},
-		},
 		width: {
 			options: sizeOptions,
 			defaultValue: 8,
@@ -54,6 +51,18 @@ export default {
 				type: 'number',
 				min: 1,
 				max: 100,
+			},
+		},
+		eager: {
+			defaultValue: void 0,
+			control: {
+				type: 'boolean',
+			},
+		},
+		unoptimised: {
+			defaultValue: void 0,
+			control: {
+				type: 'boolean',
 			},
 		},
 	},
@@ -88,10 +97,16 @@ const WidthProviderTemplate: ComponentStory<typeof Image> = (args) => (
 		</div>
 	</ImageServerProvider>
 );
+const withImageServerUnoptimisedProps: ComponentProps<typeof Image> = {
+	src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
+	unoptimised: true,
+};
+export const withImageServerUnoptimised = WidthProviderTemplate.bind(withImageServerUnoptimisedProps);
+withImageServerUnoptimised.args = withImageServerUnoptimisedProps;
+
+
 const withImageServerProps: ComponentProps<typeof Image> = {
 	src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
-	quality: 80,
-	imageWidth: 10,
 };
 export const withImageServer = WidthProviderTemplate.bind(withImageServerProps);
 withImageServer.args = withImageServerProps;

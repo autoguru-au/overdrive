@@ -5,10 +5,12 @@ import { useImageServer } from './ImageServerProvider';
 import { SimpleImage } from './SimpleImage';
 import { ResponsiveImage } from './ResponsiveImage';
 
-type Props = ComponentProps<typeof ResponsiveImage>
+interface Props extends ComponentProps<typeof ResponsiveImage>{
+	unoptimised?: boolean;
+}
 
-export const Image: FunctionComponent<Props> = (props) =>(
-	useImageServer() ? (
+export const Image: FunctionComponent<Props> = ({ unoptimised = false, ...props }) =>(
+	(useImageServer() && !unoptimised) ? (
 		<ResponsiveImage
 			{...props}
 		/>
