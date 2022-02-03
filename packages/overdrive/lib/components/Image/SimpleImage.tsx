@@ -3,6 +3,7 @@ import { FunctionComponent } from 'react';
 
 export interface Props extends Omit<HTMLImageElement, 'loading' | 'className'> {
 	src: string;
+	srcSet: string;
 	eager?: boolean;
 	syncDecoding?: boolean;
 	className?: string;

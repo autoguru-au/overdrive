@@ -61,7 +61,7 @@ export default {
 
 const SimpleTemplate: ComponentStory<typeof Image> = (args) => (
 	<div style={{ width: '100%', overflow: 'auto' }}>
-		<Image {...args} />
+		<Image {...args}  width={widthMap[args.width]}  />
 	</div>
 );
 

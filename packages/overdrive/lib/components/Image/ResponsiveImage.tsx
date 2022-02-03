@@ -31,7 +31,7 @@ export const ResponsiveImage: FunctionComponent<Props> = ({
 
 	return (
 		<SimpleImage
-			srcset={srcset}
+			srcSet={srcset}
 			src={src}
 			{...imgProps}
 		/>
