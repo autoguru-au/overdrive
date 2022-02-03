@@ -41,7 +41,7 @@ const defaultValue: ImageServerContext = {
 	srcUrlMapper: null,
 };
 
-const imageServerCtx: Context<ImageServerContext> = createContext(defaultValue);
+const imageServerCtx: Context<ImageServerContext> = createContext(null);
 
 export const useImageServer = () => useContext(imageServerCtx);
 
