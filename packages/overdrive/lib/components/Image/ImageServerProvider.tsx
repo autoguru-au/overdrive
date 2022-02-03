@@ -56,8 +56,8 @@ export const ImageServerProvider: FunctionComponent<Omit<ImageServerContext, 'ge
 	const generateSrcSet = useCallback<ImageServerContext['generateSrcSet']>(({ quality, src})=> (
 		Object.keys(widthMap).map(( key)=> {
 			const width = getWidthValue(key as unknown as WidthScale);
-			return `${srcUrlMapper({quality, src, width})} ${width}w, `
-		}).join(',')
+			return `${srcUrlMapper({quality, src, width})} ${width}w`
+		}).join(', ')
 	),[widthMap, srcUrlMapper, getWidthValue])
 
 	return (

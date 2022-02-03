@@ -54,13 +54,13 @@ export default {
 			},
 		},
 		eager: {
-			defaultValue: void 0,
+			defaultValue: false,
 			control: {
 				type: 'boolean',
 			},
 		},
 		unoptimised: {
-			defaultValue: void 0,
+			defaultValue: false,
 			control: {
 				type: 'boolean',
 			},

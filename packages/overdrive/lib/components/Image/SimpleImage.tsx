@@ -14,6 +14,7 @@ export const SimpleImage: FunctionComponent<Props> = ({
 														  syncDecoding = 'false',
 														  className = '',
 														  src,
+														  srcSet,
 														  ...imgProps
 													  }) => (
 // @ts-ignore
@@ -21,6 +22,7 @@ export const SimpleImage: FunctionComponent<Props> = ({
 		loading={eager ? 'eager' : 'lazy'}
 		decoding={syncDecoding ? 'sync' : 'async'}
 		className={className}
+		srcSet={srcSet}
 		src={src}
 		{...imgProps}
 	/>

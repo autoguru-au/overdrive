@@ -13,7 +13,7 @@ export interface Props extends ComponentProps<typeof SimpleImage> {
 }
 
 export const ResponsiveImage: FunctionComponent<Props> = ({
-															  imageWidth,
+															  imageWidth='1',
 															  quality = 70,
 															  src: incomingSrc,
 															  ...imgProps
@@ -31,6 +31,7 @@ export const ResponsiveImage: FunctionComponent<Props> = ({
 
 	return (
 		<SimpleImage
+			sizes="100vw"
 			srcSet={srcset}
 			src={src}
 			{...imgProps}
