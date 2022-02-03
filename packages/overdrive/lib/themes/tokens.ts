@@ -1,5 +1,6 @@
 import { Tokens as VanillaTokens } from '@vanilla-extract/css/dist/declarations/src/types';
 type SpaceScale = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'none';
+type WidthScale = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | '13' | '14' | '15' | '16';
 type TextSizeScale = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';
 type BorderWidthScale = '1' | '2' | '3' | 'none';
 type IconSizeScale = 'small' | 'medium' | 'large';
@@ -104,6 +105,7 @@ export interface Tokens extends VanillaTokens {
 		large: string;
 	};
 	space: Record<SpaceScale, string>;
+	width: Record<WidthScale, string>;
 	elevation: {
 		none: string;
 		'1': string;
