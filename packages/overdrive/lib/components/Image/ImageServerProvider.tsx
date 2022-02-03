@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Context, createContext, FunctionComponent, useContext, useMemo } from 'react';
+import { Context, createContext, FunctionComponent, useCallback, useContext, useMemo } from 'react';
 
 import { WidthScale } from './types';
 
@@ -14,9 +14,10 @@ interface ImageServerContext {
 	getWidthValue?(width: WidthScale): number;
 
 	srcUrlMapper(params: UrlParams): string;
+	generateSrcSet(params: Omit<UrlParams, 'width'>): string;
 }
 
-const widthMap:ImageServerContext['widthMap']= {
+export const widthMap:ImageServerContext['widthMap']= {
 		'1': 16,
 		'2': 32,
 		'3': 48,
@@ -39,27 +40,43 @@ const defaultValue: ImageServerContext = {
 	widthMap,
 	getWidthValue:(width: WidthScale)=>widthMap[width],
 	srcUrlMapper: null,
+	generateSrcSet: null,
 };
 
 const imageServerCtx: Context<ImageServerContext> = createContext(null);
 
 export const useImageServer = () => useContext(imageServerCtx);
 
-export const ImageServerProvider: FunctionComponent<ImageServerContext> = ({
+export const ImageServerProvider: FunctionComponent<Omit<ImageServerContext, 'generateSrcSet'>> = ({
 																			   children,
 																			   srcUrlMapper = defaultValue.srcUrlMapper,
 																			   getWidthValue = defaultValue.getWidthValue,
 																			   widthMap = defaultValue.widthMap,
-																		   }) => (
-	<imageServerCtx.Provider
-		value={useMemo(
-			() => ({
-				widthMap,
-				srcUrlMapper,
-				getWidthValue
-			}),
-			[srcUrlMapper, widthMap, getWidthValue],
-		)}>
-		{children}
-	</imageServerCtx.Provider>
-);
+																		   }) => {
+	const generateSrcSet = useCallback<ImageServerContext['generateSrcSet']>(({ quality, src})=> (
+		Object.keys(widthMap).map(( key)=> {
+			const width = getWidthValue(key as unknown as WidthScale);
+			return `${srcUrlMapper({quality, src, width})} ${width}w, `
+		}).join(',')
+	),[widthMap, srcUrlMapper, getWidthValue])
+
+	return (
+		<imageServerCtx.Provider
+			value={useMemo(
+				() => ({
+					widthMap,
+					srcUrlMapper,
+					getWidthValue,
+					generateSrcSet,
+				}),
+				[
+					srcUrlMapper,
+					widthMap,
+					getWidthValue,
+					generateSrcSet,
+				],
+			)}>
+			{children}
+		</imageServerCtx.Provider>
+	);
+};

@@ -1,23 +1,24 @@
 import * as React from 'react';
 import { FunctionComponent } from 'react';
-import { Box } from '../Box';
 
 export interface Props extends Omit<HTMLImageElement, 'loading' | 'className'> {
 	src: string;
 	eager?: boolean;
+	syncDecoding?: boolean;
 	className?: string;
 }
 
 export const SimpleImage: FunctionComponent<Props> = ({
 														  eager = 'false',
+														  syncDecoding = 'false',
 														  className = '',
 														  src,
 														  ...imgProps
 													  }) => (
-	<Box
-		is='img'
-		// @ts-ignore
+// @ts-ignore
+	<img
 		loading={eager ? 'eager' : 'lazy'}
+		decoding={syncDecoding ? 'sync' : 'async'}
 		className={className}
 		src={src}
 		{...imgProps}

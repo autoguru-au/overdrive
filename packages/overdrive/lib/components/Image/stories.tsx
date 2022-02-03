@@ -4,7 +4,7 @@ import { ComponentProps } from 'react';
 
 import { Stack } from '../Stack';
 
-import { ImageServerProvider } from './ImageServerProvider';
+import { ImageServerProvider, widthMap } from './ImageServerProvider';
 
 import { Image } from '.';
 
@@ -84,7 +84,7 @@ const srcUrlMapper = ({
 const WidthProviderTemplate: ComponentStory<typeof Image> = (args) => (
 	<ImageServerProvider srcUrlMapper={srcUrlMapper}>
 		<div style={{ width: '100%', overflow: 'auto' }}>
-			<Image {...args} />
+			<Image {...args} width={widthMap[args.width]} />
 		</div>
 	</ImageServerProvider>
 );
@@ -101,7 +101,7 @@ const AllQualityTemplate: ComponentStory<typeof Image> = (args) => (
 		<div style={{ width: '100%', overflow: 'auto' }}>
 			<Stack space='1'>
 				{[1, 20, 40, 60, 80, 100].map((quality)=> (
-					<Image key={quality} {...args} quality={quality} />
+					<Image key={quality} {...args} width={widthMap[args.width]} quality={quality} />
 				))}
 			</Stack>
 		</div>
@@ -118,7 +118,7 @@ const AllSizeTemplate: ComponentStory<typeof Image> = (args) => (
 			<Stack space='1'>
 				{
 					sizeOptions.map((width)=> (
-					<Image key={width} {...args} imageWidth={width} />
+					<Image key={width} {...args} width={widthMap[width]} imageWidth={width} />
 				))}
 			</Stack>
 		</div>

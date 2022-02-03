@@ -21,15 +21,17 @@ export const ResponsiveImage: FunctionComponent<Props> = ({
 
 	invariant(quality > 0 && quality <= 100, 'Image must be a number between 1 and 100.');
 
-	const { srcUrlMapper, getWidthValue } = useImageServer();
+	const { srcUrlMapper, getWidthValue, generateSrcSet } = useImageServer();
 	const src = useMemo(() => srcUrlMapper({
 		src: incomingSrc,
 		width: getWidthValue(imageWidth),
 		quality,
 	}), [incomingSrc, imageWidth, quality, srcUrlMapper, getWidthValue]);
+	const srcset = useMemo(() => generateSrcSet({src: incomingSrc, quality}), [incomingSrc, quality]);
 
 	return (
 		<SimpleImage
+			srcset={srcset}
 			src={src}
 			{...imgProps}
 		/>
