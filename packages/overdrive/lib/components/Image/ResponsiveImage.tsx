@@ -3,17 +3,16 @@ import type { ComponentProps, FunctionComponent } from 'react';
 import * as React from 'react';
 import { useMemo } from 'react';
 
-import { useImageServer } from './ImageServerProvider';
-import { WidthScale } from './types';
+import { useImageServer, widthMap } from './ImageServerProvider';
 import { SimpleImage } from './SimpleImage';
 
 export interface Props extends ComponentProps<typeof SimpleImage> {
-	imageWidth?: WidthScale;
+	imageWidth?: keyof typeof widthMap;
 	quality?: number;
 }
 
 export const ResponsiveImage: FunctionComponent<Props> = ({
-															  imageWidth='1',
+															  imageWidth ='1',
 															  quality = 70,
 															  src: incomingSrc,
 															  ...imgProps
@@ -27,7 +26,7 @@ export const ResponsiveImage: FunctionComponent<Props> = ({
 		width: getWidthValue(imageWidth),
 		quality,
 	}), [incomingSrc, imageWidth, quality, srcUrlMapper, getWidthValue]);
-	const srcset = useMemo(() => generateSrcSet({src: incomingSrc, quality}), [incomingSrc, quality]);
+	const srcset = useMemo(() => generateSrcSet({ src: incomingSrc, quality }), [incomingSrc, quality]);
 
 	return (
 		<SimpleImage
