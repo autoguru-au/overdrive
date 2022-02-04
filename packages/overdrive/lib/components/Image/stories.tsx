@@ -9,14 +9,6 @@ import { ImageServerProvider, widthMap } from './ImageServerProvider';
 import { Image } from '.';
 import { Text } from '../Text';
 
-const eagerOptions: Array<ComponentProps<typeof Image>['eager']> = [
-	false,
-	true,
-];
-const unoptimisedOptions: Array<ComponentProps<typeof Image>['unoptimised']> = [
-	false,
-	true,
-];
 const sizeOptions: Array<ComponentProps<typeof Image>['imageWidth']> = [
 	'1',
 	'2',
@@ -40,7 +32,7 @@ export default {
 	// component: Heading, Breaks the docs when enabled!
 	argTypes: {
 		width: {
-			options: sizeOptions,
+			options: [...sizeOptions, 'full'],
 			defaultValue: 8,
 			control: {
 				type: 'select',
@@ -69,9 +61,13 @@ export default {
 	},
 } as ComponentMeta<typeof Image>;
 
+const calcWidth = (width: typeof sizeOptions[number] | 'full')=>(
+	width === 'full'?'100%': widthMap[width]
+)
+
 const SimpleTemplate: ComponentStory<typeof Image> = (args) => (
 	<div style={{ width: '100%', overflow: 'auto' }}>
-		<Image {...args}  width={widthMap[args.width]}  />
+		<Image {...args}  width={calcWidth(args.width)}  />
 	</div>
 );
 
@@ -94,7 +90,7 @@ const srcUrlMapper = ({
 const WidthProviderTemplate: ComponentStory<typeof Image> = (args) => (
 	<ImageServerProvider srcUrlMapper={srcUrlMapper}>
 		<div style={{ width: '100%', overflow: 'auto' }}>
-			<Image {...args} width={widthMap[args.width]} />
+			<Image {...args} width={calcWidth(args.width)} />
 		</div>
 	</ImageServerProvider>
 );
@@ -112,6 +108,14 @@ const withImageServerProps: ComponentProps<typeof Image> = {
 export const withImageServer = WidthProviderTemplate.bind(withImageServerProps);
 withImageServer.args = withImageServerProps;
 
+const withResponsiveImageWidthProps: ComponentProps<typeof Image> = {
+	src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
+	width: 'full',
+	imageWidth: [5, 8, ,12]
+};
+export const withResponsiveImageWidth = WidthProviderTemplate.bind(withResponsiveImageWidthProps);
+withResponsiveImageWidth.args = withResponsiveImageWidthProps;
+
 const AllQualityTemplate: ComponentStory<typeof Image> = (args) => (
 	<ImageServerProvider srcUrlMapper={srcUrlMapper}>
 		<div style={{ width: '100%', overflow: 'auto' }}>
@@ -119,7 +123,7 @@ const AllQualityTemplate: ComponentStory<typeof Image> = (args) => (
 				{[1, 20, 40, 60, 80, 100].map((quality)=> (
 					<Stack key={quality} space='1'>
 						<Text>Quality: {quality}</Text>
-						<Image key={quality} {...args} width={widthMap[args.width]} imageWidth={args.width} quality={quality} />
+						<Image key={quality} {...args} width={calcWidth(args.width)} imageWidth={args.width} quality={quality} />
 					</Stack>
 				))}
 			</Stack>
@@ -137,7 +141,7 @@ const AllSizeTemplate: ComponentStory<typeof Image> = (args) => (
 			<Stack space='1'>
 				{
 					sizeOptions.map((width)=> (
-					<Image key={width} {...args} width={widthMap[width]} imageWidth={width} />
+					<Image key={width} {...args} width={calcWidth(args.width)} imageWidth={width} />
 				))}
 			</Stack>
 		</div>

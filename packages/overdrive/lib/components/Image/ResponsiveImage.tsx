@@ -5,20 +5,24 @@ import { useMemo } from 'react';
 
 import { useImageServer, widthMap } from './ImageServerProvider';
 import { SimpleImage } from './SimpleImage';
+import { ResponsiveProp } from '../../utils/responsiveProps.css';
+import { useResponsiveValue } from '../../hooks/useResponsiveValue';
 
 export interface Props extends ComponentProps<typeof SimpleImage> {
-	imageWidth?: keyof typeof widthMap;
+	imageWidth?: ResponsiveProp<keyof typeof widthMap>; // When provided, will be exactly used and no srcSet will be defined
 	quality?: number;
 }
 
 export const ResponsiveImage: FunctionComponent<Props> = ({
-															  imageWidth,
+															  imageWidth:imageWidthList,
 															  quality = 70,
 															  src: incomingSrc,
 															  ...imgProps
 														  }) => {
 
 	invariant(quality > 0 && quality <= 100, 'Image must be a number between 1 and 100.');
+
+	const imageWidth = useResponsiveValue(imageWidthList);
 
 	const { srcUrlMapper, getWidthValue, generateSrcSet } = useImageServer();
 	const src = useMemo(() => srcUrlMapper({
