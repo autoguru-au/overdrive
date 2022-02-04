@@ -15,6 +15,6 @@ export const Image: FunctionComponent<Props> = ({ unoptimised = false, ...props 
 			{...props}
 		/>
 	) : (
-		<SimpleImage {...props} />
+		<SimpleImage {...(props as ComponentProps<typeof SimpleImage>)} />
 	)
 );

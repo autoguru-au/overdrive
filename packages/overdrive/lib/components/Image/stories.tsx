@@ -104,6 +104,7 @@ withImageServerUnoptimised.args = withImageServerUnoptimisedProps;
 
 const withImageServerProps: ComponentProps<typeof Image> = {
 	src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
+	quality: 40,
 };
 export const withImageServer = WidthProviderTemplate.bind(withImageServerProps);
 withImageServer.args = withImageServerProps;
@@ -111,18 +112,26 @@ withImageServer.args = withImageServerProps;
 const withResponsiveImageWidthProps: ComponentProps<typeof Image> = {
 	src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
 	width: 'full',
-	imageWidth: [5, 8, ,12]
+	imageWidth: [5, 8, ,12],
 };
 export const withResponsiveImageWidth = WidthProviderTemplate.bind(withResponsiveImageWidthProps);
 withResponsiveImageWidth.args = withResponsiveImageWidthProps;
 
+const withResponsiveSizesProps: ComponentProps<typeof Image> = {
+	src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
+	width: 'full',
+	sizes: ['100vw', '70vw', '50vw', '40vw'],
+};
+export const withResponsiveSizes = WidthProviderTemplate.bind(withResponsiveSizesProps);
+withResponsiveSizes.args = withResponsiveSizesProps;
+
 const AllQualityTemplate: ComponentStory<typeof Image> = (args) => (
 	<ImageServerProvider srcUrlMapper={srcUrlMapper}>
 		<div style={{ width: '100%', overflow: 'auto' }}>
-			<Stack space='3'>
+			<Stack space='5'>
 				{[1, 20, 40, 60, 80, 100].map((quality)=> (
 					<Stack key={quality} space='1'>
-						<Text>Quality: {quality}</Text>
+						<Text>Quality: <Text strong>{quality}</Text></Text>
 						<Image key={quality} {...args} width={calcWidth(args.width)} imageWidth={args.width} quality={quality} />
 					</Stack>
 				))}
@@ -138,10 +147,14 @@ withImageServerQualities.args = withImageServerProps;
 const AllSizeTemplate: ComponentStory<typeof Image> = (args) => (
 	<ImageServerProvider srcUrlMapper={srcUrlMapper}>
 		<div style={{ width: '100%', overflow: 'auto' }}>
-			<Stack space='1'>
+			<Stack width='full' space='5'>
 				{
 					sizeOptions.map((width)=> (
-					<Image key={width} {...args} width={calcWidth(args.width)} imageWidth={width} />
+						<Stack key={width} space='1'>
+							<Text>Quality: <Text strong>{args.quality}</Text></Text>
+							<Text>Width: <Text strong>{width} => {calcWidth(width)}px</Text></Text>
+							<Image {...args} width={calcWidth(width)} imageWidth={width} />
+						</Stack>
 				))}
 			</Stack>
 		</div>
