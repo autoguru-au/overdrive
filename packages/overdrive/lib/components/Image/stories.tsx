@@ -7,6 +7,7 @@ import { Stack } from '../Stack';
 import { ImageServerProvider, widthMap } from './ImageServerProvider';
 
 import { Image } from '.';
+import { Text } from '../Text';
 
 const eagerOptions: Array<ComponentProps<typeof Image>['eager']> = [
 	false,
@@ -114,9 +115,12 @@ withImageServer.args = withImageServerProps;
 const AllQualityTemplate: ComponentStory<typeof Image> = (args) => (
 	<ImageServerProvider srcUrlMapper={srcUrlMapper}>
 		<div style={{ width: '100%', overflow: 'auto' }}>
-			<Stack space='1'>
+			<Stack space='3'>
 				{[1, 20, 40, 60, 80, 100].map((quality)=> (
-					<Image key={quality} {...args} width={widthMap[args.width]} quality={quality} />
+					<Stack key={quality} space='1'>
+						<Text>Quality: {quality}</Text>
+						<Image key={quality} {...args} width={widthMap[args.width]} imageWidth={args.width} quality={quality} />
+					</Stack>
 				))}
 			</Stack>
 		</div>

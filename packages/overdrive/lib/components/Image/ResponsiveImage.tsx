@@ -12,7 +12,7 @@ export interface Props extends ComponentProps<typeof SimpleImage> {
 }
 
 export const ResponsiveImage: FunctionComponent<Props> = ({
-															  imageWidth ='1',
+															  imageWidth,
 															  quality = 70,
 															  src: incomingSrc,
 															  ...imgProps
@@ -26,11 +26,11 @@ export const ResponsiveImage: FunctionComponent<Props> = ({
 		width: getWidthValue(imageWidth),
 		quality,
 	}), [incomingSrc, imageWidth, quality, srcUrlMapper, getWidthValue]);
-	const srcset = useMemo(() => generateSrcSet({ src: incomingSrc, quality }), [incomingSrc, quality]);
+	const srcset = useMemo(() => imageWidth?void 0:generateSrcSet({ src: incomingSrc, quality }), [incomingSrc, quality]);
 
 	return (
 		<SimpleImage
-			sizes="100vw"
+			sizes='(max-width: 128px) 128px, (min-width: 2048px) 2048px, '
 			srcSet={srcset}
 			src={src}
 			{...imgProps}
