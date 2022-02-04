@@ -29,8 +29,15 @@ const sizeOptions: Array<ComponentProps<typeof Image>['imageWidth']> = [
 ];
 export default {
 	title: 'Foundation/Image/Image',
-	// component: Heading, Breaks the docs when enabled!
+	component: Image, //Breaks the docs when enabled!
 	argTypes: {
+		imageWidth: {
+			options: [...sizeOptions, 'full'],
+			defaultValue: 8,
+			control: {
+				type: 'select',
+			},
+		},
 		width: {
 			options: [...sizeOptions, 'full'],
 			defaultValue: 8,
@@ -104,7 +111,9 @@ withImageServerUnoptimised.args = withImageServerUnoptimisedProps;
 
 const withImageServerProps: ComponentProps<typeof Image> = {
 	src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
-	quality: 40,
+	quality: 60,
+	imageWidth: 8,
+	sizes: ['100vh', ,'60vh', '40vh'],
 };
 export const withImageServer = WidthProviderTemplate.bind(withImageServerProps);
 withImageServer.args = withImageServerProps;

@@ -6,6 +6,9 @@ import { SimpleImage } from './SimpleImage';
 import { ResponsiveImage } from './ResponsiveImage';
 
 interface Props extends ComponentProps<typeof ResponsiveImage>{
+	/**
+	 * If set to true, no size/quality optimisation will be done even when `ImageServerProvider` has been defined upstream.
+	 **/
 	unoptimised?: boolean;
 }
 
