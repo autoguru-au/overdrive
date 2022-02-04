@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Image /> should match snapshot for eager value of default 1`] = `
+<img
+  class=""
+  decoding="sync"
+  loading="eager"
+/>
+`;
+
+exports[`<Image /> should match snapshot for eager value of no 1`] = `
+<img
+  class=""
+  decoding="sync"
+  loading="lazy"
+/>
+`;
+
+exports[`<Image /> should match snapshot for eager value of yes 1`] = `
+<img
+  class=""
+  decoding="sync"
+  loading="eager"
+/>
+`;
