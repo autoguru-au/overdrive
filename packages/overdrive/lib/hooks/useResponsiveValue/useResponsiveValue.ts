@@ -1,7 +1,8 @@
+import { useMemo } from 'react';
+
 import { useMedia } from '../..';
 import { getEarliestKnownToken } from '../../utils/resolveResponsiveProps';
 import { ResponsiveProp } from '../../utils/responsiveProps.css';
-import { useMemo } from 'react';
 
 export function useResponsiveValue<T extends string | number | boolean>(
 	responsiveValue: ResponsiveProp<T>,

@@ -3,10 +3,11 @@ import type { ComponentProps, FunctionComponent } from 'react';
 import * as React from 'react';
 import { useMemo } from 'react';
 
+import { useResponsiveValue } from '../../hooks/useResponsiveValue';
+import { ResponsiveProp } from '../../utils/responsiveProps.css';
+
 import { useImageServer, widthMap } from './ImageServerProvider';
 import { SimpleImage } from './SimpleImage';
-import { ResponsiveProp } from '../../utils/responsiveProps.css';
-import { useResponsiveValue } from '../../hooks/useResponsiveValue';
 
 export interface Props extends Omit<ComponentProps<typeof SimpleImage>, 'sizes'> {
 	/**

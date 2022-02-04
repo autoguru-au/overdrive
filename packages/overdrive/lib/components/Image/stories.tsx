@@ -3,11 +3,11 @@ import * as React from 'react';
 import { ComponentProps } from 'react';
 
 import { Stack } from '../Stack';
+import { Text } from '../Text';
 
 import { ImageServerProvider, widthMap } from './ImageServerProvider';
 
 import { Image } from '.';
-import { Text } from '../Text';
 
 const sizeOptions: Array<ComponentProps<typeof Image>['imageWidth']> = [
 	'1',
@@ -121,6 +121,7 @@ withImageServer.args = withImageServerProps;
 const withResponsiveImageWidthProps: ComponentProps<typeof Image> = {
 	src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
 	width: 'full',
+	sizes: ['100vw', '70vw', '50vw', '40vw'],
 	imageWidth: [5, 8, ,12],
 };
 export const withResponsiveImageWidth = WidthProviderTemplate.bind(withResponsiveImageWidthProps);
@@ -161,7 +162,7 @@ const AllSizeTemplate: ComponentStory<typeof Image> = (args) => (
 					sizeOptions.map((width)=> (
 						<Stack key={width} space='1'>
 							<Text>Quality: <Text strong>{args.quality}</Text></Text>
-							<Text>Width: <Text strong>{width} => {calcWidth(width)}px</Text></Text>
+							<Text>Width: <Text strong>{width}: {calcWidth(width)}px</Text></Text>
 							<Image {...args} width={calcWidth(width)} imageWidth={width} />
 						</Stack>
 				))}
@@ -170,5 +171,12 @@ const AllSizeTemplate: ComponentStory<typeof Image> = (args) => (
 	</ImageServerProvider>
 );
 
-export const withImageServerResizing = AllSizeTemplate.bind(withImageServerProps);
-withImageServerResizing.args = withImageServerProps;
+
+const withImageServerResizingProps: ComponentProps<typeof Image> = {
+	src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
+	quality: 20,
+	sizes: ['100vh', ,'60vh', '40vh'],
+};
+
+export const withImageServerResizing = AllSizeTemplate.bind(withImageServerResizingProps);
+withImageServerResizing.args = withImageServerResizingProps;
