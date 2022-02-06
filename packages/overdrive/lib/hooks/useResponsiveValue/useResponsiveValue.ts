@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { useMedia } from '../..';
 import { getEarliestKnownToken } from '../../utils/resolveResponsiveProps';
 import { ResponsiveProp } from '../../utils/responsiveProps.css';
@@ -16,5 +18,5 @@ export function useResponsiveValue<T extends string | number | boolean>(
 
 		return activeBreakPoint;
 	}, 1);
-	return getEarliestKnownToken<T>(responsiveValue, activeBP);
+	return useMemo(()=> getEarliestKnownToken<T>(responsiveValue, activeBP), [responsiveValue, activeBP]);
 }

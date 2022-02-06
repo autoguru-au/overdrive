@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Image /> should match snapshot for eager value of default 1`] = `
+<img
+  class=""
+  decoding="sync"
+  loading="eager"
+/>
+`;
+
+exports[`<Image /> should match snapshot for eager value of no 1`] = `
+<img
+  class=""
+  decoding="sync"
+  loading="lazy"
+/>
+`;
+
+exports[`<Image /> should match snapshot for eager value of yes 1`] = `
+<img
+  class=""
+  decoding="sync"
+  loading="eager"
+/>
+`;
+
+exports[`<Image /> should match snapshot for sizes value of multiple sizes when ImageServerProvider is defined 1`] = `
+<img
+  class=""
+  decoding="sync"
+  loading="eager"
+/>
+`;
+
+exports[`<Image /> should match snapshot for sizes value of no when ImageServerProvider is defined 1`] = `
+<img
+  class=""
+  decoding="sync"
+  loading="eager"
+  sizes="100vw"
+  src="https://images.autoguru.com.au/?url=undefined&w=undefined&q=70"
+  srcset="https://images.autoguru.com.au/?url=undefined&w=16&q=70 16w, https://images.autoguru.com.au/?url=undefined&w=32&q=70 32w, https://images.autoguru.com.au/?url=undefined&w=48&q=70 48w, https://images.autoguru.com.au/?url=undefined&w=64&q=70 64w, https://images.autoguru.com.au/?url=undefined&w=96&q=70 96w, https://images.autoguru.com.au/?url=undefined&w=128&q=70 128w, https://images.autoguru.com.au/?url=undefined&w=256&q=70 256w, https://images.autoguru.com.au/?url=undefined&w=384&q=70 384w, https://images.autoguru.com.au/?url=undefined&w=640&q=70 640w, https://images.autoguru.com.au/?url=undefined&w=750&q=70 750w, https://images.autoguru.com.au/?url=undefined&w=828&q=70 828w, https://images.autoguru.com.au/?url=undefined&w=1080&q=70 1080w, https://images.autoguru.com.au/?url=undefined&w=1200&q=70 1200w, https://images.autoguru.com.au/?url=undefined&w=1920&q=70 1920w, https://images.autoguru.com.au/?url=undefined&w=2048&q=70 2048w, https://images.autoguru.com.au/?url=undefined&w=3840&q=70 3840w"
+/>
+`;
+
+exports[`<Image /> should match snapshot for sizes value of single size when ImageServerProvider is defined 1`] = `
+<img
+  class=""
+  decoding="sync"
+  loading="eager"
+/>
+`;
+
+exports[`<Image /> should match snapshot for unoptimised value of default  when no ImageServerProvider is defined 1`] = `
+<img
+  class=""
+  decoding="sync"
+  loading="eager"
+/>
+`;
+
+exports[`<Image /> should match snapshot for unoptimised value of default when ImageServerProvider is defined 1`] = `
+<img
+  class=""
+  decoding="sync"
+  loading="eager"
+/>
+`;
+
+exports[`<Image /> should match snapshot for unoptimised value of no  when no ImageServerProvider is defined 1`] = `
+<img
+  class=""
+  decoding="sync"
+  loading="eager"
+/>
+`;
+
+exports[`<Image /> should match snapshot for unoptimised value of no when ImageServerProvider is defined 1`] = `
+<img
+  class=""
+  decoding="sync"
+  loading="eager"
+  sizes="100vw"
+  src="https://images.autoguru.com.au/?url=undefined&w=undefined&q=70"
+  srcset="https://images.autoguru.com.au/?url=undefined&w=16&q=70 16w, https://images.autoguru.com.au/?url=undefined&w=32&q=70 32w, https://images.autoguru.com.au/?url=undefined&w=48&q=70 48w, https://images.autoguru.com.au/?url=undefined&w=64&q=70 64w, https://images.autoguru.com.au/?url=undefined&w=96&q=70 96w, https://images.autoguru.com.au/?url=undefined&w=128&q=70 128w, https://images.autoguru.com.au/?url=undefined&w=256&q=70 256w, https://images.autoguru.com.au/?url=undefined&w=384&q=70 384w, https://images.autoguru.com.au/?url=undefined&w=640&q=70 640w, https://images.autoguru.com.au/?url=undefined&w=750&q=70 750w, https://images.autoguru.com.au/?url=undefined&w=828&q=70 828w, https://images.autoguru.com.au/?url=undefined&w=1080&q=70 1080w, https://images.autoguru.com.au/?url=undefined&w=1200&q=70 1200w, https://images.autoguru.com.au/?url=undefined&w=1920&q=70 1920w, https://images.autoguru.com.au/?url=undefined&w=2048&q=70 2048w, https://images.autoguru.com.au/?url=undefined&w=3840&q=70 3840w"
+/>
+`;
+
+exports[`<Image /> should match snapshot for unoptimised value of yes  when no ImageServerProvider is defined 1`] = `
+<img
+  class=""
+  decoding="sync"
+  loading="eager"
+/>
+`;
+
+exports[`<Image /> should match snapshot for unoptimised value of yes when ImageServerProvider is defined 1`] = `
+<img
+  class=""
+  decoding="sync"
+  loading="eager"
+/>
+`;
