@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.1.0
+
+### Minor Changes
+
+-   af65bd3: New responsive Image component
+
 ## 4.0.4
 
 ### Patch Changes
