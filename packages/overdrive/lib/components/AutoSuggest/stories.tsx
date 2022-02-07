@@ -118,6 +118,7 @@ const standardProps: Omit<ComponentProps<typeof AutoSuggest>, 'children'> = {
 	prefixIcon: void 0,
 	onReset: () => action('onReset')(),
 	onChange: (thing) => action('onChange')(thing),
+	onEnter: (thing) => action('onEnter')(thing),
 	onFocus: (thing) => action('onFocus')(thing),
 	onBlur: (thing) => action('onBlur')(thing),
 };
