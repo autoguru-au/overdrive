@@ -93,6 +93,7 @@ export interface Props<PayloadType>
 	itemRenderer?: AutoSuggestItemRenderer<PayloadType>;
 
 	onChange?(value: AutoSuggestValue<PayloadType>): void;
+	onEnter?(value: AutoSuggestValue<PayloadType>): void;
 }
 
 interface AutoSuggestInputProps<PayloadType extends unknown>
@@ -206,6 +207,7 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 		suggestions,
 		value,
 		onChange: incomingOnChange,
+		onEnter,
 		itemRenderer = defaultItemRenderer,
 		onBlur: incomingOnBlur,
 		onFocus: incomingOnFocus,
@@ -232,6 +234,11 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 			}
 
 			if (typeof incomingOnChange === 'function') incomingOnChange(value);
+		},
+		onKeyUp: (event) => {
+			if (event.key === 'Enter' && typeof onEnter === 'function') {
+				onEnter(value);
+			}
 		},
 		itemRenderer,
 		onKeyDown,
