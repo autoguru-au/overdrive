@@ -4,7 +4,7 @@ import { useMedia } from '../..';
 import { getEarliestKnownToken } from '../../utils/resolveResponsiveProps';
 import { ResponsiveProp } from '../../utils/responsiveProps.css';
 
-export function useResponsiveValue<T extends string | number | boolean>(
+export function useResponsiveValue<T extends string | number | boolean | {}>(
 	responsiveValue: ResponsiveProp<T>,
 	fallbackCase = false,
 ): T {
