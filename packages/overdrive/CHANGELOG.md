@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.1.2
+
+### Patch Changes
+
+-   e825a3d: useResponsiveValue Accepts any generic type
+
 ## 4.1.1
 
 ### Patch Changes
