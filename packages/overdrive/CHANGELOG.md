@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.1.3
+
+### Patch Changes
+
+-   9884f4c: Autosuggest: Closes results when enter key is pressed
+
 ## 4.1.2
 
 ### Patch Changes
