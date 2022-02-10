@@ -217,6 +217,7 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 	},
 	ref,
 ) {
+	const inputRef = useRef<HTMLInputElement>(ref);
 	const [isDesktop] = useMedia(['desktop'], false);
 	const [isFocused, setIsFocused] = useState<boolean>(false);
 	const [showModal, setShowModal] = useState<boolean>(false);
@@ -237,7 +238,9 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 		},
 		onKeyUp: (event) => {
 			if (event.key === 'Enter' && typeof onEnter === 'function') {
-				onEnter(value);
+				setShowModal(false);
+				setIsFocused(false);
+				inputRef.current?.blur();
 			}
 		},
 		itemRenderer,
@@ -267,7 +270,7 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 		/>
 	) : (
 		<AutoSuggestInput
-			ref={ref}
+			ref={inputRef}
 			{...props}
 			isFocused={isFocused}
 			inlineOptions={inlineOptions}
