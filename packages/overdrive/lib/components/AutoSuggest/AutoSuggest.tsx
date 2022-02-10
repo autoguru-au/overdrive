@@ -244,6 +244,7 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 				setIsFocused(false);
 				// @ts-ignore
 				inputRef.current?.blur();
+				onEnter(value);
 			}
 		},
 		itemRenderer,
