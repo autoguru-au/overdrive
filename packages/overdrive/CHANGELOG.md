@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.1.5
+
+### Patch Changes
+
+-   6ae288e: AutoSuggest: Type fixes
+
 ## 4.1.4
 
 ### Patch Changes
