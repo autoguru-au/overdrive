@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.1.4
+
+### Patch Changes
+
+-   Overdrive: Fixed input ref type
+
 ## 4.1.3
 
 ### Patch Changes
