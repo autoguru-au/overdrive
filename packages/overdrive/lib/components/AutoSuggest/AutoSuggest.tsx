@@ -11,7 +11,7 @@ import {
 	Reducer,
 	Ref,
 	useCallback,
-	useEffect,
+	useEffect, useImperativeHandle,
 	useMemo,
 	useReducer,
 	useRef,
@@ -217,7 +217,8 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 	},
 	ref,
 ) {
-	const inputRef = useRef<HTMLInputElement>(ref);
+	const inputRef = useRef<HTMLInputElement>();
+	useImperativeHandle(ref, () => inputRef.current);
 	const [isDesktop] = useMedia(['desktop'], false);
 	const [isFocused, setIsFocused] = useState<boolean>(false);
 	const [showModal, setShowModal] = useState<boolean>(false);
