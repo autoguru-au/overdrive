@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.1.6
+
+### Patch Changes
+
+-   13acf79: AutoSuggest: Calls onEnter with current value
+
 ## 4.1.5
 
 ### Patch Changes
