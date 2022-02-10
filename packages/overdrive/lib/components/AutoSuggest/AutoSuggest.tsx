@@ -11,7 +11,8 @@ import {
 	Reducer,
 	Ref,
 	useCallback,
-	useEffect, useImperativeHandle,
+	useEffect,
+	useImperativeHandle,
 	useMemo,
 	useReducer,
 	useRef,
@@ -217,7 +218,7 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 	},
 	ref,
 ) {
-	const inputRef = useRef<HTMLInputElement>();
+	const inputRef = useRef();
 	useImperativeHandle(ref, () => inputRef.current);
 	const [isDesktop] = useMedia(['desktop'], false);
 	const [isFocused, setIsFocused] = useState<boolean>(false);
@@ -241,6 +242,7 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 			if (event.key === 'Enter' && typeof onEnter === 'function') {
 				setShowModal(false);
 				setIsFocused(false);
+				// @ts-ignore
 				inputRef.current?.blur();
 			}
 		},
