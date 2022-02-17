@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.1.7
+
+### Patch Changes
+
+-   f5843b0: Image component: Gets exported from root
+
 ## 4.1.6
 
 ### Patch Changes
