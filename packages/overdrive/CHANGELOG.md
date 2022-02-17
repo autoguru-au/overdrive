@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.1.8
+
+### Patch Changes
+
+-   e67fd78: Image: Updated prop types
+
 ## 4.1.7
 
 ### Patch Changes
