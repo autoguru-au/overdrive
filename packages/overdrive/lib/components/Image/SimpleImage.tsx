@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { FunctionComponent } from 'react';
 
-export interface Props extends Omit<HTMLImageElement, 'loading' | 'className' | 'width' | 'height'> {
+export interface Props extends Partial<Omit<HTMLImageElement, 'loading' | 'className' | 'width' | 'height'>> {
 	src: string;
 
 	/**
@@ -13,7 +13,7 @@ export interface Props extends Omit<HTMLImageElement, 'loading' | 'className' | 
 	 * Can be manually defined as a normal `srcset` img tag attribute but will be automatically set for
 	 * all available sizes when an `ImageServerProvider` is defined upstream.
 	 **/
-	srcSet: string;
+	srcSet?: string;
 
 	/**
 	 * When set to true image async decoding by the browser is disabled.
