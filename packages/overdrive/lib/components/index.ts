@@ -50,3 +50,4 @@ export * from './Toaster';
 export * from './Tooltip';
 export * from './VisuallyHidden';
 export * from './MinimalModal';
+export * from './Image';
