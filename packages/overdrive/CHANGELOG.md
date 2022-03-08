@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.1.9
+
+### Patch Changes
+
+-   e1dc659: Text: Gets word-break option Meta: Gets word-break option
+
 ## 4.1.8
 
 ### Patch Changes
