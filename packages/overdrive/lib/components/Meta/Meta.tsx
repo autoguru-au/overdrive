@@ -8,11 +8,10 @@ import { Text } from '../Text';
 
 import * as styles from './Meta.css';
 
-export interface Props{
+export interface Props extends Pick<ComponentProps<typeof Text>, 'breakWord'>{
 	icon: IconType;
 	label: string;
 	variant?: keyof typeof styles.variant;
-	breakWord?: boolean;
 }
 
 export const Meta: FunctionComponent<Props> = ({
