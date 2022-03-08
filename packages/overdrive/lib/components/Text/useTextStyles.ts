@@ -14,25 +14,28 @@ export interface TextStyleProps {
 	fontWeight?: keyof typeof styles.fontWeight;
 	is?: ComponentProps<typeof Text>['is'];
 	noWrap?: boolean;
+	breakWord?: boolean;
 	size?: keyof typeof styles.sizes;
 	transform?: keyof typeof styles.transform;
 }
 
 export const useTextStyles = ({
-	align,
-	colour,
-	fontWeight,
-	is,
-	noWrap,
-	size,
-	transform,
-}: TextStyleProps) => {
+								  align,
+								  colour,
+								  fontWeight,
+								  is,
+								  noWrap,
+								  breakWord,
+								  size,
+								  transform,
+							  }: TextStyleProps) => {
 	return clsx(
 		styles.root,
 		useBoxStyles({ is, textAlign: align }),
 		colour !== 'unset' && styles.colours[colour ?? 'neutral'],
 		styles.fontWeight[fontWeight!],
 		noWrap && styles.noWrap,
+		breakWord && styles.breakWord,
 		styles.sizes[size!],
 		styles.transform[transform!],
 	);
