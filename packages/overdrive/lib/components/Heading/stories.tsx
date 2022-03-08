@@ -10,6 +10,10 @@ const noWrapOptions: Array<ComponentProps<typeof Heading>['noWrap']> = [
 	false,
 	true,
 ];
+const wordBreakOptions: Array<ComponentProps<typeof Text>['wordBreak']> = [
+	false,
+	true,
+];
 const transformOptions: Array<ComponentProps<typeof Text>['transform']> = [
 	'uppercase',
 	'capitalize',
@@ -65,6 +69,13 @@ export default {
 	argTypes: {
 		noWrap: {
 			options: noWrapOptions,
+			defaultValue: false,
+			control: {
+				type: 'boolean',
+			},
+		},
+		breakWord: {
+			options: wordBreakOptions,
 			defaultValue: false,
 			control: {
 				type: 'boolean',
