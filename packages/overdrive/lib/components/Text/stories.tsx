@@ -2,12 +2,14 @@ import { ArgTypes, ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
-import { Heading } from '../Heading';
-
 import { Text } from '.';
 
 const textTypeOptions: Array<ComponentProps<typeof Text>['is']> = ['span', 'p'];
-const noWrapOptions: Array<ComponentProps<typeof Heading>['noWrap']> = [
+const noWrapOptions: Array<ComponentProps<typeof Text>['noWrap']> = [
+	false,
+	true,
+];
+const wordBreakOptions: Array<ComponentProps<typeof Text>['wordBreak']> = [
 	false,
 	true,
 ];
@@ -98,6 +100,13 @@ const sharedArgTypes: ArgTypes<Partial<ComponentProps<typeof Text>>> = {
 			type: 'boolean',
 		},
 	},
+	breakWord: {
+		options: wordBreakOptions,
+		defaultValue: false,
+		control: {
+			type: 'boolean',
+		},
+	},
 	transform: {
 		options: transformOptions,
 		defaultValue: null,
@@ -177,3 +186,14 @@ allSizes.argTypes = argTypes;
 export const allColours = AllColoursTemplate.bind(allTypesProps);
 allColours.args = allTypesProps;
 allColours.argTypes = argTypes;
+
+const withLongUnspacedTextProps: ComponentProps<typeof Text> = {
+	breakWord: true,
+	children:
+		'Toavoidyoucomingtoahaltinthemiddleoftheroad,becauseofabanging,crashofpistonsandvalvesfightingwitheachother,letinvestigatewhatthetiming belt is, what it does, and why it costs so much to replace or repair.',
+};
+
+
+export const withLongUnspacedText = Template.bind(withLongUnspacedTextProps);
+withLongUnspacedText.args = withLongUnspacedTextProps;
+withLongUnspacedText.argTypes = argTypes;

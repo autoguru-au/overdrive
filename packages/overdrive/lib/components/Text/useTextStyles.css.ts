@@ -35,6 +35,7 @@ export const fontWeight = styleVariants(
 );
 
 export const noWrap = style({ whiteSpace: 'nowrap' });
+export const breakWord = style({ wordBreak: 'break-word' });
 
 export const transform = styleVariants(
 	mapTokenToProperty(

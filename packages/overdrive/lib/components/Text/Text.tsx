@@ -25,6 +25,7 @@ export const Text: FunctionComponent<Props> = ({
 	display,
 	fontWeight = 'normal',
 	transform,
+												   breakWord,
 	noWrap,
 	size = '4',
 	strong = false,
@@ -41,6 +42,7 @@ export const Text: FunctionComponent<Props> = ({
 				fontWeight: strong ? 'bold' : fontWeight,
 				transform,
 				noWrap,
+				breakWord,
 			}),
 			className,
 		]}>
