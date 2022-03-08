@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.1.10
+
+### Patch Changes
+
+-   e1f5773: Heading: Gets wordBreak prop
+
 ## 4.1.9
 
 ### Patch Changes
