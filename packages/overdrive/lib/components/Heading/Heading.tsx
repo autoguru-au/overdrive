@@ -32,6 +32,7 @@ export const Heading: FunctionComponent<Props> = ({
 	colour = 'dark',
 	size = sizeScaleDefaults[is],
 	id,
+	breakWord,
 	className = '',
 	children,
 }) => (
@@ -46,6 +47,7 @@ export const Heading: FunctionComponent<Props> = ({
 				noWrap,
 				transform,
 				fontWeight,
+				breakWord,
 			}),
 			className,
 		]}>
