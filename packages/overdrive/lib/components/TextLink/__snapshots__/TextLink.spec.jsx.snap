@@ -7,7 +7,7 @@ exports[`<TextLink /> should allow as override 1`] = `
   rel="noopener noreferrer"
 >
   <span
-    class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06dp useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_link__w6to7id useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_4__w6to7i4 reset_inlineText__6swfds2 useBoxStyles_pointerEvents_none__7o6k06fj"
+    class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06dp useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_link__w6to7id useTextStyles_fontWeight_semiBold__w6to7io useTextStyles_sizes_4__w6to7i4 reset_inlineText__6swfds2 useBoxStyles_pointerEvents_none__7o6k06fj"
   >
     Test
   </span>
@@ -20,7 +20,7 @@ exports[`<TextLink /> should match the snapshot 1`] = `
   rel="noopener noreferrer"
 >
   <span
-    class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06dp useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_link__w6to7id useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_4__w6to7i4 reset_inlineText__6swfds2 useBoxStyles_pointerEvents_none__7o6k06fj"
+    class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06dp useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_link__w6to7id useTextStyles_fontWeight_semiBold__w6to7io useTextStyles_sizes_4__w6to7i4 reset_inlineText__6swfds2 useBoxStyles_pointerEvents_none__7o6k06fj"
   />
 </a>
 `;
