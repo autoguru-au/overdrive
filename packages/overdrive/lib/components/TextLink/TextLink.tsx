@@ -38,6 +38,7 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 			children,
 			className,
 			strong,
+			fontWeight = 'semiBold',
 			muted = false,
 			size,
 			...props
@@ -54,6 +55,7 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 				is="span"
 				colour={muted ? 'muted' : 'link'}
 				size={size}
+				fontWeight={fontWeight}
 				strong={strong}
 				className={clsx(
 					useBoxStyles({

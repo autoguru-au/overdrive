@@ -51,7 +51,7 @@ export default {
 				type: 'select',
 			},
 		},
-		weight: {
+		fontWeight: {
 			options: fontWeightOptions,
 			defaultValue: null,
 			control: {
@@ -99,7 +99,7 @@ const standardProps: Omit<ComponentProps<typeof TextLink>, 'children'> = {
 	muted: false,
 	size: '4',
 	align: 'left',
-	fontWeight: 'bold',
+	fontWeight: 'semiBold',
 };
 
 export const standard: ComponentStory<typeof TextLink> = Template.bind(
