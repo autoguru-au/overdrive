@@ -2,6 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
+import { Box } from '../Box';
 import { Heading } from '../Heading';
 import { Text } from '../Text';
 
@@ -80,7 +81,9 @@ export default {
 } as ComponentMeta<typeof TextLink>;
 
 const Template: ComponentStory<typeof TextLink> = (args) => (
-	<TextLink {...args}>Hello</TextLink>
+	<Box>
+		<TextLink {...args}>Hello</TextLink>
+	</Box>
 );
 
 const InsideParagraphTemplate: ComponentStory<typeof TextLink> = (args) => (

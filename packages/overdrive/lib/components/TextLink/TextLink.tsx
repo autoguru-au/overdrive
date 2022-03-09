@@ -37,7 +37,6 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 			is: Component,
 			children,
 			className,
-			fontWeight = 'bold',
 			strong,
 			muted = false,
 			size,
@@ -53,12 +52,10 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 		const body = (
 			<Text
 				is="span"
-				colour={muted && ('muted' as any)}
+				colour={muted ? 'muted' : 'link'}
 				size={size}
 				strong={strong}
-				fontWeight={fontWeight}
 				className={clsx(
-					styles.root,
 					useBoxStyles({
 						is: 'span',
 						pointerEvents: 'none',
@@ -75,12 +72,11 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 			rel: props.rel ?? 'noopener noreferrer',
 			...props,
 			ref,
-			className,
 		};
 
 		if (Component === undefined) {
 			return (
-				<Box is="a" {...allProps}>
+				<Box is="a" className={[className, styles.root]} {...allProps}>
 					{body}
 				</Box>
 			);

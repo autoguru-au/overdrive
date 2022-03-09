@@ -25,7 +25,7 @@ export const Text: FunctionComponent<Props> = ({
 	display,
 	fontWeight = 'normal',
 	transform,
-												   breakWord,
+	breakWord,
 	noWrap,
 	size = '4',
 	strong = false,
