@@ -2,6 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
+import { Box } from '../Box';
 import { Heading } from '../Heading';
 import { Text } from '../Text';
 
@@ -50,7 +51,7 @@ export default {
 				type: 'select',
 			},
 		},
-		weight: {
+		fontWeight: {
 			options: fontWeightOptions,
 			defaultValue: null,
 			control: {
@@ -80,7 +81,9 @@ export default {
 } as ComponentMeta<typeof TextLink>;
 
 const Template: ComponentStory<typeof TextLink> = (args) => (
-	<TextLink {...args}>Hello</TextLink>
+	<Box>
+		<TextLink {...args}>Hello</TextLink>
+	</Box>
 );
 
 const InsideParagraphTemplate: ComponentStory<typeof TextLink> = (args) => (
@@ -96,7 +99,7 @@ const standardProps: Omit<ComponentProps<typeof TextLink>, 'children'> = {
 	muted: false,
 	size: '4',
 	align: 'left',
-	fontWeight: 'bold',
+	fontWeight: 'semiBold',
 };
 
 export const standard: ComponentStory<typeof TextLink> = Template.bind(

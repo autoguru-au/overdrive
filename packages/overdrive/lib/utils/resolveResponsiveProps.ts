@@ -50,10 +50,9 @@ function* buildClassFor<Tokens extends string | number>(
 	}
 }
 
-export function getEarliestKnownToken<Tokens extends string | number | boolean | {}>(
-	responsiveArgument: Tokens[],
-	counter: number,
-): Tokens {
+export function getEarliestKnownToken<
+	Tokens extends string | number | boolean | {}
+>(responsiveArgument: Tokens[], counter: number): Tokens {
 	let idx = counter;
 
 	do {

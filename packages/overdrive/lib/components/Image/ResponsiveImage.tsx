@@ -9,7 +9,8 @@ import { ResponsiveProp } from '../../utils/responsiveProps.css';
 import { useImageServer, widthMap } from './ImageServerProvider';
 import { SimpleImage } from './SimpleImage';
 
-export interface Props extends Omit<ComponentProps<typeof SimpleImage>, 'sizes'> {
+export interface Props
+	extends Omit<ComponentProps<typeof SimpleImage>, 'sizes'> {
 	/**
 	 * Only effective if `ImageServerProvider` is defined upstream.
 	 * Not to be confused with the `width` of the image tag. `imageWidth` is purely to do with the
@@ -35,40 +36,47 @@ export interface Props extends Omit<ComponentProps<typeof SimpleImage>, 'sizes'>
 	/**
 	 * Only effective if `ImageServerProvider` is defined upstream.
 	 * A number between 1 and 100 to be used by the image server for the quality of image returned.
-	**/
+	 **/
 	quality?: number;
 }
 
 export const ResponsiveImage: FunctionComponent<Props> = ({
-															  imageWidth: imageWidthList,
-															  sizes: sizesList = '100vw',
-															  quality = 70,
-															  src: incomingSrc,
-															  ...imgProps
-														  }) => {
-
-	invariant(quality > 0 && quality <= 100, 'Image must be a number between 1 and 100.');
+	imageWidth: imageWidthList,
+	sizes: sizesList = '100vw',
+	quality = 70,
+	src: incomingSrc,
+	...imgProps
+}) => {
+	invariant(
+		quality > 0 && quality <= 100,
+		'Image must be a number between 1 and 100.',
+	);
 
 	const imageWidth = useResponsiveValue(imageWidthList);
 	const sizes = useResponsiveValue(sizesList);
 
 	const { srcUrlMapper, getWidthValue, generateSrcSet } = useImageServer();
-	const src = useMemo(() => srcUrlMapper({
-		src: incomingSrc,
-		width: getWidthValue(imageWidth),
-		quality,
-	}), [incomingSrc, imageWidth, quality, srcUrlMapper, getWidthValue]);
-	const srcset = useMemo(() => imageWidth ? void 0 : generateSrcSet({
-		src: incomingSrc,
-		quality,
-	}), [incomingSrc, quality]);
+	const src = useMemo(
+		() =>
+			srcUrlMapper({
+				src: incomingSrc,
+				width: getWidthValue(imageWidth),
+				quality,
+			}),
+		[incomingSrc, imageWidth, quality, srcUrlMapper, getWidthValue],
+	);
+	const srcset = useMemo(
+		() =>
+			imageWidth
+				? void 0
+				: generateSrcSet({
+						src: incomingSrc,
+						quality,
+				  }),
+		[incomingSrc, quality],
+	);
 
 	return (
-		<SimpleImage
-			sizes={sizes}
-			srcSet={srcset}
-			src={src}
-			{...imgProps}
-		/>
+		<SimpleImage sizes={sizes} srcSet={srcset} src={src} {...imgProps} />
 	);
 };

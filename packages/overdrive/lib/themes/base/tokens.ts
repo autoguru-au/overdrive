@@ -96,7 +96,7 @@ export const tokens: Tokens = {
 		},
 		foreground: {
 			body: colours.gray['900'],
-			link: colours.green['600'],
+			link: colours.blue['500'],
 		},
 		background: {
 			body: white,
@@ -247,7 +247,7 @@ export const tokens: Tokens = {
 			primary: colours.green['600'],
 			secondary: colours.gray['700'],
 			shine: colours.yellow['500'],
-			link: colours.green['600'],
+			link: colours.blue['500'],
 			dark: colours.gray['900'],
 			white,
 			muted: colours.gray['400'],

@@ -68,13 +68,12 @@ export default {
 	},
 } as ComponentMeta<typeof Image>;
 
-const calcWidth = (width: typeof sizeOptions[number] | 'full')=>(
-	width === 'full'?'100%': widthMap[width]
-)
+const calcWidth = (width: typeof sizeOptions[number] | 'full') =>
+	width === 'full' ? '100%' : widthMap[width];
 
 const SimpleTemplate: ComponentStory<typeof Image> = (args) => (
 	<div style={{ width: '100%', overflow: 'auto' }}>
-		<Image {...args}  width={calcWidth(args.width)}  />
+		<Image {...args} width={calcWidth(args.width)} />
 	</div>
 );
 
@@ -84,15 +83,8 @@ const standardProps: ComponentProps<typeof Image> = {
 export const standard = SimpleTemplate.bind(standardProps);
 standard.args = standardProps;
 
-
-
-const srcUrlMapper = ({
-						  src,
-						  width,
-						  quality,
-					  }) => (
-	`https://images.autoguru.com.au/?url=${src}&w=${width}&q=${quality}`
-)
+const srcUrlMapper = ({ src, width, quality }) =>
+	`https://images.autoguru.com.au/?url=${src}&w=${width}&q=${quality}`;
 
 const WidthProviderTemplate: ComponentStory<typeof Image> = (args) => (
 	<ImageServerProvider srcUrlMapper={srcUrlMapper}>
@@ -105,15 +97,16 @@ const withImageServerUnoptimisedProps: ComponentProps<typeof Image> = {
 	src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
 	unoptimised: true,
 };
-export const withImageServerUnoptimised = WidthProviderTemplate.bind(withImageServerUnoptimisedProps);
+export const withImageServerUnoptimised = WidthProviderTemplate.bind(
+	withImageServerUnoptimisedProps,
+);
 withImageServerUnoptimised.args = withImageServerUnoptimisedProps;
-
 
 const withImageServerProps: ComponentProps<typeof Image> = {
 	src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
 	quality: 60,
 	imageWidth: 8,
-	sizes: ['100vh', ,'60vh', '40vh'],
+	sizes: ['100vh', , '60vh', '40vh'],
 };
 export const withImageServer = WidthProviderTemplate.bind(withImageServerProps);
 withImageServer.args = withImageServerProps;
@@ -122,9 +115,11 @@ const withResponsiveImageWidthProps: ComponentProps<typeof Image> = {
 	src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
 	width: 'full',
 	sizes: ['100vw', '70vw', '50vw', '40vw'],
-	imageWidth: [5, 8, ,12],
+	imageWidth: [5, 8, , 12],
 };
-export const withResponsiveImageWidth = WidthProviderTemplate.bind(withResponsiveImageWidthProps);
+export const withResponsiveImageWidth = WidthProviderTemplate.bind(
+	withResponsiveImageWidthProps,
+);
 withResponsiveImageWidth.args = withResponsiveImageWidthProps;
 
 const withResponsiveSizesProps: ComponentProps<typeof Image> = {
@@ -132,17 +127,27 @@ const withResponsiveSizesProps: ComponentProps<typeof Image> = {
 	width: 'full',
 	sizes: ['100vw', '70vw', '50vw', '40vw'],
 };
-export const withResponsiveSizes = WidthProviderTemplate.bind(withResponsiveSizesProps);
+export const withResponsiveSizes = WidthProviderTemplate.bind(
+	withResponsiveSizesProps,
+);
 withResponsiveSizes.args = withResponsiveSizesProps;
 
 const AllQualityTemplate: ComponentStory<typeof Image> = (args) => (
 	<ImageServerProvider srcUrlMapper={srcUrlMapper}>
 		<div style={{ width: '100%', overflow: 'auto' }}>
-			<Stack space='5'>
-				{[1, 20, 40, 60, 80, 100].map((quality)=> (
-					<Stack key={quality} space='1'>
-						<Text>Quality: <Text strong>{quality}</Text></Text>
-						<Image key={quality} {...args} width={calcWidth(args.width)} imageWidth={args.width} quality={quality} />
+			<Stack space="5">
+				{[1, 20, 40, 60, 80, 100].map((quality) => (
+					<Stack key={quality} space="1">
+						<Text>
+							Quality: <Text strong>{quality}</Text>
+						</Text>
+						<Image
+							key={quality}
+							{...args}
+							width={calcWidth(args.width)}
+							imageWidth={args.width}
+							quality={quality}
+						/>
 					</Stack>
 				))}
 			</Stack>
@@ -150,33 +155,45 @@ const AllQualityTemplate: ComponentStory<typeof Image> = (args) => (
 	</ImageServerProvider>
 );
 
-export const withImageServerQualities = AllQualityTemplate.bind(withImageServerProps);
+export const withImageServerQualities = AllQualityTemplate.bind(
+	withImageServerProps,
+);
 withImageServerQualities.args = withImageServerProps;
-
 
 const AllSizeTemplate: ComponentStory<typeof Image> = (args) => (
 	<ImageServerProvider srcUrlMapper={srcUrlMapper}>
 		<div style={{ width: '100%', overflow: 'auto' }}>
-			<Stack width='full' space='5'>
-				{
-					sizeOptions.map((width)=> (
-						<Stack key={width} space='1'>
-							<Text>Quality: <Text strong>{args.quality}</Text></Text>
-							<Text>Width: <Text strong>{width}: {calcWidth(width)}px</Text></Text>
-							<Image {...args} width={calcWidth(width)} imageWidth={width} />
-						</Stack>
+			<Stack width="full" space="5">
+				{sizeOptions.map((width) => (
+					<Stack key={width} space="1">
+						<Text>
+							Quality: <Text strong>{args.quality}</Text>
+						</Text>
+						<Text>
+							Width:{' '}
+							<Text strong>
+								{width}: {calcWidth(width)}px
+							</Text>
+						</Text>
+						<Image
+							{...args}
+							width={calcWidth(width)}
+							imageWidth={width}
+						/>
+					</Stack>
 				))}
 			</Stack>
 		</div>
 	</ImageServerProvider>
 );
 
-
 const withImageServerResizingProps: ComponentProps<typeof Image> = {
 	src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
 	quality: 20,
-	sizes: ['100vh', ,'60vh', '40vh'],
+	sizes: ['100vh', , '60vh', '40vh'],
 };
 
-export const withImageServerResizing = AllSizeTemplate.bind(withImageServerResizingProps);
+export const withImageServerResizing = AllSizeTemplate.bind(
+	withImageServerResizingProps,
+);
 withImageServerResizing.args = withImageServerResizingProps;

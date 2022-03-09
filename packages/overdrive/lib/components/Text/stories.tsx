@@ -193,7 +193,6 @@ const withLongUnspacedTextProps: ComponentProps<typeof Text> = {
 		'Toavoidyoucomingtoahaltinthemiddleoftheroad,becauseofabanging,crashofpistonsandvalvesfightingwitheachother,letinvestigatewhatthetiming belt is, what it does, and why it costs so much to replace or repair.',
 };
 
-
 export const withLongUnspacedText = Template.bind(withLongUnspacedTextProps);
 withLongUnspacedText.args = withLongUnspacedTextProps;
 withLongUnspacedText.argTypes = argTypes;

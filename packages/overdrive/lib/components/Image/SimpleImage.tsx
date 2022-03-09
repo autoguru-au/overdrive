@@ -1,7 +1,10 @@
 import * as React from 'react';
 import { FunctionComponent } from 'react';
 
-export interface Props extends Partial<Omit<HTMLImageElement, 'loading' | 'className' | 'width' | 'height'>> {
+export interface Props
+	extends Partial<
+		Omit<HTMLImageElement, 'loading' | 'className' | 'width' | 'height'>
+	> {
 	src: string;
 
 	/**
@@ -33,18 +36,17 @@ export interface Props extends Partial<Omit<HTMLImageElement, 'loading' | 'class
 	height?: string;
 
 	className?: string;
-
 }
 
 export const SimpleImage: FunctionComponent<Props> = ({
-														  eager = 'false',
-														  syncDecoding = 'false',
-														  className = '',
-														  src,
-														  srcSet,
-														  ...imgProps
-													  }) => (
-// @ts-ignore
+	eager = 'false',
+	syncDecoding = 'false',
+	className = '',
+	src,
+	srcSet,
+	...imgProps
+}) => (
+	// @ts-ignore
 	<img
 		loading={eager ? 'eager' : 'lazy'}
 		decoding={syncDecoding ? 'sync' : 'async'}
