@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 4.1.11
+
+### Patch Changes
+
+-   5448c8a: base theme: Link colour updated to blue 500 TextLink: get link
+    colour
+
 ## 4.1.10
 
 ### Patch Changes
