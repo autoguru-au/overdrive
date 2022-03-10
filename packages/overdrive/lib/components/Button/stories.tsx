@@ -58,7 +58,7 @@ const TemplateMulti: ComponentStory<typeof Button> = (args) => (
 			</Column>
 			<Column>
 				<Button isLoading {...args}>
-					Login
+					A very very very long button Label
 				</Button>
 			</Column>
 			<Column>
