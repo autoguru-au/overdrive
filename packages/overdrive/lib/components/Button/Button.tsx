@@ -141,29 +141,60 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 			ref,
 		};
 
+		const buttonContents = useMemo(
+			() => (
+				<>
+					{isSingleIconChild && maybeIconProps ? (
+						<Icon
+							size={
+								maybeIconProps.size ?? size === 'small'
+									? 'small'
+									: 'medium'
+							}
+							{...maybeIconProps}
+						/>
+					) : (
+						children
+					)}
+				</>
+			),
+			[maybeIconProps, isSingleIconChild, children, size],
+		);
+
 		const child = isLoading ? (
-			<ProgressSpinner
-				className={styles.spinner}
-				colour={getSpinnerColour(variant, minimal)}
-			/>
+			<Box
+				display="flex"
+				justifyContent="center"
+				position="relative"
+				alignItems="center"
+				width="full"
+				height="full">
+				<Box
+					position="absolute"
+					alignItems="center"
+					justifyContent="center"
+					display="flex"
+					width="full"
+					height="full">
+					<ProgressSpinner
+						className={styles.spinner}
+						colour={getSpinnerColour(variant, minimal)}
+					/>
+				</Box>
+				<Box
+					width="full"
+					height="full"
+					className={[styles.body, styles.hiddenContent]}>
+					{buttonContents}
+				</Box>
+			</Box>
 		) : (
 			<Box
+				height="full"
 				alignItems="center"
 				justifyContent="center"
-				height="full"
 				className={styles.body}>
-				{isSingleIconChild && maybeIconProps ? (
-					<Icon
-						size={
-							maybeIconProps.size ?? size === 'small'
-								? 'small'
-								: 'medium'
-						}
-						{...maybeIconProps}
-					/>
-				) : (
-					children
-				)}
+				{buttonContents}
 			</Box>
 		);
 

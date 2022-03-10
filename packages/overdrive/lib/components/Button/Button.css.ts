@@ -18,6 +18,9 @@ export const body = style({
 	gridGap: vars.space['1'],
 });
 
+export const hiddenContent = style({
+	visibility: 'hidden',
+});
 export const loading = style({
 	cursor: 'not-allowed',
 });
