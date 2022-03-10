@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.1.12
+
+### Patch Changes
+
+-   834f5bd: Button: Keep its layout unchanged in loading mode
+
 ## 4.1.11
 
 ### Patch Changes
