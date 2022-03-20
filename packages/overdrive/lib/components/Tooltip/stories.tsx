@@ -26,6 +26,15 @@ export default {
 				type: 'select',
 			},
 		},
+		label: {
+			defaultValue: '',
+		},
+		closeAfter: {
+			defaultValue: EAlignment.RIGHT,
+			control: {
+				type: 'number',
+			},
+		},
 	},
 } as ComponentMeta<typeof Tooltip>;
 
@@ -37,12 +46,22 @@ const Template: ComponentStory<typeof Tooltip> = (args) => (
 
 const standardProps: Omit<ComponentProps<typeof Tooltip>, 'children'> = {
 	label: 'Im the tooltip body',
+	closeAfter: null,
 };
 
 export const standard: ComponentStory<typeof Tooltip> = Template.bind(
 	standardProps,
 );
 standard.args = standardProps;
+
+const withAtuCloseProps: Omit<ComponentProps<typeof Tooltip>, 'children'> = {
+	label: 'I will automatically close after 5 seconds',
+	closeAfter: 5e3,
+};
+export const withAutoClose: ComponentStory<typeof Tooltip> = Template.bind(
+	withAtuCloseProps,
+);
+withAutoClose.args = withAtuCloseProps;
 
 const withLongTextProps: Omit<ComponentProps<typeof Tooltip>, 'children'> = {
 	label:

@@ -5,6 +5,7 @@ import {
 	FunctionComponent,
 	ReactElement,
 	useCallback,
+	useEffect,
 	useRef,
 	useState,
 } from 'react';
@@ -20,12 +21,14 @@ export interface Props {
 	label: string;
 	alignment?: EAlignment;
 	children: ReactElement;
+	closeAfter?: number;
 }
 
 export const Tooltip: FunctionComponent<Props> = ({
 	alignment = EAlignment.RIGHT,
 	label,
 	children,
+	closeAfter = null,
 }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const childRef = useRef<HTMLDivElement>(null);
@@ -46,6 +49,14 @@ export const Tooltip: FunctionComponent<Props> = ({
 			setIsOpen(false);
 		}, 1e3 / 2);
 	}, [setIsOpen]);
+
+	useEffect(() => {
+		let timeout;
+		if (isOpen && typeof closeAfter === 'number')
+			timeout = setTimeout(() => setIsOpen(false), closeAfter);
+
+		return () => (timeout ? clearTimeout(timeout) : void 0);
+	}, [closeAfter, isOpen]);
 
 	return (
 		<>
