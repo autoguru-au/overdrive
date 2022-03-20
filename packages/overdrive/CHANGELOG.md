@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.1.13
+
+### Patch Changes
+
+-   7dbf75b: Tooltip: Gets auto closing timeout option
+
 ## 4.1.12
 
 ### Patch Changes
