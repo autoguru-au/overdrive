@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.1.14
+
+### Patch Changes
+
+-   14ee239: Tooltip: Gets test size option
+
 ## 4.1.13
 
 ### Patch Changes
