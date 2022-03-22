@@ -2,6 +2,7 @@ import * as React from 'react';
 import {
 	Children,
 	cloneElement,
+	ComponentProps,
 	FunctionComponent,
 	ReactElement,
 	useCallback,
@@ -17,17 +18,25 @@ import { Text } from '../Text';
 
 import * as styles from './Tooltip.css';
 
+type ToolTipSize = 'medium' | 'large';
 export interface Props {
+	size?: ToolTipSize;
 	label: string;
 	alignment?: EAlignment;
 	children: ReactElement;
 	closeAfter?: number;
 }
 
+const sizeMap: Record<ToolTipSize, ComponentProps<typeof Text>['size']> = {
+	medium: '2',
+	large: '3',
+};
+
 export const Tooltip: FunctionComponent<Props> = ({
 	alignment = EAlignment.RIGHT,
 	label,
 	children,
+	size = 'medium',
 	closeAfter = null,
 }) => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -79,8 +88,11 @@ export const Tooltip: FunctionComponent<Props> = ({
 					borderRadius="1"
 					boxShadow="4"
 					backgroundColour="gray900"
-					padding="4">
-					<Text colour="white">{label}</Text>
+					paddingY="2"
+					paddingX="3">
+					<Text size={sizeMap[size]} colour="white">
+						{label}
+					</Text>
 				</Box>
 			</Positioner>
 		</>

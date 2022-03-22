@@ -5,7 +5,12 @@ import { ComponentProps } from 'react';
 import { EAlignment } from '../Positioner/alignment';
 
 import { Tooltip } from '.';
+import { Text } from '../Text';
 
+const sizeScale: Array<ComponentProps<typeof Text>['size']> = [
+	'medium',
+	'large',
+];
 export default {
 	title: 'Components/Tooltip',
 	decorators: [
@@ -22,6 +27,13 @@ export default {
 		alignment: {
 			options: EAlignment,
 			defaultValue: EAlignment.RIGHT,
+			control: {
+				type: 'select',
+			},
+		},
+		size: {
+			options: sizeScale,
+			defaultValue: void 0,
 			control: {
 				type: 'select',
 			},
@@ -73,3 +85,18 @@ export const withLongText: ComponentStory<typeof Tooltip> = Template.bind(
 	withLongTextProps,
 );
 withLongText.args = withLongTextProps;
+
+const withSmallTextSizePropsProps: Omit<
+	ComponentProps<typeof Tooltip>,
+	'children'
+> = {
+	label:
+		'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
+	alignment: EAlignment.BOTTOM,
+	size: 'large',
+};
+
+export const withLargeTextSize: ComponentStory<typeof Tooltip> = Template.bind(
+	withSmallTextSizePropsProps,
+);
+withLargeTextSize.args = withSmallTextSizePropsProps;
