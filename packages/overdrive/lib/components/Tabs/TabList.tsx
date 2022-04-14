@@ -100,7 +100,7 @@ export const TabList: FunctionComponent<Props> = ({
 			updateScrollButtonState();
 		};
 
-		win.addEventListener('resize', handleResize);
+		win.addEventListener('resize', handleResize, { passive: true });
 
 		return () => {
 			win.removeEventListener('resize', handleResize);
