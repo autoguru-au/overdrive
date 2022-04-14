@@ -41,7 +41,7 @@ export const useMedia = (
 				});
 			};
 
-			matcher.addEventListener('change', handler);
+			matcher.addEventListener('change', handler, { passive: true });
 			return () => matcher.removeEventListener('change', handler);
 		});
 
