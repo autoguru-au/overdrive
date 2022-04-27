@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 4.1.18
+
+### Patch Changes
+
+-   5e2efa2: Checkbox: Removes extra right padding when it has no label Radio:
+    Removes extra right padding when it has no label
+
 ## 4.1.17
 
 ### Patch Changes
