@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.1.16
+
+### Patch Changes
+
+-   11d9730: Button: Gets new intent border colours for border colour
+
 ## 4.1.15
 
 ### Patch Changes
