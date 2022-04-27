@@ -65,7 +65,6 @@ const colours: ColourMap = {
 };
 
 const white = '#fff';
-const secondaryForeground = colours.blue['800'];
 const flatElevation = '0 0 0 0 rgba(0, 0, 0, 0.0)';
 
 export const tokens: Tokens = {
@@ -93,6 +92,7 @@ export const tokens: Tokens = {
 					strong: colours.red['900'],
 				},
 				foreground: white,
+				border: colours.red['900'],
 			},
 			secondary: {
 				background: {
@@ -100,7 +100,8 @@ export const tokens: Tokens = {
 					mild: white,
 					strong: colours.gray['100'],
 				},
-				foreground: secondaryForeground,
+				foreground: colours.blue['800'],
+				border: colours.blue['300'],
 			},
 			shine: {
 				background: {
@@ -109,6 +110,7 @@ export const tokens: Tokens = {
 					strong: colours.gray['300'],
 				},
 				foreground: colours.yellow['500'],
+				border: colours.gray['300'],
 			},
 			danger: {
 				background: {
@@ -117,6 +119,7 @@ export const tokens: Tokens = {
 					strong: colours.red['800'],
 				},
 				foreground: white,
+				border: colours.red['800'],
 			},
 			warning: {
 				background: {
@@ -125,6 +128,7 @@ export const tokens: Tokens = {
 					strong: colours.yellow['900'],
 				},
 				foreground: colours.yellow['200'],
+				border: colours.yellow['900'],
 			},
 			neutral: {
 				background: {
@@ -133,6 +137,7 @@ export const tokens: Tokens = {
 					strong: colours.gray['900'],
 				},
 				foreground: white,
+				border: colours.gray['900'],
 			},
 			success: {
 				background: {
@@ -141,6 +146,7 @@ export const tokens: Tokens = {
 					strong: colours.green['900'],
 				},
 				foreground: colours.green['200'],
+				border: colours.green['900'],
 			},
 			information: {
 				background: {
@@ -149,6 +155,7 @@ export const tokens: Tokens = {
 					strong: colours.blue['900'],
 				},
 				foreground: colours.blue['200'],
+				border: colours.blue['900'],
 			},
 		},
 	},
