@@ -122,13 +122,6 @@ exports[`<CheckBox /> should match the snapshot for a single check with no value
       class="reset_block__6swfds3 useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_top_gray__7o6k069m useBoxStyles_border_colour_right_gray__7o6k069p useBoxStyles_border_colour_bottom_gray__7o6k069s useBoxStyles_border_colour_left_gray__7o6k069v useBoxStyles_makeResponsiveStyle_key_bp__7o6k06a1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ah useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ax useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bd CheckableBase_checkableItem__v1tznp5 CheckBox_base_default__xnhrlp1"
     />
   </div>
-  <label
-    class="reset_inlineText__6swfds2 useBoxStyles_width_full__7o6k06dk reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_sizes_4__w6to7i4"
-  >
-    <span
-      class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06dp useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ih useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_4__w6to7i4"
-    />
-  </label>
 </div>
 `;
 

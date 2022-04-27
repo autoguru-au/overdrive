@@ -96,19 +96,21 @@ export const CheckableBase = forwardRef<HTMLInputElement, Props>(
 					]}>
 					{children}
 				</Box>
-				<Box
-					is="label"
-					width="full"
-					pointerEvents={disabled ? 'none' : void 0}
-					className={clsx(
-						useBoxStyles({ is: 'button' }),
-						useTextStyles({ size: '4' }),
-						{
-							[styles.label.disabled]: disabled,
-						},
-					)}>
-					{nakedLabel ? <Text is="span">{label}</Text> : label}
-				</Box>
+				{label ? (
+					<Box
+						is="label"
+						width="full"
+						pointerEvents={disabled ? 'none' : void 0}
+						className={clsx(
+							useBoxStyles({ is: 'button' }),
+							useTextStyles({ size: '4' }),
+							{
+								[styles.label.disabled]: disabled,
+							},
+						)}>
+						{nakedLabel ? <Text is="span">{label}</Text> : label}
+					</Box>
+				) : null}
 			</Box>
 		);
 	},

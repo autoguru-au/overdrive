@@ -18,7 +18,7 @@ export interface Props {
 	disabled?: boolean;
 	name?: string;
 	value: string;
-	children: ReactNode;
+	children?: ReactNode;
 
 	onClick?(checked: boolean): void;
 

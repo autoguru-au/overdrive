@@ -13,7 +13,7 @@ export interface Props {
 	value: string;
 	className?: string;
 	disabled?: boolean;
-	children: ReactNode;
+	children?: ReactNode;
 }
 
 export const Radio = forwardRef<HTMLInputElement, Props>(
