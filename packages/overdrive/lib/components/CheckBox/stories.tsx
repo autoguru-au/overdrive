@@ -77,6 +77,13 @@ const uncheckedProps: ComponentProps<typeof CheckBox> = {
 	children: 'check me!',
 	value: '1',
 };
+const emptyProps: ComponentProps<typeof CheckBox> = {
+	checked: false,
+	disabled: false,
+	name: 'check-name',
+	children: null,
+	value: '1',
+};
 const checkedProps: ComponentProps<typeof CheckBox> = {
 	checked: true,
 	disabled: false,
@@ -170,6 +177,9 @@ disabledChecked.args = disabledCheckedProps;
 
 export const multipleLines = Template.bind(multipleLinesProps);
 multipleLines.args = multipleLinesProps;
+
+export const withNoChildren = Template.bind(emptyProps);
+withNoChildren.args = emptyProps;
 
 export const withComponent = Template.bind(withComponentProps);
 withComponent.args = withComponentProps;

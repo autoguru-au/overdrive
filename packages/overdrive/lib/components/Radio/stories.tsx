@@ -105,6 +105,11 @@ const disabledProps: ComponentProps<typeof Radio> = {
 	children: 'check me!',
 	value: 'berry',
 };
+const emptyProps: ComponentProps<typeof Radio> = {
+	disabled: true,
+	children: null,
+	value: 'berry',
+};
 const disabledCheckedProps: ComponentProps<typeof Radio> = {
 	// @ts-ignore
 	checked: true,
@@ -179,6 +184,9 @@ disabled.argTypes = argTypes;
 export const disabledChecked = Template.bind(disabledCheckedProps);
 disabledChecked.args = disabledCheckedProps;
 disabledChecked.argTypes = argTypes;
+
+export const withNoChildren = Template.bind(emptyProps);
+withNoChildren.args = emptyProps;
 
 export const multipleLines = Template.bind(multipleLinesProps);
 multipleLines.args = multipleLinesProps;

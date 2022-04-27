@@ -248,13 +248,6 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
         class="reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_top_gray__7o6k069m useBoxStyles_border_colour_right_gray__7o6k069p useBoxStyles_border_colour_bottom_gray__7o6k069s useBoxStyles_border_colour_left_gray__7o6k069v useBoxStyles_makeResponsiveStyle_key_bp__7o6k06a9 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ap useBoxStyles_makeResponsiveStyle_key_bp__7o6k06b5 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bl useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bx Radio_circle_default__lhd8u00 Radio_circle_inner__lhd8u02 Radio_circle_selected__lhd8u04 Radio_circle_selectedInner__lhd8u03"
       />
     </div>
-    <label
-      class="reset_inlineText__6swfds2 useBoxStyles_width_full__7o6k06dk reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_sizes_4__w6to7i4"
-    >
-      <span
-        class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06dp useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ih useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_4__w6to7i4"
-      />
-    </label>
   </div>
 </div>
 `;
