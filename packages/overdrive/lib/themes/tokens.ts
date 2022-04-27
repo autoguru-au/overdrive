@@ -128,6 +128,7 @@ export interface Tokens extends VanillaTokens {
 			Intent,
 			{
 				foreground: string;
+				border: string;
 				background: ColourIntensityMap;
 			}
 		>;
