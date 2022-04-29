@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.2.0
+
+### Minor Changes
+
+-   b6959f7: NumberBubble component intoduced
+
 ## 4.1.18
 
 ### Patch Changes
