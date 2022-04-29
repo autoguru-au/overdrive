@@ -21,6 +21,7 @@ export const SelectInput = withEnhancedInput<
 		prefixed,
 		validation,
 		isLoading,
+		size,
 		fieldIcon = ChevronDownIcon,
 		...rest
 	}) => (
@@ -45,7 +46,7 @@ export const SelectInput = withEnhancedInput<
 					display="flex"
 					alignItems="center"
 					height="full"
-					marginRight="4"
+					marginRight={size === 'medium' ? '4' : '2'}
 					flexShrink={0}
 					pointerEvents="none"
 					position="absolute">

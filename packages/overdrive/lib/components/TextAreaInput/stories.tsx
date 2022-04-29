@@ -4,6 +4,7 @@ import * as React from 'react';
 import { ComponentProps } from 'react';
 
 import { TextAreaInput } from '.';
+import { CarIcon } from '@autoguru/icons';
 
 export default {
 	title: 'Components/Inputs/Textarea',
@@ -120,3 +121,29 @@ invalid.argTypes = argTypes;
 export const loading = Template.bind(loadingProps);
 loading.args = loadingProps;
 loading.argTypes = argTypes;
+
+const smallProps: typeof standardProps = {
+	...standardProps,
+	size: 'small',
+};
+export const small = Template.bind(smallProps);
+small.args = smallProps;
+small.argTypes = argTypes;
+
+const withValueSmallProps: typeof withAValueProps = {
+	...withAValueProps,
+	size: 'small',
+};
+
+export const withValueSmall = Template.bind(withValueSmallProps);
+withValueSmall.args = withValueSmallProps;
+withValueSmall.argTypes = argTypes;
+
+const loadingSmallProps: typeof withAValueProps = {
+	...withAValueProps,
+	isLoading: true,
+	size: 'small',
+};
+export const loadingSmall = Template.bind(loadingSmallProps);
+loadingSmall.args = loadingSmallProps;
+loadingSmall.argTypes = argTypes;

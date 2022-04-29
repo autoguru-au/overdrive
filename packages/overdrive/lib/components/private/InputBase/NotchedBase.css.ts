@@ -82,36 +82,74 @@ const active_scaling_factor = 0.7777;
 const calcPlaceholderTranslate = (
 	notched: Boolean,
 	prefixed: Boolean,
+	size: keyof typeof placeholderPlacement,
 ): string => {
 	if (notched) {
 		return `calc(${vars.space['2']} + ${vars.space['2']}), calc(-0.5 * ${active_scaling_factor} * ${vars.typography.size['4'].fontSize})`;
 	}
 
-	return `${
-		prefixed
-			? `calc(${vars.space['7']} + ${vars.space['3']})`
-			: vars.typography.size['4'].fontSize
-	}, calc((${vars.space['8']} - ${vars.typography.size['4'].fontSize}) / 2)`;
+	return size === 'medium'
+		? `${
+				prefixed
+					? `calc(${vars.space['7']} + ${vars.space['3']})`
+					: vars.typography.size['4'].fontSize
+		  }, calc((${vars.space['8']} - ${
+				vars.typography.size['4'].fontSize
+		  }) / 2)`
+		: `${
+				prefixed
+					? `calc(${vars.space['2']} + ${vars.space['5']} + ${vars.space['2']})`
+					: vars.space['2']
+		  }, calc(${vars.space['2']} + 2px)`;
 };
 
-export const placeholderPlacement = styleVariants({
-	default: {
-		transform: `translate(${calcPlaceholderTranslate(
-			false,
-			false,
-		)}) scale(1)`,
-	},
-	defaultPrefixed: {
-		transform: `translate(${calcPlaceholderTranslate(
-			false,
-			true,
-		)}) scale(1)`,
-	},
-	shifted: {
-		zIndex: 2,
-		transform: `translate(${calcPlaceholderTranslate(
-			true,
-			false,
-		)}) scale(${active_scaling_factor})`,
-	},
-});
+export const placeholderPlacement = {
+	small: styleVariants({
+		default: {
+			transform: `translate(${calcPlaceholderTranslate(
+				false,
+				false,
+				'small',
+			)}) scale(1)`,
+		},
+		defaultPrefixed: {
+			transform: `translate(${calcPlaceholderTranslate(
+				false,
+				true,
+				'small',
+			)}) scale(1)`,
+		},
+		shifted: {
+			zIndex: 2,
+			transform: `translate(${calcPlaceholderTranslate(
+				true,
+				false,
+				'small',
+			)}) scale(${active_scaling_factor})`,
+		},
+	}),
+	medium: styleVariants({
+		default: {
+			transform: `translate(${calcPlaceholderTranslate(
+				false,
+				false,
+				'medium',
+			)}) scale(1)`,
+		},
+		defaultPrefixed: {
+			transform: `translate(${calcPlaceholderTranslate(
+				false,
+				true,
+				'medium',
+			)}) scale(1)`,
+		},
+		shifted: {
+			zIndex: 2,
+			transform: `translate(${calcPlaceholderTranslate(
+				true,
+				false,
+				'medium',
+			)}) scale(${active_scaling_factor})`,
+		},
+	}),
+};
