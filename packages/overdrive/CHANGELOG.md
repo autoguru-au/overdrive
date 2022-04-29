@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.2.1
+
+### Patch Changes
+
+-   5d20ae8: NumberBuble: Fixed wrong sizing for the value of 10
+
 ## 4.2.0
 
 ### Minor Changes
