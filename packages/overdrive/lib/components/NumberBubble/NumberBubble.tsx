@@ -9,7 +9,7 @@ import * as styles from './NumberBubble.css';
 
 export interface Props extends Omit<ComponentProps<typeof Box>, 'borderRadius' | 'position' | 'padding'> {
 	value: number;
-	textColour: ComponentProps<typeof Text>['colour'];
+	textColour?: ComponentProps<typeof Text>['colour'];
 }
 
 export const NumberBubble: FunctionComponent<Props> = ({
@@ -18,7 +18,7 @@ export const NumberBubble: FunctionComponent<Props> = ({
 														   ...boxProps
 													   }) => {
 
-	const largeBubble = value > 10 || value < 0;
+	const largeBubble = value > 9 || value < 0;
 	return (
 		<Box borderRadius='full'
 			 backgroundColour='gray900'
