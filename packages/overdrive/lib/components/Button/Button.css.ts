@@ -84,6 +84,21 @@ export const variant = {
 		color: vars.colours.intent.danger.foreground,
 		boxShadow: `inset 0 0 0 1px ${vars.colours.intent.danger.border}, ${vars.elevation['2']}`,
 	}),
+	information: style({
+		backgroundColor: vars.colours.intent.information.background.standard,
+		color: vars.colours.intent.information.foreground,
+		boxShadow: `inset 0 0 0 1px ${vars.colours.intent.information.border}, ${vars.elevation['2']}`,
+	}),
+	warning: style({
+		backgroundColor: vars.colours.intent.warning.background.standard,
+		color: vars.colours.intent.warning.foreground,
+		boxShadow: `inset 0 0 0 1px ${vars.colours.intent.warning.border}, ${vars.elevation['2']}`,
+	}),
+	success: style({
+		backgroundColor: vars.colours.intent.success.background.standard,
+		color: vars.colours.intent.success.foreground,
+		boxShadow: `inset 0 0 0 1px ${vars.colours.intent.success.border}, ${vars.elevation['2']}`,
+	}),
 };
 
 export const defaultStates = {
@@ -124,6 +139,45 @@ export const defaultStates = {
 			color: vars.colours.intent.danger.foreground,
 			backgroundColor: vars.colours.intent.danger.background.strong,
 			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.danger.border}, ${vars.elevation['1']}`,
+		},
+	}),
+	information: style({
+		':hover': {
+			color: vars.colours.intent.information.foreground,
+			backgroundColor: vars.colours.intent.information.background.strong,
+			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.information.border}, ${vars.elevation['3']}`,
+		},
+		':active': {
+			transform: 'scale(0.97)',
+			color: vars.colours.intent.information.foreground,
+			backgroundColor: vars.colours.intent.information.background.strong,
+			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.information.border}, ${vars.elevation['1']}`,
+		},
+	}),
+	warning: style({
+		':hover': {
+			color: vars.colours.intent.warning.foreground,
+			backgroundColor: vars.colours.intent.warning.background.strong,
+			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.warning.border}, ${vars.elevation['3']}`,
+		},
+		':active': {
+			transform: 'scale(0.97)',
+			color: vars.colours.intent.warning.foreground,
+			backgroundColor: vars.colours.intent.warning.background.strong,
+			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.warning.border}, ${vars.elevation['1']}`,
+		},
+	}),
+	success: style({
+		':hover': {
+			color: vars.colours.intent.success.foreground,
+			backgroundColor: vars.colours.intent.success.background.strong,
+			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.success.border}, ${vars.elevation['3']}`,
+		},
+		':active': {
+			transform: 'scale(0.97)',
+			color: vars.colours.intent.success.foreground,
+			backgroundColor: vars.colours.intent.success.background.strong,
+			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.success.border}, ${vars.elevation['1']}`,
 		},
 	}),
 };
@@ -171,6 +225,42 @@ export const minimalStates = {
 		':active': {
 			color: vars.colours.intent.danger.background.strong,
 			backgroundColor: vars.colours.intent.danger.background.mild,
+			boxShadow: 'none',
+		},
+	}),
+	information: style({
+		':hover': {
+			color: vars.colours.intent.information.background.strong,
+			backgroundColor: vars.colours.intent.information.background.mild,
+			boxShadow: 'none',
+		},
+		':active': {
+			color: vars.colours.intent.information.background.strong,
+			backgroundColor: vars.colours.intent.information.background.mild,
+			boxShadow: 'none',
+		},
+	}),
+	warning: style({
+		':hover': {
+			color: vars.colours.intent.warning.background.strong,
+			backgroundColor: vars.colours.intent.warning.background.mild,
+			boxShadow: 'none',
+		},
+		':active': {
+			color: vars.colours.intent.warning.background.strong,
+			backgroundColor: vars.colours.intent.warning.background.mild,
+			boxShadow: 'none',
+		},
+	}),
+	success: style({
+		':hover': {
+			color: vars.colours.intent.success.background.strong,
+			backgroundColor: vars.colours.intent.success.background.mild,
+			boxShadow: 'none',
+		},
+		':active': {
+			color: vars.colours.intent.success.background.strong,
+			backgroundColor: vars.colours.intent.success.background.mild,
 			boxShadow: 'none',
 		},
 	}),
