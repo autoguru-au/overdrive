@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.3.0
+
+### Minor Changes
+
+-   ff5cd80: Button: Gets new colour variants
+
 ## 4.2.1
 
 ### Patch Changes
