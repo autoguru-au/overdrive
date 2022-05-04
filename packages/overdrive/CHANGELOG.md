@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.3.1
+
+### Patch Changes
+
+-   3b81bdc: Button: Fixes warning and information text colours
+
 ## 4.3.0
 
 ### Minor Changes
