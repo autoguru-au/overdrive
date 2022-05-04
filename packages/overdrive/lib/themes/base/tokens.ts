@@ -147,7 +147,7 @@ export const tokens: Tokens = {
 					mild: colours.yellow['100'],
 					strong: colours.yellow['900'],
 				},
-				foreground: colours.yellow['200'],
+				foreground: white,
 				border: colours.yellow['900'],
 			},
 			neutral: {
@@ -174,7 +174,7 @@ export const tokens: Tokens = {
 					mild: colours.blue['200'],
 					strong: colours.blue['900'],
 				},
-				foreground: colours.blue['200'],
+				foreground: white,
 				border: colours.blue['900'],
 			},
 		},
