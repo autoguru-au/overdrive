@@ -193,3 +193,48 @@ const secondaryMediumProps: Omit<ComponentProps<typeof Button>, 'children'> = {
 };
 export const secondaryMedium = TemplateMulti.bind(secondaryMediumProps);
 secondaryMedium.args = secondaryMediumProps;
+
+const informationSmallProps: Omit<ComponentProps<typeof Button>, 'children'> = {
+	size: 'small',
+	variant: 'information',
+};
+export const informationSmall = TemplateMulti.bind(informationSmallProps);
+informationSmall.args = informationSmallProps;
+
+const informationMediumProps: Omit<
+	ComponentProps<typeof Button>,
+	'children'
+> = {
+	size: 'medium',
+	variant: 'information',
+};
+export const informationMedium = TemplateMulti.bind(informationMediumProps);
+informationMedium.args = informationMediumProps;
+
+const warningSmallProps: Omit<ComponentProps<typeof Button>, 'children'> = {
+	size: 'small',
+	variant: 'warning',
+};
+export const warningSmall = TemplateMulti.bind(warningSmallProps);
+warningSmall.args = warningSmallProps;
+
+const warningMediumProps: Omit<ComponentProps<typeof Button>, 'children'> = {
+	size: 'medium',
+	variant: 'warning',
+};
+export const warningMedium = TemplateMulti.bind(warningMediumProps);
+warningMedium.args = warningMediumProps;
+
+const successSmallProps: Omit<ComponentProps<typeof Button>, 'children'> = {
+	size: 'small',
+	variant: 'success',
+};
+export const successSmall = TemplateMulti.bind(successSmallProps);
+successSmall.args = successSmallProps;
+
+const successMediumProps: Omit<ComponentProps<typeof Button>, 'children'> = {
+	size: 'medium',
+	variant: 'success',
+};
+export const successMedium = TemplateMulti.bind(successMediumProps);
+successMedium.args = successMediumProps;

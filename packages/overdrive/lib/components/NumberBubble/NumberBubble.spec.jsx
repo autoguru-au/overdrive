@@ -12,16 +12,19 @@ describe('<Section />', () => {
 		expect(() => render(<NumberBubble value={9} />)).not.toThrow();
 	});
 
-
 	it('should not throw with negative value', () => {
 		expect(() => render(<NumberBubble value={-9} />)).not.toThrow();
 	});
 
 	it('should match the snapshot for positive value', () => {
-		expect(render(<NumberBubble value={3} />).container.firstChild).toMatchSnapshot();
+		expect(
+			render(<NumberBubble value={3} />).container.firstChild,
+		).toMatchSnapshot();
 	});
 
 	it('should match the snapshot for negative value', () => {
-		expect(render(<NumberBubble value={-3} />).container.firstChild).toMatchSnapshot();
+		expect(
+			render(<NumberBubble value={-3} />).container.firstChild,
+		).toMatchSnapshot();
 	});
 });
