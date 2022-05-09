@@ -1,11 +1,12 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import { ComponentProps, FunctionComponent } from 'react';
+import { ComponentProps, FunctionComponent, useMemo } from 'react';
 
 import { Box, useBoxStyles } from '../Box';
 import { Text } from '../Text';
 
 import * as styles from './NumberBubble.css';
+import { toPrettyBigNumber } from '../../utils/number';
 
 export interface Props
 	extends Omit<
@@ -13,22 +14,40 @@ export interface Props
 		'borderRadius' | 'position' | 'padding'
 	> {
 	value: number;
+	rawNumbers?: boolean;
 	textColour?: ComponentProps<typeof Text>['colour'];
 }
+
+type BubbleSize = 'SMALL' | 'MEDIUM' | 'LARGE' | 'X_LARGE';
+const valuePaddingMap: Record<
+	BubbleSize,
+	ComponentProps<typeof Box>['padding']
+> = {
+	SMALL: '2',
+	MEDIUM: '3',
+	LARGE: '4',
+	X_LARGE: '5',
+};
 
 export const NumberBubble: FunctionComponent<Props> = ({
 	value,
 	textColour = 'white',
+	rawNumbers = false,
 	...boxProps
 }) => {
-	const largeBubble = value > 9 || value < 0;
+	const size = useMemo<BubbleSize>(() => {
+		if (value > 9 && value < 100) return 'MEDIUM';
+		if (value > 99 && value < 9999) return 'LARGE';
+		if (value >= 9999) return 'LARGE';
+		return 'SMALL';
+	}, [value]);
 	return (
 		<Box
 			borderRadius="full"
 			backgroundColour="gray900"
 			display="inlineBlock"
 			position="relative"
-			padding={largeBubble ? '3' : '2'}
+			padding={valuePaddingMap[size]}
 			{...boxProps}>
 			<Text
 				size="2"
@@ -40,7 +59,7 @@ export const NumberBubble: FunctionComponent<Props> = ({
 					}),
 				)}
 				colour={textColour}>
-				{value}
+				{rawNumbers ? value : toPrettyBigNumber(value)}
 			</Text>
 		</Box>
 	);
