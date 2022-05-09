@@ -2,11 +2,11 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { ComponentProps, FunctionComponent, useMemo } from 'react';
 
+import { toPrettyBigNumber } from '../../utils/number';
 import { Box, useBoxStyles } from '../Box';
 import { Text } from '../Text';
 
 import * as styles from './NumberBubble.css';
-import { toPrettyBigNumber } from '../../utils/number';
 
 export interface Props
 	extends Omit<

@@ -3,9 +3,9 @@ import * as React from 'react';
 import { ComponentProps } from 'react';
 
 import { EAlignment } from '../Positioner/alignment';
+import { Text } from '../Text';
 
 import { Tooltip } from '.';
-import { Text } from '../Text';
 
 const sizeScale: Array<ComponentProps<typeof Text>['size']> = [
 	'medium',
