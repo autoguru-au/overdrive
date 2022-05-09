@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.3.2
+
+### Patch Changes
+
+-   5930dd5: NumberBubble: Suppoertsa larger numbers
+
 ## 4.3.1
 
 ### Patch Changes
