@@ -40,17 +40,17 @@ export const NumberInput = withEnhancedInput<Props>(
 				mouseWheelListener = inputRef.current.addEventListener(
 					'mousewheel',
 					preventWheel,
-					{ passive: true },
+					{ passive: false },
 				);
 				onWheelListener = inputRef.current.addEventListener(
 					'onwheel',
 					preventWheel,
-					{ passive: true },
+					{ passive: false },
 				);
 				wheelListener = inputRef.current.addEventListener(
 					'wheel',
 					preventWheel,
-					{ passive: true },
+					{ passive: false },
 				);
 			}
 
