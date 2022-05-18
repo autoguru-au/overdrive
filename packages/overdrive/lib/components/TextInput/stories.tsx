@@ -38,11 +38,6 @@ const iconOptions = {
 };
 
 const argTypes: ArgTypes<Partial<ComponentProps<typeof TextInput>>> = {
-	value: {
-		control: {
-			type: 'string',
-		},
-	},
 	prefixIcon: {
 		defaultValue: null,
 		description: 'Input prefix Icon',
