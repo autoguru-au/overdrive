@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 4.3.3
+
+### Patch Changes
+
+-   33c6c71: Inputs: Get theme standard line height
+-   28252fb: NumberInput: Fixes paasive events being prevented
+
 ## 4.3.2
 
 ### Patch Changes
