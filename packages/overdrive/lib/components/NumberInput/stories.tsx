@@ -42,11 +42,6 @@ const iconOptions = {
 };
 
 const argTypes: ArgTypes = {
-	value: {
-		control: {
-			type: 'number',
-		},
-	},
 	prefixIcon: {
 		defaultValue: null,
 		description: 'Input prefix Icon',

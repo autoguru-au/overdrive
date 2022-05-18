@@ -22,7 +22,7 @@ export const input = {
 			background: 'transparent',
 			outline: 'none',
 			fontSize: vars.typography.size['4'].fontSize,
-			lineHeight: 1,
+			lineHeight: vars.typography.size['4'].lineHeight,
 			height: vars.space['8'],
 			padding: `calc(((${vars.space['8']} - ${vars.typography.size['4'].fontSize}) / 2) - 3px) calc(${vars.space['4']} - 1px)`,
 			selectors: {
