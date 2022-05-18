@@ -74,10 +74,10 @@
     eslint-plugin-react-hooks "^4.2.0"
     eslint-plugin-unicorn "^33.0.1"
 
-"@autoguru/icons@1.7.15":
-  version "1.7.15"
-  resolved "https://registry.yarnpkg.com/@autoguru/icons/-/icons-1.7.15.tgz#d66fbe55c2e57c9a9c53a6a0eb11edd5ff8b0ba6"
-  integrity sha512-SsPT48FrI23/UHwl5/x3oJe5rN/HQsjI5ghshs7+uTMYbYPyKuWS2i8vavQqNu/xld8S30vZEuKlMOEucmA7mw==
+"@autoguru/icons@1.7.17":
+  version "1.7.17"
+  resolved "https://registry.yarnpkg.com/@autoguru/icons/-/icons-1.7.17.tgz#0b9b0fc9de6394803f52c878158b467daeded580"
+  integrity sha512-7TIf/HD+gV1W1MAwBANtLvmOic3BJT/Ka+ajClLmgsQlfvW+9OwDhvK4h3xipTN+f9J9M5wr684SlvbqwtF4mQ==
   dependencies:
     tslib "^2.1.0"
 
