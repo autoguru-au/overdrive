@@ -14,7 +14,7 @@ import * as styles from './MinimalModal.css';
 
 export interface Props extends ComponentProps<typeof Modal> {
 	className?: string;
-	children: ReactNode;
+	children?: ReactNode;
 }
 
 export const MinimalModal: FunctionComponent<Props> = ({

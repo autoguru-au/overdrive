@@ -9,7 +9,7 @@ import { BulletListContext, bulletMap } from './context';
 
 export interface Props {
 	className?: string;
-	children: ReactNode;
+	children?: ReactNode;
 }
 
 export const BulletList: FunctionComponent<Props> = ({

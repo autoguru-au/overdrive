@@ -18,7 +18,7 @@ export interface Props {
 	gap?: boolean;
 	onClick?: MouseEventHandler<HTMLButtonElement>;
 	className?: string;
-	children: ReactNode;
+	children?: ReactNode;
 }
 
 export const Bubble: FunctionComponent<Props> = ({

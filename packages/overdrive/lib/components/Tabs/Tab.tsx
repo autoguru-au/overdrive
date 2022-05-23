@@ -21,7 +21,7 @@ import { TabListContext } from './TabList';
 import { TabsContext } from './Tabs';
 
 export interface Props {
-	children: ReactNode;
+	children?: ReactNode;
 	id?: string;
 	is?: ElementType | ReactElement;
 	indication?: number;

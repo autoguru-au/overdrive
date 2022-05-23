@@ -10,7 +10,7 @@ export interface Props extends TextStyleProps {
 	className?: string;
 	is?: 'p' | 'span';
 	strong?: boolean;
-	children: ReactNode;
+	children?: ReactNode;
 	display?: Extract<
 		BoxStyleProps['display'],
 		'inline' | 'inlineBlock' | 'block'
