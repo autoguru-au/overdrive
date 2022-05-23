@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.3.5
+
+### Patch Changes
+
+-   5300772: Fixed type definitions
+
 ## 4.3.4
 
 ### Patch Changes
