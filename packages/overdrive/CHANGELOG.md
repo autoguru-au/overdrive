@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.3.6
+
+### Patch Changes
+
+-   200e67e: Inline: Gets width prop
+
 ## 4.3.5
 
 ### Patch Changes
