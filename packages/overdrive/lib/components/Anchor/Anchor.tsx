@@ -27,7 +27,7 @@ export interface Props {
 	className?: string;
 	is?: ElementType | ReactElement;
 	disabled?: boolean;
-	children: ReactNode;
+	children?: ReactNode;
 
 	icon?: IconType;
 }

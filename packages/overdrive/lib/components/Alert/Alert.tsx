@@ -24,7 +24,7 @@ type Intent = keyof Omit<
 >;
 
 export interface Props {
-	children: ReactNode;
+	children?: ReactNode;
 	className?: string;
 	intent?: Intent;
 	inline?: boolean;

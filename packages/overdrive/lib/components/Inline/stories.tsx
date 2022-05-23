@@ -31,6 +31,11 @@ export default {
 				type: 'select',
 			},
 		},
+		dividers: {
+			control: {
+				type: 'boolean',
+			},
+		},
 	},
 } as ComponentMeta<typeof Inline>;
 
@@ -100,3 +105,12 @@ export const differentSizeItems = DiffSizeTemplate.bind(
 	differentSizeItemsProps,
 );
 differentSizeItems.args = differentSizeItemsProps;
+
+const withFullWidthProps: ComponentProps<typeof Inline> = {
+	width: 'full',
+	alignX: 'spaceBetween',
+};
+export const withFullWidth = DiffSizeTemplate.bind(
+	withFullWidthProps,
+);
+withFullWidth.args = withFullWidthProps;

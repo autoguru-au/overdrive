@@ -28,7 +28,7 @@ export interface Props extends Omit<ComponentProps<typeof Box>, 'css'> {
 	noWrap?: boolean;
 	wrappingDirection?: keyof typeof styles.wrapping;
 	align?: keyof typeof styles.align;
-	children: ReactNode;
+	children?: ReactNode;
 }
 
 interface ColumnContextValue {

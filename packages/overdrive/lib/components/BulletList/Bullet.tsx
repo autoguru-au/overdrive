@@ -13,7 +13,7 @@ import { BulletList } from './BulletList';
 import { BulletListContext, bulletMap, BulletType } from './context';
 
 export interface Props {
-	children: ReactNode;
+	children?: ReactNode;
 	className?: string;
 }
 

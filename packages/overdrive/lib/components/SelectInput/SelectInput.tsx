@@ -10,7 +10,7 @@ import * as styles from './SelectInput.css';
 
 export const SelectInput = withEnhancedInput<
 	{
-		children: ReactNode[];
+		children?: ReactNode[];
 	},
 	HTMLSelectElement
 >(

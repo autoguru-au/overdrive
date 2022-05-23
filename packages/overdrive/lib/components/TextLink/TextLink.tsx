@@ -25,7 +25,7 @@ type AnchorProps = Omit<
 >;
 
 export interface Props extends TextProps, AnchorProps {
-	children: ReactNode;
+	children?: ReactNode;
 	className?: string;
 	is?: ElementType | ReactElement;
 	muted?: boolean;

@@ -15,7 +15,7 @@ export interface Props {
 	inputName: string;
 	inputType: string;
 	value: string;
-	children: ReactNode;
+	children?: ReactNode;
 
 	handleClick(event): void;
 

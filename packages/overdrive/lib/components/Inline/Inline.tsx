@@ -13,7 +13,7 @@ import type { BoxStyleProps } from '../Box';
 import { Box } from '../Box';
 import { Text } from '../Text';
 
-export interface Props extends Pick<BoxStyleProps, 'is'> {
+export interface Props extends Pick<BoxStyleProps, 'is' | 'width'> {
 	space?: ResponsiveProp<keyof Tokens['space']>;
 	alignY?: BoxStyleProps['alignItems'];
 	alignX?: BoxStyleProps['justifyContent'];
@@ -35,6 +35,7 @@ export const Inline: FunctionComponent<Props> = ({
 	alignX,
 	noWrap,
 	dividers,
+	width,
 }) => {
 	const negativeMarginLeft = useNegativeMarginLeft(space);
 	const negativeMarginTop = useNegativeMarginTop(space);
@@ -55,6 +56,7 @@ export const Inline: FunctionComponent<Props> = ({
 	return (
 		<Box
 			is={is}
+			width={width}
 			position="relative"
 			display="flex"
 			alignItems={alignY}

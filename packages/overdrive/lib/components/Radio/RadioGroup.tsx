@@ -13,7 +13,7 @@ export interface Props {
 	name: string;
 	className?: string;
 	value: string;
-	children: ReactNode;
+	children?: ReactNode;
 
 	onChange?(value: string): void;
 }
