@@ -8,6 +8,7 @@ import {
 	FunctionComponent,
 	isValidElement,
 	ReactElement,
+	ReactNode,
 } from 'react';
 
 import { useBoxStyles } from '../Box';
@@ -26,25 +27,26 @@ export interface Props {
 	className?: string;
 	is?: ElementType | ReactElement;
 	disabled?: boolean;
+	children: ReactNode;
 
 	icon?: IconType;
 }
 
 export const Anchor: FunctionComponent<Props> = ({
-	rel,
-	href,
-	target,
-	title,
+													 rel,
+													 href,
+													 target,
+													 title,
 
-	className = '',
+													 className = '',
 
-	is: Component = 'a',
-	disabled = false,
+													 is: Component = 'a',
+													 disabled = false,
 
-	children,
+													 children,
 
-	icon,
-}) => {
+													 icon,
+												 }) => {
 	const textStyles = useTextStyles({
 		colour: 'link',
 	});
@@ -67,9 +69,9 @@ export const Anchor: FunctionComponent<Props> = ({
 	};
 
 	const childs = (
-		<Inline space="2">
-			{icon && <Icon icon={icon} size="small" className={textStyles} />}
-			<Text fontWeight="bold" size="4" colour="link">
+		<Inline space='2'>
+			{icon && <Icon icon={icon} size='small' className={textStyles} />}
+			<Text fontWeight='bold' size='4' colour='link'>
 				{children}
 			</Text>
 		</Inline>

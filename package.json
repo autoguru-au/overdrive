@@ -31,6 +31,7 @@
     "useTabs": true
   },
   "resolutions": {
+    "@types/react": "^18.0.9",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "mini-css-extract-plugin": "^2.4.2"

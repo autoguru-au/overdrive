@@ -1,4 +1,4 @@
-import type { FunctionComponent } from 'react';
+import type { FunctionComponent, ReactNode } from 'react';
 import * as React from 'react';
 
 import type { BoxStyleProps } from '../Box';
@@ -10,26 +10,25 @@ export interface Props extends TextStyleProps {
 	className?: string;
 	is?: 'p' | 'span';
 	strong?: boolean;
-	display?: Extract<
-		BoxStyleProps['display'],
-		'inline' | 'inlineBlock' | 'block'
-	>;
+	children: ReactNode;
+	display?: Extract<BoxStyleProps['display'],
+		'inline' | 'inlineBlock' | 'block'>;
 }
 
 export const Text: FunctionComponent<Props> = ({
-	children,
-	className = '',
-	is: Component = 'span',
-	align = 'left',
-	colour,
-	display,
-	fontWeight = 'normal',
-	transform,
-	breakWord,
-	noWrap,
-	size = '4',
-	strong = false,
-}) => (
+												   children,
+												   className = '',
+												   is: Component = 'span',
+												   align = 'left',
+												   colour,
+												   display,
+												   fontWeight = 'normal',
+												   transform,
+												   breakWord,
+												   noWrap,
+												   size = '4',
+												   strong = false,
+											   }) => (
 	<Box
 		is={Component}
 		display={display}
