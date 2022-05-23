@@ -4,8 +4,7 @@ module.exports = {
 		builder: 'webpack5',
 	},
 	features: {
-		buildStoriesJson: true,
-		//storyStoreV7: true,
+		buildStoriesJson: true
 	},
 	stories: ['../packages/overdrive/lib/**/stories.*'],
 	addons: [
@@ -15,5 +14,3 @@ module.exports = {
 		'@storybook/addon-a11y',
 	],
 };
-
-//https://github.com/storybookjs/storybook/blob/f9f3256a3c823cea2a882542575d71e085120b13/lib/components/src/controls/types.ts
