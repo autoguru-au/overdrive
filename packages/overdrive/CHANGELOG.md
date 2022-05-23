@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.3.4
+
+### Patch Changes
+
+-   86f955b: Dependency upgrades
+
 ## 4.3.3
 
 ### Patch Changes
