@@ -79,7 +79,8 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 		ref,
 	) => {
 		const { isSingleIconChild, props: maybeIconProps } = useMemo(() => {
-			const maybeIcon =
+
+			const maybeIcon =// @ts-ignore
 				isValidElement(children) && children.type === Icon;
 			const maybeProps = children as ReactElement<
 				ComponentProps<typeof Icon>
