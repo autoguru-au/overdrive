@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import isChromatic from 'chromatic/isChromatic';
 import * as React from 'react';
 import { useRef } from 'react';
 
@@ -9,7 +10,6 @@ import { Text } from '../Text';
 import { EAlignment } from './alignment';
 
 import { Positioner } from '.';
-import isChromatic from 'chromatic/isChromatic';
 
 export default {
 	title: 'Utility/Positioner',
