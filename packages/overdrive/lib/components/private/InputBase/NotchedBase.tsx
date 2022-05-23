@@ -117,7 +117,6 @@ export const NotchedBase: FunctionComponent<Props> = ({
 					</div>
 					<div
 						className={clsx(
-							'chromatic-ignore',
 							styles.borders.trailing,
 							borderColourClassName,
 						)}
