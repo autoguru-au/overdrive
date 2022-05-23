@@ -1,13 +1,14 @@
 import { invariant } from '@autoguru/utilities';
 import type { FunctionComponent } from 'react';
 import * as React from 'react';
-import { createContext, useContext, useMemo } from 'react';
+import { createContext, ReactNode, useContext, useMemo } from 'react';
 
 import { Tokens } from '../../themes/tokens';
 
 export interface TableContext {
 	padding?: keyof Tokens['space'];
 	stickyHead?: boolean;
+	children?: ReactNode;
 }
 
 const tableContext = createContext<TableContext | null>(null);

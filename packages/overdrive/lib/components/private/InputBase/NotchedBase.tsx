@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import { FunctionComponent, useEffect, useRef, useState } from 'react';
+import { FunctionComponent, ReactNode, useEffect, useRef, useState } from 'react';
 
 import { Box } from '../../Box';
 import { useTextStyles } from '../../Text';
@@ -21,6 +21,7 @@ export interface Props {
 	placeholderColourClassName: string;
 	notch?: boolean;
 	className?: string;
+	children?: ReactNode;
 }
 
 export const NotchedBase: FunctionComponent<Props> = ({

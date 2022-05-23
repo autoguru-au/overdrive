@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ComponentProps, FunctionComponent, useEffect } from 'react';
+import { ComponentProps, FunctionComponent, ReactNode, useEffect } from 'react';
 
 import { isBrowser } from '../../utils';
 import { ThemeProvider } from '../ThemeProvider/ThemeProvider';
@@ -9,6 +9,7 @@ export interface Props extends ComponentProps<typeof ThemeProvider> {
 	// parent dom element of your components including portals.
 	// OD Portal component automatically adds theme class to the mounting node
 	noBodyLevelTheming: boolean;
+	children?: ReactNode;
 }
 
 export const OverdriveProvider: FunctionComponent<Props> = ({

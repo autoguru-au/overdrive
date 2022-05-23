@@ -1,6 +1,6 @@
 import type { FunctionComponent } from 'react';
 import * as React from 'react';
-import { createContext, useMemo } from 'react';
+import { createContext, ReactNode, useMemo } from 'react';
 
 import { useId, useUncontrolledState } from '../../utils';
 
@@ -15,6 +15,7 @@ export const TabsContext = createContext<TabsContextValue | null>(null);
 export interface Props {
 	id?: string | null;
 	active: number;
+	children?: ReactNode;
 	onChange?: (index: number) => void;
 }
 

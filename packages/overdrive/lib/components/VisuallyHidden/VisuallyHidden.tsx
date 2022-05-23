@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ComponentPropsWithoutRef, FunctionComponent } from 'react';
+import { ComponentPropsWithoutRef, FunctionComponent, ReactNode } from 'react';
 
 import { Box } from '../Box';
 
@@ -7,6 +7,7 @@ import * as styles from './VisuallyHidden.css';
 
 export interface Props {
 	is?: ComponentPropsWithoutRef<typeof Box>['is'];
+	children?: ReactNode;
 }
 
 export const VisuallyHidden: FunctionComponent<Props> = ({ children, is }) => (

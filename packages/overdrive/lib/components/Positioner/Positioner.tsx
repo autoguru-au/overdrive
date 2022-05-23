@@ -5,6 +5,7 @@ import * as React from 'react';
 import {
 	ComponentPropsWithoutRef,
 	FunctionComponent,
+	ReactNode,
 	RefObject,
 	useCallback,
 	useEffect,
@@ -48,6 +49,7 @@ export interface Props
 	isOpen?: boolean;
 	triggerRef: RefObject<HTMLElement>;
 	triggerOffset?: number;
+	children?: ReactNode;
 }
 
 export const Positioner: FunctionComponent<Props> = ({

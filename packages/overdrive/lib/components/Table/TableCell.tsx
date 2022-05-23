@@ -1,4 +1,4 @@
-import type { ReactChild } from 'react';
+import type { ReactNode } from 'react';
 import * as React from 'react';
 import { AriaAttributes, forwardRef } from 'react';
 
@@ -15,7 +15,7 @@ export interface Props extends Partial<Pick<AriaAttributes, 'aria-label'>> {
 	align?: Alignment;
 	padding?: keyof Tokens['space'];
 
-	children?: ReactChild | null;
+	children?: ReactNode | null;
 }
 
 export const TableCell = forwardRef<HTMLDivElement, Props>(
@@ -35,24 +35,24 @@ export const TableCell = forwardRef<HTMLDivElement, Props>(
 		return (
 			<Box
 				ref={ref}
-				role="gridcell"
-				scope="row"
-				display="flex"
-				alignItems="center"
+				role='gridcell'
+				scope='row'
+				display='flex'
+				alignItems='center'
 				justifyContent={alignmentToFlexAlignment(align)}
 				padding={padding}
-				borderColourBottom="light"
-				borderWidthBottom="1"
+				borderColourBottom='light'
+				borderWidthBottom='1'
 				aria-label={ariaLabel}
 				className={styles.root}>
 				{typeof children === 'string' ||
 				typeof children === 'number' ? (
 					<Text
-						is="span"
+						is='span'
 						align={align}
-						colour="dark"
-						display="block"
-						size="3">
+						colour='dark'
+						display='block'
+						size='3'>
 						{children}
 					</Text>
 				) : (

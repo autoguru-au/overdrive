@@ -2,15 +2,7 @@ import { ArrowLeftIcon, ArrowRightIcon } from '@autoguru/icons';
 import { invariant } from '@autoguru/utilities';
 import type { FunctionComponent } from 'react';
 import * as React from 'react';
-import {
-	Children,
-	createContext,
-	isValidElement,
-	useCallback,
-	useEffect,
-	useRef,
-	useState,
-} from 'react';
+import { Children, createContext, isValidElement, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 
 import { animate, ownerWindow, useEventCallback } from '../../utils';
@@ -24,6 +16,7 @@ import * as styles from './TabList.css';
 export interface Props {
 	stretch?: boolean;
 	scrollable?: boolean;
+	children?: ReactNode;
 }
 
 export const TabListContext = createContext<number | null>(null);

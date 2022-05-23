@@ -1,12 +1,5 @@
 import * as React from 'react';
-import {
-	Context,
-	createContext,
-	FunctionComponent,
-	useCallback,
-	useContext,
-	useMemo,
-} from 'react';
+import { Context, createContext, FunctionComponent, ReactNode, useCallback, useContext, useMemo } from 'react';
 
 import { WidthScale } from './types';
 
@@ -17,10 +10,13 @@ interface UrlParams {
 }
 
 interface ImageServerContext {
+	children?: ReactNode;
 	widthMap?: Record<WidthScale, number>;
+
 	getWidthValue?(width: WidthScale): number;
 
 	srcUrlMapper(params: UrlParams): string;
+
 	generateSrcSet(params: Omit<UrlParams, 'width'>): string;
 }
 

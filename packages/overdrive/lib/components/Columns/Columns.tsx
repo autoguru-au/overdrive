@@ -1,11 +1,8 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import { ComponentProps, createContext, forwardRef, useMemo } from 'react';
+import { ComponentProps, createContext, forwardRef, ReactNode, useMemo } from 'react';
 
-import {
-	useNegativeMarginLeft,
-	useNegativeMarginTop,
-} from '../../hooks/useNegativeMargin/useNegativeMargin';
+import { useNegativeMarginLeft, useNegativeMarginTop } from '../../hooks/useNegativeMargin/useNegativeMargin';
 import { Tokens } from '../../themes/tokens';
 import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
 import { ResponsiveProp } from '../../utils/responsiveProps.css';
@@ -22,6 +19,7 @@ export interface Props extends Omit<ComponentProps<typeof Box>, 'css'> {
 	noWrap?: boolean;
 	wrappingDirection?: keyof typeof styles.wrapping;
 	align?: keyof typeof styles.align;
+	children: ReactNode;
 }
 
 interface ColumnContextValue {

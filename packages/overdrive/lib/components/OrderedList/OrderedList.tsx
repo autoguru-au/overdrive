@@ -1,11 +1,6 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import {
-	createContext,
-	FunctionComponent,
-	OlHTMLAttributes,
-	useContext,
-} from 'react';
+import { createContext, FunctionComponent, OlHTMLAttributes, ReactNode, useContext } from 'react';
 
 import { Box } from '../Box';
 import { Stack } from '../Stack';
@@ -27,10 +22,12 @@ export interface Props
 	extends Pick<OlHTMLAttributes<HTMLOListElement>, 'start'> {
 	type?: ListStyleType;
 	className?: string;
+	children?: ReactNode;
 }
 
 export interface ItemProps {
 	className?: string;
+	children?: ReactNode;
 }
 
 const OrderedListContext = createContext(-1);

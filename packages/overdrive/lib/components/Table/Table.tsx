@@ -1,4 +1,4 @@
-import type { ReactChild } from 'react';
+import type { ReactNode } from 'react';
 import * as React from 'react';
 import { forwardRef } from 'react';
 
@@ -11,7 +11,7 @@ import { TableContextProvider } from './context';
 export interface Props extends Partial<TableContext> {
 	columnTemplate: string;
 
-	children: ReactChild | ReactChild[];
+	children: ReactNode | ReactNode[];
 }
 
 /*
@@ -25,8 +25,8 @@ export const Table = forwardRef<HTMLDivElement, Props>(
 		<TableContextProvider padding={padding} stickyHead={stickyHead}>
 			<Box
 				ref={ref}
-				role="grid"
-				width="full"
+				role='grid'
+				width='full'
 				style={{ gridTemplateColumns: columnTemplate }}
 				className={styles.root}>
 				{children}

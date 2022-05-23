@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import { FunctionComponent, useContext } from 'react';
+import { FunctionComponent, ReactNode, useContext } from 'react';
 
 import { Box } from '../Box';
 
@@ -9,6 +9,7 @@ import { BulletListContext, bulletMap } from './context';
 
 export interface Props {
 	className?: string;
+	children: ReactNode;
 }
 
 export const BulletList: FunctionComponent<Props> = ({

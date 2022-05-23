@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ComponentProps, FunctionComponent } from 'react';
+import { ComponentProps, FunctionComponent, ReactNode } from 'react';
 
 import { Tokens } from '../../themes/tokens';
 import { Box } from '../Box';
@@ -10,6 +10,7 @@ export interface Props
 	extends Omit<TextStyleProps, 'is'>,
 		Pick<ComponentProps<typeof Box>, 'id'> {
 	className?: string;
+	children: ReactNode;
 	is?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 	colour?: Exclude<keyof Tokens['typography']['colour'], 'muted'>;
 }

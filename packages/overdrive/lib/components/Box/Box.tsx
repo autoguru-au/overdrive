@@ -1,17 +1,17 @@
 import clsx from 'clsx';
 import type { AllHTMLAttributes } from 'react';
 import * as React from 'react';
-import { forwardRef } from 'react';
+import { forwardRef, ReactNode } from 'react';
 
 import type { BoxStyleProps } from './useBoxStyles';
 import { useBoxStyles } from './useBoxStyles';
 
 export interface Props
 	extends BoxStyleProps,
-		Omit<
-			AllHTMLAttributes<HTMLElement>,
-			'width' | 'height' | 'className' | 'is'
-		> {}
+		Omit<AllHTMLAttributes<HTMLElement>,
+			'width' | 'height' | 'className' | 'is'> {
+	children?: ReactNode;
+}
 
 /**
  * Box is a general purpose container with no specific semantics.

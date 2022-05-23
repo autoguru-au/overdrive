@@ -4,7 +4,7 @@ import {
 	ComponentProps,
 	createContext,
 	FunctionComponent,
-	ReactChild,
+	ReactNode,
 	Reducer,
 	useCallback,
 	useContext,
@@ -20,7 +20,7 @@ import { Stack } from '../Stack';
 
 import * as styles from './Toast.css';
 
-type MessageType = ReactChild;
+type MessageType = ReactNode;
 type AlertIntent = Required<ComponentProps<typeof Alert>>['intent'];
 
 interface MessageConfig {

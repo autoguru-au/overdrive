@@ -1,7 +1,7 @@
 import { invariant } from '@autoguru/utilities';
 import { ThemeVars } from '@vanilla-extract/css/dist/declarations/src/types';
 import * as React from 'react';
-import { createContext, FunctionComponent, useContext, useMemo } from 'react';
+import { createContext, FunctionComponent, ReactNode, useContext, useMemo } from 'react';
 
 import { makeRuntimeTokens, RuntimeTokens } from '../../themes/makeTheme';
 import { BreakPoints, Tokens } from '../../themes/tokens';
@@ -14,6 +14,7 @@ const themeContext = createContext<ThemeContextType | null>(null);
 const runtimeTokensContext = createContext<RuntimeTokens | null>(null);
 
 export interface Props {
+	children?: ReactNode;
 	vars: ThemeVars<Tokens>;
 	themeClass: string;
 	tokens: Tokens;

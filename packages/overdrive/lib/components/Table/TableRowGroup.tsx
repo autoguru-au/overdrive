@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { forwardRef, ReactChild } from 'react';
+import { forwardRef, ReactNode } from 'react';
 
 import { Box } from '../Box';
 
 export interface Props {
-	children: ReactChild | ReactChild[];
+	children: ReactNode | ReactNode[];
 }
 
 export const TableRowGroup = forwardRef<HTMLDivElement, Props>(

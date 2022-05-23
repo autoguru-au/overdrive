@@ -1,10 +1,6 @@
-import type {
-	ComponentProps,
-	FunctionComponent,
-	MouseEventHandler,
-} from 'react';
+import type { ComponentProps, FunctionComponent, MouseEventHandler } from 'react';
 import * as React from 'react';
-import { useLayoutEffect, useRef } from 'react';
+import { ReactNode, useLayoutEffect, useRef } from 'react';
 
 import { useEventCallback, useId } from '../../utils';
 import { Box } from '../Box';
@@ -14,6 +10,7 @@ import * as styles from './MinimalModal.css';
 
 export interface Props extends ComponentProps<typeof Modal> {
 	className?: string;
+	children: ReactNode;
 }
 
 export const MinimalModal: FunctionComponent<Props> = ({

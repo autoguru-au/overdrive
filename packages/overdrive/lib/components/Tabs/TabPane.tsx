@@ -1,7 +1,7 @@
 import { invariant } from '@autoguru/utilities';
 import type { FunctionComponent } from 'react';
 import * as React from 'react';
-import { useContext } from 'react';
+import { ReactNode, useContext } from 'react';
 
 import { Box } from '../Box';
 
@@ -9,10 +9,13 @@ import * as styles from './TabPane.css';
 import { TabPanesContext } from './TabPanes';
 import { TabsContext } from './Tabs';
 
-export const TabPane: FunctionComponent<{ id?: string }> = ({
-	children,
-	id: incomingId = null,
-}) => {
+export const TabPane: FunctionComponent<{
+	id?: string;
+	children?: ReactNode;
+}> = ({
+		  children,
+		  id: incomingId = null,
+	  }) => {
 	const tabPanesContext = useContext(TabPanesContext);
 	const tabsContext = useContext(TabsContext);
 

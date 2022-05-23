@@ -11,6 +11,7 @@ import * as styles from './BulletText.css';
 export interface Props extends Partial<Pick<BoxStyleProps, 'is'>> {
 	bullet?: ReactNode;
 	variant?: 'primary' | 'secondary';
+	children: ReactNode;
 }
 
 export const BulletText: FunctionComponent<Props> = ({

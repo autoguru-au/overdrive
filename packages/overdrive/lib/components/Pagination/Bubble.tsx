@@ -1,10 +1,7 @@
 import clsx from 'clsx';
-import type {
-	ComponentProps,
-	FunctionComponent,
-	MouseEventHandler,
-} from 'react';
+import type { ComponentProps, FunctionComponent, MouseEventHandler } from 'react';
 import * as React from 'react';
+import { ReactNode } from 'react';
 
 import { Box } from '../Box';
 import { useTextStyles } from '../Text';
@@ -17,6 +14,7 @@ export interface Props {
 	gap?: boolean;
 	onClick?: MouseEventHandler<HTMLButtonElement>;
 	className?: string;
+	children: ReactNode;
 }
 
 export const Bubble: FunctionComponent<Props> = ({

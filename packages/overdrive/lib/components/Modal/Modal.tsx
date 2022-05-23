@@ -1,7 +1,7 @@
 import { warning } from '@autoguru/utilities';
 import type { ComponentType, FunctionComponent, Reducer } from 'react';
 import * as React from 'react';
-import { useEffect, useReducer } from 'react';
+import { ReactNode, useEffect, useReducer } from 'react';
 import FocusLock from 'react-focus-lock';
 
 import { useEventCallback } from '../../utils';
@@ -13,6 +13,7 @@ import * as styles from './Modal.css';
 export interface Props {
 	isOpen: boolean;
 	hideBackdrop?: boolean;
+	children?: ReactNode;
 
 	onRequestClose?(e: 'backdrop' | 'escapeKeyDown' | string): void;
 }
