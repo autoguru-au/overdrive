@@ -30,8 +30,9 @@
 		"access": "public"
 	},
 	"scripts": {
-		"typecheck": "tsc",
-		"build": "babel lib --out-dir dist --extensions '.ts,.tsx, .css' && tsc",
+		"typeCheck": "tsc",
+		"typeEmit": "tsc -d --declarationDir dist",
+		"build": "babel lib --out-dir dist --extensions '.ts,.tsx, .css' && yarn run typeEmit",
 		"prepublishOnly": "yarn run build",
 		"watch": "tsc --watch"
 	},
