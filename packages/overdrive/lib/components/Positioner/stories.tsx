@@ -9,13 +9,12 @@ import { Text } from '../Text';
 import { EAlignment } from './alignment';
 
 import { Positioner } from '.';
+import isChromatic from 'chromatic/isChromatic';
 
 export default {
 	title: 'Utility/Positioner',
 	component: Positioner,
-	parameters: {
-		chromatic: { disable: false },
-	},
+	parameters: { chromatic: { delay: 900 } },
 	argTypes: {
 		alignment: {
 			options: EAlignment,
@@ -52,7 +51,7 @@ const Template: ComponentStory<typeof Positioner> = (args) => {
 					padding="2">
 					<Text is="p">
 						Hello im from the consumer:{' '}
-						{Math.ceil(Math.random() * 100)}
+						{isChromatic()?'999':Math.ceil(Math.random() * 100)}
 					</Text>
 				</Box>
 			</Positioner>

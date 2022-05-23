@@ -30,7 +30,7 @@ const todayStr: string = formatDate(
 export default {
 	title: 'Components/Inputs/Date',
 	component: DateInput,
-	parameters: { chromatic: { delay: 300 } },
+	parameters: { chromatic: { delay: 900 } },
 } as ComponentMeta<typeof DateInput>;
 
 const iconOptions = {

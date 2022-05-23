@@ -96,6 +96,7 @@ export default {
 			},
 		},
 	},
+	parameters: { chromatic: { delay: 900 } },
 } as ComponentMeta<typeof AutoSuggest>;
 
 const Template: ComponentStory<typeof AutoSuggest> = (args) => (
