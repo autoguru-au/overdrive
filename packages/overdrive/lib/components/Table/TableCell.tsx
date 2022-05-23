@@ -35,24 +35,24 @@ export const TableCell = forwardRef<HTMLDivElement, Props>(
 		return (
 			<Box
 				ref={ref}
-				role='gridcell'
-				scope='row'
-				display='flex'
-				alignItems='center'
+				role="gridcell"
+				scope="row"
+				display="flex"
+				alignItems="center"
 				justifyContent={alignmentToFlexAlignment(align)}
 				padding={padding}
-				borderColourBottom='light'
-				borderWidthBottom='1'
+				borderColourBottom="light"
+				borderWidthBottom="1"
 				aria-label={ariaLabel}
 				className={styles.root}>
 				{typeof children === 'string' ||
 				typeof children === 'number' ? (
 					<Text
-						is='span'
+						is="span"
 						align={align}
-						colour='dark'
-						display='block'
-						size='3'>
+						colour="dark"
+						display="block"
+						size="3">
 						{children}
 					</Text>
 				) : (

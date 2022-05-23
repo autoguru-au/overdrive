@@ -12,10 +12,7 @@ import { TabsContext } from './Tabs';
 export const TabPane: FunctionComponent<{
 	id?: string;
 	children?: ReactNode;
-}> = ({
-		  children,
-		  id: incomingId = null,
-	  }) => {
+}> = ({ children, id: incomingId = null }) => {
 	const tabPanesContext = useContext(TabPanesContext);
 	const tabsContext = useContext(TabsContext);
 

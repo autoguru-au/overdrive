@@ -51,7 +51,7 @@ const Template: ComponentStory<typeof Positioner> = (args) => {
 					padding="2">
 					<Text is="p">
 						Hello im from the consumer:{' '}
-						{isChromatic()?'999':Math.ceil(Math.random() * 100)}
+						{isChromatic() ? '999' : Math.ceil(Math.random() * 100)}
 					</Text>
 				</Box>
 			</Positioner>

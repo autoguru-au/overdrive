@@ -3,7 +3,10 @@ import * as React from 'react';
 import { Children, isValidElement, ReactNode } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 
-import { useNegativeMarginLeft, useNegativeMarginTop } from '../../hooks/useNegativeMargin/useNegativeMargin';
+import {
+	useNegativeMarginLeft,
+	useNegativeMarginTop,
+} from '../../hooks/useNegativeMargin/useNegativeMargin';
 import { Tokens } from '../../themes/tokens';
 import { ResponsiveProp } from '../../utils/responsiveProps.css';
 import type { BoxStyleProps } from '../Box';
@@ -25,14 +28,14 @@ const supportedListTypes: ReadonlyArray<keyof JSX.IntrinsicElements> = [
 ] as const;
 
 export const Inline: FunctionComponent<Props> = ({
-													 is = 'div',
-													 children,
-													 space = '2',
-													 alignY = 'center',
-													 alignX,
-													 noWrap,
-													 dividers,
-												 }) => {
+	is = 'div',
+	children,
+	space = '2',
+	alignY = 'center',
+	alignX,
+	noWrap,
+	dividers,
+}) => {
 	const negativeMarginLeft = useNegativeMarginLeft(space);
 	const negativeMarginTop = useNegativeMarginTop(space);
 
@@ -52,20 +55,20 @@ export const Inline: FunctionComponent<Props> = ({
 	return (
 		<Box
 			is={is}
-			position='relative'
-			display='flex'
+			position="relative"
+			display="flex"
 			alignItems={alignY}
 			justifyContent={alignX}
-			flexDirection='row'
+			flexDirection="row"
 			flexWrap={noWrap ? 'nowrap' : 'wrap'}
 			className={[negativeMarginTop, !dividers && negativeMarginLeft]}>
 			{Children.map(items, (child, idx) =>
 				child !== null && child !== undefined ? (
 					<Box
 						is={listItem}
-						display='flex'
-						flexDirection='row'
-						flexWrap='nowrap'
+						display="flex"
+						flexDirection="row"
+						flexWrap="nowrap"
 						alignItems={alignY}
 						paddingTop={space}
 						paddingLeft={dividers ? undefined : space}>

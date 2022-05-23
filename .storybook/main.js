@@ -4,7 +4,7 @@ module.exports = {
 		builder: 'webpack5',
 	},
 	features: {
-		buildStoriesJson: true
+		buildStoriesJson: true,
 	},
 	stories: ['../packages/overdrive/lib/**/stories.*'],
 	addons: [

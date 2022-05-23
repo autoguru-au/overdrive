@@ -1,5 +1,13 @@
 import * as React from 'react';
-import { Context, createContext, FunctionComponent, ReactNode, useCallback, useContext, useMemo } from 'react';
+import {
+	Context,
+	createContext,
+	FunctionComponent,
+	ReactNode,
+	useCallback,
+	useContext,
+	useMemo,
+} from 'react';
 
 import { WidthScale } from './types';
 

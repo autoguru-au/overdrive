@@ -1,6 +1,12 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import { FunctionComponent, ReactNode, useEffect, useRef, useState } from 'react';
+import {
+	FunctionComponent,
+	ReactNode,
+	useEffect,
+	useRef,
+	useState,
+} from 'react';
 
 import { Box } from '../../Box';
 import { useTextStyles } from '../../Text';

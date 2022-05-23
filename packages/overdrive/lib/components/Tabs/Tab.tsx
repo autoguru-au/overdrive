@@ -92,15 +92,15 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 		};
 
 		const child = (
-			<Inline noWrap space='2' alignY='center' alignX='center'>
+			<Inline noWrap space="2" alignY="center" alignX="center">
 				<span className={styles.item}>{children}</span>
 				{typeof indication === 'number' && (
 					<Text
 						strong
-						is='span'
-						size='2'
-						align='center'
-						display='block'
+						is="span"
+						size="2"
+						align="center"
+						display="block"
 						colour={isActive ? 'white' : 'dark'}
 						className={clsx(
 							styles.indication.default,

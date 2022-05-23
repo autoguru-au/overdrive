@@ -1,5 +1,9 @@
 import clsx from 'clsx';
-import type { ComponentProps, FunctionComponent, MouseEventHandler } from 'react';
+import type {
+	ComponentProps,
+	FunctionComponent,
+	MouseEventHandler,
+} from 'react';
 import * as React from 'react';
 import { ReactNode } from 'react';
 

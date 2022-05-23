@@ -11,24 +11,26 @@ export interface Props extends TextStyleProps {
 	is?: 'p' | 'span';
 	strong?: boolean;
 	children: ReactNode;
-	display?: Extract<BoxStyleProps['display'],
-		'inline' | 'inlineBlock' | 'block'>;
+	display?: Extract<
+		BoxStyleProps['display'],
+		'inline' | 'inlineBlock' | 'block'
+	>;
 }
 
 export const Text: FunctionComponent<Props> = ({
-												   children,
-												   className = '',
-												   is: Component = 'span',
-												   align = 'left',
-												   colour,
-												   display,
-												   fontWeight = 'normal',
-												   transform,
-												   breakWord,
-												   noWrap,
-												   size = '4',
-												   strong = false,
-											   }) => (
+	children,
+	className = '',
+	is: Component = 'span',
+	align = 'left',
+	colour,
+	display,
+	fontWeight = 'normal',
+	transform,
+	breakWord,
+	noWrap,
+	size = '4',
+	strong = false,
+}) => (
 	<Box
 		is={Component}
 		display={display}
