@@ -12,7 +12,7 @@ exports[`<NumberInput /> should have some hintText 1`] = `
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid3"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid3 withEnhancedInput_types_inputItself_rest__bd4oid7"
         id="id"
         type="number"
         value=""
@@ -60,7 +60,7 @@ exports[`<NumberInput /> should match snapshot 1`] = `
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid3"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid3 withEnhancedInput_types_inputItself_rest__bd4oid7"
         id="id"
         type="number"
         value=""
@@ -103,7 +103,7 @@ exports[`<NumberInput /> should match snapshot when active 1`] = `
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid3"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid3 withEnhancedInput_types_inputItself_rest__bd4oid7"
         type="number"
         value=""
       />
@@ -144,7 +144,7 @@ exports[`<NumberInput /> should match snapshot when loading 1`] = `
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid3"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid3 withEnhancedInput_types_inputItself_rest__bd4oid7"
         id="id"
         type="number"
         value=""
@@ -187,7 +187,7 @@ exports[`<NumberInput /> should match snapshot when touched 1`] = `
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid3"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid3 withEnhancedInput_types_inputItself_rest__bd4oid7"
         type="number"
         value=""
       />
@@ -228,7 +228,7 @@ exports[`<NumberInput /> should match snapshot when touched and invalid 1`] = `
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid3"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid3 withEnhancedInput_types_inputItself_rest__bd4oid7"
         type="number"
         value=""
       />
@@ -269,7 +269,7 @@ exports[`<NumberInput /> should match snapshot when touched and valid 1`] = `
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid3"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid3 withEnhancedInput_types_inputItself_rest__bd4oid7"
         type="number"
         value=""
       />
@@ -338,7 +338,7 @@ exports[`<NumberInput /> should match snapshot with both icons 1`] = `
       </i>
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid3 withEnhancedInput_input_itself_prefixed__bd4oid4 withEnhancedInput_input_itself_suffixed__bd4oid5"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid3 withEnhancedInput_types_inputItself_rest__bd4oid7 withEnhancedInput_input_itself_prefixed__bd4oid4 withEnhancedInput_input_itself_suffixed__bd4oid5"
         type="number"
         value=""
       />
@@ -393,7 +393,7 @@ exports[`<NumberInput /> should match snapshot with prefix icon 1`] = `
       </i>
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid3 withEnhancedInput_input_itself_prefixed__bd4oid4"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid3 withEnhancedInput_types_inputItself_rest__bd4oid7 withEnhancedInput_input_itself_prefixed__bd4oid4"
         type="number"
         value=""
       />
@@ -448,7 +448,7 @@ exports[`<NumberInput /> should match snapshot with suffix icon 1`] = `
       </i>
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid3 withEnhancedInput_input_itself_suffixed__bd4oid5"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid3 withEnhancedInput_types_inputItself_rest__bd4oid7 withEnhancedInput_input_itself_suffixed__bd4oid5"
         type="number"
         value=""
       />

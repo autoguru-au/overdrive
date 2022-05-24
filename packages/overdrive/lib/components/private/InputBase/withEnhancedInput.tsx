@@ -185,8 +185,9 @@ export const withEnhancedInput = <
 					position: 'relative',
 					display: 'flex',
 				}),
-				styles.types[primitiveType!],
 				styles.input.itself.root,
+				styles.types.inputItself[primitiveType!] ||
+				styles.types.inputItself.rest,
 				{
 					[styles.input.itself.prefixed]: Boolean(prefixIcon),
 					[styles.input.itself.suffixed]: Boolean(
@@ -280,11 +281,16 @@ export const withEnhancedInput = <
 							[derivedColours.colour]: !isEmpty,
 						})}
 						borderColourClassName={derivedColours.borderColour}>
-						<Box ref={wrapperRef} width="full" height="full">
+						<Box ref={wrapperRef}
+							 width='full'
+							 height='full'
+							 className={
+								 styles.types.inputWrapper[primitiveType!]
+							 }>
 							{prefixIcon ? (
 								<Icon
 									icon={prefixIcon}
-									size="medium"
+									size='medium'
 									className={clsx(
 										iconStyles,
 										styles.icon.prefix,

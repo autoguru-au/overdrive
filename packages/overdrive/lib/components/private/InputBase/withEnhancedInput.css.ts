@@ -24,7 +24,6 @@ export const input = {
 			fontSize: vars.typography.size['4'].fontSize,
 			lineHeight: vars.typography.size['4'].lineHeight,
 			height: vars.space['8'],
-			padding: `calc(((${vars.space['8']} - ${vars.typography.size['4'].fontSize}) / 2) - 3px) calc(${vars.space['4']} - 1px)`,
 			selectors: {
 				'&[disabled]': {
 					color: vars.typography.colour.muted,
@@ -49,11 +48,22 @@ export const input = {
 
 const textAreaHeight = '107px';
 
-export const types = styleVariants({
-	textarea: {
-		height: textAreaHeight,
-		minHeight: textAreaHeight,
-		lineHeight: 1.2,
-		resize: 'vertical',
-	},
-});
+export const types = {
+	inputItself: styleVariants({
+		textarea: {
+			height: textAreaHeight,
+			minHeight: textAreaHeight,
+			lineHeight: 1.2,
+			resize: 'vertical',
+			padding: `${vars.space['1']} ${vars.space['3']}  ${vars.space['3']}`,
+		},
+		rest: {
+			padding: `calc(((${vars.space['8']} - ${vars.typography.size['4'].fontSize}) / 2) - 3px) calc(${vars.space['4']} - 1px)`,
+		}
+	}),
+	inputWrapper: styleVariants({
+		textarea: {
+			paddingTop: `${vars.space['2']}`,
+		},
+	}),
+};
