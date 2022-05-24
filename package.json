@@ -57,7 +57,7 @@
 		"@babel/runtime-corejs3": "7.13.10",
 		"@changesets/cli": "2.16.0",
 		"@manypkg/cli": "0.18.0",
-		"@octokit/rest": "18.5.5",
+		"@octokit/rest": "18.12.0",
 		"@storybook/addon-a11y": "^6.5.4",
 		"@storybook/addon-actions": "^6.5.4",
 		"@storybook/addon-essentials": "^6.5.4",
