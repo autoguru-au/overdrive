@@ -188,6 +188,7 @@ export const withEnhancedInput = <
 					position: 'relative',
 					display: 'flex',
 				}),
+				styles.input.itself.root,
 				styles.types[primitiveType!],
 				styles.size[size].root,
 				{
