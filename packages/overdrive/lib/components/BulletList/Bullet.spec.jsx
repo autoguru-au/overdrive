@@ -3,6 +3,7 @@ import * as React from 'react';
 
 import { Bullet } from './Bullet';
 import { BulletList } from './BulletList';
+import * as styles from './Bullet.css';
 
 describe('<Bullet />', () => {
 	it('should not throw', () => {
@@ -13,13 +14,13 @@ describe('<Bullet />', () => {
 		expect(render(<Bullet />).container.firstChild).toMatchSnapshot();
 	});
 
-	it.skip('should pass down className', () => {
+	it('should pass down className', () => {
 		expect(
 			render(<Bullet className="test-class" />).container.firstChild,
 		).toHaveClass('test-class');
 	});
 
-	it.skip('should render a dot when child is <BulletList />', () => {
+	it('should render a dot when child is <BulletList />', () => {
 		const { container } = render(
 			<Bullet>
 				<BulletList>
@@ -28,12 +29,12 @@ describe('<Bullet />', () => {
 			</Bullet>,
 		);
 
-		expect(container.firstChild).toHaveClass('noDot');
+		expect(container.firstChild).toHaveClass(styles.noDot);
 	});
 
-	it.skip('should not render a dot when child is not <BulletList />', () => {
+	it('should not render a dot when child is not <BulletList />', () => {
 		const { container } = render(<Bullet>test</Bullet>);
 
-		expect(container.firstChild).not.toHaveClass('noDot');
+		expect(container.firstChild).not.toHaveClass(styles.noDot);
 	});
 });

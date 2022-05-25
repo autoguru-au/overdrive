@@ -16,13 +16,6 @@ describe('<BulletText />', () => {
 	it('should not throw', () =>
 		expect(() => render(<BulletText />)).not.toThrow());
 
-	it.skip('should pass on className to dom element', () => {
-		expect(
-			render(<BulletText className="bullet-class" />).container
-				.firstChild,
-		).toHaveClass('bullet-class');
-	});
-
 	it('should match snapshot for default bullet text', () => {
 		expect(
 			render(<BulletText>Hello World!</BulletText>).container.firstChild,

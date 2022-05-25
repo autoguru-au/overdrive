@@ -3,6 +3,7 @@ import * as React from 'react';
 
 import { BulletList } from './BulletList';
 import { BulletListContext } from './context';
+import * as styles from './BulletList.css';
 
 describe('<BulletList />', () => {
 	it('should not throw', () => {
@@ -13,13 +14,13 @@ describe('<BulletList />', () => {
 		expect(render(<BulletList />).container.firstChild).toMatchSnapshot();
 	});
 
-	it.skip('should pass down className', () => {
+	it('should pass down className', () => {
 		expect(
 			render(<BulletList className="test-class" />).container.firstChild,
 		).toHaveClass('test-class');
 	});
 
-	it.skip('should have the firstOccurrence class for the first and only first nested ul', () => {
+	it('should have the firstOccurrence class for the first and only first nested ul', () => {
 		const { container } = render(
 			<BulletList>
 				<BulletList>
@@ -28,7 +29,7 @@ describe('<BulletList />', () => {
 			</BulletList>,
 		);
 
-		expect(container.querySelectorAll('.firstOccurrence').length).toBe(1);
+		expect(container.querySelectorAll(`.${styles.firstOccurrence}`).length).toBe(1);
 	});
 
 	it('should pass the correct nest value', () => {
