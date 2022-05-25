@@ -13,4 +13,5 @@ module.exports = {
 		resolve('./.storybook/vanilla-extract'),
 		'@storybook/addon-a11y',
 	],
+	reactOptions: { legacyRootApi: false },
 };
