@@ -36,10 +36,9 @@ export const Badge: FunctionComponent<Props> = ({
 	);
 
 	return (
-		<Box display="flex">
+		<Box className={className} display="flex">
 			<Box
 				className={[
-					className,
 					styles.labelSize[size],
 					inverted
 						? styles.colours.inverted[colour].background

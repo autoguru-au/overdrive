@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
 
+import * as styles from './Badge.css';
 import { Badge } from './Badge';
 
 describe('<Badge />', () => {
@@ -20,38 +21,39 @@ describe('<Badge />', () => {
 		expect(container).toHaveTextContent('Hello World!');
 	});
 
-	it.skip('should pass on className to dom element', () => {
+	it('should pass on className to dom element', () => {
 		const { container } = render(
 			<Badge className="badge-class" label="Hello World!" />,
 		);
-		expect(container.querySelector('span')).toHaveClass('badge-class');
+		expect(container.firstChild).toHaveClass('badge-class');
 	});
 
-	it.skip('should apply green colour style', () => {
+	it('should apply green colour style', () => {
 		const { container } = render(
 			<Badge colour="green" label="Hello World!" />,
 		);
-		expect(container.querySelector('span')).toHaveClass('green');
+		expect(container.firstChild.firstChild).toHaveClass(styles.colours.default.green);
 	});
 
-	it.skip('should apply red colour style', () => {
+	it('should apply red colour style', () => {
 		const { container } = render(
 			<Badge colour="red" label="Hello World!" />,
 		);
-		expect(container.querySelector('span')).toHaveClass('red');
+		expect(container.firstChild.firstChild).toHaveClass(styles.colours.default.red);
 	});
 
-	it.skip('should apply inverted style when inverted look is set', () => {
+	it('should apply inverted style when inverted look is set', () => {
 		const { container } = render(
 			<Badge look="inverted" colour="neutral" label="Hello World!" />,
 		);
-		expect(container.querySelector('span')).toHaveClass('invert');
+		expect(container.firstChild.firstChild).toHaveClass(styles.colours.inverted.neutral.background);
+		expect(container.querySelector('span')).toHaveClass(styles.colours.inverted.neutral.text);
 	});
 
-	it.skip('should apply minimal style when minimal look is set', () => {
+	it('should apply minimal style when minimal look is set', () => {
 		const { container } = render(
-			<Badge look="minimal" colour="neutral" label="Hello World!" />,
+			<Badge look="standard" colour="neutral" label="Hello World!" />,
 		);
-		expect(container.querySelector('span')).toHaveClass('minimal');
+		expect(container.firstChild.firstChild).toHaveClass(styles.colours.default.neutral);
 	});
 });

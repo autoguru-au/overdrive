@@ -36,7 +36,7 @@ describe('<Anchor />', () => {
 		expect(container.querySelector('a')).toBeTruthy();
 	});
 
-	it.skip('should pass on className', () => {
+	it('should pass on className', () => {
 		expect(
 			render(<Anchor className="test" />).container.firstChild,
 		).toHaveClass('test');
