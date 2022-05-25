@@ -18,7 +18,7 @@ const renderRadioGroup = (value = null, onChange=null) => {
 };
 describe('<RadioButton />', () => {
 	describe('when not nested in a RadioGroup', () => {
-		it.skip('should throw if a RadioButton element is not nested inside a RadioGroup', () => {
+		it('should throw if a RadioButton element is not nested inside a RadioGroup', () => {
 			expect(() => render(<Radio value="1" />)).toThrow();
 		});
 	});
