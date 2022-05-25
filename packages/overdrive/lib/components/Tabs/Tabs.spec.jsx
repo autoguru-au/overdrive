@@ -1,5 +1,4 @@
 import { fireEvent, render } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import * as React from 'react';
 import { useState } from 'react';
 
@@ -106,7 +105,7 @@ describe('<Tabs />', () => {
 		expect(tab1.getAttribute('aria-selected')).toBe('true');
 		expect(visiblePanes[0]).toHaveTextContent(tabData[0].content);
 
-		userEvent.click(tab2);
+		fireEvent.click(tab2);
 
 		visiblePanes = getAllByRole('tabpanel');
 
@@ -114,7 +113,7 @@ describe('<Tabs />', () => {
 		expect(tab2.getAttribute('aria-selected')).toBe('true');
 		expect(visiblePanes[0]).toHaveTextContent(tabData[1].content);
 
-		userEvent.click(tab1);
+		fireEvent.click(tab1);
 
 		visiblePanes = getAllByRole('tabpanel');
 
@@ -160,12 +159,12 @@ describe('<Tabs />', () => {
 
 		let checkbox = getByTestId('checkbox-testCase-1');
 
-		userEvent.click(checkbox);
+		fireEvent.click(checkbox);
 
 		expect(checkbox).toBeChecked();
 
-		userEvent.click(tab2);
-		userEvent.click(tab1);
+		fireEvent.click(tab2);
+		fireEvent.click(tab1);
 
 		checkbox = getByTestId('checkbox-testCase-1');
 
