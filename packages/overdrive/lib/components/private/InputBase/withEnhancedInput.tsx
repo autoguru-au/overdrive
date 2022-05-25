@@ -26,6 +26,7 @@ import { HintText } from './HintText';
 import * as inputStateStyles from './InputState.css';
 import { NotchedBase } from './NotchedBase';
 import * as styles from './withEnhancedInput.css';
+import { inputWrapperSize } from './withEnhancedInput.css';
 
 // The event handlers we'll allow the wrapped component to bind too
 export interface EventHandlers<PrimitiveElementType> {
@@ -52,7 +53,7 @@ export interface EnhanceInputPrimitiveProps extends AriaAttributes {
 	disabled?: boolean;
 	notch?: boolean;
 	reserveHintSpace?: boolean;
-	size?: keyof typeof styles.size;
+	size?: keyof typeof styles.inputItselfSize;
 	fieldIcon?: IconType;
 	prefixIcon?: IconType;
 	suffixIcon?: IconType;
@@ -77,7 +78,7 @@ export type EnhanceInputProps<
 
 // The final props we send into thw wrapping component
 export type WrappedComponentProps<IncomingProps, PrimitiveElementType> = {
-	size: keyof typeof styles.size;
+	size: keyof typeof styles.inputItselfSize;
 	validation: ValidationProps;
 	eventHandlers: EventHandlers<PrimitiveElementType>;
 	field: Omit<
@@ -190,12 +191,21 @@ export const withEnhancedInput = <
 				}),
 				styles.input.itself.root,
 				styles.types[primitiveType!],
-				styles.size[size].root,
+				styles.inputItselfSize[size].root.any,
+				styles.inputItselfSize[size].root[primitiveType],
 				{
-					[styles.size[size].prefixed]: Boolean(prefixIcon),
-					[styles.size[size].suffixed]: Boolean(
+					[styles.inputItselfSize[size].prefixed.any]: Boolean(
+						prefixIcon,
+					),
+					[styles.inputItselfSize[size].prefixed[
+						primitiveType
+					]]: Boolean(prefixIcon),
+					[styles.inputItselfSize[size].suffixed.any]: Boolean(
 						suffixIcon || isLoading,
 					),
+					[styles.inputItselfSize[size].suffixed[
+						primitiveType
+					]]: Boolean(suffixIcon || isLoading),
 				},
 			);
 
@@ -286,7 +296,15 @@ export const withEnhancedInput = <
 							[derivedColours.colour]: !isEmpty,
 						})}
 						borderColourClassName={derivedColours.borderColour}>
-						<Box ref={wrapperRef} width="full" height="full">
+						<Box
+							ref={wrapperRef}
+							className={
+								styles.inputWrapperSize[size].root[
+									primitiveType
+								]
+							}
+							width="full"
+							height="full">
 							{prefixIcon ? (
 								<Icon
 									icon={prefixIcon}

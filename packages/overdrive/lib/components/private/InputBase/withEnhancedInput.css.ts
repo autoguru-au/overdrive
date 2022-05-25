@@ -37,31 +37,72 @@ export const types = styleVariants({
 	},
 });
 
-export const size = {
-	small: styleVariants({
-		root: {
-			padding: `${vars.space['2']} ${vars.space['2']}`,
-		},
-		prefixed: {
-			paddingLeft: `calc(${vars.space['2']} + ${vars.space['5']} + ${vars.space['2']})`,
-		},
-		suffixed: {
-			paddingRight: `calc(${vars.space['2']} + ${vars.space['5']} + ${vars.space['2']})`,
-		},
-	}),
-	medium: styleVariants({
-		root: {
-			lineHeight: vars.typography.size['4'].lineHeight,
-			height: vars.space['8'],
-			padding: `calc(((${vars.space['8']} - ${vars.typography.size['4'].fontSize}) / 2) - 3px) calc(${vars.space['4']} - 1px)`,
-		},
-		prefixed: {
-			paddingLeft: `calc((${vars.space['3']} - 1px) + (${vars.space['4']} - 1px) + ${vars.space[4]})`,
-		},
-		suffixed: {
-			paddingRight: `calc((${vars.space['3']} - 1px) + (${vars.space['4']} - 1px) + ${vars.space[4]})`,
-		},
-	}),
+export const inputWrapperSize = {
+	small: {
+		root: styleVariants({
+			textarea: {
+				paddingTop: `${vars.space['2']}`,
+			},
+		}),
+	},
+	medium: {
+		root: styleVariants({
+			textarea: {
+				paddingTop: `${vars.space['2']}`,
+			},
+		}),
+	},
+};
+
+export const inputItselfSize = {
+	small: {
+		root: styleVariants({
+			any: {
+				padding: `${vars.space['2']}`,
+			},
+			textarea: {
+				padding: `0 ${vars.space['2']} ${vars.space['2']}`,
+			},
+		}),
+		prefixed: styleVariants({
+			any: {
+				paddingLeft: `calc(${vars.space['2']} + ${vars.space['5']} + ${vars.space['2']})`,
+			},
+			textarea: {
+				paddingLeft: `calc(${vars.space['2']} + ${vars.space['5']} + ${vars.space['2']})`,
+			},
+		}),
+		suffixed: styleVariants({
+			any: {
+				paddingRight: `calc(${vars.space['2']} + ${vars.space['5']} + ${vars.space['2']})`,
+			},
+			textarea: {
+				paddingRight: `calc(${vars.space['2']} + ${vars.space['5']} + ${vars.space['2']})`,
+			},
+		}),
+	},
+	medium: {
+		root: styleVariants({
+			any: {
+				lineHeight: vars.typography.size['4'].lineHeight,
+				height: vars.space['8'],
+				padding: `calc(((${vars.space['8']} - ${vars.typography.size['4'].fontSize}) / 2) - 3px) calc(${vars.space['4']} - 1px)`,
+			},
+			textarea: {
+				padding: `${vars.space['1']} calc(${vars.space['4']} - 1px) calc(((${vars.space['8']} - ${vars.typography.size['4'].fontSize}) / 2) - 3px)`,
+			},
+		}),
+		prefixed: styleVariants({
+			any: {
+				paddingLeft: `calc((${vars.space['3']} - 1px) + (${vars.space['4']} - 1px) + ${vars.space[4]})`,
+			},
+		}),
+		suffixed: styleVariants({
+			any: {
+				paddingRight: `calc((${vars.space['3']} - 1px) + (${vars.space['4']} - 1px) + ${vars.space[4]})`,
+			},
+		}),
+	},
 };
 
 export const iconRoot = style({

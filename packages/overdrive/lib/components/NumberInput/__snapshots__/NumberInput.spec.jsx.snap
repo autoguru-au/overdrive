@@ -12,7 +12,7 @@ exports[`<NumberInput /> should have some hintText 1`] = `
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_size_medium_root__bd4oid5"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
         id="id"
         type="number"
         value=""
@@ -60,7 +60,7 @@ exports[`<NumberInput /> should match snapshot 1`] = `
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_size_medium_root__bd4oid5"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
         id="id"
         type="number"
         value=""
@@ -103,7 +103,7 @@ exports[`<NumberInput /> should match snapshot when active 1`] = `
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_size_medium_root__bd4oid5"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
         type="number"
         value=""
       />
@@ -144,7 +144,7 @@ exports[`<NumberInput /> should match snapshot when loading 1`] = `
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_size_medium_root__bd4oid5"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
         id="id"
         type="number"
         value=""
@@ -187,7 +187,7 @@ exports[`<NumberInput /> should match snapshot when touched 1`] = `
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_size_medium_root__bd4oid5"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
         type="number"
         value=""
       />
@@ -228,7 +228,7 @@ exports[`<NumberInput /> should match snapshot when touched and invalid 1`] = `
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_size_medium_root__bd4oid5"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
         type="number"
         value=""
       />
@@ -269,7 +269,7 @@ exports[`<NumberInput /> should match snapshot when touched and valid 1`] = `
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_size_medium_root__bd4oid5"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
         type="number"
         value=""
       />
@@ -309,7 +309,7 @@ exports[`<NumberInput /> should match snapshot with both icons 1`] = `
       class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
     >
       <i
-        class="useBoxStyles_display_block__7o6k06dx Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fj withEnhancedInput_iconRoot__bd4oid8 withEnhancedInput_prefixIcon__bd4oid9 withEnhancedInput_iconSize_medium__bd4oidc InputState_natural_default_colour__9z39d74"
+        class="useBoxStyles_display_block__7o6k06dx Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fj withEnhancedInput_iconRoot__bd4oide withEnhancedInput_prefixIcon__bd4oidf withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
         role="presentation"
       >
         <svg
@@ -323,7 +323,7 @@ exports[`<NumberInput /> should match snapshot with both icons 1`] = `
         </svg>
       </i>
       <i
-        class="useBoxStyles_display_block__7o6k06dx Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fj withEnhancedInput_iconRoot__bd4oid8 withEnhancedInput_suffixIcon__bd4oida withEnhancedInput_iconSize_medium__bd4oidc InputState_natural_default_colour__9z39d74"
+        class="useBoxStyles_display_block__7o6k06dx Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fj withEnhancedInput_iconRoot__bd4oide withEnhancedInput_suffixIcon__bd4oidg withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
         role="presentation"
       >
         <svg
@@ -338,7 +338,7 @@ exports[`<NumberInput /> should match snapshot with both icons 1`] = `
       </i>
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_size_medium_root__bd4oid5 withEnhancedInput_size_medium_prefixed__bd4oid6 withEnhancedInput_size_medium_suffixed__bd4oid7"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_prefixed_any__bd4oidc undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__bd4oidd"
         type="number"
         value=""
       />
@@ -378,7 +378,7 @@ exports[`<NumberInput /> should match snapshot with prefix icon 1`] = `
       class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
     >
       <i
-        class="useBoxStyles_display_block__7o6k06dx Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fj withEnhancedInput_iconRoot__bd4oid8 withEnhancedInput_prefixIcon__bd4oid9 withEnhancedInput_iconSize_medium__bd4oidc InputState_natural_default_colour__9z39d74"
+        class="useBoxStyles_display_block__7o6k06dx Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fj withEnhancedInput_iconRoot__bd4oide withEnhancedInput_prefixIcon__bd4oidf withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
         role="presentation"
       >
         <svg
@@ -393,7 +393,7 @@ exports[`<NumberInput /> should match snapshot with prefix icon 1`] = `
       </i>
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_size_medium_root__bd4oid5 withEnhancedInput_size_medium_prefixed__bd4oid6"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_prefixed_any__bd4oidc"
         type="number"
         value=""
       />
@@ -433,7 +433,7 @@ exports[`<NumberInput /> should match snapshot with suffix icon 1`] = `
       class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
     >
       <i
-        class="useBoxStyles_display_block__7o6k06dx Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fj withEnhancedInput_iconRoot__bd4oid8 withEnhancedInput_suffixIcon__bd4oida withEnhancedInput_iconSize_medium__bd4oidc InputState_natural_default_colour__9z39d74"
+        class="useBoxStyles_display_block__7o6k06dx Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fj withEnhancedInput_iconRoot__bd4oide withEnhancedInput_suffixIcon__bd4oidg withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
         role="presentation"
       >
         <svg
@@ -448,7 +448,7 @@ exports[`<NumberInput /> should match snapshot with suffix icon 1`] = `
       </i>
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_size_medium_root__bd4oid5 withEnhancedInput_size_medium_suffixed__bd4oid7"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__bd4oidd"
         type="number"
         value=""
       />
