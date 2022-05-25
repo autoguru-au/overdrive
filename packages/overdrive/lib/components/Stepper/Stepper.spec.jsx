@@ -33,7 +33,7 @@ describe('<Stepper />', () => {
 		).toMatchSnapshot();
 	});
 
-	it.skip('should pass on className to dom element', () => {
+	it('should pass on className to dom element', () => {
 		expect(
 			render(<Stepper className="stepper-class" value={10} />).container
 				.firstChild,

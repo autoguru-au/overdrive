@@ -14,7 +14,7 @@ describe('<Icon />', () => {
 		expect(() => render(<Icon icon={TestIcon} />)).not.toThrow();
 	});
 
-	it.skip('should pass on className to dom element', () => {
+	it('should pass on className to dom element', () => {
 		expect(
 			render(<Icon icon={TestIcon} className="icon-class" />).container
 				.firstChild,
