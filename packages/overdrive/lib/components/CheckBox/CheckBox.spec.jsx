@@ -35,7 +35,7 @@ describe('<CheckBox />', () => {
 		).toMatchSnapshot();
 	});
 
-	it.skip('should pass on className to dom element', () => {
+	it('should pass on className to dom element', () => {
 		expect(
 			render(<CheckBox className="check-class" />).container.firstChild,
 		).toHaveClass('check-class');

@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
+import * as styles from './NotchedBase.css';
 
 import { NotchedBase } from './NotchedBase';
 
@@ -10,7 +11,7 @@ describe('<NotchedBase />', () => {
 		).not.toThrow();
 	});
 
-	it.skip('should pass on className to dom element', () => {
+	it('should pass on className to dom element', () => {
 		expect(
 			render(
 				<NotchedBase
@@ -75,7 +76,7 @@ describe('<NotchedBase />', () => {
 		).toHaveTextContent('placeholder something');
 	});
 
-	it.skip('should add shifted classname to dom element when isEmpty is false', () => {
+	it('should add shifted classname to dom element when isEmpty is false', () => {
 		expect(
 			render(
 				<NotchedBase
@@ -83,11 +84,11 @@ describe('<NotchedBase />', () => {
 					className="notched-class"
 					placeholder="placeholder something"
 				/>,
-			).container.firstChild,
-		).toHaveClass('notchedBaseShift');
+			).container.firstChild.querySelector('label'),
+		).toHaveClass(styles.placeholderPlacement.shifted);
 	});
 
-	it.skip('should not shifted classname to dom element when isEmpty is true', () => {
+	it('should not shifted classname to dom element when isEmpty is true', () => {
 		expect(
 			render(
 				<NotchedBase
@@ -95,19 +96,18 @@ describe('<NotchedBase />', () => {
 					className="notched-class"
 					placeholder="placeholder something"
 				/>,
-			).container.firstChild,
-		).not.toHaveClass('notchedBaseShift');
+			).container.firstChild.querySelector('label'),
+		).not.toHaveClass(styles.placeholderPlacement.shifted);
 	});
 
-	it.skip('should add active style to dom element when isActive prop is true', () => {
+	it('should have full borders when is not notched', () => {
 		expect(
 			render(
 				<NotchedBase
-					isActive
-					className="notched-class"
+					notch={false}
 					placeholder="placeholder something"
 				/>,
 			).container.firstChild,
-		).toHaveClass('notchedBaseActive');
+		).toHaveClass(styles.borders.complete[0]);
 	});
 });

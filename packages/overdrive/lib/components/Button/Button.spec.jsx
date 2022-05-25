@@ -5,7 +5,8 @@ import * as React from 'react';
 import { Icon } from '../Icon';
 
 import { Button } from './Button';
-
+import * as styles from './Button.css';
+import * as boxStyles from '../Box/useBoxStyles.css';
 describe('<Button />', () => {
 	it('should not throw', () =>
 		expect(() => render(<Button />)).not.toThrow());
@@ -14,7 +15,7 @@ describe('<Button />', () => {
 		expect(render(<Button />).container.firstChild).toMatchSnapshot();
 	});
 
-	it.skip('should pass on className to dom element', () => {
+	it('should pass on className to dom element', () => {
 		expect(
 			render(<Button className="button-class" />).container.firstChild,
 		).toHaveClass('button-class');
@@ -48,10 +49,10 @@ describe('<Button />', () => {
 			).toMatchSnapshot();
 		});
 
-		it.skip('should apply Primary variant styles', () => {
+		it('should apply Primary variant styles', () => {
 			expect(
 				render(<Button variant="primary" />).container.firstChild,
-			).toHaveClass('variantPrimary');
+			).toHaveClass(styles.variant.primary);
 		});
 
 		it('should match snapshot for Secondary button', () => {
@@ -60,10 +61,10 @@ describe('<Button />', () => {
 			).toMatchSnapshot();
 		});
 
-		it.skip('should apply Secondary variant styles', () => {
+		it('should apply Secondary variant styles', () => {
 			expect(
 				render(<Button variant="secondary" />).container.firstChild,
-			).toHaveClass('variantSecondary');
+			).toHaveClass(styles.variant.secondary);
 		});
 
 		it('should match snapshot for Danger button', () => {
@@ -72,10 +73,10 @@ describe('<Button />', () => {
 			).toMatchSnapshot();
 		});
 
-		it.skip('should apply Danger variant styles', () => {
+		it('should apply Danger variant styles', () => {
 			expect(
 				render(<Button variant="danger" />).container.firstChild,
-			).toHaveClass('variantDanger');
+			).toHaveClass(styles.variant.danger);
 		});
 	});
 
@@ -86,10 +87,10 @@ describe('<Button />', () => {
 			).toMatchSnapshot();
 		});
 
-		it.skip('should apply small size styles', () => {
+		it('should apply small size styles', () => {
 			expect(
 				render(<Button size="small" />).container.firstChild,
-			).toHaveClass('small');
+			).toHaveClass(styles.size.small.default);
 		});
 
 		it('should match snapshot for medium button', () => {
@@ -98,10 +99,10 @@ describe('<Button />', () => {
 			).toMatchSnapshot();
 		});
 
-		it.skip('should apply medium size styles', () => {
+		it('should apply medium size styles', () => {
 			expect(
 				render(<Button size="medium" />).container.firstChild,
-			).toHaveClass('medium');
+			).toHaveClass(styles.size.medium.default);
 		});
 	});
 
@@ -110,18 +111,6 @@ describe('<Button />', () => {
 			expect(
 				render(<Button rounded />).container.firstChild,
 			).toMatchSnapshot();
-		});
-
-		it.skip('should not apply rounded styles to default button', () => {
-			expect(render(<Button />).container.firstChild).not.toHaveClass(
-				'rounded',
-			);
-		});
-
-		it.skip('should apply rounded styles', () => {
-			expect(render(<Button rounded />).container.firstChild).toHaveClass(
-				'rounded',
-			);
 		});
 	});
 
@@ -132,10 +121,10 @@ describe('<Button />', () => {
 			).toMatchSnapshot();
 		});
 
-		it.skip('should apply styles', () => {
+		it('should apply styles', () => {
 			expect(
 				render(<Button isFullWidth />).container.firstChild,
-			).toHaveClass('fullWidth');
+			).toHaveClass(boxStyles.width.full);
 		});
 	});
 
@@ -158,20 +147,20 @@ describe('<Button />', () => {
 			).toMatchSnapshot();
 		});
 
-		it.skip('should not apply loading styles to default button', () => {
+		it('should not apply loading styles to default button', () => {
 			expect(render(<Button />).container.firstChild).not.toHaveClass(
-				'loading',
+				styles.loading,
 			);
 		});
 
-		it.skip('should apply loading styles', () => {
+		it('should apply loading styles', () => {
 			expect(
 				render(<Button isLoading />).container.firstChild,
-			).toHaveClass('loading');
+			).toHaveClass(styles.loading);
 		});
 	});
 
-	describe.skip('when icon only', () => {
+	describe('when icon only', () => {
 		it('should size to 20', () => {
 			const { container } = render(
 				<Button>
@@ -180,9 +169,8 @@ describe('<Button />', () => {
 			);
 
 			expect(
-				container.querySelectorAll('svg').item(0).parentNode.style
-					.width,
-			).toBe('20px');
+				container.querySelectorAll('i').length,
+			).toBe(1);
 		});
 	});
 });

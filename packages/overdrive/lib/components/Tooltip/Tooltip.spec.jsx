@@ -27,7 +27,7 @@ describe('<Tolltip />', () => {
 	});
 
 	// TODO: This is skipped, as the `style="visibility: visible;"` shouldnt be there
-	it.skip('should match snapshot when closed', () => {
+	it('should match snapshot when closed', () => {
 		const { baseElement } = render(
 			<Tooltip label="tooltip content">
 				<div>trigger</div>

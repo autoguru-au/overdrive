@@ -6,10 +6,19 @@ import { Heading } from '../Heading';
 
 import { Radio } from './Radio';
 import { RadioGroup } from './RadioGroup';
-
+const renderRadioGroup = (value = null, onChange=null) => {
+	return render(
+		<RadioGroup name="radio" value={value} onChange={onChange}>
+			<Radio children="radio label 1" value="1" />
+			<Radio children="radio label 2" value="2" />
+			<Radio children="radio label 3" value="3" />
+			<Radio children="radio label 4" value="4" />
+		</RadioGroup>
+	);
+};
 describe('<RadioButton />', () => {
 	describe('when not nested in a RadioGroup', () => {
-		it.skip('should throw if a RadioButton element is not nested inside a RadioGroup', () => {
+		it('should throw if a RadioButton element is not nested inside a RadioGroup', () => {
 			expect(() => render(<Radio value="1" />)).toThrow();
 		});
 	});
@@ -61,65 +70,31 @@ describe('<RadioButton />', () => {
 
 		it('should match the snapshot for a group of radios', () => {
 			expect(
-				render(
-					<RadioGroup name="radio">
-						<Radio children="radio label 1" value="1" />
-						<Radio children="radio label 2" value="2" />
-						<Radio children="radio label 3" value="3" />
-						<Radio children="radio label 4" value="4" />
-					</RadioGroup>,
-				).container.firstChild,
+				renderRadioGroup('1').container.firstChild,
 			).toMatchSnapshot();
 		});
 
 		it('should automatically select the radio with value equal to the value of its radiogroup', () => {
-			const { container } = render(
-				<RadioGroup name="radio" value="2">
-					<Radio children="radio label 1" value="1" />
-					<Radio children="radio label 2" value="2" />
-					<Radio children="radio label 3" value="3" />
-					<Radio children="radio label 4" value="4" />
-				</RadioGroup>,
-			);
+			const { container } =renderRadioGroup('2');
 
 			expect(
 				container.querySelector('input[type="radio"][checked]'),
 			).toHaveAttribute('value', '2');
 		});
 
-		it.skip('should select the radio after it has been clicked', () => {
-			const TestComponent = () => {
-				const [value, setValue] = useState('2');
+		it('should select the radio after it has been clicked', () => {
 
-				return (
-					<RadioGroup name="radio" value={value} onChange={setValue}>
-						<Radio children="radio label 1" value="1" />
-						<Radio children="radio label 2" value="2" />
-						<Radio children="radio label 3" value="3" />
-						<Radio children="radio label 4" value="4" />
-					</RadioGroup>
-				);
-			};
+			const spyedCallback = jest.fn();
 
-			const { container } = render(<TestComponent />);
+			const { container } = renderRadioGroup('1', spyedCallback);
 
-			fireEvent.click(container.querySelector('input:not([checked])'));
+			fireEvent.click(container.querySelector('input:not([checked])'))
 
-			expect(container.querySelector('input[checked]')).toHaveAttribute(
-				'value',
-				'1',
-			);
+			expect(spyedCallback).toHaveBeenCalledWith('2');
 		});
 
 		it('should not throw is onChange callback is not attached', () => {
-			const { container } = render(
-				<RadioGroup name="radio" value="2">
-					<Radio children="radio label 1" value="1" />
-					<Radio children="radio label 2" value="2" />
-					<Radio children="radio label 3" value="3" />
-					<Radio children="radio label 4" value="4" />
-				</RadioGroup>,
-			);
+			const { container } = renderRadioGroup('2');
 
 			expect(() => {
 				fireEvent.click(
@@ -133,17 +108,7 @@ describe('<RadioButton />', () => {
 		it('should call the onClick function passed down to the radio button when it has been clicked', () => {
 			const spyedChangeCallback = jest.fn();
 
-			const { container } = render(
-				<RadioGroup
-					name="radio"
-					value="2"
-					onChange={spyedChangeCallback}>
-					<Radio children="radio label 1" value="1" />
-					<Radio children="radio label 2" value="2" />
-					<Radio children="radio label 3" value="3" />
-					<Radio children="radio label 4" value="4" />
-				</RadioGroup>,
-			);
+			const { container } = renderRadioGroup('2', spyedChangeCallback);
 
 			fireEvent.click(container.querySelector('input:not([checked])'));
 
