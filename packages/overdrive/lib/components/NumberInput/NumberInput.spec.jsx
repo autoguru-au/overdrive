@@ -52,7 +52,7 @@ describe('<NumberInput />', () => {
 		).toBeInTheDocument();
 	});
 
-	it.skip('should pass on className to dom element', () => {
+	it('should pass on className to dom element', () => {
 		const { container } = render(
 			<NumberInput
 				className="input-class"

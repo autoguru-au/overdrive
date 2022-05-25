@@ -50,7 +50,7 @@ describe('<SelectInput />', () => {
 		expect(container.querySelector('select')).toBeInTheDocument();
 	});
 
-	it.skip('should pass on className to dom element', () => {
+	it('should pass on className to dom element', () => {
 		const { container } = render(
 			<SelectInput placeholder="Hello World!" className="input-class">
 				<option value="a">Value 1</option>
