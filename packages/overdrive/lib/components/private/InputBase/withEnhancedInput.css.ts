@@ -2,18 +2,6 @@ import { style, styleVariants } from '@vanilla-extract/css';
 
 import { vars } from '../../../themes/base/vars.css';
 
-const iconRoot = style({
-	top: '50%',
-	transform: 'translate3d(0, -50%, 0)',
-	transition: `color 0.2s ${vars.animation.easing.decelerate} 0s`,
-	margin: `0 calc(${vars.space['3']} - 1px)`,
-});
-
-export const icon = {
-	prefix: [iconRoot, style({ left: 0 })],
-	suffix: [iconRoot, style({ right: 0 })],
-};
-
 export const input = {
 	itself: styleVariants({
 		root: {
@@ -22,9 +10,6 @@ export const input = {
 			background: 'transparent',
 			outline: 'none',
 			fontSize: vars.typography.size['4'].fontSize,
-			lineHeight: vars.typography.size['4'].lineHeight,
-			height: vars.space['8'],
-			padding: `calc(((${vars.space['8']} - ${vars.typography.size['4'].fontSize}) / 2) - 3px) calc(${vars.space['4']} - 1px)`,
 			selectors: {
 				'&[disabled]': {
 					color: vars.typography.colour.muted,
@@ -38,12 +23,6 @@ export const input = {
 				},
 			},
 		},
-		prefixed: {
-			paddingLeft: `calc((${vars.space['3']} - 1px) + (${vars.space['4']} - 1px) + ${vars.space[4]})`,
-		},
-		suffixed: {
-			paddingRight: `calc((${vars.space['3']} - 1px) + (${vars.space['4']} - 1px) + ${vars.space[4]})`,
-		},
 	}),
 };
 
@@ -55,5 +34,95 @@ export const types = styleVariants({
 		minHeight: textAreaHeight,
 		lineHeight: 1.2,
 		resize: 'vertical',
+	},
+});
+
+export const inputWrapperSize = {
+	small: {
+		root: styleVariants({
+			textarea: {
+				paddingTop: `${vars.space['2']}`,
+			},
+		}),
+	},
+	medium: {
+		root: styleVariants({
+			textarea: {
+				paddingTop: `${vars.space['2']}`,
+			},
+		}),
+	},
+};
+
+export const inputItselfSize = {
+	small: {
+		root: styleVariants({
+			any: {
+				padding: `${vars.space['2']}`,
+			},
+			textarea: {
+				padding: `0 ${vars.space['2']} ${vars.space['2']}`,
+			},
+		}),
+		prefixed: styleVariants({
+			any: {
+				paddingLeft: `calc(${vars.space['2']} + ${vars.space['5']} + ${vars.space['2']})`,
+			},
+			textarea: {
+				paddingLeft: `calc(${vars.space['2']} + ${vars.space['5']} + ${vars.space['2']})`,
+			},
+		}),
+		suffixed: styleVariants({
+			any: {
+				paddingRight: `calc(${vars.space['2']} + ${vars.space['5']} + ${vars.space['2']})`,
+			},
+			textarea: {
+				paddingRight: `calc(${vars.space['2']} + ${vars.space['5']} + ${vars.space['2']})`,
+			},
+		}),
+	},
+	medium: {
+		root: styleVariants({
+			any: {
+				lineHeight: vars.typography.size['4'].lineHeight,
+				height: vars.space['8'],
+				padding: `calc(((${vars.space['8']} - ${vars.typography.size['4'].fontSize}) / 2) - 3px) calc(${vars.space['4']} - 1px)`,
+			},
+			textarea: {
+				padding: `${vars.space['1']} calc(${vars.space['4']} - 1px) calc(((${vars.space['8']} - ${vars.typography.size['4'].fontSize}) / 2) - 3px)`,
+			},
+		}),
+		prefixed: styleVariants({
+			any: {
+				paddingLeft: `calc((${vars.space['3']} - 1px) + (${vars.space['4']} - 1px) + ${vars.space[4]})`,
+			},
+		}),
+		suffixed: styleVariants({
+			any: {
+				paddingRight: `calc((${vars.space['3']} - 1px) + (${vars.space['4']} - 1px) + ${vars.space[4]})`,
+			},
+		}),
+	},
+};
+
+export const iconRoot = style({
+	zIndex: 1,
+	top: '50%',
+	transform: 'translate3d(0, -50%, 0)',
+	transition: `color 0.2s ${vars.animation.easing.decelerate} 0s`,
+});
+
+export const prefixIcon = style({
+	left: 0,
+});
+export const suffixIcon = style({
+	right: 0,
+});
+export const iconSize = styleVariants({
+	small: {
+		margin: `0 ${vars.space['2']}`,
+	},
+	medium: {
+		margin: `0 calc(${vars.space['3']} - 1px)`,
 	},
 });

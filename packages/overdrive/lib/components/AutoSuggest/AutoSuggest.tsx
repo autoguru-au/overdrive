@@ -346,6 +346,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 		inlineOptions = false,
 		noScroll = false,
 		isFocused = false,
+		size,
 		fieldIcon,
 		isLoading,
 		autoFocus,
@@ -403,6 +404,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 				className={styles.input}>
 				<AutoSuggestInputPrimitive
 					className={className}
+					size={size}
 					isFocused={isFocused}
 					isLoading={isLoading}
 					autoFocus={autoFocus}
@@ -637,6 +639,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 		fieldIcon = ChevronDownIcon,
 		isFocused,
 		className,
+		size,
 		...rest
 	}) => {
 		let focusTimeout;
@@ -676,8 +679,8 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 				) : fieldIcon ? (
 					<Box
 						flexShrink={0}
-						paddingY="3"
-						paddingRight="4"
+						paddingY={size === 'medium' ? '3' : '2'}
+						paddingRight={size === 'medium' ? '3' : '2'}
 						onClick={focusHandler}>
 						<Icon size="medium" icon={fieldIcon} />
 					</Box>

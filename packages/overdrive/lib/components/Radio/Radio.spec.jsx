@@ -6,14 +6,14 @@ import { Heading } from '../Heading';
 
 import { Radio } from './Radio';
 import { RadioGroup } from './RadioGroup';
-const renderRadioGroup = (value = null, onChange=null) => {
+const renderRadioGroup = (value = null, onChange = null) => {
 	return render(
 		<RadioGroup name="radio" value={value} onChange={onChange}>
 			<Radio children="radio label 1" value="1" />
 			<Radio children="radio label 2" value="2" />
 			<Radio children="radio label 3" value="3" />
 			<Radio children="radio label 4" value="4" />
-		</RadioGroup>
+		</RadioGroup>,
 	);
 };
 describe('<RadioButton />', () => {
@@ -75,7 +75,7 @@ describe('<RadioButton />', () => {
 		});
 
 		it('should automatically select the radio with value equal to the value of its radiogroup', () => {
-			const { container } =renderRadioGroup('2');
+			const { container } = renderRadioGroup('2');
 
 			expect(
 				container.querySelector('input[type="radio"][checked]'),
@@ -83,12 +83,11 @@ describe('<RadioButton />', () => {
 		});
 
 		it('should select the radio after it has been clicked', () => {
-
 			const spyedCallback = jest.fn();
 
 			const { container } = renderRadioGroup('1', spyedCallback);
 
-			fireEvent.click(container.querySelector('input:not([checked])'))
+			fireEvent.click(container.querySelector('input:not([checked])'));
 
 			expect(spyedCallback).toHaveBeenCalledWith('2');
 		});

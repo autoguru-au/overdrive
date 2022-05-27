@@ -110,7 +110,5 @@ const withFullWidthProps: ComponentProps<typeof Inline> = {
 	width: 'full',
 	alignX: 'spaceBetween',
 };
-export const withFullWidth = DiffSizeTemplate.bind(
-	withFullWidthProps,
-);
+export const withFullWidth = DiffSizeTemplate.bind(withFullWidthProps);
 withFullWidth.args = withFullWidthProps;

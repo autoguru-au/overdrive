@@ -26,6 +26,7 @@ export interface Props {
 	borderColourClassName: string;
 	placeholderColourClassName: string;
 	notch?: boolean;
+	size: keyof typeof styles.placeholderPlacement;
 	className?: string;
 	children?: ReactNode;
 }
@@ -36,6 +37,7 @@ export const NotchedBase: FunctionComponent<Props> = ({
 	isEmpty,
 	disabled,
 	prefixed,
+	size,
 	children,
 	notch = true,
 	borderColourClassName,
@@ -111,11 +113,11 @@ export const NotchedBase: FunctionComponent<Props> = ({
 								{
 									[styles.placeholder.mutedLabelStyles]:
 										isEmpty || disabled,
-									[styles.placeholderPlacement.default]:
+									[styles.placeholderPlacement[size].default]:
 										isEmpty && !prefixed,
-									[styles.placeholderPlacement
+									[styles.placeholderPlacement[size]
 										.defaultPrefixed]: isEmpty && prefixed,
-									[styles.placeholderPlacement
+									[styles.placeholderPlacement[size]
 										.shifted]: !isEmpty,
 								},
 							)}>

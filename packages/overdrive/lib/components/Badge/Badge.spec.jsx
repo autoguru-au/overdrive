@@ -32,28 +32,38 @@ describe('<Badge />', () => {
 		const { container } = render(
 			<Badge colour="green" label="Hello World!" />,
 		);
-		expect(container.firstChild.firstChild).toHaveClass(styles.colours.default.green);
+		expect(container.firstChild.firstChild).toHaveClass(
+			styles.colours.default.green,
+		);
 	});
 
 	it('should apply red colour style', () => {
 		const { container } = render(
 			<Badge colour="red" label="Hello World!" />,
 		);
-		expect(container.firstChild.firstChild).toHaveClass(styles.colours.default.red);
+		expect(container.firstChild.firstChild).toHaveClass(
+			styles.colours.default.red,
+		);
 	});
 
 	it('should apply inverted style when inverted look is set', () => {
 		const { container } = render(
 			<Badge look="inverted" colour="neutral" label="Hello World!" />,
 		);
-		expect(container.firstChild.firstChild).toHaveClass(styles.colours.inverted.neutral.background);
-		expect(container.querySelector('span')).toHaveClass(styles.colours.inverted.neutral.text);
+		expect(container.firstChild.firstChild).toHaveClass(
+			styles.colours.inverted.neutral.background,
+		);
+		expect(container.querySelector('span')).toHaveClass(
+			styles.colours.inverted.neutral.text,
+		);
 	});
 
 	it('should apply minimal style when minimal look is set', () => {
 		const { container } = render(
 			<Badge look="standard" colour="neutral" label="Hello World!" />,
 		);
-		expect(container.firstChild.firstChild).toHaveClass(styles.colours.default.neutral);
+		expect(container.firstChild.firstChild).toHaveClass(
+			styles.colours.default.neutral,
+		);
 	});
 });

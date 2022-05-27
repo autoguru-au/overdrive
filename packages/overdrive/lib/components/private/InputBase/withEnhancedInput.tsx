@@ -26,6 +26,7 @@ import { HintText } from './HintText';
 import * as inputStateStyles from './InputState.css';
 import { NotchedBase } from './NotchedBase';
 import * as styles from './withEnhancedInput.css';
+import { inputWrapperSize } from './withEnhancedInput.css';
 
 // The event handlers we'll allow the wrapped component to bind too
 export interface EventHandlers<PrimitiveElementType> {
@@ -52,6 +53,7 @@ export interface EnhanceInputPrimitiveProps extends AriaAttributes {
 	disabled?: boolean;
 	notch?: boolean;
 	reserveHintSpace?: boolean;
+	size?: keyof typeof styles.inputItselfSize;
 	fieldIcon?: IconType;
 	prefixIcon?: IconType;
 	suffixIcon?: IconType;
@@ -76,11 +78,12 @@ export type EnhanceInputProps<
 
 // The final props we send into thw wrapping component
 export type WrappedComponentProps<IncomingProps, PrimitiveElementType> = {
+	size: keyof typeof styles.inputItselfSize;
 	validation: ValidationProps;
 	eventHandlers: EventHandlers<PrimitiveElementType>;
 	field: Omit<
 		EnhanceInputPrimitiveProps,
-		'placeholder' | 'hintText' | 'fieldIcon'
+		'placeholder' | 'hintText' | 'fieldIcon' | 'size'
 	> & {
 		ref: MutableRefObject<PrimitiveElementType>;
 	};
@@ -129,6 +132,7 @@ export const withEnhancedInput = <
 				isLoading = false,
 				notch = true,
 				reserveHintSpace = false,
+				size = 'medium',
 
 				value: incomingValue = '',
 				onChange: incomingOnChange,
@@ -185,13 +189,23 @@ export const withEnhancedInput = <
 					position: 'relative',
 					display: 'flex',
 				}),
-				styles.types[primitiveType!],
 				styles.input.itself.root,
+				styles.types[primitiveType!],
+				styles.inputItselfSize[size].root.any,
+				styles.inputItselfSize[size].root[primitiveType],
 				{
-					[styles.input.itself.prefixed]: Boolean(prefixIcon),
-					[styles.input.itself.suffixed]: Boolean(
+					[styles.inputItselfSize[size].prefixed.any]: Boolean(
+						prefixIcon,
+					),
+					[styles.inputItselfSize[size].prefixed[
+						primitiveType
+					]]: Boolean(prefixIcon),
+					[styles.inputItselfSize[size].suffixed.any]: Boolean(
 						suffixIcon || isLoading,
 					),
+					[styles.inputItselfSize[size].suffixed[
+						primitiveType
+					]]: Boolean(suffixIcon || isLoading),
 				},
 			);
 
@@ -214,6 +228,7 @@ export const withEnhancedInput = <
 					isTouched,
 					isValid,
 				},
+				size,
 				eventHandlers: {
 					onChange: wrapEvent((event) => {
 						if (disabled) {
@@ -273,6 +288,7 @@ export const withEnhancedInput = <
 						id={id}
 						prefixed={Boolean(prefixIcon)}
 						isEmpty={isEmpty}
+						size={size}
 						disabled={disabled}
 						notch={notch}
 						placeholder={placeholder}
@@ -280,14 +296,24 @@ export const withEnhancedInput = <
 							[derivedColours.colour]: !isEmpty,
 						})}
 						borderColourClassName={derivedColours.borderColour}>
-						<Box ref={wrapperRef} width="full" height="full">
+						<Box
+							ref={wrapperRef}
+							className={
+								styles.inputWrapperSize[size].root[
+									primitiveType
+								]
+							}
+							width="full"
+							height="full">
 							{prefixIcon ? (
 								<Icon
 									icon={prefixIcon}
 									size="medium"
 									className={clsx(
 										iconStyles,
-										styles.icon.prefix,
+										styles.iconRoot,
+										styles.prefixIcon,
+										styles.iconSize[size],
 										derivedColours.colour,
 									)}
 								/>
@@ -296,7 +322,9 @@ export const withEnhancedInput = <
 								<ProgressSpinner
 									className={clsx(
 										iconStyles,
-										styles.icon.suffix,
+										styles.iconRoot,
+										styles.suffixIcon,
+										styles.iconSize[size],
 										derivedColours.colour,
 									)}
 								/>
@@ -307,7 +335,9 @@ export const withEnhancedInput = <
 									size="medium"
 									className={clsx(
 										iconStyles,
-										styles.icon.suffix,
+										styles.iconRoot,
+										styles.suffixIcon,
+										styles.iconSize[size],
 										derivedColours.colour,
 									)}
 								/>

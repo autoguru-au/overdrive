@@ -187,3 +187,36 @@ const invalidProps: typeof withHintTextProps = {
 };
 export const invalid = Template.bind(invalidProps);
 invalid.args = invalidProps;
+
+const withIconSmallProps: typeof withValueProps = {
+	...withValueProps,
+	prefixIcon: CarIcon,
+	size: 'small',
+};
+
+const smallProps: typeof standardProps = {
+	...standardProps,
+	size: 'small',
+};
+export const small = Template.bind(smallProps);
+small.args = smallProps;
+
+const withValueSmallProps: typeof standardProps = {
+	...standardProps,
+	value: mockSuggestions[3],
+	size: 'small',
+};
+
+export const withValueSmall = Template.bind(withValueSmallProps);
+withValueSmall.args = withValueSmallProps;
+
+export const withIconSmall = Template.bind(withIconSmallProps);
+withIconSmall.args = withIconSmallProps;
+
+const loadingSmallProps: typeof withValueSmallProps = {
+	...withValueSmallProps,
+	isLoading: true,
+	size: 'small',
+};
+export const loadingSmall = Template.bind(loadingSmallProps);
+loadingSmall.args = loadingSmallProps;
