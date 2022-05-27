@@ -29,7 +29,9 @@ describe('<BulletList />', () => {
 			</BulletList>,
 		);
 
-		expect(container.querySelectorAll(`.${styles.firstOccurrence}`).length).toBe(1);
+		expect(
+			container.querySelectorAll(`.${styles.firstOccurrence}`).length,
+		).toBe(1);
 	});
 
 	it('should pass the correct nest value', () => {

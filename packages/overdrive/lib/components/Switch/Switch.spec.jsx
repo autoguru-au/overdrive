@@ -39,9 +39,8 @@ describe('<Switch />', () => {
 
 	it('should pass on className to dom element', () => {
 		expect(
-			render(
-				<Switch className="toggleButton-class" value={10} />,
-			).container.firstChild,
+			render(<Switch className="toggleButton-class" value={10} />)
+				.container.firstChild,
 		).toHaveClass('toggleButton-class');
 	});
 

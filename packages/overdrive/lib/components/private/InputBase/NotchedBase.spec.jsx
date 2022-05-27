@@ -7,7 +7,7 @@ import { NotchedBase } from './NotchedBase';
 describe('<NotchedBase />', () => {
 	it('should not throw', () => {
 		expect(() =>
-			render(<NotchedBase placeholder="placeholder something" />),
+			render(<NotchedBase size='medium' placeholder="placeholder something" />),
 		).not.toThrow();
 	});
 
@@ -16,6 +16,7 @@ describe('<NotchedBase />', () => {
 			render(
 				<NotchedBase
 					className="notched-class"
+					size='medium'
 					placeholder="placeholder something"
 				/>,
 			).container.firstChild,
@@ -24,21 +25,21 @@ describe('<NotchedBase />', () => {
 
 	it('should match snapshot for default notch', () => {
 		expect(
-			render(<NotchedBase placeholder="placeholder something" />)
+			render(<NotchedBase size='medium' placeholder="placeholder something" />)
 				.container.firstChild,
 		).toMatchSnapshot();
 	});
 
 	it('should match snapshot for dirty notch', () => {
 		expect(
-			render(<NotchedBase isDirty placeholder="placeholder something" />)
+			render(<NotchedBase isDirty size='medium' placeholder="placeholder something" />)
 				.container.firstChild,
 		).toMatchSnapshot();
 	});
 
 	it('should match snapshot for active notch', () => {
 		expect(
-			render(<NotchedBase isActive placeholder="placeholder something" />)
+			render(<NotchedBase isActive size='medium' placeholder="placeholder something" />)
 				.container.firstChild,
 		).toMatchSnapshot();
 	});
@@ -49,6 +50,7 @@ describe('<NotchedBase />', () => {
 				<NotchedBase
 					isActive
 					isDirty
+					size='medium'
 					placeholder="placeholder something"
 				/>,
 			).container.firstChild,
@@ -58,7 +60,7 @@ describe('<NotchedBase />', () => {
 	it('should display children', () => {
 		expect(
 			render(
-				<NotchedBase placeholder="placeholder something">
+				<NotchedBase placeholder="placeholder something" size='medium'>
 					something children
 				</NotchedBase>,
 			).container,
@@ -69,6 +71,7 @@ describe('<NotchedBase />', () => {
 		expect(
 			render(
 				<NotchedBase
+					size='medium'
 					placeholder="placeholder something"
 					className="notched-class"
 				/>,
@@ -81,11 +84,12 @@ describe('<NotchedBase />', () => {
 			render(
 				<NotchedBase
 					isEmpty={false}
+					size='medium'
 					className="notched-class"
 					placeholder="placeholder something"
 				/>,
 			).container.firstChild.querySelector('label'),
-		).toHaveClass(styles.placeholderPlacement.shifted);
+		).toHaveClass(styles.placeholderPlacement.medium.shifted);
 	});
 
 	it('should not shifted classname to dom element when isEmpty is true', () => {
@@ -93,11 +97,12 @@ describe('<NotchedBase />', () => {
 			render(
 				<NotchedBase
 					isEmpty
+					size='medium'
 					className="notched-class"
 					placeholder="placeholder something"
 				/>,
 			).container.firstChild.querySelector('label'),
-		).not.toHaveClass(styles.placeholderPlacement.shifted);
+		).not.toHaveClass(styles.placeholderPlacement.medium.shifted);
 	});
 
 	it('should have full borders when is not notched', () => {
@@ -105,6 +110,7 @@ describe('<NotchedBase />', () => {
 			render(
 				<NotchedBase
 					notch={false}
+					size='medium'
 					placeholder="placeholder something"
 				/>,
 			).container.firstChild,

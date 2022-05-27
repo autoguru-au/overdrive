@@ -36,25 +36,21 @@ describe('<StarRating />', () => {
 	it('should match snapshot for small size', () => {
 		expect(
 			render(
-				<StarRating
-					rating={3.8}
-					label="Hello World!"
-					size='small'
-				/>,
+				<StarRating rating={3.8} label="Hello World!" size="small" />,
 			).container.firstChild,
 		).toMatchSnapshot();
 	});
 
 	it('should pass on className to dom element', () => {
-		const { container } = render(<StarRating rating={4.1} className="rating-class" />);
+		const { container } = render(
+			<StarRating rating={4.1} className="rating-class" />,
+		);
 		expect(container.firstChild).toHaveClass('rating-class');
 	});
 
 	it('should add a span element inside with the rating value if label is not provided value', () => {
 		const { container } = render(<StarRating rating={4.1} />);
-		expect(container.querySelector('span')).toHaveTextContent(
-			'4.1',
-		);
+		expect(container.querySelector('span')).toHaveTextContent('4.1');
 	});
 
 	it('should add a span element inside with the label text value', () => {
