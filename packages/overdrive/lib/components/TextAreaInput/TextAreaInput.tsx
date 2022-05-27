@@ -11,6 +11,7 @@ export const TextAreaInput = withEnhancedInput<{}, HTMLTextAreaElement>(
 		isLoading,
 		suffixed,
 		prefixed,
+		size,
 		...rest
 	}) => (
 		<Box

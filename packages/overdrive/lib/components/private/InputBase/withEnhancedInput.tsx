@@ -26,7 +26,6 @@ import { HintText } from './HintText';
 import * as inputStateStyles from './InputState.css';
 import { NotchedBase } from './NotchedBase';
 import * as styles from './withEnhancedInput.css';
-import { inputWrapperSize } from './withEnhancedInput.css';
 
 // The event handlers we'll allow the wrapped component to bind too
 export interface EventHandlers<PrimitiveElementType> {

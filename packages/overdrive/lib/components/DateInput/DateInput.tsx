@@ -14,6 +14,7 @@ export const DateInput = withEnhancedInput<
 		isLoading,
 		suffixed,
 		prefixed,
+		size,
 		...rest
 	}) => {
 		warning(

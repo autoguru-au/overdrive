@@ -23,6 +23,7 @@ export const NumberInput = withEnhancedInput<Props>(
 		suffixed,
 		prefixed,
 		preventMouseWheel = false,
+		size,
 		...rest
 	}) => {
 		const inputRef = useRef<HTMLInputElement>(ref?.current);

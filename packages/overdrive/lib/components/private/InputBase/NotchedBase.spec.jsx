@@ -7,7 +7,12 @@ import { NotchedBase } from './NotchedBase';
 describe('<NotchedBase />', () => {
 	it('should not throw', () => {
 		expect(() =>
-			render(<NotchedBase size='medium' placeholder="placeholder something" />),
+			render(
+				<NotchedBase
+					size="medium"
+					placeholder="placeholder something"
+				/>,
+			),
 		).not.toThrow();
 	});
 
@@ -16,7 +21,7 @@ describe('<NotchedBase />', () => {
 			render(
 				<NotchedBase
 					className="notched-class"
-					size='medium'
+					size="medium"
 					placeholder="placeholder something"
 				/>,
 			).container.firstChild,
@@ -25,22 +30,36 @@ describe('<NotchedBase />', () => {
 
 	it('should match snapshot for default notch', () => {
 		expect(
-			render(<NotchedBase size='medium' placeholder="placeholder something" />)
-				.container.firstChild,
+			render(
+				<NotchedBase
+					size="medium"
+					placeholder="placeholder something"
+				/>,
+			).container.firstChild,
 		).toMatchSnapshot();
 	});
 
 	it('should match snapshot for dirty notch', () => {
 		expect(
-			render(<NotchedBase isDirty size='medium' placeholder="placeholder something" />)
-				.container.firstChild,
+			render(
+				<NotchedBase
+					isDirty
+					size="medium"
+					placeholder="placeholder something"
+				/>,
+			).container.firstChild,
 		).toMatchSnapshot();
 	});
 
 	it('should match snapshot for active notch', () => {
 		expect(
-			render(<NotchedBase isActive size='medium' placeholder="placeholder something" />)
-				.container.firstChild,
+			render(
+				<NotchedBase
+					isActive
+					size="medium"
+					placeholder="placeholder something"
+				/>,
+			).container.firstChild,
 		).toMatchSnapshot();
 	});
 
@@ -50,7 +69,7 @@ describe('<NotchedBase />', () => {
 				<NotchedBase
 					isActive
 					isDirty
-					size='medium'
+					size="medium"
 					placeholder="placeholder something"
 				/>,
 			).container.firstChild,
@@ -60,7 +79,7 @@ describe('<NotchedBase />', () => {
 	it('should display children', () => {
 		expect(
 			render(
-				<NotchedBase placeholder="placeholder something" size='medium'>
+				<NotchedBase placeholder="placeholder something" size="medium">
 					something children
 				</NotchedBase>,
 			).container,
@@ -71,7 +90,7 @@ describe('<NotchedBase />', () => {
 		expect(
 			render(
 				<NotchedBase
-					size='medium'
+					size="medium"
 					placeholder="placeholder something"
 					className="notched-class"
 				/>,
@@ -84,7 +103,7 @@ describe('<NotchedBase />', () => {
 			render(
 				<NotchedBase
 					isEmpty={false}
-					size='medium'
+					size="medium"
 					className="notched-class"
 					placeholder="placeholder something"
 				/>,
@@ -97,7 +116,7 @@ describe('<NotchedBase />', () => {
 			render(
 				<NotchedBase
 					isEmpty
-					size='medium'
+					size="medium"
 					className="notched-class"
 					placeholder="placeholder something"
 				/>,
@@ -110,7 +129,7 @@ describe('<NotchedBase />', () => {
 			render(
 				<NotchedBase
 					notch={false}
-					size='medium'
+					size="medium"
 					placeholder="placeholder something"
 				/>,
 			).container.firstChild,

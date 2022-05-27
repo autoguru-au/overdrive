@@ -13,6 +13,7 @@ export const TextInput = withEnhancedInput<
 		suffixed,
 		prefixed,
 		isLoading,
+		size,
 		...rest
 	}) => (
 		<Box
