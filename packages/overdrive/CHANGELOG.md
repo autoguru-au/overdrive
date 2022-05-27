@@ -1,5 +1,15 @@
 # @autoguru/overdrive
 
+## 4.4.0
+
+### Minor Changes
+
+-   4236309: Input components: Get a small size variant
+
+### Patch Changes
+
+-   4236309: TextArea: Fixed scrolled text overlapping with shifted placeholder
+
 ## 4.3.6
 
 ### Patch Changes
