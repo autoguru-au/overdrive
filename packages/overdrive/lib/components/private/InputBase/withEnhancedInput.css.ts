@@ -58,6 +58,7 @@ export const inputItselfSize = {
 	small: {
 		root: styleVariants({
 			any: {
+				lineHeight: vars.typography.size['4'].lineHeight,
 				padding: `${vars.space['2']}`,
 			},
 			textarea: {
