@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.4.1
+
+### Patch Changes
+
+-   848878d: Small inputs: Get defined line heights
+
 ## 4.4.0
 
 ### Minor Changes
