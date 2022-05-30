@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.4.2
+
+### Patch Changes
+
+-   7a49fcb: Small inputs: Get font size 2
+
 ## 4.4.1
 
 ### Patch Changes
