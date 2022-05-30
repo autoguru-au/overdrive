@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.4.3
+
+### Patch Changes
+
+-   a3941d6: Autosuggest: Fixes clear button layout shift for small size
+
 ## 4.4.2
 
 ### Patch Changes
