@@ -9,7 +9,6 @@ export const input = {
 			alignSelf: 'flex-end',
 			background: 'transparent',
 			outline: 'none',
-			fontSize: vars.typography.size['4'].fontSize,
 			selectors: {
 				'&[disabled]': {
 					color: vars.typography.colour.muted,
@@ -58,7 +57,8 @@ export const inputItselfSize = {
 	small: {
 		root: styleVariants({
 			any: {
-				lineHeight: vars.typography.size['4'].lineHeight,
+				fontSize: vars.typography.size['3'].fontSize,
+				lineHeight: vars.typography.size['3'].lineHeight,
 				padding: `${vars.space['2']}`,
 			},
 			textarea: {
@@ -85,6 +85,7 @@ export const inputItselfSize = {
 	medium: {
 		root: styleVariants({
 			any: {
+				fontSize: vars.typography.size['4'].fontSize,
 				lineHeight: vars.typography.size['4'].lineHeight,
 				height: vars.space['8'],
 				padding: `calc(((${vars.space['8']} - ${vars.typography.size['4'].fontSize}) / 2) - 3px) calc(${vars.space['4']} - 1px)`,
