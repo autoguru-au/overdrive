@@ -12,13 +12,16 @@ import { Modal } from '../Modal';
 
 import * as styles from './MinimalModal.css';
 
-export interface Props extends ComponentProps<typeof Modal> {
+export interface Props
+	extends ComponentProps<typeof Modal>,
+		Pick<ComponentProps<typeof Box>, 'alignItems'> {
 	className?: string;
 	children?: ReactNode;
 }
 
 export const MinimalModal: FunctionComponent<Props> = ({
 	isOpen,
+	alignItems = 'center',
 	className = '',
 	onRequestClose,
 	children,
@@ -54,7 +57,7 @@ export const MinimalModal: FunctionComponent<Props> = ({
 				className={[styles.container, className]}
 				height="full"
 				display="flex"
-				alignItems="center"
+				alignItems={alignItems}
 				justifyContent="center"
 				aria-hidden={isOpen ? 'false' : 'true'}
 				role="none presentation"
