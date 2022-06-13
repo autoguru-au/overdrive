@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.4.4
+
+### Patch Changes
+
+-   466098d: MinimalModal: Gets content vertical alignment options
+
 ## 4.4.3
 
 ### Patch Changes
