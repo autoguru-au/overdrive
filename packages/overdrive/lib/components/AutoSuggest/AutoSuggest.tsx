@@ -670,8 +670,8 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 				isLoading ? null : field.value && isFocused ? (
 					<Box
 						is="button"
-						paddingY={size==='small'?'1':'3'}
-						paddingRight={size==='small'?'2':'3'}
+						paddingY={size === 'small' ? '1' : '3'}
+						paddingRight={size === 'small' ? '2' : '3'}
 						flexShrink={0}
 						onMouseDown={onRequestReset}>
 						<Icon size="medium" icon={CloseIcon} />

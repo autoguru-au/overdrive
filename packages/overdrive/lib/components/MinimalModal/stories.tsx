@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ArgTypes, ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -7,6 +7,14 @@ import { Box } from '../Box';
 import { Text } from '../Text';
 
 import { MinimalModal } from '.';
+const argTypes: ArgTypes = {
+	alignItems: {
+		options: ['flexStart', 'center', 'flexEnd'],
+		control: {
+			type: 'select',
+		},
+	},
+};
 
 export default {
 	title: 'Components/MinimalModal',
@@ -130,37 +138,6 @@ const Template: ComponentStory<typeof MinimalModal> = (args) => (
 			nibh. Morbi dui ipsum, lobortis non nisi vitae, convallis pulvinar
 			nunc.
 		</Text>
-		<br />
-		<Text>
-			Morbi mollis massa in eros tempus, ut venenatis ligula posuere. Nam
-			ut ante lectus. Integer congue risus arcu, et ornare odio hendrerit
-			eu. Mauris arcu ligula, interdum vitae consectetur vitae, volutpat a
-			elit. Nulla luctus faucibus ipsum vitae maximus. Quisque in est nec
-			libero commodo egestas. Donec faucibus, felis eget euismod
-			facilisis, urna tortor molestie ex, eu eleifend leo tellus vel
-			ligula. Mauris et urna massa. Integer ultrices massa commodo
-			eleifend facilisis. Vestibulum dapibus magna cursus metus
-			pellentesque tempor. Donec blandit elementum feugiat. Sed nec congue
-			est.
-		</Text>
-		<br />
-		<Text>
-			Nulla quam magna, aliquet et odio non, porta condimentum tellus.
-			Maecenas fringilla sodales erat eu facilisis. Nunc rutrum purus quis
-			diam tempus laoreet. Fusce gravida arcu et lectus ultricies
-			suscipit. Quisque sagittis tempus diam, malesuada posuere lorem
-			sagittis et. Duis eget eros nibh. Aenean at augue tincidunt nunc
-			consequat porta.
-		</Text>
-		<br />
-		<Text>
-			Nunc ac congue lacus, ac vulputate lectus. Suspendisse vel malesuada
-			tellus. In nec fringilla elit. Cras vitae metus et leo convallis
-			consectetur. Cras quis congue sapien, vitae aliquet ante. Integer
-			sed lorem pretium, vestibulum arcu eu, imperdiet mauris. Nam blandit
-			pharetra feugiat. Maecenas eget ante metus. Vivamus pretium ipsum
-			justo, a faucibus ex dictum non. Vestibulum et dui diam.
-		</Text>
 	</>
 );
 
@@ -170,3 +147,28 @@ const standardProps: ComponentProps<typeof MinimalModal> = {
 };
 export const Standard = Template.bind(standardProps);
 Standard.args = standardProps;
+Standard.argTypes = argTypes;
+
+const pinnedToTopProps: ComponentProps<typeof MinimalModal> = {
+	...standardProps,
+	alignItems: 'flexStart',
+};
+export const PinnedToTop = Template.bind(pinnedToTopProps);
+PinnedToTop.args = pinnedToTopProps;
+PinnedToTop.argTypes = argTypes;
+
+const pinnedToTopCentreProps: ComponentProps<typeof MinimalModal> = {
+	...standardProps,
+	alignItems: 'center',
+};
+export const pinnedToTopCentre = Template.bind(pinnedToTopCentreProps);
+pinnedToTopCentre.args = pinnedToTopCentreProps;
+pinnedToTopCentre.argTypes = argTypes;
+
+const pinnedToTopBottomProps: ComponentProps<typeof MinimalModal> = {
+	...standardProps,
+	alignItems: 'flexEnd',
+};
+export const pinnedToTopBottom = Template.bind(pinnedToTopBottomProps);
+pinnedToTopBottom.args = pinnedToTopBottomProps;
+pinnedToTopBottom.argTypes = argTypes;
