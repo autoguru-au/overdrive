@@ -58,11 +58,6 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 				? incomingId
 				: `${tabsContext!.id}-${tabListContext}-tab`;
 
-		invariant(
-			typeof children === 'string' || typeof children === 'number',
-			'Tab children have to be text.',
-		);
-
 		const props = {
 			className: clsx(
 				useBoxStyles({
