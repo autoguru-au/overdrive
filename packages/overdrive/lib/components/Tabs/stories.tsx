@@ -1,11 +1,17 @@
+import { AlertIcon, OttoIcon } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import isChromatic from 'chromatic/isChromatic';
 import * as React from 'react';
 import { ComponentProps, useEffect, useState } from 'react';
 
+import { Box } from '../Box';
+import { Icon } from '../Icon';
+import { Inline } from '../Inline';
+import { EAlignment } from '../Positioner/alignment';
 import { Stack } from '../Stack';
 import { StarRating } from '../StarRating';
+import { Tooltip } from '../Tooltip';
 
 import { Tab, TabList, TabPane, TabPanes, Tabs } from '.';
 
@@ -90,6 +96,48 @@ const withIndicationProps: ComponentProps<typeof Tabs> = {
 };
 export const withIndication = Template.bind(withIndicationProps);
 withIndication.args = withIndicationProps;
+
+const withComplexTabProps: ComponentProps<typeof Tabs> = {
+	active: 0,
+	onChange: action('onChange'),
+	children: (
+		<>
+			<TabList>
+				<Tab indication={2}>
+					<Inline alignY="center">
+						Tab 1
+						<Tooltip
+							alignment={EAlignment.BOTTOM}
+							label="This tab is a winner">
+							<Box>
+								<Icon icon={OttoIcon} />
+							</Box>
+						</Tooltip>
+					</Inline>
+				</Tab>
+				<Tab>
+					<Inline alignY="center">
+						Tab 2
+						<Tooltip
+							alignment={EAlignment.BOTTOM}
+							label="This tab is less awesome">
+							<Box>
+								<Icon icon={AlertIcon} />
+							</Box>
+						</Tooltip>
+					</Inline>
+				</Tab>
+			</TabList>
+
+			<TabPanes>
+				<TabPane>Content A</TabPane>
+				<TabPane>Content B</TabPane>
+			</TabPanes>
+		</>
+	),
+};
+export const withComplexTab = Template.bind(withComplexTabProps);
+withComplexTab.args = withComplexTabProps;
 
 const tabsWithoutPanesProps: ComponentProps<typeof Tabs> = {
 	active: 0,
