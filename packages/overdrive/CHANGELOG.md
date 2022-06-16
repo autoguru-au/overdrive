@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.4.5
+
+### Patch Changes
+
+-   b1ef7eb: Tab coponent: Allows complex children
+
 ## 4.4.4
 
 ### Patch Changes
