@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.5.0
+
+### Minor Changes
+
+-   5230bcb: DatePicker component added
+
 ## 4.4.5
 
 ### Patch Changes
