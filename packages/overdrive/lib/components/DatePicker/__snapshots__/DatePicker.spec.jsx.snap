@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DatePicker /> should match snapshot without label 1`] = `
+<div
+  class="reset_block__6swfds3 useBoxStyles_position_relative__7o6k06do useBoxStyles_overflow_hidden__7o6k06ds Icon_makeResponsiveStyle_key_bp__14sz1q64"
+>
+  <input
+    class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm DatePicker_input__1jp01bq0"
+    type="date"
+  />
+  <i
+    class="useBoxStyles_display_block__7o6k06dx Icon_makeResponsiveStyle_key_bp__14sz1q64"
+    role="presentation"
+  >
+    <svg
+      class="useBoxStyles_display_block__7o6k06dx useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
+      fill="currentColor"
+      focusable="false"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 18.998H5v-11h14m-3-7v2H8v-2H6v2H5a1.99 1.99 0 00-1.99 2l-.01 14a2 2 0 002 2h14c1.102 0 2-.896 2-2v-14a2 2 0 00-2-2h-1v-2m-1 11h-5v5h5v-5z"
+      />
+    </svg>
+  </i>
+</div>
+`;
