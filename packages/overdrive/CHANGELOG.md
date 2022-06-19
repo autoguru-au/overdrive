@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.5.1
+
+### Patch Changes
+
+-   2a307c5: DatePicker: Gets loading state
+
 ## 4.5.0
 
 ### Minor Changes
