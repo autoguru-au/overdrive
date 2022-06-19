@@ -55,7 +55,37 @@ const Template: ComponentStory<typeof DatePicker> = (args) => (
 	<DatePicker {...args} />
 );
 
-const standardProps: ComponentProps<typeof DatePicker> = {};
+const standardProps: ComponentProps<typeof DatePicker> = {
+	isLoading: false,
+	disabled: false,
+};
 
 export const standard = Template.bind(standardProps);
 standard.args = standardProps;
+
+const smallProps: ComponentProps<typeof DatePicker> = {
+	size: 'small',
+	isLoading: false,
+	disabled: false,
+};
+
+export const small = Template.bind(smallProps);
+small.args = smallProps;
+
+const mediumProps: ComponentProps<typeof DatePicker> = {
+	size: 'medium',
+	isLoading: false,
+	disabled: false,
+};
+
+export const medium = Template.bind(mediumProps);
+medium.args = mediumProps;
+
+const largeProps: ComponentProps<typeof DatePicker> = {
+	size: 'large',
+	isLoading: false,
+	disabled: false,
+};
+
+export const large = Template.bind(largeProps);
+large.args = largeProps;

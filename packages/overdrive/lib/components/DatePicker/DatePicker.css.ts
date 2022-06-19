@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css';
 
 export const input = style({
 	top: 0,
@@ -22,7 +22,17 @@ export const input = style({
 		},
 	},
 });
-export const disabled = style({
-	cursor: 'not-allowed',
-	opacity: '0.3',
+export const disabled = styleVariants({
+	default: {
+		cursor: 'not-allowed',
+	},
+	root: {
+		opacity: '0.3',
+	},
+});
+
+export const spinner = style({
+	top: '50%',
+	left: '50%',
+	transform: 'translate(-50%, -50%)',
 });
