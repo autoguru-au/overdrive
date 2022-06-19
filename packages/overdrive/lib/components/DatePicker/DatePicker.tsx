@@ -4,21 +4,22 @@ import * as React from 'react';
 import { ChangeEvent, ComponentProps, FunctionComponent } from 'react';
 
 import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
-import { Box } from '../Box';
+import { Box, useBoxStyles } from '../Box';
 import { Icon } from '../Icon';
 import * as iconStyles from '../Icon/Icon.css';
+import { ProgressSpinner } from '../ProgressSpinner';
 
 import * as styles from './DatePicker.css';
 
 export interface Props
-	extends Pick<HTMLInputElement, 'min' | 'max' | 'value'>,
+	extends Partial<Pick<HTMLInputElement, 'min' | 'max' | 'value'>>,
 		Pick<ComponentProps<typeof Icon>, 'size'> {
 	className?: string;
 	disabled?: boolean;
+	icon?: IconType;
+	isLoading?: boolean;
 
 	onChange(date: string);
-
-	icon?: IconType;
 }
 
 export const DatePicker: FunctionComponent<Props> = ({
@@ -26,6 +27,7 @@ export const DatePicker: FunctionComponent<Props> = ({
 	icon = CalendarIcon,
 	size = 'medium',
 	disabled = false,
+	isLoading = false,
 	onChange,
 	...inputProps
 }) => {
@@ -41,7 +43,10 @@ export const DatePicker: FunctionComponent<Props> = ({
 			className={clsx(
 				resolveResponsiveStyle(size, iconStyles.size),
 				className,
-				{ [styles.disabled]: disabled },
+				{
+					[styles.disabled.default]: disabled,
+					[styles.disabled.root]: disabled,
+				},
 			)}>
 			<Box
 				position="absolute"
@@ -50,11 +55,30 @@ export const DatePicker: FunctionComponent<Props> = ({
 				is="input"
 				disabled={disabled}
 				onChange={onChangeEvent}
-				className={clsx(styles.input, { [styles.disabled]: disabled })}
+				className={clsx(
+					{
+						[styles.disabled.default]: disabled,
+					},
+					styles.input,
+				)}
 				type="date"
 				{...inputProps}
 			/>
-			<Icon icon={icon} size={size} />
+			{isLoading ? (
+				<ProgressSpinner
+					className={clsx(
+						styles.spinner,
+						useBoxStyles({
+							position: 'absolute',
+						}),
+					)}
+					size={
+						size as ComponentProps<typeof ProgressSpinner>['size']
+					}
+				/>
+			) : (
+				<Icon icon={icon} size={size} />
+			)}
 		</Box>
 	);
 };
