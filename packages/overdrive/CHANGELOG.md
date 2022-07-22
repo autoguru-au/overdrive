@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.5.2
+
+### Patch Changes
+
+-   ed0d129: Toast: No longer blocks page elements at the same page height
+
 ## 4.5.1
 
 ### Patch Changes
