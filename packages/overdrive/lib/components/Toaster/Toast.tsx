@@ -90,7 +90,6 @@ const InternalToastProvider = ({ children }) => {
 			{children}
 			<Portal>
 				<Box
-					width="full"
 					display="flex"
 					position="fixed"
 					alignItems="center"
