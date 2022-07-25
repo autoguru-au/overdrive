@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.5.3
+
+### Patch Changes
+
+-   91fb315: Components: Get default exports
+
 ## 4.5.2
 
 ### Patch Changes
