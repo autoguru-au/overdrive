@@ -31,3 +31,5 @@ const TextContainerHeading: FunctionComponent<
 		{action ? <Column width="auto">{action!}</Column> : null}
 	</Columns>
 );
+
+export default TextContainer;

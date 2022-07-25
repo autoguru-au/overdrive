@@ -162,3 +162,5 @@ export const TabList: FunctionComponent<Props> = ({
 		</Box>
 	);
 };
+
+export default TabList;

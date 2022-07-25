@@ -56,3 +56,5 @@ export const SimpleImage: FunctionComponent<Props> = ({
 		{...imgProps}
 	/>
 );
+
+export default SimpleImage;

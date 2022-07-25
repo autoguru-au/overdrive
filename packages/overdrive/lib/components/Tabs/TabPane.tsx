@@ -43,3 +43,5 @@ export const TabPane: FunctionComponent<{
 		</Box>
 	);
 };
+
+export default TabPane;

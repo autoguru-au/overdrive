@@ -55,3 +55,5 @@ export const Heading: FunctionComponent<Props> = ({
 		{children}
 	</Box>
 );
+
+export default Heading;

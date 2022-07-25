@@ -84,3 +84,5 @@ export const MinimalModal: FunctionComponent<Props> = ({
 		</Modal>
 	);
 };
+
+export default MinimalModal;

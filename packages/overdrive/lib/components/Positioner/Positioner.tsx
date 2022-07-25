@@ -161,3 +161,5 @@ const convertPlacement = (alignment: EAlignment): Placement => {
 			return alignment;
 	}
 };
+
+export default Positioner;

@@ -159,3 +159,5 @@ export const withModal = <TIncomingProps extends {} = {}>(
 		</Modal>
 	);
 };
+
+export default Modal;

@@ -53,3 +53,5 @@ export const useMedia = (
 
 	return matches;
 };
+
+export default useMedia;

@@ -145,3 +145,5 @@ export const Box = forwardRef<HTMLElement, Props>(
 );
 
 Box.displayName = 'Box';
+
+export default Box;

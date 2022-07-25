@@ -89,3 +89,5 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 			: createElement(Component, allProps, body);
 	},
 );
+
+export default TextLink;

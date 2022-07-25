@@ -36,3 +36,5 @@ export const LinearProgressIndicator: NamedExoticComponent<Props> = memo(
 		);
 	},
 );
+
+export default LinearProgressIndicator;

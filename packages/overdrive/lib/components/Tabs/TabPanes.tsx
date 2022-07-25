@@ -36,3 +36,5 @@ export const TabPanes: FunctionComponent<Props> = ({
 		))}
 	</Box>
 );
+
+export default TabPanes;

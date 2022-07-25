@@ -245,3 +245,5 @@ export const useBoxStyles = ({
 		className,
 	);
 };
+
+export default useBoxStyles;

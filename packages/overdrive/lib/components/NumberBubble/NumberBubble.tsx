@@ -64,3 +64,5 @@ export const NumberBubble: FunctionComponent<Props> = ({
 		</Box>
 	);
 };
+
+export default NumberBubble;

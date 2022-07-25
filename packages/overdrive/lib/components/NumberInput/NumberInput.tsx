@@ -93,3 +93,5 @@ export const NumberInput = withEnhancedInput<Props>(
 		primitiveType: type,
 	},
 );
+
+export default NumberInput;

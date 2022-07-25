@@ -113,3 +113,5 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 			: createElement(Component, props, child);
 	},
 );
+
+export default Tab;

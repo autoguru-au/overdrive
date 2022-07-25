@@ -40,3 +40,5 @@ export const useTextStyles = ({
 		styles.transform[transform!],
 	);
 };
+
+export default useTextStyles;

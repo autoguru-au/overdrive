@@ -57,3 +57,5 @@ export const SimplePagination: FunctionComponent<Props> = ({
 		</Inline>
 	);
 };
+
+export default SimplePagination;

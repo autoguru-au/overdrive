@@ -60,3 +60,5 @@ export const SelectInput = withEnhancedInput<
 		withSuffixIcon: false,
 	},
 );
+
+export default SelectInput;

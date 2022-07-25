@@ -43,3 +43,5 @@ export const OverdriveProvider: FunctionComponent<Props> = ({
 		</ThemeProvider>
 	);
 };
+
+export default OverdriveProvider;

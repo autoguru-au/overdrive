@@ -104,3 +104,5 @@ export const useAttachedBoxes = ({
 		},
 	];
 };
+
+export default useAttachedBoxes;

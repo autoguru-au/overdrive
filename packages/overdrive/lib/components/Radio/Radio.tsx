@@ -68,3 +68,5 @@ export const Radio = forwardRef<HTMLInputElement, Props>(
 		);
 	},
 );
+
+export default Radio;

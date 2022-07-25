@@ -819,3 +819,5 @@ const getNextIndex = <
 
 	return itter > maxIndex ? -1 : returnIdx;
 };
+
+export default AutoSuggest;

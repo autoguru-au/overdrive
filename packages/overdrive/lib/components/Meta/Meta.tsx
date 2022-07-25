@@ -25,3 +25,5 @@ export const Meta: FunctionComponent<Props> = ({
 		<Text breakWord={breakWord}>{label}</Text>
 	</Inline>
 );
+
+export default Meta;

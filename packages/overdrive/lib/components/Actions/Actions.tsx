@@ -27,3 +27,5 @@ export const Actions: FunctionComponent<Props> = ({
 		))}
 	</Columns>
 );
+
+export default Actions;

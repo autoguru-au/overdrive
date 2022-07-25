@@ -239,3 +239,5 @@ function buildPagesList(
 
 	return generateJumpBackwardArray(numPages, numPagesDisplayed);
 }
+
+export default Pagination;

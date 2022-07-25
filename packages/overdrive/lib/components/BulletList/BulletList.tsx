@@ -30,3 +30,5 @@ export const BulletList: FunctionComponent<Props> = ({
 		</Box>
 	);
 };
+
+export default BulletList;

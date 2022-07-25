@@ -29,3 +29,5 @@ export const TextInput = withEnhancedInput<
 		primitiveType: 'text',
 	},
 );
+
+export default TextInput;

@@ -248,3 +248,5 @@ export const Stepper: FunctionComponent<Props> = ({
 		</Box>
 	);
 };
+
+export default Stepper;

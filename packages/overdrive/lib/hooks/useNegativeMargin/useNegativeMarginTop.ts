@@ -7,3 +7,5 @@ import * as styles from './useNegativeMarginTop.css';
 export const useNegativeMarginTop = (
 	space: ResponsiveProp<keyof Tokens['space']>,
 ) => resolveResponsiveStyle(space, styles.negativeMarginTop);
+
+export default useNegativeMarginTop;

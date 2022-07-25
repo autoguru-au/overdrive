@@ -79,3 +79,5 @@ export const Switch: FunctionComponent<Props> = ({
 		</Box>
 	);
 };
+
+export default Switch;

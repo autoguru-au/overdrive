@@ -55,3 +55,5 @@ export const BulletText: FunctionComponent<Props> = ({
 		</Box>
 	</Inline>
 );
+
+export default BulletText;

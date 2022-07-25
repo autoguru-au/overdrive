@@ -127,3 +127,5 @@ export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 		);
 	},
 );
+
+export default TableHeadCell;
