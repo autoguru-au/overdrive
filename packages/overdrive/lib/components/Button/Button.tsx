@@ -240,3 +240,5 @@ const getButtonSize: (
 		[currentSize.iconOnly]: iconOnly,
 	});
 };
+
+export default Button;

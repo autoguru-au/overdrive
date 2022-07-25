@@ -81,3 +81,5 @@ export const Anchor: FunctionComponent<Props> = ({
 		? cloneElement(Component, props, childs)
 		: createElement(Component, props, childs);
 };
+
+export default Anchor;

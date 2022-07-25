@@ -20,3 +20,5 @@ export const VisuallyHidden: FunctionComponent<Props> = ({ children, is }) => (
 		{children}
 	</Box>
 );
+
+export default VisuallyHidden;

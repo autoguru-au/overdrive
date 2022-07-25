@@ -105,3 +105,5 @@ export const Columns = forwardRef<HTMLElement, Props>(
 		);
 	},
 );
+
+export default Columns;

@@ -62,3 +62,5 @@ export const TableCell = forwardRef<HTMLDivElement, Props>(
 		);
 	},
 );
+
+export default TableCell;

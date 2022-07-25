@@ -24,3 +24,5 @@ export const Flyout: FunctionComponent<
 		</Box>
 	</Positioner>
 );
+
+export default Flyout;

@@ -23,3 +23,5 @@ export const Section: FunctionComponent<Props> = ({
 		{children}
 	</Box>
 );
+
+export default Section;

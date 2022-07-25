@@ -28,3 +28,5 @@ export const TextAreaInput = withEnhancedInput<{}, HTMLTextAreaElement>(
 		withPrefixIcon: false,
 	},
 );
+
+export default TextAreaInput;

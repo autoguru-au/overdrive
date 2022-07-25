@@ -50,3 +50,5 @@ export const Text: FunctionComponent<Props> = ({
 		{children}
 	</Box>
 );
+
+export default Text;

@@ -98,3 +98,5 @@ export const Tooltip: FunctionComponent<Props> = ({
 		</>
 	);
 };
+
+export default Tooltip;

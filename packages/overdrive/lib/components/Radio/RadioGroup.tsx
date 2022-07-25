@@ -53,3 +53,5 @@ export const RadioGroup = forwardRef<HTMLDivElement, Props>(
 		);
 	},
 );
+
+export default RadioGroup;

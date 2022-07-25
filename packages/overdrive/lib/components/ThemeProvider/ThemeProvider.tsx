@@ -58,3 +58,5 @@ export const useRuntimeTokens = (): RuntimeTokens => {
 	invariant(tokens !== null, "You haven't provided a `OverdriveProvider`.");
 	return tokens;
 };
+
+export default ThemeProvider;

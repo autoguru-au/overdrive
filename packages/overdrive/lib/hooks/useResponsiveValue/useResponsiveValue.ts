@@ -23,3 +23,5 @@ export function useResponsiveValue<T extends string | number | boolean | {}>(
 		activeBP,
 	]);
 }
+
+export default useResponsiveValue;

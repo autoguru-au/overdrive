@@ -108,3 +108,5 @@ export const Alert: FunctionComponent<Props> = ({
 		</Box>
 	);
 };
+
+export default Alert;

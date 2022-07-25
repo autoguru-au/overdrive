@@ -66,3 +66,5 @@ export const Badge: FunctionComponent<Props> = ({
 		</Box>
 	);
 };
+
+export default Badge;

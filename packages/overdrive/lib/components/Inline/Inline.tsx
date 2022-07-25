@@ -96,3 +96,5 @@ const renderDivider = (dividers: Props['dividers']): ReactElement | null => {
 
 	return <Text>{dividers}</Text>;
 };
+
+export default Inline;

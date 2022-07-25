@@ -80,3 +80,5 @@ export const ResponsiveImage: FunctionComponent<Props> = ({
 		<SimpleImage sizes={sizes} srcSet={srcset} src={src} {...imgProps} />
 	);
 };
+
+export default ResponsiveImage;

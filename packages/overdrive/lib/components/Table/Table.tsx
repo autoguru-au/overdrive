@@ -34,3 +34,5 @@ export const Table = forwardRef<HTMLDivElement, Props>(
 		</TableContextProvider>
 	),
 );
+
+export default Table;

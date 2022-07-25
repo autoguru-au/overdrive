@@ -77,3 +77,5 @@ const Item: FunctionComponent<ItemProps> = ({ className = '', children }) => (
 );
 
 OrderedList.Item = Item;
+
+export default OrderedList;

@@ -16,3 +16,5 @@ export const TableRow = forwardRef<HTMLDivElement, Props>(
 		</Box>
 	),
 );
+
+export default TableRow;

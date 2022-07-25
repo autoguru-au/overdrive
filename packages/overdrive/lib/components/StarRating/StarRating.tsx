@@ -127,3 +127,5 @@ const Star: FunctionComponent<StarProps> = ({
 		/>
 	);
 };
+
+export default StarRating;

@@ -59,3 +59,5 @@ export const Stack: FunctionComponent<Props> = ({
 		</Box>
 	);
 };
+
+export default Stack;

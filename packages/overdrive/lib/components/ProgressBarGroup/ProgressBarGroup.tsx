@@ -48,3 +48,5 @@ export const ProgressBarGroup: FunctionComponent<Props> = ({
 		</Box>
 	);
 };
+
+export default ProgressBarGroup;

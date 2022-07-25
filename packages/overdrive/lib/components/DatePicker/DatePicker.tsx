@@ -82,3 +82,5 @@ export const DatePicker: FunctionComponent<Props> = ({
 		</Box>
 	);
 };
+
+export default DatePicker;

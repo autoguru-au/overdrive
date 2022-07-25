@@ -223,3 +223,5 @@ const Toast: FunctionComponent<
 		</Alert>
 	);
 };
+
+export default Toast;
