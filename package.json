@@ -86,7 +86,7 @@
 		"concurrently": "6.0.0",
 		"css-loader": "^6.4.0",
 		"csstype": "3.0.10",
-		"eslint": "7.21.0",
+		"eslint": "7.32.0",
 		"glob": "7.1.7",
 		"jest": "26.6.3",
 		"magic-string": "0.25.7",
