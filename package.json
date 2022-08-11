@@ -81,7 +81,7 @@
 		"babel-plugin-add-import-extension": "^1.6.0",
 		"babel-plugin-dev-expression": "^0.2.3",
 		"babel-plugin-macros": "^3.1.0",
-		"browserslist-config-autoguru": "2.2.0",
+		"browserslist-config-autoguru": "^2.2.0",
 		"chromatic": "^6.5.4",
 		"concurrently": "6.0.0",
 		"css-loader": "^6.4.0",
