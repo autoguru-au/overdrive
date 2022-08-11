@@ -4932,7 +4932,7 @@ browserify-zlib@^0.2.0:
   dependencies:
     pako "~1.0.5"
 
-browserslist-config-autoguru@2.2.0:
+browserslist-config-autoguru@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/browserslist-config-autoguru/-/browserslist-config-autoguru-2.2.0.tgz#52cf8cbf08450310ed49addbcdd37666485960e3"
   integrity sha512-QzfvFN7oQkxtaYTe1y5lSlcgUvgGhGfR32Tma/KqCDlspcrTvKJeB52mDOuW3wUx/xvHNX8LuRuPmF1LROKNiw==
