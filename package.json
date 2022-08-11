@@ -85,7 +85,7 @@
 		"chromatic": "^6.5.4",
 		"concurrently": "6.5.1",
 		"css-loader": "^6.4.0",
-		"csstype": "3.0.10",
+		"csstype": "3.1.0",
 		"eslint": "7.32.0",
 		"glob": "7.1.7",
 		"jest": "26.6.3",
