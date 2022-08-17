@@ -55,7 +55,7 @@
 		"@babel/preset-react": "^7.16.0",
 		"@babel/preset-typescript": "^7.16.0",
 		"@babel/runtime-corejs3": "7.18.9",
-		"@changesets/cli": "2.22.0",
+		"@changesets/cli": "2.24.3",
 		"@manypkg/cli": "0.19.1",
 		"@octokit/rest": "18.12.0",
 		"@storybook/addon-a11y": "^6.5.5",
