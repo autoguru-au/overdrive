@@ -19,6 +19,7 @@ import { Text } from '../Text';
 import * as styles from './Tooltip.css';
 
 type ToolTipSize = 'medium' | 'large';
+
 export interface Props {
 	size?: ToolTipSize;
 	label: string;

@@ -1,4 +1,5 @@
 import { Tokens as VanillaTokens } from '@vanilla-extract/css/dist/declarations/src/types';
+
 type SpaceScale = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'none';
 type TextSizeScale = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';
 type BorderWidthScale = '1' | '2' | '3' | 'none';

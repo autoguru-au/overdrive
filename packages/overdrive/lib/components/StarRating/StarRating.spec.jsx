@@ -4,6 +4,7 @@ import * as React from 'react';
 import { StarRating } from './StarRating';
 
 import * as styles from './StarRating.css';
+
 const getStarsNum = (el) => {
 	return el.querySelectorAll(`.${styles.star.default}`).length;
 };
