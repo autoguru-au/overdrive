@@ -1,11 +1,11 @@
 import { fireEvent, render } from '@testing-library/react';
 import * as React from 'react';
-import { useState } from 'react';
 
 import { Heading } from '../Heading';
 
 import { Radio } from './Radio';
 import { RadioGroup } from './RadioGroup';
+
 const renderRadioGroup = (value = null, onChange = null) => {
 	return render(
 		<RadioGroup name="radio" value={value} onChange={onChange}>

@@ -94,6 +94,7 @@ export interface Props<PayloadType>
 	itemRenderer?: AutoSuggestItemRenderer<PayloadType>;
 
 	onChange?(value: AutoSuggestValue<PayloadType>): void;
+
 	onEnter?(value: AutoSuggestValue<PayloadType>): void;
 }
 

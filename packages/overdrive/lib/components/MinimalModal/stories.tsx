@@ -7,6 +7,7 @@ import { Box } from '../Box';
 import { Text } from '../Text';
 
 import { MinimalModal } from '.';
+
 const argTypes: ArgTypes = {
 	alignItems: {
 		options: ['flexStart', 'center', 'flexEnd'],
