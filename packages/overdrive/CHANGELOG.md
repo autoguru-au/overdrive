@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.6.0
+
+### Minor Changes
+
+-   7b931f7: Adds TextBubble Component
+
 ## 4.5.3
 
 ### Patch Changes
