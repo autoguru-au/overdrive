@@ -52,3 +52,4 @@ export * from './VisuallyHidden';
 export * from './MinimalModal';
 export * from './Image';
 export * from './NumberBubble';
+export * from './TextBubble';
