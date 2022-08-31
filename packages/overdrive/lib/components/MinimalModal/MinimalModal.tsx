@@ -62,21 +62,24 @@ export const MinimalModal: FunctionComponent<Props> = ({
 				aria-hidden={isOpen ? 'false' : 'true'}
 				role="none presentation"
 				onMouseDown={unlockModal}
-				onClick={backdropHandler}>
+				onClick={backdropHandler}
+			>
 				<Box
 					is="article"
 					role="dialog"
 					aria-modal="true"
 					aria-labelledby={titleId!}
 					display="flex"
-					flexDirection="column">
+					flexDirection="column"
+				>
 					<Box
 						is="main"
 						display="flex"
 						flexDirection="column"
 						flexGrow={1}
 						height="full"
-						className={styles.content}>
+						className={styles.content}
+					>
 						{children}
 					</Box>
 				</Box>

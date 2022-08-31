@@ -94,7 +94,8 @@ const InternalToastProvider = ({ children }) => {
 					position="fixed"
 					alignItems="center"
 					justifyContent="center"
-					className={styles.root}>
+					className={styles.root}
+				>
 					<Stack space="2">
 						{toasts.map((item) => (
 							<Toast
@@ -218,7 +219,8 @@ const Toast: FunctionComponent<
 			dismissible
 			intent={intent}
 			className={styles.alert}
-			onRequestClose={dismiss}>
+			onRequestClose={dismiss}
+		>
 			{message}
 		</Alert>
 	);

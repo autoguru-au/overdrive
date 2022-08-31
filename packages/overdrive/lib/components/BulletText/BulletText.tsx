@@ -36,14 +36,16 @@ export const BulletText: FunctionComponent<Props> = ({
 					[styles.primary]: variant === 'primary',
 					[styles.secondary]: variant !== 'primary',
 				})}
-				borderRadius="pill">
+				borderRadius="pill"
+			>
 				<Text
 					className={clsx({
 						[styles.primaryText]: variant === 'primary',
 						[styles.secondaryText]: variant !== 'primary',
 					})}
 					is="span"
-					size="2">
+					size="2"
+				>
 					{Bullet}
 				</Text>
 			</Box>

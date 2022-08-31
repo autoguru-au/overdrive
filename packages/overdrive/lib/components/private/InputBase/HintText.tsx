@@ -35,7 +35,8 @@ export const HintText: FunctionComponent<Props> = ({
 			is="p"
 			size="2"
 			colour="unset"
-			className={clsx(boxStyles, styles.hintText, className)}>
+			className={clsx(boxStyles, styles.hintText, className)}
+		>
 			{showHintText ? hintText : '\u00A0'}
 		</Text>
 	);

@@ -16,7 +16,8 @@ export const VisuallyHidden: FunctionComponent<Props> = ({ children, is }) => (
 		position="absolute"
 		overflow="hidden"
 		userSelect="none"
-		className={styles.root}>
+		className={styles.root}
+	>
 		{children}
 	</Box>
 );

@@ -101,7 +101,8 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 							styles.indication.default,
 							indicationStyles,
 							{ [styles.indication.active]: isActive },
-						)}>
+						)}
+					>
 						{indication}
 					</Text>
 				)}

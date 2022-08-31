@@ -59,7 +59,8 @@ export const Switch: FunctionComponent<Props> = ({
 			position="relative"
 			aria-disabled={disabled}
 			aria-label={`toggle ${toggled ? 'on' : 'off'}`}
-			onClick={onToggle}>
+			onClick={onToggle}
+		>
 			<Box
 				borderWidth="1"
 				position="absolute"

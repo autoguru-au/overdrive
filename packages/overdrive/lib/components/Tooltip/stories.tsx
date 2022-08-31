@@ -61,37 +61,32 @@ const standardProps: Omit<ComponentProps<typeof Tooltip>, 'children'> = {
 	closeAfter: null,
 };
 
-export const standard: ComponentStory<typeof Tooltip> = Template.bind(
-	standardProps,
-);
+export const standard: ComponentStory<typeof Tooltip> =
+	Template.bind(standardProps);
 standard.args = standardProps;
 
 const withAtuCloseProps: Omit<ComponentProps<typeof Tooltip>, 'children'> = {
 	label: 'I will automatically close after 5 seconds',
 	closeAfter: 5e3,
 };
-export const withAutoClose: ComponentStory<typeof Tooltip> = Template.bind(
-	withAtuCloseProps,
-);
+export const withAutoClose: ComponentStory<typeof Tooltip> =
+	Template.bind(withAtuCloseProps);
 withAutoClose.args = withAtuCloseProps;
 
 const withLongTextProps: Omit<ComponentProps<typeof Tooltip>, 'children'> = {
-	label:
-		'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
+	label: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
 	alignment: EAlignment.BOTTOM,
 };
 
-export const withLongText: ComponentStory<typeof Tooltip> = Template.bind(
-	withLongTextProps,
-);
+export const withLongText: ComponentStory<typeof Tooltip> =
+	Template.bind(withLongTextProps);
 withLongText.args = withLongTextProps;
 
 const withSmallTextSizePropsProps: Omit<
 	ComponentProps<typeof Tooltip>,
 	'children'
 > = {
-	label:
-		'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
+	label: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
 	alignment: EAlignment.BOTTOM,
 	size: 'large',
 };

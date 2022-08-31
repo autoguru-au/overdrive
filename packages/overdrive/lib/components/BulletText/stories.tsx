@@ -71,7 +71,8 @@ const withCustomBulletProps: ComponentProps<typeof BulletText> = {
 				alignContent: 'center',
 				justifyContent: 'center',
 				alignItems: 'center',
-			}}>
+			}}
+		>
 			<Icon size="small" icon={CheckIcon} />
 		</span>
 	),

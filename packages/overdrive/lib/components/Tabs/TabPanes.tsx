@@ -30,7 +30,8 @@ export const TabPanes: FunctionComponent<Props> = ({
 				value={{
 					paneIndex: index,
 					renderInactive: renderInactivePanes,
-				}}>
+				}}
+			>
 				{child}
 			</TabPanesContext.Provider>
 		))}

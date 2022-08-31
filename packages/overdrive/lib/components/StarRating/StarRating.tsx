@@ -31,13 +31,11 @@ const starSizeMap: Map<EStarRatingSize, keyof Tokens['icon']['size']> = new Map(
 	],
 );
 
-const labelSizeMap: Map<
-	EStarRatingSize,
-	keyof Tokens['typography']['size']
-> = new Map([
-	[EStarRatingSize.Small, '3'],
-	[EStarRatingSize.Medium, '4'],
-]);
+const labelSizeMap: Map<EStarRatingSize, keyof Tokens['typography']['size']> =
+	new Map([
+		[EStarRatingSize.Small, '3'],
+		[EStarRatingSize.Medium, '4'],
+	]);
 
 export interface Props {
 	className?: string; // TODO: Remove this in the future

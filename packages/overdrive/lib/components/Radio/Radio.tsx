@@ -35,7 +35,8 @@ export const Radio = forwardRef<HTMLInputElement, Props>(
 				label={children}
 				disabled={disabled}
 				checked={isChecked}
-				handleClick={handleClick}>
+				handleClick={handleClick}
+			>
 				<Box
 					borderRadius="pill"
 					position="absolute"

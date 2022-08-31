@@ -20,7 +20,8 @@ const Template: ComponentStory<typeof SimplePagination> = (args) => (
 		}}
 		display="flex"
 		alignItems="center"
-		justifyContent="center">
+		justifyContent="center"
+	>
 		<SimplePagination {...args} />
 	</Box>
 );
@@ -31,9 +32,8 @@ const standardProps = {
 	onChange: action('onChange'),
 };
 
-export const middlePage: ComponentStory<
-	typeof SimplePagination
-> = Template.bind(standardProps);
+export const middlePage: ComponentStory<typeof SimplePagination> =
+	Template.bind(standardProps);
 middlePage.args = standardProps;
 
 const firstPageProps = {
@@ -41,9 +41,8 @@ const firstPageProps = {
 	hasPrevious: false,
 };
 
-export const firstPage: ComponentStory<typeof SimplePagination> = Template.bind(
-	firstPageProps,
-);
+export const firstPage: ComponentStory<typeof SimplePagination> =
+	Template.bind(firstPageProps);
 firstPage.args = firstPageProps;
 
 const lastPageProps = {
@@ -51,7 +50,6 @@ const lastPageProps = {
 	hasNext: false,
 };
 
-export const lastPage: ComponentStory<typeof SimplePagination> = Template.bind(
-	lastPageProps,
-);
+export const lastPage: ComponentStory<typeof SimplePagination> =
+	Template.bind(lastPageProps);
 lastPage.args = lastPageProps;

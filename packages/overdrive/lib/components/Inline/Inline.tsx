@@ -63,7 +63,8 @@ export const Inline: FunctionComponent<Props> = ({
 			justifyContent={alignX}
 			flexDirection="row"
 			flexWrap={noWrap ? 'nowrap' : 'wrap'}
-			className={[negativeMarginTop, !dividers && negativeMarginLeft]}>
+			className={[negativeMarginTop, !dividers && negativeMarginLeft]}
+		>
 			{Children.map(items, (child, idx) =>
 				child !== null && child !== undefined ? (
 					<Box
@@ -73,7 +74,8 @@ export const Inline: FunctionComponent<Props> = ({
 						flexWrap="nowrap"
 						alignItems={alignY}
 						paddingTop={space}
-						paddingLeft={dividers ? undefined : space}>
+						paddingLeft={dividers ? undefined : space}
+					>
 						{child}
 						{dividers && idx !== items.length - 1 ? (
 							<Box paddingX={space}>{divider}</Box>

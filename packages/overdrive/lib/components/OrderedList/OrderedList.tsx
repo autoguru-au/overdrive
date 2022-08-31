@@ -62,7 +62,8 @@ export const OrderedList: FunctionComponent<Props> & {
 				className,
 			)}
 			style={{ listStyleType: cycles[myCycle] }}
-			start={start}>
+			start={start}
+		>
 			<OrderedListContext.Provider value={myCycle}>
 				<Stack space="2">{children}</Stack>
 			</OrderedListContext.Provider>

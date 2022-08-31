@@ -8,11 +8,19 @@ export const root = style({
 	width: 'max-content',
 	selectors: {
 		[`&:not(${disabled}):focus`]: {
-			borderColor: vars.colours.intent.information.background.mild,
+			borderColor: vars.colours.intent.information.background.standard,
 		},
 	},
 });
 
+export const width = styleVariants({
+	full: {
+		width: '100%',
+	},
+	default: {
+		width: 'max-content',
+	},
+});
 export const handle = styleVariants({
 	default: {
 		width: vars.space[6],

@@ -46,7 +46,8 @@ export const Text: FunctionComponent<Props> = ({
 				breakWord,
 			}),
 			className,
-		]}>
+		]}
+	>
 		{children}
 	</Box>
 );

@@ -65,7 +65,8 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 					{
 						[styles.muted]: muted,
 					},
-				)}>
+				)}
+			>
 				{children}
 			</Text>
 		);

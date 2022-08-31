@@ -31,7 +31,6 @@ const standardProps: Omit<ComponentProps<typeof VisuallyHidden>, 'children'> = {
 	is: 'div',
 };
 
-export const standard: ComponentStory<typeof VisuallyHidden> = Template.bind(
-	standardProps,
-);
+export const standard: ComponentStory<typeof VisuallyHidden> =
+	Template.bind(standardProps);
 standard.args = standardProps;

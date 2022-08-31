@@ -60,11 +60,8 @@ export const TabList: FunctionComponent<Props> = ({
 
 	const updateScrollButtonState = useEventCallback(() => {
 		if (scrollable) {
-			const {
-				scrollWidth,
-				clientWidth,
-				scrollLeft,
-			} = wrapperRef.current!;
+			const { scrollWidth, clientWidth, scrollLeft } =
+				wrapperRef.current!;
 			const showStartScroll = scrollLeft > 1;
 			const showEndScroll = scrollLeft < scrollWidth - clientWidth - 1;
 
@@ -123,21 +120,24 @@ export const TabList: FunctionComponent<Props> = ({
 			className={[
 				styles.root.default,
 				shouldShowScrollButtons && styles.root.scroll,
-			]}>
+			]}
+		>
 			{shouldShowScrollButtons ? (
 				<Button
 					minimal
 					rounded
 					size="small"
 					disabled={!displayScroll.start}
-					onClick={handleStartButton}>
+					onClick={handleStartButton}
+				>
 					<Icon icon={ArrowLeftIcon} />
 				</Button>
 			) : null}
 			<Box
 				ref={wrapperRef}
 				className={[scrollable && styles.listWrapperScroll]}
-				onScroll={handleOnScroll}>
+				onScroll={handleOnScroll}
+			>
 				<Box
 					ref={innerRef}
 					display={stretch ? 'flex' : 'block'}
@@ -145,7 +145,8 @@ export const TabList: FunctionComponent<Props> = ({
 					width="full"
 					role="tablist"
 					aria-orientation="horizontal"
-					className={useTextStyles({ noWrap: true })}>
+					className={useTextStyles({ noWrap: true })}
+				>
 					{tabs}
 				</Box>
 			</Box>
@@ -155,7 +156,8 @@ export const TabList: FunctionComponent<Props> = ({
 					rounded
 					size="small"
 					disabled={!displayScroll.end}
-					onClick={handleEndButton}>
+					onClick={handleEndButton}
+				>
 					<Icon icon={ArrowRightIcon} />
 				</Button>
 			) : null}

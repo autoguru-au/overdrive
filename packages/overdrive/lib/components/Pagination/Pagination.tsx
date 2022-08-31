@@ -62,7 +62,8 @@ const NavButton: FunctionComponent<NavButtonProps> = ({
 		className={clsx(useTextStyles({ colour: 'light' }), {
 			[styles.disabled]: disabled,
 		})}
-		onClick={onClick}>
+		onClick={onClick}
+	>
 		<Icon size="medium" icon={icon} />
 	</Box>
 );
@@ -100,10 +101,10 @@ export const Pagination: FunctionComponent<Props> = ({
 	loading = false,
 	onChange = noop,
 }) => {
-	const numPages: number = useMemo(() => calcPagesNum(total, pageSize), [
-		total,
-		pageSize,
-	]);
+	const numPages: number = useMemo(
+		() => calcPagesNum(total, pageSize),
+		[total, pageSize],
+	);
 
 	const handleClick = useCallback(
 		(num) => () => {
@@ -136,7 +137,8 @@ export const Pagination: FunctionComponent<Props> = ({
 					gap={num < 0}
 					selected={allowedActive === num}
 					aria-current={allowedActive === num ? 'page' : 'false'}
-					onClick={handleClick(num)}>
+					onClick={handleClick(num)}
+				>
 					{num}
 				</Bubble>
 			))}

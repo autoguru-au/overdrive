@@ -17,12 +17,14 @@ export const LinearProgressIndicator: NamedExoticComponent<Props> = memo(
 				overflow="hidden"
 				width="full"
 				backgroundColour="gray200"
-				className={[styles.root, className]}>
+				className={[styles.root, className]}
+			>
 				<Box
 					position="absolute"
 					width="full"
 					height="full"
-					className={styles.linearProgressBar}>
+					className={styles.linearProgressBar}
+				>
 					<Box
 						is="span"
 						backgroundColour="green300"

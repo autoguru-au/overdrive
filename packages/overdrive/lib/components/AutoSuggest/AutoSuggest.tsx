@@ -109,55 +109,12 @@ interface AutoSuggestFullscreenInputProps<PayloadType extends unknown>
 	closeModal(): void;
 }
 
-const inputReducerFactory = <T extends Suggestions<unknown>>(
-	suggestions: T,
-): Reducer<State, Actions> => (prevState, action) => {
-	switch (action.type) {
-		default:
-		case ActionTypes.INPUT_CHANGE: {
-			return {
-				isFlyoutOpen: true,
-				highlightIndex: -1,
-				previewText: null,
-			};
-		}
-
-		case ActionTypes.FLYOUT_CLOSE:
-		case ActionTypes.SUGGESTION_MOUSE_CLICK:
-		case ActionTypes.INPUT_ESCAPE:
-		case ActionTypes.INPUT_BLUR: {
-			return {
-				isFlyoutOpen: false,
-				highlightIndex: -1,
-				previewText: null,
-			};
-		}
-
-		case ActionTypes.INPUT_FOCUS: {
-			return {
-				...prevState,
-				isFlyoutOpen: suggestions.length > -1,
-			};
-		}
-
-		case ActionTypes.INPUT_ARROW_DOWN: {
-			const nextIndex = getNextIndex(
-				1,
-				prevState.highlightIndex,
-				suggestions,
-			);
-			return {
-				isFlyoutOpen: true,
-				highlightIndex: nextIndex,
-				previewText:
-					nextIndex > -1 ? suggestions[nextIndex].text : null,
-			};
-		}
-
-		case ActionTypes.INPUT_ARROW_UP: {
-			const firstIndex = getNextIndex(1, -1, suggestions);
-
-			if (prevState.highlightIndex === firstIndex) {
+const inputReducerFactory =
+	<T extends Suggestions<unknown>>(suggestions: T): Reducer<State, Actions> =>
+	(prevState, action) => {
+		switch (action.type) {
+			default:
+			case ActionTypes.INPUT_CHANGE: {
 				return {
 					isFlyoutOpen: true,
 					highlightIndex: -1,
@@ -165,40 +122,83 @@ const inputReducerFactory = <T extends Suggestions<unknown>>(
 				};
 			}
 
-			const nextIndex = getNextIndex(
-				-1,
-				prevState.highlightIndex,
-				suggestions,
-			);
-
-			return {
-				isFlyoutOpen: true,
-				highlightIndex: nextIndex,
-				previewText:
-					nextIndex > -1 ? suggestions[nextIndex].text : null,
-			};
-		}
-
-		case ActionTypes.SUGGESTION_MOUSE_ENTER: {
-			return {
-				...prevState,
-				highlightIndex: action.index,
-			};
-		}
-
-		case ActionTypes.INPUT_ENTER: {
-			if (prevState.highlightIndex > -1) {
+			case ActionTypes.FLYOUT_CLOSE:
+			case ActionTypes.SUGGESTION_MOUSE_CLICK:
+			case ActionTypes.INPUT_ESCAPE:
+			case ActionTypes.INPUT_BLUR: {
 				return {
+					isFlyoutOpen: false,
 					highlightIndex: -1,
 					previewText: null,
-					isFlyoutOpen: false,
 				};
 			}
 
-			return prevState;
+			case ActionTypes.INPUT_FOCUS: {
+				return {
+					...prevState,
+					isFlyoutOpen: suggestions.length > -1,
+				};
+			}
+
+			case ActionTypes.INPUT_ARROW_DOWN: {
+				const nextIndex = getNextIndex(
+					1,
+					prevState.highlightIndex,
+					suggestions,
+				);
+				return {
+					isFlyoutOpen: true,
+					highlightIndex: nextIndex,
+					previewText:
+						nextIndex > -1 ? suggestions[nextIndex].text : null,
+				};
+			}
+
+			case ActionTypes.INPUT_ARROW_UP: {
+				const firstIndex = getNextIndex(1, -1, suggestions);
+
+				if (prevState.highlightIndex === firstIndex) {
+					return {
+						isFlyoutOpen: true,
+						highlightIndex: -1,
+						previewText: null,
+					};
+				}
+
+				const nextIndex = getNextIndex(
+					-1,
+					prevState.highlightIndex,
+					suggestions,
+				);
+
+				return {
+					isFlyoutOpen: true,
+					highlightIndex: nextIndex,
+					previewText:
+						nextIndex > -1 ? suggestions[nextIndex].text : null,
+				};
+			}
+
+			case ActionTypes.SUGGESTION_MOUSE_ENTER: {
+				return {
+					...prevState,
+					highlightIndex: action.index,
+				};
+			}
+
+			case ActionTypes.INPUT_ENTER: {
+				if (prevState.highlightIndex > -1) {
+					return {
+						highlightIndex: -1,
+						previewText: null,
+						isFlyoutOpen: false,
+					};
+				}
+
+				return prevState;
+			}
 		}
-	}
-};
+	};
 
 export const AutoSuggest = forwardRef(function AutoSuggest(
 	{
@@ -329,7 +329,8 @@ const AutoSuggestFullscreenInput = forwardRef(
 						rounded
 						className={styles.fullScreenCloseBtn}
 						size="medium"
-						onClick={closeModal}>
+						onClick={closeModal}
+					>
 						<Icon icon={CloseIcon} />
 					</Button>
 				</div>
@@ -398,11 +399,13 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 			aria-expanded={shouldOpenFlyout}
 			aria-owns={suggestionListId!}
 			aria-haspopup="listbox"
-			width="full">
+			width="full"
+		>
 			<Box
 				backgroundColour="white"
 				borderRadius="1"
-				className={styles.input}>
+				className={styles.input}
+			>
 				<AutoSuggestInputPrimitive
 					className={className}
 					size={size}
@@ -518,7 +521,8 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 					triggerRef={triggerRef}
 					alignment={EAlignment.BOTTOM_LEFT}
 					isOpen={shouldOpenFlyout}
-					triggerOffset={4}>
+					triggerOffset={4}
+				>
 					<SuggestionsList
 						className={styles.suggestionList.blockOptions}
 						suggestionListRef={suggestionListRef}
@@ -573,7 +577,8 @@ const SuggestionsList = <PayloadType extends unknown>({
 		className={[styles.suggestionList.defaults, className]}
 		id={suggestionListId}
 		aria-label={placeholder}
-		role="listbox">
+		role="listbox"
+	>
 		<div className={styles.spacer} />
 		{suggestions.map((suggestion, idx) => {
 			const highlight = highlightIndex === idx;
@@ -615,7 +620,8 @@ const SuggestionsList = <PayloadType extends unknown>({
 						dispatch({
 							type: ActionTypes.SUGGESTION_MOUSE_CLICK,
 						});
-					}}>
+					}}
+				>
 					{typeof itemRenderer === 'function' &&
 						itemRenderer({
 							suggestions,
@@ -674,7 +680,8 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 						paddingY={size === 'small' ? '1' : '3'}
 						paddingRight={size === 'small' ? '2' : '3'}
 						flexShrink={0}
-						onMouseDown={onRequestReset}>
+						onMouseDown={onRequestReset}
+					>
 						<Icon size="medium" icon={CloseIcon} />
 					</Box>
 				) : fieldIcon ? (
@@ -682,7 +689,8 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 						flexShrink={0}
 						paddingY={size === 'medium' ? '3' : '2'}
 						paddingRight={size === 'medium' ? '3' : '2'}
-						onClick={focusHandler}>
+						onClick={focusHandler}
+					>
 						<Icon size="medium" icon={fieldIcon} />
 					</Box>
 				) : null,
@@ -690,7 +698,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 		);
 
 		useEffect(
-			() => () => (focusTimeout ? clearTimeout(focusTimeout) : void 0),
+			() => () => focusTimeout ? clearTimeout(focusTimeout) : void 0,
 			[],
 		);
 
@@ -700,7 +708,8 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 				flexWrap="nowrap"
 				alignItems="center"
 				justifyContent="center"
-				className={className}>
+				className={className}
+			>
 				<Box
 					is="input"
 					flexGrow={1}
@@ -743,7 +752,8 @@ const SuggestionListFlyout: FunctionComponent<
 		alignment={alignment}
 		isOpen={isOpen}
 		triggerOffset={triggerOffset}
-		role="listbox">
+		role="listbox"
+	>
 		<Box
 			borderWidth="1"
 			borderColour="gray"
@@ -756,7 +766,8 @@ const SuggestionListFlyout: FunctionComponent<
 						? triggerRef.current.clientWidth
 						: undefined,
 			}}
-			onMouseDown={(event) => event.preventDefault()}>
+			onMouseDown={(event) => event.preventDefault()}
+		>
 			{children}
 		</Box>
 	</Positioner>
@@ -781,14 +792,15 @@ const DefaultSuggestion: FunctionComponent<DefaultSuggestionProps> = ({
 	<div
 		className={clsx(styles.suggestion, {
 			[styles.suggestionHighlight]: highlight,
-		})}>
+		})}
+	>
 		<Text is="span">{text}</Text>
 	</div>
 );
 
 const getNextIndex = <
 	PayloadType extends unknown,
-	Value extends AutoSuggestValue<PayloadType>
+	Value extends AutoSuggestValue<PayloadType>,
 >(
 	direction: 1 | -1,
 	currentIndex: number,

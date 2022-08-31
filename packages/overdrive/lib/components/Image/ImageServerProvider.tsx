@@ -70,7 +70,7 @@ export const ImageServerProvider: FunctionComponent<
 		({ quality, src }) =>
 			Object.keys(widthMap)
 				.map((key) => {
-					const width = getWidthValue((key as unknown) as WidthScale);
+					const width = getWidthValue(key as unknown as WidthScale);
 					return `${srcUrlMapper({ quality, src, width })} ${width}w`;
 				})
 				.join(', '),
@@ -87,7 +87,8 @@ export const ImageServerProvider: FunctionComponent<
 					generateSrcSet,
 				}),
 				[srcUrlMapper, widthMap, getWidthValue, generateSrcSet],
-			)}>
+			)}
+		>
 			{children}
 		</imageServerCtx.Provider>
 	);

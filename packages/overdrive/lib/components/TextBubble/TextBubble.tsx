@@ -8,16 +8,20 @@ import { Text } from '../Text';
 import * as styles from './TextBubble.css';
 
 export interface Props
-	extends Omit<ComponentProps<typeof Box>,
-		'borderRadius' | 'position' | 'padding'> {
+	extends Omit<
+		ComponentProps<typeof Box>,
+		'borderRadius' | 'position' | 'padding'
+	> {
 	label: string;
 	rawNumbers?: boolean;
 	textColour?: ComponentProps<typeof Text>['colour'];
 }
 
 type BubbleSize = 'SMALL' | 'MEDIUM' | 'LARGE' | 'X_LARGE';
-const valuePaddingMap: Record<BubbleSize,
-	ComponentProps<typeof Box>['padding']> = {
+const valuePaddingMap: Record<
+	BubbleSize,
+	ComponentProps<typeof Box>['padding']
+> = {
 	SMALL: '3',
 	MEDIUM: '4',
 	LARGE: '5',
@@ -25,11 +29,11 @@ const valuePaddingMap: Record<BubbleSize,
 };
 
 export const TextBubble: FunctionComponent<Props> = ({
-														 textColour = 'white',
-														 rawNumbers = false,
-														 label,
-														 ...boxProps
-													 }) => {
+	textColour = 'white',
+	rawNumbers = false,
+	label,
+	...boxProps
+}) => {
 	const size = useMemo<BubbleSize>(() => {
 		const size = label.length;
 		switch (size) {
@@ -45,17 +49,18 @@ export const TextBubble: FunctionComponent<Props> = ({
 	}, [label]);
 	return (
 		<Box
-			borderRadius='full'
-			backgroundColour='gray900'
-			display='inlineBlock'
-			position='relative'
+			borderRadius="full"
+			backgroundColour="gray900"
+			display="inlineBlock"
+			position="relative"
 			padding={valuePaddingMap[size]}
-			{...boxProps}>
+			{...boxProps}
+		>
 			<Text
-				size='2'
+				size="2"
 				strong
 				noWrap
-				align='center'
+				align="center"
 				className={clsx(
 					styles.bubbleText,
 					useBoxStyles({
@@ -65,7 +70,8 @@ export const TextBubble: FunctionComponent<Props> = ({
 						paddingX: '1',
 					}),
 				)}
-				colour={textColour}>
+				colour={textColour}
+			>
 				{label}
 			</Text>
 		</Box>

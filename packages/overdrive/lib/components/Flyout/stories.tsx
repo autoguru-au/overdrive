@@ -48,7 +48,8 @@ const Template: ComponentStory<typeof Flyout> = ({ ...args }) => {
 			}}
 			display="flex"
 			alignItems="center"
-			justifyContent="center">
+			justifyContent="center"
+		>
 			<Button ref={triggerRef}>some trigger</Button>
 			<Flyout {...args} triggerRef={triggerRef}>
 				<div
@@ -57,7 +58,8 @@ const Template: ComponentStory<typeof Flyout> = ({ ...args }) => {
 						gridTemplateRows: 'repeat(2, auto)',
 						gridGap: '16px',
 						padding: '16px',
-					}}>
+					}}
+				>
 					<TextInput name="example" placeholder="example" />
 					<div>
 						<Button size="small" variant="primary">

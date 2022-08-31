@@ -57,13 +57,15 @@ const input = [
 			'&::-ms-clear': {
 				display: 'none',
 			},
-			'&::-webkit-clear-button, &::-webkit-search-cancel-button, &::-webkit-search-results-button': {
-				WebkitAppearance: 'none',
-			},
-			'&[type="number"]::-webkit-outer-spin-button, &[type="number"]::-webkit-inner-spin-button': {
-				margin: 0,
-				WebkitAppearance: 'none',
-			},
+			'&::-webkit-clear-button, &::-webkit-search-cancel-button, &::-webkit-search-results-button':
+				{
+					WebkitAppearance: 'none',
+				},
+			'&[type="number"]::-webkit-outer-spin-button, &[type="number"]::-webkit-inner-spin-button':
+				{
+					margin: 0,
+					WebkitAppearance: 'none',
+				},
 		},
 	}),
 ];

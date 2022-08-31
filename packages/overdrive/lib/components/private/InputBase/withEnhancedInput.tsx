@@ -67,13 +67,11 @@ export interface ValidationProps {
 }
 
 // An amalgamation of the HoC props, event handlers and the consumer props.
-export type EnhanceInputProps<
-	IncomingProps,
-	PrimitiveElementType
-> = IncomingProps &
-	EnhanceInputPrimitiveProps &
-	EventHandlers<PrimitiveElementType> &
-	ValidationProps;
+export type EnhanceInputProps<IncomingProps, PrimitiveElementType> =
+	IncomingProps &
+		EnhanceInputPrimitiveProps &
+		EventHandlers<PrimitiveElementType> &
+		ValidationProps;
 
 // The final props we send into thw wrapping component
 export type WrappedComponentProps<IncomingProps, PrimitiveElementType> = {
@@ -102,7 +100,7 @@ interface EnhancedInputConfigs {
 
 export const withEnhancedInput = <
 	IncomingProps extends {} = {},
-	PrimitiveElementType extends HTMLElement = HTMLInputElement
+	PrimitiveElementType extends HTMLElement = HTMLInputElement,
 >(
 	WrappingComponent: ComponentType<
 		WrappedComponentProps<IncomingProps, PrimitiveElementType>
@@ -193,18 +191,15 @@ export const withEnhancedInput = <
 				styles.inputItselfSize[size].root.any,
 				styles.inputItselfSize[size].root[primitiveType],
 				{
-					[styles.inputItselfSize[size].prefixed.any]: Boolean(
-						prefixIcon,
-					),
-					[styles.inputItselfSize[size].prefixed[
-						primitiveType
-					]]: Boolean(prefixIcon),
+					[styles.inputItselfSize[size].prefixed.any]:
+						Boolean(prefixIcon),
+					[styles.inputItselfSize[size].prefixed[primitiveType]]:
+						Boolean(prefixIcon),
 					[styles.inputItselfSize[size].suffixed.any]: Boolean(
 						suffixIcon || isLoading,
 					),
-					[styles.inputItselfSize[size].suffixed[
-						primitiveType
-					]]: Boolean(suffixIcon || isLoading),
+					[styles.inputItselfSize[size].suffixed[primitiveType]]:
+						Boolean(suffixIcon || isLoading),
 				},
 			);
 
@@ -282,7 +277,8 @@ export const withEnhancedInput = <
 					width="full"
 					className={className}
 					onMouseEnter={onMouseOver}
-					onMouseLeave={onMouseOut}>
+					onMouseLeave={onMouseOut}
+				>
 					<NotchedBase
 						id={id}
 						prefixed={Boolean(prefixIcon)}
@@ -294,7 +290,8 @@ export const withEnhancedInput = <
 						placeholderColourClassName={clsx({
 							[derivedColours.colour]: !isEmpty,
 						})}
-						borderColourClassName={derivedColours.borderColour}>
+						borderColourClassName={derivedColours.borderColour}
+					>
 						<Box
 							ref={wrapperRef}
 							className={
@@ -303,7 +300,8 @@ export const withEnhancedInput = <
 								]
 							}
 							width="full"
-							height="full">
+							height="full"
+						>
 							{prefixIcon ? (
 								<Icon
 									icon={prefixIcon}

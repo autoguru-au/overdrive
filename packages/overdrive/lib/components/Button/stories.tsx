@@ -18,7 +18,8 @@ export default {
 					display: 'grid',
 					gridGap: '12px',
 					gridAutoFlow: 'row dense',
-				}}>
+				}}
+			>
 				{story()}
 			</div>
 		),
@@ -34,7 +35,8 @@ const Template: ComponentStory<typeof Button> = (args) => (
 	<div
 		style={{
 			width: 200,
-		}}>
+		}}
+	>
 		<Button {...args} />
 	</div>
 );

@@ -44,7 +44,8 @@ export const TableCell = forwardRef<HTMLDivElement, Props>(
 				borderColourBottom="light"
 				borderWidthBottom="1"
 				aria-label={ariaLabel}
-				className={styles.root}>
+				className={styles.root}
+			>
 				{typeof children === 'string' ||
 				typeof children === 'number' ? (
 					<Text
@@ -52,7 +53,8 @@ export const TableCell = forwardRef<HTMLDivElement, Props>(
 						align={align}
 						colour="dark"
 						display="block"
-						size="3">
+						size="3"
+					>
 						{children}
 					</Text>
 				) : (

@@ -58,7 +58,8 @@ export const Bubble: FunctionComponent<Props> = ({
 					[styles.activeItem]: !gap,
 				},
 			)}
-			onClick={onClick}>
+			onClick={onClick}
+		>
 			{gap ? '...' : children}
 		</Box>
 	);

@@ -46,13 +46,15 @@ const Template: ComponentStory<typeof Table> = (args) => {
 					<TableHeadCell
 						sort={sort.price}
 						align="right"
-						onSort={sortSetter('price')}>
+						onSort={sortSetter('price')}
+					>
 						Price
 					</TableHeadCell>
 					<TableHeadCell
 						sort={sort.status}
 						align="left"
-						onSort={sortSetter('status')}>
+						onSort={sortSetter('status')}
+					>
 						Status
 					</TableHeadCell>
 					<TableHeadCell>Age</TableHeadCell>

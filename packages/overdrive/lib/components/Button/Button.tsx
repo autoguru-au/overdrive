@@ -168,14 +168,16 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 				position="relative"
 				alignItems="center"
 				width="full"
-				height="full">
+				height="full"
+			>
 				<Box
 					position="absolute"
 					alignItems="center"
 					justifyContent="center"
 					display="flex"
 					width="full"
-					height="full">
+					height="full"
+				>
 					<ProgressSpinner
 						className={styles.spinner}
 						colour={getSpinnerColour(variant, minimal)}
@@ -184,7 +186,8 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 				<Box
 					width="full"
 					height="full"
-					className={[styles.body, styles.hiddenContent]}>
+					className={[styles.body, styles.hiddenContent]}
+				>
 					{buttonContents}
 				</Box>
 			</Box>
@@ -193,7 +196,8 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 				height="full"
 				alignItems="center"
 				justifyContent="center"
-				className={styles.body}>
+				className={styles.body}
+			>
 				{buttonContents}
 			</Box>
 		);

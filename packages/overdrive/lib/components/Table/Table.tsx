@@ -28,7 +28,8 @@ export const Table = forwardRef<HTMLDivElement, Props>(
 				role="grid"
 				width="full"
 				style={{ gridTemplateColumns: columnTemplate }}
-				className={styles.root}>
+				className={styles.root}
+			>
 				{children}
 			</Box>
 		</TableContextProvider>

@@ -81,7 +81,8 @@ export const Columns = forwardRef<HTMLElement, Props>(
 							wrappingDirection === 'reverse',
 					},
 				)}
-				{...boxProps}>
+				{...boxProps}
+			>
 				<ColumnContext.Provider
 					value={useMemo(
 						() => ({
@@ -98,7 +99,8 @@ export const Columns = forwardRef<HTMLElement, Props>(
 								['ul', 'ol'].includes(is),
 						}),
 						[resolvedSpaceX, resolvedSpaceY, styles],
-					)}>
+					)}
+				>
 					{children}
 				</ColumnContext.Provider>
 			</Box>

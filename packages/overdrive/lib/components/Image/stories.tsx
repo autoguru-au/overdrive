@@ -155,9 +155,8 @@ const AllQualityTemplate: ComponentStory<typeof Image> = (args) => (
 	</ImageServerProvider>
 );
 
-export const withImageServerQualities = AllQualityTemplate.bind(
-	withImageServerProps,
-);
+export const withImageServerQualities =
+	AllQualityTemplate.bind(withImageServerProps);
 withImageServerQualities.args = withImageServerProps;
 
 const AllSizeTemplate: ComponentStory<typeof Image> = (args) => (

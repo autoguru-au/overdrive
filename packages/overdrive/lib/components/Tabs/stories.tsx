@@ -108,7 +108,8 @@ const withComplexTabProps: ComponentProps<typeof Tabs> = {
 						Tab 1
 						<Tooltip
 							alignment={EAlignment.BOTTOM}
-							label="This tab is a winner">
+							label="This tab is a winner"
+						>
 							<Box>
 								<Icon icon={OttoIcon} />
 							</Box>
@@ -120,7 +121,8 @@ const withComplexTabProps: ComponentProps<typeof Tabs> = {
 						Tab 2
 						<Tooltip
 							alignment={EAlignment.BOTTOM}
-							label="This tab is less awesome">
+							label="This tab is less awesome"
+						>
 							<Box>
 								<Icon icon={AlertIcon} />
 							</Box>

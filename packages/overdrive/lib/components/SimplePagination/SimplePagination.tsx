@@ -35,14 +35,16 @@ export const SimplePagination: FunctionComponent<Props> = ({
 			space="6"
 			aria-label="pagination"
 			alignX="center"
-			alignY="center">
+			alignY="center"
+		>
 			<Button
 				rounded
 				disabled={!hasPrevious}
 				size="small"
 				variant="secondary"
 				aria-label="previous page"
-				onClick={handleClick(EChangeDirection.Previous)}>
+				onClick={handleClick(EChangeDirection.Previous)}
+			>
 				<Icon size="medium" icon={ChevronLeftIcon} />
 			</Button>
 			<Button
@@ -51,7 +53,8 @@ export const SimplePagination: FunctionComponent<Props> = ({
 				size="small"
 				variant="secondary"
 				aria-label="next page"
-				onClick={handleClick(EChangeDirection.Next)}>
+				onClick={handleClick(EChangeDirection.Next)}
+			>
 				<Icon size="medium" icon={ChevronRightIcon} />
 			</Button>
 		</Inline>

@@ -48,7 +48,8 @@ export const Badge: FunctionComponent<Props> = ({
 				display="block"
 				paddingX={isStandardSize ? '1' : '4'}
 				paddingY={isStandardSize ? '1' : '2'}
-				borderRadius="1">
+				borderRadius="1"
+			>
 				<Box
 					is="span"
 					display="block"
@@ -59,7 +60,8 @@ export const Badge: FunctionComponent<Props> = ({
 						inverted
 							? styles.colours.inverted[colour].text
 							: useTextStyles({ colour: 'white' }),
-					]}>
+					]}
+				>
 					{label}
 				</Box>
 			</Box>
