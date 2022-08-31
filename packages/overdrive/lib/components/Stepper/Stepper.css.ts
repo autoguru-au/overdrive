@@ -13,6 +13,15 @@ export const root = style({
 	},
 });
 
+
+export const width = styleVariants({
+	full: {
+		width: '100%',
+	},
+	default : {
+		width: 'max-content',
+	},
+});
 export const handle = styleVariants({
 	default: {
 		width: vars.space[6],

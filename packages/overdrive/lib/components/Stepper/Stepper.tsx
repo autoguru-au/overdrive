@@ -26,6 +26,7 @@ export interface Props {
 	min?: number;
 	max?: number;
 	step?: number;
+	isFullWidth?: boolean;
 
 	format?(value: number): string;
 
@@ -112,6 +113,7 @@ const Handle: FunctionComponent<HandleProps> = ({
 export const Stepper: FunctionComponent<Props> = ({
 	className = '',
 	disabled: incomingDisabled = false,
+	isFullWidth = false,
 	step = 1,
 	min = Number.NEGATIVE_INFINITY,
 	max = Number.POSITIVE_INFINITY,
@@ -192,12 +194,16 @@ export const Stepper: FunctionComponent<Props> = ({
 
 	return (
 		<Box
-			className={[
+			className={clsx(
+				className,
 				styles.root,
 				useBoxStyles({ is: 'button' }),
 				disabled && styles.disabled,
-				className,
-			]}
+				{
+					[styles.width.default]: !isFullWidth,
+					[styles.width.full]: isFullWidth,
+				}
+			)}
 			userSelect="none"
 			aria-disabled={disabled}
 			tabIndex={0}
@@ -207,7 +213,7 @@ export const Stepper: FunctionComponent<Props> = ({
 			borderRadius="1"
 			boxShadow="2"
 			onKeyDown={keyDownHandler}>
-			<Columns noWrap>
+			<Columns noWrap width='full'>
 				<Column noShrink alignSelf="centre">
 					<Handle
 						icon={MinusIcon}
@@ -216,7 +222,7 @@ export const Stepper: FunctionComponent<Props> = ({
 						onClick={onDecrement}
 					/>
 				</Column>
-				<Column noShrink width="auto" alignSelf="centre">
+				<Column noShrink grow width="auto" alignSelf="centre">
 					<Text
 						is="span"
 						align="center"

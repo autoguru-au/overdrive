@@ -24,6 +24,13 @@ const standardProps = {
 export const standard = Template.bind(standardProps);
 standard.args = standardProps;
 
+const fullWidthPropsProps = {
+	...standardProps,
+	isFullWidth: true,
+};
+export const fullWidth = Template.bind(fullWidthPropsProps);
+fullWidth.args = fullWidthPropsProps;
+
 const formatter = new Intl.NumberFormat('en-AU', {
 	style: 'currency',
 	currency: 'AUD',
