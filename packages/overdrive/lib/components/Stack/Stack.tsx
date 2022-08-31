@@ -47,7 +47,8 @@ export const Stack: FunctionComponent<Props> = ({
 					className={[
 						styles.child.default,
 						dividers ? undefined : styles.child.spaces[space],
-					]}>
+					]}
+				>
 					{dividers && idx > 0 ? (
 						<Box paddingY={space} width="full">
 							<Divider />

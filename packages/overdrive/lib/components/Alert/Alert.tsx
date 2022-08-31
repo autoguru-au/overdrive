@@ -63,7 +63,8 @@ export const Alert: FunctionComponent<Props> = ({
 			borderColour="gray"
 			borderRadius="1"
 			boxShadow={inline ? 'none' : '4'}
-			padding="2">
+			padding="2"
+		>
 			<Columns noWrap spaceX="2">
 				<Column noShrink alignSelf="top">
 					<Icon
@@ -80,7 +81,8 @@ export const Alert: FunctionComponent<Props> = ({
 					grow
 					width="auto"
 					alignSelf="centre"
-					className={useTextStyles({ colour: 'dark' })}>
+					className={useTextStyles({ colour: 'dark' })}
+				>
 					{typeof children === 'string' ? (
 						<Text>{children}</Text>
 					) : (
@@ -95,7 +97,8 @@ export const Alert: FunctionComponent<Props> = ({
 							variant="secondary"
 							size="small"
 							aria-label="close"
-							onClick={onRequestClose}>
+							onClick={onRequestClose}
+						>
 							<Icon
 								className={dismissBtnStyles}
 								icon={WindowCloseIcon}

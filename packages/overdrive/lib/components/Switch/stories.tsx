@@ -17,7 +17,6 @@ const standardProps = {
 	onChange: action('onChange'),
 };
 
-export const untoggled: ComponentStory<typeof Switch> = Template.bind(
-	standardProps,
-);
+export const untoggled: ComponentStory<typeof Switch> =
+	Template.bind(standardProps);
 untoggled.args = standardProps;

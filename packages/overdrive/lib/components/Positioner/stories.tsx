@@ -48,7 +48,8 @@ const Template: ComponentStory<typeof Positioner> = (args) => {
 					borderRadius="1"
 					borderWidth="1"
 					borderColour="gray"
-					padding="2">
+					padding="2"
+				>
 					<Text is="p">
 						Hello im from the consumer:{' '}
 						{isChromatic() ? '999' : Math.ceil(Math.random() * 100)}
@@ -67,17 +68,20 @@ const WithScrollTemplate: ComponentStory<typeof Positioner> = (args) => {
 			style={{
 				height: '100%',
 				width: '100%',
-			}}>
+			}}
+		>
 			<div
 				style={{
 					height: 'calc(100vh*5)',
 					width: 'calc(100vw*5)',
-				}}>
+				}}
+			>
 				<div
 					style={{
 						paddingTop: 'calc((100vh*5) / 2)',
 						paddingLeft: 'calc((100vw*5) / 2)',
-					}}>
+					}}
+				>
 					<Button ref={triggerRef} size="small">
 						I'm the trigger
 					</Button>
@@ -90,7 +94,8 @@ const WithScrollTemplate: ComponentStory<typeof Positioner> = (args) => {
 						borderRadius="1"
 						borderWidth="1"
 						borderColour="gray"
-						padding="2">
+						padding="2"
+					>
 						<Text is="p">
 							Hello im from the consumer:{' '}
 							{Math.ceil(Math.random() * 100)}
@@ -108,9 +113,8 @@ const standardProps = {
 	triggerOffset: 12,
 };
 
-export const closed: ComponentStory<typeof Positioner> = Template.bind(
-	standardProps,
-);
+export const closed: ComponentStory<typeof Positioner> =
+	Template.bind(standardProps);
 closed.args = standardProps;
 
 const openProps = {
@@ -126,9 +130,8 @@ const illustrateAScrollProps = {
 	isOpen: true,
 };
 
-export const illustrateAScroll: ComponentStory<
-	typeof Positioner
-> = WithScrollTemplate.bind(illustrateAScrollProps);
+export const illustrateAScroll: ComponentStory<typeof Positioner> =
+	WithScrollTemplate.bind(illustrateAScrollProps);
 illustrateAScroll.args = openProps;
 illustrateAScroll.parameters = {
 	chromatic: { disableSnapshot: true },

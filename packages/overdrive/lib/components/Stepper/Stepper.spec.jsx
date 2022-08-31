@@ -4,6 +4,24 @@ import { useState } from 'react';
 
 import { Stepper } from './Stepper';
 
+const InteractiveStepper = ({
+								onChange: incomingOnChange = ()=> void 0,
+								value: incomingValue,
+								...args
+							}) => {
+	const [value, setValue] = useState(incomingValue);
+	return (
+		<Stepper
+			onChange={(stepValue) => {
+				setValue(stepValue);
+				incomingOnChange(stepValue);
+			}}
+			value={value}
+			{...args}
+		/>
+	);
+};
+
 describe('<Stepper />', () => {
 	it('should not throw', () =>
 		expect(() => render(<Stepper />)).not.toThrow());
@@ -54,7 +72,7 @@ describe('<Stepper />', () => {
 		expect(container).toHaveTextContent('$99');
 	});
 
-	it('should display passed down value even when outside acceptable boundaries', () => {
+	it('should display max value when outside acceptable boundaries', () => {
 		const { container } = render(
 			<Stepper
 				min={-100}
@@ -64,14 +82,14 @@ describe('<Stepper />', () => {
 				format={(value) => `${value}%`}
 			/>,
 		);
-		expect(container).toHaveTextContent('45%');
+		expect(container).toHaveTextContent('40%');
 	});
 
 	it('should fire change with the correct changed value after next and previous button click', () => {
 		const spyedCallback = jest.fn((value) => `${value}%`);
 
 		const { container, getByLabelText } = render(
-			<Stepper
+			<InteractiveStepper
 				min={-100}
 				max={100}
 				value={45}
@@ -125,29 +143,26 @@ describe('<Stepper />', () => {
 
 		expect(container).toHaveTextContent('$16');
 
-		act(() => valueSetter(199));
+		act(() => valueSetter(99));
 
-		expect(container).toHaveTextContent('$199');
-
-		fireEvent.click(getByLabelText('step up'));
-
-		// This is true, because the ceiling is 100, so a plus on $199, is $100.
-		expect(container).toHaveTextContent('$100');
+		expect(container).toHaveTextContent('$99');
 
 		act(() => valueSetter(250));
+		// Max is set to 100
+		expect(container).toHaveTextContent('$100');
 
 		fireEvent.click(getByLabelText('step up'));
 
 		expect(container).toHaveTextContent('$100');
 
-		expect(spyedCallback).toHaveBeenCalledTimes(7);
+		expect(spyedCallback).toHaveBeenCalledTimes(3);
 	});
 
 	it('should onChange when the value changes', () => {
 		const onChangeHandler = jest.fn();
 
 		const { container, getByLabelText } = render(
-			<Stepper
+			<InteractiveStepper
 				min={-100}
 				max={100}
 				step={0.5}
@@ -174,7 +189,7 @@ describe('<Stepper />', () => {
 			const onChangeHandler = jest.fn();
 
 			const { container } = render(
-				<Stepper
+				<InteractiveStepper
 					min={0}
 					max={100}
 					step={1}
@@ -194,7 +209,7 @@ describe('<Stepper />', () => {
 			const onChangeHandler = jest.fn();
 
 			const { container } = render(
-				<Stepper
+				<InteractiveStepper
 					min={0}
 					max={100}
 					step={1}
@@ -214,7 +229,7 @@ describe('<Stepper />', () => {
 			const onChangeHandler = jest.fn();
 
 			const { container } = render(
-				<Stepper
+				<InteractiveStepper
 					min={0}
 					max={100}
 					step={1}
@@ -234,7 +249,7 @@ describe('<Stepper />', () => {
 			const onChangeHandler = jest.fn();
 
 			const { container } = render(
-				<Stepper
+				<InteractiveStepper
 					min={0}
 					max={100}
 					step={1}
@@ -256,7 +271,7 @@ describe('<Stepper />', () => {
 			const onChangeHandler = jest.fn();
 
 			const { container } = render(
-				<Stepper
+				<InteractiveStepper
 					max={100}
 					step={0.5}
 					value={1}
@@ -277,7 +292,7 @@ describe('<Stepper />', () => {
 			const onChangeHandler = jest.fn();
 
 			const { container } = render(
-				<Stepper
+				<InteractiveStepper
 					min={0}
 					step={0.5}
 					value={1}

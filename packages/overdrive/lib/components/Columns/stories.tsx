@@ -51,7 +51,8 @@ const Template: ComponentStory<typeof Columns> = (args) => (
 				padding="4"
 				borderRadius="1"
 				backgroundColour="green100"
-				style={{ width: '100%', height: '100%' }}>
+				style={{ width: '100%', height: '100%' }}
+			>
 				Col 1
 			</Box>
 		</Column>
@@ -62,7 +63,8 @@ const Template: ComponentStory<typeof Columns> = (args) => (
 				padding="4"
 				borderRadius="1"
 				backgroundColour="red100"
-				style={{ width: '100%', height: '100%' }}>
+				style={{ width: '100%', height: '100%' }}
+			>
 				Col 2
 			</Box>
 		</Column>
@@ -73,7 +75,8 @@ const Template: ComponentStory<typeof Columns> = (args) => (
 				padding="4"
 				borderRadius="1"
 				backgroundColour="blue100"
-				style={{ width: '100%', height: '100%' }}>
+				style={{ width: '100%', height: '100%' }}
+			>
 				Col 3
 			</Box>
 		</Column>
@@ -84,7 +87,8 @@ const Template: ComponentStory<typeof Columns> = (args) => (
 				padding="4"
 				borderRadius="1"
 				backgroundColour="yellow100"
-				style={{ width: '100%', height: '500px' }}>
+				style={{ width: '100%', height: '500px' }}
+			>
 				Col 4
 			</Box>
 		</Column>
@@ -100,7 +104,8 @@ const TemplateColumn: ComponentStory<typeof Column> = (args) => (
 				padding="4"
 				borderRadius="1"
 				backgroundColour="green100"
-				style={{ width: '100%', height: '100%' }}>
+				style={{ width: '100%', height: '100%' }}
+			>
 				Col 1
 			</Box>
 		</Column>
@@ -111,7 +116,8 @@ const TemplateColumn: ComponentStory<typeof Column> = (args) => (
 				padding="4"
 				borderRadius="1"
 				backgroundColour="red100"
-				style={{ width: '100%', height: '100%' }}>
+				style={{ width: '100%', height: '100%' }}
+			>
 				Col 2
 			</Box>
 		</Column>
@@ -122,7 +128,8 @@ const TemplateColumn: ComponentStory<typeof Column> = (args) => (
 				padding="4"
 				borderRadius="1"
 				backgroundColour="blue100"
-				style={{ width: '100%', height: '100%' }}>
+				style={{ width: '100%', height: '100%' }}
+			>
 				Col 3
 			</Box>
 		</Column>
@@ -133,7 +140,8 @@ const TemplateColumn: ComponentStory<typeof Column> = (args) => (
 				padding="4"
 				borderRadius="1"
 				backgroundColour="yellow100"
-				style={{ width: '100%', height: '500px' }}>
+				style={{ width: '100%', height: '500px' }}
+			>
 				Col 4
 			</Box>
 		</Column>
@@ -144,7 +152,8 @@ const TemplateColumn: ComponentStory<typeof Column> = (args) => (
 				padding="4"
 				borderRadius="1"
 				backgroundColour="yellow100"
-				style={{ width: '100%', height: '100%', minHeight: '200px' }}>
+				style={{ width: '100%', height: '100%', minHeight: '200px' }}
+			>
 				Col 4
 			</Box>
 		</Column>

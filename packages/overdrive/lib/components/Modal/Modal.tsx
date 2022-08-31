@@ -105,7 +105,8 @@ export const Modal: FunctionComponent<Props> = ({
 					autoFocus={false}
 					onActivation={() => {
 						dispatch('ANIMATION_COMPLETE');
-					}}>
+					}}
+				>
 					<Box
 						aria-hidden="true"
 						position="fixed"
@@ -128,7 +129,8 @@ export const Modal: FunctionComponent<Props> = ({
 							styles.root,
 							styles.transition,
 							state === 'OPENING' && styles.entry,
-						]}>
+						]}
+					>
 						{children}
 					</Box>
 				</FocusLock>
@@ -137,27 +139,25 @@ export const Modal: FunctionComponent<Props> = ({
 	);
 };
 
-export const withModal = <TIncomingProps extends {} = {}>(
-	WrappedComponent: ComponentType<Props & TIncomingProps>,
-): FunctionComponent<Props & TIncomingProps> => ({
-	onRequestClose,
-	isOpen,
-	...rest
-}) => {
-	// TODO: Deprecate me
-	warning(
-		false,
-		'Using withModal is now an anti-pattern. Use <Modal /> instead',
-	);
-	return (
-		<Modal isOpen={isOpen} onRequestClose={onRequestClose}>
-			<WrappedComponent
-				isOpen={isOpen}
-				onRequestClose={onRequestClose}
-				{...(rest as TIncomingProps)}
-			/>
-		</Modal>
-	);
-};
+export const withModal =
+	<TIncomingProps extends {} = {}>(
+		WrappedComponent: ComponentType<Props & TIncomingProps>,
+	): FunctionComponent<Props & TIncomingProps> =>
+	({ onRequestClose, isOpen, ...rest }) => {
+		// TODO: Deprecate me
+		warning(
+			false,
+			'Using withModal is now an anti-pattern. Use <Modal /> instead',
+		);
+		return (
+			<Modal isOpen={isOpen} onRequestClose={onRequestClose}>
+				<WrappedComponent
+					isOpen={isOpen}
+					onRequestClose={onRequestClose}
+					{...(rest as TIncomingProps)}
+				/>
+			</Modal>
+		);
+	};
 
 export default Modal;

@@ -48,7 +48,8 @@ export const NumberBubble: FunctionComponent<Props> = ({
 			display="inlineBlock"
 			position="relative"
 			padding={valuePaddingMap[size]}
-			{...boxProps}>
+			{...boxProps}
+		>
 			<Text
 				size="2"
 				strong
@@ -58,7 +59,8 @@ export const NumberBubble: FunctionComponent<Props> = ({
 						position: 'absolute',
 					}),
 				)}
-				colour={textColour}>
+				colour={textColour}
+			>
 				{rawNumbers ? value : toPrettyBigNumber(value)}
 			</Text>
 		</Box>

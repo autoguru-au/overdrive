@@ -18,10 +18,10 @@ export function useResponsiveValue<T extends string | number | boolean | {}>(
 
 		return activeBreakPoint;
 	}, 1);
-	return useMemo(() => getEarliestKnownToken<T>(responsiveValue, activeBP), [
-		responsiveValue,
-		activeBP,
-	]);
+	return useMemo(
+		() => getEarliestKnownToken<T>(responsiveValue, activeBP),
+		[responsiveValue, activeBP],
+	);
 }
 
 export default useResponsiveValue;

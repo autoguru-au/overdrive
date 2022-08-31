@@ -19,7 +19,8 @@ const withThemeProvider = (Story, context) => {
 			noBodyLevelTheming
 			themeClass={themeRef}
 			tokens={tokens}
-			vars={vars}>
+			vars={vars}
+		>
 			<Box className={themeRef} padding="2">
 				<Story {...context} />
 			</Box>
@@ -31,7 +32,8 @@ const withThemeProvider = (Story, context) => {
 					noBodyLevelTheming
 					themeClass={theme.themeRef}
 					tokens={tokens}
-					vars={vars}>
+					vars={vars}
+				>
 					<Box width="full" padding="5">
 						<Stack width="full" space="3">
 							<Heading is="h5" colour="light">

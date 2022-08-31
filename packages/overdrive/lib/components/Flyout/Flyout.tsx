@@ -12,14 +12,16 @@ export const Flyout: FunctionComponent<
 		isOpen={isOpen}
 		alignment={alignment}
 		triggerOffset={triggerOffset}
-		{...rest}>
+		{...rest}
+	>
 		<Box
 			overflow="hidden"
 			backgroundColour="white"
 			boxShadow="4"
 			borderRadius="1"
 			borderWidth="1"
-			borderColour="gray">
+			borderColour="gray"
+		>
 			{children}
 		</Box>
 	</Positioner>

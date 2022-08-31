@@ -72,7 +72,8 @@ export const NotchedBase: FunctionComponent<Props> = ({
 				styles.root,
 				!notch && [styles.borders.complete, borderColourClassName],
 				className,
-			)}>
+			)}
+		>
 			{children}
 			{notch && (
 				<Box
@@ -84,7 +85,8 @@ export const NotchedBase: FunctionComponent<Props> = ({
 					display="flex"
 					width="full"
 					height="full"
-					textAlign="left">
+					textAlign="left"
+				>
 					<div
 						className={clsx(
 							styles.borders.leading,
@@ -96,7 +98,8 @@ export const NotchedBase: FunctionComponent<Props> = ({
 							styles.borders.middle,
 							borderColourClassName,
 						)}
-						style={{ width: isEmpty ? 0 : notchedWidth }}>
+						style={{ width: isEmpty ? 0 : notchedWidth }}
+					>
 						<Box
 							ref={labelRef}
 							is="label"
@@ -117,10 +120,11 @@ export const NotchedBase: FunctionComponent<Props> = ({
 										isEmpty && !prefixed,
 									[styles.placeholderPlacement[size]
 										.defaultPrefixed]: isEmpty && prefixed,
-									[styles.placeholderPlacement[size]
-										.shifted]: !isEmpty,
+									[styles.placeholderPlacement[size].shifted]:
+										!isEmpty,
 								},
-							)}>
+							)}
+						>
 							{placeholder}
 						</Box>
 					</div>

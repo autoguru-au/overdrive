@@ -58,42 +58,41 @@ export const useAttachedBoxes = ({
 
 	return [
 		Array.from({ length: count }).map(
-			(_, index) => ({
-				children,
-				className,
-				...rest
-			}: AttachedBoxProps) => {
-				isLastItem = index === count - 1;
+			(_, index) =>
+				({ children, className, ...rest }: AttachedBoxProps) => {
+					isLastItem = index === count - 1;
 
-				if (isLastItem && decimals) {
-					//is last item and is not a perfect division
-					colStart = Math.round(decimals / (1 / columnCount));
-					extend = Math.round((1 - decimals) / (1 / columnCount));
-				}
+					if (isLastItem && decimals) {
+						//is last item and is not a perfect division
+						colStart = Math.round(decimals / (1 / columnCount));
+						extend = Math.round((1 - decimals) / (1 / columnCount));
+					}
 
-				return (
-					<Box
-						backgroundColour={backgroundColour}
-						className={clsx(className, {
-							[styles.grid.topLeft]: index === 0,
-							[styles.grid.topRight]: index === topRightIndex,
-							[styles.grid.bottomLeft]: index === bottomLeftIndex,
-							[styles.grid.bottomRight]: isLastItem,
-						})}
-						style={
-							isLastItem && decimals
-								? {
-										gridColumn: `${colStart}/${
-											colStart + 1 + extend
-										}`,
-								  }
-								: void 0
-						}
-						{...rest}>
-						{children}
-					</Box>
-				);
-			},
+					return (
+						<Box
+							backgroundColour={backgroundColour}
+							className={clsx(className, {
+								[styles.grid.topLeft]: index === 0,
+								[styles.grid.topRight]: index === topRightIndex,
+								[styles.grid.bottomLeft]:
+									index === bottomLeftIndex,
+								[styles.grid.bottomRight]: isLastItem,
+							})}
+							style={
+								isLastItem && decimals
+									? {
+											gridColumn: `${colStart}/${
+												colStart + 1 + extend
+											}`,
+									  }
+									: void 0
+							}
+							{...rest}
+						>
+							{children}
+						</Box>
+					);
+				},
 		),
 		clsx(
 			styles.grid.default,

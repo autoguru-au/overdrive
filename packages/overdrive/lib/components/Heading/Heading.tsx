@@ -51,7 +51,8 @@ export const Heading: FunctionComponent<Props> = ({
 				breakWord,
 			}),
 			className,
-		]}>
+		]}
+	>
 		{children}
 	</Box>
 );

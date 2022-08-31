@@ -130,7 +130,8 @@ const Item = ({ label, rating }) => (
 			display: 'grid',
 			gridGap: '8px',
 			gridTemplateColumns: '1fr auto',
-		}}>
+		}}
+	>
 		<Text>{label}</Text>
 		<StarRating rating={rating} />
 	</div>
@@ -150,7 +151,8 @@ const withMultiLineComponentProps: ComponentProps<typeof Radio> = {
 				display: 'grid',
 				gridGap: '8px',
 				gridTemplateColumns: '1fr auto auto',
-			}}>
+			}}
+		>
 			<Heading is="h5">Your last order</Heading>
 			<Badge colour="neutral" label="SUBSCRIBE" />
 			<Badge colour="neutral" label="AUTO TOP-UP" />
@@ -160,7 +162,8 @@ const withMultiLineComponentProps: ComponentProps<typeof Radio> = {
 					display: 'grid',
 					gridGap: '8px',
 					gridTemplateColumns: '1fr auto',
-				}}>
+				}}
+			>
 				<Text size="2">Ending in 5678</Text>
 				<Text size="2">Updated 12 Dec 2018</Text>
 			</div>

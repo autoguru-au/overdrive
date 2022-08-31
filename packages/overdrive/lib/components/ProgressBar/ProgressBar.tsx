@@ -7,9 +7,8 @@ import { Box } from '../Box';
 import * as styles from './ProgressBar.css';
 
 // TODO: These should use the intent verbs
-const colours: ReadonlyArray<
-	'red' | 'green' | 'blue' | 'yellow' | 'neutral'
-> = ['red', 'green', 'blue', 'yellow', 'neutral'] as const;
+const colours: ReadonlyArray<'red' | 'green' | 'blue' | 'yellow' | 'neutral'> =
+	['red', 'green', 'blue', 'yellow', 'neutral'] as const;
 
 export interface Props {
 	value?: number;
@@ -34,7 +33,8 @@ export const ProgressBar: FunctionComponent<Props> = ({
 	<Box
 		className={styles.container}
 		borderRadius="1"
-		backgroundColour="gray100">
+		backgroundColour="gray100"
+	>
 		<Box
 			borderRadius="1"
 			backgroundColour={backgroundColorMap[colour]}

@@ -36,7 +36,8 @@ export const Standard = () => {
 							Im some text, which is <Text strong>bolded!</Text>
 						</Text>,
 					)
-				}>
+				}
+			>
 				Custom
 			</Button>
 		</Actions>

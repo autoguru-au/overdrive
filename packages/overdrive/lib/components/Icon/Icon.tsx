@@ -27,7 +27,8 @@ export const Icon: FunctionComponent<Props> = ({
 		is="i"
 		display={display}
 		className={[resolveResponsiveStyle(size, styles.size), className]}
-		role="presentation">
+		role="presentation"
+	>
 		{cloneElement(icon, {
 			className: useBoxStyles({
 				is: 'svg',

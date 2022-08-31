@@ -31,7 +31,8 @@ export default {
 					maxWidth: 300,
 					display: 'grid',
 					gridTemplateColumns: '1fr',
-				}}>
+				}}
+			>
 				{story()}
 			</div>
 		),
@@ -102,12 +103,10 @@ const standardProps: Omit<ComponentProps<typeof TextLink>, 'children'> = {
 	fontWeight: 'semiBold',
 };
 
-export const standard: ComponentStory<typeof TextLink> = Template.bind(
-	standardProps,
-);
+export const standard: ComponentStory<typeof TextLink> =
+	Template.bind(standardProps);
 standard.args = standardProps;
 
-export const insideParagraph: ComponentStory<
-	typeof TextLink
-> = InsideParagraphTemplate.bind(standardProps);
+export const insideParagraph: ComponentStory<typeof TextLink> =
+	InsideParagraphTemplate.bind(standardProps);
 insideParagraph.args = standardProps;

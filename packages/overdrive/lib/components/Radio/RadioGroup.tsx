@@ -46,7 +46,8 @@ export const RadioGroup = forwardRef<HTMLDivElement, Props>(
 					flexDirection="column"
 					width="full"
 					padding="none"
-					className={className}>
+					className={className}
+				>
 					{children}
 				</Box>
 			</RadioContext.Provider>

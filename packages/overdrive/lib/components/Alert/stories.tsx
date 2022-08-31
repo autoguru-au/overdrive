@@ -34,7 +34,8 @@ const template: ComponentStory<typeof Alert> = (args) => (
 			display: 'grid',
 			gridAutoFlow: 'row dense',
 			gridGap: '24px',
-		}}>
+		}}
+	>
 		<div>
 			<Alert {...args} onRequestClose={onRequestClose}>
 				<Text>
@@ -51,7 +52,8 @@ const templateAllIntents: ComponentStory<typeof Alert> = (args) => (
 			display: 'grid',
 			gridAutoFlow: 'row dense',
 			gridGap: '24px',
-		}}>
+		}}
+	>
 		<div>
 			<Alert {...args} intent="success" onRequestClose={onRequestClose}>
 				<Text>
@@ -76,7 +78,8 @@ const templateAllIntents: ComponentStory<typeof Alert> = (args) => (
 			<Alert
 				{...args}
 				intent="information"
-				onRequestClose={onRequestClose}>
+				onRequestClose={onRequestClose}
+			>
 				Something worth noting happened
 			</Alert>
 		</div>
@@ -85,7 +88,8 @@ const templateAllIntents: ComponentStory<typeof Alert> = (args) => (
 			<Alert
 				{...args}
 				intent="information"
-				onRequestClose={onRequestClose}>
+				onRequestClose={onRequestClose}
+			>
 				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
 				commodo ligula eget dolor. Aenean massa. Cum sociis natoque
 				penatibus et magnis dis parturient montes, nascetur ridiculus
@@ -131,7 +135,6 @@ const noneDismissibleProps: typeof standardProps = {
 	dismissible: false,
 };
 
-export const NoneDismissibleAllIntents = templateAllIntents.bind(
-	noneDismissibleProps,
-);
+export const NoneDismissibleAllIntents =
+	templateAllIntents.bind(noneDismissibleProps);
 NoneDismissibleAllIntents.args = noneDismissibleProps;

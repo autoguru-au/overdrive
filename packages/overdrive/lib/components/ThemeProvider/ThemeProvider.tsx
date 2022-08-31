@@ -35,11 +35,14 @@ export const ThemeProvider: FunctionComponent<Props> = ({
 	breakpoints,
 }) => (
 	<themeContext.Provider
-		value={useMemo(() => ({ vars, themeClass }), [vars, tokens])}>
+		value={useMemo(() => ({ vars, themeClass }), [vars, tokens])}
+	>
 		<runtimeTokensContext.Provider
-			value={useMemo(() => makeRuntimeTokens(tokens, breakpoints), [
-				tokens,
-			])}>
+			value={useMemo(
+				() => makeRuntimeTokens(tokens, breakpoints),
+				[tokens],
+			)}
+		>
 			{children}
 		</runtimeTokensContext.Provider>
 	</themeContext.Provider>

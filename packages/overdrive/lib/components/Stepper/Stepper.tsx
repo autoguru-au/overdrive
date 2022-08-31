@@ -6,10 +6,7 @@ import {
 	FunctionComponent,
 	KeyboardEvent,
 	MouseEventHandler,
-	Reducer,
 	useCallback,
-	useReducer,
-	useRef,
 } from 'react';
 
 import { Box, useBoxStyles } from '../Box';
@@ -33,48 +30,17 @@ export interface Props {
 	onChange?(value: number): void;
 }
 
-enum EActionType {
-	INCREMENT,
-	DECREMENT,
-	VALUE,
-}
-
-type Actions =
-	| { type: EActionType.INCREMENT; min: number; max: number; step: number }
-	| { type: EActionType.DECREMENT; min: number; max: number; step: number }
-	| {
-			type: EActionType.VALUE;
-			min: number;
-			max: number;
-			step: number;
-			value: number;
-	  };
-
-interface State {
+interface StepProps {
+	min: number;
+	max: number;
+	step: number;
 	value: number;
+	direction: 'UP' | 'DOWN';
 }
 
-const getValueOrSafeInteger = (value: number) =>
-	value < 0 ? Number.MIN_SAFE_INTEGER : Number.MAX_SAFE_INTEGER;
-
-const reducer: Reducer<State, Actions> = (state, action) => {
-	if (action.type === EActionType.VALUE) {
-		return {
-			value: Number.isFinite(action.value)
-				? action.value
-				: getValueOrSafeInteger(action.value),
-		};
-	}
-
-	const direction = EActionType.DECREMENT === action.type ? -1 : 1;
-
-	return {
-		value: clamp(
-			state.value + direction * action.step,
-			action.min,
-			action.max,
-		),
-	};
+const takeStep = ({ min, max, value, step, direction }: StepProps): number => {
+	const directionChange = (direction === 'DOWN' ? -1 : 1) * step;
+	return clamp(value + directionChange, min, max);
 };
 
 interface HandleProps {
@@ -105,7 +71,8 @@ const Handle: FunctionComponent<HandleProps> = ({
 		justifyContent="center"
 		disabled={disabled}
 		tabIndex={-1}
-		onClick={onClick}>
+		onClick={onClick}
+	>
 		<Icon icon={icon} size="small" />
 	</Box>
 );
@@ -115,43 +82,41 @@ export const Stepper: FunctionComponent<Props> = ({
 	disabled: incomingDisabled = false,
 	isFullWidth = false,
 	step = 1,
-	min = Number.NEGATIVE_INFINITY,
-	max = Number.POSITIVE_INFINITY,
-	value,
+	min = Number.MIN_SAFE_INTEGER,
+	max = Number.MAX_SAFE_INTEGER,
+	value: incomingValue,
 	format = (value) => value.toString(),
-	onChange,
+	onChange = ()=> void 0,
 }) => {
+	const value = clamp(incomingValue, min, max);
 	const disabled: boolean =
 		incomingDisabled || value === undefined || value === null;
 
-	const [state, dispatch] = useReducer(reducer, { value: value ?? 0 });
-
-	const prevValue = useRef(value);
-
-	if (state.value !== value && typeof onChange === 'function') {
-		onChange(state.value);
-	}
-
 	const onDecrement = useCallback(
 		() =>
-			dispatch({
-				type: EActionType.DECREMENT,
-				step,
-				min,
-				max,
-			}),
-		[step, min, max],
+			onChange(
+				takeStep({
+					direction: 'DOWN',
+					step,
+					min,
+					max,
+					value,
+				}),
+			),
+		[step, min, max, value, onChange],
 	);
-
 	const onIncrement = useCallback(
 		() =>
-			dispatch({
-				type: EActionType.INCREMENT,
-				step,
-				min,
-				max,
-			}),
-		[step, min, max],
+			onChange(
+				takeStep({
+					direction: 'UP',
+					step,
+					min,
+					max,
+					value,
+				}),
+			),
+		[step, min, max, value, onChange],
 	);
 
 	const keyDownHandler = useCallback(
@@ -163,34 +128,18 @@ export const Stepper: FunctionComponent<Props> = ({
 				case 'ArrowRight':
 					return onIncrement();
 				case 'Home':
+					event.preventDefault();
+					return onChange(min);
 				case 'End':
 					event.preventDefault();
-					return dispatch({
-						type: EActionType.VALUE,
-						max,
-						min,
-						step,
-						value: event.key === 'Home' ? min : max,
-					});
+					return onChange(max);
 				case 'Escape':
 					event.currentTarget.blur();
 					break;
 			}
 		},
-		[onDecrement, onIncrement],
+		[min, max, onDecrement, onIncrement, onChange],
 	);
-
-	if (prevValue.current !== value && value !== undefined) {
-		if (value !== state.value)
-			dispatch({
-				type: EActionType.VALUE,
-				value,
-				step,
-				min,
-				max,
-			});
-		prevValue.current = value;
-	}
 
 	return (
 		<Box
@@ -202,7 +151,7 @@ export const Stepper: FunctionComponent<Props> = ({
 				{
 					[styles.width.default]: !isFullWidth,
 					[styles.width.full]: isFullWidth,
-				}
+				},
 			)}
 			userSelect="none"
 			aria-disabled={disabled}
@@ -212,8 +161,9 @@ export const Stepper: FunctionComponent<Props> = ({
 			padding="3"
 			borderRadius="1"
 			boxShadow="2"
-			onKeyDown={keyDownHandler}>
-			<Columns noWrap width='full'>
+			onKeyDown={keyDownHandler}
+		>
+			<Columns noWrap width="full">
 				<Column noShrink alignSelf="centre">
 					<Handle
 						icon={MinusIcon}
@@ -236,10 +186,9 @@ export const Stepper: FunctionComponent<Props> = ({
 							}),
 							styles.label,
 						)}
-						size="4">
-						{Number.isFinite(state.value)
-							? format(state.value)
-							: ''}
+						size="4"
+					>
+						{Number.isFinite(value) ? format(value) : ''}
 					</Text>
 				</Column>
 				<Column noShrink alignSelf="centre">

@@ -61,7 +61,8 @@ export const CheckableBase = forwardRef<HTMLInputElement, Props>(
 					useBoxStyles({ is: 'button' }),
 					className,
 					{ [styles.disabled]: disabled },
-				]}>
+				]}
+			>
 				<Box
 					ref={ref}
 					is="input"
@@ -94,7 +95,8 @@ export const CheckableBase = forwardRef<HTMLInputElement, Props>(
 					className={[
 						styles.checkable,
 						useBoxStyles({ is: 'button' }),
-					]}>
+					]}
+				>
 					{children}
 				</Box>
 				{label ? (
@@ -108,7 +110,8 @@ export const CheckableBase = forwardRef<HTMLInputElement, Props>(
 							{
 								[styles.label.disabled]: disabled,
 							},
-						)}>
+						)}
+					>
 						{nakedLabel ? <Text is="span">{label}</Text> : label}
 					</Box>
 				) : null}

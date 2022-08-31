@@ -82,7 +82,8 @@ export const StandardModal: FunctionComponent<Props> = ({
 				aria-hidden={isOpen ? 'false' : 'true'}
 				role="none presentation"
 				onMouseDown={unlockModal}
-				onClick={backdropHandler}>
+				onClick={backdropHandler}
+			>
 				<Box
 					is="article"
 					overflow="hidden"
@@ -99,7 +100,8 @@ export const StandardModal: FunctionComponent<Props> = ({
 						{ [styles.modalSizeNarrow]: size === 'narrow' },
 						{ [styles.modalSizeSkinny]: size === 'skinny' },
 						className,
-					])}>
+					])}
+				>
 					<Box
 						is="header"
 						flexShrink={0}
@@ -112,7 +114,8 @@ export const StandardModal: FunctionComponent<Props> = ({
 						paddingLeft="5"
 						paddingRight="2"
 						borderWidthBottom="1"
-						borderColour="light">
+						borderColour="light"
+					>
 						<Box flexGrow={1} id={titleId!}>
 							<Heading is="h4">{title}</Heading>
 						</Box>
@@ -122,7 +125,8 @@ export const StandardModal: FunctionComponent<Props> = ({
 							variant="secondary"
 							size="small"
 							aria-label="close"
-							onClick={closeButtonHandler}>
+							onClick={closeButtonHandler}
+						>
 							<Icon
 								className={useTextStyles({ colour: 'muted' })}
 								icon={WindowCloseIcon}
@@ -136,7 +140,8 @@ export const StandardModal: FunctionComponent<Props> = ({
 						flexDirection="column"
 						flexGrow={1}
 						height="full"
-						className={styles.content}>
+						className={styles.content}
+					>
 						{children}
 					</Box>
 				</Box>

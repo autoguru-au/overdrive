@@ -56,7 +56,8 @@ export const CheckBox = forwardRef<HTMLInputElement, Props>(
 				disabled={disabled}
 				checked={checked}
 				handleClick={onClick}
-				handleChange={onChange}>
+				handleChange={onChange}
+			>
 				{checked ? (
 					<Icon
 						className={clsx(styles.icon, iconStyles)}

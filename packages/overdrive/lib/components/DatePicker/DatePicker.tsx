@@ -47,7 +47,8 @@ export const DatePicker: FunctionComponent<Props> = ({
 					[styles.disabled.default]: disabled,
 					[styles.disabled.root]: disabled,
 				},
-			)}>
+			)}
+		>
 			<Box
 				position="absolute"
 				height="full"

@@ -137,7 +137,8 @@ export const Box = forwardRef<HTMLElement, Props>(
 			<Component
 				ref={ref}
 				className={clsx(cls, className)}
-				{...allOtherProps}>
+				{...allOtherProps}
+			>
 				{children}
 			</Component>
 		);

@@ -41,7 +41,8 @@ export const Tabs: FunctionComponent<Props> = ({
 					onChange: setActiveState,
 				}),
 				[id, activeState],
-			)}>
+			)}
+		>
 			{children}
 		</TabsContext.Provider>
 	);

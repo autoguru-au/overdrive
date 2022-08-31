@@ -42,7 +42,8 @@ export const Bullet: FunctionComponent<Props> = ({ children, className }) => (
 					isValidElement(children) && children.type === BulletList,
 			},
 			className,
-		]}>
+		]}
+	>
 		{children}
 	</Box>
 );

@@ -38,12 +38,10 @@ const noWrapProps: typeof standardProps = {
 	noWrap: true,
 };
 
-export const standard: ComponentStory<typeof Actions> = template.bind(
-	standardProps,
-);
-export const noWrap: ComponentStory<typeof Actions> = template.bind(
-	noWrapProps,
-);
+export const standard: ComponentStory<typeof Actions> =
+	template.bind(standardProps);
+export const noWrap: ComponentStory<typeof Actions> =
+	template.bind(noWrapProps);
 
 standard.args = standardProps;
 noWrap.args = noWrapProps;

@@ -22,14 +22,16 @@ export default {
 					display: 'grid',
 					gridAutoFlow: 'row dense',
 					gridGap: '10px',
-				}}>
+				}}
+			>
 				<div
 					style={{
 						display: 'grid',
 						gap: '10px',
 						gridTemplateColumns:
 							'repeat(auto-fit, minmax(10px, max-content))',
-					}}>
+					}}
+				>
 					{story()}
 				</div>
 			</div>
@@ -60,9 +62,8 @@ const standardLargeProps: ComponentProps<typeof Badge> = {
 	...standardProps,
 	size: 'large',
 };
-export const standardLargeAllColours = templateAllColours.bind(
-	standardLargeProps,
-);
+export const standardLargeAllColours =
+	templateAllColours.bind(standardLargeProps);
 standardLargeAllColours.args = standardLargeProps;
 
 const invertedProps: ComponentProps<typeof Badge> = {
@@ -80,7 +81,6 @@ const invertedLargeProps: ComponentProps<typeof Badge> = {
 	...standardLargeProps,
 	look: 'inverted',
 };
-export const invertedLargeAllColours = templateAllColours.bind(
-	invertedLargeProps,
-);
+export const invertedLargeAllColours =
+	templateAllColours.bind(invertedLargeProps);
 invertedLargeAllColours.args = invertedLargeProps;

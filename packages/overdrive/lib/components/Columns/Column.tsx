@@ -52,7 +52,8 @@ export const Column = forwardRef<HTMLElement, Props>(
 					spaceYCls,
 					resolveResponsiveStyle(width, styles.width),
 					styles.align[alignSelf!],
-				]}>
+				]}
+			>
 				<Box
 					ref={ref}
 					is={is}
@@ -60,7 +61,8 @@ export const Column = forwardRef<HTMLElement, Props>(
 					width="full"
 					height="full"
 					className={className}
-					{...boxProps}>
+					{...boxProps}
+				>
 					{children}
 				</Box>
 			</Box>

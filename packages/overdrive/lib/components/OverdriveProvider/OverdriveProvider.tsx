@@ -38,7 +38,8 @@ export const OverdriveProvider: FunctionComponent<Props> = ({
 			vars={vars}
 			themeClass={themeClass}
 			tokens={tokens}
-			breakpoints={breakpoints}>
+			breakpoints={breakpoints}
+		>
 			{children}
 		</ThemeProvider>
 	);
