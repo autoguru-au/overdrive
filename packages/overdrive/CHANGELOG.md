@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.7.0
+
+### Minor Changes
+
+-   74694e1: Stepper: Looses internally managed state
+
 ## 4.6.0
 
 ### Minor Changes
