@@ -5,10 +5,10 @@ import { useState } from 'react';
 import { Stepper } from './Stepper';
 
 const InteractiveStepper = ({
-								onChange: incomingOnChange = ()=> void 0,
-								value: incomingValue,
-								...args
-							}) => {
+	onChange: incomingOnChange = () => void 0,
+	value: incomingValue,
+	...args
+}) => {
 	const [value, setValue] = useState(incomingValue);
 	return (
 		<Stepper

@@ -6,13 +6,6 @@ const handleSize = '24px';
 const handleOffset = '2px';
 const borderSize = '1px';
 
-export const root = style({
-	width: `calc((2 * ${handleSize}) + ${handleOffset} - 2 * ${borderSize})`,
-	height: `calc(${handleSize} + (${handleOffset} * 2))`,
-	transition: 'background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
-	border: `${borderSize} solid ${vars.border.colours.light}`,
-});
-
 export const handle = styleVariants({
 	default: {
 		borderColor: vars.border.colours.gray,
@@ -50,6 +43,18 @@ export const disabled = styleVariants({
 				borderColor: vars.border.colours.light,
 				backgroundColor: vars.colours.intent.primary.background.mild,
 			},
+		},
+	},
+});
+
+export const root = style({
+	width: `calc((2 * ${handleSize}) + ${handleOffset} - 2 * ${borderSize})`,
+	height: `calc(${handleSize} + (${handleOffset} * 2))`,
+	transition: 'background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
+	border: `${borderSize} solid ${vars.border.colours.light}`,
+	selectors: {
+		[`&:not(${disabled.default}):not(${disabled.toggled}):focus`]: {
+			borderColor: vars.colours.intent.information.background.standard,
 		},
 	},
 });
