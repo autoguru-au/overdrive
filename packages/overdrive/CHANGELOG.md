@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.7.1
+
+### Patch Changes
+
+-   a8084f6: Switch: Gets more visible focused state
+
 ## 4.7.0
 
 ### Minor Changes
