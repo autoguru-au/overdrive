@@ -86,7 +86,7 @@ export const Stepper: FunctionComponent<Props> = ({
 	max = Number.MAX_SAFE_INTEGER,
 	value: incomingValue,
 	format = (value) => value.toString(),
-	onChange = ()=> void 0,
+	onChange = () => void 0,
 }) => {
 	const value = clamp(incomingValue, min, max);
 	const disabled: boolean =
