@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.7.3
+
+### Patch Changes
+
+-   bd4ed83: Autosuggest: Fixes mobile input loosing focue on search
+
 ## 4.7.2
 
 ### Patch Changes
