@@ -207,7 +207,7 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 		inlineOptions = false,
 		fieldIcon,
 		suggestions,
-		value,
+		value: incomingValue,
 		onChange: incomingOnChange,
 		onEnter,
 		itemRenderer = defaultItemRenderer,
@@ -220,14 +220,24 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 	ref,
 ) {
 	const inputRef = useRef();
+	const valueRef = useRef(incomingValue);
 	useImperativeHandle(ref, () => inputRef.current);
 	const [isDesktop] = useMedia(['desktop'], false);
 	const [isFocused, setIsFocused] = useState<boolean>(false);
 	const [showModal, setShowModal] = useState<boolean>(false);
+	const closeModal = useCallback(() => {
+		setShowModal(false);
+		setIsFocused(false);
+	}, [setShowModal]);
+
+	if (incomingValue !== valueRef.current) {
+		valueRef.current = incomingValue;
+		closeModal();
+	}
 
 	const props = {
 		suggestions,
-		value,
+		value: valueRef.current,
 		onChange: (value) => {
 			if (
 				typeof value.payload !== 'undefined' &&
@@ -245,7 +255,7 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 				setIsFocused(false);
 				// @ts-ignore
 				inputRef.current?.blur();
-				onEnter(value);
+				onEnter(valueRef.current);
 			}
 		},
 		itemRenderer,
@@ -258,11 +268,6 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 		onBlur: wrapEvent(() => setIsFocused(false), incomingOnBlur),
 		...textInputProps,
 	};
-
-	const closeModal = useCallback(() => {
-		setShowModal(false);
-		setIsFocused(false);
-	}, [setShowModal]);
 
 	return !inlineOptions && !isDesktop && showModal ? (
 		<AutoSuggestFullscreenInput
