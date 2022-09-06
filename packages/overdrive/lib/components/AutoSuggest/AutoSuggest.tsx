@@ -230,9 +230,10 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 		setIsFocused(false);
 	}, [setShowModal]);
 
-	if (incomingValue !== valueRef.current) {
+	if (incomingValue && incomingValue !== valueRef.current) {
 		valueRef.current = incomingValue;
-		closeModal();
+
+		if (incomingValue.payload) closeModal();
 	}
 
 	const props = {
