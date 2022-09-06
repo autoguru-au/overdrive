@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.7.2
+
+### Patch Changes
+
+-   2e7f672: AutoSuggest: Automatically closes mobile modal with value changes
+
 ## 4.7.1
 
 ### Patch Changes
