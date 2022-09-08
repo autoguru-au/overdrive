@@ -10,8 +10,12 @@ import {
 	ElementType,
 	forwardRef,
 	isValidElement,
+	MouseEventHandler,
 	ReactElement,
+	useCallback,
+	useEffect,
 	useMemo,
+	useState,
 } from 'react';
 
 import { Box, useBoxStyles } from '../Box';
@@ -25,6 +29,8 @@ type ButtonPrimitive = ButtonHTMLAttributes<HTMLButtonElement>;
 
 type AllowedChildren = string | IconType;
 
+const DOUBLE_CLICK_DETECTION_PERIOD = 700;
+
 export interface Props
 	extends Pick<ButtonPrimitive, 'id' | 'onClick' | 'type' | 'className'>,
 		Pick<AriaAttributes, 'aria-label'> {
@@ -37,6 +43,7 @@ export interface Props
 	rounded?: boolean;
 	size?: keyof typeof styles.size;
 	variant?: keyof typeof styles.variant;
+	withDoubleClicks?: boolean;
 }
 
 const getSpinnerColour: (
@@ -66,10 +73,11 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 			disabled = false,
 			id,
 			is: Component = 'button',
+			withDoubleClicks = false,
 			isLoading = false,
 			isFullWidth = false,
 			minimal = false,
-			onClick,
+			onClick: incomingOnClick,
 			rounded = false,
 			size = 'medium',
 			type = 'button',
@@ -93,6 +101,18 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 				: { isSingleIconChild: false };
 		}, [children]);
 
+		const [functionallyDisabled, setFunctionallyDisabled] =
+			useState<boolean>(false);
+
+		const onClick = useCallback<MouseEventHandler<HTMLButtonElement>>(
+			(event) => {
+				if (!withDoubleClicks) setFunctionallyDisabled(true);
+				if (typeof incomingOnClick === 'function')
+					incomingOnClick(event);
+			},
+			[withDoubleClicks, incomingOnClick],
+		);
+
 		const props: Partial<ButtonPrimitive> & { ref: typeof ref } = {
 			type: Component === 'button' ? (type as any) : undefined,
 			id,
@@ -110,6 +130,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 					paddingY: 'none',
 					paddingX: getPadding(size, isLoading),
 					width: isFullWidth ? 'full' : void 0,
+					pointerEvents: functionallyDisabled ? 'none' : void 0,
 				}),
 				useTextStyles({
 					colour: 'white',
@@ -160,6 +181,17 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 			),
 			[maybeIconProps, isSingleIconChild, children, size],
 		);
+
+		useEffect(() => {
+			let timeout;
+			if (functionallyDisabled)
+				timeout = setTimeout(
+					() => setFunctionallyDisabled(false),
+					DOUBLE_CLICK_DETECTION_PERIOD,
+				);
+
+			return () => (timeout ? clearTimeout(timeout) : void 0);
+		}, [functionallyDisabled]);
 
 		const child = isLoading ? (
 			<Box
