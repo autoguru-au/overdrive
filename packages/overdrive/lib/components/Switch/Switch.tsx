@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import { FunctionComponent, useCallback, useState } from 'react';
+import { FunctionComponent, useCallback } from 'react';
 
 import { Box, useBoxStyles } from '../Box';
 import { useTextStyles } from '../Text';
@@ -18,13 +18,9 @@ export interface Props {
 export const Switch: FunctionComponent<Props> = ({
 	className = '',
 	disabled = false,
-	toggled: incomingToggled = false,
+	toggled = false,
 	onChange,
 }) => {
-	const [toggled, setToggled] = useState<boolean>(incomingToggled);
-
-	const [prevValue, setPrevValue] = useState<boolean>(incomingToggled);
-
 	const onToggle = useCallback(() => {
 		if (disabled) {
 			return;
@@ -33,14 +29,7 @@ export const Switch: FunctionComponent<Props> = ({
 		if (typeof onChange === 'function') {
 			onChange(!toggled);
 		}
-
-		setToggled(!toggled);
-	}, [incomingToggled, disabled, toggled]);
-
-	if (prevValue !== incomingToggled) {
-		setToggled(incomingToggled);
-		setPrevValue(incomingToggled);
-	}
+	}, [disabled, toggled]);
 
 	return (
 		<Box
