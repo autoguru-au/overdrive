@@ -39,6 +39,7 @@ export const SimplePagination: FunctionComponent<Props> = ({
 		>
 			<Button
 				rounded
+				withDoubleClicks
 				disabled={!hasPrevious}
 				size="small"
 				variant="secondary"
@@ -49,6 +50,7 @@ export const SimplePagination: FunctionComponent<Props> = ({
 			</Button>
 			<Button
 				rounded
+				withDoubleClicks
 				disabled={!hasNext}
 				size="small"
 				variant="secondary"

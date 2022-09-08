@@ -1,4 +1,5 @@
 import { AccountBoxIcon } from '@autoguru/icons';
+import { action } from '@storybook/addon-actions';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
@@ -8,6 +9,7 @@ import { Icon } from '../Icon';
 
 import { Button } from '.';
 
+const onClick = action('onClick');
 export default {
 	title: 'Components/Buttons',
 	component: Button,
@@ -163,6 +165,7 @@ const standardProps: ComponentProps<typeof Button> = {
 	size: void 0,
 	variant: void 0,
 	children: 'Login',
+	onClick,
 };
 
 export const standard = Template.bind(standardProps);
@@ -171,6 +174,7 @@ standard.args = standardProps;
 const primarySmallProps: Omit<ComponentProps<typeof Button>, 'children'> = {
 	size: 'small',
 	variant: 'primary',
+	onClick,
 };
 export const primarySmall = TemplateMulti.bind(primarySmallProps);
 primarySmall.args = primarySmallProps;
@@ -178,6 +182,7 @@ primarySmall.args = primarySmallProps;
 const primaryMediumProps: Omit<ComponentProps<typeof Button>, 'children'> = {
 	size: 'medium',
 	variant: 'primary',
+	onClick,
 };
 export const primaryMedium = TemplateMulti.bind(primaryMediumProps);
 primaryMedium.args = primaryMediumProps;
@@ -185,6 +190,7 @@ primaryMedium.args = primaryMediumProps;
 const secondarySmallProps: Omit<ComponentProps<typeof Button>, 'children'> = {
 	size: 'small',
 	variant: 'secondary',
+	onClick,
 };
 export const secondarySmall = TemplateMulti.bind(secondarySmallProps);
 secondarySmall.args = secondarySmallProps;
@@ -192,6 +198,7 @@ secondarySmall.args = secondarySmallProps;
 const secondaryMediumProps: Omit<ComponentProps<typeof Button>, 'children'> = {
 	size: 'medium',
 	variant: 'secondary',
+	onClick,
 };
 export const secondaryMedium = TemplateMulti.bind(secondaryMediumProps);
 secondaryMedium.args = secondaryMediumProps;
@@ -199,6 +206,7 @@ secondaryMedium.args = secondaryMediumProps;
 const informationSmallProps: Omit<ComponentProps<typeof Button>, 'children'> = {
 	size: 'small',
 	variant: 'information',
+	onClick,
 };
 export const informationSmall = TemplateMulti.bind(informationSmallProps);
 informationSmall.args = informationSmallProps;
@@ -209,6 +217,7 @@ const informationMediumProps: Omit<
 > = {
 	size: 'medium',
 	variant: 'information',
+	onClick,
 };
 export const informationMedium = TemplateMulti.bind(informationMediumProps);
 informationMedium.args = informationMediumProps;
@@ -216,6 +225,7 @@ informationMedium.args = informationMediumProps;
 const warningSmallProps: Omit<ComponentProps<typeof Button>, 'children'> = {
 	size: 'small',
 	variant: 'warning',
+	onClick,
 };
 export const warningSmall = TemplateMulti.bind(warningSmallProps);
 warningSmall.args = warningSmallProps;
@@ -223,6 +233,7 @@ warningSmall.args = warningSmallProps;
 const warningMediumProps: Omit<ComponentProps<typeof Button>, 'children'> = {
 	size: 'medium',
 	variant: 'warning',
+	onClick,
 };
 export const warningMedium = TemplateMulti.bind(warningMediumProps);
 warningMedium.args = warningMediumProps;
@@ -230,6 +241,7 @@ warningMedium.args = warningMediumProps;
 const successSmallProps: Omit<ComponentProps<typeof Button>, 'children'> = {
 	size: 'small',
 	variant: 'success',
+	onClick,
 };
 export const successSmall = TemplateMulti.bind(successSmallProps);
 successSmall.args = successSmallProps;
@@ -237,6 +249,7 @@ successSmall.args = successSmallProps;
 const successMediumProps: Omit<ComponentProps<typeof Button>, 'children'> = {
 	size: 'medium',
 	variant: 'success',
+	onClick,
 };
 export const successMedium = TemplateMulti.bind(successMediumProps);
 successMedium.args = successMediumProps;

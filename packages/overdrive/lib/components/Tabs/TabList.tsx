@@ -126,6 +126,7 @@ export const TabList: FunctionComponent<Props> = ({
 				<Button
 					minimal
 					rounded
+					withDoubleClicks
 					size="small"
 					disabled={!displayScroll.start}
 					onClick={handleStartButton}
@@ -154,6 +155,7 @@ export const TabList: FunctionComponent<Props> = ({
 				<Button
 					minimal
 					rounded
+					withDoubleClicks
 					size="small"
 					disabled={!displayScroll.end}
 					onClick={handleEndButton}
