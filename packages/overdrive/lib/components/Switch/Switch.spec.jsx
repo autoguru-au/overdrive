@@ -5,6 +5,24 @@ import * as styles from './Switch.css';
 
 import { Switch } from './Switch';
 
+const InteractiveSwitch = ({
+	onChange: incomingOnChange = () => void 0,
+	value: incomingValue,
+	...args
+}) => {
+	const [value, setValue] = useState(incomingValue);
+	return (
+		<Switch
+			onChange={(stepValue) => {
+				setValue(stepValue);
+				incomingOnChange(stepValue);
+			}}
+			value={value}
+			{...args}
+		/>
+	);
+};
+
 describe('<Switch />', () => {
 	it('should not throw', () =>
 		expect(() => render(<Switch />)).not.toThrow());
@@ -79,29 +97,33 @@ describe('<Switch />', () => {
 	it('should fire change with the correct changed value when clicked', () => {
 		const spyedCallback = jest.fn();
 
-		const { container } = render(
-			<Switch toggled={false} onChange={spyedCallback} />,
+		const { container: toggledContainer } = render(
+			<InteractiveSwitch toggled={false} onChange={spyedCallback} />,
 		);
 
-		fireEvent.click(container.firstChild);
+		fireEvent.click(toggledContainer.firstChild);
 
 		expect(spyedCallback).toHaveBeenCalledWith(true);
 
-		fireEvent.click(container.firstChild);
+		const { container: untoggledContainer } = render(
+			<InteractiveSwitch toggled={true} onChange={spyedCallback} />,
+		);
+		fireEvent.click(untoggledContainer.firstChild);
 
 		expect(spyedCallback).toHaveBeenCalledWith(false);
 
-		fireEvent.click(container.firstChild);
-
-		expect(spyedCallback).toHaveBeenCalledWith(true);
-		expect(spyedCallback).toHaveBeenCalledTimes(3);
+		expect(spyedCallback).toHaveBeenCalledTimes(2);
 	});
 
 	it('should not fire change if clicked while disabled', () => {
 		const spyedCallback = jest.fn();
 
 		const { container } = render(
-			<Switch disabled toggled={false} onChange={spyedCallback} />,
+			<InteractiveSwitch
+				disabled
+				toggled={false}
+				onChange={spyedCallback}
+			/>,
 		);
 
 		fireEvent.click(container.firstChild);
