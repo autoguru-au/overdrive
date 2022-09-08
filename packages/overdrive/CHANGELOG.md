@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 4.8.0
+
+### Minor Changes
+
+-   fbf72cb: Switch: No longer maintains an internal state
+-   d68e1dd: Button: Prevents double clicking as a default behaviour
+
 ## 4.7.3
 
 ### Patch Changes
