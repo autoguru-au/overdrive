@@ -20,6 +20,7 @@ import {
 } from 'react';
 
 import { useMedia } from '../../hooks/useMedia';
+import { useWindowScrollLock } from '../../hooks/useWindowScrollLock';
 import { setRef, useId } from '../../utils';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -298,19 +299,7 @@ const AutoSuggestFullscreenInput = forwardRef(
 	function AutoSuggestFullscreenInput({ closeModal, ...props }, ref) {
 		const [showPortal, setShowPortal] = useState<boolean>(false);
 
-		useEffect(() => {
-			document.documentElement.style.position = 'fixed';
-			document.documentElement.style.overflow = 'hidden';
-			document.documentElement.style.maxHeight = '100%';
-			document.documentElement.style.width = '100%';
-
-			return () => {
-				document.documentElement.style.position = '';
-				document.documentElement.style.overflow = '';
-				document.documentElement.style.maxHeight = '';
-				document.documentElement.style.width = '';
-			};
-		}, []);
+		useWindowScrollLock();
 
 		useEffect(() => {
 			const cb = requestAnimationFrame(() => setShowPortal(true));
