@@ -1,5 +1,13 @@
 # @autoguru/overdrive
 
+## 4.8.1
+
+### Patch Changes
+
+-   19418b5: Autosuggest: No longer looses window scroll position when opened in
+    fullscreen mode
+-   0ceb2f9: Disabled elements got tabindex of -1
+
 ## 4.8.0
 
 ### Minor Changes
