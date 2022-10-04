@@ -27,7 +27,7 @@ jobs:
                   check-latest: true
 
             - name: Yarn cache
-              uses: actions/cache@v2
+              uses: actions/cache@v3
               with:
                   path: ${{ steps.setups.outputs.yarn_cache }}
                   key:
@@ -42,7 +42,7 @@ jobs:
             - name: Test
               run: yarn test --no-cache --ci --coverage
 
-            - uses: codecov/codecov-action@v1
+            - uses: codecov/codecov-action@v3
               with:
                   token: ${{ secrets.CODECOV }}
 
