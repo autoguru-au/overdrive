@@ -100,7 +100,7 @@ export default {
 			},
 		},
 	},
-	parameters: { chromatic: { delay: 900 } },
+	parameters: { chromatic: { delay: 3000 } },
 } as ComponentMeta<typeof AutoSuggest>;
 
 const Template: ComponentStory<typeof AutoSuggest> = (args) => (

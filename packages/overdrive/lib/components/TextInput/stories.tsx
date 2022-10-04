@@ -19,7 +19,7 @@ import { TextInput } from '.';
 export default {
 	title: 'Components/Inputs/Text',
 	component: TextInput,
-	parameters: { chromatic: { delay: 900 } },
+	parameters: { chromatic: { delay: 3000 } },
 } as ComponentMeta<typeof TextInput>;
 
 const defaultValue = 'Jane Doe';

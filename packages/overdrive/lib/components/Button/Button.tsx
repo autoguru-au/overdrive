@@ -118,7 +118,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 			id,
 			onClick,
 			disabled: disabled || isLoading,
-			tabIndex:disabled?-1: void 0,
+			tabIndex: disabled ? -1 : void 0,
 			'aria-label': ariaLabel,
 			className: clsx(
 				useBoxStyles({

@@ -44,7 +44,7 @@ export const Switch: FunctionComponent<Props> = ({
 				},
 				className,
 			)}
-			tabIndex={disabled?-1: void 0}
+			tabIndex={disabled ? -1 : void 0}
 			borderRadius="pill"
 			position="relative"
 			aria-disabled={disabled}
