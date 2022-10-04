@@ -37,7 +37,7 @@
 		"watch": "tsc --watch"
 	},
 	"devDependencies": {
-		"@autoguru/icons": "1.7.18",
+		"@autoguru/icons": "1.7.27",
 		"@autoguru/tsconfig": "1.0.79",
 		"@autoguru/utilities": "1.1.1",
 		"@popperjs/core": "2.11.2",
