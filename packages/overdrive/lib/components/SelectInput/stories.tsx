@@ -26,7 +26,7 @@ const selectOptions = valueOptions.map((item) => (
 export default {
 	title: 'Components/Inputs/Select',
 	component: SelectInput,
-	parameters: { chromatic: { delay: 900 } },
+	parameters: { chromatic: { delay: 3000 } },
 } as ComponentMeta<typeof SelectInput>;
 
 const defaultValue = valueOptions[4];
