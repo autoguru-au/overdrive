@@ -42,7 +42,7 @@ export const ColourInput = withEnhancedInput<{}, HTMLInputElement>(
 						pointerEvents='none'
 						position='absolute'
 					>
-						<Box style={{ backgroundColor: field.value }} padding='3' borderRadius='1' />
+						<Box style={{ backgroundColor: field.value }} padding={size==='medium'?'3':'2'} borderRadius='1' />
 					</Box>
 					<Text display='block' className={clsx(
 						styles.valueText,
