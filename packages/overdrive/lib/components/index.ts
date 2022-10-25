@@ -53,3 +53,4 @@ export * from './MinimalModal';
 export * from './Image';
 export * from './NumberBubble';
 export * from './TextBubble';
+export * from './ColourInput';

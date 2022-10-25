@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<DateInput /> should have some hintText 1`] = `
+exports[`<ColourInput /> should have some hintText 1`] = `
 <div
   class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk"
 >
@@ -10,13 +10,30 @@ exports[`<DateInput /> should have some hintText 1`] = `
     <div
       class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
     >
-      <input
-        autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
-        id="id"
-        type="date"
-        value="2019-01-21"
-      />
+      <div
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_position_relative__7o6k06do useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_flexWrap_nowrap__7o6k06f2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7"
+      >
+        <div
+          class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_flexShrink_0__7o6k06f0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fj ColourInput_colouredBoxHolder__1c82wdf1 ColourInput_colouredBoxHolderSize_medium__1c82wdf3"
+        >
+          <div
+            class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k068 useBoxStyles_makeResponsiveStyle_key_bp__7o6k061c useBoxStyles_makeResponsiveStyle_key_bp__7o6k062g useBoxStyles_makeResponsiveStyle_key_bp__7o6k063k useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp"
+            style="background-color: rgb(1, 198, 140);"
+          />
+        </div>
+        <span
+          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06dx useBoxStyles_textAlign_left__7o6k06dp useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ih useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_4__w6to7i4 ColourInput_valueText__1c82wdf4 ColourInput_valueTextSize_medium__1c82wdf6 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06dm"
+        >
+          #01c68c
+        </span>
+        <input
+          autocomplete="off"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06ez ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          id="id"
+          type="color"
+          value="#01c68c"
+        />
+      </div>
     </div>
     <div
       class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_textAlign_left__7o6k06dp useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
@@ -48,7 +65,7 @@ exports[`<DateInput /> should have some hintText 1`] = `
 </div>
 `;
 
-exports[`<DateInput /> should match snapshot 1`] = `
+exports[`<ColourInput /> should match snapshot 1`] = `
 <div
   class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk"
 >
@@ -58,13 +75,30 @@ exports[`<DateInput /> should match snapshot 1`] = `
     <div
       class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
     >
-      <input
-        autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
-        id="id"
-        type="date"
-        value="2019-01-21"
-      />
+      <div
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_position_relative__7o6k06do useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_flexWrap_nowrap__7o6k06f2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7"
+      >
+        <div
+          class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_flexShrink_0__7o6k06f0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fj ColourInput_colouredBoxHolder__1c82wdf1 ColourInput_colouredBoxHolderSize_medium__1c82wdf3"
+        >
+          <div
+            class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k068 useBoxStyles_makeResponsiveStyle_key_bp__7o6k061c useBoxStyles_makeResponsiveStyle_key_bp__7o6k062g useBoxStyles_makeResponsiveStyle_key_bp__7o6k063k useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp"
+            style="background-color: rgb(1, 198, 140);"
+          />
+        </div>
+        <span
+          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06dx useBoxStyles_textAlign_left__7o6k06dp useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ih useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_4__w6to7i4 ColourInput_valueText__1c82wdf4 ColourInput_valueTextSize_medium__1c82wdf6 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06dm"
+        >
+          #01c68c
+        </span>
+        <input
+          autocomplete="off"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06ez ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          id="id"
+          type="color"
+          value="#01c68c"
+        />
+      </div>
     </div>
     <div
       class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_textAlign_left__7o6k06dp useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
@@ -91,7 +125,7 @@ exports[`<DateInput /> should match snapshot 1`] = `
 </div>
 `;
 
-exports[`<DateInput /> should match snapshot when active 1`] = `
+exports[`<ColourInput /> should match snapshot when active 1`] = `
 <div
   class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk input-class"
 >
@@ -101,12 +135,29 @@ exports[`<DateInput /> should match snapshot when active 1`] = `
     <div
       class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
     >
-      <input
-        autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
-        type="date"
-        value="2019-02-05"
-      />
+      <div
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_position_relative__7o6k06do useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_flexWrap_nowrap__7o6k06f2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7"
+      >
+        <div
+          class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_flexShrink_0__7o6k06f0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fj ColourInput_colouredBoxHolder__1c82wdf1 ColourInput_colouredBoxHolderSize_medium__1c82wdf3"
+        >
+          <div
+            class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k068 useBoxStyles_makeResponsiveStyle_key_bp__7o6k061c useBoxStyles_makeResponsiveStyle_key_bp__7o6k062g useBoxStyles_makeResponsiveStyle_key_bp__7o6k063k useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp"
+            style="background-color: rgb(236, 64, 64);"
+          />
+        </div>
+        <span
+          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06dx useBoxStyles_textAlign_left__7o6k06dp useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ih useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_4__w6to7i4 ColourInput_valueText__1c82wdf4 ColourInput_valueTextSize_medium__1c82wdf6 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06dm"
+        >
+          #ec4040
+        </span>
+        <input
+          autocomplete="off"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06ez ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          type="color"
+          value="#ec4040"
+        />
+      </div>
     </div>
     <div
       class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_textAlign_left__7o6k06dp useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
@@ -132,7 +183,7 @@ exports[`<DateInput /> should match snapshot when active 1`] = `
 </div>
 `;
 
-exports[`<DateInput /> should match snapshot when loading 1`] = `
+exports[`<ColourInput /> should match snapshot when loading 1`] = `
 <div
   class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk input-class"
 >
@@ -142,20 +193,6 @@ exports[`<DateInput /> should match snapshot when loading 1`] = `
     <div
       class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
     >
-      <i
-        class="useBoxStyles_display_block__7o6k06dx Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn withEnhancedInput_iconRoot__bd4oide withEnhancedInput_prefixIcon__bd4oidf withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
-        role="presentation"
-      >
-        <svg
-          class="useBoxStyles_display_block__7o6k06dx useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
-          viewBox="0 0 512 512"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
-          />
-        </svg>
-      </i>
       <div
         class="reset_block__6swfds3 ProgressSpinner_size_medium_circular__5j3teub ProgressSpinner_colours_primary__5j3teu5 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn withEnhancedInput_iconRoot__bd4oide withEnhancedInput_suffixIcon__bd4oidg withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
       >
@@ -173,13 +210,30 @@ exports[`<DateInput /> should match snapshot when loading 1`] = `
           />
         </svg>
       </div>
-      <input
-        aria-busy="true"
-        autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_prefixed_any__bd4oidc undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__bd4oidd"
-        type="date"
-        value="2019-01-21"
-      />
+      <div
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_position_relative__7o6k06do useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_flexWrap_nowrap__7o6k06f2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7"
+      >
+        <div
+          class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_flexShrink_0__7o6k06f0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fj ColourInput_colouredBoxHolder__1c82wdf1 ColourInput_colouredBoxHolderSize_medium__1c82wdf3"
+        >
+          <div
+            class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k068 useBoxStyles_makeResponsiveStyle_key_bp__7o6k061c useBoxStyles_makeResponsiveStyle_key_bp__7o6k062g useBoxStyles_makeResponsiveStyle_key_bp__7o6k063k useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp"
+            style="background-color: rgb(1, 198, 140);"
+          />
+        </div>
+        <span
+          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06dx useBoxStyles_textAlign_left__7o6k06dp useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ih useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_4__w6to7i4 ColourInput_valueText__1c82wdf4 ColourInput_valueTextSize_medium__1c82wdf6 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06dm"
+        >
+          #01c68c
+        </span>
+        <input
+          aria-busy="true"
+          autocomplete="off"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06ez ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__bd4oidd"
+          type="color"
+          value="#01c68c"
+        />
+      </div>
     </div>
     <div
       class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_textAlign_left__7o6k06dp useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
@@ -205,7 +259,7 @@ exports[`<DateInput /> should match snapshot when loading 1`] = `
 </div>
 `;
 
-exports[`<DateInput /> should match snapshot when touched 1`] = `
+exports[`<ColourInput /> should match snapshot when touched 1`] = `
 <div
   class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk input-class"
 >
@@ -215,12 +269,29 @@ exports[`<DateInput /> should match snapshot when touched 1`] = `
     <div
       class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
     >
-      <input
-        autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
-        type="date"
-        value="2019-01-21"
-      />
+      <div
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_position_relative__7o6k06do useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_flexWrap_nowrap__7o6k06f2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7"
+      >
+        <div
+          class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_flexShrink_0__7o6k06f0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fj ColourInput_colouredBoxHolder__1c82wdf1 ColourInput_colouredBoxHolderSize_medium__1c82wdf3"
+        >
+          <div
+            class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k068 useBoxStyles_makeResponsiveStyle_key_bp__7o6k061c useBoxStyles_makeResponsiveStyle_key_bp__7o6k062g useBoxStyles_makeResponsiveStyle_key_bp__7o6k063k useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp"
+            style="background-color: rgb(1, 198, 140);"
+          />
+        </div>
+        <span
+          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06dx useBoxStyles_textAlign_left__7o6k06dp useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ih useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_4__w6to7i4 ColourInput_valueText__1c82wdf4 ColourInput_valueTextSize_medium__1c82wdf6 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06dm"
+        >
+          #01c68c
+        </span>
+        <input
+          autocomplete="off"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06ez ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          type="color"
+          value="#01c68c"
+        />
+      </div>
     </div>
     <div
       class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_textAlign_left__7o6k06dp useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
@@ -246,7 +317,7 @@ exports[`<DateInput /> should match snapshot when touched 1`] = `
 </div>
 `;
 
-exports[`<DateInput /> should match snapshot when touched and invalid 1`] = `
+exports[`<ColourInput /> should match snapshot when touched and invalid 1`] = `
 <div
   class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk input-class"
 >
@@ -256,12 +327,29 @@ exports[`<DateInput /> should match snapshot when touched and invalid 1`] = `
     <div
       class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
     >
-      <input
-        autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
-        type="date"
-        value="2019-01-21"
-      />
+      <div
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_position_relative__7o6k06do useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_flexWrap_nowrap__7o6k06f2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7"
+      >
+        <div
+          class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_flexShrink_0__7o6k06f0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fj ColourInput_colouredBoxHolder__1c82wdf1 ColourInput_colouredBoxHolderSize_medium__1c82wdf3"
+        >
+          <div
+            class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k068 useBoxStyles_makeResponsiveStyle_key_bp__7o6k061c useBoxStyles_makeResponsiveStyle_key_bp__7o6k062g useBoxStyles_makeResponsiveStyle_key_bp__7o6k063k useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp"
+            style="background-color: rgb(1, 198, 140);"
+          />
+        </div>
+        <span
+          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06dx useBoxStyles_textAlign_left__7o6k06dp useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ih useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_4__w6to7i4 ColourInput_valueText__1c82wdf4 ColourInput_valueTextSize_medium__1c82wdf6 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06dm"
+        >
+          #01c68c
+        </span>
+        <input
+          autocomplete="off"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06ez ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          type="color"
+          value="#01c68c"
+        />
+      </div>
     </div>
     <div
       class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_textAlign_left__7o6k06dp useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
@@ -287,7 +375,7 @@ exports[`<DateInput /> should match snapshot when touched and invalid 1`] = `
 </div>
 `;
 
-exports[`<DateInput /> should match snapshot when touched and valid 1`] = `
+exports[`<ColourInput /> should match snapshot when touched and valid 1`] = `
 <div
   class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk input-class"
 >
@@ -297,12 +385,29 @@ exports[`<DateInput /> should match snapshot when touched and valid 1`] = `
     <div
       class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
     >
-      <input
-        autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
-        type="date"
-        value="2019-01-21"
-      />
+      <div
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_position_relative__7o6k06do useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_flexWrap_nowrap__7o6k06f2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7"
+      >
+        <div
+          class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_flexShrink_0__7o6k06f0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fj ColourInput_colouredBoxHolder__1c82wdf1 ColourInput_colouredBoxHolderSize_medium__1c82wdf3"
+        >
+          <div
+            class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k068 useBoxStyles_makeResponsiveStyle_key_bp__7o6k061c useBoxStyles_makeResponsiveStyle_key_bp__7o6k062g useBoxStyles_makeResponsiveStyle_key_bp__7o6k063k useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp"
+            style="background-color: rgb(1, 198, 140);"
+          />
+        </div>
+        <span
+          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06dx useBoxStyles_textAlign_left__7o6k06dp useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ih useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_4__w6to7i4 ColourInput_valueText__1c82wdf4 ColourInput_valueTextSize_medium__1c82wdf6 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06dm"
+        >
+          #01c68c
+        </span>
+        <input
+          autocomplete="off"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06ez ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          type="color"
+          value="#01c68c"
+        />
+      </div>
     </div>
     <div
       class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_textAlign_left__7o6k06dp useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
@@ -328,7 +433,7 @@ exports[`<DateInput /> should match snapshot when touched and valid 1`] = `
 </div>
 `;
 
-exports[`<DateInput /> should match snapshot with both icons 1`] = `
+exports[`<ColourInput /> should match snapshot with both icons 1`] = `
 <div
   class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk input-class"
 >
@@ -338,20 +443,6 @@ exports[`<DateInput /> should match snapshot with both icons 1`] = `
     <div
       class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
     >
-      <i
-        class="useBoxStyles_display_block__7o6k06dx Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn withEnhancedInput_iconRoot__bd4oide withEnhancedInput_prefixIcon__bd4oidf withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
-        role="presentation"
-      >
-        <svg
-          class="useBoxStyles_display_block__7o6k06dx useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
-          viewBox="0 0 512 512"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
-          />
-        </svg>
-      </i>
       <i
         class="useBoxStyles_display_block__7o6k06dx Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn withEnhancedInput_iconRoot__bd4oide withEnhancedInput_suffixIcon__bd4oidg withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
         role="presentation"
@@ -366,12 +457,29 @@ exports[`<DateInput /> should match snapshot with both icons 1`] = `
           />
         </svg>
       </i>
-      <input
-        autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_prefixed_any__bd4oidc undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__bd4oidd"
-        type="date"
-        value="2019-01-21"
-      />
+      <div
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_position_relative__7o6k06do useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_flexWrap_nowrap__7o6k06f2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7"
+      >
+        <div
+          class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_flexShrink_0__7o6k06f0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fj ColourInput_colouredBoxHolder__1c82wdf1 ColourInput_colouredBoxHolderSize_medium__1c82wdf3"
+        >
+          <div
+            class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k068 useBoxStyles_makeResponsiveStyle_key_bp__7o6k061c useBoxStyles_makeResponsiveStyle_key_bp__7o6k062g useBoxStyles_makeResponsiveStyle_key_bp__7o6k063k useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp"
+            style="background-color: rgb(1, 198, 140);"
+          />
+        </div>
+        <span
+          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06dx useBoxStyles_textAlign_left__7o6k06dp useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ih useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_4__w6to7i4 ColourInput_valueText__1c82wdf4 ColourInput_valueTextSize_medium__1c82wdf6 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06dm"
+        >
+          #01c68c
+        </span>
+        <input
+          autocomplete="off"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06ez ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__bd4oidd"
+          type="color"
+          value="#01c68c"
+        />
+      </div>
     </div>
     <div
       class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_textAlign_left__7o6k06dp useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
@@ -397,62 +505,7 @@ exports[`<DateInput /> should match snapshot with both icons 1`] = `
 </div>
 `;
 
-exports[`<DateInput /> should match snapshot with prefix icon 1`] = `
-<div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk input-class"
->
-  <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do NotchedBase_root__1r7zdxg0"
-  >
-    <div
-      class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
-    >
-      <i
-        class="useBoxStyles_display_block__7o6k06dx Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn withEnhancedInput_iconRoot__bd4oide withEnhancedInput_prefixIcon__bd4oidf withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
-        role="presentation"
-      >
-        <svg
-          class="useBoxStyles_display_block__7o6k06dx useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
-          viewBox="0 0 512 512"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
-          />
-        </svg>
-      </i>
-      <input
-        autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_prefixed_any__bd4oidc"
-        type="date"
-        value="2019-01-21"
-      />
-    </div>
-    <div
-      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_textAlign_left__7o6k06dp useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
-    >
-      <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg6 InputState_natural_default_borderColour__9z39d75"
-      />
-      <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg7 InputState_natural_default_borderColour__9z39d75"
-        style="width: 16px;"
-      >
-        <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06e0 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_placeholder_default__1r7zdxg9 InputState_natural_default_colour__9z39d74 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholderPlacement_medium_shifted__1r7zdxgg"
-        >
-          placeholder something
-        </label>
-      </div>
-      <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_trailing__1r7zdxg8 InputState_natural_default_borderColour__9z39d75"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`<DateInput /> should match snapshot with suffix icon 1`] = `
+exports[`<ColourInput /> should match snapshot with suffix icon 1`] = `
 <div
   class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk input-class"
 >
@@ -476,12 +529,29 @@ exports[`<DateInput /> should match snapshot with suffix icon 1`] = `
           />
         </svg>
       </i>
-      <input
-        autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__bd4oidd"
-        type="date"
-        value="2019-01-21"
-      />
+      <div
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_position_relative__7o6k06do useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_flexWrap_nowrap__7o6k06f2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7"
+      >
+        <div
+          class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_flexShrink_0__7o6k06f0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fj ColourInput_colouredBoxHolder__1c82wdf1 ColourInput_colouredBoxHolderSize_medium__1c82wdf3"
+        >
+          <div
+            class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k068 useBoxStyles_makeResponsiveStyle_key_bp__7o6k061c useBoxStyles_makeResponsiveStyle_key_bp__7o6k062g useBoxStyles_makeResponsiveStyle_key_bp__7o6k063k useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp"
+            style="background-color: rgb(1, 198, 140);"
+          />
+        </div>
+        <span
+          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06dx useBoxStyles_textAlign_left__7o6k06dp useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ih useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_4__w6to7i4 ColourInput_valueText__1c82wdf4 ColourInput_valueTextSize_medium__1c82wdf6 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06dm"
+        >
+          #01c68c
+        </span>
+        <input
+          autocomplete="off"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06ez ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__bd4oidd"
+          type="color"
+          value="#01c68c"
+        />
+      </div>
     </div>
     <div
       class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_textAlign_left__7o6k06dp useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
