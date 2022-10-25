@@ -37,7 +37,7 @@
 		"watch": "tsc --watch"
 	},
 	"devDependencies": {
-		"@autoguru/icons": "1.7.27",
+		"@autoguru/icons": "^1.7.28",
 		"@autoguru/tsconfig": "1.0.79",
 		"@autoguru/utilities": "1.1.1",
 		"@popperjs/core": "2.11.2",
@@ -54,7 +54,7 @@
 		"webpack": "5.74.0"
 	},
 	"peerDependencies": {
-		"@autoguru/icons": "^1.7.4",
+		"@autoguru/icons": "^1.7.28",
 		"@autoguru/utilities": "^1.0.98",
 		"@popperjs/core": "^2.10.2",
 		"clsx": "^1.1.1",

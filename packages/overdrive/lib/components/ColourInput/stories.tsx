@@ -5,6 +5,7 @@ import {
 	CarIcon,
 	CarMultipleIcon,
 	CurrencyUsdIcon,
+	FourByFourIcon,
 	PlusIcon,
 	StarIcon,
 } from '@autoguru/icons';
@@ -13,9 +14,9 @@ import { ArgTypes, ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
-import { ColourInput } from '.';
 import { tokens } from '../../themes/base/tokens';
 
+import { ColourInput } from '.';
 
 export default {
 	title: 'Components/Inputs/Colour',
@@ -37,7 +38,7 @@ const iconOptions = {
 const argTypes: Partial<ArgTypes<ComponentProps<typeof ColourInput>>> = {
 	value: {
 		control: {
-			type: 'date',
+			type: 'color',
 		},
 	},
 	suffixIcon: {
@@ -57,7 +58,7 @@ const Template: ComponentStory<typeof ColourInput> = (args) => (
 const sharedProps: ComponentProps<typeof ColourInput> = {
 	disabled: false,
 	name: 'date',
-	placeholder: 'Placeholder',
+	placeholder: 'Your favourite colour',
 	isValid: false,
 	isTouched: false,
 	isLoading: false,
@@ -84,7 +85,7 @@ const withHintTextProps: ComponentProps<typeof ColourInput> = {
 };
 const withIconProps: ComponentProps<typeof ColourInput> = {
 	...sharedProps,
-	suffixIcon: CalendarIcon,
+	suffixIcon: FourByFourIcon,
 };
 const disabledProps: ComponentProps<typeof ColourInput> = {
 	...sharedProps,
@@ -142,9 +143,9 @@ export const notchDisabledWithValue = Template.bind(noNotchWithValueProps);
 notchDisabledWithValue.args = noNotchWithValueProps;
 notchDisabledWithValue.argTypes = argTypes;
 
-export const withPrefixIcon = Template.bind(withIconProps);
-withPrefixIcon.args = withIconProps;
-withPrefixIcon.argTypes = argTypes;
+export const withIcon = Template.bind(withIconProps);
+withIcon.args = withIconProps;
+withIcon.argTypes = argTypes;
 
 export const disabled = Template.bind(disabledProps);
 disabled.args = disabledProps;

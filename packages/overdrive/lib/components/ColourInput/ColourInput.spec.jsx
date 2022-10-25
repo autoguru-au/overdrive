@@ -4,7 +4,6 @@ import * as React from 'react';
 import { ColourInput } from './ColourInput';
 import { tokens } from '../../themes/base/tokens';
 
-
 const defaultColour = tokens.colours.intent.primary.background.standard;
 const TestIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -167,7 +166,10 @@ describe('<ColourInput />', () => {
 
 	it('should display placeholder text', () => {
 		const { container } = render(
-			<ColourInput value={defaultColour} placeholder="placeholder something" />,
+			<ColourInput
+				value={defaultColour}
+				placeholder="placeholder something"
+			/>,
 		);
 
 		expect(container.querySelector('label')).toHaveTextContent(
