@@ -1,11 +1,12 @@
 import { warning } from '@autoguru/utilities';
+import clsx from 'clsx';
 import * as React from 'react';
 
 import { Box, useBoxStyles } from '../Box';
-import { withEnhancedInput } from '../private/InputBase';
-import * as styles from './ColourInput.css';
 import { Text } from '../Text';
-import clsx from 'clsx';
+import { withEnhancedInput } from '../private/InputBase';
+
+import * as styles from './ColourInput.css';
 
 export const ColourInput = withEnhancedInput<{}, HTMLInputElement>(
 	({
