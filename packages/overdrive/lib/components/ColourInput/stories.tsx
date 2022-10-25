@@ -101,11 +101,11 @@ const validProps: ComponentProps<typeof ColourInput> = {
 };
 const invalidProps: ComponentProps<typeof ColourInput> = {
 	...sharedProps,
-	value: '2050-10-13',
+	value: '#ffd402',
 	placeholder: 'What is your favourite car colour?',
 	isTouched: true,
 	isValid: false,
-	hintText: 'Invalid date of birth',
+	hintText: 'Invalid colour',
 };
 const noNotchProps: ComponentProps<typeof ColourInput> = {
 	...sharedProps,
