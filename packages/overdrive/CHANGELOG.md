@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.9.0
+
+### Minor Changes
+
+-   1c2062c: ColourInput component added
+
 ## 4.8.1
 
 ### Patch Changes
