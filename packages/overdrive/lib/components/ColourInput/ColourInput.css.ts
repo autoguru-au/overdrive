@@ -15,7 +15,7 @@ export const colouredBoxHolderSize = styleVariants({
 	},
 	medium: {
 		width: vars.space['8'],
-	}
+	},
 });
 export const valueText = style({
 	top: '50%',
@@ -27,5 +27,5 @@ export const valueTextSize = styleVariants({
 	},
 	medium: {
 		left: vars.space['8'],
-	}
+	},
 });

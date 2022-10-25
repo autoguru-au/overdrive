@@ -18,7 +18,6 @@ import { tokens } from '../../themes/base/tokens';
 
 import { ColourInput } from '.';
 
-
 export default {
 	title: 'Components/Inputs/Colour',
 	component: ColourInput,

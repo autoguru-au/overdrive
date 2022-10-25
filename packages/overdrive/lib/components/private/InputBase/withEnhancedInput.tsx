@@ -92,7 +92,7 @@ export type WrappedComponentProps<IncomingProps, PrimitiveElementType> = {
 	isLoading: boolean;
 } & IncomingProps;
 
-interface EnhancedInputConfigs<ValueType=string> {
+interface EnhancedInputConfigs<ValueType = string> {
 	defaultValue?: ValueType;
 	withPrefixIcon?: boolean;
 	withSuffixIcon?: boolean;
