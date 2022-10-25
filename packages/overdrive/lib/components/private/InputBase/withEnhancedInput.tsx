@@ -92,10 +92,11 @@ export type WrappedComponentProps<IncomingProps, PrimitiveElementType> = {
 	isLoading: boolean;
 } & IncomingProps;
 
-interface EnhancedInputConfigs {
+interface EnhancedInputConfigs<ValueType=string> {
+	defaultValue?: ValueType;
 	withPrefixIcon?: boolean;
 	withSuffixIcon?: boolean;
-	primitiveType: 'textarea' | 'text' | 'number' | 'date' | 'select';
+	primitiveType: 'textarea' | 'text' | 'number' | 'date' | 'select' | 'color';
 }
 
 export const withEnhancedInput = <
@@ -109,7 +110,8 @@ export const withEnhancedInput = <
 		primitiveType = 'text',
 		withPrefixIcon = true,
 		withSuffixIcon = true,
-	}: EnhancedInputConfigs = { primitiveType: 'text' },
+		defaultValue,
+	}: EnhancedInputConfigs = { primitiveType: 'text', defaultValue: null },
 ) =>
 	forwardRef<
 		PrimitiveElementType,
@@ -131,7 +133,7 @@ export const withEnhancedInput = <
 				reserveHintSpace = false,
 				size = 'medium',
 
-				value: incomingValue = '',
+				value: incomingValue = defaultValue || '',
 				onChange: incomingOnChange,
 				onReset,
 

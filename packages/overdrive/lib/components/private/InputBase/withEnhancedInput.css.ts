@@ -60,6 +60,7 @@ export const inputItselfSize = {
 				fontSize: vars.typography.size['3'].fontSize,
 				lineHeight: vars.typography.size['3'].lineHeight,
 				padding: `${vars.space['2']}`,
+				minHeight: `calc(${vars.typography.size['3'].lineHeight} + (2* ${vars.space['2']}))`,
 			},
 			textarea: {
 				padding: `0 ${vars.space['2']} ${vars.space['2']}`,

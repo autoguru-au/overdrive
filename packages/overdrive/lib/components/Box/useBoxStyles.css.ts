@@ -187,6 +187,7 @@ export const justifyContent = makeResponsiveStyle(
 		center: 'center',
 		flexEnd: 'flex-end',
 		spaceBetween: 'space-between',
+		spaceAround: 'space-around',
 	},
 	'justifyContent',
 );
