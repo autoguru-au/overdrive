@@ -31,7 +31,7 @@ export const OverdriveProvider: FunctionComponent<Props> = ({
 			document.body.style.backgroundColor = tokens.body.backgroundColour;
 			document.body.style.color = tokens.body.colour;
 		}
-	}, [vars]);
+	}, [vars, tokens]);
 
 	return (
 		<ThemeProvider
