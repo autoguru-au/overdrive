@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { ComponentProps, FunctionComponent, ReactNode, useEffect } from 'react';
 
+import { tokens } from '../../themes/base/tokens';
 import { isBrowser } from '../../utils';
 import { ThemeProvider } from '../ThemeProvider/ThemeProvider';
 
@@ -16,7 +17,6 @@ export const OverdriveProvider: FunctionComponent<Props> = ({
 	noBodyLevelTheming = false,
 	vars,
 	themeClass,
-	tokens,
 	breakpoints,
 	children,
 }) => {
@@ -31,13 +31,12 @@ export const OverdriveProvider: FunctionComponent<Props> = ({
 			document.body.style.backgroundColor = tokens.body.backgroundColour;
 			document.body.style.color = tokens.body.colour;
 		}
-	}, [vars, tokens]);
+	}, [vars]);
 
 	return (
 		<ThemeProvider
 			vars={vars}
 			themeClass={themeClass}
-			tokens={tokens}
 			breakpoints={breakpoints}
 		>
 			{children}

@@ -12,7 +12,7 @@
 		"strict": true,
 		"sourceMap": false,
 		"inlineSourceMap": false,
-		"strictNullChecks": false,
+		"strictNullChecks": true,
 		"incremental": true,
 		"composite": true,
 		"skipLibCheck": true,

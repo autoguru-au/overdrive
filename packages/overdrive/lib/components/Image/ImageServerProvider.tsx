@@ -23,7 +23,7 @@ interface ImageServerContext {
 
 	getWidthValue?(width: WidthScale): number;
 
-	srcUrlMapper(params: UrlParams): string;
+	srcUrlMapper: (params: UrlParams) => string;
 
 	generateSrcSet(params: Omit<UrlParams, 'width'>): string;
 }
@@ -50,10 +50,13 @@ export const widthMap: ImageServerContext['widthMap'] = {
 const defaultValue: ImageServerContext = {
 	widthMap,
 	getWidthValue: (width: WidthScale) => widthMap[width],
+	// @ts-ignore
 	srcUrlMapper: null,
+	// @ts-ignore
 	generateSrcSet: null,
 };
 
+// @ts-ignore
 const imageServerCtx: Context<ImageServerContext> = createContext(null);
 
 export const useImageServer = () => useContext(imageServerCtx);
@@ -67,9 +70,13 @@ export const ImageServerProvider: FunctionComponent<
 	widthMap = defaultValue.widthMap,
 }) => {
 	const generateSrcSet = useCallback<ImageServerContext['generateSrcSet']>(
-		({ quality, src }) =>
+		(
+			{ quality, src }, // @ts-ignore
+		) =>
+			// @ts-ignore
 			Object.keys(widthMap)
 				.map((key) => {
+					// @ts-ignore
 					const width = getWidthValue(key as unknown as WidthScale);
 					return `${srcUrlMapper({ quality, src, width })} ${width}w`;
 				})

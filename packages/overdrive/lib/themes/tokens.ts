@@ -94,7 +94,7 @@ type BaseColours = 'white';
 export type BreakPoints = Record<DeviceSize, string>;
 
 export interface Tokens extends VanillaTokens {
-	mode: 'light' | 'dark';
+	mode: 'light' | 'dark' | string;
 	body: {
 		colour: string;
 		backgroundColour: string;

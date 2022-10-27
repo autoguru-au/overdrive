@@ -1,6 +1,6 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
-import { vars } from '../../../themes/base/vars.css';
+import { themeContractVars as vars } from '../../../themes/theme.css';
 
 export const root = style({
 	transition: `fill 0.2s ${vars.animation.easing.decelerate} 0s`,
