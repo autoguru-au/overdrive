@@ -25,7 +25,11 @@ jest.mock('@testing-library/react', () => {
 				wrapper({ children }) {
 					return React.createElement(
 						OverdriveProvider,
-						{ themeClass: themeRef, tokens, vars: themeContractVars },
+						{
+							themeClass: themeRef,
+							tokens,
+							vars: themeContractVars,
+						},
 						[children],
 					);
 				},
