@@ -106,7 +106,7 @@ export const tokens: Tokens = {
 		intent: {
 			primary: {
 				background: {
-					standard: colours.green['600'],
+					standard: colours.green['700'],
 					mild: colours.green['200'],
 					strong: colours.green['900'],
 				},
