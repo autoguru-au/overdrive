@@ -23,7 +23,7 @@ export const OverdriveProvider: FunctionComponent<Props> = ({
 	useEffect(() => {
 		if (!isBrowser) return;
 		if (!noBodyLevelTheming) {
-			// Body has theme class applied to it so we use css vars to apply body styles
+			// Body has theme class applied to it, so we use css vars to apply body styles
 			document.body.classList.add(themeClass);
 			document.body.style.backgroundColor = vars.body.backgroundColour;
 			document.body.style.color = vars.body.colour;
