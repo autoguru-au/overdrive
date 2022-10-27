@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 4.9.1
+
+### Patch Changes
+
+-   dac970c: Theming contracts added
+-   8ee8087: ColourInput: Fixed and improved stories
+
 ## 4.9.0
 
 ### Minor Changes
