@@ -7,6 +7,7 @@ import {
 	Dispatch,
 	forwardRef,
 	FunctionComponent,
+	MutableRefObject,
 	ReactElement,
 	Reducer,
 	Ref,
@@ -220,9 +221,9 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 	},
 	ref,
 ) {
-	const inputRef = useRef();
+	const inputRef = useRef<HTMLInputElement>();
 	const valueRef = useRef(incomingValue);
-	useImperativeHandle(ref, () => inputRef.current);
+	useImperativeHandle(ref, () => inputRef.current as HTMLInputElement);
 	const [isDesktop] = useMedia(['desktop'], false);
 	const [isFocused, setIsFocused] = useState<boolean>(false);
 	const [showModal, setShowModal] = useState<boolean>(false);
@@ -257,7 +258,7 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 				setIsFocused(false);
 				// @ts-ignore
 				inputRef.current?.blur();
-				onEnter(valueRef.current);
+				onEnter(valueRef.current as AutoSuggestValue<any>);
 			}
 		},
 		itemRenderer,
@@ -282,7 +283,7 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 		/>
 	) : (
 		<AutoSuggestInput
-			ref={inputRef}
+			ref={inputRef as MutableRefObject<HTMLInputElement>}
 			{...props}
 			isFocused={isFocused}
 			inlineOptions={inlineOptions}

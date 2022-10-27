@@ -84,7 +84,7 @@ export const Stepper: FunctionComponent<Props> = ({
 	step = 1,
 	min = Number.MIN_SAFE_INTEGER,
 	max = Number.MAX_SAFE_INTEGER,
-	value: incomingValue,
+	value: incomingValue = 0,
 	format = (value) => value.toString(),
 	onChange = () => void 0,
 }) => {

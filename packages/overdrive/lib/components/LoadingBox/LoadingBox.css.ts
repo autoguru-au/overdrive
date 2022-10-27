@@ -1,6 +1,6 @@
 import { keyframes, style } from '@vanilla-extract/css';
 
-import { vars } from '../../themes/base/vars.css';
+import { themeContractVars as vars } from '../../themes/theme.css';
 
 export const root = style({
 	minHeight: vars.typography.size['3'].fontSize,

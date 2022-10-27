@@ -1,6 +1,6 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
-import { vars } from '../../themes/base/vars.css';
+import { themeContractVars as vars } from '../../themes/theme.css';
 
 const lineBottomHeight = '1px';
 const size = '20px';

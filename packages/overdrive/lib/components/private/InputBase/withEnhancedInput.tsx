@@ -111,7 +111,7 @@ export const withEnhancedInput = <
 		withPrefixIcon = true,
 		withSuffixIcon = true,
 		defaultValue,
-	}: EnhancedInputConfigs = { primitiveType: 'text', defaultValue: null },
+	}: EnhancedInputConfigs = { primitiveType: 'text', defaultValue: void 0 },
 ) =>
 	forwardRef<
 		PrimitiveElementType,

@@ -14,8 +14,6 @@ import { ArgTypes, ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
-import { tokens } from '../../themes/base/tokens';
-
 import { ColourInput } from '.';
 
 export default {
@@ -24,7 +22,7 @@ export default {
 	parameters: { chromatic: { delay: 3000 } },
 } as ComponentMeta<typeof ColourInput>;
 
-const defaultColour = tokens.colours.intent.primary.background.standard;
+const defaultColour = '#ec4040';
 const iconOptions = {
 	CalendarIcon,
 	AccountEditIcon,

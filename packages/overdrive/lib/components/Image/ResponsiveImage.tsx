@@ -52,6 +52,7 @@ export const ResponsiveImage: FunctionComponent<Props> = ({
 		'Image must be a number between 1 and 100.',
 	);
 
+	// @ts-ignore
 	const imageWidth = useResponsiveValue(imageWidthList);
 	const sizes = useResponsiveValue(sizesList);
 
@@ -60,6 +61,7 @@ export const ResponsiveImage: FunctionComponent<Props> = ({
 		() =>
 			srcUrlMapper({
 				src: incomingSrc,
+				// @ts-ignore
 				width: getWidthValue(imageWidth),
 				quality,
 			}),

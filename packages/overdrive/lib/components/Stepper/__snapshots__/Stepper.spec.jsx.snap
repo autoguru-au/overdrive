@@ -219,7 +219,9 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
       >
         <span
           class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06dx useBoxStyles_textAlign_center__7o6k06dq useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7ie useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_4__w6to7i4 reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_width_full__7o6k06dk Stepper_label__zxjc1f6"
-        />
+        >
+          0
+        </span>
       </div>
     </div>
     <div

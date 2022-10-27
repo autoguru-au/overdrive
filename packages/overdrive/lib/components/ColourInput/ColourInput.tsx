@@ -79,7 +79,7 @@ export const ColourInput = withEnhancedInput<{}, HTMLInputElement>(
 	{
 		primitiveType: 'color',
 		withPrefixIcon: false,
-		defaultValue: '#000',
+		defaultValue: '#000000',
 	},
 );
 

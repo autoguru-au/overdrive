@@ -1,6 +1,6 @@
 import { style, StyleRule, styleVariants } from '@vanilla-extract/css';
 
-import { vars } from '../../themes/base/vars.css';
+import { themeContractVars as vars } from '../../themes/theme.css';
 import { Tokens } from '../../themes/tokens';
 import { mapTokenToProperty } from '../../utils/mapTokenToProperty';
 

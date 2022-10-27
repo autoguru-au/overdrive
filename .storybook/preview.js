@@ -13,21 +13,19 @@ import { DocsContainer, DocsPage } from '@storybook/addon-docs';
 
 const withThemeProvider = (Story, context) => {
 	const { themeRef, tokens, vars } = context.globals.theme;
-
 	return !isChromatic() ? (
-		<OverdriveProvider
-			noBodyLevelTheming
-			themeClass={themeRef}
-			tokens={tokens}
-			vars={vars}
-		>
+		<OverdriveProvider noBodyLevelTheming themeClass={themeRef} vars={vars}>
 			<Box className={themeRef} padding="2">
 				<Story {...context} />
 			</Box>
 		</OverdriveProvider>
 	) : (
-		Object.entries(themes).map(([, theme], i) => (
-			<div key={i} className={theme.themeRef} data-theme={theme.name}>
+		Object.entries(themes).map(([_, theme]) => (
+			<div
+				key={theme.name}
+				className={theme.themeRef}
+				data-theme={theme.name}
+			>
 				<OverdriveProvider
 					noBodyLevelTheming
 					themeClass={theme.themeRef}

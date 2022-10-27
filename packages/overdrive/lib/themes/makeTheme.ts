@@ -1,4 +1,4 @@
-import { BreakPoints, ColourGamut, ColourMap, Tokens } from './tokens';
+import { BreakPoints, ColourGamut, ColourMap } from './tokens';
 
 export const breakpoints: BreakPoints = {
 	mobile: '0px',
@@ -8,14 +8,9 @@ export const breakpoints: BreakPoints = {
 };
 
 export const makeRuntimeTokens = (
-	tokens: Tokens,
 	runtimeBreakpoints: BreakPoints = breakpoints,
 ) => ({
 	breakpoints: runtimeBreakpoints,
-	body: {
-		colour: tokens.colours.foreground.body,
-		backgroundColour: tokens.colours.background.body,
-	},
 });
 
 export type RuntimeTokens = ReturnType<typeof makeRuntimeTokens>;

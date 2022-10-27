@@ -23,25 +23,20 @@ export interface Props {
 	children?: ReactNode;
 	vars: ThemeVars<Tokens>;
 	themeClass: string;
-	tokens: Tokens;
 	breakpoints?: BreakPoints;
 }
 
 export const ThemeProvider: FunctionComponent<Props> = ({
 	vars,
-	tokens,
 	themeClass,
 	children,
 	breakpoints,
 }) => (
 	<themeContext.Provider
-		value={useMemo(() => ({ vars, themeClass }), [vars, tokens])}
+		value={useMemo(() => ({ vars, themeClass }), [vars])}
 	>
 		<runtimeTokensContext.Provider
-			value={useMemo(
-				() => makeRuntimeTokens(tokens, breakpoints),
-				[tokens],
-			)}
+			value={useMemo(() => makeRuntimeTokens(breakpoints), [])}
 		>
 			{children}
 		</runtimeTokensContext.Provider>

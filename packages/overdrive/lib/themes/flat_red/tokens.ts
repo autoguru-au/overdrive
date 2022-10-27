@@ -1,3 +1,5 @@
+import deepmerge from 'deepmerge';
+
 import { tokens as baseTokens } from '../base/tokens';
 import { buildColourGamut } from '../makeTheme';
 import { ColourMap, Tokens } from '../tokens';
@@ -64,25 +66,15 @@ const colours: ColourMap = {
 	},
 };
 
-const white = '#fff';
 const flatElevation = '0 0 0 0 rgba(0, 0, 0, 0.0)';
 
-export const tokens: Tokens = {
-	...baseTokens,
+export const tokens = deepmerge<Tokens, any>(baseTokens, {
 	colours: {
 		gamut: {
 			...buildColourGamut(colours),
-			white,
 		},
 		foreground: {
-			body: colours.gray['900'],
 			link: colours.green['600'],
-		},
-		background: {
-			body: white,
-			light: colours.gray['200'],
-			neutral: colours.gray['400'],
-			neutralDark: colours.gray['800'],
 		},
 		intent: {
 			primary: {
@@ -91,76 +83,18 @@ export const tokens: Tokens = {
 					mild: colours.red['100'],
 					strong: colours.red['900'],
 				},
-				foreground: white,
 				border: colours.red['900'],
 			},
 			secondary: {
 				background: {
-					standard: white,
-					mild: white,
 					strong: colours.gray['100'],
 				},
 				foreground: colours.blue['800'],
 				border: colours.blue['300'],
 			},
-			shine: {
-				background: {
-					standard: colours.gray['200'],
-					mild: colours.gray['100'],
-					strong: colours.gray['300'],
-				},
-				foreground: colours.yellow['500'],
-				border: colours.gray['300'],
-			},
-			danger: {
-				background: {
-					standard: colours.red['600'],
-					mild: colours.red['100'],
-					strong: colours.red['800'],
-				},
-				foreground: white,
-				border: colours.red['800'],
-			},
-			warning: {
-				background: {
-					standard: colours.yellow['800'],
-					mild: colours.yellow['100'],
-					strong: colours.yellow['900'],
-				},
-				foreground: white,
-				border: colours.yellow['900'],
-			},
-			neutral: {
-				background: {
-					standard: colours.gray['700'],
-					mild: colours.gray['100'],
-					strong: colours.gray['900'],
-				},
-				foreground: white,
-				border: colours.gray['900'],
-			},
-			success: {
-				background: {
-					standard: colours.green['700'],
-					mild: colours.green['100'],
-					strong: colours.green['900'],
-				},
-				foreground: white,
-				border: colours.green['900'],
-			},
-			information: {
-				background: {
-					standard: colours.blue['800'],
-					mild: colours.blue['100'],
-					strong: colours.blue['900'],
-				},
-				foreground: white,
-				border: colours.blue['900'],
-			},
 		},
 	},
 	elevation: {
-		none: 'none',
 		'1': flatElevation,
 		'2': flatElevation,
 		'3': flatElevation,
@@ -168,30 +102,14 @@ export const tokens: Tokens = {
 		'5': flatElevation,
 	},
 	border: {
-		width: {
-			none: '0',
-			'1': '1px',
-			'2': '2px',
-			'3': '4px',
-		},
-		colours: {
-			light: colours.gray['200'],
-			gray: colours.gray['300'],
-			dark: colours.gray['900'],
-		},
 		radius: {
-			none: 'none',
-			pill: `${1e9}px`,
-			full: '50%',
 			min: 'none',
 			'1': 'none',
 		},
 	},
 	typography: {
-		...baseTokens.typography,
 		colour: {
-			...baseTokens.typography.colour,
 			primary: colours.red['600'],
 		},
 	},
-};
+} as unknown as Tokens);

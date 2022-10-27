@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { StrictMode } from 'react';
 import { OverdriveProvider } from '@autoguru/overdrive/lib';
-import { themeRef, vars } from '@autoguru/overdrive/lib/themes/base/vars.css';
-import { tokens } from '@autoguru/overdrive/lib/themes/base/tokens';
+import { themeRef } from '@autoguru/overdrive/lib/themes/base/vars.css';
 import '@autoguru/overdrive/lib/reset/globalFonts.css';
 import '@autoguru/overdrive/lib/reset/globalReset.css';
+import { themeContractVars } from '../packages/overdrive/lib/themes/theme.css';
 
 export default ({ children }) =>
 	<StrictMode>
-		<OverdriveProvider themeClass={themeRef} tokens={tokens} vars={vars}>
+		<OverdriveProvider themeClass={themeRef} vars={themeContractVars}>
 			{children}
 		</OverdriveProvider>
 	</StrictMode>

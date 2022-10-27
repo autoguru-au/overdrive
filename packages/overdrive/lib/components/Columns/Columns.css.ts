@@ -1,6 +1,6 @@
 import { styleVariants } from '@vanilla-extract/css';
 
-import { vars } from '../../themes/base/vars.css';
+import { themeContractVars as vars } from '../../themes/theme.css';
 import { makeResponsiveStyle } from '../../utils/responsiveProps.css';
 
 export const space = {
