@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.9.2
+
+### Patch Changes
+
+-   42d834f: OverdriveProvider applies theme calss changes
+
 ## 4.9.1
 
 ### Patch Changes
