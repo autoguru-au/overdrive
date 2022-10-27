@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.9.3
+
+### Patch Changes
+
+-   3fa19c5: Adds new colour helpers
+
 ## 4.9.2
 
 ### Patch Changes
