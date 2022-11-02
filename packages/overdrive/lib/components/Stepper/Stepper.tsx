@@ -9,6 +9,7 @@ import {
 	useCallback,
 } from 'react';
 
+import { addWithSafeDecimal } from '../../utils/number';
 import { Box, useBoxStyles } from '../Box';
 import { Column, Columns } from '../Columns';
 import { Icon } from '../Icon';
@@ -40,7 +41,7 @@ interface StepProps {
 
 const takeStep = ({ min, max, value, step, direction }: StepProps): number => {
 	const directionChange = (direction === 'DOWN' ? -1 : 1) * step;
-	return clamp(value + directionChange, min, max);
+	return clamp(addWithSafeDecimal(value, directionChange), min, max);
 };
 
 interface HandleProps {

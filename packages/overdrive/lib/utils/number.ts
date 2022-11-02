@@ -32,3 +32,6 @@ export const toPrettyBigNumber = (
 		: formatChunks.value.toFixed(fractionDigits);
 	return `${value}${formatChunks.descriptor}`;
 };
+
+export const addWithSafeDecimal = (a: number, b: number): number =>
+	Number((a + b).toFixed(12));
