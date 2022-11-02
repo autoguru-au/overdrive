@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.9.4
+
+### Patch Changes
+
+-   3e22cb6: Stepper: Fixes incorrect decmials when stepping up or down
+
 ## 4.9.3
 
 ### Patch Changes
