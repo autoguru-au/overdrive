@@ -6,8 +6,9 @@ export const root = style({
 	transition: `fill 0.2s ${vars.animation.easing.decelerate} 0s`,
 });
 
+const defaultBorderWidth = '1px';
 const borderRegionDefaults = style({
-	borderWidth: '1px',
+	borderWidth: defaultBorderWidth,
 	borderStyle: 'solid',
 	display: 'inline-flex',
 	transition: `border-color 0.2s ${vars.animation.easing.decelerate} 0s`,
@@ -78,6 +79,42 @@ export const bordersAttach = {
 		},
 		ALL: {
 			borderRadius: 0,
+		},
+	}),
+	flatCorners: styleVariants({
+		TOP_LEFT: {
+			borderTopLeftRadius: 0,
+		},
+		TOP_RIGHT: {
+			borderTopRightRadius: 0,
+		},
+		BOTTOM_RIGHT: {
+			borderBottomRightRadius: 0,
+		},
+		BOTTOM_LEFT: {
+			borderBottomLeftRadius: 0,
+		},
+	}),
+};
+export const bordersMerged = {
+	complete: styleVariants({
+		NONE: {
+			borderWidth: defaultBorderWidth,
+		},
+		LEFT: {
+			borderLeftColor: 'transparent',
+		},
+		TOP: {
+			borderTopColor: 'transparent',
+		},
+		RIGHT: {
+			borderRightColor: 'transparent',
+		},
+		BOTTOM: {
+			borderBottomColor: 'transparent',
+		},
+		ALL: {
+			borderColor: 'transparent',
 		},
 	}),
 	flatCorners: styleVariants({
