@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.9.6
+
+### Patch Changes
+
+-   6672673: Inputs: Get borderMerge option
+
 ## 4.9.5
 
 ### Patch Changes
