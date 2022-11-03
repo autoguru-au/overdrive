@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.9.7
+
+### Patch Changes
+
+-   9a6f63f: AutoSuggest: Drops borderMerge and attach in fullscreen mode
+
 ## 4.9.6
 
 ### Patch Changes
