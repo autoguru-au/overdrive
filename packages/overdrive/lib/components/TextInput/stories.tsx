@@ -132,6 +132,26 @@ const attachedAllProps: ComponentProps<typeof TextInput> = {
 	...sharedProps,
 	attach: 'ALL',
 };
+const mergedLeftProps: ComponentProps<typeof TextInput> = {
+	...sharedProps,
+	borderMerged: 'LEFT',
+};
+const mergedTopProps: ComponentProps<typeof TextInput> = {
+	...sharedProps,
+	borderMerged: 'TOP',
+};
+const mergedRightProps: ComponentProps<typeof TextInput> = {
+	...sharedProps,
+	borderMerged: 'RIGHT',
+};
+const mergedBottomProps: ComponentProps<typeof TextInput> = {
+	...sharedProps,
+	borderMerged: 'BOTTOM',
+};
+const mergedAllProps: ComponentProps<typeof TextInput> = {
+	...sharedProps,
+	borderMerged: 'ALL',
+};
 const withSuffixIconProps: ComponentProps<typeof TextInput> = {
 	...sharedProps,
 	suffixIcon: AccountEditIcon,
@@ -224,6 +244,30 @@ attachedRight.argTypes = argTypes;
 export const attachedBottom = Template.bind(attachedBottomProps);
 attachedBottom.args = attachedBottomProps;
 attachedBottom.argTypes = argTypes;
+
+export const attachedAll = Template.bind(attachedAllProps);
+attachedAll.args = attachedAllProps;
+attachedAll.argTypes = argTypes;
+
+export const mergedLeft = Template.bind(mergedLeftProps);
+mergedLeft.args = mergedLeftProps;
+mergedLeft.argTypes = argTypes;
+
+export const mergedTop = Template.bind(mergedTopProps);
+mergedTop.args = mergedTopProps;
+mergedTop.argTypes = argTypes;
+
+export const mergedRight = Template.bind(mergedRightProps);
+mergedRight.args = mergedRightProps;
+mergedRight.argTypes = argTypes;
+
+export const mergedBottom = Template.bind(mergedBottomProps);
+mergedBottom.args = mergedBottomProps;
+mergedBottom.argTypes = argTypes;
+
+export const mergedAll = Template.bind(mergedAllProps);
+mergedAll.args = mergedAllProps;
+mergedAll.argTypes = argTypes;
 
 export const disabled = Template.bind(disabledProps);
 disabled.args = disabledProps;

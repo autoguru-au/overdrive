@@ -30,6 +30,9 @@ export interface Props {
 	className?: string;
 	children?: ReactNode;
 	attach?: keyof typeof styles.bordersAttach['complete'];
+	borderMerged?: keyof typeof styles.bordersMerged['complete'];
+	isFocused?: boolean;
+	isHovered?: boolean;
 }
 
 export const NotchedBase: FunctionComponent<Props> = ({
@@ -45,6 +48,9 @@ export const NotchedBase: FunctionComponent<Props> = ({
 	placeholderColourClassName,
 	className = '',
 	attach = 'NONE',
+	borderMerged = 'NONE',
+	isFocused = false,
+	isHovered = false,
 }) => {
 	const labelStyles = useTextStyles({
 		noWrap: true,
@@ -56,6 +62,7 @@ export const NotchedBase: FunctionComponent<Props> = ({
 			placeholder.length * ROUGH_WIDTH_PER_CHARACTER,
 		),
 	);
+	const shouldMerge = !isFocused && !isHovered;
 
 	useEffect(() => {
 		if (labelRef.current) {
@@ -75,7 +82,22 @@ export const NotchedBase: FunctionComponent<Props> = ({
 				!notch && [styles.borders.complete, borderColourClassName],
 				className,
 				{
-					[styles.bordersAttach.complete.NONE]: !notch && !attach,
+					[styles.bordersMerged.complete.NONE]:
+						!notch &&
+						shouldMerge &&
+						(!borderMerged || borderMerged === 'NONE'),
+					[styles.bordersMerged.complete.LEFT]:
+						!notch && shouldMerge && borderMerged === 'LEFT',
+					[styles.bordersMerged.complete.TOP]:
+						!notch && shouldMerge && borderMerged === 'TOP',
+					[styles.bordersMerged.complete.RIGHT]:
+						!notch && shouldMerge && borderMerged === 'RIGHT',
+					[styles.bordersMerged.complete.BOTTOM]:
+						!notch && shouldMerge && borderMerged === 'BOTTOM',
+					[styles.bordersMerged.complete.ALL]:
+						!notch && shouldMerge && borderMerged === 'ALL',
+					[styles.bordersAttach.complete.NONE]:
+						!notch && attach === 'NONE',
 					[styles.bordersAttach.complete.LEFT]:
 						!notch && attach === 'LEFT',
 					[styles.bordersAttach.complete.RIGHT]:
@@ -107,6 +129,14 @@ export const NotchedBase: FunctionComponent<Props> = ({
 							styles.borders.leading,
 							borderColourClassName,
 							{
+								[styles.bordersMerged.complete.LEFT]:
+									shouldMerge && borderMerged === 'LEFT',
+								[styles.bordersMerged.complete.TOP]:
+									shouldMerge && borderMerged === 'TOP',
+								[styles.bordersMerged.complete.BOTTOM]:
+									shouldMerge && borderMerged === 'BOTTOM',
+								[styles.bordersMerged.complete.ALL]:
+									shouldMerge && borderMerged === 'ALL',
 								[styles.bordersAttach.flatCorners.TOP_LEFT]:
 									attach === 'LEFT' ||
 									attach === 'TOP' ||
@@ -139,6 +169,14 @@ export const NotchedBase: FunctionComponent<Props> = ({
 								placeholderColourClassName,
 								labelStyles,
 								{
+									[styles.bordersMerged.complete.TOP]:
+										shouldMerge && borderMerged === 'TOP',
+									[styles.bordersMerged.complete.BOTTOM]:
+										shouldMerge &&
+										borderMerged === 'BOTTOM',
+									[styles.bordersMerged.complete.ALL]:
+										shouldMerge && borderMerged === 'ALL',
+
 									[styles.placeholder.mutedLabelStyles]:
 										isEmpty || disabled,
 									[styles.placeholderPlacement[size].default]:
@@ -159,6 +197,14 @@ export const NotchedBase: FunctionComponent<Props> = ({
 							borderColourClassName,
 							borderColourClassName,
 							{
+								[styles.bordersMerged.complete.RIGHT]:
+									shouldMerge && borderMerged === 'RIGHT',
+								[styles.bordersMerged.complete.TOP]:
+									shouldMerge && borderMerged === 'TOP',
+								[styles.bordersMerged.complete.BOTTOM]:
+									shouldMerge && borderMerged === 'BOTTOM',
+								[styles.bordersMerged.complete.ALL]:
+									shouldMerge && borderMerged === 'ALL',
 								[styles.bordersAttach.flatCorners.TOP_RIGHT]:
 									attach === 'RIGHT' ||
 									attach === 'TOP' ||

@@ -46,7 +46,7 @@ export interface EnhanceInputPrimitiveProps
 	extends AriaAttributes,
 		Pick<
 			ComponentProps<typeof NotchedBase>,
-			'notch' | 'placeholder' | 'attach'
+			'notch' | 'placeholder' | 'attach' | 'borderMerged' | 'isFocused'
 		> {
 	name: string;
 	id?: string;
@@ -62,7 +62,6 @@ export interface EnhanceInputPrimitiveProps
 	suffixIcon?: IconType;
 	wrapperRef?: Ref<HTMLDivElement>;
 	isLoading?: boolean;
-	isFocused?: boolean;
 }
 
 export interface ValidationProps {
@@ -89,13 +88,15 @@ export type WrappedComponentProps<IncomingProps, PrimitiveElementType> = {
 		ref: MutableRefObject<PrimitiveElementType>;
 	};
 	fieldIcon?: EnhanceInputPrimitiveProps['fieldIcon'];
-	isFocused?: boolean;
 	className?: boolean;
 	prefixed: boolean;
 	suffixed: boolean;
 	isLoading: boolean;
 } & IncomingProps &
-	Pick<ComponentProps<typeof NotchedBase>, 'attach'>;
+	Pick<
+		ComponentProps<typeof NotchedBase>,
+		'attach' | 'borderMerged' | 'isFocused'
+	>;
 
 interface EnhancedInputConfigs<ValueType = string> {
 	defaultValue?: ValueType;
@@ -152,6 +153,7 @@ export const withEnhancedInput = <
 				wrapperRef,
 				autoFocus,
 				attach,
+				borderMerged,
 				...rest
 			},
 			ref,
@@ -296,6 +298,9 @@ export const withEnhancedInput = <
 						notch={notch}
 						placeholder={placeholder}
 						attach={attach}
+						borderMerged={borderMerged}
+						isFocused={isActive}
+						isHovered={isHovered}
 						placeholderColourClassName={clsx({
 							[derivedColours.colour]: !isEmpty,
 						})}
