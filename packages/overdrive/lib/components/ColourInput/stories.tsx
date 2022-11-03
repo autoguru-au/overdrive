@@ -14,6 +14,8 @@ import { ArgTypes, ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
+import { DateInput } from '../DateInput';
+
 import { ColourInput } from '.';
 
 export default {
@@ -33,10 +35,30 @@ const iconOptions = {
 	StarIcon,
 };
 
+const attachOptions: Record<
+	string,
+	ComponentProps<typeof DateInput>['attach']
+> = {
+	NONE: 'NONE',
+	TOP: 'TOP',
+	RIGHT: 'RIGHT',
+	LEFT: 'LEFT',
+	BOTTOM: 'BOTTOM',
+	ALL: 'ALL',
+};
+
 const argTypes: Partial<ArgTypes<ComponentProps<typeof ColourInput>>> = {
 	value: {
 		control: {
 			type: 'color',
+		},
+	},
+	attach: {
+		defaultValue: 'NONE',
+		description: 'Input attach',
+		options: attachOptions,
+		control: {
+			type: 'select',
 		},
 	},
 	suffixIcon: {

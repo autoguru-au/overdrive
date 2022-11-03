@@ -59,20 +59,20 @@ exports[`<SelectInput /> should have some hintText 1`] = `
       class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_textAlign_left__7o6k06dp useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
     >
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg6 InputState_natural_default_borderColour__9z39d75"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5 InputState_natural_default_borderColour__9z39d75"
       />
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg7 InputState_natural_default_borderColour__9z39d75"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 InputState_natural_default_borderColour__9z39d75"
         style="width: 0px;"
       >
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06e0 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_placeholder_default__1r7zdxg9 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxga NotchedBase_placeholderPlacement_medium_default__1r7zdxge"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06e0 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_placeholder_default__1r7zdxgi useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxgj NotchedBase_placeholderPlacement_medium_default__1r7zdxgn"
         >
           Hello World!
         </label>
       </div>
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_trailing__1r7zdxg8 InputState_natural_default_borderColour__9z39d75"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_trailing__1r7zdxg7 InputState_natural_default_borderColour__9z39d75 InputState_natural_default_borderColour__9z39d75"
       />
     </div>
   </div>
@@ -143,20 +143,20 @@ exports[`<SelectInput /> should match snapshot 1`] = `
       class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_textAlign_left__7o6k06dp useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
     >
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg6 InputState_natural_default_borderColour__9z39d75"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5 InputState_natural_default_borderColour__9z39d75"
       />
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg7 InputState_natural_default_borderColour__9z39d75"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 InputState_natural_default_borderColour__9z39d75"
         style="width: 0px;"
       >
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06e0 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_placeholder_default__1r7zdxg9 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxga NotchedBase_placeholderPlacement_medium_default__1r7zdxge"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06e0 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_placeholder_default__1r7zdxgi useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxgj NotchedBase_placeholderPlacement_medium_default__1r7zdxgn"
         >
           Hello World!
         </label>
       </div>
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_trailing__1r7zdxg8 InputState_natural_default_borderColour__9z39d75"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_trailing__1r7zdxg7 InputState_natural_default_borderColour__9z39d75 InputState_natural_default_borderColour__9z39d75"
       />
     </div>
   </div>
@@ -222,20 +222,20 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
       class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_textAlign_left__7o6k06dp useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
     >
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg6 InputState_activeBorderColour__9z39d71"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5 InputState_activeBorderColour__9z39d71"
       />
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg7 InputState_activeBorderColour__9z39d71"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 InputState_activeBorderColour__9z39d71"
         style="width: 16px;"
       >
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06e0 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_placeholder_default__1r7zdxg9 InputState_activeColour__9z39d70 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholderPlacement_medium_shifted__1r7zdxgg"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06e0 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_placeholder_default__1r7zdxgi InputState_activeColour__9z39d70 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholderPlacement_medium_shifted__1r7zdxgp"
         >
           Hello World!
         </label>
       </div>
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_trailing__1r7zdxg8 InputState_activeBorderColour__9z39d71"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_trailing__1r7zdxg7 InputState_activeBorderColour__9z39d71 InputState_activeBorderColour__9z39d71"
       />
     </div>
   </div>
@@ -301,20 +301,20 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
       class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_textAlign_left__7o6k06dp useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
     >
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg6 InputState_error_default_borderColour__9z39d7d"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5 InputState_error_default_borderColour__9z39d7d"
       />
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg7 InputState_error_default_borderColour__9z39d7d"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 InputState_error_default_borderColour__9z39d7d"
         style="width: 0px;"
       >
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06e0 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_placeholder_default__1r7zdxg9 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxga NotchedBase_placeholderPlacement_medium_default__1r7zdxge"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06e0 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_placeholder_default__1r7zdxgi useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxgj NotchedBase_placeholderPlacement_medium_default__1r7zdxgn"
         >
           Hello World!
         </label>
       </div>
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_trailing__1r7zdxg8 InputState_error_default_borderColour__9z39d7d"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_trailing__1r7zdxg7 InputState_error_default_borderColour__9z39d7d InputState_error_default_borderColour__9z39d7d"
       />
     </div>
   </div>
@@ -380,20 +380,20 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
       class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_textAlign_left__7o6k06dp useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
     >
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg6 InputState_error_default_borderColour__9z39d7d"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5 InputState_error_default_borderColour__9z39d7d"
       />
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg7 InputState_error_default_borderColour__9z39d7d"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 InputState_error_default_borderColour__9z39d7d"
         style="width: 0px;"
       >
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06e0 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_placeholder_default__1r7zdxg9 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxga NotchedBase_placeholderPlacement_medium_default__1r7zdxge"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06e0 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_placeholder_default__1r7zdxgi useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxgj NotchedBase_placeholderPlacement_medium_default__1r7zdxgn"
         >
           Hello World!
         </label>
       </div>
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_trailing__1r7zdxg8 InputState_error_default_borderColour__9z39d7d"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_trailing__1r7zdxg7 InputState_error_default_borderColour__9z39d7d InputState_error_default_borderColour__9z39d7d"
       />
     </div>
   </div>
@@ -459,20 +459,20 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
       class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_textAlign_left__7o6k06dp useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
     >
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg6 InputState_success_default_borderColour__9z39d77"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5 InputState_success_default_borderColour__9z39d77"
       />
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg7 InputState_success_default_borderColour__9z39d77"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 InputState_success_default_borderColour__9z39d77"
         style="width: 0px;"
       >
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06e0 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_placeholder_default__1r7zdxg9 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxga NotchedBase_placeholderPlacement_medium_default__1r7zdxge"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06e0 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_placeholder_default__1r7zdxgi useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxgj NotchedBase_placeholderPlacement_medium_default__1r7zdxgn"
         >
           Hello World!
         </label>
       </div>
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_trailing__1r7zdxg8 InputState_success_default_borderColour__9z39d77"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_trailing__1r7zdxg7 InputState_success_default_borderColour__9z39d77 InputState_success_default_borderColour__9z39d77"
       />
     </div>
   </div>
@@ -520,20 +520,20 @@ exports[`<SelectInput /> should match snapshot with custom icon 1`] = `
       class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_textAlign_left__7o6k06dp useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
     >
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg6 InputState_natural_default_borderColour__9z39d75"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5 InputState_natural_default_borderColour__9z39d75"
       />
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg7 InputState_natural_default_borderColour__9z39d75"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 InputState_natural_default_borderColour__9z39d75"
         style="width: 0px;"
       >
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06e0 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_placeholder_default__1r7zdxg9 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxga NotchedBase_placeholderPlacement_medium_default__1r7zdxge"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06e0 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_placeholder_default__1r7zdxgi useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxgj NotchedBase_placeholderPlacement_medium_default__1r7zdxgn"
         >
           placeholder something
         </label>
       </div>
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_trailing__1r7zdxg8 InputState_natural_default_borderColour__9z39d75"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_trailing__1r7zdxg7 InputState_natural_default_borderColour__9z39d75 InputState_natural_default_borderColour__9z39d75"
       />
     </div>
   </div>
@@ -597,20 +597,20 @@ exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
       class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_textAlign_left__7o6k06dp useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
     >
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg6 InputState_natural_default_borderColour__9z39d75"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5 InputState_natural_default_borderColour__9z39d75"
       />
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg7 InputState_natural_default_borderColour__9z39d75"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 InputState_natural_default_borderColour__9z39d75"
         style="width: 0px;"
       >
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06e0 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_placeholder_default__1r7zdxg9 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxga NotchedBase_placeholderPlacement_medium_defaultPrefixed__1r7zdxgf"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06e0 useBoxStyles_position_absolute__7o6k06dm useBoxStyles_pointerEvents_none__7o6k06fn NotchedBase_placeholder_default__1r7zdxgi useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxgj NotchedBase_placeholderPlacement_medium_defaultPrefixed__1r7zdxgo"
         >
           placeholder something
         </label>
       </div>
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_trailing__1r7zdxg8 InputState_natural_default_borderColour__9z39d75"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_trailing__1r7zdxg7 InputState_natural_default_borderColour__9z39d75 InputState_natural_default_borderColour__9z39d75"
       />
     </div>
   </div>

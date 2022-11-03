@@ -16,6 +16,7 @@ import * as React from 'react';
 import { ComponentProps } from 'react';
 
 import { Box } from '../Box';
+import { DateInput } from '../DateInput';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
 
@@ -50,6 +51,17 @@ const iconOptions = {
 	StarIcon,
 	CheckIcon,
 };
+const attachOptions: Record<
+	string,
+	ComponentProps<typeof DateInput>['attach']
+> = {
+	NONE: 'NONE',
+	TOP: 'TOP',
+	RIGHT: 'RIGHT',
+	LEFT: 'LEFT',
+	BOTTOM: 'BOTTOM',
+	ALL: 'ALL',
+};
 
 export default {
 	title: 'Components/Inputs/AutoSuggest',
@@ -69,6 +81,14 @@ export default {
 				),
 			},
 			defaultValue: null,
+			control: {
+				type: 'select',
+			},
+		},
+		attach: {
+			defaultValue: 'NONE',
+			description: 'Input attach',
+			options: attachOptions,
 			control: {
 				type: 'select',
 			},

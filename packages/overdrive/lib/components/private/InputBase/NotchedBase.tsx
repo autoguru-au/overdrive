@@ -29,6 +29,7 @@ export interface Props {
 	size: keyof typeof styles.placeholderPlacement;
 	className?: string;
 	children?: ReactNode;
+	attach?: keyof typeof styles.bordersAttach['complete'];
 }
 
 export const NotchedBase: FunctionComponent<Props> = ({
@@ -43,6 +44,7 @@ export const NotchedBase: FunctionComponent<Props> = ({
 	borderColourClassName,
 	placeholderColourClassName,
 	className = '',
+	attach = 'NONE',
 }) => {
 	const labelStyles = useTextStyles({
 		noWrap: true,
@@ -72,6 +74,19 @@ export const NotchedBase: FunctionComponent<Props> = ({
 				styles.root,
 				!notch && [styles.borders.complete, borderColourClassName],
 				className,
+				{
+					[styles.bordersAttach.complete.NONE]: !notch && !attach,
+					[styles.bordersAttach.complete.LEFT]:
+						!notch && attach === 'LEFT',
+					[styles.bordersAttach.complete.RIGHT]:
+						!notch && attach === 'RIGHT',
+					[styles.bordersAttach.complete.TOP]:
+						!notch && attach === 'TOP',
+					[styles.bordersAttach.complete.BOTTOM]:
+						!notch && attach === 'BOTTOM',
+					[styles.bordersAttach.complete.ALL]:
+						!notch && attach === 'ALL',
+				},
 			)}
 		>
 			{children}
@@ -91,6 +106,16 @@ export const NotchedBase: FunctionComponent<Props> = ({
 						className={clsx(
 							styles.borders.leading,
 							borderColourClassName,
+							{
+								[styles.bordersAttach.flatCorners.TOP_LEFT]:
+									attach === 'LEFT' ||
+									attach === 'TOP' ||
+									attach === 'ALL',
+								[styles.bordersAttach.flatCorners.BOTTOM_LEFT]:
+									attach === 'LEFT' ||
+									attach === 'BOTTOM' ||
+									attach === 'ALL',
+							},
 						)}
 					/>
 					<div
@@ -132,6 +157,17 @@ export const NotchedBase: FunctionComponent<Props> = ({
 						className={clsx(
 							styles.borders.trailing,
 							borderColourClassName,
+							borderColourClassName,
+							{
+								[styles.bordersAttach.flatCorners.TOP_RIGHT]:
+									attach === 'RIGHT' ||
+									attach === 'TOP' ||
+									attach === 'ALL',
+								[styles.bordersAttach.flatCorners.BOTTOM_RIGHT]:
+									attach === 'RIGHT' ||
+									attach === 'BOTTOM' ||
+									attach === 'ALL',
+							},
 						)}
 					/>
 				</Box>

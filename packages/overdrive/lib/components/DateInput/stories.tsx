@@ -43,11 +43,29 @@ const iconOptions = {
 	PlusIcon,
 	StarIcon,
 };
-
+const attachOptions: Record<
+	string,
+	ComponentProps<typeof DateInput>['attach']
+> = {
+	NONE: 'NONE',
+	TOP: 'TOP',
+	RIGHT: 'RIGHT',
+	LEFT: 'LEFT',
+	BOTTOM: 'BOTTOM',
+	ALL: 'ALL',
+};
 const argTypes: Partial<ArgTypes<ComponentProps<typeof DateInput>>> = {
 	value: {
 		control: {
 			type: 'date',
+		},
+	},
+	attach: {
+		defaultValue: 'NONE',
+		description: 'Input attach',
+		options: attachOptions,
+		control: {
+			type: 'select',
 		},
 	},
 	prefixIcon: {
