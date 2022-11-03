@@ -275,6 +275,8 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 	return !inlineOptions && !isDesktop && showModal ? (
 		<AutoSuggestFullscreenInput
 			{...props}
+			attach="NONE"
+			borderMerged="NONE"
 			isFocused={isFocused}
 			inlineOptions
 			fieldIcon={fieldIcon}
