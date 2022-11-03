@@ -13,6 +13,7 @@ import {
 	useReducer,
 } from 'react';
 
+import { isBrowser } from '../../utils';
 import { Alert } from '../Alert';
 import { Box } from '../Box';
 import { Portal } from '../Portal';
@@ -203,16 +204,17 @@ const Toast: FunctionComponent<
 	const dismiss = useCallback(() => {
 		remove(id);
 	}, [id, remove]);
+	if (isBrowser) {
+		useLayoutEffect(() => {
+			const timeout = setTimeout(() => {
+				dismiss();
+			}, duration);
 
-	useLayoutEffect(() => {
-		const timeout = setTimeout(() => {
-			dismiss();
-		}, duration);
-
-		return () => {
-			clearTimeout(timeout);
-		};
-	}, [dismiss]);
+			return () => {
+				clearTimeout(timeout);
+			};
+		}, [dismiss]);
+	}
 
 	return (
 		<Alert

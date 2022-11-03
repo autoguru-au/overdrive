@@ -26,30 +26,34 @@ export const useMedia = (
 
 	const [matches, setMatches] = useState<readonly boolean[]>(matchesInit);
 
-	useLayoutEffect(() => {
-		let isMounted = true;
+	if (isBrowser) {
+		useLayoutEffect(() => {
+			let isMounted = true;
 
-		const matchers = getQueries().map((query) => window.matchMedia(query));
+			const matchers = getQueries().map((query) =>
+				window.matchMedia(query),
+			);
 
-		const removeHandlersFn = matchers.map((matcher, idx) => {
-			const handler = (e: MediaQueryListEvent) => {
-				if (!isMounted) return;
-				setMatches((prevState) => {
-					const newState = [...prevState];
-					newState[idx] = e.matches;
-					return newState;
-				});
+			const removeHandlersFn = matchers.map((matcher, idx) => {
+				const handler = (e: MediaQueryListEvent) => {
+					if (!isMounted) return;
+					setMatches((prevState) => {
+						const newState = [...prevState];
+						newState[idx] = e.matches;
+						return newState;
+					});
+				};
+
+				matcher.addEventListener('change', handler, { passive: true });
+				return () => matcher.removeEventListener('change', handler);
+			});
+
+			return () => {
+				isMounted = false;
+				removeHandlersFn.forEach((item) => item());
 			};
-
-			matcher.addEventListener('change', handler, { passive: true });
-			return () => matcher.removeEventListener('change', handler);
-		});
-
-		return () => {
-			isMounted = false;
-			removeHandlersFn.forEach((item) => item());
-		};
-	}, [...queries, breakpoints]);
+		}, [...queries, breakpoints]);
+	}
 
 	return matches;
 };

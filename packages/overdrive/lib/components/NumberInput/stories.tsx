@@ -15,6 +15,8 @@ import isChromatic from 'chromatic/isChromatic';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
+import { DateInput } from '../DateInput';
+
 import { NumberInput } from '.';
 
 const meta: ComponentMeta<typeof NumberInput> = {
@@ -41,12 +43,31 @@ const iconOptions = {
 	StarIcon,
 	CheckIcon,
 };
+const attachOptions: Record<
+	string,
+	ComponentProps<typeof DateInput>['attach']
+> = {
+	NONE: 'NONE',
+	TOP: 'TOP',
+	RIGHT: 'RIGHT',
+	LEFT: 'LEFT',
+	BOTTOM: 'BOTTOM',
+	ALL: 'ALL',
+};
 
 const argTypes: ArgTypes = {
 	prefixIcon: {
 		defaultValue: null,
 		description: 'Input prefix Icon',
 		options: iconOptions,
+		control: {
+			type: 'select',
+		},
+	},
+	attach: {
+		defaultValue: 'NONE',
+		description: 'Input attach',
+		options: attachOptions,
 		control: {
 			type: 'select',
 		},

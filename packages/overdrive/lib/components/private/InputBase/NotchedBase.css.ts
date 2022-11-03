@@ -31,13 +31,7 @@ export const borders = {
 		],
 		disabled: style({ boxShadow: 'none' }),
 	},
-	complete: [
-		borderVisualDefaults,
-		borderRegionDefaults,
-		style({
-			borderRadius: `${vars.border.radius['1']}`,
-		}),
-	],
+	complete: [borderVisualDefaults, borderRegionDefaults],
 	leading: [
 		borderRegionDefaults,
 		style({
@@ -63,6 +57,43 @@ export const borders = {
 			borderRadius: `0 ${vars.border.radius['1']} ${vars.border.radius['1']} 0`,
 		}),
 	],
+};
+
+export const bordersAttach = {
+	complete: styleVariants({
+		NONE: {
+			borderRadius: `${vars.border.radius['1']}`,
+		},
+		LEFT: {
+			borderRadius: `0 ${vars.border.radius['1']} ${vars.border.radius['1']} 0`,
+		},
+		TOP: {
+			borderRadius: `0 0 ${vars.border.radius['1']} ${vars.border.radius['1']}`,
+		},
+		RIGHT: {
+			borderRadius: `${vars.border.radius['1']} 0 0 ${vars.border.radius['1']}`,
+		},
+		BOTTOM: {
+			borderRadius: `${vars.border.radius['1']} ${vars.border.radius['1']} 0 0`,
+		},
+		ALL: {
+			borderRadius: 0,
+		},
+	}),
+	flatCorners: styleVariants({
+		TOP_LEFT: {
+			borderTopLeftRadius: 0,
+		},
+		TOP_RIGHT: {
+			borderTopRightRadius: 0,
+		},
+		BOTTOM_RIGHT: {
+			borderBottomRightRadius: 0,
+		},
+		BOTTOM_LEFT: {
+			borderBottomLeftRadius: 0,
+		},
+	}),
 };
 
 export const placeholder = styleVariants({

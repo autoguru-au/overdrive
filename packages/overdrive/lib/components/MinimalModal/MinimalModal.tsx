@@ -6,7 +6,7 @@ import type {
 import * as React from 'react';
 import { ReactNode, useLayoutEffect, useRef } from 'react';
 
-import { useEventCallback, useId } from '../../utils';
+import { isBrowser, useEventCallback, useId } from '../../utils';
 import { Box } from '../Box';
 import { Modal } from '../Modal';
 
@@ -43,13 +43,15 @@ export const MinimalModal: FunctionComponent<Props> = ({
 		},
 	);
 
-	useLayoutEffect(() => {
-		document.body.style.overflow = isOpen ? 'hidden' : '';
+	if (isBrowser) {
+		useLayoutEffect(() => {
+			document.body.style.overflow = isOpen ? 'hidden' : '';
 
-		return () => {
-			document.body.style.overflow = '';
-		};
-	}, [isOpen]);
+			return () => {
+				document.body.style.overflow = '';
+			};
+		}, [isOpen]);
+	}
 
 	return (
 		<Modal isOpen={isOpen} onRequestClose={onRequestClose}>

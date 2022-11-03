@@ -3,7 +3,7 @@ import * as React from 'react';
 import { forwardRef, useLayoutEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
-import { isHtmlElement, setRef } from '../../utils';
+import { isBrowser, isHtmlElement, setRef } from '../../utils';
 import { useTheme } from '../ThemeProvider';
 
 export interface Props {
@@ -24,19 +24,21 @@ function Portal(
 		null,
 	);
 
-	useLayoutEffect(() => {
-		setMountNode(isHtmlElement(container) ? container : document.body);
-	}, [container]);
+	if (isBrowser) {
+		useLayoutEffect(() => {
+			setMountNode(isHtmlElement(container) ? container : document.body);
+		}, [container]);
 
-	useLayoutEffect(() => {
-		if (mountNode) {
-			setRef(ref, mountNode);
-		}
+		useLayoutEffect(() => {
+			if (mountNode) {
+				setRef(ref, mountNode);
+			}
 
-		return () => {
-			void setRef(ref, null);
-		};
-	}, [ref, mountNode]);
+			return () => {
+				void setRef(ref, null);
+			};
+		}, [ref, mountNode]);
+	}
 
 	if (!mountNode) return null;
 

@@ -14,6 +14,8 @@ import { ArgTypes, ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
+import { DateInput } from '../DateInput';
+
 import { TextInput } from '.';
 
 export default {
@@ -35,8 +37,27 @@ const iconOptions = {
 	StarIcon,
 	CheckIcon,
 };
+const attachOptions: Record<
+	string,
+	ComponentProps<typeof DateInput>['attach']
+> = {
+	NONE: 'NONE',
+	TOP: 'TOP',
+	RIGHT: 'RIGHT',
+	LEFT: 'LEFT',
+	BOTTOM: 'BOTTOM',
+	ALL: 'ALL',
+};
 
 const argTypes: ArgTypes<Partial<ComponentProps<typeof TextInput>>> = {
+	attach: {
+		defaultValue: 'NONE',
+		description: 'Input attach',
+		options: attachOptions,
+		control: {
+			type: 'select',
+		},
+	},
 	prefixIcon: {
 		defaultValue: null,
 		description: 'Input prefix Icon',
@@ -90,6 +111,26 @@ const withHintTextProps: ComponentProps<typeof TextInput> = {
 const withPrefixIconProps: ComponentProps<typeof TextInput> = {
 	...sharedProps,
 	prefixIcon: CalendarIcon,
+};
+const attachedLeftProps: ComponentProps<typeof TextInput> = {
+	...sharedProps,
+	attach: 'LEFT',
+};
+const attachedTopProps: ComponentProps<typeof TextInput> = {
+	...sharedProps,
+	attach: 'TOP',
+};
+const attachedRightProps: ComponentProps<typeof TextInput> = {
+	...sharedProps,
+	attach: 'RIGHT',
+};
+const attachedBottomProps: ComponentProps<typeof TextInput> = {
+	...sharedProps,
+	attach: 'BOTTOM',
+};
+const attachedAllProps: ComponentProps<typeof TextInput> = {
+	...sharedProps,
+	attach: 'ALL',
 };
 const withSuffixIconProps: ComponentProps<typeof TextInput> = {
 	...sharedProps,
@@ -167,6 +208,22 @@ withSuffixIcon.argTypes = argTypes;
 export const withBothIcons = Template.bind(withBothIconsProps);
 withBothIcons.args = withBothIconsProps;
 withBothIcons.argTypes = argTypes;
+
+export const attachedLeft = Template.bind(attachedLeftProps);
+attachedLeft.args = attachedLeftProps;
+attachedLeft.argTypes = argTypes;
+
+export const attachedTop = Template.bind(attachedTopProps);
+attachedTop.args = attachedTopProps;
+attachedTop.argTypes = argTypes;
+
+export const attachedRight = Template.bind(attachedRightProps);
+attachedRight.args = attachedRightProps;
+attachedRight.argTypes = argTypes;
+
+export const attachedBottom = Template.bind(attachedBottomProps);
+attachedBottom.args = attachedBottomProps;
+attachedBottom.argTypes = argTypes;
 
 export const disabled = Template.bind(disabledProps);
 disabled.args = disabledProps;

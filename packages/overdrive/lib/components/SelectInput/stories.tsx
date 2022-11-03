@@ -14,6 +14,8 @@ import { ArgTypes, ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
+import { DateInput } from '../DateInput';
+
 import { SelectInput } from '.';
 
 const valueOptions = ['Kia', 'Toyota', 'BMW', 'Mitsubishi', 'Hyundai'];
@@ -43,11 +45,30 @@ const iconOptions = {
 	StarIcon,
 	CheckIcon,
 };
+const attachOptions: Record<
+	string,
+	ComponentProps<typeof DateInput>['attach']
+> = {
+	NONE: 'NONE',
+	TOP: 'TOP',
+	RIGHT: 'RIGHT',
+	LEFT: 'LEFT',
+	BOTTOM: 'BOTTOM',
+	ALL: 'ALL',
+};
 
 const argTypes: ArgTypes = {
 	value: {
 		options: valueOptions,
 		defaultValue: null,
+		control: {
+			type: 'select',
+		},
+	},
+	attach: {
+		defaultValue: 'NONE',
+		description: 'Input attach',
+		options: attachOptions,
 		control: {
 			type: 'select',
 		},

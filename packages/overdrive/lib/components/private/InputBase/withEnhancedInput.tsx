@@ -5,6 +5,7 @@ import * as React from 'react';
 import {
 	AriaAttributes,
 	ChangeEventHandler,
+	ComponentProps,
 	ComponentType,
 	FocusEventHandler,
 	forwardRef,
@@ -41,16 +42,19 @@ export interface EventHandlers<PrimitiveElementType> {
 }
 
 // The props we'll give the end consumer to send
-export interface EnhanceInputPrimitiveProps extends AriaAttributes {
+export interface EnhanceInputPrimitiveProps
+	extends AriaAttributes,
+		Pick<
+			ComponentProps<typeof NotchedBase>,
+			'notch' | 'placeholder' | 'attach'
+		> {
 	name: string;
-	placeholder: string;
 	id?: string;
 	className?: string;
 	value?: string;
 	hintText?: ReactNode;
 	autoFocus?: boolean;
 	disabled?: boolean;
-	notch?: boolean;
 	reserveHintSpace?: boolean;
 	size?: keyof typeof styles.inputItselfSize;
 	fieldIcon?: IconType;
@@ -90,7 +94,8 @@ export type WrappedComponentProps<IncomingProps, PrimitiveElementType> = {
 	prefixed: boolean;
 	suffixed: boolean;
 	isLoading: boolean;
-} & IncomingProps;
+} & IncomingProps &
+	Pick<ComponentProps<typeof NotchedBase>, 'attach'>;
 
 interface EnhancedInputConfigs<ValueType = string> {
 	defaultValue?: ValueType;
@@ -146,6 +151,7 @@ export const withEnhancedInput = <
 				suffixIcon,
 				wrapperRef,
 				autoFocus,
+				attach,
 				...rest
 			},
 			ref,
@@ -289,6 +295,7 @@ export const withEnhancedInput = <
 						disabled={disabled}
 						notch={notch}
 						placeholder={placeholder}
+						attach={attach}
 						placeholderColourClassName={clsx({
 							[derivedColours.colour]: !isEmpty,
 						})}
