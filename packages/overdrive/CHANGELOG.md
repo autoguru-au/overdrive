@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.9.5
+
+### Patch Changes
+
+-   4777231: Inputs: Get attach option
+
 ## 4.9.4
 
 ### Patch Changes
