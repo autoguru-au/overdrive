@@ -2,6 +2,7 @@ import { ArgTypes } from '@storybook/react';
 import { ComponentProps } from 'react';
 
 import { Tokens } from '../../themes/tokens';
+import { Stack } from '../Stack';
 
 import { Box } from './Box';
 
@@ -47,7 +48,7 @@ const borderRadiusOptions: Array<keyof Tokens['border']['radius']> = [
 	'full',
 	'pill',
 ];
-
+const widthOptions: ComponentProps<typeof Stack>['width'] = ['full', null];
 export const boxArgTypes: Partial<ArgTypes<ComponentProps<typeof Box>>> = {
 	boxShadow: {
 		options: boxShadowOptions,
@@ -62,7 +63,7 @@ export const boxArgTypes: Partial<ArgTypes<ComponentProps<typeof Box>>> = {
 		},
 	},
 	alignItems: {
-		options: ['flexStart', 'center', 'flexEnd'],
+		options: ['flexStart', 'center', 'flexEnd', 'stretch'],
 		control: {
 			type: 'select',
 		},
@@ -89,6 +90,13 @@ export const boxArgTypes: Partial<ArgTypes<ComponentProps<typeof Box>>> = {
 		options: {
 			default: undefined,
 			none: 'none',
+		},
+	},
+	width: {
+		options: widthOptions,
+		defaultValue: null,
+		control: {
+			type: 'select',
 		},
 	},
 	...scaledProps.reduce((argTypes, prop) => {
