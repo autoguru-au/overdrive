@@ -69,7 +69,6 @@ const withDividersProps: Omit<ComponentProps<typeof Stack>, 'children'> = {
 export const withDividers = Template.bind(withDividersProps);
 withDividers.args = withDividersProps;
 
-
 const withAlignmentProps: Omit<ComponentProps<typeof Stack>, 'children'> = {
 	...standardProps,
 	is: 'div',
