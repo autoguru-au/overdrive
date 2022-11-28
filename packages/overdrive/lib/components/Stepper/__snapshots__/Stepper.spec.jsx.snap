@@ -3,29 +3,29 @@
 exports[`<Stepper /> should match snapshot with label formatter 1`] = `
 <div
   aria-disabled="false"
-  class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k068 useBoxStyles_makeResponsiveStyle_key_bp__7o6k061c useBoxStyles_makeResponsiveStyle_key_bp__7o6k062g useBoxStyles_makeResponsiveStyle_key_bp__7o6k063k useBoxStyles_userSelect_none__7o6k06e5 useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_top_gray__7o6k069m useBoxStyles_border_colour_right_gray__7o6k069p useBoxStyles_border_colour_bottom_gray__7o6k069s useBoxStyles_border_colour_left_gray__7o6k069v useBoxStyles_makeResponsiveStyle_key_bp__7o6k069x useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ad useBoxStyles_makeResponsiveStyle_key_bp__7o6k06at useBoxStyles_makeResponsiveStyle_key_bp__7o6k06b9 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0690 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp Stepper_root__zxjc1f1 reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 Stepper_width_default__zxjc1f3"
+  class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k068 useBoxStyles_makeResponsiveStyle_key_bp__7o6k061c useBoxStyles_makeResponsiveStyle_key_bp__7o6k062g useBoxStyles_makeResponsiveStyle_key_bp__7o6k063k useBoxStyles_width_none__7o6k06dl useBoxStyles_userSelect_none__7o6k06e6 useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_top_gray__7o6k069m useBoxStyles_border_colour_right_gray__7o6k069p useBoxStyles_border_colour_bottom_gray__7o6k069s useBoxStyles_border_colour_left_gray__7o6k069v useBoxStyles_makeResponsiveStyle_key_bp__7o6k069x useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ad useBoxStyles_makeResponsiveStyle_key_bp__7o6k06at useBoxStyles_makeResponsiveStyle_key_bp__7o6k06b9 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0690 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp Stepper_root__zxjc1f1 reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 Stepper_width_default__zxjc1f3"
   tabindex="0"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ei useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq10 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq11 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq12 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq13 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y410 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y411 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y412 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y413 Columns_align_stretch__wkgcjh2b Columns_wrapping_noWrap__wkgcjh29"
+    class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dz useBoxStyles_width_full__7o6k06dk useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ej useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq10 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq11 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq12 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq13 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y410 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y411 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y412 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y413 Columns_align_stretch__wkgcjh2b Columns_wrapping_noWrap__wkgcjh29"
   >
     <div
-      class="reset_block__6swfds3 useBoxStyles_flexGrow_0__7o6k06ey useBoxStyles_flexShrink_0__7o6k06f0 Columns_makeResponsiveStyle_key_bp__wkgcjh10 Columns_makeResponsiveStyle_key_bp__wkgcjh11 Columns_makeResponsiveStyle_key_bp__wkgcjh12 Columns_makeResponsiveStyle_key_bp__wkgcjh13 Columns_makeResponsiveStyle_key_bp__wkgcjh24 Columns_makeResponsiveStyle_key_bp__wkgcjh25 Columns_makeResponsiveStyle_key_bp__wkgcjh26 Columns_makeResponsiveStyle_key_bp__wkgcjh27 Column_align_centre__2660ru1a"
+      class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06dl useBoxStyles_flexGrow_0__7o6k06ez useBoxStyles_flexShrink_0__7o6k06f1 Columns_makeResponsiveStyle_key_bp__wkgcjh10 Columns_makeResponsiveStyle_key_bp__wkgcjh11 Columns_makeResponsiveStyle_key_bp__wkgcjh12 Columns_makeResponsiveStyle_key_bp__wkgcjh13 Columns_makeResponsiveStyle_key_bp__wkgcjh24 Columns_makeResponsiveStyle_key_bp__wkgcjh25 Columns_makeResponsiveStyle_key_bp__wkgcjh26 Columns_makeResponsiveStyle_key_bp__wkgcjh27 Column_align_centre__2660ru1a"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dz useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dm"
       >
         <button
           aria-label="step down"
-          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_display_flex__7o6k06dy useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 Stepper_handle_default__zxjc1f4 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if"
+          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_display_flex__7o6k06dz useBoxStyles_width_none__7o6k06dl useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06eb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f8 Stepper_handle_default__zxjc1f4 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if"
           tabindex="-1"
         >
           <i
-            class="useBoxStyles_display_block__7o6k06dx Icon_makeResponsiveStyle_key_bp__14sz1q60"
+            class="useBoxStyles_display_block__7o6k06dy useBoxStyles_width_none__7o6k06dl Icon_makeResponsiveStyle_key_bp__14sz1q60"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__7o6k06dx useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
+              class="useBoxStyles_display_block__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dm"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
@@ -40,35 +40,35 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
       </div>
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_flexGrow_1__7o6k06ez useBoxStyles_flexShrink_0__7o6k06f0 Columns_makeResponsiveStyle_key_bp__wkgcjh10 Columns_makeResponsiveStyle_key_bp__wkgcjh11 Columns_makeResponsiveStyle_key_bp__wkgcjh12 Columns_makeResponsiveStyle_key_bp__wkgcjh13 Columns_makeResponsiveStyle_key_bp__wkgcjh24 Columns_makeResponsiveStyle_key_bp__wkgcjh25 Columns_makeResponsiveStyle_key_bp__wkgcjh26 Columns_makeResponsiveStyle_key_bp__wkgcjh27 Column_makeResponsiveStyle_key_bp__2660ru14 Column_align_centre__2660ru1a"
+      class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06dl useBoxStyles_flexGrow_1__7o6k06f0 useBoxStyles_flexShrink_0__7o6k06f1 Columns_makeResponsiveStyle_key_bp__wkgcjh10 Columns_makeResponsiveStyle_key_bp__wkgcjh11 Columns_makeResponsiveStyle_key_bp__wkgcjh12 Columns_makeResponsiveStyle_key_bp__wkgcjh13 Columns_makeResponsiveStyle_key_bp__wkgcjh24 Columns_makeResponsiveStyle_key_bp__wkgcjh25 Columns_makeResponsiveStyle_key_bp__wkgcjh26 Columns_makeResponsiveStyle_key_bp__wkgcjh27 Column_makeResponsiveStyle_key_bp__2660ru14 Column_align_centre__2660ru1a"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dz useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dm"
       >
         <span
-          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06dx useBoxStyles_textAlign_center__7o6k06dq useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7ie useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_4__w6to7i4 reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_width_full__7o6k06dk Stepper_label__zxjc1f6"
+          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06dy useBoxStyles_width_none__7o6k06dl useBoxStyles_textAlign_center__7o6k06dr useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7ie useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_4__w6to7i4 reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_width_full__7o6k06dk Stepper_label__zxjc1f6"
         >
           25%
         </span>
       </div>
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_flexGrow_0__7o6k06ey useBoxStyles_flexShrink_0__7o6k06f0 Columns_makeResponsiveStyle_key_bp__wkgcjh10 Columns_makeResponsiveStyle_key_bp__wkgcjh11 Columns_makeResponsiveStyle_key_bp__wkgcjh12 Columns_makeResponsiveStyle_key_bp__wkgcjh13 Columns_makeResponsiveStyle_key_bp__wkgcjh24 Columns_makeResponsiveStyle_key_bp__wkgcjh25 Columns_makeResponsiveStyle_key_bp__wkgcjh26 Columns_makeResponsiveStyle_key_bp__wkgcjh27 Column_align_centre__2660ru1a"
+      class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06dl useBoxStyles_flexGrow_0__7o6k06ez useBoxStyles_flexShrink_0__7o6k06f1 Columns_makeResponsiveStyle_key_bp__wkgcjh10 Columns_makeResponsiveStyle_key_bp__wkgcjh11 Columns_makeResponsiveStyle_key_bp__wkgcjh12 Columns_makeResponsiveStyle_key_bp__wkgcjh13 Columns_makeResponsiveStyle_key_bp__wkgcjh24 Columns_makeResponsiveStyle_key_bp__wkgcjh25 Columns_makeResponsiveStyle_key_bp__wkgcjh26 Columns_makeResponsiveStyle_key_bp__wkgcjh27 Column_align_centre__2660ru1a"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dz useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dm"
       >
         <button
           aria-label="step up"
-          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_display_flex__7o6k06dy useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 Stepper_handle_default__zxjc1f4 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if"
+          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_display_flex__7o6k06dz useBoxStyles_width_none__7o6k06dl useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06eb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f8 Stepper_handle_default__zxjc1f4 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if"
           tabindex="-1"
         >
           <i
-            class="useBoxStyles_display_block__7o6k06dx Icon_makeResponsiveStyle_key_bp__14sz1q60"
+            class="useBoxStyles_display_block__7o6k06dy useBoxStyles_width_none__7o6k06dl Icon_makeResponsiveStyle_key_bp__14sz1q60"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__7o6k06dx useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
+              class="useBoxStyles_display_block__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dm"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
@@ -89,29 +89,29 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
 exports[`<Stepper /> should match snapshot with props 1`] = `
 <div
   aria-disabled="false"
-  class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k068 useBoxStyles_makeResponsiveStyle_key_bp__7o6k061c useBoxStyles_makeResponsiveStyle_key_bp__7o6k062g useBoxStyles_makeResponsiveStyle_key_bp__7o6k063k useBoxStyles_userSelect_none__7o6k06e5 useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_top_gray__7o6k069m useBoxStyles_border_colour_right_gray__7o6k069p useBoxStyles_border_colour_bottom_gray__7o6k069s useBoxStyles_border_colour_left_gray__7o6k069v useBoxStyles_makeResponsiveStyle_key_bp__7o6k069x useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ad useBoxStyles_makeResponsiveStyle_key_bp__7o6k06at useBoxStyles_makeResponsiveStyle_key_bp__7o6k06b9 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0690 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp Stepper_root__zxjc1f1 reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 Stepper_width_default__zxjc1f3"
+  class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k068 useBoxStyles_makeResponsiveStyle_key_bp__7o6k061c useBoxStyles_makeResponsiveStyle_key_bp__7o6k062g useBoxStyles_makeResponsiveStyle_key_bp__7o6k063k useBoxStyles_width_none__7o6k06dl useBoxStyles_userSelect_none__7o6k06e6 useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_top_gray__7o6k069m useBoxStyles_border_colour_right_gray__7o6k069p useBoxStyles_border_colour_bottom_gray__7o6k069s useBoxStyles_border_colour_left_gray__7o6k069v useBoxStyles_makeResponsiveStyle_key_bp__7o6k069x useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ad useBoxStyles_makeResponsiveStyle_key_bp__7o6k06at useBoxStyles_makeResponsiveStyle_key_bp__7o6k06b9 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0690 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp Stepper_root__zxjc1f1 reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 Stepper_width_default__zxjc1f3"
   tabindex="0"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ei useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq10 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq11 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq12 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq13 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y410 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y411 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y412 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y413 Columns_align_stretch__wkgcjh2b Columns_wrapping_noWrap__wkgcjh29"
+    class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dz useBoxStyles_width_full__7o6k06dk useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ej useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq10 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq11 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq12 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq13 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y410 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y411 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y412 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y413 Columns_align_stretch__wkgcjh2b Columns_wrapping_noWrap__wkgcjh29"
   >
     <div
-      class="reset_block__6swfds3 useBoxStyles_flexGrow_0__7o6k06ey useBoxStyles_flexShrink_0__7o6k06f0 Columns_makeResponsiveStyle_key_bp__wkgcjh10 Columns_makeResponsiveStyle_key_bp__wkgcjh11 Columns_makeResponsiveStyle_key_bp__wkgcjh12 Columns_makeResponsiveStyle_key_bp__wkgcjh13 Columns_makeResponsiveStyle_key_bp__wkgcjh24 Columns_makeResponsiveStyle_key_bp__wkgcjh25 Columns_makeResponsiveStyle_key_bp__wkgcjh26 Columns_makeResponsiveStyle_key_bp__wkgcjh27 Column_align_centre__2660ru1a"
+      class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06dl useBoxStyles_flexGrow_0__7o6k06ez useBoxStyles_flexShrink_0__7o6k06f1 Columns_makeResponsiveStyle_key_bp__wkgcjh10 Columns_makeResponsiveStyle_key_bp__wkgcjh11 Columns_makeResponsiveStyle_key_bp__wkgcjh12 Columns_makeResponsiveStyle_key_bp__wkgcjh13 Columns_makeResponsiveStyle_key_bp__wkgcjh24 Columns_makeResponsiveStyle_key_bp__wkgcjh25 Columns_makeResponsiveStyle_key_bp__wkgcjh26 Columns_makeResponsiveStyle_key_bp__wkgcjh27 Column_align_centre__2660ru1a"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dz useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dm"
       >
         <button
           aria-label="step down"
-          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_display_flex__7o6k06dy useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 Stepper_handle_default__zxjc1f4 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if"
+          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_display_flex__7o6k06dz useBoxStyles_width_none__7o6k06dl useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06eb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f8 Stepper_handle_default__zxjc1f4 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if"
           tabindex="-1"
         >
           <i
-            class="useBoxStyles_display_block__7o6k06dx Icon_makeResponsiveStyle_key_bp__14sz1q60"
+            class="useBoxStyles_display_block__7o6k06dy useBoxStyles_width_none__7o6k06dl Icon_makeResponsiveStyle_key_bp__14sz1q60"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__7o6k06dx useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
+              class="useBoxStyles_display_block__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dm"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
@@ -126,35 +126,35 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
       </div>
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_flexGrow_1__7o6k06ez useBoxStyles_flexShrink_0__7o6k06f0 Columns_makeResponsiveStyle_key_bp__wkgcjh10 Columns_makeResponsiveStyle_key_bp__wkgcjh11 Columns_makeResponsiveStyle_key_bp__wkgcjh12 Columns_makeResponsiveStyle_key_bp__wkgcjh13 Columns_makeResponsiveStyle_key_bp__wkgcjh24 Columns_makeResponsiveStyle_key_bp__wkgcjh25 Columns_makeResponsiveStyle_key_bp__wkgcjh26 Columns_makeResponsiveStyle_key_bp__wkgcjh27 Column_makeResponsiveStyle_key_bp__2660ru14 Column_align_centre__2660ru1a"
+      class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06dl useBoxStyles_flexGrow_1__7o6k06f0 useBoxStyles_flexShrink_0__7o6k06f1 Columns_makeResponsiveStyle_key_bp__wkgcjh10 Columns_makeResponsiveStyle_key_bp__wkgcjh11 Columns_makeResponsiveStyle_key_bp__wkgcjh12 Columns_makeResponsiveStyle_key_bp__wkgcjh13 Columns_makeResponsiveStyle_key_bp__wkgcjh24 Columns_makeResponsiveStyle_key_bp__wkgcjh25 Columns_makeResponsiveStyle_key_bp__wkgcjh26 Columns_makeResponsiveStyle_key_bp__wkgcjh27 Column_makeResponsiveStyle_key_bp__2660ru14 Column_align_centre__2660ru1a"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dz useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dm"
       >
         <span
-          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06dx useBoxStyles_textAlign_center__7o6k06dq useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7ie useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_4__w6to7i4 reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_width_full__7o6k06dk Stepper_label__zxjc1f6"
+          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06dy useBoxStyles_width_none__7o6k06dl useBoxStyles_textAlign_center__7o6k06dr useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7ie useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_4__w6to7i4 reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_width_full__7o6k06dk Stepper_label__zxjc1f6"
         >
           19
         </span>
       </div>
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_flexGrow_0__7o6k06ey useBoxStyles_flexShrink_0__7o6k06f0 Columns_makeResponsiveStyle_key_bp__wkgcjh10 Columns_makeResponsiveStyle_key_bp__wkgcjh11 Columns_makeResponsiveStyle_key_bp__wkgcjh12 Columns_makeResponsiveStyle_key_bp__wkgcjh13 Columns_makeResponsiveStyle_key_bp__wkgcjh24 Columns_makeResponsiveStyle_key_bp__wkgcjh25 Columns_makeResponsiveStyle_key_bp__wkgcjh26 Columns_makeResponsiveStyle_key_bp__wkgcjh27 Column_align_centre__2660ru1a"
+      class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06dl useBoxStyles_flexGrow_0__7o6k06ez useBoxStyles_flexShrink_0__7o6k06f1 Columns_makeResponsiveStyle_key_bp__wkgcjh10 Columns_makeResponsiveStyle_key_bp__wkgcjh11 Columns_makeResponsiveStyle_key_bp__wkgcjh12 Columns_makeResponsiveStyle_key_bp__wkgcjh13 Columns_makeResponsiveStyle_key_bp__wkgcjh24 Columns_makeResponsiveStyle_key_bp__wkgcjh25 Columns_makeResponsiveStyle_key_bp__wkgcjh26 Columns_makeResponsiveStyle_key_bp__wkgcjh27 Column_align_centre__2660ru1a"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dz useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dm"
       >
         <button
           aria-label="step up"
-          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_display_flex__7o6k06dy useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 Stepper_handle_default__zxjc1f4 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if"
+          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_display_flex__7o6k06dz useBoxStyles_width_none__7o6k06dl useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06eb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f8 Stepper_handle_default__zxjc1f4 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if"
           tabindex="-1"
         >
           <i
-            class="useBoxStyles_display_block__7o6k06dx Icon_makeResponsiveStyle_key_bp__14sz1q60"
+            class="useBoxStyles_display_block__7o6k06dy useBoxStyles_width_none__7o6k06dl Icon_makeResponsiveStyle_key_bp__14sz1q60"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__7o6k06dx useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
+              class="useBoxStyles_display_block__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dm"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
@@ -175,29 +175,29 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
 exports[`<Stepper /> should match snapshot without props 1`] = `
 <div
   aria-disabled="false"
-  class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k068 useBoxStyles_makeResponsiveStyle_key_bp__7o6k061c useBoxStyles_makeResponsiveStyle_key_bp__7o6k062g useBoxStyles_makeResponsiveStyle_key_bp__7o6k063k useBoxStyles_userSelect_none__7o6k06e5 useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_top_gray__7o6k069m useBoxStyles_border_colour_right_gray__7o6k069p useBoxStyles_border_colour_bottom_gray__7o6k069s useBoxStyles_border_colour_left_gray__7o6k069v useBoxStyles_makeResponsiveStyle_key_bp__7o6k069x useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ad useBoxStyles_makeResponsiveStyle_key_bp__7o6k06at useBoxStyles_makeResponsiveStyle_key_bp__7o6k06b9 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0690 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp Stepper_root__zxjc1f1 reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 Stepper_width_default__zxjc1f3"
+  class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k068 useBoxStyles_makeResponsiveStyle_key_bp__7o6k061c useBoxStyles_makeResponsiveStyle_key_bp__7o6k062g useBoxStyles_makeResponsiveStyle_key_bp__7o6k063k useBoxStyles_width_none__7o6k06dl useBoxStyles_userSelect_none__7o6k06e6 useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_top_gray__7o6k069m useBoxStyles_border_colour_right_gray__7o6k069p useBoxStyles_border_colour_bottom_gray__7o6k069s useBoxStyles_border_colour_left_gray__7o6k069v useBoxStyles_makeResponsiveStyle_key_bp__7o6k069x useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ad useBoxStyles_makeResponsiveStyle_key_bp__7o6k06at useBoxStyles_makeResponsiveStyle_key_bp__7o6k06b9 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0690 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp Stepper_root__zxjc1f1 reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 Stepper_width_default__zxjc1f3"
   tabindex="0"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ei useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq10 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq11 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq12 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq13 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y410 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y411 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y412 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y413 Columns_align_stretch__wkgcjh2b Columns_wrapping_noWrap__wkgcjh29"
+    class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dz useBoxStyles_width_full__7o6k06dk useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ej useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq10 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq11 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq12 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq13 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y410 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y411 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y412 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y413 Columns_align_stretch__wkgcjh2b Columns_wrapping_noWrap__wkgcjh29"
   >
     <div
-      class="reset_block__6swfds3 useBoxStyles_flexGrow_0__7o6k06ey useBoxStyles_flexShrink_0__7o6k06f0 Columns_makeResponsiveStyle_key_bp__wkgcjh10 Columns_makeResponsiveStyle_key_bp__wkgcjh11 Columns_makeResponsiveStyle_key_bp__wkgcjh12 Columns_makeResponsiveStyle_key_bp__wkgcjh13 Columns_makeResponsiveStyle_key_bp__wkgcjh24 Columns_makeResponsiveStyle_key_bp__wkgcjh25 Columns_makeResponsiveStyle_key_bp__wkgcjh26 Columns_makeResponsiveStyle_key_bp__wkgcjh27 Column_align_centre__2660ru1a"
+      class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06dl useBoxStyles_flexGrow_0__7o6k06ez useBoxStyles_flexShrink_0__7o6k06f1 Columns_makeResponsiveStyle_key_bp__wkgcjh10 Columns_makeResponsiveStyle_key_bp__wkgcjh11 Columns_makeResponsiveStyle_key_bp__wkgcjh12 Columns_makeResponsiveStyle_key_bp__wkgcjh13 Columns_makeResponsiveStyle_key_bp__wkgcjh24 Columns_makeResponsiveStyle_key_bp__wkgcjh25 Columns_makeResponsiveStyle_key_bp__wkgcjh26 Columns_makeResponsiveStyle_key_bp__wkgcjh27 Column_align_centre__2660ru1a"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dz useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dm"
       >
         <button
           aria-label="step down"
-          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_display_flex__7o6k06dy useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 Stepper_handle_default__zxjc1f4 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if"
+          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_display_flex__7o6k06dz useBoxStyles_width_none__7o6k06dl useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06eb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f8 Stepper_handle_default__zxjc1f4 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if"
           tabindex="-1"
         >
           <i
-            class="useBoxStyles_display_block__7o6k06dx Icon_makeResponsiveStyle_key_bp__14sz1q60"
+            class="useBoxStyles_display_block__7o6k06dy useBoxStyles_width_none__7o6k06dl Icon_makeResponsiveStyle_key_bp__14sz1q60"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__7o6k06dx useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
+              class="useBoxStyles_display_block__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dm"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
@@ -212,35 +212,35 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
       </div>
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_flexGrow_1__7o6k06ez useBoxStyles_flexShrink_0__7o6k06f0 Columns_makeResponsiveStyle_key_bp__wkgcjh10 Columns_makeResponsiveStyle_key_bp__wkgcjh11 Columns_makeResponsiveStyle_key_bp__wkgcjh12 Columns_makeResponsiveStyle_key_bp__wkgcjh13 Columns_makeResponsiveStyle_key_bp__wkgcjh24 Columns_makeResponsiveStyle_key_bp__wkgcjh25 Columns_makeResponsiveStyle_key_bp__wkgcjh26 Columns_makeResponsiveStyle_key_bp__wkgcjh27 Column_makeResponsiveStyle_key_bp__2660ru14 Column_align_centre__2660ru1a"
+      class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06dl useBoxStyles_flexGrow_1__7o6k06f0 useBoxStyles_flexShrink_0__7o6k06f1 Columns_makeResponsiveStyle_key_bp__wkgcjh10 Columns_makeResponsiveStyle_key_bp__wkgcjh11 Columns_makeResponsiveStyle_key_bp__wkgcjh12 Columns_makeResponsiveStyle_key_bp__wkgcjh13 Columns_makeResponsiveStyle_key_bp__wkgcjh24 Columns_makeResponsiveStyle_key_bp__wkgcjh25 Columns_makeResponsiveStyle_key_bp__wkgcjh26 Columns_makeResponsiveStyle_key_bp__wkgcjh27 Column_makeResponsiveStyle_key_bp__2660ru14 Column_align_centre__2660ru1a"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dz useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dm"
       >
         <span
-          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06dx useBoxStyles_textAlign_center__7o6k06dq useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7ie useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_4__w6to7i4 reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_width_full__7o6k06dk Stepper_label__zxjc1f6"
+          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06dy useBoxStyles_width_none__7o6k06dl useBoxStyles_textAlign_center__7o6k06dr useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7ie useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_4__w6to7i4 reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_width_full__7o6k06dk Stepper_label__zxjc1f6"
         >
           0
         </span>
       </div>
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_flexGrow_0__7o6k06ey useBoxStyles_flexShrink_0__7o6k06f0 Columns_makeResponsiveStyle_key_bp__wkgcjh10 Columns_makeResponsiveStyle_key_bp__wkgcjh11 Columns_makeResponsiveStyle_key_bp__wkgcjh12 Columns_makeResponsiveStyle_key_bp__wkgcjh13 Columns_makeResponsiveStyle_key_bp__wkgcjh24 Columns_makeResponsiveStyle_key_bp__wkgcjh25 Columns_makeResponsiveStyle_key_bp__wkgcjh26 Columns_makeResponsiveStyle_key_bp__wkgcjh27 Column_align_centre__2660ru1a"
+      class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06dl useBoxStyles_flexGrow_0__7o6k06ez useBoxStyles_flexShrink_0__7o6k06f1 Columns_makeResponsiveStyle_key_bp__wkgcjh10 Columns_makeResponsiveStyle_key_bp__wkgcjh11 Columns_makeResponsiveStyle_key_bp__wkgcjh12 Columns_makeResponsiveStyle_key_bp__wkgcjh13 Columns_makeResponsiveStyle_key_bp__wkgcjh24 Columns_makeResponsiveStyle_key_bp__wkgcjh25 Columns_makeResponsiveStyle_key_bp__wkgcjh26 Columns_makeResponsiveStyle_key_bp__wkgcjh27 Column_align_centre__2660ru1a"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06dz useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dm"
       >
         <button
           aria-label="step up"
-          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_display_flex__7o6k06dy useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ea useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f7 Stepper_handle_default__zxjc1f4 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if"
+          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_display_flex__7o6k06dz useBoxStyles_width_none__7o6k06dl useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06eb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06f8 Stepper_handle_default__zxjc1f4 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if"
           tabindex="-1"
         >
           <i
-            class="useBoxStyles_display_block__7o6k06dx Icon_makeResponsiveStyle_key_bp__14sz1q60"
+            class="useBoxStyles_display_block__7o6k06dy useBoxStyles_width_none__7o6k06dl Icon_makeResponsiveStyle_key_bp__14sz1q60"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__7o6k06dx useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl"
+              class="useBoxStyles_display_block__7o6k06dy useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dm"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"

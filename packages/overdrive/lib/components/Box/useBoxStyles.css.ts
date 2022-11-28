@@ -65,6 +65,9 @@ export const width = styleVariants({
 	full: {
 		width: '100%',
 	},
+	none: {
+		width: void 0,
+	}
 });
 
 export const height = styleVariants({
