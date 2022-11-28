@@ -40,7 +40,7 @@ export const Box = forwardRef<HTMLElement, Props>(
 			marginRight,
 
 			display,
-			width,
+			width = 'none',
 			height,
 			position,
 			overflow,

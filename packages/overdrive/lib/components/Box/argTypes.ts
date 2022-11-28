@@ -2,7 +2,6 @@ import { ArgTypes } from '@storybook/react';
 import { ComponentProps } from 'react';
 
 import { Tokens } from '../../themes/tokens';
-import { Stack } from '../Stack';
 
 import { Box } from './Box';
 
@@ -48,7 +47,7 @@ const borderRadiusOptions: Array<keyof Tokens['border']['radius']> = [
 	'full',
 	'pill',
 ];
-const widthOptions: ComponentProps<typeof Stack>['width'] = ['full', null];
+const widthOptions: Array<ComponentProps<typeof Box>['width']> = ['full', 'none'];
 export const boxArgTypes: Partial<ArgTypes<ComponentProps<typeof Box>>> = {
 	boxShadow: {
 		options: boxShadowOptions,

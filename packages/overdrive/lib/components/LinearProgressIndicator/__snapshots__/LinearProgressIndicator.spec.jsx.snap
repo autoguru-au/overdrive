@@ -2,13 +2,13 @@
 
 exports[`<LinearProgressIndicator /> should match snapshot 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06do useBoxStyles_overflow_hidden__7o6k06ds useBoxStyles_backgroundColours_gray200__7o6k06ca LinearProgressIndicator_root__1ct7t0x0"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk useBoxStyles_position_relative__7o6k06dp useBoxStyles_overflow_hidden__7o6k06dt useBoxStyles_backgroundColours_gray200__7o6k06ca LinearProgressIndicator_root__1ct7t0x0"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm LinearProgressIndicator_linearProgressBar__1ct7t0x2"
+    class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dm useBoxStyles_position_absolute__7o6k06dn LinearProgressIndicator_linearProgressBar__1ct7t0x2"
   >
     <span
-      class="reset_inlineText__6swfds2 useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dl useBoxStyles_position_absolute__7o6k06dm useBoxStyles_backgroundColours_green300__7o6k06ck LinearProgressIndicator_linearProgressBarInner__1ct7t0x4"
+      class="reset_inlineText__6swfds2 useBoxStyles_width_full__7o6k06dk useBoxStyles_height_full__7o6k06dm useBoxStyles_position_absolute__7o6k06dn useBoxStyles_backgroundColours_green300__7o6k06ck LinearProgressIndicator_linearProgressBarInner__1ct7t0x4"
     />
   </div>
 </div>
