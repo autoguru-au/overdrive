@@ -2,6 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
+import { boxArgTypes } from '../Box/argTypes';
 import { Text } from '../Text';
 
 import { Stack } from '.';
@@ -19,8 +20,6 @@ const spacingOptions: Record<string, ComponentProps<typeof Stack>['space']> = {
 	9: '9',
 };
 
-// @ts-ignore
-const widthOptions: ComponentProps<typeof Stack>['width'] = ['full', null];
 export default {
 	title: 'Foundation/Layout/Stack',
 	component: Stack,
@@ -32,13 +31,8 @@ export default {
 				type: 'select',
 			},
 		},
-		width: {
-			options: widthOptions,
-			defaultValue: null,
-			control: {
-				type: 'select',
-			},
-		},
+		width: boxArgTypes.width,
+		alignItems: boxArgTypes.alignItems,
 	},
 } as ComponentMeta<typeof Stack>;
 
@@ -74,3 +68,13 @@ const withDividersProps: Omit<ComponentProps<typeof Stack>, 'children'> = {
 };
 export const withDividers = Template.bind(withDividersProps);
 withDividers.args = withDividersProps;
+
+const withAlignmentProps: Omit<ComponentProps<typeof Stack>, 'children'> = {
+	...standardProps,
+	is: 'div',
+	dividers: true,
+	space: '3',
+	alignItems: 'center',
+};
+export const withAlignment = Template.bind(withAlignmentProps);
+withAlignment.args = withAlignmentProps;
