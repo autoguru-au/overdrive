@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.9.8
+
+### Patch Changes
+
+-   85a20a3: Stack: Gets alignItems option for it's children
+
 ## 4.9.7
 
 ### Patch Changes
