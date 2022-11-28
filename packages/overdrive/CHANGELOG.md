@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.9.9
+
+### Patch Changes
+
+-   7cd947b: Box: Get's 'none' width option
+
 ## 4.9.8
 
 ### Patch Changes
