@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.10.0
+
+### Minor Changes
+
+-   57d49d4: Added DividerLine component
+
 ## 4.9.9
 
 ### Patch Changes
