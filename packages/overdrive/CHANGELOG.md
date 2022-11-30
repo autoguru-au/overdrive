@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.10.1
+
+### Patch Changes
+
+-   f759554: DividerLine fixes size type
+
 ## 4.10.0
 
 ### Minor Changes
