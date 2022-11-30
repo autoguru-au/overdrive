@@ -1,4 +1,4 @@
-import { style, styleVariants } from '@vanilla-extract/css';
+import { ComplexStyleRule, style, styleVariants } from '@vanilla-extract/css';
 
 import { themeContractVars as vars } from '../../themes/theme.css';
 import { Tokens } from '../../themes/tokens';
@@ -33,21 +33,22 @@ export const colours: Record<Colours, ReturnType<typeof style>> = {
 
 type Size = 1 | 2 | 3;
 const sizes: Size[] = [1, 2, 3];
+type SizeMap = Record<string | number, ComplexStyleRule>;
 export const size = {
-	horizontal: styleVariants(
+	horizontal: styleVariants<SizeMap>(
 		sizes.reduce((sizes, size) => {
 			sizes[size] = {
 				height: size,
 			};
-			return sizes;
-		}, {}),
+			return sizes as SizeMap;
+		}, {} as SizeMap),
 	),
 	vertical: styleVariants(
 		sizes.reduce((sizes, size) => {
 			sizes[size] = {
 				width: size,
 			};
-			return sizes;
-		}, {}),
+			return sizes as SizeMap;
+		}, {} as SizeMap),
 	),
 };

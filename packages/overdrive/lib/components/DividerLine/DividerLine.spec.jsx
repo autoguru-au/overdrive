@@ -9,9 +9,15 @@ describe('<DividerLine />', () => {
 	});
 
 	it('should match the snapshot', () => {
-		expect(render(<DividerLine space='3' size='2' colour='shine' />).container.firstChild).toMatchSnapshot();
+		expect(
+			render(<DividerLine space="3" size="2" colour="shine" />).container
+				.firstChild,
+		).toMatchSnapshot();
 	});
 	it('should match the snapshot as vertical', () => {
-		expect(render(<DividerLine isVertical space='3' size='2' colour='shine' />).container.firstChild).toMatchSnapshot();
+		expect(
+			render(<DividerLine isVertical space="3" size="2" colour="shine" />)
+				.container.firstChild,
+		).toMatchSnapshot();
 	});
 });
