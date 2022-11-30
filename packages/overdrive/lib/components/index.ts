@@ -54,3 +54,4 @@ export * from './Image';
 export * from './NumberBubble';
 export * from './TextBubble';
 export * from './ColourInput';
+export * from './DividerLine';

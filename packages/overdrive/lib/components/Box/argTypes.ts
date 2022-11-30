@@ -47,7 +47,10 @@ const borderRadiusOptions: Array<keyof Tokens['border']['radius']> = [
 	'full',
 	'pill',
 ];
-const widthOptions: Array<ComponentProps<typeof Box>['width']> = ['full', 'none'];
+const widthOptions: Array<ComponentProps<typeof Box>['width']> = [
+	'full',
+	'none',
+];
 export const boxArgTypes: Partial<ArgTypes<ComponentProps<typeof Box>>> = {
 	boxShadow: {
 		options: boxShadowOptions,
