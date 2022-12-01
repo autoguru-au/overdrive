@@ -14,7 +14,7 @@ exports[`<Tolltip /> should match snapshot when closed 1`] = `
   >
     <div
       aria-hidden="true"
-      class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06dl useBoxStyles_position_fixed__7o6k06do Positioner_root__lgdvlw0"
+      class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06eh useBoxStyles_position_fixed__7o6k06ek Positioner_root__lgdvlw0"
     />
   </div>
 </body>
@@ -34,14 +34,14 @@ exports[`<Tolltip /> should match snapshot when opened 1`] = `
   >
     <div
       aria-hidden="false"
-      class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06dl useBoxStyles_position_fixed__7o6k06do Positioner_root__lgdvlw0"
+      class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06eh useBoxStyles_position_fixed__7o6k06ek Positioner_root__lgdvlw0"
       style="position: absolute; left: 0px; top: 0px; margin: 0px;"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_makeResponsiveStyle_key_bp__7o6k061c useBoxStyles_makeResponsiveStyle_key_bp__7o6k062c useBoxStyles_makeResponsiveStyle_key_bp__7o6k063k useBoxStyles_width_full__7o6k06dk useBoxStyles_overflow_hidden__7o6k06dt useBoxStyles_userSelect_none__7o6k06e6 useBoxStyles_pointerEvents_none__7o6k06fo useBoxStyles_makeResponsiveStyle_key_bp__7o6k0698 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp useBoxStyles_backgroundColours_gray900__7o6k06ch Tooltip_root__1im63pj0"
+        class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_makeResponsiveStyle_key_bp__7o6k061c useBoxStyles_makeResponsiveStyle_key_bp__7o6k062c useBoxStyles_makeResponsiveStyle_key_bp__7o6k063k useBoxStyles_width_full__7o6k06eg useBoxStyles_overflow_hidden__7o6k06ep useBoxStyles_userSelect_none__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06gk useBoxStyles_makeResponsiveStyle_key_bp__7o6k0698 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useBoxStyles_backgroundColours_gray900__7o6k06dd Tooltip_root__1im63pj0"
       >
         <span
-          class="reset_inlineText__6swfds2 useBoxStyles_width_none__7o6k06dl useBoxStyles_textAlign_left__7o6k06dq useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_white__w6to7if useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_2__w6to7i2"
+          class="reset_inlineText__6swfds2 useBoxStyles_width_none__7o6k06eh useBoxStyles_textAlign_left__7o6k06em useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_white__w6to7if useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_2__w6to7i2"
         >
           tooltip content
         </span>

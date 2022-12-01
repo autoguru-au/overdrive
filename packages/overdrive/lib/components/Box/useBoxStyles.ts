@@ -38,13 +38,13 @@ interface Border {
 	borderWidthBottom?: ResponsiveProp<keyof Tokens['border']['width']>;
 	borderWidthLeft?: ResponsiveProp<keyof Tokens['border']['width']>;
 
-	borderColour?: keyof Tokens['border']['colours'];
-	borderColourX?: keyof Tokens['border']['colours'];
-	borderColourY?: keyof Tokens['border']['colours'];
-	borderColourTop?: keyof Tokens['border']['colours'];
-	borderColourRight?: keyof Tokens['border']['colours'];
-	borderColourBottom?: keyof Tokens['border']['colours'];
-	borderColourLeft?: keyof Tokens['border']['colours'];
+	borderColour?: keyof typeof styles.border['colour']['top'];
+	borderColourX?: keyof typeof styles.border['colour']['top'];
+	borderColourY?: keyof typeof styles.border['colour']['top'];
+	borderColourTop?: keyof typeof styles.border['colour']['top'];
+	borderColourRight?: keyof typeof styles.border['colour']['top'];
+	borderColourBottom?: keyof typeof styles.border['colour']['top'];
+	borderColourLeft?: keyof typeof styles.border['colour']['top'];
 
 	// TODO: Should this also house X,Y,T,R,B,L?
 	borderRadius?: ResponsiveProp<keyof typeof styles.borderRadius>;
