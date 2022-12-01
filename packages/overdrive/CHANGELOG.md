@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.10.2
+
+### Patch Changes
+
+-   40ace81: Box: Gets intent border colours
+
 ## 4.10.1
 
 ### Patch Changes
