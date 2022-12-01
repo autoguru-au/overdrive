@@ -2,6 +2,6 @@
 
 exports[`<Section /> should match the snapshot 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06dk Section_root__15167c40 Section_width_medium__15167c43"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06eg Section_root__15167c40 Section_width_medium__15167c43"
 />
 `;

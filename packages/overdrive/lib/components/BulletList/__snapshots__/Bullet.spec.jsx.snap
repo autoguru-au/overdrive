@@ -2,6 +2,6 @@
 
 exports[`<Bullet /> should match the snapshot 1`] = `
 <li
-  class="useBoxStyles_width_none__7o6k06dl Bullet_root_default__1jwlwj10"
+  class="useBoxStyles_width_none__7o6k06eh Bullet_root_default__1jwlwj10"
 />
 `;

@@ -2,6 +2,6 @@
 
 exports[`<Box /> should match snapshot for default Box 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06dl"
+  class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06eh"
 />
 `;

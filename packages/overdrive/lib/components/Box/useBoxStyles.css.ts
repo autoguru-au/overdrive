@@ -1,6 +1,7 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
 import { themeContractVars as vars } from '../../themes/theme.css';
+import { Tokens } from '../../themes/tokens';
 import { mapTokenToProperty } from '../../utils/mapTokenToProperty';
 import { makeResponsiveStyle } from '../../utils/responsiveProps.css';
 
@@ -19,6 +20,16 @@ export const margin = {
 };
 
 export const boxShadow = makeResponsiveStyle(vars.elevation, 'boxShadow');
+type IntentColours = keyof Tokens['colours']['intent'];
+type BorderColours = keyof Tokens['border']['colours'];
+
+const borderColours: Record<IntentColours | BorderColours, ReturnType<typeof style>> = {
+	...vars.border.colours,
+	...Object.entries(vars.colours.intent).reduce((map, entry) => ({
+		...map,
+		[entry[0]]: entry[1].border,
+	}), {}) as Record<IntentColours, ReturnType<typeof style>>,
+};
 
 export const border = {
 	style: style({
@@ -26,16 +37,16 @@ export const border = {
 	}),
 	colour: {
 		top: styleVariants(
-			mapTokenToProperty(vars.border.colours, 'borderTopColor'),
+			mapTokenToProperty(borderColours, 'borderTopColor'),
 		),
 		right: styleVariants(
-			mapTokenToProperty(vars.border.colours, 'borderRightColor'),
+			mapTokenToProperty(borderColours, 'borderRightColor'),
 		),
 		bottom: styleVariants(
-			mapTokenToProperty(vars.border.colours, 'borderBottomColor'),
+			mapTokenToProperty(borderColours, 'borderBottomColor'),
 		),
 		left: styleVariants(
-			mapTokenToProperty(vars.border.colours, 'borderLeftColor'),
+			mapTokenToProperty(borderColours, 'borderLeftColor'),
 		),
 	},
 	width: {
