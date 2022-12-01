@@ -73,10 +73,10 @@
     babel-jest "^26.6.3"
     babel-plugin-treat "^1.6.2"
 
-"@autoguru/tsconfig@1.0.79":
-  version "1.0.79"
-  resolved "https://registry.yarnpkg.com/@autoguru/tsconfig/-/tsconfig-1.0.79.tgz#b7b92930e6c369e467cd2870293ec5203d08fb7b"
-  integrity sha512-22mjKCPODiy/hYJJdi6Rk6dsDSwVVcHxxPQgt3se2cPJrgicG8h5pFhTiWUrZtajT1O+TpqA+0f2dnMAgKlXFQ==
+"@autoguru/tsconfig@1.0.80":
+  version "1.0.80"
+  resolved "https://registry.yarnpkg.com/@autoguru/tsconfig/-/tsconfig-1.0.80.tgz#a53ba17b648a2f9ac583888809b10fba77940554"
+  integrity sha512-3VYNjuLbiOYi/Jk2g9OrJGog2QwkqZ6ztvRfbzIz1veJ4+fIYRcfwkxV6rkTBoM/5qQGdBhrfp9Nok/d7QkzPg==
 
 "@autoguru/utilities@1.1.1":
   version "1.1.1"
