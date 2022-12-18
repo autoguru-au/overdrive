@@ -38,7 +38,7 @@
 	},
 	"devDependencies": {
 		"@autoguru/icons": "^1.7.28",
-		"@autoguru/tsconfig": "1.0.79",
+		"@autoguru/tsconfig": "1.0.80",
 		"@autoguru/utilities": "1.1.1",
 		"@popperjs/core": "2.11.2",
 		"@types/react": "^18.0.17",
