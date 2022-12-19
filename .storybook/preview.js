@@ -16,25 +16,50 @@ import { DocsContainer, DocsPage } from '@storybook/addon-docs';
 import { container, themeContractVars } from '../packages/overdrive/lib/themes/theme.css';
 import { breakpoints } from '../packages/overdrive/lib/themes/makeTheme';
 
-const ThemeProviderComponent = ({ children }) => {
+const dynamicColours = {
+	bright: {
+		primaryColourBackground: '#e5bc01',
+		primaryColourForeground: '#1e1818',
+	},
+	dark: {
+		primaryColourBackground: '#1e1818',
+		primaryColourForeground: '#e5bc01',
+	},
+
+};
+
+const ThemeProviderComponent = ({ children, context }) => {
 	const {
 		theme,
 		overrideStyles,
 		setThemeValues,
 	} = useThemeOverrides();
+
 	useEffect(() => {
-		const tokens = theme.tokens;
-		const primaryColourBackground = tokens.colours.intent.primary.background;
-		const primaryColourBorder = tokens.colours.intent.primary.border;
-		const primaryColourForeground = tokens.colours.intent.primary.foreground;
-		setThemeValues({
-			primaryColourBackground: primaryColourBackground.standard,
-			primaryColourBackgroundMild: primaryColourBackground.mild,
-			primaryColourBackgroundStrong: primaryColourBackground.stron,
-			primaryColourBorder,
-			primaryColourForeground,
-		});
-	}, [theme]);
+		console.log(context.globals)
+		if (dynamicColours[context.globals.themeColours]) {
+			setThemeValues({
+				primaryColourBackground: null,
+				primaryColourBackgroundMild: null,
+				primaryColourBackgroundStrong: null,
+				primaryColourBorder: null,
+				primaryColourForeground: null,
+				...dynamicColours[context.globals.themeColours]
+			});
+		} else {
+			const tokens = theme.tokens;
+			const primaryColourBackground = tokens.colours.intent.primary.background;
+			const primaryColourBorder = tokens.colours.intent.primary.border;
+			const primaryColourForeground = tokens.colours.intent.primary.foreground;
+			setThemeValues({
+				primaryColourBackground: primaryColourBackground.standard,
+				primaryColourBackgroundMild: primaryColourBackground.mild,
+				primaryColourBackgroundStrong: primaryColourBackground.stron,
+				primaryColourBorder,
+				primaryColourForeground,
+			});
+		}
+	}, [theme, context.globals.themeColours]);
 
 	return (
 		<OverdriveProvider
@@ -63,7 +88,7 @@ const withThemeProvider = (Story, context) => {
 			primaryColourBorder={primaryColourBorder}
 			theme={theme}>
 			<Box className={theme.themeRef} padding='2'>
-				<ThemeProviderComponent>
+				<ThemeProviderComponent context={context}>
 					<Story {...context} />
 				</ThemeProviderComponent>
 			</Box>
@@ -111,21 +136,22 @@ export const globalTypes = {
 		defaultValue: themes.baseTheme.name,
 		title: 'theme',
 		toolbar: {
-			icon: 'circlehollow',
+			icon: 'mirror',
 			items: Object.keys(themes).map((theme) => (themes[theme].name)),
 			showName: true,
 			dynamicTitle: true,
 		},
 	},
-	themePrimaryBackground: {
-		name: 'Set primary background',
+	themeColours: {
+		name: 'Set dynamic colours',
 		description: 'Global primary background colour',
 		defaultValue: 'light',
 		toolbar: {
 			icon: 'paintbrush',
-			items: ['light', 'dark'],
+			items: ['defaults', 'bright', 'dark'],
 			showName: true,
 			dynamicTitle: true,
+			control: 'color',
 		},
 	},
 };
