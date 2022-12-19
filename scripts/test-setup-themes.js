@@ -1,6 +1,3 @@
-import { themeRef } from '@autoguru/overdrive/lib/themes/base/vars.css';
-import { themeContractVars } from '@autoguru/overdrive/lib/themes/theme.css';
-
 jest.mock('@testing-library/react', () => {
 	const originalModule = jest.requireActual('@testing-library/react');
 	const { OverdriveProvider } = jest.requireActual(

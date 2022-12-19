@@ -13,7 +13,10 @@ import {
 import * as React from 'react';
 import { useEffect } from 'react';
 import { DocsContainer, DocsPage } from '@storybook/addon-docs';
-import { container, themeContractVars } from '../packages/overdrive/lib/themes/theme.css';
+import {
+	container,
+	themeContractVars,
+} from '../packages/overdrive/lib/themes/theme.css';
 import { breakpoints } from '../packages/overdrive/lib/themes/makeTheme';
 
 const dynamicColours = {
@@ -25,18 +28,13 @@ const dynamicColours = {
 		primaryColourBackground: '#1e1818',
 		primaryColourForeground: '#e5bc01',
 	},
-
 };
 
 const ThemeProviderComponent = ({ children, context }) => {
-	const {
-		theme,
-		overrideStyles,
-		setThemeValues,
-	} = useThemeOverrides();
+	const { theme, overrideStyles, setThemeValues } = useThemeOverrides();
 
 	useEffect(() => {
-		console.log(context.globals)
+		console.log(context.globals);
 		if (dynamicColours[context.globals.themeColours]) {
 			setThemeValues({
 				primaryColourBackground: null,
@@ -44,13 +42,15 @@ const ThemeProviderComponent = ({ children, context }) => {
 				primaryColourBackgroundStrong: null,
 				primaryColourBorder: null,
 				primaryColourForeground: null,
-				...dynamicColours[context.globals.themeColours]
+				...dynamicColours[context.globals.themeColours],
 			});
 		} else {
 			const tokens = theme.tokens;
-			const primaryColourBackground = tokens.colours.intent.primary.background;
+			const primaryColourBackground =
+				tokens.colours.intent.primary.background;
 			const primaryColourBorder = tokens.colours.intent.primary.border;
-			const primaryColourForeground = tokens.colours.intent.primary.foreground;
+			const primaryColourForeground =
+				tokens.colours.intent.primary.foreground;
 			setThemeValues({
 				primaryColourBackground: primaryColourBackground.standard,
 				primaryColourBackgroundMild: primaryColourBackground.mild,
@@ -66,7 +66,8 @@ const ThemeProviderComponent = ({ children, context }) => {
 			noBodyLevelTheming={false}
 			vars={themeContractVars}
 			breakpoints={breakpoints}
-			themeClass={theme.themeRef}>
+			themeClass={theme.themeRef}
+		>
 			<Box className={container} style={overrideStyles}>
 				{children}
 			</Box>
@@ -86,8 +87,9 @@ const withThemeProvider = (Story, context) => {
 			primaryColourBackgroundMild={primaryColourBackground.mild}
 			primaryColourBackgroundStrong={primaryColourBackground.strong}
 			primaryColourBorder={primaryColourBorder}
-			theme={theme}>
-			<Box className={theme.themeRef} padding='2'>
+			theme={theme}
+		>
+			<Box className={theme.themeRef} padding="2">
 				<ThemeProviderComponent context={context}>
 					<Story {...context} />
 				</ThemeProviderComponent>
@@ -137,7 +139,7 @@ export const globalTypes = {
 		title: 'theme',
 		toolbar: {
 			icon: 'mirror',
-			items: Object.keys(themes).map((theme) => (themes[theme].name)),
+			items: Object.keys(themes).map((theme) => themes[theme].name),
 			showName: true,
 			dynamicTitle: true,
 		},
@@ -145,7 +147,7 @@ export const globalTypes = {
 	themeColours: {
 		name: 'Set dynamic colours',
 		description: 'Global primary background colour',
-		defaultValue: 'light',
+		defaultValue: 'defaults',
 		toolbar: {
 			icon: 'paintbrush',
 			items: ['defaults', 'bright', 'dark'],

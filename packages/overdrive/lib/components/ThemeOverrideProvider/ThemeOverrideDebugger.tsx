@@ -1,11 +1,13 @@
 import * as React from 'react';
 import { FunctionComponent, useMemo } from 'react';
-import { useThemeOverrides } from './ThemeOverrideProvider';
+
 import { passesAccessibilityContrast } from '../../themes/helpers';
+import { ColourInput } from '../ColourInput';
 import { Column, Columns } from '../Columns';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
-import { ColourInput } from '../ColourInput';
+
+import { useThemeOverrides } from './ThemeOverrideProvider';
 
 export const ThemeOverrideDebugger: FunctionComponent = () => {
 	const {
@@ -37,7 +39,7 @@ export const ThemeOverrideDebugger: FunctionComponent = () => {
 
 	return (
 		<Columns
-			space='3'
+			space="3"
 			style={{
 				position: 'fixed',
 				right: '10px',
@@ -49,23 +51,28 @@ export const ThemeOverrideDebugger: FunctionComponent = () => {
 				boxShadow:
 					'0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%)',
 				borderRadius: '4px',
-			}}>
-			<Column grow width='auto'>
-				<Stack space='3' width='full'>
+			}}
+		>
+			<Column grow width="auto">
+				<Stack space="3" width="full">
 					<ColourInput
-						name='primaryBackground'
-						placeholder='Primary background colour'
+						name="primaryBackground"
+						placeholder="Primary background colour"
 						value={primaryColourBackground}
 						onChange={(event) =>
-							setThemeValues({ primaryColourBackground: event.target.value })
+							setThemeValues({
+								primaryColourBackground: event.target.value,
+							})
 						}
 					/>
 					<ColourInput
-						name='primaryForeground'
-						placeholder='Primary foreground colour'
+						name="primaryForeground"
+						placeholder="Primary foreground colour"
 						value={primaryColourForeground}
 						onChange={(event) =>
-							setThemeValues({ primaryColourForeground: event.target.value })
+							setThemeValues({
+								primaryColourForeground: event.target.value,
+							})
 						}
 					/>
 				</Stack>
@@ -74,7 +81,7 @@ export const ThemeOverrideDebugger: FunctionComponent = () => {
 				<Stack>
 					<Text>AA: {passesAA ? 'PASSED' : 'FAILED'}</Text>
 					<Text>AAA: {passesAAA ? 'PASSED' : 'FAILED'}</Text>
-					<Text colour='primary'>{theme.name}</Text>
+					<Text colour="primary">{theme.name}</Text>
 				</Stack>
 			</Column>
 		</Columns>

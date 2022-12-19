@@ -1,12 +1,20 @@
-import { ComponentProps, Reducer, useMemo, useReducer } from 'react';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
-import { ThemeOverrideProvider, ThemeOverridesValues } from './ThemeOverrideProvider';
-import { Tokens } from '../../themes/tokens';
-import { themeContractVars } from '../../themes/theme.css';
+import { ComponentProps, Reducer, useMemo, useReducer } from 'react';
+
 import { shadedColour } from '../../themes/helpers';
+import { themeContractVars } from '../../themes/theme.css';
+import { Tokens } from '../../themes/tokens';
 
+import {
+	ThemeOverrideProvider,
+	ThemeOverridesValues,
+} from './ThemeOverrideProvider';
 
-interface Props extends Omit<ComponentProps<typeof ThemeOverrideProvider>, 'theme' | 'children'> {
+interface Props
+	extends Omit<
+		ComponentProps<typeof ThemeOverrideProvider>,
+		'theme' | 'children'
+	> {
 	mode: Tokens['mode'];
 }
 
@@ -21,9 +29,8 @@ type Returns = Pick<
 	| 'setThemeValues'
 >;
 
-
 type Action = {
-	type: 'SET_THEME_VALUES',
+	type: 'SET_THEME_VALUES';
 	payload: Partial<OverrideValues>;
 };
 
@@ -38,10 +45,10 @@ export interface OverrideValues {
 const reducer: Reducer<OverrideValues, Action> = (prevState, action) => {
 	switch (action.type) {
 		case 'SET_THEME_VALUES': {
-			return ({
+			return {
 				...prevState,
 				...action.payload,
-			});
+			};
 		}
 
 		default:
@@ -49,22 +56,24 @@ const reducer: Reducer<OverrideValues, Action> = (prevState, action) => {
 	}
 };
 export const useBuildThemeOverrides = ({
-										   primaryColourBackground: incomingPrimaryColourBackground,
-										   primaryColourForeground: incomingPrimaryColourForeground,
-										   mode,
-										   primaryColourBackgroundStrong: incomingPrimaryColourBackgroundStrong,
-										   primaryColourBackgroundMild: incomingPrimaryColourBackgroundMild,
-										   primaryColourBorder: incomingPrimaryColourBorder,
-									   }: Props): Returns => {
-
-	const [{
-		primaryColourBorder,
-		primaryColourForeground,
-		primaryColourBackgroundStrong,
-		primaryColourBackgroundMild,
-		primaryColourBackground,
-		...extraColours
-	}, dispatch] = useReducer(reducer, {
+	primaryColourBackground: incomingPrimaryColourBackground,
+	primaryColourForeground: incomingPrimaryColourForeground,
+	mode,
+	primaryColourBackgroundStrong: incomingPrimaryColourBackgroundStrong,
+	primaryColourBackgroundMild: incomingPrimaryColourBackgroundMild,
+	primaryColourBorder: incomingPrimaryColourBorder,
+}: Props): Returns => {
+	const [
+		{
+			primaryColourBorder,
+			primaryColourForeground,
+			primaryColourBackgroundStrong,
+			primaryColourBackgroundMild,
+			primaryColourBackground,
+			...extraColours
+		},
+		dispatch,
+	] = useReducer(reducer, {
 		primaryColourBackground: incomingPrimaryColourBackground,
 		primaryColourForeground: incomingPrimaryColourForeground,
 		primaryColourBorder: incomingPrimaryColourBorder,
@@ -72,20 +81,23 @@ export const useBuildThemeOverrides = ({
 		primaryColourBackgroundStrong: incomingPrimaryColourBackgroundStrong,
 	});
 
-
 	const overrideStyles = useMemo<ReturnType<typeof assignInlineVars>>(() => {
-		const mildPrimary = primaryColourBackgroundMild || shadedColour({
-			colour: primaryColourBackground,
-			isDarkTheme: false,
-			direction: mode === 'light' ? 'forward' : 'backward',
-			intensity: 0.1,
-		});
-		const strongPrimary = primaryColourBackgroundStrong || shadedColour({
-			colour: primaryColourBackground,
-			isDarkTheme: false,
-			direction: mode === 'light' ? 'forward' : 'backward',
-			intensity: 0.1,
-		});
+		const mildPrimary =
+			primaryColourBackgroundMild ||
+			shadedColour({
+				colour: primaryColourBackground,
+				isDarkTheme: false,
+				direction: mode === 'light' ? 'forward' : 'backward',
+				intensity: 0.1,
+			});
+		const strongPrimary =
+			primaryColourBackgroundStrong ||
+			shadedColour({
+				colour: primaryColourBackground,
+				isDarkTheme: false,
+				direction: mode === 'light' ? 'forward' : 'backward',
+				intensity: 0.1,
+			});
 
 		return assignInlineVars(themeContractVars, {
 			...extraColours,
@@ -128,13 +140,12 @@ export const useBuildThemeOverrides = ({
 			overrideStyles,
 			primaryColourBackground,
 			primaryColourForeground,
-			setThemeValues: (values: Partial<OverrideValues>) => (dispatch({
-				type: 'SET_THEME_VALUES',
-				payload: values,
-			})),
+			setThemeValues: (values: Partial<OverrideValues>) =>
+				dispatch({
+					type: 'SET_THEME_VALUES',
+					payload: values,
+				}),
 		}),
-		[
-			overrideStyles,
-		],
+		[overrideStyles],
 	);
 };
