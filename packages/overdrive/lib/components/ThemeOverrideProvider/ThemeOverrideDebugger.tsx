@@ -12,8 +12,7 @@ export const ThemeOverrideDebugger: FunctionComponent = () => {
 		theme,
 		primaryColourForeground,
 		primaryColourBackground,
-		setPrimaryColourBackground,
-		setPrimaryColourForeground,
+		setThemeValues,
 	} = useThemeOverrides();
 	const passesAA = useMemo(
 		() =>
@@ -58,7 +57,7 @@ export const ThemeOverrideDebugger: FunctionComponent = () => {
 						placeholder='Primary background colour'
 						value={primaryColourBackground}
 						onChange={(event) =>
-							setPrimaryColourBackground(event.target.value)
+							setThemeValues({ primaryColourBackground: event.target.value })
 						}
 					/>
 					<ColourInput
@@ -66,7 +65,7 @@ export const ThemeOverrideDebugger: FunctionComponent = () => {
 						placeholder='Primary foreground colour'
 						value={primaryColourForeground}
 						onChange={(event) =>
-							setPrimaryColourForeground(event.target.value)
+							setThemeValues({ primaryColourForeground: event.target.value })
 						}
 					/>
 				</Stack>

@@ -1,4 +1,4 @@
-import { ComponentProps, useMemo, useState } from 'react';
+import { ComponentProps, Reducer, useMemo, useReducer } from 'react';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import { ThemeOverrideProvider, ThemeOverridesValues } from './ThemeOverrideProvider';
 import { Tokens } from '../../themes/tokens';
@@ -18,12 +18,36 @@ type Returns = Pick<
 	| 'primaryColourBorder'
 	| 'primaryColourBackgroundMild'
 	| 'primaryColourBackgroundStrong'
-	| 'setPrimaryColourBackground'
-	| 'setPrimaryColourForeground'
-	| 'setPrimaryColourBackgroundStrong'
-	| 'setPrimaryColourBorder'
-	| 'setPrimaryColourBackgroundMild'
+	| 'setThemeValues'
 >;
+
+
+type Action = {
+	type: 'SET_THEME_VALUES',
+	payload: Partial<OverrideValues>;
+};
+
+export interface OverrideValues {
+	primaryColourBackground: string;
+	primaryColourForeground: string;
+	primaryColourBackgroundMild?: string;
+	primaryColourBackgroundStrong?: string;
+	primaryColourBorder?: string;
+}
+
+const reducer: Reducer<OverrideValues, Action> = (prevState, action) => {
+	switch (action.type) {
+		case 'SET_THEME_VALUES': {
+			return ({
+				...prevState,
+				...action.payload,
+			});
+		}
+
+		default:
+			return prevState;
+	}
+};
 export const useBuildThemeOverrides = ({
 										   primaryColourBackground: incomingPrimaryColourBackground,
 										   primaryColourForeground: incomingPrimaryColourForeground,
@@ -33,22 +57,21 @@ export const useBuildThemeOverrides = ({
 										   primaryColourBorder: incomingPrimaryColourBorder,
 									   }: Props): Returns => {
 
+	const [{
+		primaryColourBorder,
+		primaryColourForeground,
+		primaryColourBackgroundStrong,
+		primaryColourBackgroundMild,
+		primaryColourBackground,
+		...extraColours
+	}, dispatch] = useReducer(reducer, {
+		primaryColourBackground: incomingPrimaryColourBackground,
+		primaryColourForeground: incomingPrimaryColourForeground,
+		primaryColourBorder: incomingPrimaryColourBorder,
+		primaryColourBackgroundMild: incomingPrimaryColourBackgroundMild,
+		primaryColourBackgroundStrong: incomingPrimaryColourBackgroundStrong,
+	});
 
-	const [primaryColourBackground, setPrimaryColourBackground] = useState(
-		incomingPrimaryColourBackground,
-	);
-	const [primaryColourBackgroundMild, setPrimaryColourBackgroundMild] = useState(
-		incomingPrimaryColourBackgroundMild,
-	);
-	const [primaryColourBackgroundStrong, setPrimaryColourBackgroundStrong] = useState(
-		incomingPrimaryColourBackgroundStrong,
-	);
-	const [primaryColourBorder, setPrimaryColourBorder] = useState(
-		incomingPrimaryColourBorder,
-	);
-	const [primaryColourForeground, setPrimaryColourForeground] = useState(
-		incomingPrimaryColourForeground,
-	);
 
 	const overrideStyles = useMemo<ReturnType<typeof assignInlineVars>>(() => {
 		const mildPrimary = primaryColourBackgroundMild || shadedColour({
@@ -65,6 +88,7 @@ export const useBuildThemeOverrides = ({
 		});
 
 		return assignInlineVars(themeContractVars, {
+			...extraColours,
 			colours: {
 				intent: {
 					primary: {
@@ -96,6 +120,7 @@ export const useBuildThemeOverrides = ({
 		incomingPrimaryColourBackgroundStrong,
 		incomingPrimaryColourBackgroundMild,
 		incomingPrimaryColourBorder,
+		extraColours,
 	]);
 
 	return useMemo(
@@ -103,11 +128,10 @@ export const useBuildThemeOverrides = ({
 			overrideStyles,
 			primaryColourBackground,
 			primaryColourForeground,
-			setPrimaryColourForeground,
-			setPrimaryColourBackground,
-			setPrimaryColourBackgroundMild,
-			setPrimaryColourBackgroundStrong,
-			setPrimaryColourBorder,
+			setThemeValues: (values: Partial<OverrideValues>) => (dispatch({
+				type: 'SET_THEME_VALUES',
+				payload: values,
+			})),
 		}),
 		[
 			overrideStyles,

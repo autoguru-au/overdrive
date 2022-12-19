@@ -20,24 +20,22 @@ const ThemeProviderComponent = ({ children }) => {
 	const {
 		theme,
 		overrideStyles,
-		setPrimaryColourBackground,
-		setPrimaryColourForeground,
-		setPrimaryColourBackgroundMild,
-		setPrimaryColourBackgroundStrong,
-		setPrimaryColourBorder,
+		setThemeValues,
 	} = useThemeOverrides();
 	useEffect(() => {
 		const tokens = theme.tokens;
 		const primaryColourBackground = tokens.colours.intent.primary.background;
 		const primaryColourBorder = tokens.colours.intent.primary.border;
 		const primaryColourForeground = tokens.colours.intent.primary.foreground;
-		setPrimaryColourBorder(primaryColourBorder);
-		setPrimaryColourForeground(primaryColourForeground);
-		setPrimaryColourBackground(primaryColourBackground.standard);
-		setPrimaryColourBackgroundMild(primaryColourBackground.mild);
-		setPrimaryColourBackgroundStrong(primaryColourBackground.strong);
+		setThemeValues({
+			primaryColourBackground: primaryColourBackground.standard,
+			primaryColourBackgroundMild: primaryColourBackground.mild,
+			primaryColourBackgroundStrong: primaryColourBackground.stron,
+			primaryColourBorder,
+			primaryColourForeground,
+		});
 	}, [theme]);
-	
+
 	return (
 		<OverdriveProvider
 			noBodyLevelTheming={false}

@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Context, createContext, Dispatch, FunctionComponent, ReactNode, useContext, useMemo } from 'react';
+import { Context, createContext, FunctionComponent, ReactNode, useContext, useMemo } from 'react';
 import { default as defaultTheme } from '../../themes/base';
 
-import { useBuildThemeOverrides } from './useBuildThemeOverrides';
+import { OverrideValues, useBuildThemeOverrides } from './useBuildThemeOverrides';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 
 type Theme = typeof defaultTheme;
@@ -16,11 +16,7 @@ export interface ThemeOverridesValues {
 	theme: Theme;
 	overrideStyles: ReturnType<typeof assignInlineVars>;
 
-	setPrimaryColourBackground: Dispatch<string>;
-	setPrimaryColourBackgroundMild: Dispatch<string>;
-	setPrimaryColourBackgroundStrong: Dispatch<string>;
-	setPrimaryColourBorder: Dispatch<string>;
-	setPrimaryColourForeground: Dispatch<string>;
+	setThemeValues: (values: Partial<OverrideValues>) => void;
 }
 
 interface Props extends Pick<
