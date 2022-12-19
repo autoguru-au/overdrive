@@ -55,3 +55,4 @@ export * from './NumberBubble';
 export * from './TextBubble';
 export * from './ColourInput';
 export * from './DividerLine';
+export * from './ThemeOverrideProvider';

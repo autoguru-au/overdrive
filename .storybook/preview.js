@@ -7,18 +7,49 @@ import {
 	Heading,
 	OverdriveProvider,
 	Stack,
+	ThemeOverrideProvider,
+	useThemeOverrides,
 } from '@autoguru/overdrive/lib';
 import * as React from 'react';
 import { DocsContainer, DocsPage } from '@storybook/addon-docs';
+import { container, themeContractVars } from '../packages/overdrive/lib/themes/theme.css';
+import { breakpoints } from '../packages/overdrive/lib/themes/makeTheme';
+import { tokens } from '../packages/overdrive/lib/themes/base/tokens';
 
-const withThemeProvider = (Story, context) => {
-	const { themeRef, tokens, vars } = context.globals.theme;
-	return !isChromatic() ? (
-		<OverdriveProvider noBodyLevelTheming themeClass={themeRef} vars={vars}>
-			<Box className={themeRef} padding="2">
-				<Story {...context} />
+const ThemeProviderComponent = ({ children }) => {
+	const { theme, overrideStyles } = useThemeOverrides();
+	return (
+		<OverdriveProvider
+			noBodyLevelTheming={false}
+			vars={themeContractVars}
+			breakpoints={breakpoints}
+			themeClass={theme.themeRef}>
+			<Box className={container} style={overrideStyles}>
+				{children}
 			</Box>
 		</OverdriveProvider>
+	);
+};
+const withThemeProvider = (Story, context) => {
+	const theme = context.globals.theme;
+	const primaryColourBackground = tokens.colours.intent.primary.background;
+	const primaryColourBorder = tokens.colours.intent.primary.border;
+	const primaryColourForeground = tokens.colours.intent.primary.foreground;
+	console.log(context.globals);
+	return !isChromatic() ? (
+		<ThemeOverrideProvider
+			primaryColourBackground={primaryColourBackground.standard}
+			primaryColourForeground={primaryColourForeground}
+			primaryColourBackgroundMild={primaryColourBackground.mild}
+			primaryColourBackgroundStrong={primaryColourBackground.strong}
+			primaryColourBorder={primaryColourBorder}
+			theme={theme}>
+			<Box className={theme.themeRef} padding='2'>
+				<ThemeProviderComponent>
+					<Story {...context} />
+				</ThemeProviderComponent>
+			</Box>
+		</ThemeOverrideProvider>
 	) : (
 		Object.entries(themes).map(([_, theme]) => (
 			<div
