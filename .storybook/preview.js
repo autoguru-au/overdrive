@@ -96,7 +96,7 @@ const withThemeProvider = (Story, context) => {
 			</Box>
 		</ThemeOverrideProvider>
 	) : (
-		Object.entries(themes).map(([_, theme]) => (
+		Object.keys(themes).map((theme) => (
 			<div
 				key={themes[theme].name}
 				className={themes[theme].themeRef}
@@ -105,8 +105,8 @@ const withThemeProvider = (Story, context) => {
 				<OverdriveProvider
 					noBodyLevelTheming
 					themeClass={themes[theme].themeRef}
-					tokens={tokens}
-					vars={vars}
+					tokens={themes[theme].tokens}
+					vars={themes[theme].vars}
 				>
 					<Box width="full" padding="5">
 						<Stack width="full" space="3">
