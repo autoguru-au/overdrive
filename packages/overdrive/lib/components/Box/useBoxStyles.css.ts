@@ -23,12 +23,18 @@ export const boxShadow = makeResponsiveStyle(vars.elevation, 'boxShadow');
 type IntentColours = keyof Tokens['colours']['intent'];
 type BorderColours = keyof Tokens['border']['colours'];
 
-const borderColours: Record<IntentColours | BorderColours, ReturnType<typeof style>> = {
+const borderColours: Record<
+	IntentColours | BorderColours,
+	ReturnType<typeof style>
+> = {
 	...vars.border.colours,
-	...Object.entries(vars.colours.intent).reduce((map, entry) => ({
-		...map,
-		[entry[0]]: entry[1].border,
-	}), {}) as Record<IntentColours, ReturnType<typeof style>>,
+	...(Object.entries(vars.colours.intent).reduce(
+		(map, entry) => ({
+			...map,
+			[entry[0]]: entry[1].border,
+		}),
+		{},
+	) as Record<IntentColours, ReturnType<typeof style>>),
 };
 
 export const border = {
@@ -36,9 +42,7 @@ export const border = {
 		borderStyle: 'solid',
 	}),
 	colour: {
-		top: styleVariants(
-			mapTokenToProperty(borderColours, 'borderTopColor'),
-		),
+		top: styleVariants(mapTokenToProperty(borderColours, 'borderTopColor')),
 		right: styleVariants(
 			mapTokenToProperty(borderColours, 'borderRightColor'),
 		),

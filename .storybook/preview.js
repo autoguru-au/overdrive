@@ -7,35 +7,111 @@ import {
 	Heading,
 	OverdriveProvider,
 	Stack,
+	ThemeOverrideProvider,
+	useThemeOverrides,
 } from '@autoguru/overdrive/lib';
 import * as React from 'react';
+import { useEffect } from 'react';
 import { DocsContainer, DocsPage } from '@storybook/addon-docs';
+import {
+	container,
+	themeContractVars,
+} from '../packages/overdrive/lib/themes/theme.css';
+import { breakpoints } from '../packages/overdrive/lib/themes/makeTheme';
 
-const withThemeProvider = (Story, context) => {
-	const { themeRef, tokens, vars } = context.globals.theme;
-	return !isChromatic() ? (
-		<OverdriveProvider noBodyLevelTheming themeClass={themeRef} vars={vars}>
-			<Box className={themeRef} padding="2">
-				<Story {...context} />
+const dynamicColours = {
+	bright: {
+		primaryColourBackground: '#e5bc01',
+		primaryColourForeground: '#1e1818',
+	},
+	dark: {
+		primaryColourBackground: '#1e1818',
+		primaryColourForeground: '#e5bc01',
+	},
+};
+
+const ThemeProviderComponent = ({ children, context }) => {
+	const { theme, overrideStyles, setThemeValues } = useThemeOverrides();
+
+	useEffect(() => {
+		console.log(context.globals);
+		if (dynamicColours[context.globals.themeColours]) {
+			setThemeValues({
+				primaryColourBackground: null,
+				primaryColourBackgroundMild: null,
+				primaryColourBackgroundStrong: null,
+				primaryColourBorder: null,
+				primaryColourForeground: null,
+				...dynamicColours[context.globals.themeColours],
+			});
+		} else {
+			const tokens = theme.tokens;
+			const primaryColourBackground =
+				tokens.colours.intent.primary.background;
+			const primaryColourBorder = tokens.colours.intent.primary.border;
+			const primaryColourForeground =
+				tokens.colours.intent.primary.foreground;
+			setThemeValues({
+				primaryColourBackground: primaryColourBackground.standard,
+				primaryColourBackgroundMild: primaryColourBackground.mild,
+				primaryColourBackgroundStrong: primaryColourBackground.stron,
+				primaryColourBorder,
+				primaryColourForeground,
+			});
+		}
+	}, [theme, context.globals.themeColours]);
+
+	return (
+		<OverdriveProvider
+			noBodyLevelTheming={false}
+			vars={themeContractVars}
+			breakpoints={breakpoints}
+			themeClass={theme.themeRef}
+		>
+			<Box className={container} style={overrideStyles}>
+				{children}
 			</Box>
 		</OverdriveProvider>
+	);
+};
+const withThemeProvider = (Story, context) => {
+	const theme = themes[context.globals.theme];
+	const tokens = theme.tokens;
+	const primaryColourBackground = tokens.colours.intent.primary.background;
+	const primaryColourBorder = tokens.colours.intent.primary.border;
+	const primaryColourForeground = tokens.colours.intent.primary.foreground;
+	return !isChromatic() ? (
+		<ThemeOverrideProvider
+			primaryColourBackground={primaryColourBackground.standard}
+			primaryColourForeground={primaryColourForeground}
+			primaryColourBackgroundMild={primaryColourBackground.mild}
+			primaryColourBackgroundStrong={primaryColourBackground.strong}
+			primaryColourBorder={primaryColourBorder}
+			theme={theme}
+		>
+			<Box className={theme.themeRef} padding="2">
+				<ThemeProviderComponent context={context}>
+					<Story {...context} />
+				</ThemeProviderComponent>
+			</Box>
+		</ThemeOverrideProvider>
 	) : (
-		Object.entries(themes).map(([_, theme]) => (
+		Object.keys(themes).map((theme) => (
 			<div
-				key={theme.name}
-				className={theme.themeRef}
-				data-theme={theme.name}
+				key={themes[theme].name}
+				className={themes[theme].themeRef}
+				data-theme={themes[theme].name}
 			>
 				<OverdriveProvider
 					noBodyLevelTheming
-					themeClass={theme.themeRef}
-					tokens={tokens}
-					vars={vars}
+					themeClass={themes[theme].themeRef}
+					tokens={themes[theme].tokens}
+					vars={themes[theme].vars}
 				>
 					<Box width="full" padding="5">
 						<Stack width="full" space="3">
 							<Heading is="h5" colour="light">
-								Theme :: {theme.name}
+								Theme :: {themes[theme].name}
 							</Heading>
 
 							<Story {...context} />
@@ -57,16 +133,27 @@ const withThemeProvider = (Story, context) => {
 
 export const globalTypes = {
 	theme: {
-		name: 'Theme',
+		name: 'theme',
 		description: 'Global theme for components',
-		defaultValue: themes.baseTheme,
+		defaultValue: themes.baseTheme.name,
+		title: 'theme',
 		toolbar: {
-			icon: 'grid',
-			items: Object.entries(themes).map(([key, theme]) => ({
-				key,
-				value: theme,
-				title: theme.name,
-			})),
+			icon: 'mirror',
+			items: Object.keys(themes).map((theme) => themes[theme].name),
+			showName: true,
+			dynamicTitle: true,
+		},
+	},
+	themeColours: {
+		name: 'Set dynamic colours',
+		description: 'Global primary background colour',
+		defaultValue: 'defaults',
+		toolbar: {
+			icon: 'paintbrush',
+			items: ['defaults', 'bright', 'dark'],
+			showName: true,
+			dynamicTitle: true,
+			control: 'color',
 		},
 	},
 };

@@ -20,10 +20,9 @@ interface UrlParams {
 interface ImageServerContext {
 	children?: ReactNode;
 	widthMap?: Record<WidthScale, number>;
+	srcUrlMapper: (params: UrlParams) => string;
 
 	getWidthValue?(width: WidthScale): number;
-
-	srcUrlMapper: (params: UrlParams) => string;
 
 	generateSrcSet(params: Omit<UrlParams, 'width'>): string;
 }
