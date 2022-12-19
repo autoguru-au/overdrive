@@ -17,6 +17,9 @@ export interface ThemeOverridesValues {
 	overrideStyles: ReturnType<typeof assignInlineVars>;
 
 	setPrimaryColourBackground: Dispatch<string>;
+	setPrimaryColourBackgroundMild: Dispatch<string>;
+	setPrimaryColourBackgroundStrong: Dispatch<string>;
+	setPrimaryColourBorder: Dispatch<string>;
 	setPrimaryColourForeground: Dispatch<string>;
 }
 
@@ -32,27 +35,21 @@ const themeOverridesCtx: Context<ThemeOverridesValues> = createContext<ThemeOver
 export const useThemeOverrides = () => useContext(themeOverridesCtx);
 
 export const ThemeOverrideProvider: FunctionComponent<Props> = ({
-																	primaryColourBackground: incomingPrimaryColourBackground,
-																	primaryColourForeground: incomingPrimaryColourForeground,
+																	primaryColourBackground,
+																	primaryColourForeground,
 																	theme,
 																	primaryColourBackgroundMild,
 																	primaryColourBackgroundStrong,
 																	primaryColourBorder,
 																	children,
 																}) => {
-	const {
-		overrideStyles,
+	const overrides = useBuildThemeOverrides({
 		primaryColourBackground,
 		primaryColourForeground,
-		setPrimaryColourBackground,
-		setPrimaryColourForeground,
-	} = useBuildThemeOverrides({
-		primaryColourBackground: incomingPrimaryColourBackground,
-		primaryColourForeground: incomingPrimaryColourForeground,
 		primaryColourBackgroundMild,
 		primaryColourBackgroundStrong,
 		primaryColourBorder,
-		mode: theme.vars.mode,
+		mode: theme?.vars.mode,
 	});
 
 	return (
@@ -60,17 +57,17 @@ export const ThemeOverrideProvider: FunctionComponent<Props> = ({
 			value={useMemo(
 				() => ({
 					theme,
-					overrideStyles,
-					primaryColourForeground,
-					primaryColourBackground,
-					setPrimaryColourBackground,
-					setPrimaryColourForeground,
+					...overrides,
 				}),
 				[
 					theme,
-					overrideStyles,
-					primaryColourForeground,
+					overrides,
 					primaryColourBackground,
+					primaryColourForeground,
+					theme,
+					primaryColourBackgroundMild,
+					primaryColourBackgroundStrong,
+					primaryColourBorder,
 				],
 			)}>
 			{children}

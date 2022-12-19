@@ -11,13 +11,33 @@ import {
 	useThemeOverrides,
 } from '@autoguru/overdrive/lib';
 import * as React from 'react';
+import { useEffect } from 'react';
 import { DocsContainer, DocsPage } from '@storybook/addon-docs';
 import { container, themeContractVars } from '../packages/overdrive/lib/themes/theme.css';
 import { breakpoints } from '../packages/overdrive/lib/themes/makeTheme';
-import { tokens } from '../packages/overdrive/lib/themes/base/tokens';
 
 const ThemeProviderComponent = ({ children }) => {
-	const { theme, overrideStyles } = useThemeOverrides();
+	const {
+		theme,
+		overrideStyles,
+		setPrimaryColourBackground,
+		setPrimaryColourForeground,
+		setPrimaryColourBackgroundMild,
+		setPrimaryColourBackgroundStrong,
+		setPrimaryColourBorder,
+	} = useThemeOverrides();
+	useEffect(() => {
+		const tokens = theme.tokens;
+		const primaryColourBackground = tokens.colours.intent.primary.background;
+		const primaryColourBorder = tokens.colours.intent.primary.border;
+		const primaryColourForeground = tokens.colours.intent.primary.foreground;
+		setPrimaryColourBorder(primaryColourBorder);
+		setPrimaryColourForeground(primaryColourForeground);
+		setPrimaryColourBackground(primaryColourBackground.standard);
+		setPrimaryColourBackgroundMild(primaryColourBackground.mild);
+		setPrimaryColourBackgroundStrong(primaryColourBackground.strong);
+	}, [theme]);
+	
 	return (
 		<OverdriveProvider
 			noBodyLevelTheming={false}
@@ -31,11 +51,11 @@ const ThemeProviderComponent = ({ children }) => {
 	);
 };
 const withThemeProvider = (Story, context) => {
-	const theme = context.globals.theme;
+	const theme = themes[context.globals.theme];
+	const tokens = theme.tokens;
 	const primaryColourBackground = tokens.colours.intent.primary.background;
 	const primaryColourBorder = tokens.colours.intent.primary.border;
 	const primaryColourForeground = tokens.colours.intent.primary.foreground;
-	console.log(context.globals);
 	return !isChromatic() ? (
 		<ThemeOverrideProvider
 			primaryColourBackground={primaryColourBackground.standard}
@@ -88,16 +108,26 @@ const withThemeProvider = (Story, context) => {
 
 export const globalTypes = {
 	theme: {
-		name: 'Theme',
+		name: 'theme',
 		description: 'Global theme for components',
-		defaultValue: themes.baseTheme,
+		defaultValue: themes.baseTheme.name,
+		title: 'theme',
 		toolbar: {
-			icon: 'grid',
-			items: Object.entries(themes).map(([key, theme]) => ({
-				key,
-				value: theme,
-				title: theme.name,
-			})),
+			icon: 'circlehollow',
+			items: Object.keys(themes).map((theme) => (themes[theme].name)),
+			showName: true,
+			dynamicTitle: true,
+		},
+	},
+	themePrimaryBackground: {
+		name: 'Set primary background',
+		description: 'Global primary background colour',
+		defaultValue: 'light',
+		toolbar: {
+			icon: 'paintbrush',
+			items: ['light', 'dark'],
+			showName: true,
+			dynamicTitle: true,
 		},
 	},
 };

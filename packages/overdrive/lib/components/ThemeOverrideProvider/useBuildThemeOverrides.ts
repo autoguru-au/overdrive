@@ -15,21 +15,36 @@ type Returns = Pick<
 	| 'overrideStyles'
 	| 'primaryColourBackground'
 	| 'primaryColourForeground'
+	| 'primaryColourBorder'
+	| 'primaryColourBackgroundMild'
+	| 'primaryColourBackgroundStrong'
 	| 'setPrimaryColourBackground'
 	| 'setPrimaryColourForeground'
+	| 'setPrimaryColourBackgroundStrong'
+	| 'setPrimaryColourBorder'
+	| 'setPrimaryColourBackgroundMild'
 >;
 export const useBuildThemeOverrides = ({
 										   primaryColourBackground: incomingPrimaryColourBackground,
 										   primaryColourForeground: incomingPrimaryColourForeground,
 										   mode,
-										   primaryColourBackgroundStrong,
-										   primaryColourBackgroundMild,
-										   primaryColourBorder,
+										   primaryColourBackgroundStrong: incomingPrimaryColourBackgroundStrong,
+										   primaryColourBackgroundMild: incomingPrimaryColourBackgroundMild,
+										   primaryColourBorder: incomingPrimaryColourBorder,
 									   }: Props): Returns => {
 
 
 	const [primaryColourBackground, setPrimaryColourBackground] = useState(
 		incomingPrimaryColourBackground,
+	);
+	const [primaryColourBackgroundMild, setPrimaryColourBackgroundMild] = useState(
+		incomingPrimaryColourBackgroundMild,
+	);
+	const [primaryColourBackgroundStrong, setPrimaryColourBackgroundStrong] = useState(
+		incomingPrimaryColourBackgroundStrong,
+	);
+	const [primaryColourBorder, setPrimaryColourBorder] = useState(
+		incomingPrimaryColourBorder,
 	);
 	const [primaryColourForeground, setPrimaryColourForeground] = useState(
 		incomingPrimaryColourForeground,
@@ -48,6 +63,7 @@ export const useBuildThemeOverrides = ({
 			direction: mode === 'light' ? 'forward' : 'backward',
 			intensity: 0.1,
 		});
+
 		return assignInlineVars(themeContractVars, {
 			colours: {
 				intent: {
@@ -74,6 +90,12 @@ export const useBuildThemeOverrides = ({
 		primaryColourBackgroundStrong,
 		primaryColourBorder,
 		primaryColourForeground,
+		incomingPrimaryColourBackground,
+		incomingPrimaryColourForeground,
+		mode,
+		incomingPrimaryColourBackgroundStrong,
+		incomingPrimaryColourBackgroundMild,
+		incomingPrimaryColourBorder,
 	]);
 
 	return useMemo(
@@ -83,10 +105,11 @@ export const useBuildThemeOverrides = ({
 			primaryColourForeground,
 			setPrimaryColourForeground,
 			setPrimaryColourBackground,
+			setPrimaryColourBackgroundMild,
+			setPrimaryColourBackgroundStrong,
+			setPrimaryColourBorder,
 		}),
 		[
-			primaryColourBackground,
-			primaryColourForeground,
 			overrideStyles,
 		],
 	);
