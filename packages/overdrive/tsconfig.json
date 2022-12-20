@@ -1,11 +1,12 @@
 {
 	"extends": "@autoguru/tsconfig/web",
+	"include": ["./index.ts", "./**/*.ts", "./**/*.tsx"],
+	"exclude": ["./**/*stories*.tsx", ".dist/**/*.*"],
 	"compilerOptions": {
 		"baseUrl": "./",
 		"rootDir": "./lib/",
 		"outDir": "./dist/",
 		"declaration": true,
-		"emitDeclarationOnly": true,
 		"declarationMap": true,
 		"declarationDir": "./dist/",
 		"isolatedModules": true,
@@ -35,13 +36,11 @@
 		"downlevelIteration": true,
 		"esModuleInterop": false
 	},
-	"include": ["./index.ts", "./**/*.ts", "./**/*.tsx"],
 	"ts-node": {
 		"compilerOptions": {
 			"module": "ESNext",
 			"resolveJsonModule": true,
 			"noImplicitAny": false
 		}
-	},
-	"exclude": ["./**/*stories*.tsx"]
+	}
 }

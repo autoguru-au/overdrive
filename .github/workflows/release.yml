@@ -38,6 +38,9 @@ jobs:
 
             - run: yarn --frozen-lockfile
 
+            - name: lint
+              run: yarn lint
+
             - name: Create Release or Publish
               uses: changesets/action@v1
               with:
