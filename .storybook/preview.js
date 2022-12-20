@@ -96,7 +96,7 @@ const withThemeProvider = (Story, context) => {
 			</Box>
 		</ThemeOverrideProvider>
 	) : (
-		Object.keys(themes).map((theme) => (
+		Object.keys(themes).filter((theme)=>theme !== 'neutralTheme').map((theme) => (
 			<div
 				key={themes[theme].name}
 				className={themes[theme].themeRef}
