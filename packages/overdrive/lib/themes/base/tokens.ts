@@ -63,7 +63,7 @@ const colours: ColourMap = {
 	},
 };
 
-const white = '#fff';
+//const white = '#fff';
 const secondaryForeground = colours.gray['700'];
 export const tokens: Tokens = {
 	mode: 'light',
