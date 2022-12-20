@@ -22,6 +22,7 @@ export const margin = {
 export const boxShadow = makeResponsiveStyle(vars.elevation, 'boxShadow');
 type IntentColours = keyof Tokens['colours']['intent'];
 type BorderColours = keyof Tokens['border']['colours'];
+type GamutColours = keyof Tokens['colours']['gamut'];
 
 const borderColours: Record<
 	IntentColours | BorderColours,
@@ -36,6 +37,30 @@ const borderColours: Record<
 		{},
 	) as Record<IntentColours, ReturnType<typeof style>>),
 };
+const backgroundColourTokens: Record<
+	IntentColours | GamutColours | 'transparent',
+	ReturnType<typeof style>
+> = {
+	...vars.colours.gamut,
+	...(Object.entries(vars.colours.intent).reduce(
+		(map, entry) => ({
+			...map,
+			[entry[0]]: entry[1].background.standard,
+		}),
+		{},
+	) as Record<IntentColours, ReturnType<typeof style>>),
+	transparent: 'transparent',
+};
+const foregroundColourTokens: Record<
+	IntentColours,
+	ReturnType<typeof style>
+> = Object.entries(vars.colours.intent).reduce(
+	(map, entry) => ({
+		...map,
+		[entry[0]]: entry[1].foreground,
+	}),
+	{},
+) as Record<IntentColours, ReturnType<typeof style>>;
 
 export const border = {
 	style: style({
@@ -68,11 +93,15 @@ export const borderRadius = makeResponsiveStyle(
 
 export const backgroundColours = styleVariants(
 	mapTokenToProperty(
-		{
-			...vars.colours.gamut,
-			transparent: 'transparent',
-		},
+		backgroundColourTokens,
 		'backgroundColor',
+	),
+);
+
+export const colours = styleVariants(
+	mapTokenToProperty(
+		foregroundColourTokens,
+		'color',
 	),
 );
 

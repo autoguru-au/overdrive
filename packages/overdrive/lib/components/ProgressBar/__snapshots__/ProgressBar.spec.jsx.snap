@@ -2,10 +2,10 @@
 
 exports[`<ProgressBar /> should match the snapshot 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06eh useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useBoxStyles_backgroundColours_gray100__7o6k06d5 ProgressBar_container__6g6q1h0"
+  class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06ex useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useBoxStyles_backgroundColours_gray100__7o6k06d5 ProgressBar_container__6g6q1h0"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06eh useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useBoxStyles_backgroundColours_green500__7o6k06di ProgressBar_bar__6g6q1h1 ProgressBar_container__6g6q1h0"
+    class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06ex useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useBoxStyles_backgroundColours_green500__7o6k06di ProgressBar_bar__6g6q1h1 ProgressBar_container__6g6q1h0"
     style="width: 0%;"
   />
 </div>

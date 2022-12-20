@@ -7,5 +7,5 @@ import { tokens } from './tokens';
 export const themeRef: string = createTheme(
 	themeContractVars,
 	tokens,
-	'OD_flatRed',
+	'OD_Neutral',
 );

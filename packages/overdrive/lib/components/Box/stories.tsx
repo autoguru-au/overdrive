@@ -30,7 +30,8 @@ const standardProps: ComponentProps<typeof Box> = {
 	padding: ['2', '4'],
 	marginBottom: ['2', '4', '5', '8'],
 	marginX: ['none', '3', '5'],
-	backgroundColour: 'green500',
+	backgroundColour: 'primary',
+	colour: 'primary',
 	borderRadius: 'pill',
 	boxShadow: ['none', '1', '2', '3'],
 };
