@@ -2,38 +2,38 @@
 
 exports[`<Stack /> should correctly handle fragment nodes 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06eh"
+  class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06ex"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06eh useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn Stack_child_default__1hhisnca Stack_child_spaces_2__1hhisnc1"
+    class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06ex useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g3 Stack_child_default__1hhisnca Stack_child_spaces_2__1hhisnc1"
   >
     <p>
       line 0
     </p>
   </div>
   <div
-    class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06eh useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn Stack_child_default__1hhisnca Stack_child_spaces_2__1hhisnc1"
+    class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06ex useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g3 Stack_child_default__1hhisnca Stack_child_spaces_2__1hhisnc1"
   >
     <p>
       Line 1
     </p>
   </div>
   <div
-    class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06eh useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn Stack_child_default__1hhisnca Stack_child_spaces_2__1hhisnc1"
+    class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06ex useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g3 Stack_child_default__1hhisnca Stack_child_spaces_2__1hhisnc1"
   >
     <p>
       Line 2
     </p>
   </div>
   <div
-    class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06eh useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn Stack_child_default__1hhisnca Stack_child_spaces_2__1hhisnc1"
+    class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06ex useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g3 Stack_child_default__1hhisnca Stack_child_spaces_2__1hhisnc1"
   >
     <p>
       Line 3
     </p>
   </div>
   <div
-    class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06eh useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn Stack_child_default__1hhisnca Stack_child_spaces_2__1hhisnc1"
+    class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06ex useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g3 Stack_child_default__1hhisnca Stack_child_spaces_2__1hhisnc1"
   >
     <p>
       line 4

@@ -67,6 +67,7 @@ export const Box = forwardRef<HTMLElement, Props>(
 			borderRadius,
 
 			backgroundColour,
+			colour,
 			opacity,
 
 			className = '',
@@ -87,6 +88,7 @@ export const Box = forwardRef<HTMLElement, Props>(
 			is: Component,
 			alignItems,
 			backgroundColour,
+			colour,
 			borderColour,
 			borderColourBottom,
 			borderColourLeft,

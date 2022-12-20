@@ -106,12 +106,12 @@ export const tokens: Tokens = {
 		intent: {
 			primary: {
 				background: {
-					standard: colours.green['700'],
-					mild: colours.green['200'],
-					strong: colours.green['900'],
+					standard: colours.gray['700'],
+					mild: colours.gray['200'],
+					strong: colours.gray['900'],
 				},
 				foreground: white,
-				border: colours.green['900'],
+				border: colours.gray['900'],
 			},
 			secondary: {
 				background: {
@@ -246,8 +246,8 @@ export const tokens: Tokens = {
 			},
 		},
 		colour: {
-			primary: colours.green['600'],
-			secondary: colours.gray['700'],
+			primary: colours.gray['800'],
+			secondary: colours.gray['600'],
 			shine: colours.yellow['500'],
 			link: colours.blue['500'],
 			dark: colours.gray['900'],
