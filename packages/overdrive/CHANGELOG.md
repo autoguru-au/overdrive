@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.11.2
+
+### Patch Changes
+
+-   4759925: Fixes ts type generation
+
 ## 4.11.1
 
 ### Patch Changes
