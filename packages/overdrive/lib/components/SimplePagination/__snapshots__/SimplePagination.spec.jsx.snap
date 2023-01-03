@@ -2,10 +2,10 @@
 
 exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
 <nav
-  class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fv useBoxStyles_flexWrap_wrap__7o6k06ge useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gk useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y4k useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxqk"
+  class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g7 useBoxStyles_flexWrap_wrap__7o6k06gq useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y4k useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxqk"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063w useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fv useBoxStyles_flexWrap_nowrap__7o6k06gf"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063w useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g7 useBoxStyles_flexWrap_nowrap__7o6k06gr"
   >
     <button
       aria-label="previous page"
@@ -15,10 +15,10 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
       type="button"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06ex useBoxStyles_height_full__7o6k06ey useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gk Button_body__11v3fwx1"
+        class="reset_block__6swfds3 useBoxStyles_height_full__7o6k06ey useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw Button_body__11v3fwx1"
       >
         <i
-          class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_none__7o6k06ex Icon_makeResponsiveStyle_key_bp__14sz1q64"
+          class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q64"
           role="presentation"
         >
           <svg
@@ -37,7 +37,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
     </button>
   </div>
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063w useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fv useBoxStyles_flexWrap_nowrap__7o6k06gf"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063w useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g7 useBoxStyles_flexWrap_nowrap__7o6k06gr"
   >
     <button
       aria-label="next page"
@@ -45,10 +45,10 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
       type="button"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06ex useBoxStyles_height_full__7o6k06ey useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gk Button_body__11v3fwx1"
+        class="reset_block__6swfds3 useBoxStyles_height_full__7o6k06ey useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw Button_body__11v3fwx1"
       >
         <i
-          class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_none__7o6k06ex Icon_makeResponsiveStyle_key_bp__14sz1q64"
+          class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q64"
           role="presentation"
         >
           <svg
@@ -71,10 +71,10 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
 
 exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 1`] = `
 <nav
-  class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fv useBoxStyles_flexWrap_wrap__7o6k06ge useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gk useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y4k useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxqk"
+  class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g7 useBoxStyles_flexWrap_wrap__7o6k06gq useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y4k useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxqk"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063w useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fv useBoxStyles_flexWrap_nowrap__7o6k06gf"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063w useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g7 useBoxStyles_flexWrap_nowrap__7o6k06gr"
   >
     <button
       aria-label="previous page"
@@ -82,10 +82,10 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
       type="button"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06ex useBoxStyles_height_full__7o6k06ey useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gk Button_body__11v3fwx1"
+        class="reset_block__6swfds3 useBoxStyles_height_full__7o6k06ey useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw Button_body__11v3fwx1"
       >
         <i
-          class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_none__7o6k06ex Icon_makeResponsiveStyle_key_bp__14sz1q64"
+          class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q64"
           role="presentation"
         >
           <svg
@@ -104,7 +104,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
     </button>
   </div>
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063w useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fv useBoxStyles_flexWrap_nowrap__7o6k06gf"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063w useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g7 useBoxStyles_flexWrap_nowrap__7o6k06gr"
   >
     <button
       aria-label="next page"
@@ -112,10 +112,10 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
       type="button"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06ex useBoxStyles_height_full__7o6k06ey useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gk Button_body__11v3fwx1"
+        class="reset_block__6swfds3 useBoxStyles_height_full__7o6k06ey useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw Button_body__11v3fwx1"
       >
         <i
-          class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_none__7o6k06ex Icon_makeResponsiveStyle_key_bp__14sz1q64"
+          class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q64"
           role="presentation"
         >
           <svg
@@ -138,10 +138,10 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
 
 exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
 <nav
-  class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fv useBoxStyles_flexWrap_wrap__7o6k06ge useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gk useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y4k useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxqk"
+  class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g7 useBoxStyles_flexWrap_wrap__7o6k06gq useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y4k useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxqk"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063w useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fv useBoxStyles_flexWrap_nowrap__7o6k06gf"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063w useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g7 useBoxStyles_flexWrap_nowrap__7o6k06gr"
   >
     <button
       aria-label="previous page"
@@ -149,10 +149,10 @@ exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
       type="button"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06ex useBoxStyles_height_full__7o6k06ey useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gk Button_body__11v3fwx1"
+        class="reset_block__6swfds3 useBoxStyles_height_full__7o6k06ey useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw Button_body__11v3fwx1"
       >
         <i
-          class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_none__7o6k06ex Icon_makeResponsiveStyle_key_bp__14sz1q64"
+          class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q64"
           role="presentation"
         >
           <svg
@@ -171,7 +171,7 @@ exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
     </button>
   </div>
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063w useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fv useBoxStyles_flexWrap_nowrap__7o6k06gf"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063w useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g7 useBoxStyles_flexWrap_nowrap__7o6k06gr"
   >
     <button
       aria-label="next page"
@@ -181,10 +181,10 @@ exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
       type="button"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06ex useBoxStyles_height_full__7o6k06ey useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gk Button_body__11v3fwx1"
+        class="reset_block__6swfds3 useBoxStyles_height_full__7o6k06ey useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw Button_body__11v3fwx1"
       >
         <i
-          class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_none__7o6k06ex Icon_makeResponsiveStyle_key_bp__14sz1q64"
+          class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q64"
           role="presentation"
         >
           <svg

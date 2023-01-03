@@ -2,12 +2,12 @@
 
 exports[`<DividerLine /> should match the snapshot 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064o useBoxStyles_makeResponsiveStyle_key_bp__7o6k066w useBoxStyles_width_none__7o6k06ex DividerLine_colours_shine__1uf524k7 DividerLine_size_horizontal_2__1uf524k9"
+  class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064o useBoxStyles_makeResponsiveStyle_key_bp__7o6k066w DividerLine_colours_shine__1uf524k7 DividerLine_size_horizontal_2__1uf524k9"
 />
 `;
 
 exports[`<DividerLine /> should match the snapshot as vertical 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k065s useBoxStyles_makeResponsiveStyle_key_bp__7o6k0680 useBoxStyles_width_none__7o6k06ex DividerLine_colours_shine__1uf524k7 DividerLine_size_vertical_2__1uf524kc"
+  class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k065s useBoxStyles_makeResponsiveStyle_key_bp__7o6k0680 DividerLine_colours_shine__1uf524k7 DividerLine_size_vertical_2__1uf524kc"
 />
 `;

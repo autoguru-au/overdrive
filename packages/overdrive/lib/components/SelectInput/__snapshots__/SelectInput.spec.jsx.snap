@@ -11,11 +11,11 @@ exports[`<SelectInput /> should have some hintText 1`] = `
       class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_flexWrap_nowrap__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gk"
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_flexWrap_nowrap__7o6k06gr useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw"
       >
         <select
           autocomplete="off"
-          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_width_none__7o6k06ex useBoxStyles_flexGrow_1__7o6k06gc SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_flexGrow_1__7o6k06go SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
         >
           <option
             value="a"
@@ -34,10 +34,10 @@ exports[`<SelectInput /> should have some hintText 1`] = `
           </option>
         </select>
         <div
-          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k065w useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06h0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_flexShrink_0__7o6k06gd SelectInput_arrow__hhupzp2"
+          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k065w useBoxStyles_display_flex__7o6k06fb useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hc useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_flexShrink_0__7o6k06gp SelectInput_arrow__hhupzp2"
         >
           <i
-            class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_none__7o6k06ex Icon_makeResponsiveStyle_key_bp__14sz1q64"
+            class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q64"
             role="presentation"
           >
             <svg
@@ -56,7 +56,7 @@ exports[`<SelectInput /> should have some hintText 1`] = `
       </div>
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06h0 NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
+      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06hc NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
     >
       <div
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5 InputState_natural_default_borderColour__9z39d75"
@@ -66,7 +66,7 @@ exports[`<SelectInput /> should have some hintText 1`] = `
         style="width: 0px;"
       >
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fd useBoxStyles_width_none__7o6k06ex useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06h0 NotchedBase_placeholder_default__1r7zdxgs useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxgt NotchedBase_placeholderPlacement_medium_default__1r7zdxgx"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fd useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hc NotchedBase_placeholder_default__1r7zdxgs useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxgt NotchedBase_placeholderPlacement_medium_default__1r7zdxgx"
         >
           Hello World!
         </label>
@@ -77,7 +77,7 @@ exports[`<SelectInput /> should have some hintText 1`] = `
     </div>
   </div>
   <p
-    class="reset_blockText__6swfdsc useBoxStyles_width_none__7o6k06ex useBoxStyles_textAlign_left__7o6k06f2 useTextStyles_root__w6to7i0 reset_blockText__6swfdsc useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_2__w6to7i2 reset_blockText__6swfdsc useBoxStyles_makeResponsiveStyle_key_bp__7o6k064k useBoxStyles_makeResponsiveStyle_key_bp__7o6k0684 HintText_hintText__w01siw0 InputState_natural_default_colour__9z39d74"
+    class="reset_blockText__6swfdsc useBoxStyles_textAlign_left__7o6k06f2 useTextStyles_root__w6to7i0 reset_blockText__6swfdsc useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_2__w6to7i2 reset_blockText__6swfdsc useBoxStyles_makeResponsiveStyle_key_bp__7o6k064k useBoxStyles_makeResponsiveStyle_key_bp__7o6k0684 HintText_hintText__w01siw0 InputState_natural_default_colour__9z39d74"
   >
     hint text
   </p>
@@ -95,11 +95,11 @@ exports[`<SelectInput /> should match snapshot 1`] = `
       class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_flexWrap_nowrap__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gk"
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_flexWrap_nowrap__7o6k06gr useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw"
       >
         <select
           autocomplete="off"
-          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_width_none__7o6k06ex useBoxStyles_flexGrow_1__7o6k06gc SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_flexGrow_1__7o6k06go SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
         >
           <option
             value="a"
@@ -118,10 +118,10 @@ exports[`<SelectInput /> should match snapshot 1`] = `
           </option>
         </select>
         <div
-          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k065w useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06h0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_flexShrink_0__7o6k06gd SelectInput_arrow__hhupzp2"
+          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k065w useBoxStyles_display_flex__7o6k06fb useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hc useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_flexShrink_0__7o6k06gp SelectInput_arrow__hhupzp2"
         >
           <i
-            class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_none__7o6k06ex Icon_makeResponsiveStyle_key_bp__14sz1q64"
+            class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q64"
             role="presentation"
           >
             <svg
@@ -140,7 +140,7 @@ exports[`<SelectInput /> should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06h0 NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
+      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06hc NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
     >
       <div
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5 InputState_natural_default_borderColour__9z39d75"
@@ -150,7 +150,7 @@ exports[`<SelectInput /> should match snapshot 1`] = `
         style="width: 0px;"
       >
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fd useBoxStyles_width_none__7o6k06ex useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06h0 NotchedBase_placeholder_default__1r7zdxgs useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxgt NotchedBase_placeholderPlacement_medium_default__1r7zdxgx"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fd useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hc NotchedBase_placeholder_default__1r7zdxgs useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxgt NotchedBase_placeholderPlacement_medium_default__1r7zdxgx"
         >
           Hello World!
         </label>
@@ -174,11 +174,11 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
       class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_flexWrap_nowrap__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gk"
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_flexWrap_nowrap__7o6k06gr useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw"
       >
         <select
           autocomplete="off"
-          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_width_none__7o6k06ex useBoxStyles_flexGrow_1__7o6k06gc SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_flexGrow_1__7o6k06go SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
         >
           <option
             value="a"
@@ -197,10 +197,10 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
           </option>
         </select>
         <div
-          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k065w useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06h0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_flexShrink_0__7o6k06gd SelectInput_arrow__hhupzp2"
+          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k065w useBoxStyles_display_flex__7o6k06fb useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hc useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_flexShrink_0__7o6k06gp SelectInput_arrow__hhupzp2"
         >
           <i
-            class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_none__7o6k06ex Icon_makeResponsiveStyle_key_bp__14sz1q64"
+            class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q64"
             role="presentation"
           >
             <svg
@@ -219,7 +219,7 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
       </div>
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06h0 NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
+      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06hc NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
     >
       <div
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5 InputState_activeBorderColour__9z39d71"
@@ -229,7 +229,7 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
         style="width: 16px;"
       >
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fd useBoxStyles_width_none__7o6k06ex useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06h0 NotchedBase_placeholder_default__1r7zdxgs InputState_activeColour__9z39d70 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholderPlacement_medium_shifted__1r7zdxgz"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fd useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hc NotchedBase_placeholder_default__1r7zdxgs InputState_activeColour__9z39d70 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholderPlacement_medium_shifted__1r7zdxgz"
         >
           Hello World!
         </label>
@@ -253,11 +253,11 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
       class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_flexWrap_nowrap__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gk"
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_flexWrap_nowrap__7o6k06gr useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw"
       >
         <select
           autocomplete="off"
-          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_width_none__7o6k06ex useBoxStyles_flexGrow_1__7o6k06gc SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_flexGrow_1__7o6k06go SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
         >
           <option
             value="a"
@@ -276,10 +276,10 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
           </option>
         </select>
         <div
-          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k065w useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06h0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_flexShrink_0__7o6k06gd SelectInput_arrow__hhupzp2"
+          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k065w useBoxStyles_display_flex__7o6k06fb useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hc useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_flexShrink_0__7o6k06gp SelectInput_arrow__hhupzp2"
         >
           <i
-            class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_none__7o6k06ex Icon_makeResponsiveStyle_key_bp__14sz1q64"
+            class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q64"
             role="presentation"
           >
             <svg
@@ -298,7 +298,7 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
       </div>
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06h0 NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
+      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06hc NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
     >
       <div
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5 InputState_error_default_borderColour__9z39d7d"
@@ -308,7 +308,7 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
         style="width: 0px;"
       >
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fd useBoxStyles_width_none__7o6k06ex useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06h0 NotchedBase_placeholder_default__1r7zdxgs useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxgt NotchedBase_placeholderPlacement_medium_default__1r7zdxgx"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fd useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hc NotchedBase_placeholder_default__1r7zdxgs useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxgt NotchedBase_placeholderPlacement_medium_default__1r7zdxgx"
         >
           Hello World!
         </label>
@@ -332,11 +332,11 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
       class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_flexWrap_nowrap__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gk"
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_flexWrap_nowrap__7o6k06gr useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw"
       >
         <select
           autocomplete="off"
-          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_width_none__7o6k06ex useBoxStyles_flexGrow_1__7o6k06gc SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_flexGrow_1__7o6k06go SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
         >
           <option
             value="a"
@@ -355,10 +355,10 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
           </option>
         </select>
         <div
-          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k065w useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06h0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_flexShrink_0__7o6k06gd SelectInput_arrow__hhupzp2"
+          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k065w useBoxStyles_display_flex__7o6k06fb useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hc useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_flexShrink_0__7o6k06gp SelectInput_arrow__hhupzp2"
         >
           <i
-            class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_none__7o6k06ex Icon_makeResponsiveStyle_key_bp__14sz1q64"
+            class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q64"
             role="presentation"
           >
             <svg
@@ -377,7 +377,7 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
       </div>
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06h0 NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
+      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06hc NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
     >
       <div
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5 InputState_error_default_borderColour__9z39d7d"
@@ -387,7 +387,7 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
         style="width: 0px;"
       >
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fd useBoxStyles_width_none__7o6k06ex useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06h0 NotchedBase_placeholder_default__1r7zdxgs useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxgt NotchedBase_placeholderPlacement_medium_default__1r7zdxgx"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fd useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hc NotchedBase_placeholder_default__1r7zdxgs useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxgt NotchedBase_placeholderPlacement_medium_default__1r7zdxgx"
         >
           Hello World!
         </label>
@@ -411,11 +411,11 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
       class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_flexWrap_nowrap__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gk"
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_flexWrap_nowrap__7o6k06gr useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw"
       >
         <select
           autocomplete="off"
-          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_width_none__7o6k06ex useBoxStyles_flexGrow_1__7o6k06gc SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_flexGrow_1__7o6k06go SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
         >
           <option
             value="a"
@@ -434,10 +434,10 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
           </option>
         </select>
         <div
-          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k065w useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06h0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_flexShrink_0__7o6k06gd SelectInput_arrow__hhupzp2"
+          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k065w useBoxStyles_display_flex__7o6k06fb useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hc useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_flexShrink_0__7o6k06gp SelectInput_arrow__hhupzp2"
         >
           <i
-            class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_none__7o6k06ex Icon_makeResponsiveStyle_key_bp__14sz1q64"
+            class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q64"
             role="presentation"
           >
             <svg
@@ -456,7 +456,7 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
       </div>
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06h0 NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
+      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06hc NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
     >
       <div
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5 InputState_success_default_borderColour__9z39d77"
@@ -466,7 +466,7 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
         style="width: 0px;"
       >
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fd useBoxStyles_width_none__7o6k06ex useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06h0 NotchedBase_placeholder_default__1r7zdxgs useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxgt NotchedBase_placeholderPlacement_medium_default__1r7zdxgx"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fd useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hc NotchedBase_placeholder_default__1r7zdxgs useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxgt NotchedBase_placeholderPlacement_medium_default__1r7zdxgx"
         >
           Hello World!
         </label>
@@ -490,17 +490,17 @@ exports[`<SelectInput /> should match snapshot with custom icon 1`] = `
       class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_flexWrap_nowrap__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gk"
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_flexWrap_nowrap__7o6k06gr useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw"
       >
         <select
           autocomplete="off"
-          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_width_none__7o6k06ex useBoxStyles_flexGrow_1__7o6k06gc SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_flexGrow_1__7o6k06go SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
         />
         <div
-          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k065w useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06h0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_flexShrink_0__7o6k06gd SelectInput_arrow__hhupzp2"
+          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k065w useBoxStyles_display_flex__7o6k06fb useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hc useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_flexShrink_0__7o6k06gp SelectInput_arrow__hhupzp2"
         >
           <i
-            class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_none__7o6k06ex Icon_makeResponsiveStyle_key_bp__14sz1q64"
+            class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q64"
             role="presentation"
           >
             <svg
@@ -517,7 +517,7 @@ exports[`<SelectInput /> should match snapshot with custom icon 1`] = `
       </div>
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06h0 NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
+      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06hc NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
     >
       <div
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5 InputState_natural_default_borderColour__9z39d75"
@@ -527,7 +527,7 @@ exports[`<SelectInput /> should match snapshot with custom icon 1`] = `
         style="width: 0px;"
       >
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fd useBoxStyles_width_none__7o6k06ex useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06h0 NotchedBase_placeholder_default__1r7zdxgs useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxgt NotchedBase_placeholderPlacement_medium_default__1r7zdxgx"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fd useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hc NotchedBase_placeholder_default__1r7zdxgs useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxgt NotchedBase_placeholderPlacement_medium_default__1r7zdxgx"
         >
           placeholder something
         </label>
@@ -551,7 +551,7 @@ exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
       class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
     >
       <i
-        class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_none__7o6k06ex Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06h0 withEnhancedInput_iconRoot__bd4oide withEnhancedInput_prefixIcon__bd4oidf withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
+        class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hc withEnhancedInput_iconRoot__bd4oide withEnhancedInput_prefixIcon__bd4oidf withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
         role="presentation"
       >
         <svg
@@ -565,17 +565,17 @@ exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
         </svg>
       </i>
       <div
-        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_flexWrap_nowrap__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gk"
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_flexWrap_nowrap__7o6k06gr useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw"
       >
         <select
           autocomplete="off"
-          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_width_none__7o6k06ex useBoxStyles_flexGrow_1__7o6k06gc SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_prefixed_any__bd4oidc"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_flexGrow_1__7o6k06go SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_prefixed_any__bd4oidc"
         />
         <div
-          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k065w useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06h0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_flexShrink_0__7o6k06gd SelectInput_arrow__hhupzp2"
+          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k065w useBoxStyles_display_flex__7o6k06fb useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hc useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_flexShrink_0__7o6k06gp SelectInput_arrow__hhupzp2"
         >
           <i
-            class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_none__7o6k06ex Icon_makeResponsiveStyle_key_bp__14sz1q64"
+            class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q64"
             role="presentation"
           >
             <svg
@@ -594,7 +594,7 @@ exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
       </div>
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06h0 NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
+      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06hc NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg3"
     >
       <div
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5 InputState_natural_default_borderColour__9z39d75"
@@ -604,7 +604,7 @@ exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
         style="width: 0px;"
       >
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fd useBoxStyles_width_none__7o6k06ex useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06h0 NotchedBase_placeholder_default__1r7zdxgs useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxgt NotchedBase_placeholderPlacement_medium_defaultPrefixed__1r7zdxgy"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fd useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hc NotchedBase_placeholder_default__1r7zdxgs useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholder_mutedLabelStyles__1r7zdxgt NotchedBase_placeholderPlacement_medium_defaultPrefixed__1r7zdxgy"
         >
           placeholder something
         </label>

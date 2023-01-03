@@ -29,6 +29,7 @@ export const Column = forwardRef<HTMLElement, Props>(
 			is,
 			noShrink = false,
 			grow = false,
+			order,
 
 			...boxProps
 		},
@@ -45,6 +46,7 @@ export const Column = forwardRef<HTMLElement, Props>(
 		return (
 			<Box
 				is={isList ? 'li' : 'div'}
+				order={order}
 				flexGrow={grow ? 1 : 0}
 				flexShrink={noShrink ? 0 : void 0}
 				className={[

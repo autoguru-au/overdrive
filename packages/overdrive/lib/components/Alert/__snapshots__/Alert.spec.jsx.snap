@@ -2,20 +2,20 @@
 
 exports[`<Alert /> should match the snapshot 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k062c useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_width_none__7o6k06ex useBoxStyles_position_relative__7o6k06f1 useBoxStyles_overflow_hidden__7o6k06f5 useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_top_gray__7o6k069m useBoxStyles_border_colour_right_gray__7o6k069x useBoxStyles_border_colour_bottom_gray__7o6k06a8 useBoxStyles_border_colour_left_gray__7o6k06aj useBoxStyles_makeResponsiveStyle_key_bp__7o6k06at useBoxStyles_makeResponsiveStyle_key_bp__7o6k06b9 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c5 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0698 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useBoxStyles_backgroundColours_white__7o6k06ee Alert_root__3h1sr90 Alert_intent_success__3h1sr93 Alert_contained__3h1sr95"
+  class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k062c useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_position_relative__7o6k06f1 useBoxStyles_overflow_hidden__7o6k06f5 useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_top_gray__7o6k069m useBoxStyles_border_colour_right_gray__7o6k069x useBoxStyles_border_colour_bottom_gray__7o6k06a8 useBoxStyles_border_colour_left_gray__7o6k06aj useBoxStyles_makeResponsiveStyle_key_bp__7o6k06at useBoxStyles_makeResponsiveStyle_key_bp__7o6k06b9 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c5 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0698 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useBoxStyles_backgroundColours_white__7o6k06ee Alert_root__3h1sr90 Alert_intent_success__3h1sr93 Alert_contained__3h1sr95"
   role="alert"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_none__7o6k06ex useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fv useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq4 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y410 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y411 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y412 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y413 Columns_align_stretch__wkgcjh2b Columns_wrapping_noWrap__wkgcjh29"
+    class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g7 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq4 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y410 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y411 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y412 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y413 Columns_align_stretch__wkgcjh2b Columns_wrapping_noWrap__wkgcjh29"
   >
     <div
-      class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06ex useBoxStyles_flexGrow_0__7o6k06gb useBoxStyles_flexShrink_0__7o6k06gd Columns_makeResponsiveStyle_key_bp__wkgcjh4 Columns_makeResponsiveStyle_key_bp__wkgcjh24 Columns_makeResponsiveStyle_key_bp__wkgcjh25 Columns_makeResponsiveStyle_key_bp__wkgcjh26 Columns_makeResponsiveStyle_key_bp__wkgcjh27 Column_align_top__2660ru19"
+      class="reset_block__6swfds3 useBoxStyles_flexGrow_0__7o6k06gn useBoxStyles_flexShrink_0__7o6k06gp Columns_makeResponsiveStyle_key_bp__wkgcjh4 Columns_makeResponsiveStyle_key_bp__wkgcjh24 Columns_makeResponsiveStyle_key_bp__wkgcjh25 Columns_makeResponsiveStyle_key_bp__wkgcjh26 Columns_makeResponsiveStyle_key_bp__wkgcjh27 Column_align_top__2660ru19"
     >
       <div
         class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
       >
         <i
-          class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_none__7o6k06ex Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064k useBoxStyles_makeResponsiveStyle_key_bp__7o6k066s useBoxStyles_makeResponsiveStyle_key_bp__7o6k067w"
+          class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064k useBoxStyles_makeResponsiveStyle_key_bp__7o6k066s useBoxStyles_makeResponsiveStyle_key_bp__7o6k067w"
           role="presentation"
         >
           <svg
@@ -33,14 +33,14 @@ exports[`<Alert /> should match the snapshot 1`] = `
       </div>
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06ex useBoxStyles_flexGrow_1__7o6k06gc Columns_makeResponsiveStyle_key_bp__wkgcjh4 Columns_makeResponsiveStyle_key_bp__wkgcjh24 Columns_makeResponsiveStyle_key_bp__wkgcjh25 Columns_makeResponsiveStyle_key_bp__wkgcjh26 Columns_makeResponsiveStyle_key_bp__wkgcjh27 Column_makeResponsiveStyle_key_bp__2660ru14 Column_align_centre__2660ru1a"
+      class="reset_block__6swfds3 useBoxStyles_flexGrow_1__7o6k06go Columns_makeResponsiveStyle_key_bp__wkgcjh4 Columns_makeResponsiveStyle_key_bp__wkgcjh24 Columns_makeResponsiveStyle_key_bp__wkgcjh25 Columns_makeResponsiveStyle_key_bp__wkgcjh26 Columns_makeResponsiveStyle_key_bp__wkgcjh27 Column_makeResponsiveStyle_key_bp__2660ru14 Column_align_centre__2660ru1a"
     >
       <div
         class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_dark__w6to7ie"
       />
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06ex useBoxStyles_flexGrow_0__7o6k06gb useBoxStyles_flexShrink_0__7o6k06gd Columns_makeResponsiveStyle_key_bp__wkgcjh4 Columns_makeResponsiveStyle_key_bp__wkgcjh24 Columns_makeResponsiveStyle_key_bp__wkgcjh25 Columns_makeResponsiveStyle_key_bp__wkgcjh26 Columns_makeResponsiveStyle_key_bp__wkgcjh27 Column_align_top__2660ru19"
+      class="reset_block__6swfds3 useBoxStyles_flexGrow_0__7o6k06gn useBoxStyles_flexShrink_0__7o6k06gp Columns_makeResponsiveStyle_key_bp__wkgcjh4 Columns_makeResponsiveStyle_key_bp__wkgcjh24 Columns_makeResponsiveStyle_key_bp__wkgcjh25 Columns_makeResponsiveStyle_key_bp__wkgcjh26 Columns_makeResponsiveStyle_key_bp__wkgcjh27 Column_align_top__2660ru19"
     >
       <div
         class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
@@ -51,10 +51,10 @@ exports[`<Alert /> should match the snapshot 1`] = `
           type="button"
         >
           <div
-            class="reset_block__6swfds3 useBoxStyles_width_none__7o6k06ex useBoxStyles_height_full__7o6k06ey useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fn useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gk Button_body__11v3fwx1"
+            class="reset_block__6swfds3 useBoxStyles_height_full__7o6k06ey useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw Button_body__11v3fwx1"
           >
             <i
-              class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_none__7o6k06ex Icon_makeResponsiveStyle_key_bp__14sz1q64 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_muted__w6to7ig"
+              class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q64 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_muted__w6to7ig"
               role="presentation"
             >
               <svg

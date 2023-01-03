@@ -2,7 +2,7 @@
 
 exports[`<Icon /> should match snapshot for same icon 1`] = `
 <i
-  class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_none__7o6k06ex Icon_makeResponsiveStyle_key_bp__14sz1q60"
+  class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q60"
   role="presentation"
 >
   <svg

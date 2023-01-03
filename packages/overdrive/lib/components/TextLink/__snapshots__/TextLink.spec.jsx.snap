@@ -3,11 +3,11 @@
 exports[`<TextLink /> should allow as override 1`] = `
 <a
   as="[object Object]"
-  class="reset_cursorPointer__6swfds1 reset_a__6swfds9 useBoxStyles_width_none__7o6k06ex TextLink_root__1l6bebk0"
+  class="reset_cursorPointer__6swfds1 reset_a__6swfds9 TextLink_root__1l6bebk0"
   rel="noopener noreferrer"
 >
   <span
-    class="reset_inlineText__6swfds2 useBoxStyles_width_none__7o6k06ex useBoxStyles_textAlign_left__7o6k06f2 useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_link__w6to7id useTextStyles_fontWeight_semiBold__w6to7io useTextStyles_sizes_4__w6to7i4 reset_inlineText__6swfds2 useBoxStyles_pointerEvents_none__7o6k06h0"
+    class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06f2 useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_link__w6to7id useTextStyles_fontWeight_semiBold__w6to7io useTextStyles_sizes_4__w6to7i4 reset_inlineText__6swfds2 useBoxStyles_pointerEvents_none__7o6k06hc"
   >
     Test
   </span>
@@ -16,11 +16,11 @@ exports[`<TextLink /> should allow as override 1`] = `
 
 exports[`<TextLink /> should match the snapshot 1`] = `
 <a
-  class="reset_cursorPointer__6swfds1 reset_a__6swfds9 useBoxStyles_width_none__7o6k06ex TextLink_root__1l6bebk0"
+  class="reset_cursorPointer__6swfds1 reset_a__6swfds9 TextLink_root__1l6bebk0"
   rel="noopener noreferrer"
 >
   <span
-    class="reset_inlineText__6swfds2 useBoxStyles_width_none__7o6k06ex useBoxStyles_textAlign_left__7o6k06f2 useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_link__w6to7id useTextStyles_fontWeight_semiBold__w6to7io useTextStyles_sizes_4__w6to7i4 reset_inlineText__6swfds2 useBoxStyles_pointerEvents_none__7o6k06h0"
+    class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06f2 useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_link__w6to7id useTextStyles_fontWeight_semiBold__w6to7io useTextStyles_sizes_4__w6to7i4 reset_inlineText__6swfds2 useBoxStyles_pointerEvents_none__7o6k06hc"
   />
 </a>
 `;
