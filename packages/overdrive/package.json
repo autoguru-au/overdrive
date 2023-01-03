@@ -33,7 +33,7 @@
 		"lint": "tsc --noEmit --skipLibCheck",
 		"typeEmit": "tsc -d --declarationDir dist --emitDeclarationOnly",
 		"build": "babel lib --out-dir dist --extensions '.ts,.tsx, .css'",
-		"prepublishOnly": "yarn run build",
+		"prepublishOnly": "yarn run build && yarn run typeEmit",
 		"watch": "tsc --watch"
 	},
 	"devDependencies": {
