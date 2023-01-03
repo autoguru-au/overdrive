@@ -1,5 +1,13 @@
 # @autoguru/overdrive
 
+## 4.11.1
+
+### Patch Changes
+
+-   85927e4: Themes: New neutral theme added Box: Get intent background-color
+    and color styles
+-   1eb1e3c: Box: Gets a responsive order prop
+
 ## 4.11.0
 
 ### Minor Changes
