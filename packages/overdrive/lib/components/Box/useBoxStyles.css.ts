@@ -110,7 +110,7 @@ export const width = styleVariants({
 		width: '100%',
 	},
 	none: {
-		width: void 0,
+		width: 'auto',
 	},
 });
 
@@ -179,6 +179,15 @@ export const userSelect = styleVariants({
 });
 
 // Flex things
+
+export const order = makeResponsiveStyle(
+	{
+		0: '0',
+		1: '1',
+		2: '2',
+	},
+	'order',
+);
 
 export const alignItems = makeResponsiveStyle(
 	{

@@ -40,7 +40,7 @@ export const Box = forwardRef<HTMLElement, Props>(
 			marginRight,
 
 			display,
-			width = 'none',
+			width,
 			height,
 			position,
 			overflow,
@@ -73,6 +73,7 @@ export const Box = forwardRef<HTMLElement, Props>(
 			className = '',
 
 			alignItems,
+			order,
 			flexDirection,
 			flexGrow,
 			flexShrink,
@@ -87,6 +88,7 @@ export const Box = forwardRef<HTMLElement, Props>(
 		const cls = useBoxStyles({
 			is: Component,
 			alignItems,
+			order,
 			backgroundColour,
 			colour,
 			borderColour,
