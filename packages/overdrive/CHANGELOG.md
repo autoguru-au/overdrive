@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.11.3
+
+### Patch Changes
+
+-   e945fca: Simplifies colour styles
+
 ## 4.11.2
 
 ### Patch Changes
@@ -1487,7 +1493,7 @@
     eg:
 
     ```jsx
-    <Modal isOpen={true} onRequestClose={function() {}}>
+    <Modal isOpen={true} onRequestClose={function () {}}>
     	>
     </Modal>
     ```
