@@ -61,9 +61,10 @@ const Handle: FunctionComponent<HandleProps> = ({
 		is="button"
 		className={[
 			styles.handle.default,
-			disabled && styles.handle.disabled,
+			{ [styles.handle.disabled]: disabled },
 			useTextStyles({ colour: 'white' }),
 		]}
+		backgroundColour={disabled ? 'neutral' : 'primary'}
 		aria-label={label}
 		padding="none"
 		borderRadius="full"

@@ -11,13 +11,13 @@ import * as React from 'react';
 import { ComponentProps, FunctionComponent, ReactNode } from 'react';
 
 import { Box, useBoxStyles } from '../Box';
+import { backgroundColours } from '../Box/useBoxStyles.css';
 import { Button } from '../Button';
 import { Column, Columns } from '../Columns';
 import { Icon } from '../Icon';
 import { Text, useTextStyles } from '../Text';
 
 import * as styles from './Alert.css';
-import { backgroundColours } from '../Box/useBoxStyles.css';
 
 type Intent = keyof Pick<
 	typeof backgroundColours,
@@ -57,22 +57,22 @@ export const Alert: FunctionComponent<Props> = ({
 			className={clsx(className, intentColourStyles, {
 				[styles.contained]: !inline,
 			})}
-			role='alert'
-			overflow='hidden'
-			position='relative'
-			backgroundColour='white'
-			borderWidth='1'
-			borderColour='gray'
-			borderRadius='1'
+			role="alert"
+			overflow="hidden"
+			position="relative"
+			backgroundColour="white"
+			borderWidth="1"
+			borderColour="gray"
+			borderRadius="1"
 			boxShadow={inline ? 'none' : '4'}
-			padding='2'
+			padding="2"
 		>
 			<Box className={styles.intentBox} backgroundColour={intent} />
-			<Columns noWrap spaceX='2'>
-				<Column noShrink alignSelf='top'>
+			<Columns noWrap spaceX="2">
+				<Column noShrink alignSelf="top">
 					<Icon
 						icon={iconMapForIntent[intent]}
-						size='medium'
+						size="medium"
 						className={useBoxStyles({
 							marginY: '2',
 							marginLeft: '2',

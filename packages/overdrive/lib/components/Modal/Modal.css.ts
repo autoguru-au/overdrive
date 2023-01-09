@@ -30,12 +30,10 @@ export const backdrop = styleVariants({
 		bottom: 0,
 		left: 0,
 		zIndex: 999,
-		backgroundColor: vars.colours.intent.neutral.background.standard,
 		opacity: 0.75,
 		backdropFilter: 'blur(5px)',
 	},
 	invisible: {
-		backgroundColor: 'transparent',
 		backdropFilter: 'none',
 	},
 });

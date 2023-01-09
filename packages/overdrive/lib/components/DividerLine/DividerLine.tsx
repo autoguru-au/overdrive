@@ -3,6 +3,7 @@ import * as React from 'react';
 import { ComponentProps, FunctionComponent } from 'react';
 
 import { Box } from '../';
+import { Tokens } from '../../themes/tokens';
 
 import * as styles from './DividerLine.css';
 
@@ -10,7 +11,7 @@ interface Props {
 	isVertical?: boolean;
 	className?: string;
 	space: ComponentProps<typeof Box>['marginY'];
-	colour?: keyof typeof styles.colours;
+	colour?: keyof Tokens['colours']['intent'];
 	size?: keyof typeof styles.size['horizontal'];
 }
 
@@ -22,7 +23,8 @@ export const DividerLine: FunctionComponent<Props> = ({
 	size = 1,
 }) => (
 	<Box
-		className={clsx(className, styles.colours[colour], {
+		backgroundColour={colour}
+		className={clsx(className, {
 			[styles.size.horizontal[size]]: !isVertical,
 			[styles.size.vertical[size]]: isVertical,
 		})}

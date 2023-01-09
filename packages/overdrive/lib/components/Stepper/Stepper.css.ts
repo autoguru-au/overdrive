@@ -25,7 +25,6 @@ export const handle = styleVariants({
 	default: {
 		width: vars.space[6],
 		height: vars.space[6],
-		backgroundColor: vars.colours.intent.primary.background.standard,
 		transition: `background-color 0.1s ${vars.animation.easing.standard}`,
 		selectors: {
 			[`${root}:not(${disabled}) &:hover`]: {
@@ -37,7 +36,7 @@ export const handle = styleVariants({
 		},
 	},
 	disabled: {
-		borderColor: vars.colours.background.neutral,
+		cursor: 'not-allowed',
 	},
 });
 
