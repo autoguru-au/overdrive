@@ -18,7 +18,7 @@ exports[`<Modal /> should match snapshot 1`] = `
     >
       <div
         aria-hidden="true"
-        class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06f0 Modal_backdrop_root__p7g8yg3 Modal_transition__p7g8yg1"
+        class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06f0 useBoxStyles_backgroundColours_neutral__7o6k06ek Modal_backdrop_root__p7g8yg3 Modal_transition__p7g8yg1"
       />
       <div
         class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06f0 useBoxStyles_overflow_hidden__7o6k06f5 Modal_root__p7g8yg0 Modal_transition__p7g8yg1"

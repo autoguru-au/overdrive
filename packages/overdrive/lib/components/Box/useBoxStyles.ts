@@ -116,24 +116,24 @@ export const useBoxStyles = ({
 	borderColourLeft,
 	borderRadius,
 	backgroundColour,
-								 colour,
-								 opacity,
-								 width,
-								 height,
-								 position,
-								 overflow,
-								 userSelect,
-								 textAlign,
-								 pointerEvents,
-								 alignItems,
-								 order,
-								 flexDirection,
-								 flexGrow,
-								 flexShrink,
-								 flexWrap,
-								 justifyContent,
-								 className,
-							 }: BoxStyleProps) => {
+	colour,
+	opacity,
+	width,
+	height,
+	position,
+	overflow,
+	userSelect,
+	textAlign,
+	pointerEvents,
+	alignItems,
+	order,
+	flexDirection,
+	flexGrow,
+	flexShrink,
+	flexWrap,
+	justifyContent,
+	className,
+}: BoxStyleProps) => {
 	const resolvedPaddingTop = paddingTop || paddingY || padding;
 	const resolvedPaddingRight = paddingRight || paddingX || padding;
 	const resolvedPaddingBottom = paddingBottom || paddingY || padding;
@@ -232,7 +232,7 @@ export const useBoxStyles = ({
 			),
 		resolveResponsiveStyle(boxShadow, styles.boxShadow),
 		borderRadius &&
-		resolveResponsiveStyle(borderRadius, styles.borderRadius),
+			resolveResponsiveStyle(borderRadius, styles.borderRadius),
 
 		styles.backgroundColours[backgroundColour!],
 		styles.colours[colour!],
@@ -241,12 +241,12 @@ export const useBoxStyles = ({
 		alignItems && resolveResponsiveStyle(alignItems, styles.alignItems),
 		order && resolveResponsiveStyle(order, styles.order),
 		flexDirection &&
-		resolveResponsiveStyle(flexDirection, styles.flexDirection),
+			resolveResponsiveStyle(flexDirection, styles.flexDirection),
 		styles.flexGrow[flexGrow!],
 		styles.flexShrink[flexShrink!],
 		styles.flexWrap[flexWrap!],
 		justifyContent &&
-		resolveResponsiveStyle(justifyContent, styles.justifyContent),
+			resolveResponsiveStyle(justifyContent, styles.justifyContent),
 
 		className,
 	);

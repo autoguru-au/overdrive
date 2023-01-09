@@ -92,17 +92,11 @@ export const borderRadius = makeResponsiveStyle(
 );
 
 export const backgroundColours = styleVariants(
-	mapTokenToProperty(
-		backgroundColourTokens,
-		'backgroundColor',
-	),
+	mapTokenToProperty(backgroundColourTokens, 'backgroundColor'),
 );
 
 export const colours = styleVariants(
-	mapTokenToProperty(
-		foregroundColourTokens,
-		'color',
-	),
+	mapTokenToProperty(foregroundColourTokens, 'color'),
 );
 
 export const width = styleVariants({

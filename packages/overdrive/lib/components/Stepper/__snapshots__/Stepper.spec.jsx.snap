@@ -17,7 +17,7 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
       >
         <button
           aria-label="step down"
-          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cx useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw Stepper_handle_default__zxjc1f4 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if"
+          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cx useBoxStyles_backgroundColours_primary__7o6k06ef useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw Stepper_handle_default__zxjc1f4 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if"
           tabindex="-1"
         >
           <i
@@ -60,7 +60,7 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
       >
         <button
           aria-label="step up"
-          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cx useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw Stepper_handle_default__zxjc1f4 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if"
+          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cx useBoxStyles_backgroundColours_primary__7o6k06ef useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw Stepper_handle_default__zxjc1f4 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if"
           tabindex="-1"
         >
           <i
@@ -103,7 +103,7 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
       >
         <button
           aria-label="step down"
-          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cx useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw Stepper_handle_default__zxjc1f4 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if"
+          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cx useBoxStyles_backgroundColours_primary__7o6k06ef useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw Stepper_handle_default__zxjc1f4 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if"
           tabindex="-1"
         >
           <i
@@ -146,7 +146,7 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
       >
         <button
           aria-label="step up"
-          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cx useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw Stepper_handle_default__zxjc1f4 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if"
+          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cx useBoxStyles_backgroundColours_primary__7o6k06ef useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw Stepper_handle_default__zxjc1f4 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if"
           tabindex="-1"
         >
           <i
@@ -189,7 +189,7 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
       >
         <button
           aria-label="step down"
-          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cx useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw Stepper_handle_default__zxjc1f4 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if"
+          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cx useBoxStyles_backgroundColours_primary__7o6k06ef useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw Stepper_handle_default__zxjc1f4 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if"
           tabindex="-1"
         >
           <i
@@ -232,7 +232,7 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
       >
         <button
           aria-label="step up"
-          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cx useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw Stepper_handle_default__zxjc1f4 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if"
+          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cx useBoxStyles_backgroundColours_primary__7o6k06ef useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw Stepper_handle_default__zxjc1f4 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if"
           tabindex="-1"
         >
           <i

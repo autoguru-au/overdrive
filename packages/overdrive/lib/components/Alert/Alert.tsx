@@ -11,6 +11,7 @@ import * as React from 'react';
 import { ComponentProps, FunctionComponent, ReactNode } from 'react';
 
 import { Box, useBoxStyles } from '../Box';
+import { backgroundColours } from '../Box/useBoxStyles.css';
 import { Button } from '../Button';
 import { Column, Columns } from '../Columns';
 import { Icon } from '../Icon';
@@ -18,9 +19,9 @@ import { Text, useTextStyles } from '../Text';
 
 import * as styles from './Alert.css';
 
-type Intent = keyof Omit<
-	typeof styles.intent,
-	'neutral' | 'shine' | 'primary' | 'secondary'
+type Intent = keyof Pick<
+	typeof backgroundColours,
+	'danger' | 'information' | 'success' | 'warning'
 >;
 
 export interface Props {
@@ -49,10 +50,11 @@ export const Alert: FunctionComponent<Props> = ({
 	dismissible = typeof onRequestClose === 'function',
 }) => {
 	const dismissBtnStyles = useTextStyles({ colour: 'muted' });
+	const intentColourStyles = useTextStyles({ colour: intent });
 
 	return (
 		<Box
-			className={clsx(className, styles.root, styles.intent[intent], {
+			className={clsx(className, intentColourStyles, {
 				[styles.contained]: !inline,
 			})}
 			role="alert"
@@ -65,6 +67,7 @@ export const Alert: FunctionComponent<Props> = ({
 			boxShadow={inline ? 'none' : '4'}
 			padding="2"
 		>
+			<Box className={styles.intentBox} backgroundColour={intent} />
 			<Columns noWrap spaceX="2">
 				<Column noShrink alignSelf="top">
 					<Icon

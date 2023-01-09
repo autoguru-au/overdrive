@@ -44,7 +44,7 @@ export default {
 } as ComponentMeta<typeof Columns>;
 const Template: ComponentStory<typeof Columns> = (args) => (
 	<Columns {...args}>
-		<Column width={['full', '1/3', '1/5']} order={[0,2]} is="section">
+		<Column width={['full', '1/3', '1/5']} order={[0, 2]} is="section">
 			<Box
 				borderColour="gray"
 				borderWidth="1"

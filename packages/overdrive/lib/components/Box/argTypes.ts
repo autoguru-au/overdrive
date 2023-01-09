@@ -51,11 +51,7 @@ const widthOptions: Array<ComponentProps<typeof Box>['width']> = [
 	'full',
 	'none',
 ];
-const oderOptions: Array<ComponentProps<typeof Box>['order']> = [
-	0,
-	1,
-	2,
-];
+const oderOptions: Array<ComponentProps<typeof Box>['order']> = [0, 1, 2];
 export const boxArgTypes: Partial<ArgTypes<ComponentProps<typeof Box>>> = {
 	boxShadow: {
 		options: boxShadowOptions,

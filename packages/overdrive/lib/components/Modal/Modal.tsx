@@ -112,6 +112,9 @@ export const Modal: FunctionComponent<Props> = ({
 						position="fixed"
 						pointerEvents={state === 'CLOSING' ? 'none' : undefined}
 						opacity={state === 'OPEN' ? undefined : 0}
+						backgroundColour={
+							hideBackdrop ? 'transparent' : 'neutral'
+						}
 						className={[
 							styles.backdrop.root,
 							styles.transition,
