@@ -90,13 +90,8 @@ jobs:
             - name: Build Storybook
               run: yarn storybook:build
 
-            - name: Build Playroom
-              run: yarn playroom:build
-
             - name: Stage ready for deploy
               run: |-
-                  mkdir -p site-dist/playroom;
-                  mv .playroom/dist/* site-dist/playroom;
                   mv storybook-static/* site-dist/;
 
             - name: Deploy Site (main)
