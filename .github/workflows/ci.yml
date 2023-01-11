@@ -92,6 +92,7 @@ jobs:
 
             - name: Stage ready for deploy
               run: |-
+                  mkdir -p site-dist;
                   mv storybook-static/* site-dist/;
 
             - name: Deploy Site (main)
