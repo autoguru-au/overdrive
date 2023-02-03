@@ -21,7 +21,7 @@ exports[`<NotchedBase /> should match snapshot for active notch 1`] = `
       </label>
     </div>
     <div
-      class="chromatic-ignore NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_trailing__1r7zdxg7"
+      class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_trailing__1r7zdxg7"
     />
   </div>
 </div>
@@ -48,7 +48,7 @@ exports[`<NotchedBase /> should match snapshot for default notch 1`] = `
       </label>
     </div>
     <div
-      class="chromatic-ignore NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_trailing__1r7zdxg7"
+      class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_trailing__1r7zdxg7"
     />
   </div>
 </div>
@@ -75,7 +75,7 @@ exports[`<NotchedBase /> should match snapshot for dirty and active notch 1`] = 
       </label>
     </div>
     <div
-      class="chromatic-ignore NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_trailing__1r7zdxg7"
+      class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_trailing__1r7zdxg7"
     />
   </div>
 </div>
@@ -102,7 +102,7 @@ exports[`<NotchedBase /> should match snapshot for dirty notch 1`] = `
       </label>
     </div>
     <div
-      class="chromatic-ignore NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_trailing__1r7zdxg7"
+      class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_trailing__1r7zdxg7"
     />
   </div>
 </div>
