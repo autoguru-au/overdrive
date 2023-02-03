@@ -152,6 +152,7 @@ export const NotchedBase: FunctionComponent<Props> = ({
 						className={clsx(
 							styles.borders.middle,
 							borderColourClassName,
+							'chromatic-ignore'
 						)}
 						style={{ width: isEmpty ? 0 : notchedWidth }}
 					>
