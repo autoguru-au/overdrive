@@ -1,5 +1,14 @@
 # @autoguru/overdrive
 
+## 4.11.4
+
+### Patch Changes
+
+-   d7a7217: Upgrades vanilla extract
+-   297c191: Storybook upgrade
+-   f724850: Removes Playroom
+-   a60454d: Chromatic upgrade
+
 ## 4.11.3
 
 ### Patch Changes
