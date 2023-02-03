@@ -21,7 +21,7 @@ import { ColourInput } from '.';
 export default {
 	title: 'Components/Inputs/Colour',
 	component: ColourInput,
-	parameters: { chromatic: { delay: 3000 } },
+	parameters: { chromatic: {  } },
 } as ComponentMeta<typeof ColourInput>;
 
 const defaultColour = '#ec4040';
