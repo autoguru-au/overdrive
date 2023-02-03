@@ -1,13 +1,13 @@
 import type {
 	CSSProperties,
-	StyleWithSelectors,
-} from '@vanilla-extract/css/dist/declarations/src/types';
+	StyleRule,
+} from '@vanilla-extract/css/dist/vanilla-extract-css.cjs';
 
 import { breakpoints } from '../themes/makeTheme';
 
 export const responsiveStyle = (
 	breakpointsEntries: Partial<
-		Record<keyof typeof breakpoints, StyleWithSelectors>
+		Record<keyof typeof breakpoints, StyleRule>
 	>,
 ): CSSProperties => {
 	const styles = {};
