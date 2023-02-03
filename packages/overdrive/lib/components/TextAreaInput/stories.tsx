@@ -8,7 +8,7 @@ import { TextAreaInput } from '.';
 export default {
 	title: 'Components/Inputs/Textarea',
 	component: TextAreaInput,
-	parameters: { chromatic: { delay: 3000 } },
+	parameters: { chromatic: {  } },
 } as ComponentMeta<typeof TextAreaInput>;
 
 const defaultValue =

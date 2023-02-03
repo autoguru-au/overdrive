@@ -14,7 +14,7 @@ import { Positioner } from '.';
 export default {
 	title: 'Utility/Positioner',
 	component: Positioner,
-	parameters: { chromatic: { delay: 3000 } },
+	parameters: { chromatic: {  } },
 	argTypes: {
 		alignment: {
 			options: EAlignment,

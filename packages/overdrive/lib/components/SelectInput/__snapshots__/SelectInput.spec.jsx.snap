@@ -62,7 +62,7 @@ exports[`<SelectInput /> should have some hintText 1`] = `
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5 InputState_natural_default_borderColour__9z39d75"
       />
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 InputState_natural_default_borderColour__9z39d75"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 InputState_natural_default_borderColour__9z39d75 chromatic-ignore"
         style="width: 0px;"
       >
         <label
@@ -146,7 +146,7 @@ exports[`<SelectInput /> should match snapshot 1`] = `
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5 InputState_natural_default_borderColour__9z39d75"
       />
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 InputState_natural_default_borderColour__9z39d75"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 InputState_natural_default_borderColour__9z39d75 chromatic-ignore"
         style="width: 0px;"
       >
         <label
@@ -225,7 +225,7 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5 InputState_activeBorderColour__9z39d71"
       />
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 InputState_activeBorderColour__9z39d71"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 InputState_activeBorderColour__9z39d71 chromatic-ignore"
         style="width: 16px;"
       >
         <label
@@ -304,7 +304,7 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5 InputState_error_default_borderColour__9z39d7d"
       />
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 InputState_error_default_borderColour__9z39d7d"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 InputState_error_default_borderColour__9z39d7d chromatic-ignore"
         style="width: 0px;"
       >
         <label
@@ -383,7 +383,7 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5 InputState_error_default_borderColour__9z39d7d"
       />
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 InputState_error_default_borderColour__9z39d7d"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 InputState_error_default_borderColour__9z39d7d chromatic-ignore"
         style="width: 0px;"
       >
         <label
@@ -462,7 +462,7 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5 InputState_success_default_borderColour__9z39d77"
       />
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 InputState_success_default_borderColour__9z39d77"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 InputState_success_default_borderColour__9z39d77 chromatic-ignore"
         style="width: 0px;"
       >
         <label
@@ -523,7 +523,7 @@ exports[`<SelectInput /> should match snapshot with custom icon 1`] = `
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5 InputState_natural_default_borderColour__9z39d75"
       />
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 InputState_natural_default_borderColour__9z39d75"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 InputState_natural_default_borderColour__9z39d75 chromatic-ignore"
         style="width: 0px;"
       >
         <label
@@ -600,7 +600,7 @@ exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5 InputState_natural_default_borderColour__9z39d75"
       />
       <div
-        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 InputState_natural_default_borderColour__9z39d75"
+        class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 InputState_natural_default_borderColour__9z39d75 chromatic-ignore"
         style="width: 0px;"
       >
         <label

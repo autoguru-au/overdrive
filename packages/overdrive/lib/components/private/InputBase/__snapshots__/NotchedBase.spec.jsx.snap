@@ -11,7 +11,7 @@ exports[`<NotchedBase /> should match snapshot for active notch 1`] = `
       class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5"
     />
     <div
-      class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6"
+      class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 chromatic-ignore"
       style="width: 16px;"
     >
       <label
@@ -38,7 +38,7 @@ exports[`<NotchedBase /> should match snapshot for default notch 1`] = `
       class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5"
     />
     <div
-      class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6"
+      class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 chromatic-ignore"
       style="width: 16px;"
     >
       <label
@@ -65,7 +65,7 @@ exports[`<NotchedBase /> should match snapshot for dirty and active notch 1`] = 
       class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5"
     />
     <div
-      class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6"
+      class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 chromatic-ignore"
       style="width: 16px;"
     >
       <label
@@ -92,7 +92,7 @@ exports[`<NotchedBase /> should match snapshot for dirty notch 1`] = `
       class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg5"
     />
     <div
-      class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6"
+      class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg6 chromatic-ignore"
       style="width: 16px;"
     >
       <label
