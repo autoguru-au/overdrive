@@ -3,7 +3,7 @@
 exports[`<StandardModal /> should match snapshot with title and body 1`] = `
 <body
   class="vars_OD_Base__1gqkyza0"
-  style="background-color: rgb(255, 255, 255); color: rgb(33, 35, 56); overflow: hidden;"
+  style="overflow: hidden;"
 >
   <div />
   <div
@@ -99,7 +99,7 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
 exports[`<StandardModal /> should match snapshot without title and body 1`] = `
 <body
   class="vars_OD_Base__1gqkyza0"
-  style="background-color: rgb(255, 255, 255); color: rgb(33, 35, 56); overflow: hidden;"
+  style="overflow: hidden;"
 >
   <div />
   <div
