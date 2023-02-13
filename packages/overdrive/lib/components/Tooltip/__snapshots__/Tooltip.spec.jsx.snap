@@ -3,7 +3,6 @@
 exports[`<Tolltip /> should match snapshot when closed 1`] = `
 <body
   class="vars_OD_Base__1gqkyza0"
-  style="background-color: rgb(255, 255, 255); color: rgb(33, 35, 56);"
 >
   <div>
     <div>
@@ -24,7 +23,6 @@ exports[`<Tolltip /> should match snapshot when closed 1`] = `
 exports[`<Tolltip /> should match snapshot when opened 1`] = `
 <body
   class="vars_OD_Base__1gqkyza0"
-  style="background-color: rgb(255, 255, 255); color: rgb(33, 35, 56);"
 >
   <div>
     <div>

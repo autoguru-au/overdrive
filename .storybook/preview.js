@@ -18,6 +18,7 @@ import {
 	themeContractVars,
 } from '../packages/overdrive/lib/themes/theme.css';
 import { breakpoints } from '../packages/overdrive/lib/themes/makeTheme';
+import { useDocumentBodyStyles } from '../packages/overdrive/lib/hooks/useDocumentBodyStyles';
 
 const dynamicColours = {
 	bright: {
@@ -32,9 +33,8 @@ const dynamicColours = {
 
 const ThemeProviderComponent = ({ children, context }) => {
 	const { theme, overrideStyles, setThemeValues } = useThemeOverrides();
-
+	useDocumentBodyStyles();
 	useEffect(() => {
-		console.log(context.globals);
 		if (dynamicColours[context.globals.themeColours]) {
 			setThemeValues({
 				primaryColourBackground: null,
