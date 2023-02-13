@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 4.12.0
+
+### Minor Changes
+
+-   af5294c: OverdriveProvider no longer sets document body background and text
+    colours
+
 ## 4.11.5
 
 ### Patch Changes
