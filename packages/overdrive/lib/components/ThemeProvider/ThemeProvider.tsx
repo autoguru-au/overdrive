@@ -1,6 +1,6 @@
 import { invariant } from '@autoguru/utilities';
 import * as React from 'react';
-import { createContext, FunctionComponent, ReactNode, useContext, useMemo } from 'react';
+import { createContext, FunctionComponent, MutableRefObject, ReactNode, useContext, useMemo } from 'react';
 
 import { makeRuntimeTokens, RuntimeTokens } from '../../themes/makeTheme';
 import { themeContractVars } from '../../themes/theme.css';
@@ -10,25 +10,25 @@ type ThemeVars = typeof themeContractVars;
 type ThemeContextType = {
 	vars: ThemeVars;
 	themeClass: string;
+	portalMountPoint?: MutableRefObject<typeof HTMLElement>;
 };
 const themeContext = createContext<ThemeContextType | null>(null);
 const runtimeTokensContext = createContext<RuntimeTokens | null>(null);
 
-export interface Props {
+export interface Props extends ThemeContextType {
 	children?: ReactNode;
-	vars: ThemeVars;
-	themeClass: string;
 	breakpoints?: BreakPoints;
 }
 
 export const ThemeProvider: FunctionComponent<Props> = ({
-	vars,
-	themeClass,
-	children,
-	breakpoints,
-}) => (
+															vars,
+															themeClass,
+															children,
+															breakpoints,
+															portalMountPoint,
+														}) => (
 	<themeContext.Provider
-		value={useMemo(() => ({ vars, themeClass }), [vars])}
+		value={useMemo(() => ({ vars, themeClass, portalMountPoint }), [vars])}
 	>
 		<runtimeTokensContext.Provider
 			value={useMemo(() => makeRuntimeTokens(breakpoints), [])}
