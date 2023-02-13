@@ -8,7 +8,7 @@ import { useTheme } from '../ThemeProvider';
 
 export interface Props {
 	children?: ReactNode;
-	container?: Element;
+	container?: HTMLElement;
 	noThemedWrapper?: boolean;
 }
 
@@ -18,7 +18,7 @@ function Portal(
 	{ children, container, noThemedWrapper }: Props,
 	ref: Ref<typeof container>,
 ) {
-	const themeClass = useTheme()?.themeClass;
+	const { themeClass, portalMountPoint } = useTheme();
 
 	const [mountNode, setMountNode] = useState<RefValue<typeof ref> | null>(
 		null,
@@ -26,8 +26,14 @@ function Portal(
 
 	if (isBrowser) {
 		useLayoutEffect(() => {
-			setMountNode(isHtmlElement(container) ? container : document.body);
-		}, [container]);
+			let mountElement = document.body;
+			if (isHtmlElement(container))
+				mountElement = container;
+			else if (isHtmlElement(portalMountPoint?.current)) { // @ts-ignore
+				mountElement = portalMountPoint.current;
+			}
+			setMountNode(mountElement);
+		}, [container, portalMountPoint?.current]);
 
 		useLayoutEffect(() => {
 			if (mountNode) {

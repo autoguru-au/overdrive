@@ -11,7 +11,7 @@ import {
 	useThemeOverrides,
 } from '@autoguru/overdrive/lib';
 import * as React from 'react';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { DocsContainer, DocsPage } from '@storybook/addon-docs';
 import {
 	container,
@@ -54,21 +54,22 @@ const ThemeProviderComponent = ({ children, context }) => {
 			setThemeValues({
 				primaryColourBackground: primaryColourBackground.standard,
 				primaryColourBackgroundMild: primaryColourBackground.mild,
-				primaryColourBackgroundStrong: primaryColourBackground.stron,
+				primaryColourBackgroundStrong: primaryColourBackground.strong,
 				primaryColourBorder,
 				primaryColourForeground,
 			});
 		}
 	}, [theme, context.globals.themeColours]);
-
+	const ref = useRef();
 	return (
 		<OverdriveProvider
+			portalMountPoint={ref}
 			noBodyLevelTheming={false}
 			vars={themeContractVars}
 			breakpoints={breakpoints}
 			themeClass={theme.themeRef}
 		>
-			<Box className={container} style={overrideStyles}>
+			<Box ref={ref} className={container} style={overrideStyles}>
 				{children}
 			</Box>
 		</OverdriveProvider>

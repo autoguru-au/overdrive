@@ -9,7 +9,7 @@ export interface Props extends ComponentProps<typeof ThemeProvider> {
 	// When set to true theme className must be present in a
 	// parent dom element of your components including portals.
 	// OD Portal component automatically adds theme class to the mounting node
-	noBodyLevelTheming: boolean;
+	noBodyLevelTheming?: boolean;
 	children?: ReactNode;
 }
 
@@ -18,18 +18,16 @@ export const OverdriveProvider: FunctionComponent<Props> = ({
 	vars,
 	themeClass,
 	breakpoints,
+	portalMountPoint,
 	children,
 }) => {
 	useEffect(() => {
 		if (!isBrowser) return;
+		document.body.style.backgroundColor = tokens.body.backgroundColour;
+		document.body.style.color = tokens.body.colour;
 		if (!noBodyLevelTheming) {
 			// Body has theme class applied to it, so we use css vars to apply body styles
 			document.body.classList.add(themeClass);
-			document.body.style.backgroundColor = vars.body.backgroundColour;
-			document.body.style.color = vars.body.colour;
-		} else {
-			document.body.style.backgroundColor = tokens.body.backgroundColour;
-			document.body.style.color = tokens.body.colour;
 		}
 	}, [vars, themeClass]);
 
@@ -38,6 +36,7 @@ export const OverdriveProvider: FunctionComponent<Props> = ({
 			vars={vars}
 			themeClass={themeClass}
 			breakpoints={breakpoints}
+			portalMountPoint={portalMountPoint}
 		>
 			{children}
 		</ThemeProvider>
