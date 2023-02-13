@@ -35,7 +35,6 @@ const ThemeProviderComponent = ({ children, context }) => {
 	const { theme, overrideStyles, setThemeValues } = useThemeOverrides();
 	useDocumentBodyStyles();
 	useEffect(() => {
-		console.log(context.globals);
 		if (dynamicColours[context.globals.themeColours]) {
 			setThemeValues({
 				primaryColourBackground: null,
