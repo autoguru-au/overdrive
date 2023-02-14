@@ -1,5 +1,6 @@
-import { tokens } from '../../themes/base/tokens';
 import { useEffect } from 'react';
+
+import { tokens } from '../../themes/base/tokens';
 import { isBrowser } from '../../utils';
 
 export const useDocumentBodyStyles = () => {

@@ -1,14 +1,12 @@
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import { ComponentProps, Reducer, useMemo, useReducer } from 'react';
 
+import { tokens } from '../../themes/base/tokens';
 import { shadedColour } from '../../themes/helpers';
 import { themeContractVars } from '../../themes/theme.css';
 import { Tokens } from '../../themes/tokens';
 
-import {
-	ThemeOverrideProvider,
-	ThemeOverridesValues,
-} from './ThemeOverrideProvider';
+import { ThemeOverrideProvider, ThemeOverridesValues } from './ThemeOverrideProvider';
 
 interface Props
 	extends Omit<
@@ -56,13 +54,13 @@ const reducer: Reducer<OverrideValues, Action> = (prevState, action) => {
 	}
 };
 export const useBuildThemeOverrides = ({
-	primaryColourBackground: incomingPrimaryColourBackground,
-	primaryColourForeground: incomingPrimaryColourForeground,
-	mode,
-	primaryColourBackgroundStrong: incomingPrimaryColourBackgroundStrong,
-	primaryColourBackgroundMild: incomingPrimaryColourBackgroundMild,
-	primaryColourBorder: incomingPrimaryColourBorder,
-}: Props): Returns => {
+										   primaryColourBackground: incomingPrimaryColourBackground = tokens.colours.intent.primary.background.standard,
+										   primaryColourForeground: incomingPrimaryColourForeground = tokens.colours.intent.primary.foreground,
+										   mode,
+										   primaryColourBackgroundStrong: incomingPrimaryColourBackgroundStrong,
+										   primaryColourBackgroundMild: incomingPrimaryColourBackgroundMild,
+										   primaryColourBorder: incomingPrimaryColourBorder,
+									   }: Props): Returns => {
 	const [
 		{
 			primaryColourBorder,
