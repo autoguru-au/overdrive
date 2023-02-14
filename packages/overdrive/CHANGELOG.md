@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.12.1
+
+### Patch Changes
+
+-   9474d14: Theme override no longer has primary colours as mandatory
+
 ## 4.12.0
 
 ### Minor Changes
