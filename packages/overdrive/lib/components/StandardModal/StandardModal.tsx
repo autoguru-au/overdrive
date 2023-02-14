@@ -1,10 +1,6 @@
 import { WindowCloseIcon } from '@autoguru/icons';
 import clsx from 'clsx';
-import type {
-	ComponentProps,
-	FunctionComponent,
-	MouseEventHandler,
-} from 'react';
+import type { ComponentProps, FunctionComponent, MouseEventHandler } from 'react';
 import * as React from 'react';
 import { useLayoutEffect, useRef } from 'react';
 
@@ -33,13 +29,16 @@ export interface Props extends ComponentProps<typeof Modal> {
 }
 
 export const StandardModal: FunctionComponent<Props> = ({
-	isOpen,
-	size = 'standard',
-	className = '',
-	title,
-	onRequestClose,
-	children,
-}) => {
+															isOpen,
+															size = 'standard',
+															className = '',
+															title,
+															container,
+															noThemedWrapper,
+															ref,
+															onRequestClose,
+															children,
+														}) => {
 	const titleId = useId();
 	const locked = useRef<boolean>(true);
 
@@ -74,15 +73,19 @@ export const StandardModal: FunctionComponent<Props> = ({
 	}
 
 	return (
-		<Modal isOpen={isOpen} onRequestClose={onRequestClose}>
+		<Modal isOpen={isOpen}
+			   ref={ref}
+			   noThemedWrapper={noThemedWrapper}
+			   container={container}
+			   onRequestClose={onRequestClose}>
 			<Box
 				className={styles.container}
-				height="full"
-				display="flex"
-				alignItems="center"
-				justifyContent="center"
+				height='full'
+				display='flex'
+				alignItems='center'
+				justifyContent='center'
 				aria-hidden={isOpen ? 'false' : 'true'}
-				role="none presentation"
+				role='none presentation'
 				onMouseDown={unlockModal}
 				onClick={backdropHandler}
 			>

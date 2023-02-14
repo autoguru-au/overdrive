@@ -1,20 +1,10 @@
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import * as React from 'react';
-import {
-	Context,
-	createContext,
-	FunctionComponent,
-	ReactNode,
-	useContext,
-	useMemo,
-} from 'react';
+import { Context, createContext, FunctionComponent, ReactNode, useContext, useMemo } from 'react';
 
 import { default as defaultTheme } from '../../themes/base';
 
-import {
-	OverrideValues,
-	useBuildThemeOverrides,
-} from './useBuildThemeOverrides';
+import { OverrideValues, useBuildThemeOverrides } from './useBuildThemeOverrides';
 
 type Theme = typeof defaultTheme;
 
@@ -33,13 +23,15 @@ export interface ThemeOverridesValues {
 interface Props
 	extends Pick<
 		ThemeOverridesValues,
-		| 'primaryColourBackground'
-		| 'primaryColourForeground'
 		| 'theme'
 		| 'primaryColourBackgroundMild'
 		| 'primaryColourBackgroundStrong'
 		| 'primaryColourBorder'
-	> {
+	>, Partial<Pick<
+		ThemeOverridesValues,
+		| 'primaryColourBackground'
+		| 'primaryColourForeground'
+	>> {
 	children?: ReactNode | ReactNode[];
 }
 

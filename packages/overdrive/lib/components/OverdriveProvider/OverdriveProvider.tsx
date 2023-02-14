@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { ComponentProps, FunctionComponent, ReactNode, useEffect } from 'react';
+
 import { isBrowser } from '../../utils';
 import { ThemeProvider } from '../ThemeProvider/ThemeProvider';
 
