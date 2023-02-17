@@ -1,5 +1,5 @@
 import { assignInlineVars } from '@vanilla-extract/dynamic';
-import { ComponentProps, Reducer, useMemo, useReducer } from 'react';
+import { ComponentProps, Reducer, useEffect, useMemo, useReducer } from 'react';
 
 import { tokens } from '../../themes/base/tokens';
 import { shadedColour } from '../../themes/helpers';
@@ -54,9 +54,9 @@ const reducer: Reducer<OverrideValues, Action> = (prevState, action) => {
 	}
 };
 export const useBuildThemeOverrides = ({
+										   mode,
 										   primaryColourBackground: incomingPrimaryColourBackground = tokens.colours.intent.primary.background.standard,
 										   primaryColourForeground: incomingPrimaryColourForeground = tokens.colours.intent.primary.foreground,
-										   mode,
 										   primaryColourBackgroundStrong: incomingPrimaryColourBackgroundStrong,
 										   primaryColourBackgroundMild: incomingPrimaryColourBackgroundMild,
 										   primaryColourBorder: incomingPrimaryColourBorder,
@@ -78,6 +78,26 @@ export const useBuildThemeOverrides = ({
 		primaryColourBackgroundMild: incomingPrimaryColourBackgroundMild,
 		primaryColourBackgroundStrong: incomingPrimaryColourBackgroundStrong,
 	});
+
+	useEffect(() => {
+		dispatch({
+			type: 'SET_THEME_VALUES',
+			payload: {
+				primaryColourBackground: incomingPrimaryColourBackground,
+				primaryColourForeground: incomingPrimaryColourForeground,
+				primaryColourBorder: incomingPrimaryColourBorder,
+				primaryColourBackgroundMild: incomingPrimaryColourBackgroundMild,
+				primaryColourBackgroundStrong: incomingPrimaryColourBackgroundStrong,
+			},
+		});
+	}, [
+		mode,
+		incomingPrimaryColourBackground,
+		incomingPrimaryColourForeground,
+		incomingPrimaryColourBackgroundStrong,
+		incomingPrimaryColourBackgroundMild,
+		incomingPrimaryColourBorder,
+	]);
 
 	const overrideStyles = useMemo<ReturnType<typeof assignInlineVars>>(() => {
 		const mildPrimary =
@@ -124,9 +144,9 @@ export const useBuildThemeOverrides = ({
 		primaryColourBackgroundStrong,
 		primaryColourBorder,
 		primaryColourForeground,
+		mode,
 		incomingPrimaryColourBackground,
 		incomingPrimaryColourForeground,
-		mode,
 		incomingPrimaryColourBackgroundStrong,
 		incomingPrimaryColourBackgroundMild,
 		incomingPrimaryColourBorder,
