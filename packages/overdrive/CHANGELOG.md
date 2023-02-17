@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 4.12.2
+
+### Patch Changes
+
+-   ba357a8: ThemeOveeriders: React to upstream updates
+-   ba357a8: Section: Passes ref over to dom
+
 ## 4.12.1
 
 ### Patch Changes
