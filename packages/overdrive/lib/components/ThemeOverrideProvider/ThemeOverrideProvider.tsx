@@ -70,7 +70,6 @@ export const ThemeOverrideProvider: FunctionComponent<Props> = ({
 					overrides,
 					primaryColourBackground,
 					primaryColourForeground,
-					theme,
 					primaryColourBackgroundMild,
 					primaryColourBackgroundStrong,
 					primaryColourBorder,
