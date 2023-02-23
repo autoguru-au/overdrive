@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.12.3
+
+### Patch Changes
+
+-   dc1fdd7: Improved dynamic theming
+
 ## 4.12.2
 
 ### Patch Changes
