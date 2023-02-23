@@ -6,7 +6,10 @@ import { shadedColour } from '../../themes/helpers';
 import { themeContractVars } from '../../themes/theme.css';
 import { Tokens } from '../../themes/tokens';
 
-import { ThemeOverrideProvider, ThemeOverridesValues } from './ThemeOverrideProvider';
+import {
+	ThemeOverrideProvider,
+	ThemeOverridesValues,
+} from './ThemeOverrideProvider';
 
 interface Props
 	extends Omit<
@@ -54,13 +57,15 @@ const reducer: Reducer<OverrideValues, Action> = (prevState, action) => {
 	}
 };
 export const useBuildThemeOverrides = ({
-										   mode,
-										   primaryColourBackground: incomingPrimaryColourBackground = tokens.colours.intent.primary.background.standard,
-										   primaryColourForeground: incomingPrimaryColourForeground = tokens.colours.intent.primary.foreground,
-										   primaryColourBackgroundStrong: incomingPrimaryColourBackgroundStrong,
-										   primaryColourBackgroundMild: incomingPrimaryColourBackgroundMild,
-										   primaryColourBorder: incomingPrimaryColourBorder,
-									   }: Props): Returns => {
+	mode,
+	primaryColourBackground: incomingPrimaryColourBackground = tokens.colours
+		.intent.primary.background.standard,
+	primaryColourForeground: incomingPrimaryColourForeground = tokens.colours
+		.intent.primary.foreground,
+	primaryColourBackgroundStrong: incomingPrimaryColourBackgroundStrong,
+	primaryColourBackgroundMild: incomingPrimaryColourBackgroundMild,
+	primaryColourBorder: incomingPrimaryColourBorder,
+}: Props): Returns => {
 	const [
 		{
 			primaryColourBorder,
@@ -86,8 +91,10 @@ export const useBuildThemeOverrides = ({
 				primaryColourBackground: incomingPrimaryColourBackground,
 				primaryColourForeground: incomingPrimaryColourForeground,
 				primaryColourBorder: incomingPrimaryColourBorder,
-				primaryColourBackgroundMild: incomingPrimaryColourBackgroundMild,
-				primaryColourBackgroundStrong: incomingPrimaryColourBackgroundStrong,
+				primaryColourBackgroundMild:
+					incomingPrimaryColourBackgroundMild,
+				primaryColourBackgroundStrong:
+					incomingPrimaryColourBackgroundStrong,
 			},
 		});
 	}, [
@@ -158,6 +165,9 @@ export const useBuildThemeOverrides = ({
 			overrideStyles,
 			primaryColourBackground,
 			primaryColourForeground,
+			primaryColourBorder,
+			primaryColourBackgroundStrong,
+			primaryColourBackgroundMild,
 			setThemeValues: (values: Partial<OverrideValues>) =>
 				dispatch({
 					type: 'SET_THEME_VALUES',

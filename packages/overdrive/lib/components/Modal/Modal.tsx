@@ -1,5 +1,10 @@
 import { warning } from '@autoguru/utilities';
-import type { ComponentProps, ComponentType, FunctionComponent, Reducer } from 'react';
+import type {
+	ComponentProps,
+	ComponentType,
+	FunctionComponent,
+	Reducer,
+} from 'react';
 import * as React from 'react';
 import { ReactNode, useEffect, useReducer } from 'react';
 import FocusLock from 'react-focus-lock';
@@ -70,14 +75,14 @@ const reducer: Reducer<State, Action> = (prevState, action) => {
 };
 
 export const Modal: FunctionComponent<Props> = ({
-													isOpen,
-													hideBackdrop = false,
-													ref,
-													noThemedWrapper,
-													container,
-													onRequestClose,
-													children,
-												}) => {
+	isOpen,
+	hideBackdrop = false,
+	ref,
+	noThemedWrapper,
+	container,
+	onRequestClose,
+	children,
+}) => {
 	const [state, dispatch] = useReducer(reducer, 'INITIAL');
 
 	const handleBackdropClick = useEventCallback((event) => {
@@ -101,9 +106,11 @@ export const Modal: FunctionComponent<Props> = ({
 	}, [state]);
 
 	return (
-		<Portal ref={ref}
-				noThemedWrapper={noThemedWrapper}
-				container={container}>
+		<Portal
+			ref={ref}
+			noThemedWrapper={noThemedWrapper}
+			container={container}
+		>
 			{state === 'OPENING' || state === 'OPEN' || state === 'CLOSING' ? (
 				<FocusLock
 					returnFocus
@@ -113,7 +120,7 @@ export const Modal: FunctionComponent<Props> = ({
 					}}
 				>
 					<Box
-						aria-hidden='true'
+						aria-hidden="true"
 						position="fixed"
 						pointerEvents={state === 'CLOSING' ? 'none' : undefined}
 						opacity={state === 'OPEN' ? undefined : 0}

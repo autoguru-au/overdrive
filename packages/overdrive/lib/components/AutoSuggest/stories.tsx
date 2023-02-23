@@ -120,7 +120,7 @@ export default {
 			},
 		},
 	},
-	parameters: { chromatic: {  } },
+	parameters: { chromatic: {} },
 } as ComponentMeta<typeof AutoSuggest>;
 
 const Template: ComponentStory<typeof AutoSuggest> = (args) => (

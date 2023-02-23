@@ -27,9 +27,9 @@ function Portal(
 	if (isBrowser) {
 		useLayoutEffect(() => {
 			let mountElement = document.body;
-			if (isHtmlElement(container))
-				mountElement = container;
-			else if (isHtmlElement(portalMountPoint?.current)) { // @ts-ignore
+			if (isHtmlElement(container)) mountElement = container;
+			else if (isHtmlElement(portalMountPoint?.current)) {
+				// @ts-ignore
 				mountElement = portalMountPoint.current;
 			}
 			setMountNode(mountElement);

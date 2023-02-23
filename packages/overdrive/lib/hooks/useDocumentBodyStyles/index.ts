@@ -9,5 +9,4 @@ export const useDocumentBodyStyles = () => {
 		document.body.style.backgroundColor = tokens.body.backgroundColour;
 		document.body.style.color = tokens.body.colour;
 	}, []);
-
 };

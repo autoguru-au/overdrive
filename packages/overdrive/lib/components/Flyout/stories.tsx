@@ -28,7 +28,7 @@ export default {
 			},
 		},
 	},
-	parameters: { chromatic: {  } },
+	parameters: { chromatic: {} },
 } as ComponentMeta<typeof Flyout>;
 
 const sharedProps: Omit<ComponentProps<typeof Flyout>, 'triggerRef'> = {
