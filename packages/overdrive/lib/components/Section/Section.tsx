@@ -6,7 +6,8 @@ import { Box } from '../Box';
 
 import * as styles from './Section.css';
 
-export interface Props extends Pick<ComponentProps<typeof Box>, 'paddingX' | 'ref'> {
+export interface Props
+	extends Pick<ComponentProps<typeof Box>, 'paddingX' | 'ref'> {
 	width?: keyof typeof styles.width;
 	children?: ReactNode;
 }
@@ -15,7 +16,7 @@ export const Section: FunctionComponent<Props> = ({
 	children,
 	width = 'medium',
 	paddingX,
-	ref
+	ref,
 }) => (
 	<Box
 		ref={ref}

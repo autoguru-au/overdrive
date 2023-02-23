@@ -21,7 +21,7 @@ import { TextInput } from '.';
 export default {
 	title: 'Components/Inputs/Text',
 	component: TextInput,
-	parameters: { chromatic: {  } },
+	parameters: { chromatic: {} },
 } as ComponentMeta<typeof TextInput>;
 
 const defaultValue = 'Jane Doe';

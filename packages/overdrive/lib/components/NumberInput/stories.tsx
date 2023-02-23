@@ -23,7 +23,7 @@ const meta: ComponentMeta<typeof NumberInput> = {
 	title: 'Components/Inputs/Number',
 	component: NumberInput,
 	parameters: {
-		chromatic: {  },
+		chromatic: {},
 	},
 };
 export default meta;

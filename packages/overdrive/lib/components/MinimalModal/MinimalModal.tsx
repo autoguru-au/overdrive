@@ -57,11 +57,13 @@ export const MinimalModal: FunctionComponent<Props> = ({
 	}
 
 	return (
-		<Modal isOpen={isOpen}
-			   onRequestClose={onRequestClose}
-			   ref={ref}
-			   noThemedWrapper={noThemedWrapper}
-			   container={container}>
+		<Modal
+			isOpen={isOpen}
+			onRequestClose={onRequestClose}
+			ref={ref}
+			noThemedWrapper={noThemedWrapper}
+			container={container}
+		>
 			<Box
 				className={[styles.container, className]}
 				height="full"

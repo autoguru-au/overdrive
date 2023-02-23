@@ -6,9 +6,7 @@ import type {
 import { breakpoints } from '../themes/makeTheme';
 
 export const responsiveStyle = (
-	breakpointsEntries: Partial<
-		Record<keyof typeof breakpoints, StyleRule>
-	>,
+	breakpointsEntries: Partial<Record<keyof typeof breakpoints, StyleRule>>,
 ): CSSProperties => {
 	const styles = {};
 

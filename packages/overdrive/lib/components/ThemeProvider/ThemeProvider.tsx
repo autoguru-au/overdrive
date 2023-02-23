@@ -1,6 +1,13 @@
 import { invariant } from '@autoguru/utilities';
 import * as React from 'react';
-import { createContext, FunctionComponent, MutableRefObject, ReactNode, useContext, useMemo } from 'react';
+import {
+	createContext,
+	FunctionComponent,
+	MutableRefObject,
+	ReactNode,
+	useContext,
+	useMemo,
+} from 'react';
 
 import { makeRuntimeTokens, RuntimeTokens } from '../../themes/makeTheme';
 import { themeContractVars } from '../../themes/theme.css';
@@ -21,12 +28,12 @@ export interface Props extends ThemeContextType {
 }
 
 export const ThemeProvider: FunctionComponent<Props> = ({
-															vars,
-															themeClass,
-															children,
-															breakpoints,
-															portalMountPoint,
-														}) => (
+	vars,
+	themeClass,
+	children,
+	breakpoints,
+	portalMountPoint,
+}) => (
 	<themeContext.Provider
 		value={useMemo(() => ({ vars, themeClass, portalMountPoint }), [vars])}
 	>
