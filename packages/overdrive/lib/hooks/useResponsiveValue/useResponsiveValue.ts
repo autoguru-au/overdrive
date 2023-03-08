@@ -1,19 +1,24 @@
 import { useMemo } from 'react';
 
 import { useMedia } from '../..';
+import { isBrowser } from '../../utils';
 import { getEarliestKnownToken } from '../../utils/resolveResponsiveProps';
 import { ResponsiveProp } from '../../utils/responsiveProps.css';
 
 export function useResponsiveValue<T extends string | number | boolean | {}>(
 	responsiveValue: ResponsiveProp<T>,
-	fallbackCase = false,
-): T {
+	serverFallbackCase?: T,
+): T | null {
+	if (!isBrowser)
+		// This is ok as it will only run on server
+		return serverFallbackCase || null;
 	if (!Array.isArray(responsiveValue)) return responsiveValue;
-	if (fallbackCase) return responsiveValue[0];
-	const activeBP: number = useMedia(
-		['mobile', 'tablet', 'desktop', 'largeDesktop'],
-		fallbackCase,
-	).reduce((activeBreakPoint, current, index) => {
+	const activeBP: number = useMedia([
+		'mobile',
+		'tablet',
+		'desktop',
+		'largeDesktop',
+	]).reduce((activeBreakPoint, current, index) => {
 		if (current) activeBreakPoint = index + 1;
 
 		return activeBreakPoint;
