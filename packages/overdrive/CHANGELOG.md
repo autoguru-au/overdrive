@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.12.4
+
+### Patch Changes
+
+-   7c152a0: useResponsiveValue: Gets serverside fallback value
+
 ## 4.12.3
 
 ### Patch Changes
