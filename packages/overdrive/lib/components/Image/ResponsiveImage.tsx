@@ -18,7 +18,7 @@ export interface Props
 	 * If `imageWidth` is provided, it will be exactly used and no automatic `srcSet` will be defined and `sizes` will have no effect.
 	 * `imageWidth` can be a single value e.g. `4` to be used for all screen sizes or an array to be used for responsive values e.g. `[4, ,6, 8]`
 	 **/
-	imageWidth?: ResponsiveProp<keyof typeof widthMap>;
+	imageWidth: ResponsiveProp<keyof typeof widthMap>;
 
 	/**
 	 * Only effective if `ImageServerProvider` is defined upstream.
@@ -31,7 +31,7 @@ export interface Props
 	 * of the size of img tag on the page. So a `100vh` set for a large desktop might fetch a `3840px` wide
 	 * asset even if the image only occupies 10px of the page width.
 	 **/
-	sizes?: ResponsiveProp<string>;
+	sizes: ResponsiveProp<string>;
 
 	/**
 	 * Only effective if `ImageServerProvider` is defined upstream.
@@ -52,7 +52,6 @@ export const ResponsiveImage: FunctionComponent<Props> = ({
 		'Image must be a number between 1 and 100.',
 	);
 
-	// @ts-ignore
 	const imageWidth = useResponsiveValue(imageWidthList);
 	const sizes = useResponsiveValue(sizesList);
 
@@ -79,7 +78,12 @@ export const ResponsiveImage: FunctionComponent<Props> = ({
 	);
 
 	return (
-		<SimpleImage sizes={sizes} srcSet={srcset} src={src} {...imgProps} />
+		<SimpleImage
+			sizes={sizes || void 0}
+			srcSet={srcset}
+			src={src}
+			{...imgProps}
+		/>
 	);
 };
 
