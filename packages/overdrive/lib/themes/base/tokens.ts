@@ -63,6 +63,8 @@ const colours: ColourMap = {
 	},
 };
 
+export const defaultGamut = buildColourGamut(colours);
+
 const white = '#fff';
 const secondaryForeground = colours.gray['700'];
 export const tokens: Tokens = {
@@ -90,7 +92,7 @@ export const tokens: Tokens = {
 	},
 	colours: {
 		gamut: {
-			...buildColourGamut(colours),
+			...defaultGamut,
 			white,
 		},
 		foreground: {

@@ -1,6 +1,7 @@
 import { ArgTypes } from '@storybook/react';
 import { ComponentProps } from 'react';
 
+import { defaultGamut } from '../../themes/base/tokens';
 import { Tokens } from '../../themes/tokens';
 
 import { Box } from './Box';
@@ -53,6 +54,12 @@ const widthOptions: Array<ComponentProps<typeof Box>['width']> = [
 ];
 const oderOptions: Array<ComponentProps<typeof Box>['order']> = [0, 1, 2];
 export const boxArgTypes: Partial<ArgTypes<ComponentProps<typeof Box>>> = {
+	backgroundColour: {
+		options: Object.keys(defaultGamut),
+		control: {
+			type: 'select',
+		},
+	},
 	boxShadow: {
 		options: boxShadowOptions,
 		control: {
