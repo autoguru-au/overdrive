@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.13.0
+
+### Minor Changes
+
+-   90ac84e: Adds SliderProgress component
+
 ## 4.12.4
 
 ### Patch Changes
