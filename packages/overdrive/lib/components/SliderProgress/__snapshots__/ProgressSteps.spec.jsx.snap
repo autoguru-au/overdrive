@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Section /> should match the snapshot for 8 items 1`] = `
+<div
+  class="SliderProgress_root__29afw90"
+  style="grid-template-columns: repeat(8, 1fr);"
+>
+  <div
+    class="reset_block__6swfds3 useBoxStyles_position_relative__7o6k06f1 SliderProgress_step__29afw91"
+  >
+    <div
+      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06ff useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_empty__1sg9vym0"
+    />
+    <div
+      class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fa useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3 ProgressStep_passed__1sg9vym6"
+      style="animation-duration: 1s;"
+    />
+  </div>
+  <div
+    class="reset_block__6swfds3 useBoxStyles_position_relative__7o6k06f1 SliderProgress_step__29afw91"
+  >
+    <div
+      class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fa useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_empty__1sg9vym0"
+    />
+    <div
+      class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fa useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3 ProgressStep_active__1sg9vym4"
+      style="animation-duration: 1s;"
+    />
+  </div>
+  <div
+    class="reset_block__6swfds3 useBoxStyles_position_relative__7o6k06f1 SliderProgress_step__29afw91"
+  >
+    <div
+      class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fa useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_empty__1sg9vym0"
+    />
+    <div
+      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06ff useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3"
+      style="animation-duration: 1s;"
+    />
+  </div>
+  <div
+    class="reset_block__6swfds3 useBoxStyles_position_relative__7o6k06f1 SliderProgress_step__29afw91"
+  >
+    <div
+      class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fa useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_empty__1sg9vym0"
+    />
+    <div
+      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06ff useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3"
+      style="animation-duration: 1s;"
+    />
+  </div>
+  <div
+    class="reset_block__6swfds3 useBoxStyles_position_relative__7o6k06f1 SliderProgress_step__29afw91"
+  >
+    <div
+      class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fa useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_empty__1sg9vym0"
+    />
+    <div
+      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06ff useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3"
+      style="animation-duration: 1s;"
+    />
+  </div>
+  <div
+    class="reset_block__6swfds3 useBoxStyles_position_relative__7o6k06f1 SliderProgress_step__29afw91"
+  >
+    <div
+      class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fa useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_empty__1sg9vym0"
+    />
+    <div
+      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06ff useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3"
+      style="animation-duration: 1s;"
+    />
+  </div>
+  <div
+    class="reset_block__6swfds3 useBoxStyles_position_relative__7o6k06f1 SliderProgress_step__29afw91"
+  >
+    <div
+      class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fa useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_empty__1sg9vym0"
+    />
+    <div
+      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06ff useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3"
+      style="animation-duration: 1s;"
+    />
+  </div>
+  <div
+    class="reset_block__6swfds3 useBoxStyles_position_relative__7o6k06f1 SliderProgress_step__29afw91"
+  >
+    <div
+      class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fa useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_empty__1sg9vym0"
+    />
+    <div
+      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06ff useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3"
+      style="animation-duration: 1s;"
+    />
+  </div>
+</div>
+`;
+
+exports[`<Section /> should match the snapshot with custom background 1`] = `
+<div
+  class="SliderProgress_root__29afw90"
+  style="grid-template-columns: repeat(3, 1fr);"
+>
+  <div
+    class="reset_block__6swfds3 useBoxStyles_position_relative__7o6k06f1 SliderProgress_step__29afw91"
+  >
+    <div
+      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06ff useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_yellow500__7o6k06e0 ProgressStep_item__1sg9vym2 ProgressStep_empty__1sg9vym0"
+    />
+    <div
+      class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fa useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_yellow500__7o6k06e0 ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3 ProgressStep_passed__1sg9vym6"
+      style="animation-duration: 1s;"
+    />
+  </div>
+  <div
+    class="reset_block__6swfds3 useBoxStyles_position_relative__7o6k06f1 SliderProgress_step__29afw91"
+  >
+    <div
+      class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fa useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_yellow500__7o6k06e0 ProgressStep_item__1sg9vym2 ProgressStep_empty__1sg9vym0"
+    />
+    <div
+      class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fa useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_yellow500__7o6k06e0 ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3 ProgressStep_active__1sg9vym4"
+      style="animation-duration: 1s;"
+    />
+  </div>
+  <div
+    class="reset_block__6swfds3 useBoxStyles_position_relative__7o6k06f1 SliderProgress_step__29afw91"
+  >
+    <div
+      class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fa useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_yellow500__7o6k06e0 ProgressStep_item__1sg9vym2 ProgressStep_empty__1sg9vym0"
+    />
+    <div
+      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06ff useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_yellow500__7o6k06e0 ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3"
+      style="animation-duration: 1s;"
+    />
+  </div>
+</div>
+`;

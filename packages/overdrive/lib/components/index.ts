@@ -56,3 +56,4 @@ export * from './TextBubble';
 export * from './ColourInput';
 export * from './DividerLine';
 export * from './ThemeOverrideProvider';
+export * from './SliderProgress';
