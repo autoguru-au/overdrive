@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.13.1
+
+### Patch Changes
+
+-   85c36c2: Storybook: Fixed fynamic theme colours
+
 ## 4.13.0
 
 ### Minor Changes
