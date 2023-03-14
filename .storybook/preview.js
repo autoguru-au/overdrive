@@ -13,10 +13,7 @@ import {
 import * as React from 'react';
 import { useEffect, useRef } from 'react';
 import { DocsContainer, DocsPage } from '@storybook/addon-docs';
-import {
-	container,
-	themeContractVars,
-} from '../packages/overdrive/lib/themes/theme.css';
+import { container, themeContractVars } from '../packages/overdrive/lib/themes/theme.css';
 import { breakpoints } from '../packages/overdrive/lib/themes/makeTheme';
 import { useDocumentBodyStyles } from '../packages/overdrive/lib/hooks/useDocumentBodyStyles';
 
@@ -32,7 +29,12 @@ const dynamicColours = {
 };
 
 const ThemeProviderComponent = ({ children, context }) => {
-	const { theme, overrideStyles, setThemeValues } = useThemeOverrides();
+	const { theme, overrideStyles, setThemeValues } = useThemeOverrides({
+		primaryColourBackground: dynamicColours[context.globals.themeColours]?.primaryColourBackground,
+		primaryColourForeground: dynamicColours[context.globals.themeColours]?.primaryColourForeground,
+	});
+	console.log({ primaryColourBackground: dynamicColours[context.globals.themeColours]?.primaryColourBackground });
+	console.log({ overrideStyles: overrideStyles });
 	useDocumentBodyStyles();
 	useEffect(() => {
 		if (dynamicColours[context.globals.themeColours]) {
@@ -43,20 +45,6 @@ const ThemeProviderComponent = ({ children, context }) => {
 				primaryColourBorder: null,
 				primaryColourForeground: null,
 				...dynamicColours[context.globals.themeColours],
-			});
-		} else {
-			const tokens = theme.tokens;
-			const primaryColourBackground =
-				tokens.colours.intent.primary.background;
-			const primaryColourBorder = tokens.colours.intent.primary.border;
-			const primaryColourForeground =
-				tokens.colours.intent.primary.foreground;
-			setThemeValues({
-				primaryColourBackground: primaryColourBackground.standard,
-				primaryColourBackgroundMild: primaryColourBackground.mild,
-				primaryColourBackgroundStrong: primaryColourBackground.strong,
-				primaryColourBorder,
-				primaryColourForeground,
 			});
 		}
 	}, [theme, context.globals.themeColours]);
@@ -81,16 +69,17 @@ const withThemeProvider = (Story, context) => {
 	const primaryColourBackground = tokens.colours.intent.primary.background;
 	const primaryColourBorder = tokens.colours.intent.primary.border;
 	const primaryColourForeground = tokens.colours.intent.primary.foreground;
+	const overrideColours = dynamicColours[context.globals.themeColours];
 	return !isChromatic() ? (
 		<ThemeOverrideProvider
-			primaryColourBackground={primaryColourBackground.standard}
-			primaryColourForeground={primaryColourForeground}
-			primaryColourBackgroundMild={primaryColourBackground.mild}
-			primaryColourBackgroundStrong={primaryColourBackground.strong}
-			primaryColourBorder={primaryColourBorder}
+			primaryColourBackground={overrideColours ? overrideColours.primaryColourBackground : primaryColourBackground.standard}
+			primaryColourForeground={overrideColours ? overrideColours.primaryColourForeground : primaryColourForeground}
+			primaryColourBackgroundMild={overrideColours ? null : primaryColourBackground.mild}
+			primaryColourBackgroundStrong={overrideColours ? null : primaryColourBackground.strong}
+			primaryColourBorder={overrideColours ? null:primaryColourBorder}
 			theme={theme}
 		>
-			<Box className={theme.themeRef} padding="2">
+			<Box className={theme.themeRef} padding='2'>
 				<ThemeProviderComponent context={context}>
 					<Story {...context} />
 				</ThemeProviderComponent>

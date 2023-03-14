@@ -76,9 +76,9 @@ export const ThemeOverrideProvider: FunctionComponent<Props> = ({
 			primaryColourBackground !== overrides.primaryColourBackground ||
 			primaryColourForeground !== overrides.primaryColourForeground ||
 			primaryColourBackgroundMild !==
-				overrides.primaryColourBackgroundMild ||
+			overrides.primaryColourBackgroundMild ||
 			primaryColourBackgroundStrong !==
-				overrides.primaryColourBackgroundStrong ||
+			overrides.primaryColourBackgroundStrong ||
 			primaryColourBorder !== overrides.primaryColourBorder
 		) {
 			overrides.setThemeValues({
