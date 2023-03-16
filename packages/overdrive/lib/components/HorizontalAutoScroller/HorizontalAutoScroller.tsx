@@ -9,6 +9,7 @@ import {
 	useState,
 } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
+import { useSwipeable } from 'react-swipeable';
 
 import { SliderProgress } from '..';
 import { Box } from '../Box';
@@ -101,6 +102,12 @@ export const HorizontalAutoScroller: FunctionComponent<Props> = ({
 		onChange: setActiveIndex,
 	});
 
+	const handlers = useSwipeable({
+		onSwiped: (eventData) => {
+			eventData.dir === 'Left' ? next() : prev();
+		},
+	});
+
 	if (items.length < 2) {
 		return <>{items}</>;
 	}
@@ -110,6 +117,7 @@ export const HorizontalAutoScroller: FunctionComponent<Props> = ({
 			<Box
 				overflow="hidden"
 				position="relative"
+				{...handlers}
 				onContextMenu={(event) => {
 					event.preventDefault();
 					event.stopPropagation();
