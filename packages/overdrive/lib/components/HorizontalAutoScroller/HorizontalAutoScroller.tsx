@@ -1,7 +1,13 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@autoguru/icons';
 import clsx from 'clsx';
 import * as React from 'react';
-import { ComponentProps, FunctionComponent, ReactNode, useMemo, useState } from 'react';
+import {
+	ComponentProps,
+	FunctionComponent,
+	ReactNode,
+	useMemo,
+	useState,
+} from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 
 import { SliderProgress } from '..';
@@ -13,7 +19,10 @@ import Section from '../Section/Section';
 import { Stack } from '../Stack';
 
 import * as styles from './HorizontalAutoScroller.css';
-import { useHorizontalAutoScroller, UseHorizontalAutoScrollerProps } from './useHorizontalAutoScroller';
+import {
+	useHorizontalAutoScroller,
+	UseHorizontalAutoScrollerProps,
+} from './useHorizontalAutoScroller';
 
 export interface Props
 	extends Pick<ComponentProps<typeof Columns>, 'space'>,
@@ -21,46 +30,49 @@ export interface Props
 	durationSeconds?: number;
 	className?: string;
 	columnWidth?: ComponentProps<typeof Column>['width'];
-	sliderProgressColour?: ComponentProps<typeof SliderProgress>['backgroundColour'];
+	sliderProgressColour?: ComponentProps<
+		typeof SliderProgress
+	>['backgroundColour'];
 	noControls?: boolean;
 
 	children: ReactNode | ReactNode[];
 }
 
 export const HorizontalAutoScroller: FunctionComponent<Props> = ({
-																	 sliderProgressColour='primary',
-																	 noControls = false,
-																	 space = '5',
-																	 durationSeconds = 10,
-																	 children,
-																	 itemsPerPage: incomingItemsPerPage,
-																	 paused: incomingIsPaused,
-																	 activePage: incomingActivePage,
-																	 columnWidth = '1/2',
-																	 className,
-																 }) => {
+	sliderProgressColour = 'primary',
+	noControls = false,
+	space = '5',
+	durationSeconds = 10,
+	children,
+	itemsPerPage: incomingItemsPerPage,
+	paused: incomingIsPaused,
+	activePage: incomingActivePage,
+	columnWidth = '1/2',
+	className,
+}) => {
 	const incomingItems = useMemo(() => flattenChildren(children), [children]);
 	const [activeIndex, setActiveIndex] = useState(incomingActivePage);
 
 	const [itemsRef, setItemsRef] = useState<Array<HTMLElement>>();
 	const items = useMemo(() => {
-		const itemsRef:Array<HTMLElement> = [];
+		const itemsRef: Array<HTMLElement> = [];
 		const list = incomingItems.map((item, index) => (
 			<Column
 				ref={(el) => {
-					if (el)
-						itemsRef.push(el);
+					if (el) itemsRef.push(el);
 				}}
 				key={index}
 				noShrink
 				width={columnWidth}
-				justifyContent='stretch'
-				alignSelf='stretch'>
+				justifyContent="stretch"
+				alignSelf="stretch"
+			>
 				<Box
-					width='full'
+					width="full"
 					className={clsx(styles.item, {
 						[styles.active]: index === activeIndex,
-					})}>
+					})}
+				>
 					{item}
 				</Box>
 			</Column>
@@ -94,24 +106,26 @@ export const HorizontalAutoScroller: FunctionComponent<Props> = ({
 	}
 
 	return (
-		<Stack className={className} space='5'>
+		<Stack className={className} space="5">
 			<Box
-				overflow='hidden'
-				position='relative'
+				overflow="hidden"
+				position="relative"
 				onContextMenu={(event) => {
 					event.preventDefault();
 					event.stopPropagation();
 				}}
 				onTouchStart={pause}
 				onTouchEnd={resume}
-				onClick={onClick}>
+				onClick={onClick}
+			>
 				{noControls ? null : (
 					<Box
 						className={[styles.controllerBtn, styles.prevBtn]}
-						display='flex'
-						alignItems='center'
-						justifyContent='flexStart'
-						position='absolute'>
+						display="flex"
+						alignItems="center"
+						justifyContent="flexStart"
+						position="absolute"
+					>
 						<Button
 							rounded
 							onClick={(event) => {
@@ -119,17 +133,19 @@ export const HorizontalAutoScroller: FunctionComponent<Props> = ({
 								event.preventDefault();
 								prev();
 							}}
-							variant='secondary'>
+							variant="secondary"
+						>
 							<Icon icon={ChevronLeftIcon} />
 						</Button>
 					</Box>
 				)}
 				<Columns
 					ref={containerRef}
-					overflow='hidden'
+					overflow="hidden"
 					noWrap
-					width='full'
-					space={space}>
+					width="full"
+					space={space}
+				>
 					{noControls ? null : (
 						<Column noShrink className={styles.controllerCol}>
 							<span />
@@ -145,10 +161,11 @@ export const HorizontalAutoScroller: FunctionComponent<Props> = ({
 				{noControls ? null : (
 					<Box
 						className={[styles.controllerBtn, styles.nextBtn]}
-						display='flex'
-						alignItems='center'
-						justifyContent='flexEnd'
-						position='absolute'>
+						display="flex"
+						alignItems="center"
+						justifyContent="flexEnd"
+						position="absolute"
+					>
 						<Button
 							rounded
 							onClick={(event) => {
@@ -156,13 +173,14 @@ export const HorizontalAutoScroller: FunctionComponent<Props> = ({
 								event.preventDefault();
 								next();
 							}}
-							variant='secondary'>
+							variant="secondary"
+						>
 							<Icon icon={ChevronRightIcon} />
 						</Button>
 					</Box>
 				)}
 			</Box>
-			<Section width='small'>
+			<Section width="small">
 				<SliderProgress
 					backgroundColour={sliderProgressColour}
 					duration={`${durationSeconds}s`}

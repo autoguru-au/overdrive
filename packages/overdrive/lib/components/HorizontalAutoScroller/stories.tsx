@@ -2,9 +2,10 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
-import { HorizontalAutoScroller } from '.';
 import { Box } from '../Box';
 import { boxArgTypes, scaleOptions } from '../Box/argTypes';
+
+import { HorizontalAutoScroller } from '.';
 
 export default {
 	title: 'Components/HorizontalAutoScroller',
@@ -20,41 +21,48 @@ export default {
 		paused: {
 			control: {
 				type: 'boolean',
-			}
+			},
 		},
 		noControls: {
 			control: {
 				type: 'boolean',
-			}
-		}
+			},
+		},
 	},
 } as ComponentMeta<typeof HorizontalAutoScroller>;
 
 const template: ComponentStory<typeof HorizontalAutoScroller> = ({
 	childrenNum,
 	...args
-																 }) => (
+}) => (
 	<HorizontalAutoScroller {...args}>
 		{Array.from({ length: childrenNum }).map((_, index) => (
-			<Box key={index}
-				 backgroundColour='gray200'
-				 padding='3'
-				 display='flex'
-				 width='full'
-				 height='full'
-				 alignItems='center'
-				 justifyContent='center'>
-				<Box style={{
-						 width: '100%',
-						 height: 20 + Math.ceil(Math.random() * 300),
-					 }}
-					 backgroundColour='gray900' />
+			<Box
+				key={index}
+				backgroundColour="gray200"
+				padding="3"
+				display="flex"
+				width="full"
+				height="full"
+				alignItems="center"
+				justifyContent="center"
+			>
+				<Box
+					style={{
+						width: '100%',
+						height: 20 + Math.ceil(Math.random() * 300),
+					}}
+					backgroundColour="gray900"
+				/>
 			</Box>
 		))}
 	</HorizontalAutoScroller>
 );
 
-const standardProps: Omit<ComponentProps<typeof HorizontalAutoScroller>, 'children'> = {
+const standardProps: Omit<
+	ComponentProps<typeof HorizontalAutoScroller>,
+	'children'
+> = {
 	paused: false,
 	activePage: 0,
 	childrenNum: 9,
@@ -62,14 +70,20 @@ const standardProps: Omit<ComponentProps<typeof HorizontalAutoScroller>, 'childr
 export const standard = template.bind(standardProps);
 standard.args = standardProps;
 
-const widthStartPageProps: Omit<ComponentProps<typeof HorizontalAutoScroller>, 'children'> = {
+const widthStartPageProps: Omit<
+	ComponentProps<typeof HorizontalAutoScroller>,
+	'children'
+> = {
 	...standardProps,
 	activePage: 3,
 };
 export const widthStartPage = template.bind(widthStartPageProps);
 widthStartPage.args = widthStartPageProps;
 
-const withCustomDurationProps: Omit<ComponentProps<typeof HorizontalAutoScroller>, 'children'> = {
+const withCustomDurationProps: Omit<
+	ComponentProps<typeof HorizontalAutoScroller>,
+	'children'
+> = {
 	...standardProps,
 	durationSeconds: 1,
 };

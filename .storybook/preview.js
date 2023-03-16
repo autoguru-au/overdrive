@@ -13,7 +13,10 @@ import {
 import * as React from 'react';
 import { useEffect, useRef } from 'react';
 import { DocsContainer, DocsPage } from '@storybook/addon-docs';
-import { container, themeContractVars } from '../packages/overdrive/lib/themes/theme.css';
+import {
+	container,
+	themeContractVars,
+} from '../packages/overdrive/lib/themes/theme.css';
 import { breakpoints } from '../packages/overdrive/lib/themes/makeTheme';
 import { useDocumentBodyStyles } from '../packages/overdrive/lib/hooks/useDocumentBodyStyles';
 
@@ -30,8 +33,12 @@ const dynamicColours = {
 
 const ThemeProviderComponent = ({ children, context }) => {
 	const { theme, overrideStyles, setThemeValues } = useThemeOverrides({
-		primaryColourBackground: dynamicColours[context.globals.themeColours]?.primaryColourBackground,
-		primaryColourForeground: dynamicColours[context.globals.themeColours]?.primaryColourForeground,
+		primaryColourBackground:
+			dynamicColours[context.globals.themeColours]
+				?.primaryColourBackground,
+		primaryColourForeground:
+			dynamicColours[context.globals.themeColours]
+				?.primaryColourForeground,
 	});
 	useDocumentBodyStyles();
 	useEffect(() => {
@@ -70,14 +77,26 @@ const withThemeProvider = (Story, context) => {
 	const overrideColours = dynamicColours[context.globals.themeColours];
 	return !isChromatic() ? (
 		<ThemeOverrideProvider
-			primaryColourBackground={overrideColours ? overrideColours.primaryColourBackground : primaryColourBackground.standard}
-			primaryColourForeground={overrideColours ? overrideColours.primaryColourForeground : primaryColourForeground}
-			primaryColourBackgroundMild={overrideColours ? null : primaryColourBackground.mild}
-			primaryColourBackgroundStrong={overrideColours ? null : primaryColourBackground.strong}
-			primaryColourBorder={overrideColours ? null:primaryColourBorder}
+			primaryColourBackground={
+				overrideColours
+					? overrideColours.primaryColourBackground
+					: primaryColourBackground.standard
+			}
+			primaryColourForeground={
+				overrideColours
+					? overrideColours.primaryColourForeground
+					: primaryColourForeground
+			}
+			primaryColourBackgroundMild={
+				overrideColours ? null : primaryColourBackground.mild
+			}
+			primaryColourBackgroundStrong={
+				overrideColours ? null : primaryColourBackground.strong
+			}
+			primaryColourBorder={overrideColours ? null : primaryColourBorder}
 			theme={theme}
 		>
-			<Box className={theme.themeRef} padding='2'>
+			<Box className={theme.themeRef} padding="2">
 				<ThemeProviderComponent context={context}>
 					<Story {...context} />
 				</ThemeProviderComponent>

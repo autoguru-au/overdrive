@@ -1,4 +1,11 @@
-import { Reducer, startTransition, useCallback, useEffect, useMemo, useReducer } from 'react';
+import {
+	Reducer,
+	startTransition,
+	useCallback,
+	useEffect,
+	useMemo,
+	useReducer,
+} from 'react';
 import { useInView } from 'react-intersection-observer';
 
 interface State {
@@ -33,38 +40,44 @@ interface Returns extends State {
 
 type Actions =
 	| {
-	type: 'GO_TO_PAGE';
-	payload: number;
-}
+			type: 'GO_TO_PAGE';
+			payload: number;
+	  }
 	| {
-	type: 'SET_PAGE_COUNT';
-	payload: number;
-}
+			type: 'SET_PAGE_COUNT';
+			payload: number;
+	  }
 	| {
-	type: 'NEXT_PAGE';
-}
+			type: 'NEXT_PAGE';
+	  }
 	| {
-	type: 'PREV_PAGE';
-}
+			type: 'PREV_PAGE';
+	  }
 	| {
-	type: 'PAUSE';
-}
+			type: 'PAUSE';
+	  }
 	| {
-	type: 'RESUME';
-}
+			type: 'RESUME';
+	  }
 	| {
-	type: 'CLICK_NEXT';
-};
+			type: 'CLICK_NEXT';
+	  };
 
 const getNextPge = (prevState: State): number => {
-	if (typeof prevState.activePage === 'number' && prevState.activePage + 1 < prevState.pageCount) {
+	if (
+		typeof prevState.activePage === 'number' &&
+		prevState.activePage + 1 < prevState.pageCount
+	) {
 		return prevState.activePage + 1;
 	}
 	return 0;
 };
 
 const getPrevPage = (prevState: State): number => {
-	if (typeof prevState.activePage === 'number' && prevState.activePage - 1 >= 0) {
+	if (
+		typeof prevState.activePage === 'number' &&
+		prevState.activePage - 1 >= 0
+	) {
 		return prevState.activePage - 1;
 	}
 	return prevState.pageCount - 1;
@@ -123,12 +136,12 @@ const stateReducer: Reducer<State, Actions> = (prevState, action) => {
 };
 
 export const useHorizontalAutoScroller = ({
-											  itemsRef,
-											  itemsPerPage = 1,
-											  paused: incomingIsPaused = false,
-											  activePage: incomingActivePage = null,
-											  onChange = () => void 0,
-										  }: UseHorizontalAutoScrollerProps): Returns => {
+	itemsRef,
+	itemsPerPage = 1,
+	paused: incomingIsPaused = false,
+	activePage: incomingActivePage = null,
+	onChange = () => void 0,
+}: UseHorizontalAutoScrollerProps): Returns => {
 	const [{ pageCount, activePage, paused }, dispatch] = useReducer<
 		Reducer<State, Actions>
 	>(stateReducer, {
@@ -150,13 +163,14 @@ export const useHorizontalAutoScroller = ({
 
 	const onViewChange = useCallback(
 		(inView) => {
-			if (inView && typeof activePage !== 'number') dispatch({
-				type: 'GO_TO_PAGE',
-				payload:
-					typeof incomingActivePage === 'number'
-						? incomingActivePage
-						: 0,
-			});
+			if (inView && typeof activePage !== 'number')
+				dispatch({
+					type: 'GO_TO_PAGE',
+					payload:
+						typeof incomingActivePage === 'number'
+							? incomingActivePage
+							: 0,
+				});
 		},
 		[incomingActivePage, activePage],
 	);
