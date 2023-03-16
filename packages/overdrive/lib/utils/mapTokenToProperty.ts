@@ -3,7 +3,7 @@ import { Properties } from 'csstype';
 
 type PropValue<T> = T extends Record<string | number, infer U> ? U : never;
 
-export const mapTokenToProperty = <T>(
+export const mapTokenToProperty = <T extends {}>(
 	record: T,
 	property: ((value: PropValue<T>) => CSSProperties) | keyof Properties,
 	omitKeys: string[] = [],
@@ -15,7 +15,7 @@ export const mapTokenToProperty = <T>(
 				...result,
 				[key]: {
 					...(typeof property === 'function'
-						? property(value)
+						? property(value as PropValue<T>)
 						: { [property]: value }),
 				},
 			}),
