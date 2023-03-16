@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.14.0
+
+### Minor Changes
+
+-   cd28d20: Added HorizontalAutoScroller
+
 ## 4.13.1
 
 ### Patch Changes
