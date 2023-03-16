@@ -12,7 +12,7 @@ const standardProps = {
 	onRequestNext: () => action('onRequestNext'),
 };
 
-describe('<Section />', () => {
+describe('<ProgressStep />', () => {
 	it('should not throw', () => {
 		expect(() =>
 			render(<SliderProgress {...standardProps} />),

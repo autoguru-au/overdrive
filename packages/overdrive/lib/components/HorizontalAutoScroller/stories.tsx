@@ -1,54 +1,97 @@
-import { action } from '@storybook/addon-actions';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
+import { HorizontalAutoScroller } from '.';
 import { Box } from '../Box';
-import { boxArgTypes } from '../Box/argTypes';
-
-import { SliderProgress } from '.';
+import { boxArgTypes, scaleOptions } from '../Box/argTypes';
 
 export default {
-	title: 'Components/Progress/SliderProgress',
-	component: SliderProgress,
+	title: 'Components/HorizontalAutoScroller',
+	component: HorizontalAutoScroller,
 	argTypes: {
-		backgroundColour: boxArgTypes.backgroundColour,
+		sliderProgressColour: boxArgTypes.backgroundColour,
+		space: {
+			options: scaleOptions,
+			control: {
+				type: 'select',
+			},
+		},
+		paused: {
+			control: {
+				type: 'boolean',
+			}
+		},
+		noControls: {
+			control: {
+				type: 'boolean',
+			}
+		}
 	},
-} as ComponentMeta<typeof SliderProgress>;
+} as ComponentMeta<typeof HorizontalAutoScroller>;
 
-const template: ComponentStory<typeof SliderProgress> = (args) => (
-	<Box paddingY="8" paddingX="3" backgroundColour="gray800">
-		<SliderProgress {...args} />
-	</Box>
+const template: ComponentStory<typeof HorizontalAutoScroller> = ({
+	childrenNum,
+	...args
+																 }) => (
+	<HorizontalAutoScroller {...args}>
+		{Array.from({ length: childrenNum }).map((_, index) => (
+			<Box key={index}
+				 backgroundColour='gray200'
+				 padding='3'
+				 display='flex'
+				 width='full'
+				 height='full'
+				 alignItems='center'
+				 justifyContent='center'>
+				<Box style={{
+						 width: '100%',
+						 height: 20 + Math.ceil(Math.random() * 300),
+					 }}
+					 backgroundColour='gray900' />
+			</Box>
+		))}
+	</HorizontalAutoScroller>
 );
 
-const standardProps: Omit<ComponentProps<typeof SliderProgress>, 'children'> = {
+const standardProps: Omit<ComponentProps<typeof HorizontalAutoScroller>, 'children'> = {
 	paused: false,
-	totalCount: 3,
-	activeIndex: 1,
-	duration: '1s',
-	onRequestNext: () => action('onRequestNext'),
+	activePage: 0,
+	childrenNum: 9,
 };
 export const standard = template.bind(standardProps);
 standard.args = standardProps;
 
-const withBackgroundColourProps: Omit<
-	ComponentProps<typeof SliderProgress>,
+const widthStartPageProps: Omit<ComponentProps<typeof HorizontalAutoScroller>, 'children'> = {
+	...standardProps,
+	activePage: 3,
+};
+export const widthStartPage = template.bind(widthStartPageProps);
+widthStartPage.args = widthStartPageProps;
+
+const withCustomDurationProps: Omit<ComponentProps<typeof HorizontalAutoScroller>, 'children'> = {
+	...standardProps,
+	durationSeconds: 1,
+};
+export const withCustomDuration = template.bind(withCustomDurationProps);
+withCustomDuration.args = withCustomDurationProps;
+
+const withProgressColourProps: Omit<
+	ComponentProps<typeof HorizontalAutoScroller>,
 	'children'
 > = {
 	...standardProps,
-	backgroundColour: 'yellow500',
+	sliderProgressColour: 'yellow500',
 };
-export const withBackgroundColour = template.bind(withBackgroundColourProps);
-withBackgroundColour.args = withBackgroundColourProps;
+export const withProgressColour = template.bind(withProgressColourProps);
+withProgressColour.args = withProgressColourProps;
 
 const withManySlidesProps: Omit<
-	ComponentProps<typeof SliderProgress>,
+	ComponentProps<typeof HorizontalAutoScroller>,
 	'children'
 > = {
 	...standardProps,
-	activeIndex: 5,
-	totalCount: 20,
+	childrenNum: 50,
 };
 export const withManySlides = template.bind(withManySlidesProps);
 withManySlides.args = withManySlidesProps;

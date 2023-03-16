@@ -33,8 +33,6 @@ const ThemeProviderComponent = ({ children, context }) => {
 		primaryColourBackground: dynamicColours[context.globals.themeColours]?.primaryColourBackground,
 		primaryColourForeground: dynamicColours[context.globals.themeColours]?.primaryColourForeground,
 	});
-	console.log({ primaryColourBackground: dynamicColours[context.globals.themeColours]?.primaryColourBackground });
-	console.log({ overrideStyles: overrideStyles });
 	useDocumentBodyStyles();
 	useEffect(() => {
 		if (dynamicColours[context.globals.themeColours]) {

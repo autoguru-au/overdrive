@@ -21,12 +21,14 @@ export interface Props
 	durationSeconds?: number;
 	className?: string;
 	columnWidth?: ComponentProps<typeof Column>['width'];
+	sliderProgressColour?: ComponentProps<typeof SliderProgress>['backgroundColour'];
 	noControls?: boolean;
 
 	children: ReactNode | ReactNode[];
 }
 
 export const HorizontalAutoScroller: FunctionComponent<Props> = ({
+																	 sliderProgressColour='primary',
 																	 noControls = false,
 																	 space = '5',
 																	 durationSeconds = 10,
@@ -162,7 +164,7 @@ export const HorizontalAutoScroller: FunctionComponent<Props> = ({
 			</Box>
 			<Section width='small'>
 				<SliderProgress
-					backgroundColour='yellow500'
+					backgroundColour={sliderProgressColour}
 					duration={`${durationSeconds}s`}
 					paused={paused}
 					onRequestNext={next}
