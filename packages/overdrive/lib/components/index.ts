@@ -57,3 +57,4 @@ export * from './ColourInput';
 export * from './DividerLine';
 export * from './ThemeOverrideProvider';
 export * from './SliderProgress';
+export * from './HorizontalAutoScroller';

@@ -34,17 +34,12 @@ export const ProgressStep: NamedExoticComponent<Props> = memo(
 		});
 
 		return (
-			<Box
-				className={className}
-				position="relative">
+			<Box className={className} position="relative">
 				<Box
 					ref={elementRef}
 					position="absolute"
-					display={hasPassed ? 'none': 'block'}
-					className={[
-						styles.item,
-						styles.empty,
-					]}
+					display={hasPassed ? 'none' : 'block'}
+					className={[styles.item, styles.empty]}
 					backgroundColour={backgroundColour}
 				/>
 				<Box
