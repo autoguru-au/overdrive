@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.14.1
+
+### Patch Changes
+
+-   32e0f3b: HorizontalAutoScroller gets swipe controls
+
 ## 4.14.0
 
 ### Minor Changes
