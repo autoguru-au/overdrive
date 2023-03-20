@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.14.2
+
+### Patch Changes
+
+-   5ac16e9: Button and Inputs: Fixes translateZ causing Safari overlay issues
+
 ## 4.14.1
 
 ### Patch Changes
