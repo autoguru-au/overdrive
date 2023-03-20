@@ -8,7 +8,7 @@ export const root = style({
 	transitionDuration: '0.1s',
 	transitionProperty:
 		'color, background-color, border-color, box-shadow, transform',
-	transform: 'translate3d(0, 0, 1px) scale(1)',
+	transform: 'translate(0, 0) scale(1)',
 	willChange: 'transform',
 });
 

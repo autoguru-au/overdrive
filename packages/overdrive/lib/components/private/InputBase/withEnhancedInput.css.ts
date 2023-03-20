@@ -111,7 +111,7 @@ export const inputItselfSize = {
 export const iconRoot = style({
 	zIndex: 1,
 	top: '50%',
-	transform: 'translate3d(0, -50%, 0)',
+	transform: 'translate(0, -50%)',
 	transition: `color 0.2s ${vars.animation.easing.decelerate} 0s`,
 });
 
