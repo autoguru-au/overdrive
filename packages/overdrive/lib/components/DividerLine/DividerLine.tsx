@@ -3,7 +3,6 @@ import * as React from 'react';
 import { ComponentProps, FunctionComponent } from 'react';
 
 import { Box } from '../';
-import { Tokens } from '../../themes/tokens';
 
 import * as styles from './DividerLine.css';
 
@@ -11,7 +10,7 @@ interface Props {
 	isVertical?: boolean;
 	className?: string;
 	space: ComponentProps<typeof Box>['marginY'];
-	colour?: keyof Tokens['colours']['intent'];
+	colour?: ComponentProps<typeof Box>['backgroundColour'];
 	size?: keyof typeof styles.size['horizontal'];
 }
 
