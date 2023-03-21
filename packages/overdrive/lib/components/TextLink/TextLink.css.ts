@@ -13,6 +13,14 @@ export const root = style({
 	},
 });
 
+export const icon = style({
+	transition: `transform 0.2s ${vars.animation.easing.decelerate} 0s`,
+	right: 0,
+	top: '50%',
+	transform: 'translateY(-50%)',
+});
+
+
 export const muted = style({
 	':hover': {
 		color: 'white',
