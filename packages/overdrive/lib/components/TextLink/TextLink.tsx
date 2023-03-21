@@ -65,7 +65,7 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 						is: 'span',
 						pointerEvents: 'none',
 						position: 'relative',
-						paddingRight: icon ? '4' : void 0,
+						paddingRight: icon ? '5' : void 0,
 					}),
 					{
 						[styles.muted]: muted,
