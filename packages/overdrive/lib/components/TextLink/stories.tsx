@@ -1,3 +1,4 @@
+import { ArrowRightIcon, ChevronRightIcon } from '@autoguru/icons';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
@@ -11,6 +12,10 @@ import { TextLink } from '.';
 const sizeScale = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 const alignOptions: ['left', 'center', 'right'] = ['left', 'center', 'right'];
 const fontWeightOptions = ['normal', 'semiBold', 'bold'];
+const iconOptions = {
+	ArrowRightIcon,
+	ChevronRightIcon,
+};
 const noWrapOptions: Array<ComponentProps<typeof Heading>['noWrap']> = [
 	false,
 	true,
@@ -38,6 +43,14 @@ export default {
 		),
 	],
 	argTypes: {
+		icon: {
+			defaultValue: void 0,
+			description: 'Input field Icon',
+			options: iconOptions,
+			control: {
+				type: 'select',
+			},
+		},
 		noWrap: {
 			options: noWrapOptions,
 			defaultValue: false,
@@ -110,3 +123,14 @@ standard.args = standardProps;
 export const insideParagraph: ComponentStory<typeof TextLink> =
 	InsideParagraphTemplate.bind(standardProps);
 insideParagraph.args = standardProps;
+
+const withIconProps: typeof standardProps = {
+	...standardProps,
+	icon: ArrowRightIcon,
+};
+
+export const withIcon = Template.bind(withIconProps);
+withIcon.args = withIconProps;
+
+export const withIconInsideParagraph = InsideParagraphTemplate.bind(withIconProps);
+withIconInsideParagraph.args = withIconProps;

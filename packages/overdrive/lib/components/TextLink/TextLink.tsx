@@ -1,3 +1,4 @@
+import { IconType } from '@autoguru/icons';
 import { invariant } from '@autoguru/utilities';
 import clsx from 'clsx';
 import * as React from 'react';
@@ -14,6 +15,7 @@ import {
 } from 'react';
 
 import { Box, useBoxStyles } from '../Box';
+import { Icon } from '../Icon';
 import { Text } from '../Text';
 
 import * as styles from './TextLink.css';
@@ -29,6 +31,7 @@ export interface Props extends TextProps, AnchorProps {
 	className?: string;
 	is?: ElementType | ReactElement;
 	muted?: boolean;
+	icon?: IconType;
 }
 
 export const TextLink = forwardRef<HTMLAnchorElement, Props>(
@@ -41,6 +44,7 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 			fontWeight = 'semiBold',
 			muted = false,
 			size,
+			icon,
 			...props
 		},
 		ref,
@@ -49,10 +53,9 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 			!(Component !== undefined && props.href !== undefined),
 			'You cannot have both href and as defined.',
 		);
-
 		const body = (
 			<Text
-				is="span"
+				is='span'
 				colour={muted ? 'muted' : 'link'}
 				size={size}
 				fontWeight={fontWeight}
@@ -61,6 +64,8 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 					useBoxStyles({
 						is: 'span',
 						pointerEvents: 'none',
+						position: 'relative',
+						paddingRight: icon ? '4' : void 0,
 					}),
 					{
 						[styles.muted]: muted,
@@ -68,6 +73,14 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 				)}
 			>
 				{children}
+				{icon ? (
+					<Icon icon={icon}
+						  size='small'
+						  display='inlineBlock'
+						  className={clsx(styles.icon, useBoxStyles({
+							  position: 'absolute',
+						  }))} />
+				) : null}
 			</Text>
 		);
 
