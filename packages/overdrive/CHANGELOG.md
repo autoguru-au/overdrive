@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.14.4
+
+### Patch Changes
+
+-   012f424: TextLink: Improved iconed version layout
+
 ## 4.14.3
 
 ### Patch Changes
