@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.14.3
+
+### Patch Changes
+
+-   0ab5287: DividerLine: Accepts all box background colours
+
 ## 4.14.2
 
 ### Patch Changes
