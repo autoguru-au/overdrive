@@ -2,6 +2,7 @@ import { IconType } from '@autoguru/icons';
 import clsx from 'clsx';
 import * as React from 'react';
 import {
+	AnchorHTMLAttributes,
 	cloneElement,
 	createElement,
 	ElementType,
@@ -18,12 +19,10 @@ import { Text, useTextStyles } from '../Text';
 
 import * as styles from './Anchor.css';
 
-export interface Props {
-	rel?: string;
-	href?: string;
-	title?: string;
-	target?: string;
-
+export interface Props extends Omit<
+	AnchorHTMLAttributes<HTMLAnchorElement>,
+	'children' | 'style' | 'is'
+> {
 	className?: string;
 	is?: ElementType | ReactElement;
 	disabled?: boolean;
@@ -33,20 +32,16 @@ export interface Props {
 }
 
 export const Anchor: FunctionComponent<Props> = ({
-	rel,
-	href,
-	target,
-	title,
+													 className = '',
 
-	className = '',
+													 is: Component = 'a',
+													 disabled = false,
 
-	is: Component = 'a',
-	disabled = false,
+													 children,
 
-	children,
-
-	icon,
-}) => {
+													 icon,
+	...rest
+												 }) => {
 	const textStyles = useTextStyles({
 		colour: 'link',
 	});
@@ -62,10 +57,7 @@ export const Anchor: FunctionComponent<Props> = ({
 			className,
 		),
 		disabled,
-		rel,
-		href,
-		target,
-		title,
+		...rest
 	};
 
 	const childs = (

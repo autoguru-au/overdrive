@@ -1,13 +1,16 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import { FunctionComponent, useCallback } from 'react';
+import { AnchorHTMLAttributes, FunctionComponent, useCallback } from 'react';
 
 import { Box, useBoxStyles } from '../Box';
 import { useTextStyles } from '../Text';
 
 import * as styles from './Switch.css';
 
-export interface Props {
+export interface Props extends Omit<
+	AnchorHTMLAttributes<HTMLButtonElement>,
+	'children' | 'style' | 'is' | 'onChange'
+> {
 	className?: string;
 	disabled?: boolean;
 	toggled?: boolean;
@@ -20,6 +23,7 @@ export const Switch: FunctionComponent<Props> = ({
 	disabled = false,
 	toggled = false,
 	onChange,
+	...rest
 }) => {
 	const onToggle = useCallback(() => {
 		if (disabled) {
@@ -34,6 +38,7 @@ export const Switch: FunctionComponent<Props> = ({
 	return (
 		<Box
 			is="button"
+			{...rest}
 			className={clsx(
 				styles.root,
 				useTextStyles({ size: '5' }),
