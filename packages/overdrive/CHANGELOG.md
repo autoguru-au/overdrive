@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 4.14.5
+
+### Patch Changes
+
+-   0759213: Anchor: Gets all a tag attributes TexLink: Gets all a tag
+    attributes Switch: Gets all button tag attributes
+
 ## 4.14.4
 
 ### Patch Changes
