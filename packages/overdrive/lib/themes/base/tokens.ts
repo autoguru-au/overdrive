@@ -1,7 +1,7 @@
 import { buildColourGamut } from '../makeTheme';
 import { ColourMap, Tokens } from '../tokens';
 
-const colours: ColourMap = {
+const baseThemeColours: ColourMap = {
 	gray: {
 		'900': '#212338',
 		'800': '#34384c',
@@ -63,15 +63,15 @@ const colours: ColourMap = {
 	},
 };
 
-export const defaultGamut = buildColourGamut(colours);
+export const defaultGamut = buildColourGamut(baseThemeColours);
 
 const white = '#fff';
-const secondaryForeground = colours.gray['700'];
+const secondaryForeground = baseThemeColours.gray['700'];
 export const tokens: Tokens = {
 	mode: 'light',
 	body: {
 		backgroundColour: white,
-		colour: colours.gray['900'],
+		colour: baseThemeColours.gray['900'],
 	},
 	contentWidth: {
 		small: '592px',
@@ -96,87 +96,87 @@ export const tokens: Tokens = {
 			white,
 		},
 		foreground: {
-			body: colours.gray['900'],
-			link: colours.blue['500'],
+			body: baseThemeColours.gray['900'],
+			link: baseThemeColours.blue['500'],
 		},
 		background: {
 			body: white,
-			light: colours.gray['200'],
-			neutral: colours.gray['400'],
-			neutralDark: colours.gray['800'],
+			light: baseThemeColours.gray['200'],
+			neutral: baseThemeColours.gray['400'],
+			neutralDark: baseThemeColours.gray['800'],
 		},
 		intent: {
 			primary: {
 				background: {
-					standard: colours.green['700'],
-					mild: colours.green['200'],
-					strong: colours.green['900'],
+					standard: baseThemeColours.green['700'],
+					mild: baseThemeColours.green['200'],
+					strong: baseThemeColours.green['900'],
 				},
 				foreground: white,
-				border: colours.green['900'],
+				border: baseThemeColours.green['900'],
 			},
 			secondary: {
 				background: {
 					standard: white,
 					mild: white,
-					strong: colours.gray['200'],
+					strong: baseThemeColours.gray['200'],
 				},
 				foreground: secondaryForeground,
-				border: colours.gray['300'],
+				border: baseThemeColours.gray['300'],
 			},
 			shine: {
 				background: {
-					standard: colours.gray['200'],
-					mild: colours.gray['100'],
-					strong: colours.gray['300'],
+					standard: baseThemeColours.gray['200'],
+					mild: baseThemeColours.gray['100'],
+					strong: baseThemeColours.gray['300'],
 				},
-				foreground: colours.yellow['500'],
-				border: colours.gray['300'],
+				foreground: baseThemeColours.yellow['500'],
+				border: baseThemeColours.gray['300'],
 			},
 			danger: {
 				background: {
-					standard: colours.red['600'],
-					mild: colours.red['100'],
-					strong: colours.red['800'],
+					standard: baseThemeColours.red['600'],
+					mild: baseThemeColours.red['100'],
+					strong: baseThemeColours.red['800'],
 				},
 				foreground: white,
-				border: colours.red['800'],
+				border: baseThemeColours.red['800'],
 			},
 			warning: {
 				background: {
-					standard: colours.yellow['800'],
-					mild: colours.yellow['100'],
-					strong: colours.yellow['900'],
+					standard: baseThemeColours.yellow['800'],
+					mild: baseThemeColours.yellow['100'],
+					strong: baseThemeColours.yellow['900'],
 				},
 				foreground: white,
-				border: colours.yellow['900'],
+				border: baseThemeColours.yellow['900'],
 			},
 			neutral: {
 				background: {
-					standard: colours.gray['700'],
-					mild: colours.gray['200'],
-					strong: colours.gray['900'],
+					standard: baseThemeColours.gray['700'],
+					mild: baseThemeColours.gray['200'],
+					strong: baseThemeColours.gray['900'],
 				},
 				foreground: white,
-				border: colours.gray['900'],
+				border: baseThemeColours.gray['900'],
 			},
 			success: {
 				background: {
-					standard: colours.green['700'],
-					mild: colours.green['200'],
-					strong: colours.green['900'],
+					standard: baseThemeColours.green['700'],
+					mild: baseThemeColours.green['200'],
+					strong: baseThemeColours.green['900'],
 				},
-				foreground: colours.green['200'],
-				border: colours.green['900'],
+				foreground: baseThemeColours.green['200'],
+				border: baseThemeColours.green['900'],
 			},
 			information: {
 				background: {
-					standard: colours.blue['800'],
-					mild: colours.blue['200'],
-					strong: colours.blue['900'],
+					standard: baseThemeColours.blue['800'],
+					mild: baseThemeColours.blue['200'],
+					strong: baseThemeColours.blue['900'],
 				},
 				foreground: white,
-				border: colours.blue['900'],
+				border: baseThemeColours.blue['900'],
 			},
 		},
 	},
@@ -196,9 +196,9 @@ export const tokens: Tokens = {
 			'3': '4px',
 		},
 		colours: {
-			light: colours.gray['200'],
-			gray: colours.gray['300'],
-			dark: colours.gray['900'],
+			light: baseThemeColours.gray['200'],
+			gray: baseThemeColours.gray['300'],
+			dark: baseThemeColours.gray['900'],
 		},
 		radius: {
 			none: 'none',
@@ -248,19 +248,19 @@ export const tokens: Tokens = {
 			},
 		},
 		colour: {
-			primary: colours.green['600'],
-			secondary: colours.gray['700'],
-			shine: colours.yellow['500'],
-			link: colours.blue['500'],
-			dark: colours.gray['900'],
+			primary: baseThemeColours.green['600'],
+			secondary: baseThemeColours.gray['700'],
+			shine: baseThemeColours.yellow['500'],
+			link: baseThemeColours.blue['500'],
+			dark: baseThemeColours.gray['900'],
 			white,
-			muted: colours.gray['400'],
-			neutral: colours.gray['700'],
-			light: colours.gray['600'],
-			danger: colours.red['600'],
-			warning: colours.yellow['800'],
-			success: colours.green['600'],
-			information: colours.blue['500'],
+			muted: baseThemeColours.gray['400'],
+			neutral: baseThemeColours.gray['700'],
+			light: baseThemeColours.gray['600'],
+			danger: baseThemeColours.red['600'],
+			warning: baseThemeColours.yellow['800'],
+			success: baseThemeColours.green['600'],
+			information: baseThemeColours.blue['500'],
 		},
 		fontWeight: {
 			normal: '400',
