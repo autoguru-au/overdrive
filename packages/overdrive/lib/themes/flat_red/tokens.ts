@@ -4,7 +4,7 @@ import { tokens as baseTokens } from '../base/tokens';
 import { buildColourGamut } from '../makeTheme';
 import { ColourMap, Tokens } from '../tokens';
 
-export const baseThemeColours: ColourMap = {
+const colours: ColourMap = {
 	gray: {
 		900: '#263238',
 		800: '#37474F',
@@ -69,28 +69,28 @@ export const baseThemeColours: ColourMap = {
 const flatElevation = '0 0 0 0 rgba(0, 0, 0, 0.0)';
 
 export const tokens = deepmerge<Tokens, any>(baseTokens, {
-	baseThemeColours: {
+	colours: {
 		gamut: {
-			...buildColourGamut(baseThemeColours),
+			...buildColourGamut(colours),
 		},
 		foreground: {
-			link: baseThemeColours.green['600'],
+			link: colours.green['600'],
 		},
 		intent: {
 			primary: {
 				background: {
-					standard: baseThemeColours.red['600'],
-					mild: baseThemeColours.red['100'],
-					strong: baseThemeColours.red['900'],
+					standard: colours.red['600'],
+					mild: colours.red['100'],
+					strong: colours.red['900'],
 				},
-				border: baseThemeColours.red['900'],
+				border: colours.red['900'],
 			},
 			secondary: {
 				background: {
-					strong: baseThemeColours.gray['100'],
+					strong: colours.gray['100'],
 				},
-				foreground: baseThemeColours.blue['800'],
-				border: baseThemeColours.blue['300'],
+				foreground: colours.blue['800'],
+				border: colours.blue['300'],
 			},
 		},
 	},
@@ -109,7 +109,7 @@ export const tokens = deepmerge<Tokens, any>(baseTokens, {
 	},
 	typography: {
 		colour: {
-			primary: baseThemeColours.red['600'],
+			primary: colours.red['600'],
 		},
 	},
 } as unknown as Tokens);
