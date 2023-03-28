@@ -55,7 +55,7 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 		);
 		const body = (
 			<Text
-				is='span'
+				is="span"
 				colour={muted ? 'muted' : 'link'}
 				size={size}
 				fontWeight={fontWeight}
@@ -74,12 +74,17 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 			>
 				{children}
 				{icon ? (
-					<Icon icon={icon}
-						  size='small'
-						  display='inlineBlock'
-						  className={clsx(styles.icon, useBoxStyles({
-							  position: 'absolute',
-						  }))} />
+					<Icon
+						icon={icon}
+						size="small"
+						display="inlineBlock"
+						className={clsx(
+							styles.icon,
+							useBoxStyles({
+								position: 'absolute',
+							}),
+						)}
+					/>
 				) : null}
 			</Text>
 		);

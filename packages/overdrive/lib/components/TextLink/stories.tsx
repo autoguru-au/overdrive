@@ -132,5 +132,6 @@ const withIconProps: typeof standardProps = {
 export const withIcon = Template.bind(withIconProps);
 withIcon.args = withIconProps;
 
-export const withIconInsideParagraph = InsideParagraphTemplate.bind(withIconProps);
+export const withIconInsideParagraph =
+	InsideParagraphTemplate.bind(withIconProps);
 withIconInsideParagraph.args = withIconProps;

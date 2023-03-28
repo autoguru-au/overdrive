@@ -1,4 +1,4 @@
-import type { FunctionComponent } from 'react';
+import type { ComponentProps, FunctionComponent } from 'react';
 import * as React from 'react';
 import { Children, createContext, ReactNode } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
@@ -14,7 +14,8 @@ interface TabPanesContextValue {
 
 export const TabPanesContext = createContext<TabPanesContextValue | null>(null);
 
-interface Props {
+interface Props
+	extends Pick<ComponentProps<typeof Box>, 'paddingTop' | 'paddingBottom'> {
 	/** Render tab panels even when visually hidden. */
 	renderInactivePanes?: boolean;
 	children?: ReactNode;
@@ -23,8 +24,15 @@ interface Props {
 export const TabPanes: FunctionComponent<Props> = ({
 	renderInactivePanes = false,
 	children,
+	paddingTop = '6',
+	paddingBottom = '6',
 }) => (
-	<Box paddingY="6" className={styles.root} width="full">
+	<Box
+		paddingTop={paddingTop}
+		paddingBottom={paddingBottom}
+		className={styles.root}
+		width="full"
+	>
 		{Children.map(flattenChildren(children), (child, index) => (
 			<TabPanesContext.Provider
 				value={{
