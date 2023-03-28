@@ -20,7 +20,6 @@ export const icon = style({
 	transform: 'translateY(-50%)',
 });
 
-
 export const muted = style({
 	':hover': {
 		color: 'white',

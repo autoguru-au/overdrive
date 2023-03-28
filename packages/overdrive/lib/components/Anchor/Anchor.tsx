@@ -19,10 +19,11 @@ import { Text, useTextStyles } from '../Text';
 
 import * as styles from './Anchor.css';
 
-export interface Props extends Omit<
-	AnchorHTMLAttributes<HTMLAnchorElement>,
-	'children' | 'style' | 'is'
-> {
+export interface Props
+	extends Omit<
+		AnchorHTMLAttributes<HTMLAnchorElement>,
+		'children' | 'style' | 'is'
+	> {
 	className?: string;
 	is?: ElementType | ReactElement;
 	disabled?: boolean;
@@ -32,16 +33,16 @@ export interface Props extends Omit<
 }
 
 export const Anchor: FunctionComponent<Props> = ({
-													 className = '',
+	className = '',
 
-													 is: Component = 'a',
-													 disabled = false,
+	is: Component = 'a',
+	disabled = false,
 
-													 children,
+	children,
 
-													 icon,
+	icon,
 	...rest
-												 }) => {
+}) => {
 	const textStyles = useTextStyles({
 		colour: 'link',
 	});
@@ -57,7 +58,7 @@ export const Anchor: FunctionComponent<Props> = ({
 			className,
 		),
 		disabled,
-		...rest
+		...rest,
 	};
 
 	const childs = (

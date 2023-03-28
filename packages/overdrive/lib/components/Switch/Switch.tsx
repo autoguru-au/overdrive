@@ -7,10 +7,11 @@ import { useTextStyles } from '../Text';
 
 import * as styles from './Switch.css';
 
-export interface Props extends Omit<
-	AnchorHTMLAttributes<HTMLButtonElement>,
-	'children' | 'style' | 'is' | 'onChange'
-> {
+export interface Props
+	extends Omit<
+		AnchorHTMLAttributes<HTMLButtonElement>,
+		'children' | 'style' | 'is' | 'onChange'
+	> {
 	className?: string;
 	disabled?: boolean;
 	toggled?: boolean;
