@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.14.6
+
+### Patch Changes
+
+-   c8f6330: New theme token utils to read theme token values
+
 ## 4.14.5
 
 ### Patch Changes
