@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.14.7
+
+### Patch Changes
+
+-   7366dee: TabPanes: Gets padding options
+
 ## 4.14.6
 
 ### Patch Changes
