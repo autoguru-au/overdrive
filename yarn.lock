@@ -63,9 +63,9 @@
     eslint-plugin-unicorn "^33.0.1"
 
 "@autoguru/icons@^1.7.28":
-  version "1.7.28"
-  resolved "https://registry.yarnpkg.com/@autoguru/icons/-/icons-1.7.28.tgz#2e7eb561364dfeff04ba14e9b4a0ad775d0e203e"
-  integrity sha512-0Z/G2yiec2OoefLWkfdcy5szslzxcTCh410lAnWlxN8W2QMt6gOIY1+RwjWta5TcqhIC1A8fuD4K12qmMXdcag==
+  version "1.7.37"
+  resolved "https://registry.yarnpkg.com/@autoguru/icons/-/icons-1.7.37.tgz#cf66a940724ae55429d3a605b6e08e043c93a1fe"
+  integrity sha512-/YFqyCRWlJ7p36nTgQ3DyCvYuHmYHuBdgzBKk5Bv54xY53jSHg1dAgdj91QHEnuwUG8gtBiIFSpn+s7cchEaLw==
   dependencies:
     tslib "^2.1.0"
 
