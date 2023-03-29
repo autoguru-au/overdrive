@@ -34,9 +34,9 @@ export const useWindowHeightFill = ({
 					themeClass,
 					themeContractVars.space[bottomGap],
 				) || '0px';
-			// @ts-ignore
 			const availableHeight =
 				window.innerHeight -
+				// @ts-ignore
 				containerRef.current.getBoundingClientRect().top;
 			setContainerHeight(
 				gap
