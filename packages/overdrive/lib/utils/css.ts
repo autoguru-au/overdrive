@@ -7,13 +7,14 @@ export const cssVarUnwrap = (value: string) => {
 };
 
 export const getThemeTokenValue = (
-	themeClass: string,
-	token: string,
-): string | null => {
+	themeClass?: string | null,
+	token?: string | null,
+): string => {
+	if (!themeClass || !token) return '';
 	const cssVar = cssVarUnwrap(token);
 	const themedElement = document.querySelector(`.${themeClass}`);
-	if (!themedElement || !cssVar) return null;
+	if (!themedElement || !cssVar) return '';
 	return (
-		getComputedStyle(themedElement).getPropertyValue(cssVar)?.trim() || null
+		getComputedStyle(themedElement).getPropertyValue(cssVar)?.trim() || ''
 	);
 };
