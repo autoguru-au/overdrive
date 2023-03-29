@@ -13,6 +13,7 @@ export const FillHeightBox: FunctionComponent<Props> = ({
 	includeMobile,
 	bottomGap,
 	serverVhFallback,
+	observedElementRef,
 	style,
 	...scrollPaneProps
 }) => {
@@ -20,6 +21,7 @@ export const FillHeightBox: FunctionComponent<Props> = ({
 	const containerHeight = useWindowHeightFill({
 		containerRef,
 		includeMobile,
+		observedElementRef,
 		bottomGap,
 		serverVhFallback,
 	});

@@ -9,7 +9,9 @@ export interface UseWindowHeightFillProps {
 	bottomGap?: keyof Tokens['space'];
 	serverVhFallback?: number;
 	includeMobile?: boolean;
+	observeDomChanges?: boolean;
 	containerRef: RefObject<HTMLDivElement>;
+	observedElementRef?: RefObject<HTMLDivElement>;
 }
 
 export const useWindowHeightFill = ({
@@ -17,7 +19,9 @@ export const useWindowHeightFill = ({
 	includeMobile = false,
 	serverVhFallback = 100,
 	containerRef,
+	observedElementRef,
 }: UseWindowHeightFillProps): string => {
+	// Create an observer instance linked to the callback function
 	const cappedHeight = useResponsiveValue([includeMobile, , true]);
 	const { themeClass } = useTheme();
 	const [containerHeight, setContainerHeight] = useState<string>(
@@ -45,8 +49,11 @@ export const useWindowHeightFill = ({
 			);
 		};
 
+		const mutationObserver = new MutationObserver(resize);
+		mutationObserver.observe(observedElementRef?.current || document.body);
+
 		const resizeObserver = new ResizeObserver(resize);
-		resizeObserver.observe(document.body);
+		resizeObserver.observe(observedElementRef?.current || document.body);
 
 		window.removeEventListener('resize', resize);
 		window.addEventListener('resize', resize, { passive: true });
@@ -55,6 +62,7 @@ export const useWindowHeightFill = ({
 
 		return () => {
 			window.removeEventListener('resize', resize);
+			mutationObserver.disconnect();
 			resizeObserver.disconnect();
 		};
 	}, [
