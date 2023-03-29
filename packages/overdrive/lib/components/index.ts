@@ -58,3 +58,6 @@ export * from './DividerLine';
 export * from './ThemeOverrideProvider';
 export * from './SliderProgress';
 export * from './HorizontalAutoScroller';
+export * from './FillHeightBox';
+export * from './StickyBox';
+export * from './ScrollPane';
