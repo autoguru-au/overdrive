@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.15.2
+
+### Patch Changes
+
+-   98283fb6: useWindowHeightFill: Fixes mutation observer
+
 ## 4.15.1
 
 ### Patch Changes
