@@ -1,4 +1,4 @@
-import { RefObject, useLayoutEffect, useState } from 'react';
+import { RefObject, useLayoutEffect, useRef, useState } from 'react';
 
 import { useResponsiveValue, useTheme } from '../..';
 import { themeContractVars } from '../../themes/theme.css';
@@ -27,6 +27,7 @@ export const useWindowHeightFill = ({
 	const [containerHeight, setContainerHeight] = useState<string>(
 		`${serverVhFallback}vh`,
 	);
+	const containerHeightRef = useRef(containerHeight);
 
 	useLayoutEffect(() => {
 		if (!containerRef?.current || !window?.innerHeight || !document?.body)
@@ -42,15 +43,22 @@ export const useWindowHeightFill = ({
 				window.innerHeight -
 				// @ts-ignore
 				containerRef.current.getBoundingClientRect().top;
-			setContainerHeight(
-				gap
-					? `calc(${availableHeight}px - ${gap})`
-					: `${availableHeight}px`,
-			);
+			const newHeight = gap
+				? `calc(${availableHeight}px - ${gap})`
+				: `${availableHeight}px`;
+			if (containerHeightRef.current !== newHeight) {
+				setContainerHeight(newHeight);
+				containerHeightRef.current = newHeight;
+			}
 		};
 
 		const mutationObserver = new MutationObserver(resize);
-		mutationObserver.observe(observedElementRef?.current || document.body);
+		mutationObserver.observe(observedElementRef?.current || document.body, {
+			childList: true,
+			subtree: true,
+			attributes: false,
+			characterData: false,
+		});
 
 		const resizeObserver = new ResizeObserver(resize);
 		resizeObserver.observe(observedElementRef?.current || document.body);
