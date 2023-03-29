@@ -96,7 +96,7 @@
 		"magic-string": "0.30.0",
 		"mini-css-extract-plugin": "^2.6.1",
 		"patch-package": "6.4.7",
-		"playroom": "^0.28.0",
+		"playroom": "^0.31.0",
 		"plop": "2.7.6",
 		"postcss": "^8.3.9",
 		"prettier": "2.7.1",
