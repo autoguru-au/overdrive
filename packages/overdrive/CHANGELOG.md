@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.15.1
+
+### Patch Changes
+
+-   8da1b1d: useWindowHeightFill: Listens to dom changes
+
 ## 4.15.0
 
 ### Minor Changes
