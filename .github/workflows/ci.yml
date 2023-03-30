@@ -46,20 +46,55 @@ jobs:
               with:
                   token: ${{ secrets.CODECOV }}
 
-            - name: Chromatic (main)
-              if: github.ref == 'refs/heads/main'
-              run: yarn run chromatic test --auto-accept-changes
-              env:
-                  CHROMATIC_APP_CODE: ${{ secrets.CHROMATIC_APP_CODE }}
-            - name: Chromatic (prs)
-              if: |
-                github.ref != 'refs/heads/main' &&
-                !contains(github.ref, 'renovate') &&
-                !contains(github.ref, 'changeset')
-              run: yarn run chromatic test --exit-once-uploaded
-              env:
-                  CHROMATIC_APP_CODE: ${{ secrets.CHROMATIC_APP_CODE }}
+    visual_test:
+        name: Visual changes
+        runs-on: ubuntu-latest
+        if: |
+            !contains(github.ref, 'renovate') &&
+            !contains(github.ref, 'changeset')
+        env:
+            TZ: Australia/Brisbane
+            CI: true
+        steps:
+            -   uses: actions/checkout@main
+                with:
+                    fetch-depth: 0
 
+            -   name: Setup environment
+                id: setups
+                run: |-
+                    echo "::set-output name=yarn_cache::$(yarn cache dir)"
+                    echo "::set-output name=node_version::$(jq -r '.volta.node' package.json)"
+
+            -   name: Setup Node ${{ steps.setups.outputs.node_version }}
+                uses: actions/setup-node@main
+                with:
+                    node-version: ${{ steps.setups.outputs.node_version }}
+                    check-latest: true
+
+            -   name: Yarn cache
+                uses: actions/cache@v3
+                with:
+                    path: ${{ steps.setups.outputs.yarn_cache }}
+                    key:
+                        ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock')
+                        }}-node-${{ steps.setups.outputs.node_version }}
+
+            -   run: yarn --frozen-lockfile
+
+            -   name: Chromatic (main)
+                if: github.ref == 'refs/heads/main'
+                run: yarn run chromatic test --auto-accept-changes
+                env:
+                    CHROMATIC_APP_CODE: ${{ secrets.CHROMATIC_APP_CODE }}
+            -   name: Chromatic (prs)
+                if: |
+                    github.ref != 'refs/heads/main' &&
+                    !contains(github.ref, 'renovate') &&
+                    !contains(github.ref, 'changeset')
+                run: yarn run chromatic test --exit-once-uploaded
+                env:
+                    CHROMATIC_APP_CODE: ${{ secrets.CHROMATIC_APP_CODE }}
     preview:
         name: Preview
         runs-on: ubuntu-latest
