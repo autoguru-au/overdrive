@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.15.3
+
+### Patch Changes
+
+-   cc303b97: Base theme: Updated background neutral colour
+
 ## 4.15.2
 
 ### Patch Changes
