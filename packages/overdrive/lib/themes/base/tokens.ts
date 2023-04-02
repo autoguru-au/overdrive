@@ -102,7 +102,7 @@ export const tokens: Tokens = {
 		background: {
 			body: white,
 			light: baseThemeColours.gray['200'],
-			neutral: baseThemeColours.gray['400'],
+			neutral: baseThemeColours.gray['300'],
 			neutralDark: baseThemeColours.gray['800'],
 		},
 		intent: {
