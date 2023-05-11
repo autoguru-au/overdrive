@@ -10,6 +10,7 @@
 </div>
 
 ---
+[Storybook playground](http://overdrive.autoguru.io/).
 
 Overdrive is a product component library, and design system for AutoGuru. Built
 with [React](https://github.com/facebook/react),
@@ -44,6 +45,11 @@ yarn add @autoguru/overdrive \
         </Button>
     </OverdriveProvider>
     ```
+
+## Docs
+
+Find more about Overdrive API and usages in our [docs](http://overdrive.autoguru.io/?path=/docs/components-actions--no-wrap).
+
 
 ## Thanks
 
