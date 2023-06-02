@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.16.0
+
+### Minor Changes
+
+-   331bc041: Adds IntentStripe component
+
 ## 4.15.3
 
 ### Patch Changes
