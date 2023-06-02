@@ -61,3 +61,4 @@ export * from './HorizontalAutoScroller';
 export * from './FillHeightBox';
 export * from './StickyBox';
 export * from './ScrollPane';
+export * from './IntentStripe';

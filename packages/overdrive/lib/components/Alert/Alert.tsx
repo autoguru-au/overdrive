@@ -11,23 +11,20 @@ import * as React from 'react';
 import { ComponentProps, FunctionComponent, ReactNode } from 'react';
 
 import { Box, useBoxStyles } from '../Box';
-import { backgroundColours } from '../Box/useBoxStyles.css';
 import { Button } from '../Button';
 import { Column, Columns } from '../Columns';
 import { Icon } from '../Icon';
+import { IntentStripe } from '../IntentStripe';
 import { Text, useTextStyles } from '../Text';
 
 import * as styles from './Alert.css';
 
-type Intent = keyof Pick<
-	typeof backgroundColours,
-	'danger' | 'information' | 'success' | 'warning'
->;
+type IntentStripeProps = ComponentProps<typeof IntentStripe>;
+type Intent = IntentStripeProps['intent'];
 
-export interface Props {
+export interface Props extends IntentStripeProps {
 	children?: ReactNode;
 	className?: string;
-	intent?: Intent;
 	inline?: boolean;
 	dismissible?: boolean;
 
@@ -67,12 +64,12 @@ export const Alert: FunctionComponent<Props> = ({
 			boxShadow={inline ? 'none' : '4'}
 			padding="2"
 		>
-			<Box className={styles.intentBox} backgroundColour={intent} />
-			<Columns noWrap spaceX="2">
-				<Column noShrink alignSelf="top">
+			<IntentStripe intent={intent} />
+			<Columns noWrap spaceX='2'>
+				<Column noShrink alignSelf='top'>
 					<Icon
 						icon={iconMapForIntent[intent]}
-						size="medium"
+						size='medium'
 						className={useBoxStyles({
 							marginY: '2',
 							marginLeft: '2',
