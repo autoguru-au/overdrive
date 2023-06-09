@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.17.1
+
+### Patch Changes
+
+-   3e83d21b: DatePicker: Size prop made optional
+
 ## 4.17.0
 
 ### Minor Changes
