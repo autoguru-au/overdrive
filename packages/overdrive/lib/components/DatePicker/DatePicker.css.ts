@@ -1,12 +1,14 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
+import { themeContractVars as vars } from '../../themes/theme.css';
+
 export const input = style({
 	top: 0,
 	right: 0,
+	bottom: 0,
+	left: 0,
 	opacity: 0,
 	cursor: 'pointer',
-	display: 'grid',
-	gridTemplateColumns: 'auto 50px',
 	selectors: {
 		'&::-webkit-calendar-picker-indicator': {
 			background: 'transparent',
@@ -20,6 +22,20 @@ export const input = style({
 			top: 0,
 			width: 'auto',
 		},
+	},
+});
+
+
+export const contents = styleVariants({
+	default: {
+		display: 'grid',
+		gridTemplateColumns: 'auto',
+		alignItems: 'center',
+		justifyContent: 'flex-start',
+		gridGap: vars.space['1'],
+	},
+	withLabel: {
+		gridTemplateColumns: 'auto auto',
 	},
 });
 export const disabled = styleVariants({

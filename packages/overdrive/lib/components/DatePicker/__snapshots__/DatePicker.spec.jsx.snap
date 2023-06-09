@@ -2,27 +2,31 @@
 
 exports[`<DatePicker /> should match snapshot without label 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_position_relative__7o6k06f1 useBoxStyles_overflow_hidden__7o6k06f5 Icon_makeResponsiveStyle_key_bp__14sz1q64"
+  class="reset_block__6swfds3 useBoxStyles_position_relative__7o6k06f1 useBoxStyles_overflow_hidden__7o6k06f5"
 >
   <input
     class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez DatePicker_input__1jp01bq0"
     type="date"
   />
-  <i
-    class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q64"
-    role="presentation"
+  <div
+    class="reset_block__6swfds3 DatePicker_contents_default__1jp01bq1"
   >
-    <svg
-      class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
-      fill="currentColor"
-      focusable="false"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
+    <i
+      class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q64"
+      role="presentation"
     >
-      <path
-        d="M19 18.998H5v-11h14m-3-7v2H8v-2H6v2H5a1.99 1.99 0 00-1.99 2l-.01 14a2 2 0 002 2h14c1.102 0 2-.896 2-2v-14a2 2 0 00-2-2h-1v-2m-1 11h-5v5h5v-5z"
-      />
-    </svg>
-  </i>
+      <svg
+        class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19 18.998H5v-11h14m-3-7v2H8v-2H6v2H5a1.99 1.99 0 00-1.99 2l-.01 14a2 2 0 002 2h14c1.102 0 2-.896 2-2v-14a2 2 0 00-2-2h-1v-2m-1 11h-5v5h5v-5z"
+        />
+      </svg>
+    </i>
+  </div>
 </div>
 `;

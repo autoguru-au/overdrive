@@ -14,6 +14,8 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
+import { Box } from '../Box';
+
 import { DatePicker } from '.';
 
 const iconOptions = {
@@ -52,7 +54,9 @@ export default {
 } as ComponentMeta<typeof DatePicker>;
 
 const Template: ComponentStory<typeof DatePicker> = (args) => (
-	<DatePicker {...args} />
+	<Box display='flex'>
+		<DatePicker {...args} />
+	</Box>
 );
 
 const standardProps: ComponentProps<typeof DatePicker> = {
@@ -72,6 +76,14 @@ const smallProps: ComponentProps<typeof DatePicker> = {
 export const small = Template.bind(smallProps);
 small.args = smallProps;
 
+const smallWithLabelProps: ComponentProps<typeof DatePicker> = {
+	...smallProps,
+	valueLabel: 'Today',
+};
+
+export const smallWithLabel = Template.bind(smallWithLabelProps);
+smallWithLabel.args = smallWithLabelProps;
+
 const mediumProps: ComponentProps<typeof DatePicker> = {
 	size: 'medium',
 	isLoading: false,
@@ -81,6 +93,15 @@ const mediumProps: ComponentProps<typeof DatePicker> = {
 export const medium = Template.bind(mediumProps);
 medium.args = mediumProps;
 
+
+const mediumWithLabelProps: ComponentProps<typeof DatePicker> = {
+	...mediumProps,
+	valueLabel: 'Today',
+};
+
+export const mediumWithLabel = Template.bind(mediumWithLabelProps);
+mediumWithLabel.args = mediumWithLabelProps;
+
 const largeProps: ComponentProps<typeof DatePicker> = {
 	size: 'large',
 	isLoading: false,
@@ -89,3 +110,12 @@ const largeProps: ComponentProps<typeof DatePicker> = {
 
 export const large = Template.bind(largeProps);
 large.args = largeProps;
+
+
+const largeWithLabelProps: ComponentProps<typeof DatePicker> = {
+	...largeProps,
+	valueLabel: 'Today',
+};
+
+export const largeWithLabel = Template.bind(largeWithLabelProps);
+largeWithLabel.args =largeWithLabelProps;

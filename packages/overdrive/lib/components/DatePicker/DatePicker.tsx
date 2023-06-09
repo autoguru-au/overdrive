@@ -3,34 +3,41 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { ChangeEvent, ComponentProps, FunctionComponent } from 'react';
 
-import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
 import { Box, useBoxStyles } from '../Box';
 import { Icon } from '../Icon';
-import * as iconStyles from '../Icon/Icon.css';
 import { ProgressSpinner } from '../ProgressSpinner';
+import { Text } from '../Text';
 
 import * as styles from './DatePicker.css';
 
 export interface Props
 	extends Partial<Pick<HTMLInputElement, 'min' | 'max' | 'value'>>,
 		Pick<ComponentProps<typeof Icon>, 'size'> {
+	size: 'small'|'medium'|'large';
 	className?: string;
 	disabled?: boolean;
 	icon?: IconType;
 	isLoading?: boolean;
+	valueLabel?: string;
 
 	onChange(date: string);
 }
 
+const textSizeMap: Record<Props['size'], ComponentProps<typeof Text>['size']>= {
+	small: '2',
+	medium: '3',
+	large: '5',
+}
 export const DatePicker: FunctionComponent<Props> = ({
-	className = '',
-	icon = CalendarIcon,
-	size = 'medium',
-	disabled = false,
-	isLoading = false,
-	onChange,
-	...inputProps
-}) => {
+														 className = '',
+														 icon = CalendarIcon,
+														 size = 'medium',
+														 disabled = false,
+														 isLoading = false,
+														 valueLabel,
+														 onChange,
+														 ...inputProps
+													 }) => {
 	const onChangeEvent = (event: ChangeEvent<HTMLInputElement>) => {
 		if (typeof onChange === 'function') {
 			onChange(event.currentTarget.value);
@@ -38,10 +45,9 @@ export const DatePicker: FunctionComponent<Props> = ({
 	};
 	return (
 		<Box
-			position="relative"
-			overflow="hidden"
+			position='relative'
+			overflow='hidden'
 			className={clsx(
-				resolveResponsiveStyle(size, iconStyles.size),
 				className,
 				{
 					[styles.disabled.default]: disabled,
@@ -50,7 +56,7 @@ export const DatePicker: FunctionComponent<Props> = ({
 			)}
 		>
 			<Box
-				position="absolute"
+				position='absolute'
 				height="full"
 				width="full"
 				is="input"
@@ -62,24 +68,34 @@ export const DatePicker: FunctionComponent<Props> = ({
 					},
 					styles.input,
 				)}
-				type="date"
+				type='date'
 				{...inputProps}
 			/>
-			{isLoading ? (
-				<ProgressSpinner
-					className={clsx(
-						styles.spinner,
-						useBoxStyles({
-							position: 'absolute',
-						}),
-					)}
-					size={
-						size as ComponentProps<typeof ProgressSpinner>['size']
-					}
-				/>
-			) : (
-				<Icon icon={icon} size={size} />
-			)}
+			<Box className={clsx(
+				styles.contents.default,
+				{
+					[styles.contents.withLabel]: Boolean(valueLabel),
+				},
+			)}>
+				{isLoading ? (
+					<ProgressSpinner
+						className={clsx(
+							styles.spinner,
+							useBoxStyles({
+								position: 'absolute',
+							}),
+						)}
+						size={
+							size as ComponentProps<typeof ProgressSpinner>['size']
+						}
+					/>
+				) : (
+					<Icon icon={icon} size={size} />
+				)}
+				{valueLabel && (
+					<Text size={textSizeMap[size as string]}>{valueLabel}</Text>
+				)}
+			</Box>
 		</Box>
 	);
 };
