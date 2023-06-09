@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.17.0
+
+### Minor Changes
+
+-   7deb2f96: DatePicker: Gets valueLabel prop
+
 ## 4.16.0
 
 ### Minor Changes
