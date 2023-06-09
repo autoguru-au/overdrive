@@ -10,10 +10,11 @@ import { Text } from '../Text';
 
 import * as styles from './DatePicker.css';
 
+type SizeScale = 'small' | 'medium' | 'large';
+
 export interface Props
-	extends Partial<Pick<HTMLInputElement, 'min' | 'max' | 'value'>>,
-		Pick<ComponentProps<typeof Icon>, 'size'> {
-	size: 'small'|'medium'|'large';
+	extends Partial<Pick<HTMLInputElement, 'min' | 'max' | 'value'>> {
+	size?: SizeScale;
 	className?: string;
 	disabled?: boolean;
 	icon?: IconType;
@@ -23,11 +24,11 @@ export interface Props
 	onChange(date: string);
 }
 
-const textSizeMap: Record<Props['size'], ComponentProps<typeof Text>['size']>= {
+const textSizeMap: Record<SizeScale, ComponentProps<typeof Text>['size']> = {
 	small: '2',
 	medium: '3',
 	large: '5',
-}
+};
 export const DatePicker: FunctionComponent<Props> = ({
 														 className = '',
 														 icon = CalendarIcon,
