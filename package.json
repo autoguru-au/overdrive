@@ -33,8 +33,8 @@
 	},
 	"resolutions": {
 		"@types/react": "^18.0.9",
-		"react": "^18.1.0",
-		"react-dom": "^18.1.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
 		"mini-css-extract-plugin": "^2.6.1"
 	},
 	"dependencies": {
@@ -84,7 +84,7 @@
 		"babel-plugin-add-import-extension": "^1.6.0",
 		"babel-plugin-dev-expression": "^0.2.3",
 		"babel-plugin-macros": "^3.1.0",
-		"browserslist-config-autoguru": "^2.2.0",
+		"browserslist-config-autoguru": "^2.2.8",
 		"chromatic": "^6.15.0",
 		"concurrently": "6.5.1",
 		"css-loader": "^6.7.1",
@@ -100,10 +100,9 @@
 		"plop": "2.7.6",
 		"postcss": "^8.3.9",
 		"prettier": "2.8.8",
-		"react": "^18.1.0",
-		"react-dom": "^18.1.0",
-		"react-i18next": "^11.11.4",
-		"react-test-renderer": "^18.1.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-test-renderer": "^18.2.0",
 		"rimraf": "3.0.2",
 		"style-loader": "1.2.1",
 		"ts-loader": "8.4.0",

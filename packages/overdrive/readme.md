@@ -10,6 +10,10 @@
 </div>
 
 ---
+# Overdrive
+
+Overdrive is a product component library and design system for AutoGuru, built with React, TypeScript, Vanilla Extract, and Storybook.
+
 [Storybook playground](http://overdrive.autoguru.io/).
 
 Overdrive is a product component library, and design system for AutoGuru. Built
@@ -20,35 +24,30 @@ with [React](https://github.com/facebook/react),
 
 ## Usage
 
+To use Overdrive in your project, install it via yarn:
 ```sh
 yarn add @autoguru/overdrive \
 	react react-dom
 ```
 
-1. Import reset
+Then, import the reset and configure the OverdriveProvider with the theme you want to use:
 
-    ```js
-    import '@autoguru/overdrive/reset';
-    ```
+```jsx
+import '@autoguru/overdrive/reset';
+// It is important that the reset import happens before any of this.
+import { baseTheme } from '@autoguru/overdrive/lib/themes';
+import { OverdriveProvider, Button } from '@autoguru/overdrive';
 
-2. Import and configure the `OverdriveProvider` complete with the theme you're
-   wanting to use.
+<OverdriveProvider theme={baseTheme}>
+  <Button variant="primary">
+    Hello World
+  </Button>
+</OverdriveProvider>
+```
 
-    ```jsx
-    // It is important that the reset import happens before any of this.
-    import { baseTheme } from '@autoguru/overdrive/lib/themes';
-    import { OverdriveProvider, Button } '@autoguru/overdrive';
+Documentation
 
-    <OverdriveProvider theme={baseTheme}>
-        <Button variant="primary">
-            Hello World
-        </Button>
-    </OverdriveProvider>
-    ```
-
-## Docs
-
-Find more about Overdrive API and usages in our [docs](http://overdrive.autoguru.io/?path=/docs/components-actions--no-wrap).
+For more information on Overdrive's API and usage, check out the [docs](http://overdrive.autoguru.io/?path=/documentation/).
 
 
 ## Thanks
