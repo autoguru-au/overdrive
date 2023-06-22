@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.17.2
+
+### Patch Changes
+
+-   62974729: Browserlist upgrade
+
 ## 4.17.1
 
 ### Patch Changes
