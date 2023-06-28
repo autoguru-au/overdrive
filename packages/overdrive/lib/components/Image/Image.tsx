@@ -14,10 +14,11 @@ interface Props extends ComponentProps<typeof ResponsiveImage> {
 
 export const Image: FunctionComponent<Props> = ({
 	unoptimised = false,
+	imageWidth,
 	...props
 }) =>
 	useImageServer() && !unoptimised ? (
-		<ResponsiveImage {...props} />
+		<ResponsiveImage imageWidth={imageWidth} {...props} />
 	) : (
 		<SimpleImage {...(props as ComponentProps<typeof SimpleImage>)} />
 	);
