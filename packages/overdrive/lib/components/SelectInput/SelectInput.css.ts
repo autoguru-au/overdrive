@@ -2,7 +2,10 @@ import { style } from '@vanilla-extract/css';
 
 import { themeContractVars as vars } from '../../themes/theme.css';
 
-export const input = style({});
+export const input = style({
+	marginTop: `calc(-1 * ${vars.border.width['1']})`,
+	marginBottom: `calc(-1 * ${vars.border.width['1']})`,
+});
 export const paddedInput = style({
 	selectors: {
 		[`${input}&`]: {

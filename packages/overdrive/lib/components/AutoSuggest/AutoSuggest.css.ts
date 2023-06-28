@@ -53,6 +53,10 @@ export const suggestionList = {
 	}),
 };
 
+export const inputPrimitive = style({
+	marginTop: `calc(-1 * ${vars.border.width['1']})`,
+	marginBottom: `calc(-1 * ${vars.border.width['1']})`,
+});
 export const input = style({
 	position: 'sticky',
 	top: 0,
