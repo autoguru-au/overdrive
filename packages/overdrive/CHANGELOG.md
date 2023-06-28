@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 4.17.4
+
+### Patch Changes
+
+-   44aa5baa: Image: Fixed images component passing unsupported imageWidth prop
+    to SimpleImage
+
 ## 4.17.3
 
 ### Patch Changes
