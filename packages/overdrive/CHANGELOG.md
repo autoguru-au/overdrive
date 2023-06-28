@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 4.17.3
+
+### Patch Changes
+
+-   fec53656: Select Input: Get heights aligned with other inputs AutoSuggest
+    Input: Get heights aligned with other inputs
+
 ## 4.17.2
 
 ### Patch Changes
