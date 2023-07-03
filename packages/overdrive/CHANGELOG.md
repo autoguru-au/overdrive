@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.18.0
+
+### Minor Changes
+
+-   f1b7f299: Increases large breakpoint threshold
+
 ## 4.17.4
 
 ### Patch Changes
