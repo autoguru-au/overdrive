@@ -1,5 +1,15 @@
 # @autoguru/overdrive
 
+## 4.19.0
+
+### Minor Changes
+
+-   de82bb12: ksjdfchsdjhfgshdj
+
+### Patch Changes
+
+-   de82bb12: Tooltip: No longer shows empty tooltips
+
 ## 4.18.0
 
 ### Minor Changes
