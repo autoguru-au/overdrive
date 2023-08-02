@@ -14,6 +14,7 @@ export interface Props
 		Pick<ComponentProps<typeof Columns>, 'noWrap' | 'wrappingDirection'>
 	> {
 	children: ReactElement | ReactElement[];
+	className?: string;
 }
 
 export const Actions: FunctionComponent<Props> = ({

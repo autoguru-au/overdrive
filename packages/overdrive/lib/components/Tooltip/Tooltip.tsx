@@ -68,7 +68,7 @@ export const Tooltip: FunctionComponent<Props> = ({
 		return () => (timeout ? clearTimeout(timeout) : void 0);
 	}, [closeAfter, isOpen]);
 
-	return (
+	return label?.length > 0 ? (
 		<>
 			{cloneElement(Children.only(children), {
 				ref: triggerRef,
@@ -99,6 +99,8 @@ export const Tooltip: FunctionComponent<Props> = ({
 				</Box>
 			</Positioner>
 		</>
+	) : (
+		<>{children}</>
 	);
 };
 
