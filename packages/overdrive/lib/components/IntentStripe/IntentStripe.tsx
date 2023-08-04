@@ -17,14 +17,15 @@ export interface Props {
 }
 
 export const IntentStripe: FunctionComponent<Props> = ({
-														   className = '',
-														   intent = 'success',
-													   }) => (
-	<Box className={[className, styles.intentBox]}
-		 position='absolute'
-		 height='full'
-		 backgroundColour={intent} />
-
+	className = '',
+	intent = 'success',
+}) => (
+	<Box
+		className={[className, styles.intentBox]}
+		position="absolute"
+		height="full"
+		backgroundColour={intent}
+	/>
 );
 
 export default IntentStripe;

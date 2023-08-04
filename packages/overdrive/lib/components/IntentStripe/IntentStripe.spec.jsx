@@ -9,8 +9,6 @@ describe('<Alert />', () => {
 	});
 
 	it('should match the snapshot', () => {
-		expect(
-			render(<IntentStripe />).container.firstChild,
-		).toMatchSnapshot();
+		expect(render(<IntentStripe />).container.firstChild).toMatchSnapshot();
 	});
 });

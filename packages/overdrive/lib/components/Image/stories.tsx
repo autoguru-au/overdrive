@@ -68,7 +68,7 @@ export default {
 	},
 } as ComponentMeta<typeof Image>;
 
-const calcWidth = (width: typeof sizeOptions[number] | 'full') =>
+const calcWidth = (width: (typeof sizeOptions)[number] | 'full') =>
 	width === 'full' ? '100%' : widthMap[width];
 
 const SimpleTemplate: ComponentStory<typeof Image> = (args) => (

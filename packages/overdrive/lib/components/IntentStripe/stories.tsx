@@ -26,11 +26,18 @@ export default {
 	},
 } as ComponentMeta<typeof IntentStripe>;
 
-const MyStripe = (args)=>(
-	<Box position='relative' width='full' padding='6' backgroundColour="gray200" borderRadius="1" overflow="hidden">
+const MyStripe = (args) => (
+	<Box
+		position="relative"
+		width="full"
+		padding="6"
+		backgroundColour="gray200"
+		borderRadius="1"
+		overflow="hidden"
+	>
 		<IntentStripe {...args} />
 	</Box>
-)
+);
 
 const template: ComponentStory<typeof IntentStripe> = (args) => (
 	<Box
@@ -54,10 +61,10 @@ const templateAllIntents: ComponentStory<typeof IntentStripe> = (args) => (
 			width: '100%',
 		}}
 	>
-		<MyStripe {...args} intent='success' />
-		<MyStripe {...args} intent='warning' />
-		<MyStripe {...args} intent='danger' />
-		<MyStripe {...args} intent='information' />
+		<MyStripe {...args} intent="success" />
+		<MyStripe {...args} intent="warning" />
+		<MyStripe {...args} intent="danger" />
+		<MyStripe {...args} intent="information" />
 	</Box>
 );
 

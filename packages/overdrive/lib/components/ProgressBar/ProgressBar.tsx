@@ -12,7 +12,7 @@ const colours: ReadonlyArray<'red' | 'green' | 'blue' | 'yellow' | 'neutral'> =
 
 export interface Props {
 	value?: number;
-	colour?: typeof colours[number];
+	colour?: (typeof colours)[number];
 }
 
 const backgroundColorMap: Record<

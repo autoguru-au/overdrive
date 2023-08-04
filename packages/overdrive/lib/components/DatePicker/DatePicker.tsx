@@ -30,15 +30,15 @@ const textSizeMap: Record<SizeScale, ComponentProps<typeof Text>['size']> = {
 	large: '5',
 };
 export const DatePicker: FunctionComponent<Props> = ({
-														 className = '',
-														 icon = CalendarIcon,
-														 size = 'medium',
-														 disabled = false,
-														 isLoading = false,
-														 valueLabel,
-														 onChange,
-														 ...inputProps
-													 }) => {
+	className = '',
+	icon = CalendarIcon,
+	size = 'medium',
+	disabled = false,
+	isLoading = false,
+	valueLabel,
+	onChange,
+	...inputProps
+}) => {
 	const onChangeEvent = (event: ChangeEvent<HTMLInputElement>) => {
 		if (typeof onChange === 'function') {
 			onChange(event.currentTarget.value);
@@ -46,18 +46,15 @@ export const DatePicker: FunctionComponent<Props> = ({
 	};
 	return (
 		<Box
-			position='relative'
-			overflow='hidden'
-			className={clsx(
-				className,
-				{
-					[styles.disabled.default]: disabled,
-					[styles.disabled.root]: disabled,
-				},
-			)}
+			position="relative"
+			overflow="hidden"
+			className={clsx(className, {
+				[styles.disabled.default]: disabled,
+				[styles.disabled.root]: disabled,
+			})}
 		>
 			<Box
-				position='absolute'
+				position="absolute"
 				height="full"
 				width="full"
 				is="input"
@@ -69,15 +66,14 @@ export const DatePicker: FunctionComponent<Props> = ({
 					},
 					styles.input,
 				)}
-				type='date'
+				type="date"
 				{...inputProps}
 			/>
-			<Box className={clsx(
-				styles.contents.default,
-				{
+			<Box
+				className={clsx(styles.contents.default, {
 					[styles.contents.withLabel]: Boolean(valueLabel),
-				},
-			)}>
+				})}
+			>
 				{isLoading ? (
 					<ProgressSpinner
 						className={clsx(
@@ -87,7 +83,9 @@ export const DatePicker: FunctionComponent<Props> = ({
 							}),
 						)}
 						size={
-							size as ComponentProps<typeof ProgressSpinner>['size']
+							size as ComponentProps<
+								typeof ProgressSpinner
+							>['size']
 						}
 					/>
 				) : (

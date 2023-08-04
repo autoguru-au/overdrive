@@ -10,9 +10,11 @@
 </div>
 
 ---
+
 # Overdrive
 
-Overdrive is a product component library and design system for AutoGuru, built with React, TypeScript, Vanilla Extract, and Storybook.
+Overdrive is a product component library and design system for AutoGuru, built
+with React, TypeScript, Vanilla Extract, and Storybook.
 
 [Storybook playground](http://overdrive.autoguru.io/).
 
@@ -25,12 +27,14 @@ with [React](https://github.com/facebook/react),
 ## Usage
 
 To use Overdrive in your project, install it via yarn:
+
 ```sh
 yarn add @autoguru/overdrive \
 	react react-dom
 ```
 
-Then, import the reset and configure the OverdriveProvider with the theme you want to use:
+Then, import the reset and configure the OverdriveProvider with the theme you
+want to use:
 
 ```jsx
 import '@autoguru/overdrive/reset';
@@ -39,16 +43,14 @@ import { baseTheme } from '@autoguru/overdrive/lib/themes';
 import { OverdriveProvider, Button } from '@autoguru/overdrive';
 
 <OverdriveProvider theme={baseTheme}>
-  <Button variant="primary">
-    Hello World
-  </Button>
-</OverdriveProvider>
+	<Button variant="primary">Hello World</Button>
+</OverdriveProvider>;
 ```
 
 Documentation
 
-For more information on Overdrive's API and usage, check out the [docs](http://overdrive.autoguru.io/?path=/documentation/).
-
+For more information on Overdrive's API and usage, check out the
+[docs](http://overdrive.autoguru.io/?path=/documentation/).
 
 ## Thanks
 

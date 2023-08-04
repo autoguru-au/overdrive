@@ -54,7 +54,7 @@ export default {
 } as ComponentMeta<typeof DatePicker>;
 
 const Template: ComponentStory<typeof DatePicker> = (args) => (
-	<Box display='flex'>
+	<Box display="flex">
 		<DatePicker {...args} />
 	</Box>
 );
@@ -93,7 +93,6 @@ const mediumProps: ComponentProps<typeof DatePicker> = {
 export const medium = Template.bind(mediumProps);
 medium.args = mediumProps;
 
-
 const mediumWithLabelProps: ComponentProps<typeof DatePicker> = {
 	...mediumProps,
 	valueLabel: 'Today',
@@ -111,11 +110,10 @@ const largeProps: ComponentProps<typeof DatePicker> = {
 export const large = Template.bind(largeProps);
 large.args = largeProps;
 
-
 const largeWithLabelProps: ComponentProps<typeof DatePicker> = {
 	...largeProps,
 	valueLabel: 'Today',
 };
 
 export const largeWithLabel = Template.bind(largeWithLabelProps);
-largeWithLabel.args =largeWithLabelProps;
+largeWithLabel.args = largeWithLabelProps;

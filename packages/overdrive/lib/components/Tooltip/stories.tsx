@@ -96,16 +96,12 @@ export const withLargeTextSize: ComponentStory<typeof Tooltip> = Template.bind(
 );
 withLargeTextSize.args = withSmallTextSizeProps;
 
-const withEmptyLabelProps: Omit<
-	ComponentProps<typeof Tooltip>,
-	'children'
-> = {
+const withEmptyLabelProps: Omit<ComponentProps<typeof Tooltip>, 'children'> = {
 	label: '',
 	alignment: EAlignment.BOTTOM,
 	size: 'large',
 };
 
-export const withEmptyLabel: ComponentStory<typeof Tooltip> = Template.bind(
-	withEmptyLabelProps,
-);
+export const withEmptyLabel: ComponentStory<typeof Tooltip> =
+	Template.bind(withEmptyLabelProps);
 withEmptyLabel.args = withEmptyLabelProps;
