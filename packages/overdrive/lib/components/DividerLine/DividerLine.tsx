@@ -11,7 +11,7 @@ interface Props {
 	className?: string;
 	space: ComponentProps<typeof Box>['marginY'];
 	colour?: ComponentProps<typeof Box>['backgroundColour'];
-	size?: keyof typeof styles.size['horizontal'];
+	size?: keyof (typeof styles.size)['horizontal'];
 }
 
 export const DividerLine: FunctionComponent<Props> = ({

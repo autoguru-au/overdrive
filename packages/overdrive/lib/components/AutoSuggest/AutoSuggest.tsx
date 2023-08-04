@@ -635,17 +635,17 @@ const SuggestionsList = <PayloadType extends unknown>({
 
 const AutoSuggestInputPrimitive = withEnhancedInput(
 	({
-		 field: { className: fieldClassName, ...field },
-		 eventHandlers,
-		 validation,
-		 suffixed,
-		 prefixed,
-		 isLoading,
-		 fieldIcon = ChevronDownIcon,
-		 isFocused,
-		 className,
-		 size,
-		 ...rest
+		field: { className: fieldClassName, ...field },
+		eventHandlers,
+		validation,
+		suffixed,
+		prefixed,
+		isLoading,
+		fieldIcon = ChevronDownIcon,
+		isFocused,
+		className,
+		size,
+		...rest
 	}) => {
 		let focusTimeout;
 		const ref = useRef<HTMLInputElement>(null);

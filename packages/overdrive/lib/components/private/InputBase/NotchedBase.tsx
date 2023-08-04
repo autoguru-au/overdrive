@@ -29,8 +29,8 @@ export interface Props {
 	size: keyof typeof styles.placeholderPlacement;
 	className?: string;
 	children?: ReactNode;
-	attach?: keyof typeof styles.bordersAttach['complete'];
-	borderMerged?: keyof typeof styles.bordersMerged['complete'];
+	attach?: keyof (typeof styles.bordersAttach)['complete'];
+	borderMerged?: keyof (typeof styles.bordersMerged)['complete'];
 	isFocused?: boolean;
 	isHovered?: boolean;
 }

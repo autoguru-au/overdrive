@@ -65,11 +65,11 @@ export const Alert: FunctionComponent<Props> = ({
 			padding="2"
 		>
 			<IntentStripe intent={intent} />
-			<Columns noWrap spaceX='2'>
-				<Column noShrink alignSelf='top'>
+			<Columns noWrap spaceX="2">
+				<Column noShrink alignSelf="top">
 					<Icon
 						icon={iconMapForIntent[intent]}
-						size='medium'
+						size="medium"
 						className={useBoxStyles({
 							marginY: '2',
 							marginLeft: '2',

@@ -22,6 +22,7 @@ type ToolTipSize = 'medium' | 'large';
 
 export interface Props {
 	size?: ToolTipSize;
+	isOpen?: boolean;
 	label: string;
 	alignment?: EAlignment;
 	children: ReactElement;
@@ -35,12 +36,13 @@ const sizeMap: Record<ToolTipSize, ComponentProps<typeof Text>['size']> = {
 
 export const Tooltip: FunctionComponent<Props> = ({
 	alignment = EAlignment.RIGHT,
+	isOpen: incomingIsOpen,
 	label,
 	children,
 	size = 'medium',
 	closeAfter = null,
 }) => {
-	const [isOpen, setIsOpen] = useState(false);
+	const [isOpen, setIsOpen] = useState(incomingIsOpen);
 	const childRef = useRef<HTMLDivElement>(null);
 	const triggerRef = useRef<HTMLElement>(null);
 
@@ -66,7 +68,7 @@ export const Tooltip: FunctionComponent<Props> = ({
 			timeout = setTimeout(() => setIsOpen(false), closeAfter);
 
 		return () => (timeout ? clearTimeout(timeout) : void 0);
-	}, [closeAfter, isOpen]);
+	}, [closeAfter, isOpen, label]);
 
 	return label?.length > 0 ? (
 		<>
@@ -78,7 +80,11 @@ export const Tooltip: FunctionComponent<Props> = ({
 			<Positioner
 				triggerRef={triggerRef}
 				alignment={alignment}
-				isOpen={isOpen}
+				isOpen={
+					typeof incomingIsOpen === 'boolean'
+						? incomingIsOpen
+						: isOpen
+				}
 			>
 				<Box
 					ref={childRef}

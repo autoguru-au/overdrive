@@ -25,7 +25,6 @@ export const input = style({
 	},
 });
 
-
 export const contents = styleVariants({
 	default: {
 		display: 'grid',
