@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.20.0
+
+### Minor Changes
+
+-   ec829f85: Tooltip: Accepts open state as a prop
+
 ## 4.19.0
 
 ### Minor Changes
