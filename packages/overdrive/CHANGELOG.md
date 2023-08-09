@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.21.0
+
+### Minor Changes
+
+-   e9273f8b: Sticky Box: Gets a noPopShadow option
+
 ## 4.20.0
 
 ### Minor Changes
