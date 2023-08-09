@@ -10,12 +10,14 @@ interface Props extends ComponentProps<typeof Box> {
 	top?: 'none' | '1' | '2' | '3' | '5' | '7' | 'subHeader';
 	bottom?: 'none' | '1' | '2' | '3' | 'subHeader';
 	zIndex?: 0 | 1 | 2 | 3 | 99;
+	noPopShadow?: boolean;
 	className?: string;
 }
 
 export const StickyBox: FunctionComponent<Props> = ({
 	top = 'none',
 	bottom = 'none',
+	noPopShadow = false,
 	zIndex = 2,
 	className = '',
 	backgroundColour,
@@ -38,7 +40,19 @@ export const StickyBox: FunctionComponent<Props> = ({
 		return () => parentElement.removeEventListener('scroll', onScroll);
 	}, [containerRef.current?.parentElement]);
 
-	return (
+	return noPopShadow ? (
+		<Box
+			className={[
+				className,
+				styles.simpleRoot,
+				styles.top[top],
+				styles.zIndex[zIndex],
+			]}
+			{...rest}
+		>
+			{children}
+		</Box>
+	) : (
 		<Box
 			ref={containerRef}
 			overflow="hidden"

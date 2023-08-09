@@ -57,3 +57,10 @@ const standardProps: Props = {
 };
 export const standard = Template.bind(standardProps);
 standard.args = standardProps;
+
+const withNoPopShadowProps: Props = {
+	top: 'none',
+	noPopShadow: true,
+};
+export const withNoPopShadow = Template.bind(withNoPopShadowProps);
+withNoPopShadow.args = withNoPopShadowProps;
