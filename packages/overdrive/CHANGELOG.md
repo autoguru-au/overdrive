@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.22.0
+
+### Minor Changes
+
+-   b82f034c: Inputs: Can set a background colour
+
 ## 4.21.0
 
 ### Minor Changes
