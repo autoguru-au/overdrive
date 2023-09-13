@@ -138,7 +138,7 @@ export const withEnhancedInput = <
 				notch = true,
 				reserveHintSpace = false,
 				size = 'medium',
-				backgroundColour,
+				backgroundColour= 'transparent',
 
 				value: incomingValue = defaultValue || '',
 				onChange: incomingOnChange,
