@@ -7,7 +7,6 @@ export const input = {
 		root: {
 			zIndex: 1,
 			alignSelf: 'flex-end',
-			background: 'transparent',
 			outline: 'none',
 			selectors: {
 				'&[disabled]': {

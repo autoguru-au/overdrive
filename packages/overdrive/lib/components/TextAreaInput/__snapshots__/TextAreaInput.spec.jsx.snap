@@ -12,7 +12,7 @@ exports[`<TextAreaInput /> should have some hintText 1`] = `
     >
       <textarea
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_types_textarea__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_root_textarea__bd4oidb"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useBoxStyles_backgroundColours_transparent__7o6k06en withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_types_textarea__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_root_textarea__bd4oidb"
         id="id"
       />
     </div>
@@ -58,7 +58,7 @@ exports[`<TextAreaInput /> should match snapshot 1`] = `
     >
       <textarea
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_types_textarea__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_root_textarea__bd4oidb"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useBoxStyles_backgroundColours_transparent__7o6k06en withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_types_textarea__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_root_textarea__bd4oidb"
         id="id"
       />
     </div>
@@ -99,7 +99,7 @@ exports[`<TextAreaInput /> should match snapshot when active 1`] = `
     >
       <textarea
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_types_textarea__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_root_textarea__bd4oidb"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useBoxStyles_backgroundColours_transparent__7o6k06en withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_types_textarea__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_root_textarea__bd4oidb"
       >
         value from the tests
       </textarea>
@@ -158,7 +158,7 @@ exports[`<TextAreaInput /> should match snapshot when loading 1`] = `
       <textarea
         aria-busy="true"
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_types_textarea__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_root_textarea__bd4oidb undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__bd4oidd"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useBoxStyles_backgroundColours_transparent__7o6k06en withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_types_textarea__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_root_textarea__bd4oidb undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__bd4oidd"
         id="id"
       />
     </div>
@@ -199,7 +199,7 @@ exports[`<TextAreaInput /> should match snapshot when touched 1`] = `
     >
       <textarea
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_types_textarea__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_root_textarea__bd4oidb"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useBoxStyles_backgroundColours_transparent__7o6k06en withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_types_textarea__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_root_textarea__bd4oidb"
       />
     </div>
     <div
@@ -238,7 +238,7 @@ exports[`<TextAreaInput /> should match snapshot when touched and invalid 1`] = 
     >
       <textarea
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_types_textarea__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_root_textarea__bd4oidb"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useBoxStyles_backgroundColours_transparent__7o6k06en withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_types_textarea__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_root_textarea__bd4oidb"
       />
     </div>
     <div
@@ -277,7 +277,7 @@ exports[`<TextAreaInput /> should match snapshot when touched and valid 1`] = `
     >
       <textarea
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_types_textarea__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_root_textarea__bd4oidb"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useBoxStyles_backgroundColours_transparent__7o6k06en withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_types_textarea__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_root_textarea__bd4oidb"
       />
     </div>
     <div

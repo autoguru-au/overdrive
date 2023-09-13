@@ -47,7 +47,7 @@ export interface EnhanceInputPrimitiveProps
 		Pick<
 			ComponentProps<typeof NotchedBase>,
 			'notch' | 'placeholder' | 'attach' | 'borderMerged' | 'isFocused'
-		> {
+		>, Pick<ComponentProps<typeof Box>, 'backgroundColour'> {
 	name: string;
 	id?: string;
 	className?: string;
@@ -138,6 +138,7 @@ export const withEnhancedInput = <
 				notch = true,
 				reserveHintSpace = false,
 				size = 'medium',
+				backgroundColour= 'transparent',
 
 				value: incomingValue = defaultValue || '',
 				onChange: incomingOnChange,
@@ -188,13 +189,14 @@ export const withEnhancedInput = <
 				},
 				inputStateStyles,
 			);
-
 			const inputItselfClassName = clsx(
 				useBoxStyles({
 					is: primitiveType === 'textarea' ? 'textarea' : 'input',
+					backgroundColour,
 					width: 'full',
 					position: 'relative',
 					display: 'flex',
+					borderRadius: '1',
 				}),
 				styles.input.itself.root,
 				styles.types[primitiveType!],
