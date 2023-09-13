@@ -14,6 +14,7 @@ import { ArgTypes, ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
+import { boxArgTypes } from '../Box/argTypes';
 import { DateInput } from '../DateInput';
 
 import { TextInput } from '.';
@@ -74,6 +75,7 @@ const argTypes: ArgTypes<Partial<ComponentProps<typeof TextInput>>> = {
 			type: 'select',
 		},
 	},
+	backgroundColour: boxArgTypes['backgroundColour'],
 };
 
 const Template: ComponentStory<typeof TextInput> = (args) => (
