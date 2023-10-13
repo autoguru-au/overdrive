@@ -1,4 +1,4 @@
-import type { FunctionComponent, ReactNode } from 'react';
+import type { FunctionComponent, ReactNode, CSSProperties } from 'react';
 import * as React from 'react';
 
 import type { BoxStyleProps } from '../Box';
@@ -15,6 +15,7 @@ export interface Props extends TextStyleProps {
 		BoxStyleProps['display'],
 		'inline' | 'inlineBlock' | 'block'
 	>;
+	style?: CSSProperties;
 }
 
 export const Text: FunctionComponent<Props> = ({
@@ -30,6 +31,7 @@ export const Text: FunctionComponent<Props> = ({
 	noWrap,
 	size = '4',
 	strong = false,
+	style,
 }) => (
 	<Box
 		is={Component}
@@ -47,6 +49,7 @@ export const Text: FunctionComponent<Props> = ({
 			}),
 			className,
 		]}
+		style={style}
 	>
 		{children}
 	</Box>
