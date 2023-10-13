@@ -86,6 +86,7 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 					ref={textRef}
 					is={is}
 					colour={colour}
+					size={size}
 					className={clsx(
 						textStyles,
 						styles.text,
