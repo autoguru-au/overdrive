@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.23.2
+
+### Patch Changes
+
+-   5e7528ca: EditableText: Gets better input widht predection
+
 ## 4.23.1
 
 ### Patch Changes
