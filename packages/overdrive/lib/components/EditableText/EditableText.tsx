@@ -1,6 +1,12 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import { ComponentProps, forwardRef, InputHTMLAttributes, useRef, useState } from 'react';
+import {
+	ComponentProps,
+	forwardRef,
+	InputHTMLAttributes,
+	useRef,
+	useState,
+} from 'react';
 
 import { Box, useBoxStyles } from '../Box';
 import { Text, useTextStyles } from '../Text';
@@ -80,9 +86,13 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 					ref={textRef}
 					is={is}
 					colour={colour}
-					className={clsx(textStyles, styles.text, useBoxStyles({
-						display: isEditing ? 'none' : display,
-					}))}
+					className={clsx(
+						textStyles,
+						styles.text,
+						useBoxStyles({
+							display: isEditing ? 'none' : display,
+						}),
+					)}
 				>
 					{value}
 				</Text>
