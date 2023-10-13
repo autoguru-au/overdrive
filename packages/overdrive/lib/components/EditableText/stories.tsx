@@ -34,7 +34,6 @@ const numberProps: ComponentProps<typeof EditableText> = {
 	type: 'number',
 };
 
-
 const formatDate = (date: Date = new Date()) => {
 	const year = date.getFullYear();
 	const month = (date.getMonth() + 1).toString().padStart(2, '0');
@@ -49,9 +48,8 @@ const todayStr: string = formatDate(
 const dateProps: ComponentProps<typeof EditableText> = {
 	colour: 'muted',
 	value: todayStr,
-	type:'date'
+	type: 'date',
 };
-
 
 export const text = template.bind(textProps);
 export const number = template.bind(numberProps);

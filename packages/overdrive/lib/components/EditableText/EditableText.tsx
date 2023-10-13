@@ -1,6 +1,11 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import { ComponentProps, forwardRef, InputHTMLAttributes, useState } from 'react';
+import {
+	ComponentProps,
+	forwardRef,
+	InputHTMLAttributes,
+	useState,
+} from 'react';
 
 import { Box } from '../Box';
 import { Text, useTextStyles } from '../Text';
@@ -8,10 +13,19 @@ import * as inputStyles from '../private/InputBase/withEnhancedInput.css';
 
 import * as styles from './EditableText.css';
 type BoxProps = Pick<ComponentProps<typeof Text>, 'display'>;
-type TextProps = Pick<ComponentProps<typeof Text>, 'is' | 'colour' | 'size' | 'display' | 'children' | 'noWrap'>;
+type TextProps = Pick<
+	ComponentProps<typeof Text>,
+	'is' | 'colour' | 'size' | 'display' | 'children' | 'noWrap'
+>;
 type InputProps = Omit<
 	InputHTMLAttributes<HTMLInputElement>,
-	 'style' | 'is' | 'autoFocus' | 'width' | 'height' | keyof TextProps | keyof BoxProps
+	| 'style'
+	| 'is'
+	| 'autoFocus'
+	| 'width'
+	| 'height'
+	| keyof TextProps
+	| keyof BoxProps
 >;
 
 export interface Props extends TextProps, InputProps, BoxProps {
@@ -37,20 +51,21 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 			colour,
 			size,
 		});
-		const width = value?`${value.toString().length}ch`:void 0;
+		const width = value ? `${value.toString().length}ch` : void 0;
 		return (
-			<Box ref={ref}
-				 display={display}
-				 className={styles.root}
-				 style={{ maxWidth:width }}
-				 onClick={onRequestEdit}
-				 onFocus={onRequestEdit}
-				 onBlur={() => setIsEditing(false)}
-				 onKeyDown={(e) => {
-					 if (e.key === 'Enter' || e.key === 'Escape') {
-						 setIsEditing(false);
-					 }
-				 }}
+			<Box
+				ref={ref}
+				display={display}
+				className={styles.root}
+				style={{ maxWidth: width }}
+				onClick={onRequestEdit}
+				onFocus={onRequestEdit}
+				onBlur={() => setIsEditing(false)}
+				onKeyDown={(e) => {
+					if (e.key === 'Enter' || e.key === 'Escape') {
+						setIsEditing(false);
+					}
+				}}
 			>
 				{isEditing ? (
 					<Box
@@ -70,13 +85,12 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 						is={is}
 						colour={colour}
 						className={clsx(textStyles, styles.text)}
-						style={{ maxWidth:width }}
+						style={{ maxWidth: width }}
 					>
 						{value}
 					</Text>
 				)}
 			</Box>
-
 		);
 	},
 );

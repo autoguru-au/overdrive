@@ -13,4 +13,3 @@ export const root = style({
 export const text = style({
 	cursor: 'pointer',
 });
-

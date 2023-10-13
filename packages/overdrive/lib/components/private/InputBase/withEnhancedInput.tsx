@@ -47,7 +47,8 @@ export interface EnhanceInputPrimitiveProps
 		Pick<
 			ComponentProps<typeof NotchedBase>,
 			'notch' | 'placeholder' | 'attach' | 'borderMerged' | 'isFocused'
-		>, Pick<ComponentProps<typeof Box>, 'backgroundColour'> {
+		>,
+		Pick<ComponentProps<typeof Box>, 'backgroundColour'> {
 	name: string;
 	id?: string;
 	className?: string;
@@ -138,7 +139,7 @@ export const withEnhancedInput = <
 				notch = true,
 				reserveHintSpace = false,
 				size = 'medium',
-				backgroundColour= 'transparent',
+				backgroundColour = 'transparent',
 
 				value: incomingValue = defaultValue || '',
 				onChange: incomingOnChange,
