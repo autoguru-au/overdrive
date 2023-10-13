@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.23.1
+
+### Patch Changes
+
+-   9c7a28f4: Rexports EditableText component
+
 ## 4.23.0
 
 ### Minor Changes
