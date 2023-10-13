@@ -1,5 +1,6 @@
-import type { FunctionComponent, ReactNode, CSSProperties } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import * as React from 'react';
+import { forwardRef } from 'react';
 
 import type { BoxStyleProps } from '../Box';
 import { Box } from '../Box';
@@ -18,41 +19,47 @@ export interface Props extends TextStyleProps {
 	style?: CSSProperties;
 }
 
-export const Text: FunctionComponent<Props> = ({
-	children,
-	className = '',
-	is: Component = 'span',
-	align = 'left',
-	colour,
-	display,
-	fontWeight = 'normal',
-	transform,
-	breakWord,
-	noWrap,
-	size = '4',
-	strong = false,
-	style,
-}) => (
-	<Box
-		is={Component}
-		display={display}
-		textAlign={align}
-		className={[
-			useTextStyles({
-				is: Component,
-				size,
-				colour: colour ?? (strong ? 'dark' : undefined),
-				fontWeight: strong ? 'bold' : fontWeight,
-				transform,
-				noWrap,
-				breakWord,
-			}),
-			className,
-		]}
-		style={style}
-	>
-		{children}
-	</Box>
+export const Text = forwardRef<HTMLElement, Props>(
+	(
+		{
+			children,
+			className = '',
+			is: Component = 'span',
+			align = 'left',
+			colour,
+			display,
+			fontWeight = 'normal',
+			transform,
+			breakWord,
+			noWrap,
+			size = '4',
+			strong = false,
+			style,
+		},
+		ref,
+	) => (
+		<Box
+			is={Component}
+			ref={ref}
+			display={display}
+			textAlign={align}
+			className={[
+				useTextStyles({
+					is: Component,
+					size,
+					colour: colour ?? (strong ? 'dark' : undefined),
+					fontWeight: strong ? 'bold' : fontWeight,
+					transform,
+					noWrap,
+					breakWord,
+				}),
+				className,
+			]}
+			style={style}
+		>
+			{children}
+		</Box>
+	),
 );
 
 export default Text;
