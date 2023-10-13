@@ -4,11 +4,12 @@ import {
 	ComponentProps,
 	forwardRef,
 	InputHTMLAttributes,
+	useEffect,
 	useRef,
 	useState,
 } from 'react';
 
-import { Box, useBoxStyles } from '../Box';
+import { Box } from '../Box';
 import { Text, useTextStyles } from '../Text';
 import * as inputStyles from '../private/InputBase/withEnhancedInput.css';
 
@@ -54,10 +55,17 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 			colour,
 			size,
 		});
+		const [width, setWidth] = useState<number | undefined>(undefined);
+		useEffect(() => {
+			if (textRef.current) {
+				setWidth(textRef.current.clientWidth);
+			}
+		}, [textRef.current, value]);
 		return (
 			<Box
 				ref={ref}
 				display={display}
+				position="relative"
 				className={styles.root}
 				onClick={onRequestEdit}
 				onFocus={onRequestEdit}
@@ -78,7 +86,7 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 							textStyles,
 							inputStyles.input.itself.root,
 						)}
-						style={{ width: textRef.current?.offsetWidth }}
+						style={{ width }}
 					/>
 				)}
 				<Text
@@ -87,13 +95,9 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 					is={is}
 					colour={colour}
 					size={size}
-					className={clsx(
-						textStyles,
-						styles.text,
-						useBoxStyles({
-							display: isEditing ? 'none' : display,
-						}),
-					)}
+					className={clsx(textStyles, styles.text, {
+						[styles.textHidden]: isEditing,
+					})}
 				>
 					{value}
 				</Text>

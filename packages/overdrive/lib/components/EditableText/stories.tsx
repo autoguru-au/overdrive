@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import isChromatic from 'chromatic';
 import * as React from 'react';
-import { ComponentProps } from 'react';
+import { ChangeEvent, ComponentProps, useState } from 'react';
 
 import { EditableText } from '.';
 
@@ -19,9 +19,24 @@ export default {
 	},
 } as ComponentMeta<typeof EditableText>;
 
-const template: ComponentStory<typeof EditableText> = (args) => (
-	<EditableText {...args} />
-);
+const template: ComponentStory<typeof EditableText> = ({
+	onChange: incomingOnChange,
+	value: incomingValue,
+	...args
+}) => {
+	const [value, setValue] = useState<number>(incomingValue);
+	return (
+		<EditableText
+			onChange={(e: ChangeEvent<HTMLInputElement>) => {
+				setValue(e.currentTarget.value);
+				typeof incomingOnChange === 'function' &&
+					incomingOnChange(e.currentTarget.value);
+			}}
+			value={value}
+			{...args}
+		/>
+	);
+};
 
 const textProps: ComponentProps<typeof EditableText> = {
 	colour: 'muted',

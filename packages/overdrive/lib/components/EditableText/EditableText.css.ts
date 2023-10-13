@@ -13,3 +13,8 @@ export const root = style({
 export const text = style({
 	cursor: 'pointer',
 });
+
+export const textHidden = style({
+	position: 'absolute',
+	visibility: 'hidden',
+});
