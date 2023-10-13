@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.23.4
+
+### Patch Changes
+
+-   30167cb7: Fixes EditableText live size change
+
 ## 4.23.3
 
 ### Patch Changes
