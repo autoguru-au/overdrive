@@ -62,3 +62,4 @@ export * from './FillHeightBox';
 export * from './StickyBox';
 export * from './ScrollPane';
 export * from './IntentStripe';
+export * from './EditableText';
