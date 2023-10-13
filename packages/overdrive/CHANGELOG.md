@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.23.0
+
+### Minor Changes
+
+-   90212565: Adds EditableText component
+
 ## 4.22.0
 
 ### Minor Changes
