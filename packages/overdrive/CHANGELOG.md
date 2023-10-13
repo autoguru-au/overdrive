@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.23.3
+
+### Patch Changes
+
+-   9bfab26f: feat: Fixes EditableText size
+
 ## 4.23.2
 
 ### Patch Changes
