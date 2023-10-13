@@ -56,12 +56,21 @@ const narrowCharactersProps: ComponentProps<typeof EditableText> = {
 	type: 'text',
 };
 
+const customSizeProps: ComponentProps<typeof EditableText> = {
+	colour: 'warning',
+	value: '$999.99',
+	type: 'text',
+	size: '6',
+};
+
 export const text = template.bind(textProps);
 export const number = template.bind(numberProps);
 export const date = template.bind(dateProps);
 export const narrowCharacters = template.bind(narrowCharactersProps);
+export const customSize = template.bind(customSizeProps);
 
 text.args = textProps;
 number.args = numberProps;
 date.args = dateProps;
 narrowCharacters.args = narrowCharactersProps;
+customSize.args = customSizeProps;
