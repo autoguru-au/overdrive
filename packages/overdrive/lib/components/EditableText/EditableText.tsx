@@ -1,17 +1,13 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import {
-	ComponentProps,
-	forwardRef,
-	InputHTMLAttributes,
-	useState,
-} from 'react';
+import { ComponentProps, forwardRef, InputHTMLAttributes, useRef, useState } from 'react';
 
-import { Box } from '../Box';
+import { Box, useBoxStyles } from '../Box';
 import { Text, useTextStyles } from '../Text';
 import * as inputStyles from '../private/InputBase/withEnhancedInput.css';
 
 import * as styles from './EditableText.css';
+
 type BoxProps = Pick<ComponentProps<typeof Text>, 'display'>;
 type TextProps = Pick<
 	ComponentProps<typeof Text>,
@@ -44,6 +40,7 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 		},
 		ref,
 	) => {
+		const textRef = useRef<HTMLSpanElement>(null);
 		const [isEditing, setIsEditing] = useState(false);
 		const onRequestEdit = () => setIsEditing(true);
 		const textStyles = useTextStyles({
@@ -51,13 +48,11 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 			colour,
 			size,
 		});
-		const width = value ? `${value.toString().length}ch` : void 0;
 		return (
 			<Box
 				ref={ref}
 				display={display}
 				className={styles.root}
-				style={{ maxWidth: width }}
 				onClick={onRequestEdit}
 				onFocus={onRequestEdit}
 				onBlur={() => setIsEditing(false)}
@@ -67,7 +62,7 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 					}
 				}}
 			>
-				{isEditing ? (
+				{isEditing && (
 					<Box
 						is="input"
 						{...inputProps}
@@ -77,19 +72,20 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 							textStyles,
 							inputStyles.input.itself.root,
 						)}
-						style={{ width }}
+						style={{ width: textRef.current?.offsetWidth }}
 					/>
-				) : (
-					<Text
-						noWrap
-						is={is}
-						colour={colour}
-						className={clsx(textStyles, styles.text)}
-						style={{ maxWidth: width }}
-					>
-						{value}
-					</Text>
 				)}
+				<Text
+					noWrap
+					ref={textRef}
+					is={is}
+					colour={colour}
+					className={clsx(textStyles, styles.text, useBoxStyles({
+						display: isEditing ? 'none' : display,
+					}))}
+				>
+					{value}
+				</Text>
 			</Box>
 		);
 	},

@@ -1,5 +1,6 @@
-import type { FunctionComponent, ReactNode, CSSProperties } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import * as React from 'react';
+import { forwardRef } from 'react';
 
 import type { BoxStyleProps } from '../Box';
 import { Box } from '../Box';
@@ -18,7 +19,8 @@ export interface Props extends TextStyleProps {
 	style?: CSSProperties;
 }
 
-export const Text: FunctionComponent<Props> = ({
+export const Text = forwardRef<HTMLElement, Props>(
+	({
 	children,
 	className = '',
 	is: Component = 'span',
@@ -32,9 +34,12 @@ export const Text: FunctionComponent<Props> = ({
 	size = '4',
 	strong = false,
 	style,
-}) => (
+	 },
+	 ref,
+	) => (
 	<Box
 		is={Component}
+		ref={ref}
 		display={display}
 		textAlign={align}
 		className={[
@@ -53,6 +58,6 @@ export const Text: FunctionComponent<Props> = ({
 	>
 		{children}
 	</Box>
-);
+));
 
 export default Text;

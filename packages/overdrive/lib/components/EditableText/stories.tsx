@@ -50,11 +50,18 @@ const dateProps: ComponentProps<typeof EditableText> = {
 	value: todayStr,
 	type: 'date',
 };
+const narrowCharactersProps: ComponentProps<typeof EditableText> = {
+	colour: 'muted',
+	value: 'Price is $111.01',
+	type: 'text',
+};
 
 export const text = template.bind(textProps);
 export const number = template.bind(numberProps);
 export const date = template.bind(dateProps);
+export const narrowCharacters = template.bind(narrowCharactersProps);
 
 text.args = textProps;
 number.args = numberProps;
 date.args = dateProps;
+narrowCharacters.args = narrowCharactersProps;
