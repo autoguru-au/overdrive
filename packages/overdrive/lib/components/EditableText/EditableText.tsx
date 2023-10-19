@@ -8,7 +8,7 @@ import * as inputStyles from '../private/InputBase/withEnhancedInput.css';
 
 import * as styles from './EditableText.css';
 
-type BoxProps = Pick<ComponentProps<typeof Box>, 'display' | 'onFocus' | 'onBlur'>;
+type BoxProps = Pick<ComponentProps<typeof Box>, 'display' | 'onFocus' | 'onBlur' | 'onKeyDown'>;
 type TextProps = Pick<
 	ComponentProps<typeof Text>,
 	'is' | 'colour' | 'size' | 'children' | 'noWrap'
@@ -22,14 +22,18 @@ type InputProps = Omit<
 	| 'height'
 	| 'onFocus'
 	| 'onBlur'
+	| 'onKeyDown'
 	| keyof TextProps
 	| keyof BoxProps
 >;
 
 export interface Props extends TextProps, InputProps, BoxProps {
 	className?: string;
+
+	onModeChange?: (mode: InputMode) => void;
 }
 
+type InputMode = 'TEXT' | 'INPUT';
 export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 	(
 		{
@@ -40,13 +44,20 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 			value,
 			onFocus,
 			onBlur,
+			onKeyDown,
+			onModeChange,
 			...inputProps
 		},
 		ref,
 	) => {
 		const textRef = useRef<HTMLSpanElement>(null);
-		const [isEditing, setIsEditing] = useState(false);
-		const onRequestEdit = () => setIsEditing(true);
+		const [mode, setMode] = useState<InputMode>('TEXT');
+		const onRequestModeChange = (newMode: InputMode) => {
+			setMode(newMode);
+			if (typeof onModeChange === 'function') {
+				onModeChange(newMode);
+			}
+		};
 		const textStyles = useTextStyles({
 			is,
 			colour,
@@ -64,24 +75,26 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 				display={display}
 				position="relative"
 				className={styles.root}
-				onClick={onRequestEdit}
+				onClick={() => onRequestModeChange('INPUT')}
 				onFocus={(e) => {
-					onRequestEdit();
 					if (typeof onFocus === 'function')
 						onFocus(e);
+					onRequestModeChange('INPUT');
 				}}
 				onBlur={(e) => {
-					setIsEditing(false);
 					if (typeof onBlur === 'function')
 						onBlur(e);
+					onRequestModeChange('TEXT');
 				}}
 				onKeyDown={(e) => {
+					if (typeof onKeyDown === 'function')
+						onKeyDown(e);
 					if (e.key === 'Enter' || e.key === 'Escape') {
-						setIsEditing(false);
+						onRequestModeChange('TEXT');
 					}
 				}}
 			>
-				{isEditing && (
+				{mode === 'INPUT' && (
 					<Box
 						is="input"
 						{...inputProps}
@@ -101,7 +114,7 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 					colour={colour}
 					size={size}
 					className={clsx(textStyles, styles.text, {
-						[styles.textHidden]: isEditing,
+						[styles.textHidden]: mode === 'INPUT',
 					})}
 				>
 					{value}
