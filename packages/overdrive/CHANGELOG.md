@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.23.5
+
+### Patch Changes
+
+-   d7148e52: EditableText passes incoming focus and blue events to wrapper box
+
 ## 4.23.4
 
 ### Patch Changes
