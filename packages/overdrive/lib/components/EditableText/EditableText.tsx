@@ -1,13 +1,6 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import {
-	ComponentProps,
-	forwardRef,
-	InputHTMLAttributes,
-	useEffect,
-	useRef,
-	useState,
-} from 'react';
+import { ComponentProps, forwardRef, InputHTMLAttributes, useEffect, useRef, useState } from 'react';
 
 import { Box } from '../Box';
 import { Text, useTextStyles } from '../Text';
@@ -15,10 +8,10 @@ import * as inputStyles from '../private/InputBase/withEnhancedInput.css';
 
 import * as styles from './EditableText.css';
 
-type BoxProps = Pick<ComponentProps<typeof Text>, 'display'>;
+type BoxProps = Pick<ComponentProps<typeof Box>, 'display' | 'onFocus' | 'onBlur'>;
 type TextProps = Pick<
 	ComponentProps<typeof Text>,
-	'is' | 'colour' | 'size' | 'display' | 'children' | 'noWrap'
+	'is' | 'colour' | 'size' | 'children' | 'noWrap'
 >;
 type InputProps = Omit<
 	InputHTMLAttributes<HTMLInputElement>,
@@ -27,6 +20,8 @@ type InputProps = Omit<
 	| 'autoFocus'
 	| 'width'
 	| 'height'
+	| 'onFocus'
+	| 'onBlur'
 	| keyof TextProps
 	| keyof BoxProps
 >;
@@ -43,6 +38,8 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 			size,
 			display = 'inlineBlock',
 			value,
+			onFocus,
+			onBlur,
 			...inputProps
 		},
 		ref,
@@ -68,8 +65,16 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 				position="relative"
 				className={styles.root}
 				onClick={onRequestEdit}
-				onFocus={onRequestEdit}
-				onBlur={() => setIsEditing(false)}
+				onFocus={(e) => {
+					onRequestEdit();
+					if (typeof onFocus === 'function')
+						onFocus(e);
+				}}
+				onBlur={(e) => {
+					setIsEditing(false);
+					if (typeof onBlur === 'function')
+						onBlur(e);
+				}}
 				onKeyDown={(e) => {
 					if (e.key === 'Enter' || e.key === 'Escape') {
 						setIsEditing(false);
