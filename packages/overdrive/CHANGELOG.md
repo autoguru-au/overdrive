@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.23.6
+
+### Patch Changes
+
+-   69959cce: EditableText exposes an onModeChange callback
+
 ## 4.23.5
 
 ### Patch Changes
