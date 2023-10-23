@@ -18,6 +18,7 @@ import * as styles from './Modal.css';
 export interface Props extends ComponentProps<typeof Portal> {
 	isOpen: boolean;
 	hideBackdrop?: boolean;
+	disableBackdropClick?: boolean;
 	children?: ReactNode;
 
 	onRequestClose?(e: 'backdrop' | 'escapeKeyDown' | string): void;
@@ -77,6 +78,7 @@ const reducer: Reducer<State, Action> = (prevState, action) => {
 export const Modal: FunctionComponent<Props> = ({
 	isOpen,
 	hideBackdrop = false,
+													disableBackdropClick = false,
 	ref,
 	noThemedWrapper,
 	container,
@@ -122,7 +124,7 @@ export const Modal: FunctionComponent<Props> = ({
 					<Box
 						aria-hidden="true"
 						position="fixed"
-						pointerEvents={state === 'CLOSING' ? 'none' : undefined}
+						pointerEvents={(disableBackdropClick || state === 'CLOSING') ? 'none' : undefined}
 						opacity={state === 'OPEN' ? undefined : 0}
 						backgroundColour={
 							hideBackdrop ? 'transparent' : 'neutral'
