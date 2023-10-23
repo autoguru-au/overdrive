@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.24.0
+
+### Minor Changes
+
+-   02eccde4: Modal: Gets a disableBackdropClick prop
+
 ## 4.23.6
 
 ### Patch Changes
