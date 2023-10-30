@@ -46,6 +46,7 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 			onBlur,
 			onKeyDown,
 			onModeChange,
+			tabIndex = 0,
 			...inputProps
 		},
 		ref,
@@ -73,6 +74,7 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 			<Box
 				ref={ref}
 				display={display}
+				tabIndex={tabIndex}
 				position="relative"
 				className={styles.root}
 				onClick={() => onRequestModeChange('INPUT')}
