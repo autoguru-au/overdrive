@@ -1,6 +1,13 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import { ComponentProps, forwardRef, InputHTMLAttributes, useEffect, useRef, useState } from 'react';
+import {
+	ComponentProps,
+	forwardRef,
+	InputHTMLAttributes,
+	useEffect,
+	useRef,
+	useState,
+} from 'react';
 
 import { Box } from '../Box';
 import { Text, useTextStyles } from '../Text';
@@ -8,7 +15,10 @@ import * as inputStyles from '../private/InputBase/withEnhancedInput.css';
 
 import * as styles from './EditableText.css';
 
-type BoxProps = Pick<ComponentProps<typeof Box>, 'display' | 'onFocus' | 'onBlur' | 'onKeyDown'>;
+type BoxProps = Pick<
+	ComponentProps<typeof Box>,
+	'display' | 'onFocus' | 'onBlur' | 'onKeyDown'
+>;
 type TextProps = Pick<
 	ComponentProps<typeof Text>,
 	'is' | 'colour' | 'size' | 'children' | 'noWrap'
@@ -79,18 +89,15 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 				className={styles.root}
 				onClick={() => onRequestModeChange('INPUT')}
 				onFocus={(e) => {
-					if (typeof onFocus === 'function')
-						onFocus(e);
+					if (typeof onFocus === 'function') onFocus(e);
 					onRequestModeChange('INPUT');
 				}}
 				onBlur={(e) => {
-					if (typeof onBlur === 'function')
-						onBlur(e);
+					if (typeof onBlur === 'function') onBlur(e);
 					onRequestModeChange('TEXT');
 				}}
 				onKeyDown={(e) => {
-					if (typeof onKeyDown === 'function')
-						onKeyDown(e);
+					if (typeof onKeyDown === 'function') onKeyDown(e);
 					if (e.key === 'Enter' || e.key === 'Escape') {
 						onRequestModeChange('TEXT');
 					}

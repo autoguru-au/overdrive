@@ -1,8 +1,10 @@
 import * as React from 'react';
-import { useCallback, useEffect, useRef } from 'react';
+import { FocusEventHandler, FormEventHandler } from 'react';
 
 import { Box } from '../Box';
 import { withEnhancedInput } from '../private/InputBase';
+
+import { useNumberInputBehaviours } from './useNumberInputBehaviours';
 
 const isEdge: boolean =
 	typeof navigator !== 'undefined' && /edge/i.test(navigator.userAgent);
@@ -10,8 +12,12 @@ const isEdge: boolean =
 const type = isEdge ? 'text' : 'number';
 
 interface Props
-	extends Partial<Pick<HTMLInputElement, 'min' | 'max' | 'step'>> {
+	extends Partial<Pick<HTMLInputElement, 'min' | 'max' | 'step'>>,
+		Pick<HTMLInputElement, 'value'> {
 	preventMouseWheel?: boolean;
+	onChange?: FormEventHandler<HTMLInputElement>;
+	onFocus?: FocusEventHandler<HTMLInputElement>;
+	onBlur?: FocusEventHandler<HTMLInputElement>;
 }
 
 export const NumberInput = withEnhancedInput<Props>(
@@ -24,68 +30,34 @@ export const NumberInput = withEnhancedInput<Props>(
 		prefixed,
 		preventMouseWheel = false,
 		size,
+		onChange: incomingOnChange,
+		onFocus: incomingOnFocus,
+		onBlur: incomingOnBlur,
 		...rest
 	}) => {
-		const inputRef = useRef<HTMLInputElement>(ref?.current);
-
-		const preventWheel = useCallback<EventListener>((e) => {
-			e.preventDefault();
-			e.stopPropagation();
-		}, []);
-
-		useEffect(() => {
-			let mouseWheelListener;
-			let onWheelListener;
-			let wheelListener;
-			if (preventMouseWheel && inputRef?.current) {
-				mouseWheelListener = inputRef.current.addEventListener(
-					'mousewheel',
-					preventWheel,
-					{ passive: false },
-				);
-				onWheelListener = inputRef.current.addEventListener(
-					'onwheel',
-					preventWheel,
-					{ passive: false },
-				);
-				wheelListener = inputRef.current.addEventListener(
-					'wheel',
-					preventWheel,
-					{ passive: false },
-				);
-			}
-
-			return () => {
-				if (mouseWheelListener)
-					// Standard
-					inputRef.current.removeEventListener(
-						'mousewheel',
-						mouseWheelListener,
-					);
-				if (onWheelListener)
-					// Chrome
-					inputRef.current.removeEventListener(
-						'onwheel',
-						onWheelListener,
-					);
-				if (wheelListener)
-					// Safari
-					inputRef.current.removeEventListener(
-						'wheel',
-						wheelListener,
-					);
-			};
-		}, [preventMouseWheel, inputRef.current]);
+		const { value, inputRef, onFocus, onBlur, onChange } =
+			useNumberInputBehaviours({
+				ref,
+				preventMouseWheel,
+				onFocus: eventHandlers.onFocus,
+				onBlur: eventHandlers.onBlur,
+				onChange: eventHandlers.onChange,
+				value: incomingFieldProps.value,
+			});
 
 		return (
 			<Box
 				is="input"
 				ref={inputRef}
 				{...eventHandlers}
+				onFocus={onFocus}
+				onBlur={onBlur}
+				onChange={onChange}
 				{...incomingFieldProps}
 				{...rest}
 				autoComplete="off"
 				type={type}
+				value={value}
 			/>
 		);
 	},

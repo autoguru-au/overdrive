@@ -82,9 +82,24 @@ const argTypes: ArgTypes = {
 	},
 };
 
-const Template: ComponentStory<typeof NumberInput> = (args) => (
-	<NumberInput {...args} />
-);
+const Template: ComponentStory<typeof NumberInput> = ({
+	value: initialValue,
+	onChange: incomingOnChange,
+	...args
+}) => {
+	const [value, setValue] = React.useState<string | undefined>(initialValue);
+
+	return (
+		<NumberInput
+			{...args}
+			value={value}
+			onChange={(e) => {
+				setValue(e.currentTarget.value);
+				incomingOnChange(e);
+			}}
+		/>
+	);
+};
 
 const sharedProps: ComponentProps<typeof NumberInput> = {
 	disabled: false,
@@ -97,6 +112,7 @@ const sharedProps: ComponentProps<typeof NumberInput> = {
 	reserveHintSpace: false,
 	hintText: '',
 	notch: true,
+	preventMouseWheel: true,
 	prefixIcon: null,
 	onChange: action('onChange'),
 	onFocus: action('onFocus'),
