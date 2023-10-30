@@ -1,4 +1,8 @@
-import type { ComponentProps, FunctionComponent, MouseEventHandler } from 'react';
+import type {
+	ComponentProps,
+	FunctionComponent,
+	MouseEventHandler,
+} from 'react';
 import * as React from 'react';
 import { ReactNode, useLayoutEffect, useRef } from 'react';
 
@@ -20,8 +24,8 @@ export const MinimalModal: FunctionComponent<Props> = ({
 	alignItems = 'center',
 	className = '',
 	children,
-														   onRequestClose,
-														   ...modalProps
+	onRequestClose,
+	...modalProps
 }) => {
 	const titleId = useId();
 	const locked = useRef<boolean>(true);
@@ -51,11 +55,7 @@ export const MinimalModal: FunctionComponent<Props> = ({
 	}
 
 	return (
-		<Modal
-			isOpen={isOpen}
-			onRequestClose={onRequestClose}
-			{...modalProps}
-		>
+		<Modal isOpen={isOpen} onRequestClose={onRequestClose} {...modalProps}>
 			<Box
 				className={[styles.container, className]}
 				height="full"
