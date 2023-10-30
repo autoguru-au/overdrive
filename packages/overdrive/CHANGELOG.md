@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 4.24.1
+
+### Patch Changes
+
+-   9542838b: NumberInput gets to be cleared when upstream enforeces values
+-   7740c43f: EditableText passes tab index to wrapper container
+
 ## 4.24.0
 
 ### Minor Changes
