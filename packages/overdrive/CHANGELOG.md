@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.25.0
+
+### Minor Changes
+
+-   c66817db: Added new DropDown button component
+
 ## 4.24.1
 
 ### Patch Changes
