@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DropDown /> should match the snapshot 1`] = `
+<button
+  class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k061g useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063o useBoxStyles_display_inlineBlock__7o6k06fe useBoxStyles_overflow_hidden__7o6k06f5 useBoxStyles_textAlign_center__7o6k06f3 useBoxStyles_border_style__7o6k069k useBoxStyles_makeResponsiveStyle_key_bp__7o6k06b5 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bl useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ch useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if useTextStyles_fontWeight_semiBold__w6to7io useTextStyles_sizes_4__w6to7i4 Button_root__11v3fwx0 Button_defaultStates_secondary__11v3fwxk Button_variant_secondary__11v3fwxe Button_size_medium_default__11v3fwxa Button_enabled__11v3fwx4"
+  type="button"
+>
+  <div
+    class="reset_block__6swfds3 useBoxStyles_height_full__7o6k06ey useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw Button_body__11v3fwx1"
+  >
+    Attachment
+    <i
+      class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q60"
+      role="presentation"
+    >
+      <svg
+        class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+        />
+      </svg>
+    </i>
+  </div>
+</button>
+`;
+
+exports[`<DropDown /> should match the snapshot as Primary variant 1`] = `
+<button
+  class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k061g useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063o useBoxStyles_display_inlineBlock__7o6k06fe useBoxStyles_overflow_hidden__7o6k06f5 useBoxStyles_textAlign_center__7o6k06f3 useBoxStyles_border_style__7o6k069k useBoxStyles_makeResponsiveStyle_key_bp__7o6k06b5 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bl useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ch useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_white__w6to7if useTextStyles_fontWeight_semiBold__w6to7io useTextStyles_sizes_4__w6to7i4 Button_root__11v3fwx0 Button_defaultStates_primary__11v3fwxj Button_variant_primary__11v3fwxd Button_size_medium_default__11v3fwxa Button_enabled__11v3fwx4"
+  type="button"
+>
+  <div
+    class="reset_block__6swfds3 useBoxStyles_height_full__7o6k06ey useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw Button_body__11v3fwx1"
+  >
+    Attachment
+    <i
+      class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q60"
+      role="presentation"
+    >
+      <svg
+        class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
+        />
+      </svg>
+    </i>
+  </div>
+</button>
+`;
