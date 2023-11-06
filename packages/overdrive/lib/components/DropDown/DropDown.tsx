@@ -21,13 +21,13 @@ type ButtonProps = Omit<ComponentProps<typeof Button>, 'is' | 'children'>;
 type FlyoutProps = Pick<ComponentProps<typeof Flyout>, 'alignment'>;
 
 export interface Props extends ButtonProps, FlyoutProps {
-	options: ReactNode[];
+	children: ReactNode;
 	label: string;
 	icon?: IconType;
 }
 
 export const DropDown = ({
-	options,
+	children: options,
 	label,
 	icon = ChevronDownIcon,
 	alignment = EPositionerAlignment.BOTTOM_LEFT,
@@ -57,7 +57,9 @@ export const DropDown = ({
 				isOpen={isOpen}
 				alignment={alignment}
 			>
-				<DropDownOptionsList ref={menuRef} options={options} />
+				<DropDownOptionsList ref={menuRef}>
+					{options}
+				</DropDownOptionsList>
 			</Flyout>
 		</>
 	);
