@@ -1,8 +1,12 @@
-import { DownloadIcon, TrashCanOutlineIcon } from '@autoguru/icons';
+import {
+	DownloadIcon,
+	SettingsIcon,
+	TrashCanOutlineIcon,
+} from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
-import { ComponentProps } from 'react';
+import { ComponentProps, Fragment } from 'react';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -71,114 +75,66 @@ const option2 = <DropDownOption label="Delete" icon={TrashCanOutlineIcon} />;
 
 const standardProps: ComponentProps<typeof DropDown> = {
 	label: 'Attachment',
-	options: [option1, option2],
+	children: (
+		<>
+			{option1}
+			{option2}
+		</>
+	),
 	onClick,
 };
 
-export const standard = Template.bind(standardProps);
-standard.args = standardProps;
+export const primary = Template.bind(standardProps);
+primary.args = standardProps;
 
-const primaryProps: ComponentProps<typeof DropDown> = {
+const secondaryProps: ComponentProps<typeof DropDown> = {
 	...standardProps,
-	variant: 'primary',
-	options: [option1, option2],
+	variant: 'secondary',
 };
 
-export const primary = Template.bind(primaryProps);
-primary.args = primaryProps;
+export const secondary = Template.bind(secondaryProps);
+secondary.args = secondaryProps;
+
+const minimalPrimaryProps: ComponentProps<typeof DropDown> = {
+	...standardProps,
+	variant: 'primary',
+	minimal: true,
+};
+
+export const minimalPrimary = Template.bind(minimalPrimaryProps);
+minimalPrimary.args = minimalPrimaryProps;
+
+const roundedSecondaryProps: ComponentProps<typeof DropDown> = {
+	...standardProps,
+	variant: 'secondary',
+	rounded: true,
+};
+
+export const roundedSecondary = Template.bind(roundedSecondaryProps);
+roundedSecondary.args = roundedSecondaryProps;
+
+const withCustomIconProps: ComponentProps<typeof DropDown> = {
+	...standardProps,
+	variant: 'secondary',
+	minimal: true,
+	icon: SettingsIcon,
+};
+
+export const withCustomIcon = Template.bind(withCustomIconProps);
+withCustomIcon.args = withCustomIconProps;
 
 const withManyOptionsProps: ComponentProps<typeof DropDown> = {
 	...standardProps,
-	options: Array.from({ length: 99 }).map((_, index) =>
-		index % 2 == 0 ? option1 : option2,
+	children: (
+		<>
+			{Array.from({ length: 99 }).map((_, index) => (
+				<Fragment key={index}>
+					{index % 2 == 0 ? option1 : option2}
+				</Fragment>
+			))}
+		</>
 	),
 };
 
 export const withManyOptions = Template.bind(withManyOptionsProps);
 withManyOptions.args = withManyOptionsProps;
-
-/*
-
-const primarySmallProps: Omit<ComponentProps<typeof DropDown>, 'children'> = {
-	size: 'small',
-	variant: 'primary',
-	onClick,
-};
-export const primarySmall = TemplateMulti.bind(primarySmallProps);
-primarySmall.args = primarySmallProps;
-
-const primaryMediumProps: Omit<ComponentProps<typeof DropDown>, 'children'> = {
-	size: 'medium',
-	variant: 'primary',
-	onClick,
-};
-export const primaryMedium = TemplateMulti.bind(primaryMediumProps);
-primaryMedium.args = primaryMediumProps;
-
-const secondarySmallProps: Omit<ComponentProps<typeof DropDown>, 'children'> = {
-	size: 'small',
-	variant: 'secondary',
-	onClick,
-};
-export const secondarySmall = TemplateMulti.bind(secondarySmallProps);
-secondarySmall.args = secondarySmallProps;
-
-const secondaryMediumProps: Omit<ComponentProps<typeof DropDown>, 'children'> = {
-	size: 'medium',
-	variant: 'secondary',
-	onClick,
-};
-export const secondaryMedium = TemplateMulti.bind(secondaryMediumProps);
-secondaryMedium.args = secondaryMediumProps;
-
-const informationSmallProps: Omit<ComponentProps<typeof DropDown>, 'children'> = {
-	size: 'small',
-	variant: 'information',
-	onClick,
-};
-export const informationSmall = TemplateMulti.bind(informationSmallProps);
-informationSmall.args = informationSmallProps;
-
-const informationMediumProps: Omit<
-	ComponentProps<typeof DropDown>,
-	'children'
-> = {
-	size: 'medium',
-	variant: 'information',
-	onClick,
-};
-export const informationMedium = TemplateMulti.bind(informationMediumProps);
-informationMedium.args = informationMediumProps;
-
-const warningSmallProps: Omit<ComponentProps<typeof DropDown>, 'children'> = {
-	size: 'small',
-	variant: 'warning',
-	onClick,
-};
-export const warningSmall = TemplateMulti.bind(warningSmallProps);
-warningSmall.args = warningSmallProps;
-
-const warningMediumProps: Omit<ComponentProps<typeof DropDown>, 'children'> = {
-	size: 'medium',
-	variant: 'warning',
-	onClick,
-};
-export const warningMedium = TemplateMulti.bind(warningMediumProps);
-warningMedium.args = warningMediumProps;
-
-const successSmallProps: Omit<ComponentProps<typeof DropDown>, 'children'> = {
-	size: 'small',
-	variant: 'success',
-	onClick,
-};
-export const successSmall = TemplateMulti.bind(successSmallProps);
-successSmall.args = successSmallProps;
-
-const successMediumProps: Omit<ComponentProps<typeof DropDown>, 'children'> = {
-	size: 'medium',
-	variant: 'success',
-	onClick,
-};
-export const successMedium = TemplateMulti.bind(successMediumProps);
-successMedium.args = successMediumProps;
-*/
