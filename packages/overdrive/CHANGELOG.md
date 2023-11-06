@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.25.1
+
+### Patch Changes
+
+-   8c7dfb5a: changes dropdown options to be passed in as children
+
 ## 4.25.0
 
 ### Minor Changes
