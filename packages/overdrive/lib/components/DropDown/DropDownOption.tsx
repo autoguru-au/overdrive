@@ -1,4 +1,5 @@
 import { IconType } from '@autoguru/icons';
+import clsx from 'clsx';
 import { ComponentProps, FunctionComponent } from 'react';
 import * as React from 'react';
 
@@ -20,16 +21,23 @@ export const DropDownOption: FunctionComponent<Props> = ({
 	label,
 	icon,
 	className,
-	display='flex',
+	disabled = false,
+	display = 'flex',
 	iconColour = 'dark',
-	is='button',
+	is = 'button',
+	alignItems = 'space-between',
+	width = 'full',
 	...boxProps
 }) => {
 	const colourStyles = useTextStyles({ colour: iconColour });
 	return (
 		<Box
-			className={[styles.root, className]}
+			className={clsx(styles.root, className, {
+				[styles.disabled]: disabled,
+			})}
 			{...boxProps}
+			width={width}
+			alignItems={alignItems}
 			display={display}
 			paddingX="3"
 			paddingY="2"
