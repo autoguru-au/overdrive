@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.26.0
+
+### Minor Changes
+
+-   993e5740: Adds disabled prop to DropDown options
+
 ## 4.25.2
 
 ### Patch Changes
