@@ -17,13 +17,17 @@ import { EPositionerAlignment } from '../Positioner';
 
 import { DropDownOptionsList } from './DropDownOptionsList';
 
-type ButtonProps = Omit<ComponentProps<typeof Button>, 'is' | 'children' | 'onClick'>;
+type ButtonProps = Omit<
+	ComponentProps<typeof Button>,
+	'is' | 'children' | 'onClick'
+>;
 type FlyoutProps = Pick<ComponentProps<typeof Flyout>, 'alignment'>;
 
 export interface Props extends ButtonProps, FlyoutProps {
 	children: ReactNode;
 	label: string;
 	icon?: IconType;
+	isOpen?: boolean;
 	onClick?: ComponentProps<typeof Button>['onClick'];
 }
 
@@ -32,12 +36,13 @@ export const DropDown = ({
 	label,
 	icon = ChevronDownIcon,
 	alignment = EPositionerAlignment.BOTTOM_LEFT,
+	isOpen: incomingIsOpen,
 	onClick: incomingOnClick,
 	...buttonProps
 }) => {
 	const buttonRef = useRef<HTMLButtonElement>(null);
 	const menuRef = useRef<HTMLDivElement>(null);
-	const [isOpen, setIsOpen] = useState<boolean>(false);
+	const [isOpen, setIsOpen] = useState<boolean>(incomingIsOpen);
 
 	const onMenuClick = useCallback<MouseEventHandler<HTMLButtonElement>>(
 		(event) => {

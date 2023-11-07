@@ -1,6 +1,7 @@
 import {
 	DownloadIcon,
 	SettingsIcon,
+	SquareEditOutlineIcon,
 	TrashCanOutlineIcon,
 } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
@@ -72,13 +73,17 @@ const Template: ComponentStory<typeof DropDown> = (args) => (
 
 const option1 = <DropDownOption label="Download" icon={DownloadIcon} />;
 const option2 = <DropDownOption label="Delete" icon={TrashCanOutlineIcon} />;
+const optionDisabled = (
+	<DropDownOption disabled label="Edit" icon={SquareEditOutlineIcon} />
+);
 
 const standardProps: ComponentProps<typeof DropDown> = {
 	label: 'Attachment',
 	children: (
 		<>
 			{option1}
-			{option2}
+			{option1}
+			{optionDisabled}
 		</>
 	),
 	onClick,
@@ -86,6 +91,14 @@ const standardProps: ComponentProps<typeof DropDown> = {
 
 export const primary = Template.bind(standardProps);
 primary.args = standardProps;
+
+const withOpenMenuProps: ComponentProps<typeof DropDown> = {
+	...standardProps,
+	isOpen: true,
+};
+
+export const withOpenMenu = Template.bind(withOpenMenuProps);
+withOpenMenu.args = withOpenMenuProps;
 
 const secondaryProps: ComponentProps<typeof DropDown> = {
 	...standardProps,
@@ -116,8 +129,8 @@ roundedSecondary.args = roundedSecondaryProps;
 const withCustomIconProps: ComponentProps<typeof DropDown> = {
 	...standardProps,
 	variant: 'secondary',
-	minimal: true,
 	icon: SettingsIcon,
+	isOpen: true,
 };
 
 export const withCustomIcon = Template.bind(withCustomIconProps);
@@ -125,6 +138,7 @@ withCustomIcon.args = withCustomIconProps;
 
 const withManyOptionsProps: ComponentProps<typeof DropDown> = {
 	...standardProps,
+	isOpen: true,
 	children: (
 		<>
 			{Array.from({ length: 99 }).map((_, index) => (

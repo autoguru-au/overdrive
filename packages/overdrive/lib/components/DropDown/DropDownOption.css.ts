@@ -10,7 +10,10 @@ export const root = style({
 		backgroundColor: vars.colours.background.light,
 	},
 });
-
+export const disabled = style({
+	cursor: 'not-allowed',
+	opacity: '0.3',
+});
 export const action = style({
 	transition: `opacity 0.3s ${vars.animation.easing.standard} 0.1s`,
 	willChange: 'transform',
