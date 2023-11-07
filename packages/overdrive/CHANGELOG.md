@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.26.1
+
+### Patch Changes
+
+-   9c36d27f: Fixed DropDown prop types
+
 ## 4.26.0
 
 ### Minor Changes
