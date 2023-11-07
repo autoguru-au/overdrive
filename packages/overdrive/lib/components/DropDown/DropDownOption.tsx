@@ -20,7 +20,9 @@ export const DropDownOption: FunctionComponent<Props> = ({
 	label,
 	icon,
 	className,
+	display='flex',
 	iconColour = 'dark',
+	is='button',
 	...boxProps
 }) => {
 	const colourStyles = useTextStyles({ colour: iconColour });
@@ -28,8 +30,10 @@ export const DropDownOption: FunctionComponent<Props> = ({
 		<Box
 			className={[styles.root, className]}
 			{...boxProps}
+			display={display}
 			paddingX="3"
 			paddingY="2"
+			is={is}
 		>
 			<Inline
 				noWrap

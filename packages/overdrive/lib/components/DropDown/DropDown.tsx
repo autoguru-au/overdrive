@@ -17,13 +17,14 @@ import { EPositionerAlignment } from '../Positioner';
 
 import { DropDownOptionsList } from './DropDownOptionsList';
 
-type ButtonProps = Omit<ComponentProps<typeof Button>, 'is' | 'children'>;
+type ButtonProps = Omit<ComponentProps<typeof Button>, 'is' | 'children' | 'onClick'>;
 type FlyoutProps = Pick<ComponentProps<typeof Flyout>, 'alignment'>;
 
 export interface Props extends ButtonProps, FlyoutProps {
 	children: ReactNode;
 	label: string;
 	icon?: IconType;
+	onClick?: ComponentProps<typeof Button>['onClick'];
 }
 
 export const DropDown = ({
