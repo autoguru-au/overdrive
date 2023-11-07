@@ -1,7 +1,7 @@
 import { ChevronDownIcon, IconType } from '@autoguru/icons';
 import * as React from 'react';
 import {
-	ComponentProps,
+	ComponentProps, FunctionComponent,
 	MouseEventHandler,
 	ReactNode,
 	useCallback,
@@ -31,12 +31,12 @@ export interface Props extends ButtonProps, FlyoutProps {
 	onClick?: ComponentProps<typeof Button>['onClick'];
 }
 
-export const DropDown = ({
+export const DropDown:FunctionComponent<Props> = ({
 	children: options,
 	label,
 	icon = ChevronDownIcon,
 	alignment = EPositionerAlignment.BOTTOM_LEFT,
-	isOpen: incomingIsOpen,
+	isOpen: incomingIsOpen = false,
 	onClick: incomingOnClick,
 	...buttonProps
 }) => {
