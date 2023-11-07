@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.25.2
+
+### Patch Changes
+
+-   9567e4ab: DropDown options get default display flex
+
 ## 4.25.1
 
 ### Patch Changes
