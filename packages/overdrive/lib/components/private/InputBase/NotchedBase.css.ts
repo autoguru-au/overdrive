@@ -2,6 +2,7 @@ import { style, styleVariants } from '@vanilla-extract/css';
 
 import { themeContractVars as vars } from '../../../themes/theme.css';
 
+const active_scaling_factor = 0.7777;
 export const root = style({
 	transition: `fill 0.2s ${vars.animation.easing.decelerate} 0s`,
 });
@@ -17,6 +18,11 @@ const borderRegionDefaults = style({
 const borderVisualDefaults = style({
 	borderRadius: vars.border.radius['1'],
 	boxShadow: vars.elevation['2'],
+});
+
+export const notchGapPlaceholder = style({
+	visibility: 'hidden',
+	fontSize: `calc(${vars.typography.size['4'].fontSize} * ${active_scaling_factor})`,
 });
 
 export const borders = {
@@ -145,8 +151,6 @@ export const placeholder = styleVariants({
 		color: vars.typography.colour.muted,
 	},
 });
-
-const active_scaling_factor = 0.7777;
 const calcPlaceholderTranslate = (
 	notched: Boolean,
 	prefixed: Boolean,
