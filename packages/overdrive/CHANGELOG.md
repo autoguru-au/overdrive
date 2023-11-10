@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.26.2
+
+### Patch Changes
+
+-   987d3e4c: Improves input placeholder width calculation in floating mode
+
 ## 4.26.1
 
 ### Patch Changes
