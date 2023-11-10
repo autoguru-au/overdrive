@@ -1,21 +1,11 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import {
-	FunctionComponent,
-	ReactNode,
-	useEffect,
-	useRef,
-	useState,
-} from 'react';
+import { FunctionComponent, ReactNode, useRef } from 'react';
 
 import { Box } from '../../Box';
 import { useTextStyles } from '../../Text';
 
 import * as styles from './NotchedBase.css';
-
-const ACTIVE_SCALING_FACTOR = 0.7777;
-const ACTIVE_PADDING_ADDED = 16;
-const ROUGH_WIDTH_PER_CHARACTER = 10.2;
 
 export interface Props {
 	id: string;
@@ -57,20 +47,8 @@ export const NotchedBase: FunctionComponent<Props> = ({
 		size: '4',
 	});
 	const labelRef = useRef<HTMLLabelElement>(null);
-	const [labelWidth, setLabelWidth] = useState<number>(
-		getNotchedComputedWidthForWidth(
-			placeholder.length * ROUGH_WIDTH_PER_CHARACTER,
-		),
-	);
+
 	const shouldMerge = !isFocused && !isHovered;
-
-	useEffect(() => {
-		if (labelRef.current) {
-			setLabelWidth(labelRef.current.offsetWidth);
-		}
-	}, [placeholder]);
-
-	const notchedWidth = getNotchedComputedWidthForWidth(labelWidth);
 
 	return (
 		<Box
@@ -153,8 +131,21 @@ export const NotchedBase: FunctionComponent<Props> = ({
 							styles.borders.middle,
 							borderColourClassName,
 						)}
-						style={{ width: isEmpty ? 0 : notchedWidth }}
 					>
+						<Box
+							display={
+								isEmpty || placeholder.length === 0
+									? 'none'
+									: 'block'
+							}
+							paddingX="2"
+							className={[
+								labelStyles,
+								styles.notchGapPlaceholder,
+							]}
+						>
+							{placeholder}
+						</Box>
 						<Box
 							ref={labelRef}
 							is="label"
@@ -221,11 +212,3 @@ export const NotchedBase: FunctionComponent<Props> = ({
 		</Box>
 	);
 };
-
-function getNotchedComputedWidthForWidth(width: number): number {
-	return (
-		Math.round(
-			(width * ACTIVE_SCALING_FACTOR + ACTIVE_PADDING_ADDED) * 100,
-		) / 100
-	);
-}

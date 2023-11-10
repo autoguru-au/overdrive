@@ -104,6 +104,7 @@ const Template: ComponentStory<typeof NumberInput> = ({
 const sharedProps: ComponentProps<typeof NumberInput> = {
 	disabled: false,
 	name: 'number',
+	value: '',
 	placeholder: defaultPlaceholder,
 	isValid: false,
 	isTouched: false,
