@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.26.3
+
+### Patch Changes
+
+-   8b0eedaa: EditableText gets internal state management while is in edit mode
+
 ## 4.26.2
 
 ### Patch Changes
