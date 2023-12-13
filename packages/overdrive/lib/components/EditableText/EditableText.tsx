@@ -44,7 +44,7 @@ export interface Props extends TextProps, InputProps, BoxProps {
 
 	onModeChange?: (mode: InputMode) => void;
 }
-
+const numberInputValuePattern = /^\d*\.?\d*$/;
 type InputMode = 'TEXT' | 'INPUT';
 export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 	(
@@ -60,11 +60,13 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 			onModeChange,
 			tabIndex = 0,
 			onChange: incomingOnChange,
+			type = 'text',
 			...inputProps
 		},
 		ref,
 	) => {
 		const textRef = useRef<HTMLSpanElement>(null);
+		const inputRef = useRef<HTMLInputElement>(null);
 		const [mode, setMode] = useState<InputMode>('TEXT');
 		const [inputValue, setInputValue] = useState(value);
 		const onRequestModeChange = (newMode: InputMode) => {
@@ -73,15 +75,26 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 				onModeChange(newMode);
 			}
 		};
+
 		const onChange = useCallback<ChangeEventHandler<HTMLInputElement>>(
 			(e) => {
+				const changeValue = e.currentTarget.value;
+				const lastChar = changeValue.charAt(changeValue.length - 1);
+				if (
+					type === 'number' &&
+					!numberInputValuePattern.test(lastChar)
+				) {
+					// If the last entered character is not a digit or '.', don't update the state
+					return;
+				}
 				if (mode === 'INPUT') {
-					setInputValue(e.currentTarget.value);
+					setInputValue(changeValue);
 				}
 				if (typeof incomingOnChange === 'function') incomingOnChange(e);
 			},
-			[incomingOnChange, mode, value],
+			[incomingOnChange, type],
 		);
+
 		const textStyles = useTextStyles({
 			is,
 			colour,
@@ -92,7 +105,7 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 			if (textRef.current) {
 				setWidth(textRef.current.clientWidth);
 			}
-		}, [textRef.current, value]);
+		}, [textRef.current, inputValue]);
 		return (
 			<Box
 				ref={ref}
@@ -103,6 +116,7 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 				onClick={() => onRequestModeChange('INPUT')}
 				onFocus={(e) => {
 					if (typeof onFocus === 'function') onFocus(e);
+					setInputValue(value);
 					onRequestModeChange('INPUT');
 				}}
 				onBlur={(e) => {
@@ -121,6 +135,8 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 						is="input"
 						{...inputProps}
 						autoFocus
+						ref={inputRef}
+						type={type !== 'number' ? type : 'text'}
 						value={inputValue}
 						className={clsx(
 							textStyles,
@@ -140,7 +156,9 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 						[styles.textHidden]: mode === 'INPUT',
 					})}
 				>
-					{mode === 'INPUT' ? inputValue : value}
+					{mode === 'INPUT'
+						? inputRef.current?.value || value
+						: value}
 				</Text>
 			</Box>
 		);
