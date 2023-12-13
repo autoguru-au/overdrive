@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.26.4
+
+### Patch Changes
+
+-   fe6193bd: Fixes EditableText not sizing correctly for type number
+
 ## 4.26.3
 
 ### Patch Changes
