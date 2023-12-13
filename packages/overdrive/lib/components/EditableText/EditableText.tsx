@@ -1,9 +1,11 @@
 import clsx from 'clsx';
 import * as React from 'react';
 import {
+	ChangeEventHandler,
 	ComponentProps,
 	forwardRef,
 	InputHTMLAttributes,
+	useCallback,
 	useEffect,
 	useRef,
 	useState,
@@ -57,18 +59,29 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 			onKeyDown,
 			onModeChange,
 			tabIndex = 0,
+			onChange: incomingOnChange,
 			...inputProps
 		},
 		ref,
 	) => {
 		const textRef = useRef<HTMLSpanElement>(null);
 		const [mode, setMode] = useState<InputMode>('TEXT');
+		const [inputValue, setInputValue] = useState(value);
 		const onRequestModeChange = (newMode: InputMode) => {
 			setMode(newMode);
 			if (typeof onModeChange === 'function') {
 				onModeChange(newMode);
 			}
 		};
+		const onChange = useCallback<ChangeEventHandler<HTMLInputElement>>(
+			(e) => {
+				if (mode === 'INPUT') {
+					setInputValue(e.currentTarget.value);
+				}
+				if (typeof incomingOnChange === 'function') incomingOnChange(e);
+			},
+			[incomingOnChange, mode, value],
+		);
 		const textStyles = useTextStyles({
 			is,
 			colour,
@@ -108,11 +121,12 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 						is="input"
 						{...inputProps}
 						autoFocus
-						value={value}
+						value={inputValue}
 						className={clsx(
 							textStyles,
 							inputStyles.input.itself.root,
 						)}
+						onChange={onChange}
 						style={{ width }}
 					/>
 				)}
@@ -126,7 +140,7 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 						[styles.textHidden]: mode === 'INPUT',
 					})}
 				>
-					{value}
+					{mode === 'INPUT' ? inputValue : value}
 				</Text>
 			</Box>
 		);
