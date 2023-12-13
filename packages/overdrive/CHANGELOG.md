@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 4.26.5
+
+### Patch Changes
+
+-   d2fe2618: Exports hooks from the package root
+-   b9b2e921: Fixed EditableTest change propagation
+
 ## 4.26.4
 
 ### Patch Changes
