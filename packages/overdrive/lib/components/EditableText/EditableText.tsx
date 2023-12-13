@@ -75,19 +75,11 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 				onModeChange(newMode);
 			}
 		};
-		const onUpdate = useCallback(
-			(updateValue: InputProps['value']) => {
-				if (mode === 'INPUT') {
-					setInputValue(updateValue);
-				}
-			},
-			[incomingOnChange, mode],
-		);
 
 		const onChange = useCallback<ChangeEventHandler<HTMLInputElement>>(
 			(e) => {
-				const value = e.currentTarget.value;
-				const lastChar = value.charAt(value.length - 1);
+				const changeValue = e.currentTarget.value;
+				const lastChar = changeValue.charAt(changeValue.length - 1);
 				if (
 					type === 'number' &&
 					!numberInputValuePattern.test(lastChar)
@@ -95,10 +87,12 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 					// If the last entered character is not a digit or '.', don't update the state
 					return;
 				}
-				onUpdate(value);
+				if (mode === 'INPUT') {
+					setInputValue(changeValue);
+				}
 				if (typeof incomingOnChange === 'function') incomingOnChange(e);
 			},
-			[incomingOnChange, onUpdate, type],
+			[incomingOnChange, type],
 		);
 
 		const textStyles = useTextStyles({
