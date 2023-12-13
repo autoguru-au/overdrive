@@ -92,7 +92,7 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 				}
 				if (typeof incomingOnChange === 'function') incomingOnChange(e);
 			},
-			[incomingOnChange, type],
+			[incomingOnChange, type, mode],
 		);
 
 		const textStyles = useTextStyles({
