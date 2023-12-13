@@ -136,13 +136,6 @@ jobs:
                   mkdir -p site-dist;
                   mv storybook-static/* site-dist/;
 
-            - name: Deploy Site (main)
-              if: github.ref == 'refs/heads/main'
-              run: npx surge -p site-dist/ -d overdrive.autoguru.io
-              env:
-                  SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
-                  SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
-
             - name: Deploy Site (pr)
               if: github.ref != 'refs/heads/main'
               run: >-
