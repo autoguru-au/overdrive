@@ -15,6 +15,7 @@ export const FillHeightBox: FunctionComponent<Props> = ({
 	serverVhFallback,
 	observedElementRef,
 	style,
+	maxHeight,
 	...scrollPaneProps
 }) => {
 	const containerRef = React.useRef<HTMLDivElement>(null);
@@ -24,6 +25,7 @@ export const FillHeightBox: FunctionComponent<Props> = ({
 		observedElementRef,
 		bottomGap,
 		serverVhFallback,
+		maxHeight,
 	});
 
 	return (
