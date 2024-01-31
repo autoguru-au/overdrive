@@ -10,6 +10,7 @@ export interface UseWindowHeightFillProps {
 	serverVhFallback?: number;
 	includeMobile?: boolean;
 	observeDomChanges?: boolean;
+	maxHeight?: number;
 	containerRef: RefObject<HTMLDivElement>;
 	observedElementRef?: RefObject<HTMLDivElement>;
 }
@@ -20,6 +21,7 @@ export const useWindowHeightFill = ({
 	serverVhFallback = 100,
 	containerRef,
 	observedElementRef,
+	maxHeight,
 }: UseWindowHeightFillProps): string => {
 	// Create an observer instance linked to the callback function
 	const cappedHeight = useResponsiveValue([includeMobile, , true]);
@@ -39,10 +41,12 @@ export const useWindowHeightFill = ({
 					themeClass,
 					themeContractVars.space[bottomGap],
 				) || '0px';
-			const availableHeight =
+			const availableHeight = Math.min(
+				maxHeight ?? Number.POSITIVE_INFINITY,
 				window.innerHeight -
-				// @ts-ignore
-				containerRef.current.getBoundingClientRect().top;
+					// @ts-ignore
+					containerRef.current.getBoundingClientRect().top,
+			);
 			const newHeight = gap
 				? `calc(${availableHeight}px - ${gap})`
 				: `${availableHeight}px`;
@@ -79,6 +83,7 @@ export const useWindowHeightFill = ({
 		document?.body,
 		themeClass,
 		bottomGap,
+		maxHeight,
 	]);
 
 	return cappedHeight ? containerHeight : 'auto';
