@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.27.0
+
+### Minor Changes
+
+-   27bed9f6: FillHeightBox gets optional maxHeight prop
+
 ## 4.26.5
 
 ### Patch Changes
