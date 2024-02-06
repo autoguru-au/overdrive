@@ -9,7 +9,7 @@ exports[`<ProgressStep /> should match the snapshot for 8 items 1`] = `
     class="reset_block__6swfds3 useBoxStyles_position_relative__7o6k06f1 SliderProgress_step__29afw91"
   >
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06ff useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_empty__1sg9vym0"
+      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06fg useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_empty__1sg9vym0"
     />
     <div
       class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fa useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3 ProgressStep_passed__1sg9vym6"
@@ -34,7 +34,7 @@ exports[`<ProgressStep /> should match the snapshot for 8 items 1`] = `
       class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fa useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_empty__1sg9vym0"
     />
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06ff useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3"
+      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06fg useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3"
       style="animation-duration: 1s;"
     />
   </div>
@@ -45,7 +45,7 @@ exports[`<ProgressStep /> should match the snapshot for 8 items 1`] = `
       class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fa useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_empty__1sg9vym0"
     />
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06ff useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3"
+      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06fg useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3"
       style="animation-duration: 1s;"
     />
   </div>
@@ -56,7 +56,7 @@ exports[`<ProgressStep /> should match the snapshot for 8 items 1`] = `
       class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fa useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_empty__1sg9vym0"
     />
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06ff useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3"
+      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06fg useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3"
       style="animation-duration: 1s;"
     />
   </div>
@@ -67,7 +67,7 @@ exports[`<ProgressStep /> should match the snapshot for 8 items 1`] = `
       class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fa useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_empty__1sg9vym0"
     />
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06ff useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3"
+      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06fg useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3"
       style="animation-duration: 1s;"
     />
   </div>
@@ -78,7 +78,7 @@ exports[`<ProgressStep /> should match the snapshot for 8 items 1`] = `
       class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fa useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_empty__1sg9vym0"
     />
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06ff useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3"
+      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06fg useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3"
       style="animation-duration: 1s;"
     />
   </div>
@@ -89,7 +89,7 @@ exports[`<ProgressStep /> should match the snapshot for 8 items 1`] = `
       class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fa useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_empty__1sg9vym0"
     />
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06ff useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3"
+      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06fg useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_white__7o6k06ee ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3"
       style="animation-duration: 1s;"
     />
   </div>
@@ -105,7 +105,7 @@ exports[`<ProgressStep /> should match the snapshot with custom background 1`] =
     class="reset_block__6swfds3 useBoxStyles_position_relative__7o6k06f1 SliderProgress_step__29afw91"
   >
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06ff useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_yellow500__7o6k06e0 ProgressStep_item__1sg9vym2 ProgressStep_empty__1sg9vym0"
+      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06fg useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_yellow500__7o6k06e0 ProgressStep_item__1sg9vym2 ProgressStep_empty__1sg9vym0"
     />
     <div
       class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fa useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_yellow500__7o6k06e0 ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3 ProgressStep_passed__1sg9vym6"
@@ -130,7 +130,7 @@ exports[`<ProgressStep /> should match the snapshot with custom background 1`] =
       class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fa useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_yellow500__7o6k06e0 ProgressStep_item__1sg9vym2 ProgressStep_empty__1sg9vym0"
     />
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06ff useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_yellow500__7o6k06e0 ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3"
+      class="reset_block__6swfds3 useBoxStyles_display_none__7o6k06fg useBoxStyles_position_absolute__7o6k06ez useBoxStyles_backgroundColours_yellow500__7o6k06e0 ProgressStep_item__1sg9vym2 ProgressStep_fill__1sg9vym3"
       style="animation-duration: 1s;"
     />
   </div>
