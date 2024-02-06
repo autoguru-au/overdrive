@@ -154,6 +154,7 @@ export const display = styleVariants(
 			contents: 'contents',
 			block: 'block',
 			flex: 'flex',
+			grid: 'grid',
 			inlineFlex: 'inline-flex',
 			inline: 'inline',
 			inlineBlock: 'inline-block',

@@ -27,17 +27,17 @@ exports[`<MinimalModal /> should match snapshot with body 1`] = `
       >
         <div
           aria-hidden="false"
-          class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_height_full__7o6k06ey useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw MinimalModal_container__1psw41b0"
+          class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_height_full__7o6k06ey useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gx MinimalModal_container__1psw41b0"
           role="none presentation"
         >
           <article
             aria-labelledby="od-4"
             aria-modal="true"
-            class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf"
+            class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gg"
             role="dialog"
           >
             <main
-              class="useBoxStyles_display_flex__7o6k06fb useBoxStyles_height_full__7o6k06ey useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_flexGrow_1__7o6k06go MinimalModal_content__1psw41b1"
+              class="useBoxStyles_display_flex__7o6k06fb useBoxStyles_height_full__7o6k06ey useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gg useBoxStyles_flexGrow_1__7o6k06gp MinimalModal_content__1psw41b1"
             >
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis convallis neque a laoreet maximus. Vestibulum hendrerit quam at mi venenatis faucibus at vel nisi. In ut risus et ipsum tincidunt tempor. Suspendisse potenti. Praesent faucibus posuere risus, at congue mauris porttitor ut. Donec sit amet elit vitae purus dictum aliquet quis ut ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum dui sapien, porttitor ac erat vel, malesuada rutrum mauris. Nam arcu tellus, pretium ut aliquet eget, ultrices vel est. Maecenas dapibus volutpat eros a volutpat.
@@ -83,17 +83,17 @@ exports[`<MinimalModal /> should match snapshot without title and body 1`] = `
       >
         <div
           aria-hidden="false"
-          class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_height_full__7o6k06ey useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gw MinimalModal_container__1psw41b0"
+          class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_height_full__7o6k06ey useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gx MinimalModal_container__1psw41b0"
           role="none presentation"
         >
           <article
             aria-labelledby="od-3"
             aria-modal="true"
-            class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf"
+            class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gg"
             role="dialog"
           >
             <main
-              class="useBoxStyles_display_flex__7o6k06fb useBoxStyles_height_full__7o6k06ey useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_flexGrow_1__7o6k06go MinimalModal_content__1psw41b1"
+              class="useBoxStyles_display_flex__7o6k06fb useBoxStyles_height_full__7o6k06ey useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gg useBoxStyles_flexGrow_1__7o6k06gp MinimalModal_content__1psw41b1"
             />
           </article>
         </div>

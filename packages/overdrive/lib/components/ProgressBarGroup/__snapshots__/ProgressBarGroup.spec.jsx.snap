@@ -2,7 +2,7 @@
 
 exports[`<ProgressBarGroup /> should match the snapshot 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz ProgressBarGroup_root__1c7hlxy0"
+  class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 ProgressBarGroup_root__1c7hlxy0"
   style="grid-template-columns: 1fr;"
 >
   <span
@@ -52,7 +52,7 @@ exports[`<ProgressBarGroup /> should match the snapshot 1`] = `
 
 exports[`<ProgressBarGroup /> should should ignore extra labels 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz ProgressBarGroup_root__1c7hlxy0"
+  class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 ProgressBarGroup_root__1c7hlxy0"
   style="grid-template-columns: auto 1fr;"
 >
   <span
@@ -108,7 +108,7 @@ exports[`<ProgressBarGroup /> should should ignore extra labels 1`] = `
 
 exports[`<ProgressBarGroup /> should should ignore not break when not enough labels 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz ProgressBarGroup_root__1c7hlxy0"
+  class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 ProgressBarGroup_root__1c7hlxy0"
   style="grid-template-columns: auto 1fr;"
 >
   <span
@@ -160,7 +160,7 @@ exports[`<ProgressBarGroup /> should should ignore not break when not enough lab
 
 exports[`<ProgressBarGroup /> should should render a prefix for every value 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06fz ProgressBarGroup_root__1c7hlxy0"
+  class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 ProgressBarGroup_root__1c7hlxy0"
   style="grid-template-columns: auto 1fr;"
 >
   <span
