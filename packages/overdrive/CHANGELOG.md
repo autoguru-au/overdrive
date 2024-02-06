@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.28.0
+
+### Minor Changes
+
+-   fb3e74d2: Adds grid display to box pros
+
 ## 4.27.0
 
 ### Minor Changes
