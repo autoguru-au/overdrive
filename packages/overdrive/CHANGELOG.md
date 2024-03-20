@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.28.1
+
+### Patch Changes
+
+-   5e6c7e43: Icon: Not throwing when passed null icons
+
 ## 4.28.0
 
 ### Minor Changes
