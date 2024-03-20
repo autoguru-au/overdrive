@@ -1,9 +1,9 @@
 import type { IconType } from '@autoguru/icons';
+import { useNullCheck } from '../../hooks/useNullCheck';
 import type { FunctionComponent, ReactElement, SVGAttributes } from 'react';
 import * as React from 'react';
 import { cloneElement } from 'react';
 
-import { useNullCheck } from '../../hooks';
 import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
 import { ResponsiveProp } from '../../utils/responsiveProps.css';
 import type { BoxStyleProps } from '../Box';
