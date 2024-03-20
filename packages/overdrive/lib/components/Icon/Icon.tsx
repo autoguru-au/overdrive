@@ -1,4 +1,5 @@
 import type { IconType } from '@autoguru/icons';
+import { useNullCheck } from '../../hooks/useNullCheck';
 import type { FunctionComponent, ReactElement, SVGAttributes } from 'react';
 import * as React from 'react';
 import { cloneElement } from 'react';
@@ -22,22 +23,27 @@ export const Icon: FunctionComponent<Props> = ({
 	icon,
 	size = 'small',
 	display = 'block',
-}) => (
-	<Box
-		is="i"
-		display={display}
-		className={[resolveResponsiveStyle(size, styles.size), className]}
-		role="presentation"
-	>
-		{cloneElement(icon, {
-			className: useBoxStyles({
-				is: 'svg',
-				display: 'block',
-				width: 'full',
-				height: 'full',
-			}),
-		})}
-	</Box>
-);
+}) => {
+	useNullCheck(icon, 'Icon component received an empty icon prop.');
+	return (
+		<Box
+			is="i"
+			display={display}
+			className={[resolveResponsiveStyle(size, styles.size), className]}
+			role="presentation"
+		>
+			{icon
+				? cloneElement(icon, {
+						className: useBoxStyles({
+							is: 'svg',
+							display: 'block',
+							width: 'full',
+							height: 'full',
+						}),
+				  })
+				: '⬤'}
+		</Box>
+	);
+};
 
 export default Icon;
