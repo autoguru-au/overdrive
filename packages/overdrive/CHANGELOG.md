@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.29.0
+
+### Minor Changes
+
+-   9d2cc57b: SimpleImage component gets error fallback option
+
 ## 4.28.1
 
 ### Patch Changes
