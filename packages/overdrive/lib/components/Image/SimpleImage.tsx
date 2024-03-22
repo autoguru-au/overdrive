@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FunctionComponent } from 'react';
+import { FunctionComponent, ReactElement, useState } from 'react';
 
 export interface Props
 	extends Partial<
@@ -36,6 +36,8 @@ export interface Props
 	height?: string;
 
 	className?: string;
+
+	fallbackComponent?: ReactElement; // Add this line
 }
 
 export const SimpleImage: FunctionComponent<Props> = ({
@@ -44,17 +46,30 @@ export const SimpleImage: FunctionComponent<Props> = ({
 	className = '',
 	src,
 	srcSet,
+	fallbackComponent, // Add this line
 	...imgProps
-}) => (
-	// @ts-ignore
-	<img
-		loading={eager ? 'eager' : 'lazy'}
-		decoding={syncDecoding ? 'sync' : 'async'}
-		className={className}
-		srcSet={srcSet}
-		src={src}
-		{...imgProps}
-	/>
-);
+}) => {
+	const [hasError, setHasError] = useState(false);
 
-export default SimpleImage;
+	const handleError = () => {
+		setHasError(true);
+	};
+
+	if (hasError && fallbackComponent) {
+		// Render fallback component
+		return fallbackComponent;
+	}
+
+	return (
+		/*@ts-ignore*/
+		<img
+			loading={eager ? 'eager' : 'lazy'}
+			decoding={syncDecoding ? 'sync' : 'async'}
+			className={className}
+			srcSet={srcSet}
+			src={src}
+			onError={handleError}
+			{...imgProps}
+		/>
+	);
+};
