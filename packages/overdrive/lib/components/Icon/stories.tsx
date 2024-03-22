@@ -27,7 +27,7 @@ const iconOptions = {
 	PlusIcon,
 	StarIcon,
 	CheckIcon,
-	empty: null
+	empty: null,
 };
 
 export default {
