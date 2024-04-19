@@ -17,7 +17,8 @@
 		"start": "concurrently -k \"yarn:storybook\"",
 		"storybook:extract": "npx sb extract",
 		"storybook": "start-storybook -p 6006 -s public",
-		"storybook:build": "build-storybook -s public",
+		"storybook:build": "build-storybook -s public && yarn run copy:public",
+    "copy:public": "node scripts/copyPublic.js",
 		"test": "jest"
 	},
 	"browserslist": "extends browserslist-config-autoguru",
