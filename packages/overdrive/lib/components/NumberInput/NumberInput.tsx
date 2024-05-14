@@ -11,7 +11,7 @@ const isEdge: boolean =
 
 const type = isEdge ? 'text' : 'number';
 
-const MAX_NUMBER_VALUE= 2147483647;
+const MAX_NUMBER_INPUT_VALUE= 2147483647;
 
 interface Props
 	extends Partial<Pick<HTMLInputElement, 'min' | 'max' | 'step'>>,
