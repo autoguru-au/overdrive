@@ -80,6 +80,13 @@ const argTypes: ArgTypes = {
 			type: 'select',
 		},
 	},
+	maxLength: {
+		defaultValue: null,
+		description: 'Set the max length of the number',
+		control: {
+			type: 'number',
+		}
+	}
 };
 
 const Template: ComponentStory<typeof NumberInput> = ({

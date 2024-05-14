@@ -3,7 +3,13 @@ import * as React from 'react';
 import { Box } from '../Box';
 import { withEnhancedInput } from '../private/InputBase';
 
-export const TextAreaInput = withEnhancedInput<{}, HTMLTextAreaElement>(
+const MAX_TEXT_AREA_INPUT_LENGTH=4000;
+
+export const TextAreaInput
+	= withEnhancedInput<
+		Partial<Pick<HTMLTextAreaElement, 'type' | 'maxLength'>>
+	>(
+
 	({
 		field,
 		eventHandlers,
@@ -20,6 +26,7 @@ export const TextAreaInput = withEnhancedInput<{}, HTMLTextAreaElement>(
 			{...field}
 			{...rest}
 			autoComplete="off"
+			maxLength={rest.maxLength || MAX_TEXT_AREA_INPUT_LENGTH}
 		/>
 	),
 	{
