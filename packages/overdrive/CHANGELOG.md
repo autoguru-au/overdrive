@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.30.0
+
+### Minor Changes
+
+-   90567a0d: Cap all OD inputs with default max values
+
 ## 4.29.0
 
 ### Minor Changes
