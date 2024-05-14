@@ -76,6 +76,13 @@ const argTypes: ArgTypes<Partial<ComponentProps<typeof TextInput>>> = {
 		},
 	},
 	backgroundColour: boxArgTypes['backgroundColour'],
+	maxLength: {
+		defaultValue: null,
+		description: 'Set the max length of the input',
+		control: {
+			type: 'number',
+		}
+	}
 };
 
 const Template: ComponentStory<typeof TextInput> = (args) => (
