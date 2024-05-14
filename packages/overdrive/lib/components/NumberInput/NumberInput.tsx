@@ -63,7 +63,7 @@ export const NumberInput
 				autoComplete="off"
 				type={type}
 				value={value}
-				max={max || MAX_NUMBER_INPUT_LENGTH}
+				max={max || MAX_NUMBER_INPUT_VALUE}
 			/>
 		);
 	},
