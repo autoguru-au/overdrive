@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.31.0
+
+### Minor Changes
+
+-   c4d3c69a: small size added to badge
+
 ## 4.30.0
 
 ### Minor Changes
