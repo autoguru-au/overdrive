@@ -58,6 +58,33 @@ describe('<Badge />', () => {
 		);
 	});
 
+	it('should apply small size when small size is set', () => {
+		const { container } = render(
+			<Badge size="small" colour="neutral" label="Hello World!" />,
+		);
+		expect(container.firstChild.firstChild).toHaveClass(
+			styles.labelSize.small,
+		);
+	});
+
+	it('should apply standard size when standard size is set', () => {
+		const { container } = render(
+			<Badge size="standard" colour="neutral" label="Hello World!" />,
+		);
+		expect(container.firstChild.firstChild).toHaveClass(
+			styles.labelSize.standard,
+		);
+	});
+
+	it('should apply large size when large size is set', () => {
+		const { container } = render(
+			<Badge size="large" colour="neutral" label="Hello World!" />,
+		);
+		expect(container.firstChild.firstChild).toHaveClass(
+			styles.labelSize.large,
+		);
+	});
+
 	it('should apply minimal style when minimal look is set', () => {
 		const { container } = render(
 			<Badge look="standard" colour="neutral" label="Hello World!" />,

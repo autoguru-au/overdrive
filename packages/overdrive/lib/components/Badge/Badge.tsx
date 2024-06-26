@@ -1,6 +1,6 @@
 import { invariant } from '@autoguru/utilities';
 import * as React from 'react';
-import { FunctionComponent } from 'react';
+import { FunctionComponent, ComponentProps } from 'react';
 
 import { Box } from '../Box';
 import { useTextStyles } from '../Text';
@@ -15,6 +15,18 @@ export interface Props {
 	size?: keyof typeof styles.labelSize;
 }
 
+const paddingXMap: Record<keyof typeof styles.labelSize , ComponentProps<typeof Box>['padding']> = {
+	'small': '1',
+	'standard': '1',
+	'large': '4'
+}
+
+const paddingYMap: Record<keyof typeof styles.labelSize , ComponentProps<typeof Box>['padding']> = {
+	'small': '1',
+	'standard': '1',
+	'large': '4'
+}
+
 export const Badge: FunctionComponent<Props> = ({
 	label,
 	colour = 'neutral',
@@ -22,7 +34,6 @@ export const Badge: FunctionComponent<Props> = ({
 	size = 'standard',
 	className = '',
 }) => {
-	const isStandardSize = size === 'standard';
 	const textStyles = useTextStyles({
 		noWrap: true,
 		fontWeight: 'semiBold',
@@ -46,8 +57,8 @@ export const Badge: FunctionComponent<Props> = ({
 				]}
 				overflow="hidden"
 				display="block"
-				paddingX={isStandardSize ? '1' : '4'}
-				paddingY={isStandardSize ? '1' : '2'}
+				paddingX={paddingXMap[size]}
+				paddingY={paddingYMap[size]}
 				borderRadius="1"
 			>
 				<Box

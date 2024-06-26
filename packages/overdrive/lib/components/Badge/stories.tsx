@@ -58,13 +58,21 @@ standard.args = standardProps;
 export const standardAllColours = templateAllColours.bind(standardProps);
 standardAllColours.args = standardProps;
 
-const standardLargeProps: ComponentProps<typeof Badge> = {
+const largeProps: ComponentProps<typeof Badge> = {
 	...standardProps,
 	size: 'large',
 };
-export const standardLargeAllColours =
-	templateAllColours.bind(standardLargeProps);
-standardLargeAllColours.args = standardLargeProps;
+export const largeAllColours =
+	templateAllColours.bind(largeProps);
+largeAllColours.args = largeProps;
+
+const smallProps: ComponentProps<typeof Badge> = {
+	...standardProps,
+	size: 'small',
+};
+export const smallAllColours =
+	templateAllColours.bind(smallProps);
+smallAllColours.args = smallProps;
 
 const invertedProps: ComponentProps<typeof Badge> = {
 	...standardProps,
@@ -78,7 +86,7 @@ export const invertedAllColours = templateAllColours.bind(invertedProps);
 invertedAllColours.args = invertedProps;
 
 const invertedLargeProps: ComponentProps<typeof Badge> = {
-	...standardLargeProps,
+	...largeProps,
 	look: 'inverted',
 };
 export const invertedLargeAllColours =

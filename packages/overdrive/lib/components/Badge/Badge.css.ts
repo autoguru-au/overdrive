@@ -9,6 +9,10 @@ export const label = style({
 });
 
 export const labelSize = styleVariants({
+	small: {
+		fontSize: vars.typography.size['1'].fontSize,
+		lineHeight: vars.typography.size['1'].fontSize,
+	},
 	standard: {
 		fontSize: vars.typography.size['2'].fontSize,
 		lineHeight: vars.typography.size['2'].fontSize,
