@@ -40,8 +40,8 @@
 	},
 	"dependencies": {
 		"@autoguru/babel-preset": "^1.2.0",
-		"@autoguru/eslint-plugin": "1.3.2",
-		"@autoguru/jest-preset": "1.1.0",
+		"@autoguru/eslint-plugin": "1.6.0",
+		"@autoguru/jest-preset": "1.3.1",
 		"@babel/core": "7.22.5",
 		"@babel/plugin-proposal-class-properties": "^7.16.0",
 		"@babel/plugin-proposal-export-default-from": "^7.16.0",
