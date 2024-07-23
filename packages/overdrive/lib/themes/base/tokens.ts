@@ -2,6 +2,18 @@ import { buildColourGamut } from '../makeTheme';
 import { ColourMap, Tokens } from '../tokens';
 
 const baseThemeColours: ColourMap = {
+	black: {
+		'900': '#222222',
+		'800': '#444644',
+		'700': '#808080',
+		'600': '#D4D9DD',
+		'500': '#E4E4E4',
+		'400': '#FFFFFF',
+		'300': '#FFFFFF',
+		'200': '#FFFFFF',
+		'100': '#FFFFFF',
+	},
+
 	gray: {
 		'900': '#212338',
 		'800': '#34384c',
@@ -114,6 +126,15 @@ export const tokens: Tokens = {
 				},
 				foreground: white,
 				border: baseThemeColours.green['900'],
+			},
+			brand: {
+				background: {
+					standard: baseThemeColours.green['700'],
+					mild: baseThemeColours.green['200'],
+					strong: baseThemeColours.green['900'],
+				},
+				foreground: white,
+				border: baseThemeColours.gray['900'],
 			},
 			secondary: {
 				background: {
@@ -250,6 +271,7 @@ export const tokens: Tokens = {
 		colour: {
 			primary: baseThemeColours.green['600'],
 			secondary: baseThemeColours.gray['700'],
+			brand: baseThemeColours.green['600'],
 			shine: baseThemeColours.yellow['500'],
 			link: baseThemeColours.blue['500'],
 			dark: baseThemeColours.gray['900'],

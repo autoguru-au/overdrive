@@ -2,6 +2,18 @@ import { buildColourGamut } from '../makeTheme';
 import { ColourMap, Tokens } from '../tokens';
 
 const colours: ColourMap = {
+	black: {
+		'900': '#222222',
+		'800': '#444644',
+		'700': '#808080',
+		'600': '#D4D9DD',
+		'500': '#E4E4E4',
+		'400': '#FFFFFF',
+		'300': '#FFFFFF',
+		'200': '#FFFFFF',
+		'100': '#FFFFFF',
+	},
+
 	gray: {
 		'900': '#212338',
 		'800': '#34384c',
@@ -106,9 +118,18 @@ export const tokens: Tokens = {
 		intent: {
 			primary: {
 				background: {
-					standard: colours.gray['700'],
-					mild: colours.gray['200'],
-					strong: colours.gray['900'],
+					standard: colours.black['900'],
+					mild: colours.black['400'],
+					strong: colours.black['900'],
+				},
+				foreground: white,
+				border: colours.gray['900'],
+			},
+			brand: {
+				background: {
+					standard: colours.green['700'],
+					mild: colours.green['200'],
+					strong: colours.green['900'],
 				},
 				foreground: white,
 				border: colours.gray['900'],
@@ -246,7 +267,8 @@ export const tokens: Tokens = {
 			},
 		},
 		colour: {
-			primary: colours.gray['800'],
+			primary: colours.black['800'],
+			brand: colours.green['600'],
 			secondary: colours.gray['600'],
 			shine: colours.yellow['500'],
 			link: colours.blue['500'],
