@@ -4,14 +4,14 @@ import { ColourMap, Tokens } from '../tokens';
 const baseThemeColours: ColourMap = {
 	black: {
 		'900': '#222222',
-		'800': '#444644',
-		'700': '#808080',
-		'600': '#D4D9DD',
-		'500': '#E4E4E4',
-		'400': '#FFFFFF',
-		'300': '#FFFFFF',
-		'200': '#FFFFFF',
-		'100': '#FFFFFF',
+		'800': '#2A2C2A',
+		'700': '#444644',
+		'600': '#626262',
+		'500': '#808080',
+		'400': '#ADB1B5',
+		'300': '#D4D9DD',
+		'200': '#DDE0E3',
+		'100': '#E4E4E4',
 	},
 
 	gray: {

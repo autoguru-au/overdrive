@@ -187,6 +187,22 @@ const primaryMediumProps: Omit<ComponentProps<typeof Button>, 'children'> = {
 export const primaryMedium = TemplateMulti.bind(primaryMediumProps);
 primaryMedium.args = primaryMediumProps;
 
+const brandSmallProps: Omit<ComponentProps<typeof Button>, 'children'> = {
+	size: 'small',
+	variant: 'brand',
+	onClick,
+};
+export const brandSmall = TemplateMulti.bind(brandSmallProps);
+brandSmall.args = brandSmallProps;
+
+const brandMediumProps: Omit<ComponentProps<typeof Button>, 'children'> = {
+	size: 'medium',
+	variant: 'brand',
+	onClick,
+};
+export const brandMedium = TemplateMulti.bind(brandMediumProps);
+brandMedium.args = brandMediumProps;
+
 const secondarySmallProps: Omit<ComponentProps<typeof Button>, 'children'> = {
 	size: 'small',
 	variant: 'secondary',
