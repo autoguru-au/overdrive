@@ -11,27 +11,28 @@ export const root = {
 		// padding: `calc(${vars.space['3']} + ${lineBottomHeight}) 0`,
 		padding: `0 ${vars.space['4']}`,
 		transition: `color 0.2s ${vars.animation.easing.decelerate} 0s, background-color 0.2s ${vars.animation.easing.decelerate} 0s`,
-		borderBottom: `calc(${lineBottomHeight} + ${lineBottomHeight}) solid transparent`,
 		flex: 'auto',
 		':last-of-type': {
 			marginRight: 0,
 		},
-		color: 'white',
+		color: 'black',
 
 		':hover': {
+			backgroundColor: 'gray',
+
 			// color: vars.colours.intent.primary.background.strong,
-			color: 'red'
+			color: 'black'
 		},
 
 		':focus': {
 			// color: vars.colours.intent.primary.background.strong,
-			color: 'red'
+			// color: 'red'
 
 		},
 	}),
 	active: style({
-		color: vars.colours.intent.primary.background.strong,
-		borderBottomColor: vars.colours.intent.primary.background.strong,
+		backgroundColor: 'black',
+		color: 'white',
 	}),
 };
 
