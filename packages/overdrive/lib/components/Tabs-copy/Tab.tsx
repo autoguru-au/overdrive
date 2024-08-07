@@ -46,7 +46,6 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 		);
 
 		const isActive = tabsContext.activeIndex === tabListContext;
-		console.log("=>(Tab.tsx:49) isActive:", isActive);
 
 		const indicationStyles = useBoxStyles({
 			display: 'inlineBlock',
@@ -65,20 +64,19 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 					is: typeof Component === 'string' ? Component : 'button',
 					display: 'inlineFlex',
 					justifyContent: 'center',
-					backgroundColour: 'gray900',
+					backgroundColour: 'transparent',
 					marginRight: '6',
-
 				}),
 				useTextStyles({
 					noWrap: true,
 					size: '3',
 					fontWeight: 'bold',
-					colour: 'information',
+					colour: 'light',
 				}),
 				styles.root.default,
-				// {
-				// 	[styles.root.active]: isActive,
-				// },
+				{
+					[styles.root.active]: isActive,
+				},
 			),
 			role: 'tab',
 			'aria-selected': isActive ? 'true' : 'false',

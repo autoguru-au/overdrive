@@ -32,7 +32,7 @@ const TestChild = ({ label }) => {
 };
 
 export default {
-	title: 'New Components/Components/Tabs',
+	title: 'Components/Tabs',
 	decorators: [
 		(story) => (
 			<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
@@ -55,8 +55,8 @@ const standardProps: ComponentProps<typeof Tabs> = {
 	children: (
 		<>
 			<TabList>
-				<Tab>Tab one</Tab>
-				<Tab>Tab Two</Tab>
+				<Tab>Tab 1</Tab>
+				<Tab>Tab 2</Tab>
 			</TabList>
 
 			<TabPanes>

@@ -5,7 +5,7 @@ import * as React from 'react';
 import { Switch } from '.';
 
 export default {
-	title: 'Components/NewTheme/Switch',
+	title: 'Components/Switch',
 	component: Switch,
 } as ComponentMeta<typeof Switch>;
 

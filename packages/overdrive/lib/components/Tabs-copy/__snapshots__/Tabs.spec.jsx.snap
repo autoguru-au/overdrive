@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tabs /> should allow id overriding 1`] = `
+<div
+  class="reset_block__6swfds3 useBoxStyles_overflow_hidden__7o6k06f5 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 TabList_root_default__gut0aq0"
+>
+  <div
+    class="reset_block__6swfds3"
+  >
+    <div
+      aria-orientation="horizontal"
+      class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fa useBoxStyles_width_full__7o6k06ew useBoxStyles_flexWrap_nowrap__7o6k06gs useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq"
+      role="tablist"
+    >
+      <button
+        aria-controls="tab-1-title-0"
+        aria-selected="true"
+        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06fd useBoxStyles_backgroundColours_transparent__7o6k06en useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gx useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_light__w6to7ii useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0 Tab_root_active__vlp0oc1"
+        role="tab"
+      >
+        <span
+          class="Tab_item__vlp0oc2"
+        >
+          tab 1 title
+        </span>
+      </button>
+      <button
+        aria-controls="tab-2-title-1"
+        aria-selected="false"
+        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06fd useBoxStyles_backgroundColours_transparent__7o6k06en useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gx useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_light__w6to7ii useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0"
+        role="tab"
+        tabindex="-1"
+      >
+        <span
+          class="Tab_item__vlp0oc2"
+        >
+          tab 2 title
+        </span>
+      </button>
+      <button
+        aria-controls="tab-3-title-2"
+        aria-selected="false"
+        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06fd useBoxStyles_backgroundColours_transparent__7o6k06en useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gx useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_light__w6to7ii useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0"
+        role="tab"
+        tabindex="-1"
+      >
+        <span
+          class="Tab_item__vlp0oc2"
+        >
+          tab 3 title
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Tabs /> should allow rendering indications 1`] = `
+<div
+  class="reset_block__6swfds3 useBoxStyles_overflow_hidden__7o6k06f5 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 TabList_root_default__gut0aq0"
+>
+  <div
+    class="reset_block__6swfds3"
+  >
+    <div
+      aria-orientation="horizontal"
+      class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fa useBoxStyles_width_full__7o6k06ew useBoxStyles_flexWrap_nowrap__7o6k06gs useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq"
+      role="tablist"
+    >
+      <button
+        aria-controls="od-11-0-tab"
+        aria-selected="true"
+        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06fd useBoxStyles_backgroundColours_transparent__7o6k06en useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gx useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_light__w6to7ii useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0 Tab_root_active__vlp0oc1"
+        role="tab"
+      >
+        <div
+          class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g8 useBoxStyles_flexWrap_nowrap__7o6k06gs useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gx useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y44 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq4"
+        >
+          <div
+            class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g8 useBoxStyles_flexWrap_nowrap__7o6k06gs"
+          >
+            <span
+              class="Tab_item__vlp0oc2"
+            >
+              tab 1 title
+            </span>
+          </div>
+          <div
+            class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g8 useBoxStyles_flexWrap_nowrap__7o6k06gs"
+          >
+            <span
+              class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06fa useBoxStyles_textAlign_center__7o6k06f3 useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_white__w6to7if useTextStyles_fontWeight_bold__w6to7ip useTextStyles_sizes_2__w6to7i2 Tab_indication_default__vlp0oc3 reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0614 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063c useBoxStyles_display_inlineBlock__7o6k06ff useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ct Tab_indication_active__vlp0oc4"
+            >
+              5
+            </span>
+          </div>
+        </div>
+      </button>
+      <button
+        aria-controls="od-11-1-tab"
+        aria-selected="false"
+        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06fd useBoxStyles_backgroundColours_transparent__7o6k06en useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gx useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_light__w6to7ii useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0"
+        role="tab"
+        tabindex="-1"
+      >
+        <div
+          class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g8 useBoxStyles_flexWrap_nowrap__7o6k06gs useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gx useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y44 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq4"
+        >
+          <div
+            class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g8 useBoxStyles_flexWrap_nowrap__7o6k06gs"
+          >
+            <span
+              class="Tab_item__vlp0oc2"
+            >
+              tab 2 title
+            </span>
+          </div>
+          <div
+            class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g8 useBoxStyles_flexWrap_nowrap__7o6k06gs"
+          >
+            <span
+              class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06fa useBoxStyles_textAlign_center__7o6k06f3 useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7ie useTextStyles_fontWeight_bold__w6to7ip useTextStyles_sizes_2__w6to7i2 Tab_indication_default__vlp0oc3 reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0614 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063c useBoxStyles_display_inlineBlock__7o6k06ff useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ct"
+            >
+              5
+            </span>
+          </div>
+        </div>
+      </button>
+      <button
+        aria-controls="od-11-2-tab"
+        aria-selected="false"
+        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06fd useBoxStyles_backgroundColours_transparent__7o6k06en useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gx useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_light__w6to7ii useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0"
+        role="tab"
+        tabindex="-1"
+      >
+        <div
+          class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g8 useBoxStyles_flexWrap_nowrap__7o6k06gs useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gx useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y44 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq4"
+        >
+          <div
+            class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g8 useBoxStyles_flexWrap_nowrap__7o6k06gs"
+          >
+            <span
+              class="Tab_item__vlp0oc2"
+            >
+              tab 3 title
+            </span>
+          </div>
+          <div
+            class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g8 useBoxStyles_flexWrap_nowrap__7o6k06gs"
+          >
+            <span
+              class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06fa useBoxStyles_textAlign_center__7o6k06f3 useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7ie useTextStyles_fontWeight_bold__w6to7ip useTextStyles_sizes_2__w6to7i2 Tab_indication_default__vlp0oc3 reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0614 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063c useBoxStyles_display_inlineBlock__7o6k06ff useBoxStyles_makeResponsiveStyle_key_bp__7o6k06ct"
+            >
+              5
+            </span>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Tabs /> should match snapshot (high level) 1`] = `
+<div
+  class="reset_block__6swfds3 useBoxStyles_overflow_hidden__7o6k06f5 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 TabList_root_default__gut0aq0"
+>
+  <div
+    class="reset_block__6swfds3"
+  >
+    <div
+      aria-orientation="horizontal"
+      class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fa useBoxStyles_width_full__7o6k06ew useBoxStyles_flexWrap_nowrap__7o6k06gs useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq"
+      role="tablist"
+    >
+      <button
+        aria-controls="od-1-0-tab"
+        aria-selected="true"
+        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06fd useBoxStyles_backgroundColours_transparent__7o6k06en useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gx useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_light__w6to7ii useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0 Tab_root_active__vlp0oc1"
+        role="tab"
+      >
+        <span
+          class="Tab_item__vlp0oc2"
+        >
+          tab 1 title
+        </span>
+      </button>
+      <button
+        aria-controls="od-1-1-tab"
+        aria-selected="false"
+        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06fd useBoxStyles_backgroundColours_transparent__7o6k06en useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gx useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_light__w6to7ii useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0"
+        role="tab"
+        tabindex="-1"
+      >
+        <span
+          class="Tab_item__vlp0oc2"
+        >
+          tab 2 title
+        </span>
+      </button>
+      <button
+        aria-controls="od-1-2-tab"
+        aria-selected="false"
+        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06fd useBoxStyles_backgroundColours_transparent__7o6k06en useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gx useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_light__w6to7ii useTextStyles_fontWeight_bold__w6to7ip useTextStyles_noWrap__w6to7iq useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0"
+        role="tab"
+        tabindex="-1"
+      >
+        <span
+          class="Tab_item__vlp0oc2"
+        >
+          tab 3 title
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
