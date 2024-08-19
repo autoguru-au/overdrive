@@ -2,17 +2,17 @@
 
 exports[`<Meta /> should match snapshot with label, icon for Primary variant 1`] = `
 <span
-  class="reset_inlineText__6swfds2 useBoxStyles_display_flex__7o6k06fb useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g8 useBoxStyles_flexWrap_nowrap__7o6k06gs useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y44 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq4"
+  class="reset_inlineText__6swfds2 useBoxStyles_display_flex__7o6k06fq useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_nowrap__7o6k06h7 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y44 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq4"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g8 useBoxStyles_flexWrap_nowrap__7o6k06gs"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_flex__7o6k06fq useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_nowrap__7o6k06h7"
   >
     <i
-      class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q60 Meta_variant_primary__1f570jc0"
+      class="useBoxStyles_display_block__7o6k06fp Icon_makeResponsiveStyle_key_bp__14sz1q60 Meta_variant_primary__1f570jc0"
       role="presentation"
     >
       <svg
-        class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
+        class="useBoxStyles_display_block__7o6k06fp useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd"
         viewBox="0 0 512 512"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -23,10 +23,10 @@ exports[`<Meta /> should match snapshot with label, icon for Primary variant 1`]
     </i>
   </div>
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g8 useBoxStyles_flexWrap_nowrap__7o6k06gs"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_flex__7o6k06fq useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_nowrap__7o6k06h7"
   >
     <span
-      class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06f2 useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ih useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_4__w6to7i4"
+      class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06fh useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ii useTextStyles_fontWeight_normal__w6to7io useTextStyles_sizes_4__w6to7i4"
     >
       Hello World!
     </span>
@@ -36,17 +36,17 @@ exports[`<Meta /> should match snapshot with label, icon for Primary variant 1`]
 
 exports[`<Meta /> should match snapshot with label, icon for Secondary variant 1`] = `
 <span
-  class="reset_inlineText__6swfds2 useBoxStyles_display_flex__7o6k06fb useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g8 useBoxStyles_flexWrap_nowrap__7o6k06gs useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y44 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq4"
+  class="reset_inlineText__6swfds2 useBoxStyles_display_flex__7o6k06fq useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_nowrap__7o6k06h7 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y44 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq4"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g8 useBoxStyles_flexWrap_nowrap__7o6k06gs"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_flex__7o6k06fq useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_nowrap__7o6k06h7"
   >
     <i
-      class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q60 Meta_variant_secondary__1f570jc1"
+      class="useBoxStyles_display_block__7o6k06fp Icon_makeResponsiveStyle_key_bp__14sz1q60 Meta_variant_secondary__1f570jc1"
       role="presentation"
     >
       <svg
-        class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
+        class="useBoxStyles_display_block__7o6k06fp useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd"
         viewBox="0 0 512 512"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -57,10 +57,10 @@ exports[`<Meta /> should match snapshot with label, icon for Secondary variant 1
     </i>
   </div>
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g8 useBoxStyles_flexWrap_nowrap__7o6k06gs"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_flex__7o6k06fq useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_nowrap__7o6k06h7"
   >
     <span
-      class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06f2 useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ih useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_4__w6to7i4"
+      class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06fh useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ii useTextStyles_fontWeight_normal__w6to7io useTextStyles_sizes_4__w6to7i4"
     >
       Hello World!
     </span>
