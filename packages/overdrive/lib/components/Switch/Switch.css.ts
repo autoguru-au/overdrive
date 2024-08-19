@@ -3,28 +3,47 @@ import { style, styleVariants } from '@vanilla-extract/css';
 import { themeContractVars as vars } from '../../themes/theme.css';
 
 const handleSize = '24px';
-const handleOffset = '2px';
+const handleOffset = '3px';
 const borderSize = '1px';
 
 export const handle = styleVariants({
 	default: {
-		borderColor: vars.border.colours.gray,
+		borderColor: vars.border.colours.light,
 		top: `calc(${handleOffset} - ${borderSize})`,
 		left: `calc(${handleOffset} - ${borderSize})`,
 		width: `${handleSize}`,
 		height: `${handleSize}`,
 		transition: 'transform 0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
 		willChange: 'transform',
+		selectors: {
+			'&:hover': {
+				transform: 'scale(0.8)',
+			},
+		},
 	},
 	transition: {
 		transform: `translateX(calc(${handleSize} - (2 * ${handleOffset})))`,
-		borderColor: vars.colours.intent.primary.background.strong,
+		selectors: {
+			'&:hover': {
+				transform: `translateX(calc(${handleSize} - (2 * ${handleOffset}))) scale(0.8)`,
+			},
+		},
 	},
 });
 
 export const toggled = style({
-	borderColor: vars.colours.intent.primary.background.strong,
-	backgroundColor: vars.colours.intent.primary.background.standard,
+	borderColor: vars.border.colours.dark,
+	backgroundColor: vars.border.colours.dark,
+});
+
+export const untoggled = style({
+	borderColor: vars.border.colours.light,
+	backgroundColor: vars.border.colours.light,
+	selectors: {
+		'&:hover': {
+			backgroundColor: vars.border.colours.gray,
+		},
+	},
 });
 
 export const disabled = styleVariants({
@@ -33,7 +52,7 @@ export const disabled = styleVariants({
 			'&[aria-disabled=true]': {
 				cursor: 'not-allowed',
 				borderColor: vars.border.colours.light,
-				backgroundColor: vars.border.colours.light,
+				backgroundColor: 'white',
 			},
 		},
 	},
@@ -41,7 +60,7 @@ export const disabled = styleVariants({
 		selectors: {
 			'&[aria-disabled=true]': {
 				borderColor: vars.border.colours.light,
-				backgroundColor: vars.colours.intent.primary.background.mild,
+				backgroundColor: 'white',
 			},
 		},
 	},
