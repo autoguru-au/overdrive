@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.32.0
+
+### Minor Changes
+
+-   2ab648e9: Updates neutral theme
+
 ## 4.31.0
 
 ### Minor Changes
