@@ -2,24 +2,24 @@
 
 exports[`<DateInput /> should have some hintText 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 NotchedBase_root__1r7zdxg0"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
   >
     <div
-      class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
+      class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd"
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useBoxStyles_backgroundColours_transparent__7o6k06en withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
         id="id"
         type="date"
         value="2019-01-21"
       />
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06hd NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg4"
+      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd useBoxStyles_position_absolute__7o6k06fe useBoxStyles_textAlign_left__7o6k06fh useBoxStyles_pointerEvents_none__7o6k06hs NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg4"
     >
       <div
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg6 InputState_natural_default_borderColour__9z39d75"
@@ -28,12 +28,12 @@ exports[`<DateInput /> should have some hintText 1`] = `
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg7 InputState_natural_default_borderColour__9z39d75"
       >
         <div
-          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_block__7o6k06fa useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_notchGapPlaceholder__1r7zdxg3"
+          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_block__7o6k06fp useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ii useTextStyles_noWrap__w6to7ir useTextStyles_sizes_4__w6to7i4 NotchedBase_notchGapPlaceholder__1r7zdxg3"
         >
           placeholder
         </div>
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fe useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hd NotchedBase_placeholder_default__1r7zdxgt InputState_natural_default_colour__9z39d74 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholderPlacement_medium_shifted__1r7zdxg10"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06ft useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs NotchedBase_placeholder_default__1r7zdxgt InputState_natural_default_colour__9z39d74 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ii useTextStyles_noWrap__w6to7ir useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholderPlacement_medium_shifted__1r7zdxg10"
           for="id"
         >
           placeholder
@@ -45,7 +45,7 @@ exports[`<DateInput /> should have some hintText 1`] = `
     </div>
   </div>
   <p
-    class="reset_blockText__6swfdsc useBoxStyles_textAlign_left__7o6k06f2 useTextStyles_root__w6to7i0 reset_blockText__6swfdsc useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_2__w6to7i2 reset_blockText__6swfdsc useBoxStyles_makeResponsiveStyle_key_bp__7o6k064k useBoxStyles_makeResponsiveStyle_key_bp__7o6k0684 HintText_hintText__w01siw0 InputState_natural_default_colour__9z39d74"
+    class="reset_blockText__6swfdsc useBoxStyles_textAlign_left__7o6k06fh useTextStyles_root__w6to7i0 reset_blockText__6swfdsc useTextStyles_fontWeight_normal__w6to7io useTextStyles_sizes_2__w6to7i2 reset_blockText__6swfdsc useBoxStyles_makeResponsiveStyle_key_bp__7o6k064k useBoxStyles_makeResponsiveStyle_key_bp__7o6k0684 HintText_hintText__w01siw0 InputState_natural_default_colour__9z39d74"
   >
     hint text
   </p>
@@ -54,24 +54,24 @@ exports[`<DateInput /> should have some hintText 1`] = `
 
 exports[`<DateInput /> should match snapshot 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 NotchedBase_root__1r7zdxg0"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
   >
     <div
-      class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
+      class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd"
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useBoxStyles_backgroundColours_transparent__7o6k06en withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
         id="id"
         type="date"
         value="2019-01-21"
       />
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06hd NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg4"
+      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd useBoxStyles_position_absolute__7o6k06fe useBoxStyles_textAlign_left__7o6k06fh useBoxStyles_pointerEvents_none__7o6k06hs NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg4"
     >
       <div
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg6 InputState_natural_default_borderColour__9z39d75"
@@ -80,12 +80,12 @@ exports[`<DateInput /> should match snapshot 1`] = `
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg7 InputState_natural_default_borderColour__9z39d75"
       >
         <div
-          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_block__7o6k06fa useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_notchGapPlaceholder__1r7zdxg3"
+          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_block__7o6k06fp useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ii useTextStyles_noWrap__w6to7ir useTextStyles_sizes_4__w6to7i4 NotchedBase_notchGapPlaceholder__1r7zdxg3"
         >
           placeholder something
         </div>
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fe useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hd NotchedBase_placeholder_default__1r7zdxgt InputState_natural_default_colour__9z39d74 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholderPlacement_medium_shifted__1r7zdxg10"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06ft useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs NotchedBase_placeholder_default__1r7zdxgt InputState_natural_default_colour__9z39d74 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ii useTextStyles_noWrap__w6to7ir useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholderPlacement_medium_shifted__1r7zdxg10"
           for="id"
         >
           placeholder something
@@ -101,23 +101,23 @@ exports[`<DateInput /> should match snapshot 1`] = `
 
 exports[`<DateInput /> should match snapshot when active 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew input-class"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 NotchedBase_root__1r7zdxg0"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
   >
     <div
-      class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
+      class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd"
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useBoxStyles_backgroundColours_transparent__7o6k06en withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
         type="date"
         value="2019-02-05"
       />
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06hd NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg4"
+      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd useBoxStyles_position_absolute__7o6k06fe useBoxStyles_textAlign_left__7o6k06fh useBoxStyles_pointerEvents_none__7o6k06hs NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg4"
     >
       <div
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg6 InputState_activeBorderColour__9z39d71"
@@ -126,12 +126,12 @@ exports[`<DateInput /> should match snapshot when active 1`] = `
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg7 InputState_activeBorderColour__9z39d71"
       >
         <div
-          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_block__7o6k06fa useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_notchGapPlaceholder__1r7zdxg3"
+          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_block__7o6k06fp useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ii useTextStyles_noWrap__w6to7ir useTextStyles_sizes_4__w6to7i4 NotchedBase_notchGapPlaceholder__1r7zdxg3"
         >
           placeholder something
         </div>
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fe useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hd NotchedBase_placeholder_default__1r7zdxgt InputState_activeColour__9z39d70 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholderPlacement_medium_shifted__1r7zdxg10"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06ft useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs NotchedBase_placeholder_default__1r7zdxgt InputState_activeColour__9z39d70 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ii useTextStyles_noWrap__w6to7ir useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholderPlacement_medium_shifted__1r7zdxg10"
         >
           placeholder something
         </label>
@@ -146,20 +146,20 @@ exports[`<DateInput /> should match snapshot when active 1`] = `
 
 exports[`<DateInput /> should match snapshot when loading 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew input-class"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 NotchedBase_root__1r7zdxg0"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
   >
     <div
-      class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
+      class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd"
     >
       <i
-        class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hd withEnhancedInput_iconRoot__bd4oide withEnhancedInput_prefixIcon__bd4oidf withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
+        class="useBoxStyles_display_block__7o6k06fp Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs withEnhancedInput_iconRoot__bd4oide withEnhancedInput_prefixIcon__bd4oidf withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
         role="presentation"
       >
         <svg
-          class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
+          class="useBoxStyles_display_block__7o6k06fp useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd"
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -169,10 +169,10 @@ exports[`<DateInput /> should match snapshot when loading 1`] = `
         </svg>
       </i>
       <div
-        class="reset_block__6swfds3 ProgressSpinner_size_medium_circular__5j3teub ProgressSpinner_colours_primary__5j3teu5 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hd withEnhancedInput_iconRoot__bd4oide withEnhancedInput_suffixIcon__bd4oidg withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
+        class="reset_block__6swfds3 ProgressSpinner_size_medium_circular__5j3teub ProgressSpinner_colours_primary__5j3teu5 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs withEnhancedInput_iconRoot__bd4oide withEnhancedInput_suffixIcon__bd4oidg withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
       >
         <svg
-          class="useBoxStyles_display_block__7o6k06fa useBoxStyles_overflow_hidden__7o6k06f5 ProgressSpinner_circular__5j3teu1"
+          class="useBoxStyles_display_block__7o6k06fp useBoxStyles_overflow_hidden__7o6k06fk ProgressSpinner_circular__5j3teu1"
           viewBox="25 25 50 50"
         >
           <circle
@@ -188,13 +188,13 @@ exports[`<DateInput /> should match snapshot when loading 1`] = `
       <input
         aria-busy="true"
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useBoxStyles_backgroundColours_transparent__7o6k06en withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_prefixed_any__bd4oidc undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__bd4oidd"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_prefixed_any__bd4oidc undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__bd4oidd"
         type="date"
         value="2019-01-21"
       />
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06hd NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg4"
+      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd useBoxStyles_position_absolute__7o6k06fe useBoxStyles_textAlign_left__7o6k06fh useBoxStyles_pointerEvents_none__7o6k06hs NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg4"
     >
       <div
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg6 InputState_natural_default_borderColour__9z39d75"
@@ -203,12 +203,12 @@ exports[`<DateInput /> should match snapshot when loading 1`] = `
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg7 InputState_natural_default_borderColour__9z39d75"
       >
         <div
-          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_block__7o6k06fa useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_notchGapPlaceholder__1r7zdxg3"
+          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_block__7o6k06fp useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ii useTextStyles_noWrap__w6to7ir useTextStyles_sizes_4__w6to7i4 NotchedBase_notchGapPlaceholder__1r7zdxg3"
         >
           placeholder something
         </div>
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fe useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hd NotchedBase_placeholder_default__1r7zdxgt InputState_natural_default_colour__9z39d74 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholderPlacement_medium_shifted__1r7zdxg10"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06ft useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs NotchedBase_placeholder_default__1r7zdxgt InputState_natural_default_colour__9z39d74 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ii useTextStyles_noWrap__w6to7ir useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholderPlacement_medium_shifted__1r7zdxg10"
         >
           placeholder something
         </label>
@@ -223,23 +223,23 @@ exports[`<DateInput /> should match snapshot when loading 1`] = `
 
 exports[`<DateInput /> should match snapshot when touched 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew input-class"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 NotchedBase_root__1r7zdxg0"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
   >
     <div
-      class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
+      class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd"
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useBoxStyles_backgroundColours_transparent__7o6k06en withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
         type="date"
         value="2019-01-21"
       />
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06hd NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg4"
+      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd useBoxStyles_position_absolute__7o6k06fe useBoxStyles_textAlign_left__7o6k06fh useBoxStyles_pointerEvents_none__7o6k06hs NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg4"
     >
       <div
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg6 InputState_error_default_borderColour__9z39d7d"
@@ -248,12 +248,12 @@ exports[`<DateInput /> should match snapshot when touched 1`] = `
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg7 InputState_error_default_borderColour__9z39d7d"
       >
         <div
-          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_block__7o6k06fa useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_notchGapPlaceholder__1r7zdxg3"
+          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_block__7o6k06fp useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ii useTextStyles_noWrap__w6to7ir useTextStyles_sizes_4__w6to7i4 NotchedBase_notchGapPlaceholder__1r7zdxg3"
         >
           placeholder something
         </div>
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fe useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hd NotchedBase_placeholder_default__1r7zdxgt InputState_error_default_colour__9z39d7c useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholderPlacement_medium_shifted__1r7zdxg10"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06ft useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs NotchedBase_placeholder_default__1r7zdxgt InputState_error_default_colour__9z39d7c useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ii useTextStyles_noWrap__w6to7ir useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholderPlacement_medium_shifted__1r7zdxg10"
         >
           placeholder something
         </label>
@@ -268,23 +268,23 @@ exports[`<DateInput /> should match snapshot when touched 1`] = `
 
 exports[`<DateInput /> should match snapshot when touched and invalid 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew input-class"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 NotchedBase_root__1r7zdxg0"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
   >
     <div
-      class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
+      class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd"
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useBoxStyles_backgroundColours_transparent__7o6k06en withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
         type="date"
         value="2019-01-21"
       />
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06hd NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg4"
+      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd useBoxStyles_position_absolute__7o6k06fe useBoxStyles_textAlign_left__7o6k06fh useBoxStyles_pointerEvents_none__7o6k06hs NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg4"
     >
       <div
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg6 InputState_error_default_borderColour__9z39d7d"
@@ -293,12 +293,12 @@ exports[`<DateInput /> should match snapshot when touched and invalid 1`] = `
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg7 InputState_error_default_borderColour__9z39d7d"
       >
         <div
-          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_block__7o6k06fa useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_notchGapPlaceholder__1r7zdxg3"
+          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_block__7o6k06fp useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ii useTextStyles_noWrap__w6to7ir useTextStyles_sizes_4__w6to7i4 NotchedBase_notchGapPlaceholder__1r7zdxg3"
         >
           placeholder something
         </div>
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fe useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hd NotchedBase_placeholder_default__1r7zdxgt InputState_error_default_colour__9z39d7c useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholderPlacement_medium_shifted__1r7zdxg10"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06ft useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs NotchedBase_placeholder_default__1r7zdxgt InputState_error_default_colour__9z39d7c useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ii useTextStyles_noWrap__w6to7ir useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholderPlacement_medium_shifted__1r7zdxg10"
         >
           placeholder something
         </label>
@@ -313,23 +313,23 @@ exports[`<DateInput /> should match snapshot when touched and invalid 1`] = `
 
 exports[`<DateInput /> should match snapshot when touched and valid 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew input-class"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 NotchedBase_root__1r7zdxg0"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
   >
     <div
-      class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
+      class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd"
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useBoxStyles_backgroundColours_transparent__7o6k06en withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
         type="date"
         value="2019-01-21"
       />
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06hd NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg4"
+      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd useBoxStyles_position_absolute__7o6k06fe useBoxStyles_textAlign_left__7o6k06fh useBoxStyles_pointerEvents_none__7o6k06hs NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg4"
     >
       <div
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg6 InputState_success_default_borderColour__9z39d77"
@@ -338,12 +338,12 @@ exports[`<DateInput /> should match snapshot when touched and valid 1`] = `
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg7 InputState_success_default_borderColour__9z39d77"
       >
         <div
-          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_block__7o6k06fa useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_notchGapPlaceholder__1r7zdxg3"
+          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_block__7o6k06fp useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ii useTextStyles_noWrap__w6to7ir useTextStyles_sizes_4__w6to7i4 NotchedBase_notchGapPlaceholder__1r7zdxg3"
         >
           placeholder something
         </div>
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fe useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hd NotchedBase_placeholder_default__1r7zdxgt InputState_success_default_colour__9z39d76 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholderPlacement_medium_shifted__1r7zdxg10"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06ft useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs NotchedBase_placeholder_default__1r7zdxgt InputState_success_default_colour__9z39d76 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ii useTextStyles_noWrap__w6to7ir useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholderPlacement_medium_shifted__1r7zdxg10"
         >
           placeholder something
         </label>
@@ -358,20 +358,20 @@ exports[`<DateInput /> should match snapshot when touched and valid 1`] = `
 
 exports[`<DateInput /> should match snapshot with both icons 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew input-class"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 NotchedBase_root__1r7zdxg0"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
   >
     <div
-      class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
+      class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd"
     >
       <i
-        class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hd withEnhancedInput_iconRoot__bd4oide withEnhancedInput_prefixIcon__bd4oidf withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
+        class="useBoxStyles_display_block__7o6k06fp Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs withEnhancedInput_iconRoot__bd4oide withEnhancedInput_prefixIcon__bd4oidf withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
         role="presentation"
       >
         <svg
-          class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
+          class="useBoxStyles_display_block__7o6k06fp useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd"
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -381,11 +381,11 @@ exports[`<DateInput /> should match snapshot with both icons 1`] = `
         </svg>
       </i>
       <i
-        class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hd withEnhancedInput_iconRoot__bd4oide withEnhancedInput_suffixIcon__bd4oidg withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
+        class="useBoxStyles_display_block__7o6k06fp Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs withEnhancedInput_iconRoot__bd4oide withEnhancedInput_suffixIcon__bd4oidg withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
         role="presentation"
       >
         <svg
-          class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
+          class="useBoxStyles_display_block__7o6k06fp useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd"
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -396,13 +396,13 @@ exports[`<DateInput /> should match snapshot with both icons 1`] = `
       </i>
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useBoxStyles_backgroundColours_transparent__7o6k06en withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_prefixed_any__bd4oidc undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__bd4oidd"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_prefixed_any__bd4oidc undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__bd4oidd"
         type="date"
         value="2019-01-21"
       />
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06hd NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg4"
+      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd useBoxStyles_position_absolute__7o6k06fe useBoxStyles_textAlign_left__7o6k06fh useBoxStyles_pointerEvents_none__7o6k06hs NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg4"
     >
       <div
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg6 InputState_natural_default_borderColour__9z39d75"
@@ -411,12 +411,12 @@ exports[`<DateInput /> should match snapshot with both icons 1`] = `
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg7 InputState_natural_default_borderColour__9z39d75"
       >
         <div
-          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_block__7o6k06fa useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_notchGapPlaceholder__1r7zdxg3"
+          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_block__7o6k06fp useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ii useTextStyles_noWrap__w6to7ir useTextStyles_sizes_4__w6to7i4 NotchedBase_notchGapPlaceholder__1r7zdxg3"
         >
           placeholder something
         </div>
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fe useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hd NotchedBase_placeholder_default__1r7zdxgt InputState_natural_default_colour__9z39d74 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholderPlacement_medium_shifted__1r7zdxg10"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06ft useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs NotchedBase_placeholder_default__1r7zdxgt InputState_natural_default_colour__9z39d74 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ii useTextStyles_noWrap__w6to7ir useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholderPlacement_medium_shifted__1r7zdxg10"
         >
           placeholder something
         </label>
@@ -431,20 +431,20 @@ exports[`<DateInput /> should match snapshot with both icons 1`] = `
 
 exports[`<DateInput /> should match snapshot with prefix icon 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew input-class"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 NotchedBase_root__1r7zdxg0"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
   >
     <div
-      class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
+      class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd"
     >
       <i
-        class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hd withEnhancedInput_iconRoot__bd4oide withEnhancedInput_prefixIcon__bd4oidf withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
+        class="useBoxStyles_display_block__7o6k06fp Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs withEnhancedInput_iconRoot__bd4oide withEnhancedInput_prefixIcon__bd4oidf withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
         role="presentation"
       >
         <svg
-          class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
+          class="useBoxStyles_display_block__7o6k06fp useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd"
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -455,13 +455,13 @@ exports[`<DateInput /> should match snapshot with prefix icon 1`] = `
       </i>
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useBoxStyles_backgroundColours_transparent__7o6k06en withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_prefixed_any__bd4oidc"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_prefixed_any__bd4oidc"
         type="date"
         value="2019-01-21"
       />
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06hd NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg4"
+      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd useBoxStyles_position_absolute__7o6k06fe useBoxStyles_textAlign_left__7o6k06fh useBoxStyles_pointerEvents_none__7o6k06hs NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg4"
     >
       <div
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg6 InputState_natural_default_borderColour__9z39d75"
@@ -470,12 +470,12 @@ exports[`<DateInput /> should match snapshot with prefix icon 1`] = `
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg7 InputState_natural_default_borderColour__9z39d75"
       >
         <div
-          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_block__7o6k06fa useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_notchGapPlaceholder__1r7zdxg3"
+          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_block__7o6k06fp useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ii useTextStyles_noWrap__w6to7ir useTextStyles_sizes_4__w6to7i4 NotchedBase_notchGapPlaceholder__1r7zdxg3"
         >
           placeholder something
         </div>
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fe useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hd NotchedBase_placeholder_default__1r7zdxgt InputState_natural_default_colour__9z39d74 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholderPlacement_medium_shifted__1r7zdxg10"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06ft useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs NotchedBase_placeholder_default__1r7zdxgt InputState_natural_default_colour__9z39d74 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ii useTextStyles_noWrap__w6to7ir useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholderPlacement_medium_shifted__1r7zdxg10"
         >
           placeholder something
         </label>
@@ -490,20 +490,20 @@ exports[`<DateInput /> should match snapshot with prefix icon 1`] = `
 
 exports[`<DateInput /> should match snapshot with suffix icon 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew input-class"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 NotchedBase_root__1r7zdxg0"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
   >
     <div
-      class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
+      class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd"
     >
       <i
-        class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hd withEnhancedInput_iconRoot__bd4oide withEnhancedInput_suffixIcon__bd4oidg withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
+        class="useBoxStyles_display_block__7o6k06fp Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs withEnhancedInput_iconRoot__bd4oide withEnhancedInput_suffixIcon__bd4oidg withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
         role="presentation"
       >
         <svg
-          class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
+          class="useBoxStyles_display_block__7o6k06fp useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd"
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -514,13 +514,13 @@ exports[`<DateInput /> should match snapshot with suffix icon 1`] = `
       </i>
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cl useBoxStyles_backgroundColours_transparent__7o6k06en withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__bd4oidd"
+        class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__bd4oidd"
         type="date"
         value="2019-01-21"
       />
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey useBoxStyles_position_absolute__7o6k06ez useBoxStyles_textAlign_left__7o6k06f2 useBoxStyles_pointerEvents_none__7o6k06hd NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg4"
+      class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd useBoxStyles_position_absolute__7o6k06fe useBoxStyles_textAlign_left__7o6k06fh useBoxStyles_pointerEvents_none__7o6k06hs NotchedBase_borderVisualDefaults__1r7zdxg2 NotchedBase_borders_root_default__1r7zdxg4"
     >
       <div
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_leading__1r7zdxg6 InputState_natural_default_borderColour__9z39d75"
@@ -529,12 +529,12 @@ exports[`<DateInput /> should match snapshot with suffix icon 1`] = `
         class="NotchedBase_borderRegionDefaults__1r7zdxg1 NotchedBase_borders_middle__1r7zdxg7 InputState_natural_default_borderColour__9z39d75"
       >
         <div
-          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_block__7o6k06fa useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_notchGapPlaceholder__1r7zdxg3"
+          class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_block__7o6k06fp useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ii useTextStyles_noWrap__w6to7ir useTextStyles_sizes_4__w6to7i4 NotchedBase_notchGapPlaceholder__1r7zdxg3"
         >
           placeholder something
         </div>
         <label
-          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06fe useBoxStyles_position_absolute__7o6k06ez useBoxStyles_pointerEvents_none__7o6k06hd NotchedBase_placeholder_default__1r7zdxgt InputState_natural_default_colour__9z39d74 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ih useTextStyles_noWrap__w6to7iq useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholderPlacement_medium_shifted__1r7zdxg10"
+          class="reset_inlineText__6swfds2 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_makeResponsiveStyle_key_bp__7o6k065g useBoxStyles_makeResponsiveStyle_key_bp__7o6k066k useBoxStyles_makeResponsiveStyle_key_bp__7o6k067o useBoxStyles_makeResponsiveStyle_key_bp__7o6k068s useBoxStyles_display_inline__7o6k06ft useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs NotchedBase_placeholder_default__1r7zdxgt InputState_natural_default_colour__9z39d74 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ii useTextStyles_noWrap__w6to7ir useTextStyles_sizes_4__w6to7i4 NotchedBase_placeholderPlacement_medium_shifted__1r7zdxg10"
         >
           placeholder something
         </label>

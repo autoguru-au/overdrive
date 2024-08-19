@@ -4,6 +4,18 @@ import { buildColourGamut } from './makeTheme';
 import { ColourMap } from './tokens';
 
 const colours: ColourMap = {
+	black: {
+		'900': '',
+		'800': '',
+		'700': '',
+		'600': '',
+		'500': '',
+		'400': '',
+		'300': '',
+		'200': '',
+		'100': '',
+	},
+
 	gray: {
 		'900': '',
 		'800': '',
@@ -105,6 +117,15 @@ export const themeContractVars = createThemeContract({
 		},
 		intent: {
 			primary: {
+				background: {
+					standard: '',
+					mild: '',
+					strong: '',
+				},
+				foreground: '',
+				border: '',
+			},
+			brand: {
 				background: {
 					standard: '',
 					mild: '',
@@ -247,6 +268,7 @@ export const themeContractVars = createThemeContract({
 		},
 		colour: {
 			primary: '',
+			brand:'',
 			secondary: '',
 			shine: '',
 			link: '',

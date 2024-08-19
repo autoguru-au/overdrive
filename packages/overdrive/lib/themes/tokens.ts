@@ -18,6 +18,17 @@ interface ColourIntensityMap extends VanillaTokens {
 
 export type ColourMap = Record<string, ColourValue>;
 
+type ColourBlacks =
+	| 'black900'
+	| 'black800'
+	| 'black700'
+	| 'black600'
+	| 'black500'
+	| 'black400'
+	| 'black300'
+	| 'black200'
+	| 'black100';
+
 type ColourReds =
 	| 'red900'
 	| 'red800'
@@ -74,6 +85,7 @@ type ColourYellows =
 	| 'yellow100';
 
 export type ColourGamut =
+	| ColourBlacks
 	| ColourGrays
 	| ColourBlues
 	| ColourGreens
@@ -82,6 +94,7 @@ export type ColourGamut =
 
 type Intent =
 	| 'primary'
+	| 'brand'
 	| 'secondary'
 	| 'shine'
 	| 'neutral'

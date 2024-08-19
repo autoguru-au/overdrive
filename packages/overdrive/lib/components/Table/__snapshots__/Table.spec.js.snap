@@ -2,50 +2,50 @@
 
 exports[`<Table /> when implemented should match snapshot 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06ew Table_root__1wk7r060"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb Table_root__1wk7r060"
   role="grid"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_display_contents__7o6k06f9"
+    class="reset_block__6swfds3 useBoxStyles_display_contents__7o6k06fo"
     role="rowgroup"
   >
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_contents__7o6k06f9"
+      class="reset_block__6swfds3 useBoxStyles_display_contents__7o6k06fo"
       role="row"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c useBoxStyles_makeResponsiveStyle_key_bp__7o6k061g useBoxStyles_makeResponsiveStyle_key_bp__7o6k062k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063o useBoxStyles_display_flex__7o6k06fb useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_bottom_light__7o6k06a7 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp useBoxStyles_backgroundColours_gray100__7o6k06d5 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gt"
+        class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c useBoxStyles_makeResponsiveStyle_key_bp__7o6k061g useBoxStyles_makeResponsiveStyle_key_bp__7o6k062k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063o useBoxStyles_display_flex__7o6k06fq useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_bottom_light__7o6k06a9 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bt useBoxStyles_backgroundColours_gray100__7o6k06di useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06h8"
         role="columnheader"
         scope="col"
       >
         <span
-          class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06f2 useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7ie useTextStyles_fontWeight_bold__w6to7ip useTextStyles_sizes_2__w6to7i2 TableHeadCell_text__4skrdd1"
+          class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06fh useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7if useTextStyles_fontWeight_bold__w6to7iq useTextStyles_sizes_2__w6to7i2 TableHeadCell_text__4skrdd1"
         >
           col 1
         </span>
       </div>
       <div
         aria-sort="ascending"
-        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_bottom_light__7o6k06a7 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp useBoxStyles_backgroundColours_gray100__7o6k06d5 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gt"
+        class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fq useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_bottom_light__7o6k06a9 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bt useBoxStyles_backgroundColours_gray100__7o6k06di useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06h8"
         role="columnheader"
         scope="col"
       >
         <button
-          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c useBoxStyles_makeResponsiveStyle_key_bp__7o6k061g useBoxStyles_makeResponsiveStyle_key_bp__7o6k062k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063o useBoxStyles_display_block__7o6k06fa useBoxStyles_width_full__7o6k06ew TableHeadCell_sorterButton__4skrdd0"
+          class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c useBoxStyles_makeResponsiveStyle_key_bp__7o6k061g useBoxStyles_makeResponsiveStyle_key_bp__7o6k062k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063o useBoxStyles_display_block__7o6k06fp useBoxStyles_width_full__7o6k06fb TableHeadCell_sorterButton__4skrdd0"
           tabindex="-1"
         >
           <div
-            class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fb useBoxStyles_position_relative__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g8 useBoxStyles_flexWrap_wrap__7o6k06gr useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gt useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y40 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq0"
+            class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fq useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_wrap__7o6k06h6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06h8 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y40 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq0"
           >
             <div
-              class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k060 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063c useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g8 useBoxStyles_flexWrap_nowrap__7o6k06gs"
+              class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k060 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063c useBoxStyles_display_flex__7o6k06fq useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_nowrap__7o6k06h7"
             >
               <span
-                class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06f2 useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7ie useTextStyles_fontWeight_bold__w6to7ip useTextStyles_sizes_2__w6to7i2 TableHeadCell_text__4skrdd1"
+                class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06fh useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7if useTextStyles_fontWeight_bold__w6to7iq useTextStyles_sizes_2__w6to7i2 TableHeadCell_text__4skrdd1"
               >
                 col 2
                 <span
-                  class="reset_inlineText__6swfds2 useBoxStyles_position_absolute__7o6k06ez useBoxStyles_overflow_hidden__7o6k06f5 useBoxStyles_userSelect_none__7o6k06fj VisuallyHidden_root__t2xf5v0"
+                  class="reset_inlineText__6swfds2 useBoxStyles_position_absolute__7o6k06fe useBoxStyles_overflow_hidden__7o6k06fk useBoxStyles_userSelect_none__7o6k06fy VisuallyHidden_root__t2xf5v0"
                 >
                    
                   sorted 
@@ -54,14 +54,14 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
               </span>
             </div>
             <div
-              class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k060 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063c useBoxStyles_display_flex__7o6k06fb useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g8 useBoxStyles_flexWrap_nowrap__7o6k06gs"
+              class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k060 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063c useBoxStyles_display_flex__7o6k06fq useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_nowrap__7o6k06h7"
             >
               <i
-                class="useBoxStyles_display_block__7o6k06fa Icon_makeResponsiveStyle_key_bp__14sz1q60 TableHeadCell_sorterRoot__4skrdd2 TableHeadCell_sorter_root__4skrdd3 TableHeadCell_sorter_asc__4skrdd5"
+                class="useBoxStyles_display_block__7o6k06fp Icon_makeResponsiveStyle_key_bp__14sz1q60 TableHeadCell_sorterRoot__4skrdd2 TableHeadCell_sorter_root__4skrdd3 TableHeadCell_sorter_asc__4skrdd5"
                 role="presentation"
               >
                 <svg
-                  class="useBoxStyles_display_block__7o6k06fa useBoxStyles_width_full__7o6k06ew useBoxStyles_height_full__7o6k06ey"
+                  class="useBoxStyles_display_block__7o6k06fp useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd"
                   fill="currentColor"
                   focusable="false"
                   viewBox="0 0 512 512"
@@ -79,58 +79,58 @@ exports[`<Table /> when implemented should match snapshot 1`] = `
     </div>
   </div>
   <div
-    class="reset_block__6swfds3 useBoxStyles_display_contents__7o6k06f9"
+    class="reset_block__6swfds3 useBoxStyles_display_contents__7o6k06fo"
     role="rowgroup"
   >
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_contents__7o6k06f9"
+      class="reset_block__6swfds3 useBoxStyles_display_contents__7o6k06fo"
       role="row"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c useBoxStyles_makeResponsiveStyle_key_bp__7o6k061g useBoxStyles_makeResponsiveStyle_key_bp__7o6k062k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063o useBoxStyles_display_flex__7o6k06fb useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_bottom_light__7o6k06a7 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gt TableCell_root__13mgwvq0"
+        class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c useBoxStyles_makeResponsiveStyle_key_bp__7o6k061g useBoxStyles_makeResponsiveStyle_key_bp__7o6k062k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063o useBoxStyles_display_flex__7o6k06fq useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_bottom_light__7o6k06a9 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bt useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06h8 TableCell_root__13mgwvq0"
         role="gridcell"
         scope="row"
       >
         <span
-          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06fa useBoxStyles_textAlign_left__7o6k06f2 useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7ie useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_3__w6to7i3"
+          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06fp useBoxStyles_textAlign_left__7o6k06fh useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7if useTextStyles_fontWeight_normal__w6to7io useTextStyles_sizes_3__w6to7i3"
         >
           row 1, col 1
         </span>
       </div>
       <div
-        class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c useBoxStyles_makeResponsiveStyle_key_bp__7o6k061g useBoxStyles_makeResponsiveStyle_key_bp__7o6k062k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063o useBoxStyles_display_flex__7o6k06fb useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_bottom_light__7o6k06a7 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gt TableCell_root__13mgwvq0"
+        class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c useBoxStyles_makeResponsiveStyle_key_bp__7o6k061g useBoxStyles_makeResponsiveStyle_key_bp__7o6k062k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063o useBoxStyles_display_flex__7o6k06fq useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_bottom_light__7o6k06a9 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bt useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06h8 TableCell_root__13mgwvq0"
         role="gridcell"
         scope="row"
       >
         <span
-          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06fa useBoxStyles_textAlign_left__7o6k06f2 useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7ie useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_3__w6to7i3"
+          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06fp useBoxStyles_textAlign_left__7o6k06fh useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7if useTextStyles_fontWeight_normal__w6to7io useTextStyles_sizes_3__w6to7i3"
         >
           row 1, col 2
         </span>
       </div>
     </div>
     <div
-      class="reset_block__6swfds3 useBoxStyles_display_contents__7o6k06f9"
+      class="reset_block__6swfds3 useBoxStyles_display_contents__7o6k06fo"
       role="row"
     >
       <div
-        class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c useBoxStyles_makeResponsiveStyle_key_bp__7o6k061g useBoxStyles_makeResponsiveStyle_key_bp__7o6k062k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063o useBoxStyles_display_flex__7o6k06fb useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_bottom_light__7o6k06a7 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gt TableCell_root__13mgwvq0"
+        class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c useBoxStyles_makeResponsiveStyle_key_bp__7o6k061g useBoxStyles_makeResponsiveStyle_key_bp__7o6k062k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063o useBoxStyles_display_flex__7o6k06fq useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_bottom_light__7o6k06a9 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bt useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06h8 TableCell_root__13mgwvq0"
         role="gridcell"
         scope="row"
       >
         <span
-          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06fa useBoxStyles_textAlign_left__7o6k06f2 useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7ie useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_3__w6to7i3"
+          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06fp useBoxStyles_textAlign_left__7o6k06fh useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7if useTextStyles_fontWeight_normal__w6to7io useTextStyles_sizes_3__w6to7i3"
         >
           row 2, col 1
         </span>
       </div>
       <div
-        class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c useBoxStyles_makeResponsiveStyle_key_bp__7o6k061g useBoxStyles_makeResponsiveStyle_key_bp__7o6k062k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063o useBoxStyles_display_flex__7o6k06fb useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_bottom_light__7o6k06a7 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bp useBoxStyles_makeResponsiveStyle_key_bp__7o6k06g0 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gt TableCell_root__13mgwvq0"
+        class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06c useBoxStyles_makeResponsiveStyle_key_bp__7o6k061g useBoxStyles_makeResponsiveStyle_key_bp__7o6k062k useBoxStyles_makeResponsiveStyle_key_bp__7o6k063o useBoxStyles_display_flex__7o6k06fq useBoxStyles_border_style__7o6k069k useBoxStyles_border_colour_bottom_light__7o6k06a9 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06bt useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06h8 TableCell_root__13mgwvq0"
         role="gridcell"
         scope="row"
       >
         <span
-          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06fa useBoxStyles_textAlign_left__7o6k06f2 useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7ie useTextStyles_fontWeight_normal__w6to7in useTextStyles_sizes_3__w6to7i3"
+          class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06fp useBoxStyles_textAlign_left__7o6k06fh useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7if useTextStyles_fontWeight_normal__w6to7io useTextStyles_sizes_3__w6to7i3"
         >
           row 2, col 2
         </span>

@@ -5,6 +5,18 @@ import { buildColourGamut } from '../makeTheme';
 import { ColourMap, Tokens } from '../tokens';
 
 const colours: ColourMap = {
+	black: {
+		900: '#222222',
+		800: '#2A2C2A',
+		700: '#444644',
+		600: '#626262',
+		500: '#808080',
+		400: '#ADB1B5',
+		300: '#D4D9DD',
+		200: '#DDE0E3',
+		100: '#E4E4E4',
+	},
+
 	gray: {
 		900: '#263238',
 		800: '#37474F',
@@ -78,6 +90,14 @@ export const tokens = deepmerge<Tokens, any>(baseTokens, {
 		},
 		intent: {
 			primary: {
+				background: {
+					standard: colours.red['600'],
+					mild: colours.red['100'],
+					strong: colours.red['900'],
+				},
+				border: colours.red['900'],
+			},
+			brand: {
 				background: {
 					standard: colours.red['600'],
 					mild: colours.red['100'],

@@ -74,6 +74,11 @@ export const variant = {
 		backgroundColor: vars.colours.intent.primary.background.standard,
 		boxShadow: `inset 0 0 0 1px ${vars.colours.intent.primary.border}, ${vars.elevation['2']}`,
 	}),
+	brand: style({
+		color: vars.colours.intent.brand.foreground,
+		backgroundColor: vars.colours.intent.brand.background.standard,
+		boxShadow: `inset 0 0 0 1px ${vars.colours.intent.brand.border}, ${vars.elevation['2']}`,
+	}),
 	secondary: style({
 		color: vars.colours.intent.secondary.foreground,
 		backgroundColor: vars.colours.intent.secondary.background.standard,
@@ -113,6 +118,19 @@ export const defaultStates = {
 			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.primary.border}, ${vars.elevation['1']}`,
 			color: vars.colours.intent.primary.foreground,
 			backgroundColor: vars.colours.intent.primary.background.strong,
+		},
+	}),
+	brand: style({
+		':hover': {
+			color: vars.colours.intent.brand.foreground,
+			backgroundColor: vars.colours.intent.brand.background.strong,
+			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.brand.border}, ${vars.elevation['3']}`,
+		},
+		':active': {
+			transform: 'scale(0.97)',
+			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.brand.border}, ${vars.elevation['1']}`,
+			color: vars.colours.intent.brand.foreground,
+			backgroundColor: vars.colours.intent.brand.background.strong,
 		},
 	}),
 	secondary: style({
@@ -201,6 +219,18 @@ export const minimalStates = {
 		':active': {
 			color: vars.colours.intent.primary.background.strong,
 			backgroundColor: vars.colours.intent.primary.background.mild,
+			boxShadow: 'none',
+		},
+	}),
+	brand: style({
+		':hover': {
+			color: vars.colours.intent.brand.background.strong,
+			backgroundColor: vars.colours.intent.brand.background.mild,
+			boxShadow: 'none',
+		},
+		':active': {
+			color: vars.colours.intent.brand.background.strong,
+			backgroundColor: vars.colours.intent.brand.background.mild,
 			boxShadow: 'none',
 		},
 	}),
