@@ -2,7 +2,6 @@ import { act, fireEvent, render } from '@testing-library/react';
 import * as React from 'react';
 import { useState } from 'react';
 import * as styles from './Switch.css';
-
 import { Switch } from './Switch';
 
 const InteractiveSwitch = ({
