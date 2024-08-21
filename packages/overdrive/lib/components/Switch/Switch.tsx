@@ -44,6 +44,7 @@ export const Switch: FunctionComponent<Props> = ({
 				styles.root,
 				useTextStyles({ size: '5' }),
 				{
+					[styles.untoggled]: !toggled,
 					[styles.toggled]: toggled,
 					[styles.disabled.default]: disabled,
 					[styles.disabled.toggled]: toggled && disabled,
