@@ -10,14 +10,14 @@ export const handle = styleVariants({
 	default: {
 		borderColor: vars.border.colours.light,
 		top: `calc(${handleOffset} - ${borderSize})`,
-		left: `calc(${handleOffset} - ${borderSize})`,
-		width: `${handleSize}`,
-		height: `${handleSize}`,
+		left: `calc(1.5 * ${handleOffset})`,
+		width: `calc(${handleSize} - (2 * ${handleOffset}))`,
+		height: `calc(${handleSize} - (2 * ${handleOffset}))`,
 		transition: 'transform 0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
 		willChange: 'transform',
 		selectors: {
 			'&:hover': {
-				transform: 'scale(0.8)',
+				transform: 'scale(0.8889)',
 			},
 		},
 	},
@@ -25,7 +25,7 @@ export const handle = styleVariants({
 		transform: `translateX(calc(${handleSize} - (2 * ${handleOffset})))`,
 		selectors: {
 			'&:hover': {
-				transform: `translateX(calc(${handleSize} - (2 * ${handleOffset}))) scale(0.8)`,
+				transform: `translateX(calc(${handleSize} - (2 * ${handleOffset}))) scale(0.8889)`,
 			},
 		},
 	},
@@ -34,7 +34,6 @@ export const handle = styleVariants({
 export const toggled = style({
 	borderColor: vars.border.colours.dark,
 	backgroundColor: vars.border.colours.dark,
-	
 });
 
 export const untoggled = style({
@@ -60,6 +59,7 @@ export const disabled = styleVariants({
 	toggled: {
 		selectors: {
 			'&[aria-disabled=true]': {
+				cursor: 'not-allowed',
 				borderColor: vars.border.colours.light,
 				backgroundColor: 'white',
 			},
@@ -68,8 +68,10 @@ export const disabled = styleVariants({
 });
 
 export const root = style({
-	width: `calc((2 * ${handleSize}) + ${handleOffset} - 2 * ${borderSize})`,
-	height: `calc(${handleSize} + (${handleOffset} * 2))`,
+	width: `calc((2 * ${handleSize}) - 2 * ${borderSize})`,
+	height: `${handleSize}`,
+	top: `calc(${handleOffset} - ${borderSize})`,
+	left: `calc(1.5 * ${handleOffset})`,
 	transition: 'background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
 	border: `${borderSize} solid ${vars.border.colours.light}`,
 	selectors: {

@@ -38,7 +38,6 @@ export const Switch = (props: SwitchProps) => {
 						[styles.disabled.default]: inputProps.disabled,
 						[styles.disabled.toggled]: state.isSelected && inputProps.disabled,
 					},
-					// className,
 				)}
 				tabIndex={inputProps.disabled ? -1 : void 0}
 				borderRadius="pill"
@@ -52,6 +51,7 @@ export const Switch = (props: SwitchProps) => {
 					borderRadius="pill"
 					backgroundColour="white"
 					padding="none"
+					pointerEvents={inputProps.disabled ? 'none' : void 0}
 					boxShadow="2"
 					className={clsx(
 						styles.handle.default,
