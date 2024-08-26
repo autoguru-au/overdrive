@@ -1,81 +1,71 @@
+import { useToggleState } from '@react-stately/toggle';
 import clsx from 'clsx';
 import * as React from 'react';
-import { AnchorHTMLAttributes, FunctionComponent, useCallback } from 'react';
+import { AnchorHTMLAttributes, FunctionComponent, useCallback, useRef } from 'react';
+import { useSwitch, useFocusRing, VisuallyHidden } from 'react-aria';
+import { AriaSwitchProps } from 'react-types';
 
 import { Box, useBoxStyles } from '../Box';
 import { useTextStyles } from '../Text';
 
 import * as styles from './Switch.css';
 
-export interface Props
-	extends Omit<
-		AnchorHTMLAttributes<HTMLButtonElement>,
-		'children' | 'style' | 'is' | 'onChange'
-	> {
+export type SwitchProps = AriaSwitchProps & Omit<
+	AnchorHTMLAttributes<HTMLButtonElement>,
+	'children' | 'style' | 'is' | 'onChange'
+> & {
 	className?: string;
-	disabled?: boolean;
-	toggled?: boolean;
+};
 
-	onChange?(value: boolean): void;
-}
-
-export const Switch: FunctionComponent<Props> = ({
-	className = '',
-	disabled = false,
-	toggled = false,
-	onChange,
-	...rest
-}) => {
-	const onToggle = useCallback(() => {
-		if (disabled) {
-			return;
-		}
-
-		if (typeof onChange === 'function') {
-			onChange(!toggled);
-		}
-	}, [disabled, toggled]);
+export const Switch = (props: SwitchProps) => {
+	const state = useToggleState(props);
+	const ref = useRef(null);
+	const { inputProps } = useSwitch(props, state, ref);
+	const { isFocusVisible, focusProps } = useFocusRing();
 
 	return (
-		<Box
-			is="button"
-			{...rest}
-			className={clsx(
-				styles.root,
-				useTextStyles({ size: '5' }),
-				{
-					[styles.untoggled]: !toggled,
-					[styles.toggled]: toggled,
-					[styles.disabled.default]: disabled,
-					[styles.disabled.toggled]: toggled && disabled,
-				},
-				className,
-			)}
-			tabIndex={disabled ? -1 : void 0}
-			borderRadius="pill"
-			position="relative"
-			aria-disabled={disabled}
-			aria-label={`toggle ${toggled ? 'on' : 'off'}`}
-			onClick={onToggle}
-		>
+		<label>
+			<VisuallyHidden>
+				<input {...inputProps} {...focusProps} ref={ref} />
+			</VisuallyHidden>
 			<Box
-				borderWidth="1"
-				position="absolute"
-				borderRadius="pill"
-				backgroundColour="white"
-				padding="none"
-				boxShadow="2"
 				className={clsx(
-					styles.handle.default,
-					useBoxStyles({ is: 'button' }),
-					useTextStyles({ colour: 'white' }),
+					styles.root,
+					useTextStyles({ size: '5' }),
 					{
-						[styles.handle.transition]: toggled,
+						[styles.untoggled]: !state.isSelected,
+						[styles.toggled]: state.isSelected,
+						[styles.disabled.default]: inputProps.disabled,
+						[styles.disabled.toggled]: state.isSelected && inputProps.disabled,
 					},
+					// className,
 				)}
-			/>
-		</Box>
+				tabIndex={inputProps.disabled ? -1 : void 0}
+				borderRadius="pill"
+				position="relative"
+				aria-disabled={inputProps.disabled}
+				aria-label={`toggle ${state.isSelected ? 'on' : 'off'}`}
+			>
+				<Box
+					borderWidth="1"
+					position="absolute"
+					borderRadius="pill"
+					backgroundColour="white"
+					padding="none"
+					boxShadow="2"
+					className={clsx(
+						styles.handle.default,
+						useBoxStyles({ is: 'button' }),
+						useTextStyles({ colour: 'white' }),
+						{
+							[styles.handle.transition]: state.isSelected,
+						},
+					)}
+				/>
+			</Box>
+			{props.children}
+		</label>
 	);
-};
+}
 
 export default Switch;

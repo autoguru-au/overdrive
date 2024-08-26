@@ -11,22 +11,16 @@ export default {
 
 const Template: ComponentStory<typeof Switch> = ({
 	onChange: incomingOnChange,
-	value,
 	...args
 }) => (
 	<Switch
-		onChange={(stepValue) => {
-			setValue(stepValue);
-			incomingOnChange(stepValue);
-		}}
-		value={value}
 		{...args}
 	/>
 );
 
 const standardProps = {
-	disabled: false,
-	toggled: false,
+	isDisabled: false,
+	isSelected: false,
 	onChange: action('onChange'),
 };
 
@@ -36,7 +30,7 @@ untoggled.args = standardProps;
 
 const untoggledDisabledProps = {
 	...standardProps,
-	disabled: true,
+	isDisabled: true,
 };
 
 export const untoggledDisabled: ComponentStory<typeof Switch> = Template.bind(
@@ -46,7 +40,7 @@ untoggledDisabled.args = untoggledDisabledProps;
 
 const toggledProps = {
 	...standardProps,
-	toggled: true,
+	isSelected: true,
 };
 
 export const toggled: ComponentStory<typeof Switch> =
@@ -55,8 +49,8 @@ toggled.args = toggledProps;
 
 const toggledDisabledProps = {
 	...standardProps,
-	toggled: true,
-	disabled: true,
+	isSelected: true,
+	isDisabled: true,
 };
 
 export const toggledDisabled: ComponentStory<typeof Switch> =

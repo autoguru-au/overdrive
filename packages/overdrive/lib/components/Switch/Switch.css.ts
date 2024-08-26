@@ -34,6 +34,7 @@ export const handle = styleVariants({
 export const toggled = style({
 	borderColor: vars.border.colours.dark,
 	backgroundColor: vars.border.colours.dark,
+	
 });
 
 export const untoggled = style({
