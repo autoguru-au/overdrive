@@ -22,7 +22,6 @@ export const Switch: FunctionComponent = (props: SwitchProps) => {
 	const ref = useRef(null);
 	const { inputProps } = useSwitch(props, state, ref);
 	const { isFocusVisible, focusProps } = useFocusRing();
-	console.log(isFocusVisible);
 	return (
 		<label>
 			<VisuallyHidden>
@@ -39,6 +38,7 @@ export const Switch: FunctionComponent = (props: SwitchProps) => {
 						[styles.disabled.default]: inputProps.disabled,
 						[styles.disabled.toggled]: state.isSelected && inputProps.disabled,
 					},
+					props.className,
 				)}
 				tabIndex={inputProps.disabled ? -1 : void 0}
 				borderRadius="pill"

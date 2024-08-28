@@ -21,6 +21,7 @@ const standardProps = {
 	isDisabled: false,
 	isSelected: false,
 	onChange: action('onChange'),
+	className: "toggleButton-class",
 };
 
 export const untoggled: ComponentStory<typeof Switch> =
