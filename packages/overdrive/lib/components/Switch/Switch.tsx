@@ -1,7 +1,7 @@
 import { useToggleState } from '@react-stately/toggle';
 import clsx from 'clsx';
 import * as React from 'react';
-import { AnchorHTMLAttributes, FunctionComponent, useCallback, useRef } from 'react';
+import { AnchorHTMLAttributes, FunctionComponent, useRef } from 'react';
 import { useSwitch, useFocusRing, VisuallyHidden } from 'react-aria';
 import { AriaSwitchProps } from 'react-types';
 
