@@ -67,6 +67,10 @@ export const disabled = styleVariants({
 	},
 });
 
+export const focus = style({
+	outline: `calc(${handleOffset} - ${borderSize}) solid ${vars.colours.gamut.green300}`
+});
+
 export const root = style({
 	width: `calc((2 * ${handleSize}) - 2 * ${borderSize})`,
 	height: `${handleSize}`,

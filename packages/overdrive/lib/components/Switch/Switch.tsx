@@ -17,12 +17,12 @@ export type SwitchProps = AriaSwitchProps & Omit<
 	className?: string;
 };
 
-export const Switch = (props: SwitchProps) => {
+export const Switch: FunctionComponent = (props: SwitchProps) => {
 	const state = useToggleState(props);
 	const ref = useRef(null);
 	const { inputProps } = useSwitch(props, state, ref);
 	const { isFocusVisible, focusProps } = useFocusRing();
-
+	console.log(isFocusVisible);
 	return (
 		<label>
 			<VisuallyHidden>
@@ -33,6 +33,7 @@ export const Switch = (props: SwitchProps) => {
 					styles.root,
 					useTextStyles({ size: '5' }),
 					{
+						[styles.focus]: isFocusVisible,
 						[styles.untoggled]: !state.isSelected,
 						[styles.toggled]: state.isSelected,
 						[styles.disabled.default]: inputProps.disabled,

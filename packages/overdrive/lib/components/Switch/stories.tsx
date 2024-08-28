@@ -10,7 +10,6 @@ export default {
 } as ComponentMeta<typeof Switch>;
 
 const Template: ComponentStory<typeof Switch> = ({
-	onChange: incomingOnChange,
 	...args
 }) => (
 	<Switch
