@@ -32,11 +32,11 @@ export const Switch: FunctionComponent = (props: SwitchProps) => {
 					styles.root,
 					useTextStyles({ size: '5' }),
 					{
-						[styles.focus]: isFocusVisible,
-						[styles.untoggled]: !state.isSelected,
-						[styles.toggled]: state.isSelected,
 						[styles.disabled.default]: inputProps.disabled,
 						[styles.disabled.toggled]: state.isSelected && inputProps.disabled,
+						[styles.toggled]: state.isSelected,
+						[styles.untoggled]: !state.isSelected,
+						[styles.focus]: isFocusVisible,
 					},
 					props.className,
 				)}
@@ -60,6 +60,10 @@ export const Switch: FunctionComponent = (props: SwitchProps) => {
 						useTextStyles({ colour: 'white' }),
 						{
 							[styles.handle.transition]: state.isSelected,
+							[styles.handle.default]: inputProps.disabled,
+							// [styles.handle.toggled]: state.isSelected && inputProps.disabled,
+							[styles.handle.disabled]: inputProps.disabled,
+							// [styles.handle.untoggled]: !state.isSelected,
 						},
 					)}
 				/>

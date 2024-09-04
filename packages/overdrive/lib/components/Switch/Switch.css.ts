@@ -5,10 +5,14 @@ import { themeContractVars as vars } from '../../themes/theme.css';
 const handleSize = '24px';
 const handleOffset = '3px';
 const borderSize = '1px';
+const transparency = '0.5';
 
 export const handle = styleVariants({
+	disabled: {
+		border: `${borderSize} solid ${vars.colours.intent.primary.background.mild}`,
+	},
 	default: {
-		borderColor: vars.border.colours.light,
+		borderSize: `${borderSize}`, //ball
 		top: `calc(${handleOffset} - ${borderSize})`,
 		left: `calc(1.5 * ${handleOffset})`,
 		width: `calc(${handleSize} - (2 * ${handleOffset}))`,
@@ -32,16 +36,20 @@ export const handle = styleVariants({
 });
 
 export const toggled = style({
-	borderColor: vars.border.colours.dark,
-	backgroundColor: vars.border.colours.dark,
+	border: `${borderSize} solid ${vars.colours.intent.primary.background.standard}`,
+	backgroundColor: vars.colours.intent.primary.background.standard,
 });
 
 export const untoggled = style({
-	borderColor: vars.border.colours.light,
-	backgroundColor: vars.border.colours.light,
+	border: `${borderSize} solid ${vars.colours.intent.primary.background.mild}`,
+	backgroundColor: vars.colours.intent.primary.background.mild,
+	opacity: `${transparency}`,
+	transition: 'opacity 0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
 	selectors: {
 		'&:hover': {
-			backgroundColor: vars.border.colours.gray,
+			borderColor: vars.colours.intent.primary.background.standard,
+			backgroundColor: vars.colours.intent.primary.background.standard,
+			opacity: `${transparency}`
 		},
 	},
 });
@@ -51,7 +59,7 @@ export const disabled = styleVariants({
 		selectors: {
 			'&[aria-disabled=true]': {
 				cursor: 'not-allowed',
-				borderColor: vars.border.colours.light,
+				border: `${borderSize} solid ${vars.colours.intent.primary.background.mild}`,
 				backgroundColor: 'white',
 			},
 		},
@@ -60,7 +68,8 @@ export const disabled = styleVariants({
 		selectors: {
 			'&[aria-disabled=true]': {
 				cursor: 'not-allowed',
-				borderColor: vars.border.colours.light,
+				opacity: `${transparency}`,
+				border: `${borderSize} solid ${vars.colours.intent.primary.background.mild}`,
 				backgroundColor: 'white',
 			},
 		},
@@ -68,16 +77,15 @@ export const disabled = styleVariants({
 });
 
 export const focus = style({
-	outline: `calc(${handleOffset} - ${borderSize}) solid ${vars.colours.gamut.green300}`
+	outline: `calc(${handleOffset} - ${borderSize}) solid ${vars.colours.intent.brand.background.standard}`
 });
 
 export const root = style({
-	width: `calc((2 * ${handleSize}) - 2 * ${borderSize})`,
+	width: `calc((2 * ${handleSize}) - 2 * ${borderSize})`, //pill
 	height: `${handleSize}`,
 	top: `calc(${handleOffset} - ${borderSize})`,
 	left: `calc(1.5 * ${handleOffset})`,
 	transition: 'background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
-	border: `${borderSize} solid ${vars.border.colours.light}`,
 	selectors: {
 		[`&:not(${disabled.default}):not(${disabled.toggled}):focus`]: {
 			borderColor: vars.colours.intent.information.background.standard,

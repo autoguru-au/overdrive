@@ -104,7 +104,6 @@ const withThemeProvider = (Story, context) => {
 		</ThemeOverrideProvider>
 	) : (
 		Object.keys(themes)
-			.filter((theme) => theme !== 'neutralTheme')
 			.map((theme) => (
 				<div
 					key={themes[theme].name}
