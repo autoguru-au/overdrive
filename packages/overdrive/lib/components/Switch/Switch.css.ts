@@ -49,7 +49,7 @@ export const untoggled = style({
 		'&:hover': {
 			borderColor: vars.colours.intent.primary.background.standard,
 			backgroundColor: vars.colours.intent.primary.background.standard,
-			opacity: `${transparency}`
+			opacity: `${transparency}`,
 		},
 	},
 });
@@ -77,7 +77,7 @@ export const disabled = styleVariants({
 });
 
 export const focus = style({
-	outline: `calc(${handleOffset} - ${borderSize}) solid ${vars.colours.intent.brand.background.standard}`
+	outline: `calc(${handleOffset} - ${borderSize}) solid ${vars.colours.intent.brand.background.standard}`,
 });
 
 export const root = style({

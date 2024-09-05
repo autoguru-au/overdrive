@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Box } from '../Box';
 import { withEnhancedInput } from '../private/InputBase';
 
-const MAX_TEXT_INPUT_LENGTH=2000;
+const MAX_TEXT_INPUT_LENGTH = 2000;
 
 export const TextInput = withEnhancedInput<
 	Partial<Pick<HTMLInputElement, 'type' | 'maxLength'>>

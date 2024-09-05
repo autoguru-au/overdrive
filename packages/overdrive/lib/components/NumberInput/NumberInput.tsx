@@ -11,7 +11,7 @@ const isEdge: boolean =
 
 const type = isEdge ? 'text' : 'number';
 
-const MAX_NUMBER_INPUT_VALUE= 2_147_483_647;
+const MAX_NUMBER_INPUT_VALUE = 2_147_483_647;
 
 interface Props
 	extends Partial<Pick<HTMLInputElement, 'min' | 'max' | 'step'>>,
@@ -23,8 +23,7 @@ interface Props
 	max?: string;
 }
 
-export const NumberInput
-	= withEnhancedInput<Props>(
+export const NumberInput = withEnhancedInput<Props>(
 	({
 		field: { ref, ...incomingFieldProps },
 		eventHandlers,

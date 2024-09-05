@@ -21,8 +21,8 @@ const argTypes: ArgTypes = {
 		description: 'Set the max length of the input',
 		control: {
 			type: 'number',
-		}
-	}
+		},
+	},
 };
 
 const Template: ComponentStory<typeof TextAreaInput> = (args) => (

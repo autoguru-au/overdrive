@@ -15,17 +15,23 @@ export interface Props {
 	size?: keyof typeof styles.labelSize;
 }
 
-const paddingXMap: Record<keyof typeof styles.labelSize , ComponentProps<typeof Box>['padding']> = {
-	'small': '1',
-	'standard': '1',
-	'large': '4'
-}
+const paddingXMap: Record<
+	keyof typeof styles.labelSize,
+	ComponentProps<typeof Box>['padding']
+> = {
+	small: '1',
+	standard: '1',
+	large: '4',
+};
 
-const paddingYMap: Record<keyof typeof styles.labelSize , ComponentProps<typeof Box>['padding']> = {
-	'small': '1',
-	'standard': '1',
-	'large': '4'
-}
+const paddingYMap: Record<
+	keyof typeof styles.labelSize,
+	ComponentProps<typeof Box>['padding']
+> = {
+	small: '1',
+	standard: '1',
+	large: '4',
+};
 
 export const Badge: FunctionComponent<Props> = ({
 	label,

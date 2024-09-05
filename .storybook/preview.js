@@ -103,39 +103,38 @@ const withThemeProvider = (Story, context) => {
 			</Box>
 		</ThemeOverrideProvider>
 	) : (
-		Object.keys(themes)
-			.map((theme) => (
-				<div
-					key={themes[theme].name}
-					className={themes[theme].themeRef}
-					data-theme={themes[theme].name}
+		Object.keys(themes).map((theme) => (
+			<div
+				key={themes[theme].name}
+				className={themes[theme].themeRef}
+				data-theme={themes[theme].name}
+			>
+				<OverdriveProvider
+					noBodyLevelTheming
+					themeClass={themes[theme].themeRef}
+					tokens={themes[theme].tokens}
+					vars={themes[theme].vars}
 				>
-					<OverdriveProvider
-						noBodyLevelTheming
-						themeClass={themes[theme].themeRef}
-						tokens={themes[theme].tokens}
-						vars={themes[theme].vars}
-					>
-						<Box width="full" padding="5">
-							<Stack width="full" space="3">
-								<Heading is="h5" colour="light">
-									Theme :: {themes[theme].name}
-								</Heading>
+					<Box width="full" padding="5">
+						<Stack width="full" space="3">
+							<Heading is="h5" colour="light">
+								Theme :: {themes[theme].name}
+							</Heading>
 
-								<Story {...context} />
-							</Stack>
-						</Box>
-						<hr
-							style={{
-								margin: 0,
-								border: 0,
-								height: 1,
-								background: '#eee',
-							}}
-						/>
-					</OverdriveProvider>
-				</div>
-			))
+							<Story {...context} />
+						</Stack>
+					</Box>
+					<hr
+						style={{
+							margin: 0,
+							border: 0,
+							height: 1,
+							background: '#eee',
+						}}
+					/>
+				</OverdriveProvider>
+			</div>
+		))
 	);
 };
 

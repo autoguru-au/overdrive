@@ -9,19 +9,15 @@ export default {
 	component: Switch,
 } as ComponentMeta<typeof Switch>;
 
-const Template: ComponentStory<typeof Switch> = ({
-	...args
-}) => (
-	<Switch
-		{...args}
-	/>
+const Template: ComponentStory<typeof Switch> = ({ ...args }) => (
+	<Switch {...args} />
 );
 
 const standardProps = {
 	isDisabled: false,
 	isSelected: false,
 	onChange: action('onChange'),
-	className: "toggleButton-class",
+	className: 'toggleButton-class',
 };
 
 export const untoggled: ComponentStory<typeof Switch> =

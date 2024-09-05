@@ -1,40 +1,40 @@
-import { dirname, join } from "path";
+import { dirname, join } from 'path';
 const resolve = require('path').resolve;
 module.exports = {
-    // staticDirs: ['public'],
+	// staticDirs: ['public'],
 
-    features: {
+	features: {
 		buildStoriesJson: true,
 	},
 
-    stories: ['../packages/overdrive/lib/**/stories.*'],
+	stories: ['../packages/overdrive/lib/**/stories.*'],
 
-    addons: [
+	addons: [
 		'@storybook/addon-links',
 		'@storybook/addon-essentials',
 		'./.storybook/vanilla-extract',
 		'@storybook/addon-a11y',
 	],
 
-    docs: {},
+	docs: {},
 
-    framework: {
-        name: '@storybook/react-webpack5',
+	framework: {
+		name: '@storybook/react-webpack5',
 
-        options: {
-          legacyRootApi: false
-        },
-    },
+		options: {
+			legacyRootApi: false,
+		},
+	},
 
-    typescript: {
-        reactDocgen: 'react-docgen-typescript'
-    },
+	typescript: {
+		reactDocgen: 'react-docgen-typescript',
+	},
 
-    webpackFinal: async (config) => {
-        // Customize Webpack configuration if needed
-        return config;
-},
+	webpackFinal: async (config) => {
+		// Customize Webpack configuration if needed
+		return config;
+	},
 
-// function getAbsolutePath(value) {
-//     return dirname(require.resolve(join(value, "package.json")));
+	// function getAbsolutePath(value) {
+	//     return dirname(require.resolve(join(value, "package.json")));
 };
