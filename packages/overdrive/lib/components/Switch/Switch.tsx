@@ -9,23 +9,35 @@ import { useTextStyles } from '../Text';
 
 import * as styles from './Switch.css';
 type AriaSwitchProps = Parameters<typeof useSwitch>[0];
-export type SwitchProps = AriaSwitchProps & Omit<
-	AnchorHTMLAttributes<HTMLButtonElement>,
-	'children' | 'style' | 'is' | 'onChange'
-> & {
-	className?: string;
-	/**
-	 * @deprecated use isDisabled instead
-	 */
-	disabled?: boolean;
-	/**
-	 * @deprecated use isSelected instead
-	 */
-	toggled?: boolean;
-};
+export type SwitchProps = AriaSwitchProps &
+	Omit<
+		AnchorHTMLAttributes<HTMLButtonElement>,
+		'children' | 'style' | 'is' | 'onChange'
+	> & {
+		className?: string;
+		/**
+		 * @deprecated use isDisabled instead
+		 */
+		disabled?: boolean;
+		/**
+		 * @deprecated use isSelected instead
+		 */
+		toggled?: boolean;
+	};
 
-export const Switch: FunctionComponent = ({ className, disabled, toggled, isSelected, isDisabled, ...incomingProps }: SwitchProps) => {
-	const props = { ...incomingProps, isDisabled: isDisabled || disabled, isSelected: isSelected || toggled }
+export const Switch: FunctionComponent = ({
+	className,
+	disabled,
+	toggled,
+	isSelected,
+	isDisabled,
+	...incomingProps
+}: SwitchProps) => {
+	const props = {
+		...incomingProps,
+		isDisabled: isDisabled || disabled,
+		isSelected: isSelected || toggled,
+	};
 	const state = useToggleState(props);
 	const ref = useRef(null);
 	const { inputProps } = useSwitch(props, state, ref);
@@ -41,7 +53,8 @@ export const Switch: FunctionComponent = ({ className, disabled, toggled, isSele
 					useTextStyles({ size: '5' }),
 					{
 						[styles.disabled.default]: inputProps.disabled,
-						[styles.disabled.toggled]: state.isSelected && inputProps.disabled,
+						[styles.disabled.toggled]:
+							state.isSelected && inputProps.disabled,
 						[styles.toggled]: state.isSelected,
 						[styles.untoggled]: !state.isSelected,
 						[styles.focus]: isFocusVisible,
@@ -69,9 +82,7 @@ export const Switch: FunctionComponent = ({ className, disabled, toggled, isSele
 						{
 							[styles.handle.transition]: state.isSelected,
 							[styles.handle.default]: inputProps.disabled,
-							// [styles.handle.toggled]: state.isSelected && inputProps.disabled,
 							[styles.handle.disabled]: inputProps.disabled,
-							// [styles.handle.untoggled]: !state.isSelected,
 						},
 					)}
 				/>
@@ -79,6 +90,6 @@ export const Switch: FunctionComponent = ({ className, disabled, toggled, isSele
 			{props.children}
 		</label>
 	);
-}
+};
 
 export default Switch;
