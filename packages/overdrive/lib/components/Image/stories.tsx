@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
-
+import isChromatic from 'chromatic/isChromatic';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
 
@@ -9,24 +9,29 @@ import { ImageServerProvider, widthMap } from './ImageServerProvider';
 
 import { Image } from '.';
 
-const sizeOptions: Array<ComponentProps<typeof Image>['imageWidth']> = [
-	'1',
-	'2',
-	'3',
-	'4',
-	'5',
-	'6',
-	'7',
-	'8',
-	'9',
-	'10',
-	'11',
-	'12',
-	'13',
-	'14',
-	'15',
-	'16',
-];
+const sizeOptions: Array<ComponentProps<typeof Image>['imageWidth']> =
+	isChromatic()
+		? ['8']
+		: [
+				'1',
+				'2',
+				'3',
+				'4',
+				'5',
+				'6',
+				'7',
+				'8',
+				'9',
+				'10',
+				'11',
+				'12',
+				'13',
+				'14',
+				'15',
+				'16',
+		  ];
+const qualityOptions: Array<ComponentProps<typeof Image>['quality']> =
+	isChromatic() ? ['70'] : [1, 20, 40, 60, 80, 100];
 export default {
 	title: 'Foundation/Image/Image',
 	component: Image, //Breaks the docs when enabled!
@@ -136,7 +141,7 @@ const AllQualityTemplate: ComponentStory<typeof Image> = (args) => (
 	<ImageServerProvider srcUrlMapper={srcUrlMapper}>
 		<div style={{ width: '100%', overflow: 'auto' }}>
 			<Stack space="5">
-				{[1, 20, 40, 60, 80, 100].map((quality) => (
+				{qualityOptions.map((quality) => (
 					<Stack key={quality} space="1">
 						<Text>
 							Quality: <Text strong>{quality}</Text>
