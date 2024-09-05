@@ -3,21 +3,29 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { AnchorHTMLAttributes, FunctionComponent, useRef } from 'react';
 import { useSwitch, useFocusRing, VisuallyHidden } from 'react-aria';
-import { AriaSwitchProps } from 'react-types';
 
 import { Box, useBoxStyles } from '../Box';
 import { useTextStyles } from '../Text';
 
 import * as styles from './Switch.css';
-
+type AriaSwitchProps = Parameters<typeof useSwitch>[0];
 export type SwitchProps = AriaSwitchProps & Omit<
 	AnchorHTMLAttributes<HTMLButtonElement>,
 	'children' | 'style' | 'is' | 'onChange'
 > & {
 	className?: string;
+	/**
+	 * @deprecated use isDisabled instead
+	 */
+	disabled?: boolean;
+	/**
+	 * @deprecated use isSelected instead
+	 */
+	toggled?: boolean;
 };
 
-export const Switch: FunctionComponent = (props: SwitchProps) => {
+export const Switch: FunctionComponent = ({ className, disabled, toggled, isSelected, isDisabled, ...incomingProps }: SwitchProps) => {
+	const props = { ...incomingProps, isDisabled: isDisabled || disabled, isSelected: isSelected || toggled }
 	const state = useToggleState(props);
 	const ref = useRef(null);
 	const { inputProps } = useSwitch(props, state, ref);
@@ -38,7 +46,7 @@ export const Switch: FunctionComponent = (props: SwitchProps) => {
 						[styles.untoggled]: !state.isSelected,
 						[styles.focus]: isFocusVisible,
 					},
-					props.className,
+					className,
 				)}
 				tabIndex={inputProps.disabled ? -1 : void 0}
 				borderRadius="pill"
