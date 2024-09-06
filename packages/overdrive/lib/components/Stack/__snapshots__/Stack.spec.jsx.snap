@@ -5,35 +5,35 @@ exports[`<Stack /> should correctly handle fragment nodes 1`] = `
   class="reset_block__6swfds3"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gg Stack_child_default__1hhisnca Stack_child_spaces_2__1hhisnc1"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gv Stack_child_default__1hhisnca Stack_child_spaces_2__1hhisnc1"
   >
     <p>
       line 0
     </p>
   </div>
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gg Stack_child_default__1hhisnca Stack_child_spaces_2__1hhisnc1"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gv Stack_child_default__1hhisnca Stack_child_spaces_2__1hhisnc1"
   >
     <p>
       Line 1
     </p>
   </div>
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gg Stack_child_default__1hhisnca Stack_child_spaces_2__1hhisnc1"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gv Stack_child_default__1hhisnca Stack_child_spaces_2__1hhisnc1"
   >
     <p>
       Line 2
     </p>
   </div>
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gg Stack_child_default__1hhisnca Stack_child_spaces_2__1hhisnc1"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gv Stack_child_default__1hhisnca Stack_child_spaces_2__1hhisnc1"
   >
     <p>
       Line 3
     </p>
   </div>
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gg Stack_child_default__1hhisnca Stack_child_spaces_2__1hhisnc1"
+    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gv Stack_child_default__1hhisnca Stack_child_spaces_2__1hhisnc1"
   >
     <p>
       line 4
