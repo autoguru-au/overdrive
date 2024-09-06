@@ -7,7 +7,7 @@ const size = '20px';
 
 export const root = {
 	default: style({
-		padding: `calc(${vars.space['3']} + ${lineBottomHeight}) 0`,
+		padding: `calc(${vars.space['1']} + ${lineBottomHeight}) 0`,
 		transition: `color 0.2s ${vars.animation.easing.decelerate} 0s, background-color 0.2s ${vars.animation.easing.decelerate} 0s`,
 		borderBottom: `calc(${lineBottomHeight} + ${lineBottomHeight}) solid transparent`,
 		flex: 'auto',
