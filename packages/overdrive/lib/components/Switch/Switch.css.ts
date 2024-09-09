@@ -5,7 +5,6 @@ import { themeContractVars as vars } from '../../themes/theme.css';
 const handleSize = '24px';
 const handleOffset = '3px';
 const borderSize = '1px';
-const transparency = '0.5';
 
 export const handle = styleVariants({
 	disabled: {
@@ -21,7 +20,7 @@ export const handle = styleVariants({
 		willChange: 'transform',
 		selectors: {
 			'&:hover': {
-				transform: 'scale(0.8889)',
+				transform: 'scale(0.9)',
 			},
 		},
 	},
@@ -29,27 +28,25 @@ export const handle = styleVariants({
 		transform: `translateX(calc(${handleSize} - (2 * ${handleOffset})))`,
 		selectors: {
 			'&:hover': {
-				transform: `translateX(calc(${handleSize} - (2 * ${handleOffset}))) scale(0.8889)`,
+				transform: `translateX(calc(${handleSize} - (2 * ${handleOffset}))) scale(0.9)`,
 			},
 		},
 	},
 });
 
 export const toggled = style({
-	border: `${borderSize} solid ${vars.colours.intent.primary.background.standard}`,
-	backgroundColor: vars.colours.intent.primary.background.standard,
+	border: `${borderSize} solid ${vars.colours.intent.primary.background.strong}`,
+	backgroundColor: vars.colours.intent.primary.background.strong,
 });
 
 export const untoggled = style({
-	border: `${borderSize} solid ${vars.colours.intent.primary.background.mild}`,
-	backgroundColor: vars.colours.intent.primary.background.mild,
-	opacity: `${transparency}`,
-	transition: 'opacity 0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
+	border: `${borderSize} solid ${vars.colours.intent.primary.background.standard}`,
+	backgroundColor: vars.colours.intent.primary.background.standard,
+	transition: '0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
 	selectors: {
 		'&:hover': {
-			borderColor: vars.colours.intent.primary.background.standard,
-			backgroundColor: vars.colours.intent.primary.background.standard,
-			opacity: `${transparency}`,
+			borderColor: vars.colours.intent.primary.background.strong,
+			backgroundColor: vars.colours.intent.primary.background.strong,
 		},
 	},
 });
@@ -68,7 +65,6 @@ export const disabled = styleVariants({
 		selectors: {
 			'&[aria-disabled=true]': {
 				cursor: 'not-allowed',
-				opacity: `${transparency}`,
 				border: `${borderSize} solid ${vars.colours.intent.primary.background.mild}`,
 				backgroundColor: 'white',
 			},

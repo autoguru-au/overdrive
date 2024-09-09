@@ -1,7 +1,8 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import isChromatic from 'chromatic/isChromatic';
 import * as React from 'react';
 import { ComponentProps } from 'react';
-import isChromatic from 'chromatic/isChromatic';
+
 import { Stack } from '../Stack';
 import { Text } from '../Text';
 

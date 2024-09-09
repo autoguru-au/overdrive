@@ -118,8 +118,8 @@ export const tokens: Tokens = {
 		intent: {
 			primary: {
 				background: {
-					standard: colours.black['900'],
-					mild: colours.black['400'],
+					standard: colours.black['500'],
+					mild: colours.black['300'],
 					strong: colours.black['900'],
 				},
 				foreground: white,
