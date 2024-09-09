@@ -489,7 +489,7 @@ html {
   --_178lxfs23: #8f95a1;
   --_178lxfs24: #34384c;
   --_178lxfs25: #222222;
-  --_178lxfs26: #ADB1B5;
+  --_178lxfs26: #D4D9DD;
   --_178lxfs27: #222222;
   --_178lxfs28: #fff;
   --_178lxfs29: #212338;
@@ -4956,38 +4956,60 @@ html {
   min-width: var(--_178lxfsd);
 }
 ._1wg1vjs0 {
-  border-color: var(--_178lxfs3p);
-  top: calc(2px - 1px);
-  left: calc(2px - 1px);
-  width: 24px;
-  height: 24px;
+  border: 1px solid var(--_178lxfs26);
+}
+._1wg1vjs1 {
+  border-size: 1px;
+  top: calc(3px - 1px);
+  left: calc(1.5 * 3px);
+  width: calc(24px - (2 * 3px));
+  height: calc(24px - (2 * 3px));
   transition: transform 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
   will-change: transform;
 }
-._1wg1vjs1 {
-  transform: translateX(calc(24px - (2 * 2px)));
-  border-color: var(--_178lxfs27);
+._1wg1vjs1:hover {
+  transform: scale(0.9);
 }
 ._1wg1vjs2 {
-  border-color: var(--_178lxfs27);
-  background-color: var(--_178lxfs25);
+  transform: translateX(calc(24px - (2 * 3px)));
 }
-._1wg1vjs3[aria-disabled=true] {
-  cursor: not-allowed;
-  border-color: var(--_178lxfs3o);
-  background-color: var(--_178lxfs3o);
+._1wg1vjs2:hover {
+  transform: translateX(calc(24px - (2 * 3px))) scale(0.9);
 }
-._1wg1vjs4[aria-disabled=true] {
-  border-color: var(--_178lxfs3o);
+._1wg1vjs3 {
+  border: 1px solid var(--_178lxfs27);
+  background-color: var(--_178lxfs27);
+}
+._1wg1vjs4 {
+  border: 1px solid color-mix(in oklch, var(--_178lxfs25), transparent 60%);
   background-color: var(--_178lxfs26);
+  transition: 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
 }
-._1wg1vjs5 {
-  width: calc((2 * 24px) + 2px - 2 * 1px);
-  height: calc(24px + (2px * 2));
+._1wg1vjs4:hover {
+  border-color: var(--_178lxfs27);
+  background-color: var(--_178lxfs27);
+}
+._1wg1vjs5[aria-disabled=true] {
+  cursor: not-allowed;
+  border: 1px solid var(--_178lxfs26);
+  background-color: white;
+}
+._1wg1vjs6[aria-disabled=true] {
+  cursor: not-allowed;
+  border: 1px solid var(--_178lxfs26);
+  background-color: white;
+}
+._1wg1vjs7 {
+  outline: calc(3px - 1px) solid var(--_178lxfs2a);
+}
+._1wg1vjs8 {
+  width: calc((2 * 24px) - 2 * 1px);
+  height: 24px;
+  top: calc(3px - 1px);
+  left: calc(1.5 * 3px);
   transition: background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s;
-  border: 1px solid var(--_178lxfs3o);
 }
-._1wg1vjs5:not(._1wg1vjs3):not(._1wg1vjs4):focus {
+._1wg1vjs8:not(._1wg1vjs5):not(._1wg1vjs6):focus {
   border-color: var(--_178lxfs39);
 }
 ._1wk7r060 {
@@ -5316,4 +5338,4 @@ html {
   }
 }
 
-/*# sourceMappingURL=921.css.map*/
+/*# sourceMappingURL=448.css.map*/
