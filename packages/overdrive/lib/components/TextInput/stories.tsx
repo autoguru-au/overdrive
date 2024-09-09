@@ -81,8 +81,8 @@ const argTypes: ArgTypes<Partial<ComponentProps<typeof TextInput>>> = {
 		description: 'Set the max length of the input',
 		control: {
 			type: 'number',
-		}
-	}
+		},
+	},
 };
 
 const Template: ComponentStory<typeof TextInput> = (args) => (

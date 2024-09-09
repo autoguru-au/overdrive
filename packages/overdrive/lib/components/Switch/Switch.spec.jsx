@@ -1,9 +1,9 @@
 import { act, fireEvent, render } from '@testing-library/react';
 import * as React from 'react';
 import { useState } from 'react';
-import * as styles from './Switch.css';
 
 import { Switch } from './Switch';
+import * as styles from './Switch.css.ts';
 
 const InteractiveSwitch = ({
 	onChange: incomingOnChange = () => void 0,
@@ -33,45 +33,45 @@ describe('<Switch />', () => {
 
 	it('should match snapshot when un-toggled', () => {
 		expect(
-			render(<Switch toggled={false} />).container.firstChild,
+			render(<Switch isSelected={false} />).container.firstChild,
 		).toMatchSnapshot();
 	});
 
 	it('should match snapshot when un-toggled and disabled', () => {
 		expect(
-			render(<Switch disabled toggled={false} />).container.firstChild,
+			render(<Switch disabled isSelected={false} />).container.firstChild,
 		).toMatchSnapshot();
 	});
 
 	it('should match snapshot when toggled', () => {
 		expect(
-			render(<Switch toggled />).container.firstChild,
+			render(<Switch isSelected />).container.firstChild,
 		).toMatchSnapshot();
 	});
 
 	it('should match snapshot when toggled and disabled', () => {
 		expect(
-			render(<Switch toggled disabled />).container.firstChild,
+			render(<Switch isSelected disabled />).container.firstChild,
 		).toMatchSnapshot();
 	});
 
 	it('should pass on className to dom element', () => {
 		expect(
 			render(<Switch className="toggleButton-class" value={10} />)
-				.container.firstChild,
+				.container.firstChild.childNodes[1],
 		).toHaveClass('toggleButton-class');
 	});
 
 	it('should set toggle to false by default', () => {
-		expect(render(<Switch />).container.firstChild).not.toHaveClass(
-			styles.toggled,
-		);
+		expect(
+			render(<Switch />).container.firstChild.childNodes[1],
+		).not.toHaveClass(styles.toggled);
 	});
 
 	it('should be toggled on when toggled prop is set to true', () => {
-		expect(render(<Switch toggled />).container.firstChild).toHaveClass(
-			styles.toggled,
-		);
+		expect(
+			render(<Switch isSelected />).container.firstChild.childNodes[1],
+		).toHaveClass(styles.toggled);
 	});
 
 	it('should be enabled by default', () => {
@@ -81,34 +81,44 @@ describe('<Switch />', () => {
 	});
 
 	it('should have aria-disabled attribute when disabled', () => {
-		const { container } = render(<Switch disabled />);
+		const { container } = render(<Switch isDisabled />);
 
-		expect(container.firstChild).toHaveClass(styles.disabled.default);
-		expect(container.firstChild).toHaveAttribute('aria-disabled', 'true');
+		expect(container.firstChild.childNodes[1]).toHaveClass(
+			styles.disabled.default,
+		);
+		expect(container.firstChild.childNodes[1]).toHaveAttribute(
+			'aria-disabled',
+			'true',
+		);
 	});
 
-	it('should have aria-disabled attribute when toggled and disabled', () => {
-		const { container } = render(<Switch toggled disabled />);
+	it('should have aria-disabled attribute when isSelected and disabled', () => {
+		const { container } = render(<Switch isSelected isDisabled />);
 
-		expect(container.firstChild).toHaveClass(styles.disabled.toggled);
-		expect(container.firstChild).toHaveAttribute('aria-disabled', 'true');
+		expect(container.firstChild.childNodes[1]).toHaveClass(
+			styles.disabled.toggled,
+		);
+		expect(container.firstChild.childNodes[1]).toHaveAttribute(
+			'aria-disabled',
+			'true',
+		);
 	});
 
 	it('should fire change with the correct changed value when clicked', () => {
 		const spyedCallback = jest.fn();
 
 		const { container: toggledContainer } = render(
-			<InteractiveSwitch toggled={false} onChange={spyedCallback} />,
+			<InteractiveSwitch isSelected={false} onChange={spyedCallback} />,
 		);
 
-		fireEvent.click(toggledContainer.firstChild);
+		fireEvent.click(toggledContainer.firstChild.childNodes[1]);
 
 		expect(spyedCallback).toHaveBeenCalledWith(true);
 
 		const { container: untoggledContainer } = render(
-			<InteractiveSwitch toggled={true} onChange={spyedCallback} />,
+			<InteractiveSwitch isSelected={true} onChange={spyedCallback} />,
 		);
-		fireEvent.click(untoggledContainer.firstChild);
+		fireEvent.click(untoggledContainer.firstChild.childNodes[1]);
 
 		expect(spyedCallback).toHaveBeenCalledWith(false);
 
@@ -120,13 +130,13 @@ describe('<Switch />', () => {
 
 		const { container } = render(
 			<InteractiveSwitch
-				disabled
-				toggled={false}
+				isDisabled
+				isSelected={false}
 				onChange={spyedCallback}
 			/>,
 		);
 
-		fireEvent.click(container.firstChild);
+		fireEvent.click(container.firstChild.childNodes[1]);
 
 		expect(spyedCallback).not.toHaveBeenCalled();
 	});
@@ -137,7 +147,7 @@ describe('<Switch />', () => {
 
 			setter(toggledValue);
 
-			return <Switch toggled={toggled} />;
+			return <Switch isSelected={toggled} />;
 		};
 
 		let setToggledValue;
@@ -149,14 +159,18 @@ describe('<Switch />', () => {
 			/>,
 		);
 
-		expect(container.firstChild).not.toHaveClass(styles.toggled);
+		expect(container.firstChild.childNodes[1]).not.toHaveClass(
+			styles.toggled,
+		);
 
 		act(() => setToggledValue(true));
 
-		expect(container.firstChild).toHaveClass(styles.toggled);
+		expect(container.firstChild.childNodes[1]).toHaveClass(styles.toggled);
 
 		act(() => setToggledValue(false));
 
-		expect(container.firstChild).not.toHaveClass(styles.toggled);
+		expect(container.firstChild.childNodes[1]).not.toHaveClass(
+			styles.toggled,
+		);
 	});
 });
