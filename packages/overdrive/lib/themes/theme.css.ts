@@ -268,7 +268,7 @@ export const themeContractVars = createThemeContract({
 		},
 		colour: {
 			primary: '',
-			brand:'',
+			brand: '',
 			secondary: '',
 			shine: '',
 			link: '',

@@ -85,8 +85,8 @@ const argTypes: ArgTypes = {
 		description: 'Set the max length of the number',
 		control: {
 			type: 'number',
-		}
-	}
+		},
+	},
 };
 
 const Template: ComponentStory<typeof NumberInput> = ({
