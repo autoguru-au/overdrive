@@ -71,7 +71,7 @@ export const size = {
 export const variant = {
 	primary: style({
 		color: vars.colours.intent.primary.foreground,
-		backgroundColor: vars.colours.intent.primary.background.strong,
+		backgroundColor: vars.colours.intent.primary.background.standard,
 		boxShadow: `inset 0 0 0 1px ${vars.colours.intent.primary.border}, ${vars.elevation['2']}`,
 	}),
 	brand: style({
@@ -110,7 +110,7 @@ export const defaultStates = {
 	primary: style({
 		':hover': {
 			color: vars.colours.intent.primary.foreground,
-			backgroundColor: vars.colours.intent.primary.background.standard,
+			backgroundColor: vars.colours.intent.primary.background.strong,
 			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.primary.border}, ${vars.elevation['3']}`,
 		},
 		':active': {
