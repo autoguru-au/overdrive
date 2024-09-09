@@ -40,8 +40,8 @@ export const toggled = style({
 });
 
 export const untoggled = style({
-	border: `${borderSize} solid ${vars.colours.intent.primary.background.standard}`,
-	backgroundColor: vars.colours.intent.primary.background.standard,
+	border: `${borderSize} solid color-mix(in oklch, ${vars.colours.intent.primary.background.standard}, transparent 60%)`,
+	backgroundColor: vars.colours.intent.primary.background.mild,
 	transition: '0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
 	selectors: {
 		'&:hover': {
