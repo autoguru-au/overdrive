@@ -26,6 +26,7 @@ export interface Props {
 	stretch?: boolean;
 	scrollable?: boolean;
 	children?: ReactNode;
+	boxShadow?: boolean;
 }
 
 export const TabListContext = createContext<number | null>(null);
@@ -34,6 +35,7 @@ export const TabList: FunctionComponent<Props> = ({
 	children,
 	stretch = false,
 	scrollable = false,
+	boxShadow = true,
 }) => {
 	invariant(
 		!(stretch && scrollable),
@@ -118,7 +120,7 @@ export const TabList: FunctionComponent<Props> = ({
 			overflow="hidden"
 			alignItems="center"
 			className={[
-				styles.root.default,
+				boxShadow && styles.root.withBoxShadow,
 				shouldShowScrollButtons && styles.root.scroll,
 			]}
 		>
