@@ -2,7 +2,7 @@
 
 exports[`<Tabs /> should allow id overriding 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_overflow_hidden__7o6k06fk useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf TabList_root_default__gut0aq0"
+  class="reset_block__6swfds3 useBoxStyles_overflow_hidden__7o6k06fk useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf TabList_root_withBoxShadow__gut0aq0"
 >
   <div
     class="reset_block__6swfds3"
@@ -57,7 +57,7 @@ exports[`<Tabs /> should allow id overriding 1`] = `
 
 exports[`<Tabs /> should allow rendering indications 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_overflow_hidden__7o6k06fk useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf TabList_root_default__gut0aq0"
+  class="reset_block__6swfds3 useBoxStyles_overflow_hidden__7o6k06fk useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf TabList_root_withBoxShadow__gut0aq0"
 >
   <div
     class="reset_block__6swfds3"
@@ -163,7 +163,7 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
 
 exports[`<Tabs /> should match snapshot (high level) 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_overflow_hidden__7o6k06fk useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf TabList_root_default__gut0aq0"
+  class="reset_block__6swfds3 useBoxStyles_overflow_hidden__7o6k06fk useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf TabList_root_withBoxShadow__gut0aq0"
 >
   <div
     class="reset_block__6swfds3"
@@ -200,6 +200,61 @@ exports[`<Tabs /> should match snapshot (high level) 1`] = `
       </button>
       <button
         aria-controls="od-1-2-tab"
+        aria-selected="false"
+        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06fs useBoxStyles_backgroundColours_transparent__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06hc useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_light__w6to7ij useTextStyles_fontWeight_bold__w6to7iq useTextStyles_noWrap__w6to7ir useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0"
+        role="tab"
+        tabindex="-1"
+      >
+        <span
+          class="Tab_item__vlp0oc2"
+        >
+          tab 3 title
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Tabs /> should match snapshot (high level) 2`] = `
+<div
+  class="reset_block__6swfds3 useBoxStyles_overflow_hidden__7o6k06fk useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf TabList_root_withBoxShadow__gut0aq0"
+>
+  <div
+    class="reset_block__6swfds3"
+  >
+    <div
+      aria-orientation="horizontal"
+      class="reset_block__6swfds3 useBoxStyles_display_block__7o6k06fp useBoxStyles_width_full__7o6k06fb useBoxStyles_flexWrap_nowrap__7o6k06h7 useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_neutral__w6to7ii useTextStyles_noWrap__w6to7ir"
+      role="tablist"
+    >
+      <button
+        aria-controls="od-15-0-tab"
+        aria-selected="true"
+        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06fs useBoxStyles_backgroundColours_transparent__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06hc useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_light__w6to7ij useTextStyles_fontWeight_bold__w6to7iq useTextStyles_noWrap__w6to7ir useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0 Tab_root_active__vlp0oc1"
+        role="tab"
+      >
+        <span
+          class="Tab_item__vlp0oc2"
+        >
+          tab 1 title
+        </span>
+      </button>
+      <button
+        aria-controls="od-15-1-tab"
+        aria-selected="false"
+        class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06fs useBoxStyles_backgroundColours_transparent__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06hc useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_light__w6to7ij useTextStyles_fontWeight_bold__w6to7iq useTextStyles_noWrap__w6to7ir useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0"
+        role="tab"
+        tabindex="-1"
+      >
+        <span
+          class="Tab_item__vlp0oc2"
+        >
+          tab 2 title
+        </span>
+      </button>
+      <button
+        aria-controls="od-15-2-tab"
         aria-selected="false"
         class="reset_appearance__6swfds0 reset_cursorPointer__6swfds1 reset_trimmedBlockElement__6swfds5 reset_button__6swfds6 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0664 useBoxStyles_display_inlineFlex__7o6k06fs useBoxStyles_backgroundColours_transparent__7o6k06f1 useBoxStyles_makeResponsiveStyle_key_bp__7o6k06hc useTextStyles_root__w6to7i0 reset_block__6swfds3 useTextStyles_colours_light__w6to7ij useTextStyles_fontWeight_bold__w6to7iq useTextStyles_noWrap__w6to7ir useTextStyles_sizes_3__w6to7i3 Tab_root_default__vlp0oc0"
         role="tab"
