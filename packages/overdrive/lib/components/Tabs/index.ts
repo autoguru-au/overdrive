@@ -3,3 +3,5 @@ export { Tab } from './Tab';
 export { TabList } from './TabList';
 export { TabPane } from './TabPane';
 export { TabPanes } from './TabPanes';
+export { PillTab } from './PillTab';
+export { PillTabList } from './PillTabList';

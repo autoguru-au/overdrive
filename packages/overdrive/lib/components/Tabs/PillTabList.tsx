@@ -20,7 +20,7 @@ import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { useTextStyles } from '../Text';
 
-import * as styles from './TabList.css';
+import * as styles from './PillTabList.css';
 
 export interface Props {
 	stretch?: boolean;
@@ -30,7 +30,7 @@ export interface Props {
 
 export const TabListContext = createContext<number | null>(null);
 
-export const TabList: FunctionComponent<Props> = ({
+export const PillTabList: FunctionComponent<Props> = ({
 	children,
 	stretch = false,
 	scrollable = false,
@@ -167,4 +167,4 @@ export const TabList: FunctionComponent<Props> = ({
 	);
 };
 
-export default TabList;
+export default PillTabList;

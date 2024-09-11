@@ -16,8 +16,8 @@ import { useBoxStyles } from '../Box';
 import { Inline } from '../Inline';
 import { Text, useTextStyles } from '../Text';
 
-import * as styles from './Tab.css';
-import { TabListContext } from './TabList';
+import * as styles from './PillTab.css';
+import { TabListContext } from './PillTabList';
 import { TabsContext } from './Tabs';
 
 export interface Props {
@@ -27,7 +27,7 @@ export interface Props {
 	indication?: number;
 }
 
-export const Tab = forwardRef<HTMLDivElement, Props>(
+export const PillTab = forwardRef<HTMLDivElement, Props>(
 	(
 		{
 			children,
@@ -115,4 +115,4 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 	},
 );
 
-export default Tab;
+export default PillTab;

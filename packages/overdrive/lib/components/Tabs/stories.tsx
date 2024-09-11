@@ -13,7 +13,7 @@ import { Stack } from '../Stack';
 import { StarRating } from '../StarRating';
 import { Tooltip } from '../Tooltip';
 
-import { Tab, TabList, TabPane, TabPanes, Tabs } from '.';
+import { Tab, TabList, TabPane, TabPanes, Tabs, PillTab, PillTabList } from '.';
 
 const TestChild = ({ label }) => {
 	const [thing, sething] = useState(isChromatic() ? 0.5 : Math.random() * 5);
@@ -48,6 +48,24 @@ export default {
 } as ComponentMeta<typeof Tabs>;
 
 const Template: ComponentStory<typeof Tabs> = (args) => <Tabs {...args} />;
+
+const pillProps: ComponentProps<typeof PillTab> = {
+	active: 0,
+	onChange: action('onChange'),
+	children: (
+		<>
+			<PillTabList>
+				<PillTab>Pill 1</PillTab>
+				<PillTab>Pill 2</PillTab>
+				<PillTab>Pill 3</PillTab>
+				<PillTab>Pill 4</PillTab>
+			</PillTabList>
+		</>
+	),
+};
+
+export const pill = Template.bind(pillProps);
+pill.args = pillProps;
 
 const standardProps: ComponentProps<typeof Tabs> = {
 	active: 0,
