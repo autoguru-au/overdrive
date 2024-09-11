@@ -59,6 +59,7 @@ const pillProps: ComponentProps<typeof PillTab> = {
 				<PillTab>Pill 2</PillTab>
 				<PillTab>Pill 3</PillTab>
 				<PillTab>Pill 4</PillTab>
+				<PillTab>Pill 5</PillTab>
 			</PillTabList>
 		</>
 	),
