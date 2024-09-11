@@ -1,4 +1,4 @@
-import { ArrowLeftIcon, ArrowRightIcon } from '@autoguru/icons';
+import { ChevronLeftIcon, ChevronRightIcon } from '@autoguru/icons';
 import { invariant } from '@autoguru/utilities';
 import type { FunctionComponent } from 'react';
 import * as React from 'react';
@@ -129,11 +129,11 @@ export const TabList: FunctionComponent<Props> = ({
 					minimal
 					rounded
 					withDoubleClicks
-					size="small"
+					size="medium"
 					disabled={!displayScroll.start}
 					onClick={handleStartButton}
 				>
-					<Icon icon={ArrowLeftIcon} />
+					<Icon icon={ChevronLeftIcon} />
 				</Button>
 			) : null}
 			<Box
@@ -158,11 +158,11 @@ export const TabList: FunctionComponent<Props> = ({
 					minimal
 					rounded
 					withDoubleClicks
-					size="small"
+					size="medium"
 					disabled={!displayScroll.end}
 					onClick={handleEndButton}
 				>
-					<Icon icon={ArrowRightIcon} />
+					<Icon icon={ChevronRightIcon} />
 				</Button>
 			) : null}
 		</Box>
