@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 4.33.0
+
+### Minor Changes
+
+-   78ded1ce: Enhances the looks and behaviours of Switch component
+-   77867368: Upgrades css type and vanilla extract
+
 ## 4.32.0
 
 ### Minor Changes
