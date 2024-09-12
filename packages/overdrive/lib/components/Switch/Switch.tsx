@@ -25,7 +25,7 @@ export type SwitchProps = AriaSwitchProps &
 		toggled?: boolean;
 	};
 
-export const Switch: FunctionComponent = ({
+export const Switch: FunctionComponent<SwitchProps> = ({
 	className,
 	disabled,
 	toggled,
