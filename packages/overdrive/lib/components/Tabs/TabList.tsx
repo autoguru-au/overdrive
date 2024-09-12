@@ -1,4 +1,4 @@
-import { ArrowLeftIcon, ArrowRightIcon } from '@autoguru/icons';
+import { ChevronLeftIcon, ChevronRightIcon } from '@autoguru/icons';
 import { invariant } from '@autoguru/utilities';
 import type { FunctionComponent } from 'react';
 import * as React from 'react';
@@ -26,6 +26,7 @@ export interface Props {
 	stretch?: boolean;
 	scrollable?: boolean;
 	children?: ReactNode;
+	boxShadow?: boolean;
 }
 
 export const TabListContext = createContext<number | null>(null);
@@ -34,6 +35,7 @@ export const TabList: FunctionComponent<Props> = ({
 	children,
 	stretch = false,
 	scrollable = false,
+	boxShadow = true,
 }) => {
 	invariant(
 		!(stretch && scrollable),
@@ -118,7 +120,7 @@ export const TabList: FunctionComponent<Props> = ({
 			overflow="hidden"
 			alignItems="center"
 			className={[
-				styles.root.default,
+				boxShadow && styles.root.withBoxShadow,
 				shouldShowScrollButtons && styles.root.scroll,
 			]}
 		>
@@ -127,11 +129,11 @@ export const TabList: FunctionComponent<Props> = ({
 					minimal
 					rounded
 					withDoubleClicks
-					size="small"
+					size="medium"
 					disabled={!displayScroll.start}
 					onClick={handleStartButton}
 				>
-					<Icon icon={ArrowLeftIcon} />
+					<Icon icon={ChevronLeftIcon} />
 				</Button>
 			) : null}
 			<Box
@@ -156,11 +158,11 @@ export const TabList: FunctionComponent<Props> = ({
 					minimal
 					rounded
 					withDoubleClicks
-					size="small"
+					size="medium"
 					disabled={!displayScroll.end}
 					onClick={handleEndButton}
 				>
-					<Icon icon={ArrowRightIcon} />
+					<Icon icon={ChevronRightIcon} />
 				</Button>
 			) : null}
 		</Box>

@@ -2,7 +2,7 @@
 
 exports[`<Tabs /> should allow id overriding 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_overflow_hidden__7o6k06fk useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf TabList_root_default__gut0aq0"
+  class="reset_block__6swfds3 useBoxStyles_overflow_hidden__7o6k06fk useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf TabList_root_withBoxShadow__gut0aq0"
 >
   <div
     class="reset_block__6swfds3"
@@ -57,7 +57,7 @@ exports[`<Tabs /> should allow id overriding 1`] = `
 
 exports[`<Tabs /> should allow rendering indications 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_overflow_hidden__7o6k06fk useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf TabList_root_default__gut0aq0"
+  class="reset_block__6swfds3 useBoxStyles_overflow_hidden__7o6k06fk useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf TabList_root_withBoxShadow__gut0aq0"
 >
   <div
     class="reset_block__6swfds3"
@@ -163,7 +163,7 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
 
 exports[`<Tabs /> should match snapshot (high level) 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_overflow_hidden__7o6k06fk useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf TabList_root_default__gut0aq0"
+  class="reset_block__6swfds3 useBoxStyles_overflow_hidden__7o6k06fk useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf TabList_root_withBoxShadow__gut0aq0"
 >
   <div
     class="reset_block__6swfds3"
