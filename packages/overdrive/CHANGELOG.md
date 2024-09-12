@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.33.1
+
+### Patch Changes
+
+-   b6dad903: Fixes Switch component prop type
+
 ## 4.33.0
 
 ### Minor Changes
