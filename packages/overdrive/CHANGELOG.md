@@ -1347,7 +1347,7 @@
     <Tabs active={0}>> > > > > > > } t > ></Tabs>
     ```
 
--   7131a5f: **Tabs:** Fixes a visual quirk when indications are mixed with
+-   7131a5f: **Tabs:** Fixes a visual quirk when bubbles are mixed with
     non-indicators
 
 ## 2.0.23

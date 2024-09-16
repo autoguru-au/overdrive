@@ -26,7 +26,7 @@ const tabData = [
 const renderTabs = (
 	onChange = null,
 	custoId = null,
-	renderIndication = false,
+	renderBubble= false,
 	renderInactivePanes = false,
 ) =>
 	render(
@@ -36,7 +36,7 @@ const renderTabs = (
 					<Tab
 						key={tabData.title}
 						id={custoId ? custoId(tabData, idx) : null}
-						indication={renderIndication ? 5 : null}
+						bubble={renderBubble ? 5 : null}
 					>
 						{tabData.title}
 					</Tab>
@@ -144,7 +144,7 @@ describe('<Tabs />', () => {
 		expect(container.firstChild).toMatchSnapshot();
 	});
 
-	it('should allow rendering indications', () => {
+	it('should allow rendering bubbles', () => {
 		const { container } = renderTabs(null, null, true);
 
 		expect(container.firstChild).toMatchSnapshot();

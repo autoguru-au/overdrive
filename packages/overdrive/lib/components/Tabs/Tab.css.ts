@@ -35,7 +35,7 @@ export const item = style({
 	verticalAlign: 'middle',
 });
 
-export const indication = styleVariants({
+export const bubble = styleVariants({
 	default: {
 		backgroundColor: vars.colours.background.light,
 		minWidth: size,

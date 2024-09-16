@@ -55,7 +55,7 @@ exports[`<Tabs /> should allow id overriding 1`] = `
 </div>
 `;
 
-exports[`<Tabs /> should allow rendering indications 1`] = `
+exports[`<Tabs /> should allow rendering bubble 1`] = `
 <div
   class="reset_block__6swfds3 useBoxStyles_overflow_hidden__7o6k06fk useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf TabList_root_default__gut0aq0"
 >
@@ -89,7 +89,7 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
             class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_flex__7o6k06fq useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_nowrap__7o6k06h7"
           >
             <span
-              class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06fp useBoxStyles_textAlign_center__7o6k06fi useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_white__w6to7ig useTextStyles_fontWeight_bold__w6to7iq useTextStyles_sizes_2__w6to7i2 Tab_indication_default__vlp0oc3 reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0614 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063c useBoxStyles_display_inlineBlock__7o6k06fu useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cx Tab_indication_active__vlp0oc4"
+              class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06fp useBoxStyles_textAlign_center__7o6k06fi useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_white__w6to7ig useTextStyles_fontWeight_bold__w6to7iq useTextStyles_sizes_2__w6to7i2 bubble reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0614 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063c useBoxStyles_display_inlineBlock__7o6k06fu useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cx bubble"
             >
               5
             </span>
@@ -119,7 +119,7 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
             class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_flex__7o6k06fq useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_nowrap__7o6k06h7"
           >
             <span
-              class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06fp useBoxStyles_textAlign_center__7o6k06fi useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7if useTextStyles_fontWeight_bold__w6to7iq useTextStyles_sizes_2__w6to7i2 Tab_indication_default__vlp0oc3 reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0614 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063c useBoxStyles_display_inlineBlock__7o6k06fu useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cx"
+              class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06fp useBoxStyles_textAlign_center__7o6k06fi useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7if useTextStyles_fontWeight_bold__w6to7iq useTextStyles_sizes_2__w6to7i2 Tab_bubble_default__vlp0oc3 reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0614 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063c useBoxStyles_display_inlineBlock__7o6k06fu useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cx"
             >
               5
             </span>
@@ -149,7 +149,7 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
             class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_flex__7o6k06fq useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_nowrap__7o6k06h7"
           >
             <span
-              class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06fp useBoxStyles_textAlign_center__7o6k06fi useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7if useTextStyles_fontWeight_bold__w6to7iq useTextStyles_sizes_2__w6to7i2 Tab_indication_default__vlp0oc3 reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0614 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063c useBoxStyles_display_inlineBlock__7o6k06fu useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cx"
+              class="reset_inlineText__6swfds2 useBoxStyles_display_block__7o6k06fp useBoxStyles_textAlign_center__7o6k06fi useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_dark__w6to7if useTextStyles_fontWeight_bold__w6to7iq useTextStyles_sizes_2__w6to7i2 Tab_bubble_default__vlp0oc3 reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0614 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063c useBoxStyles_display_inlineBlock__7o6k06fu useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cx"
             >
               5
             </span>

@@ -2,21 +2,21 @@ import { style, styleVariants } from '@vanilla-extract/css';
 
 import { themeContractVars as vars } from '../../themes/theme.css';
 
-const lineBottomHeight = '1px';
 const size = '20px';
 
 export const root = {
 	default: style({
-		padding: `calc(${vars.space['3']} + ${lineBottomHeight}) 0`,
-		transition: `color 0.2s ${vars.animation.easing.decelerate} 0s, background-color 0.2s ${vars.animation.easing.decelerate} 0s`,
-		borderBottom: `calc(${lineBottomHeight} + ${lineBottomHeight}) solid transparent`,
-		flex: 'auto',
+		padding: `${vars.space['1']} ${vars.space['5']}`,
 		':last-of-type': {
 			marginRight: 0,
 		},
 
 		':hover': {
-			color: vars.colours.intent.primary.background.strong,
+            padding: `${vars.space['1']} ${vars.space['5']}`,
+            borderRadius: '46px',
+            transition: `background-color 0.5s ${vars.animation.easing.decelerate}`,
+            color: vars.colours.intent.primary.background.strong,
+			backgroundColor: vars.colours.intent.primary.background.mild,
 		},
 
 		':focus': {
@@ -24,8 +24,17 @@ export const root = {
 		},
 	}),
 	active: style({
-		color: vars.colours.intent.primary.background.strong,
-		borderBottomColor: vars.colours.intent.primary.background.strong,
+		padding: `${vars.space['1']} ${vars.space['5']}`,
+        borderRadius: '46px',
+        color: 'white',
+        transition: `background-color 0.2s ${vars.animation.easing.decelerate } 0.2s`,
+        backgroundColor: `${vars.colours.intent.primary.background.strong}`,
+
+        ':hover': {
+            color: 'white',
+			backgroundColor: vars.colours.intent.primary.background.strong,
+            cursor: 'default',
+		},
 	}),
 };
 
@@ -35,7 +44,7 @@ export const item = style({
 	verticalAlign: 'middle',
 });
 
-export const indication = styleVariants({
+export const bubble = styleVariants({
 	default: {
 		backgroundColor: vars.colours.background.light,
 		minWidth: size,

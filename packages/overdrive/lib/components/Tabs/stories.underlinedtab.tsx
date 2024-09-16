@@ -13,7 +13,7 @@ import { Stack } from '../Stack';
 import { StarRating } from '../StarRating';
 import { Tooltip } from '../Tooltip';
 
-import { Tab, TabList, TabPane, TabPanes, Tabs, PillTab, PillTabList } from '.';
+import { Tab, TabList, TabPane, TabPanes, Tabs } from '.';
 
 const TestChild = ({ label }) => {
 	const [thing, sething] = useState(isChromatic() ? 0.5 : Math.random() * 5);
@@ -32,7 +32,7 @@ const TestChild = ({ label }) => {
 };
 
 export default {
-	title: 'Components/Tabs',
+	title: 'Components/Tabs/UnderlinedTab',
 	decorators: [
 		(story) => (
 			<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
@@ -48,25 +48,6 @@ export default {
 } as ComponentMeta<typeof Tabs>;
 
 const Template: ComponentStory<typeof Tabs> = (args) => <Tabs {...args} />;
-
-const pillProps: ComponentProps<typeof PillTab> = {
-	active: 0,
-	onChange: action('onChange'),
-	children: (
-		<>
-			<PillTabList>
-				<PillTab>Pill 1</PillTab>
-				<PillTab>Pill 2</PillTab>
-				<PillTab>Pill 3</PillTab>
-				<PillTab>Pill 4</PillTab>
-				<PillTab>Pill 5</PillTab>
-			</PillTabList>
-		</>
-	),
-};
-
-export const pill = Template.bind(pillProps);
-pill.args = pillProps;
 
 const standardProps: ComponentProps<typeof Tabs> = {
 	active: 0,
@@ -96,14 +77,14 @@ const standardProps: ComponentProps<typeof Tabs> = {
 export const standard = Template.bind(standardProps);
 standard.args = standardProps;
 
-const withIndicationProps: ComponentProps<typeof Tabs> = {
+const withBubbleProps: ComponentProps<typeof Tabs> = {
 	active: 0,
 	onChange: action('onChange'),
 	children: (
 		<>
 			<TabList>
-				<Tab indication={2}>Tab 1</Tab>
-				<Tab indication={0}>Tab 2</Tab>
+				<Tab bubble={2}>Tab 1</Tab>
+				<Tab bubble={0}>Tab 2</Tab>
 			</TabList>
 
 			<TabPanes>
@@ -113,8 +94,8 @@ const withIndicationProps: ComponentProps<typeof Tabs> = {
 		</>
 	),
 };
-export const withIndication = Template.bind(withIndicationProps);
-withIndication.args = withIndicationProps;
+export const withBubble = Template.bind(withBubbleProps);
+withBubble.args = withBubbleProps;
 
 const withComplexTabProps: ComponentProps<typeof Tabs> = {
 	active: 0,
@@ -122,7 +103,7 @@ const withComplexTabProps: ComponentProps<typeof Tabs> = {
 	children: (
 		<>
 			<TabList>
-				<Tab indication={2}>
+				<Tab bubble={2}>
 					<Inline alignY="center">
 						Tab 1
 						<Tooltip
@@ -211,7 +192,7 @@ const scrollableProps: ComponentProps<typeof Tabs> = {
 	children: (
 		<TabList scrollable>
 			<Tab>Hello</Tab>
-			<Tab indication={5}>Why isnt</Tab>
+			<Tab bubble={5}>Why isnt</Tab>
 			<Tab>This a terribly</Tab>
 			<Tab>Long</Tab>
 			<Tab>Tab list</Tab>

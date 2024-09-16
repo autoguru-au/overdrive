@@ -24,7 +24,7 @@ export interface Props {
 	children?: ReactNode;
 	id?: string;
 	is?: ElementType | ReactElement;
-	indication?: number;
+	bubble?: number;
 }
 
 export const Tab = forwardRef<HTMLDivElement, Props>(
@@ -32,7 +32,7 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 		{
 			children,
 			id: incomingId = null,
-			indication = null,
+			bubble = null,
 			is: Component = 'button',
 		},
 		ref,
@@ -47,7 +47,7 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 
 		const isActive = tabsContext.activeIndex === tabListContext;
 
-		const indicationStyles = useBoxStyles({
+		const bubbleStyles = useBoxStyles({
 			display: 'inlineBlock',
 			paddingX: '1',
 			borderRadius: 'pill',
@@ -89,7 +89,7 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 		const child = (
 			<Inline noWrap space="2" alignY="center" alignX="center">
 				<span className={styles.item}>{children}</span>
-				{typeof indication === 'number' && (
+				{typeof bubble === 'number' && (
 					<Text
 						strong
 						is="span"
@@ -98,12 +98,12 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 						display="block"
 						colour={isActive ? 'white' : 'dark'}
 						className={clsx(
-							styles.indication.default,
-							indicationStyles,
-							{ [styles.indication.active]: isActive },
+							styles.bubble.default,
+							bubbleStyles,
+							{ [styles.bubble.active]: isActive },
 						)}
 					>
-						{indication}
+						{bubble}
 					</Text>
 				)}
 			</Inline>
