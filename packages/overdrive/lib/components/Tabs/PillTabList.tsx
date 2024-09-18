@@ -1,5 +1,6 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@autoguru/icons';
 import { invariant } from '@autoguru/utilities';
+import { Item, useTabListState } from '@react-stately/tabs';
 import type { FunctionComponent } from 'react';
 import * as React from 'react';
 import {
@@ -12,7 +13,9 @@ import {
 	useRef,
 	useState,
 } from 'react';
+import { useTabList } from 'react-aria';
 import flattenChildren from 'react-keyed-flatten-children';
+
 
 import { animate, ownerWindow, useEventCallback } from '../../utils';
 import { Box } from '../Box';
@@ -20,6 +23,8 @@ import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { useTextStyles } from '../Text';
 
+import { PillPanel } from './PillPanel';
+import { PillTab } from './PillTab';
 import * as styles from './PillTabList.css';
 
 export interface Props {
@@ -29,12 +34,50 @@ export interface Props {
 }
 
 export const TabListContext = createContext<number | null>(null);
-
-export const PillTabList: FunctionComponent<Props> = ({
-	children,
-	stretch = false,
-	scrollable = false,
-}) => {
+export const PillTabList: FunctionComponent = (props) => {
+	// console.log('=> props: ', props)
+	const props2 = { ...props, children: props.children.props.children }
+	const state = useTabListState(props2);
+	// console.log('=> state: ', state)
+	const ref = React.useRef(null);
+	const { tabListProps } = useTabList(props2, state, ref);
+	// console.log('=> tabListProps: ', tabListProps)
+	return (
+		<Box
+			overflow="hidden"
+			alignItems="center"
+		>
+			<Box>
+				<Box
+					display={'flex'}
+					flexWrap="nowrap"
+					width="full"
+					role="tablist"
+					aria-orientation="horizontal"
+					className={useTextStyles({ noWrap: true })}
+				>
+					<div {...tabListProps} ref={ref}>
+				{[...state.collection].map((item) => (
+					<PillTab key={item.key} item={item} state={state} />
+				))}
+			</div>
+				</Box>
+			</Box>
+		</Box>
+	);
+	return (
+		<div className={`tabs ${props2?.orientation || ''}`}>
+			<div {...tabListProps} ref={ref}>
+				{[...state.collection].map((item) => (
+					<PillTab key={item.key} item={item} state={state} />
+				))}
+			</div>
+			<PillPanel
+				key={state.selectedItem?.key}
+				state={state}
+			/>
+		</div>
+	);
 	invariant(
 		!(stretch && scrollable),
 		'Tabs: `stretch={true}` and `scrollable={true}` cannot be used at the same time.',
