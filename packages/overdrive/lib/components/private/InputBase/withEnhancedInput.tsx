@@ -288,7 +288,7 @@ export const withEnhancedInput = <
 			return (
 				<Box
 					width="full"
-					className={className}
+					className={clsx(className, styles.inputContainerQuery)}
 					onMouseEnter={onMouseOver}
 					onMouseLeave={onMouseOut}
 				>
