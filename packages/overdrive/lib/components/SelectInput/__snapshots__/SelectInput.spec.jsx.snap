@@ -2,7 +2,7 @@
 
 exports[`<SelectInput /> should have some hintText 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb withEnhancedInput_inputContainerQuery__bd4oid2"
 >
   <div
     class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
@@ -15,7 +15,7 @@ exports[`<SelectInput /> should have some hintText 1`] = `
       >
         <select
           autocomplete="off"
-          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_flexGrow_1__7o6k06h4 SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_flexGrow_1__7o6k06h4 SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oidc"
         >
           <option
             value="a"
@@ -90,7 +90,7 @@ exports[`<SelectInput /> should have some hintText 1`] = `
 
 exports[`<SelectInput /> should match snapshot 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb withEnhancedInput_inputContainerQuery__bd4oid2"
 >
   <div
     class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
@@ -103,7 +103,7 @@ exports[`<SelectInput /> should match snapshot 1`] = `
       >
         <select
           autocomplete="off"
-          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_flexGrow_1__7o6k06h4 SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_flexGrow_1__7o6k06h4 SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oidc"
         >
           <option
             value="a"
@@ -173,7 +173,7 @@ exports[`<SelectInput /> should match snapshot 1`] = `
 
 exports[`<SelectInput /> should match snapshot when active 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb withEnhancedInput_inputContainerQuery__bd4oid2"
 >
   <div
     class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
@@ -186,7 +186,7 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
       >
         <select
           autocomplete="off"
-          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_flexGrow_1__7o6k06h4 SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_flexGrow_1__7o6k06h4 SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oidc"
         >
           <option
             value="a"
@@ -256,7 +256,7 @@ exports[`<SelectInput /> should match snapshot when active 1`] = `
 
 exports[`<SelectInput /> should match snapshot when touched 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb withEnhancedInput_inputContainerQuery__bd4oid2"
 >
   <div
     class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
@@ -269,7 +269,7 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
       >
         <select
           autocomplete="off"
-          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_flexGrow_1__7o6k06h4 SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_flexGrow_1__7o6k06h4 SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oidc"
         >
           <option
             value="a"
@@ -339,7 +339,7 @@ exports[`<SelectInput /> should match snapshot when touched 1`] = `
 
 exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb withEnhancedInput_inputContainerQuery__bd4oid2"
 >
   <div
     class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
@@ -352,7 +352,7 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
       >
         <select
           autocomplete="off"
-          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_flexGrow_1__7o6k06h4 SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_flexGrow_1__7o6k06h4 SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oidc"
         >
           <option
             value="a"
@@ -422,7 +422,7 @@ exports[`<SelectInput /> should match snapshot when touched and invalid 1`] = `
 
 exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb withEnhancedInput_inputContainerQuery__bd4oid2"
 >
   <div
     class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
@@ -435,7 +435,7 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
       >
         <select
           autocomplete="off"
-          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_flexGrow_1__7o6k06h4 SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_flexGrow_1__7o6k06h4 SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oidc"
         >
           <option
             value="a"
@@ -505,7 +505,7 @@ exports[`<SelectInput /> should match snapshot when touched and valid 1`] = `
 
 exports[`<SelectInput /> should match snapshot with custom icon 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class withEnhancedInput_inputContainerQuery__bd4oid2"
 >
   <div
     class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
@@ -518,7 +518,7 @@ exports[`<SelectInput /> should match snapshot with custom icon 1`] = `
       >
         <select
           autocomplete="off"
-          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_flexGrow_1__7o6k06h4 SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_flexGrow_1__7o6k06h4 SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oidc"
         />
         <div
           class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k065w useBoxStyles_display_flex__7o6k06fq useBoxStyles_height_full__7o6k06fd useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_flexShrink_0__7o6k06h5 SelectInput_arrow__hhupzp2"
@@ -570,7 +570,7 @@ exports[`<SelectInput /> should match snapshot with custom icon 1`] = `
 
 exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class withEnhancedInput_inputContainerQuery__bd4oid2"
 >
   <div
     class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
@@ -579,7 +579,7 @@ exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
       class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd"
     >
       <i
-        class="useBoxStyles_display_block__7o6k06fp Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs withEnhancedInput_iconRoot__bd4oide withEnhancedInput_prefixIcon__bd4oidf withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
+        class="useBoxStyles_display_block__7o6k06fp Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs withEnhancedInput_iconRoot__bd4oidg withEnhancedInput_prefixIcon__bd4oidh withEnhancedInput_iconSize_medium__bd4oidk InputState_natural_default_colour__9z39d74"
         role="presentation"
       >
         <svg
@@ -597,7 +597,7 @@ exports[`<SelectInput /> should match snapshot with prefix icon 1`] = `
       >
         <select
           autocomplete="off"
-          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_flexGrow_1__7o6k06h4 SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida withEnhancedInput_inputItselfSize_medium_prefixed_any__bd4oidc"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_select__6swfds7 useBoxStyles_flexGrow_1__7o6k06h4 SelectInput_input__hhupzp0 SelectInput_paddedInput__hhupzp1 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oidc withEnhancedInput_inputItselfSize_medium_prefixed_any__bd4oide"
         />
         <div
           class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k065w useBoxStyles_display_flex__7o6k06fq useBoxStyles_height_full__7o6k06fd useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_flexShrink_0__7o6k06h5 SelectInput_arrow__hhupzp2"

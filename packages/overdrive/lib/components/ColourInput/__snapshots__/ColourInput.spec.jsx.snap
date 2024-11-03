@@ -2,7 +2,7 @@
 
 exports[`<ColourInput /> should have some hintText 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb withEnhancedInput_inputContainerQuery__bd4oid2"
 >
   <div
     class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
@@ -28,7 +28,7 @@ exports[`<ColourInput /> should have some hintText 1`] = `
         </span>
         <input
           autocomplete="off"
-          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06h4 ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06h4 ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oidc"
           id="id"
           type="color"
           value="#6c1111"
@@ -71,7 +71,7 @@ exports[`<ColourInput /> should have some hintText 1`] = `
 
 exports[`<ColourInput /> should match snapshot 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb withEnhancedInput_inputContainerQuery__bd4oid2"
 >
   <div
     class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
@@ -97,7 +97,7 @@ exports[`<ColourInput /> should match snapshot 1`] = `
         </span>
         <input
           autocomplete="off"
-          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06h4 ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06h4 ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oidc"
           id="id"
           type="color"
           value="#6c1111"
@@ -135,7 +135,7 @@ exports[`<ColourInput /> should match snapshot 1`] = `
 
 exports[`<ColourInput /> should match snapshot when active 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class withEnhancedInput_inputContainerQuery__bd4oid2"
 >
   <div
     class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
@@ -161,7 +161,7 @@ exports[`<ColourInput /> should match snapshot when active 1`] = `
         </span>
         <input
           autocomplete="off"
-          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06h4 ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06h4 ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oidc"
           type="color"
           value="#ec4040"
         />
@@ -197,7 +197,7 @@ exports[`<ColourInput /> should match snapshot when active 1`] = `
 
 exports[`<ColourInput /> should match snapshot when loading 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class withEnhancedInput_inputContainerQuery__bd4oid2"
 >
   <div
     class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
@@ -206,7 +206,7 @@ exports[`<ColourInput /> should match snapshot when loading 1`] = `
       class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd"
     >
       <div
-        class="reset_block__6swfds3 ProgressSpinner_size_medium_circular__5j3teub ProgressSpinner_colours_primary__5j3teu5 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs withEnhancedInput_iconRoot__bd4oide withEnhancedInput_suffixIcon__bd4oidg withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
+        class="reset_block__6swfds3 ProgressSpinner_size_medium_circular__5j3teub ProgressSpinner_colours_primary__5j3teu5 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs withEnhancedInput_iconRoot__bd4oidg withEnhancedInput_suffixIcon__bd4oidi withEnhancedInput_iconSize_medium__bd4oidk InputState_natural_default_colour__9z39d74"
       >
         <svg
           class="useBoxStyles_display_block__7o6k06fp useBoxStyles_overflow_hidden__7o6k06fk ProgressSpinner_circular__5j3teu1"
@@ -241,7 +241,7 @@ exports[`<ColourInput /> should match snapshot when loading 1`] = `
         <input
           aria-busy="true"
           autocomplete="off"
-          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06h4 ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__bd4oidd"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06h4 ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oidc undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__bd4oidf"
           type="color"
           value="#6c1111"
         />
@@ -277,7 +277,7 @@ exports[`<ColourInput /> should match snapshot when loading 1`] = `
 
 exports[`<ColourInput /> should match snapshot when touched 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class withEnhancedInput_inputContainerQuery__bd4oid2"
 >
   <div
     class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
@@ -303,7 +303,7 @@ exports[`<ColourInput /> should match snapshot when touched 1`] = `
         </span>
         <input
           autocomplete="off"
-          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06h4 ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06h4 ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oidc"
           type="color"
           value="#6c1111"
         />
@@ -339,7 +339,7 @@ exports[`<ColourInput /> should match snapshot when touched 1`] = `
 
 exports[`<ColourInput /> should match snapshot when touched and invalid 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class withEnhancedInput_inputContainerQuery__bd4oid2"
 >
   <div
     class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
@@ -365,7 +365,7 @@ exports[`<ColourInput /> should match snapshot when touched and invalid 1`] = `
         </span>
         <input
           autocomplete="off"
-          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06h4 ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06h4 ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oidc"
           type="color"
           value="#6c1111"
         />
@@ -401,7 +401,7 @@ exports[`<ColourInput /> should match snapshot when touched and invalid 1`] = `
 
 exports[`<ColourInput /> should match snapshot when touched and valid 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class withEnhancedInput_inputContainerQuery__bd4oid2"
 >
   <div
     class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
@@ -427,7 +427,7 @@ exports[`<ColourInput /> should match snapshot when touched and valid 1`] = `
         </span>
         <input
           autocomplete="off"
-          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06h4 ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06h4 ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oidc"
           type="color"
           value="#6c1111"
         />
@@ -463,7 +463,7 @@ exports[`<ColourInput /> should match snapshot when touched and valid 1`] = `
 
 exports[`<ColourInput /> should match snapshot with both icons 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class withEnhancedInput_inputContainerQuery__bd4oid2"
 >
   <div
     class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
@@ -472,7 +472,7 @@ exports[`<ColourInput /> should match snapshot with both icons 1`] = `
       class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd"
     >
       <i
-        class="useBoxStyles_display_block__7o6k06fp Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs withEnhancedInput_iconRoot__bd4oide withEnhancedInput_suffixIcon__bd4oidg withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
+        class="useBoxStyles_display_block__7o6k06fp Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs withEnhancedInput_iconRoot__bd4oidg withEnhancedInput_suffixIcon__bd4oidi withEnhancedInput_iconSize_medium__bd4oidk InputState_natural_default_colour__9z39d74"
         role="presentation"
       >
         <svg
@@ -503,7 +503,7 @@ exports[`<ColourInput /> should match snapshot with both icons 1`] = `
         </span>
         <input
           autocomplete="off"
-          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06h4 ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__bd4oidd"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06h4 ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oidc undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__bd4oidf"
           type="color"
           value="#6c1111"
         />
@@ -539,7 +539,7 @@ exports[`<ColourInput /> should match snapshot with both icons 1`] = `
 
 exports[`<ColourInput /> should match snapshot with suffix icon 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class"
+  class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb input-class withEnhancedInput_inputContainerQuery__bd4oid2"
 >
   <div
     class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0610 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0624 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0638 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064c useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg NotchedBase_root__1r7zdxg0"
@@ -548,7 +548,7 @@ exports[`<ColourInput /> should match snapshot with suffix icon 1`] = `
       class="reset_block__6swfds3 useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd"
     >
       <i
-        class="useBoxStyles_display_block__7o6k06fp Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs withEnhancedInput_iconRoot__bd4oide withEnhancedInput_suffixIcon__bd4oidg withEnhancedInput_iconSize_medium__bd4oidi InputState_natural_default_colour__9z39d74"
+        class="useBoxStyles_display_block__7o6k06fp Icon_makeResponsiveStyle_key_bp__14sz1q64 reset_block__6swfds3 useBoxStyles_position_absolute__7o6k06fe useBoxStyles_pointerEvents_none__7o6k06hs withEnhancedInput_iconRoot__bd4oidg withEnhancedInput_suffixIcon__bd4oidi withEnhancedInput_iconSize_medium__bd4oidk InputState_natural_default_colour__9z39d74"
         role="presentation"
       >
         <svg
@@ -579,7 +579,7 @@ exports[`<ColourInput /> should match snapshot with suffix icon 1`] = `
         </span>
         <input
           autocomplete="off"
-          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06h4 ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid0 withEnhancedInput_inputItselfSize_medium_root_any__bd4oida undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__bd4oidd"
+          class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_flexGrow_1__7o6k06h4 ColourInput_input__1c82wdf0 reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_display_flex__7o6k06fq useBoxStyles_width_full__7o6k06fb useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06cp useBoxStyles_backgroundColours_transparent__7o6k06f1 withEnhancedInput_input_itself_root__bd4oid1 withEnhancedInput_inputItselfSize_medium_root_any__bd4oidc undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__bd4oidf"
           type="color"
           value="#6c1111"
         />
