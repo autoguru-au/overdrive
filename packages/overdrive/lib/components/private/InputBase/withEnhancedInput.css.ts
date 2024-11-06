@@ -1,9 +1,6 @@
-import { style, styleVariants, createContainer } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css';
 
 import { themeContractVars as vars } from '../../../themes/theme.css';
-
-export const inputContainer = createContainer();
-
 
 export const input = {
 	itself: styleVariants({
@@ -26,11 +23,6 @@ export const input = {
 		},
 	}),
 };
-
-export const inputContainerQuery = style({
-	containerType: 'inline-size',
-	containerName: inputContainer,
-});
 
 const textAreaHeight = '107px';
 
@@ -75,7 +67,7 @@ export const inputItselfSize = {
 		}),
 		prefixed: styleVariants({
 			any: {
-				paddingLeft: `calc(${vars.space['2']} + ${vars.space['5']} + ${vars.space['2']})`,
+				paddingLeft: `calc(${vars.space['2']} + ${vars.space['4']} + ${vars.space['2']})`,
 			},
 			textarea: {
 				paddingLeft: `calc(${vars.space['2']} + ${vars.space['5']} + ${vars.space['2']})`,
@@ -104,11 +96,6 @@ export const inputItselfSize = {
 		}),
 		prefixed: styleVariants({
 			any: {
-				'@container': {
-					[`${inputContainer} (max-width: 150px)`]: {
-						paddingLeft: `calc(${vars.space['2']} + ${vars.space['5']} + ${vars.space['2']})`,
-					},
-				},
 				paddingLeft: `calc((${vars.space['3']} - 1px) + (${vars.space['4']} - 1px) + ${vars.space[4]})`,
 			},
 		}),
