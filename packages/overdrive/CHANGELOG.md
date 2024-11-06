@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 4.34.0
+
+### Minor Changes
+
+-   4c8dc149: Reduce padding in prefix input incon when the input measures 150px
+    or less
+
 ## 4.33.1
 
 ### Patch Changes
