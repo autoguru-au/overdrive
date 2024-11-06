@@ -75,7 +75,7 @@ export const inputItselfSize = {
 		}),
 		suffixed: styleVariants({
 			any: {
-				paddingRight: `calc(${vars.space['2']} + ${vars.space['5']} + ${vars.space['2']})`,
+				paddingRight: `calc(${vars.space['2']} + ${vars.space['4']} + ${vars.space['2']})`,
 			},
 			textarea: {
 				paddingRight: `calc(${vars.space['2']} + ${vars.space['5']} + ${vars.space['2']})`,
