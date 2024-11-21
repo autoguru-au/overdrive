@@ -1,5 +1,5 @@
 {
-	"extends": "../packages/overdrive/tsconfig.json",
+	"extends": "../tsconfig.json",
 	"compilerOptions": {
 		"rootDir": "../",
 		"jsx": "react",
@@ -7,10 +7,6 @@
 		"incremental": true,
 		"composite": true
 	},
-	"include": [
-		"../packages/overdrive/lib/**/*.ts",
-		"../packages/overdrive/lib/**/*.tsx",
-		"../packages/overdrive/lib/**/stories.tsx"
-	],
+	"include": ["../lib/**/*.ts", "../lib/**/*.tsx", "../lib/**/stories.tsx"],
 	"exclude": []
 }

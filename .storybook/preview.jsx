@@ -56,7 +56,8 @@ const ThemeProviderComponent = ({ children, context }) => {
 			noBodyLevelTheming={false}
 			vars={themeContractVars}
 			breakpoints={breakpoints}
-			themeClass={theme.themeRef}>
+			themeClass={theme.themeRef}
+		>
 			<Box ref={ref} className={container} style={overrideStyles}>
 				{children}
 			</Box>
@@ -90,7 +91,8 @@ const withThemeProvider = (Story, context) => {
 				overrideColours ? null : primaryColourBackground.strong
 			}
 			primaryColourBorder={overrideColours ? null : primaryColourBorder}
-			theme={theme}>
+			theme={theme}
+		>
 			<Box className={theme.themeRef} padding="2">
 				<ThemeProviderComponent context={context}>
 					<Story {...context} />
@@ -102,12 +104,14 @@ const withThemeProvider = (Story, context) => {
 			<div
 				key={themes[theme].name}
 				className={themes[theme].themeRef}
-				data-theme={themes[theme].name}>
+				data-theme={themes[theme].name}
+			>
 				<OverdriveProvider
 					noBodyLevelTheming
 					themeClass={themes[theme].themeRef}
 					tokens={themes[theme].tokens}
-					vars={themes[theme].vars}>
+					vars={themes[theme].vars}
+				>
 					<Box width="full" padding="5">
 						<Stack width="full" space="3">
 							<Heading is="h5" colour="light">

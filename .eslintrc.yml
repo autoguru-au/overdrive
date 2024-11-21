@@ -26,10 +26,7 @@ overrides:
           '@typescript-eslint/no-unnecessary-type-assertion': off
       parser: '@typescript-eslint/parser'
       parserOptions:
-          project:
-              [
-                  './.storybook/tsconfig.stories.json',
-              ]
+          project: ['./.storybook/tsconfig.stories.json']
     - files: ['**/stories.tsx']
       rules:
           'import/no-extraneous-dependencies': off
