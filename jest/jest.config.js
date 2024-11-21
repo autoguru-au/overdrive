@@ -1,4 +1,5 @@
-module.exports = {
+/** @type {import('jest').Config} */
+const config = {
 	preset: '@autoguru/jest-preset',
 	testPathIgnorePatterns: [
 		'/node_modules/',
@@ -7,7 +8,7 @@ module.exports = {
 	],
 	transformIgnorePatterns: ['node_modules/(?!(@popperjs/core)/)'],
 	setupFilesAfterEnv: [
-		require.resolve('./scripts/test-setup-themes.js'),
+		require.resolve('../scripts/test-setup-themes.js'),
 		require.resolve('@testing-library/jest-dom/extend-expect'),
 	],
 	collectCoverageFrom: [
@@ -15,4 +16,7 @@ module.exports = {
 		'!**/*stories*.{ts,tsx}',
 		'!**/*.css.ts',
 	],
+	rootDir: "../"
 };
+
+module.exports = config;
