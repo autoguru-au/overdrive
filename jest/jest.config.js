@@ -1,3 +1,5 @@
+/* eslint-disable unicorn/prefer-module */
+
 /** @type {import('jest').Config} */
 const config = {
 	preset: '@autoguru/jest-preset',
@@ -16,7 +18,7 @@ const config = {
 		'!**/*stories*.{ts,tsx}',
 		'!**/*.css.ts',
 	],
-	rootDir: "../"
+	rootDir: '../',
 };
 
 module.exports = config;
