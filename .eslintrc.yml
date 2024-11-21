@@ -29,7 +29,6 @@ overrides:
           project:
               [
                   './.storybook/tsconfig.stories.json',
-                  './packages/overdrive/tsconfig.json',
               ]
     - files: ['**/stories.tsx']
       rules:

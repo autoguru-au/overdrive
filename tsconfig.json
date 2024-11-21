@@ -1,8 +1,46 @@
 {
-	"files": [],
-	"references": [
-		{
-			"path": "./packages/overdrive"
+	"extends": "@autoguru/tsconfig/web",
+	"include": ["./index.ts", "./**/*.ts", "./**/*.tsx"],
+	"exclude": ["./**/*stories*.tsx", ".dist/**/*.*"],
+	"compilerOptions": {
+		"baseUrl": "./",
+		"rootDir": "./lib/",
+		"outDir": "./dist/",
+		"declaration": true,
+		"declarationMap": true,
+		"declarationDir": "./dist/",
+		"isolatedModules": true,
+		"strict": true,
+		"sourceMap": false,
+		"inlineSourceMap": false,
+		"strictNullChecks": true,
+		"incremental": false,
+		"composite": false,
+		"skipLibCheck": true,
+		"allowJs": true,
+		"target": "esnext",
+		"module": "esnext",
+		"moduleResolution": "node",
+		"jsx": "react",
+		"lib": ["dom"],
+		"noFallthroughCasesInSwitch": true,
+		"suppressImplicitAnyIndexErrors": true,
+		"strictFunctionTypes": true,
+		"forceConsistentCasingInFileNames": true,
+		"noImplicitReturns": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"stripInternal": true,
+		"resolveJsonModule": true,
+		"allowSyntheticDefaultImports": true,
+		"downlevelIteration": true,
+		"esModuleInterop": false
+	},
+	"ts-node": {
+		"compilerOptions": {
+			"module": "ESNext",
+			"resolveJsonModule": true,
+			"noImplicitAny": false
 		}
-	]
+	}
 }

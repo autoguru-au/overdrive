@@ -1,17 +1,24 @@
-const resolve = require('path').resolve;
-module.exports = {
-	core: {
-		builder: 'webpack5',
-	},
-	features: {
-		buildStoriesJson: true,
-	},
-	stories: ['../packages/overdrive/lib/**/stories.*'],
+/** @type { import('@storybook/react-vite').StorybookConfig } */
+const config = {
+	// staticDirs: ['../public'],
+	stories: [
+		// '../lib/**/*.mdx',
+		'../lib/**/stories.@(js|jsx|mjs|ts|tsx)',
+	],
 	addons: [
-		'@storybook/addon-links',
+		'@chromatic-com/storybook',
+		'@storybook/addon-onboarding',
 		'@storybook/addon-essentials',
-		resolve('./.storybook/vanilla-extract'),
+		'@storybook/addon-interactions',
+		'@storybook/addon-links',
 		'@storybook/addon-a11y',
 	],
-	reactOptions: { legacyRootApi: false },
+	framework: {
+		name: '@storybook/react-vite',
+		options: {},
+	},
+	typescript: {
+		reactDocgen: 'react-docgen',
+	},
 };
+export default config;

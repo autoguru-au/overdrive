@@ -161,6 +161,7 @@ export const globalTypes = {
 /** @type { import('@storybook/react').Preview } */
 const preview = {
 	decorators: [withThemeProvider],
+
 	parameters: {
 		controls: {
 			matchers: {
@@ -173,6 +174,8 @@ const preview = {
 			viewports: [320, 1024],
 		},
 	},
+
+	tags: ['autodocs'],
 };
 
 export default preview;

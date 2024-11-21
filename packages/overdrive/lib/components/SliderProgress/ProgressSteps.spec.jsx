@@ -9,7 +9,7 @@ const standardProps = {
 	totalCount: 3,
 	activeIndex: 1,
 	duration: '1s',
-	onRequestNext: () => action('onRequestNext'),
+	// onRequestNext: () => action('onRequestNext'),
 };
 
 describe('<ProgressStep />', () => {
