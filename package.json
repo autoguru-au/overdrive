@@ -58,7 +58,7 @@
 		"@babel/preset-typescript": "^7.16.0",
 		"@babel/runtime-corejs3": "7.22.5",
 		"@changesets/cli": "2.26.1",
-		"@manypkg/cli": "0.20.0",
+		"@manypkg/cli": "0.23.0",
 		"@octokit/rest": "18.12.0",
 		"@storybook/addon-a11y": "^6.5.16",
 		"@storybook/addon-actions": "^6.5.16",
