@@ -2,12 +2,12 @@
 
 exports[`<MinimalModal /> should match snapshot with body 1`] = `
 <body
-  class="vars_OD_Base__1gqkyza0"
+  class="vars_OD_Base__1f5yyro0"
   style="overflow: hidden;"
 >
   <div />
   <div
-    class="vars_OD_Base__1gqkyza0"
+    class="vars_OD_Base__1f5yyro0"
   >
     <div
       data-focus-guard="true"
@@ -19,25 +19,25 @@ exports[`<MinimalModal /> should match snapshot with body 1`] = `
     >
       <div
         aria-hidden="true"
-        class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06ff useBoxStyles_backgroundColours_neutral__7o6k06ey Modal_backdrop_root__p7g8yg3 Modal_transition__p7g8yg1"
+        class="reset_block__1oah0223 useBoxStyles_position_fixed__3xgq1lff useBoxStyles_backgroundColours_neutral__3xgq1ley Modal_backdrop_root__1psykzh3 Modal_transition__1psykzh1"
       />
       <div
-        class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06ff useBoxStyles_overflow_hidden__7o6k06fk Modal_root__p7g8yg0 Modal_transition__p7g8yg1"
+        class="reset_block__1oah0223 useBoxStyles_position_fixed__3xgq1lff useBoxStyles_overflow_hidden__3xgq1lfk Modal_root__1psykzh0 Modal_transition__1psykzh1"
         role="presentation"
       >
         <div
           aria-hidden="false"
-          class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fq useBoxStyles_height_full__7o6k06fd useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06hc MinimalModal_container__1psw41b0"
+          class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_height_full__3xgq1lfd useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhc MinimalModal_container__13ik47w0"
           role="none presentation"
         >
           <article
             aria-labelledby="od-4"
             aria-modal="true"
-            class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fq useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gv"
+            class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv"
             role="dialog"
           >
             <main
-              class="useBoxStyles_display_flex__7o6k06fq useBoxStyles_height_full__7o6k06fd useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gv useBoxStyles_flexGrow_1__7o6k06h4 MinimalModal_content__1psw41b1"
+              class="useBoxStyles_display_flex__3xgq1lfq useBoxStyles_height_full__3xgq1lfd useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexGrow_1__3xgq1lh4 MinimalModal_content__13ik47w1"
             >
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis convallis neque a laoreet maximus. Vestibulum hendrerit quam at mi venenatis faucibus at vel nisi. In ut risus et ipsum tincidunt tempor. Suspendisse potenti. Praesent faucibus posuere risus, at congue mauris porttitor ut. Donec sit amet elit vitae purus dictum aliquet quis ut ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum dui sapien, porttitor ac erat vel, malesuada rutrum mauris. Nam arcu tellus, pretium ut aliquet eget, ultrices vel est. Maecenas dapibus volutpat eros a volutpat.
@@ -58,12 +58,12 @@ exports[`<MinimalModal /> should match snapshot with body 1`] = `
 
 exports[`<MinimalModal /> should match snapshot without title and body 1`] = `
 <body
-  class="vars_OD_Base__1gqkyza0"
+  class="vars_OD_Base__1f5yyro0"
   style="overflow: hidden;"
 >
   <div />
   <div
-    class="vars_OD_Base__1gqkyza0"
+    class="vars_OD_Base__1f5yyro0"
   >
     <div
       data-focus-guard="true"
@@ -75,25 +75,25 @@ exports[`<MinimalModal /> should match snapshot without title and body 1`] = `
     >
       <div
         aria-hidden="true"
-        class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06ff useBoxStyles_backgroundColours_neutral__7o6k06ey Modal_backdrop_root__p7g8yg3 Modal_transition__p7g8yg1"
+        class="reset_block__1oah0223 useBoxStyles_position_fixed__3xgq1lff useBoxStyles_backgroundColours_neutral__3xgq1ley Modal_backdrop_root__1psykzh3 Modal_transition__1psykzh1"
       />
       <div
-        class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06ff useBoxStyles_overflow_hidden__7o6k06fk Modal_root__p7g8yg0 Modal_transition__p7g8yg1"
+        class="reset_block__1oah0223 useBoxStyles_position_fixed__3xgq1lff useBoxStyles_overflow_hidden__3xgq1lfk Modal_root__1psykzh0 Modal_transition__1psykzh1"
         role="presentation"
       >
         <div
           aria-hidden="false"
-          class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fq useBoxStyles_height_full__7o6k06fd useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06hc MinimalModal_container__1psw41b0"
+          class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_height_full__3xgq1lfd useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhc MinimalModal_container__13ik47w0"
           role="none presentation"
         >
           <article
             aria-labelledby="od-3"
             aria-modal="true"
-            class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fq useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gv"
+            class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv"
             role="dialog"
           >
             <main
-              class="useBoxStyles_display_flex__7o6k06fq useBoxStyles_height_full__7o6k06fd useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gv useBoxStyles_flexGrow_1__7o6k06h4 MinimalModal_content__1psw41b1"
+              class="useBoxStyles_display_flex__3xgq1lfq useBoxStyles_height_full__3xgq1lfd useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexGrow_1__3xgq1lh4 MinimalModal_content__13ik47w1"
             />
           </article>
         </div>

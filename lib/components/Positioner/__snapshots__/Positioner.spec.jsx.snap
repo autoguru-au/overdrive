@@ -2,15 +2,15 @@
 
 exports[`<Positioner /> should match snapshot 1`] = `
 <body
-  class="vars_OD_Base__1gqkyza0"
+  class="vars_OD_Base__1f5yyro0"
 >
   <div />
   <div
-    class="vars_OD_Base__1gqkyza0"
+    class="vars_OD_Base__1f5yyro0"
   >
     <div
       aria-hidden="false"
-      class="reset_block__6swfds3 useBoxStyles_position_fixed__7o6k06ff Positioner_root__lgdvlw0"
+      class="reset_block__1oah0223 useBoxStyles_position_fixed__3xgq1lff Positioner_root__1d54b7d0"
     >
       Some body
     </div>

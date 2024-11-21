@@ -2,18 +2,18 @@
 
 exports[`<Inline /> should match snapshot for custom element dividers 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fq useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_wrap__7o6k06h6 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y44"
+  class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_position_relative__3xgq1lfg useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_wrap__3xgq1lh6 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_display_flex__7o6k06fq useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_nowrap__7o6k06h7"
+    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
   >
     <span
-      class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06fh useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ii useTextStyles_fontWeight_normal__w6to7io useTextStyles_sizes_4__w6to7i4"
+      class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfh useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
     >
       A
     </span>
     <div
-      class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g"
+      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g"
     >
       <div>
         divider
@@ -21,15 +21,15 @@ exports[`<Inline /> should match snapshot for custom element dividers 1`] = `
     </div>
   </div>
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_display_flex__7o6k06fq useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_nowrap__7o6k06h7"
+    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
   >
     <span
-      class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06fh useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ii useTextStyles_fontWeight_normal__w6to7io useTextStyles_sizes_4__w6to7i4"
+      class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfh useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
     >
       B
     </span>
     <div
-      class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g"
+      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g"
     >
       <div>
         divider
@@ -37,10 +37,10 @@ exports[`<Inline /> should match snapshot for custom element dividers 1`] = `
     </div>
   </div>
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_display_flex__7o6k06fq useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_nowrap__7o6k06h7"
+    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
   >
     <span
-      class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06fh useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ii useTextStyles_fontWeight_normal__w6to7io useTextStyles_sizes_4__w6to7i4"
+      class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfh useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
     >
       C
     </span>
@@ -50,49 +50,49 @@ exports[`<Inline /> should match snapshot for custom element dividers 1`] = `
 
 exports[`<Inline /> should match snapshot for default dividers 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fq useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_wrap__7o6k06h6 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y44"
+  class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_position_relative__3xgq1lfg useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_wrap__3xgq1lh6 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_display_flex__7o6k06fq useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_nowrap__7o6k06h7"
+    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
   >
     <span
-      class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06fh useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ii useTextStyles_fontWeight_normal__w6to7io useTextStyles_sizes_4__w6to7i4"
+      class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfh useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
     >
       A
     </span>
     <div
-      class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g"
+      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g"
     >
       <span
-        class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06fh useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ii useTextStyles_fontWeight_normal__w6to7io useTextStyles_sizes_4__w6to7i4"
+        class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfh useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
       >
         •
       </span>
     </div>
   </div>
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_display_flex__7o6k06fq useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_nowrap__7o6k06h7"
+    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
   >
     <span
-      class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06fh useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ii useTextStyles_fontWeight_normal__w6to7io useTextStyles_sizes_4__w6to7i4"
+      class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfh useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
     >
       B
     </span>
     <div
-      class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g"
+      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g"
     >
       <span
-        class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06fh useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ii useTextStyles_fontWeight_normal__w6to7io useTextStyles_sizes_4__w6to7i4"
+        class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfh useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
       >
         •
       </span>
     </div>
   </div>
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_display_flex__7o6k06fq useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_nowrap__7o6k06h7"
+    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
   >
     <span
-      class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06fh useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ii useTextStyles_fontWeight_normal__w6to7io useTextStyles_sizes_4__w6to7i4"
+      class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfh useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
     >
       C
     </span>
@@ -102,31 +102,31 @@ exports[`<Inline /> should match snapshot for default dividers 1`] = `
 
 exports[`<Inline /> should match snapshot for no dividers 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fq useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_wrap__7o6k06h6 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y44 useNegativeMarginLeft_makeResponsiveStyle_key_bp__18e9yxq4"
+  class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_position_relative__3xgq1lfg useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_wrap__3xgq1lh6 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm24"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_flex__7o6k06fq useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_nowrap__7o6k06h7"
+    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
   >
     <span
-      class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06fh useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ii useTextStyles_fontWeight_normal__w6to7io useTextStyles_sizes_4__w6to7i4"
+      class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfh useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
     >
       A
     </span>
   </div>
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_flex__7o6k06fq useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_nowrap__7o6k06h7"
+    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
   >
     <span
-      class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06fh useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ii useTextStyles_fontWeight_normal__w6to7io useTextStyles_sizes_4__w6to7i4"
+      class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfh useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
     >
       B
     </span>
   </div>
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g useBoxStyles_display_flex__7o6k06fq useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_nowrap__7o6k06h7"
+    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
   >
     <span
-      class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06fh useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ii useTextStyles_fontWeight_normal__w6to7io useTextStyles_sizes_4__w6to7i4"
+      class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfh useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
     >
       C
     </span>
@@ -136,18 +136,18 @@ exports[`<Inline /> should match snapshot for no dividers 1`] = `
 
 exports[`<Inline /> should not be able to render components 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_display_flex__7o6k06fq useBoxStyles_position_relative__7o6k06fg useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_wrap__7o6k06h6 useNegativeMarginTop_makeResponsiveStyle_key_bp__7pu7y44"
+  class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_position_relative__3xgq1lfg useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_wrap__3xgq1lh6 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4"
 >
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_display_flex__7o6k06fq useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_nowrap__7o6k06h7"
+    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
   >
     <span
-      class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06fh useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ii useTextStyles_fontWeight_normal__w6to7io useTextStyles_sizes_4__w6to7i4"
+      class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfh useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
     >
       A
     </span>
     <div
-      class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k0618 useBoxStyles_makeResponsiveStyle_key_bp__7o6k063g"
+      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g"
     >
       <div>
         divider component from test
@@ -155,10 +155,10 @@ exports[`<Inline /> should not be able to render components 1`] = `
     </div>
   </div>
   <div
-    class="reset_block__6swfds3 useBoxStyles_makeResponsiveStyle_key_bp__7o6k064 useBoxStyles_display_flex__7o6k06fq useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gf useBoxStyles_makeResponsiveStyle_key_bp__7o6k06gn useBoxStyles_flexWrap_nowrap__7o6k06h7"
+    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
   >
     <span
-      class="reset_inlineText__6swfds2 useBoxStyles_textAlign_left__7o6k06fh useTextStyles_root__w6to7i0 reset_inlineText__6swfds2 useTextStyles_colours_neutral__w6to7ii useTextStyles_fontWeight_normal__w6to7io useTextStyles_sizes_4__w6to7i4"
+      class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfh useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
     >
       B
     </span>

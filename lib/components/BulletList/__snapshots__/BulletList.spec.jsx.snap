@@ -2,6 +2,6 @@
 
 exports[`<BulletList /> should match the snapshot 1`] = `
 <ul
-  class="reset_list__6swfds4 BulletList_root__1xhyplh0 BulletList_firstOccurrence__1xhyplh1"
+  class="reset_list__1oah0224 BulletList_root__4koeg0 BulletList_firstOccurrence__4koeg1"
 />
 `;

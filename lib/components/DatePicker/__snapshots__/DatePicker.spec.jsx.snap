@@ -2,21 +2,21 @@
 
 exports[`<DatePicker /> should match snapshot without label 1`] = `
 <div
-  class="reset_block__6swfds3 useBoxStyles_position_relative__7o6k06fg useBoxStyles_overflow_hidden__7o6k06fk"
+  class="reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfg useBoxStyles_overflow_hidden__3xgq1lfk"
 >
   <input
-    class="reset_trimmedBlockElement__6swfds5 reset_appearance__6swfds0 reset_input__6swfds8 useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd useBoxStyles_position_absolute__7o6k06fe DatePicker_input__1jp01bq0"
+    class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd useBoxStyles_position_absolute__3xgq1lfe DatePicker_input__1j3uugj0"
     type="date"
   />
   <div
-    class="reset_block__6swfds3 DatePicker_contents_default__1jp01bq1"
+    class="reset_block__1oah0223 DatePicker_contents_default__1j3uugj1"
   >
     <i
-      class="useBoxStyles_display_block__7o6k06fp Icon_makeResponsiveStyle_key_bp__14sz1q64"
+      class="useBoxStyles_display_block__3xgq1lfp Icon_makeResponsiveStyle_key_bp__1gy3ire4"
       role="presentation"
     >
       <svg
-        class="useBoxStyles_display_block__7o6k06fp useBoxStyles_width_full__7o6k06fb useBoxStyles_height_full__7o6k06fd"
+        class="useBoxStyles_display_block__3xgq1lfp useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd"
         fill="currentColor"
         focusable="false"
         viewBox="0 0 24 24"
