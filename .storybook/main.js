@@ -17,7 +17,7 @@ const config = {
 		options: {},
 	},
 	typescript: {
-		reactDocgen: 'react-docgen',
+		reactDocgen: 'react-docgen-typescript',
 	},
 };
 export default config;

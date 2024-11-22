@@ -92,12 +92,14 @@ export const boxArgTypes: Partial<ArgTypes<ComponentProps<typeof Box>>> = {
 	},
 	flexShrink: {
 		options: {
+			// @ts-expect-error TODO: revisit argTypes options with latest SB types
 			default: undefined,
 			'1': '1',
 		},
 	},
 	pointerEvents: {
 		options: {
+			// @ts-expect-error TODO: revist argTypes options with latest SB types
 			default: undefined,
 			none: 'none',
 		},
