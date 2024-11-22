@@ -4,6 +4,6 @@
 
 tsconfig.*
 **/**.snap
-**/stories.tsx
+**/*.stories.tsx
 **/*.spec.jsx
 **/*.spec.js

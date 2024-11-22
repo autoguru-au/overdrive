@@ -7,6 +7,6 @@
 		"incremental": true,
 		"composite": true
 	},
-	"include": ["../lib/**/*.ts", "../lib/**/*.tsx", "../lib/**/stories.tsx"],
+	"include": ["../lib/**/*.ts", "../lib/**/*.tsx", "../lib/**/*.stories.tsx"],
 	"exclude": []
 }

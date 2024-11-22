@@ -2,13 +2,15 @@ import { render } from '@testing-library/react';
 import * as React from 'react';
 
 import { SliderProgress } from './';
-import { action } from '@storybook/addon-actions';
+// import { action } from '@storybook/addon-actions';
 
 const standardProps = {
 	paused: false,
 	totalCount: 3,
 	activeIndex: 1,
 	duration: '1s',
+	// Jest test harness may need additional config for Storybook 8 or dependencies may be stale. Calling `action` sees error:
+	// "Cannot find module 'storybook/internal/preview-api' from 'node_modules/@storybook/addon-actions/dist/index.js'"
 	// onRequestNext: () => action('onRequestNext'),
 };
 
