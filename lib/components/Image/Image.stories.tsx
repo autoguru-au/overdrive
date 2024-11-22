@@ -34,25 +34,29 @@ const sizeOptions: Array<ComponentProps<typeof Image>['imageWidth']> =
 const qualityOptions: Array<ComponentProps<typeof Image>['quality']> =
 	isChromatic() ? ['70'] : [1, 20, 40, 60, 80, 100];
 export default {
-	title: 'Foundation/Image/Image',
-	component: Image, //Breaks the docs when enabled!
+	title: 'Foundation/Image',
+	component: Image,
+	args: {
+		imageWidth: 8,
+		width: 8,
+		quality: void 0,
+		eager: false,
+		unoptimised: false,
+	},
 	argTypes: {
 		imageWidth: {
 			options: [...sizeOptions, 'full'],
-			defaultValue: 8,
 			control: {
 				type: 'select',
 			},
 		},
 		width: {
 			options: [...sizeOptions, 'full'],
-			defaultValue: 8,
 			control: {
 				type: 'select',
 			},
 		},
 		quality: {
-			defaultValue: void 0,
 			control: {
 				type: 'number',
 				min: 1,
@@ -60,13 +64,11 @@ export default {
 			},
 		},
 		eager: {
-			defaultValue: false,
 			control: {
 				type: 'boolean',
 			},
 		},
 		unoptimised: {
-			defaultValue: false,
 			control: {
 				type: 'boolean',
 			},

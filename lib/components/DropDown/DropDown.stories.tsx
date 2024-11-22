@@ -25,16 +25,20 @@ export default {
 					display: 'grid',
 					gridGap: '12px',
 					gridAutoFlow: 'row dense',
-				}}
-			>
+				}}>
 				{story()}
 			</div>
 		),
 	],
+	args: {
+		label: 'Attachment',
+		children: undefined,
+		size: 'medium',
+		variant: 'primary',
+	},
 	argTypes: {
 		size: {
 			options: ['small', 'medium'],
-			defaultValue: 'medium',
 			control: {
 				type: 'select',
 			},
@@ -48,7 +52,6 @@ export default {
 				'warning',
 				'danger',
 			] as ComponentProps<typeof Button>['variant'][],
-			defaultValue: 'primary',
 			control: {
 				type: 'select',
 			},
@@ -65,8 +68,7 @@ const Template: StoryFn<typeof DropDown> = (args) => (
 		}}
 		display="flex"
 		alignItems="center"
-		justifyContent="center"
-	>
+		justifyContent="center">
 		<DropDown {...args} />
 	</Box>
 );
