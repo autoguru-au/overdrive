@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -84,9 +84,9 @@ export default {
 			</div>
 		),
 	],
-} as ComponentMeta<typeof DividerLine>;
+} satisfies Meta<typeof DividerLine>;
 
-const template: ComponentStory<typeof DividerLine> = (args) => (
+const template: StoryFn<typeof DividerLine> = (args) => (
 	<Box>
 		<Heading is="h2" size="7">
 			Title 1
@@ -97,7 +97,7 @@ const template: ComponentStory<typeof DividerLine> = (args) => (
 		</Heading>
 	</Box>
 );
-const verticalTemplate: ComponentStory<typeof DividerLine> = (args) => (
+const verticalTemplate: StoryFn<typeof DividerLine> = (args) => (
 	<Inline alignY="stretch">
 		<Heading is="h2" size="7">
 			Title 1
@@ -108,7 +108,7 @@ const verticalTemplate: ComponentStory<typeof DividerLine> = (args) => (
 		</Heading>
 	</Inline>
 );
-const templateAllColours: ComponentStory<typeof DividerLine> = (args) => (
+const templateAllColours: StoryFn<typeof DividerLine> = (args) => (
 	<Box>
 		{colours.map((colour) => (
 			<>

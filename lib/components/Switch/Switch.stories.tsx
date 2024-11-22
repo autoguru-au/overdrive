@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 
 import { Switch } from '.';
@@ -7,11 +7,9 @@ import { Switch } from '.';
 export default {
 	title: 'Components/Switch',
 	component: Switch,
-} as ComponentMeta<typeof Switch>;
+} satisfies Meta<typeof Switch>;
 
-const Template: ComponentStory<typeof Switch> = ({ ...args }) => (
-	<Switch {...args} />
-);
+const Template: StoryFn<typeof Switch> = ({ ...args }) => <Switch {...args} />;
 
 const standardProps = {
 	isDisabled: false,
@@ -20,8 +18,7 @@ const standardProps = {
 	className: 'toggleButton-class',
 };
 
-export const untoggled: ComponentStory<typeof Switch> =
-	Template.bind(standardProps);
+export const untoggled: StoryFn<typeof Switch> = Template.bind(standardProps);
 untoggled.args = standardProps;
 
 const untoggledDisabledProps = {
@@ -29,7 +26,7 @@ const untoggledDisabledProps = {
 	isDisabled: true,
 };
 
-export const untoggledDisabled: ComponentStory<typeof Switch> = Template.bind(
+export const untoggledDisabled: StoryFn<typeof Switch> = Template.bind(
 	untoggledDisabledProps,
 );
 untoggledDisabled.args = untoggledDisabledProps;
@@ -39,8 +36,7 @@ const toggledProps = {
 	isSelected: true,
 };
 
-export const toggled: ComponentStory<typeof Switch> =
-	Template.bind(toggledProps);
+export const toggled: StoryFn<typeof Switch> = Template.bind(toggledProps);
 toggled.args = toggledProps;
 
 const toggledDisabledProps = {
@@ -49,6 +45,6 @@ const toggledDisabledProps = {
 	isDisabled: true,
 };
 
-export const toggledDisabled: ComponentStory<typeof Switch> =
+export const toggledDisabled: StoryFn<typeof Switch> =
 	Template.bind(toggledDisabledProps);
 toggledDisabled.args = toggledDisabledProps;

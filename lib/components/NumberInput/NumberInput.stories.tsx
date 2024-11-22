@@ -10,7 +10,7 @@ import {
 	StarIcon,
 } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
-import { ArgTypes, ComponentMeta, ComponentStory } from '@storybook/react';
+import { ArgTypes, Meta, StoryFn } from '@storybook/react';
 import isChromatic from 'chromatic/isChromatic';
 import * as React from 'react';
 import { ComponentProps } from 'react';
@@ -19,7 +19,7 @@ import { DateInput } from '../DateInput';
 
 import { NumberInput } from '.';
 
-const meta: ComponentMeta<typeof NumberInput> = {
+const meta: Meta<typeof NumberInput> = {
 	title: 'Components/Inputs/Number',
 	component: NumberInput,
 	parameters: {
@@ -89,7 +89,7 @@ const argTypes: ArgTypes = {
 	},
 };
 
-const Template: ComponentStory<typeof NumberInput> = ({
+const Template: StoryFn<typeof NumberInput> = ({
 	value: initialValue,
 	onChange: incomingOnChange,
 	...args

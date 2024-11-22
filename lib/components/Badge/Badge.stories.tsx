@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -37,10 +37,10 @@ export default {
 			</div>
 		),
 	],
-} as ComponentMeta<typeof Badge>;
+} satisfies Meta<typeof Badge>;
 
-const template: ComponentStory<typeof Badge> = (args) => <Badge {...args} />;
-const templateAllColours: ComponentStory<typeof Badge> = (args) => (
+const template: StoryFn<typeof Badge> = (args) => <Badge {...args} />;
+const templateAllColours: StoryFn<typeof Badge> = (args) => (
 	<>
 		{colours.map((colour) => (
 			<Badge key={colour} {...args} colour={colour} />

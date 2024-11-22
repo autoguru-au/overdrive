@@ -7,7 +7,7 @@ import {
 	PlusIcon,
 	StarIcon,
 } from '@autoguru/icons';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta as ComponentMeta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -33,9 +33,9 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof Meta>;
+} satisfies ComponentMeta<typeof Meta>;
 
-const Template: ComponentStory<typeof Meta> = (args) => <Meta {...args} />;
+const Template: StoryFn<typeof Meta> = (args) => <Meta {...args} />;
 
 const standardProps: ComponentProps<typeof Meta> = {
 	variant: 'primary',

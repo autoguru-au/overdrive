@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -14,9 +14,9 @@ export default {
 			<div style={{ maxWidth: 300, width: '100%' }}>{story()}</div>
 		),
 	],
-} as ComponentMeta<typeof Actions>;
+} satisfies Meta<typeof Actions>;
 
-const template: ComponentStory<typeof Actions> = (args) => (
+const template: StoryFn<typeof Actions> = (args) => (
 	<Actions {...args}>
 		<Button>Login</Button>
 		<Button variant="primary">Sign up</Button>
@@ -38,10 +38,8 @@ const noWrapProps: typeof standardProps = {
 	noWrap: true,
 };
 
-export const standard: ComponentStory<typeof Actions> =
-	template.bind(standardProps);
-export const noWrap: ComponentStory<typeof Actions> =
-	template.bind(noWrapProps);
+export const standard: StoryFn<typeof Actions> = template.bind(standardProps);
+export const noWrap: StoryFn<typeof Actions> = template.bind(noWrapProps);
 
 standard.args = standardProps;
 noWrap.args = noWrapProps;

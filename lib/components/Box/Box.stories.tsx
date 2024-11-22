@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -15,9 +15,9 @@ export default {
 		),
 	],
 	argTypes: boxArgTypes,
-} as ComponentMeta<typeof Box>;
+} satisfies Meta<typeof Box>;
 
-const template: ComponentStory<typeof Box> = (args) => (
+const template: StoryFn<typeof Box> = (args) => (
 	<>
 		<Box {...args}>Box 1</Box>
 		<Box {...args}>Box 2</Box>

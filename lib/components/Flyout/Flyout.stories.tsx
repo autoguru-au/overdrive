@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps, useRef } from 'react';
 
@@ -29,7 +29,7 @@ export default {
 		},
 	},
 	parameters: { chromatic: {} },
-} as ComponentMeta<typeof Flyout>;
+} satisfies Meta<typeof Flyout>;
 
 const sharedProps: Omit<ComponentProps<typeof Flyout>, 'triggerRef'> = {
 	alignment: EAlignment.BOTTOM_LEFT,
@@ -37,7 +37,7 @@ const sharedProps: Omit<ComponentProps<typeof Flyout>, 'triggerRef'> = {
 	triggerOffset: 12,
 };
 
-const Template: ComponentStory<typeof Flyout> = ({ ...args }) => {
+const Template: StoryFn<typeof Flyout> = ({ ...args }) => {
 	const triggerRef = useRef<HTMLButtonElement>(null);
 	return (
 		<Box

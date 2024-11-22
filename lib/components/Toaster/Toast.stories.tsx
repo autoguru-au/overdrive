@@ -44,21 +44,23 @@ export const Standard = () => {
 	);
 };
 
-export const InsideModal = () => {
-	const toast = useToast();
+export const InsideModal = {
+	render: () => {
+		const toast = useToast();
 
-	return (
-		<StandardModal isOpen title="Test inside modal">
-			<div style={{ padding: 20 }}>
-				<Button onClick={() => toast.success('Successful message!')}>
-					Success
-				</Button>
-			</div>
-		</StandardModal>
-	);
-};
+		return (
+			<StandardModal isOpen title="Test inside modal">
+				<div style={{ padding: 20 }}>
+					<Button
+						onClick={() => toast.success('Successful message!')}
+					>
+						Success
+					</Button>
+				</div>
+			</StandardModal>
+		);
+	},
 
-InsideModal.story = {
 	parameters: {
 		chromatic: { disable: true },
 	},

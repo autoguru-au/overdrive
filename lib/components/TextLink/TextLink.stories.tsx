@@ -1,5 +1,5 @@
 import { ArrowRightIcon, ChevronRightIcon } from '@autoguru/icons';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -92,15 +92,15 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof TextLink>;
+} satisfies Meta<typeof TextLink>;
 
-const Template: ComponentStory<typeof TextLink> = (args) => (
+const Template: StoryFn<typeof TextLink> = (args) => (
 	<Box>
 		<TextLink {...args}>Hello</TextLink>
 	</Box>
 );
 
-const InsideParagraphTemplate: ComponentStory<typeof TextLink> = (args) => (
+const InsideParagraphTemplate: StoryFn<typeof TextLink> = (args) => (
 	<Text is="p">
 		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad,{' '}
 		<TextLink {...args}>Hello</TextLink> autem consectetur consequuntur eius
@@ -116,11 +116,10 @@ const standardProps: Omit<ComponentProps<typeof TextLink>, 'children'> = {
 	fontWeight: 'semiBold',
 };
 
-export const standard: ComponentStory<typeof TextLink> =
-	Template.bind(standardProps);
+export const standard: StoryFn<typeof TextLink> = Template.bind(standardProps);
 standard.args = standardProps;
 
-export const insideParagraph: ComponentStory<typeof TextLink> =
+export const insideParagraph: StoryFn<typeof TextLink> =
 	InsideParagraphTemplate.bind(standardProps);
 insideParagraph.args = standardProps;
 

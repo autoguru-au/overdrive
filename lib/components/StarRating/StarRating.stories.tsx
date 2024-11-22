@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 
 import { EStarRatingSize, StarRating } from '.';
@@ -22,11 +22,9 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof StarRating>;
+} satisfies Meta<typeof StarRating>;
 
-const Template: ComponentStory<typeof StarRating> = (args) => (
-	<StarRating {...args} />
-);
+const Template: StoryFn<typeof StarRating> = (args) => <StarRating {...args} />;
 
 const standardProps = {
 	rating: 2.7,

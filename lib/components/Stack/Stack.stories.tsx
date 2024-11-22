@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -34,9 +34,9 @@ export default {
 		width: boxArgTypes.width,
 		alignItems: boxArgTypes.alignItems,
 	},
-} as ComponentMeta<typeof Stack>;
+} satisfies Meta<typeof Stack>;
 
-const Template: ComponentStory<typeof Stack> = (args) => (
+const Template: StoryFn<typeof Stack> = (args) => (
 	<Stack {...args}>
 		<Text>Line 1</Text>
 		<Text>Line 2</Text>

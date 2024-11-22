@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -29,9 +29,9 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof HorizontalAutoScroller>;
+} satisfies Meta<typeof HorizontalAutoScroller>;
 
-const template: ComponentStory<typeof HorizontalAutoScroller> = ({
+const template: StoryFn<typeof HorizontalAutoScroller> = ({
 	childrenNum,
 	...args
 }) => (

@@ -10,7 +10,7 @@ import {
 	StarIcon,
 } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
-import { ArgTypes, ComponentMeta, ComponentStory } from '@storybook/react';
+import { ArgTypes, Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -29,7 +29,7 @@ export default {
 	title: 'Components/Inputs/Select',
 	component: SelectInput,
 	parameters: { chromatic: {} },
-} as ComponentMeta<typeof SelectInput>;
+} satisfies Meta<typeof SelectInput>;
 
 const defaultValue = valueOptions[4];
 const defaultPlaceholder = 'What is the make of your car?';
@@ -83,7 +83,7 @@ const argTypes: ArgTypes = {
 	},
 };
 
-const Template: ComponentStory<typeof SelectInput> = (args) => (
+const Template: StoryFn<typeof SelectInput> = (args) => (
 	<SelectInput {...args}>
 		<option disabled>Select an option</option>
 		{selectOptions}

@@ -1,6 +1,6 @@
 import { AccountBoxIcon } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -31,9 +31,9 @@ export default {
 			options: ['button', 'a'],
 		},
 	},
-} as ComponentMeta<typeof Button>;
+} satisfies Meta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => (
+const Template: StoryFn<typeof Button> = (args) => (
 	<div
 		style={{
 			width: 200,
@@ -43,7 +43,7 @@ const Template: ComponentStory<typeof Button> = (args) => (
 	</div>
 );
 
-const TemplateMulti: ComponentStory<typeof Button> = (args) => (
+const TemplateMulti: StoryFn<typeof Button> = (args) => (
 	<>
 		<Columns space="3">
 			<Column>

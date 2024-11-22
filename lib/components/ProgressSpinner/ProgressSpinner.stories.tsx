@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -24,13 +24,13 @@ export default {
 		),
 	],
 	parameters: { chromatic: { disable: true } },
-} as ComponentMeta<typeof ProgressSpinner>;
+} satisfies Meta<typeof ProgressSpinner>;
 
 export const Standard = () => (
 	<ProgressSpinner colour="primary" size="medium" />
 );
 
-const Template: ComponentStory<typeof ProgressSpinner> = (args) => (
+const Template: StoryFn<typeof ProgressSpinner> = (args) => (
 	<ProgressSpinner {...args} />
 );
 const standardProps: ComponentProps<typeof ProgressSpinner> = {};

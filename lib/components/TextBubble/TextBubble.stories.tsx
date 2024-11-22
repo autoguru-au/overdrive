@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -7,11 +7,9 @@ import { TextBubble } from '.';
 export default {
 	title: 'Foundation/Typography/TextBubble',
 	component: TextBubble,
-} as ComponentMeta<typeof TextBubble>;
+} satisfies Meta<typeof TextBubble>;
 
-const template: ComponentStory<typeof TextBubble> = (args) => (
-	<TextBubble {...args} />
-);
+const template: StoryFn<typeof TextBubble> = (args) => <TextBubble {...args} />;
 
 const standardProps: Omit<ComponentProps<typeof TextBubble>, 'children'> = {
 	label: 'OK',

@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import isChromatic from 'chromatic/isChromatic';
 import * as React from 'react';
 import { useRef } from 'react';
@@ -31,9 +31,9 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof Positioner>;
+} satisfies Meta<typeof Positioner>;
 
-const Template: ComponentStory<typeof Positioner> = (args) => {
+const Template: StoryFn<typeof Positioner> = (args) => {
 	const triggerRef = useRef(null);
 
 	return (
@@ -60,7 +60,7 @@ const Template: ComponentStory<typeof Positioner> = (args) => {
 	);
 };
 
-const WithScrollTemplate: ComponentStory<typeof Positioner> = (args) => {
+const WithScrollTemplate: StoryFn<typeof Positioner> = (args) => {
 	const triggerRef = useRef(null);
 
 	return (
@@ -113,8 +113,7 @@ const standardProps = {
 	triggerOffset: 12,
 };
 
-export const closed: ComponentStory<typeof Positioner> =
-	Template.bind(standardProps);
+export const closed: StoryFn<typeof Positioner> = Template.bind(standardProps);
 closed.args = standardProps;
 
 const openProps = {
@@ -122,7 +121,7 @@ const openProps = {
 	isOpen: true,
 };
 
-export const open: ComponentStory<typeof Positioner> = Template.bind(openProps);
+export const open: StoryFn<typeof Positioner> = Template.bind(openProps);
 open.args = openProps;
 
 const illustrateAScrollProps = {
@@ -130,7 +129,7 @@ const illustrateAScrollProps = {
 	isOpen: true,
 };
 
-export const illustrateAScroll: ComponentStory<typeof Positioner> =
+export const illustrateAScroll: StoryFn<typeof Positioner> =
 	WithScrollTemplate.bind(illustrateAScrollProps);
 illustrateAScroll.args = openProps;
 illustrateAScroll.parameters = {

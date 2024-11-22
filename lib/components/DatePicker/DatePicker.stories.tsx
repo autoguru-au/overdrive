@@ -10,7 +10,7 @@ import {
 	PlusIcon,
 	StarIcon,
 } from '@autoguru/icons';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -51,9 +51,9 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof DatePicker>;
+} satisfies Meta<typeof DatePicker>;
 
-const Template: ComponentStory<typeof DatePicker> = (args) => (
+const Template: StoryFn<typeof DatePicker> = (args) => (
 	<Box display="flex">
 		<DatePicker {...args} />
 	</Box>

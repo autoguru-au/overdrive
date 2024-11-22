@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import isChromatic from 'chromatic';
 import * as React from 'react';
 import { ChangeEvent, ComponentProps, useState } from 'react';
@@ -17,9 +17,9 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof EditableText>;
+} satisfies Meta<typeof EditableText>;
 
-const template: ComponentStory<typeof EditableText> = ({
+const template: StoryFn<typeof EditableText> = ({
 	onChange: incomingOnChange,
 	value: incomingValue,
 	...args

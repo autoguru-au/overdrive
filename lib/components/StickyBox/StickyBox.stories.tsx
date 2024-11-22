@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -12,10 +12,10 @@ import { StickyBox } from '.';
 export default {
 	title: 'Foundation/Layout/StickyBox',
 	component: StickyBox,
-} as ComponentMeta<typeof StickyBox>;
+} satisfies Meta<typeof StickyBox>;
 
 type Props = ComponentProps<typeof StickyBox>;
-const Template: ComponentStory<typeof StickyBox> = (args) => (
+const Template: StoryFn<typeof StickyBox> = (args) => (
 	<FillHeightBox
 		rounded
 		includeMobile

@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -14,9 +14,9 @@ export default {
 	argTypes: {
 		backgroundColour: boxArgTypes.backgroundColour,
 	},
-} as ComponentMeta<typeof SliderProgress>;
+} satisfies Meta<typeof SliderProgress>;
 
-const template: ComponentStory<typeof SliderProgress> = (args) => (
+const template: StoryFn<typeof SliderProgress> = (args) => (
 	<Box paddingY="8" paddingX="3" backgroundColour="gray800">
 		<SliderProgress {...args} />
 	</Box>

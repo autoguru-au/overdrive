@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -41,8 +41,8 @@ export default {
 		},
 		...boxArgTypes,
 	},
-} as ComponentMeta<typeof Columns>;
-const Template: ComponentStory<typeof Columns> = (args) => (
+} satisfies Meta<typeof Columns>;
+const Template: StoryFn<typeof Columns> = (args) => (
 	<Columns {...args}>
 		<Column width={['full', '1/3', '1/5']} order={[0, 2]} is="section">
 			<Box
@@ -95,7 +95,7 @@ const Template: ComponentStory<typeof Columns> = (args) => (
 	</Columns>
 );
 
-const TemplateColumn: ComponentStory<typeof Column> = (args) => (
+const TemplateColumn: StoryFn<typeof Column> = (args) => (
 	<Columns {...standardProps}>
 		<Column {...args}>
 			<Box

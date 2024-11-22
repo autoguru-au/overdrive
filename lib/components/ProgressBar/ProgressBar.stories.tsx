@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -9,13 +9,13 @@ import { ProgressBar } from '.';
 export default {
 	title: 'Components/Progress/ProgressBar',
 	component: ProgressBar,
-} as ComponentMeta<typeof ProgressBar>;
+} satisfies Meta<typeof ProgressBar>;
 
-const Template: ComponentStory<typeof ProgressBar> = (args) => (
+const Template: StoryFn<typeof ProgressBar> = (args) => (
 	<ProgressBar {...args} />
 );
 
-const AllColoursTemplate: ComponentStory<typeof ProgressBar> = (args) => (
+const AllColoursTemplate: StoryFn<typeof ProgressBar> = (args) => (
 	<Stack space="2">
 		<ProgressBar value={0.5} colour="green" {...args} />
 		<ProgressBar value={0.4} colour="blue" {...args} />

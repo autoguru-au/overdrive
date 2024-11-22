@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -7,9 +7,9 @@ import { ProgressBarGroup } from '.';
 export default {
 	title: 'Components/Progress/ProgressBarGroup',
 	component: ProgressBarGroup,
-} as ComponentMeta<typeof ProgressBarGroup>;
+} satisfies Meta<typeof ProgressBarGroup>;
 
-const Template: ComponentStory<typeof ProgressBarGroup> = (args) => (
+const Template: StoryFn<typeof ProgressBarGroup> = (args) => (
 	<ProgressBarGroup {...args} />
 );
 const values = [48, 16, 24, 0, 3];

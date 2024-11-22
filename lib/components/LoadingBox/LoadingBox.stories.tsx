@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -18,11 +18,9 @@ export default {
 	],
 	parameters: { chromatic: { disable: true } },
 	argTypes: boxArgTypes,
-} as ComponentMeta<typeof LoadingBox>;
+} satisfies Meta<typeof LoadingBox>;
 
-const Template: ComponentStory<typeof LoadingBox> = (args) => (
-	<LoadingBox {...args} />
-);
+const Template: StoryFn<typeof LoadingBox> = (args) => <LoadingBox {...args} />;
 
 const standardProps: ComponentProps<typeof LoadingBox> = {};
 export const standard = Template.bind(standardProps);

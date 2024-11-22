@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps, useState } from 'react';
 
@@ -14,12 +14,12 @@ import { Table, TableCell, TableHeadCell, TableRow, TableRowGroup } from '.';
 
 export default {
 	title: 'Components/Table',
-} as ComponentMeta<typeof Table>;
+} satisfies Meta<typeof Table>;
 
 const sortFlow = ['asc', 'desc', 'none'];
 const sortFlowRingLookup = arrayRingLookup(sortFlow);
 
-const Template: ComponentStory<typeof Table> = (args) => {
+const Template: StoryFn<typeof Table> = (args) => {
 	const [sort, setsort] = useState<Record<string, 'asc' | 'desc' | 'none'>>({
 		price: 'asc',
 		status: 'desc',

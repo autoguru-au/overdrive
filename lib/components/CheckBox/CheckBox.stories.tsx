@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -17,7 +17,7 @@ export default {
 			<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
 		),
 	],
-} as ComponentMeta<typeof CheckBox>;
+} satisfies Meta<typeof CheckBox>;
 
 const listData: Array<{ label: string; value: string }> = [
 	{
@@ -42,33 +42,35 @@ const listData: Array<{ label: string; value: string }> = [
 	},
 ];
 
-export const list = ({ disabled, ...args }) => (
-	<>
-		{listData.map((item: { label: string; value: string }) => {
-			return (
-				<CheckBox
-					key={item.value}
-					disabled={disabled}
-					children={item.label}
-					value={item.value}
-					name={`want-${item.value}`}
-					checked={args[item.value]}
-				/>
-			);
-		})}
-	</>
-);
-list.args = {
-	disabled: false,
-	avocado: true,
-	blueberries: true,
-	cherries: false,
-	coconut: true,
-	strawberries: false,
+export const list = {
+	render: ({ disabled, ...args }) => (
+		<>
+			{listData.map((item: { label: string; value: string }) => {
+				return (
+					<CheckBox
+						key={item.value}
+						disabled={disabled}
+						children={item.label}
+						value={item.value}
+						name={`want-${item.value}`}
+						checked={args[item.value]}
+					/>
+				);
+			})}
+		</>
+	),
+
+	args: {
+		disabled: false,
+		avocado: true,
+		blueberries: true,
+		cherries: false,
+		coconut: true,
+		strawberries: false,
+	},
 };
-const Template: ComponentStory<typeof CheckBox> = (args) => (
-	<CheckBox {...args} />
-);
+
+const Template: StoryFn<typeof CheckBox> = (args) => <CheckBox {...args} />;
 
 const uncheckedProps: ComponentProps<typeof CheckBox> = {
 	checked: false,

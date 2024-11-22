@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -26,15 +26,15 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof Portal>;
+} satisfies Meta<typeof Portal>;
 
-const StandardTemplate: ComponentStory<typeof Portal> = (...args) => (
+const StandardTemplate: StoryFn<typeof Portal> = (...args) => (
 	<Portal {...args}>
 		<Text colour="primary">Im in a portal at the root.</Text>
 	</Portal>
 );
 
-const NestedTemplate: ComponentStory<typeof Portal> = (...args) => (
+const NestedTemplate: StoryFn<typeof Portal> = (...args) => (
 	<Portal {...args}>
 		<Stack space="5">
 			<Heading is="h3" colour="information">

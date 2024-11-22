@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -20,9 +20,9 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof OutsideClick>;
+} satisfies Meta<typeof OutsideClick>;
 
-const Template: ComponentStory<typeof OutsideClick> = (args) => (
+const Template: StoryFn<typeof OutsideClick> = (args) => (
 	<OutsideClick {...args}>
 		<Button>Click anywhere but here</Button>
 	</OutsideClick>

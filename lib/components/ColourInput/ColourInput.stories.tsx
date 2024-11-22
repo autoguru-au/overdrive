@@ -10,7 +10,7 @@ import {
 	StarIcon,
 } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
-import { ArgTypes, ComponentMeta, ComponentStory } from '@storybook/react';
+import { ArgTypes, Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -22,7 +22,7 @@ export default {
 	title: 'Components/Inputs/Colour',
 	component: ColourInput,
 	parameters: { chromatic: {} },
-} as ComponentMeta<typeof ColourInput>;
+} satisfies Meta<typeof ColourInput>;
 
 const defaultColour = '#ec4040';
 const iconOptions = {
@@ -71,7 +71,7 @@ const argTypes: Partial<ArgTypes<ComponentProps<typeof ColourInput>>> = {
 	},
 };
 
-const Template: ComponentStory<typeof ColourInput> = (args) => (
+const Template: StoryFn<typeof ColourInput> = (args) => (
 	<ColourInput {...args} />
 );
 

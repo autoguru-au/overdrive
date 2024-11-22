@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -24,7 +24,7 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof IntentStripe>;
+} satisfies Meta<typeof IntentStripe>;
 
 const MyStripe = (args) => (
 	<Box
@@ -39,7 +39,7 @@ const MyStripe = (args) => (
 	</Box>
 );
 
-const template: ComponentStory<typeof IntentStripe> = (args) => (
+const template: StoryFn<typeof IntentStripe> = (args) => (
 	<Box
 		style={{
 			display: 'grid',
@@ -52,7 +52,7 @@ const template: ComponentStory<typeof IntentStripe> = (args) => (
 	</Box>
 );
 
-const templateAllIntents: ComponentStory<typeof IntentStripe> = (args) => (
+const templateAllIntents: StoryFn<typeof IntentStripe> = (args) => (
 	<Box
 		style={{
 			display: 'grid',

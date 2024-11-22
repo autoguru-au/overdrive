@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -14,9 +14,9 @@ export default {
 	parameters: {
 		chromatic: { disable: true },
 	},
-} as ComponentMeta<typeof StandardModal>;
+} satisfies Meta<typeof StandardModal>;
 
-const Template: ComponentStory<typeof StandardModal> = (args) => (
+const Template: StoryFn<typeof StandardModal> = (args) => (
 	<>
 		<StandardModal {...args}>
 			<Box paddingX="4" paddingY="3">

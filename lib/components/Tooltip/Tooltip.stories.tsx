@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -48,9 +48,9 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof Tooltip>;
+} satisfies Meta<typeof Tooltip>;
 
-const Template: ComponentStory<typeof Tooltip> = (args) => (
+const Template: StoryFn<typeof Tooltip> = (args) => (
 	<Tooltip {...args}>
 		<div style={{ display: 'inline' }}>Im the tooltip trigger</div>
 	</Tooltip>
@@ -61,15 +61,14 @@ const standardProps: Omit<ComponentProps<typeof Tooltip>, 'children'> = {
 	closeAfter: null,
 };
 
-export const standard: ComponentStory<typeof Tooltip> =
-	Template.bind(standardProps);
+export const standard: StoryFn<typeof Tooltip> = Template.bind(standardProps);
 standard.args = standardProps;
 
 const withAtuCloseProps: Omit<ComponentProps<typeof Tooltip>, 'children'> = {
 	label: 'I will automatically close after 5 seconds',
 	closeAfter: 5e3,
 };
-export const withAutoClose: ComponentStory<typeof Tooltip> =
+export const withAutoClose: StoryFn<typeof Tooltip> =
 	Template.bind(withAtuCloseProps);
 withAutoClose.args = withAtuCloseProps;
 
@@ -78,7 +77,7 @@ const withLongTextProps: Omit<ComponentProps<typeof Tooltip>, 'children'> = {
 	alignment: EAlignment.BOTTOM,
 };
 
-export const withLongText: ComponentStory<typeof Tooltip> =
+export const withLongText: StoryFn<typeof Tooltip> =
 	Template.bind(withLongTextProps);
 withLongText.args = withLongTextProps;
 
@@ -91,7 +90,7 @@ const withSmallTextSizeProps: Omit<
 	size: 'large',
 };
 
-export const withLargeTextSize: ComponentStory<typeof Tooltip> = Template.bind(
+export const withLargeTextSize: StoryFn<typeof Tooltip> = Template.bind(
 	withSmallTextSizeProps,
 );
 withLargeTextSize.args = withSmallTextSizeProps;
@@ -102,6 +101,6 @@ const withEmptyLabelProps: Omit<ComponentProps<typeof Tooltip>, 'children'> = {
 	size: 'large',
 };
 
-export const withEmptyLabel: ComponentStory<typeof Tooltip> =
+export const withEmptyLabel: StoryFn<typeof Tooltip> =
 	Template.bind(withEmptyLabelProps);
 withEmptyLabel.args = withEmptyLabelProps;

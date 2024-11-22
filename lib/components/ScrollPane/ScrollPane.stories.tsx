@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -12,10 +12,10 @@ import { ScrollPane } from '.';
 export default {
 	title: 'Foundation/Layout/ScrollPane',
 	component: ScrollPane,
-} as ComponentMeta<typeof ScrollPane>;
+} satisfies Meta<typeof ScrollPane>;
 
 type Props = ComponentProps<typeof ScrollPane>;
-const Template: ComponentStory<typeof ScrollPane> = (args) => (
+const Template: StoryFn<typeof ScrollPane> = (args) => (
 	<ScrollPane style={{ maxHeight: '300px' }} {...args}>
 		<StickyBox width="full">
 			<Box

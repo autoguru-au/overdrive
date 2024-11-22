@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 
 import { Text } from '../Text';
@@ -8,9 +8,9 @@ import { OrderedList } from '.';
 export default {
 	title: 'Foundation/List/OrderedList',
 	component: OrderedList,
-} as ComponentMeta<typeof OrderedList>;
+} satisfies Meta<typeof OrderedList>;
 
-const Template: ComponentStory<typeof OrderedList> = (args) => (
+const Template: StoryFn<typeof OrderedList> = (args) => (
 	<OrderedList {...args}>
 		<OrderedList.Item>
 			<Text>Strawberry</Text>
@@ -46,4 +46,6 @@ const Template: ComponentStory<typeof OrderedList> = (args) => (
 	</OrderedList>
 );
 
-export const standard = Template.bind({});
+export const standard = {
+	render: Template,
+};

@@ -11,7 +11,7 @@ import {
 	StarIcon,
 } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -121,9 +121,9 @@ export default {
 		},
 	},
 	parameters: { chromatic: {} },
-} as ComponentMeta<typeof AutoSuggest>;
+} satisfies Meta<typeof AutoSuggest>;
 
-const Template: ComponentStory<typeof AutoSuggest> = (args) => (
+const Template: StoryFn<typeof AutoSuggest> = (args) => (
 	<Stack space="5">
 		<Box paddingTop="8">
 			<AutoSuggest {...args} />

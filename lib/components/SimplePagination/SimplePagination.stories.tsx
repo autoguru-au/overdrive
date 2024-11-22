@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 
 import { Box } from '../Box';
@@ -9,9 +9,9 @@ import { SimplePagination } from '.';
 export default {
 	title: 'Components/Pagination/Simple',
 	component: SimplePagination,
-} as ComponentMeta<typeof SimplePagination>;
+} satisfies Meta<typeof SimplePagination>;
 
-const Template: ComponentStory<typeof SimplePagination> = (args) => (
+const Template: StoryFn<typeof SimplePagination> = (args) => (
 	<Box
 		style={{
 			height: '100vh',
@@ -32,7 +32,7 @@ const standardProps = {
 	onChange: action('onChange'),
 };
 
-export const middlePage: ComponentStory<typeof SimplePagination> =
+export const middlePage: StoryFn<typeof SimplePagination> =
 	Template.bind(standardProps);
 middlePage.args = standardProps;
 
@@ -41,7 +41,7 @@ const firstPageProps = {
 	hasPrevious: false,
 };
 
-export const firstPage: ComponentStory<typeof SimplePagination> =
+export const firstPage: StoryFn<typeof SimplePagination> =
 	Template.bind(firstPageProps);
 firstPage.args = firstPageProps;
 
@@ -50,6 +50,6 @@ const lastPageProps = {
 	hasNext: false,
 };
 
-export const lastPage: ComponentStory<typeof SimplePagination> =
+export const lastPage: StoryFn<typeof SimplePagination> =
 	Template.bind(lastPageProps);
 lastPage.args = lastPageProps;

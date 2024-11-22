@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -26,9 +26,9 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof Alert>;
+} satisfies Meta<typeof Alert>;
 
-const template: ComponentStory<typeof Alert> = (args) => (
+const template: StoryFn<typeof Alert> = (args) => (
 	<div
 		style={{
 			display: 'grid',
@@ -46,7 +46,7 @@ const template: ComponentStory<typeof Alert> = (args) => (
 	</div>
 );
 
-const templateAllIntents: ComponentStory<typeof Alert> = (args) => (
+const templateAllIntents: StoryFn<typeof Alert> = (args) => (
 	<div
 		style={{
 			display: 'grid',

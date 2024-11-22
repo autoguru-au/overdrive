@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { useState } from 'react';
 
@@ -8,9 +8,9 @@ import { Stepper } from '.';
 export default {
 	title: 'Components/Inputs/Stepper',
 	component: Stepper,
-} as ComponentMeta<typeof Stepper>;
+} satisfies Meta<typeof Stepper>;
 
-const Template: ComponentStory<typeof Stepper> = ({
+const Template: StoryFn<typeof Stepper> = ({
 	onChange: incomingOnChange,
 	value: incomingValue,
 	...args

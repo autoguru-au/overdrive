@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -16,9 +16,9 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof VisuallyHidden>;
+} satisfies Meta<typeof VisuallyHidden>;
 
-const Template: ComponentStory<typeof VisuallyHidden> = (args) => (
+const Template: StoryFn<typeof VisuallyHidden> = (args) => (
 	<>
 		<Text>Bellow text is invisible</Text>
 		<VisuallyHidden {...args}>
@@ -31,6 +31,6 @@ const standardProps: Omit<ComponentProps<typeof VisuallyHidden>, 'children'> = {
 	is: 'div',
 };
 
-export const standard: ComponentStory<typeof VisuallyHidden> =
+export const standard: StoryFn<typeof VisuallyHidden> =
 	Template.bind(standardProps);
 standard.args = standardProps;

@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -14,11 +14,9 @@ export default {
 			<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
 		),
 	],
-} as ComponentMeta<typeof BulletList>;
+} satisfies Meta<typeof BulletList>;
 
-const StandardBulletListTemplate: ComponentStory<typeof BulletList> = (
-	args,
-) => (
+const StandardBulletListTemplate: StoryFn<typeof BulletList> = (args) => (
 	<BulletList {...args}>
 		<Bullet>
 			<Text>
@@ -37,7 +35,7 @@ const StandardBulletListTemplate: ComponentStory<typeof BulletList> = (
 		</Bullet>
 	</BulletList>
 );
-const NestedBulletListTemplate: ComponentStory<typeof BulletList> = (args) => (
+const NestedBulletListTemplate: StoryFn<typeof BulletList> = (args) => (
 	<BulletList {...args}>
 		<Bullet>
 			<Text>

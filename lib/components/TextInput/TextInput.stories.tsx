@@ -10,7 +10,7 @@ import {
 	StarIcon,
 } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
-import { ArgTypes, ComponentMeta, ComponentStory } from '@storybook/react';
+import { ArgTypes, Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -23,7 +23,7 @@ export default {
 	title: 'Components/Inputs/Text',
 	component: TextInput,
 	parameters: { chromatic: {} },
-} as ComponentMeta<typeof TextInput>;
+} satisfies Meta<typeof TextInput>;
 
 const defaultValue = 'Jane Doe';
 const defaultPlaceholder = 'What is your first name?';
@@ -85,9 +85,7 @@ const argTypes: ArgTypes<Partial<ComponentProps<typeof TextInput>>> = {
 	},
 };
 
-const Template: ComponentStory<typeof TextInput> = (args) => (
-	<TextInput {...args} />
-);
+const Template: StoryFn<typeof TextInput> = (args) => <TextInput {...args} />;
 
 const sharedProps: ComponentProps<typeof TextInput> = {
 	disabled: false,

@@ -1,6 +1,6 @@
 import { AlertIcon, OttoIcon } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import isChromatic from 'chromatic/isChromatic';
 import * as React from 'react';
 import { ComponentProps, useEffect, useState } from 'react';
@@ -45,9 +45,9 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof Tabs>;
+} satisfies Meta<typeof Tabs>;
 
-const Template: ComponentStory<typeof Tabs> = (args) => <Tabs {...args} />;
+const Template: StoryFn<typeof Tabs> = (args) => <Tabs {...args} />;
 
 const standardProps: ComponentProps<typeof Tabs> = {
 	active: 0,

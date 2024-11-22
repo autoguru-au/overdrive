@@ -5,7 +5,7 @@ import {
 	TrashCanOutlineIcon,
 } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps, Fragment } from 'react';
 
@@ -54,9 +54,9 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof DropDown>;
+} satisfies Meta<typeof DropDown>;
 
-const Template: ComponentStory<typeof DropDown> = (args) => (
+const Template: StoryFn<typeof DropDown> = (args) => (
 	<Box
 		style={{
 			height: '100vh',

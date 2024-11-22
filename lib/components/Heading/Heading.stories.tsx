@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -129,15 +129,15 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof Heading>;
+} satisfies Meta<typeof Heading>;
 
-const Template: ComponentStory<typeof Heading> = (args) => (
+const Template: StoryFn<typeof Heading> = (args) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>
 		<Heading {...args} />
 	</div>
 );
 
-const AllTypesTemplate: ComponentStory<typeof Heading> = (args) => (
+const AllTypesTemplate: StoryFn<typeof Heading> = (args) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>
 		{headingTypeOptions.map((is) => (
 			<Heading key={is} {...args} is={is} />
@@ -145,7 +145,7 @@ const AllTypesTemplate: ComponentStory<typeof Heading> = (args) => (
 	</div>
 );
 
-const AllColoursTemplate: ComponentStory<typeof Heading> = (args) => (
+const AllColoursTemplate: StoryFn<typeof Heading> = (args) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>
 		{colourOptions.map((colour, index) => (
 			<div key={index} style={{ marginBottom: 8 }}>

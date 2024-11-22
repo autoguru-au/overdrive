@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions';
-import { ArgTypes, ComponentMeta, ComponentStory } from '@storybook/react';
+import { ArgTypes, Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -23,9 +23,9 @@ export default {
 	parameters: {
 		chromatic: { disable: true },
 	},
-} as ComponentMeta<typeof MinimalModal>;
+} satisfies Meta<typeof MinimalModal>;
 
-const Template: ComponentStory<typeof MinimalModal> = (args) => (
+const Template: StoryFn<typeof MinimalModal> = (args) => (
 	<>
 		<MinimalModal {...args}>
 			<Box backgroundColour="white" paddingX="4" paddingY="3">

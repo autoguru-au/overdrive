@@ -1,4 +1,4 @@
-import { ArgTypes, ComponentMeta, ComponentStory } from '@storybook/react';
+import { ArgTypes, Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -58,15 +58,15 @@ export default {
 	title: 'Foundation/Typography/Text',
 	//component: Text, Breaks the docs when enabled!
 	decorators: [],
-} as ComponentMeta<typeof Text>;
+} satisfies Meta<typeof Text>;
 
-const Template: ComponentStory<typeof Text> = (args) => (
+const Template: StoryFn<typeof Text> = (args) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>
 		<Text {...args} />
 	</div>
 );
 
-const AllTypesTemplate: ComponentStory<typeof Text> = (args) => (
+const AllTypesTemplate: StoryFn<typeof Text> = (args) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>
 		{textTypeOptions.map((is) => (
 			<Text key={is} {...args} is={is} />
@@ -74,7 +74,7 @@ const AllTypesTemplate: ComponentStory<typeof Text> = (args) => (
 	</div>
 );
 
-const AllSizesTemplate: ComponentStory<typeof Text> = (args) => (
+const AllSizesTemplate: StoryFn<typeof Text> = (args) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>
 		{sizeScale.map((size) => (
 			<Text key={size} {...args} size={size} />
@@ -82,7 +82,7 @@ const AllSizesTemplate: ComponentStory<typeof Text> = (args) => (
 	</div>
 );
 
-const AllColoursTemplate: ComponentStory<typeof Text> = (args) => (
+const AllColoursTemplate: StoryFn<typeof Text> = (args) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>
 		{colourOptions.map((colour, index) => (
 			<div key={index} style={{ marginBottom: 8 }}>

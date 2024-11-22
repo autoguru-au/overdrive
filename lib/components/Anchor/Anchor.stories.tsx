@@ -11,7 +11,7 @@ import {
 	PlusIcon,
 	StarIcon,
 } from '@autoguru/icons';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -57,9 +57,9 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof Anchor>;
+} satisfies Meta<typeof Anchor>;
 
-const Template: ComponentStory<typeof Anchor> = (args) => <Anchor {...args} />;
+const Template: StoryFn<typeof Anchor> = (args) => <Anchor {...args} />;
 
 const standardProps: ComponentProps<typeof Anchor> = {
 	href: 'tel:07 5612 5347',

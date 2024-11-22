@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 
 import { LinearProgressIndicator } from '.';
@@ -14,10 +14,6 @@ export default {
 	parameters: {
 		chromatic: { disable: true },
 	},
-} as ComponentMeta<typeof LinearProgressIndicator>;
+} satisfies Meta<typeof LinearProgressIndicator>;
 
-const Template: ComponentStory<typeof LinearProgressIndicator> = (args) => (
-	<LinearProgressIndicator {...args} />
-);
-
-export const standard = Template.bind({});
+export const standard = {};

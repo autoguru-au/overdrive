@@ -1,4 +1,4 @@
-import { ArgTypes, ComponentMeta, ComponentStory } from '@storybook/react';
+import { StoryObj, ArgTypes, Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -17,7 +17,7 @@ export default {
 			<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
 		),
 	],
-} as ComponentMeta<typeof Radio>;
+} satisfies Meta<typeof Radio>;
 
 const listData: Array<{ label: string; value: string }> = [
 	{
@@ -58,31 +58,31 @@ const argTypes: ArgTypes = {
 	},
 };
 
-export const list: ComponentStory<typeof Radio> = ({
-	value,
-	children,
-	...args
-}) => (
-	<RadioGroup value={value} name="favourite fruit">
-		{listData.map((item: { label: string; value: string }) => {
-			return (
-				<Radio
-					key={item.value}
-					children={item.label}
-					value={item.value}
-					{...args}
-				/>
-			);
-		})}
-	</RadioGroup>
-);
-list.args = {
-	value: 'avocado',
-	disabled: false,
-};
-list.argTypes = argTypes;
+export const list: StoryObj<typeof Radio> = {
+	render: ({ value, children, ...args }) => (
+		<RadioGroup value={value} name="favourite fruit">
+			{listData.map((item: { label: string; value: string }) => {
+				return (
+					<Radio
+						key={item.value}
+						children={item.label}
+						value={item.value}
+						{...args}
+					/>
+				);
+			})}
+		</RadioGroup>
+	),
 
-const Template: ComponentStory<typeof Radio> = ({ value, ...args }) => (
+	args: {
+		value: 'avocado',
+		disabled: false,
+	},
+
+	argTypes: argTypes,
+};
+
+const Template: StoryFn<typeof Radio> = ({ value, ...args }) => (
 	<RadioGroup value={value} name="favourite fruit">
 		<Radio value="avocado" {...args} />
 	</RadioGroup>

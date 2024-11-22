@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import isChromatic from 'chromatic/isChromatic';
 import * as React from 'react';
 import { ComponentProps } from 'react';
@@ -72,12 +72,12 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof Image>;
+} satisfies Meta<typeof Image>;
 
 const calcWidth = (width: (typeof sizeOptions)[number] | 'full') =>
 	width === 'full' ? '100%' : widthMap[width];
 
-const SimpleTemplate: ComponentStory<typeof Image> = (args) => (
+const SimpleTemplate: StoryFn<typeof Image> = (args) => (
 	<div style={{ width: '100%', overflow: 'auto' }}>
 		<Image {...args} width={calcWidth(args.width)} />
 	</div>
@@ -92,7 +92,7 @@ standard.args = standardProps;
 const srcUrlMapper = ({ src, width, quality }) =>
 	`https://images.autoguru.com.au/?url=${src}&w=${width}&q=${quality}`;
 
-const WidthProviderTemplate: ComponentStory<typeof Image> = (args) => (
+const WidthProviderTemplate: StoryFn<typeof Image> = (args) => (
 	<ImageServerProvider srcUrlMapper={srcUrlMapper}>
 		<div style={{ width: '100%', overflow: 'auto' }}>
 			<Image {...args} width={calcWidth(args.width)} />
@@ -138,7 +138,7 @@ export const withResponsiveSizes = WidthProviderTemplate.bind(
 );
 withResponsiveSizes.args = withResponsiveSizesProps;
 
-const AllQualityTemplate: ComponentStory<typeof Image> = (args) => (
+const AllQualityTemplate: StoryFn<typeof Image> = (args) => (
 	<ImageServerProvider srcUrlMapper={srcUrlMapper}>
 		<div style={{ width: '100%', overflow: 'auto' }}>
 			<Stack space="5">
@@ -165,7 +165,7 @@ export const withImageServerQualities =
 	AllQualityTemplate.bind(withImageServerProps);
 withImageServerQualities.args = withImageServerProps;
 
-const AllSizeTemplate: ComponentStory<typeof Image> = (args) => (
+const AllSizeTemplate: StoryFn<typeof Image> = (args) => (
 	<ImageServerProvider srcUrlMapper={srcUrlMapper}>
 		<div style={{ width: '100%', overflow: 'auto' }}>
 			<Stack width="full" space="5">

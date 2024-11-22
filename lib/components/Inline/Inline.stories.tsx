@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -37,9 +37,9 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof Inline>;
+} satisfies Meta<typeof Inline>;
 
-const Template: ComponentStory<typeof Inline> = (args) => (
+const Template: StoryFn<typeof Inline> = (args) => (
 	<Inline {...args}>
 		<Text>Mazda</Text>
 		<Text>CX3</Text>
@@ -48,7 +48,7 @@ const Template: ComponentStory<typeof Inline> = (args) => (
 	</Inline>
 );
 
-const DiffSizeTemplate: ComponentStory<typeof Inline> = (args) => (
+const DiffSizeTemplate: StoryFn<typeof Inline> = (args) => (
 	<Stack>
 		<Inline {...args}>
 			<Text>Mazda</Text>
