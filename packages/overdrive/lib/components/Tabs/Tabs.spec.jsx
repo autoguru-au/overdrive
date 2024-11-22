@@ -7,6 +7,7 @@ import { TabList } from './TabList';
 import { TabPane } from './TabPane';
 import { TabPanes } from './TabPanes';
 import { Tabs } from './Tabs';
+import * as tabListStyles from './TabList.css';
 
 const tabData = [
 	{
@@ -74,6 +75,42 @@ const TestPane = ({ children, testId }) => {
 		</>
 	);
 };
+
+const renderTabsWithoutBoxShadow = (
+	onChange = null,
+	custoId = null,
+	renderIndication = false,
+	renderInactivePanes = false,
+) =>
+	render(
+		<Tabs onChange={onChange}>
+			<TabList boxShadow={false}>
+				{tabData.map((tabData, idx) => (
+					<Tab
+						key={tabData.title}
+						id={custoId ? custoId(tabData, idx) : null}
+						indication={renderIndication ? 5 : null}
+					>
+						{tabData.title}
+					</Tab>
+				))}
+			</TabList>
+			<TabPanes renderInactivePanes={renderInactivePanes}>
+				{tabData.map((tabData, idx) => (
+					<TabPane
+						key={tabData.title}
+						id={custoId ? custoId(tabData, idx) : null}
+					>
+						<TestPane
+							testId={custoId ? custoId(tabData, idx) : null}
+						>
+							{tabData.content}
+						</TestPane>
+					</TabPane>
+				))}
+			</TabPanes>
+		</Tabs>,
+	);
 
 describe('<Tabs />', () => {
 	it('should match snapshot (high level)', () => {
@@ -172,5 +209,15 @@ describe('<Tabs />', () => {
 		checkbox = getByTestId('checkbox-testCase-1');
 
 		expect(checkbox).toBeChecked();
+	});
+
+	it('=> TabList should have className named withBoxShadow', () => {
+		const { container } = renderTabs();
+		expect(container.firstChild).toHaveClass(tabListStyles.root.withBoxShadow);
+	});
+
+	it("=> TabList should don't have className named withBoxShadow", () => {
+		const { container } = renderTabsWithoutBoxShadow();
+		expect(container.firstChild).not.toHaveClass(tabListStyles.root.withBoxShadow);
 	});
 });

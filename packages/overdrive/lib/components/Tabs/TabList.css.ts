@@ -3,7 +3,7 @@ import { style, styleVariants } from '@vanilla-extract/css';
 import { themeContractVars as vars } from '../../themes/theme.css';
 
 export const root = styleVariants({
-	default: {
+	withBoxShadow: {
 		boxShadow: `inset 0 -1px 0 0 ${vars.border.colours.gray}`,
 	},
 	scroll: {
