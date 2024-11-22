@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { ComponentProps, FunctionComponent } from 'react';
 
-import { Box } from '../';
+import { Box } from '../Box';
 
 import * as styles from './DividerLine.css';
 

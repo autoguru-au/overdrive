@@ -1,9 +1,10 @@
 import { RefObject, useLayoutEffect, useRef, useState } from 'react';
 
-import { useResponsiveValue, useTheme } from '../..';
+import { useTheme } from '../../components/ThemeProvider';
 import { themeContractVars } from '../../themes/theme.css';
 import { Tokens } from '../../themes/tokens';
 import { getThemeTokenValue } from '../../utils/css';
+import { useResponsiveValue } from '../useResponsiveValue';
 
 export interface UseWindowHeightFillProps {
 	bottomGap?: keyof Tokens['space'];

@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { ComponentProps, FunctionComponent } from 'react';
 
-import { Box } from '../../components';
+import { Box } from '../../components/Box';
 import {
 	getEarliestKnownToken,
 	resolveResponsiveStyle,

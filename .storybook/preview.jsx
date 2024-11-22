@@ -4,14 +4,14 @@ import '../lib/reset/globalFonts.css';
 import '../lib/reset/globalReset.css';
 import * as themes from '../lib/themes';
 import isChromatic from 'chromatic/isChromatic';
+import { Box } from '../lib/components/Box';
+import { Heading } from '../lib/components/Heading';
+import { OverdriveProvider } from '../lib/components/OverdriveProvider';
+import { Stack } from '../lib/components/Stack';
 import {
-	Box,
-	Heading,
-	OverdriveProvider,
-	Stack,
 	ThemeOverrideProvider,
 	useThemeOverrides,
-} from '../lib';
+} from '../lib/components/ThemeOverrideProvider';
 import { container, themeContractVars } from '../lib/themes/theme.css';
 import { breakpoints } from '../lib/themes/makeTheme';
 import { useDocumentBodyStyles } from '../lib/hooks/useDocumentBodyStyles';

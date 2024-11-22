@@ -1,17 +1,16 @@
 /** @type { import('@storybook/react-vite').StorybookConfig } */
 const config = {
-	// staticDirs: ['../public'],
 	stories: [
 		'../stories/**/*.mdx',
 		'../lib/**/*.stories.@(js|jsx|mjs|ts|tsx)',
 	],
 	addons: [
-		'@chromatic-com/storybook',
 		'@storybook/addon-onboarding',
 		'@storybook/addon-essentials',
+		'@storybook/addon-a11y',
 		'@storybook/addon-interactions',
 		'@storybook/addon-links',
-		'@storybook/addon-a11y',
+		'@chromatic-com/storybook',
 	],
 	framework: {
 		name: '@storybook/react-vite',
