@@ -1,6 +1,5 @@
 import { ChevronDownIcon } from '@autoguru/icons';
 import * as React from 'react';
-import { ReactNode } from 'react';
 
 import { Box } from '../Box';
 import { Icon } from '../Icon';
@@ -10,7 +9,7 @@ import * as styles from './SelectInput.css';
 
 export const SelectInput = withEnhancedInput<
 	{
-		children?: ReactNode[];
+		children?: React.ReactNode;
 	},
 	HTMLSelectElement
 >(
@@ -20,6 +19,7 @@ export const SelectInput = withEnhancedInput<
 		suffixed,
 		prefixed,
 		validation,
+		isFocused,
 		isLoading,
 		size,
 		fieldIcon = ChevronDownIcon,
@@ -30,8 +30,7 @@ export const SelectInput = withEnhancedInput<
 			flexWrap="nowrap"
 			alignItems="center"
 			justifyContent="center"
-			position="relative"
-		>
+			position="relative">
 			<Box
 				is="select"
 				flexGrow={1}
@@ -50,8 +49,7 @@ export const SelectInput = withEnhancedInput<
 					marginRight={size === 'medium' ? '4' : '2'}
 					flexShrink={0}
 					pointerEvents="none"
-					position="absolute"
-				>
+					position="absolute">
 					<Icon size="medium" icon={fieldIcon} />
 				</Box>
 			)}
