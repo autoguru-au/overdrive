@@ -1,6 +1,7 @@
 /*
-!/packages/
 !/config/
+!/jest/
+!/lib/
 !/scripts/
 !/.github/
 !/.storybook/

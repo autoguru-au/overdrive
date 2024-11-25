@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Pagination /> should match snapshot for loading phase 1`] = `
+<span
+  class="reset_inlineText__1oah0222 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_position_relative__3xgq1lfg useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_wrap__3xgq1lh6 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw8 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm28"
+>
+  <div
+    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+  >
+    <button
+      aria-disabled="true"
+      aria-label=""
+      class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_flex__3xgq1lfq useBoxStyles_overflow_hidden__3xgq1lfk useBoxStyles_userSelect_none__3xgq1lfy useBoxStyles_textAlign_center__3xgq1lfi useBoxStyles_pointerEvents_none__3xgq1lhs useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcx useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhc useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_light__1xnpmd7j Pagination_disabled__9nf7kx0"
+    >
+      <i
+        class="useBoxStyles_display_block__3xgq1lfp Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+        role="presentation"
+      >
+        <svg
+          class="useBoxStyles_display_block__3xgq1lfp useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M15.414 16.584l-4.586-4.586 4.586-4.586-1.415-1.414-6 6 6 6 1.415-1.414z"
+          />
+        </svg>
+      </i>
+    </button>
+  </div>
+  <div
+    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+  >
+    <button
+      class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_overflow_hidden__3xgq1lfk useBoxStyles_textAlign_center__3xgq1lfi useBoxStyles_pointerEvents_none__3xgq1lhs useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcx useBoxStyles_backgroundColours_gray200__3xgq1ldj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhc Pagination_disabled__9nf7kx0 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_3__1xnpmd73 Pagination_activeItem__9nf7kx2"
+    />
+  </div>
+  <div
+    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+  >
+    <button
+      class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_overflow_hidden__3xgq1lfk useBoxStyles_textAlign_center__3xgq1lfi useBoxStyles_pointerEvents_none__3xgq1lhs useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcx useBoxStyles_backgroundColours_gray200__3xgq1ldj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhc Pagination_disabled__9nf7kx0 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_3__1xnpmd73 Pagination_activeItem__9nf7kx2"
+    />
+  </div>
+  <div
+    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+  >
+    <button
+      class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_overflow_hidden__3xgq1lfk useBoxStyles_textAlign_center__3xgq1lfi useBoxStyles_pointerEvents_none__3xgq1lhs useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcx useBoxStyles_backgroundColours_gray200__3xgq1ldj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhc Pagination_disabled__9nf7kx0 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_3__1xnpmd73 Pagination_activeItem__9nf7kx2"
+    />
+  </div>
+  <div
+    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+  >
+    <button
+      aria-disabled="true"
+      aria-label=""
+      class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_flex__3xgq1lfq useBoxStyles_overflow_hidden__3xgq1lfk useBoxStyles_userSelect_none__3xgq1lfy useBoxStyles_textAlign_center__3xgq1lfi useBoxStyles_pointerEvents_none__3xgq1lhs useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcx useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhc useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_light__1xnpmd7j Pagination_disabled__9nf7kx0"
+    >
+      <i
+        class="useBoxStyles_display_block__3xgq1lfp Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+        role="presentation"
+      >
+        <svg
+          class="useBoxStyles_display_block__3xgq1lfp useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8.585 16.584l4.586-4.586-4.586-4.586L10 5.998l6 6-6 6-1.414-1.414z"
+          />
+        </svg>
+      </i>
+    </button>
+  </div>
+</span>
+`;

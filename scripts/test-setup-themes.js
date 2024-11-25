@@ -1,17 +1,11 @@
 jest.mock('@testing-library/react', () => {
 	const originalModule = jest.requireActual('@testing-library/react');
 	const { OverdriveProvider } = jest.requireActual(
-		'../packages/overdrive/lib/components/OverdriveProvider/OverdriveProvider',
+		'../lib/components/OverdriveProvider/OverdriveProvider',
 	);
-	const { themeRef } = jest.requireActual(
-		'../packages/overdrive/lib/themes/base/vars.css',
-	);
-	const { themeContractVars } = jest.requireActual(
-		'../packages/overdrive/lib/themes/theme.css',
-	);
-	const { tokens } = jest.requireActual(
-		'../packages/overdrive/lib/themes/base/tokens',
-	);
+	const { themeRef } = jest.requireActual('../lib/themes/base/vars.css');
+	const { themeContractVars } = jest.requireActual('../lib/themes/theme.css');
+	const { tokens } = jest.requireActual('../lib/themes/base/tokens');
 	const React = jest.requireActual('react');
 
 	return {

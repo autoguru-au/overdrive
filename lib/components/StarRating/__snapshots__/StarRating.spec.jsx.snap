@@ -1,0 +1,511 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StarRating /> should match snapshot for small size 1`] = `
+<div
+  class="reset_block__1oah0223"
+>
+  <div
+    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_position_relative__3xgq1lfg useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_wrap__3xgq1lh6 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwc useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2c"
+  >
+    <div
+      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+    >
+      <div
+        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_position_relative__3xgq1lfg useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_wrap__3xgq1lh6 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw10 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm210"
+      >
+        <div
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+        >
+          <i
+            class="useBoxStyles_display_block__3xgq1lfp Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfg StarRating_star_default__icwp6r0"
+            role="presentation"
+          >
+            <svg
+              class="useBoxStyles_display_block__3xgq1lfp useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+              />
+            </svg>
+          </i>
+        </div>
+        <div
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+        >
+          <i
+            class="useBoxStyles_display_block__3xgq1lfp Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfg StarRating_star_default__icwp6r0"
+            role="presentation"
+          >
+            <svg
+              class="useBoxStyles_display_block__3xgq1lfp useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+              />
+            </svg>
+          </i>
+        </div>
+        <div
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+        >
+          <i
+            class="useBoxStyles_display_block__3xgq1lfp Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfg StarRating_star_default__icwp6r0"
+            role="presentation"
+          >
+            <svg
+              class="useBoxStyles_display_block__3xgq1lfp useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+              />
+            </svg>
+          </i>
+        </div>
+        <div
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+        >
+          <i
+            class="useBoxStyles_display_block__3xgq1lfp Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfg StarRating_star_default__icwp6r0"
+            role="presentation"
+          >
+            <svg
+              class="useBoxStyles_display_block__3xgq1lfp useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+              />
+            </svg>
+          </i>
+        </div>
+        <div
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+        >
+          <i
+            class="useBoxStyles_display_block__3xgq1lfp Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfg StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+            role="presentation"
+          >
+            <svg
+              class="useBoxStyles_display_block__3xgq1lfp useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+              />
+            </svg>
+          </i>
+        </div>
+      </div>
+    </div>
+    <div
+      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+    >
+      <span
+        class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfh useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
+      >
+        Hello World!
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<StarRating /> should match snapshot with label 1`] = `
+<div
+  class="reset_block__1oah0223"
+>
+  <div
+    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_position_relative__3xgq1lfg useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_wrap__3xgq1lh6 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwc useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2c"
+  >
+    <div
+      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+    >
+      <div
+        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_position_relative__3xgq1lfg useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_wrap__3xgq1lh6 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw10 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm210"
+      >
+        <div
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+        >
+          <i
+            class="useBoxStyles_display_block__3xgq1lfp Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfg StarRating_star_default__icwp6r0"
+            role="presentation"
+          >
+            <svg
+              class="useBoxStyles_display_block__3xgq1lfp useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+              />
+            </svg>
+          </i>
+        </div>
+        <div
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+        >
+          <i
+            class="useBoxStyles_display_block__3xgq1lfp Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfg StarRating_star_default__icwp6r0"
+            role="presentation"
+          >
+            <svg
+              class="useBoxStyles_display_block__3xgq1lfp useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+              />
+            </svg>
+          </i>
+        </div>
+        <div
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+        >
+          <i
+            class="useBoxStyles_display_block__3xgq1lfp Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfg StarRating_star_default__icwp6r0"
+            role="presentation"
+          >
+            <svg
+              class="useBoxStyles_display_block__3xgq1lfp useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+              />
+            </svg>
+          </i>
+        </div>
+        <div
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+        >
+          <i
+            class="useBoxStyles_display_block__3xgq1lfp Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfg StarRating_star_default__icwp6r0"
+            role="presentation"
+          >
+            <svg
+              class="useBoxStyles_display_block__3xgq1lfp useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+              />
+            </svg>
+          </i>
+        </div>
+        <div
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+        >
+          <i
+            class="useBoxStyles_display_block__3xgq1lfp Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfg StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+            role="presentation"
+          >
+            <svg
+              class="useBoxStyles_display_block__3xgq1lfp useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+              />
+            </svg>
+          </i>
+        </div>
+      </div>
+    </div>
+    <div
+      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+    >
+      <span
+        class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfh useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+      >
+        Hello World!
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<StarRating /> should match snapshot with value 1`] = `
+<div
+  class="reset_block__1oah0223"
+>
+  <div
+    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_position_relative__3xgq1lfg useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_wrap__3xgq1lh6 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwc useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2c"
+  >
+    <div
+      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+    >
+      <div
+        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_position_relative__3xgq1lfg useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_wrap__3xgq1lh6 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw10 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm210"
+      >
+        <div
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+        >
+          <i
+            class="useBoxStyles_display_block__3xgq1lfp Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfg StarRating_star_default__icwp6r0"
+            role="presentation"
+          >
+            <svg
+              class="useBoxStyles_display_block__3xgq1lfp useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+              />
+            </svg>
+          </i>
+        </div>
+        <div
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+        >
+          <i
+            class="useBoxStyles_display_block__3xgq1lfp Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfg StarRating_star_default__icwp6r0"
+            role="presentation"
+          >
+            <svg
+              class="useBoxStyles_display_block__3xgq1lfp useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+              />
+            </svg>
+          </i>
+        </div>
+        <div
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+        >
+          <i
+            class="useBoxStyles_display_block__3xgq1lfp Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfg StarRating_star_default__icwp6r0"
+            role="presentation"
+          >
+            <svg
+              class="useBoxStyles_display_block__3xgq1lfp useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 15.396V6.095l1.71 4.036 4.38.376-3.323 2.878.995 4.281M22 9.244l-7.19-.617L11.998 2 9.19 8.627 2 9.244l5.454 4.726L5.82 21 12 17.272 18.18 21l-1.635-7.03L22 9.244z"
+              />
+            </svg>
+          </i>
+        </div>
+        <div
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+        >
+          <i
+            class="useBoxStyles_display_block__3xgq1lfp Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfg StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+            role="presentation"
+          >
+            <svg
+              class="useBoxStyles_display_block__3xgq1lfp useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+              />
+            </svg>
+          </i>
+        </div>
+        <div
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+        >
+          <i
+            class="useBoxStyles_display_block__3xgq1lfp Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfg StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+            role="presentation"
+          >
+            <svg
+              class="useBoxStyles_display_block__3xgq1lfp useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+              />
+            </svg>
+          </i>
+        </div>
+      </div>
+    </div>
+    <div
+      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+    >
+      <span
+        class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfh useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+      >
+        2.7
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<StarRating /> should match snapshot without value 1`] = `
+<div
+  class="reset_block__1oah0223"
+>
+  <div
+    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_position_relative__3xgq1lfg useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_wrap__3xgq1lh6 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwc useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2c"
+  >
+    <div
+      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+    >
+      <div
+        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_position_relative__3xgq1lfg useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_wrap__3xgq1lh6 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw10 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm210"
+      >
+        <div
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+        >
+          <i
+            class="useBoxStyles_display_block__3xgq1lfp Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfg StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+            role="presentation"
+          >
+            <svg
+              class="useBoxStyles_display_block__3xgq1lfp useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+              />
+            </svg>
+          </i>
+        </div>
+        <div
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+        >
+          <i
+            class="useBoxStyles_display_block__3xgq1lfp Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfg StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+            role="presentation"
+          >
+            <svg
+              class="useBoxStyles_display_block__3xgq1lfp useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+              />
+            </svg>
+          </i>
+        </div>
+        <div
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+        >
+          <i
+            class="useBoxStyles_display_block__3xgq1lfp Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfg StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+            role="presentation"
+          >
+            <svg
+              class="useBoxStyles_display_block__3xgq1lfp useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+              />
+            </svg>
+          </i>
+        </div>
+        <div
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+        >
+          <i
+            class="useBoxStyles_display_block__3xgq1lfp Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfg StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+            role="presentation"
+          >
+            <svg
+              class="useBoxStyles_display_block__3xgq1lfp useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+              />
+            </svg>
+          </i>
+        </div>
+        <div
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+        >
+          <i
+            class="useBoxStyles_display_block__3xgq1lfp Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfg StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+            role="presentation"
+          >
+            <svg
+              class="useBoxStyles_display_block__3xgq1lfp useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+              />
+            </svg>
+          </i>
+        </div>
+      </div>
+    </div>
+    <div
+      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lh7"
+    >
+      <span
+        class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfh useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+      />
+    </div>
+  </div>
+</div>
+`;

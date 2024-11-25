@@ -26,3 +26,5 @@ storybook-static/
 .rpt2_cache/
 
 /report.*.json
+
+*storybook.log

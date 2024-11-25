@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BulletList /> should match the snapshot 1`] = `
+<ul
+  class="reset_list__1oah0224 BulletList_root__4koeg0 BulletList_firstOccurrence__4koeg1"
+/>
+`;

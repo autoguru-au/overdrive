@@ -1,9 +1,0 @@
-/*
-!/lib
-!/*.ts
-
-tsconfig.*
-**/**.snap
-**/stories.tsx
-**/*.spec.jsx
-**/*.spec.js
