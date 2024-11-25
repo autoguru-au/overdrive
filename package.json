@@ -121,7 +121,7 @@
 		"babel-plugin-dev-expression": "^0.2.3",
 		"babel-plugin-macros": "^3.1.0",
 		"browserslist-config-autoguru": "^2.2.8",
-		"chromatic": "^6.15.0",
+		"chromatic": "^11.18.1",
 		"clsx": "1.2.1",
 		"colord": "2.9.3",
 		"concurrently": "6.5.1",
