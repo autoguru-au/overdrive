@@ -1,0 +1,1 @@
+const p={mobile:"0px",tablet:"768px",desktop:"1024px",largeDesktop:"1920px"},b=(e=p)=>({breakpoints:e}),c=e=>Object.entries(e).reduce((t,[s,o])=>({...t,...Object.entries(o).reduce((r,[a,n])=>({...r,[`${s}${a}`]:n}),{})}),{});export{p as a,c as b,b as m};

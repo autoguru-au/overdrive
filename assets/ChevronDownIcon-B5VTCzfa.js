@@ -1,0 +1,1 @@
+import{R as e}from"./index-DhrokLn_.js";const l=e.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24",fill:"currentColor",focusable:"false"},e.createElement("path",{d:"M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"}));export{l as I};

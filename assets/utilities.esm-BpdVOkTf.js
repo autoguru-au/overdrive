@@ -1,0 +1,1 @@
+import{i as a}from"./tiny-invariant.esm-CopsF_GD.js";const n=(i,t,f)=>Math.min(f,Math.max(i,t)),p=(i,t)=>f=>{if(typeof i!="function"&&a(!1),i(f),!f.defaultPrevented&&typeof t<"u")return typeof t!="function"&&a(!1),t(f)};export{n as c,p as w};
