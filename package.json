@@ -174,7 +174,7 @@
 		"webpack": "*"
 	},
 	"volta": {
-		"node": "18.20.5",
+		"node": "20.18.1",
 		"yarn": "4.5.3"
 	},
 	"packageManager": "yarn@4.5.3"
