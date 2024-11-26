@@ -23,7 +23,7 @@ export const useLayoutSuggestionVisible = (
 					highlightItem.offsetParent === suggestionListItem
 						? highlightItem.offsetTop
 						: highlightItem.offsetTop -
-						  suggestionListItem.offsetTop;
+							suggestionListItem.offsetTop;
 
 				let { scrollTop } = suggestionListItem;
 				const { offsetHeight } = suggestionListItem;

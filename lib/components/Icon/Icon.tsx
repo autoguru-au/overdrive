@@ -40,7 +40,7 @@ export const Icon: FunctionComponent<Props> = ({
 							width: 'full',
 							height: 'full',
 						}),
-				  })
+					})
 				: '⬤'}
 		</Box>
 	);

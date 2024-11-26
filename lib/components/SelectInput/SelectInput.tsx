@@ -30,7 +30,8 @@ export const SelectInput = withEnhancedInput<
 			flexWrap="nowrap"
 			alignItems="center"
 			justifyContent="center"
-			position="relative">
+			position="relative"
+		>
 			<Box
 				is="select"
 				flexGrow={1}
@@ -49,7 +50,8 @@ export const SelectInput = withEnhancedInput<
 					marginRight={size === 'medium' ? '4' : '2'}
 					flexShrink={0}
 					pointerEvents="none"
-					position="absolute">
+					position="absolute"
+				>
 					<Icon size="medium" icon={fieldIcon} />
 				</Box>
 			)}

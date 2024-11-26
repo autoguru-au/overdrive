@@ -421,7 +421,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 							? getSuggestionId(
 									suggestionListId!,
 									state.highlightIndex,
-							  )
+								)
 							: undefined
 					}
 					value={state.previewText ?? value?.text}
@@ -696,7 +696,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 		);
 
 		useEffect(
-			() => () => focusTimeout ? clearTimeout(focusTimeout) : void 0,
+			() => () => (focusTimeout ? clearTimeout(focusTimeout) : void 0),
 			[],
 		);
 

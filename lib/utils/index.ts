@@ -158,7 +158,7 @@ export const alignmentToFlexAlignment = (align: Alignment) =>
 		center: 'center',
 		left: 'flexStart',
 		right: 'flexEnd',
-	}[align] as 'center' | 'flexStart' | 'flexEnd');
+	})[align] as 'center' | 'flexStart' | 'flexEnd';
 
 /**
  * A function that returns the first item in the array, if the index exceeds its maximum length

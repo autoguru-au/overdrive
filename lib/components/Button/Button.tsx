@@ -97,7 +97,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 				? {
 						isSingleIconChild: true,
 						props: maybeProps.props,
-				  }
+					}
 				: { isSingleIconChild: false };
 		}, [children]);
 
@@ -169,7 +169,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 					{isSingleIconChild && maybeIconProps ? (
 						<Icon
 							size={
-								maybeIconProps.size ?? size === 'small'
+								(maybeIconProps.size ?? size === 'small')
 									? 'small'
 									: 'medium'
 							}
@@ -237,9 +237,9 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 
 		return isValidElement(Component)
 			? // @ts-ignore
-			  cloneElement(Component, { ref, ...props }, child)
+				cloneElement(Component, { ref, ...props }, child)
 			: // @ts-ignore
-			  createElement(Component, { ref, ...props }, child);
+				createElement(Component, { ref, ...props }, child);
 	},
 );
 
@@ -254,7 +254,7 @@ const getButtonStates: (
 		return minimal
 			? clsx(buttonStyles.minimal.defaults, {
 					[buttonStyles.minimal.noneRounded]: !rounded,
-			  })
+				})
 			: '';
 
 	if (minimal)

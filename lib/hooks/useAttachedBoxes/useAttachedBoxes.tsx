@@ -84,7 +84,7 @@ export const useAttachedBoxes = ({
 											gridColumn: `${colStart}/${
 												colStart + 1 + extend
 											}`,
-									  }
+										}
 									: void 0
 							}
 							{...rest}

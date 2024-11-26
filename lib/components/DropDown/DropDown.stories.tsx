@@ -25,7 +25,8 @@ export default {
 					display: 'grid',
 					gridGap: '12px',
 					gridAutoFlow: 'row dense',
-				}}>
+				}}
+			>
 				{story()}
 			</div>
 		),
@@ -68,7 +69,8 @@ const Template: StoryFn<typeof DropDown> = (args) => (
 		}}
 		display="flex"
 		alignItems="center"
-		justifyContent="center">
+		justifyContent="center"
+	>
 		<DropDown {...args} />
 	</Box>
 );
