@@ -175,7 +175,7 @@
 	},
 	"volta": {
 		"node": "18.20.5",
-		"yarn": "3.8.6"
+		"yarn": "4.5.3"
 	},
-	"packageManager": "yarn@3.8.6"
+	"packageManager": "yarn@4.5.3"
 }
