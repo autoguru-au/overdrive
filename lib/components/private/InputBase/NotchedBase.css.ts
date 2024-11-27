@@ -165,14 +165,14 @@ const calcPlaceholderTranslate = (
 				prefixed
 					? `calc(${vars.space['7']} + ${vars.space['3']})`
 					: vars.typography.size['4'].fontSize
-		  }, calc((${vars.space['8']} - ${
+			}, calc((${vars.space['8']} - ${
 				vars.typography.size['4'].fontSize
-		  }) / 2)`
+			}) / 2)`
 		: `${
 				prefixed
 					? `calc(${vars.space['2']} + ${vars.space['5']} + ${vars.space['2']})`
 					: vars.space['2']
-		  }, calc(${vars.space['2']} + 2px)`;
+			}, calc(${vars.space['2']} + 2px)`;
 };
 
 export const placeholderPlacement = {

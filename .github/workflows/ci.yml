@@ -34,7 +34,7 @@ jobs:
                       ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock')
                       }}-node-${{ steps.setups.outputs.node_version }}
 
-            - run: yarn --frozen-lockfile
+            - run: yarn --immutable
 
             - name: Lint
               run: yarn lint
@@ -80,7 +80,7 @@ jobs:
                       ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock')
                       }}-node-${{ steps.setups.outputs.node_version }}
 
-            - run: yarn --frozen-lockfile
+            - run: yarn --immutable
 
             - name: Chromatic (main)
               if: github.ref == 'refs/heads/main'

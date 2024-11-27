@@ -269,7 +269,7 @@ export const withEnhancedInput = <
 				suffixed: Boolean(suffixIcon),
 				isLoading,
 				'aria-busy': isLoading || void 0,
-				...(rest as IncomingProps),
+				...(rest as unknown as IncomingProps),
 			};
 
 			const onMouseOver = useCallback(() => {

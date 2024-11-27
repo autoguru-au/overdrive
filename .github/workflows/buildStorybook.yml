@@ -36,7 +36,7 @@ jobs:
                       ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock')
                       }}-node-${{ steps.setups.outputs.node_version }}
 
-            - run: yarn --frozen-lockfile
+            - run: yarn --immutable
 
             - name: Build storybook artefacts
               run: yarn storybook:build

@@ -1,4 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
+import Rand from 'rand-seed';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -31,6 +32,8 @@ export default {
 	},
 } satisfies Meta<typeof HorizontalAutoScroller>;
 
+const randHeight = new Rand('storybook');
+
 const template: StoryFn<typeof HorizontalAutoScroller> = ({
 	childrenNum,
 	...args
@@ -50,7 +53,7 @@ const template: StoryFn<typeof HorizontalAutoScroller> = ({
 				<Box
 					style={{
 						width: '100%',
-						height: 20 + Math.ceil(Math.random() * 300),
+						height: 20 + Math.ceil(randHeight.next() * 300),
 					}}
 					backgroundColour="gray900"
 				/>

@@ -30,7 +30,7 @@ const sizeOptions: Array<ComponentProps<typeof Image>['imageWidth']> =
 				'14',
 				'15',
 				'16',
-		  ];
+			];
 const qualityOptions: Array<ComponentProps<typeof Image>['quality']> =
 	isChromatic() ? ['70'] : [1, 20, 40, 60, 80, 100];
 export default {

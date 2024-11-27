@@ -73,7 +73,7 @@ export const ResponsiveImage: FunctionComponent<Props> = ({
 				: generateSrcSet({
 						src: incomingSrc,
 						quality,
-				  }),
+					}),
 		[incomingSrc, quality],
 	);
 
