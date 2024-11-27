@@ -133,10 +133,10 @@ __metadata:
     "@autoguru/eslint-plugin": "npm:1.3.2"
     "@autoguru/icons": "npm:^1.8.2"
     "@autoguru/jest-preset": "npm:1.1.0"
-    "@autoguru/tsconfig": "npm:1.2.0"
+    "@autoguru/tsconfig": "npm:^1.2.0"
     "@autoguru/utilities": "npm:1.1.1"
-    "@babel/cli": "npm:7.25.9"
-    "@babel/core": "npm:7.26.0"
+    "@babel/cli": "npm:^7.25.9"
+    "@babel/core": "npm:^7.26.0"
     "@babel/plugin-proposal-class-properties": "npm:^7.18.6"
     "@babel/plugin-proposal-export-default-from": "npm:^7.25.9"
     "@babel/plugin-proposal-nullish-coalescing-operator": "npm:^7.18.6"
@@ -150,12 +150,12 @@ __metadata:
     "@babel/preset-env": "npm:^7.26.0"
     "@babel/preset-react": "npm:^7.25.9"
     "@babel/preset-typescript": "npm:^7.26.0"
-    "@babel/runtime-corejs3": "npm:7.26.0"
-    "@changesets/cli": "npm:2.27.10"
+    "@babel/runtime-corejs3": "npm:^7.26.0"
+    "@changesets/cli": "npm:^2.27.10"
     "@chromatic-com/storybook": "npm:^3.2.2"
     "@octokit/rest": "npm:18.12.0"
-    "@popperjs/core": "npm:2.11.8"
-    "@react-stately/toggle": "npm:3.8.0"
+    "@popperjs/core": "npm:^2.11.8"
+    "@react-stately/toggle": "npm:^3.8.0"
     "@storybook/addon-a11y": "npm:^8.4.5"
     "@storybook/addon-actions": "npm:^8.4.5"
     "@storybook/addon-essentials": "npm:^8.4.5"
@@ -169,10 +169,10 @@ __metadata:
     "@testing-library/jest-dom": "npm:^5.16.5"
     "@testing-library/react": "npm:^13.3.0"
     "@testing-library/react-hooks": "npm:^8.0.1"
-    "@types/node": "npm:20.17.8"
+    "@types/node": "npm:^20.17.8"
     "@types/react": "npm:^18.3.12"
     "@types/react-dom": "npm:^18.3.1"
-    "@types/webpack-env": "npm:1.18.5"
+    "@types/webpack-env": "npm:^1.18.5"
     "@vanilla-extract/babel-plugin": "npm:^1.2.0"
     "@vanilla-extract/css": "npm:^1.16.1"
     "@vanilla-extract/dynamic": "npm:^2.1.2"
@@ -183,8 +183,8 @@ __metadata:
     babel-plugin-macros: "npm:^3.1.0"
     browserslist-config-autoguru: "npm:^2.2.8"
     chromatic: "npm:^11.19.0"
-    clsx: "npm:2.1.1"
-    colord: "npm:2.9.3"
+    clsx: "npm:^2.1.1"
+    colord: "npm:^2.9.3"
     concurrently: "npm:9.1.0"
     core-js: "npm:^3.39.0"
     csstype: "npm:^3.1.3"
@@ -192,7 +192,6 @@ __metadata:
     eslint: "npm:7.32.0"
     eslint-plugin-jest: "npm:26.9.0"
     eslint-plugin-storybook: "npm:^0.11.1"
-    glob: "npm:7.2.3"
     intersection-observer: "npm:^0.12.2"
     jest: "npm:26.6.3"
     magic-string: "npm:0.30.14"
@@ -202,21 +201,20 @@ __metadata:
     postcss: "npm:^8.4.49"
     prettier: "npm:3.4.1"
     prop-types: "npm:^15.8.1"
+    rand-seed: "npm:^2.1.7"
     react: "npm:^18.3.1"
-    react-aria: "npm:3.36.0"
+    react-aria: "npm:^3.36.0"
     react-dom: "npm:^18.3.1"
     react-focus-lock: "npm:2.13.2"
     react-intersection-observer: "npm:^9.13.1"
     react-keyed-flatten-children: "npm:1.3.0"
     react-swipeable: "npm:^7.0.2"
     react-test-renderer: "npm:^18.3.1"
-    react-types: "npm:0.1.0"
-    rimraf: "npm:3.0.2"
     storybook: "npm:^8.4.5"
     typescript: "npm:^4.9.5"
     url-loader: "npm:^4.1.1"
     vite: "npm:^6.0.0"
-    webpack: "npm:5.96.1"
+    webpack: "npm:^5.96.1"
   peerDependencies:
     "@autoguru/icons": ^1.7.28
     "@autoguru/utilities": ^1.0.98
@@ -236,7 +234,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@autoguru/tsconfig@npm:1.2.0":
+"@autoguru/tsconfig@npm:^1.2.0":
   version: 1.2.0
   resolution: "@autoguru/tsconfig@npm:1.2.0"
   checksum: 10/a920a8080a4200f4f9538a5d741c958c864f0a7ab923120356eb1ca87e9d1661854e2e8047a715c0829125346e3438221ae21939ee1338c5c7f51b7688b3a403
@@ -253,7 +251,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/cli@npm:7.25.9":
+"@babel/cli@npm:^7.25.9":
   version: 7.25.9
   resolution: "@babel/cli@npm:7.25.9"
   dependencies:
@@ -307,7 +305,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:7.26.0, @babel/core@npm:^7.1.0, @babel/core@npm:^7.12.16, @babel/core@npm:^7.12.3, @babel/core@npm:^7.13.10, @babel/core@npm:^7.13.8, @babel/core@npm:^7.18.9, @babel/core@npm:^7.23.9, @babel/core@npm:^7.7.5":
+"@babel/core@npm:^7.1.0, @babel/core@npm:^7.12.16, @babel/core@npm:^7.12.3, @babel/core@npm:^7.13.10, @babel/core@npm:^7.13.8, @babel/core@npm:^7.18.9, @babel/core@npm:^7.23.9, @babel/core@npm:^7.26.0, @babel/core@npm:^7.7.5":
   version: 7.26.0
   resolution: "@babel/core@npm:7.26.0"
   dependencies:
@@ -1738,7 +1736,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime-corejs3@npm:7.26.0, @babel/runtime-corejs3@npm:^7.10.2, @babel/runtime-corejs3@npm:^7.13.8, @babel/runtime-corejs3@npm:^7.24.5":
+"@babel/runtime-corejs3@npm:^7.10.2, @babel/runtime-corejs3@npm:^7.13.8, @babel/runtime-corejs3@npm:^7.24.5, @babel/runtime-corejs3@npm:^7.26.0":
   version: 7.26.0
   resolution: "@babel/runtime-corejs3@npm:7.26.0"
   dependencies:
@@ -1844,7 +1842,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@changesets/cli@npm:2.27.10":
+"@changesets/cli@npm:^2.27.10":
   version: 2.27.10
   resolution: "@changesets/cli@npm:2.27.10"
   dependencies:
@@ -3245,7 +3243,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@popperjs/core@npm:2.11.8":
+"@popperjs/core@npm:^2.11.8":
   version: 2.11.8
   resolution: "@popperjs/core@npm:2.11.8"
   checksum: 10/ddd16090cde777aaf102940f05d0274602079a95ad9805bd20bc55dcc7c3a2ba1b99dd5c73e5cc2753c3d31250ca52a67d58059459d7d27debb983a9f552936c
@@ -4368,7 +4366,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-stately/toggle@npm:3.8.0, @react-stately/toggle@npm:^3.8.0":
+"@react-stately/toggle@npm:^3.8.0":
   version: 3.8.0
   resolution: "@react-stately/toggle@npm:3.8.0"
   dependencies:
@@ -5606,7 +5604,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:20.17.8":
+"@types/node@npm:*, @types/node@npm:^20.17.8":
   version: 20.17.8
   resolution: "@types/node@npm:20.17.8"
   dependencies:
@@ -5715,7 +5713,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/webpack-env@npm:1.18.5":
+"@types/webpack-env@npm:^1.18.5":
   version: 1.18.5
   resolution: "@types/webpack-env@npm:1.18.5"
   checksum: 10/3c8dd0b23d45e2d33abdfbae7f1d8f75ce23d54588b08943e833f4dba81eb683ac68672a75eccbdba8e008bc1647638803c1bcadc8cdfd1dd7142fa2c3f612de
@@ -7477,7 +7475,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clsx@npm:2.1.1, clsx@npm:^2.0.0":
+"clsx@npm:^2.0.0, clsx@npm:^2.1.1":
   version: 2.1.1
   resolution: "clsx@npm:2.1.1"
   checksum: 10/cdfb57fa6c7649bbff98d9028c2f0de2f91c86f551179541cf784b1cfdc1562dcb951955f46d54d930a3879931a980e32a46b598acaea274728dbe068deca919
@@ -7540,7 +7538,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"colord@npm:2.9.3":
+"colord@npm:^2.9.3":
   version: 2.9.3
   resolution: "colord@npm:2.9.3"
   checksum: 10/907a4506d7307e2f580b471b581e992181ed75ab0c6925ece9ca46d88161d2fc50ed15891cd0556d0d9321237ca75afc9d462e4c050b939ef88428517f047f30
@@ -9602,20 +9600,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:7.2.3, glob@npm:^7.1.1, glob@npm:^7.1.2, glob@npm:^7.1.3, glob@npm:^7.1.4, glob@npm:^7.1.7, glob@npm:^7.2.0":
-  version: 7.2.3
-  resolution: "glob@npm:7.2.3"
-  dependencies:
-    fs.realpath: "npm:^1.0.0"
-    inflight: "npm:^1.0.4"
-    inherits: "npm:2"
-    minimatch: "npm:^3.1.1"
-    once: "npm:^1.3.0"
-    path-is-absolute: "npm:^1.0.0"
-  checksum: 10/59452a9202c81d4508a43b8af7082ca5c76452b9fcc4a9ab17655822e6ce9b21d4f8fbadabe4fe3faef448294cec249af305e2cd824b7e9aaf689240e5e96a7b
-  languageName: node
-  linkType: hard
-
 "glob@npm:^10.2.2, glob@npm:^10.3.10":
   version: 10.4.5
   resolution: "glob@npm:10.4.5"
@@ -9629,6 +9613,20 @@ __metadata:
   bin:
     glob: dist/esm/bin.mjs
   checksum: 10/698dfe11828b7efd0514cd11e573eaed26b2dff611f0400907281ce3eab0c1e56143ef9b35adc7c77ecc71fba74717b510c7c223d34ca8a98ec81777b293d4ac
+  languageName: node
+  linkType: hard
+
+"glob@npm:^7.1.1, glob@npm:^7.1.2, glob@npm:^7.1.3, glob@npm:^7.1.4, glob@npm:^7.1.7, glob@npm:^7.2.0":
+  version: 7.2.3
+  resolution: "glob@npm:7.2.3"
+  dependencies:
+    fs.realpath: "npm:^1.0.0"
+    inflight: "npm:^1.0.4"
+    inherits: "npm:2"
+    minimatch: "npm:^3.1.1"
+    once: "npm:^1.3.0"
+    path-is-absolute: "npm:^1.0.0"
+  checksum: 10/59452a9202c81d4508a43b8af7082ca5c76452b9fcc4a9ab17655822e6ce9b21d4f8fbadabe4fe3faef448294cec249af305e2cd824b7e9aaf689240e5e96a7b
   languageName: node
   linkType: hard
 
@@ -13114,6 +13112,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rand-seed@npm:^2.1.7":
+  version: 2.1.7
+  resolution: "rand-seed@npm:2.1.7"
+  checksum: 10/7e2aa1511b6653fd2ccaea9a85b1e01d8f1f4e1dfa9289c89529b94d949781035e7de5af3d44dc35360c55d4feba758b31b97d9256a0e1a52d99f50e050aaec0
+  languageName: node
+  linkType: hard
+
 "randombytes@npm:^2.1.0":
   version: 2.1.0
   resolution: "randombytes@npm:2.1.0"
@@ -13123,7 +13128,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-aria@npm:3.36.0":
+"react-aria@npm:^3.36.0":
   version: 3.36.0
   resolution: "react-aria@npm:3.36.0"
   dependencies:
@@ -13341,13 +13346,6 @@ __metadata:
   peerDependencies:
     react: ^18.3.1
   checksum: 10/d53137315c677bdfba702a7179a69828233fc7635ae1e0c03b203923d643400ace72b343cb3dd3dafba8911c20bef53f55bff7aa2e4ddff3ccc423fdd9deeee2
-  languageName: node
-  linkType: hard
-
-"react-types@npm:0.1.0":
-  version: 0.1.0
-  resolution: "react-types@npm:0.1.0"
-  checksum: 10/a1b6ab8503b44897aafe6b8015b7365742679c20341b9436df11df8cf5fefe1c82bb4de0f7160ac5fc849f4a2d330485892f4bd5efca9538fd82918963fb4e6f
   languageName: node
   linkType: hard
 
@@ -13738,17 +13736,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:3.0.2, rimraf@npm:^3.0.0, rimraf@npm:^3.0.2":
-  version: 3.0.2
-  resolution: "rimraf@npm:3.0.2"
-  dependencies:
-    glob: "npm:^7.1.3"
-  bin:
-    rimraf: bin.js
-  checksum: 10/063ffaccaaaca2cfd0ef3beafb12d6a03dd7ff1260d752d62a6077b5dfff6ae81bea571f655bb6b589d366930ec1bdd285d40d560c0dae9b12f125e54eb743d5
-  languageName: node
-  linkType: hard
-
 "rimraf@npm:^2.6.3":
   version: 2.7.1
   resolution: "rimraf@npm:2.7.1"
@@ -13757,6 +13744,17 @@ __metadata:
   bin:
     rimraf: ./bin.js
   checksum: 10/4586c296c736483e297da7cffd19475e4a3e41d07b1ae124aad5d687c79e4ffa716bdac8732ed1db942caf65271cee9dd39f8b639611de161a2753e2112ffe1d
+  languageName: node
+  linkType: hard
+
+"rimraf@npm:^3.0.0, rimraf@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "rimraf@npm:3.0.2"
+  dependencies:
+    glob: "npm:^7.1.3"
+  bin:
+    rimraf: bin.js
+  checksum: 10/063ffaccaaaca2cfd0ef3beafb12d6a03dd7ff1260d752d62a6077b5dfff6ae81bea571f655bb6b589d366930ec1bdd285d40d560c0dae9b12f125e54eb743d5
   languageName: node
   linkType: hard
 
@@ -15519,7 +15517,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:5.96.1":
+"webpack@npm:^5.96.1":
   version: 5.96.1
   resolution: "webpack@npm:5.96.1"
   dependencies:
