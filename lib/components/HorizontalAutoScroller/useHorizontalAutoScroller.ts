@@ -130,8 +130,9 @@ const stateReducer: Reducer<State, Actions> = (prevState, action) => {
 				paused: false,
 			};
 		}
-		default:
+		default: {
 			return prevState;
+		}
 	}
 };
 

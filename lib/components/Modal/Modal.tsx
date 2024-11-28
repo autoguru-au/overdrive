@@ -38,8 +38,9 @@ const reducer: Reducer<State, Action> = (prevState, action) => {
 					return 'OPENING';
 				}
 
-				default:
+				default: {
 					return prevState;
+				}
 			}
 		}
 
@@ -50,8 +51,9 @@ const reducer: Reducer<State, Action> = (prevState, action) => {
 					return 'CLOSING';
 				}
 
-				default:
+				default: {
 					return prevState;
+				}
 			}
 		}
 
@@ -65,13 +67,15 @@ const reducer: Reducer<State, Action> = (prevState, action) => {
 					return 'OPEN';
 				}
 
-				default:
+				default: {
 					return prevState;
+				}
 			}
 		}
 
-		default:
+		default: {
 			return prevState;
+		}
 	}
 };
 

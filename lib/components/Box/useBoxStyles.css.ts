@@ -29,12 +29,11 @@ const borderColours: Record<
 	ReturnType<typeof style>
 > = {
 	...vars.border.colours,
-	...(Object.entries(vars.colours.intent).reduce(
-		(map, entry) => ({
-			...map,
-			[entry[0]]: entry[1].border,
-		}),
-		{},
+	...(Object.fromEntries(
+		Object.entries(vars.colours.intent).map((entry) => [
+			entry[0],
+			entry[1].border,
+		]),
 	) as Record<IntentColours, ReturnType<typeof style>>),
 };
 const backgroundColourTokens: Record<
@@ -42,24 +41,22 @@ const backgroundColourTokens: Record<
 	ReturnType<typeof style>
 > = {
 	...vars.colours.gamut,
-	...(Object.entries(vars.colours.intent).reduce(
-		(map, entry) => ({
-			...map,
-			[entry[0]]: entry[1].background.standard,
-		}),
-		{},
+	...(Object.fromEntries(
+		Object.entries(vars.colours.intent).map((entry) => [
+			entry[0],
+			entry[1].background.standard,
+		]),
 	) as Record<IntentColours, ReturnType<typeof style>>),
 	transparent: 'transparent',
 };
 const foregroundColourTokens: Record<
 	IntentColours,
 	ReturnType<typeof style>
-> = Object.entries(vars.colours.intent).reduce(
-	(map, entry) => ({
-		...map,
-		[entry[0]]: entry[1].foreground,
-	}),
-	{},
+> = Object.fromEntries(
+	Object.entries(vars.colours.intent).map((entry) => [
+		entry[0],
+		entry[1].foreground,
+	]),
 ) as Record<IntentColours, ReturnType<typeof style>>;
 
 export const border = {

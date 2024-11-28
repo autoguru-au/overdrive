@@ -136,7 +136,7 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 						{...inputProps}
 						autoFocus
 						ref={inputRef}
-						type={type !== 'number' ? type : 'text'}
+						type={type === 'number' ? 'text' : type}
 						value={inputValue}
 						className={clsx(
 							textStyles,

@@ -75,9 +75,8 @@ export default {
 		value: {
 			options: {
 				unselected: null,
-				...mockSuggestions.reduce(
-					(map, item) => ({ ...map, [item.text]: item }),
-					{},
+				...Object.fromEntries(
+					mockSuggestions.map((item) => [item.text, item]),
 				),
 			},
 			defaultValue: null,

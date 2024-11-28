@@ -125,19 +125,24 @@ export const Stepper: FunctionComponent<Props> = ({
 		(event: KeyboardEvent<HTMLDivElement>) => {
 			// eslint-disable-next-line default-case
 			switch (event.key) {
-				case 'ArrowLeft':
+				case 'ArrowLeft': {
 					return onDecrement();
-				case 'ArrowRight':
+				}
+				case 'ArrowRight': {
 					return onIncrement();
-				case 'Home':
+				}
+				case 'Home': {
 					event.preventDefault();
 					return onChange(min);
-				case 'End':
+				}
+				case 'End': {
 					event.preventDefault();
 					return onChange(max);
-				case 'Escape':
+				}
+				case 'Escape': {
 					event.currentTarget.blur();
 					break;
+				}
 			}
 		},
 		[min, max, onDecrement, onIncrement, onChange],

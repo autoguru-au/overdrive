@@ -50,7 +50,7 @@ export const hexToRGB = (hex: string): RGBNumbers => {
 };
 
 export const rgbStrToRGB = (rgb: string): RGBNumbers => {
-	const components = rgb.replace(/[^\d,]/g, '').split(',');
+	const components = rgb.replaceAll(/[^\d,]/g, '').split(',');
 	return {
 		r: Number.parseInt(components[0]),
 		g: Number.parseInt(components[1]),

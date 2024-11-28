@@ -34,8 +34,8 @@ export const zIndex = styleVariants(
 export const top = styleVariants(
 	mapTokenToProperty(
 		['none', '1', '3', '5', '7', 'subHeader'].reduce((tokens, current) => {
-			if (current === 'subHeader') tokens[current] = '72px';
-			else tokens[current] = vars.space[current];
+			tokens[current] =
+				current === 'subHeader' ? '72px' : vars.space[current];
 			return tokens;
 		}, {}),
 		'top',
@@ -45,8 +45,8 @@ export const top = styleVariants(
 export const bottom = styleVariants(
 	mapTokenToProperty(
 		['none', '1', '3', '5', '7', 'subHeader'].reduce((tokens, current) => {
-			if (current === 'subHeader') tokens[current] = '72px';
-			else tokens[current] = vars.space[current];
+			tokens[current] =
+				current === 'subHeader' ? '72px' : vars.space[current];
 			return tokens;
 		}, {}),
 		'bottom',

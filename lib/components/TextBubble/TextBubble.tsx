@@ -37,14 +37,18 @@ export const TextBubble: FunctionComponent<Props> = ({
 	const size = useMemo<BubbleSize>(() => {
 		const size = label.length;
 		switch (size) {
-			case 1:
+			case 1: {
 				return 'SMALL';
-			case 2:
+			}
+			case 2: {
 				return 'MEDIUM';
-			case 3:
+			}
+			case 3: {
 				return 'LARGE';
-			default:
+			}
+			default: {
 				return 'X_LARGE';
+			}
 		}
 	}, [label]);
 	return (

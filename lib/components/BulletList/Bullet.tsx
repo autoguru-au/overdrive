@@ -19,14 +19,18 @@ export interface Props {
 
 const getBulletCls = (styles, type: BulletType): string => {
 	switch (type) {
-		case 'circle':
+		case 'circle': {
 			return styles.root.circle;
-		case 'square':
+		}
+		case 'square': {
 			return styles.root.square;
-		case 'disc':
+		}
+		case 'disc': {
 			return styles.root.disc;
-		default:
+		}
+		default: {
 			return '';
+		}
 	}
 };
 

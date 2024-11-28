@@ -52,8 +52,9 @@ const reducer: Reducer<OverrideValues, Action> = (prevState, action) => {
 			};
 		}
 
-		default:
+		default: {
 			return prevState;
+		}
 	}
 };
 export const useBuildThemeOverrides = ({

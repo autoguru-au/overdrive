@@ -7,7 +7,7 @@ import {
 	useState,
 } from 'react';
 
-export const isBrowser = typeof window !== 'undefined';
+export const isBrowser = typeof globalThis !== 'undefined';
 
 export const isomorphicLayoutEffect = isBrowser ? useLayoutEffect : useEffect;
 
@@ -91,7 +91,7 @@ export const hex2rgba = (c, alpha = '1') =>
 		.map((x) => Number(`0x${x}`))},${alpha})`;
 
 export const ownerWindow = (node?: Node): Window =>
-	ownerDocument(node)?.defaultView || window;
+	ownerDocument(node)?.defaultView || globalThis;
 export const ownerDocument = (node?: Node): Document =>
 	node?.ownerDocument || document;
 

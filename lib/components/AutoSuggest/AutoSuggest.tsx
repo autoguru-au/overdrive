@@ -242,10 +242,7 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 		suggestions,
 		value: valueRef.current,
 		onChange: (value) => {
-			if (
-				typeof value.payload !== 'undefined' &&
-				value.payload !== null
-			) {
+			if (value.payload !== undefined && value.payload !== null) {
 				setShowModal(false);
 				if (!isDesktop) setIsFocused(false);
 			}

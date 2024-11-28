@@ -58,15 +58,18 @@ const reducer: Reducer<{ toasts: MessageConfig[] }, Actions> = (
 	action,
 ) => {
 	switch (action.type) {
-		case ActionTypes.ADD:
+		case ActionTypes.ADD: {
 			return { ...state, toasts: [...state.toasts, action.config] };
-		case ActionTypes.REMOVE:
+		}
+		case ActionTypes.REMOVE: {
 			return {
 				...state,
 				toasts: state.toasts.filter(({ id }) => id !== action.id),
 			};
-		default:
+		}
+		default: {
 			return state;
+		}
 	}
 };
 

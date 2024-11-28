@@ -29,7 +29,7 @@ export const StickyBox: FunctionComponent<Props> = ({
 	const [withShadow, setWithShadow] = useState<boolean>(false);
 
 	useEffect(() => {
-		if (!containerRef.current?.parentElement || !window) return void 0;
+		if (!containerRef.current?.parentElement || !globalThis) return void 0;
 		const parentElement = containerRef.current.parentElement;
 		const onScroll = () => {
 			setWithShadow(parentElement.scrollTop > 3);
