@@ -44,6 +44,7 @@ export interface OverrideValues {
 }
 
 const reducer: Reducer<OverrideValues, Action> = (prevState, action) => {
+	// eslint-disable-next-line sonarjs/no-small-switch
 	switch (action.type) {
 		case 'SET_THEME_VALUES': {
 			return {

@@ -118,6 +118,7 @@ export const withEnhancedInput = <
 		withPrefixIcon = true,
 		withSuffixIcon = true,
 		defaultValue,
+		// eslint-disable-next-line unicorn/no-object-as-default-parameter
 	}: EnhancedInputConfigs = { primitiveType: 'text', defaultValue: void 0 },
 ) =>
 	forwardRef<

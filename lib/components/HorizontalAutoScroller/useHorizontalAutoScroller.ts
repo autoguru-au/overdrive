@@ -97,13 +97,7 @@ const stateReducer: Reducer<State, Actions> = (prevState, action) => {
 				pageCount: action.payload,
 			};
 		}
-		case 'NEXT_PAGE': {
-			return {
-				...prevState,
-				paused: false,
-				activePage: getNextPge(prevState),
-			};
-		}
+		case 'NEXT_PAGE':
 		case 'CLICK_NEXT': {
 			return {
 				...prevState,

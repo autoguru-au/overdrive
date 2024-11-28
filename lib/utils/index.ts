@@ -88,12 +88,15 @@ export const hex2rgba = (c, alpha = '1') =>
 	`rgb(${c
 		.slice(1)
 		.match(/../g)
+		// eslint-disable-next-line sonarjs/no-nested-template-literals
 		.map((x) => Number(`0x${x}`))},${alpha})`;
 
-export const ownerWindow = (node?: Node): Window =>
-	ownerDocument(node)?.defaultView || globalThis;
 export const ownerDocument = (node?: Node): Document =>
 	node?.ownerDocument || document;
+
+export const ownerWindow = (node?: Node): Window =>
+	// @ts-expect-error Property 'name' is missing in type 'typeof globalThis' but required in type 'Window'
+	ownerDocument(node)?.defaultView || globalThis;
 
 /**
  * A method to be used when dealing with callbacks that depend on data, but you don't want to trigger re-renders.
