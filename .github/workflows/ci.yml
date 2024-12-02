@@ -89,4 +89,3 @@ jobs:
                   onlyChanged: true # enables TurboSnap behaviour
                   autoAcceptChanges: 'main'
                   exitZeroOnChanges: '!(main)'
-                  skip: 'renovate/**,changeset/**'
