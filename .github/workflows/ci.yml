@@ -42,7 +42,7 @@ jobs:
             - name: Test
               run: yarn test --no-cache --ci --coverage
 
-            - uses: codecov/codecov-action@v3
+            - uses: codecov/codecov-action@v5
               with:
                   token: ${{ secrets.CODECOV }}
 
