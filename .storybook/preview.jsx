@@ -179,7 +179,7 @@ const preview = {
 		},
 		options: {
 			storySort: {
-				order: ['Overdrive'],
+				order: ['Overdrive', 'Foundation'],
 			},
 		},
 	},
