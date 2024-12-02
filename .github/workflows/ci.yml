@@ -49,9 +49,6 @@ jobs:
     visual_test:
         name: Visual changes
         runs-on: ubuntu-latest
-        if: |
-            !contains(github.ref, 'renovate') &&
-            !contains(github.ref, 'changeset')
         env:
             TZ: Australia/Brisbane
             CI: true
@@ -89,4 +86,3 @@ jobs:
                   onlyChanged: true # enables TurboSnap behaviour
                   autoAcceptChanges: 'main'
                   exitZeroOnChanges: '!(main)'
-                  skip: 'renovate/**,changeset/**'
