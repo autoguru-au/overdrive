@@ -82,16 +82,11 @@ jobs:
 
             - run: yarn --immutable
 
-            - name: Chromatic (main)
-              if: github.ref == 'refs/heads/main'
-              run: yarn run chromatic test --auto-accept-changes
-              env:
-                  CHROMATIC_APP_CODE: ${{ secrets.CHROMATIC_APP_CODE }}
-            - name: Chromatic (prs)
-              if: |
-                  github.ref != 'refs/heads/main' &&
-                  !contains(github.ref, 'renovate') &&
-                  !contains(github.ref, 'changeset')
-              run: yarn run chromatic test --exit-once-uploaded
-              env:
-                  CHROMATIC_APP_CODE: ${{ secrets.CHROMATIC_APP_CODE }}
+            - name: Chromatic
+              uses: chromaui/action@latest
+              with:
+                  projectToken: ${{ secrets.CHROMATIC_APP_CODE }}
+                  onlyChanged: true # enables TurboSnap behaviour
+                  autoAcceptChanges: 'main'
+                  exitZeroOnChanges: '!(main)'
+                  skip: 'renovate/**,changeset/**'
