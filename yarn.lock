@@ -105,7 +105,7 @@ __metadata:
     "@autoguru/icons": "npm:^1.8.2"
     "@autoguru/jest-preset": "npm:3.0.0"
     "@autoguru/tsconfig": "npm:^1.2.0"
-    "@autoguru/utilities": "npm:^1.2.1"
+    "@autoguru/utilities": "npm:^1.2.2"
     "@babel/cli": "npm:^7.25.9"
     "@babel/core": "npm:^7.26.0"
     "@babel/plugin-proposal-class-properties": "npm:^7.18.6"
@@ -213,13 +213,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@autoguru/utilities@npm:^1.2.1":
-  version: 1.2.1
-  resolution: "@autoguru/utilities@npm:1.2.1"
+"@autoguru/utilities@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "@autoguru/utilities@npm:1.2.2"
   dependencies:
     tiny-invariant: "npm:^1.0.6"
     tiny-warning: "npm:^1.0.3"
-  checksum: 10/66289117a4d7feb884ceed1377a62b11dda0830ea0615ad7f80c8ead0838c08b56faea854c24d24229b5c934a4acce0c6f159cb12049da4f515b99c827cdb72b
+  checksum: 10/fcc4adddd8e31f3b89ea2a9d73f6093a4cdd3d308d26c2b1691523f29724a3da9818a93d44378356e0198b67c7dd8b6cceca4dc69ce5e6d55d891550a6dd1869
   languageName: node
   linkType: hard
 
