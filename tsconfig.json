@@ -24,7 +24,6 @@
 		"jsx": "react",
 		"lib": ["dom"],
 		"noFallthroughCasesInSwitch": true,
-		"suppressImplicitAnyIndexErrors": true,
 		"strictFunctionTypes": true,
 		"forceConsistentCasingInFileNames": true,
 		"noImplicitReturns": true,

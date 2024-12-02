@@ -50,7 +50,8 @@ export const hexToRGB = (hex: string): RGBNumbers => {
 };
 
 export const rgbStrToRGB = (rgb: string): RGBNumbers => {
-	const components = rgb.replace(/[^\d,]/g, '').split(',');
+	// @ts-expect-error TODO: fix TS target lib for `replaceAll`
+	const components = rgb.replaceAll(/[^\d,]/g, '').split(',');
 	return {
 		r: Number.parseInt(components[0]),
 		g: Number.parseInt(components[1]),

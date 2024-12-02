@@ -79,6 +79,7 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 		const onChange = useCallback<ChangeEventHandler<HTMLInputElement>>(
 			(e) => {
 				const changeValue = e.currentTarget.value;
+				// eslint-disable-next-line unicorn/prefer-at
 				const lastChar = changeValue.charAt(changeValue.length - 1);
 				if (
 					type === 'number' &&
@@ -100,7 +101,7 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 			colour,
 			size,
 		});
-		const [width, setWidth] = useState<number | undefined>(undefined);
+		const [width, setWidth] = useState<number | undefined>();
 		useEffect(() => {
 			if (textRef.current) {
 				setWidth(textRef.current.clientWidth);
@@ -136,7 +137,7 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 						{...inputProps}
 						autoFocus
 						ref={inputRef}
-						type={type !== 'number' ? type : 'text'}
+						type={type === 'number' ? 'text' : type}
 						value={inputValue}
 						className={clsx(
 							textStyles,

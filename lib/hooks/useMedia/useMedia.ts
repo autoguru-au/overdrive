@@ -20,7 +20,7 @@ export const useMedia = (
 	);
 
 	const matchesInit = useMemo(
-		() => getQueries().map((query) => window.matchMedia(query).matches),
+		() => getQueries().map((query) => globalThis.matchMedia(query).matches),
 		[getQueries],
 	);
 
@@ -31,7 +31,7 @@ export const useMedia = (
 			let isMounted = true;
 
 			const matchers = getQueries().map((query) =>
-				window.matchMedia(query),
+				globalThis.matchMedia(query),
 			);
 
 			const removeHandlersFn = matchers.map((matcher, idx) => {

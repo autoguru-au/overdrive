@@ -150,16 +150,21 @@ export const Positioner: FunctionComponent<Props> = ({
 
 const convertPlacement = (alignment: EAlignment): Placement => {
 	switch (alignment) {
-		case EAlignment.BOTTOM_LEFT:
+		case EAlignment.BOTTOM_LEFT: {
 			return 'bottom-start';
-		case EAlignment.BOTTOM_RIGHT:
+		}
+		case EAlignment.BOTTOM_RIGHT: {
 			return 'bottom-end';
-		case EAlignment.TOP_LEFT:
+		}
+		case EAlignment.TOP_LEFT: {
 			return 'top-start';
-		case EAlignment.TOP_RIGHT:
+		}
+		case EAlignment.TOP_RIGHT: {
 			return 'top-end';
-		default:
+		}
+		default: {
 			return alignment;
+		}
 	}
 };
 
