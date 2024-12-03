@@ -1,12 +1,22 @@
 type VanillaTokens = {
 	[key: string]: string | VanillaTokens;
 };
-type SpaceScale = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'none';
-type TextSizeScale = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';
-type BorderWidthScale = '1' | '2' | '3' | 'none';
-type IconSizeScale = 'small' | 'medium' | 'large';
+export type SpaceScale =
+	| '1'
+	| '2'
+	| '3'
+	| '4'
+	| '5'
+	| '6'
+	| '7'
+	| '8'
+	| '9'
+	| 'none';
+export type TextSizeScale = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';
+export type BorderWidthScale = '1' | '2' | '3' | 'none';
+export type IconSizeScale = 'small' | 'medium' | 'large';
 
-type DeviceSize = 'mobile' | 'tablet' | 'desktop' | 'largeDesktop';
+export type DeviceSize = 'mobile' | 'tablet' | 'desktop' | 'largeDesktop';
 
 type ColourValue = Record<string, string>;
 
