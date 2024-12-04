@@ -1,7 +1,7 @@
 import { buildColourGamut } from '../makeTheme';
 import { ColourMap, Tokens } from '../tokens';
 
-const baseThemeColours: ColourMap = {
+export const baseThemeColours: ColourMap = {
 	black: {
 		'900': '#222222',
 		'800': '#2A2C2A',

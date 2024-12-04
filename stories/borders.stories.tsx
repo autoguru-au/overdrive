@@ -1,42 +1,39 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { Box, type BoxStyleProps } from '../lib/components/Box';
+import { Box } from '../lib/components/Box';
 import { Heading } from '../lib/components/Heading';
+import { stack, type RecipeStackProps } from '../lib/styles/stack.css';
 import { tokens } from '../lib/themes/base/tokens';
 import { BorderWidthScale } from '../lib/themes/tokens';
 
-import {
-	boxSize,
-	labels,
-	styleStack,
-	titles,
-	type StyleStackProps,
-} from './styles.css';
+import { labels, swatch, titles } from './styles.css';
 
 const widthItems = Object.keys(tokens.border.width);
 const radiusItems = Object.keys(tokens.border.radius);
 
-type StackProps = StyleStackProps & { children: React.ReactNode };
-const Stack = ({ children, ...props }: StackProps) => (
-	<div className={styleStack(props)}>{children}</div>
+const Stack = ({
+	children,
+	...props
+}: RecipeStackProps & { children: React.ReactNode }) => (
+	<div className={stack(props)}>{children}</div>
 );
 
 const Widths = () => {
 	return (
-		<Stack gap="md" vertical>
+		<Stack space="md">
 			<Heading is="h2" className={titles}>
-				Border width
+				Width
 			</Heading>
 
 			{widthItems.map((width) => (
-				<Stack gap="sm" key={width}>
+				<Stack space="sm" horizontal key={width}>
 					<Box
 						backgroundColour="black100"
 						borderColour="neutral"
 						borderRadius="1"
 						borderWidth={width as BorderWidthScale}
-						className={boxSize}
+						className={swatch}
 					/>
 					<p className={labels}>{width}</p>
 				</Stack>
@@ -47,19 +44,19 @@ const Widths = () => {
 
 const Radius = () => {
 	return (
-		<Stack gap="md" vertical>
+		<Stack space="md">
 			<Heading is="h2" className={titles}>
-				Border radius
+				Radius
 			</Heading>
 
 			{radiusItems.sort().map((radius) => (
-				<Stack gap="sm" key={radius}>
+				<Stack space="sm" horizontal key={radius}>
 					<Box
 						backgroundColour="black100"
 						borderColour="neutral"
 						borderRadius={radius}
 						borderWidth="2"
-						className={boxSize}
+						className={swatch}
 						style={
 							radius === 'pill' ? { height: '74px' } : undefined
 						}
@@ -81,7 +78,7 @@ type Story = StoryObj;
 
 export const Borders: Story = {
 	render: () => (
-		<Stack gap="lg">
+		<Stack space="lg" horizontal>
 			<Heading is="h1">Borders</Heading>
 			<Widths />
 			<Radius />

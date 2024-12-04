@@ -1,55 +1,90 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import clsx from 'clsx';
 import React from 'react';
 
-import { Box, type BoxStyleProps } from '../lib/components/Box';
 import { Heading } from '../lib/components/Heading';
+import { sprinkles } from '../lib/styles/sprinkles.css';
+import { stack, type RecipeStackProps } from '../lib/styles/stack.css';
+import { baseThemeColours } from '../lib/themes/base/tokens';
+import type { ColourGamut, ColourValue } from '../lib/themes/tokens';
 
-import { boxSize } from './styles.css';
+import { labels, hexPill, swatch } from './styles.css';
 
-// import { useTheme } from '../lib/components/ThemeProvider/ThemeProvider';
+const Stack = ({
+	children,
+	...props
+}: RecipeStackProps & { children: React.ReactNode }) => (
+	<div className={stack(props)}>{children}</div>
+);
 
-const baseBorderProps: BoxStyleProps = {
-	backgroundColour: 'transparent',
-	borderColour: 'neutral',
-	borderRadius: 'none',
-	borderWidth: 'none'
+interface SwatchProps {
+	colour: ColourGamut;
+	hex?: string;
+	hue?: string;
 }
-
-const Borders = () => {
-	return (
-		<div>
-			<Heading is="h1">Borders</Heading>
-			<Heading is="h2">Border width</Heading>
-
-			<p>None</p>
-			<Box
-				{...baseBorderProps}
-				className={boxSize}
-			/>
-
-			<p>1</p>
-			<Box
-				{...baseBorderProps}
-				borderWidth="1"
-				className={boxSize}
-			/>
-
-			<p>2</p>
-			<Box
-				{...baseBorderProps}
-				borderWidth="2"
-				className={boxSize}
-			/>
-
-			<p>3</p>
-			<Box
-				{...baseBorderProps}
-				borderWidth="3"
-				className={boxSize}
-			/>
+const Swatch = ({ colour, hex, hue }: SwatchProps) => (
+	<div
+		style={{
+			display: 'flex',
+			gap: '10px',
+			alignItems: 'center',
+			position: 'relative',
+		}}
+	>
+		<div
+			className={clsx([
+				sprinkles({
+					background: colour,
+					borderRadius: 'full',
+				}),
+				swatch,
+			])}
+		>
+			<div className={hexPill}>{hex}</div>
 		</div>
-	)
+		{hue && colour.replace(hue, '')}
+	</div>
+);
+
+interface PaletteSwatchesProps {
+	hue: string;
+	shades: ColourValue;
 }
+const PaletteSwatches = ({ hue, shades }: PaletteSwatchesProps) => (
+	<Stack space="sm">
+		{Object.entries(shades)
+			.reverse()
+			.map(([colour, hex]) => (
+				<Swatch
+					colour={`${hue}${colour}` as ColourGamut}
+					hex={hex}
+					hue={hue}
+					key={colour}
+				/>
+			))}
+	</Stack>
+);
+
+const Palette = () => {
+	return (
+		<Stack horizontal space="lg">
+			{['green', 'blue', 'yellow', 'red', 'gray', 'black'].map((hue) => (
+				<div key={hue}>
+					<Heading
+						is="h3"
+						className={clsx([
+							labels,
+							sprinkles({ marginBottom: '5' }),
+						])}
+					>
+						{hue}
+					</Heading>
+					<PaletteSwatches hue={hue} shades={baseThemeColours[hue]} />
+				</div>
+			))}
+		</Stack>
+	);
+};
 
 const meta: Meta = {
 	title: 'Foundation/Colours',
@@ -60,5 +95,11 @@ export default meta;
 type Story = StoryObj;
 
 export const Colours: Story = {
-	render: () => <Borders />
+	render: () => (
+		<Stack space="md">
+			<Heading is="h1">Colours</Heading>
+			<Heading is="h2">Full palette</Heading>
+			<Palette />
+		</Stack>
+	),
 };

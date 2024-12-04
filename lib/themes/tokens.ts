@@ -18,7 +18,7 @@ export type IconSizeScale = 'small' | 'medium' | 'large';
 
 export type DeviceSize = 'mobile' | 'tablet' | 'desktop' | 'largeDesktop';
 
-type ColourValue = Record<string, string>;
+export type ColourValue = Record<string, string>;
 
 interface ColourIntensityMap extends VanillaTokens {
 	standard: string;
