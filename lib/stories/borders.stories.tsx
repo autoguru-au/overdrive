@@ -3,22 +3,14 @@ import React from 'react';
 
 import { Box } from '../components/Box';
 import { Heading } from '../components/Heading';
-import { stack, type RecipeStackProps } from '../styles/stack.css';
 import { tokens } from '../themes/base/tokens';
 import { BorderWidthScale } from '../themes/tokens';
 
+import { Stack } from './helpers';
 import { labels, swatch, titles } from './styles.css';
 
 const widthItems = Object.keys(tokens.border.width);
 const radiusItems = Object.keys(tokens.border.radius);
-
-// TODO: find a home for new recipe components
-const Stack = ({
-	children,
-	...props
-}: RecipeStackProps & { children: React.ReactNode }) => (
-	<div className={stack(props)}>{children}</div>
-);
 
 const Widths = () => {
 	return (

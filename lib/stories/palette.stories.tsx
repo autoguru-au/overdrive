@@ -4,19 +4,11 @@ import React from 'react';
 
 import { Heading } from '../components/Heading';
 import { sprinkles } from '../styles/sprinkles.css';
-import { stack, type RecipeStackProps } from '../styles/stack.css';
 import { baseThemeColours } from '../themes/base/tokens';
 import type { ColourGamut, ColourValue } from '../themes/tokens';
 
+import { Stack } from './helpers';
 import { labels, hexPill, swatch } from './styles.css';
-
-// TODO: find a home for new recipe components
-const Stack = ({
-	children,
-	...props
-}: RecipeStackProps & { children: React.ReactNode }) => (
-	<div className={stack(props)}>{children}</div>
-);
 
 interface SwatchProps {
 	colour: ColourGamut;

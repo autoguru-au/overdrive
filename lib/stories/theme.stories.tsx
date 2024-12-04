@@ -2,18 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
 import { Heading } from '../components/Heading';
-import { stack, type RecipeStackProps } from '../styles/stack.css';
 import { themeContractVars } from '../themes/theme.css';
 
+import { Stack } from './helpers';
 import { labels, swatch } from './styles.css';
-
-// TODO: find a home for new recipe components
-const Stack = ({
-	children,
-	...props
-}: RecipeStackProps & { children: React.ReactNode }) => (
-	<div className={stack(props)}>{children}</div>
-);
 
 const ThemeSwatch = ({ label, cssVar }) => (
 	<div
