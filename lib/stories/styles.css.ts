@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { themeContractVars as vars } from '../lib/themes/theme.css';
+import { themeContractVars as vars } from '../themes/theme.css';
 
 export const swatch = style({
 	width: vars.space[9],

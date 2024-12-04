@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { Heading } from '../lib/components/Heading';
-import { stack, type RecipeStackProps } from '../lib/styles/stack.css';
-import { themeContractVars } from '../lib/themes/theme.css';
+import { Heading } from '../components/Heading';
+import { stack, type RecipeStackProps } from '../styles/stack.css';
+import { themeContractVars } from '../themes/theme.css';
 
 import { labels, swatch } from './styles.css';
 

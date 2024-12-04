@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { Box } from '../lib/components/Box';
-import { Heading } from '../lib/components/Heading';
-import { stack, type RecipeStackProps } from '../lib/styles/stack.css';
-import { tokens } from '../lib/themes/base/tokens';
-import { BorderWidthScale } from '../lib/themes/tokens';
+import { Box } from '../components/Box';
+import { Heading } from '../components/Heading';
+import { stack, type RecipeStackProps } from '../styles/stack.css';
+import { tokens } from '../themes/base/tokens';
+import { BorderWidthScale } from '../themes/tokens';
 
 import { labels, swatch, titles } from './styles.css';
 

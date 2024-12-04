@@ -2,11 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 import clsx from 'clsx';
 import React from 'react';
 
-import { Heading } from '../lib/components/Heading';
-import { sprinkles } from '../lib/styles/sprinkles.css';
-import { stack, type RecipeStackProps } from '../lib/styles/stack.css';
-import { baseThemeColours } from '../lib/themes/base/tokens';
-import type { ColourGamut, ColourValue } from '../lib/themes/tokens';
+import { Heading } from '../components/Heading';
+import { sprinkles } from '../styles/sprinkles.css';
+import { stack, type RecipeStackProps } from '../styles/stack.css';
+import { baseThemeColours } from '../themes/base/tokens';
+import type { ColourGamut, ColourValue } from '../themes/tokens';
 
 import { labels, hexPill, swatch } from './styles.css';
 
