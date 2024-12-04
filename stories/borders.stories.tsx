@@ -12,6 +12,7 @@ import { labels, swatch, titles } from './styles.css';
 const widthItems = Object.keys(tokens.border.width);
 const radiusItems = Object.keys(tokens.border.radius);
 
+// TODO: find a home for new recipe components
 const Stack = ({
 	children,
 	...props
@@ -21,7 +22,7 @@ const Stack = ({
 
 const Widths = () => {
 	return (
-		<Stack space="md">
+		<Stack>
 			<Heading is="h2" className={titles}>
 				Width
 			</Heading>
@@ -44,7 +45,7 @@ const Widths = () => {
 
 const Radius = () => {
 	return (
-		<Stack space="md">
+		<Stack>
 			<Heading is="h2" className={titles}>
 				Radius
 			</Heading>

@@ -11,8 +11,8 @@ export const stack = recipe({
 			end: sprinkles({ justifyContent: 'flex-end' }),
 		},
 		space: {
-			sm: sprinkles({ gap: '3' }),
-			md: sprinkles({ gap: '6' }),
+			sm: sprinkles({ gap: '5' }),
+			md: sprinkles({ gap: '8' }),
 			lg: sprinkles({ gap: '9' }),
 		},
 		// space: Object.fromEntries(
