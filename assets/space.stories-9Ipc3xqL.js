@@ -1,0 +1,7 @@
+import{R as e}from"./index-sWIihdb-.js";import{t as p}from"./tokens-RHDzUXfy.js";import{a as S}from"./makeTheme-BvwTE3C0.js";import{S as s,t as i,l as d,B as k,a as u}from"./index-DJzIjhiA.js";import{H as c}from"./Heading-595pV5WZ.js";import"./_commonjsHelpers-C932wzq6.js";import"./Box-D0fGWDzz.js";import"./useTextStyles-v_jGj5tR.js";const{space:g}=p,h=Object.keys(g).filter(a=>a!=="none"),b=()=>e.createElement(s,{space:"sm"},e.createElement(c,{is:"h2",className:i},"Space scale"),h.map(a=>e.createElement(s,{space:"sm",alignItems:"center",horizontal:!0,key:a},e.createElement("p",{className:d},a),e.createElement(k,{background:"black700",height:"5",width:a}),e.createElement("p",{className:u},p.space[a])))),r=Object.entries(S),f=()=>e.createElement(s,{space:"sm"},e.createElement(c,{is:"h2",className:i},"Breakpoints"),r.map(([a,E],n)=>e.createElement("div",{key:a},e.createElement("span",{className:d},a),": ",E,n<r.length-1?` to ${r[n+1][1]}`:" and up"))),x={title:"Foundation/Space",tags:["!autodocs"]},t={render:()=>e.createElement(s,{gap:"8",horizontal:!0},e.createElement(c,{is:"h1"},"Space"),e.createElement(b,null),e.createElement(f,null))};var o,m,l;t.parameters={...t.parameters,docs:{...(o=t.parameters)==null?void 0:o.docs,source:{originalSource:`{
+  render: () => <Stack gap="8" horizontal>
+            <Heading is="h1">Space</Heading>
+            <SpaceScale />
+            <Breakpoints />
+        </Stack>
+}`,...(l=(m=t.parameters)==null?void 0:m.docs)==null?void 0:l.source}}};const R=["Space"];export{t as Space,R as __namedExportsOrder,x as default};
