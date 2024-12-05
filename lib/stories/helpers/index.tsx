@@ -24,13 +24,38 @@ export const Box = ({
 	</div>
 );
 
+type StackSprinkles = Pick<
+	Sprinkles,
+	'alignItems' | 'flexDirection' | 'flexWrap' | 'gap' | 'justifyContent'
+>;
 export const Stack = ({
+	alignItems,
 	children,
 	className,
+	flexDirection,
+	flexWrap,
+	gap,
+	horizontal,
+	justifyContent,
+	space,
 	style,
 	...props
-}: ComponentProps<RecipeStackProps>) => (
-	<div className={clsx([stack(props), className])} style={style}>
+}: ComponentProps<StackSprinkles & RecipeStackProps>) => (
+	<div
+		{...props}
+		className={clsx([
+			sprinkles({
+				alignItems,
+				flexDirection,
+				flexWrap,
+				gap,
+				justifyContent,
+			}),
+			stack({ space, horizontal }),
+			className,
+		])}
+		style={style}
+	>
 		{children}
 	</div>
 );

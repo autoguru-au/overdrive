@@ -16,11 +16,11 @@ interface SwatchProps {
 	hue?: string;
 }
 const Swatch = ({ colour, hex, hue }: SwatchProps) => (
-	<div
+	<Stack
+		horizontal
+		alignItems="center"
 		style={{
-			display: 'flex',
 			gap: '10px',
-			alignItems: 'center',
 			position: 'relative',
 		}}
 	>
@@ -28,7 +28,7 @@ const Swatch = ({ colour, hex, hue }: SwatchProps) => (
 			<div className={hexPill}>{hex}</div>
 		</ColourSwatch>
 		{hue && colour.replace(hue, '')}
-	</div>
+	</Stack>
 );
 
 interface PaletteSwatchesProps {

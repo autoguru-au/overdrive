@@ -11,6 +11,10 @@ export const labels = style({
 	textTransform: 'capitalize',
 });
 
+export const small = style({
+	fontSize: 'small',
+});
+
 export const hexPill = style({
 	backgroundColor: 'hsl(0 0 100 / 75%)',
 	borderRadius: '100px',
@@ -23,7 +27,12 @@ export const hexPill = style({
 });
 
 export const variantColourSwatch = recipe({
-	base: { position: 'relative' },
+	base: {
+		position: 'relative',
+		borderColor: vars.border.colours.light,
+		borderStyle: 'solid',
+		borderWidth: vars.border.width[1],
+	},
 	variants: {
 		size: {
 			sm: { height: vars.space[7], width: vars.space[7] },

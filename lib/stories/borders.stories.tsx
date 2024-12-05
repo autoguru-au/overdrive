@@ -7,8 +7,30 @@ import { tokens } from '../themes/base/tokens';
 import { Box, Stack, type Sprinkles } from './helpers';
 import { labels, titles } from './helpers/styles.css';
 
-const widthItems = Object.keys(tokens.border.width);
-const radiusItems = Object.keys(tokens.border.radius);
+const { border, elevation } = tokens;
+const elevationItems = Object.keys(elevation);
+const widthItems = Object.keys(border.width);
+const radiusItems = Object.keys(border.radius);
+
+const Elevation = () => (
+	<Stack>
+		<Heading is="h2" className={titles}>
+			Elevation
+		</Heading>
+
+		{elevationItems.map((elevation) => (
+			<Stack space="sm" alignItems="center" horizontal key={elevation}>
+				<Box
+					background="gray100"
+					borderRadius="1"
+					boxShadow={elevation as Sprinkles['boxShadow']}
+					size="9"
+				/>
+				<p className={labels}>{elevation}</p>
+			</Stack>
+		))}
+	</Stack>
+);
 
 const Widths = () => {
 	return (
@@ -18,7 +40,7 @@ const Widths = () => {
 			</Heading>
 
 			{widthItems.map((width) => (
-				<Stack space="sm" horizontal key={width}>
+				<Stack space="sm" alignItems="center" horizontal key={width}>
 					<Box
 						background="black100"
 						borderColor="dark"
@@ -42,7 +64,7 @@ const Radius = () => {
 			</Heading>
 
 			{radiusItems.sort().map((radius) => (
-				<Stack space="sm" horizontal key={radius}>
+				<Stack space="sm" alignItems="center" horizontal key={radius}>
 					<Box
 						background="black500"
 						borderColor="gray"
@@ -69,10 +91,15 @@ type Story = StoryObj;
 
 export const Borders: Story = {
 	render: () => (
-		<Stack space="lg" horizontal>
-			<Heading is="h1">Borders</Heading>
-			<Widths />
+		<Stack gap="8" horizontal>
+			<Heading is="h1">
+				Borders &amp;
+				<br />
+				Elevation
+			</Heading>
+			<Elevation />
 			<Radius />
+			<Widths />
 		</Stack>
 	),
 };

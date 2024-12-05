@@ -1,7 +1,7 @@
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
 
 import { tokens } from '../themes/base/tokens';
-const { border, colours, space } = tokens;
+const { border, colours, elevation, space } = tokens;
 const { none, ...spaceWithoutNone } = space;
 
 const responsiveProperties = defineProperties({
@@ -32,6 +32,7 @@ const borderProperties = defineProperties({
 		borderRadius: { ...border.radius },
 		borderStyle: ['solid', 'dotted', 'dashed'],
 		borderWidth: { ...border.width },
+		boxShadow: { ...elevation },
 	},
 });
 

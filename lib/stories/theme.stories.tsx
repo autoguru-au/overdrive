@@ -8,31 +8,30 @@ import { Stack } from './helpers';
 import { labels, variantColourSwatch } from './helpers/styles.css';
 
 const ThemeSwatch = ({ label, cssVar }) => (
-	<div
-		key={label}
-		style={{ display: 'flex', gap: '10px', alignItems: 'center' }}
-	>
+	<Stack horizontal alignItems="center" style={{ gap: '10px' }} key={label}>
 		<div
 			className={variantColourSwatch()}
 			style={{ background: cssVar }}
 		></div>
 		<span className={labels}>{label}</span>
-	</div>
+	</Stack>
 );
 
 const SemanticSwatches = ({ vars }: { vars: Record<string, string> }) => (
 	<Stack space="lg" horizontal>
 		{Object.entries(vars).map(([colour, cssVar]) => (
-			<div
+			<Stack
+				horizontal
+				alignItems="center"
+				style={{ gap: '10px' }}
 				key={colour}
-				style={{ display: 'flex', gap: '10px', alignItems: 'center' }}
 			>
 				<div
 					className={variantColourSwatch()}
 					style={{ background: cssVar }}
 				></div>
 				<span className={labels}>{colour}</span>
-			</div>
+			</Stack>
 		))}
 	</Stack>
 );
@@ -85,6 +84,10 @@ export const ThemeColours: Story = {
 						view alternate colour mappings.
 					</p>
 				</hgroup>
+				<Stack>
+					<Heading is="h2">Body</Heading>
+					<SemanticSwatches vars={themeContractVars.body} />
+				</Stack>
 				<Stack>
 					<Heading is="h2">Foreground</Heading>
 					<SemanticSwatches
