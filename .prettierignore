@@ -3,6 +3,7 @@
 !/jest/
 !/lib/
 !/scripts/
+!/stories/
 !/.github/
 !/.storybook/
 !/.changeset
