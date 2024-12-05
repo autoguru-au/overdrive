@@ -7,8 +7,8 @@ import { sprinkles } from '../styles/sprinkles.css';
 import { baseThemeColours } from '../themes/base/tokens';
 import type { ColourGamut, ColourValue } from '../themes/tokens';
 
-import { Stack } from './helpers';
-import { labels, hexPill, swatch } from './styles.css';
+import { ColourSwatch, Stack } from './helpers';
+import { labels, hexPill } from './helpers/styles.css';
 
 interface SwatchProps {
 	colour: ColourGamut;
@@ -24,17 +24,9 @@ const Swatch = ({ colour, hex, hue }: SwatchProps) => (
 			position: 'relative',
 		}}
 	>
-		<div
-			className={clsx([
-				sprinkles({
-					background: colour,
-					borderRadius: 'full',
-				}),
-				swatch,
-			])}
-		>
+		<ColourSwatch background={colour} size="lg">
 			<div className={hexPill}>{hex}</div>
-		</div>
+		</ColourSwatch>
 		{hue && colour.replace(hue, '')}
 	</div>
 );

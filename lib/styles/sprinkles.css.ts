@@ -1,18 +1,20 @@
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
 
 import { tokens } from '../themes/base/tokens';
+const { border, colours, space } = tokens;
+const { none, ...spaceWithoutNone } = space;
 
 const responsiveProperties = defineProperties({
 	properties: {
-		gap: tokens.space,
-		marginBottom: tokens.space,
-		marginLeft: tokens.space,
-		marginRight: tokens.space,
-		marginTop: tokens.space,
-		paddingBottom: tokens.space,
-		paddingLeft: tokens.space,
-		paddingRight: tokens.space,
-		paddingTop: tokens.space,
+		gap: space,
+		marginBottom: space,
+		marginLeft: space,
+		marginRight: space,
+		marginTop: space,
+		paddingBottom: space,
+		paddingLeft: space,
+		paddingRight: space,
+		paddingTop: space,
 	},
 	shorthands: {
 		margin: ['marginTop', 'marginBottom', 'marginLeft', 'marginRight'],
@@ -26,38 +28,51 @@ const responsiveProperties = defineProperties({
 
 const borderProperties = defineProperties({
 	properties: {
-		borderRadius: { ...tokens.border.radius },
-		borderWidth: { ...tokens.border.width },
+		borderColor: { ...border.colours },
+		borderRadius: { ...border.radius },
+		borderStyle: ['solid', 'dotted', 'dashed'],
+		borderWidth: { ...border.width },
 	},
 });
 
-const flexProperties = defineProperties({
+const displayProperties = defineProperties({
 	properties: {
 		display: ['none', 'block', 'flex'],
 		flexDirection: ['row', 'column'],
 		flexWrap: ['nowrap', 'wrap', 'wrap-reverse'],
 		alignItems: ['stretch', 'flex-start', 'center', 'flex-end'],
 		justifyContent: ['stretch', 'flex-start', 'center', 'flex-end'],
-		width: ['100%', 'auto'],
+		height: {
+			...spaceWithoutNone,
+			'100%': '100%',
+			auto: 'auto',
+		},
+		width: {
+			...spaceWithoutNone,
+			'100%': '100%',
+			auto: 'auto',
+		},
 	},
 	shorthands: {
 		placeItems: ['justifyContent', 'alignItems'],
+		size: ['width', 'height'],
 	},
 });
 
 const gamutProperties = defineProperties({
 	properties: {
-		color: tokens.colours.gamut,
-		background: tokens.colours.gamut,
-		borderColor: tokens.colours.gamut,
-		fill: tokens.colours.gamut,
-		stroke: tokens.colours.gamut,
+		color: colours.gamut,
+		background: colours.gamut,
+		fill: colours.gamut,
+		stroke: colours.gamut,
 	},
 });
 
 export const sprinkles = createSprinkles(
 	responsiveProperties,
 	borderProperties,
-	flexProperties,
+	displayProperties,
 	gamutProperties,
 );
+
+export type Sprinkles = Parameters<typeof sprinkles>[0];

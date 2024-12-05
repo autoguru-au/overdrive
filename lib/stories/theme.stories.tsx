@@ -5,7 +5,7 @@ import { Heading } from '../components/Heading';
 import { themeContractVars } from '../themes/theme.css';
 
 import { Stack } from './helpers';
-import { labels, swatch } from './styles.css';
+import { labels, variantColourSwatch } from './helpers/styles.css';
 
 const ThemeSwatch = ({ label, cssVar }) => (
 	<div
@@ -13,8 +13,8 @@ const ThemeSwatch = ({ label, cssVar }) => (
 		style={{ display: 'flex', gap: '10px', alignItems: 'center' }}
 	>
 		<div
-			className={swatch}
-			style={{ background: cssVar, borderRadius: '100%' }}
+			className={variantColourSwatch()}
+			style={{ background: cssVar }}
 		></div>
 		<span className={labels}>{label}</span>
 	</div>
@@ -28,8 +28,8 @@ const SemanticSwatches = ({ vars }: { vars: Record<string, string> }) => (
 				style={{ display: 'flex', gap: '10px', alignItems: 'center' }}
 			>
 				<div
-					className={swatch}
-					style={{ background: cssVar, borderRadius: '100%' }}
+					className={variantColourSwatch()}
+					style={{ background: cssVar }}
 				></div>
 				<span className={labels}>{colour}</span>
 			</div>
@@ -79,7 +79,7 @@ export const ThemeColours: Story = {
 		return (
 			<Stack>
 				<hgroup>
-					<Heading is="h1">Themed Colours</Heading>
+					<Heading is="h1">Theme Colours</Heading>
 					<p>
 						Use the theme selection menu options in the top bar to
 						view alternate colour mappings.
@@ -96,6 +96,10 @@ export const ThemeColours: Story = {
 					<SemanticSwatches
 						vars={themeContractVars.colours.background}
 					/>
+				</Stack>
+				<Stack>
+					<Heading is="h2">Border</Heading>
+					<SemanticSwatches vars={themeContractVars.border.colours} />
 				</Stack>
 
 				<Stack>

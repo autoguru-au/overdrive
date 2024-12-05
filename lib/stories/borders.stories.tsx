@@ -1,13 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { Box } from '../components/Box';
 import { Heading } from '../components/Heading';
 import { tokens } from '../themes/base/tokens';
-import { BorderWidthScale } from '../themes/tokens';
 
-import { Stack } from './helpers';
-import { labels, swatch, titles } from './styles.css';
+import { Box, Stack, type Sprinkles } from './helpers';
+import { labels, titles } from './helpers/styles.css';
 
 const widthItems = Object.keys(tokens.border.width);
 const radiusItems = Object.keys(tokens.border.radius);
@@ -22,11 +20,12 @@ const Widths = () => {
 			{widthItems.map((width) => (
 				<Stack space="sm" horizontal key={width}>
 					<Box
-						backgroundColour="black100"
-						borderColour="neutral"
+						background="black100"
+						borderColor="dark"
 						borderRadius="1"
-						borderWidth={width as BorderWidthScale}
-						className={swatch}
+						borderStyle="solid"
+						borderWidth={width as Sprinkles['borderWidth']}
+						size="9"
 					/>
 					<p className={labels}>{width}</p>
 				</Stack>
@@ -45,11 +44,10 @@ const Radius = () => {
 			{radiusItems.sort().map((radius) => (
 				<Stack space="sm" horizontal key={radius}>
 					<Box
-						backgroundColour="black100"
-						borderColour="neutral"
-						borderRadius={radius}
-						borderWidth="2"
-						className={swatch}
+						background="black500"
+						borderColor="gray"
+						borderRadius={radius as Sprinkles['borderRadius']}
+						size="9"
 						style={
 							radius === 'pill' ? { height: '74px' } : undefined
 						}
