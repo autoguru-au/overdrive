@@ -42,7 +42,13 @@ const displayProperties = defineProperties({
 		flexDirection: ['row', 'column'],
 		flexWrap: ['nowrap', 'wrap', 'wrap-reverse'],
 		alignItems: ['stretch', 'flex-start', 'center', 'flex-end'],
-		justifyContent: ['stretch', 'flex-start', 'center', 'flex-end'],
+		justifyContent: [
+			'stretch',
+			'flex-start',
+			'center',
+			'space-between',
+			'flex-end',
+		],
 		height: {
 			...spaceWithoutNone,
 			'100%': '100%',

@@ -182,6 +182,7 @@ __metadata:
     react-focus-lock: "npm:2.13.2"
     react-intersection-observer: "npm:^9.13.1"
     react-keyed-flatten-children: "npm:^2.2.1"
+    react-stately: "npm:^3.34.0"
     react-swipeable: "npm:^7.0.2"
     react-test-renderer: "npm:^18.3.1"
     storybook: "npm:^8.4.5"
@@ -4119,6 +4120,18 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
   checksum: 10/476aa2984070fc492168148ae261d441e4938c2bdf8f5ac884206272bda3cdd84a2c87d63ab53a345e8abd62b5309a27ec464186b480e23f26f6dfd17675d3f7
+  languageName: node
+  linkType: hard
+
+"@react-stately/data@npm:^3.12.0":
+  version: 3.12.0
+  resolution: "@react-stately/data@npm:3.12.0"
+  dependencies:
+    "@react-types/shared": "npm:^3.26.0"
+    "@swc/helpers": "npm:^0.5.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+  checksum: 10/93673cc98e5c57ce71373205c7c32e6f057525680dabe683449e105677a4d93d91b88d22c975930c537f46ecefec093023617b2cb1bb9b111a894b9ef23bbfd7
   languageName: node
   linkType: hard
 
@@ -13450,6 +13463,41 @@ __metadata:
   peerDependencies:
     react: ^16.0.0 || ^17.0.0 || ^18.0.0
   checksum: 10/06457fe5bcaa44aeca998905b6849304742ea1cc2d3841e4a0964c745ff392bc4dec07f8c779f317faacce3a0bf6f84e15020ac0fa81adb931067dbb0baf707b
+  languageName: node
+  linkType: hard
+
+"react-stately@npm:^3.34.0":
+  version: 3.34.0
+  resolution: "react-stately@npm:3.34.0"
+  dependencies:
+    "@react-stately/calendar": "npm:^3.6.0"
+    "@react-stately/checkbox": "npm:^3.6.10"
+    "@react-stately/collections": "npm:^3.12.0"
+    "@react-stately/color": "npm:^3.8.1"
+    "@react-stately/combobox": "npm:^3.10.1"
+    "@react-stately/data": "npm:^3.12.0"
+    "@react-stately/datepicker": "npm:^3.11.0"
+    "@react-stately/disclosure": "npm:^3.0.0"
+    "@react-stately/dnd": "npm:^3.5.0"
+    "@react-stately/form": "npm:^3.1.0"
+    "@react-stately/list": "npm:^3.11.1"
+    "@react-stately/menu": "npm:^3.9.0"
+    "@react-stately/numberfield": "npm:^3.9.8"
+    "@react-stately/overlays": "npm:^3.6.12"
+    "@react-stately/radio": "npm:^3.10.9"
+    "@react-stately/searchfield": "npm:^3.5.8"
+    "@react-stately/select": "npm:^3.6.9"
+    "@react-stately/selection": "npm:^3.18.0"
+    "@react-stately/slider": "npm:^3.6.0"
+    "@react-stately/table": "npm:^3.13.0"
+    "@react-stately/tabs": "npm:^3.7.0"
+    "@react-stately/toggle": "npm:^3.8.0"
+    "@react-stately/tooltip": "npm:^3.5.0"
+    "@react-stately/tree": "npm:^3.8.6"
+    "@react-types/shared": "npm:^3.26.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+  checksum: 10/6f61fa12d61573b4beef873b566499291d48145b5ffa9e1d8303bb7c2fbb5429bf9c88356e170913addfe0631c05f2bdd1575daf2f3f56d055d7ebae252de754
   languageName: node
   linkType: hard
 
