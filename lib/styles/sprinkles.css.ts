@@ -2,7 +2,16 @@ import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
 
 import { tokens } from '../themes/base/tokens';
 const { border, colours, elevation, space } = tokens;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { none, ...spaceWithoutNone } = space;
+
+const interactionConditions = {
+	initial: {},
+	disabled: { selector: '&:disabled' },
+	focus: { selector: '&:focus' },
+	focusVisible: { selector: '&:focus-visible' },
+	hover: { selector: '&:hover' },
+};
 
 const responsiveProperties = defineProperties({
 	properties: {
@@ -67,6 +76,8 @@ const displayProperties = defineProperties({
 });
 
 const gamutProperties = defineProperties({
+	conditions: interactionConditions,
+	defaultCondition: 'initial',
 	properties: {
 		color: colours.gamut,
 		background: colours.gamut,
@@ -75,11 +86,30 @@ const gamutProperties = defineProperties({
 	},
 });
 
-export const sprinkles = createSprinkles(
+const interactionProperties = defineProperties({
+	conditions: interactionConditions,
+	defaultCondition: 'initial',
+	properties: {
+		cursor: ['default', 'pointer', 'not-allowed', 'wait'],
+		outlineColor: colours.foreground,
+		outlineStyle: ['solid'],
+		outlineOffset: {
+			sm: '1px',
+			md: '2px',
+			lg: '4px',
+		},
+		outlineWidth: {
+			default: '2px',
+		},
+	},
+});
+
+export const odStyle = createSprinkles(
 	responsiveProperties,
 	borderProperties,
 	displayProperties,
 	gamutProperties,
+	interactionProperties,
 );
 
-export type Sprinkles = Parameters<typeof sprinkles>[0];
+export type ODStyle = Parameters<typeof odStyle>[0];

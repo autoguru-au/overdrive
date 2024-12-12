@@ -6,7 +6,9 @@ import {
 } from 'react-aria';
 import { useToggleState } from 'react-stately';
 
-import { sprinkles as overdriveStyle } from '../../styles/sprinkles.css';
+import { odStyle } from '../../styles/sprinkles.css';
+
+import { container, checkbox } from './CheckboxButton.css';
 
 type FilteredCheckboxProps = Omit<AriaCheckboxProps, 'isIndeterminate'>;
 export interface CheckboxButtonProps extends FilteredCheckboxProps {
@@ -41,30 +43,12 @@ export const CheckboxButton = ({
 	const { inputProps } = useCheckbox(props, state, ref);
 
 	return (
-		<label
-			className={overdriveStyle({
-				display: 'flex',
-				justifyContent: 'space-between',
-				borderColor: 'light',
-				borderRadius: '1',
-				borderWidth: '1',
-				padding: '2',
-				width: '100%',
-			})}
-		>
+		<label className={container()}>
 			<VisuallyHidden>
 				<input {...inputProps} ref={ref} />
 			</VisuallyHidden>
-			<div className={overdriveStyle({ display: 'flex', gap: '2' })}>
-				<div
-					className={overdriveStyle({
-						size: '6',
-						background: 'blue900',
-						borderColor: 'light',
-						borderRadius: '1',
-						borderWidth: '1',
-					})}
-				>
+			<div className={odStyle({ display: 'flex', gap: '2' })}>
+				<div className={checkbox()}>
 					<Tick />
 				</div>
 				<div>{label}</div>

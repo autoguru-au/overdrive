@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import React from 'react';
 
 import { Heading } from '../components/Heading';
-import { sprinkles } from '../styles/sprinkles.css';
+import { odStyle } from '../styles/sprinkles.css';
 import { baseThemeColours } from '../themes/base/tokens';
 import type { ColourGamut, ColourValue } from '../themes/tokens';
 
@@ -56,7 +56,7 @@ const Palettes = () => (
 			<div key={hue}>
 				<Heading
 					is="h3"
-					className={clsx([labels, sprinkles({ marginBottom: '5' })])}
+					className={clsx([labels, odStyle({ marginBottom: '5' })])}
 				>
 					{hue}
 				</Heading>
