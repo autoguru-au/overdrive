@@ -1,22 +1,21 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import {
-	useCheckbox,
+	useCheckboxGroupItem,
 	useFocusRing,
 	mergeProps,
 	VisuallyHidden,
-	type AriaCheckboxProps,
+	type AriaCheckboxGroupItemProps,
 } from 'react-aria';
-import { useToggleState } from 'react-stately';
 
 import { odStyle } from '../../styles/sprinkles.css';
 
-import { container, checkbox } from './CheckboxButton.css';
+import { CheckboxButtonsContext } from './CheckboxButtons';
+import { checkbox, checkboxButton } from './CheckboxButtons.css';
 
-type FilteredCheckboxProps = Omit<AriaCheckboxProps, 'isIndeterminate'>;
-export interface CheckboxButtonProps extends FilteredCheckboxProps {
-	label: string;
-	labelColInfo?: string;
-}
+type FilteredCheckboxProps = Omit<
+	AriaCheckboxGroupItemProps,
+	'isIndeterminate'
+>;
 
 const Tick = () => (
 	<svg
@@ -36,18 +35,18 @@ const Tick = () => (
 );
 
 /**
- * The checkbox button is a checkbox with a large outlined interactive area and multiple options for laying out
- * label content. Used in the booking flow on the payment step for addons. Often will be used in a CheckboxGroup.
+ * The CheckboxItem is used to populate CheckboxButtons. They are outlined with a large interactive area and multiple
+ * options for laying out label content.
  */
-export const CheckboxButton = ({ children, ...props }: CheckboxButtonProps) => {
+export const CheckboxItem = (props: FilteredCheckboxProps) => {
 	const ref = useRef<HTMLInputElement>(null);
-	const state = useToggleState(props);
-	const { inputProps } = useCheckbox(props, state, ref);
+	const state = useContext(CheckboxButtonsContext)!;
+	const { inputProps } = useCheckboxGroupItem(props, state, ref);
 	const { isFocusVisible, focusProps } = useFocusRing();
-	const { isSelected } = state;
+	const isSelected = state.isSelected(props.value);
 
 	return (
-		<label className={container()}>
+		<label className={checkboxButton()}>
 			<VisuallyHidden>
 				<input {...mergeProps(inputProps, focusProps)} ref={ref} />
 			</VisuallyHidden>
@@ -71,12 +70,14 @@ export const CheckboxButton = ({ children, ...props }: CheckboxButtonProps) => {
 						width: '100%',
 					})}
 				>
-					{children}
+					{props.children}
 				</div>
 			</div>
 		</label>
 	);
 };
+
+CheckboxItem.displayName = 'CheckboxButtons.Item';
 
 export interface SplitLabelProps {
 	children?: React.ReactNode;
@@ -89,7 +90,7 @@ export interface SplitLabelProps {
 /**
  * Helper component part to display a checkbox button label with a second column justified to the end
  */
-const SplitLabel = ({ children, items }: SplitLabelProps) => {
+export const SplitLabel = ({ children, items }: SplitLabelProps) => {
 	if (!children && !items) return null;
 
 	return (
@@ -106,5 +107,4 @@ const SplitLabel = ({ children, items }: SplitLabelProps) => {
 	);
 };
 
-SplitLabel.displayName = 'CheckboxButton.SplitLabel';
-CheckboxButton.SplitLabel = SplitLabel;
+SplitLabel.displayName = 'CheckboxButtons.SplitLabel';

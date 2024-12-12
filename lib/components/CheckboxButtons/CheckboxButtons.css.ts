@@ -1,4 +1,4 @@
-import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
+import { recipe } from '@vanilla-extract/recipes';
 
 import { odStyle, type ODStyle } from '../../styles/sprinkles.css';
 
@@ -15,7 +15,7 @@ const focusOutline: ODStyle = {
 	outlineWidth: { initial: 'none', focusVisible: 'default' },
 };
 
-export const container = recipe({
+export const checkboxButton = recipe({
 	base: [
 		odStyle({
 			background: { initial: 'gray100', hover: 'gray300' },
@@ -50,13 +50,4 @@ export const checkbox = recipe({
 			true: odStyle({ ...focusOutline, outlineWidth: 'default' }),
 		},
 	},
-});
-
-export const checkboxButton = recipe({
-	base: [
-		odStyle({
-			display: 'flex',
-			padding: '3',
-		}),
-	],
 });
