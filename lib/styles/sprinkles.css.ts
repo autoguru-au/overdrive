@@ -99,6 +99,7 @@ const interactionProperties = defineProperties({
 			lg: '4px',
 		},
 		outlineWidth: {
+			none: '0',
 			default: '2px',
 		},
 	},

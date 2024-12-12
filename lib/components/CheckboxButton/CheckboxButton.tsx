@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import {
 	useCheckbox,
+	useFocusRing,
+	mergeProps,
 	VisuallyHidden,
 	type AriaCheckboxProps,
 } from 'react-aria';
@@ -33,27 +35,76 @@ const Tick = () => (
 	</svg>
 );
 
-export const CheckboxButton = ({
-	label,
-	labelColInfo,
-	...props
-}: CheckboxButtonProps) => {
+/**
+ * The checkbox button is a checkbox with a large outlined interactive area and multiple options for laying out
+ * label content. Used in the booking flow on the payment step for addons. Often will be used in a CheckboxGroup.
+ */
+export const CheckboxButton = ({ children, ...props }: CheckboxButtonProps) => {
 	const ref = useRef<HTMLInputElement>(null);
 	const state = useToggleState(props);
 	const { inputProps } = useCheckbox(props, state, ref);
+	const { isFocusVisible, focusProps } = useFocusRing();
+	const { isSelected } = state;
 
 	return (
 		<label className={container()}>
 			<VisuallyHidden>
-				<input {...inputProps} ref={ref} />
+				<input {...mergeProps(inputProps, focusProps)} ref={ref} />
 			</VisuallyHidden>
-			<div className={odStyle({ display: 'flex', gap: '2' })}>
-				<div className={checkbox()}>
-					<Tick />
+			<div
+				className={odStyle({
+					display: 'flex',
+					gap: '2',
+					width: '100%',
+				})}
+			>
+				<div
+					className={checkbox({
+						checked: isSelected,
+						focused: isFocusVisible,
+					})}
+				>
+					{isSelected && <Tick />}
 				</div>
-				<div>{label}</div>
+				<div
+					className={odStyle({
+						width: '100%',
+					})}
+				>
+					{children}
+				</div>
 			</div>
-			<div>{labelColInfo}</div>
 		</label>
 	);
 };
+
+export interface SplitLabelProps {
+	children?: React.ReactNode;
+	/**
+	 * convenience prop for passing through a string array instead of children
+	 */
+	items?: string[];
+}
+
+/**
+ * Helper component part to display a checkbox button label with a second column justified to the end
+ */
+const SplitLabel = ({ children, items }: SplitLabelProps) => {
+	if (!children && !items) return null;
+
+	return (
+		<div
+			className={odStyle({
+				display: 'flex',
+				gap: '2',
+				justifyContent: 'space-between',
+			})}
+		>
+			{children ??
+				items?.map((content, idx) => <span key={idx}>{content}</span>)}
+		</div>
+	);
+};
+
+SplitLabel.displayName = 'CheckboxButton.SplitLabel';
+CheckboxButton.SplitLabel = SplitLabel;
