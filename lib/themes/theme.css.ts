@@ -221,10 +221,11 @@ export const themeContractVars = createThemeContract({
 		},
 		radius: {
 			none: '',
+			min: '',
+			'1': '',
+			'2': '',
 			pill: '',
 			full: '',
-			'1': '',
-			min: '',
 		},
 	},
 	typography: {
