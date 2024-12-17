@@ -21,6 +21,10 @@ export interface CheckboxButtonsProps extends AriaCheckboxGroupProps {
 	 * Current selected value (controlled state)
 	 */
 	value?: AriaCheckboxGroupProps['value'];
+	/**
+	 * Event handler when any checkbox button changes. Returned string array is the values of the inputs that are currently
+	 * checked.
+	 */
 	onChange?: AriaCheckboxGroupProps['onChange'];
 }
 
@@ -31,6 +35,8 @@ export const CheckboxButtonsContext = createContext<CheckboxGroupState | null>(
 /**
  * The CheckboxButtons group one or more checkboxes to apear as an outlined list of options.
  * Populate the CheckboxButtons group with the CheckboxItem, each item must have a `value` (unique) and be labelled.
+ * The `value` of all checkboxes active is passed as a string array to set `defaultValue` (uncontrolled), `value`
+ * (controlled) and is the format returned from the onChange handler as well.
  * Used in the booking flow on the payment step for addons.
  * Future enhancements might include: validation states/error handling
  */
