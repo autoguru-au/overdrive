@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { expect, fn, within, userEvent } from '@storybook/test';
+import { expect, fn, getAllByRole, within, userEvent } from '@storybook/test';
 import React, { useState } from 'react';
 
 import { CheckboxButtons } from './CheckboxButtons';
@@ -22,6 +22,7 @@ const meta: Meta<typeof CheckboxButtons> = {
 				{item[0]}
 			</CheckboxButtons.Item>
 		)),
+		className: 'demo-checkbox-buttons-class',
 		onChange: fn(),
 	},
 };
@@ -43,11 +44,12 @@ type Story = StoryObj<typeof CheckboxButtons>;
 export const Simple: Story = {
 	play: async ({ args, canvasElement, step }) => {
 		const canvas = within(canvasElement);
-		const group = canvas.getByRole('group');
-		const checkboxes = canvas.getAllByRole('checkbox');
+		const group = canvas.getAllByRole('group')[0];
+		const checkboxes = getAllByRole(group, 'checkbox');
 
-		await step('Checkbox group renders label', async () => {
+		await step('Group renders label and attributes', async () => {
 			await expect(group.firstChild).toHaveTextContent(`${args.label}`);
+			await expect(group).toHaveClass(meta.args!.className!);
 		});
 
 		await step('Checkboxes render labels and attributes', async () => {
@@ -70,7 +72,6 @@ export const Simple: Story = {
 		});
 
 		await step('Keyboard interaction', async () => {
-			// await userEvent.keyboard('[Space]', { delay: 25 });
 			await userEvent.keyboard(
 				'{Shift>}[Tab][Tab]{/Shift}[Space][Tab][Tab][Space]',
 				{
