@@ -19,28 +19,28 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
     >
       <div
         aria-hidden="true"
-        class="reset_block__1oah0223 useBoxStyles_position_fixed__3xgq1lff useBoxStyles_backgroundColours_neutral__3xgq1ley Modal_backdrop_root__1psykzh3 Modal_transition__1psykzh1"
+        class="reset_block__1oah0223 useBoxStyles_position_fixed__3xgq1lfj useBoxStyles_backgroundColours_neutral__3xgq1lf2 Modal_backdrop_root__1psykzh3 Modal_transition__1psykzh1"
       />
       <div
-        class="reset_block__1oah0223 useBoxStyles_position_fixed__3xgq1lff useBoxStyles_overflow_hidden__3xgq1lfk Modal_root__1psykzh0 Modal_transition__1psykzh1"
+        class="reset_block__1oah0223 useBoxStyles_position_fixed__3xgq1lfj useBoxStyles_overflow_hidden__3xgq1lfo Modal_root__1psykzh0 Modal_transition__1psykzh1"
         role="presentation"
       >
         <div
           aria-hidden="false"
-          class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_height_full__3xgq1lfd useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhc StandardModal_container__1trinj20"
+          class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfu useBoxStyles_height_full__3xgq1lfh useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg StandardModal_container__1trinj20"
           role="none presentation"
         >
           <article
             aria-labelledby="od-4"
             aria-modal="true"
-            class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l58 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_overflow_hidden__3xgq1lfk useBoxStyles_backgroundColours_white__3xgq1ler useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv StandardModal_modal__1trinj21 StandardModal_modalSizeStandard__1trinj24"
+            class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l58 useBoxStyles_display_flex__3xgq1lfu useBoxStyles_overflow_hidden__3xgq1lfo useBoxStyles_backgroundColours_white__3xgq1lev useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz StandardModal_modal__1trinj21 StandardModal_modalSizeStandard__1trinj24"
             role="dialog"
           >
             <header
-              class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3s useBoxStyles_display_flex__3xgq1lfq useBoxStyles_width_full__3xgq1lfb useBoxStyles_position_relative__3xgq1lfg useBoxStyles_border_style__3xgq1l9k useBoxStyles_border_colour_top_light__3xgq1l9l useBoxStyles_border_colour_right_light__3xgq1l9x useBoxStyles_border_colour_bottom_light__3xgq1la9 useBoxStyles_border_colour_left_light__3xgq1lal useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_flexShrink_0__3xgq1lh5 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhc"
+              class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3s useBoxStyles_display_flex__3xgq1lfu useBoxStyles_width_full__3xgq1lff useBoxStyles_position_relative__3xgq1lfk useBoxStyles_border_style__3xgq1l9k useBoxStyles_border_colour_top_light__3xgq1l9l useBoxStyles_border_colour_right_light__3xgq1l9x useBoxStyles_border_colour_bottom_light__3xgq1la9 useBoxStyles_border_colour_left_light__3xgq1lal useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_flexShrink_0__3xgq1lh9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg"
             >
               <div
-                class="reset_block__1oah0223 useBoxStyles_flexGrow_1__3xgq1lh4"
+                class="reset_block__1oah0223 useBoxStyles_flexGrow_1__3xgq1lh8"
                 id="od-4"
               >
                 <h4
@@ -51,18 +51,18 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
               </div>
               <button
                 aria-label="close"
-                class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_inlineBlock__3xgq1lfu useBoxStyles_overflow_hidden__3xgq1lfk useBoxStyles_textAlign_center__3xgq1lfi useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lb9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc5 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcx useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_3__1xnpmd73 Button_root__p2yon50 Button_minimal_defaults__p2yon5r Button_minimalStates_secondary__p2yon5v Button_size_small_default__p2yon57 Button_size_small_rounded__p2yon58 Button_size_small_iconOnly__p2yon59 Button_enabled__p2yon54"
+                class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_inlineBlock__3xgq1lfy useBoxStyles_overflow_hidden__3xgq1lfo useBoxStyles_textAlign_center__3xgq1lfm useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lb9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc5 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_3__1xnpmd73 Button_root__p2yon50 Button_minimal_defaults__p2yon5r Button_minimalStates_secondary__p2yon5v Button_size_small_default__p2yon57 Button_size_small_rounded__p2yon58 Button_size_small_iconOnly__p2yon59 Button_enabled__p2yon54"
                 type="button"
               >
                 <div
-                  class="reset_block__1oah0223 useBoxStyles_height_full__3xgq1lfd useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhc Button_body__p2yon51"
+                  class="reset_block__1oah0223 useBoxStyles_height_full__3xgq1lfh useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg Button_body__p2yon51"
                 >
                   <i
-                    class="useBoxStyles_display_block__3xgq1lfp Icon_makeResponsiveStyle_key_bp__1gy3ire4 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_muted__1xnpmd7h"
+                    class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire4 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_muted__1xnpmd7h"
                     role="presentation"
                   >
                     <svg
-                      class="useBoxStyles_display_block__3xgq1lfp useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd"
+                      class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
                       fill="currentColor"
                       focusable="false"
                       viewBox="0 0 24 24"
@@ -77,7 +77,7 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
               </button>
             </header>
             <main
-              class="useBoxStyles_display_flex__3xgq1lfq useBoxStyles_height_full__3xgq1lfd useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexGrow_1__3xgq1lh4 StandardModal_content__1trinj26"
+              class="useBoxStyles_display_flex__3xgq1lfu useBoxStyles_height_full__3xgq1lfh useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexGrow_1__3xgq1lh8 StandardModal_content__1trinj26"
             >
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis convallis neque a laoreet maximus. Vestibulum hendrerit quam at mi venenatis faucibus at vel nisi. In ut risus et ipsum tincidunt tempor. Suspendisse potenti. Praesent faucibus posuere risus, at congue mauris porttitor ut. Donec sit amet elit vitae purus dictum aliquet quis ut ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum dui sapien, porttitor ac erat vel, malesuada rutrum mauris. Nam arcu tellus, pretium ut aliquet eget, ultrices vel est. Maecenas dapibus volutpat eros a volutpat.
@@ -115,28 +115,28 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
     >
       <div
         aria-hidden="true"
-        class="reset_block__1oah0223 useBoxStyles_position_fixed__3xgq1lff useBoxStyles_backgroundColours_neutral__3xgq1ley Modal_backdrop_root__1psykzh3 Modal_transition__1psykzh1"
+        class="reset_block__1oah0223 useBoxStyles_position_fixed__3xgq1lfj useBoxStyles_backgroundColours_neutral__3xgq1lf2 Modal_backdrop_root__1psykzh3 Modal_transition__1psykzh1"
       />
       <div
-        class="reset_block__1oah0223 useBoxStyles_position_fixed__3xgq1lff useBoxStyles_overflow_hidden__3xgq1lfk Modal_root__1psykzh0 Modal_transition__1psykzh1"
+        class="reset_block__1oah0223 useBoxStyles_position_fixed__3xgq1lfj useBoxStyles_overflow_hidden__3xgq1lfo Modal_root__1psykzh0 Modal_transition__1psykzh1"
         role="presentation"
       >
         <div
           aria-hidden="false"
-          class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_height_full__3xgq1lfd useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhc StandardModal_container__1trinj20"
+          class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfu useBoxStyles_height_full__3xgq1lfh useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg StandardModal_container__1trinj20"
           role="none presentation"
         >
           <article
             aria-labelledby="od-3"
             aria-modal="true"
-            class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l58 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_overflow_hidden__3xgq1lfk useBoxStyles_backgroundColours_white__3xgq1ler useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv StandardModal_modal__1trinj21 StandardModal_modalSizeStandard__1trinj24"
+            class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l58 useBoxStyles_display_flex__3xgq1lfu useBoxStyles_overflow_hidden__3xgq1lfo useBoxStyles_backgroundColours_white__3xgq1lev useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz StandardModal_modal__1trinj21 StandardModal_modalSizeStandard__1trinj24"
             role="dialog"
           >
             <header
-              class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3s useBoxStyles_display_flex__3xgq1lfq useBoxStyles_width_full__3xgq1lfb useBoxStyles_position_relative__3xgq1lfg useBoxStyles_border_style__3xgq1l9k useBoxStyles_border_colour_top_light__3xgq1l9l useBoxStyles_border_colour_right_light__3xgq1l9x useBoxStyles_border_colour_bottom_light__3xgq1la9 useBoxStyles_border_colour_left_light__3xgq1lal useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_flexShrink_0__3xgq1lh5 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhc"
+              class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3s useBoxStyles_display_flex__3xgq1lfu useBoxStyles_width_full__3xgq1lff useBoxStyles_position_relative__3xgq1lfk useBoxStyles_border_style__3xgq1l9k useBoxStyles_border_colour_top_light__3xgq1l9l useBoxStyles_border_colour_right_light__3xgq1l9x useBoxStyles_border_colour_bottom_light__3xgq1la9 useBoxStyles_border_colour_left_light__3xgq1lal useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_flexShrink_0__3xgq1lh9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg"
             >
               <div
-                class="reset_block__1oah0223 useBoxStyles_flexGrow_1__3xgq1lh4"
+                class="reset_block__1oah0223 useBoxStyles_flexGrow_1__3xgq1lh8"
                 id="od-3"
               >
                 <h4
@@ -145,18 +145,18 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
               </div>
               <button
                 aria-label="close"
-                class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_inlineBlock__3xgq1lfu useBoxStyles_overflow_hidden__3xgq1lfk useBoxStyles_textAlign_center__3xgq1lfi useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lb9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc5 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcx useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_3__1xnpmd73 Button_root__p2yon50 Button_minimal_defaults__p2yon5r Button_minimalStates_secondary__p2yon5v Button_size_small_default__p2yon57 Button_size_small_rounded__p2yon58 Button_size_small_iconOnly__p2yon59 Button_enabled__p2yon54"
+                class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_inlineBlock__3xgq1lfy useBoxStyles_overflow_hidden__3xgq1lfo useBoxStyles_textAlign_center__3xgq1lfm useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lb9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc5 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_3__1xnpmd73 Button_root__p2yon50 Button_minimal_defaults__p2yon5r Button_minimalStates_secondary__p2yon5v Button_size_small_default__p2yon57 Button_size_small_rounded__p2yon58 Button_size_small_iconOnly__p2yon59 Button_enabled__p2yon54"
                 type="button"
               >
                 <div
-                  class="reset_block__1oah0223 useBoxStyles_height_full__3xgq1lfd useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhc Button_body__p2yon51"
+                  class="reset_block__1oah0223 useBoxStyles_height_full__3xgq1lfh useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg Button_body__p2yon51"
                 >
                   <i
-                    class="useBoxStyles_display_block__3xgq1lfp Icon_makeResponsiveStyle_key_bp__1gy3ire4 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_muted__1xnpmd7h"
+                    class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire4 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_muted__1xnpmd7h"
                     role="presentation"
                   >
                     <svg
-                      class="useBoxStyles_display_block__3xgq1lfp useBoxStyles_width_full__3xgq1lfb useBoxStyles_height_full__3xgq1lfd"
+                      class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
                       fill="currentColor"
                       focusable="false"
                       viewBox="0 0 24 24"
@@ -171,7 +171,7 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
               </button>
             </header>
             <main
-              class="useBoxStyles_display_flex__3xgq1lfq useBoxStyles_height_full__3xgq1lfd useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexGrow_1__3xgq1lh4 StandardModal_content__1trinj26"
+              class="useBoxStyles_display_flex__3xgq1lfu useBoxStyles_height_full__3xgq1lfh useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexGrow_1__3xgq1lh8 StandardModal_content__1trinj26"
             />
           </article>
         </div>
