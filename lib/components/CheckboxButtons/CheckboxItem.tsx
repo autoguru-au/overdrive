@@ -3,11 +3,11 @@ import {
 	useCheckboxGroupItem,
 	useFocusRing,
 	mergeProps,
-	VisuallyHidden,
 	type AriaCheckboxGroupItemProps,
 } from 'react-aria';
 
 import { odStyle } from '../../styles/sprinkles.css';
+import { VisuallyHidden } from '../VisuallyHidden';
 
 import { CheckboxButtonsContext } from './CheckboxButtons';
 import { checkbox, checkboxButton } from './CheckboxButtons.css';
@@ -43,10 +43,11 @@ export const CheckboxItem = (props: FilteredCheckboxProps) => {
 	const state = useContext(CheckboxButtonsContext)!;
 	const { inputProps } = useCheckboxGroupItem(props, state, ref);
 	const { isFocusVisible, focusProps } = useFocusRing();
+	const isDisabled = state.isDisabled;
 	const isSelected = state.isSelected(props.value);
 
 	return (
-		<label className={checkboxButton()}>
+		<label className={checkboxButton({ disabled: isDisabled })}>
 			<VisuallyHidden>
 				<input {...mergeProps(inputProps, focusProps)} ref={ref} />
 			</VisuallyHidden>
@@ -67,6 +68,8 @@ export const CheckboxItem = (props: FilteredCheckboxProps) => {
 				</div>
 				<div
 					className={odStyle({
+						alignSelf: 'center',
+						font: 'sm',
 						width: '100%',
 					})}
 				>

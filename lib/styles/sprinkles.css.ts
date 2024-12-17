@@ -1,7 +1,7 @@
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
 
 import { tokens } from '../themes/base/tokens';
-const { border, colours, elevation, space } = tokens;
+const { border, colours, elevation, space, typography } = tokens;
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { none, ...spaceWithoutNone } = space;
 
@@ -35,11 +35,54 @@ const responsiveProperties = defineProperties({
 	},
 });
 
+const typographyProperties = defineProperties({
+	properties: {
+		fontSize: {
+			xxs: typography.size[1].fontSize,
+			xs: typography.size[2].fontSize,
+			sm: typography.size[3].fontSize,
+			md: typography.size[4].fontSize,
+			lg: typography.size[5].fontSize,
+			xl: typography.size[6].fontSize,
+			xxl: typography.size[7].fontSize,
+			'2xl': typography.size[8].fontSize,
+			'3xl': typography.size[9].fontSize,
+		},
+		lineHeight: {
+			xxs: typography.size[1].lineHeight,
+			xs: typography.size[2].lineHeight,
+			sm: typography.size[3].lineHeight,
+			md: typography.size[4].lineHeight,
+			lg: typography.size[5].lineHeight,
+			xl: typography.size[6].lineHeight,
+			xxl: typography.size[7].lineHeight,
+			'2xl': typography.size[8].lineHeight,
+			'3xl': typography.size[9].lineHeight,
+		},
+		fontWeight: {
+			normal: '400',
+			semibold: '500',
+			bold: '700',
+		},
+	},
+	shorthands: {
+		font: ['fontSize', 'lineHeight'],
+	},
+});
+
 const borderProperties = defineProperties({
 	properties: {
 		borderColor: { ...border.colours },
 		borderRadius: { ...border.radius },
-		borderStyle: ['solid', 'dotted', 'dashed'],
+		borderBottomLeftRadius: { ...border.radius },
+		borderBottomRightRadius: { ...border.radius },
+		borderTopLeftRadius: { ...border.radius },
+		borderTopRightRadius: { ...border.radius },
+		borderStyle: ['none', 'solid', 'dotted', 'dashed'],
+		borderBottomStyle: ['none', 'solid', 'dotted', 'dashed'],
+		borderLeftStyle: ['none', 'solid', 'dotted', 'dashed'],
+		borderRightStyle: ['none', 'solid', 'dotted', 'dashed'],
+		borderTopStyle: ['none', 'solid', 'dotted', 'dashed'],
 		borderWidth: { ...border.width },
 		boxShadow: { ...elevation },
 	},
@@ -49,6 +92,8 @@ const displayProperties = defineProperties({
 	properties: {
 		display: ['none', 'block', 'flex'],
 		flexDirection: ['row', 'column'],
+		flexGrow: [0, 1],
+		flexShrink: [0, 1],
 		flexWrap: ['nowrap', 'wrap', 'wrap-reverse'],
 		alignItems: ['stretch', 'flex-start', 'center', 'flex-end'],
 		justifyContent: [
@@ -58,6 +103,7 @@ const displayProperties = defineProperties({
 			'space-between',
 			'flex-end',
 		],
+		alignSelf: ['flex-start', 'center', 'flex-end'],
 		height: {
 			...spaceWithoutNone,
 			'100%': '100%',
@@ -107,6 +153,7 @@ const interactionProperties = defineProperties({
 
 export const odStyle = createSprinkles(
 	responsiveProperties,
+	typographyProperties,
 	borderProperties,
 	displayProperties,
 	gamutProperties,

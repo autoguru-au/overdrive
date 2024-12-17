@@ -2,6 +2,7 @@ import React, { createContext } from 'react';
 import { useCheckboxGroup, type AriaCheckboxGroupProps } from 'react-aria';
 import { type CheckboxGroupState, useCheckboxGroupState } from 'react-stately';
 
+import { groupLabel } from './CheckboxButtons.css';
 import { CheckboxItem, SplitLabel } from './CheckboxItem';
 
 export interface CheckboxButtonsProps extends AriaCheckboxGroupProps {
@@ -43,9 +44,11 @@ export const CheckboxButtons = (props: CheckboxButtonsProps) => {
 
 	return (
 		<div {...groupProps}>
-			<span {...labelProps}>{label}</span>
+			<div {...labelProps} className={groupLabel()}>
+				{label}
+			</div>
 			<CheckboxButtonsContext.Provider value={state}>
-				{children}
+				<div>{children}</div>
 			</CheckboxButtonsContext.Provider>
 			{description && <div {...descriptionProps}>{description}</div>}
 		</div>
