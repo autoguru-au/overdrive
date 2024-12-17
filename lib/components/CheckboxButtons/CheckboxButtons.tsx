@@ -5,7 +5,14 @@ import { type CheckboxGroupState, useCheckboxGroupState } from 'react-stately';
 import { groupLabel } from './CheckboxButtons.css';
 import { CheckboxItem, SplitLabel } from './CheckboxItem';
 
-export interface CheckboxButtonsProps extends AriaCheckboxGroupProps {
+type ElementAttributes = Pick<
+	React.ComponentPropsWithRef<'div'>,
+	'className' | 'ref' | 'style'
+>;
+
+export interface CheckboxButtonsProps
+	extends AriaCheckboxGroupProps,
+		ElementAttributes {
 	/**
 	 * Label for the CheckboxButtons group needs to be provided at the component level for accessibility
 	 */
@@ -41,7 +48,8 @@ export const CheckboxButtonsContext = createContext<CheckboxGroupState | null>(
  * Future enhancements might include: validation states/error handling
  */
 export const CheckboxButtons = (props: CheckboxButtonsProps) => {
-	const { children, label, description } = props;
+	const { children, className, description, label, ref, style } = props;
+	const elementAttrs = { className, ref, style };
 	const state = useCheckboxGroupState(props);
 	const { groupProps, labelProps, descriptionProps } = useCheckboxGroup(
 		props,
@@ -49,7 +57,7 @@ export const CheckboxButtons = (props: CheckboxButtonsProps) => {
 	);
 
 	return (
-		<div {...groupProps}>
+		<div {...elementAttrs} {...groupProps}>
 			<div {...labelProps} className={groupLabel()}>
 				{label}
 			</div>
