@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import type { JSXElementConstructor } from 'react';
+import type { ElementType } from 'react';
 
 import * as resetStyles from '../../reset/reset.css';
 import { Tokens } from '../../themes/tokens';
@@ -60,8 +60,17 @@ interface Flex {
 	justifyContent?: ResponsiveProp<keyof typeof styles.justifyContent>;
 }
 
+// export type As<Props = unknown> = React.ElementType<Props, Tag>;
+
 export interface BoxStyleProps extends Padding, Margin, Border, Flex {
-	is?: keyof JSX.IntrinsicElements | JSXElementConstructor<any>;
+	/**
+	 * Pass the name of an html tag to change the rendered element. Typically defaults to `div`
+	 */
+	as?: ElementType;
+	/**
+	 * Alias for `as` prop for backwards compatibility
+	 */
+	is?: ElementType;
 	boxShadow?: ResponsiveProp<keyof typeof styles.boxShadow>;
 	display?: keyof typeof styles.display;
 
@@ -83,7 +92,8 @@ export interface BoxStyleProps extends Padding, Margin, Border, Flex {
 }
 
 export const useBoxStyles = ({
-	is,
+	as,
+	is = as,
 	display,
 	padding,
 	paddingX,

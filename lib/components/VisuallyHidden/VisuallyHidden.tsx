@@ -1,23 +1,18 @@
 import * as React from 'react';
-import { ComponentPropsWithoutRef, FunctionComponent, ReactNode } from 'react';
 
-import { Box } from '../Box';
+import { Box, type BoxProps } from '../Box';
 
-import * as styles from './VisuallyHidden.css';
+import { visuallyHidden } from './VisuallyHidden.css';
 
-export interface Props {
-	is?: ComponentPropsWithoutRef<typeof Box>['is'];
-	children?: ReactNode;
-}
+type VisuallyHiddenProps = Pick<BoxProps, 'as' | 'children' | 'is'>;
 
-export const VisuallyHidden: FunctionComponent<Props> = ({ children, is }) => (
-	<Box
-		is={is}
-		position="absolute"
-		overflow="hidden"
-		userSelect="none"
-		className={styles.root}
-	>
+/**
+ * Wrap any content or components with `<VisuallyHidden>` to apply styling that ensure the child content is not
+ * visually displayed on the screen but is still present in the DOM/accessibility tree for assitive technology.
+ * Use the `as` prop to change the rendered html tag.
+ */
+export const VisuallyHidden = ({ children, ...props }: VisuallyHiddenProps) => (
+	<Box {...props} className={visuallyHidden}>
 		{children}
 	</Box>
 );
