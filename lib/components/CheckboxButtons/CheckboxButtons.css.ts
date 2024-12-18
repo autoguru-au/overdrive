@@ -1,4 +1,4 @@
-import { createVar, style } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 import { tokens } from 'lib/themes/base/tokens';
