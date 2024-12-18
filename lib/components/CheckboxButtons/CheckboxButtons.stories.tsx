@@ -25,6 +25,7 @@ const meta: Meta<typeof CheckboxButtons> = {
 		className: 'demo-checkbox-buttons-class',
 		onChange: fn(),
 	},
+	tags: ['beta'],
 };
 
 export default meta;
@@ -87,14 +88,14 @@ export const Simple: Story = {
 
 /**
  * To acheive the the split-column layout in the checkbox label, use a CheckboxButtons.SplitLabel layout helper
- * inside the CheckboxButtons.Item component. Currently supports text only. Populate the `items` prop on the SplitLabel
+ * inside the CheckboxButtons.Item component. Currently supports text only. Populate the `content` prop on the SplitLabel
  * with a string array (content left, content right).
  */
 export const SplitLabel: Story = {
 	args: {
 		children: itemData.map((data, idx) => (
 			<CheckboxButtons.Item key={idx} value={`${idx}`}>
-				<CheckboxButtons.SplitLabel items={data} />
+				<CheckboxButtons.SplitLabel content={data} />
 			</CheckboxButtons.Item>
 		)),
 	},
@@ -135,7 +136,7 @@ export const Controlled: Story = {
 			>
 				{itemData.map((data, idx) => (
 					<CheckboxButtons.Item key={idx} value={`${idx}`}>
-						<CheckboxButtons.SplitLabel items={data} />
+						<CheckboxButtons.SplitLabel content={data} />
 					</CheckboxButtons.Item>
 				))}
 			</CheckboxButtons>

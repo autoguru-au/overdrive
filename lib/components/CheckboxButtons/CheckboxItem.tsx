@@ -24,12 +24,13 @@ const Tick = () => (
 		height="20"
 		viewBox="0 0 20 20"
 		fill="none"
+		aria-hidden
 	>
 		<path
 			fillRule="evenodd"
 			clipRule="evenodd"
 			d="M15.2887 7.42963L8.48942 14.2289L4.71179 10.3673L6.08136 8.99777L8.48942 11.4801L13.9191 6.06006L15.2887 7.42963Z"
-			fill="white"
+			fill="currentColor"
 		/>
 	</svg>
 );
@@ -64,7 +65,7 @@ export const CheckboxItem = (props: FilteredCheckboxProps) => {
 						focused: isFocusVisible,
 					})}
 				>
-					{isSelected && <Tick />}
+					<Tick />
 				</div>
 				<div
 					className={odStyle({
@@ -87,14 +88,14 @@ export interface SplitLabelProps {
 	/**
 	 * convenience prop for passing through a string array instead of children
 	 */
-	items?: string[];
+	content?: string[];
 }
 
 /**
  * Helper component part to display a checkbox button label with a second column justified to the end
  */
-export const SplitLabel = ({ children, items }: SplitLabelProps) => {
-	if (!children && !items) return null;
+export const SplitLabel = ({ children, content }: SplitLabelProps) => {
+	if (!children && !content) return null;
 
 	return (
 		<div
@@ -105,7 +106,7 @@ export const SplitLabel = ({ children, items }: SplitLabelProps) => {
 			})}
 		>
 			{children ??
-				items?.map((content, idx) => <span key={idx}>{content}</span>)}
+				content?.map((item, idx) => <span key={idx}>{item}</span>)}
 		</div>
 	);
 };

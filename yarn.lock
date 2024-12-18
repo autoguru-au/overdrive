@@ -186,6 +186,7 @@ __metadata:
     react-swipeable: "npm:^7.0.2"
     react-test-renderer: "npm:^18.3.1"
     storybook: "npm:^8.4.5"
+    storybook-addon-tag-badges: "npm:^1.3.2"
     typescript: "npm:^4.9.5"
     url-loader: "npm:^4.1.1"
     vite: "npm:^6.0.1"
@@ -14561,6 +14562,17 @@ __metadata:
   dependencies:
     internal-slot: "npm:^1.0.4"
   checksum: 10/2a23a36f4f6bfa63f46ae2d53a3f80fe8276110b95a55345d8ed3d92125413494033bc8697eb774e8f7aeb5725f70e3d69753caa2ecacdac6258c16fa8aa8b0f
+  languageName: node
+  linkType: hard
+
+"storybook-addon-tag-badges@npm:^1.3.2":
+  version: 1.3.2
+  resolution: "storybook-addon-tag-badges@npm:1.3.2"
+  dependencies:
+    "@storybook/icons": "npm:^1.2.12"
+  peerDependencies:
+    storybook: ^8.4.0
+  checksum: 10/7db772d086b48f2f2433963ba88357ed72aa00679f4704573dcbbf7c88ad6e0449e3148a001b1187a9341de673094cf9098e3ff14c1e119963bca412d0012815
   languageName: node
   linkType: hard
 
