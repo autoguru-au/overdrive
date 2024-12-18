@@ -15,7 +15,7 @@ exports[`<DateInput /> should have some hintText 1`] = `
         class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfu useBoxStyles_width_full__3xgq1lff useBoxStyles_position_relative__3xgq1lfk useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_transparent__3xgq1lf5 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8a"
         id="id"
         type="date"
-        value="2019-01-22"
+        value="2019-01-21"
       />
     </div>
     <div
@@ -67,7 +67,7 @@ exports[`<DateInput /> should match snapshot 1`] = `
         class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfu useBoxStyles_width_full__3xgq1lff useBoxStyles_position_relative__3xgq1lfk useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_transparent__3xgq1lf5 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8a"
         id="id"
         type="date"
-        value="2019-01-22"
+        value="2019-01-21"
       />
     </div>
     <div
@@ -190,7 +190,7 @@ exports[`<DateInput /> should match snapshot when loading 1`] = `
         autocomplete="off"
         class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfu useBoxStyles_width_full__3xgq1lff useBoxStyles_position_relative__3xgq1lfk useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_transparent__3xgq1lf5 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8a withEnhancedInput_inputItselfSize_medium_prefixed_any__5jmdy8c undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8d"
         type="date"
-        value="2019-01-22"
+        value="2019-01-21"
       />
     </div>
     <div
@@ -235,7 +235,7 @@ exports[`<DateInput /> should match snapshot when touched 1`] = `
         autocomplete="off"
         class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfu useBoxStyles_width_full__3xgq1lff useBoxStyles_position_relative__3xgq1lfk useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_transparent__3xgq1lf5 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8a"
         type="date"
-        value="2019-01-22"
+        value="2019-01-21"
       />
     </div>
     <div
@@ -280,7 +280,7 @@ exports[`<DateInput /> should match snapshot when touched and invalid 1`] = `
         autocomplete="off"
         class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfu useBoxStyles_width_full__3xgq1lff useBoxStyles_position_relative__3xgq1lfk useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_transparent__3xgq1lf5 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8a"
         type="date"
-        value="2019-01-22"
+        value="2019-01-21"
       />
     </div>
     <div
@@ -325,7 +325,7 @@ exports[`<DateInput /> should match snapshot when touched and valid 1`] = `
         autocomplete="off"
         class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfu useBoxStyles_width_full__3xgq1lff useBoxStyles_position_relative__3xgq1lfk useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_transparent__3xgq1lf5 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8a"
         type="date"
-        value="2019-01-22"
+        value="2019-01-21"
       />
     </div>
     <div
@@ -398,7 +398,7 @@ exports[`<DateInput /> should match snapshot with both icons 1`] = `
         autocomplete="off"
         class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfu useBoxStyles_width_full__3xgq1lff useBoxStyles_position_relative__3xgq1lfk useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_transparent__3xgq1lf5 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8a withEnhancedInput_inputItselfSize_medium_prefixed_any__5jmdy8c undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8d"
         type="date"
-        value="2019-01-22"
+        value="2019-01-21"
       />
     </div>
     <div
@@ -457,7 +457,7 @@ exports[`<DateInput /> should match snapshot with prefix icon 1`] = `
         autocomplete="off"
         class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfu useBoxStyles_width_full__3xgq1lff useBoxStyles_position_relative__3xgq1lfk useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_transparent__3xgq1lf5 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8a withEnhancedInput_inputItselfSize_medium_prefixed_any__5jmdy8c"
         type="date"
-        value="2019-01-22"
+        value="2019-01-21"
       />
     </div>
     <div
@@ -516,7 +516,7 @@ exports[`<DateInput /> should match snapshot with suffix icon 1`] = `
         autocomplete="off"
         class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfu useBoxStyles_width_full__3xgq1lff useBoxStyles_position_relative__3xgq1lfk useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_transparent__3xgq1lf5 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8a undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8d"
         type="date"
-        value="2019-01-22"
+        value="2019-01-21"
       />
     </div>
     <div
