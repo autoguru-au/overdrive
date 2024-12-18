@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { createVar, style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 import { tokens } from 'lib/themes/base/tokens';
@@ -25,7 +25,7 @@ export const checkboxButton = recipe({
 		odStyle({
 			background: {
 				initial: 'white',
-				hover: 'gray100',
+				hover: 'gray200',
 			},
 			...border,
 			cursor: { hover: 'pointer' },
@@ -66,26 +66,49 @@ export const checkboxButton = recipe({
 	},
 });
 
+const bgColor = tokens.colours.background.body;
+const bgColorHover = tokens.colours.gamut.gray300;
+
 export const checkbox = recipe({
-	base: odStyle({
-		alignItems: 'center',
-		...border,
-		borderRadius: '1',
-		display: 'flex',
-		flexShrink: 0,
-		justifyContent: 'center',
-		...focusOutline,
-		size: '6',
-	}),
+	base: [
+		odStyle({
+			alignItems: 'center',
+			...border,
+			borderRadius: '1',
+			display: 'flex',
+			flexShrink: 0,
+			justifyContent: 'center',
+			...focusOutline,
+			size: '6',
+		}),
+		style({
+			transitionProperty: 'background',
+			transitionTimingFunction: 'ease-in',
+			transitionDuration: '80ms',
+		}),
+	],
 	variants: {
 		checked: {
 			true: odStyle({
 				background: 'gray900',
 				borderColor: 'dark',
+				color: 'white',
 			}),
-			false: odStyle({
-				background: 'white',
-			}),
+			false: [
+				style({
+					selectors: {
+						'&': {
+							background: bgColor,
+							color: 'transparent',
+						},
+						[`${checkboxButton.classNames.base}:hover &`]: {
+							color: bgColor,
+							background: bgColorHover,
+							transitionDuration: '15ms',
+						},
+					},
+				}),
+			],
 		},
 		focused: {
 			true: odStyle({ ...focusOutline, outlineWidth: 'default' }),
