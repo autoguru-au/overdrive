@@ -223,10 +223,11 @@ export const tokens: Tokens = {
 		},
 		radius: {
 			none: 'none',
+			min: '2px',
+			'1': '4px',
+			'2': '6px',
 			pill: `${1e9}px`,
 			full: '50%',
-			'1': '4px',
-			min: '2px',
 		},
 	},
 	typography: {

@@ -1,24 +1,21 @@
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
-import { sprinkles } from './sprinkles.css';
+import { odStyle } from './sprinkles.css';
 
+/**
+ * Defines stack styles as custom props in a vanilla-extract recipe for using directly or rolling a React component.
+ */
 export const stack = recipe({
-	base: sprinkles({ display: 'flex', flexWrap: 'wrap' }),
+	base: odStyle({ display: 'flex', flexWrap: 'wrap' }),
 	variants: {
 		space: {
-			sm: sprinkles({ gap: '5' }),
-			md: sprinkles({ gap: '8' }),
-			lg: sprinkles({ gap: '9' }),
+			sm: odStyle({ gap: '5' }),
+			md: odStyle({ gap: '8' }),
+			lg: odStyle({ gap: '9' }),
 		},
-		// space: Object.fromEntries(
-		// 	Object.entries(tokens.space).map(([key, val]) => [
-		// 		key,
-		// 		{ gap: val },
-		// 	]),
-		// ),
 		horizontal: {
-			false: sprinkles({ flexDirection: 'column' }),
-			true: sprinkles({ flexDirection: 'row' }),
+			false: odStyle({ flexDirection: 'column' }),
+			true: odStyle({ flexDirection: 'row' }),
 		},
 	},
 	defaultVariants: {
@@ -29,6 +26,9 @@ export const stack = recipe({
 
 type Variants = NonNullable<RecipeVariants<typeof stack>>;
 
+/**
+ * Annotated props for the stack recipe
+ */
 export interface RecipeStackProps {
 	/**
 	 * Control the gap spacing between items

@@ -35,5 +35,5 @@ const standardProps: ComponentProps<typeof Box> = {
 	borderRadius: 'pill',
 	boxShadow: ['none', '1', '2', '3'],
 };
-export const standard = template.bind(standardProps);
-standard.args = standardProps;
+export const Standard = template.bind({});
+Standard.args = standardProps;
