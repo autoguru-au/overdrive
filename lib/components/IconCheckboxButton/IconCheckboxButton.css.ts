@@ -1,40 +1,40 @@
 import { style } from '@vanilla-extract/css';
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
-import { tokens } from 'lib/themes/base/tokens';
-
 import { focusOutline } from '../../styles/focusOutline.css';
 import { odStyle } from '../../styles/sprinkles.css';
 
-export const styledButton = recipe({
+export const styledWrapper = recipe({
 	base: odStyle({
+		alignItems: 'center',
 		borderColor: 'gray',
 		borderRadius: '2',
 		borderStyle: 'solid',
 		borderWidth: '1',
+		cursor: { hover: 'pointer' },
+		display: 'flex',
 		...focusOutline,
+		gap: '2',
+		padding: '3',
 	}),
 	variants: {
 		disabled: {
 			true: {},
 		},
-		hover: {
-			true: odStyle({
-				background: 'gray200',
-				borderColor: 'light',
-			}),
-		},
 		selected: {
+			false: odStyle({
+				background: { hover: 'gray200' },
+				borderColor: { initial: 'gray', hover: 'light' },
+			}),
 			true: odStyle({
 				borderColor: 'dark',
-				borderWidth: '2',
 			}),
 		},
 	},
 });
 
-export type StyledButtonProps = NonNullable<
-	RecipeVariants<typeof styledButton>
+export type StyledWrapperProps = NonNullable<
+	RecipeVariants<typeof styledWrapper>
 >;
 
 const checkboxBaseTransition = style({
@@ -43,28 +43,20 @@ const checkboxBaseTransition = style({
 	transitionDuration: '80ms',
 });
 
-const checkboxHover = style({
-	selectors: {
-		'&': {
-			background: tokens.colours.gamut.gray200,
-			color: 'transparent',
-		},
-		[`${styledButton.classNames.base}:hover &`]: {
-			color: tokens.colours.background.body,
-			background: tokens.colours.foreground.body,
-			transitionDuration: '15ms',
-		},
-	},
-});
-
 export const styledCheckbox = recipe({
 	base: [
 		odStyle({
 			alignItems: 'center',
-			borderColor: 'gray',
+			background: {
+				initial: 'white',
+				hover: 'gray300',
+				checked: 'gray900',
+			},
+			borderColor: { initial: 'gray', checked: 'dark' },
 			borderRadius: '1',
 			borderStyle: 'solid',
 			borderWidth: '1',
+			color: { initial: 'transparent', checked: 'white', hover: 'white' },
 			display: 'flex',
 			flexShrink: 0,
 			justifyContent: 'center',
@@ -74,12 +66,7 @@ export const styledCheckbox = recipe({
 	],
 	variants: {
 		checked: {
-			true: odStyle({
-				background: 'gray900',
-				borderColor: 'dark',
-				color: 'white',
-			}),
-			false: checkboxHover,
+			false: { transitionDuration: '15ms' },
 		},
 		focused: {
 			true: odStyle({ ...focusOutline, outlineWidth: 'default' }),

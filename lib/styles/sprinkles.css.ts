@@ -5,12 +5,19 @@ const { border, colours, elevation, space, typography } = tokens;
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { none, ...spaceWithoutNone } = space;
 
+const hoverConditions = {
+	hover: {
+		'@media': '(hover: hover) and (pointer: fine)',
+		selector: '&:hover, &[data-hover]',
+	},
+};
+
 const interactionConditions = {
 	initial: {},
-	disabled: { selector: '&:disabled' },
-	focus: { selector: '&:focus' },
+	checked: { selector: '&:checked, &[data-checked]' },
+	disabled: { selector: '&:disabled, &[data-disabled]' },
+	focus: { selector: '&:focus, &[data-focus]' },
 	focusVisible: { selector: '&:focus-visible' },
-	hover: { selector: '&:hover' },
 };
 
 const responsiveProperties = defineProperties({
@@ -71,6 +78,8 @@ const typographyProperties = defineProperties({
 });
 
 const borderProperties = defineProperties({
+	conditions: { ...hoverConditions, ...interactionConditions },
+	defaultCondition: 'initial',
 	properties: {
 		borderColor: { ...border.colours },
 		borderRadius: { ...border.radius },
@@ -122,10 +131,10 @@ const displayProperties = defineProperties({
 });
 
 const gamutProperties = defineProperties({
-	conditions: interactionConditions,
+	conditions: { ...hoverConditions, ...interactionConditions },
 	defaultCondition: 'initial',
 	properties: {
-		color: colours.gamut,
+		color: { ...colours.gamut, transparent: 'transparent' },
 		background: colours.gamut,
 		fill: colours.gamut,
 		stroke: colours.gamut,
@@ -133,7 +142,7 @@ const gamutProperties = defineProperties({
 });
 
 const interactionProperties = defineProperties({
-	conditions: interactionConditions,
+	conditions: { ...hoverConditions, ...interactionConditions },
 	defaultCondition: 'initial',
 	properties: {
 		cursor: ['default', 'pointer', 'not-allowed', 'wait'],
