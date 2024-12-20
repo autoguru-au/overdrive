@@ -11,11 +11,13 @@ import { Box, useBoxStyles } from '../Box';
 
 import * as styles from './Icon.css';
 
+export type IconEl = IconType | ReactElement<SVGAttributes<SVGElement>, 'svg'>;
+
 export interface Props {
 	display?: Extract<BoxStyleProps['display'], 'block' | 'inlineBlock'>;
 	className?: string;
 	size?: ResponsiveProp<keyof typeof styles.size | string>;
-	icon: IconType | ReactElement<SVGAttributes<SVGElement>, 'svg'>;
+	icon: IconEl;
 }
 
 export const Icon: FunctionComponent<Props> = ({

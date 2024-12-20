@@ -37,6 +37,11 @@ export type StyledWrapperProps = NonNullable<
 	RecipeVariants<typeof styledWrapper>
 >;
 
+export const iconContainer = style({
+	height: '26px',
+	width: '26px',
+});
+
 const checkboxBaseTransition = style({
 	transitionProperty: 'background',
 	transitionTimingFunction: 'ease-in',
@@ -77,19 +82,3 @@ export const styledCheckbox = recipe({
 export type StyledCheckboxProps = NonNullable<
 	RecipeVariants<typeof styledCheckbox>
 >;
-
-export const styledIcon = recipe({
-	base: {
-		height: '26px',
-		width: '26px',
-	},
-	variants: {
-		hidden: {
-			true: {
-				display: 'none',
-			},
-		},
-	},
-});
-
-export type StyledIconProps = NonNullable<RecipeVariants<typeof styledIcon>>;

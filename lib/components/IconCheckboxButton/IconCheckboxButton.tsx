@@ -3,17 +3,29 @@ import { useCheckbox, useFocusRing, useHover } from 'react-aria';
 import type { AriaCheckboxProps } from 'react-aria';
 import { useToggleState } from 'react-stately';
 
+import { Icon, type IconEl } from '../Icon';
 import { VisuallyHidden } from '../VisuallyHidden';
 
 import {
+	iconContainer,
 	styledCheckbox,
-	styledIcon,
 	styledWrapper,
 	type StyledWrapperProps,
 } from './IconCheckboxButton.css';
 
 interface IconCheckboxButtonProps extends AriaCheckboxProps {
-	icon?: React.ReactNode;
+	/**
+	 * The text label for the checkbox
+	 */
+	label: string;
+	/**
+	 * Source an icon from `@autoguru/icons`
+	 */
+	icon?: IconEl;
+	/**
+	 * Additional text description content for the checkbox button
+	 */
+	description?: string;
 	className?: string;
 }
 
@@ -48,7 +60,9 @@ const Wrapper = (props: PropsWithChildren<StyledWrapperProps>) => {
 };
 
 export const IconCheckboxButton = ({
+	description,
 	icon,
+	label,
 	...props
 }: IconCheckboxButtonProps) => {
 	const ref = useRef<HTMLInputElement>(null);
@@ -56,8 +70,7 @@ export const IconCheckboxButton = ({
 	const { inputProps, isSelected } = useCheckbox(props, state, ref);
 	const { focusProps, isFocusVisible } = useFocusRing();
 	const { hoverProps, isHovered } = useHover({});
-	const hasIcon = !!icon;
-	const showCheckbox = !hasIcon || isHovered || isSelected;
+	const showCheckbox = !icon || isHovered || isSelected;
 
 	return (
 		<Wrapper
@@ -70,7 +83,7 @@ export const IconCheckboxButton = ({
 			<VisuallyHidden>
 				<input {...inputProps} ref={ref} />
 			</VisuallyHidden>
-			<div>
+			<div className={iconContainer}>
 				{showCheckbox ? (
 					<div
 						className={styledCheckbox()}
@@ -80,8 +93,12 @@ export const IconCheckboxButton = ({
 						<IconTick />
 					</div>
 				) : (
-					<div className={styledIcon()}>{icon}</div>
+					<Icon icon={icon} size="100%" />
 				)}
+			</div>
+			<div>
+				<span>{label}</span>
+				<span>{description}</span>
 			</div>
 		</Wrapper>
 	);

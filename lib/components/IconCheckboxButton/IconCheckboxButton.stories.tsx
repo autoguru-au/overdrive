@@ -1,3 +1,4 @@
+import { AirconIcon } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react';
 import { expect, fn, getAllByRole, within, userEvent } from '@storybook/test';
 
@@ -7,9 +8,10 @@ const meta: Meta<typeof IconCheckboxButton> = {
 	title: 'Components/Icon Checkbox Button',
 	component: IconCheckboxButton,
 	args: {
-		children: 'Re-gas Air-conditioning',
+		label: 'Re-gas Air-conditioning',
+		icon: AirconIcon,
 		name: 'extras',
-		className: 'demo-checkbox-buttons-class',
+		// className: 'demo-checkbox-buttons-class',
 		onChange: fn(),
 	},
 	tags: ['beta'],
