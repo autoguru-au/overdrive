@@ -5,17 +5,20 @@ const config = {
 		'../lib/**/*.stories.@(js|jsx|mjs|ts|tsx)',
 	],
 	addons: [
-        '@storybook/addon-onboarding',
-        '@storybook/addon-essentials',
-        '@storybook/addon-a11y',
-        '@storybook/addon-interactions',
-        '@storybook/addon-links',
-        '@chromatic-com/storybook',
-        'storybook-addon-tag-badges'
-    ],
+		'@storybook/addon-onboarding',
+		'@storybook/addon-essentials',
+		'@storybook/addon-a11y',
+		'@storybook/addon-interactions',
+		'@storybook/addon-links',
+		'@chromatic-com/storybook',
+		'storybook-addon-tag-badges',
+	],
 	framework: {
 		name: '@storybook/react-vite',
 		options: {},
+	},
+	docs: {
+		autodocs: true,
 	},
 	typescript: {
 		reactDocgen: 'react-docgen-typescript',
