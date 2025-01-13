@@ -168,6 +168,9 @@
 		"react-swipeable": ">=7.0.0",
 		"webpack": "*"
 	},
+	"resolutions": {
+		"@joshwooding/vite-plugin-react-docgen-typescript": "0.3.0"
+	},
 	"volta": {
 		"node": "20.18.1",
 		"yarn": "4.5.3"
