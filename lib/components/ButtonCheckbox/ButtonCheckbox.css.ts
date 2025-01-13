@@ -5,18 +5,24 @@ import { focusOutline } from '../../styles/focusOutline.css';
 import { odStyle } from '../../styles/sprinkles.css';
 
 export const styledWrapper = recipe({
-	base: odStyle({
-		alignItems: 'center',
-		borderColor: 'gray',
-		borderRadius: '2',
-		borderStyle: 'solid',
-		borderWidth: '1',
-		cursor: { hover: 'pointer' },
-		display: 'flex',
-		...focusOutline,
-		gap: '2',
-		padding: '3',
-	}),
+	base: [
+		{
+			minHeight: '80px',
+			userSelect: 'none',
+		},
+		odStyle({
+			alignItems: 'center',
+			borderColor: 'gray',
+			borderRadius: '2',
+			borderStyle: 'solid',
+			borderWidth: '1',
+			cursor: { hover: 'pointer' },
+			display: 'flex',
+			...focusOutline,
+			gap: '2',
+			padding: '3',
+		}),
+	],
 	variants: {
 		disabled: {
 			true: {},

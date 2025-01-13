@@ -3,6 +3,7 @@ import { useCheckbox, useFocusRing, useHover } from 'react-aria';
 import type { AriaCheckboxProps } from 'react-aria';
 import { useToggleState } from 'react-stately';
 
+import { odStyle } from '../../styles/sprinkles.css';
 import { Icon, type IconEl } from '../Icon';
 import { VisuallyHidden } from '../VisuallyHidden';
 
@@ -11,9 +12,10 @@ import {
 	styledCheckbox,
 	styledWrapper,
 	type StyledWrapperProps,
-} from './IconCheckboxButton.css';
+} from './ButtonCheckbox.css';
+import { IconTick } from './IconTick';
 
-interface IconCheckboxButtonProps extends AriaCheckboxProps {
+interface ButtonCheckboxProps extends AriaCheckboxProps {
 	/**
 	 * The text label for the checkbox
 	 */
@@ -31,24 +33,6 @@ interface IconCheckboxButtonProps extends AriaCheckboxProps {
 
 const uniformDataAttr = (v: boolean) => (v ? '' : undefined);
 
-const IconTick = () => (
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		width="20"
-		height="20"
-		viewBox="0 0 20 20"
-		fill="none"
-		aria-hidden
-	>
-		<path
-			fillRule="evenodd"
-			clipRule="evenodd"
-			d="M15.2887 7.42963L8.48942 14.2289L4.71179 10.3673L6.08136 8.99777L8.48942 11.4801L13.9191 6.06006L15.2887 7.42963Z"
-			fill="currentColor"
-		/>
-	</svg>
-);
-
 const Wrapper = (props: PropsWithChildren<StyledWrapperProps>) => {
 	const { disabled, selected, ...restProps } = props;
 	return (
@@ -59,12 +43,16 @@ const Wrapper = (props: PropsWithChildren<StyledWrapperProps>) => {
 	);
 };
 
-export const IconCheckboxButton = ({
+/**
+ * A checkbox button component that can be used in a group of checkboxes or as a standalone checkbox
+ * with an optional icon and description.
+ */
+export const ButtonCheckbox = ({
 	description,
 	icon,
 	label,
 	...props
-}: IconCheckboxButtonProps) => {
+}: ButtonCheckboxProps) => {
 	const ref = useRef<HTMLInputElement>(null);
 	const state = useToggleState(props);
 	const { inputProps, isSelected } = useCheckbox(props, state, ref);
@@ -97,8 +85,8 @@ export const IconCheckboxButton = ({
 				)}
 			</div>
 			<div>
-				<span>{label}</span>
-				<span>{description}</span>
+				<div className={odStyle({ fontSize: 'md' })}>{label}</div>
+				<div className={odStyle({ fontSize: 'xs' })}>{description}</div>
 			</div>
 		</Wrapper>
 	);
