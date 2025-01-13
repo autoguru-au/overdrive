@@ -13,6 +13,8 @@ export interface Props
 	children?: ReactNode;
 	is?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 	colour?: Exclude<keyof Tokens['typography']['colour'], 'muted'>;
+	id?: string;
+	testId?: string;
 }
 
 const sizeScaleDefaults = {
@@ -26,19 +28,21 @@ const sizeScaleDefaults = {
 
 export const Heading: FunctionComponent<Props> = ({
 	is = 'h1',
+	id,
+	testId,
 	align,
 	fontWeight = 'bold',
 	noWrap,
 	transform,
 	colour = 'dark',
 	size = sizeScaleDefaults[is],
-	id,
 	breakWord,
 	className = '',
 	children,
 }) => (
 	<Box
 		id={id}
+		data-test-id={testId}
 		is={is}
 		className={[
 			useTextStyles({

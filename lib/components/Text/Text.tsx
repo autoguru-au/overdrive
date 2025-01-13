@@ -10,6 +10,8 @@ import { TextStyleProps, useTextStyles } from './useTextStyles';
 export interface Props extends TextStyleProps {
 	className?: string;
 	is?: 'p' | 'span';
+	id?: string;
+	testId?: string;
 	strong?: boolean;
 	children?: ReactNode;
 	display?: Extract<
@@ -25,6 +27,8 @@ export const Text = forwardRef<HTMLElement, Props>(
 			children,
 			className = '',
 			is: Component = 'span',
+			id,
+			testId,
 			align = 'left',
 			colour,
 			display,
@@ -40,6 +44,8 @@ export const Text = forwardRef<HTMLElement, Props>(
 	) => (
 		<Box
 			is={Component}
+			id={id}
+			data-test-id={testId}
 			ref={ref}
 			display={display}
 			textAlign={align}
