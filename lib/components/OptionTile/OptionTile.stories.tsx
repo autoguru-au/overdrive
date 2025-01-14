@@ -2,23 +2,24 @@ import { AirconIcon } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react';
 import { expect, fn, getAllByRole, within, userEvent } from '@storybook/test';
 
-import { ButtonCheckbox } from './ButtonCheckbox';
+import { OptionTile } from './OptionTile';
 
-const meta: Meta<typeof ButtonCheckbox> = {
-	title: 'Components/Button Checkbox',
-	component: ButtonCheckbox,
+const meta: Meta<typeof OptionTile> = {
+	title: 'Components/Option Tile',
+	component: OptionTile,
 	args: {
 		label: 'Re-gas Air-conditioning',
 		icon: AirconIcon,
+		indicator: 'checkbox',
 		name: 'extras',
-		className: 'demo-button-checkbox-class',
+		className: 'demo-option-tile-class',
 		onChange: fn(),
 	},
 	tags: ['beta'],
 };
 
 export default meta;
-type Story = StoryObj<typeof ButtonCheckbox>;
+type Story = StoryObj<typeof OptionTile>;
 
 export const WithIcon: Story = {};
 

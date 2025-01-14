@@ -7,15 +7,15 @@ import { odStyle } from '../../styles/sprinkles.css';
 import { Icon, type IconEl } from '../Icon';
 import { VisuallyHidden } from '../VisuallyHidden';
 
+import { IconTick } from './IconTick';
 import {
 	iconContainer,
 	styledCheckbox,
 	styledWrapper,
 	type StyledWrapperProps,
-} from './ButtonCheckbox.css';
-import { IconTick } from './IconTick';
+} from './OptionTile.css';
 
-interface ButtonCheckboxProps extends AriaCheckboxProps {
+interface OptionTileProps extends AriaCheckboxProps {
 	/**
 	 * The text label for the checkbox
 	 */
@@ -24,6 +24,10 @@ interface ButtonCheckboxProps extends AriaCheckboxProps {
 	 * Source an icon from `@autoguru/icons`
 	 */
 	icon?: IconEl;
+	/**
+	 * Toggle the indicator appearance between checkbox and radio button, visual effect only
+	 */
+	indicator?: 'checkbox' | 'radio';
 	/**
 	 * Additional text description content for the checkbox button
 	 */
@@ -44,15 +48,15 @@ const Wrapper = (props: PropsWithChildren<StyledWrapperProps>) => {
 };
 
 /**
- * A checkbox button component that can be used in a group of checkboxes or as a standalone checkbox
- * with an optional icon and description.
+ * The OptionTile is primarily used in the booking flow to provide either single or multi-select optiosn for the user.
  */
-export const ButtonCheckbox = ({
+export const OptionTile = ({
 	description,
 	icon,
+	indicator = 'checkbox',
 	label,
 	...props
-}: ButtonCheckboxProps) => {
+}: OptionTileProps) => {
 	const ref = useRef<HTMLInputElement>(null);
 	const state = useToggleState(props);
 	const { inputProps, isSelected } = useCheckbox(props, state, ref);
