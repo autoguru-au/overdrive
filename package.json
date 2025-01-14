@@ -170,7 +170,7 @@
 		"@joshwooding/vite-plugin-react-docgen-typescript": "0.3.0"
 	},
 	"volta": {
-		"node": "20.18.1",
+		"node": "22.13.0",
 		"yarn": "4.6.0"
 	},
 	"packageManager": "yarn@4.6.0"
