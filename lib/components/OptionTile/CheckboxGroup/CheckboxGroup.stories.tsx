@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { expect, fn, getAllByRole, within, userEvent } from '@storybook/test';
 import React, { useState } from 'react';
 
-import { CheckboxButtons } from './CheckboxButtons';
+import { CheckboxGroup } from './CheckboxGroup';
 
 const itemData = [
 	['Tyre puncture repair', '+28.00'],
@@ -11,16 +11,16 @@ const itemData = [
 	['Windscreen wipers - pair', '+45.92'],
 ];
 
-const meta: Meta<typeof CheckboxButtons> = {
-	title: 'Components/Checkbox Buttons',
-	component: CheckboxButtons,
+const meta: Meta<typeof CheckboxGroup> = {
+	title: 'Components/Option Tiles/Checkbox Group',
+	component: CheckboxGroup,
 	args: {
 		label: 'Commonly requested extras',
 		name: 'extras',
 		children: itemData.map((item, idx) => (
-			<CheckboxButtons.Item key={idx} value={`${idx}`}>
+			<CheckboxGroup.Item key={idx} value={`${idx}`}>
 				{item[0]}
-			</CheckboxButtons.Item>
+			</CheckboxGroup.Item>
 		)),
 		className: 'demo-checkbox-buttons-class',
 		onChange: fn(),
@@ -29,7 +29,7 @@ const meta: Meta<typeof CheckboxButtons> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof CheckboxButtons>;
+type Story = StoryObj<typeof CheckboxGroup>;
 
 /**
  * For simple content, map through the options, e.g.
@@ -94,9 +94,9 @@ export const Simple: Story = {
 export const SplitLabel: Story = {
 	args: {
 		children: itemData.map((data, idx) => (
-			<CheckboxButtons.Item key={idx} value={`${idx}`}>
-				<CheckboxButtons.SplitLabel content={data} />
-			</CheckboxButtons.Item>
+			<CheckboxGroup.Item key={idx} value={`${idx}`}>
+				<CheckboxGroup.SplitLabel content={data} />
+			</CheckboxGroup.Item>
 		)),
 	},
 };
@@ -129,17 +129,17 @@ export const Controlled: Story = {
 		};
 
 		return (
-			<CheckboxButtons
+			<CheckboxGroup
 				label={meta.args?.label}
 				onChange={handleOnChange}
 				value={currentValue}
 			>
 				{itemData.map((data, idx) => (
-					<CheckboxButtons.Item key={idx} value={`${idx}`}>
-						<CheckboxButtons.SplitLabel content={data} />
-					</CheckboxButtons.Item>
+					<CheckboxGroup.Item key={idx} value={`${idx}`}>
+						<CheckboxGroup.SplitLabel content={data} />
+					</CheckboxGroup.Item>
 				))}
-			</CheckboxButtons>
+			</CheckboxGroup>
 		);
 	},
 };

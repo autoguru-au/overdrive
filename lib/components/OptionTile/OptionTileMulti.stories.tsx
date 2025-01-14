@@ -2,11 +2,11 @@ import { AirconIcon } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react';
 import { expect, fn, getAllByRole, within, userEvent } from '@storybook/test';
 
-import { OptionTile } from './OptionTile';
+import { OptionTileMulti } from './OptionTileMulti';
 
-const meta: Meta<typeof OptionTile> = {
-	title: 'Components/Option Tile',
-	component: OptionTile,
+const meta: Meta<typeof OptionTileMulti> = {
+	title: 'Components/Option Tile Multi-select',
+	component: OptionTileMulti,
 	args: {
 		label: 'Re-gas Air-conditioning',
 		icon: AirconIcon,
@@ -19,10 +19,16 @@ const meta: Meta<typeof OptionTile> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof OptionTile>;
+type Story = StoryObj<typeof OptionTileMulti>;
 
+/**
+ * Multi-select is a input `type=checkbox`
+ */
 export const WithIcon: Story = {};
 
+/**
+ * Multi-select is a input `type=checkbox`
+ */
 export const WithDescription: Story = {
 	args: {
 		label: 'Basic Service',

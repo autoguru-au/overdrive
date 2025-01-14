@@ -2,15 +2,16 @@ import React, { createContext } from 'react';
 import { useCheckboxGroup, type AriaCheckboxGroupProps } from 'react-aria';
 import { type CheckboxGroupState, useCheckboxGroupState } from 'react-stately';
 
-import { groupLabel } from './CheckboxButtons.css';
-import { CheckboxItem, SplitLabel } from './CheckboxItem';
+import { groupLabel } from '../OptionTile.css';
+
+import { CheckboxTileItem, SplitLabel } from './CheckboxItem';
 
 type ElementAttributes = Pick<
 	React.ComponentPropsWithRef<'div'>,
 	'className' | 'ref' | 'style'
 >;
 
-export interface CheckboxButtonsProps
+export interface CheckboxGroupProps
 	extends AriaCheckboxGroupProps,
 		ElementAttributes {
 	/**
@@ -35,7 +36,7 @@ export interface CheckboxButtonsProps
 	onChange?: AriaCheckboxGroupProps['onChange'];
 }
 
-export const CheckboxButtonsContext = createContext<CheckboxGroupState | null>(
+export const CheckboxGroupContext = createContext<CheckboxGroupState | null>(
 	null,
 );
 
@@ -50,7 +51,7 @@ export const CheckboxButtonsContext = createContext<CheckboxGroupState | null>(
  * Used in the booking flow on the payment step for addons.
  * Future enhancements might include: validation states/error handling
  */
-export const CheckboxButtons = (props: CheckboxButtonsProps) => {
+export const CheckboxGroup = (props: CheckboxGroupProps) => {
 	const { children, className, description, label, ref, style } = props;
 	const elementAttrs = { className, ref, style };
 	const state = useCheckboxGroupState(props);
@@ -64,13 +65,13 @@ export const CheckboxButtons = (props: CheckboxButtonsProps) => {
 			<div {...labelProps} className={groupLabel()}>
 				{label}
 			</div>
-			<CheckboxButtonsContext.Provider value={state}>
+			<CheckboxGroupContext.Provider value={state}>
 				<div>{children}</div>
-			</CheckboxButtonsContext.Provider>
+			</CheckboxGroupContext.Provider>
 			{description && <div {...descriptionProps}>{description}</div>}
 		</div>
 	);
 };
 
-CheckboxButtons.Item = CheckboxItem;
-CheckboxButtons.SplitLabel = SplitLabel;
+CheckboxGroup.Item = CheckboxTileItem;
+CheckboxGroup.SplitLabel = SplitLabel;

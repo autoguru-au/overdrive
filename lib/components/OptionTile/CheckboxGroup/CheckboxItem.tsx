@@ -6,42 +6,25 @@ import {
 	type AriaCheckboxGroupItemProps,
 } from 'react-aria';
 
-import { odStyle } from '../../styles/sprinkles.css';
-import { VisuallyHidden } from '../VisuallyHidden';
+import { odStyle } from '../../../styles/sprinkles.css';
+import { VisuallyHidden } from '../../VisuallyHidden';
+import { IconTick } from '../IconTick';
+import { checkbox, checkboxButton } from '../OptionTile.css';
 
-import { CheckboxButtonsContext } from './CheckboxButtons';
-import { checkbox, checkboxButton } from './CheckboxButtons.css';
+import { CheckboxGroupContext } from './CheckboxGroup';
 
 type FilteredCheckboxProps = Omit<
 	AriaCheckboxGroupItemProps,
 	'isIndeterminate'
 >;
 
-const Tick = () => (
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		width="20"
-		height="20"
-		viewBox="0 0 20 20"
-		fill="none"
-		aria-hidden
-	>
-		<path
-			fillRule="evenodd"
-			clipRule="evenodd"
-			d="M15.2887 7.42963L8.48942 14.2289L4.71179 10.3673L6.08136 8.99777L8.48942 11.4801L13.9191 6.06006L15.2887 7.42963Z"
-			fill="currentColor"
-		/>
-	</svg>
-);
-
 /**
  * The CheckboxItem is used to populate CheckboxButtons. They are outlined with a large interactive area and multiple
  * options for laying out label content.
  */
-export const CheckboxItem = (props: FilteredCheckboxProps) => {
+export const CheckboxTileItem = (props: FilteredCheckboxProps) => {
 	const ref = useRef<HTMLInputElement>(null);
-	const state = useContext(CheckboxButtonsContext)!;
+	const state = useContext(CheckboxGroupContext)!;
 	const { inputProps } = useCheckboxGroupItem(props, state, ref);
 	const { isFocusVisible, focusProps } = useFocusRing();
 	const isDisabled = state.isDisabled;
@@ -65,7 +48,7 @@ export const CheckboxItem = (props: FilteredCheckboxProps) => {
 						focused: isFocusVisible,
 					})}
 				>
-					<Tick />
+					<IconTick />
 				</div>
 				<div
 					className={odStyle({
@@ -81,7 +64,7 @@ export const CheckboxItem = (props: FilteredCheckboxProps) => {
 	);
 };
 
-CheckboxItem.displayName = 'CheckboxButtons.Item';
+CheckboxTileItem.displayName = 'OptionTile.CheckboxItem';
 
 export interface SplitLabelProps {
 	children?: React.ReactNode;
@@ -111,4 +94,4 @@ export const SplitLabel = ({ children, content }: SplitLabelProps) => {
 	);
 };
 
-SplitLabel.displayName = 'CheckboxButtons.SplitLabel';
+SplitLabel.displayName = 'OptionTile.SplitLabel';
