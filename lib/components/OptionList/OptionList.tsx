@@ -2,8 +2,7 @@ import React, { createContext } from 'react';
 import { useCheckboxGroup, type AriaCheckboxGroupProps } from 'react-aria';
 import { type CheckboxGroupState, useCheckboxGroupState } from 'react-stately';
 
-import { groupLabel } from '../OptionTile/OptionTile.css';
-
+import { groupLabel } from './OptionList.css';
 import { OptionListItem, ItemSplitLabel } from './OptionListItem';
 
 type ElementAttributes = Pick<

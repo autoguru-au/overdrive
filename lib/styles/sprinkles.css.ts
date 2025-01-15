@@ -17,7 +17,8 @@ const interactionConditions = {
 	checked: { selector: '&:checked, &[data-checked]' },
 	disabled: { selector: '&:disabled, &[data-disabled]' },
 	focus: { selector: '&:focus, &[data-focus]' },
-	focusVisible: { selector: '&:focus-visible' },
+	focusVisible: { selector: '&:focus-visible, &[data-focus-visible]' },
+	hover: { selector: '&:hover, &[data-hovered]' },
 };
 
 const responsiveProperties = defineProperties({
@@ -99,7 +100,7 @@ const borderProperties = defineProperties({
 
 const displayProperties = defineProperties({
 	properties: {
-		display: ['none', 'block', 'flex'],
+		display: ['none', 'block', 'flex', 'grid'],
 		flexDirection: ['row', 'column'],
 		flexGrow: [0, 1],
 		flexShrink: [0, 1],

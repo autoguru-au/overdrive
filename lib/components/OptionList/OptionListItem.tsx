@@ -7,11 +7,11 @@ import {
 } from 'react-aria';
 
 import { odStyle } from '../../styles/sprinkles.css';
-import { IconTick } from '../OptionTile/IconTick';
-import { checkbox, checkboxButton } from '../OptionTile/OptionTile.css';
 import { VisuallyHidden } from '../VisuallyHidden';
 
+import { IconTick } from './IconTick';
 import { OptionListContext } from './OptionList';
+import { checkbox, checkboxButton } from './OptionList.css';
 
 type FilteredCheckboxProps = Omit<
 	AriaCheckboxGroupItemProps,
