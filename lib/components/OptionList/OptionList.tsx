@@ -2,16 +2,16 @@ import React, { createContext } from 'react';
 import { useCheckboxGroup, type AriaCheckboxGroupProps } from 'react-aria';
 import { type CheckboxGroupState, useCheckboxGroupState } from 'react-stately';
 
-import { groupLabel } from '../OptionTile.css';
+import { groupLabel } from '../OptionTile/OptionTile.css';
 
-import { CheckboxTileItem, SplitLabel } from './CheckboxItem';
+import { OptionListItem, ItemSplitLabel } from './OptionListItem';
 
 type ElementAttributes = Pick<
 	React.ComponentPropsWithRef<'div'>,
 	'className' | 'ref' | 'style'
 >;
 
-export interface CheckboxGroupProps
+export interface OptionListProps
 	extends AriaCheckboxGroupProps,
 		ElementAttributes {
 	/**
@@ -36,22 +36,21 @@ export interface CheckboxGroupProps
 	onChange?: AriaCheckboxGroupProps['onChange'];
 }
 
-export const CheckboxGroupContext = createContext<CheckboxGroupState | null>(
-	null,
-);
+export const OptionListContext = createContext<CheckboxGroupState | null>(null);
 
 /**
- * The CheckboxButtons group one or more checkboxes to apear as an outlined list of options and implements React Aria
- * `useCheckboxGroup` ([docs](https://react-spectrum.adobe.com/react-aria/useCheckboxGroup.html))
+ * The OptionList is a form control that groups selectable items that apear as an outlined list of options and
+ * implements React Aria `useCheckboxGroup`
+ * ([docs](https://react-spectrum.adobe.com/react-aria/useCheckboxGroup.html))
  *
- * Populate the CheckboxButtons group with the CheckboxItem, each item must have a `value` (unique) and be labelled.
- * The `value` of all checkboxes active is passed as a string array to set `defaultValue` (uncontrolled), `value`
+ * Populate the OptionList group with the OptionListList, each item must have a `value` (unique) and be labelled.
+ * The `value` of all active items are passed as a string array to set `defaultValue` (uncontrolled), `value`
  * (controlled) and is the format returned from the onChange handler as well.
  *
  * Used in the booking flow on the payment step for addons.
  * Future enhancements might include: validation states/error handling
  */
-export const CheckboxGroup = (props: CheckboxGroupProps) => {
+export const OptionList = (props: OptionListProps) => {
 	const { children, className, description, label, ref, style } = props;
 	const elementAttrs = { className, ref, style };
 	const state = useCheckboxGroupState(props);
@@ -65,13 +64,13 @@ export const CheckboxGroup = (props: CheckboxGroupProps) => {
 			<div {...labelProps} className={groupLabel()}>
 				{label}
 			</div>
-			<CheckboxGroupContext.Provider value={state}>
+			<OptionListContext.Provider value={state}>
 				<div>{children}</div>
-			</CheckboxGroupContext.Provider>
+			</OptionListContext.Provider>
 			{description && <div {...descriptionProps}>{description}</div>}
 		</div>
 	);
 };
 
-CheckboxGroup.Item = CheckboxTileItem;
-CheckboxGroup.SplitLabel = SplitLabel;
+OptionList.Item = OptionListItem;
+OptionList.ItemSplitLabel = ItemSplitLabel;

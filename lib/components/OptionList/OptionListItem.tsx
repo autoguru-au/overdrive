@@ -6,12 +6,12 @@ import {
 	type AriaCheckboxGroupItemProps,
 } from 'react-aria';
 
-import { odStyle } from '../../../styles/sprinkles.css';
-import { VisuallyHidden } from '../../VisuallyHidden';
-import { IconTick } from '../IconTick';
-import { checkbox, checkboxButton } from '../OptionTile.css';
+import { odStyle } from '../../styles/sprinkles.css';
+import { IconTick } from '../OptionTile/IconTick';
+import { checkbox, checkboxButton } from '../OptionTile/OptionTile.css';
+import { VisuallyHidden } from '../VisuallyHidden';
 
-import { CheckboxGroupContext } from './CheckboxGroup';
+import { OptionListContext } from './OptionList';
 
 type FilteredCheckboxProps = Omit<
 	AriaCheckboxGroupItemProps,
@@ -19,12 +19,12 @@ type FilteredCheckboxProps = Omit<
 >;
 
 /**
- * The CheckboxItem is used to populate CheckboxButtons. They are outlined with a large interactive area and multiple
- * options for laying out label content.
+ * The OptionListItem is used to populate OptionList. They are outlined with a large interactive area and flexible
+ * label content layout.
  */
-export const CheckboxTileItem = (props: FilteredCheckboxProps) => {
+export const OptionListItem = (props: FilteredCheckboxProps) => {
 	const ref = useRef<HTMLInputElement>(null);
-	const state = useContext(CheckboxGroupContext)!;
+	const state = useContext(OptionListContext)!;
 	const { inputProps } = useCheckboxGroupItem(props, state, ref);
 	const { isFocusVisible, focusProps } = useFocusRing();
 	const isDisabled = state.isDisabled;
@@ -64,7 +64,7 @@ export const CheckboxTileItem = (props: FilteredCheckboxProps) => {
 	);
 };
 
-CheckboxTileItem.displayName = 'OptionTile.CheckboxItem';
+OptionListItem.displayName = 'OptionList.Item';
 
 export interface SplitLabelProps {
 	children?: React.ReactNode;
@@ -77,7 +77,7 @@ export interface SplitLabelProps {
 /**
  * Helper component part to display a checkbox button label with a second column justified to the end
  */
-export const SplitLabel = ({ children, content }: SplitLabelProps) => {
+export const ItemSplitLabel = ({ children, content }: SplitLabelProps) => {
 	if (!children && !content) return null;
 
 	return (
@@ -94,4 +94,4 @@ export const SplitLabel = ({ children, content }: SplitLabelProps) => {
 	);
 };
 
-SplitLabel.displayName = 'OptionTile.SplitLabel';
+ItemSplitLabel.displayName = 'OptionList.ItemSplitLabel';

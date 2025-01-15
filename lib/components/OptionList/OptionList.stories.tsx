@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { expect, fn, getAllByRole, within, userEvent } from '@storybook/test';
 import React, { useState } from 'react';
 
-import { CheckboxGroup } from './CheckboxGroup';
+import { OptionList } from './OptionList';
 
 const itemData = [
 	['Tyre puncture repair', '+28.00'],
@@ -11,16 +11,16 @@ const itemData = [
 	['Windscreen wipers - pair', '+45.92'],
 ];
 
-const meta: Meta<typeof CheckboxGroup> = {
-	title: 'Components/Option Tiles/Checkbox Group',
-	component: CheckboxGroup,
+const meta: Meta<typeof OptionList> = {
+	title: 'Components/Option List',
+	component: OptionList,
 	args: {
 		label: 'Commonly requested extras',
 		name: 'extras',
 		children: itemData.map((item, idx) => (
-			<CheckboxGroup.Item key={idx} value={`${idx}`}>
+			<OptionList.Item key={idx} value={`${idx}`}>
 				{item[0]}
-			</CheckboxGroup.Item>
+			</OptionList.Item>
 		)),
 		className: 'demo-checkbox-buttons-class',
 		onChange: fn(),
@@ -29,7 +29,7 @@ const meta: Meta<typeof CheckboxGroup> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof CheckboxGroup>;
+type Story = StoryObj<typeof OptionList>;
 
 /**
  * For simple content, map through the options, e.g.
@@ -94,9 +94,9 @@ export const Simple: Story = {
 export const SplitLabel: Story = {
 	args: {
 		children: itemData.map((data, idx) => (
-			<CheckboxGroup.Item key={idx} value={`${idx}`}>
-				<CheckboxGroup.SplitLabel content={data} />
-			</CheckboxGroup.Item>
+			<OptionList.Item key={idx} value={`${idx}`}>
+				<OptionList.ItemSplitLabel content={data} />
+			</OptionList.Item>
 		)),
 	},
 };
@@ -129,17 +129,17 @@ export const Controlled: Story = {
 		};
 
 		return (
-			<CheckboxGroup
+			<OptionList
 				label={meta.args?.label}
 				onChange={handleOnChange}
 				value={currentValue}
 			>
 				{itemData.map((data, idx) => (
-					<CheckboxGroup.Item key={idx} value={`${idx}`}>
-						<CheckboxGroup.SplitLabel content={data} />
-					</CheckboxGroup.Item>
+					<OptionList.Item key={idx} value={`${idx}`}>
+						<OptionList.ItemSplitLabel content={data} />
+					</OptionList.Item>
 				))}
-			</CheckboxGroup>
+			</OptionList>
 		);
 	},
 };
