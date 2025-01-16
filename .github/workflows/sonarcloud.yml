@@ -14,30 +14,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # 2. Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '18' # Usa la misma versión que en tu entorno local
 
-      # 3. Install dependencies
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --frozen-lockfile
 
-      # 4. Run tests with coverage
-      - name: Run tests and generate coverage
-        run: |
-          yarn test --coverage
+      - name: Run tests
+        run: yarn test --coverage
         env:
           CI: true
 
-      # 6. Run SonarQube analysis
       - name: Run SonarQube analysis
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
