@@ -19,6 +19,7 @@ const interactionConditions = {
 	focus: { selector: '&:focus, &[data-focus]' },
 	focusVisible: { selector: '&:focus-visible, &[data-focus-visible]' },
 	hover: { selector: '&:hover, &[data-hovered]' },
+	selected: { selector: '&[data-selected]' },
 };
 
 const responsiveProperties = defineProperties({
@@ -114,6 +115,7 @@ const displayProperties = defineProperties({
 			'flex-end',
 		],
 		alignSelf: ['flex-start', 'center', 'flex-end'],
+		position: ['static', 'relative', 'absolute', 'fixed', 'sticky'],
 		height: {
 			...spaceWithoutNone,
 			'100%': '100%',

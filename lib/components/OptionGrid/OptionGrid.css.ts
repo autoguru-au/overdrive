@@ -3,6 +3,7 @@ import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
 import { focusOutline } from '../../styles/focusOutline.css';
 import { odStyle } from '../../styles/sprinkles.css';
+import { tokens } from '../../themes/base/tokens';
 
 export const styledGridContainer = recipe({
 	base: odStyle({
@@ -16,7 +17,11 @@ export const styledGridContainer = recipe({
 	},
 });
 
-export const styledItem = recipe({
+export type StyledGridContainerProps = NonNullable<
+	RecipeVariants<typeof styledGridContainer>
+>;
+
+export const styledGridItem = recipe({
 	base: [
 		{
 			minHeight: '80px',
@@ -24,7 +29,18 @@ export const styledItem = recipe({
 		},
 		odStyle({
 			alignItems: 'center',
-			borderColor: 'gray',
+			background: {
+				initial: 'white',
+				focusVisible: 'gray200',
+				hover: 'gray200',
+				selected: 'white',
+			},
+			borderColor: {
+				initial: 'gray',
+				focusVisible: 'light',
+				hover: 'light',
+				selected: 'dark',
+			},
 			borderRadius: '2',
 			borderStyle: 'solid',
 			borderWidth: '1',
@@ -33,6 +49,7 @@ export const styledItem = recipe({
 			...focusOutline,
 			gap: '2',
 			padding: '3',
+			position: 'relative',
 		}),
 	],
 	variants: {
@@ -40,19 +57,30 @@ export const styledItem = recipe({
 			true: {},
 		},
 		selected: {
-			false: odStyle({
-				background: { hover: 'gray200' },
-				borderColor: { initial: 'gray', hover: 'light' },
-			}),
-			true: odStyle({
-				borderColor: 'dark',
+			true: style({
+				selectors: {
+					'&:after': {
+						outlineColor: tokens.colours.gamut.black900,
+						outlineStyle: 'solid',
+						outlineWidth: tokens.border.width[2],
+						borderRadius: 'inherit',
+						content: '',
+						display: 'block',
+						position: 'absolute',
+						width: '100%',
+						height: '100%',
+						left: 0,
+						top: 0,
+					},
+				},
 			}),
 		},
-		size: {},
 	},
 });
 
-export type StyledItemProps = NonNullable<RecipeVariants<typeof styledItem>>;
+export type StyledGridItemProps = NonNullable<
+	RecipeVariants<typeof styledGridItem>
+>;
 
 export const iconContainer = style({
 	height: '26px',
@@ -65,20 +93,27 @@ const checkedBaseTransition = style({
 	transitionDuration: '80ms',
 });
 
+const checkboxFocusHover = style({
+	background: tokens.colours.gamut.gray300,
+	color: tokens.colours.gamut.white,
+});
+
+const checkboxSelected = style({
+	borderColor: tokens.border.colours.dark,
+	background: tokens.colours.gamut.gray900,
+	color: tokens.colours.gamut.white,
+});
+
 export const styledCheckbox = recipe({
 	base: [
 		odStyle({
 			alignItems: 'center',
-			background: {
-				initial: 'white',
-				hover: 'gray300',
-				checked: 'gray900',
-			},
-			borderColor: { initial: 'gray', checked: 'dark' },
+			background: 'white',
+			borderColor: 'gray',
 			borderRadius: '1',
 			borderStyle: 'solid',
 			borderWidth: '1',
-			color: { initial: 'transparent', checked: 'white', hover: 'white' },
+			color: 'transparent',
 			display: 'flex',
 			flexShrink: 0,
 			justifyContent: 'center',
@@ -87,13 +122,51 @@ export const styledCheckbox = recipe({
 		checkedBaseTransition,
 	],
 	variants: {
-		checked: {
-			false: { transitionDuration: '15ms' },
-		},
-		focused: {
-			true: odStyle({ ...focusOutline, outlineWidth: 'default' }),
-		},
+		focused: { true: checkboxFocusHover },
+		checked: { true: checkboxSelected },
 	},
+	// compoundVariants: [
+	// 	{
+	// 		variants: {
+	// 			hovered: false,
+	// 			checked: false,
+	// 		},
+	// 		style: odStyle({
+	// 			background: 'white',
+	// 			color: 'transparent',
+	// 		}),
+	// 	},
+	// 	{
+	// 		variants: {
+	// 			hovered: true,
+	// 			checked: false,
+	// 		},
+	// 		style: odStyle({
+	// 			background: 'gray300',
+	// 			color: 'white',
+	// 		}),
+	// 	},
+	// 	{
+	// 		variants: {
+	// 			focused: true,
+	// 			checked: false,
+	// 		},
+	// 		style: odStyle({
+	// 			background: 'gray300',
+	// 			color: 'white',
+	// 		}),
+	// 	},
+	// 	{
+	// 		variants: {
+	// 			checked: true,
+	// 		},
+	// 		style: odStyle({
+	// 			borderColor: 'dark',
+	// 			background: 'gray900',
+	// 			color: 'white',
+	// 		}),
+	// 	},
+	// ],
 });
 
 export type StyledCheckboxProps = NonNullable<
