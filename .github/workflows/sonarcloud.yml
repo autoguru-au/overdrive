@@ -1,0 +1,62 @@
+name: SonarQube Analysis (TypeScript)
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  sonarqube:
+    name: Analyze Overdrive with SonarQube
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 2. Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: yarn install
+
+      # 4. Run tests with coverage
+      - name: Run tests and generate coverage
+        run: |
+          yarn test --coverage
+        env:
+          CI: true
+
+      # 5. Upload coverage report (optional for debugging)
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v3
+        with:
+          name: CoverageReport
+          path: coverage/
+
+      # 6. Run SonarQube analysis
+      - name: Run SonarQube analysis
+        env:
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: |
+          sonar-scanner \
+            -Dsonar.projectKey="${{ github.event.repository.name }}" \
+            -Dsonar.organization="your-organization" \
+            -Dsonar.sources=lib \
+            -Dsonar.tests=lib \
+            -Dsonar.inclusions="**/*.ts,**/*.tsx" \
+            -Dsonar.exclusions="**/node_modules/**,**/*.stories.tsx,**/*.test.tsx" \
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
+            -Dsonar.host.url="${{ secrets.SONAR_HOST_URL }}" \
+            -Dsonar.login="${{ secrets.SONAR_TOKEN }}"
