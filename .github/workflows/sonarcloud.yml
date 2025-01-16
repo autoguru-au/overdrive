@@ -47,6 +47,9 @@ jobs:
           name: CoverageReport
           path: coverage/
 
+      - name: Install Sonar Scanner
+        run: npm install -g sonar-scanner
+
       - name: Run SonarQube analysis
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
