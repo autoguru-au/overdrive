@@ -1,36 +1,51 @@
-name: SonarQube Analysis (TypeScript)
+name: CI
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on: push
 
 jobs:
-  sonarqube:
-    name: Analyze Overdrive with SonarQube
+  test:
+    name: Lint & Test
     runs-on: ubuntu-latest
+    env:
+      TZ: Australia/Brisbane
+      CI: true
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@main
         with:
           fetch-depth: 0
 
-      - name: Set up Node.js
+      - name: Setup environment
+        id: setups
+        run: |-
+          echo "::set-output name=yarn_cache::$(yarn cache dir)"
+          echo "::set-output name=node_version::$(jq -r '.volta.node' package.json)"
+
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18' # Usa la misma versión que en tu entorno local
+          node-version: ${{ steps.setups.outputs.node_version }}
+          check-latest: true
 
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+      - name: Yarn cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.setups.outputs.yarn_cache }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}-node-${{ steps.setups.outputs.node_version }}
 
-      - name: Run tests
-        run: yarn test --coverage
-        env:
-          CI: true
+      - run: yarn --immutable
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Test
+        run: yarn test --no-cache --ci --coverage
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: CoverageReport
+          path: coverage/
 
       - name: Run SonarQube analysis
         env:
