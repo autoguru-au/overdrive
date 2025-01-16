@@ -37,13 +37,6 @@ jobs:
         env:
           CI: true
 
-      # 5. Upload coverage report (optional for debugging)
-      - name: Upload coverage report
-        uses: actions/upload-artifact@v3
-        with:
-          name: CoverageReport
-          path: coverage/
-
       # 6. Run SonarQube analysis
       - name: Run SonarQube analysis
         env:
