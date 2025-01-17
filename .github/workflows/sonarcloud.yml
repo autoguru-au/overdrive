@@ -57,8 +57,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           sonar-scanner \
-            -Dsonar.projectKey="overdrive-sonar" \
-            -Dsonar.organization="your-organization" \
+            -Dsonar.projectKey="${{ github.event.repository.name }}" \
             -Dsonar.sources=lib/components,lib/hooks,lib/utils \
             -Dsonar.exclusions="**/node_modules/**,**/stories/**,**/*.stories.tsx" \
             -Dsonar.tests=lib \
