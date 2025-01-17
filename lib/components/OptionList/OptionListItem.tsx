@@ -11,7 +11,7 @@ import { VisuallyHidden } from '../VisuallyHidden';
 
 import { IconTick } from './IconTick';
 import { OptionListContext } from './OptionList';
-import { checkbox, checkboxButton } from './OptionList.css';
+import { checkbox, styledOptionItem } from './OptionList.css';
 
 type FilteredCheckboxProps = Omit<
 	AriaCheckboxGroupItemProps,
@@ -31,7 +31,12 @@ export const OptionListItem = (props: FilteredCheckboxProps) => {
 	const isSelected = state.isSelected(props.value);
 
 	return (
-		<label className={checkboxButton({ disabled: isDisabled })}>
+		<label
+			className={styledOptionItem({
+				focused: isFocusVisible,
+				disabled: isDisabled,
+			})}
+		>
 			<VisuallyHidden>
 				<input {...mergeProps(inputProps, focusProps)} ref={ref} />
 			</VisuallyHidden>
@@ -45,7 +50,7 @@ export const OptionListItem = (props: FilteredCheckboxProps) => {
 				<div
 					className={checkbox({
 						checked: isSelected,
-						focused: isFocusVisible,
+						disabled: isDisabled,
 					})}
 				>
 					<IconTick />
