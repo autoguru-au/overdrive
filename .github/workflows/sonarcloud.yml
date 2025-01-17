@@ -1,4 +1,4 @@
-name: CI
+name: SonarQube CI
 
 on: push
 
@@ -11,7 +11,7 @@ jobs:
       CI: true
 
     steps:
-      - uses: actions/checkout@main
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
@@ -28,7 +28,7 @@ jobs:
           check-latest: true
 
       - name: Yarn cache
-        uses: actions/cache@v4
+        uses: actions/cache@v3
         with:
           path: ${{ steps.setups.outputs.yarn_cache }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}-node-${{ steps.setups.outputs.node_version }}
@@ -41,11 +41,12 @@ jobs:
       - name: Test
         run: yarn test --no-cache --ci --coverage
 
-      - name: Upload coverage report
-        uses: actions/upload-artifact@v4
-        with:
-          name: CoverageReport
-          path: coverage/
+      - name: Fix lcov paths
+        run: |
+          echo "Fixing paths in lcov.info..."
+          sed -i 's#\.\./##g' coverage/lcov.info
+          echo "Fixed lcov.info paths:"
+          head -n 20 coverage/lcov.info
 
       - name: Install Sonar Scanner
         run: npm install -g sonar-scanner
@@ -56,12 +57,13 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           sonar-scanner \
-            -Dsonar.projectKey="${{ github.event.repository.name }}" \
+            -Dsonar.projectKey="overdrive-sonar" \
             -Dsonar.organization="your-organization" \
-            -Dsonar.sources=lib \
+            -Dsonar.sources=lib/components,lib/hooks,lib/utils \
+            -Dsonar.exclusions="**/node_modules/**,**/stories/**,**/*.stories.tsx" \
             -Dsonar.tests=lib \
-            -Dsonar.inclusions="**/*.ts,**/*.tsx" \
-            -Dsonar.exclusions="**/node_modules/**,**/*.stories.tsx,**/*.test.tsx" \
+            -Dsonar.test.inclusions="**/*.test.tsx" \
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
+            -Dsonar.sourceEncoding=UTF-8 \
             -Dsonar.host.url="${{ secrets.SONAR_HOST_URL }}" \
             -Dsonar.login="${{ secrets.SONAR_TOKEN }}"
