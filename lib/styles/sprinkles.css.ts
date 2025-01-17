@@ -1,28 +1,33 @@
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
 
 import { tokens } from '../themes/base/tokens';
+import { breakpoints } from '../themes/makeTheme';
+
 const { border, colours, elevation, space, typography } = tokens;
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { none, ...spaceWithoutNone } = space;
 
-const hoverConditions = {
-	hover: {
-		'@media': '(hover: hover) and (pointer: fine)',
-		selector: '&:hover, &[data-hover]',
+const responsiveConditions = {
+	mobile: {},
+	tablet: { '@media': `screen and (min-width: ${breakpoints.tablet})` },
+	desktop: { '@media': `screen and (min-width: ${breakpoints.desktop})` },
+	largeDesktop: {
+		'@media': `screen and (min-width: ${breakpoints.largeDesktop})`,
 	},
 };
 
 const interactionConditions = {
 	initial: {},
+	active: { selector: '&:active' },
 	checked: { selector: '&:checked, &[data-checked]' },
 	disabled: { selector: '&:disabled, &[data-disabled]' },
 	focus: { selector: '&:focus, &[data-focus]' },
 	focusVisible: { selector: '&:focus-visible, &[data-focus-visible]' },
-	hover: { selector: '&:hover, &[data-hovered]' },
+	hover: { selector: '&:hover, &[data-hover]' },
 	selected: { selector: '&[data-selected]' },
 };
 
-const responsiveProperties = defineProperties({
+const spaceProperties = defineProperties({
 	properties: {
 		gap: space,
 		marginBottom: space,
@@ -80,7 +85,7 @@ const typographyProperties = defineProperties({
 });
 
 const borderProperties = defineProperties({
-	conditions: { ...hoverConditions, ...interactionConditions },
+	conditions: { ...interactionConditions },
 	defaultCondition: 'initial',
 	properties: {
 		borderColor: { ...border.colours },
@@ -100,6 +105,8 @@ const borderProperties = defineProperties({
 });
 
 const displayProperties = defineProperties({
+	conditions: { ...responsiveConditions },
+	defaultCondition: 'mobile',
 	properties: {
 		display: ['none', 'block', 'flex', 'grid'],
 		flexDirection: ['row', 'column'],
@@ -134,7 +141,7 @@ const displayProperties = defineProperties({
 });
 
 const gamutProperties = defineProperties({
-	conditions: { ...hoverConditions, ...interactionConditions },
+	conditions: { ...interactionConditions },
 	defaultCondition: 'initial',
 	properties: {
 		color: { ...colours.gamut, transparent: 'transparent' },
@@ -145,7 +152,7 @@ const gamutProperties = defineProperties({
 });
 
 const interactionProperties = defineProperties({
-	conditions: { ...hoverConditions, ...interactionConditions },
+	conditions: { ...interactionConditions },
 	defaultCondition: 'initial',
 	properties: {
 		cursor: ['default', 'pointer', 'not-allowed', 'wait'],
@@ -164,7 +171,7 @@ const interactionProperties = defineProperties({
 });
 
 export const odStyle = createSprinkles(
-	responsiveProperties,
+	spaceProperties,
 	typographyProperties,
 	borderProperties,
 	displayProperties,

@@ -7,7 +7,8 @@ import { tokens } from '../../themes/base/tokens';
 
 export const styledGridContainer = recipe({
 	base: odStyle({
-		display: 'grid',
+		display: { mobile: 'flex', tablet: 'grid' },
+		flexDirection: { mobile: 'column' },
 		gap: '3',
 	}),
 	variants: {
@@ -20,6 +21,24 @@ export const styledGridContainer = recipe({
 export type StyledGridContainerProps = NonNullable<
 	RecipeVariants<typeof styledGridContainer>
 >;
+
+const pseudoThickBorder = style({
+	selectors: {
+		'&:after': {
+			outlineColor: tokens.colours.gamut.black900,
+			outlineStyle: 'solid',
+			outlineWidth: tokens.border.width[2],
+			borderRadius: 'inherit',
+			content: '',
+			display: 'block',
+			position: 'absolute',
+			width: '100%',
+			height: '100%',
+			left: 0,
+			top: 0,
+		},
+	},
+});
 
 export const styledGridItem = recipe({
 	base: [
@@ -48,7 +67,8 @@ export const styledGridItem = recipe({
 			display: 'flex',
 			...focusOutline,
 			gap: '2',
-			padding: '3',
+			paddingX: '4',
+			paddingY: '3',
 			position: 'relative',
 		}),
 	],
@@ -57,23 +77,7 @@ export const styledGridItem = recipe({
 			true: {},
 		},
 		selected: {
-			true: style({
-				selectors: {
-					'&:after': {
-						outlineColor: tokens.colours.gamut.black900,
-						outlineStyle: 'solid',
-						outlineWidth: tokens.border.width[2],
-						borderRadius: 'inherit',
-						content: '',
-						display: 'block',
-						position: 'absolute',
-						width: '100%',
-						height: '100%',
-						left: 0,
-						top: 0,
-					},
-				},
-			}),
+			true: pseudoThickBorder,
 		},
 	},
 });
@@ -82,7 +86,7 @@ export type StyledGridItemProps = NonNullable<
 	RecipeVariants<typeof styledGridItem>
 >;
 
-export const iconContainer = style({
+export const styleIndicator = style({
 	height: '26px',
 	width: '26px',
 });
@@ -122,53 +126,72 @@ export const styledCheckbox = recipe({
 		checkedBaseTransition,
 	],
 	variants: {
+		// recipes don't handle variants correctly using sprinkles (`odStyle`)
+		// use of vanilla-extract styles directly instead in the variants
 		focused: { true: checkboxFocusHover },
 		checked: { true: checkboxSelected },
 	},
-	// compoundVariants: [
-	// 	{
-	// 		variants: {
-	// 			hovered: false,
-	// 			checked: false,
-	// 		},
-	// 		style: odStyle({
-	// 			background: 'white',
-	// 			color: 'transparent',
-	// 		}),
-	// 	},
-	// 	{
-	// 		variants: {
-	// 			hovered: true,
-	// 			checked: false,
-	// 		},
-	// 		style: odStyle({
-	// 			background: 'gray300',
-	// 			color: 'white',
-	// 		}),
-	// 	},
-	// 	{
-	// 		variants: {
-	// 			focused: true,
-	// 			checked: false,
-	// 		},
-	// 		style: odStyle({
-	// 			background: 'gray300',
-	// 			color: 'white',
-	// 		}),
-	// 	},
-	// 	{
-	// 		variants: {
-	// 			checked: true,
-	// 		},
-	// 		style: odStyle({
-	// 			borderColor: 'dark',
-	// 			background: 'gray900',
-	// 			color: 'white',
-	// 		}),
-	// 	},
-	// ],
 });
 
 export type StyledCheckboxProps = NonNullable<
 	RecipeVariants<typeof styledCheckbox>
+>;
+
+const pseudoRadio = style({
+	selectors: {
+		'&:after': {
+			borderRadius: 'inherit',
+			content: '',
+			display: 'block',
+			position: 'absolute',
+			transform: 'scale(0.475)',
+			width: '100%',
+			height: '100%',
+			left: 0,
+			top: 0,
+		},
+	},
+});
+
+const radioButtonFocusHover = style({
+	background: tokens.colours.gamut.gray300,
+	selectors: {
+		'&:after': {
+			background: tokens.colours.gamut.gray200,
+		},
+	},
+});
+
+const radioButtonSelected = style({
+	borderColor: tokens.border.colours.dark,
+	background: tokens.colours.gamut.gray900,
+	selectors: {
+		'&:after': {
+			background: tokens.colours.gamut.white,
+		},
+	},
+});
+
+export const styledRadioButton = recipe({
+	base: [
+		odStyle({
+			alignItems: 'center',
+			background: 'white',
+			borderColor: 'gray',
+			borderRadius: 'full',
+			borderStyle: 'solid',
+			borderWidth: '1',
+			position: 'relative',
+			size: '6',
+		}),
+		pseudoRadio,
+	],
+	variants: {
+		focused: { true: radioButtonFocusHover },
+		checked: { true: radioButtonSelected },
+	},
+});
+
+export type StyledRadioButtonProps = NonNullable<
+	RecipeVariants<typeof styledRadioButton>
 >;

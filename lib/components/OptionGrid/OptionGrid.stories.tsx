@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/no-duplicate-string */
 import {
 	AirconIcon,
 	CarWindshieldIcon,
@@ -6,6 +7,8 @@ import {
 } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react';
 import { expect, fn, getAllByRole, within, userEvent } from '@storybook/test';
+import React, { useState } from 'react';
+import type { Selection } from 'react-aria-components';
 
 import { OptionGrid, type OptionItem } from './OptionGrid';
 
@@ -75,16 +78,33 @@ const serviceTasks: OptionItem[] = [
 	},
 ];
 
+const alphaOptions: OptionItem[] = [
+	{
+		label: 'Option A',
+		name: 'a',
+		description: 'This is a description',
+	},
+	{
+		label: 'Option B',
+		name: 'b',
+		description: 'This is a description',
+	},
+	{
+		label: 'Option C',
+		name: 'c',
+		description: 'This is a description',
+	},
+];
+
 const meta: Meta<typeof OptionGrid> = {
 	title: 'Components/Option Grid',
 	component: OptionGrid,
 	args: {
-		label: 'Car servicing options',
-		items: serviceSchedule,
+		label: 'Select car servicing options',
+		items: serviceTasks,
 		columns: 'double',
 		indicator: 'checkbox',
 		selectionMode: 'multiple',
-		layout: 'grid',
 		onSelectionChange: fn(),
 	},
 	tags: ['beta'],
@@ -93,14 +113,64 @@ const meta: Meta<typeof OptionGrid> = {
 export default meta;
 type Story = StoryObj<typeof OptionGrid>;
 
+/** Uncontrolled with custom icons */
 export const UncontrolledWithIcons: Story = {
 	args: {
 		items: serviceTasks,
 	},
 };
 
-export const SingleSelection: Story = {
+/**
+ * Example of a controlled instance using an empty Set, logs selection to console. Indicator set to `radio`.
+ *
+ * ```jsx
+ * import type { Selection } from 'react-aria-components';
+ * ...
+ *
+ * const [selectedItems, setSelectedItems] = useState<Selection>(new Set());
+ *
+ * return (
+ *		<OptionGrid
+ *			...
+ *			selectedKeys={selectedItems}
+ *			onSelectionChange={setSelectedItems}
+ *			...
+ *		/>
+ * );
+ * ```
+ */
+export const SingleSelectionControlled: Story = {
 	args: {
+		label: 'Select a scheduled service',
+		items: serviceSchedule,
 		selectionMode: 'single',
+		indicator: 'radio',
+	},
+	render: (args) => {
+		const [selectedItems, setSelectedItems] = useState<Selection>(
+			new Set(),
+		);
+
+		const handleChange = (items: Selection) => {
+			setSelectedItems(items);
+			console.info('Storybook OptionGrid: Selected item =', ...items);
+		};
+
+		return (
+			<OptionGrid
+				{...args}
+				selectedKeys={selectedItems}
+				onSelectionChange={handleChange}
+			/>
+		);
+	},
+};
+
+export const DescriptionNoIndicator: Story = {
+	args: {
+		label: 'Select options',
+		items: alphaOptions,
+		indicator: 'none',
+		// selectedItems: ['aircon', 'roadworthy'],
 	},
 };
