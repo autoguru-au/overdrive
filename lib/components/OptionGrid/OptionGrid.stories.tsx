@@ -174,7 +174,6 @@ export const DescriptionNoIndicator: Story = {
 		label: 'Select options',
 		items: alphaOptions,
 		indicator: 'none',
-		// selectedItems: ['aircon', 'roadworthy'],
 	},
 	play: async ({ args, canvasElement, step }) => {
 		const contentOptions = args.items;
@@ -182,7 +181,7 @@ export const DescriptionNoIndicator: Story = {
 
 		// add a small pause, because react-aria init :(
 		await new Promise((resolve) => setTimeout(resolve, 25));
-		const listbox = canvas.getByRole('listbox');
+		const listbox = canvas.getAllByRole('listbox')[0];
 		const options = getAllByRole(listbox, 'option');
 
 		await step('Options render label and description', async () => {
