@@ -2,7 +2,7 @@
 '@autoguru/overdrive': minor
 ---
 
-New components
+**New components**
 
 - Option List (beta) to display a grouped set of optional items that are
   checkbox form controls.
