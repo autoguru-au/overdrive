@@ -1,0 +1,74 @@
+import { style } from '@vanilla-extract/css';
+import { recipe } from '@vanilla-extract/recipes';
+
+import { focusOutline } from '../../styles/focusOutline.css';
+import { odStyle } from '../../styles/sprinkles.css';
+
+export const hideWebkitAppearance = style({
+	selectors: {
+		'&::-webkit-search-cancel-button, &::-webkit-search-decoration': {
+			appearance: 'none',
+		},
+	},
+});
+
+export const styledSearchBar = recipe({
+	base: [
+		odStyle({
+			alignItems: 'center',
+			background: { initial: 'white', hover: 'gray200', focus: 'white' },
+			borderColor: { initial: 'light', focus: 'dark' },
+			borderRadius: '2',
+			borderStyle: 'solid',
+			borderWidth: '2',
+			cursor: { hover: 'text' },
+			display: 'flex',
+			...focusOutline,
+			gap: '2',
+			outlineStyle: 'none',
+			paddingX: '4',
+		}),
+	],
+	variants: {
+		disabled: {
+			true: odStyle({
+				color: 'gray500',
+				cursor: 'not-allowed',
+			}),
+		},
+	},
+});
+
+export const styledInput = recipe({
+	base: [
+		odStyle({
+			background: 'transparent',
+			borderWidth: 'none',
+			height: '7',
+			fontSize: 'xl',
+			outlineStyle: 'none',
+			textAlign: 'center',
+			width: '100%',
+		}),
+		{
+			height: '72px',
+		},
+		hideWebkitAppearance,
+	],
+});
+
+export const styledClearButton = recipe({
+	base: [
+		odStyle({
+			alignItems: 'center',
+			background: 'transparent',
+			borderStyle: 'none',
+			cursor: 'pointer',
+			display: 'flex',
+			justifyContent: 'center',
+			padding: 'none',
+			position: 'relative',
+			size: '6',
+		}),
+	],
+});
