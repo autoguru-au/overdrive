@@ -4,14 +4,9 @@ import { recipe } from '@vanilla-extract/recipes';
 import { tokens } from 'lib/themes/base/tokens';
 
 import { focusOutline } from '../../styles/focusOutline.css';
-import { odStyle, type ODStyle } from '../../styles/sprinkles.css';
+import { odStyle } from '../../styles/sprinkles.css';
 
-const border: ODStyle = {
-	borderColor: 'gray',
-	borderStyle: 'solid',
-	borderWidth: '1',
-};
-
+// === Option item styles
 const buttonBorderRadius = tokens.border.radius['2'];
 const optionBorders = style({
 	selectors: {
@@ -38,61 +33,39 @@ export const styledOptionItem = recipe({
 			background: {
 				initial: 'white',
 				hover: 'gray200',
+				focusVisible: 'gray200',
+				disabled: 'white',
 			},
-			...border,
-			cursor: { hover: 'pointer' },
+			borderColor: 'gray',
+			borderStyle: 'solid',
+			borderWidth: '1',
+			cursor: { hover: 'pointer', disabled: 'default' },
 			display: 'flex',
 			gap: '2',
 			outlineColor: 'link',
 			outlineStyle: 'solid',
 			outlineOffset: 'md',
-			outlineWidth: 'none',
+			outlineWidth: { initial: 'none', focusVisible: 'default' },
 			paddingX: '4',
 			paddingY: '3',
 			width: '100%',
 		}),
 		optionBorders,
 	],
-	variants: {
-		focused: {
-			true: [
-				odStyle({
-					background: 'gray200',
-					outlineWidth: 'default',
-				}),
-			],
-		},
-		disabled: {
-			true: style({
-				opacity: 0.6,
-				selectors: {
-					['&&']: {
-						background: 'none',
-						cursor: 'default',
-					},
-				},
-			}),
-		},
-	},
 });
 
-const bgColor = tokens.colours.background.body;
-const bgColorHover = tokens.colours.gamut.gray300;
-
+// === Checkbox styles
 const checkboxHovered = style({
 	selectors: {
-		[`${styledOptionItem.classNames.base}:hover &`]: {
-			color: bgColor,
-			background: bgColorHover,
-			transitionDuration: '15ms',
-		},
+		[`${styledOptionItem.classNames.base}:hover &:not([data-checked]):not([data-disabled])`]:
+			{
+				color: tokens.colours.background.body,
+				background: tokens.colours.gamut.gray300,
+				transitionDuration: '15ms',
+			},
 	},
 });
-const checkboxSelected = style({
-	background: tokens.colours.gamut.gray900,
-	borderColor: tokens.border.colours.dark,
-	color: tokens.colours.gamut.white,
-});
+
 const checkboxTransition = style({
 	transitionProperty: 'background',
 	transitionTimingFunction: 'ease-in',
@@ -103,10 +76,12 @@ export const checkbox = recipe({
 	base: [
 		odStyle({
 			alignItems: 'center',
-			background: 'white',
-			...border,
+			background: { initial: 'white', checked: 'gray900' },
+			borderColor: { initial: 'gray', checked: 'dark' },
+			borderStyle: 'solid',
 			borderRadius: '1',
-			color: 'transparent',
+			borderWidth: '1',
+			color: { initial: 'transparent', checked: 'white' },
 			display: 'flex',
 			flexShrink: 0,
 			justifyContent: 'center',
@@ -114,20 +89,7 @@ export const checkbox = recipe({
 			size: '6',
 		}),
 		checkboxTransition,
-	],
-	variants: {
-		checked: {
-			true: checkboxSelected,
-		},
-		disabled: {
-			true: [],
-		},
-	},
-	compoundVariants: [
-		{
-			variants: { checked: false, disabled: false },
-			style: checkboxHovered,
-		},
+		checkboxHovered,
 	],
 });
 

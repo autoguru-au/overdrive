@@ -1,3 +1,4 @@
+/* eslint-disable unicorn/prefer-logical-operator-over-ternary */
 import React, { useContext, useRef } from 'react';
 import {
 	useCheckboxGroupItem,
@@ -25,17 +26,13 @@ type FilteredCheckboxProps = Omit<
 export const OptionListItem = (props: FilteredCheckboxProps) => {
 	const ref = useRef<HTMLInputElement>(null);
 	const state = useContext(OptionListContext)!;
-	const { inputProps } = useCheckboxGroupItem(props, state, ref);
+	const { inputProps, isSelected } = useCheckboxGroupItem(props, state, ref);
 	const { isFocusVisible, focusProps } = useFocusRing();
-	const isDisabled = state.isDisabled;
-	const isSelected = state.isSelected(props.value);
 
 	return (
 		<label
-			className={styledOptionItem({
-				focused: isFocusVisible,
-				disabled: isDisabled,
-			})}
+			className={styledOptionItem()}
+			data-focus-visible={isFocusVisible ? isFocusVisible : undefined}
 		>
 			<VisuallyHidden>
 				<input {...mergeProps(inputProps, focusProps)} ref={ref} />
@@ -48,10 +45,8 @@ export const OptionListItem = (props: FilteredCheckboxProps) => {
 				})}
 			>
 				<div
-					className={checkbox({
-						checked: isSelected,
-						disabled: isDisabled,
-					})}
+					className={checkbox()}
+					data-checked={isSelected ? isSelected : undefined}
 				>
 					<IconTick />
 				</div>

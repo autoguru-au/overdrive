@@ -143,10 +143,3 @@ export const Controlled: Story = {
 		);
 	},
 };
-
-export const Disabled: Story = {
-	args: {
-		...SplitLabel.args,
-		isDisabled: true,
-	},
-};
