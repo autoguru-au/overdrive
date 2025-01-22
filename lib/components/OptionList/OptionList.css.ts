@@ -6,6 +6,20 @@ import { tokens } from 'lib/themes/base/tokens';
 import { focusOutline } from '../../styles/focusOutline.css';
 import { odStyle } from '../../styles/sprinkles.css';
 
+// === Group styles
+export const styleGroup = odStyle({ marginTop: '6' });
+
+export const styleGroupLabel = odStyle({
+	font: 'xxl',
+	fontWeight: 'bold',
+	marginBottom: '3',
+});
+
+export const styleDescription = odStyle({
+	color: 'gray400',
+	font: 'md',
+});
+
 // === Option item styles
 const buttonBorderRadius = tokens.border.radius['2'];
 const optionBorders = style({
@@ -91,12 +105,4 @@ export const checkbox = recipe({
 		checkboxTransition,
 		checkboxHovered,
 	],
-});
-
-export const groupLabel = recipe({
-	base: odStyle({
-		font: 'xxl',
-		fontWeight: 'bold',
-		marginBottom: '6',
-	}),
 });

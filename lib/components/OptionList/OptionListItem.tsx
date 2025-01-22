@@ -8,6 +8,7 @@ import {
 } from 'react-aria';
 
 import { odStyle } from '../../styles/sprinkles.css';
+import { dataAttrs } from '../../utils/dataAttrs';
 import { VisuallyHidden } from '../VisuallyHidden';
 
 import { IconTick } from './IconTick';
@@ -32,7 +33,7 @@ export const OptionListItem = (props: FilteredCheckboxProps) => {
 	return (
 		<label
 			className={styledOptionItem()}
-			data-focus-visible={isFocusVisible ? isFocusVisible : undefined}
+			{...dataAttrs({ 'focus-visible': isFocusVisible })}
 		>
 			<VisuallyHidden>
 				<input {...mergeProps(inputProps, focusProps)} ref={ref} />
@@ -46,7 +47,7 @@ export const OptionListItem = (props: FilteredCheckboxProps) => {
 			>
 				<div
 					className={checkbox()}
-					data-checked={isSelected ? isSelected : undefined}
+					{...dataAttrs({ checked: isSelected })}
 				>
 					<IconTick />
 				</div>

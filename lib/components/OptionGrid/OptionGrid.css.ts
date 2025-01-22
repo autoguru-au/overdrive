@@ -5,10 +5,7 @@ import { focusOutline } from '../../styles/focusOutline.css';
 import { odStyle } from '../../styles/sprinkles.css';
 import { tokens } from '../../themes/base/tokens';
 
-const grid = odStyle({
-	display: { tablet: 'grid' },
-});
-
+// === Container styles
 export const styledGridContainer = recipe({
 	base: odStyle({
 		display: { mobile: 'flex' },
@@ -32,7 +29,7 @@ export const styledGridContainer = recipe({
 			}),
 			'5': odStyle({
 				display: { tablet: 'grid' },
-				gridColumns: { tablet: '3', desktop: '4' },
+				gridColumns: { tablet: '3', desktop: '5' },
 			}),
 		},
 	},
@@ -44,6 +41,11 @@ export const styledGridContainer = recipe({
 export type StyledGridContainerProps = NonNullable<
 	RecipeVariants<typeof styledGridContainer>
 >;
+
+// === Option item styles
+const optionTransition = style({
+	transition: 'background 80ms ease-in',
+});
 
 const pseudoThickBorder = style({
 	selectors: {
@@ -94,6 +96,7 @@ export const styledGridItem = recipe({
 			paddingY: '3',
 			position: 'relative',
 		}),
+		optionTransition,
 		pseudoThickBorder,
 	],
 });
@@ -102,15 +105,10 @@ export type StyledGridItemProps = NonNullable<
 	RecipeVariants<typeof styledGridItem>
 >;
 
+// === Indicator styles
 export const styleIndicator = style({
 	height: '26px',
 	width: '26px',
-});
-
-const checkedBaseTransition = style({
-	transitionProperty: 'background',
-	transitionTimingFunction: 'ease-in',
-	transitionDuration: '80ms',
 });
 
 export const styledCheckbox = recipe({
@@ -138,7 +136,7 @@ export const styledCheckbox = recipe({
 			justifyContent: 'center',
 			size: '6',
 		}),
-		checkedBaseTransition,
+		optionTransition,
 	],
 });
 
@@ -186,6 +184,7 @@ export const styledRadioButton = recipe({
 			size: '6',
 		}),
 		pseudoRadio,
+		optionTransition,
 	],
 });
 

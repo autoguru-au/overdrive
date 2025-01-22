@@ -22,7 +22,7 @@ const meta: Meta<typeof OptionList> = {
 				{item[0]}
 			</OptionList.Item>
 		)),
-		className: 'demo-checkbox-buttons-class',
+		testId: 'demo-option-list',
 		onChange: fn(),
 	},
 	tags: ['beta'],
@@ -50,7 +50,7 @@ export const Simple: Story = {
 
 		await step('Group renders label and attributes', async () => {
 			await expect(group.firstChild).toHaveTextContent(`${args.label}`);
-			await expect(group).toHaveClass(meta.args!.className!);
+			await expect(group).toHaveAttribute('data-test-id', args.testId);
 		});
 
 		await step('Checkboxes render labels and attributes', async () => {

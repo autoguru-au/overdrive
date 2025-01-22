@@ -2,7 +2,14 @@ import React, { createContext } from 'react';
 import { useCheckboxGroup, type AriaCheckboxGroupProps } from 'react-aria';
 import { type CheckboxGroupState, useCheckboxGroupState } from 'react-stately';
 
-import { groupLabel } from './OptionList.css';
+import type { WithTestId } from '../../types';
+import { dataAttrs } from '../../utils/dataAttrs';
+
+import {
+	styleDescription,
+	styleGroup,
+	styleGroupLabel,
+} from './OptionList.css';
 import { OptionListItem, ItemSplitLabel } from './OptionListItem';
 
 type ElementAttributes = Pick<
@@ -49,9 +56,9 @@ export const OptionListContext = createContext<CheckboxGroupState | null>(null);
  * Used in the booking flow on the payment step for addons.
  * Future enhancements might include: validation states/error handling
  */
-export const OptionList = (props: OptionListProps) => {
+export const OptionList = (props: WithTestId<OptionListProps>) => {
 	const { children, className, description, label, ref, style } = props;
-	const elementAttrs = { className, ref, style };
+	const elementAttrs = { ref, className, style };
 	const state = useCheckboxGroupState(props);
 	const { groupProps, labelProps, descriptionProps } = useCheckboxGroup(
 		props,
@@ -59,14 +66,22 @@ export const OptionList = (props: OptionListProps) => {
 	);
 
 	return (
-		<div {...elementAttrs} {...groupProps}>
-			<div {...labelProps} className={groupLabel()}>
+		<div
+			{...groupProps}
+			{...elementAttrs}
+			{...dataAttrs({ 'test-id': props.testId })}
+		>
+			<div {...labelProps} className={styleGroupLabel}>
 				{label}
 			</div>
+			{description && (
+				<div {...descriptionProps} className={styleDescription}>
+					{description}
+				</div>
+			)}
 			<OptionListContext.Provider value={state}>
-				<div>{children}</div>
+				<div className={styleGroup}>{children}</div>
 			</OptionListContext.Provider>
-			{description && <div {...descriptionProps}>{description}</div>}
 		</div>
 	);
 };

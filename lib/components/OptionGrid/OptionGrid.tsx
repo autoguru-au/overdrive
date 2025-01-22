@@ -10,6 +10,8 @@ import {
 import { type SelectionMode } from 'react-stately';
 
 import { odStyle } from '../../styles/sprinkles.css';
+import type { WithTestId } from '../../types';
+import { dataAttrs } from '../../utils/dataAttrs';
 import { Icon, type IconEl } from '../Icon';
 import { IconTick } from '../OptionList/IconTick';
 
@@ -76,14 +78,16 @@ export const OptionGrid = ({
 	label,
 	layout = 'grid',
 	selectionMode = 'multiple',
+	testId,
 	...props
-}: OptionGridProps<OptionItem>) => {
+}: WithTestId<OptionGridProps<OptionItem>>) => {
 	return (
 		<ListBox
 			aria-label={label}
 			layout={layout}
 			selectionMode={selectionMode}
 			className={clsx([styledGridContainer({ columns }), className])}
+			{...dataAttrs({ 'test-id': testId })}
 			{...props}
 		>
 			{({ description, icon, label, name }) => (
@@ -108,17 +112,11 @@ export const OptionGrid = ({
 							return (
 								<div
 									className={styledIndicator()}
-									data-selected={
-										isSelected ? isSelected : undefined
-									}
-									data-hover={
-										isHovered ? isHovered : undefined
-									}
-									data-focus-visible={
-										isFocusVisible
-											? isFocusVisible
-											: undefined
-									}
+									{...dataAttrs({
+										'focus-visible': isFocusVisible,
+										hover: isHovered,
+										selected: isSelected,
+									})}
 								>
 									{indicator === 'checkbox' && <IconTick />}
 								</div>

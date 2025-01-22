@@ -105,6 +105,7 @@ const meta: Meta<typeof OptionGrid> = {
 		columns: '2',
 		indicator: 'checkbox',
 		selectionMode: 'multiple',
+		testId: 'demo-option-grid',
 		onSelectionChange: fn(),
 	},
 	tags: ['beta'],
@@ -183,6 +184,11 @@ export const DescriptionNoIndicator: Story = {
 		await new Promise((resolve) => setTimeout(resolve, 25));
 		const listbox = canvas.getAllByRole('listbox')[0];
 		const options = getAllByRole(listbox, 'option');
+
+		await step('Group renders label and attributes', async () => {
+			await expect(listbox).toHaveAccessibleName(`${args.label}`);
+			await expect(listbox).toHaveAttribute('data-test-id', args.testId);
+		});
 
 		await step('Options render label and description', async () => {
 			for (const [idx, option] of options.entries()) {
