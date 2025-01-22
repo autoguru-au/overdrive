@@ -11,6 +11,8 @@ import {
 import { useSearchFieldState } from 'react-stately';
 
 import { odStyle } from '../../styles/sprinkles.css';
+import type { WithTestId } from '../../types';
+import { dataAttrs } from '../../utils/dataAttrs';
 import { Icon } from '../Icon';
 
 import {
@@ -41,7 +43,7 @@ const ReactAriaButton = (props: AriaButtonProps & { className: string }) => {
 	);
 };
 
-export const SearchBar = (componentProps: SearchBarProps) => {
+export const SearchBar = (componentProps: WithTestId<SearchBarProps>) => {
 	const textLabel =
 		(componentProps.label as string) ??
 		componentProps.placeholder ??
@@ -91,6 +93,7 @@ export const SearchBar = (componentProps: SearchBarProps) => {
 			className={styledSearchBar({})}
 			onClick={handleWrapperClick}
 			ref={refWrapper}
+			{...dataAttrs({ 'test-id': props.testId })}
 		>
 			<div>
 				<Icon icon={MagnifyIcon} size="large" />

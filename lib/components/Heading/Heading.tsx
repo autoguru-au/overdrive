@@ -1,20 +1,17 @@
-import * as React from 'react';
-import { ComponentProps, FunctionComponent, ReactNode } from 'react';
+import React from 'react';
 
 import { Tokens } from '../../themes/tokens';
-import { Box } from '../Box';
+import type { WithTestId } from '../../types';
+import { dataAttrs } from '../../utils/dataAttrs';
+import { Box, type BoxProps } from '../Box';
 import type { TextStyleProps } from '../Text';
 import { useTextStyles } from '../Text';
 
-export interface Props
+export interface HeadingProps
 	extends Omit<TextStyleProps, 'is'>,
-		Pick<ComponentProps<typeof Box>, 'id'> {
-	className?: string;
-	children?: ReactNode;
+		Pick<BoxProps, 'children' | 'className' | 'id'> {
 	is?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 	colour?: Exclude<keyof Tokens['typography']['colour'], 'muted'>;
-	id?: string;
-	testId?: string;
 }
 
 const sizeScaleDefaults = {
@@ -26,7 +23,7 @@ const sizeScaleDefaults = {
 	h6: '2',
 } as const;
 
-export const Heading: FunctionComponent<Props> = ({
+export const Heading = ({
 	is = 'h1',
 	id,
 	testId,
@@ -39,11 +36,10 @@ export const Heading: FunctionComponent<Props> = ({
 	breakWord,
 	className = '',
 	children,
-}) => (
+}: WithTestId<HeadingProps>) => (
 	<Box
 		id={id}
-		data-test-id={testId}
-		is={is}
+		as={is}
 		className={[
 			useTextStyles({
 				size,
@@ -56,6 +52,7 @@ export const Heading: FunctionComponent<Props> = ({
 			}),
 			className,
 		]}
+		{...dataAttrs({ 'test-id': testId })}
 	>
 		{children}
 	</Box>
