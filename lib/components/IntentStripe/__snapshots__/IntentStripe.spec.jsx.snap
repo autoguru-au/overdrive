@@ -2,6 +2,6 @@
 
 exports[`<Alert /> should match the snapshot 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_height_full__3xgq1lfd useBoxStyles_position_absolute__3xgq1lfe useBoxStyles_backgroundColours_success__3xgq1lez IntentStripe_intentBox__1n5wa370"
+  class="reset_block__1oah0223 useBoxStyles_height_full__3xgq1lfh useBoxStyles_position_absolute__3xgq1lfi useBoxStyles_backgroundColours_success__3xgq1lf3 IntentStripe_intentBox__1n5wa370"
 />
 `;

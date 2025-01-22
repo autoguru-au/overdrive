@@ -2,10 +2,11 @@ import { useToggleState } from '@react-stately/toggle';
 import clsx from 'clsx';
 import * as React from 'react';
 import { AnchorHTMLAttributes, FunctionComponent, useRef } from 'react';
-import { useSwitch, useFocusRing, VisuallyHidden } from 'react-aria';
+import { useSwitch, useFocusRing } from 'react-aria';
 
 import { Box, useBoxStyles } from '../Box';
 import { useTextStyles } from '../Text';
+import { VisuallyHidden } from '../VisuallyHidden';
 
 import * as styles from './Switch.css';
 type AriaSwitchProps = Parameters<typeof useSwitch>[0];
