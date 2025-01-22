@@ -148,7 +148,7 @@ export const SingleSelectionControlled: Story = {
 	},
 	render: (args) => {
 		const [selectedItems, setSelectedItems] = useState<Selection>(
-			new Set(),
+			new Set([serviceSchedule[0].name]),
 		);
 
 		const handleChange = (items: Selection) => {

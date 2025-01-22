@@ -24,7 +24,7 @@ export type StyledGridContainerProps = NonNullable<
 
 const pseudoThickBorder = style({
 	selectors: {
-		'&:after': {
+		'&[data-selected]:after': {
 			outlineColor: tokens.colours.gamut.black900,
 			outlineStyle: 'solid',
 			outlineWidth: tokens.border.width[2],
@@ -71,15 +71,8 @@ export const styledGridItem = recipe({
 			paddingY: '3',
 			position: 'relative',
 		}),
+		pseudoThickBorder,
 	],
-	variants: {
-		disabled: {
-			true: {},
-		},
-		selected: {
-			true: pseudoThickBorder,
-		},
-	},
 });
 
 export type StyledGridItemProps = NonNullable<
@@ -97,27 +90,26 @@ const checkedBaseTransition = style({
 	transitionDuration: '80ms',
 });
 
-const checkboxFocusHover = style({
-	background: tokens.colours.gamut.gray300,
-	color: tokens.colours.gamut.white,
-});
-
-const checkboxSelected = style({
-	borderColor: tokens.border.colours.dark,
-	background: tokens.colours.gamut.gray900,
-	color: tokens.colours.gamut.white,
-});
-
 export const styledCheckbox = recipe({
 	base: [
 		odStyle({
 			alignItems: 'center',
-			background: 'white',
-			borderColor: 'gray',
+			background: {
+				initial: 'white',
+				focusVisible: 'gray300',
+				hover: 'gray300',
+				selected: 'gray900',
+			},
+			borderColor: { initial: 'gray', selected: 'dark' },
 			borderRadius: '1',
 			borderStyle: 'solid',
 			borderWidth: '1',
-			color: 'transparent',
+			color: {
+				initial: 'transparent',
+				focusVisible: 'white',
+				hover: 'white',
+				selected: 'white',
+			},
 			display: 'flex',
 			flexShrink: 0,
 			justifyContent: 'center',
@@ -125,12 +117,6 @@ export const styledCheckbox = recipe({
 		}),
 		checkedBaseTransition,
 	],
-	variants: {
-		// recipes don't handle variants correctly using sprinkles (`odStyle`)
-		// use of vanilla-extract styles directly instead in the variants
-		focused: { true: checkboxFocusHover },
-		checked: { true: checkboxSelected },
-	},
 });
 
 export type StyledCheckboxProps = NonNullable<
@@ -150,23 +136,10 @@ const pseudoRadio = style({
 			left: 0,
 			top: 0,
 		},
-	},
-});
-
-const radioButtonFocusHover = style({
-	background: tokens.colours.gamut.gray300,
-	selectors: {
-		'&:after': {
+		'&[data-hover]:after, &[data-focus-visible]:after': {
 			background: tokens.colours.gamut.gray200,
 		},
-	},
-});
-
-const radioButtonSelected = style({
-	borderColor: tokens.border.colours.dark,
-	background: tokens.colours.gamut.gray900,
-	selectors: {
-		'&:after': {
+		'&[data-selected]:after': {
 			background: tokens.colours.gamut.white,
 		},
 	},
@@ -176,8 +149,13 @@ export const styledRadioButton = recipe({
 	base: [
 		odStyle({
 			alignItems: 'center',
-			background: 'white',
-			borderColor: 'gray',
+			background: {
+				initial: 'white',
+				hover: 'gray300',
+				focusVisible: 'gray300',
+				selected: 'gray900',
+			},
+			borderColor: { initial: 'gray', selected: 'dark' },
 			borderRadius: 'full',
 			borderStyle: 'solid',
 			borderWidth: '1',
@@ -186,10 +164,6 @@ export const styledRadioButton = recipe({
 		}),
 		pseudoRadio,
 	],
-	variants: {
-		focused: { true: radioButtonFocusHover },
-		checked: { true: radioButtonSelected },
-	},
 });
 
 export type StyledRadioButtonProps = NonNullable<

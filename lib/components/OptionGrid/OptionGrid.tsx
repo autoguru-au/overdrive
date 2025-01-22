@@ -1,3 +1,4 @@
+/* eslint-disable unicorn/prefer-logical-operator-over-ternary */
 import clsx from 'clsx';
 import React from 'react';
 import {
@@ -87,9 +88,7 @@ export const OptionGrid = ({
 		>
 			{({ description, icon, label, name }) => (
 				<ListBoxItem
-					className={({ isSelected }) =>
-						styledGridItem({ selected: isSelected })
-					}
+					className={styledGridItem()}
 					id={name}
 					textValue={label}
 				>
@@ -108,10 +107,18 @@ export const OptionGrid = ({
 
 							return (
 								<div
-									className={styledIndicator({
-										checked: isSelected,
-										focused: isFocusVisible || isHovered,
-									})}
+									className={styledIndicator()}
+									data-selected={
+										isSelected ? isSelected : undefined
+									}
+									data-hover={
+										isHovered ? isHovered : undefined
+									}
+									data-focus-visible={
+										isFocusVisible
+											? isFocusVisible
+											: undefined
+									}
 								>
 									{indicator === 'checkbox' && <IconTick />}
 								</div>
