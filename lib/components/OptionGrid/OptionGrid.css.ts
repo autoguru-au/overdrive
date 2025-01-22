@@ -5,16 +5,39 @@ import { focusOutline } from '../../styles/focusOutline.css';
 import { odStyle } from '../../styles/sprinkles.css';
 import { tokens } from '../../themes/base/tokens';
 
+const grid = odStyle({
+	display: { tablet: 'grid' },
+});
+
 export const styledGridContainer = recipe({
 	base: odStyle({
-		display: { mobile: 'flex', tablet: 'grid' },
+		display: { mobile: 'flex' },
 		flexDirection: { mobile: 'column' },
 		gap: '3',
 	}),
 	variants: {
 		columns: {
-			double: { gridTemplateColumns: '1fr 1fr' },
+			'1': {},
+			'2': odStyle({
+				display: { tablet: 'grid' },
+				gridColumns: { tablet: '2' },
+			}),
+			'3': odStyle({
+				display: { tablet: 'grid' },
+				gridColumns: { tablet: '2', desktop: '3' },
+			}),
+			'4': odStyle({
+				display: { tablet: 'grid' },
+				gridColumns: { tablet: '3', desktop: '4' },
+			}),
+			'5': odStyle({
+				display: { tablet: 'grid' },
+				gridColumns: { tablet: '3', desktop: '4' },
+			}),
 		},
+	},
+	defaultVariants: {
+		columns: '2',
 	},
 });
 

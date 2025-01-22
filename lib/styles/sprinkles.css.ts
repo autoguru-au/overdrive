@@ -21,7 +21,7 @@ const interactionConditions = {
 	active: { selector: '&:active' },
 	checked: { selector: '&:checked, &[data-checked]' },
 	disabled: { selector: '&:disabled, &[data-disabled]' },
-	focus: { selector: '&:focus, &[data-focus]' },
+	focus: { selector: '&:focus, &[data-focus], &[data-focused]' },
 	focusVisible: { selector: '&:focus-visible, &[data-focus-visible]' },
 	hover: { selector: '&:hover, &[data-hover]' },
 	selected: { selector: '&[data-selected]' },
@@ -78,6 +78,7 @@ const typographyProperties = defineProperties({
 			semibold: '500',
 			bold: '700',
 		},
+		textAlign: ['left', 'center', 'right'],
 	},
 	shorthands: {
 		font: ['fontSize', 'lineHeight'],
@@ -113,6 +114,13 @@ const displayProperties = defineProperties({
 		flexGrow: [0, 1],
 		flexShrink: [0, 1],
 		flexWrap: ['nowrap', 'wrap', 'wrap-reverse'],
+		gridTemplateColumns: {
+			'1': 'repeat(1, 1fr)',
+			'2': 'repeat(2, 1fr)',
+			'3': 'repeat(3, 1fr)',
+			'4': 'repeat(4, 1fr)',
+			'5': 'repeat(5, 1fr)',
+		},
 		alignItems: ['stretch', 'flex-start', 'center', 'flex-end'],
 		justifyContent: [
 			'stretch',
@@ -135,6 +143,7 @@ const displayProperties = defineProperties({
 		},
 	},
 	shorthands: {
+		gridColumns: ['gridTemplateColumns'],
 		placeItems: ['justifyContent', 'alignItems'],
 		size: ['width', 'height'],
 	},
@@ -145,7 +154,7 @@ const gamutProperties = defineProperties({
 	defaultCondition: 'initial',
 	properties: {
 		color: { ...colours.gamut, transparent: 'transparent' },
-		background: colours.gamut,
+		background: { ...colours.gamut, transparent: 'transparent' },
 		fill: colours.gamut,
 		stroke: colours.gamut,
 	},
@@ -155,9 +164,9 @@ const interactionProperties = defineProperties({
 	conditions: { ...interactionConditions },
 	defaultCondition: 'initial',
 	properties: {
-		cursor: ['default', 'pointer', 'not-allowed', 'wait'],
+		cursor: ['default', 'pointer', 'not-allowed', 'text', 'wait'],
 		outlineColor: colours.foreground,
-		outlineStyle: ['solid'],
+		outlineStyle: ['solid', 'none'],
 		outlineOffset: {
 			sm: '1px',
 			md: '2px',

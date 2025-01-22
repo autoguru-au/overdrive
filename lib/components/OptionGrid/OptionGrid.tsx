@@ -71,7 +71,7 @@ export interface OptionGridProps<T> extends Omit<ListBoxProps<T>, 'items'> {
  */
 export const OptionGrid = ({
 	className,
-	columns = 'double',
+	columns,
 	indicator = 'checkbox',
 	label,
 	layout = 'grid',

@@ -102,7 +102,7 @@ const meta: Meta<typeof OptionGrid> = {
 	args: {
 		label: 'Select car servicing options',
 		items: serviceTasks,
-		columns: 'double',
+		columns: '2',
 		indicator: 'checkbox',
 		selectionMode: 'multiple',
 		onSelectionChange: fn(),
