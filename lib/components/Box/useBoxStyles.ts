@@ -69,6 +69,7 @@ export interface BoxStyleProps extends Padding, Margin, Border, Flex {
 	as?: ElementType;
 	/**
 	 * Alias for `as` prop for backwards compatibility
+	 * @deprecated Use `as` instead
 	 */
 	is?: ElementType;
 	boxShadow?: ResponsiveProp<keyof typeof styles.boxShadow>;
