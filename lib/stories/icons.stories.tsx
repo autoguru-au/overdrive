@@ -74,7 +74,7 @@ type Story = StoryObj;
 
 export const IconSet: Story = {
 	parameters: {
-		chrromatic: { disableSnapshot: true },
+		chromatic: { disableSnapshot: true },
 	},
 	render: () => (
 		<Stack space="sm">
