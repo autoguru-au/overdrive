@@ -9,26 +9,46 @@ import {
 	type VariantColourSwatchProps,
 } from './styles.css';
 
-type ElementAttributes = React.ComponentPropsWithoutRef<'div'>;
-type FilteredAttributes = Pick<ElementAttributes, 'className' | 'style'>;
-type ComponentProps<P> = React.PropsWithChildren<P & FilteredAttributes>;
+export type AsProp<C extends React.ElementType> = {
+	as?: C;
+};
 
-export const Box = ({
+export type PolyComponentProps<C extends React.ElementType, P> = AsProp<C> &
+	Omit<React.ComponentPropsWithoutRef<C>, keyof AsProp<C> | keyof P> &
+	P;
+
+export type BoxProps<C extends React.ElementType> = PolyComponentProps<
+	C,
+	ODStyle
+>;
+
+export const Box = <C extends React.ElementType = 'div'>({
+	as,
 	children,
 	className,
 	style,
 	...props
-}: ComponentProps<ODStyle>) => (
-	<div className={clsx([odStyle(props), className])} style={style}>
-		{children}
-	</div>
-);
+}: BoxProps<C>) => {
+	const Tag = as ?? 'div';
+
+	return (
+		<Tag className={clsx([odStyle(props), className])} style={style}>
+			{children}
+		</Tag>
+	);
+};
 
 type StackSprinkles = Pick<
 	ODStyle,
 	'alignItems' | 'flexDirection' | 'flexWrap' | 'gap' | 'justifyContent'
 >;
-export const Stack = ({
+
+export type StackProps<C extends React.ElementType> = PolyComponentProps<
+	C,
+	RecipeStackProps & StackSprinkles
+>;
+
+export const Stack = <C extends React.ElementType = 'div'>({
 	alignItems,
 	children,
 	className,
@@ -40,7 +60,7 @@ export const Stack = ({
 	space,
 	style,
 	...props
-}: ComponentProps<StackSprinkles & RecipeStackProps>) => (
+}: StackProps<C>) => (
 	<div
 		{...props}
 		className={clsx([
@@ -60,9 +80,8 @@ export const Stack = ({
 	</div>
 );
 
-type ColourSwatchProps = ComponentProps<
-	Omit<ODStyle, 'size'> & VariantColourSwatchProps
->;
+type ColourSwatchProps = Omit<BoxProps<'div'>, 'size'> &
+	VariantColourSwatchProps;
 export const ColourSwatch = ({ shape, size, ...props }: ColourSwatchProps) => (
 	<Box {...props} className={variantColourSwatch({ shape, size })}></Box>
 );

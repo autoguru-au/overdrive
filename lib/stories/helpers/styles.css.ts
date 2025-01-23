@@ -26,6 +26,12 @@ export const hexPill = style({
 	top: '5px',
 });
 
+export const transitionColours = style({
+	transitionProperty: 'background,color',
+	transitionDuration: '600ms',
+	transitionBehavior: 'ease-in-out',
+});
+
 export const variantColourSwatch = recipe({
 	base: {
 		position: 'relative',
