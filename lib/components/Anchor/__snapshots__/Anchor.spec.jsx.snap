@@ -11,11 +11,11 @@ exports[`<Anchor /> should match snapshot with label, icon and to props 1`] = `
     <div
       class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
     >
-      <i
-        class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_link__1xnpmd7e"
-        role="presentation"
+      <div
+        class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_link__1xnpmd7e"
       >
         <svg
+          aria-hidden="true"
           class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +24,7 @@ exports[`<Anchor /> should match snapshot with label, icon and to props 1`] = `
             d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
           />
         </svg>
-      </i>
+      </div>
     </div>
     <div
       class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
@@ -63,11 +63,11 @@ exports[`<Anchor /> when custom component should match snapshot with label, icon
       <div
         class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
       >
-        <i
-          class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_link__1xnpmd7e"
-          role="presentation"
+        <div
+          class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_link__1xnpmd7e"
         >
           <svg
+            aria-hidden="true"
             class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
             viewBox="0 0 512 512"
             xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +76,7 @@ exports[`<Anchor /> when custom component should match snapshot with label, icon
               d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
             />
           </svg>
-        </i>
+        </div>
       </div>
       <div
         class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
