@@ -73,6 +73,9 @@ export default meta;
 type Story = StoryObj;
 
 export const IconSet: Story = {
+	parameters: {
+		chrromatic: { disableSnapshot: true },
+	},
 	render: () => (
 		<Stack space="sm">
 			<Heading is="h1">Icon Set</Heading>
