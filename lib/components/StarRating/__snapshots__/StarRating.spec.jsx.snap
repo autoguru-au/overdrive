@@ -5,23 +5,23 @@ exports[`<StarRating /> should match snapshot for small size 1`] = `
   class="reset_block__1oah0223"
 >
   <div
-    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfu useBoxStyles_position_relative__3xgq1lfk useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_wrap__3xgq1lha useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwc useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2c"
+    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_wrap__3xgq1lhe useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwc useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2c"
   >
     <div
-      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
     >
       <div
-        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfu useBoxStyles_position_relative__3xgq1lfk useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_wrap__3xgq1lha useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw10 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm210"
+        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_wrap__3xgq1lhe useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw10 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm210"
       >
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
         >
           <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfk StarRating_star_default__icwp6r0"
+            class="useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo StarRating_star_default__icwp6r0"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
+              class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
@@ -34,14 +34,14 @@ exports[`<StarRating /> should match snapshot for small size 1`] = `
           </i>
         </div>
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
         >
           <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfk StarRating_star_default__icwp6r0"
+            class="useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo StarRating_star_default__icwp6r0"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
+              class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
@@ -54,14 +54,14 @@ exports[`<StarRating /> should match snapshot for small size 1`] = `
           </i>
         </div>
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
         >
           <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfk StarRating_star_default__icwp6r0"
+            class="useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo StarRating_star_default__icwp6r0"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
+              class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
@@ -74,14 +74,14 @@ exports[`<StarRating /> should match snapshot for small size 1`] = `
           </i>
         </div>
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
         >
           <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfk StarRating_star_default__icwp6r0"
+            class="useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo StarRating_star_default__icwp6r0"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
+              class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
@@ -94,14 +94,14 @@ exports[`<StarRating /> should match snapshot for small size 1`] = `
           </i>
         </div>
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
         >
           <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfk StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+            class="useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
+              class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
@@ -116,10 +116,10 @@ exports[`<StarRating /> should match snapshot for small size 1`] = `
       </div>
     </div>
     <div
-      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
     >
       <span
-        class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfl useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
+        class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfp useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
       >
         Hello World!
       </span>
@@ -133,23 +133,23 @@ exports[`<StarRating /> should match snapshot with label 1`] = `
   class="reset_block__1oah0223"
 >
   <div
-    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfu useBoxStyles_position_relative__3xgq1lfk useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_wrap__3xgq1lha useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwc useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2c"
+    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_wrap__3xgq1lhe useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwc useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2c"
   >
     <div
-      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
     >
       <div
-        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfu useBoxStyles_position_relative__3xgq1lfk useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_wrap__3xgq1lha useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw10 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm210"
+        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_wrap__3xgq1lhe useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw10 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm210"
       >
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
         >
           <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfk StarRating_star_default__icwp6r0"
+            class="useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo StarRating_star_default__icwp6r0"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
+              class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
@@ -162,14 +162,14 @@ exports[`<StarRating /> should match snapshot with label 1`] = `
           </i>
         </div>
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
         >
           <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfk StarRating_star_default__icwp6r0"
+            class="useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo StarRating_star_default__icwp6r0"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
+              class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
@@ -182,14 +182,14 @@ exports[`<StarRating /> should match snapshot with label 1`] = `
           </i>
         </div>
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
         >
           <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfk StarRating_star_default__icwp6r0"
+            class="useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo StarRating_star_default__icwp6r0"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
+              class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
@@ -202,14 +202,14 @@ exports[`<StarRating /> should match snapshot with label 1`] = `
           </i>
         </div>
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
         >
           <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfk StarRating_star_default__icwp6r0"
+            class="useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo StarRating_star_default__icwp6r0"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
+              class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
@@ -222,14 +222,14 @@ exports[`<StarRating /> should match snapshot with label 1`] = `
           </i>
         </div>
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
         >
           <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfk StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+            class="useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
+              class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
@@ -244,10 +244,10 @@ exports[`<StarRating /> should match snapshot with label 1`] = `
       </div>
     </div>
     <div
-      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
     >
       <span
-        class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfl useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+        class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfp useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
       >
         Hello World!
       </span>
@@ -261,23 +261,23 @@ exports[`<StarRating /> should match snapshot with value 1`] = `
   class="reset_block__1oah0223"
 >
   <div
-    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfu useBoxStyles_position_relative__3xgq1lfk useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_wrap__3xgq1lha useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwc useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2c"
+    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_wrap__3xgq1lhe useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwc useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2c"
   >
     <div
-      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
     >
       <div
-        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfu useBoxStyles_position_relative__3xgq1lfk useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_wrap__3xgq1lha useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw10 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm210"
+        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_wrap__3xgq1lhe useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw10 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm210"
       >
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
         >
           <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfk StarRating_star_default__icwp6r0"
+            class="useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo StarRating_star_default__icwp6r0"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
+              class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
@@ -290,14 +290,14 @@ exports[`<StarRating /> should match snapshot with value 1`] = `
           </i>
         </div>
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
         >
           <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfk StarRating_star_default__icwp6r0"
+            class="useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo StarRating_star_default__icwp6r0"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
+              class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
@@ -310,14 +310,14 @@ exports[`<StarRating /> should match snapshot with value 1`] = `
           </i>
         </div>
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
         >
           <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfk StarRating_star_default__icwp6r0"
+            class="useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo StarRating_star_default__icwp6r0"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
+              class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
@@ -330,14 +330,14 @@ exports[`<StarRating /> should match snapshot with value 1`] = `
           </i>
         </div>
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
         >
           <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfk StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+            class="useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
+              class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
@@ -350,14 +350,14 @@ exports[`<StarRating /> should match snapshot with value 1`] = `
           </i>
         </div>
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
         >
           <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfk StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+            class="useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
+              class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
@@ -372,10 +372,10 @@ exports[`<StarRating /> should match snapshot with value 1`] = `
       </div>
     </div>
     <div
-      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
     >
       <span
-        class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfl useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+        class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfp useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
       >
         2.7
       </span>
@@ -389,23 +389,23 @@ exports[`<StarRating /> should match snapshot without value 1`] = `
   class="reset_block__1oah0223"
 >
   <div
-    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfu useBoxStyles_position_relative__3xgq1lfk useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_wrap__3xgq1lha useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwc useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2c"
+    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_wrap__3xgq1lhe useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwc useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2c"
   >
     <div
-      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
     >
       <div
-        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfu useBoxStyles_position_relative__3xgq1lfk useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_wrap__3xgq1lha useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw10 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm210"
+        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_wrap__3xgq1lhe useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw10 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm210"
       >
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
         >
           <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfk StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+            class="useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
+              class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
@@ -418,14 +418,14 @@ exports[`<StarRating /> should match snapshot without value 1`] = `
           </i>
         </div>
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
         >
           <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfk StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+            class="useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
+              class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
@@ -438,14 +438,14 @@ exports[`<StarRating /> should match snapshot without value 1`] = `
           </i>
         </div>
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
         >
           <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfk StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+            class="useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
+              class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
@@ -458,14 +458,14 @@ exports[`<StarRating /> should match snapshot without value 1`] = `
           </i>
         </div>
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
         >
           <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfk StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+            class="useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
+              class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
@@ -478,14 +478,14 @@ exports[`<StarRating /> should match snapshot without value 1`] = `
           </i>
         </div>
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
         >
           <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfk StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+            class="useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
             role="presentation"
           >
             <svg
-              class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
+              class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"
@@ -500,10 +500,10 @@ exports[`<StarRating /> should match snapshot without value 1`] = `
       </div>
     </div>
     <div
-      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
+      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
     >
       <span
-        class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfl useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+        class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfp useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
       />
     </div>
   </div>
