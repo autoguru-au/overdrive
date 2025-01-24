@@ -21,17 +21,27 @@ import {
 	styledSearchBar,
 } from './SearchBar.css';
 
+const defaultEnglish = {
+	label: 'Search for tasks',
+	clear: 'clear search',
+} as const;
+
+type TextContent = keyof typeof defaultEnglish;
+
 interface SearchBarProps extends AriaSearchFieldProps {
 	/**
 	 * The placeholder text is also used as the aria-label since the SearchBar does not have a label element
 	 */
 	placeholder: string;
+	/**
+	 * The event handler for when the search field's value changes
+	 */
+	onChange?: AriaSearchFieldProps['onChange'];
+	/**
+	 * Language content override
+	 */
+	lang?: Partial<Record<TextContent, string>>;
 }
-
-const defaultEnglish = {
-	label: 'Search for tasks',
-	clear: 'clear search',
-};
 
 const ReactAriaButton = (props: AriaButtonProps & { className: string }) => {
 	const ref = React.useRef<HTMLButtonElement>(null);
@@ -43,6 +53,14 @@ const ReactAriaButton = (props: AriaButtonProps & { className: string }) => {
 	);
 };
 
+/**
+ * Oversized search bar implemented via the react-aria `useSearchField` hook
+ * ([docs](https://react-spectrum.adobe.com/react-aria/useSearchField.html)). This search bar is used primarily in
+ * combination with the `OptionGrid` in order to filter displayed options and can be reset once text is entered.
+ *
+ * This field does not have a visible label, so an placeholder text is used as `aria-label`.
+ * It is recommended to use the `onChange` prop to handle the input content, uncontrolled.
+ */
 export const SearchBar = (componentProps: WithTestId<SearchBarProps>) => {
 	const textLabel =
 		(componentProps.label as string) ??
