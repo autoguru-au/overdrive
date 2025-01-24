@@ -16,7 +16,7 @@ const hideWebkitAppearance = style({
 const placeholder = style({
 	selectors: {
 		'&::placeholder': {
-			color: tokens.colours.gamut.gray300,
+			color: tokens.colours.gamut.gray400,
 		},
 	},
 });
@@ -27,9 +27,10 @@ export const styledSearchBar = recipe({
 			alignItems: 'center',
 			background: { initial: 'white', hover: 'gray200', focus: 'white' },
 			borderColor: { initial: 'gray', hover: 'light', focus: 'dark' },
-			borderRadius: '2',
+			borderRadius: '3',
 			borderStyle: 'solid',
 			borderWidth: '2',
+			color: { initial: 'gray400', focus: 'gray900' },
 			cursor: { hover: 'text' },
 			display: 'flex',
 			...focusOutline,
@@ -54,7 +55,7 @@ export const styledInput = recipe({
 			background: 'transparent',
 			borderWidth: 'none',
 			height: '7',
-			fontSize: 'xl',
+			fontSize: '2xl',
 			outlineStyle: 'none',
 			textAlign: 'center',
 			width: '100%',

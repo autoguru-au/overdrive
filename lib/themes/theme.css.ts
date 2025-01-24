@@ -224,6 +224,7 @@ export const themeContractVars = createThemeContract({
 			min: '',
 			'1': '',
 			'2': '',
+			'3': '',
 			pill: '',
 			full: '',
 		},
