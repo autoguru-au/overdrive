@@ -471,11 +471,11 @@ exports[`<ColourInput /> should match snapshot with both icons 1`] = `
     <div
       class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
     >
-      <i
-        class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfi useBoxStyles_pointerEvents_none__3xgq1lhw withEnhancedInput_iconRoot__5jmdy8e withEnhancedInput_suffixIcon__5jmdy8g withEnhancedInput_iconSize_medium__5jmdy8i InputState_natural_default_colour__a2a1mv4"
-        role="presentation"
+      <div
+        class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfi useBoxStyles_pointerEvents_none__3xgq1lhw withEnhancedInput_iconRoot__5jmdy8e withEnhancedInput_suffixIcon__5jmdy8g withEnhancedInput_iconSize_medium__5jmdy8i InputState_natural_default_colour__a2a1mv4"
       >
         <svg
+          aria-hidden="true"
           class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
@@ -484,7 +484,7 @@ exports[`<ColourInput /> should match snapshot with both icons 1`] = `
             d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
           />
         </svg>
-      </i>
+      </div>
       <div
         class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfu useBoxStyles_position_relative__3xgq1lfk useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_flexWrap_nowrap__3xgq1lhb useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg"
       >
@@ -547,11 +547,11 @@ exports[`<ColourInput /> should match snapshot with suffix icon 1`] = `
     <div
       class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
     >
-      <i
-        class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfi useBoxStyles_pointerEvents_none__3xgq1lhw withEnhancedInput_iconRoot__5jmdy8e withEnhancedInput_suffixIcon__5jmdy8g withEnhancedInput_iconSize_medium__5jmdy8i InputState_natural_default_colour__a2a1mv4"
-        role="presentation"
+      <div
+        class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfi useBoxStyles_pointerEvents_none__3xgq1lhw withEnhancedInput_iconRoot__5jmdy8e withEnhancedInput_suffixIcon__5jmdy8g withEnhancedInput_iconSize_medium__5jmdy8i InputState_natural_default_colour__a2a1mv4"
       >
         <svg
+          aria-hidden="true"
           class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
@@ -560,7 +560,7 @@ exports[`<ColourInput /> should match snapshot with suffix icon 1`] = `
             d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
           />
         </svg>
-      </i>
+      </div>
       <div
         class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfu useBoxStyles_position_relative__3xgq1lfk useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_flexWrap_nowrap__3xgq1lhb useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg"
       >

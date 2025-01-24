@@ -169,7 +169,7 @@ describe('<Button />', () => {
 				</Button>,
 			);
 
-			expect(container.querySelectorAll('i').length).toBe(1);
+			expect(container.querySelectorAll('svg').length).toBe(1);
 		});
 	});
 });
