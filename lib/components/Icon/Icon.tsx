@@ -29,19 +29,22 @@ export const Icon: FunctionComponent<Props> = ({
 	useNullCheck(icon, 'Icon component received an empty icon prop.');
 	return (
 		<Box
-			is="i"
+			as="div"
 			display={display}
 			className={[resolveResponsiveStyle(size, styles.size), className]}
-			role="presentation"
 		>
 			{icon
 				? cloneElement(icon, {
 						className: useBoxStyles({
-							is: 'svg',
+							as: 'svg',
 							display: 'block',
 							width: 'full',
 							height: 'full',
 						}),
+						'aria-label': icon.props['aria-label'] ?? undefined,
+						'aria-hidden': icon.props['aria-label']
+							? undefined
+							: true,
 					})
 				: '⬤'}
 		</Box>

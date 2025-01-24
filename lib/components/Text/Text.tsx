@@ -2,6 +2,8 @@ import type { CSSProperties, ReactNode } from 'react';
 import * as React from 'react';
 import { forwardRef } from 'react';
 
+import type { WithTestId } from '../../types';
+import { dataAttrs } from '../../utils/dataAttrs';
 import type { BoxStyleProps } from '../Box';
 import { Box } from '../Box';
 
@@ -11,7 +13,6 @@ export interface Props extends TextStyleProps {
 	className?: string;
 	is?: 'p' | 'span';
 	id?: string;
-	testId?: string;
 	strong?: boolean;
 	children?: ReactNode;
 	display?: Extract<
@@ -21,7 +22,7 @@ export interface Props extends TextStyleProps {
 	style?: CSSProperties;
 }
 
-export const Text = forwardRef<HTMLElement, Props>(
+export const Text = forwardRef<HTMLElement, WithTestId<Props>>(
 	(
 		{
 			children,
@@ -43,9 +44,8 @@ export const Text = forwardRef<HTMLElement, Props>(
 		ref,
 	) => (
 		<Box
-			is={Component}
+			as={Component}
 			id={id}
-			data-test-id={testId}
 			ref={ref}
 			display={display}
 			textAlign={align}
@@ -62,6 +62,7 @@ export const Text = forwardRef<HTMLElement, Props>(
 				className,
 			]}
 			style={style}
+			{...dataAttrs({ 'test-id': testId })}
 		>
 			{children}
 		</Box>

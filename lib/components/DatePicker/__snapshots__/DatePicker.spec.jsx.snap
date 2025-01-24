@@ -11,11 +11,11 @@ exports[`<DatePicker /> should match snapshot without label 1`] = `
   <div
     class="reset_block__1oah0223 DatePicker_contents_default__1j3uugj1"
   >
-    <i
-      class="useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
-      role="presentation"
+    <div
+      class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
     >
       <svg
+        aria-hidden="true"
         class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
         fill="currentColor"
         focusable="false"
@@ -26,7 +26,7 @@ exports[`<DatePicker /> should match snapshot without label 1`] = `
           d="M19 18.998H5v-11h14m-3-7v2H8v-2H6v2H5a1.99 1.99 0 00-1.99 2l-.01 14a2 2 0 002 2h14c1.102 0 2-.896 2-2v-14a2 2 0 00-2-2h-1v-2m-1 11h-5v5h5v-5z"
         />
       </svg>
-    </i>
+    </div>
   </div>
 </div>
 `;

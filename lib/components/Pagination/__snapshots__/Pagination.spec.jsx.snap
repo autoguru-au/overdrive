@@ -12,11 +12,11 @@ exports[`<Pagination /> should match snapshot for loading phase 1`] = `
       aria-label=""
       class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_flex__3xgq1lfy useBoxStyles_overflow_hidden__3xgq1lfs useBoxStyles_userSelect_none__3xgq1lg6 useBoxStyles_textAlign_center__3xgq1lfq useBoxStyles_pointerEvents_none__3xgq1li0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhk useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_light__1xnpmd7j Pagination_disabled__9nf7kx0"
     >
-      <i
-        class="useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
-        role="presentation"
+      <div
+        class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
       >
         <svg
+          aria-hidden="true"
           class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
           fill="currentColor"
           focusable="false"
@@ -27,7 +27,7 @@ exports[`<Pagination /> should match snapshot for loading phase 1`] = `
             d="M15.414 16.584l-4.586-4.586 4.586-4.586-1.415-1.414-6 6 6 6 1.415-1.414z"
           />
         </svg>
-      </i>
+      </div>
     </button>
   </div>
   <div
@@ -59,11 +59,11 @@ exports[`<Pagination /> should match snapshot for loading phase 1`] = `
       aria-label=""
       class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_flex__3xgq1lfy useBoxStyles_overflow_hidden__3xgq1lfs useBoxStyles_userSelect_none__3xgq1lg6 useBoxStyles_textAlign_center__3xgq1lfq useBoxStyles_pointerEvents_none__3xgq1li0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhk useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_light__1xnpmd7j Pagination_disabled__9nf7kx0"
     >
-      <i
-        class="useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
-        role="presentation"
+      <div
+        class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
       >
         <svg
+          aria-hidden="true"
           class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
           fill="currentColor"
           focusable="false"
@@ -74,7 +74,7 @@ exports[`<Pagination /> should match snapshot for loading phase 1`] = `
             d="M8.585 16.584l4.586-4.586-4.586-4.586L10 5.998l6 6-6 6-1.414-1.414z"
           />
         </svg>
-      </i>
+      </div>
     </button>
   </div>
 </span>

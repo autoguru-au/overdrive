@@ -27,15 +27,9 @@ describe('<Icon />', () => {
 		).toMatchSnapshot();
 	});
 
-	it('should an i tag for DOM element', () => {
+	it('should nest the provided svg inside the div tag', () => {
 		expect(
-			render(<Icon icon={TestIcon} />).container.querySelector('i'),
-		).toBeInTheDocument();
-	});
-
-	it('should nest the provided svg inside the i tag', () => {
-		expect(
-			render(<Icon icon={TestIcon} />).container.querySelector('i>svg'),
+			render(<Icon icon={TestIcon} />).container.querySelector('div>svg'),
 		).toBeInTheDocument();
 	});
 });
