@@ -3,11 +3,20 @@ import { recipe } from '@vanilla-extract/recipes';
 
 import { focusOutline } from '../../styles/focusOutline.css';
 import { odStyle } from '../../styles/sprinkles.css';
+import { tokens } from '../../themes/base/tokens';
 
-export const hideWebkitAppearance = style({
+const hideWebkitAppearance = style({
 	selectors: {
 		'&::-webkit-search-cancel-button, &::-webkit-search-decoration': {
 			appearance: 'none',
+		},
+	},
+});
+
+const placeholder = style({
+	selectors: {
+		'&::placeholder': {
+			color: tokens.colours.gamut.gray300,
 		},
 	},
 });
@@ -17,7 +26,7 @@ export const styledSearchBar = recipe({
 		odStyle({
 			alignItems: 'center',
 			background: { initial: 'white', hover: 'gray200', focus: 'white' },
-			borderColor: { initial: 'light', focus: 'dark' },
+			borderColor: { initial: 'gray', hover: 'light', focus: 'dark' },
 			borderRadius: '2',
 			borderStyle: 'solid',
 			borderWidth: '2',
@@ -54,6 +63,7 @@ export const styledInput = recipe({
 			height: '72px',
 		},
 		hideWebkitAppearance,
+		placeholder,
 	],
 });
 
