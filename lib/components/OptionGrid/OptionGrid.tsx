@@ -1,4 +1,5 @@
 /* eslint-disable unicorn/prefer-logical-operator-over-ternary */
+import { CheckIcon } from '@autoguru/icons';
 import clsx from 'clsx';
 import React from 'react';
 import {
@@ -13,7 +14,6 @@ import { odStyle } from '../../styles/sprinkles.css';
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Icon, type IconEl } from '../Icon';
-import { IconTick } from '../OptionList/IconTick';
 
 import {
 	styledCheckbox,
@@ -118,7 +118,9 @@ export const OptionGrid = ({
 										selected: isSelected,
 									})}
 								>
-									{indicator === 'checkbox' && <IconTick />}
+									{indicator === 'checkbox' && (
+										<Icon icon={CheckIcon} />
+									)}
 								</div>
 							);
 						};

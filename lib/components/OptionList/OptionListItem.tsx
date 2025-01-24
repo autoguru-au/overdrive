@@ -1,4 +1,5 @@
 /* eslint-disable unicorn/prefer-logical-operator-over-ternary */
+import { CheckIcon } from '@autoguru/icons';
 import React, { useContext, useRef } from 'react';
 import {
 	useCheckboxGroupItem,
@@ -9,9 +10,9 @@ import {
 
 import { odStyle } from '../../styles/sprinkles.css';
 import { dataAttrs } from '../../utils/dataAttrs';
+import { Icon } from '../Icon';
 import { VisuallyHidden } from '../VisuallyHidden';
 
-import { IconTick } from './IconTick';
 import { OptionListContext } from './OptionList';
 import { checkbox, styledOptionItem } from './OptionList.css';
 
@@ -49,7 +50,7 @@ export const OptionListItem = (props: FilteredCheckboxProps) => {
 					className={checkbox()}
 					{...dataAttrs({ checked: isSelected })}
 				>
-					<IconTick />
+					<Icon icon={CheckIcon} />
 				</div>
 				<div
 					className={odStyle({
