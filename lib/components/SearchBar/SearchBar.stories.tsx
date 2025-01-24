@@ -21,14 +21,14 @@ const testPhrase = 'Test search phrase';
 export const SearchInput: Story = {
 	play: async ({ args, canvasElement }) => {
 		const canvas = within(canvasElement);
-		const field = canvas.getByRole('searchbox');
+		const field = canvas.getAllByRole('searchbox')[0];
 
 		await expect(field).toHaveAccessibleName(args.label);
 		field.focus(); // react-aria seems to need this event to register interactions
 		await userEvent.type(field, testPhrase);
 		await expect(field).toHaveValue(testPhrase);
 		await expect(field).toHaveFocus();
-		await expect(canvas.getByRole('button')).toBeVisible();
+		await expect(canvas.getAllByRole('button')[0]).toBeVisible();
 		await userEvent.keyboard('{Esc}');
 		await expect(field).not.toHaveValue(testPhrase);
 		field.blur();
