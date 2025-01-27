@@ -3,7 +3,7 @@ import React from 'react';
 import {
 	mergeProps,
 	useButton,
-	useFocusWithin,
+	useFocusRing,
 	useSearchField,
 	type AriaButtonProps,
 	type AriaSearchFieldProps,
@@ -80,14 +80,7 @@ export const SearchBar = (componentProps: WithTestId<SearchBarProps>) => {
 		state,
 		refInput,
 	);
-	const { focusWithinProps } = useFocusWithin({
-		onFocusWithin: () => {
-			refWrapper.current?.setAttribute('data-focus', 'true');
-		},
-		onBlurWithin: () => {
-			refWrapper.current?.removeAttribute('data-focus');
-		},
-	});
+	const { focusProps, isFocused, isFocusVisible } = useFocusRing(props);
 
 	const handleWrapperClick = () => {
 		refInput.current?.focus();
@@ -111,7 +104,11 @@ export const SearchBar = (componentProps: WithTestId<SearchBarProps>) => {
 			className={styledSearchBar({})}
 			onClick={handleWrapperClick}
 			ref={refWrapper}
-			{...dataAttrs({ 'test-id': props.testId })}
+			{...dataAttrs({
+				focus: isFocused,
+				'focus-visible': isFocusVisible,
+				'test-id': props.testId,
+			})}
 		>
 			<div>
 				<Icon icon={MagnifyIcon} size="large" />
@@ -124,7 +121,7 @@ export const SearchBar = (componentProps: WithTestId<SearchBarProps>) => {
 				})}
 			>
 				<input
-					{...mergeProps(inputProps, focusWithinProps)}
+					{...mergeProps(inputProps, focusProps)}
 					className={styledInput({})}
 					ref={refInput}
 				/>

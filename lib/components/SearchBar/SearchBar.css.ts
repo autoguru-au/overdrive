@@ -35,7 +35,6 @@ export const styledSearchBar = recipe({
 			display: 'flex',
 			...focusOutline,
 			gap: '2',
-			outlineStyle: 'none',
 			paddingX: '4',
 		}),
 	],
