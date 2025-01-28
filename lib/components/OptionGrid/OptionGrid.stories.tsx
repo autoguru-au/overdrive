@@ -97,7 +97,7 @@ const alphaOptions: OptionItem[] = [
 ];
 
 const meta: Meta<typeof OptionGrid> = {
-	title: 'Components/Option Grid',
+	title: 'Forms & Input Fields/Option Grid',
 	component: OptionGrid,
 	args: {
 		label: 'Select car servicing options',
