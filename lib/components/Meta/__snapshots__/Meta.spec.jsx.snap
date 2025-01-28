@@ -7,11 +7,11 @@ exports[`<Meta /> should match snapshot with label, icon for Primary variant 1`]
   <div
     class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
   >
-    <i
-      class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0 Meta_variant_primary__5jk44p0"
-      role="presentation"
+    <div
+      class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0 Meta_variant_primary__5jk44p0"
     >
       <svg
+        aria-hidden="true"
         class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
         viewBox="0 0 512 512"
         xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +20,7 @@ exports[`<Meta /> should match snapshot with label, icon for Primary variant 1`]
           d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
         />
       </svg>
-    </i>
+    </div>
   </div>
   <div
     class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
@@ -41,11 +41,11 @@ exports[`<Meta /> should match snapshot with label, icon for Secondary variant 1
   <div
     class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"
   >
-    <i
-      class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0 Meta_variant_secondary__5jk44p1"
-      role="presentation"
+    <div
+      class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0 Meta_variant_secondary__5jk44p1"
     >
       <svg
+        aria-hidden="true"
         class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
         viewBox="0 0 512 512"
         xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@ exports[`<Meta /> should match snapshot with label, icon for Secondary variant 1
           d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
         />
       </svg>
-    </i>
+    </div>
   </div>
   <div
     class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgr useBoxStyles_flexWrap_nowrap__3xgq1lhb"

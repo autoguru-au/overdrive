@@ -57,11 +57,11 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
                 <div
                   class="reset_block__1oah0223 useBoxStyles_height_full__3xgq1lfh useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg Button_body__p2yon51"
                 >
-                  <i
-                    class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire4 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_muted__1xnpmd7h"
-                    role="presentation"
+                  <div
+                    class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire4 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_muted__1xnpmd7h"
                   >
                     <svg
+                      aria-hidden="true"
                       class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
                       fill="currentColor"
                       focusable="false"
@@ -72,7 +72,7 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
                         d="M13.458 12L19 17.543V19h-1.457L12 13.457 6.458 19H5v-1.456L10.544 12 5 6.458V5h1.457L12 10.543 17.544 5H19v1.458L13.458 12z"
                       />
                     </svg>
-                  </i>
+                  </div>
                 </div>
               </button>
             </header>
@@ -151,11 +151,11 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
                 <div
                   class="reset_block__1oah0223 useBoxStyles_height_full__3xgq1lfh useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg Button_body__p2yon51"
                 >
-                  <i
-                    class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire4 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_muted__1xnpmd7h"
-                    role="presentation"
+                  <div
+                    class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire4 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_muted__1xnpmd7h"
                   >
                     <svg
+                      aria-hidden="true"
                       class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
                       fill="currentColor"
                       focusable="false"
@@ -166,7 +166,7 @@ exports[`<StandardModal /> should match snapshot without title and body 1`] = `
                         d="M13.458 12L19 17.543V19h-1.457L12 13.457 6.458 19H5v-1.456L10.544 12 5 6.458V5h1.457L12 10.543 17.544 5H19v1.458L13.458 12z"
                       />
                     </svg>
-                  </i>
+                  </div>
                 </div>
               </button>
             </header>

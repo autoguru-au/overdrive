@@ -20,11 +20,11 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
           class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld9 useBoxStyles_backgroundColours_primary__3xgq1lew useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg Stepper_handle_default__10wm9ba4 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_white__1xnpmd7g"
           tabindex="-1"
         >
-          <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0"
-            role="presentation"
+          <div
+            class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0"
           >
             <svg
+              aria-hidden="true"
               class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
               fill="currentColor"
               focusable="false"
@@ -35,7 +35,7 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
                 d="M19 12.998H5V11l14-.002v2z"
               />
             </svg>
-          </i>
+          </div>
         </button>
       </div>
     </div>
@@ -63,11 +63,11 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
           class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld9 useBoxStyles_backgroundColours_primary__3xgq1lew useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg Stepper_handle_default__10wm9ba4 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_white__1xnpmd7g"
           tabindex="-1"
         >
-          <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0"
-            role="presentation"
+          <div
+            class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0"
           >
             <svg
+              aria-hidden="true"
               class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
               fill="currentColor"
               focusable="false"
@@ -78,7 +78,7 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
                 d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6v2z"
               />
             </svg>
-          </i>
+          </div>
         </button>
       </div>
     </div>
@@ -106,11 +106,11 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
           class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld9 useBoxStyles_backgroundColours_primary__3xgq1lew useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg Stepper_handle_default__10wm9ba4 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_white__1xnpmd7g"
           tabindex="-1"
         >
-          <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0"
-            role="presentation"
+          <div
+            class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0"
           >
             <svg
+              aria-hidden="true"
               class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
               fill="currentColor"
               focusable="false"
@@ -121,7 +121,7 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
                 d="M19 12.998H5V11l14-.002v2z"
               />
             </svg>
-          </i>
+          </div>
         </button>
       </div>
     </div>
@@ -149,11 +149,11 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
           class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld9 useBoxStyles_backgroundColours_primary__3xgq1lew useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg Stepper_handle_default__10wm9ba4 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_white__1xnpmd7g"
           tabindex="-1"
         >
-          <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0"
-            role="presentation"
+          <div
+            class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0"
           >
             <svg
+              aria-hidden="true"
               class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
               fill="currentColor"
               focusable="false"
@@ -164,7 +164,7 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
                 d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6v2z"
               />
             </svg>
-          </i>
+          </div>
         </button>
       </div>
     </div>
@@ -192,11 +192,11 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
           class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld9 useBoxStyles_backgroundColours_primary__3xgq1lew useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg Stepper_handle_default__10wm9ba4 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_white__1xnpmd7g"
           tabindex="-1"
         >
-          <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0"
-            role="presentation"
+          <div
+            class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0"
           >
             <svg
+              aria-hidden="true"
               class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
               fill="currentColor"
               focusable="false"
@@ -207,7 +207,7 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
                 d="M19 12.998H5V11l14-.002v2z"
               />
             </svg>
-          </i>
+          </div>
         </button>
       </div>
     </div>
@@ -235,11 +235,11 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
           class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfu useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld9 useBoxStyles_backgroundColours_primary__3xgq1lew useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgj useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg Stepper_handle_default__10wm9ba4 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_white__1xnpmd7g"
           tabindex="-1"
         >
-          <i
-            class="useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0"
-            role="presentation"
+          <div
+            class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0"
           >
             <svg
+              aria-hidden="true"
               class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
               fill="currentColor"
               focusable="false"
@@ -250,7 +250,7 @@ exports[`<Stepper /> should match snapshot without props 1`] = `
                 d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6v2z"
               />
             </svg>
-          </i>
+          </div>
         </button>
       </div>
     </div>
