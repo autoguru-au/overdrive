@@ -37,7 +37,7 @@ const colours: ReadonlyArray<ComponentProps<typeof DividerLine>['colour']> = [
 ] as const;
 
 export default {
-	title: 'Components/DividerLine',
+	title: 'Primatives/Divider Line',
 	component: DividerLine,
 	argTypes: {
 		space: {
@@ -127,16 +127,16 @@ const standardProps: ComponentProps<typeof DividerLine> = {
 	colour: 'primary',
 };
 
-export const standard = template.bind(standardProps);
-standard.args = standardProps;
+export const Standard = template.bind(standardProps);
+Standard.args = standardProps;
 
 const verticalProps: ComponentProps<typeof DividerLine> = {
 	...standardProps,
 	isVertical: true,
 };
 
-export const vertical = verticalTemplate.bind(verticalProps);
-vertical.args = verticalProps;
+export const Vertical = verticalTemplate.bind(verticalProps);
+Vertical.args = verticalProps;
 
-export const standardAllColours = templateAllColours.bind(standardProps);
-standardAllColours.args = standardProps;
+export const StandardAllColours = templateAllColours.bind(standardProps);
+StandardAllColours.args = standardProps;

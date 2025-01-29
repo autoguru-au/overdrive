@@ -9,7 +9,7 @@ import { boxArgTypes, scaleOptions } from '../Box/argTypes';
 import { HorizontalAutoScroller } from '.';
 
 export default {
-	title: 'Components/HorizontalAutoScroller',
+	title: 'Components/Horizontal Auto Scroller',
 	component: HorizontalAutoScroller,
 	argTypes: {
 		sliderProgressColour: boxArgTypes.backgroundColour,

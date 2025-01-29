@@ -10,7 +10,7 @@ import { Text } from '../Text';
 import { StickyBox } from '.';
 
 export default {
-	title: 'Foundation/Layout/StickyBox',
+	title: 'Layout/StickyBox',
 	component: StickyBox,
 } satisfies Meta<typeof StickyBox>;
 
@@ -55,12 +55,12 @@ const Template: StoryFn<typeof StickyBox> = (args) => (
 const standardProps: Props = {
 	top: 'none',
 };
-export const standard = Template.bind(standardProps);
-standard.args = standardProps;
+export const Standard = Template.bind(standardProps);
+Standard.args = standardProps;
 
 const withNoPopShadowProps: Props = {
 	top: 'none',
 	noPopShadow: true,
 };
-export const withNoPopShadow = Template.bind(withNoPopShadowProps);
-withNoPopShadow.args = withNoPopShadowProps;
+export const WithNoPopShadow = Template.bind(withNoPopShadowProps);
+WithNoPopShadow.args = withNoPopShadowProps;

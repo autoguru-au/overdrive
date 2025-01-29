@@ -9,7 +9,7 @@ import { boxArgTypes } from '../Box/argTypes';
 import { SliderProgress } from '.';
 
 export default {
-	title: 'Components/Progress/SliderProgress',
+	title: 'Components/Progress/Slider Progress',
 	component: SliderProgress,
 	argTypes: {
 		backgroundColour: boxArgTypes.backgroundColour,

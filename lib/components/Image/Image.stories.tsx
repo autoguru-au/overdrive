@@ -34,7 +34,7 @@ const sizeOptions: Array<ComponentProps<typeof Image>['imageWidth']> =
 const qualityOptions: Array<ComponentProps<typeof Image>['quality']> =
 	isChromatic() ? ['70'] : [1, 20, 40, 60, 80, 100];
 export default {
-	title: 'Foundation/Image',
+	title: 'Primatives/Image',
 	component: Image,
 	args: {
 		imageWidth: 8,
@@ -88,8 +88,8 @@ const SimpleTemplate: StoryFn<typeof Image> = (args) => (
 const standardProps: ComponentProps<typeof Image> = {
 	src: 'https://cdn.autoguru.com.au/images/autoguru-og.jpg',
 };
-export const standard = SimpleTemplate.bind(standardProps);
-standard.args = standardProps;
+export const Standard = SimpleTemplate.bind(standardProps);
+Standard.args = standardProps;
 
 const srcUrlMapper = ({ src, width, quality }) =>
 	`https://images.autoguru.com.au/?url=${src}&w=${width}&q=${quality}`;
@@ -105,10 +105,10 @@ const withImageServerUnoptimisedProps: ComponentProps<typeof Image> = {
 	src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
 	unoptimised: true,
 };
-export const withImageServerUnoptimised = WidthProviderTemplate.bind(
+export const WithImageServerUnoptimised = WidthProviderTemplate.bind(
 	withImageServerUnoptimisedProps,
 );
-withImageServerUnoptimised.args = withImageServerUnoptimisedProps;
+WithImageServerUnoptimised.args = withImageServerUnoptimisedProps;
 
 const withImageServerProps: ComponentProps<typeof Image> = {
 	src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
@@ -116,8 +116,8 @@ const withImageServerProps: ComponentProps<typeof Image> = {
 	imageWidth: 8,
 	sizes: ['100vh', , '60vh', '40vh'],
 };
-export const withImageServer = WidthProviderTemplate.bind(withImageServerProps);
-withImageServer.args = withImageServerProps;
+export const WithImageServer = WidthProviderTemplate.bind(withImageServerProps);
+WithImageServer.args = withImageServerProps;
 
 const withResponsiveImageWidthProps: ComponentProps<typeof Image> = {
 	src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
@@ -125,20 +125,20 @@ const withResponsiveImageWidthProps: ComponentProps<typeof Image> = {
 	sizes: ['100vw', '70vw', '50vw', '40vw'],
 	imageWidth: [5, 8, , 12],
 };
-export const withResponsiveImageWidth = WidthProviderTemplate.bind(
+export const WithResponsiveImageWidth = WidthProviderTemplate.bind(
 	withResponsiveImageWidthProps,
 );
-withResponsiveImageWidth.args = withResponsiveImageWidthProps;
+WithResponsiveImageWidth.args = withResponsiveImageWidthProps;
 
 const withResponsiveSizesProps: ComponentProps<typeof Image> = {
 	src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
 	width: 'full',
 	sizes: ['100vw', '70vw', '50vw', '40vw'],
 };
-export const withResponsiveSizes = WidthProviderTemplate.bind(
+export const WithResponsiveSizes = WidthProviderTemplate.bind(
 	withResponsiveSizesProps,
 );
-withResponsiveSizes.args = withResponsiveSizesProps;
+WithResponsiveSizes.args = withResponsiveSizesProps;
 
 const AllQualityTemplate: StoryFn<typeof Image> = (args) => (
 	<ImageServerProvider srcUrlMapper={srcUrlMapper}>
@@ -163,9 +163,9 @@ const AllQualityTemplate: StoryFn<typeof Image> = (args) => (
 	</ImageServerProvider>
 );
 
-export const withImageServerQualities =
+export const WithImageServerQualities =
 	AllQualityTemplate.bind(withImageServerProps);
-withImageServerQualities.args = withImageServerProps;
+WithImageServerQualities.args = withImageServerProps;
 
 const AllSizeTemplate: StoryFn<typeof Image> = (args) => (
 	<ImageServerProvider srcUrlMapper={srcUrlMapper}>
@@ -200,7 +200,7 @@ const withImageServerResizingProps: ComponentProps<typeof Image> = {
 	sizes: ['100vh', , '60vh', '40vh'],
 };
 
-export const withImageServerResizing = AllSizeTemplate.bind(
+export const WithImageServerResizing = AllSizeTemplate.bind(
 	withImageServerResizingProps,
 );
-withImageServerResizing.args = withImageServerResizingProps;
+WithImageServerResizing.args = withImageServerResizingProps;

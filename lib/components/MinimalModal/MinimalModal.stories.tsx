@@ -18,7 +18,7 @@ const argTypes: ArgTypes = {
 };
 
 export default {
-	title: 'Components/MinimalModal',
+	title: 'Components/Modal: Minimal',
 	component: MinimalModal,
 	parameters: {
 		chromatic: { disable: true },

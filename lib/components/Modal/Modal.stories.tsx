@@ -8,7 +8,7 @@ import { Text } from '../Text';
 import { Modal } from '.';
 
 export default {
-	title: 'Utility/Modal',
+	title: 'Components/Modal',
 	component: Modal,
 	parameters: {
 		chromatic: { disable: true },
@@ -97,5 +97,5 @@ const standardProps = {
 	onRequestClose: action('onRequestClose'),
 };
 
-export const standard = Template.bind(standardProps);
-standard.args = standardProps;
+export const Standard = Template.bind(standardProps);
+Standard.args = standardProps;
