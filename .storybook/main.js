@@ -17,9 +17,6 @@ const config = {
 		name: '@storybook/react-vite',
 		options: {},
 	},
-	docs: {
-		autodocs: true,
-	},
 	typescript: {
 		reactDocgen: 'react-docgen-typescript',
 	},
