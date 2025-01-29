@@ -27,7 +27,7 @@ const transformOptions: Array<ComponentProps<typeof Text>['transform']> = [
 ];
 
 export default {
-	title: 'Foundation/Typography/TextLink',
+	title: 'Primatives/Text Link',
 	decorators: [
 		(story) => (
 			<div
@@ -116,21 +116,21 @@ const standardProps: Omit<ComponentProps<typeof TextLink>, 'children'> = {
 	fontWeight: 'semiBold',
 };
 
-export const standard: StoryFn<typeof TextLink> = Template.bind(standardProps);
-standard.args = standardProps;
+export const Standard: StoryFn<typeof TextLink> = Template.bind(standardProps);
+Standard.args = standardProps;
 
-export const insideParagraph: StoryFn<typeof TextLink> =
+export const InsideParagraph: StoryFn<typeof TextLink> =
 	InsideParagraphTemplate.bind(standardProps);
-insideParagraph.args = standardProps;
+InsideParagraph.args = standardProps;
 
 const withIconProps: typeof standardProps = {
 	...standardProps,
 	icon: ArrowRightIcon,
 };
 
-export const withIcon = Template.bind(withIconProps);
-withIcon.args = withIconProps;
+export const WithIcon = Template.bind(withIconProps);
+WithIcon.args = withIconProps;
 
-export const withIconInsideParagraph =
+export const WithIconInsideParagraph =
 	InsideParagraphTemplate.bind(withIconProps);
-withIconInsideParagraph.args = withIconProps;
+WithIconInsideParagraph.args = withIconProps;

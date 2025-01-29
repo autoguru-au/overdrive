@@ -12,7 +12,7 @@ const itemData = [
 ];
 
 const meta: Meta<typeof OptionList> = {
-	title: 'Components/Option List',
+	title: 'Forms & Input Fields/Option List',
 	component: OptionList,
 	args: {
 		label: 'Commonly requested extras',

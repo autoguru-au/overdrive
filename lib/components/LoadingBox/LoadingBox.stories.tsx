@@ -7,7 +7,7 @@ import { boxArgTypes } from '../Box/argTypes';
 import { LoadingBox } from '.';
 
 export default {
-	title: 'Components/Loading/Box',
+	title: 'Components/Loading Box',
 	component: LoadingBox,
 	decorators: [
 		(story) => (
@@ -23,17 +23,17 @@ export default {
 const Template: StoryFn<typeof LoadingBox> = (args) => <LoadingBox {...args} />;
 
 const standardProps: ComponentProps<typeof LoadingBox> = {};
-export const standard = Template.bind(standardProps);
-standard.args = standardProps;
+export const Standard = Template.bind(standardProps);
+Standard.args = standardProps;
 
 const blinkingOffProps: ComponentProps<typeof LoadingBox> = {
 	blinking: false,
 };
-export const blinkingOff = Template.bind(blinkingOffProps);
-blinkingOff.args = blinkingOffProps;
+export const BlinkingOff = Template.bind(blinkingOffProps);
+BlinkingOff.args = blinkingOffProps;
 
 const randomWidthProps: ComponentProps<typeof LoadingBox> = {
 	randomWidth: true,
 };
-export const randomWidth = Template.bind(randomWidthProps);
-randomWidth.args = randomWidthProps;
+export const RandomWidth = Template.bind(randomWidthProps);
+RandomWidth.args = randomWidthProps;

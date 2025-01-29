@@ -8,7 +8,7 @@ import { Text } from '../Text';
 import { ToastProvider, useToast } from '.';
 
 export default {
-	title: 'Utility/Toaster',
+	title: 'Components/Toaster',
 	decorators: [
 		(Story) => (
 			<ToastProvider>

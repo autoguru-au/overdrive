@@ -11,7 +11,7 @@ import { Button } from '.';
 
 const onClick = action('onClick');
 export default {
-	title: 'Components/Buttons',
+	title: 'Primatives/Buttons',
 	component: Button,
 	decorators: [
 		(story) => (

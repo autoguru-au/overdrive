@@ -10,7 +10,7 @@ import { Text } from '../Text';
 import { Radio, RadioGroup } from '.';
 
 export default {
-	title: 'Components/Inputs/Radio',
+	title: 'Forms & Input Fields/Radio',
 	component: Radio,
 	decorators: [
 		(story) => (
@@ -58,7 +58,7 @@ const argTypes: ArgTypes = {
 	},
 };
 
-export const list: StoryObj<typeof Radio> = {
+export const List: StoryObj<typeof Radio> = {
 	render: ({ value, children, ...args }) => (
 		<RadioGroup value={value} name="favourite fruit">
 			{listData.map((item: { label: string; value: string }) => {
@@ -94,7 +94,7 @@ const uncheckedProps: ComponentProps<typeof Radio> = {
 	value: 'berry',
 };
 const checkedProps: ComponentProps<typeof Radio> = {
-	// @ts-ignore
+	// @ts-expect-error type error for `checked`
 	checked: true,
 	disabled: false,
 	children: 'check me!',
@@ -111,7 +111,7 @@ const emptyProps: ComponentProps<typeof Radio> = {
 	value: 'berry',
 };
 const disabledCheckedProps: ComponentProps<typeof Radio> = {
-	// @ts-ignore
+	// @ts-expect-error type error for `checked`
 	checked: true,
 	disabled: true,
 	children: 'check me!',
@@ -172,41 +172,41 @@ const withMultiLineComponentProps: ComponentProps<typeof Radio> = {
 	value: '1',
 };
 
-export const unchecked = Template.bind(uncheckedProps);
-unchecked.args = uncheckedProps;
-unchecked.argTypes = argTypes;
+export const Unchecked = Template.bind(uncheckedProps);
+Unchecked.args = uncheckedProps;
+Unchecked.argTypes = argTypes;
 
-export const checked = Template.bind(checkedProps);
-checked.args = checkedProps;
-checked.argTypes = argTypes;
+export const Checked = Template.bind(checkedProps);
+Checked.args = checkedProps;
+Checked.argTypes = argTypes;
 
-export const disabled = Template.bind(disabledProps);
-disabled.args = disabledProps;
-disabled.argTypes = argTypes;
+export const Disabled = Template.bind(disabledProps);
+Disabled.args = disabledProps;
+Disabled.argTypes = argTypes;
 
-export const disabledChecked = Template.bind(disabledCheckedProps);
-disabledChecked.args = disabledCheckedProps;
-disabledChecked.argTypes = argTypes;
+export const DisabledChecked = Template.bind(disabledCheckedProps);
+DisabledChecked.args = disabledCheckedProps;
+DisabledChecked.argTypes = argTypes;
 
-export const withNoChildren = Template.bind(emptyProps);
-withNoChildren.args = emptyProps;
+export const WithNoChildren = Template.bind(emptyProps);
+WithNoChildren.args = emptyProps;
 
-export const multipleLines = Template.bind(multipleLinesProps);
-multipleLines.args = multipleLinesProps;
-multipleLines.argTypes = argTypes;
+export const MultipleLines = Template.bind(multipleLinesProps);
+MultipleLines.args = multipleLinesProps;
+MultipleLines.argTypes = argTypes;
 
-export const withComponent = Template.bind(withComponentProps);
-withComponent.args = withComponentProps;
-withComponent.argTypes = {
+export const WithComponent = Template.bind(withComponentProps);
+WithComponent.args = withComponentProps;
+WithComponent.argTypes = {
 	...argTypes,
 	children: { control: { disable: true } },
 };
 
-export const withMultiLineComponent = Template.bind(
+export const WithMultiLineComponent = Template.bind(
 	withMultiLineComponentProps,
 );
-withMultiLineComponent.args = withMultiLineComponentProps;
-withMultiLineComponent.argTypes = {
+WithMultiLineComponent.args = withMultiLineComponentProps;
+WithMultiLineComponent.argTypes = {
 	...argTypes,
 	children: { control: { disable: true } },
 };

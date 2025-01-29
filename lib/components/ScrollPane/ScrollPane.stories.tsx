@@ -10,7 +10,7 @@ import { Text } from '../Text';
 import { ScrollPane } from '.';
 
 export default {
-	title: 'Foundation/Layout/ScrollPane',
+	title: 'Layout/Scroll Pane',
 	component: ScrollPane,
 } satisfies Meta<typeof ScrollPane>;
 
@@ -42,5 +42,5 @@ const Template: StoryFn<typeof ScrollPane> = (args) => (
 );
 
 const standardProps: Props = {};
-export const standard = Template.bind(standardProps);
-standard.args = standardProps;
+export const Standard = Template.bind(standardProps);
+Standard.args = standardProps;

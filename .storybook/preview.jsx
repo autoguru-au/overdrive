@@ -179,7 +179,21 @@ const preview = {
 		},
 		options: {
 			storySort: {
-				order: ['Overdrive', 'Foundation'],
+				order: [
+					'Overdrive',
+					'Foundation',
+					['Palette', 'Theme Colours', 'Borders', 'Space'],
+					'Primatives',
+					'Layout',
+					'Forms & Input Fields',
+					'Components',
+					[
+						'*',
+						'Modal',
+						'Modal: Minimal',
+						'Modal: Standard with Title',
+					],
+				],
 			},
 		},
 	},

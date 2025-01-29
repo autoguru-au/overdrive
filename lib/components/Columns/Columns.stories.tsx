@@ -8,7 +8,7 @@ import { boxArgTypes, scaleOptions } from '../Box/argTypes';
 import { Column, Columns } from '.';
 
 export default {
-	title: 'Foundation/Layout/Columns',
+	title: 'Layout/Columns',
 	component: Columns,
 	decorators: [
 		(story) => (
@@ -167,17 +167,17 @@ const standardProps: ComponentProps<typeof Columns> = {
 	noWrap: false,
 };
 
-export const standard = Template.bind(standardProps);
-standard.args = standardProps;
+export const Standard = Template.bind(standardProps);
+Standard.args = standardProps;
 
 const standardColumnProps: Omit<ComponentProps<typeof Column>, 'children'> = {
 	width: ['full', '1/3', '1/5'],
 	is: 'section',
 };
 
-export const standardColumn = TemplateColumn.bind(standardColumnProps);
-standardColumn.args = standardColumnProps;
-standardColumn.argTypes = {
+export const StandardColumn = TemplateColumn.bind(standardColumnProps);
+StandardColumn.args = standardColumnProps;
+StandardColumn.argTypes = {
 	alignSelf: {
 		options: {
 			stretch: 'stretch',

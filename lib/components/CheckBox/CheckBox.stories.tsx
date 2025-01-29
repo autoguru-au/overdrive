@@ -10,7 +10,7 @@ import { Text } from '../Text';
 import { CheckBox } from '.';
 
 export default {
-	title: 'Components/Inputs/CheckBox',
+	title: 'Forms & Input Fields/CheckBox',
 	component: CheckBox,
 	decorators: [
 		(story) => (
@@ -168,30 +168,30 @@ const withMultiLineComponentProps: ComponentProps<typeof CheckBox> = {
 	value: '1',
 };
 
-export const unchecked = Template.bind(uncheckedProps);
-unchecked.args = uncheckedProps;
+export const Unchecked = Template.bind(uncheckedProps);
+Unchecked.args = uncheckedProps;
 
-export const checked = Template.bind(checkedProps);
-checked.args = checkedProps;
+export const Checked = Template.bind(checkedProps);
+Checked.args = checkedProps;
 
-export const disabled = Template.bind(disabledProps);
-disabled.args = disabledProps;
+export const Disabled = Template.bind(disabledProps);
+Disabled.args = disabledProps;
 
-export const disabledChecked = Template.bind(disabledCheckedProps);
-disabledChecked.args = disabledCheckedProps;
+export const DisabledChecked = Template.bind(disabledCheckedProps);
+DisabledChecked.args = disabledCheckedProps;
 
-export const multipleLines = Template.bind(multipleLinesProps);
-multipleLines.args = multipleLinesProps;
+export const MultipleLines = Template.bind(multipleLinesProps);
+MultipleLines.args = multipleLinesProps;
 
-export const withNoChildren = Template.bind(emptyProps);
-withNoChildren.args = emptyProps;
+export const WithNoChildren = Template.bind(emptyProps);
+WithNoChildren.args = emptyProps;
 
-export const withComponent = Template.bind(withComponentProps);
-withComponent.args = withComponentProps;
-withComponent.argTypes = { children: { control: { disable: true } } };
+export const WithComponent = Template.bind(withComponentProps);
+WithComponent.args = withComponentProps;
+WithComponent.argTypes = { children: { control: { disable: true } } };
 
-export const withMultiLineComponent = Template.bind(
+export const WithMultiLineComponent = Template.bind(
 	withMultiLineComponentProps,
 );
-withMultiLineComponent.args = withMultiLineComponentProps;
-withMultiLineComponent.argTypes = { children: { control: { disable: true } } };
+WithMultiLineComponent.args = withMultiLineComponentProps;
+WithMultiLineComponent.argTypes = { children: { control: { disable: true } } };

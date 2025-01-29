@@ -7,7 +7,7 @@ import { boxArgTypes } from './argTypes';
 import { Box } from '.';
 
 export default {
-	title: 'Foundation/Box',
+	title: 'Primatives/Box',
 	component: Box,
 	decorators: [
 		(story) => (

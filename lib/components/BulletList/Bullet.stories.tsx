@@ -7,7 +7,7 @@ import { Text } from '../Text';
 import { Bullet, BulletList } from '.';
 
 export default {
-	title: 'Foundation/List/BulletList',
+	title: 'Primatives/Bullet List',
 	component: BulletList,
 	decorators: [
 		(story) => (
@@ -92,8 +92,8 @@ const NestedBulletListTemplate: StoryFn<typeof BulletList> = (args) => (
 
 const standardProps: ComponentProps<typeof BulletList> = {};
 
-export const standard = StandardBulletListTemplate.bind(standardProps);
-standard.args = {};
+export const Standard = StandardBulletListTemplate.bind(standardProps);
+Standard.args = {};
 
-export const nested = NestedBulletListTemplate.bind(standardProps);
-nested.args = {};
+export const Nested = NestedBulletListTemplate.bind(standardProps);
+Nested.args = {};
