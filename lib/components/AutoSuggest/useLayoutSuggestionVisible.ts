@@ -4,8 +4,8 @@ import { isBrowser } from '../../utils';
 
 export const useLayoutSuggestionVisible = (
 	highlightIndex: number,
-	highlightRef: RefObject<HTMLElement>,
-	suggestionListRef: RefObject<HTMLElement>,
+	highlightRef: RefObject<HTMLElement | null>,
+	suggestionListRef: RefObject<HTMLElement | null>,
 ) => {
 	if (isBrowser) {
 		// Its okay to wrap this... As the value wont change once rendered.

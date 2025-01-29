@@ -138,7 +138,9 @@ export const useHorizontalAutoScroller = ({
 	onChange = () => void 0,
 }: UseHorizontalAutoScrollerProps): Returns => {
 	const [{ pageCount, activePage, paused }, dispatch] = useReducer<
-		Reducer<State, Actions>
+		State,
+		// @ts-expect-error Type '{ type: "GO_TO_PAGE"; payload: number; }' is not assignable to type 'AnyActionArg'
+		Actions
 	>(stateReducer, {
 		paused: incomingIsPaused,
 		activePage: void 0,
@@ -148,6 +150,7 @@ export const useHorizontalAutoScroller = ({
 	});
 
 	useEffect(() => {
+		// @ts-expect-error Argument is not assignable to parameter of type 'Actions'
 		dispatch({
 			type: 'SET_PAGE_COUNT',
 			payload: itemsRef?.length
@@ -159,6 +162,7 @@ export const useHorizontalAutoScroller = ({
 	const onViewChange = useCallback(
 		(inView) => {
 			if (inView && typeof activePage !== 'number')
+				// @ts-expect-error Argument is not assignable to parameter of type 'Actions'
 				dispatch({
 					type: 'GO_TO_PAGE',
 					payload:
@@ -177,26 +181,32 @@ export const useHorizontalAutoScroller = ({
 	});
 
 	const next = useCallback(() => {
+		// @ts-expect-error Argument is not assignable to parameter of type 'Actions'
 		dispatch({ type: 'NEXT_PAGE' });
 	}, []);
 
 	const prev = useCallback(() => {
+		// @ts-expect-error Argument is not assignable to parameter of type 'Actions'
 		dispatch({ type: 'PREV_PAGE' });
 	}, []);
 
 	const goToPage = useCallback((page: number) => {
+		// @ts-expect-error Argument is not assignable to parameter of type 'Actions'
 		dispatch({ type: 'GO_TO_PAGE', payload: page });
 	}, []);
 
 	const onClick = useCallback(() => {
+		// @ts-expect-error Argument is not assignable to parameter of type 'Actions'
 		dispatch({ type: 'CLICK_NEXT' });
 	}, []);
 
 	const pause = useCallback(() => {
+		// @ts-expect-error Argument is not assignable to parameter of type 'Actions'
 		dispatch({ type: 'PAUSE' });
 	}, []);
 
 	const resume = useCallback(() => {
+		// @ts-expect-error Argument is not assignable to parameter of type 'Actions'
 		dispatch({ type: 'RESUME' });
 	}, []);
 
