@@ -33,7 +33,7 @@ const iconOptions = {
 };
 
 export default {
-	title: 'Foundation/Typography/Anchor',
+	title: 'Primatives/Anchor',
 	component: Anchor,
 	decorators: [],
 	argTypes: {
@@ -66,19 +66,19 @@ const standardProps: ComponentProps<typeof Anchor> = {
 	children: '07 5612 5347',
 };
 
-export const standard = Template.bind(standardProps);
-standard.args = standardProps;
+export const Standard = Template.bind(standardProps);
+Standard.args = standardProps;
 
 const withIconProps: typeof standardProps = {
 	...standardProps,
 	icon: PhoneIcon,
 };
-export const withIcon = Template.bind(withIconProps);
-withIcon.args = withIconProps;
+export const WithIcon = Template.bind(withIconProps);
+WithIcon.args = withIconProps;
 
 const withButtonProps: ComponentProps<typeof Anchor> = {
 	...withIconProps,
 	is: Button,
 };
-export const withButton = Template.bind(withButtonProps);
-withButton.args = withButtonProps;
+export const WithButton = Template.bind(withButtonProps);
+WithButton.args = withButtonProps;

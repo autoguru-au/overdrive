@@ -12,7 +12,7 @@ import { EAlignment } from './alignment';
 import { Positioner } from '.';
 
 export default {
-	title: 'Utility/Positioner',
+	title: 'Layout/Positioner',
 	component: Positioner,
 	parameters: { chromatic: {} },
 	argTypes: {
@@ -113,25 +113,25 @@ const standardProps = {
 	triggerOffset: 12,
 };
 
-export const closed: StoryFn<typeof Positioner> = Template.bind(standardProps);
-closed.args = standardProps;
+export const Closed: StoryFn<typeof Positioner> = Template.bind(standardProps);
+Closed.args = standardProps;
 
 const openProps = {
 	...standardProps,
 	isOpen: true,
 };
 
-export const open: StoryFn<typeof Positioner> = Template.bind(openProps);
-open.args = openProps;
+export const Open: StoryFn<typeof Positioner> = Template.bind(openProps);
+Open.args = openProps;
 
 const illustrateAScrollProps = {
 	...standardProps,
 	isOpen: true,
 };
 
-export const illustrateAScroll: StoryFn<typeof Positioner> =
+export const IllustrateAScroll: StoryFn<typeof Positioner> =
 	WithScrollTemplate.bind(illustrateAScrollProps);
-illustrateAScroll.args = openProps;
-illustrateAScroll.parameters = {
+IllustrateAScroll.args = openProps;
+IllustrateAScroll.parameters = {
 	chromatic: { disableSnapshot: true },
 };

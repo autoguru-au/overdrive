@@ -8,7 +8,7 @@ import { Icon } from '../Icon';
 import { BulletText } from '.';
 
 export default {
-	title: 'Components/BulletText',
+	title: 'Components/Bullet Text',
 	component: BulletText,
 	argTypes: {
 		variant: {

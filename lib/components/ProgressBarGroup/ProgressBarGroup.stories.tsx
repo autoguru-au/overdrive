@@ -5,7 +5,7 @@ import { ComponentProps } from 'react';
 import { ProgressBarGroup } from '.';
 
 export default {
-	title: 'Components/Progress/ProgressBarGroup',
+	title: 'Components/Progress Bar Group',
 	component: ProgressBarGroup,
 } satisfies Meta<typeof ProgressBarGroup>;
 
@@ -18,5 +18,5 @@ const standardProps: ComponentProps<typeof ProgressBarGroup> = {
 	prefixLabels: ['5 star', '4 star', '3 star', '2 star', '1 star'],
 	suffixLabels: values.map((item) => item.toString()),
 };
-export const standard = Template.bind(standardProps);
-standard.args = standardProps;
+export const Standard = Template.bind(standardProps);
+Standard.args = standardProps;

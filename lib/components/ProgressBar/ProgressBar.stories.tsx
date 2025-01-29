@@ -7,7 +7,7 @@ import { Stack } from '../Stack';
 import { ProgressBar } from '.';
 
 export default {
-	title: 'Components/Progress/ProgressBar',
+	title: 'Components/Progress/Progress Bar',
 	component: ProgressBar,
 } satisfies Meta<typeof ProgressBar>;
 
@@ -32,8 +32,8 @@ standard.args = standardProps;
 const withValueProps: ComponentProps<typeof ProgressBar> = {
 	value: 0.3,
 };
-export const withValue = Template.bind(withValueProps);
-withValue.args = withValueProps;
+export const WithValue = Template.bind(withValueProps);
+WithValue.args = withValueProps;
 
-export const allColours = AllColoursTemplate.bind(standardProps);
-allColours.args = standardProps;
+export const AllColours = AllColoursTemplate.bind(standardProps);
+AllColours.args = standardProps;

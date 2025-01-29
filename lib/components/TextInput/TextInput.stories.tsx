@@ -20,7 +20,7 @@ import { DateInput } from '../DateInput';
 import { TextInput } from '.';
 
 export default {
-	title: 'Components/Inputs/Text',
+	title: 'Forms & Input Fields/Text Input',
 	component: TextInput,
 	parameters: { chromatic: {} },
 } satisfies Meta<typeof TextInput>;
@@ -204,110 +204,110 @@ const loadingProps: ComponentProps<typeof TextInput> = {
 	...sharedProps,
 	isLoading: true,
 };
-export const standard = Template.bind(standardProps);
-standard.args = standardProps;
-standard.argTypes = argTypes;
+export const Standard = Template.bind(standardProps);
+Standard.args = standardProps;
+Standard.argTypes = argTypes;
 
-export const withAValue = Template.bind(withAValueProps);
-withAValue.args = withAValueProps;
-withAValue.argTypes = argTypes;
+export const WithAValue = Template.bind(withAValueProps);
+WithAValue.args = withAValueProps;
+WithAValue.argTypes = argTypes;
 
-export const withHintText = Template.bind(withHintTextProps);
-withHintText.args = withHintTextProps;
-withHintText.argTypes = argTypes;
+export const WithHintText = Template.bind(withHintTextProps);
+WithHintText.args = withHintTextProps;
+WithHintText.argTypes = argTypes;
 
-export const notchDisabled = Template.bind(noNotchProps);
-notchDisabled.args = noNotchProps;
-notchDisabled.argTypes = argTypes;
+export const NotchDisabled = Template.bind(noNotchProps);
+NotchDisabled.args = noNotchProps;
+NotchDisabled.argTypes = argTypes;
 
-export const notchDisabledWithValue = Template.bind(noNotchWithValueProps);
-notchDisabledWithValue.args = noNotchWithValueProps;
-notchDisabledWithValue.argTypes = argTypes;
+export const NotchDisabledWithValue = Template.bind(noNotchWithValueProps);
+NotchDisabledWithValue.args = noNotchWithValueProps;
+NotchDisabledWithValue.argTypes = argTypes;
 
-export const withPrefixIcon = Template.bind(withPrefixIconProps);
-withPrefixIcon.args = withPrefixIconProps;
-withPrefixIcon.argTypes = argTypes;
+export const WithPrefixIcon = Template.bind(withPrefixIconProps);
+WithPrefixIcon.args = withPrefixIconProps;
+WithPrefixIcon.argTypes = argTypes;
 
-export const withSuffixIcon = Template.bind(withSuffixIconProps);
-withSuffixIcon.args = withSuffixIconProps;
-withSuffixIcon.argTypes = argTypes;
+export const WithSuffixIcon = Template.bind(withSuffixIconProps);
+WithSuffixIcon.args = withSuffixIconProps;
+WithSuffixIcon.argTypes = argTypes;
 
-export const withBothIcons = Template.bind(withBothIconsProps);
-withBothIcons.args = withBothIconsProps;
-withBothIcons.argTypes = argTypes;
+export const WithBothIcons = Template.bind(withBothIconsProps);
+WithBothIcons.args = withBothIconsProps;
+WithBothIcons.argTypes = argTypes;
 
-export const attachedLeft = Template.bind(attachedLeftProps);
-attachedLeft.args = attachedLeftProps;
-attachedLeft.argTypes = argTypes;
+export const AttachedLeft = Template.bind(attachedLeftProps);
+AttachedLeft.args = attachedLeftProps;
+AttachedLeft.argTypes = argTypes;
 
-export const attachedTop = Template.bind(attachedTopProps);
-attachedTop.args = attachedTopProps;
-attachedTop.argTypes = argTypes;
+export const AttachedTop = Template.bind(attachedTopProps);
+AttachedTop.args = attachedTopProps;
+AttachedTop.argTypes = argTypes;
 
-export const attachedRight = Template.bind(attachedRightProps);
-attachedRight.args = attachedRightProps;
-attachedRight.argTypes = argTypes;
+export const AttachedRight = Template.bind(attachedRightProps);
+AttachedRight.args = attachedRightProps;
+AttachedRight.argTypes = argTypes;
 
-export const attachedBottom = Template.bind(attachedBottomProps);
-attachedBottom.args = attachedBottomProps;
-attachedBottom.argTypes = argTypes;
+export const AttachedBottom = Template.bind(attachedBottomProps);
+AttachedBottom.args = attachedBottomProps;
+AttachedBottom.argTypes = argTypes;
 
-export const attachedAll = Template.bind(attachedAllProps);
-attachedAll.args = attachedAllProps;
-attachedAll.argTypes = argTypes;
+export const AttachedAll = Template.bind(attachedAllProps);
+AttachedAll.args = attachedAllProps;
+AttachedAll.argTypes = argTypes;
 
-export const mergedLeft = Template.bind(mergedLeftProps);
-mergedLeft.args = mergedLeftProps;
-mergedLeft.argTypes = argTypes;
+export const MergedLeft = Template.bind(mergedLeftProps);
+MergedLeft.args = mergedLeftProps;
+MergedLeft.argTypes = argTypes;
 
-export const mergedTop = Template.bind(mergedTopProps);
-mergedTop.args = mergedTopProps;
-mergedTop.argTypes = argTypes;
+export const MergedTop = Template.bind(mergedTopProps);
+MergedTop.args = mergedTopProps;
+MergedTop.argTypes = argTypes;
 
-export const mergedRight = Template.bind(mergedRightProps);
-mergedRight.args = mergedRightProps;
-mergedRight.argTypes = argTypes;
+export const MergedRight = Template.bind(mergedRightProps);
+MergedRight.args = mergedRightProps;
+MergedRight.argTypes = argTypes;
 
-export const mergedBottom = Template.bind(mergedBottomProps);
-mergedBottom.args = mergedBottomProps;
-mergedBottom.argTypes = argTypes;
+export const MergedBottom = Template.bind(mergedBottomProps);
+MergedBottom.args = mergedBottomProps;
+MergedBottom.argTypes = argTypes;
 
-export const mergedAll = Template.bind(mergedAllProps);
-mergedAll.args = mergedAllProps;
-mergedAll.argTypes = argTypes;
+export const MergedAll = Template.bind(mergedAllProps);
+MergedAll.args = mergedAllProps;
+MergedAll.argTypes = argTypes;
 
-export const disabled = Template.bind(disabledProps);
-disabled.args = disabledProps;
-disabled.argTypes = argTypes;
+export const Disabled = Template.bind(disabledProps);
+Disabled.args = disabledProps;
+Disabled.argTypes = argTypes;
 
-export const valid = Template.bind(validProps);
-valid.args = validProps;
-valid.argTypes = argTypes;
+export const Valid = Template.bind(validProps);
+Valid.args = validProps;
+Valid.argTypes = argTypes;
 
-export const invalid = Template.bind(invalidProps);
-invalid.args = invalidProps;
-invalid.argTypes = argTypes;
+export const Invalid = Template.bind(invalidProps);
+Invalid.args = invalidProps;
+Invalid.argTypes = argTypes;
 
-export const loading = Template.bind(loadingProps);
-loading.args = loadingProps;
-loading.argTypes = argTypes;
+export const Loading = Template.bind(loadingProps);
+Loading.args = loadingProps;
+Loading.argTypes = argTypes;
 
 const smallProps: typeof standardProps = {
 	...standardProps,
 	size: 'small',
 };
-export const small = Template.bind(smallProps);
-small.args = smallProps;
-small.argTypes = argTypes;
+export const Small = Template.bind(smallProps);
+Small.args = smallProps;
+Small.argTypes = argTypes;
 
 const withValueSmallProps: typeof withAValueProps = {
 	...withAValueProps,
 	size: 'small',
 };
 
-export const withValueSmall = Template.bind(withValueSmallProps);
-withValueSmall.args = withValueSmallProps;
-withValueSmall.argTypes = argTypes;
+export const WithValueSmall = Template.bind(withValueSmallProps);
+WithValueSmall.args = withValueSmallProps;
+WithValueSmall.argTypes = argTypes;
 
 const withIconSmallProps: typeof withAValueProps = {
 	...withAValueProps,
@@ -315,15 +315,15 @@ const withIconSmallProps: typeof withAValueProps = {
 	size: 'small',
 };
 
-export const withIconSmall = Template.bind(withIconSmallProps);
-withIconSmall.args = withIconSmallProps;
-withIconSmall.argTypes = argTypes;
+export const WithIconSmall = Template.bind(withIconSmallProps);
+WithIconSmall.args = withIconSmallProps;
+WithIconSmall.argTypes = argTypes;
 
 const loadingSmallProps: typeof withAValueProps = {
 	...withAValueProps,
 	isLoading: true,
 	size: 'small',
 };
-export const loadingSmall = Template.bind(loadingSmallProps);
-loadingSmall.args = loadingSmallProps;
-loadingSmall.argTypes = argTypes;
+export const LoadingSmall = Template.bind(loadingSmallProps);
+LoadingSmall.args = loadingSmallProps;
+LoadingSmall.argTypes = argTypes;

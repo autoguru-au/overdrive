@@ -6,7 +6,7 @@ import { Text } from '../Text';
 import { VisuallyHidden } from '.';
 
 export default {
-	title: 'Utility/VisuallyHidden',
+	title: 'Layout/Visually Hidden',
 	component: VisuallyHidden,
 	args: {
 		as: 'div',

@@ -55,7 +55,7 @@ const colourOptions: Array<ComponentProps<typeof Text>['colour']> = [
 ];
 
 export default {
-	title: 'Foundation/Typography/Text',
+	title: 'Primatives/Text',
 	//component: Text, Breaks the docs when enabled!
 	decorators: [],
 } satisfies Meta<typeof Text>;
@@ -171,21 +171,21 @@ const allTypesProps: ComponentProps<typeof Text> = {
 		'To avoid you coming to a halt in the middle of the road, because of a banging, crash of pistons and valves fighting with each other, let investigate what the timing belt is, what it does, and why it costs so much to replace or repair.',
 };
 
-export const standard = Template.bind(standardProps);
-standard.args = standardProps;
-standard.argTypes = argTypes;
+export const Standard = Template.bind(standardProps);
+Standard.args = standardProps;
+Standard.argTypes = argTypes;
 
-export const allTypes = AllTypesTemplate.bind(allTypesProps);
-allTypes.args = allTypesProps;
-allTypes.argTypes = { ...sharedArgTypes, ...colourArgTypes };
+export const AllTypes = AllTypesTemplate.bind(allTypesProps);
+AllTypes.args = allTypesProps;
+AllTypes.argTypes = { ...sharedArgTypes, ...colourArgTypes };
 
-export const allSizes = AllSizesTemplate.bind(allTypesProps);
-allSizes.args = allTypesProps;
-allSizes.argTypes = argTypes;
+export const AllSizes = AllSizesTemplate.bind(allTypesProps);
+AllSizes.args = allTypesProps;
+AllSizes.argTypes = argTypes;
 
-export const allColours = AllColoursTemplate.bind(allTypesProps);
-allColours.args = allTypesProps;
-allColours.argTypes = argTypes;
+export const AllColours = AllColoursTemplate.bind(allTypesProps);
+AllColours.args = allTypesProps;
+AllColours.argTypes = argTypes;
 
 const withLongUnspacedTextProps: ComponentProps<typeof Text> = {
 	breakWord: true,
@@ -193,6 +193,6 @@ const withLongUnspacedTextProps: ComponentProps<typeof Text> = {
 		'Toavoidyoucomingtoahaltinthemiddleoftheroad,becauseofabanging,crashofpistonsandvalvesfightingwitheachother,letinvestigatewhatthetiming belt is, what it does, and why it costs so much to replace or repair.',
 };
 
-export const withLongUnspacedText = Template.bind(withLongUnspacedTextProps);
-withLongUnspacedText.args = withLongUnspacedTextProps;
-withLongUnspacedText.argTypes = argTypes;
+export const WithLongUnspacedText = Template.bind(withLongUnspacedTextProps);
+WithLongUnspacedText.args = withLongUnspacedTextProps;
+WithLongUnspacedText.argTypes = argTypes;

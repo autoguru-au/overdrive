@@ -21,7 +21,7 @@ const spacingOptions: Record<string, ComponentProps<typeof Stack>['space']> = {
 };
 
 export default {
-	title: 'Foundation/Layout/Stack',
+	title: 'Layout/Stack',
 	component: Stack,
 	argTypes: {
 		space: {
@@ -50,15 +50,15 @@ const standardProps: Omit<ComponentProps<typeof Stack>, 'children'> = {
 	width: void 0,
 	is: 'div',
 };
-export const standard = Template.bind(standardProps);
-standard.args = standardProps;
+export const Standard = Template.bind(standardProps);
+Standard.args = standardProps;
 
 const asSectionProps: Omit<ComponentProps<typeof Stack>, 'children'> = {
 	...standardProps,
 	is: 'section',
 };
-export const asSection = Template.bind(asSectionProps);
-asSection.args = asSectionProps;
+export const AsSection = Template.bind(asSectionProps);
+AsSection.args = asSectionProps;
 
 const withDividersProps: Omit<ComponentProps<typeof Stack>, 'children'> = {
 	...standardProps,
@@ -66,8 +66,8 @@ const withDividersProps: Omit<ComponentProps<typeof Stack>, 'children'> = {
 	dividers: true,
 	space: '3',
 };
-export const withDividers = Template.bind(withDividersProps);
-withDividers.args = withDividersProps;
+export const WithDividers = Template.bind(withDividersProps);
+WithDividers.args = withDividersProps;
 
 const withAlignmentProps: Omit<ComponentProps<typeof Stack>, 'children'> = {
 	...standardProps,
@@ -76,5 +76,5 @@ const withAlignmentProps: Omit<ComponentProps<typeof Stack>, 'children'> = {
 	space: '3',
 	alignItems: 'center',
 };
-export const withAlignment = Template.bind(withAlignmentProps);
-withAlignment.args = withAlignmentProps;
+export const WithAlignment = Template.bind(withAlignmentProps);
+WithAlignment.args = withAlignmentProps;

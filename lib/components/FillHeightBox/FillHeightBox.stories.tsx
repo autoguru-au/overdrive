@@ -9,7 +9,7 @@ import { Text } from '../Text';
 import { FillHeightBox } from './FillHeightBox';
 
 export default {
-	title: 'Foundation/Layout/FillHeightBox',
+	title: 'Layout/Fill Height Box',
 	component: StickyBox,
 } satisfies Meta<typeof StickyBox>;
 
@@ -41,5 +41,5 @@ const Template: StoryFn<typeof StickyBox> = (args) => (
 const standardProps: Props = {
 	top: 'none',
 };
-export const standard = Template.bind(standardProps);
-standard.args = standardProps;
+export const Standard = Template.bind(standardProps);
+Standard.args = standardProps;

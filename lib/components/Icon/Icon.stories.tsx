@@ -31,7 +31,7 @@ const iconOptions = {
 };
 
 export default {
-	title: 'Foundation/Icon',
+	title: 'Primatives/Icon',
 	component: Icon,
 	decorators: [],
 	argTypes: {
@@ -55,26 +55,26 @@ const template: StoryFn<typeof Icon> = (args) => <Icon {...args} />;
 const standardProps: ComponentProps<typeof Icon> = {
 	icon: CalendarIcon,
 };
-export const standard = template.bind(standardProps);
-standard.args = standardProps;
+export const Standard = template.bind(standardProps);
+Standard.args = standardProps;
 
 const responsiveProps: ComponentProps<typeof Icon> = {
 	...standardProps,
 	size: ['small', 'medium', 'large'],
 };
-export const responsive = template.bind(responsiveProps);
-responsive.args = responsiveProps;
+export const Responsive = template.bind(responsiveProps);
+Responsive.args = responsiveProps;
 
 const mediumProps: ComponentProps<typeof Icon> = {
 	...standardProps,
 	size: 'medium',
 };
-export const medium = template.bind(mediumProps);
-medium.args = mediumProps;
+export const Medium = template.bind(mediumProps);
+Medium.args = mediumProps;
 
 const largeProps: ComponentProps<typeof Icon> = {
 	...standardProps,
 	size: 'large',
 };
-export const large = template.bind(largeProps);
-large.args = largeProps;
+export const Large = template.bind(largeProps);
+Large.args = largeProps;

@@ -4,7 +4,7 @@ import * as React from 'react';
 import { EStarRatingSize, StarRating } from '.';
 
 export default {
-	title: 'Components/StarRating',
+	title: 'Components/Star Rating',
 	component: StarRating,
 	argTypes: {
 		size: {
@@ -31,21 +31,21 @@ const standardProps = {
 	size: EStarRatingSize.Medium,
 	label: '',
 };
-export const standard = Template.bind(standardProps);
-standard.args = standardProps;
+export const Standard = Template.bind(standardProps);
+Standard.args = standardProps;
 
 const smallSizeProps = {
 	rating: 3.2,
 	size: EStarRatingSize.Small,
 	label: '',
 };
-export const smallSize = Template.bind(smallSizeProps);
-smallSize.args = smallSizeProps;
+export const SmallSize = Template.bind(smallSizeProps);
+SmallSize.args = smallSizeProps;
 
 const withLabelProps = {
 	rating: 3.9,
 	size: EStarRatingSize.Medium,
 	label: 'product rating',
 };
-export const withLabel = Template.bind(withLabelProps);
-withLabel.args = withLabelProps;
+export const WithLabel = Template.bind(withLabelProps);
+WithLabel.args = withLabelProps;

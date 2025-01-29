@@ -5,7 +5,7 @@ import { ComponentProps } from 'react';
 import { NumberBubble } from '.';
 
 export default {
-	title: 'Foundation/Typography/NumberBubble',
+	title: 'Components/Number Bubble',
 	component: NumberBubble,
 } satisfies Meta<typeof NumberBubble>;
 
@@ -16,11 +16,11 @@ const template: StoryFn<typeof NumberBubble> = (args) => (
 const standardProps: Omit<ComponentProps<typeof NumberBubble>, 'children'> = {
 	value: 0,
 };
-export const standard = template.bind(standardProps);
-standard.args = standardProps;
+export const Standard = template.bind(standardProps);
+Standard.args = standardProps;
 
 const bigNumberProps: Omit<ComponentProps<typeof NumberBubble>, 'children'> = {
 	value: 2345,
 };
-export const bigNumber = template.bind(bigNumberProps);
-bigNumber.args = bigNumberProps;
+export const BigNumber = template.bind(bigNumberProps);
+BigNumber.args = bigNumberProps;

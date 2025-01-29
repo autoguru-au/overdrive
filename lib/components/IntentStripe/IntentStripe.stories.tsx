@@ -8,7 +8,7 @@ import { IntentStripe } from '.';
 
 type Intent = ComponentProps<typeof IntentStripe>['intent'];
 export default {
-	title: 'Components/IntentStripe',
+	title: 'Components/Intent Stripe',
 	component: IntentStripe,
 	argTypes: {
 		intent: {

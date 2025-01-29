@@ -7,7 +7,7 @@ import { Box } from '../Box';
 import { Pagination } from '.';
 
 export default {
-	title: 'Components/Pagination/Numbered',
+	title: 'Components/Pagination',
 	component: Pagination,
 } satisfies Meta<typeof Pagination>;
 
@@ -34,16 +34,16 @@ const standardProps = {
 	loading: false,
 	onChange: action('onChange'),
 };
-export const standard: StoryFn<typeof Pagination> =
+export const Standard: StoryFn<typeof Pagination> =
 	Template.bind(standardProps);
-standard.args = standardProps;
+Standard.args = standardProps;
 
 const loadingProps = {
 	...standardProps,
 	loading: true,
 };
-export const loading: StoryFn<typeof Pagination> = Template.bind(loadingProps);
-loading.args = loadingProps;
+export const Loading: StoryFn<typeof Pagination> = Template.bind(loadingProps);
+Loading.args = loadingProps;
 
 const lessThanMaxPagesProps = {
 	...standardProps,
@@ -52,10 +52,10 @@ const lessThanMaxPagesProps = {
 	pageSize: 10,
 	numPagesDisplayed: 5,
 };
-export const lessThanMaxPages: StoryFn<typeof Pagination> = Template.bind(
+export const LessThanMaxPages: StoryFn<typeof Pagination> = Template.bind(
 	lessThanMaxPagesProps,
 );
-lessThanMaxPages.args = lessThanMaxPagesProps;
+LessThanMaxPages.args = lessThanMaxPagesProps;
 
 const allPagesFitProps = {
 	...standardProps,
@@ -64,9 +64,9 @@ const allPagesFitProps = {
 	pageSize: 10,
 	numPagesDisplayed: 5,
 };
-export const allPagesFit: StoryFn<typeof Pagination> =
+export const AllPagesFit: StoryFn<typeof Pagination> =
 	Template.bind(allPagesFitProps);
-allPagesFit.args = allPagesFitProps;
+AllPagesFit.args = allPagesFitProps;
 
 const jumpForwardStartProps = {
 	...standardProps,
@@ -75,10 +75,10 @@ const jumpForwardStartProps = {
 	pageSize: 10,
 	numPagesDisplayed: 5,
 };
-export const jumpForwardStart: StoryFn<typeof Pagination> = Template.bind(
+export const JumpForwardStart: StoryFn<typeof Pagination> = Template.bind(
 	jumpForwardStartProps,
 );
-jumpForwardStart.args = jumpForwardStartProps;
+JumpForwardStart.args = jumpForwardStartProps;
 
 const jumpForwardMiddleProps = {
 	...standardProps,
@@ -87,10 +87,10 @@ const jumpForwardMiddleProps = {
 	pageSize: 10,
 	numPagesDisplayed: 5,
 };
-export const jumpForwardMiddle: StoryFn<typeof Pagination> = Template.bind(
+export const JumpForwardMiddle: StoryFn<typeof Pagination> = Template.bind(
 	jumpForwardMiddleProps,
 );
-jumpForwardMiddle.args = jumpForwardMiddleProps;
+JumpForwardMiddle.args = jumpForwardMiddleProps;
 
 const lastChunkStartProps = {
 	...standardProps,
@@ -99,9 +99,9 @@ const lastChunkStartProps = {
 	pageSize: 10,
 	numPagesDisplayed: 5,
 };
-export const lastChunkStart: StoryFn<typeof Pagination> =
+export const LastChunkStart: StoryFn<typeof Pagination> =
 	Template.bind(lastChunkStartProps);
-lastChunkStart.args = lastChunkStartProps;
+LastChunkStart.args = lastChunkStartProps;
 
 const lastChunkMiddleProps = {
 	...standardProps,
@@ -110,9 +110,9 @@ const lastChunkMiddleProps = {
 	pageSize: 10,
 	numPagesDisplayed: 5,
 };
-export const lastChunkMiddle: StoryFn<typeof Pagination> =
+export const LastChunkMiddle: StoryFn<typeof Pagination> =
 	Template.bind(lastChunkMiddleProps);
-lastChunkMiddle.args = lastChunkMiddleProps;
+LastChunkMiddle.args = lastChunkMiddleProps;
 
 const jumpBackStartProps = {
 	...standardProps,
@@ -121,9 +121,9 @@ const jumpBackStartProps = {
 	pageSize: 10,
 	numPagesDisplayed: 5,
 };
-export const jumpBackStart: StoryFn<typeof Pagination> =
+export const JumpBackStart: StoryFn<typeof Pagination> =
 	Template.bind(jumpBackStartProps);
-jumpBackStart.args = lastChunkMiddleProps;
+JumpBackStart.args = lastChunkMiddleProps;
 
 const jumpBackMiddleProps = {
 	...standardProps,
@@ -132,9 +132,9 @@ const jumpBackMiddleProps = {
 	pageSize: 10,
 	numPagesDisplayed: 5,
 };
-export const jumpBackMiddle: StoryFn<typeof Pagination> =
+export const JumpBackMiddle: StoryFn<typeof Pagination> =
 	Template.bind(jumpBackMiddleProps);
-jumpBackMiddle.args = jumpBackMiddleProps;
+JumpBackMiddle.args = jumpBackMiddleProps;
 
 const jumpBackEndProps = {
 	...standardProps,
@@ -143,6 +143,6 @@ const jumpBackEndProps = {
 	pageSize: 10,
 	numPagesDisplayed: 5,
 };
-export const jumpBackEnd: StoryFn<typeof Pagination> =
+export const JumpBackEnd: StoryFn<typeof Pagination> =
 	Template.bind(jumpBackEndProps);
-jumpBackEnd.args = jumpBackEndProps;
+JumpBackEnd.args = jumpBackEndProps;

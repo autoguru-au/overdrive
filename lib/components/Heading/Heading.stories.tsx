@@ -64,7 +64,7 @@ const colourOptions: Array<ComponentProps<typeof Heading>['colour']> = [
 ];
 
 export default {
-	title: 'Foundation/Typography/Heading',
+	title: 'Primatives/Heading',
 	// component: Heading, Breaks the docs when enabled!
 	argTypes: {
 		noWrap: {
@@ -162,11 +162,11 @@ const standardProps: ComponentProps<typeof Heading> = {
 const allTypesProps: ComponentProps<typeof Heading> = {
 	children: 'I am a heading',
 };
-export const standard = Template.bind(standardProps);
-standard.args = standardProps;
+export const Standard = Template.bind(standardProps);
+Standard.args = standardProps;
 
-export const allTypes = AllTypesTemplate.bind(allTypesProps);
-allTypes.args = allTypesProps;
+export const AllTypes = AllTypesTemplate.bind(allTypesProps);
+AllTypes.args = allTypesProps;
 
-export const allColours = AllColoursTemplate.bind(allTypesProps);
-allColours.args = allTypesProps;
+export const AllColours = AllColoursTemplate.bind(allTypesProps);
+AllColours.args = allTypesProps;
