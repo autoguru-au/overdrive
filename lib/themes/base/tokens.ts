@@ -226,6 +226,7 @@ export const tokens: Tokens = {
 			min: '2px',
 			'1': '4px',
 			'2': '6px',
+			'3': '8px',
 			pill: `${1e9}px`,
 			full: '50%',
 		},
