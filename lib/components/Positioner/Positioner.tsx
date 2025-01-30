@@ -47,7 +47,7 @@ export interface Props
 	> {
 	alignment?: EAlignment;
 	isOpen?: boolean;
-	triggerRef: RefObject<HTMLElement>;
+	triggerRef: RefObject<HTMLElement | null>;
 	triggerOffset?: number;
 	children?: ReactNode;
 }

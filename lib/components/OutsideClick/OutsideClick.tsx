@@ -12,7 +12,7 @@ import {
 import { noop } from '../../utils';
 
 export const useOutsideClick = (
-	refs: Array<RefObject<HTMLElement>>,
+	refs: Array<RefObject<HTMLElement | null>>,
 	onClickAway: () => void,
 ) => {
 	const callbackRef = useRef(onClickAway);
@@ -84,6 +84,7 @@ export const OutsideClick: FunctionComponent<Props> = ({
 	useOutsideClick([rootClickRef], onOutsideClick);
 
 	return cloneElement(child, {
+		// @ts-expect-error Object literal may only specify known properties, and 'ref' does not exist in type
 		ref: rootClickRef,
 	});
 };
