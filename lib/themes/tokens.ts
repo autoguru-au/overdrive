@@ -170,6 +170,7 @@ export interface Tokens extends VanillaTokens {
 			min: string;
 			'1': string;
 			'2': string;
+			'3': string;
 			pill: string;
 			full: string;
 		};

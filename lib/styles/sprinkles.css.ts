@@ -52,6 +52,15 @@ const spaceProperties = defineProperties({
 const typographyProperties = defineProperties({
 	properties: {
 		fontSize: {
+			'1': typography.size[1].fontSize,
+			'2': typography.size[2].fontSize,
+			'3': typography.size[3].fontSize,
+			'4': typography.size[4].fontSize,
+			'5': typography.size[5].fontSize,
+			'6': typography.size[6].fontSize,
+			'7': typography.size[7].fontSize,
+			'8': typography.size[8].fontSize,
+			'9': typography.size[9].fontSize,
 			xxs: typography.size[1].fontSize,
 			xs: typography.size[2].fontSize,
 			sm: typography.size[3].fontSize,
@@ -63,6 +72,15 @@ const typographyProperties = defineProperties({
 			'3xl': typography.size[9].fontSize,
 		},
 		lineHeight: {
+			'1': typography.size[1].lineHeight,
+			'2': typography.size[2].lineHeight,
+			'3': typography.size[3].lineHeight,
+			'4': typography.size[4].lineHeight,
+			'5': typography.size[5].lineHeight,
+			'6': typography.size[6].lineHeight,
+			'7': typography.size[7].lineHeight,
+			'8': typography.size[8].lineHeight,
+			'9': typography.size[9].lineHeight,
 			xxs: typography.size[1].lineHeight,
 			xs: typography.size[2].lineHeight,
 			sm: typography.size[3].lineHeight,

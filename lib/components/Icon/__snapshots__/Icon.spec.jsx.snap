@@ -2,11 +2,11 @@
 
 exports[`<Icon /> should match snapshot for same icon 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lft Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+  class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire0"
 >
   <svg
     aria-hidden="true"
-    class="useBoxStyles_display_block__3xgq1lft useBoxStyles_width_full__3xgq1lff useBoxStyles_height_full__3xgq1lfh"
+    class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
     viewBox="0 0 512 512"
     xmlns="http://www.w3.org/2000/svg"
   >

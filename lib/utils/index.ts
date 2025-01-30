@@ -1,4 +1,4 @@
-import type { Ref } from 'react';
+import type { Ref, RefCallback, RefObject } from 'react';
 import {
 	useCallback,
 	useEffect,
@@ -80,6 +80,25 @@ export const setRef = <T>(ref: Ref<T>, value: T) => {
 		(ref as any).current = value;
 	}
 };
+
+/**
+ * Used to merge multiple refs into a single ref callback
+ * @param refs an array of refs
+ */
+// using an arrow function here causes a typescript error with the `RefCallback` type
+export function mergeRefs<T>(
+	refs: Array<Ref<T> | undefined | null>,
+): RefCallback<T> {
+	return (value) => {
+		refs.forEach((ref) => {
+			if (ref instanceof Function) {
+				ref(value);
+			} else if (ref != null && typeof ref === 'object') {
+				(ref as RefObject<T | null>).current = value;
+			}
+		});
+	};
+}
 
 export const isHtmlElement = (element: any): element is Element =>
 	element instanceof Element || element instanceof HTMLDocument;

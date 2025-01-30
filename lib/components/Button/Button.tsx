@@ -18,6 +18,8 @@ import {
 	useState,
 } from 'react';
 
+import type { WithTestId } from '../../types';
+import { dataAttrs } from '../../utils/dataAttrs';
 import { Box, useBoxStyles } from '../Box';
 import { Icon } from '../Icon';
 import { ProgressSpinner } from '../ProgressSpinner';
@@ -31,7 +33,7 @@ type AllowedChildren = string | IconType;
 
 const DOUBLE_CLICK_DETECTION_PERIOD = 700;
 
-export interface Props
+export interface ButtonProps
 	extends Pick<ButtonPrimitive, 'id' | 'onClick' | 'type' | 'className'>,
 		Pick<AriaAttributes, 'aria-label'> {
 	children: AllowedChildren | AllowedChildren[];
@@ -65,7 +67,42 @@ const getPadding: (
 	return size === 'small' ? '3' : '4';
 };
 
-export const Button = forwardRef<HTMLButtonElement, Props>(
+const getButtonStates: (
+	buttonStyles: typeof styles,
+	variant: keyof typeof styles.variant,
+	disabled: boolean,
+	minimal: boolean,
+	rounded: boolean,
+) => string = (buttonStyles, variant, disabled, minimal, rounded) => {
+	if (disabled)
+		return minimal
+			? clsx(buttonStyles.minimal.defaults, {
+					[buttonStyles.minimal.noneRounded]: !rounded,
+				})
+			: '';
+
+	if (minimal)
+		return clsx(styles.minimal.defaults, styles.minimalStates[variant], {
+			[styles.minimal.noneRounded]: !rounded,
+		});
+	return styles.defaultStates[variant];
+};
+
+const getButtonSize: (
+	buttonStyles: typeof styles,
+	size: keyof typeof styles.size,
+	rounded: boolean,
+	iconOnly: boolean,
+) => string = (buttonStyles, size, rounded, iconOnly) => {
+	const currentSize = buttonStyles.size[size];
+
+	return clsx(currentSize.default, {
+		[currentSize.rounded]: rounded,
+		[currentSize.iconOnly]: iconOnly,
+	});
+};
+
+export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 	(
 		{
 			children,
@@ -83,6 +120,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 			type = 'button',
 			variant = 'secondary',
 			'aria-label': ariaLabel,
+			testId,
 		},
 		ref,
 	) => {
@@ -230,6 +268,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 				alignItems="center"
 				justifyContent="center"
 				className={styles.body}
+				{...dataAttrs({ 'data-testid': testId })}
 			>
 				{buttonContents}
 			</Box>
@@ -242,40 +281,5 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 				createElement(Component, { ref, ...props }, child);
 	},
 );
-
-const getButtonStates: (
-	buttonStyles: typeof styles,
-	variant: keyof typeof styles.variant,
-	disabled: boolean,
-	minimal: boolean,
-	rounded: boolean,
-) => string = (buttonStyles, variant, disabled, minimal, rounded) => {
-	if (disabled)
-		return minimal
-			? clsx(buttonStyles.minimal.defaults, {
-					[buttonStyles.minimal.noneRounded]: !rounded,
-				})
-			: '';
-
-	if (minimal)
-		return clsx(styles.minimal.defaults, styles.minimalStates[variant], {
-			[styles.minimal.noneRounded]: !rounded,
-		});
-	return styles.defaultStates[variant];
-};
-
-const getButtonSize: (
-	buttonStyles: typeof styles,
-	size: keyof typeof styles.size,
-	rounded: boolean,
-	iconOnly: boolean,
-) => string = (buttonStyles, size, rounded, iconOnly) => {
-	const currentSize = buttonStyles.size[size];
-
-	return clsx(currentSize.default, {
-		[currentSize.rounded]: rounded,
-		[currentSize.iconOnly]: iconOnly,
-	});
-};
 
 export default Button;
