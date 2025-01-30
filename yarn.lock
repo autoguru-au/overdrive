@@ -124,6 +124,7 @@ __metadata:
     "@babel/runtime-corejs3": "npm:^7.26.7"
     "@changesets/cli": "npm:^2.27.12"
     "@chromatic-com/storybook": "npm:^3.2.4"
+    "@internationalized/date": "npm:^3.7.0"
     "@octokit/rest": "npm:^21.1.0"
     "@popperjs/core": "npm:^2.11.8"
     "@react-stately/toggle": "npm:^3.8.1"
