@@ -172,10 +172,10 @@
 		"webpack": "*"
 	},
 	"resolutions": {
-		"@joshwooding/vite-plugin-react-docgen-typescript": "0.3.0"
+		"@joshwooding/vite-plugin-react-docgen-typescript": "0.5.0"
 	},
 	"overrides": {
-		"@joshwooding/vite-plugin-react-docgen-typescript": "0.3.0"
+		"@joshwooding/vite-plugin-react-docgen-typescript": "0.5.0"
 	},
 	"volta": {
 		"node": "20.18.1",
