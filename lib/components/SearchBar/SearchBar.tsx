@@ -12,6 +12,7 @@ import { useSearchFieldState } from 'react-stately';
 
 import { odStyle } from '../../styles/sprinkles.css';
 import type { WithTestId } from '../../types';
+import { mergeRefs } from '../../utils';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Icon } from '../Icon';
 
@@ -22,7 +23,7 @@ import {
 } from './SearchBar.css';
 
 const defaultEnglish = {
-	label: 'Search for tasks',
+	label: 'Search',
 	clear: 'clear search',
 } as const;
 
@@ -41,6 +42,10 @@ interface SearchBarProps extends AriaSearchFieldProps {
 	 * Language content override
 	 */
 	lang?: Partial<Record<TextContent, string>>;
+	/**
+	 * Optional forwarded ref for the input element (React 19)
+	 */
+	ref?: React.Ref<HTMLInputElement>;
 }
 
 const ReactAriaButton = (props: AriaButtonProps & { className: string }) => {
@@ -62,10 +67,11 @@ const ReactAriaButton = (props: AriaButtonProps & { className: string }) => {
  * It is recommended to use the `onChange` prop to handle the input content, uncontrolled.
  */
 export const SearchBar = (componentProps: WithTestId<SearchBarProps>) => {
+	const { label, placeholder, ref: refForwarded } = componentProps;
 	const textLabel =
-		(componentProps.label as string) ??
-		componentProps.placeholder ??
-		defaultEnglish.label;
+		((label as string) ?? placeholder?.length)
+			? placeholder
+			: defaultEnglish.label;
 	const props = {
 		...componentProps,
 		'aria-label': textLabel,
@@ -123,7 +129,7 @@ export const SearchBar = (componentProps: WithTestId<SearchBarProps>) => {
 				<input
 					{...mergeProps(inputProps, focusProps)}
 					className={styledInput({})}
-					ref={refInput}
+					ref={mergeRefs([refInput, refForwarded])}
 				/>
 				<ClearButton />
 			</div>

@@ -4,7 +4,7 @@ import { expect, fn, within, userEvent } from '@storybook/test';
 import { SearchBar } from './SearchBar';
 
 const meta: Meta = {
-	title: 'Components/Search Input',
+	title: 'Forms & Input Fields/Search Input',
 	component: SearchBar,
 	args: {
 		placeholder: 'Search for tasks',
