@@ -8,7 +8,10 @@ import {
 } from 'react-aria';
 import type { CalendarState } from 'react-stately';
 
+import { odStyle } from '../../styles/sprinkles.css';
 import { dataAttrs } from '../../utils/dataAttrs';
+
+import { styledCell } from './DateTimePicker.css';
 
 const CalendarCell = ({ state, date }) => {
 	const ref = React.useRef(null);
@@ -23,11 +26,12 @@ const CalendarCell = ({ state, date }) => {
 	} = useCalendarCell({ date }, state, ref);
 
 	return (
-		<td {...cellProps}>
+		<td {...cellProps} className={odStyle({ padding: '1' })}>
 			<div
 				{...buttonProps}
 				ref={ref}
 				hidden={isOutsideVisibleRange}
+				className={styledCell()}
 				{...dataAttrs({
 					selected: isSelected,
 					disabled: isDisabled,
@@ -55,11 +59,21 @@ export const CalendarGrid = ({
 	);
 
 	return (
-		<table {...gridProps}>
+		<table
+			{...gridProps}
+			className={odStyle({ width: { mobile: '100%', tablet: 'auto' } })}
+		>
 			<thead {...headerProps}>
 				<tr>
 					{weekDays.map((day, index) => (
-						<th key={index}>{day}</th>
+						<th
+							key={index}
+							className={odStyle({
+								color: 'gray600',
+							})}
+						>
+							{day}
+						</th>
 					))}
 				</tr>
 			</thead>

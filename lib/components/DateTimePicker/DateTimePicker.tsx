@@ -1,3 +1,4 @@
+import { ChevronLeftIcon, ChevronRightIcon } from '@autoguru/icons';
 import {
 	getLocalTimeZone,
 	// currently only supporting western-style Gregorian calendar
@@ -6,7 +7,6 @@ import {
 } from '@internationalized/date';
 import React from 'react';
 import {
-	useButton,
 	useCalendar,
 	useDateFormatter,
 	useLocale,
@@ -16,13 +16,17 @@ import {
 import { useCalendarState } from 'react-stately';
 
 import { odStyle } from '../../styles/sprinkles.css';
+import { Icon } from '../Icon';
 import { OptionGrid, OptionItem } from '../OptionGrid/OptionGrid';
 
+import { CalendarButton } from './CalendarButton';
 import { CalendarGrid } from './CalendarGrid';
 
 const defaultEnglish = {
 	dateLabel: 'Date',
 	timeLabel: 'Time',
+	nextLabel: 'Next',
+	prevLabel: 'Prev',
 } as const;
 
 type LangContent = keyof typeof defaultEnglish;
@@ -58,16 +62,6 @@ function createCalendar(identifier) {
 	}
 
 	throw new Error(`Unsupported calendar configured ${identifier}`);
-}
-
-function CalendarButton(props) {
-	const ref = React.useRef(null);
-	const { buttonProps } = useButton(props, ref);
-	return (
-		<button {...buttonProps} ref={ref}>
-			{props.children}
-		</button>
-	);
 }
 
 const dateTextPunctuationEN = (text: string) =>
@@ -122,8 +116,8 @@ export const DateTimePicker = <D extends DateValue>({
 		<div>
 			<div
 				className={odStyle({
-					display: 'flex',
-					gap: '5',
+					display: { tablet: 'flex' },
+					gap: '7',
 				})}
 			>
 				<div className={odStyle({ flexShrink: 0 })}>
@@ -137,14 +131,36 @@ export const DateTimePicker = <D extends DateValue>({
 					</h3>
 					<div
 						{...calendarProps}
-						className={odStyle({ display: 'flex' })}
+						className={odStyle({
+							alignItems: 'center',
+							display: 'flex',
+							justifyContent: 'space-between',
+							marginBottom: '2',
+						})}
 					>
-						<CalendarButton {...prevButtonProps}>
-							Prev
+						<CalendarButton
+							{...prevButtonProps}
+							aria-label={
+								lang?.prevLabel ?? defaultEnglish.prevLabel
+							}
+						>
+							<Icon icon={ChevronLeftIcon} />
 						</CalendarButton>
-						<h3>{calendarTitle}</h3>
-						<CalendarButton {...nextButtonProps}>
-							Next
+						<h4
+							className={odStyle({
+								fontWeight: 'bold',
+								margin: 'none',
+							})}
+						>
+							{calendarTitle}
+						</h4>
+						<CalendarButton
+							{...nextButtonProps}
+							aria-label={
+								lang?.nextLabel ?? defaultEnglish.nextLabel
+							}
+						>
+							<Icon icon={ChevronRightIcon} />
 						</CalendarButton>
 					</div>
 					<CalendarGrid
