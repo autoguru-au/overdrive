@@ -29,14 +29,6 @@ type LangContent = keyof typeof defaultEnglish;
 
 export interface DateTimePickerProps<D extends DateValue> {
 	/**
-	 * The title for the date time picker
-	 */
-	title?: string;
-	/**
-	 * The label for the time option items
-	 */
-	optionsLabel?: string;
-	/**
 	 * The items to select from for time options. Currently time options are not tied to the day selection.
 	 */
 	timeOptionItems: OptionItem[];
@@ -97,7 +89,6 @@ export const DateTimePicker = <D extends DateValue>({
 	allowPastDate = false,
 	calendar,
 	lang,
-	optionsLabel,
 	timeOptionItems,
 }: DateTimePickerProps<D>) => {
 	const calendarComponentProps: AriaCalendarProps<D> = {
@@ -136,7 +127,14 @@ export const DateTimePicker = <D extends DateValue>({
 				})}
 			>
 				<div className={odStyle({ flexShrink: 0 })}>
-					<h3>{lang?.dateLabel ?? defaultEnglish.dateLabel}</h3>
+					<h3
+						className={odStyle({
+							fontSize: 'xl',
+							fontWeight: 'bold',
+						})}
+					>
+						{lang?.dateLabel ?? defaultEnglish.dateLabel}
+					</h3>
 					<div
 						{...calendarProps}
 						className={odStyle({ display: 'flex' })}
@@ -157,8 +155,14 @@ export const DateTimePicker = <D extends DateValue>({
 				</div>
 
 				<div className={odStyle({ flexGrow: 1 })}>
-					<h3>{lang?.timeLabel ?? defaultEnglish.timeLabel}</h3>
-					<h4>{optionsLabel}</h4>
+					<h3
+						className={odStyle({
+							fontSize: 'xl',
+							fontWeight: 'bold',
+						})}
+					>
+						{lang?.timeLabel ?? defaultEnglish.timeLabel}
+					</h3>
 					<OptionGrid
 						columns="2"
 						label="Select a drop off time"
