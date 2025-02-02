@@ -1,9 +1,10 @@
 import { getWeeksInMonth } from '@internationalized/date';
-import React from 'react';
+import React, { useRef } from 'react';
 import {
 	useCalendarCell,
 	useCalendarGrid,
 	useLocale,
+	type AriaCalendarCellProps,
 	type AriaCalendarGridProps,
 } from 'react-aria';
 import type { CalendarState } from 'react-stately';
@@ -13,8 +14,12 @@ import { dataAttrs } from '../../utils/dataAttrs';
 
 import { styledCell } from './DateTimePicker.css';
 
-const CalendarCell = ({ state, date }) => {
-	const ref = React.useRef(null);
+interface CalendarCellProps extends AriaCalendarCellProps {
+	state: CalendarState;
+}
+
+const CalendarCell = ({ state, date }: CalendarCellProps) => {
+	const ref = useRef(null);
 	const {
 		cellProps,
 		buttonProps,
@@ -44,14 +49,13 @@ const CalendarCell = ({ state, date }) => {
 	);
 };
 
-export const CalendarGrid = ({
-	state,
-	...props
-}: AriaCalendarGridProps & { state: CalendarState }) => {
+interface CalendarGridProps extends AriaCalendarGridProps {
+	state: CalendarState;
+}
+
+export const CalendarGrid = ({ state, ...props }: CalendarGridProps) => {
 	const { locale } = useLocale();
 	const { gridProps, headerProps, weekDays } = useCalendarGrid(props, state);
-
-	// Get the number of weeks in the month so we can render the proper number of rows.
 	const weeksInMonth = getWeeksInMonth(
 		state.visibleRange.start,
 		locale,

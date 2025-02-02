@@ -12,8 +12,16 @@ export const CalendarButton = (props: AriaButtonProps) => {
 			{...buttonProps}
 			className={odStyle({
 				alignItems: 'center',
-				background: { initial: 'white' },
+				background: {
+					initial: 'white',
+					hover: 'gray200',
+					disabled: 'white',
+				},
+				borderColor: { initial: 'gray', disabled: 'light' },
 				borderRadius: '2',
+				borderStyle: 'solid',
+				borderWidth: '1',
+				color: { initial: 'gray600', disabled: 'gray300' },
 				cursor: { hover: 'pointer', disabled: 'default' },
 				display: 'flex',
 				justifyContent: 'center',

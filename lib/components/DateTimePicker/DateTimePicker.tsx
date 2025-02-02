@@ -8,8 +8,9 @@ import {
 import React from 'react';
 import {
 	useCalendar,
-	useDateFormatter,
+	// useDateFormatter,
 	useLocale,
+	useId,
 	type AriaCalendarProps,
 	type DateValue,
 } from 'react-aria';
@@ -33,9 +34,17 @@ type LangContent = keyof typeof defaultEnglish;
 
 export interface DateTimePickerProps<D extends DateValue> {
 	/**
+	 * A title for the date/time selection
+	 */
+	title?: string;
+	/**
 	 * The items to select from for time options. Currently time options are not tied to the day selection.
 	 */
 	timeOptionItems: OptionItem[];
+	/**
+	 * A descriptive label for the time picker option grid (for assistive technology)
+	 */
+	timeOptionLabel: string;
 	/**
 	 * Allow date in the past
 	 */
@@ -64,11 +73,11 @@ function createCalendar(identifier) {
 	throw new Error(`Unsupported calendar configured ${identifier}`);
 }
 
-const dateTextPunctuationEN = (text: string) =>
-	text
-		.split(' ')
-		.map((word, idx) => (idx === 0 ? `${word},` : word))
-		.join(' ');
+// const dateTextPunctuationEN = (text: string) =>
+// 	text
+// 		.split(' ')
+// 		.map((word, idx) => (idx === 0 ? `${word},` : word))
+// 		.join(' ');
 
 /**
  * DateTimePicker component for selecting a date and time. The primary use case is for selecting a date and time for
@@ -84,6 +93,8 @@ export const DateTimePicker = <D extends DateValue>({
 	calendar,
 	lang,
 	timeOptionItems,
+	timeOptionLabel,
+	title,
 }: DateTimePickerProps<D>) => {
 	const calendarComponentProps: AriaCalendarProps<D> = {
 		defaultValue: today(getLocalTimeZone()) as D,
@@ -97,23 +108,31 @@ export const DateTimePicker = <D extends DateValue>({
 		locale,
 		createCalendar,
 	});
-
 	const {
 		calendarProps,
 		prevButtonProps,
 		nextButtonProps,
 		title: calendarTitle,
 	} = useCalendar(calendarComponentProps, state);
+	const titleId = useId();
 
-	const formatter = useDateFormatter({ dateStyle: 'full' });
-	const dateText = state.value
-		? dateTextPunctuationEN(
-				formatter.format(state?.value?.toDate(getLocalTimeZone())),
-			)
-		: '';
+	// const formatter = useDateFormatter({ dateStyle: 'full' });
+	// const dateText = state.value
+	// 	? dateTextPunctuationEN(
+	// 			formatter.format(state?.value?.toDate(getLocalTimeZone())),
+	// 		)
+	// 	: '';
 
 	return (
-		<div>
+		<div role="group" aria-labelledby={titleId}>
+			{title && (
+				<h2
+					id={titleId}
+					className={odStyle({ fontSize: '2xl', fontWeight: 'bold' })}
+				>
+					{title}
+				</h2>
+			)}
 			<div
 				className={odStyle({
 					display: { tablet: 'flex' },
@@ -144,7 +163,7 @@ export const DateTimePicker = <D extends DateValue>({
 								lang?.prevLabel ?? defaultEnglish.prevLabel
 							}
 						>
-							<Icon icon={ChevronLeftIcon} />
+							<Icon icon={ChevronLeftIcon} size="medium" />
 						</CalendarButton>
 						<h4
 							className={odStyle({
@@ -160,14 +179,14 @@ export const DateTimePicker = <D extends DateValue>({
 								lang?.nextLabel ?? defaultEnglish.nextLabel
 							}
 						>
-							<Icon icon={ChevronRightIcon} />
+							<Icon icon={ChevronRightIcon} size="medium" />
 						</CalendarButton>
 					</div>
 					<CalendarGrid
 						state={state}
 						firstDayOfWeek={calendarComponentProps.firstDayOfWeek}
 					/>
-					{state.value && <h2>{dateText}</h2>}
+					{/* {state.value && <h2>{dateText}</h2>} */}
 				</div>
 
 				<div className={odStyle({ flexGrow: 1 })}>
@@ -181,7 +200,7 @@ export const DateTimePicker = <D extends DateValue>({
 					</h3>
 					<OptionGrid
 						columns="2"
-						label="Select a drop off time"
+						label={timeOptionLabel}
 						items={timeOptionItems}
 						indicator="none"
 						selectionMode="single"

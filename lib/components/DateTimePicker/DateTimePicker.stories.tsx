@@ -36,14 +36,16 @@ const meta: Meta<typeof DateTimePicker> = {
 	title: 'Forms & Input Fields/Date & Time Picker',
 	component: DateTimePicker,
 	args: {
+		title: 'Select preferred date and time to bring in your vehicle',
 		timeOptionItems: times,
+		timeOptionLabel: 'Select a drop-off time of day',
 		allowPastDate: false,
 		calendar: {
 			firstDayOfWeek: 'mon',
 		},
 		lang: {
-			dateLabel: 'Date label',
-			timeLabel: 'Time label',
+			dateLabel: 'Date',
+			timeLabel: 'Time',
 		},
 	},
 	tags: ['beta'],
