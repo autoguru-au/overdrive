@@ -1,36 +1,80 @@
-import { style } from '@vanilla-extract/css';
+import { createContainer, style } from '@vanilla-extract/css';
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
 import { focusOutline } from '../../styles/focusOutline.css';
 import { odStyle } from '../../styles/sprinkles.css';
 import { tokens } from '../../themes/base/tokens';
+import { breakpoints } from '../../themes/makeTheme';
 
 // === Container styles
-export const styledGridContainer = recipe({
+export const gridContainer = createContainer();
+export const gridContainerStyle = style({
+	containerName: gridContainer,
+	containerType: 'inline-size',
+});
+
+// == Grid styles
+const minWidth640 = '(min-width: 640px)';
+const minWidth1200 = '(min-width: 1200px)';
+const repeat2Col = 'repeat(2, 1fr)';
+const repeat3Col = 'repeat(3, 1fr)';
+const repeat4Col = 'repeat(4, 1fr)';
+const repeat5Col = 'repeat(5, 1fr)';
+
+const grid4ColStyle = style({
+	'@container': {
+		[`${gridContainer} (min-width: ${breakpoints.mobile})`]: {
+			gridTemplateColumns: repeat2Col,
+		},
+		[`${gridContainer} (min-width: ${breakpoints.tablet})`]: {
+			gridTemplateColumns: repeat3Col,
+		},
+		[`${gridContainer} (min-width: ${breakpoints.desktop})`]: {
+			gridTemplateColumns: repeat4Col,
+		},
+	},
+});
+
+export const styledGrid = recipe({
 	base: odStyle({
-		display: { mobile: 'flex' },
-		flexDirection: { mobile: 'column' },
+		display: 'grid',
+		gridColumns: { mobile: '1' },
 		gap: '3',
 	}),
 	variants: {
 		columns: {
 			'1': {},
-			'2': odStyle({
-				display: { tablet: 'grid' },
-				gridColumns: { tablet: '2' },
-			}),
-			'3': odStyle({
-				display: { tablet: 'grid' },
-				gridColumns: { tablet: '2', desktop: '3' },
-			}),
-			'4': odStyle({
-				display: { tablet: 'grid' },
-				gridColumns: { tablet: '3', desktop: '4' },
-			}),
-			'5': odStyle({
-				display: { tablet: 'grid' },
-				gridColumns: { tablet: '3', desktop: '5' },
-			}),
+			'2': {
+				'@container': {
+					[`${gridContainer} ${minWidth640}`]: {
+						gridTemplateColumns: repeat2Col,
+					},
+					[`${gridContainer} ${minWidth1200}`]: {
+						gridTemplateColumns: repeat3Col,
+					},
+				},
+			},
+			'3': {
+				'@container': {
+					[`${gridContainer} ${minWidth640}`]: {
+						gridTemplateColumns: repeat2Col,
+					},
+					[`${gridContainer} (min-width: ${breakpoints.desktop})`]: {
+						gridTemplateColumns: repeat3Col,
+					},
+				},
+			},
+			'4': grid4ColStyle,
+			'5': [
+				grid4ColStyle,
+				{
+					'@container': {
+						[`${gridContainer} ${minWidth1200}`]: {
+							gridTemplateColumns: repeat5Col,
+						},
+					},
+				},
+			],
 		},
 	},
 	defaultVariants: {
@@ -38,9 +82,7 @@ export const styledGridContainer = recipe({
 	},
 });
 
-export type StyledGridContainerProps = NonNullable<
-	RecipeVariants<typeof styledGridContainer>
->;
+export type StyledGridProps = NonNullable<RecipeVariants<typeof styledGrid>>;
 
 // === Option item styles
 const optionTransition = style({

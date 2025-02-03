@@ -92,7 +92,8 @@ function createCalendar(identifier) {
 
 /**
  * DateTimePicker component for selecting a date and time. The primary use case is for selecting a date and time for
- * the vehicle to be left at the place of service, rather than the scheduling the time of the service itself.
+ * the vehicle to be left at the place of service, not scheduling the time of the service itself. Some suppliers
+ * may need the option to book a specficic time based on their availability which could require enahcement.
  *
  * For all date/time handling `@internationalized/date` is expected by react-aria. Presently only the Gregorian
  * calendar is imported for use in order to minimise bundle size. It is recommended to use the the DateTimePicker

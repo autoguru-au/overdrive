@@ -16,12 +16,13 @@ import { dataAttrs } from '../../utils/dataAttrs';
 import { Icon, type IconEl } from '../Icon';
 
 import {
+	gridContainerStyle,
 	styledCheckbox,
-	styledGridContainer,
+	styledGrid,
 	styledGridItem,
 	styledRadioButton,
 	styleIndicator,
-	type StyledGridContainerProps,
+	type StyledGridProps,
 } from './OptionGrid.css';
 
 export interface OptionItem {
@@ -54,7 +55,7 @@ export interface OptionGridProps<T> extends Omit<ListBoxProps<T>, 'items'> {
 	/**
 	 * Number of columns to display the options in
 	 */
-	columns?: StyledGridContainerProps['columns'];
+	columns?: StyledGridProps['columns'];
 }
 
 /**
@@ -82,81 +83,85 @@ export const OptionGrid = ({
 	...props
 }: WithTestId<OptionGridProps<OptionItem>>) => {
 	return (
-		<ListBox
-			aria-label={label}
-			layout={layout}
-			selectionMode={selectionMode}
-			className={clsx([styledGridContainer({ columns }), className])}
-			{...dataAttrs({ 'test-id': testId })}
-			{...props}
-		>
-			{({ description, icon, label, name }) => (
-				<ListBoxItem
-					className={styledGridItem()}
-					id={name}
-					textValue={label}
-				>
-					{({ isFocusVisible, isHovered, isSelected }) => {
-						const hasIndicator = indicator !== 'none';
-						const hasNoInteraction =
-							!isFocusVisible && !isHovered && !isSelected;
-						const IndicatorIcon = () => {
-							if (icon && hasNoInteraction)
-								return <Icon icon={icon} size="100%" />;
+		<div className={gridContainerStyle}>
+			<ListBox
+				aria-label={label}
+				layout={layout}
+				selectionMode={selectionMode}
+				className={clsx([styledGrid({ columns }), className])}
+				{...dataAttrs({ 'test-id': testId })}
+				{...props}
+			>
+				{({ description, icon, label, name }) => (
+					<ListBoxItem
+						className={styledGridItem()}
+						id={name}
+						textValue={label}
+					>
+						{({ isFocusVisible, isHovered, isSelected }) => {
+							const hasIndicator = indicator !== 'none';
+							const hasNoInteraction =
+								!isFocusVisible && !isHovered && !isSelected;
+							const IndicatorIcon = () => {
+								if (icon && hasNoInteraction)
+									return <Icon icon={icon} size="100%" />;
 
-							const styledIndicator =
-								indicator === 'radio'
-									? styledRadioButton
-									: styledCheckbox;
+								const styledIndicator =
+									indicator === 'radio'
+										? styledRadioButton
+										: styledCheckbox;
+
+								return (
+									<div
+										className={styledIndicator()}
+										{...dataAttrs({
+											'focus-visible': isFocusVisible,
+											hover: isHovered,
+											selected: isSelected,
+										})}
+									>
+										{indicator === 'checkbox' && (
+											<Icon icon={CheckIcon} />
+										)}
+									</div>
+								);
+							};
 
 							return (
-								<div
-									className={styledIndicator()}
-									{...dataAttrs({
-										'focus-visible': isFocusVisible,
-										hover: isHovered,
-										selected: isSelected,
-									})}
-								>
-									{indicator === 'checkbox' && (
-										<Icon icon={CheckIcon} />
+								<>
+									{hasIndicator && (
+										<div className={styleIndicator}>
+											<IndicatorIcon />
+										</div>
 									)}
-								</div>
-							);
-						};
-
-						return (
-							<>
-								{hasIndicator && (
-									<div className={styleIndicator}>
-										<IndicatorIcon />
-									</div>
-								)}
-								<div>
-									<Text
-										slot="label"
-										elementType="div"
-										className={odStyle({ fontSize: 'md' })}
-									>
-										{label}
-									</Text>
-									{description && (
+									<div>
 										<Text
-											slot="description"
+											slot="label"
 											elementType="div"
 											className={odStyle({
-												fontSize: 'xs',
+												fontSize: 'md',
 											})}
 										>
-											{description}
+											{label}
 										</Text>
-									)}
-								</div>
-							</>
-						);
-					}}
-				</ListBoxItem>
-			)}
-		</ListBox>
+										{description && (
+											<Text
+												slot="description"
+												elementType="div"
+												className={odStyle({
+													fontSize: 'xs',
+												})}
+											>
+												{description}
+											</Text>
+										)}
+									</div>
+								</>
+							);
+						}}
+					</ListBoxItem>
+				)}
+			</ListBox>
+		</div>
 	);
 };
