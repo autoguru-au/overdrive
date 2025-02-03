@@ -12,7 +12,7 @@ import type { CalendarState } from 'react-stately';
 import { odStyle } from '../../styles/sprinkles.css';
 import { dataAttrs } from '../../utils/dataAttrs';
 
-import { styledCell } from './DateTimePicker.css';
+import { calendarGridStyle, styledCell } from './DateTimePicker.css';
 
 interface CalendarCellProps extends AriaCalendarCellProps {
 	state: CalendarState;
@@ -69,10 +69,7 @@ export const CalendarGrid = ({ state, ...props }: CalendarGridProps) => {
 	);
 
 	return (
-		<table
-			{...gridProps}
-			className={odStyle({ width: { mobile: '100%', tablet: 'auto' } })}
-		>
+		<table {...gridProps} className={calendarGridStyle}>
 			<thead {...headerProps}>
 				<tr>
 					{weekDays.map((day, index) => (

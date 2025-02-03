@@ -28,6 +28,7 @@ import {
 
 import { CalendarButton } from './CalendarButton';
 import { CalendarGrid } from './CalendarGrid';
+import { layoutStyle, queryContainerStyle } from './DateTimePicker.css';
 
 const defaultEnglish = {
 	dateLabel: 'Date',
@@ -183,6 +184,7 @@ export const DateTimePicker = <D extends DateValue>({
 		<div
 			role="group"
 			aria-labelledby={titleId}
+			className={queryContainerStyle}
 			{...dataAttrs({ 'test-id': testId })}
 		>
 			{title && (
@@ -193,12 +195,7 @@ export const DateTimePicker = <D extends DateValue>({
 					{title}
 				</h2>
 			)}
-			<div
-				className={odStyle({
-					display: { tablet: 'flex' },
-					gap: '7',
-				})}
-			>
+			<div className={layoutStyle}>
 				<div className={odStyle({ flexShrink: 0 })}>
 					<h3
 						className={odStyle({

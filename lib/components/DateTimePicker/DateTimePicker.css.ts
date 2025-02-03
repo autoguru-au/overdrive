@@ -1,7 +1,35 @@
+import { createContainer, style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 import { focusOutline } from '../../styles/focusOutline.css';
 import { odStyle } from '../../styles/sprinkles.css';
+import { tokens } from '../../themes/base/tokens';
+import { breakpoints } from '../../themes/makeTheme';
+
+// === Container styles
+export const queryContainer = createContainer();
+export const queryContainerStyle = style({
+	containerName: queryContainer,
+	containerType: 'inline-size',
+});
+
+export const layoutStyle = style({
+	'@container': {
+		[`${queryContainer} (min-width: ${breakpoints.tablet})`]: {
+			display: 'flex',
+			gap: tokens.space[7],
+		},
+	},
+});
+
+export const calendarGridStyle = style({
+	width: '100%',
+	'@container': {
+		[`${queryContainer} (min-width: ${breakpoints.tablet})`]: {
+			width: 'auto',
+		},
+	},
+});
 
 // == Cell styles
 export const styledCell = recipe({

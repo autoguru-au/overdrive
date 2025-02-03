@@ -4,7 +4,7 @@ import { expect, fn, within, userEvent } from '@storybook/test';
 import { SearchBar } from './SearchBar';
 
 const meta: Meta = {
-	title: 'Forms & Input Fields/Search Input',
+	title: 'Forms & Input Fields/Search Bar',
 	component: SearchBar,
 	args: {
 		placeholder: 'Search for tasks',
@@ -24,7 +24,7 @@ type Story = StoryObj<typeof SearchBar>;
 
 const testPhrase = 'Test search phrase';
 
-export const SearchInput: Story = {
+export const TaskSearch: Story = {
 	play: async ({ args, canvasElement, step }) => {
 		const canvas = within(canvasElement);
 		const field = canvas.getAllByRole('searchbox')[0];
