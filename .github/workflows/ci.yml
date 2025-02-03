@@ -5,8 +5,6 @@ on: push
 jobs:
     test:
         name: Lint & Test
-        # Checks for PR status (any, including draft)
-        if: github.event_name == 'pull_request'
         runs-on: ubuntu-latest
         env:
             TZ: Australia/Brisbane
@@ -50,13 +48,17 @@ jobs:
 
     visual_test:
         name: Visual changes
-        # Checks for PR status and skips if draft
-        if: github.event_name == 'pull_request' && github.event.pull_request.draft == false
         runs-on: ubuntu-latest
         env:
             TZ: Australia/Brisbane
             CI: true
         steps:
+            - name: Early success (draft PR or not a PR)
+              if:
+                  github.event_name != 'pull_request' &&
+                  github.event.pull_request.draft == true
+              run: exit 0
+
             - uses: actions/checkout@main
               with:
                   fetch-depth: 0
