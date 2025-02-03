@@ -17,6 +17,8 @@ import {
 import { useCalendarState, type Selection } from 'react-stately';
 
 import { odStyle } from '../../styles/sprinkles.css';
+import type { WithTestId } from '../../types';
+import { dataAttrs } from '../../utils/dataAttrs';
 import { Icon } from '../Icon';
 import {
 	OptionGrid,
@@ -30,8 +32,8 @@ import { CalendarGrid } from './CalendarGrid';
 const defaultEnglish = {
 	dateLabel: 'Date',
 	timeLabel: 'Time',
-	nextLabel: 'Next',
-	prevLabel: 'Prev',
+	nextLabel: 'Next month',
+	prevLabel: 'Previous month',
 } as const;
 
 type LangContent = keyof typeof defaultEnglish;
@@ -109,7 +111,8 @@ export const DateTimePicker = <D extends DateValue>({
 	onChange,
 	timeOptions,
 	title,
-}: DateTimePickerProps<D>) => {
+	testId,
+}: WithTestId<DateTimePickerProps<D>>) => {
 	const selectedDate = useRef<DateValue>(null);
 	const selectedTimeOption = useRef<string>(null);
 
@@ -140,7 +143,7 @@ export const DateTimePicker = <D extends DateValue>({
 		...calendar,
 	};
 	const optionGridComponentProps: OptionGridProps<OptionItem> = {
-		columns: '2',
+		columns: '3',
 		onSelectionChange: handleTimeChange,
 		indicator: 'none',
 		selectionMode: 'single',
@@ -177,11 +180,15 @@ export const DateTimePicker = <D extends DateValue>({
 	// 	: '';
 
 	return (
-		<div role="group" aria-labelledby={titleId}>
+		<div
+			role="group"
+			aria-labelledby={titleId}
+			{...dataAttrs({ 'test-id': testId })}
+		>
 			{title && (
 				<h2
 					id={titleId}
-					className={odStyle({ fontSize: '2xl', fontWeight: 'bold' })}
+					className={odStyle({ font: '2xl', fontWeight: 'bold' })}
 				>
 					{title}
 				</h2>
@@ -195,7 +202,7 @@ export const DateTimePicker = <D extends DateValue>({
 				<div className={odStyle({ flexShrink: 0 })}>
 					<h3
 						className={odStyle({
-							fontSize: 'xl',
+							font: 'xl',
 							fontWeight: 'bold',
 						})}
 					>
@@ -208,6 +215,7 @@ export const DateTimePicker = <D extends DateValue>({
 							display: 'flex',
 							justifyContent: 'space-between',
 							marginBottom: '2',
+							paddingX: '1',
 						})}
 					>
 						<CalendarButton
@@ -245,7 +253,7 @@ export const DateTimePicker = <D extends DateValue>({
 				<div className={odStyle({ flexGrow: 1 })}>
 					<h3
 						className={odStyle({
-							fontSize: 'xl',
+							font: 'xl',
 							fontWeight: 'bold',
 						})}
 					>

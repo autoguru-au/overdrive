@@ -24,7 +24,7 @@ export const styledCell = recipe({
 				initial: 'pointer',
 				disabled: 'default',
 			},
-			display: 'flex',
+			display: 'inline-flex',
 			fontSize: 'md',
 			justifyContent: 'center',
 			size: '7',

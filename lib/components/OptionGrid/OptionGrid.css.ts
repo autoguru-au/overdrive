@@ -14,7 +14,6 @@ export const gridContainerStyle = style({
 });
 
 // == Grid styles
-const minWidth640 = '(min-width: 640px)';
 const minWidth1200 = '(min-width: 1200px)';
 const repeat2Col = 'repeat(2, 1fr)';
 const repeat3Col = 'repeat(3, 1fr)';
@@ -46,7 +45,7 @@ export const styledGrid = recipe({
 			'1': {},
 			'2': {
 				'@container': {
-					[`${gridContainer} ${minWidth640}`]: {
+					[`${gridContainer} (min-width: 640px)`]: {
 						gridTemplateColumns: repeat2Col,
 					},
 					[`${gridContainer} ${minWidth1200}`]: {
@@ -56,7 +55,7 @@ export const styledGrid = recipe({
 			},
 			'3': {
 				'@container': {
-					[`${gridContainer} ${minWidth640}`]: {
+					[`${gridContainer} (min-width: 550px)`]: {
 						gridTemplateColumns: repeat2Col,
 					},
 					[`${gridContainer} (min-width: ${breakpoints.desktop})`]: {

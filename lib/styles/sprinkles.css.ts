@@ -127,7 +127,14 @@ const displayProperties = defineProperties({
 	conditions: { ...responsiveConditions },
 	defaultCondition: 'mobile',
 	properties: {
-		display: ['none', 'block', 'flex', 'grid'],
+		display: [
+			'none',
+			'block',
+			'flex',
+			'grid',
+			'inline-block',
+			'inline-flex',
+		],
 		flexDirection: ['row', 'column'],
 		flexGrow: [0, 1],
 		flexShrink: [0, 1],

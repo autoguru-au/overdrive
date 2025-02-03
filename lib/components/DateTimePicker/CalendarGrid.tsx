@@ -31,7 +31,13 @@ const CalendarCell = ({ state, date }: CalendarCellProps) => {
 	} = useCalendarCell({ date }, state, ref);
 
 	return (
-		<td {...cellProps} className={odStyle({ padding: '1' })}>
+		<td
+			{...cellProps}
+			className={odStyle({
+				padding: '1',
+				textAlign: 'center',
+			})}
+		>
 			<div
 				{...buttonProps}
 				ref={ref}
