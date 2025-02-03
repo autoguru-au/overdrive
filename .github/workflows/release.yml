@@ -19,8 +19,8 @@ jobs:
             - name: Setup environment
               id: setups
               run: |-
-                  echo "yarn_cache=$(yarn cache dir)" >> $GITHUB_ENV
-                  echo "node_version=$(jq -r '.volta.node' package.json)" >> $GITHUB_ENV
+                  echo "yarn_cache=$(yarn cache dir)" >> "$GITHUB_ENV"
+                  echo "node_version=$(jq -r '.volta.node' package.json)" >> "$GITHUB_ENV"
 
             - name: Setup Node ${{ steps.setups.outputs.node_version }}
               uses: actions/setup-node@main
