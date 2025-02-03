@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-// import { expect, fn, getAllByRole, within, userEvent } from '@storybook/test';
+import { expect, fn, getAllByRole, within, userEvent } from '@storybook/test';
 
 import { DateTimePicker } from './DateTimePicker';
 
@@ -37,15 +37,25 @@ const meta: Meta<typeof DateTimePicker> = {
 	component: DateTimePicker,
 	args: {
 		title: 'Select preferred date and time to bring in your vehicle',
-		timeOptionItems: times,
-		timeOptionLabel: 'Select a drop-off time of day',
-		allowPastDate: false,
+		timeOptions: {
+			items: times,
+			label: 'Select a drop-off time of day',
+		},
 		calendar: {
 			firstDayOfWeek: 'mon',
 		},
+		allowPastDate: false,
+		onChange: fn(),
 		lang: {
 			dateLabel: 'Date',
 			timeLabel: 'Time',
+		},
+	},
+	argTypes: {
+		allowPastDate: {
+			control: {
+				type: 'boolean',
+			},
 		},
 	},
 	tags: ['beta'],

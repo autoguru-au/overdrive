@@ -5,7 +5,7 @@ import {
 	GregorianCalendar,
 	today,
 } from '@internationalized/date';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
 	useCalendar,
 	// useDateFormatter,
@@ -14,11 +14,15 @@ import {
 	type AriaCalendarProps,
 	type DateValue,
 } from 'react-aria';
-import { useCalendarState } from 'react-stately';
+import { useCalendarState, type Selection } from 'react-stately';
 
 import { odStyle } from '../../styles/sprinkles.css';
 import { Icon } from '../Icon';
-import { OptionGrid, OptionItem } from '../OptionGrid/OptionGrid';
+import {
+	OptionGrid,
+	type OptionGridProps,
+	type OptionItem,
+} from '../OptionGrid/OptionGrid';
 
 import { CalendarButton } from './CalendarButton';
 import { CalendarGrid } from './CalendarGrid';
@@ -31,25 +35,16 @@ const defaultEnglish = {
 } as const;
 
 type LangContent = keyof typeof defaultEnglish;
+export type DateAndOption = {
+	date: DateValue;
+	timeOption: string;
+};
 
 export interface DateTimePickerProps<D extends DateValue> {
 	/**
 	 * A title for the date/time selection
 	 */
 	title?: string;
-	/**
-	 * The items to select from for time options. Currently time options are not tied to the day selection.
-	 */
-	timeOptionItems: OptionItem[];
-	/**
-	 * A descriptive label for the time picker option grid (for assistive technology)
-	 */
-	timeOptionLabel: string;
-	/**
-	 * Allow date in the past
-	 */
-	allowPastDate?: boolean;
-	// firstDayOfWeek?: AriaCalendarProps<D>['firstDayOfWeek'];
 	/**
 	 * Calendar props passed through to the react-aria hook
 	 * ([docs](https://react-spectrum.adobe.com/react-aria/useCalendar.html))
@@ -58,7 +53,23 @@ export interface DateTimePickerProps<D extends DateValue> {
 	 * - `defaultValue`: Today's date
 	 * - `firstDayOfWeek`: Monday
 	 */
-	calendar?: AriaCalendarProps<D>;
+	calendar?: Exclude<AriaCalendarProps<D>, 'onChange'>;
+	/**
+	 * `OptionGrid` props used to generate the time picker items. Ensure to include a descriptive `label` value (for
+	 * assistive technology). Currently time options are not tied to the day selection.
+	 */
+	timeOptions: OptionGridProps<OptionItem>;
+	/**
+	 * Allow date in the past
+	 */
+	allowPastDate?: boolean;
+	/**
+	 * Custom event handler return value when a date and time are both selected, return a value
+	 * `{ date: DateValue, timeOption: string }` where `DateValue` comes from react-aria
+	 *
+	 * @returns `{ date: DateValue, timeOption: string }`
+	 */
+	onChange?: (value: DateAndOption) => void;
 	/**
 	 * Language content override
 	 */
@@ -83,7 +94,9 @@ function createCalendar(identifier) {
  * DateTimePicker component for selecting a date and time. The primary use case is for selecting a date and time for
  * the vehicle to be left at the place of service, rather than the scheduling the time of the service itself.
  *
- * It is recommended to use the the DateTimePicker uncontrolled.
+ * For all date/time handling `@internationalized/date` is expected by react-aria. Presently only the Gregorian
+ * calendar is imported for use in order to minimise bundle size. It is recommended to use the the DateTimePicker
+ * uncontrolled.
  *
  * This component implements the react-aria `useCalendar` hook and supports controlled state as well
  * ([docs](https://react-spectrum.adobe.com/react-aria/useCalendar.html))
@@ -92,22 +105,55 @@ export const DateTimePicker = <D extends DateValue>({
 	allowPastDate = false,
 	calendar,
 	lang,
-	timeOptionItems,
-	timeOptionLabel,
+	onChange,
+	timeOptions,
 	title,
 }: DateTimePickerProps<D>) => {
+	const selectedDate = useRef<DateValue>(null);
+	const selectedTimeOption = useRef<string>(null);
+
+	const handleChange = () => {
+		if (selectedDate.current && selectedTimeOption.current?.length) {
+			onChange?.({
+				date: selectedDate.current,
+				timeOption: selectedTimeOption.current,
+			});
+		}
+	};
+	const handleTimeChange = (keys: Selection) => {
+		if (keys === 'all') return;
+		// we expect only a single value for time picker
+		const time = keys.values().next().value;
+		selectedTimeOption.current = time;
+		handleChange();
+	};
+
 	const calendarComponentProps: AriaCalendarProps<D> = {
 		defaultValue: today(getLocalTimeZone()) as D,
 		firstDayOfWeek: 'sun',
 		minValue: allowPastDate ? undefined : today(getLocalTimeZone()),
+		onChange: (value) => {
+			selectedDate.current = value;
+			handleChange();
+		},
 		...calendar,
 	};
+	const optionGridComponentProps: OptionGridProps<OptionItem> = {
+		columns: '2',
+		onSelectionChange: handleTimeChange,
+		indicator: 'none',
+		selectionMode: 'single',
+		disallowEmptySelection: true,
+		...timeOptions,
+	};
+
 	const { locale } = useLocale();
 	const state = useCalendarState({
 		...calendarComponentProps,
 		locale,
 		createCalendar,
 	});
+
 	const {
 		calendarProps,
 		prevButtonProps,
@@ -115,6 +161,12 @@ export const DateTimePicker = <D extends DateValue>({
 		title: calendarTitle,
 	} = useCalendar(calendarComponentProps, state);
 	const titleId = useId();
+
+	useEffect(() => {
+		if (state.value) {
+			selectedDate.current = state.value;
+		}
+	}, []);
 
 	// const formatter = useDateFormatter({ dateStyle: 'full' });
 	// const dateText = state.value
@@ -198,13 +250,7 @@ export const DateTimePicker = <D extends DateValue>({
 					>
 						{lang?.timeLabel ?? defaultEnglish.timeLabel}
 					</h3>
-					<OptionGrid
-						columns="2"
-						label={timeOptionLabel}
-						items={timeOptionItems}
-						indicator="none"
-						selectionMode="single"
-					/>
+					<OptionGrid {...optionGridComponentProps} />
 				</div>
 			</div>
 		</div>
