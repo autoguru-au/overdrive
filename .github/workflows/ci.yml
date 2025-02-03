@@ -1,6 +1,9 @@
 name: CI
 
-on: push
+on:
+    push:
+        branches-ignore:
+            - 'changeset-release/**'
 
 jobs:
     test:
@@ -17,8 +20,8 @@ jobs:
             - name: Setup environment
               id: setups
               run: |-
-                  echo "yarn_cache=$(yarn cache dir)" >> "$GITHUB_ENV"
-                  echo "node_version=$(jq -r '.volta.node' package.json)" >> "$GITHUB_ENV"
+                  echo "yarn_cache=$(yarn cache dir)" >> "$GITHUB_OUTPUT"
+                  echo "node_version=$(jq -r '.volta.node' package.json)" >> "$GITHUB_OUTPUT"
 
             - name: Setup Node ${{ steps.setups.outputs.node_version }}
               uses: actions/setup-node@main
@@ -53,12 +56,6 @@ jobs:
             TZ: Australia/Brisbane
             CI: true
         steps:
-            - name: Early success (draft PR or not a PR)
-              if:
-                  github.event_name != 'pull_request' ||
-                  github.event.pull_request.draft == true
-              run: exit 0
-
             - uses: actions/checkout@main
               with:
                   fetch-depth: 0
@@ -66,8 +63,8 @@ jobs:
             - name: Setup environment
               id: setups
               run: |-
-                  echo "yarn_cache=$(yarn cache dir)" >> "$GITHUB_ENV"
-                  echo "node_version=$(jq -r '.volta.node' package.json)" >> "$GITHUB_ENV"
+                  echo "yarn_cache=$(yarn cache dir)" >> "$GITHUB_OUTPUT"
+                  echo "node_version=$(jq -r '.volta.node' package.json)" >> "$GITHUB_OUTPUT"
 
             - name: Setup Node ${{ steps.setups.outputs.node_version }}
               uses: actions/setup-node@main
