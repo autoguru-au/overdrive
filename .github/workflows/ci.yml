@@ -50,7 +50,7 @@ jobs:
 
     visual_test:
         name: Visual changes
-		# Checks for PR status and skips if draft
+        # Checks for PR status and skips if draft
         if: github.event_name == 'pull_request' && github.event.pull_request.draft == false
         runs-on: ubuntu-latest
         env:
