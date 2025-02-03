@@ -19,7 +19,7 @@ jobs:
 
             - name: Setup environment
               id: setups
-              run: |-
+              run: |
                   yarn_cache_dir=$(yarn cache dir)
                   volta_node_version=$(jq -r '.volta.node' package.json)
                   echo "yarn_cache=$yarn_cache_dir" >> "$GITHUB_OUTPUT"
