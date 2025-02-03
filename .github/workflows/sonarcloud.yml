@@ -11,7 +11,7 @@ jobs:
       CI: true
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -53,8 +53,8 @@ jobs:
 
       - name: Run SonarQube analysis
         env:
-          SONAR_HOST_URL: ${{ secrets.TEST_SONAR_HOST_URL }}
-          SONAR_TOKEN: ${{ secrets.TEST_SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           sonar-scanner \
             -Dsonar.projectKey="${{ github.event.repository.name }}" \
@@ -64,5 +64,5 @@ jobs:
             -Dsonar.test.inclusions="**/*.test.tsx" \
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
             -Dsonar.sourceEncoding=UTF-8 \
-            -Dsonar.host.url="${{ secrets.TEST_SONAR_HOST_URL }}" \
-            -Dsonar.login="${{ secrets.TEST_SONAR_TOKEN }}"
+            -Dsonar.host.url="${{ secrets.SONAR_HOST_URL }}" \
+            -Dsonar.login="${{ secrets.SONAR_TOKEN }}"
