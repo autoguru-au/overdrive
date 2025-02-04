@@ -1,6 +1,8 @@
 name: CI
 
-on: push
+on:
+  push:
+  pull_request:
 
 jobs:
     test:
@@ -80,7 +82,9 @@ jobs:
             - run: yarn --immutable
 
             - name: Skip Chromatic
-              if: github.event_name != 'pull_request'
+              if:
+                  github.event_name != 'pull_request' ||
+                  github.event.pull_request.draft == true
               uses: chromaui/action@latest
               with:
                   projectToken: ${{ secrets.CHROMATIC_APP_CODE }}
