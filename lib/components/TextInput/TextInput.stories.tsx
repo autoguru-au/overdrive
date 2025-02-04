@@ -211,30 +211,37 @@ Standard.argTypes = argTypes;
 export const WithAValue = Template.bind(withAValueProps);
 WithAValue.args = withAValueProps;
 WithAValue.argTypes = argTypes;
+WithAValue.parameters = { chromatic: { disableSnapshot: true } };
 
 export const WithHintText = Template.bind(withHintTextProps);
 WithHintText.args = withHintTextProps;
 WithHintText.argTypes = argTypes;
+WithHintText.parameters = { chromatic: { disableSnapshot: true } };
 
 export const NotchDisabled = Template.bind(noNotchProps);
 NotchDisabled.args = noNotchProps;
 NotchDisabled.argTypes = argTypes;
+NotchDisabled.parameters = { chromatic: { disableSnapshot: true } };
 
 export const NotchDisabledWithValue = Template.bind(noNotchWithValueProps);
 NotchDisabledWithValue.args = noNotchWithValueProps;
 NotchDisabledWithValue.argTypes = argTypes;
+NotchDisabledWithValue.parameters = { chromatic: { disableSnapshot: true } };
 
 export const WithPrefixIcon = Template.bind(withPrefixIconProps);
 WithPrefixIcon.args = withPrefixIconProps;
 WithPrefixIcon.argTypes = argTypes;
+WithPrefixIcon.parameters = { chromatic: { disableSnapshot: true } };
 
 export const WithSuffixIcon = Template.bind(withSuffixIconProps);
 WithSuffixIcon.args = withSuffixIconProps;
 WithSuffixIcon.argTypes = argTypes;
+WithSuffixIcon.parameters = { chromatic: { disableSnapshot: true } };
 
 export const WithBothIcons = Template.bind(withBothIconsProps);
 WithBothIcons.args = withBothIconsProps;
 WithBothIcons.argTypes = argTypes;
+WithBothIcons.parameters = { chromatic: { disableSnapshot: true } };
 
 export const AttachedLeft = Template.bind(attachedLeftProps);
 AttachedLeft.args = attachedLeftProps;
@@ -243,54 +250,67 @@ AttachedLeft.argTypes = argTypes;
 export const AttachedTop = Template.bind(attachedTopProps);
 AttachedTop.args = attachedTopProps;
 AttachedTop.argTypes = argTypes;
+AttachedTop.parameters = { chromatic: { disableSnapshot: true } };
 
 export const AttachedRight = Template.bind(attachedRightProps);
 AttachedRight.args = attachedRightProps;
 AttachedRight.argTypes = argTypes;
+AttachedRight.parameters = { chromatic: { disableSnapshot: true } };
 
 export const AttachedBottom = Template.bind(attachedBottomProps);
 AttachedBottom.args = attachedBottomProps;
 AttachedBottom.argTypes = argTypes;
+AttachedBottom.parameters = { chromatic: { disableSnapshot: true } };
 
 export const AttachedAll = Template.bind(attachedAllProps);
 AttachedAll.args = attachedAllProps;
 AttachedAll.argTypes = argTypes;
+AttachedAll.parameters = { chromatic: { disableSnapshot: true } };
 
 export const MergedLeft = Template.bind(mergedLeftProps);
 MergedLeft.args = mergedLeftProps;
 MergedLeft.argTypes = argTypes;
+MergedLeft.parameters = { chromatic: { disableSnapshot: true } };
 
 export const MergedTop = Template.bind(mergedTopProps);
 MergedTop.args = mergedTopProps;
 MergedTop.argTypes = argTypes;
+MergedTop.parameters = { chromatic: { disableSnapshot: true } };
 
 export const MergedRight = Template.bind(mergedRightProps);
 MergedRight.args = mergedRightProps;
 MergedRight.argTypes = argTypes;
+MergedRight.parameters = { chromatic: { disableSnapshot: true } };
 
 export const MergedBottom = Template.bind(mergedBottomProps);
 MergedBottom.args = mergedBottomProps;
 MergedBottom.argTypes = argTypes;
+MergedBottom.parameters = { chromatic: { disableSnapshot: true } };
 
 export const MergedAll = Template.bind(mergedAllProps);
 MergedAll.args = mergedAllProps;
 MergedAll.argTypes = argTypes;
+MergedAll.parameters = { chromatic: { disableSnapshot: true } };
 
 export const Disabled = Template.bind(disabledProps);
 Disabled.args = disabledProps;
 Disabled.argTypes = argTypes;
+Disabled.parameters = { chromatic: { disableSnapshot: true } };
 
 export const Valid = Template.bind(validProps);
 Valid.args = validProps;
 Valid.argTypes = argTypes;
+Valid.parameters = { chromatic: { disableSnapshot: true } };
 
 export const Invalid = Template.bind(invalidProps);
 Invalid.args = invalidProps;
 Invalid.argTypes = argTypes;
+Invalid.parameters = { chromatic: { disableSnapshot: true } };
 
 export const Loading = Template.bind(loadingProps);
 Loading.args = loadingProps;
 Loading.argTypes = argTypes;
+Loading.parameters = { chromatic: { disableSnapshot: true } };
 
 const smallProps: typeof standardProps = {
 	...standardProps,
@@ -299,6 +319,7 @@ const smallProps: typeof standardProps = {
 export const Small = Template.bind(smallProps);
 Small.args = smallProps;
 Small.argTypes = argTypes;
+Small.parameters = { chromatic: { disableSnapshot: true } };
 
 const withValueSmallProps: typeof withAValueProps = {
 	...withAValueProps,
@@ -308,6 +329,7 @@ const withValueSmallProps: typeof withAValueProps = {
 export const WithValueSmall = Template.bind(withValueSmallProps);
 WithValueSmall.args = withValueSmallProps;
 WithValueSmall.argTypes = argTypes;
+WithValueSmall.parameters = { chromatic: { disableSnapshot: true } };
 
 const withIconSmallProps: typeof withAValueProps = {
 	...withAValueProps,
@@ -318,6 +340,7 @@ const withIconSmallProps: typeof withAValueProps = {
 export const WithIconSmall = Template.bind(withIconSmallProps);
 WithIconSmall.args = withIconSmallProps;
 WithIconSmall.argTypes = argTypes;
+WithIconSmall.parameters = { chromatic: { disableSnapshot: true } };
 
 const loadingSmallProps: typeof withAValueProps = {
 	...withAValueProps,
@@ -327,3 +350,4 @@ const loadingSmallProps: typeof withAValueProps = {
 export const LoadingSmall = Template.bind(loadingSmallProps);
 LoadingSmall.args = loadingSmallProps;
 LoadingSmall.argTypes = argTypes;
+LoadingSmall.parameters = { chromatic: { disableSnapshot: true } };

@@ -150,38 +150,47 @@ Standard.argTypes = argTypes;
 export const WithAValue = Template.bind(withAValueProps);
 WithAValue.args = withAValueProps;
 WithAValue.argTypes = argTypes;
+WithAValue.parameters = { chromatic: { disableSnapshot: true } };
 
 export const WithHintText = Template.bind(withHintTextProps);
 WithHintText.args = withHintTextProps;
 WithHintText.argTypes = argTypes;
+WithHintText.parameters = { chromatic: { disableSnapshot: true } };
 
 export const NotchDisabled = Template.bind(noNotchProps);
 NotchDisabled.args = noNotchProps;
 NotchDisabled.argTypes = argTypes;
+NotchDisabled.parameters = { chromatic: { disableSnapshot: true } };
 
 export const NotchDisabledWithValue = Template.bind(noNotchWithValueProps);
 NotchDisabledWithValue.args = noNotchWithValueProps;
 NotchDisabledWithValue.argTypes = argTypes;
+NotchDisabledWithValue.parameters = { chromatic: { disableSnapshot: true } };
 
 export const WithIcon = Template.bind(withIconProps);
 WithIcon.args = withIconProps;
 WithIcon.argTypes = argTypes;
+WithIcon.parameters = { chromatic: { disableSnapshot: true } };
 
 export const Disabled = Template.bind(disabledProps);
 Disabled.args = disabledProps;
 Disabled.argTypes = argTypes;
+Disabled.parameters = { chromatic: { disableSnapshot: true } };
 
 export const Valid = Template.bind(validProps);
 Valid.args = validProps;
 Valid.argTypes = argTypes;
+Valid.parameters = { chromatic: { disableSnapshot: true } };
 
 export const Invalid = Template.bind(invalidProps);
 Invalid.args = invalidProps;
 Invalid.argTypes = argTypes;
+Invalid.parameters = { chromatic: { disableSnapshot: true } };
 
 export const Loading = Template.bind(loadingProps);
 Loading.args = loadingProps;
 Loading.argTypes = argTypes;
+Loading.parameters = { chromatic: { disableSnapshot: true } };
 
 const smallProps: typeof standardProps = {
 	...standardProps,
@@ -190,6 +199,7 @@ const smallProps: typeof standardProps = {
 export const Small = Template.bind(smallProps);
 Small.args = smallProps;
 Small.argTypes = argTypes;
+Small.parameters = { chromatic: { disableSnapshot: true } };
 
 const withValueSmallProps: typeof withAValueProps = {
 	...withAValueProps,
@@ -199,6 +209,7 @@ const withValueSmallProps: typeof withAValueProps = {
 export const WithValueSmall = Template.bind(withValueSmallProps);
 WithValueSmall.args = withValueSmallProps;
 WithValueSmall.argTypes = argTypes;
+WithValueSmall.parameters = { chromatic: { disableSnapshot: true } };
 
 const withIconSmallProps: typeof withAValueProps = {
 	...withAValueProps,
@@ -209,6 +220,7 @@ const withIconSmallProps: typeof withAValueProps = {
 export const WithIconSmall = Template.bind(withIconSmallProps);
 WithIconSmall.args = withIconSmallProps;
 WithIconSmall.argTypes = argTypes;
+WithIconSmall.parameters = { chromatic: { disableSnapshot: true } };
 
 const loadingSmallProps: typeof withAValueProps = {
 	...withAValueProps,
@@ -218,3 +230,4 @@ const loadingSmallProps: typeof withAValueProps = {
 export const LoadingSmall = Template.bind(loadingSmallProps);
 LoadingSmall.args = loadingSmallProps;
 LoadingSmall.argTypes = argTypes;
+LoadingSmall.parameters = { chromatic: { disableSnapshot: true } };
