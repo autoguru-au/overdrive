@@ -108,7 +108,6 @@ export const WithAValue: Story = {
 		value: defaultValue,
 		placeholder: defaultPlaceholder,
 	},
-	parameters: { chromatic: { disableSnapshot: true } },
 };
 
 export const WithHintText: Story = {
@@ -116,7 +115,6 @@ export const WithHintText: Story = {
 		hintText: 'Hint Text',
 		placeholder: defaultPlaceholder,
 	},
-	parameters: { chromatic: { disableSnapshot: true } },
 };
 
 export const NotchDisabled: Story = {
@@ -124,7 +122,6 @@ export const NotchDisabled: Story = {
 		placeholder: defaultPlaceholder,
 		notch: false,
 	},
-	parameters: { chromatic: { disableSnapshot: true } },
 };
 
 export const NotchDisabledWithValue: Story = {
@@ -133,21 +130,18 @@ export const NotchDisabledWithValue: Story = {
 		placeholder: defaultPlaceholder,
 		notch: false,
 	},
-	parameters: { chromatic: { disableSnapshot: true } },
 };
 
 export const WithPrefixIcon: Story = {
 	args: {
 		prefixIcon: CalendarIcon,
 	},
-	parameters: { chromatic: { disableSnapshot: true } },
 };
 
 export const WithSuffixIcon: Story = {
 	args: {
 		suffixIcon: AccountEditIcon,
 	},
-	parameters: { chromatic: { disableSnapshot: true } },
 };
 
 export const WithBothIcons: Story = {
@@ -155,77 +149,18 @@ export const WithBothIcons: Story = {
 		prefixIcon: CalendarIcon,
 		suffixIcon: AccountEditIcon,
 	},
-	parameters: { chromatic: { disableSnapshot: true } },
-};
-
-export const AttachedLeft: Story = {
-	args: {
-		attach: 'LEFT',
-	},
-	parameters: { chromatic: { disableSnapshot: true } },
-};
-
-export const AttachedTop: Story = {
-	args: {
-		attach: 'TOP',
-	},
-	parameters: { chromatic: { disableSnapshot: true } },
-};
-
-export const AttachedRight: Story = {
-	args: {
-		attach: 'RIGHT',
-	},
-	parameters: { chromatic: { disableSnapshot: true } },
-};
-
-export const AttachedBottom: Story = {
-	args: {
-		attach: 'BOTTOM',
-	},
-	parameters: { chromatic: { disableSnapshot: true } },
 };
 
 export const AttachedAll: Story = {
 	args: {
 		attach: 'ALL',
 	},
-	parameters: { chromatic: { disableSnapshot: true } },
-};
-
-export const MergedLeft: Story = {
-	args: {
-		borderMerged: 'LEFT',
-	},
-	parameters: { chromatic: { disableSnapshot: true } },
-};
-
-export const MergedTop: Story = {
-	args: {
-		borderMerged: 'TOP',
-	},
-	parameters: { chromatic: { disableSnapshot: true } },
-};
-
-export const MergedRight: Story = {
-	args: {
-		borderMerged: 'RIGHT',
-	},
-	parameters: { chromatic: { disableSnapshot: true } },
-};
-
-export const MergedBottom: Story = {
-	args: {
-		borderMerged: 'BOTTOM',
-	},
-	parameters: { chromatic: { disableSnapshot: true } },
 };
 
 export const MergedAll: Story = {
 	args: {
 		borderMerged: 'ALL',
 	},
-	parameters: { chromatic: { disableSnapshot: true } },
 };
 
 export const Disabled: Story = {
@@ -234,7 +169,6 @@ export const Disabled: Story = {
 		placeholder: defaultPlaceholder,
 		disabled: true,
 	},
-	parameters: { chromatic: { disableSnapshot: true } },
 };
 
 export const Valid: Story = {
@@ -244,7 +178,6 @@ export const Valid: Story = {
 		isTouched: true,
 		isValid: true,
 	},
-	parameters: { chromatic: { disableSnapshot: true } },
 };
 
 export const Invalid: Story = {
@@ -255,21 +188,18 @@ export const Invalid: Story = {
 		isValid: false,
 		hintText: 'Cannot be Bob the builder',
 	},
-	parameters: { chromatic: { disableSnapshot: true } },
 };
 
 export const Loading: Story = {
 	args: {
 		isLoading: true,
 	},
-	parameters: { chromatic: { disableSnapshot: true } },
 };
 
 export const Small: Story = {
 	args: {
 		size: 'small',
 	},
-	parameters: { chromatic: { disableSnapshot: true } },
 };
 
 export const WithValueSmall: Story = {
@@ -277,7 +207,6 @@ export const WithValueSmall: Story = {
 		...WithAValue.args,
 		size: 'small',
 	},
-	parameters: { chromatic: { disableSnapshot: true } },
 };
 
 export const WithIconSmall: Story = {
@@ -286,7 +215,6 @@ export const WithIconSmall: Story = {
 		prefixIcon: CarIcon,
 		size: 'small',
 	},
-	parameters: { chromatic: { disableSnapshot: true } },
 };
 
 export const LoadingSmall: Story = {
@@ -295,5 +223,4 @@ export const LoadingSmall: Story = {
 		isLoading: true,
 		size: 'small',
 	},
-	parameters: { chromatic: { disableSnapshot: true } },
 };

@@ -74,8 +74,8 @@ const standardProps: ComponentProps<typeof Tabs> = {
 		</>
 	),
 };
-export const standard = Template.bind(standardProps);
-standard.args = standardProps;
+export const Standard = Template.bind(standardProps);
+Standard.args = standardProps;
 
 const withIndicationProps: ComponentProps<typeof Tabs> = {
 	active: 0,
@@ -94,8 +94,8 @@ const withIndicationProps: ComponentProps<typeof Tabs> = {
 		</>
 	),
 };
-export const withIndication = Template.bind(withIndicationProps);
-withIndication.args = withIndicationProps;
+export const WithIndication = Template.bind(withIndicationProps);
+WithIndication.args = withIndicationProps;
 
 const withComplexTabProps: ComponentProps<typeof Tabs> = {
 	active: 0,
@@ -138,25 +138,8 @@ const withComplexTabProps: ComponentProps<typeof Tabs> = {
 		</>
 	),
 };
-export const withComplexTab = Template.bind(withComplexTabProps);
-withComplexTab.args = withComplexTabProps;
-
-const tabsWithoutPanesProps: ComponentProps<typeof Tabs> = {
-	active: 0,
-	onChange: action('onChange'),
-	children: (
-		<TabList>
-			<Tab id="tab-1" is={<a href="/#tab-1" />}>
-				Tab 1
-			</Tab>
-			<Tab id="tab-2" is={<a href="/#tab-2" />}>
-				Tab 2
-			</Tab>
-		</TabList>
-	),
-};
-export const tabsWithoutPanes = Template.bind(tabsWithoutPanesProps);
-tabsWithoutPanes.args = tabsWithoutPanesProps;
+export const WithComplexTab = Template.bind(withComplexTabProps);
+WithComplexTab.args = withComplexTabProps;
 
 const withStretchProps: ComponentProps<typeof Tabs> = {
 	active: 0,
@@ -183,8 +166,8 @@ const withStretchProps: ComponentProps<typeof Tabs> = {
 		</>
 	),
 };
-export const withStretch = Template.bind(withStretchProps);
-withStretch.args = withStretchProps;
+export const WithStretch = Template.bind(withStretchProps);
+WithStretch.args = withStretchProps;
 
 const scrollableProps: ComponentProps<typeof Tabs> = {
 	active: 0,
@@ -209,5 +192,5 @@ const scrollableProps: ComponentProps<typeof Tabs> = {
 		</TabList>
 	),
 };
-export const scrollable = Template.bind(scrollableProps);
-scrollable.args = scrollableProps;
+export const Scrollable = Template.bind(scrollableProps);
+Scrollable.args = scrollableProps;

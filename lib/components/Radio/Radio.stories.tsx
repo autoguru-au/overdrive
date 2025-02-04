@@ -87,29 +87,6 @@ const Template: StoryFn<typeof Radio> = ({ value, ...args }) => (
 		<Radio value="avocado" {...args} />
 	</RadioGroup>
 );
-
-const uncheckedProps: ComponentProps<typeof Radio> = {
-	disabled: false,
-	children: 'check me!',
-	value: 'berry',
-};
-const checkedProps: ComponentProps<typeof Radio> = {
-	// @ts-expect-error type error for `checked`
-	checked: true,
-	disabled: false,
-	children: 'check me!',
-	value: 'avocado',
-};
-const disabledProps: ComponentProps<typeof Radio> = {
-	disabled: true,
-	children: 'check me!',
-	value: 'berry',
-};
-const emptyProps: ComponentProps<typeof Radio> = {
-	disabled: true,
-	children: null,
-	value: 'berry',
-};
 const disabledCheckedProps: ComponentProps<typeof Radio> = {
 	// @ts-expect-error type error for `checked`
 	checked: true,
@@ -137,7 +114,7 @@ const Item = ({ label, rating }) => (
 	</div>
 );
 
-const withComponentProps: ComponentProps<typeof Radio> = {
+const withChildrenProps: ComponentProps<typeof Radio> = {
 	disabled: false,
 	children: <Item label="Avocados" rating="4.3" />,
 	value: 'berry',
@@ -172,41 +149,17 @@ const withMultiLineComponentProps: ComponentProps<typeof Radio> = {
 	value: '1',
 };
 
-export const Unchecked = Template.bind(uncheckedProps);
-Unchecked.args = uncheckedProps;
-Unchecked.argTypes = argTypes;
-
-export const Checked = Template.bind(checkedProps);
-Checked.args = checkedProps;
-Checked.argTypes = argTypes;
-
-export const Disabled = Template.bind(disabledProps);
-Disabled.args = disabledProps;
-Disabled.argTypes = argTypes;
-
 export const DisabledChecked = Template.bind(disabledCheckedProps);
 DisabledChecked.args = disabledCheckedProps;
 DisabledChecked.argTypes = argTypes;
-
-export const WithNoChildren = Template.bind(emptyProps);
-WithNoChildren.args = emptyProps;
 
 export const MultipleLines = Template.bind(multipleLinesProps);
 MultipleLines.args = multipleLinesProps;
 MultipleLines.argTypes = argTypes;
 
-export const WithComponent = Template.bind(withComponentProps);
-WithComponent.args = withComponentProps;
-WithComponent.argTypes = {
-	...argTypes,
-	children: { control: { disable: true } },
-};
-
-export const WithMultiLineComponent = Template.bind(
-	withMultiLineComponentProps,
-);
-WithMultiLineComponent.args = withMultiLineComponentProps;
-WithMultiLineComponent.argTypes = {
+export const WithChildren = Template.bind(withMultiLineComponentProps);
+WithChildren.args = withChildrenProps;
+WithChildren.argTypes = {
 	...argTypes,
 	children: { control: { disable: true } },
 };
