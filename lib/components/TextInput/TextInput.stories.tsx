@@ -10,20 +10,13 @@ import {
 	StarIcon,
 } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
-import { ArgTypes, Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { ComponentProps } from 'react';
 
 import { boxArgTypes } from '../Box/argTypes';
 import { DateInput } from '../DateInput';
 
 import { TextInput } from '.';
-
-export default {
-	title: 'Forms & Input Fields/Text Input',
-	component: TextInput,
-	parameters: { chromatic: {} },
-} satisfies Meta<typeof TextInput>;
 
 const defaultValue = 'Jane Doe';
 const defaultPlaceholder = 'What is your first name?';
@@ -50,304 +43,234 @@ const attachOptions: Record<
 	ALL: 'ALL',
 };
 
-const argTypes: ArgTypes<Partial<ComponentProps<typeof TextInput>>> = {
-	attach: {
-		defaultValue: 'NONE',
-		description: 'Input attach',
-		options: attachOptions,
-		control: {
-			type: 'select',
+const meta: Meta = {
+	title: 'Forms & Input Fields/Text Input',
+	component: TextInput,
+	args: {
+		disabled: false,
+		name: 'text',
+		placeholder: defaultPlaceholder,
+		isValid: false,
+		isTouched: false,
+		isLoading: false,
+		isFocused: false,
+		reserveHintSpace: false,
+		hintText: '',
+		notch: true,
+		prefixIcon: void 0,
+		onChange: action('onChange'),
+		onFocus: action('onFocus'),
+		onBlur: action('onBlur'),
+	},
+	argTypes: {
+		attach: {
+			defaultValue: 'NONE',
+			description: 'Input attach',
+			options: attachOptions,
+			control: {
+				type: 'select',
+			},
+		},
+		prefixIcon: {
+			defaultValue: null,
+			description: 'Input prefix Icon',
+			options: iconOptions,
+			control: {
+				type: 'select',
+			},
+		},
+		suffixIcon: {
+			defaultValue: null,
+			description: 'Input suffix Icon',
+			options: iconOptions,
+			control: {
+				type: 'select',
+			},
+		},
+		backgroundColour: boxArgTypes['backgroundColour'],
+		maxLength: {
+			defaultValue: null,
+			description: 'Set the max length of the input',
+			control: {
+				type: 'number',
+			},
 		},
 	},
-	prefixIcon: {
-		defaultValue: null,
-		description: 'Input prefix Icon',
-		options: iconOptions,
-		control: {
-			type: 'select',
-		},
+};
+
+export default meta;
+type Story = StoryObj<typeof TextInput>;
+
+export const Standard: Story = {};
+
+export const WithAValue: Story = {
+	args: {
+		value: defaultValue,
+		placeholder: defaultPlaceholder,
 	},
-	suffixIcon: {
-		defaultValue: null,
-		description: 'Input suffix Icon',
-		options: iconOptions,
-		control: {
-			type: 'select',
-		},
+	parameters: { chromatic: { disableSnapshot: true } },
+};
+
+export const WithHintText: Story = {
+	args: {
+		hintText: 'Hint Text',
+		placeholder: defaultPlaceholder,
 	},
-	backgroundColour: boxArgTypes['backgroundColour'],
-	maxLength: {
-		defaultValue: null,
-		description: 'Set the max length of the input',
-		control: {
-			type: 'number',
-		},
+	parameters: { chromatic: { disableSnapshot: true } },
+};
+
+export const NotchDisabled: Story = {
+	args: {
+		placeholder: defaultPlaceholder,
+		notch: false,
 	},
 };
 
-const Template: StoryFn<typeof TextInput> = (args) => <TextInput {...args} />;
-
-const sharedProps: ComponentProps<typeof TextInput> = {
-	disabled: false,
-	name: 'text',
-	placeholder: defaultPlaceholder,
-	isValid: false,
-	isTouched: false,
-	isLoading: false,
-	isFocused: false,
-	reserveHintSpace: false,
-	hintText: '',
-	notch: true,
-	prefixIcon: void 0,
-	onChange: action('onChange'),
-	onFocus: action('onFocus'),
-	onBlur: action('onBlur'),
+export const NotchDisabledWithValue: Story = {
+	args: {
+		value: defaultValue,
+		placeholder: defaultPlaceholder,
+		notch: false,
+	},
 };
 
-const standardProps: ComponentProps<typeof TextInput> = sharedProps;
-const withAValueProps: ComponentProps<typeof TextInput> = {
-	...sharedProps,
-	value: defaultValue,
-	placeholder: defaultPlaceholder,
-};
-const withHintTextProps: ComponentProps<typeof TextInput> = {
-	...sharedProps,
-	hintText: 'Hint Text',
-	placeholder: defaultPlaceholder,
-};
-const withPrefixIconProps: ComponentProps<typeof TextInput> = {
-	...sharedProps,
-	prefixIcon: CalendarIcon,
-};
-const attachedLeftProps: ComponentProps<typeof TextInput> = {
-	...sharedProps,
-	attach: 'LEFT',
-};
-const attachedTopProps: ComponentProps<typeof TextInput> = {
-	...sharedProps,
-	attach: 'TOP',
-};
-const attachedRightProps: ComponentProps<typeof TextInput> = {
-	...sharedProps,
-	attach: 'RIGHT',
-};
-const attachedBottomProps: ComponentProps<typeof TextInput> = {
-	...sharedProps,
-	attach: 'BOTTOM',
-};
-const attachedAllProps: ComponentProps<typeof TextInput> = {
-	...sharedProps,
-	attach: 'ALL',
-};
-const mergedLeftProps: ComponentProps<typeof TextInput> = {
-	...sharedProps,
-	borderMerged: 'LEFT',
-};
-const mergedTopProps: ComponentProps<typeof TextInput> = {
-	...sharedProps,
-	borderMerged: 'TOP',
-};
-const mergedRightProps: ComponentProps<typeof TextInput> = {
-	...sharedProps,
-	borderMerged: 'RIGHT',
-};
-const mergedBottomProps: ComponentProps<typeof TextInput> = {
-	...sharedProps,
-	borderMerged: 'BOTTOM',
-};
-const mergedAllProps: ComponentProps<typeof TextInput> = {
-	...sharedProps,
-	borderMerged: 'ALL',
-};
-const withSuffixIconProps: ComponentProps<typeof TextInput> = {
-	...sharedProps,
-	suffixIcon: AccountEditIcon,
-};
-const withBothIconsProps: ComponentProps<typeof TextInput> = {
-	...sharedProps,
-	prefixIcon: CalendarIcon,
-	suffixIcon: AccountEditIcon,
-};
-const disabledProps: ComponentProps<typeof TextInput> = {
-	...sharedProps,
-	value: defaultValue,
-	placeholder: defaultPlaceholder,
-	disabled: true,
-};
-const validProps: ComponentProps<typeof TextInput> = {
-	...sharedProps,
-	value: defaultValue,
-	placeholder: defaultPlaceholder,
-	isTouched: true,
-	isValid: true,
-};
-const invalidProps: ComponentProps<typeof TextInput> = {
-	...sharedProps,
-	value: 'Bob the builder',
-	placeholder: defaultPlaceholder,
-	isTouched: true,
-	isValid: false,
-	hintText: 'Cannot be Bob the builder',
-};
-const noNotchProps: ComponentProps<typeof TextInput> = {
-	...sharedProps,
-	placeholder: defaultPlaceholder,
-	notch: false,
-};
-const noNotchWithValueProps: ComponentProps<typeof TextInput> = {
-	...sharedProps,
-	value: defaultValue,
-	placeholder: defaultPlaceholder,
-	notch: false,
-};
-const loadingProps: ComponentProps<typeof TextInput> = {
-	...sharedProps,
-	isLoading: true,
-};
-export const Standard = Template.bind(standardProps);
-Standard.args = standardProps;
-Standard.argTypes = argTypes;
-
-export const WithAValue = Template.bind(withAValueProps);
-WithAValue.args = withAValueProps;
-WithAValue.argTypes = argTypes;
-WithAValue.parameters = { chromatic: { disableSnapshot: true } };
-
-export const WithHintText = Template.bind(withHintTextProps);
-WithHintText.args = withHintTextProps;
-WithHintText.argTypes = argTypes;
-WithHintText.parameters = { chromatic: { disableSnapshot: true } };
-
-export const NotchDisabled = Template.bind(noNotchProps);
-NotchDisabled.args = noNotchProps;
-NotchDisabled.argTypes = argTypes;
-NotchDisabled.parameters = { chromatic: { disableSnapshot: true } };
-
-export const NotchDisabledWithValue = Template.bind(noNotchWithValueProps);
-NotchDisabledWithValue.args = noNotchWithValueProps;
-NotchDisabledWithValue.argTypes = argTypes;
-NotchDisabledWithValue.parameters = { chromatic: { disableSnapshot: true } };
-
-export const WithPrefixIcon = Template.bind(withPrefixIconProps);
-WithPrefixIcon.args = withPrefixIconProps;
-WithPrefixIcon.argTypes = argTypes;
-WithPrefixIcon.parameters = { chromatic: { disableSnapshot: true } };
-
-export const WithSuffixIcon = Template.bind(withSuffixIconProps);
-WithSuffixIcon.args = withSuffixIconProps;
-WithSuffixIcon.argTypes = argTypes;
-WithSuffixIcon.parameters = { chromatic: { disableSnapshot: true } };
-
-export const WithBothIcons = Template.bind(withBothIconsProps);
-WithBothIcons.args = withBothIconsProps;
-WithBothIcons.argTypes = argTypes;
-WithBothIcons.parameters = { chromatic: { disableSnapshot: true } };
-
-export const AttachedLeft = Template.bind(attachedLeftProps);
-AttachedLeft.args = attachedLeftProps;
-AttachedLeft.argTypes = argTypes;
-
-export const AttachedTop = Template.bind(attachedTopProps);
-AttachedTop.args = attachedTopProps;
-AttachedTop.argTypes = argTypes;
-AttachedTop.parameters = { chromatic: { disableSnapshot: true } };
-
-export const AttachedRight = Template.bind(attachedRightProps);
-AttachedRight.args = attachedRightProps;
-AttachedRight.argTypes = argTypes;
-AttachedRight.parameters = { chromatic: { disableSnapshot: true } };
-
-export const AttachedBottom = Template.bind(attachedBottomProps);
-AttachedBottom.args = attachedBottomProps;
-AttachedBottom.argTypes = argTypes;
-AttachedBottom.parameters = { chromatic: { disableSnapshot: true } };
-
-export const AttachedAll = Template.bind(attachedAllProps);
-AttachedAll.args = attachedAllProps;
-AttachedAll.argTypes = argTypes;
-AttachedAll.parameters = { chromatic: { disableSnapshot: true } };
-
-export const MergedLeft = Template.bind(mergedLeftProps);
-MergedLeft.args = mergedLeftProps;
-MergedLeft.argTypes = argTypes;
-MergedLeft.parameters = { chromatic: { disableSnapshot: true } };
-
-export const MergedTop = Template.bind(mergedTopProps);
-MergedTop.args = mergedTopProps;
-MergedTop.argTypes = argTypes;
-MergedTop.parameters = { chromatic: { disableSnapshot: true } };
-
-export const MergedRight = Template.bind(mergedRightProps);
-MergedRight.args = mergedRightProps;
-MergedRight.argTypes = argTypes;
-MergedRight.parameters = { chromatic: { disableSnapshot: true } };
-
-export const MergedBottom = Template.bind(mergedBottomProps);
-MergedBottom.args = mergedBottomProps;
-MergedBottom.argTypes = argTypes;
-MergedBottom.parameters = { chromatic: { disableSnapshot: true } };
-
-export const MergedAll = Template.bind(mergedAllProps);
-MergedAll.args = mergedAllProps;
-MergedAll.argTypes = argTypes;
-MergedAll.parameters = { chromatic: { disableSnapshot: true } };
-
-export const Disabled = Template.bind(disabledProps);
-Disabled.args = disabledProps;
-Disabled.argTypes = argTypes;
-Disabled.parameters = { chromatic: { disableSnapshot: true } };
-
-export const Valid = Template.bind(validProps);
-Valid.args = validProps;
-Valid.argTypes = argTypes;
-Valid.parameters = { chromatic: { disableSnapshot: true } };
-
-export const Invalid = Template.bind(invalidProps);
-Invalid.args = invalidProps;
-Invalid.argTypes = argTypes;
-Invalid.parameters = { chromatic: { disableSnapshot: true } };
-
-export const Loading = Template.bind(loadingProps);
-Loading.args = loadingProps;
-Loading.argTypes = argTypes;
-Loading.parameters = { chromatic: { disableSnapshot: true } };
-
-const smallProps: typeof standardProps = {
-	...standardProps,
-	size: 'small',
-};
-export const Small = Template.bind(smallProps);
-Small.args = smallProps;
-Small.argTypes = argTypes;
-Small.parameters = { chromatic: { disableSnapshot: true } };
-
-const withValueSmallProps: typeof withAValueProps = {
-	...withAValueProps,
-	size: 'small',
+export const WithPrefixIcon: Story = {
+	args: {
+		prefixIcon: CalendarIcon,
+	},
 };
 
-export const WithValueSmall = Template.bind(withValueSmallProps);
-WithValueSmall.args = withValueSmallProps;
-WithValueSmall.argTypes = argTypes;
-WithValueSmall.parameters = { chromatic: { disableSnapshot: true } };
-
-const withIconSmallProps: typeof withAValueProps = {
-	...withAValueProps,
-	prefixIcon: CarIcon,
-	size: 'small',
+export const WithSuffixIcon: Story = {
+	args: {
+		suffixIcon: AccountEditIcon,
+	},
 };
 
-export const WithIconSmall = Template.bind(withIconSmallProps);
-WithIconSmall.args = withIconSmallProps;
-WithIconSmall.argTypes = argTypes;
-WithIconSmall.parameters = { chromatic: { disableSnapshot: true } };
-
-const loadingSmallProps: typeof withAValueProps = {
-	...withAValueProps,
-	isLoading: true,
-	size: 'small',
+export const WithBothIcons: Story = {
+	args: {
+		prefixIcon: CalendarIcon,
+		suffixIcon: AccountEditIcon,
+	},
 };
-export const LoadingSmall = Template.bind(loadingSmallProps);
-LoadingSmall.args = loadingSmallProps;
-LoadingSmall.argTypes = argTypes;
-LoadingSmall.parameters = { chromatic: { disableSnapshot: true } };
+
+export const AttachedLeft: Story = {
+	args: {
+		attach: 'LEFT',
+	},
+};
+
+export const AttachedTop: Story = {
+	args: {
+		attach: 'TOP',
+	},
+};
+
+export const AttachedRight: Story = {
+	args: {
+		attach: 'RIGHT',
+	},
+};
+
+export const AttachedBottom: Story = {
+	args: {
+		attach: 'BOTTOM',
+	},
+};
+
+export const AttachedAll: Story = {
+	args: {
+		attach: 'ALL',
+	},
+};
+
+export const MergedLeft: Story = {
+	args: {
+		borderMerged: 'LEFT',
+	},
+};
+
+export const MergedTop: Story = {
+	args: {
+		borderMerged: 'TOP',
+	},
+};
+
+export const MergedRight: Story = {
+	args: {
+		borderMerged: 'RIGHT',
+	},
+};
+
+export const MergedBottom: Story = {
+	args: {
+		borderMerged: 'BOTTOM',
+	},
+};
+
+export const MergedAll: Story = {
+	args: {
+		borderMerged: 'ALL',
+	},
+};
+
+export const Disabled: Story = {
+	args: {
+		value: defaultValue,
+		placeholder: defaultPlaceholder,
+		disabled: true,
+	},
+};
+
+export const Valid: Story = {
+	args: {
+		value: defaultValue,
+		placeholder: defaultPlaceholder,
+		isTouched: true,
+		isValid: true,
+	},
+};
+
+export const Invalid: Story = {
+	args: {
+		value: 'Bob the builder',
+		placeholder: defaultPlaceholder,
+		isTouched: true,
+		isValid: false,
+		hintText: 'Cannot be Bob the builder',
+	},
+};
+
+export const Loading: Story = {
+	args: {
+		isLoading: true,
+	},
+};
+
+export const Small: Story = {
+	args: {
+		size: 'small',
+	},
+};
+
+export const WithValueSmall: Story = {
+	args: {
+		...WithAValue.args,
+		size: 'small',
+	},
+};
+
+export const WithIconSmall: Story = {
+	args: {
+		...WithAValue.args,
+		prefixIcon: CarIcon,
+		size: 'small',
+	},
+};
+
+export const LoadingSmall: Story = {
+	args: {
+		...WithAValue.args,
+		isLoading: true,
+		size: 'small',
+	},
+};
