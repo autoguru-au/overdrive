@@ -61,25 +61,25 @@ const standardProps: Omit<ComponentProps<typeof Tooltip>, 'children'> = {
 	closeAfter: null,
 };
 
-export const standard: StoryFn<typeof Tooltip> = Template.bind(standardProps);
-standard.args = standardProps;
+export const Standard: StoryFn<typeof Tooltip> = Template.bind(standardProps);
+Standard.args = standardProps;
 
 const withAtuCloseProps: Omit<ComponentProps<typeof Tooltip>, 'children'> = {
 	label: 'I will automatically close after 5 seconds',
 	closeAfter: 5e3,
 };
-export const withAutoClose: StoryFn<typeof Tooltip> =
+export const WithAutoClose: StoryFn<typeof Tooltip> =
 	Template.bind(withAtuCloseProps);
-withAutoClose.args = withAtuCloseProps;
+WithAutoClose.args = withAtuCloseProps;
 
 const withLongTextProps: Omit<ComponentProps<typeof Tooltip>, 'children'> = {
 	label: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
 	alignment: EAlignment.BOTTOM,
 };
 
-export const withLongText: StoryFn<typeof Tooltip> =
+export const WithLongText: StoryFn<typeof Tooltip> =
 	Template.bind(withLongTextProps);
-withLongText.args = withLongTextProps;
+WithLongText.args = withLongTextProps;
 
 const withSmallTextSizeProps: Omit<
 	ComponentProps<typeof Tooltip>,
@@ -90,17 +90,7 @@ const withSmallTextSizeProps: Omit<
 	size: 'large',
 };
 
-export const withLargeTextSize: StoryFn<typeof Tooltip> = Template.bind(
+export const WithLargeTextSize: StoryFn<typeof Tooltip> = Template.bind(
 	withSmallTextSizeProps,
 );
-withLargeTextSize.args = withSmallTextSizeProps;
-
-const withEmptyLabelProps: Omit<ComponentProps<typeof Tooltip>, 'children'> = {
-	label: '',
-	alignment: EAlignment.BOTTOM,
-	size: 'large',
-};
-
-export const withEmptyLabel: StoryFn<typeof Tooltip> =
-	Template.bind(withEmptyLabelProps);
-withEmptyLabel.args = withEmptyLabelProps;
+WithLargeTextSize.args = withSmallTextSizeProps;

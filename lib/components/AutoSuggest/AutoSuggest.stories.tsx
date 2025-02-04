@@ -224,20 +224,6 @@ const withValueProps: typeof standardProps = {
 export const WithValue = Template.bind(withValueProps);
 WithValue.args = withValueProps;
 
-const withoutNotchProps: typeof withValueProps = {
-	...withValueProps,
-	notch: false,
-};
-export const WithoutNotch = Template.bind(withoutNotchProps);
-WithoutNotch.args = withoutNotchProps;
-
-const withNoItemsProps: typeof standardProps = {
-	...standardProps,
-	suggestions: [],
-};
-export const WithNoItems = Template.bind(withNoItemsProps);
-WithNoItems.args = withNoItemsProps;
-
 const withIconProps: typeof withValueProps = {
 	...withValueProps,
 	prefixIcon: CarIcon,
@@ -256,8 +242,6 @@ const withHintTextProps: typeof withIconProps = {
 	...withIconProps,
 	hintText: 'Choose a sports car make',
 };
-export const WithHintText = Template.bind(withHintTextProps);
-WithHintText.args = withHintTextProps;
 
 const validProps: typeof withHintTextProps = {
 	...withHintTextProps,
@@ -277,35 +261,9 @@ const invalidProps: typeof withHintTextProps = {
 export const Invalid = Template.bind(invalidProps);
 Invalid.args = invalidProps;
 
-const withIconSmallProps: typeof withValueProps = {
-	...withValueProps,
-	prefixIcon: CarIcon,
-	size: 'small',
-};
-
 const smallProps: typeof standardProps = {
 	...standardProps,
 	size: 'small',
 };
 export const Small = Template.bind(smallProps);
 Small.args = smallProps;
-
-const withValueSmallProps: typeof standardProps = {
-	...standardProps,
-	value: mockSuggestions[3],
-	size: 'small',
-};
-
-export const WithValueSmall = Template.bind(withValueSmallProps);
-WithValueSmall.args = withValueSmallProps;
-
-export const WithIconSmall = Template.bind(withIconSmallProps);
-WithIconSmall.args = withIconSmallProps;
-
-const loadingSmallProps: typeof withValueSmallProps = {
-	...withValueSmallProps,
-	isLoading: true,
-	size: 'small',
-};
-export const LoadingSmall = Template.bind(loadingSmallProps);
-LoadingSmall.args = loadingSmallProps;

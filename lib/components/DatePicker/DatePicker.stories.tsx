@@ -73,9 +73,6 @@ const smallProps: ComponentProps<typeof DatePicker> = {
 	disabled: false,
 };
 
-export const Small = Template.bind(smallProps);
-Small.args = smallProps;
-
 const smallWithLabelProps: ComponentProps<typeof DatePicker> = {
 	...smallProps,
 	valueLabel: 'Today',
@@ -90,9 +87,6 @@ const mediumProps: ComponentProps<typeof DatePicker> = {
 	disabled: false,
 };
 
-export const Medium = Template.bind(mediumProps);
-Medium.args = mediumProps;
-
 const mediumWithLabelProps: ComponentProps<typeof DatePicker> = {
 	...mediumProps,
 	valueLabel: 'Today',
@@ -106,9 +100,6 @@ const largeProps: ComponentProps<typeof DatePicker> = {
 	isLoading: false,
 	disabled: false,
 };
-
-export const Large = Template.bind(largeProps);
-Large.args = largeProps;
 
 const largeWithLabelProps: ComponentProps<typeof DatePicker> = {
 	...largeProps,

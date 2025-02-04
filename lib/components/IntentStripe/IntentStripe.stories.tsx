@@ -81,20 +81,3 @@ Standard.args = standardProps;
 
 export const StandardAllIntents = templateAllIntents.bind(standardProps);
 StandardAllIntents.args = standardProps;
-
-const inlineProps: typeof standardProps = {
-	...standardProps,
-	inline: true,
-};
-
-export const InlineAllIntents = templateAllIntents.bind(inlineProps);
-InlineAllIntents.args = inlineProps;
-
-const noneDismissibleProps: typeof standardProps = {
-	...standardProps,
-	dismissible: false,
-};
-
-export const NoneDismissibleAllIntents =
-	templateAllIntents.bind(noneDismissibleProps);
-NoneDismissibleAllIntents.args = noneDismissibleProps;

@@ -2,7 +2,6 @@ import {
 	AccountEditIcon,
 	AlertCircleIcon,
 	CalendarIcon,
-	CarIcon,
 	CarMultipleIcon,
 	CheckIcon,
 	CurrencyUsdIcon,
@@ -157,26 +156,6 @@ const disabledProps: ComponentProps<typeof NumberInput> = {
 	placeholder: defaultPlaceholder,
 	disabled: true,
 };
-const validProps: ComponentProps<typeof NumberInput> = {
-	...sharedProps,
-	value: defaultValue,
-	placeholder: defaultPlaceholder,
-	isTouched: true,
-	isValid: true,
-};
-const invalidProps: ComponentProps<typeof NumberInput> = {
-	...sharedProps,
-	value: '99',
-	placeholder: defaultPlaceholder,
-	isTouched: true,
-	isValid: false,
-	hintText: 'Required litres of oil is not valid',
-};
-const noNotchProps: ComponentProps<typeof NumberInput> = {
-	...sharedProps,
-	placeholder: defaultPlaceholder,
-	notch: false,
-};
 const noNotchWithValueProps: ComponentProps<typeof NumberInput> = {
 	...sharedProps,
 	value: defaultValue,
@@ -200,10 +179,6 @@ export const WithHintText = Template.bind(withHintTextProps);
 WithHintText.args = withHintTextProps;
 WithHintText.argTypes = argTypes;
 
-export const NotchDisabled = Template.bind(noNotchProps);
-NotchDisabled.args = noNotchProps;
-NotchDisabled.argTypes = argTypes;
-
 export const NotchDisabledWithValue = Template.bind(noNotchWithValueProps);
 NotchDisabledWithValue.args = noNotchWithValueProps;
 NotchDisabledWithValue.argTypes = argTypes;
@@ -224,25 +199,9 @@ export const Disabled = Template.bind(disabledProps);
 Disabled.args = disabledProps;
 Disabled.argTypes = argTypes;
 
-export const Valid = Template.bind(validProps);
-Valid.args = validProps;
-Valid.argTypes = argTypes;
-
-export const Invalid = Template.bind(invalidProps);
-Invalid.args = invalidProps;
-Invalid.argTypes = argTypes;
-
 export const Loading = Template.bind(loadingProps);
 Loading.args = loadingProps;
 Loading.argTypes = argTypes;
-
-const smallProps: typeof standardProps = {
-	...standardProps,
-	size: 'small',
-};
-export const Small = Template.bind(smallProps);
-Small.args = smallProps;
-Small.argTypes = argTypes;
 
 const withValueSmallProps: typeof withAValueProps = {
 	...withAValueProps,
@@ -252,22 +211,3 @@ const withValueSmallProps: typeof withAValueProps = {
 export const WithValueSmall = Template.bind(withValueSmallProps);
 WithValueSmall.args = withValueSmallProps;
 WithValueSmall.argTypes = argTypes;
-
-const withIconSmallProps: typeof withAValueProps = {
-	...withAValueProps,
-	prefixIcon: CarIcon,
-	size: 'small',
-};
-
-export const WithIconSmall = Template.bind(withIconSmallProps);
-WithIconSmall.args = withIconSmallProps;
-WithIconSmall.argTypes = argTypes;
-
-const loadingSmallProps: typeof withAValueProps = {
-	...withAValueProps,
-	isLoading: true,
-	size: 'small',
-};
-export const LoadingSmall = Template.bind(loadingSmallProps);
-LoadingSmall.args = loadingSmallProps;
-LoadingSmall.argTypes = argTypes;

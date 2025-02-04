@@ -105,25 +105,12 @@ const Template: StoryFn<typeof SelectInput> = (args) => (
 );
 
 export const Standard = Template.bind({});
-
-export const WithAValue = Template.bind({});
-WithAValue.args = { value: defaultValue, placeholder: defaultPlaceholder };
-
-export const WithHintText = Template.bind({});
-WithHintText.args = {
+Standard.args = {
 	hintText: 'Hint Text',
-	placeholder: defaultPlaceholder,
 };
 
 export const NotchDisabled = Template.bind({});
 NotchDisabled.args = {
-	placeholder: defaultPlaceholder,
-	notch: false,
-};
-
-export const NotchDisabledWithValue = Template.bind({});
-NotchDisabledWithValue.args = {
-	value: defaultValue,
 	placeholder: defaultPlaceholder,
 	notch: false,
 };
@@ -163,25 +150,5 @@ Loading.args = {
 
 export const Small = Template.bind({});
 Small.args = {
-	size: 'small',
-};
-
-export const WithValueSmall = Template.bind({});
-WithValueSmall.args = {
-	...WithAValue.args,
-	size: 'small',
-};
-
-export const WithIconSmall = Template.bind({});
-WithIconSmall.args = {
-	...WithAValue.args,
-	prefixIcon: CarIcon,
-	size: 'small',
-};
-
-export const LoadingSmall = Template.bind({});
-LoadingSmall.args = {
-	...WithAValue.args,
-	isLoading: true,
 	size: 'small',
 };
