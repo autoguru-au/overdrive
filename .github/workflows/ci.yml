@@ -1,9 +1,6 @@
 name: CI
 
-on:
-    push:
-        branches-ignore:
-            - 'changeset-release/**'
+on: push
 
 jobs:
     test:
@@ -82,10 +79,21 @@ jobs:
 
             - run: yarn --immutable
 
+            - name: Skip Chromatic
+              if: github.event_name != 'pull_request'
+              uses: chromaui/action@latest
+              with:
+                  projectToken: ${{ secrets.CHROMATIC_APP_CODE }}
+                  skip: true
+
             - name: Chromatic
+              if:
+                  github.event_name == 'pull_request' &&
+                  github.event.pull_request.draft == false
               uses: chromaui/action@latest
               with:
                   projectToken: ${{ secrets.CHROMATIC_APP_CODE }}
                   onlyChanged: true # enables TurboSnap behaviour
                   autoAcceptChanges: 'main'
                   exitZeroOnChanges: '!(main)'
+                  skip: 'changeset-release/**'
