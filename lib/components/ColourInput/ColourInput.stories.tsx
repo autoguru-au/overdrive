@@ -10,19 +10,12 @@ import {
 	StarIcon,
 } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
-import { ArgTypes, Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { ComponentProps } from 'react';
 
 import { DateInput } from '../DateInput';
 
 import { ColourInput } from '.';
-
-export default {
-	title: 'Forms & Input Fields/Colour Input',
-	component: ColourInput,
-	parameters: { chromatic: {} },
-} satisfies Meta<typeof ColourInput>;
 
 const defaultColour = '#ec4040';
 const iconOptions = {
@@ -47,33 +40,37 @@ const attachOptions: Record<
 	ALL: 'ALL',
 };
 
-const argTypes: Partial<ArgTypes<ComponentProps<typeof ColourInput>>> = {
-	value: {
-		control: {
-			type: 'color',
+const meta = {
+	title: 'Forms & Input Fields/Colour Input',
+	component: ColourInput,
+	parameters: { chromatic: {} },
+	argTypes: {
+		value: {
+			control: {
+				type: 'color',
+			},
+		},
+		attach: {
+			defaultValue: 'NONE',
+			description: 'Input attach',
+			options: attachOptions,
+			control: {
+				type: 'select',
+			},
+		},
+		suffixIcon: {
+			defaultValue: null,
+			description: 'Input suffix Icon',
+			options: iconOptions,
+			control: {
+				type: 'select',
+			},
 		},
 	},
-	attach: {
-		defaultValue: 'NONE',
-		description: 'Input attach',
-		options: attachOptions,
-		control: {
-			type: 'select',
-		},
-	},
-	suffixIcon: {
-		defaultValue: null,
-		description: 'Input suffix Icon',
-		options: iconOptions,
-		control: {
-			type: 'select',
-		},
-	},
-};
+} satisfies Meta<typeof ColourInput>;
 
-const Template: StoryFn<typeof ColourInput> = (args) => (
-	<ColourInput {...args} />
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 const sharedProps: ComponentProps<typeof ColourInput> = {
 	disabled: false,
@@ -92,35 +89,33 @@ const sharedProps: ComponentProps<typeof ColourInput> = {
 	onBlur: action('onBlur'),
 };
 
-const standardProps: ComponentProps<typeof ColourInput> = sharedProps;
-const withAValueProps: ComponentProps<typeof ColourInput> = {
-	...sharedProps,
-	value: defaultColour,
-	placeholder: 'What is your favourite car colour?',
-};
-const withIconProps: ComponentProps<typeof ColourInput> = {
-	...sharedProps,
-	suffixIcon: FourByFourIcon,
+export const Standard: Story = {
+	args: {
+		...sharedProps,
+	},
 };
 
-export const Standard = Template.bind(standardProps);
-Standard.args = standardProps;
-Standard.argTypes = argTypes;
-
-export const WithAValue = Template.bind(withAValueProps);
-WithAValue.args = withAValueProps;
-WithAValue.argTypes = argTypes;
-
-export const WithIcon = Template.bind(withIconProps);
-WithIcon.args = withIconProps;
-WithIcon.argTypes = argTypes;
-
-const withIconSmallProps: typeof withAValueProps = {
-	...withAValueProps,
-	suffixIcon: CarIcon,
-	size: 'small',
+export const WithAValue: Story = {
+	args: {
+		...sharedProps,
+		value: defaultColour,
+		placeholder: 'What is your favourite car colour?',
+	},
 };
 
-export const WithIconSmall = Template.bind(withIconSmallProps);
-WithIconSmall.args = withIconSmallProps;
-WithIconSmall.argTypes = argTypes;
+export const WithIcon: Story = {
+	args: {
+		...sharedProps,
+		suffixIcon: FourByFourIcon,
+	},
+};
+
+export const WithIconSmall: Story = {
+	args: {
+		...sharedProps,
+		value: defaultColour,
+		placeholder: 'What is your favourite car colour?',
+		suffixIcon: CarIcon,
+		size: 'small',
+	},
+};
