@@ -1,13 +1,12 @@
 import { CheckIcon } from '@autoguru/icons';
-import { Meta, StoryFn } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
-import { ComponentProps } from 'react';
 
 import { Icon } from '../Icon';
 
 import { BulletText } from '.';
 
-export default {
+const meta = {
 	title: 'Components/Bullet Text',
 	component: BulletText,
 	argTypes: {
@@ -41,47 +40,49 @@ export default {
 	},
 } satisfies Meta<typeof BulletText>;
 
-const template: StoryFn<typeof BulletText> = (args) => (
-	<BulletText is="div" {...args} />
-);
+export default meta;
+type Story = StoryObj<typeof BulletText>;
 
-const primaryProps: ComponentProps<typeof BulletText> = {
-	variant: 'primary',
-	children: 'Hello World',
-	bullet: void 0,
-};
-const secondaryProps: ComponentProps<typeof BulletText> = {
-	variant: 'secondary',
-	children: 'Hello World',
-	bullet: void 0,
-};
-const withCustomBulletProps: ComponentProps<typeof BulletText> = {
-	variant: 'primary',
-	children: 'Hello World',
-	bullet: (
-		<span
-			style={{
-				width: '20px',
-				height: '20px',
-				backgroundColor: ' #00dd95',
-				color: 'white',
-				borderRadius: '50%',
-				flexDirection: 'row',
-				display: 'flex',
-				alignContent: 'center',
-				justifyContent: 'center',
-				alignItems: 'center',
-			}}
-		>
-			<Icon size="small" icon={CheckIcon} />
-		</span>
-	),
+export const Primary: Story = {
+	args: {
+		is: { summary: 'div' },
+		variant: 'primary',
+		children: 'Hello World',
+		bullet: void 0,
+	},
 };
 
-export const primary = template.bind(primaryProps);
-export const secondary = template.bind(secondaryProps);
-export const withCustomBullet = template.bind(withCustomBulletProps);
+export const Secondary: Story = {
+	args: {
+		is: 'div',
+		variant: 'secondary',
+		children: 'Hello World',
+		bullet: void 0,
+	},
+};
 
-primary.args = primaryProps;
-secondary.args = secondaryProps;
-withCustomBullet.args = withCustomBulletProps;
+export const WithCustomBullet: Story = {
+	args: {
+		is: 'div',
+		variant: 'primary',
+		children: 'Hello World',
+		bullet: (
+			<span
+				style={{
+					width: '20px',
+					height: '20px',
+					backgroundColor: ' #00dd95',
+					color: 'white',
+					borderRadius: '50%',
+					flexDirection: 'row',
+					display: 'flex',
+					alignContent: 'center',
+					justifyContent: 'center',
+					alignItems: 'center',
+				}}
+			>
+				<Icon size="small" icon={CheckIcon} />
+			</span>
+		),
+	},
+};
