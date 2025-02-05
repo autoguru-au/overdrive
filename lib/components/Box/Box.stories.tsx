@@ -1,12 +1,11 @@
-import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 
 import { boxArgTypes } from './argTypes';
 
 import { Box } from '.';
 
-export default {
+const meta = {
 	title: 'Primatives/Box',
 	component: Box,
 	decorators: [
@@ -17,23 +16,26 @@ export default {
 	argTypes: boxArgTypes,
 } satisfies Meta<typeof Box>;
 
-const template: StoryFn<typeof Box> = (args) => (
-	<>
-		<Box {...args}>Box 1</Box>
-		<Box {...args}>Box 2</Box>
-	</>
-);
+export default meta;
 
-const standardProps: ComponentProps<typeof Box> = {
-	borderColour: 'dark',
-	borderWidth: ['none', 'none', '1', '2'],
-	padding: ['2', '4'],
-	marginBottom: ['2', '4', '5', '8'],
-	marginX: ['none', '3', '5'],
-	backgroundColour: 'primary',
-	colour: 'primary',
-	borderRadius: 'pill',
-	boxShadow: ['none', '1', '2', '3'],
+type Story = StoryObj<typeof meta>;
+
+export const Standard: Story = {
+	render: (args) => (
+		<>
+			<Box {...args}>Box 1</Box>
+			<Box {...args}>Box 2</Box>
+		</>
+	),
+	args: {
+		borderColour: 'dark',
+		borderWidth: ['none', 'none', '1', '2'],
+		padding: ['2', '4'],
+		marginBottom: ['2', '4', '5', '8'],
+		marginX: ['none', '3', '5'],
+		backgroundColour: 'primary',
+		colour: 'primary',
+		borderRadius: 'pill',
+		boxShadow: ['none', '1', '2', '3'],
+	},
 };
-export const Standard = template.bind({});
-Standard.args = standardProps;

@@ -5,9 +5,8 @@ import {
 	TrashCanOutlineIcon,
 } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
-import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
-import { ComponentProps, Fragment } from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+import React, { type ComponentProps } from 'react';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -15,11 +14,12 @@ import { Button } from '../Button';
 import { DropDown, DropDownOption } from '.';
 
 const onClick = action('onClick');
-export default {
+
+const meta = {
 	title: 'Components/Drop Down',
 	component: DropDown,
 	decorators: [
-		(story) => (
+		(Story) => (
 			<div
 				style={{
 					display: 'grid',
@@ -27,7 +27,7 @@ export default {
 					gridAutoFlow: 'row dense',
 				}}
 			>
-				{story()}
+				<Story />
 			</div>
 		),
 	],
@@ -58,22 +58,24 @@ export default {
 			},
 		},
 	},
+	render: (args) => (
+		<Box
+			style={{
+				height: '100vh',
+				width: '100vw',
+				maxHeight: '350px',
+			}}
+			display="flex"
+			alignItems="center"
+			justifyContent="center"
+		>
+			<DropDown {...args} />
+		</Box>
+	),
 } satisfies Meta<typeof DropDown>;
 
-const Template: StoryFn<typeof DropDown> = (args) => (
-	<Box
-		style={{
-			height: '100vh',
-			width: '100vw',
-			maxHeight: '350px',
-		}}
-		display="flex"
-		alignItems="center"
-		justifyContent="center"
-	>
-		<DropDown {...args} />
-	</Box>
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 const option1 = <DropDownOption label="Download" icon={DownloadIcon} />;
 const option2 = <DropDownOption label="Delete" icon={TrashCanOutlineIcon} />;
@@ -81,78 +83,71 @@ const optionDisabled = (
 	<DropDownOption disabled label="Edit" icon={SquareEditOutlineIcon} />
 );
 
-const standardProps: ComponentProps<typeof DropDown> = {
-	label: 'Attachment',
-	children: (
-		<>
-			{option1}
-			{option1}
-			{optionDisabled}
-		</>
-	),
-	onClick,
+export const Primary: Story = {
+	args: {
+		label: 'Attachment',
+		children: (
+			<>
+				{option1}
+				{option1}
+				{optionDisabled}
+			</>
+		),
+		onClick,
+	},
 };
 
-export const Primary = Template.bind(standardProps);
-Primary.args = standardProps;
-
-const withOpenMenuProps: ComponentProps<typeof DropDown> = {
-	...standardProps,
-	isOpen: true,
+export const WithOpenMenu: Story = {
+	args: {
+		...Primary.args,
+		isOpen: true,
+	},
 };
 
-export const WithOpenMenu = Template.bind(withOpenMenuProps);
-WithOpenMenu.args = withOpenMenuProps;
-
-const secondaryProps: ComponentProps<typeof DropDown> = {
-	...standardProps,
-	variant: 'secondary',
+export const Secondary: Story = {
+	args: {
+		...Primary.args,
+		variant: 'secondary',
+	},
 };
 
-export const Secondary = Template.bind(secondaryProps);
-Secondary.args = secondaryProps;
-
-const minimalPrimaryProps: ComponentProps<typeof DropDown> = {
-	...standardProps,
-	variant: 'primary',
-	minimal: true,
+export const MinimalPrimary: Story = {
+	args: {
+		...Primary.args,
+		variant: 'primary',
+		minimal: true,
+	},
 };
 
-export const MinimalPrimary = Template.bind(minimalPrimaryProps);
-MinimalPrimary.args = minimalPrimaryProps;
-
-const roundedSecondaryProps: ComponentProps<typeof DropDown> = {
-	...standardProps,
-	variant: 'secondary',
-	rounded: true,
+export const RoundedSecondary: Story = {
+	args: {
+		...Primary.args,
+		variant: 'secondary',
+		rounded: true,
+	},
 };
 
-export const RoundedSecondary = Template.bind(roundedSecondaryProps);
-RoundedSecondary.args = roundedSecondaryProps;
-
-const withCustomIconProps: ComponentProps<typeof DropDown> = {
-	...standardProps,
-	variant: 'secondary',
-	icon: SettingsIcon,
-	isOpen: true,
+export const WithCustomIcon: Story = {
+	args: {
+		...Primary.args,
+		variant: 'secondary',
+		icon: SettingsIcon,
+		isOpen: true,
+	},
 };
 
-export const WithCustomIcon = Template.bind(withCustomIconProps);
-WithCustomIcon.args = withCustomIconProps;
-
-const withManyOptionsProps: ComponentProps<typeof DropDown> = {
-	...standardProps,
-	isOpen: true,
-	children: (
-		<>
-			{Array.from({ length: 99 }).map((_, index) => (
-				<Fragment key={index}>
-					{index % 2 == 0 ? option1 : option2}
-				</Fragment>
-			))}
-		</>
-	),
+export const WithManyOptions: Story = {
+	args: {
+		...Primary.args,
+		isOpen: true,
+		children: (
+			<>
+				{Array.from({ length: 99 }).map((_, index) => (
+					<React.Fragment key={index}>
+						{index % 2 === 0 ? option1 : option2}
+					</React.Fragment>
+				))}
+			</>
+		),
+	},
 };
-
-export const WithManyOptions = Template.bind(withManyOptionsProps);
-WithManyOptions.args = withManyOptionsProps;

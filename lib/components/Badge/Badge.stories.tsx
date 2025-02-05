@@ -1,8 +1,9 @@
-import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
+import React, { type ComponentProps } from 'react';
 
 import { Badge } from '.';
+
+type Story = StoryObj<typeof Badge>;
 
 const colours: ReadonlyArray<ComponentProps<typeof Badge>['colour']> = [
 	'blue',
@@ -39,46 +40,70 @@ export default {
 	],
 } satisfies Meta<typeof Badge>;
 
-const template: StoryFn<typeof Badge> = (args) => <Badge {...args} />;
-const templateAllColours: StoryFn<typeof Badge> = (args) => (
-	<>
-		{colours.map((colour) => (
-			<Badge key={colour} {...args} colour={colour} />
-		))}
-	</>
-);
-
-const standardProps: ComponentProps<typeof Badge> = {
-	label: 'TITANIUM',
+export const Standard: Story = {
+	args: {
+		label: 'TITANIUM',
+	},
 };
 
-export const Standard = template.bind(standardProps);
-Standard.args = standardProps;
-
-export const StandardAllColours = templateAllColours.bind(standardProps);
-StandardAllColours.args = standardProps;
-
-const largeProps: ComponentProps<typeof Badge> = {
-	...standardProps,
-	size: 'large',
-};
-export const LargeAllColours = templateAllColours.bind(largeProps);
-LargeAllColours.args = largeProps;
-
-const smallProps: ComponentProps<typeof Badge> = {
-	...standardProps,
-	size: 'small',
-};
-export const SmallAllColours = templateAllColours.bind(smallProps);
-SmallAllColours.args = smallProps;
-
-const invertedProps: ComponentProps<typeof Badge> = {
-	...standardProps,
-	look: 'inverted',
+export const StandardAllColours: Story = {
+	args: {
+		label: 'TITANIUM',
+	},
+	render: (args) => (
+		<>
+			{colours.map((colour) => (
+				<Badge key={colour} {...args} colour={colour} />
+			))}
+		</>
+	),
 };
 
-export const Inverted = template.bind(invertedProps);
-Inverted.args = invertedProps;
+export const LargeAllColours: Story = {
+	args: {
+		label: 'TITANIUM',
+		size: 'large',
+	},
+	render: (args) => (
+		<>
+			{colours.map((colour) => (
+				<Badge key={colour} {...args} colour={colour} />
+			))}
+		</>
+	),
+};
 
-export const InvertedAllColours = templateAllColours.bind(invertedProps);
-InvertedAllColours.args = invertedProps;
+export const SmallAllColours: Story = {
+	args: {
+		label: 'TITANIUM',
+		size: 'small',
+	},
+	render: (args) => (
+		<>
+			{colours.map((colour) => (
+				<Badge key={colour} {...args} colour={colour} />
+			))}
+		</>
+	),
+};
+
+export const Inverted: Story = {
+	args: {
+		label: 'TITANIUM',
+		look: 'inverted',
+	},
+};
+
+export const InvertedAllColours: Story = {
+	args: {
+		label: 'TITANIUM',
+		look: 'inverted',
+	},
+	render: (args) => (
+		<>
+			{colours.map((colour) => (
+				<Badge key={colour} {...args} colour={colour} />
+			))}
+		</>
+	),
+};

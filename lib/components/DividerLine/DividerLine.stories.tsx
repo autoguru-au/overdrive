@@ -1,6 +1,5 @@
-import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
+import React, { type ComponentProps } from 'react';
 
 import { Box } from '../Box';
 import { Heading } from '../Heading';
@@ -36,7 +35,7 @@ const colours: ReadonlyArray<ComponentProps<typeof DividerLine>['colour']> = [
 	'shine',
 ] as const;
 
-export default {
+const meta = {
 	title: 'Primatives/Divider Line',
 	component: DividerLine,
 	argTypes: {
@@ -86,57 +85,60 @@ export default {
 	],
 } satisfies Meta<typeof DividerLine>;
 
-const template: StoryFn<typeof DividerLine> = (args) => (
-	<Box>
-		<Heading is="h2" size="7">
-			Title 1
-		</Heading>
-		<DividerLine {...args} />
-		<Heading is="h2" size="7">
-			Title 1
-		</Heading>
-	</Box>
-);
-const verticalTemplate: StoryFn<typeof DividerLine> = (args) => (
-	<Inline alignY="stretch">
-		<Heading is="h2" size="7">
-			Title 1
-		</Heading>
-		<DividerLine {...args} />
-		<Heading is="h2" size="7">
-			Title 1
-		</Heading>
-	</Inline>
-);
-const templateAllColours: StoryFn<typeof DividerLine> = (args) => (
-	<Box>
-		{colours.map((colour) => (
-			<>
-				<Heading is="h2" size="7">
-					Title
-				</Heading>
-				<DividerLine {...args} colour={colour} />
-			</>
-		))}
-	</Box>
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-const standardProps: ComponentProps<typeof DividerLine> = {
-	space: '5',
-	size: 3,
-	colour: 'primary',
+export const Standard: Story = {
+	args: {
+		space: '5',
+		size: 3,
+		colour: 'primary',
+	},
+	render: (args) => (
+		<Box>
+			<Heading is="h2" size="7">
+				Title 1
+			</Heading>
+			<DividerLine {...args} />
+			<Heading is="h2" size="7">
+				Title 1
+			</Heading>
+		</Box>
+	),
 };
 
-export const Standard = template.bind(standardProps);
-Standard.args = standardProps;
-
-const verticalProps: ComponentProps<typeof DividerLine> = {
-	...standardProps,
-	isVertical: true,
+export const Vertical: Story = {
+	args: {
+		...Standard.args,
+		isVertical: true,
+	},
+	render: (args) => (
+		<Inline alignY="stretch">
+			<Heading is="h2" size="7">
+				Title 1
+			</Heading>
+			<DividerLine {...args} />
+			<Heading is="h2" size="7">
+				Title 1
+			</Heading>
+		</Inline>
+	),
 };
 
-export const Vertical = verticalTemplate.bind(verticalProps);
-Vertical.args = verticalProps;
-
-export const StandardAllColours = templateAllColours.bind(standardProps);
-StandardAllColours.args = standardProps;
+export const StandardAllColours: Story = {
+	args: {
+		...Standard.args,
+	},
+	render: (args) => (
+		<Box>
+			{colours.map((colour) => (
+				<React.Fragment key={colour}>
+					<Heading is="h2" size="7">
+						Title
+					</Heading>
+					<DividerLine {...args} colour={colour} />
+				</React.Fragment>
+			))}
+		</Box>
+	),
+};

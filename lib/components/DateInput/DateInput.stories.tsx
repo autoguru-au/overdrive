@@ -8,10 +8,9 @@ import {
 	StarIcon,
 } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
-import { ArgTypes, Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import isChromatic from 'chromatic/isChromatic';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import { type ComponentProps } from 'react';
 
 import { DateInput } from '.';
 
@@ -27,59 +26,54 @@ const todayStr: string = formatDate(
 	isChromatic() ? new Date(2019, 5, 1) : new Date(),
 );
 
-export default {
+const meta = {
 	title: 'Forms & Input Fields/Date Input',
 	component: DateInput,
 	parameters: { chromatic: {} },
+	argTypes: {
+		value: {
+			control: {
+				type: 'date',
+			},
+		},
+		attach: {
+			defaultValue: 'NONE',
+			description: 'Input attach',
+			options: {
+				NONE: 'NONE',
+				TOP: 'TOP',
+				RIGHT: 'RIGHT',
+				LEFT: 'LEFT',
+				BOTTOM: 'BOTTOM',
+				ALL: 'ALL',
+			},
+			control: {
+				type: 'select',
+			},
+		},
+		prefixIcon: {
+			defaultValue: null,
+			description: 'Input prefix Icon',
+			options: {
+				CalendarIcon,
+				AccountEditIcon,
+				AlertCircleIcon,
+				CarMultipleIcon,
+				CurrencyUsdIcon,
+				PlusIcon,
+				StarIcon,
+			},
+			control: {
+				type: 'select',
+			},
+		},
+	},
 } satisfies Meta<typeof DateInput>;
 
-const iconOptions = {
-	CalendarIcon,
-	AccountEditIcon,
-	AlertCircleIcon,
-	CarMultipleIcon,
-	CurrencyUsdIcon,
-	PlusIcon,
-	StarIcon,
-};
-const attachOptions: Record<
-	string,
-	ComponentProps<typeof DateInput>['attach']
-> = {
-	NONE: 'NONE',
-	TOP: 'TOP',
-	RIGHT: 'RIGHT',
-	LEFT: 'LEFT',
-	BOTTOM: 'BOTTOM',
-	ALL: 'ALL',
-};
-const argTypes: Partial<ArgTypes<ComponentProps<typeof DateInput>>> = {
-	value: {
-		control: {
-			type: 'date',
-		},
-	},
-	attach: {
-		defaultValue: 'NONE',
-		description: 'Input attach',
-		options: attachOptions,
-		control: {
-			type: 'select',
-		},
-	},
-	prefixIcon: {
-		defaultValue: null,
-		description: 'Input prefix Icon',
-		options: iconOptions,
-		control: {
-			type: 'select',
-		},
-	},
-};
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-const Template: StoryFn<typeof DateInput> = (args) => <DateInput {...args} />;
-
-const sharedProps: ComponentProps<typeof DateInput> = {
+const sharedArgs: ComponentProps<typeof DateInput> = {
 	disabled: false,
 	name: 'date',
 	placeholder: 'Placeholder',
@@ -90,81 +84,76 @@ const sharedProps: ComponentProps<typeof DateInput> = {
 	reserveHintSpace: false,
 	hintText: '',
 	notch: true,
-	prefixIcon: void 0,
+	prefixIcon: undefined,
 	onChange: action('onChange'),
 	onFocus: action('onFocus'),
 	onBlur: action('onBlur'),
 };
 
-const standardProps: ComponentProps<typeof DateInput> = sharedProps;
-const withAValueProps: ComponentProps<typeof DateInput> = {
-	...sharedProps,
-	value: todayStr,
-	placeholder: 'What is your DOB?',
-};
-const withIconProps: ComponentProps<typeof DateInput> = {
-	...sharedProps,
-	prefixIcon: CalendarIcon,
-};
-const disabledProps: ComponentProps<typeof DateInput> = {
-	...sharedProps,
-	value: todayStr,
-	placeholder: 'What is your DOB?',
-	disabled: true,
-};
-const validProps: ComponentProps<typeof DateInput> = {
-	...sharedProps,
-	value: todayStr,
-	placeholder: 'What is your DOB?',
-	isTouched: true,
-	isValid: true,
-};
-const invalidProps: ComponentProps<typeof DateInput> = {
-	...sharedProps,
-	value: '2050-10-13',
-	placeholder: 'What is your DOB?',
-	isTouched: true,
-	isValid: false,
-	hintText: 'Invalid date of birth',
-};
-const noNotchProps: ComponentProps<typeof DateInput> = {
-	...sharedProps,
-	placeholder: 'What is your DOB?',
-	notch: false,
-};
-export const Standard = Template.bind(standardProps);
-Standard.args = standardProps;
-Standard.argTypes = argTypes;
-
-export const WithAValue = Template.bind(withAValueProps);
-WithAValue.args = withAValueProps;
-WithAValue.argTypes = argTypes;
-
-export const NotchDisabled = Template.bind(noNotchProps);
-NotchDisabled.args = noNotchProps;
-NotchDisabled.argTypes = argTypes;
-
-export const WithPrefixIcon = Template.bind(withIconProps);
-WithPrefixIcon.args = withIconProps;
-WithPrefixIcon.argTypes = argTypes;
-
-export const Disabled = Template.bind(disabledProps);
-Disabled.args = disabledProps;
-Disabled.argTypes = argTypes;
-
-export const Valid = Template.bind(validProps);
-Valid.args = validProps;
-Valid.argTypes = argTypes;
-
-export const Invalid = Template.bind(invalidProps);
-Invalid.args = invalidProps;
-Invalid.argTypes = argTypes;
-
-const withValueSmallProps: typeof withAValueProps = {
-	...withAValueProps,
-	size: 'small',
+export const Standard: Story = {
+	args: {
+		...sharedArgs,
+	},
 };
 
-export const WithValueSmall = Template.bind(withValueSmallProps);
-WithValueSmall.args = withValueSmallProps;
-WithValueSmall.argTypes = argTypes;
+export const WithAValue: Story = {
+	args: {
+		...sharedArgs,
+		value: todayStr,
+		placeholder: 'What is your DOB?',
+	},
+};
+
+export const NotchDisabled: Story = {
+	args: {
+		...sharedArgs,
+		placeholder: 'What is your DOB?',
+		notch: false,
+	},
+};
+
+export const WithPrefixIcon: Story = {
+	args: {
+		...sharedArgs,
+		prefixIcon: CalendarIcon,
+	},
+};
+
+export const Disabled: Story = {
+	args: {
+		...sharedArgs,
+		value: todayStr,
+		placeholder: 'What is your DOB?',
+		disabled: true,
+	},
+};
+
+export const Valid: Story = {
+	args: {
+		...sharedArgs,
+		value: todayStr,
+		placeholder: 'What is your DOB?',
+		isTouched: true,
+		isValid: true,
+	},
+};
+
+export const Invalid: Story = {
+	args: {
+		...sharedArgs,
+		value: '2050-10-13',
+		placeholder: 'What is your DOB?',
+		isTouched: true,
+		isValid: false,
+		hintText: 'Invalid date of birth',
+	},
+};
+
+export const WithValueSmall: Story = {
+	args: {
+		...sharedArgs,
+		value: todayStr,
+		placeholder: 'What is your DOB?',
+		size: 'small',
+	},
+};
