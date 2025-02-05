@@ -7,7 +7,7 @@ import { boxArgTypes } from './argTypes';
 import { Box } from '.';
 
 export default {
-	title: 'Foundation/Box',
+	title: 'Primatives/Box',
 	component: Box,
 	decorators: [
 		(story) => (
@@ -35,5 +35,5 @@ const standardProps: ComponentProps<typeof Box> = {
 	borderRadius: 'pill',
 	boxShadow: ['none', '1', '2', '3'],
 };
-export const standard = template.bind(standardProps);
-standard.args = standardProps;
+export const Standard = template.bind({});
+Standard.args = standardProps;

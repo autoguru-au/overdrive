@@ -221,7 +221,7 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 	},
 	ref,
 ) {
-	const inputRef = useRef<HTMLInputElement>();
+	const inputRef = useRef<HTMLInputElement>(null);
 	const valueRef = useRef(incomingValue);
 	useImperativeHandle(ref, () => inputRef.current as HTMLInputElement);
 	const [isDesktop] = useMedia(['desktop'], false);
@@ -373,7 +373,8 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 		[suggestions],
 	);
 
-	const [state, dispatch] = useReducer<Reducer<State, Actions>>(reducer, {
+	// @ts-expect-error Type '{ type: ActionTypes.INPUT_CHANGE; }' is not assignable to type 'AnyActionArg'
+	const [state, dispatch] = useReducer<State, Actions>(reducer, {
 		highlightIndex: -1,
 		previewText: null,
 		isFlyoutOpen: false,
@@ -423,6 +424,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 					}
 					value={state.previewText ?? value?.text}
 					onReset={() => {
+						// @ts-expect-error is not assignable to parameter of type 'Actions'
 						dispatch({ type: ActionTypes.INPUT_CHANGE });
 						if (typeof onChange === 'function')
 							onChange({
@@ -431,6 +433,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 							});
 					}}
 					onChange={(event) => {
+						// @ts-expect-error is not assignable to parameter of type 'Actions'
 						dispatch({ type: ActionTypes.INPUT_CHANGE });
 						if (typeof onChange === 'function')
 							onChange({
@@ -439,6 +442,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 							});
 					}}
 					onFocus={wrapEvent(
+						// @ts-expect-error is not assignable to parameter of type 'Actions'
 						() => dispatch({ type: ActionTypes.INPUT_FOCUS }),
 						onFocus,
 					)}
@@ -455,6 +459,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 						)
 							onChange(suggestions[state.highlightIndex]);
 
+						// @ts-expect-error is not assignable to parameter of type 'Actions'
 						dispatch({ type: ActionTypes.INPUT_BLUR });
 					}, onBlur)}
 					onKeyDown={wrapEvent((event) => {
@@ -463,6 +468,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 							case 'ArrowUp':
 							case 'ArrowDown': {
 								event.preventDefault();
+								// @ts-expect-error is not assignable to parameter of type 'Actions'
 								dispatch({
 									type:
 										event.key === 'ArrowDown'
@@ -481,11 +487,13 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 										);
 								}
 
+								// @ts-expect-error is not assignable to parameter of type 'Actions'
 								dispatch({ type: ActionTypes.INPUT_ENTER });
 								return;
 							}
 
 							case 'Escape': {
+								// @ts-expect-error is not assignable to parameter of type 'Actions'
 								dispatch({ type: ActionTypes.INPUT_ESCAPE });
 							}
 						}
@@ -506,6 +514,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 							? styles.suggestionList.inlineOptionsNoScroll
 							: styles.suggestionList.inlineOptions
 					}
+					// @ts-expect-error is not assignable to parameter of type 'Actions'
 					dispatch={dispatch}
 					onChange={onChange}
 				/>
@@ -527,6 +536,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 						suggestions={suggestions}
 						highlightRef={highlightRef}
 						itemRenderer={itemRenderer}
+						// @ts-expect-error is not assignable to parameter of type 'Actions'
 						dispatch={dispatch}
 						onChange={onChange}
 					/>

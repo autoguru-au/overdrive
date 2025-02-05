@@ -10,7 +10,7 @@ import { Text } from '../Text';
 import { CheckBox } from '.';
 
 export default {
-	title: 'Components/Inputs/CheckBox',
+	title: 'Forms & Input Fields/CheckBox',
 	component: CheckBox,
 	decorators: [
 		(story) => (
@@ -72,27 +72,6 @@ export const list = {
 
 const Template: StoryFn<typeof CheckBox> = (args) => <CheckBox {...args} />;
 
-const uncheckedProps: ComponentProps<typeof CheckBox> = {
-	checked: false,
-	disabled: false,
-	name: 'check-name',
-	children: 'check me!',
-	value: '1',
-};
-const emptyProps: ComponentProps<typeof CheckBox> = {
-	checked: false,
-	disabled: false,
-	name: 'check-name',
-	children: null,
-	value: '1',
-};
-const checkedProps: ComponentProps<typeof CheckBox> = {
-	checked: true,
-	disabled: false,
-	name: 'check-name',
-	children: 'check me!',
-	value: '1',
-};
 const disabledProps: ComponentProps<typeof CheckBox> = {
 	checked: false,
 	disabled: true,
@@ -100,13 +79,7 @@ const disabledProps: ComponentProps<typeof CheckBox> = {
 	children: 'check me!',
 	value: '1',
 };
-const disabledCheckedProps: ComponentProps<typeof CheckBox> = {
-	checked: true,
-	disabled: true,
-	name: 'check-name',
-	children: 'check me!',
-	value: '1',
-};
+
 const multipleLinesProps: ComponentProps<typeof CheckBox> = {
 	checked: false,
 	disabled: false,
@@ -168,30 +141,18 @@ const withMultiLineComponentProps: ComponentProps<typeof CheckBox> = {
 	value: '1',
 };
 
-export const unchecked = Template.bind(uncheckedProps);
-unchecked.args = uncheckedProps;
+export const Disabled = Template.bind(disabledProps);
+Disabled.args = disabledProps;
 
-export const checked = Template.bind(checkedProps);
-checked.args = checkedProps;
+export const MultipleLines = Template.bind(multipleLinesProps);
+MultipleLines.args = multipleLinesProps;
 
-export const disabled = Template.bind(disabledProps);
-disabled.args = disabledProps;
+export const WithComponent = Template.bind(withComponentProps);
+WithComponent.args = withComponentProps;
+WithComponent.argTypes = { children: { control: { disable: true } } };
 
-export const disabledChecked = Template.bind(disabledCheckedProps);
-disabledChecked.args = disabledCheckedProps;
-
-export const multipleLines = Template.bind(multipleLinesProps);
-multipleLines.args = multipleLinesProps;
-
-export const withNoChildren = Template.bind(emptyProps);
-withNoChildren.args = emptyProps;
-
-export const withComponent = Template.bind(withComponentProps);
-withComponent.args = withComponentProps;
-withComponent.argTypes = { children: { control: { disable: true } } };
-
-export const withMultiLineComponent = Template.bind(
+export const WithMultiLineComponent = Template.bind(
 	withMultiLineComponentProps,
 );
-withMultiLineComponent.args = withMultiLineComponentProps;
-withMultiLineComponent.argTypes = { children: { control: { disable: true } } };
+WithMultiLineComponent.args = withMultiLineComponentProps;
+WithMultiLineComponent.argTypes = { children: { control: { disable: true } } };

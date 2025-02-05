@@ -8,7 +8,7 @@ import { IntentStripe } from '.';
 
 type Intent = ComponentProps<typeof IntentStripe>['intent'];
 export default {
-	title: 'Components/IntentStripe',
+	title: 'Components/Intent Stripe',
 	component: IntentStripe,
 	argTypes: {
 		intent: {
@@ -81,20 +81,3 @@ Standard.args = standardProps;
 
 export const StandardAllIntents = templateAllIntents.bind(standardProps);
 StandardAllIntents.args = standardProps;
-
-const inlineProps: typeof standardProps = {
-	...standardProps,
-	inline: true,
-};
-
-export const InlineAllIntents = templateAllIntents.bind(inlineProps);
-InlineAllIntents.args = inlineProps;
-
-const noneDismissibleProps: typeof standardProps = {
-	...standardProps,
-	dismissible: false,
-};
-
-export const NoneDismissibleAllIntents =
-	templateAllIntents.bind(noneDismissibleProps);
-NoneDismissibleAllIntents.args = noneDismissibleProps;

@@ -2,7 +2,6 @@ import { render } from '@testing-library/react';
 import * as React from 'react';
 
 import { StarRating } from './StarRating';
-
 import * as styles from './StarRating.css';
 
 const getStarsNum = (el) => {
@@ -51,14 +50,16 @@ describe('<StarRating />', () => {
 
 	it('should add a span element inside with the rating value if label is not provided value', () => {
 		const { container } = render(<StarRating rating={4.1} />);
-		expect(container.querySelector('span')).toHaveTextContent('4.1');
+		expect(
+			container.querySelector('[data-test-id="star-rating-label"]'),
+		).toHaveTextContent('4.1');
 	});
 
 	it('should add a span element inside with the label text value', () => {
 		const { container } = render(<StarRating label="Hello World!" />);
-		expect(container.querySelector('span')).toHaveTextContent(
-			'Hello World!',
-		);
+		expect(
+			container.querySelector('[data-test-id="star-rating-label"]'),
+		).toHaveTextContent('Hello World!');
 	});
 
 	it('should have correct star combination for rating 0', () => {

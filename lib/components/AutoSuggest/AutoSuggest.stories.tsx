@@ -64,7 +64,7 @@ const attachOptions: Record<
 };
 
 export default {
-	title: 'Components/Inputs/AutoSuggest',
+	title: 'Forms & Input Fields/Auto Suggest',
 	component: AutoSuggest,
 	decorators: [
 		(story) => (
@@ -213,51 +213,35 @@ const standardProps: Omit<ComponentProps<typeof AutoSuggest>, 'children'> = {
 	onBlur: (thing) => action('onBlur')(thing),
 };
 
-export const standard = Template.bind(standardProps);
-standard.args = standardProps;
+export const Standard = Template.bind(standardProps);
+Standard.args = standardProps;
 
 const withValueProps: typeof standardProps = {
 	...standardProps,
 	value: mockSuggestions[3],
 };
 
-export const withValue = Template.bind(withValueProps);
-withValue.args = withValueProps;
-
-const withoutNotchProps: typeof withValueProps = {
-	...withValueProps,
-	notch: false,
-};
-export const withoutNotch = Template.bind(withoutNotchProps);
-withoutNotch.args = withoutNotchProps;
-
-const withNoItemsProps: typeof standardProps = {
-	...standardProps,
-	suggestions: [],
-};
-export const withNoItems = Template.bind(withNoItemsProps);
-withNoItems.args = withNoItemsProps;
+export const WithValue = Template.bind(withValueProps);
+WithValue.args = withValueProps;
 
 const withIconProps: typeof withValueProps = {
 	...withValueProps,
 	prefixIcon: CarIcon,
 };
-export const withIcon = Template.bind(withIconProps);
-withIcon.args = withIconProps;
+export const WithIcon = Template.bind(withIconProps);
+WithIcon.args = withIconProps;
 
 const disabledProps: typeof withIconProps = {
 	...withIconProps,
 	disabled: true,
 };
-export const disabled = Template.bind(disabledProps);
-disabled.args = disabledProps;
+export const Disabled = Template.bind(disabledProps);
+Disabled.args = disabledProps;
 
 const withHintTextProps: typeof withIconProps = {
 	...withIconProps,
 	hintText: 'Choose a sports car make',
 };
-export const withHintText = Template.bind(withHintTextProps);
-withHintText.args = withHintTextProps;
 
 const validProps: typeof withHintTextProps = {
 	...withHintTextProps,
@@ -265,8 +249,8 @@ const validProps: typeof withHintTextProps = {
 	isTouched: true,
 	isValid: true,
 };
-export const valid = Template.bind(validProps);
-valid.args = validProps;
+export const Valid = Template.bind(validProps);
+Valid.args = validProps;
 
 const invalidProps: typeof withHintTextProps = {
 	...withHintTextProps,
@@ -274,38 +258,12 @@ const invalidProps: typeof withHintTextProps = {
 	isTouched: true,
 	isValid: false,
 };
-export const invalid = Template.bind(invalidProps);
-invalid.args = invalidProps;
-
-const withIconSmallProps: typeof withValueProps = {
-	...withValueProps,
-	prefixIcon: CarIcon,
-	size: 'small',
-};
+export const Invalid = Template.bind(invalidProps);
+Invalid.args = invalidProps;
 
 const smallProps: typeof standardProps = {
 	...standardProps,
 	size: 'small',
 };
-export const small = Template.bind(smallProps);
-small.args = smallProps;
-
-const withValueSmallProps: typeof standardProps = {
-	...standardProps,
-	value: mockSuggestions[3],
-	size: 'small',
-};
-
-export const withValueSmall = Template.bind(withValueSmallProps);
-withValueSmall.args = withValueSmallProps;
-
-export const withIconSmall = Template.bind(withIconSmallProps);
-withIconSmall.args = withIconSmallProps;
-
-const loadingSmallProps: typeof withValueSmallProps = {
-	...withValueSmallProps,
-	isLoading: true,
-	size: 'small',
-};
-export const loadingSmall = Template.bind(loadingSmallProps);
-loadingSmall.args = loadingSmallProps;
+export const Small = Template.bind(smallProps);
+Small.args = smallProps;

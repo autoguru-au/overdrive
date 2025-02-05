@@ -2,6 +2,6 @@
 
 exports[`<Actions /> should match the snapshot 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm28 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw8 Columns_align_stretch__15fwc182b Columns_wrapping_wrap__15fwc1828"
+  class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm28 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw8 Columns_align_stretch__15fwc182b Columns_wrapping_wrap__15fwc1828"
 />
 `;

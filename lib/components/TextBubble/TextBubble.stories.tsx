@@ -5,7 +5,7 @@ import { ComponentProps } from 'react';
 import { TextBubble } from '.';
 
 export default {
-	title: 'Foundation/Typography/TextBubble',
+	title: 'Components/Text Bubble',
 	component: TextBubble,
 } satisfies Meta<typeof TextBubble>;
 
@@ -14,16 +14,16 @@ const template: StoryFn<typeof TextBubble> = (args) => <TextBubble {...args} />;
 const standardProps: Omit<ComponentProps<typeof TextBubble>, 'children'> = {
 	label: 'OK',
 };
-export const standard = template.bind(standardProps);
-standard.args = standardProps;
+export const Standard = template.bind(standardProps);
+Standard.args = standardProps;
 
 const longLabelProps: Omit<ComponentProps<typeof TextBubble>, 'children'> = {
 	label: 'Error',
 	textColour: 'danger',
 	backgroundColour: 'gray900',
 };
-export const longLabel = template.bind(longLabelProps);
-longLabel.args = longLabelProps;
+export const LongLabel = template.bind(longLabelProps);
+LongLabel.args = longLabelProps;
 
 const veryLongLabelProps: Omit<
 	ComponentProps<typeof TextBubble>,
@@ -31,5 +31,5 @@ const veryLongLabelProps: Omit<
 > = {
 	label: 'Too Long',
 };
-export const veryLongLabel = template.bind(veryLongLabelProps);
-veryLongLabel.args = veryLongLabelProps;
+export const VeryLongLabel = template.bind(veryLongLabelProps);
+VeryLongLabel.args = veryLongLabelProps;

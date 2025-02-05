@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { Stepper } from '.';
 
 export default {
-	title: 'Components/Inputs/Stepper',
+	title: 'Forms & Input Fields/Stepper',
 	component: Stepper,
 } satisfies Meta<typeof Stepper>;
 
@@ -36,15 +36,15 @@ const standardProps = {
 	disabled: false,
 	onChange: action('onChange'),
 };
-export const standard = Template.bind(standardProps);
-standard.args = standardProps;
+export const Standard = Template.bind(standardProps);
+Standard.args = standardProps;
 
 const fullWidthPropsProps = {
 	...standardProps,
 	isFullWidth: true,
 };
-export const fullWidth = Template.bind(fullWidthPropsProps);
-fullWidth.args = fullWidthPropsProps;
+export const FullWidth = Template.bind(fullWidthPropsProps);
+FullWidth.args = fullWidthPropsProps;
 
 const formatter = new Intl.NumberFormat('en-AU', {
 	style: 'currency',
@@ -59,5 +59,5 @@ const withFormattingProps = {
 	format: formatter.format,
 	onChange: action('onChange'),
 };
-export const withFormatting = Template.bind(withFormattingProps);
-withFormatting.args = withFormattingProps;
+export const WithFormatting = Template.bind(withFormattingProps);
+WithFormatting.args = withFormattingProps;

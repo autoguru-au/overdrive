@@ -167,8 +167,10 @@ export interface Tokens extends VanillaTokens {
 		};
 		radius: {
 			none: string;
-			'1': string;
 			min: string;
+			'1': string;
+			'2': string;
+			'3': string;
 			pill: string;
 			full: string;
 		};

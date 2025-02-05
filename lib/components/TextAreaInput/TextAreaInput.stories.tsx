@@ -6,7 +6,7 @@ import { ComponentProps } from 'react';
 import { TextAreaInput } from '.';
 
 export default {
-	title: 'Components/Inputs/Textarea',
+	title: 'Forms & Input Fields/Text Area Input',
 	component: TextAreaInput,
 	parameters: { chromatic: {} },
 } satisfies Meta<typeof TextAreaInput>;
@@ -51,11 +51,7 @@ const withAValueProps: ComponentProps<typeof TextAreaInput> = {
 	...sharedProps,
 	value: defaultValue,
 	placeholder: defaultPlaceholder,
-};
-const withHintTextProps: ComponentProps<typeof TextAreaInput> = {
-	...sharedProps,
 	hintText: 'Hint Text',
-	placeholder: defaultPlaceholder,
 };
 const disabledProps: ComponentProps<typeof TextAreaInput> = {
 	...sharedProps,
@@ -83,74 +79,42 @@ const noNotchProps: ComponentProps<typeof TextAreaInput> = {
 	placeholder: defaultPlaceholder,
 	notch: false,
 };
-const noNotchWithValueProps: ComponentProps<typeof TextAreaInput> = {
-	...sharedProps,
-	value: defaultValue,
-	placeholder: defaultPlaceholder,
-	notch: false,
-};
 const loadingProps: ComponentProps<typeof TextAreaInput> = {
 	...sharedProps,
 	isLoading: true,
 };
-export const standard = Template.bind(standardProps);
-standard.args = standardProps;
-standard.argTypes = argTypes;
+export const Standard = Template.bind(standardProps);
+Standard.args = standardProps;
+Standard.argTypes = argTypes;
 
-export const withAValue = Template.bind(withAValueProps);
-withAValue.args = withAValueProps;
-withAValue.argTypes = argTypes;
+export const WithAValue = Template.bind(withAValueProps);
+WithAValue.args = withAValueProps;
+WithAValue.argTypes = argTypes;
 
-export const withHintText = Template.bind(withHintTextProps);
-withHintText.args = withHintTextProps;
-withHintText.argTypes = argTypes;
+export const NotchDisabled = Template.bind(noNotchProps);
+NotchDisabled.args = noNotchProps;
+NotchDisabled.argTypes = argTypes;
 
-export const notchDisabled = Template.bind(noNotchProps);
-notchDisabled.args = noNotchProps;
-notchDisabled.argTypes = argTypes;
+export const Disabled = Template.bind(disabledProps);
+Disabled.args = disabledProps;
+Disabled.argTypes = argTypes;
 
-export const notchDisabledWithValue = Template.bind(noNotchWithValueProps);
-notchDisabledWithValue.args = noNotchWithValueProps;
-notchDisabledWithValue.argTypes = argTypes;
+export const Valid = Template.bind(validProps);
+Valid.args = validProps;
+Valid.argTypes = argTypes;
 
-export const disabled = Template.bind(disabledProps);
-disabled.args = disabledProps;
-disabled.argTypes = argTypes;
+export const Invalid = Template.bind(invalidProps);
+Invalid.args = invalidProps;
+Invalid.argTypes = argTypes;
 
-export const valid = Template.bind(validProps);
-valid.args = validProps;
-valid.argTypes = argTypes;
-
-export const invalid = Template.bind(invalidProps);
-invalid.args = invalidProps;
-invalid.argTypes = argTypes;
-
-export const loading = Template.bind(loadingProps);
-loading.args = loadingProps;
-loading.argTypes = argTypes;
+export const Loading = Template.bind(loadingProps);
+Loading.args = loadingProps;
+Loading.argTypes = argTypes;
 
 const smallProps: typeof standardProps = {
 	...standardProps,
 	size: 'small',
 };
-export const small = Template.bind(smallProps);
-small.args = smallProps;
-small.argTypes = argTypes;
-
-const withValueSmallProps: typeof withAValueProps = {
-	...withAValueProps,
-	size: 'small',
-};
-
-export const withValueSmall = Template.bind(withValueSmallProps);
-withValueSmall.args = withValueSmallProps;
-withValueSmall.argTypes = argTypes;
-
-const loadingSmallProps: typeof withAValueProps = {
-	...withAValueProps,
-	isLoading: true,
-	size: 'small',
-};
-export const loadingSmall = Template.bind(loadingSmallProps);
-loadingSmall.args = loadingSmallProps;
-loadingSmall.argTypes = argTypes;
+export const Small = Template.bind(smallProps);
+Small.args = smallProps;
+Small.argTypes = argTypes;

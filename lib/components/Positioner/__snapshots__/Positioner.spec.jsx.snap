@@ -10,7 +10,7 @@ exports[`<Positioner /> should match snapshot 1`] = `
   >
     <div
       aria-hidden="false"
-      class="reset_block__1oah0223 useBoxStyles_position_fixed__3xgq1lff Positioner_root__1d54b7d0"
+      class="reset_block__1oah0223 useBoxStyles_position_fixed__3xgq1lfn Positioner_root__1d54b7d0"
     >
       Some body
     </div>

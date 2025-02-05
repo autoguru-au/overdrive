@@ -1,13 +1,14 @@
 import { invariant } from '@autoguru/utilities';
-import * as React from 'react';
-import { FunctionComponent, ComponentProps } from 'react';
+import React, { type ComponentProps } from 'react';
 
+import type { WithTestId } from '../../types';
+import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box';
 import { useTextStyles } from '../Text';
 
 import * as styles from './Badge.css';
 
-export interface Props {
+export interface BadgeProps {
 	label: string;
 	colour?: keyof typeof styles.colours.default;
 	className?: string;
@@ -33,13 +34,14 @@ const paddingYMap: Record<
 	large: '4',
 };
 
-export const Badge: FunctionComponent<Props> = ({
+export const Badge = ({
 	label,
 	colour = 'neutral',
 	look = 'standard',
 	size = 'standard',
 	className = '',
-}) => {
+	testId,
+}: WithTestId<BadgeProps>) => {
 	const textStyles = useTextStyles({
 		noWrap: true,
 		fontWeight: 'semiBold',
@@ -53,7 +55,11 @@ export const Badge: FunctionComponent<Props> = ({
 	);
 
 	return (
-		<Box className={className} display="flex">
+		<Box
+			className={className}
+			display="flex"
+			{...dataAttrs({ 'test-id': testId })}
+		>
 			<Box
 				className={[
 					styles.labelSize[size],
@@ -68,7 +74,7 @@ export const Badge: FunctionComponent<Props> = ({
 				borderRadius="1"
 			>
 				<Box
-					is="span"
+					as="span"
 					display="block"
 					overflow="hidden"
 					className={[

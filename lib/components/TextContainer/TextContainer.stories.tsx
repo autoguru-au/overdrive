@@ -9,7 +9,7 @@ import { Text } from '../Text';
 import { TextContainer } from '.';
 
 export default {
-	title: 'Components/TextContainer',
+	title: 'Components/Text Container',
 	component: TextContainer,
 	decorators: [(story) => <div style={{ maxWidth: 512 }}>{story()}</div>],
 	argTypes: {
@@ -43,22 +43,8 @@ const standardProps: ComponentProps<typeof TextContainer> = {
 		</Text>
 	),
 };
-export const standard = Template.bind(standardProps);
-standard.args = standardProps;
-
-const withALotOfBodyProps: ComponentProps<typeof TextContainer> = {
-	heading: <Heading>Reviews</Heading>,
-	children: (
-		<Text colour="muted" is="p">
-			To avoid you coming to a halt in the middle of the road, because of
-			a banging, crash of pistons and valves fighting with each other,
-			let's investigate what the timing belt is, what it does, and why it
-			costs so much to replace or repair.
-		</Text>
-	),
-};
-export const withALotOfBody = Template.bind(withALotOfBodyProps);
-withALotOfBody.args = withALotOfBodyProps;
+export const Standard = Template.bind(standardProps);
+Standard.args = standardProps;
 
 const withInteractionProps: ComponentProps<typeof TextContainer> = {
 	heading: <Heading>Reviews</Heading>,
@@ -66,8 +52,8 @@ const withInteractionProps: ComponentProps<typeof TextContainer> = {
 		<Text colour="muted" is="p">
 			To avoid you coming to a halt in the middle of the road, because of
 			a banging, crash of pistons and valves fighting with each other,
-			let's investigate what the timing belt is, what it does, and why it
-			costs so much to replace or repair.
+			let&apos;s investigate what the timing belt is, what it does, and
+			why it costs so much to replace or repair.
 		</Text>
 	),
 	action: (
@@ -76,8 +62,8 @@ const withInteractionProps: ComponentProps<typeof TextContainer> = {
 		</Button>
 	),
 };
-export const withInteraction = Template.bind(withInteractionProps);
-withInteraction.args = withInteractionProps;
+export const WithInteraction = Template.bind(withInteractionProps);
+WithInteraction.args = withInteractionProps;
 
 const withInteractionOnlyProps: ComponentProps<typeof TextContainer> = {
 	heading: void 0,
@@ -85,8 +71,8 @@ const withInteractionOnlyProps: ComponentProps<typeof TextContainer> = {
 		<Text colour="muted" is="p">
 			To avoid you coming to a halt in the middle of the road, because of
 			a banging, crash of pistons and valves fighting with each other,
-			let's investigate what the timing belt is, what it does, and why it
-			costs so much to replace or repair.
+			let&apos;s investigate what the timing belt is, what it does, and
+			why it costs so much to replace or repair.
 		</Text>
 	),
 	action: (
@@ -95,8 +81,8 @@ const withInteractionOnlyProps: ComponentProps<typeof TextContainer> = {
 		</Button>
 	),
 };
-export const withInteractionOnly = Template.bind(withInteractionOnlyProps);
-withInteractionOnly.args = withInteractionOnlyProps;
+export const WithInteractionOnly = Template.bind(withInteractionOnlyProps);
+WithInteractionOnly.args = withInteractionOnlyProps;
 
 const withLongTitleProps: ComponentProps<typeof TextContainer> = {
 	heading: <Heading>Setup your personal settings</Heading>,
@@ -104,8 +90,8 @@ const withLongTitleProps: ComponentProps<typeof TextContainer> = {
 		<Text colour="muted" is="p">
 			To avoid you coming to a halt in the middle of the road, because of
 			a banging, crash of pistons and valves fighting with each other,
-			let's investigate what the timing belt is, what it does, and why it
-			costs so much to replace or repair.
+			let&apos;s investigate what the timing belt is, what it does, and
+			why it costs so much to replace or repair.
 		</Text>
 	),
 	action: (
@@ -114,21 +100,5 @@ const withLongTitleProps: ComponentProps<typeof TextContainer> = {
 		</Button>
 	),
 };
-export const withLongTitle = Template.bind(withLongTitleProps);
-withLongTitle.args = withLongTitleProps;
-
-const withNoBodyTextProps: ComponentProps<typeof TextContainer> = {
-	children: <Heading>Choose a credit pack</Heading>,
-};
-export const withNoBodyText = Template.bind(withNoBodyTextProps);
-withNoBodyText.args = withNoBodyTextProps;
-
-const withNoTitleTextProps: ComponentProps<typeof TextContainer> = {
-	children: (
-		<Text colour="muted" is="p">
-			To get started, choose a credit pack that will used for Auto Top-Up.
-		</Text>
-	),
-};
-export const withNoTitleText = Template.bind(withNoTitleTextProps);
-withNoTitleText.args = withNoTitleTextProps;
+export const WithLongTitle = Template.bind(withLongTitleProps);
+WithLongTitle.args = withLongTitleProps;

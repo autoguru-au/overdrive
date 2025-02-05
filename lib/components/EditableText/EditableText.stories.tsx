@@ -6,7 +6,7 @@ import { ChangeEvent, ComponentProps, useState } from 'react';
 import { EditableText } from '.';
 
 export default {
-	title: 'Components/Inputs/EditableText',
+	title: 'Forms & Input Fields/Editable Text',
 	component: EditableText,
 	argTypes: {
 		colour: {
@@ -78,14 +78,14 @@ const customSizeProps: ComponentProps<typeof EditableText> = {
 	size: '6',
 };
 
-export const text = template.bind(textProps);
-export const number = template.bind(numberProps);
-export const date = template.bind(dateProps);
-export const narrowCharacters = template.bind(narrowCharactersProps);
-export const customSize = template.bind(customSizeProps);
+export const Text = template.bind(textProps);
+export const Number = template.bind(numberProps);
+export const DateWithPicker = template.bind(dateProps);
+export const NarrowCharacters = template.bind(narrowCharactersProps);
+export const CustomSize = template.bind(customSizeProps);
 
-text.args = textProps;
-number.args = numberProps;
-date.args = dateProps;
-narrowCharacters.args = narrowCharactersProps;
-customSize.args = customSizeProps;
+Text.args = textProps;
+Number.args = numberProps;
+DateWithPicker.args = dateProps;
+NarrowCharacters.args = narrowCharactersProps;
+CustomSize.args = customSizeProps;

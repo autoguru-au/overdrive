@@ -16,7 +16,7 @@ import { DropDown, DropDownOption } from '.';
 
 const onClick = action('onClick');
 export default {
-	title: 'Components/DropDown',
+	title: 'Components/Drop Down',
 	component: DropDown,
 	decorators: [
 		(story) => (
@@ -93,24 +93,24 @@ const standardProps: ComponentProps<typeof DropDown> = {
 	onClick,
 };
 
-export const primary = Template.bind(standardProps);
-primary.args = standardProps;
+export const Primary = Template.bind(standardProps);
+Primary.args = standardProps;
 
 const withOpenMenuProps: ComponentProps<typeof DropDown> = {
 	...standardProps,
 	isOpen: true,
 };
 
-export const withOpenMenu = Template.bind(withOpenMenuProps);
-withOpenMenu.args = withOpenMenuProps;
+export const WithOpenMenu = Template.bind(withOpenMenuProps);
+WithOpenMenu.args = withOpenMenuProps;
 
 const secondaryProps: ComponentProps<typeof DropDown> = {
 	...standardProps,
 	variant: 'secondary',
 };
 
-export const secondary = Template.bind(secondaryProps);
-secondary.args = secondaryProps;
+export const Secondary = Template.bind(secondaryProps);
+Secondary.args = secondaryProps;
 
 const minimalPrimaryProps: ComponentProps<typeof DropDown> = {
 	...standardProps,
@@ -118,8 +118,8 @@ const minimalPrimaryProps: ComponentProps<typeof DropDown> = {
 	minimal: true,
 };
 
-export const minimalPrimary = Template.bind(minimalPrimaryProps);
-minimalPrimary.args = minimalPrimaryProps;
+export const MinimalPrimary = Template.bind(minimalPrimaryProps);
+MinimalPrimary.args = minimalPrimaryProps;
 
 const roundedSecondaryProps: ComponentProps<typeof DropDown> = {
 	...standardProps,
@@ -127,8 +127,8 @@ const roundedSecondaryProps: ComponentProps<typeof DropDown> = {
 	rounded: true,
 };
 
-export const roundedSecondary = Template.bind(roundedSecondaryProps);
-roundedSecondary.args = roundedSecondaryProps;
+export const RoundedSecondary = Template.bind(roundedSecondaryProps);
+RoundedSecondary.args = roundedSecondaryProps;
 
 const withCustomIconProps: ComponentProps<typeof DropDown> = {
 	...standardProps,
@@ -137,8 +137,8 @@ const withCustomIconProps: ComponentProps<typeof DropDown> = {
 	isOpen: true,
 };
 
-export const withCustomIcon = Template.bind(withCustomIconProps);
-withCustomIcon.args = withCustomIconProps;
+export const WithCustomIcon = Template.bind(withCustomIconProps);
+WithCustomIcon.args = withCustomIconProps;
 
 const withManyOptionsProps: ComponentProps<typeof DropDown> = {
 	...standardProps,
@@ -154,5 +154,5 @@ const withManyOptionsProps: ComponentProps<typeof DropDown> = {
 	),
 };
 
-export const withManyOptions = Template.bind(withManyOptionsProps);
-withManyOptions.args = withManyOptionsProps;
+export const WithManyOptions = Template.bind(withManyOptionsProps);
+WithManyOptions.args = withManyOptionsProps;

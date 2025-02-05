@@ -9,7 +9,7 @@ import { Text } from '../Text';
 import { StandardModal } from '.';
 
 export default {
-	title: 'Components/StandardModal',
+	title: 'Components/Modal: Standard with Title',
 	component: StandardModal,
 	parameters: {
 		chromatic: { disable: true },

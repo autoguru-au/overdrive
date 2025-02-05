@@ -10,7 +10,7 @@ export interface Props
 	extends BoxStyleProps,
 		Omit<
 			AllHTMLAttributes<HTMLElement>,
-			'width' | 'height' | 'className' | 'is'
+			'as' | 'width' | 'height' | 'className' | 'is'
 		> {
 	children?: ReactNode;
 }
@@ -21,7 +21,8 @@ export interface Props
 export const Box = forwardRef<HTMLElement, Props>(
 	(
 		{
-			is: Component = 'div',
+			as = 'div',
+			is = as,
 
 			padding,
 			paddingX,
@@ -86,7 +87,7 @@ export const Box = forwardRef<HTMLElement, Props>(
 		ref,
 	) => {
 		const cls = useBoxStyles({
-			is: Component,
+			is,
 			alignItems,
 			order,
 			backgroundColour,
@@ -136,6 +137,8 @@ export const Box = forwardRef<HTMLElement, Props>(
 			userSelect,
 			width,
 		});
+
+		const Component = is;
 
 		return (
 			<Component

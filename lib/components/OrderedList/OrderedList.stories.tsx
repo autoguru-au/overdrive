@@ -6,7 +6,7 @@ import { Text } from '../Text';
 import { OrderedList } from '.';
 
 export default {
-	title: 'Foundation/List/OrderedList',
+	title: 'Primatives/Ordered List',
 	component: OrderedList,
 } satisfies Meta<typeof OrderedList>;
 
@@ -46,6 +46,6 @@ const Template: StoryFn<typeof OrderedList> = (args) => (
 	</OrderedList>
 );
 
-export const standard = {
+export const Standard = {
 	render: Template,
 };

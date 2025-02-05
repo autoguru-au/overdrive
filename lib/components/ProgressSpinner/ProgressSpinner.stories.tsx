@@ -5,7 +5,7 @@ import { ComponentProps } from 'react';
 import { ProgressSpinner } from '.';
 
 export default {
-	title: 'Components/Progress/Spinner',
+	title: 'Primatives/Progress Spinner',
 	component: ProgressSpinner,
 	decorators: [
 		(story) => (
@@ -26,13 +26,11 @@ export default {
 	parameters: { chromatic: { disable: true } },
 } satisfies Meta<typeof ProgressSpinner>;
 
-export const Standard = () => (
-	<ProgressSpinner colour="primary" size="medium" />
-);
-
 const Template: StoryFn<typeof ProgressSpinner> = (args) => (
 	<ProgressSpinner {...args} />
 );
+
 const standardProps: ComponentProps<typeof ProgressSpinner> = {};
-export const standard = Template.bind(standardProps);
-standard.args = standardProps;
+
+export const Standard = Template.bind(standardProps);
+Standard.args = standardProps;

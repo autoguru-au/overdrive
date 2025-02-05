@@ -7,7 +7,7 @@ import { Box } from '../Box';
 import { SimplePagination } from '.';
 
 export default {
-	title: 'Components/Pagination/Simple',
+	title: 'Primatives/Simple Pagination',
 	component: SimplePagination,
 } satisfies Meta<typeof SimplePagination>;
 

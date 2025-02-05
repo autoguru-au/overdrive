@@ -8,7 +8,7 @@ import { boxArgTypes } from '../Box/argTypes';
 import { Section } from '.';
 
 export default {
-	title: 'Foundation/Section',
+	title: 'Layout/Section',
 	component: Section,
 	argTypes: {
 		paddingX: boxArgTypes.paddingX,
@@ -39,5 +39,5 @@ const standardProps: Omit<ComponentProps<typeof Section>, 'children'> = {
 	width: 'small',
 	paddingX: ['none', '3', '5'],
 };
-export const standard = template.bind(standardProps);
-standard.args = standardProps;
+export const Standard = template.bind(standardProps);
+Standard.args = standardProps;

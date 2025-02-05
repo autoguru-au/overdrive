@@ -5,7 +5,7 @@ import * as React from 'react';
 import { Switch } from '.';
 
 export default {
-	title: 'Components/Switch',
+	title: 'Primatives/Switch',
 	component: Switch,
 } satisfies Meta<typeof Switch>;
 
@@ -18,26 +18,26 @@ const standardProps = {
 	className: 'toggleButton-class',
 };
 
-export const untoggled: StoryFn<typeof Switch> = Template.bind(standardProps);
-untoggled.args = standardProps;
+export const Untoggled: StoryFn<typeof Switch> = Template.bind(standardProps);
+Untoggled.args = standardProps;
 
 const untoggledDisabledProps = {
 	...standardProps,
 	isDisabled: true,
 };
 
-export const untoggledDisabled: StoryFn<typeof Switch> = Template.bind(
+export const UntoggledDisabled: StoryFn<typeof Switch> = Template.bind(
 	untoggledDisabledProps,
 );
-untoggledDisabled.args = untoggledDisabledProps;
+UntoggledDisabled.args = untoggledDisabledProps;
 
 const toggledProps = {
 	...standardProps,
 	isSelected: true,
 };
 
-export const toggled: StoryFn<typeof Switch> = Template.bind(toggledProps);
-toggled.args = toggledProps;
+export const Toggled: StoryFn<typeof Switch> = Template.bind(toggledProps);
+Toggled.args = toggledProps;
 
 const toggledDisabledProps = {
 	...standardProps,
@@ -45,6 +45,6 @@ const toggledDisabledProps = {
 	isDisabled: true,
 };
 
-export const toggledDisabled: StoryFn<typeof Switch> =
+export const ToggledDisabled: StoryFn<typeof Switch> =
 	Template.bind(toggledDisabledProps);
-toggledDisabled.args = toggledDisabledProps;
+ToggledDisabled.args = toggledDisabledProps;

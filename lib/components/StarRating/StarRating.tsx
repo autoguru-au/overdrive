@@ -66,7 +66,12 @@ export const StarRating: NamedExoticComponent<Props> = memo(
 						))}
 				</Inline>
 				{label === null ? null : (
-					<Text size={labelSizeMap.get(size)}>{label}</Text>
+					<Text
+						size={labelSizeMap.get(size)}
+						testId="star-rating-label"
+					>
+						{label}
+					</Text>
 				)}
 			</Inline>
 		</Box>

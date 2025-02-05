@@ -1,5 +1,36 @@
 # @autoguru/overdrive
 
+## 4.37.0
+
+### Minor Changes
+
+- e6cfa22: React v18 or higher required in peer dependencies
+- 72019bd: Introduced Search Bar component beta
+
+### Patch Changes
+
+- 0092bd6: Improves Icon accessibility, no longer renders an `<i>` tag
+
+## 4.36.0
+
+### Minor Changes
+
+- 8739e4f: **Enhancements**
+
+    - `as` prop added to Box, with existing `is` prop as alias to ensure
+      non-breaking.
+    - `VisuallyHidden` component has been simplified.
+    - More sprinkles defined such as typography, responsive breakpoints and
+      interaction conditions and properties.
+    - `odStyle` is now the function name for using sprinkles.
+
+- 8739e4f: **New components**
+
+    - Option List (beta) to display a grouped set of optional items that are
+      checkbox form controls.
+    - Option Grid (beta) to group selectable tiles that support per-item icons,
+      it is a custom ARIA listbox instance and is not a native form control.
+
 ## 4.35.2
 
 ### Patch Changes
@@ -1760,8 +1791,8 @@
     `<AutoSuggest>` can now be given a `autoWidth` prop that will auto the width
     in relation to setting the width, or for it to be automatic.
 
-            	- `autoWidth={true}` means, size the flyout to the width of flyout children "automatically"
-            	- `autoWidth={false}` means to set to the width of the select input.
+                	- `autoWidth={true}` means, size the flyout to the width of flyout children "automatically"
+                	- `autoWidth={false}` means to set to the width of the select input.
 
     eg:
 
@@ -1875,8 +1906,8 @@
     backdrop. Also; if you wish to remove the fadeIn/fadeOut animation, a
     `transition?: boolean` can also be provided.
 
-            	- Removes `<ModalPortal />` in favor of `<Modal />`
-            	- Deprecated `withModal`, which could simply just use the Modal component
+                	- Removes `<ModalPortal />` in favor of `<Modal />`
+                	- Deprecated `withModal`, which could simply just use the Modal component
 
     Worth noting that a `role="presentation"` is applied to the `Modal`, so
     consumers should be applying a `role="none presentation"` to their direct
@@ -1929,9 +1960,9 @@
 
     Breakpoints have been amended to follow (mobile first):
 
-            	- `tablet` is iPad Mini width less 25%, so any device greater than 768px
-            	- `desktop` we are considering as iPad Pro width less 25%, so any device larger than 1024px
-            	- `largeDesktop` is taken as a 1920x1080 less 25%, so any device larger than 1440px
+                	- `tablet` is iPad Mini width less 25%, so any device greater than 768px
+                	- `desktop` we are considering as iPad Pro width less 25%, so any device larger than 1024px
+                	- `largeDesktop` is taken as a 1920x1080 less 25%, so any device larger than 1440px
 
     all at landscape.
 
@@ -2014,9 +2045,9 @@
 
     **A few changes**
 
-            	- `OverdriveProvider` must now be provider
-            	- `ToastProvider` must also be provided when using a `useToast`
-            	- `@autoguru/overdrive/reset` must be given first.
+                	- `OverdriveProvider` must now be provider
+                	- `ToastProvider` must also be provided when using a `useToast`
+                	- `@autoguru/overdrive/reset` must be given first.
 
     ... and a whole series of other things. Please consult to the PR (#273) to
     get a better idea of what's changed.

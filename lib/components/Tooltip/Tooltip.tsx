@@ -46,7 +46,7 @@ export const Tooltip: FunctionComponent<Props> = ({
 	const childRef = useRef<HTMLDivElement>(null);
 	const triggerRef = useRef<HTMLElement>(null);
 
-	const leaveTimer = useRef<ReturnType<typeof setTimeout>>();
+	const leaveTimer = useRef<ReturnType<typeof setTimeout>>(null);
 
 	const enterHandler = useCallback(() => {
 		if (leaveTimer.current) {
@@ -73,6 +73,7 @@ export const Tooltip: FunctionComponent<Props> = ({
 	return label?.length > 0 ? (
 		<>
 			{cloneElement(Children.only(children), {
+				// @ts-expect-error ref does not exist on the type
 				ref: triggerRef,
 				onMouseEnter: enterHandler,
 				onMouseLeave: leaveHandler,

@@ -17,7 +17,7 @@ export interface Props
 	children: ReactNode | ReactNode[];
 }
 
-const supportedListTypes: ReadonlyArray<keyof JSX.IntrinsicElements> = [
+const supportedListTypes: ReadonlyArray<keyof React.JSX.IntrinsicElements> = [
 	'ul',
 	'ol',
 ] as const;

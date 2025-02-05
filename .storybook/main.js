@@ -11,6 +11,7 @@ const config = {
 		'@storybook/addon-interactions',
 		'@storybook/addon-links',
 		'@chromatic-com/storybook',
+		'storybook-addon-tag-badges',
 	],
 	framework: {
 		name: '@storybook/react-vite',

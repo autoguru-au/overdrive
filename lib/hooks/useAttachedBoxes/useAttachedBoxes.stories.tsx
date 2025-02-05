@@ -6,7 +6,7 @@ import { Text } from '../../components/Text/Text';
 import { useAttachedBoxes } from '.';
 
 export default {
-	title: 'Foundation/Layout/Attached Boxes',
+	title: 'Layout/Attached Boxes [Hook]',
 };
 
 const columnCount = [2, 3, 4, 5];

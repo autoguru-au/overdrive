@@ -32,7 +32,7 @@ const iconOptions = {
 };
 
 export default {
-	title: 'Components/DatePicker',
+	title: 'Components/Date Picker',
 	component: DatePicker,
 	decorators: [],
 	argTypes: {
@@ -64,8 +64,8 @@ const standardProps: ComponentProps<typeof DatePicker> = {
 	disabled: false,
 };
 
-export const standard = Template.bind(standardProps);
-standard.args = standardProps;
+export const Standard = Template.bind(standardProps);
+Standard.args = standardProps;
 
 const smallProps: ComponentProps<typeof DatePicker> = {
 	size: 'small',
@@ -73,16 +73,13 @@ const smallProps: ComponentProps<typeof DatePicker> = {
 	disabled: false,
 };
 
-export const small = Template.bind(smallProps);
-small.args = smallProps;
-
 const smallWithLabelProps: ComponentProps<typeof DatePicker> = {
 	...smallProps,
 	valueLabel: 'Today',
 };
 
-export const smallWithLabel = Template.bind(smallWithLabelProps);
-smallWithLabel.args = smallWithLabelProps;
+export const SmallWithLabel = Template.bind(smallWithLabelProps);
+SmallWithLabel.args = smallWithLabelProps;
 
 const mediumProps: ComponentProps<typeof DatePicker> = {
 	size: 'medium',
@@ -90,16 +87,13 @@ const mediumProps: ComponentProps<typeof DatePicker> = {
 	disabled: false,
 };
 
-export const medium = Template.bind(mediumProps);
-medium.args = mediumProps;
-
 const mediumWithLabelProps: ComponentProps<typeof DatePicker> = {
 	...mediumProps,
 	valueLabel: 'Today',
 };
 
-export const mediumWithLabel = Template.bind(mediumWithLabelProps);
-mediumWithLabel.args = mediumWithLabelProps;
+export const MediumWithLabel = Template.bind(mediumWithLabelProps);
+MediumWithLabel.args = mediumWithLabelProps;
 
 const largeProps: ComponentProps<typeof DatePicker> = {
 	size: 'large',
@@ -107,13 +101,10 @@ const largeProps: ComponentProps<typeof DatePicker> = {
 	disabled: false,
 };
 
-export const large = Template.bind(largeProps);
-large.args = largeProps;
-
 const largeWithLabelProps: ComponentProps<typeof DatePicker> = {
 	...largeProps,
 	valueLabel: 'Today',
 };
 
-export const largeWithLabel = Template.bind(largeWithLabelProps);
-largeWithLabel.args = largeWithLabelProps;
+export const LargeWithLabel = Template.bind(largeWithLabelProps);
+LargeWithLabel.args = largeWithLabelProps;

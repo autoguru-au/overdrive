@@ -23,7 +23,7 @@ export const useAnimationEvents = <T>({
 }: UseImageLoadingProps): {
 	elementRef;
 } => {
-	const elementRef = incomingRef?.current ? incomingRef : useRef<T>();
+	const elementRef = incomingRef?.current ? incomingRef : useRef<T>(null);
 	const onAnimationStart = useRef(incomingOnAnimationStart);
 	const onAnimationEnd = useRef(incomingOnAnimationEnd);
 

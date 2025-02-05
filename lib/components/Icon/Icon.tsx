@@ -11,11 +11,13 @@ import { Box, useBoxStyles } from '../Box';
 
 import * as styles from './Icon.css';
 
+export type IconEl = IconType | ReactElement<SVGAttributes<SVGElement>, 'svg'>;
+
 export interface Props {
 	display?: Extract<BoxStyleProps['display'], 'block' | 'inlineBlock'>;
 	className?: string;
 	size?: ResponsiveProp<keyof typeof styles.size | string>;
-	icon: IconType | ReactElement<SVGAttributes<SVGElement>, 'svg'>;
+	icon: IconEl;
 }
 
 export const Icon: FunctionComponent<Props> = ({
@@ -27,19 +29,22 @@ export const Icon: FunctionComponent<Props> = ({
 	useNullCheck(icon, 'Icon component received an empty icon prop.');
 	return (
 		<Box
-			is="i"
+			as="div"
 			display={display}
 			className={[resolveResponsiveStyle(size, styles.size), className]}
-			role="presentation"
 		>
 			{icon
 				? cloneElement(icon, {
 						className: useBoxStyles({
-							is: 'svg',
+							as: 'svg',
 							display: 'block',
 							width: 'full',
 							height: 'full',
 						}),
+						'aria-label': icon.props['aria-label'] ?? undefined,
+						'aria-hidden': icon.props['aria-label']
+							? undefined
+							: true,
 					})
 				: '⬤'}
 		</Box>

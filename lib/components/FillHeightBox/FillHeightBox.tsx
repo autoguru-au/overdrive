@@ -20,6 +20,7 @@ export const FillHeightBox: FunctionComponent<Props> = ({
 }) => {
 	const containerRef = React.useRef<HTMLDivElement>(null);
 	const containerHeight = useWindowHeightFill({
+		// @ts-expect-error containerRef can be null
 		containerRef,
 		includeMobile,
 		observedElementRef,

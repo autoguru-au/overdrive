@@ -10,7 +10,7 @@ import { Text } from '../Text';
 import { Inline } from '.';
 
 export default {
-	title: 'Foundation/Layout/Inline',
+	title: 'Layout/Inline',
 	component: Inline,
 	argTypes: {
 		alignY: {
@@ -75,14 +75,14 @@ const DiffSizeTemplate: StoryFn<typeof Inline> = (args) => (
 );
 
 const standardProps: ComponentProps<typeof Inline> = {};
-export const standard = Template.bind(standardProps);
-standard.args = standardProps;
+export const Standard = Template.bind(standardProps);
+Standard.args = standardProps;
 
 const dividersProps: ComponentProps<typeof Inline> = {
 	dividers: true,
 };
-export const dividers = Template.bind(dividersProps);
-dividers.args = dividersProps;
+export const Dividers = Template.bind(dividersProps);
+Dividers.args = dividersProps;
 
 const customDividersProps: ComponentProps<typeof Inline> = {
 	dividers: (
@@ -95,20 +95,20 @@ const customDividersProps: ComponentProps<typeof Inline> = {
 		/>
 	),
 };
-export const customDividers = Template.bind(customDividersProps);
-customDividers.args = customDividersProps;
+export const CustomDividers = Template.bind(customDividersProps);
+CustomDividers.args = customDividersProps;
 
 const differentSizeItemsProps: ComponentProps<typeof Inline> = {
 	dividers: true,
 };
-export const differentSizeItems = DiffSizeTemplate.bind(
+export const DifferentSizeItems = DiffSizeTemplate.bind(
 	differentSizeItemsProps,
 );
-differentSizeItems.args = differentSizeItemsProps;
+DifferentSizeItems.args = differentSizeItemsProps;
 
 const withFullWidthProps: ComponentProps<typeof Inline> = {
 	width: 'full',
 	alignX: 'spaceBetween',
 };
-export const withFullWidth = DiffSizeTemplate.bind(withFullWidthProps);
-withFullWidth.args = withFullWidthProps;
+export const WithFullWidth = DiffSizeTemplate.bind(withFullWidthProps);
+WithFullWidth.args = withFullWidthProps;

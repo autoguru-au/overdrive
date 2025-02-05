@@ -52,7 +52,7 @@ const iconOptions = {
 };
 
 export default {
-	title: 'Components/Inputs/Select',
+	title: 'Forms & Input Fields/Select',
 	component: SelectInput,
 	parameters: { chromatic: {} },
 	args: {
@@ -104,84 +104,51 @@ const Template: StoryFn<typeof SelectInput> = (args) => (
 	</SelectInput>
 );
 
-export const standard = Template.bind({});
-
-export const withAValue = Template.bind({});
-withAValue.args = { value: defaultValue, placeholder: defaultPlaceholder };
-
-export const withHintText = Template.bind({});
-withHintText.args = {
+export const Standard = Template.bind({});
+Standard.args = {
 	hintText: 'Hint Text',
-	placeholder: defaultPlaceholder,
 };
 
-export const notchDisabled = Template.bind({});
-notchDisabled.args = {
-	placeholder: defaultPlaceholder,
-	notch: false,
-};
-
-export const notchDisabledWithValue = Template.bind({});
-notchDisabledWithValue.args = {
-	value: defaultValue,
+export const NotchDisabled = Template.bind({});
+NotchDisabled.args = {
 	placeholder: defaultPlaceholder,
 	notch: false,
 };
 
-export const withPrefixIcon = Template.bind({});
-withPrefixIcon.args = {
+export const WithPrefixIcon = Template.bind({});
+WithPrefixIcon.args = {
 	prefixIcon: CarIcon,
 };
 
-export const disabled = Template.bind({});
-disabled.args = {
+export const Disabled = Template.bind({});
+Disabled.args = {
 	value: defaultValue,
 	placeholder: defaultPlaceholder,
 	disabled: true,
 };
 
-export const valid = Template.bind({});
-valid.args = {
+export const Valid = Template.bind({});
+Valid.args = {
 	value: defaultValue,
 	placeholder: defaultPlaceholder,
 	isTouched: true,
 	isValid: true,
 };
 
-export const invalid = Template.bind({});
-invalid.args = {
+export const Invalid = Template.bind({});
+Invalid.args = {
 	placeholder: defaultPlaceholder,
 	isTouched: true,
 	isValid: false,
 	hintText: 'Vehicle make is mandatory',
 };
 
-export const loading = Template.bind({});
-loading.args = {
+export const Loading = Template.bind({});
+Loading.args = {
 	isLoading: true,
 };
 
-export const small = Template.bind({});
-small.args = {
-	size: 'small',
-};
-
-export const withValueSmall = Template.bind({});
-withValueSmall.args = {
-	...withAValue.args,
-	size: 'small',
-};
-
-export const withIconSmall = Template.bind({});
-withIconSmall.args = {
-	...withAValue.args,
-	prefixIcon: CarIcon,
-	size: 'small',
-};
-
-export const loadingSmall = Template.bind({});
-loadingSmall.args = {
-	...withAValue.args,
-	isLoading: true,
+export const Small = Template.bind({});
+Small.args = {
 	size: 'small',
 };

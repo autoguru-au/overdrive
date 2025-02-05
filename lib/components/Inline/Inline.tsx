@@ -22,7 +22,7 @@ export interface Props extends Pick<BoxStyleProps, 'is' | 'width'> {
 	dividers?: boolean | ReactNode;
 }
 
-const supportedListTypes: ReadonlyArray<keyof JSX.IntrinsicElements> = [
+const supportedListTypes: ReadonlyArray<keyof React.JSX.IntrinsicElements> = [
 	'ul',
 	'ol',
 ] as const;
@@ -39,8 +39,6 @@ export const Inline: FunctionComponent<Props> = ({
 }) => {
 	const negativeMarginLeft = useNegativeMarginLeft(space);
 	const negativeMarginTop = useNegativeMarginTop(space);
-
-	// @ts-ignore
 	const items = flattenChildren(children);
 
 	if (items.length < 2) {
