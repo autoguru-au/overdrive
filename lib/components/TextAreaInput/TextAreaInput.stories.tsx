@@ -51,11 +51,7 @@ const withAValueProps: ComponentProps<typeof TextAreaInput> = {
 	...sharedProps,
 	value: defaultValue,
 	placeholder: defaultPlaceholder,
-};
-const withHintTextProps: ComponentProps<typeof TextAreaInput> = {
-	...sharedProps,
 	hintText: 'Hint Text',
-	placeholder: defaultPlaceholder,
 };
 const disabledProps: ComponentProps<typeof TextAreaInput> = {
 	...sharedProps,
@@ -83,12 +79,6 @@ const noNotchProps: ComponentProps<typeof TextAreaInput> = {
 	placeholder: defaultPlaceholder,
 	notch: false,
 };
-const noNotchWithValueProps: ComponentProps<typeof TextAreaInput> = {
-	...sharedProps,
-	value: defaultValue,
-	placeholder: defaultPlaceholder,
-	notch: false,
-};
 const loadingProps: ComponentProps<typeof TextAreaInput> = {
 	...sharedProps,
 	isLoading: true,
@@ -101,17 +91,9 @@ export const WithAValue = Template.bind(withAValueProps);
 WithAValue.args = withAValueProps;
 WithAValue.argTypes = argTypes;
 
-export const WithHintText = Template.bind(withHintTextProps);
-WithHintText.args = withHintTextProps;
-WithHintText.argTypes = argTypes;
-
 export const NotchDisabled = Template.bind(noNotchProps);
 NotchDisabled.args = noNotchProps;
 NotchDisabled.argTypes = argTypes;
-
-export const NotchDisabledWithValue = Template.bind(noNotchWithValueProps);
-NotchDisabledWithValue.args = noNotchWithValueProps;
-NotchDisabledWithValue.argTypes = argTypes;
 
 export const Disabled = Template.bind(disabledProps);
 Disabled.args = disabledProps;
@@ -136,21 +118,3 @@ const smallProps: typeof standardProps = {
 export const Small = Template.bind(smallProps);
 Small.args = smallProps;
 Small.argTypes = argTypes;
-
-const withValueSmallProps: typeof withAValueProps = {
-	...withAValueProps,
-	size: 'small',
-};
-
-export const WithValueSmall = Template.bind(withValueSmallProps);
-WithValueSmall.args = withValueSmallProps;
-WithValueSmall.argTypes = argTypes;
-
-const loadingSmallProps: typeof withAValueProps = {
-	...withAValueProps,
-	isLoading: true,
-	size: 'small',
-};
-export const LoadingSmall = Template.bind(loadingSmallProps);
-LoadingSmall.args = loadingSmallProps;
-LoadingSmall.argTypes = argTypes;

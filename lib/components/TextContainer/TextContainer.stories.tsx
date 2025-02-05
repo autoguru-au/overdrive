@@ -46,20 +46,6 @@ const standardProps: ComponentProps<typeof TextContainer> = {
 export const Standard = Template.bind(standardProps);
 Standard.args = standardProps;
 
-const withALotOfBodyProps: ComponentProps<typeof TextContainer> = {
-	heading: <Heading>Reviews</Heading>,
-	children: (
-		<Text colour="muted" is="p">
-			To avoid you coming to a halt in the middle of the road, because of
-			a banging, crash of pistons and valves fighting with each other,
-			let&apos;s investigate what the timing belt is, what it does, and
-			why it costs so much to replace or repair.
-		</Text>
-	),
-};
-export const WithALotOfBody = Template.bind(withALotOfBodyProps);
-WithALotOfBody.args = withALotOfBodyProps;
-
 const withInteractionProps: ComponentProps<typeof TextContainer> = {
 	heading: <Heading>Reviews</Heading>,
 	children: (
@@ -116,19 +102,3 @@ const withLongTitleProps: ComponentProps<typeof TextContainer> = {
 };
 export const WithLongTitle = Template.bind(withLongTitleProps);
 WithLongTitle.args = withLongTitleProps;
-
-const withNoBodyTextProps: ComponentProps<typeof TextContainer> = {
-	children: <Heading>Choose a credit pack</Heading>,
-};
-export const WithNoBodyText = Template.bind(withNoBodyTextProps);
-WithNoBodyText.args = withNoBodyTextProps;
-
-const withNoTitleTextProps: ComponentProps<typeof TextContainer> = {
-	children: (
-		<Text colour="muted" is="p">
-			To get started, choose a credit pack that will used for Auto Top-Up.
-		</Text>
-	),
-};
-export const WithNoTitleText = Template.bind(withNoTitleTextProps);
-WithNoTitleText.args = withNoTitleTextProps;
