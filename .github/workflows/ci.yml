@@ -1,8 +1,13 @@
 name: CI
 
 on:
-  push:
-  pull_request:
+    push:
+    pull_request:
+        types: [opened, reopened, ready_for_review, synchronize]
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
 
 jobs:
     test:
@@ -81,15 +86,6 @@ jobs:
 
             - run: yarn --immutable
 
-            - name: Skip Chromatic
-              if:
-                  github.event_name != 'pull_request' ||
-                  github.event.pull_request.draft == true
-              uses: chromaui/action@latest
-              with:
-                  projectToken: ${{ secrets.CHROMATIC_APP_CODE }}
-                  skip: true
-
             - name: Chromatic
               if:
                   github.event_name == 'pull_request' &&
@@ -101,3 +97,12 @@ jobs:
                   autoAcceptChanges: 'main'
                   exitZeroOnChanges: '!(main)'
                   skip: 'changeset-release/**'
+
+            - name: Skip Chromatic
+              if:
+                  github.event_name != 'pull_request' ||
+                  github.event.pull_request.draft == true
+              uses: chromaui/action@latest
+              with:
+                  projectToken: ${{ secrets.CHROMATIC_APP_CODE }}
+                  skip: true
