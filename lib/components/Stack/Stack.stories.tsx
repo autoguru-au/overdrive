@@ -1,6 +1,5 @@
-import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
+import React, { type ComponentProps } from 'react';
 
 import { boxArgTypes } from '../Box/argTypes';
 import { Text } from '../Text';
@@ -20,7 +19,7 @@ const spacingOptions: Record<string, ComponentProps<typeof Stack>['space']> = {
 	9: '9',
 };
 
-export default {
+const meta = {
 	title: 'Layout/Stack',
 	component: Stack,
 	argTypes: {
@@ -36,45 +35,51 @@ export default {
 	},
 } satisfies Meta<typeof Stack>;
 
-const Template: StoryFn<typeof Stack> = (args) => (
-	<Stack {...args}>
-		<Text>Line 1</Text>
-		<Text>Line 2</Text>
-		<Text>Line 3</Text>
-	</Stack>
-);
+export default meta;
 
-const standardProps: Omit<ComponentProps<typeof Stack>, 'children'> = {
-	space: '1',
-	dividers: false,
-	width: void 0,
-	is: 'div',
-};
-export const Standard = Template.bind(standardProps);
-Standard.args = standardProps;
+type Story = StoryObj<typeof Stack>;
 
-const asSectionProps: Omit<ComponentProps<typeof Stack>, 'children'> = {
-	...standardProps,
-	is: 'section',
+export const Standard: Story = {
+	args: {
+		space: '1',
+		dividers: false,
+		width: void 0,
+		is: 'div',
+	},
+	render: (args) => (
+		<Stack {...args}>
+			<Text>Line 1</Text>
+			<Text>Line 2</Text>
+			<Text>Line 3</Text>
+		</Stack>
+	),
 };
-export const AsSection = Template.bind(asSectionProps);
-AsSection.args = asSectionProps;
 
-const withDividersProps: Omit<ComponentProps<typeof Stack>, 'children'> = {
-	...standardProps,
-	is: 'div',
-	dividers: true,
-	space: '3',
+export const AsSection: Story = {
+	args: {
+		...Standard.args,
+		is: 'section',
+	},
+	render: Standard.render,
 };
-export const WithDividers = Template.bind(withDividersProps);
-WithDividers.args = withDividersProps;
 
-const withAlignmentProps: Omit<ComponentProps<typeof Stack>, 'children'> = {
-	...standardProps,
-	is: 'div',
-	dividers: true,
-	space: '3',
-	alignItems: 'center',
+export const WithDividers: Story = {
+	args: {
+		...Standard.args,
+		is: 'div',
+		dividers: true,
+		space: '3',
+	},
+	render: Standard.render,
 };
-export const WithAlignment = Template.bind(withAlignmentProps);
-WithAlignment.args = withAlignmentProps;
+
+export const WithAlignment: Story = {
+	args: {
+		...Standard.args,
+		is: 'div',
+		dividers: true,
+		space: '3',
+		alignItems: 'center',
+	},
+	render: Standard.render,
+};

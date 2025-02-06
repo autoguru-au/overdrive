@@ -1,6 +1,5 @@
-import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
+import React, { type ComponentProps } from 'react';
 
 import { EAlignment } from '../Positioner/alignment';
 import { Text } from '../Text';
@@ -11,8 +10,10 @@ const sizeScale: Array<ComponentProps<typeof Text>['size']> = [
 	'medium',
 	'large',
 ];
-export default {
+
+const meta = {
 	title: 'Components/Tooltip',
+	component: Tooltip,
 	decorators: [
 		(Story) => (
 			<div style={{ marginLeft: 100, marginTop: 100 }}>
@@ -50,47 +51,47 @@ export default {
 	},
 } satisfies Meta<typeof Tooltip>;
 
-const Template: StoryFn<typeof Tooltip> = (args) => (
-	<Tooltip {...args}>
-		<div style={{ display: 'inline' }}>Im the tooltip trigger</div>
-	</Tooltip>
-);
+export default meta;
 
-const standardProps: Omit<ComponentProps<typeof Tooltip>, 'children'> = {
-	label: 'Im the tooltip body',
-	closeAfter: null,
+type Story = StoryObj<typeof Tooltip>;
+
+export const Standard: Story = {
+	args: {
+		label: 'Im the tooltip body',
+		closeAfter: null,
+		children: (
+			<div style={{ display: 'inline' }}>Im the tooltip trigger</div>
+		),
+	},
 };
 
-export const Standard: StoryFn<typeof Tooltip> = Template.bind(standardProps);
-Standard.args = standardProps;
-
-const withAtuCloseProps: Omit<ComponentProps<typeof Tooltip>, 'children'> = {
-	label: 'I will automatically close after 5 seconds',
-	closeAfter: 5e3,
-};
-export const WithAutoClose: StoryFn<typeof Tooltip> =
-	Template.bind(withAtuCloseProps);
-WithAutoClose.args = withAtuCloseProps;
-
-const withLongTextProps: Omit<ComponentProps<typeof Tooltip>, 'children'> = {
-	label: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
-	alignment: EAlignment.BOTTOM,
+export const WithAutoClose: Story = {
+	args: {
+		label: 'I will automatically close after 5 seconds',
+		closeAfter: 5e3,
+		children: (
+			<div style={{ display: 'inline' }}>Im the tooltip trigger</div>
+		),
+	},
 };
 
-export const WithLongText: StoryFn<typeof Tooltip> =
-	Template.bind(withLongTextProps);
-WithLongText.args = withLongTextProps;
-
-const withSmallTextSizeProps: Omit<
-	ComponentProps<typeof Tooltip>,
-	'children'
-> = {
-	label: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
-	alignment: EAlignment.BOTTOM,
-	size: 'large',
+export const WithLongText: Story = {
+	args: {
+		label: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
+		alignment: EAlignment.BOTTOM,
+		children: (
+			<div style={{ display: 'inline' }}>Im the tooltip trigger</div>
+		),
+	},
 };
 
-export const WithLargeTextSize: StoryFn<typeof Tooltip> = Template.bind(
-	withSmallTextSizeProps,
-);
-WithLargeTextSize.args = withSmallTextSizeProps;
+export const WithLargeTextSize: Story = {
+	args: {
+		label: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
+		alignment: EAlignment.BOTTOM,
+		size: 'large',
+		children: (
+			<div style={{ display: 'inline' }}>Im the tooltip trigger</div>
+		),
+	},
+};

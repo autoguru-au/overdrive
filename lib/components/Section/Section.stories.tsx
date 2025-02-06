@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import React, { ComponentProps } from 'react';
+import React, { type ComponentProps } from 'react';
 
 import { Box } from '../Box';
 import { boxArgTypes } from '../Box/argTypes';
