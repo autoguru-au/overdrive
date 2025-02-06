@@ -1,0 +1,68 @@
+name: SonarQube CI
+
+on: push
+
+jobs:
+  test:
+    name: SonarQube for TypeScript
+    runs-on: ubuntu-latest
+    env:
+      TZ: Australia/Brisbane
+      CI: true
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup environment
+        id: setups
+        run: |-
+          echo "::set-output name=yarn_cache::$(yarn cache dir)"
+          echo "::set-output name=node_version::$(jq -r '.volta.node' package.json)"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ steps.setups.outputs.node_version }}
+          check-latest: true
+
+      - name: Yarn cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.setups.outputs.yarn_cache }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}-node-${{ steps.setups.outputs.node_version }}
+
+      - run: yarn --immutable
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Test
+        run: yarn test --no-cache --ci --coverage
+
+      - name: Fix lcov paths
+        run: |
+          echo "Fixing paths in lcov.info..."
+          sed -i 's#\.\./##g' coverage/lcov.info
+          echo "Fixed lcov.info paths:"
+          head -n 20 coverage/lcov.info
+
+      - name: Install Sonar Scanner
+        run: npm install -g sonar-scanner
+
+      - name: Run SonarQube analysis
+        env:
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: |
+          sonar-scanner \
+            -Dsonar.projectKey="${{ github.event.repository.name }}" \
+            -Dsonar.sources=lib/components,lib/hooks,lib/utils \
+            -Dsonar.exclusions="**/node_modules/**,**/stories/**,**/*.stories.tsx" \
+            -Dsonar.tests=lib \
+            -Dsonar.test.inclusions="**/*.test.tsx" \
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
+            -Dsonar.sourceEncoding=UTF-8 \
+            -Dsonar.host.url="${{ secrets.SONAR_HOST_URL }}" \
+            -Dsonar.login="${{ secrets.SONAR_TOKEN }}"
