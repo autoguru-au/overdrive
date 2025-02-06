@@ -1,11 +1,11 @@
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
 import { Text } from '../Text';
 
 import { VisuallyHidden } from '.';
 
-export default {
+const meta = {
 	title: 'Layout/Visually Hidden',
 	component: VisuallyHidden,
 	args: {
@@ -21,13 +21,17 @@ export default {
 	},
 } satisfies Meta<typeof VisuallyHidden>;
 
-const Template: StoryFn<typeof VisuallyHidden> = (args) => (
-	<>
-		<Text>Bellow text is invisible</Text>
-		<VisuallyHidden {...args}>
-			<Text>I&apos;m not visually present on the screens</Text>
-		</VisuallyHidden>
-	</>
-);
+export default meta;
 
-export const Example = Template.bind({});
+type Story = StoryObj<typeof VisuallyHidden>;
+
+export const Example: Story = {
+	render: (args) => (
+		<>
+			<Text>Bellow text is invisible</Text>
+			<VisuallyHidden {...args}>
+				<Text>I&apos;m not visually present on the screens</Text>
+			</VisuallyHidden>
+		</>
+	),
+};

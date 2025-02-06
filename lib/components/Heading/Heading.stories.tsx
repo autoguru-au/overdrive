@@ -1,4 +1,4 @@
-import { Meta, StoryFn } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps } from 'react';
 
@@ -65,7 +65,7 @@ const colourOptions: Array<ComponentProps<typeof Heading>['colour']> = [
 
 export default {
 	title: 'Primatives/Heading',
-	// component: Heading, Breaks the docs when enabled!
+	component: Heading, //Breaks the docs when enabled!
 	argTypes: {
 		noWrap: {
 			options: noWrapOptions,
@@ -131,42 +131,44 @@ export default {
 	},
 } satisfies Meta<typeof Heading>;
 
-const Template: StoryFn<typeof Heading> = (args) => (
-	<div style={{ maxWidth: '350px', width: '100%' }}>
-		<Heading {...args} />
-	</div>
-);
+type Story = StoryObj<typeof Heading>;
 
-const AllTypesTemplate: StoryFn<typeof Heading> = (args) => (
-	<div style={{ maxWidth: '350px', width: '100%' }}>
-		{headingTypeOptions.map((is) => (
-			<Heading key={is} {...args} is={is} />
-		))}
-	</div>
-);
-
-const AllColoursTemplate: StoryFn<typeof Heading> = (args) => (
-	<div style={{ maxWidth: '350px', width: '100%' }}>
-		{colourOptions.map((colour, index) => (
-			<div key={index} style={{ marginBottom: 8 }}>
-				<Heading key={index} {...args} colour={colour} />
-			</div>
-		))}
-	</div>
-);
-
-const standardProps: ComponentProps<typeof Heading> = {
-	is: 'h1',
-	children: 'I am a heading',
+export const Standard: Story = {
+	args: {
+		is: 'h1',
+		children: 'I am a heading',
+	},
+	render: (args) => (
+		<div style={{ maxWidth: '350px', width: '100%' }}>
+			<Heading {...args} />
+		</div>
+	),
 };
-const allTypesProps: ComponentProps<typeof Heading> = {
-	children: 'I am a heading',
+
+export const AllTypes: Story = {
+	args: {
+		children: 'I am a heading',
+	},
+	render: (args) => (
+		<div style={{ maxWidth: '350px', width: '100%' }}>
+			{headingTypeOptions.map((is) => (
+				<Heading key={is} {...args} is={is} />
+			))}
+		</div>
+	),
 };
-export const Standard = Template.bind(standardProps);
-Standard.args = standardProps;
 
-export const AllTypes = AllTypesTemplate.bind(allTypesProps);
-AllTypes.args = allTypesProps;
-
-export const AllColours = AllColoursTemplate.bind(allTypesProps);
-AllColours.args = allTypesProps;
+export const AllColours: Story = {
+	args: {
+		children: 'I am a heading',
+	},
+	render: (args) => (
+		<div style={{ maxWidth: '350px', width: '100%' }}>
+			{colourOptions.map((colour, index) => (
+				<div key={index} style={{ marginBottom: 8 }}>
+					<Heading {...args} colour={colour} />
+				</div>
+			))}
+		</div>
+	),
+};
