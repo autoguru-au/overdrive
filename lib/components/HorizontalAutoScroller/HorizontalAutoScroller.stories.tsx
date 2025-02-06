@@ -1,7 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import Rand from 'rand-seed';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import React, { type ComponentProps } from 'react';
 
 import { Box } from '../Box';
 import { boxArgTypes, scaleOptions } from '../Box/argTypes';

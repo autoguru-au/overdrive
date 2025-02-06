@@ -1,5 +1,5 @@
 import { ArgTypes } from '@storybook/react';
-import { ComponentProps } from 'react';
+import { type ComponentProps } from 'react';
 
 import { defaultGamut } from '../../themes/base/tokens';
 import { Tokens } from '../../themes/tokens';

@@ -9,10 +9,9 @@ import {
 	StarIcon,
 } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
-import { ArgTypes, Meta, StoryFn } from '@storybook/react';
+import { ArgTypes, Meta, StoryObj } from '@storybook/react';
 import isChromatic from 'chromatic/isChromatic';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import React, { type ComponentProps } from 'react';
 
 import { DateInput } from '../DateInput';
 
@@ -26,6 +25,8 @@ const meta: Meta<typeof NumberInput> = {
 	},
 };
 export default meta;
+
+type Story = StoryObj<typeof NumberInput>;
 
 const defaultValue = isChromatic()
 	? '42'
@@ -88,20 +89,15 @@ const argTypes: ArgTypes = {
 	},
 };
 
-const Template: StoryFn<typeof NumberInput> = ({
-	value: initialValue,
-	onChange: incomingOnChange,
-	...args
-}) => {
-	const [value, setValue] = React.useState<string | undefined>(initialValue);
-
+const RenderTemplate = (args: ComponentProps<typeof NumberInput>) => {
+	const [value, setValue] = React.useState(args.value);
 	return (
 		<NumberInput
 			{...args}
 			value={value}
 			onChange={(e) => {
 				setValue(e.currentTarget.value);
-				incomingOnChange(e);
+				args.onChange?.(e);
 			}}
 		/>
 	);
@@ -167,47 +163,67 @@ const loadingProps: ComponentProps<typeof NumberInput> = {
 	isLoading: true,
 };
 
-export const Standard = Template.bind(standardProps);
-Standard.args = standardProps;
-Standard.argTypes = argTypes;
+export const Standard: Story = {
+	args: standardProps,
+	argTypes,
+	render: RenderTemplate,
+};
 
-export const WithAValue = Template.bind(withAValueProps);
-WithAValue.args = withAValueProps;
-WithAValue.argTypes = argTypes;
+export const WithAValue: Story = {
+	args: withAValueProps,
+	argTypes,
+	render: RenderTemplate,
+};
 
-export const WithHintText = Template.bind(withHintTextProps);
-WithHintText.args = withHintTextProps;
-WithHintText.argTypes = argTypes;
+export const WithHintText: Story = {
+	args: withHintTextProps,
+	argTypes,
+	render: RenderTemplate,
+};
 
-export const NotchDisabledWithValue = Template.bind(noNotchWithValueProps);
-NotchDisabledWithValue.args = noNotchWithValueProps;
-NotchDisabledWithValue.argTypes = argTypes;
+export const NotchDisabledWithValue: Story = {
+	args: noNotchWithValueProps,
+	argTypes,
+	render: RenderTemplate,
+};
 
-export const WithPrefixIcon = Template.bind(withPrefixIconProps);
-WithPrefixIcon.args = withPrefixIconProps;
-WithPrefixIcon.argTypes = argTypes;
+export const WithPrefixIcon: Story = {
+	args: withPrefixIconProps,
+	argTypes,
+	render: RenderTemplate,
+};
 
-export const WithSuffixIcon = Template.bind(withSuffixIconProps);
-WithSuffixIcon.args = withSuffixIconProps;
-WithSuffixIcon.argTypes = argTypes;
+export const WithSuffixIcon: Story = {
+	args: withSuffixIconProps,
+	argTypes,
+	render: RenderTemplate,
+};
 
-export const WithBothIcons = Template.bind(withBothIconsProps);
-WithBothIcons.args = withBothIconsProps;
-WithBothIcons.argTypes = argTypes;
+export const WithBothIcons: Story = {
+	args: withBothIconsProps,
+	argTypes,
+	render: RenderTemplate,
+};
 
-export const Disabled = Template.bind(disabledProps);
-Disabled.args = disabledProps;
-Disabled.argTypes = argTypes;
+export const Disabled: Story = {
+	args: disabledProps,
+	argTypes,
+	render: RenderTemplate,
+};
 
-export const Loading = Template.bind(loadingProps);
-Loading.args = loadingProps;
-Loading.argTypes = argTypes;
+export const Loading: Story = {
+	args: loadingProps,
+	argTypes,
+	render: RenderTemplate,
+};
 
-const withValueSmallProps: typeof withAValueProps = {
+const withValueSmallProps: ComponentProps<typeof NumberInput> = {
 	...withAValueProps,
 	size: 'small',
 };
 
-export const WithValueSmall = Template.bind(withValueSmallProps);
-WithValueSmall.args = withValueSmallProps;
-WithValueSmall.argTypes = argTypes;
+export const WithValueSmall: Story = {
+	args: withValueSmallProps,
+	argTypes,
+	render: RenderTemplate,
+};

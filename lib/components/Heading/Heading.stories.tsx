@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import React, { type ComponentProps } from 'react';
 
 import { Text } from '../Text';
 

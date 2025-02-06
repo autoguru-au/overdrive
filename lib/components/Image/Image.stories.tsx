@@ -1,7 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import isChromatic from 'chromatic/isChromatic';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import React, { type ComponentProps } from 'react';
 
 import { Stack } from '../Stack';
 import { Text } from '../Text';
