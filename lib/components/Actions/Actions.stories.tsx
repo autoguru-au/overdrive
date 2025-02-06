@@ -1,12 +1,11 @@
-import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 
 import { Button } from '../Button';
 
 import { Actions } from '.';
 
-export default {
+const meta = {
 	title: 'Components/Actions',
 	component: Actions,
 	decorators: [
@@ -16,8 +15,12 @@ export default {
 	],
 } satisfies Meta<typeof Actions>;
 
-const template: StoryFn<typeof Actions> = (args) => (
-	<Actions {...args}>
+export default meta;
+
+type Story = StoryObj<typeof Actions>;
+
+const ActionsContent = () => (
+	<>
 		<Button>Login</Button>
 		<Button variant="primary">Sign up</Button>
 		<Button variant="secondary">Action 1</Button>
@@ -28,18 +31,19 @@ const template: StoryFn<typeof Actions> = (args) => (
 		<Button minimal variant="secondary">
 			Action 4
 		</Button>
-	</Actions>
+	</>
 );
 
-const standardProps: Pick<ComponentProps<typeof Actions>, 'noWrap'> = {
-	noWrap: false,
-};
-const noWrapProps: typeof standardProps = {
-	noWrap: true,
+export const Standard: Story = {
+	args: {
+		noWrap: false,
+		children: <ActionsContent />,
+	},
 };
 
-export const standard: StoryFn<typeof Actions> = template.bind(standardProps);
-export const noWrap: StoryFn<typeof Actions> = template.bind(noWrapProps);
-
-standard.args = standardProps;
-noWrap.args = noWrapProps;
+export const NoWrap: Story = {
+	args: {
+		noWrap: true,
+		children: <ActionsContent />,
+	},
+};

@@ -1,50 +1,46 @@
 import { action } from '@storybook/addon-actions';
-import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Switch } from '.';
 
-export default {
+const meta = {
 	title: 'Primatives/Switch',
 	component: Switch,
 } satisfies Meta<typeof Switch>;
 
-const Template: StoryFn<typeof Switch> = ({ ...args }) => <Switch {...args} />;
+export default meta;
 
-const standardProps = {
+type Story = StoryObj<typeof Switch>;
+
+const defaultArgs = {
 	isDisabled: false,
 	isSelected: false,
 	onChange: action('onChange'),
 	className: 'toggleButton-class',
 };
 
-export const Untoggled: StoryFn<typeof Switch> = Template.bind(standardProps);
-Untoggled.args = standardProps;
-
-const untoggledDisabledProps = {
-	...standardProps,
-	isDisabled: true,
+export const Untoggled: Story = {
+	args: defaultArgs,
 };
 
-export const UntoggledDisabled: StoryFn<typeof Switch> = Template.bind(
-	untoggledDisabledProps,
-);
-UntoggledDisabled.args = untoggledDisabledProps;
-
-const toggledProps = {
-	...standardProps,
-	isSelected: true,
+export const UntoggledDisabled: Story = {
+	args: {
+		...defaultArgs,
+		isDisabled: true,
+	},
 };
 
-export const Toggled: StoryFn<typeof Switch> = Template.bind(toggledProps);
-Toggled.args = toggledProps;
-
-const toggledDisabledProps = {
-	...standardProps,
-	isSelected: true,
-	isDisabled: true,
+export const Toggled: Story = {
+	args: {
+		...defaultArgs,
+		isSelected: true,
+	},
 };
 
-export const ToggledDisabled: StoryFn<typeof Switch> =
-	Template.bind(toggledDisabledProps);
-ToggledDisabled.args = toggledDisabledProps;
+export const ToggledDisabled: Story = {
+	args: {
+		...defaultArgs,
+		isSelected: true,
+		isDisabled: true,
+	},
+};
