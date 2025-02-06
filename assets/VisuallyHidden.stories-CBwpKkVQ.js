@@ -1,6 +1,0 @@
-import{r as e}from"./index-Cr_cdoBq.js";import{V as o}from"./VisuallyHidden-CLEruhFL.js";import{T as s}from"./Text-B-fLVrc5.js";import"./_commonjsHelpers-C932wzq6.js";import"./Box-riOnoi3Y.js";import"./dataAttrs-BPvLuXwN.js";import"./useTextStyles-DNm53NZA.js";const E={title:"Layout/Visually Hidden",component:o,args:{as:"div"},argTypes:{as:{options:["div","span","a"],control:{type:"select"}}}},i=l=>e.createElement(e.Fragment,null,e.createElement(s,null,"Bellow text is invisible"),e.createElement(o,{...l},e.createElement(s,null,"I'm not visually present on the screens"))),t=i.bind({});var r,a,n;t.parameters={...t.parameters,docs:{...(r=t.parameters)==null?void 0:r.docs,source:{originalSource:`args => <>
-        <Text>Bellow text is invisible</Text>
-        <VisuallyHidden {...args}>
-            <Text>I&apos;m not visually present on the screens</Text>
-        </VisuallyHidden>
-    </>`,...(n=(a=t.parameters)==null?void 0:a.docs)==null?void 0:n.source}}};const T=["Example"];export{t as Example,T as __namedExportsOrder,E as default};
