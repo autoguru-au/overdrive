@@ -33,7 +33,11 @@ const iconOptions = {
 export default {
 	title: 'Primatives/Icon',
 	component: Icon,
-	decorators: [],
+	args: {
+		icon: undefined,
+		size: 'small',
+		display: 'block',
+	},
 	argTypes: {
 		icon: {
 			options: iconOptions,
@@ -43,23 +47,13 @@ export default {
 		},
 		size: {
 			options: ['small', 'medium', 'large'],
-			control: {
-				type: 'select',
-			},
 		},
 	},
 } satisfies Meta<typeof Icon>;
 
-export const Standard: Story = {
-	args: {
-		icon: CalendarIcon,
-	},
-};
-
 export const Small: Story = {
 	args: {
 		icon: CalendarIcon,
-		size: 'small',
 	},
 };
 
@@ -74,5 +68,12 @@ export const Large: Story = {
 	args: {
 		icon: CalendarIcon,
 		size: 'large',
+	},
+};
+
+export const Responsive: Story = {
+	args: {
+		icon: CalendarIcon,
+		size: ['small', 'medium', 'large'],
 	},
 };
