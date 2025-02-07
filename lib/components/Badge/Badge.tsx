@@ -1,38 +1,22 @@
 import { invariant } from '@autoguru/utilities';
-import React, { type ComponentProps } from 'react';
+import React from 'react';
 
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box';
-import { useTextStyles } from '../Text';
 
 import * as styles from './Badge.css';
+import type { StyledBadgeProps } from './Badge.css';
+
+type Colours = Exclude<StyledBadgeProps['colour'], undefined>;
 
 export interface BadgeProps {
 	label: string;
-	colour?: keyof typeof styles.colours.default;
+	colour?: Colours;
 	className?: string;
 	look?: 'standard' | 'inverted';
-	size?: keyof typeof styles.labelSize;
+	size?: StyledBadgeProps['size'];
 }
-
-const paddingXMap: Record<
-	keyof typeof styles.labelSize,
-	ComponentProps<typeof Box>['padding']
-> = {
-	small: '1',
-	standard: '1',
-	large: '4',
-};
-
-const paddingYMap: Record<
-	keyof typeof styles.labelSize,
-	ComponentProps<typeof Box>['padding']
-> = {
-	small: '1',
-	standard: '1',
-	large: '4',
-};
 
 export const Badge = ({
 	label,
@@ -42,17 +26,12 @@ export const Badge = ({
 	className = '',
 	testId,
 }: WithTestId<BadgeProps>) => {
-	const textStyles = useTextStyles({
-		noWrap: true,
-		fontWeight: 'semiBold',
-		colour: 'unset',
-	});
-	const inverted = look === 'inverted';
-
 	invariant(
 		['string', 'number'].includes(typeof label),
-		"Badge `label` can only contain string's or number's",
+		'Badge `label` can only contain strings or numbers',
 	);
+
+	const inverted = look === 'inverted';
 
 	return (
 		<Box
@@ -60,34 +39,15 @@ export const Badge = ({
 			display="flex"
 			{...dataAttrs({ 'test-id': testId })}
 		>
-			<Box
-				className={[
-					styles.labelSize[size],
-					inverted
-						? styles.colours.inverted[colour].background
-						: styles.colours.default[colour],
-				]}
-				overflow="hidden"
-				display="block"
-				paddingX={paddingXMap[size]}
-				paddingY={paddingYMap[size]}
-				borderRadius="1"
+			<div
+				className={styles.styledBadge({
+					colour,
+					inverted,
+					size,
+				})}
 			>
-				<Box
-					as="span"
-					display="block"
-					overflow="hidden"
-					className={[
-						textStyles,
-						styles.label,
-						inverted
-							? styles.colours.inverted[colour].text
-							: useTextStyles({ colour: 'white' }),
-					]}
-				>
-					{label}
-				</Box>
-			</Box>
+				<div>{label}</div>
+			</div>
 		</Box>
 	);
 };
