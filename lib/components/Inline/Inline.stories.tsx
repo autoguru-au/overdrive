@@ -41,30 +41,29 @@ export default {
 type Story = StoryObj<typeof Inline>;
 
 export const Standard: Story = {
-	args: {
-		children: (
-			<>
-				<Text>Mazda</Text>
-				<Text>CX3</Text>
-				<Text>Petrol</Text>
-				<Text>2020</Text>
-			</>
-		),
-	},
+	args: {},
+	render: () => (
+		<Inline>
+			<Text>Mazda</Text>
+			<Text>CX3</Text>
+			<Text>Petrol</Text>
+			<Text>2020</Text>
+		</Inline>
+	),
 };
 
 export const Dividers: Story = {
 	args: {
 		dividers: true,
-		children: (
-			<>
-				<Text>Mazda</Text>
-				<Text>CX3</Text>
-				<Text>Petrol</Text>
-				<Text>2020</Text>
-			</>
-		),
 	},
+	render: (args) => (
+		<Inline {...args}>
+			<Text>Mazda</Text>
+			<Text>CX3</Text>
+			<Text>Petrol</Text>
+			<Text>2020</Text>
+		</Inline>
+	),
 };
 
 export const CustomDividers: Story = {
@@ -78,15 +77,15 @@ export const CustomDividers: Story = {
 				}}
 			/>
 		),
-		children: (
-			<>
-				<Text>Mazda</Text>
-				<Text>CX3</Text>
-				<Text>Petrol</Text>
-				<Text>2020</Text>
-			</>
-		),
 	},
+	render: (args) => (
+		<Inline {...args}>
+			<Text>Mazda</Text>
+			<Text>CX3</Text>
+			<Text>Petrol</Text>
+			<Text>2020</Text>
+		</Inline>
+	),
 };
 
 export const DifferentSizeItems: Story = {

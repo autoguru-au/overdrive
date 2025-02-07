@@ -1,6 +1,8 @@
-import { StoryObj, ArgTypes, Meta } from '@storybook/react';
-import React, { type ComponentProps } from 'react';
+import { StoryObj, Meta } from '@storybook/react';
+import React from 'react';
 
+import { Badge } from '../Badge';
+import { Heading } from '../Heading';
 import { StarRating } from '../StarRating';
 import { Text } from '../Text';
 
@@ -14,6 +16,20 @@ export default {
 			<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
 		),
 	],
+	argTypes: {
+		value: {
+			options: [
+				'avocado',
+				'blueberries',
+				'cherries',
+				'coconut',
+				'strawberries',
+			],
+			defaultValue: null,
+			control: { type: 'select' },
+			children: { control: { disable: true } },
+		},
+	},
 } satisfies Meta<typeof Radio>;
 
 type Story = StoryObj<typeof Radio>;
@@ -26,22 +42,8 @@ const listData: Array<{ label: string; value: string }> = [
 	{ label: 'Strawberries', value: 'strawberries' },
 ];
 
-const argTypes: ArgTypes = {
-	value: {
-		options: [
-			'avocado',
-			'blueberries',
-			'cherries',
-			'coconut',
-			'strawberries',
-		],
-		defaultValue: null,
-		control: { type: 'select' },
-	},
-};
-
 export const List: Story = {
-	render: ({ value, children, ...args }) => (
+	render: ({ value, ...args }) => (
 		<RadioGroup value={value} name="favourite fruit">
 			{listData.map((item) => (
 				<Radio key={item.value} value={item.value} {...args}>
@@ -54,12 +56,11 @@ export const List: Story = {
 		value: 'avocado',
 		disabled: false,
 	},
-	argTypes,
 };
 
-const renderRadio = (args: ComponentProps<typeof Radio>) => (
-	<RadioGroup value={args.value} name="favourite fruit">
-		<Radio {...args} />
+const Wrapper = ({ children }: { children: React.ReactNode }) => (
+	<RadioGroup value="" name="demo-radio-group">
+		{children}
 	</RadioGroup>
 );
 
@@ -76,38 +77,66 @@ const Item = ({ label, rating }: { label: string; rating: string }) => (
 	</div>
 );
 
+const singleRadio: Story['render'] = (args) => (
+	<RadioGroup value="" name="demo-radio-group">
+		<Radio {...args} />
+	</RadioGroup>
+);
+
 export const DisabledChecked: Story = {
-	render: renderRadio,
+	render: singleRadio,
 	args: {
-		// @ts-expect-error type error for `checked`
-		checked: true,
 		disabled: true,
 		children: 'check me!',
-		value: 'avocado',
+		value: 'not-available',
 	},
-	argTypes,
 };
 
 export const MultipleLines: Story = {
-	render: renderRadio,
+	render: singleRadio,
 	args: {
 		disabled: false,
 		children:
 			'There is a very good reason why this thing is a multi-line, sometimes we need to show people a lot of things. And thus this exists.',
-		value: 'berry',
 	},
-	argTypes,
 };
 
 export const WithChildren: Story = {
-	render: renderRadio,
+	render: singleRadio,
 	args: {
 		disabled: false,
 		children: <Item label="Avocados" rating="4.3" />,
-		value: 'berry',
 	},
-	argTypes: {
-		...argTypes,
-		children: { control: { disable: true } },
+};
+
+export const WithComplexChildren: Story = {
+	render: singleRadio,
+	args: {
+		disabled: false,
+		children: (
+			<div
+				style={{
+					display: 'grid',
+					gridGap: '8px',
+					gridTemplateColumns: '1fr auto auto',
+				}}
+			>
+				<Heading is="h5">Your last order</Heading>
+				<Badge colour="neutral" label="SUBSCRIBE" />
+				<Badge colour="neutral" label="AUTO TOP-UP" />
+				<div
+					style={{
+						gridColumn: '1/4',
+						display: 'grid',
+						gridGap: '8px',
+						gridTemplateColumns: '1fr auto',
+					}}
+				>
+					<Text size="2">Ending in 5678</Text>
+					<Text size="2">Updated 12 Dec 2018</Text>
+				</div>
+			</div>
+		),
+		value: '1',
 	},
 };

@@ -9,14 +9,12 @@ import { BulletText } from '.';
 const meta = {
 	title: 'Components/Bullet Text',
 	component: BulletText,
+	args: {
+		as: 'div',
+		children: 'Hello World',
+		variant: 'primary',
+	},
 	argTypes: {
-		variant: {
-			options: ['primary', 'secondary'],
-			defaultValue: 'primary',
-			control: {
-				type: 'select',
-			},
-		},
 		bullet: {
 			table: {
 				type: { summary: 'Any custom react element' },
@@ -27,37 +25,19 @@ const meta = {
 				type: 'select',
 			},
 		},
-		is: {
-			table: {
-				type: { summary: 'div' },
-				defaultValue: 'div',
-			},
-			description: 'HTML dom tag to be used',
-			control: {
-				disable: true,
-			},
-		},
 	},
 } satisfies Meta<typeof BulletText>;
 
 export default meta;
 type Story = StoryObj<typeof BulletText>;
 
-export const Primary: Story = {
-	args: {
-		is: { summary: 'div' },
-		variant: 'primary',
-		children: 'Hello World',
-		bullet: void 0,
-	},
-};
+export const Primary: Story = {};
 
 export const Secondary: Story = {
 	args: {
 		is: 'div',
 		variant: 'secondary',
-		children: 'Hello World',
-		bullet: void 0,
+		bullet: null,
 	},
 };
 
@@ -65,7 +45,6 @@ export const WithCustomBullet: Story = {
 	args: {
 		is: 'div',
 		variant: 'primary',
-		children: 'Hello World',
 		bullet: (
 			<span
 				style={{
