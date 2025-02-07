@@ -37,7 +37,6 @@ export const Secondary: Story = {
 	args: {
 		is: 'div',
 		variant: 'secondary',
-		bullet: null,
 	},
 };
 

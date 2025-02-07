@@ -19,31 +19,29 @@ export default meta;
 
 type Story = StoryObj<typeof Actions>;
 
-const ActionsContent = () => (
-	<>
-		<Button>Login</Button>
-		<Button variant="primary">Sign up</Button>
-		<Button variant="secondary">Action 1</Button>
-		<Button variant="secondary">Action 2</Button>
-		<Button isLoading variant="secondary">
-			Action 3
-		</Button>
-		<Button minimal variant="secondary">
-			Action 4
-		</Button>
-	</>
-);
-
 export const Standard: Story = {
 	args: {
 		noWrap: false,
-		children: <ActionsContent />,
 	},
+	render: (args) => (
+		<Actions {...args}>
+			<Button>Login</Button>
+			<Button variant="primary">Sign up</Button>
+			<Button variant="secondary">Action 1</Button>
+			<Button variant="secondary">Action 2</Button>
+			<Button isLoading variant="secondary">
+				Action 3
+			</Button>
+			<Button minimal variant="secondary">
+				Action 4
+			</Button>
+		</Actions>
+	),
 };
 
 export const NoWrap: Story = {
 	args: {
 		noWrap: true,
-		children: <ActionsContent />,
 	},
+	render: Standard.render,
 };
