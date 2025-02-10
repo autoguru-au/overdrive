@@ -1,7 +1,6 @@
 name: CI
 
 on:
-    push:
     pull_request:
         types: [opened, reopened, ready_for_review, synchronize]
 
@@ -87,9 +86,7 @@ jobs:
             - run: yarn --immutable
 
             - name: Chromatic
-              if:
-                  github.event_name == 'pull_request' &&
-                  github.event.pull_request.draft == false
+              if: github.event.pull_request.draft == false
               uses: chromaui/action@latest
               with:
                   projectToken: ${{ secrets.CHROMATIC_APP_CODE }}
@@ -99,9 +96,7 @@ jobs:
                   skip: 'changeset-release/**'
 
             - name: Skip Chromatic
-              if:
-                  github.event_name != 'pull_request' ||
-                  github.event.pull_request.draft == true
+              if: github.event.pull_request.draft == true
               uses: chromaui/action@latest
               with:
                   projectToken: ${{ secrets.CHROMATIC_APP_CODE }}

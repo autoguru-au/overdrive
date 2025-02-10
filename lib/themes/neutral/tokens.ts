@@ -185,7 +185,7 @@ export const tokens: Tokens = {
 					mild: colours.green['200'],
 					strong: colours.green['900'],
 				},
-				foreground: colours.green['200'],
+				foreground: white,
 				border: colours.green['900'],
 			},
 			information: {
