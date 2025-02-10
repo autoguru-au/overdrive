@@ -1,7 +1,6 @@
-import { Meta, StoryFn } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import Rand from 'rand-seed';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import React, { type ComponentProps } from 'react';
 
 import { Box } from '../Box';
 import { boxArgTypes, scaleOptions } from '../Box/argTypes';
@@ -32,14 +31,17 @@ export default {
 	},
 } satisfies Meta<typeof HorizontalAutoScroller>;
 
+type Story = StoryObj<typeof HorizontalAutoScroller>;
+
 const randHeight = new Rand('storybook');
 
-const template: StoryFn<typeof HorizontalAutoScroller> = ({
-	childrenNum,
-	...args
-}) => (
+const RenderAutoScroller = (
+	args: Omit<ComponentProps<typeof HorizontalAutoScroller>, 'children'> & {
+		childrenNum: number;
+	},
+) => (
 	<HorizontalAutoScroller {...args}>
-		{Array.from({ length: childrenNum }).map((_, index) => (
+		{Array.from({ length: args.childrenNum }).map((_, index) => (
 			<Box
 				key={index}
 				backgroundColour="gray200"
@@ -62,53 +64,42 @@ const template: StoryFn<typeof HorizontalAutoScroller> = ({
 	</HorizontalAutoScroller>
 );
 
-const standardProps: Omit<
-	ComponentProps<typeof HorizontalAutoScroller>,
-	'children'
-> = {
-	paused: false,
-	activePage: 0,
-	childrenNum: 9,
+export const Standard: Story = {
+	render: () => (
+		<RenderAutoScroller paused={false} activePage={0} childrenNum={9} />
+	),
 };
-export const standard = template.bind(standardProps);
-standard.args = standardProps;
 
-const widthStartPageProps: Omit<
-	ComponentProps<typeof HorizontalAutoScroller>,
-	'children'
-> = {
-	...standardProps,
-	activePage: 3,
+export const WidthStartPage: Story = {
+	render: () => (
+		<RenderAutoScroller paused={false} activePage={3} childrenNum={9} />
+	),
 };
-export const widthStartPage = template.bind(widthStartPageProps);
-widthStartPage.args = widthStartPageProps;
 
-const withCustomDurationProps: Omit<
-	ComponentProps<typeof HorizontalAutoScroller>,
-	'children'
-> = {
-	...standardProps,
-	durationSeconds: 1,
+export const WithCustomDuration: Story = {
+	render: () => (
+		<RenderAutoScroller
+			paused={false}
+			activePage={0}
+			childrenNum={9}
+			durationSeconds={1}
+		/>
+	),
 };
-export const withCustomDuration = template.bind(withCustomDurationProps);
-withCustomDuration.args = withCustomDurationProps;
 
-const withProgressColourProps: Omit<
-	ComponentProps<typeof HorizontalAutoScroller>,
-	'children'
-> = {
-	...standardProps,
-	sliderProgressColour: 'yellow500',
+export const WithProgressColour: Story = {
+	render: () => (
+		<RenderAutoScroller
+			paused={false}
+			activePage={0}
+			childrenNum={9}
+			sliderProgressColour="yellow500"
+		/>
+	),
 };
-export const withProgressColour = template.bind(withProgressColourProps);
-withProgressColour.args = withProgressColourProps;
 
-const withManySlidesProps: Omit<
-	ComponentProps<typeof HorizontalAutoScroller>,
-	'children'
-> = {
-	...standardProps,
-	childrenNum: 50,
+export const WithManySlides: Story = {
+	render: () => (
+		<RenderAutoScroller paused={false} activePage={0} childrenNum={50} />
+	),
 };
-export const withManySlides = template.bind(withManySlidesProps);
-withManySlides.args = withManySlidesProps;

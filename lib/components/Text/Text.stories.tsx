@@ -1,6 +1,5 @@
-import { ArgTypes, Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import type { ArgTypes, Meta, StoryObj } from '@storybook/react';
+import React, { type ComponentProps } from 'react';
 
 import { Text } from '.';
 
@@ -9,7 +8,7 @@ const noWrapOptions: Array<ComponentProps<typeof Text>['noWrap']> = [
 	false,
 	true,
 ];
-const wordBreakOptions: Array<ComponentProps<typeof Text>['wordBreak']> = [
+const wordBreakOptions: Array<ComponentProps<typeof Text>['breakWord']> = [
 	false,
 	true,
 ];
@@ -54,43 +53,15 @@ const colourOptions: Array<ComponentProps<typeof Text>['colour']> = [
 	'shine',
 ];
 
-export default {
+const meta = {
 	title: 'Primatives/Text',
 	//component: Text, Breaks the docs when enabled!
 	decorators: [],
 } satisfies Meta<typeof Text>;
 
-const Template: StoryFn<typeof Text> = (args) => (
-	<div style={{ maxWidth: '350px', width: '100%' }}>
-		<Text {...args} />
-	</div>
-);
+export default meta;
 
-const AllTypesTemplate: StoryFn<typeof Text> = (args) => (
-	<div style={{ maxWidth: '350px', width: '100%' }}>
-		{textTypeOptions.map((is) => (
-			<Text key={is} {...args} is={is} />
-		))}
-	</div>
-);
-
-const AllSizesTemplate: StoryFn<typeof Text> = (args) => (
-	<div style={{ maxWidth: '350px', width: '100%' }}>
-		{sizeScale.map((size) => (
-			<Text key={size} {...args} size={size} />
-		))}
-	</div>
-);
-
-const AllColoursTemplate: StoryFn<typeof Text> = (args) => (
-	<div style={{ maxWidth: '350px', width: '100%' }}>
-		{colourOptions.map((colour, index) => (
-			<div key={index} style={{ marginBottom: 8 }}>
-				<Text key={index} {...args} colour={colour} />
-			</div>
-		))}
-	</div>
-);
+type Story = StoryObj<typeof Text>;
 
 const sharedArgTypes: ArgTypes<Partial<ComponentProps<typeof Text>>> = {
 	noWrap: {
@@ -136,6 +107,7 @@ const sharedArgTypes: ArgTypes<Partial<ComponentProps<typeof Text>>> = {
 		},
 	},
 };
+
 const colourArgTypes: ArgTypes<Partial<ComponentProps<typeof Text>>> = {
 	colour: {
 		options: colourOptions,
@@ -145,6 +117,7 @@ const colourArgTypes: ArgTypes<Partial<ComponentProps<typeof Text>>> = {
 		},
 	},
 };
+
 const argTypes: ArgTypes<Partial<ComponentProps<typeof Text>>> = {
 	...sharedArgTypes,
 	...colourArgTypes,
@@ -153,7 +126,7 @@ const argTypes: ArgTypes<Partial<ComponentProps<typeof Text>>> = {
 		defaultValue: 'span',
 		table: {
 			type: { summary: 'text' },
-			defaultValue: 'span',
+			defaultValue: { summary: 'span' },
 		},
 		description: 'HTML text tag to be used',
 		control: {
@@ -162,37 +135,80 @@ const argTypes: ArgTypes<Partial<ComponentProps<typeof Text>>> = {
 	},
 };
 
-const standardProps: ComponentProps<typeof Text> = {
-	is: 'span',
-	children: 'Help people better care for their cars',
-};
-const allTypesProps: ComponentProps<typeof Text> = {
-	children:
-		'To avoid you coming to a halt in the middle of the road, because of a banging, crash of pistons and valves fighting with each other, let investigate what the timing belt is, what it does, and why it costs so much to replace or repair.',
-};
+const Wrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+	<div style={{ maxWidth: '350px', width: '100%' }}>{children}</div>
+);
 
-export const Standard = Template.bind(standardProps);
-Standard.args = standardProps;
-Standard.argTypes = argTypes;
-
-export const AllTypes = AllTypesTemplate.bind(allTypesProps);
-AllTypes.args = allTypesProps;
-AllTypes.argTypes = { ...sharedArgTypes, ...colourArgTypes };
-
-export const AllSizes = AllSizesTemplate.bind(allTypesProps);
-AllSizes.args = allTypesProps;
-AllSizes.argTypes = argTypes;
-
-export const AllColours = AllColoursTemplate.bind(allTypesProps);
-AllColours.args = allTypesProps;
-AllColours.argTypes = argTypes;
-
-const withLongUnspacedTextProps: ComponentProps<typeof Text> = {
-	breakWord: true,
-	children:
-		'Toavoidyoucomingtoahaltinthemiddleoftheroad,becauseofabanging,crashofpistonsandvalvesfightingwitheachother,letinvestigatewhatthetiming belt is, what it does, and why it costs so much to replace or repair.',
+export const Standard: Story = {
+	args: {
+		is: 'span',
+		children: 'Help people better care for their cars',
+	},
+	argTypes,
+	render: (args) => (
+		<Wrapper>
+			<Text {...args} />
+		</Wrapper>
+	),
 };
 
-export const WithLongUnspacedText = Template.bind(withLongUnspacedTextProps);
-WithLongUnspacedText.args = withLongUnspacedTextProps;
-WithLongUnspacedText.argTypes = argTypes;
+const longText =
+	'To avoid you coming to a halt in the middle of the road, because of a banging, crash of pistons and valves fighting with each other, let investigate what the timing belt is, what it does, and why it costs so much to replace or repair.';
+
+export const AllTypes: Story = {
+	args: {
+		children: longText,
+	},
+	argTypes: { ...sharedArgTypes, ...colourArgTypes },
+	render: (args) => (
+		<Wrapper>
+			{textTypeOptions.map((is) => (
+				<Text key={is} {...args} is={is} />
+			))}
+		</Wrapper>
+	),
+};
+
+export const AllSizes: Story = {
+	args: {
+		children: longText,
+	},
+	argTypes,
+	render: (args) => (
+		<Wrapper>
+			{sizeScale.map((size) => (
+				<Text key={size} {...args} size={size} />
+			))}
+		</Wrapper>
+	),
+};
+
+export const AllColours: Story = {
+	args: {
+		children: longText,
+	},
+	argTypes,
+	render: (args) => (
+		<Wrapper>
+			{colourOptions.map((colour, index) => (
+				<div key={index} style={{ marginBottom: 8 }}>
+					<Text key={index} {...args} colour={colour} />
+				</div>
+			))}
+		</Wrapper>
+	),
+};
+
+export const WithLongUnspacedText: Story = {
+	args: {
+		breakWord: true,
+		children:
+			'Toavoidyoucomingtoahaltinthemiddleoftheroad,becauseofabanging,crashofpistonsandvalvesfightingwitheachother,letinvestigatewhatthetiming belt is, what it does, and why it costs so much to replace or repair.',
+	},
+	argTypes,
+	render: (args) => (
+		<Wrapper>
+			<Text {...args} />
+		</Wrapper>
+	),
+};

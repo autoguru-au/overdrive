@@ -10,11 +10,11 @@ import {
 	PlusIcon,
 	StarIcon,
 } from '@autoguru/icons';
-import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
 
 import { Icon } from '.';
+
+type Story = StoryObj<typeof Icon>;
 
 const iconOptions = {
 	MagnifyIcon,
@@ -33,7 +33,11 @@ const iconOptions = {
 export default {
 	title: 'Primatives/Icon',
 	component: Icon,
-	decorators: [],
+	args: {
+		icon: undefined,
+		size: 'small',
+		display: 'block',
+	},
 	argTypes: {
 		icon: {
 			options: iconOptions,
@@ -43,38 +47,33 @@ export default {
 		},
 		size: {
 			options: ['small', 'medium', 'large'],
-			control: {
-				type: 'select',
-			},
 		},
 	},
 } satisfies Meta<typeof Icon>;
 
-const template: StoryFn<typeof Icon> = (args) => <Icon {...args} />;
-
-const standardProps: ComponentProps<typeof Icon> = {
-	icon: CalendarIcon,
+export const Small: Story = {
+	args: {
+		icon: CalendarIcon,
+	},
 };
-export const Standard = template.bind(standardProps);
-Standard.args = standardProps;
 
-const responsiveProps: ComponentProps<typeof Icon> = {
-	...standardProps,
-	size: ['small', 'medium', 'large'],
+export const Medium: Story = {
+	args: {
+		icon: CalendarIcon,
+		size: 'medium',
+	},
 };
-export const Responsive = template.bind(responsiveProps);
-Responsive.args = responsiveProps;
 
-const mediumProps: ComponentProps<typeof Icon> = {
-	...standardProps,
-	size: 'medium',
+export const Large: Story = {
+	args: {
+		icon: CalendarIcon,
+		size: 'large',
+	},
 };
-export const Medium = template.bind(mediumProps);
-Medium.args = mediumProps;
 
-const largeProps: ComponentProps<typeof Icon> = {
-	...standardProps,
-	size: 'large',
+export const Responsive: Story = {
+	args: {
+		icon: CalendarIcon,
+		size: ['small', 'medium', 'large'],
+	},
 };
-export const Large = template.bind(largeProps);
-Large.args = largeProps;

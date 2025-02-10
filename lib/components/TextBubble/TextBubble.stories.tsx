@@ -1,35 +1,30 @@
-import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
 
 import { TextBubble } from '.';
+
+type Story = StoryObj<typeof TextBubble>;
 
 export default {
 	title: 'Components/Text Bubble',
 	component: TextBubble,
 } satisfies Meta<typeof TextBubble>;
 
-const template: StoryFn<typeof TextBubble> = (args) => <TextBubble {...args} />;
-
-const standardProps: Omit<ComponentProps<typeof TextBubble>, 'children'> = {
-	label: 'OK',
+export const Standard: Story = {
+	args: {
+		label: 'OK',
+	},
 };
-export const Standard = template.bind(standardProps);
-Standard.args = standardProps;
 
-const longLabelProps: Omit<ComponentProps<typeof TextBubble>, 'children'> = {
-	label: 'Error',
-	textColour: 'danger',
-	backgroundColour: 'gray900',
+export const LongLabel: Story = {
+	args: {
+		label: 'Error',
+		textColour: 'danger',
+		backgroundColour: 'gray900',
+	},
 };
-export const LongLabel = template.bind(longLabelProps);
-LongLabel.args = longLabelProps;
 
-const veryLongLabelProps: Omit<
-	ComponentProps<typeof TextBubble>,
-	'children'
-> = {
-	label: 'Too Long',
+export const VeryLongLabel: Story = {
+	args: {
+		label: 'Too Long',
+	},
 };
-export const VeryLongLabel = template.bind(veryLongLabelProps);
-VeryLongLabel.args = veryLongLabelProps;

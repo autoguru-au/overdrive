@@ -132,14 +132,20 @@ const displayProperties = defineProperties({
 	conditions: { ...responsiveConditions },
 	defaultCondition: 'mobile',
 	properties: {
-		display: ['none', 'block', 'flex', 'grid'],
-		overflow: ['hidden', 'scroll', 'visible', 'auto'],
+		display: [
+			'none',
+			'block',
+			'flex',
+			'grid',
+			'inline-block',
+			'inline-flex',
+		],
 		flexDirection: ['row', 'column'],
 		flexGrow: [0, 1],
 		flexShrink: [0, 1],
 		flexWrap: ['nowrap', 'wrap', 'wrap-reverse'],
 		gridTemplateColumns: {
-			'1': 'repeat(1, 1fr)',
+			'1': '1fr',
 			'2': 'repeat(2, 1fr)',
 			'3': 'repeat(3, 1fr)',
 			'4': 'repeat(4, 1fr)',
@@ -165,6 +171,7 @@ const displayProperties = defineProperties({
 			'100%': '100%',
 			auto: 'auto',
 		},
+		overflow: ['hidden', 'scroll', 'visible', 'auto'],
 	},
 	shorthands: {
 		gridColumns: ['gridTemplateColumns'],

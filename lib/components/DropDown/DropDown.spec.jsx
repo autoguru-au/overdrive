@@ -1,10 +1,9 @@
+import { DownloadIcon, TrashCanOutlineIcon } from '@autoguru/icons';
 import { render } from '@testing-library/react';
 import * as React from 'react';
 
 import { DropDown } from './DropDown';
 import { DropDownOption } from './DropDownOption';
-import { DownloadIcon, TrashCanOutlineIcon } from '@autoguru/icons';
-import { ComponentProps } from 'react';
 
 const option1 = <DropDownOption label="Download" icon={DownloadIcon} />;
 const option2 = <DropDownOption label="Delete" icon={TrashCanOutlineIcon} />;

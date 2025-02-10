@@ -1,6 +1,5 @@
-import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 
 import { scaleOptions } from '../Box/argTypes';
 import { Button } from '../Button';
@@ -39,76 +38,115 @@ export default {
 	},
 } satisfies Meta<typeof Inline>;
 
-const Template: StoryFn<typeof Inline> = (args) => (
-	<Inline {...args}>
-		<Text>Mazda</Text>
-		<Text>CX3</Text>
-		<Text>Petrol</Text>
-		<Text>2020</Text>
-	</Inline>
-);
+type Story = StoryObj<typeof Inline>;
 
-const DiffSizeTemplate: StoryFn<typeof Inline> = (args) => (
-	<Stack>
-		<Inline {...args}>
+export const Standard: Story = {
+	args: {},
+	render: () => (
+		<Inline>
 			<Text>Mazda</Text>
 			<Text>CX3</Text>
 			<Text>Petrol</Text>
 			<Text>2020</Text>
-			<Button>Buy</Button>
 		</Inline>
-		<Inline {...args}>
-			<Text>Mazda</Text>
-			<Text>CX3</Text>
-			<Text>Petrol</Text>
-			<Text>2020</Text>
-			<Button>Buy</Button>
-		</Inline>
-		<Inline {...args}>
-			<Text>Mazda</Text>
-			<Text>CX3</Text>
-			<Text>Petrol</Text>
-			<Text>2020</Text>
-			<Button>Buy</Button>
-		</Inline>
-	</Stack>
-);
-
-const standardProps: ComponentProps<typeof Inline> = {};
-export const Standard = Template.bind(standardProps);
-Standard.args = standardProps;
-
-const dividersProps: ComponentProps<typeof Inline> = {
-	dividers: true,
-};
-export const Dividers = Template.bind(dividersProps);
-Dividers.args = dividersProps;
-
-const customDividersProps: ComponentProps<typeof Inline> = {
-	dividers: (
-		<div
-			style={{
-				backgroundColor: 'red',
-				width: '6px',
-				height: '6px',
-			}}
-		/>
 	),
 };
-export const CustomDividers = Template.bind(customDividersProps);
-CustomDividers.args = customDividersProps;
 
-const differentSizeItemsProps: ComponentProps<typeof Inline> = {
-	dividers: true,
+export const Dividers: Story = {
+	args: {
+		dividers: true,
+	},
+	render: (args) => (
+		<Inline {...args}>
+			<Text>Mazda</Text>
+			<Text>CX3</Text>
+			<Text>Petrol</Text>
+			<Text>2020</Text>
+		</Inline>
+	),
 };
-export const DifferentSizeItems = DiffSizeTemplate.bind(
-	differentSizeItemsProps,
-);
-DifferentSizeItems.args = differentSizeItemsProps;
 
-const withFullWidthProps: ComponentProps<typeof Inline> = {
-	width: 'full',
-	alignX: 'spaceBetween',
+export const CustomDividers: Story = {
+	args: {
+		dividers: (
+			<div
+				style={{
+					backgroundColor: 'red',
+					width: '6px',
+					height: '6px',
+				}}
+			/>
+		),
+	},
+	render: (args) => (
+		<Inline {...args}>
+			<Text>Mazda</Text>
+			<Text>CX3</Text>
+			<Text>Petrol</Text>
+			<Text>2020</Text>
+		</Inline>
+	),
 };
-export const WithFullWidth = DiffSizeTemplate.bind(withFullWidthProps);
-WithFullWidth.args = withFullWidthProps;
+
+export const DifferentSizeItems: Story = {
+	args: {
+		dividers: true,
+	},
+	render: (args) => (
+		<Stack>
+			<Inline {...args}>
+				<Text>Mazda</Text>
+				<Text>CX3</Text>
+				<Text>Petrol</Text>
+				<Text>2020</Text>
+				<Button>Buy</Button>
+			</Inline>
+			<Inline {...args}>
+				<Text>Mazda</Text>
+				<Text>CX3</Text>
+				<Text>Petrol</Text>
+				<Text>2020</Text>
+				<Button>Buy</Button>
+			</Inline>
+			<Inline {...args}>
+				<Text>Mazda</Text>
+				<Text>CX3</Text>
+				<Text>Petrol</Text>
+				<Text>2020</Text>
+				<Button>Buy</Button>
+			</Inline>
+		</Stack>
+	),
+};
+
+export const WithFullWidth: Story = {
+	args: {
+		width: 'full',
+		alignX: 'spaceBetween',
+	},
+	render: (args) => (
+		<Stack>
+			<Inline {...args}>
+				<Text>Mazda</Text>
+				<Text>CX3</Text>
+				<Text>Petrol</Text>
+				<Text>2020</Text>
+				<Button>Buy</Button>
+			</Inline>
+			<Inline {...args}>
+				<Text>Mazda</Text>
+				<Text>CX3</Text>
+				<Text>Petrol</Text>
+				<Text>2020</Text>
+				<Button>Buy</Button>
+			</Inline>
+			<Inline {...args}>
+				<Text>Mazda</Text>
+				<Text>CX3</Text>
+				<Text>Petrol</Text>
+				<Text>2020</Text>
+				<Button>Buy</Button>
+			</Inline>
+		</Stack>
+	),
+};

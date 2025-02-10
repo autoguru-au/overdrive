@@ -9,7 +9,7 @@ import { Divider } from './Divider';
 import * as styles from './Stack.css';
 
 export interface Props
-	extends Pick<BoxStyleProps, 'is' | 'width' | 'alignItems'> {
+	extends Pick<BoxStyleProps, 'as' | 'is' | 'width' | 'alignItems'> {
 	space?: keyof typeof styles.child.spaces;
 	className?: string;
 	dividers?: boolean;
@@ -26,6 +26,7 @@ export const Stack: FunctionComponent<Props> = ({
 	space = '2',
 	children,
 	is = 'div',
+	as = is,
 	alignItems,
 	width,
 	dividers = false,
@@ -37,15 +38,15 @@ export const Stack: FunctionComponent<Props> = ({
 		return <>{items}</>;
 	}
 
-	let listItem: typeof is = 'div';
-	if (typeof is === 'string')
-		listItem = supportedListTypes.includes(is) ? 'li' : 'div';
+	let listItem: typeof as = 'div';
+	if (typeof as === 'string')
+		listItem = supportedListTypes.includes(as) ? 'li' : 'div';
 
 	return (
-		<Box is={is} className={className} width={width}>
+		<Box as={as} className={className} width={width}>
 			{Children.map(items, (child, idx) => (
 				<Box
-					is={listItem}
+					as={listItem}
 					display={alignItems ? 'flex' : void 0}
 					flexDirection="column"
 					alignItems={alignItems}

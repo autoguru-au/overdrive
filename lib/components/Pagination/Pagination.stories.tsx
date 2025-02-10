@@ -1,6 +1,6 @@
 import { action } from '@storybook/addon-actions';
-import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
+import { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 
 import { Box } from '../Box';
 
@@ -11,7 +11,9 @@ export default {
 	component: Pagination,
 } satisfies Meta<typeof Pagination>;
 
-const Template: StoryFn<typeof Pagination> = (args) => (
+type Story = StoryObj<typeof Pagination>;
+
+const renderPagination = (args: any) => (
 	<Box
 		style={{
 			height: '100vh',
@@ -26,44 +28,50 @@ const Template: StoryFn<typeof Pagination> = (args) => (
 	</Box>
 );
 
-const standardProps = {
-	activePage: 5,
-	total: 100,
-	pageSize: 10,
-	numPagesDisplayed: 5,
-	loading: false,
-	onChange: action('onChange'),
+export const Standard: Story = {
+	args: {
+		activePage: 5,
+		total: 100,
+		pageSize: 10,
+		numPagesDisplayed: 5,
+		loading: false,
+		onChange: action('onChange'),
+	},
+	render: renderPagination,
 };
-export const Standard: StoryFn<typeof Pagination> =
-	Template.bind(standardProps);
-Standard.args = standardProps;
 
-const loadingProps = {
-	...standardProps,
-	loading: true,
+export const Loading: Story = {
+	args: {
+		activePage: 5,
+		total: 100,
+		pageSize: 10,
+		numPagesDisplayed: 5,
+		loading: true,
+		onChange: action('onChange'),
+	},
+	render: renderPagination,
 };
-export const Loading: StoryFn<typeof Pagination> = Template.bind(loadingProps);
-Loading.args = loadingProps;
 
-const allPagesFitProps = {
-	...standardProps,
-	activePage: 1,
-	total: 45,
-	pageSize: 10,
-	numPagesDisplayed: 5,
+export const AllPagesFit: Story = {
+	args: {
+		activePage: 1,
+		total: 45,
+		pageSize: 10,
+		numPagesDisplayed: 5,
+		loading: false,
+		onChange: action('onChange'),
+	},
+	render: renderPagination,
 };
-export const AllPagesFit: StoryFn<typeof Pagination> =
-	Template.bind(allPagesFitProps);
-AllPagesFit.args = allPagesFitProps;
 
-const jumpForwardStartProps = {
-	...standardProps,
-	activePage: 1,
-	total: 638,
-	pageSize: 10,
-	numPagesDisplayed: 5,
+export const JumpForwardStart: Story = {
+	args: {
+		activePage: 1,
+		total: 638,
+		pageSize: 10,
+		numPagesDisplayed: 5,
+		loading: false,
+		onChange: action('onChange'),
+	},
+	render: renderPagination,
 };
-export const JumpForwardStart: StoryFn<typeof Pagination> = Template.bind(
-	jumpForwardStartProps,
-);
-JumpForwardStart.args = jumpForwardStartProps;

@@ -52,7 +52,7 @@ export const OrderedList: FunctionComponent<Props> & {
 
 	return (
 		<Box
-			is="ol"
+			as="ol"
 			paddingLeft="6"
 			marginTop={myCycle > 0 ? '2' : 'none'}
 			className={clsx(
@@ -72,7 +72,7 @@ export const OrderedList: FunctionComponent<Props> & {
 };
 
 const Item: FunctionComponent<ItemProps> = ({ className = '', children }) => (
-	<Box is="li" className={className}>
+	<Box as="li" className={className}>
 		{children}
 	</Box>
 );

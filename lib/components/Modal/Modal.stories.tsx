@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions';
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
 import { Box } from '../Box';
@@ -7,7 +7,7 @@ import { Text } from '../Text';
 
 import { Modal } from '.';
 
-export default {
+const meta = {
 	title: 'Components/Modal',
 	component: Modal,
 	parameters: {
@@ -15,13 +15,15 @@ export default {
 	},
 } satisfies Meta<typeof Modal>;
 
-const Template: StoryFn<typeof Modal> = (args) => (
+export default meta;
+
+type Story = StoryObj<typeof Modal>;
+
+const ModalContent = () => (
 	<>
-		<Modal {...args}>
-			<Box backgroundColour="gray200" padding="5" borderRadius="2">
-				<p>Hello, I am a modal body!</p>
-			</Box>
-		</Modal>
+		<Box backgroundColour="gray200" padding="5" borderRadius="2">
+			<p>Hello, I am a modal body!</p>
+		</Box>
 		<Text>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
 			convallis neque a laoreet maximus. Vestibulum hendrerit quam at mi
@@ -92,10 +94,10 @@ const Template: StoryFn<typeof Modal> = (args) => (
 	</>
 );
 
-const standardProps = {
-	isOpen: true,
-	onRequestClose: action('onRequestClose'),
+export const Standard: Story = {
+	args: {
+		isOpen: true,
+		onRequestClose: action('onRequestClose'),
+		children: <ModalContent />,
+	},
 };
-
-export const Standard = Template.bind(standardProps);
-Standard.args = standardProps;
