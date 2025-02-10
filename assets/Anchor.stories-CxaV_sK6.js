@@ -1,0 +1,16 @@
+import{c as x,u as b}from"./Box-riOnoi3Y.js";import{r as e}from"./index-Cr_cdoBq.js";import{u as v}from"./useTextStyles-DNm53NZA.js";import{I as V}from"./Inline-C5NfQFNa.js";import{I as A}from"./Icon-u2F7oOeh.js";import{T as B}from"./Text-B-fLVrc5.js";import{I as N}from"./PhoneIcon-Czp_TMeK.js";import{B as T}from"./Button-DD4eqKRl.js";import{I as W}from"./MagnifyIcon-C8SSV07c.js";import{I as k}from"./CarIcon-BPYgb7mD.js";import{I as q,a as C,b as P,c as z}from"./CurrencyUsdIcon-MnlNA9b3.js";import{I as M}from"./AlertCircleIcon-BOrB_4ur.js";import{I as O}from"./PlusIcon-BwhzlTq3.js";import{I as w}from"./StarIcon-DwMJajzk.js";import{I as J}from"./CheckIcon-qb3DRtZd.js";import"./_commonjsHelpers-C932wzq6.js";import"./index-DD0GW_rr.js";import"./useNegativeMarginTop-B5m0RFWn.js";import"./dataAttrs-BPvLuXwN.js";import"./ProgressSpinner-DIWgntFa.js";var R="um22v0";const n=({className:s="",is:r="a",disabled:S=!1,children:$,icon:c,..._})=>{const i=v({colour:"link"}),l={className:x(R,i,b({is:typeof r=="string"?r:void 0,display:"inline"}),s),disabled:S,..._},m=e.createElement(V,{space:"2"},c&&e.createElement(A,{icon:c,size:"small",className:i}),e.createElement(B,{fontWeight:"bold",size:"4",colour:"link"},$));return e.isValidElement(r)?e.cloneElement(r,l,m):e.createElement(r,l,m)};try{n.displayName="Anchor",n.__docgenInfo={description:"",displayName:"Anchor",props:{className:{defaultValue:{value:""},description:"",name:"className",required:!1,type:{name:"string"}},is:{defaultValue:null,description:"",name:"is",required:!1,type:{name:"ElementType<any, keyof IntrinsicElements> | ReactElement<unknown, string | JSXElementConstructor<any>>"}},disabled:{defaultValue:{value:"false"},description:"",name:"disabled",required:!1,type:{name:"boolean"}},icon:{defaultValue:null,description:"",name:"icon",required:!1,type:{name:"IconType"}}}}}catch{}const U={MagnifyIcon:W,CarIcon:k,CarMultipleIcon:q,CalendarIcon:C,AccountEditIcon:P,AlertCircleIcon:M,CurrencyUsdIcon:z,PlusIcon:O,StarIcon:w,CheckIcon:J},le={title:"Primatives/Anchor",component:n,argTypes:{icon:{defaultValue:void 0,description:"Input field Icon",options:U,control:{type:"select"}},is:{control:{disable:!0}},children:{defaultValue:"07 5612 5347",control:{type:"string"}}}},o={args:{href:"tel:07 5612 5347",children:"07 5612 5347"}},a={args:{...o.args,icon:N}},t={args:{...a.args,is:T}};var p,d,u;o.parameters={...o.parameters,docs:{...(p=o.parameters)==null?void 0:p.docs,source:{originalSource:`{
+  args: {
+    href: 'tel:07 5612 5347',
+    children: '07 5612 5347'
+  }
+}`,...(u=(d=o.parameters)==null?void 0:d.docs)==null?void 0:u.source}}};var I,f,y;a.parameters={...a.parameters,docs:{...(I=a.parameters)==null?void 0:I.docs,source:{originalSource:`{
+  args: {
+    ...Standard.args,
+    icon: PhoneIcon
+  }
+}`,...(y=(f=a.parameters)==null?void 0:f.docs)==null?void 0:y.source}}};var g,h,E;t.parameters={...t.parameters,docs:{...(g=t.parameters)==null?void 0:g.docs,source:{originalSource:`{
+  args: {
+    ...WithIcon.args,
+    is: Button
+  }
+}`,...(E=(h=t.parameters)==null?void 0:h.docs)==null?void 0:E.source}}};const me=["Standard","WithIcon","WithButton"];export{o as Standard,t as WithButton,a as WithIcon,me as __namedExportsOrder,le as default};
