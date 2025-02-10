@@ -38,6 +38,7 @@ export default {
 			</div>
 		),
 	],
+	tags: ['updated'],
 } satisfies Meta<typeof Badge>;
 
 export const Standard: Story = {
