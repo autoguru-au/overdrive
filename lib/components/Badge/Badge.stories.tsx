@@ -37,6 +37,7 @@ export default {
 			</div>
 		),
 	],
+	tags: ['updated'],
 } satisfies Meta<typeof Badge>;
 
 const template: StoryFn<typeof Badge> = (args) => <Badge {...args} />;

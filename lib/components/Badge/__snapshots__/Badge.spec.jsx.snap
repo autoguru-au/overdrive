@@ -2,14 +2,8 @@
 
 exports[`<Badge /> should match snapshot with label 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy"
+  class="Badge_styledBadge__dqp1cw4 Badge__dqp1cw0 sprinkles_paddingTop_1__onxwju28 sprinkles_paddingBottom_1__onxwju1e sprinkles_paddingLeft_1__onxwju1o sprinkles_paddingRight_1__onxwju1y sprinkles_borderRadius_1_initial__onxwju4n sprinkles_lineHeight_match__onxwju3i sprinkles_overflow_hidden_mobile__onxwjujj sprinkles_textOverflow_ellipsis__onxwju3q sprinkles_textTransform_uppercase__onxwju3s sprinkles_whiteSpace_nowrap__onxwju3v Badge_styledBadge_colour_neutral__dqp1cw5 Badge_styledBadge_inverted_false__dqp1cwb Badge_styledBadge_size_standard__dqp1cwd Badge__dqp1cw2 sprinkles_fontSize_xs__onxwju2s sprinkles_fontWeight_semibold__onxwju3k intentional_styledIntentionalElement__1gpvl8ri intentional_styledIntentionalElement_intention_neutral__1gpvl8rj intentional_styledIntentionalElement_inverted_false__1gpvl8rs intentional_variantIntentionalColors_neutral__1gpvl8r6"
 >
-  <div
-    class="Badge_styledBadge__dqp1cwr Badge_styledBadge_colour_neutral__dqp1cws Badge_styledBadge_inverted_false__dqp1cwy Badge_styledBadge_size_standard__dqp1cw10 Badge_styledIntentalContainer__dqp1cwg Badge_styledIntentalContainer_intention_neutral__dqp1cwh Badge_styledIntentalContainer_inverted_false__dqp1cwq Badge_intentionalColourSet_neutral__dqp1cw0"
-  >
-    <div>
-      Hello World!
-    </div>
-  </div>
+  Hello World!
 </div>
 `;
