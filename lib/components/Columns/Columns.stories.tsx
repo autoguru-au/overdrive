@@ -1,6 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import React, { type ComponentProps } from 'react';
 
 import { Box } from '../Box';
 import { boxArgTypes, scaleOptions } from '../Box/argTypes';

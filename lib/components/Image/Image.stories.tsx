@@ -1,7 +1,6 @@
-import { Meta, StoryFn } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import isChromatic from 'chromatic/isChromatic';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import React, { type ComponentProps } from 'react';
 
 import { Stack } from '../Stack';
 import { Text } from '../Text';
@@ -33,7 +32,11 @@ const sizeOptions: Array<ComponentProps<typeof Image>['imageWidth']> =
 			];
 const qualityOptions: Array<ComponentProps<typeof Image>['quality']> =
 	isChromatic() ? ['70'] : [1, 20, 40, 60, 80, 100];
-export default {
+
+const calcWidth = (width: (typeof sizeOptions)[number] | 'full') =>
+	width === 'full' ? '100%' : widthMap[width];
+
+const meta = {
 	title: 'Primatives/Image',
 	component: Image,
 	args: {
@@ -76,131 +79,146 @@ export default {
 	},
 } satisfies Meta<typeof Image>;
 
-const calcWidth = (width: (typeof sizeOptions)[number] | 'full') =>
-	width === 'full' ? '100%' : widthMap[width];
+export default meta;
 
-const SimpleTemplate: StoryFn<typeof Image> = (args) => (
-	<div style={{ width: '100%', overflow: 'auto' }}>
-		<Image {...args} width={calcWidth(args.width)} />
-	</div>
-);
+type Story = StoryObj<typeof Image>;
 
-const standardProps: ComponentProps<typeof Image> = {
-	src: 'https://cdn.autoguru.com.au/images/autoguru-og.jpg',
+export const Standard: Story = {
+	args: {
+		src: 'https://cdn.autoguru.com.au/images/autoguru-og.jpg',
+	},
+	render: (args) => (
+		<div style={{ width: '100%', overflow: 'auto' }}>
+			<Image {...args} width={calcWidth(args.width)} />
+		</div>
+	),
 };
-export const Standard = SimpleTemplate.bind(standardProps);
-Standard.args = standardProps;
 
 const srcUrlMapper = ({ src, width, quality }) =>
 	`https://images.autoguru.com.au/?url=${src}&w=${width}&q=${quality}`;
 
-const WidthProviderTemplate: StoryFn<typeof Image> = (args) => (
-	<ImageServerProvider srcUrlMapper={srcUrlMapper}>
-		<div style={{ width: '100%', overflow: 'auto' }}>
-			<Image {...args} width={calcWidth(args.width)} />
-		</div>
-	</ImageServerProvider>
-);
-const withImageServerUnoptimisedProps: ComponentProps<typeof Image> = {
-	src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
-	unoptimised: true,
+export const WithImageServerUnoptimised: Story = {
+	args: {
+		src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
+		unoptimised: true,
+	},
+	render: (args) => (
+		<ImageServerProvider srcUrlMapper={srcUrlMapper}>
+			<div style={{ width: '100%', overflow: 'auto' }}>
+				<Image {...args} width={calcWidth(args.width)} />
+			</div>
+		</ImageServerProvider>
+	),
 };
-export const WithImageServerUnoptimised = WidthProviderTemplate.bind(
-	withImageServerUnoptimisedProps,
-);
-WithImageServerUnoptimised.args = withImageServerUnoptimisedProps;
 
-const withImageServerProps: ComponentProps<typeof Image> = {
-	src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
-	quality: 60,
-	imageWidth: 8,
-	sizes: ['100vh', , '60vh', '40vh'],
+export const WithImageServer: Story = {
+	args: {
+		src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
+		quality: 60,
+		imageWidth: 8,
+		sizes: ['100vh', , '60vh', '40vh'],
+	},
+	render: (args) => (
+		<ImageServerProvider srcUrlMapper={srcUrlMapper}>
+			<div style={{ width: '100%', overflow: 'auto' }}>
+				<Image {...args} width={calcWidth(args.width)} />
+			</div>
+		</ImageServerProvider>
+	),
 };
-export const WithImageServer = WidthProviderTemplate.bind(withImageServerProps);
-WithImageServer.args = withImageServerProps;
 
-const withResponsiveImageWidthProps: ComponentProps<typeof Image> = {
-	src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
-	width: 'full',
-	sizes: ['100vw', '70vw', '50vw', '40vw'],
-	imageWidth: [5, 8, , 12],
+export const WithResponsiveImageWidth: Story = {
+	args: {
+		src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
+		width: 'full',
+		sizes: ['100vw', '70vw', '50vw', '40vw'],
+		imageWidth: [5, 8, , 12],
+	},
+	render: (args) => (
+		<ImageServerProvider srcUrlMapper={srcUrlMapper}>
+			<div style={{ width: '100%', overflow: 'auto' }}>
+				<Image {...args} width={calcWidth(args.width)} />
+			</div>
+		</ImageServerProvider>
+	),
 };
-export const WithResponsiveImageWidth = WidthProviderTemplate.bind(
-	withResponsiveImageWidthProps,
-);
-WithResponsiveImageWidth.args = withResponsiveImageWidthProps;
 
-const withResponsiveSizesProps: ComponentProps<typeof Image> = {
-	src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
-	width: 'full',
-	sizes: ['100vw', '70vw', '50vw', '40vw'],
+export const WithResponsiveSizes: Story = {
+	args: {
+		src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
+		width: 'full',
+		sizes: ['100vw', '70vw', '50vw', '40vw'],
+	},
+	render: (args) => (
+		<ImageServerProvider srcUrlMapper={srcUrlMapper}>
+			<div style={{ width: '100%', overflow: 'auto' }}>
+				<Image {...args} width={calcWidth(args.width)} />
+			</div>
+		</ImageServerProvider>
+	),
 };
-export const WithResponsiveSizes = WidthProviderTemplate.bind(
-	withResponsiveSizesProps,
-);
-WithResponsiveSizes.args = withResponsiveSizesProps;
 
-const AllQualityTemplate: StoryFn<typeof Image> = (args) => (
-	<ImageServerProvider srcUrlMapper={srcUrlMapper}>
-		<div style={{ width: '100%', overflow: 'auto' }}>
-			<Stack space="5">
-				{qualityOptions.map((quality) => (
-					<Stack key={quality} space="1">
-						<Text>
-							Quality: <Text strong>{quality}</Text>
-						</Text>
-						<Image
-							key={quality}
-							{...args}
-							width={calcWidth(args.width)}
-							imageWidth={args.width}
-							quality={quality}
-						/>
-					</Stack>
-				))}
-			</Stack>
-		</div>
-	</ImageServerProvider>
-);
-
-export const WithImageServerQualities =
-	AllQualityTemplate.bind(withImageServerProps);
-WithImageServerQualities.args = withImageServerProps;
-
-const AllSizeTemplate: StoryFn<typeof Image> = (args) => (
-	<ImageServerProvider srcUrlMapper={srcUrlMapper}>
-		<div style={{ width: '100%', overflow: 'auto' }}>
-			<Stack width="full" space="5">
-				{sizeOptions.map((width) => (
-					<Stack key={width} space="1">
-						<Text>
-							Quality: <Text strong>{args.quality}</Text>
-						</Text>
-						<Text>
-							Width:{' '}
-							<Text strong>
-								{width}: {calcWidth(width)}px
+export const WithImageServerQualities: Story = {
+	args: {
+		src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
+		quality: 60,
+		imageWidth: 8,
+		sizes: ['100vh', , '60vh', '40vh'],
+	},
+	render: (args) => (
+		<ImageServerProvider srcUrlMapper={srcUrlMapper}>
+			<div style={{ width: '100%', overflow: 'auto' }}>
+				<Stack space="5">
+					{qualityOptions.map((quality) => (
+						<Stack key={quality} space="1">
+							<Text>
+								Quality: <Text strong>{quality}</Text>
 							</Text>
-						</Text>
-						<Image
-							{...args}
-							width={calcWidth(width)}
-							imageWidth={width}
-						/>
-					</Stack>
-				))}
-			</Stack>
-		</div>
-	</ImageServerProvider>
-);
-
-const withImageServerResizingProps: ComponentProps<typeof Image> = {
-	src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
-	quality: 20,
-	sizes: ['100vh', , '60vh', '40vh'],
+							<Image
+								key={quality}
+								{...args}
+								width={calcWidth(args.width)}
+								imageWidth={args.width}
+								quality={quality}
+							/>
+						</Stack>
+					))}
+				</Stack>
+			</div>
+		</ImageServerProvider>
+	),
 };
 
-export const WithImageServerResizing = AllSizeTemplate.bind(
-	withImageServerResizingProps,
-);
-WithImageServerResizing.args = withImageServerResizingProps;
+export const WithImageServerResizing: Story = {
+	args: {
+		src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
+		quality: 20,
+		sizes: ['100vh', , '60vh', '40vh'],
+	},
+	render: (args) => (
+		<ImageServerProvider srcUrlMapper={srcUrlMapper}>
+			<div style={{ width: '100%', overflow: 'auto' }}>
+				<Stack width="full" space="5">
+					{sizeOptions.map((width) => (
+						<Stack key={width} space="1">
+							<Text>
+								Quality: <Text strong>{args.quality}</Text>
+							</Text>
+							<Text>
+								Width:{' '}
+								<Text strong>
+									{width}: {calcWidth(width)}px
+								</Text>
+							</Text>
+							<Image
+								{...args}
+								width={calcWidth(width)}
+								imageWidth={width}
+							/>
+						</Stack>
+					))}
+				</Stack>
+			</div>
+		</ImageServerProvider>
+	),
+};

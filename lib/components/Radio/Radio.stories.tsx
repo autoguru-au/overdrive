@@ -1,6 +1,5 @@
-import { StoryObj, ArgTypes, Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import { StoryObj, Meta } from '@storybook/react';
+import React from 'react';
 
 import { Badge } from '../Badge';
 import { Heading } from '../Heading';
@@ -17,95 +16,59 @@ export default {
 			<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
 		),
 	],
-} satisfies Meta<typeof Radio>;
-
-const listData: Array<{ label: string; value: string }> = [
-	{
-		label: 'Avocado',
-		value: 'avocado',
-	},
-	{
-		label: 'Blueberries',
-		value: 'blueberries',
-	},
-	{
-		label: 'Cherries',
-		value: 'cherries',
-	},
-	{
-		label: 'Coconut',
-		value: 'coconut',
-	},
-	{
-		label: 'Strawberries',
-		value: 'strawberries',
-	},
-];
-
-const argTypes: ArgTypes = {
-	value: {
-		options: [
-			'avocado',
-			'blueberries',
-			'cherries',
-			'coconut',
-			'strawberries',
-		],
-		defaultValue: null,
-		control: {
-			type: 'select',
+	argTypes: {
+		value: {
+			options: [
+				'avocado',
+				'blueberries',
+				'cherries',
+				'coconut',
+				'strawberries',
+			],
+			defaultValue: null,
+			control: { type: 'select' },
+			children: { control: { disable: true } },
 		},
 	},
-};
+} satisfies Meta<typeof Radio>;
 
-export const List: StoryObj<typeof Radio> = {
-	render: ({ value, children, ...args }) => (
+type Story = StoryObj<typeof Radio>;
+
+const listData: Array<{ label: string; value: string }> = [
+	{ label: 'Avocado', value: 'avocado' },
+	{ label: 'Blueberries', value: 'blueberries' },
+	{ label: 'Cherries', value: 'cherries' },
+	{ label: 'Coconut', value: 'coconut' },
+	{ label: 'Strawberries', value: 'strawberries' },
+];
+
+export const List: Story = {
+	render: ({ value, ...args }) => (
 		<RadioGroup value={value} name="favourite fruit">
-			{listData.map((item: { label: string; value: string }) => {
-				return (
-					<Radio
-						key={item.value}
-						children={item.label}
-						value={item.value}
-						{...args}
-					/>
-				);
-			})}
+			{listData.map((item) => (
+				<Radio key={item.value} value={item.value} {...args}>
+					{item.label}
+				</Radio>
+			))}
 		</RadioGroup>
 	),
-
 	args: {
 		value: 'avocado',
 		disabled: false,
 	},
-
-	argTypes: argTypes,
 };
 
-const Template: StoryFn<typeof Radio> = ({ value, ...args }) => (
-	<RadioGroup value={value} name="favourite fruit">
-		<Radio value="avocado" {...args} />
+const Wrapper = ({ children }: { children: React.ReactNode }) => (
+	<RadioGroup value="" name="demo-radio-group">
+		{children}
 	</RadioGroup>
 );
-const disabledCheckedProps: ComponentProps<typeof Radio> = {
-	// @ts-expect-error type error for `checked`
-	checked: true,
-	disabled: true,
-	children: 'check me!',
-	value: 'avocado',
-};
-const multipleLinesProps: ComponentProps<typeof Radio> = {
-	disabled: false,
-	children:
-		'There is a very good reason why this thing is a multi-line, sometimes we need to show people a lot of things. And thus this exists.',
-	value: 'berry',
-};
 
-const Item = ({ label, rating }) => (
+const Item = ({ label, rating }: { label: string; rating: string }) => (
 	<div
 		style={{
 			display: 'grid',
-			gridGap: '8px',
+			gap: '8px',
 			gridTemplateColumns: '1fr auto',
 		}}
 	>
@@ -114,52 +77,66 @@ const Item = ({ label, rating }) => (
 	</div>
 );
 
-const withChildrenProps: ComponentProps<typeof Radio> = {
-	disabled: false,
-	children: <Item label="Avocados" rating="4.3" />,
-	value: 'berry',
+const singleRadio: Story['render'] = (args) => (
+	<RadioGroup value="" name="demo-radio-group">
+		<Radio {...args} />
+	</RadioGroup>
+);
+
+export const DisabledChecked: Story = {
+	render: singleRadio,
+	args: {
+		disabled: true,
+		children: 'check me!',
+		value: 'not-available',
+	},
 };
 
-const withMultiLineComponentProps: ComponentProps<typeof Radio> = {
-	disabled: false,
-	children: (
-		<div
-			style={{
-				display: 'grid',
-				gridGap: '8px',
-				gridTemplateColumns: '1fr auto auto',
-			}}
-		>
-			<Heading is="h5">Your last order</Heading>
-			<Badge colour="neutral" label="SUBSCRIBE" />
-			<Badge colour="neutral" label="AUTO TOP-UP" />
+export const MultipleLines: Story = {
+	render: singleRadio,
+	args: {
+		disabled: false,
+		children:
+			'There is a very good reason why this thing is a multi-line, sometimes we need to show people a lot of things. And thus this exists.',
+	},
+};
+
+export const WithChildren: Story = {
+	render: singleRadio,
+	args: {
+		disabled: false,
+		children: <Item label="Avocados" rating="4.3" />,
+	},
+};
+
+export const WithComplexChildren: Story = {
+	render: singleRadio,
+	args: {
+		disabled: false,
+		children: (
 			<div
 				style={{
-					gridColumn: '1/4',
 					display: 'grid',
 					gridGap: '8px',
-					gridTemplateColumns: '1fr auto',
+					gridTemplateColumns: '1fr auto auto',
 				}}
 			>
-				<Text size="2">Ending in 5678</Text>
-				<Text size="2">Updated 12 Dec 2018</Text>
+				<Heading is="h5">Your last order</Heading>
+				<Badge colour="neutral" label="SUBSCRIBE" />
+				<Badge colour="neutral" label="AUTO TOP-UP" />
+				<div
+					style={{
+						gridColumn: '1/4',
+						display: 'grid',
+						gridGap: '8px',
+						gridTemplateColumns: '1fr auto',
+					}}
+				>
+					<Text size="2">Ending in 5678</Text>
+					<Text size="2">Updated 12 Dec 2018</Text>
+				</div>
 			</div>
-		</div>
-	),
-	value: '1',
-};
-
-export const DisabledChecked = Template.bind(disabledCheckedProps);
-DisabledChecked.args = disabledCheckedProps;
-DisabledChecked.argTypes = argTypes;
-
-export const MultipleLines = Template.bind(multipleLinesProps);
-MultipleLines.args = multipleLinesProps;
-MultipleLines.argTypes = argTypes;
-
-export const WithChildren = Template.bind(withMultiLineComponentProps);
-WithChildren.args = withChildrenProps;
-WithChildren.argTypes = {
-	...argTypes,
-	children: { control: { disable: true } },
+		),
+		value: '1',
+	},
 };

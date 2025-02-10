@@ -1,9 +1,8 @@
 import { AlertIcon, OttoIcon } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import isChromatic from 'chromatic/isChromatic';
-import * as React from 'react';
-import { ComponentProps, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Box } from '../Box';
 import { Icon } from '../Icon';
@@ -31,8 +30,9 @@ const TestChild = ({ label }) => {
 	return <StarRating rating={thing} label={label} />;
 };
 
-export default {
+const meta = {
 	title: 'Components/Tabs',
+	component: Tabs,
 	decorators: [
 		(story) => (
 			<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
@@ -47,150 +47,151 @@ export default {
 	},
 } satisfies Meta<typeof Tabs>;
 
-const Template: StoryFn<typeof Tabs> = (args) => <Tabs {...args} />;
+export default meta;
+type Story = StoryObj<typeof Tabs>;
 
-const standardProps: ComponentProps<typeof Tabs> = {
-	active: 0,
-	onChange: action('onChange'),
-	children: (
-		<>
-			<TabList>
-				<Tab>Tab 1</Tab>
-				<Tab>Tab 2</Tab>
+export const Standard: Story = {
+	args: {
+		active: 0,
+		onChange: action('onChange'),
+		children: (
+			<>
+				<TabList>
+					<Tab>Tab 1</Tab>
+					<Tab>Tab 2</Tab>
+				</TabList>
+
+				<TabPanes>
+					<TabPane>Content A</TabPane>
+					<TabPane>
+						<Stack>
+							<TestChild label="5" />
+							<TestChild label="4" />
+							<TestChild label="3" />
+							<TestChild label="2" />
+							<TestChild label="1" />
+						</Stack>
+					</TabPane>
+				</TabPanes>
+			</>
+		),
+	},
+};
+
+export const WithIndication: Story = {
+	args: {
+		active: 0,
+		onChange: action('onChange'),
+		children: (
+			<>
+				<TabList>
+					<Tab indication={2}>Tab 1</Tab>
+					<Tab indication={0}>Tab 2</Tab>
+				</TabList>
+
+				<TabPanes>
+					<TabPane>Content A</TabPane>
+					<TabPane>Content B</TabPane>
+				</TabPanes>
+			</>
+		),
+	},
+};
+
+export const WithComplexTab: Story = {
+	args: {
+		active: 0,
+		onChange: action('onChange'),
+		children: (
+			<>
+				<TabList>
+					<Tab indication={2}>
+						<Inline alignY="center">
+							Tab 1
+							<Tooltip
+								alignment={EAlignment.BOTTOM}
+								label="This tab is a winner"
+							>
+								<Box>
+									<Icon icon={OttoIcon} />
+								</Box>
+							</Tooltip>
+						</Inline>
+					</Tab>
+					<Tab>
+						<Inline alignY="center">
+							Tab 2
+							<Tooltip
+								alignment={EAlignment.BOTTOM}
+								label="This tab is less awesome"
+							>
+								<Box>
+									<Icon icon={AlertIcon} />
+								</Box>
+							</Tooltip>
+						</Inline>
+					</Tab>
+				</TabList>
+
+				<TabPanes>
+					<TabPane>Content A</TabPane>
+					<TabPane>Content B</TabPane>
+				</TabPanes>
+			</>
+		),
+	},
+};
+
+export const WithStretch: Story = {
+	args: {
+		active: 0,
+		onChange: action('onChange'),
+		children: (
+			<>
+				<TabList stretch>
+					<Tab>Tab 1</Tab>
+					<Tab>Tab 2</Tab>
+				</TabList>
+
+				<TabPanes>
+					<TabPane>Content A</TabPane>
+					<TabPane>
+						<Stack>
+							<TestChild label="5" />
+							<TestChild label="4" />
+							<TestChild label="3" />
+							<TestChild label="2" />
+							<TestChild label="1" />
+						</Stack>
+					</TabPane>
+				</TabPanes>
+			</>
+		),
+	},
+};
+
+export const Scrollable: Story = {
+	args: {
+		active: 0,
+		onChange: action('onChange'),
+		children: (
+			<TabList scrollable>
+				<Tab>Hello</Tab>
+				<Tab indication={5}>Why isnt</Tab>
+				<Tab>This a terribly</Tab>
+				<Tab>Long</Tab>
+				<Tab>Tab list</Tab>
+				<Tab>Hello</Tab>
+				<Tab>Why isnt</Tab>
+				<Tab>This a terribly</Tab>
+				<Tab>Long</Tab>
+				<Tab>Tab list</Tab>
+				<Tab>Hello</Tab>
+				<Tab>Why isnt</Tab>
+				<Tab>This a terribly</Tab>
+				<Tab>Long</Tab>
+				<Tab>Tab list</Tab>
 			</TabList>
-
-			<TabPanes>
-				<TabPane>Content A</TabPane>
-				<TabPane>
-					<Stack>
-						<TestChild label="5" />
-						<TestChild label="4" />
-						<TestChild label="3" />
-						<TestChild label="2" />
-						<TestChild label="1" />
-					</Stack>
-				</TabPane>
-			</TabPanes>
-		</>
-	),
+		),
+	},
 };
-export const Standard = Template.bind(standardProps);
-Standard.args = standardProps;
-
-const withIndicationProps: ComponentProps<typeof Tabs> = {
-	active: 0,
-	onChange: action('onChange'),
-	children: (
-		<>
-			<TabList>
-				<Tab indication={2}>Tab 1</Tab>
-				<Tab indication={0}>Tab 2</Tab>
-			</TabList>
-
-			<TabPanes>
-				<TabPane>Content A</TabPane>
-				<TabPane>Content B</TabPane>
-			</TabPanes>
-		</>
-	),
-};
-export const WithIndication = Template.bind(withIndicationProps);
-WithIndication.args = withIndicationProps;
-
-const withComplexTabProps: ComponentProps<typeof Tabs> = {
-	active: 0,
-	onChange: action('onChange'),
-	children: (
-		<>
-			<TabList>
-				<Tab indication={2}>
-					<Inline alignY="center">
-						Tab 1
-						<Tooltip
-							alignment={EAlignment.BOTTOM}
-							label="This tab is a winner"
-						>
-							<Box>
-								<Icon icon={OttoIcon} />
-							</Box>
-						</Tooltip>
-					</Inline>
-				</Tab>
-				<Tab>
-					<Inline alignY="center">
-						Tab 2
-						<Tooltip
-							alignment={EAlignment.BOTTOM}
-							label="This tab is less awesome"
-						>
-							<Box>
-								<Icon icon={AlertIcon} />
-							</Box>
-						</Tooltip>
-					</Inline>
-				</Tab>
-			</TabList>
-
-			<TabPanes>
-				<TabPane>Content A</TabPane>
-				<TabPane>Content B</TabPane>
-			</TabPanes>
-		</>
-	),
-};
-export const WithComplexTab = Template.bind(withComplexTabProps);
-WithComplexTab.args = withComplexTabProps;
-
-const withStretchProps: ComponentProps<typeof Tabs> = {
-	active: 0,
-	onChange: action('onChange'),
-	children: (
-		<>
-			<TabList stretch>
-				<Tab>Tab 1</Tab>
-				<Tab>Tab 2</Tab>
-			</TabList>
-
-			<TabPanes>
-				<TabPane>Content A</TabPane>
-				<TabPane>
-					<Stack>
-						<TestChild label="5" />
-						<TestChild label="4" />
-						<TestChild label="3" />
-						<TestChild label="2" />
-						<TestChild label="1" />
-					</Stack>
-				</TabPane>
-			</TabPanes>
-		</>
-	),
-};
-export const WithStretch = Template.bind(withStretchProps);
-WithStretch.args = withStretchProps;
-
-const scrollableProps: ComponentProps<typeof Tabs> = {
-	active: 0,
-	onChange: action('onChange'),
-	children: (
-		<TabList scrollable>
-			<Tab>Hello</Tab>
-			<Tab indication={5}>Why isnt</Tab>
-			<Tab>This a terribly</Tab>
-			<Tab>Long</Tab>
-			<Tab>Tab list</Tab>
-			<Tab>Hello</Tab>
-			<Tab>Why isnt</Tab>
-			<Tab>This a terribly</Tab>
-			<Tab>Long</Tab>
-			<Tab>Tab list</Tab>
-			<Tab>Hello</Tab>
-			<Tab>Why isnt</Tab>
-			<Tab>This a terribly</Tab>
-			<Tab>Long</Tab>
-			<Tab>Tab list</Tab>
-		</TabList>
-	),
-};
-export const Scrollable = Template.bind(scrollableProps);
-Scrollable.args = scrollableProps;

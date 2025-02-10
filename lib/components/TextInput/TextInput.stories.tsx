@@ -11,7 +11,7 @@ import {
 } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
-import { ComponentProps } from 'react';
+import { type ComponentProps } from 'react';
 
 import { boxArgTypes } from '../Box/argTypes';
 import { DateInput } from '../DateInput';

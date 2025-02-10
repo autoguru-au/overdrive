@@ -10,9 +10,8 @@ import {
 	PlusIcon,
 	StarIcon,
 } from '@autoguru/icons';
-import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 
 import { Box } from '../Box';
 
@@ -31,7 +30,7 @@ const iconOptions = {
 	CheckIcon,
 };
 
-export default {
+const meta = {
 	title: 'Components/Date Picker',
 	component: DatePicker,
 	decorators: [],
@@ -53,58 +52,59 @@ export default {
 	},
 } satisfies Meta<typeof DatePicker>;
 
-const Template: StoryFn<typeof DatePicker> = (args) => (
-	<Box display="flex">
-		<DatePicker {...args} />
-	</Box>
-);
+export default meta;
+type Story = StoryObj<typeof DatePicker>;
 
-const standardProps: ComponentProps<typeof DatePicker> = {
-	isLoading: false,
-	disabled: false,
+export const Standard: Story = {
+	args: {
+		isLoading: false,
+		disabled: false,
+	},
+	render: (args) => (
+		<Box display="flex">
+			<DatePicker {...args} />
+		</Box>
+	),
 };
 
-export const Standard = Template.bind(standardProps);
-Standard.args = standardProps;
-
-const smallProps: ComponentProps<typeof DatePicker> = {
-	size: 'small',
-	isLoading: false,
-	disabled: false,
+export const SmallWithLabel: Story = {
+	args: {
+		size: 'small',
+		isLoading: false,
+		disabled: false,
+		valueLabel: 'Today',
+	},
+	render: (args) => (
+		<Box display="flex">
+			<DatePicker {...args} />
+		</Box>
+	),
 };
 
-const smallWithLabelProps: ComponentProps<typeof DatePicker> = {
-	...smallProps,
-	valueLabel: 'Today',
+export const MediumWithLabel: Story = {
+	args: {
+		size: 'medium',
+		isLoading: false,
+		disabled: false,
+		valueLabel: 'Today',
+	},
+	render: (args) => (
+		<Box display="flex">
+			<DatePicker {...args} />
+		</Box>
+	),
 };
 
-export const SmallWithLabel = Template.bind(smallWithLabelProps);
-SmallWithLabel.args = smallWithLabelProps;
-
-const mediumProps: ComponentProps<typeof DatePicker> = {
-	size: 'medium',
-	isLoading: false,
-	disabled: false,
+export const LargeWithLabel: Story = {
+	args: {
+		size: 'large',
+		isLoading: false,
+		disabled: false,
+		valueLabel: 'Today',
+	},
+	render: (args) => (
+		<Box display="flex">
+			<DatePicker {...args} />
+		</Box>
+	),
 };
-
-const mediumWithLabelProps: ComponentProps<typeof DatePicker> = {
-	...mediumProps,
-	valueLabel: 'Today',
-};
-
-export const MediumWithLabel = Template.bind(mediumWithLabelProps);
-MediumWithLabel.args = mediumWithLabelProps;
-
-const largeProps: ComponentProps<typeof DatePicker> = {
-	size: 'large',
-	isLoading: false,
-	disabled: false,
-};
-
-const largeWithLabelProps: ComponentProps<typeof DatePicker> = {
-	...largeProps,
-	valueLabel: 'Today',
-};
-
-export const LargeWithLabel = Template.bind(largeWithLabelProps);
-LargeWithLabel.args = largeWithLabelProps;

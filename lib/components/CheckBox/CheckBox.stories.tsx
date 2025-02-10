@@ -1,6 +1,5 @@
-import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 
 import { Badge } from '../Badge';
 import { Heading } from '../Heading';
@@ -9,7 +8,7 @@ import { Text } from '../Text';
 
 import { CheckBox } from '.';
 
-export default {
+const meta = {
 	title: 'Forms & Input Fields/CheckBox',
 	component: CheckBox,
 	decorators: [
@@ -19,47 +18,33 @@ export default {
 	],
 } satisfies Meta<typeof CheckBox>;
 
+export default meta;
+type Story = StoryObj<typeof CheckBox>;
+
 const listData: Array<{ label: string; value: string }> = [
-	{
-		label: 'Avocado',
-		value: 'avocado',
-	},
-	{
-		label: 'Blueberries',
-		value: 'blueberries',
-	},
-	{
-		label: 'Cherries',
-		value: 'cherries',
-	},
-	{
-		label: 'Coconut',
-		value: 'coconut',
-	},
-	{
-		label: 'Strawberries',
-		value: 'strawberries',
-	},
+	{ label: 'Avocado', value: 'avocado' },
+	{ label: 'Blueberries', value: 'blueberries' },
+	{ label: 'Cherries', value: 'cherries' },
+	{ label: 'Coconut', value: 'coconut' },
+	{ label: 'Strawberries', value: 'strawberries' },
 ];
 
-export const list = {
+export const List: Story = {
 	render: ({ disabled, ...args }) => (
 		<>
-			{listData.map((item: { label: string; value: string }) => {
-				return (
-					<CheckBox
-						key={item.value}
-						disabled={disabled}
-						children={item.label}
-						value={item.value}
-						name={`want-${item.value}`}
-						checked={args[item.value]}
-					/>
-				);
-			})}
+			{listData.map((item) => (
+				<CheckBox
+					key={item.value}
+					disabled={disabled}
+					value={item.value}
+					name={`want-${item.value}`}
+					checked={args[item.value]}
+				>
+					{item.label}
+				</CheckBox>
+			))}
 		</>
 	),
-
 	args: {
 		disabled: false,
 		avocado: true,
@@ -70,23 +55,25 @@ export const list = {
 	},
 };
 
-const Template: StoryFn<typeof CheckBox> = (args) => <CheckBox {...args} />;
-
-const disabledProps: ComponentProps<typeof CheckBox> = {
-	checked: false,
-	disabled: true,
-	name: 'check-name',
-	children: 'check me!',
-	value: '1',
+export const Disabled: Story = {
+	args: {
+		checked: false,
+		disabled: true,
+		name: 'check-name',
+		children: 'check me!',
+		value: '1',
+	},
 };
 
-const multipleLinesProps: ComponentProps<typeof CheckBox> = {
-	checked: false,
-	disabled: false,
-	name: 'check-name',
-	children:
-		'There is a very good reason why this thing is a multi-line, sometimes we need to show people a lot of things. And thus this exists.',
-	value: '1',
+export const MultipleLines: Story = {
+	args: {
+		checked: false,
+		disabled: false,
+		name: 'check-name',
+		children:
+			'There is a very good reason why this thing is a multi-line, sometimes we need to show people a lot of things. And thus this exists.',
+		value: '1',
+	},
 };
 
 const Item = ({ label, rating }) => (
@@ -102,57 +89,47 @@ const Item = ({ label, rating }) => (
 	</div>
 );
 
-const withComponentProps: ComponentProps<typeof CheckBox> = {
-	checked: false,
-	disabled: false,
-	name: 'check-name',
-	children: <Item label="Avocados" rating="4.3" />,
-	value: '1',
+export const WithComponent: Story = {
+	args: {
+		checked: false,
+		disabled: false,
+		name: 'check-name',
+		children: <Item label="Avocados" rating="4.3" />,
+		value: '1',
+	},
+	argTypes: { children: { control: { disable: true } } },
 };
 
-const withMultiLineComponentProps: ComponentProps<typeof CheckBox> = {
-	checked: false,
-	disabled: false,
-	name: 'check-name',
-	children: (
-		<div
-			style={{
-				display: 'grid',
-				gridGap: '8px',
-				gridTemplateColumns: '1fr auto auto',
-			}}
-		>
-			<Heading is="h5">Your last order</Heading>
-			<Badge colour="neutral" label="SUBSCRIBE" />
-			<Badge colour="neutral" label="AUTO TOP-UP" />
+export const WithMultiLineComponent: Story = {
+	args: {
+		checked: false,
+		disabled: false,
+		name: 'check-name',
+		children: (
 			<div
 				style={{
-					gridColumn: '1/4',
 					display: 'grid',
 					gridGap: '8px',
-					gridTemplateColumns: '1fr auto',
+					gridTemplateColumns: '1fr auto auto',
 				}}
 			>
-				<Text size="2">Ending in 5678</Text>
-				<Text size="2">Updated 12 Dec 2018</Text>
+				<Heading is="h5">Your last order</Heading>
+				<Badge colour="neutral" label="SUBSCRIBE" />
+				<Badge colour="neutral" label="AUTO TOP-UP" />
+				<div
+					style={{
+						gridColumn: '1/4',
+						display: 'grid',
+						gridGap: '8px',
+						gridTemplateColumns: '1fr auto',
+					}}
+				>
+					<Text size="2">Ending in 5678</Text>
+					<Text size="2">Updated 12 Dec 2018</Text>
+				</div>
 			</div>
-		</div>
-	),
-	value: '1',
+		),
+		value: '1',
+	},
+	argTypes: { children: { control: { disable: true } } },
 };
-
-export const Disabled = Template.bind(disabledProps);
-Disabled.args = disabledProps;
-
-export const MultipleLines = Template.bind(multipleLinesProps);
-MultipleLines.args = multipleLinesProps;
-
-export const WithComponent = Template.bind(withComponentProps);
-WithComponent.args = withComponentProps;
-WithComponent.argTypes = { children: { control: { disable: true } } };
-
-export const WithMultiLineComponent = Template.bind(
-	withMultiLineComponentProps,
-);
-WithMultiLineComponent.args = withMultiLineComponentProps;
-WithMultiLineComponent.argTypes = { children: { control: { disable: true } } };

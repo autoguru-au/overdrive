@@ -1,4 +1,4 @@
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps, useRef } from 'react';
 
@@ -9,7 +9,7 @@ import { TextInput } from '../TextInput';
 
 import { Flyout } from '.';
 
-export default {
+const meta = {
 	title: 'Components/Flyout',
 	component: Flyout,
 	argTypes: {
@@ -31,13 +31,11 @@ export default {
 	parameters: { chromatic: {} },
 } satisfies Meta<typeof Flyout>;
 
-const sharedProps: Omit<ComponentProps<typeof Flyout>, 'triggerRef'> = {
-	alignment: EAlignment.BOTTOM_LEFT,
-	isOpen: false,
-	triggerOffset: 12,
-};
+export default meta;
 
-const Template: StoryFn<typeof Flyout> = ({ ...args }) => {
+type Story = StoryObj<typeof Flyout>;
+
+const FlyoutContent = ({ args }: { args: ComponentProps<typeof Flyout> }) => {
 	const triggerRef = useRef<HTMLButtonElement>(null);
 	return (
 		<Box
@@ -72,9 +70,20 @@ const Template: StoryFn<typeof Flyout> = ({ ...args }) => {
 	);
 };
 
-const openProps = { ...sharedProps, isOpen: true };
-export const Open = Template.bind(openProps);
-Open.args = openProps;
+export const Open: Story = {
+	render: (args) => <FlyoutContent args={{ ...args, isOpen: true }} />,
+	args: {
+		alignment: EAlignment.BOTTOM_LEFT,
+		isOpen: true,
+		triggerOffset: 12,
+	},
+};
 
-export const Closed = Template.bind(sharedProps);
-Closed.args = sharedProps;
+export const Closed: Story = {
+	render: (args) => <FlyoutContent args={{ ...args, isOpen: false }} />,
+	args: {
+		alignment: EAlignment.BOTTOM_LEFT,
+		isOpen: false,
+		triggerOffset: 12,
+	},
+};

@@ -1,55 +1,56 @@
 import { action } from '@storybook/addon-actions';
-import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 
 import { Box } from '../Box';
 
 import { SimplePagination } from '.';
 
-export default {
+const meta = {
 	title: 'Primatives/Simple Pagination',
 	component: SimplePagination,
+	decorators: [
+		(Story) => (
+			<Box
+				style={{
+					height: '100vh',
+					width: '100vw',
+					maxHeight: '120px',
+				}}
+				display="flex"
+				alignItems="center"
+				justifyContent="center"
+			>
+				<Story />
+			</Box>
+		),
+	],
 } satisfies Meta<typeof SimplePagination>;
 
-const Template: StoryFn<typeof SimplePagination> = (args) => (
-	<Box
-		style={{
-			height: '100vh',
-			width: '100vw',
-			maxHeight: '120px',
-		}}
-		display="flex"
-		alignItems="center"
-		justifyContent="center"
-	>
-		<SimplePagination {...args} />
-	</Box>
-);
+export default meta;
 
-const standardProps = {
-	hasNext: true,
-	hasPrevious: true,
-	onChange: action('onChange'),
+type Story = StoryObj<typeof SimplePagination>;
+
+export const MiddlePage: Story = {
+	args: {
+		hasNext: true,
+		hasPrevious: true,
+		onChange: action('onChange'),
+	},
 };
 
-export const middlePage: StoryFn<typeof SimplePagination> =
-	Template.bind(standardProps);
-middlePage.args = standardProps;
-
-const firstPageProps = {
-	...standardProps,
-	hasPrevious: false,
+export const FirstPage: Story = {
+	args: {
+		hasNext: true,
+		hasPrevious: false,
+		onChange: action('onChange'),
+	},
 };
 
-export const firstPage: StoryFn<typeof SimplePagination> =
-	Template.bind(firstPageProps);
-firstPage.args = firstPageProps;
-
-const lastPageProps = {
-	...standardProps,
-	hasNext: false,
+export const LastPage: Story = {
+	args: {
+		hasNext: false,
+		hasPrevious: true,
+		onChange: action('onChange'),
+	},
 };
-
-export const lastPage: StoryFn<typeof SimplePagination> =
-	Template.bind(lastPageProps);
-lastPage.args = lastPageProps;

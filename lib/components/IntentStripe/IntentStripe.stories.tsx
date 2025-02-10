@@ -1,6 +1,5 @@
-import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
+import React, { type ComponentProps } from 'react';
 
 import { Box } from '../Box';
 
@@ -26,7 +25,9 @@ export default {
 	},
 } satisfies Meta<typeof IntentStripe>;
 
-const MyStripe = (args) => (
+type Story = StoryObj<typeof IntentStripe>;
+
+const MyStripe = (args: ComponentProps<typeof IntentStripe>) => (
 	<Box
 		position="relative"
 		width="full"
@@ -39,45 +40,43 @@ const MyStripe = (args) => (
 	</Box>
 );
 
-const template: StoryFn<typeof IntentStripe> = (args) => (
-	<Box
-		style={{
-			display: 'grid',
-			gridAutoFlow: 'row dense',
-			gridGap: '24px',
-			width: '100%',
-		}}
-	>
-		<MyStripe {...args} />
-	</Box>
-);
-
-const templateAllIntents: StoryFn<typeof IntentStripe> = (args) => (
-	<Box
-		style={{
-			display: 'grid',
-			gridAutoFlow: 'row dense',
-			gridGap: '24px',
-			width: '100%',
-		}}
-	>
-		<MyStripe {...args} intent="success" />
-		<MyStripe {...args} intent="warning" />
-		<MyStripe {...args} intent="danger" />
-		<MyStripe {...args} intent="information" />
-	</Box>
-);
-
-const standardProps: Omit<
-	ComponentProps<typeof IntentStripe>,
-	'onRequestClose' | 'children'
-> = {
-	intent: void 0,
-	className: void 0,
+export const Standard: Story = {
+	args: {
+		intent: void 0,
+		className: void 0,
+	},
+	render: (args) => (
+		<Box
+			style={{
+				display: 'grid',
+				gridAutoFlow: 'row dense',
+				gridGap: '24px',
+				width: '100%',
+			}}
+		>
+			<MyStripe {...args} />
+		</Box>
+	),
 };
 
-export const Standard = template.bind(standardProps);
-Standard.args = standardProps;
-
-export const StandardAllIntents = templateAllIntents.bind(standardProps);
-StandardAllIntents.args = standardProps;
+export const StandardAllIntents: Story = {
+	args: {
+		intent: void 0,
+		className: void 0,
+	},
+	render: (args) => (
+		<Box
+			style={{
+				display: 'grid',
+				gridAutoFlow: 'row dense',
+				gridGap: '24px',
+				width: '100%',
+			}}
+		>
+			<MyStripe {...args} intent="success" />
+			<MyStripe {...args} intent="warning" />
+			<MyStripe {...args} intent="danger" />
+			<MyStripe {...args} intent="information" />
+		</Box>
+	),
+};

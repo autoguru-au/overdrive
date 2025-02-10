@@ -1,10 +1,9 @@
-import * as React from 'react';
-import {
+import React, {
 	createContext,
 	forwardRef,
-	ReactNode,
 	useContext,
 	useMemo,
+	type ReactNode,
 } from 'react';
 
 import { Box } from '../Box';

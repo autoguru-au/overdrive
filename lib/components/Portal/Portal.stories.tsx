@@ -1,6 +1,5 @@
-import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 
 import { Heading } from '../Heading';
 import { Stack } from '../Stack';
@@ -16,42 +15,37 @@ export default {
 	},
 	argTypes: {
 		children: {
-			control: {
-				disable: true,
-			},
+			control: { disable: true },
 		},
 		container: {
-			control: {
-				disable: true,
-			},
+			control: { disable: true },
 		},
 	},
 } satisfies Meta<typeof Portal>;
 
-const StandardTemplate: StoryFn<typeof Portal> = (...args) => (
-	<Portal {...args}>
-		<Text colour="primary">Im in a portal at the root.</Text>
-	</Portal>
-);
+type Story = StoryObj<typeof Portal>;
 
-const NestedTemplate: StoryFn<typeof Portal> = (...args) => (
-	<Portal {...args}>
-		<Stack space="5">
-			<Heading is="h3" colour="information">
-				test child 1
-			</Heading>
-			<Portal {...args}>
-				<Text colour="primary">test child 2</Text>
-			</Portal>
-		</Stack>
-	</Portal>
-);
+const containerEl = document?.getElementsByTagName('body')[0];
 
-const standardProps: Omit<ComponentProps<typeof Portal>, 'children'> = {
-	container: document?.getElementsByTagName('body')[0],
+export const Standard: Story = {
+	args: {
+		container: containerEl,
+		children: <Text colour="primary">Im in a portal at the root.</Text>,
+	},
 };
-export const standard = StandardTemplate.bind(standardProps);
-standard.args = standardProps;
 
-export const nested = NestedTemplate.bind(standardProps);
-nested.args = standardProps;
+export const Nested: Story = {
+	args: {
+		container: containerEl,
+		children: (
+			<Stack space="5">
+				<Heading is="h3" colour="information">
+					test child 1
+				</Heading>
+				<Portal container={containerEl}>
+					<Text colour="primary">test child 2</Text>
+				</Portal>
+			</Stack>
+		),
+	},
+};

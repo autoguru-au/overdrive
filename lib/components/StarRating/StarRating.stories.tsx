@@ -1,9 +1,8 @@
-import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { EStarRatingSize, StarRating } from '.';
 
-export default {
+const meta = {
 	title: 'Components/Star Rating',
 	component: StarRating,
 	argTypes: {
@@ -24,28 +23,29 @@ export default {
 	},
 } satisfies Meta<typeof StarRating>;
 
-const Template: StoryFn<typeof StarRating> = (args) => <StarRating {...args} />;
+export default meta;
+type Story = StoryObj<typeof StarRating>;
 
-const standardProps = {
-	rating: 2.7,
-	size: EStarRatingSize.Medium,
-	label: '',
+export const Standard: Story = {
+	args: {
+		rating: 2.7,
+		size: EStarRatingSize.Medium,
+		label: '',
+	},
 };
-export const Standard = Template.bind(standardProps);
-Standard.args = standardProps;
 
-const smallSizeProps = {
-	rating: 3.2,
-	size: EStarRatingSize.Small,
-	label: '',
+export const SmallSize: Story = {
+	args: {
+		rating: 3.2,
+		size: EStarRatingSize.Small,
+		label: '',
+	},
 };
-export const SmallSize = Template.bind(smallSizeProps);
-SmallSize.args = smallSizeProps;
 
-const withLabelProps = {
-	rating: 3.9,
-	size: EStarRatingSize.Medium,
-	label: 'product rating',
+export const WithLabel: Story = {
+	args: {
+		rating: 3.9,
+		size: EStarRatingSize.Medium,
+		label: 'product rating',
+	},
 };
-export const WithLabel = Template.bind(withLabelProps);
-WithLabel.args = withLabelProps;
