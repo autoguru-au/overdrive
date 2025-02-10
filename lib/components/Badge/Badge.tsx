@@ -4,6 +4,7 @@ import React from 'react';
 
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
+import { Box } from '../Box';
 
 import * as styles from './Badge.css';
 import type { StyledBadgeProps } from './Badge.css';
@@ -46,7 +47,7 @@ export const Badge = ({
 	const inverted = look === 'inverted';
 
 	return (
-		<div
+		<Box
 			className={clsx([
 				styles.styledBadge({
 					colour,
@@ -55,10 +56,11 @@ export const Badge = ({
 				}),
 				className,
 			])}
+			borderRadius="1"
 			{...dataAttrs({ 'test-id': testId })}
 		>
 			{label}
-		</div>
+		</Box>
 	);
 };
 

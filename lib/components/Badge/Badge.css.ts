@@ -6,7 +6,6 @@ import { odStyle } from '../../styles/sprinkles.css';
 export const styledBadge = recipe({
 	base: [
 		odStyle({
-			borderRadius: '1',
 			lineHeight: 'match',
 			overflow: 'hidden',
 			padding: '1',
