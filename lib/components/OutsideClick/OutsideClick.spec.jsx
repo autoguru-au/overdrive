@@ -6,7 +6,7 @@ import { OutsideClick, useOutsideClick } from './OutsideClick';
 
 describe('<OutsideClick />', () => {
 	it('should fire the callback when outside is clicked', () => {
-		const outsideClickHandler = jest.fn();
+		const outsideClickHandler = vi.fn();
 
 		const { getByText } = render(
 			<>
@@ -38,7 +38,7 @@ describe('<OutsideClick />', () => {
 		};
 
 		it('should callback outside when an array of refs', () => {
-			const outsideClickHandler = jest.fn();
+			const outsideClickHandler = vi.fn();
 
 			const { getByText } = render(
 				<>
@@ -53,7 +53,7 @@ describe('<OutsideClick />', () => {
 		});
 
 		it('should not callback outside when an array of refs', () => {
-			const outsideClickHandler = jest.fn();
+			const outsideClickHandler = vi.fn();
 
 			const { getByText } = render(
 				<>

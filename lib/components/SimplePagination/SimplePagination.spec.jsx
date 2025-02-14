@@ -37,7 +37,7 @@ describe('<SimplePagination />', () => {
 	});
 
 	it('should fire change with the correct change direction for next button click', () => {
-		const spyedCallback = jest.fn();
+		const spyedCallback = vi.fn();
 
 		const { getByLabelText } = render(
 			<SimplePagination hasPrevious hasNext onChange={spyedCallback} />,
@@ -49,7 +49,7 @@ describe('<SimplePagination />', () => {
 	});
 
 	it('should not fire change for next direction if hasNext is disabled but clicked', () => {
-		const spyedCallback = jest.fn();
+		const spyedCallback = vi.fn();
 
 		const { getByLabelText } = render(
 			<SimplePagination hasPrevious onChange={spyedCallback} />,
@@ -61,7 +61,7 @@ describe('<SimplePagination />', () => {
 	});
 
 	it('should fire change with the correct change direction for previous button click', () => {
-		const spyedCallback = jest.fn();
+		const spyedCallback = vi.fn();
 
 		const { getByLabelText } = render(
 			<SimplePagination hasPrevious hasNext onChange={spyedCallback} />,
@@ -73,7 +73,7 @@ describe('<SimplePagination />', () => {
 	});
 
 	it('should not fire change for previous direction if hasPrevious is disabled but clicked', () => {
-		const spyedCallback = jest.fn();
+		const spyedCallback = vi.fn();
 
 		const { getByLabelText } = render(
 			<SimplePagination hasNext onChange={spyedCallback} />,

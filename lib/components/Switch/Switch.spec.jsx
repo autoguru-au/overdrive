@@ -105,7 +105,7 @@ describe('<Switch />', () => {
 	});
 
 	it('should fire change with the correct changed value when clicked', () => {
-		const spyedCallback = jest.fn();
+		const spyedCallback = vi.fn();
 
 		const { container: toggledContainer } = render(
 			<InteractiveSwitch isSelected={false} onChange={spyedCallback} />,
@@ -126,7 +126,7 @@ describe('<Switch />', () => {
 	});
 
 	it('should not fire change if clicked while disabled', () => {
-		const spyedCallback = jest.fn();
+		const spyedCallback = vi.fn();
 
 		const { container } = render(
 			<InteractiveSwitch
