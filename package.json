@@ -45,7 +45,7 @@
 		"storybook:extract": "npx sb extract",
 		"storybook": "storybook dev -p 6006",
 		"storybook:build": "storybook build",
-		"test": "cd jest/ && jest",
+		"test": "vitest",
 		"typeEmit": "tsc -d --declarationDir dist --emitDeclarationOnly",
 		"watch": "tsc --watch"
 	},
@@ -131,6 +131,7 @@
 		"eslint-plugin-unicorn": "^56.0.1",
 		"intersection-observer": "^0.12.2",
 		"jest": "26.6.3",
+		"jsdom": "^26.0.0",
 		"magic-string": "^0.30.17",
 		"mini-css-extract-plugin": "^2.9.2",
 		"plop": "^4.0.1",
@@ -153,6 +154,7 @@
 		"typescript": "^4.9.5",
 		"url-loader": "^4.1.1",
 		"vite": "^6.0.11",
+		"vitest": "^3.0.5",
 		"webpack": "^5.97.1"
 	},
 	"peerDependencies": {
