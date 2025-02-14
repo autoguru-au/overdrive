@@ -7,6 +7,7 @@ export default defineConfig({
 		environment: 'jsdom',
 		globals: true,
 		coverage: {
+			provider: 'v8',
 			include: [
 				'lib/**/*.{ts,tsx}',
 				'!**/*stories*.{ts,tsx}',
