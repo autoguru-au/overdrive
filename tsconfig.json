@@ -1,10 +1,9 @@
 {
 	"extends": "@autoguru/tsconfig/web",
-	"include": ["./index.ts", "./**/*.ts", "./**/*.tsx"],
+	"include": ["lib"],
 	"exclude": ["./**/*stories*.tsx", ".dist/**/*.*"],
 	"compilerOptions": {
-		"baseUrl": "./",
-		"rootDir": "./lib/",
+		"baseUrl": "./lib",
 		"outDir": "./dist/",
 		"declaration": true,
 		"declarationMap": true,
@@ -41,5 +40,10 @@
 			"resolveJsonModule": true,
 			"noImplicitAny": false
 		}
-	}
+	},
+	"references": [
+		{
+			"path": "./tsconfig.node.json"
+		}
+	]
 }
