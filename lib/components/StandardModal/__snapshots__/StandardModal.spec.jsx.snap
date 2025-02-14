@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<StandardModal /> should match snapshot with title and body 1`] = `
+exports[`<StandardModal /> > should match snapshot with title and body 1`] = `
 <body
   class="vars_OD_Base__1f5yyro0"
   style="overflow: hidden;"
@@ -96,7 +96,7 @@ exports[`<StandardModal /> should match snapshot with title and body 1`] = `
 </body>
 `;
 
-exports[`<StandardModal /> should match snapshot without title and body 1`] = `
+exports[`<StandardModal /> > should match snapshot without title and body 1`] = `
 <body
   class="vars_OD_Base__1f5yyro0"
   style="overflow: hidden;"
