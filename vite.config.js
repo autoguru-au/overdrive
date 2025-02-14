@@ -5,6 +5,6 @@ export default {
 	test: {
 		environment: 'jsdom',
 		globals: true,
-		setupFiles: ['./scripts/vitest-setup.ts'],
+		setupFiles: ['./lib/test/vitest-setup.ts'],
 	},
 };

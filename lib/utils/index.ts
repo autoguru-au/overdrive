@@ -100,8 +100,8 @@ export function mergeRefs<T>(
 	};
 }
 
-export const isHtmlElement = (element: any): element is Element =>
-	element instanceof Element || element instanceof HTMLDocument;
+export const isHtmlElement = (element: unknown): element is Element =>
+	element instanceof Element || element instanceof Document;
 
 export const hex2rgba = (c, alpha = '1') =>
 	`rgb(${c

@@ -1,18 +1,24 @@
 import '@testing-library/jest-dom';
+import { cleanup } from '@testing-library/react';
 import type * as TestingLibrary from '@testing-library/react';
 import React from 'react';
-import { vi } from 'vitest';
+import { afterEach, vi } from 'vitest';
+
+// runs a cleanup after each test case (e.g. clearing jsdom)
+afterEach(() => {
+	cleanup();
+});
 
 vi.mock('@testing-library/react', async () => {
 	const originalModule = await vi.importActual<typeof TestingLibrary>(
 		'@testing-library/react',
 	);
 	const { OverdriveProvider } = await import(
-		'../lib/components/OverdriveProvider/OverdriveProvider'
+		'../components/OverdriveProvider/OverdriveProvider'
 	);
-	const { tokens } = await import('../lib/themes/base/tokens');
-	const { themeRef } = await import('../lib/themes/base/vars.css');
-	const { themeContractVars } = await import('../lib/themes/theme.css');
+	const { tokens } = await import('../themes/base/tokens');
+	const { themeRef } = await import('../themes/base/vars.css');
+	const { themeContractVars } = await import('../themes/theme.css');
 
 	return {
 		...originalModule,
