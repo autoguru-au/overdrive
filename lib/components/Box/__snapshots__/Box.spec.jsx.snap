@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<Box /> should match snapshot for default Box 1`] = `
+exports[`<Box /> > should match snapshot for default Box 1`] = `
 <div
   class="reset_block__1oah0223"
 />

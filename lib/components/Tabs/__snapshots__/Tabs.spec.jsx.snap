@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<Tabs /> should allow id overriding 1`] = `
+exports[`<Tabs /> > should allow id overriding 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_overflow_hidden__3xgq1lfs useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn TabList_root_default__1cu98lp0"
 >
@@ -55,7 +55,7 @@ exports[`<Tabs /> should allow id overriding 1`] = `
 </div>
 `;
 
-exports[`<Tabs /> should allow rendering indications 1`] = `
+exports[`<Tabs /> > should allow rendering indications 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_overflow_hidden__3xgq1lfs useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn TabList_root_default__1cu98lp0"
 >
@@ -68,7 +68,7 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
       role="tablist"
     >
       <button
-        aria-controls="od-11-0-tab"
+        aria-controls="od-10-0-tab"
         aria-selected="true"
         class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l64 useBoxStyles_display_inlineFlex__3xgq1lg0 useBoxStyles_backgroundColours_transparent__3xgq1lf9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhk useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_noWrap__1xnpmd7r useTextStyles_sizes_3__1xnpmd73 Tab_root_default__11wt3mu0 Tab_root_active__11wt3mu1"
         role="tab"
@@ -97,7 +97,7 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
         </div>
       </button>
       <button
-        aria-controls="od-11-1-tab"
+        aria-controls="od-10-1-tab"
         aria-selected="false"
         class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l64 useBoxStyles_display_inlineFlex__3xgq1lg0 useBoxStyles_backgroundColours_transparent__3xgq1lf9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhk useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_noWrap__1xnpmd7r useTextStyles_sizes_3__1xnpmd73 Tab_root_default__11wt3mu0"
         role="tab"
@@ -127,7 +127,7 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
         </div>
       </button>
       <button
-        aria-controls="od-11-2-tab"
+        aria-controls="od-10-2-tab"
         aria-selected="false"
         class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l64 useBoxStyles_display_inlineFlex__3xgq1lg0 useBoxStyles_backgroundColours_transparent__3xgq1lf9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhk useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_noWrap__1xnpmd7r useTextStyles_sizes_3__1xnpmd73 Tab_root_default__11wt3mu0"
         role="tab"
@@ -161,7 +161,7 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
 </div>
 `;
 
-exports[`<Tabs /> should match snapshot (high level) 1`] = `
+exports[`<Tabs /> > should match snapshot (high level) 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_overflow_hidden__3xgq1lfs useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn TabList_root_default__1cu98lp0"
 >

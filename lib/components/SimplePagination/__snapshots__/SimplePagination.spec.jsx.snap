@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
+exports[`<SimplePagination /> > should match snapshot for hasNext 1`] = `
 <nav
   class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_wrap__3xgq1lhe useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhk useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwk useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2k"
 >
@@ -69,7 +69,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext 1`] = `
 </nav>
 `;
 
-exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 1`] = `
+exports[`<SimplePagination /> > should match snapshot for hasNext and hasPrevious 1`] = `
 <nav
   class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_wrap__3xgq1lhe useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhk useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwk useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2k"
 >
@@ -136,7 +136,7 @@ exports[`<SimplePagination /> should match snapshot for hasNext and hasPrevious 
 </nav>
 `;
 
-exports[`<SimplePagination /> should match snapshot for hasPrevious 1`] = `
+exports[`<SimplePagination /> > should match snapshot for hasPrevious 1`] = `
 <nav
   class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_wrap__3xgq1lhe useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhk useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwk useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2k"
 >

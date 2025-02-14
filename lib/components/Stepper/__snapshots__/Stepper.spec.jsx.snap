@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<Stepper /> should match snapshot with label formatter 1`] = `
+exports[`<Stepper /> > should match snapshot with label formatter 1`] = `
 <div
   aria-disabled="false"
   class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_userSelect_none__3xgq1lg6 useBoxStyles_border_style__3xgq1l9k useBoxStyles_border_colour_top_gray__3xgq1l9m useBoxStyles_border_colour_right_gray__3xgq1l9y useBoxStyles_border_colour_bottom_gray__3xgq1laa useBoxStyles_border_colour_left_gray__3xgq1lam useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lax useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbd useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l90 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp Stepper_root__10wm9ba1 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 Stepper_width_default__10wm9ba3"
@@ -86,7 +86,7 @@ exports[`<Stepper /> should match snapshot with label formatter 1`] = `
 </div>
 `;
 
-exports[`<Stepper /> should match snapshot with props 1`] = `
+exports[`<Stepper /> > should match snapshot with props 1`] = `
 <div
   aria-disabled="false"
   class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_userSelect_none__3xgq1lg6 useBoxStyles_border_style__3xgq1l9k useBoxStyles_border_colour_top_gray__3xgq1l9m useBoxStyles_border_colour_right_gray__3xgq1l9y useBoxStyles_border_colour_bottom_gray__3xgq1laa useBoxStyles_border_colour_left_gray__3xgq1lam useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lax useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbd useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l90 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp Stepper_root__10wm9ba1 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 Stepper_width_default__10wm9ba3"
@@ -172,7 +172,7 @@ exports[`<Stepper /> should match snapshot with props 1`] = `
 </div>
 `;
 
-exports[`<Stepper /> should match snapshot without props 1`] = `
+exports[`<Stepper /> > should match snapshot without props 1`] = `
 <div
   aria-disabled="false"
   class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_userSelect_none__3xgq1lg6 useBoxStyles_border_style__3xgq1l9k useBoxStyles_border_colour_top_gray__3xgq1l9m useBoxStyles_border_colour_right_gray__3xgq1l9y useBoxStyles_border_colour_bottom_gray__3xgq1laa useBoxStyles_border_colour_left_gray__3xgq1lam useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lax useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbd useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l90 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp Stepper_root__10wm9ba1 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 Stepper_width_default__10wm9ba3"

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<HorizontalAutoScroller /> should match the snapshot for 8 items 1`] = `
+exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] = `
 <div
   class="reset_block__1oah0223"
 >
@@ -300,7 +300,7 @@ exports[`<HorizontalAutoScroller /> should match the snapshot for 8 items 1`] = 
 </div>
 `;
 
-exports[`<HorizontalAutoScroller /> should match the snapshot with custom slider colour 1`] = `
+exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slider colour 1`] = `
 <div
   class="reset_block__1oah0223"
 >

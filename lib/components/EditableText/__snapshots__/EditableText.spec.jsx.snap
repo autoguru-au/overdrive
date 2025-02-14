@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<EditableText /> should match snapshot as date input 1`] = `
+exports[`<EditableText /> > should match snapshot as date input 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_display_inlineBlock__3xgq1lg2 useBoxStyles_position_relative__3xgq1lfo EditableText_root__1iskjcs0"
   tabindex="0"
@@ -13,7 +13,7 @@ exports[`<EditableText /> should match snapshot as date input 1`] = `
 </div>
 `;
 
-exports[`<EditableText /> should match snapshot for default bullet text 1`] = `
+exports[`<EditableText /> > should match snapshot for default bullet text 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_display_inlineBlock__3xgq1lg2 useBoxStyles_position_relative__3xgq1lfo EditableText_root__1iskjcs0"
   tabindex="0"
@@ -26,7 +26,7 @@ exports[`<EditableText /> should match snapshot for default bullet text 1`] = `
 </div>
 `;
 
-exports[`<EditableText /> should match snapshot with custom size 1`] = `
+exports[`<EditableText /> > should match snapshot with custom size 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_display_inlineBlock__3xgq1lg2 useBoxStyles_position_relative__3xgq1lfo EditableText_root__1iskjcs0"
   tabindex="0"

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<Alert /> should match the snapshot 1`] = `
+exports[`<Alert /> > should match the snapshot 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_height_full__3xgq1lfl useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_backgroundColours_success__3xgq1lf7 IntentStripe_intentBox__1n5wa370"
 />

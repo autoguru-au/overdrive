@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<Inline /> should match snapshot for custom element dividers 1`] = `
+exports[`<Inline /> > should match snapshot for custom element dividers 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_wrap__3xgq1lhe useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4"
 >
@@ -48,7 +48,7 @@ exports[`<Inline /> should match snapshot for custom element dividers 1`] = `
 </div>
 `;
 
-exports[`<Inline /> should match snapshot for default dividers 1`] = `
+exports[`<Inline /> > should match snapshot for default dividers 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_wrap__3xgq1lhe useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4"
 >
@@ -100,7 +100,7 @@ exports[`<Inline /> should match snapshot for default dividers 1`] = `
 </div>
 `;
 
-exports[`<Inline /> should match snapshot for no dividers 1`] = `
+exports[`<Inline /> > should match snapshot for no dividers 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_wrap__3xgq1lhe useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm24"
 >
@@ -134,7 +134,7 @@ exports[`<Inline /> should match snapshot for no dividers 1`] = `
 </div>
 `;
 
-exports[`<Inline /> should not be able to render components 1`] = `
+exports[`<Inline /> > should not be able to render components 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_wrap__3xgq1lhe useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4"
 >

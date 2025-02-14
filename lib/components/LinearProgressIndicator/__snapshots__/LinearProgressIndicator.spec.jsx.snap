@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<LinearProgressIndicator /> should match snapshot 1`] = `
+exports[`<LinearProgressIndicator /> > should match snapshot 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_overflow_hidden__3xgq1lfs useBoxStyles_backgroundColours_gray200__3xgq1ldr LinearProgressIndicator_root__1gh10pc0"
 >
