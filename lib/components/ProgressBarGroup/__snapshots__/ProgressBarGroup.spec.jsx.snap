@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<ProgressBarGroup /> should match the snapshot 1`] = `
+exports[`<ProgressBarGroup /> > should match the snapshot 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn ProgressBarGroup_root__1e1wroi0"
   style="grid-template-columns: 1fr;"
@@ -50,7 +50,7 @@ exports[`<ProgressBarGroup /> should match the snapshot 1`] = `
 </div>
 `;
 
-exports[`<ProgressBarGroup /> should should ignore extra labels 1`] = `
+exports[`<ProgressBarGroup /> > should should ignore extra labels 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn ProgressBarGroup_root__1e1wroi0"
   style="grid-template-columns: auto 1fr;"
@@ -106,7 +106,7 @@ exports[`<ProgressBarGroup /> should should ignore extra labels 1`] = `
 </div>
 `;
 
-exports[`<ProgressBarGroup /> should should ignore not break when not enough labels 1`] = `
+exports[`<ProgressBarGroup /> > should should ignore not break when not enough labels 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn ProgressBarGroup_root__1e1wroi0"
   style="grid-template-columns: auto 1fr;"
@@ -158,7 +158,7 @@ exports[`<ProgressBarGroup /> should should ignore not break when not enough lab
 </div>
 `;
 
-exports[`<ProgressBarGroup /> should should render a prefix for every value 1`] = `
+exports[`<ProgressBarGroup /> > should should render a prefix for every value 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn ProgressBarGroup_root__1e1wroi0"
   style="grid-template-columns: auto 1fr;"

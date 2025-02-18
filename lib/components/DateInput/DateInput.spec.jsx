@@ -190,7 +190,7 @@ describe('<DateInput />', () => {
 	});
 
 	it('should fire onFocus event', () => {
-		const spyedCallback = jest.fn();
+		const spyedCallback = vi.fn();
 
 		const { container } = render(
 			<DateInput
@@ -206,7 +206,7 @@ describe('<DateInput />', () => {
 	});
 
 	it('should fire onBlur event', () => {
-		const spyedCallback = jest.fn();
+		const spyedCallback = vi.fn();
 
 		const { container } = render(
 			<DateInput
@@ -222,7 +222,7 @@ describe('<DateInput />', () => {
 	});
 
 	it('should fire onChange event', () => {
-		const spyedCallback = jest.fn();
+		const spyedCallback = vi.fn();
 
 		const { container } = render(
 			<DateInput

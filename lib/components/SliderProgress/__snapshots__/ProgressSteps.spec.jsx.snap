@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<ProgressStep /> should match the snapshot for 8 items 1`] = `
+exports[`<ProgressStep /> > should match the snapshot for 8 items 1`] = `
 <div
   class="SliderProgress_root__17uw35s0"
   style="grid-template-columns: repeat(8, 1fr);"
@@ -96,7 +96,7 @@ exports[`<ProgressStep /> should match the snapshot for 8 items 1`] = `
 </div>
 `;
 
-exports[`<ProgressStep /> should match the snapshot with custom background 1`] = `
+exports[`<ProgressStep /> > should match the snapshot with custom background 1`] = `
 <div
   class="SliderProgress_root__17uw35s0"
   style="grid-template-columns: repeat(3, 1fr);"

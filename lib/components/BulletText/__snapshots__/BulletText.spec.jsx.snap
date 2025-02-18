@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<BulletText /> should match snapshot for custom bullet text 1`] = `
+exports[`<BulletText /> > should match snapshot for custom bullet text 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw8 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm28"
 >
@@ -46,7 +46,7 @@ exports[`<BulletText /> should match snapshot for custom bullet text 1`] = `
 </div>
 `;
 
-exports[`<BulletText /> should match snapshot for default bullet text 1`] = `
+exports[`<BulletText /> > should match snapshot for default bullet text 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw8 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm28"
 >
@@ -79,7 +79,7 @@ exports[`<BulletText /> should match snapshot for default bullet text 1`] = `
 </div>
 `;
 
-exports[`<BulletText /> should match snapshot for ordered bullet text 1`] = `
+exports[`<BulletText /> > should match snapshot for ordered bullet text 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw8 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm28"
 >
@@ -112,7 +112,7 @@ exports[`<BulletText /> should match snapshot for ordered bullet text 1`] = `
 </div>
 `;
 
-exports[`<BulletText /> should match snapshot for primary bullet text with custom bullet character 1`] = `
+exports[`<BulletText /> > should match snapshot for primary bullet text with custom bullet character 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw8 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm28"
 >
@@ -145,7 +145,7 @@ exports[`<BulletText /> should match snapshot for primary bullet text with custo
 </div>
 `;
 
-exports[`<BulletText /> should match snapshot for secondary bullet text with custom bullet character 1`] = `
+exports[`<BulletText /> > should match snapshot for secondary bullet text with custom bullet character 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw8 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm28"
 >

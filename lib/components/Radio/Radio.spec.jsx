@@ -83,7 +83,7 @@ describe('<RadioButton />', () => {
 		});
 
 		it('should select the radio after it has been clicked', () => {
-			const spyedCallback = jest.fn();
+			const spyedCallback = vi.fn();
 
 			const { container } = renderRadioGroup('1', spyedCallback);
 
@@ -105,7 +105,7 @@ describe('<RadioButton />', () => {
 		});
 
 		it('should call the onClick function passed down to the radio button when it has been clicked', () => {
-			const spyedChangeCallback = jest.fn();
+			const spyedChangeCallback = vi.fn();
 
 			const { container } = renderRadioGroup('2', spyedChangeCallback);
 

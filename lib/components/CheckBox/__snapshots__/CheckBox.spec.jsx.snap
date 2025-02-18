@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
+exports[`<CheckBox /> > should match the snapshot for a checked check 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg CheckableBase_root__y94qv0 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226"
 >
@@ -46,7 +46,7 @@ exports[`<CheckBox /> should match the snapshot for a checked check 1`] = `
 </div>
 `;
 
-exports[`<CheckBox /> should match the snapshot for a disable checkbox 1`] = `
+exports[`<CheckBox /> > should match the snapshot for a disable checkbox 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg CheckableBase_root__y94qv0 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 CheckableBase_disabled__y94qv6"
 >
@@ -77,7 +77,7 @@ exports[`<CheckBox /> should match the snapshot for a disable checkbox 1`] = `
 </div>
 `;
 
-exports[`<CheckBox /> should match the snapshot for a single check 1`] = `
+exports[`<CheckBox /> > should match the snapshot for a single check 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg CheckableBase_root__y94qv0 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226"
 >
@@ -106,7 +106,7 @@ exports[`<CheckBox /> should match the snapshot for a single check 1`] = `
 </div>
 `;
 
-exports[`<CheckBox /> should match the snapshot for a single check with no value or label 1`] = `
+exports[`<CheckBox /> > should match the snapshot for a single check with no value or label 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg CheckableBase_root__y94qv0 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226"
 >
@@ -125,7 +125,7 @@ exports[`<CheckBox /> should match the snapshot for a single check with no value
 </div>
 `;
 
-exports[`<CheckBox /> when with component child should match the snapshot 1`] = `
+exports[`<CheckBox /> > when with component child > should match the snapshot 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg CheckableBase_root__y94qv0 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226"
 >

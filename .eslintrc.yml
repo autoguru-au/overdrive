@@ -1,8 +1,8 @@
 extends:
     - 'plugin:@autoguru/base'
     - 'plugin:@autoguru/react'
-    - 'plugin:@autoguru/jest'
     - 'plugin:@autoguru/typescript'
+    - 'plugin:@vitest/legacy-recommended'
     - 'plugin:storybook/recommended'
 
 env:

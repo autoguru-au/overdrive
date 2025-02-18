@@ -45,7 +45,7 @@ export const useOutsideClick = (
 };
 
 const bindEvent = <
-	Node extends HTMLElement | HTMLDocument,
+	Node extends HTMLElement | Document,
 	K extends keyof HTMLElementEventMap,
 >(
 	node: Node,

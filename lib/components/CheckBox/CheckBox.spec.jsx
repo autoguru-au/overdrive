@@ -42,7 +42,7 @@ describe('<CheckBox />', () => {
 	});
 
 	it('should call the onClick function passed down to it when clicked', () => {
-		const spyedClickCallback = jest.fn();
+		const spyedClickCallback = vi.fn();
 
 		const { container } = render(
 			<CheckBox
@@ -76,7 +76,7 @@ describe('<CheckBox />', () => {
 	});
 
 	it('should call the onChange function passed down to it when checked value has changes', () => {
-		const spyedChangeCallback = jest.fn();
+		const spyedChangeCallback = vi.fn();
 		const { container } = render(
 			<CheckBox
 				children="check label 1"

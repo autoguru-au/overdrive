@@ -86,7 +86,7 @@ describe('<Stepper />', () => {
 	});
 
 	it('should fire change with the correct changed value after next and previous button click', () => {
-		const spyedCallback = jest.fn((value) => `${value}%`);
+		const spyedCallback = vi.fn((value) => `${value}%`);
 
 		const { container, getByLabelText } = render(
 			<InteractiveStepper
@@ -114,7 +114,7 @@ describe('<Stepper />', () => {
 	});
 
 	it('should update its value when and a value prop comes in', () => {
-		const spyedCallback = jest.fn((value) => `$${value}`);
+		const spyedCallback = vi.fn((value) => `$${value}`);
 
 		const StepperWrapper = ({ getValueSetter }) => {
 			const [value, setValue] = useState(16);
@@ -159,7 +159,7 @@ describe('<Stepper />', () => {
 	});
 
 	it('should onChange when the value changes', () => {
-		const onChangeHandler = jest.fn();
+		const onChangeHandler = vi.fn();
 
 		const { container, getByLabelText } = render(
 			<InteractiveStepper
@@ -186,7 +186,7 @@ describe('<Stepper />', () => {
 
 	describe('when keyboard enabled', () => {
 		it('should increment when ArrowRight is activated', () => {
-			const onChangeHandler = jest.fn();
+			const onChangeHandler = vi.fn();
 
 			const { container } = render(
 				<InteractiveStepper
@@ -206,7 +206,7 @@ describe('<Stepper />', () => {
 		});
 
 		it('should decrement when ArrowLeft is activated', () => {
-			const onChangeHandler = jest.fn();
+			const onChangeHandler = vi.fn();
 
 			const { container } = render(
 				<InteractiveStepper
@@ -226,7 +226,7 @@ describe('<Stepper />', () => {
 		});
 
 		it('should have max value when End is activated', () => {
-			const onChangeHandler = jest.fn();
+			const onChangeHandler = vi.fn();
 
 			const { container } = render(
 				<InteractiveStepper
@@ -246,7 +246,7 @@ describe('<Stepper />', () => {
 		});
 
 		it('should have min value when Home is activated', () => {
-			const onChangeHandler = jest.fn();
+			const onChangeHandler = vi.fn();
 
 			const { container } = render(
 				<InteractiveStepper
@@ -268,7 +268,7 @@ describe('<Stepper />', () => {
 
 	describe('when setting a value', () => {
 		it('should clamp min to a finite negative number', () => {
-			const onChangeHandler = jest.fn();
+			const onChangeHandler = vi.fn();
 
 			const { container } = render(
 				<InteractiveStepper
@@ -289,7 +289,7 @@ describe('<Stepper />', () => {
 		});
 
 		it('should clamp max to a finite positive number', () => {
-			const onChangeHandler = jest.fn();
+			const onChangeHandler = vi.fn();
 
 			const { container } = render(
 				<InteractiveStepper

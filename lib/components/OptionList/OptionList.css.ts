@@ -1,10 +1,9 @@
 import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
-import { tokens } from 'lib/themes/base/tokens';
-
 import { focusOutline } from '../../styles/focusOutline.css';
 import { odStyle } from '../../styles/sprinkles.css';
+import { tokens } from '../../themes/base/tokens';
 
 // === Group styles
 export const styleGroup = odStyle({ marginTop: '6' });

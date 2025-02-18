@@ -10,12 +10,12 @@ describe('<Alert />', () => {
 
 	it('should match the snapshot', () => {
 		expect(
-			render(<Alert onRequestClose={jest.fn()} />).container.firstChild,
+			render(<Alert onRequestClose={vi.fn()} />).container.firstChild,
 		).toMatchSnapshot();
 	});
 
 	it('should fire callback when X is clicked', () => {
-		const closeHandler = jest.fn();
+		const closeHandler = vi.fn();
 
 		const { getByLabelText } = render(
 			<Alert onRequestClose={closeHandler} />,

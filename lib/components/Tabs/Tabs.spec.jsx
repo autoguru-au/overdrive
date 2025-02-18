@@ -126,7 +126,7 @@ describe('<Tabs />', () => {
 	});
 
 	it('should call onChange callback with correct active tab index', () => {
-		const spyedCallback = jest.fn();
+		const spyedCallback = vi.fn();
 
 		const { getAllByRole } = renderTabs(spyedCallback);
 
