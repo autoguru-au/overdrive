@@ -102,6 +102,7 @@ export const bordersAttach = {
 		},
 	}),
 };
+
 export const bordersMerged = {
 	complete: styleVariants({
 		NONE: {
@@ -139,6 +140,8 @@ export const bordersMerged = {
 	}),
 };
 
+type Size = 'small' | 'medium';
+
 export const placeholder = styleVariants({
 	default: {
 		lineHeight: 1,
@@ -151,10 +154,11 @@ export const placeholder = styleVariants({
 		color: vars.typography.colour.muted,
 	},
 });
+
 const calcPlaceholderTranslate = (
 	notched: Boolean,
 	prefixed: Boolean,
-	size: keyof typeof placeholderPlacement,
+	size: Size,
 ): string => {
 	if (notched) {
 		return `calc(${vars.space['2']} + ${vars.space['2']}), calc(-0.5 * ${active_scaling_factor} * ${vars.typography.size['4'].fontSize})`;
@@ -175,7 +179,7 @@ const calcPlaceholderTranslate = (
 			}, calc(${vars.space['2']} + 2px)`;
 };
 
-export const placeholderPlacement = {
+export const placeholderPlacement: Record<Size, Record<string, string>> = {
 	small: styleVariants({
 		default: {
 			transform: `translate(${calcPlaceholderTranslate(
