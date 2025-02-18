@@ -128,7 +128,7 @@ export const DateTimePicker = <D extends DateValue>({
 	const handleTimeChange = (keys: Selection) => {
 		if (keys === 'all') return;
 		// we expect only a single value for time picker
-		const time = keys.values().next().value;
+		const time = keys.values().next().value as string;
 		selectedTimeOption.current = time;
 		handleChange();
 	};
