@@ -1,0 +1,11 @@
+name: SonarQube Analysis
+
+on:
+  push
+
+jobs:
+  sonarqube:
+    uses: ./.github/workflows/sonarqube-typescript.yml
+    with:
+      enable_tests: true
+    secrets: inherit
