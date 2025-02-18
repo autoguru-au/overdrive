@@ -1,8 +1,8 @@
 extends:
     - 'plugin:@autoguru/base'
     - 'plugin:@autoguru/react'
-    - 'plugin:@autoguru/jest'
     - 'plugin:@autoguru/typescript'
+    - 'plugin:@vitest/legacy-recommended'
     - 'plugin:storybook/recommended'
 
 env:
@@ -13,5 +13,6 @@ env:
 rules:
     sonarjs/cognitive-complexity: warn
     sonarjs/no-nested-switch: off
+    unicorn/prefer-global-this: warn
     '@typescript-eslint/no-unused-vars': warn
     '@typescript-eslint/no-unnecessary-type-constraint': warn

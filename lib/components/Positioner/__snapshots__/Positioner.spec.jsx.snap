@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<Positioner /> should match snapshot 1`] = `
+exports[`<Positioner /> > should match snapshot 1`] = `
 <body
   class="vars_OD_Base__1f5yyro0"
 >

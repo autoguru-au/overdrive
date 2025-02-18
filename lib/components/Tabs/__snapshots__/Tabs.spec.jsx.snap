@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<Tabs /> should allow id overriding 1`] = `
+exports[`<Tabs /> > should allow id overriding 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_overflow_hidden__3xgq1lfs useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn TabList_root_default__1cu98lp0"
 >
@@ -55,7 +55,7 @@ exports[`<Tabs /> should allow id overriding 1`] = `
 </div>
 `;
 
-exports[`<Tabs /> should allow rendering indications 1`] = `
+exports[`<Tabs /> > should allow rendering indications 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_overflow_hidden__3xgq1lfs useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn TabList_root_default__1cu98lp0"
 >
@@ -161,7 +161,7 @@ exports[`<Tabs /> should allow rendering indications 1`] = `
 </div>
 `;
 
-exports[`<Tabs /> should match snapshot (high level) 1`] = `
+exports[`<Tabs /> > should match snapshot (high level) 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_overflow_hidden__3xgq1lfs useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn TabList_root_default__1cu98lp0"
 >

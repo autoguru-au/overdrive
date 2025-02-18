@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot for a checked radio 1`] = `
+exports[`<RadioButton /> > when nested in a RadioGroup > should match the snapshot for a checked radio 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh3"
 >
@@ -65,7 +65,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
 </div>
 `;
 
-exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot for a group of radios 1`] = `
+exports[`<RadioButton /> > when nested in a RadioGroup > should match the snapshot for a group of radios 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh3"
 >
@@ -189,7 +189,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
 </div>
 `;
 
-exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot for a single radio 1`] = `
+exports[`<RadioButton /> > when nested in a RadioGroup > should match the snapshot for a single radio 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh3"
 >
@@ -225,7 +225,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
 </div>
 `;
 
-exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot for a single radio with no value or label 1`] = `
+exports[`<RadioButton /> > when nested in a RadioGroup > should match the snapshot for a single radio with no value or label 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh3"
 >
@@ -252,7 +252,7 @@ exports[`<RadioButton /> when nested in a RadioGroup should match the snapshot f
 </div>
 `;
 
-exports[`<RadioButton /> when with component child should match the snapshot 1`] = `
+exports[`<RadioButton /> > when with component child > should match the snapshot 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh3"
 >
@@ -288,7 +288,7 @@ exports[`<RadioButton /> when with component child should match the snapshot 1`]
 </div>
 `;
 
-exports[`<RadioButton /> when with component child should render the component child 1`] = `
+exports[`<RadioButton /> > when with component child > should render the component child 1`] = `
 <h1
   class="reset_blockText__1oah022c useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_8__1xnpmd78"
 >

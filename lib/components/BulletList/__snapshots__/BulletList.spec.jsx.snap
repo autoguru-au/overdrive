@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<BulletList /> should match the snapshot 1`] = `
+exports[`<BulletList /> > should match the snapshot 1`] = `
 <ul
   class="reset_list__1oah0224 BulletList_root__4koeg0 BulletList_firstOccurrence__4koeg1"
 />

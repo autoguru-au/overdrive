@@ -1,6 +1,5 @@
-import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 
 import { Box } from '../Box';
 import { Heading } from '../Heading';
@@ -14,33 +13,35 @@ export default {
 	component: ScrollPane,
 } satisfies Meta<typeof ScrollPane>;
 
-type Props = ComponentProps<typeof ScrollPane>;
-const Template: StoryFn<typeof ScrollPane> = (args) => (
-	<ScrollPane style={{ maxHeight: '300px' }} {...args}>
-		<StickyBox width="full">
-			<Box
-				matginTop="8"
-				padding="3"
-				width="full"
-				backgroundColour="yellow700"
-				borderRadius="1"
-				overflow="hidden"
-			>
-				<Heading is="h2" align="center" colour="white">
-					I'm a sticky header
-				</Heading>
-			</Box>
-		</StickyBox>
-		<Box padding="5" width="full" style={{ minHeight: '300vh' }}>
-			{Array.from({ length: 100 }).map((_, i) => (
-				<Text key={i} is="p">
-					I am page content {i + 1}
-				</Text>
-			))}
-		</Box>
-	</ScrollPane>
-);
+type Story = StoryObj<typeof ScrollPane>;
 
-const standardProps: Props = {};
-export const Standard = Template.bind(standardProps);
-Standard.args = standardProps;
+export const Standard: Story = {
+	args: {
+		style: { maxHeight: '300px' },
+		children: (
+			<>
+				<StickyBox width="full">
+					<Box
+						marginTop="8"
+						padding="3"
+						width="full"
+						backgroundColour="yellow700"
+						borderRadius="1"
+						overflow="hidden"
+					>
+						<Heading is="h2" align="center" colour="white">
+							I'm a sticky header
+						</Heading>
+					</Box>
+				</StickyBox>
+				<Box padding="5" width="full" style={{ minHeight: '300vh' }}>
+					{Array.from({ length: 100 }).map((_, i) => (
+						<Text key={i} is="p">
+							I am page content {i + 1}
+						</Text>
+					))}
+				</Box>
+			</>
+		),
+	},
+};

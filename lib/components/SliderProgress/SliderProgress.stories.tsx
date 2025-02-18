@@ -1,54 +1,52 @@
 import { action } from '@storybook/addon-actions';
-import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 
 import { Box } from '../Box';
 import { boxArgTypes } from '../Box/argTypes';
 
 import { SliderProgress } from '.';
 
-export default {
+const meta = {
 	title: 'Components/Progress/Slider Progress',
 	component: SliderProgress,
 	argTypes: {
 		backgroundColour: boxArgTypes.backgroundColour,
 	},
+	decorators: [
+		(Story) => (
+			<Box paddingY="8" paddingX="3" backgroundColour="gray800">
+				<Story />
+			</Box>
+		),
+	],
 } satisfies Meta<typeof SliderProgress>;
 
-const template: StoryFn<typeof SliderProgress> = (args) => (
-	<Box paddingY="8" paddingX="3" backgroundColour="gray800">
-		<SliderProgress {...args} />
-	</Box>
-);
+export default meta;
 
-const standardProps: Omit<ComponentProps<typeof SliderProgress>, 'children'> = {
-	paused: false,
-	totalCount: 3,
-	activeIndex: 1,
-	duration: '1s',
-	onRequestNext: () => action('onRequestNext'),
-};
-export const standard = template.bind(standardProps);
-standard.args = standardProps;
+type Story = StoryObj<typeof SliderProgress>;
 
-const withBackgroundColourProps: Omit<
-	ComponentProps<typeof SliderProgress>,
-	'children'
-> = {
-	...standardProps,
-	backgroundColour: 'yellow500',
+export const Standard: Story = {
+	args: {
+		paused: false,
+		totalCount: 3,
+		activeIndex: 1,
+		duration: '1s',
+		onRequestNext: () => action('onRequestNext'),
+	},
 };
-export const withBackgroundColour = template.bind(withBackgroundColourProps);
-withBackgroundColour.args = withBackgroundColourProps;
 
-const withManySlidesProps: Omit<
-	ComponentProps<typeof SliderProgress>,
-	'children'
-> = {
-	...standardProps,
-	activeIndex: 5,
-	totalCount: 20,
+export const WithBackgroundColour: Story = {
+	args: {
+		...Standard.args,
+		backgroundColour: 'yellow500',
+	},
 };
-export const withManySlides = template.bind(withManySlidesProps);
-withManySlides.args = withManySlidesProps;
+
+export const WithManySlides: Story = {
+	args: {
+		...Standard.args,
+		activeIndex: 5,
+		totalCount: 20,
+	},
+};

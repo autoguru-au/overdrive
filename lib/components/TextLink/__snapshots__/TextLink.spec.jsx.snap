@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<TextLink /> should allow as override 1`] = `
+exports[`<TextLink /> > should allow as override 1`] = `
 <a
   class="reset_cursorPointer__1oah0221 reset_a__1oah0229 TextLink_root__5ax1bk0"
   rel="noopener noreferrer"
@@ -13,7 +13,7 @@ exports[`<TextLink /> should allow as override 1`] = `
 </a>
 `;
 
-exports[`<TextLink /> should match the snapshot 1`] = `
+exports[`<TextLink /> > should match the snapshot 1`] = `
 <a
   class="reset_cursorPointer__1oah0221 reset_a__1oah0229 TextLink_root__5ax1bk0"
   rel="noopener noreferrer"

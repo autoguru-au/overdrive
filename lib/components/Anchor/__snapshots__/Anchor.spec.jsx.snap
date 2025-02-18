@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<Anchor /> should match snapshot with label, icon and to props 1`] = `
+exports[`<Anchor /> > should match snapshot with label, icon and to props 1`] = `
 <a
   class="Anchor_root__um22v0 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_link__1xnpmd7e reset_cursorPointer__1oah0221 reset_a__1oah0229 useBoxStyles_display_inline__3xgq1lg1"
   href="https://www.autoguru.com.au"
@@ -39,7 +39,7 @@ exports[`<Anchor /> should match snapshot with label, icon and to props 1`] = `
 </a>
 `;
 
-exports[`<Anchor /> should match snapshot without label 1`] = `
+exports[`<Anchor /> > should match snapshot without label 1`] = `
 <a
   class="Anchor_root__um22v0 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_link__1xnpmd7e reset_cursorPointer__1oah0221 reset_a__1oah0229 useBoxStyles_display_inline__3xgq1lg1"
 >
@@ -49,7 +49,7 @@ exports[`<Anchor /> should match snapshot without label 1`] = `
 </a>
 `;
 
-exports[`<Anchor /> when custom component should match snapshot with label, icon custom component 1`] = `
+exports[`<Anchor /> > when custom component > should match snapshot with label, icon custom component 1`] = `
 <button
   class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_inlineBlock__3xgq1lg2 useBoxStyles_overflow_hidden__3xgq1lfs useBoxStyles_textAlign_center__3xgq1lfq useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lb9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc5 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_root__p2yon50 Button_defaultStates_secondary__p2yon5m Button_variant_secondary__p2yon5f Button_size_medium_default__p2yon5a Button_enabled__p2yon54 Anchor_root__um22v0 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_link__1xnpmd7e reset_block__1oah0223 useBoxStyles_display_inline__3xgq1lg1"
   type="button"

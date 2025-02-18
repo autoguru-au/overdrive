@@ -177,7 +177,7 @@ describe('<ColourInput />', () => {
 	});
 
 	it('should fire onFocus event', () => {
-		const spyedCallback = jest.fn();
+		const spyedCallback = vi.fn();
 
 		const { container } = render(
 			<ColourInput
@@ -193,7 +193,7 @@ describe('<ColourInput />', () => {
 	});
 
 	it('should fire onBlur event', () => {
-		const spyedCallback = jest.fn();
+		const spyedCallback = vi.fn();
 
 		const { container } = render(
 			<ColourInput
@@ -209,7 +209,7 @@ describe('<ColourInput />', () => {
 	});
 
 	it('should fire onChange event', () => {
-		const spyedCallback = jest.fn();
+		const spyedCallback = vi.fn();
 
 		const { container } = render(
 			<ColourInput

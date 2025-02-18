@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<Switch /> should match snapshot when toggled 1`] = `
+exports[`<Switch /> > should match snapshot when toggled 1`] = `
 <label>
   <div
     class="reset_block__1oah0223 VisuallyHidden_visuallyHidden__12d73qi0"
@@ -23,7 +23,7 @@ exports[`<Switch /> should match snapshot when toggled 1`] = `
 </label>
 `;
 
-exports[`<Switch /> should match snapshot when toggled and disabled 1`] = `
+exports[`<Switch /> > should match snapshot when toggled and disabled 1`] = `
 <label>
   <div
     class="reset_block__1oah0223 VisuallyHidden_visuallyHidden__12d73qi0"
@@ -48,7 +48,7 @@ exports[`<Switch /> should match snapshot when toggled and disabled 1`] = `
 </label>
 `;
 
-exports[`<Switch /> should match snapshot when un-toggled 1`] = `
+exports[`<Switch /> > should match snapshot when un-toggled 1`] = `
 <label>
   <div
     class="reset_block__1oah0223 VisuallyHidden_visuallyHidden__12d73qi0"
@@ -70,7 +70,7 @@ exports[`<Switch /> should match snapshot when un-toggled 1`] = `
 </label>
 `;
 
-exports[`<Switch /> should match snapshot when un-toggled and disabled 1`] = `
+exports[`<Switch /> > should match snapshot when un-toggled and disabled 1`] = `
 <label>
   <div
     class="reset_block__1oah0223 VisuallyHidden_visuallyHidden__12d73qi0"
@@ -94,7 +94,7 @@ exports[`<Switch /> should match snapshot when un-toggled and disabled 1`] = `
 </label>
 `;
 
-exports[`<Switch /> should match snapshot without props 1`] = `
+exports[`<Switch /> > should match snapshot without props 1`] = `
 <label>
   <div
     class="reset_block__1oah0223 VisuallyHidden_visuallyHidden__12d73qi0"

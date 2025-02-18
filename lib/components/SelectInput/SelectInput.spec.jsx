@@ -158,7 +158,7 @@ describe('<SelectInput />', () => {
 	});
 
 	it('should fire onFocus event', () => {
-		const spyedCallback = jest.fn();
+		const spyedCallback = vi.fn();
 
 		const { container } = render(
 			<SelectInput placeholder="Hello World!" onFocus={spyedCallback}>
@@ -174,7 +174,7 @@ describe('<SelectInput />', () => {
 	});
 
 	it('should fire onBlur event', () => {
-		const spyedCallback = jest.fn();
+		const spyedCallback = vi.fn();
 
 		const { container } = render(
 			<SelectInput placeholder="Hello World!" onBlur={spyedCallback}>
@@ -190,7 +190,7 @@ describe('<SelectInput />', () => {
 	});
 
 	it('should fire onChange event', () => {
-		const spyedCallback = jest.fn();
+		const spyedCallback = vi.fn();
 
 		const { container } = render(
 			<SelectInput placeholder="Hello World!" onChange={spyedCallback}>

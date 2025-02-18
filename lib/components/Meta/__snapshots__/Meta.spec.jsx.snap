@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<Meta /> should match snapshot with label, icon for Primary variant 1`] = `
+exports[`<Meta /> > should match snapshot with label, icon for Primary variant 1`] = `
 <span
   class="reset_inlineText__1oah0222 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm24"
 >
@@ -34,7 +34,7 @@ exports[`<Meta /> should match snapshot with label, icon for Primary variant 1`]
 </span>
 `;
 
-exports[`<Meta /> should match snapshot with label, icon for Secondary variant 1`] = `
+exports[`<Meta /> > should match snapshot with label, icon for Secondary variant 1`] = `
 <span
   class="reset_inlineText__1oah0222 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm24"
 >

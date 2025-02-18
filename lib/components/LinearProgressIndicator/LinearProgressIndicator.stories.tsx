@@ -1,4 +1,4 @@
-import { Meta, StoryFn } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
 import { LinearProgressIndicator } from '.';
@@ -16,4 +16,6 @@ export default {
 	},
 } satisfies Meta<typeof LinearProgressIndicator>;
 
-export const standard = {};
+type Story = StoryObj<typeof LinearProgressIndicator>;
+
+export const Standard: Story = {};

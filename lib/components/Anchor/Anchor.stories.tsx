@@ -11,9 +11,7 @@ import {
 	PlusIcon,
 	StarIcon,
 } from '@autoguru/icons';
-import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '../Button';
 
@@ -32,10 +30,9 @@ const iconOptions = {
 	CheckIcon,
 };
 
-export default {
+const meta = {
 	title: 'Primatives/Anchor',
 	component: Anchor,
-	decorators: [],
 	argTypes: {
 		icon: {
 			defaultValue: void 0,
@@ -59,26 +56,26 @@ export default {
 	},
 } satisfies Meta<typeof Anchor>;
 
-const Template: StoryFn<typeof Anchor> = (args) => <Anchor {...args} />;
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-const standardProps: ComponentProps<typeof Anchor> = {
-	href: 'tel:07 5612 5347',
-	children: '07 5612 5347',
+export const Standard: Story = {
+	args: {
+		href: 'tel:07 5612 5347',
+		children: '07 5612 5347',
+	},
 };
 
-export const Standard = Template.bind(standardProps);
-Standard.args = standardProps;
-
-const withIconProps: typeof standardProps = {
-	...standardProps,
-	icon: PhoneIcon,
+export const WithIcon: Story = {
+	args: {
+		...Standard.args,
+		icon: PhoneIcon,
+	},
 };
-export const WithIcon = Template.bind(withIconProps);
-WithIcon.args = withIconProps;
 
-const withButtonProps: ComponentProps<typeof Anchor> = {
-	...withIconProps,
-	is: Button,
+export const WithButton: Story = {
+	args: {
+		...WithIcon.args,
+		is: Button,
+	},
 };
-export const WithButton = Template.bind(withButtonProps);
-WithButton.args = withButtonProps;

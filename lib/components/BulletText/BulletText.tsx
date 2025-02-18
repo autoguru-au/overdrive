@@ -8,7 +8,7 @@ import { Text } from '../Text';
 
 import * as styles from './BulletText.css';
 
-export interface Props extends Partial<Pick<BoxStyleProps, 'is'>> {
+export interface Props extends Partial<Pick<BoxStyleProps, 'as' | 'is'>> {
 	bullet?: ReactNode;
 	variant?: 'primary' | 'secondary';
 	children?: ReactNode;
@@ -17,7 +17,8 @@ export interface Props extends Partial<Pick<BoxStyleProps, 'is'>> {
 export const BulletText: FunctionComponent<Props> = ({
 	variant = 'primary',
 	children,
-	is: Component = 'div',
+	as = 'div',
+	is: Component = as,
 	bullet: Bullet = '•',
 }) => (
 	<Inline noWrap space="3" is={Component} alignX="flexStart" alignY="center">

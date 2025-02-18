@@ -26,7 +26,7 @@ describe('<StandardModal />', () => {
 	});
 
 	it('should call the onRequestClose callback when modals close button is clicked', () => {
-		const mockCloseReq = jest.fn();
+		const mockCloseReq = vi.fn();
 
 		const { getByLabelText } = render(
 			<StandardModal

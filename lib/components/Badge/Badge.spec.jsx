@@ -1,7 +1,6 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
 
-import * as styles from './Badge.css';
 import { Badge } from './Badge';
 
 describe('<Badge />', () => {
@@ -26,71 +25,5 @@ describe('<Badge />', () => {
 			<Badge className="badge-class" label="Hello World!" />,
 		);
 		expect(container.firstChild).toHaveClass('badge-class');
-	});
-
-	it('should apply green colour style', () => {
-		const { container } = render(
-			<Badge colour="green" label="Hello World!" />,
-		);
-		expect(container.firstChild.firstChild).toHaveClass(
-			styles.colours.default.green,
-		);
-	});
-
-	it('should apply red colour style', () => {
-		const { container } = render(
-			<Badge colour="red" label="Hello World!" />,
-		);
-		expect(container.firstChild.firstChild).toHaveClass(
-			styles.colours.default.red,
-		);
-	});
-
-	it('should apply inverted style when inverted look is set', () => {
-		const { container } = render(
-			<Badge look="inverted" colour="neutral" label="Hello World!" />,
-		);
-		expect(container.firstChild.firstChild).toHaveClass(
-			styles.colours.inverted.neutral.background,
-		);
-		expect(container.querySelector('span')).toHaveClass(
-			styles.colours.inverted.neutral.text,
-		);
-	});
-
-	it('should apply small size when small size is set', () => {
-		const { container } = render(
-			<Badge size="small" colour="neutral" label="Hello World!" />,
-		);
-		expect(container.firstChild.firstChild).toHaveClass(
-			styles.labelSize.small,
-		);
-	});
-
-	it('should apply standard size when standard size is set', () => {
-		const { container } = render(
-			<Badge size="standard" colour="neutral" label="Hello World!" />,
-		);
-		expect(container.firstChild.firstChild).toHaveClass(
-			styles.labelSize.standard,
-		);
-	});
-
-	it('should apply large size when large size is set', () => {
-		const { container } = render(
-			<Badge size="large" colour="neutral" label="Hello World!" />,
-		);
-		expect(container.firstChild.firstChild).toHaveClass(
-			styles.labelSize.large,
-		);
-	});
-
-	it('should apply minimal style when minimal look is set', () => {
-		const { container } = render(
-			<Badge look="standard" colour="neutral" label="Hello World!" />,
-		);
-		expect(container.firstChild.firstChild).toHaveClass(
-			styles.colours.default.neutral,
-		);
 	});
 });

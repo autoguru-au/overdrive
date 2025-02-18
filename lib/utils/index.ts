@@ -7,7 +7,7 @@ import {
 	useState,
 } from 'react';
 
-export const isBrowser = typeof globalThis !== 'undefined';
+export const isBrowser = typeof window !== 'undefined';
 
 export const isomorphicLayoutEffect = isBrowser ? useLayoutEffect : useEffect;
 
@@ -100,8 +100,8 @@ export function mergeRefs<T>(
 	};
 }
 
-export const isHtmlElement = (element: any): element is Element =>
-	element instanceof Element || element instanceof HTMLDocument;
+export const isHtmlElement = (element: unknown): element is Element =>
+	element instanceof Element || element instanceof Document;
 
 export const hex2rgba = (c, alpha = '1') =>
 	`rgb(${c
@@ -114,8 +114,7 @@ export const ownerDocument = (node?: Node): Document =>
 	node?.ownerDocument || document;
 
 export const ownerWindow = (node?: Node): Window =>
-	// @ts-expect-error Property 'name' is missing in type 'typeof globalThis' but required in type 'Window'
-	ownerDocument(node)?.defaultView || globalThis;
+	ownerDocument(node)?.defaultView || window;
 
 /**
  * A method to be used when dealing with callbacks that depend on data, but you don't want to trigger re-renders.

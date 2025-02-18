@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<Stack /> should correctly handle fragment nodes 1`] = `
+exports[`<Stack /> > should correctly handle fragment nodes 1`] = `
 <div
   class="reset_block__1oah0223"
 >
@@ -34,4 +34,4 @@ exports[`<Stack /> should correctly handle fragment nodes 1`] = `
 </div>
 `;
 
-exports[`<Stack /> should match the snapshot 1`] = `null`;
+exports[`<Stack /> > should match the snapshot 1`] = `null`;

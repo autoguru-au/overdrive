@@ -1,6 +1,5 @@
-import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
+import React, { type ComponentProps } from 'react';
 
 import { Box } from '../Box';
 import { boxArgTypes } from '../Box/argTypes';
@@ -15,14 +14,9 @@ export default {
 	},
 } satisfies Meta<typeof Section>;
 
-const template: StoryFn<typeof Section> = (args) => (
-	<Section {...args}>
-		<Box {...boxPropsProps}>Box 1</Box>
-		<Box {...boxPropsProps}>Box 2</Box>
-	</Section>
-);
+type Story = StoryObj<typeof Section>;
 
-const boxPropsProps: ComponentProps<typeof Box> = {
+const boxProps: ComponentProps<typeof Box> = {
 	width: 'full',
 	borderColour: 'dark',
 	borderWidth: ['none', 'none', '1', '2'],
@@ -35,9 +29,15 @@ const boxPropsProps: ComponentProps<typeof Box> = {
 	boxShadow: ['none', '1', '2', '3'],
 };
 
-const standardProps: Omit<ComponentProps<typeof Section>, 'children'> = {
-	width: 'small',
-	paddingX: ['none', '3', '5'],
+export const Standard: Story = {
+	args: {
+		width: 'small',
+		paddingX: ['none', '3', '5'],
+		children: (
+			<>
+				<Box {...boxProps}>Box 1</Box>
+				<Box {...boxProps}>Box 2</Box>
+			</>
+		),
+	},
 };
-export const Standard = template.bind(standardProps);
-Standard.args = standardProps;

@@ -10,7 +10,7 @@ import {
 	StarIcon,
 } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import React, { type ComponentProps } from 'react';
 
 import { DateInput } from '../DateInput';
@@ -51,7 +51,7 @@ const iconOptions = {
 	CheckIcon,
 };
 
-export default {
+const meta = {
 	title: 'Forms & Input Fields/Select',
 	component: SelectInput,
 	parameters: { chromatic: {} },
@@ -72,6 +72,12 @@ export default {
 		onChange: action('onChange'),
 		onFocus: action('onFocus'),
 		onBlur: action('onBlur'),
+		children: (
+			<>
+				<option disabled>Select an option</option>
+				{selectOptions}
+			</>
+		),
 	},
 	argTypes: {
 		value: {
@@ -97,58 +103,62 @@ export default {
 	},
 } satisfies Meta<typeof SelectInput>;
 
-const Template: StoryFn<typeof SelectInput> = (args) => (
-	<SelectInput {...args}>
-		<option disabled>Select an option</option>
-		{selectOptions}
-	</SelectInput>
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Standard = Template.bind({});
-Standard.args = {
-	hintText: 'Hint Text',
+export const Standard: Story = {
+	args: {
+		hintText: 'Hint Text',
+	},
 };
 
-export const NotchDisabled = Template.bind({});
-NotchDisabled.args = {
-	placeholder: defaultPlaceholder,
-	notch: false,
+export const NotchDisabled: Story = {
+	args: {
+		placeholder: defaultPlaceholder,
+		notch: false,
+	},
 };
 
-export const WithPrefixIcon = Template.bind({});
-WithPrefixIcon.args = {
-	prefixIcon: CarIcon,
+export const WithPrefixIcon: Story = {
+	args: {
+		prefixIcon: CarIcon,
+	},
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-	value: defaultValue,
-	placeholder: defaultPlaceholder,
-	disabled: true,
+export const Disabled: Story = {
+	args: {
+		value: defaultValue,
+		placeholder: defaultPlaceholder,
+		disabled: true,
+	},
 };
 
-export const Valid = Template.bind({});
-Valid.args = {
-	value: defaultValue,
-	placeholder: defaultPlaceholder,
-	isTouched: true,
-	isValid: true,
+export const Valid: Story = {
+	args: {
+		value: defaultValue,
+		placeholder: defaultPlaceholder,
+		isTouched: true,
+		isValid: true,
+	},
 };
 
-export const Invalid = Template.bind({});
-Invalid.args = {
-	placeholder: defaultPlaceholder,
-	isTouched: true,
-	isValid: false,
-	hintText: 'Vehicle make is mandatory',
+export const Invalid: Story = {
+	args: {
+		placeholder: defaultPlaceholder,
+		isTouched: true,
+		isValid: false,
+		hintText: 'Vehicle make is mandatory',
+	},
 };
 
-export const Loading = Template.bind({});
-Loading.args = {
-	isLoading: true,
+export const Loading: Story = {
+	args: {
+		isLoading: true,
+	},
 };
 
-export const Small = Template.bind({});
-Small.args = {
-	size: 'small',
+export const Small: Story = {
+	args: {
+		size: 'small',
+	},
 };

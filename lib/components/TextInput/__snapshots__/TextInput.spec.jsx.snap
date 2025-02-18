@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<TextInput /> should have some hintText 1`] = `
+exports[`<TextInput /> > should have some hintText 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfj"
 >
@@ -53,7 +53,7 @@ exports[`<TextInput /> should have some hintText 1`] = `
 </div>
 `;
 
-exports[`<TextInput /> should match snapshot 1`] = `
+exports[`<TextInput /> > should match snapshot 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfj"
 >
@@ -101,7 +101,7 @@ exports[`<TextInput /> should match snapshot 1`] = `
 </div>
 `;
 
-exports[`<TextInput /> should match snapshot when active 1`] = `
+exports[`<TextInput /> > should match snapshot when active 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfj input-class"
 >
@@ -147,7 +147,7 @@ exports[`<TextInput /> should match snapshot when active 1`] = `
 </div>
 `;
 
-exports[`<TextInput /> should match snapshot when loading 1`] = `
+exports[`<TextInput /> > should match snapshot when loading 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfj"
 >
@@ -213,7 +213,7 @@ exports[`<TextInput /> should match snapshot when loading 1`] = `
 </div>
 `;
 
-exports[`<TextInput /> should match snapshot when touched 1`] = `
+exports[`<TextInput /> > should match snapshot when touched 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfj input-class"
 >
@@ -259,7 +259,7 @@ exports[`<TextInput /> should match snapshot when touched 1`] = `
 </div>
 `;
 
-exports[`<TextInput /> should match snapshot when touched and invalid 1`] = `
+exports[`<TextInput /> > should match snapshot when touched and invalid 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfj input-class"
 >
@@ -305,7 +305,7 @@ exports[`<TextInput /> should match snapshot when touched and invalid 1`] = `
 </div>
 `;
 
-exports[`<TextInput /> should match snapshot when touched and valid 1`] = `
+exports[`<TextInput /> > should match snapshot when touched and valid 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfj input-class"
 >
@@ -351,7 +351,7 @@ exports[`<TextInput /> should match snapshot when touched and valid 1`] = `
 </div>
 `;
 
-exports[`<TextInput /> should match snapshot with both icons 1`] = `
+exports[`<TextInput /> > should match snapshot with both icons 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfj input-class"
 >
@@ -425,7 +425,7 @@ exports[`<TextInput /> should match snapshot with both icons 1`] = `
 </div>
 `;
 
-exports[`<TextInput /> should match snapshot with prefix icon 1`] = `
+exports[`<TextInput /> > should match snapshot with prefix icon 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfj input-class"
 >
@@ -485,7 +485,7 @@ exports[`<TextInput /> should match snapshot with prefix icon 1`] = `
 </div>
 `;
 
-exports[`<TextInput /> should match snapshot with suffix icon 1`] = `
+exports[`<TextInput /> > should match snapshot with suffix icon 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfj input-class"
 >

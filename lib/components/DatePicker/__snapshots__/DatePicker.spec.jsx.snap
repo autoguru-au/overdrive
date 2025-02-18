@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<DatePicker /> should match snapshot without label 1`] = `
+exports[`<DatePicker /> > should match snapshot without label 1`] = `
 <div
   class="reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo useBoxStyles_overflow_hidden__3xgq1lfs"
 >

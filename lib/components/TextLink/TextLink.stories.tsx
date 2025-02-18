@@ -1,7 +1,6 @@
 import { ArrowRightIcon, ChevronRightIcon } from '@autoguru/icons';
-import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
+import React, { type ComponentProps } from 'react';
 
 import { Box } from '../Box';
 import { Heading } from '../Heading';
@@ -26,10 +25,11 @@ const transformOptions: Array<ComponentProps<typeof Text>['transform']> = [
 	undefined,
 ];
 
-export default {
+const meta = {
 	title: 'Primatives/Text Link',
+	component: TextLink,
 	decorators: [
-		(story) => (
+		(Story) => (
 			<div
 				style={{
 					width: '100%',
@@ -38,7 +38,7 @@ export default {
 					gridTemplateColumns: '1fr',
 				}}
 			>
-				{story()}
+				<Story />
 			</div>
 		),
 	],
@@ -94,43 +94,50 @@ export default {
 	},
 } satisfies Meta<typeof TextLink>;
 
-const Template: StoryFn<typeof TextLink> = (args) => (
-	<Box>
-		<TextLink {...args}>Hello</TextLink>
-	</Box>
-);
+export default meta;
 
-const InsideParagraphTemplate: StoryFn<typeof TextLink> = (args) => (
-	<Text is="p">
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad,{' '}
-		<TextLink {...args}>Hello</TextLink> autem consectetur consequuntur eius
-		fugiat illo ipsum nobis numquam, officiis placeat quia, quidem
-		reprehenderit rerum temporibus veniam vero.
-	</Text>
-);
+type Story = StoryObj<typeof TextLink>;
 
-const standardProps: Omit<ComponentProps<typeof TextLink>, 'children'> = {
-	muted: false,
-	size: '4',
-	align: 'left',
-	fontWeight: 'semiBold',
+export const Standard: Story = {
+	args: {
+		children: 'Hello',
+		muted: false,
+		size: '4',
+		align: 'left',
+		fontWeight: 'semiBold',
+	},
+	render: (args) => (
+		<Box>
+			<TextLink {...args} />
+		</Box>
+	),
 };
 
-export const Standard: StoryFn<typeof TextLink> = Template.bind(standardProps);
-Standard.args = standardProps;
-
-export const InsideParagraph: StoryFn<typeof TextLink> =
-	InsideParagraphTemplate.bind(standardProps);
-InsideParagraph.args = standardProps;
-
-const withIconProps: typeof standardProps = {
-	...standardProps,
-	icon: ArrowRightIcon,
+export const InsideParagraph: Story = {
+	args: {
+		...Standard.args,
+	},
+	render: (args) => (
+		<Text is="p">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad,{' '}
+			<TextLink {...args} /> autem consectetur consequuntur eius fugiat
+			illo ipsum nobis numquam, officiis placeat quia, quidem
+			reprehenderit rerum temporibus veniam vero.
+		</Text>
+	),
 };
 
-export const WithIcon = Template.bind(withIconProps);
-WithIcon.args = withIconProps;
+export const WithIcon: Story = {
+	args: {
+		...Standard.args,
+		icon: ArrowRightIcon,
+	},
+	render: Standard.render,
+};
 
-export const WithIconInsideParagraph =
-	InsideParagraphTemplate.bind(withIconProps);
-WithIconInsideParagraph.args = withIconProps;
+export const WithIconInsideParagraph: Story = {
+	args: {
+		...WithIcon.args,
+	},
+	render: InsideParagraph.render,
+};

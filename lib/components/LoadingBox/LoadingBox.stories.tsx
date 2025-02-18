@@ -1,6 +1,5 @@
-import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
-import { ComponentProps } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 
 import { boxArgTypes } from '../Box/argTypes';
 
@@ -20,20 +19,20 @@ export default {
 	argTypes: boxArgTypes,
 } satisfies Meta<typeof LoadingBox>;
 
-const Template: StoryFn<typeof LoadingBox> = (args) => <LoadingBox {...args} />;
+type Story = StoryObj<typeof LoadingBox>;
 
-const standardProps: ComponentProps<typeof LoadingBox> = {};
-export const Standard = Template.bind(standardProps);
-Standard.args = standardProps;
-
-const blinkingOffProps: ComponentProps<typeof LoadingBox> = {
-	blinking: false,
+export const Standard: Story = {
+	args: {},
 };
-export const BlinkingOff = Template.bind(blinkingOffProps);
-BlinkingOff.args = blinkingOffProps;
 
-const randomWidthProps: ComponentProps<typeof LoadingBox> = {
-	randomWidth: true,
+export const BlinkingOff: Story = {
+	args: {
+		blinking: false,
+	},
 };
-export const RandomWidth = Template.bind(randomWidthProps);
-RandomWidth.args = randomWidthProps;
+
+export const RandomWidth: Story = {
+	args: {
+		randomWidth: true,
+	},
+};

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<StarRating /> should match snapshot for small size 1`] = `
+exports[`<StarRating /> > should match snapshot for small size 1`] = `
 <div
   class="reset_block__1oah0223"
 >
@@ -129,7 +129,7 @@ exports[`<StarRating /> should match snapshot for small size 1`] = `
 </div>
 `;
 
-exports[`<StarRating /> should match snapshot with label 1`] = `
+exports[`<StarRating /> > should match snapshot with label 1`] = `
 <div
   class="reset_block__1oah0223"
 >
@@ -258,7 +258,7 @@ exports[`<StarRating /> should match snapshot with label 1`] = `
 </div>
 `;
 
-exports[`<StarRating /> should match snapshot with value 1`] = `
+exports[`<StarRating /> > should match snapshot with value 1`] = `
 <div
   class="reset_block__1oah0223"
 >
@@ -387,7 +387,7 @@ exports[`<StarRating /> should match snapshot with value 1`] = `
 </div>
 `;
 
-exports[`<StarRating /> should match snapshot without value 1`] = `
+exports[`<StarRating /> > should match snapshot without value 1`] = `
 <div
   class="reset_block__1oah0223"
 >

@@ -96,7 +96,7 @@ describe('<Pagination />', () => {
 		});
 
 		it('should fire with the correct pageNumber', () => {
-			const spyedCallback = jest.fn();
+			const spyedCallback = vi.fn();
 
 			const { getByText } = render(
 				<Pagination
