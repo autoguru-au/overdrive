@@ -55,6 +55,7 @@ export const Text: Story = {
 	},
 };
 
+// eslint-disable-next-line sonarjs/no-globals-shadowing
 export const Number: Story = {
 	...Text,
 	args: {

@@ -156,8 +156,8 @@ export const placeholder = styleVariants({
 });
 
 const calcPlaceholderTranslate = (
-	notched: Boolean,
-	prefixed: Boolean,
+	notched: boolean,
+	prefixed: boolean,
 	size: Size,
 ): string => {
 	if (notched) {
