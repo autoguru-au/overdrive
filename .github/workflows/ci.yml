@@ -47,7 +47,7 @@ jobs:
               run: yarn lint
 
             - name: Test
-              run: yarn test --run --coverage
+              run: yarn test:ci
 
             - uses: codecov/codecov-action@v5
               with:
