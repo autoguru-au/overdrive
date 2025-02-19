@@ -1,7 +1,7 @@
 {
 	"extends": "@autoguru/tsconfig/web",
 	"include": ["lib"],
-	"exclude": ["./**/*stories*.tsx", ".dist/**/*.*"],
+	"exclude": [".dist/**/*.*"],
 	"compilerOptions": {
 		"baseUrl": "./lib",
 		"outDir": "./dist/",
