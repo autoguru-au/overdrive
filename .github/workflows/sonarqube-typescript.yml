@@ -63,7 +63,7 @@ jobs:
       - name: Run Tests with Coverage
         if: inputs.enable_tests == true
         run: |
-          if yarn test:ci; then
+          if yarn test --no-cache --coverage; then
             echo "TESTS_PASSED=true" >> $GITHUB_ENV
           else
             echo "Tests failed, skipping coverage..."
