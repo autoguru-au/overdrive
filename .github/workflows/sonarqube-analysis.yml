@@ -1,6 +1,9 @@
 name: SonarQube Analysis
 
-on: push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   sonarqube:
