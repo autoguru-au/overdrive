@@ -4,7 +4,7 @@ on: push
 
 jobs:
   sonarqube:
-    uses: ./.github/workflows/sonarqube-typescript.yml
+    uses: autoguru-au/devsecops/.github/workflows/sonarqube-typescript.yml@develop
     with:
       enable_tests: true
     secrets: inherit
