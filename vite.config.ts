@@ -14,6 +14,8 @@ export default defineConfig({
 				'!**/*.css.ts',
 			],
 			exclude: [...configDefaults.exclude],
+			reporter: ['text', 'lcov'],
+			reportsDirectory: 'coverage',
 		},
 		setupFiles: ['./lib/test/vitest-setup.ts'],
 	},

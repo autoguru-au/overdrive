@@ -1,0 +1,13 @@
+name: SonarQube Analysis
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sonarqube:
+    uses: autoguru-au/devsecops/.github/workflows/sonarqube-typescript.yml@develop
+    with:
+      enable_tests: true
+    secrets: inherit
