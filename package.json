@@ -46,7 +46,6 @@
 		"storybook": "storybook dev -p 6006",
 		"storybook:build": "storybook build",
 		"test": "vitest",
-		"test:ci": "yarn test --run --coverage",
 		"typeEmit": "tsc -d --declarationDir dist --emitDeclarationOnly",
 		"watch": "tsc --watch"
 	},
