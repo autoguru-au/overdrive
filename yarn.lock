@@ -36,8 +36,8 @@ __metadata:
   linkType: hard
 
 "@autoguru/babel-preset@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "@autoguru/babel-preset@npm:3.1.0"
+  version: 3.1.1
+  resolution: "@autoguru/babel-preset@npm:3.1.1"
   dependencies:
     "@babel/helper-annotate-as-pure": "npm:^7.22.5"
     "@babel/helper-plugin-utils": "npm:^7.24.5"
@@ -60,7 +60,7 @@ __metadata:
     babel-plugin-macros: "npm:^3.1.0"
   peerDependencies:
     "@babel/core": ^7.24.5
-  checksum: 10/54ff79443d44f5b60bd81de40c1fe7e20290591ff5e1ba75a37414588d34d41b0f5e15c41e7f91290cec5e83c037bbc971f10ae2538168286059fe421a43b901
+  checksum: 10/d42dfe4e6880e3f95652eee3e3157a3cbc41d079ce9af05699040044e64604956555f046b5f00b4db756af6a745ce69a27b1500ed082168e7cb492e783206b63
   languageName: node
   linkType: hard
 
