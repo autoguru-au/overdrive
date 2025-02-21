@@ -193,7 +193,7 @@ export const Standard: Story = {
 						<TableCell>
 							<Stack space="1">
 								<Text size="3" colour="dark">
-									Humans 'n Cars
+									Humans &apos;n Cars
 								</Text>
 								<Text size="2" colour="muted">
 									Brisbane CBD
