@@ -67,7 +67,7 @@ const argTypes: ArgTypes = {
 	attach: {
 		defaultValue: 'NONE',
 		description: 'Input attach',
-		options: attachOptions,
+		options: Object.values(attachOptions),
 		control: {
 			type: 'select',
 		},
@@ -116,7 +116,7 @@ const sharedProps: ComponentProps<typeof NumberInput> = {
 	hintText: '',
 	notch: true,
 	preventMouseWheel: true,
-	prefixIcon: null,
+	prefixIcon: undefined,
 	onChange: action('onChange'),
 	onFocus: action('onFocus'),
 	onBlur: action('onBlur'),

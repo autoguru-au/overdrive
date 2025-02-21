@@ -12,7 +12,9 @@ type Intent = ComponentProps<typeof Alert>['intent'];
 const meta = {
 	title: 'Components/Alert',
 	component: Alert,
-	args: {},
+	args: {
+		intent: 'success',
+	},
 	argTypes: {
 		intent: {
 			options: [

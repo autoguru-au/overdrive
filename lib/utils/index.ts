@@ -61,7 +61,6 @@ export const useId = (idFromProps?: string): string | null => {
 		if (id === null) {
 			setId(genId());
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	useEffect(() => {
@@ -198,5 +197,4 @@ export const arrayRingLookup = <T extends ArrayLike<unknown>>(
 	return (index) => collection[((index % len) + len) % len];
 };
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 export const noop = () => {};

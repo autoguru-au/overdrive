@@ -171,6 +171,7 @@ export const DateTimePicker = <D extends DateValue>({
 		if (state.value) {
 			selectedDate.current = state.value;
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps -- run only once
 	}, []);
 
 	// const formatter = useDateFormatter({ dateStyle: 'full' });

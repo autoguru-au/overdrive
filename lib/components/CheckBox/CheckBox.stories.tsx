@@ -47,6 +47,7 @@ export const List: Story = {
 	),
 	args: {
 		disabled: false,
+		// @ts-expect-error example values
 		avocado: true,
 		blueberries: true,
 		cherries: false,

@@ -30,7 +30,7 @@ export const Standard: Story = {
 						overflow="hidden"
 					>
 						<Heading is="h2" align="center" colour="white">
-							I'm a sticky header
+							I&apos;m a sticky header
 						</Heading>
 					</Box>
 				</StickyBox>

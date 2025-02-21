@@ -5,7 +5,7 @@ import { useImageServer } from './ImageServerProvider';
 import { ResponsiveImage } from './ResponsiveImage';
 import { SimpleImage } from './SimpleImage';
 
-interface Props extends ComponentProps<typeof ResponsiveImage> {
+export interface Props extends ComponentProps<typeof ResponsiveImage> {
 	/**
 	 * If set to true, no size/quality optimisation will be done even when `ImageServerProvider` has been defined upstream.
 	 **/

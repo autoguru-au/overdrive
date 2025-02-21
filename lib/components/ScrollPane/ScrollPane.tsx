@@ -7,7 +7,7 @@ import { Box } from '../Box';
 
 import * as styles from './ScrollPane.css';
 
-interface Props extends Omit<ComponentProps<typeof Box>, 'overflow'> {
+export interface Props extends Omit<ComponentProps<typeof Box>, 'overflow'> {
 	bottomGap?: keyof Tokens['space'];
 	serverVhFallback?: number;
 	includeMobile?: boolean;

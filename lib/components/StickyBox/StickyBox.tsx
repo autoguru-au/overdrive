@@ -6,7 +6,7 @@ import { Box } from '../Box';
 
 import * as styles from './StickyBox.css';
 
-interface Props extends ComponentProps<typeof Box> {
+export interface Props extends ComponentProps<typeof Box> {
 	top?: 'none' | '1' | '2' | '3' | '5' | '7' | 'subHeader';
 	bottom?: 'none' | '1' | '2' | '3' | 'subHeader';
 	zIndex?: 0 | 1 | 2 | 3 | 99;

@@ -16,9 +16,6 @@ type Story = StoryObj<typeof StickyBox>;
 
 export const Standard: Story = {
 	args: {
-		rounded: true,
-		includeMobile: true,
-		bottomGap: '5',
 		width: 'full',
 		backgroundColour: 'white',
 		borderColour: 'gray',

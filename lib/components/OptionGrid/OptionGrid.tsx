@@ -1,4 +1,3 @@
-/* eslint-disable unicorn/prefer-logical-operator-over-ternary */
 import { CheckIcon } from '@autoguru/icons';
 import clsx from 'clsx';
 import React from 'react';

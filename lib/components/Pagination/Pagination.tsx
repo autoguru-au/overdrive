@@ -81,12 +81,7 @@ const Loading: FunctionComponent<LoadingComponentProps> = ({
 		{Array.from({ length: placeholderBubblesNum })
 			.fill('')
 			.map((_, index) => (
-				<Bubble
-					key={index}
-					children=""
-					disabled
-					className={styles.disabled}
-				/>
+				<Bubble key={index} disabled className={styles.disabled} />
 			))}
 
 		<NavButton disabled icon={ChevronRightIcon} />

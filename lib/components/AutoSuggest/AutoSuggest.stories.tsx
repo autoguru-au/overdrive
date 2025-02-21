@@ -76,6 +76,7 @@ const meta = {
 	argTypes: {
 		value: {
 			options: {
+				// @ts-expect-error injecting additional option for story
 				unselected: null,
 				...Object.fromEntries(
 					mockSuggestions.map((item) => [item.text, item]),
@@ -89,7 +90,7 @@ const meta = {
 		attach: {
 			defaultValue: 'NONE',
 			description: 'Input attach',
-			options: attachOptions,
+			options: Object.values(attachOptions),
 			control: {
 				type: 'select',
 			},

@@ -36,7 +36,7 @@ export const Standard: Story = {
 				<Text>
 					There are many components that have to work together to
 					ensure the air-conditioning system is working correctly and,
-					with so many contributing parts, it's clear the system
+					with so many contributing parts, it&apos;s clear the system
 					should only be serviced or repaired by a qualified
 					technician.
 				</Text>

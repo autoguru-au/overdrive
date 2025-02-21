@@ -21,13 +21,11 @@ interface ImageServerContext {
 	children?: ReactNode;
 	widthMap?: Record<WidthScale, number>;
 	srcUrlMapper: (params: UrlParams) => string;
-
 	getWidthValue?(width: WidthScale): number;
-
 	generateSrcSet(params: Omit<UrlParams, 'width'>): string;
 }
 
-export const widthMap: ImageServerContext['widthMap'] = {
+export const widthMap: NonNullable<ImageServerContext['widthMap']> = {
 	'1': 16,
 	'2': 32,
 	'3': 48,
@@ -49,13 +47,13 @@ export const widthMap: ImageServerContext['widthMap'] = {
 const defaultValue: ImageServerContext = {
 	widthMap,
 	getWidthValue: (width: WidthScale) => widthMap[width],
-	// @ts-ignore
+	// @ts-expect-error type does not allow `null`
 	srcUrlMapper: null,
-	// @ts-ignore
+	// @ts-expect-error type does not allow `null`
 	generateSrcSet: null,
 };
 
-// @ts-ignore
+// @ts-expect-error type does not allow `null`
 const imageServerCtx: Context<ImageServerContext> = createContext(null);
 
 export const useImageServer = () => useContext(imageServerCtx);
@@ -69,14 +67,11 @@ export const ImageServerProvider: FunctionComponent<
 	widthMap = defaultValue.widthMap,
 }) => {
 	const generateSrcSet = useCallback<ImageServerContext['generateSrcSet']>(
-		(
-			{ quality, src }, // @ts-ignore
-		) =>
-			// @ts-ignore
-			Object.keys(widthMap)
+		({ quality, src }) =>
+			Object.keys(widthMap!)
 				.map((key) => {
-					// @ts-ignore
-					const width = getWidthValue(key as unknown as WidthScale);
+					const width = getWidthValue?.(key as unknown as WidthScale);
+					// @ts-expect-error width could be undefined
 					return `${srcUrlMapper({ quality, src, width })} ${width}w`;
 				})
 				.join(', '),

@@ -24,7 +24,7 @@ const meta = {
 	component: Stack,
 	argTypes: {
 		space: {
-			options: spacingOptions,
+			options: Object.keys(spacingOptions),
 			defaultValue: 1,
 			control: {
 				type: 'select',

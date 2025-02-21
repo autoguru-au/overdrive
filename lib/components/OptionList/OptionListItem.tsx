@@ -1,4 +1,3 @@
-/* eslint-disable unicorn/prefer-logical-operator-over-ternary */
 import { CheckIcon } from '@autoguru/icons';
 import React, { useContext, useRef } from 'react';
 import {

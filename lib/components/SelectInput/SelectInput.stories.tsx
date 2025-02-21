@@ -56,7 +56,7 @@ const meta = {
 	component: SelectInput,
 	parameters: { chromatic: {} },
 	args: {
-		value: null,
+		value: undefined,
 		disabled: false,
 		name: 'text',
 		placeholder: defaultPlaceholder,
@@ -88,7 +88,7 @@ const meta = {
 		},
 		attach: {
 			description: 'Input attach',
-			options: attachOptions,
+			options: Object.keys(attachOptions),
 			control: {
 				type: 'select',
 			},

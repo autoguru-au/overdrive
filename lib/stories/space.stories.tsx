@@ -5,7 +5,7 @@ import { Heading } from '../components/Heading';
 import { tokens } from '../themes/base/tokens';
 import { breakpoints } from '../themes/makeTheme';
 
-import { Box, Stack, type Sprinkles } from './helpers';
+import { Box, Stack, type ODStyle } from './helpers';
 import { labels, small, titles } from './helpers/styles.css';
 
 const { space } = tokens;
@@ -23,7 +23,7 @@ const SpaceScale = () => (
 				<Box
 					background="black700"
 					height="5"
-					width={space as Sprinkles['width']}
+					width={space as ODStyle['width']}
 				/>
 				<p className={small}>{tokens.space[space]}</p>
 			</Stack>

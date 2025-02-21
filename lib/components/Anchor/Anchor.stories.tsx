@@ -50,7 +50,7 @@ const meta = {
 		children: {
 			defaultValue: '07 5612 5347',
 			control: {
-				type: 'string',
+				type: 'text',
 			},
 		},
 	},

@@ -6,7 +6,7 @@ import { Box } from '../Box';
 
 import * as styles from './DividerLine.css';
 
-interface Props {
+export interface Props {
 	isVertical?: boolean;
 	className?: string;
 	space: ComponentProps<typeof Box>['marginY'];
