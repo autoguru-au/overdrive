@@ -178,6 +178,7 @@ __metadata:
     jsdom: "npm:^26.0.0"
     magic-string: "npm:^0.30.17"
     mini-css-extract-plugin: "npm:^2.9.2"
+    mockdate: "npm:^3.0.5"
     plop: "npm:^4.0.1"
     postcss: "npm:^8.5.3"
     prettier: "npm:^3.5.1"
@@ -10485,6 +10486,13 @@ __metadata:
     pkg-types: "npm:^1.1.1"
     ufo: "npm:^1.5.3"
   checksum: 10/c1ef3989e95fb6c6c27a238330897b01f46507020501f45a681f2cae453f982e38dcb0e45aa65f672ea7280945d4a729d266f17a8acb187956f312b0cafddf61
+  languageName: node
+  linkType: hard
+
+"mockdate@npm:^3.0.5":
+  version: 3.0.5
+  resolution: "mockdate@npm:3.0.5"
+  checksum: 10/ff74f43f56a12e1339e838aee623e37b6e4c378173905697f2a006a5c581eea9c71da54fcea76c27e7e744422e49395c668932bf09e67f024841240ffef91fd2
   languageName: node
   linkType: hard
 

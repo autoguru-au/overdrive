@@ -134,6 +134,7 @@
 		"jsdom": "^26.0.0",
 		"magic-string": "^0.30.17",
 		"mini-css-extract-plugin": "^2.9.2",
+		"mockdate": "^3.0.5",
 		"plop": "^4.0.1",
 		"postcss": "^8.5.3",
 		"prettier": "^3.5.1",
