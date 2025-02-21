@@ -10,7 +10,6 @@ import {
 import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 import isChromatic from 'chromatic/isChromatic';
-import { type ComponentProps } from 'react';
 
 import { DateInput } from '.';
 
@@ -29,7 +28,22 @@ const todayStr: string = formatDate(
 const meta = {
 	title: 'Forms & Input Fields/Date Input',
 	component: DateInput,
-	parameters: { chromatic: {} },
+	args: {
+		disabled: false,
+		name: 'date',
+		placeholder: 'Placeholder',
+		isValid: false,
+		isTouched: false,
+		isLoading: false,
+		isFocused: false,
+		reserveHintSpace: false,
+		hintText: '',
+		notch: true,
+		prefixIcon: undefined,
+		onChange: action('onChange'),
+		onFocus: action('onFocus'),
+		onBlur: action('onBlur'),
+	},
 	argTypes: {
 		value: {
 			control: {
@@ -40,6 +54,7 @@ const meta = {
 			defaultValue: 'NONE',
 			description: 'Input attach',
 			options: {
+				// @ts-expect-error doesn't have types
 				NONE: 'NONE',
 				TOP: 'TOP',
 				RIGHT: 'RIGHT',
@@ -55,6 +70,7 @@ const meta = {
 			defaultValue: null,
 			description: 'Input prefix Icon',
 			options: {
+				// @ts-expect-error should be typed
 				CalendarIcon,
 				AccountEditIcon,
 				AlertCircleIcon,
@@ -73,32 +89,10 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const sharedArgs: ComponentProps<typeof DateInput> = {
-	disabled: false,
-	name: 'date',
-	placeholder: 'Placeholder',
-	isValid: false,
-	isTouched: false,
-	isLoading: false,
-	isFocused: false,
-	reserveHintSpace: false,
-	hintText: '',
-	notch: true,
-	prefixIcon: undefined,
-	onChange: action('onChange'),
-	onFocus: action('onFocus'),
-	onBlur: action('onBlur'),
-};
-
-export const Standard: Story = {
-	args: {
-		...sharedArgs,
-	},
-};
+export const Standard: Story = {};
 
 export const WithAValue: Story = {
 	args: {
-		...sharedArgs,
 		value: todayStr,
 		placeholder: 'What is your DOB?',
 	},
@@ -106,7 +100,6 @@ export const WithAValue: Story = {
 
 export const NotchDisabled: Story = {
 	args: {
-		...sharedArgs,
 		placeholder: 'What is your DOB?',
 		notch: false,
 	},
@@ -114,14 +107,12 @@ export const NotchDisabled: Story = {
 
 export const WithPrefixIcon: Story = {
 	args: {
-		...sharedArgs,
 		prefixIcon: CalendarIcon,
 	},
 };
 
 export const Disabled: Story = {
 	args: {
-		...sharedArgs,
 		value: todayStr,
 		placeholder: 'What is your DOB?',
 		disabled: true,
@@ -130,7 +121,6 @@ export const Disabled: Story = {
 
 export const Valid: Story = {
 	args: {
-		...sharedArgs,
 		value: todayStr,
 		placeholder: 'What is your DOB?',
 		isTouched: true,
@@ -140,7 +130,6 @@ export const Valid: Story = {
 
 export const Invalid: Story = {
 	args: {
-		...sharedArgs,
 		value: '2050-10-13',
 		placeholder: 'What is your DOB?',
 		isTouched: true,
@@ -151,7 +140,6 @@ export const Invalid: Story = {
 
 export const WithValueSmall: Story = {
 	args: {
-		...sharedArgs,
 		value: todayStr,
 		placeholder: 'What is your DOB?',
 		size: 'small',

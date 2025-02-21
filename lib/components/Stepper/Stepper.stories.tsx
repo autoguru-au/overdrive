@@ -14,12 +14,12 @@ type Story = StoryObj<typeof Stepper>;
 
 const Template: Story = {
 	render: ({ onChange: incomingOnChange, value: incomingValue, ...args }) => {
-		const [value, setValue] = useState<number>(incomingValue);
+		const [value, setValue] = useState<number>(incomingValue!);
 		return (
 			<Stepper
 				onChange={(stepValue) => {
 					setValue(stepValue);
-					incomingOnChange(stepValue);
+					if (incomingOnChange) incomingOnChange(stepValue);
 				}}
 				value={value}
 				{...args}

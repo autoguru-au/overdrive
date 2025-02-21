@@ -9,7 +9,6 @@ export const useLayoutSuggestionVisible = (
 ) => {
 	if (isBrowser) {
 		// Its okay to wrap this... As the value wont change once rendered.
-		// eslint-disable-next-line react-hooks/rules-of-hooks
 		useLayoutEffect(() => {
 			if (
 				highlightRef.current &&

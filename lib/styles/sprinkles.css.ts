@@ -4,7 +4,6 @@ import { tokens } from '../themes/base/tokens';
 import { breakpoints } from '../themes/makeTheme';
 
 const { border, colours, elevation, space, typography } = tokens;
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { none, ...spaceWithoutNone } = space;
 
 const responsiveConditions = {

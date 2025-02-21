@@ -17,7 +17,7 @@ export default {
 	argTypes: {
 		noWrap: {
 			control: {
-				type: 'boolean ',
+				type: 'boolean',
 			},
 		},
 		space: {
@@ -179,6 +179,7 @@ StandardColumn.args = standardColumnProps;
 StandardColumn.argTypes = {
 	alignSelf: {
 		options: {
+			// @ts-expect-error doesn't have types
 			stretch: 'stretch',
 			top: 'top',
 			centre: 'centre',
@@ -186,7 +187,7 @@ StandardColumn.argTypes = {
 		},
 		control: {
 			disable: false,
-			type: 'boolean ',
+			type: 'boolean',
 		},
 	},
 	...boxArgTypes,

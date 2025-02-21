@@ -53,7 +53,7 @@ const meta = {
 		attach: {
 			defaultValue: 'NONE',
 			description: 'Input attach',
-			options: attachOptions,
+			options: Object.values(attachOptions),
 			control: {
 				type: 'select',
 			},

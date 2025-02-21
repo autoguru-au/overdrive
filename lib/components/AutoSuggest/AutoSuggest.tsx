@@ -463,7 +463,6 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 						dispatch({ type: ActionTypes.INPUT_BLUR });
 					}, onBlur)}
 					onKeyDown={wrapEvent((event) => {
-						// eslint-disable-next-line default-case
 						switch (event.key) {
 							case 'ArrowUp':
 							case 'ArrowDown': {

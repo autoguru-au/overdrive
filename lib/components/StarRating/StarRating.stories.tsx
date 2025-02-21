@@ -7,7 +7,7 @@ const meta = {
 	component: StarRating,
 	argTypes: {
 		size: {
-			options: EStarRatingSize,
+			options: Object.values(EStarRatingSize),
 			control: {
 				type: 'select',
 			},

@@ -64,7 +64,7 @@ const Wrapper = ({ children }: { children: React.ReactNode }) => (
 	</RadioGroup>
 );
 
-const Item = ({ label, rating }: { label: string; rating: string }) => (
+const Item = ({ label, rating }: { label: string; rating: number }) => (
 	<div
 		style={{
 			display: 'grid',
@@ -105,7 +105,7 @@ export const WithChildren: Story = {
 	render: singleRadio,
 	args: {
 		disabled: false,
-		children: <Item label="Avocados" rating="4.3" />,
+		children: <Item label="Avocados" rating={4.3} />,
 	},
 };
 

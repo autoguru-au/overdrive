@@ -14,7 +14,7 @@ const meta = {
 	component: Flyout,
 	argTypes: {
 		alignment: {
-			options: EAlignment,
+			options: Object.values(EAlignment),
 			defaultValue: EAlignment.BOTTOM_LEFT,
 			control: {
 				type: 'select',
