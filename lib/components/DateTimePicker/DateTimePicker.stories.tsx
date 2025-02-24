@@ -6,9 +6,13 @@ import {
 	getByText,
 	userEvent,
 } from '@storybook/test';
+import isChromatic from 'chromatic/isChromatic';
 import MockDate from 'mockdate';
 
 import { DateTimePicker } from './DateTimePicker';
+
+const testDate = '2025-01-01';
+const dataSelected = '[data-selected]';
 
 const times = [
 	{
@@ -65,6 +69,9 @@ const meta: Meta<typeof DateTimePicker> = {
 			},
 		},
 	},
+	beforeEach: () => {
+		if (isChromatic()) MockDate.set(testDate);
+	},
 	tags: ['beta'],
 };
 
@@ -72,9 +79,6 @@ export default meta;
 type Story = StoryObj<typeof DateTimePicker>;
 
 export const BringInYourVehicle: Story = {};
-
-const testDate = '2025-01-01';
-const dataSelected = '[data-selected]';
 
 export const Interactions: Story = {
 	args: {
