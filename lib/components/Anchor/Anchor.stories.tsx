@@ -1,46 +1,19 @@
-import {
-	AccountEditIcon,
-	AlertCircleIcon,
-	CalendarIcon,
-	CarIcon,
-	CarMultipleIcon,
-	CheckIcon,
-	CurrencyUsdIcon,
-	MagnifyIcon,
-	PhoneIcon,
-	PlusIcon,
-	StarIcon,
-} from '@autoguru/icons';
+import { PhoneIcon } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { argTypesExampleIcons } from '../../stories/shared/argTypes';
 import { Button } from '../Button';
 
 import { Anchor } from '.';
-
-const iconOptions = {
-	MagnifyIcon,
-	CarIcon,
-	CarMultipleIcon,
-	CalendarIcon,
-	AccountEditIcon,
-	AlertCircleIcon,
-	CurrencyUsdIcon,
-	PlusIcon,
-	StarIcon,
-	CheckIcon,
-};
 
 const meta = {
 	title: 'Primatives/Anchor',
 	component: Anchor,
 	argTypes: {
 		icon: {
-			defaultValue: void 0,
+			defaultValue: null,
 			description: 'Input field Icon',
-			options: iconOptions,
-			control: {
-				type: 'select',
-			},
+			...argTypesExampleIcons,
 		},
 		is: {
 			control: {

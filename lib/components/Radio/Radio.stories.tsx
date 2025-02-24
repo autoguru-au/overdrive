@@ -58,11 +58,11 @@ export const List: Story = {
 	},
 };
 
-const Wrapper = ({ children }: { children: React.ReactNode }) => (
-	<RadioGroup value="" name="demo-radio-group">
-		{children}
-	</RadioGroup>
-);
+// const Wrapper = ({ children }: { children: React.ReactNode }) => (
+// 	<RadioGroup value="" name="demo-radio-group">
+// 		{children}
+// 	</RadioGroup>
+// );
 
 const Item = ({ label, rating }: { label: string; rating: number }) => (
 	<div

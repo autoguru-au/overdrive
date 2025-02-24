@@ -1,36 +1,15 @@
-import {
-	AccountEditIcon,
-	AlertCircleIcon,
-	CalendarIcon,
-	CarMultipleIcon,
-	CurrencyUsdIcon,
-	PlusIcon,
-	StarIcon,
-} from '@autoguru/icons';
+import { CalendarIcon } from '@autoguru/icons';
 import { Meta as ComponentMeta, StoryObj } from '@storybook/react';
 
-import { Meta } from '.';
+import { argTypesExampleIcons } from '../../stories/shared/argTypes';
 
-const iconOptions = {
-	CalendarIcon,
-	AccountEditIcon,
-	AlertCircleIcon,
-	CarMultipleIcon,
-	CurrencyUsdIcon,
-	PlusIcon,
-	StarIcon,
-};
+import { Meta } from '.';
 
 export default {
 	title: 'Components/Meta',
 	component: Meta,
 	argTypes: {
-		icon: {
-			options: iconOptions,
-			control: {
-				type: 'select',
-			},
-		},
+		icon: argTypesExampleIcons,
 	},
 } satisfies ComponentMeta<typeof Meta>;
 

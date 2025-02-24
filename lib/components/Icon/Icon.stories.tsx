@@ -1,34 +1,11 @@
-import {
-	AccountEditIcon,
-	AlertCircleIcon,
-	CalendarIcon,
-	CarIcon,
-	CarMultipleIcon,
-	CheckIcon,
-	CurrencyUsdIcon,
-	MagnifyIcon,
-	PlusIcon,
-	StarIcon,
-} from '@autoguru/icons';
+import { CalendarIcon } from '@autoguru/icons';
 import { Meta, StoryObj } from '@storybook/react';
+
+import { argTypesExampleIcons } from '../../stories/shared/argTypes';
 
 import { Icon } from '.';
 
 type Story = StoryObj<typeof Icon>;
-
-const iconOptions = {
-	MagnifyIcon,
-	CarIcon,
-	CarMultipleIcon,
-	CalendarIcon,
-	AccountEditIcon,
-	AlertCircleIcon,
-	CurrencyUsdIcon,
-	PlusIcon,
-	StarIcon,
-	CheckIcon,
-	empty: null,
-};
 
 export default {
 	title: 'Primatives/Icon',
@@ -39,12 +16,7 @@ export default {
 		display: 'block',
 	},
 	argTypes: {
-		icon: {
-			options: iconOptions,
-			control: {
-				type: 'select',
-			},
-		},
+		icon: argTypesExampleIcons,
 		size: {
 			options: ['small', 'medium', 'large'],
 		},

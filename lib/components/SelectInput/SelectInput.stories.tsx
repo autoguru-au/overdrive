@@ -1,18 +1,9 @@
-import {
-	AccountEditIcon,
-	AlertCircleIcon,
-	CalendarIcon,
-	CarIcon,
-	CarMultipleIcon,
-	CheckIcon,
-	CurrencyUsdIcon,
-	PlusIcon,
-	StarIcon,
-} from '@autoguru/icons';
+import { CarIcon } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { type ComponentProps } from 'react';
 
+import { argTypesExampleIcons } from '../../stories/shared/argTypes';
 import { DateInput } from '../DateInput';
 
 import { SelectInput } from '.';
@@ -37,18 +28,6 @@ const attachOptions: Record<
 	LEFT: 'LEFT',
 	BOTTOM: 'BOTTOM',
 	ALL: 'ALL',
-};
-
-const iconOptions = {
-	CarIcon,
-	CarMultipleIcon,
-	CalendarIcon,
-	AccountEditIcon,
-	AlertCircleIcon,
-	CurrencyUsdIcon,
-	PlusIcon,
-	StarIcon,
-	CheckIcon,
 };
 
 const meta = {
@@ -94,11 +73,8 @@ const meta = {
 			},
 		},
 		prefixIcon: {
+			...argTypesExampleIcons,
 			description: 'Input prefix Icon',
-			options: iconOptions,
-			control: {
-				type: 'select',
-			},
 		},
 	},
 } satisfies Meta<typeof SelectInput>;

@@ -1,0 +1,41 @@
+import {
+	AccountEditIcon,
+	AlertCircleIcon,
+	CalendarIcon,
+	CarIcon,
+	CarMultipleIcon,
+	CheckIcon,
+	CurrencyUsdIcon,
+	MagnifyIcon,
+	PlusIcon,
+	StarIcon,
+} from '@autoguru/icons';
+
+export const argTypesExampleIcons = {
+	options: [
+		'None',
+		'Magnify',
+		'Car',
+		'Car Multiple',
+		'Calendar',
+		'Account Edit',
+		'Alert Circle',
+		'Currency USD',
+		'Plus',
+		'Star',
+		'Check',
+	],
+	mapping: {
+		None: null,
+		Magnify: MagnifyIcon,
+		Car: CarIcon,
+		'Car Multiple': CarMultipleIcon,
+		Calendar: CalendarIcon,
+		'Account Edit': AccountEditIcon,
+		'Alert Circle': AlertCircleIcon,
+		'Currency USD': CurrencyUsdIcon,
+		Plus: PlusIcon,
+		Star: StarIcon,
+		Check: CheckIcon,
+	},
+};

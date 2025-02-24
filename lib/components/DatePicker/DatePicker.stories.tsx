@@ -1,34 +1,10 @@
-import {
-	AccountEditIcon,
-	AlertCircleIcon,
-	CalendarIcon,
-	CarIcon,
-	CarMultipleIcon,
-	CheckIcon,
-	CurrencyUsdIcon,
-	MagnifyIcon,
-	PlusIcon,
-	StarIcon,
-} from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
+import { argTypesExampleIcons } from '../../stories/shared/argTypes';
 import { Box } from '../Box';
 
 import { DatePicker } from '.';
-
-const iconOptions = {
-	MagnifyIcon,
-	CarIcon,
-	CarMultipleIcon,
-	CalendarIcon,
-	AccountEditIcon,
-	AlertCircleIcon,
-	CurrencyUsdIcon,
-	PlusIcon,
-	StarIcon,
-	CheckIcon,
-};
 
 const meta = {
 	title: 'Components/Date Picker',
@@ -36,12 +12,9 @@ const meta = {
 	decorators: [],
 	argTypes: {
 		icon: {
-			defaultValue: void 0,
+			defaultValue: null,
 			description: 'Input field Icon',
-			options: iconOptions,
-			control: {
-				type: 'select',
-			},
+			...argTypesExampleIcons,
 		},
 		size: {
 			options: ['small', 'medium', 'large'],

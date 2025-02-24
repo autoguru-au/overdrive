@@ -1,32 +1,14 @@
-import {
-	AccountEditIcon,
-	AlertCircleIcon,
-	CalendarIcon,
-	CarIcon,
-	CarMultipleIcon,
-	CurrencyUsdIcon,
-	FourByFourIcon,
-	PlusIcon,
-	StarIcon,
-} from '@autoguru/icons';
+import { CarIcon, FourByFourIcon } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 import { type ComponentProps } from 'react';
 
+import { argTypesExampleIcons } from '../../stories/shared/argTypes';
 import { DateInput } from '../DateInput';
 
 import { ColourInput } from '.';
 
 const defaultColour = '#ec4040';
-const iconOptions = {
-	CalendarIcon,
-	AccountEditIcon,
-	AlertCircleIcon,
-	CarMultipleIcon,
-	CurrencyUsdIcon,
-	PlusIcon,
-	StarIcon,
-};
 
 const attachOptions: Record<
 	string,
@@ -61,10 +43,7 @@ const meta = {
 		suffixIcon: {
 			defaultValue: null,
 			description: 'Input suffix Icon',
-			options: iconOptions,
-			control: {
-				type: 'select',
-			},
+			...argTypesExampleIcons,
 		},
 	},
 } satisfies Meta<typeof ColourInput>;
