@@ -5,10 +5,14 @@ import {
 	getAllByRole,
 	getByText,
 	userEvent,
-	within,
 } from '@storybook/test';
+import isChromatic from 'chromatic/isChromatic';
+import MockDate from 'mockdate';
 
 import { DateTimePicker } from './DateTimePicker';
+
+const testDate = '2025-01-01';
+const dataSelected = '[data-selected]';
 
 const times = [
 	{
@@ -65,6 +69,9 @@ const meta: Meta<typeof DateTimePicker> = {
 			},
 		},
 	},
+	beforeEach: () => {
+		if (isChromatic()) MockDate.set(testDate);
+	},
 	tags: ['beta'],
 };
 
@@ -73,7 +80,6 @@ type Story = StoryObj<typeof DateTimePicker>;
 
 export const BringInYourVehicle: Story = {};
 
-const dataSelected = '[data-selected]';
 export const Interactions: Story = {
 	args: {
 		title: 'Picker title',
@@ -88,15 +94,15 @@ export const Interactions: Story = {
 			prevLabel: 'Previous button label',
 		},
 	},
-	play: async ({ args, canvasElement, step }) => {
-		const canvas = within(canvasElement);
+	play: async ({ args, step, mount }) => {
+		MockDate.set(testDate);
+
+		const canvas = await mount();
 		const component = canvas.getAllByRole('group')[0];
 		const datePickerNav = canvas.getAllByRole('application')[0];
 		const [prevBtn, nextBtn] = getAllByRole(datePickerNav, 'button');
 		const calendar = canvas.getAllByRole('grid')[0];
 		const timePicker = canvas.getAllByRole('listbox')[0];
-
-		const nowDay = `${new Date().getDate()}`;
 
 		await step('Elements render label and attributes', async () => {
 			await expect(component).toHaveAccessibleName(`${args.title}`);
@@ -115,7 +121,7 @@ export const Interactions: Story = {
 			let selectedDay = calendar.querySelector(dataSelected);
 			await expect(selectedDay).toBeInTheDocument();
 			await expect(selectedDay).toHaveRole('button');
-			await expect(selectedDay).toHaveTextContent(nowDay);
+			await expect(selectedDay).toHaveTextContent('1');
 
 			await userEvent.click(nextBtn);
 			await userEvent.click(nextBtn);

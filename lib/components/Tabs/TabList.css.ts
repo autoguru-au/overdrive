@@ -16,7 +16,7 @@ export const root = styleVariants({
 export const listWrapperScroll = style({
 	overflowX: 'auto',
 	overflowY: 'hidden',
-	// @ts-ignore
+	// @ts-expect-error Object literal may only specify known properties
 	'-webkit-overflow-scrolling': 'auto',
 	overscrollBehavior: 'contain',
 	scrollBehavior: 'smooth',

@@ -1,18 +1,10 @@
-import {
-	AccountEditIcon,
-	AlertCircleIcon,
-	CalendarIcon,
-	CarMultipleIcon,
-	CheckIcon,
-	CurrencyUsdIcon,
-	PlusIcon,
-	StarIcon,
-} from '@autoguru/icons';
+import { AccountEditIcon, CalendarIcon } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
 import { ArgTypes, Meta, StoryObj } from '@storybook/react';
 import isChromatic from 'chromatic/isChromatic';
 import React, { type ComponentProps } from 'react';
 
+import { argTypesExampleIcons } from '../../stories/shared/argTypes';
 import { DateInput } from '../DateInput';
 
 import { NumberInput } from '.';
@@ -33,16 +25,6 @@ const defaultValue = isChromatic()
 	: Math.round(Math.random() * 100).toString();
 const defaultPlaceholder = 'How many?';
 
-const iconOptions = {
-	CalendarIcon,
-	AccountEditIcon,
-	AlertCircleIcon,
-	CarMultipleIcon,
-	CurrencyUsdIcon,
-	PlusIcon,
-	StarIcon,
-	CheckIcon,
-};
 const attachOptions: Record<
 	string,
 	ComponentProps<typeof DateInput>['attach']
@@ -57,28 +39,22 @@ const attachOptions: Record<
 
 const argTypes: ArgTypes = {
 	prefixIcon: {
+		...argTypesExampleIcons,
 		defaultValue: null,
 		description: 'Input prefix Icon',
-		options: iconOptions,
-		control: {
-			type: 'select',
-		},
 	},
 	attach: {
 		defaultValue: 'NONE',
 		description: 'Input attach',
-		options: attachOptions,
+		options: Object.values(attachOptions),
 		control: {
 			type: 'select',
 		},
 	},
 	suffixIcon: {
+		...argTypesExampleIcons,
 		defaultValue: null,
 		description: 'Input suffix Icon',
-		options: iconOptions,
-		control: {
-			type: 'select',
-		},
 	},
 	maxLength: {
 		defaultValue: null,
@@ -116,7 +92,7 @@ const sharedProps: ComponentProps<typeof NumberInput> = {
 	hintText: '',
 	notch: true,
 	preventMouseWheel: true,
-	prefixIcon: null,
+	prefixIcon: undefined,
 	onChange: action('onChange'),
 	onFocus: action('onFocus'),
 	onBlur: action('onBlur'),

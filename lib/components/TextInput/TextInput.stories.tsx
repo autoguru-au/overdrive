@@ -1,18 +1,9 @@
-import {
-	AccountEditIcon,
-	AlertCircleIcon,
-	CalendarIcon,
-	CarIcon,
-	CarMultipleIcon,
-	CheckIcon,
-	CurrencyUsdIcon,
-	PlusIcon,
-	StarIcon,
-} from '@autoguru/icons';
+import { AccountEditIcon, CalendarIcon, CarIcon } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 import { type ComponentProps } from 'react';
 
+import { argTypesExampleIcons } from '../../stories/shared/argTypes';
 import { boxArgTypes } from '../Box/argTypes';
 import { DateInput } from '../DateInput';
 
@@ -21,16 +12,6 @@ import { TextInput } from '.';
 const defaultValue = 'Jane Doe';
 const defaultPlaceholder = 'What is your first name?';
 
-const iconOptions = {
-	CalendarIcon,
-	AccountEditIcon,
-	AlertCircleIcon,
-	CarMultipleIcon,
-	CurrencyUsdIcon,
-	PlusIcon,
-	StarIcon,
-	CheckIcon,
-};
 const attachOptions: Record<
 	string,
 	ComponentProps<typeof DateInput>['attach']
@@ -66,26 +47,20 @@ const meta: Meta = {
 		attach: {
 			defaultValue: 'NONE',
 			description: 'Input attach',
-			options: attachOptions,
+			options: Object.keys(attachOptions),
 			control: {
 				type: 'select',
 			},
 		},
 		prefixIcon: {
+			...argTypesExampleIcons,
 			defaultValue: null,
 			description: 'Input prefix Icon',
-			options: iconOptions,
-			control: {
-				type: 'select',
-			},
 		},
 		suffixIcon: {
+			...argTypesExampleIcons,
 			defaultValue: null,
 			description: 'Input suffix Icon',
-			options: iconOptions,
-			control: {
-				type: 'select',
-			},
 		},
 		backgroundColour: boxArgTypes['backgroundColour'],
 		maxLength: {

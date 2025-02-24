@@ -9,39 +9,40 @@ import { ImageServerProvider, widthMap } from './ImageServerProvider';
 
 import { Image } from '.';
 
-const sizeOptions: Array<ComponentProps<typeof Image>['imageWidth']> =
-	isChromatic()
-		? ['8']
-		: [
-				'1',
-				'2',
-				'3',
-				'4',
-				'5',
-				'6',
-				'7',
-				'8',
-				'9',
-				'10',
-				'11',
-				'12',
-				'13',
-				'14',
-				'15',
-				'16',
-			];
-const qualityOptions: Array<ComponentProps<typeof Image>['quality']> =
-	isChromatic() ? ['70'] : [1, 20, 40, 60, 80, 100];
+type SizeOption = ComponentProps<typeof Image>['imageWidth'];
+const sizeOptions: SizeOption[] = isChromatic()
+	? ['8']
+	: [
+			'1',
+			'2',
+			'3',
+			'4',
+			'5',
+			'6',
+			'7',
+			'8',
+			'9',
+			'10',
+			'11',
+			'12',
+			'13',
+			'14',
+			'15',
+			'16',
+		];
+
+const qualityOptions: NonNullable<ComponentProps<typeof Image>['quality']>[] =
+	isChromatic() ? [70] : [1, 20, 40, 60, 80, 100];
 
 const calcWidth = (width: (typeof sizeOptions)[number] | 'full') =>
-	width === 'full' ? '100%' : widthMap[width];
+	width === 'full' ? '100%' : widthMap[width as keyof typeof widthMap];
 
 const meta = {
 	title: 'Primatives/Image',
 	component: Image,
 	args: {
-		imageWidth: 8,
-		width: 8,
+		imageWidth: '8',
+		width: '8',
 		quality: void 0,
 		eager: false,
 		unoptimised: false,
@@ -83,13 +84,16 @@ export default meta;
 
 type Story = StoryObj<typeof Image>;
 
+const highresImgSrc =
+	'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg';
+
 export const Standard: Story = {
 	args: {
 		src: 'https://cdn.autoguru.com.au/images/autoguru-og.jpg',
 	},
 	render: (args) => (
 		<div style={{ width: '100%', overflow: 'auto' }}>
-			<Image {...args} width={calcWidth(args.width)} />
+			<Image {...args} width={`${calcWidth(args.width as SizeOption)}`} />
 		</div>
 	),
 };
@@ -99,13 +103,16 @@ const srcUrlMapper = ({ src, width, quality }) =>
 
 export const WithImageServerUnoptimised: Story = {
 	args: {
-		src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
+		src: highresImgSrc,
 		unoptimised: true,
 	},
 	render: (args) => (
 		<ImageServerProvider srcUrlMapper={srcUrlMapper}>
 			<div style={{ width: '100%', overflow: 'auto' }}>
-				<Image {...args} width={calcWidth(args.width)} />
+				<Image
+					{...args}
+					width={`${calcWidth(args.width as SizeOption)}`}
+				/>
 			</div>
 		</ImageServerProvider>
 	),
@@ -113,15 +120,19 @@ export const WithImageServerUnoptimised: Story = {
 
 export const WithImageServer: Story = {
 	args: {
-		src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
+		src: highresImgSrc,
 		quality: 60,
-		imageWidth: 8,
-		sizes: ['100vh', , '60vh', '40vh'],
+		imageWidth: '8',
+		// @ts-expect-error no undefined in array
+		sizes: ['100vh', undefined, '60vh', '40vh'],
 	},
 	render: (args) => (
 		<ImageServerProvider srcUrlMapper={srcUrlMapper}>
 			<div style={{ width: '100%', overflow: 'auto' }}>
-				<Image {...args} width={calcWidth(args.width)} />
+				<Image
+					{...args}
+					width={`${calcWidth(args.width as SizeOption)}`}
+				/>
 			</div>
 		</ImageServerProvider>
 	),
@@ -129,15 +140,19 @@ export const WithImageServer: Story = {
 
 export const WithResponsiveImageWidth: Story = {
 	args: {
-		src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
+		src: highresImgSrc,
 		width: 'full',
 		sizes: ['100vw', '70vw', '50vw', '40vw'],
-		imageWidth: [5, 8, , 12],
+		// @ts-expect-error no undefined in array
+		imageWidth: ['5', '8', undefined, '12'],
 	},
 	render: (args) => (
 		<ImageServerProvider srcUrlMapper={srcUrlMapper}>
 			<div style={{ width: '100%', overflow: 'auto' }}>
-				<Image {...args} width={calcWidth(args.width)} />
+				<Image
+					{...args}
+					width={`${calcWidth(args.width as SizeOption)}`}
+				/>
 			</div>
 		</ImageServerProvider>
 	),
@@ -145,14 +160,17 @@ export const WithResponsiveImageWidth: Story = {
 
 export const WithResponsiveSizes: Story = {
 	args: {
-		src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
+		src: highresImgSrc,
 		width: 'full',
 		sizes: ['100vw', '70vw', '50vw', '40vw'],
 	},
 	render: (args) => (
 		<ImageServerProvider srcUrlMapper={srcUrlMapper}>
 			<div style={{ width: '100%', overflow: 'auto' }}>
-				<Image {...args} width={calcWidth(args.width)} />
+				<Image
+					{...args}
+					width={`${calcWidth(args.width as SizeOption)}`}
+				/>
 			</div>
 		</ImageServerProvider>
 	),
@@ -160,10 +178,11 @@ export const WithResponsiveSizes: Story = {
 
 export const WithImageServerQualities: Story = {
 	args: {
-		src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
+		src: highresImgSrc,
 		quality: 60,
-		imageWidth: 8,
-		sizes: ['100vh', , '60vh', '40vh'],
+		imageWidth: '8',
+		// @ts-expect-error no undefined in array
+		sizes: ['100vh', undefined, '60vh', '40vh'],
 	},
 	render: (args) => (
 		<ImageServerProvider srcUrlMapper={srcUrlMapper}>
@@ -177,8 +196,8 @@ export const WithImageServerQualities: Story = {
 							<Image
 								key={quality}
 								{...args}
-								width={calcWidth(args.width)}
-								imageWidth={args.width}
+								width={`${calcWidth(args.width as SizeOption)}`}
+								imageWidth={args.width as SizeOption}
 								quality={quality}
 							/>
 						</Stack>
@@ -191,16 +210,17 @@ export const WithImageServerQualities: Story = {
 
 export const WithImageServerResizing: Story = {
 	args: {
-		src: 'https://cdn.autoguru.com.au/images/autoguru-test-highres-image.jpg',
+		src: highresImgSrc,
 		quality: 20,
-		sizes: ['100vh', , '60vh', '40vh'],
+		// @ts-expect-error no undefined in array
+		sizes: ['100vh', undefined, '60vh', '40vh'],
 	},
 	render: (args) => (
 		<ImageServerProvider srcUrlMapper={srcUrlMapper}>
 			<div style={{ width: '100%', overflow: 'auto' }}>
 				<Stack width="full" space="5">
 					{sizeOptions.map((width) => (
-						<Stack key={width} space="1">
+						<Stack key={width as string} space="1">
 							<Text>
 								Quality: <Text strong>{args.quality}</Text>
 							</Text>
@@ -212,7 +232,7 @@ export const WithImageServerResizing: Story = {
 							</Text>
 							<Image
 								{...args}
-								width={calcWidth(width)}
+								width={`${calcWidth(width)}`}
 								imageWidth={width}
 							/>
 						</Stack>

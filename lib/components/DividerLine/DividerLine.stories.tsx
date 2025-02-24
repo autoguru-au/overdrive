@@ -22,8 +22,9 @@ const spacingOptions: Record<
 	8: '8',
 	9: '9',
 };
-const sizeOptions: Record<string, ComponentProps<typeof DividerLine>['size']> =
-	[1, 2, 3];
+
+const sizeOptions: ComponentProps<typeof DividerLine>['size'][] = [1, 2, 3];
+
 const colours: ReadonlyArray<ComponentProps<typeof DividerLine>['colour']> = [
 	'primary',
 	'secondary',
@@ -40,7 +41,7 @@ const meta = {
 	component: DividerLine,
 	argTypes: {
 		space: {
-			options: spacingOptions,
+			options: Object.keys(spacingOptions),
 			defaultValue: 1,
 			control: {
 				type: 'select',

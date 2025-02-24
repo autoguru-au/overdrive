@@ -1,19 +1,9 @@
-import {
-	AccountEditIcon,
-	AlertCircleIcon,
-	CalendarIcon,
-	CarIcon,
-	CarMultipleIcon,
-	CheckIcon,
-	CurrencyUsdIcon,
-	MagnifyIcon,
-	PlusIcon,
-	StarIcon,
-} from '@autoguru/icons';
+import { CarIcon } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { type ComponentProps } from 'react';
 
+import { argTypesExampleIcons } from '../../stories/shared/argTypes';
 import { Box } from '../Box';
 import { DateInput } from '../DateInput';
 import { Stack } from '../Stack';
@@ -37,19 +27,6 @@ const mockSuggestions = [
 	'Pontiac',
 	'Porsche',
 ].map((item) => ({ text: item, payload: item }));
-
-const iconOptions = {
-	MagnifyIcon,
-	CarIcon,
-	CarMultipleIcon,
-	CalendarIcon,
-	AccountEditIcon,
-	AlertCircleIcon,
-	CurrencyUsdIcon,
-	PlusIcon,
-	StarIcon,
-	CheckIcon,
-};
 
 const attachOptions: Record<
 	string,
@@ -76,6 +53,7 @@ const meta = {
 	argTypes: {
 		value: {
 			options: {
+				// @ts-expect-error injecting additional option for story
 				unselected: null,
 				...Object.fromEntries(
 					mockSuggestions.map((item) => [item.text, item]),
@@ -89,26 +67,20 @@ const meta = {
 		attach: {
 			defaultValue: 'NONE',
 			description: 'Input attach',
-			options: attachOptions,
+			options: Object.values(attachOptions),
 			control: {
 				type: 'select',
 			},
 		},
 		fieldIcon: {
-			defaultValue: void 0,
+			defaultValue: null,
 			description: 'Input field Icon',
-			options: iconOptions,
-			control: {
-				type: 'select',
-			},
+			...argTypesExampleIcons,
 		},
 		prefixIcon: {
-			defaultValue: void 0,
+			defaultValue: null,
 			description: 'Input prefix Icon',
-			options: iconOptions,
-			control: {
-				type: 'select',
-			},
+			...argTypesExampleIcons,
 		},
 		wrapperRef: {
 			control: {

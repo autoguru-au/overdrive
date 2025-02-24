@@ -1,18 +1,9 @@
-import {
-	AccountEditIcon,
-	AlertCircleIcon,
-	CalendarIcon,
-	CarIcon,
-	CarMultipleIcon,
-	CheckIcon,
-	CurrencyUsdIcon,
-	PlusIcon,
-	StarIcon,
-} from '@autoguru/icons';
+import { CarIcon } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { type ComponentProps } from 'react';
 
+import { argTypesExampleIcons } from '../../stories/shared/argTypes';
 import { DateInput } from '../DateInput';
 
 import { SelectInput } from '.';
@@ -39,23 +30,11 @@ const attachOptions: Record<
 	ALL: 'ALL',
 };
 
-const iconOptions = {
-	CarIcon,
-	CarMultipleIcon,
-	CalendarIcon,
-	AccountEditIcon,
-	AlertCircleIcon,
-	CurrencyUsdIcon,
-	PlusIcon,
-	StarIcon,
-	CheckIcon,
-};
-
 const meta = {
 	title: 'Forms & Input Fields/Select',
 	component: SelectInput,
-	parameters: { chromatic: {} },
 	args: {
+		// @ts-expect-error null is assignable to type 'string | undefined'
 		value: null,
 		disabled: false,
 		name: 'text',
@@ -68,7 +47,7 @@ const meta = {
 		hintText: '',
 		notch: true,
 		attach: 'NONE',
-		prefixIcon: void 0,
+		prefixIcon: undefined,
 		onChange: action('onChange'),
 		onFocus: action('onFocus'),
 		onBlur: action('onBlur'),
@@ -88,17 +67,14 @@ const meta = {
 		},
 		attach: {
 			description: 'Input attach',
-			options: attachOptions,
+			options: Object.keys(attachOptions),
 			control: {
 				type: 'select',
 			},
 		},
 		prefixIcon: {
+			...argTypesExampleIcons,
 			description: 'Input prefix Icon',
-			options: iconOptions,
-			control: {
-				type: 'select',
-			},
 		},
 	},
 } satisfies Meta<typeof SelectInput>;

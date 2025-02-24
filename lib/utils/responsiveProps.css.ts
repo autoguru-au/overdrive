@@ -5,7 +5,8 @@ import { breakpoints } from '../themes/makeTheme';
 
 import { responsiveStyle } from './responsiveStyle';
 
-export type ResponsiveProp<T extends any> = T | T[];
+// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-constraint
+export type ResponsiveProp<T extends unknown> = T | T[];
 
 type BreakpointStyleMap = Record<keyof typeof breakpoints, any>;
 

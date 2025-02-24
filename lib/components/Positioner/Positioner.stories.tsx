@@ -16,7 +16,7 @@ export default {
 	parameters: { chromatic: {} },
 	argTypes: {
 		alignment: {
-			options: EAlignment,
+			options: Object.values(EAlignment),
 			defaultValue: EAlignment.BOTTOM_LEFT,
 			control: {
 				type: 'select',
@@ -132,7 +132,7 @@ export const IllustrateAScroll: Story = {
 						}}
 					>
 						<Button ref={triggerRef} size="small">
-							I'm the trigger
+							I&apos;m the trigger
 						</Button>
 					</div>
 					<Positioner {...args} triggerRef={triggerRef}>

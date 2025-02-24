@@ -120,6 +120,7 @@ export const Modal: FunctionComponent<Props> = ({
 			{state === 'OPENING' || state === 'OPEN' || state === 'CLOSING' ? (
 				<FocusLock
 					returnFocus
+					// eslint-disable-next-line jsx-a11y/no-autofocus
 					autoFocus={false}
 					onActivation={() => {
 						dispatch('ANIMATION_COMPLETE');

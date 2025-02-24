@@ -1,5 +1,5 @@
 // Estimate input width based on the width of each character in the value prop
-const narrowChars = /[!"'()*+,./:;<=>?I[\\\]^_`b-vx-z{|}~\-]/g;
+const narrowChars = /[!"'()*+,./:;<=>?I[\\\]^_`b-vx-z{|}~-]/g;
 const wideChars = /[\dA-HJ-Z]/g;
 const narrowCharWidth = 0.5; // Fraction of ch to assign to narrow characters
 const defaultCharWidth = 0.8; // Fraction of ch to assign to narrow characters

@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-
 import { useCallback, useLayoutEffect, useMemo, useState } from 'react';
 
 import { useRuntimeTokens } from '../../components/ThemeProvider';

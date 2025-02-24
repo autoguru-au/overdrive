@@ -61,7 +61,8 @@ export const SimpleImage: FunctionComponent<Props> = ({
 	}
 
 	return (
-		/*@ts-ignore*/
+		// @ts-expect-error cross origin prop type
+		// eslint-disable-next-line jsx-a11y/alt-text
 		<img
 			loading={eager ? 'eager' : 'lazy'}
 			decoding={syncDecoding ? 'sync' : 'async'}

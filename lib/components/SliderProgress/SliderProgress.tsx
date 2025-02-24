@@ -7,7 +7,7 @@ import { Box } from '../Box';
 import { ProgressStep } from './ProgressStep';
 import * as styles from './SliderProgress.css';
 
-interface Props
+export interface Props
 	extends Pick<ComponentProps<typeof Box>, 'backgroundColour'>,
 		Pick<ComponentProps<typeof ProgressStep>, 'paused' | 'duration'> {
 	className?: string;

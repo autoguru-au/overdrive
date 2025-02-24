@@ -19,47 +19,53 @@ const IconGrid = () => {
 				paddingLeft: 'none',
 			})}
 		>
-			{Object.entries(iconset).map(([name, icon]) => {
-				if (icon)
-					return (
-						<Box
-							as="li"
-							background={{ initial: 'white', hover: 'gray800' }}
-							borderColor="gray"
-							borderStyle="solid"
-							borderWidth="2"
-							borderRadius="2"
-							color={{ initial: 'gray700', hover: 'white' }}
-							display="flex"
-							flexDirection="column"
-							alignItems="center"
-							justifyContent="center"
-							padding="2"
-							margin="none"
-							key={name}
-							style={{
-								listStyle: 'none',
-								width: '140px',
-								height: '120px',
-							}}
-							className={transitionColours}
-						>
-							<Icon icon={icon} size="large" />
-							<div
-								className={odStyle({
-									fontSize: 'sm',
-									marginTop: '4',
-									textAlign: 'center',
-								})}
+			{
+				// @ts-expect-error not all code paths return a value
+				Object.entries(iconset).map(([name, icon]) => {
+					if (icon)
+						return (
+							<Box
+								as="li"
+								background={{
+									initial: 'white',
+									hover: 'gray800',
+								}}
+								borderColor="gray"
+								borderStyle="solid"
+								borderWidth="2"
+								borderRadius="2"
+								color={{ initial: 'gray700', hover: 'white' }}
+								display="flex"
+								flexDirection="column"
+								alignItems="center"
+								justifyContent="center"
+								padding="2"
+								margin="none"
+								key={name}
+								style={{
+									listStyle: 'none',
+									width: '140px',
+									height: '120px',
+								}}
+								className={transitionColours}
 							>
-								{name
-									.replace('Icon', '')
-									.split(/(?=[A-Z])/)
-									.join(' ')}
-							</div>
-						</Box>
-					);
-			})}
+								<Icon icon={icon} size="large" />
+								<div
+									className={odStyle({
+										fontSize: 'sm',
+										marginTop: '4',
+										textAlign: 'center',
+									})}
+								>
+									{name
+										.replace('Icon', '')
+										.split(/(?=[A-Z])/)
+										.join(' ')}
+								</div>
+							</Box>
+						);
+				})
+			}
 		</ul>
 	);
 };

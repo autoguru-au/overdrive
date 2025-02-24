@@ -33,7 +33,7 @@ export const suggestionList = {
 		overflowY: 'auto',
 		maxHeight: '384px',
 		overscrollBehavior: 'contain',
-		// @ts-ignore
+		// @ts-expect-error Object literal may only specify known properties
 		'-webkit-overflow-scrolling': 'touch',
 		gridAutoFlow: 'row',
 		gridGap: 0,

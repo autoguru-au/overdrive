@@ -11,10 +11,7 @@ import { TextLink } from '.';
 const sizeScale = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 const alignOptions: ['left', 'center', 'right'] = ['left', 'center', 'right'];
 const fontWeightOptions = ['normal', 'semiBold', 'bold'];
-const iconOptions = {
-	ArrowRightIcon,
-	ChevronRightIcon,
-};
+
 const noWrapOptions: Array<ComponentProps<typeof Heading>['noWrap']> = [
 	false,
 	true,
@@ -44,11 +41,12 @@ const meta = {
 	],
 	argTypes: {
 		icon: {
-			defaultValue: void 0,
+			defaultValue: null,
 			description: 'Input field Icon',
-			options: iconOptions,
-			control: {
-				type: 'select',
+			options: ['Arrow Right', 'Chevron Right'],
+			mapping: {
+				'Arrow Right': ArrowRightIcon,
+				'Chevron Right': ChevronRightIcon,
 			},
 		},
 		noWrap: {

@@ -123,7 +123,6 @@ export const Stepper: FunctionComponent<Props> = ({
 
 	const keyDownHandler = useCallback(
 		(event: KeyboardEvent<HTMLDivElement>) => {
-			// eslint-disable-next-line default-case
 			switch (event.key) {
 				case 'ArrowLeft': {
 					return onDecrement();

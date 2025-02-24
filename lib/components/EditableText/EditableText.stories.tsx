@@ -39,22 +39,25 @@ export const Text: Story = {
 		value: 'Hello World',
 		type: 'text',
 	},
-	render: ({ onChange: incomingOnChange, value: incomingValue, ...args }) => {
-		const [value, setValue] = useState(incomingValue);
-		return (
-			<EditableText
-				onChange={(e: ChangeEvent<HTMLInputElement>) => {
-					setValue(e.currentTarget.value);
-					typeof incomingOnChange === 'function' &&
-						incomingOnChange(e.currentTarget.value);
-				}}
-				value={value}
-				{...args}
-			/>
-		);
-	},
+	decorators: [
+		(Story, context) => {
+			const [value, setValue] = useState(context.args.value);
+			return (
+				<Story
+					args={{
+						...context.args,
+						value,
+						onChange: (e: ChangeEvent<HTMLInputElement>) => {
+							setValue(e.currentTarget.value);
+						},
+					}}
+				/>
+			);
+		},
+	],
 };
 
+// eslint-disable-next-line sonarjs/no-globals-shadowing
 export const Number: Story = {
 	...Text,
 	args: {

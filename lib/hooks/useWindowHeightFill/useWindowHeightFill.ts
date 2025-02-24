@@ -45,7 +45,6 @@ export const useWindowHeightFill = ({
 			const availableHeight = Math.min(
 				maxHeight ?? Number.POSITIVE_INFINITY,
 				window.innerHeight -
-					// @ts-ignore
 					containerRef.current.getBoundingClientRect().top,
 			);
 			const newHeight = gap

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-type-constraint */
+/* eslint-disable jsx-a11y/no-autofocus */
 import { ChevronDownIcon, CloseIcon, IconType } from '@autoguru/icons';
 import { wrapEvent } from '@autoguru/utilities';
 import clsx from 'clsx';
@@ -253,7 +255,6 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 			if (event.key === 'Enter' && typeof onEnter === 'function') {
 				setShowModal(false);
 				setIsFocused(false);
-				// @ts-ignore
 				inputRef.current?.blur();
 				onEnter(valueRef.current as AutoSuggestValue<any>);
 			}
@@ -463,7 +464,6 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 						dispatch({ type: ActionTypes.INPUT_BLUR });
 					}, onBlur)}
 					onKeyDown={wrapEvent((event) => {
-						// eslint-disable-next-line default-case
 						switch (event.key) {
 							case 'ArrowUp':
 							case 'ArrowDown': {

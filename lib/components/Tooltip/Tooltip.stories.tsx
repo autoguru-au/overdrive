@@ -6,10 +6,7 @@ import { Text } from '../Text';
 
 import { Tooltip } from '.';
 
-const sizeScale: Array<ComponentProps<typeof Text>['size']> = [
-	'medium',
-	'large',
-];
+const sizeScale: ComponentProps<typeof Text>['size'][] = ['3', '4'];
 
 const meta = {
 	title: 'Components/Tooltip',
@@ -26,7 +23,7 @@ const meta = {
 	},
 	argTypes: {
 		alignment: {
-			options: EAlignment,
+			options: Object.values(EAlignment),
 			defaultValue: EAlignment.RIGHT,
 			control: {
 				type: 'select',
@@ -57,8 +54,8 @@ type Story = StoryObj<typeof Tooltip>;
 
 export const Standard: Story = {
 	args: {
-		label: 'Im the tooltip body',
-		closeAfter: null,
+		label: "I'm the tooltip body",
+		closeAfter: undefined,
 		children: (
 			<div style={{ display: 'inline' }}>Im the tooltip trigger</div>
 		),

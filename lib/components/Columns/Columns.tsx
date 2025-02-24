@@ -58,9 +58,9 @@ export const Columns = forwardRef<HTMLElement, Props>(
 		const resolvedSpaceX = spaceX || space || ['none'];
 		const resolvedSpaceY = spaceY || space || ['none'];
 
-		// @ts-ignore
+		// @ts-expect-error not assignmable to parameter type
 		const marginLeftFix = useNegativeMarginLeft(resolvedSpaceX);
-		// @ts-ignore
+		// @ts-expect-error not assignmable to parameter type
 		const marginTopFix = useNegativeMarginTop(resolvedSpaceY);
 
 		return (

@@ -14,7 +14,7 @@ export default {
 
 export const Standard = () => {
 	const Impl = () => {
-		const allValues = [2, 3, , 4];
+		const allValues = [2, 3, null, 4];
 		const value = useResponsiveValue(allValues);
 
 		return (
@@ -24,7 +24,7 @@ export const Standard = () => {
 					<Text strong>{JSON.stringify(allValues)}</Text>{' '}
 				</Text>
 				<Text is="p">
-					Responsive value: <Text strong>{value}</Text>{' '}
+					Responsive value: <Text strong>{value as string}</Text>{' '}
 				</Text>
 			</Stack>
 		);
