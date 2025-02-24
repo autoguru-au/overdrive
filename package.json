@@ -36,6 +36,7 @@
 		"copy:public": "node scripts/copyPublic.js",
 		"check-deps": "npx npm-check-updates@latest --interactive --format group",
 		"format": "prettier --list-different --write \"**/*.+(js|jsx|ts|tsx|json|yml|md|mdx|html)\"",
+		"format:staged": "prettier --write",
 		"prepublishOnly": "yarn run build && yarn run typeEmit",
 		"lint:tsc": "tsc --noEmit --skipLibCheck",
 		"lint:eslint": "eslint \"lib/**/*.+(ts|tsx)\" --fix --quiet",
@@ -48,7 +49,8 @@
 		"test": "vitest",
 		"test:ci": "yarn test --no-cache --coverage",
 		"typeEmit": "tsc -d --declarationDir dist --emitDeclarationOnly",
-		"watch": "tsc --watch"
+		"watch": "tsc --watch",
+		"prepare": "husky"
 	},
 	"browserslist": "extends browserslist-config-autoguru",
 	"prettier": {
@@ -130,8 +132,10 @@
 		"deepmerge": "^4.3.1",
 		"eslint": "^9.21.0",
 		"eslint-plugin-storybook": "^0.11.3",
+		"husky": "^9.1.7",
 		"intersection-observer": "^0.12.2",
 		"jsdom": "^26.0.0",
+		"lint-staged": "^15.4.3",
 		"magic-string": "^0.30.17",
 		"mini-css-extract-plugin": "^2.9.2",
 		"mockdate": "^3.0.5",
