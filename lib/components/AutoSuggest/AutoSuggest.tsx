@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-autofocus */
 import { ChevronDownIcon, CloseIcon, IconType } from '@autoguru/icons';
 import { wrapEvent } from '@autoguru/utilities';
 import clsx from 'clsx';

@@ -135,6 +135,7 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 					<Box
 						is="input"
 						{...inputProps}
+						// eslint-disable-next-line jsx-a11y/no-autofocus
 						autoFocus
 						ref={inputRef}
 						type={type === 'number' ? 'text' : type}
