@@ -33,9 +33,9 @@ const attachOptions: Record<
 const meta = {
 	title: 'Forms & Input Fields/Select',
 	component: SelectInput,
-	parameters: { chromatic: {} },
 	args: {
-		value: undefined,
+		// @ts-expect-error null is assignable to type 'string | undefined'
+		value: null,
 		disabled: false,
 		name: 'text',
 		placeholder: defaultPlaceholder,
@@ -47,7 +47,7 @@ const meta = {
 		hintText: '',
 		notch: true,
 		attach: 'NONE',
-		prefixIcon: void 0,
+		prefixIcon: undefined,
 		onChange: action('onChange'),
 		onFocus: action('onFocus'),
 		onBlur: action('onBlur'),
