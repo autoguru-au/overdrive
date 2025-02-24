@@ -15,7 +15,6 @@ export default [
 			'@typescript-eslint/no-unsafe-function-type': 'warn',
 			'@typescript-eslint/no-unused-expressions': 'warn',
 			'@typescript-eslint/no-unused-vars': 'warn',
-			'@typescript-eslint/no-unnecessary-type-constraint': 'warn',
 			'react/display-name': 'warn',
 			'react-hooks/rules-of-hooks': 'warn', // :( :( :(
 			'sonarjs/cognitive-complexity': 'warn',
@@ -24,11 +23,8 @@ export default [
 			'sonarjs/no-nested-functions': 'warn',
 			'sonarjs/prefer-default-last': 'warn',
 			'sonarjs/pseudo-random': 'off',
-			'sonarjs/void-use': 'off',
+			'sonarjs/void-use': 'warn',
 			'unicorn/prefer-global-this': 'warn',
-
-			// temp overrides
-			'@typescript-eslint/ban-ts-comment': 'warn',
 		},
 	},
 ];

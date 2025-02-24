@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { invariant } from '@autoguru/utilities';
 import * as React from 'react';
 import {

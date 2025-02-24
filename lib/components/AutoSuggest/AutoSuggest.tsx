@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-type-constraint */
 /* eslint-disable jsx-a11y/no-autofocus */
 import { ChevronDownIcon, CloseIcon, IconType } from '@autoguru/icons';
 import { wrapEvent } from '@autoguru/utilities';
@@ -254,7 +255,6 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 			if (event.key === 'Enter' && typeof onEnter === 'function') {
 				setShowModal(false);
 				setIsFocused(false);
-				// @ts-ignore
 				inputRef.current?.blur();
 				onEnter(valueRef.current as AutoSuggestValue<any>);
 			}

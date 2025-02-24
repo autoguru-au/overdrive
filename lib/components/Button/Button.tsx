@@ -125,7 +125,8 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 		ref,
 	) => {
 		const { isSingleIconChild, props: maybeIconProps } = useMemo(() => {
-			const maybeIcon = // @ts-ignore
+			const maybeIcon =
+				// @ts-expect-error This comparison appears to be unintentional
 				isValidElement(children) && children.type === Icon;
 			const maybeProps = children as ReactElement<
 				ComponentProps<typeof Icon>
@@ -275,10 +276,8 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 		);
 
 		return isValidElement(Component)
-			? // @ts-ignore
-				cloneElement(Component, { ref, ...props }, child)
-			: // @ts-ignore
-				createElement(Component, { ref, ...props }, child);
+			? cloneElement(Component, { ...props }, child)
+			: createElement(Component, { ...props }, child);
 	},
 );
 

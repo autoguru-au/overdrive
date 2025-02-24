@@ -11,6 +11,7 @@ export const isBrowser = typeof window !== 'undefined';
 
 export const isomorphicLayoutEffect = isBrowser ? useLayoutEffect : useEffect;
 
+// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-constraint
 export const useUncontrolledState = <T extends unknown>(
 	value: T,
 	onChange?: (value: T) => void,
@@ -142,7 +143,7 @@ export const animate = <T extends HTMLElement>(
 	duration = 600,
 ): (() => void) | void => {
 	let start: number | null = null;
-	// @ts-ignore
+	// @ts-expect-error Type 'T[keyof T]' is not assignable to type 'number'
 	const from: number = element[property];
 	if (start === from) return;
 
@@ -160,7 +161,7 @@ export const animate = <T extends HTMLElement>(
 		}
 
 		const time = Math.min(1, (timestamp - start) / duration);
-		// @ts-ignore
+		// @ts-expect-error Type 'number' is not assignable to type 'T[keyof T]'
 		element[property] = easeInOutCubic(time) * (to - from) + from;
 
 		if (time >= 1) return;

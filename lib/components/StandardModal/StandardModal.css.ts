@@ -75,7 +75,7 @@ export const headerCloseButton = style({
 export const content = style({
 	overflowY: 'auto',
 	overscrollBehavior: 'contain',
-	// @ts-ignore
+	// @ts-expect-error Object literal may only specify known properties
 	webkitOverflowScrolling: 'touch',
 	'-webkit-overflow-scrolling': 'touch',
 });

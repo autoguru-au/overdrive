@@ -18,9 +18,7 @@ export const responsiveStyle = (
 
 		Object.assign(styles, {
 			'@media': {
-				// @ts-ignore
 				...styles['@media'],
-				// @ts-ignore
 				[`screen and (min-width: ${breakpoints[query]})`]: style,
 			},
 		});

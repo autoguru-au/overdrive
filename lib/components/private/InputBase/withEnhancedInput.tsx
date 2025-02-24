@@ -121,6 +121,7 @@ export const withEnhancedInput = <
 		// eslint-disable-next-line unicorn/no-object-as-default-parameter
 	}: EnhancedInputConfigs = { primitiveType: 'text', defaultValue: void 0 },
 ) =>
+	// eslint-disable-next-line react/display-name
 	forwardRef<
 		PrimitiveElementType,
 		EnhanceInputProps<IncomingProps, PrimitiveElementType>
@@ -227,7 +228,8 @@ export const withEnhancedInput = <
 
 			A & B != A _or_ P & Omit<P, 'firstName'> != P
 			 */
-			// @ts-ignore
+
+			// @ts-expect-error props not assignable to type
 			const wrappingComponent: WrappedComponentProps<
 				IncomingProps,
 				PrimitiveElementType

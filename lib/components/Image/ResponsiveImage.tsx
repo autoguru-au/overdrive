@@ -60,7 +60,7 @@ export const ResponsiveImage: FunctionComponent<Props> = ({
 		() =>
 			srcUrlMapper({
 				src: incomingSrc,
-				// @ts-ignore
+				// @ts-expect-error Cannot invoke an object which is possibly 'undefined'
 				width: getWidthValue(imageWidth),
 				quality,
 			}),

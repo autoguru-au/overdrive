@@ -9,7 +9,6 @@ globalStyle('*, *:before, *:after', {
 	font: 'inherit',
 	boxSizing: 'inherit',
 	WebkitTapHighlightColor: 'transparent',
-	// @ts-ignore
 	MozOsxFontSmoothing: 'grayscale',
 	textRendering: 'optimizeLegibility',
 });
