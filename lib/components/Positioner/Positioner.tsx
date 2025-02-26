@@ -1,6 +1,11 @@
-import type { Placement } from '@popperjs/core';
-import { flip, offset, popperGenerator, preventOverflow } from '@popperjs/core';
-import { defaultModifiers } from '@popperjs/core/lib/popper';
+import type { Placement } from '@floating-ui/core';
+import {
+	autoUpdate,
+	computePosition,
+	flip,
+	offset,
+	shift,
+} from '@floating-ui/dom';
 import * as React from 'react';
 import {
 	ComponentPropsWithoutRef,
@@ -20,25 +25,6 @@ import * as styles from './Positioner.css';
 import { EAlignment } from './alignment';
 
 export { EAlignment } from './alignment';
-
-const createPopper = popperGenerator({
-	defaultModifiers: [
-		...defaultModifiers,
-		offset,
-		{
-			...preventOverflow,
-			options: {
-				tether: false,
-				altAxis: true,
-				padding: 8,
-			},
-		},
-		flip,
-	],
-	defaultOptions: {
-		placement: 'bottom',
-	},
-});
 
 export interface Props
 	extends Exclude<
@@ -64,74 +50,90 @@ export const Positioner: FunctionComponent<Props> = ({
 
 	const placement = convertPlacement(alignment);
 
-	const referenceRef = useRef<HTMLDivElement>(null);
+	const floatingRef = useRef<HTMLDivElement>(null);
+	const cleanupRef = useRef<(() => void) | null>(null);
 
-	const popperInstanceRef = React.useRef<ReturnType<
-		typeof createPopper
-	> | null>(null);
+	const setupPositioning = useCallback(() => {
+		if (!floatingRef.current || !triggerRef.current || !isOpen) return;
 
-	// Whenever this component get's re-rendered, we want to proc an update to the popper instance.
-	useEffect(() => {
-		if (popperInstanceRef.current) {
-			popperInstanceRef.current.update();
+		// Clean up previous positioning if it exists
+		if (cleanupRef.current) {
+			cleanupRef.current();
+			cleanupRef.current = null;
 		}
-	});
 
-	const handleOpen = useCallback(() => {
-		if (!referenceRef.current || !triggerRef.current || !isOpen) return;
+		// Set up auto-updating positioning
+		const cleanup = autoUpdate(
+			triggerRef.current,
+			floatingRef.current,
+			() => {
+				if (!triggerRef.current || !floatingRef.current) return;
 
-		// Delete the old instance, because we are about to create it again.
-		if (popperInstanceRef.current) popperInstanceRef.current.destroy();
+				computePosition(triggerRef.current, floatingRef.current, {
+					placement,
+					middleware: [
+						offset(triggerOffset),
+						flip(),
+						shift({
+							padding: 8,
+							crossAxis: true,
+						}),
+					],
+				})
+					.then(({ x, y }) => {
+						if (!floatingRef.current) return;
 
-		const popper = createPopper(triggerRef.current, referenceRef.current, {
-			placement,
-			modifiers: [
-				{
-					name: 'offset',
-					options: {
-						offset: [0, triggerOffset],
-					},
-				},
-			],
-		});
+						Object.assign(floatingRef.current.style, {
+							left: `${x}px`,
+							top: `${y}px`,
+						});
+						// Return the coordinates to maintain proper Promise chaining
+						return { x, y };
+					})
+					.catch((error) => {
+						// Handle or log positioning errors
+						console.error('Positioning error:', error);
+						// Re-throw the error to maintain proper Promise chaining
+						throw error;
+					});
+			},
+		);
 
-		setRef(popperInstanceRef, popper);
+		// Store cleanup function
+		cleanupRef.current = cleanup;
 	}, [isOpen, placement, triggerOffset]);
 
-	const handleClose = () => {
-		if (!popperInstanceRef.current) return;
-
-		popperInstanceRef.current.destroy();
-		// GC the popper instance
-		setRef(popperInstanceRef, null);
-	};
-
-	/*
-	When one the handleOpen reference changes, we want to fire it off again,
-	and when we un-mount to destroy the instance also.
-	 */
+	// Setup positioning when dependencies change
 	useEffect(() => {
-		handleOpen();
-	}, [handleOpen]);
+		setupPositioning();
+	}, [setupPositioning]);
 
-	// Close when component un-mounts;
-	useEffect(() => () => void handleClose(), []);
-
+	// Clean up when component unmounts
 	useEffect(() => {
-		if (!isOpen) {
-			handleClose();
+		return () => {
+			if (cleanupRef.current) {
+				cleanupRef.current();
+				cleanupRef.current = null;
+			}
+		};
+	}, []);
+
+	// Clean up when isOpen changes to false
+	useEffect(() => {
+		if (!isOpen && cleanupRef.current) {
+			cleanupRef.current();
+			cleanupRef.current = null;
 		}
 	}, [isOpen]);
 
-	// Gets applied to the positioner div, that on mount will run this callback
+	// Handle ref assignment
 	const handleRef = useCallback(
-		(node) => {
-			setRef(referenceRef, node);
-			handleOpen();
+		(node: HTMLDivElement | null) => {
+			setRef(floatingRef, node);
+			setupPositioning();
 		},
-		[handleOpen],
+		[setupPositioning],
 	);
-	/* eslint-enable react-hooks/rules-of-hooks */
 
 	return (
 		<Portal>
