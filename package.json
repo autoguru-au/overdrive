@@ -31,7 +31,7 @@
 		"access": "public"
 	},
 	"scripts": {
-		"analyse": "ANALYSE=true vite build",
+		"analyse": "vite build --config vite-analyse.config.ts",
 		"build": "babel lib --out-dir dist --extensions '.ts,.tsx,.css' --ignore 'lib/**/*.stories.tsx,lib/stories'",
 		"chromatic": "chromatic test --exit-zero-on-changes --build-script-name storybook:build",
 		"copy:public": "node scripts/copyPublic.js",
