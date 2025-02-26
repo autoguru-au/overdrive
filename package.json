@@ -31,6 +31,7 @@
 		"access": "public"
 	},
 	"scripts": {
+		"analyse": "ANALYSE=true vite build",
 		"build": "babel lib --out-dir dist --extensions '.ts,.tsx,.css' --ignore 'lib/**/*.stories.tsx,lib/stories'",
 		"chromatic": "chromatic test --exit-zero-on-changes --build-script-name storybook:build",
 		"copy:public": "node scripts/copyPublic.js",
@@ -153,6 +154,7 @@
 		"react-keyed-flatten-children": "2.2.1",
 		"react-stately": "^3.35.0",
 		"react-swipeable": "^7.0.2",
+		"rollup-plugin-visualizer": "^5.14.0",
 		"storybook": "^8.5.8",
 		"storybook-addon-tag-badges": "^1.4.0",
 		"typescript": "^5.7.3",

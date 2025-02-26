@@ -196,6 +196,7 @@ __metadata:
     react-keyed-flatten-children: "npm:2.2.1"
     react-stately: "npm:^3.35.0"
     react-swipeable: "npm:^7.0.2"
+    rollup-plugin-visualizer: "npm:^5.14.0"
     storybook: "npm:^8.5.8"
     storybook-addon-tag-badges: "npm:^1.4.0"
     typescript: "npm:^5.7.3"
@@ -10981,7 +10982,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"open@npm:^8.0.4":
+"open@npm:^8.0.4, open@npm:^8.4.0":
   version: 8.4.2
   resolution: "open@npm:8.4.2"
   dependencies:
@@ -12189,6 +12190,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rollup-plugin-visualizer@npm:^5.14.0":
+  version: 5.14.0
+  resolution: "rollup-plugin-visualizer@npm:5.14.0"
+  dependencies:
+    open: "npm:^8.4.0"
+    picomatch: "npm:^4.0.2"
+    source-map: "npm:^0.7.4"
+    yargs: "npm:^17.5.1"
+  peerDependencies:
+    rolldown: 1.x
+    rollup: 2.x || 3.x || 4.x
+  peerDependenciesMeta:
+    rolldown:
+      optional: true
+    rollup:
+      optional: true
+  bin:
+    rollup-plugin-visualizer: dist/bin/cli.js
+  checksum: 10/c892a3d36bfa7a26507b8cc0c4c29763ec40de8585115e6655154c2ff35e4bfabc877739e1b9927bb01231b1c51d7dd6b0f2f9c5898826efcbd2dcd60c5d2b73
+  languageName: node
+  linkType: hard
+
 "rollup@npm:^4.30.1":
   version: 4.34.6
   resolution: "rollup@npm:4.34.6"
@@ -12667,6 +12690,13 @@ __metadata:
   version: 0.6.1
   resolution: "source-map@npm:0.6.1"
   checksum: 10/59ef7462f1c29d502b3057e822cdbdae0b0e565302c4dd1a95e11e793d8d9d62006cdc10e0fd99163ca33ff2071360cf50ee13f90440806e7ed57d81cba2f7ff
+  languageName: node
+  linkType: hard
+
+"source-map@npm:^0.7.4":
+  version: 0.7.4
+  resolution: "source-map@npm:0.7.4"
+  checksum: 10/a0f7c9b797eda93139842fd28648e868a9a03ea0ad0d9fa6602a0c1f17b7fb6a7dcca00c144476cccaeaae5042e99a285723b1a201e844ad67221bf5d428f1dc
   languageName: node
   linkType: hard
 
@@ -14160,7 +14190,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs@npm:^17.7.2":
+"yargs@npm:^17.5.1, yargs@npm:^17.7.2":
   version: 17.7.2
   resolution: "yargs@npm:17.7.2"
   dependencies:

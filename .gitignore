@@ -10,7 +10,7 @@ node_modules/
 *.log*
 
 # Build things
-dist/
+dist*/
 /site-dist/
 *.tgz
 coverage/
