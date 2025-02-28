@@ -57,7 +57,7 @@ const getSpinnerColour: (
 const getBorderRadius: (
 	rounded: boolean,
 ) => ComponentProps<typeof Box>['borderRadius'] = (rounded) =>
-	rounded ? 'pill' : '1';
+	rounded ? 'pill' : '2';
 
 const getPadding: (
 	size: keyof typeof styles.size,
@@ -280,5 +280,7 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 			: createElement(Component, { ...props }, child);
 	},
 );
+
+Button.displayName = 'Button';
 
 export default Button;

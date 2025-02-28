@@ -78,7 +78,7 @@ export const baseThemeColours: ColourMap = {
 export const defaultGamut = buildColourGamut(baseThemeColours);
 
 const white = '#fff';
-const secondaryForeground = baseThemeColours.gray['700'];
+const secondaryForeground = baseThemeColours.gray['900'];
 export const tokens: Tokens = {
 	mode: 'light',
 	body: {
@@ -120,7 +120,7 @@ export const tokens: Tokens = {
 		intent: {
 			primary: {
 				background: {
-					standard: baseThemeColours.green['700'],
+					standard: baseThemeColours.green['600'],
 					mild: baseThemeColours.green['200'],
 					strong: baseThemeColours.green['900'],
 				},

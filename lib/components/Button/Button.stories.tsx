@@ -167,6 +167,15 @@ const TemplateMulti = (args: ComponentProps<typeof Button>) => (
 	</>
 );
 
+export const Primary: Story = {
+	args: {
+		size: 'medium',
+		variant: 'primary',
+		onClick,
+	},
+	render: TemplateMulti,
+};
+
 export const PrimarySmall: Story = {
 	args: {
 		size: 'small',
@@ -176,28 +185,10 @@ export const PrimarySmall: Story = {
 	render: TemplateMulti,
 };
 
-export const PrimaryMedium: Story = {
+export const Secondary: Story = {
 	args: {
 		size: 'medium',
-		variant: 'primary',
-		onClick,
-	},
-	render: TemplateMulti,
-};
-
-export const BrandSmall: Story = {
-	args: {
-		size: 'small',
-		variant: 'brand',
-		onClick,
-	},
-	render: TemplateMulti,
-};
-
-export const BrandMedium: Story = {
-	args: {
-		size: 'medium',
-		variant: 'brand',
+		variant: 'secondary',
 		onClick,
 	},
 	render: TemplateMulti,
@@ -212,25 +203,16 @@ export const SecondarySmall: Story = {
 	render: TemplateMulti,
 };
 
-export const SecondaryMedium: Story = {
+export const Brand: Story = {
 	args: {
 		size: 'medium',
-		variant: 'secondary',
+		variant: 'brand',
 		onClick,
 	},
 	render: TemplateMulti,
 };
 
-export const InformationSmall: Story = {
-	args: {
-		size: 'small',
-		variant: 'information',
-		onClick,
-	},
-	render: TemplateMulti,
-};
-
-export const InformationMedium: Story = {
+export const Information: Story = {
 	args: {
 		size: 'medium',
 		variant: 'information',
@@ -239,16 +221,7 @@ export const InformationMedium: Story = {
 	render: TemplateMulti,
 };
 
-export const WarningSmall: Story = {
-	args: {
-		size: 'small',
-		variant: 'warning',
-		onClick,
-	},
-	render: TemplateMulti,
-};
-
-export const WarningMedium: Story = {
+export const Warning: Story = {
 	args: {
 		size: 'medium',
 		variant: 'warning',
@@ -257,16 +230,7 @@ export const WarningMedium: Story = {
 	render: TemplateMulti,
 };
 
-export const SuccessSmall: Story = {
-	args: {
-		size: 'small',
-		variant: 'success',
-		onClick,
-	},
-	render: TemplateMulti,
-};
-
-export const SuccessMedium: Story = {
+export const Success: Story = {
 	args: {
 		size: 'medium',
 		variant: 'success',

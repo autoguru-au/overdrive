@@ -72,37 +72,31 @@ export const variant = {
 	primary: style({
 		color: vars.colours.intent.primary.foreground,
 		backgroundColor: vars.colours.intent.primary.background.standard,
-		boxShadow: `inset 0 0 0 1px ${vars.colours.intent.primary.border}, ${vars.elevation['2']}`,
 	}),
 	brand: style({
 		color: vars.colours.intent.brand.foreground,
 		backgroundColor: vars.colours.intent.brand.background.standard,
-		boxShadow: `inset 0 0 0 1px ${vars.colours.intent.brand.border}, ${vars.elevation['2']}`,
 	}),
 	secondary: style({
 		color: vars.colours.intent.secondary.foreground,
 		backgroundColor: vars.colours.intent.secondary.background.standard,
-		boxShadow: `inset 0 0 0 1px ${vars.colours.intent.secondary.border}, ${vars.elevation['2']}`,
+		border: `1px solid ${vars.colours.intent.secondary.border}`,
 	}),
 	danger: style({
 		backgroundColor: vars.colours.intent.danger.background.standard,
 		color: vars.colours.intent.danger.foreground,
-		boxShadow: `inset 0 0 0 1px ${vars.colours.intent.danger.border}, ${vars.elevation['2']}`,
 	}),
 	information: style({
 		backgroundColor: vars.colours.intent.information.background.standard,
 		color: vars.colours.intent.information.foreground,
-		boxShadow: `inset 0 0 0 1px ${vars.colours.intent.information.border}, ${vars.elevation['2']}`,
 	}),
 	warning: style({
 		backgroundColor: vars.colours.intent.warning.background.standard,
 		color: vars.colours.intent.warning.foreground,
-		boxShadow: `inset 0 0 0 1px ${vars.colours.intent.warning.border}, ${vars.elevation['2']}`,
 	}),
 	success: style({
 		backgroundColor: vars.colours.intent.success.background.standard,
 		color: vars.colours.intent.success.foreground,
-		boxShadow: `inset 0 0 0 1px ${vars.colours.intent.success.border}, ${vars.elevation['2']}`,
 	}),
 };
 
@@ -110,92 +104,56 @@ export const defaultStates = {
 	primary: style({
 		':hover': {
 			color: vars.colours.intent.primary.foreground,
-			backgroundColor: vars.colours.intent.primary.background.strong,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.primary.border}, ${vars.elevation['3']}`,
-		},
-		':active': {
-			transform: 'scale(0.97)',
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.primary.border}, ${vars.elevation['1']}`,
-			color: vars.colours.intent.primary.foreground,
-			backgroundColor: vars.colours.intent.primary.background.strong,
+			backgroundColor: vars.colours.gamut.green700,
 		},
 	}),
 	brand: style({
 		':hover': {
-			color: vars.colours.intent.brand.foreground,
 			backgroundColor: vars.colours.intent.brand.background.strong,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.brand.border}, ${vars.elevation['3']}`,
 		},
 		':active': {
-			transform: 'scale(0.97)',
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.brand.border}, ${vars.elevation['1']}`,
-			color: vars.colours.intent.brand.foreground,
 			backgroundColor: vars.colours.intent.brand.background.strong,
 		},
 	}),
 	secondary: style({
-		':hover': {
-			color: vars.colours.intent.secondary.foreground,
-			backgroundColor: vars.colours.intent.secondary.background.strong,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.secondary.border}, ${vars.elevation['3']}`,
-		},
-		':active': {
-			transform: 'scale(0.97)',
-			color: vars.colours.intent.secondary.foreground,
-			backgroundColor: vars.colours.intent.secondary.background.strong,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.secondary.border}, ${vars.elevation['1']}`,
+		selectors: {
+			':hover, :focus, :active': {
+				backgroundColor:
+					vars.colours.intent.secondary.background.strong,
+				borderColor: vars.colours.intent.secondary.background.strong,
+			},
 		},
 	}),
 	danger: style({
 		':hover': {
-			color: vars.colours.intent.danger.foreground,
 			backgroundColor: vars.colours.intent.danger.background.strong,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.danger.border}, ${vars.elevation['3']}`,
 		},
 		':active': {
-			transform: 'scale(0.97)',
-			color: vars.colours.intent.danger.foreground,
 			backgroundColor: vars.colours.intent.danger.background.strong,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.danger.border}, ${vars.elevation['1']}`,
 		},
 	}),
 	information: style({
 		':hover': {
-			color: vars.colours.intent.information.foreground,
 			backgroundColor: vars.colours.intent.information.background.strong,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.information.border}, ${vars.elevation['3']}`,
 		},
 		':active': {
-			transform: 'scale(0.97)',
-			color: vars.colours.intent.information.foreground,
 			backgroundColor: vars.colours.intent.information.background.strong,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.information.border}, ${vars.elevation['1']}`,
 		},
 	}),
 	warning: style({
 		':hover': {
-			color: vars.colours.intent.warning.foreground,
 			backgroundColor: vars.colours.intent.warning.background.strong,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.warning.border}, ${vars.elevation['3']}`,
 		},
 		':active': {
-			transform: 'scale(0.97)',
-			color: vars.colours.intent.warning.foreground,
 			backgroundColor: vars.colours.intent.warning.background.strong,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.warning.border}, ${vars.elevation['1']}`,
 		},
 	}),
 	success: style({
 		':hover': {
-			color: vars.colours.intent.success.foreground,
 			backgroundColor: vars.colours.intent.success.background.strong,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.success.border}, ${vars.elevation['3']}`,
 		},
 		':active': {
-			transform: 'scale(0.97)',
-			color: vars.colours.intent.success.foreground,
 			backgroundColor: vars.colours.intent.success.background.strong,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.success.border}, ${vars.elevation['1']}`,
 		},
 	}),
 };
