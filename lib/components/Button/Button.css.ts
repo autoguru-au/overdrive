@@ -68,7 +68,7 @@ export const button = recipe({
 			primary: {
 				color: intentColors.primary.foreground,
 				backgroundColor: intentColors.primary.background.standard,
-				'&:not(:disabled):hover': {
+				'&:focus-visible, &:not(:disabled):hover': {
 					color: intentColors.primary.foreground,
 					backgroundColor: vars.colours.gamut.green700,
 				},
@@ -76,7 +76,7 @@ export const button = recipe({
 			brand: {
 				color: intentColors.brand.foreground,
 				backgroundColor: intentColors.brand.background.standard,
-				'&:not(:disabled):hover': {
+				'&:focus-visible, &:not(:disabled):hover': {
 					backgroundColor: intentColors.brand.background.strong,
 				},
 				'&:active': {
@@ -88,7 +88,7 @@ export const button = recipe({
 				backgroundColor: intentColors.secondary.background.standard,
 				border: `1px solid ${intentColors.secondary.border}`,
 				selectors: {
-					'&:not(:disabled):hover, &:not(:disabled):focus, &:active':
+					'&:focus-visible, &:not(:disabled):hover, &:not(:disabled):focus, &:active':
 						{
 							backgroundColor:
 								intentColors.secondary.background.strong,
@@ -100,7 +100,7 @@ export const button = recipe({
 			danger: {
 				backgroundColor: intentColors.danger.background.standard,
 				color: intentColors.danger.foreground,
-				'&:not(:disabled):hover': {
+				'&:focus-visible, &:not(:disabled):hover': {
 					backgroundColor: intentColors.danger.background.strong,
 				},
 				'&:active': {
@@ -110,7 +110,7 @@ export const button = recipe({
 			information: {
 				backgroundColor: intentColors.information.background.standard,
 				color: intentColors.information.foreground,
-				'&:not(:disabled):hover': {
+				'&:focus-visible, &:not(:disabled):hover': {
 					backgroundColor: intentColors.information.background.strong,
 				},
 				'&:active': {
@@ -120,7 +120,7 @@ export const button = recipe({
 			warning: {
 				backgroundColor: intentColors.warning.background.standard,
 				color: intentColors.warning.foreground,
-				'&:not(:disabled):hover': {
+				'&:focus-visible, &:not(:disabled):hover': {
 					backgroundColor: intentColors.warning.background.strong,
 				},
 				'&:active': {
@@ -130,7 +130,7 @@ export const button = recipe({
 			success: {
 				backgroundColor: intentColors.success.background.standard,
 				color: intentColors.success.foreground,
-				'&:not(:disabled):hover': {
+				'&:focus-visible, &:not(:disabled):hover': {
 					backgroundColor: intentColors.success.background.strong,
 				},
 				'&:active': {
@@ -193,7 +193,7 @@ export const button = recipe({
 			variants: { intent: 'primary', minimal: true },
 			style: {
 				selectors: {
-					'&:not(:disabled):hover': {
+					'&:focus-visible, &:not(:disabled):hover': {
 						color: intentColors.primary.background.strong,
 						backgroundColor: intentColors.primary.background.mild,
 					},
@@ -208,7 +208,7 @@ export const button = recipe({
 			variants: { intent: 'brand', minimal: true },
 			style: {
 				selectors: {
-					'&:not(:disabled):hover': {
+					'&:focus-visible, &:not(:disabled):hover': {
 						color: intentColors.brand.background.strong,
 						backgroundColor: intentColors.brand.background.mild,
 					},
@@ -223,7 +223,7 @@ export const button = recipe({
 			variants: { intent: 'secondary', minimal: true },
 			style: {
 				selectors: {
-					'&:not(:disabled):hover': {
+					'&:focus-visible, &:not(:disabled):hover': {
 						color: vars.typography.colour.secondary,
 						backgroundColor:
 							intentColors.secondary.background.strong,
@@ -240,7 +240,7 @@ export const button = recipe({
 			variants: { intent: 'danger', minimal: true },
 			style: {
 				selectors: {
-					'&:not(:disabled):hover': {
+					'&:focus-visible, &:not(:disabled):hover': {
 						color: intentColors.danger.background.strong,
 						backgroundColor: intentColors.danger.background.mild,
 					},
@@ -255,7 +255,7 @@ export const button = recipe({
 			variants: { intent: 'information', minimal: true },
 			style: {
 				selectors: {
-					'&:not(:disabled):hover': {
+					'&:focus-visible, &:not(:disabled):hover': {
 						color: intentColors.information.background.strong,
 						backgroundColor:
 							intentColors.information.background.mild,
@@ -272,7 +272,7 @@ export const button = recipe({
 			variants: { intent: 'warning', minimal: true },
 			style: {
 				selectors: {
-					'&:not(:disabled):hover': {
+					'&:focus-visible, &:not(:disabled):hover': {
 						color: intentColors.warning.background.strong,
 						backgroundColor: intentColors.warning.background.mild,
 					},
@@ -287,7 +287,7 @@ export const button = recipe({
 			variants: { intent: 'success', minimal: true },
 			style: {
 				selectors: {
-					'&:not(:disabled):hover': {
+					'&:focus-visible, &:not(:disabled):hover': {
 						color: intentColors.success.background.strong,
 						backgroundColor: intentColors.success.background.mild,
 					},
