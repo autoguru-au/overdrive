@@ -91,13 +91,13 @@ __metadata:
   linkType: hard
 
 "@autoguru/icons@npm:^1.8.2":
-  version: 1.8.2
-  resolution: "@autoguru/icons@npm:1.8.2"
+  version: 1.8.3
+  resolution: "@autoguru/icons@npm:1.8.3"
   dependencies:
     tslib: "npm:^2.1.0"
   peerDependencies:
     react: ">=16.8"
-  checksum: 10/960a5d0bedadc8997d3487ecc68bd2a53e403389cf1aeeb8cac76f5fbbfff42885fa4d5ef5e3f17e0636f32b781de33cccaaff71e5163d76f55a1dc4bc63b459
+  checksum: 10/7d5b586e617124c73a24cede93e4b2cc1441b18271a3b041263948f5b5bbf3cc6203788db21449969e4e18b3747a9553044732991b265ed4dbfddb15cb69ee9a
   languageName: node
   linkType: hard
 
