@@ -1,23 +1,14 @@
 import { ArgTypes } from '@storybook/react';
 import { type ComponentProps } from 'react';
 
-import { defaultGamut } from '../../themes/base/tokens';
-import { Tokens } from '../../themes/tokens';
+import { defaultGamut, tokens } from '../../themes/base/tokens';
 
 import { Box } from './Box';
 
-export const scaleOptions: Array<keyof Tokens['space']> = [
-	'none',
-	'1',
-	'2',
-	'3',
-	'4',
-	'5',
-	'6',
-	'7',
-	'8',
-	'9',
-];
+export const scaleOptions = Object.values(tokens.space);
+const boxShadowOptions = Object.keys(tokens.elevation);
+const borderRadiusOptions = Object.keys(tokens.border.radius);
+
 const scaledProps: Array<keyof ComponentProps<typeof Box>> = [
 	'padding',
 	'paddingX',
@@ -33,26 +24,13 @@ const scaledProps: Array<keyof ComponentProps<typeof Box>> = [
 	'marginLeft',
 ];
 
-const boxShadowOptions: Array<keyof Tokens['elevation']> = [
-	'none',
-	'1',
-	'2',
-	'3',
-	'4',
-	'5',
-];
-const borderRadiusOptions: Array<keyof Tokens['border']['radius']> = [
-	'none',
-	'1',
-	'min',
-	'full',
-	'pill',
-];
 const widthOptions: Array<ComponentProps<typeof Box>['width']> = [
 	'full',
 	'none',
 ];
-const oderOptions: Array<ComponentProps<typeof Box>['order']> = [0, 1, 2];
+
+const orderOptions: Array<ComponentProps<typeof Box>['order']> = [0, 1, 2];
+
 export const boxArgTypes: Partial<ArgTypes<ComponentProps<typeof Box>>> = {
 	backgroundColour: {
 		options: Object.keys(defaultGamut),
@@ -91,18 +69,12 @@ export const boxArgTypes: Partial<ArgTypes<ComponentProps<typeof Box>>> = {
 		},
 	},
 	flexShrink: {
-		options: {
-			// @ts-expect-error TODO: revisit argTypes options with latest SB types
-			default: undefined,
-			'1': '1',
-		},
+		defaultValue: undefined,
+		options: ['1'],
 	},
 	pointerEvents: {
-		options: {
-			// @ts-expect-error TODO: revist argTypes options with latest SB types
-			default: undefined,
-			none: 'none',
-		},
+		defaultValue: undefined,
+		options: ['none'],
 	},
 	width: {
 		options: widthOptions,
@@ -112,7 +84,7 @@ export const boxArgTypes: Partial<ArgTypes<ComponentProps<typeof Box>>> = {
 		},
 	},
 	order: {
-		options: oderOptions,
+		options: orderOptions,
 		defaultValue: null,
 		control: {
 			type: 'select',
