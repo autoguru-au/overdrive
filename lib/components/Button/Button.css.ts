@@ -3,6 +3,7 @@ import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 
 import { themeContractVars as vars } from '../../themes/theme.css';
 
+const intentColors = vars.colours.intent;
 const smallHeight = '36px';
 
 // Body styles for button content layout
@@ -21,8 +22,8 @@ export const spinner = style({
 });
 
 // Button recipe with all variants
-export const styledButton = recipe({
-	base: style({
+export const button = recipe({
+	base: {
 		transitionDelay: '0s',
 		transitionTimingFunction: vars.animation.easing.standard,
 		transitionDuration: '0.1s',
@@ -32,137 +33,103 @@ export const styledButton = recipe({
 		willChange: 'transform',
 		cursor: 'pointer',
 		selectors: {
-			'[disabled]': {
+			'&[data-loading], &:disabled': {
 				cursor: 'not-allowed',
+			},
+			'&:not([data-loading])[disabled]': {
 				opacity: '0.3',
 			},
 		},
-	}),
+	},
 
 	variants: {
 		// Size variants
 		size: {
 			small: {
-				minWidth: vars.space['8'],
 				height: smallHeight,
-				gridGap: vars.space['1'],
 			},
 			medium: {
-				minWidth: vars.space['9'],
 				height: vars.space['8'],
-				gridGap: vars.space['2'],
 			},
 		},
 		// Shape variants
 		shape: {
 			default: {},
-			rounded: {
-				selectors: {
-					'&[data-size="small"]': {
-						minWidth: smallHeight,
-					},
-					'&[data-size="medium"]': {
-						minWidth: vars.space['8'],
-					},
-				},
-			},
-			iconOnly: {
-				selectors: {
-					'&[data-size="small"]': {
-						width: smallHeight,
-					},
-					'&[data-size="medium"]': {
-						width: vars.space['8'],
-					},
-				},
-			},
+			rounded: {},
+			iconOnly: {},
 		},
 		// Intent (color scheme) variants
 		intent: {
 			primary: {
-				color: vars.colours.intent.primary.foreground,
-				backgroundColor:
-					vars.colours.intent.primary.background.standard,
-				':hover': {
-					color: vars.colours.intent.primary.foreground,
+				color: intentColors.primary.foreground,
+				backgroundColor: intentColors.primary.background.standard,
+				'&:not(:disabled):hover': {
+					color: intentColors.primary.foreground,
 					backgroundColor: vars.colours.gamut.green700,
 				},
 			},
 			brand: {
-				color: vars.colours.intent.brand.foreground,
-				backgroundColor: vars.colours.intent.brand.background.standard,
-				':hover': {
-					backgroundColor:
-						vars.colours.intent.brand.background.strong,
+				color: intentColors.brand.foreground,
+				backgroundColor: intentColors.brand.background.standard,
+				'&:not(:disabled):hover': {
+					backgroundColor: intentColors.brand.background.strong,
 				},
-				':active': {
-					backgroundColor:
-						vars.colours.intent.brand.background.strong,
+				'&:active': {
+					backgroundColor: intentColors.brand.background.strong,
 				},
 			},
 			secondary: {
-				color: vars.colours.intent.secondary.foreground,
-				backgroundColor:
-					vars.colours.intent.secondary.background.standard,
-				border: `1px solid ${vars.colours.intent.secondary.border}`,
+				color: intentColors.secondary.foreground,
+				backgroundColor: intentColors.secondary.background.standard,
+				border: `1px solid ${intentColors.secondary.border}`,
 				selectors: {
-					'&:hover, &:focus, &:active': {
-						backgroundColor:
-							vars.colours.intent.secondary.background.strong,
-						borderColor:
-							vars.colours.intent.secondary.background.strong,
-					},
+					'&:not(:disabled):hover, &:not(:disabled):focus, &:active':
+						{
+							backgroundColor:
+								intentColors.secondary.background.strong,
+							borderColor:
+								intentColors.secondary.background.strong,
+						},
 				},
 			},
 			danger: {
-				backgroundColor: vars.colours.intent.danger.background.standard,
-				color: vars.colours.intent.danger.foreground,
-				':hover': {
-					backgroundColor:
-						vars.colours.intent.danger.background.strong,
+				backgroundColor: intentColors.danger.background.standard,
+				color: intentColors.danger.foreground,
+				'&:not(:disabled):hover': {
+					backgroundColor: intentColors.danger.background.strong,
 				},
-				':active': {
-					backgroundColor:
-						vars.colours.intent.danger.background.strong,
+				'&:active': {
+					backgroundColor: intentColors.danger.background.strong,
 				},
 			},
 			information: {
-				backgroundColor:
-					vars.colours.intent.information.background.standard,
-				color: vars.colours.intent.information.foreground,
-				':hover': {
-					backgroundColor:
-						vars.colours.intent.information.background.strong,
+				backgroundColor: intentColors.information.background.standard,
+				color: intentColors.information.foreground,
+				'&:not(:disabled):hover': {
+					backgroundColor: intentColors.information.background.strong,
 				},
-				':active': {
-					backgroundColor:
-						vars.colours.intent.information.background.strong,
+				'&:active': {
+					backgroundColor: intentColors.information.background.strong,
 				},
 			},
 			warning: {
-				backgroundColor:
-					vars.colours.intent.warning.background.standard,
-				color: vars.colours.intent.warning.foreground,
-				':hover': {
-					backgroundColor:
-						vars.colours.intent.warning.background.strong,
+				backgroundColor: intentColors.warning.background.standard,
+				color: intentColors.warning.foreground,
+				'&:not(:disabled):hover': {
+					backgroundColor: intentColors.warning.background.strong,
 				},
-				':active': {
-					backgroundColor:
-						vars.colours.intent.warning.background.strong,
+				'&:active': {
+					backgroundColor: intentColors.warning.background.strong,
 				},
 			},
 			success: {
-				backgroundColor:
-					vars.colours.intent.success.background.standard,
-				color: vars.colours.intent.success.foreground,
-				':hover': {
-					backgroundColor:
-						vars.colours.intent.success.background.strong,
+				backgroundColor: intentColors.success.background.standard,
+				color: intentColors.success.foreground,
+				'&:not(:disabled):hover': {
+					backgroundColor: intentColors.success.background.strong,
 				},
-				':active': {
-					backgroundColor:
-						vars.colours.intent.success.background.strong,
+				'&:active': {
+					backgroundColor: intentColors.success.background.strong,
 				},
 			},
 		},
@@ -171,82 +138,167 @@ export const styledButton = recipe({
 			true: {
 				color: vars.typography.colour.neutral,
 				backgroundColor: 'transparent',
+			},
+			false: [],
+		},
+	},
+	compoundVariants: [
+		// Size and shape compound variants
+		{
+			variants: { size: 'small', shape: 'default' },
+			style: {
+				minWidth: vars.space['8'],
+				gridGap: vars.space['1'],
+			},
+		},
+		{
+			variants: { size: 'small', shape: 'rounded' },
+			style: {
+				minWidth: smallHeight,
+			},
+		},
+		{
+			variants: { size: 'small', shape: 'iconOnly' },
+			style: {
+				width: smallHeight,
+			},
+		},
+		{
+			variants: { size: 'medium', shape: 'default' },
+			style: {
+				minWidth: vars.space['9'],
+				gridGap: vars.space['2'],
+			},
+		},
+		{
+			variants: { size: 'medium', shape: 'rounded' },
+			style: {
+				minWidth: vars.space['8'],
+			},
+		},
+		{
+			variants: { size: 'medium', shape: 'iconOnly' },
+			style: {
+				width: vars.space['8'],
+			},
+		},
+		// Minimal compound variants per intent
+		{
+			variants: { intent: 'primary', minimal: true },
+			style: {
 				selectors: {
-					'&[data-variant="primary"]:hover, &[data-variant="primary"]:active':
-						{
-							color: vars.colours.intent.primary.background
-								.strong,
-							backgroundColor:
-								vars.colours.intent.primary.background.mild,
-							boxShadow: 'none',
-						},
-					'&[data-variant="brand"]:hover, &[data-variant="brand"]:active':
-						{
-							color: vars.colours.intent.brand.background.strong,
-							backgroundColor:
-								vars.colours.intent.brand.background.mild,
-							boxShadow: 'none',
-						},
-					'&[data-variant="secondary"]:hover, &[data-variant="secondary"]:active':
-						{
-							color: vars.typography.colour.secondary,
-							backgroundColor:
-								vars.colours.intent.secondary.background.strong,
-							boxShadow: 'none',
-						},
-					'&[data-variant="danger"]:hover, &[data-variant="danger"]:active':
-						{
-							color: vars.colours.intent.danger.background.strong,
-							backgroundColor:
-								vars.colours.intent.danger.background.mild,
-							boxShadow: 'none',
-						},
-					'&[data-variant="information"]:hover, &[data-variant="information"]:active':
-						{
-							color: vars.colours.intent.information.background
-								.strong,
-							backgroundColor:
-								vars.colours.intent.information.background.mild,
-							boxShadow: 'none',
-						},
-					'&[data-variant="warning"]:hover, &[data-variant="warning"]:active':
-						{
-							color: vars.colours.intent.warning.background
-								.strong,
-							backgroundColor:
-								vars.colours.intent.warning.background.mild,
-							boxShadow: 'none',
-						},
-					'&[data-variant="success"]:hover, &[data-variant="success"]:active':
-						{
-							color: vars.colours.intent.success.background
-								.strong,
-							backgroundColor:
-								vars.colours.intent.success.background.mild,
-							boxShadow: 'none',
-						},
-					'&[data-shape="default"]': {
-						minWidth: '50px',
+					'&:not(:disabled):hover': {
+						color: intentColors.primary.background.strong,
+						backgroundColor: intentColors.primary.background.mild,
+					},
+					'&:active': {
+						color: intentColors.primary.background.strong,
+						backgroundColor: intentColors.primary.background.mild,
 					},
 				},
 			},
 		},
-		// Loading variant
-		loading: {
-			true: {
-				cursor: 'not-allowed',
+		{
+			variants: { intent: 'brand', minimal: true },
+			style: {
+				selectors: {
+					'&:not(:disabled):hover': {
+						color: intentColors.brand.background.strong,
+						backgroundColor: intentColors.brand.background.mild,
+					},
+					'&:active': {
+						color: intentColors.brand.background.strong,
+						backgroundColor: intentColors.brand.background.mild,
+					},
+				},
 			},
 		},
-	},
-
-	// Default variants
+		{
+			variants: { intent: 'secondary', minimal: true },
+			style: {
+				selectors: {
+					'&:not(:disabled):hover': {
+						color: vars.typography.colour.secondary,
+						backgroundColor:
+							intentColors.secondary.background.strong,
+					},
+					'&:active': {
+						color: vars.typography.colour.secondary,
+						backgroundColor:
+							intentColors.secondary.background.strong,
+					},
+				},
+			},
+		},
+		{
+			variants: { intent: 'danger', minimal: true },
+			style: {
+				selectors: {
+					'&:not(:disabled):hover': {
+						color: intentColors.danger.background.strong,
+						backgroundColor: intentColors.danger.background.mild,
+					},
+					'&:active': {
+						color: intentColors.danger.background.strong,
+						backgroundColor: intentColors.danger.background.mild,
+					},
+				},
+			},
+		},
+		{
+			variants: { intent: 'information', minimal: true },
+			style: {
+				selectors: {
+					'&:not(:disabled):hover': {
+						color: intentColors.information.background.strong,
+						backgroundColor:
+							intentColors.information.background.mild,
+					},
+					'&:active': {
+						color: intentColors.information.background.strong,
+						backgroundColor:
+							intentColors.information.background.mild,
+					},
+				},
+			},
+		},
+		{
+			variants: { intent: 'warning', minimal: true },
+			style: {
+				selectors: {
+					'&:not(:disabled):hover': {
+						color: intentColors.warning.background.strong,
+						backgroundColor: intentColors.warning.background.mild,
+					},
+					'&:active': {
+						color: intentColors.warning.background.strong,
+						backgroundColor: intentColors.warning.background.mild,
+					},
+				},
+			},
+		},
+		{
+			variants: { intent: 'success', minimal: true },
+			style: {
+				selectors: {
+					'&:not(:disabled):hover': {
+						color: intentColors.success.background.strong,
+						backgroundColor: intentColors.success.background.mild,
+					},
+					'&:active': {
+						color: intentColors.success.background.strong,
+						backgroundColor: intentColors.success.background.mild,
+					},
+				},
+			},
+		},
+	],
 	defaultVariants: {
 		size: 'medium',
 		shape: 'default',
 		intent: 'primary',
 		minimal: false,
-		loading: false,
 	},
 });
 
-export type StyledButtonProps = RecipeVariants<typeof styledButton>;
+export type StyledButtonProps = NonNullable<RecipeVariants<typeof button>>;
