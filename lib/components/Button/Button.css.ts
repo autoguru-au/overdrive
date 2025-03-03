@@ -1,6 +1,8 @@
 import { style } from '@vanilla-extract/css';
 import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 
+import { focusOutline } from '../../styles/focusOutline.css';
+import { odStyle } from '../../styles/sprinkles.css';
 import { themeContractVars as vars } from '../../themes/theme.css';
 
 const intentColors = vars.colours.intent;
@@ -23,24 +25,27 @@ export const spinner = style({
 
 // Button recipe with all variants
 export const button = recipe({
-	base: {
-		transitionDelay: '0s',
-		transitionTimingFunction: vars.animation.easing.standard,
-		transitionDuration: '0.1s',
-		transitionProperty:
-			'color, background-color, border-color, box-shadow, transform',
-		transform: 'translate(0, 0) scale(1)',
-		willChange: 'transform',
-		cursor: 'pointer',
-		selectors: {
-			'&[data-loading], &:disabled': {
-				cursor: 'not-allowed',
-			},
-			'&:not([data-loading])[disabled]': {
-				opacity: '0.3',
+	base: [
+		{
+			transitionDelay: '0s',
+			transitionTimingFunction: vars.animation.easing.standard,
+			transitionDuration: '0.1s',
+			transitionProperty:
+				'color, background-color, border-color, box-shadow, transform',
+			transform: 'translate(0, 0) scale(1)',
+			willChange: 'transform',
+			cursor: 'pointer',
+			selectors: {
+				'&[data-loading], &:disabled': {
+					cursor: 'not-allowed',
+				},
+				'&:not([data-loading])[disabled]': {
+					opacity: '0.3',
+				},
 			},
 		},
-	},
+		odStyle({ ...focusOutline }),
+	],
 
 	variants: {
 		// Size variants
@@ -138,6 +143,7 @@ export const button = recipe({
 			true: {
 				color: vars.typography.colour.neutral,
 				backgroundColor: 'transparent',
+				border: 'none',
 			},
 			false: [],
 		},
