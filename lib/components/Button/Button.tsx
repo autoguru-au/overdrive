@@ -34,6 +34,12 @@ type ButtonSize = 'small' | 'medium';
 
 const DOUBLE_CLICK_DETECTION_PERIOD = 700;
 
+const defaultEnglish = {
+	loading: 'loading',
+} as const;
+
+type TextContent = keyof typeof defaultEnglish;
+
 export interface ButtonProps
 	extends Pick<ButtonPrimitive, 'id' | 'onClick' | 'type' | 'className'>,
 		Pick<AriaAttributes, 'aria-label'> {
@@ -47,6 +53,10 @@ export interface ButtonProps
 	size?: ButtonSize;
 	variant?: Required<StyledButtonProps['intent']>;
 	withDoubleClicks?: boolean;
+	/**
+	 * Language content override
+	 */
+	lang?: Partial<Record<TextContent, string>>;
 }
 
 const getSpinnerColour: (
@@ -79,6 +89,7 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 			withDoubleClicks = false,
 			isLoading = false,
 			isFullWidth = false,
+			lang,
 			minimal = false,
 			onClick: incomingOnClick,
 			rounded = false,
@@ -90,6 +101,7 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 		},
 		ref,
 	) => {
+		const language = { ...defaultEnglish, ...lang };
 		const { isSingleIconChild, props: maybeIconProps } = useMemo(() => {
 			const maybeIcon =
 				// @ts-expect-error This comparison appears to be unintentional
@@ -131,7 +143,7 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 			onClick,
 			disabled: disabled || isLoading,
 			tabIndex: disabled ? -1 : void 0,
-			'aria-label': ariaLabel,
+			'aria-label': isLoading ? language.loading : ariaLabel,
 			'data-loading': isLoading ? '' : undefined,
 			className: clsx(
 				useBoxStyles({
@@ -216,8 +228,9 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 					/>
 				</Box>
 				<Box
-					width="full"
 					height="full"
+					alignItems="center"
+					justifyContent="center"
 					className={[styles.body, styles.hiddenContent]}
 				>
 					{buttonContents}

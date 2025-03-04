@@ -97,12 +97,12 @@ const TemplateMulti = ({
 							</Button>
 						</Column>
 						<Column>
-							<Button {...args}>
+							<Button {...args} aria-label="login">
 								<Icon icon={AccountBoxIcon} />
 							</Button>
 						</Column>
 						<Column>
-							<Button rounded {...args}>
+							<Button rounded {...args} aria-label="login">
 								<Icon icon={AccountBoxIcon} />
 							</Button>
 						</Column>
@@ -135,7 +135,7 @@ const TemplateMulti = ({
 							</Button>
 						</Column>
 						<Column>
-							<Button minimal {...args}>
+							<Button minimal {...args} aria-label="login">
 								<Icon icon={AccountBoxIcon} />
 							</Button>
 						</Column>
@@ -145,12 +145,22 @@ const TemplateMulti = ({
 							</Button>
 						</Column>
 						<Column>
-							<Button minimal rounded {...args}>
+							<Button
+								minimal
+								rounded
+								{...args}
+								aria-label="login"
+							>
 								<Icon icon={AccountBoxIcon} />1
 							</Button>
 						</Column>
 						<Column>
-							<Button minimal rounded {...args}>
+							<Button
+								minimal
+								rounded
+								{...args}
+								aria-label="login"
+							>
 								<Icon icon={AccountBoxIcon} />
 							</Button>
 						</Column>
