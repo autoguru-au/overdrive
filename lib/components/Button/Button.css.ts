@@ -8,6 +8,9 @@ import { themeContractVars as vars } from '../../themes/theme.css';
 const intentColors = vars.colours.intent;
 const smallHeight = '36px';
 
+const selectorFocusHoverActive =
+	'&:focus-visible, &:not(:disabled):hover, &:not(:disabled):active';
+
 // Body styles for button content layout
 export const body = style({
 	display: 'grid',
@@ -27,7 +30,6 @@ export const spinner = style({
 export const button = recipe({
 	base: [
 		{
-			transitionDelay: '0s',
 			transitionTimingFunction: vars.animation.easing.standard,
 			transitionDuration: '0.1s',
 			transitionProperty:
@@ -36,10 +38,13 @@ export const button = recipe({
 			willChange: 'transform',
 			cursor: 'pointer',
 			selectors: {
+				'&:active:not(:disabled, [data-loading])': {
+					transform: 'scale(0.97)',
+				},
 				'&[data-loading], &:disabled': {
 					cursor: 'not-allowed',
 				},
-				'&:not([data-loading])[disabled]': {
+				'&:not([data-loading]):disabled': {
 					opacity: '0.3',
 				},
 			},
@@ -68,7 +73,7 @@ export const button = recipe({
 			primary: {
 				color: intentColors.primary.foreground,
 				backgroundColor: intentColors.primary.background.standard,
-				'&:focus-visible, &:not(:disabled):hover': {
+				[selectorFocusHoverActive]: {
 					color: intentColors.primary.foreground,
 					backgroundColor: vars.colours.gamut.green700,
 				},
@@ -76,10 +81,7 @@ export const button = recipe({
 			brand: {
 				color: intentColors.brand.foreground,
 				backgroundColor: intentColors.brand.background.standard,
-				'&:focus-visible, &:not(:disabled):hover': {
-					backgroundColor: intentColors.brand.background.strong,
-				},
-				'&:active': {
+				[selectorFocusHoverActive]: {
 					backgroundColor: intentColors.brand.background.strong,
 				},
 			},
@@ -88,52 +90,38 @@ export const button = recipe({
 				backgroundColor: intentColors.secondary.background.standard,
 				border: `1px solid ${intentColors.secondary.border}`,
 				selectors: {
-					'&:focus-visible, &:not(:disabled):hover, &:not(:disabled):focus, &:active':
-						{
-							backgroundColor:
-								intentColors.secondary.background.strong,
-							borderColor:
-								intentColors.secondary.background.strong,
-						},
+					[selectorFocusHoverActive]: {
+						backgroundColor:
+							intentColors.secondary.background.strong,
+						borderColor: intentColors.secondary.background.strong,
+					},
 				},
 			},
 			danger: {
 				backgroundColor: intentColors.danger.background.standard,
 				color: intentColors.danger.foreground,
-				'&:focus-visible, &:not(:disabled):hover': {
-					backgroundColor: intentColors.danger.background.strong,
-				},
-				'&:active': {
+				[selectorFocusHoverActive]: {
 					backgroundColor: intentColors.danger.background.strong,
 				},
 			},
 			information: {
 				backgroundColor: intentColors.information.background.standard,
 				color: intentColors.information.foreground,
-				'&:focus-visible, &:not(:disabled):hover': {
-					backgroundColor: intentColors.information.background.strong,
-				},
-				'&:active': {
+				[selectorFocusHoverActive]: {
 					backgroundColor: intentColors.information.background.strong,
 				},
 			},
 			warning: {
 				backgroundColor: intentColors.warning.background.standard,
 				color: intentColors.warning.foreground,
-				'&:focus-visible, &:not(:disabled):hover': {
-					backgroundColor: intentColors.warning.background.strong,
-				},
-				'&:active': {
+				[selectorFocusHoverActive]: {
 					backgroundColor: intentColors.warning.background.strong,
 				},
 			},
 			success: {
 				backgroundColor: intentColors.success.background.standard,
 				color: intentColors.success.foreground,
-				'&:focus-visible, &:not(:disabled):hover': {
-					backgroundColor: intentColors.success.background.strong,
-				},
-				'&:active': {
+				[selectorFocusHoverActive]: {
 					backgroundColor: intentColors.success.background.strong,
 				},
 			},
@@ -193,11 +181,7 @@ export const button = recipe({
 			variants: { intent: 'primary', minimal: true },
 			style: {
 				selectors: {
-					'&:focus-visible, &:not(:disabled):hover': {
-						color: intentColors.primary.background.strong,
-						backgroundColor: intentColors.primary.background.mild,
-					},
-					'&:active': {
+					[selectorFocusHoverActive]: {
 						color: intentColors.primary.background.strong,
 						backgroundColor: intentColors.primary.background.mild,
 					},
@@ -208,11 +192,7 @@ export const button = recipe({
 			variants: { intent: 'brand', minimal: true },
 			style: {
 				selectors: {
-					'&:focus-visible, &:not(:disabled):hover': {
-						color: intentColors.brand.background.strong,
-						backgroundColor: intentColors.brand.background.mild,
-					},
-					'&:active': {
+					[selectorFocusHoverActive]: {
 						color: intentColors.brand.background.strong,
 						backgroundColor: intentColors.brand.background.mild,
 					},
@@ -223,12 +203,7 @@ export const button = recipe({
 			variants: { intent: 'secondary', minimal: true },
 			style: {
 				selectors: {
-					'&:focus-visible, &:not(:disabled):hover': {
-						color: vars.typography.colour.secondary,
-						backgroundColor:
-							intentColors.secondary.background.strong,
-					},
-					'&:active': {
+					[selectorFocusHoverActive]: {
 						color: vars.typography.colour.secondary,
 						backgroundColor:
 							intentColors.secondary.background.strong,
@@ -240,11 +215,7 @@ export const button = recipe({
 			variants: { intent: 'danger', minimal: true },
 			style: {
 				selectors: {
-					'&:focus-visible, &:not(:disabled):hover': {
-						color: intentColors.danger.background.strong,
-						backgroundColor: intentColors.danger.background.mild,
-					},
-					'&:active': {
+					[selectorFocusHoverActive]: {
 						color: intentColors.danger.background.strong,
 						backgroundColor: intentColors.danger.background.mild,
 					},
@@ -255,12 +226,7 @@ export const button = recipe({
 			variants: { intent: 'information', minimal: true },
 			style: {
 				selectors: {
-					'&:focus-visible, &:not(:disabled):hover': {
-						color: intentColors.information.background.strong,
-						backgroundColor:
-							intentColors.information.background.mild,
-					},
-					'&:active': {
+					[selectorFocusHoverActive]: {
 						color: intentColors.information.background.strong,
 						backgroundColor:
 							intentColors.information.background.mild,
@@ -276,10 +242,6 @@ export const button = recipe({
 						color: intentColors.warning.background.strong,
 						backgroundColor: intentColors.warning.background.mild,
 					},
-					'&:active': {
-						color: intentColors.warning.background.strong,
-						backgroundColor: intentColors.warning.background.mild,
-					},
 				},
 			},
 		},
@@ -288,10 +250,6 @@ export const button = recipe({
 			style: {
 				selectors: {
 					'&:focus-visible, &:not(:disabled):hover': {
-						color: intentColors.success.background.strong,
-						backgroundColor: intentColors.success.background.mild,
-					},
-					'&:active': {
 						color: intentColors.success.background.strong,
 						backgroundColor: intentColors.success.background.mild,
 					},
