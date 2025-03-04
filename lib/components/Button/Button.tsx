@@ -2,20 +2,20 @@ import { IconType } from '@autoguru/icons';
 import clsx from 'clsx';
 import * as React from 'react';
 import {
-	AriaAttributes,
-	ButtonHTMLAttributes,
 	cloneElement,
-	ComponentProps,
 	createElement,
-	ElementType,
 	forwardRef,
 	isValidElement,
-	MouseEventHandler,
-	ReactElement,
 	useCallback,
 	useEffect,
 	useMemo,
 	useState,
+	type AriaAttributes,
+	type ComponentProps,
+	type ComponentPropsWithRef,
+	type ElementType,
+	type MouseEventHandler,
+	type ReactElement,
 } from 'react';
 
 import type { WithTestId } from '../../types';
@@ -26,12 +26,19 @@ import { ProgressSpinner } from '../ProgressSpinner';
 import { useTextStyles } from '../Text';
 
 import * as styles from './Button.css';
+import type { StyledButtonProps } from './Button.css';
 
-type ButtonPrimitive = ButtonHTMLAttributes<HTMLButtonElement>;
-
+type ButtonPrimitive = ComponentPropsWithRef<'button'>;
 type AllowedChildren = string | IconType;
+type ButtonSize = 'small' | 'medium';
 
 const DOUBLE_CLICK_DETECTION_PERIOD = 700;
+
+const defaultEnglish = {
+	loading: 'loading',
+} as const;
+
+type TextContent = keyof typeof defaultEnglish;
 
 export interface ButtonProps
 	extends Pick<ButtonPrimitive, 'id' | 'onClick' | 'type' | 'className'>,
@@ -43,13 +50,17 @@ export interface ButtonProps
 	isFullWidth?: boolean;
 	minimal?: boolean;
 	rounded?: boolean;
-	size?: keyof typeof styles.size;
-	variant?: keyof typeof styles.variant;
+	size?: ButtonSize;
+	variant?: Required<StyledButtonProps['intent']>;
 	withDoubleClicks?: boolean;
+	/**
+	 * Language content override
+	 */
+	lang?: Partial<Record<TextContent, string>>;
 }
 
 const getSpinnerColour: (
-	variant: keyof typeof styles.variant,
+	variant: ButtonProps['variant'],
 	minimal: boolean,
 ) => ComponentProps<typeof ProgressSpinner>['colour'] = (variant, minimal) =>
 	minimal || variant === 'secondary' ? 'secondary' : 'light';
@@ -57,49 +68,14 @@ const getSpinnerColour: (
 const getBorderRadius: (
 	rounded: boolean,
 ) => ComponentProps<typeof Box>['borderRadius'] = (rounded) =>
-	rounded ? 'pill' : '1';
+	rounded ? 'pill' : '2';
 
 const getPadding: (
-	size: keyof typeof styles.size,
+	size: ButtonProps['size'],
 	loading: boolean,
 ) => ComponentProps<typeof Box>['paddingX'] = (size, loading) => {
 	if (loading) return 'none';
 	return size === 'small' ? '3' : '4';
-};
-
-const getButtonStates: (
-	buttonStyles: typeof styles,
-	variant: keyof typeof styles.variant,
-	disabled: boolean,
-	minimal: boolean,
-	rounded: boolean,
-) => string = (buttonStyles, variant, disabled, minimal, rounded) => {
-	if (disabled)
-		return minimal
-			? clsx(buttonStyles.minimal.defaults, {
-					[buttonStyles.minimal.noneRounded]: !rounded,
-				})
-			: '';
-
-	if (minimal)
-		return clsx(styles.minimal.defaults, styles.minimalStates[variant], {
-			[styles.minimal.noneRounded]: !rounded,
-		});
-	return styles.defaultStates[variant];
-};
-
-const getButtonSize: (
-	buttonStyles: typeof styles,
-	size: keyof typeof styles.size,
-	rounded: boolean,
-	iconOnly: boolean,
-) => string = (buttonStyles, size, rounded, iconOnly) => {
-	const currentSize = buttonStyles.size[size];
-
-	return clsx(currentSize.default, {
-		[currentSize.rounded]: rounded,
-		[currentSize.iconOnly]: iconOnly,
-	});
 };
 
 export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
@@ -113,6 +89,7 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 			withDoubleClicks = false,
 			isLoading = false,
 			isFullWidth = false,
+			lang,
 			minimal = false,
 			onClick: incomingOnClick,
 			rounded = false,
@@ -124,6 +101,7 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 		},
 		ref,
 	) => {
+		const language = { ...defaultEnglish, ...lang };
 		const { isSingleIconChild, props: maybeIconProps } = useMemo(() => {
 			const maybeIcon =
 				// @ts-expect-error This comparison appears to be unintentional
@@ -152,13 +130,21 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 			[withDoubleClicks, incomingOnClick],
 		);
 
-		const props: Partial<ButtonPrimitive> & { ref: typeof ref } = {
-			type: Component === 'button' ? (type as any) : undefined,
+		// Determine shape based on rounded and iconOnly status
+		const shape = useMemo(() => {
+			if (isSingleIconChild) return 'iconOnly';
+			if (rounded) return 'rounded';
+			return 'default';
+		}, [isSingleIconChild, rounded]);
+
+		const props: ButtonPrimitive & { 'data-loading'?: string } = {
+			type: Component === 'button' ? type : undefined,
 			id,
 			onClick,
 			disabled: disabled || isLoading,
 			tabIndex: disabled ? -1 : void 0,
-			'aria-label': ariaLabel,
+			'aria-label': isLoading ? language.loading : ariaLabel,
+			'data-loading': isLoading ? '' : undefined,
 			className: clsx(
 				useBoxStyles({
 					is: typeof Component === 'string' ? Component : undefined,
@@ -177,26 +163,12 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 					fontWeight: 'semiBold',
 					size: size === 'medium' ? '4' : '3',
 				}),
-				styles.root,
-				getButtonStates(
-					styles,
-					variant,
-					disabled || isLoading,
-					minimal,
-					rounded,
-				),
-				!minimal && styles.variant[variant],
-				getButtonSize(
-					styles,
+				styles.button({
 					size,
-					rounded,
-					isSingleIconChild && !isLoading,
-				),
-				{
-					[styles.disabled]: disabled,
-					[styles.enabled]: !disabled && !isLoading,
-					[styles.loading]: isLoading,
-				},
+					shape,
+					intent: variant,
+					minimal,
+				}),
 				className,
 			),
 			ref,
@@ -256,8 +228,9 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 					/>
 				</Box>
 				<Box
-					width="full"
 					height="full"
+					alignItems="center"
+					justifyContent="center"
 					className={[styles.body, styles.hiddenContent]}
 				>
 					{buttonContents}
@@ -280,5 +253,7 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 			: createElement(Component, { ...props }, child);
 	},
 );
+
+Button.displayName = 'Button';
 
 export default Button;
