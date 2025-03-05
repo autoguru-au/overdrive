@@ -77,7 +77,8 @@ export const CheckableBase = forwardRef<HTMLInputElement, Props>(
 					padding="none"
 					name={inputName}
 					value={value}
-					checked={checked}
+					defaultChecked={checked}
+					checked={inputType === 'checkbox' ? checked : undefined}
 					disabled={disabled}
 					type={inputType}
 					pointerEvents={disabled ? 'none' : void 0}

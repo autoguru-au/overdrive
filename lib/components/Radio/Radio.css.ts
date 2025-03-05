@@ -60,7 +60,7 @@ export const inner = style([
 		width: innerSize,
 		transition: `${transition}, transform 0.2s ${vars.animation.easing.standard}`,
 		selectors: {
-			[`${nativeInput}:not(:checked,[checked]):hover ~${checkable} &`]: {
+			[`${nativeInput}:not(:checked):hover ~${checkable} &`]: {
 				backgroundColor: colorContrast,
 			},
 		},
