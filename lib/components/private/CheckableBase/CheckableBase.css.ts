@@ -1,5 +1,6 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
+import { focusOutlineStyle } from '../../../styles/focusOutline.css';
 import { themeContractVars as vars } from '../../../themes/theme.css';
 
 export const root = style({
@@ -33,14 +34,16 @@ export const checkable = style({
 
 export const checkableIndicator = style({
 	selectors: {
-		[`${nativeInput}:focus-visible ~${checkable} &`]: {
-			outline: 'solid 2px',
-			outlineOffset: '2px',
-			outlineColor: vars.colours.foreground.link,
-		},
+		[`${nativeInput}:focus-visible ~${checkable} &`]: focusOutlineStyle,
 	},
 });
 
+export const disabled = style({
+	opacity: 0.6,
+	pointerEvents: 'none',
+});
+
+// no longer is in use in Overdrive
 export const checkableItem = style({
 	selectors: {
 		[`${nativeInput}:focus:checked ~${checkable} &`]: {
@@ -50,9 +53,4 @@ export const checkableItem = style({
 			borderColor: vars.colours.intent.primary.background.strong,
 		},
 	},
-});
-
-export const disabled = style({
-	opacity: 0.6,
-	pointerEvents: 'none',
 });
