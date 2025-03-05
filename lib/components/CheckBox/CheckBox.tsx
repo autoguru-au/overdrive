@@ -39,7 +39,7 @@ export const CheckBox = forwardRef<HTMLInputElement, Props>(
 			<CheckableBase
 				ref={ref}
 				inputType="checkbox"
-				className={className}
+				className={clsx(styles.base, className)}
 				inputName={name}
 				value={value}
 				label={children}
