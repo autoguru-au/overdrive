@@ -28,8 +28,8 @@ const meta: Meta<typeof CheckBox> = {
 		),
 	],
 	args: {
+		name: 'demo-checkbox',
 		children: 'Check me!',
-		name: 'check-name',
 		onChange: fn(),
 		onClick: fn(),
 		value: '1',
@@ -58,6 +58,7 @@ export const Disabled: Story = {
 	args: {
 		checked: false,
 		disabled: true,
+		children: "Can't check me",
 	},
 };
 
