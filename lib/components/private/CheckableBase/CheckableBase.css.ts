@@ -31,6 +31,16 @@ export const checkable = style({
 	marginBottom: `calc(-1*${vars.space['3']})`,
 });
 
+export const checkableIndicator = style({
+	selectors: {
+		[`${nativeInput}:focus-visible ~${checkable} &`]: {
+			outline: 'solid 2px',
+			outlineOffset: '2px',
+			outlineColor: vars.colours.foreground.link,
+		},
+	},
+});
+
 export const checkableItem = style({
 	selectors: {
 		[`${nativeInput}:focus:checked ~${checkable} &`]: {
