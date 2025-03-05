@@ -16,6 +16,7 @@ const listData: Array<{ label: string; value: string }> = [
 const meta: Meta<typeof RadioGroupComponent> = {
 	title: 'Forms & Input Fields/Radio',
 	component: RadioGroupComponent,
+	tags: ['updated'],
 	decorators: [
 		(Story) => (
 			<div style={{ maxWidth: '500px', width: '100%' }}>

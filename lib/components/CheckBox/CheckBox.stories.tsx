@@ -20,6 +20,7 @@ const listData: Array<{ label: string; value: string }> = [
 const meta: Meta<typeof CheckBox> = {
 	title: 'Forms & Input Fields/CheckBox',
 	component: CheckBox,
+	tags: ['updated'],
 	decorators: [
 		(Story) => (
 			<div style={{ maxWidth: '500px', width: '100%' }}>
@@ -30,9 +31,10 @@ const meta: Meta<typeof CheckBox> = {
 	args: {
 		name: 'demo-checkbox',
 		children: 'Check me!',
+		value: '1',
+		disabled: undefined,
 		onChange: fn(),
 		onClick: fn(),
-		value: '1',
 	},
 	render: ({ ...args }) => {
 		const [checked, setChecked] = React.useState(false);
@@ -63,13 +65,13 @@ export const Disabled: Story = {
 };
 
 export const List = {
-	render: ({ disabled, ...args }) => {
+	render: ({ disabled, onChange }) => {
 		const [selected, setSelected] = React.useState(() => ({
-			avocado: args.avocado || false,
-			blueberries: args.blueberries || false,
-			cherries: args.cherries || false,
-			coconut: args.coconut || false,
-			strawberries: args.strawberries || false,
+			avocado: true,
+			blueberries: true,
+			cherries: false,
+			coconut: true,
+			strawberries: false,
 		}));
 
 		const handleChange = (checked: boolean, value: string) => {
@@ -77,6 +79,7 @@ export const List = {
 				...prev,
 				[value]: checked,
 			}));
+			onChange(value, checked);
 		};
 
 		return (
@@ -86,7 +89,7 @@ export const List = {
 						key={item.value}
 						disabled={disabled}
 						value={item.value}
-						name={`want-${item.value}`}
+						name={`checkbox-${item.value}`}
 						checked={selected[item.value]}
 						onChange={(checked) =>
 							handleChange(checked, item.value)
@@ -100,11 +103,6 @@ export const List = {
 	},
 	args: {
 		disabled: false,
-		avocado: true,
-		blueberries: true,
-		cherries: false,
-		coconut: true,
-		strawberries: false,
 	},
 };
 
