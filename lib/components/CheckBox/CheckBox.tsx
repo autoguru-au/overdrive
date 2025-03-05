@@ -7,6 +7,7 @@ import { noop } from '../../utils';
 import { Box } from '../Box';
 import { Icon } from '../Icon';
 import { CheckableBase } from '../private/CheckableBase';
+import { checkableIndicator } from '../private/CheckableBase/CheckableBase.css';
 
 import * as styles from './CheckBox.css';
 export interface Props {
@@ -48,9 +49,13 @@ export const CheckBox = forwardRef<HTMLInputElement, Props>(
 				handleChange={onChange}
 			>
 				<Box
-					className={clsx(styles.checkbox.default, {
-						[styles.checkbox.selected]: checked,
-					})}
+					className={clsx(
+						styles.checkbox.default,
+						checkableIndicator,
+						{
+							[styles.checkbox.selected]: checked,
+						},
+					)}
 				>
 					<Icon
 						icon={CheckIcon}

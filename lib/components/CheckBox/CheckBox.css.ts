@@ -25,11 +25,6 @@ export const checkbox = styleVariants({
 			[`${nativeInput}:not(:checked):hover ~${checkable} &`]: {
 				backgroundColor: vars.colours.gamut.gray300,
 			},
-			[`${nativeInput}:focus-visible ~${checkable} &`]: {
-				outline: 'solid 2px',
-				outlineOffset: '2px',
-				outlineColor: vars.colours.foreground.link,
-			},
 		},
 	},
 	selected: {
