@@ -1,6 +1,10 @@
 import clsx from 'clsx';
-import * as React from 'react';
-import { ChangeEvent, forwardRef, ReactNode } from 'react';
+import React, {
+	forwardRef,
+	useId,
+	type ChangeEvent,
+	type ReactNode,
+} from 'react';
 
 import { Box, useBoxStyles } from '../../Box';
 import { Text, useTextStyles } from '../../Text';
@@ -16,9 +20,7 @@ export interface Props {
 	inputType: string;
 	value: string;
 	children?: ReactNode;
-
 	handleClick(event): void;
-
 	handleChange?(checked: boolean): void;
 }
 
@@ -45,6 +47,7 @@ export const CheckableBase = forwardRef<HTMLInputElement, Props>(
 		};
 
 		const nakedLabel = ['string', 'number'].includes(typeof label);
+		const id = useId();
 
 		return (
 			<Box
@@ -65,7 +68,8 @@ export const CheckableBase = forwardRef<HTMLInputElement, Props>(
 			>
 				<Box
 					ref={ref}
-					is="input"
+					id={id}
+					as="input"
 					position="absolute"
 					width="full"
 					height="full"
@@ -75,15 +79,11 @@ export const CheckableBase = forwardRef<HTMLInputElement, Props>(
 					value={value}
 					checked={checked}
 					disabled={disabled}
-					tabIndex={disabled ? -1 : void 0}
 					type={inputType}
 					pointerEvents={disabled ? 'none' : void 0}
 					className={clsx(
 						useBoxStyles({ is: 'button' }),
-						styles.nativeInput.default,
-						{
-							[styles.nativeInput.checked]: checked,
-						},
+						styles.nativeInput,
 					)}
 					onClick={handleClick}
 					onChange={onChange}
@@ -100,25 +100,26 @@ export const CheckableBase = forwardRef<HTMLInputElement, Props>(
 				>
 					{children}
 				</Box>
-				{label ? (
-					<Box
-						is="label"
-						width="full"
-						pointerEvents={disabled ? 'none' : void 0}
-						className={clsx(
-							useBoxStyles({ is: 'button' }),
-							useTextStyles({ size: '4' }),
-							{
-								[styles.label.disabled]: disabled,
-							},
-						)}
-					>
-						{nakedLabel ? <Text is="span">{label}</Text> : label}
-					</Box>
-				) : null}
+				<Box
+					as="label"
+					htmlFor={id}
+					width="full"
+					pointerEvents={disabled ? 'none' : void 0}
+					className={clsx(
+						useBoxStyles({ is: 'button' }),
+						useTextStyles({ size: '4' }),
+						{
+							[styles.label.disabled]: disabled,
+						},
+					)}
+				>
+					{nakedLabel ? <Text is="span">{label}</Text> : label}
+				</Box>
 			</Box>
 		);
 	},
 );
+
+CheckableBase.displayName = 'CheckableBase';
 
 export default CheckableBase;
