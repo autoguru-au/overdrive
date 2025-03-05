@@ -107,7 +107,6 @@ export const SearchBar = (componentProps: WithTestId<SearchBarProps>) => {
 
 	return (
 		// this is a pass-through for mouse/touch interaction, the interactive element is keyboard focusable
-		// eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
 		<div
 			className={styledSearchBar({})}
 			onClick={handleWrapperClick}
