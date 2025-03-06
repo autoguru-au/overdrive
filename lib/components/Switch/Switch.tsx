@@ -28,6 +28,11 @@ export interface SwitchProps extends AriaSwitchProps {
 	toggled?: boolean;
 }
 
+/**
+ * The Switch component does not include a label by default for legacy compatibility. The text that describes the
+ * switch should be given an `id` and then provided to the `aria-labelledby` attribute. This will allow the
+ * component to be accessible.
+ */
 export const Switch = ({
 	className,
 	disabled,
@@ -70,7 +75,6 @@ export const Switch = ({
 				<Box
 					className={clsx(styles.handle.default, {
 						[styles.handle.active]: state.isSelected,
-						[styles.handle.disabled]: inputProps.disabled,
 					})}
 				/>
 			</Box>

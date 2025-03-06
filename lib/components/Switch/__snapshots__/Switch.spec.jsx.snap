@@ -44,7 +44,7 @@ exports[`<Switch /> > should match snapshot when toggled and disabled 1`] = `
     data-disabled="true"
   >
     <div
-      class="reset_block__1oah0223 Switch_handle_default__6xc8dy5 Switch_handle_active__6xc8dy6 Switch_handle_disabled__6xc8dy7"
+      class="reset_block__1oah0223 Switch_handle_default__6xc8dy5 Switch_handle_active__6xc8dy6"
     />
   </div>
 </label>
@@ -90,7 +90,7 @@ exports[`<Switch /> > should match snapshot when un-toggled and disabled 1`] = `
     data-disabled="true"
   >
     <div
-      class="reset_block__1oah0223 Switch_handle_default__6xc8dy5 Switch_handle_disabled__6xc8dy7"
+      class="reset_block__1oah0223 Switch_handle_default__6xc8dy5"
     />
   </div>
 </label>
