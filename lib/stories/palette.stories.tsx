@@ -3,11 +3,11 @@ import clsx from 'clsx';
 import React from 'react';
 
 import { Heading } from '../components/Heading';
-import { odStyle } from '../styles/sprinkles.css';
 import { baseThemeColours } from '../themes/base/tokens';
 import type { ColourGamut, ColourValue } from '../themes/tokens';
 
 import { ColourSwatch, Stack } from './helpers';
+import { sprinkles } from './helpers/sprinkles.css';
 import { labels, hexPill } from './helpers/styles.css';
 
 interface SwatchProps {
@@ -56,7 +56,7 @@ const Palettes = () => (
 			<div key={hue}>
 				<Heading
 					is="h3"
-					className={clsx([labels, odStyle({ marginBottom: '5' })])}
+					className={clsx([labels, sprinkles({ marginBottom: '5' })])}
 				>
 					{hue}
 				</Heading>
