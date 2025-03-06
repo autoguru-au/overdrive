@@ -4,14 +4,12 @@ import * as React from 'react';
 import { forwardRef, ReactNode } from 'react';
 
 import { noop } from '../../utils';
-import { Box, useBoxStyles } from '../Box';
+import { Box } from '../Box';
 import { Icon } from '../Icon';
-import { useTextStyles } from '../Text';
 import { CheckableBase } from '../private/CheckableBase';
-import { useCheckableStyles } from '../private/CheckableBase/useCheckableStyles';
+import { checkableIndicator } from '../private/CheckableBase/CheckableBase.css';
 
 import * as styles from './CheckBox.css';
-
 export interface Props {
 	className?: string;
 	checked?: boolean;
@@ -19,9 +17,7 @@ export interface Props {
 	name?: string;
 	value: string;
 	children?: ReactNode;
-
 	onClick?(checked: boolean): void;
-
 	onChange?(checked: boolean): void;
 }
 
@@ -39,17 +35,11 @@ export const CheckBox = forwardRef<HTMLInputElement, Props>(
 		},
 		ref,
 	) => {
-		const iconStyles = clsx(
-			useTextStyles({ colour: 'white' }),
-			useBoxStyles({ position: 'absolute' }),
-		);
-		const { checkableItem } = useCheckableStyles();
-
 		return (
 			<CheckableBase
 				ref={ref}
 				inputType="checkbox"
-				className={className}
+				className={clsx(styles.base, className)}
 				inputName={name}
 				value={value}
 				label={children}
@@ -58,23 +48,26 @@ export const CheckBox = forwardRef<HTMLInputElement, Props>(
 				handleClick={onClick}
 				handleChange={onChange}
 			>
-				{checked ? (
-					<Icon
-						className={clsx(styles.icon, iconStyles)}
-						icon={CheckIcon}
-						size="small"
-					/>
-				) : null}
 				<Box
-					borderWidth="2"
-					borderColour="gray"
-					className={clsx(checkableItem, styles.base.default, {
-						[styles.base.selected]: checked,
-					})}
-				/>
+					className={clsx(
+						styles.checkbox.default,
+						checkableIndicator,
+						{
+							[styles.checkbox.selected]: checked,
+						},
+					)}
+				>
+					<Icon
+						icon={CheckIcon}
+						size="medium"
+						className={styles.icon}
+					/>
+				</Box>
 			</CheckableBase>
 		);
 	},
 );
+
+CheckBox.displayName = 'Checkbox';
 
 export default CheckBox;

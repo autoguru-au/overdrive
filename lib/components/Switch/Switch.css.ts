@@ -1,90 +1,70 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
+import { focusOutlineStyle } from '../../styles/focusOutline.css';
 import { themeContractVars as vars } from '../../themes/theme.css';
 
+const colorAccent = vars.border.colours.dark;
+const colorContrast = vars.colours.background.body;
+const colorLight = vars.border.colours.light;
+const colorMid = vars.border.colours.gray;
+const height = vars.space['6'];
 const handleSize = '24px';
-const handleOffset = '3px';
-const borderSize = '1px';
+
+export const base = style({
+	display: 'inline-block',
+});
+
+export const focus = style(focusOutlineStyle);
+
+export const toggle = style({
+	cursor: 'pointer',
+	backgroundColor: colorMid,
+	height: height,
+	width: `calc(2 * ${height} - 2px)`,
+	borderRadius: vars.border.radius.pill,
+	padding: '3px 4px',
+	transition: 'background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
+	selectors: {
+		'&:not([data-disabled]):hover': {
+			backgroundColor: colorAccent,
+		},
+	},
+});
+
+export const toggleOn = style({
+	backgroundColor: colorAccent,
+});
+
+export const disabled = style({
+	backgroundColor: colorLight,
+	cursor: 'not-allowed',
+});
+
+const handleScale = 'scale(0.95)';
+const handleTranslate = `translateX(calc(${handleSize} - 4px))`;
 
 export const handle = styleVariants({
-	disabled: {
-		border: `${borderSize} solid ${vars.colours.intent.primary.background.mild}`,
-	},
 	default: {
-		borderSize: `${borderSize}`, //ball
-		top: `calc(${handleOffset} - ${borderSize})`,
-		left: `calc(1.5 * ${handleOffset})`,
-		width: `calc(${handleSize} - (2 * ${handleOffset}))`,
-		height: `calc(${handleSize} - (2 * ${handleOffset}))`,
+		aspectRatio: '1',
+		height: '100%',
+		borderRadius: vars.border.radius.full,
+		backgroundColor: colorContrast,
 		transition: 'transform 0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
 		willChange: 'transform',
 		selectors: {
-			'&:hover': {
-				transform: 'scale(0.9)',
+			[`${toggle}:not([data-disabled]):hover &`]: {
+				transform: handleScale,
 			},
 		},
 	},
-	transition: {
-		transform: `translateX(calc(${handleSize} - (2 * ${handleOffset})))`,
+	active: {
 		selectors: {
-			'&:hover': {
-				transform: `translateX(calc(${handleSize} - (2 * ${handleOffset}))) scale(0.9)`,
+			[`${toggleOn} &`]: {
+				transform: handleTranslate,
 			},
-		},
-	},
-});
-
-export const toggled = style({
-	border: `${borderSize} solid ${vars.colours.intent.primary.background.strong}`,
-	backgroundColor: vars.colours.intent.primary.background.strong,
-});
-
-export const untoggled = style({
-	border: `${borderSize} solid color-mix(in oklch, ${vars.colours.intent.primary.background.standard}, transparent 60%)`,
-	backgroundColor: vars.colours.intent.primary.background.mild,
-	transition: '0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
-	selectors: {
-		'&:hover': {
-			borderColor: vars.colours.intent.primary.background.strong,
-			backgroundColor: vars.colours.intent.primary.background.strong,
-		},
-	},
-});
-
-export const disabled = styleVariants({
-	default: {
-		selectors: {
-			'&[aria-disabled=true]': {
-				cursor: 'not-allowed',
-				border: `${borderSize} solid ${vars.colours.intent.primary.background.mild}`,
-				backgroundColor: 'white',
+			[`${toggle}:not([data-disabled]):hover &`]: {
+				transform: `${handleScale} ${handleTranslate}`,
 			},
-		},
-	},
-	toggled: {
-		selectors: {
-			'&[aria-disabled=true]': {
-				cursor: 'not-allowed',
-				border: `${borderSize} solid ${vars.colours.intent.primary.background.mild}`,
-				backgroundColor: 'white',
-			},
-		},
-	},
-});
-
-export const focus = style({
-	outline: `calc(${handleOffset} - ${borderSize}) solid ${vars.colours.intent.brand.background.standard}`,
-});
-
-export const root = style({
-	width: `calc((2 * ${handleSize}) - 2 * ${borderSize})`, //pill
-	height: `${handleSize}`,
-	top: `calc(${handleOffset} - ${borderSize})`,
-	left: `calc(1.5 * ${handleOffset})`,
-	transition: 'background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
-	selectors: {
-		[`&:not(${disabled.default}):not(${disabled.toggled}):focus`]: {
-			borderColor: vars.colours.intent.information.background.standard,
 		},
 	},
 });

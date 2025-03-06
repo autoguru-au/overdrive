@@ -4,7 +4,7 @@ import { forwardRef, ReactNode } from 'react';
 
 import { Box } from '../Box';
 import { CheckableBase } from '../private/CheckableBase';
-import { useCheckableStyles } from '../private/CheckableBase/useCheckableStyles';
+import { checkableIndicator } from '../private/CheckableBase/CheckableBase.css';
 
 import * as styles from './Radio.css';
 import { useRadioContext } from './RadioGroup';
@@ -18,7 +18,6 @@ export interface Props {
 
 export const Radio = forwardRef<HTMLInputElement, Props>(
 	({ value, className = '', children, disabled = false }, ref) => {
-		const { checkableItem } = useCheckableStyles();
 		const radioContext = useRadioContext();
 
 		const isChecked = value === radioContext.value;
@@ -29,7 +28,7 @@ export const Radio = forwardRef<HTMLInputElement, Props>(
 			<CheckableBase
 				ref={ref}
 				inputType="radio"
-				className={className}
+				className={clsx(className, styles.base)}
 				inputName={radioContext.inputName}
 				value={value}
 				label={children}
@@ -38,36 +37,20 @@ export const Radio = forwardRef<HTMLInputElement, Props>(
 				handleClick={handleClick}
 			>
 				<Box
-					borderRadius="pill"
-					position="absolute"
-					borderWidth="2"
-					borderColour="gray"
-					className={clsx(
-						checkableItem,
-						styles.circle.default,
-						styles.circle.outer,
-						{
-							[styles.circle.selected]: isChecked,
-						},
-					)}
+					className={clsx(checkableIndicator, styles.radio, {
+						[styles.radioSelected]: isChecked,
+					})}
 				/>
 				<Box
-					borderRadius="pill"
-					position="absolute"
-					borderColour="gray"
-					borderWidth="none"
-					className={clsx(
-						styles.circle.default,
-						styles.circle.inner,
-						{
-							[styles.circle.selected]: isChecked,
-							[styles.circle.selectedInner]: isChecked,
-						},
-					)}
+					className={clsx(styles.inner, {
+						[styles.innerSelected]: isChecked,
+					})}
 				/>
 			</CheckableBase>
 		);
 	},
 );
+
+Radio.displayName = 'Radio';
 
 export default Radio;

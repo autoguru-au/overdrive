@@ -1,40 +1,62 @@
-import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
+import React from 'react';
+
+import { Box } from '../Box';
+import { Text } from '../Text';
 
 import { Switch } from '.';
 
-const meta = {
+const meta: Meta<typeof Switch> = {
 	title: 'Primatives/Switch',
 	component: Switch,
+	tags: ['updated'],
 	args: {
-		isDisabled: false,
-		isSelected: false,
-		onChange: action('onChange'),
-		className: 'toggleButton-class',
+		'aria-labelledby': undefined,
+		name: 'switch',
+		value: 'yes',
+		isSelected: undefined,
+		isDisabled: undefined,
+		onChange: fn(),
 	},
-} satisfies Meta<typeof Switch>;
+	argTypes: {
+		isSelected: {
+			control: 'boolean',
+		},
+		disabled: {
+			control: false,
+		},
+		toggled: {
+			control: false,
+		},
+	},
+};
 
 export default meta;
 
 type Story = StoryObj<typeof Switch>;
 
-export const Untoggled: Story = {};
+export const Uncontrolled: Story = {};
 
-export const UntoggledDisabled: Story = {
+/**
+ * Example of the switch properly associated with text content for accessibility compliance.
+ */
+export const WithLabel: Story = {
+	render: (args) => (
+		<Box display="flex" alignItems="center" style={{ gap: '0.75rem' }}>
+			<Switch {...args} />
+			<Text id={args['aria-labelledby']}>
+				Text description for the switch
+			</Text>
+		</Box>
+	),
 	args: {
-		isDisabled: true,
+		'aria-labelledby': 'label-for-switch',
 	},
 };
 
-export const Toggled: Story = {
+export const Disabled: Story = {
 	args: {
-		isSelected: true,
-	},
-};
-
-export const ToggledDisabled: Story = {
-	args: {
-		isSelected: true,
 		isDisabled: true,
 	},
 };

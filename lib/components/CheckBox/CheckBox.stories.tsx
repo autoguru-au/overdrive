@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
 import React from 'react';
 
 import { Badge } from '../Badge';
@@ -8,19 +9,6 @@ import { Text } from '../Text';
 
 import { CheckBox } from '.';
 
-const meta = {
-	title: 'Forms & Input Fields/CheckBox',
-	component: CheckBox,
-	decorators: [
-		(story) => (
-			<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
-		),
-	],
-} satisfies Meta<typeof CheckBox>;
-
-export default meta;
-type Story = StoryObj<typeof CheckBox>;
-
 const listData: Array<{ label: string; value: string }> = [
 	{ label: 'Avocado', value: 'avocado' },
 	{ label: 'Blueberries', value: 'blueberries' },
@@ -29,40 +17,92 @@ const listData: Array<{ label: string; value: string }> = [
 	{ label: 'Strawberries', value: 'strawberries' },
 ];
 
-export const List: Story = {
-	render: ({ disabled, ...args }) => (
-		<>
-			{listData.map((item) => (
-				<CheckBox
-					key={item.value}
-					disabled={disabled}
-					value={item.value}
-					name={`want-${item.value}`}
-					checked={args[item.value]}
-				>
-					{item.label}
-				</CheckBox>
-			))}
-		</>
-	),
+const meta: Meta<typeof CheckBox> = {
+	title: 'Forms & Input Fields/CheckBox',
+	component: CheckBox,
+	tags: ['updated'],
+	decorators: [
+		(Story) => (
+			<div style={{ maxWidth: '500px', width: '100%' }}>
+				<Story />
+			</div>
+		),
+	],
 	args: {
-		disabled: false,
-		// @ts-expect-error example values
-		avocado: true,
-		blueberries: true,
-		cherries: false,
-		coconut: true,
-		strawberries: false,
+		name: 'demo-checkbox',
+		children: 'Check me!',
+		value: '1',
+		disabled: undefined,
+		onChange: fn(),
+		onClick: fn(),
+	},
+	render: ({ ...args }) => {
+		const [checked, setChecked] = React.useState(false);
+		return (
+			<CheckBox
+				{...args}
+				checked={checked}
+				onChange={(checked) => {
+					setChecked(checked);
+					args.onChange?.(checked);
+				}}
+			/>
+		);
 	},
 };
+
+export default meta;
+type Story = StoryObj<typeof CheckBox>;
+
+export const Default: Story = {};
 
 export const Disabled: Story = {
 	args: {
 		checked: false,
 		disabled: true,
-		name: 'check-name',
-		children: 'check me!',
-		value: '1',
+		children: "Can't check me",
+	},
+};
+
+export const List = {
+	render: ({ disabled, onChange }) => {
+		const [selected, setSelected] = React.useState(() => ({
+			avocado: true,
+			blueberries: true,
+			cherries: false,
+			coconut: true,
+			strawberries: false,
+		}));
+
+		const handleChange = (checked: boolean, value: string) => {
+			setSelected((prev) => ({
+				...prev,
+				[value]: checked,
+			}));
+			onChange(value, checked);
+		};
+
+		return (
+			<>
+				{listData.map((item) => (
+					<CheckBox
+						key={item.value}
+						disabled={disabled}
+						value={item.value}
+						name={`checkbox-${item.value}`}
+						checked={selected[item.value]}
+						onChange={(checked) =>
+							handleChange(checked, item.value)
+						}
+					>
+						{item.label}
+					</CheckBox>
+				))}
+			</>
+		);
+	},
+	args: {
+		disabled: false,
 	},
 };
 
@@ -70,7 +110,6 @@ export const MultipleLines: Story = {
 	args: {
 		checked: false,
 		disabled: false,
-		name: 'check-name',
 		children:
 			'There is a very good reason why this thing is a multi-line, sometimes we need to show people a lot of things. And thus this exists.',
 		value: '1',
@@ -94,18 +133,15 @@ export const WithComponent: Story = {
 	args: {
 		checked: false,
 		disabled: false,
-		name: 'check-name',
 		children: <Item label="Avocados" rating="4.3" />,
 		value: '1',
 	},
-	argTypes: { children: { control: { disable: true } } },
 };
 
 export const WithMultiLineComponent: Story = {
 	args: {
 		checked: false,
 		disabled: false,
-		name: 'check-name',
 		children: (
 			<div
 				style={{
@@ -132,5 +168,4 @@ export const WithMultiLineComponent: Story = {
 		),
 		value: '1',
 	},
-	argTypes: { children: { control: { disable: true } } },
 };
