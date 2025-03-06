@@ -1,7 +1,7 @@
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
 
-import { tokens } from '../themes/base/tokens';
 import { breakpoints } from '../themes/makeTheme';
+import { themeContractVars as tokens } from '../themes/theme.css';
 
 const { border, colours, elevation, space, typography } = tokens;
 const { none, ...spaceWithoutNone } = space;
