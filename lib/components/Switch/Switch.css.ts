@@ -7,10 +7,8 @@ const colorAccent = vars.border.colours.dark;
 const colorContrast = vars.colours.background.body;
 const colorLight = vars.border.colours.light;
 const colorMid = vars.border.colours.gray;
-const borderSize = vars.border.width['1'];
 const height = vars.space['6'];
 const handleSize = '24px';
-const handleOffset = '3px';
 
 export const base = style({
 	display: 'inline-block',
@@ -22,9 +20,9 @@ export const toggle = style({
 	cursor: 'pointer',
 	backgroundColor: colorMid,
 	height: height,
-	width: `calc(2 * ${height})`,
+	width: `calc(2 * ${height} - 2px)`,
 	borderRadius: vars.border.radius.pill,
-	padding: handleOffset,
+	padding: '3px 4px',
 	transition: 'background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
 	selectors: {
 		'&:not([data-disabled]):hover': {
@@ -43,7 +41,7 @@ export const disabled = style({
 });
 
 const handleScale = 'scale(0.95)';
-const handleTranslate = `translateX(${handleSize})`;
+const handleTranslate = `translateX(calc(${handleSize} - 4px))`;
 
 export const handle = styleVariants({
 	default: {
@@ -68,8 +66,5 @@ export const handle = styleVariants({
 				transform: `${handleScale} ${handleTranslate}`,
 			},
 		},
-	},
-	disabled: {
-		border: `${borderSize} solid ${vars.colours.intent.primary.background.mild}`,
 	},
 });
