@@ -28,7 +28,7 @@ export const Radio = forwardRef<HTMLInputElement, Props>(
 			<CheckableBase
 				ref={ref}
 				inputType="radio"
-				className={clsx(className, styles.base)}
+				className={className}
 				inputName={radioContext.inputName}
 				value={value}
 				label={children}

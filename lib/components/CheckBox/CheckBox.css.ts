@@ -1,4 +1,4 @@
-import { createVar, style, styleVariants } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css';
 
 import { themeContractVars as vars } from '../../themes/theme.css';
 import {
@@ -6,25 +6,13 @@ import {
 	checkable,
 } from '../private/CheckableBase/CheckableBase.css';
 
-const colorAccent = createVar();
-const colorContrast = createVar();
-const colorMid = createVar();
-const size = createVar();
-const borderRadius = createVar();
-const borderWidth = createVar();
-
+const colorAccent = vars.colours.foreground.body;
+const colorContrast = vars.colours.background.body;
+const colorMid = vars.colours.background.neutral;
+const size = vars.space['6'];
+const borderRadius = vars.border.radius['1'];
+const borderWidth = vars.border.width['1'];
 const transition = `border-color 0.2s ${vars.animation.easing.decelerate} 0s, background-color 0.2s ${vars.animation.easing.decelerate} 0s`;
-
-export const base = style({
-	vars: {
-		[colorAccent]: vars.colours.gamut.gray900,
-		[colorContrast]: vars.colours.gamut.white,
-		[colorMid]: vars.colours.gamut.gray300,
-		[size]: vars.space['6'],
-		[borderRadius]: vars.border.radius['1'],
-		[borderWidth]: vars.border.width['1'],
-	},
-});
 
 export const checkbox = styleVariants({
 	default: {

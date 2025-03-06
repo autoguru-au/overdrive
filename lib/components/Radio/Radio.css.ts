@@ -1,4 +1,4 @@
-import { createVar, style } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css';
 
 import { themeContractVars as vars } from '../../themes/theme.css';
 import {
@@ -6,29 +6,17 @@ import {
 	nativeInput,
 } from '../private/CheckableBase/CheckableBase.css';
 
-const colorAccent = createVar();
-const colorContrast = createVar();
-const colorMid = createVar();
-const outerSize = createVar();
-const innerSize = createVar();
-const borderWidth = createVar();
-
+const colorAccent = vars.colours.foreground.body;
+const colorContrast = vars.colours.background.body;
+const colorMid = vars.colours.background.neutral;
+const outerSize = vars.space['6'];
+const innerSize = vars.space['3'];
+const borderWidth = vars.border.width['1'];
 const transition = `background-color 0.2s ${vars.animation.easing.decelerate} 0s, border-color 0.2s ${vars.animation.easing.decelerate} 0s`;
 
 const circleBase = style({
 	position: 'absolute',
 	borderRadius: vars.border.radius.full,
-});
-
-export const base = style({
-	vars: {
-		[colorAccent]: vars.colours.gamut.gray900,
-		[colorContrast]: vars.colours.gamut.white,
-		[colorMid]: vars.colours.gamut.gray300,
-		[outerSize]: vars.space['6'],
-		[innerSize]: vars.space['3'],
-		[borderWidth]: vars.border.width['1'],
-	},
 });
 
 export const radio = style([

@@ -3,10 +3,10 @@ import { style, styleVariants } from '@vanilla-extract/css';
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
 import { themeContractVars as vars } from '../../themes/theme.css';
 
-const colorAccent = vars.border.colours.dark;
+const colorAccent = vars.colours.foreground.body;
 const colorContrast = vars.colours.background.body;
-const colorLight = vars.border.colours.light;
-const colorMid = vars.border.colours.gray;
+const colorMid = vars.colours.background.neutral;
+const colorLight = vars.colours.background.light;
 const height = vars.space['6'];
 const handleSize = '24px';
 
