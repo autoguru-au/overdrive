@@ -1,8 +1,7 @@
 import { useToggleState } from '@react-stately/toggle';
 import clsx from 'clsx';
-import * as React from 'react';
-import { AnchorHTMLAttributes, FunctionComponent, useRef } from 'react';
-import { useSwitch, useFocusRing } from 'react-aria';
+import React, { useRef } from 'react';
+import { useSwitch, useFocusRing, type AriaSwitchProps } from 'react-aria';
 
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box';
@@ -11,34 +10,25 @@ import { VisuallyHidden } from '../VisuallyHidden';
 
 import * as styles from './Switch.css';
 
-type AriaSwitchProps = Parameters<typeof useSwitch>[0];
-export type SwitchProps = AriaSwitchProps &
-	Omit<
-		AnchorHTMLAttributes<HTMLButtonElement>,
-		'children' | 'style' | 'is' | 'onChange'
-	> & {
-		/**
-		 * Whether the switch is disabled
-		 */
-		isDisabled?: boolean;
-		/**
-		 * Whether the switch is selected
-		 */
-		isSelected?: boolean;
-		className?: string;
-		/**
-		 * @deprecated use isDisabled instead
-		 */
-		disabled?: boolean;
-		/**
-		 * @deprecated use isSelected instead
-		 */
-		toggled?: boolean;
-	};
+export interface SwitchProps extends AriaSwitchProps {
+	'aria-labelledby'?: AriaSwitchProps['aria-labelledby'];
+	name?: AriaSwitchProps['name'];
+	value?: AriaSwitchProps['value'];
+	isDisabled?: AriaSwitchProps['isDisabled'];
+	isSelected?: AriaSwitchProps['isSelected'];
+	onChange?: AriaSwitchProps['onChange'];
+	className?: string;
+	/**
+	 * @deprecated use isDisabled instead
+	 */
+	disabled?: boolean;
+	/**
+	 * @deprecated use isSelected instead
+	 */
+	toggled?: boolean;
+}
 
-const defaultEnglish = {};
-
-export const Switch: FunctionComponent<SwitchProps> = ({
+export const Switch = ({
 	className,
 	disabled,
 	toggled,
@@ -60,7 +50,6 @@ export const Switch: FunctionComponent<SwitchProps> = ({
 		<label className={styles.base}>
 			<VisuallyHidden>
 				<input {...inputProps} {...focusProps} ref={ref} />
-				{`toggle ${state.isSelected ? 'on' : 'off'}`}
 			</VisuallyHidden>
 			<Box
 				className={clsx(
