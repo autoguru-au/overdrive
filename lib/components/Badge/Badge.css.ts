@@ -1,20 +1,21 @@
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
 import { styledIntentionalElement } from '../../styles/intentional.css';
-import { styledFont } from '../../styles/typography.css';
+import { fontSize, fontWeight } from '../../styles/typography.css';
 import { themeContractVars as tokens } from '../../themes/theme.css';
 
 export const styledBadge = recipe({
 	base: [
 		{
 			overflow: 'hidden',
-			padding: tokens.space[1],
 			textOverflow: 'ellipsis',
 			textTransform: 'uppercase',
 			letterSpacing: '0.5px',
 			lineHeight: '1',
 			whiteSpace: 'nowrap',
+			padding: tokens.space[1],
 		},
+		fontWeight.semiBold,
 	],
 	variants: {
 		colour: {
@@ -29,10 +30,10 @@ export const styledBadge = recipe({
 			false: {},
 		},
 		size: {
-			small: styledFont({ size: 'xxs', weight: 'bold' }),
-			standard: styledFont({ size: 'xs', weight: 'semiBold' }),
+			small: [fontSize.xxs, fontWeight.bold],
+			standard: [fontSize.xs],
 			large: [
-				styledFont({ size: 'md', weight: 'semiBold' }),
+				fontSize.md,
 				{
 					padding: tokens.space[4],
 				},
