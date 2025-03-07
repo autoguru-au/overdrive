@@ -9,9 +9,9 @@ export const stack = recipe({
 	base: { display: 'flex', flexWrap: 'wrap' },
 	variants: {
 		space: {
-			sm: tokens.space['5'],
-			md: tokens.space['8'],
-			lg: tokens.space['9'],
+			sm: { gap: tokens.space['5'] },
+			md: { gap: tokens.space['8'] },
+			lg: { gap: tokens.space['9'] },
 		},
 		horizontal: {
 			false: { flexDirection: 'column' },
