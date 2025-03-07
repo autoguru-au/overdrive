@@ -1,8 +1,11 @@
 import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
-import { focusOutline } from '../../styles/focusOutline.css';
-import { odStyle } from '../../styles/sprinkles.css';
+import { focusOutlineStyle } from '../../styles/focusOutline.css';
+import {
+	sprinklesInteraction,
+	sprinklesResponsive,
+} from '../../styles/sprinkles.css';
 import { tokens } from '../../themes/base/tokens';
 
 const hideWebkitAppearance = style({
@@ -23,44 +26,44 @@ const placeholder = style({
 
 export const styledSearchBar = recipe({
 	base: [
-		odStyle({
+		{
 			alignItems: 'center',
+			borderRadius: tokens.border.radius[3],
+			borderStyle: 'solid',
+			borderWidth: tokens.border.width[2],
+			color: tokens.colours.gamut.gray400,
+			display: 'flex',
+			gap: tokens.space[2],
+			padding: `0 ${tokens.space[4]}`,
+		},
+		sprinklesInteraction({
 			background: { initial: 'white', hover: 'gray200', focus: 'white' },
 			borderColor: { initial: 'gray', hover: 'light', focus: 'dark' },
-			borderRadius: '3',
-			borderStyle: 'solid',
-			borderWidth: '2',
-			color: { initial: 'gray400', focus: 'gray900' },
+			color: { focus: 'gray900' },
 			cursor: { hover: 'text' },
-			display: 'flex',
-			...focusOutline,
-			gap: '2',
-			paddingX: '4',
 		}),
+		focusOutlineStyle,
 	],
 	variants: {
-		disabled: {
-			true: odStyle({
-				color: 'gray500',
-				cursor: 'not-allowed',
-			}),
-		},
+		// disabled: {
+		// 	true: odStyle({
+		// 		color: 'gray500',
+		// 		cursor: 'not-allowed',
+		// 	}),
+		// },
 	},
 });
 
 export const styledInput = recipe({
 	base: [
-		odStyle({
+		{
 			background: 'transparent',
-			borderWidth: 'none',
-			height: '7',
-			fontSize: '2xl',
+			borderWidth: 0,
+			fontSize: tokens.typography.size[8].fontSize,
+			height: '72px',
 			outlineStyle: 'none',
 			textAlign: 'center',
 			width: '100%',
-		}),
-		{
-			height: '72px',
 		},
 		hideWebkitAppearance,
 		placeholder,
@@ -69,16 +72,24 @@ export const styledInput = recipe({
 
 export const styledClearButton = recipe({
 	base: [
-		odStyle({
+		{
 			alignItems: 'center',
 			background: 'transparent',
 			borderStyle: 'none',
 			cursor: 'pointer',
 			display: 'flex',
 			justifyContent: 'center',
-			padding: 'none',
+			padding: 0,
 			position: 'relative',
+		},
+		sprinklesResponsive({
 			size: '6',
 		}),
 	],
+});
+
+export const fieldWrapper = style({
+	display: 'flex',
+	flexGrow: 1,
+	alignItems: 'center',
 });

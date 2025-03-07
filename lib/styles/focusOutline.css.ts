@@ -9,7 +9,7 @@ export const focusOutlineStyle = style({
 	outlineStyle: 'none',
 	outlineWidth: width,
 	selectors: {
-		'&:focus-visible': {
+		'&:focus-visible, &[data-focus]': {
 			outlineColor: tokens.colours.foreground.link,
 			outlineStyle: 'solid',
 		},
