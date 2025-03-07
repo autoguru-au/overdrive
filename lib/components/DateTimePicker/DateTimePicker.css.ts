@@ -6,6 +6,7 @@ import {
 	sprinklesInteraction,
 	sprinklesResponsive,
 } from '../../styles/sprinkles.css';
+import { styledFont } from '../../styles/typography.css';
 import { breakpoints } from '../../themes/makeTheme';
 import { themeContractVars as tokens } from '../../themes/theme.css';
 
@@ -120,18 +121,9 @@ export const tdStyle = style({
 
 // -- Heading styles
 
-// TODO: refactor to use common typography helper
-export const headingStyle = style({
-	fontSize: tokens.typography.size[8].fontSize,
-	fontWeight: tokens.typography.fontWeight.bold,
-	lineHeight: tokens.typography.size[8].lineHeight,
-});
+export const headingStyle = styledFont({ size: '3xl', weight: 'bold' });
 
-export const subheadingStyle = style({
-	fontSize: tokens.typography.size[6].fontSize,
-	fontWeight: tokens.typography.fontWeight.bold,
-	lineHeight: tokens.typography.size[6].lineHeight,
-});
+export const subheadingStyle = styledFont({ size: 'xl', weight: 'bold' });
 
 export const titleStyle = style({
 	fontWeight: tokens.typography.fontWeight.bold,

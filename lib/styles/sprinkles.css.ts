@@ -10,7 +10,7 @@ const { none, ...spaceWithoutNone } = space;
 
 const interactionConditions = {
 	initial: {},
-	selected: { selector: '&:checked, &[data-checked], &[data-selected' },
+	selected: { selector: '&:checked, &[data-checked], &[data-selected]' },
 	hover: { selector: '&:hover, &[data-hover]' },
 	focusVisible: { selector: '&:focus-visible, &[data-focus-visible]' },
 	focus: { selector: '&:focus, &[data-focus], &[data-focused]' },
@@ -27,14 +27,21 @@ const borderProperties = defineProperties({
 	},
 });
 
+const interactionColors = {
+	gray200: tokens.colours.gamut.gray200,
+	gray300: tokens.colours.gamut.gray300,
+	gray400: tokens.colours.gamut.gray400,
+	gray900: tokens.colours.gamut.gray900,
+	transparent: 'transparent',
+	white: tokens.colours.gamut.white,
+};
+
 const colorProperties = defineProperties({
 	conditions: { ...interactionConditions },
 	defaultCondition: 'initial',
 	properties: {
-		color: { transparent: 'transparent' },
-		background: { transparent: 'transparent' },
-		// fill: colours.gamut,
-		// stroke: colours.gamut,
+		color: interactionColors,
+		background: interactionColors,
 	},
 });
 
@@ -80,6 +87,7 @@ const responsiveProperties = defineProperties({
 		flexGrow: [0, 1],
 		flexShrink: [0, 1],
 		flexWrap: ['nowrap', 'wrap', 'wrap-reverse'],
+		gap: space,
 		gridTemplateColumns: {
 			'1': '1fr',
 			'2': 'repeat(2, 1fr)',
