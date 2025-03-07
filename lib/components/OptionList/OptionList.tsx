@@ -6,9 +6,9 @@ import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 
 import {
-	styleDescription,
-	styleGroup,
-	styleGroupLabel,
+	descriptionStyle,
+	groupStyle,
+	groupLabelStyle,
 } from './OptionList.css';
 import { OptionListItem, ItemSplitLabel } from './OptionListItem';
 
@@ -71,16 +71,16 @@ export const OptionList = (props: WithTestId<OptionListProps>) => {
 			{...elementAttrs}
 			{...dataAttrs({ 'test-id': props.testId })}
 		>
-			<div {...labelProps} className={styleGroupLabel}>
+			<div {...labelProps} className={groupLabelStyle}>
 				{label}
 			</div>
 			{description && (
-				<div {...descriptionProps} className={styleDescription}>
+				<div {...descriptionProps} className={descriptionStyle}>
 					{description}
 				</div>
 			)}
 			<OptionListContext.Provider value={state}>
-				<div className={styleGroup}>{children}</div>
+				<div className={groupStyle}>{children}</div>
 			</OptionListContext.Provider>
 		</div>
 	);
