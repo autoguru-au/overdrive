@@ -49,7 +49,7 @@ export const styledCell = recipe({
 	base: [
 		{
 			alignItems: 'center',
-			borderRadius: '2',
+			borderRadius: tokens.border.radius[2],
 			display: 'inline-flex',
 			fontSize: 'md',
 			justifyContent: 'center',

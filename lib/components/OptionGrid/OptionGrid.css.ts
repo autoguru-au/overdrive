@@ -1,10 +1,13 @@
 import { createContainer, style } from '@vanilla-extract/css';
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
-import { focusOutline } from '../../styles/focusOutline.css';
-import { odStyle } from '../../styles/sprinkles.css';
-import { tokens } from '../../themes/base/tokens';
+import { focusOutlineStyle } from '../../styles/focusOutline.css';
+import {
+	sprinklesInteraction,
+	sprinklesResponsive,
+} from '../../styles/sprinkles.css';
 import { breakpoints } from '../../themes/makeTheme';
+import { themeContractVars as tokens } from '../../themes/theme.css';
 
 // === Container styles
 export const gridContainer = createContainer();
@@ -35,7 +38,7 @@ const grid4ColStyle = style({
 });
 
 export const styledGrid = recipe({
-	base: odStyle({
+	base: sprinklesResponsive({
 		display: 'grid',
 		gridColumns: { mobile: '1' },
 		gap: '3',
@@ -109,11 +112,18 @@ const pseudoThickBorder = style({
 export const styledGridItem = recipe({
 	base: [
 		{
+			alignItems: 'center',
+			borderRadius: tokens.border.radius[2],
+			borderStyle: 'solid',
+			borderWidth: tokens.border.width[1],
 			minHeight: '80px',
 			userSelect: 'none',
+			display: 'flex',
+			gap: tokens.space[2],
+			padding: `${tokens.space[3]} ${tokens.space[4]}`,
+			position: 'relative',
 		},
-		odStyle({
-			alignItems: 'center',
+		sprinklesInteraction({
 			background: {
 				initial: 'white',
 				focusVisible: 'gray200',
@@ -126,19 +136,11 @@ export const styledGridItem = recipe({
 				hover: 'light',
 				selected: 'dark',
 			},
-			borderRadius: '2',
-			borderStyle: 'solid',
-			borderWidth: '1',
 			cursor: { hover: 'pointer' },
-			display: 'flex',
-			...focusOutline,
-			gap: '2',
-			paddingX: '4',
-			paddingY: '3',
-			position: 'relative',
 		}),
 		optionTransition,
 		pseudoThickBorder,
+		focusOutlineStyle,
 	],
 });
 
@@ -154,8 +156,12 @@ export const styleIndicator = style({
 
 export const styledCheckbox = recipe({
 	base: [
-		odStyle({
-			alignItems: 'center',
+		{
+			borderRadius: tokens.border.radius[1],
+			borderStyle: 'solid',
+			borderWidth: tokens.border.width[1],
+		},
+		sprinklesInteraction({
 			background: {
 				initial: 'white',
 				focusVisible: 'gray300',
@@ -163,15 +169,15 @@ export const styledCheckbox = recipe({
 				selected: 'gray900',
 			},
 			borderColor: { initial: 'gray', selected: 'dark' },
-			borderRadius: '1',
-			borderStyle: 'solid',
-			borderWidth: '1',
 			color: {
 				initial: 'transparent',
 				focusVisible: 'white',
 				hover: 'white',
 				selected: 'white',
 			},
+		}),
+		sprinklesResponsive({
+			alignItems: 'center',
 			display: 'flex',
 			flexShrink: 0,
 			justifyContent: 'center',
@@ -209,8 +215,13 @@ const pseudoRadio = style({
 
 export const styledRadioButton = recipe({
 	base: [
-		odStyle({
-			alignItems: 'center',
+		{
+			borderRadius: tokens.border.radius.full,
+			borderStyle: 'solid',
+			borderWidth: tokens.border.width[1],
+			position: 'relative',
+		},
+		sprinklesInteraction({
 			background: {
 				initial: 'white',
 				hover: 'gray300',
@@ -218,10 +229,9 @@ export const styledRadioButton = recipe({
 				selected: 'gray900',
 			},
 			borderColor: { initial: 'gray', selected: 'dark' },
-			borderRadius: 'full',
-			borderStyle: 'solid',
-			borderWidth: '1',
-			position: 'relative',
+		}),
+		sprinklesResponsive({
+			alignItems: 'center',
 			size: '6',
 		}),
 		pseudoRadio,
@@ -232,3 +242,13 @@ export const styledRadioButton = recipe({
 export type StyledRadioButtonProps = NonNullable<
 	RecipeVariants<typeof styledRadioButton>
 >;
+
+// === Label styles
+
+export const labelStyle = style({
+	fontSize: tokens.typography.size[4].fontSize,
+});
+
+export const descriptionStyle = style({
+	fontSize: tokens.typography.size[2].fontSize,
+});
