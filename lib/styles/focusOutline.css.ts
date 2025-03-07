@@ -4,7 +4,7 @@ import { themeContractVars as tokens } from '../themes/theme.css';
 
 const width = '2px';
 
-export const styleFocusOutline = style({
+export const focusOutlineStyle = style({
 	outlineOffset: width,
 	outlineStyle: 'none',
 	outlineWidth: width,

@@ -9,10 +9,14 @@ import {
 } from 'react-aria';
 import type { CalendarState } from 'react-stately';
 
-import { odStyle } from '../../styles/sprinkles.css';
 import { dataAttrs } from '../../utils/dataAttrs';
 
-import { calendarGridStyle, styledCell } from './DateTimePicker.css';
+import {
+	calendarGridStyle,
+	styledCell,
+	tdStyle,
+	thStyle,
+} from './DateTimePicker.css';
 
 interface CalendarCellProps extends AriaCalendarCellProps {
 	state: CalendarState;
@@ -31,13 +35,7 @@ const CalendarCell = ({ state, date }: CalendarCellProps) => {
 	} = useCalendarCell({ date }, state, ref);
 
 	return (
-		<td
-			{...cellProps}
-			className={odStyle({
-				padding: '1',
-				textAlign: 'center',
-			})}
-		>
+		<td {...cellProps} className={tdStyle}>
 			<div
 				{...buttonProps}
 				ref={ref}
@@ -72,13 +70,8 @@ export const CalendarGrid = ({ state, ...props }: CalendarGridProps) => {
 		<table {...gridProps} className={calendarGridStyle}>
 			<thead {...headerProps}>
 				<tr>
-					{weekDays.map((day, index) => (
-						<th
-							key={index}
-							className={odStyle({
-								color: 'gray600',
-							})}
-						>
+					{weekDays.map((day) => (
+						<th key={day} className={thStyle}>
 							{day}
 						</th>
 					))}
@@ -90,15 +83,15 @@ export const CalendarGrid = ({ state, ...props }: CalendarGridProps) => {
 						<tr key={weekIndex}>
 							{state
 								.getDatesInWeek(weekIndex)
-								.map((date, i) =>
+								.map((date, idx) =>
 									date ? (
 										<CalendarCell
-											key={i}
+											key={idx}
 											state={state}
 											date={date}
 										/>
 									) : (
-										<td key={i} />
+										<td key={idx} />
 									),
 								)}
 						</tr>
