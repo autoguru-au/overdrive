@@ -14,6 +14,7 @@ const meta: Meta = {
 			clear: 'clear search',
 		},
 		maxLength: 25,
+		isDisabled: false,
 		testId: 'demo-search-bar',
 	},
 	tags: ['beta'],

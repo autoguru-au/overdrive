@@ -30,14 +30,13 @@ const defaultEnglish = {
 type TextContent = keyof typeof defaultEnglish;
 
 interface SearchBarProps extends AriaSearchFieldProps {
+	onChange?: AriaSearchFieldProps['onChange'];
+	isDisabled?: AriaSearchFieldProps['isDisabled'];
+	maxLength?: AriaSearchFieldProps['maxLength'];
 	/**
 	 * The placeholder text is also used as the aria-label since the SearchBar does not have a label element
 	 */
 	placeholder: string;
-	/**
-	 * The event handler for when the search field's value changes
-	 */
-	onChange?: AriaSearchFieldProps['onChange'];
 	/**
 	 * Language content override
 	 */
@@ -112,6 +111,7 @@ export const SearchBar = (componentProps: WithTestId<SearchBarProps>) => {
 			onClick={handleWrapperClick}
 			ref={refWrapper}
 			{...dataAttrs({
+				disabled: props.isDisabled,
 				focus: isFocused,
 				'focus-visible': isFocusVisible,
 				'test-id': props.testId,
