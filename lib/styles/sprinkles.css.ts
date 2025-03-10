@@ -3,62 +3,8 @@ import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
 import { breakpoints } from '../themes/makeTheme';
 import { themeContractVars as tokens } from '../themes/theme.css';
 
-const { border, space } = tokens;
+const { space } = tokens;
 const { none, ...spaceWithoutNone } = space;
-
-// --- Interaction sprinkles
-
-const interactionConditions = {
-	initial: {},
-	selected: { selector: '&:checked, &[data-checked], &[data-selected]' },
-	hover: { selector: '&:hover, &[data-hover]' },
-	focusVisible: { selector: '&:focus-visible, &[data-focus-visible]' },
-	focus: { selector: '&:focus, &[data-focus], &[data-focused]' },
-	disabled: { selector: '&:disabled, &[data-disabled]' },
-};
-
-const borderProperties = defineProperties({
-	conditions: { ...interactionConditions },
-	defaultCondition: 'initial',
-	properties: {
-		borderColor: { ...border.colours },
-		borderStyle: ['none', 'solid', 'dotted', 'dashed'],
-		borderWidth: { ...border.width },
-	},
-});
-
-const interactionColors = {
-	gray200: tokens.colours.gamut.gray200,
-	gray300: tokens.colours.gamut.gray300,
-	gray400: tokens.colours.gamut.gray400,
-	gray900: tokens.colours.gamut.gray900,
-	transparent: 'transparent',
-	white: tokens.colours.gamut.white,
-};
-
-const colorProperties = defineProperties({
-	conditions: { ...interactionConditions },
-	defaultCondition: 'initial',
-	properties: {
-		color: interactionColors,
-		background: interactionColors,
-	},
-});
-
-const cursorProperties = defineProperties({
-	conditions: { ...interactionConditions },
-	defaultCondition: 'initial',
-	properties: {
-		cursor: ['default', 'pointer', 'not-allowed', 'text', 'wait'],
-	},
-});
-
-export const sprinklesInteraction = createSprinkles(
-	borderProperties,
-	colorProperties,
-	cursorProperties,
-);
-export type SprinklesInteraction = Parameters<typeof sprinklesInteraction>[0];
 
 // --- Responsive sprinkles
 
