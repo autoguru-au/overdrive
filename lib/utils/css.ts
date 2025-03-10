@@ -29,11 +29,15 @@ export type SelectorStates =
 	| 'disabled'
 	| 'focus'
 	| 'focusVisible'
-	| 'hover';
+	| 'hover'
+	| 'hoverNotFocus'
+	| 'hoverNotSelected';
 export type InteractionStyleProps = Partial<Record<SelectorStates, StyleRule>>;
 type SelectorStateKeys = Exclude<SelectorStates, 'base' | 'checked'>;
 
-const notDisabled = ':not(:disabled,[data-disabled])';
+export const notDisabled = ':not(:disabled,[data-disabled])';
+export const notFocused = ':not(:focus,[data-focus],[data-focused])';
+export const notSelected = ':not(:checked,[data-checked],[data-selected])';
 
 /**
  * Creates style variants for different interaction states that can be spread
@@ -58,6 +62,8 @@ export const interactionStyle = (
 	const styles = { ...base, selectors: {} };
 	const rules: Record<SelectorStateKeys, string> = {
 		hover: `&:hover${notDisabled}, &[data-hover]${notDisabled}`,
+		hoverNotFocus: `&:hover${notFocused}${notDisabled}, &[data-hover]${notFocused}${notDisabled}`,
+		hoverNotSelected: `&:hover${notSelected}${notDisabled}, &[data-hover]${notSelected}${notDisabled}`,
 		active: '&:active',
 		selected: '&:checked, &[data-checked], &[data-selected]',
 		focus: '&:focus, &[data-focus], &[data-focused]',
