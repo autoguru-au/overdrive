@@ -115,4 +115,6 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 	},
 );
 
+Tab.displayName = 'Tab';
+
 export default Tab;
