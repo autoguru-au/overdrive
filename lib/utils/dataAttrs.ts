@@ -9,8 +9,7 @@ export function dataAttrs(attrs: DataAttributes) {
 	return Object.entries(attrs).reduce(
 		(acc, [key, value]) => {
 			if (value !== false && value !== undefined) {
-				acc[`data-${key}`] =
-					typeof value === 'boolean' ? 'true' : value;
+				acc[`data-${key}`] = typeof value === 'boolean' ? '' : value;
 			}
 			return acc;
 		},

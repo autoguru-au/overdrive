@@ -1,107 +1,123 @@
 import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
-import { focusOutline } from '../../styles/focusOutline.css';
-import { odStyle } from '../../styles/sprinkles.css';
-import { tokens } from '../../themes/base/tokens';
+import { focusOutlineStyle } from '../../styles/focusOutline.css';
+import { sprinklesResponsive } from '../../styles/sprinkles.css';
+import { themeContractVars as tokens } from '../../themes/theme.css';
+import { interactionStyle } from '../../utils/css';
 
 // === Group styles
-export const styleGroup = odStyle({ marginTop: '6' });
+export const groupStyle = style({ marginTop: tokens.space['6'] });
 
-export const styleGroupLabel = odStyle({
-	font: 'xxl',
-	fontWeight: 'bold',
-	marginBottom: '3',
+export const groupLabelStyle = style({
+	fontSize: tokens.typography.size['7'].fontSize,
+	fontWeight: tokens.typography.fontWeight.bold,
+	lineHeight: tokens.typography.size['7'].lineHeight,
+	marginBottom: tokens.space['3'],
 });
 
-export const styleDescription = odStyle({
-	color: 'gray400',
-	font: 'md',
+export const descriptionStyle = style({
+	color: tokens.colours.gamut.gray400,
+	fontSize: tokens.typography.size[4].fontSize,
+	lineHeight: tokens.typography.size[4].lineHeight,
 });
 
 // === Option item styles
 const buttonBorderRadius = tokens.border.radius['2'];
-const optionBorders = style({
-	selectors: {
-		['&+&']: {
-			borderTopStyle: 'none',
-		},
-		['&:first-child']: {
-			borderTopLeftRadius: buttonBorderRadius,
-			borderTopRightRadius: buttonBorderRadius,
-		},
-		['&:last-child']: {
-			borderBottomLeftRadius: buttonBorderRadius,
-			borderBottomRightRadius: buttonBorderRadius,
-		},
-	},
-});
-
 export const styledOptionItem = recipe({
 	base: [
 		{
+			background: tokens.colours.background.body,
+			borderColor: tokens.border.colours.gray,
+			borderStyle: 'solid',
+			borderWidth: tokens.border.width['1'],
+			display: 'flex',
+			gap: tokens.space['2'],
+			padding: `${tokens.space['3']} ${tokens.space['4']}`,
+			width: '100%',
 			userSelect: 'none',
 		},
-		odStyle({
-			background: {
-				initial: 'white',
-				hover: 'gray200',
-				focusVisible: 'gray200',
-				disabled: 'white',
+		interactionStyle({
+			disabled: {
+				background: tokens.colours.background.body,
+				cursor: 'default',
 			},
-			borderColor: 'gray',
-			borderStyle: 'solid',
-			borderWidth: '1',
-			cursor: { hover: 'pointer', disabled: 'default' },
-			display: 'flex',
-			gap: '2',
-			outlineColor: 'link',
-			outlineStyle: 'solid',
-			outlineOffset: 'md',
-			outlineWidth: { initial: 'none', focusVisible: 'default' },
-			paddingX: '4',
-			paddingY: '3',
-			width: '100%',
+			hover: {
+				background: tokens.colours.gamut.gray200,
+				cursor: 'pointer',
+			},
+			focusVisible: {
+				background: tokens.colours.gamut.gray200,
+			},
 		}),
-		optionBorders,
+		{
+			selectors: {
+				['&+&']: {
+					borderTopStyle: 'none',
+				},
+				['&:first-child']: {
+					borderTopLeftRadius: buttonBorderRadius,
+					borderTopRightRadius: buttonBorderRadius,
+				},
+				['&:last-child']: {
+					borderBottomLeftRadius: buttonBorderRadius,
+					borderBottomRightRadius: buttonBorderRadius,
+				},
+			},
+		},
+		focusOutlineStyle,
 	],
 });
 
-// === Checkbox styles
-const checkboxHovered = style({
-	selectors: {
-		[`${styledOptionItem.classNames.base}:hover &:not([data-checked]):not([data-disabled])`]:
-			{
-				color: tokens.colours.background.body,
-				background: tokens.colours.gamut.gray300,
-				transitionDuration: '15ms',
-			},
-	},
+export const itemLabelStyle = style({
+	alignSelf: 'center',
+	fontSize: tokens.typography.size['3'].fontSize,
+	lineHeight: tokens.typography.size['3'].lineHeight,
+	width: '100%',
 });
 
+// === Checkbox styles
 const checkboxTransition = style({
 	transitionProperty: 'background',
 	transitionTimingFunction: 'ease-in',
-	transitionDuration: '80ms',
+	transitionDuration: '100ms',
+});
+
+const checkboxHovered = style({
+	selectors: {
+		[`${styledOptionItem.classNames.base}:hover &:not([data-checked],[data-disabled])`]:
+			{
+				color: tokens.colours.background.body,
+				background: tokens.colours.gamut.gray300,
+			},
+	},
 });
 
 export const checkbox = recipe({
 	base: [
-		odStyle({
-			alignItems: 'center',
-			background: { initial: 'white', checked: 'gray900' },
-			borderColor: { initial: 'gray', checked: 'dark' },
+		{
+			background: tokens.colours.background.body,
+			borderColor: tokens.border.colours.gray,
 			borderStyle: 'solid',
-			borderRadius: '1',
-			borderWidth: '1',
-			color: { initial: 'transparent', checked: 'white' },
+			borderRadius: tokens.border.radius['1'],
+			borderWidth: tokens.border.width['1'],
+			color: 'transparent',
+		},
+		interactionStyle({
+			selected: {
+				background: tokens.colours.gamut.gray900,
+				borderColor: tokens.border.colours.dark,
+				color: tokens.colours.background.body,
+			},
+		}),
+		sprinklesResponsive({
+			alignItems: 'center',
 			display: 'flex',
 			flexShrink: 0,
 			justifyContent: 'center',
-			...focusOutline,
 			size: '6',
 		}),
-		checkboxTransition,
 		checkboxHovered,
+		checkboxTransition,
 	],
 });

@@ -4,15 +4,15 @@ import React from 'react';
 
 import { Heading } from '../components/Heading';
 import { Icon } from '../components/Icon';
-import { odStyle } from '../styles/sprinkles.css';
 
 import { Box, Stack } from './helpers';
+import { sprinkles } from './helpers/sprinkles.css';
 import { transitionColours } from './helpers/styles.css';
 
 const IconGrid = () => {
 	return (
 		<ul
-			className={odStyle({
+			className={sprinkles({
 				display: 'flex',
 				flexWrap: 'wrap',
 				gap: '4',
@@ -51,7 +51,7 @@ const IconGrid = () => {
 							>
 								<Icon icon={icon} size="large" />
 								<div
-									className={odStyle({
+									className={sprinkles({
 										fontSize: 'sm',
 										marginTop: '4',
 										textAlign: 'center',

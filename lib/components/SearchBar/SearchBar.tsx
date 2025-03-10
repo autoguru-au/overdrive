@@ -10,13 +10,13 @@ import {
 } from 'react-aria';
 import { useSearchFieldState } from 'react-stately';
 
-import { odStyle } from '../../styles/sprinkles.css';
 import type { WithTestId } from '../../types';
 import { mergeRefs } from '../../utils';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Icon } from '../Icon';
 
 import {
+	fieldWrapper,
 	styledClearButton,
 	styledInput,
 	styledSearchBar,
@@ -30,14 +30,13 @@ const defaultEnglish = {
 type TextContent = keyof typeof defaultEnglish;
 
 interface SearchBarProps extends AriaSearchFieldProps {
+	onChange?: AriaSearchFieldProps['onChange'];
+	isDisabled?: AriaSearchFieldProps['isDisabled'];
+	maxLength?: AriaSearchFieldProps['maxLength'];
 	/**
 	 * The placeholder text is also used as the aria-label since the SearchBar does not have a label element
 	 */
 	placeholder: string;
-	/**
-	 * The event handler for when the search field's value changes
-	 */
-	onChange?: AriaSearchFieldProps['onChange'];
 	/**
 	 * Language content override
 	 */
@@ -107,12 +106,12 @@ export const SearchBar = (componentProps: WithTestId<SearchBarProps>) => {
 
 	return (
 		// this is a pass-through for mouse/touch interaction, the interactive element is keyboard focusable
-		// eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
 		<div
 			className={styledSearchBar({})}
 			onClick={handleWrapperClick}
 			ref={refWrapper}
 			{...dataAttrs({
+				disabled: props.isDisabled,
 				focus: isFocused,
 				'focus-visible': isFocusVisible,
 				'test-id': props.testId,
@@ -121,13 +120,7 @@ export const SearchBar = (componentProps: WithTestId<SearchBarProps>) => {
 			<div>
 				<Icon icon={MagnifyIcon} size="large" />
 			</div>
-			<div
-				className={odStyle({
-					display: 'flex',
-					flexGrow: 1,
-					alignItems: 'center',
-				})}
-			>
+			<div className={fieldWrapper}>
 				<input
 					{...mergeProps(inputProps, focusProps)}
 					className={styledInput({})}
