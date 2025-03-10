@@ -1,21 +1,21 @@
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
 import { styledIntentionalElement } from '../../styles/intentional.css';
-import { odStyle } from '../../styles/sprinkles.css';
+import { fontSize, fontWeight } from '../../styles/typography.css';
+import { themeContractVars as tokens } from '../../themes/theme.css';
 
 export const styledBadge = recipe({
 	base: [
-		odStyle({
-			lineHeight: 'match',
+		{
 			overflow: 'hidden',
-			padding: '1',
 			textOverflow: 'ellipsis',
 			textTransform: 'uppercase',
-			whiteSpace: 'nowrap',
-		}),
-		{
 			letterSpacing: '0.5px',
+			lineHeight: '1',
+			whiteSpace: 'nowrap',
+			padding: tokens.space[1],
 		},
+		fontWeight.semiBold,
 	],
 	variants: {
 		colour: {
@@ -30,19 +30,14 @@ export const styledBadge = recipe({
 			false: {},
 		},
 		size: {
-			small: odStyle({
-				fontSize: 'xxs',
-				fontWeight: 'bold',
-			}),
-			standard: odStyle({
-				fontSize: 'xs',
-				fontWeight: 'semibold',
-			}),
-			large: odStyle({
-				fontSize: 'md',
-				fontWeight: 'semibold',
-				padding: '4',
-			}),
+			small: [fontSize.xxs, fontWeight.bold],
+			standard: [fontSize.xs],
+			large: [
+				fontSize.md,
+				{
+					padding: tokens.space[4],
+				},
+			],
 		},
 	},
 	compoundVariants: [

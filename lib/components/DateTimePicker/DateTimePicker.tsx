@@ -16,7 +16,7 @@ import {
 } from 'react-aria';
 import { useCalendarState, type Selection } from 'react-stately';
 
-import { odStyle } from '../../styles/sprinkles.css';
+import { sprinklesResponsive } from '../../styles/sprinkles.css';
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Icon } from '../Icon';
@@ -28,7 +28,14 @@ import {
 
 import { CalendarButton } from './CalendarButton';
 import { CalendarGrid } from './CalendarGrid';
-import { layoutStyle, queryContainerStyle } from './DateTimePicker.css';
+import {
+	calendarStyle,
+	headingStyle,
+	layoutStyle,
+	queryContainerStyle,
+	subheadingStyle,
+	titleStyle,
+} from './DateTimePicker.css';
 
 const defaultEnglish = {
 	dateLabel: 'Date',
@@ -189,33 +196,16 @@ export const DateTimePicker = <D extends DateValue>({
 			{...dataAttrs({ 'test-id': testId })}
 		>
 			{title && (
-				<h2
-					id={titleId}
-					className={odStyle({ font: '2xl', fontWeight: 'bold' })}
-				>
+				<h2 id={titleId} className={headingStyle}>
 					{title}
 				</h2>
 			)}
 			<div className={layoutStyle}>
-				<div className={odStyle({ flexShrink: 0 })}>
-					<h3
-						className={odStyle({
-							font: 'xl',
-							fontWeight: 'bold',
-						})}
-					>
+				<div className={sprinklesResponsive({ flexShrink: 0 })}>
+					<h3 className={subheadingStyle}>
 						{lang?.dateLabel ?? defaultEnglish.dateLabel}
 					</h3>
-					<div
-						{...calendarProps}
-						className={odStyle({
-							alignItems: 'center',
-							display: 'flex',
-							justifyContent: 'space-between',
-							marginBottom: '2',
-							paddingX: '1',
-						})}
-					>
+					<div {...calendarProps} className={calendarStyle}>
 						<CalendarButton
 							{...prevButtonProps}
 							aria-label={
@@ -224,14 +214,7 @@ export const DateTimePicker = <D extends DateValue>({
 						>
 							<Icon icon={ChevronLeftIcon} size="medium" />
 						</CalendarButton>
-						<h4
-							className={odStyle({
-								fontWeight: 'bold',
-								margin: 'none',
-							})}
-						>
-							{calendarTitle}
-						</h4>
+						<h4 className={titleStyle}>{calendarTitle}</h4>
 						<CalendarButton
 							{...nextButtonProps}
 							aria-label={
@@ -248,13 +231,8 @@ export const DateTimePicker = <D extends DateValue>({
 					{/* {state.value && <h2>{dateText}</h2>} */}
 				</div>
 
-				<div className={odStyle({ flexGrow: 1 })}>
-					<h3
-						className={odStyle({
-							font: 'xl',
-							fontWeight: 'bold',
-						})}
-					>
+				<div className={sprinklesResponsive({ flexGrow: 1 })}>
+					<h3 className={subheadingStyle}>
 						{lang?.timeLabel ?? defaultEnglish.timeLabel}
 					</h3>
 					<OptionGrid {...optionGridComponentProps} />

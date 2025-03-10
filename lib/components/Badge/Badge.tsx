@@ -30,7 +30,6 @@ export interface BadgeProps {
  * To apply badge styling to an element directly the `styledBadge` recipe can be used.
  *
  */
-
 export const Badge = ({
 	label,
 	colour = 'neutral',

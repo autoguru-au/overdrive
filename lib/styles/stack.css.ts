@@ -1,21 +1,21 @@
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
-import { odStyle } from './sprinkles.css';
+import { themeContractVars as tokens } from '../themes/theme.css';
 
 /**
  * Defines stack styles as custom props in a vanilla-extract recipe for using directly or rolling a React component.
  */
 export const stack = recipe({
-	base: odStyle({ display: 'flex', flexWrap: 'wrap' }),
+	base: { display: 'flex', flexWrap: 'wrap' },
 	variants: {
 		space: {
-			sm: odStyle({ gap: '5' }),
-			md: odStyle({ gap: '8' }),
-			lg: odStyle({ gap: '9' }),
+			sm: { gap: tokens.space['5'] },
+			md: { gap: tokens.space['8'] },
+			lg: { gap: tokens.space['9'] },
 		},
 		horizontal: {
-			false: odStyle({ flexDirection: 'column' }),
-			true: odStyle({ flexDirection: 'row' }),
+			false: { flexDirection: 'column' },
+			true: { flexDirection: 'row' },
 		},
 	},
 	defaultVariants: {

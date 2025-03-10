@@ -9,13 +9,14 @@ import {
 } from 'react-aria-components';
 import { type SelectionMode } from 'react-stately';
 
-import { odStyle } from '../../styles/sprinkles.css';
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Icon, type IconEl } from '../Icon';
 
 import {
+	descriptionStyle,
 	gridContainerStyle,
+	labelStyle,
 	styledCheckbox,
 	styledGrid,
 	styledGridItem,
@@ -137,9 +138,7 @@ export const OptionGrid = ({
 										<Text
 											slot="label"
 											elementType="div"
-											className={odStyle({
-												fontSize: 'md',
-											})}
+											className={labelStyle}
 										>
 											{label}
 										</Text>
@@ -147,9 +146,7 @@ export const OptionGrid = ({
 											<Text
 												slot="description"
 												elementType="div"
-												className={odStyle({
-													fontSize: 'xs',
-												})}
+												className={descriptionStyle}
 											>
 												{description}
 											</Text>

@@ -7,13 +7,13 @@ import {
 	type AriaCheckboxGroupItemProps,
 } from 'react-aria';
 
-import { odStyle } from '../../styles/sprinkles.css';
+import { sprinklesResponsive } from '../../styles/sprinkles.css';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Icon } from '../Icon';
 import { VisuallyHidden } from '../VisuallyHidden';
 
 import { OptionListContext } from './OptionList';
-import { checkbox, styledOptionItem } from './OptionList.css';
+import { checkbox, itemLabelStyle, styledOptionItem } from './OptionList.css';
 
 type FilteredCheckboxProps = Omit<
 	AriaCheckboxGroupItemProps,
@@ -39,7 +39,7 @@ export const OptionListItem = (props: FilteredCheckboxProps) => {
 				<input {...mergeProps(inputProps, focusProps)} ref={ref} />
 			</VisuallyHidden>
 			<div
-				className={odStyle({
+				className={sprinklesResponsive({
 					display: 'flex',
 					gap: '2',
 					width: '100%',
@@ -51,15 +51,7 @@ export const OptionListItem = (props: FilteredCheckboxProps) => {
 				>
 					<Icon icon={CheckIcon} />
 				</div>
-				<div
-					className={odStyle({
-						alignSelf: 'center',
-						font: 'sm',
-						width: '100%',
-					})}
-				>
-					{props.children}
-				</div>
+				<div className={itemLabelStyle}>{props.children}</div>
 			</div>
 		</label>
 	);
@@ -83,14 +75,13 @@ export const ItemSplitLabel = ({ children, content }: SplitLabelProps) => {
 
 	return (
 		<div
-			className={odStyle({
+			className={sprinklesResponsive({
 				display: 'flex',
 				gap: '2',
 				justifyContent: 'space-between',
 			})}
 		>
-			{children ??
-				content?.map((item, idx) => <span key={idx}>{item}</span>)}
+			{children ?? content?.map((item) => <span key={item}>{item}</span>)}
 		</div>
 	);
 };

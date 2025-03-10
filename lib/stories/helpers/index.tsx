@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import React from 'react';
 
-import { odStyle, type ODStyle } from '../../styles/sprinkles.css';
 import { stack, type RecipeStackProps } from '../../styles/stack.css';
 
+import { sprinkles, type Sprinkles } from './sprinkles.css';
 import {
 	variantColourSwatch,
 	type VariantColourSwatchProps,
@@ -19,7 +19,7 @@ export type PolyComponentProps<C extends React.ElementType, P> = AsProp<C> &
 
 export type BoxProps<C extends React.ElementType> = PolyComponentProps<
 	C,
-	ODStyle
+	Sprinkles
 >;
 
 export const Box = <C extends React.ElementType = 'div'>({
@@ -32,14 +32,14 @@ export const Box = <C extends React.ElementType = 'div'>({
 	const Tag = as ?? 'div';
 
 	return (
-		<Tag className={clsx([odStyle(props), className])} style={style}>
+		<Tag className={clsx([sprinkles(props), className])} style={style}>
 			{children}
 		</Tag>
 	);
 };
 
 type StackSprinkles = Pick<
-	ODStyle,
+	Sprinkles,
 	'alignItems' | 'flexDirection' | 'flexWrap' | 'gap' | 'justifyContent'
 >;
 
@@ -64,7 +64,7 @@ export const Stack = <C extends React.ElementType = 'div'>({
 	<div
 		{...props}
 		className={clsx([
-			odStyle({
+			sprinkles({
 				alignItems,
 				flexDirection,
 				flexWrap,
@@ -86,4 +86,4 @@ export const ColourSwatch = ({ shape, size, ...props }: ColourSwatchProps) => (
 	<Box {...props} className={variantColourSwatch({ shape, size })}></Box>
 );
 
-export { type ODStyle } from '../../styles/sprinkles.css';
+export { type Sprinkles } from './sprinkles.css';
