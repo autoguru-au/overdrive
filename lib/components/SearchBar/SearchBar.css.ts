@@ -2,11 +2,9 @@ import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
-import {
-	sprinklesInteraction,
-	sprinklesResponsive,
-} from '../../styles/sprinkles.css';
+import { sprinklesResponsive } from '../../styles/sprinkles.css';
 import { tokens } from '../../themes/base/tokens';
+import { interactionStyle } from '../../utils/css';
 
 const hideWebkitAppearance = style({
 	selectors: {
@@ -21,6 +19,9 @@ const placeholder = style({
 		'&::placeholder': {
 			color: tokens.colours.gamut.gray400,
 		},
+		'&:disabled::placeholder': {
+			color: tokens.colours.gamut.gray300,
+		},
 	},
 });
 
@@ -28,6 +29,8 @@ export const styledSearchBar = recipe({
 	base: [
 		{
 			alignItems: 'center',
+			backgroundColor: tokens.colours.background.body,
+			borderColor: tokens.border.colours.gray,
 			borderRadius: tokens.border.radius[3],
 			borderStyle: 'solid',
 			borderWidth: tokens.border.width[2],
@@ -36,22 +39,26 @@ export const styledSearchBar = recipe({
 			gap: tokens.space[2],
 			padding: `0 ${tokens.space[4]}`,
 		},
-		sprinklesInteraction({
-			background: { initial: 'white', hover: 'gray200', focus: 'white' },
-			borderColor: { initial: 'gray', hover: 'light', focus: 'dark' },
-			color: { focus: 'gray900' },
-			cursor: { hover: 'text' },
+		interactionStyle({
+			focus: {
+				borderColor: tokens.border.colours.dark,
+				color: tokens.colours.gamut.gray900,
+			},
+			disabled: {
+				borderColor: tokens.border.colours.light,
+				cursor: 'not-allowed',
+				color: tokens.colours.gamut.gray300,
+			},
+			hover: {
+				cursor: 'text',
+			},
+			hoverNotFocus: {
+				backgroundColor: tokens.border.colours.light,
+				borderColor: tokens.border.colours.light,
+			},
 		}),
 		focusOutlineStyle,
 	],
-	variants: {
-		// disabled: {
-		// 	true: odStyle({
-		// 		color: 'gray500',
-		// 		cursor: 'not-allowed',
-		// 	}),
-		// },
-	},
 });
 
 export const styledInput = recipe({
@@ -59,6 +66,7 @@ export const styledInput = recipe({
 		{
 			background: 'transparent',
 			borderWidth: 0,
+			cursor: 'inherit',
 			fontSize: tokens.typography.size[8].fontSize,
 			height: '72px',
 			outlineStyle: 'none',
