@@ -9,6 +9,8 @@ export const stack = recipe({
 	base: odStyle({ display: 'flex', flexWrap: 'wrap' }),
 	variants: {
 		space: {
+			xxs: odStyle({ gap: '1' }),
+			xs: odStyle({ gap: '3' }),
 			sm: odStyle({ gap: '5' }),
 			md: odStyle({ gap: '8' }),
 			lg: odStyle({ gap: '9' }),
