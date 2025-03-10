@@ -2,11 +2,9 @@ import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
-import {
-	sprinklesInteraction,
-	sprinklesResponsive,
-} from '../../styles/sprinkles.css';
+import { sprinklesResponsive } from '../../styles/sprinkles.css';
 import { themeContractVars as tokens } from '../../themes/theme.css';
+import { interactionStyle } from '../../utils/css';
 
 // === Group styles
 export const groupStyle = style({ marginTop: tokens.space['6'] });
@@ -26,26 +24,10 @@ export const descriptionStyle = style({
 
 // === Option item styles
 const buttonBorderRadius = tokens.border.radius['2'];
-const optionBorders = style({
-	selectors: {
-		['&+&']: {
-			borderTopStyle: 'none',
-		},
-		['&:first-child']: {
-			borderTopLeftRadius: buttonBorderRadius,
-			borderTopRightRadius: buttonBorderRadius,
-		},
-		['&:last-child']: {
-			borderBottomLeftRadius: buttonBorderRadius,
-			borderBottomRightRadius: buttonBorderRadius,
-		},
-	},
-});
-
 export const styledOptionItem = recipe({
 	base: [
 		{
-			userSelect: 'none',
+			background: tokens.colours.background.body,
 			borderColor: tokens.border.colours.gray,
 			borderStyle: 'solid',
 			borderWidth: tokens.border.width['1'],
@@ -53,17 +35,36 @@ export const styledOptionItem = recipe({
 			gap: tokens.space['2'],
 			padding: `${tokens.space['3']} ${tokens.space['4']}`,
 			width: '100%',
+			userSelect: 'none',
 		},
-		sprinklesInteraction({
-			background: {
-				initial: 'white',
-				hover: 'gray200',
-				focusVisible: 'gray200',
-				disabled: 'white',
+		interactionStyle({
+			disabled: {
+				background: tokens.colours.background.body,
+				cursor: 'default',
 			},
-			cursor: { hover: 'pointer', disabled: 'default' },
+			hover: {
+				background: tokens.colours.gamut.gray200,
+				cursor: 'pointer',
+			},
+			focusVisible: {
+				background: tokens.colours.gamut.gray200,
+			},
 		}),
-		optionBorders,
+		{
+			selectors: {
+				['&+&']: {
+					borderTopStyle: 'none',
+				},
+				['&:first-child']: {
+					borderTopLeftRadius: buttonBorderRadius,
+					borderTopRightRadius: buttonBorderRadius,
+				},
+				['&:last-child']: {
+					borderBottomLeftRadius: buttonBorderRadius,
+					borderBottomRightRadius: buttonBorderRadius,
+				},
+			},
+		},
 		focusOutlineStyle,
 	],
 });
@@ -76,34 +77,38 @@ export const itemLabelStyle = style({
 });
 
 // === Checkbox styles
-const checkboxHovered = style({
-	selectors: {
-		[`${styledOptionItem.classNames.base}:hover &:not([data-checked]):not([data-disabled])`]:
-			{
-				color: tokens.colours.background.body,
-				background: tokens.colours.gamut.gray300,
-				transitionDuration: '15ms',
-			},
-	},
-});
-
 const checkboxTransition = style({
 	transitionProperty: 'background',
 	transitionTimingFunction: 'ease-in',
-	transitionDuration: '80ms',
+	transitionDuration: '100ms',
+});
+
+const checkboxHovered = style({
+	selectors: {
+		[`${styledOptionItem.classNames.base}:hover &:not([data-checked],[data-disabled])`]:
+			{
+				color: tokens.colours.background.body,
+				background: tokens.colours.gamut.gray300,
+			},
+	},
 });
 
 export const checkbox = recipe({
 	base: [
 		{
+			background: tokens.colours.background.body,
+			borderColor: tokens.border.colours.gray,
 			borderStyle: 'solid',
 			borderRadius: tokens.border.radius['1'],
 			borderWidth: tokens.border.width['1'],
+			color: 'transparent',
 		},
-		sprinklesInteraction({
-			background: { initial: 'white', selected: 'gray900' },
-			borderColor: { initial: 'gray', selected: 'dark' },
-			color: { initial: 'transparent', selected: 'white' },
+		interactionStyle({
+			selected: {
+				background: tokens.colours.gamut.gray900,
+				borderColor: tokens.border.colours.dark,
+				color: tokens.colours.background.body,
+			},
 		}),
 		sprinklesResponsive({
 			alignItems: 'center',
@@ -112,7 +117,7 @@ export const checkbox = recipe({
 			justifyContent: 'center',
 			size: '6',
 		}),
-		checkboxTransition,
 		checkboxHovered,
+		checkboxTransition,
 	],
 });

@@ -2,12 +2,10 @@ import { createContainer, style } from '@vanilla-extract/css';
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
-import {
-	sprinklesInteraction,
-	sprinklesResponsive,
-} from '../../styles/sprinkles.css';
+import { sprinklesResponsive } from '../../styles/sprinkles.css';
 import { breakpoints } from '../../themes/makeTheme';
 import { themeContractVars as tokens } from '../../themes/theme.css';
+import { interactionStyle, notDisabled, notSelected } from '../../utils/css';
 
 // === Container styles
 export const gridContainer = createContainer();
@@ -88,31 +86,15 @@ export type StyledGridProps = NonNullable<RecipeVariants<typeof styledGrid>>;
 
 // === Option item styles
 const optionTransition = style({
-	transition: 'background 80ms ease-in',
-});
-
-const pseudoThickBorder = style({
-	selectors: {
-		'&[data-selected]:after': {
-			outlineColor: tokens.colours.gamut.black900,
-			outlineStyle: 'solid',
-			outlineWidth: tokens.border.width[2],
-			borderRadius: 'inherit',
-			content: '',
-			display: 'block',
-			position: 'absolute',
-			width: '100%',
-			height: '100%',
-			left: 0,
-			top: 0,
-		},
-	},
+	transition: 'background 100ms ease-in, border-color 100ms ease-in',
 });
 
 export const styledGridItem = recipe({
 	base: [
 		{
 			alignItems: 'center',
+			backgroundColor: tokens.colours.background.body,
+			borderColor: tokens.border.colours.gray,
 			borderRadius: tokens.border.radius[2],
 			borderStyle: 'solid',
 			borderWidth: tokens.border.width[1],
@@ -123,23 +105,38 @@ export const styledGridItem = recipe({
 			padding: `${tokens.space[3]} ${tokens.space[4]}`,
 			position: 'relative',
 		},
-		sprinklesInteraction({
-			background: {
-				initial: 'white',
-				focusVisible: 'gray200',
-				hover: 'gray200',
-				selected: 'white',
+		interactionStyle({
+			hover: {
+				cursor: 'pointer',
 			},
-			borderColor: {
-				initial: 'gray',
-				focusVisible: 'light',
-				hover: 'light',
-				selected: 'dark',
+			selected: {
+				backgroundColor: tokens.colours.background.body,
+				borderColor: tokens.border.colours.dark,
 			},
-			cursor: { hover: 'pointer' },
 		}),
+		{
+			selectors: {
+				'&[data-selected]:after': {
+					outlineColor: tokens.colours.gamut.black900,
+					outlineStyle: 'solid',
+					outlineWidth: tokens.border.width[2],
+					borderRadius: 'inherit',
+					content: '',
+					display: 'block',
+					position: 'absolute',
+					width: '100%',
+					height: '100%',
+					left: 0,
+					top: 0,
+				},
+				'&:hover:not([data-selected]), &[data-focus-visible]:not([data-selected])':
+					{
+						backgroundColor: tokens.border.colours.light,
+						borderColor: tokens.border.colours.light,
+					},
+			},
+		},
 		optionTransition,
-		pseudoThickBorder,
 		focusOutlineStyle,
 	],
 });
@@ -157,25 +154,25 @@ export const styleIndicator = style({
 export const styledCheckbox = recipe({
 	base: [
 		{
+			backgroundColor: tokens.colours.background.body,
 			borderRadius: tokens.border.radius[1],
-			borderStyle: 'solid',
-			borderWidth: tokens.border.width[1],
+			color: 'transparent',
 		},
-		sprinklesInteraction({
-			background: {
-				initial: 'white',
-				focusVisible: 'gray300',
-				hover: 'gray300',
-				selected: 'gray900',
-			},
-			borderColor: { initial: 'gray', selected: 'dark' },
-			color: {
-				initial: 'transparent',
-				focusVisible: 'white',
-				hover: 'white',
-				selected: 'white',
+		interactionStyle({
+			selected: {
+				backgroundColor: tokens.colours.foreground.body,
+				color: tokens.colours.background.body,
 			},
 		}),
+		{
+			selectors: {
+				[`&[data-hover]${notSelected}${notDisabled}, &[data-focus-visible]${notSelected}${notDisabled}`]:
+					{
+						backgroundColor: tokens.colours.gamut.gray300,
+						color: tokens.colours.background.body,
+					},
+			},
+		},
 		sprinklesResponsive({
 			alignItems: 'center',
 			display: 'flex',
@@ -216,24 +213,32 @@ const pseudoRadio = style({
 export const styledRadioButton = recipe({
 	base: [
 		{
+			backgroundColor: tokens.colours.background.body,
+			borderColor: tokens.border.colours.gray,
 			borderRadius: tokens.border.radius.full,
 			borderStyle: 'solid',
 			borderWidth: tokens.border.width[1],
 			position: 'relative',
 		},
-		sprinklesInteraction({
-			background: {
-				initial: 'white',
-				hover: 'gray300',
-				focusVisible: 'gray300',
-				selected: 'gray900',
+		interactionStyle({
+			selected: {
+				backgroundColor: tokens.colours.foreground.body,
+				borderColor: tokens.border.colours.dark,
 			},
-			borderColor: { initial: 'gray', selected: 'dark' },
 		}),
 		sprinklesResponsive({
 			alignItems: 'center',
 			size: '6',
 		}),
+		{
+			selectors: {
+				'&[data-hover]:not([data-selected]),&[focus-visible]:not([data-selected])':
+					{
+						backgroundColor: tokens.colours.gamut.gray300,
+						borderColor: tokens.colours.gamut.gray300,
+					},
+			},
+		},
 		pseudoRadio,
 		optionTransition,
 	],

@@ -2,13 +2,11 @@ import { createContainer, style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
-import {
-	sprinklesInteraction,
-	sprinklesResponsive,
-} from '../../styles/sprinkles.css';
+import { sprinklesResponsive } from '../../styles/sprinkles.css';
 import { styledFont } from '../../styles/typography.css';
 import { breakpoints } from '../../themes/makeTheme';
 import { themeContractVars as tokens } from '../../themes/theme.css';
+import { interactionStyle } from '../../utils/css';
 
 // --- Container styles
 
@@ -50,26 +48,26 @@ export const styledCell = recipe({
 	base: [
 		{
 			alignItems: 'center',
+			backgroundColor: tokens.colours.background.body,
 			borderRadius: tokens.border.radius[2],
+			color: tokens.colours.foreground.body,
+			cursor: 'pointer',
 			display: 'inline-flex',
 			fontSize: 'md',
 			justifyContent: 'center',
 		},
-		sprinklesInteraction({
-			background: {
-				initial: 'white',
-				hover: 'gray200',
-				selected: 'gray900',
-				disabled: 'white',
+		interactionStyle({
+			hoverNotSelected: {
+				backgroundColor: tokens.colours.gamut.gray200,
 			},
-			color: {
-				initial: 'gray900',
-				selected: 'white',
-				disabled: 'gray400',
+			selected: {
+				backgroundColor: tokens.colours.foreground.body,
+				color: tokens.colours.background.body,
 			},
-			cursor: {
-				initial: 'pointer',
-				disabled: 'default',
+			disabled: {
+				backgroundColor: tokens.colours.background.body,
+				color: tokens.colours.gamut.gray400,
+				cursor: 'default',
 			},
 		}),
 		sprinklesResponsive({
@@ -85,23 +83,27 @@ export const styledButton = recipe({
 	base: [
 		{
 			alignItems: 'center',
+			backgroundColor: tokens.colours.background.body,
+			borderColor: tokens.border.colours.gray,
 			borderRadius: tokens.border.radius[2],
 			borderStyle: 'solid',
 			borderWidth: tokens.border.width[1],
 			color: tokens.colours.gamut.gray600,
+			cursor: 'pointer',
 			display: 'flex',
 			justifyContent: 'center',
 			padding: 0,
 		},
-		sprinklesInteraction({
-			background: {
-				initial: 'white',
-				hover: 'gray200',
-				disabled: 'white',
+		interactionStyle({
+			hover: {
+				backgroundColor: tokens.colours.gamut.gray200,
 			},
-			borderColor: { initial: 'gray', disabled: 'light' },
-			color: { disabled: 'gray300' },
-			cursor: { hover: 'pointer', disabled: 'default' },
+			disabled: {
+				backgroundColor: tokens.colours.background.body,
+				borderColor: tokens.border.colours.light,
+				color: tokens.colours.gamut.gray300,
+				cursor: 'not-allowed',
+			},
 		}),
 		sprinklesResponsive({
 			size: '7',
