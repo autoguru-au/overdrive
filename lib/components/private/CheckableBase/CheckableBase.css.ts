@@ -1,10 +1,10 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
+import { focusOutlineStyle } from '../../../styles/focusOutline.css';
 import { themeContractVars as vars } from '../../../themes/theme.css';
 
 export const root = style({
 	cursor: 'pointer',
-	transition: `background-color 0.2s ${vars.animation.easing.decelerate} 0s`,
 	':hover': {
 		backgroundColor: vars.colours.background.body,
 	},
@@ -16,39 +16,41 @@ export const label = styleVariants({
 	},
 });
 
-export const nativeInput = styleVariants({
-	default: {
-		zIndex: 2,
-		top: 0,
-		left: 0,
-		cursor: 'inherit',
-		opacity: 0,
-	},
-	checked: {
-		outline: 'none',
-	},
+export const nativeInput = style({
+	zIndex: 2,
+	top: 0,
+	left: 0,
+	cursor: 'inherit',
+	opacity: 0,
+	outline: 'none',
 });
 
 export const checkable = style({
-	width: `calc(${vars.space['4']} + (${vars.space[3]} * 2))`,
-	height: `calc(${vars.space['4']} + (${vars.space[3]} * 2))`,
-
+	width: `calc(${vars.space['6']} + (${vars.space[3]} * 2))`,
+	height: `calc(${vars.space['6']} + (${vars.space[3]} * 2))`,
 	marginTop: `calc(-1*${vars.space['3']})`,
 	marginBottom: `calc(-1*${vars.space['3']})`,
 });
 
-export const checkableItem = style({
+export const checkableIndicator = style({
 	selectors: {
-		[`${nativeInput.default}:focus:checked ~${checkable} &`]: {
-			boxShadow: `0 0 0 2px ${vars.colours.intent.primary.background.strong}`,
-		},
-		[`${nativeInput.default}:focus:not(:checked) ~${checkable} >&`]: {
-			borderColor: vars.colours.intent.primary.background.strong,
-		},
+		[`${nativeInput}:focus-visible ~${checkable} &`]: focusOutlineStyle,
 	},
 });
 
 export const disabled = style({
 	opacity: 0.6,
 	pointerEvents: 'none',
+});
+
+// no longer is in use in Overdrive
+export const checkableItem = style({
+	selectors: {
+		[`${nativeInput}:focus:checked ~${checkable} &`]: {
+			boxShadow: `0 0 0 2px ${vars.colours.intent.primary.background.strong}`,
+		},
+		[`${nativeInput}:focus:not(:checked) ~${checkable} >&`]: {
+			borderColor: vars.colours.intent.primary.background.strong,
+		},
+	},
 });

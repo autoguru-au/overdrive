@@ -1,16 +1,17 @@
 import { AccountBoxIcon } from '@autoguru/icons';
-import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
 import React, { type ComponentProps } from 'react';
 
+import { Box } from '../Box';
 import { Column, Columns } from '../Columns';
 import { Icon } from '../Icon';
 
+import { type ButtonProps } from './Button';
+
 import { Button } from '.';
 
-const onClick = action('onClick');
-
-const meta = {
+const meta: Meta<typeof Button> = {
 	title: 'Primatives/Buttons',
 	component: Button,
 	decorators: [
@@ -26,12 +27,26 @@ const meta = {
 			</div>
 		),
 	],
+	args: {
+		variant: 'secondary',
+		size: 'medium',
+		minimal: false,
+		rounded: false,
+		children: undefined,
+		isFullWidth: false,
+		isLoading: false,
+		disabled: false,
+		is: undefined,
+		onClick: fn(),
+		withDoubleClicks: false,
+		testId: 'storybook-button',
+	},
 	argTypes: {
 		is: {
 			options: ['button', 'a'],
 		},
 	},
-} satisfies Meta<typeof Button>;
+};
 
 export default meta;
 type Story = StoryObj<typeof Button>;
@@ -46,231 +61,157 @@ export const Standard: Story = {
 	],
 	args: {
 		children: 'Login',
-		onClick,
 	},
 };
 
-const TemplateMulti = (args: ComponentProps<typeof Button>) => (
+const TemplateMulti = ({
+	children,
+	onClick,
+	variant,
+}: ComponentProps<typeof Button>) => (
 	<>
-		<Columns space="3">
-			<Column>
-				<Button {...args}>Login</Button>
-			</Column>
-			<Column>
-				<Button {...args}>
-					<Icon icon={AccountBoxIcon} />
-					Login
-				</Button>
-			</Column>
-			<Column>
-				<Button {...args}>
-					<Icon icon={AccountBoxIcon} />
-				</Button>
-			</Column>
-			<Column>
-				<Button isLoading {...args}>
-					A very very very long button Label
-				</Button>
-			</Column>
-			<Column>
-				<Button disabled {...args}>
-					Login
-				</Button>
-			</Column>
-		</Columns>
-		<Columns space="3">
-			<Column>
-				<Button rounded {...args}>
-					Login
-				</Button>
-			</Column>
-			<Column>
-				<Button rounded {...args}>
-					<Icon icon={AccountBoxIcon} />
-					Login
-				</Button>
-			</Column>
-			<Column>
-				<Button rounded {...args}>
-					<Icon icon={AccountBoxIcon} />
-				</Button>
-			</Column>
-			<Column>
-				<Button rounded isLoading {...args}>
-					Login
-				</Button>
-			</Column>
-			<Column>
-				<Button rounded disabled {...args}>
-					Login
-				</Button>
-			</Column>
-		</Columns>
-		<Columns space="3">
-			<Column>
-				<Button minimal {...args}>
-					Login
-				</Button>
-			</Column>
-			<Column>
-				<Button minimal {...args}>
-					<Icon icon={AccountBoxIcon} />
-					Login
-				</Button>
-			</Column>
-			<Column>
-				<Button minimal {...args}>
-					<Icon icon={AccountBoxIcon} />
-				</Button>
-			</Column>
-			<Column>
-				<Button minimal isLoading {...args}>
-					Login
-				</Button>
-			</Column>
-			<Column>
-				<Button minimal disabled {...args}>
-					Login
-				</Button>
-			</Column>
-		</Columns>
-		<Columns space="3">
-			<Column>
-				<Button minimal rounded {...args}>
-					1
-				</Button>
-			</Column>
-			<Column>
-				<Button minimal rounded {...args}>
-					<Icon icon={AccountBoxIcon} />1
-				</Button>
-			</Column>
-			<Column>
-				<Button minimal rounded {...args}>
-					<Icon icon={AccountBoxIcon} />
-				</Button>
-			</Column>
-			<Column>
-				<Button minimal rounded isLoading {...args}>
-					1
-				</Button>
-			</Column>
-			<Column>
-				<Button minimal rounded disabled {...args}>
-					1
-				</Button>
-			</Column>
-		</Columns>
-		<Button isFullWidth {...args}>
-			Full Width
-		</Button>
+		{['medium', 'small'].map((size) => {
+			const args = {
+				children,
+				onClick,
+				size: size as ButtonProps['size'],
+				variant,
+			};
+
+			return (
+				<>
+					<Box
+						textAlign="right"
+						style={{ textTransform: 'capitalize' }}
+					>
+						{size}
+					</Box>
+					<Columns space="3">
+						<Column>
+							<Button {...args}>Login</Button>
+						</Column>
+						<Column>
+							<Button {...args}>
+								<Icon icon={AccountBoxIcon} />
+								Login
+							</Button>
+						</Column>
+						<Column>
+							<Button {...args} aria-label="login">
+								<Icon icon={AccountBoxIcon} />
+							</Button>
+						</Column>
+						<Column>
+							<Button rounded {...args} aria-label="login">
+								<Icon icon={AccountBoxIcon} />
+							</Button>
+						</Column>
+						<Column>
+							<Button isLoading {...args}>
+								A very very very long button Label
+							</Button>
+						</Column>
+						<Column>
+							<Button disabled {...args}>
+								Login
+							</Button>
+						</Column>
+					</Columns>
+					<div>
+						<Button isFullWidth {...args}>
+							Full Width
+						</Button>
+					</div>
+					<Columns space="3">
+						<Column>
+							<Button minimal {...args}>
+								Login
+							</Button>
+						</Column>
+						<Column>
+							<Button minimal {...args}>
+								<Icon icon={AccountBoxIcon} />
+								Login
+							</Button>
+						</Column>
+						<Column>
+							<Button minimal {...args} aria-label="login">
+								<Icon icon={AccountBoxIcon} />
+							</Button>
+						</Column>
+						<Column>
+							<Button minimal rounded {...args}>
+								1
+							</Button>
+						</Column>
+						<Column>
+							<Button
+								minimal
+								rounded
+								{...args}
+								aria-label="login"
+							>
+								<Icon icon={AccountBoxIcon} />1
+							</Button>
+						</Column>
+						<Column>
+							<Button
+								minimal
+								rounded
+								{...args}
+								aria-label="login"
+							>
+								<Icon icon={AccountBoxIcon} />
+							</Button>
+						</Column>
+						<Column>
+							<Button minimal isLoading {...args}>
+								Login
+							</Button>
+						</Column>
+						<Column>
+							<Button minimal disabled {...args}>
+								Login
+							</Button>
+						</Column>
+					</Columns>
+				</>
+			);
+		})}
 	</>
 );
 
-export const PrimarySmall: Story = {
+export const PrimarySet: Story = {
 	args: {
-		size: 'small',
 		variant: 'primary',
-		onClick,
 	},
 	render: TemplateMulti,
 };
 
-export const PrimaryMedium: Story = {
+export const SecondarySet: Story = {
 	args: {
-		size: 'medium',
-		variant: 'primary',
-		onClick,
-	},
-	render: TemplateMulti,
-};
-
-export const BrandSmall: Story = {
-	args: {
-		size: 'small',
-		variant: 'brand',
-		onClick,
-	},
-	render: TemplateMulti,
-};
-
-export const BrandMedium: Story = {
-	args: {
-		size: 'medium',
-		variant: 'brand',
-		onClick,
-	},
-	render: TemplateMulti,
-};
-
-export const SecondarySmall: Story = {
-	args: {
-		size: 'small',
 		variant: 'secondary',
-		onClick,
 	},
 	render: TemplateMulti,
 };
 
-export const SecondaryMedium: Story = {
+export const InformationSet: Story = {
 	args: {
-		size: 'medium',
-		variant: 'secondary',
-		onClick,
-	},
-	render: TemplateMulti,
-};
-
-export const InformationSmall: Story = {
-	args: {
-		size: 'small',
 		variant: 'information',
-		onClick,
 	},
 	render: TemplateMulti,
 };
 
-export const InformationMedium: Story = {
+export const WarningSet: Story = {
 	args: {
-		size: 'medium',
-		variant: 'information',
-		onClick,
-	},
-	render: TemplateMulti,
-};
-
-export const WarningSmall: Story = {
-	args: {
-		size: 'small',
 		variant: 'warning',
-		onClick,
 	},
 	render: TemplateMulti,
 };
 
-export const WarningMedium: Story = {
+export const SuccessSet: Story = {
 	args: {
-		size: 'medium',
-		variant: 'warning',
-		onClick,
-	},
-	render: TemplateMulti,
-};
-
-export const SuccessSmall: Story = {
-	args: {
-		size: 'small',
 		variant: 'success',
-		onClick,
-	},
-	render: TemplateMulti,
-};
-
-export const SuccessMedium: Story = {
-	args: {
-		size: 'medium',
-		variant: 'success',
-		onClick,
 	},
 	render: TemplateMulti,
 };

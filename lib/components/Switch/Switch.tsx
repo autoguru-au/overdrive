@@ -1,91 +1,81 @@
 import { useToggleState } from '@react-stately/toggle';
 import clsx from 'clsx';
-import * as React from 'react';
-import { AnchorHTMLAttributes, FunctionComponent, useRef } from 'react';
-import { useSwitch, useFocusRing } from 'react-aria';
+import React, { useRef } from 'react';
+import { useSwitch, useFocusRing, type AriaSwitchProps } from 'react-aria';
 
-import { Box, useBoxStyles } from '../Box';
+import { dataAttrs } from '../../utils/dataAttrs';
+import { Box } from '../Box';
 import { useTextStyles } from '../Text';
 import { VisuallyHidden } from '../VisuallyHidden';
 
 import * as styles from './Switch.css';
-type AriaSwitchProps = Parameters<typeof useSwitch>[0];
-export type SwitchProps = AriaSwitchProps &
-	Omit<
-		AnchorHTMLAttributes<HTMLButtonElement>,
-		'children' | 'style' | 'is' | 'onChange'
-	> & {
-		className?: string;
-		/**
-		 * @deprecated use isDisabled instead
-		 */
-		disabled?: boolean;
-		/**
-		 * @deprecated use isSelected instead
-		 */
-		toggled?: boolean;
-	};
 
-export const Switch: FunctionComponent<SwitchProps> = ({
+export interface SwitchProps extends AriaSwitchProps {
+	'aria-labelledby'?: AriaSwitchProps['aria-labelledby'];
+	name?: AriaSwitchProps['name'];
+	value?: AriaSwitchProps['value'];
+	isDisabled?: AriaSwitchProps['isDisabled'];
+	isSelected?: AriaSwitchProps['isSelected'];
+	onChange?: AriaSwitchProps['onChange'];
+	className?: string;
+	/**
+	 * @deprecated use isDisabled instead
+	 */
+	disabled?: boolean;
+	/**
+	 * @deprecated use isSelected instead
+	 */
+	toggled?: boolean;
+}
+
+/**
+ * The Switch component does not include a label by default for legacy compatibility. The text that describes the
+ * switch should be given an `id` and then provided to the `aria-labelledby` attribute. This will allow the
+ * component to be accessible.
+ */
+export const Switch = ({
 	className,
 	disabled,
 	toggled,
-	isSelected,
-	isDisabled,
+	isSelected = toggled,
+	isDisabled = disabled,
 	...incomingProps
 }: SwitchProps) => {
 	const props = {
 		...incomingProps,
-		isDisabled: isDisabled || disabled,
-		isSelected: isSelected || toggled,
+		isDisabled,
+		isSelected,
 	};
 	const state = useToggleState(props);
 	const ref = useRef(null);
 	const { inputProps } = useSwitch(props, state, ref);
 	const { isFocusVisible, focusProps } = useFocusRing();
+
 	return (
-		<label>
+		<label className={styles.base}>
 			<VisuallyHidden>
 				<input {...inputProps} {...focusProps} ref={ref} />
 			</VisuallyHidden>
 			<Box
 				className={clsx(
-					styles.root,
+					styles.toggle,
 					useTextStyles({ size: '5' }),
 					{
-						[styles.disabled.default]: inputProps.disabled,
-						[styles.disabled.toggled]:
-							state.isSelected && inputProps.disabled,
-						[styles.toggled]: state.isSelected,
-						[styles.untoggled]: !state.isSelected,
+						[styles.disabled]: inputProps.disabled,
+						[styles.toggleOn]: state.isSelected,
 						[styles.focus]: isFocusVisible,
 					},
 					className,
 				)}
-				tabIndex={inputProps.disabled ? -1 : void 0}
-				borderRadius="pill"
-				position="relative"
-				aria-disabled={inputProps.disabled}
-				aria-label={`toggle ${state.isSelected ? 'on' : 'off'}`}
+				{...dataAttrs({
+					disabled: inputProps.disabled,
+					active: state.isSelected,
+				})}
 			>
 				<Box
-					borderWidth="1"
-					position="absolute"
-					borderRadius="pill"
-					backgroundColour="white"
-					padding="none"
-					pointerEvents={inputProps.disabled ? 'none' : void 0}
-					boxShadow="2"
-					className={clsx(
-						styles.handle.default,
-						useBoxStyles({ is: 'button' }),
-						useTextStyles({ colour: 'white' }),
-						{
-							[styles.handle.transition]: state.isSelected,
-							[styles.handle.default]: inputProps.disabled,
-							[styles.handle.disabled]: inputProps.disabled,
-						},
-					)}
+					className={clsx(styles.handle.default, {
+						[styles.handle.active]: state.isSelected,
+					})}
 				/>
 			</Box>
 			{props.children}
