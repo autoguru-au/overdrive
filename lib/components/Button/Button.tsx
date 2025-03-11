@@ -142,7 +142,6 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 			id,
 			onClick,
 			disabled: disabled || isLoading,
-			tabIndex: disabled ? -1 : void 0,
 			'aria-label': isLoading ? language.loading : ariaLabel,
 			'data-loading': isLoading ? '' : undefined,
 			className: clsx(
