@@ -131,7 +131,7 @@ __metadata:
     "@internationalized/date": "npm:^3.7.0"
     "@octokit/rest": "npm:^21.1.1"
     "@popperjs/core": "npm:^2.11.8"
-    "@react-stately/toggle": "npm:^3.8.1"
+    "@react-stately/toggle": "npm:^3.8.2"
     "@storybook/addon-a11y": "npm:^8.6.4"
     "@storybook/addon-actions": "npm:^8.6.4"
     "@storybook/addon-essentials": "npm:^8.6.4"
@@ -187,13 +187,13 @@ __metadata:
     prop-types: "npm:^15.8.1"
     rand-seed: "npm:^2.1.7"
     react: "npm:^19.0.0"
-    react-aria: "npm:^3.37.0"
-    react-aria-components: "npm:^1.6.0"
+    react-aria: "npm:^3.38.1"
+    react-aria-components: "npm:^1.7.1"
     react-dom: "npm:^19.0.0"
     react-focus-lock: "npm:2.13.6"
     react-intersection-observer: "npm:^9.15.1"
     react-keyed-flatten-children: "npm:2.2.1"
-    react-stately: "npm:^3.35.0"
+    react-stately: "npm:^3.36.1"
     react-swipeable: "npm:^7.0.2"
     rollup-plugin-visualizer: "npm:^5.14.0"
     storybook: "npm:^8.6.4"
@@ -3961,7 +3961,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-stately/toggle@npm:^3.8.1, @react-stately/toggle@npm:^3.8.2":
+"@react-stately/toggle@npm:^3.8.2":
   version: 3.8.2
   resolution: "@react-stately/toggle@npm:3.8.2"
   dependencies:
@@ -11315,7 +11315,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-aria-components@npm:^1.6.0":
+"react-aria-components@npm:^1.7.1":
   version: 1.7.1
   resolution: "react-aria-components@npm:1.7.1"
   dependencies:
@@ -11352,7 +11352,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-aria@npm:^3.37.0, react-aria@npm:^3.38.1":
+"react-aria@npm:^3.38.1":
   version: 3.38.1
   resolution: "react-aria@npm:3.38.1"
   dependencies:
@@ -11541,7 +11541,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-stately@npm:^3.35.0, react-stately@npm:^3.36.1":
+"react-stately@npm:^3.36.1":
   version: 3.36.1
   resolution: "react-stately@npm:3.36.1"
   dependencies:
