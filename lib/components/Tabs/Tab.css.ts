@@ -2,6 +2,8 @@ import { style, styleVariants } from '@vanilla-extract/css';
 
 import { themeContractVars as vars } from '../../themes/theme.css';
 
+import { focusOutlineStyle } from './../../styles/focusOutline.css';
+
 const lineBottomHeight = '1px';
 const size = '20px';
 
@@ -14,13 +16,12 @@ export const root = {
 		':last-of-type': {
 			marginRight: 0,
 		},
-
 		':hover': {
 			color: vars.colours.intent.neutral.background.strong,
 		},
-
-		':focus': {
-			color: vars.colours.intent.neutral.background.strong,
+		':focus-visible': {
+			...focusOutlineStyle,
+			outlineOffset: '-2px',
 		},
 	}),
 	active: style({
