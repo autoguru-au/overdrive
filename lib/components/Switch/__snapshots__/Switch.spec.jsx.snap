@@ -15,11 +15,11 @@ exports[`<Switch /> > should match snapshot when toggled 1`] = `
     />
   </div>
   <div
-    class="reset_block__1oah0223 Switch_toggle__6xc8dy2 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75 Switch_toggleOn__6xc8dy3"
-    data-active="true"
+    class="reset_block__1oah0223 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75 Switch_toggleOn__6xc8dy2"
+    data-active=""
   >
     <div
-      class="reset_block__1oah0223 Switch_handle_default__6xc8dy5 Switch_handle_active__6xc8dy6"
+      class="reset_block__1oah0223 Switch_handle_default__6xc8dy4 Switch_handle_active__6xc8dy5"
     />
   </div>
 </label>
@@ -40,12 +40,12 @@ exports[`<Switch /> > should match snapshot when toggled and disabled 1`] = `
     />
   </div>
   <div
-    class="reset_block__1oah0223 Switch_toggle__6xc8dy2 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75 Switch_disabled__6xc8dy4 Switch_toggleOn__6xc8dy3"
-    data-active="true"
-    data-disabled="true"
+    class="reset_block__1oah0223 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75 Switch_disabled__6xc8dy3 Switch_toggleOn__6xc8dy2"
+    data-active=""
+    data-disabled=""
   >
     <div
-      class="reset_block__1oah0223 Switch_handle_default__6xc8dy5 Switch_handle_active__6xc8dy6"
+      class="reset_block__1oah0223 Switch_handle_default__6xc8dy4 Switch_handle_active__6xc8dy5"
     />
   </div>
 </label>
@@ -65,10 +65,10 @@ exports[`<Switch /> > should match snapshot when un-toggled 1`] = `
     />
   </div>
   <div
-    class="reset_block__1oah0223 Switch_toggle__6xc8dy2 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75"
+    class="reset_block__1oah0223 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75"
   >
     <div
-      class="reset_block__1oah0223 Switch_handle_default__6xc8dy5"
+      class="reset_block__1oah0223 Switch_handle_default__6xc8dy4"
     />
   </div>
 </label>
@@ -88,11 +88,11 @@ exports[`<Switch /> > should match snapshot when un-toggled and disabled 1`] = `
     />
   </div>
   <div
-    class="reset_block__1oah0223 Switch_toggle__6xc8dy2 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75 Switch_disabled__6xc8dy4"
-    data-disabled="true"
+    class="reset_block__1oah0223 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75 Switch_disabled__6xc8dy3"
+    data-disabled=""
   >
     <div
-      class="reset_block__1oah0223 Switch_handle_default__6xc8dy5"
+      class="reset_block__1oah0223 Switch_handle_default__6xc8dy4"
     />
   </div>
 </label>
@@ -112,10 +112,10 @@ exports[`<Switch /> > should match snapshot without props 1`] = `
     />
   </div>
   <div
-    class="reset_block__1oah0223 Switch_toggle__6xc8dy2 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75"
+    class="reset_block__1oah0223 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75"
   >
     <div
-      class="reset_block__1oah0223 Switch_handle_default__6xc8dy5"
+      class="reset_block__1oah0223 Switch_handle_default__6xc8dy4"
     />
   </div>
 </label>
