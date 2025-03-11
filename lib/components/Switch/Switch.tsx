@@ -63,13 +63,13 @@ export const Switch = ({
 					{
 						[styles.disabled]: inputProps.disabled,
 						[styles.toggleOn]: state.isSelected,
-						[styles.focus]: isFocusVisible,
 					},
 					className,
 				)}
 				{...dataAttrs({
 					disabled: inputProps.disabled,
 					active: state.isSelected,
+					'focus-visible': isFocusVisible,
 				})}
 			>
 				<Box

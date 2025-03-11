@@ -1,8 +1,7 @@
 import { style } from '@vanilla-extract/css';
 import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 
-import { focusOutline } from '../../styles/focusOutline.css';
-import { odStyle } from '../../styles/sprinkles.css';
+import { focusOutlineStyle } from '../../styles/focusOutline.css';
 import { themeContractVars as vars } from '../../themes/theme.css';
 
 const intentColors = vars.colours.intent;
@@ -49,7 +48,7 @@ export const button = recipe({
 				},
 			},
 		},
-		odStyle({ ...focusOutline }),
+		focusOutlineStyle,
 	],
 
 	variants: {

@@ -1,6 +1,6 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
-import { focusOutlineStyle } from '../../../styles/focusOutline.css';
+import { focusOutline } from '../../../styles/focusOutline.css';
 import { themeContractVars as vars } from '../../../themes/theme.css';
 
 export const root = style({
@@ -34,7 +34,7 @@ export const checkable = style({
 
 export const checkableIndicator = style({
 	selectors: {
-		[`${nativeInput}:focus-visible ~${checkable} &`]: focusOutlineStyle,
+		[`${nativeInput}:focus-visible ~${checkable} &`]: focusOutline,
 	},
 });
 

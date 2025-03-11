@@ -2,7 +2,7 @@ import { style, styleVariants } from '@vanilla-extract/css';
 
 import { themeContractVars as vars } from '../../themes/theme.css';
 
-import { focusOutlineStyle } from './../../styles/focusOutline.css';
+import { focusOutline } from './../../styles/focusOutline.css';
 
 const lineBottomHeight = '1px';
 const size = '20px';
@@ -20,7 +20,7 @@ export const root = {
 			color: vars.colours.intent.neutral.background.strong,
 		},
 		':focus-visible': {
-			...focusOutlineStyle,
+			...focusOutline,
 			outlineOffset: '-2px',
 		},
 	}),

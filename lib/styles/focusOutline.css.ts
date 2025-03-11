@@ -13,7 +13,7 @@ export const focusOutlineStyle = style({
 	selectors: {
 		'&:focus-visible, &[data-focus-visible], [data-focus-visible] &': {
 			outline: `solid ${width} ${tokens.colours.foreground.link}`,
-			outlineWidth: width,
+			outlineOffset: width,
 		},
 	},
 });

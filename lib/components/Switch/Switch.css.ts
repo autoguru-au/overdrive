@@ -14,22 +14,23 @@ export const base = style({
 	display: 'inline-block',
 });
 
-export const focus = style(focusOutlineStyle);
-
-export const toggle = style({
-	cursor: 'pointer',
-	backgroundColor: colorMid,
-	height: height,
-	width: `calc(2 * ${height} - 2px)`,
-	borderRadius: vars.border.radius.pill,
-	padding: '3px 4px',
-	transition: 'background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
-	selectors: {
-		'&:not([data-disabled]):hover': {
-			backgroundColor: colorAccent,
+export const toggle = style([
+	{
+		cursor: 'pointer',
+		backgroundColor: colorMid,
+		height: height,
+		width: `calc(2 * ${height} - 2px)`,
+		borderRadius: vars.border.radius.pill,
+		padding: '3px 4px',
+		transition: 'background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
+		selectors: {
+			'&:not([data-disabled]):hover': {
+				backgroundColor: colorAccent,
+			},
 		},
 	},
-});
+	focusOutlineStyle,
+]);
 
 export const toggleOn = style({
 	backgroundColor: colorAccent,
