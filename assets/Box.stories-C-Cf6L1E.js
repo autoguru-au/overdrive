@@ -1,6 +1,0 @@
-import{b as m}from"./argTypes-DGLoH3Pe.js";import{B as c}from"./Box-ByZNOjEZ.js";import"./tokens-_1AlMUnv.js";import"./makeTheme-BvwTE3C0.js";import"./index-Cr_cdoBq.js";import"./_commonjsHelpers-C932wzq6.js";const b={title:"Primatives/Box",component:c,args:{as:"div",children:"Hello box!",colour:"primary",backgroundColour:"primary",borderRadius:"min",borderColour:"light",borderWidth:"1",boxShadow:"1",display:"inlineFlex",margin:void 0,padding:"6",textAlign:void 0},argTypes:m},o={},r={args:{children:"Resize the viewport",padding:["3","6","8"]}};var e,s,a;o.parameters={...o.parameters,docs:{...(e=o.parameters)==null?void 0:e.docs,source:{originalSource:"{}",...(a=(s=o.parameters)==null?void 0:s.docs)==null?void 0:a.source}}};var i,t,d,p,n;r.parameters={...r.parameters,docs:{...(i=r.parameters)==null?void 0:i.docs,source:{originalSource:`{
-  args: {
-    children: 'Resize the viewport',
-    padding: ['3', '6', '8']
-  }
-}`,...(d=(t=r.parameters)==null?void 0:t.docs)==null?void 0:d.source},description:{story:"This story demonstrates the responsive props for `padding`, using an array of values.",...(n=(p=r.parameters)==null?void 0:p.docs)==null?void 0:n.description}}};const y=["Standard","ResponsiveProps"];export{r as ResponsiveProps,o as Standard,y as __namedExportsOrder,b as default};
