@@ -4,7 +4,7 @@ import React from 'react';
 import { Heading } from '../components/Heading';
 import { tokens } from '../themes/base/tokens';
 
-import { Box, Stack, type ODStyle } from './helpers';
+import { Box, Stack, type Sprinkles } from './helpers';
 import { labels, titles } from './helpers/styles.css';
 
 const { border, elevation } = tokens;
@@ -23,7 +23,7 @@ const Elevation = () => (
 				<Box
 					background="gray100"
 					borderRadius="1"
-					boxShadow={elevation as ODStyle['boxShadow']}
+					boxShadow={elevation as Sprinkles['boxShadow']}
 					size="9"
 				/>
 				<p className={labels}>{elevation}</p>
@@ -46,7 +46,7 @@ const Widths = () => {
 						borderColor="dark"
 						borderRadius="1"
 						borderStyle="solid"
-						borderWidth={width as ODStyle['borderWidth']}
+						borderWidth={width as Sprinkles['borderWidth']}
 						size="9"
 					/>
 					<p className={labels}>{width}</p>
@@ -68,7 +68,7 @@ const Radius = () => {
 					<Box
 						background="black500"
 						borderColor="gray"
-						borderRadius={radius as ODStyle['borderRadius']}
+						borderRadius={radius as Sprinkles['borderRadius']}
 						size="9"
 						style={
 							radius === 'pill' ? { height: '74px' } : undefined
