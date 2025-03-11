@@ -132,18 +132,18 @@ __metadata:
     "@octokit/rest": "npm:^21.1.1"
     "@popperjs/core": "npm:^2.11.8"
     "@react-stately/toggle": "npm:^3.8.1"
-    "@storybook/addon-a11y": "npm:^8.6.3"
-    "@storybook/addon-actions": "npm:^8.6.3"
-    "@storybook/addon-essentials": "npm:^8.6.3"
-    "@storybook/addon-interactions": "npm:^8.6.3"
-    "@storybook/addon-links": "npm:^8.6.3"
-    "@storybook/addon-onboarding": "npm:^8.6.3"
-    "@storybook/blocks": "npm:^8.6.3"
-    "@storybook/manager-api": "npm:^8.6.3"
-    "@storybook/react": "npm:^8.6.3"
-    "@storybook/react-vite": "npm:^8.6.3"
-    "@storybook/test": "npm:^8.6.3"
-    "@storybook/theming": "npm:^8.6.3"
+    "@storybook/addon-a11y": "npm:^8.6.4"
+    "@storybook/addon-actions": "npm:^8.6.4"
+    "@storybook/addon-essentials": "npm:^8.6.4"
+    "@storybook/addon-interactions": "npm:^8.6.4"
+    "@storybook/addon-links": "npm:^8.6.4"
+    "@storybook/addon-onboarding": "npm:^8.6.4"
+    "@storybook/blocks": "npm:^8.6.4"
+    "@storybook/manager-api": "npm:^8.6.4"
+    "@storybook/react": "npm:^8.6.4"
+    "@storybook/react-vite": "npm:^8.6.4"
+    "@storybook/test": "npm:^8.6.4"
+    "@storybook/theming": "npm:^8.6.4"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^16.2.0"
     "@testing-library/react-hooks": "npm:^8.0.1"
@@ -173,7 +173,7 @@ __metadata:
     csstype: "npm:^3.1.3"
     deepmerge: "npm:^4.3.1"
     eslint: "npm:^9.21.0"
-    eslint-plugin-storybook: "npm:^0.11.3"
+    eslint-plugin-storybook: "npm:^0.11.4"
     husky: "npm:^9.1.7"
     intersection-observer: "npm:^0.12.2"
     jsdom: "npm:^26.0.0"
@@ -196,7 +196,7 @@ __metadata:
     react-stately: "npm:^3.35.0"
     react-swipeable: "npm:^7.0.2"
     rollup-plugin-visualizer: "npm:^5.14.0"
-    storybook: "npm:^8.6.3"
+    storybook: "npm:^8.6.4"
     storybook-addon-tag-badges: "npm:^1.4.0"
     typescript: "npm:^5.7.3"
     url-loader: "npm:^4.1.1"
@@ -4454,7 +4454,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-a11y@npm:^8.6.3":
+"@storybook/addon-a11y@npm:^8.6.4":
   version: 8.6.4
   resolution: "@storybook/addon-a11y@npm:8.6.4"
   dependencies:
@@ -4467,7 +4467,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-actions@npm:8.6.4, @storybook/addon-actions@npm:^8.6.3":
+"@storybook/addon-actions@npm:8.6.4, @storybook/addon-actions@npm:^8.6.4":
   version: 8.6.4
   resolution: "@storybook/addon-actions@npm:8.6.4"
   dependencies:
@@ -4525,7 +4525,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-essentials@npm:^8.6.3":
+"@storybook/addon-essentials@npm:^8.6.4":
   version: 8.6.4
   resolution: "@storybook/addon-essentials@npm:8.6.4"
   dependencies:
@@ -4556,7 +4556,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-interactions@npm:^8.6.3":
+"@storybook/addon-interactions@npm:^8.6.4":
   version: 8.6.4
   resolution: "@storybook/addon-interactions@npm:8.6.4"
   dependencies:
@@ -4571,7 +4571,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-links@npm:^8.6.3":
+"@storybook/addon-links@npm:^8.6.4":
   version: 8.6.4
   resolution: "@storybook/addon-links@npm:8.6.4"
   dependencies:
@@ -4599,7 +4599,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-onboarding@npm:^8.6.3":
+"@storybook/addon-onboarding@npm:^8.6.4":
   version: 8.6.4
   resolution: "@storybook/addon-onboarding@npm:8.6.4"
   peerDependencies:
@@ -4640,7 +4640,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/blocks@npm:8.6.4, @storybook/blocks@npm:^8.6.3":
+"@storybook/blocks@npm:8.6.4, @storybook/blocks@npm:^8.6.4":
   version: 8.6.4
   resolution: "@storybook/blocks@npm:8.6.4"
   dependencies:
@@ -4755,7 +4755,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/manager-api@npm:8.6.4, @storybook/manager-api@npm:^8.6.3":
+"@storybook/manager-api@npm:8.6.4, @storybook/manager-api@npm:^8.6.4":
   version: 8.6.4
   resolution: "@storybook/manager-api@npm:8.6.4"
   peerDependencies:
@@ -4784,7 +4784,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react-vite@npm:^8.6.3":
+"@storybook/react-vite@npm:^8.6.4":
   version: 8.6.4
   resolution: "@storybook/react-vite@npm:8.6.4"
   dependencies:
@@ -4810,7 +4810,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react@npm:8.6.4, @storybook/react@npm:^8.6.3":
+"@storybook/react@npm:8.6.4, @storybook/react@npm:^8.6.4":
   version: 8.6.4
   resolution: "@storybook/react@npm:8.6.4"
   dependencies:
@@ -4835,7 +4835,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/test@npm:8.6.4, @storybook/test@npm:^8.6.3":
+"@storybook/test@npm:8.6.4, @storybook/test@npm:^8.6.4":
   version: 8.6.4
   resolution: "@storybook/test@npm:8.6.4"
   dependencies:
@@ -4852,7 +4852,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/theming@npm:8.6.4, @storybook/theming@npm:^8.6.3":
+"@storybook/theming@npm:8.6.4, @storybook/theming@npm:^8.6.4":
   version: 8.6.4
   resolution: "@storybook/theming@npm:8.6.4"
   peerDependencies:
@@ -7875,9 +7875,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-storybook@npm:^0.11.3":
-  version: 0.11.3
-  resolution: "eslint-plugin-storybook@npm:0.11.3"
+"eslint-plugin-storybook@npm:^0.11.4":
+  version: 0.11.4
+  resolution: "eslint-plugin-storybook@npm:0.11.4"
   dependencies:
     "@storybook/csf": "npm:^0.1.11"
     "@typescript-eslint/utils": "npm:^8.8.1"
@@ -7885,7 +7885,7 @@ __metadata:
   peerDependencies:
     eslint: ">=8"
     typescript: ">=4.8.4 <5.8.0"
-  checksum: 10/ac7ba93f00934564c5dbba5ac55bf1bede8cf72d97a8d48ac4bfb10daa1d0467aad708156f992ffeba08025550ae580b45c61a2e32d2d7c1d80cd3e24e053d10
+  checksum: 10/f0fbeef2686e399861db644fd3ffa2759ea50e99a84dc25cf43ff6dd12ac8d12d34b90722e56139a43b58f65a4ea69c36d6919c5224943998a902d2b1d5d13cc
   languageName: node
   linkType: hard
 
@@ -12540,7 +12540,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook@npm:^8.6.3":
+"storybook@npm:^8.6.4":
   version: 8.6.4
   resolution: "storybook@npm:8.6.4"
   dependencies:
