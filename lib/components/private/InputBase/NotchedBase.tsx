@@ -1,6 +1,5 @@
 import clsx from 'clsx';
-import * as React from 'react';
-import { FunctionComponent, ReactNode, useRef } from 'react';
+import React, { type FunctionComponent, type ReactNode, useRef } from 'react';
 
 import { Box } from '../../Box';
 import { useTextStyles } from '../../Text';
@@ -148,7 +147,7 @@ export const NotchedBase: FunctionComponent<Props> = ({
 						</Box>
 						<Box
 							ref={labelRef}
-							is="label"
+							as="label"
 							pointerEvents="none"
 							htmlFor={id}
 							position="absolute"
@@ -167,9 +166,9 @@ export const NotchedBase: FunctionComponent<Props> = ({
 										borderMerged === 'BOTTOM',
 									[styles.bordersMerged.complete.ALL]:
 										shouldMerge && borderMerged === 'ALL',
-
 									[styles.placeholder.mutedLabelStyles]:
-										isEmpty || disabled,
+										isEmpty,
+									[styles.placeholder.disabled]: disabled,
 									[styles.placeholderPlacement[size].default]:
 										isEmpty && !prefixed,
 									[styles.placeholderPlacement[size]
@@ -185,7 +184,6 @@ export const NotchedBase: FunctionComponent<Props> = ({
 					<div
 						className={clsx(
 							styles.borders.trailing,
-							borderColourClassName,
 							borderColourClassName,
 							{
 								[styles.bordersMerged.complete.RIGHT]:

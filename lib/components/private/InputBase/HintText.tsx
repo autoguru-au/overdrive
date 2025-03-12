@@ -1,6 +1,5 @@
 import clsx from 'clsx';
-import * as React from 'react';
-import { FunctionComponent, ReactNode } from 'react';
+import React, { type FunctionComponent, type ReactNode } from 'react';
 
 import { useBoxStyles } from '../../Box';
 import { Text } from '../../Text';

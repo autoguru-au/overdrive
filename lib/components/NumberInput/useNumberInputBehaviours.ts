@@ -1,7 +1,7 @@
 import {
-	FocusEventHandler,
-	FormEventHandler,
-	RefObject,
+	type FocusEventHandler,
+	type FormEventHandler,
+	type RefObject,
 	useCallback,
 	useEffect,
 	useRef,
