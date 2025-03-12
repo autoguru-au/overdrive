@@ -1,4 +1,4 @@
-import { AccountEditIcon, CalendarIcon, CarIcon } from '@autoguru/icons';
+import { AccountEditIcon, EmailIcon } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 import { type ComponentProps } from 'react';
@@ -9,8 +9,8 @@ import { DateInput } from '../DateInput';
 
 import { TextInput } from '.';
 
-const defaultValue = 'Jane Doe';
-const defaultPlaceholder = 'What is your first name?';
+const defaultValue = 'user@autoguru.com.au';
+const defaultPlaceholder = 'Email address';
 
 const attachOptions: Record<
 	string,
@@ -78,71 +78,10 @@ type Story = StoryObj<typeof TextInput>;
 
 export const Standard: Story = {};
 
-export const WithAValue: Story = {
+export const Filled: Story = {
 	args: {
 		value: defaultValue,
 		placeholder: defaultPlaceholder,
-	},
-};
-
-export const WithHintText: Story = {
-	args: {
-		hintText: 'Hint Text',
-		placeholder: defaultPlaceholder,
-	},
-};
-
-export const NotchDisabled: Story = {
-	args: {
-		placeholder: defaultPlaceholder,
-		notch: false,
-	},
-};
-
-export const NotchDisabledWithValue: Story = {
-	args: {
-		value: defaultValue,
-		placeholder: defaultPlaceholder,
-		notch: false,
-	},
-};
-
-export const WithPrefixIcon: Story = {
-	args: {
-		prefixIcon: CalendarIcon,
-	},
-};
-
-export const WithSuffixIcon: Story = {
-	args: {
-		suffixIcon: AccountEditIcon,
-	},
-};
-
-export const WithBothIcons: Story = {
-	args: {
-		prefixIcon: CalendarIcon,
-		suffixIcon: AccountEditIcon,
-	},
-};
-
-export const AttachedAll: Story = {
-	args: {
-		attach: 'ALL',
-	},
-};
-
-export const MergedAll: Story = {
-	args: {
-		borderMerged: 'ALL',
-	},
-};
-
-export const Disabled: Story = {
-	args: {
-		value: defaultValue,
-		placeholder: defaultPlaceholder,
-		disabled: true,
 	},
 };
 
@@ -157,45 +96,76 @@ export const Valid: Story = {
 
 export const Invalid: Story = {
 	args: {
-		value: 'Bob the builder',
+		value: 'user@autogurucomau',
 		placeholder: defaultPlaceholder,
 		isTouched: true,
 		isValid: false,
-		hintText: 'Cannot be Bob the builder',
+		hintText: 'Enter a valid email address',
+	},
+};
+
+export const Disabled: Story = {
+	args: {
+		value: defaultValue,
+		placeholder: defaultPlaceholder,
+		disabled: true,
+	},
+};
+
+export const SmallSize: Story = {
+	args: {
+		...Filled.args,
+		prefixIcon: EmailIcon,
+		size: 'small',
+	},
+};
+
+export const WithHintText: Story = {
+	args: {
+		hintText: 'Hint Text',
+		placeholder: defaultPlaceholder,
+	},
+};
+
+export const WithoutNotchLabel: Story = {
+	args: {
+		value: defaultValue,
+		placeholder: defaultPlaceholder,
+		notch: false,
+	},
+};
+
+/**
+ * Both prefix and suffix icons
+ */
+export const WithIcons: Story = {
+	args: {
+		prefixIcon: EmailIcon,
+		suffixIcon: AccountEditIcon,
 	},
 };
 
 export const Loading: Story = {
 	args: {
+		value: defaultValue.slice(0, -5),
 		isLoading: true,
 	},
 };
 
-export const Small: Story = {
+/**
+ * Attached border option set to all
+ */
+export const AttachedAll: Story = {
 	args: {
-		size: 'small',
+		attach: 'ALL',
 	},
 };
 
-export const WithValueSmall: Story = {
+/**
+ * Merged border option set all
+ */
+export const MergedAll: Story = {
 	args: {
-		...WithAValue.args,
-		size: 'small',
-	},
-};
-
-export const WithIconSmall: Story = {
-	args: {
-		...WithAValue.args,
-		prefixIcon: CarIcon,
-		size: 'small',
-	},
-};
-
-export const LoadingSmall: Story = {
-	args: {
-		...WithAValue.args,
-		isLoading: true,
-		size: 'small',
+		borderMerged: 'ALL',
 	},
 };

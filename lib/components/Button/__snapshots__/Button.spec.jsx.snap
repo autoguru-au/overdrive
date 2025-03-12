@@ -92,14 +92,14 @@ exports[`<Button /> > when loading > should match snapshot for default button 1`
       class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhk"
     >
       <div
-        class="reset_block__1oah0223 ProgressSpinner_size_medium_circular__1kpufmib ProgressSpinner_colours_secondary__1kpufmi6 Button_spinner__p2yon52"
+        class="reset_block__1oah0223 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_secondary__1kpufmi7 Button_spinner__p2yon52"
       >
         <svg
           class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_overflow_hidden__3xgq1lfs ProgressSpinner_circular__1kpufmi1"
           viewBox="25 25 50 50"
         >
           <circle
-            class="ProgressSpinner_path__1kpufmi3 ProgressSpinner_size_medium_path__1kpufmic"
+            class="ProgressSpinner_path__1kpufmi3 ProgressSpinner_size_medium_path__1kpufmid"
             cx="50"
             cy="50"
             fill="none"
@@ -131,14 +131,14 @@ exports[`<Button /> > when loading > should match snapshot for medium button 1`]
       class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhk"
     >
       <div
-        class="reset_block__1oah0223 ProgressSpinner_size_medium_circular__1kpufmib ProgressSpinner_colours_secondary__1kpufmi6 Button_spinner__p2yon52"
+        class="reset_block__1oah0223 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_secondary__1kpufmi7 Button_spinner__p2yon52"
       >
         <svg
           class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_overflow_hidden__3xgq1lfs ProgressSpinner_circular__1kpufmi1"
           viewBox="25 25 50 50"
         >
           <circle
-            class="ProgressSpinner_path__1kpufmi3 ProgressSpinner_size_medium_path__1kpufmic"
+            class="ProgressSpinner_path__1kpufmi3 ProgressSpinner_size_medium_path__1kpufmid"
             cx="50"
             cy="50"
             fill="none"
@@ -170,14 +170,14 @@ exports[`<Button /> > when loading > should match snapshot for small button 1`] 
       class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhk"
     >
       <div
-        class="reset_block__1oah0223 ProgressSpinner_size_medium_circular__1kpufmib ProgressSpinner_colours_secondary__1kpufmi6 Button_spinner__p2yon52"
+        class="reset_block__1oah0223 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_secondary__1kpufmi7 Button_spinner__p2yon52"
       >
         <svg
           class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_overflow_hidden__3xgq1lfs ProgressSpinner_circular__1kpufmi1"
           viewBox="25 25 50 50"
         >
           <circle
-            class="ProgressSpinner_path__1kpufmi3 ProgressSpinner_size_medium_path__1kpufmic"
+            class="ProgressSpinner_path__1kpufmi3 ProgressSpinner_size_medium_path__1kpufmid"
             cx="50"
             cy="50"
             fill="none"

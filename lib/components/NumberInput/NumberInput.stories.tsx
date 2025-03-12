@@ -98,108 +98,64 @@ const sharedProps: ComponentProps<typeof NumberInput> = {
 	onBlur: action('onBlur'),
 };
 
-const standardProps: ComponentProps<typeof NumberInput> = sharedProps;
-const withAValueProps: ComponentProps<typeof NumberInput> = {
-	...sharedProps,
-	value: defaultValue,
-	placeholder: defaultPlaceholder,
-};
-const withHintTextProps: ComponentProps<typeof NumberInput> = {
-	...sharedProps,
-	hintText: 'Hint Text',
-	placeholder: defaultPlaceholder,
-};
-const withPrefixIconProps: ComponentProps<typeof NumberInput> = {
-	...sharedProps,
-	prefixIcon: CalendarIcon,
-};
-const withSuffixIconProps: ComponentProps<typeof NumberInput> = {
-	...sharedProps,
-	suffixIcon: AccountEditIcon,
-};
-const withBothIconsProps: ComponentProps<typeof NumberInput> = {
-	...sharedProps,
-	prefixIcon: CalendarIcon,
-	suffixIcon: AccountEditIcon,
-};
-const disabledProps: ComponentProps<typeof NumberInput> = {
-	...sharedProps,
-	value: defaultValue,
-	placeholder: defaultPlaceholder,
-	disabled: true,
-};
-const noNotchWithValueProps: ComponentProps<typeof NumberInput> = {
-	...sharedProps,
-	value: defaultValue,
-	placeholder: defaultPlaceholder,
-	notch: false,
-};
-const loadingProps: ComponentProps<typeof NumberInput> = {
-	...sharedProps,
-	isLoading: true,
-};
-
+/**
+ * Additional examples of shared input field states and variants can be seen in
+ * [Text Input](/docs/forms-input-fields-text-input--docs)
+ */
 export const Standard: Story = {
-	args: standardProps,
+	args: sharedProps,
 	argTypes,
 	render: RenderTemplate,
 };
 
-export const WithAValue: Story = {
-	args: withAValueProps,
+export const Valid: Story = {
+	args: {
+		value: defaultValue,
+		placeholder: defaultPlaceholder,
+		isTouched: true,
+		isValid: true,
+	},
+};
+
+export const Invalid: Story = {
+	args: {
+		value: '545156543',
+		placeholder: defaultPlaceholder,
+		isTouched: true,
+		isValid: false,
+		hintText: 'Please enter a valid number',
+	},
+};
+
+export const SmallSize: Story = {
+	args: {
+		...sharedProps,
+		value: defaultValue,
+		placeholder: defaultPlaceholder,
+		size: 'small',
+	},
 	argTypes,
 	render: RenderTemplate,
 };
 
-export const WithHintText: Story = {
-	args: withHintTextProps,
-	argTypes,
-	render: RenderTemplate,
-};
-
-export const NotchDisabledWithValue: Story = {
-	args: noNotchWithValueProps,
-	argTypes,
-	render: RenderTemplate,
-};
-
-export const WithPrefixIcon: Story = {
-	args: withPrefixIconProps,
-	argTypes,
-	render: RenderTemplate,
-};
-
-export const WithSuffixIcon: Story = {
-	args: withSuffixIconProps,
-	argTypes,
-	render: RenderTemplate,
-};
-
-export const WithBothIcons: Story = {
-	args: withBothIconsProps,
-	argTypes,
-	render: RenderTemplate,
-};
-
-export const Disabled: Story = {
-	args: disabledProps,
+/**
+ * Both prefix and suffix icons
+ */
+export const WithIcons: Story = {
+	args: {
+		...sharedProps,
+		prefixIcon: CalendarIcon,
+		suffixIcon: AccountEditIcon,
+	},
 	argTypes,
 	render: RenderTemplate,
 };
 
 export const Loading: Story = {
-	args: loadingProps,
-	argTypes,
-	render: RenderTemplate,
-};
-
-const withValueSmallProps: ComponentProps<typeof NumberInput> = {
-	...withAValueProps,
-	size: 'small',
-};
-
-export const WithValueSmall: Story = {
-	args: withValueSmallProps,
+	args: {
+		...sharedProps,
+		isLoading: true,
+	},
 	argTypes,
 	render: RenderTemplate,
 };

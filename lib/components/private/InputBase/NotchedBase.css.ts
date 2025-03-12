@@ -16,8 +16,7 @@ const borderRegionDefaults = style({
 });
 
 const borderVisualDefaults = style({
-	borderRadius: vars.border.radius['1'],
-	boxShadow: vars.elevation['2'],
+	borderRadius: vars.border.radius['2'],
 });
 
 export const notchGapPlaceholder = style({
@@ -36,7 +35,7 @@ export const borders = {
 				left: 0,
 			}),
 		],
-		disabled: style({ boxShadow: 'none' }),
+		disabled: '',
 	},
 	complete: [borderVisualDefaults, borderRegionDefaults],
 	leading: [
@@ -44,7 +43,7 @@ export const borders = {
 		style({
 			width: vars.space['2'],
 			borderRight: 'none',
-			borderRadius: `${vars.border.radius['1']} 0 0 ${vars.border.radius['1']}`,
+			borderRadius: `${vars.border.radius['2']} 0 0 ${vars.border.radius['2']}`,
 		}),
 	],
 	middle: [
@@ -61,7 +60,7 @@ export const borders = {
 		style({
 			flexGrow: 1,
 			borderLeft: 'none',
-			borderRadius: `0 ${vars.border.radius['1']} ${vars.border.radius['1']} 0`,
+			borderRadius: `0 ${vars.border.radius['2']} ${vars.border.radius['2']} 0`,
 		}),
 	],
 };
@@ -69,19 +68,19 @@ export const borders = {
 export const bordersAttach = {
 	complete: styleVariants({
 		NONE: {
-			borderRadius: `${vars.border.radius['1']}`,
+			borderRadius: `${vars.border.radius['2']}`,
 		},
 		LEFT: {
-			borderRadius: `0 ${vars.border.radius['1']} ${vars.border.radius['1']} 0`,
+			borderRadius: `0 ${vars.border.radius['2']} ${vars.border.radius['2']} 0`,
 		},
 		TOP: {
-			borderRadius: `0 0 ${vars.border.radius['1']} ${vars.border.radius['1']}`,
+			borderRadius: `0 0 ${vars.border.radius['2']} ${vars.border.radius['2']}`,
 		},
 		RIGHT: {
-			borderRadius: `${vars.border.radius['1']} 0 0 ${vars.border.radius['1']}`,
+			borderRadius: `${vars.border.radius['2']} 0 0 ${vars.border.radius['2']}`,
 		},
 		BOTTOM: {
-			borderRadius: `${vars.border.radius['1']} ${vars.border.radius['1']} 0 0`,
+			borderRadius: `${vars.border.radius['2']} ${vars.border.radius['2']} 0 0`,
 		},
 		ALL: {
 			borderRadius: 0,
@@ -153,6 +152,9 @@ export const placeholder = styleVariants({
 	mutedLabelStyles: {
 		color: vars.typography.colour.muted,
 	},
+	disabled: {
+		color: vars.colours.background.neutral,
+	},
 });
 
 const calcPlaceholderTranslate = (
@@ -164,19 +166,21 @@ const calcPlaceholderTranslate = (
 		return `calc(${vars.space['2']} + ${vars.space['2']}), calc(-0.5 * ${active_scaling_factor} * ${vars.typography.size['4'].fontSize})`;
 	}
 
-	return size === 'medium'
-		? `${
-				prefixed
-					? `calc(${vars.space['7']} + ${vars.space['3']})`
-					: vars.typography.size['4'].fontSize
-			}, calc((${vars.space['8']} - ${
-				vars.typography.size['4'].fontSize
-			}) / 2)`
-		: `${
-				prefixed
-					? `calc(${vars.space['2']} + ${vars.space['5']} + ${vars.space['2']})`
-					: vars.space['2']
-			}, calc(${vars.space['2']} + 2px)`;
+	if (size === 'medium') {
+		const from = prefixed
+			? `calc(${vars.space['7']} + ${vars.space['3']})`
+			: vars.typography.size['4'].fontSize;
+
+		return `${from}, calc((${vars.space['8']} - ${
+			vars.typography.size['4'].fontSize
+		}) / 2)`;
+	}
+
+	const from = prefixed
+		? `calc(${vars.space['2']} + ${vars.space['5']} + ${vars.space['2']})`
+		: vars.space['2'];
+
+	return `${from}, calc(${vars.space['2']} + 2px)`;
 };
 
 export const placeholderPlacement: Record<Size, Record<string, string>> = {
