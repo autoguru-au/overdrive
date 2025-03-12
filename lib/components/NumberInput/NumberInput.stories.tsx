@@ -99,7 +99,8 @@ const sharedProps: ComponentProps<typeof NumberInput> = {
 };
 
 /**
- * Additional examples for input fields can be seen in [Text Input](/docs/forms-input-fields-text-input--docs)
+ * Additional examples of shared input field states and variants can be seen in
+ * [Text Input](/docs/forms-input-fields-text-input--docs)
  */
 export const Standard: Story = {
 	args: sharedProps,

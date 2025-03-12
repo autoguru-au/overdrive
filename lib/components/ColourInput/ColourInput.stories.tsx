@@ -1,4 +1,4 @@
-import { CarIcon, FourByFourIcon } from '@autoguru/icons';
+import { FourByFourIcon } from '@autoguru/icons';
 import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 import { type ComponentProps } from 'react';
@@ -68,33 +68,21 @@ const sharedProps: ComponentProps<typeof ColourInput> = {
 	onBlur: action('onBlur'),
 };
 
+/**
+ * Additional examples of shared input field states and variants can be seen in
+ * [Text Input](/docs/forms-input-fields-text-input--docs)
+ */
 export const Standard: Story = {
 	args: {
 		...sharedProps,
 	},
 };
 
-export const WithAValue: Story = {
+export const Filled: Story = {
 	args: {
 		...sharedProps,
 		value: defaultColour,
 		placeholder: 'What is your favourite car colour?',
-	},
-};
-
-export const WithIcon: Story = {
-	args: {
-		...sharedProps,
 		suffixIcon: FourByFourIcon,
-	},
-};
-
-export const WithIconSmall: Story = {
-	args: {
-		...sharedProps,
-		value: defaultColour,
-		placeholder: 'What is your favourite car colour?',
-		suffixIcon: CarIcon,
-		size: 'small',
 	},
 };
