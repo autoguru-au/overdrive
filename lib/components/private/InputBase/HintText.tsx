@@ -22,8 +22,7 @@ export const HintText: FunctionComponent<Props> = ({
 }) => {
 	const boxStyles = useBoxStyles({
 		is: 'p',
-		marginTop: '2',
-		marginLeft: '4',
+		marginTop: '1',
 	});
 
 	if (!hintText && !reserveHintSpace) return null;
