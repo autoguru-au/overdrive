@@ -22,7 +22,7 @@ const attachOptions: Record<
 	ALL: 'ALL',
 };
 
-const meta = {
+const meta: Meta<typeof ColourInput> = {
 	title: 'Forms & Input Fields/Colour Input',
 	component: ColourInput,
 	parameters: { chromatic: {} },
@@ -46,7 +46,7 @@ const meta = {
 			...argTypesExampleIcons,
 		},
 	},
-} satisfies Meta<typeof ColourInput>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;

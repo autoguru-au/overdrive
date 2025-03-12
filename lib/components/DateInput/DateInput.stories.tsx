@@ -25,7 +25,7 @@ const todayStr: string = formatDate(
 	isChromatic() ? new Date(2019, 5, 1) : new Date(),
 );
 
-const meta = {
+const meta: Meta<typeof DateInput> = {
 	title: 'Forms & Input Fields/Date Input',
 	component: DateInput,
 	args: {
@@ -84,7 +84,7 @@ const meta = {
 			},
 		},
 	},
-} satisfies Meta<typeof DateInput>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;

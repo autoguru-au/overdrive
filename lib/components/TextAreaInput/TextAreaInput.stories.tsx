@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { TextAreaInput } from '.';
 
-const meta = {
+const meta: Meta<typeof TextAreaInput> = {
 	title: 'Forms & Input Fields/Text Area Input',
 	component: TextAreaInput,
 	argTypes: {
@@ -15,7 +15,7 @@ const meta = {
 			},
 		},
 	},
-} satisfies Meta<typeof TextAreaInput>;
+};
 
 export default meta;
 
