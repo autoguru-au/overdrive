@@ -20,7 +20,6 @@ export const useUncontrolledState = <T extends unknown>(
 		return [value, onChange];
 	}
 
-	// eslint-disable-next-line react-hooks/rules-of-hooks
 	return useState<T>(value);
 };
 
@@ -32,7 +31,6 @@ export const useInputControlledState = <T, H>(
 	if (typeof incomingOnChange === 'function')
 		return [incomingValue, incomingOnChange];
 
-	// eslint-disable-next-line react-hooks/rules-of-hooks
 	const [value, setValue] = useState<T>(incomingValue);
 
 	if (!handlers.has(setValue)) {
@@ -107,7 +105,6 @@ export const hex2rgba = (c, alpha = '1') =>
 	`rgb(${c
 		.slice(1)
 		.match(/../g)
-		// eslint-disable-next-line sonarjs/no-nested-template-literals
 		.map((x) => Number(`0x${x}`))},${alpha})`;
 
 export const ownerDocument = (node?: Node): Document =>
@@ -123,6 +120,7 @@ export const ownerWindow = (node?: Node): Window =>
  *
  * @param fn
  */
+// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
 export const useEventCallback = <T extends Function>(fn: T) => {
 	const ref = useRef(fn);
 	isomorphicLayoutEffect(() => {

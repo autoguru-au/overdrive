@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-type-constraint */
-/* eslint-disable jsx-a11y/no-autofocus */
 import { ChevronDownIcon, CloseIcon, IconType } from '@autoguru/icons';
 import { wrapEvent } from '@autoguru/utilities';
 import clsx from 'clsx';
@@ -116,6 +115,7 @@ const inputReducerFactory =
 	<T extends Suggestions<unknown>>(suggestions: T): Reducer<State, Actions> =>
 	(prevState, action) => {
 		switch (action.type) {
+			// eslint-disable-next-line sonarjs/prefer-default-last
 			default:
 			case ActionTypes.INPUT_CHANGE: {
 				return {
@@ -668,6 +668,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 
 		const suffix = useMemo(
 			() =>
+				// eslint-disable-next-line sonarjs/no-nested-conditional
 				isLoading ? null : field.value && isFocused ? (
 					<Box
 						is="button"
@@ -678,7 +679,8 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 					>
 						<Icon size="medium" icon={CloseIcon} />
 					</Box>
-				) : fieldIcon ? (
+				) : // eslint-disable-next-line sonarjs/no-nested-conditional
+				fieldIcon ? (
 					<Box
 						flexShrink={0}
 						paddingY={size === 'medium' ? '3' : '2'}
