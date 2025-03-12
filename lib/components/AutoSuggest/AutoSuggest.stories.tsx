@@ -60,7 +60,7 @@ const meta: Meta<typeof AutoSuggest> = {
 		reserveHintSpace: void 0,
 		hintText: '',
 		notch: true,
-		prefixIcon: void 0,
+		prefixIcon: CarIcon,
 		onReset: () => action('onReset')(),
 		onChange: (thing) => action('onChange')(thing),
 		onEnter: (thing) => action('onEnter')(thing),
@@ -115,6 +115,10 @@ const meta: Meta<typeof AutoSuggest> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/**
+ * Additional examples of shared input field states and variants can be seen in
+ * [Text Input](/docs/forms-input-fields-text-input--docs)
+ */
 export const Standard: Story = {};
 
 export const SmallSize: Story = {

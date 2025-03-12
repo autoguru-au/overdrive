@@ -30,7 +30,7 @@ const attachOptions: Record<
 	ALL: 'ALL',
 };
 
-const meta = {
+const meta: Meta<typeof SelectInput> = {
 	title: 'Forms & Input Fields/Select',
 	component: SelectInput,
 	args: {
@@ -77,7 +77,7 @@ const meta = {
 			description: 'Input prefix Icon',
 		},
 	},
-} satisfies Meta<typeof SelectInput>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
