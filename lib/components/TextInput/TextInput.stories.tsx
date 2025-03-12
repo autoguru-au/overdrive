@@ -39,6 +39,7 @@ const meta: Meta = {
 		hintText: '',
 		notch: true,
 		prefixIcon: void 0,
+		type: 'email',
 		onChange: action('onChange'),
 		onFocus: action('onFocus'),
 		onBlur: action('onBlur'),
@@ -76,6 +77,9 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj<typeof TextInput>;
 
+/**
+ * These input instances have the `type="email"` attribute since it's displaying an email address
+ */
 export const Standard: Story = {};
 
 export const Filled: Story = {
@@ -96,11 +100,11 @@ export const Valid: Story = {
 
 export const Invalid: Story = {
 	args: {
-		value: 'user@autogurucomau',
+		value: 'user@autogur',
 		placeholder: defaultPlaceholder,
 		isTouched: true,
 		isValid: false,
-		hintText: 'Enter a valid email address',
+		hintText: 'Please enter a full email address',
 	},
 };
 

@@ -515,7 +515,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 					triggerRef={triggerRef}
 					alignment={EAlignment.BOTTOM_LEFT}
 					isOpen={shouldOpenFlyout}
-					triggerOffset={4}
+					triggerOffset={1}
 				>
 					<SuggestionsList
 						className={styles.suggestionList.blockOptions}
@@ -754,9 +754,9 @@ const SuggestionListFlyout: FunctionComponent<
 		<Box
 			borderWidth="1"
 			borderColour="gray"
-			borderRadius="1"
+			borderRadius="3"
 			backgroundColour="white"
-			boxShadow="2"
+			boxShadow="4"
 			style={{
 				width:
 					triggerRef.current && !autoWidth

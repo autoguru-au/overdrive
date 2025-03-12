@@ -38,6 +38,7 @@ export const suggestionList = {
 		zIndex: 2,
 	}),
 	blockOptions: style({
+		borderRadius: vars.border.radius[3],
 		overflowY: 'auto',
 		maxHeight: '384px',
 	}),

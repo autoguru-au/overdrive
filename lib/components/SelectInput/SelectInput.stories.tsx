@@ -47,7 +47,7 @@ const meta: Meta<typeof SelectInput> = {
 		hintText: '',
 		notch: true,
 		attach: 'NONE',
-		prefixIcon: undefined,
+		prefixIcon: CarIcon,
 		onChange: action('onChange'),
 		onFocus: action('onFocus'),
 		onBlur: action('onBlur'),
@@ -121,11 +121,5 @@ export const Disabled: Story = {
 export const SizeSmall: Story = {
 	args: {
 		size: 'small',
-	},
-};
-
-export const WithPrefixIcon: Story = {
-	args: {
-		prefixIcon: CarIcon,
 	},
 };
