@@ -28,6 +28,11 @@ export interface Props {
 	children?: ReactNode;
 }
 
+const defaultEnglish = {
+	next: 'scroll tabs right',
+	prev: 'scroll tabs left',
+};
+
 export const TabListContext = createContext<number | null>(null);
 
 export const TabList: FunctionComponent<Props> = ({
@@ -130,6 +135,7 @@ export const TabList: FunctionComponent<Props> = ({
 					size="small"
 					disabled={!displayScroll.start}
 					onClick={handleStartButton}
+					aria-label={defaultEnglish.prev}
 				>
 					<Icon icon={ArrowLeftIcon} />
 				</Button>
@@ -159,6 +165,7 @@ export const TabList: FunctionComponent<Props> = ({
 					size="small"
 					disabled={!displayScroll.end}
 					onClick={handleEndButton}
+					aria-label={defaultEnglish.next}
 				>
 					<Icon icon={ArrowRightIcon} />
 				</Button>

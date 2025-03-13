@@ -104,6 +104,7 @@ export const HorizontalAutoScroller: FunctionComponent<Props> = ({
 
 	const handlers = useSwipeable({
 		onSwiped: (eventData) => {
+			// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 			eventData.dir === 'Left' ? next() : prev();
 		},
 	});

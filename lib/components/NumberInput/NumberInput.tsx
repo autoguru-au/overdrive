@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { FocusEventHandler, FormEventHandler } from 'react';
+import React, { type FocusEventHandler, type FormEventHandler } from 'react';
 
 import { Box } from '../Box';
 import { withEnhancedInput } from '../private/InputBase';
@@ -51,7 +50,7 @@ export const NumberInput = withEnhancedInput<Props>(
 
 		return (
 			<Box
-				is="input"
+				as="input"
 				ref={inputRef}
 				{...eventHandlers}
 				onFocus={onFocus}

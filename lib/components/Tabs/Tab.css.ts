@@ -2,30 +2,31 @@ import { style, styleVariants } from '@vanilla-extract/css';
 
 import { themeContractVars as vars } from '../../themes/theme.css';
 
+import { focusOutline } from './../../styles/focusOutline.css';
+
 const lineBottomHeight = '1px';
 const size = '20px';
 
 export const root = {
 	default: style({
-		padding: `calc(${vars.space['3']} + ${lineBottomHeight}) 0`,
+		padding: `calc(${vars.space['3']} + ${lineBottomHeight}) ${vars.space['4']}`,
 		transition: `color 0.2s ${vars.animation.easing.decelerate} 0s, background-color 0.2s ${vars.animation.easing.decelerate} 0s`,
 		borderBottom: `calc(${lineBottomHeight} + ${lineBottomHeight}) solid transparent`,
 		flex: 'auto',
 		':last-of-type': {
 			marginRight: 0,
 		},
-
 		':hover': {
-			color: vars.colours.intent.primary.background.strong,
+			color: vars.colours.intent.neutral.background.strong,
 		},
-
-		':focus': {
-			color: vars.colours.intent.primary.background.strong,
+		':focus-visible': {
+			...focusOutline,
+			outlineOffset: '-2px',
 		},
 	}),
 	active: style({
-		color: vars.colours.intent.primary.background.strong,
-		borderBottomColor: vars.colours.intent.primary.background.strong,
+		color: vars.colours.intent.neutral.background.strong,
+		borderBottomColor: vars.colours.intent.neutral.background.strong,
 	}),
 };
 
@@ -44,6 +45,6 @@ export const indication = styleVariants({
 		transition: `color 0.2s ${vars.animation.easing.decelerate} 0s, backgroundColor 0.2s ${vars.animation.easing.decelerate} 0s`,
 	},
 	active: {
-		backgroundColor: vars.colours.intent.primary.background.strong,
+		backgroundColor: vars.colours.intent.neutral.background.strong,
 	},
 });

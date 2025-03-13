@@ -10,7 +10,7 @@ export const input = {
 			outline: 'none',
 			selectors: {
 				'&[disabled]': {
-					color: vars.typography.colour.muted,
+					color: vars.colours.background.neutral,
 					cursor: 'not-allowed',
 				},
 				'&::placeholder': {

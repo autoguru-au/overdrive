@@ -1,7 +1,9 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`<Switch /> > should match snapshot when toggled 1`] = `
-<label>
+<label
+  class="Switch_base__6xc8dy0"
+>
   <div
     class="reset_block__1oah0223 VisuallyHidden_visuallyHidden__12d73qi0"
   >
@@ -13,19 +15,20 @@ exports[`<Switch /> > should match snapshot when toggled 1`] = `
     />
   </div>
   <div
-    aria-disabled="false"
-    aria-label="toggle on"
-    class="reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld9 Switch_root__6xc8dy8 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75 Switch_toggled__6xc8dy3"
+    class="reset_block__1oah0223 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75 Switch_toggleOn__6xc8dy2"
+    data-active=""
   >
     <div
-      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lax useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbd useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l90 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld9 useBoxStyles_backgroundColours_white__3xgq1lez Switch_handle_default__6xc8dy1 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_white__1xnpmd7g Switch_handle_transition__6xc8dy2"
+      class="reset_block__1oah0223 Switch_handle_default__6xc8dy4 Switch_handle_active__6xc8dy5"
     />
   </div>
 </label>
 `;
 
 exports[`<Switch /> > should match snapshot when toggled and disabled 1`] = `
-<label>
+<label
+  class="Switch_base__6xc8dy0"
+>
   <div
     class="reset_block__1oah0223 VisuallyHidden_visuallyHidden__12d73qi0"
   >
@@ -37,20 +40,21 @@ exports[`<Switch /> > should match snapshot when toggled and disabled 1`] = `
     />
   </div>
   <div
-    aria-disabled="true"
-    aria-label="toggle on"
-    class="reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld9 Switch_root__6xc8dy8 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75 Switch_disabled_default__6xc8dy5 Switch_disabled_toggled__6xc8dy6 Switch_toggled__6xc8dy3"
-    tabindex="-1"
+    class="reset_block__1oah0223 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75 Switch_disabled__6xc8dy3 Switch_toggleOn__6xc8dy2"
+    data-active=""
+    data-disabled=""
   >
     <div
-      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lax useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbd useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l90 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld9 useBoxStyles_backgroundColours_white__3xgq1lez Switch_handle_default__6xc8dy1 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_white__1xnpmd7g Switch_handle_transition__6xc8dy2 Switch_handle_default__6xc8dy1 Switch_handle_disabled__6xc8dy0"
+      class="reset_block__1oah0223 Switch_handle_default__6xc8dy4 Switch_handle_active__6xc8dy5"
     />
   </div>
 </label>
 `;
 
 exports[`<Switch /> > should match snapshot when un-toggled 1`] = `
-<label>
+<label
+  class="Switch_base__6xc8dy0"
+>
   <div
     class="reset_block__1oah0223 VisuallyHidden_visuallyHidden__12d73qi0"
   >
@@ -61,19 +65,19 @@ exports[`<Switch /> > should match snapshot when un-toggled 1`] = `
     />
   </div>
   <div
-    aria-disabled="false"
-    aria-label="toggle off"
-    class="reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld9 Switch_root__6xc8dy8 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75 Switch_untoggled__6xc8dy4"
+    class="reset_block__1oah0223 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75"
   >
     <div
-      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lax useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbd useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l90 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld9 useBoxStyles_backgroundColours_white__3xgq1lez Switch_handle_default__6xc8dy1 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_white__1xnpmd7g"
+      class="reset_block__1oah0223 Switch_handle_default__6xc8dy4"
     />
   </div>
 </label>
 `;
 
 exports[`<Switch /> > should match snapshot when un-toggled and disabled 1`] = `
-<label>
+<label
+  class="Switch_base__6xc8dy0"
+>
   <div
     class="reset_block__1oah0223 VisuallyHidden_visuallyHidden__12d73qi0"
   >
@@ -84,20 +88,20 @@ exports[`<Switch /> > should match snapshot when un-toggled and disabled 1`] = `
     />
   </div>
   <div
-    aria-disabled="true"
-    aria-label="toggle off"
-    class="reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld9 Switch_root__6xc8dy8 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75 Switch_disabled_default__6xc8dy5 Switch_untoggled__6xc8dy4"
-    tabindex="-1"
+    class="reset_block__1oah0223 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75 Switch_disabled__6xc8dy3"
+    data-disabled=""
   >
     <div
-      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lax useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbd useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l90 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld9 useBoxStyles_backgroundColours_white__3xgq1lez Switch_handle_default__6xc8dy1 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_white__1xnpmd7g Switch_handle_default__6xc8dy1 Switch_handle_disabled__6xc8dy0"
+      class="reset_block__1oah0223 Switch_handle_default__6xc8dy4"
     />
   </div>
 </label>
 `;
 
 exports[`<Switch /> > should match snapshot without props 1`] = `
-<label>
+<label
+  class="Switch_base__6xc8dy0"
+>
   <div
     class="reset_block__1oah0223 VisuallyHidden_visuallyHidden__12d73qi0"
   >
@@ -108,12 +112,10 @@ exports[`<Switch /> > should match snapshot without props 1`] = `
     />
   </div>
   <div
-    aria-disabled="false"
-    aria-label="toggle off"
-    class="reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld9 Switch_root__6xc8dy8 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75 Switch_untoggled__6xc8dy4"
+    class="reset_block__1oah0223 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75"
   >
     <div
-      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lax useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbd useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l90 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld9 useBoxStyles_backgroundColours_white__3xgq1lez Switch_handle_default__6xc8dy1 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_white__1xnpmd7g"
+      class="reset_block__1oah0223 Switch_handle_default__6xc8dy4"
     />
   </div>
 </label>

@@ -80,7 +80,7 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 			),
 			role: 'tab',
 			'aria-selected': isActive ? 'true' : 'false',
-			'aria-controls': controlsId,
+			'data-controls': controlsId,
 			tabIndex: isActive ? undefined : -1,
 			onClick: () => tabsContext.onChange?.(tabListContext),
 			ref,
@@ -114,5 +114,7 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 			: createElement(Component, props, child);
 	},
 );
+
+Tab.displayName = 'Tab';
 
 export default Tab;

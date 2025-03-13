@@ -33,13 +33,12 @@ export const suggestionList = {
 		overflowY: 'auto',
 		maxHeight: '384px',
 		overscrollBehavior: 'contain',
-		// @ts-expect-error Object literal may only specify known properties
-		'-webkit-overflow-scrolling': 'touch',
 		gridAutoFlow: 'row',
 		gridGap: 0,
 		zIndex: 2,
 	}),
 	blockOptions: style({
+		borderRadius: vars.border.radius[3],
 		overflowY: 'auto',
 		maxHeight: '384px',
 	}),

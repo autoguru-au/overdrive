@@ -53,7 +53,7 @@ describe('<Button />', () => {
 		it('should apply Primary variant styles', () => {
 			expect(
 				render(<Button variant="primary" />).container.firstChild,
-			).toHaveClass(styles.variant.primary);
+			).toHaveClass(styles.button({ intent: 'primary' }));
 		});
 
 		it('should match snapshot for Secondary button', () => {
@@ -65,7 +65,7 @@ describe('<Button />', () => {
 		it('should apply Secondary variant styles', () => {
 			expect(
 				render(<Button variant="secondary" />).container.firstChild,
-			).toHaveClass(styles.variant.secondary);
+			).toHaveClass(styles.button({ intent: 'secondary' }));
 		});
 
 		it('should match snapshot for Danger button', () => {
@@ -77,7 +77,7 @@ describe('<Button />', () => {
 		it('should apply Danger variant styles', () => {
 			expect(
 				render(<Button variant="danger" />).container.firstChild,
-			).toHaveClass(styles.variant.danger);
+			).toHaveClass(styles.button({ intent: 'danger' }));
 		});
 	});
 
@@ -88,22 +88,10 @@ describe('<Button />', () => {
 			).toMatchSnapshot();
 		});
 
-		it('should apply small size styles', () => {
-			expect(
-				render(<Button size="small" />).container.firstChild,
-			).toHaveClass(styles.size.small.default);
-		});
-
 		it('should match snapshot for medium button', () => {
 			expect(
 				render(<Button size="medium" />).container.firstChild,
 			).toMatchSnapshot();
-		});
-
-		it('should apply medium size styles', () => {
-			expect(
-				render(<Button size="medium" />).container.firstChild,
-			).toHaveClass(styles.size.medium.default);
 		});
 	});
 
@@ -149,15 +137,15 @@ describe('<Button />', () => {
 		});
 
 		it('should not apply loading styles to default button', () => {
-			expect(render(<Button />).container.firstChild).not.toHaveClass(
-				styles.loading,
+			expect(render(<Button />).container.firstChild).not.toHaveAttribute(
+				'data-loading',
 			);
 		});
 
 		it('should apply loading styles', () => {
 			expect(
 				render(<Button isLoading />).container.firstChild,
-			).toHaveClass(styles.loading);
+			).toHaveAttribute('data-loading');
 		});
 	});
 
