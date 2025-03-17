@@ -60,7 +60,6 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 					display: 'inlineFlex',
 					justifyContent: 'center',
 					backgroundColour: 'transparent',
-					marginRight: '6',
 				}),
 				useTextStyles({
 					noWrap: true,
