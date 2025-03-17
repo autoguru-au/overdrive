@@ -1,13 +1,13 @@
 import { ArrowLeftIcon, ArrowRightIcon } from '@autoguru/icons';
 import { invariant } from '@autoguru/utilities';
-import type { FunctionComponent } from 'react';
-import * as React from 'react';
-import {
+import React, {
 	Children,
+	type FunctionComponent,
 	createContext,
 	isValidElement,
-	ReactNode,
+	type ReactNode,
 	useCallback,
+	useContext,
 	useEffect,
 	useRef,
 	useState,
@@ -21,6 +21,7 @@ import { Icon } from '../Icon';
 import { useTextStyles } from '../Text';
 
 import * as styles from './TabList.css';
+import { TabsContext } from './Tabs';
 
 export interface Props {
 	stretch?: boolean;
@@ -57,6 +58,13 @@ export const TabList: FunctionComponent<Props> = ({
 			</TabListContext.Provider>
 		);
 	});
+
+	const tabsContext = useContext(TabsContext);
+	invariant(
+		tabsContext !== null,
+		'This tablist isnt nested beneath <Tabs />',
+	);
+	const { appearance } = tabsContext;
 
 	const [displayScroll, setDisplayScroll] = useState({
 		start: false,
@@ -113,7 +121,7 @@ export const TabList: FunctionComponent<Props> = ({
 
 	useEffect(() => {
 		updateScrollButtonState();
-	}, [children]);
+	}, [children, updateScrollButtonState]);
 
 	const shouldShowScrollButtons =
 		scrollable && (displayScroll.start || displayScroll.end);
@@ -122,10 +130,10 @@ export const TabList: FunctionComponent<Props> = ({
 		<Box
 			overflow="hidden"
 			alignItems="center"
-			className={[
-				styles.root.default,
-				shouldShowScrollButtons && styles.root.scroll,
-			]}
+			className={styles.styledTabList({
+				appearance,
+				scroll: scrollable,
+			})}
 		>
 			{shouldShowScrollButtons ? (
 				<Button

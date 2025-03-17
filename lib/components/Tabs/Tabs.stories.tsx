@@ -78,6 +78,13 @@ export const Standard: Story = {
 	},
 };
 
+export const Pill: Story = {
+	args: {
+		...Standard.args,
+		appearance: 'pill',
+	},
+};
+
 export const WithIndication: Story = {
 	args: {
 		active: 0,
