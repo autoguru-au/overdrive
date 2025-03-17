@@ -1,10 +1,10 @@
-import { style, type StyleRule } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css';
 
 import { themeContractVars as tokens } from '../themes/theme.css';
 
 const width = '2px';
 
-export const focusOutline: StyleRule = {
+export const focusOutline = {
 	outline: `solid ${width} ${tokens.colours.foreground.link}`,
 	outlineOffset: width,
 };
