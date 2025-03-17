@@ -1,1 +1,0 @@
-import{R as e}from"./index-Cr_cdoBq.js";const o=e.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24",fill:"currentColor",focusable:"false"},e.createElement("path",{d:"M19 12.998H5V11l14-.002v2z"}));export{o as I};
