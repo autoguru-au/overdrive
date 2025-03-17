@@ -102,9 +102,9 @@ export const TabList: FunctionComponent<Props> = ({
 	};
 
 	const handleStartButton = () =>
-		void scrollToItem(-wrapperRef.current!.clientWidth!);
+		scrollToItem(-wrapperRef.current!.clientWidth!);
 	const handleEndButton = () =>
-		void scrollToItem(wrapperRef.current!.clientWidth!);
+		scrollToItem(wrapperRef.current!.clientWidth!);
 
 	useEffect(() => {
 		const win = ownerWindow(wrapperRef.current!);
@@ -128,7 +128,6 @@ export const TabList: FunctionComponent<Props> = ({
 
 	return (
 		<Box
-			overflow="hidden"
 			alignItems="center"
 			className={styles.styledTabList({
 				appearance,

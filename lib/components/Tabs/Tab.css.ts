@@ -11,57 +11,63 @@ const size = '20px';
 export const styledTab = recipe({
 	base: {
 		flex: 'auto',
-		padding: `calc(${vars.space['3']} + ${lineBottomHeight}) ${vars.space['4']}`,
 		transition: `color 0.2s ${vars.animation.easing.decelerate} 0s, background-color 0.2s ${vars.animation.easing.decelerate} 0s`,
 		':focus-visible': {
 			...focusOutline,
+		},
+		selectors: {
+			'&:not([aria-selected=true]):hover': {
+				color: vars.colours.foreground.body,
+			},
 		},
 	},
 	variants: {
 		appearance: {
 			underlined: {
 				borderBottom: `calc(${lineBottomHeight} + ${lineBottomHeight}) solid transparent`,
-				':hover': {
-					color: vars.colours.intent.neutral.background.strong,
-				},
+				padding: `calc(${vars.space['3']} + ${lineBottomHeight}) ${vars.space['4']}`,
 				':focus-visible': {
-					outlineOffset: '-2px',
+					outlineOffset: '-1px',
 				},
 			},
 			pill: {
 				borderRadius: vars.border.radius.pill,
-				':focus-visible': {
-					// remove this override if Tabs are rebuilt and outside outline is not truncated
-					outlineColor: vars.body.backgroundColour,
-					outlineOffset: '-4px',
-				},
+				color: vars.colours.foreground.body,
+				fontWeight: vars.typography.fontWeight.normal,
+				padding: `${vars.space['2']} ${vars.space['4']}`,
 				selectors: {
 					'&+&': {
 						marginLeft: vars.space['1'],
 					},
 					'&:not([aria-selected=true]):hover': {
-						backgroundColor: vars.colours.background.neutral,
-						color: vars.colours.background.body,
+						backgroundColor: vars.colours.gamut.gray200,
 					},
 				},
 			},
 		},
 		active: {
-			true: {
+			true: {},
+		},
+	},
+	compoundVariants: [
+		{
+			variants: {
+				appearance: 'underlined',
+				active: true,
+			},
+			style: {
 				color: vars.colours.intent.neutral.background.strong,
 				borderBottomColor:
 					vars.colours.intent.neutral.background.strong,
 			},
 		},
-	},
-	compoundVariants: [
 		{
 			variants: {
 				appearance: 'pill',
 				active: true,
 			},
 			style: {
-				backgroundColor: vars.colours.background.neutralDark,
+				backgroundColor: vars.colours.foreground.body,
 				color: vars.colours.background.body,
 			},
 		},
@@ -91,10 +97,43 @@ export const indication = recipe({
 		},
 	],
 	variants: {
+		appearance: {
+			underlined: {},
+			pill: {
+				selectors: {
+					[`${styledTab.classNames.base}:not([aria-selected=true]):hover &`]:
+						{
+							backgroundColor: vars.colours.background.neutral,
+						},
+				},
+			},
+		},
 		active: {
-			true: {
+			true: {},
+		},
+	},
+	compoundVariants: [
+		{
+			variants: {
+				appearance: 'underlined',
+				active: true,
+			},
+			style: {
 				backgroundColor: vars.colours.intent.neutral.background.strong,
 			},
 		},
+		{
+			variants: {
+				appearance: 'pill',
+				active: true,
+			},
+			style: {
+				backgroundColor: vars.colours.background.light,
+				color: vars.colours.foreground.body,
+			},
+		},
+	],
+	defaultVariants: {
+		appearance: 'underlined',
 	},
 });

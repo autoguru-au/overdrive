@@ -92,6 +92,7 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 						display="block"
 						colour={isActive ? 'white' : 'dark'}
 						className={styles.indication({
+							appearance,
 							active: isActive,
 						})}
 					>

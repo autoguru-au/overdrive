@@ -1,6 +1,6 @@
 import { AlertIcon, OttoIcon } from '@autoguru/icons';
-import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
 import isChromatic from 'chromatic/isChromatic';
 import React, { useEffect, useState } from 'react';
 
@@ -30,7 +30,7 @@ const TestChild = ({ label }) => {
 	return <StarRating rating={thing} label={label} />;
 };
 
-const meta = {
+const meta: Meta<typeof Tabs> = {
 	title: 'Components/Tabs',
 	component: Tabs,
 	decorators: [
@@ -38,6 +38,11 @@ const meta = {
 			<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>
 		),
 	],
+	args: {
+		active: 0,
+		appearance: 'underlined',
+		onChange: fn(),
+	},
 	argTypes: {
 		children: {
 			control: {
@@ -45,24 +50,26 @@ const meta = {
 			},
 		},
 	},
-} satisfies Meta<typeof Tabs>;
+};
 
 export default meta;
 type Story = StoryObj<typeof Tabs>;
 
 export const Standard: Story = {
 	args: {
-		active: 0,
-		onChange: action('onChange'),
 		children: (
 			<>
 				<TabList>
-					<Tab>Tab 1</Tab>
-					<Tab>Tab 2</Tab>
+					<Tab>Job History</Tab>
+					<Tab>Vehicle History</Tab>
+					<Tab>Driver</Tab>
+					<Tab>Example Rating</Tab>
 				</TabList>
 
 				<TabPanes>
 					<TabPane>Content A</TabPane>
+					<TabPane>Content B</TabPane>
+					<TabPane>Content C</TabPane>
 					<TabPane>
 						<Stack>
 							<TestChild label="5" />
@@ -87,8 +94,6 @@ export const Pill: Story = {
 
 export const WithIndication: Story = {
 	args: {
-		active: 0,
-		onChange: action('onChange'),
 		children: (
 			<>
 				<TabList>
@@ -107,8 +112,6 @@ export const WithIndication: Story = {
 
 export const WithComplexTab: Story = {
 	args: {
-		active: 0,
-		onChange: action('onChange'),
 		children: (
 			<>
 				<TabList>
@@ -151,8 +154,6 @@ export const WithComplexTab: Story = {
 
 export const WithStretch: Story = {
 	args: {
-		active: 0,
-		onChange: action('onChange'),
 		children: (
 			<>
 				<TabList stretch>
@@ -179,8 +180,6 @@ export const WithStretch: Story = {
 
 export const Scrollable: Story = {
 	args: {
-		active: 0,
-		onChange: action('onChange'),
 		children: (
 			<TabList scrollable>
 				<Tab>Hello</Tab>
