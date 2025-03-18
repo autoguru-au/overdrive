@@ -1,19 +1,21 @@
-import { CheckIcon } from '@autoguru/icons';
+import { CheckIcon, MinusIcon } from '@autoguru/icons';
 import clsx from 'clsx';
-import * as React from 'react';
-import { forwardRef, ReactNode } from 'react';
+import React, { forwardRef, ReactNode, useEffect, useRef } from 'react';
 
-import { noop } from '../../utils';
+import { mergeRefs, noop } from '../../utils';
+import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box';
 import { Icon } from '../Icon';
 import { CheckableBase } from '../private/CheckableBase';
 import { checkableIndicator } from '../private/CheckableBase/CheckableBase.css';
 
 import * as styles from './CheckBox.css';
+
 export interface Props {
 	className?: string;
 	checked?: boolean;
 	disabled?: boolean;
+	indeterminate?: boolean;
 	name?: string;
 	value: string;
 	children?: ReactNode;
@@ -29,15 +31,24 @@ export const CheckBox = forwardRef<HTMLInputElement, Props>(
 			name = '',
 			disabled = false,
 			checked = false,
+			indeterminate = false,
 			onClick = noop,
 			onChange = noop,
 			children,
 		},
 		ref,
 	) => {
+		const internalRef = useRef<HTMLInputElement>(null);
+
+		useEffect(() => {
+			if (internalRef.current) {
+				internalRef.current.indeterminate = indeterminate;
+			}
+		}, [indeterminate]);
+
 		return (
 			<CheckableBase
-				ref={ref}
+				ref={mergeRefs([ref, internalRef])}
 				inputType="checkbox"
 				className={className}
 				inputName={name}
@@ -53,12 +64,16 @@ export const CheckBox = forwardRef<HTMLInputElement, Props>(
 						styles.checkbox.default,
 						checkableIndicator,
 						{
-							[styles.checkbox.selected]: checked,
+							[styles.checkbox.selected]:
+								checked || indeterminate,
 						},
 					)}
+					{...dataAttrs({
+						indeterminate: indeterminate,
+					})}
 				>
 					<Icon
-						icon={CheckIcon}
+						icon={indeterminate ? MinusIcon : CheckIcon}
 						size="medium"
 						className={styles.icon}
 					/>
