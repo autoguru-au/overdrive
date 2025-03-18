@@ -37,7 +37,7 @@ export const styledTab = recipe({
 				padding: `${vars.space['2']} ${vars.space['4']}`,
 				selectors: {
 					'&+&': {
-						marginLeft: vars.space['1'],
+						marginLeft: vars.space['3'],
 					},
 					'&:not([aria-selected=true]):hover': {
 						backgroundColor: vars.colours.gamut.gray200,
