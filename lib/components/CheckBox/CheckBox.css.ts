@@ -29,9 +29,10 @@ export const checkbox = styleVariants({
 		borderWidth: borderWidth,
 		zIndex: 0,
 		selectors: {
-			[`${nativeInput}:not(:checked):hover ~${checkable} &`]: {
-				backgroundColor: colorMid,
-			},
+			[`${nativeInput}:not(:checked):hover ~${checkable} &:not([data-indeterminate])`]:
+				{
+					backgroundColor: colorMid,
+				},
 		},
 		transition,
 	},
