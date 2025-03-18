@@ -70,6 +70,11 @@ export const Disabled: Story = {
 	},
 };
 
+/**
+ * The indeterminate checkbox will typically be set by the parent component in a form with nested checkboxes.
+ * The indeterminate prop cannot be set by the component itself. This example uses an `onClick` handler to toggle
+ * the checked state when the indeterminate checkbox is clicked, the checkbox does not natively have this behaviour.
+ */
 export const Indeterminate: Story = {
 	args: {
 		indeterminate: true,
