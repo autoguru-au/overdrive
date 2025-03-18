@@ -1,9 +1,7 @@
+/* eslint-disable import/namespace */
+import isChromatic from 'chromatic/isChromatic';
 import React, { useEffect, useRef } from 'react';
 
-import '../lib/reset/globalFonts.css';
-import '../lib/reset/globalReset.css';
-import * as themes from '../lib/themes';
-import isChromatic from 'chromatic/isChromatic';
 import { Box } from '../lib/components/Box';
 import { Heading } from '../lib/components/Heading';
 import { OverdriveProvider } from '../lib/components/OverdriveProvider';
@@ -12,9 +10,10 @@ import {
 	ThemeOverrideProvider,
 	useThemeOverrides,
 } from '../lib/components/ThemeOverrideProvider';
-import { container, themeContractVars } from '../lib/themes/theme.css';
-import { breakpoints } from '../lib/themes/makeTheme';
 import { useDocumentBodyStyles } from '../lib/hooks/useDocumentBodyStyles';
+import * as themes from '../lib/themes';
+import { breakpoints } from '../lib/themes/makeTheme';
+import { container, themeContractVars } from '../lib/themes/theme.css';
 
 const dynamicColours = {
 	bright: {
@@ -28,6 +27,7 @@ const dynamicColours = {
 };
 
 const ThemeProviderComponent = ({ children, context }) => {
+	// @ts-expect-error expecting 0 arguments
 	const { theme, overrideStyles, setThemeValues } = useThemeOverrides({
 		primaryColourBackground:
 			dynamicColours[context.globals.themeColours]
@@ -48,10 +48,11 @@ const ThemeProviderComponent = ({ children, context }) => {
 				...dynamicColours[context.globals.themeColours],
 			});
 		}
-	}, [theme, context.globals.themeColours]);
-	const ref = useRef();
+	}, [theme, context.globals.themeColours, setThemeValues]);
+	const ref = useRef(null);
 	return (
 		<OverdriveProvider
+			// @ts-expect-error Type 'RefObject<null>' is not assignable to type 'MutableRefObject<{ new (): HTMLElement; prototype: HTMLElement; }>'.
 			portalMountPoint={ref}
 			noBodyLevelTheming={false}
 			vars={themeContractVars}
@@ -65,13 +66,14 @@ const ThemeProviderComponent = ({ children, context }) => {
 	);
 };
 
-const withThemeProvider = (Story, context) => {
+export const withThemeProvider = (Story, context) => {
 	const theme = themes[context.globals.theme];
 	const tokens = theme.tokens;
 	const primaryColourBackground = tokens.colours.intent.primary.background;
 	const primaryColourBorder = tokens.colours.intent.primary.border;
 	const primaryColourForeground = tokens.colours.intent.primary.foreground;
 	const overrideColours = dynamicColours[context.globals.themeColours];
+	// eslint-disable-next-line unicorn/no-negated-condition
 	return !isChromatic() ? (
 		<ThemeOverrideProvider
 			primaryColourBackground={
@@ -109,7 +111,7 @@ const withThemeProvider = (Story, context) => {
 				<OverdriveProvider
 					noBodyLevelTheming
 					themeClass={themes[theme].themeRef}
-					tokens={themes[theme].tokens}
+					// tokens={themes[theme].tokens}
 					vars={themes[theme].vars}
 				>
 					<Box width="full" padding="5">
@@ -134,71 +136,3 @@ const withThemeProvider = (Story, context) => {
 		))
 	);
 };
-
-export const globalTypes = {
-	theme: {
-		name: 'theme',
-		description: 'Global theme for components',
-		defaultValue: themes.baseTheme.name,
-		title: 'theme',
-		toolbar: {
-			icon: 'mirror',
-			items: Object.keys(themes).map((theme) => themes[theme].name),
-			showName: true,
-			dynamicTitle: true,
-		},
-	},
-	themeColours: {
-		name: 'Set dynamic colours',
-		description: 'Global primary background colour',
-		defaultValue: 'defaults',
-		toolbar: {
-			icon: 'paintbrush',
-			items: ['defaults', 'bright', 'dark'],
-			showName: true,
-			dynamicTitle: true,
-			control: 'color',
-		},
-	},
-};
-
-/** @type { import('@storybook/react').Preview } */
-const preview = {
-	decorators: [withThemeProvider],
-
-	parameters: {
-		controls: {
-			matchers: {
-				color: /(background|color)$/i,
-				date: /Date$/i,
-			},
-		},
-		chromatic: {
-			// Mobile and large table and up
-			viewports: [320, 1024],
-		},
-		options: {
-			storySort: {
-				order: [
-					'Overdrive',
-					'Foundation',
-					['Palette', 'Theme Colours', 'Borders', 'Space'],
-					'Primatives',
-					'Layout',
-					'Forms & Input Fields',
-					'Components',
-					[
-						'*',
-						'Modal',
-						'Modal: Minimal',
-						'Modal: Standard with Title',
-					],
-				],
-			},
-		},
-	},
-
-	tags: ['autodocs'],
-};
-
-export default preview;
