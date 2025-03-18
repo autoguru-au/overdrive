@@ -9,8 +9,8 @@ exports[`<DropDown /> > should match the snapshot 1`] = `
     class="reset_block__1oah0223 useBoxStyles_height_full__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhk Button_body__p2yon51"
   >
     Attachment
-    <div
-      class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+    <span
+      class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire0"
     >
       <svg
         aria-hidden="true"
@@ -24,7 +24,7 @@ exports[`<DropDown /> > should match the snapshot 1`] = `
           d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
         />
       </svg>
-    </div>
+    </span>
   </div>
 </button>
 `;
@@ -38,8 +38,8 @@ exports[`<DropDown /> > should match the snapshot as Primary variant 1`] = `
     class="reset_block__1oah0223 useBoxStyles_height_full__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhk Button_body__p2yon51"
   >
     Attachment
-    <div
-      class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+    <span
+      class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire0"
     >
       <svg
         aria-hidden="true"
@@ -53,7 +53,7 @@ exports[`<DropDown /> > should match the snapshot as Primary variant 1`] = `
           d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
         />
       </svg>
-    </div>
+    </span>
   </div>
 </button>
 `;
