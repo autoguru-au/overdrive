@@ -12,7 +12,7 @@ exports[`<NumberInput /> > should have some hintText 1`] = `
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lct useBoxStyles_backgroundColours_transparent__3xgq1lf9 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8a"
+        class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lct useBoxStyles_backgroundColours_transparent__3xgq1lf9 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
         id="id"
         max="2147483647"
         type="number"
@@ -65,7 +65,7 @@ exports[`<NumberInput /> > should match snapshot 1`] = `
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lct useBoxStyles_backgroundColours_transparent__3xgq1lf9 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8a"
+        class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lct useBoxStyles_backgroundColours_transparent__3xgq1lf9 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
         id="id"
         max="2147483647"
         type="number"
@@ -113,7 +113,7 @@ exports[`<NumberInput /> > should match snapshot when active 1`] = `
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lct useBoxStyles_backgroundColours_transparent__3xgq1lf9 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8a"
+        class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lct useBoxStyles_backgroundColours_transparent__3xgq1lf9 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
         max="2147483647"
         type="number"
         value=""
@@ -159,7 +159,7 @@ exports[`<NumberInput /> > should match snapshot when loading 1`] = `
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lct useBoxStyles_backgroundColours_transparent__3xgq1lf9 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8a"
+        class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lct useBoxStyles_backgroundColours_transparent__3xgq1lf9 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
         id="id"
         max="2147483647"
         type="number"
@@ -207,7 +207,7 @@ exports[`<NumberInput /> > should match snapshot when touched 1`] = `
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lct useBoxStyles_backgroundColours_transparent__3xgq1lf9 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8a"
+        class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lct useBoxStyles_backgroundColours_transparent__3xgq1lf9 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
         max="2147483647"
         type="number"
         value=""
@@ -253,7 +253,7 @@ exports[`<NumberInput /> > should match snapshot when touched and invalid 1`] = 
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lct useBoxStyles_backgroundColours_transparent__3xgq1lf9 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8a"
+        class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lct useBoxStyles_backgroundColours_transparent__3xgq1lf9 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
         max="2147483647"
         type="number"
         value=""
@@ -299,7 +299,7 @@ exports[`<NumberInput /> > should match snapshot when touched and valid 1`] = `
     >
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lct useBoxStyles_backgroundColours_transparent__3xgq1lf9 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8a"
+        class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lct useBoxStyles_backgroundColours_transparent__3xgq1lf9 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
         max="2147483647"
         type="number"
         value=""
@@ -344,7 +344,7 @@ exports[`<NumberInput /> > should match snapshot with both icons 1`] = `
       class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
     >
       <span
-        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 withEnhancedInput_iconRoot__5jmdy8e withEnhancedInput_prefixIcon__5jmdy8f withEnhancedInput_iconSize_medium__5jmdy8i InputState_natural_default_colour__a2a1mv4"
+        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_prefixIcon__5jmdy8k withEnhancedInput_iconSize_medium__5jmdy8n InputState_natural_default_colour__a2a1mv4"
       >
         <svg
           aria-hidden="true"
@@ -358,7 +358,7 @@ exports[`<NumberInput /> > should match snapshot with both icons 1`] = `
         </svg>
       </span>
       <span
-        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 withEnhancedInput_iconRoot__5jmdy8e withEnhancedInput_suffixIcon__5jmdy8g withEnhancedInput_iconSize_medium__5jmdy8i InputState_natural_default_colour__a2a1mv4"
+        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_suffixIcon__5jmdy8l withEnhancedInput_iconSize_medium__5jmdy8n InputState_natural_default_colour__a2a1mv4"
       >
         <svg
           aria-hidden="true"
@@ -373,7 +373,7 @@ exports[`<NumberInput /> > should match snapshot with both icons 1`] = `
       </span>
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lct useBoxStyles_backgroundColours_transparent__3xgq1lf9 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8a withEnhancedInput_inputItselfSize_medium_prefixed_any__5jmdy8c undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8d"
+        class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lct useBoxStyles_backgroundColours_transparent__3xgq1lf9 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b withEnhancedInput_inputItselfSize_medium_prefixed_any__5jmdy8d undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8e"
         max="2147483647"
         type="number"
         value=""
@@ -418,7 +418,7 @@ exports[`<NumberInput /> > should match snapshot with prefix icon 1`] = `
       class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
     >
       <span
-        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 withEnhancedInput_iconRoot__5jmdy8e withEnhancedInput_prefixIcon__5jmdy8f withEnhancedInput_iconSize_medium__5jmdy8i InputState_natural_default_colour__a2a1mv4"
+        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_prefixIcon__5jmdy8k withEnhancedInput_iconSize_medium__5jmdy8n InputState_natural_default_colour__a2a1mv4"
       >
         <svg
           aria-hidden="true"
@@ -433,7 +433,7 @@ exports[`<NumberInput /> > should match snapshot with prefix icon 1`] = `
       </span>
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lct useBoxStyles_backgroundColours_transparent__3xgq1lf9 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8a withEnhancedInput_inputItselfSize_medium_prefixed_any__5jmdy8c"
+        class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lct useBoxStyles_backgroundColours_transparent__3xgq1lf9 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b withEnhancedInput_inputItselfSize_medium_prefixed_any__5jmdy8d"
         max="2147483647"
         type="number"
         value=""
@@ -478,7 +478,7 @@ exports[`<NumberInput /> > should match snapshot with suffix icon 1`] = `
       class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
     >
       <span
-        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 withEnhancedInput_iconRoot__5jmdy8e withEnhancedInput_suffixIcon__5jmdy8g withEnhancedInput_iconSize_medium__5jmdy8i InputState_natural_default_colour__a2a1mv4"
+        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_suffixIcon__5jmdy8l withEnhancedInput_iconSize_medium__5jmdy8n InputState_natural_default_colour__a2a1mv4"
       >
         <svg
           aria-hidden="true"
@@ -493,7 +493,7 @@ exports[`<NumberInput /> > should match snapshot with suffix icon 1`] = `
       </span>
       <input
         autocomplete="off"
-        class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lct useBoxStyles_backgroundColours_transparent__3xgq1lf9 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8a undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8d"
+        class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lct useBoxStyles_backgroundColours_transparent__3xgq1lf9 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8e"
         max="2147483647"
         type="number"
         value=""
