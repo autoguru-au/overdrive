@@ -192,6 +192,9 @@ export const withEnhancedInput = <
 				},
 				inputStateStyles,
 			);
+
+			const iconSize = size === 'small' ? 'medium' : size;
+
 			const inputItselfClassName = clsx(
 				useBoxStyles({
 					is: primitiveType === 'textarea' ? 'textarea' : 'input',
@@ -310,7 +313,7 @@ export const withEnhancedInput = <
 							{prefixIcon ? (
 								<Icon
 									icon={prefixIcon}
-									size="medium"
+									size={iconSize}
 									className={clsx(
 										iconStyles,
 										styles.iconRoot,
@@ -334,7 +337,7 @@ export const withEnhancedInput = <
 							{suffixIcon && !isLoading ? (
 								<Icon
 									icon={suffixIcon}
-									size="medium"
+									size={iconSize}
 									className={clsx(
 										iconStyles,
 										styles.iconRoot,

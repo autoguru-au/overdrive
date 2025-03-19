@@ -50,6 +50,13 @@ export const inputWrapperSize = {
 			},
 		}),
 	},
+	large: {
+		root: styleVariants({
+			textarea: {
+				paddingTop: `${vars.space['2']}`,
+			},
+		}),
+	},
 };
 
 export const inputItselfSize = {
@@ -105,7 +112,32 @@ export const inputItselfSize = {
 			},
 		}),
 	},
+	large: {
+		root: styleVariants({
+			any: {
+				fontSize: vars.typography.size['7'].fontSize,
+				lineHeight: vars.typography.size['7'].lineHeight,
+				height: '72px',
+				padding: `calc(((${vars.space['8']} - ${vars.typography.size['6'].fontSize}) / 2) - 3px) calc(${vars.space['5']} - 1px)`,
+			},
+			textarea: {
+				padding: `${vars.space['2']} calc(${vars.space['5']} - 1px) calc(((${vars.space['10']} - ${vars.typography.size['5'].fontSize}) / 2) - 3px)`,
+			},
+		}),
+		prefixed: styleVariants({
+			any: {
+				paddingLeft: '53px',
+			},
+		}),
+		suffixed: styleVariants({
+			any: {
+				paddingRight: '53px',
+			},
+		}),
+	},
 };
+
+export type InputSize = keyof typeof inputItselfSize;
 
 export const iconRoot = style({
 	zIndex: 1,
@@ -125,6 +157,9 @@ export const iconSize = styleVariants({
 		margin: `0 ${vars.space['2']}`,
 	},
 	medium: {
+		margin: `0 calc(${vars.space['3']} - 1px)`,
+	},
+	large: {
 		margin: `0 calc(${vars.space['3']} - 1px)`,
 	},
 });

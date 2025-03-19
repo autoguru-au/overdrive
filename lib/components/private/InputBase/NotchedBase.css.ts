@@ -2,12 +2,31 @@ import { style, styleVariants } from '@vanilla-extract/css';
 
 import { themeContractVars as vars } from '../../../themes/theme.css';
 
+import type { InputSize } from './withEnhancedInput.css';
+
 const active_scaling_factor = 0.7777;
 export const root = style({
 	transition: `fill 0.2s ${vars.animation.easing.decelerate} 0s`,
 });
 
-const defaultBorderWidth = '1px';
+export const labelStyle = styleVariants({
+	base: {
+		textWrap: 'nowrap',
+	},
+	small: {
+		fontSize: vars.typography.size['4'].fontSize,
+	},
+	medium: {
+		fontSize: vars.typography.size['4'].fontSize,
+	},
+	large: {
+		fontSize: vars.typography.size['7'].fontSize,
+	},
+});
+
+const defaultBorderWidth = vars.border.width['1'];
+const largeBorderWidth = vars.border.width['2'];
+
 const borderRegionDefaults = style({
 	borderWidth: defaultBorderWidth,
 	borderStyle: 'solid',
@@ -15,13 +34,27 @@ const borderRegionDefaults = style({
 	transition: `border-color 0.2s ${vars.animation.easing.decelerate} 0s`,
 });
 
+const borderWidthLarge = style({
+	borderWidth: largeBorderWidth,
+});
+
 const borderVisualDefaults = style({
 	borderRadius: vars.border.radius['2'],
 });
 
-export const notchGapPlaceholder = style({
-	visibility: 'hidden',
-	fontSize: `calc(${vars.typography.size['4'].fontSize} * ${active_scaling_factor})`,
+export const notchGapPlaceholder = styleVariants({
+	base: {
+		visibility: 'hidden',
+	},
+	small: {
+		fontSize: `calc(${vars.typography.size['4'].fontSize} * ${active_scaling_factor})`,
+	},
+	medium: {
+		fontSize: `calc(${vars.typography.size['4'].fontSize} * ${active_scaling_factor})`,
+	},
+	large: {
+		fontSize: `calc(${vars.typography.size['7'].fontSize} * ${active_scaling_factor})`,
+	},
 });
 
 export const borders = {
@@ -36,6 +69,7 @@ export const borders = {
 			}),
 		],
 		disabled: '',
+		large: borderWidthLarge,
 	},
 	complete: [borderVisualDefaults, borderRegionDefaults],
 	leading: [
@@ -102,6 +136,8 @@ export const bordersAttach = {
 	}),
 };
 
+export type BordersAttach = keyof typeof bordersAttach.complete;
+
 export const bordersMerged = {
 	complete: styleVariants({
 		NONE: {
@@ -139,7 +175,7 @@ export const bordersMerged = {
 	}),
 };
 
-type Size = 'small' | 'medium';
+export type BordersMerged = keyof typeof bordersMerged.complete;
 
 export const placeholder = styleVariants({
 	default: {
@@ -160,30 +196,38 @@ export const placeholder = styleVariants({
 const calcPlaceholderTranslate = (
 	notched: boolean,
 	prefixed: boolean,
-	size: Size,
+	size: InputSize,
 ): string => {
+	const typography = vars.typography.size[size === 'large' ? '7' : '4'];
+	const vertPadding = vars.space[size === 'large' ? '3' : '2'];
+
 	if (notched) {
-		return `calc(${vars.space['2']} + ${vars.space['2']}), calc(-0.5 * ${active_scaling_factor} * ${vars.typography.size['4'].fontSize})`;
+		return `calc(${vertPadding} + ${vertPadding}), calc(-0.5 * ${active_scaling_factor} * ${typography.fontSize})`;
 	}
 
 	if (size === 'medium') {
-		const from = prefixed
+		const offsetX = prefixed
 			? `calc(${vars.space['7']} + ${vars.space['3']})`
-			: vars.typography.size['4'].fontSize;
+			: typography.fontSize;
 
-		return `${from}, calc((${vars.space['8']} - ${
-			vars.typography.size['4'].fontSize
+		return `${offsetX}, calc((${vars.space['8']} - ${
+			typography.fontSize
 		}) / 2)`;
 	}
 
-	const from = prefixed
+	if (size === 'large') {
+		const offsetX = prefixed ? '53px' : typography.fontSize;
+		return `${offsetX}, 25px`;
+	}
+
+	const offsetX = prefixed
 		? `calc(${vars.space['2']} + ${vars.space['5']} + ${vars.space['2']})`
 		: vars.space['2'];
 
-	return `${from}, calc(${vars.space['2']} + 2px)`;
+	return `${offsetX}, calc(${vars.space['2']} + 2px)`;
 };
 
-export const placeholderPlacement: Record<Size, Record<string, string>> = {
+export const placeholderPlacement: Record<InputSize, Record<string, string>> = {
 	small: styleVariants({
 		default: {
 			transform: `translate(${calcPlaceholderTranslate(
@@ -229,6 +273,30 @@ export const placeholderPlacement: Record<Size, Record<string, string>> = {
 				true,
 				false,
 				'medium',
+			)}) scale(${active_scaling_factor})`,
+		},
+	}),
+	large: styleVariants({
+		default: {
+			transform: `translate(${calcPlaceholderTranslate(
+				false,
+				false,
+				'medium',
+			)}) scale(1)`,
+		},
+		defaultPrefixed: {
+			transform: `translate(${calcPlaceholderTranslate(
+				false,
+				true,
+				'large',
+			)}) scale(1)`,
+		},
+		shifted: {
+			zIndex: 2,
+			transform: `translate(${calcPlaceholderTranslate(
+				true,
+				false,
+				'large',
 			)}) scale(${active_scaling_factor})`,
 		},
 	}),
