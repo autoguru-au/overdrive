@@ -36,8 +36,8 @@ exports[`<SelectInput /> > should have some hintText 1`] = `
         <div
           class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5w useBoxStyles_display_flex__3xgq1lfy useBoxStyles_height_full__3xgq1lfl useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexShrink_0__3xgq1lhd SelectInput_arrow__1gqjkbj2"
         >
-          <div
-            class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+          <span
+            class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
           >
             <svg
               aria-hidden="true"
@@ -51,7 +51,7 @@ exports[`<SelectInput /> > should have some hintText 1`] = `
                 d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
               />
             </svg>
-          </div>
+          </span>
         </div>
       </div>
     </div>
@@ -124,8 +124,8 @@ exports[`<SelectInput /> > should match snapshot 1`] = `
         <div
           class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5w useBoxStyles_display_flex__3xgq1lfy useBoxStyles_height_full__3xgq1lfl useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexShrink_0__3xgq1lhd SelectInput_arrow__1gqjkbj2"
         >
-          <div
-            class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+          <span
+            class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
           >
             <svg
               aria-hidden="true"
@@ -139,7 +139,7 @@ exports[`<SelectInput /> > should match snapshot 1`] = `
                 d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
               />
             </svg>
-          </div>
+          </span>
         </div>
       </div>
     </div>
@@ -207,8 +207,8 @@ exports[`<SelectInput /> > should match snapshot when active 1`] = `
         <div
           class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5w useBoxStyles_display_flex__3xgq1lfy useBoxStyles_height_full__3xgq1lfl useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexShrink_0__3xgq1lhd SelectInput_arrow__1gqjkbj2"
         >
-          <div
-            class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+          <span
+            class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
           >
             <svg
               aria-hidden="true"
@@ -222,7 +222,7 @@ exports[`<SelectInput /> > should match snapshot when active 1`] = `
                 d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
               />
             </svg>
-          </div>
+          </span>
         </div>
       </div>
     </div>
@@ -290,8 +290,8 @@ exports[`<SelectInput /> > should match snapshot when touched 1`] = `
         <div
           class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5w useBoxStyles_display_flex__3xgq1lfy useBoxStyles_height_full__3xgq1lfl useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexShrink_0__3xgq1lhd SelectInput_arrow__1gqjkbj2"
         >
-          <div
-            class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+          <span
+            class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
           >
             <svg
               aria-hidden="true"
@@ -305,7 +305,7 @@ exports[`<SelectInput /> > should match snapshot when touched 1`] = `
                 d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
               />
             </svg>
-          </div>
+          </span>
         </div>
       </div>
     </div>
@@ -373,8 +373,8 @@ exports[`<SelectInput /> > should match snapshot when touched and invalid 1`] = 
         <div
           class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5w useBoxStyles_display_flex__3xgq1lfy useBoxStyles_height_full__3xgq1lfl useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexShrink_0__3xgq1lhd SelectInput_arrow__1gqjkbj2"
         >
-          <div
-            class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+          <span
+            class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
           >
             <svg
               aria-hidden="true"
@@ -388,7 +388,7 @@ exports[`<SelectInput /> > should match snapshot when touched and invalid 1`] = 
                 d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
               />
             </svg>
-          </div>
+          </span>
         </div>
       </div>
     </div>
@@ -456,8 +456,8 @@ exports[`<SelectInput /> > should match snapshot when touched and valid 1`] = `
         <div
           class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5w useBoxStyles_display_flex__3xgq1lfy useBoxStyles_height_full__3xgq1lfl useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexShrink_0__3xgq1lhd SelectInput_arrow__1gqjkbj2"
         >
-          <div
-            class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+          <span
+            class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
           >
             <svg
               aria-hidden="true"
@@ -471,7 +471,7 @@ exports[`<SelectInput /> > should match snapshot when touched and valid 1`] = `
                 d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
               />
             </svg>
-          </div>
+          </span>
         </div>
       </div>
     </div>
@@ -523,8 +523,8 @@ exports[`<SelectInput /> > should match snapshot with custom icon 1`] = `
         <div
           class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5w useBoxStyles_display_flex__3xgq1lfy useBoxStyles_height_full__3xgq1lfl useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexShrink_0__3xgq1lhd SelectInput_arrow__1gqjkbj2"
         >
-          <div
-            class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+          <span
+            class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
           >
             <svg
               aria-hidden="true"
@@ -536,7 +536,7 @@ exports[`<SelectInput /> > should match snapshot with custom icon 1`] = `
                 d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
               />
             </svg>
-          </div>
+          </span>
         </div>
       </div>
     </div>
@@ -578,8 +578,8 @@ exports[`<SelectInput /> > should match snapshot with prefix icon 1`] = `
     <div
       class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
     >
-      <div
-        class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 withEnhancedInput_iconRoot__5jmdy8e withEnhancedInput_prefixIcon__5jmdy8f withEnhancedInput_iconSize_medium__5jmdy8i InputState_natural_default_colour__a2a1mv4"
+      <span
+        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 withEnhancedInput_iconRoot__5jmdy8e withEnhancedInput_prefixIcon__5jmdy8f withEnhancedInput_iconSize_medium__5jmdy8i InputState_natural_default_colour__a2a1mv4"
       >
         <svg
           aria-hidden="true"
@@ -591,7 +591,7 @@ exports[`<SelectInput /> > should match snapshot with prefix icon 1`] = `
             d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
           />
         </svg>
-      </div>
+      </span>
       <div
         class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexWrap_nowrap__3xgq1lhf useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhk"
       >
@@ -602,8 +602,8 @@ exports[`<SelectInput /> > should match snapshot with prefix icon 1`] = `
         <div
           class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5w useBoxStyles_display_flex__3xgq1lfy useBoxStyles_height_full__3xgq1lfl useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_flexShrink_0__3xgq1lhd SelectInput_arrow__1gqjkbj2"
         >
-          <div
-            class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+          <span
+            class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
           >
             <svg
               aria-hidden="true"
@@ -617,7 +617,7 @@ exports[`<SelectInput /> > should match snapshot with prefix icon 1`] = `
                 d="M7.413 8.584L12 13.17l4.586-4.586L18 9.998l-6 6-6-6 1.413-1.414z"
               />
             </svg>
-          </div>
+          </span>
         </div>
       </div>
     </div>
