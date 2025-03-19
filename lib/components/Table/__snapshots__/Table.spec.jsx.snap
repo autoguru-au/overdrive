@@ -56,8 +56,8 @@ exports[`<Table /> > when implemented > should match snapshot 1`] = `
             <div
               class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
             >
-              <div
-                class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire0 TableHeadCell_sorterRoot__1a20v5n2 TableHeadCell_sorter_root__1a20v5n3 TableHeadCell_sorter_asc__1a20v5n5"
+              <span
+                class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire0 TableHeadCell_sorterRoot__1a20v5n2 TableHeadCell_sorter_root__1a20v5n3 TableHeadCell_sorter_asc__1a20v5n5"
               >
                 <svg
                   aria-hidden="true"
@@ -71,7 +71,7 @@ exports[`<Table /> > when implemented > should match snapshot 1`] = `
                     d="M277.333 426.667h-42.666v-256L117.333 288 87.04 257.707 256 88.747l168.96 168.96L394.667 288 277.333 170.667v256z"
                   />
                 </svg>
-              </div>
+              </span>
             </div>
           </div>
         </button>

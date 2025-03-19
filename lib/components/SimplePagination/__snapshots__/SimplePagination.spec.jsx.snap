@@ -16,8 +16,8 @@ exports[`<SimplePagination /> > should match snapshot for hasNext 1`] = `
       <div
         class="reset_block__1oah0223 useBoxStyles_height_full__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhk Button_body__p2yon50"
       >
-        <div
-          class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+        <span
+          class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
         >
           <svg
             aria-hidden="true"
@@ -31,7 +31,7 @@ exports[`<SimplePagination /> > should match snapshot for hasNext 1`] = `
               d="M15.414 16.584l-4.586-4.586 4.586-4.586-1.415-1.414-6 6 6 6 1.415-1.414z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
   </div>
@@ -46,8 +46,8 @@ exports[`<SimplePagination /> > should match snapshot for hasNext 1`] = `
       <div
         class="reset_block__1oah0223 useBoxStyles_height_full__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhk Button_body__p2yon50"
       >
-        <div
-          class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+        <span
+          class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
         >
           <svg
             aria-hidden="true"
@@ -61,7 +61,7 @@ exports[`<SimplePagination /> > should match snapshot for hasNext 1`] = `
               d="M8.585 16.584l4.586-4.586-4.586-4.586L10 5.998l6 6-6 6-1.414-1.414z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
   </div>
@@ -83,8 +83,8 @@ exports[`<SimplePagination /> > should match snapshot for hasNext and hasPreviou
       <div
         class="reset_block__1oah0223 useBoxStyles_height_full__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhk Button_body__p2yon50"
       >
-        <div
-          class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+        <span
+          class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
         >
           <svg
             aria-hidden="true"
@@ -98,7 +98,7 @@ exports[`<SimplePagination /> > should match snapshot for hasNext and hasPreviou
               d="M15.414 16.584l-4.586-4.586 4.586-4.586-1.415-1.414-6 6 6 6 1.415-1.414z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
   </div>
@@ -113,8 +113,8 @@ exports[`<SimplePagination /> > should match snapshot for hasNext and hasPreviou
       <div
         class="reset_block__1oah0223 useBoxStyles_height_full__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhk Button_body__p2yon50"
       >
-        <div
-          class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+        <span
+          class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
         >
           <svg
             aria-hidden="true"
@@ -128,7 +128,7 @@ exports[`<SimplePagination /> > should match snapshot for hasNext and hasPreviou
               d="M8.585 16.584l4.586-4.586-4.586-4.586L10 5.998l6 6-6 6-1.414-1.414z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
   </div>
@@ -150,8 +150,8 @@ exports[`<SimplePagination /> > should match snapshot for hasPrevious 1`] = `
       <div
         class="reset_block__1oah0223 useBoxStyles_height_full__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhk Button_body__p2yon50"
       >
-        <div
-          class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+        <span
+          class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
         >
           <svg
             aria-hidden="true"
@@ -165,7 +165,7 @@ exports[`<SimplePagination /> > should match snapshot for hasPrevious 1`] = `
               d="M15.414 16.584l-4.586-4.586 4.586-4.586-1.415-1.414-6 6 6 6 1.415-1.414z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
   </div>
@@ -181,8 +181,8 @@ exports[`<SimplePagination /> > should match snapshot for hasPrevious 1`] = `
       <div
         class="reset_block__1oah0223 useBoxStyles_height_full__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhk Button_body__p2yon50"
       >
-        <div
-          class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+        <span
+          class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4"
         >
           <svg
             aria-hidden="true"
@@ -196,7 +196,7 @@ exports[`<SimplePagination /> > should match snapshot for hasPrevious 1`] = `
               d="M8.585 16.584l4.586-4.586-4.586-4.586L10 5.998l6 6-6 6-1.414-1.414z"
             />
           </svg>
-        </div>
+        </span>
       </div>
     </button>
   </div>

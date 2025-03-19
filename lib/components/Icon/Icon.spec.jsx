@@ -29,7 +29,9 @@ describe('<Icon />', () => {
 
 	it('should nest the provided svg inside the div tag', () => {
 		expect(
-			render(<Icon icon={TestIcon} />).container.querySelector('div>svg'),
+			render(<Icon icon={TestIcon} />).container.querySelector(
+				'span>svg',
+			),
 		).toBeInTheDocument();
 	});
 });
