@@ -1,4 +1,8 @@
-import React, { type FocusEventHandler, type FormEventHandler } from 'react';
+import React, {
+	type FocusEventHandler,
+	type FormEventHandler,
+	type RefObject,
+} from 'react';
 
 import { Box } from '../Box';
 import { withEnhancedInput } from '../private/InputBase';
@@ -40,7 +44,7 @@ export const NumberInput = withEnhancedInput<Props>(
 	}) => {
 		const { value, inputRef, onFocus, onBlur, onChange } =
 			useNumberInputBehaviours({
-				ref,
+				ref: ref as RefObject<HTMLInputElement>,
 				preventMouseWheel,
 				onFocus: eventHandlers.onFocus,
 				onBlur: eventHandlers.onBlur,
