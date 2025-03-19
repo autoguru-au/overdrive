@@ -154,8 +154,8 @@ exports[`<DateInput /> > should match snapshot when loading 1`] = `
     <div
       class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
     >
-      <div
-        class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 withEnhancedInput_iconRoot__5jmdy8e withEnhancedInput_prefixIcon__5jmdy8f withEnhancedInput_iconSize_medium__5jmdy8i InputState_natural_default_colour__a2a1mv4"
+      <span
+        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 withEnhancedInput_iconRoot__5jmdy8e withEnhancedInput_prefixIcon__5jmdy8f withEnhancedInput_iconSize_medium__5jmdy8i InputState_natural_default_colour__a2a1mv4"
       >
         <svg
           aria-hidden="true"
@@ -167,7 +167,7 @@ exports[`<DateInput /> > should match snapshot when loading 1`] = `
             d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
           />
         </svg>
-      </div>
+      </span>
       <div
         class="reset_block__1oah0223 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_default__1kpufmi4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 withEnhancedInput_iconRoot__5jmdy8e withEnhancedInput_suffixIcon__5jmdy8g withEnhancedInput_iconSize_medium__5jmdy8i"
       >
@@ -366,8 +366,8 @@ exports[`<DateInput /> > should match snapshot with both icons 1`] = `
     <div
       class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
     >
-      <div
-        class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 withEnhancedInput_iconRoot__5jmdy8e withEnhancedInput_prefixIcon__5jmdy8f withEnhancedInput_iconSize_medium__5jmdy8i InputState_natural_default_colour__a2a1mv4"
+      <span
+        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 withEnhancedInput_iconRoot__5jmdy8e withEnhancedInput_prefixIcon__5jmdy8f withEnhancedInput_iconSize_medium__5jmdy8i InputState_natural_default_colour__a2a1mv4"
       >
         <svg
           aria-hidden="true"
@@ -379,9 +379,9 @@ exports[`<DateInput /> > should match snapshot with both icons 1`] = `
             d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
           />
         </svg>
-      </div>
-      <div
-        class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 withEnhancedInput_iconRoot__5jmdy8e withEnhancedInput_suffixIcon__5jmdy8g withEnhancedInput_iconSize_medium__5jmdy8i InputState_natural_default_colour__a2a1mv4"
+      </span>
+      <span
+        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 withEnhancedInput_iconRoot__5jmdy8e withEnhancedInput_suffixIcon__5jmdy8g withEnhancedInput_iconSize_medium__5jmdy8i InputState_natural_default_colour__a2a1mv4"
       >
         <svg
           aria-hidden="true"
@@ -393,7 +393,7 @@ exports[`<DateInput /> > should match snapshot with both icons 1`] = `
             d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
           />
         </svg>
-      </div>
+      </span>
       <input
         autocomplete="off"
         class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lct useBoxStyles_backgroundColours_transparent__3xgq1lf9 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8a withEnhancedInput_inputItselfSize_medium_prefixed_any__5jmdy8c undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8d"
@@ -439,8 +439,8 @@ exports[`<DateInput /> > should match snapshot with prefix icon 1`] = `
     <div
       class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
     >
-      <div
-        class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 withEnhancedInput_iconRoot__5jmdy8e withEnhancedInput_prefixIcon__5jmdy8f withEnhancedInput_iconSize_medium__5jmdy8i InputState_natural_default_colour__a2a1mv4"
+      <span
+        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 withEnhancedInput_iconRoot__5jmdy8e withEnhancedInput_prefixIcon__5jmdy8f withEnhancedInput_iconSize_medium__5jmdy8i InputState_natural_default_colour__a2a1mv4"
       >
         <svg
           aria-hidden="true"
@@ -452,7 +452,7 @@ exports[`<DateInput /> > should match snapshot with prefix icon 1`] = `
             d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
           />
         </svg>
-      </div>
+      </span>
       <input
         autocomplete="off"
         class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lct useBoxStyles_backgroundColours_transparent__3xgq1lf9 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8a withEnhancedInput_inputItselfSize_medium_prefixed_any__5jmdy8c"
@@ -498,8 +498,8 @@ exports[`<DateInput /> > should match snapshot with suffix icon 1`] = `
     <div
       class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
     >
-      <div
-        class="reset_block__1oah0223 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 withEnhancedInput_iconRoot__5jmdy8e withEnhancedInput_suffixIcon__5jmdy8g withEnhancedInput_iconSize_medium__5jmdy8i InputState_natural_default_colour__a2a1mv4"
+      <span
+        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 withEnhancedInput_iconRoot__5jmdy8e withEnhancedInput_suffixIcon__5jmdy8g withEnhancedInput_iconSize_medium__5jmdy8i InputState_natural_default_colour__a2a1mv4"
       >
         <svg
           aria-hidden="true"
@@ -511,7 +511,7 @@ exports[`<DateInput /> > should match snapshot with suffix icon 1`] = `
             d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
           />
         </svg>
-      </div>
+      </span>
       <input
         autocomplete="off"
         class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_width_full__3xgq1lfj useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lct useBoxStyles_backgroundColours_transparent__3xgq1lf9 withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8a undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8d"
