@@ -111,7 +111,6 @@ export const withThemeProvider = (Story, context) => {
 				<OverdriveProvider
 					noBodyLevelTheming
 					themeClass={themes[theme].themeRef}
-					// tokens={themes[theme].tokens}
 					vars={themes[theme].vars}
 				>
 					<Box width="full" padding="5">
