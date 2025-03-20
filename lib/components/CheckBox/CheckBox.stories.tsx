@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Badge } from '../Badge';
 import { Heading } from '../Heading';
@@ -32,21 +32,29 @@ const meta: Meta<typeof CheckBox> = {
 		name: 'demo-checkbox',
 		children: 'Check me!',
 		value: '1',
+		isIndeterminate: false,
 		disabled: undefined,
 		onChange: fn(),
 		onClick: fn(),
 	},
-	render: ({ indeterminate, ...args }) => {
+	render: ({ isIndeterminate, ...args }) => {
 		const [checked, setChecked] = useState(false);
-		const [isIndeterminate, setIsIndeterminate] = useState(indeterminate);
+		const [hasIndeterminate, setHasIndeterminate] =
+			useState(isIndeterminate);
+
+		useEffect(() => {
+			if (isIndeterminate !== hasIndeterminate) {
+				setHasIndeterminate(isIndeterminate);
+			}
+		}, [isIndeterminate]);
 
 		return (
 			<CheckBox
 				{...args}
-				indeterminate={isIndeterminate}
+				isIndeterminate={hasIndeterminate}
 				checked={checked}
 				onClick={() => {
-					if (isIndeterminate) setIsIndeterminate(false);
+					if (isIndeterminate) setHasIndeterminate(false);
 					args.onClick?.(checked);
 				}}
 				onChange={(checked) => {
@@ -77,7 +85,7 @@ export const Disabled: Story = {
  */
 export const Indeterminate: Story = {
 	args: {
-		indeterminate: true,
+		isIndeterminate: true,
 		children: 'Not sure',
 	},
 };

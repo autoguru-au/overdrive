@@ -15,7 +15,11 @@ export interface Props {
 	className?: string;
 	checked?: boolean;
 	disabled?: boolean;
-	indeterminate?: boolean;
+	/**
+	 * Used to set an individual checkbox to an inbetween state and sets `indeterminate` accordingly on the native
+	 * input control. Toggling logic is left up to the parent component
+	 */
+	isIndeterminate?: boolean;
 	name?: string;
 	value: string;
 	children?: ReactNode;
@@ -31,7 +35,7 @@ export const CheckBox = forwardRef<HTMLInputElement, Props>(
 			name = '',
 			disabled = false,
 			checked = false,
-			indeterminate = false,
+			isIndeterminate = false,
 			onClick = noop,
 			onChange = noop,
 			children,
@@ -42,9 +46,9 @@ export const CheckBox = forwardRef<HTMLInputElement, Props>(
 
 		useEffect(() => {
 			if (internalRef.current) {
-				internalRef.current.indeterminate = indeterminate;
+				internalRef.current.indeterminate = isIndeterminate;
 			}
-		}, [indeterminate]);
+		}, [isIndeterminate]);
 
 		return (
 			<CheckableBase
@@ -65,15 +69,15 @@ export const CheckBox = forwardRef<HTMLInputElement, Props>(
 						checkableIndicator,
 						{
 							[styles.checkbox.selected]:
-								checked || indeterminate,
+								checked || isIndeterminate,
 						},
 					)}
 					{...dataAttrs({
-						indeterminate: indeterminate,
+						indeterminate: isIndeterminate,
 					})}
 				>
 					<Icon
-						icon={indeterminate ? MinusIcon : CheckIcon}
+						icon={isIndeterminate ? MinusIcon : CheckIcon}
 						size="medium"
 						className={styles.icon}
 					/>
