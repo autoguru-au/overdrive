@@ -2,13 +2,13 @@ import { IconType } from '@autoguru/icons';
 import { invariant, wrapEvent } from '@autoguru/utilities';
 import clsx from 'clsx';
 import React, {
-	type AriaAttributes,
 	type ChangeEventHandler,
 	type ComponentProps,
 	type ComponentType,
 	type FocusEventHandler,
 	type ForwardedRef,
 	forwardRef,
+	type InputHTMLAttributes,
 	type KeyboardEventHandler,
 	type MouseEventHandler,
 	type ReactNode,
@@ -30,6 +30,10 @@ import * as styles from './withEnhancedInput.css';
 import type { InputSize } from './withEnhancedInput.css';
 
 type ElementTypes = HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
+type NativeAttributes = Omit<
+	InputHTMLAttributes<HTMLInputElement>,
+	'height' | 'is' | 'placeholder' | 'size' | 'width'
+>;
 
 // The event handlers we'll allow the wrapped component to bind too
 export interface EventHandlers<E extends ElementTypes> {
@@ -46,7 +50,7 @@ export interface EventHandlers<E extends ElementTypes> {
 
 // The props we'll give the end consumer to send
 export interface EnhanceInputPrimitiveProps
-	extends AriaAttributes,
+	extends NativeAttributes,
 		Pick<
 			ComponentProps<typeof NotchedBase>,
 			'notch' | 'placeholder' | 'attach' | 'borderMerged' | 'isFocused'
