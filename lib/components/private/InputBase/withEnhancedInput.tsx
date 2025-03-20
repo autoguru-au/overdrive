@@ -356,6 +356,7 @@ export const withEnhancedInput = <
 							hintText={hintText}
 							disabled={disabled}
 							reserveHintSpace={reserveHintSpace}
+							size={size}
 						/>
 					) : null}
 				</Box>

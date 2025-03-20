@@ -119,6 +119,10 @@ export const inputItselfSize = {
 				lineHeight: vars.typography.size['7'].lineHeight,
 				height: '72px',
 				padding: `calc(((${vars.space['8']} - ${vars.typography.size['6'].fontSize}) / 2) - 3px) calc(${vars.space['5']} - 1px)`,
+				'::placeholder': {
+					fontSize: vars.typography.size['7'].fontSize,
+					// lineHeight: vars.typography.size['6'].lineHeight,
+				},
 			},
 			textarea: {
 				padding: `${vars.space['2']} calc(${vars.space['5']} - 1px) calc(((${vars.space['10']} - ${vars.typography.size['5'].fontSize}) / 2) - 3px)`,

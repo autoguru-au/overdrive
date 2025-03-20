@@ -119,7 +119,7 @@ export const NotchedBase: FunctionComponent<Props> = ({
 									attach === 'LEFT' ||
 									attach === 'BOTTOM' ||
 									attach === 'ALL',
-								[styles.borders.root.large]: size === 'large',
+								[styles.largeBorder]: size === 'large',
 							},
 						)}
 					/>
@@ -127,6 +127,7 @@ export const NotchedBase: FunctionComponent<Props> = ({
 						className={clsx(
 							styles.borders.middle,
 							borderColourClassName,
+							size === 'large' && styles.largeBorderY,
 						)}
 					>
 						<Box
@@ -203,7 +204,7 @@ export const NotchedBase: FunctionComponent<Props> = ({
 									attach === 'RIGHT' ||
 									attach === 'BOTTOM' ||
 									attach === 'ALL',
-								[styles.borders.root.large]: size === 'large',
+								[styles.largeBorder]: size === 'large',
 							},
 						)}
 					/>

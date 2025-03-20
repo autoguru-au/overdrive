@@ -34,10 +34,6 @@ const borderRegionDefaults = style({
 	transition: `border-color 0.2s ${vars.animation.easing.decelerate} 0s`,
 });
 
-const borderWidthLarge = style({
-	borderWidth: largeBorderWidth,
-});
-
 const borderVisualDefaults = style({
 	borderRadius: vars.border.radius['2'],
 });
@@ -69,7 +65,6 @@ export const borders = {
 			}),
 		],
 		disabled: '',
-		large: borderWidthLarge,
 	},
 	complete: [borderVisualDefaults, borderRegionDefaults],
 	leading: [
@@ -84,9 +79,9 @@ export const borders = {
 		borderRegionDefaults,
 		style({
 			transition: `width 0.15s ${vars.animation.easing.decelerate}, border-color 0.2s ${vars.animation.easing.decelerate} 0s`,
-			borderTopWidth: 0,
-			borderRightWidth: 0,
-			borderLeftWidth: 0,
+			borderTopStyle: 'none',
+			borderRightStyle: 'none',
+			borderLeftStyle: 'none',
 		}),
 	],
 	trailing: [
@@ -199,7 +194,7 @@ const calcPlaceholderTranslate = (
 	size: InputSize,
 ): string => {
 	const typography = vars.typography.size[size === 'large' ? '7' : '4'];
-	const vertPadding = vars.space[size === 'large' ? '3' : '2'];
+	const vertPadding = vars.space['2'];
 
 	if (notched) {
 		return `calc(${vertPadding} + ${vertPadding}), calc(-0.5 * ${active_scaling_factor} * ${typography.fontSize})`;
@@ -281,7 +276,7 @@ export const placeholderPlacement: Record<InputSize, Record<string, string>> = {
 			transform: `translate(${calcPlaceholderTranslate(
 				false,
 				false,
-				'medium',
+				'large',
 			)}) scale(1)`,
 		},
 		defaultPrefixed: {
@@ -301,3 +296,12 @@ export const placeholderPlacement: Record<InputSize, Record<string, string>> = {
 		},
 	}),
 };
+
+export const largeBorder = style({
+	borderWidth: largeBorderWidth,
+});
+
+export const largeBorderY = style({
+	borderTopWidth: largeBorderWidth,
+	borderBottomWidth: largeBorderWidth,
+});
