@@ -22,4 +22,10 @@ export default [
 			'unicorn/prefer-global-this': 'warn',
 		},
 	},
+	{
+		files: ['**/*.stories.{jsx,tsx}'],
+		rules: {
+			'react-hooks/rules-of-hooks': 'off',
+		},
+	},
 ];
