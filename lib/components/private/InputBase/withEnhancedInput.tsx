@@ -326,6 +326,7 @@ export const withEnhancedInput = <
 							{isLoading ? (
 								<ProgressSpinner
 									colour="default"
+									size={size === 'large' ? size : undefined}
 									className={clsx(
 										iconStyles,
 										styles.iconRoot,

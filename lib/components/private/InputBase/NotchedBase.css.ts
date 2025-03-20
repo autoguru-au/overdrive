@@ -211,7 +211,7 @@ const calcPlaceholderTranslate = (
 	}
 
 	if (size === 'large') {
-		const offsetX = prefixed ? '53px' : typography.fontSize;
+		const offsetX = prefixed ? '64px' : typography.fontSize;
 		return `${offsetX}, 25px`;
 	}
 

@@ -118,7 +118,7 @@ export const inputItselfSize = {
 				fontSize: vars.typography.size['7'].fontSize,
 				lineHeight: vars.typography.size['7'].lineHeight,
 				height: '72px',
-				padding: `calc(((${vars.space['8']} - ${vars.typography.size['6'].fontSize}) / 2) - 3px) calc(${vars.space['5']} - 1px)`,
+				padding: '12px 25px',
 				'::placeholder': {
 					fontSize: vars.typography.size['7'].fontSize,
 					// lineHeight: vars.typography.size['6'].lineHeight,
@@ -130,12 +130,12 @@ export const inputItselfSize = {
 		}),
 		prefixed: styleVariants({
 			any: {
-				paddingLeft: '53px',
+				paddingLeft: '64px',
 			},
 		}),
 		suffixed: styleVariants({
 			any: {
-				paddingRight: '53px',
+				paddingRight: '64px',
 			},
 		}),
 	},
@@ -164,6 +164,6 @@ export const iconSize = styleVariants({
 		margin: `0 calc(${vars.space['3']} - 1px)`,
 	},
 	large: {
-		margin: `0 calc(${vars.space['3']} - 1px)`,
+		margin: `0 calc(${vars.space['5']} - 1px)`,
 	},
 });
