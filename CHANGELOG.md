@@ -11,6 +11,15 @@
   relating to labelling on Button and aria attributes on Checkbox, Radio and
   Tabs.
 
+## 4.39.2
+
+### Patch Changes
+
+- 4e288e4: Badge: fix for block display.
+- fa47d39: Fix for Icon rendering as `div` by default, defaults to `span`
+  instead.
+- c2ad0d3: Peer dependencies up to date.
+
 ## 4.39.1
 
 ### Patch Changes

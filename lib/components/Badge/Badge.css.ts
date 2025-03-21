@@ -7,6 +7,7 @@ import { themeContractVars as tokens } from '../../themes/theme.css';
 export const styledBadge = recipe({
 	base: [
 		{
+			display: 'inline-block',
 			overflow: 'hidden',
 			textOverflow: 'ellipsis',
 			textTransform: 'uppercase',
