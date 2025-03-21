@@ -1,14 +1,14 @@
 import { IconType } from '@autoguru/icons';
 import { invariant, wrapEvent } from '@autoguru/utilities';
 import clsx from 'clsx';
-import * as React from 'react';
-import {
-	type AriaAttributes,
+import React, {
 	type ChangeEventHandler,
 	type ComponentProps,
 	type ComponentType,
 	type FocusEventHandler,
+	type ForwardedRef,
 	forwardRef,
+	type InputHTMLAttributes,
 	type KeyboardEventHandler,
 	type MouseEventHandler,
 	type ReactNode,
@@ -27,23 +27,30 @@ import { HintText } from './HintText';
 import * as inputStateStyles from './InputState.css';
 import { NotchedBase } from './NotchedBase';
 import * as styles from './withEnhancedInput.css';
+import type { InputSize } from './withEnhancedInput.css';
+
+type ElementTypes = HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
+type NativeAttributes = Omit<
+	InputHTMLAttributes<HTMLInputElement>,
+	'height' | 'is' | 'placeholder' | 'size' | 'width'
+>;
 
 // The event handlers we'll allow the wrapped component to bind too
-export interface EventHandlers<PrimitiveElementType> {
-	onChange?: ChangeEventHandler<PrimitiveElementType>;
-	onBlur?: FocusEventHandler<PrimitiveElementType>;
-	onFocus?: FocusEventHandler<PrimitiveElementType>;
-	onKeyDown?: KeyboardEventHandler<PrimitiveElementType>;
-	onClick?: MouseEventHandler<PrimitiveElementType>;
-	onMouseEnter?: MouseEventHandler<PrimitiveElementType>;
-	onMouseLeave?: MouseEventHandler<PrimitiveElementType>;
+export interface EventHandlers<E extends ElementTypes> {
+	onChange?: ChangeEventHandler<E>;
+	onBlur?: FocusEventHandler<E>;
+	onFocus?: FocusEventHandler<E>;
+	onKeyDown?: KeyboardEventHandler<E>;
+	onClick?: MouseEventHandler<E>;
+	onMouseEnter?: MouseEventHandler<E>;
+	onMouseLeave?: MouseEventHandler<E>;
 
 	onReset?(): void;
 }
 
 // The props we'll give the end consumer to send
 export interface EnhanceInputPrimitiveProps
-	extends AriaAttributes,
+	extends NativeAttributes,
 		Pick<
 			ComponentProps<typeof NotchedBase>,
 			'notch' | 'placeholder' | 'attach' | 'borderMerged' | 'isFocused'
@@ -57,7 +64,7 @@ export interface EnhanceInputPrimitiveProps
 	autoFocus?: boolean;
 	disabled?: boolean;
 	reserveHintSpace?: boolean;
-	size?: keyof typeof styles.inputItselfSize;
+	size?: InputSize;
 	fieldIcon?: IconType;
 	prefixIcon?: IconType;
 	suffixIcon?: IconType;
@@ -71,22 +78,24 @@ export interface ValidationProps {
 }
 
 // An amalgamation of the HoC props, event handlers and the consumer props.
-export type EnhanceInputProps<IncomingProps, PrimitiveElementType> =
-	IncomingProps &
-		EnhanceInputPrimitiveProps &
-		EventHandlers<PrimitiveElementType> &
-		ValidationProps;
+export type EnhanceInputProps<
+	IncomingProps,
+	E extends ElementTypes,
+> = IncomingProps &
+	EnhanceInputPrimitiveProps &
+	EventHandlers<E> &
+	ValidationProps;
 
 // The final props we send into thw wrapping component
-export type WrappedComponentProps<IncomingProps, PrimitiveElementType> = {
-	size: keyof typeof styles.inputItselfSize;
+export type WrappedComponentProps<IncomingProps, E extends ElementTypes> = {
+	size: InputSize;
 	validation: ValidationProps;
-	eventHandlers: EventHandlers<PrimitiveElementType>;
+	eventHandlers: EventHandlers<E>;
 	field: Omit<
 		EnhanceInputPrimitiveProps,
 		'placeholder' | 'hintText' | 'fieldIcon' | 'size'
 	> & {
-		ref: RefObject<PrimitiveElementType>;
+		ref: ForwardedRef<ElementTypes> | RefObject<ElementTypes>;
 	};
 	fieldIcon?: EnhanceInputPrimitiveProps['fieldIcon'];
 	className?: boolean;
@@ -107,12 +116,10 @@ interface EnhancedInputConfigs<ValueType = string> {
 }
 
 export const withEnhancedInput = <
-	IncomingProps extends {} = {},
-	PrimitiveElementType extends HTMLElement = HTMLInputElement,
+	IncomingProps extends object = {},
+	E extends ElementTypes = HTMLInputElement,
 >(
-	WrappingComponent: ComponentType<
-		WrappedComponentProps<IncomingProps, PrimitiveElementType>
-	>,
+	WrappingComponent: ComponentType<WrappedComponentProps<IncomingProps, E>>,
 	{
 		primitiveType = 'text',
 		withPrefixIcon = true,
@@ -122,10 +129,7 @@ export const withEnhancedInput = <
 	}: EnhancedInputConfigs = { primitiveType: 'text', defaultValue: void 0 },
 ) =>
 	// eslint-disable-next-line react/display-name
-	forwardRef<
-		PrimitiveElementType,
-		EnhanceInputProps<IncomingProps, PrimitiveElementType>
-	>(
+	forwardRef<ElementTypes, EnhanceInputProps<IncomingProps, E>>(
 		(
 			{
 				// EnhanceInputPrimitiveProps
@@ -192,6 +196,9 @@ export const withEnhancedInput = <
 				},
 				inputStateStyles,
 			);
+
+			const iconSize = size === 'small' ? 'medium' : size;
+
 			const inputItselfClassName = clsx(
 				useBoxStyles({
 					is: primitiveType === 'textarea' ? 'textarea' : 'input',
@@ -218,22 +225,7 @@ export const withEnhancedInput = <
 				},
 			);
 
-			/*
-			Need to disable the type assertion here, as ts has no idea that P and an omitted P without its properties is just P
-			@see https://stackoverflow.com/a/53951825/2609301
-
-			type P = {firstName: string}
-			type A = P
-			type B = Omit<P, 'firstName'>
-
-			A & B != A _or_ P & Omit<P, 'firstName'> != P
-			 */
-
-			// @ts-expect-error props not assignable to type
-			const wrappingComponent: WrappedComponentProps<
-				IncomingProps,
-				PrimitiveElementType
-			> = {
+			const wrappingComponent: WrappedComponentProps<IncomingProps, E> = {
 				validation: {
 					isTouched,
 					isValid,
@@ -325,7 +317,7 @@ export const withEnhancedInput = <
 							{prefixIcon ? (
 								<Icon
 									icon={prefixIcon}
-									size="medium"
+									size={iconSize}
 									className={clsx(
 										iconStyles,
 										styles.iconRoot,
@@ -338,6 +330,7 @@ export const withEnhancedInput = <
 							{isLoading ? (
 								<ProgressSpinner
 									colour="default"
+									size={size === 'large' ? size : undefined}
 									className={clsx(
 										iconStyles,
 										styles.iconRoot,
@@ -349,7 +342,7 @@ export const withEnhancedInput = <
 							{suffixIcon && !isLoading ? (
 								<Icon
 									icon={suffixIcon}
-									size="medium"
+									size={iconSize}
 									className={clsx(
 										iconStyles,
 										styles.iconRoot,
@@ -368,6 +361,7 @@ export const withEnhancedInput = <
 							hintText={hintText}
 							disabled={disabled}
 							reserveHintSpace={reserveHintSpace}
+							size={size}
 						/>
 					) : null}
 				</Box>

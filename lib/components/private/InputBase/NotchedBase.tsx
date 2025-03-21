@@ -2,9 +2,10 @@ import clsx from 'clsx';
 import React, { type FunctionComponent, type ReactNode, useRef } from 'react';
 
 import { Box } from '../../Box';
-import { useTextStyles } from '../../Text';
 
 import * as styles from './NotchedBase.css';
+import type { BordersAttach, BordersMerged } from './NotchedBase.css';
+import type { InputSize } from './withEnhancedInput.css';
 
 export interface Props {
 	id: string;
@@ -15,11 +16,11 @@ export interface Props {
 	borderColourClassName: string;
 	placeholderColourClassName: string;
 	notch?: boolean;
-	size: keyof typeof styles.placeholderPlacement;
+	size: InputSize;
 	className?: string;
 	children?: ReactNode;
-	attach?: keyof (typeof styles.bordersAttach)['complete'];
-	borderMerged?: keyof (typeof styles.bordersMerged)['complete'];
+	attach?: BordersAttach;
+	borderMerged?: BordersMerged;
 	isFocused?: boolean;
 	isHovered?: boolean;
 }
@@ -41,10 +42,6 @@ export const NotchedBase: FunctionComponent<Props> = ({
 	isFocused = false,
 	isHovered = false,
 }) => {
-	const labelStyles = useTextStyles({
-		noWrap: true,
-		size: '4',
-	});
 	const labelRef = useRef<HTMLLabelElement>(null);
 
 	const shouldMerge = !isFocused && !isHovered;
@@ -122,6 +119,7 @@ export const NotchedBase: FunctionComponent<Props> = ({
 									attach === 'LEFT' ||
 									attach === 'BOTTOM' ||
 									attach === 'ALL',
+								[styles.largeBorder]: size === 'large',
 							},
 						)}
 					/>
@@ -129,6 +127,7 @@ export const NotchedBase: FunctionComponent<Props> = ({
 						className={clsx(
 							styles.borders.middle,
 							borderColourClassName,
+							size === 'large' && styles.largeBorderY,
 						)}
 					>
 						<Box
@@ -139,8 +138,10 @@ export const NotchedBase: FunctionComponent<Props> = ({
 							}
 							paddingX="2"
 							className={[
-								labelStyles,
-								styles.notchGapPlaceholder,
+								styles.labelStyle.base,
+								styles.labelStyle[size],
+								styles.notchGapPlaceholder.base,
+								styles.notchGapPlaceholder[size],
 							]}
 						>
 							{placeholder}
@@ -157,7 +158,8 @@ export const NotchedBase: FunctionComponent<Props> = ({
 							className={clsx(
 								styles.placeholder.default,
 								placeholderColourClassName,
-								labelStyles,
+								styles.labelStyle.base,
+								styles.labelStyle[size],
 								{
 									[styles.bordersMerged.complete.TOP]:
 										shouldMerge && borderMerged === 'TOP',
@@ -202,6 +204,7 @@ export const NotchedBase: FunctionComponent<Props> = ({
 									attach === 'RIGHT' ||
 									attach === 'BOTTOM' ||
 									attach === 'ALL',
+								[styles.largeBorder]: size === 'large',
 							},
 						)}
 					/>
