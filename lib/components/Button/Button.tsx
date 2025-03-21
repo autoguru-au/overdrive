@@ -18,6 +18,7 @@ import {
 	type ReactElement,
 } from 'react';
 
+import type { TextFontWeight, TextSizeScale } from '../../themes/tokens';
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box, useBoxStyles } from '../Box';
@@ -30,7 +31,7 @@ import type { StyledButtonProps } from './Button.css';
 
 type ButtonPrimitive = ComponentPropsWithRef<'button'>;
 type AllowedChildren = string | IconType;
-type ButtonSize = 'small' | 'medium';
+type ButtonSize = 'tiny' | 'small' | 'medium';
 
 const DOUBLE_CLICK_DETECTION_PERIOD = 700;
 
@@ -76,6 +77,18 @@ const getPadding: (
 ) => ComponentProps<typeof Box>['paddingX'] = (size, loading) => {
 	if (loading) return 'none';
 	return size === 'small' ? '3' : '4';
+};
+
+const fontSize: Record<ButtonSize, TextSizeScale> = {
+	tiny: '2',
+	small: '3',
+	medium: '4',
+};
+
+const fontWeight: Record<ButtonSize, TextFontWeight> = {
+	tiny: 'normal',
+	small: 'semiBold',
+	medium: 'semiBold',
 };
 
 export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
@@ -159,8 +172,8 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 				}),
 				useTextStyles({
 					colour: 'white',
-					fontWeight: 'semiBold',
-					size: size === 'medium' ? '4' : '3',
+					fontWeight: fontWeight[size],
+					size: fontSize[size],
 				}),
 				styles.button({
 					size,

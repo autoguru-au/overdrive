@@ -10,7 +10,6 @@ const smallHeight = '36px';
 const selectorFocusHoverActive =
 	'&:focus-visible, &:not(:disabled):hover, &:not(:disabled):active';
 
-// Body styles for button content layout
 export const body = style({
 	display: 'grid',
 	gridAutoFlow: 'column dense',
@@ -59,6 +58,9 @@ export const button = recipe({
 			},
 			medium: {
 				height: vars.space['8'],
+			},
+			tiny: {
+				padding: `2px ${vars.space['2']}`,
 			},
 		},
 		// Shape variants

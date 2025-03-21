@@ -1,4 +1,4 @@
-import { AccountBoxIcon } from '@autoguru/icons';
+import { AccountBoxIcon, ArrowLeftIcon } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import React, { type ComponentProps } from 'react';
@@ -14,19 +14,6 @@ import { Button } from '.';
 const meta: Meta<typeof Button> = {
 	title: 'Primatives/Buttons',
 	component: Button,
-	decorators: [
-		(Story) => (
-			<div
-				style={{
-					display: 'grid',
-					gridGap: '12px',
-					gridAutoFlow: 'row dense',
-				}}
-			>
-				<Story />
-			</div>
-		),
-	],
 	args: {
 		variant: 'secondary',
 		size: 'medium',
@@ -52,15 +39,25 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const Standard: Story = {
-	decorators: [
-		(Story) => (
-			<div>
-				<Story />
-			</div>
-		),
-	],
 	args: {
 		children: 'Login',
+	},
+};
+
+/**
+ * The tiny button has mainly been placed in a specific use-case where space is contrained,
+ * and it is specific to being `rounded`, with an icon.
+ */
+export const Tiny: Story = {
+	args: {
+		children: (
+			<>
+				<Icon icon={ArrowLeftIcon} />
+				Change car
+			</>
+		),
+		size: 'tiny',
+		rounded: true,
 	},
 };
 
@@ -182,6 +179,19 @@ const TemplateMulti = ({
 );
 
 export const PrimarySet: Story = {
+	decorators: [
+		(Story) => (
+			<div
+				style={{
+					display: 'grid',
+					gridGap: '12px',
+					gridAutoFlow: 'row dense',
+				}}
+			>
+				<Story />
+			</div>
+		),
+	],
 	args: {
 		variant: 'primary',
 	},
