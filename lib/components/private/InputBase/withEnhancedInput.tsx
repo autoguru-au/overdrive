@@ -3,17 +3,17 @@ import { invariant, wrapEvent } from '@autoguru/utilities';
 import clsx from 'clsx';
 import * as React from 'react';
 import {
-	AriaAttributes,
-	ChangeEventHandler,
-	ComponentProps,
-	ComponentType,
-	FocusEventHandler,
+	type AriaAttributes,
+	type ChangeEventHandler,
+	type ComponentProps,
+	type ComponentType,
+	type FocusEventHandler,
 	forwardRef,
-	KeyboardEventHandler,
-	MouseEventHandler,
-	MutableRefObject,
-	ReactNode,
-	Ref,
+	type KeyboardEventHandler,
+	type MouseEventHandler,
+	type ReactNode,
+	type Ref,
+	type RefObject,
 	useCallback,
 	useState,
 } from 'react';
@@ -86,7 +86,7 @@ export type WrappedComponentProps<IncomingProps, PrimitiveElementType> = {
 		EnhanceInputPrimitiveProps,
 		'placeholder' | 'hintText' | 'fieldIcon' | 'size'
 	> & {
-		ref: MutableRefObject<PrimitiveElementType>;
+		ref: RefObject<PrimitiveElementType>;
 	};
 	fieldIcon?: EnhanceInputPrimitiveProps['fieldIcon'];
 	className?: boolean;
@@ -199,7 +199,7 @@ export const withEnhancedInput = <
 					width: 'full',
 					position: 'relative',
 					display: 'flex',
-					borderRadius: '1',
+					borderRadius: '2',
 				}),
 				styles.input.itself.root,
 				styles.types[primitiveType!],
@@ -337,12 +337,12 @@ export const withEnhancedInput = <
 							) : null}
 							{isLoading ? (
 								<ProgressSpinner
+									colour="default"
 									className={clsx(
 										iconStyles,
 										styles.iconRoot,
 										styles.suffixIcon,
 										styles.iconSize[size],
-										derivedColours.colour,
 									)}
 								/>
 							) : null}

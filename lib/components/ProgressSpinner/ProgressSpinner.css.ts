@@ -42,6 +42,9 @@ export const path = style({
 });
 
 export const colours = styleVariants({
+	default: {
+		stroke: vars.colours.foreground.body,
+	},
 	light: {
 		stroke: vars.typography.colour.white,
 	},

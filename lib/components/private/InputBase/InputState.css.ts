@@ -3,19 +3,19 @@ import { style, styleVariants } from '@vanilla-extract/css';
 import { themeContractVars as vars } from '../../../themes/theme.css';
 
 const activeColour = style({
-	color: vars.typography.colour.information,
+	color: vars.typography.colour.dark,
 });
 
 const activeBorderColour = style({
-	color: vars.typography.colour.information,
+	color: vars.typography.colour.dark,
 });
 
 export const disabled = styleVariants({
 	colour: {
-		color: vars.typography.colour.muted,
+		color: vars.colours.gamut.gray200,
 	},
 	borderColour: {
-		borderColor: vars.typography.colour.muted,
+		borderColor: vars.border.colours.gray,
 	},
 });
 
@@ -25,7 +25,7 @@ export const natural = {
 			color: vars.typography.colour.muted,
 		}),
 		borderColour: style({
-			borderColor: vars.typography.colour.muted,
+			borderColor: vars.border.colours.gray,
 		}),
 	},
 	hover: {

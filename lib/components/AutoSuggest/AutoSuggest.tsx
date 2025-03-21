@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-type-constraint */
-/* eslint-disable jsx-a11y/no-autofocus */
 import { ChevronDownIcon, CloseIcon, IconType } from '@autoguru/icons';
 import { wrapEvent } from '@autoguru/utilities';
 import clsx from 'clsx';
@@ -98,7 +97,6 @@ export interface Props<PayloadType>
 	itemRenderer?: AutoSuggestItemRenderer<PayloadType>;
 
 	onChange?(value: AutoSuggestValue<PayloadType>): void;
-
 	onEnter?(value: AutoSuggestValue<PayloadType>): void;
 }
 
@@ -117,6 +115,7 @@ const inputReducerFactory =
 	<T extends Suggestions<unknown>>(suggestions: T): Reducer<State, Actions> =>
 	(prevState, action) => {
 		switch (action.type) {
+			// eslint-disable-next-line sonarjs/prefer-default-last
 			default:
 			case ActionTypes.INPUT_CHANGE: {
 				return {
@@ -256,7 +255,7 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 				setShowModal(false);
 				setIsFocused(false);
 				inputRef.current?.blur();
-				onEnter(valueRef.current as AutoSuggestValue<any>);
+				onEnter(valueRef.current!);
 			}
 		},
 		itemRenderer,
@@ -369,13 +368,12 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 	const suggestionListId = useId();
 
 	// TODO: This'll re-paint as suggestions generally change often, move this to a Ref or something similar.
-	const reducer: Reducer<State, Actions> = useMemo(
+	const reducer = useMemo(
 		() => inputReducerFactory(suggestions),
 		[suggestions],
 	);
 
-	// @ts-expect-error Type '{ type: ActionTypes.INPUT_CHANGE; }' is not assignable to type 'AnyActionArg'
-	const [state, dispatch] = useReducer<State, Actions>(reducer, {
+	const [state, dispatch] = useReducer(reducer, {
 		highlightIndex: -1,
 		previewText: null,
 		isFlyoutOpen: false,
@@ -425,7 +423,6 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 					}
 					value={state.previewText ?? value?.text}
 					onReset={() => {
-						// @ts-expect-error is not assignable to parameter of type 'Actions'
 						dispatch({ type: ActionTypes.INPUT_CHANGE });
 						if (typeof onChange === 'function')
 							onChange({
@@ -434,7 +431,6 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 							});
 					}}
 					onChange={(event) => {
-						// @ts-expect-error is not assignable to parameter of type 'Actions'
 						dispatch({ type: ActionTypes.INPUT_CHANGE });
 						if (typeof onChange === 'function')
 							onChange({
@@ -443,7 +439,6 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 							});
 					}}
 					onFocus={wrapEvent(
-						// @ts-expect-error is not assignable to parameter of type 'Actions'
 						() => dispatch({ type: ActionTypes.INPUT_FOCUS }),
 						onFocus,
 					)}
@@ -460,7 +455,6 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 						)
 							onChange(suggestions[state.highlightIndex]);
 
-						// @ts-expect-error is not assignable to parameter of type 'Actions'
 						dispatch({ type: ActionTypes.INPUT_BLUR });
 					}, onBlur)}
 					onKeyDown={wrapEvent((event) => {
@@ -468,7 +462,6 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 							case 'ArrowUp':
 							case 'ArrowDown': {
 								event.preventDefault();
-								// @ts-expect-error is not assignable to parameter of type 'Actions'
 								dispatch({
 									type:
 										event.key === 'ArrowDown'
@@ -487,13 +480,11 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 										);
 								}
 
-								// @ts-expect-error is not assignable to parameter of type 'Actions'
 								dispatch({ type: ActionTypes.INPUT_ENTER });
 								return;
 							}
 
 							case 'Escape': {
-								// @ts-expect-error is not assignable to parameter of type 'Actions'
 								dispatch({ type: ActionTypes.INPUT_ESCAPE });
 							}
 						}
@@ -514,7 +505,6 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 							? styles.suggestionList.inlineOptionsNoScroll
 							: styles.suggestionList.inlineOptions
 					}
-					// @ts-expect-error is not assignable to parameter of type 'Actions'
 					dispatch={dispatch}
 					onChange={onChange}
 				/>
@@ -525,7 +515,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 					triggerRef={triggerRef}
 					alignment={EAlignment.BOTTOM_LEFT}
 					isOpen={shouldOpenFlyout}
-					triggerOffset={4}
+					triggerOffset={1}
 				>
 					<SuggestionsList
 						className={styles.suggestionList.blockOptions}
@@ -536,7 +526,6 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 						suggestions={suggestions}
 						highlightRef={highlightRef}
 						itemRenderer={itemRenderer}
-						// @ts-expect-error is not assignable to parameter of type 'Actions'
 						dispatch={dispatch}
 						onChange={onChange}
 					/>
@@ -577,7 +566,7 @@ const SuggestionsList = <PayloadType extends unknown>({
 }: SuggestionProps<PayloadType>) => (
 	<Box
 		ref={suggestionListRef}
-		is="ul"
+		as="ul"
 		backgroundColour="white"
 		className={[styles.suggestionList.defaults, className]}
 		id={suggestionListId}
@@ -592,7 +581,7 @@ const SuggestionsList = <PayloadType extends unknown>({
 				<Box
 					key={suggestion.text.concat(String(idx))}
 					ref={highlight ? highlightRef : undefined}
-					is="li"
+					as="li"
 					id={getSuggestionId(suggestionListId, idx)}
 					role="option"
 					aria-selected={highlight}
@@ -679,6 +668,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 
 		const suffix = useMemo(
 			() =>
+				// eslint-disable-next-line sonarjs/no-nested-conditional
 				isLoading ? null : field.value && isFocused ? (
 					<Box
 						is="button"
@@ -689,7 +679,8 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 					>
 						<Icon size="medium" icon={CloseIcon} />
 					</Box>
-				) : fieldIcon ? (
+				) : // eslint-disable-next-line sonarjs/no-nested-conditional
+				fieldIcon ? (
 					<Box
 						flexShrink={0}
 						paddingY={size === 'medium' ? '3' : '2'}
@@ -716,7 +707,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 				className={className}
 			>
 				<Box
-					is="input"
+					as="input"
 					flexGrow={1}
 					{...inputEventHandlers}
 					{...field}
@@ -763,9 +754,9 @@ const SuggestionListFlyout: FunctionComponent<
 		<Box
 			borderWidth="1"
 			borderColour="gray"
-			borderRadius="1"
+			borderRadius="3"
 			backgroundColour="white"
-			boxShadow="2"
+			boxShadow="4"
 			style={{
 				width:
 					triggerRef.current && !autoWidth

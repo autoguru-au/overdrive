@@ -45,13 +45,8 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 			'This tab pane isnt nested beneath <Tabs /> or <TabPanes />>',
 		);
 
+		const { appearance } = tabsContext;
 		const isActive = tabsContext.activeIndex === tabListContext;
-
-		const indicationStyles = useBoxStyles({
-			display: 'inlineBlock',
-			paddingX: '1',
-			borderRadius: 'pill',
-		});
 
 		const controlsId =
 			typeof incomingId === 'string'
@@ -65,7 +60,6 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 					display: 'inlineFlex',
 					justifyContent: 'center',
 					backgroundColour: 'transparent',
-					marginRight: '6',
 				}),
 				useTextStyles({
 					noWrap: true,
@@ -73,14 +67,14 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 					fontWeight: 'bold',
 					colour: 'light',
 				}),
-				styles.root.default,
-				{
-					[styles.root.active]: isActive,
-				},
+				styles.styledTab({
+					appearance,
+					active: isActive,
+				}),
 			),
 			role: 'tab',
 			'aria-selected': isActive ? 'true' : 'false',
-			'aria-controls': controlsId,
+			'data-controls': controlsId,
 			tabIndex: isActive ? undefined : -1,
 			onClick: () => tabsContext.onChange?.(tabListContext),
 			ref,
@@ -97,11 +91,10 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 						align="center"
 						display="block"
 						colour={isActive ? 'white' : 'dark'}
-						className={clsx(
-							styles.indication.default,
-							indicationStyles,
-							{ [styles.indication.active]: isActive },
-						)}
+						className={styles.indication({
+							appearance,
+							active: isActive,
+						})}
 					>
 						{indication}
 					</Text>
@@ -114,5 +107,7 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 			: createElement(Component, props, child);
 	},
 );
+
+Tab.displayName = 'Tab';
 
 export default Tab;

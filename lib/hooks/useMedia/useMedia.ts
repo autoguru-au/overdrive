@@ -35,6 +35,7 @@ export const useMedia = (
 			const removeHandlersFn = matchers.map((matcher, idx) => {
 				const handler = (e: MediaQueryListEvent) => {
 					if (!isMounted) return;
+					// eslint-disable-next-line sonarjs/no-nested-functions
 					setMatches((prevState) => {
 						const newState = [...prevState];
 						newState[idx] = e.matches;

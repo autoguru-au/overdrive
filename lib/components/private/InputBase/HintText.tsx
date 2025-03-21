@@ -1,6 +1,5 @@
 import clsx from 'clsx';
-import * as React from 'react';
-import { FunctionComponent, ReactNode } from 'react';
+import React, { type FunctionComponent, type ReactNode } from 'react';
 
 import { useBoxStyles } from '../../Box';
 import { Text } from '../../Text';
@@ -22,8 +21,7 @@ export const HintText: FunctionComponent<Props> = ({
 }) => {
 	const boxStyles = useBoxStyles({
 		is: 'p',
-		marginTop: '2',
-		marginLeft: '4',
+		marginTop: '1',
 	});
 
 	if (!hintText && !reserveHintSpace) return null;
