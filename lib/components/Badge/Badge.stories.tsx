@@ -16,6 +16,17 @@ const colours: ReadonlyArray<ComponentProps<typeof Badge>['colour']> = [
 export default {
 	title: 'Components/Badge',
 	component: Badge,
+	tags: ['updated'],
+} satisfies Meta<typeof Badge>;
+
+export const Standard: Story = {
+	decorators: [],
+	args: {
+		label: 'TITANIUM',
+	},
+};
+
+export const StandardAllColours: Story = {
 	decorators: [
 		(story) => (
 			<div
@@ -38,16 +49,6 @@ export default {
 			</div>
 		),
 	],
-	tags: ['updated'],
-} satisfies Meta<typeof Badge>;
-
-export const Standard: Story = {
-	args: {
-		label: 'TITANIUM',
-	},
-};
-
-export const StandardAllColours: Story = {
 	args: {
 		label: 'TITANIUM',
 	},
@@ -61,6 +62,7 @@ export const StandardAllColours: Story = {
 };
 
 export const LargeAllColours: Story = {
+	decorators: StandardAllColours.decorators,
 	args: {
 		label: 'TITANIUM',
 		size: 'large',
@@ -75,6 +77,7 @@ export const LargeAllColours: Story = {
 };
 
 export const SmallAllColours: Story = {
+	decorators: StandardAllColours.decorators,
 	args: {
 		label: 'TITANIUM',
 		size: 'small',
@@ -89,6 +92,7 @@ export const SmallAllColours: Story = {
 };
 
 export const Inverted: Story = {
+	decorators: StandardAllColours.decorators,
 	args: {
 		label: 'TITANIUM',
 		look: 'inverted',
@@ -96,6 +100,7 @@ export const Inverted: Story = {
 };
 
 export const InvertedAllColours: Story = {
+	decorators: StandardAllColours.decorators,
 	args: {
 		label: 'TITANIUM',
 		look: 'inverted',
