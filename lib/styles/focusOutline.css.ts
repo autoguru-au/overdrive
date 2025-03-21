@@ -4,14 +4,16 @@ import { themeContractVars as tokens } from '../themes/theme.css';
 
 const width = '2px';
 
-export const focusOutlineStyle = style({
+export const focusOutline = {
+	outline: `solid ${width} ${tokens.colours.foreground.link}`,
 	outlineOffset: width,
-	outlineStyle: 'none',
-	outlineWidth: width,
+};
+
+export const focusOutlineStyle = style({
 	selectors: {
 		'&:focus-visible, &[data-focus-visible], [data-focus-visible] &': {
-			outlineColor: tokens.colours.foreground.link,
-			outlineStyle: 'solid',
+			outline: `solid ${width} ${tokens.colours.foreground.link}`,
+			outlineOffset: width,
 		},
 	},
 });

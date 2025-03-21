@@ -1,6 +1,6 @@
 import { AccountEditIcon, CalendarIcon } from '@autoguru/icons';
-import { action } from '@storybook/addon-actions';
-import { ArgTypes, Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
 import isChromatic from 'chromatic/isChromatic';
 import React, { type ComponentProps } from 'react';
 
@@ -8,17 +8,6 @@ import { argTypesExampleIcons } from '../../stories/shared/argTypes';
 import { DateInput } from '../DateInput';
 
 import { NumberInput } from '.';
-
-const meta: Meta<typeof NumberInput> = {
-	title: 'Forms & Input Fields/Number Input',
-	component: NumberInput,
-	parameters: {
-		chromatic: {},
-	},
-};
-export default meta;
-
-type Story = StoryObj<typeof NumberInput>;
 
 const defaultValue = isChromatic()
 	? '42'
@@ -37,34 +26,6 @@ const attachOptions: Record<
 	ALL: 'ALL',
 };
 
-const argTypes: ArgTypes = {
-	prefixIcon: {
-		...argTypesExampleIcons,
-		defaultValue: null,
-		description: 'Input prefix Icon',
-	},
-	attach: {
-		defaultValue: 'NONE',
-		description: 'Input attach',
-		options: Object.values(attachOptions),
-		control: {
-			type: 'select',
-		},
-	},
-	suffixIcon: {
-		...argTypesExampleIcons,
-		defaultValue: null,
-		description: 'Input suffix Icon',
-	},
-	maxLength: {
-		defaultValue: null,
-		description: 'Set the max length of the number',
-		control: {
-			type: 'number',
-		},
-	},
-};
-
 const RenderTemplate = (args: ComponentProps<typeof NumberInput>) => {
 	const [value, setValue] = React.useState(args.value);
 	return (
@@ -79,127 +40,113 @@ const RenderTemplate = (args: ComponentProps<typeof NumberInput>) => {
 	);
 };
 
-const sharedProps: ComponentProps<typeof NumberInput> = {
-	disabled: false,
-	name: 'number',
-	value: '',
-	placeholder: defaultPlaceholder,
-	isValid: false,
-	isTouched: false,
-	isLoading: false,
-	isFocused: false,
-	reserveHintSpace: false,
-	hintText: '',
-	notch: true,
-	preventMouseWheel: true,
-	prefixIcon: undefined,
-	onChange: action('onChange'),
-	onFocus: action('onFocus'),
-	onBlur: action('onBlur'),
+const meta: Meta<typeof NumberInput> = {
+	title: 'Forms & Input Fields/Number Input',
+	component: NumberInput,
+	render: RenderTemplate,
+	args: {
+		value: defaultValue,
+		placeholder: defaultPlaceholder,
+		disabled: false,
+		name: 'number',
+		isValid: false,
+		isTouched: false,
+		isLoading: false,
+		isFocused: false,
+		reserveHintSpace: false,
+		hintText: '',
+		notch: true,
+		max: undefined,
+		maxLength: undefined,
+		min: undefined,
+		preventMouseWheel: true,
+		prefixIcon: undefined,
+		onChange: fn(),
+		onFocus: fn(),
+		onBlur: fn(),
+	},
+	argTypes: {
+		prefixIcon: {
+			...argTypesExampleIcons,
+			defaultValue: null,
+			description: 'Input prefix Icon',
+		},
+		attach: {
+			defaultValue: 'NONE',
+			description: 'Input attach',
+			options: Object.values(attachOptions),
+			control: {
+				type: 'select',
+			},
+		},
+		suffixIcon: {
+			...argTypesExampleIcons,
+			defaultValue: null,
+			description: 'Input suffix Icon',
+		},
+		maxLength: {
+			defaultValue: null,
+			description: 'Set the max length of the number',
+			control: {
+				type: 'number',
+			},
+		},
+	},
 };
 
-const standardProps: ComponentProps<typeof NumberInput> = sharedProps;
-const withAValueProps: ComponentProps<typeof NumberInput> = {
-	...sharedProps,
-	value: defaultValue,
-	placeholder: defaultPlaceholder,
-};
-const withHintTextProps: ComponentProps<typeof NumberInput> = {
-	...sharedProps,
-	hintText: 'Hint Text',
-	placeholder: defaultPlaceholder,
-};
-const withPrefixIconProps: ComponentProps<typeof NumberInput> = {
-	...sharedProps,
-	prefixIcon: CalendarIcon,
-};
-const withSuffixIconProps: ComponentProps<typeof NumberInput> = {
-	...sharedProps,
-	suffixIcon: AccountEditIcon,
-};
-const withBothIconsProps: ComponentProps<typeof NumberInput> = {
-	...sharedProps,
-	prefixIcon: CalendarIcon,
-	suffixIcon: AccountEditIcon,
-};
-const disabledProps: ComponentProps<typeof NumberInput> = {
-	...sharedProps,
-	value: defaultValue,
-	placeholder: defaultPlaceholder,
-	disabled: true,
-};
-const noNotchWithValueProps: ComponentProps<typeof NumberInput> = {
-	...sharedProps,
-	value: defaultValue,
-	placeholder: defaultPlaceholder,
-	notch: false,
-};
-const loadingProps: ComponentProps<typeof NumberInput> = {
-	...sharedProps,
-	isLoading: true,
-};
+export default meta;
+type Story = StoryObj<typeof NumberInput>;
 
+/**
+ * Additional examples of shared input field states and variants can be seen in
+ * [Text Input](/docs/forms-input-fields-text-input--docs)
+ */
 export const Standard: Story = {
-	args: standardProps,
-	argTypes,
-	render: RenderTemplate,
+	args: {
+		value: '',
+	},
 };
 
-export const WithAValue: Story = {
-	args: withAValueProps,
-	argTypes,
-	render: RenderTemplate,
+export const Valid: Story = {
+	args: {
+		isTouched: true,
+		isValid: true,
+	},
 };
 
-export const WithHintText: Story = {
-	args: withHintTextProps,
-	argTypes,
-	render: RenderTemplate,
+export const Invalid: Story = {
+	args: {
+		value: '545156543',
+		isTouched: true,
+		isValid: false,
+		hintText: 'Please enter a valid number',
+	},
 };
 
-export const NotchDisabledWithValue: Story = {
-	args: noNotchWithValueProps,
-	argTypes,
-	render: RenderTemplate,
+export const LargeSize: Story = {
+	args: {
+		size: 'large',
+	},
 };
 
-export const WithPrefixIcon: Story = {
-	args: withPrefixIconProps,
-	argTypes,
-	render: RenderTemplate,
+export const SmallSize: Story = {
+	args: {
+		size: 'small',
+	},
 };
 
-export const WithSuffixIcon: Story = {
-	args: withSuffixIconProps,
-	argTypes,
-	render: RenderTemplate,
-};
-
-export const WithBothIcons: Story = {
-	args: withBothIconsProps,
-	argTypes,
-	render: RenderTemplate,
-};
-
-export const Disabled: Story = {
-	args: disabledProps,
-	argTypes,
-	render: RenderTemplate,
+/**
+ * Both prefix and suffix icons
+ */
+export const WithIcons: Story = {
+	args: {
+		prefixIcon: CalendarIcon,
+		suffixIcon: AccountEditIcon,
+	},
 };
 
 export const Loading: Story = {
-	args: loadingProps,
-	argTypes,
-	render: RenderTemplate,
-};
-
-const withValueSmallProps: ComponentProps<typeof NumberInput> = {
-	...withAValueProps,
-	size: 'small',
-};
-
-export const WithValueSmall: Story = {
-	args: withValueSmallProps,
-	argTypes,
-	render: RenderTemplate,
+	args: {
+		isLoading: true,
+	},
 };

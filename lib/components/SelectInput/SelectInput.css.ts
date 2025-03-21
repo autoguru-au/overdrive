@@ -18,3 +18,7 @@ export const arrow = style({
 	top: '0',
 	right: '0',
 });
+
+export const arrowDisabled = style({
+	opacity: 0.2,
+});

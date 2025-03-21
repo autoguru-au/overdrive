@@ -1,0 +1,8 @@
+{
+	"mode": "pre",
+	"tag": "next",
+	"initialVersions": {
+		"@autoguru/overdrive": "4.39.1"
+	},
+	"changesets": ["warm-cases-peel"]
+}

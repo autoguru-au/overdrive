@@ -25,13 +25,13 @@ const todayStr: string = formatDate(
 	isChromatic() ? new Date(2019, 5, 1) : new Date(),
 );
 
-const meta = {
+const meta: Meta<typeof DateInput> = {
 	title: 'Forms & Input Fields/Date Input',
 	component: DateInput,
 	args: {
 		disabled: false,
 		name: 'date',
-		placeholder: 'Placeholder',
+		placeholder: 'What is your DOB?',
 		isValid: false,
 		isTouched: false,
 		isLoading: false,
@@ -54,7 +54,7 @@ const meta = {
 			defaultValue: 'NONE',
 			description: 'Input attach',
 			options: {
-				// @ts-expect-error doesn't have types
+				// @ts-expect-error NONE does not exist on types
 				NONE: 'NONE',
 				TOP: 'TOP',
 				RIGHT: 'RIGHT',
@@ -84,64 +84,53 @@ const meta = {
 			},
 		},
 	},
-} satisfies Meta<typeof DateInput>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/**
+ * Additional examples of shared input field states and variants can be seen in
+ * [Text Input](/docs/forms-input-fields-text-input--docs)
+ */
 export const Standard: Story = {};
-
-export const WithAValue: Story = {
-	args: {
-		value: todayStr,
-		placeholder: 'What is your DOB?',
-	},
-};
-
-export const NotchDisabled: Story = {
-	args: {
-		placeholder: 'What is your DOB?',
-		notch: false,
-	},
-};
-
-export const WithPrefixIcon: Story = {
-	args: {
-		prefixIcon: CalendarIcon,
-	},
-};
-
-export const Disabled: Story = {
-	args: {
-		value: todayStr,
-		placeholder: 'What is your DOB?',
-		disabled: true,
-	},
-};
-
-export const Valid: Story = {
-	args: {
-		value: todayStr,
-		placeholder: 'What is your DOB?',
-		isTouched: true,
-		isValid: true,
-	},
-};
 
 export const Invalid: Story = {
 	args: {
 		value: '2050-10-13',
-		placeholder: 'What is your DOB?',
 		isTouched: true,
 		isValid: false,
 		hintText: 'Invalid date of birth',
 	},
 };
 
-export const WithValueSmall: Story = {
+export const Disabled: Story = {
 	args: {
 		value: todayStr,
-		placeholder: 'What is your DOB?',
+		disabled: true,
+	},
+};
+
+export const LargeSize: Story = {
+	args: {
+		value: todayStr,
+		size: 'large',
+	},
+};
+
+export const SmallSize: Story = {
+	args: {
+		value: todayStr,
 		size: 'small',
+	},
+};
+
+/**
+ * Both prefix and suffix icons
+ */
+export const WithIcons: Story = {
+	args: {
+		prefixIcon: StarIcon,
+		suffixIcon: AccountEditIcon,
 	},
 };

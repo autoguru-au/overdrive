@@ -19,7 +19,7 @@ export const TextInput = withEnhancedInput<
 		...rest
 	}) => (
 		<Box
-			is="input"
+			as="input"
 			{...eventHandlers}
 			{...field}
 			{...rest}

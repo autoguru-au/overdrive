@@ -12,19 +12,20 @@ export default [
 		rules: {
 			'@typescript-eslint/no-empty-object-type': 'warn',
 			'@typescript-eslint/no-explicit-any': 'warn',
-			'@typescript-eslint/no-unsafe-function-type': 'warn',
-			'@typescript-eslint/no-unused-expressions': 'warn',
 			'@typescript-eslint/no-unused-vars': 'warn',
 			'react/display-name': 'warn',
-			'react-hooks/rules-of-hooks': 'warn', // :( :( :(
+			'react-hooks/rules-of-hooks': 'warn', // because of conditionally calling hooks :( :( :(
 			'sonarjs/cognitive-complexity': 'warn',
 			'sonarjs/no-commented-code': 'off',
-			'sonarjs/no-nested-conditional': 'warn',
-			'sonarjs/no-nested-functions': 'warn',
-			'sonarjs/prefer-default-last': 'warn',
 			'sonarjs/pseudo-random': 'off',
 			'sonarjs/void-use': 'warn',
 			'unicorn/prefer-global-this': 'warn',
+		},
+	},
+	{
+		files: ['**/*.stories.{jsx,tsx}'],
+		rules: {
+			'react-hooks/rules-of-hooks': 'off',
 		},
 	},
 ];
