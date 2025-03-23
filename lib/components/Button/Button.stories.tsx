@@ -45,10 +45,9 @@ export const Standard: Story = {
 };
 
 /**
- * The tiny button has mainly been placed in a specific use-case where space is contrained,
- * and it is specific to being `rounded`, with an icon.
+ * Example of a the extra small rounded button with a back arrow icon
  */
-export const Tiny: Story = {
+export const ExtraSmall: Story = {
 	args: {
 		children: (
 			<>
@@ -56,7 +55,7 @@ export const Tiny: Story = {
 				Change car
 			</>
 		),
-		size: 'tiny',
+		size: 'xsmall',
 		rounded: true,
 	},
 };
@@ -199,6 +198,7 @@ export const PrimarySet: Story = {
 };
 
 export const SecondarySet: Story = {
+	decorators: PrimarySet.decorators,
 	args: {
 		variant: 'secondary',
 	},
@@ -206,6 +206,7 @@ export const SecondarySet: Story = {
 };
 
 export const InformationSet: Story = {
+	decorators: PrimarySet.decorators,
 	args: {
 		variant: 'information',
 	},
@@ -213,6 +214,7 @@ export const InformationSet: Story = {
 };
 
 export const WarningSet: Story = {
+	decorators: PrimarySet.decorators,
 	args: {
 		variant: 'warning',
 	},
@@ -220,6 +222,7 @@ export const WarningSet: Story = {
 };
 
 export const SuccessSet: Story = {
+	decorators: PrimarySet.decorators,
 	args: {
 		variant: 'success',
 	},

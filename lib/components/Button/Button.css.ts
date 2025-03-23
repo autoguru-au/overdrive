@@ -59,7 +59,7 @@ export const button = recipe({
 			medium: {
 				height: vars.space['8'],
 			},
-			tiny: {
+			xsmall: {
 				padding: `2px ${vars.space['2']}`,
 			},
 		},
@@ -266,4 +266,24 @@ export const button = recipe({
 	},
 });
 
-export type StyledButtonProps = NonNullable<RecipeVariants<typeof button>>;
+type ButtonRecipeProps = NonNullable<Required<RecipeVariants<typeof button>>>;
+
+export type ButtonSize = ButtonRecipeProps['size'];
+export type ButtonShape = ButtonRecipeProps['shape'];
+export type ButtonIntent = ButtonRecipeProps['intent'];
+export type ButtonMinimal = ButtonRecipeProps['minimal'];
+
+export interface StyledButtonProps {
+	/**
+	 * Button sizing
+	 */
+	size?: ButtonSize;
+	/**
+	 * Button intentional colour scheme
+	 */
+	variant?: ButtonIntent;
+	/**
+	 * Present a borderless minimal appearance
+	 */
+	minimal?: ButtonMinimal;
+}

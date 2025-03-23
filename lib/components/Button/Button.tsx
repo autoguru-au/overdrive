@@ -27,11 +27,10 @@ import { ProgressSpinner } from '../ProgressSpinner';
 import { useTextStyles } from '../Text';
 
 import * as styles from './Button.css';
-import type { StyledButtonProps } from './Button.css';
+import type { ButtonSize, StyledButtonProps } from './Button.css';
 
 type ButtonPrimitive = ComponentPropsWithRef<'button'>;
 type AllowedChildren = string | IconType;
-type ButtonSize = 'tiny' | 'small' | 'medium';
 
 const DOUBLE_CLICK_DETECTION_PERIOD = 700;
 
@@ -43,16 +42,20 @@ type TextContent = keyof typeof defaultEnglish;
 
 export interface ButtonProps
 	extends Pick<ButtonPrimitive, 'id' | 'onClick' | 'type' | 'className'>,
-		Pick<AriaAttributes, 'aria-label'> {
+		Pick<AriaAttributes, 'aria-label'>,
+		StyledButtonProps {
 	children: AllowedChildren | AllowedChildren[];
+	/**
+	 * Disabling the button will prevent it from receiving keyboard focus or click events
+	 */
 	disabled?: boolean;
 	is?: ElementType | ReactElement;
 	isLoading?: boolean;
 	isFullWidth?: boolean;
-	minimal?: boolean;
+	/**
+	 * Pill shaped button appearance
+	 */
 	rounded?: boolean;
-	size?: ButtonSize;
-	variant?: Required<StyledButtonProps['intent']>;
 	withDoubleClicks?: boolean;
 	/**
 	 * Language content override
@@ -80,13 +83,13 @@ const getPadding: (
 };
 
 const fontSize: Record<ButtonSize, TextSizeScale> = {
-	tiny: '2',
+	xsmall: '2',
 	small: '3',
 	medium: '4',
 };
 
 const fontWeight: Record<ButtonSize, TextFontWeight> = {
-	tiny: 'normal',
+	xsmall: 'normal',
 	small: 'semiBold',
 	medium: 'semiBold',
 };
