@@ -13,6 +13,7 @@ export type SpaceScale =
 	| '9'
 	| 'none';
 export type TextSizeScale = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';
+export type TextFontWeight = 'normal' | 'semiBold' | 'bold';
 export type BorderWidthScale = '1' | '2' | '3' | 'none';
 export type IconSizeScale = 'small' | 'medium' | 'large';
 
@@ -194,7 +195,7 @@ export interface Tokens extends VanillaTokens {
 			| BaseColours,
 			string
 		>;
-		fontWeight: Record<'normal' | 'semiBold' | 'bold', string>;
+		fontWeight: Record<TextFontWeight, string>;
 	};
 	animation: {
 		easing: {

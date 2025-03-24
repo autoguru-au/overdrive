@@ -1,4 +1,4 @@
-import { AccountBoxIcon } from '@autoguru/icons';
+import { AccountBoxIcon, ArrowLeftIcon } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import React, { type ComponentProps } from 'react';
@@ -14,19 +14,6 @@ import { Button } from '.';
 const meta: Meta<typeof Button> = {
 	title: 'Primatives/Buttons',
 	component: Button,
-	decorators: [
-		(Story) => (
-			<div
-				style={{
-					display: 'grid',
-					gridGap: '12px',
-					gridAutoFlow: 'row dense',
-				}}
-			>
-				<Story />
-			</div>
-		),
-	],
 	args: {
 		variant: 'secondary',
 		size: 'medium',
@@ -52,15 +39,24 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const Standard: Story = {
-	decorators: [
-		(Story) => (
-			<div>
-				<Story />
-			</div>
-		),
-	],
 	args: {
 		children: 'Login',
+	},
+};
+
+/**
+ * Example of a the extra small rounded button with a back arrow icon
+ */
+export const ExtraSmall: Story = {
+	args: {
+		children: (
+			<>
+				<Icon icon={ArrowLeftIcon} />
+				Change car
+			</>
+		),
+		size: 'xsmall',
+		rounded: true,
 	},
 };
 
@@ -182,6 +178,19 @@ const TemplateMulti = ({
 );
 
 export const PrimarySet: Story = {
+	decorators: [
+		(Story) => (
+			<div
+				style={{
+					display: 'grid',
+					gridGap: '12px',
+					gridAutoFlow: 'row dense',
+				}}
+			>
+				<Story />
+			</div>
+		),
+	],
 	args: {
 		variant: 'primary',
 	},
@@ -189,6 +198,7 @@ export const PrimarySet: Story = {
 };
 
 export const SecondarySet: Story = {
+	decorators: PrimarySet.decorators,
 	args: {
 		variant: 'secondary',
 	},
@@ -196,6 +206,7 @@ export const SecondarySet: Story = {
 };
 
 export const InformationSet: Story = {
+	decorators: PrimarySet.decorators,
 	args: {
 		variant: 'information',
 	},
@@ -203,6 +214,7 @@ export const InformationSet: Story = {
 };
 
 export const WarningSet: Story = {
+	decorators: PrimarySet.decorators,
 	args: {
 		variant: 'warning',
 	},
@@ -210,6 +222,7 @@ export const WarningSet: Story = {
 };
 
 export const SuccessSet: Story = {
+	decorators: PrimarySet.decorators,
 	args: {
 		variant: 'success',
 	},
