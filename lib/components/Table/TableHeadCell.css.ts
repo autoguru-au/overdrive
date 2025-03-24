@@ -5,7 +5,6 @@ import { themeContractVars as vars } from '../../themes/theme.css';
 export const sorterButton = style({ userSelect: 'text' });
 
 export const text = style({
-	color: vars.typography.colour.muted,
 	selectors: {
 		[`${sorterButton}:hover &`]: {
 			color: vars.typography.colour.dark,

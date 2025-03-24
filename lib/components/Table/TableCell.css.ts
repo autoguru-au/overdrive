@@ -4,6 +4,7 @@ import { themeContractVars as vars } from '../../themes/theme.css';
 
 export const root = style({
 	position: 'relative',
+	borderBottomColor: vars.colours.gamut.black100,
 
 	/*
 	We do this hack, as our row's have no distinct element. Once subgrid is
@@ -26,7 +27,7 @@ export const root = style({
 	selectors: {
 		'&:hover:before': {
 			transitionTimingFunction: vars.animation.easing.decelerate,
-			backgroundColor: vars.border.colours.light,
+			backgroundColor: vars.colours.gamut.gray100,
 		},
 	},
 });

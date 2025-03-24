@@ -14,19 +14,19 @@ exports[`<Table /> > when implemented > should match snapshot 1`] = `
       role="row"
     >
       <div
-        class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfy useBoxStyles_border_style__3xgq1l9k useBoxStyles_border_colour_bottom_light__3xgq1la9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_backgroundColours_gray100__3xgq1ldq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg"
+        class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfy useBoxStyles_border_style__3xgq1l9k useBoxStyles_border_colour_bottom_dark__3xgq1lab useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg"
         role="columnheader"
         scope="col"
       >
         <span
-          class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfp useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_2__1xnpmd72 TableHeadCell_text__1a20v5n1"
+          class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfp useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_3__1xnpmd73 TableHeadCell_text__1a20v5n1"
         >
           col 1
         </span>
       </div>
       <div
         aria-sort="ascending"
-        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_border_style__3xgq1l9k useBoxStyles_border_colour_bottom_light__3xgq1la9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_backgroundColours_gray100__3xgq1ldq useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg"
+        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_border_style__3xgq1l9k useBoxStyles_border_colour_bottom_dark__3xgq1lab useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg"
         role="columnheader"
         scope="col"
       >
@@ -41,7 +41,7 @@ exports[`<Table /> > when implemented > should match snapshot 1`] = `
               class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_flexWrap_nowrap__3xgq1lhf"
             >
               <span
-                class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfp useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_2__1xnpmd72 TableHeadCell_text__1a20v5n1"
+                class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfp useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_3__1xnpmd73 TableHeadCell_text__1a20v5n1"
               >
                 col 2
                 <span
@@ -87,7 +87,7 @@ exports[`<Table /> > when implemented > should match snapshot 1`] = `
       role="row"
     >
       <div
-        class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfy useBoxStyles_border_style__3xgq1l9k useBoxStyles_border_colour_bottom_light__3xgq1la9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg TableCell_root__10xbrtd0"
+        class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfy useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg TableCell_root__10xbrtd0"
         role="gridcell"
         scope="row"
       >
@@ -98,7 +98,7 @@ exports[`<Table /> > when implemented > should match snapshot 1`] = `
         </span>
       </div>
       <div
-        class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfy useBoxStyles_border_style__3xgq1l9k useBoxStyles_border_colour_bottom_light__3xgq1la9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg TableCell_root__10xbrtd0"
+        class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfy useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg TableCell_root__10xbrtd0"
         role="gridcell"
         scope="row"
       >
@@ -114,7 +114,7 @@ exports[`<Table /> > when implemented > should match snapshot 1`] = `
       role="row"
     >
       <div
-        class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfy useBoxStyles_border_style__3xgq1l9k useBoxStyles_border_colour_bottom_light__3xgq1la9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg TableCell_root__10xbrtd0"
+        class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfy useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg TableCell_root__10xbrtd0"
         role="gridcell"
         scope="row"
       >
@@ -125,7 +125,7 @@ exports[`<Table /> > when implemented > should match snapshot 1`] = `
         </span>
       </div>
       <div
-        class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfy useBoxStyles_border_style__3xgq1l9k useBoxStyles_border_colour_bottom_light__3xgq1la9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg TableCell_root__10xbrtd0"
+        class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_flex__3xgq1lfy useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg TableCell_root__10xbrtd0"
         role="gridcell"
         scope="row"
       >
