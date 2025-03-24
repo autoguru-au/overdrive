@@ -10,7 +10,6 @@ const smallHeight = '36px';
 const selectorFocusHoverActive =
 	'&:focus-visible, &:not(:disabled):hover, &:not(:disabled):active';
 
-// Body styles for button content layout
 export const body = style({
 	display: 'grid',
 	gridAutoFlow: 'column dense',
@@ -59,6 +58,9 @@ export const button = recipe({
 			},
 			medium: {
 				height: vars.space['8'],
+			},
+			xsmall: {
+				padding: `2px ${vars.space['2']}`,
 			},
 		},
 		// Shape variants
@@ -264,4 +266,24 @@ export const button = recipe({
 	},
 });
 
-export type StyledButtonProps = NonNullable<RecipeVariants<typeof button>>;
+type ButtonRecipeProps = NonNullable<Required<RecipeVariants<typeof button>>>;
+
+export type ButtonSize = ButtonRecipeProps['size'];
+export type ButtonShape = ButtonRecipeProps['shape'];
+export type ButtonIntent = ButtonRecipeProps['intent'];
+export type ButtonMinimal = ButtonRecipeProps['minimal'];
+
+export interface StyledButtonProps {
+	/**
+	 * Button sizing
+	 */
+	size?: ButtonSize;
+	/**
+	 * Button intentional colour scheme
+	 */
+	variant?: ButtonIntent;
+	/**
+	 * Present a borderless minimal appearance
+	 */
+	minimal?: ButtonMinimal;
+}

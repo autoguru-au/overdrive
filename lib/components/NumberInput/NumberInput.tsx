@@ -1,4 +1,4 @@
-import React, { type FocusEventHandler, type FormEventHandler } from 'react';
+import React, { type RefObject } from 'react';
 
 import { Box } from '../Box';
 import { withEnhancedInput } from '../private/InputBase';
@@ -12,14 +12,13 @@ const type = isEdge ? 'text' : 'number';
 
 const MAX_NUMBER_INPUT_VALUE = 2_147_483_647;
 
-interface Props
-	extends Partial<Pick<HTMLInputElement, 'min' | 'max' | 'step'>>,
-		Pick<HTMLInputElement, 'value'> {
+type InputAttributes = Pick<
+	React.InputHTMLAttributes<HTMLInputElement>,
+	'min' | 'max' | 'onChange' | 'onFocus' | 'onBlur' | 'step' | 'value'
+>;
+
+interface Props extends InputAttributes {
 	preventMouseWheel?: boolean;
-	onChange?: FormEventHandler<HTMLInputElement>;
-	onFocus?: FocusEventHandler<HTMLInputElement>;
-	onBlur?: FocusEventHandler<HTMLInputElement>;
-	max?: string;
 }
 
 export const NumberInput = withEnhancedInput<Props>(
@@ -40,7 +39,7 @@ export const NumberInput = withEnhancedInput<Props>(
 	}) => {
 		const { value, inputRef, onFocus, onBlur, onChange } =
 			useNumberInputBehaviours({
-				ref,
+				ref: ref as RefObject<HTMLInputElement>,
 				preventMouseWheel,
 				onFocus: eventHandlers.onFocus,
 				onBlur: eventHandlers.onBlur,

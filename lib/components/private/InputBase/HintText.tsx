@@ -5,11 +5,13 @@ import { useBoxStyles } from '../../Box';
 import { Text } from '../../Text';
 
 import * as styles from './HintText.css';
+import type { InputSize } from './withEnhancedInput.css';
 
 export interface Props {
 	hintText: ReactNode;
 	reserveHintSpace?: boolean;
 	disabled?: boolean;
+	size?: InputSize;
 	className?: string;
 }
 
@@ -17,6 +19,7 @@ export const HintText: FunctionComponent<Props> = ({
 	reserveHintSpace,
 	disabled,
 	hintText,
+	size = 'medium',
 	className = '',
 }) => {
 	const boxStyles = useBoxStyles({
@@ -31,7 +34,7 @@ export const HintText: FunctionComponent<Props> = ({
 	return (
 		<Text
 			is="p"
-			size="2"
+			size={size === 'large' ? '4' : '2'}
 			colour="unset"
 			className={clsx(boxStyles, styles.hintText, className)}
 		>

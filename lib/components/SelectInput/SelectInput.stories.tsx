@@ -118,7 +118,14 @@ export const Disabled: Story = {
 	},
 };
 
-export const SizeSmall: Story = {
+export const LargeSize: Story = {
+	args: {
+		prefixIcon: undefined,
+		size: 'large',
+	},
+};
+
+export const SmallSize: Story = {
 	args: {
 		size: 'small',
 	},

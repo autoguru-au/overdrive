@@ -1,5 +1,6 @@
 import { ChevronDownIcon } from '@autoguru/icons';
-import * as React from 'react';
+import clsx from 'clsx';
+import React from 'react';
 
 import { Box } from '../Box';
 import { Icon } from '../Icon';
@@ -33,7 +34,7 @@ export const SelectInput = withEnhancedInput<
 			position="relative"
 		>
 			<Box
-				is="select"
+				as="select"
 				flexGrow={1}
 				{...eventHandlers}
 				{...field}
@@ -43,7 +44,10 @@ export const SelectInput = withEnhancedInput<
 			/>
 			{isLoading ? null : (
 				<Box
-					className={styles.arrow}
+					className={clsx(
+						styles.arrow,
+						field.disabled && styles.arrowDisabled,
+					)}
 					display="flex"
 					alignItems="center"
 					height="full"
@@ -52,7 +56,10 @@ export const SelectInput = withEnhancedInput<
 					pointerEvents="none"
 					position="absolute"
 				>
-					<Icon size="medium" icon={fieldIcon} />
+					<Icon
+						size={size === 'large' ? size : 'medium'}
+						icon={fieldIcon}
+					/>
 				</Box>
 			)}
 		</Box>

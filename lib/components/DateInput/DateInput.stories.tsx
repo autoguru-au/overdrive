@@ -111,6 +111,13 @@ export const Disabled: Story = {
 	},
 };
 
+export const LargeSize: Story = {
+	args: {
+		value: todayStr,
+		size: 'large',
+	},
+};
+
 export const SmallSize: Story = {
 	args: {
 		value: todayStr,

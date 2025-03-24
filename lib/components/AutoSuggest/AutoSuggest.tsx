@@ -2,16 +2,15 @@
 import { ChevronDownIcon, CloseIcon, IconType } from '@autoguru/icons';
 import { wrapEvent } from '@autoguru/utilities';
 import clsx from 'clsx';
-import * as React from 'react';
-import {
-	ComponentPropsWithoutRef,
-	Dispatch,
+import React, {
+	type ComponentPropsWithoutRef,
+	type Dispatch,
 	forwardRef,
-	FunctionComponent,
-	MutableRefObject,
-	ReactElement,
-	Reducer,
-	Ref,
+	type FunctionComponent,
+	type ReactElement,
+	type Reducer,
+	type Ref,
+	type RefObject,
 	useCallback,
 	useEffect,
 	useImperativeHandle,
@@ -282,7 +281,7 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 		/>
 	) : (
 		<AutoSuggestInput
-			ref={inputRef as MutableRefObject<HTMLInputElement>}
+			ref={inputRef as RefObject<HTMLInputElement>}
 			{...props}
 			isFocused={isFocused}
 			inlineOptions={inlineOptions}
@@ -367,7 +366,6 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 
 	const suggestionListId = useId();
 
-	// TODO: This'll re-paint as suggestions generally change often, move this to a Ref or something similar.
 	const reducer = useMemo(
 		() => inputReducerFactory(suggestions),
 		[suggestions],
@@ -561,7 +559,6 @@ const SuggestionsList = <PayloadType extends unknown>({
 	itemRenderer,
 	onChange,
 	dispatch,
-	// TODO: For now the ref is passed as a prop, as opposed to using forwardRef
 	suggestionListRef,
 }: SuggestionProps<PayloadType>) => (
 	<Box
@@ -677,7 +674,10 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 						flexShrink={0}
 						onMouseDown={onRequestReset}
 					>
-						<Icon size="medium" icon={CloseIcon} />
+						<Icon
+							size={size === 'large' ? size : 'medium'}
+							icon={CloseIcon}
+						/>
 					</Box>
 				) : // eslint-disable-next-line sonarjs/no-nested-conditional
 				fieldIcon ? (
@@ -687,7 +687,10 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 						paddingRight={size === 'medium' ? '3' : '2'}
 						onClick={focusHandler}
 					>
-						<Icon size="medium" icon={fieldIcon} />
+						<Icon
+							size={size === 'large' ? size : 'medium'}
+							icon={fieldIcon}
+						/>
 					</Box>
 				) : null,
 			[field.value, isLoading, fieldIcon, isFocused, onRequestReset],
