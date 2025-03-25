@@ -5,14 +5,14 @@ exports[`<Stack /> > should correctly handle fragment nodes 1`] = `
   class="reset_block__1oah0223"
 >
   <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh3 Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
+    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhf Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
   >
     <p>
       line 0
     </p>
   </div>
   <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh3 Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
+    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhf Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
   >
     <p>
       Line 1
@@ -25,7 +25,7 @@ exports[`<Stack /> > should correctly handle fragment nodes 1`] = `
     </p>
   </div>
   <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh3 Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
+    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhf Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
   >
     <p>
       line 4

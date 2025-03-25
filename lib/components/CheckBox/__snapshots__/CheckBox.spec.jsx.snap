@@ -2,28 +2,28 @@
 
 exports[`<CheckBox /> > should match the snapshot for a checked check 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg CheckableBase_root__y94qv0 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226"
+  class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhs CheckableBase_root__y94qv0 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226"
 >
   <input
     checked=""
-    class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl useBoxStyles_position_absolute__3xgq1lfm reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 CheckableBase_nativeInput__y94qv2"
+    class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 CheckableBase_nativeInput__y94qv2"
     id=":r3:"
     name=""
     type="checkbox"
     value="1"
   />
   <div
-    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhk CheckableBase_checkable__y94qv3 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226"
+    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw CheckableBase_checkable__y94qv3 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226"
   >
     <div
       class="reset_block__1oah0223 CheckBox_checkbox_default__1ifzuoz0 CheckableBase_checkableIndicator__y94qv4 CheckBox_checkbox_selected__1ifzuoz1"
     >
       <span
-        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 CheckBox_icon__1ifzuoz2"
+        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire4 CheckBox_icon__1ifzuoz2"
       >
         <svg
           aria-hidden="true"
-          class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
+          class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
           fill="currentColor"
           focusable="false"
           viewBox="0 0 24 24"
@@ -37,11 +37,11 @@ exports[`<CheckBox /> > should match the snapshot for a checked check 1`] = `
     </div>
   </div>
   <label
-    class="reset_inlineText__1oah0222 useBoxStyles_width_full__3xgq1lfj reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_4__1xnpmd74"
+    class="reset_inlineText__1oah0222 useBoxStyles_width_full__3xgq1lfv reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_4__1xnpmd74"
     for=":r3:"
   >
     <span
-      class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfp useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+      class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
     >
       check label 1
     </span>
@@ -51,10 +51,10 @@ exports[`<CheckBox /> > should match the snapshot for a checked check 1`] = `
 
 exports[`<CheckBox /> > should match the snapshot for a disable checkbox 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg CheckableBase_root__y94qv0 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 CheckableBase_disabled__y94qv5"
+  class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhs CheckableBase_root__y94qv0 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 CheckableBase_disabled__y94qv5"
 >
   <input
-    class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl useBoxStyles_position_absolute__3xgq1lfm useBoxStyles_pointerEvents_none__3xgq1li0 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 CheckableBase_nativeInput__y94qv2"
+    class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 CheckableBase_nativeInput__y94qv2"
     disabled=""
     id=":r4:"
     name=""
@@ -62,17 +62,17 @@ exports[`<CheckBox /> > should match the snapshot for a disable checkbox 1`] = `
     value="1"
   />
   <div
-    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhk CheckableBase_checkable__y94qv3 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226"
+    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw CheckableBase_checkable__y94qv3 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226"
   >
     <div
       class="reset_block__1oah0223 CheckBox_checkbox_default__1ifzuoz0 CheckableBase_checkableIndicator__y94qv4"
     >
       <span
-        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 CheckBox_icon__1ifzuoz2"
+        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire4 CheckBox_icon__1ifzuoz2"
       >
         <svg
           aria-hidden="true"
-          class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
+          class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
           fill="currentColor"
           focusable="false"
           viewBox="0 0 24 24"
@@ -86,11 +86,11 @@ exports[`<CheckBox /> > should match the snapshot for a disable checkbox 1`] = `
     </div>
   </div>
   <label
-    class="reset_inlineText__1oah0222 useBoxStyles_width_full__3xgq1lfj useBoxStyles_pointerEvents_none__3xgq1li0 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_4__1xnpmd74 CheckableBase_label_disabled__y94qv1"
+    class="reset_inlineText__1oah0222 useBoxStyles_width_full__3xgq1lfv useBoxStyles_pointerEvents_none__3xgq1lic reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_4__1xnpmd74 CheckableBase_label_disabled__y94qv1"
     for=":r4:"
   >
     <span
-      class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfp useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+      class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
     >
       check label 1
     </span>
@@ -100,27 +100,27 @@ exports[`<CheckBox /> > should match the snapshot for a disable checkbox 1`] = `
 
 exports[`<CheckBox /> > should match the snapshot for a single check 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg CheckableBase_root__y94qv0 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226"
+  class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhs CheckableBase_root__y94qv0 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226"
 >
   <input
-    class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl useBoxStyles_position_absolute__3xgq1lfm reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 CheckableBase_nativeInput__y94qv2"
+    class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 CheckableBase_nativeInput__y94qv2"
     id=":r2:"
     name=""
     type="checkbox"
     value="1"
   />
   <div
-    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhk CheckableBase_checkable__y94qv3 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226"
+    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw CheckableBase_checkable__y94qv3 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226"
   >
     <div
       class="reset_block__1oah0223 CheckBox_checkbox_default__1ifzuoz0 CheckableBase_checkableIndicator__y94qv4"
     >
       <span
-        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 CheckBox_icon__1ifzuoz2"
+        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire4 CheckBox_icon__1ifzuoz2"
       >
         <svg
           aria-hidden="true"
-          class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
+          class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
           fill="currentColor"
           focusable="false"
           viewBox="0 0 24 24"
@@ -134,11 +134,11 @@ exports[`<CheckBox /> > should match the snapshot for a single check 1`] = `
     </div>
   </div>
   <label
-    class="reset_inlineText__1oah0222 useBoxStyles_width_full__3xgq1lfj reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_4__1xnpmd74"
+    class="reset_inlineText__1oah0222 useBoxStyles_width_full__3xgq1lfv reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_4__1xnpmd74"
     for=":r2:"
   >
     <span
-      class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfp useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+      class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
     >
       check label 1
     </span>
@@ -148,26 +148,26 @@ exports[`<CheckBox /> > should match the snapshot for a single check 1`] = `
 
 exports[`<CheckBox /> > should match the snapshot for a single check with no value or label 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg CheckableBase_root__y94qv0 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226"
+  class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhs CheckableBase_root__y94qv0 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226"
 >
   <input
-    class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl useBoxStyles_position_absolute__3xgq1lfm reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 CheckableBase_nativeInput__y94qv2"
+    class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 CheckableBase_nativeInput__y94qv2"
     id=":r1:"
     name=""
     type="checkbox"
   />
   <div
-    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhk CheckableBase_checkable__y94qv3 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226"
+    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw CheckableBase_checkable__y94qv3 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226"
   >
     <div
       class="reset_block__1oah0223 CheckBox_checkbox_default__1ifzuoz0 CheckableBase_checkableIndicator__y94qv4"
     >
       <span
-        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 CheckBox_icon__1ifzuoz2"
+        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire4 CheckBox_icon__1ifzuoz2"
       >
         <svg
           aria-hidden="true"
-          class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
+          class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
           fill="currentColor"
           focusable="false"
           viewBox="0 0 24 24"
@@ -181,11 +181,11 @@ exports[`<CheckBox /> > should match the snapshot for a single check with no val
     </div>
   </div>
   <label
-    class="reset_inlineText__1oah0222 useBoxStyles_width_full__3xgq1lfj reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_4__1xnpmd74"
+    class="reset_inlineText__1oah0222 useBoxStyles_width_full__3xgq1lfv reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_4__1xnpmd74"
     for=":r1:"
   >
     <span
-      class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lfp useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+      class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
     />
   </label>
 </div>
@@ -193,27 +193,27 @@ exports[`<CheckBox /> > should match the snapshot for a single check with no val
 
 exports[`<CheckBox /> > when with component child > should match the snapshot 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgv useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhg CheckableBase_root__y94qv0 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226"
+  class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhs CheckableBase_root__y94qv0 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226"
 >
   <input
-    class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl useBoxStyles_position_absolute__3xgq1lfm reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 CheckableBase_nativeInput__y94qv2"
+    class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 CheckableBase_nativeInput__y94qv2"
     id=":ra:"
     name=""
     type="checkbox"
     value="1"
   />
   <div
-    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lfy useBoxStyles_position_relative__3xgq1lfo useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgn useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhk CheckableBase_checkable__y94qv3 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226"
+    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw CheckableBase_checkable__y94qv3 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226"
   >
     <div
       class="reset_block__1oah0223 CheckBox_checkbox_default__1ifzuoz0 CheckableBase_checkableIndicator__y94qv4"
     >
       <span
-        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lfx Icon_makeResponsiveStyle_key_bp__1gy3ire4 CheckBox_icon__1ifzuoz2"
+        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire4 CheckBox_icon__1ifzuoz2"
       >
         <svg
           aria-hidden="true"
-          class="useBoxStyles_display_block__3xgq1lfx useBoxStyles_width_full__3xgq1lfj useBoxStyles_height_full__3xgq1lfl"
+          class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
           fill="currentColor"
           focusable="false"
           viewBox="0 0 24 24"
@@ -227,7 +227,7 @@ exports[`<CheckBox /> > when with component child > should match the snapshot 1`
     </div>
   </div>
   <label
-    class="reset_inlineText__1oah0222 useBoxStyles_width_full__3xgq1lfj reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_4__1xnpmd74"
+    class="reset_inlineText__1oah0222 useBoxStyles_width_full__3xgq1lfv reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_4__1xnpmd74"
     for=":ra:"
   >
     <h1
