@@ -96,7 +96,7 @@ export const StandardModal: FunctionComponent<Props> = ({
 				onClick={backdropHandler}
 			>
 				<Box
-					is="article"
+					as="article"
 					overflow="hidden"
 					role="dialog"
 					aria-modal="true"
@@ -114,7 +114,7 @@ export const StandardModal: FunctionComponent<Props> = ({
 					])}
 				>
 					<Box
-						is="header"
+						as="header"
 						flexShrink={0}
 						position="relative"
 						display="flex"
@@ -146,7 +146,7 @@ export const StandardModal: FunctionComponent<Props> = ({
 						</Button>
 					</Box>
 					<Box
-						is="main"
+						as="main"
 						display="flex"
 						flexDirection="column"
 						flexGrow={1}

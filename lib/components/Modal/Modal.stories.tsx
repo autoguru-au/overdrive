@@ -21,7 +21,7 @@ type Story = StoryObj<typeof Modal>;
 
 const ModalContent = () => (
 	<>
-		<Box backgroundColour="gray200" padding="5" borderRadius="2">
+		<Box backgroundColour="gray200" padding="5" borderRadius="2xl">
 			<p>Hello, I am a modal body!</p>
 		</Box>
 		<Text>
