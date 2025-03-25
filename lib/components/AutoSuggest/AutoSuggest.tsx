@@ -396,7 +396,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 		>
 			<Box
 				backgroundColour="white"
-				borderRadius="1"
+				borderRadius="sm"
 				className={styles.input}
 			>
 				<AutoSuggestInputPrimitive
@@ -757,7 +757,7 @@ const SuggestionListFlyout: FunctionComponent<
 		<Box
 			borderWidth="1"
 			borderColour="gray"
-			borderRadius="3"
+			borderRadius="md"
 			backgroundColour="white"
 			boxShadow="4"
 			style={{

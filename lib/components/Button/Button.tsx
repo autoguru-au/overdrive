@@ -72,7 +72,7 @@ const getSpinnerColour: (
 const getBorderRadius: (
 	rounded: boolean,
 ) => ComponentProps<typeof Box>['borderRadius'] = (rounded) =>
-	rounded ? 'pill' : '2';
+	rounded ? 'pill' : 'md';
 
 const getPadding: (
 	size: ButtonProps['size'],

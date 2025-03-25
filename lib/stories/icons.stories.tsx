@@ -33,7 +33,7 @@ const IconGrid = () => {
 								borderColor="gray"
 								borderStyle="solid"
 								borderWidth="2"
-								borderRadius="2"
+								borderRadius="md"
 								color={{ initial: 'gray700', hover: 'white' }}
 								display="flex"
 								flexDirection="column"

@@ -169,9 +169,16 @@ export interface Tokens extends VanillaTokens {
 		radius: {
 			none: string;
 			min: string;
+			sm: string;
+			md: string;
+			lg: string;
+			xl: string;
+			'2xl': string;
+			/**
+			 * in transition
+			 * @deprecated use `sm` instead
+			 */
 			'1': string;
-			'2': string;
-			'3': string;
 			pill: string;
 			full: string;
 		};

@@ -206,7 +206,7 @@ export const withEnhancedInput = <
 					width: 'full',
 					position: 'relative',
 					display: 'flex',
-					borderRadius: '2',
+					borderRadius: 'md',
 				}),
 				styles.input.itself.root,
 				styles.types[primitiveType!],

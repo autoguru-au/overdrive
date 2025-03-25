@@ -35,7 +35,7 @@ const borderRegionDefaults = style({
 });
 
 const borderVisualDefaults = style({
-	borderRadius: vars.border.radius['2'],
+	borderRadius: vars.border.radius['md'],
 });
 
 export const notchGapPlaceholder = styleVariants({
@@ -72,7 +72,7 @@ export const borders = {
 		style({
 			width: vars.space['2'],
 			borderRight: 'none',
-			borderRadius: `${vars.border.radius['2']} 0 0 ${vars.border.radius['2']}`,
+			borderRadius: `${vars.border.radius['md']} 0 0 ${vars.border.radius['md']}`,
 		}),
 	],
 	middle: [
@@ -89,7 +89,7 @@ export const borders = {
 		style({
 			flexGrow: 1,
 			borderLeft: 'none',
-			borderRadius: `0 ${vars.border.radius['2']} ${vars.border.radius['2']} 0`,
+			borderRadius: `0 ${vars.border.radius['md']} ${vars.border.radius['md']} 0`,
 		}),
 	],
 };
@@ -97,19 +97,19 @@ export const borders = {
 export const bordersAttach = {
 	complete: styleVariants({
 		NONE: {
-			borderRadius: `${vars.border.radius['2']}`,
+			borderRadius: `${vars.border.radius['md']}`,
 		},
 		LEFT: {
-			borderRadius: `0 ${vars.border.radius['2']} ${vars.border.radius['2']} 0`,
+			borderRadius: `0 ${vars.border.radius['md']} ${vars.border.radius['md']} 0`,
 		},
 		TOP: {
-			borderRadius: `0 0 ${vars.border.radius['2']} ${vars.border.radius['2']}`,
+			borderRadius: `0 0 ${vars.border.radius['md']} ${vars.border.radius['md']}`,
 		},
 		RIGHT: {
-			borderRadius: `${vars.border.radius['2']} 0 0 ${vars.border.radius['2']}`,
+			borderRadius: `${vars.border.radius['md']} 0 0 ${vars.border.radius['md']}`,
 		},
 		BOTTOM: {
-			borderRadius: `${vars.border.radius['2']} ${vars.border.radius['2']} 0 0`,
+			borderRadius: `${vars.border.radius['md']} ${vars.border.radius['md']} 0 0`,
 		},
 		ALL: {
 			borderRadius: 0,
