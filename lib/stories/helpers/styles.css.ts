@@ -49,7 +49,7 @@ export const variantColourSwatch = recipe({
 		shape: {
 			circle: { borderRadius: '100%' },
 			rectangle: {
-				borderRadius: vars.border.radius[2],
+				borderRadius: vars.border.radius['md'],
 				width: '140px',
 			},
 		},

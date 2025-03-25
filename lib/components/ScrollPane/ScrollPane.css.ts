@@ -35,9 +35,9 @@ export const root = style({
 
 export const rounded = style({
 	'::-webkit-scrollbar-thumb': {
-		borderRadius: vars.border.radius['1'],
+		borderRadius: vars.border.radius['sm'],
 	},
 	'::-webkit-scrollbar-track': {
-		borderRadius: `0 ${vars.border.radius['1']} ${vars.border.radius['1']} 0`,
+		borderRadius: `0 ${vars.border.radius['sm']} ${vars.border.radius['sm']} 0`,
 	},
 });

@@ -95,7 +95,7 @@ export const styledGridItem = recipe({
 			alignItems: 'center',
 			backgroundColor: tokens.colours.background.body,
 			borderColor: tokens.border.colours.gray,
-			borderRadius: tokens.border.radius[2],
+			borderRadius: tokens.border.radius['md'],
 			borderStyle: 'solid',
 			borderWidth: tokens.border.width[1],
 			minHeight: '80px',
@@ -155,7 +155,7 @@ export const styledCheckbox = recipe({
 	base: [
 		{
 			backgroundColor: tokens.colours.background.body,
-			borderRadius: tokens.border.radius[1],
+			borderRadius: tokens.border.radius['sm'],
 			color: 'transparent',
 		},
 		interactionStyle({

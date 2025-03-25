@@ -10,7 +10,7 @@ const colorAccent = vars.colours.foreground.body;
 const colorContrast = vars.colours.background.body;
 const colorMid = vars.colours.background.neutral;
 const size = vars.space['6'];
-const borderRadius = vars.border.radius['1'];
+const borderRadius = vars.border.radius['sm'];
 const borderWidth = vars.border.width['1'];
 const transition = `border-color 0.2s ${vars.animation.easing.decelerate} 0s, background-color 0.2s ${vars.animation.easing.decelerate} 0s`;
 
