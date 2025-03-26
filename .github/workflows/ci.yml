@@ -11,44 +11,20 @@ concurrency:
 
 jobs:
     setup:
-        name: Setup Environment
+        name: Setup environment
         runs-on: ubuntu-latest
         outputs:
-            node_version: ${{ steps.setups.outputs.node_version }}
-            cache_key: ${{ steps.cache-key.outputs.hash }}
+            node_version: ${{ steps.version.outputs.node_version }}
         steps:
             - uses: actions/checkout@main
               with:
                   fetch-depth: 0
 
-            - name: Setup environment
-              id: setups
+            - name: Get Node version
+              id: version
               run:
                   echo "node_version=$(jq -r '.volta.node' package.json)" >>
                   $GITHUB_OUTPUT
-
-            - name: Generate cache key
-              id: cache-key
-              run:
-                  echo "hash=${{ runner.os }}-node-${{
-                  steps.setups.outputs.node_version }}-${{
-                  hashFiles('**/yarn.lock') }}" >> $GITHUB_OUTPUT
-
-            - name: Setup Node ${{ steps.setups.outputs.node_version }}
-              uses: actions/setup-node@main
-              with:
-                  node-version: ${{ steps.setups.outputs.node_version }}
-                  cache: 'yarn'
-                  check-latest: true
-
-            - run: yarn --immutable
-
-            - name: Cache node modules
-              uses: actions/cache@v3
-              id: cache-nodemodules
-              with:
-                  path: node_modules
-                  key: ${{ steps.cache-key.outputs.hash }}
 
     test:
         name: Lint & Test
@@ -66,12 +42,10 @@ jobs:
               uses: actions/setup-node@main
               with:
                   node-version: ${{ needs.setup.outputs.node_version }}
+                  cache: 'yarn'
 
-            - name: Restore node modules
-              uses: actions/cache@v3
-              with:
-                  path: node_modules
-                  key: ${{ needs.setup.outputs.cache_key }}
+            - name: Yarn install
+              run: yarn --immutable
 
             - name: Lint
               run: yarn lint
@@ -99,12 +73,9 @@ jobs:
               uses: actions/setup-node@main
               with:
                   node-version: ${{ needs.setup.outputs.node_version }}
+                  cache: 'yarn'
 
-            - name: Restore node modules
-              uses: actions/cache@v3
-              with:
-                  path: node_modules
-                  key: ${{ needs.setup.outputs.cache_key }}
+            - run: yarn --immutable
 
             - name: Chromatic
               if: github.event.pull_request.draft == false
