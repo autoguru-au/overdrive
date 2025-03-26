@@ -10,12 +10,11 @@ concurrency:
     cancel-in-progress: true
 
 jobs:
-    test:
-        name: Lint & Test
+    setup:
+        name: Setup Environment
         runs-on: ubuntu-latest
-        env:
-            TZ: Australia/Brisbane
-            CI: true
+        outputs:
+            node_version: ${{ steps.setups.outputs.node_version }}
         steps:
             - uses: actions/checkout@main
               with:
@@ -26,7 +25,6 @@ jobs:
               run:
                   echo "node_version=$(jq -r '.volta.node' package.json)" >>
                   $GITHUB_OUTPUT
-                  #echo "yarn_cache=$(yarn cache dir)" >> $GITHUB_OUTPUT
 
             - name: Setup Node ${{ steps.setups.outputs.node_version }}
               uses: actions/setup-node@main
@@ -37,8 +35,68 @@ jobs:
 
             - run: yarn --immutable
 
+            - name: Cache node modules
+              uses: actions/cache@v3
+              id: cache-nodemodules
+              with:
+                  path: node_modules
+                  key:
+                      ${{ runner.os }}-node-${{
+                      steps.setups.outputs.node_version }}-${{
+                      hashFiles('**/yarn.lock') }}
+
+    lint:
+        name: Lint
+        needs: setup
+        runs-on: ubuntu-latest
+        env:
+            TZ: Australia/Brisbane
+            CI: true
+        steps:
+            - uses: actions/checkout@main
+              with:
+                  fetch-depth: 0
+
+            - name: Setup Node ${{ needs.setup.outputs.node_version }}
+              uses: actions/setup-node@main
+              with:
+                  node-version: ${{ needs.setup.outputs.node_version }}
+
+            - name: Restore node modules
+              uses: actions/cache@v3
+              with:
+                  path: node_modules
+                  key:
+                      ${{ runner.os }}-node-${{ needs.setup.outputs.node_version
+                      }}-${{ hashFiles('**/yarn.lock') }}
+
             - name: Lint
               run: yarn lint
+
+    test:
+        name: Test
+        needs: setup
+        runs-on: ubuntu-latest
+        env:
+            TZ: Australia/Brisbane
+            CI: true
+        steps:
+            - uses: actions/checkout@main
+              with:
+                  fetch-depth: 0
+
+            - name: Setup Node ${{ needs.setup.outputs.node_version }}
+              uses: actions/setup-node@main
+              with:
+                  node-version: ${{ needs.setup.outputs.node_version }}
+
+            - name: Restore node modules
+              uses: actions/cache@v3
+              with:
+                  path: node_modules
+                  key:
+                      ${{ runner.os }}-node-${{ needs.setup.outputs.node_version
+                      }}-${{ hashFiles('**/yarn.lock') }}
 
             - name: Test
               run: yarn test --run --coverage
@@ -49,6 +107,7 @@ jobs:
 
     visual_test:
         name: Visual changes
+        needs: setup
         runs-on: ubuntu-latest
         env:
             TZ: Australia/Brisbane
@@ -58,21 +117,18 @@ jobs:
               with:
                   fetch-depth: 0
 
-            - name: Setup environment
-              id: setups
-              run:
-                  echo "node_version=$(jq -r '.volta.node' package.json)" >>
-                  $GITHUB_OUTPUT
-                  #echo "yarn_cache=$(yarn cache dir)" >> $GITHUB_OUTPUT
-
-            - name: Setup Node ${{ steps.setups.outputs.node_version }}
+            - name: Setup Node ${{ needs.setup.outputs.node_version }}
               uses: actions/setup-node@main
               with:
-                  node-version: ${{ steps.setups.outputs.node_version }}
-                  cache: 'yarn'
-                  check-latest: true
+                  node-version: ${{ needs.setup.outputs.node_version }}
 
-            - run: yarn --immutable
+            - name: Restore node modules
+              uses: actions/cache@v3
+              with:
+                  path: node_modules
+                  key:
+                      ${{ runner.os }}-node-${{ needs.setup.outputs.node_version
+                      }}-${{ hashFiles('**/yarn.lock') }}
 
             - name: Chromatic
               if: github.event.pull_request.draft == false
