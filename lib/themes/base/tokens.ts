@@ -122,7 +122,7 @@ export const tokens: Tokens = {
 				background: {
 					standard: baseThemeColours.green['600'],
 					mild: baseThemeColours.green['200'],
-					strong: baseThemeColours.green['900'],
+					strong: baseThemeColours.green['700'],
 				},
 				foreground: white,
 				border: baseThemeColours.green['900'],

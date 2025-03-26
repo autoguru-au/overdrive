@@ -76,7 +76,7 @@ export const button = recipe({
 				backgroundColor: intentColors.primary.background.standard,
 				[selectorFocusHoverActive]: {
 					color: intentColors.primary.foreground,
-					backgroundColor: vars.colours.gamut.green700,
+					backgroundColor: intentColors.primary.background.strong,
 				},
 			},
 			brand: {
