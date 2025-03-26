@@ -1,8 +1,7 @@
 name: Update Storybook
 
-on:
-    push:
-        branches: [main]
+# This workflow is triggered manually to update the Storybook deployment, auto deployment of Storybook is done by the `release` workflow.
+on: workflow_dispatch
 
 jobs:
     release:
