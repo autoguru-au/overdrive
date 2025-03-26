@@ -75,7 +75,8 @@ jobs:
                   node-version: ${{ needs.setup.outputs.node_version }}
                   cache: 'yarn'
 
-            - run: yarn --immutable
+            - name: Yarn install
+              run: yarn --immutable
 
             - name: Chromatic
               if: github.event.pull_request.draft == false
