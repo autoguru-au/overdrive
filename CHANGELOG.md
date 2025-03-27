@@ -1,5 +1,29 @@
 # @autoguru/overdrive
 
+## 4.40.0
+
+### Minor Changes
+
+- 069e6ea: This release updates the visual appearance of the following
+  components: Button, Checkbox, Radio, Switch, TextInput, NumberInput,
+  DateInput, ColourInput, AutoSuggest, Select, Tabs and Table. A consistent
+  keyboard focus outline has also been applied except for input fields.
+  Accessibility issues fixed relating to labelling on Button and aria attributes
+  on Checkbox, Radio and Tabs.
+
+    Border radius tokens have been updated to named-sizes. The new values are
+    `sm` `md` `lg` `xl` `2xl`. Radius `1` remains for backwards compatbility.
+
+    Input fields: TextInput, NumberInput, DateInput, Select, and AutoSuggest now
+    have `large` size via the shared InputBase.
+
+    Tabs: A new `appearance` prop has been added to configure a Pill
+    look-and-feel.
+
+    Button: Addition of size `xsmall`.
+
+    Checkbox: Added support for an indeterminate state.
+
 ## 4.40.0-next.0
 
 ### Minor Changes
@@ -1845,8 +1869,8 @@
     `<AutoSuggest>` can now be given a `autoWidth` prop that will auto the width
     in relation to setting the width, or for it to be automatic.
 
-                          	- `autoWidth={true}` means, size the flyout to the width of flyout children "automatically"
-                          	- `autoWidth={false}` means to set to the width of the select input.
+                            	- `autoWidth={true}` means, size the flyout to the width of flyout children "automatically"
+                            	- `autoWidth={false}` means to set to the width of the select input.
 
     eg:
 
@@ -1960,8 +1984,8 @@
     backdrop. Also; if you wish to remove the fadeIn/fadeOut animation, a
     `transition?: boolean` can also be provided.
 
-                          	- Removes `<ModalPortal />` in favor of `<Modal />`
-                          	- Deprecated `withModal`, which could simply just use the Modal component
+                            	- Removes `<ModalPortal />` in favor of `<Modal />`
+                            	- Deprecated `withModal`, which could simply just use the Modal component
 
     Worth noting that a `role="presentation"` is applied to the `Modal`, so
     consumers should be applying a `role="none presentation"` to their direct
@@ -2014,9 +2038,9 @@
 
     Breakpoints have been amended to follow (mobile first):
 
-                          	- `tablet` is iPad Mini width less 25%, so any device greater than 768px
-                          	- `desktop` we are considering as iPad Pro width less 25%, so any device larger than 1024px
-                          	- `largeDesktop` is taken as a 1920x1080 less 25%, so any device larger than 1440px
+                            	- `tablet` is iPad Mini width less 25%, so any device greater than 768px
+                            	- `desktop` we are considering as iPad Pro width less 25%, so any device larger than 1024px
+                            	- `largeDesktop` is taken as a 1920x1080 less 25%, so any device larger than 1440px
 
     all at landscape.
 
@@ -2099,9 +2123,9 @@
 
     **A few changes**
 
-                          	- `OverdriveProvider` must now be provider
-                          	- `ToastProvider` must also be provided when using a `useToast`
-                          	- `@autoguru/overdrive/reset` must be given first.
+                            	- `OverdriveProvider` must now be provider
+                            	- `ToastProvider` must also be provided when using a `useToast`
+                            	- `@autoguru/overdrive/reset` must be given first.
 
     ... and a whole series of other things. Please consult to the PR (#273) to
     get a better idea of what's changed.
