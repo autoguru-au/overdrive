@@ -129,7 +129,7 @@ export const withEnhancedInput = <
 	}: EnhancedInputConfigs = { primitiveType: 'text', defaultValue: void 0 },
 ) =>
 	// eslint-disable-next-line react/display-name
-	forwardRef<ElementTypes, EnhanceInputProps<IncomingProps, E>>(
+	forwardRef<E, EnhanceInputProps<IncomingProps, E>>(
 		(
 			{
 				// EnhanceInputPrimitiveProps
@@ -225,6 +225,18 @@ export const withEnhancedInput = <
 				},
 			);
 
+			/*
+			Need to disable the type assertion here, as ts has no idea that P and an omitted P without its properties is just P
+			@see https://stackoverflow.com/a/53951825/2609301
+
+			type P = {firstName: string}
+			type A = P
+			type B = Omit<P, 'firstName'>
+
+			A & B != A _or_ P & Omit<P, 'firstName'> != P
+			 */
+
+			// @ts-expect-error props not assignable to type
 			const wrappingComponent: WrappedComponentProps<IncomingProps, E> = {
 				validation: {
 					isTouched,
