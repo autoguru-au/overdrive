@@ -1,16 +1,14 @@
-import { style, styleVariants } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css';
+import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 
+import { focusOutlineStyle } from '../../styles/focusOutline.css';
 import { themeContractVars as vars } from '../../themes/theme.css';
 
-export const root = style({
-	transitionDelay: '0s',
-	transitionTimingFunction: vars.animation.easing.standard,
-	transitionDuration: '0.1s',
-	transitionProperty:
-		'color, background-color, border-color, box-shadow, transform',
-	transform: 'translate(0, 0) scale(1)',
-	willChange: 'transform',
-});
+const intentColors = vars.colours.intent;
+const smallHeight = '36px';
+
+const selectorFocusHoverActive =
+	'&:focus-visible, &:not(:disabled):hover, &:not(:disabled):active';
 
 export const body = style({
 	display: 'grid',
@@ -21,277 +19,271 @@ export const body = style({
 export const hiddenContent = style({
 	visibility: 'hidden',
 });
-export const loading = style({
-	cursor: 'not-allowed',
-});
-
-export const enabled = style({
-	cursor: 'pointer',
-});
-
-export const disabled = style({
-	cursor: 'not-allowed',
-	opacity: '0.3',
-});
 
 export const spinner = style({
 	margin: '0 auto',
 });
 
-const smallHeight = '36px';
+// Button recipe with all variants
+export const button = recipe({
+	base: [
+		{
+			transitionTimingFunction: vars.animation.easing.standard,
+			transitionDuration: '0.1s',
+			transitionProperty:
+				'color, background-color, border-color, box-shadow, transform',
+			transform: 'translate(0, 0) scale(1)',
+			willChange: 'transform',
+			cursor: 'pointer',
+			selectors: {
+				'&:active:not(:disabled, [data-loading])': {
+					transform: 'scale(0.97)',
+				},
+				'&[data-loading], &:disabled': {
+					cursor: 'not-allowed',
+				},
+				'&:not([data-loading]):disabled': {
+					opacity: '0.3',
+				},
+			},
+		},
+		focusOutlineStyle,
+	],
 
-export const size = {
-	small: styleVariants({
-		default: {
-			minWidth: vars.space['8'],
-			height: smallHeight,
-			gridGap: vars.space['1'],
+	variants: {
+		// Size variants
+		size: {
+			small: {
+				height: smallHeight,
+			},
+			medium: {
+				height: vars.space['8'],
+			},
+			xsmall: {
+				padding: `2px ${vars.space['2']}`,
+			},
 		},
-		rounded: {
-			minWidth: smallHeight,
+		// Shape variants
+		shape: {
+			default: {},
+			rounded: {},
+			iconOnly: {},
 		},
-		iconOnly: {
-			width: smallHeight,
+		// Intent (color scheme) variants
+		intent: {
+			primary: {
+				color: intentColors.primary.foreground,
+				backgroundColor: intentColors.primary.background.standard,
+				[selectorFocusHoverActive]: {
+					color: intentColors.primary.foreground,
+					backgroundColor: intentColors.primary.background.strong,
+				},
+			},
+			brand: {
+				color: intentColors.brand.foreground,
+				backgroundColor: intentColors.brand.background.standard,
+				[selectorFocusHoverActive]: {
+					backgroundColor: intentColors.brand.background.strong,
+				},
+			},
+			secondary: {
+				color: intentColors.secondary.foreground,
+				backgroundColor: intentColors.secondary.background.standard,
+				border: `1px solid ${intentColors.secondary.border}`,
+				selectors: {
+					[selectorFocusHoverActive]: {
+						backgroundColor:
+							intentColors.secondary.background.strong,
+						borderColor: intentColors.secondary.background.strong,
+					},
+				},
+			},
+			danger: {
+				backgroundColor: intentColors.danger.background.standard,
+				color: intentColors.danger.foreground,
+				[selectorFocusHoverActive]: {
+					backgroundColor: intentColors.danger.background.strong,
+				},
+			},
+			information: {
+				backgroundColor: intentColors.information.background.standard,
+				color: intentColors.information.foreground,
+				[selectorFocusHoverActive]: {
+					backgroundColor: intentColors.information.background.strong,
+				},
+			},
+			warning: {
+				backgroundColor: intentColors.warning.background.standard,
+				color: intentColors.warning.foreground,
+				[selectorFocusHoverActive]: {
+					backgroundColor: intentColors.warning.background.strong,
+				},
+			},
+			success: {
+				backgroundColor: intentColors.success.background.standard,
+				color: intentColors.success.foreground,
+				[selectorFocusHoverActive]: {
+					backgroundColor: intentColors.success.background.strong,
+				},
+			},
 		},
-	}),
-	medium: styleVariants({
-		default: {
-			minWidth: vars.space['9'],
-			height: vars.space['8'],
-			gridGap: vars.space['2'],
+		// Miminal appearance variant
+		minimal: {
+			true: {
+				color: vars.typography.colour.neutral,
+				backgroundColor: 'transparent',
+				border: 'none',
+			},
+			false: [],
 		},
-		rounded: {
-			minWidth: vars.space['8'],
+	},
+	compoundVariants: [
+		// Size and shape compound variants
+		{
+			variants: { size: 'small', shape: 'default' },
+			style: {
+				minWidth: vars.space['8'],
+				gridGap: vars.space['1'],
+			},
 		},
-		iconOnly: {
-			width: vars.space['8'],
+		{
+			variants: { size: 'small', shape: 'rounded' },
+			style: {
+				minWidth: smallHeight,
+			},
 		},
-	}),
-};
-export const variant = {
-	primary: style({
-		color: vars.colours.intent.primary.foreground,
-		backgroundColor: vars.colours.intent.primary.background.standard,
-		boxShadow: `inset 0 0 0 1px ${vars.colours.intent.primary.border}, ${vars.elevation['2']}`,
-	}),
-	brand: style({
-		color: vars.colours.intent.brand.foreground,
-		backgroundColor: vars.colours.intent.brand.background.standard,
-		boxShadow: `inset 0 0 0 1px ${vars.colours.intent.brand.border}, ${vars.elevation['2']}`,
-	}),
-	secondary: style({
-		color: vars.colours.intent.secondary.foreground,
-		backgroundColor: vars.colours.intent.secondary.background.standard,
-		boxShadow: `inset 0 0 0 1px ${vars.colours.intent.secondary.border}, ${vars.elevation['2']}`,
-	}),
-	danger: style({
-		backgroundColor: vars.colours.intent.danger.background.standard,
-		color: vars.colours.intent.danger.foreground,
-		boxShadow: `inset 0 0 0 1px ${vars.colours.intent.danger.border}, ${vars.elevation['2']}`,
-	}),
-	information: style({
-		backgroundColor: vars.colours.intent.information.background.standard,
-		color: vars.colours.intent.information.foreground,
-		boxShadow: `inset 0 0 0 1px ${vars.colours.intent.information.border}, ${vars.elevation['2']}`,
-	}),
-	warning: style({
-		backgroundColor: vars.colours.intent.warning.background.standard,
-		color: vars.colours.intent.warning.foreground,
-		boxShadow: `inset 0 0 0 1px ${vars.colours.intent.warning.border}, ${vars.elevation['2']}`,
-	}),
-	success: style({
-		backgroundColor: vars.colours.intent.success.background.standard,
-		color: vars.colours.intent.success.foreground,
-		boxShadow: `inset 0 0 0 1px ${vars.colours.intent.success.border}, ${vars.elevation['2']}`,
-	}),
-};
+		{
+			variants: { size: 'small', shape: 'iconOnly' },
+			style: {
+				width: smallHeight,
+			},
+		},
+		{
+			variants: { size: 'medium', shape: 'default' },
+			style: {
+				minWidth: vars.space['9'],
+				gridGap: vars.space['2'],
+			},
+		},
+		{
+			variants: { size: 'medium', shape: 'rounded' },
+			style: {
+				minWidth: vars.space['8'],
+			},
+		},
+		{
+			variants: { size: 'medium', shape: 'iconOnly' },
+			style: {
+				width: vars.space['8'],
+			},
+		},
+		// Minimal compound variants per intent
+		{
+			variants: { intent: 'primary', minimal: true },
+			style: {
+				selectors: {
+					[selectorFocusHoverActive]: {
+						color: intentColors.primary.background.strong,
+						backgroundColor: intentColors.primary.background.mild,
+					},
+				},
+			},
+		},
+		{
+			variants: { intent: 'brand', minimal: true },
+			style: {
+				selectors: {
+					[selectorFocusHoverActive]: {
+						color: intentColors.brand.background.strong,
+						backgroundColor: intentColors.brand.background.mild,
+					},
+				},
+			},
+		},
+		{
+			variants: { intent: 'secondary', minimal: true },
+			style: {
+				selectors: {
+					[selectorFocusHoverActive]: {
+						color: vars.typography.colour.secondary,
+						backgroundColor:
+							intentColors.secondary.background.strong,
+					},
+				},
+			},
+		},
+		{
+			variants: { intent: 'danger', minimal: true },
+			style: {
+				selectors: {
+					[selectorFocusHoverActive]: {
+						color: intentColors.danger.background.strong,
+						backgroundColor: intentColors.danger.background.mild,
+					},
+				},
+			},
+		},
+		{
+			variants: { intent: 'information', minimal: true },
+			style: {
+				selectors: {
+					[selectorFocusHoverActive]: {
+						color: intentColors.information.background.strong,
+						backgroundColor:
+							intentColors.information.background.mild,
+					},
+				},
+			},
+		},
+		{
+			variants: { intent: 'warning', minimal: true },
+			style: {
+				selectors: {
+					'&:focus-visible, &:not(:disabled):hover': {
+						color: intentColors.warning.background.strong,
+						backgroundColor: intentColors.warning.background.mild,
+					},
+				},
+			},
+		},
+		{
+			variants: { intent: 'success', minimal: true },
+			style: {
+				selectors: {
+					'&:focus-visible, &:not(:disabled):hover': {
+						color: intentColors.success.background.strong,
+						backgroundColor: intentColors.success.background.mild,
+					},
+				},
+			},
+		},
+	],
+	defaultVariants: {
+		size: 'medium',
+		shape: 'default',
+		intent: 'primary',
+		minimal: false,
+	},
+});
 
-export const defaultStates = {
-	primary: style({
-		':hover': {
-			color: vars.colours.intent.primary.foreground,
-			backgroundColor: vars.colours.intent.primary.background.strong,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.primary.border}, ${vars.elevation['3']}`,
-		},
-		':active': {
-			transform: 'scale(0.97)',
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.primary.border}, ${vars.elevation['1']}`,
-			color: vars.colours.intent.primary.foreground,
-			backgroundColor: vars.colours.intent.primary.background.strong,
-		},
-	}),
-	brand: style({
-		':hover': {
-			color: vars.colours.intent.brand.foreground,
-			backgroundColor: vars.colours.intent.brand.background.strong,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.brand.border}, ${vars.elevation['3']}`,
-		},
-		':active': {
-			transform: 'scale(0.97)',
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.brand.border}, ${vars.elevation['1']}`,
-			color: vars.colours.intent.brand.foreground,
-			backgroundColor: vars.colours.intent.brand.background.strong,
-		},
-	}),
-	secondary: style({
-		':hover': {
-			color: vars.colours.intent.secondary.foreground,
-			backgroundColor: vars.colours.intent.secondary.background.strong,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.secondary.border}, ${vars.elevation['3']}`,
-		},
-		':active': {
-			transform: 'scale(0.97)',
-			color: vars.colours.intent.secondary.foreground,
-			backgroundColor: vars.colours.intent.secondary.background.strong,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.secondary.border}, ${vars.elevation['1']}`,
-		},
-	}),
-	danger: style({
-		':hover': {
-			color: vars.colours.intent.danger.foreground,
-			backgroundColor: vars.colours.intent.danger.background.strong,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.danger.border}, ${vars.elevation['3']}`,
-		},
-		':active': {
-			transform: 'scale(0.97)',
-			color: vars.colours.intent.danger.foreground,
-			backgroundColor: vars.colours.intent.danger.background.strong,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.danger.border}, ${vars.elevation['1']}`,
-		},
-	}),
-	information: style({
-		':hover': {
-			color: vars.colours.intent.information.foreground,
-			backgroundColor: vars.colours.intent.information.background.strong,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.information.border}, ${vars.elevation['3']}`,
-		},
-		':active': {
-			transform: 'scale(0.97)',
-			color: vars.colours.intent.information.foreground,
-			backgroundColor: vars.colours.intent.information.background.strong,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.information.border}, ${vars.elevation['1']}`,
-		},
-	}),
-	warning: style({
-		':hover': {
-			color: vars.colours.intent.warning.foreground,
-			backgroundColor: vars.colours.intent.warning.background.strong,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.warning.border}, ${vars.elevation['3']}`,
-		},
-		':active': {
-			transform: 'scale(0.97)',
-			color: vars.colours.intent.warning.foreground,
-			backgroundColor: vars.colours.intent.warning.background.strong,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.warning.border}, ${vars.elevation['1']}`,
-		},
-	}),
-	success: style({
-		':hover': {
-			color: vars.colours.intent.success.foreground,
-			backgroundColor: vars.colours.intent.success.background.strong,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.success.border}, ${vars.elevation['3']}`,
-		},
-		':active': {
-			transform: 'scale(0.97)',
-			color: vars.colours.intent.success.foreground,
-			backgroundColor: vars.colours.intent.success.background.strong,
-			boxShadow: `inset 0 0 0 1px ${vars.colours.intent.success.border}, ${vars.elevation['1']}`,
-		},
-	}),
-};
+type ButtonRecipeProps = NonNullable<Required<RecipeVariants<typeof button>>>;
 
-export const minimal = {
-	defaults: style({
-		color: vars.typography.colour.neutral,
-	}),
-	noneRounded: style({
-		minWidth: '50px',
-	}),
-};
+export type ButtonSize = ButtonRecipeProps['size'];
+export type ButtonShape = ButtonRecipeProps['shape'];
+export type ButtonIntent = ButtonRecipeProps['intent'];
+export type ButtonMinimal = ButtonRecipeProps['minimal'];
 
-export const minimalStates = {
-	primary: style({
-		':hover': {
-			color: vars.colours.intent.primary.background.strong,
-			backgroundColor: vars.colours.intent.primary.background.mild,
-			boxShadow: 'none',
-		},
-		':active': {
-			color: vars.colours.intent.primary.background.strong,
-			backgroundColor: vars.colours.intent.primary.background.mild,
-			boxShadow: 'none',
-		},
-	}),
-	brand: style({
-		':hover': {
-			color: vars.colours.intent.brand.background.strong,
-			backgroundColor: vars.colours.intent.brand.background.mild,
-			boxShadow: 'none',
-		},
-		':active': {
-			color: vars.colours.intent.brand.background.strong,
-			backgroundColor: vars.colours.intent.brand.background.mild,
-			boxShadow: 'none',
-		},
-	}),
-	secondary: style({
-		':hover': {
-			color: vars.typography.colour.secondary,
-			backgroundColor: vars.colours.intent.secondary.background.strong,
-			boxShadow: 'none',
-		},
-		':active': {
-			color: vars.typography.colour.secondary,
-			backgroundColor: vars.colours.intent.secondary.background.strong,
-			boxShadow: 'none',
-		},
-	}),
-	danger: style({
-		':hover': {
-			color: vars.colours.intent.danger.background.strong,
-			backgroundColor: vars.colours.intent.danger.background.mild,
-			boxShadow: 'none',
-		},
-		':active': {
-			color: vars.colours.intent.danger.background.strong,
-			backgroundColor: vars.colours.intent.danger.background.mild,
-			boxShadow: 'none',
-		},
-	}),
-	information: style({
-		':hover': {
-			color: vars.colours.intent.information.background.strong,
-			backgroundColor: vars.colours.intent.information.background.mild,
-			boxShadow: 'none',
-		},
-		':active': {
-			color: vars.colours.intent.information.background.strong,
-			backgroundColor: vars.colours.intent.information.background.mild,
-			boxShadow: 'none',
-		},
-	}),
-	warning: style({
-		':hover': {
-			color: vars.colours.intent.warning.background.strong,
-			backgroundColor: vars.colours.intent.warning.background.mild,
-			boxShadow: 'none',
-		},
-		':active': {
-			color: vars.colours.intent.warning.background.strong,
-			backgroundColor: vars.colours.intent.warning.background.mild,
-			boxShadow: 'none',
-		},
-	}),
-	success: style({
-		':hover': {
-			color: vars.colours.intent.success.background.strong,
-			backgroundColor: vars.colours.intent.success.background.mild,
-			boxShadow: 'none',
-		},
-		':active': {
-			color: vars.colours.intent.success.background.strong,
-			backgroundColor: vars.colours.intent.success.background.mild,
-			boxShadow: 'none',
-		},
-	}),
-};
+export interface StyledButtonProps {
+	/**
+	 * Button sizing
+	 */
+	size?: ButtonSize;
+	/**
+	 * Button intentional colour scheme
+	 */
+	variant?: ButtonIntent;
+	/**
+	 * Present a borderless minimal appearance
+	 */
+	minimal?: ButtonMinimal;
+}

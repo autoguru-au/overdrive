@@ -23,7 +23,7 @@ export const descriptionStyle = style({
 });
 
 // === Option item styles
-const buttonBorderRadius = tokens.border.radius['2'];
+const buttonBorderRadius = tokens.border.radius['md'];
 export const styledOptionItem = recipe({
 	base: [
 		{
@@ -99,7 +99,7 @@ export const checkbox = recipe({
 			background: tokens.colours.background.body,
 			borderColor: tokens.border.colours.gray,
 			borderStyle: 'solid',
-			borderRadius: tokens.border.radius['1'],
+			borderRadius: tokens.border.radius['sm'],
 			borderWidth: tokens.border.width['1'],
 			color: 'transparent',
 		},

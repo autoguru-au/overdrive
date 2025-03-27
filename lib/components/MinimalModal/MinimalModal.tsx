@@ -68,7 +68,7 @@ export const MinimalModal: FunctionComponent<Props> = ({
 				onClick={backdropHandler}
 			>
 				<Box
-					is="article"
+					as="article"
 					role="dialog"
 					aria-modal="true"
 					aria-labelledby={titleId!}
@@ -76,7 +76,7 @@ export const MinimalModal: FunctionComponent<Props> = ({
 					flexDirection="column"
 				>
 					<Box
-						is="main"
+						as="main"
 						display="flex"
 						flexDirection="column"
 						flexGrow={1}

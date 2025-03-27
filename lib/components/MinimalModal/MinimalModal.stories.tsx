@@ -5,6 +5,8 @@ import React, { type ComponentProps } from 'react';
 import { Box } from '../Box';
 import { Text } from '../Text';
 
+import * as styles from './MinimalModal.css';
+
 import { MinimalModal } from '.';
 
 const argTypes: ArgTypes = {
@@ -27,8 +29,13 @@ export default {
 
 type Story = StoryObj<typeof MinimalModal>;
 
-const modalChildren = (
-	<Box backgroundColour="white" paddingX="4" paddingY="3">
+const Content = ({ alignment }) => (
+	<Box
+		backgroundColour="white"
+		paddingX="4"
+		paddingY="3"
+		className={styles.borders[alignment]}
+	>
 		<Text>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
 			convallis neque a laoreet maximus. Vestibulum hendrerit quam at mi
@@ -151,7 +158,7 @@ export const Standard: Story = {
 	args: {
 		isOpen: true,
 		onRequestClose: action('onChange'),
-		children: modalChildren,
+		children: <Content alignment="center" />,
 	},
 	render: renderStory,
 };
@@ -160,7 +167,7 @@ export const PinnedToTop: Story = {
 	args: {
 		isOpen: true,
 		onRequestClose: action('onChange'),
-		children: modalChildren,
+		children: <Content alignment="flexStart" />,
 		alignItems: 'flexStart',
 	},
 	render: renderStory,
@@ -170,7 +177,7 @@ export const PinnedToTopCentre: Story = {
 	args: {
 		isOpen: true,
 		onRequestClose: action('onChange'),
-		children: modalChildren,
+		children: <Content alignment="flexEnd" />,
 		alignItems: 'center',
 	},
 	render: renderStory,
@@ -180,7 +187,7 @@ export const PinnedToTopBottom: Story = {
 	args: {
 		isOpen: true,
 		onRequestClose: action('onChange'),
-		children: modalChildren,
+		children: <Content alignment="flexEnd" />,
 		alignItems: 'flexEnd',
 	},
 	render: renderStory,

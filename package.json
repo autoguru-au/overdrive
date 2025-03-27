@@ -1,6 +1,6 @@
 {
 	"name": "@autoguru/overdrive",
-	"version": "4.39.2",
+	"version": "4.40.0-next.8",
 	"description": "Overdrive is a product component library, and design system for AutoGuru.",
 	"types": "dist/index.d.ts",
 	"main": "dist/index.js",

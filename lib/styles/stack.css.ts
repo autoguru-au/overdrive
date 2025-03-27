@@ -9,6 +9,8 @@ export const stack = recipe({
 	base: { display: 'flex', flexWrap: 'wrap' },
 	variants: {
 		space: {
+			xxs: { gap: tokens.space['1'] },
+			xs: { gap: tokens.space['3'] },
 			sm: { gap: tokens.space['5'] },
 			md: { gap: tokens.space['8'] },
 			lg: { gap: tokens.space['9'] },

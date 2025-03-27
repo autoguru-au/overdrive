@@ -5,7 +5,7 @@ import { Heading } from '../components/Heading';
 import { tokens } from '../themes/base/tokens';
 
 import { Box, Stack, type Sprinkles } from './helpers';
-import { labels, titles } from './helpers/styles.css';
+import { titles } from './helpers/styles.css';
 
 const { border, elevation } = tokens;
 const elevationItems = Object.keys(elevation);
@@ -26,7 +26,7 @@ const Elevation = () => (
 					boxShadow={elevation as Sprinkles['boxShadow']}
 					size="9"
 				/>
-				<p className={labels}>{elevation}</p>
+				<p>{elevation}</p>
 			</Stack>
 		))}
 	</Stack>
@@ -49,7 +49,7 @@ const Widths = () => {
 						borderWidth={width as Sprinkles['borderWidth']}
 						size="9"
 					/>
-					<p className={labels}>{width}</p>
+					<p>{width}</p>
 				</Stack>
 			))}
 		</Stack>
@@ -63,18 +63,25 @@ const Radius = () => {
 				Radius
 			</Heading>
 
-			{radiusItems.sort().map((radius) => (
+			{radiusItems.map((radius) => (
 				<Stack space="sm" alignItems="center" horizontal key={radius}>
 					<Box
-						background="black500"
+						alignItems="center"
+						background="black700"
 						borderColor="gray"
 						borderRadius={radius as Sprinkles['borderRadius']}
+						color={'white'}
+						display="flex"
+						fontSize="3"
+						justifyContent="center"
 						size="9"
 						style={
-							radius === 'pill' ? { height: '74px' } : undefined
+							radius === 'pill' ? { height: '64px' } : undefined
 						}
-					/>
-					<p className={labels}>{radius}</p>
+					>
+						{tokens.border.radius[radius]}
+					</Box>
+					<p>{radius}</p>
 				</Stack>
 			))}
 		</Stack>
@@ -93,13 +100,11 @@ export const Borders: Story = {
 	render: () => (
 		<Stack gap="8" horizontal>
 			<Heading is="h1">
-				Borders &amp;
-				<br />
-				Elevation
+				Borders &amp; <br /> Elevation
 			</Heading>
-			<Elevation />
-			<Radius />
 			<Widths />
+			<Radius />
+			<Elevation />
 		</Stack>
 	),
 };

@@ -124,6 +124,8 @@ export const tokens = deepmerge<Tokens, any>(baseTokens, {
 	border: {
 		radius: {
 			min: 'none',
+			sm: 'none',
+			md: 'none',
 			'1': 'none',
 		},
 	},

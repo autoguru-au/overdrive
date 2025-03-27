@@ -13,6 +13,7 @@ export type SpaceScale =
 	| '9'
 	| 'none';
 export type TextSizeScale = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';
+export type TextFontWeight = 'normal' | 'semiBold' | 'bold';
 export type BorderWidthScale = '1' | '2' | '3' | 'none';
 export type IconSizeScale = 'small' | 'medium' | 'large';
 
@@ -168,9 +169,16 @@ export interface Tokens extends VanillaTokens {
 		radius: {
 			none: string;
 			min: string;
+			sm: string;
+			md: string;
+			lg: string;
+			xl: string;
+			'2xl': string;
+			/**
+			 * in transition
+			 * @deprecated use `sm` instead
+			 */
 			'1': string;
-			'2': string;
-			'3': string;
 			pill: string;
 			full: string;
 		};
@@ -194,7 +202,7 @@ export interface Tokens extends VanillaTokens {
 			| BaseColours,
 			string
 		>;
-		fontWeight: Record<'normal' | 'semiBold' | 'bold', string>;
+		fontWeight: Record<TextFontWeight, string>;
 	};
 	animation: {
 		easing: {

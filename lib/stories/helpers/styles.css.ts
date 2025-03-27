@@ -8,6 +8,7 @@ export const titles = style({
 });
 
 export const labels = style({
+	marginBottom: vars.space[4],
 	textTransform: 'capitalize',
 });
 
@@ -47,6 +48,10 @@ export const variantColourSwatch = recipe({
 		},
 		shape: {
 			circle: { borderRadius: '100%' },
+			rectangle: {
+				borderRadius: vars.border.radius['md'],
+				width: '140px',
+			},
 		},
 	},
 	defaultVariants: {

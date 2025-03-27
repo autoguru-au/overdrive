@@ -49,7 +49,7 @@ export const styledCell = recipe({
 		{
 			alignItems: 'center',
 			backgroundColor: tokens.colours.background.body,
-			borderRadius: tokens.border.radius[2],
+			borderRadius: tokens.border.radius['md'],
 			color: tokens.colours.foreground.body,
 			cursor: 'pointer',
 			display: 'inline-flex',
@@ -85,7 +85,7 @@ export const styledButton = recipe({
 			alignItems: 'center',
 			backgroundColor: tokens.colours.background.body,
 			borderColor: tokens.border.colours.gray,
-			borderRadius: tokens.border.radius[2],
+			borderRadius: tokens.border.radius['md'],
 			borderStyle: 'solid',
 			borderWidth: tokens.border.width[1],
 			color: tokens.colours.gamut.gray600,

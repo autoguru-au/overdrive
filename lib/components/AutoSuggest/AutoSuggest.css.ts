@@ -10,6 +10,7 @@ export const fullScreenRoot = style({
 	bottom: vars.space['5'],
 	left: vars.space['5'],
 	paddingBottom: vars.space['5'],
+	paddingTop: vars.space['2'],
 	overflowY: 'auto',
 	maxHeight: '100vh',
 	height: 'stretch',
@@ -33,13 +34,12 @@ export const suggestionList = {
 		overflowY: 'auto',
 		maxHeight: '384px',
 		overscrollBehavior: 'contain',
-		// @ts-expect-error Object literal may only specify known properties
-		'-webkit-overflow-scrolling': 'touch',
 		gridAutoFlow: 'row',
 		gridGap: 0,
 		zIndex: 2,
 	}),
 	blockOptions: style({
+		borderRadius: vars.border.radius['md'],
 		overflowY: 'auto',
 		maxHeight: '384px',
 	}),

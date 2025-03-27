@@ -8,9 +8,9 @@ import { Stack } from './helpers';
 import { labels, variantColourSwatch } from './helpers/styles.css';
 
 const ThemeSwatch = ({ label, cssVar }) => (
-	<Stack horizontal alignItems="center" style={{ gap: '10px' }} key={label}>
+	<Stack space="xxs" key={label}>
 		<div
-			className={variantColourSwatch()}
+			className={variantColourSwatch({ shape: 'rectangle' })}
 			style={{ background: cssVar }}
 		></div>
 		<span className={labels}>{label}</span>
@@ -18,16 +18,11 @@ const ThemeSwatch = ({ label, cssVar }) => (
 );
 
 const SemanticSwatches = ({ vars }: { vars: Record<string, string> }) => (
-	<Stack space="lg" horizontal>
+	<Stack space="sm" horizontal>
 		{Object.entries(vars).map(([colour, cssVar]) => (
-			<Stack
-				horizontal
-				alignItems="center"
-				style={{ gap: '10px' }}
-				key={colour}
-			>
+			<Stack space="xxs" key={colour}>
 				<div
-					className={variantColourSwatch()}
+					className={variantColourSwatch({ shape: 'rectangle' })}
 					style={{ background: cssVar }}
 				></div>
 				<span className={labels}>{colour}</span>
@@ -45,8 +40,16 @@ const IntentionalSwatches = ({
 		border: string;
 	};
 }) => (
-	<Stack space="lg" horizontal>
-		<Stack space="sm">
+	<Stack space="sm">
+		<Stack space="sm" horizontal>
+			<ThemeSwatch label="Border" cssVar={vars.border} />
+			<ThemeSwatch label="Foreground" cssVar={vars.foreground} />
+		</Stack>
+		<Stack space="sm" horizontal>
+			<ThemeSwatch
+				label="Background strong"
+				cssVar={vars.background.strong}
+			/>
 			<ThemeSwatch
 				label="Background standard"
 				cssVar={vars.background.standard}
@@ -55,13 +58,7 @@ const IntentionalSwatches = ({
 				label="Background mild"
 				cssVar={vars.background.mild}
 			/>
-			<ThemeSwatch
-				label="Background strong"
-				cssVar={vars.background.strong}
-			/>
 		</Stack>
-		<ThemeSwatch label="Foreground" cssVar={vars.foreground} />
-		<ThemeSwatch label="Border" cssVar={vars.border} />
 	</Stack>
 );
 
@@ -84,38 +81,47 @@ export const ThemeColours: Story = {
 						view alternate colour mappings.
 					</p>
 				</hgroup>
-				<Stack>
-					<Heading is="h2">Body</Heading>
-					<SemanticSwatches vars={themeContractVars.body} />
+				<Stack space="md" horizontal>
+					<Stack>
+						<Heading is="h2">Body</Heading>
+						<SemanticSwatches vars={themeContractVars.body} />
+					</Stack>
+					<Stack>
+						<Heading is="h2">Foreground</Heading>
+						<SemanticSwatches
+							vars={themeContractVars.colours.foreground}
+						/>
+					</Stack>
+					<Stack>
+						<Heading is="h2">Background</Heading>
+						<SemanticSwatches
+							vars={themeContractVars.colours.background}
+						/>
+					</Stack>
+					<Stack>
+						<Heading is="h2">Border</Heading>
+						<SemanticSwatches
+							vars={themeContractVars.border.colours}
+						/>
+					</Stack>
 				</Stack>
 				<Stack>
-					<Heading is="h2">Foreground</Heading>
+					<Heading is="h2">Typography</Heading>
 					<SemanticSwatches
-						vars={themeContractVars.colours.foreground}
+						vars={themeContractVars.typography.colour}
 					/>
 				</Stack>
-				<Stack>
-					<Heading is="h2">Background</Heading>
-					<SemanticSwatches
-						vars={themeContractVars.colours.background}
-					/>
-				</Stack>
-				<Stack>
-					<Heading is="h2">Border</Heading>
-					<SemanticSwatches vars={themeContractVars.border.colours} />
-				</Stack>
-
 				<Stack>
 					<Heading is="h2">Intentional colour sets</Heading>
-					<Stack>
+					<Stack space="lg" horizontal>
 						{Object.entries(themeContractVars.colours.intent).map(
 							([title, vars]) => (
-								<>
+								<div key={title}>
 									<Heading is="h4" className={labels}>
 										{title}
 									</Heading>
 									<IntentionalSwatches vars={vars} />
-								</>
+								</div>
 							),
 						)}
 					</Stack>

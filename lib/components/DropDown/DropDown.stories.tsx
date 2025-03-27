@@ -119,14 +119,6 @@ export const MinimalPrimary: Story = {
 	},
 };
 
-export const RoundedSecondary: Story = {
-	args: {
-		...Primary.args,
-		variant: 'secondary',
-		rounded: true,
-	},
-};
-
 export const WithCustomIcon: Story = {
 	args: {
 		...Primary.args,

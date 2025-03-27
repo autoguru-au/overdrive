@@ -58,50 +58,31 @@ describe('<Switch />', () => {
 	it('should pass on className to dom element', () => {
 		expect(
 			render(<Switch className="toggleButton-class" value={10} />)
-				.container.firstChild.childNodes[1],
+				.container.firstChild,
 		).toHaveClass('toggleButton-class');
 	});
 
 	it('should set toggle to false by default', () => {
 		expect(
 			render(<Switch />).container.firstChild.childNodes[1],
-		).not.toHaveClass(styles.toggled);
+		).not.toHaveAttribute('data-active');
 	});
 
 	it('should be toggled on when toggled prop is set to true', () => {
 		expect(
 			render(<Switch isSelected />).container.firstChild.childNodes[1],
-		).toHaveClass(styles.toggled);
+		).toHaveAttribute('data-active');
 	});
 
 	it('should be enabled by default', () => {
 		expect(
-			render(<Switch />).container.querySelector('.disabled'),
+			render(<Switch />).container.querySelector('[data-disabled]'),
 		).not.toBeInTheDocument();
 	});
 
 	it('should have aria-disabled attribute when disabled', () => {
 		const { container } = render(<Switch isDisabled />);
-
-		expect(container.firstChild.childNodes[1]).toHaveClass(
-			styles.disabled.default,
-		);
-		expect(container.firstChild.childNodes[1]).toHaveAttribute(
-			'aria-disabled',
-			'true',
-		);
-	});
-
-	it('should have aria-disabled attribute when isSelected and disabled', () => {
-		const { container } = render(<Switch isSelected isDisabled />);
-
-		expect(container.firstChild.childNodes[1]).toHaveClass(
-			styles.disabled.toggled,
-		);
-		expect(container.firstChild.childNodes[1]).toHaveAttribute(
-			'aria-disabled',
-			'true',
-		);
+		expect(container.querySelector('input')).toHaveAttribute('disabled');
 	});
 
 	it('should fire change with the correct changed value when clicked', () => {
@@ -159,18 +140,20 @@ describe('<Switch />', () => {
 			/>,
 		);
 
-		expect(container.firstChild.childNodes[1]).not.toHaveClass(
-			styles.toggled,
+		expect(container.firstChild.childNodes[1]).not.toHaveAttribute(
+			'data-active',
 		);
 
 		act(() => setToggledValue(true));
 
-		expect(container.firstChild.childNodes[1]).toHaveClass(styles.toggled);
+		expect(container.firstChild.childNodes[1]).toHaveAttribute(
+			'data-active',
+		);
 
 		act(() => setToggledValue(false));
 
-		expect(container.firstChild.childNodes[1]).not.toHaveClass(
-			styles.toggled,
+		expect(container.firstChild.childNodes[1]).not.toHaveAttribute(
+			'data-active',
 		);
 	});
 });
