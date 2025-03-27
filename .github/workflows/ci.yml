@@ -10,8 +10,25 @@ concurrency:
     cancel-in-progress: true
 
 jobs:
+    setup:
+        name: Setup environment
+        runs-on: ubuntu-latest
+        outputs:
+            node_version: ${{ steps.version.outputs.node_version }}
+        steps:
+            - uses: actions/checkout@main
+              with:
+                  fetch-depth: 0
+
+            - name: Get Node version
+              id: version
+              run:
+                  echo "node_version=$(jq -r '.volta.node' package.json)" >>
+                  $GITHUB_OUTPUT
+
     test:
         name: Lint & Test
+        needs: setup
         runs-on: ubuntu-latest
         env:
             TZ: Australia/Brisbane
@@ -21,27 +38,14 @@ jobs:
               with:
                   fetch-depth: 0
 
-            - name: Setup environment
-              id: setups
-              run: |-
-                  echo "::set-output name=yarn_cache::$(yarn cache dir)"
-                  echo "::set-output name=node_version::$(jq -r '.volta.node' package.json)"
-
-            - name: Setup Node ${{ steps.setups.outputs.node_version }}
+            - name: Setup Node ${{ needs.setup.outputs.node_version }}
               uses: actions/setup-node@main
               with:
-                  node-version: ${{ steps.setups.outputs.node_version }}
-                  check-latest: true
+                  node-version: ${{ needs.setup.outputs.node_version }}
+                  cache: 'yarn'
 
-            - name: Yarn cache
-              uses: actions/cache@v4
-              with:
-                  path: ${{ steps.setups.outputs.yarn_cache }}
-                  key:
-                      ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock')
-                      }}-node-${{ steps.setups.outputs.node_version }}
-
-            - run: yarn --immutable
+            - name: Yarn install
+              run: yarn --immutable
 
             - name: Lint
               run: yarn lint
@@ -55,6 +59,7 @@ jobs:
 
     visual_test:
         name: Visual changes
+        needs: setup
         runs-on: ubuntu-latest
         env:
             TZ: Australia/Brisbane
@@ -64,27 +69,14 @@ jobs:
               with:
                   fetch-depth: 0
 
-            - name: Setup environment
-              id: setups
-              run: |-
-                  echo "::set-output name=yarn_cache::$(yarn cache dir)"
-                  echo "::set-output name=node_version::$(jq -r '.volta.node' package.json)"
-
-            - name: Setup Node ${{ steps.setups.outputs.node_version }}
+            - name: Setup Node ${{ needs.setup.outputs.node_version }}
               uses: actions/setup-node@main
               with:
-                  node-version: ${{ steps.setups.outputs.node_version }}
-                  check-latest: true
+                  node-version: ${{ needs.setup.outputs.node_version }}
+                  cache: 'yarn'
 
-            - name: Yarn cache
-              uses: actions/cache@v4
-              with:
-                  path: ${{ steps.setups.outputs.yarn_cache }}
-                  key:
-                      ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock')
-                      }}-node-${{ steps.setups.outputs.node_version }}
-
-            - run: yarn --immutable
+            - name: Yarn install
+              run: yarn --immutable
 
             - name: Chromatic
               if: github.event.pull_request.draft == false
