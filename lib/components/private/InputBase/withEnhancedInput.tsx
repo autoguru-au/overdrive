@@ -30,8 +30,8 @@ import * as styles from './withEnhancedInput.css';
 import type { InputSize } from './withEnhancedInput.css';
 
 type ElementTypes = HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
-type NativeAttributes = Omit<
-	InputHTMLAttributes<HTMLInputElement>,
+type NativeAttributes<E extends ElementTypes> = Omit<
+	InputHTMLAttributes<E>,
 	'height' | 'is' | 'placeholder' | 'size' | 'width'
 >;
 
@@ -49,8 +49,8 @@ export interface EventHandlers<E extends ElementTypes> {
 }
 
 // The props we'll give the end consumer to send
-export interface EnhanceInputPrimitiveProps
-	extends NativeAttributes,
+export interface EnhanceInputPrimitiveProps<E extends ElementTypes>
+	extends NativeAttributes<E>,
 		Pick<
 			ComponentProps<typeof NotchedBase>,
 			'notch' | 'placeholder' | 'attach' | 'borderMerged' | 'isFocused'
@@ -82,7 +82,7 @@ export type EnhanceInputProps<
 	IncomingProps,
 	E extends ElementTypes,
 > = IncomingProps &
-	EnhanceInputPrimitiveProps &
+	EnhanceInputPrimitiveProps<E> &
 	EventHandlers<E> &
 	ValidationProps;
 
@@ -92,12 +92,12 @@ export type WrappedComponentProps<IncomingProps, E extends ElementTypes> = {
 	validation: ValidationProps;
 	eventHandlers: EventHandlers<E>;
 	field: Omit<
-		EnhanceInputPrimitiveProps,
+		EnhanceInputPrimitiveProps<E>,
 		'placeholder' | 'hintText' | 'fieldIcon' | 'size'
 	> & {
 		ref: ForwardedRef<ElementTypes> | RefObject<ElementTypes>;
 	};
-	fieldIcon?: EnhanceInputPrimitiveProps['fieldIcon'];
+	fieldIcon?: EnhanceInputPrimitiveProps<E>['fieldIcon'];
 	className?: boolean;
 	prefixed: boolean;
 	suffixed: boolean;
