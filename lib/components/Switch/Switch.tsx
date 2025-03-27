@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import React, { useRef } from 'react';
 import { useSwitch, useFocusRing, type AriaSwitchProps } from 'react-aria';
 
+import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box';
 import { useTextStyles } from '../Text';
@@ -29,9 +30,9 @@ export interface SwitchProps extends AriaSwitchProps {
 }
 
 /**
- * The Switch component does not include a label by default for legacy compatibility. The text that describes the
- * switch should be given an `id` and then provided to the `aria-labelledby` attribute. This will allow the
- * component to be accessible.
+ * The Switch component should be used with a label. The text that describes the switch can be passed in as children
+ * where it will be associated with the switch automatically. If it a more complex layout is and the text label is
+ * located outside the component ensure that `<Switch>` has an `id` and the label element has an `htmlFor` with that id.
  */
 export const Switch = ({
 	className,
@@ -39,8 +40,9 @@ export const Switch = ({
 	toggled,
 	isSelected = toggled,
 	isDisabled = disabled,
+	testId,
 	...incomingProps
-}: SwitchProps) => {
+}: WithTestId<SwitchProps>) => {
 	const props = {
 		...incomingProps,
 		isDisabled,
@@ -52,20 +54,18 @@ export const Switch = ({
 	const { isFocusVisible, focusProps } = useFocusRing();
 
 	return (
-		<label className={styles.base}>
+		<label
+			className={clsx(styles.base, className)}
+			{...dataAttrs({ 'test-id': testId })}
+		>
 			<VisuallyHidden>
 				<input {...inputProps} {...focusProps} ref={ref} />
 			</VisuallyHidden>
 			<Box
-				className={clsx(
-					styles.toggle,
-					useTextStyles({ size: '5' }),
-					{
-						[styles.disabled]: inputProps.disabled,
-						[styles.toggleOn]: state.isSelected,
-					},
-					className,
-				)}
+				className={clsx(styles.toggle, useTextStyles({ size: '5' }), {
+					[styles.disabled]: inputProps.disabled,
+					[styles.toggleOn]: state.isSelected,
+				})}
 				{...dataAttrs({
 					disabled: inputProps.disabled,
 					active: state.isSelected,

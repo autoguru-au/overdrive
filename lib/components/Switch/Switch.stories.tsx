@@ -5,6 +5,8 @@ import React from 'react';
 import { Box } from '../Box';
 import { Text } from '../Text';
 
+import { storyLabel } from './Switch.css';
+
 import { Switch } from '.';
 
 const meta: Meta<typeof Switch> = {
@@ -12,7 +14,6 @@ const meta: Meta<typeof Switch> = {
 	component: Switch,
 	tags: ['updated'],
 	args: {
-		'aria-labelledby': undefined,
 		name: 'switch',
 		value: 'yes',
 		isSelected: undefined,
@@ -36,22 +37,26 @@ export default meta;
 
 type Story = StoryObj<typeof Switch>;
 
-export const Uncontrolled: Story = {};
+/** Passes in the text label and styles for the layout */
+export const Uncontrolled: Story = {
+	args: {
+		children: <Text>Text description for the switch</Text>,
+		className: storyLabel,
+	},
+};
 
-/**
- * Example of the switch properly associated with text content for accessibility compliance.
- */
+/** Custom label using `id` and `htmlFor` */
 export const WithLabel: Story = {
 	render: (args) => (
 		<Box display="flex" alignItems="center" style={{ gap: '0.75rem' }}>
-			<Switch {...args} />
-			<Text id={args['aria-labelledby']}>
+			<Box as="label" htmlFor={args['id']}>
 				Text description for the switch
-			</Text>
+			</Box>
+			<Switch {...args} />
 		</Box>
 	),
 	args: {
-		'aria-labelledby': 'label-for-switch',
+		id: 'test-switch-id',
 	},
 };
 

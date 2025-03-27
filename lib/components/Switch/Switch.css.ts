@@ -69,3 +69,8 @@ export const handle = styleVariants({
 		},
 	},
 });
+
+export const storyLabel = style({
+	display: 'flex',
+	gap: vars.space['2'],
+});
