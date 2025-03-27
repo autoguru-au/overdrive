@@ -31,7 +31,7 @@ export const styledSearchBar = recipe({
 			alignItems: 'center',
 			backgroundColor: tokens.colours.background.body,
 			borderColor: tokens.border.colours.gray,
-			borderRadius: tokens.border.radius[3],
+			borderRadius: tokens.border.radius['md'],
 			borderStyle: 'solid',
 			borderWidth: tokens.border.width[2],
 			color: tokens.colours.gamut.gray400,

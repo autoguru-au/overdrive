@@ -30,7 +30,7 @@ const attachOptions: Record<
 	ALL: 'ALL',
 };
 
-const meta = {
+const meta: Meta<typeof SelectInput> = {
 	title: 'Forms & Input Fields/Select',
 	component: SelectInput,
 	args: {
@@ -47,7 +47,7 @@ const meta = {
 		hintText: '',
 		notch: true,
 		attach: 'NONE',
-		prefixIcon: undefined,
+		prefixIcon: CarIcon,
 		onChange: action('onChange'),
 		onFocus: action('onFocus'),
 		onBlur: action('onBlur'),
@@ -77,35 +77,18 @@ const meta = {
 			description: 'Input prefix Icon',
 		},
 	},
-} satisfies Meta<typeof SelectInput>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/**
+ * Additional examples of shared input field states and variants can be seen in
+ * [Text Input](/docs/forms-input-fields-text-input--docs)
+ */
 export const Standard: Story = {
 	args: {
 		hintText: 'Hint Text',
-	},
-};
-
-export const NotchDisabled: Story = {
-	args: {
-		placeholder: defaultPlaceholder,
-		notch: false,
-	},
-};
-
-export const WithPrefixIcon: Story = {
-	args: {
-		prefixIcon: CarIcon,
-	},
-};
-
-export const Disabled: Story = {
-	args: {
-		value: defaultValue,
-		placeholder: defaultPlaceholder,
-		disabled: true,
 	},
 };
 
@@ -127,13 +110,22 @@ export const Invalid: Story = {
 	},
 };
 
-export const Loading: Story = {
+export const Disabled: Story = {
 	args: {
-		isLoading: true,
+		value: defaultValue,
+		placeholder: defaultPlaceholder,
+		disabled: true,
 	},
 };
 
-export const Small: Story = {
+export const LargeSize: Story = {
+	args: {
+		prefixIcon: undefined,
+		size: 'large',
+	},
+};
+
+export const SmallSize: Story = {
 	args: {
 		size: 'small',
 	},

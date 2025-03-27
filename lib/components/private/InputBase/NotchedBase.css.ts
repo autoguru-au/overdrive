@@ -2,12 +2,31 @@ import { style, styleVariants } from '@vanilla-extract/css';
 
 import { themeContractVars as vars } from '../../../themes/theme.css';
 
+import type { InputSize } from './withEnhancedInput.css';
+
 const active_scaling_factor = 0.7777;
 export const root = style({
 	transition: `fill 0.2s ${vars.animation.easing.decelerate} 0s`,
 });
 
-const defaultBorderWidth = '1px';
+export const labelStyle = styleVariants({
+	base: {
+		textWrap: 'nowrap',
+	},
+	small: {
+		fontSize: vars.typography.size['4'].fontSize,
+	},
+	medium: {
+		fontSize: vars.typography.size['4'].fontSize,
+	},
+	large: {
+		fontSize: vars.typography.size['7'].fontSize,
+	},
+});
+
+const defaultBorderWidth = vars.border.width['1'];
+const largeBorderWidth = vars.border.width['2'];
+
 const borderRegionDefaults = style({
 	borderWidth: defaultBorderWidth,
 	borderStyle: 'solid',
@@ -16,13 +35,22 @@ const borderRegionDefaults = style({
 });
 
 const borderVisualDefaults = style({
-	borderRadius: vars.border.radius['1'],
-	boxShadow: vars.elevation['2'],
+	borderRadius: vars.border.radius['md'],
 });
 
-export const notchGapPlaceholder = style({
-	visibility: 'hidden',
-	fontSize: `calc(${vars.typography.size['4'].fontSize} * ${active_scaling_factor})`,
+export const notchGapPlaceholder = styleVariants({
+	base: {
+		visibility: 'hidden',
+	},
+	small: {
+		fontSize: `calc(${vars.typography.size['4'].fontSize} * ${active_scaling_factor})`,
+	},
+	medium: {
+		fontSize: `calc(${vars.typography.size['4'].fontSize} * ${active_scaling_factor})`,
+	},
+	large: {
+		fontSize: `calc(${vars.typography.size['7'].fontSize} * ${active_scaling_factor})`,
+	},
 });
 
 export const borders = {
@@ -36,7 +64,7 @@ export const borders = {
 				left: 0,
 			}),
 		],
-		disabled: style({ boxShadow: 'none' }),
+		disabled: '',
 	},
 	complete: [borderVisualDefaults, borderRegionDefaults],
 	leading: [
@@ -44,16 +72,16 @@ export const borders = {
 		style({
 			width: vars.space['2'],
 			borderRight: 'none',
-			borderRadius: `${vars.border.radius['1']} 0 0 ${vars.border.radius['1']}`,
+			borderRadius: `${vars.border.radius['md']} 0 0 ${vars.border.radius['md']}`,
 		}),
 	],
 	middle: [
 		borderRegionDefaults,
 		style({
 			transition: `width 0.15s ${vars.animation.easing.decelerate}, border-color 0.2s ${vars.animation.easing.decelerate} 0s`,
-			borderTopWidth: 0,
-			borderRightWidth: 0,
-			borderLeftWidth: 0,
+			borderTopStyle: 'none',
+			borderRightStyle: 'none',
+			borderLeftStyle: 'none',
 		}),
 	],
 	trailing: [
@@ -61,7 +89,7 @@ export const borders = {
 		style({
 			flexGrow: 1,
 			borderLeft: 'none',
-			borderRadius: `0 ${vars.border.radius['1']} ${vars.border.radius['1']} 0`,
+			borderRadius: `0 ${vars.border.radius['md']} ${vars.border.radius['md']} 0`,
 		}),
 	],
 };
@@ -69,19 +97,19 @@ export const borders = {
 export const bordersAttach = {
 	complete: styleVariants({
 		NONE: {
-			borderRadius: `${vars.border.radius['1']}`,
+			borderRadius: `${vars.border.radius['md']}`,
 		},
 		LEFT: {
-			borderRadius: `0 ${vars.border.radius['1']} ${vars.border.radius['1']} 0`,
+			borderRadius: `0 ${vars.border.radius['md']} ${vars.border.radius['md']} 0`,
 		},
 		TOP: {
-			borderRadius: `0 0 ${vars.border.radius['1']} ${vars.border.radius['1']}`,
+			borderRadius: `0 0 ${vars.border.radius['md']} ${vars.border.radius['md']}`,
 		},
 		RIGHT: {
-			borderRadius: `${vars.border.radius['1']} 0 0 ${vars.border.radius['1']}`,
+			borderRadius: `${vars.border.radius['md']} 0 0 ${vars.border.radius['md']}`,
 		},
 		BOTTOM: {
-			borderRadius: `${vars.border.radius['1']} ${vars.border.radius['1']} 0 0`,
+			borderRadius: `${vars.border.radius['md']} ${vars.border.radius['md']} 0 0`,
 		},
 		ALL: {
 			borderRadius: 0,
@@ -102,6 +130,8 @@ export const bordersAttach = {
 		},
 	}),
 };
+
+export type BordersAttach = keyof typeof bordersAttach.complete;
 
 export const bordersMerged = {
 	complete: styleVariants({
@@ -140,7 +170,7 @@ export const bordersMerged = {
 	}),
 };
 
-type Size = 'small' | 'medium';
+export type BordersMerged = keyof typeof bordersMerged.complete;
 
 export const placeholder = styleVariants({
 	default: {
@@ -153,33 +183,46 @@ export const placeholder = styleVariants({
 	mutedLabelStyles: {
 		color: vars.typography.colour.muted,
 	},
+	disabled: {
+		color: vars.colours.background.neutral,
+	},
 });
 
 const calcPlaceholderTranslate = (
 	notched: boolean,
 	prefixed: boolean,
-	size: Size,
+	size: InputSize,
 ): string => {
+	const typography = vars.typography.size[size === 'large' ? '7' : '4'];
+	const vertPadding = vars.space['2'];
+
 	if (notched) {
-		return `calc(${vars.space['2']} + ${vars.space['2']}), calc(-0.5 * ${active_scaling_factor} * ${vars.typography.size['4'].fontSize})`;
+		return `calc(${vertPadding} + ${vertPadding}), calc(-0.5 * ${active_scaling_factor} * ${typography.fontSize})`;
 	}
 
-	return size === 'medium'
-		? `${
-				prefixed
-					? `calc(${vars.space['7']} + ${vars.space['3']})`
-					: vars.typography.size['4'].fontSize
-			}, calc((${vars.space['8']} - ${
-				vars.typography.size['4'].fontSize
-			}) / 2)`
-		: `${
-				prefixed
-					? `calc(${vars.space['2']} + ${vars.space['5']} + ${vars.space['2']})`
-					: vars.space['2']
-			}, calc(${vars.space['2']} + 2px)`;
+	if (size === 'medium') {
+		const offsetX = prefixed
+			? `calc(${vars.space['7']} + ${vars.space['3']})`
+			: typography.fontSize;
+
+		return `${offsetX}, calc((${vars.space['8']} - ${
+			typography.fontSize
+		}) / 2)`;
+	}
+
+	if (size === 'large') {
+		const offsetX = prefixed ? '64px' : typography.fontSize;
+		return `${offsetX}, 25px`;
+	}
+
+	const offsetX = prefixed
+		? `calc(${vars.space['2']} + ${vars.space['5']} + ${vars.space['2']})`
+		: vars.space['2'];
+
+	return `${offsetX}, calc(${vars.space['2']} + 2px)`;
 };
 
-export const placeholderPlacement: Record<Size, Record<string, string>> = {
+export const placeholderPlacement: Record<InputSize, Record<string, string>> = {
 	small: styleVariants({
 		default: {
 			transform: `translate(${calcPlaceholderTranslate(
@@ -228,4 +271,37 @@ export const placeholderPlacement: Record<Size, Record<string, string>> = {
 			)}) scale(${active_scaling_factor})`,
 		},
 	}),
+	large: styleVariants({
+		default: {
+			transform: `translate(${calcPlaceholderTranslate(
+				false,
+				false,
+				'large',
+			)}) scale(1)`,
+		},
+		defaultPrefixed: {
+			transform: `translate(${calcPlaceholderTranslate(
+				false,
+				true,
+				'large',
+			)}) scale(1)`,
+		},
+		shifted: {
+			zIndex: 2,
+			transform: `translate(${calcPlaceholderTranslate(
+				true,
+				false,
+				'large',
+			)}) scale(${active_scaling_factor})`,
+		},
+	}),
 };
+
+export const largeBorder = style({
+	borderWidth: largeBorderWidth,
+});
+
+export const largeBorderY = style({
+	borderTopWidth: largeBorderWidth,
+	borderBottomWidth: largeBorderWidth,
+});

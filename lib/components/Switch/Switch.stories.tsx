@@ -1,40 +1,67 @@
-import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
+import React from 'react';
+
+import { Box } from '../Box';
+import { Text } from '../Text';
+
+import { storyLabel } from './Switch.css';
 
 import { Switch } from '.';
 
-const meta = {
+const meta: Meta<typeof Switch> = {
 	title: 'Primatives/Switch',
 	component: Switch,
+	tags: ['updated'],
 	args: {
-		isDisabled: false,
-		isSelected: false,
-		onChange: action('onChange'),
-		className: 'toggleButton-class',
+		name: 'switch',
+		value: 'yes',
+		isSelected: undefined,
+		isDisabled: undefined,
+		onChange: fn(),
 	},
-} satisfies Meta<typeof Switch>;
+	argTypes: {
+		isSelected: {
+			control: 'boolean',
+		},
+		disabled: {
+			control: false,
+		},
+		toggled: {
+			control: false,
+		},
+	},
+};
 
 export default meta;
 
 type Story = StoryObj<typeof Switch>;
 
-export const Untoggled: Story = {};
-
-export const UntoggledDisabled: Story = {
+/** Passes in the text label and styles for the layout */
+export const Uncontrolled: Story = {
 	args: {
-		isDisabled: true,
+		children: <Text>Text description for the switch</Text>,
+		className: storyLabel,
 	},
 };
 
-export const Toggled: Story = {
+/** Custom label using `id` and `htmlFor` */
+export const WithLabel: Story = {
+	render: (args) => (
+		<Box display="flex" alignItems="center" style={{ gap: '0.75rem' }}>
+			<Box as="label" htmlFor={args['id']}>
+				Text description for the switch
+			</Box>
+			<Switch {...args} />
+		</Box>
+	),
 	args: {
-		isSelected: true,
+		id: 'test-switch-id',
 	},
 };
 
-export const ToggledDisabled: Story = {
+export const Disabled: Story = {
 	args: {
-		isSelected: true,
 		isDisabled: true,
 	},
 };

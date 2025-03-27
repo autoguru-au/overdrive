@@ -80,10 +80,10 @@ export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 				space="1"
 			>
 				{align === 'right' && shouldSort ? sorter : null}
-				<Text strong size="2" is="span" className={styles.text}>
+				<Text strong size="3" is="span" className={styles.text}>
 					{children}
 					{shouldSort ? (
-						<VisuallyHidden is="span">
+						<VisuallyHidden as="span">
 							{' '}
 							sorted {sortToAria(sort!)}
 						</VisuallyHidden>
@@ -104,8 +104,7 @@ export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 				alignItems="center"
 				justifyContent={alignmentToFlexAlignment(align)}
 				padding={sort ? undefined : padding}
-				backgroundColour="gray100"
-				borderColourBottom="light"
+				borderColourBottom="dark"
 				borderWidthBottom="1"
 				aria-sort={shouldSort ? sortToAria(sort!) : undefined}
 				aria-label={ariaLabel}
@@ -114,7 +113,7 @@ export const TableHeadCell = forwardRef<HTMLDivElement, Props>(
 			>
 				{sort ? (
 					<Box
-						is="button"
+						as="button"
 						display="block"
 						width="full"
 						padding={padding}

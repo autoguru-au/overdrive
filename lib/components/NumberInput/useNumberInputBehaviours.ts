@@ -1,7 +1,7 @@
 import {
-	FocusEventHandler,
-	FormEventHandler,
-	RefObject,
+	type FocusEventHandler,
+	type FormEventHandler,
+	type RefObject,
 	useCallback,
 	useEffect,
 	useRef,
@@ -11,7 +11,7 @@ import {
 import { EnhanceInputPrimitiveProps } from '../private/InputBase/withEnhancedInput';
 
 interface Props {
-	value: EnhanceInputPrimitiveProps['value'];
+	value: EnhanceInputPrimitiveProps<HTMLInputElement>['value'];
 	ref: RefObject<HTMLInputElement>;
 	preventMouseWheel: boolean;
 	onFocus?: FocusEventHandler<HTMLInputElement>;
@@ -20,7 +20,7 @@ interface Props {
 }
 
 interface Returns {
-	value: EnhanceInputPrimitiveProps['value'];
+	value: EnhanceInputPrimitiveProps<HTMLInputElement>['value'];
 	inputRef: RefObject<HTMLInputElement>;
 	onFocus: FocusEventHandler<HTMLInputElement>;
 	onBlur: FocusEventHandler<HTMLInputElement>;
