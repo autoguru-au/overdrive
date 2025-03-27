@@ -1,5 +1,5 @@
 {
-	"mode": "pre",
+	"mode": "exit",
 	"tag": "next",
 	"initialVersions": {
 		"@autoguru/overdrive": "4.39.1"
