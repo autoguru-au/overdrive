@@ -1,29 +1,46 @@
 import clsx from 'clsx';
-import { type ComponentProps } from 'react';
 
 import type { BoxStyleProps } from '../Box';
 import { useBoxStyles } from '../Box';
-import { Text } from '../Text';
 
 import * as styles from './useTextStyles.css';
 
+export type TextColor = keyof typeof styles.colours | 'unset';
+export type TextFontWeight = keyof typeof styles.fontWeight;
+export type TextSize = keyof typeof styles.sizes;
+export type TextTransform = keyof typeof styles.transform;
+
+export type TextTags = 'p' | 'label' | 'span';
 export interface TextStyleProps {
-	/** @deprecated Because when you go `useTextStyles` for alignment, you should be using `useBoxStyles` */
+	/** @deprecated Use `useBoxStyles` for alignment instead of `useTextStyles` */
 	align?: BoxStyleProps['textAlign'];
-	colour?: keyof typeof styles.colours | 'unset';
-	fontWeight?: keyof typeof styles.fontWeight;
-	is?: ComponentProps<typeof Text>['is'];
+	/** HTML element to render as */
+	as?: TextTags;
+	/** Set the text colour */
+	color?: TextColor;
+	/** @deprecated Prefer `color` */
+	colour?: TextColor;
+	/** Font weight of the text */
+	fontWeight?: TextFontWeight;
+	/** @deprecated Prefer `as` */
+	is?: TextTags;
+	/** Prevents text from wrapping */
 	noWrap?: boolean;
+	/** Forces long words to break */
 	breakWord?: boolean;
-	size?: keyof typeof styles.sizes;
-	transform?: keyof typeof styles.transform;
+	/** Font size of the text */
+	size?: TextSize;
+	/** Text transformation (uppercase, lowercase, etc.) */
+	transform?: TextTransform;
 }
 
 export const useTextStyles = ({
 	align,
 	colour,
+	color = colour,
 	fontWeight,
 	is,
+	as = is,
 	noWrap,
 	breakWord,
 	size,
@@ -31,13 +48,13 @@ export const useTextStyles = ({
 }: TextStyleProps) => {
 	return clsx(
 		styles.root,
-		useBoxStyles({ is, textAlign: align }),
-		colour !== 'unset' && styles.colours[colour ?? 'neutral'],
-		styles.fontWeight[fontWeight!],
+		useBoxStyles({ as, textAlign: align }),
+		color !== 'unset' && styles.colours[color ?? 'neutral'],
+		fontWeight && styles.fontWeight[fontWeight],
 		noWrap && styles.noWrap,
 		breakWord && styles.breakWord,
-		styles.sizes[size!],
-		styles.transform[transform!],
+		size && styles.sizes[size],
+		transform && styles.transform[transform],
 	);
 };
 

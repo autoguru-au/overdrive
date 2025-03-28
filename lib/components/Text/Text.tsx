@@ -1,6 +1,4 @@
-import type { CSSProperties, ReactNode } from 'react';
-import * as React from 'react';
-import { forwardRef } from 'react';
+import React from 'react';
 
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
@@ -9,29 +7,33 @@ import { Box } from '../Box';
 
 import { TextStyleProps, useTextStyles } from './useTextStyles';
 
-export interface Props extends TextStyleProps {
-	className?: string;
-	is?: 'p' | 'span';
-	id?: string;
+type Display = Extract<
+	BoxStyleProps['display'],
+	'inline' | 'inlineBlock' | 'block'
+>;
+type ElementAttributes = React.ComponentPropsWithoutRef<'p'> &
+	Pick<React.ComponentProps<'label'>, 'htmlFor'>;
+
+export interface TextProps
+	extends Omit<ElementAttributes, 'color' | 'is'>,
+		TextStyleProps {
+	/** Use bold font weight */
 	strong?: boolean;
-	children?: ReactNode;
-	display?: Extract<
-		BoxStyleProps['display'],
-		'inline' | 'inlineBlock' | 'block'
-	>;
-	style?: CSSProperties;
+	/** Select CSS display property  */
+	display?: Display;
 }
 
-export const Text = forwardRef<HTMLElement, WithTestId<Props>>(
+export const Text = React.forwardRef<HTMLElement, WithTestId<TextProps>>(
 	(
 		{
 			children,
-			className = '',
-			is: Component = 'span',
-			id,
+			className,
+			is = 'span',
+			as = is,
 			testId,
 			align = 'left',
 			colour,
+			color = colour,
 			display,
 			fontWeight = 'normal',
 			transform,
@@ -39,21 +41,20 @@ export const Text = forwardRef<HTMLElement, WithTestId<Props>>(
 			noWrap,
 			size = '4',
 			strong = false,
-			style,
+			...props
 		},
 		ref,
 	) => (
 		<Box
-			as={Component}
-			id={id}
+			as={as}
 			ref={ref}
 			display={display}
 			textAlign={align}
 			className={[
 				useTextStyles({
-					is: Component,
+					as,
 					size,
-					colour: colour ?? (strong ? 'dark' : undefined),
+					color: color ?? (strong ? 'dark' : undefined),
 					fontWeight: strong ? 'bold' : fontWeight,
 					transform,
 					noWrap,
@@ -61,12 +62,14 @@ export const Text = forwardRef<HTMLElement, WithTestId<Props>>(
 				}),
 				className,
 			]}
-			style={style}
+			{...props}
 			{...dataAttrs({ 'test-id': testId })}
 		>
 			{children}
 		</Box>
 	),
 );
+
+Text.displayName = 'Text';
 
 export default Text;
