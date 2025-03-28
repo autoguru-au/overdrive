@@ -24,17 +24,6 @@
 
     Checkbox: Added support for an indeterminate state.
 
-## 4.40.0-next.0
-
-### Minor Changes
-
-- 3c3ec16: This release updates the visual appearance of the following
-  components: Button, Checkbox, Radio, Switch, TextInput, NumberInput,
-  DateInput, ColourInput, Tabs and Auto Suggest. A consistent keyboard focus
-  outline has also been applied and addresses a few accessibility issues
-  relating to labelling on Button and aria attributes on Checkbox, Radio and
-  Tabs.
-
 ## 4.39.2
 
 ### Patch Changes
