@@ -1,8 +1,10 @@
+import type { Preview } from '@storybook/react';
+
 import '../lib/reset/globalFonts.css';
 import '../lib/reset/globalReset.css';
 import * as themes from '../lib/themes';
 
-import { withThemeProvider } from './withThemeProvider';
+import { withOverdriveTheme } from './withThemeProvider';
 
 export const globalTypes = {
 	theme: {
@@ -32,9 +34,8 @@ export const globalTypes = {
 	},
 };
 
-/** @type { import('@storybook/react').Preview } */
-const preview = {
-	decorators: [withThemeProvider],
+const preview: Preview = {
+	decorators: [withOverdriveTheme],
 
 	parameters: {
 		controls: {
