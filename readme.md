@@ -47,21 +47,21 @@ want to use:
 import '@autoguru/overdrive/reset';
 // It is important that the reset import happens before any of this.
 import { baseTheme } from '@autoguru/overdrive/lib/themes';
-import { UnifiedThemeProvider, Button } from '@autoguru/overdrive';
+import { OverdriveProvider, Button } from '@autoguru/overdrive';
 
-<UnifiedThemeProvider
+<OverdriveProvider
 	theme={baseTheme}
 	vars={baseTheme.vars}
 	themeClass="od-theme"
 >
 	<Button variant="primary">Hello World</Button>
-</UnifiedThemeProvider>;
+</OverdriveProvider>;
 ```
 
 You can also customize the theme colors using the provider props:
 
 ```jsx
-<UnifiedThemeProvider
+<OverdriveProvider
 	theme={baseTheme}
 	vars={baseTheme.vars}
 	themeClass="od-theme"
@@ -72,7 +72,7 @@ You can also customize the theme colors using the provider props:
 	primaryColourBorder="#CC0000"
 >
 	<Button variant="primary">Custom Red Theme</Button>
-</UnifiedThemeProvider>
+</OverdriveProvider>
 ```
 
 ## Thanks
