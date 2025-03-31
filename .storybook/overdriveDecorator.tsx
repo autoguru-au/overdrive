@@ -7,28 +7,63 @@ import { Box } from '../lib/components/Box';
 import { Heading } from '../lib/components/Heading';
 import { OverdriveProvider } from '../lib/components/OverdriveProvider';
 import { Stack } from '../lib/components/Stack';
+import { UnifiedThemeProvider } from '../lib/components/UnifiedThemeProvider/UnifiedThemeProvider';
 import { useDocumentBodyStyles } from '../lib/hooks/useDocumentBodyStyles';
 import * as themes from '../lib/themes';
 import { breakpoints } from '../lib/themes/makeTheme';
-import { container, themeContractVars } from '../lib/themes/theme.css';
+import { container } from '../lib/themes/theme.css';
+
+const overrideColours = {
+	bright: {
+		primaryColourBackground: '#e5bc01',
+		primaryColourForeground: '#1e1818',
+	},
+	dark: {
+		primaryColourBackground: '#1e1818',
+		primaryColourForeground: '#e5bc01',
+	},
+};
 
 export const useStorybookDecorator = (Story, context) => {
 	useDocumentBodyStyles();
 	const portalRef = useRef<HTMLDivElement>(null);
 	const theme = themes[context.globals.theme];
+	// const { setThemeValues } = useThemeOverrides();
+
+	// useEffect(() => {
+	// 	if (context.globals.overrideColours in overrideColours) {
+	// 		setThemeValues({
+	// 			...overrideColours[context.globals.overrideColours]
+	// 		})
+	// 	}
+	// }, [context.globals.overrideColours, setThemeValues])
 
 	return (
-		<OverdriveProvider
+		<UnifiedThemeProvider
 			portalMountPoint={portalRef}
 			noBodyLevelTheming={false}
-			vars={themeContractVars}
 			breakpoints={breakpoints}
-			themeClass={theme.themeRef}
+			theme={theme}
+			// primaryColourBackground={
+			// 	hasOverride ? customColours.primaryColourBackground : undefined
+			// }
+			// primaryColourForeground={
+			// 	overrideColours
+			// 		? customColours.primaryColourForeground
+			// 		: undefined
+			// }
+			// primaryColourBackgroundMild={
+			// 	overrideColours ? null : primaryColourBackground.mild
+			// }
+			// primaryColourBackgroundStrong={
+			// 	overrideColours ? null : primaryColourBackground.strong
+			// }
+			// primaryColourBorder={overrideColours ? null : primaryColourBorder}
 		>
 			<Box ref={portalRef} className={clsx(container, theme.themeRef)}>
 				<Story {...context} />
 			</Box>
-		</OverdriveProvider>
+		</UnifiedThemeProvider>
 	);
 };
 
