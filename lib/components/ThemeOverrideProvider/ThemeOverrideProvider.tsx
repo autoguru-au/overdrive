@@ -1,14 +1,6 @@
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import * as React from 'react';
-import {
-	Context,
-	createContext,
-	FunctionComponent,
-	ReactNode,
-	useContext,
-	useEffect,
-	useMemo,
-} from 'react';
+import { createContext, useContext } from 'react';
 
 import { default as defaultTheme } from '../../themes/base';
 
@@ -27,33 +19,23 @@ export interface ThemeOverridesValues {
 	primaryColourForeground: string;
 	theme: Theme;
 	overrideStyles: ReturnType<typeof assignInlineVars>;
-
 	setThemeValues: (values: Partial<OverrideValues>) => void;
 }
 
-interface Props
-	extends Pick<
-			ThemeOverridesValues,
-			| 'theme'
-			| 'primaryColourBackgroundMild'
-			| 'primaryColourBackgroundStrong'
-			| 'primaryColourBorder'
-		>,
-		Partial<
-			Pick<
-				ThemeOverridesValues,
-				'primaryColourBackground' | 'primaryColourForeground'
-			>
-		> {
-	children?: ReactNode | ReactNode[];
-}
+type Props = Partial<
+	Omit<ThemeOverridesValues, 'overrideStyles' | 'setThemeValues' | 'theme'>
+> & {
+	theme: Theme;
+	children?: React.ReactNode;
+};
 
-const themeOverridesCtx: Context<ThemeOverridesValues> =
-	createContext<ThemeOverridesValues>({} as ThemeOverridesValues);
+const themeOverridesCtx = createContext<ThemeOverridesValues>(
+	{} as ThemeOverridesValues,
+);
 
 export const useThemeOverrides = () => useContext(themeOverridesCtx);
 
-export const ThemeOverrideProvider: FunctionComponent<Props> = ({
+export const ThemeOverrideProvider = ({
 	primaryColourBackground,
 	primaryColourForeground,
 	primaryColourBackgroundMild,
@@ -61,7 +43,7 @@ export const ThemeOverrideProvider: FunctionComponent<Props> = ({
 	primaryColourBorder,
 	theme,
 	children,
-}) => {
+}: Props) => {
 	const overrides = useBuildThemeOverrides({
 		primaryColourBackground,
 		primaryColourForeground,
@@ -71,51 +53,34 @@ export const ThemeOverrideProvider: FunctionComponent<Props> = ({
 		mode: theme?.vars.mode,
 	});
 
-	useEffect(() => {
-		if (
-			primaryColourBackground !== overrides.primaryColourBackground ||
-			primaryColourForeground !== overrides.primaryColourForeground ||
-			primaryColourBackgroundMild !==
-				overrides.primaryColourBackgroundMild ||
-			primaryColourBackgroundStrong !==
-				overrides.primaryColourBackgroundStrong ||
-			primaryColourBorder !== overrides.primaryColourBorder
-		) {
-			overrides.setThemeValues({
-				primaryColourBackground,
-				primaryColourForeground,
-				primaryColourBackgroundMild,
-				primaryColourBackgroundStrong,
-				primaryColourBorder,
-			});
-		}
+	React.useEffect(() => {
+		overrides.setThemeValues({
+			primaryColourBackground,
+			primaryColourForeground,
+			primaryColourBackgroundMild,
+			primaryColourBackgroundStrong,
+			primaryColourBorder,
+		});
 	}, [
 		primaryColourBackground,
 		primaryColourForeground,
 		primaryColourBackgroundMild,
 		primaryColourBackgroundStrong,
 		primaryColourBorder,
+		overrides.setThemeValues,
 		overrides,
 	]);
 
+	const value = React.useMemo(
+		() => ({
+			theme,
+			...overrides,
+		}),
+		[theme, overrides],
+	);
+
 	return (
-		<themeOverridesCtx.Provider
-			value={useMemo(
-				() => ({
-					theme,
-					...overrides,
-				}),
-				[
-					theme,
-					overrides,
-					primaryColourBackground,
-					primaryColourForeground,
-					primaryColourBackgroundMild,
-					primaryColourBackgroundStrong,
-					primaryColourBorder,
-				],
-			)}
-		>
+		<themeOverridesCtx.Provider value={value}>
 			{children}
 		</themeOverridesCtx.Provider>
 	);

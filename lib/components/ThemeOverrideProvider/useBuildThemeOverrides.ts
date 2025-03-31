@@ -1,39 +1,20 @@
 import { assignInlineVars } from '@vanilla-extract/dynamic';
-import { ComponentProps, Reducer, useEffect, useMemo, useReducer } from 'react';
+import { ComponentProps, useState, useMemo } from 'react';
 
 import { tokens } from '../../themes/base/tokens';
 import { shadedColour } from '../../themes/helpers';
 import { themeContractVars } from '../../themes/theme.css';
 import { Tokens } from '../../themes/tokens';
 
-import {
-	ThemeOverrideProvider,
-	ThemeOverridesValues,
-} from './ThemeOverrideProvider';
+import { ThemeOverrideProvider } from './ThemeOverrideProvider';
 
-interface Props
+interface UseBuildThemeOverridesProps
 	extends Omit<
 		ComponentProps<typeof ThemeOverrideProvider>,
 		'theme' | 'children'
 	> {
 	mode: Tokens['mode'];
 }
-
-type Returns = Pick<
-	ThemeOverridesValues,
-	| 'overrideStyles'
-	| 'primaryColourBackground'
-	| 'primaryColourForeground'
-	| 'primaryColourBorder'
-	| 'primaryColourBackgroundMild'
-	| 'primaryColourBackgroundStrong'
-	| 'setThemeValues'
->;
-
-type Action = {
-	type: 'SET_THEME_VALUES';
-	payload: Partial<OverrideValues>;
-};
 
 export interface OverrideValues {
 	primaryColourBackground: string;
@@ -43,72 +24,33 @@ export interface OverrideValues {
 	primaryColourBorder?: string;
 }
 
-const reducer: Reducer<OverrideValues, Action> = (prevState, action) => {
-	// eslint-disable-next-line sonarjs/no-small-switch
-	switch (action.type) {
-		case 'SET_THEME_VALUES': {
-			return {
-				...prevState,
-				...action.payload,
-			};
-		}
-
-		default: {
-			return prevState;
-		}
-	}
-};
 export const useBuildThemeOverrides = ({
 	mode,
-	primaryColourBackground: incomingPrimaryColourBackground = tokens.colours
-		.intent.primary.background.standard,
-	primaryColourForeground: incomingPrimaryColourForeground = tokens.colours
-		.intent.primary.foreground,
-	primaryColourBackgroundStrong: incomingPrimaryColourBackgroundStrong,
-	primaryColourBackgroundMild: incomingPrimaryColourBackgroundMild,
-	primaryColourBorder: incomingPrimaryColourBorder,
-}: Props): Returns => {
-	const [
-		{
-			primaryColourBorder,
-			primaryColourForeground,
-			primaryColourBackgroundStrong,
-			primaryColourBackgroundMild,
-			primaryColourBackground,
-			...extraColours
-		},
-		dispatch,
-	] = useReducer(reducer, {
-		primaryColourBackground: incomingPrimaryColourBackground,
-		primaryColourForeground: incomingPrimaryColourForeground,
-		primaryColourBorder: incomingPrimaryColourBorder,
-		primaryColourBackgroundMild: incomingPrimaryColourBackgroundMild,
-		primaryColourBackgroundStrong: incomingPrimaryColourBackgroundStrong,
+	primaryColourBackground: initialBackground = tokens.colours.intent.primary
+		.background.standard,
+	primaryColourForeground: initialForeground = tokens.colours.intent.primary
+		.foreground,
+	primaryColourBackgroundStrong: initialStrong,
+	primaryColourBackgroundMild: initialMild,
+	primaryColourBorder: initialBorder,
+}: UseBuildThemeOverridesProps) => {
+	const [themeValues, setThemeValues] = useState<OverrideValues>({
+		primaryColourBackground: initialBackground,
+		primaryColourForeground: initialForeground,
+		primaryColourBorder: initialBorder,
+		primaryColourBackgroundMild: initialMild,
+		primaryColourBackgroundStrong: initialStrong,
 	});
 
-	useEffect(() => {
-		dispatch({
-			type: 'SET_THEME_VALUES',
-			payload: {
-				primaryColourBackground: incomingPrimaryColourBackground,
-				primaryColourForeground: incomingPrimaryColourForeground,
-				primaryColourBorder: incomingPrimaryColourBorder,
-				primaryColourBackgroundMild:
-					incomingPrimaryColourBackgroundMild,
-				primaryColourBackgroundStrong:
-					incomingPrimaryColourBackgroundStrong,
-			},
-		});
-	}, [
-		mode,
-		incomingPrimaryColourBackground,
-		incomingPrimaryColourForeground,
-		incomingPrimaryColourBackgroundStrong,
-		incomingPrimaryColourBackgroundMild,
-		incomingPrimaryColourBorder,
-	]);
+	const {
+		primaryColourBackground,
+		primaryColourForeground,
+		primaryColourBorder,
+		primaryColourBackgroundMild,
+		primaryColourBackgroundStrong,
+	} = themeValues;
 
-	const overrideStyles = useMemo<ReturnType<typeof assignInlineVars>>(() => {
+	const overrideStyles = useMemo(() => {
 		const mildPrimary =
 			primaryColourBackgroundMild ||
 			shadedColour({
@@ -127,9 +69,11 @@ export const useBuildThemeOverrides = ({
 			});
 
 		return assignInlineVars(themeContractVars, {
-			...extraColours,
+			...tokens,
 			colours: {
+				...tokens.colours,
 				intent: {
+					...tokens.colours.intent,
 					primary: {
 						background: {
 							standard: primaryColourBackground,
@@ -142,40 +86,26 @@ export const useBuildThemeOverrides = ({
 				},
 			},
 			typography: {
+				...tokens.typography,
 				colour: {
+					...tokens.typography.colour,
 					primary: primaryColourBackground,
 				},
 			},
-		} as Tokens);
+		});
 	}, [
+		mode,
 		primaryColourBackground,
 		primaryColourBackgroundMild,
 		primaryColourBackgroundStrong,
 		primaryColourBorder,
 		primaryColourForeground,
-		mode,
-		incomingPrimaryColourBackground,
-		incomingPrimaryColourForeground,
-		incomingPrimaryColourBackgroundStrong,
-		incomingPrimaryColourBackgroundMild,
-		incomingPrimaryColourBorder,
-		extraColours,
 	]);
 
-	return useMemo(
-		() => ({
-			overrideStyles,
-			primaryColourBackground,
-			primaryColourForeground,
-			primaryColourBorder,
-			primaryColourBackgroundStrong,
-			primaryColourBackgroundMild,
-			setThemeValues: (values: Partial<OverrideValues>) =>
-				dispatch({
-					type: 'SET_THEME_VALUES',
-					payload: values,
-				}),
-		}),
-		[overrideStyles],
-	);
+	return {
+		overrideStyles,
+		...themeValues,
+		setThemeValues: (values: Partial<OverrideValues>) =>
+			setThemeValues((prev) => ({ ...prev, ...values })),
+	};
 };
