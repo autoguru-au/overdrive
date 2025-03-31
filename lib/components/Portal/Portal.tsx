@@ -29,7 +29,6 @@ function Portal(
 			let mountElement = document.body;
 			if (isHtmlElement(container)) mountElement = container;
 			else if (isHtmlElement(portalMountPoint?.current)) {
-				// @ts-expect-error not assignable to type 'HTMLElement'
 				mountElement = portalMountPoint.current;
 			}
 			setMountNode(mountElement);
