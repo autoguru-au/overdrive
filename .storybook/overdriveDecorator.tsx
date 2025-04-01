@@ -1,18 +1,15 @@
-/* eslint-disable import/namespace */
 import isChromatic from 'chromatic/isChromatic';
-import clsx from 'clsx';
 import React, { useRef } from 'react';
 
 import { Box } from '../lib/components/Box';
 import { Heading } from '../lib/components/Heading';
 import { OverdriveProvider } from '../lib/components/OverdriveProvider';
 import { Stack } from '../lib/components/Stack';
-import { UnifiedThemeProvider } from '../lib/components/UnifiedThemeProvider/UnifiedThemeProvider';
-import { useDocumentBodyStyles } from '../lib/hooks/useDocumentBodyStyles';
-import * as themes from '../lib/themes';
+import * as allThemes from '../lib/themes';
 import { breakpoints } from '../lib/themes/makeTheme';
 import { container } from '../lib/themes/theme.css';
 
+const themes = allThemes;
 const overrideColours = {
 	bright: {
 		primaryColourBackground: '#e5bc01',
@@ -25,45 +22,24 @@ const overrideColours = {
 };
 
 export const useStorybookDecorator = (Story, context) => {
-	useDocumentBodyStyles();
 	const portalRef = useRef<HTMLDivElement>(null);
-	const theme = themes[context.globals.theme];
-	// const { setThemeValues } = useThemeOverrides();
-
-	// useEffect(() => {
-	// 	if (context.globals.overrideColours in overrideColours) {
-	// 		setThemeValues({
-	// 			...overrideColours[context.globals.overrideColours]
-	// 		})
-	// 	}
-	// }, [context.globals.overrideColours, setThemeValues])
+	const customColours =
+		context.globals.overrideColours in overrideColours
+			? overrideColours[context.globals.overrideColours]
+			: {};
 
 	return (
-		<UnifiedThemeProvider
-			portalMountPoint={portalRef}
-			noBodyLevelTheming={false}
+		<OverdriveProvider
+			theme={themes[context.globals.theme]}
 			breakpoints={breakpoints}
-			theme={theme}
-			// primaryColourBackground={
-			// 	hasOverride ? customColours.primaryColourBackground : undefined
-			// }
-			// primaryColourForeground={
-			// 	overrideColours
-			// 		? customColours.primaryColourForeground
-			// 		: undefined
-			// }
-			// primaryColourBackgroundMild={
-			// 	overrideColours ? null : primaryColourBackground.mild
-			// }
-			// primaryColourBackgroundStrong={
-			// 	overrideColours ? null : primaryColourBackground.strong
-			// }
-			// primaryColourBorder={overrideColours ? null : primaryColourBorder}
+			noBodyLevelTheming
+			overrides={customColours}
+			portalMountPoint={portalRef}
 		>
-			<Box ref={portalRef} className={clsx(container, theme.themeRef)}>
-				<Story {...context} />
+			<Box className={container} ref={portalRef}>
+				<Story />
 			</Box>
-		</UnifiedThemeProvider>
+		</OverdriveProvider>
 	);
 };
 
@@ -79,8 +55,7 @@ export const useChromaticDecorator = (Story, context) => {
 				>
 					<OverdriveProvider
 						noBodyLevelTheming
-						themeClass={themes[themeName].themeRef}
-						vars={themes[themeName].vars}
+						theme={themes[themeName]}
 					>
 						<Box width="full" padding="5">
 							<Stack width="full" space="3">

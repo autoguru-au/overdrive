@@ -25,6 +25,13 @@ export default {
 		chromatic: { disable: true },
 	},
 	argTypes,
+	decorators: [
+		(Story) => (
+			<div style={{ minHeight: '660px' }}>
+				<Story />
+			</div>
+		),
+	],
 } satisfies Meta<typeof MinimalModal>;
 
 type Story = StoryObj<typeof MinimalModal>;
