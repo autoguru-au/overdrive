@@ -1,12 +1,14 @@
 import { invariant } from '@autoguru/utilities';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import { isEqual } from 'es-toolkit';
-import React, { createContext, useContext, useMemo } from 'react';
+import React, { createContext, useContext, useEffect, useMemo } from 'react';
 
 import baseTheme from '../../themes/base';
+import { shadedColour } from '../../themes/helpers';
 import { makeRuntimeTokens, RuntimeTokens } from '../../themes/makeTheme';
 import { themeContractVars } from '../../themes/theme.css';
 import { BreakPoints } from '../../themes/tokens';
+import { isBrowser } from '../../utils';
 
 type ThemeContract = typeof themeContractVars;
 export interface ThemeOverrides {
@@ -20,6 +22,7 @@ export interface ThemeOverrides {
 export interface BaseProps {
 	theme?: typeof baseTheme;
 	breakpoints?: BreakPoints;
+	noBodyLevelTheming?: boolean;
 	overrides?: Partial<ThemeOverrides>;
 	portalMountPoint?: React.RefObject<HTMLElement | null>;
 }
@@ -50,6 +53,7 @@ export const useRuntimeTokens = (): RuntimeTokens => {
 export const Provider = ({
 	breakpoints,
 	children,
+	noBodyLevelTheming = false,
 	overrides,
 	portalMountPoint,
 	theme = baseTheme,
@@ -70,6 +74,35 @@ export const Provider = ({
 
 	const styles = useMemo(() => {
 		if (!overrides) return {};
+
+		let mildPrimary: string | null = null;
+		let strongPrimary: string | null = null;
+
+		if (overrides.primaryColourBackground) {
+			mildPrimary =
+				overrides.primaryColourBackgroundMild ||
+				shadedColour({
+					colour: overrides.primaryColourBackground,
+					isDarkTheme: false,
+					direction:
+						String(theme.vars.mode) === 'light'
+							? 'forward'
+							: 'backward',
+					intensity: 0.1,
+				});
+			strongPrimary =
+				overrides.primaryColourBackgroundStrong ||
+				shadedColour({
+					colour: overrides.primaryColourBackground,
+					isDarkTheme: false,
+					direction:
+						String(theme.vars.mode) === 'light'
+							? 'forward'
+							: 'backward',
+					intensity: 0.1,
+				});
+		}
+
 		// although this look scary, assignInlineVars only generates css vars to apply to a container
 		// anyproperty that is undefined will not have an inline css var generated
 		return assignInlineVars(themeContractVars, {
@@ -81,13 +114,9 @@ export const Provider = ({
 							standard:
 								overrides.primaryColourBackground ?? undefined,
 							// @ts-expect-error no undefined
-							mild:
-								overrides.primaryColourBackgroundMild ??
-								undefined,
+							mild: mildPrimary ?? undefined,
 							// @ts-expect-error no undefined
-							strong:
-								overrides.primaryColourBackgroundStrong ??
-								undefined,
+							strong: strongPrimary ?? undefined,
 						},
 						// @ts-expect-error no undefined
 						foreground:
@@ -104,7 +133,22 @@ export const Provider = ({
 				},
 			},
 		});
-	}, [overrides]);
+	}, [overrides, theme.vars.mode]);
+
+	// Body Level Theming
+	useEffect(() => {
+		if (
+			!isBrowser ||
+			noBodyLevelTheming ||
+			document.body.classList.contains(theme.themeRef)
+		)
+			return;
+
+		document.body.classList.add(theme.themeRef);
+		return () => {
+			document.body.classList.remove(theme.themeRef);
+		};
+	}, [noBodyLevelTheming, theme]);
 
 	return (
 		<OverdriveContext.Provider value={themeValues}>
