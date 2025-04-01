@@ -21,7 +21,6 @@ export const globalTypes = {
 				},
 				{
 					title: 'Flat Red Theme',
-
 					value: themes.flatRedTheme.name,
 				},
 				{

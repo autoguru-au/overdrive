@@ -1,5 +1,4 @@
 export * from './OverdriveProvider';
-export * from './ThemeProvider';
 
 export * from './Actions';
 export * from './Alert';

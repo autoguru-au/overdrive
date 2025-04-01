@@ -40,7 +40,7 @@ To use Overdrive in your project, install it via yarn:
 yarn add @autoguru/overdrive react react-dom
 ```
 
-Then, import the reset and configure the UnifiedThemeProvider with the theme you
+Then, import the reset and configure the OverdriveProvider with the theme you
 want to use:
 
 ```jsx
@@ -49,11 +49,7 @@ import '@autoguru/overdrive/reset';
 import { baseTheme } from '@autoguru/overdrive/lib/themes';
 import { OverdriveProvider, Button } from '@autoguru/overdrive';
 
-<OverdriveProvider
-	theme={baseTheme}
-	vars={baseTheme.vars}
-	themeClass="od-theme"
->
+<OverdriveProvider theme={baseTheme}>
 	<Button variant="primary">Hello World</Button>
 </OverdriveProvider>;
 ```
@@ -63,13 +59,13 @@ You can also customize the theme colors using the provider props:
 ```jsx
 <OverdriveProvider
 	theme={baseTheme}
-	vars={baseTheme.vars}
-	themeClass="od-theme"
-	primaryColourBackground="#FF0000"
-	primaryColourForeground="#FFFFFF"
-	primaryColourBackgroundMild="#FFE5E5"
-	primaryColourBackgroundStrong="#CC0000"
-	primaryColourBorder="#CC0000"
+	overrides={{
+		primaryColourBackground: '#FF0000',
+		primaryColourForeground: '#FFFFFF',
+		primaryColourBackgroundMild: '#FFE5E5',
+		primaryColourBackgroundStrong: '#CC0000',
+		primaryColourBorder: '#CC0000',
+	}}
 >
 	<Button variant="primary">Custom Red Theme</Button>
 </OverdriveProvider>

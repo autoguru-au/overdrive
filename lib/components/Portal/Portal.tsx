@@ -4,7 +4,7 @@ import { forwardRef, useLayoutEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import { isBrowser, isHtmlElement, setRef } from '../../utils';
-import { useTheme } from '../ThemeProvider';
+import { useTheme } from '../OverdriveProvider';
 
 export interface Props {
 	children?: ReactNode;
@@ -29,11 +29,10 @@ function Portal(
 			let mountElement = document.body;
 			if (isHtmlElement(container)) mountElement = container;
 			else if (isHtmlElement(portalMountPoint?.current)) {
-				// @ts-expect-error not assignable to type 'HTMLElement'
 				mountElement = portalMountPoint.current;
 			}
 			setMountNode(mountElement);
-		}, [container, portalMountPoint?.current]);
+		}, [container, portalMountPoint]);
 
 		useLayoutEffect(() => {
 			if (mountNode) {
