@@ -1,25 +1,26 @@
 import { assignInlineVars } from '@vanilla-extract/dynamic';
+import { isEqual } from 'es-toolkit';
 import React, { createContext, useContext } from 'react';
 
 import baseTheme from '../../themes/base';
 import { themeContractVars } from '../../themes/theme.css';
 
-interface OverdriveProviderProps {
+export interface ThemeOverrides {
+	primaryColourBackground: string;
+	primaryColourBackgroundMild: string;
+	primaryColourBackgroundStrong: string;
+	primaryColourBorder: string;
+	primaryColourForeground: string;
+}
+
+export interface ProviderContext {
 	theme?: typeof baseTheme;
-	themeClass?: string;
-	primaryColourBackground?: string;
-	primaryColourForeground?: string;
-	primaryColourBackgroundMild?: string;
-	primaryColourBackgroundStrong?: string;
-	primaryColourBorder?: string;
-	children: React.ReactNode;
+	overrides?: Partial<ThemeOverrides>;
 }
 
-interface OverdriveContextValue {
-	theme: typeof baseTheme;
-}
+export type ProviderProps = React.PropsWithChildren<ProviderContext>;
 
-const OverdriveContext = createContext<OverdriveContextValue | null>(null);
+const OverdriveContext = createContext<ProviderContext | null>(null);
 
 export const useTheme = () => {
 	const context = useContext(OverdriveContext);
@@ -29,49 +30,48 @@ export const useTheme = () => {
 	return context;
 };
 
-export const OverdriveProvider = ({
+export const Provider = ({
 	theme = baseTheme,
-	primaryColourBackground,
-	primaryColourForeground,
-	primaryColourBackgroundMild,
-	primaryColourBackgroundStrong,
-	primaryColourBorder,
+	overrides,
 	children,
-}: OverdriveProviderProps) => {
+}: ProviderProps) => {
 	const styles = React.useMemo(() => {
+		if (!overrides) return {};
+		// although this look scary, assignInlineVars only generates css vars to apply to a container
+		// anyproperty that is undefined will not have an inline css var generated
 		return assignInlineVars(themeContractVars, {
 			colours: {
 				intent: {
 					primary: {
 						background: {
 							// @ts-expect-error no undefined
-							standard: primaryColourBackground ?? undefined,
+							standard:
+								overrides.primaryColourBackground ?? undefined,
 							// @ts-expect-error no undefined
-							mild: primaryColourBackgroundMild ?? undefined,
+							mild:
+								overrides.primaryColourBackgroundMild ??
+								undefined,
 							// @ts-expect-error no undefined
-							strong: primaryColourBackgroundStrong ?? undefined,
+							strong:
+								overrides.primaryColourBackgroundStrong ??
+								undefined,
 						},
 						// @ts-expect-error no undefined
-						foreground: primaryColourForeground ?? undefined,
+						foreground:
+							overrides.primaryColourForeground ?? undefined,
 						// @ts-expect-error no undefined
-						border: primaryColourBorder ?? undefined,
+						border: overrides.primaryColourBorder ?? undefined,
 					},
 				},
 			},
 			typography: {
 				colour: {
 					// @ts-expect-error no undefined
-					primary: primaryColourBackground ?? undefined,
+					primary: overrides.primaryColourBackground ?? undefined,
 				},
 			},
 		});
-	}, [
-		primaryColourBackground,
-		primaryColourForeground,
-		primaryColourBackgroundMild,
-		primaryColourBackgroundStrong,
-		primaryColourBorder,
-	]);
+	}, [overrides]);
 
 	const value = React.useMemo(
 		() => ({
@@ -90,3 +90,10 @@ export const OverdriveProvider = ({
 		</OverdriveContext.Provider>
 	);
 };
+
+export const OverdriveProvider = React.memo<ProviderProps>(
+	(props) => <Provider {...props} />,
+	(prevProps, nextProps) => {
+		return isEqual(prevProps, nextProps);
+	},
+);
