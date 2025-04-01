@@ -20,10 +20,15 @@ export interface ThemeOverrides {
 }
 
 export interface BaseProps {
+	/** The theme object to be used throughout the application */
 	theme?: typeof baseTheme;
+	/** Custom breakpoints for responsive design */
 	breakpoints?: BreakPoints;
+	/** When true, prevents applying theme styles at the body level */
 	noBodyLevelTheming?: boolean;
+	/** Custom colour overrides for select theme tokens */
 	overrides?: Partial<ThemeOverrides>;
+	/** Reference to an HTML element where portals should be mounted */
 	portalMountPoint?: React.RefObject<HTMLElement | null>;
 }
 
@@ -50,6 +55,99 @@ export const useRuntimeTokens = (): RuntimeTokens => {
 	return tokens;
 };
 
+const isValidColor = (color: string): boolean => {
+	const s = new Option().style;
+	s.color = color;
+	return s.color !== '';
+};
+
+const isSafeElement = (element: HTMLElement | null): boolean => {
+	return (
+		element instanceof HTMLElement &&
+		!element.hasAttribute('onclick') &&
+		!element.hasAttribute('onerror')
+	);
+};
+
+const useOverrides = (
+	overrides: Partial<ThemeOverrides> | undefined,
+	themeMode: string,
+) => {
+	return useMemo(() => {
+		if (!overrides) return {};
+
+		// Validate all color inputs
+		const colorKeys = [
+			'primaryColourBackground',
+			'primaryColourBackgroundMild',
+			'primaryColourBackgroundStrong',
+			'primaryColourBorder',
+			'primaryColourForeground',
+		] as const;
+
+		colorKeys.forEach((key) => {
+			if (overrides[key] && !isValidColor(overrides[key]!)) {
+				console.warn(
+					`Invalid color value for ${key}: ${overrides[key]}`,
+				);
+				delete overrides[key];
+			}
+		});
+
+		let mildPrimary: string | null = null;
+		let strongPrimary: string | null = null;
+
+		if (overrides.primaryColourBackground) {
+			mildPrimary =
+				overrides.primaryColourBackgroundMild ||
+				shadedColour({
+					colour: overrides.primaryColourBackground,
+					isDarkTheme: false,
+					direction: themeMode === 'light' ? 'forward' : 'backward',
+					intensity: 0.1,
+				});
+			strongPrimary =
+				overrides.primaryColourBackgroundStrong ||
+				shadedColour({
+					colour: overrides.primaryColourBackground,
+					isDarkTheme: false,
+					direction: themeMode === 'light' ? 'forward' : 'backward',
+					intensity: 0.1,
+				});
+		}
+		// although this look scary, assignInlineVars only generates css vars to apply to a container
+		// anyproperty that is undefined will not have an inline css var generated
+		return assignInlineVars(themeContractVars, {
+			colours: {
+				intent: {
+					primary: {
+						background: {
+							//@ts-expect-error no undefined
+							standard:
+								overrides.primaryColourBackground ?? undefined,
+							//@ts-expect-error no undefined
+							mild: mildPrimary ?? undefined,
+							//@ts-expect-error no undefined
+							strong: strongPrimary ?? undefined,
+						},
+						//@ts-expect-error no undefined
+						foreground:
+							overrides.primaryColourForeground ?? undefined,
+						//@ts-expect-error no undefined
+						border: overrides.primaryColourBorder ?? undefined,
+					},
+				},
+			},
+			typography: {
+				colour: {
+					//@ts-expect-error no undefined
+					primary: overrides.primaryColourBackground ?? undefined,
+				},
+			},
+		});
+	}, [overrides, themeMode]);
+};
+
 export const Provider = ({
 	breakpoints,
 	children,
@@ -72,68 +170,7 @@ export const Provider = ({
 		[breakpoints],
 	);
 
-	const styles = useMemo(() => {
-		if (!overrides) return {};
-
-		let mildPrimary: string | null = null;
-		let strongPrimary: string | null = null;
-
-		if (overrides.primaryColourBackground) {
-			mildPrimary =
-				overrides.primaryColourBackgroundMild ||
-				shadedColour({
-					colour: overrides.primaryColourBackground,
-					isDarkTheme: false,
-					direction:
-						String(theme.vars.mode) === 'light'
-							? 'forward'
-							: 'backward',
-					intensity: 0.1,
-				});
-			strongPrimary =
-				overrides.primaryColourBackgroundStrong ||
-				shadedColour({
-					colour: overrides.primaryColourBackground,
-					isDarkTheme: false,
-					direction:
-						String(theme.vars.mode) === 'light'
-							? 'forward'
-							: 'backward',
-					intensity: 0.1,
-				});
-		}
-
-		// although this look scary, assignInlineVars only generates css vars to apply to a container
-		// anyproperty that is undefined will not have an inline css var generated
-		return assignInlineVars(themeContractVars, {
-			colours: {
-				intent: {
-					primary: {
-						background: {
-							// @ts-expect-error no undefined
-							standard:
-								overrides.primaryColourBackground ?? undefined,
-							// @ts-expect-error no undefined
-							mild: mildPrimary ?? undefined,
-							// @ts-expect-error no undefined
-							strong: strongPrimary ?? undefined,
-						},
-						// @ts-expect-error no undefined
-						foreground:
-							overrides.primaryColourForeground ?? undefined,
-						// @ts-expect-error no undefined
-						border: overrides.primaryColourBorder ?? undefined,
-					},
-				},
-			},
-			typography: {
-				colour: {
-					// @ts-expect-error no undefined
-					primary: overrides.primaryColourBackground ?? undefined,
-				},
-			},
-		});
-	}, [overrides, theme.vars.mode]);
+	const styles = useOverrides(overrides, String(theme.vars.mode));
 
 	// Body Level Theming
 	useEffect(() => {
@@ -149,6 +186,17 @@ export const Provider = ({
 			document.body.classList.remove(theme.themeRef);
 		};
 	}, [noBodyLevelTheming, theme]);
+
+	// Check portal mount point ref
+	useEffect(() => {
+		if (
+			portalMountPoint?.current &&
+			!isSafeElement(portalMountPoint.current)
+		) {
+			console.error('Unsafe portal mount point detected');
+			portalMountPoint.current = null;
+		}
+	}, [portalMountPoint]);
 
 	return (
 		<OverdriveContext.Provider value={themeValues}>
