@@ -5,7 +5,11 @@ exports[`<MinimalModal /> > should match snapshot with body 1`] = `
   class="vars_OD_Base__1f5yyro0"
   style="overflow: hidden;"
 >
-  <div />
+  <div>
+    <div
+      class="vars_OD_Base__1f5yyro0"
+    />
+  </div>
   <div
     class="vars_OD_Base__1f5yyro0"
   >
@@ -61,7 +65,11 @@ exports[`<MinimalModal /> > should match snapshot without title and body 1`] = `
   class="vars_OD_Base__1f5yyro0"
   style="overflow: hidden;"
 >
-  <div />
+  <div>
+    <div
+      class="vars_OD_Base__1f5yyro0"
+    />
+  </div>
   <div
     class="vars_OD_Base__1f5yyro0"
   >

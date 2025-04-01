@@ -58,7 +58,7 @@ describe('<SelectInput />', () => {
 				<option value="c">Value 3</option>
 			</SelectInput>,
 		);
-		expect(container.firstChild).toHaveClass('input-class');
+		expect(container.firstChild.firstChild).toHaveClass('input-class');
 	});
 
 	it('should match snapshot when active', () => {

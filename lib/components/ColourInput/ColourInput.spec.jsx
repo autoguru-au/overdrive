@@ -61,7 +61,7 @@ describe('<ColourInput />', () => {
 				placeholder="placeholder something"
 			/>,
 		);
-		expect(container.firstChild).toHaveClass('input-class');
+		expect(container.firstChild.firstChild).toHaveClass('input-class');
 	});
 
 	it('should match snapshot when active', () => {

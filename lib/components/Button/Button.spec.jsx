@@ -18,7 +18,8 @@ describe('<Button />', () => {
 
 	it('should pass on className to dom element', () => {
 		expect(
-			render(<Button className="button-class" />).container.firstChild,
+			render(<Button className="button-class" />).container.firstChild
+				.firstChild,
 		).toHaveClass('button-class');
 	});
 
@@ -38,7 +39,7 @@ describe('<Button />', () => {
 		it('should render passed in component', () => {
 			expect(
 				render(<Button is={<a href="/abcd" />}>Link button</Button>)
-					.container.firstChild,
+					.container.firstChild.firstChild,
 			).toHaveAttribute('href', '/abcd');
 		});
 	});
@@ -52,7 +53,8 @@ describe('<Button />', () => {
 
 		it('should apply Primary variant styles', () => {
 			expect(
-				render(<Button variant="primary" />).container.firstChild,
+				render(<Button variant="primary" />).container.firstChild
+					.firstChild,
 			).toHaveClass(styles.button({ intent: 'primary' }));
 		});
 
@@ -64,7 +66,8 @@ describe('<Button />', () => {
 
 		it('should apply Secondary variant styles', () => {
 			expect(
-				render(<Button variant="secondary" />).container.firstChild,
+				render(<Button variant="secondary" />).container.firstChild
+					.firstChild,
 			).toHaveClass(styles.button({ intent: 'secondary' }));
 		});
 
@@ -76,7 +79,8 @@ describe('<Button />', () => {
 
 		it('should apply Danger variant styles', () => {
 			expect(
-				render(<Button variant="danger" />).container.firstChild,
+				render(<Button variant="danger" />).container.firstChild
+					.firstChild,
 			).toHaveClass(styles.button({ intent: 'danger' }));
 		});
 	});
@@ -112,7 +116,7 @@ describe('<Button />', () => {
 
 		it('should apply styles', () => {
 			expect(
-				render(<Button isFullWidth />).container.firstChild,
+				render(<Button isFullWidth />).container.firstChild.firstChild,
 			).toHaveClass(boxStyles.width.full);
 		});
 	});
@@ -144,7 +148,7 @@ describe('<Button />', () => {
 
 		it('should apply loading styles', () => {
 			expect(
-				render(<Button isLoading />).container.firstChild,
+				render(<Button isLoading />).container.firstChild.firstChild,
 			).toHaveAttribute('data-loading');
 		});
 	});

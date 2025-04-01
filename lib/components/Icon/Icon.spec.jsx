@@ -17,7 +17,7 @@ describe('<Icon />', () => {
 	it('should pass on className to dom element', () => {
 		expect(
 			render(<Icon icon={TestIcon} className="icon-class" />).container
-				.firstChild,
+				.firstChild.firstChild,
 		).toHaveClass('icon-class');
 	});
 

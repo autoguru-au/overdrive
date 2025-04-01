@@ -2,124 +2,140 @@
 
 exports[`<NotchedBase /> > should match snapshot for active notch 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
+  class="vars_OD_Base__1f5yyro0"
 >
   <div
-    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
   >
     <div
-      class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc"
-    />
-    <div
-      class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld"
+      class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
     >
       <div
-        class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc"
+      />
+      <div
+        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld"
       >
-        placeholder something
+        <div
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+        >
+          placeholder something
+        </div>
+        <label
+          class="reset_inlineText__1oah0222 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+        >
+          placeholder something
+        </label>
       </div>
-      <label
-        class="reset_inlineText__1oah0222 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
-      >
-        placeholder something
-      </label>
+      <div
+        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle"
+      />
     </div>
-    <div
-      class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle"
-    />
   </div>
 </div>
 `;
 
 exports[`<NotchedBase /> > should match snapshot for default notch 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
+  class="vars_OD_Base__1f5yyro0"
 >
   <div
-    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
   >
     <div
-      class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc"
-    />
-    <div
-      class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld"
+      class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
     >
       <div
-        class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc"
+      />
+      <div
+        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld"
       >
-        placeholder something
+        <div
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+        >
+          placeholder something
+        </div>
+        <label
+          class="reset_inlineText__1oah0222 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+        >
+          placeholder something
+        </label>
       </div>
-      <label
-        class="reset_inlineText__1oah0222 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
-      >
-        placeholder something
-      </label>
+      <div
+        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle"
+      />
     </div>
-    <div
-      class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle"
-    />
   </div>
 </div>
 `;
 
 exports[`<NotchedBase /> > should match snapshot for dirty and active notch 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
+  class="vars_OD_Base__1f5yyro0"
 >
   <div
-    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
   >
     <div
-      class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc"
-    />
-    <div
-      class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld"
+      class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
     >
       <div
-        class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc"
+      />
+      <div
+        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld"
       >
-        placeholder something
+        <div
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+        >
+          placeholder something
+        </div>
+        <label
+          class="reset_inlineText__1oah0222 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+        >
+          placeholder something
+        </label>
       </div>
-      <label
-        class="reset_inlineText__1oah0222 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
-      >
-        placeholder something
-      </label>
+      <div
+        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle"
+      />
     </div>
-    <div
-      class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle"
-    />
   </div>
 </div>
 `;
 
 exports[`<NotchedBase /> > should match snapshot for dirty notch 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
+  class="vars_OD_Base__1f5yyro0"
 >
   <div
-    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
   >
     <div
-      class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc"
-    />
-    <div
-      class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld"
+      class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
     >
       <div
-        class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc"
+      />
+      <div
+        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld"
       >
-        placeholder something
+        <div
+          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+        >
+          placeholder something
+        </div>
+        <label
+          class="reset_inlineText__1oah0222 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+        >
+          placeholder something
+        </label>
       </div>
-      <label
-        class="reset_inlineText__1oah0222 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
-      >
-        placeholder something
-      </label>
+      <div
+        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle"
+      />
     </div>
-    <div
-      class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle"
-    />
   </div>
 </div>
 `;

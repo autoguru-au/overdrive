@@ -4,7 +4,11 @@ exports[`<Positioner /> > should match snapshot 1`] = `
 <body
   class="vars_OD_Base__1f5yyro0"
 >
-  <div />
+  <div>
+    <div
+      class="vars_OD_Base__1f5yyro0"
+    />
+  </div>
   <div
     class="vars_OD_Base__1f5yyro0"
   >

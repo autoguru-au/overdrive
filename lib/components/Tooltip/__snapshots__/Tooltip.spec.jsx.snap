@@ -5,8 +5,12 @@ exports[`<Tolltip /> > should match snapshot when closed 1`] = `
   class="vars_OD_Base__1f5yyro0"
 >
   <div>
-    <div>
-      trigger
+    <div
+      class="vars_OD_Base__1f5yyro0"
+    >
+      <div>
+        trigger
+      </div>
     </div>
   </div>
   <div
@@ -25,8 +29,12 @@ exports[`<Tolltip /> > should match snapshot when opened 1`] = `
   class="vars_OD_Base__1f5yyro0"
 >
   <div>
-    <div>
-      trigger
+    <div
+      class="vars_OD_Base__1f5yyro0"
+    >
+      <div>
+        trigger
+      </div>
     </div>
   </div>
   <div
