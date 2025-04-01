@@ -4,4 +4,7 @@ export {
 	useTheme,
 } from './OverdriveProvider';
 
-export { ThemeProvider } from './ThemeProvider';
+export {
+	FallbackProvider as ThemeProvider,
+	FallbackProvider as ThemeOverrideProvider,
+} from './FallbackProvider';
