@@ -1,10 +1,14 @@
+import { invariant } from '@autoguru/utilities';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import { isEqual } from 'es-toolkit';
-import React, { createContext, useContext } from 'react';
+import React, { createContext, useContext, useMemo } from 'react';
 
 import baseTheme from '../../themes/base';
+import { makeRuntimeTokens, RuntimeTokens } from '../../themes/makeTheme';
 import { themeContractVars } from '../../themes/theme.css';
+import { BreakPoints } from '../../themes/tokens';
 
+type ThemeContract = typeof themeContractVars;
 export interface ThemeOverrides {
 	primaryColourBackground: string;
 	primaryColourBackgroundMild: string;
@@ -13,29 +17,58 @@ export interface ThemeOverrides {
 	primaryColourForeground: string;
 }
 
-export interface ProviderContext {
+export interface BaseProps {
 	theme?: typeof baseTheme;
+	breakpoints?: BreakPoints;
 	overrides?: Partial<ThemeOverrides>;
+	portalMountPoint?: React.RefObject<HTMLElement | null>;
 }
 
-export type ProviderProps = React.PropsWithChildren<ProviderContext>;
+export interface ProviderContext extends BaseProps {
+	vars: ThemeContract;
+	themeClass: string;
+}
+
+export type ProviderProps = React.PropsWithChildren<BaseProps>;
 
 const OverdriveContext = createContext<ProviderContext | null>(null);
+const RuntimeTokensContext = createContext<RuntimeTokens | null>(null);
+const msgInvariantError = "You haven't provided an `OverdriveProvider`.";
 
 export const useTheme = () => {
 	const context = useContext(OverdriveContext);
-	if (!context) {
-		throw new Error('useTheme must be used within an OverdriveProvider');
-	}
+	invariant(context !== null, msgInvariantError);
 	return context;
 };
 
+export const useRuntimeTokens = (): RuntimeTokens => {
+	const tokens = useContext(RuntimeTokensContext);
+	invariant(tokens !== null, msgInvariantError);
+	return tokens;
+};
+
 export const Provider = ({
-	theme = baseTheme,
-	overrides,
+	breakpoints,
 	children,
+	overrides,
+	portalMountPoint,
+	theme = baseTheme,
 }: ProviderProps) => {
-	const styles = React.useMemo(() => {
+	const themeValues = useMemo(
+		() => ({
+			vars: theme.vars,
+			themeClass: theme.themeRef,
+			portalMountPoint,
+		}),
+		[portalMountPoint, theme],
+	);
+
+	const runtimeTokens = useMemo(
+		() => makeRuntimeTokens(breakpoints),
+		[breakpoints],
+	);
+
+	const styles = useMemo(() => {
 		if (!overrides) return {};
 		// although this look scary, assignInlineVars only generates css vars to apply to a container
 		// anyproperty that is undefined will not have an inline css var generated
@@ -73,20 +106,13 @@ export const Provider = ({
 		});
 	}, [overrides]);
 
-	const value = React.useMemo(
-		() => ({
-			theme,
-			themeClass: theme.themeRef,
-			vars: theme.vars,
-		}),
-		[theme],
-	);
-
 	return (
-		<OverdriveContext.Provider value={value}>
-			<div className={theme.themeRef} style={styles}>
-				{children}
-			</div>
+		<OverdriveContext.Provider value={themeValues}>
+			<RuntimeTokensContext.Provider value={runtimeTokens}>
+				<div className={theme.themeRef} style={styles}>
+					{children}
+				</div>
+			</RuntimeTokensContext.Provider>
 		</OverdriveContext.Provider>
 	);
 };
