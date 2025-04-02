@@ -29,8 +29,9 @@ export interface ProviderProps {
 }
 
 export interface ProviderContext
-	extends Pick<ProviderProps, 'portalMountPoint'> {
+	extends Pick<ProviderProps, 'overrides' | 'portalMountPoint'> {
 	themeClass: (typeof baseTheme)['themeRef'];
+	themeName: string;
 	overrideStyles: ReturnType<typeof assignInlineVars>;
 	vars: ThemeContract;
 }
@@ -75,11 +76,13 @@ export const Provider = ({
 	const themeValues = useMemo(
 		() => ({
 			themeClass: theme.themeRef,
+			themeName: theme.name,
+			overrides,
 			overrideStyles: styles,
 			portalMountPoint,
 			vars: theme.vars,
 		}),
-		[portalMountPoint, styles, theme],
+		[overrides, portalMountPoint, styles, theme],
 	);
 
 	// Body Level Theming

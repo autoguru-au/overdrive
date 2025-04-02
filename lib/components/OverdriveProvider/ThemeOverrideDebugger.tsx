@@ -1,21 +1,23 @@
-import * as React from 'react';
-import { FunctionComponent, useMemo } from 'react';
+import React, { FunctionComponent, useMemo } from 'react';
 
 import { passesAccessibilityContrast } from '../../themes/helpers';
-import { ColourInput } from '../ColourInput';
+// import { ColourInput } from '../ColourInput';
 import { Column, Columns } from '../Columns';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
 
-import { useThemeOverrides } from './ThemeOverrideProvider';
+import { useTheme } from './OverdriveProvider';
 
 export const ThemeOverrideDebugger: FunctionComponent = () => {
-	const {
-		theme,
-		primaryColourForeground,
-		primaryColourBackground,
-		setThemeValues,
-	} = useThemeOverrides();
+	const { overrides, themeName, vars } = useTheme();
+
+	const primaryColourBackground =
+		overrides?.primaryColourBackground ||
+		vars.colours.intent.primary.background.standard;
+	const primaryColourForeground =
+		overrides?.primaryColourForeground ||
+		vars.colours.intent.primary.foreground;
+
 	const passesAA = useMemo(
 		() =>
 			passesAccessibilityContrast({
@@ -53,7 +55,8 @@ export const ThemeOverrideDebugger: FunctionComponent = () => {
 				borderRadius: '4px',
 			}}
 		>
-			<Column grow width="auto">
+			{/* disabling for now - TODO: make dynamic with local state and assignInlineVars or similar */}
+			{/* <Column grow width="auto">
 				<Stack space="3" width="full">
 					<ColourInput
 						name="primaryBackground"
@@ -76,12 +79,12 @@ export const ThemeOverrideDebugger: FunctionComponent = () => {
 						}
 					/>
 				</Stack>
-			</Column>
+			</Column> */}
 			<Column>
 				<Stack>
 					<Text>AA: {passesAA ? 'PASSED' : 'FAILED'}</Text>
 					<Text>AAA: {passesAAA ? 'PASSED' : 'FAILED'}</Text>
-					<Text colour="primary">{theme.name}</Text>
+					<Text colour="primary">{themeName}</Text>
 				</Stack>
 			</Column>
 		</Columns>
