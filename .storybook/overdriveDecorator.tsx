@@ -10,31 +10,33 @@ import { breakpoints } from '../lib/themes/makeTheme';
 import { container } from '../lib/themes/theme.css';
 
 const themes = allThemes;
-const overrideColours = {
+const overrideColors = {
 	bright: {
-		primaryColourBackground: '#e5bc01',
-		primaryColourForeground: '#1e1818',
+		primaryBackground: '#e5bc01',
+		primaryForeground: '#1e1818',
+		primaryBorder: '#e5bc01',
 	},
 	dark: {
-		primaryColourBackground: '#1e1818',
-		primaryColourForeground: '#e5bc01',
+		primaryBackground: '#1e1818',
+		primaryForeground: '#e5bc01',
+		primaryBorder: '#1e1818',
 	},
 };
 
 export const useStorybookDecorator = (Story, context) => {
 	const portalRef = useRef<HTMLDivElement>(null);
 	const customColours =
-		context.globals.overrideColours in overrideColours
-			? overrideColours[context.globals.overrideColours]
+		context.globals.overrideColours in overrideColors
+			? overrideColors[context.globals.overrideColours]
 			: {};
 
 	return (
 		<OverdriveProvider
 			theme={themes[context.globals.theme]}
 			breakpoints={breakpoints}
-			noBodyLevelTheming
-			overrides={customColours}
+			colorOverrides={customColours}
 			portalMountPoint={portalRef}
+			noBodyLevelTheming
 		>
 			<Box className={container} ref={portalRef}>
 				<Story />

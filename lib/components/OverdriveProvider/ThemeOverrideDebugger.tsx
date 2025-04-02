@@ -9,34 +9,34 @@ import { Text } from '../Text';
 import { useTheme } from './OverdriveProvider';
 
 export const ThemeOverrideDebugger: FunctionComponent = () => {
-	const { overrides, themeName, vars } = useTheme();
+	const { colorOverrides, themeName, vars } = useTheme();
 
-	const primaryColourBackground =
-		overrides?.primaryColourBackground ||
+	const colorBackground =
+		colorOverrides?.primaryBackground ||
 		vars.colours.intent.primary.background.standard;
-	const primaryColourForeground =
-		overrides?.primaryColourForeground ||
+	const colorForeground =
+		colorOverrides?.primaryForeground ||
 		vars.colours.intent.primary.foreground;
 
 	const passesAA = useMemo(
 		() =>
 			passesAccessibilityContrast({
-				colour1: primaryColourForeground,
-				colour2: primaryColourBackground,
+				colour1: colorForeground,
+				colour2: colorBackground,
 				level: 'AA',
 				textSize: 'LARGE',
 			}),
-		[primaryColourForeground, primaryColourBackground],
+		[colorForeground, colorBackground],
 	);
 	const passesAAA = useMemo(
 		() =>
 			passesAccessibilityContrast({
-				colour1: primaryColourForeground,
-				colour2: primaryColourBackground,
+				colour1: colorForeground,
+				colour2: colorBackground,
 				level: 'AAA',
 				textSize: 'LARGE',
 			}),
-		[primaryColourForeground, primaryColourBackground],
+		[colorForeground, colorBackground],
 	);
 
 	return (

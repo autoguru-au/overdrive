@@ -22,14 +22,14 @@ export interface ProviderProps {
 	/** When true, prevents applying theme styles at the body level */
 	noBodyLevelTheming?: boolean;
 	/** Custom colour overrides for select theme tokens */
-	overrides?: Partial<ColorOverrides>;
+	colorOverrides?: Partial<ColorOverrides>;
 	/** Reference to an HTML element where portals should be mounted */
 	portalMountPoint?: PortalMountPoint;
 	children?: React.ReactNode;
 }
 
 export interface ProviderContext
-	extends Pick<ProviderProps, 'overrides' | 'portalMountPoint'> {
+	extends Pick<ProviderProps, 'colorOverrides' | 'portalMountPoint'> {
 	themeClass: (typeof baseTheme)['themeRef'];
 	themeName: string;
 	overrideStyles: ReturnType<typeof assignInlineVars>;
@@ -63,8 +63,8 @@ const isSafeElement = (element: HTMLElement | null): boolean => {
 export const Provider = ({
 	breakpoints,
 	children,
+	colorOverrides,
 	noBodyLevelTheming = false,
-	overrides,
 	portalMountPoint,
 	theme = baseTheme,
 }: ProviderProps) => {
@@ -72,17 +72,17 @@ export const Provider = ({
 		() => makeRuntimeTokens(breakpoints),
 		[breakpoints],
 	);
-	const styles = useColorOverrides(overrides, String(theme.vars.mode));
+	const styles = useColorOverrides(colorOverrides, String(theme.vars.mode));
 	const themeValues = useMemo(
 		() => ({
 			themeClass: theme.themeRef,
 			themeName: theme.name,
-			overrides,
+			colorOverrides,
 			overrideStyles: styles,
 			portalMountPoint,
 			vars: theme.vars,
 		}),
-		[overrides, portalMountPoint, styles, theme],
+		[colorOverrides, portalMountPoint, styles, theme],
 	);
 
 	// Body Level Theming

@@ -6,11 +6,11 @@ import { themeContractVars } from '../../themes/theme.css';
 
 /** valid colour override keys */
 const colorOverrideKeys = [
-	'primaryColourBackground',
-	'primaryColourBackgroundMild',
-	'primaryColourBackgroundStrong',
-	'primaryColourBorder',
-	'primaryColourForeground',
+	'primaryBackground',
+	'primaryBackgroundMild',
+	'primaryBackgroundStrong',
+	'primaryBorder',
+	'primaryForeground',
 ] as const;
 
 export type ColorOverrides = Record<(typeof colorOverrideKeys)[number], string>;
@@ -40,51 +40,49 @@ export const useColorOverrides = (
 		let mildPrimary: string | null = null;
 		let strongPrimary: string | null = null;
 
-		if (overrides.primaryColourBackground) {
+		if (overrides.primaryBackground) {
 			mildPrimary =
-				overrides.primaryColourBackgroundMild ||
+				overrides.primaryBackgroundMild ||
 				shadedColour({
-					colour: overrides.primaryColourBackground,
+					colour: overrides.primaryBackground,
 					isDarkTheme: false,
 					direction: themeMode === 'light' ? 'forward' : 'backward',
 					intensity: 0.1,
 				});
 			strongPrimary =
-				overrides.primaryColourBackgroundStrong ||
+				overrides.primaryBackgroundStrong ||
 				shadedColour({
-					colour: overrides.primaryColourBackground,
+					colour: overrides.primaryBackground,
 					isDarkTheme: false,
 					direction: themeMode === 'light' ? 'forward' : 'backward',
 					intensity: 0.1,
 				});
 		}
-		// although this look scary, assignInlineVars only generates css vars to apply to a container
-		// anyproperty that is undefined will not have an inline css var generated
+		// slightly messy use of ts-expect-error but assignInlineVars only generates css vars to apply to a container
+		// any property that is undefined will not have an inline css var generated
 		return assignInlineVars(themeContractVars, {
 			colours: {
 				intent: {
 					primary: {
 						background: {
 							//@ts-expect-error no undefined
-							standard:
-								overrides.primaryColourBackground ?? undefined,
+							standard: overrides.primaryBackground ?? undefined,
 							//@ts-expect-error no undefined
 							mild: mildPrimary ?? undefined,
 							//@ts-expect-error no undefined
 							strong: strongPrimary ?? undefined,
 						},
 						//@ts-expect-error no undefined
-						foreground:
-							overrides.primaryColourForeground ?? undefined,
+						foreground: overrides.primaryForeground ?? undefined,
 						//@ts-expect-error no undefined
-						border: overrides.primaryColourBorder ?? undefined,
+						border: overrides.primaryBorder ?? undefined,
 					},
 				},
 			},
 			typography: {
 				colour: {
 					//@ts-expect-error no undefined
-					primary: overrides.primaryColourBackground ?? undefined,
+					primary: overrides.primaryBackground ?? undefined,
 				},
 			},
 		});
