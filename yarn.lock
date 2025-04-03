@@ -110,8 +110,8 @@ __metadata:
     "@autoguru/icons": "npm:1.8.6"
     "@autoguru/tsconfig": "npm:^1.3.1"
     "@autoguru/utilities": "npm:^1.3.3"
-    "@babel/cli": "npm:^7.26.4"
-    "@babel/core": "npm:^7.26.10"
+    "@babel/cli": "npm:7.27.0"
+    "@babel/core": "npm:7.26.10"
     "@babel/plugin-proposal-class-properties": "npm:^7.18.6"
     "@babel/plugin-proposal-export-default-from": "npm:^7.25.9"
     "@babel/plugin-proposal-nullish-coalescing-operator": "npm:^7.18.6"
@@ -124,8 +124,8 @@ __metadata:
     "@babel/plugin-transform-strict-mode": "npm:^7.25.9"
     "@babel/preset-env": "npm:^7.26.9"
     "@babel/preset-react": "npm:^7.26.3"
-    "@babel/preset-typescript": "npm:^7.26.0"
-    "@babel/runtime-corejs3": "npm:^7.26.10"
+    "@babel/preset-typescript": "npm:7.27.0"
+    "@babel/runtime-corejs3": "npm:7.27.0"
     "@changesets/cli": "npm:^2.28.1"
     "@chromatic-com/storybook": "npm:^3.2.6"
     "@internationalized/date": "npm:^3.7.0"
@@ -200,7 +200,7 @@ __metadata:
     storybook-addon-tag-badges: "npm:^1.4.0"
     typescript: "npm:^5.8.2"
     url-loader: "npm:^4.1.1"
-    vite: "npm:6.2.3"
+    vite: "npm:6.2.5"
     vitest: "npm:^3.0.9"
     webpack: "npm:^5.98.0"
   peerDependencies:
@@ -240,7 +240,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/cli@npm:^7.26.4":
+"@babel/cli@npm:7.27.0":
   version: 7.27.0
   resolution: "@babel/cli@npm:7.27.0"
   dependencies:
@@ -285,7 +285,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.13.10, @babel/core@npm:^7.18.9, @babel/core@npm:^7.23.9, @babel/core@npm:^7.26.10":
+"@babel/core@npm:7.26.10, @babel/core@npm:^7.13.10, @babel/core@npm:^7.18.9, @babel/core@npm:^7.23.9":
   version: 7.26.10
   resolution: "@babel/core@npm:7.26.10"
   dependencies:
@@ -1554,7 +1554,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-typescript@npm:^7.24.1, @babel/preset-typescript@npm:^7.26.0":
+"@babel/preset-typescript@npm:7.27.0, @babel/preset-typescript@npm:^7.24.1":
   version: 7.27.0
   resolution: "@babel/preset-typescript@npm:7.27.0"
   dependencies:
@@ -1569,7 +1569,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime-corejs3@npm:^7.24.5, @babel/runtime-corejs3@npm:^7.26.10":
+"@babel/runtime-corejs3@npm:7.27.0, @babel/runtime-corejs3@npm:^7.24.5":
   version: 7.27.0
   resolution: "@babel/runtime-corejs3@npm:7.27.0"
   dependencies:
@@ -13505,7 +13505,59 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:6.2.3, vite@npm:^5.0.0 || ^6.0.0":
+"vite@npm:6.2.5":
+  version: 6.2.5
+  resolution: "vite@npm:6.2.5"
+  dependencies:
+    esbuild: "npm:^0.25.0"
+    fsevents: "npm:~2.3.3"
+    postcss: "npm:^8.5.3"
+    rollup: "npm:^4.30.1"
+  peerDependencies:
+    "@types/node": ^18.0.0 || ^20.0.0 || >=22.0.0
+    jiti: ">=1.21.0"
+    less: "*"
+    lightningcss: ^1.21.0
+    sass: "*"
+    sass-embedded: "*"
+    stylus: "*"
+    sugarss: "*"
+    terser: ^5.16.0
+    tsx: ^4.8.1
+    yaml: ^2.4.2
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  peerDependenciesMeta:
+    "@types/node":
+      optional: true
+    jiti:
+      optional: true
+    less:
+      optional: true
+    lightningcss:
+      optional: true
+    sass:
+      optional: true
+    sass-embedded:
+      optional: true
+    stylus:
+      optional: true
+    sugarss:
+      optional: true
+    terser:
+      optional: true
+    tsx:
+      optional: true
+    yaml:
+      optional: true
+  bin:
+    vite: bin/vite.js
+  checksum: 10/354023589439e7e2bcb77af79d24cd06ce20cfc48b409e663c44e515b373b89eb8f29362223eac16a3ff080d3114e40bc5df158372279d92ad03eb270f9e9762
+  languageName: node
+  linkType: hard
+
+"vite@npm:^5.0.0 || ^6.0.0":
   version: 6.2.3
   resolution: "vite@npm:6.2.3"
   dependencies:
