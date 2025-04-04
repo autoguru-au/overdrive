@@ -1,41 +1,43 @@
-import * as React from 'react';
-import { ComponentProps, FunctionComponent, ReactNode, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import { isBrowser } from '../../utils';
-import { ThemeProvider } from '../ThemeProvider/ThemeProvider';
+import {
+	ThemeProvider,
+	type ThemeProviderProps,
+} from '../ThemeProvider/ThemeProvider';
 
-export interface Props extends ComponentProps<typeof ThemeProvider> {
-	// When set to true theme className must be present in a
-	// parent dom element of your components including portals.
-	// OD Portal component automatically adds theme class to the mounting node
+export interface OverdriveProviderProps extends ThemeProviderProps {
+	/**
+	 * When set to true theme className must be present in a parent dom element of your components including portals.
+	 * OD Portal component automatically adds theme class to the mounting node
+	 */
 	noBodyLevelTheming?: boolean;
-	children?: ReactNode;
+	children?: React.ReactNode;
 }
 
-export const OverdriveProvider: FunctionComponent<Props> = ({
+export const OverdriveProvider = ({
 	noBodyLevelTheming = false,
-	vars,
-	themeClass,
-	breakpoints,
-	portalMountPoint,
 	children,
-}) => {
+	...props
+}: OverdriveProviderProps) => {
 	useEffect(() => {
-		if (!isBrowser || noBodyLevelTheming) return;
-		// Body has theme class applied to it, so we use css vars to apply body styles
-		document.body.classList.add(themeClass);
-	}, [themeClass]);
+		if (
+			!isBrowser ||
+			noBodyLevelTheming ||
+			document.body.classList.contains(props.themeClass)
+		)
+			return;
 
-	return (
-		<ThemeProvider
-			vars={vars}
-			themeClass={themeClass}
-			breakpoints={breakpoints}
-			portalMountPoint={portalMountPoint}
-		>
-			{children}
-		</ThemeProvider>
-	);
+		// Body has theme class applied to it, so we use css vars to apply body styles
+		document.body.classList.add(props.themeClass);
+
+		// Cleanup function to remove the class when component unmounts
+		return () => {
+			document.body.classList.remove(props.themeClass);
+		};
+	}, [noBodyLevelTheming, props.themeClass]);
+
+	return <ThemeProvider {...props}>{children}</ThemeProvider>;
 };
 
 export default OverdriveProvider;

@@ -3,10 +3,22 @@ import {
 	defaultConfig,
 	type TagBadgeParameters,
 } from 'storybook-addon-tag-badges';
-import autoGuruTheme from './ag-theme';
+
+import agTheme from './ag-theme';
+
+const getPreferredColorScheme = () => {
+	if (!globalThis || !globalThis.matchMedia) return 'light';
+
+	const isDarkThemePreferred = globalThis.matchMedia(
+		'(prefers-color-scheme: dark)',
+	).matches;
+	if (isDarkThemePreferred) return 'dark';
+
+	return 'light';
+};
 
 addons.setConfig({
-	theme: autoGuruTheme,
+	theme: agTheme[getPreferredColorScheme()],
 	tagBadges: [
 		{
 			tags: 'updated',

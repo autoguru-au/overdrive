@@ -1,8 +1,10 @@
+import type { Preview } from '@storybook/react';
+
 import '../lib/reset/globalFonts.css';
 import '../lib/reset/globalReset.css';
 import * as themes from '../lib/themes';
 
-import { withThemeProvider } from './withThemeProvider';
+import { withOverdriveTheme } from './overdriveDecorator';
 
 export const globalTypes = {
 	theme: {
@@ -12,29 +14,42 @@ export const globalTypes = {
 		title: 'theme',
 		toolbar: {
 			icon: 'mirror',
-			// eslint-disable-next-line import/namespace
-			items: Object.keys(themes).map((theme) => themes[theme].name),
+			items: [
+				{
+					title: 'Base AutoGuru Theme',
+					value: themes.baseTheme.name,
+				},
+				{
+					title: 'Flat Red Theme',
+
+					value: themes.flatRedTheme.name,
+				},
+				{
+					title: 'Neutral Theme',
+					value: themes.neutralTheme.name,
+				},
+			],
 			showName: true,
 			dynamicTitle: true,
 		},
 	},
-	themeColours: {
-		name: 'Set dynamic colours',
-		description: 'Global primary background colour',
-		defaultValue: 'defaults',
-		toolbar: {
-			icon: 'paintbrush',
-			items: ['defaults', 'bright', 'dark'],
-			showName: true,
-			dynamicTitle: true,
-			control: 'color',
-		},
-	},
+	// TODO: convert overrides to global css vars
+	// themeColours: {
+	// 	name: 'Set dynamic colours',
+	// 	description: 'Global primary background colour',
+	// 	defaultValue: 'defaults',
+	// 	toolbar: {
+	// 		icon: 'paintbrush',
+	// 		items: ['defaults', 'bright', 'dark'],
+	// 		showName: true,
+	// 		dynamicTitle: true,
+	// 		control: 'color',
+	// 	},
+	// },
 };
 
-/** @type { import('@storybook/react').Preview } */
-const preview = {
-	decorators: [withThemeProvider],
+const preview: Preview = {
+	decorators: [withOverdriveTheme],
 
 	parameters: {
 		controls: {

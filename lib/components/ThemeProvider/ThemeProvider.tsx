@@ -1,13 +1,5 @@
 import { invariant } from '@autoguru/utilities';
-import * as React from 'react';
-import {
-	createContext,
-	FunctionComponent,
-	MutableRefObject,
-	ReactNode,
-	useContext,
-	useMemo,
-} from 'react';
+import React, { createContext, useContext, useMemo } from 'react';
 
 import { makeRuntimeTokens, RuntimeTokens } from '../../themes/makeTheme';
 import { themeContractVars } from '../../themes/theme.css';
@@ -17,45 +9,53 @@ type ThemeVars = typeof themeContractVars;
 type ThemeContextType = {
 	vars: ThemeVars;
 	themeClass: string;
-	portalMountPoint?: MutableRefObject<typeof HTMLElement>;
+	portalMountPoint?: React.RefObject<HTMLElement | null>;
 };
 const themeContext = createContext<ThemeContextType | null>(null);
 const runtimeTokensContext = createContext<RuntimeTokens | null>(null);
 
-export interface Props extends ThemeContextType {
-	children?: ReactNode;
+export interface ThemeProviderProps extends ThemeContextType {
+	children?: React.ReactNode;
 	breakpoints?: BreakPoints;
 }
 
-export const ThemeProvider: FunctionComponent<Props> = ({
+export const ThemeProvider = ({
 	vars,
 	themeClass,
 	children,
 	breakpoints,
 	portalMountPoint,
-}) => (
-	<themeContext.Provider
-		value={useMemo(() => ({ vars, themeClass, portalMountPoint }), [vars])}
-	>
-		<runtimeTokensContext.Provider
-			value={useMemo(() => makeRuntimeTokens(breakpoints), [])}
-		>
-			{children}
-		</runtimeTokensContext.Provider>
-	</themeContext.Provider>
-);
+}: ThemeProviderProps) => {
+	const themeValue = useMemo(
+		() => ({ vars, themeClass, portalMountPoint }),
+		[vars, themeClass, portalMountPoint],
+	);
+
+	const runtimeTokens = useMemo(
+		() => makeRuntimeTokens(breakpoints),
+		[breakpoints],
+	);
+
+	return (
+		<themeContext.Provider value={themeValue}>
+			<runtimeTokensContext.Provider value={runtimeTokens}>
+				{children}
+			</runtimeTokensContext.Provider>
+		</themeContext.Provider>
+	);
+};
+
+const msgInvariantError = "You haven't provided an `OverdriveProvider`.";
 
 export const useTheme = () => {
 	const theme = useContext(themeContext);
-
-	invariant(theme !== null, "You haven't provided an `OverdriveProvider`.");
-
+	invariant(theme !== null, msgInvariantError);
 	return theme;
 };
 
 export const useRuntimeTokens = (): RuntimeTokens => {
 	const tokens = useContext(runtimeTokensContext);
-	invariant(tokens !== null, "You haven't provided a `OverdriveProvider`.");
+	invariant(tokens !== null, msgInvariantError);
 	return tokens;
 };
 
