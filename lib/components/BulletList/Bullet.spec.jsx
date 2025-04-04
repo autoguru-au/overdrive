@@ -16,7 +16,8 @@ describe('<Bullet />', () => {
 
 	it('should pass down className', () => {
 		expect(
-			render(<Bullet className="test-class" />).container.firstChild,
+			render(<Bullet className="test-class" />).container.firstChild
+				.firstChild,
 		).toHaveClass('test-class');
 	});
 
@@ -29,12 +30,12 @@ describe('<Bullet />', () => {
 			</Bullet>,
 		);
 
-		expect(container.firstChild).toHaveClass(styles.noDot);
+		expect(container.firstChild.firstChild).toHaveClass(styles.noDot);
 	});
 
 	it('should not render a dot when child is not <BulletList />', () => {
 		const { container } = render(<Bullet>test</Bullet>);
 
-		expect(container.firstChild).not.toHaveClass(styles.noDot);
+		expect(container.firstChild.firstChild).not.toHaveClass(styles.noDot);
 	});
 });

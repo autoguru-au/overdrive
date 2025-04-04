@@ -24,7 +24,7 @@ describe('<NotchedBase />', () => {
 					size="medium"
 					placeholder="placeholder something"
 				/>,
-			).container.firstChild,
+			).container.firstChild.firstChild,
 		).toHaveClass('notched-class');
 	});
 
@@ -132,7 +132,7 @@ describe('<NotchedBase />', () => {
 					size="medium"
 					placeholder="placeholder something"
 				/>,
-			).container.firstChild,
+			).container.firstChild.firstChild,
 		).toHaveClass(styles.borders.complete[0]);
 	});
 });

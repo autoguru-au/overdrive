@@ -54,7 +54,7 @@ describe('<Stepper />', () => {
 	it('should pass on className to dom element', () => {
 		expect(
 			render(<Stepper className="stepper-class" value={10} />).container
-				.firstChild,
+				.firstChild.firstChild,
 		).toHaveClass('stepper-class');
 	});
 
@@ -198,7 +198,7 @@ describe('<Stepper />', () => {
 				/>,
 			);
 
-			fireEvent.keyDown(container.firstChild, {
+			fireEvent.keyDown(container.firstChild.firstChild, {
 				key: 'ArrowRight',
 			});
 
@@ -218,7 +218,7 @@ describe('<Stepper />', () => {
 				/>,
 			);
 
-			fireEvent.keyDown(container.firstChild, {
+			fireEvent.keyDown(container.firstChild.firstChild, {
 				key: 'ArrowLeft',
 			});
 
@@ -238,7 +238,7 @@ describe('<Stepper />', () => {
 				/>,
 			);
 
-			fireEvent.keyDown(container.firstChild, {
+			fireEvent.keyDown(container.firstChild.firstChild, {
 				key: 'End',
 			});
 
@@ -258,7 +258,7 @@ describe('<Stepper />', () => {
 				/>,
 			);
 
-			fireEvent.keyDown(container.firstChild, {
+			fireEvent.keyDown(container.firstChild.firstChild, {
 				key: 'Home',
 			});
 
@@ -279,7 +279,7 @@ describe('<Stepper />', () => {
 				/>,
 			);
 
-			fireEvent.keyDown(container.firstChild, {
+			fireEvent.keyDown(container.firstChild.firstChild, {
 				key: 'Home',
 			});
 
@@ -300,7 +300,7 @@ describe('<Stepper />', () => {
 				/>,
 			);
 
-			fireEvent.keyDown(container.firstChild, {
+			fireEvent.keyDown(container.firstChild.firstChild, {
 				key: 'End',
 			});
 

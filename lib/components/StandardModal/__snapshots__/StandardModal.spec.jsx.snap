@@ -5,7 +5,11 @@ exports[`<StandardModal /> > should match snapshot with title and body 1`] = `
   class="vars_OD_Base__1f5yyro0"
   style="overflow: hidden;"
 >
-  <div />
+  <div>
+    <div
+      class="vars_OD_Base__1f5yyro0"
+    />
+  </div>
   <div
     class="vars_OD_Base__1f5yyro0"
   >
@@ -101,7 +105,11 @@ exports[`<StandardModal /> > should match snapshot without title and body 1`] = 
   class="vars_OD_Base__1f5yyro0"
   style="overflow: hidden;"
 >
-  <div />
+  <div>
+    <div
+      class="vars_OD_Base__1f5yyro0"
+    />
+  </div>
   <div
     class="vars_OD_Base__1f5yyro0"
   >

@@ -21,7 +21,6 @@ export const globalTypes = {
 				},
 				{
 					title: 'Flat Red Theme',
-
 					value: themes.flatRedTheme.name,
 				},
 				{
@@ -33,19 +32,18 @@ export const globalTypes = {
 			dynamicTitle: true,
 		},
 	},
-	// TODO: convert overrides to global css vars
-	// themeColours: {
-	// 	name: 'Set dynamic colours',
-	// 	description: 'Global primary background colour',
-	// 	defaultValue: 'defaults',
-	// 	toolbar: {
-	// 		icon: 'paintbrush',
-	// 		items: ['defaults', 'bright', 'dark'],
-	// 		showName: true,
-	// 		dynamicTitle: true,
-	// 		control: 'color',
-	// 	},
-	// },
+	overrideColours: {
+		name: 'overrides',
+		description: 'Primary background colour override',
+		defaultValue: 'defaults',
+		toolbar: {
+			icon: 'paintbrush',
+			items: ['defaults', 'bright', 'dark'],
+			showName: true,
+			dynamicTitle: true,
+			control: 'color',
+		},
+	},
 };
 
 const preview: Preview = {

@@ -24,6 +24,6 @@ describe('<Badge />', () => {
 		const { container } = render(
 			<Badge className="badge-class" label="Hello World!" />,
 		);
-		expect(container.firstChild).toHaveClass('badge-class');
+		expect(container.firstChild.firstChild).toHaveClass('badge-class');
 	});
 });

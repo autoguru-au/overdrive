@@ -2,6 +2,10 @@
 
 exports[`<Box /> > should match snapshot for default Box 1`] = `
 <div
-  class="reset_block__1oah0223"
-/>
+  class="vars_OD_Base__1f5yyro0"
+>
+  <div
+    class="reset_block__1oah0223"
+  />
+</div>
 `;

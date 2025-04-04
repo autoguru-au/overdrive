@@ -2,36 +2,44 @@
 
 exports[`<Stack /> > should correctly handle fragment nodes 1`] = `
 <div
-  class="reset_block__1oah0223"
+  class="vars_OD_Base__1f5yyro0"
 >
   <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhf Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
+    class="reset_block__1oah0223"
   >
-    <p>
-      line 0
-    </p>
-  </div>
-  <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhf Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
-  >
-    <p>
-      Line 1
-    </p>
-    <p>
-      Line 2
-    </p>
-    <p>
-      Line 3
-    </p>
-  </div>
-  <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhf Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
-  >
-    <p>
-      line 4
-    </p>
+    <div
+      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhf Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
+    >
+      <p>
+        line 0
+      </p>
+    </div>
+    <div
+      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhf Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
+    >
+      <p>
+        Line 1
+      </p>
+      <p>
+        Line 2
+      </p>
+      <p>
+        Line 3
+      </p>
+    </div>
+    <div
+      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhf Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
+    >
+      <p>
+        line 4
+      </p>
+    </div>
   </div>
 </div>
 `;
 
-exports[`<Stack /> > should match the snapshot 1`] = `null`;
+exports[`<Stack /> > should match the snapshot 1`] = `
+<div
+  class="vars_OD_Base__1f5yyro0"
+/>
+`;

@@ -1,6 +1,6 @@
 import { RefObject, useLayoutEffect, useRef, useState } from 'react';
 
-import { useTheme } from '../../components/ThemeProvider';
+import { useTheme } from '../../components/OverdriveProvider';
 import { themeContractVars } from '../../themes/theme.css';
 import { Tokens } from '../../themes/tokens';
 import { getThemeTokenValue } from '../../utils/css';
@@ -77,14 +77,7 @@ export const useWindowHeightFill = ({
 			mutationObserver.disconnect();
 			resizeObserver.disconnect();
 		};
-	}, [
-		containerRef?.current,
-		window?.innerHeight,
-		document?.body,
-		themeClass,
-		bottomGap,
-		maxHeight,
-	]);
+	}, [themeClass, bottomGap, maxHeight, containerRef, observedElementRef]);
 
 	return cappedHeight ? containerHeight : 'auto';
 };
