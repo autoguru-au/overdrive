@@ -1,0 +1,63 @@
+name: Release
+
+on:
+    push:
+        branches:
+            - 'feature/**'
+            - 'feat/**'
+
+jobs:
+    setup:
+        name: Setup environment
+        runs-on: ubuntu-latest
+        outputs:
+            is_prerelease: ${{ steps.version.outputs.exists }}
+            node_version: ${{ steps.version.outputs.node_version }}
+        steps:
+            - uses: actions/checkout@main
+              with:
+                  fetch-depth: 0
+
+            - id: check
+              run:
+                  echo "is_prerelease=$(test -f .changeset/pre.json && echo
+                  'true' || echo 'false')" >> $GITHUB_OUTPUT
+            - name: Get Node version
+              id: version
+              run:
+                  echo "node_version=$(jq -r '.volta.node' package.json)" >>
+                  $GITHUB_OUTPUT
+
+    release:
+        name: Prerelease
+        needs: setup
+        if: needs.setup.outputs.is_prerelease == 'true'
+        runs-on: ubuntu-latest
+        outputs:
+            published: ${{ steps.changesets.outputs.published }}
+        env:
+            TZ: Australia/Brisbane
+            CI: true
+        steps:
+            - uses: actions/checkout@main
+              with:
+                  fetch-depth: 0
+
+            - name: Setup Node ${{ needs.setup.outputs.node_version }}
+              uses: actions/setup-node@main
+              with:
+                  node-version: ${{ needs.setup.outputs.node_version }}
+                  cache: 'yarn'
+                  check-latest: true
+
+            - name: Yarn install
+              run: yarn --immutable
+
+            - name: Create Release or Publish
+              id: changesets
+              uses: changesets/action@v1
+              with:
+                  publish: yarn release
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
