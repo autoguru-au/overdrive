@@ -14,7 +14,10 @@
 		"autoguru"
 	],
 	"homepage": "https://overdrive.autoguru.io",
-	"repository": "https://github.com/autoguru-au/overdrive",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/autoguru-au/overdrive.git"
+	},
 	"license": "MIT",
 	"sideEffects": [
 		"./lib/reset/**/*",

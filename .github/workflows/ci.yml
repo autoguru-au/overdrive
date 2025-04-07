@@ -110,8 +110,9 @@ jobs:
                   projectToken: ${{ secrets.CHROMATIC_APP_CODE }}
                   skip: true
 
-    call-prerelease:
-        name: Trigger release for prerelease
-        needs: [setup, test]
-        if: needs.setup.outputs.has_prerelease == 'true'
-        uses: ./.github/workflows/release.yml
+    # disabling for now due to auth issue "ENEEDAUTH This command requires you to be logged in"
+    # call-prerelease:
+    #     name: Trigger release for prerelease
+    #     needs: [setup, test]
+    #     if: needs.setup.outputs.has_prerelease == 'true'
+    #     uses: ./.github/workflows/release.yml
