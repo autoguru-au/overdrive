@@ -27,10 +27,10 @@ jobs:
               run: |
                   if [ -f ".changeset/pre.json" ]; then
                       echo "Prerelease found"
-                      echo "has_prerelease=true" >> $GITHUB_OUTPUT
+                      echo "pre_exists=true" >> $GITHUB_OUTPUT
                   else
                       echo "No prerelease found"
-                      echo "has_prerelease=false" >> $GITHUB_OUTPUT
+                      echo "pre_exists=false" >> $GITHUB_OUTPUT
                   fi
 
     release:
