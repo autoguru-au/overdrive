@@ -18,6 +18,7 @@ jobs:
         runs-on: ubuntu-latest
         outputs:
             node_version: ${{ steps.version.outputs.node_version }}
+            has_prerelease: ${{ steps.exists.outputs.pre_exists }}
         steps:
             - uses: actions/checkout@main
               with:
@@ -28,6 +29,17 @@ jobs:
               run:
                   echo "node_version=$(jq -r '.volta.node' package.json)" >>
                   $GITHUB_OUTPUT
+
+            - name: Check for changeset pre.json
+              id: exists
+              run: |
+                  if [ -f ".changeset/pre.json" ]; then
+                    echo "Prerelease found"
+                    echo "pre_exists=true" >> $GITHUB_OUTPUT
+                  else
+                    echo "No prerelease found"
+                    echo "pre_exists=false" >> $GITHUB_OUTPUT
+                  fi
 
     test:
         name: Lint & Test
@@ -99,6 +111,7 @@ jobs:
                   skip: true
 
     call-prerelease:
-        name: Trigger prerelse workflow
+        name: Trigger release for prerelease
         needs: [setup, test]
-        uses: ./.github/workflows/prerelease.yml
+        if: needs.setup.outputs.has_prerelease == 'true'
+        uses: ./.github/workflows/release.yml
