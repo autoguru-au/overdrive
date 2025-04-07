@@ -1,5 +1,22 @@
 # @autoguru/overdrive
 
+## 4.41.0-next.0
+
+### Minor Changes
+
+- **Breaking change** for `<OverdriveProvider>` and other providers.
+  `<OverdriveProvider>` now contains all Overdrive theme options with optimised
+  state management. Both `<ThemeProvider>` context as well as
+  `<ThemeOverrideProvider>` values have been incorporated. Applications do not
+  need to be wrapped separate providers.
+
+    The `theme` prop is now optional and defaults to the base theme. The colour
+    overrides are now passed as a single object to the `<OverdriveProvider>`
+    component.
+
+    Changes to Portal internals make it more predicatable, avoiding risky
+    effects.
+
 ## 4.40.1
 
 ### Patch Changes
@@ -1865,8 +1882,8 @@
     `<AutoSuggest>` can now be given a `autoWidth` prop that will auto the width
     in relation to setting the width, or for it to be automatic.
 
-                              	- `autoWidth={true}` means, size the flyout to the width of flyout children "automatically"
-                              	- `autoWidth={false}` means to set to the width of the select input.
+                                	- `autoWidth={true}` means, size the flyout to the width of flyout children "automatically"
+                                	- `autoWidth={false}` means to set to the width of the select input.
 
     eg:
 
@@ -1980,8 +1997,8 @@
     backdrop. Also; if you wish to remove the fadeIn/fadeOut animation, a
     `transition?: boolean` can also be provided.
 
-                              	- Removes `<ModalPortal />` in favor of `<Modal />`
-                              	- Deprecated `withModal`, which could simply just use the Modal component
+                                	- Removes `<ModalPortal />` in favor of `<Modal />`
+                                	- Deprecated `withModal`, which could simply just use the Modal component
 
     Worth noting that a `role="presentation"` is applied to the `Modal`, so
     consumers should be applying a `role="none presentation"` to their direct
@@ -2034,9 +2051,9 @@
 
     Breakpoints have been amended to follow (mobile first):
 
-                              	- `tablet` is iPad Mini width less 25%, so any device greater than 768px
-                              	- `desktop` we are considering as iPad Pro width less 25%, so any device larger than 1024px
-                              	- `largeDesktop` is taken as a 1920x1080 less 25%, so any device larger than 1440px
+                                	- `tablet` is iPad Mini width less 25%, so any device greater than 768px
+                                	- `desktop` we are considering as iPad Pro width less 25%, so any device larger than 1024px
+                                	- `largeDesktop` is taken as a 1920x1080 less 25%, so any device larger than 1440px
 
     all at landscape.
 
@@ -2119,9 +2136,9 @@
 
     **A few changes**
 
-                              	- `OverdriveProvider` must now be provider
-                              	- `ToastProvider` must also be provided when using a `useToast`
-                              	- `@autoguru/overdrive/reset` must be given first.
+                                	- `OverdriveProvider` must now be provider
+                                	- `ToastProvider` must also be provided when using a `useToast`
+                                	- `@autoguru/overdrive/reset` must be given first.
 
     ... and a whole series of other things. Please consult to the PR (#273) to
     get a better idea of what's changed.

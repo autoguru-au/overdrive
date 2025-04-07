@@ -1,0 +1,8 @@
+{
+	"mode": "pre",
+	"tag": "next",
+	"initialVersions": {
+		"@autoguru/overdrive": "4.40.1"
+	},
+	"changesets": ["solid-taxes-beg"]
+}
