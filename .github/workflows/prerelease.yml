@@ -1,4 +1,4 @@
-name: Release
+name: Prerelease
 
 on:
     workflow_call:
@@ -9,26 +9,29 @@ jobs:
         name: Setup environment
         runs-on: ubuntu-latest
         outputs:
-            has_prerelease: ${{ steps.version.outputs.is_prerelease }}
             node_version: ${{ steps.version.outputs.node_version }}
+            has_prerelease: ${{ steps.exists.outputs.pre_exists }}
         steps:
             - uses: actions/checkout@main
               with:
                   fetch-depth: 0
-
-            - id: check
-              run: |
-                  if [ -f ".changeset/pre.json" ]; then
-                      echo "is_prerelease=true" >> $GITHUB_OUTPUT
-                  else
-                      echo "is_prerelease=false" >> $GITHUB_OUTPUT
-                  fi
 
             - name: Get Node version
               id: version
               run:
                   echo "node_version=$(jq -r '.volta.node' package.json)" >>
                   $GITHUB_OUTPUT
+
+            - name: Check for changeset pre.json
+              id: exists
+              run: |
+                  if [ -f ".changeset/pre.json" ]; then
+                      echo "Prerelease found"
+                      echo "has_prerelease=true" >> $GITHUB_OUTPUT
+                  else
+                      echo "No prerelease found"
+                      echo "has_prerelease=false" >> $GITHUB_OUTPUT
+                  fi
 
     release:
         name: Prerelease
