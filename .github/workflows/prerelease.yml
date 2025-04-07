@@ -1,17 +1,15 @@
 name: Release
 
 on:
-    push:
-        branches:
-            - 'feature/**'
-            - 'feat/**'
+    workflow_call:
+    workflow_dispatch:
 
 jobs:
     setup:
         name: Setup environment
         runs-on: ubuntu-latest
         outputs:
-            is_prerelease: ${{ steps.version.outputs.exists }}
+            has_prerelease: ${{ steps.version.outputs.is_prerelease }}
             node_version: ${{ steps.version.outputs.node_version }}
         steps:
             - uses: actions/checkout@main
@@ -19,9 +17,13 @@ jobs:
                   fetch-depth: 0
 
             - id: check
-              run:
-                  echo "is_prerelease=$(test -f .changeset/pre.json && echo
-                  'true' || echo 'false')" >> $GITHUB_OUTPUT
+              run: |
+                  if [ -f ".changeset/pre.json" ]; then
+                      echo "is_prerelease=true" >> $GITHUB_OUTPUT
+                  else
+                      echo "is_prerelease=false" >> $GITHUB_OUTPUT
+                  fi
+
             - name: Get Node version
               id: version
               run:
@@ -31,7 +33,7 @@ jobs:
     release:
         name: Prerelease
         needs: setup
-        if: needs.setup.outputs.is_prerelease == 'true'
+        if: needs.setup.outputs.has_prerelease == 'true'
         runs-on: ubuntu-latest
         outputs:
             published: ${{ steps.changesets.outputs.published }}

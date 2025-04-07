@@ -97,3 +97,8 @@ jobs:
               with:
                   projectToken: ${{ secrets.CHROMATIC_APP_CODE }}
                   skip: true
+
+    call-prerelease:
+        name: Trigger prerelse workflow
+        needs: [setup, test]
+        uses: ./.github/workflows/prerelease.yml
