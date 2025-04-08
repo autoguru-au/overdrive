@@ -114,7 +114,11 @@ export const Provider = ({
 	return (
 		<OverdriveContext.Provider value={themeValues}>
 			<RuntimeTokensContext.Provider value={runtimeTokens}>
-				<div className={theme.themeRef} style={styles}>
+				<div
+					className={theme.themeRef}
+					style={styles}
+					data-od-component-provider=""
+				>
 					{children}
 				</div>
 			</RuntimeTokensContext.Provider>

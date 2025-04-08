@@ -1,7 +1,6 @@
 import {
 	createThemeContract,
 	createGlobalThemeContract,
-	style,
 } from '@vanilla-extract/css';
 
 import { buildColourGamut } from './makeTheme';
@@ -318,7 +317,4 @@ const THEME_CONTRACT = {
 export const themeContractVars = createThemeContract(THEME_CONTRACT);
 export const globalTokens = createGlobalThemeContract(THEME_CONTRACT);
 
-export const container = style({
-	boxSizing: 'border-box',
-	font: '400 16px/22px AvertaStandard, system-ui, sans-serif',
-});
+export { container } from '../reset/reset.css';
