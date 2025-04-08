@@ -7,6 +7,7 @@ exports[`<Positioner /> > should match snapshot 1`] = `
   <div>
     <div
       class="vars_OD_Base__1f5yyro0"
+      data-od-component-provider=""
     />
   </div>
   <div
@@ -14,7 +15,7 @@ exports[`<Positioner /> > should match snapshot 1`] = `
   >
     <div
       aria-hidden="false"
-      class="reset_block__1oah0223 useBoxStyles_position_fixed__3xgq1lfz Positioner_root__1d54b7d0"
+      class="reset_block__1oah0224 useBoxStyles_position_fixed__3xgq1lfz Positioner_root__1d54b7d0"
     >
       Some body
     </div>

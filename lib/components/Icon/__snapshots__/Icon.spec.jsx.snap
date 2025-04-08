@@ -3,9 +3,10 @@
 exports[`<Icon /> > should match snapshot for same icon 1`] = `
 <div
   class="vars_OD_Base__1f5yyro0"
+  data-od-component-provider=""
 >
   <span
-    class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+    class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire0"
   >
     <svg
       aria-hidden="true"

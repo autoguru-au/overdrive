@@ -3,9 +3,10 @@
 exports[`<BulletList /> > should match the snapshot 1`] = `
 <div
   class="vars_OD_Base__1f5yyro0"
+  data-od-component-provider=""
 >
   <ul
-    class="reset_list__1oah0224 BulletList_root__4koeg0 BulletList_firstOccurrence__4koeg1"
+    class="reset_list__1oah0225 BulletList_root__4koeg0 BulletList_firstOccurrence__4koeg1"
   />
 </div>
 `;

@@ -3,6 +3,7 @@
 exports[`<Bullet /> > should match the snapshot 1`] = `
 <div
   class="vars_OD_Base__1f5yyro0"
+  data-od-component-provider=""
 >
   <li
     class="Bullet_root_default__13ecipx0"

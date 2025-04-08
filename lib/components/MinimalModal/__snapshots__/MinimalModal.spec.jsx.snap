@@ -8,6 +8,7 @@ exports[`<MinimalModal /> > should match snapshot with body 1`] = `
   <div>
     <div
       class="vars_OD_Base__1f5yyro0"
+      data-od-component-provider=""
     />
   </div>
   <div
@@ -23,21 +24,21 @@ exports[`<MinimalModal /> > should match snapshot with body 1`] = `
     >
       <div
         aria-hidden="true"
-        class="reset_block__1oah0223 useBoxStyles_position_fixed__3xgq1lfz useBoxStyles_backgroundColours_neutral__3xgq1lfi Modal_backdrop_root__1psykzh3 Modal_transition__1psykzh1"
+        class="reset_block__1oah0224 useBoxStyles_position_fixed__3xgq1lfz useBoxStyles_backgroundColours_neutral__3xgq1lfi Modal_backdrop_root__1psykzh3 Modal_transition__1psykzh1"
       />
       <div
-        class="reset_block__1oah0223 useBoxStyles_position_fixed__3xgq1lfz useBoxStyles_overflow_hidden__3xgq1lg4 Modal_root__1psykzh0 Modal_transition__1psykzh1"
+        class="reset_block__1oah0224 useBoxStyles_position_fixed__3xgq1lfz useBoxStyles_overflow_hidden__3xgq1lg4 Modal_root__1psykzh0 Modal_transition__1psykzh1"
         role="presentation"
       >
         <div
           aria-hidden="false"
-          class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_height_full__3xgq1lfx useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw MinimalModal_container__13ik47w0"
+          class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_height_full__3xgq1lfx useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw MinimalModal_container__13ik47w0"
           role="none presentation"
         >
           <article
             aria-labelledby="od-4"
             aria-modal="true"
-            class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhf"
+            class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhf"
             role="dialog"
           >
             <main
@@ -68,6 +69,7 @@ exports[`<MinimalModal /> > should match snapshot without title and body 1`] = `
   <div>
     <div
       class="vars_OD_Base__1f5yyro0"
+      data-od-component-provider=""
     />
   </div>
   <div
@@ -83,21 +85,21 @@ exports[`<MinimalModal /> > should match snapshot without title and body 1`] = `
     >
       <div
         aria-hidden="true"
-        class="reset_block__1oah0223 useBoxStyles_position_fixed__3xgq1lfz useBoxStyles_backgroundColours_neutral__3xgq1lfi Modal_backdrop_root__1psykzh3 Modal_transition__1psykzh1"
+        class="reset_block__1oah0224 useBoxStyles_position_fixed__3xgq1lfz useBoxStyles_backgroundColours_neutral__3xgq1lfi Modal_backdrop_root__1psykzh3 Modal_transition__1psykzh1"
       />
       <div
-        class="reset_block__1oah0223 useBoxStyles_position_fixed__3xgq1lfz useBoxStyles_overflow_hidden__3xgq1lg4 Modal_root__1psykzh0 Modal_transition__1psykzh1"
+        class="reset_block__1oah0224 useBoxStyles_position_fixed__3xgq1lfz useBoxStyles_overflow_hidden__3xgq1lg4 Modal_root__1psykzh0 Modal_transition__1psykzh1"
         role="presentation"
       >
         <div
           aria-hidden="false"
-          class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_height_full__3xgq1lfx useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw MinimalModal_container__13ik47w0"
+          class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_height_full__3xgq1lfx useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw MinimalModal_container__13ik47w0"
           role="none presentation"
         >
           <article
             aria-labelledby="od-3"
             aria-modal="true"
-            class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhf"
+            class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhf"
             role="dialog"
           >
             <main
