@@ -1,3 +1,4 @@
+import { tokens as baseTokens } from '../base/tokens';
 import { buildColourGamut } from '../makeTheme';
 import { ColourMap, Tokens } from '../tokens';
 
@@ -233,44 +234,7 @@ export const tokens: Tokens = {
 		},
 	},
 	typography: {
-		size: {
-			'1': {
-				fontSize: '10px',
-				lineHeight: '12px',
-			},
-			'2': {
-				fontSize: '12px',
-				lineHeight: '18px',
-			},
-			'3': {
-				fontSize: '14px',
-				lineHeight: '20px',
-			},
-			'4': {
-				fontSize: '16px',
-				lineHeight: '22px',
-			},
-			'5': {
-				fontSize: '18px',
-				lineHeight: '26px',
-			},
-			'6': {
-				fontSize: '20px',
-				lineHeight: '28px',
-			},
-			'7': {
-				fontSize: '24px',
-				lineHeight: '30px',
-			},
-			'8': {
-				fontSize: '30px',
-				lineHeight: '40px',
-			},
-			'9': {
-				fontSize: '40px',
-				lineHeight: '48px',
-			},
-		},
+		...baseTokens.typography,
 		colour: {
 			primary: colours.black['800'],
 			brand: colours.green['600'],
@@ -286,11 +250,6 @@ export const tokens: Tokens = {
 			warning: colours.yellow['800'],
 			success: colours.green['600'],
 			information: colours.blue['500'],
-		},
-		fontWeight: {
-			normal: '400',
-			semiBold: '500',
-			bold: '700',
 		},
 	},
 	animation: {

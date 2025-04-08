@@ -287,6 +287,7 @@ export const themeContractVars = createThemeContract({
 			success: '',
 			information: '',
 		},
+		fontFamily: '',
 		fontWeight: {
 			normal: '',
 			semiBold: '',

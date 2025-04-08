@@ -202,6 +202,7 @@ export interface Tokens extends VanillaTokens {
 			| BaseColours,
 			string
 		>;
+		fontFamily: string;
 		fontWeight: Record<TextFontWeight, string>;
 	};
 	animation: {
