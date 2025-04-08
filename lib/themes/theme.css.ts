@@ -316,7 +316,7 @@ const THEME_CONTRACT = {
 };
 
 export const themeContractVars = createThemeContract(THEME_CONTRACT);
-export const globalThemeTokens = createGlobalThemeContract(THEME_CONTRACT);
+export const globalTokens = createGlobalThemeContract(THEME_CONTRACT);
 
 export const container = style({
 	boxSizing: 'border-box',

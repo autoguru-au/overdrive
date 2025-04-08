@@ -1,5 +1,5 @@
 import isChromatic from 'chromatic/isChromatic';
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import { Box } from '../lib/components/Box';
 import { Heading } from '../lib/components/Heading';
@@ -29,6 +29,10 @@ export const useStorybookDecorator = (Story, context) => {
 		context.globals.overrideColours in overrideColors
 			? overrideColors[context.globals.overrideColours]
 			: {};
+
+	useEffect(() => {
+		document.documentElement.dataset.odTheme = 'ag';
+	}, []);
 
 	return (
 		<OverdriveProvider

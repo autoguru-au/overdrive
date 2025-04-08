@@ -1,26 +1,24 @@
 import { globalStyle } from '@vanilla-extract/css';
 
-globalStyle(':root', {
-	boxSizing: 'border-box',
-	font: '400 16px/22px AvertaStandard, system-ui, sans-serif',
-});
-
-globalStyle('*, *:before, *:after', {
-	font: 'inherit',
-	boxSizing: 'inherit',
-	WebkitTapHighlightColor: 'transparent',
-	MozOsxFontSmoothing: 'grayscale',
-	textRendering: 'optimizeLegibility',
-});
-
-globalStyle('body', {
-	lineHeight: 1,
-	WebkitTextSizeAdjust: 'none',
-	margin: 0,
-	padding: 0,
-	border: 'none',
-});
+import { globalTokens } from '../themes/theme.css';
 
 globalStyle('html', {
 	overflowX: 'hidden',
+});
+
+globalStyle('body', {
+	fontFamily: globalTokens.typography.fontFamily,
+	fontSize: globalTokens.typography.size[4].fontSize,
+	fontWeight: globalTokens.typography.fontWeight.normal,
+	lineHeight: globalTokens.typography.size[4].lineHeight,
+	textRendering: 'optimizeLegibility',
+	textSizeAdjust: 'none',
+	margin: 0,
+	padding: 0,
+	border: 'none',
+	WebkitTapHighlightColor: 'transparent',
+});
+
+globalStyle('*', {
+	boxSizing: 'border-box',
 });
