@@ -198,11 +198,11 @@ __metadata:
     rollup-plugin-visualizer: "npm:^5.14.0"
     storybook: "npm:8.6.12"
     storybook-addon-tag-badges: "npm:^1.4.0"
-    typescript: "npm:^5.8.2"
+    typescript: "npm:5.8.3"
     url-loader: "npm:^4.1.1"
     vite: "npm:6.2.5"
     vitest: "npm:^3.1.1"
-    webpack: "npm:^5.98.0"
+    webpack: "npm:5.99.1"
   peerDependencies:
     "@autoguru/icons": ">=1.8.4"
     "@autoguru/utilities": ^1.3.3
@@ -13204,7 +13204,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5, typescript@npm:^5.8.2":
+"typescript@npm:5.8.3, typescript@npm:^5":
   version: 5.8.3
   resolution: "typescript@npm:5.8.3"
   bin:
@@ -13214,7 +13214,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.8.2#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5#optional!builtin<compat/typescript>":
   version: 5.8.3
   resolution: "typescript@patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"
   bin:
@@ -13659,7 +13659,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:^5.98.0":
+"webpack@npm:5.99.1":
   version: 5.99.1
   resolution: "webpack@npm:5.99.1"
   dependencies:

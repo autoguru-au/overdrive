@@ -157,11 +157,11 @@
 		"rollup-plugin-visualizer": "^5.14.0",
 		"storybook": "8.6.12",
 		"storybook-addon-tag-badges": "^1.4.0",
-		"typescript": "^5.8.2",
+		"typescript": "5.8.3",
 		"url-loader": "^4.1.1",
 		"vite": "6.2.5",
 		"vitest": "^3.1.1",
-		"webpack": "^5.98.0"
+		"webpack": "5.99.1"
 	},
 	"peerDependencies": {
 		"@autoguru/icons": ">=1.8.4",
