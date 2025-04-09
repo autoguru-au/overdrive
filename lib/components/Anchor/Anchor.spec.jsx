@@ -38,7 +38,7 @@ describe('<Anchor />', () => {
 
 	it('should pass on className', () => {
 		expect(
-			render(<Anchor className="test" />).container.firstChild,
+			render(<Anchor className="test" />).container.firstChild.firstChild,
 		).toHaveClass('test');
 	});
 
@@ -64,7 +64,7 @@ describe('<Anchor />', () => {
 				Hello World!
 			</Anchor>,
 		);
-		expect(container.firstChild).toHaveAttribute(
+		expect(container.firstChild.firstChild).toHaveAttribute(
 			'href',
 			'https://www.autoguru.com.au',
 		);

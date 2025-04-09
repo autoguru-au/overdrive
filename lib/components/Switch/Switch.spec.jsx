@@ -58,19 +58,20 @@ describe('<Switch />', () => {
 	it('should pass on className to dom element', () => {
 		expect(
 			render(<Switch className="toggleButton-class" value={10} />)
-				.container.firstChild,
+				.container.firstChild.firstChild,
 		).toHaveClass('toggleButton-class');
 	});
 
 	it('should set toggle to false by default', () => {
 		expect(
-			render(<Switch />).container.firstChild.childNodes[1],
+			render(<Switch />).container.firstChild.firstChild.childNodes[1],
 		).not.toHaveAttribute('data-active');
 	});
 
 	it('should be toggled on when toggled prop is set to true', () => {
 		expect(
-			render(<Switch isSelected />).container.firstChild.childNodes[1],
+			render(<Switch isSelected />).container.firstChild.firstChild
+				.childNodes[1],
 		).toHaveAttribute('data-active');
 	});
 
@@ -92,14 +93,14 @@ describe('<Switch />', () => {
 			<InteractiveSwitch isSelected={false} onChange={spyedCallback} />,
 		);
 
-		fireEvent.click(toggledContainer.firstChild.childNodes[1]);
+		fireEvent.click(toggledContainer.firstChild.firstChild.childNodes[1]);
 
 		expect(spyedCallback).toHaveBeenCalledWith(true);
 
 		const { container: untoggledContainer } = render(
 			<InteractiveSwitch isSelected={true} onChange={spyedCallback} />,
 		);
-		fireEvent.click(untoggledContainer.firstChild.childNodes[1]);
+		fireEvent.click(untoggledContainer.firstChild.firstChild.childNodes[1]);
 
 		expect(spyedCallback).toHaveBeenCalledWith(false);
 
@@ -117,7 +118,7 @@ describe('<Switch />', () => {
 			/>,
 		);
 
-		fireEvent.click(container.firstChild.childNodes[1]);
+		fireEvent.click(container.firstChild.firstChild.childNodes[1]);
 
 		expect(spyedCallback).not.toHaveBeenCalled();
 	});
@@ -140,20 +141,20 @@ describe('<Switch />', () => {
 			/>,
 		);
 
-		expect(container.firstChild.childNodes[1]).not.toHaveAttribute(
-			'data-active',
-		);
+		expect(
+			container.firstChild.firstChild.childNodes[1],
+		).not.toHaveAttribute('data-active');
 
 		act(() => setToggledValue(true));
 
-		expect(container.firstChild.childNodes[1]).toHaveAttribute(
+		expect(container.firstChild.firstChild.childNodes[1]).toHaveAttribute(
 			'data-active',
 		);
 
 		act(() => setToggledValue(false));
 
-		expect(container.firstChild.childNodes[1]).not.toHaveAttribute(
-			'data-active',
-		);
+		expect(
+			container.firstChild.firstChild.childNodes[1],
+		).not.toHaveAttribute('data-active');
 	});
 });

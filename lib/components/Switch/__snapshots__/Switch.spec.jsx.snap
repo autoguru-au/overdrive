@@ -1,122 +1,147 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`<Switch /> > should match snapshot when toggled 1`] = `
-<label
-  class="Switch_base__6xc8dy0"
+<div
+  class="vars_OD_Base__1f5yyro0"
+  data-od-component-provider=""
 >
-  <div
-    class="reset_block__1oah0223 VisuallyHidden_visuallyHidden__12d73qi0"
-  >
-    <input
-      checked=""
-      role="switch"
-      tabindex="0"
-      type="checkbox"
-    />
-  </div>
-  <div
-    class="reset_block__1oah0223 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75 Switch_toggleOn__6xc8dy2"
-    data-active=""
+  <label
+    class="Switch_base__6xc8dy0"
   >
     <div
-      class="reset_block__1oah0223 Switch_handle_default__6xc8dy4 Switch_handle_active__6xc8dy5"
-    />
-  </div>
-</label>
+      class="reset_block__1oah0224 VisuallyHidden_visuallyHidden__12d73qi0"
+    >
+      <input
+        checked=""
+        role="switch"
+        tabindex="0"
+        type="checkbox"
+      />
+    </div>
+    <div
+      class="reset_block__1oah0224 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75 Switch_toggleOn__6xc8dy2"
+      data-active=""
+    >
+      <div
+        class="reset_block__1oah0224 Switch_handle_default__6xc8dy4 Switch_handle_active__6xc8dy5"
+      />
+    </div>
+  </label>
+</div>
 `;
 
 exports[`<Switch /> > should match snapshot when toggled and disabled 1`] = `
-<label
-  class="Switch_base__6xc8dy0"
+<div
+  class="vars_OD_Base__1f5yyro0"
+  data-od-component-provider=""
 >
-  <div
-    class="reset_block__1oah0223 VisuallyHidden_visuallyHidden__12d73qi0"
-  >
-    <input
-      checked=""
-      disabled=""
-      role="switch"
-      type="checkbox"
-    />
-  </div>
-  <div
-    class="reset_block__1oah0223 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75 Switch_disabled__6xc8dy3 Switch_toggleOn__6xc8dy2"
-    data-active=""
-    data-disabled=""
+  <label
+    class="Switch_base__6xc8dy0"
   >
     <div
-      class="reset_block__1oah0223 Switch_handle_default__6xc8dy4 Switch_handle_active__6xc8dy5"
-    />
-  </div>
-</label>
+      class="reset_block__1oah0224 VisuallyHidden_visuallyHidden__12d73qi0"
+    >
+      <input
+        checked=""
+        disabled=""
+        role="switch"
+        type="checkbox"
+      />
+    </div>
+    <div
+      class="reset_block__1oah0224 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75 Switch_disabled__6xc8dy3 Switch_toggleOn__6xc8dy2"
+      data-active=""
+      data-disabled=""
+    >
+      <div
+        class="reset_block__1oah0224 Switch_handle_default__6xc8dy4 Switch_handle_active__6xc8dy5"
+      />
+    </div>
+  </label>
+</div>
 `;
 
 exports[`<Switch /> > should match snapshot when un-toggled 1`] = `
-<label
-  class="Switch_base__6xc8dy0"
+<div
+  class="vars_OD_Base__1f5yyro0"
+  data-od-component-provider=""
 >
-  <div
-    class="reset_block__1oah0223 VisuallyHidden_visuallyHidden__12d73qi0"
-  >
-    <input
-      role="switch"
-      tabindex="0"
-      type="checkbox"
-    />
-  </div>
-  <div
-    class="reset_block__1oah0223 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75"
+  <label
+    class="Switch_base__6xc8dy0"
   >
     <div
-      class="reset_block__1oah0223 Switch_handle_default__6xc8dy4"
-    />
-  </div>
-</label>
+      class="reset_block__1oah0224 VisuallyHidden_visuallyHidden__12d73qi0"
+    >
+      <input
+        role="switch"
+        tabindex="0"
+        type="checkbox"
+      />
+    </div>
+    <div
+      class="reset_block__1oah0224 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75"
+    >
+      <div
+        class="reset_block__1oah0224 Switch_handle_default__6xc8dy4"
+      />
+    </div>
+  </label>
+</div>
 `;
 
 exports[`<Switch /> > should match snapshot when un-toggled and disabled 1`] = `
-<label
-  class="Switch_base__6xc8dy0"
+<div
+  class="vars_OD_Base__1f5yyro0"
+  data-od-component-provider=""
 >
-  <div
-    class="reset_block__1oah0223 VisuallyHidden_visuallyHidden__12d73qi0"
-  >
-    <input
-      disabled=""
-      role="switch"
-      type="checkbox"
-    />
-  </div>
-  <div
-    class="reset_block__1oah0223 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75 Switch_disabled__6xc8dy3"
-    data-disabled=""
+  <label
+    class="Switch_base__6xc8dy0"
   >
     <div
-      class="reset_block__1oah0223 Switch_handle_default__6xc8dy4"
-    />
-  </div>
-</label>
+      class="reset_block__1oah0224 VisuallyHidden_visuallyHidden__12d73qi0"
+    >
+      <input
+        disabled=""
+        role="switch"
+        type="checkbox"
+      />
+    </div>
+    <div
+      class="reset_block__1oah0224 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75 Switch_disabled__6xc8dy3"
+      data-disabled=""
+    >
+      <div
+        class="reset_block__1oah0224 Switch_handle_default__6xc8dy4"
+      />
+    </div>
+  </label>
+</div>
 `;
 
 exports[`<Switch /> > should match snapshot without props 1`] = `
-<label
-  class="Switch_base__6xc8dy0"
+<div
+  class="vars_OD_Base__1f5yyro0"
+  data-od-component-provider=""
 >
-  <div
-    class="reset_block__1oah0223 VisuallyHidden_visuallyHidden__12d73qi0"
-  >
-    <input
-      role="switch"
-      tabindex="0"
-      type="checkbox"
-    />
-  </div>
-  <div
-    class="reset_block__1oah0223 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75"
+  <label
+    class="Switch_base__6xc8dy0"
   >
     <div
-      class="reset_block__1oah0223 Switch_handle_default__6xc8dy4"
-    />
-  </div>
-</label>
+      class="reset_block__1oah0224 VisuallyHidden_visuallyHidden__12d73qi0"
+    >
+      <input
+        role="switch"
+        tabindex="0"
+        type="checkbox"
+      />
+    </div>
+    <div
+      class="reset_block__1oah0224 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75"
+    >
+      <div
+        class="reset_block__1oah0224 Switch_handle_default__6xc8dy4"
+      />
+    </div>
+  </label>
+</div>
 `;

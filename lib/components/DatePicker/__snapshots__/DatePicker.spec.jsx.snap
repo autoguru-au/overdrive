@@ -2,31 +2,36 @@
 
 exports[`<DatePicker /> > should match snapshot without label 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_overflow_hidden__3xgq1lg4"
+  class="vars_OD_Base__1f5yyro0"
+  data-od-component-provider=""
 >
-  <input
-    class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy DatePicker_input__1j3uugj0"
-    type="date"
-  />
   <div
-    class="reset_block__1oah0223 DatePicker_contents_default__1j3uugj1"
+    class="reset_block__1oah0224 useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_overflow_hidden__3xgq1lg4"
   >
-    <span
-      class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+    <input
+      class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy DatePicker_input__1j3uugj0"
+      type="date"
+    />
+    <div
+      class="reset_block__1oah0224 DatePicker_contents_default__1j3uugj1"
     >
-      <svg
-        aria-hidden="true"
-        class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <span
+        class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
       >
-        <path
-          d="M19 18.998H5v-11h14m-3-7v2H8v-2H6v2H5a1.99 1.99 0 00-1.99 2l-.01 14a2 2 0 002 2h14c1.102 0 2-.896 2-2v-14a2 2 0 00-2-2h-1v-2m-1 11h-5v5h5v-5z"
-        />
-      </svg>
-    </span>
+        <svg
+          aria-hidden="true"
+          class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19 18.998H5v-11h14m-3-7v2H8v-2H6v2H5a1.99 1.99 0 00-1.99 2l-.01 14a2 2 0 002 2h14c1.102 0 2-.896 2-2v-14a2 2 0 00-2-2h-1v-2m-1 11h-5v5h5v-5z"
+          />
+        </svg>
+      </span>
+    </div>
   </div>
 </div>
 `;

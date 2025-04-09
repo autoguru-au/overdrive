@@ -54,6 +54,6 @@ describe('<Inline />', () => {
 			</Inline>,
 		);
 
-		expect(container.firstChild.children).toHaveLength(3);
+		expect(container.firstChild.firstChild.children).toHaveLength(3);
 	});
 });

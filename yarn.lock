@@ -172,6 +172,7 @@ __metadata:
     core-js: "npm:^3.41.0"
     csstype: "npm:^3.1.3"
     deepmerge: "npm:^4.3.1"
+    es-toolkit: "npm:^1.34.1"
     eslint: "npm:9.24.0"
     eslint-plugin-storybook: "npm:0.12.0"
     husky: "npm:^9.1.7"
@@ -212,6 +213,7 @@ __metadata:
     clsx: ^2.1.1
     colord: ^2.9.3
     csstype: ^3.1.3
+    es-toolkit: ^1.34.1
     react: ">=18 || >=19.0.0-rc.0"
     react-aria: ^3.38.1
     react-dom: ">=18 || >=19.0.0-rc.0"
@@ -7586,6 +7588,18 @@ __metadata:
     is-date-object: "npm:^1.0.5"
     is-symbol: "npm:^1.0.4"
   checksum: 10/17faf35c221aad59a16286cbf58ef6f080bf3c485dff202c490d074d8e74da07884e29b852c245d894eac84f73c58330ec956dfd6d02c0b449d75eb1012a3f9b
+  languageName: node
+  linkType: hard
+
+"es-toolkit@npm:^1.34.1":
+  version: 1.34.1
+  resolution: "es-toolkit@npm:1.34.1"
+  dependenciesMeta:
+    "@trivago/prettier-plugin-sort-imports@4.3.0":
+      unplugged: true
+    prettier-plugin-sort-re-exports@0.0.1:
+      unplugged: true
+  checksum: 10/4542c82c382a2116265cd53708a4fc2c5700f57dca7889e59c2d02c3d1cd71079467f130441594d325c4e689f7f4201e8a58c5b06989262c91e6324b45e8594a
   languageName: node
   linkType: hard
 

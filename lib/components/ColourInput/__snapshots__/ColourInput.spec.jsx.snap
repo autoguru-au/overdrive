@@ -2,132 +2,142 @@
 
 exports[`<ColourInput /> > should have some hintText 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfv"
+  class="vars_OD_Base__1f5yyro0"
+  data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
+    class="reset_block__1oah0224 useBoxStyles_width_full__3xgq1lfv"
   >
     <div
-      class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+      class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexWrap_nowrap__3xgq1lhr useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw"
+        class="reset_block__1oah0224 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
       >
         <div
-          class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexShrink_0__3xgq1lhp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+          class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexWrap_nowrap__3xgq1lhr useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw"
         >
           <div
-            class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp"
-            style="background-color: rgb(108, 17, 17);"
+            class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexShrink_0__3xgq1lhp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+          >
+            <div
+              class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp"
+              style="background-color: rgb(108, 17, 17);"
+            />
+          </div>
+          <span
+            class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 useBoxStyles_position_absolute__3xgq1lfy"
+          >
+            #6c1111
+          </span>
+          <input
+            autocomplete="off"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 useBoxStyles_flexGrow_1__3xgq1lho ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+            id="id"
+            type="color"
+            value="#6c1111"
           />
         </div>
-        <span
-          class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfy"
+      </div>
+      <div
+        class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+      >
+        <div
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
+        />
+        <div
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
-          #6c1111
-        </span>
-        <input
-          autocomplete="off"
-          class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_flexGrow_1__3xgq1lho ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
-          id="id"
-          type="color"
-          value="#6c1111"
+          <div
+            class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          >
+            placeholder
+          </div>
+          <label
+            class="reset_inlineText__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz InputState_natural_default_colour__a2a1mv4 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+            for="id"
+          >
+            placeholder
+          </label>
+        </div>
+        <div
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle InputState_natural_default_borderColour__a2a1mv5"
         />
       </div>
     </div>
-    <div
-      class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+    <p
+      class="reset_blockText__1oah022d useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_blockText__1oah022d useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_2__1xnpmd72 reset_blockText__1oah022d useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4g HintText_hintText__down5s0 InputState_natural_default_colour__a2a1mv4"
     >
-      <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
-      />
-      <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
-      >
-        <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
-        >
-          placeholder
-        </div>
-        <label
-          class="reset_inlineText__1oah0222 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz InputState_natural_default_colour__a2a1mv4 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
-          for="id"
-        >
-          placeholder
-        </label>
-      </div>
-      <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle InputState_natural_default_borderColour__a2a1mv5"
-      />
-    </div>
+      hint text
+    </p>
   </div>
-  <p
-    class="reset_blockText__1oah022c useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_blockText__1oah022c useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_2__1xnpmd72 reset_blockText__1oah022c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4g HintText_hintText__down5s0 InputState_natural_default_colour__a2a1mv4"
-  >
-    hint text
-  </p>
 </div>
 `;
 
 exports[`<ColourInput /> > should match snapshot 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfv"
+  class="vars_OD_Base__1f5yyro0"
+  data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
+    class="reset_block__1oah0224 useBoxStyles_width_full__3xgq1lfv"
   >
     <div
-      class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+      class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexWrap_nowrap__3xgq1lhr useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw"
+        class="reset_block__1oah0224 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
       >
         <div
-          class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexShrink_0__3xgq1lhp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+          class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexWrap_nowrap__3xgq1lhr useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw"
         >
           <div
-            class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp"
-            style="background-color: rgb(108, 17, 17);"
+            class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexShrink_0__3xgq1lhp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+          >
+            <div
+              class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp"
+              style="background-color: rgb(108, 17, 17);"
+            />
+          </div>
+          <span
+            class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 useBoxStyles_position_absolute__3xgq1lfy"
+          >
+            #6c1111
+          </span>
+          <input
+            autocomplete="off"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 useBoxStyles_flexGrow_1__3xgq1lho ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+            id="id"
+            type="color"
+            value="#6c1111"
           />
         </div>
-        <span
-          class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfy"
-        >
-          #6c1111
-        </span>
-        <input
-          autocomplete="off"
-          class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_flexGrow_1__3xgq1lho ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
-          id="id"
-          type="color"
-          value="#6c1111"
-        />
       </div>
-    </div>
-    <div
-      class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
-    >
       <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
-      />
-      <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
+        class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
+        />
+        <div
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
-          placeholder something
+          <div
+            class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          >
+            placeholder something
+          </div>
+          <label
+            class="reset_inlineText__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz InputState_natural_default_colour__a2a1mv4 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+            for="id"
+          >
+            placeholder something
+          </label>
         </div>
-        <label
-          class="reset_inlineText__1oah0222 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz InputState_natural_default_colour__a2a1mv4 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
-          for="id"
-        >
-          placeholder something
-        </label>
+        <div
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle InputState_natural_default_borderColour__a2a1mv5"
+        />
       </div>
-      <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle InputState_natural_default_borderColour__a2a1mv5"
-      />
     </div>
   </div>
 </div>
@@ -135,61 +145,66 @@ exports[`<ColourInput /> > should match snapshot 1`] = `
 
 exports[`<ColourInput /> > should match snapshot when active 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfv input-class"
+  class="vars_OD_Base__1f5yyro0"
+  data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
+    class="reset_block__1oah0224 useBoxStyles_width_full__3xgq1lfv input-class"
   >
     <div
-      class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+      class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexWrap_nowrap__3xgq1lhr useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw"
+        class="reset_block__1oah0224 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
       >
         <div
-          class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexShrink_0__3xgq1lhp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+          class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexWrap_nowrap__3xgq1lhr useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw"
         >
           <div
-            class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp"
-            style="background-color: rgb(236, 64, 64);"
+            class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexShrink_0__3xgq1lhp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+          >
+            <div
+              class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp"
+              style="background-color: rgb(236, 64, 64);"
+            />
+          </div>
+          <span
+            class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 useBoxStyles_position_absolute__3xgq1lfy"
+          >
+            #ec4040
+          </span>
+          <input
+            autocomplete="off"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 useBoxStyles_flexGrow_1__3xgq1lho ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+            type="color"
+            value="#ec4040"
           />
         </div>
-        <span
-          class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfy"
-        >
-          #ec4040
-        </span>
-        <input
-          autocomplete="off"
-          class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_flexGrow_1__3xgq1lho ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
-          type="color"
-          value="#ec4040"
-        />
       </div>
-    </div>
-    <div
-      class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
-    >
       <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_activeBorderColour__a2a1mv1"
-      />
-      <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_activeBorderColour__a2a1mv1"
+        class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_activeBorderColour__a2a1mv1"
+        />
+        <div
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_activeBorderColour__a2a1mv1"
         >
-          placeholder something
+          <div
+            class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          >
+            placeholder something
+          </div>
+          <label
+            class="reset_inlineText__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz InputState_activeColour__a2a1mv0 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+          >
+            placeholder something
+          </label>
         </div>
-        <label
-          class="reset_inlineText__1oah0222 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz InputState_activeColour__a2a1mv0 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
-        >
-          placeholder something
-        </label>
+        <div
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle InputState_activeBorderColour__a2a1mv1"
+        />
       </div>
-      <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle InputState_activeBorderColour__a2a1mv1"
-      />
     </div>
   </div>
 </div>
@@ -197,79 +212,84 @@ exports[`<ColourInput /> > should match snapshot when active 1`] = `
 
 exports[`<ColourInput /> > should match snapshot when loading 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfv input-class"
+  class="vars_OD_Base__1f5yyro0"
+  data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
+    class="reset_block__1oah0224 useBoxStyles_width_full__3xgq1lfv input-class"
   >
     <div
-      class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+      class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="reset_block__1oah0223 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_default__1kpufmi4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_suffixIcon__5jmdy8l withEnhancedInput_iconSize_medium__5jmdy8n"
-      >
-        <svg
-          class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_overflow_hidden__3xgq1lg4 ProgressSpinner_circular__1kpufmi1"
-          viewBox="25 25 50 50"
-        >
-          <circle
-            class="ProgressSpinner_path__1kpufmi3 ProgressSpinner_size_medium_path__1kpufmid"
-            cx="50"
-            cy="50"
-            fill="none"
-            r="20"
-            stroke-miterlimit="10"
-          />
-        </svg>
-      </div>
-      <div
-        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexWrap_nowrap__3xgq1lhr useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw"
+        class="reset_block__1oah0224 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
       >
         <div
-          class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexShrink_0__3xgq1lhp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+          class="reset_block__1oah0224 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_default__1kpufmi4 reset_block__1oah0224 useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_suffixIcon__5jmdy8l withEnhancedInput_iconSize_medium__5jmdy8n"
+        >
+          <svg
+            class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_overflow_hidden__3xgq1lg4 ProgressSpinner_circular__1kpufmi1"
+            viewBox="25 25 50 50"
+          >
+            <circle
+              class="ProgressSpinner_path__1kpufmi3 ProgressSpinner_size_medium_path__1kpufmid"
+              cx="50"
+              cy="50"
+              fill="none"
+              r="20"
+              stroke-miterlimit="10"
+            />
+          </svg>
+        </div>
+        <div
+          class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexWrap_nowrap__3xgq1lhr useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw"
         >
           <div
-            class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp"
-            style="background-color: rgb(108, 17, 17);"
+            class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexShrink_0__3xgq1lhp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+          >
+            <div
+              class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp"
+              style="background-color: rgb(108, 17, 17);"
+            />
+          </div>
+          <span
+            class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 useBoxStyles_position_absolute__3xgq1lfy"
+          >
+            #6c1111
+          </span>
+          <input
+            aria-busy="true"
+            autocomplete="off"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 useBoxStyles_flexGrow_1__3xgq1lho ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8e"
+            type="color"
+            value="#6c1111"
           />
         </div>
-        <span
-          class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfy"
-        >
-          #6c1111
-        </span>
-        <input
-          aria-busy="true"
-          autocomplete="off"
-          class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_flexGrow_1__3xgq1lho ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8e"
-          type="color"
-          value="#6c1111"
-        />
       </div>
-    </div>
-    <div
-      class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
-    >
       <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
-      />
-      <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
+        class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
+        />
+        <div
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
-          placeholder something
+          <div
+            class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          >
+            placeholder something
+          </div>
+          <label
+            class="reset_inlineText__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz InputState_natural_default_colour__a2a1mv4 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+          >
+            placeholder something
+          </label>
         </div>
-        <label
-          class="reset_inlineText__1oah0222 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz InputState_natural_default_colour__a2a1mv4 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
-        >
-          placeholder something
-        </label>
+        <div
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle InputState_natural_default_borderColour__a2a1mv5"
+        />
       </div>
-      <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle InputState_natural_default_borderColour__a2a1mv5"
-      />
     </div>
   </div>
 </div>
@@ -277,61 +297,66 @@ exports[`<ColourInput /> > should match snapshot when loading 1`] = `
 
 exports[`<ColourInput /> > should match snapshot when touched 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfv input-class"
+  class="vars_OD_Base__1f5yyro0"
+  data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
+    class="reset_block__1oah0224 useBoxStyles_width_full__3xgq1lfv input-class"
   >
     <div
-      class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+      class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexWrap_nowrap__3xgq1lhr useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw"
+        class="reset_block__1oah0224 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
       >
         <div
-          class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexShrink_0__3xgq1lhp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+          class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexWrap_nowrap__3xgq1lhr useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw"
         >
           <div
-            class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp"
-            style="background-color: rgb(108, 17, 17);"
+            class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexShrink_0__3xgq1lhp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+          >
+            <div
+              class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp"
+              style="background-color: rgb(108, 17, 17);"
+            />
+          </div>
+          <span
+            class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 useBoxStyles_position_absolute__3xgq1lfy"
+          >
+            #6c1111
+          </span>
+          <input
+            autocomplete="off"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 useBoxStyles_flexGrow_1__3xgq1lho ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+            type="color"
+            value="#6c1111"
           />
         </div>
-        <span
-          class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfy"
-        >
-          #6c1111
-        </span>
-        <input
-          autocomplete="off"
-          class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_flexGrow_1__3xgq1lho ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
-          type="color"
-          value="#6c1111"
-        />
       </div>
-    </div>
-    <div
-      class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
-    >
       <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_error_default_borderColour__a2a1mvd"
-      />
-      <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_error_default_borderColour__a2a1mvd"
+        class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_error_default_borderColour__a2a1mvd"
+        />
+        <div
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_error_default_borderColour__a2a1mvd"
         >
-          placeholder something
+          <div
+            class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          >
+            placeholder something
+          </div>
+          <label
+            class="reset_inlineText__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz InputState_error_default_colour__a2a1mvc NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+          >
+            placeholder something
+          </label>
         </div>
-        <label
-          class="reset_inlineText__1oah0222 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz InputState_error_default_colour__a2a1mvc NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
-        >
-          placeholder something
-        </label>
+        <div
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle InputState_error_default_borderColour__a2a1mvd"
+        />
       </div>
-      <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle InputState_error_default_borderColour__a2a1mvd"
-      />
     </div>
   </div>
 </div>
@@ -339,61 +364,66 @@ exports[`<ColourInput /> > should match snapshot when touched 1`] = `
 
 exports[`<ColourInput /> > should match snapshot when touched and invalid 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfv input-class"
+  class="vars_OD_Base__1f5yyro0"
+  data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
+    class="reset_block__1oah0224 useBoxStyles_width_full__3xgq1lfv input-class"
   >
     <div
-      class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+      class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexWrap_nowrap__3xgq1lhr useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw"
+        class="reset_block__1oah0224 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
       >
         <div
-          class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexShrink_0__3xgq1lhp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+          class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexWrap_nowrap__3xgq1lhr useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw"
         >
           <div
-            class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp"
-            style="background-color: rgb(108, 17, 17);"
+            class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexShrink_0__3xgq1lhp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+          >
+            <div
+              class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp"
+              style="background-color: rgb(108, 17, 17);"
+            />
+          </div>
+          <span
+            class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 useBoxStyles_position_absolute__3xgq1lfy"
+          >
+            #6c1111
+          </span>
+          <input
+            autocomplete="off"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 useBoxStyles_flexGrow_1__3xgq1lho ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+            type="color"
+            value="#6c1111"
           />
         </div>
-        <span
-          class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfy"
-        >
-          #6c1111
-        </span>
-        <input
-          autocomplete="off"
-          class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_flexGrow_1__3xgq1lho ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
-          type="color"
-          value="#6c1111"
-        />
       </div>
-    </div>
-    <div
-      class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
-    >
       <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_error_default_borderColour__a2a1mvd"
-      />
-      <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_error_default_borderColour__a2a1mvd"
+        class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_error_default_borderColour__a2a1mvd"
+        />
+        <div
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_error_default_borderColour__a2a1mvd"
         >
-          placeholder something
+          <div
+            class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          >
+            placeholder something
+          </div>
+          <label
+            class="reset_inlineText__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz InputState_error_default_colour__a2a1mvc NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+          >
+            placeholder something
+          </label>
         </div>
-        <label
-          class="reset_inlineText__1oah0222 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz InputState_error_default_colour__a2a1mvc NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
-        >
-          placeholder something
-        </label>
+        <div
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle InputState_error_default_borderColour__a2a1mvd"
+        />
       </div>
-      <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle InputState_error_default_borderColour__a2a1mvd"
-      />
     </div>
   </div>
 </div>
@@ -401,61 +431,66 @@ exports[`<ColourInput /> > should match snapshot when touched and invalid 1`] = 
 
 exports[`<ColourInput /> > should match snapshot when touched and valid 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfv input-class"
+  class="vars_OD_Base__1f5yyro0"
+  data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
+    class="reset_block__1oah0224 useBoxStyles_width_full__3xgq1lfv input-class"
   >
     <div
-      class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+      class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexWrap_nowrap__3xgq1lhr useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw"
+        class="reset_block__1oah0224 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
       >
         <div
-          class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexShrink_0__3xgq1lhp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+          class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexWrap_nowrap__3xgq1lhr useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw"
         >
           <div
-            class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp"
-            style="background-color: rgb(108, 17, 17);"
+            class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexShrink_0__3xgq1lhp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+          >
+            <div
+              class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp"
+              style="background-color: rgb(108, 17, 17);"
+            />
+          </div>
+          <span
+            class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 useBoxStyles_position_absolute__3xgq1lfy"
+          >
+            #6c1111
+          </span>
+          <input
+            autocomplete="off"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 useBoxStyles_flexGrow_1__3xgq1lho ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+            type="color"
+            value="#6c1111"
           />
         </div>
-        <span
-          class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfy"
-        >
-          #6c1111
-        </span>
-        <input
-          autocomplete="off"
-          class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_flexGrow_1__3xgq1lho ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
-          type="color"
-          value="#6c1111"
-        />
       </div>
-    </div>
-    <div
-      class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
-    >
       <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_success_default_borderColour__a2a1mv7"
-      />
-      <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_success_default_borderColour__a2a1mv7"
+        class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_success_default_borderColour__a2a1mv7"
+        />
+        <div
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_success_default_borderColour__a2a1mv7"
         >
-          placeholder something
+          <div
+            class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          >
+            placeholder something
+          </div>
+          <label
+            class="reset_inlineText__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz InputState_success_default_colour__a2a1mv6 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+          >
+            placeholder something
+          </label>
         </div>
-        <label
-          class="reset_inlineText__1oah0222 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz InputState_success_default_colour__a2a1mv6 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
-        >
-          placeholder something
-        </label>
+        <div
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle InputState_success_default_borderColour__a2a1mv7"
+        />
       </div>
-      <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle InputState_success_default_borderColour__a2a1mv7"
-      />
     </div>
   </div>
 </div>
@@ -463,75 +498,80 @@ exports[`<ColourInput /> > should match snapshot when touched and valid 1`] = `
 
 exports[`<ColourInput /> > should match snapshot with both icons 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfv input-class"
+  class="vars_OD_Base__1f5yyro0"
+  data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
+    class="reset_block__1oah0224 useBoxStyles_width_full__3xgq1lfv input-class"
   >
     <div
-      class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+      class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
     >
-      <span
-        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_suffixIcon__5jmdy8l withEnhancedInput_iconSize_medium__5jmdy8n InputState_natural_default_colour__a2a1mv4"
-      >
-        <svg
-          aria-hidden="true"
-          class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
-          viewBox="0 0 512 512"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
-          />
-        </svg>
-      </span>
       <div
-        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexWrap_nowrap__3xgq1lhr useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw"
+        class="reset_block__1oah0224 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
       >
+        <span
+          class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_suffixIcon__5jmdy8l withEnhancedInput_iconSize_medium__5jmdy8n InputState_natural_default_colour__a2a1mv4"
+        >
+          <svg
+            aria-hidden="true"
+            class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+            />
+          </svg>
+        </span>
         <div
-          class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexShrink_0__3xgq1lhp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+          class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexWrap_nowrap__3xgq1lhr useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw"
         >
           <div
-            class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp"
-            style="background-color: rgb(108, 17, 17);"
+            class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexShrink_0__3xgq1lhp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+          >
+            <div
+              class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp"
+              style="background-color: rgb(108, 17, 17);"
+            />
+          </div>
+          <span
+            class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 useBoxStyles_position_absolute__3xgq1lfy"
+          >
+            #6c1111
+          </span>
+          <input
+            autocomplete="off"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 useBoxStyles_flexGrow_1__3xgq1lho ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8e"
+            type="color"
+            value="#6c1111"
           />
         </div>
-        <span
-          class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfy"
-        >
-          #6c1111
-        </span>
-        <input
-          autocomplete="off"
-          class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_flexGrow_1__3xgq1lho ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8e"
-          type="color"
-          value="#6c1111"
-        />
       </div>
-    </div>
-    <div
-      class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
-    >
       <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
-      />
-      <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
+        class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
+        />
+        <div
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
-          placeholder something
+          <div
+            class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          >
+            placeholder something
+          </div>
+          <label
+            class="reset_inlineText__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz InputState_natural_default_colour__a2a1mv4 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+          >
+            placeholder something
+          </label>
         </div>
-        <label
-          class="reset_inlineText__1oah0222 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz InputState_natural_default_colour__a2a1mv4 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
-        >
-          placeholder something
-        </label>
+        <div
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle InputState_natural_default_borderColour__a2a1mv5"
+        />
       </div>
-      <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle InputState_natural_default_borderColour__a2a1mv5"
-      />
     </div>
   </div>
 </div>
@@ -539,75 +579,80 @@ exports[`<ColourInput /> > should match snapshot with both icons 1`] = `
 
 exports[`<ColourInput /> > should match snapshot with suffix icon 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfv input-class"
+  class="vars_OD_Base__1f5yyro0"
+  data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
+    class="reset_block__1oah0224 useBoxStyles_width_full__3xgq1lfv input-class"
   >
     <div
-      class="reset_block__1oah0223 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+      class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
     >
-      <span
-        class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_suffixIcon__5jmdy8l withEnhancedInput_iconSize_medium__5jmdy8n InputState_natural_default_colour__a2a1mv4"
-      >
-        <svg
-          aria-hidden="true"
-          class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
-          viewBox="0 0 512 512"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
-          />
-        </svg>
-      </span>
       <div
-        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexWrap_nowrap__3xgq1lhr useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw"
+        class="reset_block__1oah0224 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
       >
+        <span
+          class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_suffixIcon__5jmdy8l withEnhancedInput_iconSize_medium__5jmdy8n InputState_natural_default_colour__a2a1mv4"
+        >
+          <svg
+            aria-hidden="true"
+            class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+            />
+          </svg>
+        </span>
         <div
-          class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexShrink_0__3xgq1lhp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+          class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexWrap_nowrap__3xgq1lhr useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw"
         >
           <div
-            class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp"
-            style="background-color: rgb(108, 17, 17);"
+            class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexShrink_0__3xgq1lhp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+          >
+            <div
+              class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp"
+              style="background-color: rgb(108, 17, 17);"
+            />
+          </div>
+          <span
+            class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 useBoxStyles_position_absolute__3xgq1lfy"
+          >
+            #6c1111
+          </span>
+          <input
+            autocomplete="off"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 useBoxStyles_flexGrow_1__3xgq1lho ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8e"
+            type="color"
+            value="#6c1111"
           />
         </div>
-        <span
-          class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0223 useBoxStyles_position_absolute__3xgq1lfy"
-        >
-          #6c1111
-        </span>
-        <input
-          autocomplete="off"
-          class="reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_flexGrow_1__3xgq1lho ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0225 reset_appearance__1oah0220 reset_input__1oah0228 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8e"
-          type="color"
-          value="#6c1111"
-        />
       </div>
-    </div>
-    <div
-      class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
-    >
       <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
-      />
-      <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
+        class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
-          class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
+        />
+        <div
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
-          placeholder something
+          <div
+            class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_block__3xgq1lg9 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          >
+            placeholder something
+          </div>
+          <label
+            class="reset_inlineText__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz InputState_natural_default_colour__a2a1mv4 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+          >
+            placeholder something
+          </label>
         </div>
-        <label
-          class="reset_inlineText__1oah0222 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz InputState_natural_default_colour__a2a1mv4 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
-        >
-          placeholder something
-        </label>
+        <div
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle InputState_natural_default_borderColour__a2a1mv5"
+        />
       </div>
-      <div
-        class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle InputState_natural_default_borderColour__a2a1mv5"
-      />
     </div>
   </div>
 </div>

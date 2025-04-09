@@ -1,6 +1,6 @@
 import { useCallback, useLayoutEffect, useMemo, useState } from 'react';
 
-import { useRuntimeTokens } from '../../components/ThemeProvider';
+import { useRuntimeTokens } from '../../components/OverdriveProvider';
 import type { BreakPoints } from '../../themes/tokens';
 import { isBrowser } from '../../utils';
 

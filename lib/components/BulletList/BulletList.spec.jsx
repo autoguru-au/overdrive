@@ -16,7 +16,8 @@ describe('<BulletList />', () => {
 
 	it('should pass down className', () => {
 		expect(
-			render(<BulletList className="test-class" />).container.firstChild,
+			render(<BulletList className="test-class" />).container.firstChild
+				.firstChild,
 		).toHaveClass('test-class');
 	});
 

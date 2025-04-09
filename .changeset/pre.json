@@ -1,0 +1,16 @@
+{
+	"mode": "pre",
+	"tag": "next",
+	"initialVersions": {
+		"@autoguru/overdrive": "4.40.1"
+	},
+	"changesets": [
+		"better-cooks-sneeze",
+		"cold-bars-read",
+		"early-wolves-camp",
+		"khaki-mails-go",
+		"plain-cameras-stick",
+		"rare-women-ring",
+		"solid-taxes-beg"
+	]
+}

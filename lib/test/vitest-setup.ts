@@ -4,6 +4,8 @@ import type * as TestingLibrary from '@testing-library/react';
 import React from 'react';
 import { afterEach, vi } from 'vitest';
 
+import theme from '../themes/base';
+
 // runs a cleanup after each test case (e.g. clearing jsdom)
 afterEach(() => {
 	cleanup();
@@ -16,9 +18,6 @@ vi.mock('@testing-library/react', async () => {
 	const { OverdriveProvider } = await import(
 		'../components/OverdriveProvider/OverdriveProvider'
 	);
-	const { tokens } = await import('../themes/base/tokens');
-	const { themeRef } = await import('../themes/base/vars.css');
-	const { themeContractVars } = await import('../themes/theme.css');
 
 	return {
 		...originalModule,
@@ -29,10 +28,7 @@ vi.mock('@testing-library/react', async () => {
 					return React.createElement(
 						OverdriveProvider,
 						{
-							themeClass: themeRef,
-							// @ts-expect-error tokens is not a prop
-							tokens,
-							vars: themeContractVars,
+							theme,
 						},
 						children,
 					);

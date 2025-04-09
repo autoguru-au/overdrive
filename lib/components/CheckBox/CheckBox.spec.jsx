@@ -37,7 +37,8 @@ describe('<CheckBox />', () => {
 
 	it('should pass on className to dom element', () => {
 		expect(
-			render(<CheckBox className="check-class" />).container.firstChild,
+			render(<CheckBox className="check-class" />).container.firstChild
+				.firstChild,
 		).toHaveClass('check-class');
 	});
 

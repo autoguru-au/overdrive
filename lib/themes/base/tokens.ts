@@ -289,6 +289,7 @@ export const tokens: Tokens = {
 			success: baseThemeColours.green['600'],
 			information: baseThemeColours.blue['500'],
 		},
+		fontFamily: 'AvertaStandard, system-ui, sans-serif',
 		fontWeight: {
 			normal: '400',
 			semiBold: '500',

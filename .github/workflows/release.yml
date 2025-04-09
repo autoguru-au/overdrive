@@ -3,6 +3,7 @@ name: Release
 on:
     push:
         branches: [main]
+    workflow_call:
 
 jobs:
     setup:
@@ -57,7 +58,11 @@ jobs:
     storybook:
         name: Publish Storybook
         needs: [setup, release]
-        if: needs.release.outputs.published == 'true'
+        # Only run if this is not a workflow call and the release job was successful
+        # This prevents the Storybook from publishing on prerelease runs
+        if:
+            github.event_name != 'workflow_call' &&
+            needs.release.outputs.published == 'true'
         runs-on: ubuntu-latest
         env:
             TZ: Australia/Brisbane
