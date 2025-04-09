@@ -16,9 +16,13 @@ const colorOverrideKeys = [
 export type ColorOverrides = Record<(typeof colorOverrideKeys)[number], string>;
 
 const isValidColor = (color: string): boolean => {
-	const s = new Option().style;
-	s.color = color;
-	return s.color !== '';
+	try {
+		const s = new Option();
+		s.style.color = color ?? '';
+		return s.style.color !== '';
+	} catch {
+		return false;
+	}
 };
 
 export const useColorOverrides = (
@@ -31,7 +35,7 @@ export const useColorOverrides = (
 		colorOverrideKeys.forEach((key) => {
 			if (overrides[key] && !isValidColor(overrides[key]!)) {
 				console.warn(
-					`Invalid color value for ${key}: ${overrides[key]}`,
+					`Overdrive Provider: Invalid override color value for ${key}: ${overrides[key]}`,
 				);
 				delete overrides[key];
 			}
