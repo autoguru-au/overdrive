@@ -6,7 +6,7 @@ import { tokens } from './tokens';
 
 // global themes -- all themes can be declared here as they do not require exporting
 export const globalBaseThemeLight = createGlobalTheme(
-	'[data-od-theme=ag], [data-od-theme=base], [data-od-theme=ag][data-od-color-mode=light]',
+	':root, [data-od-theme=base], [data-od-theme=base][data-od-color-mode=light]',
 	globalTokens,
 	tokens,
 );

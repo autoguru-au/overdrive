@@ -24,4 +24,5 @@ globalStyle('body, [data-od-reset]', {
 
 globalStyle('*', {
 	boxSizing: 'border-box',
+	font: 'inherit',
 });

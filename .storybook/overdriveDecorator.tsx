@@ -56,7 +56,6 @@ export const useChromaticDecorator = (Story, context) => {
 			{Object.keys(themes).map((themeName) => (
 				<div
 					key={themes[themeName].name}
-					className={themes[themeName].themeRef}
 					data-theme={themes[themeName].name}
 				>
 					<OverdriveProvider
