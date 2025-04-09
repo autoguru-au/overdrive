@@ -4,5 +4,5 @@
 	"initialVersions": {
 		"@autoguru/overdrive": "4.40.1"
 	},
-	"changesets": ["better-cooks-sneeze", "solid-taxes-beg"]
+	"changesets": ["better-cooks-sneeze", "cold-bars-read", "solid-taxes-beg"]
 }
