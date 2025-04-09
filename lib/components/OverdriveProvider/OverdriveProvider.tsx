@@ -4,9 +4,9 @@ import { isEqual } from 'es-toolkit';
 import React, { createContext, useContext, useEffect, useMemo } from 'react';
 
 import baseTheme from '../../themes/base';
-import { makeRuntimeTokens, RuntimeTokens } from '../../themes/makeTheme';
+import { makeRuntimeTokens, type RuntimeTokens } from '../../themes/makeTheme';
 import { themeContractVars } from '../../themes/theme.css';
-import { BreakPoints } from '../../themes/tokens';
+import { type BreakPoints } from '../../themes/tokens';
 import { isBrowser } from '../../utils';
 
 import { useColorOverrides, type ColorOverrides } from './useColorOverrides';

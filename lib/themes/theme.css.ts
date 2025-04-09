@@ -1,6 +1,7 @@
 import {
 	createThemeContract,
 	createGlobalThemeContract,
+	style,
 } from '@vanilla-extract/css';
 
 import { buildColourGamut } from './makeTheme';
@@ -317,4 +318,10 @@ const THEME_CONTRACT = {
 export const themeContractVars = createThemeContract(THEME_CONTRACT);
 export const globalTokens = createGlobalThemeContract(THEME_CONTRACT);
 
-export { container } from '../reset/reset.css';
+/** *Reccomend replace usage*: `container` should be impored from `lib/reset/reset.css` */
+export const container = style({
+	fontFamily: globalTokens.typography.fontFamily,
+	fontSize: globalTokens.typography.size[4].fontSize,
+	fontWeight: globalTokens.typography.fontWeight.normal,
+	lineHeight: globalTokens.typography.size[4].lineHeight,
+});
