@@ -2,6 +2,7 @@ import { style } from '@vanilla-extract/css';
 
 import { globalTokens } from '../themes/theme.css';
 
+// TODO: phase out this base as it's used in every Box
 export const base = {
 	fontSize: '100%',
 	verticalAlign: 'baseline',
