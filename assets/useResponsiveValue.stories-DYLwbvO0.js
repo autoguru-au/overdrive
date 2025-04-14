@@ -1,0 +1,16 @@
+import{r as e}from"./index-DVCUSwsV.js";import{T as t}from"./Text-Bc6GCfdc.js";import{u as p}from"./useResponsiveValue-NEexPnTF.js";import{S as u}from"./Stack-DWp4NesL.js";import"./_commonjsHelpers-gnU0ypJ3.js";import"./dataAttrs-C4KudU4k.js";import"./useTextStyles-mngTSpBp.js";import"./Box-DSBumgu0.js";import"./index-Go0z9Bjm.js";import"./useMedia-B4eUJj0O.js";import"./ThemeProvider-DmFqLIEb.js";import"./index-D_iG_Vvt.js";import"./makeTheme-BvwTE3C0.js";import"./index-4KvmGZzY.js";const I={title:"Utility/Hooks/useResponsiveValue",parameters:{chromatic:{disable:!0}}},r=()=>{const n=()=>{const s=[2,3,null,4],i=p(s);return e.createElement(u,null,e.createElement(t,{is:"p"},"All values:"," ",e.createElement(t,{strong:!0},JSON.stringify(s))," "),e.createElement(t,{is:"p"},"Responsive value: ",e.createElement(t,{strong:!0},i)," "))};return e.createElement(n,null)};var a,o,l;r.parameters={...r.parameters,docs:{...(a=r.parameters)==null?void 0:a.docs,source:{originalSource:`() => {
+  const Impl = () => {
+    const allValues = [2, 3, null, 4];
+    const value = useResponsiveValue(allValues);
+    return <Stack>
+                <Text is="p">
+                    All values:{' '}
+                    <Text strong>{JSON.stringify(allValues)}</Text>{' '}
+                </Text>
+                <Text is="p">
+                    Responsive value: <Text strong>{value as string}</Text>{' '}
+                </Text>
+            </Stack>;
+  };
+  return <Impl />;
+}`,...(l=(o=r.parameters)==null?void 0:o.docs)==null?void 0:l.source}}};const O=["Standard"];export{r as Standard,O as __namedExportsOrder,I as default};
