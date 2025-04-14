@@ -192,7 +192,7 @@ __metadata:
     react-dom: "npm:^19.1.0"
     react-focus-lock: "npm:2.13.6"
     react-intersection-observer: "npm:^9.16.0"
-    react-keyed-flatten-children: "npm:2.2.1"
+    react-keyed-flatten-children: "npm:5.0.0"
     react-stately: "npm:^3.36.1"
     react-swipeable: "npm:^7.0.2"
     rollup-plugin-visualizer: "npm:^5.14.0"
@@ -11518,21 +11518,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-is@npm:^18.2.0":
-  version: 18.3.1
-  resolution: "react-is@npm:18.3.1"
-  checksum: 10/d5f60c87d285af24b1e1e7eaeb123ec256c3c8bdea7061ab3932e3e14685708221bf234ec50b21e10dd07f008f1b966a2730a0ce4ff67905b3872ff2042aec22
-  languageName: node
-  linkType: hard
-
-"react-keyed-flatten-children@npm:2.2.1":
-  version: 2.2.1
-  resolution: "react-keyed-flatten-children@npm:2.2.1"
-  dependencies:
-    react-is: "npm:^18.2.0"
+"react-keyed-flatten-children@npm:5.0.0":
+  version: 5.0.0
+  resolution: "react-keyed-flatten-children@npm:5.0.0"
   peerDependencies:
-    react: ">=15.0.0"
-  checksum: 10/e2c1aab980d80066074590b2bbfe7cec6a04b10e00344586ab7e47de8bed3196d3cfef4f14483a3d8c7fa32376e3eb0af6dfe3603f281e0fdd48ad1b4632d3b1
+    react: ">=18.0.0"
+    react-is: ">=18.0.0"
+  checksum: 10/27acdcc7ba67616a2ebc01504cd781e455dd1670a48507aa0b320dba0a7f362ebc3f7a174b60d9e2c3018a84f6882d1d0da234db4d3a9ca367f46d8b12f8dfef
   languageName: node
   linkType: hard
 
