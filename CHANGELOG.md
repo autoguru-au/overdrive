@@ -4,7 +4,7 @@
 
 ### Patch Changes
 
-- 2023913: Enable v5 of `react-keyed-flatten-children`
+- 2023913: Enable v5 of [`react-keyed-flatten-children`](https://github.com/grrowl/react-keyed-flatten-children) in peer dependencies
 
 ## 4.40.1
 
