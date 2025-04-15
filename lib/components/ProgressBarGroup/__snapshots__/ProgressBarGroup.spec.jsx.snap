@@ -2,214 +2,234 @@
 
 exports[`<ProgressBarGroup /> > should match the snapshot 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz ProgressBarGroup_root__1e1wroi0"
-  style="grid-template-columns: 1fr;"
+  class="vars_OD_Base__1f5yyro0"
+  data-od-component-provider=""
 >
-  <span
-    class="reset_inlineText__1oah0222 useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
-  />
   <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+    class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz ProgressBarGroup_root__1e1wroi0"
+    style="grid-template-columns: 1fr;"
   >
+    <span
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
+    />
     <div
-      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
-      style="width: 16.666666666666664%;"
+      class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+    >
+      <div
+        class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        style="width: 16.666666666666664%;"
+      />
+    </div>
+    <span
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
+    />
+    <span
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
+    />
+    <div
+      class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+    >
+      <div
+        class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        style="width: 33.33333333333333%;"
+      />
+    </div>
+    <span
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
+    />
+    <span
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
+    />
+    <div
+      class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+    >
+      <div
+        class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        style="width: 50%;"
+      />
+    </div>
+    <span
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
     />
   </div>
-  <span
-    class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
-  />
-  <span
-    class="reset_inlineText__1oah0222 useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
-  />
-  <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
-  >
-    <div
-      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
-      style="width: 33.33333333333333%;"
-    />
-  </div>
-  <span
-    class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
-  />
-  <span
-    class="reset_inlineText__1oah0222 useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
-  />
-  <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
-  >
-    <div
-      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
-      style="width: 50%;"
-    />
-  </div>
-  <span
-    class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
-  />
 </div>
 `;
 
 exports[`<ProgressBarGroup /> > should should ignore extra labels 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz ProgressBarGroup_root__1e1wroi0"
-  style="grid-template-columns: auto 1fr;"
+  class="vars_OD_Base__1f5yyro0"
+  data-od-component-provider=""
 >
-  <span
-    class="reset_inlineText__1oah0222 useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
-  >
-    a
-  </span>
   <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+    class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz ProgressBarGroup_root__1e1wroi0"
+    style="grid-template-columns: auto 1fr;"
   >
+    <span
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
+    >
+      a
+    </span>
     <div
-      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
-      style="width: 16.666666666666664%;"
+      class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+    >
+      <div
+        class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        style="width: 16.666666666666664%;"
+      />
+    </div>
+    <span
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
+    />
+    <span
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
+    >
+      b
+    </span>
+    <div
+      class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+    >
+      <div
+        class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        style="width: 33.33333333333333%;"
+      />
+    </div>
+    <span
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
+    />
+    <span
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
+    >
+      c
+    </span>
+    <div
+      class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+    >
+      <div
+        class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        style="width: 50%;"
+      />
+    </div>
+    <span
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
     />
   </div>
-  <span
-    class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
-  />
-  <span
-    class="reset_inlineText__1oah0222 useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
-  >
-    b
-  </span>
-  <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
-  >
-    <div
-      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
-      style="width: 33.33333333333333%;"
-    />
-  </div>
-  <span
-    class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
-  />
-  <span
-    class="reset_inlineText__1oah0222 useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
-  >
-    c
-  </span>
-  <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
-  >
-    <div
-      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
-      style="width: 50%;"
-    />
-  </div>
-  <span
-    class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
-  />
 </div>
 `;
 
 exports[`<ProgressBarGroup /> > should should ignore not break when not enough labels 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz ProgressBarGroup_root__1e1wroi0"
-  style="grid-template-columns: auto 1fr;"
+  class="vars_OD_Base__1f5yyro0"
+  data-od-component-provider=""
 >
-  <span
-    class="reset_inlineText__1oah0222 useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
-  >
-    a
-  </span>
   <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+    class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz ProgressBarGroup_root__1e1wroi0"
+    style="grid-template-columns: auto 1fr;"
   >
+    <span
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
+    >
+      a
+    </span>
     <div
-      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
-      style="width: 16.666666666666664%;"
+      class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+    >
+      <div
+        class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        style="width: 16.666666666666664%;"
+      />
+    </div>
+    <span
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
+    />
+    <span
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
+    />
+    <div
+      class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+    >
+      <div
+        class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        style="width: 33.33333333333333%;"
+      />
+    </div>
+    <span
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
+    />
+    <span
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
+    />
+    <div
+      class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+    >
+      <div
+        class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        style="width: 50%;"
+      />
+    </div>
+    <span
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
     />
   </div>
-  <span
-    class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
-  />
-  <span
-    class="reset_inlineText__1oah0222 useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
-  />
-  <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
-  >
-    <div
-      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
-      style="width: 33.33333333333333%;"
-    />
-  </div>
-  <span
-    class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
-  />
-  <span
-    class="reset_inlineText__1oah0222 useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
-  />
-  <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
-  >
-    <div
-      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
-      style="width: 50%;"
-    />
-  </div>
-  <span
-    class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
-  />
 </div>
 `;
 
 exports[`<ProgressBarGroup /> > should should render a prefix for every value 1`] = `
 <div
-  class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz ProgressBarGroup_root__1e1wroi0"
-  style="grid-template-columns: auto 1fr;"
+  class="vars_OD_Base__1f5yyro0"
+  data-od-component-provider=""
 >
-  <span
-    class="reset_inlineText__1oah0222 useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
-  >
-    a
-  </span>
   <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+    class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz ProgressBarGroup_root__1e1wroi0"
+    style="grid-template-columns: auto 1fr;"
   >
+    <span
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
+    >
+      a
+    </span>
     <div
-      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
-      style="width: 16.666666666666664%;"
+      class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+    >
+      <div
+        class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        style="width: 16.666666666666664%;"
+      />
+    </div>
+    <span
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
+    />
+    <span
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
+    >
+      b
+    </span>
+    <div
+      class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+    >
+      <div
+        class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        style="width: 33.33333333333333%;"
+      />
+    </div>
+    <span
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
+    />
+    <span
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
+    >
+      c
+    </span>
+    <div
+      class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+    >
+      <div
+        class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        style="width: 50%;"
+      />
+    </div>
+    <span
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
     />
   </div>
-  <span
-    class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
-  />
-  <span
-    class="reset_inlineText__1oah0222 useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
-  >
-    b
-  </span>
-  <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
-  >
-    <div
-      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
-      style="width: 33.33333333333333%;"
-    />
-  </div>
-  <span
-    class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
-  />
-  <span
-    class="reset_inlineText__1oah0222 useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
-  >
-    c
-  </span>
-  <div
-    class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
-  >
-    <div
-      class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
-      style="width: 50%;"
-    />
-  </div>
-  <span
-    class="reset_inlineText__1oah0222 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
-  />
 </div>
 `;

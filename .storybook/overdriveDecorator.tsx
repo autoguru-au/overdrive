@@ -1,32 +1,49 @@
-/* eslint-disable import/namespace */
 import isChromatic from 'chromatic/isChromatic';
-import clsx from 'clsx';
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import { Box } from '../lib/components/Box';
 import { Heading } from '../lib/components/Heading';
 import { OverdriveProvider } from '../lib/components/OverdriveProvider';
 import { Stack } from '../lib/components/Stack';
-import { useDocumentBodyStyles } from '../lib/hooks/useDocumentBodyStyles';
-import * as themes from '../lib/themes';
+import * as allThemes from '../lib/themes';
 import { breakpoints } from '../lib/themes/makeTheme';
-import { container, themeContractVars } from '../lib/themes/theme.css';
+import { container } from '../lib/themes/theme.css';
+
+const themes = allThemes;
+const overrideColors = {
+	bright: {
+		primaryBackground: '#e5bc01',
+		primaryForeground: '#1e1818',
+		primaryBorder: '#e5bc01',
+	},
+	dark: {
+		primaryBackground: '#1e1818',
+		primaryForeground: '#e5bc01',
+		primaryBorder: '#1e1818',
+	},
+};
 
 export const useStorybookDecorator = (Story, context) => {
-	useDocumentBodyStyles();
 	const portalRef = useRef<HTMLDivElement>(null);
-	const theme = themes[context.globals.theme];
+	const customColours =
+		context.globals.overrideColours in overrideColors
+			? overrideColors[context.globals.overrideColours]
+			: {};
+
+	useEffect(() => {
+		document.documentElement.dataset.odTheme = 'ag';
+	}, []);
 
 	return (
 		<OverdriveProvider
-			portalMountPoint={portalRef}
-			noBodyLevelTheming={false}
-			vars={themeContractVars}
+			theme={themes[context.globals.theme]}
 			breakpoints={breakpoints}
-			themeClass={theme.themeRef}
+			colorOverrides={customColours}
+			portalMountPoint={portalRef}
+			noBodyLevelTheming
 		>
-			<Box ref={portalRef} className={clsx(container, theme.themeRef)}>
-				<Story {...context} />
+			<Box className={container} ref={portalRef}>
+				<Story />
 			</Box>
 		</OverdriveProvider>
 	);
@@ -39,13 +56,11 @@ export const useChromaticDecorator = (Story, context) => {
 			{Object.keys(themes).map((themeName) => (
 				<div
 					key={themes[themeName].name}
-					className={themes[themeName].themeRef}
 					data-theme={themes[themeName].name}
 				>
 					<OverdriveProvider
 						noBodyLevelTheming
-						themeClass={themes[themeName].themeRef}
-						vars={themes[themeName].vars}
+						theme={themes[themeName]}
 					>
 						<Box width="full" padding="5">
 							<Stack width="full" space="3">

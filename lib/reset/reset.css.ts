@@ -1,5 +1,8 @@
 import { style } from '@vanilla-extract/css';
 
+import { globalTokens } from '../themes/theme.css';
+
+// TODO: phase out this base as it's used in every Box
 export const base = {
 	fontSize: '100%',
 	verticalAlign: 'baseline',
@@ -10,6 +13,13 @@ export const trimmed = {
 	margin: 0,
 	padding: 0,
 };
+
+export const container = style({
+	fontFamily: globalTokens.typography.fontFamily,
+	fontSize: globalTokens.typography.size[4].fontSize,
+	fontWeight: globalTokens.typography.fontWeight.normal,
+	lineHeight: globalTokens.typography.size[4].lineHeight,
+});
 
 const appearance = style({
 	appearance: 'none',

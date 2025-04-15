@@ -102,7 +102,7 @@ export const Standard: Story = {
 	},
 	decorators: [
 		(Story) => (
-			<>
+			<div style={{ minHeight: '880px' }}>
 				<Story />
 				<Text>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -176,7 +176,7 @@ export const Standard: Story = {
 					eget ante metus. Vivamus pretium ipsum justo, a faucibus ex
 					dictum non. Vestibulum et dui diam.
 				</Text>
-			</>
+			</div>
 		),
 	],
 };

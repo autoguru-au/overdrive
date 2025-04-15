@@ -45,7 +45,7 @@ describe('<StarRating />', () => {
 		const { container } = render(
 			<StarRating rating={4.1} className="rating-class" />,
 		);
-		expect(container.firstChild).toHaveClass('rating-class');
+		expect(container.firstChild.firstChild).toHaveClass('rating-class');
 	});
 
 	it('should add a span element inside with the rating value if label is not provided value', () => {

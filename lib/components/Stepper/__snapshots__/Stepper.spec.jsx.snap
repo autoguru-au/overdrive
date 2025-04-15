@@ -2,84 +2,89 @@
 
 exports[`<Stepper /> > should match snapshot with label formatter 1`] = `
 <div
-  aria-disabled="false"
-  class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_userSelect_none__3xgq1lgi useBoxStyles_border_style__3xgq1l9k useBoxStyles_border_colour_top_gray__3xgq1l9m useBoxStyles_border_colour_right_gray__3xgq1l9y useBoxStyles_border_colour_bottom_gray__3xgq1laa useBoxStyles_border_colour_left_gray__3xgq1lam useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lax useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbd useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l90 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp Stepper_root__10wm9ba1 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 Stepper_width_default__10wm9ba3"
-  tabindex="0"
+  class="vars_OD_Base__1f5yyro0"
+  data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm210 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm211 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm212 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm213 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw10 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw11 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw12 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw13 Columns_align_stretch__15fwc182b Columns_wrapping_noWrap__15fwc1829"
+    aria-disabled="false"
+    class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_userSelect_none__3xgq1lgi useBoxStyles_border_style__3xgq1l9k useBoxStyles_border_colour_top_gray__3xgq1l9m useBoxStyles_border_colour_right_gray__3xgq1l9y useBoxStyles_border_colour_bottom_gray__3xgq1laa useBoxStyles_border_colour_left_gray__3xgq1lam useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lax useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbd useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l90 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp Stepper_root__10wm9ba1 reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 Stepper_width_default__10wm9ba3"
+    tabindex="0"
   >
     <div
-      class="reset_block__1oah0223 useBoxStyles_flexGrow_0__3xgq1lhn useBoxStyles_flexShrink_0__3xgq1lhp Columns_makeResponsiveStyle_key_bp__15fwc1810 Columns_makeResponsiveStyle_key_bp__15fwc1811 Columns_makeResponsiveStyle_key_bp__15fwc1812 Columns_makeResponsiveStyle_key_bp__15fwc1813 Columns_makeResponsiveStyle_key_bp__15fwc1824 Columns_makeResponsiveStyle_key_bp__15fwc1825 Columns_makeResponsiveStyle_key_bp__15fwc1826 Columns_makeResponsiveStyle_key_bp__15fwc1827 Column_align_centre__1ycz12q1a"
+      class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm210 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm211 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm212 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm213 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw10 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw11 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw12 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw13 Columns_align_stretch__15fwc182b Columns_wrapping_noWrap__15fwc1829"
     >
       <div
-        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+        class="reset_block__1oah0224 useBoxStyles_flexGrow_0__3xgq1lhn useBoxStyles_flexShrink_0__3xgq1lhp Columns_makeResponsiveStyle_key_bp__15fwc1810 Columns_makeResponsiveStyle_key_bp__15fwc1811 Columns_makeResponsiveStyle_key_bp__15fwc1812 Columns_makeResponsiveStyle_key_bp__15fwc1813 Columns_makeResponsiveStyle_key_bp__15fwc1824 Columns_makeResponsiveStyle_key_bp__15fwc1825 Columns_makeResponsiveStyle_key_bp__15fwc1826 Columns_makeResponsiveStyle_key_bp__15fwc1827 Column_align_centre__1ycz12q1a"
       >
-        <button
-          aria-label="step down"
-          class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldp useBoxStyles_backgroundColours_primary__3xgq1lfc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw Stepper_handle_default__10wm9ba4 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_white__1xnpmd7g"
-          tabindex="-1"
+        <div
+          class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+        >
+          <button
+            aria-label="step down"
+            class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldp useBoxStyles_backgroundColours_primary__3xgq1lfc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw Stepper_handle_default__10wm9ba4 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g"
+            tabindex="-1"
+          >
+            <span
+              class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+            >
+              <svg
+                aria-hidden="true"
+                class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 12.998H5V11l14-.002v2z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="reset_block__1oah0224 useBoxStyles_flexGrow_1__3xgq1lho useBoxStyles_flexShrink_0__3xgq1lhp Columns_makeResponsiveStyle_key_bp__15fwc1810 Columns_makeResponsiveStyle_key_bp__15fwc1811 Columns_makeResponsiveStyle_key_bp__15fwc1812 Columns_makeResponsiveStyle_key_bp__15fwc1813 Columns_makeResponsiveStyle_key_bp__15fwc1824 Columns_makeResponsiveStyle_key_bp__15fwc1825 Columns_makeResponsiveStyle_key_bp__15fwc1826 Columns_makeResponsiveStyle_key_bp__15fwc1827 Column_makeResponsiveStyle_key_bp__1ycz12q14 Column_align_centre__1ycz12q1a"
+      >
+        <div
+          class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
         >
           <span
-            class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+            class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_center__3xgq1lg2 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 reset_inlineText__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_width_full__3xgq1lfv Stepper_label__10wm9ba6"
           >
-            <svg
-              aria-hidden="true"
-              class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M19 12.998H5V11l14-.002v2z"
-              />
-            </svg>
+            25%
           </span>
-        </button>
+        </div>
       </div>
-    </div>
-    <div
-      class="reset_block__1oah0223 useBoxStyles_flexGrow_1__3xgq1lho useBoxStyles_flexShrink_0__3xgq1lhp Columns_makeResponsiveStyle_key_bp__15fwc1810 Columns_makeResponsiveStyle_key_bp__15fwc1811 Columns_makeResponsiveStyle_key_bp__15fwc1812 Columns_makeResponsiveStyle_key_bp__15fwc1813 Columns_makeResponsiveStyle_key_bp__15fwc1824 Columns_makeResponsiveStyle_key_bp__15fwc1825 Columns_makeResponsiveStyle_key_bp__15fwc1826 Columns_makeResponsiveStyle_key_bp__15fwc1827 Column_makeResponsiveStyle_key_bp__1ycz12q14 Column_align_centre__1ycz12q1a"
-    >
       <div
-        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+        class="reset_block__1oah0224 useBoxStyles_flexGrow_0__3xgq1lhn useBoxStyles_flexShrink_0__3xgq1lhp Columns_makeResponsiveStyle_key_bp__15fwc1810 Columns_makeResponsiveStyle_key_bp__15fwc1811 Columns_makeResponsiveStyle_key_bp__15fwc1812 Columns_makeResponsiveStyle_key_bp__15fwc1813 Columns_makeResponsiveStyle_key_bp__15fwc1824 Columns_makeResponsiveStyle_key_bp__15fwc1825 Columns_makeResponsiveStyle_key_bp__15fwc1826 Columns_makeResponsiveStyle_key_bp__15fwc1827 Column_align_centre__1ycz12q1a"
       >
-        <span
-          class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_center__3xgq1lg2 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 reset_inlineText__1oah0222 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_width_full__3xgq1lfv Stepper_label__10wm9ba6"
+        <div
+          class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
         >
-          25%
-        </span>
-      </div>
-    </div>
-    <div
-      class="reset_block__1oah0223 useBoxStyles_flexGrow_0__3xgq1lhn useBoxStyles_flexShrink_0__3xgq1lhp Columns_makeResponsiveStyle_key_bp__15fwc1810 Columns_makeResponsiveStyle_key_bp__15fwc1811 Columns_makeResponsiveStyle_key_bp__15fwc1812 Columns_makeResponsiveStyle_key_bp__15fwc1813 Columns_makeResponsiveStyle_key_bp__15fwc1824 Columns_makeResponsiveStyle_key_bp__15fwc1825 Columns_makeResponsiveStyle_key_bp__15fwc1826 Columns_makeResponsiveStyle_key_bp__15fwc1827 Column_align_centre__1ycz12q1a"
-    >
-      <div
-        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
-      >
-        <button
-          aria-label="step up"
-          class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldp useBoxStyles_backgroundColours_primary__3xgq1lfc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw Stepper_handle_default__10wm9ba4 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_white__1xnpmd7g"
-          tabindex="-1"
-        >
-          <span
-            class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+          <button
+            aria-label="step up"
+            class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldp useBoxStyles_backgroundColours_primary__3xgq1lfc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw Stepper_handle_default__10wm9ba4 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g"
+            tabindex="-1"
           >
-            <svg
-              aria-hidden="true"
-              class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
+            <span
+              class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire0"
             >
-              <path
-                d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6v2z"
-              />
-            </svg>
-          </span>
-        </button>
+              <svg
+                aria-hidden="true"
+                class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6v2z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -88,84 +93,89 @@ exports[`<Stepper /> > should match snapshot with label formatter 1`] = `
 
 exports[`<Stepper /> > should match snapshot with props 1`] = `
 <div
-  aria-disabled="false"
-  class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_userSelect_none__3xgq1lgi useBoxStyles_border_style__3xgq1l9k useBoxStyles_border_colour_top_gray__3xgq1l9m useBoxStyles_border_colour_right_gray__3xgq1l9y useBoxStyles_border_colour_bottom_gray__3xgq1laa useBoxStyles_border_colour_left_gray__3xgq1lam useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lax useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbd useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l90 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp Stepper_root__10wm9ba1 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 Stepper_width_default__10wm9ba3"
-  tabindex="0"
+  class="vars_OD_Base__1f5yyro0"
+  data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm210 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm211 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm212 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm213 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw10 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw11 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw12 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw13 Columns_align_stretch__15fwc182b Columns_wrapping_noWrap__15fwc1829"
+    aria-disabled="false"
+    class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_userSelect_none__3xgq1lgi useBoxStyles_border_style__3xgq1l9k useBoxStyles_border_colour_top_gray__3xgq1l9m useBoxStyles_border_colour_right_gray__3xgq1l9y useBoxStyles_border_colour_bottom_gray__3xgq1laa useBoxStyles_border_colour_left_gray__3xgq1lam useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lax useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbd useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l90 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp Stepper_root__10wm9ba1 reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 Stepper_width_default__10wm9ba3"
+    tabindex="0"
   >
     <div
-      class="reset_block__1oah0223 useBoxStyles_flexGrow_0__3xgq1lhn useBoxStyles_flexShrink_0__3xgq1lhp Columns_makeResponsiveStyle_key_bp__15fwc1810 Columns_makeResponsiveStyle_key_bp__15fwc1811 Columns_makeResponsiveStyle_key_bp__15fwc1812 Columns_makeResponsiveStyle_key_bp__15fwc1813 Columns_makeResponsiveStyle_key_bp__15fwc1824 Columns_makeResponsiveStyle_key_bp__15fwc1825 Columns_makeResponsiveStyle_key_bp__15fwc1826 Columns_makeResponsiveStyle_key_bp__15fwc1827 Column_align_centre__1ycz12q1a"
+      class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm210 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm211 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm212 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm213 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw10 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw11 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw12 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw13 Columns_align_stretch__15fwc182b Columns_wrapping_noWrap__15fwc1829"
     >
       <div
-        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+        class="reset_block__1oah0224 useBoxStyles_flexGrow_0__3xgq1lhn useBoxStyles_flexShrink_0__3xgq1lhp Columns_makeResponsiveStyle_key_bp__15fwc1810 Columns_makeResponsiveStyle_key_bp__15fwc1811 Columns_makeResponsiveStyle_key_bp__15fwc1812 Columns_makeResponsiveStyle_key_bp__15fwc1813 Columns_makeResponsiveStyle_key_bp__15fwc1824 Columns_makeResponsiveStyle_key_bp__15fwc1825 Columns_makeResponsiveStyle_key_bp__15fwc1826 Columns_makeResponsiveStyle_key_bp__15fwc1827 Column_align_centre__1ycz12q1a"
       >
-        <button
-          aria-label="step down"
-          class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldp useBoxStyles_backgroundColours_primary__3xgq1lfc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw Stepper_handle_default__10wm9ba4 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_white__1xnpmd7g"
-          tabindex="-1"
+        <div
+          class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+        >
+          <button
+            aria-label="step down"
+            class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldp useBoxStyles_backgroundColours_primary__3xgq1lfc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw Stepper_handle_default__10wm9ba4 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g"
+            tabindex="-1"
+          >
+            <span
+              class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+            >
+              <svg
+                aria-hidden="true"
+                class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 12.998H5V11l14-.002v2z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="reset_block__1oah0224 useBoxStyles_flexGrow_1__3xgq1lho useBoxStyles_flexShrink_0__3xgq1lhp Columns_makeResponsiveStyle_key_bp__15fwc1810 Columns_makeResponsiveStyle_key_bp__15fwc1811 Columns_makeResponsiveStyle_key_bp__15fwc1812 Columns_makeResponsiveStyle_key_bp__15fwc1813 Columns_makeResponsiveStyle_key_bp__15fwc1824 Columns_makeResponsiveStyle_key_bp__15fwc1825 Columns_makeResponsiveStyle_key_bp__15fwc1826 Columns_makeResponsiveStyle_key_bp__15fwc1827 Column_makeResponsiveStyle_key_bp__1ycz12q14 Column_align_centre__1ycz12q1a"
+      >
+        <div
+          class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
         >
           <span
-            class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+            class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_center__3xgq1lg2 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 reset_inlineText__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_width_full__3xgq1lfv Stepper_label__10wm9ba6"
           >
-            <svg
-              aria-hidden="true"
-              class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M19 12.998H5V11l14-.002v2z"
-              />
-            </svg>
+            19
           </span>
-        </button>
+        </div>
       </div>
-    </div>
-    <div
-      class="reset_block__1oah0223 useBoxStyles_flexGrow_1__3xgq1lho useBoxStyles_flexShrink_0__3xgq1lhp Columns_makeResponsiveStyle_key_bp__15fwc1810 Columns_makeResponsiveStyle_key_bp__15fwc1811 Columns_makeResponsiveStyle_key_bp__15fwc1812 Columns_makeResponsiveStyle_key_bp__15fwc1813 Columns_makeResponsiveStyle_key_bp__15fwc1824 Columns_makeResponsiveStyle_key_bp__15fwc1825 Columns_makeResponsiveStyle_key_bp__15fwc1826 Columns_makeResponsiveStyle_key_bp__15fwc1827 Column_makeResponsiveStyle_key_bp__1ycz12q14 Column_align_centre__1ycz12q1a"
-    >
       <div
-        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+        class="reset_block__1oah0224 useBoxStyles_flexGrow_0__3xgq1lhn useBoxStyles_flexShrink_0__3xgq1lhp Columns_makeResponsiveStyle_key_bp__15fwc1810 Columns_makeResponsiveStyle_key_bp__15fwc1811 Columns_makeResponsiveStyle_key_bp__15fwc1812 Columns_makeResponsiveStyle_key_bp__15fwc1813 Columns_makeResponsiveStyle_key_bp__15fwc1824 Columns_makeResponsiveStyle_key_bp__15fwc1825 Columns_makeResponsiveStyle_key_bp__15fwc1826 Columns_makeResponsiveStyle_key_bp__15fwc1827 Column_align_centre__1ycz12q1a"
       >
-        <span
-          class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_center__3xgq1lg2 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 reset_inlineText__1oah0222 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_width_full__3xgq1lfv Stepper_label__10wm9ba6"
+        <div
+          class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
         >
-          19
-        </span>
-      </div>
-    </div>
-    <div
-      class="reset_block__1oah0223 useBoxStyles_flexGrow_0__3xgq1lhn useBoxStyles_flexShrink_0__3xgq1lhp Columns_makeResponsiveStyle_key_bp__15fwc1810 Columns_makeResponsiveStyle_key_bp__15fwc1811 Columns_makeResponsiveStyle_key_bp__15fwc1812 Columns_makeResponsiveStyle_key_bp__15fwc1813 Columns_makeResponsiveStyle_key_bp__15fwc1824 Columns_makeResponsiveStyle_key_bp__15fwc1825 Columns_makeResponsiveStyle_key_bp__15fwc1826 Columns_makeResponsiveStyle_key_bp__15fwc1827 Column_align_centre__1ycz12q1a"
-    >
-      <div
-        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
-      >
-        <button
-          aria-label="step up"
-          class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldp useBoxStyles_backgroundColours_primary__3xgq1lfc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw Stepper_handle_default__10wm9ba4 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_white__1xnpmd7g"
-          tabindex="-1"
-        >
-          <span
-            class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+          <button
+            aria-label="step up"
+            class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldp useBoxStyles_backgroundColours_primary__3xgq1lfc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw Stepper_handle_default__10wm9ba4 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g"
+            tabindex="-1"
           >
-            <svg
-              aria-hidden="true"
-              class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
+            <span
+              class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire0"
             >
-              <path
-                d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6v2z"
-              />
-            </svg>
-          </span>
-        </button>
+              <svg
+                aria-hidden="true"
+                class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6v2z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -174,84 +184,89 @@ exports[`<Stepper /> > should match snapshot with props 1`] = `
 
 exports[`<Stepper /> > should match snapshot without props 1`] = `
 <div
-  aria-disabled="false"
-  class="reset_block__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_userSelect_none__3xgq1lgi useBoxStyles_border_style__3xgq1l9k useBoxStyles_border_colour_top_gray__3xgq1l9m useBoxStyles_border_colour_right_gray__3xgq1l9y useBoxStyles_border_colour_bottom_gray__3xgq1laa useBoxStyles_border_colour_left_gray__3xgq1lam useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lax useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbd useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l90 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp Stepper_root__10wm9ba1 reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 Stepper_width_default__10wm9ba3"
-  tabindex="0"
+  class="vars_OD_Base__1f5yyro0"
+  data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm210 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm211 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm212 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm213 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw10 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw11 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw12 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw13 Columns_align_stretch__15fwc182b Columns_wrapping_noWrap__15fwc1829"
+    aria-disabled="false"
+    class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_userSelect_none__3xgq1lgi useBoxStyles_border_style__3xgq1l9k useBoxStyles_border_colour_top_gray__3xgq1l9m useBoxStyles_border_colour_right_gray__3xgq1l9y useBoxStyles_border_colour_bottom_gray__3xgq1laa useBoxStyles_border_colour_left_gray__3xgq1lam useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lax useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbd useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbt useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l90 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp Stepper_root__10wm9ba1 reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 Stepper_width_default__10wm9ba3"
+    tabindex="0"
   >
     <div
-      class="reset_block__1oah0223 useBoxStyles_flexGrow_0__3xgq1lhn useBoxStyles_flexShrink_0__3xgq1lhp Columns_makeResponsiveStyle_key_bp__15fwc1810 Columns_makeResponsiveStyle_key_bp__15fwc1811 Columns_makeResponsiveStyle_key_bp__15fwc1812 Columns_makeResponsiveStyle_key_bp__15fwc1813 Columns_makeResponsiveStyle_key_bp__15fwc1824 Columns_makeResponsiveStyle_key_bp__15fwc1825 Columns_makeResponsiveStyle_key_bp__15fwc1826 Columns_makeResponsiveStyle_key_bp__15fwc1827 Column_align_centre__1ycz12q1a"
+      class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm210 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm211 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm212 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm213 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw10 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw11 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw12 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw13 Columns_align_stretch__15fwc182b Columns_wrapping_noWrap__15fwc1829"
     >
       <div
-        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+        class="reset_block__1oah0224 useBoxStyles_flexGrow_0__3xgq1lhn useBoxStyles_flexShrink_0__3xgq1lhp Columns_makeResponsiveStyle_key_bp__15fwc1810 Columns_makeResponsiveStyle_key_bp__15fwc1811 Columns_makeResponsiveStyle_key_bp__15fwc1812 Columns_makeResponsiveStyle_key_bp__15fwc1813 Columns_makeResponsiveStyle_key_bp__15fwc1824 Columns_makeResponsiveStyle_key_bp__15fwc1825 Columns_makeResponsiveStyle_key_bp__15fwc1826 Columns_makeResponsiveStyle_key_bp__15fwc1827 Column_align_centre__1ycz12q1a"
       >
-        <button
-          aria-label="step down"
-          class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldp useBoxStyles_backgroundColours_primary__3xgq1lfc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw Stepper_handle_default__10wm9ba4 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_white__1xnpmd7g"
-          tabindex="-1"
+        <div
+          class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+        >
+          <button
+            aria-label="step down"
+            class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldp useBoxStyles_backgroundColours_primary__3xgq1lfc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw Stepper_handle_default__10wm9ba4 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g"
+            tabindex="-1"
+          >
+            <span
+              class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+            >
+              <svg
+                aria-hidden="true"
+                class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 12.998H5V11l14-.002v2z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="reset_block__1oah0224 useBoxStyles_flexGrow_1__3xgq1lho useBoxStyles_flexShrink_0__3xgq1lhp Columns_makeResponsiveStyle_key_bp__15fwc1810 Columns_makeResponsiveStyle_key_bp__15fwc1811 Columns_makeResponsiveStyle_key_bp__15fwc1812 Columns_makeResponsiveStyle_key_bp__15fwc1813 Columns_makeResponsiveStyle_key_bp__15fwc1824 Columns_makeResponsiveStyle_key_bp__15fwc1825 Columns_makeResponsiveStyle_key_bp__15fwc1826 Columns_makeResponsiveStyle_key_bp__15fwc1827 Column_makeResponsiveStyle_key_bp__1ycz12q14 Column_align_centre__1ycz12q1a"
+      >
+        <div
+          class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
         >
           <span
-            class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+            class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_center__3xgq1lg2 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 reset_inlineText__1oah0223 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_width_full__3xgq1lfv Stepper_label__10wm9ba6"
           >
-            <svg
-              aria-hidden="true"
-              class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M19 12.998H5V11l14-.002v2z"
-              />
-            </svg>
+            0
           </span>
-        </button>
+        </div>
       </div>
-    </div>
-    <div
-      class="reset_block__1oah0223 useBoxStyles_flexGrow_1__3xgq1lho useBoxStyles_flexShrink_0__3xgq1lhp Columns_makeResponsiveStyle_key_bp__15fwc1810 Columns_makeResponsiveStyle_key_bp__15fwc1811 Columns_makeResponsiveStyle_key_bp__15fwc1812 Columns_makeResponsiveStyle_key_bp__15fwc1813 Columns_makeResponsiveStyle_key_bp__15fwc1824 Columns_makeResponsiveStyle_key_bp__15fwc1825 Columns_makeResponsiveStyle_key_bp__15fwc1826 Columns_makeResponsiveStyle_key_bp__15fwc1827 Column_makeResponsiveStyle_key_bp__1ycz12q14 Column_align_centre__1ycz12q1a"
-    >
       <div
-        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+        class="reset_block__1oah0224 useBoxStyles_flexGrow_0__3xgq1lhn useBoxStyles_flexShrink_0__3xgq1lhp Columns_makeResponsiveStyle_key_bp__15fwc1810 Columns_makeResponsiveStyle_key_bp__15fwc1811 Columns_makeResponsiveStyle_key_bp__15fwc1812 Columns_makeResponsiveStyle_key_bp__15fwc1813 Columns_makeResponsiveStyle_key_bp__15fwc1824 Columns_makeResponsiveStyle_key_bp__15fwc1825 Columns_makeResponsiveStyle_key_bp__15fwc1826 Columns_makeResponsiveStyle_key_bp__15fwc1827 Column_align_centre__1ycz12q1a"
       >
-        <span
-          class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_center__3xgq1lg2 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0222 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 reset_inlineText__1oah0222 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_width_full__3xgq1lfv Stepper_label__10wm9ba6"
+        <div
+          class="reset_block__1oah0224 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
         >
-          0
-        </span>
-      </div>
-    </div>
-    <div
-      class="reset_block__1oah0223 useBoxStyles_flexGrow_0__3xgq1lhn useBoxStyles_flexShrink_0__3xgq1lhp Columns_makeResponsiveStyle_key_bp__15fwc1810 Columns_makeResponsiveStyle_key_bp__15fwc1811 Columns_makeResponsiveStyle_key_bp__15fwc1812 Columns_makeResponsiveStyle_key_bp__15fwc1813 Columns_makeResponsiveStyle_key_bp__15fwc1824 Columns_makeResponsiveStyle_key_bp__15fwc1825 Columns_makeResponsiveStyle_key_bp__15fwc1826 Columns_makeResponsiveStyle_key_bp__15fwc1827 Column_align_centre__1ycz12q1a"
-    >
-      <div
-        class="reset_block__1oah0223 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
-      >
-        <button
-          aria-label="step up"
-          class="reset_appearance__1oah0220 reset_cursorPointer__1oah0221 reset_trimmedBlockElement__1oah0225 reset_button__1oah0226 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldp useBoxStyles_backgroundColours_primary__3xgq1lfc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw Stepper_handle_default__10wm9ba4 useTextStyles_root__1xnpmd70 reset_block__1oah0223 useTextStyles_colours_white__1xnpmd7g"
-          tabindex="-1"
-        >
-          <span
-            class="reset_inlineText__1oah0222 useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+          <button
+            aria-label="step up"
+            class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldp useBoxStyles_backgroundColours_primary__3xgq1lfc useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw Stepper_handle_default__10wm9ba4 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g"
+            tabindex="-1"
           >
-            <svg
-              aria-hidden="true"
-              class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
+            <span
+              class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire0"
             >
-              <path
-                d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6v2z"
-              />
-            </svg>
-          </span>
-        </button>
+              <svg
+                aria-hidden="true"
+                class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6v2z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
