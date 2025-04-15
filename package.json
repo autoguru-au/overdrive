@@ -155,7 +155,7 @@
 		"react-dom": "^19.1.0",
 		"react-focus-lock": "2.13.6",
 		"react-intersection-observer": "^9.16.0",
-		"react-keyed-flatten-children": "2.2.1",
+		"react-keyed-flatten-children": "5.0.0",
 		"react-stately": "^3.36.1",
 		"react-swipeable": "^7.0.2",
 		"rollup-plugin-visualizer": "^5.14.0",
@@ -182,13 +182,13 @@
 		"react-dom": ">=18 || >=19.0.0-rc.0",
 		"react-focus-lock": "^2.13.6",
 		"react-intersection-observer": ">=9.16.0",
-		"react-keyed-flatten-children": "^2.2.1",
+		"react-keyed-flatten-children": "^2.2.1 || ^5.0.0",
 		"react-swipeable": ">=7.0.2",
 		"webpack": "*"
 	},
 	"volta": {
 		"node": "22.14.0",
-		"yarn": "4.8.1"
+		"yarn": "4.9.1-git.20250411.hash-1908ee79"
 	},
-	"packageManager": "yarn@4.8.1"
+	"packageManager": "yarn@4.9.0"
 }
