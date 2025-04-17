@@ -3,28 +3,21 @@ import React, { type ElementType, type ComponentPropsWithRef } from 'react';
 
 import {
 	sprinkles,
-	type BoxSprinklesProps,
-	type ShorthandBoxSprinklesProps,
-} from './newbox.css';
+	sprinklesResponsive,
+	isSprinklesProperty,
+	isSprinklesResponsiveProperty,
+	type Sprinkles,
+	type SprinklesResponsive,
+} from '../../styles/sprinkles.css';
 
+type StyleProps = Sprinkles & SprinklesResponsive;
 type PolymorphicComponentProps<C extends ElementType, Props = object> = {
 	as?: C;
 } & Omit<ComponentPropsWithRef<C>, keyof Props | 'as'> &
 	Props;
 
-type BaseProps = {
-	className?: string;
-} & ShorthandBoxSprinklesProps;
-
 export type NewBoxProps<C extends ElementType = 'div'> =
-	PolymorphicComponentProps<C, BaseProps>;
-
-/**
- * Typeguard function for all sprinkles props
- */
-const isSprinklesProperty = (key: string): key is keyof BoxSprinklesProps => {
-	return Boolean(sprinkles.properties[key]);
-};
+	PolymorphicComponentProps<C, StyleProps>;
 
 export const NewBox = <C extends ElementType = 'div'>({
 	as,
@@ -33,25 +26,38 @@ export const NewBox = <C extends ElementType = 'div'>({
 }: NewBoxProps<C>) => {
 	const Component = as || 'div';
 
-	const { sprinklesProps, otherProps } = React.useMemo(() => {
-		const sprinklesProps: BoxSprinklesProps = {};
-		const otherProps: Record<string, unknown> = {};
-
-		Object.entries(props).forEach(([key, value]) => {
-			if (isSprinklesProperty(key)) {
-				sprinklesProps[key as keyof BoxSprinklesProps] = value;
-			} else {
-				otherProps[key] = value;
-			}
-		});
-
-		return { sprinklesProps, otherProps };
-	}, [props]);
+	const { sprinklesProps, sprinklesResponsiveProps, filteredProps } =
+		React.useMemo(() => {
+			return Object.entries(props).reduce(
+				(acc, [key, value]) => {
+					if (isSprinklesProperty(key)) {
+						acc.sprinklesProps[key] = value;
+					} else if (isSprinklesResponsiveProperty(key)) {
+						acc.sprinklesResponsiveProps[key] = value;
+					} else {
+						acc.filteredProps[key] = value;
+					}
+					return acc;
+				},
+				{
+					sprinklesProps: {} as Sprinkles,
+					sprinklesResponsiveProps: {} as SprinklesResponsive,
+					filteredProps: {} as Exclude<
+						ComponentPropsWithRef<C>,
+						StyleProps
+					>,
+				},
+			);
+		}, [props]);
 
 	return (
 		<Component
-			className={clsx(sprinkles(sprinklesProps), className)}
-			{...otherProps}
+			className={clsx(
+				sprinkles(sprinklesProps),
+				sprinklesResponsive(sprinklesResponsiveProps),
+				className,
+			)}
+			{...filteredProps}
 		/>
 	);
 };
