@@ -24,10 +24,7 @@ const scaledProps: Array<keyof ComponentProps<typeof Box>> = [
 	'marginLeft',
 ];
 
-const widthOptions: Array<ComponentProps<typeof Box>['width']> = [
-	'full',
-	'none',
-];
+const widthOptions: Array<ComponentProps<typeof Box>['width']> = ['full'];
 
 const orderOptions: Array<ComponentProps<typeof Box>['order']> = [0, 1, 2];
 

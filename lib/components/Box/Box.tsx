@@ -1,157 +1,68 @@
 import clsx from 'clsx';
-import type { AllHTMLAttributes } from 'react';
-import * as React from 'react';
-import { forwardRef, ReactNode } from 'react';
+import React, { type ElementType, type ComponentPropsWithRef } from 'react';
 
-import type { BoxStyleProps } from './useBoxStyles';
-import { useBoxStyles } from './useBoxStyles';
+import {
+	sprinkles,
+	sprinklesResponsive,
+	isSprinklesProperty,
+	isSprinklesResponsiveProperty,
+	type Sprinkles,
+	type SprinklesResponsive,
+} from '../../styles/sprinkles.css';
 
-export interface Props
-	extends BoxStyleProps,
-		Omit<
-			AllHTMLAttributes<HTMLElement>,
-			'as' | 'width' | 'height' | 'className' | 'is'
-		> {
-	children?: ReactNode;
-}
+type StyleProps = Sprinkles & SprinklesResponsive;
+type PolymorphicComponentProps<E extends ElementType, Props = object> = {
+	as?: E;
+} & Omit<ComponentPropsWithRef<E>, keyof Props | 'as'> &
+	Props;
 
-/**
- * Box is a general purpose container with no specific semantics.
- */
-export const Box = forwardRef<HTMLElement, Props>(
-	(
-		{
-			as = 'div',
-			is = as,
+export type BoxProps<E extends ElementType = 'div'> = PolymorphicComponentProps<
+	E,
+	StyleProps
+>;
 
-			padding,
-			paddingX,
-			paddingY,
-			paddingTop,
-			paddingBottom,
-			paddingLeft,
-			paddingRight,
+export const Box = <E extends ElementType = 'div'>({
+	as,
+	className,
+	...props
+}: BoxProps<E>) => {
+	const Component = as || 'div';
 
-			margin,
-			marginX,
-			marginY,
-			marginTop,
-			marginBottom,
-			marginLeft,
-			marginRight,
+	const { sprinklesProps, sprinklesResponsiveProps, filteredProps } =
+		React.useMemo(() => {
+			return Object.entries(props).reduce(
+				(acc, [key, value]) => {
+					if (isSprinklesProperty(key)) {
+						acc.sprinklesProps[key] = value;
+					} else if (isSprinklesResponsiveProperty(key)) {
+						//@ts-expect-error responsive sprinkles props are too complex to represent
+						acc.sprinklesResponsiveProps[key] = value;
+					} else {
+						acc.filteredProps[key] = value;
+					}
+					return acc;
+				},
+				{
+					sprinklesProps: {} as Sprinkles,
+					sprinklesResponsiveProps: {} as SprinklesResponsive,
+					filteredProps: {} as Exclude<
+						ComponentPropsWithRef<E>,
+						StyleProps
+					>,
+				},
+			);
+		}, [props]);
 
-			display,
-			width,
-			height,
-			position,
-			overflow,
-			userSelect,
-			textAlign,
-			pointerEvents,
-
-			borderColour,
-			borderColourX,
-			borderColourY,
-			borderColourTop,
-			borderColourRight,
-			borderColourBottom,
-			borderColourLeft,
-			borderWidth,
-			borderWidthX,
-			borderWidthY,
-			borderWidthTop,
-			borderWidthRight,
-			borderWidthBottom,
-			borderWidthLeft,
-
-			boxShadow,
-			borderRadius,
-
-			backgroundColour,
-			colour,
-			opacity,
-
-			className = '',
-
-			alignItems,
-			order,
-			flexDirection,
-			flexGrow,
-			flexShrink,
-			flexWrap,
-			justifyContent,
-
-			children,
-			...allOtherProps
-		},
-		ref,
-	) => {
-		const cls = useBoxStyles({
-			is,
-			alignItems,
-			order,
-			backgroundColour,
-			colour,
-			borderColour,
-			borderColourBottom,
-			borderColourLeft,
-			borderColourRight,
-			borderColourTop,
-			borderColourX,
-			borderColourY,
-			borderRadius,
-			borderWidth,
-			borderWidthBottom,
-			borderWidthLeft,
-			borderWidthRight,
-			borderWidthTop,
-			borderWidthX,
-			borderWidthY,
-			boxShadow,
-			display,
-			flexDirection,
-			flexGrow,
-			flexShrink,
-			flexWrap,
-			height,
-			justifyContent,
-			margin,
-			marginBottom,
-			marginLeft,
-			marginRight,
-			marginTop,
-			marginX,
-			marginY,
-			opacity,
-			overflow,
-			padding,
-			paddingBottom,
-			paddingLeft,
-			paddingRight,
-			paddingTop,
-			paddingX,
-			paddingY,
-			pointerEvents,
-			position,
-			textAlign,
-			userSelect,
-			width,
-		});
-
-		const Component = is;
-
-		return (
-			<Component
-				ref={ref}
-				className={clsx(cls, className)}
-				{...allOtherProps}
-			>
-				{children}
-			</Component>
-		);
-	},
-);
+	return (
+		<Component
+			className={clsx(
+				sprinkles(sprinklesProps),
+				sprinklesResponsive(sprinklesResponsiveProps),
+				className,
+			)}
+			{...filteredProps}
+		/>
+	);
+};
 
 Box.displayName = 'Box';
-
-export default Box;

@@ -16,7 +16,7 @@ const meta = {
 		borderColour: 'light',
 		borderWidth: '1',
 		boxShadow: '1',
-		display: 'inlineFlex',
+		display: 'inline-flex',
 		margin: undefined,
 		padding: '6',
 		textAlign: undefined,
