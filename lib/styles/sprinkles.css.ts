@@ -35,16 +35,6 @@ const baseProperties = defineProperties({
 		borderBottomStyle: ['none', 'solid'],
 		borderRightStyle: ['none', 'solid'],
 		borderTopStyle: ['none', 'solid'],
-		// Padding
-		paddingBottom: tokens.space,
-		paddingLeft: tokens.space,
-		paddingRight: tokens.space,
-		paddingTop: tokens.space,
-		// Margin
-		marginBottom: tokens.space,
-		marginLeft: tokens.space,
-		marginRight: tokens.space,
-		marginTop: tokens.space,
 		// Color
 		color: tokens.typography.colour,
 		backgroundColor: tokens.colours.background,
@@ -66,22 +56,6 @@ const baseProperties = defineProperties({
 			'borderRightStyle',
 			'borderTopStyle',
 		],
-		padding: ['paddingBottom', 'paddingLeft', 'paddingRight', 'paddingTop'],
-		p: ['paddingBottom', 'paddingLeft', 'paddingRight', 'paddingTop'],
-		pt: ['paddingTop'],
-		pr: ['paddingRight'],
-		pb: ['paddingBottom'],
-		pl: ['paddingLeft'],
-		px: ['paddingLeft', 'paddingRight'],
-		py: ['paddingTop', 'paddingBottom'],
-		margin: ['marginBottom', 'marginLeft', 'marginRight', 'marginTop'],
-		m: ['marginBottom', 'marginLeft', 'marginRight', 'marginTop'],
-		mt: ['marginTop'],
-		mr: ['marginRight'],
-		mb: ['marginBottom'],
-		ml: ['marginLeft'],
-		mx: ['marginLeft', 'marginRight'],
-		my: ['marginTop', 'marginBottom'],
 	},
 });
 
@@ -107,6 +81,7 @@ const responsiveConditions = {
 const responsiveProperties = defineProperties({
 	conditions: { ...responsiveConditions },
 	defaultCondition: 'mobile',
+	responsiveArray: ['mobile', 'tablet', 'desktop', 'largeDesktop'],
 	properties: {
 		display: [
 			'none',
@@ -128,7 +103,7 @@ const responsiveProperties = defineProperties({
 		},
 		width: {
 			...spaceWithoutNone,
-			'100%': '100%',
+			full: '100%',
 			auto: 'auto',
 		},
 		gap: space,
@@ -169,11 +144,37 @@ const responsiveProperties = defineProperties({
 			auto: 'auto',
 			none: 'none',
 		},
+		// Padding
+		paddingBottom: tokens.space,
+		paddingLeft: tokens.space,
+		paddingRight: tokens.space,
+		paddingTop: tokens.space,
+		// Margin
+		marginBottom: tokens.space,
+		marginLeft: tokens.space,
+		marginRight: tokens.space,
+		marginTop: tokens.space,
 	},
 	shorthands: {
 		gridColumns: ['gridTemplateColumns'],
 		placeItems: ['justifyContent', 'alignItems'],
 		size: ['width', 'height'],
+		padding: ['paddingBottom', 'paddingLeft', 'paddingRight', 'paddingTop'],
+		p: ['paddingBottom', 'paddingLeft', 'paddingRight', 'paddingTop'],
+		pt: ['paddingTop'],
+		pr: ['paddingRight'],
+		pb: ['paddingBottom'],
+		pl: ['paddingLeft'],
+		px: ['paddingLeft', 'paddingRight'],
+		py: ['paddingTop', 'paddingBottom'],
+		margin: ['marginBottom', 'marginLeft', 'marginRight', 'marginTop'],
+		m: ['marginBottom', 'marginLeft', 'marginRight', 'marginTop'],
+		mt: ['marginTop'],
+		mr: ['marginRight'],
+		mb: ['marginBottom'],
+		ml: ['marginLeft'],
+		mx: ['marginLeft', 'marginRight'],
+		my: ['marginTop', 'marginBottom'],
 	},
 });
 
