@@ -27,7 +27,7 @@ interface ColourIntensityMap extends VanillaTokens {
 	strong: string;
 }
 
-export type ColourMap = Record<string, ColourValue>;
+export type ColourMap = Record<string, ColourValue | string>;
 
 type ColourBlacks =
 	| 'black900'
