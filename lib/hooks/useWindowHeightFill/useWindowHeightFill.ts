@@ -1,8 +1,8 @@
 import { RefObject, useLayoutEffect, useRef, useState } from 'react';
 
 import { useTheme } from '../../components/OverdriveProvider';
+import type { ThemeTokens as Tokens } from '../../themes';
 import { themeContractVars } from '../../themes/theme.css';
-import { Tokens } from '../../themes/tokens';
 import { getThemeTokenValue } from '../../utils/css';
 import { useResponsiveValue } from '../useResponsiveValue';
 

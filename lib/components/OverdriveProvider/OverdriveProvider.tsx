@@ -3,10 +3,10 @@ import { assignInlineVars } from '@vanilla-extract/dynamic';
 import { isEqual } from 'es-toolkit';
 import React, { createContext, useContext, useEffect, useMemo } from 'react';
 
+import type { BreakPoints } from '../../themes';
 import baseTheme from '../../themes/base';
 import { makeRuntimeTokens, type RuntimeTokens } from '../../themes/makeTheme';
 import { themeContractVars } from '../../themes/theme.css';
-import { type BreakPoints } from '../../themes/tokens';
 import { isBrowser } from '../../utils';
 
 import { useColorOverrides, type ColorOverrides } from './useColorOverrides';

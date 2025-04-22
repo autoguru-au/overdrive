@@ -3,7 +3,7 @@ import type { FunctionComponent } from 'react';
 import * as React from 'react';
 import { createContext, ReactNode, useContext, useMemo } from 'react';
 
-import { Tokens } from '../../themes/tokens';
+import type { ThemeTokens as Tokens } from '../../themes';
 
 export interface TableContext {
 	padding?: keyof Tokens['space'];

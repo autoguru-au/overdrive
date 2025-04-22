@@ -1,7 +1,9 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
-import { themeContractVars as vars } from '../../themes/theme.css';
-import { Tokens } from '../../themes/tokens';
+import {
+	themeContractVars as vars,
+	type ThemeTokens as Tokens,
+} from '../../themes/theme.css';
 import { mapTokenToProperty } from '../../utils/mapTokenToProperty';
 import { makeResponsiveStyle } from '../../utils/responsiveProps.css';
 

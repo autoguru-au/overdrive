@@ -1,4 +1,4 @@
-import { Tokens } from '../../themes/tokens';
+import { ThemeTokens as Tokens } from '../../themes';
 import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
 import { ResponsiveProp } from '../../utils/responsiveProps.css';
 

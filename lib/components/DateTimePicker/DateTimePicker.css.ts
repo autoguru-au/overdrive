@@ -5,7 +5,7 @@ import { focusOutlineStyle } from '../../styles/focusOutline.css';
 import { sprinklesResponsive } from '../../styles/sprinkles.css';
 import { styledFont } from '../../styles/typography.css';
 import { breakpoints } from '../../themes/makeTheme';
-import { themeContractVars as tokens } from '../../themes/theme.css';
+import { overdriveTokens as tokens } from '../../themes/theme.css';
 import { interactionStyle } from '../../utils/css';
 
 // --- Container styles
