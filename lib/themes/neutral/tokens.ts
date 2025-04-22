@@ -1,8 +1,11 @@
+import deepmerge from 'deepmerge';
+
 import { tokens as baseTokens } from '../base/tokens';
 import { buildColourGamut } from '../makeTheme';
-import { ColourMap, Tokens } from '../tokens';
+import type { OverdriveTokens } from '../theme.css';
+import type { ColourMap } from '../tokens';
 
-const colours: ColourMap = {
+const colours = {
 	black: {
 		900: '#222222',
 		800: '#2A2C2A',
@@ -14,7 +17,6 @@ const colours: ColourMap = {
 		200: '#DDE0E3',
 		100: '#E4E4E4',
 	},
-
 	gray: {
 		900: '#212338',
 		800: '#34384c',
@@ -26,7 +28,6 @@ const colours: ColourMap = {
 		200: '#eef0f2',
 		100: '#fafbfc',
 	},
-
 	green: {
 		900: '#078171',
 		800: '#05987a',
@@ -38,7 +39,6 @@ const colours: ColourMap = {
 		200: '#e3f8f0',
 		100: '#f2fdf9',
 	},
-
 	blue: {
 		900: '#0d47a1',
 		800: '#0d4bb7',
@@ -50,7 +50,6 @@ const colours: ColourMap = {
 		200: '#e1edfe',
 		100: '#f3f8ff',
 	},
-
 	yellow: {
 		900: '#f38e29',
 		800: '#f69a1f',
@@ -62,7 +61,6 @@ const colours: ColourMap = {
 		200: '#ffedb5',
 		100: '#fffcf2',
 	},
-
 	red: {
 		900: '#780502',
 		800: '#96110e',
@@ -74,11 +72,12 @@ const colours: ColourMap = {
 		200: '#ffd4d4',
 		100: '#fdf4f4',
 	},
-};
+} satisfies ColourMap;
 
 const white = '#fff';
 const secondaryForeground = colours.gray['700'];
-export const tokens: Tokens = {
+
+export const tokens = deepmerge(baseTokens, {
 	mode: 'light',
 	body: {
 		backgroundColour: white,
@@ -234,7 +233,6 @@ export const tokens: Tokens = {
 		},
 	},
 	typography: {
-		...baseTokens.typography,
 		colour: {
 			primary: colours.black['800'],
 			brand: colours.green['600'],
@@ -266,4 +264,4 @@ export const tokens: Tokens = {
 			large: '32px',
 		},
 	},
-};
+}) satisfies OverdriveTokens;

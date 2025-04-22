@@ -1,5 +1,9 @@
 import { buildColourGamut } from '../makeTheme';
-import { OverdriveTokens, themeContractVars } from '../theme.css';
+import {
+	overdriveTokens,
+	type OverdriveTokens,
+	themeContractVars,
+} from '../theme.css';
 
 import {
 	colourMap,
@@ -7,7 +11,286 @@ import {
 	secondaryForeground,
 } from './colours';
 
+/**
+ * IN TRANSITION. base tokens are a remapping of global tokens for backwards compatability.
+ * ultimate goal is to be able to remove theme-based tokens in favour of global tokens.
+ */
 export const tokens = {
+	mode: 'light',
+	body: {
+		backgroundColour: overdriveTokens.body.backgroundColour,
+		colour: overdriveTokens.body.colour,
+	},
+	contentWidth: {
+		small: overdriveTokens.contentWidth.small,
+		medium: overdriveTokens.contentWidth.medium,
+		large: overdriveTokens.contentWidth.large,
+	},
+	space: {
+		none: overdriveTokens.space.none,
+		'1': overdriveTokens.space['1'],
+		'2': overdriveTokens.space['2'],
+		'3': overdriveTokens.space['3'],
+		'4': overdriveTokens.space['4'],
+		'5': overdriveTokens.space['5'],
+		'6': overdriveTokens.space['6'],
+		'7': overdriveTokens.space['7'],
+		'8': overdriveTokens.space['8'],
+		'9': overdriveTokens.space['9'],
+	},
+	color: {
+		gamut: colourMap,
+		surface: {
+			body: overdriveTokens.color.surface.body,
+			accent: overdriveTokens.color.surface.accent,
+			hard: overdriveTokens.color.surface.hard,
+			soft: overdriveTokens.color.surface.soft,
+			success: overdriveTokens.color.surface.success,
+			info: overdriveTokens.color.surface.info,
+			danger: overdriveTokens.color.surface.danger,
+			warning: overdriveTokens.color.surface.warning,
+		},
+		content: {
+			onBody: overdriveTokens.color.content.onBody,
+			onSurface: overdriveTokens.color.content.onSurface,
+			accent: themeContractVars.color.content.accent,
+			hard: overdriveTokens.color.content.hard,
+			soft: overdriveTokens.color.content.soft,
+			info: overdriveTokens.color.content.info,
+			danger: overdriveTokens.color.content.danger,
+			success: overdriveTokens.color.content.success,
+			warning: overdriveTokens.color.surface.warning,
+		},
+		interactive: {
+			border: overdriveTokens.color.interactive.border,
+			borderDisabled: overdriveTokens.color.interactive.borderDisabled,
+			borderMuted: overdriveTokens.color.interactive.borderMuted,
+			surfaceDisabled: overdriveTokens.color.interactive.surfaceDisabled,
+			contentDisabled: overdriveTokens.color.interactive.contentDisabled,
+			link: overdriveTokens.color.interactive.link,
+			linkVisited: overdriveTokens.color.interactive.linkVisited,
+			overlayBg: overdriveTokens.color.interactive.overlayBg,
+			overlayContainer:
+				overdriveTokens.color.interactive.overlayContainer,
+			placeholder: overdriveTokens.color.interactive.placeholder,
+			focusOutline: overdriveTokens.color.interactive.focusOutline,
+		},
+	},
+	colours: {
+		gamut: {
+			...buildColourGamut(colourMapWithoutWhite),
+			white: colourMap.white,
+		},
+		foreground: {
+			body: overdriveTokens.color.gamut.gray['900'],
+			link: overdriveTokens.color.gamut.blue['500'],
+		},
+		background: {
+			body: overdriveTokens.color.gamut.white,
+			light: overdriveTokens.color.gamut.gray['200'],
+			neutral: overdriveTokens.color.gamut.gray['300'],
+			neutralDark: overdriveTokens.color.gamut.gray['800'],
+		},
+		intent: {
+			primary: {
+				background: {
+					standard: overdriveTokens.color.gamut.green['600'],
+					mild: overdriveTokens.color.gamut.green['200'],
+					strong: overdriveTokens.color.gamut.green['700'],
+				},
+				foreground: overdriveTokens.color.gamut.white,
+				border: overdriveTokens.color.gamut.green['900'],
+			},
+			brand: {
+				background: {
+					standard: overdriveTokens.color.gamut.green['700'],
+					mild: overdriveTokens.color.gamut.green['200'],
+					strong: overdriveTokens.color.gamut.green['900'],
+				},
+				foreground: overdriveTokens.color.gamut.white,
+				border: overdriveTokens.color.gamut.gray['900'],
+			},
+			secondary: {
+				background: {
+					standard: overdriveTokens.color.gamut.white,
+					mild: overdriveTokens.color.gamut.white,
+					strong: overdriveTokens.color.gamut.gray['200'],
+				},
+				foreground: secondaryForeground,
+				border: overdriveTokens.color.gamut.gray['300'],
+			},
+			shine: {
+				background: {
+					standard: overdriveTokens.color.gamut.gray['200'],
+					mild: overdriveTokens.color.gamut.gray['100'],
+					strong: overdriveTokens.color.gamut.gray['300'],
+				},
+				foreground: overdriveTokens.color.gamut.yellow['500'],
+				border: overdriveTokens.color.gamut.gray['300'],
+			},
+			danger: {
+				background: {
+					standard: overdriveTokens.color.gamut.red['600'],
+					mild: overdriveTokens.color.gamut.red['100'],
+					strong: overdriveTokens.color.gamut.red['800'],
+				},
+				foreground: overdriveTokens.color.gamut.white,
+				border: overdriveTokens.color.gamut.red['800'],
+			},
+			warning: {
+				background: {
+					standard: overdriveTokens.color.gamut.yellow['800'],
+					mild: overdriveTokens.color.gamut.yellow['100'],
+					strong: overdriveTokens.color.gamut.yellow['900'],
+				},
+				foreground: overdriveTokens.color.gamut.white,
+				border: overdriveTokens.color.gamut.yellow['900'],
+			},
+			neutral: {
+				background: {
+					standard: overdriveTokens.color.gamut.gray['700'],
+					mild: overdriveTokens.color.gamut.gray['200'],
+					strong: overdriveTokens.color.gamut.gray['900'],
+				},
+				foreground: overdriveTokens.color.gamut.white,
+				border: overdriveTokens.color.gamut.gray['900'],
+			},
+			success: {
+				background: {
+					standard: overdriveTokens.color.gamut.green['700'],
+					mild: overdriveTokens.color.gamut.green['200'],
+					strong: overdriveTokens.color.gamut.green['900'],
+				},
+				foreground: overdriveTokens.color.gamut.white,
+				border: overdriveTokens.color.gamut.green['900'],
+			},
+			information: {
+				background: {
+					standard: overdriveTokens.color.gamut.blue['800'],
+					mild: overdriveTokens.color.gamut.blue['200'],
+					strong: overdriveTokens.color.gamut.blue['900'],
+				},
+				foreground: overdriveTokens.color.gamut.white,
+				border: overdriveTokens.color.gamut.blue['900'],
+			},
+		},
+	},
+	elevation: {
+		none: overdriveTokens.elevation.none,
+		'1': overdriveTokens.elevation['1'],
+		'2': overdriveTokens.elevation['2'],
+		'3': overdriveTokens.elevation['3'],
+		'4': overdriveTokens.elevation['4'],
+		'5': overdriveTokens.elevation['5'],
+	},
+	border: {
+		width: {
+			none: overdriveTokens.border.width.none,
+			'1': overdriveTokens.border.width['1'],
+			'2': overdriveTokens.border.width['2'],
+			'3': overdriveTokens.border.width['3'],
+		},
+		colours: {
+			light: overdriveTokens.color.gamut.gray['200'],
+			gray: overdriveTokens.color.gamut.gray['300'],
+			dark: overdriveTokens.color.gamut.gray['900'],
+		},
+		radius: {
+			none: overdriveTokens.border.radius.none,
+			min: overdriveTokens.border.radius.min,
+			sm: overdriveTokens.border.radius.sm,
+			md: overdriveTokens.border.radius.md,
+			lg: overdriveTokens.border.radius.lg,
+			xl: overdriveTokens.border.radius.xl,
+			'2xl': overdriveTokens.border.radius['2xl'],
+			'1': overdriveTokens.border.radius['1'],
+			pill: overdriveTokens.border.radius.pill,
+			full: overdriveTokens.border.radius.full,
+		},
+	},
+	typography: {
+		size: {
+			'1': {
+				fontSize: overdriveTokens.typography.size['1'].fontSize,
+				lineHeight: overdriveTokens.typography.size['1'].lineHeight,
+			},
+			'2': {
+				fontSize: overdriveTokens.typography.size['2'].fontSize,
+				lineHeight: overdriveTokens.typography.size['2'].lineHeight,
+			},
+			'3': {
+				fontSize: overdriveTokens.typography.size['3'].fontSize,
+				lineHeight: overdriveTokens.typography.size['3'].lineHeight,
+			},
+			'4': {
+				fontSize: overdriveTokens.typography.size['4'].fontSize,
+				lineHeight: overdriveTokens.typography.size['4'].lineHeight,
+			},
+			'5': {
+				fontSize: overdriveTokens.typography.size['5'].fontSize,
+				lineHeight: overdriveTokens.typography.size['5'].lineHeight,
+			},
+			'6': {
+				fontSize: overdriveTokens.typography.size['6'].fontSize,
+				lineHeight: overdriveTokens.typography.size['6'].lineHeight,
+			},
+			'7': {
+				fontSize: overdriveTokens.typography.size['7'].fontSize,
+				lineHeight: overdriveTokens.typography.size['7'].lineHeight,
+			},
+			'8': {
+				fontSize: overdriveTokens.typography.size['8'].fontSize,
+				lineHeight: overdriveTokens.typography.size['8'].lineHeight,
+			},
+			'9': {
+				fontSize: overdriveTokens.typography.size['9'].fontSize,
+				lineHeight: overdriveTokens.typography.size['9'].lineHeight,
+			},
+		},
+		colour: {
+			primary: overdriveTokens.color.gamut.green['600'],
+			secondary: overdriveTokens.color.gamut.gray['700'],
+			brand: overdriveTokens.color.gamut.green['600'],
+			shine: overdriveTokens.color.gamut.yellow['500'],
+			link: overdriveTokens.color.gamut.blue['500'],
+			dark: overdriveTokens.color.gamut.gray['900'],
+			white: overdriveTokens.color.gamut.white,
+			muted: overdriveTokens.color.gamut.gray['400'],
+			neutral: overdriveTokens.color.gamut.gray['700'],
+			light: overdriveTokens.color.gamut.gray['600'],
+			danger: overdriveTokens.color.gamut.red['600'],
+			warning: overdriveTokens.color.gamut.yellow['800'],
+			success: overdriveTokens.color.gamut.green['600'],
+			information: overdriveTokens.color.gamut.blue['500'],
+		},
+		fontFamily: overdriveTokens.typography.fontFamily,
+		fontWeight: {
+			normal: overdriveTokens.typography.fontWeight.normal,
+			semiBold: overdriveTokens.typography.fontWeight.semiBold,
+			bold: overdriveTokens.typography.fontWeight.bold,
+		},
+	},
+	animation: {
+		easing: {
+			standard: overdriveTokens.animation.easing.standard,
+			decelerate: overdriveTokens.animation.easing.decelerate,
+			accelerate: overdriveTokens.animation.easing.accelerate,
+		},
+	},
+	icon: {
+		size: {
+			small: overdriveTokens.icon.size.small,
+			medium: overdriveTokens.icon.size.medium,
+			large: overdriveTokens.icon.size.large,
+		},
+	},
+} satisfies OverdriveTokens;
+
+/**
+ * IN TRANSITION. here lie the global tokens, more recently introduced.
+ * use these global tokens provided from `overdriveTokens` as the preferred choice
+ */
+export const globalTokens = {
 	mode: 'light',
 	body: {
 		backgroundColour: colourMap.white,
@@ -43,9 +326,9 @@ export const tokens = {
 			warning: colourMap.yellow['800'],
 		},
 		content: {
-			onBody: themeContractVars.color.content.hard,
+			onBody: overdriveTokens.color.content.hard,
 			onSurface: colourMap.white,
-			accent: themeContractVars.color.surface.accent,
+			accent: overdriveTokens.color.surface.accent,
 			hard: colourMap.gray['900'],
 			soft: colourMap.gray['700'],
 			info: colourMap.blue['600'],
@@ -59,8 +342,8 @@ export const tokens = {
 			borderMuted: '',
 			surfaceDisabled: '',
 			contentDisabled: '',
-			link: themeContractVars.color.content.info,
-			linkVisited: themeContractVars.color.interactive.link,
+			link: overdriveTokens.color.content.info,
+			linkVisited: overdriveTokens.color.interactive.link,
 			overlayBg: '',
 			overlayContainer: '',
 			placeholder: '',

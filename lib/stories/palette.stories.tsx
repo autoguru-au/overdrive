@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import React from 'react';
 
 import { Heading } from '../components/Heading';
-import { baseThemeColours } from '../themes/base/tokens';
+import { colourMap } from '../themes/base/colours';
 import type { ColourGamut, ColourValue } from '../themes/tokens';
 
 import { ColourSwatch, Stack } from './helpers';
@@ -60,7 +60,7 @@ const Palettes = () => (
 				>
 					{hue}
 				</Heading>
-				<PaletteSwatches hue={hue} shades={baseThemeColours[hue]} />
+				<PaletteSwatches hue={hue} shades={colourMap[hue]} />
 			</div>
 		))}
 	</Stack>

@@ -1,9 +1,9 @@
 import { createTheme, createGlobalTheme } from '@vanilla-extract/css';
 
 import { cssLayerTheme } from '../../styles/layers.css';
-import { overdriveTokens } from '../theme.css';
+import { overdriveTokens, themeContractVars } from '../theme.css';
 
-import { tokens } from './tokens';
+import { globalTokens, tokens } from './tokens';
 
 // global themes -- all themes can be declared here as they do not require exporting
 export const baseThemeLight = createGlobalTheme(
@@ -11,13 +11,13 @@ export const baseThemeLight = createGlobalTheme(
 	overdriveTokens,
 	{
 		'@layer': cssLayerTheme,
-		...tokens,
+		...globalTokens,
 	},
 );
 
 // base theme
 export const baseThemeClassName = createTheme(
-	overdriveTokens,
+	themeContractVars,
 	tokens,
 	'OD_Base',
 );

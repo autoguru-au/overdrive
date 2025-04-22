@@ -82,6 +82,11 @@ const coloursWithWhite = {
 	white: 'color-gamut-white',
 } satisfies ColourMap;
 
+/**
+ * Overdrive master theme contract is IN TRANSISTION. Where values are present, they create a global CSS var
+ * mapping for the corresponding key. Where values are null, these keys are being phased out and do not exist
+ * in global CSS vars.
+ */
 const THEME_CONTRACT = {
 	mode: 'mode',
 	body: {
@@ -259,9 +264,9 @@ const THEME_CONTRACT = {
 			none: 'border-width-none',
 		},
 		colours: {
-			light: 'border-colours-light',
-			gray: 'border-colours-gray',
-			dark: 'border-colours-dark',
+			light: null,
+			gray: null,
+			dark: null,
 		},
 		radius: {
 			none: 'border-radius-none',

@@ -2,9 +2,10 @@ import deepmerge from 'deepmerge';
 
 import { tokens as baseTokens } from '../base/tokens';
 import { buildColourGamut } from '../makeTheme';
-import { ColourMap, Tokens } from '../tokens';
+import type { OverdriveTokens } from '../theme.css';
+import type { ColourMap } from '../tokens';
 
-const colours: ColourMap = {
+const colours = {
 	black: {
 		900: '#222222',
 		800: '#2A2C2A',
@@ -16,7 +17,6 @@ const colours: ColourMap = {
 		200: '#DDE0E3',
 		100: '#E4E4E4',
 	},
-
 	gray: {
 		900: '#263238',
 		800: '#37474F',
@@ -28,7 +28,6 @@ const colours: ColourMap = {
 		200: '#CFD8DC',
 		100: '#ECEFF1',
 	},
-
 	green: {
 		900: '#007800',
 		800: '#009b00',
@@ -40,7 +39,6 @@ const colours: ColourMap = {
 		200: '#a6ec98',
 		100: '#cbf4c1',
 	},
-
 	blue: {
 		900: '#1a259c',
 		800: '#3530aa',
@@ -52,7 +50,6 @@ const colours: ColourMap = {
 		200: '#b0a1e0',
 		100: '#cfc6ec',
 	},
-
 	yellow: {
 		900: '#cb5300',
 		800: '#d56b00',
@@ -64,7 +61,6 @@ const colours: ColourMap = {
 		200: '#f0c880',
 		100: '#f6ddb2',
 	},
-
 	red: {
 		900: '#d50000',
 		800: '#ED0C06',
@@ -76,11 +72,11 @@ const colours: ColourMap = {
 		200: '#ffa48d',
 		100: '#ffc8ba',
 	},
-};
+} satisfies ColourMap;
 
 const flatElevation = '0 0 0 0 rgba(0, 0, 0, 0.0)';
 
-export const tokens = deepmerge<Tokens, any>(baseTokens, {
+export const tokens = deepmerge(baseTokens, {
 	colours: {
 		gamut: {
 			...buildColourGamut(colours),
@@ -134,4 +130,4 @@ export const tokens = deepmerge<Tokens, any>(baseTokens, {
 			primary: colours.red['600'],
 		},
 	},
-} as unknown as Tokens);
+}) satisfies OverdriveTokens;
