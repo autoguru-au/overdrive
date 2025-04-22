@@ -1,9 +1,9 @@
 import deepmerge from 'deepmerge';
 
+import type { ColourMap } from '../';
 import { tokens as baseTokens } from '../base/tokens';
 import { buildColourGamut } from '../makeTheme';
-import type { OverdriveTokens } from '../theme.css';
-import type { ColourMap } from '../tokens';
+import type { ThemeTokens } from '../theme.css';
 
 const colours = {
 	black: {
@@ -264,4 +264,4 @@ export const tokens = deepmerge(baseTokens, {
 			large: '32px',
 		},
 	},
-}) satisfies OverdriveTokens;
+}) satisfies ThemeTokens;

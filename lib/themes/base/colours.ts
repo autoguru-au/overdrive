@@ -1,4 +1,4 @@
-import type { ColourMap } from '../tokens';
+import type { ColourMap } from '../';
 
 export const colourMapWithoutWhite = {
 	black: {

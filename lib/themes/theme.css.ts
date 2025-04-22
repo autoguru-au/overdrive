@@ -6,7 +6,8 @@ import {
 
 import type { TokensFromContract } from './helpers';
 import { buildColourGamut } from './makeTheme';
-import type { ColourMap } from './tokens';
+
+import type { ColourMap } from '.';
 
 const colours = {
 	black: {
@@ -76,6 +77,8 @@ const colours = {
 		'100': 'color-gamut-red-100',
 	},
 } satisfies ColourMap;
+
+export type Colours = typeof colours;
 
 const coloursWithWhite = {
 	...colours,
@@ -340,7 +343,9 @@ const THEME_CONTRACT = {
 		fontFamily: 'font-family',
 		fontWeight: {
 			normal: 'font-weight-normal',
-			semiBold: 'font-weight-semi-bold',
+			// phase out camel case
+			semiBold: null,
+			'semi-bold': 'font-weight-semi-bold',
 			bold: 'font-weight-bold',
 		},
 	},
@@ -366,7 +371,7 @@ export const overdriveTokens = createGlobalThemeContract(
 	(cssVarName) => `od-${cssVarName}`,
 );
 
-export type OverdriveTokens = TokensFromContract<typeof themeContractVars>;
+export type ThemeTokens = TokensFromContract<typeof themeContractVars>;
 
 /** *Reccomend replace usage*: `container` should be impored from `lib/reset/reset.css` */
 export const container = style({

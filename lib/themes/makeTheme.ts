@@ -1,4 +1,4 @@
-import { BreakPoints, ColourGamut, ColourMap } from './tokens';
+import type { BreakPoints, ColourMap, FlattenedColours } from '.';
 
 export const breakpoints: BreakPoints = {
 	mobile: '0px',
@@ -15,9 +15,7 @@ export const makeRuntimeTokens = (
 
 export type RuntimeTokens = ReturnType<typeof makeRuntimeTokens>;
 
-export const buildColourGamut = (
-	colours: ColourMap,
-): Record<ColourGamut, string> =>
+export const buildColourGamut = (colours: ColourMap): FlattenedColours =>
 	Object.entries(colours).reduce(
 		(result, [name, colourGrades]) => ({
 			...result,
@@ -28,8 +26,8 @@ export const buildColourGamut = (
 						[`${name}${colourGradeName}`]: colour,
 					};
 				},
-				{} as Record<Partial<ColourGamut>, string>,
+				{} as Partial<FlattenedColours>,
 			),
 		}),
-		{} as Record<ColourGamut, string>,
+		{} as FlattenedColours,
 	);
