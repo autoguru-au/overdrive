@@ -98,7 +98,7 @@ const responsiveProperties = defineProperties({
 		// Size
 		height: {
 			...spaceWithoutNone,
-			'100%': '100%',
+			full: '100%',
 			auto: 'auto',
 		},
 		width: {
@@ -125,13 +125,14 @@ const responsiveProperties = defineProperties({
 			'space-between',
 			'space-evenly',
 		],
-		alignSelf: ['flex-start', 'center', 'flex-end'],
+		alignSelf: ['flex-start', 'center', 'flex-end', 'stretch'],
 		justifySelf: ['flex-start', 'center', 'flex-end'],
 		// Flexbox
 		flexDirection: ['row', 'column'],
 		flexGrow: [0, 1],
 		flexShrink: [0, 1],
 		flexWrap: ['nowrap', 'wrap', 'wrap-reverse'],
+		order: [0, 1, 2, 3, 4],
 		// Grid
 		gridAutoColumns: ['auto', '1fr', 'min-content', 'max-content'],
 		gridAutoRows: ['auto', '1fr'],

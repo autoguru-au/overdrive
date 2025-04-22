@@ -13,7 +13,8 @@ import {
 type StyleProps = Sprinkles & SprinklesResponsive;
 type PolymorphicComponentProps<E extends ElementType, Props = object> = {
 	as?: E;
-} & Omit<ComponentPropsWithRef<E>, keyof Props | 'as'> &
+	className?: clsx.ClassValue;
+} & Omit<ComponentPropsWithRef<E>, keyof Props | 'as' | 'className'> &
 	Props;
 
 export type BoxProps<E extends ElementType = 'div'> = PolymorphicComponentProps<
