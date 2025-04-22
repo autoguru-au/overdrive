@@ -1,12 +1,5 @@
 import clsx from 'clsx';
-import * as React from 'react';
-import {
-	ComponentProps,
-	createContext,
-	forwardRef,
-	ReactNode,
-	useMemo,
-} from 'react';
+import React, { createContext, forwardRef, ReactNode, useMemo } from 'react';
 
 import {
 	useNegativeMarginLeft,
@@ -15,11 +8,11 @@ import {
 import { Tokens } from '../../themes/tokens';
 import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
 import { ResponsiveProp } from '../../utils/responsiveProps.css';
-import { Box } from '../Box';
+import { Box, type BoxProps } from '../Box';
 
 import * as styles from './Columns.css';
 
-export interface Props extends Omit<ComponentProps<typeof Box>, 'css'> {
+export interface Props extends BoxProps {
 	className?: string;
 	columns?: number;
 	space?: ResponsiveProp<keyof Tokens['space']>;
@@ -39,9 +32,11 @@ interface ColumnContextValue {
 
 export const ColumnContext = createContext<ColumnContextValue | null>(null);
 
-export const Columns = forwardRef<HTMLElement, Props>(
+export const Columns = forwardRef<HTMLDivElement, Props>(
 	(
 		{
+			align = 'stretch',
+			as,
 			className = '',
 			children,
 			space,
@@ -49,8 +44,6 @@ export const Columns = forwardRef<HTMLElement, Props>(
 			spaceY,
 			noWrap,
 			wrappingDirection = 'default',
-			align = 'stretch',
-			is,
 			...boxProps
 		},
 		ref,
@@ -58,15 +51,13 @@ export const Columns = forwardRef<HTMLElement, Props>(
 		const resolvedSpaceX = spaceX || space || ['none'];
 		const resolvedSpaceY = spaceY || space || ['none'];
 
-		// @ts-expect-error not assignmable to parameter type
 		const marginLeftFix = useNegativeMarginLeft(resolvedSpaceX);
-		// @ts-expect-error not assignmable to parameter type
 		const marginTopFix = useNegativeMarginTop(resolvedSpaceY);
 
 		return (
 			<Box
 				ref={ref}
-				is={is}
+				as={as}
 				display="flex"
 				flexDirection="row"
 				className={clsx(
@@ -95,10 +86,10 @@ export const Columns = forwardRef<HTMLElement, Props>(
 								styles.space.spaceY,
 							),
 							isList:
-								typeof is === 'string' &&
-								['ul', 'ol'].includes(is),
+								typeof as === 'string' &&
+								['ul', 'ol'].includes(as),
 						}),
-						[resolvedSpaceX, resolvedSpaceY, styles],
+						[as, resolvedSpaceX, resolvedSpaceY],
 					)}
 				>
 					{children}
@@ -107,5 +98,7 @@ export const Columns = forwardRef<HTMLElement, Props>(
 		);
 	},
 );
+
+Columns.displayName = 'Columns';
 
 export default Columns;

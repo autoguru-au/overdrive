@@ -1,6 +1,7 @@
 import { Meta, StoryFn } from '@storybook/react';
 import React, { type ComponentProps } from 'react';
 
+import { themeContractVars as tokens } from '../../themes/theme.css';
 import { Box } from '../Box';
 import { boxArgTypes, scaleOptions } from '../Box/argTypes';
 
@@ -45,48 +46,60 @@ const Template: StoryFn<typeof Columns> = (args) => (
 	<Columns {...args}>
 		<Column width={['full', '1/3', '1/5']} order={[0, 2]} is="section">
 			<Box
-				borderColour="gray"
+				borderColor="gray"
 				borderWidth="1"
 				padding="4"
 				borderRadius="1"
-				backgroundColour="green100"
-				style={{ width: '100%', height: '100%' }}
+				style={{
+					backgroundColor: tokens.colours.gamut.green100,
+					width: '100%',
+					height: '100%',
+				}}
 			>
 				Col 1
 			</Box>
 		</Column>
 		<Column width={['1/2', '1/3', '1/5']} alignSelf="stretch" is="section">
 			<Box
-				borderColour="gray"
+				borderColor="gray"
 				borderWidth="1"
 				padding="4"
 				borderRadius="1"
-				backgroundColour="red100"
-				style={{ width: '100%', height: '100%' }}
+				style={{
+					backgroundColor: tokens.colours.gamut.red100,
+					width: '100%',
+					height: '100%',
+				}}
 			>
 				Col 2
 			</Box>
 		</Column>
 		<Column width={['1/2', '1/3', '1/5']} is="section">
 			<Box
-				borderColour="gray"
+				borderColor="gray"
 				borderWidth="1"
 				padding="4"
 				borderRadius="1"
-				backgroundColour="blue100"
-				style={{ width: '100%', height: '100%' }}
+				style={{
+					backgroundColor: tokens.colours.gamut.blue100,
+					width: '100%',
+					height: '100%',
+				}}
 			>
 				Col 3
 			</Box>
 		</Column>
 		<Column width={['full', 'full', '2/5']} is="section">
 			<Box
-				borderColour="gray"
+				borderColor="gray"
 				borderWidth="1"
 				padding="4"
 				borderRadius="1"
-				backgroundColour="yellow100"
-				style={{ width: '100%', height: '500px' }}
+				style={{
+					backgroundColor: tokens.colours.gamut.yellow100,
+					width: '100%',
+					height: '500px',
+				}}
 			>
 				Col 4
 			</Box>
@@ -98,60 +111,76 @@ const TemplateColumn: StoryFn<typeof Column> = (args) => (
 	<Columns {...standardProps}>
 		<Column {...args}>
 			<Box
-				borderColour="gray"
+				borderColor="gray"
 				borderWidth="1"
 				padding="4"
 				borderRadius="1"
-				backgroundColour="green100"
-				style={{ width: '100%', height: '100%' }}
+				style={{
+					backgroundColor: tokens.colours.gamut.green100,
+					width: '100%',
+					height: '100%',
+				}}
 			>
 				Col 1
 			</Box>
 		</Column>
 		<Column {...args}>
 			<Box
-				borderColour="gray"
+				borderColor="gray"
 				borderWidth="1"
 				padding="4"
 				borderRadius="1"
-				backgroundColour="red100"
-				style={{ width: '100%', height: '100%' }}
+				style={{
+					backgroundColor: tokens.colours.gamut.red100,
+					width: '100%',
+					height: '100%',
+				}}
 			>
 				Col 2
 			</Box>
 		</Column>
 		<Column {...args}>
 			<Box
-				borderColour="gray"
+				borderColor="gray"
 				borderWidth="1"
 				padding="4"
 				borderRadius="1"
-				backgroundColour="blue100"
-				style={{ width: '100%', height: '100%' }}
+				style={{
+					backgroundColor: tokens.colours.gamut.blue100,
+					width: '100%',
+					height: '100%',
+				}}
 			>
 				Col 3
 			</Box>
 		</Column>
 		<Column {...args}>
 			<Box
-				borderColour="gray"
+				borderColor="gray"
 				borderWidth="1"
 				padding="4"
 				borderRadius="1"
-				backgroundColour="yellow100"
-				style={{ width: '100%', height: '500px' }}
+				style={{
+					backgroundColor: tokens.colours.gamut.yellow100,
+					width: '100%',
+					height: '500px',
+				}}
 			>
 				Col 4
 			</Box>
 		</Column>
 		<Column {...args}>
 			<Box
-				borderColour="gray"
+				borderColor="gray"
 				borderWidth="1"
 				padding="4"
 				borderRadius="1"
-				backgroundColour="yellow100"
-				style={{ width: '100%', height: '100%', minHeight: '200px' }}
+				style={{
+					backgroundColor: tokens.colours.gamut.yellow100,
+					width: '100%',
+					height: '100%',
+					minHeight: '200px',
+				}}
 			>
 				Col 4
 			</Box>

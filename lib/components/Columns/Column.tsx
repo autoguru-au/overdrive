@@ -1,36 +1,30 @@
 import { invariant } from '@autoguru/utilities';
-import * as React from 'react';
-import { ComponentProps, forwardRef, ReactNode, useContext } from 'react';
+import React, { forwardRef, useContext } from 'react';
 
 import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
 import { ResponsiveProp } from '../../utils/responsiveProps.css';
-import { Box } from '../Box';
+import { Box, type BoxProps } from '../Box';
 
 import * as styles from './Column.css';
 import { ColumnContext } from './Columns';
 
-export interface Props
-	extends Omit<ComponentProps<typeof Box>, 'width' | 'css'> {
+export interface ColumnProps extends Omit<BoxProps, 'width'> {
 	width?: ResponsiveProp<keyof typeof styles.width>;
 	noShrink?: boolean;
 	grow?: boolean;
-	alignSelf?: keyof typeof styles.align;
-	className?: string;
-	children: ReactNode | ReactNode[];
 }
 
-export const Column = forwardRef<HTMLElement, Props>(
+export const Column = forwardRef<HTMLDivElement, ColumnProps>(
 	(
 		{
-			className = '',
+			as,
+			className,
 			children,
 			width,
 			alignSelf,
-			is,
 			noShrink = false,
 			grow = false,
 			order,
-
 			...boxProps
 		},
 		ref,
@@ -45,20 +39,20 @@ export const Column = forwardRef<HTMLElement, Props>(
 
 		return (
 			<Box
-				is={isList ? 'li' : 'div'}
+				as={isList ? 'li' : 'div'}
+				alignSelf={alignSelf}
 				order={order}
 				flexGrow={grow ? 1 : 0}
-				flexShrink={noShrink ? 0 : void 0}
+				flexShrink={noShrink ? 0 : undefined}
 				className={[
 					spaceXCls,
 					spaceYCls,
 					resolveResponsiveStyle(width, styles.width),
-					styles.align[alignSelf!],
 				]}
 			>
 				<Box
 					ref={ref}
-					is={is}
+					as={as}
 					display="flex"
 					width="full"
 					height="full"
@@ -71,5 +65,7 @@ export const Column = forwardRef<HTMLElement, Props>(
 		);
 	},
 );
+
+Column.displayName = 'Column';
 
 export default Column;

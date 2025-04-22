@@ -1,5 +1,3 @@
-import { styleVariants } from '@vanilla-extract/css';
-
 import { makeResponsiveStyle } from '../../utils/responsiveProps.css';
 
 const getSizeStyle = (scale: number) => `${scale * 100}%`;
@@ -20,18 +18,3 @@ export const width = makeResponsiveStyle(
 	},
 	'flexBasis',
 );
-
-export const align = styleVariants({
-	stretch: {
-		alignSelf: 'stretch',
-	},
-	top: {
-		alignSelf: 'flex-start',
-	},
-	centre: {
-		alignSelf: 'center',
-	},
-	bottom: {
-		alignSelf: 'flex-end',
-	},
-});
