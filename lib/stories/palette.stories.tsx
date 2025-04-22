@@ -55,7 +55,7 @@ const Palettes = () => (
 		{['green', 'blue', 'yellow', 'red', 'gray', 'black'].map((hue) => (
 			<div key={hue}>
 				<Heading
-					is="h3"
+					as="h3"
 					className={clsx([labels, sprinkles({ marginBottom: '5' })])}
 				>
 					{hue}
@@ -78,8 +78,8 @@ export const Palette: Story = {
 	render: () => {
 		return (
 			<Stack space="md">
-				<Heading is="h1">Palette</Heading>
-				<Heading is="h2">Colours</Heading>
+				<Heading as="h1">Palette</Heading>
+				<Heading as="h2">Colours</Heading>
 				<Palettes />
 			</Stack>
 		);

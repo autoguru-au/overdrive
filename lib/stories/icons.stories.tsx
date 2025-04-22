@@ -84,8 +84,8 @@ export const IconSet: Story = {
 	},
 	render: () => (
 		<Stack space="sm">
-			<Heading is="h1">Icon Set</Heading>
-			<Heading is="h4">@autoguru/icons</Heading>
+			<Heading as="h1">Icon Set</Heading>
+			<Heading as="h4">@autoguru/icons</Heading>
 			<IconGrid />
 		</Stack>
 	),

@@ -128,7 +128,7 @@ export const StandardModal: FunctionComponent<Props> = ({
 						borderColour="light"
 					>
 						<Box flexGrow={1} id={titleId!}>
-							<Heading is="h4">{title}</Heading>
+							<Heading as="h4">{title}</Heading>
 						</Box>
 						<Button
 							minimal

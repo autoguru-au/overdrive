@@ -8,9 +8,9 @@ import type { TextStyleProps } from '../Text';
 import { useTextStyles } from '../Text';
 
 export interface HeadingProps
-	extends Omit<TextStyleProps, 'is'>,
+	extends Omit<TextStyleProps, 'as'>,
 		Pick<BoxProps, 'children' | 'className' | 'id'> {
-	is?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+	as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 	colour?: Exclude<keyof Tokens['typography']['colour'], 'muted'>;
 }
 
@@ -24,26 +24,24 @@ const sizeScaleDefaults = {
 } as const;
 
 export const Heading = ({
-	is = 'h1',
-	id,
-	testId,
-	align,
-	fontWeight = 'bold',
-	noWrap,
-	transform,
-	colour = 'dark',
-	size = sizeScaleDefaults[is],
+	as = 'h1',
 	breakWord,
-	className = '',
 	children,
+	className,
+	colour = 'dark',
+	fontWeight = 'bold',
+	id,
+	noWrap,
+	size = sizeScaleDefaults[as],
+	testId,
+	transform,
 }: WithTestId<HeadingProps>) => (
 	<Box
+		as={as}
 		id={id}
-		as={is}
 		className={[
 			useTextStyles({
 				size,
-				align,
 				colour,
 				noWrap,
 				transform,

@@ -64,7 +64,7 @@ export const useChromaticDecorator = (Story, context) => {
 					>
 						<Box width="full" padding="5">
 							<Stack width="full" space="3">
-								<Heading is="h5" colour="light">
+								<Heading as="h5" colour="light">
 									Theme :: {themes[themeName].name}
 								</Heading>
 								<Story {...context} />

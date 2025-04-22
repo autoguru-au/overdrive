@@ -97,11 +97,11 @@ export const Standard: Story = {
 	},
 	render: (args) => (
 		<Box>
-			<Heading is="h2" size="7">
+			<Heading as="h2" size="7">
 				Title 1
 			</Heading>
 			<DividerLine {...args} />
-			<Heading is="h2" size="7">
+			<Heading as="h2" size="7">
 				Title 1
 			</Heading>
 		</Box>
@@ -115,11 +115,11 @@ export const Vertical: Story = {
 	},
 	render: (args) => (
 		<Inline alignY="stretch">
-			<Heading is="h2" size="7">
+			<Heading as="h2" size="7">
 				Title 1
 			</Heading>
 			<DividerLine {...args} />
-			<Heading is="h2" size="7">
+			<Heading as="h2" size="7">
 				Title 1
 			</Heading>
 		</Inline>
@@ -134,7 +134,7 @@ export const StandardAllColours: Story = {
 		<Box>
 			{colours.map((colour) => (
 				<React.Fragment key={colour}>
-					<Heading is="h2" size="7">
+					<Heading as="h2" size="7">
 						Title
 					</Heading>
 					<DividerLine {...args} colour={colour} />

@@ -75,7 +75,7 @@ export const ThemeColours: Story = {
 		return (
 			<Stack>
 				<hgroup>
-					<Heading is="h1">Theme Colours</Heading>
+					<Heading as="h1">Theme Colours</Heading>
 					<p>
 						Use the theme selection menu options in the top bar to
 						view alternate colour mappings.
@@ -83,41 +83,41 @@ export const ThemeColours: Story = {
 				</hgroup>
 				<Stack space="md" horizontal>
 					<Stack>
-						<Heading is="h2">Body</Heading>
+						<Heading as="h2">Body</Heading>
 						<SemanticSwatches vars={themeContractVars.body} />
 					</Stack>
 					<Stack>
-						<Heading is="h2">Foreground</Heading>
+						<Heading as="h2">Foreground</Heading>
 						<SemanticSwatches
 							vars={themeContractVars.colours.foreground}
 						/>
 					</Stack>
 					<Stack>
-						<Heading is="h2">Background</Heading>
+						<Heading as="h2">Background</Heading>
 						<SemanticSwatches
 							vars={themeContractVars.colours.background}
 						/>
 					</Stack>
 					<Stack>
-						<Heading is="h2">Border</Heading>
+						<Heading as="h2">Border</Heading>
 						<SemanticSwatches
 							vars={themeContractVars.border.colours}
 						/>
 					</Stack>
 				</Stack>
 				<Stack>
-					<Heading is="h2">Typography</Heading>
+					<Heading as="h2">Typography</Heading>
 					<SemanticSwatches
 						vars={themeContractVars.typography.colour}
 					/>
 				</Stack>
 				<Stack>
-					<Heading is="h2">Intentional colour sets</Heading>
+					<Heading as="h2">Intentional colour sets</Heading>
 					<Stack space="lg" horizontal>
 						{Object.entries(themeContractVars.colours.intent).map(
 							([title, vars]) => (
 								<div key={title}>
-									<Heading is="h4" className={labels}>
+									<Heading as="h4" className={labels}>
 										{title}
 									</Heading>
 									<IntentionalSwatches vars={vars} />
