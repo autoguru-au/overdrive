@@ -5,10 +5,11 @@ import { Box } from '../lib/components/Box';
 import { Heading } from '../lib/components/Heading';
 import { OverdriveProvider } from '../lib/components/OverdriveProvider';
 import { Stack } from '../lib/components/Stack';
-import { themes } from '../lib/themes';
+import * as themeConfig from '../lib/themes';
 import { breakpoints } from '../lib/themes/makeTheme';
 import { container } from '../lib/themes/theme.css';
 
+const { themes } = themeConfig;
 const overrideColors = {
 	bright: {
 		primaryBackground: '#e5bc01',
@@ -35,7 +36,8 @@ export const useStorybookDecorator = (Story, context) => {
 
 	return (
 		<OverdriveProvider
-			theme={themes[context.globals.theme]}
+			// eslint-disable-next-line import/namespace
+			theme={themeConfig[context.globals.theme]}
 			breakpoints={breakpoints}
 			colorOverrides={customColours}
 			portalMountPoint={portalRef}
