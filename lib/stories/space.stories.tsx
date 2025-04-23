@@ -3,13 +3,13 @@ import React from 'react';
 
 import { Heading } from '../components/Heading';
 import { overdriveTokens } from '../themes';
-import { globalTokens } from '../themes/base/tokens';
+import { tokens } from '../themes/base/tokens';
 import { breakpoints } from '../themes/makeTheme';
 
 import { Box, Stack, type Sprinkles } from './helpers';
 import { labels, small, titles } from './helpers/styles.css';
 
-const { space } = globalTokens;
+const { space } = tokens;
 const spaceItems = Object.keys(space).filter((val) => val !== 'none');
 
 const SpaceScale = () => (
@@ -28,7 +28,7 @@ const SpaceScale = () => (
 						backgroundColor: overdriveTokens.color.gamut.black[700],
 					}}
 				/>
-				<p className={small}>{globalTokens.space[space]}</p>
+				<p className={small}>{tokens.space[space]}</p>
 			</Stack>
 		))}
 	</Stack>

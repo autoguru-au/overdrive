@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { themeContractVars as vars } from '../../themes/theme.css';
+import { overdriveTokens as vars } from '../../themes/theme.css';
 
 export const line = style({
 	height: '1px',

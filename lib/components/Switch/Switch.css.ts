@@ -1,7 +1,7 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
-import { themeContractVars as vars } from '../../themes/theme.css';
+import { overdriveTokens as vars } from '../../themes/theme.css';
 
 const colorAccent = vars.colours.foreground.body;
 const colorContrast = vars.colours.background.body;

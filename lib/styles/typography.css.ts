@@ -1,7 +1,7 @@
 import { styleVariants } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
-import { themeContractVars as tokens } from '../themes/theme.css';
+import { overdriveTokens as tokens } from '../themes/theme.css';
 
 const fontScale = {
 	...tokens.typography.size,

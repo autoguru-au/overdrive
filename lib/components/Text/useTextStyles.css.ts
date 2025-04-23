@@ -1,7 +1,7 @@
 import { style, StyleRule, styleVariants } from '@vanilla-extract/css';
 
 import type { ThemeTokens as Tokens } from '../../themes';
-import { themeContractVars as vars } from '../../themes/theme.css';
+import { overdriveTokens as vars } from '../../themes/theme.css';
 import { mapTokenToProperty } from '../../utils/mapTokenToProperty';
 
 export const root = style({

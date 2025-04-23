@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css';
 import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
-import { themeContractVars as vars } from '../../themes/theme.css';
+import { overdriveTokens as vars } from '../../themes/theme.css';
 
 const intentColors = vars.colours.intent;
 const smallHeight = '36px';

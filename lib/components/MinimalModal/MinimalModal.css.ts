@@ -1,6 +1,6 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
-import { themeContractVars as tokens } from '../../themes/theme.css';
+import { overdriveTokens as tokens } from '../../themes/theme.css';
 
 export const container = style({
 	outline: '0',

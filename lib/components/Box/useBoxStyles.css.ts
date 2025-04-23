@@ -1,7 +1,7 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
 import {
-	themeContractVars as vars,
+	overdriveTokens as vars,
 	type ThemeTokens as Tokens,
 } from '../../themes/theme.css';
 import { mapTokenToProperty } from '../../utils/mapTokenToProperty';

@@ -3,7 +3,7 @@ import { recipe } from '@vanilla-extract/recipes';
 
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
 import { sprinklesResponsive } from '../../styles/sprinkles.css';
-import { themeContractVars as tokens } from '../../themes/theme.css';
+import { overdriveTokens as tokens } from '../../themes/theme.css';
 import { interactionStyle } from '../../utils/css';
 
 // === Group styles

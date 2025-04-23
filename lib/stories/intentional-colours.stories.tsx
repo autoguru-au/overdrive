@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
 import { Heading } from '../components/Heading';
-import { themeContractVars } from '../themes/theme.css';
+import { overdriveTokens } from '../themes/theme.css';
 
 import { Stack } from './helpers';
 import { labels, variantColourSwatch } from './helpers/styles.css';
@@ -88,37 +88,37 @@ export const LegacyColoursets: Story = {
 				<Stack space="md" horizontal>
 					<Stack>
 						<Heading is="h2">Body</Heading>
-						<SemanticSwatches vars={themeContractVars.body} />
+						<SemanticSwatches vars={overdriveTokens.body} />
 					</Stack>
 					<Stack>
 						<Heading is="h2">Foreground</Heading>
 						<SemanticSwatches
-							vars={themeContractVars.colours.foreground}
+							vars={overdriveTokens.colours.foreground}
 						/>
 					</Stack>
 					<Stack>
 						<Heading is="h2">Background</Heading>
 						<SemanticSwatches
-							vars={themeContractVars.colours.background}
+							vars={overdriveTokens.colours.background}
 						/>
 					</Stack>
 					<Stack>
 						<Heading is="h2">Border</Heading>
 						<SemanticSwatches
-							vars={themeContractVars.border.colours}
+							vars={overdriveTokens.border.colours}
 						/>
 					</Stack>
 				</Stack>
 				<Stack>
 					<Heading is="h2">Typography</Heading>
 					<SemanticSwatches
-						vars={themeContractVars.typography.colour}
+						vars={overdriveTokens.typography.colour}
 					/>
 				</Stack>
 				<Stack>
 					<Heading is="h2">Intentional colour sets</Heading>
 					<Stack space="lg" horizontal>
-						{Object.entries(themeContractVars.colours.intent).map(
+						{Object.entries(overdriveTokens.colours.intent).map(
 							([title, vars]) => (
 								<div key={title}>
 									<Heading is="h4" className={labels}>

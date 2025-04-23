@@ -1,7 +1,7 @@
 import { styleVariants } from '@vanilla-extract/css';
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
-import { themeContractVars as vars } from '../themes/theme.css';
+import { overdriveTokens as vars } from '../themes/theme.css';
 
 export const variantIntentionalColors = styleVariants(
 	vars.colours.intent,

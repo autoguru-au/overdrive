@@ -3,12 +3,12 @@ import React from 'react';
 
 import { Heading } from '../components/Heading';
 import { overdriveTokens } from '../themes';
-import { globalTokens } from '../themes/base/tokens';
+import { tokens } from '../themes/base/tokens';
 
 import { Box, Stack, type Sprinkles } from './helpers';
 import { titles } from './helpers/styles.css';
 
-const { border, elevation } = globalTokens;
+const { border, elevation } = tokens;
 const elevationItems = Object.keys(elevation);
 const widthItems = Object.keys(border.width);
 const radiusItems = Object.keys(border.radius);
@@ -89,7 +89,7 @@ const Radius = () => {
 								: undefined),
 						}}
 					>
-						{globalTokens.border.radius[radius]}
+						{tokens.border.radius[radius]}
 					</Box>
 					<p>{radius}</p>
 				</Stack>

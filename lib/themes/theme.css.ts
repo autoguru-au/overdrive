@@ -371,7 +371,7 @@ export const overdriveTokens = createGlobalThemeContract(
 		cssVarName === null ? `od-${path.join('-')}` : `od-${cssVarName}`,
 );
 
-// phase out: Export themeContractVars alias as it's in use by the original themes and components
+// phase out: Export overdriveTokens alias as it's in use by the original themes and components
 export { overdriveTokens as themeContractVars };
 
 export type ThemeTokens = TokensFromContract<typeof overdriveTokens>;
