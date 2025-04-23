@@ -5,11 +5,10 @@ import { Box } from '../lib/components/Box';
 import { Heading } from '../lib/components/Heading';
 import { OverdriveProvider } from '../lib/components/OverdriveProvider';
 import { Stack } from '../lib/components/Stack';
-import * as allThemes from '../lib/themes';
+import { themes } from '../lib/themes';
 import { breakpoints } from '../lib/themes/makeTheme';
 import { container } from '../lib/themes/theme.css';
 
-const themes = allThemes;
 const overrideColors = {
 	bright: {
 		primaryBackground: '#e5bc01',

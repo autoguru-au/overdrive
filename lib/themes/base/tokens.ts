@@ -1,9 +1,5 @@
 import { buildColourGamut } from '../makeTheme';
-import {
-	overdriveTokens,
-	type ThemeTokens,
-	themeContractVars,
-} from '../theme.css';
+import { overdriveTokens, type ThemeTokens } from '../theme.css';
 
 import {
 	colourMap,
@@ -328,7 +324,7 @@ export const tokens = {
 		content: {
 			onBody: overdriveTokens.color.content.onBody,
 			onSurface: overdriveTokens.color.content.onSurface,
-			accent: themeContractVars.color.content.accent,
+			accent: overdriveTokens.color.content.accent,
 			hard: overdriveTokens.color.content.hard,
 			soft: overdriveTokens.color.content.soft,
 			info: overdriveTokens.color.content.info,

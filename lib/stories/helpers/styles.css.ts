@@ -12,9 +12,9 @@ export const labels = style({
 });
 
 export const codeVariable = style({
+	color: overdriveTokens.color.gamut.gray[600],
 	fontFamily: 'monospace',
-	fontSize: '9px',
-	fontWeight: 'bold',
+	fontSize: '13px',
 	lineHeight: '1.25',
 });
 

@@ -155,7 +155,7 @@ const THEME_CONTRACT = {
 	colours: {
 		gamut: {
 			...buildColourGamut(colours),
-			white: 'od-color-gamut-white',
+			white: 'color-gamut-white',
 		},
 		foreground: {
 			body: null,
@@ -366,10 +366,19 @@ const THEME_CONTRACT = {
 	},
 };
 
+/**
+ * Use theme contract vars for namespaced variables in use by the original themes and components.
+ * *Prefer `overdriveTokens` which use global css vars*
+ */
 export const themeContractVars = createThemeContract(THEME_CONTRACT);
+/**
+ * Use overdrive tokens for global css variables. This is the preferred approach and themes are in
+ * transition to use globals.
+ */
 export const overdriveTokens = createGlobalThemeContract(
 	THEME_CONTRACT,
-	(cssVarName) => `od-${cssVarName}`,
+	(cssVarName, path) =>
+		cssVarName === null ? `od-${path.join('-')}` : `od-${cssVarName}`,
 );
 
 export type ThemeTokens = TokensFromContract<typeof themeContractVars>;
