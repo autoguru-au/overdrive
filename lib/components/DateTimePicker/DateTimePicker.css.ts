@@ -85,9 +85,9 @@ export const styledButton = recipe({
 			alignItems: 'center',
 			backgroundColor: themeContractVars.colours.background.body,
 			borderColor: themeContractVars.border.colours.gray,
-			borderRadius: tokens.border.radius['md'],
+			borderRadius: themeContractVars.border.radius['md'],
 			borderStyle: 'solid',
-			borderWidth: tokens.border.width[1],
+			borderWidth: themeContractVars.border.width[1],
 			color: themeContractVars.colours.gamut.gray600,
 			cursor: 'pointer',
 			display: 'flex',
@@ -117,7 +117,7 @@ export const thStyle = style({
 });
 
 export const tdStyle = style({
-	padding: tokens.space[1],
+	padding: themeContractVars.space[1],
 	textAlign: 'center',
 });
 
@@ -128,6 +128,6 @@ export const headingStyle = styledFont({ size: '3xl', weight: 'bold' });
 export const subheadingStyle = styledFont({ size: 'xl', weight: 'bold' });
 
 export const titleStyle = style({
-	fontWeight: tokens.typography.fontWeight.bold,
+	fontWeight: themeContractVars.typography.fontWeight.bold,
 	margin: 0,
 });

@@ -54,19 +54,13 @@ export const useStorybookDecorator = (Story, context) => {
 export const useChromaticDecorator = (Story, context) => {
 	return (
 		<>
-			{Object.keys(themes).map((themeName) => (
-				<div
-					key={themes[themeName].name}
-					data-theme={themes[themeName].name}
-				>
-					<OverdriveProvider
-						noBodyLevelTheming
-						theme={themes[themeName]}
-					>
+			{themes.map((theme) => (
+				<div key={theme.name} data-theme={theme.name}>
+					<OverdriveProvider noBodyLevelTheming theme={theme}>
 						<Box width="full" padding="5">
 							<Stack width="full" space="3">
 								<Heading is="h5" colour="light">
-									Theme :: {themes[themeName].name}
+									Theme :: {theme.name}
 								</Heading>
 								<Story {...context} />
 							</Stack>
