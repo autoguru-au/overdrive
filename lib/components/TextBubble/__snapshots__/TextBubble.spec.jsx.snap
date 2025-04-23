@@ -2,14 +2,14 @@
 
 exports[`<Section /> > should match the snapshot background and text colour 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
     class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lk useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2s useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3w useBoxStyles_display_inlineBlock__3xgq1lge useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldp useBoxStyles_backgroundColours_gray900__3xgq1lea"
   >
     <span
-      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_center__3xgq1lg2 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_danger__1xnpmd7k useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_noWrap__1xnpmd7r useTextStyles_sizes_2__1xnpmd72 TextBubble_bubbleText__bqog00 reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l14 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_overflow_hidden__3xgq1lg4"
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_center__3xgq1lg2 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_danger__1xnpmd7k useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_2__1xnpmd72 TextBubble_bubbleText__bqog00 reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l14 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_overflow_hidden__3xgq1lg4"
     >
       ERROR
     </span>
@@ -19,14 +19,14 @@ exports[`<Section /> > should match the snapshot background and text colour 1`] 
 
 exports[`<Section /> > should match the snapshot for standard label 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
     class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lk useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2s useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3w useBoxStyles_display_inlineBlock__3xgq1lge useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldp useBoxStyles_backgroundColours_gray900__3xgq1lea"
   >
     <span
-      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_center__3xgq1lg2 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_noWrap__1xnpmd7r useTextStyles_sizes_2__1xnpmd72 TextBubble_bubbleText__bqog00 reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l14 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_overflow_hidden__3xgq1lg4"
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_center__3xgq1lg2 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_2__1xnpmd72 TextBubble_bubbleText__bqog00 reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l14 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_overflow_hidden__3xgq1lg4"
     >
       PASS
     </span>

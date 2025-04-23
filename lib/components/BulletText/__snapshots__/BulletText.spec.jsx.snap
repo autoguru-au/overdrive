@@ -2,7 +2,7 @@
 
 exports[`<BulletText /> > should match snapshot for custom bullet text 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -53,7 +53,7 @@ exports[`<BulletText /> > should match snapshot for custom bullet text 1`] = `
 
 exports[`<BulletText /> > should match snapshot for default bullet text 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -91,7 +91,7 @@ exports[`<BulletText /> > should match snapshot for default bullet text 1`] = `
 
 exports[`<BulletText /> > should match snapshot for ordered bullet text 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -129,7 +129,7 @@ exports[`<BulletText /> > should match snapshot for ordered bullet text 1`] = `
 
 exports[`<BulletText /> > should match snapshot for primary bullet text with custom bullet character 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -167,7 +167,7 @@ exports[`<BulletText /> > should match snapshot for primary bullet text with cus
 
 exports[`<BulletText /> > should match snapshot for secondary bullet text with custom bullet character 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div

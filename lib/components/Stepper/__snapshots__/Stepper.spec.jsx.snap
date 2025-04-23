@@ -2,7 +2,7 @@
 
 exports[`<Stepper /> > should match snapshot with label formatter 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -93,7 +93,7 @@ exports[`<Stepper /> > should match snapshot with label formatter 1`] = `
 
 exports[`<Stepper /> > should match snapshot with props 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -184,7 +184,7 @@ exports[`<Stepper /> > should match snapshot with props 1`] = `
 
 exports[`<Stepper /> > should match snapshot without props 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div

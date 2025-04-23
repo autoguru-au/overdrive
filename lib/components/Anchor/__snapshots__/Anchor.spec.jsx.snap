@@ -2,7 +2,7 @@
 
 exports[`<Anchor /> > should match snapshot with label, icon and to props 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <a
@@ -34,7 +34,7 @@ exports[`<Anchor /> > should match snapshot with label, icon and to props 1`] = 
         class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
       >
         <span
-          class="reset_inlineText__1oah0223 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_link__1xnpmd7e useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_4__1xnpmd74"
+          class="reset_inlineText__1oah0223 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_link__1xnpmd7e useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_sizes_4__1xnpmd74"
         >
           Hello World!
         </span>
@@ -46,14 +46,14 @@ exports[`<Anchor /> > should match snapshot with label, icon and to props 1`] = 
 
 exports[`<Anchor /> > should match snapshot without label 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <a
     class="Anchor_root__um22v0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_link__1xnpmd7e reset_cursorPointer__1oah0222 reset_a__1oah022a useBoxStyles_display_inline__3xgq1lgd"
   >
     <span
-      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_link__1xnpmd7e useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_4__1xnpmd74"
+      class="reset_inlineText__1oah0223 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_link__1xnpmd7e useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_sizes_4__1xnpmd74"
     />
   </a>
 </div>
@@ -61,7 +61,7 @@ exports[`<Anchor /> > should match snapshot without label 1`] = `
 
 exports[`<Anchor /> > when custom component > should match snapshot with label, icon custom component 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <button
@@ -96,7 +96,7 @@ exports[`<Anchor /> > when custom component > should match snapshot with label, 
           class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
         >
           <span
-            class="reset_inlineText__1oah0223 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_link__1xnpmd7e useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_4__1xnpmd74"
+            class="reset_inlineText__1oah0223 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_link__1xnpmd7e useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_sizes_4__1xnpmd74"
           >
             Hello World!
           </span>
