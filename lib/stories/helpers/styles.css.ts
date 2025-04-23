@@ -8,12 +8,24 @@ export const titles = style({
 });
 
 export const labels = style({
-	marginBottom: overdriveTokens.space[4],
 	textTransform: 'capitalize',
+});
+
+export const codeVariable = style({
+	fontFamily: 'monospace',
+	fontSize: '9px',
+	fontWeight: 'bold',
+	lineHeight: '1.25',
 });
 
 export const small = style({
 	fontSize: 'small',
+});
+
+export const gridSwatches = style({
+	display: 'grid',
+	gridTemplateColumns: 'repeat(5, 1fr)',
+	gap: '2em',
 });
 
 export const hexPill = style({

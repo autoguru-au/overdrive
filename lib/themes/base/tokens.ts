@@ -12,7 +12,7 @@ import {
 } from './colours';
 
 /**
- * Here lie the global tokens for theming Overdrive.
+ * Here lie the global tokens for theming Overdrive
  */
 export const globalTokens = {
 	mode: 'light',
@@ -61,16 +61,16 @@ export const globalTokens = {
 			warning: colourMap.yellow['800'],
 		},
 		interactive: {
-			border: '',
-			borderDisabled: '',
-			borderMuted: '',
-			surfaceDisabled: '',
-			contentDisabled: '',
+			border: colourMap.gray['300'],
+			borderMuted: colourMap.gray['200'],
+			borderDisabled: colourMap.gray['100'],
+			surfaceDisabled: colourMap.gray['400'],
+			contentDisabled: colourMap.gray['600'],
 			link: overdriveTokens.color.content.info,
 			linkVisited: overdriveTokens.color.interactive.link,
-			overlayBg: '',
-			overlayContainer: '',
-			placeholder: '',
+			overlayBg: colourMap.gray['300'],
+			overlayContainer: colourMap.white,
+			placeholder: colourMap.gray['700'],
 			focusOutline: colourMap.blue['500'],
 		},
 	},
@@ -265,7 +265,6 @@ export const globalTokens = {
 		fontWeight: {
 			normal: '400',
 			semiBold: '500',
-			'semi-bold': '500',
 			bold: '700',
 		},
 	},
@@ -282,6 +281,9 @@ export const globalTokens = {
 			medium: '20px',
 			large: '32px',
 		},
+	},
+	opacity: {
+		overlayBg: '0.35',
 	},
 } satisfies ThemeTokens;
 
@@ -540,7 +542,6 @@ export const tokens = {
 		fontWeight: {
 			normal: overdriveTokens.typography.fontWeight.normal,
 			semiBold: overdriveTokens.typography.fontWeight.semiBold,
-			'semi-bold': overdriveTokens.typography.fontWeight.semiBold,
 			bold: overdriveTokens.typography.fontWeight.bold,
 		},
 	},
@@ -557,5 +558,8 @@ export const tokens = {
 			medium: overdriveTokens.icon.size.medium,
 			large: overdriveTokens.icon.size.large,
 		},
+	},
+	opacity: {
+		overlayBg: overdriveTokens.opacity.overlayBg,
 	},
 } satisfies ThemeTokens;

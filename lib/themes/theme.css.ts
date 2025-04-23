@@ -343,9 +343,7 @@ const THEME_CONTRACT = {
 		fontFamily: 'font-family',
 		fontWeight: {
 			normal: 'font-weight-normal',
-			// phase out camel case
-			semiBold: null,
-			'semi-bold': 'font-weight-semi-bold',
+			semiBold: 'font-weight-semi-bold',
 			bold: 'font-weight-bold',
 		},
 	},
@@ -362,6 +360,9 @@ const THEME_CONTRACT = {
 			medium: 'icon-size-md',
 			large: 'icon-size-lg',
 		},
+	},
+	opacity: {
+		overlayBg: 'opacity-overlay-bg',
 	},
 };
 
