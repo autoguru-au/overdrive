@@ -80,10 +80,23 @@ export const Stack = <C extends React.ElementType = 'div'>({
 	</div>
 );
 
-type ColourSwatchProps = Omit<BoxProps<'div'>, 'size'> &
-	VariantColourSwatchProps;
-export const ColourSwatch = ({ shape, size, ...props }: ColourSwatchProps) => (
-	<Box {...props} className={variantColourSwatch({ shape, size })}></Box>
+export const ColourSwatch = ({
+	children,
+	className,
+	shape,
+	size,
+	...props
+}: VariantColourSwatchProps & {
+	children?: React.ReactNode;
+	className?: string;
+	style?: React.CSSProperties;
+}) => (
+	<div
+		className={clsx(variantColourSwatch({ shape, size }), className)}
+		{...props}
+	>
+		{children}
+	</div>
 );
 
 export { type Sprinkles } from './sprinkles.css';

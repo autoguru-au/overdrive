@@ -2,13 +2,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
 import { Heading } from '../components/Heading';
-import { tokens } from '../themes/base/tokens';
+import { overdriveTokens } from '../themes';
+import { globalTokens } from '../themes/base/tokens';
 import { breakpoints } from '../themes/makeTheme';
 
 import { Box, Stack, type Sprinkles } from './helpers';
 import { labels, small, titles } from './helpers/styles.css';
 
-const { space } = tokens;
+const { space } = globalTokens;
 const spaceItems = Object.keys(space).filter((val) => val !== 'none');
 
 const SpaceScale = () => (
@@ -21,11 +22,13 @@ const SpaceScale = () => (
 			<Stack space="sm" alignItems="center" horizontal key={space}>
 				<p className={labels}>{space}</p>
 				<Box
-					background="black700"
 					height="5"
 					width={space as Sprinkles['width']}
+					style={{
+						backgroundColor: overdriveTokens.color.gamut.black[700],
+					}}
 				/>
-				<p className={small}>{tokens.space[space]}</p>
+				<p className={small}>{globalTokens.space[space]}</p>
 			</Stack>
 		))}
 	</Stack>
