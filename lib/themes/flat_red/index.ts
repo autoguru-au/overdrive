@@ -1,11 +1,11 @@
-import { themeContractVars } from '../theme.css';
+import { overdriveTokens } from '../theme.css';
 
-import { themeRef } from './theme.css';
+import { flatRedThemeClass } from './theme.css';
 import { tokens } from './tokens';
 
 export default {
 	name: 'flatRedTheme',
-	themeRef,
-	vars: themeContractVars,
+	themeRef: flatRedThemeClass,
+	vars: overdriveTokens,
 	tokens,
 };

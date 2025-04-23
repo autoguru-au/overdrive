@@ -1,4 +1,6 @@
-import type { BreakPoints, ColourMap, FlattenedColours } from '.';
+import { cssLayerTheme } from '../styles/layers.css';
+
+import type { BreakPoints, ColourMap, FlattenedColours, ThemeTokens } from '.';
 
 export const breakpoints: BreakPoints = {
 	mobile: '0px',
@@ -6,6 +8,14 @@ export const breakpoints: BreakPoints = {
 	desktop: '1024px', // IPad Pro width (1366 - 25%)
 	largeDesktop: '1920px', // 1080p width (1920 - 25%)
 };
+
+/**
+ * Wraps theme tokens with `theme` CSS layer using the vanilla-extract method
+ */
+export const themeTokensWithLayer = (tokens: ThemeTokens) => ({
+	'@layer': cssLayerTheme,
+	...tokens,
+});
 
 export const makeRuntimeTokens = (
 	runtimeBreakpoints: BreakPoints = breakpoints,
