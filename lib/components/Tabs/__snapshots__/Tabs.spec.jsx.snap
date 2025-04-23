@@ -13,12 +13,12 @@ exports[`<Tabs /> > should allow id overriding 1`] = `
     >
       <div
         aria-orientation="horizontal"
-        class="reset_block__1oah0224 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_flexWrap_nowrap__3xgq1lhr useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_noWrap__1xnpmd7s"
+        class="reset_block__1oah0224 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_flexWrap_nowrap__3xgq1lhr useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_noWrap__1xnpmd7r"
         role="tablist"
       >
         <button
           aria-selected="true"
-          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 useBoxStyles_display_inlineFlex__3xgq1lgc useBoxStyles_backgroundColours_transparent__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1 Tab_styledTab_active_true__11wt3mu3 Tab_styledTab_compound_0__11wt3mu4"
+          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 useBoxStyles_display_inlineFlex__3xgq1lgc useBoxStyles_backgroundColours_transparent__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_noWrap__1xnpmd7r useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1 Tab_styledTab_active_true__11wt3mu3 Tab_styledTab_compound_0__11wt3mu4"
           data-controls="tab-1-title-0"
           role="tab"
         >
@@ -30,7 +30,7 @@ exports[`<Tabs /> > should allow id overriding 1`] = `
         </button>
         <button
           aria-selected="false"
-          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 useBoxStyles_display_inlineFlex__3xgq1lgc useBoxStyles_backgroundColours_transparent__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1"
+          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 useBoxStyles_display_inlineFlex__3xgq1lgc useBoxStyles_backgroundColours_transparent__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_noWrap__1xnpmd7r useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1"
           data-controls="tab-2-title-1"
           role="tab"
           tabindex="-1"
@@ -43,7 +43,7 @@ exports[`<Tabs /> > should allow id overriding 1`] = `
         </button>
         <button
           aria-selected="false"
-          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 useBoxStyles_display_inlineFlex__3xgq1lgc useBoxStyles_backgroundColours_transparent__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1"
+          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 useBoxStyles_display_inlineFlex__3xgq1lgc useBoxStyles_backgroundColours_transparent__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_noWrap__1xnpmd7r useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1"
           data-controls="tab-3-title-2"
           role="tab"
           tabindex="-1"
@@ -103,12 +103,12 @@ exports[`<Tabs /> > should allow rendering indications 1`] = `
     >
       <div
         aria-orientation="horizontal"
-        class="reset_block__1oah0224 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_flexWrap_nowrap__3xgq1lhr useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_noWrap__1xnpmd7s"
+        class="reset_block__1oah0224 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_flexWrap_nowrap__3xgq1lhr useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_noWrap__1xnpmd7r"
         role="tablist"
       >
         <button
           aria-selected="true"
-          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 useBoxStyles_display_inlineFlex__3xgq1lgc useBoxStyles_backgroundColours_transparent__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1 Tab_styledTab_active_true__11wt3mu3 Tab_styledTab_compound_0__11wt3mu4"
+          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 useBoxStyles_display_inlineFlex__3xgq1lgc useBoxStyles_backgroundColours_transparent__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_noWrap__1xnpmd7r useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1 Tab_styledTab_active_true__11wt3mu3 Tab_styledTab_compound_0__11wt3mu4"
           data-controls="od-11-0-tab"
           role="tab"
         >
@@ -128,7 +128,7 @@ exports[`<Tabs /> > should allow rendering indications 1`] = `
               class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
             >
               <span
-                class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_center__3xgq1lg2 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_sizes_2__1xnpmd72 Tab_indication__11wt3mu7 Tab_indication_appearance_underlined__11wt3mu8 Tab_indication_active_true__11wt3mua Tab_indication_compound_0__11wt3mub"
+                class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_center__3xgq1lg2 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_2__1xnpmd72 Tab_indication__11wt3mu7 Tab_indication_appearance_underlined__11wt3mu8 Tab_indication_active_true__11wt3mua Tab_indication_compound_0__11wt3mub"
               >
                 5
               </span>
@@ -137,7 +137,7 @@ exports[`<Tabs /> > should allow rendering indications 1`] = `
         </button>
         <button
           aria-selected="false"
-          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 useBoxStyles_display_inlineFlex__3xgq1lgc useBoxStyles_backgroundColours_transparent__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1"
+          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 useBoxStyles_display_inlineFlex__3xgq1lgc useBoxStyles_backgroundColours_transparent__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_noWrap__1xnpmd7r useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1"
           data-controls="od-11-1-tab"
           role="tab"
           tabindex="-1"
@@ -158,7 +158,7 @@ exports[`<Tabs /> > should allow rendering indications 1`] = `
               class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
             >
               <span
-                class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_center__3xgq1lg2 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_sizes_2__1xnpmd72 Tab_indication__11wt3mu7 Tab_indication_appearance_underlined__11wt3mu8"
+                class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_center__3xgq1lg2 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_2__1xnpmd72 Tab_indication__11wt3mu7 Tab_indication_appearance_underlined__11wt3mu8"
               >
                 5
               </span>
@@ -167,7 +167,7 @@ exports[`<Tabs /> > should allow rendering indications 1`] = `
         </button>
         <button
           aria-selected="false"
-          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 useBoxStyles_display_inlineFlex__3xgq1lgc useBoxStyles_backgroundColours_transparent__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1"
+          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 useBoxStyles_display_inlineFlex__3xgq1lgc useBoxStyles_backgroundColours_transparent__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_noWrap__1xnpmd7r useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1"
           data-controls="od-11-2-tab"
           role="tab"
           tabindex="-1"
@@ -188,7 +188,7 @@ exports[`<Tabs /> > should allow rendering indications 1`] = `
               class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
             >
               <span
-                class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_center__3xgq1lg2 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_sizes_2__1xnpmd72 Tab_indication__11wt3mu7 Tab_indication_appearance_underlined__11wt3mu8"
+                class="reset_inlineText__1oah0223 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_center__3xgq1lg2 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_2__1xnpmd72 Tab_indication__11wt3mu7 Tab_indication_appearance_underlined__11wt3mu8"
               >
                 5
               </span>
@@ -244,12 +244,12 @@ exports[`<Tabs /> > should match snapshot (high level) 1`] = `
     >
       <div
         aria-orientation="horizontal"
-        class="reset_block__1oah0224 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_flexWrap_nowrap__3xgq1lhr useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_noWrap__1xnpmd7s"
+        class="reset_block__1oah0224 useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_flexWrap_nowrap__3xgq1lhr useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_noWrap__1xnpmd7r"
         role="tablist"
       >
         <button
           aria-selected="true"
-          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 useBoxStyles_display_inlineFlex__3xgq1lgc useBoxStyles_backgroundColours_transparent__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1 Tab_styledTab_active_true__11wt3mu3 Tab_styledTab_compound_0__11wt3mu4"
+          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 useBoxStyles_display_inlineFlex__3xgq1lgc useBoxStyles_backgroundColours_transparent__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_noWrap__1xnpmd7r useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1 Tab_styledTab_active_true__11wt3mu3 Tab_styledTab_compound_0__11wt3mu4"
           data-controls="od-1-0-tab"
           role="tab"
         >
@@ -261,7 +261,7 @@ exports[`<Tabs /> > should match snapshot (high level) 1`] = `
         </button>
         <button
           aria-selected="false"
-          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 useBoxStyles_display_inlineFlex__3xgq1lgc useBoxStyles_backgroundColours_transparent__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1"
+          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 useBoxStyles_display_inlineFlex__3xgq1lgc useBoxStyles_backgroundColours_transparent__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_noWrap__1xnpmd7r useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1"
           data-controls="od-1-1-tab"
           role="tab"
           tabindex="-1"
@@ -274,7 +274,7 @@ exports[`<Tabs /> > should match snapshot (high level) 1`] = `
         </button>
         <button
           aria-selected="false"
-          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 useBoxStyles_display_inlineFlex__3xgq1lgc useBoxStyles_backgroundColours_transparent__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1"
+          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 useBoxStyles_display_inlineFlex__3xgq1lgc useBoxStyles_backgroundColours_transparent__3xgq1lfl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_noWrap__1xnpmd7r useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1"
           data-controls="od-1-2-tab"
           role="tab"
           tabindex="-1"

@@ -328,7 +328,7 @@ exports[`<RadioButton /> > when with component child > should match the snapshot
         for="«rt»"
       >
         <h1
-          class="reset_blockText__1oah022d useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_sizes_8__1xnpmd78"
+          class="reset_blockText__1oah022d useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_8__1xnpmd78"
         >
           Hello checkbox
         </h1>
@@ -340,7 +340,7 @@ exports[`<RadioButton /> > when with component child > should match the snapshot
 
 exports[`<RadioButton /> > when with component child > should render the component child 1`] = `
 <h1
-  class="reset_blockText__1oah022d useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_sizes_8__1xnpmd78"
+  class="reset_blockText__1oah022d useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_8__1xnpmd78"
 >
   Hello checkbox
 </h1>

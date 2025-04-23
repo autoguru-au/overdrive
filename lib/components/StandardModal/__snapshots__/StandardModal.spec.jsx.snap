@@ -49,7 +49,7 @@ exports[`<StandardModal /> > should match snapshot with title and body 1`] = `
                 id="od-4"
               >
                 <h4
-                  class="reset_blockText__1oah022d useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_sizes_4__1xnpmd74"
+                  class="reset_blockText__1oah022d useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_4__1xnpmd74"
                 >
                   Hello World!
                 </h4>
@@ -150,7 +150,7 @@ exports[`<StandardModal /> > should match snapshot without title and body 1`] = 
                 id="od-3"
               >
                 <h4
-                  class="reset_blockText__1oah022d useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_sizes_4__1xnpmd74"
+                  class="reset_blockText__1oah022d useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_4__1xnpmd74"
                 />
               </div>
               <button
