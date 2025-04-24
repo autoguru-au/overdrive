@@ -2,7 +2,7 @@
 
 exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -307,7 +307,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
 
 exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slider colour 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div

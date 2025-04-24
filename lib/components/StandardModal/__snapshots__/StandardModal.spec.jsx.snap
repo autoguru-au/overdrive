@@ -2,17 +2,17 @@
 
 exports[`<StandardModal /> > should match snapshot with title and body 1`] = `
 <body
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   style="overflow: hidden;"
 >
   <div>
     <div
-      class="vars_OD_Base__1f5yyro0"
+      class="theme_OD_Base__j49br80"
       data-od-component-provider=""
     />
   </div>
   <div
-    class="vars_OD_Base__1f5yyro0"
+    class="theme_OD_Base__j49br80"
   >
     <div
       data-focus-guard="true"
@@ -103,17 +103,17 @@ exports[`<StandardModal /> > should match snapshot with title and body 1`] = `
 
 exports[`<StandardModal /> > should match snapshot without title and body 1`] = `
 <body
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   style="overflow: hidden;"
 >
   <div>
     <div
-      class="vars_OD_Base__1f5yyro0"
+      class="theme_OD_Base__j49br80"
       data-od-component-provider=""
     />
   </div>
   <div
-    class="vars_OD_Base__1f5yyro0"
+    class="theme_OD_Base__j49br80"
   >
     <div
       data-focus-guard="true"

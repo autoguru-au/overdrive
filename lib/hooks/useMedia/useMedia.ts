@@ -1,7 +1,7 @@
 import { useCallback, useLayoutEffect, useMemo, useState } from 'react';
 
 import { useRuntimeTokens } from '../../components/OverdriveProvider';
-import type { BreakPoints } from '../../themes/tokens';
+import type { BreakPoints } from '../../themes';
 import { isBrowser } from '../../utils';
 
 export const useMedia = (

@@ -2,7 +2,7 @@ import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
 import { styledIntentionalElement } from '../../styles/intentional.css';
 import { fontSize, fontWeight } from '../../styles/typography.css';
-import { themeContractVars as tokens } from '../../themes/theme.css';
+import { overdriveTokens as tokens } from '../../themes/theme.css';
 
 export const styledBadge = recipe({
 	base: [

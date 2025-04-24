@@ -1,4 +1,35 @@
+import type { CSSVarFunction } from '@vanilla-extract/private';
 import { colord } from 'colord';
+
+/**
+ * Utility type that extracts the raw token type from a vanilla-extract theme contract.
+ * This allows you to use the same type structure as the theme contract but with raw values
+ * instead of CSS var functions.
+ *
+ * @example
+ * ```ts
+ * import { overdriveTokens } from './theme.css';
+ *
+ * type Tokens = TokensFromContract<typeof overdriveTokens>;
+ *
+ * // Now you can use this type for your token objects
+ * const myTokens: Tokens = {
+ *   mode: 'light',
+ *   body: {
+ *     backgroundColour: '#ffffff',
+ *     colour: '#000000'
+ *   }
+ *   // ... rest of the tokens
+ * };
+ * ```
+ */
+export type TokensFromContract<T> = {
+	[P in keyof T]: T[P] extends CSSVarFunction
+		? string
+		: T[P] extends Record<string, unknown>
+			? TokensFromContract<T[P]>
+			: T[P];
+};
 
 interface ShadedColourProps {
 	colour: string;

@@ -1,6 +1,6 @@
 import { styleVariants } from '@vanilla-extract/css';
 
-import { themeContractVars as vars } from '../../themes/theme.css';
+import { overdriveTokens as vars } from '../../themes/theme.css';
 import { makeResponsiveStyle } from '../../utils/responsiveProps.css';
 
 export const space = {

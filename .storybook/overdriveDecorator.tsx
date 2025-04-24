@@ -5,11 +5,11 @@ import { Box } from '../lib/components/Box';
 import { Heading } from '../lib/components/Heading';
 import { OverdriveProvider } from '../lib/components/OverdriveProvider';
 import { Stack } from '../lib/components/Stack';
-import * as allThemes from '../lib/themes';
+import * as themeConfig from '../lib/themes';
 import { breakpoints } from '../lib/themes/makeTheme';
 import { container } from '../lib/themes/theme.css';
 
-const themes = allThemes;
+const { themes } = themeConfig;
 const overrideColors = {
 	bright: {
 		primaryBackground: '#e5bc01',
@@ -36,7 +36,8 @@ export const useStorybookDecorator = (Story, context) => {
 
 	return (
 		<OverdriveProvider
-			theme={themes[context.globals.theme]}
+			// eslint-disable-next-line import/namespace
+			theme={themeConfig[context.globals.theme]}
 			breakpoints={breakpoints}
 			colorOverrides={customColours}
 			portalMountPoint={portalRef}
@@ -53,19 +54,13 @@ export const useStorybookDecorator = (Story, context) => {
 export const useChromaticDecorator = (Story, context) => {
 	return (
 		<>
-			{Object.keys(themes).map((themeName) => (
-				<div
-					key={themes[themeName].name}
-					data-theme={themes[themeName].name}
-				>
-					<OverdriveProvider
-						noBodyLevelTheming
-						theme={themes[themeName]}
-					>
+			{themes.map((theme) => (
+				<div key={theme.name} data-theme={theme.name}>
+					<OverdriveProvider noBodyLevelTheming theme={theme}>
 						<Box width="full" padding="5">
 							<Stack width="full" space="3">
 								<Heading as="h5" colour="light">
-									Theme :: {themes[themeName].name}
+									Theme :: {theme.name}
 								</Heading>
 								<Story {...context} />
 							</Stack>

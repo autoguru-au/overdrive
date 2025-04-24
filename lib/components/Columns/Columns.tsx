@@ -5,7 +5,7 @@ import {
 	useNegativeMarginLeft,
 	useNegativeMarginTop,
 } from '../../hooks/useNegativeMargin/useNegativeMargin';
-import { Tokens } from '../../themes/tokens';
+import type { ThemeTokens as Tokens } from '../../themes';
 import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
 import { ResponsiveProp } from '../../utils/responsiveProps.css';
 import { Box, type BoxProps } from '../Box';

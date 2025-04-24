@@ -26,15 +26,15 @@ const IconGrid = () => {
 						return (
 							<Box
 								as="li"
-								background={{
-									initial: 'white',
-									hover: 'gray800',
-								}}
+								// background={{
+								// 	initial: 'white',
+								// 	hover: 'gray800',
+								// }}
 								borderColor="gray"
 								borderStyle="solid"
 								borderWidth="2"
 								borderRadius="md"
-								color={{ initial: 'gray700', hover: 'white' }}
+								// color={{ initial: 'gray700', hover: 'white' }}
 								display="flex"
 								flexDirection="column"
 								alignItems="center"
@@ -46,15 +46,14 @@ const IconGrid = () => {
 									listStyle: 'none',
 									width: '140px',
 									height: '120px',
+									textAlign: 'center',
 								}}
 								className={transitionColours}
 							>
 								<Icon icon={icon} size="large" />
 								<div
 									className={sprinkles({
-										fontSize: 'sm',
 										marginTop: '4',
-										textAlign: 'center',
 									})}
 								>
 									{name

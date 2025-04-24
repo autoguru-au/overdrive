@@ -2,7 +2,7 @@
 
 exports[`<Button /> > should match snapshot for default button 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <button
@@ -18,7 +18,7 @@ exports[`<Button /> > should match snapshot for default button 1`] = `
 
 exports[`<Button /> > when as button > should use html button element by default 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <button
@@ -34,7 +34,7 @@ exports[`<Button /> > when as button > should use html button element by default
 
 exports[`<Button /> > when colour variants > should match snapshot for Danger button 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <button
@@ -50,7 +50,7 @@ exports[`<Button /> > when colour variants > should match snapshot for Danger bu
 
 exports[`<Button /> > when colour variants > should match snapshot for Primary button 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <button
@@ -66,7 +66,7 @@ exports[`<Button /> > when colour variants > should match snapshot for Primary b
 
 exports[`<Button /> > when colour variants > should match snapshot for Secondary button 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <button
@@ -82,7 +82,7 @@ exports[`<Button /> > when colour variants > should match snapshot for Secondary
 
 exports[`<Button /> > when custom component > should use html anchor element if href value exists 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <a
@@ -98,7 +98,7 @@ exports[`<Button /> > when custom component > should use html anchor element if 
 
 exports[`<Button /> > when isFullWidth > should match snapshot 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <button
@@ -114,7 +114,7 @@ exports[`<Button /> > when isFullWidth > should match snapshot 1`] = `
 
 exports[`<Button /> > when loading > should match snapshot for default button 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <button
@@ -158,7 +158,7 @@ exports[`<Button /> > when loading > should match snapshot for default button 1`
 
 exports[`<Button /> > when loading > should match snapshot for medium button 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <button
@@ -202,7 +202,7 @@ exports[`<Button /> > when loading > should match snapshot for medium button 1`]
 
 exports[`<Button /> > when loading > should match snapshot for small button 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <button
@@ -246,7 +246,7 @@ exports[`<Button /> > when loading > should match snapshot for small button 1`] 
 
 exports[`<Button /> > when rounded > should match snapshot 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <button
@@ -262,7 +262,7 @@ exports[`<Button /> > when rounded > should match snapshot 1`] = `
 
 exports[`<Button /> > when size variant > should match snapshot for medium button 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <button
@@ -278,7 +278,7 @@ exports[`<Button /> > when size variant > should match snapshot for medium butto
 
 exports[`<Button /> > when size variant > should match snapshot for small button 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <button

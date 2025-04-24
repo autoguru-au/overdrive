@@ -2,7 +2,7 @@
 
 exports[`<TextLink /> > should allow as override 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <a
@@ -20,7 +20,7 @@ exports[`<TextLink /> > should allow as override 1`] = `
 
 exports[`<TextLink /> > should match the snapshot 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <a

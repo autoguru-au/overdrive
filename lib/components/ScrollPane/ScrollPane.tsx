@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { ComponentProps, forwardRef, FunctionComponent } from 'react';
 
-import { Tokens } from '../../themes/tokens';
+import { ThemeTokens as Tokens } from '../../themes';
 import { Box } from '../Box';
 
 import * as styles from './ScrollPane.css';

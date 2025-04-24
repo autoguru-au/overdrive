@@ -1,89 +1,20 @@
 import { buildColourGamut } from '../makeTheme';
-import { ColourMap, Tokens } from '../tokens';
+import { overdriveTokens, type ThemeTokens } from '../theme.css';
 
-export const baseThemeColours: ColourMap = {
-	black: {
-		'900': '#222222',
-		'800': '#2A2C2A',
-		'700': '#444644',
-		'600': '#626262',
-		'500': '#808080',
-		'400': '#ADB1B5',
-		'300': '#D4D9DD',
-		'200': '#DDE0E3',
-		'100': '#E4E4E4',
-	},
+import {
+	colourMap,
+	colourMapWithoutWhite,
+	secondaryForeground,
+} from './colours';
 
-	gray: {
-		'900': '#212338',
-		'800': '#34384c',
-		'700': '#484c5f',
-		'600': '#5c6172',
-		'500': '#6c7283',
-		'400': '#8f95a1',
-		'300': '#d4d9dd',
-		'200': '#eef0f2',
-		'100': '#fafbfc',
-	},
-
-	green: {
-		'900': '#078171',
-		'800': '#05987a',
-		'700': '#03af83',
-		'600': '#01c68c',
-		'500': '#00dd95',
-		'400': '#36e5aa',
-		'300': '#71edc2',
-		'200': '#e3f8f0',
-		'100': '#f2fdf9',
-	},
-
-	blue: {
-		'900': '#0d47a1',
-		'800': '#0d4bb7',
-		'700': '#0d50ce',
-		'600': '#0d54e5',
-		'500': '#0d59fc',
-		'400': '#4680fc',
-		'300': '#80a7fd',
-		'200': '#e1edfe',
-		'100': '#f3f8ff',
-	},
-
-	yellow: {
-		'900': '#f38e29',
-		'800': '#f69a1f',
-		'700': '#f9a715',
-		'600': '#fcb30b',
-		'500': '#ffc001',
-		'400': '#ffcf3d',
-		'300': '#ffde79',
-		'200': '#ffedb5',
-		'100': '#fffcf2',
-	},
-
-	red: {
-		'900': '#780502',
-		'800': '#96110e',
-		'700': '#b51e1a',
-		'600': '#d42b26',
-		'500': '#e12e28',
-		'400': '#e85f5b',
-		'300': '#ef918e',
-		'200': '#ffd4d4',
-		'100': '#fdf4f4',
-	},
-};
-
-export const defaultGamut = buildColourGamut(baseThemeColours);
-
-const white = '#fff';
-const secondaryForeground = baseThemeColours.gray['900'];
-export const tokens: Tokens = {
+/**
+ * Here lie the global tokens for theming Overdrive
+ */
+export const tokens = {
 	mode: 'light',
 	body: {
-		backgroundColour: white,
-		colour: baseThemeColours.gray['900'],
+		backgroundColour: colourMap.white,
+		colour: colourMap.gray['900'],
 	},
 	contentWidth: {
 		small: '592px',
@@ -102,102 +33,139 @@ export const tokens: Tokens = {
 		'9': '96px',
 		none: '0px',
 	},
+	color: {
+		gamut: colourMap,
+		surface: {
+			body: colourMap.white,
+			accent: colourMap.green['400'],
+			hard: colourMap.gray['900'],
+			soft: colourMap.gray['700'],
+			success: colourMap.green['700'],
+			info: colourMap.blue['600'],
+			danger: colourMap.red['600'],
+			warning: colourMap.yellow['800'],
+		},
+		content: {
+			onBody: `${overdriveTokens.color.content.hard}`,
+			onSurface: colourMap.white,
+			accent: `${overdriveTokens.color.surface.accent}`,
+			hard: colourMap.gray['900'],
+			soft: colourMap.gray['700'],
+			info: colourMap.blue['600'],
+			danger: colourMap.red['600'],
+			success: colourMap.green['700'],
+			warning: colourMap.yellow['800'],
+		},
+		interactive: {
+			border: colourMap.gray['300'],
+			borderMuted: colourMap.gray['200'],
+			borderDisabled: colourMap.gray['100'],
+			surfaceDisabled: colourMap.gray['400'],
+			contentDisabled: colourMap.gray['600'],
+			link: `${overdriveTokens.color.content.info}`,
+			linkVisited: `${overdriveTokens.color.interactive.link}`,
+			overlayBg: colourMap.gray['300'],
+			overlayContainer: colourMap.white,
+			placeholder: colourMap.gray['700'],
+			focusOutline: colourMap.blue['500'],
+		},
+	},
 	colours: {
 		gamut: {
-			...defaultGamut,
-			white,
+			...buildColourGamut(colourMapWithoutWhite),
+			white: colourMap.white,
 		},
 		foreground: {
-			body: baseThemeColours.gray['900'],
-			link: baseThemeColours.blue['500'],
+			body: colourMap.gray['900'],
+			link: colourMap.blue['500'],
 		},
 		background: {
-			body: white,
-			light: baseThemeColours.gray['200'],
-			neutral: baseThemeColours.gray['300'],
-			neutralDark: baseThemeColours.gray['800'],
+			body: colourMap.white,
+			light: colourMap.gray['200'],
+			neutral: colourMap.gray['300'],
+			neutralDark: colourMap.gray['800'],
 		},
 		intent: {
 			primary: {
 				background: {
-					standard: baseThemeColours.green['600'],
-					mild: baseThemeColours.green['200'],
-					strong: baseThemeColours.green['700'],
+					standard: colourMap.green['600'],
+					mild: colourMap.green['200'],
+					strong: colourMap.green['700'],
 				},
-				foreground: white,
-				border: baseThemeColours.green['900'],
+				foreground: colourMap.white,
+				border: colourMap.green['900'],
 			},
 			brand: {
 				background: {
-					standard: baseThemeColours.green['700'],
-					mild: baseThemeColours.green['200'],
-					strong: baseThemeColours.green['900'],
+					standard: colourMap.green['700'],
+					mild: colourMap.green['200'],
+					strong: colourMap.green['900'],
 				},
-				foreground: white,
-				border: baseThemeColours.gray['900'],
+				foreground: colourMap.white,
+				border: colourMap.gray['900'],
 			},
 			secondary: {
 				background: {
-					standard: white,
-					mild: white,
-					strong: baseThemeColours.gray['200'],
+					standard: colourMap.white,
+					mild: colourMap.white,
+					strong: colourMap.gray['200'],
 				},
 				foreground: secondaryForeground,
-				border: baseThemeColours.gray['300'],
+				border: colourMap.gray['300'],
 			},
 			shine: {
 				background: {
-					standard: baseThemeColours.gray['200'],
-					mild: baseThemeColours.gray['100'],
-					strong: baseThemeColours.gray['300'],
+					standard: colourMap.gray['200'],
+					mild: colourMap.gray['100'],
+					strong: colourMap.gray['300'],
 				},
-				foreground: baseThemeColours.yellow['500'],
-				border: baseThemeColours.gray['300'],
+				foreground: colourMap.yellow['500'],
+				border: colourMap.gray['300'],
 			},
 			danger: {
 				background: {
-					standard: baseThemeColours.red['600'],
-					mild: baseThemeColours.red['100'],
-					strong: baseThemeColours.red['800'],
+					standard: colourMap.red['600'],
+					mild: colourMap.red['100'],
+					strong: colourMap.red['800'],
 				},
-				foreground: white,
-				border: baseThemeColours.red['800'],
+				foreground: colourMap.white,
+				border: colourMap.red['800'],
 			},
 			warning: {
 				background: {
-					standard: baseThemeColours.yellow['800'],
-					mild: baseThemeColours.yellow['100'],
-					strong: baseThemeColours.yellow['900'],
+					standard: colourMap.yellow['800'],
+					mild: colourMap.yellow['100'],
+					strong: colourMap.yellow['900'],
 				},
-				foreground: white,
-				border: baseThemeColours.yellow['900'],
+				foreground: colourMap.white,
+				border: colourMap.yellow['900'],
 			},
 			neutral: {
 				background: {
-					standard: baseThemeColours.gray['700'],
-					mild: baseThemeColours.gray['200'],
-					strong: baseThemeColours.gray['900'],
+					standard: colourMap.gray['700'],
+					mild: colourMap.gray['200'],
+					strong: colourMap.gray['900'],
 				},
-				foreground: white,
-				border: baseThemeColours.gray['900'],
+				foreground: colourMap.white,
+				border: colourMap.gray['900'],
 			},
 			success: {
 				background: {
-					standard: baseThemeColours.green['700'],
-					mild: baseThemeColours.green['200'],
-					strong: baseThemeColours.green['900'],
+					standard: colourMap.green['700'],
+					mild: colourMap.green['200'],
+					strong: colourMap.green['900'],
 				},
-				foreground: white,
-				border: baseThemeColours.green['900'],
+				foreground: colourMap.white,
+				border: colourMap.green['900'],
 			},
 			information: {
 				background: {
-					standard: baseThemeColours.blue['800'],
-					mild: baseThemeColours.blue['200'],
-					strong: baseThemeColours.blue['900'],
+					standard: colourMap.blue['800'],
+					mild: colourMap.blue['200'],
+					strong: colourMap.blue['900'],
 				},
-				foreground: white,
-				border: baseThemeColours.blue['900'],
+				foreground: colourMap.white,
+				border: colourMap.blue['900'],
 			},
 		},
 	},
@@ -217,9 +185,9 @@ export const tokens: Tokens = {
 			'3': '4px',
 		},
 		colours: {
-			light: baseThemeColours.gray['200'],
-			gray: baseThemeColours.gray['300'],
-			dark: baseThemeColours.gray['900'],
+			light: colourMap.gray['200'],
+			gray: colourMap.gray['300'],
+			dark: colourMap.gray['900'],
 		},
 		radius: {
 			none: 'none',
@@ -274,20 +242,20 @@ export const tokens: Tokens = {
 			},
 		},
 		colour: {
-			primary: baseThemeColours.green['600'],
-			secondary: baseThemeColours.gray['700'],
-			brand: baseThemeColours.green['600'],
-			shine: baseThemeColours.yellow['500'],
-			link: baseThemeColours.blue['500'],
-			dark: baseThemeColours.gray['900'],
-			white,
-			muted: baseThemeColours.gray['400'],
-			neutral: baseThemeColours.gray['700'],
-			light: baseThemeColours.gray['600'],
-			danger: baseThemeColours.red['600'],
-			warning: baseThemeColours.yellow['800'],
-			success: baseThemeColours.green['600'],
-			information: baseThemeColours.blue['500'],
+			primary: colourMap.green['600'],
+			secondary: colourMap.gray['700'],
+			brand: colourMap.green['600'],
+			shine: colourMap.yellow['500'],
+			link: colourMap.blue['500'],
+			dark: colourMap.gray['900'],
+			white: colourMap.white,
+			muted: colourMap.gray['400'],
+			neutral: colourMap.gray['700'],
+			light: colourMap.gray['600'],
+			danger: colourMap.red['600'],
+			warning: colourMap.yellow['800'],
+			success: colourMap.green['600'],
+			information: colourMap.blue['500'],
 		},
 		fontFamily: 'AvertaStandard, system-ui, sans-serif',
 		fontWeight: {
@@ -310,4 +278,7 @@ export const tokens: Tokens = {
 			large: '32px',
 		},
 	},
-};
+	opacity: {
+		overlayBg: '0.35',
+	},
+} satisfies ThemeTokens;

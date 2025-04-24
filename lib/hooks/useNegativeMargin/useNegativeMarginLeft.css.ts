@@ -1,4 +1,4 @@
-import { themeContractVars as vars } from '../../themes/theme.css';
+import { overdriveTokens as vars } from '../../themes/theme.css';
 import { makeResponsiveStyle } from '../../utils/responsiveProps.css';
 
 export const negativeMarginLeft = makeResponsiveStyle(vars.space, (value) => ({
