@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
 import { Heading } from '../components/Heading';
+import { overdriveTokens } from '../themes';
 import { tokens } from '../themes/base/tokens';
 import { breakpoints } from '../themes/makeTheme';
 
@@ -21,9 +22,11 @@ const SpaceScale = () => (
 			<Stack space="sm" alignItems="center" horizontal key={space}>
 				<p className={labels}>{space}</p>
 				<Box
-					background="black700"
 					height="5"
 					width={space as Sprinkles['width']}
+					style={{
+						backgroundColor: overdriveTokens.color.gamut.black[700],
+					}}
 				/>
 				<p className={small}>{tokens.space[space]}</p>
 			</Stack>

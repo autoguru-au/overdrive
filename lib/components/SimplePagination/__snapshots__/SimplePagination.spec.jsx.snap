@@ -2,7 +2,7 @@
 
 exports[`<SimplePagination /> > should match snapshot for hasNext 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <nav
@@ -75,7 +75,7 @@ exports[`<SimplePagination /> > should match snapshot for hasNext 1`] = `
 
 exports[`<SimplePagination /> > should match snapshot for hasNext and hasPrevious 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <nav
@@ -147,7 +147,7 @@ exports[`<SimplePagination /> > should match snapshot for hasNext and hasPreviou
 
 exports[`<SimplePagination /> > should match snapshot for hasPrevious 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <nav

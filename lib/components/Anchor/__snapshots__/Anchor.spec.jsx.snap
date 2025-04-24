@@ -2,7 +2,7 @@
 
 exports[`<Anchor /> > should match snapshot with label, icon and to props 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <a
@@ -46,7 +46,7 @@ exports[`<Anchor /> > should match snapshot with label, icon and to props 1`] = 
 
 exports[`<Anchor /> > should match snapshot without label 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <a
@@ -61,7 +61,7 @@ exports[`<Anchor /> > should match snapshot without label 1`] = `
 
 exports[`<Anchor /> > when custom component > should match snapshot with label, icon custom component 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <button

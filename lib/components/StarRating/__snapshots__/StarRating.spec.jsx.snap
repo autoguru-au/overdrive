@@ -2,7 +2,7 @@
 
 exports[`<StarRating /> > should match snapshot for small size 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -136,7 +136,7 @@ exports[`<StarRating /> > should match snapshot for small size 1`] = `
 
 exports[`<StarRating /> > should match snapshot with label 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -270,7 +270,7 @@ exports[`<StarRating /> > should match snapshot with label 1`] = `
 
 exports[`<StarRating /> > should match snapshot with value 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -404,7 +404,7 @@ exports[`<StarRating /> > should match snapshot with value 1`] = `
 
 exports[`<StarRating /> > should match snapshot without value 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div

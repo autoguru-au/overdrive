@@ -1,7 +1,7 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
 import { focusOutline } from '../../../styles/focusOutline.css';
-import { themeContractVars as vars } from '../../../themes/theme.css';
+import { overdriveTokens as vars } from '../../../themes/theme.css';
 
 export const root = style({
 	cursor: 'pointer',

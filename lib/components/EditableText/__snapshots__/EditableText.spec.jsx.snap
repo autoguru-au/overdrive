@@ -2,7 +2,7 @@
 
 exports[`<EditableText /> > should match snapshot as date input 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -20,7 +20,7 @@ exports[`<EditableText /> > should match snapshot as date input 1`] = `
 
 exports[`<EditableText /> > should match snapshot for default bullet text 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -38,7 +38,7 @@ exports[`<EditableText /> > should match snapshot for default bullet text 1`] = 
 
 exports[`<EditableText /> > should match snapshot with custom size 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div

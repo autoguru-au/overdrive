@@ -3,15 +3,15 @@ import clsx from 'clsx';
 import React from 'react';
 
 import { Heading } from '../components/Heading';
-import { baseThemeColours } from '../themes/base/tokens';
-import type { ColourGamut, ColourValue } from '../themes/tokens';
+import { overdriveTokens, type ColourValue } from '../themes';
+import { colourMapWithoutWhite } from '../themes/base/colours';
 
 import { ColourSwatch, Stack } from './helpers';
 import { sprinkles } from './helpers/sprinkles.css';
 import { labels, hexPill } from './helpers/styles.css';
 
 interface SwatchProps {
-	colour: ColourGamut;
+	colour: string;
 	hex?: string;
 	hue?: string;
 }
@@ -24,7 +24,12 @@ const Swatch = ({ colour, hex, hue }: SwatchProps) => (
 			position: 'relative',
 		}}
 	>
-		<ColourSwatch background={colour} size="lg">
+		<ColourSwatch
+			size="lg"
+			style={{
+				backgroundColor: overdriveTokens.color.gamut[hue!][colour],
+			}}
+		>
 			<div className={hexPill}>{hex}</div>
 		</ColourSwatch>
 		{hue && colour.replace(hue, '')}
@@ -40,19 +45,14 @@ const PaletteSwatches = ({ hue, shades }: PaletteSwatchesProps) => (
 		{Object.entries(shades)
 			.reverse()
 			.map(([colour, hex]) => (
-				<Swatch
-					colour={`${hue}${colour}` as ColourGamut}
-					hex={hex}
-					hue={hue}
-					key={colour}
-				/>
+				<Swatch colour={colour} hex={hex} hue={hue} key={hex} />
 			))}
 	</Stack>
 );
 
 const Palettes = () => (
 	<Stack horizontal space="md">
-		{['green', 'blue', 'yellow', 'red', 'gray', 'black'].map((hue) => (
+		{Object.keys(colourMapWithoutWhite).map((hue) => (
 			<div key={hue}>
 				<Heading
 					is="h3"
@@ -60,7 +60,10 @@ const Palettes = () => (
 				>
 					{hue}
 				</Heading>
-				<PaletteSwatches hue={hue} shades={baseThemeColours[hue]} />
+				<PaletteSwatches
+					hue={hue}
+					shades={colourMapWithoutWhite[hue]}
+				/>
 			</div>
 		))}
 	</Stack>

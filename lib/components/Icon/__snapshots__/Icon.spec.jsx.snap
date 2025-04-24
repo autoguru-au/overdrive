@@ -2,7 +2,7 @@
 
 exports[`<Icon /> > should match snapshot for same icon 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <span

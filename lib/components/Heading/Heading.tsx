@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Tokens } from '../../themes/tokens';
+import type { ThemeTokens as Tokens } from '../../themes';
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box, type BoxProps } from '../Box';

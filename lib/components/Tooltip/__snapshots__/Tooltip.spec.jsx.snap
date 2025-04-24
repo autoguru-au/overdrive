@@ -2,11 +2,11 @@
 
 exports[`<Tolltip /> > should match snapshot when closed 1`] = `
 <body
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
 >
   <div>
     <div
-      class="vars_OD_Base__1f5yyro0"
+      class="theme_OD_Base__j49br80"
       data-od-component-provider=""
     >
       <div>
@@ -15,7 +15,7 @@ exports[`<Tolltip /> > should match snapshot when closed 1`] = `
     </div>
   </div>
   <div
-    class="vars_OD_Base__1f5yyro0"
+    class="theme_OD_Base__j49br80"
   >
     <div
       aria-hidden="true"
@@ -27,11 +27,11 @@ exports[`<Tolltip /> > should match snapshot when closed 1`] = `
 
 exports[`<Tolltip /> > should match snapshot when opened 1`] = `
 <body
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
 >
   <div>
     <div
-      class="vars_OD_Base__1f5yyro0"
+      class="theme_OD_Base__j49br80"
       data-od-component-provider=""
     >
       <div>
@@ -40,7 +40,7 @@ exports[`<Tolltip /> > should match snapshot when opened 1`] = `
     </div>
   </div>
   <div
-    class="vars_OD_Base__1f5yyro0"
+    class="theme_OD_Base__j49br80"
   >
     <div
       aria-hidden="false"

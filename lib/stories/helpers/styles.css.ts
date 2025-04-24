@@ -1,19 +1,31 @@
 import { style } from '@vanilla-extract/css';
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
-import { themeContractVars as vars } from '../../themes/theme.css';
+import { overdriveTokens } from '../../themes';
 
 export const titles = style({
 	marginTop: '11px',
 });
 
 export const labels = style({
-	marginBottom: vars.space[4],
 	textTransform: 'capitalize',
+});
+
+export const codeVariable = style({
+	color: overdriveTokens.color.gamut.gray[600],
+	fontFamily: 'monospace',
+	fontSize: '13px',
+	lineHeight: '1.25',
 });
 
 export const small = style({
 	fontSize: 'small',
+});
+
+export const gridSwatches = style({
+	display: 'grid',
+	gridTemplateColumns: 'repeat(5, 1fr)',
+	gap: '2em',
 });
 
 export const hexPill = style({
@@ -36,20 +48,29 @@ export const transitionColours = style({
 export const variantColourSwatch = recipe({
 	base: {
 		position: 'relative',
-		borderColor: vars.border.colours.light,
+		borderColor: overdriveTokens.color.gamut.gray[200],
 		borderStyle: 'solid',
-		borderWidth: vars.border.width[1],
+		borderWidth: overdriveTokens.border.width[1],
 	},
 	variants: {
 		size: {
-			sm: { height: vars.space[7], width: vars.space[7] },
-			md: { height: vars.space[8], width: vars.space[8] },
-			lg: { height: vars.space[9], width: vars.space[9] },
+			sm: {
+				height: overdriveTokens.space[7],
+				width: overdriveTokens.space[7],
+			},
+			md: {
+				height: overdriveTokens.space[8],
+				width: overdriveTokens.space[8],
+			},
+			lg: {
+				height: overdriveTokens.space[9],
+				width: overdriveTokens.space[9],
+			},
 		},
 		shape: {
 			circle: { borderRadius: '100%' },
 			rectangle: {
-				borderRadius: vars.border.radius['md'],
+				borderRadius: overdriveTokens.border.radius['md'],
 				width: '140px',
 			},
 		},

@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { FunctionComponent, memo, NamedExoticComponent } from 'react';
 
-import { Tokens } from '../../themes/tokens';
+import { ThemeTokens as Tokens } from '../../themes';
 import { Box, useBoxStyles } from '../Box';
 import { Icon } from '../Icon';
 import { Inline } from '../Inline';

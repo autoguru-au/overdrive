@@ -1,6 +1,6 @@
 import { keyframes, style, styleVariants } from '@vanilla-extract/css';
 
-import { themeContractVars as vars } from '../../themes/theme.css';
+import { overdriveTokens as vars } from '../../themes/theme.css';
 
 const spinAnim = keyframes({
 	'100%': {
