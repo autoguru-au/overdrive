@@ -1,28 +1,24 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { boxArgTypes } from './argTypes';
-
 import { Box } from '.';
 
-const meta = {
+const meta: Meta<typeof Box> = {
 	title: 'Primatives/Box',
 	component: Box,
 	args: {
 		as: 'div',
 		children: 'Hello box!',
-		colour: 'primary',
-		backgroundColour: 'primary',
-		borderRadius: 'min',
-		borderColour: 'light',
-		borderWidth: '1',
-		boxShadow: '1',
+		color: 'onBody',
+		backgroundColor: 'accent',
+		borderRadius: 'none',
+		borderColor: 'gray',
+		borderWidth: '2',
 		display: 'inline-flex',
 		margin: undefined,
 		padding: '6',
 		textAlign: undefined,
 	},
-	argTypes: boxArgTypes,
-} satisfies Meta<typeof Box>;
+};
 
 export default meta;
 
