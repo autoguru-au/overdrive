@@ -3,10 +3,10 @@ import React, { type ElementType, type ComponentPropsWithRef } from 'react';
 
 import { useDeepCompareMemo } from '../../hooks';
 import {
-	filterNonSprinklesProps,
 	type Sprinkles,
 	type SprinklesResponsive,
 } from '../../styles/sprinkles.css';
+import { filterNonSprinklesProps } from '../../utils/sprinkles';
 
 import { boxStyles } from './boxStyles';
 

@@ -3,12 +3,12 @@ import type { ElementType } from 'react';
 
 import * as resetStyles from '../../reset/reset.css';
 import {
-	filterSprinklesProps,
 	sprinkles,
 	type Sprinkles,
 	sprinklesResponsive,
 	type SprinklesResponsive,
 } from '../../styles/sprinkles.css';
+import { filterSprinklesProps } from '../../utils/sprinkles';
 
 import type { BoxProps } from './Box';
 

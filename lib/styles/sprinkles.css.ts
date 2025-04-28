@@ -24,17 +24,23 @@ const lineHeights = Object.entries(tokens.typography.size).reduce(
 	{},
 );
 
-const intentBackgroundColoursStandard = {
-	primary: tokens.colours.intent.primary.background,
-	secondary: tokens.colours.intent.secondary.background,
-	brand: tokens.colours.intent.brand.background,
-	shine: tokens.colours.intent.shine.background,
-	danger: tokens.colours.intent.danger.background,
-	warning: tokens.colours.intent.warning.background,
-	neutral: tokens.colours.intent.neutral.background,
-	success: tokens.colours.intent.success.background,
-	information: tokens.colours.intent.information.background,
-};
+const intentForegroundColours = Object.entries(tokens.colours.intent).reduce(
+	(acc, [intent, { foreground }]) => {
+		acc[intent] = foreground;
+		return acc;
+	},
+	{} as Record<keyof typeof tokens.colours.intent, string>,
+);
+
+const intentBackgroundColoursStandard = Object.entries(
+	tokens.colours.intent,
+).reduce(
+	(acc, [intent, { background }]) => {
+		acc[intent] = background.standard;
+		return acc;
+	},
+	{} as Record<keyof typeof tokens.colours.intent, string>,
+);
 
 // --- Base sprinkles (non-responsive)
 const baseProperties = defineProperties({
@@ -56,11 +62,15 @@ const baseProperties = defineProperties({
 		borderTopStyle: ['none', 'solid'],
 		// Color
 		color: tokens.color.content,
-		colour: { ...tokens.colours.gamut, ...tokens.colours.foreground },
+		colour: {
+			...intentForegroundColours,
+			...tokens.colours.gamut,
+			...tokens.colours.foreground,
+		},
 		backgroundColor: tokens.color.surface,
 		backgroundColour: {
-			...tokens.colours.background,
 			...intentBackgroundColoursStandard,
+			...tokens.colours.background,
 			...tokens.colours.gamut,
 		},
 		opacity: ['1', '0'],
@@ -102,12 +112,6 @@ const baseProperties = defineProperties({
 
 export const sprinkles = createSprinkles(baseProperties);
 export type Sprinkles = Parameters<typeof sprinkles>[0];
-/**
- * Typeguard function for base sprinkles (non-responsive) props
- */
-export const isSprinklesProperty = (key: string): key is keyof Sprinkles => {
-	return Boolean(sprinkles.properties[key]);
-};
 
 // --- Responsive sprinkles
 const responsiveConditions = {
@@ -226,56 +230,3 @@ const responsiveProperties = defineProperties({
 
 export const sprinklesResponsive = createSprinkles(responsiveProperties);
 export type SprinklesResponsive = Parameters<typeof sprinklesResponsive>[0];
-/**
- * Typeguard function for responsive sprinkles  props
- */
-export const isSprinklesResponsiveProperty = (
-	key: string,
-): key is keyof SprinklesResponsive => {
-	return Boolean(sprinklesResponsive.properties[key]);
-};
-
-/**
- * Filters and separates sprinkles props into three categories that relate to base sprinkes, responsive sprinkles, and leftovers
- *
- * @param props - Object containing all props to be filtered
- * @returns `{ sprinklesProps, sprinklesResponsiveProps }`
- */
-export const filterSprinklesProps = (props: object) =>
-	Object.entries(props).reduce(
-		(acc, [key, value]) => {
-			if (isSprinklesProperty(key)) {
-				acc.sprinklesProps[key] = value;
-			} else if (isSprinklesResponsiveProperty(key)) {
-				//@ts-expect-error responsive sprinkles props are too complex to represent
-				acc.sprinklesResponsiveProps[key] = value;
-			}
-			return acc;
-		},
-		{
-			sprinklesProps: {} as Sprinkles,
-			sprinklesResponsiveProps: {} as SprinklesResponsive,
-		},
-	);
-
-/**
- * Filters out sprinkles and responsive sprinkles props, returning only the non-sprinkles props.
- *
- * @param props - Object containing all props to be filtered
- * @returns Object containing only non-sprinkles props
- */
-export const filterNonSprinklesProps = <T extends object>(props: T) =>
-	Object.entries(props).reduce(
-		(acc, [key, value]) => {
-			if (
-				!isSprinklesProperty(key) &&
-				!isSprinklesResponsiveProperty(key)
-			) {
-				acc[key] = value;
-			}
-			return acc;
-		},
-		{} as {
-			[K in keyof T]: T[K];
-		},
-	);
