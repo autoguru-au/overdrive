@@ -2,15 +2,18 @@ import clsx from 'clsx';
 import React, { type ElementType, type ComponentPropsWithRef } from 'react';
 
 import { useDeepCompareMemo } from '../../hooks';
-import {
-	type Sprinkles,
-	type SprinklesResponsive,
+import type {
+	Sprinkles,
+	SprinklesResponsive,
+	SprinklesLegacyColours,
 } from '../../styles/sprinkles.css';
 import { filterNonSprinklesProps } from '../../utils/sprinkles';
 
 import { boxStyles } from './boxStyles';
 
-type StyleProps = Sprinkles & SprinklesResponsive;
+export type StyleProps = Sprinkles &
+	SprinklesResponsive &
+	SprinklesLegacyColours;
 type PolymorphicComponentProps<E extends ElementType, Props = object> = {
 	as?: E;
 	className?: clsx.ClassValue;

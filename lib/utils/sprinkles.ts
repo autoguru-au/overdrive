@@ -1,6 +1,8 @@
 import {
 	sprinkles,
 	type Sprinkles,
+	sprinklesLegacyColours,
+	type SprinklesLegacyColours,
 	sprinklesResponsive,
 	type SprinklesResponsive,
 } from '../styles/sprinkles.css';
@@ -13,7 +15,16 @@ export const isSprinklesProperty = (key: string) => {
 };
 
 /**
- * Typeguard function for responsive sprinkles  props
+ * Typeguard function for legacy colour sprinkles props
+ */
+export const isSprinklesLegacyColourProperty = (key: string) => {
+	return sprinklesLegacyColours.properties.has(
+		key as keyof SprinklesLegacyColours,
+	);
+};
+
+/**
+ * Typeguard function for responsive sprinkles props
  */
 export const isSprinklesResponsiveProperty = (key: string) => {
 	return sprinklesResponsive.properties.has(key as keyof SprinklesResponsive);
@@ -23,21 +34,24 @@ export const isSprinklesResponsiveProperty = (key: string) => {
  * Filters and separates sprinkles props into three categories that relate to base sprinkes, responsive sprinkles, and leftovers
  *
  * @param props - Object containing all props to be filtered
- * @returns `{ sprinklesProps, sprinklesResponsiveProps }`
+ * @returns `{ sprinklesProps, sprinklesResponsiveProps, sprinklesLegacyColourProps }`
  */
-export const filterSprinklesProps = (props: object) =>
+export const filterSprinklesProps = <T extends object>(props: T) =>
 	Object.entries(props).reduce(
 		(acc, [key, value]) => {
 			if (isSprinklesProperty(key)) {
 				acc.sprinklesProps[key] = value;
 			} else if (isSprinklesResponsiveProperty(key)) {
 				acc.sprinklesResponsiveProps[key] = value;
+			} else if (isSprinklesLegacyColourProperty(key)) {
+				acc.sprinklesLegacyColourProps[key] = value;
 			}
 			return acc;
 		},
 		{
 			sprinklesProps: {} as Sprinkles,
 			sprinklesResponsiveProps: {} as SprinklesResponsive,
+			sprinklesLegacyColourProps: {} as SprinklesLegacyColours,
 		},
 	);
 
@@ -53,7 +67,8 @@ export const filterNonSprinklesProps = <T extends object>(props: T) =>
 			if (
 				!(
 					isSprinklesProperty(key) ||
-					isSprinklesResponsiveProperty(key)
+					isSprinklesResponsiveProperty(key) ||
+					isSprinklesLegacyColourProperty(key)
 				)
 			) {
 				acc[key] = value;

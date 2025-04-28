@@ -4,16 +4,14 @@ import type { ElementType } from 'react';
 import { element } from '../../reset/reset.css';
 import {
 	sprinkles,
-	type Sprinkles,
+	sprinklesLegacyColours,
 	sprinklesResponsive,
-	type SprinklesResponsive,
 } from '../../styles/sprinkles.css';
 import { filterSprinklesProps } from '../../utils/sprinkles';
 
-import type { BoxProps } from './Box';
+import type { BoxProps, StyleProps } from './Box';
 
-export type BoxStylesProps<E extends ElementType = 'div'> = Sprinkles &
-	SprinklesResponsive &
+export type BoxStylesProps<E extends ElementType = 'div'> = StyleProps &
 	Pick<BoxProps<E>, 'as' | 'className'>;
 
 const borderColorProps = [
@@ -56,8 +54,11 @@ export const boxStyles = <E extends ElementType = 'div'>({
 		...borderWidthProps,
 	].some((key) => !!props[key]);
 
-	const { sprinklesProps, sprinklesResponsiveProps } =
-		filterSprinklesProps(props);
+	const {
+		sprinklesProps,
+		sprinklesResponsiveProps,
+		sprinklesLegacyColourProps,
+	} = filterSprinklesProps(props);
 
 	if (hasBorderColorOrWidth && !hasBorderStyle) {
 		sprinklesProps['borderStyle'] = 'solid';
@@ -67,6 +68,7 @@ export const boxStyles = <E extends ElementType = 'div'>({
 		resets,
 		sprinkles(sprinklesProps),
 		sprinklesResponsive(sprinklesResponsiveProps),
+		sprinklesLegacyColours(sprinklesLegacyColourProps),
 		className,
 	);
 };

@@ -42,16 +42,22 @@ const intentBackgroundColoursStandard = Object.entries(
 	{} as Record<keyof typeof tokens.colours.intent, string>,
 );
 
+const borderColors = {
+	default: tokens.color.interactive.border,
+	muted: tokens.color.interactive.borderMuted,
+	disabled: tokens.color.interactive.borderDisabled,
+	...tokens.color.surface,
+};
+
 // --- Base sprinkles (non-responsive)
 const baseProperties = defineProperties({
 	properties: {
 		// Borders
 		borderRadius: tokens.border.radius,
-		// borderColor: { ...tokens.color.surface, ...tokens.color.interactive },
-		borderBottomColor: tokens.border.colours,
-		borderLeftColor: tokens.border.colours,
-		borderRightColor: tokens.border.colours,
-		borderTopColor: tokens.border.colours,
+		borderBottomColor: borderColors,
+		borderLeftColor: borderColors,
+		borderRightColor: borderColors,
+		borderTopColor: borderColors,
 		borderLeftWidth: tokens.border.width,
 		borderBottomWidth: tokens.border.width,
 		borderRightWidth: tokens.border.width,
@@ -61,18 +67,9 @@ const baseProperties = defineProperties({
 		borderRightStyle: ['none', 'solid'],
 		borderTopStyle: ['none', 'solid'],
 		// Color
-		color: {
-			...tokens.color.content,
-			...intentForegroundColours,
-			...tokens.colours.gamut,
-			...tokens.colours.foreground,
-			transparent: 'transparent',
-		},
+		color: tokens.color.content,
 		backgroundColor: {
 			...tokens.color.surface,
-			...intentBackgroundColoursStandard,
-			...tokens.colours.background,
-			...tokens.colours.gamut,
 			transparent: 'transparent',
 		},
 		opacity: ['1', '0'],
@@ -114,6 +111,55 @@ const baseProperties = defineProperties({
 
 export const sprinkles = createSprinkles(baseProperties);
 export type Sprinkles = Parameters<typeof sprinkles>[0];
+
+// --- Legacy sprinkles with old colour tokens (non-responsive)
+const legacyColourProperties = defineProperties({
+	properties: {
+		backgroundColor: {
+			...intentBackgroundColoursStandard,
+			...tokens.colours.background,
+			...tokens.colours.gamut,
+			transparent: 'transparent',
+		},
+		borderBottomColor: tokens.border.colours,
+		borderLeftColor: tokens.border.colours,
+		borderRightColor: tokens.border.colours,
+		borderTopColor: tokens.border.colours,
+		color: {
+			...intentForegroundColours,
+			...tokens.colours.foreground,
+			...tokens.colours.gamut,
+		},
+	},
+	// use the shorthands to remap 'color' to 'colour'
+	shorthands: {
+		backgroundColour: ['backgroundColor'],
+		borderBottomColour: ['borderBottomColor'],
+		borderLeftColour: ['borderLeftColor'],
+		borderRightColour: ['borderRightColor'],
+		borderTopColour: ['borderTopColor'],
+		borderColour: [
+			'borderBottomColor',
+			'borderLeftColor',
+			'borderRightColor',
+			'borderTopColor',
+		],
+		colour: ['color'],
+	},
+});
+
+export const sprinklesLegacyColours = createSprinkles(legacyColourProperties);
+// filter out the spellings of 'color' from the type as well
+export type SprinklesLegacyColours = Omit<
+	Parameters<typeof sprinklesLegacyColours>[0],
+	| 'backgroundColor'
+	| 'borderColor'
+	| 'borderBottomColor'
+	| 'borderLeftColor'
+	| 'borderRightColor'
+	| 'borderTopColor'
+	| 'color'
+>;
 
 // --- Responsive sprinkles
 const responsiveConditions = {
