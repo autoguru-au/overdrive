@@ -24,20 +24,46 @@ const lineHeights = Object.entries(tokens.typography.size).reduce(
 	{},
 );
 
+const intentBackgroundColoursStandard = {
+	primary: tokens.colours.intent.primary.background,
+	secondary: tokens.colours.intent.secondary.background,
+	brand: tokens.colours.intent.brand.background,
+	shine: tokens.colours.intent.shine.background,
+	danger: tokens.colours.intent.danger.background,
+	warning: tokens.colours.intent.warning.background,
+	neutral: tokens.colours.intent.neutral.background,
+	success: tokens.colours.intent.success.background,
+	information: tokens.colours.intent.information.background,
+};
+
 // --- Base sprinkles (non-responsive)
 const baseProperties = defineProperties({
 	properties: {
 		// Borders
-		borderColor: tokens.border.colours,
 		borderRadius: tokens.border.radius,
-		borderWidth: tokens.border.width,
+		borderColor: { ...tokens.color.surface, ...tokens.color.interactive },
+		borderBottomColour: tokens.border.colours,
+		borderLeftColour: tokens.border.colours,
+		borderRightColour: tokens.border.colours,
+		borderTopColour: tokens.border.colours,
+		borderLeftWidth: tokens.border.width,
+		borderBottomWidth: tokens.border.width,
+		borderRightWidth: tokens.border.width,
+		borderTopWidth: tokens.border.width,
 		borderLeftStyle: ['none', 'solid'],
 		borderBottomStyle: ['none', 'solid'],
 		borderRightStyle: ['none', 'solid'],
 		borderTopStyle: ['none', 'solid'],
 		// Color
-		color: tokens.typography.colour,
-		backgroundColor: tokens.colours.background,
+		color: tokens.color.content,
+		colour: { ...tokens.colours.gamut, ...tokens.colours.foreground },
+		backgroundColor: tokens.color.surface,
+		backgroundColour: {
+			...tokens.colours.background,
+			...intentBackgroundColoursStandard,
+			...tokens.colours.gamut,
+		},
+		opacity: ['1', '0'],
 		// Typography
 		fontSize: fontSizes,
 		lineHeight: lineHeights,
@@ -45,11 +71,26 @@ const baseProperties = defineProperties({
 		textAlign: ['left', 'center', 'right'],
 		// Shadows
 		boxShadow: tokens.elevation,
+		// Misc
+		pointerEvents: ['auto', 'none'],
+		userSelect: ['auto', 'text', 'none'],
 	},
 	shorthands: {
 		text: ['fontSize', 'lineHeight'],
 		bg: ['backgroundColor'],
 		fg: ['color'],
+		borderColour: [
+			'borderBottomColour',
+			'borderLeftColour',
+			'borderRightColour',
+			'borderTopColour',
+		],
+		borderWidth: [
+			'borderBottomWidth',
+			'borderLeftWidth',
+			'borderRightWidth',
+			'borderLeftWidth',
+		],
 		border: [
 			'borderBottomStyle',
 			'borderLeftStyle',
@@ -79,7 +120,7 @@ const responsiveConditions = {
 };
 
 const responsiveProperties = defineProperties({
-	conditions: { ...responsiveConditions },
+	conditions: responsiveConditions,
 	defaultCondition: 'mobile',
 	responsiveArray: ['mobile', 'tablet', 'desktop', 'largeDesktop'],
 	properties: {
@@ -162,20 +203,24 @@ const responsiveProperties = defineProperties({
 		size: ['width', 'height'],
 		padding: ['paddingBottom', 'paddingLeft', 'paddingRight', 'paddingTop'],
 		p: ['paddingBottom', 'paddingLeft', 'paddingRight', 'paddingTop'],
+		paddingX: ['paddingLeft', 'paddingRight'],
+		px: ['paddingLeft', 'paddingRight'],
+		paddingY: ['paddingTop', 'paddingBottom'],
+		py: ['paddingTop', 'paddingBottom'],
 		pt: ['paddingTop'],
 		pr: ['paddingRight'],
 		pb: ['paddingBottom'],
 		pl: ['paddingLeft'],
-		px: ['paddingLeft', 'paddingRight'],
-		py: ['paddingTop', 'paddingBottom'],
 		margin: ['marginBottom', 'marginLeft', 'marginRight', 'marginTop'],
 		m: ['marginBottom', 'marginLeft', 'marginRight', 'marginTop'],
+		marginX: ['marginLeft', 'marginRight'],
+		mx: ['marginLeft', 'marginRight'],
+		marginY: ['marginTop', 'marginBottom'],
+		my: ['marginTop', 'marginBottom'],
 		mt: ['marginTop'],
 		mr: ['marginRight'],
 		mb: ['marginBottom'],
 		ml: ['marginLeft'],
-		mx: ['marginLeft', 'marginRight'],
-		my: ['marginTop', 'marginBottom'],
 	},
 });
 
@@ -189,3 +234,48 @@ export const isSprinklesResponsiveProperty = (
 ): key is keyof SprinklesResponsive => {
 	return Boolean(sprinklesResponsive.properties[key]);
 };
+
+/**
+ * Filters and separates sprinkles props into three categories that relate to base sprinkes, responsive sprinkles, and leftovers
+ *
+ * @param props - Object containing all props to be filtered
+ * @returns `{ sprinklesProps, sprinklesResponsiveProps }`
+ */
+export const filterSprinklesProps = (props: object) =>
+	Object.entries(props).reduce(
+		(acc, [key, value]) => {
+			if (isSprinklesProperty(key)) {
+				acc.sprinklesProps[key] = value;
+			} else if (isSprinklesResponsiveProperty(key)) {
+				//@ts-expect-error responsive sprinkles props are too complex to represent
+				acc.sprinklesResponsiveProps[key] = value;
+			}
+			return acc;
+		},
+		{
+			sprinklesProps: {} as Sprinkles,
+			sprinklesResponsiveProps: {} as SprinklesResponsive,
+		},
+	);
+
+/**
+ * Filters out sprinkles and responsive sprinkles props, returning only the non-sprinkles props.
+ *
+ * @param props - Object containing all props to be filtered
+ * @returns Object containing only non-sprinkles props
+ */
+export const filterNonSprinklesProps = <T extends object>(props: T) =>
+	Object.entries(props).reduce(
+		(acc, [key, value]) => {
+			if (
+				!isSprinklesProperty(key) &&
+				!isSprinklesResponsiveProperty(key)
+			) {
+				acc[key] = value;
+			}
+			return acc;
+		},
+		{} as {
+			[K in keyof T]: T[K];
+		},
+	);
