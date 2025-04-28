@@ -47,11 +47,11 @@ const baseProperties = defineProperties({
 	properties: {
 		// Borders
 		borderRadius: tokens.border.radius,
-		borderColor: { ...tokens.color.surface, ...tokens.color.interactive },
-		borderBottomColour: tokens.border.colours,
-		borderLeftColour: tokens.border.colours,
-		borderRightColour: tokens.border.colours,
-		borderTopColour: tokens.border.colours,
+		// borderColor: { ...tokens.color.surface, ...tokens.color.interactive },
+		borderBottomColor: tokens.border.colours,
+		borderLeftColor: tokens.border.colours,
+		borderRightColor: tokens.border.colours,
+		borderTopColor: tokens.border.colours,
 		borderLeftWidth: tokens.border.width,
 		borderBottomWidth: tokens.border.width,
 		borderRightWidth: tokens.border.width,
@@ -61,17 +61,19 @@ const baseProperties = defineProperties({
 		borderRightStyle: ['none', 'solid'],
 		borderTopStyle: ['none', 'solid'],
 		// Color
-		color: tokens.color.content,
-		colour: {
+		color: {
+			...tokens.color.content,
 			...intentForegroundColours,
 			...tokens.colours.gamut,
 			...tokens.colours.foreground,
+			transparent: 'transparent',
 		},
-		backgroundColor: tokens.color.surface,
-		backgroundColour: {
+		backgroundColor: {
+			...tokens.color.surface,
 			...intentBackgroundColoursStandard,
 			...tokens.colours.background,
 			...tokens.colours.gamut,
+			transparent: 'transparent',
 		},
 		opacity: ['1', '0'],
 		// Typography
@@ -89,23 +91,23 @@ const baseProperties = defineProperties({
 		text: ['fontSize', 'lineHeight'],
 		bg: ['backgroundColor'],
 		fg: ['color'],
-		borderColour: [
-			'borderBottomColour',
-			'borderLeftColour',
-			'borderRightColour',
-			'borderTopColour',
+		borderColor: [
+			'borderBottomColor',
+			'borderLeftColor',
+			'borderRightColor',
+			'borderTopColor',
+		],
+		borderStyle: [
+			'borderBottomStyle',
+			'borderLeftStyle',
+			'borderRightStyle',
+			'borderTopStyle',
 		],
 		borderWidth: [
 			'borderBottomWidth',
 			'borderLeftWidth',
 			'borderRightWidth',
-			'borderLeftWidth',
-		],
-		border: [
-			'borderBottomStyle',
-			'borderLeftStyle',
-			'borderRightStyle',
-			'borderTopStyle',
+			'borderTopWidth',
 		],
 	},
 });
@@ -133,6 +135,7 @@ const responsiveProperties = defineProperties({
 			'block',
 			'flex',
 			'grid',
+			'inline',
 			'inline-block',
 			'inline-flex',
 		],

@@ -8,17 +8,15 @@ import {
 /**
  * Typeguard function for base sprinkles (non-responsive) props
  */
-export const isSprinklesProperty = (key: string): key is keyof Sprinkles => {
-	return Boolean(sprinkles.properties[key]);
+export const isSprinklesProperty = (key: string) => {
+	return sprinkles.properties.has(key as keyof Sprinkles);
 };
 
 /**
  * Typeguard function for responsive sprinkles  props
  */
-export const isSprinklesResponsiveProperty = (
-	key: string,
-): key is keyof SprinklesResponsive => {
-	return Boolean(sprinklesResponsive.properties[key]);
+export const isSprinklesResponsiveProperty = (key: string) => {
+	return sprinklesResponsive.properties.has(key as keyof SprinklesResponsive);
 };
 
 /**
@@ -33,7 +31,6 @@ export const filterSprinklesProps = (props: object) =>
 			if (isSprinklesProperty(key)) {
 				acc.sprinklesProps[key] = value;
 			} else if (isSprinklesResponsiveProperty(key)) {
-				//@ts-expect-error responsive sprinkles props are too complex to represent
 				acc.sprinklesResponsiveProps[key] = value;
 			}
 			return acc;
@@ -54,8 +51,10 @@ export const filterNonSprinklesProps = <T extends object>(props: T) =>
 	Object.entries(props).reduce(
 		(acc, [key, value]) => {
 			if (
-				!isSprinklesProperty(key) &&
-				!isSprinklesResponsiveProperty(key)
+				!(
+					isSprinklesProperty(key) ||
+					isSprinklesResponsiveProperty(key)
+				)
 			) {
 				acc[key] = value;
 			}
