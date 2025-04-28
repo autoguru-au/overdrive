@@ -1,14 +1,14 @@
 import clsx from 'clsx';
 import React, { type ElementType, type ComponentPropsWithRef } from 'react';
 
+import { useDeepCompareMemo } from '../../hooks';
 import {
-	sprinkles,
-	sprinklesResponsive,
-	isSprinklesProperty,
-	isSprinklesResponsiveProperty,
+	filterNonSprinklesProps,
 	type Sprinkles,
 	type SprinklesResponsive,
 } from '../../styles/sprinkles.css';
+
+import { boxStyles } from './boxStyles';
 
 type StyleProps = Sprinkles & SprinklesResponsive;
 type PolymorphicComponentProps<E extends ElementType, Props = object> = {
@@ -22,48 +22,49 @@ export type BoxProps<E extends ElementType = 'div'> = PolymorphicComponentProps<
 	StyleProps
 >;
 
+/**
+ * A polymorphic Box component that provides a flexible container with styling capabilities, defauilting to a `<div>` element.
+ * Use the `as` prop to control the rendered HTML tag. The box component exposes design system tokens relative to each style
+ * prop.
+ *
+ * Props include:
+ * - Sprinkles props (spacing, colors, layout, etc.)
+ * - Responsive props (arrays for different breakpoints)
+ * - Also accepts valid HTML attributes for the chosen HTML tag
+ *
+ * @example
+ * <Box as="section" mx="5" py="5" backgroundColor="accent">
+ *   Section content
+ * </Box>
+ *
+ * @example
+ * <Box display={['block', 'flex']} p={['3', '6', '8']}>Responsive padding</Box>
+ */
 export const Box = <E extends ElementType = 'div'>({
 	as,
 	className,
 	...props
 }: BoxProps<E>) => {
-	const Component = as || 'div';
+	const Component = as ?? 'div';
 
-	const { sprinklesProps, sprinklesResponsiveProps, filteredProps } =
-		React.useMemo(() => {
-			return Object.entries(props).reduce(
-				(acc, [key, value]) => {
-					if (isSprinklesProperty(key)) {
-						acc.sprinklesProps[key] = value;
-					} else if (isSprinklesResponsiveProperty(key)) {
-						//@ts-expect-error responsive sprinkles props are too complex to represent
-						acc.sprinklesResponsiveProps[key] = value;
-					} else {
-						acc.filteredProps[key] = value;
-					}
-					return acc;
-				},
-				{
-					sprinklesProps: {} as Sprinkles,
-					sprinklesResponsiveProps: {} as SprinklesResponsive,
-					filteredProps: {} as Exclude<
-						ComponentPropsWithRef<E>,
-						StyleProps
-					>,
-				},
-			);
-		}, [props]);
-
-	return (
-		<Component
-			className={clsx(
-				sprinkles(sprinklesProps),
-				sprinklesResponsive(sprinklesResponsiveProps),
+	// Deep compare props for style calculation
+	const style = useDeepCompareMemo(
+		() =>
+			boxStyles({
+				as,
 				className,
-			)}
-			{...filteredProps}
-		/>
+				...props,
+			}),
+		[as, className, props],
 	);
+
+	// Deep compare props for remaining props
+	const remainingProps = useDeepCompareMemo(
+		() => filterNonSprinklesProps(props),
+		[props],
+	);
+
+	return <Component className={style} {...remainingProps} />;
 };
 
 Box.displayName = 'Box';
