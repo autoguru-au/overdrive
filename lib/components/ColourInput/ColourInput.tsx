@@ -2,7 +2,7 @@ import { warning } from '@autoguru/utilities';
 import clsx from 'clsx';
 import * as React from 'react';
 
-import { Box, useBoxStyles } from '../Box';
+import { Box, boxStyles } from '../Box';
 import { Text } from '../Text';
 import { withEnhancedInput } from '../private/InputBase';
 
@@ -40,7 +40,7 @@ export const ColourInput = withEnhancedInput<{}, HTMLInputElement>(
 					display="flex"
 					height="full"
 					alignItems="center"
-					justifyContent="spaceAround"
+					justifyContent="space-around"
 					flexShrink={0}
 					pointerEvents="none"
 					position="absolute"
@@ -56,7 +56,7 @@ export const ColourInput = withEnhancedInput<{}, HTMLInputElement>(
 					className={clsx(
 						styles.valueText,
 						styles.valueTextSize[size],
-						useBoxStyles({
+						boxStyles({
 							position: 'absolute',
 						}),
 					)}
@@ -64,7 +64,7 @@ export const ColourInput = withEnhancedInput<{}, HTMLInputElement>(
 					{field.value}
 				</Text>
 				<Box
-					is="input"
+					as="input"
 					type="color"
 					flexGrow={1}
 					{...eventHandlers}

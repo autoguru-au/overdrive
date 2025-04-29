@@ -128,6 +128,7 @@ const legacyColourProperties = defineProperties({
 		color: {
 			...intentForegroundColours,
 			...tokens.colours.foreground,
+			...tokens.typography.colour,
 			...tokens.colours.gamut,
 		},
 	},
@@ -210,6 +211,7 @@ const responsiveProperties = defineProperties({
 			'space-around',
 			'space-between',
 			'space-evenly',
+			'stretch',
 		],
 		alignContent: [
 			'flex-start',

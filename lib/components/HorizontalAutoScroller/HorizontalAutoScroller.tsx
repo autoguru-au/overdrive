@@ -132,7 +132,7 @@ export const HorizontalAutoScroller: FunctionComponent<Props> = ({
 						className={[styles.controllerBtn, styles.prevBtn]}
 						display="flex"
 						alignItems="center"
-						justifyContent="flexStart"
+						justifyContent="flex-start"
 						position="absolute"
 					>
 						<Button
@@ -172,7 +172,7 @@ export const HorizontalAutoScroller: FunctionComponent<Props> = ({
 						className={[styles.controllerBtn, styles.nextBtn]}
 						display="flex"
 						alignItems="center"
-						justifyContent="flexEnd"
+						justifyContent="flex-end"
 						position="absolute"
 					>
 						<Button

@@ -10,7 +10,7 @@ import {
 } from 'react';
 
 import { addWithSafeDecimal } from '../../utils/number';
-import { Box, useBoxStyles } from '../Box';
+import { Box, boxStyles } from '../Box';
 import { Column, Columns } from '../Columns';
 import { Icon } from '../Icon';
 import { Text, useTextStyles } from '../Text';
@@ -58,7 +58,7 @@ const Handle: FunctionComponent<HandleProps> = ({
 	onClick,
 }) => (
 	<Box
-		is="button"
+		as="button"
 		className={[
 			styles.handle.default,
 			{ [styles.handle.disabled]: disabled },
@@ -152,7 +152,7 @@ export const Stepper: FunctionComponent<Props> = ({
 			className={clsx(
 				className,
 				styles.root,
-				useBoxStyles({ is: 'button' }),
+				boxStyles({ as: 'button' }),
 				disabled && styles.disabled,
 				{
 					[styles.width.default]: !isFullWidth,
@@ -170,7 +170,7 @@ export const Stepper: FunctionComponent<Props> = ({
 			onKeyDown={keyDownHandler}
 		>
 			<Columns noWrap width="full">
-				<Column noShrink alignSelf="centre">
+				<Column noShrink alignSelf="center">
 					<Handle
 						icon={MinusIcon}
 						label="step down"
@@ -178,17 +178,17 @@ export const Stepper: FunctionComponent<Props> = ({
 						onClick={onDecrement}
 					/>
 				</Column>
-				<Column noShrink grow width="auto" alignSelf="centre">
+				<Column noShrink grow width="auto" alignSelf="center">
 					<Text
 						is="span"
 						align="center"
 						colour="dark"
 						display="block"
 						className={clsx(
-							useBoxStyles({
+							boxStyles({
+								as: 'span',
 								paddingX: '2',
 								width: 'full',
-								is: 'span',
 							}),
 							styles.label,
 						)}
@@ -197,7 +197,7 @@ export const Stepper: FunctionComponent<Props> = ({
 						{Number.isFinite(value) ? format(value) : ''}
 					</Text>
 				</Column>
-				<Column noShrink alignSelf="centre">
+				<Column noShrink alignSelf="center">
 					<Handle
 						icon={PlusIcon}
 						label="step up"

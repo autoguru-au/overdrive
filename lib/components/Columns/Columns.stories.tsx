@@ -46,7 +46,7 @@ const Template: StoryFn<typeof Columns> = (args) => (
 	<Columns {...args}>
 		<Column width={['full', '1/3', '1/5']} order={[0, 2]} is="section">
 			<Box
-				borderColor="gray"
+				borderColour="gray"
 				borderWidth="1"
 				padding="4"
 				borderRadius="1"
@@ -61,7 +61,7 @@ const Template: StoryFn<typeof Columns> = (args) => (
 		</Column>
 		<Column width={['1/2', '1/3', '1/5']} alignSelf="stretch" is="section">
 			<Box
-				borderColor="gray"
+				borderColour="gray"
 				borderWidth="1"
 				padding="4"
 				borderRadius="1"
@@ -76,7 +76,7 @@ const Template: StoryFn<typeof Columns> = (args) => (
 		</Column>
 		<Column width={['1/2', '1/3', '1/5']} is="section">
 			<Box
-				borderColor="gray"
+				borderColour="gray"
 				borderWidth="1"
 				padding="4"
 				borderRadius="1"
@@ -91,7 +91,7 @@ const Template: StoryFn<typeof Columns> = (args) => (
 		</Column>
 		<Column width={['full', 'full', '2/5']} is="section">
 			<Box
-				borderColor="gray"
+				borderColour="gray"
 				borderWidth="1"
 				padding="4"
 				borderRadius="1"
@@ -111,7 +111,7 @@ const TemplateColumn: StoryFn<typeof Column> = (args) => (
 	<Columns {...standardProps}>
 		<Column {...args}>
 			<Box
-				borderColor="gray"
+				borderColour="gray"
 				borderWidth="1"
 				padding="4"
 				borderRadius="1"
@@ -126,7 +126,7 @@ const TemplateColumn: StoryFn<typeof Column> = (args) => (
 		</Column>
 		<Column {...args}>
 			<Box
-				borderColor="gray"
+				borderColour="gray"
 				borderWidth="1"
 				padding="4"
 				borderRadius="1"
@@ -141,7 +141,7 @@ const TemplateColumn: StoryFn<typeof Column> = (args) => (
 		</Column>
 		<Column {...args}>
 			<Box
-				borderColor="gray"
+				borderColour="gray"
 				borderWidth="1"
 				padding="4"
 				borderRadius="1"
@@ -156,7 +156,7 @@ const TemplateColumn: StoryFn<typeof Column> = (args) => (
 		</Column>
 		<Column {...args}>
 			<Box
-				borderColor="gray"
+				borderColour="gray"
 				borderWidth="1"
 				padding="4"
 				borderRadius="1"
@@ -171,7 +171,7 @@ const TemplateColumn: StoryFn<typeof Column> = (args) => (
 		</Column>
 		<Column {...args}>
 			<Box
-				borderColor="gray"
+				borderColour="gray"
 				borderWidth="1"
 				padding="4"
 				borderRadius="1"

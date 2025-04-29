@@ -36,12 +36,13 @@ export const TableCell = forwardRef<HTMLDivElement, Props>(
 			<Box
 				ref={ref}
 				role="gridcell"
-				scope="row"
+				// TODO: look into use of `scope` prop on non table headinging cells
+				// scope="row"
 				display="flex"
 				alignItems="center"
 				justifyContent={alignmentToFlexAlignment(align)}
 				padding={padding}
-				borderWidthBottom="1"
+				borderBottomWidth="1"
 				aria-label={ariaLabel}
 				className={styles.root}
 			>
@@ -63,5 +64,7 @@ export const TableCell = forwardRef<HTMLDivElement, Props>(
 		);
 	},
 );
+
+TableCell.displayName = 'TableCell';
 
 export default TableCell;

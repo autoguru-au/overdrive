@@ -46,7 +46,7 @@ const NavButton: FunctionComponent<NavButtonProps> = ({
 	onClick = noop,
 }) => (
 	<Box
-		is="button"
+		as="button"
 		aria-disabled={disabled}
 		aria-label={label}
 		display="flex"
