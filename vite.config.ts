@@ -4,8 +4,6 @@ import { configDefaults, defineConfig } from 'vitest/config';
 export default defineConfig({
 	plugins: [vanillaExtractPlugin()],
 	test: {
-		environment: 'jsdom',
-		globals: true,
 		coverage: {
 			provider: 'v8',
 			include: [
@@ -17,6 +15,5 @@ export default defineConfig({
 			reporter: ['text', 'lcov'],
 			reportsDirectory: 'coverage',
 		},
-		setupFiles: ['./lib/test/vitest-setup.ts'],
 	},
 });
