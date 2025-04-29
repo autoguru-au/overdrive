@@ -1,5 +1,20 @@
 # @autoguru/overdrive
 
+## 4.42.0
+
+### Minor Changes
+
+- d32fe98: Expands theme contract to include new 'color' tokens (work in
+  progress), without removing existing. Both are documented in Storybook.
+
+    **Breaking change** type of the theme tokens object `Tokens` has been
+    renamed to `ThemeTokens` for clarity.
+
+    Replaces local (namespaced) css variables with un-namespaced vars in all
+    themes. Theme tokens are now assigned to a css layer. And vanilla-extract
+    tokens can be imported as `overdriveTokens` but using `themeContractVars`
+    will continue to work.
+
 ## 4.41.0
 
 ### Minor Changes
@@ -2032,8 +2047,8 @@
     backdrop. Also; if you wish to remove the fadeIn/fadeOut animation, a
     `transition?: boolean` can also be provided.
 
-                                  	- Removes `<ModalPortal />` in favor of `<Modal />`
-                                  	- Deprecated `withModal`, which could simply just use the Modal component
+                                    	- Removes `<ModalPortal />` in favor of `<Modal />`
+                                    	- Deprecated `withModal`, which could simply just use the Modal component
 
     Worth noting that a `role="presentation"` is applied to the `Modal`, so
     consumers should be applying a `role="none presentation"` to their direct

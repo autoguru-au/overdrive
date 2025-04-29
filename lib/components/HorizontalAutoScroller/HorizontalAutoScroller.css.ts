@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { themeContractVars as vars } from '../../themes/theme.css';
+import { overdriveTokens as vars } from '../../themes/theme.css';
 
 const actionWidth = 50;
 export const controllerBtn = style({

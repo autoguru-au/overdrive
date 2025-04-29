@@ -2,7 +2,7 @@
 
 exports[`<NotchedBase /> > should match snapshot for active notch 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -38,7 +38,7 @@ exports[`<NotchedBase /> > should match snapshot for active notch 1`] = `
 
 exports[`<NotchedBase /> > should match snapshot for default notch 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -74,7 +74,7 @@ exports[`<NotchedBase /> > should match snapshot for default notch 1`] = `
 
 exports[`<NotchedBase /> > should match snapshot for dirty and active notch 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -110,7 +110,7 @@ exports[`<NotchedBase /> > should match snapshot for dirty and active notch 1`] 
 
 exports[`<NotchedBase /> > should match snapshot for dirty notch 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div

@@ -2,7 +2,7 @@
 
 exports[`<ProgressStep /> > should match the snapshot for 8 items 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -103,7 +103,7 @@ exports[`<ProgressStep /> > should match the snapshot for 8 items 1`] = `
 
 exports[`<ProgressStep /> > should match the snapshot with custom background 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div

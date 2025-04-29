@@ -18,7 +18,7 @@ import {
 	type ReactElement,
 } from 'react';
 
-import type { TextFontWeight, TextSizeScale } from '../../themes/tokens';
+import type { TextFontWeight, TextSizeScale } from '../../themes';
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box, useBoxStyles } from '../Box';

@@ -4,7 +4,7 @@ import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
 import { sprinklesResponsive } from '../../styles/sprinkles.css';
 import { breakpoints } from '../../themes/makeTheme';
-import { themeContractVars as tokens } from '../../themes/theme.css';
+import { overdriveTokens as tokens } from '../../themes/theme.css';
 import { interactionStyle, notDisabled, notSelected } from '../../utils/css';
 
 // === Container styles

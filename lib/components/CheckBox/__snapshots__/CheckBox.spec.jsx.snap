@@ -2,7 +2,7 @@
 
 exports[`<CheckBox /> > should match the snapshot for a checked check 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -56,7 +56,7 @@ exports[`<CheckBox /> > should match the snapshot for a checked check 1`] = `
 
 exports[`<CheckBox /> > should match the snapshot for a disable checkbox 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -110,7 +110,7 @@ exports[`<CheckBox /> > should match the snapshot for a disable checkbox 1`] = `
 
 exports[`<CheckBox /> > should match the snapshot for a single check 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -163,7 +163,7 @@ exports[`<CheckBox /> > should match the snapshot for a single check 1`] = `
 
 exports[`<CheckBox /> > should match the snapshot for a single check with no value or label 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -213,7 +213,7 @@ exports[`<CheckBox /> > should match the snapshot for a single check with no val
 
 exports[`<CheckBox /> > when with component child > should match the snapshot 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div

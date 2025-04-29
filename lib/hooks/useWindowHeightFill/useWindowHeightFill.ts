@@ -1,8 +1,8 @@
 import { RefObject, useLayoutEffect, useRef, useState } from 'react';
 
 import { useTheme } from '../../components/OverdriveProvider';
-import { themeContractVars } from '../../themes/theme.css';
-import { Tokens } from '../../themes/tokens';
+import type { ThemeTokens as Tokens } from '../../themes';
+import { overdriveTokens } from '../../themes/theme.css';
 import { getThemeTokenValue } from '../../utils/css';
 import { useResponsiveValue } from '../useResponsiveValue';
 
@@ -40,7 +40,7 @@ export const useWindowHeightFill = ({
 			const gap =
 				getThemeTokenValue(
 					themeClass,
-					themeContractVars.space[bottomGap],
+					overdriveTokens.space[bottomGap],
 				) || '0px';
 			const availableHeight = Math.min(
 				maxHeight ?? Number.POSITIVE_INFINITY,

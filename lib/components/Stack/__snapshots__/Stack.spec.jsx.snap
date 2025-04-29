@@ -2,7 +2,7 @@
 
 exports[`<Stack /> > should correctly handle fragment nodes 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -41,7 +41,7 @@ exports[`<Stack /> > should correctly handle fragment nodes 1`] = `
 
 exports[`<Stack /> > should match the snapshot 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 />
 `;

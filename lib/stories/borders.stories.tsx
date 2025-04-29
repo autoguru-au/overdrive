@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
 import { Heading } from '../components/Heading';
+import { overdriveTokens } from '../themes';
 import { tokens } from '../themes/base/tokens';
 
 import { Box, Stack, type Sprinkles } from './helpers';
@@ -21,10 +22,12 @@ const Elevation = () => (
 		{elevationItems.map((elevation) => (
 			<Stack space="sm" alignItems="center" horizontal key={elevation}>
 				<Box
-					background="gray100"
 					borderRadius="1"
 					boxShadow={elevation as Sprinkles['boxShadow']}
 					size="9"
+					style={{
+						backgroundColor: overdriveTokens.color.gamut.gray[100],
+					}}
 				/>
 				<p>{elevation}</p>
 			</Stack>
@@ -42,12 +45,15 @@ const Widths = () => {
 			{widthItems.map((width) => (
 				<Stack space="sm" alignItems="center" horizontal key={width}>
 					<Box
-						background="black100"
 						borderColor="dark"
 						borderRadius="1"
 						borderStyle="solid"
 						borderWidth={width as Sprinkles['borderWidth']}
 						size="9"
+						style={{
+							backgroundColor:
+								overdriveTokens.color.gamut.black[100],
+						}}
 					/>
 					<p>{width}</p>
 				</Stack>
@@ -67,17 +73,21 @@ const Radius = () => {
 				<Stack space="sm" alignItems="center" horizontal key={radius}>
 					<Box
 						alignItems="center"
-						background="black700"
 						borderColor="gray"
 						borderRadius={radius as Sprinkles['borderRadius']}
-						color={'white'}
 						display="flex"
-						fontSize="3"
 						justifyContent="center"
 						size="9"
-						style={
-							radius === 'pill' ? { height: '64px' } : undefined
-						}
+						style={{
+							backgroundColor:
+								overdriveTokens.color.gamut.black[700],
+							color: overdriveTokens.color.gamut.white,
+							fontSize:
+								overdriveTokens.typography.size[3].fontSize,
+							...(radius === 'pill'
+								? { height: '64px' }
+								: undefined),
+						}}
 					>
 						{tokens.border.radius[radius]}
 					</Box>

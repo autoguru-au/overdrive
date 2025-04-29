@@ -2,7 +2,7 @@
 
 exports[`<Inline /> > should match snapshot for custom element dividers 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -55,7 +55,7 @@ exports[`<Inline /> > should match snapshot for custom element dividers 1`] = `
 
 exports[`<Inline /> > should match snapshot for default dividers 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -112,7 +112,7 @@ exports[`<Inline /> > should match snapshot for default dividers 1`] = `
 
 exports[`<Inline /> > should match snapshot for no dividers 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -151,7 +151,7 @@ exports[`<Inline /> > should match snapshot for no dividers 1`] = `
 
 exports[`<Inline /> > should not be able to render components 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div

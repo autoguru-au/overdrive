@@ -2,7 +2,7 @@
 
 exports[`<Tabs /> > should allow id overriding 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -92,7 +92,7 @@ exports[`<Tabs /> > should allow id overriding 1`] = `
 
 exports[`<Tabs /> > should allow rendering indications 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
@@ -233,7 +233,7 @@ exports[`<Tabs /> > should allow rendering indications 1`] = `
 
 exports[`<Tabs /> > should match snapshot (high level) 1`] = `
 <div
-  class="vars_OD_Base__1f5yyro0"
+  class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div

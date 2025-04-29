@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import * as React from 'react';
 import { AriaAttributes, forwardRef } from 'react';
 
-import { Tokens } from '../../themes/tokens';
+import { ThemeTokens as Tokens } from '../../themes';
 import type { Alignment } from '../../utils';
 import { alignmentToFlexAlignment } from '../../utils';
 import { Box } from '../Box';

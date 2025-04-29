@@ -1,6 +1,6 @@
 import { globalStyle } from '@vanilla-extract/css';
 
-import { globalTokens } from '../themes/theme.css';
+import { overdriveTokens } from '../themes/theme.css';
 
 globalStyle('html', {
 	overflowX: 'hidden',
@@ -16,10 +16,10 @@ globalStyle('body', {
 });
 
 globalStyle('body, [data-od-reset]', {
-	fontFamily: globalTokens.typography.fontFamily,
-	fontSize: globalTokens.typography.size[4].fontSize,
-	fontWeight: globalTokens.typography.fontWeight.normal,
-	lineHeight: globalTokens.typography.size[4].lineHeight,
+	fontFamily: overdriveTokens.typography.fontFamily,
+	fontSize: overdriveTokens.typography.size[4].fontSize,
+	fontWeight: overdriveTokens.typography.fontWeight.normal,
+	lineHeight: overdriveTokens.typography.size[4].lineHeight,
 });
 
 globalStyle('*', {

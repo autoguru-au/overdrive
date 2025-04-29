@@ -2,7 +2,7 @@ import { assignInlineVars } from '@vanilla-extract/dynamic';
 import { useMemo } from 'react';
 
 import { shadedColour } from '../../themes/helpers';
-import { themeContractVars } from '../../themes/theme.css';
+import { overdriveTokens } from '../../themes/theme.css';
 
 /** valid colour override keys */
 const colorOverrideKeys = [
@@ -64,7 +64,7 @@ export const useColorOverrides = (
 		}
 		// slightly messy use of ts-expect-error but assignInlineVars only generates css vars to apply to a container
 		// any property that is undefined will not have an inline css var generated
-		return assignInlineVars(themeContractVars, {
+		return assignInlineVars(overdriveTokens, {
 			colours: {
 				intent: {
 					primary: {

@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { themeContractVars as tokens } from '../themes/theme.css';
+import { overdriveTokens as tokens } from '../themes/theme.css';
 
 const width = '2px';
 

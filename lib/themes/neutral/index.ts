@@ -1,11 +1,11 @@
-import { themeContractVars } from '../theme.css';
+import { overdriveTokens } from '../theme.css';
 
+import { themeRef } from './theme.css';
 import { tokens } from './tokens';
-import { themeRef } from './vars.css';
 
 export default {
 	name: 'neutralTheme',
 	themeRef,
-	vars: themeContractVars,
+	vars: overdriveTokens,
 	tokens,
 };
