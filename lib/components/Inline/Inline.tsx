@@ -8,15 +8,14 @@ import {
 	useNegativeMarginTop,
 } from '../../hooks/useNegativeMargin/useNegativeMargin';
 import type { ThemeTokens as Tokens } from '../../themes';
-import type { ResponsiveProp } from '../../utils/responsiveProps.css';
-import type { BoxStyleProps } from '../Box';
+import type { BoxProps } from '../Box';
 import { Box } from '../Box';
 import { Text } from '../Text';
 
-export interface Props extends Pick<BoxStyleProps, 'is' | 'width'> {
-	space?: ResponsiveProp<keyof Tokens['space']>;
-	alignY?: BoxStyleProps['alignItems'];
-	alignX?: BoxStyleProps['justifyContent'];
+export interface Props extends Pick<BoxProps, 'is' | 'width'> {
+	space?: Tokens['space'];
+	alignY?: BoxProps['alignItems'];
+	alignX?: BoxProps['justifyContent'];
 	noWrap?: boolean;
 	children: ReactNode;
 	dividers?: boolean | ReactNode;

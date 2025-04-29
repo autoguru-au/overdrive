@@ -47,7 +47,7 @@ export interface Props extends TextProps, InputProps, BoxProps {
 }
 const numberInputValuePattern = /^\d*\.?\d*$/;
 type InputMode = 'TEXT' | 'INPUT';
-export const EditableText = forwardRef<HTMLAnchorElement, Props>(
+export const EditableText = forwardRef<HTMLDivElement, Props>(
 	(
 		{
 			is,

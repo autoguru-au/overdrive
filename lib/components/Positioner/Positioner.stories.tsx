@@ -85,10 +85,10 @@ export const Open: Story = {
 				<Positioner {...args} triggerRef={triggerRef}>
 					<Box
 						boxShadow="1"
-						backgroundColor="white"
+						backgroundColour="white"
 						borderRadius="1"
 						borderWidth="1"
-						borderColor="gray"
+						borderColour="gray"
 						padding="2"
 					>
 						<Text is="p">
@@ -138,10 +138,10 @@ export const IllustrateAScroll: Story = {
 					<Positioner {...args} triggerRef={triggerRef}>
 						<Box
 							boxShadow="1"
-							backgroundColor="white"
+							backgroundColour="white"
 							borderRadius="1"
 							borderWidth="1"
-							borderColor="gray"
+							borderColour="gray"
 							padding="2"
 						>
 							<Text is="p">

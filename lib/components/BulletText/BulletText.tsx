@@ -2,13 +2,13 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { FunctionComponent, isValidElement, ReactNode } from 'react';
 
-import { Box, BoxStyleProps } from '../Box';
+import { Box, BoxProps } from '../Box';
 import { Inline } from '../Inline';
 import { Text } from '../Text';
 
 import * as styles from './BulletText.css';
 
-export interface Props extends Partial<Pick<BoxStyleProps, 'as' | 'is'>> {
+export interface Props extends Partial<Pick<BoxProps, 'as' | 'is'>> {
 	bullet?: ReactNode;
 	variant?: 'primary' | 'secondary';
 	children?: ReactNode;

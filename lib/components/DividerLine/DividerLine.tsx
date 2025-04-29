@@ -22,7 +22,7 @@ export const DividerLine: FunctionComponent<Props> = ({
 	size = 1,
 }) => (
 	<Box
-		backgroundColor={colour}
+		backgroundColour={colour}
 		className={clsx(className, {
 			[styles.size.horizontal[size]]: !isVertical,
 			[styles.size.vertical[size]]: isVertical,

@@ -1,14 +1,11 @@
 import * as React from 'react';
 import { FunctionComponent } from 'react';
 
-import { Box, type BoxProps } from '../Box';
+import { Box } from '../Box';
 
 import * as styles from './IntentStripe.css';
 
-type Intent = keyof Pick<
-	BoxProps['backgroundColour'],
-	'danger' | 'information' | 'success' | 'warning'
->;
+type Intent = 'danger' | 'information' | 'success' | 'warning';
 
 export interface Props {
 	className?: string;
