@@ -4,7 +4,7 @@ import * as React from 'react';
 import { FunctionComponent, memo, NamedExoticComponent } from 'react';
 
 import { ThemeTokens as Tokens } from '../../themes';
-import { Box, useBoxStyles } from '../Box';
+import { Box, boxStyles } from '../Box';
 import { Icon } from '../Icon';
 import { Inline } from '../Inline';
 import { Text } from '../Text';
@@ -121,7 +121,7 @@ const Star: FunctionComponent<StarProps> = ({
 			icon={star}
 			size={starSizeMap.get(size)}
 			className={clsx(
-				useBoxStyles({ position: 'relative' }),
+				boxStyles({ position: 'relative' }),
 				styles.star.default,
 				{
 					[styles.star.empty]: starType === EStarType.Empty,

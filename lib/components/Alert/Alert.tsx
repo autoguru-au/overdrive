@@ -10,7 +10,7 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { ComponentProps, FunctionComponent, ReactNode } from 'react';
 
-import { Box, useBoxStyles } from '../Box';
+import { Box, boxStyles } from '../Box';
 import { Button } from '../Button';
 import { Column, Columns } from '../Columns';
 import { Icon } from '../Icon';
@@ -66,11 +66,11 @@ export const Alert: FunctionComponent<Props> = ({
 		>
 			<IntentStripe intent={intent} />
 			<Columns noWrap spaceX="2">
-				<Column noShrink alignSelf="top">
+				<Column noShrink alignSelf="flex-start">
 					<Icon
 						icon={iconMapForIntent[intent]}
 						size="medium"
-						className={useBoxStyles({
+						className={boxStyles({
 							marginY: '2',
 							marginLeft: '2',
 						})}
@@ -80,7 +80,7 @@ export const Alert: FunctionComponent<Props> = ({
 				<Column
 					grow
 					width="auto"
-					alignSelf="centre"
+					alignSelf="center"
 					className={useTextStyles({ colour: 'dark' })}
 				>
 					{typeof children === 'string' ? (
@@ -89,7 +89,7 @@ export const Alert: FunctionComponent<Props> = ({
 						children
 					)}
 				</Column>
-				<Column noShrink alignSelf="top">
+				<Column noShrink alignSelf="flex-start">
 					{dismissible && (
 						<Button
 							minimal

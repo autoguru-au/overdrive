@@ -21,7 +21,7 @@ import {
 import type { TextFontWeight, TextSizeScale } from '../../themes';
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
-import { Box, useBoxStyles } from '../Box';
+import { Box, boxStyles } from '../Box';
 import { Icon } from '../Icon';
 import { ProgressSpinner } from '../ProgressSpinner';
 import { useTextStyles } from '../Text';
@@ -161,9 +161,9 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 			'aria-label': isLoading ? language.loading : ariaLabel,
 			'data-loading': isLoading ? '' : undefined,
 			className: clsx(
-				useBoxStyles({
-					is: typeof Component === 'string' ? Component : undefined,
-					display: 'inlineBlock',
+				boxStyles({
+					as: typeof Component === 'string' ? Component : undefined,
+					display: 'inline-block',
 					overflow: 'hidden',
 					borderRadius: getBorderRadius(rounded),
 					textAlign: 'center',

@@ -2,14 +2,14 @@ import * as React from 'react';
 import { Children, FunctionComponent, ReactNode } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 
-import type { BoxStyleProps } from '../Box';
+import type { BoxProps } from '../Box';
 import { Box } from '../Box';
 
 import { Divider } from './Divider';
 import * as styles from './Stack.css';
 
-export interface Props
-	extends Pick<BoxStyleProps, 'as' | 'is' | 'width' | 'alignItems'> {
+export interface StackProps
+	extends Pick<BoxProps, 'as' | 'width' | 'alignItems'> {
 	space?: keyof typeof styles.child.spaces;
 	className?: string;
 	dividers?: boolean;
@@ -22,11 +22,10 @@ const supportedListTypes: ReadonlyArray<keyof React.JSX.IntrinsicElements> = [
 	'ol',
 ] as const;
 
-export const Stack: FunctionComponent<Props> = ({
+export const Stack: FunctionComponent<StackProps> = ({
 	space = '2',
 	children,
-	is = 'div',
-	as = is,
+	as,
 	alignItems,
 	width,
 	dividers = false,

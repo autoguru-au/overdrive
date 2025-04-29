@@ -124,7 +124,7 @@ export const StandardModal: FunctionComponent<Props> = ({
 						paddingY="3"
 						paddingLeft="5"
 						paddingRight="2"
-						borderWidthBottom="1"
+						borderBottomWidth="1"
 						borderColour="light"
 					>
 						<Box flexGrow={1} id={titleId!}>

@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 
-import type { BoxStyleProps } from '../Box';
-import { useBoxStyles } from '../Box';
+import type { BoxProps } from '../Box';
+import { boxStyles } from '../Box';
 
 import * as styles from './useTextStyles.css';
 
@@ -13,7 +13,7 @@ export type TextTransform = keyof typeof styles.transform;
 export type TextTags = 'p' | 'label' | 'span';
 export interface TextStyleProps {
 	/** @deprecated Use `useBoxStyles` for alignment instead of `useTextStyles` */
-	align?: BoxStyleProps['textAlign'];
+	align?: BoxProps['textAlign'];
 	/** HTML element to render as */
 	as?: TextTags;
 	/** Set the text colour */
@@ -48,7 +48,7 @@ export const useTextStyles = ({
 }: TextStyleProps) => {
 	return clsx(
 		styles.root,
-		useBoxStyles({ as, textAlign: align }),
+		boxStyles({ as, textAlign: align }),
 		color !== 'unset' && styles.colours[color ?? 'neutral'],
 		fontWeight && styles.fontWeight[fontWeight],
 		noWrap && styles.noWrap,

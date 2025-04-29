@@ -27,6 +27,7 @@ type TextProps = Pick<
 >;
 type InputProps = Omit<
 	InputHTMLAttributes<HTMLInputElement>,
+	| 'color'
 	| 'style'
 	| 'is'
 	| 'autoFocus'
@@ -52,7 +53,7 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 			is,
 			colour = 'muted',
 			size,
-			display = 'inlineBlock',
+			display = 'inline-block',
 			value,
 			onFocus,
 			onBlur,
@@ -150,7 +151,7 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 				<Text
 					noWrap
 					ref={textRef}
-					is={is}
+					as={is}
 					colour={colour}
 					size={size}
 					className={clsx(textStyles, styles.text, {

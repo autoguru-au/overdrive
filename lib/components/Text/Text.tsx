@@ -2,14 +2,14 @@ import React from 'react';
 
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
-import type { BoxStyleProps } from '../Box';
+import type { BoxProps } from '../Box';
 import { Box } from '../Box';
 
 import { TextStyleProps, useTextStyles } from './useTextStyles';
 
 type Display = Extract<
-	BoxStyleProps['display'],
-	'inline' | 'inlineBlock' | 'block'
+	BoxProps['display'],
+	'inline' | 'inline-block' | 'block'
 >;
 type ElementAttributes = React.ComponentPropsWithoutRef<'p'> &
 	Pick<React.ComponentProps<'label'>, 'htmlFor'>;
@@ -31,9 +31,7 @@ export const Text = React.forwardRef<HTMLElement, WithTestId<TextProps>>(
 			is = 'span',
 			as = is,
 			testId,
-			align = 'left',
-			colour,
-			color = colour,
+			color,
 			display,
 			fontWeight = 'normal',
 			transform,
@@ -49,7 +47,6 @@ export const Text = React.forwardRef<HTMLElement, WithTestId<TextProps>>(
 			as={as}
 			ref={ref}
 			display={display}
-			textAlign={align}
 			className={[
 				useTextStyles({
 					as,

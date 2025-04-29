@@ -19,7 +19,7 @@ import React, {
 } from 'react';
 
 import { useInputControlledState } from '../../../utils';
-import { Box, useBoxStyles } from '../../Box';
+import { Box, boxStyles } from '../../Box';
 import { Icon } from '../../Icon';
 import { ProgressSpinner } from '../../ProgressSpinner';
 
@@ -200,8 +200,8 @@ export const withEnhancedInput = <
 			const iconSize = size === 'small' ? 'medium' : size;
 
 			const inputItselfClassName = clsx(
-				useBoxStyles({
-					is: primitiveType === 'textarea' ? 'textarea' : 'input',
+				boxStyles({
+					as: primitiveType === 'textarea' ? 'textarea' : 'input',
 					backgroundColour,
 					width: 'full',
 					position: 'relative',
@@ -287,7 +287,7 @@ export const withEnhancedInput = <
 				setIsHovered(false);
 			}, []);
 
-			const iconStyles = useBoxStyles({
+			const iconStyles = boxStyles({
 				pointerEvents: 'none',
 				position: 'absolute',
 			});
