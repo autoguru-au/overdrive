@@ -5,8 +5,9 @@ exports[`<Bullet /> > should match the snapshot 1`] = `
   class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
-  <li
-    class="Bullet_root_default__13ecipx0"
+  <div
+    class="reset_block__1oah0224 Bullet_root_default__13ecipx0"
+    is="li"
   />
 </div>
 `;
