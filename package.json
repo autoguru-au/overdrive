@@ -122,8 +122,8 @@
 		"@vanilla-extract/sprinkles": "^1.6.3",
 		"@vanilla-extract/vite-plugin": "^5.0.1",
 		"@vanilla-extract/webpack-plugin": "^2.3.18",
-		"@vitest/browser": "3.1.1",
-		"@vitest/coverage-v8": "3.1.1",
+		"@vitest/browser": "3.1.2",
+		"@vitest/coverage-v8": "3.1.2",
 		"@vitest/eslint-plugin": "1.1.43",
 		"babel-plugin-add-import-extension": "^1.6.0",
 		"babel-plugin-dev-expression": "^0.2.3",
@@ -146,7 +146,7 @@
 		"magic-string": "^0.30.17",
 		"mini-css-extract-plugin": "^2.9.2",
 		"mockdate": "^3.0.5",
-		"playwright": "^1.51.1",
+		"playwright": "^1.52.0",
 		"plop": "^4.0.1",
 		"postcss": "^8.5.3",
 		"prettier": "^3.5.3",
@@ -166,9 +166,9 @@
 		"storybook-addon-tag-badges": "^1.4.0",
 		"typescript": "5.8.3",
 		"url-loader": "^4.1.1",
-		"vite": "6.3.2",
-		"vitest": "^3.1.1",
-		"webpack": "5.99.6"
+		"vite": "6.3.3",
+		"vitest": "^3.1.2",
+		"webpack": "5.99.7"
 	},
 	"peerDependencies": {
 		"@autoguru/icons": ">=1.8.8",
