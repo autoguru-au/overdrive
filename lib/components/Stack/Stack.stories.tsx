@@ -1,50 +1,29 @@
 import { Meta, StoryObj } from '@storybook/react';
-import React, { type ComponentProps } from 'react';
+import React from 'react';
 
-import { boxArgTypes } from '../Box/argTypes';
+// import { boxArgTypes } from '../Box/argTypes';
 import { Text } from '../Text';
 
 import { Stack } from '.';
 
-const spacingOptions: Record<string, ComponentProps<typeof Stack>['space']> = {
-	none: 'none',
-	1: '1',
-	2: '2',
-	3: '3',
-	4: '4',
-	5: '5',
-	6: '6',
-	7: '7',
-	8: '8',
-	9: '9',
-};
+// const spacingOptions: Record<string, ComponentProps<typeof Stack>['space']> = {
+// 	none: 'none',
+// 	1: '1',
+// 	2: '2',
+// 	3: '3',
+// 	4: '4',
+// 	5: '5',
+// 	6: '6',
+// 	7: '7',
+// 	8: '8',
+// 	9: '9',
+// };
 
-const meta = {
+const meta: Meta<typeof Stack> = {
 	title: 'Layout/Stack',
 	component: Stack,
-	argTypes: {
-		space: {
-			options: Object.keys(spacingOptions),
-			defaultValue: 1,
-			control: {
-				type: 'select',
-			},
-		},
-		width: boxArgTypes.width,
-		alignItems: boxArgTypes.alignItems,
-	},
-} satisfies Meta<typeof Stack>;
-
-export default meta;
-
-type Story = StoryObj<typeof Stack>;
-
-export const Standard: Story = {
 	args: {
 		space: '1',
-		dividers: false,
-		width: void 0,
-		is: 'div',
 	},
 	render: (args) => (
 		<Stack {...args}>
@@ -53,33 +32,46 @@ export const Standard: Story = {
 			<Text>Line 3</Text>
 		</Stack>
 	),
+	// argTypes: {
+	// 	space: {
+	// 		options: Object.keys(spacingOptions),
+	// 		defaultValue: 1,
+	// 		control: {
+	// 			type: 'select',
+	// 		},
+	// 	},
+	// 	width: boxArgTypes.width,
+	// 	alignItems: boxArgTypes.alignItems,
+	// },
 };
+
+export default meta;
+
+type Story = StoryObj<typeof Stack>;
+
+export const Standard: Story = {};
 
 export const AsSection: Story = {
 	args: {
-		...Standard.args,
-		is: 'section',
+		as: 'section',
+		space: '2',
 	},
-	render: Standard.render,
 };
 
+/** Instance of a `<ul>` tag which automatically gets semantic children tags */
 export const WithDividers: Story = {
 	args: {
-		...Standard.args,
-		is: 'div',
+		as: 'ul',
 		dividers: true,
 		space: '3',
 	},
-	render: Standard.render,
 };
 
+/** Uses an array for `space` which means the spacing will be responsive */
 export const WithAlignment: Story = {
 	args: {
-		...Standard.args,
-		is: 'div',
-		dividers: true,
-		space: '3',
 		alignItems: 'center',
+		dividers: true,
+		space: ['2', '4', '6'],
 	},
-	render: Standard.render,
 };

@@ -57,6 +57,31 @@ const renderDivider = (dividers: InlineDivider) => {
 	return <Text>{dividers}</Text>;
 };
 
+/**
+ * Inline arranges child elements horizontally, side by side.
+ * It allows you to control the spacing between items, alignment (horizontal and vertical),
+ * wrapping behavior, and optionally add dividers.
+ * Useful for creating a row layout.
+ *
+ * @example
+ * <Inline space="4" alignY="flexStart">
+ *   <Button>Action 1</Button>
+ *   <Button>Action 2</Button>
+ * </Inline>
+ *
+ * @example
+ * <Inline space="3" dividers>
+ *   <Text>Option A</Text>
+ *   <Text>Option B</Text>
+ *   <Text>Option C</Text>
+ * </Inline>
+ *
+ * @example
+ * <Inline space="2" dividers="|" alignX="center">
+ *   <Text>Link 1</Text>
+ *   <Text>Link 2</Text>
+ * </Inline>
+ */
 export const Inline = <E extends ElementType = 'div'>({
 	alignX,
 	alignY = 'center',
@@ -69,7 +94,7 @@ export const Inline = <E extends ElementType = 'div'>({
 }: InlineProps<E>) => {
 	const divider = renderDivider(dividers);
 
-	const { Component, componentProps, ChildComponent } = useBox<E>({
+	const { Component, componentProps, SemanticChild } = useBox<E>({
 		alignItems: alignY,
 		display: 'flex',
 		flexDirection: 'row',
@@ -95,7 +120,7 @@ export const Inline = <E extends ElementType = 'div'>({
 					child && (
 						<Box
 							alignItems={alignY}
-							as={ChildComponent}
+							as={SemanticChild}
 							display="flex"
 							gap={space}
 							flexWrap="nowrap"

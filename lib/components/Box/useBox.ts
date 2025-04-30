@@ -35,7 +35,7 @@ export interface UseBoxReturnValue<E extends ElementType = 'div'> {
 	/** The props to be spread on the HTML element */
 	componentProps: UseBoxProps<E>;
 	/** A semantic child HTML element to use within the `Component` (only if applicable) */
-	ChildComponent?: ElementType;
+	SemanticChild?: ElementType;
 }
 
 const DEFAULT_TAG = 'div' as keyof JSX.IntrinsicElements;
@@ -46,7 +46,8 @@ const LIST_TAGS = ['ul', 'ol'] as ReadonlyArray<keyof JSX.IntrinsicElements>;
  * The Overdrive component primitive to expose a flexible HTML element as a fully typesafe React component
  * that provides intrinsic props as well as style props from vanilla-extract sprinkles
  *
- * @returns `{ Component, componentProps, ChildComponent }` where ChildComponent is optional based on the `as` prop
+ * @returns `{ Component, componentProps, SemanticChild }` where SemanticChild is optionally passed back based on the
+ * `as` prop
  */
 export const useBox = <E extends ElementType = 'div'>({
 	as,
@@ -57,7 +58,7 @@ export const useBox = <E extends ElementType = 'div'>({
 
 	// logic to promote semantic HTML and ensure a child tag is correct for the `as` prop
 	const isList = LIST_TAGS.includes(Component as keyof JSX.IntrinsicElements);
-	const ChildComponent = isList ? LIST_ITEM_TAG : undefined;
+	const SemanticChild = isList ? LIST_ITEM_TAG : undefined;
 
 	const style = useDeepCompareMemo(
 		() =>
@@ -80,6 +81,6 @@ export const useBox = <E extends ElementType = 'div'>({
 			className: style,
 			...remainingProps,
 		},
-		ChildComponent,
+		SemanticChild,
 	};
 };
