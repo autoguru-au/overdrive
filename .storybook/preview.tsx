@@ -1,5 +1,6 @@
 import type { Preview } from '@storybook/react';
 
+import '../lib/reset/reset.css'; // reset is imported here only for correct source ordering in Storybook
 import '../lib/reset/globalFonts.css';
 import '../lib/reset/globalReset.css';
 import * as themes from '../lib/themes';

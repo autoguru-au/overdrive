@@ -4,9 +4,13 @@ import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
 import { breakpoints } from '../themes/makeTheme';
 import { overdriveTokens as tokens } from '../themes/theme.css';
 
+import { gapVar } from './vars.css';
+
 const { space } = tokens;
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { none, ...spaceWithoutNone } = space;
+
+// --- transformations over the tokens to make ready for sprinkles
 
 const fontSizes = Object.entries(tokens.typography.size).reduce(
 	(sizes, [scale, fontSize]) => {
@@ -48,6 +52,20 @@ const borderColors = {
 	disabled: tokens.color.interactive.borderDisabled,
 	...tokens.color.surface,
 };
+
+const gapSizesWithVar = Object.entries(space).reduce(
+	(acc, [key, value]) => {
+		acc[key] = {
+			vars: { [gapVar]: value },
+			gap: value,
+		};
+		return acc;
+	},
+	{} as Record<
+		keyof typeof spaceWithoutNone,
+		{ vars: Record<string, string>; gap: string }
+	>,
+);
 
 // --- Base sprinkles (non-responsive)
 const baseProperties = defineProperties({
@@ -201,7 +219,7 @@ const responsiveProperties = defineProperties({
 			full: '100%',
 			auto: 'auto',
 		},
-		gap: space,
+		gap: gapSizesWithVar,
 		// Alignment
 		alignItems: ['flex-start', 'center', 'flex-end', 'baseline'],
 		justifyContent: [
