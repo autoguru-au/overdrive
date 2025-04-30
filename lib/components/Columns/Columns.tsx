@@ -8,11 +8,11 @@ import {
 import type { ThemeTokens as Tokens } from '../../themes';
 import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
 import { ResponsiveProp } from '../../utils/responsiveProps.css';
-import { Box, type BoxProps } from '../Box';
+import { Box, type UseBoxProps } from '../Box';
 
 import * as styles from './Columns.css';
 
-export interface Props extends BoxProps {
+export interface Props extends UseBoxProps {
 	className?: string;
 	columns?: number;
 	space?: ResponsiveProp<keyof Tokens['space']>;

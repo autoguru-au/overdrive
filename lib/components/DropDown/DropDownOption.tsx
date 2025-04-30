@@ -47,7 +47,7 @@ export const DropDownOption: FunctionComponent<Props> = ({
 				noWrap
 				space="2"
 				width="full"
-				alignX="spaceBetween"
+				alignX="space-between"
 				alignY="center"
 			>
 				<Text is="p" size="3">

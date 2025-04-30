@@ -31,7 +31,7 @@ export const SimplePagination: FunctionComponent<Props> = ({
 
 	return (
 		<Inline
-			is="nav"
+			as="nav"
 			space="6"
 			aria-label="pagination"
 			alignX="center"

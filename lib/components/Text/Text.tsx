@@ -2,13 +2,13 @@ import React from 'react';
 
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
-import type { BoxProps } from '../Box';
+import type { UseBoxProps } from '../Box';
 import { Box } from '../Box';
 
 import { TextStyleProps, useTextStyles } from './useTextStyles';
 
 type Display = Extract<
-	BoxProps['display'],
+	UseBoxProps['display'],
 	'inline' | 'inline-block' | 'block'
 >;
 type ElementAttributes = React.ComponentPropsWithoutRef<'p'> &
@@ -32,6 +32,7 @@ export const Text = React.forwardRef<HTMLElement, WithTestId<TextProps>>(
 			as = is,
 			testId,
 			color,
+			colour,
 			display,
 			fontWeight = 'normal',
 			transform,
@@ -51,7 +52,7 @@ export const Text = React.forwardRef<HTMLElement, WithTestId<TextProps>>(
 				useTextStyles({
 					as,
 					size,
-					color: color ?? (strong ? 'dark' : undefined),
+					colour: colour ?? (strong ? 'dark' : undefined),
 					fontWeight: strong ? 'bold' : fontWeight,
 					transform,
 					noWrap,

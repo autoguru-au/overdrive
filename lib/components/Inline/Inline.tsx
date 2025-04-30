@@ -64,7 +64,7 @@ const renderDivider = (dividers: InlineDivider) => {
  * Useful for creating a row layout.
  *
  * @example
- * <Inline space="4" alignY="flexStart">
+ * <Inline space="4" alignY="flex-start">
  *   <Button>Action 1</Button>
  *   <Button>Action 2</Button>
  * </Inline>

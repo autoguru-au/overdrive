@@ -2,13 +2,13 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { FunctionComponent, isValidElement, ReactNode } from 'react';
 
-import { Box, BoxProps } from '../Box';
+import { Box, type UseBoxProps } from '../Box';
 import { Inline } from '../Inline';
 import { Text } from '../Text';
 
 import * as styles from './BulletText.css';
 
-export interface Props extends Partial<Pick<BoxProps, 'as' | 'is'>> {
+export interface Props extends Partial<Pick<UseBoxProps, 'as' | 'is'>> {
 	bullet?: ReactNode;
 	variant?: 'primary' | 'secondary';
 	children?: ReactNode;
@@ -21,7 +21,7 @@ export const BulletText: FunctionComponent<Props> = ({
 	is: Component = as,
 	bullet: Bullet = '•',
 }) => (
-	<Inline noWrap space="3" is={Component} alignX="flexStart" alignY="center">
+	<Inline noWrap space="3" as={Component} alignX="flex-start" alignY="center">
 		{isValidElement(Bullet) ? (
 			<Box position="relative" flexShrink={0}>
 				{Bullet}

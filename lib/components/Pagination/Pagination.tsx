@@ -76,7 +76,7 @@ interface LoadingComponentProps {
 const Loading: FunctionComponent<LoadingComponentProps> = ({
 	placeholderBubblesNum = 3,
 }) => (
-	<Inline is="span" space="3">
+	<Inline as="span" space="3">
 		<NavButton disabled icon={ChevronLeftIcon} />
 		{Array.from({ length: placeholderBubblesNum })
 			.fill('')
@@ -114,7 +114,7 @@ export const Pagination: FunctionComponent<Props> = ({
 	);
 
 	return !loading && total && pageSize && activePage && numPagesDisplayed ? (
-		<Inline is="nav" space="3" aria-label="pagination">
+		<Inline as="nav" space="3" aria-label="pagination">
 			<NavButton
 				disabled={activePage <= 1}
 				label="navigate back"

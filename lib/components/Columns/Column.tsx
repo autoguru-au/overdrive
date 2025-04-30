@@ -3,12 +3,12 @@ import React, { forwardRef, useContext } from 'react';
 
 import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
 import { ResponsiveProp } from '../../utils/responsiveProps.css';
-import { Box, type BoxProps } from '../Box';
+import { Box, type UseBoxProps } from '../Box';
 
 import * as styles from './Column.css';
 import { ColumnContext } from './Columns';
 
-export interface ColumnProps extends Omit<BoxProps, 'width'> {
+export interface ColumnProps extends Omit<UseBoxProps, 'width'> {
 	width?: ResponsiveProp<keyof typeof styles.width>;
 	noShrink?: boolean;
 	grow?: boolean;

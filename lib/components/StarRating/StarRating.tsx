@@ -78,6 +78,8 @@ export const StarRating: NamedExoticComponent<Props> = memo(
 	),
 );
 
+StarRating.displayName = 'StarRating';
+
 const getStarIconType = (index: number, rating: number): EStarType => {
 	if (index + 1 <= Math.floor(rating)) {
 		// Is definitely full star

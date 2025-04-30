@@ -62,7 +62,7 @@ const gapSizesWithVar = Object.entries(space).reduce(
 		return acc;
 	},
 	{} as Record<
-		keyof typeof spaceWithoutNone,
+		keyof typeof space,
 		{ vars: Record<string, string>; gap: string }
 	>,
 );
@@ -148,6 +148,7 @@ const legacyColourProperties = defineProperties({
 			...tokens.colours.foreground,
 			...tokens.typography.colour,
 			...tokens.colours.gamut,
+			unset: 'unset',
 		},
 	},
 	// use the shorthands to remap 'color' to 'colour'
@@ -198,6 +199,7 @@ const responsiveProperties = defineProperties({
 		display: [
 			'none',
 			'block',
+			'contents',
 			'flex',
 			'grid',
 			'inline',

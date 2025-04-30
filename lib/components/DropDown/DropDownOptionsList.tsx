@@ -21,3 +21,5 @@ export const DropDownOptionsList = forwardRef<HTMLDivElement, Props>(
 		</Box>
 	),
 );
+
+DropDownOptionsList.displayName = 'DropDownOptionsList';
