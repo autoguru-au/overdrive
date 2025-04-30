@@ -3,10 +3,6 @@ import * as React from 'react';
 import { Children, isValidElement, ReactNode } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 
-import {
-	useNegativeMarginLeft,
-	useNegativeMarginTop,
-} from '../../hooks/useNegativeMargin/useNegativeMargin';
 import type { SprinklesResponsive } from '../../styles/sprinkles.css';
 import { Box, useBox, type UseBoxProps } from '../Box';
 import { Text } from '../Text';
@@ -29,7 +25,6 @@ const renderDivider = (dividers: InlineDivider) => {
 	if (!dividers) return null;
 	if (typeof dividers === 'boolean') return <Text>•</Text>;
 	if (isValidElement(dividers)) return dividers;
-
 	return <Text>{dividers}</Text>;
 };
 
@@ -43,18 +38,14 @@ export const Inline = <E extends ElementType = 'div'>({
 	width,
 	...props
 }: InlineProps<E>) => {
-	//@ts-expect-error space type
-	const negativeMarginLeft = useNegativeMarginLeft(space);
-	//@ts-expect-error space type
-	const negativeMarginTop = useNegativeMarginTop(space);
 	const divider = renderDivider(dividers);
 
 	const { Component, componentProps } = useBox<E>({
 		alignItems: alignY,
-		className: [negativeMarginTop, !dividers && negativeMarginLeft],
 		display: 'flex',
 		flexDirection: 'row',
 		flexWrap: noWrap ? 'nowrap' : 'wrap',
+		gap: space,
 		justifyContent: alignX,
 		position: 'relative',
 		width,
@@ -83,15 +74,13 @@ export const Inline = <E extends ElementType = 'div'>({
 							alignItems={alignY}
 							as={itemTag}
 							display="flex"
-							flexDirection="row"
+							gap={space}
 							flexWrap="nowrap"
-							paddingLeft={dividers ? undefined : space}
-							paddingTop={space}
 						>
 							{child}
-							{dividers && idx !== items.length - 1 ? (
-								<Box paddingX={space}>{divider}</Box>
-							) : null}
+							{dividers && idx !== items.length - 1 && (
+								<Box aria-hidden>{divider}</Box>
+							)}
 						</Box>
 					),
 			)}
