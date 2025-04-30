@@ -1,6 +1,9 @@
-import type { ElementType, JSX } from 'react';
-import * as React from 'react';
-import { Children, isValidElement, ReactNode } from 'react';
+import React, {
+	Children,
+	isValidElement,
+	type ElementType,
+	type ReactNode,
+} from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 
 import type { SprinklesResponsive } from '../../styles/sprinkles.css';
@@ -9,17 +12,43 @@ import { Text } from '../Text';
 
 export type InlineDivider = ReactNode | boolean;
 export interface InlineProps<E extends ElementType = 'div'> {
+	/**
+	 * Sets the horizontal alignment
+	 */
 	alignX?: SprinklesResponsive['justifyContent'];
+	/**
+	 * Sets the vertical alignment
+	 * @default 'center'
+	 */
 	alignY?: SprinklesResponsive['alignItems'];
+	/**
+	 * The HTML element
+	 * @default 'div'
+	 */
 	as?: E;
+	/**
+	 * The content to be rendered inside the Inline component, usually multiple child elements
+	 */
 	children: ReactNode;
+	/**
+	 * A divider element to render between each child. Accepts `true`/`false` for default separator or custom JSX
+	 */
 	dividers?: InlineDivider;
+	/**
+	 * Control wrapping - `true` prevents items from wrapping to the next line when they overflow the container width
+	 * @default false (items wrap)
+	 */
 	noWrap?: boolean;
+	/**
+	 * Defines the gap between list items. Accepts responsive values
+	 * @default '2'
+	 */
 	space?: SprinklesResponsive['gap'];
+	/**
+	 * Sets the width of the Inline container. Accepts responsive values
+	 */
 	width?: SprinklesResponsive['width'];
 }
-
-const LIST_TAGS = ['ul', 'ol'] as ReadonlyArray<React.ElementType>;
 
 const renderDivider = (dividers: InlineDivider) => {
 	if (!dividers) return null;
@@ -40,7 +69,7 @@ export const Inline = <E extends ElementType = 'div'>({
 }: InlineProps<E>) => {
 	const divider = renderDivider(dividers);
 
-	const { Component, componentProps } = useBox<E>({
+	const { Component, componentProps, ChildComponent } = useBox<E>({
 		alignItems: alignY,
 		display: 'flex',
 		flexDirection: 'row',
@@ -58,12 +87,6 @@ export const Inline = <E extends ElementType = 'div'>({
 		return <>{items}</>;
 	}
 
-	const itemTag = LIST_TAGS.includes(
-		`${Component}` as keyof JSX.IntrinsicElements,
-	)
-		? 'li'
-		: 'div';
-
 	return (
 		<Component {...componentProps}>
 			{Children.map(
@@ -72,7 +95,7 @@ export const Inline = <E extends ElementType = 'div'>({
 					child && (
 						<Box
 							alignItems={alignY}
-							as={itemTag}
+							as={ChildComponent}
 							display="flex"
 							gap={space}
 							flexWrap="nowrap"
