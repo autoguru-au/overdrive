@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Sprinkles } from '../../styles/sprinkles.css';
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import type { UseBoxProps } from '../Box';
@@ -17,6 +18,8 @@ type ElementAttributes = React.ComponentPropsWithoutRef<'p'> &
 export interface TextProps
 	extends Omit<ElementAttributes, 'color' | 'is'>,
 		TextStyleProps {
+	/** Set the text colour */
+	color?: Sprinkles['color'];
 	/** Use bold font weight */
 	strong?: boolean;
 	/** Select CSS display property  */
@@ -31,7 +34,6 @@ export const Text = React.forwardRef<HTMLElement, WithTestId<TextProps>>(
 			is = 'span',
 			as = is,
 			testId,
-			color,
 			colour,
 			display,
 			fontWeight = 'normal',

@@ -9,7 +9,7 @@ import { useTextStyles } from '../Text';
 
 export interface HeadingProps
 	extends Omit<TextStyleProps, 'as'>,
-		Pick<UseBoxProps, 'children' | 'className' | 'id'> {
+		Pick<UseBoxProps, 'children' | 'className' | 'id' | 'ref'> {
 	as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 	colour?: Exclude<keyof Tokens['typography']['colour'], 'muted'>;
 }
