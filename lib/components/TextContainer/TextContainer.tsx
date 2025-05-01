@@ -26,7 +26,7 @@ export const TextContainer: FunctionComponent<Props> = ({
 const TextContainerHeading: FunctionComponent<
 	Omit<Props, 'className' | 'children'>
 > = ({ heading, action }) => (
-	<Columns noWrap align="centre" space="4">
+	<Columns noWrap align="center" space="4">
 		<Column grow>{heading!}</Column>
 		{action ? <Column width="auto">{action!}</Column> : null}
 	</Columns>

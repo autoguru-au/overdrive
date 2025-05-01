@@ -1,71 +1,33 @@
-import { invariant } from '@autoguru/utilities';
-import React, { forwardRef, useContext } from 'react';
+import React, { type ElementType } from 'react';
 
-import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
-import { ResponsiveProp } from '../../utils/responsiveProps.css';
-import { Box, type UseBoxProps } from '../Box';
+import {
+	sprinklesResponsive,
+	type SprinklesResponsive,
+} from '../../styles/sprinkles.css';
+import { type BoxBasedProps, useBox, type UseBoxProps } from '../Box';
 
-import * as styles from './Column.css';
-import { ColumnContext } from './Columns';
-
-export interface ColumnProps extends Omit<UseBoxProps, 'width'> {
-	width?: ResponsiveProp<keyof typeof styles.width>;
-	noShrink?: boolean;
-	grow?: boolean;
+export interface ColumnProps<E extends ElementType> extends BoxBasedProps<E> {
+	alignSelf?: SprinklesResponsive['alignSelf'];
+	order?: SprinklesResponsive['order'];
+	width?: SprinklesResponsive['gridColumn'];
 }
 
-export const Column = forwardRef<HTMLDivElement, ColumnProps>(
-	(
-		{
-			as,
+export const Column = <E extends ElementType>({
+	alignSelf,
+	className,
+	children,
+	order,
+	width,
+	...props
+}: ColumnProps<E>) => {
+	const { Component, componentProps } = useBox<E>({
+		...props,
+		className: [
+			sprinklesResponsive({ alignSelf, gridColumn: width, order }),
 			className,
-			children,
-			width,
-			alignSelf,
-			noShrink = false,
-			grow = false,
-			order,
-			...boxProps
-		},
-		ref,
-	) => {
-		const columnsContext = useContext(ColumnContext);
-		invariant(
-			columnsContext !== null,
-			'Column must be wrapped inside a Columns element',
-		);
-
-		const { isList, spaceXCls, spaceYCls } = columnsContext;
-
-		return (
-			<Box
-				as={isList ? 'li' : 'div'}
-				alignSelf={alignSelf}
-				order={order}
-				flexGrow={grow ? 1 : 0}
-				flexShrink={noShrink ? 0 : undefined}
-				className={[
-					spaceXCls,
-					spaceYCls,
-					resolveResponsiveStyle(width, styles.width),
-				]}
-			>
-				<Box
-					ref={ref}
-					as={as}
-					display="flex"
-					width="full"
-					height="full"
-					className={className}
-					{...boxProps}
-				>
-					{children}
-				</Box>
-			</Box>
-		);
-	},
-);
+		],
+	} as UseBoxProps<E>);
+	return <Component {...componentProps}>{children}</Component>;
+};
 
 Column.displayName = 'Column';
-
-export default Column;

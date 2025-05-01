@@ -1,101 +1,58 @@
-import clsx from 'clsx';
-import React, { createContext, forwardRef, ReactNode, useMemo } from 'react';
+// import clsx from 'clsx';
+import React, { forwardRef, ReactNode } from 'react';
 
 import {
-	useNegativeMarginLeft,
-	useNegativeMarginTop,
-} from '../../hooks/useNegativeMargin/useNegativeMargin';
-import type { ThemeTokens as Tokens } from '../../themes';
-import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
-import { ResponsiveProp } from '../../utils/responsiveProps.css';
-import { Box, type UseBoxProps } from '../Box';
+	sprinklesResponsive,
+	type SprinklesResponsive,
+} from '../../styles/sprinkles.css';
+import { useBox, type UseBoxProps } from '../Box';
 
 import * as styles from './Columns.css';
+import type { ColumnWrapperVariants } from './Columns.css';
 
-export interface Props extends UseBoxProps {
-	className?: string;
-	columns?: number;
-	space?: ResponsiveProp<keyof Tokens['space']>;
-	spaceX?: ResponsiveProp<keyof typeof styles.space.spaceX>;
-	spaceY?: ResponsiveProp<keyof typeof styles.space.spaceY>;
-	noWrap?: boolean;
-	wrappingDirection?: keyof typeof styles.wrapping;
-	align?: keyof typeof styles.align;
+export interface ColumnsProps extends UseBoxProps, ColumnWrapperVariants {
 	children?: ReactNode;
+	space?: SprinklesResponsive['gap'];
+	spaceX?: SprinklesResponsive['columnGap'];
+	spaceY?: SprinklesResponsive['rowGap'];
 }
 
-interface ColumnContextValue {
-	spaceXCls;
-	spaceYCls;
-	isList: boolean;
-}
-
-export const ColumnContext = createContext<ColumnContextValue | null>(null);
-
-export const Columns = forwardRef<HTMLDivElement, Props>(
+export const Columns = forwardRef<HTMLDivElement, ColumnsProps>(
 	(
 		{
 			align = 'stretch',
 			as,
-			className = '',
 			children,
+			className,
+			noWrap,
 			space,
 			spaceX,
 			spaceY,
-			noWrap,
 			wrappingDirection = 'default',
-			...boxProps
+			...props
 		},
 		ref,
 	) => {
-		const resolvedSpaceX = spaceX || space || ['none'];
-		const resolvedSpaceY = spaceY || space || ['none'];
+		const { Component, componentProps } = useBox({
+			as,
+			className: [
+				styles.columnWrapper({
+					align,
+					noWrap,
+					wrappingDirection,
+				}),
+				sprinklesResponsive({
+					gap: space,
+					columnGap: spaceX,
+					rowGap: spaceY,
+				}),
+				className,
+			],
+			ref,
+			...props,
+		});
 
-		const marginLeftFix = useNegativeMarginLeft(resolvedSpaceX);
-		const marginTopFix = useNegativeMarginTop(resolvedSpaceY);
-
-		return (
-			<Box
-				ref={ref}
-				as={as}
-				display="flex"
-				flexDirection="row"
-				className={clsx(
-					marginLeftFix,
-					marginTopFix,
-					styles.align[align],
-					className,
-					{
-						[styles.wrapping.wrap]: !noWrap,
-						[styles.wrapping.noWrap]: noWrap,
-						[styles.wrapping.reverseWrap]:
-							wrappingDirection === 'reverse',
-					},
-				)}
-				{...boxProps}
-			>
-				<ColumnContext.Provider
-					value={useMemo(
-						() => ({
-							spaceXCls: resolveResponsiveStyle(
-								resolvedSpaceX,
-								styles.space.spaceX,
-							),
-							spaceYCls: resolveResponsiveStyle(
-								resolvedSpaceY,
-								styles.space.spaceY,
-							),
-							isList:
-								typeof as === 'string' &&
-								['ul', 'ol'].includes(as),
-						}),
-						[as, resolvedSpaceX, resolvedSpaceY],
-					)}
-				>
-					{children}
-				</ColumnContext.Provider>
-			</Box>
-		);
+		return <Component {...componentProps}>{children}</Component>;
 	},
 );
 

@@ -1,4 +1,4 @@
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React, { type ComponentProps } from 'react';
 
 import { themeContractVars as tokens } from '../../themes/theme.css';
@@ -7,7 +7,7 @@ import { boxArgTypes, scaleOptions } from '../Box/argTypes';
 
 import { Column, Columns } from '.';
 
-export default {
+const meta: Meta<typeof Columns> = {
 	title: 'Layout/Columns',
 	component: Columns,
 	decorators: [
@@ -41,10 +41,13 @@ export default {
 		},
 		...boxArgTypes,
 	},
-} satisfies Meta<typeof Columns>;
+};
+
+export default meta;
+
 const Template: StoryFn<typeof Columns> = (args) => (
 	<Columns {...args}>
-		<Column width={['full', '1/3', '1/5']} order={[0, 2]} is="section">
+		<Column width={['full', '1/3', '1/5']} order={[0, 2]} as="section">
 			<Box
 				borderColour="gray"
 				borderWidth="1"
@@ -59,7 +62,7 @@ const Template: StoryFn<typeof Columns> = (args) => (
 				Col 1
 			</Box>
 		</Column>
-		<Column width={['1/2', '1/3', '1/5']} alignSelf="stretch" is="section">
+		<Column width={['1/2', '1/3', '1/5']} alignSelf="stretch" as="section">
 			<Box
 				borderColour="gray"
 				borderWidth="1"
@@ -74,7 +77,7 @@ const Template: StoryFn<typeof Columns> = (args) => (
 				Col 2
 			</Box>
 		</Column>
-		<Column width={['1/2', '1/3', '1/5']} is="section">
+		<Column width={['1/2', '1/3', '1/5']} as="section">
 			<Box
 				borderColour="gray"
 				borderWidth="1"
@@ -89,7 +92,7 @@ const Template: StoryFn<typeof Columns> = (args) => (
 				Col 3
 			</Box>
 		</Column>
-		<Column width={['full', 'full', '2/5']} is="section">
+		<Column width={['full', 'full', '2/5']} as="section">
 			<Box
 				borderColour="gray"
 				borderWidth="1"
@@ -199,8 +202,8 @@ export const Standard = Template.bind(standardProps);
 Standard.args = standardProps;
 
 const standardColumnProps: Omit<ComponentProps<typeof Column>, 'children'> = {
+	as: 'section',
 	width: ['full', '1/3', '1/5'],
-	is: 'section',
 };
 
 export const StandardColumn = TemplateColumn.bind(standardColumnProps);
@@ -208,7 +211,6 @@ StandardColumn.args = standardColumnProps;
 StandardColumn.argTypes = {
 	alignSelf: {
 		options: {
-			// @ts-expect-error doesn't have types
 			stretch: 'stretch',
 			top: 'top',
 			centre: 'centre',
