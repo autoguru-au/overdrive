@@ -1,5 +1,10 @@
-import type { ClassValue } from 'clsx';
-import type { ComponentPropsWithRef, ElementType, JSX } from 'react';
+import type { ClassValue as ClassName } from 'clsx';
+import type {
+	ComponentPropsWithRef,
+	ElementType,
+	JSX,
+	PropsWithChildren,
+} from 'react';
 
 import { useDeepCompareMemo } from '../../hooks';
 import type {
@@ -11,15 +16,33 @@ import { filterNonSprinklesProps } from '../../utils/sprinkles';
 
 import { boxStyles } from './boxStyles';
 
+/**
+ * Adds: `as` | `children` | `className`. Use BoxBasedProps to help consistently define the base props for a component
+ * directly implementing useBox as the type of UseBoxProps is complex to Pick from.
+ */
+export interface BoxBasedProps<E extends ElementType>
+	extends PropsWithChildren {
+	/**
+	 * The HTML element
+	 * @default 'div'
+	 */
+	as?: E;
+	/**
+	 * Accepts `string` and complex array or objects via `clsx`
+	 */
+	className?: ClassName;
+}
+
 /** All vanilla-extract sprinkles props */
 export type StyleProps = Sprinkles &
 	SprinklesResponsive &
 	SprinklesLegacyColours;
 
-export type PolymorphicBoxProps<E extends ElementType, Props = object> = {
-	as?: E;
-	className?: ClassValue;
-} & Omit<ComponentPropsWithRef<E>, keyof Props | 'as' | 'className'> &
+export type PolymorphicBoxProps<
+	E extends ElementType,
+	Props = object,
+> = BoxBasedProps<E> &
+	Omit<ComponentPropsWithRef<E>, keyof Props | 'as' | 'className'> &
 	Props;
 
 /** Polymorphic box props that merge sprinkles style props and the HTML element props */
@@ -27,16 +50,6 @@ export type UseBoxProps<E extends ElementType = 'div'> = PolymorphicBoxProps<
 	E,
 	StyleProps
 >;
-
-/** Well commented return type for the polymorphic useBox primitive */
-export interface UseBoxReturnValue<E extends ElementType = 'div'> {
-	/** The HTML element to use in the JSX template */
-	Component: E | JSX.IntrinsicElements;
-	/** The props to be spread on the HTML element */
-	componentProps: UseBoxProps<E>;
-	/** A semantic child HTML element to use within the `Component` (only if applicable) */
-	SemanticChild?: ElementType;
-}
 
 const DEFAULT_TAG = 'div' as keyof JSX.IntrinsicElements;
 const LIST_ITEM_TAG = 'li' as keyof JSX.IntrinsicElements;

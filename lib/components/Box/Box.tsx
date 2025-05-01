@@ -1,4 +1,4 @@
-import React, { type PropsWithChildren, type ElementType } from 'react';
+import React, { type ElementType } from 'react';
 
 import { useBox, type UseBoxProps } from './useBox';
 
@@ -23,7 +23,7 @@ import { useBox, type UseBoxProps } from './useBox';
 export const Box = <E extends ElementType = 'div'>({
 	children,
 	...props
-}: PropsWithChildren<UseBoxProps<E>>) => {
+}: UseBoxProps<E>) => {
 	const { Component, componentProps } = useBox<E>(props as UseBoxProps<E>);
 
 	return <Component {...componentProps}>{children}</Component>;

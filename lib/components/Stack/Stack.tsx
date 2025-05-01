@@ -1,22 +1,13 @@
-import React, { Children, type ElementType, type ReactNode } from 'react';
+import React, { Children, type ElementType } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 
 import type { SprinklesResponsive } from '../../styles/sprinkles.css';
-import { Box, useBox, type UseBoxProps } from '../Box';
+import { type BoxBasedProps, Box, useBox, type UseBoxProps } from '../Box';
 
 import * as styles from './Divider.css';
 
 export interface StackProps<E extends ElementType = 'div'>
-	extends Pick<UseBoxProps<E>, 'className'> {
-	/**
-	 * The HTML element
-	 * @default 'div'
-	 */
-	as?: E;
-	/**
-	 * The content to be rendered inside the Inline component, usually multiple child elements
-	 */
-	children: ReactNode;
+	extends BoxBasedProps<E> {
 	/**
 	 * Sets the horizontal alignment of items within the stack. Accepts responsive values
 	 */
