@@ -4,13 +4,12 @@ import {
 	sprinklesResponsive,
 	totalGridColumns,
 } from '../../styles/sprinkles.css';
-import { overdriveTokens as vars } from '../../themes/theme.css';
-import { makeResponsiveStyle } from '../../utils/responsiveProps.css';
 
 export const columnWrapper = recipe({
 	base: [
 		sprinklesResponsive({ display: 'grid' }),
 		{
+			gridAutoFlow: 'row',
 			gridTemplateColumns: `repeat(${totalGridColumns}, [col-start] 1fr)`,
 		},
 	],
@@ -18,7 +17,7 @@ export const columnWrapper = recipe({
 		align: {
 			stretch: sprinklesResponsive({
 				alignItems: 'stretch',
-				// alignContent: 'stretch',
+				alignContent: 'stretch',
 			}),
 			top: sprinklesResponsive({
 				alignItems: 'flex-start',
@@ -47,8 +46,3 @@ export const columnWrapper = recipe({
 export type ColumnWrapperVariants = NonNullable<
 	RecipeVariants<typeof columnWrapper>
 >;
-
-export const space = {
-	spaceX: makeResponsiveStyle(vars.space, 'paddingLeft'),
-	spaceY: makeResponsiveStyle(vars.space, 'paddingTop'),
-};

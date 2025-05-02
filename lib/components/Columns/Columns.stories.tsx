@@ -47,7 +47,7 @@ export default meta;
 
 const Template: StoryFn<typeof Columns> = (args) => (
 	<Columns {...args}>
-		<Column width={['full', '1/3', '1/5']} order={[0, 2]} as="section">
+		<Column width={['full', '1/3', '1/6']} order={[0, 2]} as="section">
 			<Box
 				borderColour="gray"
 				borderWidth="1"
@@ -62,7 +62,7 @@ const Template: StoryFn<typeof Columns> = (args) => (
 				Col 1
 			</Box>
 		</Column>
-		<Column width={['1/2', '1/3', '1/5']} alignSelf="stretch" as="section">
+		<Column width={['1/2', '1/3', '2/6']} alignSelf="stretch" as="section">
 			<Box
 				borderColour="gray"
 				borderWidth="1"
@@ -77,7 +77,7 @@ const Template: StoryFn<typeof Columns> = (args) => (
 				Col 2
 			</Box>
 		</Column>
-		<Column width={['1/2', '1/3', '1/5']} as="section">
+		<Column width={['1/2', '1/3', '1/6']} as="section">
 			<Box
 				borderColour="gray"
 				borderWidth="1"
@@ -92,7 +92,7 @@ const Template: StoryFn<typeof Columns> = (args) => (
 				Col 3
 			</Box>
 		</Column>
-		<Column width={['full', 'full', '2/5']} as="section">
+		<Column width={['full', 'full', '2/6']} as="section">
 			<Box
 				borderColour="gray"
 				borderWidth="1"
@@ -203,7 +203,7 @@ Standard.args = standardProps;
 
 const standardColumnProps: Omit<ComponentProps<typeof Column>, 'children'> = {
 	as: 'section',
-	width: ['full', '1/3', '1/5'],
+	width: ['full', '1/3', '1/6'],
 };
 
 export const StandardColumn = TemplateColumn.bind(standardColumnProps);
