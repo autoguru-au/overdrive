@@ -25,7 +25,7 @@ export const DropDownOption: FunctionComponent<Props> = ({
 	display = 'flex',
 	iconColour = 'dark',
 	is = 'button',
-	alignItems = 'space-between',
+	alignItems = 'center',
 	width = 'full',
 	...boxProps
 }) => {

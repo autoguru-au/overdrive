@@ -211,6 +211,7 @@ StandardColumn.args = standardColumnProps;
 StandardColumn.argTypes = {
 	alignSelf: {
 		options: {
+			//@ts-expect-error something wrong with args
 			stretch: 'stretch',
 			top: 'top',
 			centre: 'centre',
