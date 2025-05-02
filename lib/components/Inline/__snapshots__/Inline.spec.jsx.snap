@@ -6,12 +6,10 @@ exports[`<Inline /> > should match snapshot for custom element dividers 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9q sprinkles_display_flex_mobile__onxwju82 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_flexWrap_wrap_mobile__onxwjuh6 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4"
-    is="div"
+    class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_flexDirection_row_mobile__onxwjuk3 sprinkles_flexWrap_wrap_mobile__onxwjukv sprinkles_gap_2_mobile__onxwjudz sprinkles_minWidth_fit-content_mobile__onxwjudr sprinkles_position_relative_mobile__onxwju9v"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_flexWrap_nowrap_mobile__onxwjuh2 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_paddingTop_2_mobile__onxwjumy"
-      is="div"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
     >
       <span
         class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
@@ -19,7 +17,8 @@ exports[`<Inline /> > should match snapshot for custom element dividers 1`] = `
         A
       </span>
       <div
-        class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjukq sprinkles_paddingRight_2_mobile__onxwjulu"
+        aria-hidden="true"
+        class="reset_block__1oah0224"
       >
         <div>
           divider
@@ -27,8 +26,7 @@ exports[`<Inline /> > should match snapshot for custom element dividers 1`] = `
       </div>
     </div>
     <div
-      class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_flexWrap_nowrap_mobile__onxwjuh2 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_paddingTop_2_mobile__onxwjumy"
-      is="div"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
     >
       <span
         class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
@@ -36,7 +34,8 @@ exports[`<Inline /> > should match snapshot for custom element dividers 1`] = `
         B
       </span>
       <div
-        class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjukq sprinkles_paddingRight_2_mobile__onxwjulu"
+        aria-hidden="true"
+        class="reset_block__1oah0224"
       >
         <div>
           divider
@@ -44,8 +43,7 @@ exports[`<Inline /> > should match snapshot for custom element dividers 1`] = `
       </div>
     </div>
     <div
-      class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_flexWrap_nowrap_mobile__onxwjuh2 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_paddingTop_2_mobile__onxwjumy"
-      is="div"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
     >
       <span
         class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
@@ -63,12 +61,10 @@ exports[`<Inline /> > should match snapshot for default dividers 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9q sprinkles_display_flex_mobile__onxwju82 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_flexWrap_wrap_mobile__onxwjuh6 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4"
-    is="div"
+    class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_flexDirection_row_mobile__onxwjuk3 sprinkles_flexWrap_wrap_mobile__onxwjukv sprinkles_gap_2_mobile__onxwjudz sprinkles_minWidth_fit-content_mobile__onxwjudr sprinkles_position_relative_mobile__onxwju9v"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_flexWrap_nowrap_mobile__onxwjuh2 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_paddingTop_2_mobile__onxwjumy"
-      is="div"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
     >
       <span
         class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
@@ -76,7 +72,8 @@ exports[`<Inline /> > should match snapshot for default dividers 1`] = `
         A
       </span>
       <div
-        class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjukq sprinkles_paddingRight_2_mobile__onxwjulu"
+        aria-hidden="true"
+        class="reset_block__1oah0224"
       >
         <span
           class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
@@ -86,8 +83,7 @@ exports[`<Inline /> > should match snapshot for default dividers 1`] = `
       </div>
     </div>
     <div
-      class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_flexWrap_nowrap_mobile__onxwjuh2 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_paddingTop_2_mobile__onxwjumy"
-      is="div"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
     >
       <span
         class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
@@ -95,7 +91,8 @@ exports[`<Inline /> > should match snapshot for default dividers 1`] = `
         B
       </span>
       <div
-        class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjukq sprinkles_paddingRight_2_mobile__onxwjulu"
+        aria-hidden="true"
+        class="reset_block__1oah0224"
       >
         <span
           class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
@@ -105,8 +102,7 @@ exports[`<Inline /> > should match snapshot for default dividers 1`] = `
       </div>
     </div>
     <div
-      class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_flexWrap_nowrap_mobile__onxwjuh2 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_paddingTop_2_mobile__onxwjumy"
-      is="div"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
     >
       <span
         class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
@@ -124,12 +120,10 @@ exports[`<Inline /> > should match snapshot for no dividers 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9q sprinkles_display_flex_mobile__onxwju82 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_flexWrap_wrap_mobile__onxwjuh6 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm24"
-    is="div"
+    class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_flexDirection_row_mobile__onxwjuk3 sprinkles_flexWrap_wrap_mobile__onxwjukv sprinkles_gap_2_mobile__onxwjudz sprinkles_minWidth_fit-content_mobile__onxwjudr sprinkles_position_relative_mobile__onxwju9v"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_flexWrap_nowrap_mobile__onxwjuh2 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_paddingTop_2_mobile__onxwjumy sprinkles_paddingLeft_2_mobile__onxwjukq"
-      is="div"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
     >
       <span
         class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
@@ -138,8 +132,7 @@ exports[`<Inline /> > should match snapshot for no dividers 1`] = `
       </span>
     </div>
     <div
-      class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_flexWrap_nowrap_mobile__onxwjuh2 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_paddingTop_2_mobile__onxwjumy sprinkles_paddingLeft_2_mobile__onxwjukq"
-      is="div"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
     >
       <span
         class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
@@ -148,8 +141,7 @@ exports[`<Inline /> > should match snapshot for no dividers 1`] = `
       </span>
     </div>
     <div
-      class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_flexWrap_nowrap_mobile__onxwjuh2 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_paddingTop_2_mobile__onxwjumy sprinkles_paddingLeft_2_mobile__onxwjukq"
-      is="div"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
     >
       <span
         class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
@@ -167,12 +159,10 @@ exports[`<Inline /> > should not be able to render components 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9q sprinkles_display_flex_mobile__onxwju82 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_flexWrap_wrap_mobile__onxwjuh6 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4"
-    is="div"
+    class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_flexDirection_row_mobile__onxwjuk3 sprinkles_flexWrap_wrap_mobile__onxwjukv sprinkles_gap_2_mobile__onxwjudz sprinkles_minWidth_fit-content_mobile__onxwjudr sprinkles_position_relative_mobile__onxwju9v"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_flexWrap_nowrap_mobile__onxwjuh2 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_paddingTop_2_mobile__onxwjumy"
-      is="div"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
     >
       <span
         class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
@@ -180,7 +170,8 @@ exports[`<Inline /> > should not be able to render components 1`] = `
         A
       </span>
       <div
-        class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjukq sprinkles_paddingRight_2_mobile__onxwjulu"
+        aria-hidden="true"
+        class="reset_block__1oah0224"
       >
         <div>
           divider component from test
@@ -188,8 +179,7 @@ exports[`<Inline /> > should not be able to render components 1`] = `
       </div>
     </div>
     <div
-      class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_flexWrap_nowrap_mobile__onxwjuh2 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_paddingTop_2_mobile__onxwjumy"
-      is="div"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
     >
       <span
         class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"

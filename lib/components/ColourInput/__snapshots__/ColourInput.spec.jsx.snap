@@ -1,38 +1,38 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<ColourInput /> > should match snapshot 1`] = `
+exports[`<ColourInput /> > should have some hintText 1`] = `
 <div
   class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjuce"
+    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjuki sprinkles_paddingLeft_none_mobile__onxwjulm sprinkles_paddingRight_none_mobile__onxwjumq sprinkles_paddingTop_none_mobile__onxwjunu sprinkles_position_relative_mobile__onxwju9q sprinkles_width_full_mobile__onxwjuce NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_position_relative_mobile__onxwju9v sprinkles_width_full_mobile__onxwjud7 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjuce sprinkles_height_full_mobile__onxwjub6"
+        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexWrap_nowrap_mobile__onxwjuh2 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_justifyContent_center_mobile__onxwjuea sprinkles_position_relative_mobile__onxwju9q"
+          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju87 sprinkles_flexWrap_nowrap_mobile__onxwjukr sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_center_mobile__onxwjuhv sprinkles_position_relative_mobile__onxwju9v"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju82 sprinkles_height_full_mobile__onxwjub6 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_justifyContent_space-around_mobile__onxwjuei sprinkles_flexShrink_0_mobile__onxwjugu sprinkles_position_absolute_mobile__onxwju9u ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju87 sprinkles_height_full_mobile__onxwjubn sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_space-around_mobile__onxwjui3 sprinkles_flexShrink_0_mobile__onxwjukj sprinkles_position_absolute_mobile__onxwju9z ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
           >
             <div
-              class="reset_block__1oah0224 sprinkles_borderRadius_1__onxwju0 sprinkles_paddingBottom_3_mobile__onxwjujq sprinkles_paddingLeft_3_mobile__onxwjuku sprinkles_paddingRight_3_mobile__onxwjuly sprinkles_paddingTop_3_mobile__onxwjun2"
+              class="reset_block__1oah0224 sprinkles_borderRadius_1__onxwju0 sprinkles_paddingBottom_3_mobile__onxwjuon sprinkles_paddingLeft_3_mobile__onxwjupr sprinkles_paddingRight_3_mobile__onxwjuqv sprinkles_paddingTop_3_mobile__onxwjurz"
               style="background-color: rgb(108, 17, 17);"
             />
           </div>
           <span
-            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7y useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 sprinkles_position_absolute_mobile__onxwju9u"
+            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 sprinkles_position_absolute_mobile__onxwju9z"
           >
             #6c1111
           </span>
           <input
             autocomplete="off"
-            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_flexGrow_1_mobile__onxwjugq ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjuce sprinkles_position_relative_mobile__onxwju9q sprinkles_display_flex_mobile__onxwju82 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_flexGrow_1_mobile__onxwjukf ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjud7 sprinkles_position_relative_mobile__onxwju9v sprinkles_display_flex_mobile__onxwju87 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
             id="id"
             type="color"
             value="#6c1111"
@@ -40,7 +40,7 @@ exports[`<ColourInput /> > should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9u sprinkles_display_flex_mobile__onxwju82 sprinkles_width_full_mobile__onxwjuce sprinkles_height_full_mobile__onxwjub6 NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_flex_mobile__onxwju87 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
@@ -49,12 +49,86 @@ exports[`<ColourInput /> > should match snapshot 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjukq sprinkles_paddingRight_2_mobile__onxwjulu sprinkles_display_block_mobile__onxwju7y NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupn sprinkles_paddingRight_2_mobile__onxwjuqr sprinkles_display_block_mobile__onxwju7z NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          >
+            placeholder
+          </div>
+          <label
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_marginBottom_none_mobile__onxwjutv sprinkles_marginLeft_none_mobile__onxwjuuz sprinkles_marginRight_none_mobile__onxwjuw7 sprinkles_marginTop_none_mobile__onxwjuxf sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_inline_mobile__onxwju8f NotchedBase_placeholder_default__1ft8sxlz InputState_natural_default_colour__a2a1mv4 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+            for="id"
+          >
+            placeholder
+          </label>
+        </div>
+        <div
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_trailing__1ft8sxle InputState_natural_default_borderColour__a2a1mv5"
+        />
+      </div>
+    </div>
+    <p
+      class="reset_blockText__1oah022d useTextStyles_root__1xnpmd70 reset_blockText__1oah022d useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_2__1xnpmd72 reset_blockText__1oah022d sprinkles_marginTop_1_mobile__onxwjuwf HintText_hintText__down5s0 InputState_natural_default_colour__a2a1mv4"
+    >
+      hint text
+    </p>
+  </div>
+</div>
+`;
+
+exports[`<ColourInput /> > should match snapshot 1`] = `
+<div
+  class="theme_OD_Base__j49br80"
+  data-od-component-provider=""
+>
+  <div
+    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7"
+  >
+    <div
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_position_relative_mobile__onxwju9v sprinkles_width_full_mobile__onxwjud7 NotchedBase_root__1ft8sxl0"
+    >
+      <div
+        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
+      >
+        <div
+          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju87 sprinkles_flexWrap_nowrap_mobile__onxwjukr sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_center_mobile__onxwjuhv sprinkles_position_relative_mobile__onxwju9v"
+        >
+          <div
+            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju87 sprinkles_height_full_mobile__onxwjubn sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_space-around_mobile__onxwjui3 sprinkles_flexShrink_0_mobile__onxwjukj sprinkles_position_absolute_mobile__onxwju9z ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+          >
+            <div
+              class="reset_block__1oah0224 sprinkles_borderRadius_1__onxwju0 sprinkles_paddingBottom_3_mobile__onxwjuon sprinkles_paddingLeft_3_mobile__onxwjupr sprinkles_paddingRight_3_mobile__onxwjuqv sprinkles_paddingTop_3_mobile__onxwjurz"
+              style="background-color: rgb(108, 17, 17);"
+            />
+          </div>
+          <span
+            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 sprinkles_position_absolute_mobile__onxwju9z"
+          >
+            #6c1111
+          </span>
+          <input
+            autocomplete="off"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_flexGrow_1_mobile__onxwjukf ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjud7 sprinkles_position_relative_mobile__onxwju9v sprinkles_display_flex_mobile__onxwju87 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+            id="id"
+            type="color"
+            value="#6c1111"
+          />
+        </div>
+      </div>
+      <div
+        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_flex_mobile__onxwju87 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+      >
+        <div
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
+        />
+        <div
+          class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
+        >
+          <div
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupn sprinkles_paddingRight_2_mobile__onxwjuqr sprinkles_display_block_mobile__onxwju7z NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjuki sprinkles_paddingLeft_none_mobile__onxwjulm sprinkles_paddingRight_none_mobile__onxwjumq sprinkles_paddingTop_none_mobile__onxwjunu sprinkles_marginBottom_none_mobile__onxwjuoy sprinkles_marginLeft_none_mobile__onxwjuq2 sprinkles_marginRight_none_mobile__onxwjur6 sprinkles_marginTop_none_mobile__onxwjusa sprinkles_position_absolute_mobile__onxwju9u sprinkles_display_inline_mobile__onxwju8a NotchedBase_placeholder_default__1ft8sxlz InputState_natural_default_colour__a2a1mv4 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_marginBottom_none_mobile__onxwjutv sprinkles_marginLeft_none_mobile__onxwjuuz sprinkles_marginRight_none_mobile__onxwjuw7 sprinkles_marginTop_none_mobile__onxwjuxf sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_inline_mobile__onxwju8f NotchedBase_placeholder_default__1ft8sxlz InputState_natural_default_colour__a2a1mv4 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
             for="id"
           >
             placeholder something
@@ -75,40 +149,40 @@ exports[`<ColourInput /> > should match snapshot when active 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjuce input-class"
+    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 input-class"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjuki sprinkles_paddingLeft_none_mobile__onxwjulm sprinkles_paddingRight_none_mobile__onxwjumq sprinkles_paddingTop_none_mobile__onxwjunu sprinkles_position_relative_mobile__onxwju9q sprinkles_width_full_mobile__onxwjuce NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_position_relative_mobile__onxwju9v sprinkles_width_full_mobile__onxwjud7 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjuce sprinkles_height_full_mobile__onxwjub6"
+        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexWrap_nowrap_mobile__onxwjuh2 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_justifyContent_center_mobile__onxwjuea sprinkles_position_relative_mobile__onxwju9q"
+          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju87 sprinkles_flexWrap_nowrap_mobile__onxwjukr sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_center_mobile__onxwjuhv sprinkles_position_relative_mobile__onxwju9v"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju82 sprinkles_height_full_mobile__onxwjub6 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_justifyContent_space-around_mobile__onxwjuei sprinkles_flexShrink_0_mobile__onxwjugu sprinkles_position_absolute_mobile__onxwju9u ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju87 sprinkles_height_full_mobile__onxwjubn sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_space-around_mobile__onxwjui3 sprinkles_flexShrink_0_mobile__onxwjukj sprinkles_position_absolute_mobile__onxwju9z ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
           >
             <div
-              class="reset_block__1oah0224 sprinkles_borderRadius_1__onxwju0 sprinkles_paddingBottom_3_mobile__onxwjujq sprinkles_paddingLeft_3_mobile__onxwjuku sprinkles_paddingRight_3_mobile__onxwjuly sprinkles_paddingTop_3_mobile__onxwjun2"
+              class="reset_block__1oah0224 sprinkles_borderRadius_1__onxwju0 sprinkles_paddingBottom_3_mobile__onxwjuon sprinkles_paddingLeft_3_mobile__onxwjupr sprinkles_paddingRight_3_mobile__onxwjuqv sprinkles_paddingTop_3_mobile__onxwjurz"
               style="background-color: rgb(236, 64, 64);"
             />
           </div>
           <span
-            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7y useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 sprinkles_position_absolute_mobile__onxwju9u"
+            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 sprinkles_position_absolute_mobile__onxwju9z"
           >
             #ec4040
           </span>
           <input
             autocomplete="off"
-            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_flexGrow_1_mobile__onxwjugq ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjuce sprinkles_position_relative_mobile__onxwju9q sprinkles_display_flex_mobile__onxwju82 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_flexGrow_1_mobile__onxwjukf ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjud7 sprinkles_position_relative_mobile__onxwju9v sprinkles_display_flex_mobile__onxwju87 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
             type="color"
             value="#ec4040"
           />
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9u sprinkles_display_flex_mobile__onxwju82 sprinkles_width_full_mobile__onxwjuce sprinkles_height_full_mobile__onxwjub6 NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_flex_mobile__onxwju87 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_activeBorderColour__a2a1mv1"
@@ -117,12 +191,12 @@ exports[`<ColourInput /> > should match snapshot when active 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_activeBorderColour__a2a1mv1"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjukq sprinkles_paddingRight_2_mobile__onxwjulu sprinkles_display_block_mobile__onxwju7y NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupn sprinkles_paddingRight_2_mobile__onxwjuqr sprinkles_display_block_mobile__onxwju7z NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjuki sprinkles_paddingLeft_none_mobile__onxwjulm sprinkles_paddingRight_none_mobile__onxwjumq sprinkles_paddingTop_none_mobile__onxwjunu sprinkles_marginBottom_none_mobile__onxwjuoy sprinkles_marginLeft_none_mobile__onxwjuq2 sprinkles_marginRight_none_mobile__onxwjur6 sprinkles_marginTop_none_mobile__onxwjusa sprinkles_position_absolute_mobile__onxwju9u sprinkles_display_inline_mobile__onxwju8a NotchedBase_placeholder_default__1ft8sxlz InputState_activeColour__a2a1mv0 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_marginBottom_none_mobile__onxwjutv sprinkles_marginLeft_none_mobile__onxwjuuz sprinkles_marginRight_none_mobile__onxwjuw7 sprinkles_marginTop_none_mobile__onxwjuxf sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_inline_mobile__onxwju8f NotchedBase_placeholder_default__1ft8sxlz InputState_activeColour__a2a1mv0 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
           >
             placeholder something
           </label>
@@ -142,19 +216,19 @@ exports[`<ColourInput /> > should match snapshot when loading 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjuce input-class"
+    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 input-class"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjuki sprinkles_paddingLeft_none_mobile__onxwjulm sprinkles_paddingRight_none_mobile__onxwjumq sprinkles_paddingTop_none_mobile__onxwjunu sprinkles_position_relative_mobile__onxwju9q sprinkles_width_full_mobile__onxwjuce NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_position_relative_mobile__onxwju9v sprinkles_width_full_mobile__onxwjud7 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjuce sprinkles_height_full_mobile__onxwjub6"
+        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
       >
         <div
-          class="reset_block__1oah0224 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_default__1kpufmi4 reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_position_absolute_mobile__onxwju9u withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_suffixIcon__5jmdy8l withEnhancedInput_iconSize_medium__5jmdy8n"
+          class="reset_block__1oah0224 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_default__1kpufmi4 reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_position_absolute_mobile__onxwju9z withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_suffixIcon__5jmdy8l withEnhancedInput_iconSize_medium__5jmdy8n"
         >
           <svg
-            class="sprinkles_display_block_mobile__onxwju7y sprinkles_overflow_hidden_mobile__onxwju8q ProgressSpinner_circular__1kpufmi1"
+            class="sprinkles_display_block_mobile__onxwju7z sprinkles_overflow_hidden_mobile__onxwju8v ProgressSpinner_circular__1kpufmi1"
             viewBox="25 25 50 50"
           >
             <circle
@@ -168,32 +242,32 @@ exports[`<ColourInput /> > should match snapshot when loading 1`] = `
           </svg>
         </div>
         <div
-          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexWrap_nowrap_mobile__onxwjuh2 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_justifyContent_center_mobile__onxwjuea sprinkles_position_relative_mobile__onxwju9q"
+          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju87 sprinkles_flexWrap_nowrap_mobile__onxwjukr sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_center_mobile__onxwjuhv sprinkles_position_relative_mobile__onxwju9v"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju82 sprinkles_height_full_mobile__onxwjub6 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_justifyContent_space-around_mobile__onxwjuei sprinkles_flexShrink_0_mobile__onxwjugu sprinkles_position_absolute_mobile__onxwju9u ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju87 sprinkles_height_full_mobile__onxwjubn sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_space-around_mobile__onxwjui3 sprinkles_flexShrink_0_mobile__onxwjukj sprinkles_position_absolute_mobile__onxwju9z ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
           >
             <div
-              class="reset_block__1oah0224 sprinkles_borderRadius_1__onxwju0 sprinkles_paddingBottom_3_mobile__onxwjujq sprinkles_paddingLeft_3_mobile__onxwjuku sprinkles_paddingRight_3_mobile__onxwjuly sprinkles_paddingTop_3_mobile__onxwjun2"
+              class="reset_block__1oah0224 sprinkles_borderRadius_1__onxwju0 sprinkles_paddingBottom_3_mobile__onxwjuon sprinkles_paddingLeft_3_mobile__onxwjupr sprinkles_paddingRight_3_mobile__onxwjuqv sprinkles_paddingTop_3_mobile__onxwjurz"
               style="background-color: rgb(108, 17, 17);"
             />
           </div>
           <span
-            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7y useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 sprinkles_position_absolute_mobile__onxwju9u"
+            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 sprinkles_position_absolute_mobile__onxwju9z"
           >
             #6c1111
           </span>
           <input
             aria-busy="true"
             autocomplete="off"
-            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_flexGrow_1_mobile__onxwjugq ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjuce sprinkles_position_relative_mobile__onxwju9q sprinkles_display_flex_mobile__onxwju82 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8e"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_flexGrow_1_mobile__onxwjukf ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjud7 sprinkles_position_relative_mobile__onxwju9v sprinkles_display_flex_mobile__onxwju87 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8e"
             type="color"
             value="#6c1111"
           />
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9u sprinkles_display_flex_mobile__onxwju82 sprinkles_width_full_mobile__onxwjuce sprinkles_height_full_mobile__onxwjub6 NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_flex_mobile__onxwju87 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
@@ -202,12 +276,12 @@ exports[`<ColourInput /> > should match snapshot when loading 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjukq sprinkles_paddingRight_2_mobile__onxwjulu sprinkles_display_block_mobile__onxwju7y NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupn sprinkles_paddingRight_2_mobile__onxwjuqr sprinkles_display_block_mobile__onxwju7z NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjuki sprinkles_paddingLeft_none_mobile__onxwjulm sprinkles_paddingRight_none_mobile__onxwjumq sprinkles_paddingTop_none_mobile__onxwjunu sprinkles_marginBottom_none_mobile__onxwjuoy sprinkles_marginLeft_none_mobile__onxwjuq2 sprinkles_marginRight_none_mobile__onxwjur6 sprinkles_marginTop_none_mobile__onxwjusa sprinkles_position_absolute_mobile__onxwju9u sprinkles_display_inline_mobile__onxwju8a NotchedBase_placeholder_default__1ft8sxlz InputState_natural_default_colour__a2a1mv4 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_marginBottom_none_mobile__onxwjutv sprinkles_marginLeft_none_mobile__onxwjuuz sprinkles_marginRight_none_mobile__onxwjuw7 sprinkles_marginTop_none_mobile__onxwjuxf sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_inline_mobile__onxwju8f NotchedBase_placeholder_default__1ft8sxlz InputState_natural_default_colour__a2a1mv4 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
           >
             placeholder something
           </label>
@@ -227,40 +301,40 @@ exports[`<ColourInput /> > should match snapshot when touched 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjuce input-class"
+    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 input-class"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjuki sprinkles_paddingLeft_none_mobile__onxwjulm sprinkles_paddingRight_none_mobile__onxwjumq sprinkles_paddingTop_none_mobile__onxwjunu sprinkles_position_relative_mobile__onxwju9q sprinkles_width_full_mobile__onxwjuce NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_position_relative_mobile__onxwju9v sprinkles_width_full_mobile__onxwjud7 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjuce sprinkles_height_full_mobile__onxwjub6"
+        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexWrap_nowrap_mobile__onxwjuh2 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_justifyContent_center_mobile__onxwjuea sprinkles_position_relative_mobile__onxwju9q"
+          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju87 sprinkles_flexWrap_nowrap_mobile__onxwjukr sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_center_mobile__onxwjuhv sprinkles_position_relative_mobile__onxwju9v"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju82 sprinkles_height_full_mobile__onxwjub6 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_justifyContent_space-around_mobile__onxwjuei sprinkles_flexShrink_0_mobile__onxwjugu sprinkles_position_absolute_mobile__onxwju9u ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju87 sprinkles_height_full_mobile__onxwjubn sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_space-around_mobile__onxwjui3 sprinkles_flexShrink_0_mobile__onxwjukj sprinkles_position_absolute_mobile__onxwju9z ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
           >
             <div
-              class="reset_block__1oah0224 sprinkles_borderRadius_1__onxwju0 sprinkles_paddingBottom_3_mobile__onxwjujq sprinkles_paddingLeft_3_mobile__onxwjuku sprinkles_paddingRight_3_mobile__onxwjuly sprinkles_paddingTop_3_mobile__onxwjun2"
+              class="reset_block__1oah0224 sprinkles_borderRadius_1__onxwju0 sprinkles_paddingBottom_3_mobile__onxwjuon sprinkles_paddingLeft_3_mobile__onxwjupr sprinkles_paddingRight_3_mobile__onxwjuqv sprinkles_paddingTop_3_mobile__onxwjurz"
               style="background-color: rgb(108, 17, 17);"
             />
           </div>
           <span
-            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7y useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 sprinkles_position_absolute_mobile__onxwju9u"
+            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 sprinkles_position_absolute_mobile__onxwju9z"
           >
             #6c1111
           </span>
           <input
             autocomplete="off"
-            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_flexGrow_1_mobile__onxwjugq ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjuce sprinkles_position_relative_mobile__onxwju9q sprinkles_display_flex_mobile__onxwju82 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_flexGrow_1_mobile__onxwjukf ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjud7 sprinkles_position_relative_mobile__onxwju9v sprinkles_display_flex_mobile__onxwju87 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
             type="color"
             value="#6c1111"
           />
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9u sprinkles_display_flex_mobile__onxwju82 sprinkles_width_full_mobile__onxwjuce sprinkles_height_full_mobile__onxwjub6 NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_flex_mobile__onxwju87 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_error_default_borderColour__a2a1mvd"
@@ -269,12 +343,12 @@ exports[`<ColourInput /> > should match snapshot when touched 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_error_default_borderColour__a2a1mvd"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjukq sprinkles_paddingRight_2_mobile__onxwjulu sprinkles_display_block_mobile__onxwju7y NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupn sprinkles_paddingRight_2_mobile__onxwjuqr sprinkles_display_block_mobile__onxwju7z NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjuki sprinkles_paddingLeft_none_mobile__onxwjulm sprinkles_paddingRight_none_mobile__onxwjumq sprinkles_paddingTop_none_mobile__onxwjunu sprinkles_marginBottom_none_mobile__onxwjuoy sprinkles_marginLeft_none_mobile__onxwjuq2 sprinkles_marginRight_none_mobile__onxwjur6 sprinkles_marginTop_none_mobile__onxwjusa sprinkles_position_absolute_mobile__onxwju9u sprinkles_display_inline_mobile__onxwju8a NotchedBase_placeholder_default__1ft8sxlz InputState_error_default_colour__a2a1mvc NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_marginBottom_none_mobile__onxwjutv sprinkles_marginLeft_none_mobile__onxwjuuz sprinkles_marginRight_none_mobile__onxwjuw7 sprinkles_marginTop_none_mobile__onxwjuxf sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_inline_mobile__onxwju8f NotchedBase_placeholder_default__1ft8sxlz InputState_error_default_colour__a2a1mvc NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
           >
             placeholder something
           </label>
@@ -294,40 +368,40 @@ exports[`<ColourInput /> > should match snapshot when touched and invalid 1`] = 
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjuce input-class"
+    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 input-class"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjuki sprinkles_paddingLeft_none_mobile__onxwjulm sprinkles_paddingRight_none_mobile__onxwjumq sprinkles_paddingTop_none_mobile__onxwjunu sprinkles_position_relative_mobile__onxwju9q sprinkles_width_full_mobile__onxwjuce NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_position_relative_mobile__onxwju9v sprinkles_width_full_mobile__onxwjud7 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjuce sprinkles_height_full_mobile__onxwjub6"
+        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexWrap_nowrap_mobile__onxwjuh2 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_justifyContent_center_mobile__onxwjuea sprinkles_position_relative_mobile__onxwju9q"
+          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju87 sprinkles_flexWrap_nowrap_mobile__onxwjukr sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_center_mobile__onxwjuhv sprinkles_position_relative_mobile__onxwju9v"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju82 sprinkles_height_full_mobile__onxwjub6 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_justifyContent_space-around_mobile__onxwjuei sprinkles_flexShrink_0_mobile__onxwjugu sprinkles_position_absolute_mobile__onxwju9u ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju87 sprinkles_height_full_mobile__onxwjubn sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_space-around_mobile__onxwjui3 sprinkles_flexShrink_0_mobile__onxwjukj sprinkles_position_absolute_mobile__onxwju9z ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
           >
             <div
-              class="reset_block__1oah0224 sprinkles_borderRadius_1__onxwju0 sprinkles_paddingBottom_3_mobile__onxwjujq sprinkles_paddingLeft_3_mobile__onxwjuku sprinkles_paddingRight_3_mobile__onxwjuly sprinkles_paddingTop_3_mobile__onxwjun2"
+              class="reset_block__1oah0224 sprinkles_borderRadius_1__onxwju0 sprinkles_paddingBottom_3_mobile__onxwjuon sprinkles_paddingLeft_3_mobile__onxwjupr sprinkles_paddingRight_3_mobile__onxwjuqv sprinkles_paddingTop_3_mobile__onxwjurz"
               style="background-color: rgb(108, 17, 17);"
             />
           </div>
           <span
-            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7y useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 sprinkles_position_absolute_mobile__onxwju9u"
+            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 sprinkles_position_absolute_mobile__onxwju9z"
           >
             #6c1111
           </span>
           <input
             autocomplete="off"
-            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_flexGrow_1_mobile__onxwjugq ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjuce sprinkles_position_relative_mobile__onxwju9q sprinkles_display_flex_mobile__onxwju82 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_flexGrow_1_mobile__onxwjukf ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjud7 sprinkles_position_relative_mobile__onxwju9v sprinkles_display_flex_mobile__onxwju87 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
             type="color"
             value="#6c1111"
           />
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9u sprinkles_display_flex_mobile__onxwju82 sprinkles_width_full_mobile__onxwjuce sprinkles_height_full_mobile__onxwjub6 NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_flex_mobile__onxwju87 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_error_default_borderColour__a2a1mvd"
@@ -336,12 +410,12 @@ exports[`<ColourInput /> > should match snapshot when touched and invalid 1`] = 
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_error_default_borderColour__a2a1mvd"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjukq sprinkles_paddingRight_2_mobile__onxwjulu sprinkles_display_block_mobile__onxwju7y NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupn sprinkles_paddingRight_2_mobile__onxwjuqr sprinkles_display_block_mobile__onxwju7z NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjuki sprinkles_paddingLeft_none_mobile__onxwjulm sprinkles_paddingRight_none_mobile__onxwjumq sprinkles_paddingTop_none_mobile__onxwjunu sprinkles_marginBottom_none_mobile__onxwjuoy sprinkles_marginLeft_none_mobile__onxwjuq2 sprinkles_marginRight_none_mobile__onxwjur6 sprinkles_marginTop_none_mobile__onxwjusa sprinkles_position_absolute_mobile__onxwju9u sprinkles_display_inline_mobile__onxwju8a NotchedBase_placeholder_default__1ft8sxlz InputState_error_default_colour__a2a1mvc NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_marginBottom_none_mobile__onxwjutv sprinkles_marginLeft_none_mobile__onxwjuuz sprinkles_marginRight_none_mobile__onxwjuw7 sprinkles_marginTop_none_mobile__onxwjuxf sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_inline_mobile__onxwju8f NotchedBase_placeholder_default__1ft8sxlz InputState_error_default_colour__a2a1mvc NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
           >
             placeholder something
           </label>
@@ -361,40 +435,40 @@ exports[`<ColourInput /> > should match snapshot when touched and valid 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjuce input-class"
+    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 input-class"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjuki sprinkles_paddingLeft_none_mobile__onxwjulm sprinkles_paddingRight_none_mobile__onxwjumq sprinkles_paddingTop_none_mobile__onxwjunu sprinkles_position_relative_mobile__onxwju9q sprinkles_width_full_mobile__onxwjuce NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_position_relative_mobile__onxwju9v sprinkles_width_full_mobile__onxwjud7 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjuce sprinkles_height_full_mobile__onxwjub6"
+        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexWrap_nowrap_mobile__onxwjuh2 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_justifyContent_center_mobile__onxwjuea sprinkles_position_relative_mobile__onxwju9q"
+          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju87 sprinkles_flexWrap_nowrap_mobile__onxwjukr sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_center_mobile__onxwjuhv sprinkles_position_relative_mobile__onxwju9v"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju82 sprinkles_height_full_mobile__onxwjub6 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_justifyContent_space-around_mobile__onxwjuei sprinkles_flexShrink_0_mobile__onxwjugu sprinkles_position_absolute_mobile__onxwju9u ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju87 sprinkles_height_full_mobile__onxwjubn sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_space-around_mobile__onxwjui3 sprinkles_flexShrink_0_mobile__onxwjukj sprinkles_position_absolute_mobile__onxwju9z ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
           >
             <div
-              class="reset_block__1oah0224 sprinkles_borderRadius_1__onxwju0 sprinkles_paddingBottom_3_mobile__onxwjujq sprinkles_paddingLeft_3_mobile__onxwjuku sprinkles_paddingRight_3_mobile__onxwjuly sprinkles_paddingTop_3_mobile__onxwjun2"
+              class="reset_block__1oah0224 sprinkles_borderRadius_1__onxwju0 sprinkles_paddingBottom_3_mobile__onxwjuon sprinkles_paddingLeft_3_mobile__onxwjupr sprinkles_paddingRight_3_mobile__onxwjuqv sprinkles_paddingTop_3_mobile__onxwjurz"
               style="background-color: rgb(108, 17, 17);"
             />
           </div>
           <span
-            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7y useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 sprinkles_position_absolute_mobile__onxwju9u"
+            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 sprinkles_position_absolute_mobile__onxwju9z"
           >
             #6c1111
           </span>
           <input
             autocomplete="off"
-            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_flexGrow_1_mobile__onxwjugq ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjuce sprinkles_position_relative_mobile__onxwju9q sprinkles_display_flex_mobile__onxwju82 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_flexGrow_1_mobile__onxwjukf ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjud7 sprinkles_position_relative_mobile__onxwju9v sprinkles_display_flex_mobile__onxwju87 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
             type="color"
             value="#6c1111"
           />
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9u sprinkles_display_flex_mobile__onxwju82 sprinkles_width_full_mobile__onxwjuce sprinkles_height_full_mobile__onxwjub6 NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_flex_mobile__onxwju87 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_success_default_borderColour__a2a1mv7"
@@ -403,12 +477,12 @@ exports[`<ColourInput /> > should match snapshot when touched and valid 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_success_default_borderColour__a2a1mv7"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjukq sprinkles_paddingRight_2_mobile__onxwjulu sprinkles_display_block_mobile__onxwju7y NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupn sprinkles_paddingRight_2_mobile__onxwjuqr sprinkles_display_block_mobile__onxwju7z NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjuki sprinkles_paddingLeft_none_mobile__onxwjulm sprinkles_paddingRight_none_mobile__onxwjumq sprinkles_paddingTop_none_mobile__onxwjunu sprinkles_marginBottom_none_mobile__onxwjuoy sprinkles_marginLeft_none_mobile__onxwjuq2 sprinkles_marginRight_none_mobile__onxwjur6 sprinkles_marginTop_none_mobile__onxwjusa sprinkles_position_absolute_mobile__onxwju9u sprinkles_display_inline_mobile__onxwju8a NotchedBase_placeholder_default__1ft8sxlz InputState_success_default_colour__a2a1mv6 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_marginBottom_none_mobile__onxwjutv sprinkles_marginLeft_none_mobile__onxwjuuz sprinkles_marginRight_none_mobile__onxwjuw7 sprinkles_marginTop_none_mobile__onxwjuxf sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_inline_mobile__onxwju8f NotchedBase_placeholder_default__1ft8sxlz InputState_success_default_colour__a2a1mv6 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
           >
             placeholder something
           </label>
@@ -428,20 +502,20 @@ exports[`<ColourInput /> > should match snapshot with both icons 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjuce input-class"
+    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 input-class"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjuki sprinkles_paddingLeft_none_mobile__onxwjulm sprinkles_paddingRight_none_mobile__onxwjumq sprinkles_paddingTop_none_mobile__onxwjunu sprinkles_position_relative_mobile__onxwju9q sprinkles_width_full_mobile__onxwjuce NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_position_relative_mobile__onxwju9v sprinkles_width_full_mobile__onxwjud7 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjuce sprinkles_height_full_mobile__onxwjub6"
+        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
       >
         <span
-          class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7y Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_position_absolute_mobile__onxwju9u withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_suffixIcon__5jmdy8l withEnhancedInput_iconSize_medium__5jmdy8n InputState_natural_default_colour__a2a1mv4"
+          class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_position_absolute_mobile__onxwju9z withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_suffixIcon__5jmdy8l withEnhancedInput_iconSize_medium__5jmdy8n InputState_natural_default_colour__a2a1mv4"
         >
           <svg
             aria-hidden="true"
-            class="sprinkles_display_block_mobile__onxwju7y sprinkles_width_full_mobile__onxwjuce sprinkles_height_full_mobile__onxwjub6"
+            class="sprinkles_display_block_mobile__onxwju7z sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
             viewBox="0 0 512 512"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -451,31 +525,31 @@ exports[`<ColourInput /> > should match snapshot with both icons 1`] = `
           </svg>
         </span>
         <div
-          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexWrap_nowrap_mobile__onxwjuh2 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_justifyContent_center_mobile__onxwjuea sprinkles_position_relative_mobile__onxwju9q"
+          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju87 sprinkles_flexWrap_nowrap_mobile__onxwjukr sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_center_mobile__onxwjuhv sprinkles_position_relative_mobile__onxwju9v"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju82 sprinkles_height_full_mobile__onxwjub6 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_justifyContent_space-around_mobile__onxwjuei sprinkles_flexShrink_0_mobile__onxwjugu sprinkles_position_absolute_mobile__onxwju9u ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju87 sprinkles_height_full_mobile__onxwjubn sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_space-around_mobile__onxwjui3 sprinkles_flexShrink_0_mobile__onxwjukj sprinkles_position_absolute_mobile__onxwju9z ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
           >
             <div
-              class="reset_block__1oah0224 sprinkles_borderRadius_1__onxwju0 sprinkles_paddingBottom_3_mobile__onxwjujq sprinkles_paddingLeft_3_mobile__onxwjuku sprinkles_paddingRight_3_mobile__onxwjuly sprinkles_paddingTop_3_mobile__onxwjun2"
+              class="reset_block__1oah0224 sprinkles_borderRadius_1__onxwju0 sprinkles_paddingBottom_3_mobile__onxwjuon sprinkles_paddingLeft_3_mobile__onxwjupr sprinkles_paddingRight_3_mobile__onxwjuqv sprinkles_paddingTop_3_mobile__onxwjurz"
               style="background-color: rgb(108, 17, 17);"
             />
           </div>
           <span
-            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7y useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 sprinkles_position_absolute_mobile__onxwju9u"
+            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 sprinkles_position_absolute_mobile__onxwju9z"
           >
             #6c1111
           </span>
           <input
             autocomplete="off"
-            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_flexGrow_1_mobile__onxwjugq ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjuce sprinkles_position_relative_mobile__onxwju9q sprinkles_display_flex_mobile__onxwju82 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8e"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_flexGrow_1_mobile__onxwjukf ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjud7 sprinkles_position_relative_mobile__onxwju9v sprinkles_display_flex_mobile__onxwju87 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8e"
             type="color"
             value="#6c1111"
           />
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9u sprinkles_display_flex_mobile__onxwju82 sprinkles_width_full_mobile__onxwjuce sprinkles_height_full_mobile__onxwjub6 NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_flex_mobile__onxwju87 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
@@ -484,12 +558,12 @@ exports[`<ColourInput /> > should match snapshot with both icons 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjukq sprinkles_paddingRight_2_mobile__onxwjulu sprinkles_display_block_mobile__onxwju7y NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupn sprinkles_paddingRight_2_mobile__onxwjuqr sprinkles_display_block_mobile__onxwju7z NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjuki sprinkles_paddingLeft_none_mobile__onxwjulm sprinkles_paddingRight_none_mobile__onxwjumq sprinkles_paddingTop_none_mobile__onxwjunu sprinkles_marginBottom_none_mobile__onxwjuoy sprinkles_marginLeft_none_mobile__onxwjuq2 sprinkles_marginRight_none_mobile__onxwjur6 sprinkles_marginTop_none_mobile__onxwjusa sprinkles_position_absolute_mobile__onxwju9u sprinkles_display_inline_mobile__onxwju8a NotchedBase_placeholder_default__1ft8sxlz InputState_natural_default_colour__a2a1mv4 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_marginBottom_none_mobile__onxwjutv sprinkles_marginLeft_none_mobile__onxwjuuz sprinkles_marginRight_none_mobile__onxwjuw7 sprinkles_marginTop_none_mobile__onxwjuxf sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_inline_mobile__onxwju8f NotchedBase_placeholder_default__1ft8sxlz InputState_natural_default_colour__a2a1mv4 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
           >
             placeholder something
           </label>
@@ -509,20 +583,20 @@ exports[`<ColourInput /> > should match snapshot with suffix icon 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjuce input-class"
+    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 input-class"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjuki sprinkles_paddingLeft_none_mobile__onxwjulm sprinkles_paddingRight_none_mobile__onxwjumq sprinkles_paddingTop_none_mobile__onxwjunu sprinkles_position_relative_mobile__onxwju9q sprinkles_width_full_mobile__onxwjuce NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_position_relative_mobile__onxwju9v sprinkles_width_full_mobile__onxwjud7 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjuce sprinkles_height_full_mobile__onxwjub6"
+        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
       >
         <span
-          class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7y Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_position_absolute_mobile__onxwju9u withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_suffixIcon__5jmdy8l withEnhancedInput_iconSize_medium__5jmdy8n InputState_natural_default_colour__a2a1mv4"
+          class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_position_absolute_mobile__onxwju9z withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_suffixIcon__5jmdy8l withEnhancedInput_iconSize_medium__5jmdy8n InputState_natural_default_colour__a2a1mv4"
         >
           <svg
             aria-hidden="true"
-            class="sprinkles_display_block_mobile__onxwju7y sprinkles_width_full_mobile__onxwjuce sprinkles_height_full_mobile__onxwjub6"
+            class="sprinkles_display_block_mobile__onxwju7z sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
             viewBox="0 0 512 512"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -532,31 +606,31 @@ exports[`<ColourInput /> > should match snapshot with suffix icon 1`] = `
           </svg>
         </span>
         <div
-          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexWrap_nowrap_mobile__onxwjuh2 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_justifyContent_center_mobile__onxwjuea sprinkles_position_relative_mobile__onxwju9q"
+          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju87 sprinkles_flexWrap_nowrap_mobile__onxwjukr sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_center_mobile__onxwjuhv sprinkles_position_relative_mobile__onxwju9v"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju82 sprinkles_height_full_mobile__onxwjub6 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_justifyContent_space-around_mobile__onxwjuei sprinkles_flexShrink_0_mobile__onxwjugu sprinkles_position_absolute_mobile__onxwju9u ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju87 sprinkles_height_full_mobile__onxwjubn sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_space-around_mobile__onxwjui3 sprinkles_flexShrink_0_mobile__onxwjukj sprinkles_position_absolute_mobile__onxwju9z ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
           >
             <div
-              class="reset_block__1oah0224 sprinkles_borderRadius_1__onxwju0 sprinkles_paddingBottom_3_mobile__onxwjujq sprinkles_paddingLeft_3_mobile__onxwjuku sprinkles_paddingRight_3_mobile__onxwjuly sprinkles_paddingTop_3_mobile__onxwjun2"
+              class="reset_block__1oah0224 sprinkles_borderRadius_1__onxwju0 sprinkles_paddingBottom_3_mobile__onxwjuon sprinkles_paddingLeft_3_mobile__onxwjupr sprinkles_paddingRight_3_mobile__onxwjuqv sprinkles_paddingTop_3_mobile__onxwjurz"
               style="background-color: rgb(108, 17, 17);"
             />
           </div>
           <span
-            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7y useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 sprinkles_position_absolute_mobile__onxwju9u"
+            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 reset_block__1oah0224 sprinkles_position_absolute_mobile__onxwju9z"
           >
             #6c1111
           </span>
           <input
             autocomplete="off"
-            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_flexGrow_1_mobile__onxwjugq ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjuce sprinkles_position_relative_mobile__onxwju9q sprinkles_display_flex_mobile__onxwju82 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8e"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_flexGrow_1_mobile__onxwjukf ColourInput_input__fijwir0 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjud7 sprinkles_position_relative_mobile__onxwju9v sprinkles_display_flex_mobile__onxwju87 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8e"
             type="color"
             value="#6c1111"
           />
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9u sprinkles_display_flex_mobile__onxwju82 sprinkles_width_full_mobile__onxwjuce sprinkles_height_full_mobile__onxwjub6 NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_flex_mobile__onxwju87 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
@@ -565,12 +639,12 @@ exports[`<ColourInput /> > should match snapshot with suffix icon 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjukq sprinkles_paddingRight_2_mobile__onxwjulu sprinkles_display_block_mobile__onxwju7y NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupn sprinkles_paddingRight_2_mobile__onxwjuqr sprinkles_display_block_mobile__onxwju7z NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjuki sprinkles_paddingLeft_none_mobile__onxwjulm sprinkles_paddingRight_none_mobile__onxwjumq sprinkles_paddingTop_none_mobile__onxwjunu sprinkles_marginBottom_none_mobile__onxwjuoy sprinkles_marginLeft_none_mobile__onxwjuq2 sprinkles_marginRight_none_mobile__onxwjur6 sprinkles_marginTop_none_mobile__onxwjusa sprinkles_position_absolute_mobile__onxwju9u sprinkles_display_inline_mobile__onxwju8a NotchedBase_placeholder_default__1ft8sxlz InputState_natural_default_colour__a2a1mv4 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_marginBottom_none_mobile__onxwjutv sprinkles_marginLeft_none_mobile__onxwjuuz sprinkles_marginRight_none_mobile__onxwjuw7 sprinkles_marginTop_none_mobile__onxwjuxf sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_inline_mobile__onxwju8f NotchedBase_placeholder_default__1ft8sxlz InputState_natural_default_colour__a2a1mv4 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
           >
             placeholder something
           </label>

@@ -5,25 +5,23 @@ exports[`<Pagination /> > should match snapshot for loading phase 1`] = `
   class="theme_OD_Base__j49br80"
   data-od-component-provider=""
 >
-  <div
-    class="reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9q sprinkles_display_flex_mobile__onxwju82 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_flexWrap_wrap_mobile__onxwjuh6 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw8 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm28"
-    is="span"
+  <span
+    class="reset_inlineText__1oah0223 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_flexDirection_row_mobile__onxwjuk3 sprinkles_flexWrap_wrap_mobile__onxwjukv sprinkles_gap_3_mobile__onxwjue3 sprinkles_minWidth_fit-content_mobile__onxwjudr sprinkles_position_relative_mobile__onxwju9v"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_flexWrap_nowrap_mobile__onxwjuh2 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_paddingTop_3_mobile__onxwjun2 sprinkles_paddingLeft_3_mobile__onxwjuku"
-      is="div"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_3_mobile__onxwjue3 sprinkles_flexWrap_nowrap_mobile__onxwjukr"
     >
       <button
         aria-disabled="true"
         aria-label=""
-        class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_textAlign_center__onxwju3c sprinkles_borderRadius_pill__onxwju8 sprinkles_userSelect_none__onxwju3o sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_2_mobile__onxwjujm sprinkles_paddingLeft_2_mobile__onxwjukq sprinkles_paddingRight_2_mobile__onxwjulu sprinkles_paddingTop_2_mobile__onxwjumy sprinkles_display_flex_mobile__onxwju82 sprinkles_overflow_hidden_mobile__onxwju8q sprinkles_alignItems_center_mobile__onxwjudu sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_justifyContent_center_mobile__onxwjuea useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j Pagination_disabled__9nf7kx0"
+        class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_textAlign_center__onxwju3c sprinkles_borderRadius_pill__onxwju8 sprinkles_userSelect_none__onxwju3o sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_2_mobile__onxwjuoj sprinkles_paddingLeft_2_mobile__onxwjupn sprinkles_paddingRight_2_mobile__onxwjuqr sprinkles_paddingTop_2_mobile__onxwjurv sprinkles_display_flex_mobile__onxwju87 sprinkles_overflow_hidden_mobile__onxwju8v sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_flexDirection_row_mobile__onxwjuk3 sprinkles_justifyContent_center_mobile__onxwjuhv useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j Pagination_disabled__9nf7kx0"
       >
         <span
-          class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7y Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+          class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z Icon_makeResponsiveStyle_key_bp__1gy3ire4"
         >
           <svg
             aria-hidden="true"
-            class="sprinkles_display_block_mobile__onxwju7y sprinkles_width_full_mobile__onxwjuce sprinkles_height_full_mobile__onxwjub6"
+            class="sprinkles_display_block_mobile__onxwju7z sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
             fill="currentColor"
             focusable="false"
             viewBox="0 0 24 24"
@@ -37,44 +35,40 @@ exports[`<Pagination /> > should match snapshot for loading phase 1`] = `
       </button>
     </div>
     <div
-      class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_flexWrap_nowrap_mobile__onxwjuh2 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_paddingTop_3_mobile__onxwjun2 sprinkles_paddingLeft_3_mobile__onxwjuku"
-      is="div"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_3_mobile__onxwjue3 sprinkles_flexWrap_nowrap_mobile__onxwjukr"
     >
       <button
-        class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_textAlign_center__onxwju3c sprinkles_borderRadius_pill__onxwju8 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju82 sprinkles_overflow_hidden_mobile__onxwju8q sprinkles_alignItems_center_mobile__onxwjudu sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_justifyContent_center_mobile__onxwjuea sprinkles_backgroundColor_gray200__onxwju4b Pagination_disabled__9nf7kx0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_3__1xnpmd73 Pagination_activeItem__9nf7kx2"
+        class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_textAlign_center__onxwju3c sprinkles_borderRadius_pill__onxwju8 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju87 sprinkles_overflow_hidden_mobile__onxwju8v sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_flexDirection_row_mobile__onxwjuk3 sprinkles_justifyContent_center_mobile__onxwjuhv sprinkles_backgroundColor_gray200__onxwju4b Pagination_disabled__9nf7kx0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_3__1xnpmd73 Pagination_activeItem__9nf7kx2"
       />
     </div>
     <div
-      class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_flexWrap_nowrap_mobile__onxwjuh2 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_paddingTop_3_mobile__onxwjun2 sprinkles_paddingLeft_3_mobile__onxwjuku"
-      is="div"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_3_mobile__onxwjue3 sprinkles_flexWrap_nowrap_mobile__onxwjukr"
     >
       <button
-        class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_textAlign_center__onxwju3c sprinkles_borderRadius_pill__onxwju8 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju82 sprinkles_overflow_hidden_mobile__onxwju8q sprinkles_alignItems_center_mobile__onxwjudu sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_justifyContent_center_mobile__onxwjuea sprinkles_backgroundColor_gray200__onxwju4b Pagination_disabled__9nf7kx0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_3__1xnpmd73 Pagination_activeItem__9nf7kx2"
+        class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_textAlign_center__onxwju3c sprinkles_borderRadius_pill__onxwju8 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju87 sprinkles_overflow_hidden_mobile__onxwju8v sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_flexDirection_row_mobile__onxwjuk3 sprinkles_justifyContent_center_mobile__onxwjuhv sprinkles_backgroundColor_gray200__onxwju4b Pagination_disabled__9nf7kx0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_3__1xnpmd73 Pagination_activeItem__9nf7kx2"
       />
     </div>
     <div
-      class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_flexWrap_nowrap_mobile__onxwjuh2 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_paddingTop_3_mobile__onxwjun2 sprinkles_paddingLeft_3_mobile__onxwjuku"
-      is="div"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_3_mobile__onxwjue3 sprinkles_flexWrap_nowrap_mobile__onxwjukr"
     >
       <button
-        class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_textAlign_center__onxwju3c sprinkles_borderRadius_pill__onxwju8 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju82 sprinkles_overflow_hidden_mobile__onxwju8q sprinkles_alignItems_center_mobile__onxwjudu sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_justifyContent_center_mobile__onxwjuea sprinkles_backgroundColor_gray200__onxwju4b Pagination_disabled__9nf7kx0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_3__1xnpmd73 Pagination_activeItem__9nf7kx2"
+        class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_textAlign_center__onxwju3c sprinkles_borderRadius_pill__onxwju8 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju87 sprinkles_overflow_hidden_mobile__onxwju8v sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_flexDirection_row_mobile__onxwjuk3 sprinkles_justifyContent_center_mobile__onxwjuhv sprinkles_backgroundColor_gray200__onxwju4b Pagination_disabled__9nf7kx0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_3__1xnpmd73 Pagination_activeItem__9nf7kx2"
       />
     </div>
     <div
-      class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_flexWrap_nowrap_mobile__onxwjuh2 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_paddingTop_3_mobile__onxwjun2 sprinkles_paddingLeft_3_mobile__onxwjuku"
-      is="div"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_3_mobile__onxwjue3 sprinkles_flexWrap_nowrap_mobile__onxwjukr"
     >
       <button
         aria-disabled="true"
         aria-label=""
-        class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_textAlign_center__onxwju3c sprinkles_borderRadius_pill__onxwju8 sprinkles_userSelect_none__onxwju3o sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_2_mobile__onxwjujm sprinkles_paddingLeft_2_mobile__onxwjukq sprinkles_paddingRight_2_mobile__onxwjulu sprinkles_paddingTop_2_mobile__onxwjumy sprinkles_display_flex_mobile__onxwju82 sprinkles_overflow_hidden_mobile__onxwju8q sprinkles_alignItems_center_mobile__onxwjudu sprinkles_flexDirection_row_mobile__onxwjuge sprinkles_justifyContent_center_mobile__onxwjuea useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j Pagination_disabled__9nf7kx0"
+        class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_textAlign_center__onxwju3c sprinkles_borderRadius_pill__onxwju8 sprinkles_userSelect_none__onxwju3o sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_2_mobile__onxwjuoj sprinkles_paddingLeft_2_mobile__onxwjupn sprinkles_paddingRight_2_mobile__onxwjuqr sprinkles_paddingTop_2_mobile__onxwjurv sprinkles_display_flex_mobile__onxwju87 sprinkles_overflow_hidden_mobile__onxwju8v sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_flexDirection_row_mobile__onxwjuk3 sprinkles_justifyContent_center_mobile__onxwjuhv useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j Pagination_disabled__9nf7kx0"
       >
         <span
-          class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7y Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+          class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z Icon_makeResponsiveStyle_key_bp__1gy3ire4"
         >
           <svg
             aria-hidden="true"
-            class="sprinkles_display_block_mobile__onxwju7y sprinkles_width_full_mobile__onxwjuce sprinkles_height_full_mobile__onxwjub6"
+            class="sprinkles_display_block_mobile__onxwju7z sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
             fill="currentColor"
             focusable="false"
             viewBox="0 0 24 24"
@@ -87,6 +81,6 @@ exports[`<Pagination /> > should match snapshot for loading phase 1`] = `
         </span>
       </button>
     </div>
-  </div>
+  </span>
 </div>
 `;

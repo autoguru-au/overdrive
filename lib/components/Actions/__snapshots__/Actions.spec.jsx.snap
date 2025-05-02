@@ -6,7 +6,7 @@ exports[`<Actions /> > should match the snapshot 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexDirection_row_mobile__onxwjuge useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm28 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw8 Columns_align_stretch__15fwc182b Columns_wrapping_wrap__15fwc1828"
+    class="reset_block__1oah0224 Columns_columnWrapper__15fwc188 Columns__15fwc180 sprinkles_display_grid_mobile__onxwju8b Columns_columnWrapper_align_stretch__15fwc189 Columns__15fwc181 sprinkles_alignItems_stretch_mobile__onxwjuhn sprinkles_alignContent_stretch_mobile__onxwjuj7 Columns_columnWrapper_wrappingDirection_default__15fwc18f  sprinkles_gap_3_mobile__onxwjue3"
   />
 </div>
 `;

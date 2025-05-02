@@ -6,79 +6,68 @@ exports[`<Alert /> > should match the snapshot 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_1__onxwju1m sprinkles_borderLeftWidth_1__onxwju1i sprinkles_borderRightWidth_1__onxwju1q sprinkles_borderTopWidth_1__onxwju1u sprinkles_borderRadius_1__onxwju0 sprinkles_boxShadow_4__onxwju3h sprinkles_paddingBottom_2_mobile__onxwjujm sprinkles_paddingLeft_2_mobile__onxwjukq sprinkles_paddingRight_2_mobile__onxwjulu sprinkles_paddingTop_2_mobile__onxwjumy sprinkles_overflow_hidden_mobile__onxwju8q sprinkles_position_relative_mobile__onxwju9q sprinkles_backgroundColor_white__onxwju5j sprinkles_borderBottomColor_gray__onxwju5m sprinkles_borderLeftColor_gray__onxwju5p sprinkles_borderRightColor_gray__onxwju5s sprinkles_borderTopColor_gray__onxwju5v useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_success__1xnpmd7m Alert_contained__19auxx40"
+    class="reset_block__1oah0224 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_1__onxwju1m sprinkles_borderLeftWidth_1__onxwju1i sprinkles_borderRightWidth_1__onxwju1q sprinkles_borderTopWidth_1__onxwju1u sprinkles_borderRadius_1__onxwju0 sprinkles_boxShadow_4__onxwju3h sprinkles_paddingBottom_2_mobile__onxwjuoj sprinkles_paddingLeft_2_mobile__onxwjupn sprinkles_paddingRight_2_mobile__onxwjuqr sprinkles_paddingTop_2_mobile__onxwjurv sprinkles_overflow_hidden_mobile__onxwju8v sprinkles_position_relative_mobile__onxwju9v sprinkles_backgroundColor_white__onxwju5j sprinkles_borderBottomColor_gray__onxwju5m sprinkles_borderLeftColor_gray__onxwju5p sprinkles_borderRightColor_gray__onxwju5s sprinkles_borderTopColor_gray__onxwju5v useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_success__1xnpmd7m Alert_contained__19auxx40"
+    data-od-component="alert"
     role="alert"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_position_absolute_mobile__onxwju9u sprinkles_height_full_mobile__onxwjub6 sprinkles_backgroundColor_success__onxwju3w IntentStripe_intentBox__1n5wa370"
+      class="reset_block__1oah0224 sprinkles_position_absolute_mobile__onxwju9z sprinkles_height_full_mobile__onxwjubn sprinkles_backgroundColor_success__onxwju3w IntentStripe_intentBox__1n5wa370"
     />
     <div
-      class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexDirection_row_mobile__onxwjuge useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm24 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw10 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw11 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw12 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw13 Columns_align_stretch__15fwc182b Columns_wrapping_noWrap__15fwc1829"
+      class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_alignSelf_flex-start_mobile__onxwjufm sprinkles_flexGrow_0_mobile__onxwjugm sprinkles_flexShrink_0_mobile__onxwjugu Columns_makeResponsiveStyle_key_bp__15fwc184 Columns_makeResponsiveStyle_key_bp__15fwc1824 Columns_makeResponsiveStyle_key_bp__15fwc1825 Columns_makeResponsiveStyle_key_bp__15fwc1826 Columns_makeResponsiveStyle_key_bp__15fwc1827"
+        class="reset_block__1oah0224 sprinkles_alignSelf_flex-start_mobile__onxwjujb"
       >
-        <div
-          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_width_full_mobile__onxwjuce sprinkles_height_full_mobile__onxwjub6"
+        <span
+          class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_marginTop_2_mobile__onxwjuwj sprinkles_marginBottom_2_mobile__onxwjusz sprinkles_marginLeft_2_mobile__onxwjuu3"
         >
-          <span
-            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7y Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_marginTop_2_mobile__onxwjure sprinkles_marginBottom_2_mobile__onxwjuo2 sprinkles_marginLeft_2_mobile__onxwjup6"
+          <svg
+            aria-hidden="true"
+            class="sprinkles_display_block_mobile__onxwju7z sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              aria-hidden="true"
-              class="sprinkles_display_block_mobile__onxwju7y sprinkles_width_full_mobile__onxwjuce sprinkles_height_full_mobile__onxwjub6"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm-1 14.502l7-7-1.414-1.414L11 13.674l-3.086-3.086L6.5 12.002l4.5 4.5z"
-              />
-            </svg>
-          </span>
-        </div>
+            <path
+              d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm-1 14.502l7-7-1.414-1.414L11 13.674l-3.086-3.086L6.5 12.002l4.5 4.5z"
+            />
+          </svg>
+        </span>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_alignSelf_center_mobile__onxwjufq sprinkles_flexGrow_1_mobile__onxwjugq Columns_makeResponsiveStyle_key_bp__15fwc184 Columns_makeResponsiveStyle_key_bp__15fwc1824 Columns_makeResponsiveStyle_key_bp__15fwc1825 Columns_makeResponsiveStyle_key_bp__15fwc1826 Columns_makeResponsiveStyle_key_bp__15fwc1827 Column_makeResponsiveStyle_key_bp__1ycz12q14"
-      >
-        <div
-          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_width_full_mobile__onxwjuce sprinkles_height_full_mobile__onxwjub6 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_dark__1xnpmd7f"
-        />
-      </div>
+        class="reset_block__1oah0224 sprinkles_alignSelf_center_mobile__onxwjujf sprinkles_width_auto_mobile__onxwjudb useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_dark__1xnpmd7f"
+      />
       <div
-        class="reset_block__1oah0224 sprinkles_alignSelf_flex-start_mobile__onxwjufm sprinkles_flexGrow_0_mobile__onxwjugm sprinkles_flexShrink_0_mobile__onxwjugu Columns_makeResponsiveStyle_key_bp__15fwc184 Columns_makeResponsiveStyle_key_bp__15fwc1824 Columns_makeResponsiveStyle_key_bp__15fwc1825 Columns_makeResponsiveStyle_key_bp__15fwc1826 Columns_makeResponsiveStyle_key_bp__15fwc1827"
+        class="reset_block__1oah0224 sprinkles_marginLeft_auto_mobile__onxwjuv3"
       >
-        <div
-          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_width_full_mobile__onxwjuce sprinkles_height_full_mobile__onxwjub6"
+        <button
+          aria-label="close"
+          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_none__onxwju1p sprinkles_borderLeftWidth_none__onxwju1l sprinkles_borderRightWidth_none__onxwju1t sprinkles_borderTopWidth_none__onxwju1x sprinkles_borderRadius_pill__onxwju8 sprinkles_textAlign_center__onxwju3c sprinkles_paddingLeft_3_mobile__onxwjupr sprinkles_paddingRight_3_mobile__onxwjuqv sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_display_inline-block_mobile__onxwju8j sprinkles_overflow_hidden_mobile__onxwju8v useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_3__1xnpmd73 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon54 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_true__p2yon5h Button_button_compound_2__p2yon5l Button_button_compound_8__p2yon5r"
+          type="button"
         >
-          <button
-            aria-label="close"
-            class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_none__onxwju1p sprinkles_borderLeftWidth_none__onxwju1l sprinkles_borderRightWidth_none__onxwju1t sprinkles_borderTopWidth_none__onxwju1x sprinkles_borderRadius_pill__onxwju8 sprinkles_textAlign_center__onxwju3c sprinkles_paddingLeft_3_mobile__onxwjuku sprinkles_paddingRight_3_mobile__onxwjuly sprinkles_paddingTop_none_mobile__onxwjunu sprinkles_paddingBottom_none_mobile__onxwjuki sprinkles_display_inline-block_mobile__onxwju8e sprinkles_overflow_hidden_mobile__onxwju8q useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_3__1xnpmd73 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon54 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_true__p2yon5h Button_button_compound_2__p2yon5l Button_button_compound_8__p2yon5r"
-            type="button"
+          <div
+            class="reset_block__1oah0224 sprinkles_height_full_mobile__onxwjubn sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_center_mobile__onxwjuhv Button_body__p2yon50"
           >
-            <div
-              class="reset_block__1oah0224 sprinkles_height_full_mobile__onxwjub6 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_justifyContent_center_mobile__onxwjuea Button_body__p2yon50"
+            <span
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z Icon_makeResponsiveStyle_key_bp__1gy3ire4 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_muted__1xnpmd7h"
             >
-              <span
-                class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7y Icon_makeResponsiveStyle_key_bp__1gy3ire4 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_muted__1xnpmd7h"
+              <svg
+                aria-hidden="true"
+                class="sprinkles_display_block_mobile__onxwju7z sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  aria-hidden="true"
-                  class="sprinkles_display_block_mobile__onxwju7y sprinkles_width_full_mobile__onxwjuce sprinkles_height_full_mobile__onxwjub6"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M13.458 12L19 17.543V19h-1.457L12 13.457 6.458 19H5v-1.456L10.544 12 5 6.458V5h1.457L12 10.543 17.544 5H19v1.458L13.458 12z"
-                  />
-                </svg>
-              </span>
-            </div>
-          </button>
-        </div>
+                <path
+                  d="M13.458 12L19 17.543V19h-1.457L12 13.457 6.458 19H5v-1.456L10.544 12 5 6.458V5h1.457L12 10.543 17.544 5H19v1.458L13.458 12z"
+                />
+              </svg>
+            </span>
+          </div>
+        </button>
       </div>
     </div>
   </div>
