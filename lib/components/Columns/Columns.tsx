@@ -1,61 +1,68 @@
-// import clsx from 'clsx';
-import React, { forwardRef, ReactNode } from 'react';
+import React, { type ElementType } from 'react';
 
 import {
 	sprinklesResponsive,
 	type SprinklesResponsive,
 } from '../../styles/sprinkles.css';
-import { useBox, type UseBoxProps } from '../Box';
+import { type PolymorphicBoxProps, useBox, type UseBoxProps } from '../Box';
 
 import * as styles from './Columns.css';
 import type { ColumnWrapperVariants } from './Columns.css';
 
-export interface ColumnsProps extends UseBoxProps, ColumnWrapperVariants {
-	children?: ReactNode;
+export interface ColumnsBaseProps extends ColumnWrapperVariants {
+	/**
+	 * Sets the space (gap) between columns and rows.
+	 * Responsive prop. Overridden by `spaceX` and `spaceY`.
+	 */
 	space?: SprinklesResponsive['gap'];
+	/**
+	 * Sets the horizontal space (column-gap) between columns.
+	 * Responsive prop.
+	 */
 	spaceX?: SprinklesResponsive['columnGap'];
+	/**
+	 * Sets the vertical space (row-gap) between rows when columns wrap.
+	 * Responsive prop.
+	 */
 	spaceY?: SprinklesResponsive['rowGap'];
 }
 
-export const Columns = forwardRef<HTMLDivElement, ColumnsProps>(
-	(
-		{
-			align = 'stretch',
-			as,
-			children,
-			className,
-			noWrap,
-			space,
-			spaceX,
-			spaceY,
-			wrappingDirection = 'default',
-			...props
-		},
-		ref,
-	) => {
-		const { Component, componentProps } = useBox({
-			as,
-			className: [
-				styles.columnWrapper({
-					align,
-					noWrap,
-					wrappingDirection,
-				}),
-				sprinklesResponsive({
-					gap: space,
-					columnGap: spaceX,
-					rowGap: spaceY,
-				}),
-				className,
-			],
-			ref,
-			...props,
-		});
+export type StyledColumnsProps<E extends ElementType> = PolymorphicBoxProps<
+	E,
+	ColumnsBaseProps
+>;
 
-		return <Component {...componentProps}>{children}</Component>;
-	},
-);
+export const Columns = <E extends ElementType>({
+	align = 'stretch',
+	as,
+	children,
+	className,
+	noWrap,
+	space,
+	spaceX,
+	spaceY,
+	wrappingDirection = 'default',
+	...props
+}: StyledColumnsProps<E>) => {
+	const { Component, componentProps } = useBox({
+		as,
+		className: [
+			styles.columnWrapper({
+				align,
+				noWrap,
+				wrappingDirection,
+			}),
+			sprinklesResponsive({
+				gap: space,
+				columnGap: spaceX,
+				rowGap: spaceY,
+			}),
+			className,
+		],
+		...props,
+	} as UseBoxProps<E>);
+
+	return <Component {...componentProps}>{children}</Component>;
+};
 
 Columns.displayName = 'Columns';
-
-export default Columns;

@@ -38,6 +38,7 @@ export type StyleProps = Sprinkles &
 	SprinklesResponsive &
 	SprinklesLegacyColours;
 
+/** Use this prop type to remix another polymorphic component based on Box, extracting/extending not recommended */
 export type PolymorphicBoxProps<
 	E extends ElementType,
 	Props = object,
@@ -49,6 +50,12 @@ export type PolymorphicBoxProps<
 export type UseBoxProps<E extends ElementType = 'div'> = PolymorphicBoxProps<
 	E,
 	StyleProps
+>;
+
+/** Helps to satisfy the linter with the complex returned `returnedComponent` */
+export type ComponentProps<E extends ElementType> = Omit<
+	ComponentPropsWithRef<E>,
+	'as'
 >;
 
 const DEFAULT_TAG = 'div' as keyof JSX.IntrinsicElements;
