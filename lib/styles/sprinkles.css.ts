@@ -191,6 +191,8 @@ const responsiveConditions = {
 	},
 };
 
+export const totalGridColumns = 12; // chosen to be divisible by 2, 3, 4
+
 const responsiveProperties = defineProperties({
 	conditions: responsiveConditions,
 	defaultCondition: 'mobile',
@@ -213,17 +215,27 @@ const responsiveProperties = defineProperties({
 		// Size
 		height: {
 			...spaceWithoutNone,
+			'fit-content': 'fit-content',
+			'max-content': 'max-content',
+			'min-content': 'max-content',
 			full: '100%',
 			auto: 'auto',
 		},
 		width: {
 			...spaceWithoutNone,
+			'fit-content': 'fit-content',
+			'max-content': 'max-content',
+			'min-content': 'min-content',
 			full: '100%',
 			auto: 'auto',
 		},
+		maxWidth: ['fit-content', 'max-content'],
+		minWidth: ['auto', 'fit-content'],
 		gap: gapSizesWithVar,
+		columnGap: space,
+		rowGap: space,
 		// Alignment
-		alignItems: ['flex-start', 'center', 'flex-end', 'baseline'],
+		alignItems: ['flex-start', 'center', 'flex-end', 'baseline', 'stretch'],
 		justifyContent: [
 			'flex-start',
 			'center',
@@ -240,6 +252,7 @@ const responsiveProperties = defineProperties({
 			'space-around',
 			'space-between',
 			'space-evenly',
+			'stretch',
 		],
 		alignSelf: ['flex-start', 'center', 'flex-end', 'stretch'],
 		justifySelf: ['flex-start', 'center', 'flex-end'],
@@ -261,6 +274,19 @@ const responsiveProperties = defineProperties({
 			auto: 'auto',
 			none: 'none',
 		},
+		gridColumn: {
+			'1/2': `span ${totalGridColumns / 2}`,
+			'1/3': `span ${totalGridColumns / 3}`,
+			'2/3': `span ${(totalGridColumns / 3) * 2}`,
+			'1/4': `span ${totalGridColumns / 4}`,
+			'3/4': `span ${(totalGridColumns / 4) * 3}`,
+			'1/6': `span ${totalGridColumns / 6}`,
+			'2/6': `span ${(totalGridColumns / 6) * 2}`,
+			'3/6': `span ${(totalGridColumns / 6) * 3}`,
+			'4/6': `span ${(totalGridColumns / 6) * 4}`,
+			full: `span ${totalGridColumns}`,
+			auto: 'auto',
+		},
 		// Padding
 		paddingBottom: tokens.space,
 		paddingLeft: tokens.space,
@@ -268,8 +294,8 @@ const responsiveProperties = defineProperties({
 		paddingTop: tokens.space,
 		// Margin
 		marginBottom: tokens.space,
-		marginLeft: tokens.space,
-		marginRight: tokens.space,
+		marginLeft: { ...tokens.space, auto: 'auto' },
+		marginRight: { ...tokens.space, auto: 'auto' },
 		marginTop: tokens.space,
 	},
 	shorthands: {
