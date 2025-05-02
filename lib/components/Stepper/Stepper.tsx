@@ -11,8 +11,8 @@ import {
 
 import { addWithSafeDecimal } from '../../utils/number';
 import { Box, boxStyles } from '../Box';
-import { Column, Columns } from '../Columns';
 import { Icon } from '../Icon';
+import { Inline } from '../Inline';
 import { Text, useTextStyles } from '../Text';
 
 import * as styles from './Stepper.css';
@@ -154,10 +154,6 @@ export const Stepper: FunctionComponent<Props> = ({
 				styles.root,
 				boxStyles({ as: 'button' }),
 				disabled && styles.disabled,
-				{
-					[styles.width.default]: !isFullWidth,
-					[styles.width.full]: isFullWidth,
-				},
 			)}
 			userSelect="none"
 			aria-disabled={disabled}
@@ -166,46 +162,43 @@ export const Stepper: FunctionComponent<Props> = ({
 			borderColour="gray"
 			padding="3"
 			borderRadius="1"
-			boxShadow="2"
+			width={isFullWidth ? 'full' : 'fit-content'}
+			minWidth="fit-content"
 			onKeyDown={keyDownHandler}
 		>
-			<Columns noWrap width="full">
-				<Column noShrink alignSelf="center">
+			<Inline alignX={isFullWidth ? 'space-between' : undefined} noWrap>
+				<Box>
 					<Handle
 						icon={MinusIcon}
 						label="step down"
 						disabled={disabled}
 						onClick={onDecrement}
 					/>
-				</Column>
-				<Column noShrink grow width="auto" alignSelf="center">
+				</Box>
+				<Box>
 					<Text
-						is="span"
-						align="center"
+						as="span"
 						colour="dark"
 						display="block"
-						className={clsx(
-							boxStyles({
-								as: 'span',
-								paddingX: '2',
-								width: 'full',
-							}),
-							styles.label,
-						)}
+						className={boxStyles({
+							as: 'span',
+							paddingX: '2',
+							width: 'full',
+						})}
 						size="4"
 					>
 						{Number.isFinite(value) ? format(value) : ''}
 					</Text>
-				</Column>
-				<Column noShrink alignSelf="center">
+				</Box>
+				<Box>
 					<Handle
 						icon={PlusIcon}
 						label="step up"
 						disabled={disabled}
 						onClick={onIncrement}
 					/>
-				</Column>
-			</Columns>
+				</Box>
+			</Inline>
 		</Box>
 	);
 };

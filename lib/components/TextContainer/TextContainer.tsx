@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { FunctionComponent, ReactElement } from 'react';
 
-import { Column, Columns } from '../Columns';
+import { Box } from '../Box';
 import { Stack } from '../Stack';
 
 export interface Props {
@@ -17,19 +17,16 @@ export const TextContainer: FunctionComponent<Props> = ({
 	children,
 	action,
 }) => (
-	<Stack space="2" as="article" className={className}>
-		<TextContainerHeading heading={heading} action={action} />
+	<Stack as="article" space="2" className={className}>
+		<Box
+			alignItems="center"
+			display="flex"
+			justifyContent="space-between"
+			width="full"
+		>
+			<Box>{heading}</Box>
+			{action && <Box>{action}</Box>}
+		</Box>
 		{children}
 	</Stack>
 );
-
-const TextContainerHeading: FunctionComponent<
-	Omit<Props, 'className' | 'children'>
-> = ({ heading, action }) => (
-	<Columns noWrap align="center" space="4">
-		<Column grow>{heading!}</Column>
-		{action ? <Column width="auto">{action!}</Column> : null}
-	</Columns>
-);
-
-export default TextContainer;

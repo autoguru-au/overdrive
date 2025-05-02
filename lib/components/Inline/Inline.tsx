@@ -101,6 +101,7 @@ export const Inline = <E extends ElementType = 'div'>({
 		flexWrap: noWrap ? 'nowrap' : 'wrap',
 		gap: space,
 		justifyContent: alignX,
+		minWidth: 'fit-content',
 		position: 'relative',
 		width,
 		...props,
