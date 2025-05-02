@@ -46,7 +46,7 @@
 		"lint:eslint": "eslint \"lib/**/*.+(ts|tsx)\" --fix --quiet",
 		"lint": "yarn run lint:eslint && yarn run lint:tsc",
 		"release": "changeset publish",
-		"start": "concurrently -k \"yarn:storybook\"",
+		"start": "yarn storybook",
 		"storybook:extract": "npx sb extract",
 		"storybook": "storybook dev -p 6006",
 		"storybook:build": "storybook build",

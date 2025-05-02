@@ -122,6 +122,7 @@ export const HorizontalAutoScroller: FunctionComponent<Props> = ({
 			display="flex"
 			flexDirection="column"
 			gap="5"
+			data-od-component="HorizontalAutoScroller"
 		>
 			<Box
 				overflow="hidden"

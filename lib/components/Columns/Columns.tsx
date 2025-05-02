@@ -62,7 +62,11 @@ export const Columns = <E extends ElementType>({
 		...props,
 	} as UseBoxProps<E>);
 
-	return <Component {...componentProps}>{children}</Component>;
+	return (
+		<Component {...componentProps} data-od-component="columns">
+			{children}
+		</Component>
+	);
 };
 
 Columns.displayName = 'Columns';

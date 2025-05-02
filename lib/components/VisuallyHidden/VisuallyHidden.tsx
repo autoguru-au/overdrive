@@ -4,7 +4,8 @@ import { useBox, type UseBoxProps } from '../Box';
 
 import { visuallyHidden } from './VisuallyHidden.css';
 
-interface VisuallyHiddenProps<E extends ElementType> extends PropsWithChildren {
+export interface VisuallyHiddenProps<E extends ElementType>
+	extends PropsWithChildren {
 	as?: E;
 }
 
@@ -19,7 +20,14 @@ export const VisuallyHidden = <E extends ElementType>({
 }: VisuallyHiddenProps<E>) => {
 	const { Component } = useBox<E>(props as UseBoxProps<E>);
 
-	return <Component className={visuallyHidden}>{children}</Component>;
+	return (
+		<Component
+			className={visuallyHidden}
+			data-od-component="VisuallyHidden"
+		>
+			{children}
+		</Component>
+	);
 };
 
 export default VisuallyHidden;

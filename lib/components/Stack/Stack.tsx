@@ -88,7 +88,7 @@ export const Stack = <E extends ElementType = 'div'>({
 	);
 
 	return (
-		<Component {...componentProps}>
+		<Component {...componentProps} data-od-component="stack">
 			{Children.map(items, (child, idx) => (
 				<Item>
 					{dividers && idx > 0 && <Divider />}
