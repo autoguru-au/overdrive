@@ -15,7 +15,7 @@ import { SprinklesResponsive } from '../../styles/sprinkles.css';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
-import Section from '../Section/Section';
+import { Section } from '../Section/Section';
 import { SliderProgress } from '../SliderProgress';
 
 import * as styles from './HorizontalAutoScroller.css';

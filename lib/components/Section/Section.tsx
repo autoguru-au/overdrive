@@ -23,5 +23,3 @@ export const Section: FunctionComponent<SectionProps> = ({
 		</Component>
 	);
 };
-
-export default Section;

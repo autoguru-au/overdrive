@@ -110,5 +110,3 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 );
 
 TextLink.displayName = 'TextLink';
-
-export default TextLink;
