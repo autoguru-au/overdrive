@@ -4,6 +4,7 @@ import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
 import { breakpoints } from '../themes/makeTheme';
 import { overdriveTokens as tokens } from '../themes/theme.css';
 
+import { cssLayerUtil } from './layers.css';
 import { gapVar } from './vars.css';
 
 const { space } = tokens;
@@ -69,6 +70,7 @@ const gapSizesWithVar = Object.entries(space).reduce(
 
 // --- Base sprinkles (non-responsive)
 const baseProperties = defineProperties({
+	'@layer': cssLayerUtil,
 	properties: {
 		// Borders
 		borderRadius: tokens.border.radius,
@@ -132,6 +134,7 @@ export type Sprinkles = Parameters<typeof sprinkles>[0];
 
 // --- Legacy sprinkles with old colour tokens (non-responsive)
 const legacyColourProperties = defineProperties({
+	'@layer': cssLayerUtil,
 	properties: {
 		backgroundColor: {
 			...intentBackgroundColoursStandard,
@@ -194,6 +197,7 @@ export const responsiveConditions = {
 export const totalGridColumns = 12; // chosen to be divisible by 2, 3, 4
 
 const responsiveProperties = defineProperties({
+	'@layer': cssLayerUtil,
 	conditions: responsiveConditions,
 	defaultCondition: 'mobile',
 	responsiveArray: ['mobile', 'tablet', 'desktop', 'largeDesktop'],
