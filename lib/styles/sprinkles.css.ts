@@ -182,7 +182,7 @@ export type SprinklesLegacyColours = Omit<
 >;
 
 // --- Responsive sprinkles
-const responsiveConditions = {
+export const responsiveConditions = {
 	mobile: {},
 	tablet: { '@media': `screen and (min-width: ${breakpoints.tablet})` },
 	desktop: { '@media': `screen and (min-width: ${breakpoints.desktop})` },

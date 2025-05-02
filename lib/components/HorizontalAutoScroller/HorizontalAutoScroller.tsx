@@ -11,13 +11,12 @@ import {
 import flattenChildren from 'react-keyed-flatten-children';
 import { useSwipeable } from 'react-swipeable';
 
+import { SprinklesResponsive } from '../../styles/sprinkles.css';
 import { Box } from '../Box';
 import { Button } from '../Button';
-import { Column, Columns } from '../Columns';
 import { Icon } from '../Icon';
 import Section from '../Section/Section';
 import { SliderProgress } from '../SliderProgress';
-import { Stack } from '../Stack';
 
 import * as styles from './HorizontalAutoScroller.css';
 import {
@@ -26,16 +25,15 @@ import {
 } from './useHorizontalAutoScroller';
 
 export interface Props
-	extends Pick<ComponentProps<typeof Columns>, 'space'>,
-		Omit<UseHorizontalAutoScrollerProps, 'itemsRef'> {
+	extends Omit<UseHorizontalAutoScrollerProps, 'itemsRef'> {
 	durationSeconds?: number;
 	className?: string;
-	columnWidth?: ComponentProps<typeof Column>['width'];
+	columnWidth?: styles.SprinklesColumnWidth['flexBasis'];
 	sliderProgressColour?: ComponentProps<
 		typeof SliderProgress
 	>['backgroundColour'];
 	noControls?: boolean;
-
+	space?: SprinklesResponsive['gap'];
 	children: ReactNode | ReactNode[];
 }
 
@@ -58,25 +56,29 @@ export const HorizontalAutoScroller: FunctionComponent<Props> = ({
 	const items = useMemo(() => {
 		const itemsRef: Array<HTMLElement> = [];
 		const list = incomingItems.map((item, index) => (
-			<Column
+			<Box
 				ref={(el) => {
 					if (el) itemsRef.push(el);
 				}}
 				key={index}
-				noShrink
-				width={columnWidth}
-				justifyContent="stretch"
+				flexGrow={0}
+				flexShrink={0}
 				alignSelf="stretch"
+				className={styles.sprinklesColumnWidth({
+					flexBasis: columnWidth,
+				})}
 			>
-				<Box
-					width="full"
-					className={clsx(styles.item, {
-						[styles.active]: index === activeIndex,
-					})}
-				>
-					{item}
+				<Box display="flex" height="full" width="full">
+					<Box
+						width="full"
+						className={clsx(styles.item, {
+							[styles.active]: index === activeIndex,
+						})}
+					>
+						{item}
+					</Box>
 				</Box>
-			</Column>
+			</Box>
 		));
 
 		setItemsRef(itemsRef);
@@ -114,7 +116,13 @@ export const HorizontalAutoScroller: FunctionComponent<Props> = ({
 	}
 
 	return (
-		<Stack className={className} space="5">
+		<Box
+			alignItems="stretch"
+			className={className}
+			display="flex"
+			flexDirection="column"
+			gap="5"
+		>
 			<Box
 				overflow="hidden"
 				position="relative"
@@ -148,25 +156,27 @@ export const HorizontalAutoScroller: FunctionComponent<Props> = ({
 						</Button>
 					</Box>
 				)}
-				<Columns
-					ref={containerRef}
+				<Box
+					alignItems="stretch"
+					display="flex"
 					overflow="hidden"
-					noWrap
+					flexWrap="nowrap"
 					width="full"
-					space={space}
+					gap={space}
+					ref={containerRef}
 				>
 					{noControls ? null : (
-						<Column noShrink className={styles.controllerCol}>
+						<Box className={styles.controllerCol}>
 							<span />
-						</Column>
+						</Box>
 					)}
 					{items}
 					{noControls ? null : (
-						<Column noShrink className={styles.controllerCol}>
+						<Box className={styles.controllerCol}>
 							<span />
-						</Column>
+						</Box>
 					)}
-				</Columns>
+				</Box>
 				{noControls ? null : (
 					<Box
 						className={[styles.controllerBtn, styles.nextBtn]}
@@ -189,18 +199,18 @@ export const HorizontalAutoScroller: FunctionComponent<Props> = ({
 					</Box>
 				)}
 			</Box>
-			<Section width="small">
-				<SliderProgress
-					backgroundColour={sliderProgressColour}
-					duration={`${durationSeconds}s`}
-					paused={paused}
-					onRequestNext={next}
-					totalCount={pageCount}
-					activeIndex={activePage || 0}
-				/>
-			</Section>
-		</Stack>
+			<Box>
+				<Section width="small">
+					<SliderProgress
+						backgroundColour={sliderProgressColour}
+						duration={`${durationSeconds}s`}
+						paused={paused}
+						onRequestNext={next}
+						totalCount={pageCount}
+						activeIndex={activePage || 0}
+					/>
+				</Section>
+			</Box>
+		</Box>
 	);
 };
-
-export default HorizontalAutoScroller;
