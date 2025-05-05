@@ -97,7 +97,6 @@ const baseProperties = defineProperties({
 		fontSize: fontSizes,
 		lineHeight: lineHeights,
 		fontWeight: tokens.typography.fontWeight,
-		textAlign: ['left', 'center', 'right'],
 		// Shadows
 		boxShadow: tokens.elevation,
 		// Misc
@@ -215,6 +214,7 @@ const responsiveProperties = defineProperties({
 		overflowX: ['auto', 'scroll', 'hidden'],
 		overflowY: ['auto', 'scroll', 'hidden'],
 		position: ['static', 'relative', 'absolute', 'fixed', 'sticky'],
+		textAlign: ['left', 'center', 'right'],
 		// Size
 		height: {
 			...spaceWithoutNone,

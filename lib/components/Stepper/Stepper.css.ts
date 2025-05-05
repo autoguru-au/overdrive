@@ -1,5 +1,6 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
+import { sprinklesResponsive } from '../../styles/sprinkles.css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
 export const disabled = style({ cursor: 'not-allowed' });
@@ -31,6 +32,13 @@ export const handle = styleVariants({
 	},
 });
 
-export const label = style({
-	minWidth: vars.space['8'],
-});
+export const label = [
+	sprinklesResponsive({
+		px: '2',
+		textAlign: 'center',
+		width: 'full',
+	}),
+	style({
+		minWidth: vars.space['8'],
+	}),
+];

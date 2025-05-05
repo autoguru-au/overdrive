@@ -41,6 +41,10 @@ export const columnWrapper = recipe({
 			reverse: sprinklesResponsive({ flexWrap: 'wrap-reverse' }),
 		},
 	},
+	defaultVariants: {
+		align: 'stretch',
+		noWrap: false,
+	},
 });
 
 export type ColumnWrapperVariants = NonNullable<

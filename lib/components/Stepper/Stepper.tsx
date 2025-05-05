@@ -166,7 +166,7 @@ export const Stepper: FunctionComponent<Props> = ({
 			minWidth="fit-content"
 			onKeyDown={keyDownHandler}
 		>
-			<Inline alignX={isFullWidth ? 'space-between' : undefined} noWrap>
+			<Inline alignX="space-between" noWrap>
 				<Box>
 					<Handle
 						icon={MinusIcon}
@@ -180,11 +180,7 @@ export const Stepper: FunctionComponent<Props> = ({
 						as="span"
 						colour="dark"
 						display="block"
-						className={boxStyles({
-							as: 'span',
-							paddingX: '2',
-							width: 'full',
-						})}
+						className={clsx(styles.label)}
 						size="4"
 					>
 						{Number.isFinite(value) ? format(value) : ''}
