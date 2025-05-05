@@ -8,7 +8,7 @@ const meta: Meta<typeof Box> = {
 	args: {
 		as: 'div',
 		children: 'Hello box!',
-		color: 'onBody',
+		colour: 'primary',
 		backgroundColour: 'primary',
 		borderRadius: 'none',
 		borderColour: 'gray',

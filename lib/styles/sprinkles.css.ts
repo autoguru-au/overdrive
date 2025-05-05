@@ -149,7 +149,6 @@ const legacyColourProperties = defineProperties({
 		color: {
 			...intentForegroundColours,
 			...tokens.colours.foreground,
-			...tokens.typography.colour,
 			...tokens.colours.gamut,
 			unset: 'unset',
 		},

@@ -1,11 +1,11 @@
 import clsx from 'clsx';
 
-import type { SprinklesLegacyColours } from '../../styles/sprinkles.css';
 import type { UseBoxProps } from '../Box';
 import { boxStyles } from '../Box';
 
 import * as styles from './useTextStyles.css';
 
+/** UseTextStyles uses a different colour category in the legacy that is not generated from sprinkles */
 export type TextColor = keyof typeof styles.colours;
 export type TextFontWeight = keyof typeof styles.fontWeight;
 export type TextSize = keyof typeof styles.sizes;
@@ -18,7 +18,7 @@ export interface TextStyleProps {
 	/** HTML element to render as */
 	as?: TextTags;
 	/** Prefer `color` prop which uses new token structure */
-	colour?: SprinklesLegacyColours['colour'];
+	colour?: TextColor;
 	/** Font weight of the text */
 	fontWeight?: TextFontWeight;
 	/** @deprecated Prefer `as` */

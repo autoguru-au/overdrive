@@ -19,7 +19,7 @@ type Story = StoryObj<typeof Section>;
 const boxProps: ComponentProps<typeof Box> = {
 	width: 'full',
 	borderColour: 'dark',
-	borderWidth: '2', // ['none', 'none', '1', '2'],
+	borderWidth: '1', // ['none', 'none', '1', '2'],
 	padding: ['2', '4'],
 	backgroundColour: 'primary',
 	colour: 'primary',
