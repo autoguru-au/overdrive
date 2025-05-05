@@ -6,13 +6,13 @@ exports[`<Inline /> > should match snapshot for custom element dividers 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_flexDirection_row_mobile__onxwjuk3 sprinkles_flexWrap_wrap_mobile__onxwjukv sprinkles_gap_2_mobile__onxwjudz sprinkles_minWidth_fit-content_mobile__onxwjudr sprinkles_position_relative_mobile__onxwju9v"
+    class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_display_flex_mobile__onxwju84 sprinkles_flexDirection_row_mobile__onxwjuk0 sprinkles_flexWrap_wrap_mobile__onxwjuks sprinkles_gap_2_mobile__onxwjudw sprinkles_minWidth_fit-content_mobile__onxwjudo sprinkles_position_relative_mobile__onxwju9s"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_display_flex_mobile__onxwju84 sprinkles_gap_2_mobile__onxwjudw sprinkles_flexWrap_nowrap_mobile__onxwjuko"
     >
       <span
-        class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+        class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74"
       >
         A
       </span>
@@ -26,10 +26,10 @@ exports[`<Inline /> > should match snapshot for custom element dividers 1`] = `
       </div>
     </div>
     <div
-      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_display_flex_mobile__onxwju84 sprinkles_gap_2_mobile__onxwjudw sprinkles_flexWrap_nowrap_mobile__onxwjuko"
     >
       <span
-        class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+        class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74"
       >
         B
       </span>
@@ -43,10 +43,10 @@ exports[`<Inline /> > should match snapshot for custom element dividers 1`] = `
       </div>
     </div>
     <div
-      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_display_flex_mobile__onxwju84 sprinkles_gap_2_mobile__onxwjudw sprinkles_flexWrap_nowrap_mobile__onxwjuko"
     >
       <span
-        class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+        class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74"
       >
         C
       </span>
@@ -61,13 +61,13 @@ exports[`<Inline /> > should match snapshot for default dividers 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_flexDirection_row_mobile__onxwjuk3 sprinkles_flexWrap_wrap_mobile__onxwjukv sprinkles_gap_2_mobile__onxwjudz sprinkles_minWidth_fit-content_mobile__onxwjudr sprinkles_position_relative_mobile__onxwju9v"
+    class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_display_flex_mobile__onxwju84 sprinkles_flexDirection_row_mobile__onxwjuk0 sprinkles_flexWrap_wrap_mobile__onxwjuks sprinkles_gap_2_mobile__onxwjudw sprinkles_minWidth_fit-content_mobile__onxwjudo sprinkles_position_relative_mobile__onxwju9s"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_display_flex_mobile__onxwju84 sprinkles_gap_2_mobile__onxwjudw sprinkles_flexWrap_nowrap_mobile__onxwjuko"
     >
       <span
-        class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+        class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74"
       >
         A
       </span>
@@ -76,17 +76,17 @@ exports[`<Inline /> > should match snapshot for default dividers 1`] = `
         class="reset_block__1oah0224"
       >
         <span
-          class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+          class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74"
         >
           •
         </span>
       </div>
     </div>
     <div
-      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_display_flex_mobile__onxwju84 sprinkles_gap_2_mobile__onxwjudw sprinkles_flexWrap_nowrap_mobile__onxwjuko"
     >
       <span
-        class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+        class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74"
       >
         B
       </span>
@@ -95,17 +95,17 @@ exports[`<Inline /> > should match snapshot for default dividers 1`] = `
         class="reset_block__1oah0224"
       >
         <span
-          class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+          class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74"
         >
           •
         </span>
       </div>
     </div>
     <div
-      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_display_flex_mobile__onxwju84 sprinkles_gap_2_mobile__onxwjudw sprinkles_flexWrap_nowrap_mobile__onxwjuko"
     >
       <span
-        class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+        class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74"
       >
         C
       </span>
@@ -120,31 +120,31 @@ exports[`<Inline /> > should match snapshot for no dividers 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_flexDirection_row_mobile__onxwjuk3 sprinkles_flexWrap_wrap_mobile__onxwjukv sprinkles_gap_2_mobile__onxwjudz sprinkles_minWidth_fit-content_mobile__onxwjudr sprinkles_position_relative_mobile__onxwju9v"
+    class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_display_flex_mobile__onxwju84 sprinkles_flexDirection_row_mobile__onxwjuk0 sprinkles_flexWrap_wrap_mobile__onxwjuks sprinkles_gap_2_mobile__onxwjudw sprinkles_minWidth_fit-content_mobile__onxwjudo sprinkles_position_relative_mobile__onxwju9s"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_display_flex_mobile__onxwju84 sprinkles_gap_2_mobile__onxwjudw sprinkles_flexWrap_nowrap_mobile__onxwjuko"
     >
       <span
-        class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+        class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74"
       >
         A
       </span>
     </div>
     <div
-      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_display_flex_mobile__onxwju84 sprinkles_gap_2_mobile__onxwjudw sprinkles_flexWrap_nowrap_mobile__onxwjuko"
     >
       <span
-        class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+        class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74"
       >
         B
       </span>
     </div>
     <div
-      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_display_flex_mobile__onxwju84 sprinkles_gap_2_mobile__onxwjudw sprinkles_flexWrap_nowrap_mobile__onxwjuko"
     >
       <span
-        class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+        class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74"
       >
         C
       </span>
@@ -159,13 +159,13 @@ exports[`<Inline /> > should not be able to render components 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_flexDirection_row_mobile__onxwjuk3 sprinkles_flexWrap_wrap_mobile__onxwjukv sprinkles_gap_2_mobile__onxwjudz sprinkles_minWidth_fit-content_mobile__onxwjudr sprinkles_position_relative_mobile__onxwju9v"
+    class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_display_flex_mobile__onxwju84 sprinkles_flexDirection_row_mobile__onxwjuk0 sprinkles_flexWrap_wrap_mobile__onxwjuks sprinkles_gap_2_mobile__onxwjudw sprinkles_minWidth_fit-content_mobile__onxwjudo sprinkles_position_relative_mobile__onxwju9s"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_display_flex_mobile__onxwju84 sprinkles_gap_2_mobile__onxwjudw sprinkles_flexWrap_nowrap_mobile__onxwjuko"
     >
       <span
-        class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+        class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74"
       >
         A
       </span>
@@ -179,10 +179,10 @@ exports[`<Inline /> > should not be able to render components 1`] = `
       </div>
     </div>
     <div
-      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_display_flex_mobile__onxwju84 sprinkles_gap_2_mobile__onxwjudw sprinkles_flexWrap_nowrap_mobile__onxwjuko"
     >
       <span
-        class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+        class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74"
       >
         B
       </span>

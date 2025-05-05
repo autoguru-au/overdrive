@@ -6,21 +6,21 @@ exports[`<Anchor /> > should match snapshot with label, icon and to props 1`] = 
   data-od-component-provider=""
 >
   <a
-    class="Anchor_root__um22v0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_link__1xnpmd7e reset_cursorPointer__1oah0222 reset_a__1oah022a sprinkles_display_inline_mobile__onxwju8f"
+    class="Anchor_root__um22v0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_link__1xnpmd7e reset_cursorPointer__1oah0222 reset_a__1oah022a sprinkles_display_inline_mobile__onxwju8c"
     href="https://www.autoguru.com.au"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_flexDirection_row_mobile__onxwjuk3 sprinkles_flexWrap_wrap_mobile__onxwjukv sprinkles_gap_2_mobile__onxwjudz sprinkles_minWidth_fit-content_mobile__onxwjudr sprinkles_position_relative_mobile__onxwju9v"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_display_flex_mobile__onxwju84 sprinkles_flexDirection_row_mobile__onxwjuk0 sprinkles_flexWrap_wrap_mobile__onxwjuks sprinkles_gap_2_mobile__onxwjudw sprinkles_minWidth_fit-content_mobile__onxwjudo sprinkles_position_relative_mobile__onxwju9s"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
+        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_display_flex_mobile__onxwju84 sprinkles_gap_2_mobile__onxwjudw sprinkles_flexWrap_nowrap_mobile__onxwjuko"
       >
         <span
-          class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z Icon_makeResponsiveStyle_key_bp__1gy3ire0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_link__1xnpmd7e"
+          class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7w Icon_makeResponsiveStyle_key_bp__1gy3ire0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_link__1xnpmd7e"
         >
           <svg
             aria-hidden="true"
-            class="sprinkles_display_block_mobile__onxwju7z sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
+            class="sprinkles_display_block_mobile__onxwju7w sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk"
             viewBox="0 0 512 512"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -31,10 +31,10 @@ exports[`<Anchor /> > should match snapshot with label, icon and to props 1`] = 
         </span>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
+        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_display_flex_mobile__onxwju84 sprinkles_gap_2_mobile__onxwjudw sprinkles_flexWrap_nowrap_mobile__onxwjuko"
       >
         <span
-          class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_link__1xnpmd7e useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_4__1xnpmd74"
+          class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_link__1xnpmd7e useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_sizes_4__1xnpmd74"
         >
           Hello World!
         </span>
@@ -50,10 +50,10 @@ exports[`<Anchor /> > should match snapshot without label 1`] = `
   data-od-component-provider=""
 >
   <a
-    class="Anchor_root__um22v0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_link__1xnpmd7e reset_cursorPointer__1oah0222 reset_a__1oah022a sprinkles_display_inline_mobile__onxwju8f"
+    class="Anchor_root__um22v0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_link__1xnpmd7e reset_cursorPointer__1oah0222 reset_a__1oah022a sprinkles_display_inline_mobile__onxwju8c"
   >
     <span
-      class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_link__1xnpmd7e useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_4__1xnpmd74"
+      class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_link__1xnpmd7e useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_sizes_4__1xnpmd74"
     />
   </a>
 </div>
@@ -65,24 +65,24 @@ exports[`<Anchor /> > when custom component > should match snapshot with label, 
   data-od-component-provider=""
 >
   <button
-    class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_none__onxwju1p sprinkles_borderLeftWidth_none__onxwju1l sprinkles_borderRightWidth_none__onxwju1t sprinkles_borderTopWidth_none__onxwju1x sprinkles_borderRadius_md__onxwju4 sprinkles_textAlign_center__onxwju3c sprinkles_paddingLeft_4_mobile__onxwjupv sprinkles_paddingRight_4_mobile__onxwjuqz sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_display_inline-block_mobile__onxwju8j sprinkles_overflow_hidden_mobile__onxwju8v useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_default__p2yon57 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_3__p2yon5m Anchor_root__um22v0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_link__1xnpmd7e reset_block__1oah0224 sprinkles_display_inline_mobile__onxwju8f"
+    class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_none__onxwju1p sprinkles_borderLeftWidth_none__onxwju1l sprinkles_borderRightWidth_none__onxwju1t sprinkles_borderTopWidth_none__onxwju1x sprinkles_borderRadius_md__onxwju4 sprinkles_textAlign_center__onxwju3c sprinkles_paddingLeft_4_mobile__onxwjups sprinkles_paddingRight_4_mobile__onxwjuqw sprinkles_paddingTop_none_mobile__onxwjuso sprinkles_paddingBottom_none_mobile__onxwjupc sprinkles_display_inline-block_mobile__onxwju8g sprinkles_overflow_hidden_mobile__onxwju8s useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7q useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_default__p2yon57 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_3__p2yon5m Anchor_root__um22v0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_link__1xnpmd7e reset_block__1oah0224 sprinkles_display_inline_mobile__onxwju8c"
     type="button"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_height_full_mobile__onxwjubn sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_center_mobile__onxwjuhv Button_body__p2yon50"
+      class="reset_block__1oah0224 sprinkles_height_full_mobile__onxwjubk sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_justifyContent_center_mobile__onxwjuhs Button_body__p2yon50"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_flexDirection_row_mobile__onxwjuk3 sprinkles_flexWrap_wrap_mobile__onxwjukv sprinkles_gap_2_mobile__onxwjudz sprinkles_minWidth_fit-content_mobile__onxwjudr sprinkles_position_relative_mobile__onxwju9v"
+        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_display_flex_mobile__onxwju84 sprinkles_flexDirection_row_mobile__onxwjuk0 sprinkles_flexWrap_wrap_mobile__onxwjuks sprinkles_gap_2_mobile__onxwjudw sprinkles_minWidth_fit-content_mobile__onxwjudo sprinkles_position_relative_mobile__onxwju9s"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
+          class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_display_flex_mobile__onxwju84 sprinkles_gap_2_mobile__onxwjudw sprinkles_flexWrap_nowrap_mobile__onxwjuko"
         >
           <span
-            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z Icon_makeResponsiveStyle_key_bp__1gy3ire0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_link__1xnpmd7e"
+            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7w Icon_makeResponsiveStyle_key_bp__1gy3ire0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_link__1xnpmd7e"
           >
             <svg
               aria-hidden="true"
-              class="sprinkles_display_block_mobile__onxwju7z sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
+              class="sprinkles_display_block_mobile__onxwju7w sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk"
               viewBox="0 0 512 512"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -93,10 +93,10 @@ exports[`<Anchor /> > when custom component > should match snapshot with label, 
           </span>
         </div>
         <div
-          class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_display_flex_mobile__onxwju87 sprinkles_gap_2_mobile__onxwjudz sprinkles_flexWrap_nowrap_mobile__onxwjukr"
+          class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_display_flex_mobile__onxwju84 sprinkles_gap_2_mobile__onxwjudw sprinkles_flexWrap_nowrap_mobile__onxwjuko"
         >
           <span
-            class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_link__1xnpmd7e useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_4__1xnpmd74"
+            class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_link__1xnpmd7e useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_sizes_4__1xnpmd74"
           >
             Hello World!
           </span>

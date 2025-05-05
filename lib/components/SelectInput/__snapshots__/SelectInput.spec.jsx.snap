@@ -6,20 +6,20 @@ exports[`<SelectInput /> > should have some hintText 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7"
+    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud4"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_position_relative_mobile__onxwju9v sprinkles_width_full_mobile__onxwjud7 NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupc sprinkles_paddingLeft_none_mobile__onxwjuqg sprinkles_paddingRight_none_mobile__onxwjurk sprinkles_paddingTop_none_mobile__onxwjuso sprinkles_position_relative_mobile__onxwju9s sprinkles_width_full_mobile__onxwjud4 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
+        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju87 sprinkles_flexWrap_nowrap_mobile__onxwjukr sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_center_mobile__onxwjuhv sprinkles_position_relative_mobile__onxwju9v"
+          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju84 sprinkles_flexWrap_nowrap_mobile__onxwjuko sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_justifyContent_center_mobile__onxwjuhs sprinkles_position_relative_mobile__onxwju9s"
         >
           <select
             autocomplete="off"
-            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_select__1oah0228 sprinkles_flexGrow_1_mobile__onxwjukf SelectInput_input__1gqjkbj0 SelectInput_paddedInput__1gqjkbj1 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjud7 sprinkles_position_relative_mobile__onxwju9v sprinkles_display_flex_mobile__onxwju87 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_select__1oah0228 sprinkles_flexGrow_1_mobile__onxwjukc SelectInput_input__1gqjkbj0 SelectInput_paddedInput__1gqjkbj1 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjud4 sprinkles_position_relative_mobile__onxwju9s sprinkles_display_flex_mobile__onxwju84 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
           >
             <option
               value="a"
@@ -38,14 +38,14 @@ exports[`<SelectInput /> > should have some hintText 1`] = `
             </option>
           </select>
           <div
-            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju87 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_height_full_mobile__onxwjubn sprinkles_marginRight_4_mobile__onxwjuvj sprinkles_flexShrink_0_mobile__onxwjukj sprinkles_position_absolute_mobile__onxwju9z SelectInput_arrow__1gqjkbj2"
+            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju84 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_height_full_mobile__onxwjubk sprinkles_marginRight_4_mobile__onxwjuvg sprinkles_flexShrink_0_mobile__onxwjukg sprinkles_position_absolute_mobile__onxwju9w SelectInput_arrow__1gqjkbj2"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7w Icon_makeResponsiveStyle_key_bp__1gy3ire4"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7z sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
+                class="sprinkles_display_block_mobile__onxwju7w sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -60,7 +60,7 @@ exports[`<SelectInput /> > should have some hintText 1`] = `
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_flex_mobile__onxwju87 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9w sprinkles_display_flex_mobile__onxwju84 sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
@@ -69,12 +69,12 @@ exports[`<SelectInput /> > should have some hintText 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupn sprinkles_paddingRight_2_mobile__onxwjuqr sprinkles_display_none_mobile__onxwju7v NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupk sprinkles_paddingRight_2_mobile__onxwjuqo sprinkles_display_none_mobile__onxwju7s NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             Hello World!
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_marginBottom_none_mobile__onxwjutv sprinkles_marginLeft_none_mobile__onxwjuuz sprinkles_marginRight_none_mobile__onxwjuw7 sprinkles_marginTop_none_mobile__onxwjuxf sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_inline_mobile__onxwju8f NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjupc sprinkles_paddingLeft_none_mobile__onxwjuqg sprinkles_paddingRight_none_mobile__onxwjurk sprinkles_paddingTop_none_mobile__onxwjuso sprinkles_marginBottom_none_mobile__onxwjuts sprinkles_marginLeft_none_mobile__onxwjuuw sprinkles_marginRight_none_mobile__onxwjuw4 sprinkles_marginTop_none_mobile__onxwjuxc sprinkles_position_absolute_mobile__onxwju9w sprinkles_display_inline_mobile__onxwju8c NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
           >
             Hello World!
           </label>
@@ -85,7 +85,7 @@ exports[`<SelectInput /> > should have some hintText 1`] = `
       </div>
     </div>
     <p
-      class="reset_blockText__1oah022d useTextStyles_root__1xnpmd70 reset_blockText__1oah022d useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_2__1xnpmd72 reset_blockText__1oah022d sprinkles_marginTop_1_mobile__onxwjuwf HintText_hintText__down5s0 InputState_natural_default_colour__a2a1mv4"
+      class="reset_blockText__1oah022d useTextStyles_root__1xnpmd70 reset_blockText__1oah022d useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_2__1xnpmd72 reset_blockText__1oah022d sprinkles_marginTop_1_mobile__onxwjuwc HintText_hintText__down5s0 InputState_natural_default_colour__a2a1mv4"
     >
       hint text
     </p>
@@ -99,20 +99,20 @@ exports[`<SelectInput /> > should match snapshot 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7"
+    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud4"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_position_relative_mobile__onxwju9v sprinkles_width_full_mobile__onxwjud7 NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupc sprinkles_paddingLeft_none_mobile__onxwjuqg sprinkles_paddingRight_none_mobile__onxwjurk sprinkles_paddingTop_none_mobile__onxwjuso sprinkles_position_relative_mobile__onxwju9s sprinkles_width_full_mobile__onxwjud4 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
+        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju87 sprinkles_flexWrap_nowrap_mobile__onxwjukr sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_center_mobile__onxwjuhv sprinkles_position_relative_mobile__onxwju9v"
+          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju84 sprinkles_flexWrap_nowrap_mobile__onxwjuko sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_justifyContent_center_mobile__onxwjuhs sprinkles_position_relative_mobile__onxwju9s"
         >
           <select
             autocomplete="off"
-            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_select__1oah0228 sprinkles_flexGrow_1_mobile__onxwjukf SelectInput_input__1gqjkbj0 SelectInput_paddedInput__1gqjkbj1 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjud7 sprinkles_position_relative_mobile__onxwju9v sprinkles_display_flex_mobile__onxwju87 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_select__1oah0228 sprinkles_flexGrow_1_mobile__onxwjukc SelectInput_input__1gqjkbj0 SelectInput_paddedInput__1gqjkbj1 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjud4 sprinkles_position_relative_mobile__onxwju9s sprinkles_display_flex_mobile__onxwju84 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
           >
             <option
               value="a"
@@ -131,14 +131,14 @@ exports[`<SelectInput /> > should match snapshot 1`] = `
             </option>
           </select>
           <div
-            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju87 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_height_full_mobile__onxwjubn sprinkles_marginRight_4_mobile__onxwjuvj sprinkles_flexShrink_0_mobile__onxwjukj sprinkles_position_absolute_mobile__onxwju9z SelectInput_arrow__1gqjkbj2"
+            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju84 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_height_full_mobile__onxwjubk sprinkles_marginRight_4_mobile__onxwjuvg sprinkles_flexShrink_0_mobile__onxwjukg sprinkles_position_absolute_mobile__onxwju9w SelectInput_arrow__1gqjkbj2"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7w Icon_makeResponsiveStyle_key_bp__1gy3ire4"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7z sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
+                class="sprinkles_display_block_mobile__onxwju7w sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -153,7 +153,7 @@ exports[`<SelectInput /> > should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_flex_mobile__onxwju87 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9w sprinkles_display_flex_mobile__onxwju84 sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
@@ -162,12 +162,12 @@ exports[`<SelectInput /> > should match snapshot 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupn sprinkles_paddingRight_2_mobile__onxwjuqr sprinkles_display_none_mobile__onxwju7v NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupk sprinkles_paddingRight_2_mobile__onxwjuqo sprinkles_display_none_mobile__onxwju7s NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             Hello World!
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_marginBottom_none_mobile__onxwjutv sprinkles_marginLeft_none_mobile__onxwjuuz sprinkles_marginRight_none_mobile__onxwjuw7 sprinkles_marginTop_none_mobile__onxwjuxf sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_inline_mobile__onxwju8f NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjupc sprinkles_paddingLeft_none_mobile__onxwjuqg sprinkles_paddingRight_none_mobile__onxwjurk sprinkles_paddingTop_none_mobile__onxwjuso sprinkles_marginBottom_none_mobile__onxwjuts sprinkles_marginLeft_none_mobile__onxwjuuw sprinkles_marginRight_none_mobile__onxwjuw4 sprinkles_marginTop_none_mobile__onxwjuxc sprinkles_position_absolute_mobile__onxwju9w sprinkles_display_inline_mobile__onxwju8c NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
           >
             Hello World!
           </label>
@@ -187,20 +187,20 @@ exports[`<SelectInput /> > should match snapshot when active 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7"
+    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud4"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_position_relative_mobile__onxwju9v sprinkles_width_full_mobile__onxwjud7 NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupc sprinkles_paddingLeft_none_mobile__onxwjuqg sprinkles_paddingRight_none_mobile__onxwjurk sprinkles_paddingTop_none_mobile__onxwjuso sprinkles_position_relative_mobile__onxwju9s sprinkles_width_full_mobile__onxwjud4 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
+        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju87 sprinkles_flexWrap_nowrap_mobile__onxwjukr sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_center_mobile__onxwjuhv sprinkles_position_relative_mobile__onxwju9v"
+          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju84 sprinkles_flexWrap_nowrap_mobile__onxwjuko sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_justifyContent_center_mobile__onxwjuhs sprinkles_position_relative_mobile__onxwju9s"
         >
           <select
             autocomplete="off"
-            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_select__1oah0228 sprinkles_flexGrow_1_mobile__onxwjukf SelectInput_input__1gqjkbj0 SelectInput_paddedInput__1gqjkbj1 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjud7 sprinkles_position_relative_mobile__onxwju9v sprinkles_display_flex_mobile__onxwju87 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_select__1oah0228 sprinkles_flexGrow_1_mobile__onxwjukc SelectInput_input__1gqjkbj0 SelectInput_paddedInput__1gqjkbj1 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjud4 sprinkles_position_relative_mobile__onxwju9s sprinkles_display_flex_mobile__onxwju84 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
           >
             <option
               value="a"
@@ -219,14 +219,14 @@ exports[`<SelectInput /> > should match snapshot when active 1`] = `
             </option>
           </select>
           <div
-            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju87 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_height_full_mobile__onxwjubn sprinkles_marginRight_4_mobile__onxwjuvj sprinkles_flexShrink_0_mobile__onxwjukj sprinkles_position_absolute_mobile__onxwju9z SelectInput_arrow__1gqjkbj2"
+            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju84 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_height_full_mobile__onxwjubk sprinkles_marginRight_4_mobile__onxwjuvg sprinkles_flexShrink_0_mobile__onxwjukg sprinkles_position_absolute_mobile__onxwju9w SelectInput_arrow__1gqjkbj2"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7w Icon_makeResponsiveStyle_key_bp__1gy3ire4"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7z sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
+                class="sprinkles_display_block_mobile__onxwju7w sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -241,7 +241,7 @@ exports[`<SelectInput /> > should match snapshot when active 1`] = `
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_flex_mobile__onxwju87 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9w sprinkles_display_flex_mobile__onxwju84 sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_activeBorderColour__a2a1mv1"
@@ -250,12 +250,12 @@ exports[`<SelectInput /> > should match snapshot when active 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_activeBorderColour__a2a1mv1"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupn sprinkles_paddingRight_2_mobile__onxwjuqr sprinkles_display_block_mobile__onxwju7z NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupk sprinkles_paddingRight_2_mobile__onxwjuqo sprinkles_display_block_mobile__onxwju7w NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             Hello World!
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_marginBottom_none_mobile__onxwjutv sprinkles_marginLeft_none_mobile__onxwjuuz sprinkles_marginRight_none_mobile__onxwjuw7 sprinkles_marginTop_none_mobile__onxwjuxf sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_inline_mobile__onxwju8f NotchedBase_placeholder_default__1ft8sxlz InputState_activeColour__a2a1mv0 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjupc sprinkles_paddingLeft_none_mobile__onxwjuqg sprinkles_paddingRight_none_mobile__onxwjurk sprinkles_paddingTop_none_mobile__onxwjuso sprinkles_marginBottom_none_mobile__onxwjuts sprinkles_marginLeft_none_mobile__onxwjuuw sprinkles_marginRight_none_mobile__onxwjuw4 sprinkles_marginTop_none_mobile__onxwjuxc sprinkles_position_absolute_mobile__onxwju9w sprinkles_display_inline_mobile__onxwju8c NotchedBase_placeholder_default__1ft8sxlz InputState_activeColour__a2a1mv0 NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
           >
             Hello World!
           </label>
@@ -275,20 +275,20 @@ exports[`<SelectInput /> > should match snapshot when touched 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7"
+    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud4"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_position_relative_mobile__onxwju9v sprinkles_width_full_mobile__onxwjud7 NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupc sprinkles_paddingLeft_none_mobile__onxwjuqg sprinkles_paddingRight_none_mobile__onxwjurk sprinkles_paddingTop_none_mobile__onxwjuso sprinkles_position_relative_mobile__onxwju9s sprinkles_width_full_mobile__onxwjud4 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
+        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju87 sprinkles_flexWrap_nowrap_mobile__onxwjukr sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_center_mobile__onxwjuhv sprinkles_position_relative_mobile__onxwju9v"
+          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju84 sprinkles_flexWrap_nowrap_mobile__onxwjuko sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_justifyContent_center_mobile__onxwjuhs sprinkles_position_relative_mobile__onxwju9s"
         >
           <select
             autocomplete="off"
-            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_select__1oah0228 sprinkles_flexGrow_1_mobile__onxwjukf SelectInput_input__1gqjkbj0 SelectInput_paddedInput__1gqjkbj1 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjud7 sprinkles_position_relative_mobile__onxwju9v sprinkles_display_flex_mobile__onxwju87 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_select__1oah0228 sprinkles_flexGrow_1_mobile__onxwjukc SelectInput_input__1gqjkbj0 SelectInput_paddedInput__1gqjkbj1 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjud4 sprinkles_position_relative_mobile__onxwju9s sprinkles_display_flex_mobile__onxwju84 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
           >
             <option
               value="a"
@@ -307,14 +307,14 @@ exports[`<SelectInput /> > should match snapshot when touched 1`] = `
             </option>
           </select>
           <div
-            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju87 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_height_full_mobile__onxwjubn sprinkles_marginRight_4_mobile__onxwjuvj sprinkles_flexShrink_0_mobile__onxwjukj sprinkles_position_absolute_mobile__onxwju9z SelectInput_arrow__1gqjkbj2"
+            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju84 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_height_full_mobile__onxwjubk sprinkles_marginRight_4_mobile__onxwjuvg sprinkles_flexShrink_0_mobile__onxwjukg sprinkles_position_absolute_mobile__onxwju9w SelectInput_arrow__1gqjkbj2"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7w Icon_makeResponsiveStyle_key_bp__1gy3ire4"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7z sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
+                class="sprinkles_display_block_mobile__onxwju7w sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -329,7 +329,7 @@ exports[`<SelectInput /> > should match snapshot when touched 1`] = `
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_flex_mobile__onxwju87 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9w sprinkles_display_flex_mobile__onxwju84 sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_error_default_borderColour__a2a1mvd"
@@ -338,12 +338,12 @@ exports[`<SelectInput /> > should match snapshot when touched 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_error_default_borderColour__a2a1mvd"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupn sprinkles_paddingRight_2_mobile__onxwjuqr sprinkles_display_none_mobile__onxwju7v NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupk sprinkles_paddingRight_2_mobile__onxwjuqo sprinkles_display_none_mobile__onxwju7s NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             Hello World!
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_marginBottom_none_mobile__onxwjutv sprinkles_marginLeft_none_mobile__onxwjuuz sprinkles_marginRight_none_mobile__onxwjuw7 sprinkles_marginTop_none_mobile__onxwjuxf sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_inline_mobile__onxwju8f NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjupc sprinkles_paddingLeft_none_mobile__onxwjuqg sprinkles_paddingRight_none_mobile__onxwjurk sprinkles_paddingTop_none_mobile__onxwjuso sprinkles_marginBottom_none_mobile__onxwjuts sprinkles_marginLeft_none_mobile__onxwjuuw sprinkles_marginRight_none_mobile__onxwjuw4 sprinkles_marginTop_none_mobile__onxwjuxc sprinkles_position_absolute_mobile__onxwju9w sprinkles_display_inline_mobile__onxwju8c NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
           >
             Hello World!
           </label>
@@ -363,20 +363,20 @@ exports[`<SelectInput /> > should match snapshot when touched and invalid 1`] = 
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7"
+    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud4"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_position_relative_mobile__onxwju9v sprinkles_width_full_mobile__onxwjud7 NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupc sprinkles_paddingLeft_none_mobile__onxwjuqg sprinkles_paddingRight_none_mobile__onxwjurk sprinkles_paddingTop_none_mobile__onxwjuso sprinkles_position_relative_mobile__onxwju9s sprinkles_width_full_mobile__onxwjud4 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
+        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju87 sprinkles_flexWrap_nowrap_mobile__onxwjukr sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_center_mobile__onxwjuhv sprinkles_position_relative_mobile__onxwju9v"
+          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju84 sprinkles_flexWrap_nowrap_mobile__onxwjuko sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_justifyContent_center_mobile__onxwjuhs sprinkles_position_relative_mobile__onxwju9s"
         >
           <select
             autocomplete="off"
-            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_select__1oah0228 sprinkles_flexGrow_1_mobile__onxwjukf SelectInput_input__1gqjkbj0 SelectInput_paddedInput__1gqjkbj1 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjud7 sprinkles_position_relative_mobile__onxwju9v sprinkles_display_flex_mobile__onxwju87 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_select__1oah0228 sprinkles_flexGrow_1_mobile__onxwjukc SelectInput_input__1gqjkbj0 SelectInput_paddedInput__1gqjkbj1 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjud4 sprinkles_position_relative_mobile__onxwju9s sprinkles_display_flex_mobile__onxwju84 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
           >
             <option
               value="a"
@@ -395,14 +395,14 @@ exports[`<SelectInput /> > should match snapshot when touched and invalid 1`] = 
             </option>
           </select>
           <div
-            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju87 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_height_full_mobile__onxwjubn sprinkles_marginRight_4_mobile__onxwjuvj sprinkles_flexShrink_0_mobile__onxwjukj sprinkles_position_absolute_mobile__onxwju9z SelectInput_arrow__1gqjkbj2"
+            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju84 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_height_full_mobile__onxwjubk sprinkles_marginRight_4_mobile__onxwjuvg sprinkles_flexShrink_0_mobile__onxwjukg sprinkles_position_absolute_mobile__onxwju9w SelectInput_arrow__1gqjkbj2"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7w Icon_makeResponsiveStyle_key_bp__1gy3ire4"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7z sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
+                class="sprinkles_display_block_mobile__onxwju7w sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -417,7 +417,7 @@ exports[`<SelectInput /> > should match snapshot when touched and invalid 1`] = 
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_flex_mobile__onxwju87 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9w sprinkles_display_flex_mobile__onxwju84 sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_error_default_borderColour__a2a1mvd"
@@ -426,12 +426,12 @@ exports[`<SelectInput /> > should match snapshot when touched and invalid 1`] = 
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_error_default_borderColour__a2a1mvd"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupn sprinkles_paddingRight_2_mobile__onxwjuqr sprinkles_display_none_mobile__onxwju7v NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupk sprinkles_paddingRight_2_mobile__onxwjuqo sprinkles_display_none_mobile__onxwju7s NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             Hello World!
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_marginBottom_none_mobile__onxwjutv sprinkles_marginLeft_none_mobile__onxwjuuz sprinkles_marginRight_none_mobile__onxwjuw7 sprinkles_marginTop_none_mobile__onxwjuxf sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_inline_mobile__onxwju8f NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjupc sprinkles_paddingLeft_none_mobile__onxwjuqg sprinkles_paddingRight_none_mobile__onxwjurk sprinkles_paddingTop_none_mobile__onxwjuso sprinkles_marginBottom_none_mobile__onxwjuts sprinkles_marginLeft_none_mobile__onxwjuuw sprinkles_marginRight_none_mobile__onxwjuw4 sprinkles_marginTop_none_mobile__onxwjuxc sprinkles_position_absolute_mobile__onxwju9w sprinkles_display_inline_mobile__onxwju8c NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
           >
             Hello World!
           </label>
@@ -451,20 +451,20 @@ exports[`<SelectInput /> > should match snapshot when touched and valid 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7"
+    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud4"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_position_relative_mobile__onxwju9v sprinkles_width_full_mobile__onxwjud7 NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupc sprinkles_paddingLeft_none_mobile__onxwjuqg sprinkles_paddingRight_none_mobile__onxwjurk sprinkles_paddingTop_none_mobile__onxwjuso sprinkles_position_relative_mobile__onxwju9s sprinkles_width_full_mobile__onxwjud4 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
+        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju87 sprinkles_flexWrap_nowrap_mobile__onxwjukr sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_center_mobile__onxwjuhv sprinkles_position_relative_mobile__onxwju9v"
+          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju84 sprinkles_flexWrap_nowrap_mobile__onxwjuko sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_justifyContent_center_mobile__onxwjuhs sprinkles_position_relative_mobile__onxwju9s"
         >
           <select
             autocomplete="off"
-            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_select__1oah0228 sprinkles_flexGrow_1_mobile__onxwjukf SelectInput_input__1gqjkbj0 SelectInput_paddedInput__1gqjkbj1 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjud7 sprinkles_position_relative_mobile__onxwju9v sprinkles_display_flex_mobile__onxwju87 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_select__1oah0228 sprinkles_flexGrow_1_mobile__onxwjukc SelectInput_input__1gqjkbj0 SelectInput_paddedInput__1gqjkbj1 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjud4 sprinkles_position_relative_mobile__onxwju9s sprinkles_display_flex_mobile__onxwju84 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
           >
             <option
               value="a"
@@ -483,14 +483,14 @@ exports[`<SelectInput /> > should match snapshot when touched and valid 1`] = `
             </option>
           </select>
           <div
-            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju87 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_height_full_mobile__onxwjubn sprinkles_marginRight_4_mobile__onxwjuvj sprinkles_flexShrink_0_mobile__onxwjukj sprinkles_position_absolute_mobile__onxwju9z SelectInput_arrow__1gqjkbj2"
+            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju84 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_height_full_mobile__onxwjubk sprinkles_marginRight_4_mobile__onxwjuvg sprinkles_flexShrink_0_mobile__onxwjukg sprinkles_position_absolute_mobile__onxwju9w SelectInput_arrow__1gqjkbj2"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7w Icon_makeResponsiveStyle_key_bp__1gy3ire4"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7z sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
+                class="sprinkles_display_block_mobile__onxwju7w sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -505,7 +505,7 @@ exports[`<SelectInput /> > should match snapshot when touched and valid 1`] = `
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_flex_mobile__onxwju87 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9w sprinkles_display_flex_mobile__onxwju84 sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_success_default_borderColour__a2a1mv7"
@@ -514,12 +514,12 @@ exports[`<SelectInput /> > should match snapshot when touched and valid 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_success_default_borderColour__a2a1mv7"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupn sprinkles_paddingRight_2_mobile__onxwjuqr sprinkles_display_none_mobile__onxwju7v NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupk sprinkles_paddingRight_2_mobile__onxwjuqo sprinkles_display_none_mobile__onxwju7s NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             Hello World!
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_marginBottom_none_mobile__onxwjutv sprinkles_marginLeft_none_mobile__onxwjuuz sprinkles_marginRight_none_mobile__onxwjuw7 sprinkles_marginTop_none_mobile__onxwjuxf sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_inline_mobile__onxwju8f NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjupc sprinkles_paddingLeft_none_mobile__onxwjuqg sprinkles_paddingRight_none_mobile__onxwjurk sprinkles_paddingTop_none_mobile__onxwjuso sprinkles_marginBottom_none_mobile__onxwjuts sprinkles_marginLeft_none_mobile__onxwjuuw sprinkles_marginRight_none_mobile__onxwjuw4 sprinkles_marginTop_none_mobile__onxwjuxc sprinkles_position_absolute_mobile__onxwju9w sprinkles_display_inline_mobile__onxwju8c NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
           >
             Hello World!
           </label>
@@ -539,30 +539,30 @@ exports[`<SelectInput /> > should match snapshot with custom icon 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 input-class"
+    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud4 input-class"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_position_relative_mobile__onxwju9v sprinkles_width_full_mobile__onxwjud7 NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupc sprinkles_paddingLeft_none_mobile__onxwjuqg sprinkles_paddingRight_none_mobile__onxwjurk sprinkles_paddingTop_none_mobile__onxwjuso sprinkles_position_relative_mobile__onxwju9s sprinkles_width_full_mobile__onxwjud4 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
+        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju87 sprinkles_flexWrap_nowrap_mobile__onxwjukr sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_center_mobile__onxwjuhv sprinkles_position_relative_mobile__onxwju9v"
+          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju84 sprinkles_flexWrap_nowrap_mobile__onxwjuko sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_justifyContent_center_mobile__onxwjuhs sprinkles_position_relative_mobile__onxwju9s"
         >
           <select
             autocomplete="off"
-            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_select__1oah0228 sprinkles_flexGrow_1_mobile__onxwjukf SelectInput_input__1gqjkbj0 SelectInput_paddedInput__1gqjkbj1 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjud7 sprinkles_position_relative_mobile__onxwju9v sprinkles_display_flex_mobile__onxwju87 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_select__1oah0228 sprinkles_flexGrow_1_mobile__onxwjukc SelectInput_input__1gqjkbj0 SelectInput_paddedInput__1gqjkbj1 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjud4 sprinkles_position_relative_mobile__onxwju9s sprinkles_display_flex_mobile__onxwju84 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
           />
           <div
-            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju87 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_height_full_mobile__onxwjubn sprinkles_marginRight_4_mobile__onxwjuvj sprinkles_flexShrink_0_mobile__onxwjukj sprinkles_position_absolute_mobile__onxwju9z SelectInput_arrow__1gqjkbj2"
+            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju84 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_height_full_mobile__onxwjubk sprinkles_marginRight_4_mobile__onxwjuvg sprinkles_flexShrink_0_mobile__onxwjukg sprinkles_position_absolute_mobile__onxwju9w SelectInput_arrow__1gqjkbj2"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7w Icon_makeResponsiveStyle_key_bp__1gy3ire4"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7z sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
+                class="sprinkles_display_block_mobile__onxwju7w sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk"
                 viewBox="0 0 512 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -575,7 +575,7 @@ exports[`<SelectInput /> > should match snapshot with custom icon 1`] = `
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_flex_mobile__onxwju87 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9w sprinkles_display_flex_mobile__onxwju84 sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
@@ -584,12 +584,12 @@ exports[`<SelectInput /> > should match snapshot with custom icon 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupn sprinkles_paddingRight_2_mobile__onxwjuqr sprinkles_display_none_mobile__onxwju7v NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupk sprinkles_paddingRight_2_mobile__onxwjuqo sprinkles_display_none_mobile__onxwju7s NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_marginBottom_none_mobile__onxwjutv sprinkles_marginLeft_none_mobile__onxwjuuz sprinkles_marginRight_none_mobile__onxwjuw7 sprinkles_marginTop_none_mobile__onxwjuxf sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_inline_mobile__onxwju8f NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjupc sprinkles_paddingLeft_none_mobile__onxwjuqg sprinkles_paddingRight_none_mobile__onxwjurk sprinkles_paddingTop_none_mobile__onxwjuso sprinkles_marginBottom_none_mobile__onxwjuts sprinkles_marginLeft_none_mobile__onxwjuuw sprinkles_marginRight_none_mobile__onxwjuw4 sprinkles_marginTop_none_mobile__onxwjuxc sprinkles_position_absolute_mobile__onxwju9w sprinkles_display_inline_mobile__onxwju8c NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
           >
             placeholder something
           </label>
@@ -609,20 +609,20 @@ exports[`<SelectInput /> > should match snapshot with prefix icon 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 input-class"
+    class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud4 input-class"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_position_relative_mobile__onxwju9v sprinkles_width_full_mobile__onxwjud7 NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupc sprinkles_paddingLeft_none_mobile__onxwjuqg sprinkles_paddingRight_none_mobile__onxwjurk sprinkles_paddingTop_none_mobile__onxwjuso sprinkles_position_relative_mobile__onxwju9s sprinkles_width_full_mobile__onxwjud4 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
+        class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk"
       >
         <span
-          class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_position_absolute_mobile__onxwju9z withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_prefixIcon__5jmdy8k withEnhancedInput_iconSize_medium__5jmdy8n InputState_natural_default_colour__a2a1mv4"
+          class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7w Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_position_absolute_mobile__onxwju9w withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_prefixIcon__5jmdy8k withEnhancedInput_iconSize_medium__5jmdy8n InputState_natural_default_colour__a2a1mv4"
         >
           <svg
             aria-hidden="true"
-            class="sprinkles_display_block_mobile__onxwju7z sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
+            class="sprinkles_display_block_mobile__onxwju7w sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk"
             viewBox="0 0 512 512"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -632,21 +632,21 @@ exports[`<SelectInput /> > should match snapshot with prefix icon 1`] = `
           </svg>
         </span>
         <div
-          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju87 sprinkles_flexWrap_nowrap_mobile__onxwjukr sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_justifyContent_center_mobile__onxwjuhv sprinkles_position_relative_mobile__onxwju9v"
+          class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju84 sprinkles_flexWrap_nowrap_mobile__onxwjuko sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_justifyContent_center_mobile__onxwjuhs sprinkles_position_relative_mobile__onxwju9s"
         >
           <select
             autocomplete="off"
-            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_select__1oah0228 sprinkles_flexGrow_1_mobile__onxwjukf SelectInput_input__1gqjkbj0 SelectInput_paddedInput__1gqjkbj1 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjud7 sprinkles_position_relative_mobile__onxwju9v sprinkles_display_flex_mobile__onxwju87 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b withEnhancedInput_inputItselfSize_medium_prefixed_any__5jmdy8d"
+            class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_select__1oah0228 sprinkles_flexGrow_1_mobile__onxwjukc SelectInput_input__1gqjkbj0 SelectInput_paddedInput__1gqjkbj1 reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_borderRadius_md__onxwju4 sprinkles_width_full_mobile__onxwjud4 sprinkles_position_relative_mobile__onxwju9s sprinkles_display_flex_mobile__onxwju84 sprinkles_backgroundColor_transparent__onxwju5k withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b withEnhancedInput_inputItselfSize_medium_prefixed_any__5jmdy8d"
           />
           <div
-            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju87 sprinkles_alignItems_center_mobile__onxwjuhb sprinkles_height_full_mobile__onxwjubn sprinkles_marginRight_4_mobile__onxwjuvj sprinkles_flexShrink_0_mobile__onxwjukj sprinkles_position_absolute_mobile__onxwju9z SelectInput_arrow__1gqjkbj2"
+            class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_display_flex_mobile__onxwju84 sprinkles_alignItems_center_mobile__onxwjuh8 sprinkles_height_full_mobile__onxwjubk sprinkles_marginRight_4_mobile__onxwjuvg sprinkles_flexShrink_0_mobile__onxwjukg sprinkles_position_absolute_mobile__onxwju9w SelectInput_arrow__1gqjkbj2"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7z Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7w Icon_makeResponsiveStyle_key_bp__1gy3ire4"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7z sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn"
+                class="sprinkles_display_block_mobile__onxwju7w sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -661,7 +661,7 @@ exports[`<SelectInput /> > should match snapshot with prefix icon 1`] = `
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_flex_mobile__onxwju87 sprinkles_width_full_mobile__onxwjud7 sprinkles_height_full_mobile__onxwjubn NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3l sprinkles_textAlign_left__onxwju3b sprinkles_position_absolute_mobile__onxwju9w sprinkles_display_flex_mobile__onxwju84 sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
@@ -670,12 +670,12 @@ exports[`<SelectInput /> > should match snapshot with prefix icon 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupn sprinkles_paddingRight_2_mobile__onxwjuqr sprinkles_display_none_mobile__onxwju7v NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupk sprinkles_paddingRight_2_mobile__onxwjuqo sprinkles_display_none_mobile__onxwju7s NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjuqj sprinkles_paddingRight_none_mobile__onxwjurn sprinkles_paddingTop_none_mobile__onxwjusr sprinkles_marginBottom_none_mobile__onxwjutv sprinkles_marginLeft_none_mobile__onxwjuuz sprinkles_marginRight_none_mobile__onxwjuw7 sprinkles_marginTop_none_mobile__onxwjuxf sprinkles_position_absolute_mobile__onxwju9z sprinkles_display_inline_mobile__onxwju8f NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_defaultPrefixed__1ft8sxl16"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3l sprinkles_paddingBottom_none_mobile__onxwjupc sprinkles_paddingLeft_none_mobile__onxwjuqg sprinkles_paddingRight_none_mobile__onxwjurk sprinkles_paddingTop_none_mobile__onxwjuso sprinkles_marginBottom_none_mobile__onxwjuts sprinkles_marginLeft_none_mobile__onxwjuuw sprinkles_marginRight_none_mobile__onxwjuw4 sprinkles_marginTop_none_mobile__onxwjuxc sprinkles_position_absolute_mobile__onxwju9w sprinkles_display_inline_mobile__onxwju8c NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_defaultPrefixed__1ft8sxl16"
           >
             placeholder something
           </label>
