@@ -6,7 +6,7 @@ exports[`<Stack /> > should correctly handle fragment nodes 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju84 sprinkles_flexDirection_column_mobile__onxwjuk4 sprinkles_gap_2_mobile__onxwjudw"
+    class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju81 sprinkles_flexDirection_column_mobile__onxwjukd sprinkles_gap_2_mobile__onxwjue5"
     data-od-component="stack"
   >
     <div

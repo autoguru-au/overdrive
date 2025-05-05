@@ -6,21 +6,21 @@ exports[`<DatePicker /> > should match snapshot without label 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9s sprinkles_overflow_hidden_mobile__onxwju8s"
+    class="reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9p sprinkles_overflow_hidden_mobile__onxwju8p"
   >
     <input
-      class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_position_absolute_mobile__onxwju9w sprinkles_height_full_mobile__onxwjubk sprinkles_width_full_mobile__onxwjud4 DatePicker_input__1j3uugj0"
+      class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_position_absolute_mobile__onxwju9t sprinkles_height_full_mobile__onxwjubt sprinkles_width_full_mobile__onxwjudd DatePicker_input__1j3uugj0"
       type="date"
     />
     <div
       class="reset_block__1oah0224 DatePicker_contents_default__1j3uugj1"
     >
       <span
-        class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7w Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+        class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7t Icon_makeResponsiveStyle_key_bp__1gy3ire4"
       >
         <svg
           aria-hidden="true"
-          class="sprinkles_display_block_mobile__onxwju7w sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk"
+          class="sprinkles_display_block_mobile__onxwju7t sprinkles_width_full_mobile__onxwjudd sprinkles_height_full_mobile__onxwjubt"
           fill="currentColor"
           focusable="false"
           viewBox="0 0 24 24"

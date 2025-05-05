@@ -6,11 +6,11 @@ exports[`<Icon /> > should match snapshot for same icon 1`] = `
   data-od-component-provider=""
 >
   <span
-    class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7w Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+    class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7t Icon_makeResponsiveStyle_key_bp__1gy3ire0"
   >
     <svg
       aria-hidden="true"
-      class="sprinkles_display_block_mobile__onxwju7w sprinkles_width_full_mobile__onxwjud4 sprinkles_height_full_mobile__onxwjubk"
+      class="sprinkles_display_block_mobile__onxwju7t sprinkles_width_full_mobile__onxwjudd sprinkles_height_full_mobile__onxwjubt"
       viewBox="0 0 512 512"
       xmlns="http://www.w3.org/2000/svg"
     >
