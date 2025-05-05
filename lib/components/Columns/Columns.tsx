@@ -32,6 +32,34 @@ export type StyledColumnsProps<E extends ElementType> = PolymorphicBoxProps<
 	ColumnsBaseProps
 >;
 
+/**
+ * `Columns` is a layout component used to arrange child elements horizontally in columns.
+ * It provides control over spacing between columns (and rows when wrapping), alignment, and wrapping behavior.
+ * It's ideal for creating grid-like layouts or distributing content horizontally.
+ *
+ * @example
+ * // Basic usage with uniform spacing
+ * <Columns space="4">
+ *   <Column width="1/3"><Card>Column 1</Card></Column>
+ *   <Column width="1/3"><Card>Column 2</Card></Column>
+ *   <Column width="1/3"><Card>Column 3</Card></Column>
+ * </Columns>
+ *
+ * @example
+ * // Responsive spacing and alignment
+ * <Columns spaceX={['2', '4']} spaceY="3" align="center">
+ *   <Column width={['full', '1/2']}><Button>Button 1</Button></Column>
+ *   <Column width={['full', '1/2']}><Button>Button 2</Button></Column>
+ * </Columns>
+ *
+ * @example
+ * // Preventing wrapping
+ * <Columns noWrap space="5">
+ *   <Item>Item A</Item>
+ *   <Item>Item B</Item>
+ *   <Item>Item C</Item>
+ * </Columns>
+ */
 export const Columns = <E extends ElementType>({
 	align = 'stretch',
 	as,
