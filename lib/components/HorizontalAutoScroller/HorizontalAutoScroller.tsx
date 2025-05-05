@@ -161,6 +161,7 @@ export const HorizontalAutoScroller: FunctionComponent<Props> = ({
 					alignItems="stretch"
 					display="flex"
 					overflow="hidden"
+					px="8"
 					flexWrap="nowrap"
 					width="full"
 					gap={space}

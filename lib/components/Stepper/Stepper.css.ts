@@ -34,11 +34,10 @@ export const handle = styleVariants({
 
 export const label = [
 	sprinklesResponsive({
-		px: '2',
 		textAlign: 'center',
 		width: 'full',
 	}),
 	style({
-		minWidth: vars.space['8'],
+		minWidth: vars.space['6'],
 	}),
 ];

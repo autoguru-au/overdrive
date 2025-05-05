@@ -76,17 +76,21 @@ export const Stack = <E extends ElementType = 'div'>({
 		return <>{items}</>;
 	}
 
-	const Item = ({ children }: React.PropsWithChildren) => (
-		<Box
-			alignItems={alignItems}
-			as={SemanticChild}
-			display="flex"
-			flexDirection="column"
-			width="full"
-		>
-			{children}
-		</Box>
-	);
+	const Item = ({ children }: React.PropsWithChildren) => {
+		if (alignItems)
+			return (
+				<Box
+					alignItems={alignItems}
+					as={SemanticChild}
+					display="flex"
+					flexDirection="column"
+				>
+					{children}
+				</Box>
+			);
+
+		return <Box as={SemanticChild}>{children}</Box>;
+	};
 
 	return (
 		<Component {...componentProps}>
