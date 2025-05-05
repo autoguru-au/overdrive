@@ -65,6 +65,7 @@ export const Stack = <E extends ElementType = 'div'>({
 		display: 'flex',
 		flexDirection: 'column',
 		gap: space,
+		odComponent: 'stack',
 		width,
 		...props,
 	} as UseBoxProps<E>);
@@ -88,7 +89,7 @@ export const Stack = <E extends ElementType = 'div'>({
 	);
 
 	return (
-		<Component {...componentProps} data-od-component="stack">
+		<Component {...componentProps}>
 			{Children.map(items, (child, idx) => (
 				<Item>
 					{dividers && idx > 0 && <Divider />}

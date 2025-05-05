@@ -18,16 +18,13 @@ export const VisuallyHidden = <E extends ElementType>({
 	children,
 	...props
 }: VisuallyHiddenProps<E>) => {
-	const { Component } = useBox<E>(props as UseBoxProps<E>);
+	const { Component, componentProps } = useBox<E>({
+		...props,
+		className: visuallyHidden,
+		odComponent: 'visually-hidden',
+	} as UseBoxProps<E>);
 
-	return (
-		<Component
-			className={visuallyHidden}
-			data-od-component="VisuallyHidden"
-		>
-			{children}
-		</Component>
-	);
+	return <Component {...componentProps}>{children}</Component>;
 };
 
 export default VisuallyHidden;

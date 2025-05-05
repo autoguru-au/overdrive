@@ -26,11 +26,7 @@ export const Box = <E extends ElementType = 'div'>({
 }: UseBoxProps<E>) => {
 	const { Component, componentProps } = useBox<E>(props as UseBoxProps<E>);
 
-	return (
-		<Component {...componentProps} data-od-component="box">
-			{children}
-		</Component>
-	);
+	return <Component {...componentProps}>{children}</Component>;
 };
 
 Box.displayName = 'Box';

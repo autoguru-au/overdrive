@@ -49,7 +49,8 @@ exports[`<Table /> > when implemented > should match snapshot 1`] = `
                 >
                   col 2
                   <span
-                    class="VisuallyHidden_visuallyHidden__12d73qi0"
+                    class="reset_inlineText__1oah0223 VisuallyHidden_visuallyHidden__12d73qi0"
+                    data-od-component="visually-hidden"
                   >
                      
                     sorted 

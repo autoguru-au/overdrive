@@ -12,6 +12,7 @@ import type {
 	SprinklesResponsive,
 	SprinklesLegacyColours,
 } from '../../styles/sprinkles.css';
+import { dataAttrs } from '../../utils/dataAttrs';
 import { filterNonSprinklesProps } from '../../utils/sprinkles';
 
 import { boxStyles } from './boxStyles';
@@ -31,6 +32,10 @@ export interface BoxBasedProps<E extends ElementType>
 	 * Accepts `string` and complex array or objects via `clsx`
 	 */
 	className?: ClassName;
+	/**
+	 * Output a data attribute with a component name in the markup, mainly used for the root element of a component
+	 */
+	odComponent?: string;
 }
 
 /** All vanilla-extract sprinkles props */
@@ -61,6 +66,7 @@ export type ComponentProps<E extends ElementType> = Omit<
 const DEFAULT_TAG = 'div' as keyof JSX.IntrinsicElements;
 const LIST_ITEM_TAG = 'li' as keyof JSX.IntrinsicElements;
 const LIST_TAGS = ['ul', 'ol'] as ReadonlyArray<keyof JSX.IntrinsicElements>;
+const OD_COMPONENT_ATTR = 'od-component';
 
 /**
  * The Overdrive component primitive to expose a flexible HTML element as a fully typesafe React component
@@ -72,6 +78,8 @@ const LIST_TAGS = ['ul', 'ol'] as ReadonlyArray<keyof JSX.IntrinsicElements>;
 export const useBox = <E extends ElementType = 'div'>({
 	as,
 	className,
+	odComponent,
+	testId,
 	...props
 }: UseBoxProps<E>) => {
 	const Component = as ?? DEFAULT_TAG;
@@ -91,7 +99,13 @@ export const useBox = <E extends ElementType = 'div'>({
 	);
 
 	const remainingProps = useDeepCompareMemo(
-		() => filterNonSprinklesProps(props),
+		() => ({
+			...filterNonSprinklesProps(props),
+			...dataAttrs({
+				[OD_COMPONENT_ATTR]: odComponent?.toLocaleLowerCase(),
+				testId,
+			}),
+		}),
 		[props],
 	);
 
