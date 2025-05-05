@@ -50,7 +50,7 @@ exports[`<Stepper /> > should match snapshot with label formatter 1`] = `
           class="reset_block__1oah0224"
         >
           <span
-            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7t useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Stepper__10wm9ba4 sprinkles_paddingLeft_2_mobile__onxwjupt sprinkles_paddingRight_2_mobile__onxwjuqx sprinkles_textAlign_center_mobile__onxwjua9 sprinkles_width_full_mobile__onxwjudd Stepper_label__10wm9ba5"
+            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7t useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Stepper__10wm9ba4 sprinkles_textAlign_center_mobile__onxwjua9 sprinkles_width_full_mobile__onxwjudd Stepper_label__10wm9ba5"
           >
             25%
           </span>
@@ -141,7 +141,7 @@ exports[`<Stepper /> > should match snapshot with props 1`] = `
           class="reset_block__1oah0224"
         >
           <span
-            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7t useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Stepper__10wm9ba4 sprinkles_paddingLeft_2_mobile__onxwjupt sprinkles_paddingRight_2_mobile__onxwjuqx sprinkles_textAlign_center_mobile__onxwjua9 sprinkles_width_full_mobile__onxwjudd Stepper_label__10wm9ba5"
+            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7t useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Stepper__10wm9ba4 sprinkles_textAlign_center_mobile__onxwjua9 sprinkles_width_full_mobile__onxwjudd Stepper_label__10wm9ba5"
           >
             19
           </span>
@@ -232,7 +232,7 @@ exports[`<Stepper /> > should match snapshot without props 1`] = `
           class="reset_block__1oah0224"
         >
           <span
-            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7t useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Stepper__10wm9ba4 sprinkles_paddingLeft_2_mobile__onxwjupt sprinkles_paddingRight_2_mobile__onxwjuqx sprinkles_textAlign_center_mobile__onxwjua9 sprinkles_width_full_mobile__onxwjudd Stepper_label__10wm9ba5"
+            class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7t useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Stepper__10wm9ba4 sprinkles_textAlign_center_mobile__onxwjua9 sprinkles_width_full_mobile__onxwjudd Stepper_label__10wm9ba5"
           >
             0
           </span>
