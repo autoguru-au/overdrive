@@ -40,7 +40,7 @@ export interface Props
 export const HorizontalAutoScroller: FunctionComponent<Props> = ({
 	sliderProgressColour = 'primary',
 	noControls = false,
-	space = '5',
+	space = ['7', '5'],
 	durationSeconds = 10,
 	children,
 	itemsPerPage: incomingItemsPerPage,
@@ -64,9 +64,12 @@ export const HorizontalAutoScroller: FunctionComponent<Props> = ({
 				flexGrow={0}
 				flexShrink={0}
 				alignSelf="stretch"
-				className={styles.sprinklesColumnWidth({
-					flexBasis: columnWidth,
-				})}
+				className={clsx(
+					styles.itemMinWidth,
+					styles.sprinklesColumnWidth({
+						flexBasis: columnWidth,
+					}),
+				)}
 			>
 				<Box display="flex" height="full" width="full">
 					<Box
@@ -161,7 +164,7 @@ export const HorizontalAutoScroller: FunctionComponent<Props> = ({
 					alignItems="stretch"
 					display="flex"
 					overflow="hidden"
-					px="8"
+					px={['7', '8']}
 					flexWrap="nowrap"
 					width="full"
 					gap={space}

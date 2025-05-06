@@ -11,6 +11,7 @@ export const controllerBtn = style({
 	width: actionWidth,
 	zIndex: 9,
 });
+
 export const controllerCol = style({
 	width: actionWidth,
 });
@@ -27,6 +28,10 @@ export const nextBtn = style({
 		'linear-gradient(-90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.6769301470588236) 70%, rgba(255,255,255,0) 100%)',
 });
 
+export const itemMinWidth = style({
+	minWidth: '50vw',
+});
+
 export const item = style({
 	userSelect: 'none',
 	willChange: 'transform',
@@ -34,6 +39,7 @@ export const item = style({
 	transform: 'scale(0.9)',
 	opacity: 0.6,
 });
+
 export const active = style({
 	transform: 'scale(1)',
 	opacity: 1,
