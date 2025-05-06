@@ -6,7 +6,7 @@ exports[`<NotchedBase /> > should match snapshot for active notch 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
+    class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
   >
     <div
       class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3i sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_flex_mobile__onxwju81 sprinkles_width_full_mobile__onxwjudd sprinkles_height_full_mobile__onxwjubt sprinkles_textAlign_left_mobile__onxwjua5 NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
@@ -18,12 +18,12 @@ exports[`<NotchedBase /> > should match snapshot for active notch 1`] = `
         class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupt sprinkles_paddingRight_2_mobile__onxwjuqx sprinkles_display_block_mobile__onxwju7t NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjuq1 sprinkles_paddingRight_2_mobile__onxwjur5 sprinkles_display_block_mobile__onxwju7t NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
         >
           placeholder something
         </div>
         <label
-          class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_marginBottom_none_mobile__onxwjuu1 sprinkles_marginLeft_none_mobile__onxwjuv5 sprinkles_marginRight_none_mobile__onxwjuwd sprinkles_marginTop_none_mobile__onxwjuxl sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+          class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_marginBottom_none_mobile__onxwjuu9 sprinkles_marginLeft_none_mobile__onxwjuvd sprinkles_marginRight_none_mobile__onxwjuwl sprinkles_marginTop_none_mobile__onxwjuxt sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
         >
           placeholder something
         </label>
@@ -42,7 +42,7 @@ exports[`<NotchedBase /> > should match snapshot for default notch 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
+    class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
   >
     <div
       class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3i sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_flex_mobile__onxwju81 sprinkles_width_full_mobile__onxwjudd sprinkles_height_full_mobile__onxwjubt sprinkles_textAlign_left_mobile__onxwjua5 NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
@@ -54,12 +54,12 @@ exports[`<NotchedBase /> > should match snapshot for default notch 1`] = `
         class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupt sprinkles_paddingRight_2_mobile__onxwjuqx sprinkles_display_block_mobile__onxwju7t NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjuq1 sprinkles_paddingRight_2_mobile__onxwjur5 sprinkles_display_block_mobile__onxwju7t NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
         >
           placeholder something
         </div>
         <label
-          class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_marginBottom_none_mobile__onxwjuu1 sprinkles_marginLeft_none_mobile__onxwjuv5 sprinkles_marginRight_none_mobile__onxwjuwd sprinkles_marginTop_none_mobile__onxwjuxl sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+          class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_marginBottom_none_mobile__onxwjuu9 sprinkles_marginLeft_none_mobile__onxwjuvd sprinkles_marginRight_none_mobile__onxwjuwl sprinkles_marginTop_none_mobile__onxwjuxt sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
         >
           placeholder something
         </label>
@@ -78,7 +78,7 @@ exports[`<NotchedBase /> > should match snapshot for dirty and active notch 1`] 
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
+    class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
   >
     <div
       class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3i sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_flex_mobile__onxwju81 sprinkles_width_full_mobile__onxwjudd sprinkles_height_full_mobile__onxwjubt sprinkles_textAlign_left_mobile__onxwjua5 NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
@@ -90,12 +90,12 @@ exports[`<NotchedBase /> > should match snapshot for dirty and active notch 1`] 
         class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupt sprinkles_paddingRight_2_mobile__onxwjuqx sprinkles_display_block_mobile__onxwju7t NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjuq1 sprinkles_paddingRight_2_mobile__onxwjur5 sprinkles_display_block_mobile__onxwju7t NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
         >
           placeholder something
         </div>
         <label
-          class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_marginBottom_none_mobile__onxwjuu1 sprinkles_marginLeft_none_mobile__onxwjuv5 sprinkles_marginRight_none_mobile__onxwjuwd sprinkles_marginTop_none_mobile__onxwjuxl sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+          class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_marginBottom_none_mobile__onxwjuu9 sprinkles_marginLeft_none_mobile__onxwjuvd sprinkles_marginRight_none_mobile__onxwjuwl sprinkles_marginTop_none_mobile__onxwjuxt sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
         >
           placeholder something
         </label>
@@ -114,7 +114,7 @@ exports[`<NotchedBase /> > should match snapshot for dirty notch 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
+    class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
   >
     <div
       class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju3i sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_flex_mobile__onxwju81 sprinkles_width_full_mobile__onxwjudd sprinkles_height_full_mobile__onxwjubt sprinkles_textAlign_left_mobile__onxwjua5 NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
@@ -126,12 +126,12 @@ exports[`<NotchedBase /> > should match snapshot for dirty notch 1`] = `
         class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupt sprinkles_paddingRight_2_mobile__onxwjuqx sprinkles_display_block_mobile__onxwju7t NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+          class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjuq1 sprinkles_paddingRight_2_mobile__onxwjur5 sprinkles_display_block_mobile__onxwju7t NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
         >
           placeholder something
         </div>
         <label
-          class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_marginBottom_none_mobile__onxwjuu1 sprinkles_marginLeft_none_mobile__onxwjuv5 sprinkles_marginRight_none_mobile__onxwjuwd sprinkles_marginTop_none_mobile__onxwjuxl sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
+          class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_marginBottom_none_mobile__onxwjuu9 sprinkles_marginLeft_none_mobile__onxwjuvd sprinkles_marginRight_none_mobile__onxwjuwl sprinkles_marginTop_none_mobile__onxwjuxt sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholderPlacement_medium_shifted__1ft8sxl17"
         >
           placeholder something
         </label>

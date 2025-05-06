@@ -18,7 +18,7 @@ exports[`<Table /> > when implemented > should match snapshot 1`] = `
         role="row"
       >
         <th
-          class="reset_trimmedBlockElement__1oah0226 reset_vAlignMiddle__1oah022c sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_1__onxwju1m sprinkles_paddingBottom_4_mobile__onxwjuox sprinkles_paddingLeft_4_mobile__onxwjuq1 sprinkles_paddingRight_4_mobile__onxwjur5 sprinkles_paddingTop_4_mobile__onxwjus9 sprinkles_display_flex_mobile__onxwju81 sprinkles_alignItems_center_mobile__onxwjuhh sprinkles_justifyContent_flex-start_mobile__onxwjuhx sprinkles_borderBottomColor_dark__onxwju5k"
+          class="reset_trimmedBlockElement__1oah0226 reset_vAlignMiddle__1oah022c sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_1__onxwju1m sprinkles_paddingBottom_4_mobile__onxwjup5 sprinkles_paddingLeft_4_mobile__onxwjuq9 sprinkles_paddingRight_4_mobile__onxwjurd sprinkles_paddingTop_4_mobile__onxwjush sprinkles_display_flex_mobile__onxwju81 sprinkles_alignItems_center_mobile__onxwjuhh sprinkles_justifyContent_flex-start_mobile__onxwjuhx sprinkles_borderBottomColor_dark__onxwju5k"
           role="columnheader"
           scope="col"
         >
@@ -35,14 +35,14 @@ exports[`<Table /> > when implemented > should match snapshot 1`] = `
           scope="col"
         >
           <button
-            class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_paddingBottom_4_mobile__onxwjuox sprinkles_paddingLeft_4_mobile__onxwjuq1 sprinkles_paddingRight_4_mobile__onxwjur5 sprinkles_paddingTop_4_mobile__onxwjus9 sprinkles_display_block_mobile__onxwju7t sprinkles_width_full_mobile__onxwjudd TableHeadCell_sorterButton__1a20v5n0"
+            class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_paddingBottom_4_mobile__onxwjup5 sprinkles_paddingLeft_4_mobile__onxwjuq9 sprinkles_paddingRight_4_mobile__onxwjurd sprinkles_paddingTop_4_mobile__onxwjush sprinkles_display_block_mobile__onxwju7t sprinkles_width_full_mobile__onxwjudd TableHeadCell_sorterButton__1a20v5n0"
             tabindex="-1"
           >
             <div
-              class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhh sprinkles_display_flex_mobile__onxwju81 sprinkles_flexDirection_row_mobile__onxwjuk9 sprinkles_flexWrap_wrap_mobile__onxwjul1 sprinkles_gap_1_mobile__onxwjue1 sprinkles_justifyContent_flex-start_mobile__onxwjuhx sprinkles_minWidth_fit-content_mobile__onxwjudx sprinkles_position_relative_mobile__onxwju9p"
+              class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhh sprinkles_display_flex_mobile__onxwju81 sprinkles_flexDirection_row_mobile__onxwjuk9 sprinkles_flexWrap_wrap_mobile__onxwjul9 sprinkles_gap_1_mobile__onxwjue1 sprinkles_justifyContent_flex-start_mobile__onxwjuhx sprinkles_minWidth_fit-content_mobile__onxwjudx sprinkles_position_relative_mobile__onxwju9p"
             >
               <div
-                class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhh sprinkles_display_flex_mobile__onxwju81 sprinkles_gap_1_mobile__onxwjue1 sprinkles_flexWrap_nowrap_mobile__onxwjukx"
+                class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhh sprinkles_display_flex_mobile__onxwju81 sprinkles_gap_1_mobile__onxwjue1 sprinkles_flexWrap_nowrap_mobile__onxwjul5"
               >
                 <span
                   class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_dark__1xnpmd7f useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_sizes_3__1xnpmd73 TableHeadCell_text__1a20v5n1"
@@ -59,7 +59,7 @@ exports[`<Table /> > when implemented > should match snapshot 1`] = `
                 </span>
               </div>
               <div
-                class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhh sprinkles_display_flex_mobile__onxwju81 sprinkles_gap_1_mobile__onxwjue1 sprinkles_flexWrap_nowrap_mobile__onxwjukx"
+                class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhh sprinkles_display_flex_mobile__onxwju81 sprinkles_gap_1_mobile__onxwjue1 sprinkles_flexWrap_nowrap_mobile__onxwjul5"
               >
                 <span
                   class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7t Icon_makeResponsiveStyle_key_bp__1gy3ire0 TableHeadCell_sorterRoot__1a20v5n2 TableHeadCell_sorter_root__1a20v5n3 TableHeadCell_sorter_asc__1a20v5n5"
@@ -92,7 +92,7 @@ exports[`<Table /> > when implemented > should match snapshot 1`] = `
         role="row"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_1__onxwju1m sprinkles_paddingBottom_4_mobile__onxwjuox sprinkles_paddingLeft_4_mobile__onxwjuq1 sprinkles_paddingRight_4_mobile__onxwjur5 sprinkles_paddingTop_4_mobile__onxwjus9 sprinkles_display_flex_mobile__onxwju81 sprinkles_alignItems_center_mobile__onxwjuhh sprinkles_justifyContent_flex-start_mobile__onxwjuhx TableCell_root__10xbrtd0"
+          class="reset_block__1oah0224 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_1__onxwju1m sprinkles_paddingBottom_4_mobile__onxwjup5 sprinkles_paddingLeft_4_mobile__onxwjuq9 sprinkles_paddingRight_4_mobile__onxwjurd sprinkles_paddingTop_4_mobile__onxwjush sprinkles_display_flex_mobile__onxwju81 sprinkles_alignItems_center_mobile__onxwjuhh sprinkles_justifyContent_flex-start_mobile__onxwjuhx TableCell_root__10xbrtd0"
           role="gridcell"
         >
           <span
@@ -103,7 +103,7 @@ exports[`<Table /> > when implemented > should match snapshot 1`] = `
           </span>
         </div>
         <div
-          class="reset_block__1oah0224 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_1__onxwju1m sprinkles_paddingBottom_4_mobile__onxwjuox sprinkles_paddingLeft_4_mobile__onxwjuq1 sprinkles_paddingRight_4_mobile__onxwjur5 sprinkles_paddingTop_4_mobile__onxwjus9 sprinkles_display_flex_mobile__onxwju81 sprinkles_alignItems_center_mobile__onxwjuhh sprinkles_justifyContent_flex-start_mobile__onxwjuhx TableCell_root__10xbrtd0"
+          class="reset_block__1oah0224 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_1__onxwju1m sprinkles_paddingBottom_4_mobile__onxwjup5 sprinkles_paddingLeft_4_mobile__onxwjuq9 sprinkles_paddingRight_4_mobile__onxwjurd sprinkles_paddingTop_4_mobile__onxwjush sprinkles_display_flex_mobile__onxwju81 sprinkles_alignItems_center_mobile__onxwjuhh sprinkles_justifyContent_flex-start_mobile__onxwjuhx TableCell_root__10xbrtd0"
           role="gridcell"
         >
           <span
@@ -119,7 +119,7 @@ exports[`<Table /> > when implemented > should match snapshot 1`] = `
         role="row"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_1__onxwju1m sprinkles_paddingBottom_4_mobile__onxwjuox sprinkles_paddingLeft_4_mobile__onxwjuq1 sprinkles_paddingRight_4_mobile__onxwjur5 sprinkles_paddingTop_4_mobile__onxwjus9 sprinkles_display_flex_mobile__onxwju81 sprinkles_alignItems_center_mobile__onxwjuhh sprinkles_justifyContent_flex-start_mobile__onxwjuhx TableCell_root__10xbrtd0"
+          class="reset_block__1oah0224 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_1__onxwju1m sprinkles_paddingBottom_4_mobile__onxwjup5 sprinkles_paddingLeft_4_mobile__onxwjuq9 sprinkles_paddingRight_4_mobile__onxwjurd sprinkles_paddingTop_4_mobile__onxwjush sprinkles_display_flex_mobile__onxwju81 sprinkles_alignItems_center_mobile__onxwjuhh sprinkles_justifyContent_flex-start_mobile__onxwjuhx TableCell_root__10xbrtd0"
           role="gridcell"
         >
           <span
@@ -130,7 +130,7 @@ exports[`<Table /> > when implemented > should match snapshot 1`] = `
           </span>
         </div>
         <div
-          class="reset_block__1oah0224 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_1__onxwju1m sprinkles_paddingBottom_4_mobile__onxwjuox sprinkles_paddingLeft_4_mobile__onxwjuq1 sprinkles_paddingRight_4_mobile__onxwjur5 sprinkles_paddingTop_4_mobile__onxwjus9 sprinkles_display_flex_mobile__onxwju81 sprinkles_alignItems_center_mobile__onxwjuhh sprinkles_justifyContent_flex-start_mobile__onxwjuhx TableCell_root__10xbrtd0"
+          class="reset_block__1oah0224 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_1__onxwju1m sprinkles_paddingBottom_4_mobile__onxwjup5 sprinkles_paddingLeft_4_mobile__onxwjuq9 sprinkles_paddingRight_4_mobile__onxwjurd sprinkles_paddingTop_4_mobile__onxwjush sprinkles_display_flex_mobile__onxwju81 sprinkles_alignItems_center_mobile__onxwjuhh sprinkles_justifyContent_flex-start_mobile__onxwjuhx TableCell_root__10xbrtd0"
           role="gridcell"
         >
           <span

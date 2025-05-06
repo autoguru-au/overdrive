@@ -9,7 +9,7 @@ exports[`<NumberInput /> > should have some hintText 1`] = `
     class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjudd"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
     >
       <div
         class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjudd sprinkles_height_full_mobile__onxwjubt"
@@ -33,12 +33,12 @@ exports[`<NumberInput /> > should have some hintText 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupt sprinkles_paddingRight_2_mobile__onxwjuqx sprinkles_display_none_mobile__onxwju7p NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjuq1 sprinkles_paddingRight_2_mobile__onxwjur5 sprinkles_display_none_mobile__onxwju7p NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_marginBottom_none_mobile__onxwjuu1 sprinkles_marginLeft_none_mobile__onxwjuv5 sprinkles_marginRight_none_mobile__onxwjuwd sprinkles_marginTop_none_mobile__onxwjuxl sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_marginBottom_none_mobile__onxwjuu9 sprinkles_marginLeft_none_mobile__onxwjuvd sprinkles_marginRight_none_mobile__onxwjuwl sprinkles_marginTop_none_mobile__onxwjuxt sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
             for="id"
           >
             placeholder
@@ -50,7 +50,7 @@ exports[`<NumberInput /> > should have some hintText 1`] = `
       </div>
     </div>
     <p
-      class="reset_blockText__1oah022d useTextStyles_root__1xnpmd70 reset_blockText__1oah022d useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_2__1xnpmd72 reset_blockText__1oah022d sprinkles_marginTop_1_mobile__onxwjuwl HintText_hintText__down5s0 InputState_natural_default_colour__a2a1mv4"
+      class="reset_blockText__1oah022d useTextStyles_root__1xnpmd70 reset_blockText__1oah022d useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_2__1xnpmd72 reset_blockText__1oah022d sprinkles_marginTop_1_mobile__onxwjuwt HintText_hintText__down5s0 InputState_natural_default_colour__a2a1mv4"
     >
       hint text
     </p>
@@ -67,7 +67,7 @@ exports[`<NumberInput /> > should match snapshot 1`] = `
     class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjudd"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
     >
       <div
         class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjudd sprinkles_height_full_mobile__onxwjubt"
@@ -91,12 +91,12 @@ exports[`<NumberInput /> > should match snapshot 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupt sprinkles_paddingRight_2_mobile__onxwjuqx sprinkles_display_none_mobile__onxwju7p NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjuq1 sprinkles_paddingRight_2_mobile__onxwjur5 sprinkles_display_none_mobile__onxwju7p NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_marginBottom_none_mobile__onxwjuu1 sprinkles_marginLeft_none_mobile__onxwjuv5 sprinkles_marginRight_none_mobile__onxwjuwd sprinkles_marginTop_none_mobile__onxwjuxl sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_marginBottom_none_mobile__onxwjuu9 sprinkles_marginLeft_none_mobile__onxwjuvd sprinkles_marginRight_none_mobile__onxwjuwl sprinkles_marginTop_none_mobile__onxwjuxt sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
             for="id"
           >
             placeholder something
@@ -120,7 +120,7 @@ exports[`<NumberInput /> > should match snapshot when active 1`] = `
     class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjudd input-class"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
     >
       <div
         class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjudd sprinkles_height_full_mobile__onxwjubt"
@@ -143,12 +143,12 @@ exports[`<NumberInput /> > should match snapshot when active 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_activeBorderColour__a2a1mv1"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupt sprinkles_paddingRight_2_mobile__onxwjuqx sprinkles_display_none_mobile__onxwju7p NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjuq1 sprinkles_paddingRight_2_mobile__onxwjur5 sprinkles_display_none_mobile__onxwju7p NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_marginBottom_none_mobile__onxwjuu1 sprinkles_marginLeft_none_mobile__onxwjuv5 sprinkles_marginRight_none_mobile__onxwjuwd sprinkles_marginTop_none_mobile__onxwjuxl sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_marginBottom_none_mobile__onxwjuu9 sprinkles_marginLeft_none_mobile__onxwjuvd sprinkles_marginRight_none_mobile__onxwjuwl sprinkles_marginTop_none_mobile__onxwjuxt sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
           >
             placeholder something
           </label>
@@ -171,7 +171,7 @@ exports[`<NumberInput /> > should match snapshot when loading 1`] = `
     class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjudd"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
     >
       <div
         class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjudd sprinkles_height_full_mobile__onxwjubt"
@@ -195,12 +195,12 @@ exports[`<NumberInput /> > should match snapshot when loading 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupt sprinkles_paddingRight_2_mobile__onxwjuqx sprinkles_display_none_mobile__onxwju7p NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjuq1 sprinkles_paddingRight_2_mobile__onxwjur5 sprinkles_display_none_mobile__onxwju7p NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_marginBottom_none_mobile__onxwjuu1 sprinkles_marginLeft_none_mobile__onxwjuv5 sprinkles_marginRight_none_mobile__onxwjuwd sprinkles_marginTop_none_mobile__onxwjuxl sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_marginBottom_none_mobile__onxwjuu9 sprinkles_marginLeft_none_mobile__onxwjuvd sprinkles_marginRight_none_mobile__onxwjuwl sprinkles_marginTop_none_mobile__onxwjuxt sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
             for="id"
           >
             placeholder something
@@ -224,7 +224,7 @@ exports[`<NumberInput /> > should match snapshot when touched 1`] = `
     class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjudd input-class"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
     >
       <div
         class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjudd sprinkles_height_full_mobile__onxwjubt"
@@ -247,12 +247,12 @@ exports[`<NumberInput /> > should match snapshot when touched 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_error_default_borderColour__a2a1mvd"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupt sprinkles_paddingRight_2_mobile__onxwjuqx sprinkles_display_none_mobile__onxwju7p NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjuq1 sprinkles_paddingRight_2_mobile__onxwjur5 sprinkles_display_none_mobile__onxwju7p NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_marginBottom_none_mobile__onxwjuu1 sprinkles_marginLeft_none_mobile__onxwjuv5 sprinkles_marginRight_none_mobile__onxwjuwd sprinkles_marginTop_none_mobile__onxwjuxl sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_marginBottom_none_mobile__onxwjuu9 sprinkles_marginLeft_none_mobile__onxwjuvd sprinkles_marginRight_none_mobile__onxwjuwl sprinkles_marginTop_none_mobile__onxwjuxt sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
           >
             placeholder something
           </label>
@@ -275,7 +275,7 @@ exports[`<NumberInput /> > should match snapshot when touched and invalid 1`] = 
     class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjudd input-class"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
     >
       <div
         class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjudd sprinkles_height_full_mobile__onxwjubt"
@@ -298,12 +298,12 @@ exports[`<NumberInput /> > should match snapshot when touched and invalid 1`] = 
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_error_default_borderColour__a2a1mvd"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupt sprinkles_paddingRight_2_mobile__onxwjuqx sprinkles_display_none_mobile__onxwju7p NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjuq1 sprinkles_paddingRight_2_mobile__onxwjur5 sprinkles_display_none_mobile__onxwju7p NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_marginBottom_none_mobile__onxwjuu1 sprinkles_marginLeft_none_mobile__onxwjuv5 sprinkles_marginRight_none_mobile__onxwjuwd sprinkles_marginTop_none_mobile__onxwjuxl sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_marginBottom_none_mobile__onxwjuu9 sprinkles_marginLeft_none_mobile__onxwjuvd sprinkles_marginRight_none_mobile__onxwjuwl sprinkles_marginTop_none_mobile__onxwjuxt sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
           >
             placeholder something
           </label>
@@ -326,7 +326,7 @@ exports[`<NumberInput /> > should match snapshot when touched and valid 1`] = `
     class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjudd input-class"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
     >
       <div
         class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjudd sprinkles_height_full_mobile__onxwjubt"
@@ -349,12 +349,12 @@ exports[`<NumberInput /> > should match snapshot when touched and valid 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_success_default_borderColour__a2a1mv7"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupt sprinkles_paddingRight_2_mobile__onxwjuqx sprinkles_display_none_mobile__onxwju7p NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjuq1 sprinkles_paddingRight_2_mobile__onxwjur5 sprinkles_display_none_mobile__onxwju7p NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_marginBottom_none_mobile__onxwjuu1 sprinkles_marginLeft_none_mobile__onxwjuv5 sprinkles_marginRight_none_mobile__onxwjuwd sprinkles_marginTop_none_mobile__onxwjuxl sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_marginBottom_none_mobile__onxwjuu9 sprinkles_marginLeft_none_mobile__onxwjuvd sprinkles_marginRight_none_mobile__onxwjuwl sprinkles_marginTop_none_mobile__onxwjuxt sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
           >
             placeholder something
           </label>
@@ -377,7 +377,7 @@ exports[`<NumberInput /> > should match snapshot with both icons 1`] = `
     class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjudd input-class"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
     >
       <div
         class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjudd sprinkles_height_full_mobile__onxwjubt"
@@ -428,12 +428,12 @@ exports[`<NumberInput /> > should match snapshot with both icons 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupt sprinkles_paddingRight_2_mobile__onxwjuqx sprinkles_display_none_mobile__onxwju7p NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjuq1 sprinkles_paddingRight_2_mobile__onxwjur5 sprinkles_display_none_mobile__onxwju7p NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_marginBottom_none_mobile__onxwjuu1 sprinkles_marginLeft_none_mobile__onxwjuv5 sprinkles_marginRight_none_mobile__onxwjuwd sprinkles_marginTop_none_mobile__onxwjuxl sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_defaultPrefixed__1ft8sxl16"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_marginBottom_none_mobile__onxwjuu9 sprinkles_marginLeft_none_mobile__onxwjuvd sprinkles_marginRight_none_mobile__onxwjuwl sprinkles_marginTop_none_mobile__onxwjuxt sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_defaultPrefixed__1ft8sxl16"
           >
             placeholder something
           </label>
@@ -456,7 +456,7 @@ exports[`<NumberInput /> > should match snapshot with prefix icon 1`] = `
     class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjudd input-class"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
     >
       <div
         class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjudd sprinkles_height_full_mobile__onxwjubt"
@@ -493,12 +493,12 @@ exports[`<NumberInput /> > should match snapshot with prefix icon 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupt sprinkles_paddingRight_2_mobile__onxwjuqx sprinkles_display_none_mobile__onxwju7p NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjuq1 sprinkles_paddingRight_2_mobile__onxwjur5 sprinkles_display_none_mobile__onxwju7p NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_marginBottom_none_mobile__onxwjuu1 sprinkles_marginLeft_none_mobile__onxwjuv5 sprinkles_marginRight_none_mobile__onxwjuwd sprinkles_marginTop_none_mobile__onxwjuxl sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_defaultPrefixed__1ft8sxl16"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_marginBottom_none_mobile__onxwjuu9 sprinkles_marginLeft_none_mobile__onxwjuvd sprinkles_marginRight_none_mobile__onxwjuwl sprinkles_marginTop_none_mobile__onxwjuxt sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_defaultPrefixed__1ft8sxl16"
           >
             placeholder something
           </label>
@@ -521,7 +521,7 @@ exports[`<NumberInput /> > should match snapshot with suffix icon 1`] = `
     class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjudd input-class"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
+      class="reset_block__1oah0224 sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_position_relative_mobile__onxwju9p sprinkles_width_full_mobile__onxwjudd NotchedBase_root__1ft8sxl0"
     >
       <div
         class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjudd sprinkles_height_full_mobile__onxwjubt"
@@ -558,12 +558,12 @@ exports[`<NumberInput /> > should match snapshot with suffix icon 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjupt sprinkles_paddingRight_2_mobile__onxwjuqx sprinkles_display_none_mobile__onxwju7p NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="reset_block__1oah0224 sprinkles_paddingLeft_2_mobile__onxwjuq1 sprinkles_paddingRight_2_mobile__onxwjur5 sprinkles_display_none_mobile__onxwju7p NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupl sprinkles_paddingLeft_none_mobile__onxwjuqp sprinkles_paddingRight_none_mobile__onxwjurt sprinkles_paddingTop_none_mobile__onxwjusx sprinkles_marginBottom_none_mobile__onxwjuu1 sprinkles_marginLeft_none_mobile__onxwjuv5 sprinkles_marginRight_none_mobile__onxwjuwd sprinkles_marginTop_none_mobile__onxwjuxl sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
+            class="reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_paddingBottom_none_mobile__onxwjupt sprinkles_paddingLeft_none_mobile__onxwjuqx sprinkles_paddingRight_none_mobile__onxwjus1 sprinkles_paddingTop_none_mobile__onxwjut5 sprinkles_marginBottom_none_mobile__onxwjuu9 sprinkles_marginLeft_none_mobile__onxwjuvd sprinkles_marginRight_none_mobile__onxwjuwl sprinkles_marginTop_none_mobile__onxwjuxt sprinkles_position_absolute_mobile__onxwju9t sprinkles_display_inline_mobile__onxwju89 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
           >
             placeholder something
           </label>
