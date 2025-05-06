@@ -3,7 +3,7 @@ import React, { type ElementType } from 'react';
 import { useBox, type UseBoxProps } from './useBox';
 
 /**
- * A polymorphic Box component that provides a flexible container with styling capabilities, defauilting to a `<div>` element.
+ * A polymorphic Box component that provides a flexible container with styling capabilities, defaulting to a `<div>` element.
  * Use the `as` prop to control the rendered HTML tag. The box component exposes design system tokens relative to each style
  * prop.
  *
