@@ -2,6 +2,7 @@ import { style } from '@vanilla-extract/css';
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
 
 import { responsiveConditions } from '../../styles/sprinkles.css';
+import { mediaQuery } from '../../themes/makeTheme';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
 const actionWidth = 50;
@@ -30,6 +31,11 @@ export const nextBtn = style({
 
 export const itemMinWidth = style({
 	minWidth: '50vw',
+	'@media': {
+		[mediaQuery.tablet]: {
+			minWidth: 'auto',
+		},
+	},
 });
 
 export const item = style({
