@@ -40,6 +40,10 @@ export interface InlineProps<E extends ElementType = 'div'> {
 	 */
 	noWrap?: boolean;
 	/**
+	 * Reverse the direciton of the flow
+	 */
+	reverse?: boolean;
+	/**
 	 * Defines the gap between list items. Accepts responsive values
 	 * @default '2'
 	 */
@@ -88,6 +92,7 @@ export const Inline = <E extends ElementType = 'div'>({
 	children,
 	dividers,
 	noWrap,
+	reverse,
 	space = '2',
 	width,
 	...props
@@ -97,7 +102,7 @@ export const Inline = <E extends ElementType = 'div'>({
 	const { Component, componentProps, SemanticChild } = useBox<E>({
 		alignItems: alignY,
 		display: 'flex',
-		flexDirection: 'row',
+		flexDirection: reverse ? 'row-reverse' : 'row',
 		flexWrap: noWrap ? 'nowrap' : 'wrap',
 		gap: space,
 		justifyContent: alignX,

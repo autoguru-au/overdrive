@@ -260,7 +260,7 @@ const responsiveProperties = defineProperties({
 		alignSelf: ['flex-start', 'center', 'flex-end', 'stretch'],
 		justifySelf: ['flex-start', 'center', 'flex-end'],
 		// Flexbox
-		flexDirection: ['row', 'column'],
+		flexDirection: ['row', 'column', 'row-reverse', 'column-reverse'],
 		flexGrow: [0, 1],
 		flexShrink: [0, 1],
 		flexWrap: ['nowrap', 'wrap', 'wrap-reverse'],
