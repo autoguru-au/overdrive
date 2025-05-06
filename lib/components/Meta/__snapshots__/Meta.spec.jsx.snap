@@ -6,17 +6,17 @@ exports[`<Meta /> > should match snapshot with label, icon for Primary variant 1
   data-od-component-provider=""
 >
   <span
-    class="reset_inlineText__1oah0223 sprinkles_alignItems_center_mobile__onxwjuhh sprinkles_display_flex_mobile__onxwju81 sprinkles_flexDirection_row_mobile__onxwjuk9 sprinkles_flexWrap_nowrap_mobile__onxwjul5 sprinkles_gap_2_mobile__onxwjue5 sprinkles_minWidth_fit-content_mobile__onxwjudx sprinkles_position_relative_mobile__onxwju9p"
+    class="reset_inlineText__1oah0223 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuk6 sprinkles_flexWrap_nowrap_mobile__onxwjul2 sprinkles_gap_2_mobile__onxwjue2 sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_position_relative_mobile__onxwju9m"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhh sprinkles_display_flex_mobile__onxwju81 sprinkles_gap_2_mobile__onxwjue5 sprinkles_flexWrap_nowrap_mobile__onxwjul5"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_2_mobile__onxwjue2 sprinkles_flexWrap_nowrap_mobile__onxwjul2"
     >
       <span
-        class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7t Icon_makeResponsiveStyle_key_bp__1gy3ire0 Meta_variant_primary__5jk44p0"
+        class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire0 Meta_variant_primary__5jk44p0"
       >
         <svg
           aria-hidden="true"
-          class="sprinkles_display_block_mobile__onxwju7t sprinkles_width_full_mobile__onxwjudd sprinkles_height_full_mobile__onxwjubt"
+          class="sprinkles_display_block_mobile__onxwju7q sprinkles_width_full_mobile__onxwjuda sprinkles_height_full_mobile__onxwjubq"
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -27,7 +27,7 @@ exports[`<Meta /> > should match snapshot with label, icon for Primary variant 1
       </span>
     </div>
     <div
-      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhh sprinkles_display_flex_mobile__onxwju81 sprinkles_gap_2_mobile__onxwjue5 sprinkles_flexWrap_nowrap_mobile__onxwjul5"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_2_mobile__onxwjue2 sprinkles_flexWrap_nowrap_mobile__onxwjul2"
     >
       <span
         class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74"
@@ -45,17 +45,17 @@ exports[`<Meta /> > should match snapshot with label, icon for Secondary variant
   data-od-component-provider=""
 >
   <span
-    class="reset_inlineText__1oah0223 sprinkles_alignItems_center_mobile__onxwjuhh sprinkles_display_flex_mobile__onxwju81 sprinkles_flexDirection_row_mobile__onxwjuk9 sprinkles_flexWrap_nowrap_mobile__onxwjul5 sprinkles_gap_2_mobile__onxwjue5 sprinkles_minWidth_fit-content_mobile__onxwjudx sprinkles_position_relative_mobile__onxwju9p"
+    class="reset_inlineText__1oah0223 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuk6 sprinkles_flexWrap_nowrap_mobile__onxwjul2 sprinkles_gap_2_mobile__onxwjue2 sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_position_relative_mobile__onxwju9m"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhh sprinkles_display_flex_mobile__onxwju81 sprinkles_gap_2_mobile__onxwjue5 sprinkles_flexWrap_nowrap_mobile__onxwjul5"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_2_mobile__onxwjue2 sprinkles_flexWrap_nowrap_mobile__onxwjul2"
     >
       <span
-        class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7t Icon_makeResponsiveStyle_key_bp__1gy3ire0 Meta_variant_secondary__5jk44p1"
+        class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire0 Meta_variant_secondary__5jk44p1"
       >
         <svg
           aria-hidden="true"
-          class="sprinkles_display_block_mobile__onxwju7t sprinkles_width_full_mobile__onxwjudd sprinkles_height_full_mobile__onxwjubt"
+          class="sprinkles_display_block_mobile__onxwju7q sprinkles_width_full_mobile__onxwjuda sprinkles_height_full_mobile__onxwjubq"
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -66,7 +66,7 @@ exports[`<Meta /> > should match snapshot with label, icon for Secondary variant
       </span>
     </div>
     <div
-      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhh sprinkles_display_flex_mobile__onxwju81 sprinkles_gap_2_mobile__onxwjue5 sprinkles_flexWrap_nowrap_mobile__onxwjul5"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_2_mobile__onxwjue2 sprinkles_flexWrap_nowrap_mobile__onxwjul2"
     >
       <span
         class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74"

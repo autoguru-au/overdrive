@@ -10,7 +10,7 @@ exports[`<TextLink /> > should allow as override 1`] = `
     rel="noopener noreferrer"
   >
     <span
-      class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_link__1xnpmd7e useTextStyles_fontWeight_semiBold__1xnpmd7q useTextStyles_sizes_4__1xnpmd74 reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_position_relative_mobile__onxwju9p"
+      class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_link__1xnpmd7e useTextStyles_fontWeight_semiBold__1xnpmd7q useTextStyles_sizes_4__1xnpmd74 reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_position_relative_mobile__onxwju9m"
     >
       Test
     </span>
@@ -28,7 +28,7 @@ exports[`<TextLink /> > should match the snapshot 1`] = `
     rel="noopener noreferrer"
   >
     <span
-      class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_link__1xnpmd7e useTextStyles_fontWeight_semiBold__1xnpmd7q useTextStyles_sizes_4__1xnpmd74 reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_position_relative_mobile__onxwju9p"
+      class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_link__1xnpmd7e useTextStyles_fontWeight_semiBold__1xnpmd7q useTextStyles_sizes_4__1xnpmd74 reset_inlineText__1oah0223 sprinkles_pointerEvents_none__onxwju3i sprinkles_position_relative_mobile__onxwju9m"
     />
   </a>
 </div>

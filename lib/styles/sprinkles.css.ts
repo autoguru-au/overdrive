@@ -137,7 +137,6 @@ const legacyColourProperties = defineProperties({
 	properties: {
 		backgroundColor: {
 			...intentBackgroundColoursStandard,
-			...tokens.colours.background,
 			...tokens.colours.gamut,
 			transparent: 'transparent',
 		},

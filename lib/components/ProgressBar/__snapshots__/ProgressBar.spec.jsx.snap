@@ -6,10 +6,10 @@ exports[`<ProgressBar /> > should match the snapshot 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_borderRadius_1__onxwju0 sprinkles_backgroundColor_gray100__onxwju47 ProgressBar_container__4k1c010"
+    class="reset_block__1oah0224 sprinkles_borderRadius_1__onxwju0 sprinkles_backgroundColor_gray100__onxwju44 ProgressBar_container__4k1c010"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_borderRadius_1__onxwju0 sprinkles_backgroundColor_green500__onxwju4k ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+      class="reset_block__1oah0224 sprinkles_borderRadius_1__onxwju0 sprinkles_backgroundColor_green500__onxwju4h ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
       style="width: 0%;"
     />
   </div>
