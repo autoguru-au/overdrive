@@ -1,9 +1,8 @@
 import clsx from 'clsx';
 import React from 'react';
 
-import { stack, type RecipeStackProps } from '../../styles/stack.css';
-
 import { sprinkles, type Sprinkles } from './sprinkles.css';
+import { stack, type RecipeStackProps } from './stack.css';
 import {
 	variantColourSwatch,
 	type VariantColourSwatchProps,

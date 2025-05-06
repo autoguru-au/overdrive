@@ -6,7 +6,6 @@ import { Icon } from '../Icon';
 
 import { Button } from './Button';
 import * as styles from './Button.css';
-import * as boxStyles from '../Box/useBoxStyles.css';
 
 describe('<Button />', () => {
 	it('should not throw', () =>
@@ -112,12 +111,6 @@ describe('<Button />', () => {
 			expect(
 				render(<Button isFullWidth />).container.firstChild,
 			).toMatchSnapshot();
-		});
-
-		it('should apply styles', () => {
-			expect(
-				render(<Button isFullWidth />).container.firstChild.firstChild,
-			).toHaveClass(boxStyles.width.full);
 		});
 	});
 

@@ -1,11 +1,12 @@
 import clsx from 'clsx';
 
-import type { BoxProps } from '../Box';
+import type { UseBoxProps } from '../Box';
 import { boxStyles } from '../Box';
 
 import * as styles from './useTextStyles.css';
 
-export type TextColor = keyof typeof styles.colours | 'unset';
+/** UseTextStyles uses a different colour category in the legacy that is not generated from sprinkles */
+export type TextColor = keyof typeof styles.colours;
 export type TextFontWeight = keyof typeof styles.fontWeight;
 export type TextSize = keyof typeof styles.sizes;
 export type TextTransform = keyof typeof styles.transform;
@@ -13,12 +14,10 @@ export type TextTransform = keyof typeof styles.transform;
 export type TextTags = 'p' | 'label' | 'span';
 export interface TextStyleProps {
 	/** @deprecated Use `useBoxStyles` for alignment instead of `useTextStyles` */
-	align?: BoxProps['textAlign'];
+	align?: UseBoxProps['textAlign'];
 	/** HTML element to render as */
 	as?: TextTags;
-	/** Set the text colour */
-	color?: TextColor;
-	/** @deprecated Prefer `color` */
+	/** Prefer `color` prop which uses new token structure */
 	colour?: TextColor;
 	/** Font weight of the text */
 	fontWeight?: TextFontWeight;
@@ -37,7 +36,6 @@ export interface TextStyleProps {
 export const useTextStyles = ({
 	align,
 	colour,
-	color = colour,
 	fontWeight,
 	is,
 	as = is,
@@ -49,7 +47,7 @@ export const useTextStyles = ({
 	return clsx(
 		styles.root,
 		boxStyles({ as, textAlign: align }),
-		color !== 'unset' && styles.colours[color ?? 'neutral'],
+		colour !== 'unset' && styles.colours[colour ?? 'neutral'],
 		fontWeight && styles.fontWeight[fontWeight],
 		noWrap && styles.noWrap,
 		breakWord && styles.breakWord,

@@ -3,13 +3,13 @@ import React from 'react';
 import type { ThemeTokens as Tokens } from '../../themes';
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
-import { Box, type BoxProps } from '../Box';
+import { Box, type UseBoxProps } from '../Box';
 import type { TextStyleProps } from '../Text';
 import { useTextStyles } from '../Text';
 
 export interface HeadingProps
 	extends Omit<TextStyleProps, 'as'>,
-		Pick<BoxProps, 'children' | 'className' | 'id'> {
+		Pick<UseBoxProps, 'children' | 'className' | 'id' | 'ref'> {
 	as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 	colour?: Exclude<keyof Tokens['typography']['colour'], 'muted'>;
 }

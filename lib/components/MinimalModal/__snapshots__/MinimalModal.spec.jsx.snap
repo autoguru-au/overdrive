@@ -24,25 +24,25 @@ exports[`<MinimalModal /> > should match snapshot with body 1`] = `
     >
       <div
         aria-hidden="true"
-        class="reset_block__1oah0224 sprinkles_position_fixed_mobile__onxwju9y sprinkles_backgroundColor_neutral__onxwju3v Modal_backdrop_root__1psykzh3 Modal_transition__1psykzh1"
+        class="reset_block__1oah0224 sprinkles_position_fixed_mobile__onxwju9x sprinkles_backgroundColor_neutral__onxwju3s Modal_backdrop_root__1psykzh3 Modal_transition__1psykzh1"
       />
       <div
-        class="reset_block__1oah0224 sprinkles_position_fixed_mobile__onxwju9y sprinkles_overflow_hidden_mobile__onxwju8q Modal_root__1psykzh0 Modal_transition__1psykzh1"
+        class="reset_block__1oah0224 sprinkles_position_fixed_mobile__onxwju9x sprinkles_overflow_hidden_mobile__onxwju8p Modal_root__1psykzh0 Modal_transition__1psykzh1"
         role="presentation"
       >
         <div
           aria-hidden="false"
-          class="reset_block__1oah0224 sprinkles_height_full_mobile__onxwjub6 sprinkles_display_flex_mobile__onxwju82 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_justifyContent_center_mobile__onxwjuea MinimalModal_container__13ik47w0"
+          class="reset_block__1oah0224 sprinkles_height_full_mobile__onxwjubt sprinkles_display_flex_mobile__onxwju81 sprinkles_alignItems_center_mobile__onxwjuhh sprinkles_justifyContent_center_mobile__onxwjui1 MinimalModal_container__13ik47w0"
           role="none presentation"
         >
           <article
             aria-labelledby="od-4"
             aria-modal="true"
-            class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexDirection_column_mobile__onxwjugi"
+            class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju81 sprinkles_flexDirection_column_mobile__onxwjukd"
             role="dialog"
           >
             <main
-              class="sprinkles_display_flex_mobile__onxwju82 sprinkles_flexDirection_column_mobile__onxwjugi sprinkles_flexGrow_1_mobile__onxwjugq sprinkles_height_full_mobile__onxwjub6 MinimalModal_content__13ik47w1"
+              class="sprinkles_display_flex_mobile__onxwju81 sprinkles_flexDirection_column_mobile__onxwjukd sprinkles_flexGrow_1_mobile__onxwjukt sprinkles_height_full_mobile__onxwjubt MinimalModal_content__13ik47w1"
             >
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis convallis neque a laoreet maximus. Vestibulum hendrerit quam at mi venenatis faucibus at vel nisi. In ut risus et ipsum tincidunt tempor. Suspendisse potenti. Praesent faucibus posuere risus, at congue mauris porttitor ut. Donec sit amet elit vitae purus dictum aliquet quis ut ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum dui sapien, porttitor ac erat vel, malesuada rutrum mauris. Nam arcu tellus, pretium ut aliquet eget, ultrices vel est. Maecenas dapibus volutpat eros a volutpat.
@@ -85,25 +85,25 @@ exports[`<MinimalModal /> > should match snapshot without title and body 1`] = `
     >
       <div
         aria-hidden="true"
-        class="reset_block__1oah0224 sprinkles_position_fixed_mobile__onxwju9y sprinkles_backgroundColor_neutral__onxwju3v Modal_backdrop_root__1psykzh3 Modal_transition__1psykzh1"
+        class="reset_block__1oah0224 sprinkles_position_fixed_mobile__onxwju9x sprinkles_backgroundColor_neutral__onxwju3s Modal_backdrop_root__1psykzh3 Modal_transition__1psykzh1"
       />
       <div
-        class="reset_block__1oah0224 sprinkles_position_fixed_mobile__onxwju9y sprinkles_overflow_hidden_mobile__onxwju8q Modal_root__1psykzh0 Modal_transition__1psykzh1"
+        class="reset_block__1oah0224 sprinkles_position_fixed_mobile__onxwju9x sprinkles_overflow_hidden_mobile__onxwju8p Modal_root__1psykzh0 Modal_transition__1psykzh1"
         role="presentation"
       >
         <div
           aria-hidden="false"
-          class="reset_block__1oah0224 sprinkles_height_full_mobile__onxwjub6 sprinkles_display_flex_mobile__onxwju82 sprinkles_alignItems_center_mobile__onxwjudu sprinkles_justifyContent_center_mobile__onxwjuea MinimalModal_container__13ik47w0"
+          class="reset_block__1oah0224 sprinkles_height_full_mobile__onxwjubt sprinkles_display_flex_mobile__onxwju81 sprinkles_alignItems_center_mobile__onxwjuhh sprinkles_justifyContent_center_mobile__onxwjui1 MinimalModal_container__13ik47w0"
           role="none presentation"
         >
           <article
             aria-labelledby="od-3"
             aria-modal="true"
-            class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju82 sprinkles_flexDirection_column_mobile__onxwjugi"
+            class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju81 sprinkles_flexDirection_column_mobile__onxwjukd"
             role="dialog"
           >
             <main
-              class="sprinkles_display_flex_mobile__onxwju82 sprinkles_flexDirection_column_mobile__onxwjugi sprinkles_flexGrow_1_mobile__onxwjugq sprinkles_height_full_mobile__onxwjub6 MinimalModal_content__13ik47w1"
+              class="sprinkles_display_flex_mobile__onxwju81 sprinkles_flexDirection_column_mobile__onxwjukd sprinkles_flexGrow_1_mobile__onxwjukt sprinkles_height_full_mobile__onxwjubt MinimalModal_content__13ik47w1"
             />
           </article>
         </div>

@@ -15,7 +15,7 @@ exports[`<Positioner /> > should match snapshot 1`] = `
   >
     <div
       aria-hidden="false"
-      class="reset_block__1oah0224 sprinkles_position_fixed_mobile__onxwju9y Positioner_root__1d54b7d0"
+      class="reset_block__1oah0224 sprinkles_position_fixed_mobile__onxwju9x Positioner_root__1d54b7d0"
     >
       Some body
     </div>

@@ -77,7 +77,7 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 					<Icon
 						icon={icon}
 						size="small"
-						display="inlineBlock"
+						display="inline-block"
 						className={clsx(
 							styles.icon,
 							boxStyles({
@@ -110,5 +110,3 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 );
 
 TextLink.displayName = 'TextLink';
-
-export default TextLink;

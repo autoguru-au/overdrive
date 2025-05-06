@@ -33,7 +33,7 @@ export const HintText: FunctionComponent<Props> = ({
 
 	return (
 		<Text
-			is="p"
+			as="p"
 			size={size === 'large' ? '4' : '2'}
 			colour="unset"
 			className={clsx(style, styles.hintText, className)}

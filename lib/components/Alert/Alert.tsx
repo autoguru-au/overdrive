@@ -12,7 +12,6 @@ import { ComponentProps, FunctionComponent, ReactNode } from 'react';
 
 import { Box, boxStyles } from '../Box';
 import { Button } from '../Button';
-import { Column, Columns } from '../Columns';
 import { Icon } from '../Icon';
 import { IntentStripe } from '../IntentStripe';
 import { Text, useTextStyles } from '../Text';
@@ -63,10 +62,11 @@ export const Alert: FunctionComponent<Props> = ({
 			borderRadius="1"
 			boxShadow={inline ? 'none' : '4'}
 			padding="2"
+			data-od-component="alert"
 		>
 			<IntentStripe intent={intent} />
-			<Columns noWrap spaceX="2">
-				<Column noShrink alignSelf="flex-start">
+			<Box display="flex" gap="2">
+				<Box alignSelf="flex-start">
 					<Icon
 						icon={iconMapForIntent[intent]}
 						size="medium"
@@ -75,12 +75,10 @@ export const Alert: FunctionComponent<Props> = ({
 							marginLeft: '2',
 						})}
 					/>
-				</Column>
-
-				<Column
-					grow
-					width="auto"
+				</Box>
+				<Box
 					alignSelf="center"
+					width="auto"
 					className={useTextStyles({ colour: 'dark' })}
 				>
 					{typeof children === 'string' ? (
@@ -88,8 +86,8 @@ export const Alert: FunctionComponent<Props> = ({
 					) : (
 						children
 					)}
-				</Column>
-				<Column noShrink alignSelf="flex-start">
+				</Box>
+				<Box ml="auto">
 					{dismissible && (
 						<Button
 							minimal
@@ -106,10 +104,8 @@ export const Alert: FunctionComponent<Props> = ({
 							/>
 						</Button>
 					)}
-				</Column>
-			</Columns>
+				</Box>
+			</Box>
 		</Box>
 	);
 };
-
-export default Alert;

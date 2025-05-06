@@ -101,7 +101,7 @@ export const Standard: Story = {
 							</Inline>
 						</TableCell>
 						<TableCell>2min</TableCell>
-						<TableCell padding="1" align="right">
+						<TableCell align="right">
 							<Actions noWrap>
 								<Button size="small" variant="danger">
 									Delete
@@ -140,7 +140,7 @@ export const Standard: Story = {
 							</Inline>
 						</TableCell>
 						<TableCell>5min</TableCell>
-						<TableCell padding="1" align="right">
+						<TableCell align="right">
 							<Actions noWrap>
 								<Button size="small" variant="danger">
 									Delete
@@ -179,7 +179,7 @@ export const Standard: Story = {
 							</Inline>
 						</TableCell>
 						<TableCell>5hr</TableCell>
-						<TableCell padding="1" align="right">
+						<TableCell align="right">
 							<Actions noWrap>
 								<Button size="small" variant="danger">
 									Delete
@@ -217,7 +217,7 @@ export const Standard: Story = {
 							</Inline>
 						</TableCell>
 						<TableCell>15hr</TableCell>
-						<TableCell padding="1" align="right">
+						<TableCell align="right">
 							<Actions noWrap>
 								<Button size="small" variant="danger">
 									Delete

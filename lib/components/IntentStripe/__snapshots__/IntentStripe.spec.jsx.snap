@@ -6,7 +6,7 @@ exports[`<Alert /> > should match the snapshot 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_position_absolute_mobile__onxwju9u sprinkles_height_full_mobile__onxwjub6 sprinkles_backgroundColor_success__onxwju3w IntentStripe_intentBox__1n5wa370"
+    class="reset_block__1oah0224 sprinkles_position_absolute_mobile__onxwju9t sprinkles_height_full_mobile__onxwjubt sprinkles_backgroundColor_success__onxwju3t IntentStripe_intentBox__1n5wa370"
   />
 </div>
 `;

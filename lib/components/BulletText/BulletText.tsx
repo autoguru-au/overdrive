@@ -1,27 +1,24 @@
 import clsx from 'clsx';
-import * as React from 'react';
-import { FunctionComponent, isValidElement, ReactNode } from 'react';
+import React, { type ElementType, isValidElement, type ReactNode } from 'react';
 
-import { Box, BoxProps } from '../Box';
+import { type BoxBasedProps, Box } from '../Box';
 import { Inline } from '../Inline';
 import { Text } from '../Text';
 
 import * as styles from './BulletText.css';
 
-export interface Props extends Partial<Pick<BoxProps, 'as' | 'is'>> {
+export interface Props<E extends ElementType> extends BoxBasedProps<E> {
 	bullet?: ReactNode;
 	variant?: 'primary' | 'secondary';
-	children?: ReactNode;
 }
 
-export const BulletText: FunctionComponent<Props> = ({
+export const BulletText = <E extends ElementType>({
+	as,
 	variant = 'primary',
 	children,
-	as = 'div',
-	is: Component = as,
 	bullet: Bullet = '•',
-}) => (
-	<Inline noWrap space="3" is={Component} alignX="flexStart" alignY="center">
+}: Props<E>) => (
+	<Inline noWrap space="3" as={as} alignX="flex-start" alignY="center">
 		{isValidElement(Bullet) ? (
 			<Box position="relative" flexShrink={0}>
 				{Bullet}
@@ -44,7 +41,7 @@ export const BulletText: FunctionComponent<Props> = ({
 						[styles.primaryText]: variant === 'primary',
 						[styles.secondaryText]: variant !== 'primary',
 					})}
-					is="span"
+					as="span"
 					size="2"
 				>
 					{Bullet}
@@ -52,7 +49,7 @@ export const BulletText: FunctionComponent<Props> = ({
 			</Box>
 		)}
 		<Box flexGrow={1}>
-			<Text is="span" size="4" display="block">
+			<Text as="span" size="4" display="block">
 				{children}
 			</Text>
 		</Box>

@@ -1,42 +1,44 @@
 import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { scaleOptions } from '../Box/argTypes';
+// import { scaleOptions } from '../Box/argTypes';
 import { Button } from '../Button';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
 
 import { Inline } from '.';
 
-export default {
+const meta: Meta<typeof Inline> = {
 	title: 'Layout/Inline',
 	component: Inline,
-	argTypes: {
-		alignY: {
-			options: ['flexStart', 'center', 'flexEnd'],
-			control: {
-				type: 'select',
-			},
-		},
-		alignX: {
-			options: ['flexStart', 'center', 'flexEnd', 'spaceBetween'],
-			control: {
-				type: 'select',
-			},
-		},
-		space: {
-			options: scaleOptions,
-			control: {
-				type: 'select',
-			},
-		},
-		dividers: {
-			control: {
-				type: 'boolean',
-			},
-		},
-	},
-} satisfies Meta<typeof Inline>;
+	// argTypes: {
+	// 	alignY: {
+	// 		options: ['flexStart', 'center', 'flexEnd'],
+	// 		control: {
+	// 			type: 'select',
+	// 		},
+	// 	},
+	// 	alignX: {
+	// 		options: ['flexStart', 'center', 'flexEnd', 'spaceBetween'],
+	// 		control: {
+	// 			type: 'select',
+	// 		},
+	// 	},
+	// 	space: {
+	// 		options: scaleOptions,
+	// 		control: {
+	// 			type: 'select',
+	// 		},
+	// 	},
+	// 	dividers: {
+	// 		control: {
+	// 			type: 'boolean',
+	// 		},
+	// 	},
+	// },
+};
+
+export default meta;
 
 type Story = StoryObj<typeof Inline>;
 
@@ -122,7 +124,7 @@ export const DifferentSizeItems: Story = {
 export const WithFullWidth: Story = {
 	args: {
 		width: 'full',
-		alignX: 'spaceBetween',
+		alignX: 'space-between',
 	},
 	render: (args) => (
 		<Stack>

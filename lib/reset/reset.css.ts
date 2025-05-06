@@ -1,5 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
+import { cssLayerReset } from '../styles/layers.css';
 import { overdriveTokens } from '../themes/theme.css';
 
 // TODO: phase out this base as it's used in every Box
@@ -15,25 +16,55 @@ export const trimmed = {
 };
 
 export const container = style({
-	fontFamily: overdriveTokens.typography.fontFamily,
-	fontSize: overdriveTokens.typography.size[4].fontSize,
-	fontWeight: overdriveTokens.typography.fontWeight.normal,
-	lineHeight: overdriveTokens.typography.size[4].lineHeight,
+	'@layer': {
+		[cssLayerReset]: {
+			fontFamily: overdriveTokens.typography.fontFamily,
+			fontSize: overdriveTokens.typography.size[4].fontSize,
+			fontWeight: overdriveTokens.typography.fontWeight.normal,
+			lineHeight: overdriveTokens.typography.size[4].lineHeight,
+		},
+	},
 });
 
 const appearance = style({
-	appearance: 'none',
+	'@layer': {
+		[cssLayerReset]: {
+			appearance: 'none',
+		},
+	},
 });
 
-const cursorPointer = style({ cursor: 'pointer' });
+const cursorPointer = style({
+	'@layer': {
+		[cssLayerReset]: { cursor: 'pointer' },
+	},
+});
 
-const inlineText = style({ ...base });
-const block = style({ ...base, display: 'block' });
-const list = style({ ...base, ...trimmed, listStyle: 'none' });
+const inlineText = style({
+	'@layer': {
+		[cssLayerReset]: { ...base },
+	},
+});
+
+const block = style({
+	'@layer': {
+		[cssLayerReset]: { ...base, display: 'block' },
+	},
+});
+
+const list = style({
+	'@layer': {
+		[cssLayerReset]: { ...base, ...trimmed, listStyle: 'none' },
+	},
+});
 
 const trimmedBlockElement = style({
-	...base,
-	...trimmed,
+	'@layer': {
+		[cssLayerReset]: {
+			...base,
+			...trimmed,
+		},
+	},
 });
 
 const button = [
@@ -41,9 +72,13 @@ const button = [
 	cursorPointer,
 	trimmedBlockElement,
 	style({
-		outline: 'none',
-		background: 'none',
-		userSelect: 'none',
+		'@layer': {
+			[cssLayerReset]: {
+				outline: 'none',
+				background: 'none',
+				userSelect: 'none',
+			},
+		},
 	}),
 ];
 
@@ -52,9 +87,13 @@ const field = [trimmedBlockElement, appearance];
 const select = [
 	...field,
 	style({
-		selectors: {
-			'&::-ms-expand': {
-				display: 'none',
+		'@layer': {
+			[cssLayerReset]: {
+				selectors: {
+					'&::-ms-expand': {
+						display: 'none',
+					},
+				},
 			},
 		},
 	}),
@@ -63,19 +102,23 @@ const select = [
 const input = [
 	...field,
 	style({
-		selectors: {
-			'&::-ms-clear': {
-				display: 'none',
+		'@layer': {
+			[cssLayerReset]: {
+				selectors: {
+					'&::-ms-clear': {
+						display: 'none',
+					},
+					'&::-webkit-clear-button, &::-webkit-search-cancel-button, &::-webkit-search-results-button':
+						{
+							WebkitAppearance: 'none',
+						},
+					'&[type="number"]::-webkit-outer-spin-button, &[type="number"]::-webkit-inner-spin-button':
+						{
+							margin: 0,
+							WebkitAppearance: 'none',
+						},
+				},
 			},
-			'&::-webkit-clear-button, &::-webkit-search-cancel-button, &::-webkit-search-results-button':
-				{
-					WebkitAppearance: 'none',
-				},
-			'&[type="number"]::-webkit-outer-spin-button, &[type="number"]::-webkit-inner-spin-button':
-				{
-					margin: 0,
-					WebkitAppearance: 'none',
-				},
 		},
 	}),
 ];
@@ -83,25 +126,44 @@ const input = [
 const a = [
 	cursorPointer,
 	style({
-		...base,
-		...trimmed,
-		textDecoration: 'none',
+		'@layer': {
+			[cssLayerReset]: {
+				...base,
+				...trimmed,
+				textDecoration: 'none',
+			},
+		},
 	}),
 ];
 
 const table = [
 	trimmedBlockElement,
 	style({
-		borderSpacing: 0,
-		borderCollapse: 'collapse',
+		'@layer': {
+			[cssLayerReset]: {
+				borderSpacing: 0,
+				borderCollapse: 'collapse',
+			},
+		},
 	}),
 ];
 
-const vAlignMiddle = [trimmedBlockElement, style({ verticalAlign: 'middle' })];
+const vAlignMiddle = [
+	trimmedBlockElement,
+	style({
+		'@layer': {
+			[cssLayerReset]: { verticalAlign: 'middle' },
+		},
+	}),
+];
 
 const blockText = style({
-	...base,
-	...trimmed,
+	'@layer': {
+		[cssLayerReset]: {
+			...base,
+			...trimmed,
+		},
+	},
 });
 
 export const element = {
