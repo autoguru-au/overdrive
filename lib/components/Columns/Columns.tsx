@@ -1,97 +1,111 @@
-import React, { type ElementType } from 'react';
+import clsx from 'clsx';
+import * as React from 'react';
+import {
+	ComponentProps,
+	createContext,
+	forwardRef,
+	ReactNode,
+	useMemo,
+} from 'react';
 
 import {
-	sprinklesResponsive,
-	type SprinklesResponsive,
-} from '../../styles/sprinkles.css';
-import { type PolymorphicBoxProps, useBox, type UseBoxProps } from '../Box';
+	useNegativeMarginLeft,
+	useNegativeMarginTop,
+} from '../../hooks/useNegativeMargin/useNegativeMargin';
+import type { ThemeTokens as Tokens } from '../../themes';
+import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
+import { ResponsiveProp } from '../../utils/responsiveProps.css';
+import { Box } from '../Box';
 
 import * as styles from './Columns.css';
-import type { ColumnWrapperVariants } from './Columns.css';
 
-export interface ColumnsBaseProps extends ColumnWrapperVariants {
-	/**
-	 * Sets the space (gap) between columns and rows.
-	 * Responsive prop. Overridden by `spaceX` and `spaceY`.
-	 */
-	space?: SprinklesResponsive['gap'];
-	/**
-	 * Sets the horizontal space (column-gap) between columns.
-	 * Responsive prop.
-	 */
-	spaceX?: SprinklesResponsive['columnGap'];
-	/**
-	 * Sets the vertical space (row-gap) between rows when columns wrap.
-	 * Responsive prop.
-	 */
-	spaceY?: SprinklesResponsive['rowGap'];
+export interface Props extends Omit<ComponentProps<typeof Box>, 'css'> {
+	className?: string;
+	columns?: number;
+	space?: ResponsiveProp<keyof Tokens['space']>;
+	spaceX?: ResponsiveProp<keyof typeof styles.space.spaceX>;
+	spaceY?: ResponsiveProp<keyof typeof styles.space.spaceY>;
+	noWrap?: boolean;
+	wrappingDirection?: keyof typeof styles.wrapping;
+	align?: keyof typeof styles.align;
+	children?: ReactNode;
 }
 
-export type StyledColumnsProps<E extends ElementType> = PolymorphicBoxProps<
-	E,
-	ColumnsBaseProps
->;
+interface ColumnContextValue {
+	spaceXCls;
+	spaceYCls;
+	isList: boolean;
+}
 
-/**
- * `Columns` is a layout component used to arrange child elements horizontally in columns.
- * It provides control over spacing between columns (and rows when wrapping), alignment, and wrapping behavior.
- * It's ideal for creating grid-like layouts or distributing content horizontally.
- *
- * @example
- * // Basic usage with uniform spacing
- * <Columns space="4">
- *   <Column width="1/3"><Card>Column 1</Card></Column>
- *   <Column width="1/3"><Card>Column 2</Card></Column>
- *   <Column width="1/3"><Card>Column 3</Card></Column>
- * </Columns>
- *
- * @example
- * // Responsive spacing and alignment
- * <Columns spaceX={['2', '4']} spaceY="3" align="center">
- *   <Column width={['full', '1/2']}><Button>Button 1</Button></Column>
- *   <Column width={['full', '1/2']}><Button>Button 2</Button></Column>
- * </Columns>
- *
- * @example
- * // Preventing wrapping
- * <Columns noWrap space="5">
- *   <Item>Item A</Item>
- *   <Item>Item B</Item>
- *   <Item>Item C</Item>
- * </Columns>
- */
-export const Columns = <E extends ElementType>({
-	align = 'stretch',
-	as,
-	children,
-	className,
-	noWrap,
-	space,
-	spaceX,
-	spaceY,
-	wrappingDirection = 'default',
-	...props
-}: StyledColumnsProps<E>) => {
-	const { Component, componentProps } = useBox({
-		as,
-		className: [
-			styles.columnWrapper({
-				align,
-				noWrap,
-				wrappingDirection,
-			}),
-			sprinklesResponsive({
-				gap: space,
-				columnGap: spaceX,
-				rowGap: spaceY,
-			}),
-			className,
-		],
-		odComponent: 'columns',
-		...props,
-	} as UseBoxProps<E>);
+export const ColumnContext = createContext<ColumnContextValue | null>(null);
 
-	return <Component {...componentProps}>{children}</Component>;
-};
+export const Columns = forwardRef<HTMLElement, Props>(
+	(
+		{
+			className = '',
+			children,
+			space,
+			spaceX,
+			spaceY,
+			noWrap,
+			wrappingDirection = 'default',
+			align = 'stretch',
+			is,
+			...boxProps
+		},
+		ref,
+	) => {
+		const resolvedSpaceX = spaceX || space || ['none'];
+		const resolvedSpaceY = spaceY || space || ['none'];
 
-Columns.displayName = 'Columns';
+		// @ts-expect-error not assignmable to parameter type
+		const marginLeftFix = useNegativeMarginLeft(resolvedSpaceX);
+		// @ts-expect-error not assignmable to parameter type
+		const marginTopFix = useNegativeMarginTop(resolvedSpaceY);
+
+		return (
+			<Box
+				ref={ref}
+				is={is}
+				display="flex"
+				flexDirection="row"
+				className={clsx(
+					marginLeftFix,
+					marginTopFix,
+					styles.align[align],
+					className,
+					{
+						[styles.wrapping.wrap]: !noWrap,
+						[styles.wrapping.noWrap]: noWrap,
+						[styles.wrapping.reverseWrap]:
+							wrappingDirection === 'reverse',
+					},
+				)}
+				{...boxProps}
+			>
+				<ColumnContext.Provider
+					value={useMemo(
+						() => ({
+							spaceXCls: resolveResponsiveStyle(
+								resolvedSpaceX,
+								styles.space.spaceX,
+							),
+							spaceYCls: resolveResponsiveStyle(
+								resolvedSpaceY,
+								styles.space.spaceY,
+							),
+							isList:
+								typeof is === 'string' &&
+								['ul', 'ol'].includes(is),
+						}),
+						[resolvedSpaceX, resolvedSpaceY, styles],
+					)}
+				>
+					{children}
+				</ColumnContext.Provider>
+			</Box>
+		);
+	},
+);
+
+export default Columns;

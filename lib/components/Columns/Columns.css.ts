@@ -1,52 +1,40 @@
-import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
+import { styleVariants } from '@vanilla-extract/css';
 
-import {
-	sprinklesResponsive,
-	totalGridColumns,
-} from '../../styles/sprinkles.css';
+import { overdriveTokens as vars } from '../../themes/theme.css';
+import { makeResponsiveStyle } from '../../utils/responsiveProps.css';
 
-export const columnWrapper = recipe({
-	base: [
-		sprinklesResponsive({ display: 'grid' }),
-		{
-			gridAutoFlow: 'row',
-			gridTemplateColumns: `repeat(${totalGridColumns}, [col-start] 1fr)`,
-		},
-	],
-	variants: {
-		align: {
-			stretch: sprinklesResponsive({
-				alignItems: 'stretch',
-				alignContent: 'stretch',
-			}),
-			top: sprinklesResponsive({
-				alignItems: 'flex-start',
-				alignContent: 'flex-start',
-			}),
-			center: sprinklesResponsive({
-				alignItems: 'center',
-				alignContent: 'center',
-			}),
-			bottom: sprinklesResponsive({
-				alignItems: 'flex-end',
-				alignContent: 'flex-end',
-			}),
-		},
-		noWrap: {
-			false: sprinklesResponsive({ flexWrap: 'wrap' }),
-			true: sprinklesResponsive({ flexWrap: 'nowrap' }),
-		},
-		wrappingDirection: {
-			default: '',
-			reverse: sprinklesResponsive({ flexWrap: 'wrap-reverse' }),
-		},
+export const space = {
+	spaceX: makeResponsiveStyle(vars.space, 'paddingLeft'),
+	spaceY: makeResponsiveStyle(vars.space, 'paddingTop'),
+};
+
+export const wrapping = styleVariants({
+	wrap: {
+		flexWrap: 'wrap',
 	},
-	defaultVariants: {
-		align: 'stretch',
-		noWrap: false,
+	noWrap: {
+		flexWrap: 'nowrap',
+	},
+	reverseWrap: {
+		flexWrap: 'wrap-reverse',
 	},
 });
 
-export type ColumnWrapperVariants = NonNullable<
-	RecipeVariants<typeof columnWrapper>
->;
+export const align = styleVariants({
+	stretch: {
+		alignContent: 'stretch',
+		alignItems: 'stretch',
+	},
+	top: {
+		alignContent: 'flex-start',
+		alignItems: 'flex-start',
+	},
+	centre: {
+		alignContent: 'center',
+		alignItems: 'center',
+	},
+	bottom: {
+		alignContent: 'flex-end',
+		alignItems: 'flex-end',
+	},
+});

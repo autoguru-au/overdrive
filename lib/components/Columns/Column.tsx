@@ -1,42 +1,75 @@
-import React, { type ElementType, type Ref } from 'react';
+import { invariant } from '@autoguru/utilities';
+import * as React from 'react';
+import { ComponentProps, forwardRef, ReactNode, useContext } from 'react';
 
-import { type SprinklesResponsive } from '../../styles/sprinkles.css';
-import { Box, type BoxBasedProps, useBox, type UseBoxProps } from '../Box';
+import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
+import { ResponsiveProp } from '../../utils/responsiveProps.css';
+import { Box } from '../Box';
 
-export interface ColumnProps<E extends ElementType> extends BoxBasedProps<E> {
-	alignSelf?: SprinklesResponsive['alignSelf'];
-	justifyContent?: SprinklesResponsive['justifyContent'];
-	order?: SprinklesResponsive['order'];
-	ref?: Ref<E>;
-	width?: SprinklesResponsive['gridColumn'];
+import * as styles from './Column.css';
+import { ColumnContext } from './Columns';
+
+export interface Props
+	extends Omit<ComponentProps<typeof Box>, 'width' | 'css'> {
+	width?: ResponsiveProp<keyof typeof styles.width>;
+	noShrink?: boolean;
+	grow?: boolean;
+	alignSelf?: keyof typeof styles.align;
+	className?: string;
+	children: ReactNode | ReactNode[];
 }
 
-export const Column = <E extends ElementType>({
-	alignSelf,
-	children,
-	justifyContent,
-	order,
-	width,
-	...props
-}: ColumnProps<E>) => {
-	const { Component, componentProps } = useBox<E>({
-		...props,
-		justifyContent: 'center',
-		display: 'flex',
-		height: 'full',
-		width: 'full',
-	} as UseBoxProps<E>);
+export const Column = forwardRef<HTMLElement, Props>(
+	(
+		{
+			className = '',
+			children,
+			width,
+			alignSelf,
+			is,
+			noShrink = false,
+			grow = false,
+			order,
 
-	return (
-		<Box
-			alignSelf={alignSelf}
-			gridColumn={width}
-			justifyContent={justifyContent}
-			order={order}
-		>
-			<Component {...componentProps}>{children}</Component>
-		</Box>
-	);
-};
+			...boxProps
+		},
+		ref,
+	) => {
+		const columnsContext = useContext(ColumnContext);
+		invariant(
+			columnsContext !== null,
+			'Column must be wrapped inside a Columns element',
+		);
 
-Column.displayName = 'Column';
+		const { isList, spaceXCls, spaceYCls } = columnsContext;
+
+		return (
+			<Box
+				is={isList ? 'li' : 'div'}
+				order={order}
+				flexGrow={grow ? 1 : 0}
+				flexShrink={noShrink ? 0 : void 0}
+				className={[
+					spaceXCls,
+					spaceYCls,
+					resolveResponsiveStyle(width, styles.width),
+					styles.align[alignSelf!],
+				]}
+			>
+				<Box
+					ref={ref}
+					is={is}
+					display="flex"
+					width="full"
+					height="full"
+					className={className}
+					{...boxProps}
+				>
+					{children}
+				</Box>
+			</Box>
+		);
+	},
+);
+
+export default Column;

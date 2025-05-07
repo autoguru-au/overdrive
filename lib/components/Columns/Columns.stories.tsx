@@ -1,13 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
+import { Meta, StoryFn } from '@storybook/react';
+import React, { type ComponentProps } from 'react';
 
-import { themeContractVars as tokens } from '../../themes/theme.css';
 import { Box } from '../Box';
-// import { boxArgTypes, scaleOptions } from '../Box/argTypes';
+import { boxArgTypes, scaleOptions } from '../Box/argTypes';
 
 import { Column, Columns } from '.';
 
-const meta: Meta<typeof Columns> = {
+export default {
 	title: 'Layout/Columns',
 	component: Columns,
 	decorators: [
@@ -15,200 +14,181 @@ const meta: Meta<typeof Columns> = {
 			<div style={{ width: '100%', margin: '0 auto' }}>{story()}</div>
 		),
 	],
-	args: {
-		spaceX: ['1', '3', '8'],
-		spaceY: ['1', '5'],
-		align: 'bottom',
-		noWrap: false,
+	argTypes: {
+		noWrap: {
+			control: {
+				type: 'boolean',
+			},
+		},
+		space: {
+			options: scaleOptions,
+			control: {
+				type: 'select',
+			},
+		},
+		spaceX: {
+			options: scaleOptions,
+			control: {
+				type: 'select',
+			},
+		},
+		spaceY: {
+			options: scaleOptions,
+			control: {
+				type: 'select',
+			},
+		},
+		...boxArgTypes,
 	},
-	// argTypes: {
-	// 	noWrap: {
-	// 		control: {
-	// 			type: 'boolean',
-	// 		},
-	// 	},
-	// 	space: {
-	// 		options: scaleOptions,
-	// 		control: {
-	// 			type: 'select',
-	// 		},
-	// 	},
-	// 	spaceX: {
-	// 		options: scaleOptions,
-	// 		control: {
-	// 			type: 'select',
-	// 		},
-	// 	},
-	// 	spaceY: {
-	// 		options: scaleOptions,
-	// 		control: {
-	// 			type: 'select',
-	// 		},
-	// 	},
-	// 	...boxArgTypes,
-	// },
-};
-
-export default meta;
-type Story = StoryObj<typeof Columns>;
-
-export const Standard: Story = {
-	render: (args) => (
-		<Columns {...args}>
-			<Column width={['full', '1/3', '1/6']} order={[0, 2]} as="section">
-				<Box
-					borderColour="gray"
-					borderWidth="1"
-					padding="4"
-					borderRadius="1"
-					style={{
-						backgroundColor: tokens.colours.gamut.green100,
-						width: '100%',
-						height: '100%',
-					}}
-				>
-					Col 1 (reordered)
-				</Box>
-			</Column>
-			<Column
-				width={['1/2', '1/3', '2/6']}
-				alignSelf="stretch"
-				as="section"
+} satisfies Meta<typeof Columns>;
+const Template: StoryFn<typeof Columns> = (args) => (
+	<Columns {...args}>
+		<Column width={['full', '1/3', '1/5']} order={[0, 2]} is="section">
+			<Box
+				borderColour="gray"
+				borderWidth="1"
+				padding="4"
+				borderRadius="1"
+				backgroundColour="green100"
+				style={{ width: '100%', height: '100%' }}
 			>
-				<Box
-					borderColour="gray"
-					borderWidth="1"
-					padding="4"
-					borderRadius="1"
-					style={{
-						backgroundColor: tokens.colours.gamut.red100,
-						width: '100%',
-						height: '100%',
-					}}
-				>
-					Col 2
-				</Box>
-			</Column>
-			<Column width={['1/2', '1/3', '1/6']} as="section">
-				<Box
-					borderColour="gray"
-					borderWidth="1"
-					padding="4"
-					borderRadius="1"
-					style={{
-						backgroundColor: tokens.colours.gamut.blue100,
-						width: '100%',
-						height: '100%',
-					}}
-				>
-					Col 3
-				</Box>
-			</Column>
-			<Column width={['full', 'full', '2/6']} as="section">
-				<Box
-					borderColour="gray"
-					borderWidth="1"
-					padding="4"
-					borderRadius="1"
-					style={{
-						backgroundColor: tokens.colours.gamut.yellow100,
-						width: '100%',
-						height: '500px',
-					}}
-				>
-					Col 4
-				</Box>
-			</Column>
-		</Columns>
-	),
+				Col 1
+			</Box>
+		</Column>
+		<Column width={['1/2', '1/3', '1/5']} alignSelf="stretch" is="section">
+			<Box
+				borderColour="gray"
+				borderWidth="1"
+				padding="4"
+				borderRadius="1"
+				backgroundColour="red100"
+				style={{ width: '100%', height: '100%' }}
+			>
+				Col 2
+			</Box>
+		</Column>
+		<Column width={['1/2', '1/3', '1/5']} is="section">
+			<Box
+				borderColour="gray"
+				borderWidth="1"
+				padding="4"
+				borderRadius="1"
+				backgroundColour="blue100"
+				style={{ width: '100%', height: '100%' }}
+			>
+				Col 3
+			</Box>
+		</Column>
+		<Column width={['full', 'full', '2/5']} is="section">
+			<Box
+				borderColour="gray"
+				borderWidth="1"
+				padding="4"
+				borderRadius="1"
+				backgroundColour="yellow100"
+				style={{ width: '100%', height: '500px' }}
+			>
+				Col 4
+			</Box>
+		</Column>
+	</Columns>
+);
+
+const TemplateColumn: StoryFn<typeof Column> = (args) => (
+	<Columns {...standardProps}>
+		<Column {...args}>
+			<Box
+				borderColour="gray"
+				borderWidth="1"
+				padding="4"
+				borderRadius="1"
+				backgroundColour="green100"
+				style={{ width: '100%', height: '100%' }}
+			>
+				Col 1
+			</Box>
+		</Column>
+		<Column {...args}>
+			<Box
+				borderColour="gray"
+				borderWidth="1"
+				padding="4"
+				borderRadius="1"
+				backgroundColour="red100"
+				style={{ width: '100%', height: '100%' }}
+			>
+				Col 2
+			</Box>
+		</Column>
+		<Column {...args}>
+			<Box
+				borderColour="gray"
+				borderWidth="1"
+				padding="4"
+				borderRadius="1"
+				backgroundColour="blue100"
+				style={{ width: '100%', height: '100%' }}
+			>
+				Col 3
+			</Box>
+		</Column>
+		<Column {...args}>
+			<Box
+				borderColour="gray"
+				borderWidth="1"
+				padding="4"
+				borderRadius="1"
+				backgroundColour="yellow100"
+				style={{ width: '100%', height: '500px' }}
+			>
+				Col 4
+			</Box>
+		</Column>
+		<Column {...args}>
+			<Box
+				borderColour="gray"
+				borderWidth="1"
+				padding="4"
+				borderRadius="1"
+				backgroundColour="yellow100"
+				style={{ width: '100%', height: '100%', minHeight: '200px' }}
+			>
+				Col 4
+			</Box>
+		</Column>
+	</Columns>
+);
+
+const standardProps: ComponentProps<typeof Columns> = {
+	spaceX: ['1', '3', '8'],
+	spaceY: ['1', '5'],
+	align: 'bottom',
+	noWrap: false,
 };
 
-// export const Standard = Template.bind();
+export const Standard = Template.bind(standardProps);
+Standard.args = standardProps;
 
-export const StandardColumn: Story = {
-	args: {
-		as: 'section',
-		width: ['full', '1/3', '1/6'],
+const standardColumnProps: Omit<ComponentProps<typeof Column>, 'children'> = {
+	width: ['full', '1/3', '1/5'],
+	is: 'section',
+};
+
+export const StandardColumn = TemplateColumn.bind(standardColumnProps);
+StandardColumn.args = standardColumnProps;
+StandardColumn.argTypes = {
+	alignSelf: {
+		options: {
+			// @ts-expect-error doesn't have types
+			stretch: 'stretch',
+			top: 'top',
+			centre: 'centre',
+			bottom: 'bottom',
+		},
+		control: {
+			disable: false,
+			type: 'boolean',
+		},
 	},
-	render: ({ width, ...args }) => (
-		<Columns {...args}>
-			<Column width={width}>
-				<Box
-					borderColour="gray"
-					borderWidth="1"
-					padding="4"
-					borderRadius="1"
-					style={{
-						backgroundColor: tokens.colours.gamut.green100,
-						width: '100%',
-						height: '100%',
-					}}
-				>
-					Col 1
-				</Box>
-			</Column>
-			<Column width={width}>
-				<Box
-					borderColour="gray"
-					borderWidth="1"
-					padding="4"
-					borderRadius="1"
-					style={{
-						backgroundColor: tokens.colours.gamut.red100,
-						width: '100%',
-						height: '100%',
-					}}
-				>
-					Col 2
-				</Box>
-			</Column>
-			<Column width={width}>
-				<Box
-					borderColour="gray"
-					borderWidth="1"
-					padding="4"
-					borderRadius="1"
-					style={{
-						backgroundColor: tokens.colours.gamut.blue100,
-						width: '100%',
-						height: '100%',
-					}}
-				>
-					Col 3
-				</Box>
-			</Column>
-			<Column width={['full', 'full', '3/6']}>
-				<Box
-					borderColour="gray"
-					borderWidth="1"
-					padding="4"
-					borderRadius="1"
-					style={{
-						backgroundColor: tokens.colours.gamut.yellow100,
-						width: '100%',
-						height: '500px',
-					}}
-				>
-					Col 4 (wide)
-				</Box>
-			</Column>
-		</Columns>
-	),
+	...boxArgTypes,
 };
-
-// StandardColumn.argTypes = {
-// 	alignSelf: {
-// 		options: {
-// 			//@ts-expect-error something wrong with args
-// 			stretch: 'stretch',
-// 			top: 'top',
-// 			centre: 'centre',
-// 			bottom: 'bottom',
-// 		},
-// 		control: {
-// 			disable: false,
-// 			type: 'boolean',
-// 		},
-// 	},
-// 	...boxArgTypes,
-// };
