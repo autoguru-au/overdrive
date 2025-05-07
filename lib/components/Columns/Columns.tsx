@@ -43,8 +43,8 @@ export interface ColumnsProps extends UseBoxProps {
 }
 
 interface ColumnContextValue {
-	spaceXCls;
-	spaceYCls;
+	spaceXCls: string;
+	spaceYCls: string;
 	isList: boolean;
 }
 
@@ -80,7 +80,7 @@ export const ColumnContext = createContext<ColumnContextValue | null>(null);
  *   <Item>Item C</Item>
  * </Columns>
  */
-export const Columns = forwardRef<HTMLElement, ColumnsProps>(
+export const Columns = forwardRef<HTMLDivElement, ColumnsProps>(
 	(
 		{
 			as,
@@ -111,24 +111,22 @@ export const Columns = forwardRef<HTMLElement, ColumnsProps>(
 		const marginTopFix = useNegativeMarginTop(resolvedSpaceY);
 
 		const { Component, componentProps } = useBox({
+			...boxProps,
 			as,
-			display: 'flex',
-			flexDirection: 'row',
 			className: [
-				marginLeftFix,
-				marginTopFix,
 				styles.columnsStyle({
 					align,
 					noWrap,
 					wrappingDirection,
 				}),
+				marginLeftFix,
+				marginTopFix,
 				className,
 			],
-			...boxProps,
+			odComponent: 'columns',
 		});
 
 		return (
-			//@ts-expect-error too complex to represent
 			<Component {...componentProps} ref={ref}>
 				<ColumnContext.Provider
 					value={useMemo(

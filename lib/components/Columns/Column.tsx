@@ -27,10 +27,8 @@ export interface ColumnProps<E extends ElementType>
  * for spacing and list item rendering.
  */
 export const Column = <E extends ElementType>({
-	as,
 	alignSelf,
 	children,
-	className = '',
 	grow = false,
 	noShrink = false,
 	order,
@@ -46,13 +44,11 @@ export const Column = <E extends ElementType>({
 
 	const { isList, spaceXCls, spaceYCls } = columnsContext;
 	const { Component, componentProps } = useBox<E>({
-		as,
-		className,
+		...(boxProps as UseBoxProps<E>),
 		display: 'flex',
 		height: 'full',
 		width: 'full',
-		...boxProps,
-	} as UseBoxProps<E>);
+	});
 
 	return (
 		<Box

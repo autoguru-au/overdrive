@@ -19,10 +19,10 @@ export const VisuallyHidden = <E extends ElementType>({
 	...props
 }: VisuallyHiddenProps<E>) => {
 	const { Component, componentProps } = useBox<E>({
-		...props,
+		...(props as UseBoxProps<E>),
 		className: visuallyHidden,
 		odComponent: 'visually-hidden',
-	} as UseBoxProps<E>);
+	});
 
 	return <Component {...componentProps}>{children}</Component>;
 };

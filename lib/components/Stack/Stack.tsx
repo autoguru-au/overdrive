@@ -57,18 +57,16 @@ export const Stack = <E extends ElementType = 'div'>({
 	space = '2',
 	children,
 	alignItems,
-	width,
 	dividers = false,
 	...props
 }: StackProps<E>) => {
 	const { Component, componentProps, SemanticChild } = useBox<E>({
+		...(props as UseBoxProps<E>),
 		display: 'flex',
 		flexDirection: 'column',
 		gap: space,
 		odComponent: 'stack',
-		width,
-		...props,
-	} as UseBoxProps<E>);
+	});
 
 	const items = flattenChildren(children);
 	// If there are not multiple children, return the bare item

@@ -1,6 +1,10 @@
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
 export const columnsStyle = recipe({
+	base: {
+		display: 'flex',
+		flexDirection: 'row',
+	},
 	variants: {
 		align: {
 			stretch: {
@@ -11,7 +15,7 @@ export const columnsStyle = recipe({
 				alignContent: 'flex-start',
 				alignItems: 'flex-start',
 			},
-			centre: {
+			center: {
 				alignContent: 'center',
 				alignItems: 'center',
 			},
