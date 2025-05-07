@@ -5,9 +5,7 @@ import * as styles from './useNegativeMarginLeft.css';
 
 /**
  *
- * @deprecated will be removed soon
+ * @deprecated using this function likely means it relies on outdated css layout for spacing
  */
 export const useNegativeMarginLeft = (space: keyof Tokens['space']) =>
 	resolveResponsiveStyle(space, styles.negativeMarginLeft);
-
-export default useNegativeMarginLeft;

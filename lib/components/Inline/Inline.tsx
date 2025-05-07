@@ -94,12 +94,12 @@ export const Inline = <E extends ElementType = 'div'>({
 	noWrap,
 	reverse,
 	space = '2',
-	width,
 	...props
 }: InlineProps<E>) => {
 	const divider = renderDivider(dividers);
 
 	const { Component, componentProps, SemanticChild } = useBox<E>({
+		...(props as UseBoxProps<E>),
 		alignItems: alignY,
 		display: 'flex',
 		flexDirection: reverse ? 'row-reverse' : 'row',
@@ -107,10 +107,9 @@ export const Inline = <E extends ElementType = 'div'>({
 		gap: space,
 		justifyContent: alignX,
 		minWidth: 'fit-content',
+		odComponent: 'inline',
 		position: 'relative',
-		width,
-		...props,
-	} as UseBoxProps<E>);
+	});
 
 	const items = flattenChildren(children);
 	// If there are not multiple children, return the bare item

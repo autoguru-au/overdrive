@@ -1,52 +1,48 @@
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
-import {
-	sprinklesResponsive,
-	totalGridColumns,
-} from '../../styles/sprinkles.css';
-
-export const columnWrapper = recipe({
-	base: [
-		sprinklesResponsive({ display: 'grid' }),
-		{
-			gridAutoFlow: 'row',
-			gridTemplateColumns: `repeat(${totalGridColumns}, [col-start] 1fr)`,
-		},
-	],
+export const columnsStyle = recipe({
+	base: {
+		display: 'flex',
+		flexDirection: 'row',
+	},
 	variants: {
 		align: {
-			stretch: sprinklesResponsive({
-				alignItems: 'stretch',
+			stretch: {
 				alignContent: 'stretch',
-			}),
-			top: sprinklesResponsive({
-				alignItems: 'flex-start',
+				alignItems: 'stretch',
+			},
+			top: {
 				alignContent: 'flex-start',
-			}),
-			center: sprinklesResponsive({
-				alignItems: 'center',
+				alignItems: 'flex-start',
+			},
+			center: {
 				alignContent: 'center',
-			}),
-			bottom: sprinklesResponsive({
-				alignItems: 'flex-end',
+				alignItems: 'center',
+			},
+			bottom: {
 				alignContent: 'flex-end',
-			}),
+				alignItems: 'flex-end',
+			},
 		},
 		noWrap: {
-			false: sprinklesResponsive({ flexWrap: 'wrap' }),
-			true: sprinklesResponsive({ flexWrap: 'nowrap' }),
+			false: {
+				flexWrap: 'wrap',
+			},
+			true: {
+				flexWrap: 'nowrap',
+			},
 		},
 		wrappingDirection: {
-			default: '',
-			reverse: sprinklesResponsive({ flexWrap: 'wrap-reverse' }),
+			default: {},
+			reverse: {
+				flexWrap: 'wrap-reverse',
+			},
 		},
 	},
 	defaultVariants: {
+		wrappingDirection: 'default',
 		align: 'stretch',
-		noWrap: false,
 	},
 });
 
-export type ColumnWrapperVariants = NonNullable<
-	RecipeVariants<typeof columnWrapper>
->;
+export type ColumnsStyle = NonNullable<RecipeVariants<typeof columnsStyle>>;

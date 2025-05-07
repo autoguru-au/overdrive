@@ -82,11 +82,11 @@ export const useBox = <E extends ElementType = 'div'>({
 	testId,
 	...props
 }: UseBoxProps<E>) => {
-	const Component = as ?? DEFAULT_TAG;
+	const Component: ElementType = as ?? DEFAULT_TAG;
 
 	// logic to promote semantic HTML and ensure a child tag is correct for the `as` prop
 	const isList = LIST_TAGS.includes(Component as keyof JSX.IntrinsicElements);
-	const SemanticChild = isList ? LIST_ITEM_TAG : undefined;
+	const SemanticChild = isList ? (LIST_ITEM_TAG as ElementType) : undefined;
 
 	const style = useDeepCompareMemo(
 		() =>

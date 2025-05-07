@@ -1,40 +1,75 @@
-import React, { type ElementType, type Ref } from 'react';
+import { invariant } from '@autoguru/utilities';
+import React, { type ElementType, type Ref, useContext } from 'react';
 
-import { type SprinklesResponsive } from '../../styles/sprinkles.css';
-import { Box, type BoxBasedProps, useBox, type UseBoxProps } from '../Box';
+import {
+	Box,
+	type BoxBasedProps,
+	type StyleProps,
+	useBox,
+	UseBoxProps,
+} from '../Box';
 
-export interface ColumnProps<E extends ElementType> extends BoxBasedProps<E> {
-	alignSelf?: SprinklesResponsive['alignSelf'];
-	justifyContent?: SprinklesResponsive['justifyContent'];
-	order?: SprinklesResponsive['order'];
+import * as styles from './Column.css';
+import { ColumnContext } from './Columns';
+
+export interface ColumnProps<E extends ElementType>
+	extends BoxBasedProps<E>,
+		styles.ColumnRecipeVariants {
+	order?: StyleProps['order'];
 	ref?: Ref<E>;
-	width?: SprinklesResponsive['gridColumn'];
+	width?: styles.SprinklesColumnWidthResponsive['flexBasis'];
 }
 
+/**
+ * Used within a `Columns` container. This component is designed to be a flex
+ * item and must be used as a direct child of the `Columns` component. It
+ * relies on the `ColumnContext` provided by the parent `Columns` component
+ * for spacing and list item rendering.
+ */
 export const Column = <E extends ElementType>({
 	alignSelf,
 	children,
-	justifyContent,
+	grow = false,
+	noShrink = false,
 	order,
+	ref,
 	width,
-	...props
+	...boxProps
 }: ColumnProps<E>) => {
+	const columnsContext = useContext(ColumnContext);
+	invariant(
+		columnsContext !== null,
+		'Column must be wrapped inside a Columns element',
+	);
+
+	const { isList, spaceXCls, spaceYCls } = columnsContext;
 	const { Component, componentProps } = useBox<E>({
-		...props,
-		justifyContent: 'center',
+		...(boxProps as UseBoxProps<E>),
 		display: 'flex',
 		height: 'full',
 		width: 'full',
-	} as UseBoxProps<E>);
+	});
 
 	return (
 		<Box
-			alignSelf={alignSelf}
-			gridColumn={width}
-			justifyContent={justifyContent}
+			as={isList ? 'li' : 'div'}
 			order={order}
+			flexGrow={grow ? 1 : 0}
+			flexShrink={noShrink ? 0 : void 0}
+			className={[
+				spaceXCls,
+				spaceYCls,
+				styles.sprinklesColumnWidthResponsive({ flexBasis: width }),
+				styles.columnStyle({
+					alignSelf,
+					grow,
+					noShrink,
+				}),
+			]}
 		>
-			<Component {...componentProps}>{children}</Component>
+			<Component {...componentProps} ref={ref}>
+				{children}
+			</Component>
 		</Box>
 	);
 };

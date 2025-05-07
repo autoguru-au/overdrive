@@ -191,8 +191,6 @@ export const responsiveConditions = {
 	},
 };
 
-export const totalGridColumns = 12; // chosen to be divisible by 2, 3, 4
-
 const responsiveProperties = defineProperties({
 	'@layer': cssLayerUtil,
 	conditions: responsiveConditions,
@@ -268,27 +266,7 @@ const responsiveProperties = defineProperties({
 		gridAutoColumns: ['auto', '1fr', 'min-content', 'max-content'],
 		gridAutoRows: ['auto', '1fr'],
 		gridAutoFlow: ['row', 'column', 'row dense', 'column dense'],
-		gridTemplateColumns: {
-			auto: 'auto',
-			none: 'none',
-		},
-		gridTemplateRows: {
-			auto: 'auto',
-			none: 'none',
-		},
-		gridColumn: {
-			'1/2': `span ${totalGridColumns / 2}`,
-			'1/3': `span ${totalGridColumns / 3}`,
-			'2/3': `span ${(totalGridColumns / 3) * 2}`,
-			'1/4': `span ${totalGridColumns / 4}`,
-			'3/4': `span ${(totalGridColumns / 4) * 3}`,
-			'1/6': `span ${totalGridColumns / 6}`,
-			'2/6': `span ${(totalGridColumns / 6) * 2}`,
-			'3/6': `span ${(totalGridColumns / 6) * 3}`,
-			'4/6': `span ${(totalGridColumns / 6) * 4}`,
-			full: `span ${totalGridColumns}`,
-			auto: 'auto',
-		},
+		gridColumns: ['auto'],
 		// Padding
 		paddingBottom: tokens.space,
 		paddingLeft: tokens.space,
@@ -301,7 +279,6 @@ const responsiveProperties = defineProperties({
 		marginTop: tokens.space,
 	},
 	shorthands: {
-		gridColumns: ['gridTemplateColumns'],
 		placeItems: ['justifyContent', 'alignItems'],
 		size: ['width', 'height'],
 		padding: ['paddingBottom', 'paddingLeft', 'paddingRight', 'paddingTop'],

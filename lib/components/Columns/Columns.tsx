@@ -1,41 +1,61 @@
-import React, { type ElementType } from 'react';
+import * as React from 'react';
+import { createContext, forwardRef, useMemo } from 'react';
 
 import {
+	useNegativeMarginLeft,
+	useNegativeMarginTop,
+} from '../../hooks/useNegativeMargin/useNegativeMargin';
+import {
+	SprinklesResponsive,
 	sprinklesResponsive,
-	type SprinklesResponsive,
 } from '../../styles/sprinkles.css';
-import { type PolymorphicBoxProps, useBox, type UseBoxProps } from '../Box';
+import { useBox, type UseBoxProps } from '../Box';
 
 import * as styles from './Columns.css';
-import type { ColumnWrapperVariants } from './Columns.css';
 
-export interface ColumnsBaseProps extends ColumnWrapperVariants {
+type ResponsiveSpace = SprinklesResponsive['padding'];
+
+export interface ColumnsProps extends UseBoxProps {
 	/**
-	 * Sets the space (gap) between columns and rows.
-	 * Responsive prop. Overridden by `spaceX` and `spaceY`.
+	 * Sets the vertical aligment of the columns
 	 */
-	space?: SprinklesResponsive['gap'];
+	align?: styles.ColumnsStyle['align'];
 	/**
-	 * Sets the horizontal space (column-gap) between columns.
-	 * Responsive prop.
+	 * Controls the ability for columns to overflow (wrap) on to additional rows.
 	 */
-	spaceX?: SprinklesResponsive['columnGap'];
+	noWrap?: styles.ColumnsStyle['noWrap'];
 	/**
-	 * Sets the vertical space (row-gap) between rows when columns wrap.
-	 * Responsive prop.
+	 * Shorthand for applying the X & Y spacing. Can be a responsive array.
 	 */
-	spaceY?: SprinklesResponsive['rowGap'];
+	space?: ResponsiveSpace;
+	/**
+	 * Horizontal spacing between columns. Can be a responsive array.
+	 */
+	spaceX?: ResponsiveSpace;
+	/**
+	 * Vertical spacing between rows when wrapping occurs. Can be a responsive array.
+	 */
+	spaceY?: ResponsiveSpace;
+	/**
+	 * Can reverse the order of the columns.
+	 */
+	wrappingDirection?: styles.ColumnsStyle['wrappingDirection'];
 }
 
-export type StyledColumnsProps<E extends ElementType> = PolymorphicBoxProps<
-	E,
-	ColumnsBaseProps
->;
+interface ColumnContextValue {
+	spaceXCls: string;
+	spaceYCls: string;
+	isList: boolean;
+}
+
+export const ColumnContext = createContext<ColumnContextValue | null>(null);
 
 /**
- * `Columns` is a layout component used to arrange child elements horizontally in columns.
- * It provides control over spacing between columns (and rows when wrapping), alignment, and wrapping behavior.
- * It's ideal for creating grid-like layouts or distributing content horizontally.
+ * `Columns` is a layout component used to arrange child elements horizontally in columns. The `Columns` component must
+ * be populated with `Column` components.
+ *
+ * `Columns` provides responsive control over spacing between columns (and rows when wrapping), alignment, and wrapping
+ * behavior. And it exposes the ColumnContext which is used by each child Column.
  *
  * @example
  * // Basic usage with uniform spacing
@@ -60,38 +80,77 @@ export type StyledColumnsProps<E extends ElementType> = PolymorphicBoxProps<
  *   <Item>Item C</Item>
  * </Columns>
  */
-export const Columns = <E extends ElementType>({
-	align = 'stretch',
-	as,
-	children,
-	className,
-	noWrap,
-	space,
-	spaceX,
-	spaceY,
-	wrappingDirection = 'default',
-	...props
-}: StyledColumnsProps<E>) => {
-	const { Component, componentProps } = useBox({
-		as,
-		className: [
-			styles.columnWrapper({
-				align,
-				noWrap,
-				wrappingDirection,
-			}),
-			sprinklesResponsive({
-				gap: space,
-				columnGap: spaceX,
-				rowGap: spaceY,
-			}),
+export const Columns = forwardRef<HTMLDivElement, ColumnsProps>(
+	(
+		{
+			as,
 			className,
-		],
-		odComponent: 'columns',
-		...props,
-	} as UseBoxProps<E>);
+			children,
+			space,
+			spaceX,
+			spaceY,
+			noWrap,
+			wrappingDirection = 'default',
+			align = 'stretch',
+			...boxProps
+		},
+		ref,
+	) => {
+		const resolvedSpaceX = useMemo(
+			() => spaceX || space || 'none',
+			[space, spaceX],
+		);
+		const resolvedSpaceY = useMemo(
+			() => spaceY || space || 'none',
+			[space, spaceY],
+		);
 
-	return <Component {...componentProps}>{children}</Component>;
-};
+		//@ts-expect-error function doesn't expect an array not sure how it ever worked
+		const marginLeftFix = useNegativeMarginLeft(resolvedSpaceX);
+		// @ts-expect-error function doesn't expect an array not sure how it ever worked
+		const marginTopFix = useNegativeMarginTop(resolvedSpaceY);
+
+		const { Component, componentProps } = useBox({
+			...boxProps,
+			as,
+			className: [
+				styles.columnsStyle({
+					align,
+					noWrap,
+					wrappingDirection,
+				}),
+				marginLeftFix,
+				marginTopFix,
+				className,
+			],
+			odComponent: 'columns',
+		});
+
+		return (
+			<Component {...componentProps} ref={ref}>
+				<ColumnContext.Provider
+					value={useMemo(
+						() => ({
+							spaceXCls: sprinklesResponsive({
+								paddingLeft: resolvedSpaceX,
+							}),
+							spaceYCls: sprinklesResponsive({
+								paddingTop: resolvedSpaceY,
+							}),
+							isList:
+								typeof as === 'string' &&
+								['ul', 'ol'].includes(as),
+						}),
+						[as, resolvedSpaceX, resolvedSpaceY],
+					)}
+				>
+					{children}
+				</ColumnContext.Provider>
+			</Component>
+		);
+	},
+);
 
 Columns.displayName = 'Columns';
+
+export default Columns;

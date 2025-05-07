@@ -7,6 +7,7 @@ exports[`<BulletText /> > should match snapshot for custom bullet text 1`] = `
 >
   <div
     class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuk6 sprinkles_flexWrap_nowrap_mobile__onxwjul2 sprinkles_gap_3_mobile__onxwjue6 sprinkles_justifyContent_flex-start_mobile__onxwjuhu sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_position_relative_mobile__onxwju9m"
+    data-od-component="inline"
   >
     <div
       class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_3_mobile__onxwjue6 sprinkles_flexWrap_nowrap_mobile__onxwjul2"
@@ -58,6 +59,7 @@ exports[`<BulletText /> > should match snapshot for default bullet text 1`] = `
 >
   <div
     class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuk6 sprinkles_flexWrap_nowrap_mobile__onxwjul2 sprinkles_gap_3_mobile__onxwjue6 sprinkles_justifyContent_flex-start_mobile__onxwjuhu sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_position_relative_mobile__onxwju9m"
+    data-od-component="inline"
   >
     <div
       class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_3_mobile__onxwjue6 sprinkles_flexWrap_nowrap_mobile__onxwjul2"
@@ -96,6 +98,7 @@ exports[`<BulletText /> > should match snapshot for ordered bullet text 1`] = `
 >
   <div
     class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuk6 sprinkles_flexWrap_nowrap_mobile__onxwjul2 sprinkles_gap_3_mobile__onxwjue6 sprinkles_justifyContent_flex-start_mobile__onxwjuhu sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_position_relative_mobile__onxwju9m"
+    data-od-component="inline"
   >
     <div
       class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_3_mobile__onxwjue6 sprinkles_flexWrap_nowrap_mobile__onxwjul2"
@@ -134,6 +137,7 @@ exports[`<BulletText /> > should match snapshot for primary bullet text with cus
 >
   <div
     class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuk6 sprinkles_flexWrap_nowrap_mobile__onxwjul2 sprinkles_gap_3_mobile__onxwjue6 sprinkles_justifyContent_flex-start_mobile__onxwjuhu sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_position_relative_mobile__onxwju9m"
+    data-od-component="inline"
   >
     <div
       class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_3_mobile__onxwjue6 sprinkles_flexWrap_nowrap_mobile__onxwjul2"
@@ -172,6 +176,7 @@ exports[`<BulletText /> > should match snapshot for secondary bullet text with c
 >
   <div
     class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuk6 sprinkles_flexWrap_nowrap_mobile__onxwjul2 sprinkles_gap_3_mobile__onxwjue6 sprinkles_justifyContent_flex-start_mobile__onxwjuhu sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_position_relative_mobile__onxwju9m"
+    data-od-component="inline"
   >
     <div
       class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_3_mobile__onxwjue6 sprinkles_flexWrap_nowrap_mobile__onxwjul2"
