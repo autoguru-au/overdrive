@@ -4,7 +4,6 @@ import { fn } from '@storybook/test';
 import React, { type ComponentProps } from 'react';
 
 import { Box } from '../Box';
-// import { Column, Columns } from '../Columns';
 import { Icon } from '../Icon';
 import { Inline } from '../Inline';
 
