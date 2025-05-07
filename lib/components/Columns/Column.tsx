@@ -1,16 +1,22 @@
 import { invariant } from '@autoguru/utilities';
-import React, { type Ref, useContext } from 'react';
+import React, { type ElementType, type Ref, useContext } from 'react';
 
-import { Box, type StyleProps, type BoxBasedProps } from '../Box';
+import {
+	Box,
+	type BoxBasedProps,
+	type StyleProps,
+	useBox,
+	UseBoxProps,
+} from '../Box';
 
 import * as styles from './Column.css';
 import { ColumnContext } from './Columns';
 
-export interface ColumnProps
-	extends BoxBasedProps<'div'>,
+export interface ColumnProps<E extends ElementType>
+	extends BoxBasedProps<E>,
 		styles.ColumnRecipeVariants {
 	order?: StyleProps['order'];
-	ref?: Ref<HTMLDivElement>;
+	ref?: Ref<E>;
 	width?: styles.SprinklesColumnWidthResponsive['flexBasis'];
 }
 
@@ -20,7 +26,7 @@ export interface ColumnProps
  * relies on the `ColumnContext` provided by the parent `Columns` component
  * for spacing and list item rendering.
  */
-export const Column = ({
+export const Column = <E extends ElementType>({
 	as,
 	alignSelf,
 	children,
@@ -31,7 +37,7 @@ export const Column = ({
 	ref,
 	width,
 	...boxProps
-}: ColumnProps) => {
+}: ColumnProps<E>) => {
 	const columnsContext = useContext(ColumnContext);
 	invariant(
 		columnsContext !== null,
@@ -39,6 +45,14 @@ export const Column = ({
 	);
 
 	const { isList, spaceXCls, spaceYCls } = columnsContext;
+	const { Component, componentProps } = useBox<E>({
+		as,
+		className,
+		display: 'flex',
+		height: 'full',
+		width: 'full',
+		...boxProps,
+	} as UseBoxProps<E>);
 
 	return (
 		<Box
@@ -57,17 +71,9 @@ export const Column = ({
 				}),
 			]}
 		>
-			<Box
-				ref={ref}
-				as={as}
-				display="flex"
-				width="full"
-				height="full"
-				className={className}
-				{...boxProps}
-			>
+			<Component {...componentProps} ref={ref}>
 				{children}
-			</Box>
+			</Component>
 		</Box>
 	);
 };

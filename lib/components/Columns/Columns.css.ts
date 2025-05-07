@@ -1,13 +1,5 @@
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
-import { overdriveTokens as vars } from '../../themes/theme.css';
-import { makeResponsiveStyle } from '../../utils/responsiveProps.css';
-
-export const space = {
-	spaceX: makeResponsiveStyle(vars.space, 'paddingLeft'),
-	spaceY: makeResponsiveStyle(vars.space, 'paddingTop'),
-};
-
 export const columnsStyle = recipe({
 	variants: {
 		align: {

@@ -1,33 +1,45 @@
-import clsx from 'clsx';
 import * as React from 'react';
-import {
-	ComponentProps,
-	createContext,
-	forwardRef,
-	ReactNode,
-	useMemo,
-} from 'react';
+import { createContext, forwardRef, useMemo } from 'react';
 
 import {
 	useNegativeMarginLeft,
 	useNegativeMarginTop,
 } from '../../hooks/useNegativeMargin/useNegativeMargin';
-import type { ThemeTokens as Tokens } from '../../themes';
-import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
-import { ResponsiveProp } from '../../utils/responsiveProps.css';
-import { Box } from '../Box';
+import {
+	SprinklesResponsive,
+	sprinklesResponsive,
+} from '../../styles/sprinkles.css';
+import { useBox, type UseBoxProps } from '../Box';
 
 import * as styles from './Columns.css';
 
-export interface ColumnsProps
-	extends Omit<ComponentProps<typeof Box>, 'css'>,
-		styles.ColumnsStyle {
-	className?: string;
-	columns?: number;
-	space?: ResponsiveProp<keyof Tokens['space']>;
-	spaceX?: ResponsiveProp<keyof typeof styles.space.spaceX>;
-	spaceY?: ResponsiveProp<keyof typeof styles.space.spaceY>;
-	children?: ReactNode;
+type ResponsiveSpace = SprinklesResponsive['padding'];
+
+export interface ColumnsProps extends UseBoxProps {
+	/**
+	 * Sets the vertical aligment of the columns
+	 */
+	align?: styles.ColumnsStyle['align'];
+	/**
+	 * Controls the ability for columns to overflow (wrap) on to additional rows.
+	 */
+	noWrap?: styles.ColumnsStyle['noWrap'];
+	/**
+	 * Shorthand for applying the X & Y spacing. Can be a responsive array.
+	 */
+	space?: ResponsiveSpace;
+	/**
+	 * Horizontal spacing between columns. Can be a responsive array.
+	 */
+	spaceX?: ResponsiveSpace;
+	/**
+	 * Vertical spacing between rows when wrapping occurs. Can be a responsive array.
+	 */
+	spaceY?: ResponsiveSpace;
+	/**
+	 * Can reverse the order of the columns.
+	 */
+	wrappingDirection?: styles.ColumnsStyle['wrappingDirection'];
 }
 
 interface ColumnContextValue {
@@ -84,41 +96,49 @@ export const Columns = forwardRef<HTMLElement, ColumnsProps>(
 		},
 		ref,
 	) => {
-		const resolvedSpaceX = spaceX || space || ['none'];
-		const resolvedSpaceY = spaceY || space || ['none'];
+		const resolvedSpaceX = useMemo(
+			() => spaceX || space || 'none',
+			[space, spaceX],
+		);
+		const resolvedSpaceY = useMemo(
+			() => spaceY || space || 'none',
+			[space, spaceY],
+		);
 
+		//@ts-expect-error function doesn't expect an array not sure how it ever worked
 		const marginLeftFix = useNegativeMarginLeft(resolvedSpaceX);
+		// @ts-expect-error function doesn't expect an array not sure how it ever worked
 		const marginTopFix = useNegativeMarginTop(resolvedSpaceY);
 
+		const { Component, componentProps } = useBox({
+			as,
+			display: 'flex',
+			flexDirection: 'row',
+			className: [
+				marginLeftFix,
+				marginTopFix,
+				styles.columnsStyle({
+					align,
+					noWrap,
+					wrappingDirection,
+				}),
+				className,
+			],
+			...boxProps,
+		});
+
 		return (
-			<Box
-				as={as}
-				ref={ref}
-				display="flex"
-				flexDirection="row"
-				className={clsx(
-					marginLeftFix,
-					marginTopFix,
-					styles.columnsStyle({
-						align,
-						noWrap,
-						wrappingDirection,
-					}),
-					className,
-				)}
-				{...boxProps}
-			>
+			//@ts-expect-error too complex to represent
+			<Component {...componentProps} ref={ref}>
 				<ColumnContext.Provider
 					value={useMemo(
 						() => ({
-							spaceXCls: resolveResponsiveStyle(
-								resolvedSpaceX,
-								styles.space.spaceX,
-							),
-							spaceYCls: resolveResponsiveStyle(
-								resolvedSpaceY,
-								styles.space.spaceY,
-							),
+							spaceXCls: sprinklesResponsive({
+								paddingLeft: resolvedSpaceX,
+							}),
+							spaceYCls: sprinklesResponsive({
+								paddingTop: resolvedSpaceY,
+							}),
 							isList:
 								typeof as === 'string' &&
 								['ul', 'ol'].includes(as),
@@ -128,7 +148,7 @@ export const Columns = forwardRef<HTMLElement, ColumnsProps>(
 				>
 					{children}
 				</ColumnContext.Provider>
-			</Box>
+			</Component>
 		);
 	},
 );
