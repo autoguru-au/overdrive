@@ -4,9 +4,7 @@ import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
 import * as styles from './useNegativeMarginTop.css';
 
 /**
- * @deprecated will be removed soon
+ * @deprecated using this function likely means it relies on outdated css layout for spacing
  */
 export const useNegativeMarginTop = (space: keyof Tokens['space']) =>
 	resolveResponsiveStyle(space, styles.negativeMarginTop);
-
-export default useNegativeMarginTop;

@@ -19,15 +19,14 @@ import { Box } from '../Box';
 
 import * as styles from './Columns.css';
 
-export interface Props extends Omit<ComponentProps<typeof Box>, 'css'> {
+export interface ColumnsProps
+	extends Omit<ComponentProps<typeof Box>, 'css'>,
+		styles.ColumnsStyle {
 	className?: string;
 	columns?: number;
 	space?: ResponsiveProp<keyof Tokens['space']>;
 	spaceX?: ResponsiveProp<keyof typeof styles.space.spaceX>;
 	spaceY?: ResponsiveProp<keyof typeof styles.space.spaceY>;
-	noWrap?: boolean;
-	wrappingDirection?: keyof typeof styles.wrapping;
-	align?: keyof typeof styles.align;
 	children?: ReactNode;
 }
 
@@ -39,10 +38,41 @@ interface ColumnContextValue {
 
 export const ColumnContext = createContext<ColumnContextValue | null>(null);
 
-export const Columns = forwardRef<HTMLElement, Props>(
+/**
+ * `Columns` is a layout component used to arrange child elements horizontally in columns. The `Columns` component must
+ * be populated with `Column` components.
+ *
+ * `Columns` provides responsive control over spacing between columns (and rows when wrapping), alignment, and wrapping
+ * behavior. And it exposes the ColumnContext which is used by each child Column.
+ *
+ * @example
+ * // Basic usage with uniform spacing
+ * <Columns space="4">
+ *   <Column width="1/3"><Card>Column 1</Card></Column>
+ *   <Column width="1/3"><Card>Column 2</Card></Column>
+ *   <Column width="1/3"><Card>Column 3</Card></Column>
+ * </Columns>
+ *
+ * @example
+ * // Responsive spacing and alignment
+ * <Columns spaceX={['2', '4']} spaceY="3" align="center">
+ *   <Column width={['full', '1/2']}><Button>Button 1</Button></Column>
+ *   <Column width={['full', '1/2']}><Button>Button 2</Button></Column>
+ * </Columns>
+ *
+ * @example
+ * // Preventing wrapping
+ * <Columns noWrap space="5">
+ *   <Item>Item A</Item>
+ *   <Item>Item B</Item>
+ *   <Item>Item C</Item>
+ * </Columns>
+ */
+export const Columns = forwardRef<HTMLElement, ColumnsProps>(
 	(
 		{
-			className = '',
+			as,
+			className,
 			children,
 			space,
 			spaceX,
@@ -50,7 +80,6 @@ export const Columns = forwardRef<HTMLElement, Props>(
 			noWrap,
 			wrappingDirection = 'default',
 			align = 'stretch',
-			is,
 			...boxProps
 		},
 		ref,
@@ -58,28 +87,24 @@ export const Columns = forwardRef<HTMLElement, Props>(
 		const resolvedSpaceX = spaceX || space || ['none'];
 		const resolvedSpaceY = spaceY || space || ['none'];
 
-		// @ts-expect-error not assignmable to parameter type
 		const marginLeftFix = useNegativeMarginLeft(resolvedSpaceX);
-		// @ts-expect-error not assignmable to parameter type
 		const marginTopFix = useNegativeMarginTop(resolvedSpaceY);
 
 		return (
 			<Box
+				as={as}
 				ref={ref}
-				is={is}
 				display="flex"
 				flexDirection="row"
 				className={clsx(
 					marginLeftFix,
 					marginTopFix,
-					styles.align[align],
+					styles.columnsStyle({
+						align,
+						noWrap,
+						wrappingDirection,
+					}),
 					className,
-					{
-						[styles.wrapping.wrap]: !noWrap,
-						[styles.wrapping.noWrap]: noWrap,
-						[styles.wrapping.reverseWrap]:
-							wrappingDirection === 'reverse',
-					},
 				)}
 				{...boxProps}
 			>
@@ -95,10 +120,10 @@ export const Columns = forwardRef<HTMLElement, Props>(
 								styles.space.spaceY,
 							),
 							isList:
-								typeof is === 'string' &&
-								['ul', 'ol'].includes(is),
+								typeof as === 'string' &&
+								['ul', 'ol'].includes(as),
 						}),
-						[resolvedSpaceX, resolvedSpaceY, styles],
+						[as, resolvedSpaceX, resolvedSpaceY],
 					)}
 				>
 					{children}
@@ -107,5 +132,7 @@ export const Columns = forwardRef<HTMLElement, Props>(
 		);
 	},
 );
+
+Columns.displayName = 'Columns';
 
 export default Columns;
