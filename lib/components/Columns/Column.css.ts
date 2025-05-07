@@ -42,7 +42,7 @@ export const columnStyle = recipe({
 		alignSelf: {
 			stretch: { alignSelf: 'stretch' },
 			top: { alignSelf: 'flex-start' },
-			centre: { alignSelf: 'center' },
+			center: { alignSelf: 'center' },
 			bottom: { alignSelf: 'flex-end' },
 		},
 		grow: {
@@ -57,7 +57,6 @@ export const columnStyle = recipe({
 	defaultVariants: {
 		grow: false,
 		noShrink: false,
-		alignSelf: 'stretch',
 	},
 });
 

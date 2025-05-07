@@ -7,7 +7,7 @@ exports[`<Stepper /> > should match snapshot with label formatter 1`] = `
 >
   <div
     aria-disabled="false"
-    class="reset_block__1oah0224 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_1__onxwju1m sprinkles_borderLeftWidth_1__onxwju1i sprinkles_borderRightWidth_1__onxwju1q sprinkles_borderTopWidth_1__onxwju1u sprinkles_userSelect_none__onxwju3l sprinkles_borderRadius_1__onxwju0 sprinkles_paddingBottom_3_mobile__onxwjuoy sprinkles_paddingLeft_3_mobile__onxwjuq2 sprinkles_paddingRight_3_mobile__onxwjur6 sprinkles_paddingTop_3_mobile__onxwjusa sprinkles_width_fit-content_mobile__onxwjucy sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_borderBottomColor_gray__onxwju5g sprinkles_borderLeftColor_gray__onxwju5j sprinkles_borderRightColor_gray__onxwju5m sprinkles_borderTopColor_gray__onxwju5p Stepper_root__10wm9ba1 reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227"
+    class="reset_block__1oah0224 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_1__onxwju1m sprinkles_borderLeftWidth_1__onxwju1i sprinkles_borderRightWidth_1__onxwju1q sprinkles_borderTopWidth_1__onxwju1u sprinkles_userSelect_none__onxwju3l sprinkles_borderRadius_1__onxwju0 sprinkles_paddingBottom_3_mobile__onxwjune sprinkles_paddingLeft_3_mobile__onxwjuoi sprinkles_paddingRight_3_mobile__onxwjupm sprinkles_paddingTop_3_mobile__onxwjuqq sprinkles_width_fit-content_mobile__onxwjucy sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_borderBottomColor_gray__onxwju5g sprinkles_borderLeftColor_gray__onxwju5j sprinkles_borderRightColor_gray__onxwju5m sprinkles_borderTopColor_gray__onxwju5p Stepper_root__10wm9ba1 reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227"
     tabindex="0"
   >
     <div
@@ -21,7 +21,7 @@ exports[`<Stepper /> > should match snapshot with label formatter 1`] = `
         >
           <button
             aria-label="step down"
-            class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderRadius_full__onxwju9 sprinkles_paddingBottom_none_mobile__onxwjupq sprinkles_paddingLeft_none_mobile__onxwjuqu sprinkles_paddingRight_none_mobile__onxwjury sprinkles_paddingTop_none_mobile__onxwjut2 sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_center_mobile__onxwjuhy sprinkles_backgroundColor_primary__onxwju3m Stepper_handle_default__10wm9ba2 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g"
+            class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderRadius_full__onxwju9 sprinkles_paddingBottom_none_mobile__onxwjuo6 sprinkles_paddingLeft_none_mobile__onxwjupa sprinkles_paddingRight_none_mobile__onxwjuqe sprinkles_paddingTop_none_mobile__onxwjuri sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_center_mobile__onxwjuhy sprinkles_backgroundColor_primary__onxwju3m Stepper_handle_default__10wm9ba2 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g"
             tabindex="-1"
           >
             <span
@@ -64,7 +64,7 @@ exports[`<Stepper /> > should match snapshot with label formatter 1`] = `
         >
           <button
             aria-label="step up"
-            class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderRadius_full__onxwju9 sprinkles_paddingBottom_none_mobile__onxwjupq sprinkles_paddingLeft_none_mobile__onxwjuqu sprinkles_paddingRight_none_mobile__onxwjury sprinkles_paddingTop_none_mobile__onxwjut2 sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_center_mobile__onxwjuhy sprinkles_backgroundColor_primary__onxwju3m Stepper_handle_default__10wm9ba2 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g"
+            class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderRadius_full__onxwju9 sprinkles_paddingBottom_none_mobile__onxwjuo6 sprinkles_paddingLeft_none_mobile__onxwjupa sprinkles_paddingRight_none_mobile__onxwjuqe sprinkles_paddingTop_none_mobile__onxwjuri sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_center_mobile__onxwjuhy sprinkles_backgroundColor_primary__onxwju3m Stepper_handle_default__10wm9ba2 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g"
             tabindex="-1"
           >
             <span
@@ -98,7 +98,7 @@ exports[`<Stepper /> > should match snapshot with props 1`] = `
 >
   <div
     aria-disabled="false"
-    class="reset_block__1oah0224 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_1__onxwju1m sprinkles_borderLeftWidth_1__onxwju1i sprinkles_borderRightWidth_1__onxwju1q sprinkles_borderTopWidth_1__onxwju1u sprinkles_userSelect_none__onxwju3l sprinkles_borderRadius_1__onxwju0 sprinkles_paddingBottom_3_mobile__onxwjuoy sprinkles_paddingLeft_3_mobile__onxwjuq2 sprinkles_paddingRight_3_mobile__onxwjur6 sprinkles_paddingTop_3_mobile__onxwjusa sprinkles_width_fit-content_mobile__onxwjucy sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_borderBottomColor_gray__onxwju5g sprinkles_borderLeftColor_gray__onxwju5j sprinkles_borderRightColor_gray__onxwju5m sprinkles_borderTopColor_gray__onxwju5p Stepper_root__10wm9ba1 reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227"
+    class="reset_block__1oah0224 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_1__onxwju1m sprinkles_borderLeftWidth_1__onxwju1i sprinkles_borderRightWidth_1__onxwju1q sprinkles_borderTopWidth_1__onxwju1u sprinkles_userSelect_none__onxwju3l sprinkles_borderRadius_1__onxwju0 sprinkles_paddingBottom_3_mobile__onxwjune sprinkles_paddingLeft_3_mobile__onxwjuoi sprinkles_paddingRight_3_mobile__onxwjupm sprinkles_paddingTop_3_mobile__onxwjuqq sprinkles_width_fit-content_mobile__onxwjucy sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_borderBottomColor_gray__onxwju5g sprinkles_borderLeftColor_gray__onxwju5j sprinkles_borderRightColor_gray__onxwju5m sprinkles_borderTopColor_gray__onxwju5p Stepper_root__10wm9ba1 reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227"
     tabindex="0"
   >
     <div
@@ -112,7 +112,7 @@ exports[`<Stepper /> > should match snapshot with props 1`] = `
         >
           <button
             aria-label="step down"
-            class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderRadius_full__onxwju9 sprinkles_paddingBottom_none_mobile__onxwjupq sprinkles_paddingLeft_none_mobile__onxwjuqu sprinkles_paddingRight_none_mobile__onxwjury sprinkles_paddingTop_none_mobile__onxwjut2 sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_center_mobile__onxwjuhy sprinkles_backgroundColor_primary__onxwju3m Stepper_handle_default__10wm9ba2 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g"
+            class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderRadius_full__onxwju9 sprinkles_paddingBottom_none_mobile__onxwjuo6 sprinkles_paddingLeft_none_mobile__onxwjupa sprinkles_paddingRight_none_mobile__onxwjuqe sprinkles_paddingTop_none_mobile__onxwjuri sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_center_mobile__onxwjuhy sprinkles_backgroundColor_primary__onxwju3m Stepper_handle_default__10wm9ba2 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g"
             tabindex="-1"
           >
             <span
@@ -155,7 +155,7 @@ exports[`<Stepper /> > should match snapshot with props 1`] = `
         >
           <button
             aria-label="step up"
-            class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderRadius_full__onxwju9 sprinkles_paddingBottom_none_mobile__onxwjupq sprinkles_paddingLeft_none_mobile__onxwjuqu sprinkles_paddingRight_none_mobile__onxwjury sprinkles_paddingTop_none_mobile__onxwjut2 sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_center_mobile__onxwjuhy sprinkles_backgroundColor_primary__onxwju3m Stepper_handle_default__10wm9ba2 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g"
+            class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderRadius_full__onxwju9 sprinkles_paddingBottom_none_mobile__onxwjuo6 sprinkles_paddingLeft_none_mobile__onxwjupa sprinkles_paddingRight_none_mobile__onxwjuqe sprinkles_paddingTop_none_mobile__onxwjuri sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_center_mobile__onxwjuhy sprinkles_backgroundColor_primary__onxwju3m Stepper_handle_default__10wm9ba2 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g"
             tabindex="-1"
           >
             <span
@@ -189,7 +189,7 @@ exports[`<Stepper /> > should match snapshot without props 1`] = `
 >
   <div
     aria-disabled="false"
-    class="reset_block__1oah0224 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_1__onxwju1m sprinkles_borderLeftWidth_1__onxwju1i sprinkles_borderRightWidth_1__onxwju1q sprinkles_borderTopWidth_1__onxwju1u sprinkles_userSelect_none__onxwju3l sprinkles_borderRadius_1__onxwju0 sprinkles_paddingBottom_3_mobile__onxwjuoy sprinkles_paddingLeft_3_mobile__onxwjuq2 sprinkles_paddingRight_3_mobile__onxwjur6 sprinkles_paddingTop_3_mobile__onxwjusa sprinkles_width_fit-content_mobile__onxwjucy sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_borderBottomColor_gray__onxwju5g sprinkles_borderLeftColor_gray__onxwju5j sprinkles_borderRightColor_gray__onxwju5m sprinkles_borderTopColor_gray__onxwju5p Stepper_root__10wm9ba1 reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227"
+    class="reset_block__1oah0224 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_1__onxwju1m sprinkles_borderLeftWidth_1__onxwju1i sprinkles_borderRightWidth_1__onxwju1q sprinkles_borderTopWidth_1__onxwju1u sprinkles_userSelect_none__onxwju3l sprinkles_borderRadius_1__onxwju0 sprinkles_paddingBottom_3_mobile__onxwjune sprinkles_paddingLeft_3_mobile__onxwjuoi sprinkles_paddingRight_3_mobile__onxwjupm sprinkles_paddingTop_3_mobile__onxwjuqq sprinkles_width_fit-content_mobile__onxwjucy sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_borderBottomColor_gray__onxwju5g sprinkles_borderLeftColor_gray__onxwju5j sprinkles_borderRightColor_gray__onxwju5m sprinkles_borderTopColor_gray__onxwju5p Stepper_root__10wm9ba1 reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227"
     tabindex="0"
   >
     <div
@@ -203,7 +203,7 @@ exports[`<Stepper /> > should match snapshot without props 1`] = `
         >
           <button
             aria-label="step down"
-            class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderRadius_full__onxwju9 sprinkles_paddingBottom_none_mobile__onxwjupq sprinkles_paddingLeft_none_mobile__onxwjuqu sprinkles_paddingRight_none_mobile__onxwjury sprinkles_paddingTop_none_mobile__onxwjut2 sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_center_mobile__onxwjuhy sprinkles_backgroundColor_primary__onxwju3m Stepper_handle_default__10wm9ba2 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g"
+            class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderRadius_full__onxwju9 sprinkles_paddingBottom_none_mobile__onxwjuo6 sprinkles_paddingLeft_none_mobile__onxwjupa sprinkles_paddingRight_none_mobile__onxwjuqe sprinkles_paddingTop_none_mobile__onxwjuri sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_center_mobile__onxwjuhy sprinkles_backgroundColor_primary__onxwju3m Stepper_handle_default__10wm9ba2 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g"
             tabindex="-1"
           >
             <span
@@ -246,7 +246,7 @@ exports[`<Stepper /> > should match snapshot without props 1`] = `
         >
           <button
             aria-label="step up"
-            class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderRadius_full__onxwju9 sprinkles_paddingBottom_none_mobile__onxwjupq sprinkles_paddingLeft_none_mobile__onxwjuqu sprinkles_paddingRight_none_mobile__onxwjury sprinkles_paddingTop_none_mobile__onxwjut2 sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_center_mobile__onxwjuhy sprinkles_backgroundColor_primary__onxwju3m Stepper_handle_default__10wm9ba2 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g"
+            class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderRadius_full__onxwju9 sprinkles_paddingBottom_none_mobile__onxwjuo6 sprinkles_paddingLeft_none_mobile__onxwjupa sprinkles_paddingRight_none_mobile__onxwjuqe sprinkles_paddingTop_none_mobile__onxwjuri sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_center_mobile__onxwjuhy sprinkles_backgroundColor_primary__onxwju3m Stepper_handle_default__10wm9ba2 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g"
             tabindex="-1"
           >
             <span

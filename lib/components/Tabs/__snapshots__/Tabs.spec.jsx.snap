@@ -58,7 +58,7 @@ exports[`<Tabs /> > should allow id overriding 1`] = `
     </div>
   </div>
   <div
-    class="reset_block__1oah0224 sprinkles_paddingTop_6_mobile__onxwjusm sprinkles_paddingBottom_6_mobile__onxwjupa sprinkles_width_full_mobile__onxwjuda TabPanes_root__15xyz920"
+    class="reset_block__1oah0224 sprinkles_paddingTop_6_mobile__onxwjur2 sprinkles_paddingBottom_6_mobile__onxwjunq sprinkles_width_full_mobile__onxwjuda TabPanes_root__15xyz920"
   >
     <div
       class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjuda TabPane_root__1e18dwc0"
@@ -202,7 +202,7 @@ exports[`<Tabs /> > should allow rendering indications 1`] = `
     </div>
   </div>
   <div
-    class="reset_block__1oah0224 sprinkles_paddingTop_6_mobile__onxwjusm sprinkles_paddingBottom_6_mobile__onxwjupa sprinkles_width_full_mobile__onxwjuda TabPanes_root__15xyz920"
+    class="reset_block__1oah0224 sprinkles_paddingTop_6_mobile__onxwjur2 sprinkles_paddingBottom_6_mobile__onxwjunq sprinkles_width_full_mobile__onxwjuda TabPanes_root__15xyz920"
   >
     <div
       class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjuda TabPane_root__1e18dwc0"
@@ -292,7 +292,7 @@ exports[`<Tabs /> > should match snapshot (high level) 1`] = `
     </div>
   </div>
   <div
-    class="reset_block__1oah0224 sprinkles_paddingTop_6_mobile__onxwjusm sprinkles_paddingBottom_6_mobile__onxwjupa sprinkles_width_full_mobile__onxwjuda TabPanes_root__15xyz920"
+    class="reset_block__1oah0224 sprinkles_paddingTop_6_mobile__onxwjur2 sprinkles_paddingBottom_6_mobile__onxwjunq sprinkles_width_full_mobile__onxwjuda TabPanes_root__15xyz920"
   >
     <div
       class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjuda TabPane_root__1e18dwc0"
