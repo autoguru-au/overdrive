@@ -266,6 +266,7 @@ const responsiveProperties = defineProperties({
 		gridAutoColumns: ['auto', '1fr', 'min-content', 'max-content'],
 		gridAutoRows: ['auto', '1fr'],
 		gridAutoFlow: ['row', 'column', 'row dense', 'column dense'],
+		gridColumns: ['auto'],
 		// Padding
 		paddingBottom: tokens.space,
 		paddingLeft: tokens.space,
