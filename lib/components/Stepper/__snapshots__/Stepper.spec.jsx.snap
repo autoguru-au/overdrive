@@ -12,6 +12,7 @@ exports[`<Stepper /> > should match snapshot with label formatter 1`] = `
   >
     <div
       class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuk6 sprinkles_flexWrap_nowrap_mobile__onxwjul2 sprinkles_gap_2_mobile__onxwjue2 sprinkles_justifyContent_space-between_mobile__onxwjuia sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_position_relative_mobile__onxwju9m"
+      data-od-component="inline"
     >
       <div
         class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_2_mobile__onxwjue2 sprinkles_flexWrap_nowrap_mobile__onxwjul2"
@@ -103,6 +104,7 @@ exports[`<Stepper /> > should match snapshot with props 1`] = `
   >
     <div
       class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuk6 sprinkles_flexWrap_nowrap_mobile__onxwjul2 sprinkles_gap_2_mobile__onxwjue2 sprinkles_justifyContent_space-between_mobile__onxwjuia sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_position_relative_mobile__onxwju9m"
+      data-od-component="inline"
     >
       <div
         class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_2_mobile__onxwjue2 sprinkles_flexWrap_nowrap_mobile__onxwjul2"
@@ -194,6 +196,7 @@ exports[`<Stepper /> > should match snapshot without props 1`] = `
   >
     <div
       class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuk6 sprinkles_flexWrap_nowrap_mobile__onxwjul2 sprinkles_gap_2_mobile__onxwjue2 sprinkles_justifyContent_space-between_mobile__onxwjuia sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_position_relative_mobile__onxwju9m"
+      data-od-component="inline"
     >
       <div
         class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_2_mobile__onxwjue2 sprinkles_flexWrap_nowrap_mobile__onxwjul2"
