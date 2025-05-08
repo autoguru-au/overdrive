@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 
-import { Box } from '.';
+import { Box } from './Box';
 
 const meta: Meta<typeof Box> = {
 	title: 'Primatives/Box',
@@ -34,4 +35,36 @@ export const ResponsiveProps: Story = {
 		children: 'Resize the viewport',
 		padding: ['3', '6', '8'],
 	},
+};
+
+/**
+ * Demonstrates the `odComponent` and `testId` props that map to data attributes built into Box and a custom attribute
+ */
+export const DataAttributes: Story = {
+	render: () => (
+		<Box
+			odComponent="box-basic"
+			testId="so-basic"
+			data-custom-attribute="somewhat less basic"
+		>
+			Tho most basic box (or is it?)
+		</Box>
+	),
+};
+
+/**
+ * To pass in a React element to render with the custom props, use the `asComponent` prop intead of `as`
+ */
+export const ComponentAsProp: Story = {
+	render: () => (
+		<Box
+			asComponent={<Box as="a" href="#hello" />}
+			backgroundColor="accent"
+			borderColor="info"
+			borderWidth="1"
+			p="4"
+		>
+			Styled props merged with custom component
+		</Box>
+	),
 };

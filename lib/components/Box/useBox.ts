@@ -1,6 +1,7 @@
 import type { ClassValue as ClassName } from 'clsx';
 import type {
 	ComponentPropsWithRef,
+	ComponentPropsWithoutRef,
 	ElementType,
 	JSX,
 	PropsWithChildren,
@@ -17,17 +18,16 @@ import { filterNonSprinklesProps } from '../../utils/sprinkles';
 
 import { boxStyles } from './boxStyles';
 
+/** All vanilla-extract sprinkles props */
+export type StyleProps = Sprinkles &
+	SprinklesResponsive &
+	SprinklesLegacyColours;
+
 /**
- * Adds: `as` | `children` | `className`. Use BoxBasedProps to help consistently define the base props for a component
+ * Use BoxBasedProps to help consistently define the base props for a component
  * directly implementing useBox as the type of UseBoxProps is complex to Pick from.
  */
-export interface BoxBasedProps<E extends ElementType>
-	extends PropsWithChildren {
-	/**
-	 * The HTML element
-	 * @default 'div'
-	 */
-	as?: E;
+export interface BoxBasedProps extends PropsWithChildren {
 	/**
 	 * Accepts `string` and complex array or objects via `clsx`
 	 */
@@ -36,26 +36,34 @@ export interface BoxBasedProps<E extends ElementType>
 	 * Output a data attribute with a component name in the markup, mainly used for the root element of a component
 	 */
 	odComponent?: string;
+	/**
+	 * Insert a `data-testid` attribute
+	 */
+	testId?: string;
 }
 
-/** All vanilla-extract sprinkles props */
-export type StyleProps = Sprinkles &
-	SprinklesResponsive &
-	SprinklesLegacyColours;
+export type PolymorphicRef<C extends ElementType> =
+	React.ComponentPropsWithRef<C>['ref'];
 
-/** Use this prop type to remix another polymorphic component based on Box, extracting/extending not recommended */
-export type PolymorphicBoxProps<
-	E extends ElementType,
+export type AsPolyProp<C extends ElementType> = {
+	as?: C;
+};
+
+export type RefPolyProp<C extends ElementType> = {
+	ref?: PolymorphicRef<C>;
+};
+
+export type PropsToOmit<C extends ElementType, P> = keyof (AsPolyProp<C> & P);
+
+export type PolymorphicComponentProps<
+	C extends ElementType,
 	Props = object,
-> = BoxBasedProps<E> &
-	Omit<ComponentPropsWithRef<E>, keyof Props | 'as' | 'className'> &
-	Props;
+> = PropsWithChildren<Props & AsPolyProp<C> & RefPolyProp<C>> &
+	Omit<ComponentPropsWithoutRef<C>, PropsToOmit<C, Props>>;
 
 /** Polymorphic box props that merge sprinkles style props and the HTML element props */
-export type UseBoxProps<E extends ElementType = 'div'> = PolymorphicBoxProps<
-	E,
-	StyleProps
->;
+export type UseBoxProps<E extends ElementType = 'div'> =
+	PolymorphicComponentProps<E, BoxBasedProps & StyleProps>;
 
 /** Helps to satisfy the linter with the complex returned `returnedComponent` */
 export type ComponentProps<E extends ElementType> = Omit<
@@ -63,6 +71,7 @@ export type ComponentProps<E extends ElementType> = Omit<
 	'as'
 >;
 
+// defaults
 const DEFAULT_TAG = 'div' as keyof JSX.IntrinsicElements;
 const LIST_ITEM_TAG = 'li' as keyof JSX.IntrinsicElements;
 const LIST_TAGS = ['ul', 'ol'] as ReadonlyArray<keyof JSX.IntrinsicElements>;
