@@ -13,7 +13,7 @@ import * as styles from './Column.css';
 import { ColumnContext } from './Columns';
 
 export interface ColumnProps<E extends ElementType>
-	extends BoxBasedProps<E>,
+	extends BoxBasedProps,
 		styles.ColumnRecipeVariants {
 	order?: StyleProps['order'];
 	ref?: Ref<E>;

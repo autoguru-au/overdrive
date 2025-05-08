@@ -6,8 +6,7 @@ import { type BoxBasedProps, Box, useBox, type UseBoxProps } from '../Box';
 
 import * as styles from './Divider.css';
 
-export interface StackProps<E extends ElementType = 'div'>
-	extends BoxBasedProps<E> {
+export interface StackProps extends BoxBasedProps {
 	/**
 	 * Sets the horizontal alignment of items within the stack. Accepts responsive values
 	 */
@@ -59,7 +58,7 @@ export const Stack = <E extends ElementType = 'div'>({
 	alignItems,
 	dividers = false,
 	...props
-}: StackProps<E>) => {
+}: UseBoxProps<E> & StackProps) => {
 	const { Component, componentProps, SemanticChild } = useBox<E>({
 		...(props as UseBoxProps<E>),
 		display: 'flex',
