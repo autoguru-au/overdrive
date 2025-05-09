@@ -7,7 +7,7 @@ import {
 	sprinklesLegacyColours,
 	sprinklesResponsive,
 } from '../../styles/sprinkles.css';
-import { filterSprinklesProps } from '../../utils/sprinkles';
+import { filterPropsWithStyles } from '../../utils/sprinkles';
 
 import type { AsPolyProp, CustomProps, StyleProps } from './';
 
@@ -59,8 +59,9 @@ export const boxStyles = <E extends ElementType = 'div'>({
 		sprinklesProps,
 		sprinklesResponsiveProps,
 		sprinklesLegacyColourProps,
-	} = filterSprinklesProps(props);
+	} = filterPropsWithStyles(props);
 
+	// a little bit of logic specific border properties for backwards compatability
 	if (hasBorderColorOrWidth && !hasBorderStyle) {
 		sprinklesProps['borderStyle'] = 'solid';
 	}
