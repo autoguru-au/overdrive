@@ -58,10 +58,11 @@ export const DataAttributes: Story = {
 export const ComponentAsProp: Story = {
 	render: () => (
 		<Box
-			asComponent={<Box as="a" href="#hello" />}
+			as={<Box as="a" href="#hello" />}
 			backgroundColor="accent"
 			borderColor="info"
 			borderWidth="1"
+			className="keep-my-custom-class-name"
 			p="4"
 		>
 			Styled props merged with custom component

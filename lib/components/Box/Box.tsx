@@ -1,19 +1,6 @@
-import React, {
-	cloneElement,
-	isValidElement,
-	type ElementType,
-	type ReactElement,
-} from 'react';
+import React, { cloneElement, type ElementType } from 'react';
 
 import { useBox, type UseBoxProps } from './useBox';
-
-export interface BoxProps {
-	/**
-	 * Pass a React element instead of an HTML tag. The provided element will receive the Box's generated props
-	 * (e.g. className, data attributes). The `as` prop will be ignored
-	 */
-	asComponent?: ReactElement;
-}
 
 /**
  * A polymorphic Box component that provides a flexible container with styling capabilities, defaulting to a `<div>` element.
@@ -39,14 +26,15 @@ export interface BoxProps {
  * <Box asComponent={<MyCustomThing />} borderColor="info" borderWidth="1" />
  */
 export const Box = <E extends ElementType = 'div'>({
-	asComponent,
 	children,
 	...props
-}: UseBoxProps<E> & BoxProps) => {
-	const { Component, componentProps } = useBox<E>(props as UseBoxProps<E>);
+}: UseBoxProps<E>) => {
+	const { Component, componentProps, reactElement } = useBox<E>(
+		props as UseBoxProps<E>,
+	);
 
-	if (isValidElement(asComponent)) {
-		return cloneElement(asComponent, componentProps, children);
+	if (reactElement) {
+		return cloneElement(reactElement, componentProps, children);
 	}
 
 	return <Component {...componentProps}>{children}</Component>;

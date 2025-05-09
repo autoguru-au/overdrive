@@ -1,10 +1,12 @@
 import type { ClassValue as ClassName } from 'clsx';
-import type {
-	ComponentPropsWithRef,
-	ComponentPropsWithoutRef,
-	ElementType,
-	JSX,
-	PropsWithChildren,
+import {
+	isValidElement,
+	type ComponentPropsWithRef,
+	type ComponentPropsWithoutRef,
+	type ElementType,
+	type JSX,
+	type PropsWithChildren,
+	type ReactElement,
 } from 'react';
 
 import { useDeepCompareMemo } from '../../hooks';
@@ -27,7 +29,7 @@ export type StyleProps = Sprinkles &
  * Use BoxBasedProps to help consistently define the base props for a component
  * directly implementing useBox as the type of UseBoxProps is complex to Pick from.
  */
-export interface BoxBasedProps extends PropsWithChildren {
+export interface CustomProps extends PropsWithChildren {
 	/**
 	 * Accepts `string` and complex array or objects via `clsx`
 	 */
@@ -41,20 +43,28 @@ export interface BoxBasedProps extends PropsWithChildren {
 	 */
 	testId?: string;
 }
-
+/** Extract the ref type for a polymorphic component based on the provided element type */
 export type PolymorphicRef<C extends ElementType> =
-	React.ComponentPropsWithRef<C>['ref'];
+	ComponentPropsWithRef<C>['ref'];
 
+/** `as` prop for polymorphic components, allowing specification of the rendered element type */
 export type AsPolyProp<C extends ElementType> = {
-	as?: C;
+	as?: C | ReactElement;
 };
 
+/** `ref` prop for polymorphic components, using the extracted `PolymorphicRef` type */
 export type RefPolyProp<C extends ElementType> = {
 	ref?: PolymorphicRef<C>;
 };
 
+/** Helps to omit base component's props when creating polymorphic props */
 export type PropsToOmit<C extends ElementType, P> = keyof (AsPolyProp<C> & P);
 
+/**
+ * Constructs the props type for a polymorphic component.
+ * It combines base props (`Props`), the `as` prop, and the `ref` prop,
+ * while omitting conflicting keys from the base element's intrinsic props.
+ */
 export type PolymorphicComponentProps<
 	C extends ElementType,
 	Props = object,
@@ -63,13 +73,7 @@ export type PolymorphicComponentProps<
 
 /** Polymorphic box props that merge sprinkles style props and the HTML element props */
 export type UseBoxProps<E extends ElementType = 'div'> =
-	PolymorphicComponentProps<E, BoxBasedProps & StyleProps>;
-
-/** Helps to satisfy the linter with the complex returned `returnedComponent` */
-export type ComponentProps<E extends ElementType> = Omit<
-	ComponentPropsWithRef<E>,
-	'as'
->;
+	PolymorphicComponentProps<E, CustomProps & StyleProps>;
 
 // defaults
 const DEFAULT_TAG = 'div' as keyof JSX.IntrinsicElements;
@@ -79,34 +83,41 @@ const OD_COMPONENT_ATTR = 'od-component';
 
 /**
  * The Overdrive component primitive to expose a flexible HTML element as a fully typesafe React component
- * that provides intrinsic props as well as style props from vanilla-extract sprinkles
+ * that provides intrinsic props as well as style props from vanilla-extract sprinkles.
  *
- * @returns `{ Component, componentProps, SemanticChild }` where SemanticChild is optionally passed back based on the
- * `as` prop
+ * The return value must be checked for `reactElement` being defined.
+ *
+ * @returns `{ reactElement, Component, componentProps, SemanticChild }` where `reactElement` is only defined
+ * if JSX was passed in and `cloneElement` will need to be used. `SemanticChild` is only defined depending on
+ * a the HTML tag.
  */
 export const useBox = <E extends ElementType = 'div'>({
-	as,
-	className,
+	as: _as,
+	className: _className,
 	odComponent,
 	testId,
 	...props
 }: UseBoxProps<E>) => {
+	const isReactElement = typeof _as !== 'string' && isValidElement(_as);
+	const as = isReactElement ? undefined : (_as ?? DEFAULT_TAG);
 	const Component: ElementType = as ?? DEFAULT_TAG;
 
 	// logic to promote semantic HTML and ensure a child tag is correct for the `as` prop
 	const isList = LIST_TAGS.includes(Component as keyof JSX.IntrinsicElements);
 	const SemanticChild = isList ? (LIST_ITEM_TAG as ElementType) : undefined;
 
-	const style = useDeepCompareMemo(
+	// deep compare is mainly to attempt to stop rerenders arrising from responsive style props
+	const className = useDeepCompareMemo(
 		() =>
 			boxStyles({
 				as, // boxStyles uses the 'as' prop to determine css resets based on tag name
-				className,
+				className: _className,
 				...props,
 			}),
-		[className, props],
+		[_className, props],
 	);
 
+	// TODO: try to combine this into the first deep compare to simplify
 	const remainingProps = useDeepCompareMemo(
 		() => ({
 			...filterNonSprinklesProps(props),
@@ -118,12 +129,15 @@ export const useBox = <E extends ElementType = 'div'>({
 		[props],
 	);
 
+	const componentProps = {
+		...remainingProps,
+		className,
+	} as ComponentPropsWithRef<E>;
+
 	return {
 		Component,
-		componentProps: {
-			className: style,
-			...remainingProps,
-		},
+		componentProps,
+		reactElement: isReactElement ? _as : undefined,
 		SemanticChild,
 	};
 };
