@@ -1,13 +1,8 @@
-import React, { type ElementType, type PropsWithChildren } from 'react';
+import React, { cloneElement, type ElementType } from 'react';
 
 import { useBox, type UseBoxProps } from '../Box';
 
 import { visuallyHidden } from './VisuallyHidden.css';
-
-export interface VisuallyHiddenProps<E extends ElementType>
-	extends PropsWithChildren {
-	as?: E;
-}
 
 /**
  * Wrap any content or components with `<VisuallyHidden>` to apply styling that ensure the child content is not
@@ -17,12 +12,16 @@ export interface VisuallyHiddenProps<E extends ElementType>
 export const VisuallyHidden = <E extends ElementType>({
 	children,
 	...props
-}: VisuallyHiddenProps<E>) => {
-	const { Component, componentProps } = useBox<E>({
+}: UseBoxProps<E>) => {
+	const { Component, componentProps, reactElement } = useBox<E>({
 		...(props as UseBoxProps<E>),
 		className: visuallyHidden,
 		odComponent: 'visually-hidden',
 	});
+
+	if (reactElement) {
+		return cloneElement(reactElement, componentProps, children);
+	}
 
 	return <Component {...componentProps}>{children}</Component>;
 };

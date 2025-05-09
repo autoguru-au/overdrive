@@ -50,7 +50,7 @@ export const Heading = ({
 			}),
 			className,
 		]}
-		{...dataAttrs({ 'test-id': testId })}
+		{...dataAttrs({ testId })}
 	>
 		{children}
 	</Box>

@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { createContext, forwardRef, useMemo } from 'react';
+import React, { cloneElement, createContext, forwardRef, useMemo } from 'react';
 
 import {
 	useNegativeMarginLeft,
@@ -110,7 +109,7 @@ export const Columns = forwardRef<HTMLDivElement, ColumnsProps>(
 		// @ts-expect-error function doesn't expect an array not sure how it ever worked
 		const marginTopFix = useNegativeMarginTop(resolvedSpaceY);
 
-		const { Component, componentProps } = useBox({
+		const { Component, componentProps, reactElement } = useBox({
 			...boxProps,
 			as,
 			className: [
@@ -126,24 +125,33 @@ export const Columns = forwardRef<HTMLDivElement, ColumnsProps>(
 			odComponent: 'columns',
 		});
 
+		const contextValue = useMemo(
+			() => ({
+				spaceXCls: sprinklesResponsive({
+					paddingLeft: resolvedSpaceX,
+				}),
+				spaceYCls: sprinklesResponsive({
+					paddingTop: resolvedSpaceY,
+				}),
+				isList: typeof as === 'string' && ['ul', 'ol'].includes(as),
+			}),
+			[as, resolvedSpaceX, resolvedSpaceY],
+		);
+
+		if (reactElement) {
+			return cloneElement(
+				reactElement,
+				//@ts-expect-error ref not in attributes
+				{ ...componentProps, ref },
+				<ColumnContext.Provider value={contextValue}>
+					{children}
+				</ColumnContext.Provider>,
+			);
+		}
+
 		return (
 			<Component {...componentProps} ref={ref}>
-				<ColumnContext.Provider
-					value={useMemo(
-						() => ({
-							spaceXCls: sprinklesResponsive({
-								paddingLeft: resolvedSpaceX,
-							}),
-							spaceYCls: sprinklesResponsive({
-								paddingTop: resolvedSpaceY,
-							}),
-							isList:
-								typeof as === 'string' &&
-								['ul', 'ol'].includes(as),
-						}),
-						[as, resolvedSpaceX, resolvedSpaceY],
-					)}
-				>
+				<ColumnContext.Provider value={contextValue}>
 					{children}
 				</ColumnContext.Provider>
 			</Component>

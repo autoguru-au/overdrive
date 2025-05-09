@@ -1,16 +1,15 @@
 import clsx from 'clsx';
-import React, { type FunctionComponent, type ReactNode } from 'react';
+import React, { type FunctionComponent } from 'react';
 
 import { useBox, type UseBoxProps } from '../Box';
 
 import * as styles from './Section.css';
 
-export interface SectionProps extends Pick<UseBoxProps, 'paddingX' | 'ref'> {
+export interface SectionProps {
 	width?: keyof typeof styles.width;
-	children?: ReactNode;
 }
 
-export const Section: FunctionComponent<SectionProps> = ({
+export const Section: FunctionComponent<UseBoxProps & SectionProps> = ({
 	children,
 	width = 'medium',
 	...props

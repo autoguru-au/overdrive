@@ -1,22 +1,13 @@
 import { invariant } from '@autoguru/utilities';
-import React, { type ElementType, type Ref, useContext } from 'react';
+import React, { cloneElement, type ElementType, useContext } from 'react';
 
-import {
-	Box,
-	type BoxBasedProps,
-	type StyleProps,
-	useBox,
-	UseBoxProps,
-} from '../Box';
+import { Box, type StyleProps, useBox, type UseBoxProps } from '../Box';
 
 import * as styles from './Column.css';
 import { ColumnContext } from './Columns';
 
-export interface ColumnProps<E extends ElementType>
-	extends BoxBasedProps,
-		styles.ColumnRecipeVariants {
+export interface ColumnProps extends styles.ColumnRecipeVariants {
 	order?: StyleProps['order'];
-	ref?: Ref<E>;
 	width?: styles.SprinklesColumnWidthResponsive['flexBasis'];
 }
 
@@ -35,7 +26,7 @@ export const Column = <E extends ElementType>({
 	ref,
 	width,
 	...boxProps
-}: ColumnProps<E>) => {
+}: UseBoxProps<E> & ColumnProps) => {
 	const columnsContext = useContext(ColumnContext);
 	invariant(
 		columnsContext !== null,
@@ -43,12 +34,21 @@ export const Column = <E extends ElementType>({
 	);
 
 	const { isList, spaceXCls, spaceYCls } = columnsContext;
-	const { Component, componentProps } = useBox<E>({
+	const { Component, componentProps, reactElement } = useBox<E>({
 		...(boxProps as UseBoxProps<E>),
 		display: 'flex',
 		height: 'full',
 		width: 'full',
 	});
+
+	const ColumnContent = () =>
+		reactElement ? (
+			cloneElement(reactElement, { ...componentProps, ref }, children)
+		) : (
+			<Component {...componentProps} ref={ref}>
+				{children}
+			</Component>
+		);
 
 	return (
 		<Box
@@ -67,9 +67,7 @@ export const Column = <E extends ElementType>({
 				}),
 			]}
 		>
-			<Component {...componentProps} ref={ref}>
-				{children}
-			</Component>
+			<ColumnContent />
 		</Box>
 	);
 };

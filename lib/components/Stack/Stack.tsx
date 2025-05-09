@@ -1,12 +1,12 @@
-import React, { Children, type ElementType } from 'react';
+import React, { Children, cloneElement, type ElementType } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 
 import type { SprinklesResponsive } from '../../styles/sprinkles.css';
-import { type BoxBasedProps, Box, useBox, type UseBoxProps } from '../Box';
+import { Box, useBox, type UseBoxProps } from '../Box';
 
 import * as styles from './Divider.css';
 
-export interface StackProps extends BoxBasedProps {
+export interface StackProps {
 	/**
 	 * Sets the horizontal alignment of items within the stack. Accepts responsive values
 	 */
@@ -59,13 +59,14 @@ export const Stack = <E extends ElementType = 'div'>({
 	dividers = false,
 	...props
 }: UseBoxProps<E> & StackProps) => {
-	const { Component, componentProps, SemanticChild } = useBox<E>({
-		...(props as UseBoxProps<E>),
-		display: 'flex',
-		flexDirection: 'column',
-		gap: space,
-		odComponent: 'stack',
-	});
+	const { Component, componentProps, reactElement, SemanticChild } =
+		useBox<E>({
+			...(props as UseBoxProps<E>),
+			display: 'flex',
+			flexDirection: 'column',
+			gap: space,
+			odComponent: 'stack',
+		});
 
 	const items = flattenChildren(children);
 	// If there are not multiple children, return the bare item
@@ -89,14 +90,21 @@ export const Stack = <E extends ElementType = 'div'>({
 		return <Box as={SemanticChild}>{children}</Box>;
 	};
 
+	const ChildItems = () =>
+		Children.map(items, (child, idx) => (
+			<Item>
+				{dividers && idx > 0 && <Divider />}
+				{child}
+			</Item>
+		));
+
+	if (reactElement) {
+		return cloneElement(reactElement, componentProps, <ChildItems />);
+	}
+
 	return (
 		<Component {...componentProps}>
-			{Children.map(items, (child, idx) => (
-				<Item>
-					{dividers && idx > 0 && <Divider />}
-					{child}
-				</Item>
-			))}
+			<ChildItems />
 		</Component>
 	);
 };

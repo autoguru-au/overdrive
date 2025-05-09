@@ -47,7 +47,7 @@ export const DataAttributes: Story = {
 			testId="so-basic"
 			data-custom-attribute="somewhat less basic"
 		>
-			Tho most basic box (or is it?)
+			The most basic box (or is it?)
 		</Box>
 	),
 };

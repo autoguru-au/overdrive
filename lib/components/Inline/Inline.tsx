@@ -1,5 +1,6 @@
 import React, {
 	Children,
+	cloneElement,
 	isValidElement,
 	type ElementType,
 	type ReactNode,
@@ -11,7 +12,7 @@ import { Box, useBox, type UseBoxProps } from '../Box';
 import { Text } from '../Text';
 
 export type InlineDivider = ReactNode | boolean;
-export interface InlineProps<E extends ElementType = 'div'> {
+export interface InlineProps {
 	/**
 	 * Sets the horizontal alignment
 	 */
@@ -21,15 +22,6 @@ export interface InlineProps<E extends ElementType = 'div'> {
 	 * @default 'center'
 	 */
 	alignY?: SprinklesResponsive['alignItems'];
-	/**
-	 * The HTML element
-	 * @default 'div'
-	 */
-	as?: E;
-	/**
-	 * The content to be rendered inside the Inline component, usually multiple child elements
-	 */
-	children: ReactNode;
 	/**
 	 * A divider element to render between each child. Accepts `true`/`false` for default separator or custom JSX
 	 */
@@ -86,7 +78,7 @@ const renderDivider = (dividers: InlineDivider) => {
  *   <Text>Link 2</Text>
  * </Inline>
  */
-export const Inline = <E extends ElementType = 'div'>({
+export const Inline = <E extends ElementType>({
 	alignX,
 	alignY = 'center',
 	children,
@@ -95,21 +87,22 @@ export const Inline = <E extends ElementType = 'div'>({
 	reverse,
 	space = '2',
 	...props
-}: InlineProps<E>) => {
+}: UseBoxProps<E> & InlineProps) => {
 	const divider = renderDivider(dividers);
 
-	const { Component, componentProps, SemanticChild } = useBox<E>({
-		...(props as UseBoxProps<E>),
-		alignItems: alignY,
-		display: 'flex',
-		flexDirection: reverse ? 'row-reverse' : 'row',
-		flexWrap: noWrap ? 'nowrap' : 'wrap',
-		gap: space,
-		justifyContent: alignX,
-		minWidth: 'fit-content',
-		odComponent: 'inline',
-		position: 'relative',
-	});
+	const { Component, componentProps, reactElement, SemanticChild } =
+		useBox<E>({
+			...(props as UseBoxProps<E>),
+			alignItems: alignY,
+			display: 'flex',
+			flexDirection: reverse ? 'row-reverse' : 'row',
+			flexWrap: noWrap ? 'nowrap' : 'wrap',
+			gap: space,
+			justifyContent: alignX,
+			minWidth: 'fit-content',
+			odComponent: 'inline',
+			position: 'relative',
+		});
 
 	const items = flattenChildren(children);
 	// If there are not multiple children, return the bare item
@@ -117,26 +110,33 @@ export const Inline = <E extends ElementType = 'div'>({
 		return <>{items}</>;
 	}
 
+	const ChildItems = () =>
+		Children.map(
+			items,
+			(child, idx) =>
+				child && (
+					<Box
+						alignItems={alignY}
+						as={SemanticChild}
+						display="flex"
+						gap={space}
+						flexWrap="nowrap"
+					>
+						{child}
+						{dividers && idx !== items.length - 1 && (
+							<Box aria-hidden>{divider}</Box>
+						)}
+					</Box>
+				),
+		);
+
+	if (reactElement) {
+		return cloneElement(reactElement, componentProps, <ChildItems />);
+	}
+
 	return (
 		<Component {...componentProps}>
-			{Children.map(
-				items,
-				(child, idx) =>
-					child && (
-						<Box
-							alignItems={alignY}
-							as={SemanticChild}
-							display="flex"
-							gap={space}
-							flexWrap="nowrap"
-						>
-							{child}
-							{dividers && idx !== items.length - 1 && (
-								<Box aria-hidden>{divider}</Box>
-							)}
-						</Box>
-					),
-			)}
+			<ChildItems />
 		</Component>
 	);
 };

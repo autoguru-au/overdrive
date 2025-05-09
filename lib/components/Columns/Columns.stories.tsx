@@ -5,7 +5,9 @@ import { Box } from '../Box';
 
 import { columnsStyle } from './Columns.css';
 
-import { Column, Columns, type ColumnProps } from '.';
+import { Column, Columns } from '.';
+
+type ColumnProps = React.ComponentProps<typeof Column>;
 
 const meta: Meta<typeof Columns> = {
 	title: 'Layout/Columns',
@@ -98,7 +100,7 @@ export const Standard: Story = {
 const columnProps = {
 	as: 'section',
 	width: ['full', '1/3', '1/5'],
-} satisfies ColumnProps<'section'>;
+} satisfies ColumnProps;
 
 export const StandardColumn: Story = {
 	args: {},

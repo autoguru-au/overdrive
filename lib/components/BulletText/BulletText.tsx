@@ -1,13 +1,18 @@
 import clsx from 'clsx';
-import React, { type ElementType, isValidElement, type ReactNode } from 'react';
+import React, {
+	ComponentProps,
+	type ElementType,
+	isValidElement,
+	type ReactNode,
+} from 'react';
 
-import { type BoxBasedProps, Box } from '../Box';
+import { Box, type UseBoxProps } from '../Box';
 import { Inline } from '../Inline';
 import { Text } from '../Text';
 
 import * as styles from './BulletText.css';
 
-export interface Props<E extends ElementType> extends BoxBasedProps<E> {
+export interface Props {
 	bullet?: ReactNode;
 	variant?: 'primary' | 'secondary';
 }
@@ -17,8 +22,14 @@ export const BulletText = <E extends ElementType>({
 	variant = 'primary',
 	children,
 	bullet: Bullet = '•',
-}: Props<E>) => (
-	<Inline noWrap space="3" as={as} alignX="flex-start" alignY="center">
+}: UseBoxProps<E> & Props) => (
+	<Inline
+		as={as satisfies ComponentProps<typeof Inline>['as']}
+		noWrap
+		space="3"
+		alignX="flex-start"
+		alignY="center"
+	>
 		{isValidElement(Bullet) ? (
 			<Box position="relative" flexShrink={0}>
 				{Bullet}
