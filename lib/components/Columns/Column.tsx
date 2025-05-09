@@ -1,13 +1,12 @@
 import { invariant } from '@autoguru/utilities';
 import React, { cloneElement, type ElementType, useContext } from 'react';
 
-import { Box, type StyleProps, useBox, type UseBoxProps } from '../Box';
+import { Box, useBox, type UseBoxProps } from '../Box';
 
 import * as styles from './Column.css';
 import { ColumnContext } from './Columns';
 
 export interface ColumnProps extends styles.ColumnRecipeVariants {
-	order?: StyleProps['order'];
 	width?: styles.SprinklesColumnWidthResponsive['flexBasis'];
 }
 
@@ -18,7 +17,6 @@ export interface ColumnProps extends styles.ColumnRecipeVariants {
  * for spacing and list item rendering.
  */
 export const Column = <E extends ElementType>({
-	alignSelf,
 	children,
 	grow = false,
 	noShrink = false,
@@ -61,7 +59,6 @@ export const Column = <E extends ElementType>({
 				spaceYCls,
 				styles.sprinklesColumnWidthResponsive({ flexBasis: width }),
 				styles.columnStyle({
-					alignSelf,
 					grow,
 					noShrink,
 				}),

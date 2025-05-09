@@ -39,12 +39,6 @@ export type SprinklesColumnWidthResponsive = Parameters<
 export const columnStyle = recipe({
 	base: {},
 	variants: {
-		alignSelf: {
-			stretch: { alignSelf: 'stretch' },
-			top: { alignSelf: 'flex-start' },
-			center: { alignSelf: 'center' },
-			bottom: { alignSelf: 'flex-end' },
-		},
 		grow: {
 			true: { flexGrow: 1 },
 			false: { flexGrow: 0 },
