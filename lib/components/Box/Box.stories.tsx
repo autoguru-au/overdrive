@@ -53,7 +53,7 @@ export const DataAttributes: Story = {
 };
 
 /**
- * To pass in a React element to render with the custom props, use the `asComponent` prop intead of `as`
+ * Passing in a React element to `as` props to merge style props
  */
 export const ComponentAsProp: Story = {
 	render: () => (

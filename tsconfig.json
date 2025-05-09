@@ -32,7 +32,8 @@
 		"resolveJsonModule": true,
 		"allowSyntheticDefaultImports": true,
 		"downlevelIteration": true,
-		"esModuleInterop": false
+		"esModuleInterop": false,
+		"types": ["vitest/globals"]
 	},
 	"ts-node": {
 		"compilerOptions": {
