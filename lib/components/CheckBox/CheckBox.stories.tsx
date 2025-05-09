@@ -176,7 +176,7 @@ export const WithMultiLineComponent: Story = {
 					gridTemplateColumns: '1fr auto auto',
 				}}
 			>
-				<Heading is="h5">Your last order</Heading>
+				<Heading as="h5">Your last order</Heading>
 				<Badge colour="neutral" label="SUBSCRIBE" />
 				<Badge colour="neutral" label="AUTO TOP-UP" />
 				<div

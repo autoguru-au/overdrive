@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
 import { Text, type TextProps } from './Text';
-import type { TextColor, TextSize } from './useTextStyles';
+import type { TextSize } from './useTextStyles';
 import * as styles from './useTextStyles.css';
 
 const elements: TextProps['as'][] = ['p', 'label', 'span'];
@@ -77,7 +77,11 @@ export const AllColours: Story = {
 					<Text as="p" size="3" strong>
 						{color}
 					</Text>
-					<Text {...args} as="p" color={color as TextColor}>
+					<Text
+						{...args}
+						as="p"
+						colour={color as keyof typeof styles.colours}
+					>
 						{children}
 					</Text>
 				</div>

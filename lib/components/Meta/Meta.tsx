@@ -20,7 +20,7 @@ export const Meta: FunctionComponent<Props> = ({
 	variant = 'primary',
 	breakWord,
 }) => (
-	<Inline noWrap is="span" space="2" alignY="center">
+	<Inline noWrap as="span" space="2" alignY="center">
 		{icon && <Icon icon={icon} className={styles.variant[variant]} />}
 		<Text breakWord={breakWord}>{label}</Text>
 	</Inline>

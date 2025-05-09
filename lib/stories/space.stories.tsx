@@ -14,7 +14,7 @@ const spaceItems = Object.keys(space).filter((val) => val !== 'none');
 
 const SpaceScale = () => (
 	<Stack space="sm">
-		<Heading is="h2" className={titles}>
+		<Heading as="h2" className={titles}>
 			Space scale
 		</Heading>
 
@@ -38,7 +38,7 @@ const breakpointItems = Object.entries(breakpoints);
 const Breakpoints = () => {
 	return (
 		<Stack space="sm">
-			<Heading is="h2" className={titles}>
+			<Heading as="h2" className={titles}>
 				Breakpoints
 			</Heading>
 
@@ -65,7 +65,7 @@ type Story = StoryObj;
 export const Space: Story = {
 	render: () => (
 		<Stack gap="8" horizontal>
-			<Heading is="h1">Space</Heading>
+			<Heading as="h1">Space</Heading>
 			<SpaceScale />
 			<Breakpoints />
 		</Stack>

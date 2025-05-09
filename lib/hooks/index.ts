@@ -1,5 +1,6 @@
 export * from './useAnimationEvents';
 export * from './useAttachedBoxes';
+export * from './useDeepCompareMemo';
 export * from './useDocumentBodyStyles';
 export * from './useNegativeMargin';
 export * from './useResponsiveValue';

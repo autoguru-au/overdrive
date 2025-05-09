@@ -35,14 +35,12 @@ export const Primary: Story = {};
 
 export const Secondary: Story = {
 	args: {
-		is: 'div',
 		variant: 'secondary',
 	},
 };
 
 export const WithCustomBullet: Story = {
 	args: {
-		is: 'div',
 		variant: 'primary',
 		bullet: (
 			<span

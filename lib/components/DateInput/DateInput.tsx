@@ -24,7 +24,7 @@ export const DateInput = withEnhancedInput<
 
 		return (
 			<Box
-				is="input"
+				as="input"
 				{...eventHandlers}
 				{...field}
 				{...rest}

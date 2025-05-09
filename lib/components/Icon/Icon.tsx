@@ -6,15 +6,15 @@ import { cloneElement } from 'react';
 import { useNullCheck } from '../../hooks/useNullCheck';
 import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
 import { ResponsiveProp } from '../../utils/responsiveProps.css';
-import type { BoxStyleProps } from '../Box';
-import { Box, useBoxStyles } from '../Box';
+import type { UseBoxProps } from '../Box';
+import { Box, boxStyles } from '../Box';
 
 import * as styles from './Icon.css';
 
 export type IconEl = IconType | ReactElement<SVGAttributes<SVGElement>, 'svg'>;
 
 export interface Props {
-	display?: Extract<BoxStyleProps['display'], 'block' | 'inlineBlock'>;
+	display?: Extract<UseBoxProps['display'], 'block' | 'inline-block'>;
 	className?: string;
 	size?: ResponsiveProp<keyof typeof styles.size | string>;
 	icon: IconEl;
@@ -29,7 +29,7 @@ export const Icon: FunctionComponent<Props> = ({
 	useNullCheck(icon, 'Icon component received an empty icon prop.');
 
 	const iconElement = cloneElement(icon, {
-		className: useBoxStyles({
+		className: boxStyles({
 			as: 'svg',
 			display: 'block',
 			width: 'full',

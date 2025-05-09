@@ -8,4 +8,4 @@ export interface TestId {
 /**
  * Adds a testId property to the given type
  */
-export type WithTestId<T> = T & TestId;
+export type WithTestId<T = unknown> = T & TestId;

@@ -35,7 +35,7 @@ export const Bubble: FunctionComponent<Props> = ({
 	else if (disabled) backgroundColour = 'gray200';
 	return (
 		<Box
-			is="button"
+			as="button"
 			backgroundColour={backgroundColour}
 			display="flex"
 			overflow="hidden"

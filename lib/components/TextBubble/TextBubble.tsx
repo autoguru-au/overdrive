@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { ComponentProps, FunctionComponent, useMemo } from 'react';
 
-import { Box, useBoxStyles } from '../Box';
+import { Box, boxStyles } from '../Box';
 import { Text } from '../Text';
 
 import * as styles from './TextBubble.css';
@@ -55,7 +55,7 @@ export const TextBubble: FunctionComponent<Props> = ({
 		<Box
 			borderRadius="full"
 			backgroundColour="gray900"
-			display="inlineBlock"
+			display="inline-block"
 			position="relative"
 			padding={valuePaddingMap[size]}
 			{...boxProps}
@@ -67,7 +67,7 @@ export const TextBubble: FunctionComponent<Props> = ({
 				align="center"
 				className={clsx(
 					styles.bubbleText,
-					useBoxStyles({
+					boxStyles({
 						position: 'absolute',
 						overflow: 'hidden',
 						width: 'full',

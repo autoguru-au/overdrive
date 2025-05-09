@@ -6,3 +6,5 @@ export const cssLayerTypography = globalLayer(
 	{ parent: cssLayerTheme },
 	'typography',
 );
+export const cssLayerUtil = globalLayer('util');
+export const cssLayerComponent = globalLayer('component');

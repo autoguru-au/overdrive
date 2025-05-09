@@ -14,7 +14,7 @@ describe('<TextLink />', () => {
 
 	it('should allow as override', () => {
 		expect(
-			render(<TextLink as={<p />}>Test</TextLink>).container.firstChild,
+			render(<TextLink as="p">Test</TextLink>).container.firstChild,
 		).toMatchSnapshot();
 	});
 });

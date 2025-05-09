@@ -1,6 +1,6 @@
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
-import { overdriveTokens as tokens } from '../themes/theme.css';
+import { overdriveTokens as tokens } from '../../themes/theme.css';
 
 /**
  * Defines stack styles as custom props in a vanilla-extract recipe for using directly or rolling a React component.

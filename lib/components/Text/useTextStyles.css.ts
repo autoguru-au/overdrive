@@ -26,9 +26,12 @@ export const sizes = styleVariants(
 	),
 );
 
-export const colours = styleVariants(
-	mapTokenToProperty(vars.typography.colour, 'color'),
-);
+export const colours = styleVariants({
+	...mapTokenToProperty(vars.typography.colour, 'color'),
+	unset: {
+		color: 'unset',
+	},
+});
 
 export const fontWeight = styleVariants(
 	mapTokenToProperty(vars.typography.fontWeight, 'fontWeight'),

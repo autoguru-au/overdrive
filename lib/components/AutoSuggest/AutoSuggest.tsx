@@ -562,8 +562,8 @@ const SuggestionsList = <PayloadType extends unknown>({
 	suggestionListRef,
 }: SuggestionProps<PayloadType>) => (
 	<Box
-		ref={suggestionListRef}
 		as="ul"
+		ref={suggestionListRef}
 		backgroundColour="white"
 		className={[styles.suggestionList.defaults, className]}
 		id={suggestionListId}
@@ -576,9 +576,9 @@ const SuggestionsList = <PayloadType extends unknown>({
 
 			return (
 				<Box
+					as="li"
 					key={suggestion.text.concat(String(idx))}
 					ref={highlight ? highlightRef : undefined}
-					as="li"
 					id={getSuggestionId(suggestionListId, idx)}
 					role="option"
 					aria-selected={highlight}

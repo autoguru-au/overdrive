@@ -64,3 +64,5 @@ export const ProgressStep: NamedExoticComponent<Props> = memo(
 		);
 	},
 );
+
+ProgressStep.displayName = 'ProgressStep';

@@ -39,7 +39,7 @@ export const Nested: Story = {
 		container: containerEl,
 		children: (
 			<Stack space="5">
-				<Heading is="h3" colour="information">
+				<Heading as="h3" colour="information">
 					test child 1
 				</Heading>
 				<Portal container={containerEl}>

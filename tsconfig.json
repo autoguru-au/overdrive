@@ -21,7 +21,7 @@
 		"module": "esnext",
 		"moduleResolution": "node",
 		"jsx": "react",
-		"lib": ["dom"],
+		"lib": ["dom", "ESNext"],
 		"noFallthroughCasesInSwitch": true,
 		"strictFunctionTypes": true,
 		"forceConsistentCasingInFileNames": true,
@@ -32,7 +32,8 @@
 		"resolveJsonModule": true,
 		"allowSyntheticDefaultImports": true,
 		"downlevelIteration": true,
-		"esModuleInterop": false
+		"esModuleInterop": false,
+		"types": ["vitest/globals"]
 	},
 	"ts-node": {
 		"compilerOptions": {

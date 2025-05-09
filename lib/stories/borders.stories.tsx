@@ -15,7 +15,7 @@ const radiusItems = Object.keys(border.radius);
 
 const Elevation = () => (
 	<Stack>
-		<Heading is="h2" className={titles}>
+		<Heading as="h2" className={titles}>
 			Elevation
 		</Heading>
 
@@ -38,7 +38,7 @@ const Elevation = () => (
 const Widths = () => {
 	return (
 		<Stack>
-			<Heading is="h2" className={titles}>
+			<Heading as="h2" className={titles}>
 				Width
 			</Heading>
 
@@ -65,7 +65,7 @@ const Widths = () => {
 const Radius = () => {
 	return (
 		<Stack>
-			<Heading is="h2" className={titles}>
+			<Heading as="h2" className={titles}>
 				Radius
 			</Heading>
 
@@ -109,7 +109,7 @@ type Story = StoryObj;
 export const Borders: Story = {
 	render: () => (
 		<Stack gap="8" horizontal>
-			<Heading is="h1">
+			<Heading as="h1">
 				Borders &amp; <br /> Elevation
 			</Heading>
 			<Widths />

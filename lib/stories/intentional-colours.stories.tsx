@@ -75,7 +75,7 @@ export const LegacyColoursets: Story = {
 		return (
 			<Stack>
 				<hgroup>
-					<Heading is="h1">Intentional Colours</Heading>
+					<Heading as="h1">Intentional Colours</Heading>
 					<p>
 						These colours are being phased out but include use with
 						flat-red and neutral themes plus colour overrides.
@@ -87,41 +87,41 @@ export const LegacyColoursets: Story = {
 				</hgroup>
 				<Stack space="md" horizontal>
 					<Stack>
-						<Heading is="h2">Body</Heading>
+						<Heading as="h2">Body</Heading>
 						<SemanticSwatches vars={overdriveTokens.body} />
 					</Stack>
 					<Stack>
-						<Heading is="h2">Foreground</Heading>
+						<Heading as="h2">Foreground</Heading>
 						<SemanticSwatches
 							vars={overdriveTokens.colours.foreground}
 						/>
 					</Stack>
 					<Stack>
-						<Heading is="h2">Background</Heading>
+						<Heading as="h2">Background</Heading>
 						<SemanticSwatches
 							vars={overdriveTokens.colours.background}
 						/>
 					</Stack>
 					<Stack>
-						<Heading is="h2">Border</Heading>
+						<Heading as="h2">Border</Heading>
 						<SemanticSwatches
 							vars={overdriveTokens.border.colours}
 						/>
 					</Stack>
 				</Stack>
 				<Stack>
-					<Heading is="h2">Typography</Heading>
+					<Heading as="h2">Typography</Heading>
 					<SemanticSwatches
 						vars={overdriveTokens.typography.colour}
 					/>
 				</Stack>
 				<Stack>
-					<Heading is="h2">Intentional colour sets</Heading>
+					<Heading as="h2">Intentional colour sets</Heading>
 					<Stack space="lg" horizontal>
 						{Object.entries(overdriveTokens.colours.intent).map(
 							([title, vars]) => (
 								<div key={title}>
-									<Heading is="h4" className={labels}>
+									<Heading as="h4" className={labels}>
 										{title}
 									</Heading>
 									<IntentionalSwatches vars={vars} />

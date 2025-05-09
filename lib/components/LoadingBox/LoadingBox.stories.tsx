@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { boxArgTypes } from '../Box/argTypes';
+import { boxArgTypes } from '../../stories/shared/argTypes-box';
 
 import { LoadingBox } from '.';
 

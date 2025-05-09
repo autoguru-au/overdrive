@@ -7,6 +7,8 @@ import {
 	useState,
 } from 'react';
 
+import type { SprinklesResponsive } from 'styles/sprinkles.css';
+
 export const isBrowser = typeof window !== 'undefined';
 
 export const isomorphicLayoutEffect = isBrowser ? useLayoutEffect : useEffect;
@@ -175,9 +177,9 @@ export type Alignment = 'left' | 'right' | 'center';
 export const alignmentToFlexAlignment = (align: Alignment) =>
 	({
 		center: 'center',
-		left: 'flexStart',
-		right: 'flexEnd',
-	})[align] as 'center' | 'flexStart' | 'flexEnd';
+		left: 'flex-start',
+		right: 'flex-end',
+	})[align] as SprinklesResponsive['justifyContent'];
 
 /**
  * A function that returns the first item in the array, if the index exceeds its maximum length

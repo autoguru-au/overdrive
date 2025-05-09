@@ -3,14 +3,14 @@ import React from 'react';
 import type { ThemeTokens as Tokens } from '../../themes';
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
-import { Box, type BoxProps } from '../Box';
+import { Box, type UseBoxProps } from '../Box';
 import type { TextStyleProps } from '../Text';
 import { useTextStyles } from '../Text';
 
 export interface HeadingProps
-	extends Omit<TextStyleProps, 'is'>,
-		Pick<BoxProps, 'children' | 'className' | 'id'> {
-	is?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+	extends Omit<TextStyleProps, 'as'>,
+		Pick<UseBoxProps, 'children' | 'className' | 'id' | 'ref'> {
+	as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 	colour?: Exclude<keyof Tokens['typography']['colour'], 'muted'>;
 }
 
@@ -24,26 +24,24 @@ const sizeScaleDefaults = {
 } as const;
 
 export const Heading = ({
-	is = 'h1',
-	id,
-	testId,
-	align,
-	fontWeight = 'bold',
-	noWrap,
-	transform,
-	colour = 'dark',
-	size = sizeScaleDefaults[is],
+	as = 'h1',
 	breakWord,
-	className = '',
 	children,
+	className,
+	colour = 'dark',
+	fontWeight = 'bold',
+	id,
+	noWrap,
+	size = sizeScaleDefaults[as],
+	testId,
+	transform,
 }: WithTestId<HeadingProps>) => (
 	<Box
+		as={as}
 		id={id}
-		as={is}
 		className={[
 			useTextStyles({
 				size,
-				align,
 				colour,
 				noWrap,
 				transform,
@@ -52,7 +50,7 @@ export const Heading = ({
 			}),
 			className,
 		]}
-		{...dataAttrs({ 'test-id': testId })}
+		{...dataAttrs({ testId })}
 	>
 		{children}
 	</Box>

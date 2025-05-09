@@ -27,7 +27,7 @@ export const DividerLine: FunctionComponent<Props> = ({
 			[styles.size.horizontal[size]]: !isVertical,
 			[styles.size.vertical[size]]: isVertical,
 		})}
-		marginY={isVertical ? void 0 : space}
-		marginX={isVertical ? space : void 0}
+		marginY={isVertical ? undefined : space}
+		marginX={isVertical ? space : undefined}
 	/>
 );

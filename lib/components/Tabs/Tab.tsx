@@ -12,7 +12,7 @@ import {
 	useContext,
 } from 'react';
 
-import { useBoxStyles } from '../Box';
+import { boxStyles } from '../Box';
 import { Inline } from '../Inline';
 import { Text, useTextStyles } from '../Text';
 
@@ -55,11 +55,11 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 
 		const props = {
 			className: clsx(
-				useBoxStyles({
-					is: typeof Component === 'string' ? Component : 'button',
-					display: 'inlineFlex',
+				boxStyles({
+					as: typeof Component === 'string' ? Component : 'button',
+					display: 'inline-flex',
 					justifyContent: 'center',
-					backgroundColour: 'transparent',
+					backgroundColor: 'transparent',
 				}),
 				useTextStyles({
 					noWrap: true,

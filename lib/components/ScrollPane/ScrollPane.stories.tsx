@@ -22,6 +22,7 @@ export const Standard: Story = {
 			<>
 				<StickyBox width="full">
 					<Box
+						textAlign="center"
 						marginTop="8"
 						padding="3"
 						width="full"
@@ -29,7 +30,7 @@ export const Standard: Story = {
 						borderRadius="1"
 						overflow="hidden"
 					>
-						<Heading is="h2" align="center" colour="white">
+						<Heading as="h2" colour="white">
 							I&apos;m a sticky header
 						</Heading>
 					</Box>

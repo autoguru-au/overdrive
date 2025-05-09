@@ -1,20 +1,11 @@
-import * as React from 'react';
-import {
-	Children,
-	ComponentProps,
-	FunctionComponent,
-	ReactElement,
-} from 'react';
-import flattenChildren from 'react-keyed-flatten-children';
+import React, { type FunctionComponent, type ReactElement } from 'react';
 
-import { Column, Columns } from '../Columns';
+import { Inline, type InlineProps } from '../Inline';
 
-export interface Props
-	extends Partial<
-		Pick<ComponentProps<typeof Columns>, 'noWrap' | 'wrappingDirection'>
-	> {
+export interface Props extends Pick<InlineProps, 'noWrap'> {
 	children: ReactElement | ReactElement[];
 	className?: string;
+	wrappingDirection?: 'default' | 'reverse';
 }
 
 export const Actions: FunctionComponent<Props> = ({
@@ -22,11 +13,13 @@ export const Actions: FunctionComponent<Props> = ({
 	noWrap,
 	wrappingDirection,
 }) => (
-	<Columns space="3" noWrap={noWrap} wrappingDirection={wrappingDirection}>
-		{Children.map(flattenChildren(children), (child) => (
-			<Column>{child}</Column>
-		))}
-	</Columns>
+	<Inline
+		space="3"
+		noWrap={noWrap}
+		reverse={wrappingDirection === 'reverse' ? true : undefined}
+	>
+		{children}
+	</Inline>
 );
 
 export default Actions;
