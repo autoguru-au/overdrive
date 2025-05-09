@@ -229,7 +229,11 @@ const responsiveProperties = defineProperties({
 			full: '100%',
 			auto: 'auto',
 		},
-		maxWidth: ['fit-content', 'max-content'],
+		maxWidth: {
+			...tokens.contentWidth,
+			'fit-content': 'fit-content',
+			'max-content': 'max-content',
+		},
 		minWidth: ['auto', 'fit-content'],
 		gap: gapSizesWithVar,
 		columnGap: space,
