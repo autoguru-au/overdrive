@@ -114,7 +114,7 @@ export const useBox = <E extends ElementType = 'div'>({
 				className: _className,
 				...props,
 			}),
-		[_className, props],
+		[as, _className, props],
 	);
 
 	// TODO: try to combine this into the first deep compare to simplify
@@ -126,7 +126,7 @@ export const useBox = <E extends ElementType = 'div'>({
 				testId,
 			}),
 		}),
-		[props],
+		[odComponent, props, testId],
 	);
 
 	const componentProps = {
