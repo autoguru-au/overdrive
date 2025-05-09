@@ -1,10 +1,9 @@
 import { ArgTypes } from '@storybook/react';
 import { type ComponentProps } from 'react';
 
+import { Box } from '../../components/Box/Box';
 import { colourMap as baseColours } from '../../themes/base/colours';
 import { tokens } from '../../themes/base/tokens';
-
-import { Box } from './Box';
 
 export const scaleOptions = Object.values(tokens.space);
 const boxShadowOptions = Object.keys(tokens.elevation);
