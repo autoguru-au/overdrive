@@ -6,19 +6,19 @@ exports[`<Tabs /> > should allow id overriding 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe TabList_styledTabList__1cu98lp0 TabList_styledTabList_appearance_underlined__1cu98lp1"
+    class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq TabList_styledTabList__1cu98lp0 TabList_styledTabList_appearance_underlined__1cu98lp1"
   >
     <div
       class="reset_block__1oah0224"
     >
       <div
         aria-orientation="horizontal"
-        class="reset_block__1oah0224 sprinkles_display_block_mobile__onxwju7q sprinkles_flexWrap_nowrap_mobile__onxwjul2 sprinkles_width_full_mobile__onxwjuda useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_noWrap__1xnpmd7s"
+        class="reset_block__1oah0224 sprinkles_display_block_mobile__onxwju7q sprinkles_flexWrap_nowrap_mobile__onxwjule sprinkles_width_full_mobile__onxwjuda useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_noWrap__1xnpmd7s"
         role="tablist"
       >
         <button
           aria-selected="true"
-          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_backgroundColor_transparent__onxwju2n sprinkles_display_inline-flex_mobile__onxwju8e sprinkles_justifyContent_center_mobile__onxwjuhy useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1 Tab_styledTab_active_true__11wt3mu3 Tab_styledTab_compound_0__11wt3mu4"
+          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_backgroundColor_transparent__onxwju2n sprinkles_display_inline-flex_mobile__onxwju8e sprinkles_justifyContent_center_mobile__onxwjuia useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1 Tab_styledTab_active_true__11wt3mu3 Tab_styledTab_compound_0__11wt3mu4"
           data-controls="tab-1-title-0"
           role="tab"
         >
@@ -30,7 +30,7 @@ exports[`<Tabs /> > should allow id overriding 1`] = `
         </button>
         <button
           aria-selected="false"
-          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_backgroundColor_transparent__onxwju2n sprinkles_display_inline-flex_mobile__onxwju8e sprinkles_justifyContent_center_mobile__onxwjuhy useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1"
+          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_backgroundColor_transparent__onxwju2n sprinkles_display_inline-flex_mobile__onxwju8e sprinkles_justifyContent_center_mobile__onxwjuia useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1"
           data-controls="tab-2-title-1"
           role="tab"
           tabindex="-1"
@@ -43,7 +43,7 @@ exports[`<Tabs /> > should allow id overriding 1`] = `
         </button>
         <button
           aria-selected="false"
-          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_backgroundColor_transparent__onxwju2n sprinkles_display_inline-flex_mobile__onxwju8e sprinkles_justifyContent_center_mobile__onxwjuhy useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1"
+          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_backgroundColor_transparent__onxwju2n sprinkles_display_inline-flex_mobile__onxwju8e sprinkles_justifyContent_center_mobile__onxwjuia useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1"
           data-controls="tab-3-title-2"
           role="tab"
           tabindex="-1"
@@ -58,7 +58,7 @@ exports[`<Tabs /> > should allow id overriding 1`] = `
     </div>
   </div>
   <div
-    class="reset_block__1oah0224 sprinkles_paddingTop_6_mobile__onxwjur2 sprinkles_paddingBottom_6_mobile__onxwjunq sprinkles_width_full_mobile__onxwjuda TabPanes_root__15xyz920"
+    class="reset_block__1oah0224 sprinkles_paddingTop_6_mobile__onxwjure sprinkles_paddingBottom_6_mobile__onxwjuo2 sprinkles_width_full_mobile__onxwjuda TabPanes_root__15xyz920"
   >
     <div
       class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjuda TabPane_root__1e18dwc0"
@@ -96,28 +96,28 @@ exports[`<Tabs /> > should allow rendering indications 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe TabList_styledTabList__1cu98lp0 TabList_styledTabList_appearance_underlined__1cu98lp1"
+    class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq TabList_styledTabList__1cu98lp0 TabList_styledTabList_appearance_underlined__1cu98lp1"
   >
     <div
       class="reset_block__1oah0224"
     >
       <div
         aria-orientation="horizontal"
-        class="reset_block__1oah0224 sprinkles_display_block_mobile__onxwju7q sprinkles_flexWrap_nowrap_mobile__onxwjul2 sprinkles_width_full_mobile__onxwjuda useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_noWrap__1xnpmd7s"
+        class="reset_block__1oah0224 sprinkles_display_block_mobile__onxwju7q sprinkles_flexWrap_nowrap_mobile__onxwjule sprinkles_width_full_mobile__onxwjuda useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_noWrap__1xnpmd7s"
         role="tablist"
       >
         <button
           aria-selected="true"
-          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_backgroundColor_transparent__onxwju2n sprinkles_display_inline-flex_mobile__onxwju8e sprinkles_justifyContent_center_mobile__onxwjuhy useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1 Tab_styledTab_active_true__11wt3mu3 Tab_styledTab_compound_0__11wt3mu4"
+          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_backgroundColor_transparent__onxwju2n sprinkles_display_inline-flex_mobile__onxwju8e sprinkles_justifyContent_center_mobile__onxwjuia useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1 Tab_styledTab_active_true__11wt3mu3 Tab_styledTab_compound_0__11wt3mu4"
           data-controls="od-11-0-tab"
           role="tab"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuk6 sprinkles_flexWrap_nowrap_mobile__onxwjul2 sprinkles_gap_2_mobile__onxwjue2 sprinkles_justifyContent_center_mobile__onxwjuhy sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_position_relative_mobile__onxwju9m"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuki sprinkles_flexWrap_nowrap_mobile__onxwjule sprinkles_gap_2_mobile__onxwjuee sprinkles_justifyContent_center_mobile__onxwjuia sprinkles_minWidth_fit-content_mobile__onxwjue6 sprinkles_position_relative_mobile__onxwju9m"
             data-od-component="inline"
           >
             <div
-              class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_2_mobile__onxwjue2 sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+              class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_2_mobile__onxwjuee sprinkles_flexWrap_nowrap_mobile__onxwjule"
             >
               <span
                 class="Tab_item__11wt3mu6"
@@ -126,7 +126,7 @@ exports[`<Tabs /> > should allow rendering indications 1`] = `
               </span>
             </div>
             <div
-              class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_2_mobile__onxwjue2 sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+              class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_2_mobile__onxwjuee sprinkles_flexWrap_nowrap_mobile__onxwjule"
             >
               <span
                 align="center"
@@ -139,17 +139,17 @@ exports[`<Tabs /> > should allow rendering indications 1`] = `
         </button>
         <button
           aria-selected="false"
-          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_backgroundColor_transparent__onxwju2n sprinkles_display_inline-flex_mobile__onxwju8e sprinkles_justifyContent_center_mobile__onxwjuhy useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1"
+          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_backgroundColor_transparent__onxwju2n sprinkles_display_inline-flex_mobile__onxwju8e sprinkles_justifyContent_center_mobile__onxwjuia useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1"
           data-controls="od-11-1-tab"
           role="tab"
           tabindex="-1"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuk6 sprinkles_flexWrap_nowrap_mobile__onxwjul2 sprinkles_gap_2_mobile__onxwjue2 sprinkles_justifyContent_center_mobile__onxwjuhy sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_position_relative_mobile__onxwju9m"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuki sprinkles_flexWrap_nowrap_mobile__onxwjule sprinkles_gap_2_mobile__onxwjuee sprinkles_justifyContent_center_mobile__onxwjuia sprinkles_minWidth_fit-content_mobile__onxwjue6 sprinkles_position_relative_mobile__onxwju9m"
             data-od-component="inline"
           >
             <div
-              class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_2_mobile__onxwjue2 sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+              class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_2_mobile__onxwjuee sprinkles_flexWrap_nowrap_mobile__onxwjule"
             >
               <span
                 class="Tab_item__11wt3mu6"
@@ -158,7 +158,7 @@ exports[`<Tabs /> > should allow rendering indications 1`] = `
               </span>
             </div>
             <div
-              class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_2_mobile__onxwjue2 sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+              class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_2_mobile__onxwjuee sprinkles_flexWrap_nowrap_mobile__onxwjule"
             >
               <span
                 align="center"
@@ -171,17 +171,17 @@ exports[`<Tabs /> > should allow rendering indications 1`] = `
         </button>
         <button
           aria-selected="false"
-          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_backgroundColor_transparent__onxwju2n sprinkles_display_inline-flex_mobile__onxwju8e sprinkles_justifyContent_center_mobile__onxwjuhy useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1"
+          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_backgroundColor_transparent__onxwju2n sprinkles_display_inline-flex_mobile__onxwju8e sprinkles_justifyContent_center_mobile__onxwjuia useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1"
           data-controls="od-11-2-tab"
           role="tab"
           tabindex="-1"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuk6 sprinkles_flexWrap_nowrap_mobile__onxwjul2 sprinkles_gap_2_mobile__onxwjue2 sprinkles_justifyContent_center_mobile__onxwjuhy sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_position_relative_mobile__onxwju9m"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuki sprinkles_flexWrap_nowrap_mobile__onxwjule sprinkles_gap_2_mobile__onxwjuee sprinkles_justifyContent_center_mobile__onxwjuia sprinkles_minWidth_fit-content_mobile__onxwjue6 sprinkles_position_relative_mobile__onxwju9m"
             data-od-component="inline"
           >
             <div
-              class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_2_mobile__onxwjue2 sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+              class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_2_mobile__onxwjuee sprinkles_flexWrap_nowrap_mobile__onxwjule"
             >
               <span
                 class="Tab_item__11wt3mu6"
@@ -190,7 +190,7 @@ exports[`<Tabs /> > should allow rendering indications 1`] = `
               </span>
             </div>
             <div
-              class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_2_mobile__onxwjue2 sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+              class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_2_mobile__onxwjuee sprinkles_flexWrap_nowrap_mobile__onxwjule"
             >
               <span
                 align="center"
@@ -205,7 +205,7 @@ exports[`<Tabs /> > should allow rendering indications 1`] = `
     </div>
   </div>
   <div
-    class="reset_block__1oah0224 sprinkles_paddingTop_6_mobile__onxwjur2 sprinkles_paddingBottom_6_mobile__onxwjunq sprinkles_width_full_mobile__onxwjuda TabPanes_root__15xyz920"
+    class="reset_block__1oah0224 sprinkles_paddingTop_6_mobile__onxwjure sprinkles_paddingBottom_6_mobile__onxwjuo2 sprinkles_width_full_mobile__onxwjuda TabPanes_root__15xyz920"
   >
     <div
       class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjuda TabPane_root__1e18dwc0"
@@ -243,19 +243,19 @@ exports[`<Tabs /> > should match snapshot (high level) 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe TabList_styledTabList__1cu98lp0 TabList_styledTabList_appearance_underlined__1cu98lp1"
+    class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq TabList_styledTabList__1cu98lp0 TabList_styledTabList_appearance_underlined__1cu98lp1"
   >
     <div
       class="reset_block__1oah0224"
     >
       <div
         aria-orientation="horizontal"
-        class="reset_block__1oah0224 sprinkles_display_block_mobile__onxwju7q sprinkles_flexWrap_nowrap_mobile__onxwjul2 sprinkles_width_full_mobile__onxwjuda useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_noWrap__1xnpmd7s"
+        class="reset_block__1oah0224 sprinkles_display_block_mobile__onxwju7q sprinkles_flexWrap_nowrap_mobile__onxwjule sprinkles_width_full_mobile__onxwjuda useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_noWrap__1xnpmd7s"
         role="tablist"
       >
         <button
           aria-selected="true"
-          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_backgroundColor_transparent__onxwju2n sprinkles_display_inline-flex_mobile__onxwju8e sprinkles_justifyContent_center_mobile__onxwjuhy useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1 Tab_styledTab_active_true__11wt3mu3 Tab_styledTab_compound_0__11wt3mu4"
+          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_backgroundColor_transparent__onxwju2n sprinkles_display_inline-flex_mobile__onxwju8e sprinkles_justifyContent_center_mobile__onxwjuia useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1 Tab_styledTab_active_true__11wt3mu3 Tab_styledTab_compound_0__11wt3mu4"
           data-controls="od-1-0-tab"
           role="tab"
         >
@@ -267,7 +267,7 @@ exports[`<Tabs /> > should match snapshot (high level) 1`] = `
         </button>
         <button
           aria-selected="false"
-          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_backgroundColor_transparent__onxwju2n sprinkles_display_inline-flex_mobile__onxwju8e sprinkles_justifyContent_center_mobile__onxwjuhy useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1"
+          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_backgroundColor_transparent__onxwju2n sprinkles_display_inline-flex_mobile__onxwju8e sprinkles_justifyContent_center_mobile__onxwjuia useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1"
           data-controls="od-1-1-tab"
           role="tab"
           tabindex="-1"
@@ -280,7 +280,7 @@ exports[`<Tabs /> > should match snapshot (high level) 1`] = `
         </button>
         <button
           aria-selected="false"
-          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_backgroundColor_transparent__onxwju2n sprinkles_display_inline-flex_mobile__onxwju8e sprinkles_justifyContent_center_mobile__onxwjuhy useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1"
+          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_backgroundColor_transparent__onxwju2n sprinkles_display_inline-flex_mobile__onxwju8e sprinkles_justifyContent_center_mobile__onxwjuia useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_bold__1xnpmd7r useTextStyles_noWrap__1xnpmd7s useTextStyles_sizes_3__1xnpmd73 Tab_styledTab__11wt3mu0 Tab_styledTab_appearance_underlined__11wt3mu1"
           data-controls="od-1-2-tab"
           role="tab"
           tabindex="-1"
@@ -295,7 +295,7 @@ exports[`<Tabs /> > should match snapshot (high level) 1`] = `
     </div>
   </div>
   <div
-    class="reset_block__1oah0224 sprinkles_paddingTop_6_mobile__onxwjur2 sprinkles_paddingBottom_6_mobile__onxwjunq sprinkles_width_full_mobile__onxwjuda TabPanes_root__15xyz920"
+    class="reset_block__1oah0224 sprinkles_paddingTop_6_mobile__onxwjure sprinkles_paddingBottom_6_mobile__onxwjuo2 sprinkles_width_full_mobile__onxwjuda TabPanes_root__15xyz920"
   >
     <div
       class="reset_block__1oah0224 sprinkles_width_full_mobile__onxwjuda TabPane_root__1e18dwc0"

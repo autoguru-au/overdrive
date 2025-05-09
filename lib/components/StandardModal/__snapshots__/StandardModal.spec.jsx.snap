@@ -32,20 +32,20 @@ exports[`<StandardModal /> > should match snapshot with title and body 1`] = `
       >
         <div
           aria-hidden="false"
-          class="reset_block__1oah0224 sprinkles_height_full_mobile__onxwjubq sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_center_mobile__onxwjuhy StandardModal_container__1trinj20"
+          class="reset_block__1oah0224 sprinkles_height_full_mobile__onxwjubq sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_justifyContent_center_mobile__onxwjuia StandardModal_container__1trinj20"
           role="none presentation"
         >
           <article
             aria-labelledby="od-4"
             aria-modal="true"
-            class="reset_block__1oah0224 sprinkles_overflow_hidden_mobile__onxwju8m sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_column_mobile__onxwjuka sprinkles_marginTop_8_mobile__onxwjuvy sprinkles_backgroundColor_white__onxwju5d StandardModal_modal__1trinj21 StandardModal_modalSizeStandard__1trinj24"
+            class="reset_block__1oah0224 sprinkles_overflow_hidden_mobile__onxwju8m sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_column_mobile__onxwjukm sprinkles_marginTop_8_mobile__onxwjuwa sprinkles_backgroundColor_white__onxwju5d StandardModal_modal__1trinj21 StandardModal_modalSizeStandard__1trinj24"
             role="dialog"
           >
             <header
-              class="reset_block__1oah0224 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_1__onxwju1m sprinkles_paddingTop_3_mobile__onxwjuqq sprinkles_paddingBottom_3_mobile__onxwjune sprinkles_flexShrink_0_mobile__onxwjuku sprinkles_position_relative_mobile__onxwju9m sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_center_mobile__onxwjuhy sprinkles_width_full_mobile__onxwjuda sprinkles_paddingLeft_5_mobile__onxwjuoq sprinkles_paddingRight_2_mobile__onxwjupi sprinkles_borderBottomColor_light__onxwju5f sprinkles_borderLeftColor_light__onxwju5i sprinkles_borderRightColor_light__onxwju5l sprinkles_borderTopColor_light__onxwju5o"
+              class="reset_block__1oah0224 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_1__onxwju1m sprinkles_paddingTop_3_mobile__onxwjur2 sprinkles_paddingBottom_3_mobile__onxwjunq sprinkles_flexShrink_0_mobile__onxwjul6 sprinkles_position_relative_mobile__onxwju9m sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_justifyContent_center_mobile__onxwjuia sprinkles_width_full_mobile__onxwjuda sprinkles_paddingLeft_5_mobile__onxwjup2 sprinkles_paddingRight_2_mobile__onxwjupu sprinkles_borderBottomColor_light__onxwju5f sprinkles_borderLeftColor_light__onxwju5i sprinkles_borderRightColor_light__onxwju5l sprinkles_borderTopColor_light__onxwju5o"
             >
               <div
-                class="reset_block__1oah0224 sprinkles_flexGrow_1_mobile__onxwjukq"
+                class="reset_block__1oah0224 sprinkles_flexGrow_1_mobile__onxwjul2"
                 id="od-4"
               >
                 <h4
@@ -56,11 +56,11 @@ exports[`<StandardModal /> > should match snapshot with title and body 1`] = `
               </div>
               <button
                 aria-label="close"
-                class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_none__onxwju1p sprinkles_borderLeftWidth_none__onxwju1l sprinkles_borderRightWidth_none__onxwju1t sprinkles_borderTopWidth_none__onxwju1x sprinkles_borderRadius_pill__onxwju8 sprinkles_paddingLeft_3_mobile__onxwjuoi sprinkles_paddingRight_3_mobile__onxwjupm sprinkles_paddingTop_none_mobile__onxwjuri sprinkles_paddingBottom_none_mobile__onxwjuo6 sprinkles_display_inline-block_mobile__onxwju8a sprinkles_overflow_hidden_mobile__onxwju8m sprinkles_textAlign_center_mobile__onxwjua6 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7q useTextStyles_sizes_3__1xnpmd73 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon54 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_true__p2yon5h Button_button_compound_2__p2yon5l Button_button_compound_8__p2yon5r"
+                class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_none__onxwju1p sprinkles_borderLeftWidth_none__onxwju1l sprinkles_borderRightWidth_none__onxwju1t sprinkles_borderTopWidth_none__onxwju1x sprinkles_borderRadius_pill__onxwju8 sprinkles_paddingLeft_3_mobile__onxwjuou sprinkles_paddingRight_3_mobile__onxwjupy sprinkles_paddingTop_none_mobile__onxwjuru sprinkles_paddingBottom_none_mobile__onxwjuoi sprinkles_display_inline-block_mobile__onxwju8a sprinkles_overflow_hidden_mobile__onxwju8m sprinkles_textAlign_center_mobile__onxwjua6 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7q useTextStyles_sizes_3__1xnpmd73 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon54 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_true__p2yon5h Button_button_compound_2__p2yon5l Button_button_compound_8__p2yon5r"
                 type="button"
               >
                 <div
-                  class="reset_block__1oah0224 sprinkles_height_full_mobile__onxwjubq sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_center_mobile__onxwjuhy Button_body__p2yon50"
+                  class="reset_block__1oah0224 sprinkles_height_full_mobile__onxwjubq sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_justifyContent_center_mobile__onxwjuia Button_body__p2yon50"
                 >
                   <span
                     class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_muted__1xnpmd7h"
@@ -82,7 +82,7 @@ exports[`<StandardModal /> > should match snapshot with title and body 1`] = `
               </button>
             </header>
             <main
-              class="sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_column_mobile__onxwjuka sprinkles_flexGrow_1_mobile__onxwjukq sprinkles_height_full_mobile__onxwjubq StandardModal_content__1trinj26"
+              class="sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_column_mobile__onxwjukm sprinkles_flexGrow_1_mobile__onxwjul2 sprinkles_height_full_mobile__onxwjubq StandardModal_content__1trinj26"
             >
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis convallis neque a laoreet maximus. Vestibulum hendrerit quam at mi venenatis faucibus at vel nisi. In ut risus et ipsum tincidunt tempor. Suspendisse potenti. Praesent faucibus posuere risus, at congue mauris porttitor ut. Donec sit amet elit vitae purus dictum aliquet quis ut ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum dui sapien, porttitor ac erat vel, malesuada rutrum mauris. Nam arcu tellus, pretium ut aliquet eget, ultrices vel est. Maecenas dapibus volutpat eros a volutpat.
@@ -133,20 +133,20 @@ exports[`<StandardModal /> > should match snapshot without title and body 1`] = 
       >
         <div
           aria-hidden="false"
-          class="reset_block__1oah0224 sprinkles_height_full_mobile__onxwjubq sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_center_mobile__onxwjuhy StandardModal_container__1trinj20"
+          class="reset_block__1oah0224 sprinkles_height_full_mobile__onxwjubq sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_justifyContent_center_mobile__onxwjuia StandardModal_container__1trinj20"
           role="none presentation"
         >
           <article
             aria-labelledby="od-3"
             aria-modal="true"
-            class="reset_block__1oah0224 sprinkles_overflow_hidden_mobile__onxwju8m sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_column_mobile__onxwjuka sprinkles_marginTop_8_mobile__onxwjuvy sprinkles_backgroundColor_white__onxwju5d StandardModal_modal__1trinj21 StandardModal_modalSizeStandard__1trinj24"
+            class="reset_block__1oah0224 sprinkles_overflow_hidden_mobile__onxwju8m sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_column_mobile__onxwjukm sprinkles_marginTop_8_mobile__onxwjuwa sprinkles_backgroundColor_white__onxwju5d StandardModal_modal__1trinj21 StandardModal_modalSizeStandard__1trinj24"
             role="dialog"
           >
             <header
-              class="reset_block__1oah0224 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_1__onxwju1m sprinkles_paddingTop_3_mobile__onxwjuqq sprinkles_paddingBottom_3_mobile__onxwjune sprinkles_flexShrink_0_mobile__onxwjuku sprinkles_position_relative_mobile__onxwju9m sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_center_mobile__onxwjuhy sprinkles_width_full_mobile__onxwjuda sprinkles_paddingLeft_5_mobile__onxwjuoq sprinkles_paddingRight_2_mobile__onxwjupi sprinkles_borderBottomColor_light__onxwju5f sprinkles_borderLeftColor_light__onxwju5i sprinkles_borderRightColor_light__onxwju5l sprinkles_borderTopColor_light__onxwju5o"
+              class="reset_block__1oah0224 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_1__onxwju1m sprinkles_paddingTop_3_mobile__onxwjur2 sprinkles_paddingBottom_3_mobile__onxwjunq sprinkles_flexShrink_0_mobile__onxwjul6 sprinkles_position_relative_mobile__onxwju9m sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_justifyContent_center_mobile__onxwjuia sprinkles_width_full_mobile__onxwjuda sprinkles_paddingLeft_5_mobile__onxwjup2 sprinkles_paddingRight_2_mobile__onxwjupu sprinkles_borderBottomColor_light__onxwju5f sprinkles_borderLeftColor_light__onxwju5i sprinkles_borderRightColor_light__onxwju5l sprinkles_borderTopColor_light__onxwju5o"
             >
               <div
-                class="reset_block__1oah0224 sprinkles_flexGrow_1_mobile__onxwjukq"
+                class="reset_block__1oah0224 sprinkles_flexGrow_1_mobile__onxwjul2"
                 id="od-3"
               >
                 <h4
@@ -155,11 +155,11 @@ exports[`<StandardModal /> > should match snapshot without title and body 1`] = 
               </div>
               <button
                 aria-label="close"
-                class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_none__onxwju1p sprinkles_borderLeftWidth_none__onxwju1l sprinkles_borderRightWidth_none__onxwju1t sprinkles_borderTopWidth_none__onxwju1x sprinkles_borderRadius_pill__onxwju8 sprinkles_paddingLeft_3_mobile__onxwjuoi sprinkles_paddingRight_3_mobile__onxwjupm sprinkles_paddingTop_none_mobile__onxwjuri sprinkles_paddingBottom_none_mobile__onxwjuo6 sprinkles_display_inline-block_mobile__onxwju8a sprinkles_overflow_hidden_mobile__onxwju8m sprinkles_textAlign_center_mobile__onxwjua6 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7q useTextStyles_sizes_3__1xnpmd73 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon54 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_true__p2yon5h Button_button_compound_2__p2yon5l Button_button_compound_8__p2yon5r"
+                class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_none__onxwju1p sprinkles_borderLeftWidth_none__onxwju1l sprinkles_borderRightWidth_none__onxwju1t sprinkles_borderTopWidth_none__onxwju1x sprinkles_borderRadius_pill__onxwju8 sprinkles_paddingLeft_3_mobile__onxwjuou sprinkles_paddingRight_3_mobile__onxwjupy sprinkles_paddingTop_none_mobile__onxwjuru sprinkles_paddingBottom_none_mobile__onxwjuoi sprinkles_display_inline-block_mobile__onxwju8a sprinkles_overflow_hidden_mobile__onxwju8m sprinkles_textAlign_center_mobile__onxwjua6 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7q useTextStyles_sizes_3__1xnpmd73 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon54 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_true__p2yon5h Button_button_compound_2__p2yon5l Button_button_compound_8__p2yon5r"
                 type="button"
               >
                 <div
-                  class="reset_block__1oah0224 sprinkles_height_full_mobile__onxwjubq sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_center_mobile__onxwjuhy Button_body__p2yon50"
+                  class="reset_block__1oah0224 sprinkles_height_full_mobile__onxwjubq sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_justifyContent_center_mobile__onxwjuia Button_body__p2yon50"
                 >
                   <span
                     class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_muted__1xnpmd7h"
@@ -181,7 +181,7 @@ exports[`<StandardModal /> > should match snapshot without title and body 1`] = 
               </button>
             </header>
             <main
-              class="sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_column_mobile__onxwjuka sprinkles_flexGrow_1_mobile__onxwjukq sprinkles_height_full_mobile__onxwjubq StandardModal_content__1trinj26"
+              class="sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_column_mobile__onxwjukm sprinkles_flexGrow_1_mobile__onxwjul2 sprinkles_height_full_mobile__onxwjubq StandardModal_content__1trinj26"
             />
           </article>
         </div>

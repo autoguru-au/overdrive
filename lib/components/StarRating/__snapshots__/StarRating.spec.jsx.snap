@@ -9,18 +9,18 @@ exports[`<StarRating /> > should match snapshot for small size 1`] = `
     class="reset_block__1oah0224"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuk6 sprinkles_flexWrap_wrap_mobile__onxwjul6 sprinkles_gap_4_mobile__onxwjuea sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_position_relative_mobile__onxwju9m"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuki sprinkles_flexWrap_wrap_mobile__onxwjuli sprinkles_gap_4_mobile__onxwjuem sprinkles_minWidth_fit-content_mobile__onxwjue6 sprinkles_position_relative_mobile__onxwju9m"
       data-od-component="inline"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_4_mobile__onxwjuea sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_4_mobile__onxwjuem sprinkles_flexWrap_nowrap_mobile__onxwjule"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuk6 sprinkles_flexWrap_wrap_mobile__onxwjul6 sprinkles_gap_none_mobile__onxwjuey sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_position_relative_mobile__onxwju9m"
+          class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuki sprinkles_flexWrap_wrap_mobile__onxwjuli sprinkles_gap_none_mobile__onxwjufa sprinkles_minWidth_fit-content_mobile__onxwjue6 sprinkles_position_relative_mobile__onxwju9m"
           data-od-component="inline"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjuey sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
           >
             <span
               class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0"
@@ -40,7 +40,7 @@ exports[`<StarRating /> > should match snapshot for small size 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjuey sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
           >
             <span
               class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0"
@@ -60,7 +60,7 @@ exports[`<StarRating /> > should match snapshot for small size 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjuey sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
           >
             <span
               class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0"
@@ -80,7 +80,7 @@ exports[`<StarRating /> > should match snapshot for small size 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjuey sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
           >
             <span
               class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0"
@@ -100,7 +100,7 @@ exports[`<StarRating /> > should match snapshot for small size 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjuey sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
           >
             <span
               class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
@@ -122,7 +122,7 @@ exports[`<StarRating /> > should match snapshot for small size 1`] = `
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_4_mobile__onxwjuea sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_4_mobile__onxwjuem sprinkles_flexWrap_nowrap_mobile__onxwjule"
       >
         <span
           class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_3__1xnpmd73"
@@ -145,18 +145,18 @@ exports[`<StarRating /> > should match snapshot with label 1`] = `
     class="reset_block__1oah0224"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuk6 sprinkles_flexWrap_wrap_mobile__onxwjul6 sprinkles_gap_4_mobile__onxwjuea sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_position_relative_mobile__onxwju9m"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuki sprinkles_flexWrap_wrap_mobile__onxwjuli sprinkles_gap_4_mobile__onxwjuem sprinkles_minWidth_fit-content_mobile__onxwjue6 sprinkles_position_relative_mobile__onxwju9m"
       data-od-component="inline"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_4_mobile__onxwjuea sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_4_mobile__onxwjuem sprinkles_flexWrap_nowrap_mobile__onxwjule"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuk6 sprinkles_flexWrap_wrap_mobile__onxwjul6 sprinkles_gap_none_mobile__onxwjuey sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_position_relative_mobile__onxwju9m"
+          class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuki sprinkles_flexWrap_wrap_mobile__onxwjuli sprinkles_gap_none_mobile__onxwjufa sprinkles_minWidth_fit-content_mobile__onxwjue6 sprinkles_position_relative_mobile__onxwju9m"
           data-od-component="inline"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjuey sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
           >
             <span
               class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0"
@@ -176,7 +176,7 @@ exports[`<StarRating /> > should match snapshot with label 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjuey sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
           >
             <span
               class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0"
@@ -196,7 +196,7 @@ exports[`<StarRating /> > should match snapshot with label 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjuey sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
           >
             <span
               class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0"
@@ -216,7 +216,7 @@ exports[`<StarRating /> > should match snapshot with label 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjuey sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
           >
             <span
               class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0"
@@ -236,7 +236,7 @@ exports[`<StarRating /> > should match snapshot with label 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjuey sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
           >
             <span
               class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
@@ -258,7 +258,7 @@ exports[`<StarRating /> > should match snapshot with label 1`] = `
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_4_mobile__onxwjuea sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_4_mobile__onxwjuem sprinkles_flexWrap_nowrap_mobile__onxwjule"
       >
         <span
           class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74"
@@ -281,18 +281,18 @@ exports[`<StarRating /> > should match snapshot with value 1`] = `
     class="reset_block__1oah0224"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuk6 sprinkles_flexWrap_wrap_mobile__onxwjul6 sprinkles_gap_4_mobile__onxwjuea sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_position_relative_mobile__onxwju9m"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuki sprinkles_flexWrap_wrap_mobile__onxwjuli sprinkles_gap_4_mobile__onxwjuem sprinkles_minWidth_fit-content_mobile__onxwjue6 sprinkles_position_relative_mobile__onxwju9m"
       data-od-component="inline"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_4_mobile__onxwjuea sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_4_mobile__onxwjuem sprinkles_flexWrap_nowrap_mobile__onxwjule"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuk6 sprinkles_flexWrap_wrap_mobile__onxwjul6 sprinkles_gap_none_mobile__onxwjuey sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_position_relative_mobile__onxwju9m"
+          class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuki sprinkles_flexWrap_wrap_mobile__onxwjuli sprinkles_gap_none_mobile__onxwjufa sprinkles_minWidth_fit-content_mobile__onxwjue6 sprinkles_position_relative_mobile__onxwju9m"
           data-od-component="inline"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjuey sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
           >
             <span
               class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0"
@@ -312,7 +312,7 @@ exports[`<StarRating /> > should match snapshot with value 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjuey sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
           >
             <span
               class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0"
@@ -332,7 +332,7 @@ exports[`<StarRating /> > should match snapshot with value 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjuey sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
           >
             <span
               class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0"
@@ -352,7 +352,7 @@ exports[`<StarRating /> > should match snapshot with value 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjuey sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
           >
             <span
               class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
@@ -372,7 +372,7 @@ exports[`<StarRating /> > should match snapshot with value 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjuey sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
           >
             <span
               class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
@@ -394,7 +394,7 @@ exports[`<StarRating /> > should match snapshot with value 1`] = `
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_4_mobile__onxwjuea sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_4_mobile__onxwjuem sprinkles_flexWrap_nowrap_mobile__onxwjule"
       >
         <span
           class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74"
@@ -417,18 +417,18 @@ exports[`<StarRating /> > should match snapshot without value 1`] = `
     class="reset_block__1oah0224"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuk6 sprinkles_flexWrap_wrap_mobile__onxwjul6 sprinkles_gap_4_mobile__onxwjuea sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_position_relative_mobile__onxwju9m"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuki sprinkles_flexWrap_wrap_mobile__onxwjuli sprinkles_gap_4_mobile__onxwjuem sprinkles_minWidth_fit-content_mobile__onxwjue6 sprinkles_position_relative_mobile__onxwju9m"
       data-od-component="inline"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_4_mobile__onxwjuea sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_4_mobile__onxwjuem sprinkles_flexWrap_nowrap_mobile__onxwjule"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuk6 sprinkles_flexWrap_wrap_mobile__onxwjul6 sprinkles_gap_none_mobile__onxwjuey sprinkles_minWidth_fit-content_mobile__onxwjudu sprinkles_position_relative_mobile__onxwju9m"
+          class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuki sprinkles_flexWrap_wrap_mobile__onxwjuli sprinkles_gap_none_mobile__onxwjufa sprinkles_minWidth_fit-content_mobile__onxwjue6 sprinkles_position_relative_mobile__onxwju9m"
           data-od-component="inline"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjuey sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
           >
             <span
               class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
@@ -448,7 +448,7 @@ exports[`<StarRating /> > should match snapshot without value 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjuey sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
           >
             <span
               class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
@@ -468,7 +468,7 @@ exports[`<StarRating /> > should match snapshot without value 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjuey sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
           >
             <span
               class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
@@ -488,7 +488,7 @@ exports[`<StarRating /> > should match snapshot without value 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjuey sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
           >
             <span
               class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
@@ -508,7 +508,7 @@ exports[`<StarRating /> > should match snapshot without value 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjuey sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
           >
             <span
               class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
@@ -530,7 +530,7 @@ exports[`<StarRating /> > should match snapshot without value 1`] = `
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_4_mobile__onxwjuea sprinkles_flexWrap_nowrap_mobile__onxwjul2"
+        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_4_mobile__onxwjuem sprinkles_flexWrap_nowrap_mobile__onxwjule"
       >
         <span
           class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74"

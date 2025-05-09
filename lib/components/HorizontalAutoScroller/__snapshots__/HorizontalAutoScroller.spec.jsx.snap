@@ -6,21 +6,21 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_alignItems_stretch_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_column_mobile__onxwjuka sprinkles_gap_5_mobile__onxwjuee"
+    class="reset_block__1oah0224 sprinkles_alignItems_stretch_mobile__onxwjui2 sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_column_mobile__onxwjukm sprinkles_gap_5_mobile__onxwjueq"
     data-od-component="horizontal-auto-scroller"
   >
     <div
       class="reset_block__1oah0224 sprinkles_overflow_hidden_mobile__onxwju8m sprinkles_position_relative_mobile__onxwju9m"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_flex-start_mobile__onxwjuhu sprinkles_position_absolute_mobile__onxwju9q HorizontalAutoScroller_controllerBtn__2i92q00 HorizontalAutoScroller_prevBtn__2i92q02"
+        class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_justifyContent_flex-start_mobile__onxwjui6 sprinkles_position_absolute_mobile__onxwju9q HorizontalAutoScroller_controllerBtn__2i92q00 HorizontalAutoScroller_prevBtn__2i92q02"
       >
         <button
-          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_none__onxwju1p sprinkles_borderLeftWidth_none__onxwju1l sprinkles_borderRightWidth_none__onxwju1t sprinkles_borderTopWidth_none__onxwju1x sprinkles_borderRadius_pill__onxwju8 sprinkles_paddingLeft_4_mobile__onxwjuom sprinkles_paddingRight_4_mobile__onxwjupq sprinkles_paddingTop_none_mobile__onxwjuri sprinkles_paddingBottom_none_mobile__onxwjuo6 sprinkles_display_inline-block_mobile__onxwju8a sprinkles_overflow_hidden_mobile__onxwju8m sprinkles_textAlign_center_mobile__onxwjua6 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7q useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_5__p2yon5o"
+          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_none__onxwju1p sprinkles_borderLeftWidth_none__onxwju1l sprinkles_borderRightWidth_none__onxwju1t sprinkles_borderTopWidth_none__onxwju1x sprinkles_borderRadius_pill__onxwju8 sprinkles_paddingLeft_4_mobile__onxwjuoy sprinkles_paddingRight_4_mobile__onxwjuq2 sprinkles_paddingTop_none_mobile__onxwjuru sprinkles_paddingBottom_none_mobile__onxwjuoi sprinkles_display_inline-block_mobile__onxwju8a sprinkles_overflow_hidden_mobile__onxwju8m sprinkles_textAlign_center_mobile__onxwjua6 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7q useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_5__p2yon5o"
           type="button"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_height_full_mobile__onxwjubq sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_center_mobile__onxwjuhy Button_body__p2yon50"
+            class="reset_block__1oah0224 sprinkles_height_full_mobile__onxwjubq sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_justifyContent_center_mobile__onxwjuia Button_body__p2yon50"
           >
             <span
               class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4"
@@ -42,7 +42,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
         </button>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_paddingLeft_7_mobile__onxwjuoy sprinkles_paddingLeft_8_tablet__onxwjup3 sprinkles_paddingRight_7_mobile__onxwjuq2 sprinkles_paddingRight_8_tablet__onxwjuq7 sprinkles_alignItems_stretch_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_overflow_hidden_mobile__onxwju8m sprinkles_flexWrap_nowrap_mobile__onxwjul2 sprinkles_width_full_mobile__onxwjuda sprinkles_gap_7_mobile__onxwjuem sprinkles_gap_5_tablet__onxwjuef"
+        class="reset_block__1oah0224 sprinkles_paddingLeft_7_mobile__onxwjupa sprinkles_paddingLeft_8_tablet__onxwjupf sprinkles_paddingRight_7_mobile__onxwjuqe sprinkles_paddingRight_8_tablet__onxwjuqj sprinkles_alignItems_stretch_mobile__onxwjui2 sprinkles_display_flex_mobile__onxwju7y sprinkles_overflow_hidden_mobile__onxwju8m sprinkles_flexWrap_nowrap_mobile__onxwjule sprinkles_width_full_mobile__onxwjuda sprinkles_gap_7_mobile__onxwjuey sprinkles_gap_5_tablet__onxwjuer"
       >
         <div
           class="reset_block__1oah0224 HorizontalAutoScroller_controllerCol__2i92q01"
@@ -50,7 +50,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
           <span />
         </div>
         <div
-          class="reset_block__1oah0224 sprinkles_flexGrow_0_mobile__onxwjukm sprinkles_flexShrink_0_mobile__onxwjuku sprinkles_alignSelf_stretch_mobile__onxwjujq HorizontalAutoScroller_itemMinWidth__2i92q04 HorizontalAutoScroller_flexBasis_1/2_mobile__2i92q07"
+          class="reset_block__1oah0224 sprinkles_flexGrow_0_mobile__onxwjuky sprinkles_flexShrink_0_mobile__onxwjul6 sprinkles_alignSelf_stretch_mobile__onxwjuk2 HorizontalAutoScroller_itemMinWidth__2i92q04 HorizontalAutoScroller_flexBasis_1/2_mobile__2i92q07"
         >
           <div
             class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju7y sprinkles_height_full_mobile__onxwjubq sprinkles_width_full_mobile__onxwjuda"
@@ -63,7 +63,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
           </div>
         </div>
         <div
-          class="reset_block__1oah0224 sprinkles_flexGrow_0_mobile__onxwjukm sprinkles_flexShrink_0_mobile__onxwjuku sprinkles_alignSelf_stretch_mobile__onxwjujq HorizontalAutoScroller_itemMinWidth__2i92q04 HorizontalAutoScroller_flexBasis_1/2_mobile__2i92q07"
+          class="reset_block__1oah0224 sprinkles_flexGrow_0_mobile__onxwjuky sprinkles_flexShrink_0_mobile__onxwjul6 sprinkles_alignSelf_stretch_mobile__onxwjuk2 HorizontalAutoScroller_itemMinWidth__2i92q04 HorizontalAutoScroller_flexBasis_1/2_mobile__2i92q07"
         >
           <div
             class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju7y sprinkles_height_full_mobile__onxwjubq sprinkles_width_full_mobile__onxwjuda"
@@ -76,7 +76,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
           </div>
         </div>
         <div
-          class="reset_block__1oah0224 sprinkles_flexGrow_0_mobile__onxwjukm sprinkles_flexShrink_0_mobile__onxwjuku sprinkles_alignSelf_stretch_mobile__onxwjujq HorizontalAutoScroller_itemMinWidth__2i92q04 HorizontalAutoScroller_flexBasis_1/2_mobile__2i92q07"
+          class="reset_block__1oah0224 sprinkles_flexGrow_0_mobile__onxwjuky sprinkles_flexShrink_0_mobile__onxwjul6 sprinkles_alignSelf_stretch_mobile__onxwjuk2 HorizontalAutoScroller_itemMinWidth__2i92q04 HorizontalAutoScroller_flexBasis_1/2_mobile__2i92q07"
         >
           <div
             class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju7y sprinkles_height_full_mobile__onxwjubq sprinkles_width_full_mobile__onxwjuda"
@@ -89,7 +89,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
           </div>
         </div>
         <div
-          class="reset_block__1oah0224 sprinkles_flexGrow_0_mobile__onxwjukm sprinkles_flexShrink_0_mobile__onxwjuku sprinkles_alignSelf_stretch_mobile__onxwjujq HorizontalAutoScroller_itemMinWidth__2i92q04 HorizontalAutoScroller_flexBasis_1/2_mobile__2i92q07"
+          class="reset_block__1oah0224 sprinkles_flexGrow_0_mobile__onxwjuky sprinkles_flexShrink_0_mobile__onxwjul6 sprinkles_alignSelf_stretch_mobile__onxwjuk2 HorizontalAutoScroller_itemMinWidth__2i92q04 HorizontalAutoScroller_flexBasis_1/2_mobile__2i92q07"
         >
           <div
             class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju7y sprinkles_height_full_mobile__onxwjubq sprinkles_width_full_mobile__onxwjuda"
@@ -102,7 +102,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
           </div>
         </div>
         <div
-          class="reset_block__1oah0224 sprinkles_flexGrow_0_mobile__onxwjukm sprinkles_flexShrink_0_mobile__onxwjuku sprinkles_alignSelf_stretch_mobile__onxwjujq HorizontalAutoScroller_itemMinWidth__2i92q04 HorizontalAutoScroller_flexBasis_1/2_mobile__2i92q07"
+          class="reset_block__1oah0224 sprinkles_flexGrow_0_mobile__onxwjuky sprinkles_flexShrink_0_mobile__onxwjul6 sprinkles_alignSelf_stretch_mobile__onxwjuk2 HorizontalAutoScroller_itemMinWidth__2i92q04 HorizontalAutoScroller_flexBasis_1/2_mobile__2i92q07"
         >
           <div
             class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju7y sprinkles_height_full_mobile__onxwjubq sprinkles_width_full_mobile__onxwjuda"
@@ -115,7 +115,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
           </div>
         </div>
         <div
-          class="reset_block__1oah0224 sprinkles_flexGrow_0_mobile__onxwjukm sprinkles_flexShrink_0_mobile__onxwjuku sprinkles_alignSelf_stretch_mobile__onxwjujq HorizontalAutoScroller_itemMinWidth__2i92q04 HorizontalAutoScroller_flexBasis_1/2_mobile__2i92q07"
+          class="reset_block__1oah0224 sprinkles_flexGrow_0_mobile__onxwjuky sprinkles_flexShrink_0_mobile__onxwjul6 sprinkles_alignSelf_stretch_mobile__onxwjuk2 HorizontalAutoScroller_itemMinWidth__2i92q04 HorizontalAutoScroller_flexBasis_1/2_mobile__2i92q07"
         >
           <div
             class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju7y sprinkles_height_full_mobile__onxwjubq sprinkles_width_full_mobile__onxwjuda"
@@ -128,7 +128,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
           </div>
         </div>
         <div
-          class="reset_block__1oah0224 sprinkles_flexGrow_0_mobile__onxwjukm sprinkles_flexShrink_0_mobile__onxwjuku sprinkles_alignSelf_stretch_mobile__onxwjujq HorizontalAutoScroller_itemMinWidth__2i92q04 HorizontalAutoScroller_flexBasis_1/2_mobile__2i92q07"
+          class="reset_block__1oah0224 sprinkles_flexGrow_0_mobile__onxwjuky sprinkles_flexShrink_0_mobile__onxwjul6 sprinkles_alignSelf_stretch_mobile__onxwjuk2 HorizontalAutoScroller_itemMinWidth__2i92q04 HorizontalAutoScroller_flexBasis_1/2_mobile__2i92q07"
         >
           <div
             class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju7y sprinkles_height_full_mobile__onxwjubq sprinkles_width_full_mobile__onxwjuda"
@@ -141,7 +141,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
           </div>
         </div>
         <div
-          class="reset_block__1oah0224 sprinkles_flexGrow_0_mobile__onxwjukm sprinkles_flexShrink_0_mobile__onxwjuku sprinkles_alignSelf_stretch_mobile__onxwjujq HorizontalAutoScroller_itemMinWidth__2i92q04 HorizontalAutoScroller_flexBasis_1/2_mobile__2i92q07"
+          class="reset_block__1oah0224 sprinkles_flexGrow_0_mobile__onxwjuky sprinkles_flexShrink_0_mobile__onxwjul6 sprinkles_alignSelf_stretch_mobile__onxwjuk2 HorizontalAutoScroller_itemMinWidth__2i92q04 HorizontalAutoScroller_flexBasis_1/2_mobile__2i92q07"
         >
           <div
             class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju7y sprinkles_height_full_mobile__onxwjubq sprinkles_width_full_mobile__onxwjuda"
@@ -160,14 +160,14 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_flex-end_mobile__onxwjui2 sprinkles_position_absolute_mobile__onxwju9q HorizontalAutoScroller_controllerBtn__2i92q00 HorizontalAutoScroller_nextBtn__2i92q03"
+        class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_justifyContent_flex-end_mobile__onxwjuie sprinkles_position_absolute_mobile__onxwju9q HorizontalAutoScroller_controllerBtn__2i92q00 HorizontalAutoScroller_nextBtn__2i92q03"
       >
         <button
-          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_none__onxwju1p sprinkles_borderLeftWidth_none__onxwju1l sprinkles_borderRightWidth_none__onxwju1t sprinkles_borderTopWidth_none__onxwju1x sprinkles_borderRadius_pill__onxwju8 sprinkles_paddingLeft_4_mobile__onxwjuom sprinkles_paddingRight_4_mobile__onxwjupq sprinkles_paddingTop_none_mobile__onxwjuri sprinkles_paddingBottom_none_mobile__onxwjuo6 sprinkles_display_inline-block_mobile__onxwju8a sprinkles_overflow_hidden_mobile__onxwju8m sprinkles_textAlign_center_mobile__onxwjua6 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7q useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_5__p2yon5o"
+          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_none__onxwju1p sprinkles_borderLeftWidth_none__onxwju1l sprinkles_borderRightWidth_none__onxwju1t sprinkles_borderTopWidth_none__onxwju1x sprinkles_borderRadius_pill__onxwju8 sprinkles_paddingLeft_4_mobile__onxwjuoy sprinkles_paddingRight_4_mobile__onxwjuq2 sprinkles_paddingTop_none_mobile__onxwjuru sprinkles_paddingBottom_none_mobile__onxwjuoi sprinkles_display_inline-block_mobile__onxwju8a sprinkles_overflow_hidden_mobile__onxwju8m sprinkles_textAlign_center_mobile__onxwjua6 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7q useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_5__p2yon5o"
           type="button"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_height_full_mobile__onxwjubq sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_center_mobile__onxwjuhy Button_body__p2yon50"
+            class="reset_block__1oah0224 sprinkles_height_full_mobile__onxwjubq sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_justifyContent_center_mobile__onxwjuia Button_body__p2yon50"
           >
             <span
               class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4"
@@ -193,7 +193,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
       class="reset_block__1oah0224"
     >
       <div
-        class="Section_root__184s6x60 Section_width_small__184s6x61"
+        class="reset_block__1oah0224 sprinkles_maxWidth_small_mobile__onxwjudi sprinkles_width_full_mobile__onxwjuda Section_root__184s6x60"
       >
         <div
           class="SliderProgress_root__17uw35s0"
@@ -300,21 +300,21 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_alignItems_stretch_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_column_mobile__onxwjuka sprinkles_gap_5_mobile__onxwjuee"
+    class="reset_block__1oah0224 sprinkles_alignItems_stretch_mobile__onxwjui2 sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_column_mobile__onxwjukm sprinkles_gap_5_mobile__onxwjueq"
     data-od-component="horizontal-auto-scroller"
   >
     <div
       class="reset_block__1oah0224 sprinkles_overflow_hidden_mobile__onxwju8m sprinkles_position_relative_mobile__onxwju9m"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_flex-start_mobile__onxwjuhu sprinkles_position_absolute_mobile__onxwju9q HorizontalAutoScroller_controllerBtn__2i92q00 HorizontalAutoScroller_prevBtn__2i92q02"
+        class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_justifyContent_flex-start_mobile__onxwjui6 sprinkles_position_absolute_mobile__onxwju9q HorizontalAutoScroller_controllerBtn__2i92q00 HorizontalAutoScroller_prevBtn__2i92q02"
       >
         <button
-          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_none__onxwju1p sprinkles_borderLeftWidth_none__onxwju1l sprinkles_borderRightWidth_none__onxwju1t sprinkles_borderTopWidth_none__onxwju1x sprinkles_borderRadius_pill__onxwju8 sprinkles_paddingLeft_4_mobile__onxwjuom sprinkles_paddingRight_4_mobile__onxwjupq sprinkles_paddingTop_none_mobile__onxwjuri sprinkles_paddingBottom_none_mobile__onxwjuo6 sprinkles_display_inline-block_mobile__onxwju8a sprinkles_overflow_hidden_mobile__onxwju8m sprinkles_textAlign_center_mobile__onxwjua6 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7q useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_5__p2yon5o"
+          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_none__onxwju1p sprinkles_borderLeftWidth_none__onxwju1l sprinkles_borderRightWidth_none__onxwju1t sprinkles_borderTopWidth_none__onxwju1x sprinkles_borderRadius_pill__onxwju8 sprinkles_paddingLeft_4_mobile__onxwjuoy sprinkles_paddingRight_4_mobile__onxwjuq2 sprinkles_paddingTop_none_mobile__onxwjuru sprinkles_paddingBottom_none_mobile__onxwjuoi sprinkles_display_inline-block_mobile__onxwju8a sprinkles_overflow_hidden_mobile__onxwju8m sprinkles_textAlign_center_mobile__onxwjua6 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7q useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_5__p2yon5o"
           type="button"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_height_full_mobile__onxwjubq sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_center_mobile__onxwjuhy Button_body__p2yon50"
+            class="reset_block__1oah0224 sprinkles_height_full_mobile__onxwjubq sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_justifyContent_center_mobile__onxwjuia Button_body__p2yon50"
           >
             <span
               class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4"
@@ -336,7 +336,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
         </button>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_paddingLeft_7_mobile__onxwjuoy sprinkles_paddingLeft_8_tablet__onxwjup3 sprinkles_paddingRight_7_mobile__onxwjuq2 sprinkles_paddingRight_8_tablet__onxwjuq7 sprinkles_alignItems_stretch_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_overflow_hidden_mobile__onxwju8m sprinkles_flexWrap_nowrap_mobile__onxwjul2 sprinkles_width_full_mobile__onxwjuda sprinkles_gap_7_mobile__onxwjuem sprinkles_gap_5_tablet__onxwjuef"
+        class="reset_block__1oah0224 sprinkles_paddingLeft_7_mobile__onxwjupa sprinkles_paddingLeft_8_tablet__onxwjupf sprinkles_paddingRight_7_mobile__onxwjuqe sprinkles_paddingRight_8_tablet__onxwjuqj sprinkles_alignItems_stretch_mobile__onxwjui2 sprinkles_display_flex_mobile__onxwju7y sprinkles_overflow_hidden_mobile__onxwju8m sprinkles_flexWrap_nowrap_mobile__onxwjule sprinkles_width_full_mobile__onxwjuda sprinkles_gap_7_mobile__onxwjuey sprinkles_gap_5_tablet__onxwjuer"
       >
         <div
           class="reset_block__1oah0224 HorizontalAutoScroller_controllerCol__2i92q01"
@@ -344,7 +344,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
           <span />
         </div>
         <div
-          class="reset_block__1oah0224 sprinkles_flexGrow_0_mobile__onxwjukm sprinkles_flexShrink_0_mobile__onxwjuku sprinkles_alignSelf_stretch_mobile__onxwjujq HorizontalAutoScroller_itemMinWidth__2i92q04 HorizontalAutoScroller_flexBasis_1/2_mobile__2i92q07"
+          class="reset_block__1oah0224 sprinkles_flexGrow_0_mobile__onxwjuky sprinkles_flexShrink_0_mobile__onxwjul6 sprinkles_alignSelf_stretch_mobile__onxwjuk2 HorizontalAutoScroller_itemMinWidth__2i92q04 HorizontalAutoScroller_flexBasis_1/2_mobile__2i92q07"
         >
           <div
             class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju7y sprinkles_height_full_mobile__onxwjubq sprinkles_width_full_mobile__onxwjuda"
@@ -357,7 +357,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
           </div>
         </div>
         <div
-          class="reset_block__1oah0224 sprinkles_flexGrow_0_mobile__onxwjukm sprinkles_flexShrink_0_mobile__onxwjuku sprinkles_alignSelf_stretch_mobile__onxwjujq HorizontalAutoScroller_itemMinWidth__2i92q04 HorizontalAutoScroller_flexBasis_1/2_mobile__2i92q07"
+          class="reset_block__1oah0224 sprinkles_flexGrow_0_mobile__onxwjuky sprinkles_flexShrink_0_mobile__onxwjul6 sprinkles_alignSelf_stretch_mobile__onxwjuk2 HorizontalAutoScroller_itemMinWidth__2i92q04 HorizontalAutoScroller_flexBasis_1/2_mobile__2i92q07"
         >
           <div
             class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju7y sprinkles_height_full_mobile__onxwjubq sprinkles_width_full_mobile__onxwjuda"
@@ -370,7 +370,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
           </div>
         </div>
         <div
-          class="reset_block__1oah0224 sprinkles_flexGrow_0_mobile__onxwjukm sprinkles_flexShrink_0_mobile__onxwjuku sprinkles_alignSelf_stretch_mobile__onxwjujq HorizontalAutoScroller_itemMinWidth__2i92q04 HorizontalAutoScroller_flexBasis_1/2_mobile__2i92q07"
+          class="reset_block__1oah0224 sprinkles_flexGrow_0_mobile__onxwjuky sprinkles_flexShrink_0_mobile__onxwjul6 sprinkles_alignSelf_stretch_mobile__onxwjuk2 HorizontalAutoScroller_itemMinWidth__2i92q04 HorizontalAutoScroller_flexBasis_1/2_mobile__2i92q07"
         >
           <div
             class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju7y sprinkles_height_full_mobile__onxwjubq sprinkles_width_full_mobile__onxwjuda"
@@ -383,7 +383,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
           </div>
         </div>
         <div
-          class="reset_block__1oah0224 sprinkles_flexGrow_0_mobile__onxwjukm sprinkles_flexShrink_0_mobile__onxwjuku sprinkles_alignSelf_stretch_mobile__onxwjujq HorizontalAutoScroller_itemMinWidth__2i92q04 HorizontalAutoScroller_flexBasis_1/2_mobile__2i92q07"
+          class="reset_block__1oah0224 sprinkles_flexGrow_0_mobile__onxwjuky sprinkles_flexShrink_0_mobile__onxwjul6 sprinkles_alignSelf_stretch_mobile__onxwjuk2 HorizontalAutoScroller_itemMinWidth__2i92q04 HorizontalAutoScroller_flexBasis_1/2_mobile__2i92q07"
         >
           <div
             class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju7y sprinkles_height_full_mobile__onxwjubq sprinkles_width_full_mobile__onxwjuda"
@@ -402,14 +402,14 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_flex-end_mobile__onxwjui2 sprinkles_position_absolute_mobile__onxwju9q HorizontalAutoScroller_controllerBtn__2i92q00 HorizontalAutoScroller_nextBtn__2i92q03"
+        class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju7y sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_justifyContent_flex-end_mobile__onxwjuie sprinkles_position_absolute_mobile__onxwju9q HorizontalAutoScroller_controllerBtn__2i92q00 HorizontalAutoScroller_nextBtn__2i92q03"
       >
         <button
-          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_none__onxwju1p sprinkles_borderLeftWidth_none__onxwju1l sprinkles_borderRightWidth_none__onxwju1t sprinkles_borderTopWidth_none__onxwju1x sprinkles_borderRadius_pill__onxwju8 sprinkles_paddingLeft_4_mobile__onxwjuom sprinkles_paddingRight_4_mobile__onxwjupq sprinkles_paddingTop_none_mobile__onxwjuri sprinkles_paddingBottom_none_mobile__onxwjuo6 sprinkles_display_inline-block_mobile__onxwju8a sprinkles_overflow_hidden_mobile__onxwju8m sprinkles_textAlign_center_mobile__onxwjua6 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7q useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_5__p2yon5o"
+          class="reset_appearance__1oah0221 reset_cursorPointer__1oah0222 reset_trimmedBlockElement__1oah0226 reset_button__1oah0227 sprinkles_borderBottomStyle_solid__onxwju21 sprinkles_borderLeftStyle_solid__onxwju1z sprinkles_borderRightStyle_solid__onxwju23 sprinkles_borderTopStyle_solid__onxwju25 sprinkles_borderBottomWidth_none__onxwju1p sprinkles_borderLeftWidth_none__onxwju1l sprinkles_borderRightWidth_none__onxwju1t sprinkles_borderTopWidth_none__onxwju1x sprinkles_borderRadius_pill__onxwju8 sprinkles_paddingLeft_4_mobile__onxwjuoy sprinkles_paddingRight_4_mobile__onxwjuq2 sprinkles_paddingTop_none_mobile__onxwjuru sprinkles_paddingBottom_none_mobile__onxwjuoi sprinkles_display_inline-block_mobile__onxwju8a sprinkles_overflow_hidden_mobile__onxwju8m sprinkles_textAlign_center_mobile__onxwjua6 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7q useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_5__p2yon5o"
           type="button"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_height_full_mobile__onxwjubq sprinkles_alignItems_center_mobile__onxwjuhe sprinkles_justifyContent_center_mobile__onxwjuhy Button_body__p2yon50"
+            class="reset_block__1oah0224 sprinkles_height_full_mobile__onxwjubq sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_justifyContent_center_mobile__onxwjuia Button_body__p2yon50"
           >
             <span
               class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4"
@@ -435,7 +435,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
       class="reset_block__1oah0224"
     >
       <div
-        class="Section_root__184s6x60 Section_width_small__184s6x61"
+        class="reset_block__1oah0224 sprinkles_maxWidth_small_mobile__onxwjudi sprinkles_width_full_mobile__onxwjuda Section_root__184s6x60"
       >
         <div
           class="SliderProgress_root__17uw35s0"
