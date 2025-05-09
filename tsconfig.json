@@ -21,7 +21,7 @@
 		"module": "esnext",
 		"moduleResolution": "node",
 		"jsx": "react",
-		"lib": ["dom"],
+		"lib": ["dom", "ESNext"],
 		"noFallthroughCasesInSwitch": true,
 		"strictFunctionTypes": true,
 		"forceConsistentCasingInFileNames": true,
