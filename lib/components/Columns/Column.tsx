@@ -17,6 +17,7 @@ export interface ColumnProps extends styles.ColumnRecipeVariants {
  * for spacing and list item rendering.
  */
 export const Column = <E extends ElementType>({
+	alignSelf,
 	children,
 	grow = false,
 	noShrink = false,
@@ -50,6 +51,7 @@ export const Column = <E extends ElementType>({
 
 	return (
 		<Box
+			alignSelf={alignSelf}
 			as={isList ? 'li' : 'div'}
 			order={order}
 			flexGrow={grow ? 1 : 0}

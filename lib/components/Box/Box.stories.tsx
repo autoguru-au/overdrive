@@ -43,8 +43,9 @@ export const ResponsiveProps: Story = {
 export const DataAttributes: Story = {
 	render: () => (
 		<Box
+			id="so-basic"
 			odComponent="box-basic"
-			testId="so-basic"
+			testId="basically-perfect"
 			data-custom-attribute="somewhat less basic"
 		>
 			The most basic box (or is it?)
