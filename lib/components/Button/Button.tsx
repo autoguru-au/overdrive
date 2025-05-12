@@ -1,5 +1,7 @@
 import React, {
 	cloneElement,
+	type ComponentRef,
+	type ForwardedRef,
 	forwardRef,
 	isValidElement,
 	useCallback,
@@ -7,28 +9,20 @@ import React, {
 	useMemo,
 	useState,
 	type ComponentProps,
+	type ElementType,
 	type MouseEventHandler,
 	type ReactElement,
 } from 'react';
 
 import type { TextFontWeight, TextSizeScale } from '../../themes';
 import { dataAttrs } from '../../utils/dataAttrs';
-import {
-	Box,
-	type CustomProps,
-	type PolymorphicComponentProps,
-	type StyleProps,
-	useBox,
-	type UseBoxProps,
-} from '../Box';
+import { Box, BoxLikeProps, useBox, type UseBoxProps } from '../Box';
 import { Icon } from '../Icon';
 import { ProgressSpinner } from '../ProgressSpinner';
 import { useTextStyles } from '../Text';
 
 import * as styles from './Button.css';
 import type { ButtonSize, StyledButtonProps } from './Button.css';
-
-type StylePropsWithoutSize = Omit<StyleProps, 'size'>;
 
 const DOUBLE_CLICK_DETECTION_PERIOD = 700;
 
@@ -55,6 +49,16 @@ export interface ButtonProps extends StyledButtonProps {
 	 */
 	lang?: Partial<Record<TextContent, string>>;
 }
+
+/** Combined polymorphic Button props with style props and common box props */
+export type ButtonPolyProps<E extends React.ElementType> = BoxLikeProps<
+	E,
+	ButtonProps
+>;
+
+export type ButtonForwardRefReturn = (<E extends ElementType = 'button'>(
+	props: ButtonPolyProps<E> & { ref?: ForwardedRef<ComponentRef<E>> },
+) => ReactElement | null) & { displayName?: string };
 
 const getSpinnerColour: (
 	variant: ButtonProps['variant'],
@@ -88,11 +92,8 @@ const fontWeight: Record<ButtonSize, TextFontWeight> = {
 };
 
 export const Button = forwardRef<
-	HTMLButtonElement,
-	PolymorphicComponentProps<
-		'button',
-		ButtonProps & CustomProps & StylePropsWithoutSize
-	>
+	ComponentRef<'button'>,
+	ButtonPolyProps<'button'>
 >(
 	(
 		{
@@ -109,7 +110,7 @@ export const Button = forwardRef<
 			onClick: incomingOnClick,
 			rounded = false,
 			size = 'medium',
-			type = 'button',
+			type,
 			variant = 'secondary',
 			testId,
 			...props
@@ -181,7 +182,7 @@ export const Button = forwardRef<
 			pointerEvents: functionallyDisabled ? 'none' : undefined,
 			ref,
 			textAlign: 'center',
-			type: as === 'button' ? type : undefined,
+			type: as === 'button' ? (type ?? 'button') : undefined,
 			width: isFullWidth ? 'full' : undefined,
 			'aria-label': isLoading ? language.loading : ariaLabel,
 			...dataAttrs({ loading: isLoading ? '' : undefined }),
@@ -265,9 +266,13 @@ export const Button = forwardRef<
 			cloneElement(reactElement, componentProps, child);
 		}
 
-		return <Component {...componentProps}>{child}</Component>;
+		return (
+			<Component {...componentProps} ref={ref}>
+				{child}
+			</Component>
+		);
 	},
-);
+) as ButtonForwardRefReturn;
 
 Button.displayName = 'Button';
 

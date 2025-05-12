@@ -29,7 +29,7 @@ export type StyleProps = Sprinkles &
  * Use BoxBasedProps to help consistently define the base props for a component
  * directly implementing useBox as the type of UseBoxProps is complex to Pick from.
  */
-export interface CustomProps extends PropsWithChildren {
+export interface CommonBoxProps extends PropsWithChildren {
 	/**
 	 * Accepts `string` and complex array or objects via `clsx`
 	 */
@@ -73,7 +73,19 @@ export type PolymorphicComponentProps<
 
 /** Polymorphic box props that merge sprinkles style props and the HTML element props */
 export type UseBoxProps<E extends ElementType = 'div'> =
-	PolymorphicComponentProps<E, CustomProps & StyleProps>;
+	PolymorphicComponentProps<E, CommonBoxProps & StyleProps>;
+
+/**
+ * Define custom props similar to Box with polymorphic, common and style props.
+ * Component props will take take precedent over style props and can overwrite them
+ */
+export type BoxLikeProps<
+	E extends ElementType,
+	P = object,
+> = PolymorphicComponentProps<
+	E,
+	Omit<StyleProps, keyof P> & CommonBoxProps & P
+>;
 
 // defaults
 const DEFAULT_TAG = 'div' as keyof JSX.IntrinsicElements;

@@ -9,10 +9,10 @@ import {
 } from '../../styles/sprinkles.css';
 import { filterPropsWithStyles } from '../../utils/sprinkles';
 
-import type { AsPolyProp, CustomProps, StyleProps } from './';
+import type { AsPolyProp, CommonBoxProps, StyleProps } from './';
 
 export type BoxStylesProps<E extends ElementType = 'div'> = AsPolyProp<E> &
-	Pick<CustomProps, 'className'> &
+	Pick<CommonBoxProps, 'className'> &
 	StyleProps;
 
 const borderColorProps = [

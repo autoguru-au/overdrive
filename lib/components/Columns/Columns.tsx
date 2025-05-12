@@ -1,4 +1,13 @@
-import React, { cloneElement, createContext, forwardRef, useMemo } from 'react';
+import React, {
+	cloneElement,
+	createContext,
+	forwardRef,
+	useMemo,
+	type ComponentRef,
+	type ElementType,
+	type ForwardedRef,
+	type ReactElement,
+} from 'react';
 
 import {
 	useNegativeMarginLeft,
@@ -8,13 +17,13 @@ import {
 	SprinklesResponsive,
 	sprinklesResponsive,
 } from '../../styles/sprinkles.css';
-import { useBox, type UseBoxProps } from '../Box';
+import { type BoxLikeProps, useBox, type UseBoxProps } from '../Box';
 
 import * as styles from './Columns.css';
 
 type ResponsiveSpace = SprinklesResponsive['padding'];
 
-export interface ColumnsProps extends UseBoxProps {
+export interface ColumnsProps {
 	/**
 	 * Sets the vertical aligment of the columns
 	 */
@@ -40,6 +49,17 @@ export interface ColumnsProps extends UseBoxProps {
 	 */
 	wrappingDirection?: styles.ColumnsStyle['wrappingDirection'];
 }
+
+/** Combined Columns props with style props and common box props */
+export type ColumnsPolyProps<E extends React.ElementType> = BoxLikeProps<
+	E,
+	ColumnsProps
+>;
+
+/** Custom type casting necessary for final result of Columns using forwardedRef */
+export type ColumnsForwardRefReturn = (<E extends ElementType = 'div'>(
+	props: ColumnsPolyProps<E> & { ref?: ForwardedRef<ComponentRef<E>> },
+) => ReactElement | null) & { displayName?: string };
 
 interface ColumnContextValue {
 	spaceXCls: string;
@@ -79,10 +99,10 @@ export const ColumnContext = createContext<ColumnContextValue | null>(null);
  *   <Item>Item C</Item>
  * </Columns>
  */
-export const Columns = forwardRef<HTMLDivElement, ColumnsProps>(
+export const Columns = forwardRef<ComponentRef<'div'>, ColumnsPolyProps<'div'>>(
 	(
 		{
-			as,
+			as = 'div',
 			className,
 			children,
 			space,
@@ -110,7 +130,7 @@ export const Columns = forwardRef<HTMLDivElement, ColumnsProps>(
 		const marginTopFix = useNegativeMarginTop(resolvedSpaceY);
 
 		const { Component, componentProps, reactElement } = useBox({
-			...boxProps,
+			...(boxProps as UseBoxProps),
 			as,
 			className: [
 				styles.columnsStyle({
@@ -123,6 +143,7 @@ export const Columns = forwardRef<HTMLDivElement, ColumnsProps>(
 				className,
 			],
 			odComponent: 'columns',
+			ref,
 		});
 
 		const contextValue = useMemo(
@@ -141,8 +162,7 @@ export const Columns = forwardRef<HTMLDivElement, ColumnsProps>(
 		if (reactElement) {
 			return cloneElement(
 				reactElement,
-				//@ts-expect-error ref not in attributes
-				{ ...componentProps, ref },
+				componentProps,
 				<ColumnContext.Provider value={contextValue}>
 					{children}
 				</ColumnContext.Provider>,
@@ -157,7 +177,7 @@ export const Columns = forwardRef<HTMLDivElement, ColumnsProps>(
 			</Component>
 		);
 	},
-);
+) as ColumnsForwardRefReturn;
 
 Columns.displayName = 'Columns';
 
