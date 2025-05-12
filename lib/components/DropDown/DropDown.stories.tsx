@@ -84,7 +84,6 @@ const optionDisabled = (
 );
 
 export const Primary: Story = {
-	//@ts-expect-error args mismatch coming from types
 	args: {
 		label: 'Attachment',
 		children: (
