@@ -34,7 +34,6 @@ const todayStr: string = formatDate(
 );
 
 export const Text: Story = {
-	//@ts-expect-error args mismatch coming from types
 	args: {
 		colour: 'muted',
 		value: 'Hello World',
@@ -61,7 +60,6 @@ export const Text: Story = {
 // eslint-disable-next-line sonarjs/no-globals-shadowing
 export const Number: Story = {
 	...Text,
-	//@ts-expect-error args mismatch coming from types
 	args: {
 		colour: 'muted',
 		value: '20',
@@ -71,7 +69,6 @@ export const Number: Story = {
 
 export const DateWithPicker: Story = {
 	...Text,
-	//@ts-expect-error args mismatch coming from types
 	args: {
 		colour: 'muted',
 		value: todayStr,
@@ -81,7 +78,6 @@ export const DateWithPicker: Story = {
 
 export const NarrowCharacters: Story = {
 	...Text,
-	//@ts-expect-error args mismatch coming from types
 	args: {
 		colour: 'muted',
 		value: 'Price is $111.01',
@@ -91,7 +87,6 @@ export const NarrowCharacters: Story = {
 
 export const CustomSize: Story = {
 	...Text,
-	//@ts-expect-error args mismatch coming from types
 	args: {
 		colour: 'warning',
 		value: '$999.99',
