@@ -1,3 +1,5 @@
+import { mapValues } from 'es-toolkit';
+
 import { cssLayerTheme } from '../styles/layers.css';
 
 import type { BreakPoints, ColourMap, FlattenedColours, ThemeTokens } from '.';
@@ -8,6 +10,11 @@ export const breakpoints: BreakPoints = {
 	desktop: '1024px', // IPad Pro width (1366 - 25%)
 	largeDesktop: '1920px', // 1080p width (1920 - 25%)
 };
+
+export const mediaQuery = mapValues(
+	breakpoints,
+	(breakpoint) => `screen and (min-width: ${breakpoint})`,
+);
 
 /**
  * Wraps theme tokens with `theme` CSS layer using the vanilla-extract method

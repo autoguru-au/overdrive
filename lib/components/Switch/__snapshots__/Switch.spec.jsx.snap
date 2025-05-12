@@ -10,6 +10,7 @@ exports[`<Switch /> > should match snapshot when toggled 1`] = `
   >
     <div
       class="reset_block__1oah0224 VisuallyHidden_visuallyHidden__12d73qi0"
+      data-od-component="visually-hidden"
     >
       <input
         checked=""
@@ -40,6 +41,7 @@ exports[`<Switch /> > should match snapshot when toggled and disabled 1`] = `
   >
     <div
       class="reset_block__1oah0224 VisuallyHidden_visuallyHidden__12d73qi0"
+      data-od-component="visually-hidden"
     >
       <input
         checked=""
@@ -71,6 +73,7 @@ exports[`<Switch /> > should match snapshot when un-toggled 1`] = `
   >
     <div
       class="reset_block__1oah0224 VisuallyHidden_visuallyHidden__12d73qi0"
+      data-od-component="visually-hidden"
     >
       <input
         role="switch"
@@ -99,6 +102,7 @@ exports[`<Switch /> > should match snapshot when un-toggled and disabled 1`] = `
   >
     <div
       class="reset_block__1oah0224 VisuallyHidden_visuallyHidden__12d73qi0"
+      data-od-component="visually-hidden"
     >
       <input
         disabled=""
@@ -128,6 +132,7 @@ exports[`<Switch /> > should match snapshot without props 1`] = `
   >
     <div
       class="reset_block__1oah0224 VisuallyHidden_visuallyHidden__12d73qi0"
+      data-od-component="visually-hidden"
     >
       <input
         role="switch"

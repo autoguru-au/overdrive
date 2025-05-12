@@ -4,7 +4,7 @@ import * as React from 'react';
 import { FunctionComponent, memo, NamedExoticComponent } from 'react';
 
 import { ThemeTokens as Tokens } from '../../themes';
-import { Box, useBoxStyles } from '../Box';
+import { Box, boxStyles } from '../Box';
 import { Icon } from '../Icon';
 import { Inline } from '../Inline';
 import { Text } from '../Text';
@@ -78,6 +78,8 @@ export const StarRating: NamedExoticComponent<Props> = memo(
 	),
 );
 
+StarRating.displayName = 'StarRating';
+
 const getStarIconType = (index: number, rating: number): EStarType => {
 	if (index + 1 <= Math.floor(rating)) {
 		// Is definitely full star
@@ -121,7 +123,7 @@ const Star: FunctionComponent<StarProps> = ({
 			icon={star}
 			size={starSizeMap.get(size)}
 			className={clsx(
-				useBoxStyles({ position: 'relative' }),
+				boxStyles({ position: 'relative' }),
 				styles.star.default,
 				{
 					[styles.star.empty]: starType === EStarType.Empty,

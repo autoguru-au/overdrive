@@ -3,7 +3,7 @@ import * as React from 'react';
 import { ComponentProps, FunctionComponent, useMemo } from 'react';
 
 import { toPrettyBigNumber } from '../../utils/number';
-import { Box, useBoxStyles } from '../Box';
+import { Box, boxStyles } from '../Box';
 import { Text } from '../Text';
 
 import * as styles from './NumberBubble.css';
@@ -45,7 +45,7 @@ export const NumberBubble: FunctionComponent<Props> = ({
 		<Box
 			borderRadius="full"
 			backgroundColour="gray900"
-			display="inlineBlock"
+			display="inline-block"
 			position="relative"
 			padding={valuePaddingMap[size]}
 			{...boxProps}
@@ -55,7 +55,7 @@ export const NumberBubble: FunctionComponent<Props> = ({
 				strong
 				className={clsx(
 					styles.bubbleText,
-					useBoxStyles({
+					boxStyles({
 						position: 'absolute',
 					}),
 				)}

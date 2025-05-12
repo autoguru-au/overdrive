@@ -1,8 +1,7 @@
 import clsx from 'clsx';
-import * as React from 'react';
-import { ComponentProps, forwardRef, FunctionComponent } from 'react';
+import React, { type ComponentProps, forwardRef } from 'react';
 
-import { ThemeTokens as Tokens } from '../../themes';
+import type { ThemeTokens as Tokens } from '../../themes';
 import { Box } from '../Box';
 
 import * as styles from './ScrollPane.css';
@@ -15,7 +14,7 @@ export interface Props extends Omit<ComponentProps<typeof Box>, 'overflow'> {
 	className?: string;
 }
 
-export const ScrollPane: FunctionComponent<Props> = forwardRef(
+export const ScrollPane = forwardRef<HTMLDivElement, Props>(
 	({ className = '', rounded = false, ...rest }, ref) => (
 		<Box
 			ref={ref}

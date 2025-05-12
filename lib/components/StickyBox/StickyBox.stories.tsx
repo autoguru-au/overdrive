@@ -44,7 +44,7 @@ export const Standard: Story = {
 					borderRadius="1"
 					overflow="hidden"
 				>
-					<Heading is="h2" align="center" colour="white">
+					<Heading as="h2" align="center" colour="white">
 						I&apos;m a sticky header
 					</Heading>
 				</Box>

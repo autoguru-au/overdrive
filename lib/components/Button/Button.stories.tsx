@@ -4,8 +4,8 @@ import { fn } from '@storybook/test';
 import React, { type ComponentProps } from 'react';
 
 import { Box } from '../Box';
-import { Column, Columns } from '../Columns';
 import { Icon } from '../Icon';
+import { Inline } from '../Inline';
 
 import { type ButtonProps } from './Button';
 
@@ -82,95 +82,67 @@ const TemplateMulti = ({
 					>
 						{size}
 					</Box>
-					<Columns space="3">
-						<Column>
-							<Button {...args}>Login</Button>
-						</Column>
-						<Column>
-							<Button {...args}>
-								<Icon icon={AccountBoxIcon} />
-								Login
-							</Button>
-						</Column>
-						<Column>
-							<Button {...args} aria-label="login">
-								<Icon icon={AccountBoxIcon} />
-							</Button>
-						</Column>
-						<Column>
-							<Button rounded {...args} aria-label="login">
-								<Icon icon={AccountBoxIcon} />
-							</Button>
-						</Column>
-						<Column>
-							<Button isLoading {...args}>
-								A very very very long button Label
-							</Button>
-						</Column>
-						<Column>
-							<Button disabled {...args}>
-								Login
-							</Button>
-						</Column>
-					</Columns>
+					<Inline space="3">
+						<Button {...args}>Login</Button>
+						<Button {...args}>
+							<Icon icon={AccountBoxIcon} />
+							Login
+						</Button>
+
+						<Button {...args} aria-label="login">
+							<Icon icon={AccountBoxIcon} />
+						</Button>
+
+						<Button rounded {...args} aria-label="login">
+							<Icon icon={AccountBoxIcon} />
+						</Button>
+
+						<Button isLoading {...args}>
+							A very very very long button Label
+						</Button>
+
+						<Button disabled {...args}>
+							Login
+						</Button>
+					</Inline>
 					<div>
 						<Button isFullWidth {...args}>
 							Full Width
 						</Button>
 					</div>
-					<Columns space="3">
-						<Column>
-							<Button minimal {...args}>
-								Login
-							</Button>
-						</Column>
-						<Column>
-							<Button minimal {...args}>
-								<Icon icon={AccountBoxIcon} />
-								Login
-							</Button>
-						</Column>
-						<Column>
-							<Button minimal {...args} aria-label="login">
-								<Icon icon={AccountBoxIcon} />
-							</Button>
-						</Column>
-						<Column>
-							<Button minimal rounded {...args}>
-								1
-							</Button>
-						</Column>
-						<Column>
-							<Button
-								minimal
-								rounded
-								{...args}
-								aria-label="login"
-							>
-								<Icon icon={AccountBoxIcon} />1
-							</Button>
-						</Column>
-						<Column>
-							<Button
-								minimal
-								rounded
-								{...args}
-								aria-label="login"
-							>
-								<Icon icon={AccountBoxIcon} />
-							</Button>
-						</Column>
-						<Column>
-							<Button minimal isLoading {...args}>
-								Login
-							</Button>
-						</Column>
-						<Column>
-							<Button minimal disabled {...args}>
-								Login
-							</Button>
-						</Column>
-					</Columns>
+					<Inline space="3">
+						<Button minimal {...args}>
+							Login
+						</Button>
+
+						<Button minimal {...args}>
+							<Icon icon={AccountBoxIcon} />
+							Login
+						</Button>
+
+						<Button minimal {...args} aria-label="login">
+							<Icon icon={AccountBoxIcon} />
+						</Button>
+
+						<Button minimal rounded {...args}>
+							1
+						</Button>
+
+						<Button minimal rounded {...args} aria-label="login">
+							<Icon icon={AccountBoxIcon} />1
+						</Button>
+						<Button minimal rounded {...args} aria-label="login">
+							<Icon icon={AccountBoxIcon} />
+						</Button>
+
+						<Button minimal isLoading {...args}>
+							Login
+						</Button>
+
+						<Button minimal disabled {...args}>
+							Login
+						</Button>
+					</Inline>
 				</>
 			);
 		})}

@@ -1,0 +1,67 @@
+import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
+
+import { sprinklesResponsive } from '../../styles/sprinkles.css';
+
+export const totalGridColumns = 12; // chosen to be divisible by 2, 3, 4
+export const columnStyle = recipe({
+	base: {},
+	variants: {
+		width: {
+			'1/2': `span ${totalGridColumns / 2}`,
+			'1/3': `span ${totalGridColumns / 3}`,
+			'2/3': `span ${(totalGridColumns / 3) * 2}`,
+			'1/4': `span ${totalGridColumns / 4}`,
+			'3/4': `span ${(totalGridColumns / 4) * 3}`,
+			'1/6': `span ${totalGridColumns / 6}`,
+			'2/6': `span ${(totalGridColumns / 6) * 2}`,
+			'3/6': `span ${(totalGridColumns / 6) * 3}`,
+			'4/6': `span ${(totalGridColumns / 6) * 4}`,
+			full: `span ${totalGridColumns}`,
+			auto: 'auto',
+		},
+	},
+});
+
+export const columnGridStyle = recipe({
+	base: {
+		display: 'grid',
+		gridAutoFlow: 'row',
+		gridTemplateColumns: `repeat(${totalGridColumns}, [col-start] 1fr)`,
+	},
+	variants: {
+		align: {
+			stretch: sprinklesResponsive({
+				alignItems: 'stretch',
+				alignContent: 'stretch',
+			}),
+			top: sprinklesResponsive({
+				alignItems: 'flex-start',
+				alignContent: 'flex-start',
+			}),
+			center: sprinklesResponsive({
+				alignItems: 'center',
+				alignContent: 'center',
+			}),
+			bottom: sprinklesResponsive({
+				alignItems: 'flex-end',
+				alignContent: 'flex-end',
+			}),
+		},
+		noWrap: {
+			false: sprinklesResponsive({ flexWrap: 'wrap' }),
+			true: sprinklesResponsive({ flexWrap: 'nowrap' }),
+		},
+		wrappingDirection: {
+			default: '',
+			reverse: sprinklesResponsive({ flexWrap: 'wrap-reverse' }),
+		},
+	},
+	defaultVariants: {
+		align: 'stretch',
+		noWrap: false,
+	},
+});
+
+export type ColumnGridStyle = NonNullable<
+	RecipeVariants<typeof columnGridStyle>
+>;

@@ -133,7 +133,7 @@ export const Modal: FunctionComponent<Props> = ({
 								? 'none'
 								: undefined
 						}
-						opacity={state === 'OPEN' ? undefined : 0}
+						opacity={state === 'OPEN' ? undefined : '0'}
 						backgroundColour={
 							hideBackdrop ? 'transparent' : 'neutral'
 						}
@@ -149,7 +149,7 @@ export const Modal: FunctionComponent<Props> = ({
 						role="presentation"
 						position="fixed"
 						overflow="hidden"
-						opacity={state === 'OPEN' ? undefined : 0}
+						opacity={state === 'OPEN' ? undefined : '0'}
 						className={[
 							styles.root,
 							styles.transition,

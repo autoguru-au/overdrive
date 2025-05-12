@@ -2,8 +2,8 @@ import { Meta, StoryObj } from '@storybook/react';
 import Rand from 'rand-seed';
 import React, { type ComponentProps } from 'react';
 
+import { boxArgTypes, scaleOptions } from '../../stories/shared/argTypes-box';
 import { Box } from '../Box';
-import { boxArgTypes, scaleOptions } from '../Box/argTypes';
 
 import { HorizontalAutoScroller } from '.';
 

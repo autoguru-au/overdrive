@@ -42,7 +42,7 @@ export const OptionListItem = (props: FilteredCheckboxProps) => {
 				className={sprinklesResponsive({
 					display: 'flex',
 					gap: '2',
-					width: '100%',
+					width: 'full',
 				})}
 			>
 				<div

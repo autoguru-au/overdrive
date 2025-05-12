@@ -6,7 +6,7 @@ import React, {
 	type ReactNode,
 } from 'react';
 
-import { Box, useBoxStyles } from '../../Box';
+import { Box, boxStyles } from '../../Box';
 import { Text, useTextStyles } from '../../Text';
 
 import * as styles from './CheckableBase.css';
@@ -54,14 +54,14 @@ export const CheckableBase = forwardRef<HTMLInputElement, Props>(
 				display="flex"
 				alignItems="center"
 				flexDirection="row"
-				justifyContent="flexStart"
+				justifyContent="flex-start"
 				paddingY="3"
 				paddingRight={label ? '3' : 'none'}
 				paddingLeft="none"
 				position="relative"
 				className={[
 					styles.root,
-					useBoxStyles({ is: 'button' }),
+					boxStyles({ as: 'button' }),
 					className,
 					{ [styles.disabled]: disabled },
 				]}
@@ -82,7 +82,7 @@ export const CheckableBase = forwardRef<HTMLInputElement, Props>(
 					type={inputType}
 					pointerEvents={disabled ? 'none' : void 0}
 					className={clsx(
-						useBoxStyles({ is: 'button' }),
+						boxStyles({ as: 'button' }),
 						styles.nativeInput,
 					)}
 					onClick={handleClick}
@@ -93,10 +93,7 @@ export const CheckableBase = forwardRef<HTMLInputElement, Props>(
 					alignItems="center"
 					justifyContent="center"
 					position="relative"
-					className={[
-						styles.checkable,
-						useBoxStyles({ is: 'button' }),
-					]}
+					className={[styles.checkable, boxStyles({ as: 'button' })]}
 				>
 					{children}
 				</Box>
@@ -106,7 +103,7 @@ export const CheckableBase = forwardRef<HTMLInputElement, Props>(
 					width="full"
 					pointerEvents={disabled ? 'none' : void 0}
 					className={clsx(
-						useBoxStyles({ is: 'button' }),
+						boxStyles({ as: 'button' }),
 						useTextStyles({ size: '4' }),
 						{
 							[styles.label.disabled]: disabled,

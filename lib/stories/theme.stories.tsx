@@ -51,7 +51,7 @@ export const ThemeColours: Story = {
 						.filter(([key]) => key !== 'gamut')
 						.map(([group, colours]) => (
 							<Stack key={group}>
-								<Heading is="h2" className={labels}>
+								<Heading as="h2" className={labels}>
 									{group}
 								</Heading>
 
