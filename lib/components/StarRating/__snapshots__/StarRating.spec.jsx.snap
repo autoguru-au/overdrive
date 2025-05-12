@@ -9,25 +9,25 @@ exports[`<StarRating /> > should match snapshot for small size 1`] = `
     class="reset_block__1oah0224"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuki sprinkles_flexWrap_wrap_mobile__onxwjuli sprinkles_gap_4_mobile__onxwjuem sprinkles_minWidth_fit-content_mobile__onxwjue6 sprinkles_position_relative_mobile__onxwju9m"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_flexDirection_row_mobile__onxwjuno sprinkles_flexWrap_wrap_mobile__onxwjuoo sprinkles_gap_4_mobile__onxwjuhs sprinkles_minWidth_fit-content_mobile__onxwjuhc sprinkles_position_relative_mobile__onxwju9w"
       data-od-component="inline"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_4_mobile__onxwjuem sprinkles_flexWrap_nowrap_mobile__onxwjule"
+        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_4_mobile__onxwjuhs sprinkles_flexWrap_nowrap_mobile__onxwjuok"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuki sprinkles_flexWrap_wrap_mobile__onxwjuli sprinkles_gap_none_mobile__onxwjufa sprinkles_minWidth_fit-content_mobile__onxwjue6 sprinkles_position_relative_mobile__onxwju9m"
+          class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_flexDirection_row_mobile__onxwjuno sprinkles_flexWrap_wrap_mobile__onxwjuoo sprinkles_gap_none_mobile__onxwjuig sprinkles_minWidth_fit-content_mobile__onxwjuhc sprinkles_position_relative_mobile__onxwju9w"
           data-od-component="inline"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_none_mobile__onxwjuig sprinkles_flexWrap_nowrap_mobile__onxwjuok"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju80 Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9w StarRating_star_default__icwp6r0"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7q sprinkles_width_full_mobile__onxwjuda sprinkles_height_full_mobile__onxwjubq"
+                class="sprinkles_display_block_mobile__onxwju80 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -40,14 +40,14 @@ exports[`<StarRating /> > should match snapshot for small size 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_none_mobile__onxwjuig sprinkles_flexWrap_nowrap_mobile__onxwjuok"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju80 Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9w StarRating_star_default__icwp6r0"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7q sprinkles_width_full_mobile__onxwjuda sprinkles_height_full_mobile__onxwjubq"
+                class="sprinkles_display_block_mobile__onxwju80 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -60,14 +60,14 @@ exports[`<StarRating /> > should match snapshot for small size 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_none_mobile__onxwjuig sprinkles_flexWrap_nowrap_mobile__onxwjuok"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju80 Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9w StarRating_star_default__icwp6r0"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7q sprinkles_width_full_mobile__onxwjuda sprinkles_height_full_mobile__onxwjubq"
+                class="sprinkles_display_block_mobile__onxwju80 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -80,14 +80,14 @@ exports[`<StarRating /> > should match snapshot for small size 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_none_mobile__onxwjuig sprinkles_flexWrap_nowrap_mobile__onxwjuok"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju80 Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9w StarRating_star_default__icwp6r0"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7q sprinkles_width_full_mobile__onxwjuda sprinkles_height_full_mobile__onxwjubq"
+                class="sprinkles_display_block_mobile__onxwju80 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -100,14 +100,14 @@ exports[`<StarRating /> > should match snapshot for small size 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_none_mobile__onxwjuig sprinkles_flexWrap_nowrap_mobile__onxwjuok"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju80 Icon_makeResponsiveStyle_key_bp__1gy3ire0 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9w StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7q sprinkles_width_full_mobile__onxwjuda sprinkles_height_full_mobile__onxwjubq"
+                class="sprinkles_display_block_mobile__onxwju80 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -122,7 +122,7 @@ exports[`<StarRating /> > should match snapshot for small size 1`] = `
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_4_mobile__onxwjuem sprinkles_flexWrap_nowrap_mobile__onxwjule"
+        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_4_mobile__onxwjuhs sprinkles_flexWrap_nowrap_mobile__onxwjuok"
       >
         <span
           class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_3__1xnpmd73"
@@ -145,25 +145,25 @@ exports[`<StarRating /> > should match snapshot with label 1`] = `
     class="reset_block__1oah0224"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuki sprinkles_flexWrap_wrap_mobile__onxwjuli sprinkles_gap_4_mobile__onxwjuem sprinkles_minWidth_fit-content_mobile__onxwjue6 sprinkles_position_relative_mobile__onxwju9m"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_flexDirection_row_mobile__onxwjuno sprinkles_flexWrap_wrap_mobile__onxwjuoo sprinkles_gap_4_mobile__onxwjuhs sprinkles_minWidth_fit-content_mobile__onxwjuhc sprinkles_position_relative_mobile__onxwju9w"
       data-od-component="inline"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_4_mobile__onxwjuem sprinkles_flexWrap_nowrap_mobile__onxwjule"
+        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_4_mobile__onxwjuhs sprinkles_flexWrap_nowrap_mobile__onxwjuok"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuki sprinkles_flexWrap_wrap_mobile__onxwjuli sprinkles_gap_none_mobile__onxwjufa sprinkles_minWidth_fit-content_mobile__onxwjue6 sprinkles_position_relative_mobile__onxwju9m"
+          class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_flexDirection_row_mobile__onxwjuno sprinkles_flexWrap_wrap_mobile__onxwjuoo sprinkles_gap_none_mobile__onxwjuig sprinkles_minWidth_fit-content_mobile__onxwjuhc sprinkles_position_relative_mobile__onxwju9w"
           data-od-component="inline"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_none_mobile__onxwjuig sprinkles_flexWrap_nowrap_mobile__onxwjuok"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju80 Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9w StarRating_star_default__icwp6r0"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7q sprinkles_width_full_mobile__onxwjuda sprinkles_height_full_mobile__onxwjubq"
+                class="sprinkles_display_block_mobile__onxwju80 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -176,14 +176,14 @@ exports[`<StarRating /> > should match snapshot with label 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_none_mobile__onxwjuig sprinkles_flexWrap_nowrap_mobile__onxwjuok"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju80 Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9w StarRating_star_default__icwp6r0"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7q sprinkles_width_full_mobile__onxwjuda sprinkles_height_full_mobile__onxwjubq"
+                class="sprinkles_display_block_mobile__onxwju80 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -196,14 +196,14 @@ exports[`<StarRating /> > should match snapshot with label 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_none_mobile__onxwjuig sprinkles_flexWrap_nowrap_mobile__onxwjuok"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju80 Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9w StarRating_star_default__icwp6r0"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7q sprinkles_width_full_mobile__onxwjuda sprinkles_height_full_mobile__onxwjubq"
+                class="sprinkles_display_block_mobile__onxwju80 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -216,14 +216,14 @@ exports[`<StarRating /> > should match snapshot with label 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_none_mobile__onxwjuig sprinkles_flexWrap_nowrap_mobile__onxwjuok"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju80 Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9w StarRating_star_default__icwp6r0"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7q sprinkles_width_full_mobile__onxwjuda sprinkles_height_full_mobile__onxwjubq"
+                class="sprinkles_display_block_mobile__onxwju80 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -236,14 +236,14 @@ exports[`<StarRating /> > should match snapshot with label 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_none_mobile__onxwjuig sprinkles_flexWrap_nowrap_mobile__onxwjuok"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju80 Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9w StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7q sprinkles_width_full_mobile__onxwjuda sprinkles_height_full_mobile__onxwjubq"
+                class="sprinkles_display_block_mobile__onxwju80 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -258,7 +258,7 @@ exports[`<StarRating /> > should match snapshot with label 1`] = `
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_4_mobile__onxwjuem sprinkles_flexWrap_nowrap_mobile__onxwjule"
+        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_4_mobile__onxwjuhs sprinkles_flexWrap_nowrap_mobile__onxwjuok"
       >
         <span
           class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74"
@@ -281,25 +281,25 @@ exports[`<StarRating /> > should match snapshot with value 1`] = `
     class="reset_block__1oah0224"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuki sprinkles_flexWrap_wrap_mobile__onxwjuli sprinkles_gap_4_mobile__onxwjuem sprinkles_minWidth_fit-content_mobile__onxwjue6 sprinkles_position_relative_mobile__onxwju9m"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_flexDirection_row_mobile__onxwjuno sprinkles_flexWrap_wrap_mobile__onxwjuoo sprinkles_gap_4_mobile__onxwjuhs sprinkles_minWidth_fit-content_mobile__onxwjuhc sprinkles_position_relative_mobile__onxwju9w"
       data-od-component="inline"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_4_mobile__onxwjuem sprinkles_flexWrap_nowrap_mobile__onxwjule"
+        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_4_mobile__onxwjuhs sprinkles_flexWrap_nowrap_mobile__onxwjuok"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuki sprinkles_flexWrap_wrap_mobile__onxwjuli sprinkles_gap_none_mobile__onxwjufa sprinkles_minWidth_fit-content_mobile__onxwjue6 sprinkles_position_relative_mobile__onxwju9m"
+          class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_flexDirection_row_mobile__onxwjuno sprinkles_flexWrap_wrap_mobile__onxwjuoo sprinkles_gap_none_mobile__onxwjuig sprinkles_minWidth_fit-content_mobile__onxwjuhc sprinkles_position_relative_mobile__onxwju9w"
           data-od-component="inline"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_none_mobile__onxwjuig sprinkles_flexWrap_nowrap_mobile__onxwjuok"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju80 Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9w StarRating_star_default__icwp6r0"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7q sprinkles_width_full_mobile__onxwjuda sprinkles_height_full_mobile__onxwjubq"
+                class="sprinkles_display_block_mobile__onxwju80 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -312,14 +312,14 @@ exports[`<StarRating /> > should match snapshot with value 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_none_mobile__onxwjuig sprinkles_flexWrap_nowrap_mobile__onxwjuok"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju80 Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9w StarRating_star_default__icwp6r0"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7q sprinkles_width_full_mobile__onxwjuda sprinkles_height_full_mobile__onxwjubq"
+                class="sprinkles_display_block_mobile__onxwju80 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -332,14 +332,14 @@ exports[`<StarRating /> > should match snapshot with value 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_none_mobile__onxwjuig sprinkles_flexWrap_nowrap_mobile__onxwjuok"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju80 Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9w StarRating_star_default__icwp6r0"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7q sprinkles_width_full_mobile__onxwjuda sprinkles_height_full_mobile__onxwjubq"
+                class="sprinkles_display_block_mobile__onxwju80 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -352,14 +352,14 @@ exports[`<StarRating /> > should match snapshot with value 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_none_mobile__onxwjuig sprinkles_flexWrap_nowrap_mobile__onxwjuok"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju80 Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9w StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7q sprinkles_width_full_mobile__onxwjuda sprinkles_height_full_mobile__onxwjubq"
+                class="sprinkles_display_block_mobile__onxwju80 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -372,14 +372,14 @@ exports[`<StarRating /> > should match snapshot with value 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_none_mobile__onxwjuig sprinkles_flexWrap_nowrap_mobile__onxwjuok"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju80 Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9w StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7q sprinkles_width_full_mobile__onxwjuda sprinkles_height_full_mobile__onxwjubq"
+                class="sprinkles_display_block_mobile__onxwju80 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -394,7 +394,7 @@ exports[`<StarRating /> > should match snapshot with value 1`] = `
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_4_mobile__onxwjuem sprinkles_flexWrap_nowrap_mobile__onxwjule"
+        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_4_mobile__onxwjuhs sprinkles_flexWrap_nowrap_mobile__onxwjuok"
       >
         <span
           class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74"
@@ -417,25 +417,25 @@ exports[`<StarRating /> > should match snapshot without value 1`] = `
     class="reset_block__1oah0224"
   >
     <div
-      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuki sprinkles_flexWrap_wrap_mobile__onxwjuli sprinkles_gap_4_mobile__onxwjuem sprinkles_minWidth_fit-content_mobile__onxwjue6 sprinkles_position_relative_mobile__onxwju9m"
+      class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_flexDirection_row_mobile__onxwjuno sprinkles_flexWrap_wrap_mobile__onxwjuoo sprinkles_gap_4_mobile__onxwjuhs sprinkles_minWidth_fit-content_mobile__onxwjuhc sprinkles_position_relative_mobile__onxwju9w"
       data-od-component="inline"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_4_mobile__onxwjuem sprinkles_flexWrap_nowrap_mobile__onxwjule"
+        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_4_mobile__onxwjuhs sprinkles_flexWrap_nowrap_mobile__onxwjuok"
       >
         <div
-          class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_flexDirection_row_mobile__onxwjuki sprinkles_flexWrap_wrap_mobile__onxwjuli sprinkles_gap_none_mobile__onxwjufa sprinkles_minWidth_fit-content_mobile__onxwjue6 sprinkles_position_relative_mobile__onxwju9m"
+          class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_flexDirection_row_mobile__onxwjuno sprinkles_flexWrap_wrap_mobile__onxwjuoo sprinkles_gap_none_mobile__onxwjuig sprinkles_minWidth_fit-content_mobile__onxwjuhc sprinkles_position_relative_mobile__onxwju9w"
           data-od-component="inline"
         >
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_none_mobile__onxwjuig sprinkles_flexWrap_nowrap_mobile__onxwjuok"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju80 Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9w StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7q sprinkles_width_full_mobile__onxwjuda sprinkles_height_full_mobile__onxwjubq"
+                class="sprinkles_display_block_mobile__onxwju80 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -448,14 +448,14 @@ exports[`<StarRating /> > should match snapshot without value 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_none_mobile__onxwjuig sprinkles_flexWrap_nowrap_mobile__onxwjuok"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju80 Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9w StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7q sprinkles_width_full_mobile__onxwjuda sprinkles_height_full_mobile__onxwjubq"
+                class="sprinkles_display_block_mobile__onxwju80 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -468,14 +468,14 @@ exports[`<StarRating /> > should match snapshot without value 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_none_mobile__onxwjuig sprinkles_flexWrap_nowrap_mobile__onxwjuok"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju80 Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9w StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7q sprinkles_width_full_mobile__onxwjuda sprinkles_height_full_mobile__onxwjubq"
+                class="sprinkles_display_block_mobile__onxwju80 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -488,14 +488,14 @@ exports[`<StarRating /> > should match snapshot without value 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_none_mobile__onxwjuig sprinkles_flexWrap_nowrap_mobile__onxwjuok"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju80 Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9w StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7q sprinkles_width_full_mobile__onxwjuda sprinkles_height_full_mobile__onxwjubq"
+                class="sprinkles_display_block_mobile__onxwju80 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -508,14 +508,14 @@ exports[`<StarRating /> > should match snapshot without value 1`] = `
             </span>
           </div>
           <div
-            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_none_mobile__onxwjufa sprinkles_flexWrap_nowrap_mobile__onxwjule"
+            class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_none_mobile__onxwjuig sprinkles_flexWrap_nowrap_mobile__onxwjuok"
           >
             <span
-              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju7q Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9m StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+              class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju80 Icon_makeResponsiveStyle_key_bp__1gy3ire4 reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9w StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
             >
               <svg
                 aria-hidden="true"
-                class="sprinkles_display_block_mobile__onxwju7q sprinkles_width_full_mobile__onxwjuda sprinkles_height_full_mobile__onxwjubq"
+                class="sprinkles_display_block_mobile__onxwju80 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew"
                 fill="currentColor"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -530,7 +530,7 @@ exports[`<StarRating /> > should match snapshot without value 1`] = `
         </div>
       </div>
       <div
-        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjuhq sprinkles_display_flex_mobile__onxwju7y sprinkles_gap_4_mobile__onxwjuem sprinkles_flexWrap_nowrap_mobile__onxwjule"
+        class="reset_block__1oah0224 sprinkles_alignItems_center_mobile__onxwjukw sprinkles_display_flex_mobile__onxwju88 sprinkles_gap_4_mobile__onxwjuhs sprinkles_flexWrap_nowrap_mobile__onxwjuok"
       >
         <span
           class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_4__1xnpmd74"

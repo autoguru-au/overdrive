@@ -6,7 +6,7 @@ exports[`<Section /> > should match the snapshot 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_maxWidth_medium_mobile__onxwjudm sprinkles_width_full_mobile__onxwjuda Section_root__184s6x60"
+    class="reset_block__1oah0224 sprinkles_maxWidth_medium_mobile__onxwjugs sprinkles_width_full_mobile__onxwjugg Section_root__184s6x60"
   />
 </div>
 `;
