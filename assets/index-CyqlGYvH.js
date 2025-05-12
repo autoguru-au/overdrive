@@ -1,0 +1,1 @@
+import{o as e}from"./theme.css-Bxsw82g_.js";import"./Box-Daq3CeQj.js";/* empty css                             */import{t as m}from"./tokens-CDWBS8l8.js";var o="_16s4m6v0";const f={name:"flatRedTheme",themeRef:o,vars:e,tokens:m};export{f};
