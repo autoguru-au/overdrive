@@ -6,13 +6,14 @@ exports[`<LinearProgressIndicator /> > should match snapshot 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_overflow_hidden__3xgq1lg4 useBoxStyles_backgroundColours_gray200__3xgq1le3 LinearProgressIndicator_root__1gh10pc0"
+    class="reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9w sprinkles_overflow_hidden_mobile__onxwju8w sprinkles_width_full_mobile__onxwjugg sprinkles_backgroundColor_gray200__onxwju3f LinearProgressIndicator_root__1gh10pc0"
   >
     <div
-      class="reset_block__1oah0224 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy LinearProgressIndicator_linearProgressBar__1gh10pc2"
+      class="reset_block__1oah0224 sprinkles_position_absolute_mobile__onxwjua0 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew LinearProgressIndicator_linearProgressBar__1gh10pc2"
     >
-      <span
-        class="reset_inlineText__1oah0223 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_backgroundColours_green300__3xgq1led LinearProgressIndicator_linearProgressBarInner__1gh10pc4"
+      <div
+        class="reset_block__1oah0224 sprinkles_position_absolute_mobile__onxwjua0 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew sprinkles_backgroundColor_green300__onxwju3p LinearProgressIndicator_linearProgressBarInner__1gh10pc4"
+        is="span"
       />
     </div>
   </div>

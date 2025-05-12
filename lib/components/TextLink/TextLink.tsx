@@ -14,7 +14,7 @@ import {
 	ReactNode,
 } from 'react';
 
-import { Box, useBoxStyles } from '../Box';
+import { Box, boxStyles } from '../Box';
 import { Icon } from '../Icon';
 import { Text } from '../Text';
 
@@ -23,7 +23,7 @@ import * as styles from './TextLink.css';
 type TextProps = Omit<ComponentProps<typeof Text>, 'is' | 'colour'>;
 type AnchorProps = Omit<
 	AnchorHTMLAttributes<HTMLAnchorElement>,
-	'children' | 'style' | 'is' | keyof TextProps
+	'children' | 'color' | 'style' | 'is' | keyof TextProps
 >;
 
 export interface Props extends TextProps, AnchorProps {
@@ -55,14 +55,14 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 		);
 		const body = (
 			<Text
-				is="span"
+				as="span"
 				colour={muted ? 'muted' : 'link'}
 				size={size}
 				fontWeight={fontWeight}
 				strong={strong}
 				className={clsx(
-					useBoxStyles({
-						is: 'span',
+					boxStyles({
+						as: 'span',
 						pointerEvents: 'none',
 						position: 'relative',
 						paddingRight: icon ? '5' : void 0,
@@ -77,10 +77,10 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 					<Icon
 						icon={icon}
 						size="small"
-						display="inlineBlock"
+						display="inline-block"
 						className={clsx(
 							styles.icon,
-							useBoxStyles({
+							boxStyles({
 								position: 'absolute',
 							}),
 						)}
@@ -97,7 +97,7 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 
 		if (Component === undefined) {
 			return (
-				<Box is="a" className={[className, styles.root]} {...allProps}>
+				<Box as="a" className={[className, styles.root]} {...allProps}>
 					{body}
 				</Box>
 			);
@@ -109,4 +109,4 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 	},
 );
 
-export default TextLink;
+TextLink.displayName = 'TextLink';

@@ -6,17 +6,18 @@ exports[`<Stack /> > should correctly handle fragment nodes 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224"
+    class="reset_block__1oah0224 sprinkles_display_flex_mobile__onxwju88 sprinkles_flexDirection_column_mobile__onxwjuns sprinkles_gap_2_mobile__onxwjuhk"
+    data-od-component="stack"
   >
     <div
-      class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhf Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
+      class="reset_block__1oah0224"
     >
       <p>
         line 0
       </p>
     </div>
     <div
-      class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhf Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
+      class="reset_block__1oah0224"
     >
       <p>
         Line 1
@@ -29,7 +30,7 @@ exports[`<Stack /> > should correctly handle fragment nodes 1`] = `
       </p>
     </div>
     <div
-      class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhf Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
+      class="reset_block__1oah0224"
     >
       <p>
         line 4

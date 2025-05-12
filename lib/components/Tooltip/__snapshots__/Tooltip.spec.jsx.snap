@@ -19,7 +19,7 @@ exports[`<Tolltip /> > should match snapshot when closed 1`] = `
   >
     <div
       aria-hidden="true"
-      class="reset_block__1oah0224 useBoxStyles_position_fixed__3xgq1lfz Positioner_root__1d54b7d0"
+      class="reset_block__1oah0224 sprinkles_position_fixed_mobile__onxwjua4 Positioner_root__1d54b7d0"
     />
   </div>
 </body>
@@ -44,14 +44,14 @@ exports[`<Tolltip /> > should match snapshot when opened 1`] = `
   >
     <div
       aria-hidden="false"
-      class="reset_block__1oah0224 useBoxStyles_position_fixed__3xgq1lfz Positioner_root__1d54b7d0"
+      class="reset_block__1oah0224 sprinkles_position_fixed_mobile__onxwjua4 Positioner_root__1d54b7d0"
       style="position: absolute; left: 0px; top: 0px; margin: 0px;"
     >
       <div
-        class="reset_block__1oah0224 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_width_full__3xgq1lfv useBoxStyles_overflow_hidden__3xgq1lg4 useBoxStyles_userSelect_none__3xgq1lgi useBoxStyles_pointerEvents_none__3xgq1lic useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l98 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray900__3xgq1lea Tooltip_root__1qliafn0"
+        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju2s sprinkles_userSelect_none__onxwju2v sprinkles_boxShadow_4__onxwju2o sprinkles_paddingLeft_3_mobile__onxwjus0 sprinkles_paddingRight_3_mobile__onxwjut4 sprinkles_paddingTop_2_mobile__onxwjuu4 sprinkles_paddingBottom_2_mobile__onxwjuqs sprinkles_width_full_mobile__onxwjugg sprinkles_overflow_hidden_mobile__onxwju8w sprinkles_borderRadius_1_mobile__onxwjuao sprinkles_backgroundColor_gray900__onxwju3m Tooltip_root__1qliafn0"
       >
         <span
-          class="reset_inlineText__1oah0223 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_2__1xnpmd72"
+          class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_2__1xnpmd72"
         >
           tooltip content
         </span>

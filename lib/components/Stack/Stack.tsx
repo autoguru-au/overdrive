@@ -1,70 +1,110 @@
-import * as React from 'react';
-import { Children, FunctionComponent, ReactNode } from 'react';
+import React, { Children, cloneElement, type ElementType } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 
-import type { BoxStyleProps } from '../Box';
-import { Box } from '../Box';
+import type { SprinklesResponsive } from '../../styles/sprinkles.css';
+import { Box, useBox, type UseBoxProps } from '../Box';
 
-import { Divider } from './Divider';
-import * as styles from './Stack.css';
+import * as styles from './Divider.css';
 
-export interface Props
-	extends Pick<BoxStyleProps, 'as' | 'is' | 'width' | 'alignItems'> {
-	space?: keyof typeof styles.child.spaces;
-	className?: string;
+export interface StackProps {
+	/**
+	 * Sets the horizontal alignment of items within the stack. Accepts responsive values
+	 */
+	alignItems?: SprinklesResponsive['alignItems'];
+	/**
+	 * Show a divider element between each item
+	 */
 	dividers?: boolean;
-
-	children: ReactNode | ReactNode[];
+	/**
+	 * Defines the gap between list items. Accepts responsive values
+	 * @default '2'
+	 */
+	space?: SprinklesResponsive['gap'];
+	/**
+	 * Sets the width of the Inline container. Accepts responsive values
+	 */
+	width?: SprinklesResponsive['width'];
 }
 
-const supportedListTypes: ReadonlyArray<keyof React.JSX.IntrinsicElements> = [
-	'ul',
-	'ol',
-] as const;
+const Divider = () => <hr className={styles.hr} />;
 
-export const Stack: FunctionComponent<Props> = ({
+/**
+ * Stack arranges child elements vertically, one below the other.
+ * It allows you to control the spacing between items, alignment, and optionally add dividers.
+ * Useful for creating vertical lists, forms, or sections.
+ *
+ * @example
+ * <Stack>
+ *   <Text>Item 1</Text>
+ *   <Text>Item 2</Text>
+ *   <Text>Item 3</Text>
+ * </Stack>
+ *
+ * @example
+ * <Stack space="4" dividers>
+ *   <Button>Action 1</Button>
+ *   <Button>Action 2</Button>
+ * </Stack>
+ *
+ * @example
+ * <Stack alignItems="center" space="3">
+ *   <Card>Card 1</Card>
+ *   <Card>Card 2</Card>
+ * </Stack>
+ */
+export const Stack = <E extends ElementType = 'div'>({
 	space = '2',
 	children,
-	is = 'div',
-	as = is,
 	alignItems,
-	width,
 	dividers = false,
-	className = '',
-}) => {
-	const items = flattenChildren(children);
+	...props
+}: UseBoxProps<E> & StackProps) => {
+	const { Component, componentProps, reactElement, SemanticChild } =
+		useBox<E>({
+			...(props as UseBoxProps<E>),
+			display: 'flex',
+			flexDirection: 'column',
+			gap: space,
+			odComponent: 'stack',
+		});
 
+	const items = flattenChildren(children);
+	// If there are not multiple children, return the bare item
 	if (items.length < 2) {
 		return <>{items}</>;
 	}
 
-	let listItem: typeof as = 'div';
-	if (typeof as === 'string')
-		listItem = supportedListTypes.includes(as) ? 'li' : 'div';
+	const Item = ({ children }: React.PropsWithChildren) => {
+		if (alignItems)
+			return (
+				<Box
+					alignItems={alignItems}
+					as={SemanticChild}
+					display="flex"
+					flexDirection="column"
+				>
+					{children}
+				</Box>
+			);
+
+		return <Box as={SemanticChild}>{children}</Box>;
+	};
+
+	const ChildItems = () =>
+		Children.map(items, (child, idx) => (
+			<Item>
+				{dividers && idx > 0 && <Divider />}
+				{child}
+			</Item>
+		));
+
+	if (reactElement) {
+		return cloneElement(reactElement, componentProps, <ChildItems />);
+	}
 
 	return (
-		<Box as={as} className={className} width={width}>
-			{Children.map(items, (child, idx) => (
-				<Box
-					as={listItem}
-					display={alignItems ? 'flex' : void 0}
-					flexDirection="column"
-					alignItems={alignItems}
-					className={[
-						styles.child.default,
-						dividers ? undefined : styles.child.spaces[space],
-					]}
-				>
-					{dividers && idx > 0 ? (
-						<Box paddingY={space} width="full">
-							<Divider />
-						</Box>
-					) : null}
-					{child}
-				</Box>
-			))}
-		</Box>
+		<Component {...componentProps}>
+			<ChildItems />
+		</Component>
 	);
 };
-
-export default Stack;

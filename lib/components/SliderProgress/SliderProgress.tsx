@@ -50,3 +50,5 @@ export const SliderProgress: NamedExoticComponent<Props> = memo(
 		</div>
 	),
 );
+
+SliderProgress.displayName = 'SliderProgress';

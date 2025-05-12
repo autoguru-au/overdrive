@@ -1,32 +1,33 @@
 import clsx from 'clsx';
-import * as React from 'react';
-import {
-	ChangeEventHandler,
-	ComponentProps,
+import React, {
+	type ChangeEventHandler,
 	forwardRef,
-	InputHTMLAttributes,
+	type InputHTMLAttributes,
 	useCallback,
 	useEffect,
 	useRef,
 	useState,
 } from 'react';
 
-import { Box } from '../Box';
-import { Text, useTextStyles } from '../Text';
+import { Box, type UseBoxProps } from '../Box';
+import { Text, type TextProps, useTextStyles } from '../Text';
 import * as inputStyles from '../private/InputBase/withEnhancedInput.css';
 
 import * as styles from './EditableText.css';
 
 type BoxProps = Pick<
-	ComponentProps<typeof Box>,
+	UseBoxProps<'p'>,
 	'display' | 'onFocus' | 'onBlur' | 'onKeyDown'
 >;
-type TextProps = Pick<
-	ComponentProps<typeof Text>,
+
+type FilteredTextProps = Pick<
+	TextProps,
 	'is' | 'colour' | 'size' | 'children' | 'noWrap'
 >;
+
 type InputProps = Omit<
 	InputHTMLAttributes<HTMLInputElement>,
+	| 'color'
 	| 'style'
 	| 'is'
 	| 'autoFocus'
@@ -35,24 +36,27 @@ type InputProps = Omit<
 	| 'onFocus'
 	| 'onBlur'
 	| 'onKeyDown'
-	| keyof TextProps
+	| keyof FilteredTextProps
 	| keyof BoxProps
 >;
 
-export interface Props extends TextProps, InputProps, BoxProps {
+export interface Props
+	extends FilteredTextProps,
+		InputProps,
+		Partial<BoxProps> {
 	className?: string;
 
 	onModeChange?: (mode: InputMode) => void;
 }
 const numberInputValuePattern = /^\d*\.?\d*$/;
 type InputMode = 'TEXT' | 'INPUT';
-export const EditableText = forwardRef<HTMLAnchorElement, Props>(
+export const EditableText = forwardRef<HTMLDivElement, Props>(
 	(
 		{
 			is,
 			colour = 'muted',
 			size,
-			display = 'inlineBlock',
+			display = 'inline-block',
 			value,
 			onFocus,
 			onBlur,
@@ -150,7 +154,7 @@ export const EditableText = forwardRef<HTMLAnchorElement, Props>(
 				<Text
 					noWrap
 					ref={textRef}
-					is={is}
+					as={is}
 					colour={colour}
 					size={size}
 					className={clsx(textStyles, styles.text, {

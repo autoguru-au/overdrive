@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { type ComponentProps } from 'react';
 
 import { argTypesExampleIcons } from '../../stories/shared/argTypes';
-import { boxArgTypes } from '../Box/argTypes';
+import { boxArgTypes } from '../../stories/shared/argTypes-box';
 import { DateInput } from '../DateInput';
 
 import { TextInput } from '.';

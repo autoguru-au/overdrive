@@ -59,7 +59,7 @@ export const useChromaticDecorator = (Story, context) => {
 					<OverdriveProvider noBodyLevelTheming theme={theme}>
 						<Box width="full" padding="5">
 							<Stack width="full" space="3">
-								<Heading is="h5" colour="light">
+								<Heading as="h5" colour="light">
 									Theme :: {theme.name}
 								</Heading>
 								<Story {...context} />

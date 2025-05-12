@@ -23,7 +23,7 @@ const weightOptions: Array<ComponentProps<typeof Text>['fontWeight']> = [
 	'semiBold',
 	'bold',
 ];
-const headingTypeOptions: Array<ComponentProps<typeof Heading>['is']> = [
+const headingTypeOptions: Array<ComponentProps<typeof Heading>['as']> = [
 	'h1',
 	'h2',
 	'h3',
@@ -41,11 +41,6 @@ const sizeScale: Array<ComponentProps<typeof Heading>['size']> = [
 	'7',
 	'8',
 	'9',
-];
-const alignOptions: Array<ComponentProps<typeof Heading>['align']> = [
-	'left',
-	'center',
-	'right',
 ];
 const colourOptions: Array<ComponentProps<typeof Heading>['colour']> = [
 	'dark',
@@ -101,13 +96,6 @@ export default {
 				type: 'select',
 			},
 		},
-		align: {
-			options: alignOptions,
-			defaultValue: 'left',
-			control: {
-				type: 'select',
-			},
-		},
 		colour: {
 			options: colourOptions,
 			defaultValue: void 0,
@@ -135,7 +123,7 @@ type Story = StoryObj<typeof Heading>;
 
 export const Standard: Story = {
 	args: {
-		is: 'h1',
+		as: 'h1',
 		children: 'I am a heading',
 	},
 	render: (args) => (
@@ -151,8 +139,8 @@ export const AllTypes: Story = {
 	},
 	render: (args) => (
 		<div style={{ maxWidth: '350px', width: '100%' }}>
-			{headingTypeOptions.map((is) => (
-				<Heading key={is} {...args} is={is} />
+			{headingTypeOptions.map((as) => (
+				<Heading key={as} {...args} as={as} />
 			))}
 		</div>
 	),

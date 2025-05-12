@@ -43,7 +43,7 @@ export default defineWorkspace([
 		test: {
 			environment: 'jsdom',
 			globals: true,
-			name: 'specs',
+			name: 'unit-tests',
 			setupFiles: ['lib/test/vitest.setup.ts'],
 		},
 	},

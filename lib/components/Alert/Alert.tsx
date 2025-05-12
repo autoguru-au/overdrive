@@ -10,9 +10,8 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { ComponentProps, FunctionComponent, ReactNode } from 'react';
 
-import { Box, useBoxStyles } from '../Box';
+import { Box, boxStyles } from '../Box';
 import { Button } from '../Button';
-import { Column, Columns } from '../Columns';
 import { Icon } from '../Icon';
 import { IntentStripe } from '../IntentStripe';
 import { Text, useTextStyles } from '../Text';
@@ -63,24 +62,23 @@ export const Alert: FunctionComponent<Props> = ({
 			borderRadius="1"
 			boxShadow={inline ? 'none' : '4'}
 			padding="2"
+			data-od-component="alert"
 		>
 			<IntentStripe intent={intent} />
-			<Columns noWrap spaceX="2">
-				<Column noShrink alignSelf="top">
+			<Box display="flex" gap="2">
+				<Box alignSelf="flex-start">
 					<Icon
 						icon={iconMapForIntent[intent]}
 						size="medium"
-						className={useBoxStyles({
+						className={boxStyles({
 							marginY: '2',
 							marginLeft: '2',
 						})}
 					/>
-				</Column>
-
-				<Column
-					grow
+				</Box>
+				<Box
+					alignSelf="center"
 					width="auto"
-					alignSelf="centre"
 					className={useTextStyles({ colour: 'dark' })}
 				>
 					{typeof children === 'string' ? (
@@ -88,8 +86,8 @@ export const Alert: FunctionComponent<Props> = ({
 					) : (
 						children
 					)}
-				</Column>
-				<Column noShrink alignSelf="top">
+				</Box>
+				<Box ml="auto">
 					{dismissible && (
 						<Button
 							minimal
@@ -106,10 +104,8 @@ export const Alert: FunctionComponent<Props> = ({
 							/>
 						</Button>
 					)}
-				</Column>
-			</Columns>
+				</Box>
+			</Box>
 		</Box>
 	);
 };
-
-export default Alert;

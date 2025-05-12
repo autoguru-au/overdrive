@@ -1,36 +1,28 @@
-import { IconType } from '@autoguru/icons';
-import clsx from 'clsx';
-import * as React from 'react';
-import {
+import React, {
 	cloneElement,
-	createElement,
+	type ComponentRef,
+	type ForwardedRef,
 	forwardRef,
 	isValidElement,
 	useCallback,
 	useEffect,
 	useMemo,
 	useState,
-	type AriaAttributes,
 	type ComponentProps,
-	type ComponentPropsWithRef,
 	type ElementType,
 	type MouseEventHandler,
 	type ReactElement,
 } from 'react';
 
 import type { TextFontWeight, TextSizeScale } from '../../themes';
-import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
-import { Box, useBoxStyles } from '../Box';
+import { Box, BoxLikeProps, useBox, type UseBoxProps } from '../Box';
 import { Icon } from '../Icon';
 import { ProgressSpinner } from '../ProgressSpinner';
 import { useTextStyles } from '../Text';
 
 import * as styles from './Button.css';
 import type { ButtonSize, StyledButtonProps } from './Button.css';
-
-type ButtonPrimitive = ComponentPropsWithRef<'button'>;
-type AllowedChildren = string | IconType;
 
 const DOUBLE_CLICK_DETECTION_PERIOD = 700;
 
@@ -40,16 +32,11 @@ const defaultEnglish = {
 
 type TextContent = keyof typeof defaultEnglish;
 
-export interface ButtonProps
-	extends Pick<ButtonPrimitive, 'id' | 'onClick' | 'type' | 'className'>,
-		Pick<AriaAttributes, 'aria-label'>,
-		StyledButtonProps {
-	children: AllowedChildren | AllowedChildren[];
+export interface ButtonProps extends StyledButtonProps {
 	/**
 	 * Disabling the button will prevent it from receiving keyboard focus or click events
 	 */
 	disabled?: boolean;
-	is?: ElementType | ReactElement;
 	isLoading?: boolean;
 	isFullWidth?: boolean;
 	/**
@@ -62,6 +49,16 @@ export interface ButtonProps
 	 */
 	lang?: Partial<Record<TextContent, string>>;
 }
+
+/** Combined polymorphic Button props with style props and common box props */
+export type ButtonPolyProps<E extends React.ElementType> = BoxLikeProps<
+	E,
+	ButtonProps
+>;
+
+export type ButtonForwardRefReturn = (<E extends ElementType = 'button'>(
+	props: ButtonPolyProps<E> & { ref?: ForwardedRef<ComponentRef<E>> },
+) => ReactElement | null) & { displayName?: string };
 
 const getSpinnerColour: (
 	variant: ButtonProps['variant'],
@@ -94,14 +91,17 @@ const fontWeight: Record<ButtonSize, TextFontWeight> = {
 	medium: 'semiBold',
 };
 
-export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
+export const Button = forwardRef<
+	ComponentRef<'button'>,
+	ButtonPolyProps<'button'>
+>(
 	(
 		{
+			as = 'button',
 			children,
-			className = '',
+			className,
 			disabled = false,
 			id,
-			is: Component = 'button',
 			withDoubleClicks = false,
 			isLoading = false,
 			isFullWidth = false,
@@ -110,17 +110,17 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 			onClick: incomingOnClick,
 			rounded = false,
 			size = 'medium',
-			type = 'button',
+			type,
 			variant = 'secondary',
-			'aria-label': ariaLabel,
 			testId,
+			...props
 		},
 		ref,
 	) => {
+		const { 'aria-label': ariaLabel } = props;
 		const language = { ...defaultEnglish, ...lang };
 		const { isSingleIconChild, props: maybeIconProps } = useMemo(() => {
 			const maybeIcon =
-				// @ts-expect-error This comparison appears to be unintentional
 				isValidElement(children) && children.type === Icon;
 			const maybeProps = children as ReactElement<
 				ComponentProps<typeof Icon>
@@ -153,26 +153,12 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 			return 'default';
 		}, [isSingleIconChild, rounded]);
 
-		const props: ButtonPrimitive & { 'data-loading'?: string } = {
-			type: Component === 'button' ? type : undefined,
-			id,
-			onClick,
-			disabled: disabled || isLoading,
-			'aria-label': isLoading ? language.loading : ariaLabel,
-			'data-loading': isLoading ? '' : undefined,
-			className: clsx(
-				useBoxStyles({
-					is: typeof Component === 'string' ? Component : undefined,
-					display: 'inlineBlock',
-					overflow: 'hidden',
-					borderRadius: getBorderRadius(rounded),
-					textAlign: 'center',
-					borderWidth: 'none',
-					paddingY: 'none',
-					paddingX: getPadding(size, isLoading),
-					width: isFullWidth ? 'full' : void 0,
-					pointerEvents: functionallyDisabled ? 'none' : void 0,
-				}),
+		const { Component, componentProps, reactElement } = useBox({
+			...(props as UseBoxProps<'button'>),
+			as,
+			borderRadius: getBorderRadius(rounded),
+			borderWidth: 'none',
+			className: [
 				useTextStyles({
 					colour: 'white',
 					fontWeight: fontWeight[size],
@@ -185,9 +171,22 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 					minimal,
 				}),
 				className,
-			),
+			],
+			disabled: disabled || isLoading,
+			display: 'inline-block',
+			id,
+			onClick,
+			overflow: 'hidden',
+			paddingX: getPadding(size, isLoading),
+			paddingY: 'none',
+			pointerEvents: functionallyDisabled ? 'none' : undefined,
 			ref,
-		};
+			textAlign: 'center',
+			type: as === 'button' ? (type ?? 'button') : undefined,
+			width: isFullWidth ? 'full' : undefined,
+			'aria-label': isLoading ? language.loading : ariaLabel,
+			...dataAttrs({ loading: isLoading ? '' : undefined }),
+		});
 
 		const buttonContents = useMemo(
 			() => (
@@ -263,11 +262,17 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 			</Box>
 		);
 
-		return isValidElement(Component)
-			? cloneElement(Component, { ...props }, child)
-			: createElement(Component, { ...props }, child);
+		if (reactElement) {
+			cloneElement(reactElement, componentProps, child);
+		}
+
+		return (
+			<Component {...componentProps} ref={ref}>
+				{child}
+			</Component>
+		);
 	},
-);
+) as ButtonForwardRefReturn;
 
 Button.displayName = 'Button';
 

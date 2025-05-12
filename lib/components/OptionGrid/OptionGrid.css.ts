@@ -38,7 +38,7 @@ const grid4ColStyle = style({
 export const styledGrid = recipe({
 	base: sprinklesResponsive({
 		display: 'grid',
-		gridColumns: { mobile: '1' },
+		gridColumns: { mobile: 'auto' },
 		gap: '3',
 	}),
 	variants: {
