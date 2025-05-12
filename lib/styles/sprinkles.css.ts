@@ -47,6 +47,14 @@ const intentBackgroundColoursStandard = Object.entries(
 	{} as Record<keyof typeof tokens.colours.intent, string>,
 );
 
+const intentBorderColours = Object.entries(tokens.colours.intent).reduce(
+	(acc, [intent, { border }]) => {
+		acc[intent] = border;
+		return acc;
+	},
+	{} as Record<keyof typeof tokens.colours.intent, string>,
+);
+
 const borderColors = {
 	default: tokens.color.interactive.border,
 	muted: tokens.color.interactive.borderMuted,
@@ -73,15 +81,10 @@ const baseProperties = defineProperties({
 	'@layer': cssLayerUtil,
 	properties: {
 		// Borders
-		borderRadius: tokens.border.radius,
 		borderBottomColor: borderColors,
 		borderLeftColor: borderColors,
 		borderRightColor: borderColors,
 		borderTopColor: borderColors,
-		borderLeftWidth: tokens.border.width,
-		borderBottomWidth: tokens.border.width,
-		borderRightWidth: tokens.border.width,
-		borderTopWidth: tokens.border.width,
 		borderLeftStyle: ['none', 'solid'],
 		borderBottomStyle: ['none', 'solid'],
 		borderRightStyle: ['none', 'solid'],
@@ -119,12 +122,6 @@ const baseProperties = defineProperties({
 			'borderRightStyle',
 			'borderTopStyle',
 		],
-		borderWidth: [
-			'borderBottomWidth',
-			'borderLeftWidth',
-			'borderRightWidth',
-			'borderTopWidth',
-		],
 	},
 });
 
@@ -132,6 +129,10 @@ export const sprinkles = createSprinkles(baseProperties);
 export type Sprinkles = Parameters<typeof sprinkles>[0];
 
 // --- Legacy sprinkles with old colour tokens (non-responsive)
+const borderColours = {
+	...tokens.border.colours,
+	...intentBorderColours,
+};
 const legacyColourProperties = defineProperties({
 	'@layer': cssLayerUtil,
 	properties: {
@@ -140,10 +141,10 @@ const legacyColourProperties = defineProperties({
 			...tokens.colours.gamut,
 			transparent: 'transparent',
 		},
-		borderBottomColor: tokens.border.colours,
-		borderLeftColor: tokens.border.colours,
-		borderRightColor: tokens.border.colours,
-		borderTopColor: tokens.border.colours,
+		borderBottomColor: borderColours,
+		borderLeftColor: borderColours,
+		borderRightColor: borderColours,
+		borderTopColor: borderColours,
 		color: {
 			...intentForegroundColours,
 			...tokens.colours.foreground,
@@ -212,6 +213,12 @@ const responsiveProperties = defineProperties({
 		overflowY: ['auto', 'scroll', 'hidden'],
 		position: ['static', 'relative', 'absolute', 'fixed', 'sticky'],
 		textAlign: ['left', 'center', 'right'],
+		// Borders
+		borderRadius: tokens.border.radius,
+		borderLeftWidth: tokens.border.width,
+		borderBottomWidth: tokens.border.width,
+		borderRightWidth: tokens.border.width,
+		borderTopWidth: tokens.border.width,
 		// Size
 		height: {
 			...spaceWithoutNone,
@@ -283,6 +290,12 @@ const responsiveProperties = defineProperties({
 		marginTop: tokens.space,
 	},
 	shorthands: {
+		borderWidth: [
+			'borderBottomWidth',
+			'borderLeftWidth',
+			'borderRightWidth',
+			'borderTopWidth',
+		],
 		placeItems: ['justifyContent', 'alignItems'],
 		size: ['width', 'height'],
 		padding: ['paddingBottom', 'paddingLeft', 'paddingRight', 'paddingTop'],
