@@ -256,14 +256,14 @@ export const Button = forwardRef<
 				alignItems="center"
 				justifyContent="center"
 				className={styles.body}
-				{...dataAttrs({ 'data-testid': testId })}
+				testId={testId}
 			>
 				{buttonContents}
 			</Box>
 		);
 
 		if (reactElement) {
-			cloneElement(reactElement, componentProps, child);
+			return cloneElement(reactElement, componentProps, child);
 		}
 
 		return (
