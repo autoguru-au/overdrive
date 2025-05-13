@@ -16,9 +16,14 @@ import type {
 	SprinklesLegacyColours,
 } from '../../styles/sprinkles.css';
 import { dataAttrs } from '../../utils/dataAttrs';
-import { filterNonSprinklesProps } from '../../utils/sprinkles';
 
-import { boxStyles } from './boxStyles';
+import { boxStylesWithFilteredProps } from './boxStyles';
+
+// defaults
+const DEFAULT_TAG = 'div' as keyof JSX.IntrinsicElements;
+const LIST_ITEM_TAG = 'li' as keyof JSX.IntrinsicElements;
+const LIST_TAGS = ['ul', 'ol'] as ReadonlyArray<keyof JSX.IntrinsicElements>;
+const OD_COMPONENT_ATTR = 'od-component';
 
 /** All vanilla-extract sprinkles props */
 export type StyleProps = Sprinkles &
@@ -87,21 +92,15 @@ export type BoxLikeProps<
 	Omit<StyleProps, keyof P> & CommonBoxProps & P
 >;
 
-// defaults
-const DEFAULT_TAG = 'div' as keyof JSX.IntrinsicElements;
-const LIST_ITEM_TAG = 'li' as keyof JSX.IntrinsicElements;
-const LIST_TAGS = ['ul', 'ol'] as ReadonlyArray<keyof JSX.IntrinsicElements>;
-const OD_COMPONENT_ATTR = 'od-component';
-
 /**
  * The Overdrive component primitive to expose a flexible HTML element as a fully typesafe React component
  * that provides intrinsic props as well as style props from vanilla-extract sprinkles.
  *
  * The return value must be checked for `reactElement` being defined.
  *
- * @returns `{ reactElement, Component, componentProps, SemanticChild }` where `reactElement` is only defined
- * if JSX was passed in and `cloneElement` will need to be used. `SemanticChild` is only defined depending on
- * a the HTML tag.
+ * @returns `{ Component, reactElement, componentProps, SemanticChild }` where `reactElement` is only defined
+ * if JSX was passed in the `as` prop and `cloneElement` will need to be used. `SemanticChild` is only defined
+ * depending on the HTML tag.
  */
 export const useBox = <E extends ElementType = 'div'>({
 	as: _as,
@@ -111,7 +110,7 @@ export const useBox = <E extends ElementType = 'div'>({
 	...props
 }: UseBoxProps<E>) => {
 	const isReactElement = typeof _as !== 'string' && isValidElement(_as);
-	const as = isReactElement ? undefined : (_as ?? DEFAULT_TAG);
+	const as = isReactElement ? undefined : ((_as ?? DEFAULT_TAG) as E);
 	const Component: ElementType = as ?? DEFAULT_TAG;
 
 	// logic to promote semantic HTML and ensure a child tag is correct for the `as` prop
@@ -119,9 +118,9 @@ export const useBox = <E extends ElementType = 'div'>({
 	const SemanticChild = isList ? (LIST_ITEM_TAG as ElementType) : undefined;
 
 	// deep compare is mainly to attempt to stop rerenders arrising from responsive style props
-	const className = useDeepCompareMemo(
+	const { className, baseProps } = useDeepCompareMemo(
 		() =>
-			boxStyles({
+			boxStylesWithFilteredProps<E>({
 				as, // boxStyles uses the 'as' prop to determine css resets based on tag name
 				className: _className,
 				...props,
@@ -129,20 +128,12 @@ export const useBox = <E extends ElementType = 'div'>({
 		[as, _className, props],
 	);
 
-	// TODO: try to combine this into the first deep compare to simplify
-	const remainingProps = useDeepCompareMemo(
-		() => ({
-			...filterNonSprinklesProps(props),
-			...dataAttrs({
-				[OD_COMPONENT_ATTR]: odComponent?.toLocaleLowerCase(),
-				testId,
-			}),
-		}),
-		[odComponent, props, testId],
-	);
-
 	const componentProps = {
-		...remainingProps,
+		...baseProps,
+		...dataAttrs({
+			[OD_COMPONENT_ATTR]: odComponent?.toLocaleLowerCase(),
+			testId,
+		}),
 		className,
 	} as ComponentPropsWithRef<E>;
 

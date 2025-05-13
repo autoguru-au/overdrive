@@ -12,7 +12,7 @@ type AnySprinklesKey =
 	| keyof SprinklesResponsive
 	| keyof SprinklesLegacyColours;
 
-// Type for 'otherProps', containing only non-sprinkle properties from T
+// Type for 'baseProps', containing only non-sprinkle properties from T
 type RemainingProps<T extends object> = {
 	[K in keyof T as K extends AnySprinklesKey ? never : K]: T[K];
 };
@@ -21,7 +21,7 @@ interface SortedProps<T extends object> {
 	sprinklesProps: Sprinkles;
 	sprinklesResponsiveProps: SprinklesResponsive;
 	sprinklesLegacyColourProps: SprinklesLegacyColours;
-	otherProps: RemainingProps<T>;
+	baseProps: RemainingProps<T>;
 }
 
 /**
@@ -72,11 +72,11 @@ export const filterNonSprinklesProps = <P extends object>(props: P) =>
  * base sprinkles, responsive sprinkles, legacy colour sprinkles, and all other props.
  *
  * @param props - Object containing all props to be classified.
- * @returns An object with four properties:
+ * @returns `{ sprinklesProps, sprinklesResponsiveProps, sprinklesLegacyColourProps, baseProps }`
  *  - `sprinklesProps`: Props matching base sprinkles
  *  - `sprinklesResponsiveProps`: Props matching responsive sprinkles
  *  - `sprinklesLegacyColourProps`: Props matching legacy colour sprinkles
- *  - `baseProps`: All other props that do not match any sprinkle category
+ *  - `baseProps`: The remainder are the component's base props
  */
 export const filterPropsWithStyles = <P extends object>(
 	props: P,
@@ -85,7 +85,7 @@ export const filterPropsWithStyles = <P extends object>(
 		sprinklesProps: {} as Record<string, unknown>,
 		sprinklesResponsiveProps: {} as Record<string, unknown>,
 		sprinklesLegacyColourProps: {} as Record<string, unknown>,
-		otherProps: {} as Record<string, unknown>,
+		baseProps: {} as Record<string, unknown>,
 	};
 
 	for (const key in props) {
@@ -99,7 +99,7 @@ export const filterPropsWithStyles = <P extends object>(
 			} else if (isSprinklesLegacyColourProperty(key)) {
 				acc.sprinklesLegacyColourProps[key] = value;
 			} else {
-				acc.otherProps[key] = value;
+				acc.baseProps[key] = value;
 			}
 		}
 	}
@@ -110,6 +110,6 @@ export const filterPropsWithStyles = <P extends object>(
 			acc.sprinklesResponsiveProps as SprinklesResponsive,
 		sprinklesLegacyColourProps:
 			acc.sprinklesLegacyColourProps as SprinklesLegacyColours,
-		otherProps: acc.otherProps as RemainingProps<P>,
+		baseProps: acc.baseProps as RemainingProps<P>,
 	};
 };
