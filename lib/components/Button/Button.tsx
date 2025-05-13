@@ -263,7 +263,7 @@ export const Button = forwardRef<
 		);
 
 		if (reactElement) {
-			cloneElement(reactElement, componentProps, child);
+			return cloneElement(reactElement, componentProps, child);
 		}
 
 		return (
