@@ -1,48 +1,77 @@
-import { style, StyleRule, styleVariants } from '@vanilla-extract/css';
+import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
+import clsx from 'clsx';
 
-import type { ThemeTokens as Tokens } from '../../themes';
+import { resetStyles, type ResetTagNames } from 'styles/reset.css';
+
+import {
+	sprinkles,
+	type Sprinkles,
+	sprinklesLegacyColours,
+	type SprinklesLegacyColours,
+} from '../../styles/sprinkles.css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
-import { mapTokenToProperty } from '../../utils/mapTokenToProperty';
 
-export const root = style({
-	selectors: {
-		'&::selection': {
-			color: vars.typography.colour.white,
-			background: vars.typography.colour.primary,
+type TextColor = Sprinkles['color'];
+type TextColour = SprinklesLegacyColours['colour'];
+type TextSize = Sprinkles['text'];
+type TextTags = Extract<ResetTagNames, 'label' | 'p' | 'span'>;
+type FontWeight = Sprinkles['fontWeight'];
+
+// Export types for the recipe
+export type TextVariants = NonNullable<RecipeVariants<typeof textVariants>>;
+export interface TextStylesProps extends TextVariants {
+	as?: TextTags;
+	color?: TextColor;
+	colour?: TextColour;
+	fontWeight?: FontWeight;
+	size?: TextSize;
+}
+
+// Define the text recipe
+export const textVariants = recipe({
+	base: {
+		selectors: {
+			'&::selection': {
+				color: vars.typography.colour.white,
+				background: vars.typography.colour.primary,
+			},
+		},
+	},
+	variants: {
+		breakWord: {
+			true: {
+				wordBreak: 'break-word',
+			},
+		},
+		noWrap: {
+			true: {
+				whiteSpace: 'nowrap',
+			},
+		},
+		transform: {
+			uppercase: {
+				textTransform: 'uppercase',
+			},
+			capitalize: {
+				textTransform: 'capitalize',
+			},
 		},
 	},
 });
 
-export const sizes = styleVariants(
-	Object.entries(vars.typography.size).reduce(
-		(result, [name, size]) => ({
-			...result,
-			[name]: {
-				fontSize: size.fontSize,
-				lineHeight: size.lineHeight,
-			},
-		}),
-		{} as Record<keyof Tokens['typography']['size'], StyleRule>,
-	),
-);
-
-export const colours = styleVariants({
-	...mapTokenToProperty(vars.typography.colour, 'color'),
-	unset: {
-		color: 'unset',
-	},
-});
-
-export const fontWeight = styleVariants(
-	mapTokenToProperty(vars.typography.fontWeight, 'fontWeight'),
-);
-
-export const noWrap = style({ whiteSpace: 'nowrap' });
-export const breakWord = style({ wordBreak: 'break-word' });
-
-export const transform = styleVariants(
-	mapTokenToProperty(
-		{ uppercase: 'uppercase', capitalize: 'capitalize' },
-		'textTransform',
-	),
-);
+export const textStyles = ({
+	as,
+	breakWord,
+	color,
+	colour,
+	fontWeight,
+	noWrap,
+	size,
+	transform,
+}: TextStylesProps) =>
+	clsx([
+		resetStyles({ as }),
+		sprinkles({ color, fontWeight, text: size }),
+		sprinklesLegacyColours({ colour }),
+		textVariants({ breakWord, noWrap, transform }),
+	]);
