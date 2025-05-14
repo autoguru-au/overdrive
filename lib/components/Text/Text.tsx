@@ -20,7 +20,8 @@ export const Text = <E extends TextTags>({
 	as = 'span' as E,
 	children,
 	className,
-	colour,
+	color,
+	colour: _colour,
 	display,
 	fontWeight = 'normal',
 	transform,
@@ -30,10 +31,14 @@ export const Text = <E extends TextTags>({
 	strong = false,
 	...props
 }: TextProps<E>) => {
+	const colourOrDefault = !_colour && strong ? 'dark' : _colour;
+	const colour = color ? undefined : colourOrDefault;
+
 	const styles = textStyles({
 		as: as as TextTags,
 		size,
-		colour: colour ?? (strong ? 'dark' : undefined),
+		color,
+		colour,
 		fontWeight: strong ? 'bold' : fontWeight,
 		transform,
 		noWrap,
