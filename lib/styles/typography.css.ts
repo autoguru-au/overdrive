@@ -1,16 +1,9 @@
 import { styleVariants } from '@vanilla-extract/css';
 import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
-import clsx from 'clsx';
 
 import { overdriveTokens as tokens } from '../themes/theme.css';
 
-import { resetStyles } from './reset.css';
-import {
-	sprinkles,
-	type Sprinkles,
-	sprinklesLegacyColours,
-	type SprinklesLegacyColours,
-} from './sprinkles.css';
+import { type Sprinkles, type SprinklesLegacyColours } from './sprinkles.css';
 
 export type TextColor = Sprinkles['color'];
 export type TextColour = SprinklesLegacyColours['colour'];
@@ -113,20 +106,3 @@ export const textVariants = recipe({
 		},
 	},
 });
-
-export const textStyles = ({
-	as,
-	breakWord,
-	color,
-	colour,
-	fontWeight,
-	noWrap,
-	size,
-	transform,
-}: TextStylesProps) =>
-	clsx([
-		resetStyles({ as }),
-		sprinkles({ color, fontWeight, text: size }),
-		sprinklesLegacyColours({ colour }),
-		textVariants({ breakWord, noWrap, transform }),
-	]);

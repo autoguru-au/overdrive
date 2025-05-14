@@ -1,8 +1,10 @@
 import React, { cloneElement } from 'react';
 
 import type { ResetTagNames } from '../../styles/reset.css';
-import { textStyles, type TextStylesProps } from '../../styles/typography.css';
+import type { TextStylesProps } from '../../styles/typography.css';
 import { useBox, UseBoxProps, type BoxLikeProps } from '../Box';
+
+import { textStyles } from './textStyles';
 
 export type TextTags = Extract<ResetTagNames, 'label' | 'p' | 'span'>;
 interface CustomTextProps extends Omit<TextStylesProps, 'as'> {

@@ -140,7 +140,7 @@ const vAlignMiddle = [
 ];
 
 /** controls the list html tag names to reset and maps them to the reset style */
-const element = {
+export const element = {
 	div: block,
 	p: trimmedElement,
 	h1: trimmedElement,
@@ -181,7 +181,7 @@ const element = {
 
 export type ResetTagNames = keyof typeof element;
 
-const resetVariants = recipe({
+export const resetVariants = recipe({
 	base: {},
 	variants: {
 		as: element,
@@ -191,15 +191,6 @@ const resetVariants = recipe({
 	},
 });
 
-type ResetVariantProps = NonNullable<RecipeVariants<typeof resetVariants>>;
-
-/**
- * Returns the reset styles based on the `as` prop tag name passed in.
- * A wrapper around `resetVariants` recipe to allow any string to be passed in
- */
-export const resetStyles = ({ as: _as }: { as: string | undefined }) => {
-	if (!_as) return resetVariants();
-
-	const as = (_as in element ? _as : 'div') as ResetVariantProps['as'];
-	return resetVariants({ as });
-};
+export type ResetVariantProps = NonNullable<
+	RecipeVariants<typeof resetVariants>
+>;
