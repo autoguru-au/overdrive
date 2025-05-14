@@ -12,10 +12,11 @@ import {
 	ReactNode,
 } from 'react';
 
+import { textStyles } from '../../styles/typography.css';
 import { boxStyles } from '../Box';
 import { Icon } from '../Icon';
 import { Inline } from '../Inline';
-import { Text, useTextStyles } from '../Text';
+import { Text } from '../Text';
 
 import * as styles from './Anchor.css';
 
@@ -43,14 +44,14 @@ export const Anchor: FunctionComponent<Props> = ({
 	icon,
 	...rest
 }) => {
-	const textStyles = useTextStyles({
+	const linkColor = textStyles({
 		colour: 'link',
 	});
 
 	const props = {
 		className: clsx(
 			styles.root,
-			textStyles,
+			linkColor,
 			boxStyles({
 				as: typeof Component === 'string' ? Component : undefined,
 				display: 'inline',
@@ -63,7 +64,7 @@ export const Anchor: FunctionComponent<Props> = ({
 
 	const childs = (
 		<Inline space="2">
-			{icon && <Icon icon={icon} size="small" className={textStyles} />}
+			{icon && <Icon icon={icon} size="small" className={linkColor} />}
 			<Text fontWeight="bold" size="4" colour="link">
 				{children}
 			</Text>

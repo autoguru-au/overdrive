@@ -14,12 +14,12 @@ import React, {
 	type ReactElement,
 } from 'react';
 
+import { textStyles } from '../../styles/typography.css';
 import type { TextFontWeight, TextSizeScale } from '../../themes';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box, BoxLikeProps, useBox, type UseBoxProps } from '../Box';
 import { Icon } from '../Icon';
 import { ProgressSpinner } from '../ProgressSpinner';
-import { useTextStyles } from '../Text';
 
 import * as styles from './Button.css';
 import type { ButtonSize, StyledButtonProps } from './Button.css';
@@ -159,7 +159,7 @@ export const Button = forwardRef<
 			borderRadius: getBorderRadius(rounded),
 			borderWidth: 'none',
 			className: [
-				useTextStyles({
+				textStyles({
 					colour: 'white',
 					fontWeight: fontWeight[size],
 					size: fontSize[size],

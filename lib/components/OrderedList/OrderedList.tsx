@@ -8,9 +8,9 @@ import {
 	useContext,
 } from 'react';
 
+import { textStyles } from '../../styles/typography.css';
 import { Box } from '../Box';
 import { Stack } from '../Stack';
-import { useTextStyles } from '../Text';
 
 import * as styles from './OrderedList.css';
 
@@ -57,7 +57,7 @@ export const OrderedList: FunctionComponent<Props> & {
 			marginTop={myCycle > 0 ? '2' : 'none'}
 			className={clsx(
 				styles.root.default,
-				useTextStyles({ colour: 'dark' }),
+				textStyles({ colour: 'dark' }),
 				{ [styles.root.firstOccurrence]: cycle === -1 },
 				className,
 			)}

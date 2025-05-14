@@ -6,8 +6,9 @@ import React, {
 	type ReactNode,
 } from 'react';
 
+import { textStyles } from '../../../styles/typography.css';
 import { Box, boxStyles } from '../../Box';
-import { Text, useTextStyles } from '../../Text';
+import { Text } from '../../Text';
 
 import * as styles from './CheckableBase.css';
 
@@ -104,7 +105,7 @@ export const CheckableBase = forwardRef<HTMLInputElement, Props>(
 					pointerEvents={disabled ? 'none' : void 0}
 					className={clsx(
 						boxStyles({ as: 'button' }),
-						useTextStyles({ size: '4' }),
+						textStyles({ size: '4' }),
 						{
 							[styles.label.disabled]: disabled,
 						},

@@ -14,11 +14,11 @@ import React, {
 } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 
+import { textStyles } from '../../styles/typography.css';
 import { animate, ownerWindow, useEventCallback } from '../../utils';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
-import { useTextStyles } from '../Text';
 
 import * as styles from './TabList.css';
 import { TabsContext } from './Tabs';
@@ -159,7 +159,7 @@ export const TabList: FunctionComponent<Props> = ({
 					width="full"
 					role="tablist"
 					aria-orientation="horizontal"
-					className={useTextStyles({ noWrap: true })}
+					className={textStyles({ noWrap: true })}
 				>
 					{tabs}
 				</Box>

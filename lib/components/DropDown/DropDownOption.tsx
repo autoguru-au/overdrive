@@ -3,10 +3,11 @@ import clsx from 'clsx';
 import { ComponentProps, FunctionComponent } from 'react';
 import * as React from 'react';
 
+import { textStyles } from '../../styles/typography.css';
 import { Box } from '../Box';
 import { Icon } from '../Icon';
 import { Inline } from '../Inline';
-import { Text, useTextStyles } from '../Text';
+import { Text } from '../Text';
 
 import * as styles from './DropDownOption.css';
 
@@ -29,7 +30,7 @@ export const DropDownOption: FunctionComponent<Props> = ({
 	width = 'full',
 	...boxProps
 }) => {
-	const colourStyles = useTextStyles({ colour: iconColour });
+	const colourStyles = textStyles({ colour: iconColour });
 	return (
 		<Box
 			className={clsx(styles.root, className, {

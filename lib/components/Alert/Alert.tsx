@@ -10,11 +10,12 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { ComponentProps, FunctionComponent, ReactNode } from 'react';
 
+import { textStyles } from '../../styles/typography.css';
 import { Box, boxStyles } from '../Box';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { IntentStripe } from '../IntentStripe';
-import { Text, useTextStyles } from '../Text';
+import { Text } from '../Text';
 
 import * as styles from './Alert.css';
 
@@ -45,8 +46,8 @@ export const Alert: FunctionComponent<Props> = ({
 	onRequestClose,
 	dismissible = typeof onRequestClose === 'function',
 }) => {
-	const dismissBtnStyles = useTextStyles({ colour: 'muted' });
-	const intentColourStyles = useTextStyles({ colour: intent });
+	const dismissBtnStyles = textStyles({ colour: 'muted' });
+	const intentColourStyles = textStyles({ colour: intent });
 
 	return (
 		<Box
@@ -79,7 +80,7 @@ export const Alert: FunctionComponent<Props> = ({
 				<Box
 					alignSelf="center"
 					width="auto"
-					className={useTextStyles({ colour: 'dark' })}
+					className={textStyles({ colour: 'dark' })}
 				>
 					{typeof children === 'string' ? (
 						<Text>{children}</Text>

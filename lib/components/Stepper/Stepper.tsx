@@ -9,11 +9,12 @@ import {
 	useCallback,
 } from 'react';
 
+import { textStyles } from '../../styles/typography.css';
 import { addWithSafeDecimal } from '../../utils/number';
 import { Box, boxStyles } from '../Box';
 import { Icon } from '../Icon';
 import { Inline } from '../Inline';
-import { Text, useTextStyles } from '../Text';
+import { Text } from '../Text';
 
 import * as styles from './Stepper.css';
 
@@ -62,7 +63,7 @@ const Handle: FunctionComponent<HandleProps> = ({
 		className={[
 			styles.handle.default,
 			{ [styles.handle.disabled]: disabled },
-			useTextStyles({ colour: 'white' }),
+			textStyles({ colour: 'white' }),
 		]}
 		backgroundColour={disabled ? 'neutral' : 'primary'}
 		aria-label={label}

@@ -1,14 +1,13 @@
 import React from 'react';
 
+import { textStyles, type TextStylesProps } from '../../styles/typography.css';
 import type { ThemeTokens as Tokens } from '../../themes';
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box, type UseBoxProps } from '../Box';
-import type { TextStyleProps } from '../Text';
-import { useTextStyles } from '../Text';
 
 export interface HeadingProps
-	extends Omit<TextStyleProps, 'as'>,
+	extends Omit<TextStylesProps, 'as'>,
 		Pick<UseBoxProps, 'children' | 'className' | 'id' | 'ref'> {
 	as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 	colour?: Exclude<keyof Tokens['typography']['colour'], 'muted'>;
@@ -40,7 +39,7 @@ export const Heading = ({
 		as={as}
 		id={id}
 		className={[
-			useTextStyles({
+			textStyles({
 				size,
 				colour,
 				noWrap,

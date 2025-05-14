@@ -1,9 +1,10 @@
 import { invariant } from '@autoguru/utilities';
 import React, { cloneElement, type ElementType, useContext } from 'react';
 
+import { textStyles } from '../../styles/typography.css';
 import { useBox, type UseBoxProps } from '../Box';
 import { Inline } from '../Inline';
-import { Text, useTextStyles } from '../Text';
+import { Text } from '../Text';
 
 import * as styles from './Tab.css';
 import { TabListContext } from './TabList';
@@ -41,7 +42,7 @@ export const Tab = <E extends ElementType>({
 		as: typeof as === 'string' ? as : 'button',
 		backgroundColour: 'transparent',
 		className: [
-			useTextStyles({
+			textStyles({
 				noWrap: true,
 				size: '3',
 				fontWeight: 'bold',

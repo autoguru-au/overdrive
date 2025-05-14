@@ -7,8 +7,8 @@ import type {
 import * as React from 'react';
 import { ReactNode } from 'react';
 
+import { textStyles } from '../../styles/typography.css';
 import { Box } from '../Box';
-import { useTextStyles } from '../Text';
 
 import * as styles from './Pagination.css';
 
@@ -47,7 +47,7 @@ export const Bubble: FunctionComponent<Props> = ({
 			pointerEvents={disabled ? 'none' : void 0}
 			className={clsx(
 				className,
-				useTextStyles({
+				textStyles({
 					fontWeight: 'bold',
 					colour: selected ? 'white' : 'light',
 					size: '3',

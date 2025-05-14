@@ -8,11 +8,11 @@ import {
 	useMemo,
 } from 'react';
 
+import { textStyles } from '../../styles/typography.css';
 import { noop } from '../../utils';
 import { Box } from '../Box';
 import { Icon } from '../Icon';
 import { Inline } from '../Inline';
-import { useTextStyles } from '../Text';
 
 import { Bubble } from './Bubble';
 import * as styles from './Pagination.css';
@@ -59,7 +59,7 @@ const NavButton: FunctionComponent<NavButtonProps> = ({
 		padding="2"
 		userSelect="none"
 		pointerEvents={disabled ? 'none' : void 0}
-		className={clsx(useTextStyles({ colour: 'light' }), {
+		className={clsx(textStyles({ colour: 'light' }), {
 			[styles.disabled]: disabled,
 		})}
 		onClick={onClick}

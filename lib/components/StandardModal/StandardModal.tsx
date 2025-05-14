@@ -8,13 +8,13 @@ import type {
 import * as React from 'react';
 import { useLayoutEffect, useRef } from 'react';
 
+import { textStyles } from '../../styles/typography.css';
 import { isBrowser, useEventCallback, useId } from '../../utils';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Heading } from '../Heading';
 import { Icon } from '../Icon';
 import { Modal } from '../Modal';
-import { useTextStyles } from '../Text';
 
 import * as styles from './StandardModal.css';
 
@@ -139,7 +139,7 @@ export const StandardModal: FunctionComponent<Props> = ({
 							onClick={closeButtonHandler}
 						>
 							<Icon
-								className={useTextStyles({ colour: 'muted' })}
+								className={textStyles({ colour: 'muted' })}
 								icon={WindowCloseIcon}
 								size="medium"
 							/>
