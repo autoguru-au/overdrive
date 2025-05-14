@@ -1,7 +1,31 @@
 import { styleVariants } from '@vanilla-extract/css';
-import { recipe } from '@vanilla-extract/recipes';
+import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
+import clsx from 'clsx';
 
 import { overdriveTokens as tokens } from '../themes/theme.css';
+
+import { resetStyles } from './reset.css';
+import {
+	sprinkles,
+	type Sprinkles,
+	sprinklesLegacyColours,
+	type SprinklesLegacyColours,
+} from './sprinkles.css';
+
+export type TextColor = Sprinkles['color'];
+export type TextColour = SprinklesLegacyColours['colour'];
+export type TextSize = Sprinkles['text'];
+export type FontWeight = Sprinkles['fontWeight'];
+
+// Export types for the recipe
+export type TextVariants = NonNullable<RecipeVariants<typeof textVariants>>;
+export interface TextStylesProps extends TextVariants {
+	as?: string;
+	color?: TextColor;
+	colour?: TextColour;
+	fontWeight?: FontWeight;
+	size?: TextSize;
+}
 
 const fontScale = {
 	...tokens.typography.size,
@@ -57,3 +81,52 @@ export const styledFont = recipe({
 		},
 	],
 });
+
+// Define the text recipe
+export const textVariants = recipe({
+	base: {
+		selectors: {
+			'&::selection': {
+				color: tokens.typography.colour.white,
+				background: tokens.typography.colour.primary,
+			},
+		},
+	},
+	variants: {
+		breakWord: {
+			true: {
+				wordBreak: 'break-word',
+			},
+		},
+		noWrap: {
+			true: {
+				whiteSpace: 'nowrap',
+			},
+		},
+		transform: {
+			uppercase: {
+				textTransform: 'uppercase',
+			},
+			capitalize: {
+				textTransform: 'capitalize',
+			},
+		},
+	},
+});
+
+export const textStyles = ({
+	as,
+	breakWord,
+	color,
+	colour,
+	fontWeight,
+	noWrap,
+	size,
+	transform,
+}: TextStylesProps) =>
+	clsx([
+		resetStyles({ as }),
+		sprinkles({ color, fontWeight, text: size }),
+		sprinklesLegacyColours({ colour }),
+		textVariants({ breakWord, noWrap, transform }),
+	]);

@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { Text, type TextProps } from './Text';
-import type { TextSize } from './useTextStyles';
-import * as styles from './useTextStyles.css';
+import { valueArrays } from '../../styles/sprinkles.css';
 
-const elements: TextProps['as'][] = ['p', 'label', 'span'];
+import { Text, type TextTags } from './Text';
+
+const elements: TextTags[] = ['p', 'label', 'span'];
 const Wrapper = ({ children }) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>{children}</div>
 );
@@ -59,8 +59,8 @@ export const AllSizes: Story = {
 	},
 	render: (args) => (
 		<>
-			{Object.keys(styles.sizes).map((size) => (
-				<Text key={size} {...args} size={size as TextSize} />
+			{valueArrays.fontSizes.map((size) => (
+				<Text key={size} {...args} size={size} />
 			))}
 		</>
 	),
@@ -72,16 +72,13 @@ export const AllColours: Story = {
 	},
 	render: ({ children, ...args }) => (
 		<>
-			{Object.keys(styles.colours).map((color) => (
+			{valueArrays.intentForegroundColours.map((color) => (
 				<div key={color} style={{ marginBottom: 8 }}>
 					<Text as="p" size="3" strong>
 						{color}
 					</Text>
-					<Text
-						{...args}
-						as="p"
-						colour={color as keyof typeof styles.colours}
-					>
+					{/*@ts-expect-error wrong ref type */}
+					<Text {...args} as="p" colour={color}>
 						{children}
 					</Text>
 				</div>
@@ -92,13 +89,9 @@ export const AllColours: Story = {
 
 export const WithLongUnspacedText: Story = {
 	args: {
+		as: 'label',
 		breakWord: true,
 		children:
 			'Toavoidyoucomingtoahaltinthemiddleoftheroad,becauseofabanging,crashofpistonsandvalvesfightingwitheachother,letinvestigatewhatthetiming belt is, what it does, and why it costs so much to replace or repair.',
 	},
-	render: (args) => (
-		<>
-			<Text {...args} />
-		</>
-	),
 };
