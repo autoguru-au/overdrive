@@ -1,7 +1,8 @@
 import { globalStyle } from '@vanilla-extract/css';
 
-import { cssLayerReset } from '../styles/layers.css';
 import { overdriveTokens } from '../themes/theme.css';
+
+import { cssLayerReset } from './layers.css';
 
 globalStyle('html', {
 	'@layer': {

@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import type { ElementType } from 'react';
 
-import { element } from '../../reset/reset.css';
+import { resetStyles } from '../../styles/reset.css';
 import {
 	sprinkles,
 	sprinklesLegacyColours,
@@ -54,9 +54,6 @@ export const boxStylesWithFilteredProps = <E extends ElementType = 'div'>({
 	className,
 	...props
 }: BoxStylesProps<E>) => {
-	const tagName: string = as?.toString() ?? 'div';
-	const resets = tagName in element ? element[tagName] : '';
-
 	const hasBorderStyle = borderStyleProps.some((key) => !!props[key]);
 	const hasBorderColorOrWidth = [
 		...borderColorProps,
@@ -77,7 +74,7 @@ export const boxStylesWithFilteredProps = <E extends ElementType = 'div'>({
 
 	return {
 		className: clsx(
-			resets,
+			resetStyles({ as: as ? `${as}` : as }),
 			sprinkles(sprinklesProps),
 			sprinklesResponsive(sprinklesResponsiveProps),
 			sprinklesLegacyColours(sprinklesLegacyColourProps),

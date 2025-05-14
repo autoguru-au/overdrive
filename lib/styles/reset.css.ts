@@ -1,7 +1,9 @@
 import { style } from '@vanilla-extract/css';
+import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 
-import { cssLayerReset } from '../styles/layers.css';
 import { overdriveTokens } from '../themes/theme.css';
+
+import { cssLayerReset } from './layers.css';
 
 // TODO: phase out this base as it's used in every Box
 export const base = {
@@ -166,7 +168,8 @@ const blockText = style({
 	},
 });
 
-export const element = {
+/** controls the list html tag names to reset and maps them to the reset style */
+const element = {
 	div: block,
 	p: blockText,
 	h1: blockText,
@@ -204,4 +207,29 @@ export const element = {
 	td: vAlignMiddle,
 	th: vAlignMiddle,
 	tr: vAlignMiddle,
+};
+
+export type ResetTagNames = keyof typeof element;
+
+const resetVariants = recipe({
+	base,
+	variants: {
+		as: element,
+	},
+	defaultVariants: {
+		as: 'div',
+	},
+});
+
+type ResetVariantProps = NonNullable<RecipeVariants<typeof resetVariants>>;
+
+/**
+ * Returns the reset styles based on the `as` prop tag name passed in.
+ * A wrapper around `resetVariants` recipe to allow any string to be passed in
+ */
+export const resetStyles = ({ as: _as }: { as: string | undefined }) => {
+	if (!_as) return resetVariants();
+
+	const as = (_as in element ? _as : 'div') as ResetVariantProps['as'];
+	return resetVariants({ as });
 };
