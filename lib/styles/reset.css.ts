@@ -5,17 +5,18 @@ import { overdriveTokens } from '../themes/theme.css';
 
 import { cssLayerReset } from './layers.css';
 
-// TODO: phase out this base as it's used in every Box
-export const base = {
-	fontSize: '100%',
-	verticalAlign: 'baseline',
-	borderWidth: 0,
-};
-
 export const trimmed = {
 	margin: 0,
 	padding: 0,
 };
+
+const trimmedElement = style({
+	'@layer': {
+		[cssLayerReset]: {
+			...trimmed,
+		},
+	},
+});
 
 export const container = style({
 	'@layer': {
@@ -28,84 +29,60 @@ export const container = style({
 	},
 });
 
-const appearance = style({
+const a = style({
 	'@layer': {
 		[cssLayerReset]: {
-			appearance: 'none',
-		},
-	},
-});
-
-const cursorPointer = style({
-	'@layer': {
-		[cssLayerReset]: { cursor: 'pointer' },
-	},
-});
-
-const inlineText = style({
-	'@layer': {
-		[cssLayerReset]: { ...base },
-	},
-});
-
-const block = style({
-	'@layer': {
-		[cssLayerReset]: { ...base, display: 'block' },
-	},
-});
-
-const list = style({
-	'@layer': {
-		[cssLayerReset]: { ...base, ...trimmed, listStyle: 'none' },
-	},
-});
-
-const trimmedBlockElement = style({
-	'@layer': {
-		[cssLayerReset]: {
-			...base,
+			cursor: 'pointer',
+			textDecoration: 'none',
 			...trimmed,
 		},
 	},
 });
 
+const block = style({
+	'@layer': {
+		[cssLayerReset]: { display: 'block' },
+	},
+});
+
 const button = [
-	appearance,
-	cursorPointer,
-	trimmedBlockElement,
+	trimmedElement,
 	style({
 		'@layer': {
 			[cssLayerReset]: {
-				outline: 'none',
+				appearance: 'none',
 				background: 'none',
+				cursor: 'pointer',
+				outline: 'none',
 				userSelect: 'none',
 			},
 		},
 	}),
 ];
 
-const field = [trimmedBlockElement, appearance];
+const list = style({
+	'@layer': {
+		[cssLayerReset]: { ...trimmed, listStyle: 'none' },
+	},
+});
 
-const select = [
-	...field,
+const fieldset = [
+	trimmedElement,
 	style({
 		'@layer': {
 			[cssLayerReset]: {
-				selectors: {
-					'&::-ms-expand': {
-						display: 'none',
-					},
-				},
+				appearance: 'none',
 			},
 		},
 	}),
 ];
 
 const input = [
-	...field,
+	trimmedElement,
 	style({
 		'@layer': {
 			[cssLayerReset]: {
+				appearance: 'none',
 				selectors: {
 					'&::-ms-clear': {
 						display: 'none',
@@ -125,21 +102,24 @@ const input = [
 	}),
 ];
 
-const a = [
-	cursorPointer,
+const select = [
+	trimmedElement,
 	style({
 		'@layer': {
 			[cssLayerReset]: {
-				...base,
-				...trimmed,
-				textDecoration: 'none',
+				appearance: 'none',
+				selectors: {
+					'&::-ms-expand': {
+						display: 'none',
+					},
+				},
 			},
 		},
 	}),
 ];
 
 const table = [
-	trimmedBlockElement,
+	trimmedElement,
 	style({
 		'@layer': {
 			[cssLayerReset]: {
@@ -151,7 +131,7 @@ const table = [
 ];
 
 const vAlignMiddle = [
-	trimmedBlockElement,
+	trimmedElement,
 	style({
 		'@layer': {
 			[cssLayerReset]: { verticalAlign: 'middle' },
@@ -159,27 +139,18 @@ const vAlignMiddle = [
 	}),
 ];
 
-const blockText = style({
-	'@layer': {
-		[cssLayerReset]: {
-			...base,
-			...trimmed,
-		},
-	},
-});
-
 /** controls the list html tag names to reset and maps them to the reset style */
 const element = {
 	div: block,
-	p: blockText,
-	h1: blockText,
-	h2: blockText,
-	h3: blockText,
-	h4: blockText,
-	h5: blockText,
-	h6: blockText,
-	span: inlineText,
-	label: inlineText,
+	p: trimmedElement,
+	h1: trimmedElement,
+	h2: trimmedElement,
+	h3: trimmedElement,
+	h4: trimmedElement,
+	h5: trimmedElement,
+	h6: trimmedElement,
+	span: '',
+	label: '',
 	article: block,
 	aside: block,
 	details: block,
@@ -197,8 +168,7 @@ const element = {
 	select,
 	input,
 	textarea: input,
-	fieldset: field,
-	field: field,
+	fieldset,
 	a,
 	table,
 	thead: vAlignMiddle,
@@ -212,7 +182,7 @@ const element = {
 export type ResetTagNames = keyof typeof element;
 
 const resetVariants = recipe({
-	base,
+	base: {},
 	variants: {
 		as: element,
 	},
