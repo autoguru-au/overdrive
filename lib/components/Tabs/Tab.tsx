@@ -69,7 +69,6 @@ export const Tab = <E extends ElementType>({
 					strong
 					is="span"
 					size="2"
-					align="center"
 					display="block"
 					colour={isActive ? 'white' : 'dark'}
 					className={styles.indication({

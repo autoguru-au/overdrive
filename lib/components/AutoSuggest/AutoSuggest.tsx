@@ -794,7 +794,7 @@ const DefaultSuggestion: FunctionComponent<DefaultSuggestionProps> = ({
 			[styles.suggestionHighlight]: highlight,
 		})}
 	>
-		<Text is="span">{text}</Text>
+		<Text as="span">{text}</Text>
 	</div>
 );
 

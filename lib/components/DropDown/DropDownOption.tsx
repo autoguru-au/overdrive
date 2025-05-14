@@ -50,7 +50,7 @@ export const DropDownOption: FunctionComponent<Props> = ({
 				alignX="space-between"
 				alignY="center"
 			>
-				<Text is="p" size="3">
+				<Text as="p" size="3">
 					{label}
 				</Text>
 				{icon ? (

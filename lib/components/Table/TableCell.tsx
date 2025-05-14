@@ -48,13 +48,7 @@ export const TableCell = forwardRef<HTMLDivElement, Props>(
 			>
 				{typeof children === 'string' ||
 				typeof children === 'number' ? (
-					<Text
-						is="span"
-						align={align}
-						colour="dark"
-						display="block"
-						size="3"
-					>
+					<Text as="span" colour="dark" display="block" size="3">
 						{children}
 					</Text>
 				) : (

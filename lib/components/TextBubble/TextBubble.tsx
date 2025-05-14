@@ -64,7 +64,6 @@ export const TextBubble: FunctionComponent<Props> = ({
 				size="2"
 				strong
 				noWrap
-				align="center"
 				className={clsx(
 					styles.bubbleText,
 					boxStyles({

@@ -9,7 +9,6 @@ import { Text } from '../Text';
 import { TextLink } from '.';
 
 const sizeScale = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
-const alignOptions: ['left', 'center', 'right'] = ['left', 'center', 'right'];
 const fontWeightOptions = ['normal', 'semiBold', 'bold'];
 
 const noWrapOptions: Array<ComponentProps<typeof Heading>['noWrap']> = [
@@ -77,13 +76,6 @@ const meta = {
 				type: 'select',
 			},
 		},
-		align: {
-			options: alignOptions,
-			defaultValue: 'left',
-			control: {
-				type: 'select',
-			},
-		},
 		is: {
 			control: {
 				disable: true,
@@ -101,7 +93,6 @@ export const Standard: Story = {
 		children: 'Hello',
 		muted: false,
 		size: '4',
-		align: 'left',
 		fontWeight: 'semiBold',
 	},
 	render: (args) => (
@@ -116,7 +107,7 @@ export const InsideParagraph: Story = {
 		...Standard.args,
 	},
 	render: (args) => (
-		<Text is="p">
+		<Text as="p">
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad,{' '}
 			<TextLink {...args} /> autem consectetur consequuntur eius fugiat
 			illo ipsum nobis numquam, officiis placeat quia, quidem
