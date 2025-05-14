@@ -8,9 +8,9 @@ import {
 	useContext,
 } from 'react';
 
-import { textStyles } from '../../styles/typography.css';
 import { Box } from '../Box';
 import { Stack } from '../Stack';
+import { textStyles } from '../Text';
 
 import * as styles from './OrderedList.css';
 

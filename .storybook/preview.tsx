@@ -1,7 +1,7 @@
 import type { Preview } from '@storybook/react';
 
-import '../lib/reset/globalFonts.css';
-import '../lib/reset/globalReset.css';
+import '../lib/styles/globalFonts.css';
+import '../lib/styles/globalReset.css';
 import * as themes from '../lib/themes';
 
 import { withOverdriveTheme } from './overdriveDecorator';

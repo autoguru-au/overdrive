@@ -8,11 +8,11 @@ import {
 	useMemo,
 } from 'react';
 
-import { textStyles } from '../../styles/typography.css';
 import { noop } from '../../utils';
 import { Box } from '../Box';
 import { Icon } from '../Icon';
 import { Inline } from '../Inline';
+import { textStyles } from '../Text';
 
 import { Bubble } from './Bubble';
 import * as styles from './Pagination.css';

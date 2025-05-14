@@ -9,9 +9,8 @@ import React, {
 	useState,
 } from 'react';
 
-import { textStyles } from '../../styles/typography.css';
 import { Box, type UseBoxProps } from '../Box';
-import { Text, type TextProps } from '../Text';
+import { Text, type TextProps, textStyles } from '../Text';
 import * as inputStyles from '../private/InputBase/withEnhancedInput.css';
 
 import * as styles from './EditableText.css';

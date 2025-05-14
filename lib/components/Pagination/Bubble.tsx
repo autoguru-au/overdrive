@@ -7,8 +7,8 @@ import type {
 import * as React from 'react';
 import { ReactNode } from 'react';
 
-import { textStyles } from '../../styles/typography.css';
 import { Box } from '../Box';
+import { textStyles } from '../Text';
 
 import * as styles from './Pagination.css';
 

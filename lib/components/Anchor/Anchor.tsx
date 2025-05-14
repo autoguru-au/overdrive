@@ -12,11 +12,10 @@ import {
 	ReactNode,
 } from 'react';
 
-import { textStyles } from '../../styles/typography.css';
 import { boxStyles } from '../Box';
 import { Icon } from '../Icon';
 import { Inline } from '../Inline';
-import { Text } from '../Text';
+import { Text, textStyles } from '../Text';
 
 import * as styles from './Anchor.css';
 

@@ -1,10 +1,9 @@
 import { invariant } from '@autoguru/utilities';
 import React, { cloneElement, type ElementType, useContext } from 'react';
 
-import { textStyles } from '../../styles/typography.css';
 import { useBox, type UseBoxProps } from '../Box';
 import { Inline } from '../Inline';
-import { Text } from '../Text';
+import { Text, textStyles } from '../Text';
 
 import * as styles from './Tab.css';
 import { TabListContext } from './TabList';
