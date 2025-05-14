@@ -3,23 +3,6 @@ import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 
 import { overdriveTokens as tokens } from '../themes/theme.css';
 
-import { type Sprinkles, type SprinklesLegacyColours } from './sprinkles.css';
-
-export type TextColor = Sprinkles['color'];
-export type TextColour = SprinklesLegacyColours['colour'];
-export type TextSize = Sprinkles['text'];
-export type FontWeight = Sprinkles['fontWeight'];
-
-// Export types for the recipe
-export type TextVariants = NonNullable<RecipeVariants<typeof textVariants>>;
-export interface TextStylesProps extends TextVariants {
-	as?: string;
-	color?: TextColor;
-	colour?: TextColour;
-	fontWeight?: FontWeight;
-	size?: TextSize;
-}
-
 const fontScale = {
 	...tokens.typography.size,
 	xxs: tokens.typography.size[1],
@@ -106,3 +89,5 @@ export const textVariants = recipe({
 		},
 	},
 });
+
+export type TextVariants = NonNullable<RecipeVariants<typeof textVariants>>;

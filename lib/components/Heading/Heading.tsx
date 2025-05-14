@@ -1,58 +1,55 @@
 import React from 'react';
 
-import { textStyles, type TextStylesProps } from '../../styles/typography.css';
-import type { ThemeTokens as Tokens } from '../../themes';
-import type { WithTestId } from '../../types';
-import { dataAttrs } from '../../utils/dataAttrs';
-import { Box, type UseBoxProps } from '../Box';
+import type { Sprinkles } from '../../styles/sprinkles.css';
+import { Box, UseBoxProps } from '../Box';
+import { textStyles, type TextStylesProps } from '../Text/textStyles';
+
+export type HeadingTags = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 export interface HeadingProps
-	extends Omit<TextStylesProps, 'as'>,
-		Pick<UseBoxProps, 'children' | 'className' | 'id' | 'ref'> {
-	as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-	colour?: Exclude<keyof Tokens['typography']['colour'], 'muted'>;
+	extends Omit<UseBoxProps<HeadingTags>, keyof TextStylesProps>,
+		Omit<TextStylesProps, 'as'> {
+	as?: HeadingTags;
 }
 
-const sizeScaleDefaults = {
+const defaultSizeMap: Record<HeadingTags, Sprinkles['fontSize']> = {
 	h1: '8',
 	h2: '7',
 	h3: '6',
 	h4: '4',
 	h5: '3',
-	h6: '2',
-} as const;
+	h6: '5',
+};
 
 export const Heading = ({
 	as = 'h1',
 	breakWord,
 	children,
 	className,
-	colour = 'dark',
+	color,
+	colour = color ? undefined : 'dark',
 	fontWeight = 'bold',
-	id,
 	noWrap,
-	size = sizeScaleDefaults[as],
-	testId,
+	size = defaultSizeMap[as],
 	transform,
-}: WithTestId<HeadingProps>) => (
+	...props
+}: HeadingProps) => (
 	<Box
+		{...props}
 		as={as}
-		id={id}
+		color={color}
 		className={[
 			textStyles({
-				size,
-				colour,
-				noWrap,
-				transform,
-				fontWeight,
 				breakWord,
+				colour,
+				fontWeight,
+				noWrap,
+				size,
+				transform,
 			}),
 			className,
 		]}
-		{...dataAttrs({ testId })}
 	>
 		{children}
 	</Box>
 );
-
-export default Heading;

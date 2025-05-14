@@ -1,11 +1,26 @@
 import clsx from 'clsx';
 
 import { resetStyles } from '../../styles/resetStyles';
-import { sprinkles, sprinklesLegacyColours } from '../../styles/sprinkles.css';
 import {
-	textVariants,
-	type TextStylesProps,
-} from '../../styles/typography.css';
+	sprinkles,
+	sprinklesLegacyColours,
+	type Sprinkles,
+	type SprinklesLegacyColours,
+} from '../../styles/sprinkles.css';
+import { textVariants, type TextVariants } from '../../styles/typography.css';
+
+export type TextColor = Sprinkles['color'];
+export type TextColour = SprinklesLegacyColours['colour'];
+export type TextSize = Sprinkles['text'];
+export type FontWeight = Sprinkles['fontWeight'];
+
+export interface TextStylesProps extends TextVariants {
+	as?: string;
+	color?: TextColor;
+	colour?: TextColour;
+	fontWeight?: FontWeight;
+	size?: TextSize;
+}
 
 /**
  * primary utility for styling typography, combines reset, vanilla-extract sprinkles and additional variant props

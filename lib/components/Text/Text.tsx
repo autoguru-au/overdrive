@@ -1,12 +1,11 @@
 import React, { cloneElement } from 'react';
 
-import type { ResetTagNames } from '../../styles/reset.css';
-import type { TextStylesProps } from '../../styles/typography.css';
 import { useBox, UseBoxProps, type BoxLikeProps } from '../Box';
 
-import { textStyles } from './textStyles';
+import { textStyles, type TextStylesProps } from './textStyles';
 
-export type TextTags = Extract<ResetTagNames, 'label' | 'p' | 'span'>;
+export type TextTags = 'label' | 'p' | 'span';
+
 interface CustomTextProps extends Omit<TextStylesProps, 'as'> {
 	/** Use bold font weight */
 	strong?: boolean;
