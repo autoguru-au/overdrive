@@ -6,21 +6,21 @@ exports[`<DatePicker /> > should match snapshot without label 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_block__1oah0224 sprinkles_position_relative_mobile__onxwju9w sprinkles_overflow_hidden_mobile__onxwju8w"
+    class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_position_relative_mobile__onxwju8q sprinkles_overflow_hidden_mobile__onxwju7q"
   >
     <input
-      class="reset_trimmedBlockElement__1oah0226 reset_appearance__1oah0221 reset_input__1oah0229 sprinkles_position_absolute_mobile__onxwjua0 sprinkles_height_full_mobile__onxwjuew sprinkles_width_full_mobile__onxwjugg DatePicker_input__1j3uugj0"
+      class="reset_resetVariants__4z7xt3b reset_resetVariants_as_input__4z7xt312 reset_trimmedElement__4z7xt30 reset_input__4z7xt37 sprinkles_position_absolute_mobile__onxwju8u sprinkles_height_full_mobile__onxwjudq sprinkles_width_full_mobile__onxwjufa DatePicker_input__1j3uugj0"
       type="date"
     />
     <div
-      class="reset_block__1oah0224 DatePicker_contents_default__1j3uugj1"
+      class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 DatePicker_contents_default__1j3uugj1"
     >
       <span
-        class="reset_inlineText__1oah0223 sprinkles_display_block_mobile__onxwju80 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+        class="reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  sprinkles_display_block_mobile__onxwju6u Icon_makeResponsiveStyle_key_bp__1gy3ire4"
       >
         <svg
           aria-hidden="true"
-          class="sprinkles_display_block_mobile__onxwju80 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew"
+          class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_display_block_mobile__onxwju6u sprinkles_width_full_mobile__onxwjufa sprinkles_height_full_mobile__onxwjudq"
           fill="currentColor"
           focusable="false"
           viewBox="0 0 24 24"

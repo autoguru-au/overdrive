@@ -19,7 +19,7 @@ exports[`<Tolltip /> > should match snapshot when closed 1`] = `
   >
     <div
       aria-hidden="true"
-      class="reset_block__1oah0224 sprinkles_position_fixed_mobile__onxwjua4 Positioner_root__1d54b7d0"
+      class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_position_fixed_mobile__onxwju8y Positioner_root__1d54b7d0"
     />
   </div>
 </body>
@@ -44,14 +44,14 @@ exports[`<Tolltip /> > should match snapshot when opened 1`] = `
   >
     <div
       aria-hidden="false"
-      class="reset_block__1oah0224 sprinkles_position_fixed_mobile__onxwjua4 Positioner_root__1d54b7d0"
+      class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_position_fixed_mobile__onxwju8y Positioner_root__1d54b7d0"
       style="position: absolute; left: 0px; top: 0px; margin: 0px;"
     >
       <div
-        class="reset_block__1oah0224 sprinkles_pointerEvents_none__onxwju2s sprinkles_userSelect_none__onxwju2v sprinkles_boxShadow_4__onxwju2o sprinkles_paddingLeft_3_mobile__onxwjus0 sprinkles_paddingRight_3_mobile__onxwjut4 sprinkles_paddingTop_2_mobile__onxwjuu4 sprinkles_paddingBottom_2_mobile__onxwjuqs sprinkles_width_full_mobile__onxwjugg sprinkles_overflow_hidden_mobile__onxwju8w sprinkles_borderRadius_1_mobile__onxwjuao sprinkles_backgroundColor_gray900__onxwju3m Tooltip_root__1qliafn0"
+        class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_pointerEvents_none__onxwju2q sprinkles_userSelect_none__onxwju2t sprinkles_boxShadow_4__onxwju2m sprinkles_paddingLeft_3_mobile__onxwjuqu sprinkles_paddingRight_3_mobile__onxwjury sprinkles_paddingTop_2_mobile__onxwjusy sprinkles_paddingBottom_2_mobile__onxwjupm sprinkles_width_full_mobile__onxwjufa sprinkles_overflow_hidden_mobile__onxwju7q sprinkles_borderRadius_1_mobile__onxwju9i sprinkles_backgroundColor_gray900__onxwju3k Tooltip_root__1qliafn0"
       >
         <span
-          class="reset_inlineText__1oah0223 useTextStyles_root__1xnpmd70 reset_inlineText__1oah0223 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_normal__1xnpmd7p useTextStyles_sizes_2__1xnpmd72"
+          class="reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  sprinkles_fontSize_2__onxwju1z sprinkles_lineHeight_2__onxwju28 sprinkles_fontWeight_normal__onxwju2g sprinkles_color_white__onxwju6h typography_typographyStyles__yhjp330"
         >
           tooltip content
         </span>
