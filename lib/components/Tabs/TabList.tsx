@@ -15,15 +15,15 @@ import React, {
 import flattenChildren from 'react-keyed-flatten-children';
 
 import { animate, ownerWindow, useEventCallback } from '../../utils';
-import { Box } from '../Box';
-import { Button } from '../Button';
-import { Icon } from '../Icon';
-import { useTextStyles } from '../Text';
+import { Box } from '../Box/Box';
+import { Button } from '../Button/Button';
+import { Icon } from '../Icon/Icon';
+import { useTextStyles } from '../Text/useTextStyles';
 
 import * as styles from './TabList.css';
 import { TabsContext } from './Tabs';
 
-export interface Props {
+export interface TabListProps {
 	stretch?: boolean;
 	scrollable?: boolean;
 	children?: ReactNode;
@@ -36,7 +36,7 @@ const defaultEnglish = {
 
 export const TabListContext = createContext<number | null>(null);
 
-export const TabList: FunctionComponent<Props> = ({
+export const TabList: FunctionComponent<TabListProps> = ({
 	children,
 	stretch = false,
 	scrollable = false,
@@ -180,5 +180,3 @@ export const TabList: FunctionComponent<Props> = ({
 		</Box>
 	);
 };
-
-export default TabList;

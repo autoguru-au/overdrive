@@ -11,16 +11,16 @@ import {
 	useState,
 } from 'react';
 
-import { Box } from '../Box';
-import { Positioner } from '../Positioner';
+import { Box } from '../Box/Box';
+import { Positioner } from '../Positioner/Positioner';
 import { EAlignment } from '../Positioner/alignment';
-import { Text } from '../Text';
+import { Text } from '../Text/Text';
 
 import * as styles from './Tooltip.css';
 
 type ToolTipSize = 'medium' | 'large';
 
-export interface Props {
+export interface TooltipProps {
 	size?: ToolTipSize;
 	isOpen?: boolean;
 	label: string;
@@ -34,7 +34,7 @@ const sizeMap: Record<ToolTipSize, ComponentProps<typeof Text>['size']> = {
 	large: '3',
 };
 
-export const Tooltip: FunctionComponent<Props> = ({
+export const Tooltip: FunctionComponent<TooltipProps> = ({
 	alignment = EAlignment.RIGHT,
 	isOpen: incomingIsOpen,
 	label,
@@ -110,5 +110,3 @@ export const Tooltip: FunctionComponent<Props> = ({
 		<>{children}</>
 	);
 };
-
-export default Tooltip;

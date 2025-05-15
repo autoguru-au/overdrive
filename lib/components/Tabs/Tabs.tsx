@@ -14,7 +14,7 @@ interface TabsContextValue {
 
 export const TabsContext = createContext<TabsContextValue | null>(null);
 
-export interface Props {
+export interface TabsProps {
 	id?: string | null;
 	active: number;
 	appearance?: 'underlined' | 'pill';
@@ -22,7 +22,7 @@ export interface Props {
 	onChange?: (index: number) => void;
 }
 
-export const Tabs: FunctionComponent<Props> = ({
+export const Tabs: FunctionComponent<TabsProps> = ({
 	id: incomingId,
 	active = 0,
 	appearance = 'underlined',
@@ -52,5 +52,3 @@ export const Tabs: FunctionComponent<Props> = ({
 		</TabsContext.Provider>
 	);
 };
-
-export default Tabs;

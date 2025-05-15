@@ -2,13 +2,13 @@ import type { ReactNode } from 'react';
 import * as React from 'react';
 import { forwardRef } from 'react';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 
 import * as styles from './Table.css';
 import type { TableContext } from './context';
 import { TableContextProvider } from './context';
 
-export interface Props extends Partial<TableContext> {
+export interface TableProps extends Partial<TableContext> {
 	columnTemplate: string;
 
 	children: ReactNode | ReactNode[];
@@ -20,7 +20,7 @@ Worth noting we use the aria role grid here instead of table, as we have areas
 
 @see https://www.w3.org/TR/wai-aria-1.1/#table
  */
-export const Table = forwardRef<HTMLDivElement, Props>(
+export const Table = forwardRef<HTMLDivElement, TableProps>(
 	({ children, padding = '4', stickyHead = false, columnTemplate }, ref) => (
 		<TableContextProvider padding={padding} stickyHead={stickyHead}>
 			<Box
@@ -36,4 +36,4 @@ export const Table = forwardRef<HTMLDivElement, Props>(
 	),
 );
 
-export default Table;
+Table.displayName = 'Table';

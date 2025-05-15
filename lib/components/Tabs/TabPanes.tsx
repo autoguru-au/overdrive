@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Children, createContext, ReactNode } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 
 import * as styles from './TabPanes.css';
 
@@ -14,14 +14,14 @@ interface TabPanesContextValue {
 
 export const TabPanesContext = createContext<TabPanesContextValue | null>(null);
 
-interface Props
+interface TabPanesProps
 	extends Pick<ComponentProps<typeof Box>, 'paddingTop' | 'paddingBottom'> {
 	/** Render tab panels even when visually hidden. */
 	renderInactivePanes?: boolean;
 	children?: ReactNode;
 }
 
-export const TabPanes: FunctionComponent<Props> = ({
+export const TabPanes: FunctionComponent<TabPanesProps> = ({
 	renderInactivePanes = false,
 	children,
 	paddingTop = '6',
@@ -45,5 +45,3 @@ export const TabPanes: FunctionComponent<Props> = ({
 		))}
 	</Box>
 );
-
-export default TabPanes;

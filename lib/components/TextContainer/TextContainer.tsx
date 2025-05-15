@@ -1,17 +1,17 @@
 import * as React from 'react';
 import { FunctionComponent, ReactElement } from 'react';
 
-import { Box } from '../Box';
-import { Stack } from '../Stack';
+import { Box } from '../Box/Box';
+import { Stack } from '../Stack/Stack';
 
-export interface Props {
+export interface TextContainerProps {
 	heading?: ReactElement;
 	action?: ReactElement;
 	className?: string;
 	children: ReactElement | ReactElement[];
 }
 
-export const TextContainer: FunctionComponent<Props> = ({
+export const TextContainer: FunctionComponent<TextContainerProps> = ({
 	heading,
 	className = '',
 	children,

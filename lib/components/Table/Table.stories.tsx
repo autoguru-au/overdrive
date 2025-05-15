@@ -2,14 +2,18 @@ import { Meta, type StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 
 import { arrayRingLookup } from '../../utils';
-import { Actions } from '../Actions';
-import { Badge } from '../Badge';
-import { Button } from '../Button';
-import { Inline } from '../Inline';
-import { Stack } from '../Stack';
-import { Text } from '../Text';
+import { Actions } from '../Actions/Actions';
+import { Badge } from '../Badge/Badge';
+import { Button } from '../Button/Button';
+import { Inline } from '../Inline/Inline';
+import { Stack } from '../Stack/Stack';
+import { Text } from '../Text/Text';
 
-import { Table, TableCell, TableHeadCell, TableRow, TableRowGroup } from '.';
+import { Table } from './Table';
+import { TableCell } from './TableCell';
+import { TableHeadCell } from './TableHeadCell';
+import { TableRow } from './TableRow';
+import { TableRowGroup } from './TableRowGroup';
 
 const meta: Meta<typeof Table> = {
 	title: 'Components/Table',

@@ -2,12 +2,13 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { ComponentProps, FunctionComponent, useMemo } from 'react';
 
-import { Box, boxStyles } from '../Box';
-import { Text } from '../Text';
+import { Box } from '../Box/Box';
+import { boxStyles } from '../Box/boxStyles';
+import { Text } from '../Text/Text';
 
 import * as styles from './TextBubble.css';
 
-export interface Props
+export interface TextBubbleProps
 	extends Omit<
 		ComponentProps<typeof Box>,
 		'borderRadius' | 'position' | 'padding'
@@ -28,7 +29,7 @@ const valuePaddingMap: Record<
 	X_LARGE: '6',
 };
 
-export const TextBubble: FunctionComponent<Props> = ({
+export const TextBubble: FunctionComponent<TextBubbleProps> = ({
 	textColour = 'white',
 	rawNumbers = false,
 	label,
@@ -81,5 +82,3 @@ export const TextBubble: FunctionComponent<Props> = ({
 		</Box>
 	);
 };
-
-export default TextBubble;
