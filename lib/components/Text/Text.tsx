@@ -11,9 +11,9 @@ interface CustomTextProps extends Omit<TextStylesProps, 'as'> {
 	strong?: boolean;
 }
 
-export type TextProps<E extends TextTags = 'span'> = BoxLikeProps<
-	E,
-	CustomTextProps
+export type TextProps<E extends TextTags = 'span'> = Omit<
+	BoxLikeProps<E, CustomTextProps>,
+	'is'
 >;
 
 export const Text = <E extends TextTags>({

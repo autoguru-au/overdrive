@@ -100,7 +100,7 @@ describe('Box', async () => {
 
 	await it('applies colour and backgroundColour props', () => {
 		render(
-			<Box color="onSurface" backgroundColor="danger">
+			<Box color="normal" backgroundColor="danger">
 				Coloured Box
 			</Box>,
 		);

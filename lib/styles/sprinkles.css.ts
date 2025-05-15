@@ -200,6 +200,7 @@ const legacyTextProperties = defineProperties({
 	properties: {
 		color: {
 			...tokens.typography.colour,
+			unset: 'unset',
 		},
 	},
 	shorthands: {
