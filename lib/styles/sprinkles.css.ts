@@ -15,7 +15,7 @@ const { none, ...spaceWithoutNone } = space;
 
 const fontSizes = Object.entries(tokens.typography.size).reduce(
 	(sizes, [scale, fontSize]) => {
-		sizes[scale] = fontSize;
+		sizes[scale] = fontSize.fontSize;
 		return sizes;
 	},
 	{},
@@ -23,7 +23,7 @@ const fontSizes = Object.entries(tokens.typography.size).reduce(
 
 const lineHeights = Object.entries(tokens.typography.size).reduce(
 	(sizes, [scale, lineHeight]) => {
-		sizes[scale] = lineHeight;
+		sizes[scale] = lineHeight.lineHeight;
 		return sizes;
 	},
 	{},
@@ -75,6 +75,20 @@ const gapSizesWithVar = Object.entries(space).reduce(
 		{ vars: Record<string, string>; gap: string }
 	>,
 );
+
+export const valueArrays = {
+	borderColors: Object.keys(borderColors),
+	fontSizes: Object.keys(fontSizes),
+	gapSizesWithVar: Object.keys(gapSizesWithVar),
+	intentBackgroundColoursStandard: Object.keys(
+		intentBackgroundColoursStandard,
+	),
+	intentBorderColours: Object.keys(intentBackgroundColoursStandard),
+	intentForegroundColours: Object.keys(
+		intentForegroundColours,
+	) as SprinklesLegacyColours['colour'][],
+	lineHeights: Object.keys(lineHeights),
+};
 
 // --- Base sprinkles (non-responsive)
 const baseProperties = defineProperties({
@@ -146,9 +160,8 @@ const legacyColourProperties = defineProperties({
 		borderRightColor: borderColours,
 		borderTopColor: borderColours,
 		color: {
-			...intentForegroundColours,
 			...tokens.colours.foreground,
-			...tokens.colours.gamut,
+			...intentForegroundColours,
 			unset: 'unset',
 		},
 	},
@@ -180,6 +193,24 @@ export type SprinklesLegacyColours = Omit<
 	| 'borderRightColor'
 	| 'borderTopColor'
 	| 'color'
+>;
+
+const legacyTextProperties = defineProperties({
+	'@layer': cssLayerUtil,
+	properties: {
+		color: {
+			...tokens.typography.colour,
+		},
+	},
+	shorthands: {
+		colour: ['color'],
+	},
+});
+
+export const sprinklesLegacyText = createSprinkles(legacyTextProperties);
+export type SprinkesLegacyText = Omit<
+	Parameters<typeof sprinklesLegacyText>[0],
+	'color'
 >;
 
 // --- Responsive sprinkles

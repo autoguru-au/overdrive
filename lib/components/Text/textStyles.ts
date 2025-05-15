@@ -3,9 +3,9 @@ import clsx from 'clsx';
 import { resetStyles } from '../../styles/resetStyles';
 import {
 	sprinkles,
-	sprinklesLegacyColours,
+	sprinklesLegacyText,
 	type Sprinkles,
-	type SprinklesLegacyColours,
+	type SprinkesLegacyText,
 } from '../../styles/sprinkles.css';
 import {
 	typographyStyles,
@@ -13,7 +13,7 @@ import {
 } from '../../styles/typography.css';
 
 export type TextColor = Sprinkles['color'];
-export type TextColour = SprinklesLegacyColours['colour'];
+export type TextColour = SprinkesLegacyText['colour'];
 export type TextSize = Sprinkles['text'];
 export type FontWeight = Sprinkles['fontWeight'];
 
@@ -41,6 +41,6 @@ export const textStyles = ({
 	clsx([
 		resetStyles({ as }),
 		sprinkles({ color, fontWeight, text: size }),
-		sprinklesLegacyColours({ colour }),
+		sprinklesLegacyText({ colour }),
 		typographyStyles({ breakWord, noWrap, transform }),
 	]);
