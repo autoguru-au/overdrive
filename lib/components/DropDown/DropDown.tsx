@@ -24,7 +24,7 @@ type ButtonProps = Omit<
 >;
 type FlyoutProps = Pick<ComponentProps<typeof Flyout>, 'alignment'>;
 
-export interface Props extends ButtonProps, FlyoutProps {
+export interface DropDownProps extends ButtonProps, FlyoutProps {
 	children: ReactNode;
 	label: string;
 	icon?: IconType;
@@ -32,7 +32,7 @@ export interface Props extends ButtonProps, FlyoutProps {
 	onClick?: ComponentProps<typeof Button>['onClick'];
 }
 
-export const DropDown: FunctionComponent<Props> = ({
+export const DropDown: FunctionComponent<DropDownProps> = ({
 	children: options,
 	label,
 	icon = ChevronDownIcon,
@@ -71,5 +71,3 @@ export const DropDown: FunctionComponent<Props> = ({
 		</>
 	);
 };
-
-export default DropDown;

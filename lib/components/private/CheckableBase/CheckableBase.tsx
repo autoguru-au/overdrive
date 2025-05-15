@@ -118,5 +118,3 @@ export const CheckableBase = forwardRef<HTMLInputElement, Props>(
 );
 
 CheckableBase.displayName = 'CheckableBase';
-
-export default CheckableBase;

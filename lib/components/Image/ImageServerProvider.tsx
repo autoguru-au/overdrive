@@ -94,5 +94,3 @@ export const ImageServerProvider: FunctionComponent<
 		</imageServerCtx.Provider>
 	);
 };
-
-export default ImageServerProvider;

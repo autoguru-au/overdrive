@@ -82,5 +82,3 @@ export const ColourInput = withEnhancedInput<{}, HTMLInputElement>(
 		defaultValue: '#000000',
 	},
 );
-
-export default ColourInput;

@@ -64,5 +64,3 @@ export const Bubble: FunctionComponent<Props> = ({
 		</Box>
 	);
 };
-
-export default Bubble;

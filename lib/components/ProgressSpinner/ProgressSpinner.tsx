@@ -46,5 +46,3 @@ export const ProgressSpinner: FunctionComponent<Props> = ({
 		</svg>
 	</Box>
 );
-
-export default ProgressSpinner;

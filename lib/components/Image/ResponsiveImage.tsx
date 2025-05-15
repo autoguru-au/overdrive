@@ -86,5 +86,3 @@ export const ResponsiveImage: FunctionComponent<Props> = ({
 		/>
 	);
 };
-
-export default ResponsiveImage;

@@ -12,7 +12,7 @@ import * as styles from './DatePicker.css';
 
 type SizeScale = 'small' | 'medium' | 'large';
 
-export interface Props
+export interface DatePickerProps
 	extends Partial<Pick<HTMLInputElement, 'min' | 'max' | 'value'>> {
 	size?: SizeScale;
 	className?: string;
@@ -29,7 +29,7 @@ const textSizeMap: Record<SizeScale, ComponentProps<typeof Text>['size']> = {
 	medium: '3',
 	large: '5',
 };
-export const DatePicker: FunctionComponent<Props> = ({
+export const DatePicker: FunctionComponent<DatePickerProps> = ({
 	className = '',
 	icon = CalendarIcon,
 	size = 'medium',
@@ -98,5 +98,3 @@ export const DatePicker: FunctionComponent<Props> = ({
 		</Box>
 	);
 };
-
-export default DatePicker;

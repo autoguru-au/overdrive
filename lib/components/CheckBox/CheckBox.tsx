@@ -11,7 +11,7 @@ import { checkableIndicator } from '../private/CheckableBase/CheckableBase.css';
 
 import * as styles from './CheckBox.css';
 
-export interface Props {
+export interface CheckboxProps {
 	className?: string;
 	checked?: boolean;
 	disabled?: boolean;
@@ -27,7 +27,7 @@ export interface Props {
 	onChange?(checked: boolean): void;
 }
 
-export const CheckBox = forwardRef<HTMLInputElement, Props>(
+export const CheckBox = forwardRef<HTMLInputElement, CheckboxProps>(
 	(
 		{
 			value,
@@ -88,5 +88,3 @@ export const CheckBox = forwardRef<HTMLInputElement, Props>(
 );
 
 CheckBox.displayName = 'Checkbox';
-
-export default CheckBox;

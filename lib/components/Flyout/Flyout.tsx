@@ -31,5 +31,3 @@ export const Flyout = ({
 		</Box>
 	</Positioner>
 );
-
-export default Flyout;

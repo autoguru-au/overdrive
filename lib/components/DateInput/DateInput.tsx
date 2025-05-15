@@ -37,5 +37,3 @@ export const DateInput = withEnhancedInput<
 		primitiveType: 'date',
 	},
 );
-
-export default DateInput;

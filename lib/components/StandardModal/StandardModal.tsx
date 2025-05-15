@@ -160,5 +160,3 @@ export const StandardModal: FunctionComponent<Props> = ({
 		</Modal>
 	);
 };
-
-export default StandardModal;

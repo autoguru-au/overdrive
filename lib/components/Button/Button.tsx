@@ -275,5 +275,3 @@ export const Button = forwardRef<
 ) as ButtonForwardRefReturn;
 
 Button.displayName = 'Button';
-
-export default Button;

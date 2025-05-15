@@ -40,7 +40,7 @@ type InputProps = Omit<
 	| keyof BoxProps
 >;
 
-export interface Props
+export interface EditableTextProps
 	extends FilteredTextProps,
 		InputProps,
 		Partial<BoxProps> {
@@ -50,7 +50,7 @@ export interface Props
 }
 const numberInputValuePattern = /^\d*\.?\d*$/;
 type InputMode = 'TEXT' | 'INPUT';
-export const EditableText = forwardRef<HTMLDivElement, Props>(
+export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 	(
 		{
 			is,
@@ -171,5 +171,3 @@ export const EditableText = forwardRef<HTMLDivElement, Props>(
 );
 
 EditableText.displayName = 'EditableText';
-
-export default EditableText;

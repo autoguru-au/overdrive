@@ -12,7 +12,7 @@ import { Text } from '../Text';
 
 import * as styles from './BulletText.css';
 
-export interface Props {
+export interface BulletTextProps {
 	bullet?: ReactNode;
 	variant?: 'primary' | 'secondary';
 }
@@ -22,7 +22,7 @@ export const BulletText = <E extends ElementType>({
 	variant = 'primary',
 	children,
 	bullet: Bullet = '•',
-}: UseBoxProps<E> & Props) => (
+}: UseBoxProps<E> & BulletTextProps) => (
 	<Inline
 		as={as satisfies ComponentProps<typeof Inline>['as']}
 		noWrap
@@ -66,5 +66,3 @@ export const BulletText = <E extends ElementType>({
 		</Box>
 	</Inline>
 );
-
-export default BulletText;

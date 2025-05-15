@@ -45,5 +45,3 @@ export const ProgressBar: FunctionComponent<Props> = ({
 		/>
 	</Box>
 );
-
-export default ProgressBar;

@@ -23,5 +23,3 @@ export const IntentStripe: FunctionComponent<Props> = ({
 		backgroundColour={intent}
 	/>
 );
-
-export default IntentStripe;

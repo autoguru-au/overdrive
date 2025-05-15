@@ -19,7 +19,7 @@ import { Text, useTextStyles } from '../Text';
 
 import * as styles from './Anchor.css';
 
-export interface Props
+export interface AnchorProps
 	extends Omit<
 		AnchorHTMLAttributes<HTMLAnchorElement>,
 		'children' | 'style' | 'is'
@@ -32,7 +32,7 @@ export interface Props
 	icon?: IconType;
 }
 
-export const Anchor: FunctionComponent<Props> = ({
+export const Anchor: FunctionComponent<AnchorProps> = ({
 	className = '',
 
 	is: Component = 'a',
@@ -74,5 +74,3 @@ export const Anchor: FunctionComponent<Props> = ({
 		? cloneElement(Component, props, childs)
 		: createElement(Component, props, childs);
 };
-
-export default Anchor;

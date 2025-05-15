@@ -55,5 +55,3 @@ export const RadioGroup = forwardRef<HTMLDivElement, Props>(
 );
 
 RadioGroup.displayName = 'RadioGroup';
-
-export default RadioGroup;

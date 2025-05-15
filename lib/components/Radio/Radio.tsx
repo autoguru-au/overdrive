@@ -52,5 +52,3 @@ export const Radio = forwardRef<HTMLInputElement, Props>(
 );
 
 Radio.displayName = 'Radio';
-
-export default Radio;

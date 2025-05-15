@@ -49,5 +49,3 @@ export const Icon: FunctionComponent<Props> = ({
 		</Box>
 	);
 };
-
-export default Icon;

@@ -88,5 +88,3 @@ export const OutsideClick: FunctionComponent<Props> = ({
 		ref: rootClickRef,
 	});
 };
-
-export default OutsideClick;

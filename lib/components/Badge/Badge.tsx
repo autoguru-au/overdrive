@@ -62,5 +62,3 @@ export const Badge = ({
 		</Box>
 	);
 };
-
-export default Badge;

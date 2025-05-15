@@ -184,5 +184,3 @@ export const withModal =
 			</Modal>
 		);
 	};
-
-export default Modal;
