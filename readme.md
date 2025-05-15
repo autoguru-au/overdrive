@@ -40,18 +40,20 @@ To use Overdrive in your project, install it via yarn:
 yarn add @autoguru/overdrive react react-dom
 ```
 
-Then, import the reset and configure the OverdriveProvider with the theme you
+Then, import the reset and configure the Overdrive Provider with the theme you
 want to use:
 
 ```jsx
-import '@autoguru/overdrive/reset';
-// It is important that the reset import happens before any of this.
 import { OverdriveProvider, Button } from '@autoguru/overdrive';
 
 <OverdriveProvider>
 	<Button variant="primary">Hello World</Button>
 </OverdriveProvider>;
 ```
+
+The Overdrive Provider automatically applies global base styles to the body tag.
+If you need more control over where the global base styles are applied, you can
+also apply `data-od-base` to any element.
 
 You can also customise the theme colours using the provider props:
 
@@ -72,8 +74,7 @@ You can also customise the theme colours using the provider props:
 
 ## Thanks
 
-[Chromatic](https://www.chromaticqa.com) for providing visual regression
-testing.
+[Chromatic](https://www.chromatic.com) for providing visual regression testing.
 
 ## License
 

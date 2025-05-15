@@ -1,4 +1,10 @@
-import { globalFontFace } from '@vanilla-extract/css';
+import { globalFontFace, globalStyle } from '@vanilla-extract/css';
+
+import { overdriveTokens } from '../themes/theme.css';
+
+import { cssLayerReset } from './layers.css';
+
+// -- web fonts
 
 globalFontFace('AvertaStandard', {
 	fontStyle: 'normal',
@@ -19,4 +25,47 @@ globalFontFace('AvertaStandard', {
 	fontWeight: 700,
 	fontDisplay: 'swap',
 	src: `local('Averta Std Bold'), local('AvertaStd-Bold'),url('https://cdn.autoguru.com.au/assets/fonts/avertastd-bold-webfont.woff2') format('woff2'),url('https://cdn.autoguru.com.au/assets/fonts/avertastd-bold-webfont.woff') format('woff')`,
+});
+
+// -- root styles
+
+globalStyle('html', {
+	'@layer': {
+		[cssLayerReset]: {
+			overflowX: 'hidden',
+		},
+	},
+});
+
+globalStyle('body', {
+	'@layer': {
+		[cssLayerReset]: {
+			margin: 0,
+			padding: 0,
+			border: 'none',
+		},
+	},
+});
+
+globalStyle('body, [data-od-base]', {
+	'@layer': {
+		[cssLayerReset]: {
+			fontFamily: overdriveTokens.typography.fontFamily,
+			fontSize: overdriveTokens.typography.size[4].fontSize,
+			fontWeight: overdriveTokens.typography.fontWeight.normal,
+			lineHeight: overdriveTokens.typography.size[4].lineHeight,
+			textRendering: 'optimizeLegibility',
+			textSizeAdjust: 'none',
+			WebkitTapHighlightColor: 'transparent',
+		},
+	},
+});
+
+globalStyle('*', {
+	'@layer': {
+		[cssLayerReset]: {
+			boxSizing: 'border-box',
+			font: 'inherit',
+		},
+	},
 });

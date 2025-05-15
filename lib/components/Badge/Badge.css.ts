@@ -1,6 +1,6 @@
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
-import { styledIntentionalElement } from '../../styles/intent-colorset.css';
+import { styledIntentionalElement } from '../../styles/intentColorset.css';
 import { overdriveTokens as tokens } from '../../themes/theme.css';
 
 export const styledBadge = recipe({

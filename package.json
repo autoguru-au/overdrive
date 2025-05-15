@@ -20,11 +20,9 @@
 	},
 	"license": "MIT",
 	"sideEffects": [
-		"./lib/reset/**/*",
-		"./lib/theme/**/*",
+		"./lib/**/global.css.*",
 		"./lib/themes/**/*",
-		"./dist/reset/**/*",
-		"./dist/theme/**/*",
+		"./dist/**/global.css.*",
 		"./dist/themes/**/*"
 	],
 	"files": [
