@@ -32,7 +32,7 @@ export const textStyles = ({
 	as,
 	breakWord,
 	color,
-	colour,
+	colour = color ? undefined : 'neutral',
 	fontWeight,
 	noWrap,
 	size,

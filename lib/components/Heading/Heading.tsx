@@ -18,7 +18,7 @@ const defaultSizeMap: Record<HeadingTags, Sprinkles['fontSize']> = {
 	h3: '6',
 	h4: '4',
 	h5: '3',
-	h6: '5',
+	h6: '2',
 };
 
 export const Heading = ({
