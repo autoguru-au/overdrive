@@ -16,7 +16,6 @@ const colours: ReadonlyArray<ComponentProps<typeof Badge>['colour']> = [
 export default {
 	title: 'Components/Badge',
 	component: Badge,
-	tags: ['updated'],
 } satisfies Meta<typeof Badge>;
 
 export const Standard: Story = {

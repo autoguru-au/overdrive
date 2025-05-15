@@ -7,14 +7,17 @@ import {
 	type Sprinkles,
 	type SprinklesLegacyColours,
 } from '../../styles/sprinkles.css';
-import { textVariants, type TextVariants } from '../../styles/typography.css';
+import {
+	typographyStyles,
+	type TypographyStyles,
+} from '../../styles/typography.css';
 
 export type TextColor = Sprinkles['color'];
 export type TextColour = SprinklesLegacyColours['colour'];
 export type TextSize = Sprinkles['text'];
 export type FontWeight = Sprinkles['fontWeight'];
 
-export interface TextStylesProps extends TextVariants {
+export interface TextStylesProps extends TypographyStyles {
 	as?: string;
 	color?: TextColor;
 	colour?: TextColour;
@@ -39,5 +42,5 @@ export const textStyles = ({
 		resetStyles({ as }),
 		sprinkles({ color, fontWeight, text: size }),
 		sprinklesLegacyColours({ colour }),
-		textVariants({ breakWord, noWrap, transform }),
+		typographyStyles({ breakWord, noWrap, transform }),
 	]);
