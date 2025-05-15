@@ -10,14 +10,14 @@ import { Text, useTextStyles } from '../Text';
 
 import * as styles from './DropDownOption.css';
 
-interface Props
+interface DropDownOptionProps
 	extends Omit<ComponentProps<typeof Box>, 'paddingX' | 'paddingY'> {
 	icon?: IconType;
 	label: string;
 	iconColour?: ComponentProps<typeof Text>['colour'];
 }
 
-export const DropDownOption: FunctionComponent<Props> = ({
+export const DropDownOption: FunctionComponent<DropDownOptionProps> = ({
 	label,
 	icon,
 	className,

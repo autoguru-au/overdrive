@@ -6,13 +6,13 @@ import { Box, boxStyles } from '../Box';
 
 import * as styles from './ProgressSpinner.css';
 
-export interface Props {
+export interface ProgressSpinnerProps {
 	className?: string;
 	size?: keyof typeof styles.size;
 	colour?: keyof typeof styles.colours;
 }
 
-export const ProgressSpinner: FunctionComponent<Props> = ({
+export const ProgressSpinner: FunctionComponent<ProgressSpinnerProps> = ({
 	className = '',
 	colour = 'primary',
 	size = 'medium',

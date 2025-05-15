@@ -14,13 +14,13 @@ export enum EChangeDirection {
 
 type TOnChangeEventHandler = (event: EChangeDirection) => void;
 
-export interface Props {
+export interface SimplePaginationProps {
 	hasNext?: boolean;
 	hasPrevious?: boolean;
 	onChange?: TOnChangeEventHandler;
 }
 
-export const SimplePagination: FunctionComponent<Props> = ({
+export const SimplePagination: FunctionComponent<SimplePaginationProps> = ({
 	hasNext = false,
 	hasPrevious = false,
 	onChange = noop,

@@ -15,7 +15,7 @@ import { Portal } from '../Portal';
 
 import * as styles from './Modal.css';
 
-export interface Props extends ComponentProps<typeof Portal> {
+export interface ModalProps extends ComponentProps<typeof Portal> {
 	isOpen: boolean;
 	hideBackdrop?: boolean;
 	disableBackdropClick?: boolean;
@@ -79,7 +79,7 @@ const reducer: Reducer<State, Action> = (prevState, action) => {
 	}
 };
 
-export const Modal: FunctionComponent<Props> = ({
+export const Modal: FunctionComponent<ModalProps> = ({
 	isOpen,
 	hideBackdrop = false,
 	disableBackdropClick = false,
@@ -166,8 +166,8 @@ export const Modal: FunctionComponent<Props> = ({
 
 export const withModal =
 	<TIncomingProps extends {} = {}>(
-		WrappedComponent: ComponentType<Props & TIncomingProps>,
-	): FunctionComponent<Props & TIncomingProps> =>
+		WrappedComponent: ComponentType<ModalProps & TIncomingProps>,
+	): FunctionComponent<ModalProps & TIncomingProps> =>
 	({ onRequestClose, isOpen, ...rest }) => {
 		// TODO: Deprecate me
 		warning(

@@ -7,7 +7,7 @@ import { Text } from '../Text';
 
 import * as styles from './ProgressBarGroup.css';
 
-export interface Props
+export interface ProgressBarGroupProps
 	extends Pick<ComponentProps<typeof ProgressBar>, 'colour'> {
 	prefixLabels?: string[];
 	suffixLabels?: string[];
@@ -15,7 +15,7 @@ export interface Props
 	values: number[];
 }
 
-export const ProgressBarGroup: FunctionComponent<Props> = ({
+export const ProgressBarGroup: FunctionComponent<ProgressBarGroupProps> = ({
 	prefixLabels,
 	suffixLabels,
 	values,

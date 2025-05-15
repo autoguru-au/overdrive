@@ -7,7 +7,7 @@ import { Text } from '../../Text';
 import * as styles from './HintText.css';
 import type { InputSize } from './withEnhancedInput.css';
 
-export interface Props {
+export interface HintTextProps {
 	hintText: ReactNode;
 	reserveHintSpace?: boolean;
 	disabled?: boolean;
@@ -15,7 +15,7 @@ export interface Props {
 	className?: string;
 }
 
-export const HintText: FunctionComponent<Props> = ({
+export const HintText: FunctionComponent<HintTextProps> = ({
 	reserveHintSpace,
 	disabled,
 	hintText,

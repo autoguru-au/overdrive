@@ -26,13 +26,13 @@ export enum ESize {
 
 type Size = 'skinny' | 'narrow' | 'standard';
 
-export interface Props extends ComponentProps<typeof Modal> {
+export interface StandardModalProps extends ComponentProps<typeof Modal> {
 	size?: ESize | Size;
 	className?: string;
 	title: string;
 }
 
-export const StandardModal: FunctionComponent<Props> = ({
+export const StandardModal: FunctionComponent<StandardModalProps> = ({
 	isOpen,
 	size = 'standard',
 	className = '',

@@ -17,7 +17,7 @@ import { Text, useTextStyles } from '../Text';
 
 import * as styles from './Stepper.css';
 
-export interface Props {
+export interface StepperProps {
 	className?: string;
 	disabled?: boolean;
 	value?: number;
@@ -79,7 +79,7 @@ const Handle: FunctionComponent<HandleProps> = ({
 	</Box>
 );
 
-export const Stepper: FunctionComponent<Props> = ({
+export const Stepper: FunctionComponent<StepperProps> = ({
 	className = '',
 	disabled: incomingDisabled = false,
 	isFullWidth = false,

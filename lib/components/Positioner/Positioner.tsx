@@ -40,7 +40,7 @@ const createPopper = popperGenerator({
 	},
 });
 
-export interface Props
+export interface PositionerProps
 	extends Exclude<
 		ComponentPropsWithoutRef<typeof Box>,
 		'aria-hidden' | 'className'
@@ -52,7 +52,7 @@ export interface Props
 	children?: ReactNode;
 }
 
-export const Positioner: FunctionComponent<Props> = ({
+export const Positioner: FunctionComponent<PositionerProps> = ({
 	alignment = EAlignment.BOTTOM_LEFT,
 	isOpen = false,
 	triggerRef,

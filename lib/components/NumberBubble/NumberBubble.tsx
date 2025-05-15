@@ -8,7 +8,7 @@ import { Text } from '../Text';
 
 import * as styles from './NumberBubble.css';
 
-export interface Props
+export interface NumberBubbleProps
 	extends Omit<
 		ComponentProps<typeof Box>,
 		'borderRadius' | 'position' | 'padding'
@@ -29,7 +29,7 @@ const valuePaddingMap: Record<
 	X_LARGE: '5',
 };
 
-export const NumberBubble: FunctionComponent<Props> = ({
+export const NumberBubble: FunctionComponent<NumberBubbleProps> = ({
 	value,
 	textColour = 'white',
 	rawNumbers = false,

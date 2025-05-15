@@ -61,13 +61,13 @@ const bindEvent = <
 	};
 };
 
-export interface Props {
+export interface OutsideClickProps {
 	children: ReactElement;
 
 	onOutsideClick?(): void;
 }
 
-export const OutsideClick: FunctionComponent<Props> = ({
+export const OutsideClick: FunctionComponent<OutsideClickProps> = ({
 	children,
 	onOutsideClick = noop,
 }) => {

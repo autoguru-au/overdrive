@@ -6,7 +6,7 @@ import { Box } from '../Box';
 
 import * as styles from './DividerLine.css';
 
-export interface Props {
+export interface DividerLineProps {
 	isVertical?: boolean;
 	className?: string;
 	space: ComponentProps<typeof Box>['marginY'];
@@ -14,7 +14,7 @@ export interface Props {
 	size?: keyof (typeof styles.size)['horizontal'];
 }
 
-export const DividerLine: FunctionComponent<Props> = ({
+export const DividerLine: FunctionComponent<DividerLineProps> = ({
 	className = '',
 	isVertical = false,
 	space = '3',

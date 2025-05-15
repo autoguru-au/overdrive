@@ -23,7 +23,7 @@ interface OnChangeObject {
 
 export type TOnChangeEventHandler = (event: OnChangeObject) => void;
 
-export interface Props {
+export interface PaginationProps {
 	numPagesDisplayed?: number;
 	activePage: number;
 	total: number;
@@ -88,7 +88,7 @@ const Loading: FunctionComponent<LoadingComponentProps> = ({
 	</Inline>
 );
 
-export const Pagination: FunctionComponent<Props> = ({
+export const Pagination: FunctionComponent<PaginationProps> = ({
 	total,
 	pageSize,
 	activePage,

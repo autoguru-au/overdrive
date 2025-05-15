@@ -12,14 +12,14 @@ import { Modal } from '../Modal';
 
 import * as styles from './MinimalModal.css';
 
-export interface Props
+export interface MinimalModalProps
 	extends ComponentProps<typeof Modal>,
 		Pick<ComponentProps<typeof Box>, 'alignItems'> {
 	className?: string;
 	children?: ReactNode;
 }
 
-export const MinimalModal: FunctionComponent<Props> = ({
+export const MinimalModal: FunctionComponent<MinimalModalProps> = ({
 	isOpen,
 	alignItems = 'center',
 	className = '',

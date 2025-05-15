@@ -37,14 +37,14 @@ const labelSizeMap: Map<EStarRatingSize, keyof Tokens['typography']['size']> =
 		[EStarRatingSize.Medium, '4'],
 	]);
 
-export interface Props {
+export interface StarRatingProps {
 	className?: string; // TODO: Remove this in the future
 	rating: number;
 	size?: EStarRatingSize;
 	label?: string;
 }
 
-export const StarRating: NamedExoticComponent<Props> = memo(
+export const StarRating: NamedExoticComponent<StarRatingProps> = memo(
 	({
 		className = '',
 		rating,

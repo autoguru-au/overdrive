@@ -9,14 +9,14 @@ import { checkableIndicator } from '../private/CheckableBase/CheckableBase.css';
 import * as styles from './Radio.css';
 import { useRadioContext } from './RadioGroup';
 
-export interface Props {
+export interface RadioProps {
 	value: string;
 	className?: string;
 	disabled?: boolean;
 	children?: ReactNode;
 }
 
-export const Radio = forwardRef<HTMLInputElement, Props>(
+export const Radio = forwardRef<HTMLInputElement, RadioProps>(
 	({ value, className = '', children, disabled = false }, ref) => {
 		const radioContext = useRadioContext();
 

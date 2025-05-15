@@ -12,7 +12,7 @@ import * as styles from './Bullet.css';
 import { BulletList } from './BulletList';
 import { BulletListContext, bulletMap, BulletType } from './context';
 
-export interface Props {
+export interface BulletProps {
 	children?: ReactNode;
 	className?: string;
 }
@@ -34,7 +34,10 @@ const getBulletCls = (styles, type: BulletType): string => {
 	}
 };
 
-export const Bullet: FunctionComponent<Props> = ({ children, className }) => (
+export const Bullet: FunctionComponent<BulletProps> = ({
+	children,
+	className,
+}) => (
 	<Box
 		is="li"
 		className={[

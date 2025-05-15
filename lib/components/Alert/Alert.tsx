@@ -21,7 +21,7 @@ import * as styles from './Alert.css';
 type IntentStripeProps = ComponentProps<typeof IntentStripe>;
 type Intent = IntentStripeProps['intent'];
 
-export interface Props extends IntentStripeProps {
+export interface AlertProps extends IntentStripeProps {
 	children?: ReactNode;
 	className?: string;
 	inline?: boolean;
@@ -37,7 +37,7 @@ const iconMapForIntent: Record<Intent, IconType> = {
 	warning: AlertIcon,
 };
 
-export const Alert: FunctionComponent<Props> = ({
+export const Alert: FunctionComponent<AlertProps> = ({
 	children,
 	className = '',
 	intent = 'success',

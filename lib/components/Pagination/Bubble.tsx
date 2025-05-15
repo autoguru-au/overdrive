@@ -12,7 +12,7 @@ import { useTextStyles } from '../Text';
 
 import * as styles from './Pagination.css';
 
-export interface Props {
+export interface BubbleProps {
 	selected?: boolean;
 	disabled?: boolean;
 	gap?: boolean;
@@ -21,7 +21,7 @@ export interface Props {
 	children?: ReactNode;
 }
 
-export const Bubble: FunctionComponent<Props> = ({
+export const Bubble: FunctionComponent<BubbleProps> = ({
 	className = '',
 	selected = false,
 	gap = false,

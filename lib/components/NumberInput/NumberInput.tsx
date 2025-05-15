@@ -17,11 +17,11 @@ type InputAttributes = Pick<
 	'min' | 'max' | 'onChange' | 'onFocus' | 'onBlur' | 'step' | 'value'
 >;
 
-interface Props extends InputAttributes {
+interface NumberInputProps extends InputAttributes {
 	preventMouseWheel?: boolean;
 }
 
-export const NumberInput = withEnhancedInput<Props>(
+export const NumberInput = withEnhancedInput<NumberInputProps>(
 	({
 		field: { ref, ...incomingFieldProps },
 		eventHandlers,

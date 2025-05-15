@@ -12,7 +12,8 @@ import { useMedia } from '../useMedia';
 
 import * as styles from './useAttachedBoxes.css';
 
-interface Props extends Pick<ComponentProps<typeof Box>, 'backgroundColour'> {
+interface UseAttachedBoxesProps
+	extends Pick<ComponentProps<typeof Box>, 'backgroundColour'> {
 	count: number;
 	columnCount: ResponsiveProp<number>;
 	gap?: ResponsiveProp<keyof typeof styles.grid.gaps>;
@@ -45,7 +46,7 @@ export const useAttachedBoxes = ({
 	columnCount: incomingColumnCount,
 	gap = '1',
 	backgroundColour = 'gray900',
-}: Props): Returns => {
+}: UseAttachedBoxesProps): Returns => {
 	const columnCount: number = useResponsiveValue<number>(incomingColumnCount);
 	const decimals: number = (count / columnCount) % 1;
 	let colStart: number;

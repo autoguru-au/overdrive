@@ -11,7 +11,7 @@ import { Text, useTextStyles } from '../../Text';
 
 import * as styles from './CheckableBase.css';
 
-export interface Props {
+export interface CheckableBaseProps {
 	className?: string;
 	checked?: boolean;
 	disabled?: boolean;
@@ -24,7 +24,7 @@ export interface Props {
 	handleChange?(checked: boolean): void;
 }
 
-export const CheckableBase = forwardRef<HTMLInputElement, Props>(
+export const CheckableBase = forwardRef<HTMLInputElement, CheckableBaseProps>(
 	(
 		{
 			className = '',
