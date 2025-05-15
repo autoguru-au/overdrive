@@ -17,27 +17,8 @@ export type BoxStylesProps<E extends ElementType = 'div'> = AsPolyProp<E> &
 
 export type BoxStylesReturn<P extends object> = [string, P];
 
-const borderColorProps = [
-	'borderColor',
-	'borderBottomColor',
-	'borderLeftColor',
-	'borderRightColor',
-	'borderTopColor',
-];
-const borderStyleProps = [
-	'borderStyle',
-	'borderBottomStyle',
-	'borderLeftStyle',
-	'borderRightStyle',
-	'borderTopStyle',
-];
-const borderWidthProps = [
-	'borderWidth',
-	'borderBottomWidth',
-	'borderLeftWidth',
-	'borderRightWidth',
-	'borderTopWidth',
-];
+const borderProperties = ['Color', 'Colour', 'Width'];
+const borderPostfixes = ['', 'Bottom', 'Left', 'Right', 'Top'];
 
 /**
  * Processes component props, or used directly with style prop values to
@@ -54,12 +35,6 @@ export const boxStylesWithFilteredProps = <E extends ElementType = 'div'>({
 	className,
 	...props
 }: BoxStylesProps<E>) => {
-	const hasBorderStyle = borderStyleProps.some((key) => !!props[key]);
-	const hasBorderColorOrWidth = [
-		...borderColorProps,
-		...borderWidthProps,
-	].some((key) => !!props[key]);
-
 	const {
 		sprinklesProps,
 		sprinklesResponsiveProps,
@@ -68,8 +43,12 @@ export const boxStylesWithFilteredProps = <E extends ElementType = 'div'>({
 	} = filterPropsWithStyles(props);
 
 	// a little bit of logic specific to border properties for backwards compatability
-	if (hasBorderColorOrWidth && !hasBorderStyle) {
-		sprinklesProps['borderStyle'] = 'solid';
+	for (const postfix of borderPostfixes) {
+		for (const property of borderProperties) {
+			if (props[`border${postfix}${property}`]) {
+				sprinklesProps[`border${postfix}Style`] = 'solid';
+			}
+		}
 	}
 
 	return {

@@ -52,6 +52,7 @@ const button = [
 			[cssLayerReset]: {
 				appearance: 'none',
 				background: 'none',
+				borderStyle: 'none',
 				cursor: 'pointer',
 				outline: 'none',
 				userSelect: 'none',
@@ -83,6 +84,7 @@ const input = [
 		'@layer': {
 			[cssLayerReset]: {
 				appearance: 'none',
+				borderStyle: 'none',
 				selectors: {
 					'&::-ms-clear': {
 						display: 'none',
@@ -164,6 +166,7 @@ export const element = {
 	section: block,
 	ul: list,
 	ol: list,
+	li: '',
 	button,
 	select,
 	input,

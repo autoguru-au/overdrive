@@ -40,6 +40,7 @@ export const TableCell = forwardRef<HTMLDivElement, Props>(
 				// scope="row"
 				display="flex"
 				alignItems="center"
+				position="relative"
 				justifyContent={alignmentToFlexAlignment(align)}
 				padding={padding}
 				borderBottomWidth="1"
