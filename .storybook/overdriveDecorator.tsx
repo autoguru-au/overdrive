@@ -7,7 +7,6 @@ import { OverdriveProvider } from '../lib/components/OverdriveProvider';
 import { Stack } from '../lib/components/Stack';
 import * as themeConfig from '../lib/themes';
 import { breakpoints } from '../lib/themes/makeTheme';
-import { container } from '../lib/themes/theme.css';
 
 const { themes } = themeConfig;
 const overrideColors = {
@@ -43,9 +42,9 @@ export const useStorybookDecorator = (Story, context) => {
 			portalMountPoint={portalRef}
 			noBodyLevelTheming
 		>
-			<Box className={container} ref={portalRef}>
+			<div ref={portalRef}>
 				<Story />
-			</Box>
+			</div>
 		</OverdriveProvider>
 	);
 };
