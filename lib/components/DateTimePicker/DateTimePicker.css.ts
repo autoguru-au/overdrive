@@ -1,7 +1,6 @@
 import { createContainer, style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
-import { textStyles } from '../../components/Text';
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
 import { sprinklesResponsive } from '../../styles/sprinkles.css';
 import { overdriveTokens as tokens } from '../../themes';
@@ -122,19 +121,6 @@ export const tdStyle = style({
 });
 
 // -- Heading styles
-
-export const headingStyle = textStyles({
-	as: 'h1',
-	size: '8',
-	fontWeight: 'bold',
-});
-
-export const subheadingStyle = textStyles({
-	as: 'h2',
-	size: '6',
-	fontWeight: 'bold',
-});
-
 export const titleStyle = style({
 	fontWeight: tokens.typography.fontWeight.bold,
 	margin: 0,

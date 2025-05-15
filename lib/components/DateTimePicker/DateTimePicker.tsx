@@ -19,6 +19,7 @@ import { useCalendarState, type Selection } from 'react-stately';
 import { sprinklesResponsive } from '../../styles/sprinkles.css';
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
+import { Heading } from '../Heading';
 import { Icon } from '../Icon';
 import {
 	OptionGrid,
@@ -30,10 +31,8 @@ import { CalendarButton } from './CalendarButton';
 import { CalendarGrid } from './CalendarGrid';
 import {
 	calendarStyle,
-	headingStyle,
 	layoutStyle,
 	queryContainerStyle,
-	subheadingStyle,
 	titleStyle,
 } from './DateTimePicker.css';
 
@@ -196,15 +195,15 @@ export const DateTimePicker = <D extends DateValue>({
 			{...dataAttrs({ 'test-id': testId })}
 		>
 			{title && (
-				<h2 id={titleId} className={headingStyle}>
+				<Heading as="h2" id={titleId} mb="6" size="8">
 					{title}
-				</h2>
+				</Heading>
 			)}
 			<div className={layoutStyle}>
 				<div className={sprinklesResponsive({ flexShrink: 0 })}>
-					<h3 className={subheadingStyle}>
+					<Heading as="h3" mb="4" size="6">
 						{lang?.dateLabel ?? defaultEnglish.dateLabel}
-					</h3>
+					</Heading>
 					<div {...calendarProps} className={calendarStyle}>
 						<CalendarButton
 							{...prevButtonProps}
@@ -232,9 +231,9 @@ export const DateTimePicker = <D extends DateValue>({
 				</div>
 
 				<div className={sprinklesResponsive({ flexGrow: 1 })}>
-					<h3 className={subheadingStyle}>
+					<Heading as="h3" mb="4" size="6">
 						{lang?.timeLabel ?? defaultEnglish.timeLabel}
-					</h3>
+					</Heading>
 					<OptionGrid {...optionGridComponentProps} />
 				</div>
 			</div>

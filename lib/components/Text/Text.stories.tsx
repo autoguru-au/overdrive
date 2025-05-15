@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
 import { valueArrays } from '../../styles/sprinkles.css';
+import { overdriveTokens } from '../../themes';
 
 import { Text, type TextTags } from './Text';
 
@@ -60,6 +61,7 @@ export const AllSizes: Story = {
 	render: (args) => (
 		<>
 			{valueArrays.fontSizes.map((size) => (
+				// @ts-expect-error wrong ref type
 				<Text key={size} {...args} size={size} />
 			))}
 		</>
@@ -72,7 +74,7 @@ export const AllColours: Story = {
 	},
 	render: ({ children, ...args }) => (
 		<>
-			{valueArrays.intentForegroundColours.map((color) => (
+			{Object.keys(overdriveTokens.typography.colour).map((color) => (
 				<div key={color} style={{ marginBottom: 8 }}>
 					<Text as="p" size="3" strong>
 						{color}

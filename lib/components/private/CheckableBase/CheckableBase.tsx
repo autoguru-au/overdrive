@@ -110,7 +110,7 @@ export const CheckableBase = forwardRef<HTMLInputElement, Props>(
 						},
 					)}
 				>
-					{nakedLabel ? <Text is="span">{label}</Text> : label}
+					{nakedLabel ? <Text as="span">{label}</Text> : label}
 				</Box>
 			</Box>
 		);

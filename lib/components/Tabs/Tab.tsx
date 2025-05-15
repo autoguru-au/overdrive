@@ -67,7 +67,7 @@ export const Tab = <E extends ElementType>({
 			{typeof indication === 'number' && (
 				<Text
 					strong
-					is="span"
+					as="span"
 					size="2"
 					display="block"
 					colour={isActive ? 'white' : 'dark'}
