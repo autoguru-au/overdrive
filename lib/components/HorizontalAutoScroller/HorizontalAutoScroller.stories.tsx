@@ -3,9 +3,9 @@ import Rand from 'rand-seed';
 import React, { type ComponentProps } from 'react';
 
 import { boxArgTypes, scaleOptions } from '../../stories/shared/argTypes-box';
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 
-import { HorizontalAutoScroller } from '.';
+import { HorizontalAutoScroller } from './HorizontalAutoScroller';
 
 export default {
 	title: 'Components/Horizontal Auto Scroller',

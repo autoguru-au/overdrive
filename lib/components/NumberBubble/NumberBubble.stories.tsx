@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { NumberBubble } from '.';
+import { NumberBubble } from './NumberBubble';
 
 type Story = StoryObj<typeof NumberBubble>;
 

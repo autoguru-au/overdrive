@@ -2,7 +2,8 @@ import { StoryObj, Meta } from '@storybook/react';
 import { fn } from '@storybook/test';
 import React, { type ComponentProps } from 'react';
 
-import { Radio, RadioGroup as RadioGroupComponent } from '.';
+import { Radio } from './Radio';
+import { RadioGroup as RadioGroupComponent } from './RadioGroup';
 
 const listData: Array<{ label: string; value: string }> = [
 	{ label: 'Avocado', value: 'avocado' },

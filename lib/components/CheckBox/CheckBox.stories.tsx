@@ -2,12 +2,12 @@ import { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import React, { useEffect, useState } from 'react';
 
-import { Badge } from '../Badge';
-import { Heading } from '../Heading';
-import { StarRating } from '../StarRating';
-import { Text } from '../Text';
+import { Badge } from '../Badge/Badge';
+import { Heading } from '../Heading/Heading';
+import { StarRating } from '../StarRating/StarRating';
+import { Text } from '../Text/Text';
 
-import { CheckBox } from '.';
+import { CheckBox } from './CheckBox';
 
 const listData: Array<{ label: string; value: string }> = [
 	{ label: 'Avocado', value: 'avocado' },

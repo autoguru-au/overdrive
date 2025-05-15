@@ -11,7 +11,7 @@ import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 import isChromatic from 'chromatic/isChromatic';
 
-import { DateInput } from '.';
+import { DateInput } from './DateInput';
 
 const formatDate = (date: Date = new Date()) => {
 	const year = date.getFullYear();

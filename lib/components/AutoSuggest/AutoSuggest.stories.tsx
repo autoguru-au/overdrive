@@ -4,9 +4,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React, { type ComponentProps } from 'react';
 
 import { argTypesExampleIcons } from '../../stories/shared/argTypes';
-import { DateInput } from '../DateInput';
+import { DateInput } from '../DateInput/DateInput';
 
-import { AutoSuggest } from '.';
+import { AutoSuggest } from './AutoSuggest';
 
 const mockSuggestions = [
 	'Alfa Romeo',

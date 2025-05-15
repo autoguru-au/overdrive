@@ -1,11 +1,11 @@
 import { Meta, StoryObj } from '@storybook/react';
 import React, { type ComponentProps } from 'react';
 
-import { Box } from '../Box';
-import { Heading } from '../Heading';
-import { Inline } from '../Inline';
+import { Box } from '../Box/Box';
+import { Heading } from '../Heading/Heading';
+import { Inline } from '../Inline/Inline';
 
-import { DividerLine } from '.';
+import { DividerLine } from './DividerLine';
 
 const spacingOptions: Record<
 	string,

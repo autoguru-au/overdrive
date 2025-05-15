@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { Text } from '../Text';
+import { Text } from '../Text/Text';
 
-import { OrderedList } from '.';
+import { OrderedList } from './OrderedList';
 
 export default {
 	title: 'Primatives/Ordered List',

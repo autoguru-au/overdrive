@@ -2,12 +2,12 @@ import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 import { ComponentProps, useRef } from 'react';
 
-import { Box } from '../Box';
-import { Button } from '../Button';
+import { Box } from '../Box/Box';
+import { Button } from '../Button/Button';
 import { EAlignment } from '../Positioner/alignment';
-import { TextInput } from '../TextInput';
+import { TextInput } from '../TextInput/TextInput';
 
-import { Flyout } from '.';
+import { Flyout } from './Flyout';
 
 const meta = {
 	title: 'Components/Flyout',

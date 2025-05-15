@@ -1,11 +1,11 @@
 import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { Heading } from '../Heading';
-import { Stack } from '../Stack';
-import { Text } from '../Text';
+import { Heading } from '../Heading/Heading';
+import { Stack } from '../Stack/Stack';
+import { Text } from '../Text/Text';
 
-import { Portal } from '.';
+import { Portal } from './Portal';
 
 export default {
 	title: 'Utility/Portal',

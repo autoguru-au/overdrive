@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 
 import { argTypesExampleIcons } from '../../stories/shared/argTypes';
 
-import { Icon } from '.';
+import { Icon } from './Icon';
 
 type Story = StoryObj<typeof Icon>;
 

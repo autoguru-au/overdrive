@@ -5,9 +5,9 @@ import isChromatic from 'chromatic/isChromatic';
 import React, { type ComponentProps } from 'react';
 
 import { argTypesExampleIcons } from '../../stories/shared/argTypes';
-import { DateInput } from '../DateInput';
+import { DateInput } from '../DateInput/DateInput';
 
-import { NumberInput } from '.';
+import { NumberInput } from './NumberInput';
 
 const defaultValue = isChromatic()
 	? '42'

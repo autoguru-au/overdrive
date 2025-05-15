@@ -2,12 +2,11 @@ import { action } from '@storybook/addon-actions';
 import { ArgTypes, Meta, StoryObj } from '@storybook/react';
 import React, { type ComponentProps } from 'react';
 
-import { Box } from '../Box';
-import { Text } from '../Text';
+import { Box } from '../Box/Box';
+import { Text } from '../Text/Text';
 
+import { MinimalModal } from './MinimalModal';
 import * as styles from './MinimalModal.css';
-
-import { MinimalModal } from '.';
 
 const argTypes: ArgTypes = {
 	alignItems: {

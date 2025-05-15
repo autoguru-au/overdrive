@@ -3,7 +3,7 @@ import { Meta as ComponentMeta, StoryObj } from '@storybook/react';
 
 import { argTypesExampleIcons } from '../../stories/shared/argTypes';
 
-import { Meta } from '.';
+import { Meta } from './Meta';
 
 export default {
 	title: 'Components/Meta',

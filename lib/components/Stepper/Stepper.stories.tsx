@@ -2,7 +2,7 @@ import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 
-import { Stepper } from '.';
+import { Stepper } from './Stepper';
 
 const meta = {
 	title: 'Forms & Input Fields/Stepper',
