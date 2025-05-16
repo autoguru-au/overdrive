@@ -1,13 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import {
-	expect,
-	fn,
-	getAllByRole,
-	getByText,
-	userEvent,
-} from '@storybook/test';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import isChromatic from 'chromatic/isChromatic';
 import MockDate from 'mockdate';
+import { expect, fn, getAllByRole, getByText, userEvent } from 'storybook/test';
 
 import { DateTimePicker } from './DateTimePicker';
 

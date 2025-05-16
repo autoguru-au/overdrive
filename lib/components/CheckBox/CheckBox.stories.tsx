@@ -1,6 +1,6 @@
-import { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import React, { useEffect, useState } from 'react';
+import { fn } from 'storybook/test';
 
 import { Badge } from '../Badge/Badge';
 import { Heading } from '../Heading/Heading';

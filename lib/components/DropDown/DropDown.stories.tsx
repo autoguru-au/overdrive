@@ -4,9 +4,9 @@ import {
 	SquareEditOutlineIcon,
 	TrashCanOutlineIcon,
 } from '@autoguru/icons';
-import { action } from '@storybook/addon-actions';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { type ComponentProps } from 'react';
+import { action } from 'storybook/actions';
 
 import { Box } from '../Box/Box';
 import { Button } from '../Button/Button';

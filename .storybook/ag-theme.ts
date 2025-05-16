@@ -1,4 +1,4 @@
-import { create } from '@storybook/theming';
+import { create } from 'storybook/theming';
 
 const brand = {
 	brandTitle: 'AutoGuru - Car servicing and repairs made easy',

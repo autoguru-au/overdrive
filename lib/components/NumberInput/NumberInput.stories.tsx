@@ -1,8 +1,8 @@
 import { AccountEditIcon, CalendarIcon } from '@autoguru/icons';
-import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import isChromatic from 'chromatic/isChromatic';
 import React, { type ComponentProps } from 'react';
+import { fn } from 'storybook/test';
 
 import { argTypesExampleIcons } from '../../stories/shared/argTypes';
 import { DateInput } from '../DateInput/DateInput';

@@ -1,5 +1,5 @@
 import { CheckIcon } from '@autoguru/icons';
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import * as React from 'react';
 
 import { Icon } from '../Icon/Icon';

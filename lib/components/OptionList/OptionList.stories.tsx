@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { expect, fn, getAllByRole, within, userEvent } from '@storybook/test';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { useState } from 'react';
+import { expect, fn, getAllByRole, within, userEvent } from 'storybook/test';
 
 import { OptionList } from './OptionList';
 

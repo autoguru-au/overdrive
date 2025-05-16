@@ -1,5 +1,5 @@
 import { ArrowRightIcon, ChevronRightIcon } from '@autoguru/icons';
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import React, { type ComponentProps } from 'react';
 
 import { Box } from '../Box/Box';

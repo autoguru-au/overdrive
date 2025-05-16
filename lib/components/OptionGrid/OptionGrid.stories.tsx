@@ -4,10 +4,10 @@ import {
 	ServiceAndRepairsIcon,
 	TyreIcon,
 } from '@autoguru/icons';
-import type { Meta, StoryObj } from '@storybook/react';
-import { expect, fn, getAllByRole, within, userEvent } from '@storybook/test';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { useState } from 'react';
 import type { Selection } from 'react-aria-components';
+import { expect, fn, getAllByRole, within, userEvent } from 'storybook/test';
 
 import { OptionGrid, type OptionItem } from './OptionGrid';
 

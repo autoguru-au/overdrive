@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import * as React from 'react';
 
 import { SliderProgress } from './';
-// import { action } from '@storybook/addon-actions';
+// import { action } from 'storybook/actions';
 
 const standardProps = {
 	paused: false,

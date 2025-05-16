@@ -1,5 +1,5 @@
 import { CalendarIcon } from '@autoguru/icons';
-import { Meta as ComponentMeta, StoryObj } from '@storybook/react';
+import { Meta as ComponentMeta, StoryObj } from '@storybook/react-vite';
 
 import { argTypesExampleIcons } from '../../stories/shared/argTypes';
 
