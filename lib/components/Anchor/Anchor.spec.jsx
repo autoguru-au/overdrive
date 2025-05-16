@@ -73,7 +73,7 @@ describe('<Anchor />', () => {
 	describe('when custom component', () => {
 		it('should add Button dom element if button component is passed down to it', () => {
 			const { container } = render(
-				<Anchor className="anchor-class" is={<Button />}>
+				<Anchor as={<Button />} className="anchor-class">
 					Hello World!
 				</Anchor>,
 			);

@@ -7,6 +7,7 @@ import {
 	CheckIcon,
 	CurrencyUsdIcon,
 	MagnifyIcon,
+	PhoneIcon,
 	PlusIcon,
 	StarIcon,
 } from '@autoguru/icons';
@@ -14,10 +15,11 @@ import {
 export const argTypesExampleIcons = {
 	options: [
 		'None',
-		'Magnify',
 		'Car',
+		'Phone',
 		'Car Multiple',
 		'Calendar',
+		'Magnify',
 		'Account Edit',
 		'Alert Circle',
 		'Currency USD',
@@ -29,6 +31,7 @@ export const argTypesExampleIcons = {
 		None: null,
 		Magnify: MagnifyIcon,
 		Car: CarIcon,
+		Phone: PhoneIcon,
 		'Car Multiple': CarMultipleIcon,
 		Calendar: CalendarIcon,
 		'Account Edit': AccountEditIcon,
