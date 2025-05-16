@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 4.43.2
+
+### Patch Changes
+
+- 8731541: Default exports have been removed from components. Imports requiring
+  a default export should now point to `.../[component]/default`.
+
 ## 4.43.1
 
 ### Patch Changes
@@ -2107,8 +2114,8 @@
     backdrop. Also; if you wish to remove the fadeIn/fadeOut animation, a
     `transition?: boolean` can also be provided.
 
-                                        	- Removes `<ModalPortal />` in favor of `<Modal />`
-                                        	- Deprecated `withModal`, which could simply just use the Modal component
+                                          	- Removes `<ModalPortal />` in favor of `<Modal />`
+                                          	- Deprecated `withModal`, which could simply just use the Modal component
 
     Worth noting that a `role="presentation"` is applied to the `Modal`, so
     consumers should be applying a `role="none presentation"` to their direct
