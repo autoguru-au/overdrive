@@ -22,7 +22,7 @@ export const LoadingBox: FunctionComponent<LoadingBoxProps> = ({
 	...boxStyles
 }) => (
 	<Box
-		is={is}
+		as={is}
 		display={display}
 		width={randomWidth ? undefined : 'full'}
 		backgroundColour={backgroundColour}

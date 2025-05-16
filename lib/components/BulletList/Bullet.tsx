@@ -39,7 +39,7 @@ export const Bullet: FunctionComponent<BulletProps> = ({
 	className,
 }) => (
 	<Box
-		is="li"
+		as="li"
 		className={[
 			styles.root.default,
 			getBulletCls(styles, bulletMap[useContext(BulletListContext)]) ??
