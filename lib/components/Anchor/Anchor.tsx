@@ -1,77 +1,54 @@
 import { IconType } from '@autoguru/icons';
-import clsx from 'clsx';
-import * as React from 'react';
-import {
-	AnchorHTMLAttributes,
-	cloneElement,
-	createElement,
-	ElementType,
-	FunctionComponent,
-	isValidElement,
-	ReactElement,
-	ReactNode,
-} from 'react';
+import React, { cloneElement, type ElementType } from 'react';
 
-import { boxStyles } from '../Box/boxStyles';
+import { Box } from '../Box/Box';
+import { useBox, UseBoxProps, type BoxLikeProps } from '../Box/useBox';
 import { Icon } from '../Icon/Icon';
-import { Inline } from '../Inline/Inline';
-import { Text } from '../Text/Text';
-import { textStyles } from '../Text/textStyles';
 
-import * as styles from './Anchor.css';
+const ANCHOR_TAG = 'a';
 
-export interface AnchorProps
-	extends Omit<
-		AnchorHTMLAttributes<HTMLAnchorElement>,
-		'children' | 'style' | 'is'
-	> {
-	className?: string;
-	is?: ElementType | ReactElement;
-	disabled?: boolean;
-	children?: ReactNode;
-
+interface CustomProps {
 	icon?: IconType;
 }
 
-export const Anchor: FunctionComponent<AnchorProps> = ({
-	className = '',
+export type AnchorProps<E extends ElementType = typeof ANCHOR_TAG> =
+	BoxLikeProps<E, CustomProps>;
 
-	is: Component = 'a',
-	disabled = false,
-
+export const Anchor = <E extends ElementType = typeof ANCHOR_TAG>({
+	as = ANCHOR_TAG as E,
 	children,
-
 	icon,
-	...rest
-}) => {
-	const linkColor = textStyles({
-		colour: 'link',
+	...props
+}: AnchorProps<E>) => {
+	const { Component, componentProps, reactElement } = useBox<E>({
+		...(props as UseBoxProps<E>),
+		alignItems: 'center',
+		as,
+		odComponent: 'anchor',
 	});
 
-	const props = {
-		className: clsx(
-			styles.root,
-			linkColor,
-			boxStyles({
-				as: typeof Component === 'string' ? Component : undefined,
-				display: 'inline',
-			}),
-			className,
-		),
-		disabled,
-		...rest,
-	};
-
-	const childs = (
-		<Inline space="2">
-			{icon && <Icon icon={icon} size="small" className={linkColor} />}
-			<Text fontWeight="bold" size="4" colour="link">
-				{children}
-			</Text>
-		</Inline>
+	const Content = () => (
+		<Box
+			as="span"
+			alignItems="center"
+			colour="link"
+			display="inline-flex"
+			fontSize="4"
+			fontWeight="bold"
+			gap="2"
+		>
+			{icon && <Icon icon={icon} size="small" />}
+			<span>{children}</span>
+		</Box>
 	);
 
-	return isValidElement(Component)
-		? cloneElement(Component, props, childs)
-		: createElement(Component, props, childs);
+	if (reactElement) {
+		return cloneElement(reactElement, componentProps, <Content />);
+	}
+
+	return (
+		<Component {...componentProps}>
+			<Content />
+		</Component>
+	);
 };
