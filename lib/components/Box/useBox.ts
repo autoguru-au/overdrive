@@ -50,6 +50,8 @@ export type PolymorphicRef<C extends ElementType> =
 /** `as` prop for polymorphic components, allowing specification of the rendered element type */
 export type AsPolyProp<C extends ElementType> = {
 	as?: C | ReactElement;
+	/* ensure legacy `is` prop does not pass typechecking */
+	is?: never;
 };
 
 /** `ref` prop for polymorphic components, using the extracted `PolymorphicRef` type */
@@ -58,9 +60,7 @@ export type RefPolyProp<C extends ElementType> = {
 };
 
 /** Helps to omit base component's props when creating polymorphic props */
-export type PropsToOmit<C extends ElementType, P> =
-	| keyof (AsPolyProp<C> & P)
-	| 'is';
+export type PropsToOmit<C extends ElementType, P> = keyof (AsPolyProp<C> & P);
 
 /**
  * Constructs the props type for a polymorphic component.
