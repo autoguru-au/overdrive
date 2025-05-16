@@ -14,9 +14,10 @@ import {
 	ReactNode,
 } from 'react';
 
-import { Box, boxStyles } from '../Box';
-import { Icon } from '../Icon';
-import { Text } from '../Text';
+import { Box } from '../Box/Box';
+import { boxStyles } from '../Box/boxStyles';
+import { Icon } from '../Icon/Icon';
+import { Text } from '../Text/Text';
 
 import * as styles from './TextLink.css';
 
@@ -26,7 +27,7 @@ type AnchorProps = Omit<
 	'children' | 'color' | 'style' | 'is' | keyof TextProps
 >;
 
-export interface Props extends TextProps, AnchorProps {
+export interface TextLinkProps extends TextProps, AnchorProps {
 	children?: ReactNode;
 	className?: string;
 	is?: ElementType | ReactElement;
@@ -34,7 +35,7 @@ export interface Props extends TextProps, AnchorProps {
 	icon?: IconType;
 }
 
-export const TextLink = forwardRef<HTMLAnchorElement, Props>(
+export const TextLink = forwardRef<HTMLAnchorElement, TextLinkProps>(
 	(
 		{
 			is: Component,

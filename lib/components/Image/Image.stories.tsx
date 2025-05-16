@@ -2,12 +2,11 @@ import { Meta, StoryObj } from '@storybook/react';
 import isChromatic from 'chromatic/isChromatic';
 import React, { type ComponentProps } from 'react';
 
-import { Stack } from '../Stack';
-import { Text } from '../Text';
+import { Stack } from '../Stack/Stack';
+import { Text } from '../Text/Text';
 
+import { Image } from './Image';
 import { ImageServerProvider, widthMap } from './ImageServerProvider';
-
-import { Image } from '.';
 
 type SizeOption = ComponentProps<typeof Image>['imageWidth'];
 const sizeOptions: SizeOption[] = isChromatic()

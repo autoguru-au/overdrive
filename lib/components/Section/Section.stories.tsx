@@ -2,9 +2,9 @@ import { Meta, StoryObj } from '@storybook/react';
 import React, { type ComponentProps } from 'react';
 
 import { boxArgTypes } from '../../stories/shared/argTypes-box';
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 
-import { Section } from '.';
+import { Section } from './Section';
 
 export default {
 	title: 'Layout/Section',

@@ -1,9 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { Text } from '../Text';
+import { Text } from '../Text/Text';
 
-import { Bullet, BulletList } from '.';
+import { Bullet } from './Bullet';
+import { BulletList } from './BulletList';
 
 const meta = {
 	title: 'Primatives/Bullet List',

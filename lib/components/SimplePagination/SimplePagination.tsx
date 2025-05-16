@@ -3,9 +3,9 @@ import * as React from 'react';
 import { FunctionComponent } from 'react';
 
 import { noop } from '../../utils';
-import { Button } from '../Button';
-import { Icon } from '../Icon';
-import { Inline } from '../Inline';
+import { Button } from '../Button/Button';
+import { Icon } from '../Icon/Icon';
+import { Inline } from '../Inline/Inline';
 
 export enum EChangeDirection {
 	Previous = 'previous',
@@ -14,13 +14,13 @@ export enum EChangeDirection {
 
 type TOnChangeEventHandler = (event: EChangeDirection) => void;
 
-export interface Props {
+export interface SimplePaginationProps {
 	hasNext?: boolean;
 	hasPrevious?: boolean;
 	onChange?: TOnChangeEventHandler;
 }
 
-export const SimplePagination: FunctionComponent<Props> = ({
+export const SimplePagination: FunctionComponent<SimplePaginationProps> = ({
 	hasNext = false,
 	hasPrevious = false,
 	onChange = noop,
@@ -62,5 +62,3 @@ export const SimplePagination: FunctionComponent<Props> = ({
 		</Inline>
 	);
 };
-
-export default SimplePagination;

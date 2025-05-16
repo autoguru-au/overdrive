@@ -2,9 +2,9 @@ import { CheckIcon } from '@autoguru/icons';
 import { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
-import { Icon } from '../Icon';
+import { Icon } from '../Icon/Icon';
 
-import { BulletText } from '.';
+import { BulletText } from './BulletText';
 
 const meta = {
 	title: 'Components/Bullet Text',

@@ -2,9 +2,9 @@ import { action } from '@storybook/addon-actions';
 import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 
-import { Pagination } from '.';
+import { Pagination } from './Pagination';
 
 export default {
 	title: 'Components/Pagination',

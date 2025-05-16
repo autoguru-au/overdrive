@@ -2,9 +2,9 @@ import { PhoneIcon } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { argTypesExampleIcons } from '../../stories/shared/argTypes';
-import { Button } from '../Button';
+import { Button } from '../Button/Button';
 
-import { Anchor } from '.';
+import { Anchor } from './Anchor';
 
 const meta = {
 	title: 'Primatives/Anchor',

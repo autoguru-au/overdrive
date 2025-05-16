@@ -2,9 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
 import { argTypesExampleIcons } from '../../stories/shared/argTypes';
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 
-import { DatePicker } from '.';
+import { DatePicker } from './DatePicker';
 
 const meta = {
 	title: 'Components/Date Picker',

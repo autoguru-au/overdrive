@@ -1,1 +1,1 @@
-export { Icon, type IconEl, type Props as IconProps } from './Icon';
+export { Icon, type IconEl, type IconProps } from './Icon';

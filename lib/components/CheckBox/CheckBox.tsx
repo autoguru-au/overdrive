@@ -4,14 +4,14 @@ import React, { forwardRef, ReactNode, useEffect, useRef } from 'react';
 
 import { mergeRefs, noop } from '../../utils';
 import { dataAttrs } from '../../utils/dataAttrs';
-import { Box } from '../Box';
-import { Icon } from '../Icon';
-import { CheckableBase } from '../private/CheckableBase';
+import { Box } from '../Box/Box';
+import { Icon } from '../Icon/Icon';
+import { CheckableBase } from '../private/CheckableBase/CheckableBase';
 import { checkableIndicator } from '../private/CheckableBase/CheckableBase.css';
 
 import * as styles from './CheckBox.css';
 
-export interface Props {
+export interface CheckboxProps {
 	className?: string;
 	checked?: boolean;
 	disabled?: boolean;
@@ -27,7 +27,7 @@ export interface Props {
 	onChange?(checked: boolean): void;
 }
 
-export const CheckBox = forwardRef<HTMLInputElement, Props>(
+export const CheckBox = forwardRef<HTMLInputElement, CheckboxProps>(
 	(
 		{
 			value,
@@ -88,5 +88,3 @@ export const CheckBox = forwardRef<HTMLInputElement, Props>(
 );
 
 CheckBox.displayName = 'Checkbox';
-
-export default CheckBox;

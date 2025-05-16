@@ -1,6 +1,6 @@
 import React, { cloneElement } from 'react';
 
-import { useBox, UseBoxProps, type BoxLikeProps } from '../Box';
+import { useBox, UseBoxProps, type BoxLikeProps } from '../Box/useBox';
 
 import { textStyles, type TextStylesProps } from './textStyles';
 

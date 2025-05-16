@@ -5,18 +5,18 @@ import * as React from 'react';
 import { forwardRef, useCallback } from 'react';
 
 import { Alignment, alignmentToFlexAlignment } from '../../utils';
-import { Box } from '../Box';
-import { Icon } from '../Icon';
-import { Inline } from '../Inline';
-import { Text } from '../Text';
-import { VisuallyHidden } from '../VisuallyHidden';
+import { Box } from '../Box/Box';
+import { Icon } from '../Icon/Icon';
+import { Inline } from '../Inline/Inline';
+import { Text } from '../Text/Text';
+import { VisuallyHidden } from '../VisuallyHidden/VisuallyHidden';
 
 import * as styles from './TableHeadCell.css';
 import { useTableContext } from './context';
 
 type Sort = 'asc' | 'desc' | 'none';
 
-export interface Props
+export interface TableHeadCellProps
 	extends Partial<Pick<AriaAttributes, 'aria-label'>>,
 		Pick<ComponentProps<typeof Box>, 'padding'> {
 	align?: Alignment;
@@ -35,7 +35,10 @@ const sortToAria = (sort: Sort): AriaAttributes['aria-sort'] => {
 	return 'none';
 };
 
-export const TableHeadCell = forwardRef<HTMLTableCellElement, Props>(
+export const TableHeadCell = forwardRef<
+	HTMLTableCellElement,
+	TableHeadCellProps
+>(
 	(
 		{
 			align = 'left',
@@ -132,5 +135,3 @@ export const TableHeadCell = forwardRef<HTMLTableCellElement, Props>(
 );
 
 TableHeadCell.displayName = 'TableHeadCell';
-
-export default TableHeadCell;

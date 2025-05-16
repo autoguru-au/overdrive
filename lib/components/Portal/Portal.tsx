@@ -62,5 +62,3 @@ function Portal(
 
 const _Portal = forwardRef(Portal);
 export { _Portal as Portal };
-
-export default Portal;

@@ -16,10 +16,11 @@ import React, {
 
 import type { TextFontWeight, TextSizeScale } from '../../themes';
 import { dataAttrs } from '../../utils/dataAttrs';
-import { Box, BoxLikeProps, useBox, type UseBoxProps } from '../Box';
-import { Icon } from '../Icon';
-import { ProgressSpinner } from '../ProgressSpinner';
-import { textStyles } from '../Text';
+import { Box } from '../Box/Box';
+import { BoxLikeProps, useBox, type UseBoxProps } from '../Box/useBox';
+import { Icon } from '../Icon/Icon';
+import { ProgressSpinner } from '../ProgressSpinner/ProgressSpinner';
+import { textStyles } from '../Text/textStyles';
 
 import * as styles from './Button.css';
 import type { ButtonSize, StyledButtonProps } from './Button.css';
@@ -275,5 +276,3 @@ export const Button = forwardRef<
 ) as ButtonForwardRefReturn;
 
 Button.displayName = 'Button';
-
-export default Button;

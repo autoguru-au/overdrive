@@ -3,21 +3,22 @@ import clsx from 'clsx';
 import { ComponentProps, FunctionComponent } from 'react';
 import * as React from 'react';
 
-import { Box } from '../Box';
-import { Icon } from '../Icon';
-import { Inline } from '../Inline';
-import { Text, textStyles } from '../Text';
+import { Box } from '../Box/Box';
+import { Icon } from '../Icon/Icon';
+import { Inline } from '../Inline/Inline';
+import { Text } from '../Text/Text';
+import { textStyles } from '../Text/textStyles';
 
 import * as styles from './DropDownOption.css';
 
-interface Props
+interface DropDownOptionProps
 	extends Omit<ComponentProps<typeof Box>, 'paddingX' | 'paddingY'> {
 	icon?: IconType;
 	label: string;
 	iconColour?: ComponentProps<typeof Text>['colour'];
 }
 
-export const DropDownOption: FunctionComponent<Props> = ({
+export const DropDownOption: FunctionComponent<DropDownOptionProps> = ({
 	label,
 	icon,
 	className,

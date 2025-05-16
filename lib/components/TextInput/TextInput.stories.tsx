@@ -5,9 +5,9 @@ import { type ComponentProps } from 'react';
 
 import { argTypesExampleIcons } from '../../stories/shared/argTypes';
 import { boxArgTypes } from '../../stories/shared/argTypes-box';
-import { DateInput } from '../DateInput';
+import { DateInput } from '../DateInput/DateInput';
 
-import { TextInput } from '.';
+import { TextInput } from './TextInput';
 
 const defaultValue = 'user@autoguru.com.au';
 const defaultPlaceholder = 'Email address';

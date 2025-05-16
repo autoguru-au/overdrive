@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import isChromatic from 'chromatic';
 import React, { type ChangeEvent, useState } from 'react';
 
-import { EditableText } from '.';
+import { EditableText } from './EditableText';
 
 const meta = {
 	title: 'Forms & Input Fields/Editable Text',

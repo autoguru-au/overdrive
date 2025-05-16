@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { Stack } from '../Stack';
+import { Stack } from '../Stack/Stack';
 
-import { ProgressBar } from '.';
+import { ProgressBar } from './ProgressBar';
 
 export default {
 	title: 'Components/Progress/Progress Bar',

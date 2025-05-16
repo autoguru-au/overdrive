@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { useMedia } from '../..';
+import { useMedia } from '../../hooks/useMedia/useMedia';
 import { isBrowser } from '../../utils';
 import { getEarliestKnownToken } from '../../utils/resolveResponsiveProps';
 import { ResponsiveProp } from '../../utils/responsiveProps.css';

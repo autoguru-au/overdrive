@@ -6,7 +6,8 @@ import { Box } from '../Box';
 
 import * as styles from './ProgressStep.css';
 
-interface Props extends Pick<ComponentProps<typeof Box>, 'backgroundColour'> {
+interface ProgressStepProps
+	extends Pick<ComponentProps<typeof Box>, 'backgroundColour'> {
 	className?: string;
 	paused: boolean;
 	isActive: boolean;
@@ -16,7 +17,7 @@ interface Props extends Pick<ComponentProps<typeof Box>, 'backgroundColour'> {
 	onFinished(): void;
 }
 
-export const ProgressStep: NamedExoticComponent<Props> = memo(
+export const ProgressStep: NamedExoticComponent<ProgressStepProps> = memo(
 	({
 		className = '',
 		paused,

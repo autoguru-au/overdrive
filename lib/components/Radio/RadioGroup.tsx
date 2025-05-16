@@ -8,7 +8,7 @@ import React, {
 
 import { Box } from '../Box';
 
-export interface Props {
+export interface RadioGroupProps {
 	name: string;
 	className?: string;
 	value: string;
@@ -29,7 +29,7 @@ export const RadioContext = createContext<RadioGroupContext | null>(null);
 export const useRadioContext = (): RadioGroupContext =>
 	useContext(RadioContext)!;
 
-export const RadioGroup = forwardRef<HTMLDivElement, Props>(
+export const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(
 	({ name, value, className = '', onChange, children }, ref) => {
 		const contextValue = useMemo(
 			() => ({ value, inputName: name, radioSelected: onChange }),
@@ -55,5 +55,3 @@ export const RadioGroup = forwardRef<HTMLDivElement, Props>(
 );
 
 RadioGroup.displayName = 'RadioGroup';
-
-export default RadioGroup;

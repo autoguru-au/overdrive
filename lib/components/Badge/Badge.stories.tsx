@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import React, { type ComponentProps } from 'react';
 
-import { Badge } from '.';
+import { Badge } from './Badge';
 
 type Story = StoryObj<typeof Badge>;
 

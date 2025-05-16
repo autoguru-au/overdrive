@@ -10,18 +10,20 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { ComponentProps, FunctionComponent, ReactNode } from 'react';
 
-import { Box, boxStyles } from '../Box';
-import { Button } from '../Button';
-import { Icon } from '../Icon';
-import { IntentStripe } from '../IntentStripe';
-import { Text, textStyles } from '../Text';
+import { Box } from '../Box/Box';
+import { boxStyles } from '../Box/boxStyles';
+import { Button } from '../Button/Button';
+import { Icon } from '../Icon/Icon';
+import { IntentStripe } from '../IntentStripe/IntentStripe';
+import { Text } from '../Text/Text';
+import { textStyles } from '../Text/textStyles';
 
 import * as styles from './Alert.css';
 
 type IntentStripeProps = ComponentProps<typeof IntentStripe>;
 type Intent = IntentStripeProps['intent'];
 
-export interface Props extends IntentStripeProps {
+export interface AlertProps extends IntentStripeProps {
 	children?: ReactNode;
 	className?: string;
 	inline?: boolean;
@@ -37,7 +39,7 @@ const iconMapForIntent: Record<Intent, IconType> = {
 	warning: AlertIcon,
 };
 
-export const Alert: FunctionComponent<Props> = ({
+export const Alert: FunctionComponent<AlertProps> = ({
 	children,
 	className = '',
 	intent = 'success',

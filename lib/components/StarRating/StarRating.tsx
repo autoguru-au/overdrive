@@ -4,10 +4,11 @@ import * as React from 'react';
 import { FunctionComponent, memo, NamedExoticComponent } from 'react';
 
 import { ThemeTokens as Tokens } from '../../themes';
-import { Box, boxStyles } from '../Box';
-import { Icon } from '../Icon';
-import { Inline } from '../Inline';
-import { Text } from '../Text';
+import { Box } from '../Box/Box';
+import { boxStyles } from '../Box/boxStyles';
+import { Icon } from '../Icon/Icon';
+import { Inline } from '../Inline/Inline';
+import { Text } from '../Text/Text';
 
 import * as styles from './StarRating.css';
 
@@ -37,14 +38,14 @@ const labelSizeMap: Map<EStarRatingSize, keyof Tokens['typography']['size']> =
 		[EStarRatingSize.Medium, '4'],
 	]);
 
-export interface Props {
+export interface StarRatingProps {
 	className?: string; // TODO: Remove this in the future
 	rating: number;
 	size?: EStarRatingSize;
 	label?: string;
 }
 
-export const StarRating: NamedExoticComponent<Props> = memo(
+export const StarRating: NamedExoticComponent<StarRatingProps> = memo(
 	({
 		className = '',
 		rating,
@@ -132,5 +133,3 @@ const Star: FunctionComponent<StarProps> = ({
 		/>
 	);
 };
-
-export default StarRating;

@@ -4,12 +4,12 @@ import { ComponentProps, FunctionComponent } from 'react';
 import useWindowHeightFill, {
 	UseWindowHeightFillProps,
 } from '../../hooks/useWindowHeightFill/useWindowHeightFill';
-import { ScrollPane } from '../ScrollPane';
+import { ScrollPane } from '../ScrollPane/ScrollPane';
 
-type Props = Omit<UseWindowHeightFillProps, 'containerRef'> &
+type FillHeightBoxProps = Omit<UseWindowHeightFillProps, 'containerRef'> &
 	ComponentProps<typeof ScrollPane>;
 
-export const FillHeightBox: FunctionComponent<Props> = ({
+export const FillHeightBox: FunctionComponent<FillHeightBoxProps> = ({
 	includeMobile,
 	bottomGap,
 	serverVhFallback,

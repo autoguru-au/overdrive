@@ -1,7 +1,7 @@
 import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { TextAreaInput } from '.';
+import { TextAreaInput } from './TextAreaInput';
 
 const meta: Meta<typeof TextAreaInput> = {
 	title: 'Forms & Input Fields/Text Area Input',

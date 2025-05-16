@@ -4,9 +4,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { type ComponentProps } from 'react';
 
 import { argTypesExampleIcons } from '../../stories/shared/argTypes';
-import { DateInput } from '../DateInput';
+import { DateInput } from '../DateInput/DateInput';
 
-import { ColourInput } from '.';
+import { ColourInput } from './ColourInput';
 
 const defaultColour = '#ec4040';
 

@@ -3,16 +3,17 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { ChangeEvent, ComponentProps, FunctionComponent } from 'react';
 
-import { Box, boxStyles } from '../Box';
-import { Icon } from '../Icon';
-import { ProgressSpinner } from '../ProgressSpinner';
-import { Text } from '../Text';
+import { Box } from '../Box/Box';
+import { boxStyles } from '../Box/boxStyles';
+import { Icon } from '../Icon/Icon';
+import { ProgressSpinner } from '../ProgressSpinner/ProgressSpinner';
+import { Text } from '../Text/Text';
 
 import * as styles from './DatePicker.css';
 
 type SizeScale = 'small' | 'medium' | 'large';
 
-export interface Props
+export interface DatePickerProps
 	extends Partial<Pick<HTMLInputElement, 'min' | 'max' | 'value'>> {
 	size?: SizeScale;
 	className?: string;
@@ -29,7 +30,7 @@ const textSizeMap: Record<SizeScale, ComponentProps<typeof Text>['size']> = {
 	medium: '3',
 	large: '5',
 };
-export const DatePicker: FunctionComponent<Props> = ({
+export const DatePicker: FunctionComponent<DatePickerProps> = ({
 	className = '',
 	icon = CalendarIcon,
 	size = 'medium',
@@ -98,5 +99,3 @@ export const DatePicker: FunctionComponent<Props> = ({
 		</Box>
 	);
 };
-
-export default DatePicker;

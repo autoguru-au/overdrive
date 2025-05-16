@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { ProgressBarGroup } from '.';
+import { ProgressBarGroup } from './ProgressBarGroup';
 
 type Story = StoryObj<typeof ProgressBarGroup>;
 

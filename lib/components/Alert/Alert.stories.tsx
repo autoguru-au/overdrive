@@ -2,9 +2,9 @@ import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { type ComponentProps } from 'react';
 
-import { Text } from '../Text';
+import { Text } from '../Text/Text';
 
-import { Alert } from '.';
+import { Alert } from './Alert';
 
 const onRequestClose = action('onRequestClose');
 type Intent = ComponentProps<typeof Alert>['intent'];

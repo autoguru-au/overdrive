@@ -1,4 +1,4 @@
-export { Table } from './Table';
+export * from './Table';
 export { TableCell } from './TableCell';
 export { TableHeadCell } from './TableHeadCell';
 export { TableRow } from './TableRow';

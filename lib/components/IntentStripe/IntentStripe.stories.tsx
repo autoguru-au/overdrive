@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
 import React, { type ComponentProps } from 'react';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 
-import { IntentStripe } from '.';
+import { IntentStripe } from './IntentStripe';
 
 type Intent = ComponentProps<typeof IntentStripe>['intent'];
 export default {

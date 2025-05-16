@@ -2,9 +2,9 @@ import { action } from '@storybook/addon-actions';
 import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { Button } from '../Button';
+import { Button } from '../Button/Button';
 
-import { OutsideClick } from '.';
+import { OutsideClick } from './OutsideClick';
 
 export default {
 	title: 'Utility/OutsideClick',

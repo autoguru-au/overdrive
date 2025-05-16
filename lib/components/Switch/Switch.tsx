@@ -82,5 +82,3 @@ export const Switch = ({
 		</label>
 	);
 };
-
-export default Switch;

@@ -1,13 +1,13 @@
 import clsx from 'clsx';
 import React, { type FunctionComponent, type ReactNode } from 'react';
 
-import { boxStyles } from '../../Box';
-import { Text } from '../../Text';
+import { boxStyles } from '../../Box/boxStyles';
+import { Text } from '../../Text/Text';
 
 import * as styles from './HintText.css';
 import type { InputSize } from './withEnhancedInput.css';
 
-export interface Props {
+export interface HintTextProps {
 	hintText: ReactNode;
 	reserveHintSpace?: boolean;
 	disabled?: boolean;
@@ -15,7 +15,7 @@ export interface Props {
 	className?: string;
 }
 
-export const HintText: FunctionComponent<Props> = ({
+export const HintText: FunctionComponent<HintTextProps> = ({
 	reserveHintSpace,
 	disabled,
 	hintText,

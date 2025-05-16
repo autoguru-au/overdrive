@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { FunctionComponent, ReactElement, useState } from 'react';
 
-export interface Props
+export interface SimpleImageProps
 	extends Partial<
 		Omit<HTMLImageElement, 'loading' | 'className' | 'width' | 'height'>
 	> {
@@ -40,7 +40,7 @@ export interface Props
 	fallbackComponent?: ReactElement; // Add this line
 }
 
-export const SimpleImage: FunctionComponent<Props> = ({
+export const SimpleImage: FunctionComponent<SimpleImageProps> = ({
 	eager = 'false',
 	syncDecoding = 'false',
 	className = '',

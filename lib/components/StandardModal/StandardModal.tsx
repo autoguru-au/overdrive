@@ -9,12 +9,12 @@ import * as React from 'react';
 import { useLayoutEffect, useRef } from 'react';
 
 import { isBrowser, useEventCallback, useId } from '../../utils';
-import { Box } from '../Box';
-import { Button } from '../Button';
-import { Heading } from '../Heading';
-import { Icon } from '../Icon';
-import { Modal } from '../Modal';
-import { textStyles } from '../Text';
+import { Box } from '../Box/Box';
+import { Button } from '../Button/Button';
+import { Heading } from '../Heading/Heading';
+import { Icon } from '../Icon/Icon';
+import { Modal } from '../Modal/Modal';
+import { textStyles } from '../Text/textStyles';
 
 import * as styles from './StandardModal.css';
 
@@ -26,13 +26,13 @@ export enum ESize {
 
 type Size = 'skinny' | 'narrow' | 'standard';
 
-export interface Props extends ComponentProps<typeof Modal> {
+export interface StandardModalProps extends ComponentProps<typeof Modal> {
 	size?: ESize | Size;
 	className?: string;
 	title: string;
 }
 
-export const StandardModal: FunctionComponent<Props> = ({
+export const StandardModal: FunctionComponent<StandardModalProps> = ({
 	isOpen,
 	size = 'standard',
 	className = '',
@@ -160,5 +160,3 @@ export const StandardModal: FunctionComponent<Props> = ({
 		</Modal>
 	);
 };
-
-export default StandardModal;

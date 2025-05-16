@@ -2,9 +2,9 @@ import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
 // import { boxArgTypes } from '../Box/argTypes';
-import { Text } from '../Text';
+import { Text } from '../Text/Text';
 
-import { Stack } from '.';
+import { Stack } from './Stack';
 
 // const spacingOptions: Record<string, ComponentProps<typeof Stack>['space']> = {
 // 	none: 'none',

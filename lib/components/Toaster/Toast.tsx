@@ -15,10 +15,10 @@ import {
 } from 'react';
 
 import { isBrowser } from '../../utils';
-import { Alert } from '../Alert';
-import { Box } from '../Box';
-import { Portal } from '../Portal';
-import { Stack } from '../Stack';
+import { Alert } from '../Alert/Alert';
+import { Box } from '../Box/Box';
+import { Portal } from '../Portal/Portal';
+import { Stack } from '../Stack/Stack';
 
 import * as styles from './Toast.css';
 
@@ -231,5 +231,3 @@ const Toast: FunctionComponent<
 		</Alert>
 	);
 };
-
-export default Toast;

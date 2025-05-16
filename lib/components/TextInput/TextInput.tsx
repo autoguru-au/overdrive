@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 import { withEnhancedInput } from '../private/InputBase';
 
 const MAX_TEXT_INPUT_LENGTH = 2000;
@@ -32,5 +32,3 @@ export const TextInput = withEnhancedInput<
 		primitiveType: 'text',
 	},
 );
-
-export default TextInput;

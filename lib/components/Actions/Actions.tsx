@@ -2,13 +2,13 @@ import React, { type FunctionComponent, type ReactElement } from 'react';
 
 import { Inline, type InlineProps } from '../Inline';
 
-export interface Props extends Pick<InlineProps, 'noWrap'> {
+export interface ActiontsProps extends Pick<InlineProps, 'noWrap'> {
 	children: ReactElement | ReactElement[];
 	className?: string;
 	wrappingDirection?: 'default' | 'reverse';
 }
 
-export const Actions: FunctionComponent<Props> = ({
+export const Actions: FunctionComponent<ActiontsProps> = ({
 	children,
 	noWrap,
 	wrappingDirection,
@@ -21,5 +21,3 @@ export const Actions: FunctionComponent<Props> = ({
 		{children}
 	</Inline>
 );
-
-export default Actions;

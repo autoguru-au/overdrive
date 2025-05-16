@@ -6,12 +6,14 @@ import React, {
 	type ReactNode,
 } from 'react';
 
-import { Box, boxStyles } from '../../Box';
-import { Text, textStyles } from '../../Text';
+import { Box } from '../../Box/Box';
+import { boxStyles } from '../../Box/boxStyles';
+import { Text } from '../../Text/Text';
+import { textStyles } from '../../Text/textStyles';
 
 import * as styles from './CheckableBase.css';
 
-export interface Props {
+export interface CheckableBaseProps {
 	className?: string;
 	checked?: boolean;
 	disabled?: boolean;
@@ -24,7 +26,7 @@ export interface Props {
 	handleChange?(checked: boolean): void;
 }
 
-export const CheckableBase = forwardRef<HTMLInputElement, Props>(
+export const CheckableBase = forwardRef<HTMLInputElement, CheckableBaseProps>(
 	(
 		{
 			className = '',
@@ -118,5 +120,3 @@ export const CheckableBase = forwardRef<HTMLInputElement, Props>(
 );
 
 CheckableBase.displayName = 'CheckableBase';
-
-export default CheckableBase;

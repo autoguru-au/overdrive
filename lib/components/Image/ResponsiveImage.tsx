@@ -3,13 +3,13 @@ import type { ComponentProps, FunctionComponent } from 'react';
 import * as React from 'react';
 import { useMemo } from 'react';
 
-import { useResponsiveValue } from '../../hooks/useResponsiveValue';
+import { useResponsiveValue } from '../../hooks/useResponsiveValue/useResponsiveValue';
 import { ResponsiveProp } from '../../utils/responsiveProps.css';
 
 import { useImageServer, widthMap } from './ImageServerProvider';
 import { SimpleImage } from './SimpleImage';
 
-export interface Props
+export interface ResponsiveImageProps
 	extends Omit<ComponentProps<typeof SimpleImage>, 'sizes'> {
 	/**
 	 * Only effective if `ImageServerProvider` is defined upstream.
@@ -40,7 +40,7 @@ export interface Props
 	quality?: number;
 }
 
-export const ResponsiveImage: FunctionComponent<Props> = ({
+export const ResponsiveImage: FunctionComponent<ResponsiveImageProps> = ({
 	imageWidth: imageWidthList,
 	sizes: sizesList = '100vw',
 	quality = 70,
@@ -86,5 +86,3 @@ export const ResponsiveImage: FunctionComponent<Props> = ({
 		/>
 	);
 };
-
-export default ResponsiveImage;

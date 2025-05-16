@@ -2,8 +2,9 @@ import { warning } from '@autoguru/utilities';
 import clsx from 'clsx';
 import * as React from 'react';
 
-import { Box, boxStyles } from '../Box';
-import { Text } from '../Text';
+import { Box } from '../Box/Box';
+import { boxStyles } from '../Box/boxStyles';
+import { Text } from '../Text/Text';
 import { withEnhancedInput } from '../private/InputBase';
 
 import * as styles from './ColourInput.css';
@@ -82,5 +83,3 @@ export const ColourInput = withEnhancedInput<{}, HTMLInputElement>(
 		defaultValue: '#000000',
 	},
 );
-
-export default ColourInput;
