@@ -26,7 +26,7 @@ export const LinearProgressIndicator: NamedExoticComponent<LinearProgressIndicat
 					className={styles.linearProgressBar}
 				>
 					<Box
-						is="span"
+						as="span"
 						backgroundColour="green300"
 						position="absolute"
 						width="full"
