@@ -1,4 +1,4 @@
-import { ArgTypes } from '@storybook/react';
+import { ArgTypes } from '@storybook/react-vite';
 import { type ComponentProps } from 'react';
 
 import { Box } from '../../components/Box/Box';

@@ -1,4 +1,4 @@
-import type { Preview } from '@storybook/react';
+import type { Preview } from '@storybook/react-vite';
 
 import '../lib/reset/globalFonts.css';
 import '../lib/reset/globalReset.css';
@@ -86,7 +86,6 @@ const preview: Preview = {
 			test: 'todo',
 		},
 	},
-
 	tags: ['autodocs'],
 };
 
