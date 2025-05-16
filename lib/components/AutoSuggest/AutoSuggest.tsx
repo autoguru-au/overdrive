@@ -668,7 +668,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 				// eslint-disable-next-line sonarjs/no-nested-conditional
 				isLoading ? null : field.value && isFocused ? (
 					<Box
-						is="button"
+						as="button"
 						paddingY={size === 'small' ? '1' : '3'}
 						paddingRight={size === 'small' ? '2' : '3'}
 						flexShrink={0}

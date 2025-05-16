@@ -19,7 +19,7 @@ export const BulletList: FunctionComponent<BulletListProps> = ({
 	const stack = useContext(BulletListContext);
 	return (
 		<Box
-			is="ul"
+			as="ul"
 			className={clsx(className, styles.root, {
 				[styles.firstOccurrence]: stack === -1,
 			})}

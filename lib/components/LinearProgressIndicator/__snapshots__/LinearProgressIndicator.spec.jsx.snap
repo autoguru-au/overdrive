@@ -11,9 +11,8 @@ exports[`<LinearProgressIndicator /> > should match snapshot 1`] = `
     <div
       class="reset_block__1oah0224 sprinkles_position_absolute_mobile__onxwjua0 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew LinearProgressIndicator_linearProgressBar__1gh10pc2"
     >
-      <div
-        class="reset_block__1oah0224 sprinkles_position_absolute_mobile__onxwjua0 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew sprinkles_backgroundColor_green300__onxwju3p LinearProgressIndicator_linearProgressBarInner__1gh10pc4"
-        is="span"
+      <span
+        class="reset_inlineText__1oah0223 sprinkles_position_absolute_mobile__onxwjua0 sprinkles_width_full_mobile__onxwjugg sprinkles_height_full_mobile__onxwjuew sprinkles_backgroundColor_green300__onxwju3p LinearProgressIndicator_linearProgressBarInner__1gh10pc4"
       />
     </div>
   </div>

@@ -33,6 +33,7 @@ export const DropDownOption: FunctionComponent<DropDownOptionProps> = ({
 	const colourStyles = useTextStyles({ colour: iconColour });
 	return (
 		<Box
+			as={is}
 			className={clsx(styles.root, className, {
 				[styles.disabled]: disabled,
 			})}
@@ -42,7 +43,6 @@ export const DropDownOption: FunctionComponent<DropDownOptionProps> = ({
 			display={display}
 			paddingX="3"
 			paddingY="2"
-			is={is}
 		>
 			<Inline
 				noWrap
