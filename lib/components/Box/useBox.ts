@@ -58,7 +58,9 @@ export type RefPolyProp<C extends ElementType> = {
 };
 
 /** Helps to omit base component's props when creating polymorphic props */
-export type PropsToOmit<C extends ElementType, P> = keyof (AsPolyProp<C> & P);
+export type PropsToOmit<C extends ElementType, P> =
+	| keyof (AsPolyProp<C> & P)
+	| 'is';
 
 /**
  * Constructs the props type for a polymorphic component.
