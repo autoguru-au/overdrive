@@ -10,14 +10,16 @@ import {
 } from 'react';
 
 import { addWithSafeDecimal } from '../../utils/number';
-import { Box, boxStyles } from '../Box';
-import { Icon } from '../Icon';
-import { Inline } from '../Inline';
-import { Text, useTextStyles } from '../Text';
+import { Box } from '../Box/Box';
+import { boxStyles } from '../Box/boxStyles';
+import { Icon } from '../Icon/Icon';
+import { Inline } from '../Inline/Inline';
+import { Text } from '../Text/Text';
+import { useTextStyles } from '../Text/useTextStyles';
 
 import * as styles from './Stepper.css';
 
-export interface Props {
+export interface StepperProps {
 	className?: string;
 	disabled?: boolean;
 	value?: number;
@@ -79,7 +81,7 @@ const Handle: FunctionComponent<HandleProps> = ({
 	</Box>
 );
 
-export const Stepper: FunctionComponent<Props> = ({
+export const Stepper: FunctionComponent<StepperProps> = ({
 	className = '',
 	disabled: incomingDisabled = false,
 	isFullWidth = false,
@@ -198,5 +200,3 @@ export const Stepper: FunctionComponent<Props> = ({
 		</Box>
 	);
 };
-
-export default Stepper;

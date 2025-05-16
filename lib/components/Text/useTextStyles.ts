@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 
-import type { UseBoxProps } from '../Box';
-import { boxStyles } from '../Box';
+import { boxStyles } from '../Box/boxStyles';
+import type { UseBoxProps } from '../Box/useBox';
 
 import * as styles from './useTextStyles.css';
 

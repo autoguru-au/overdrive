@@ -2,12 +2,12 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
 import flatRed from '../../themes/flat_red';
-import { Box } from '../Box';
-import { Button } from '../Button';
-import { Inline } from '../Inline';
-import { Stack } from '../Stack';
+import { Box } from '../Box/Box';
+import { Button } from '../Button/Button';
+import { Inline } from '../Inline/Inline';
+import { Stack } from '../Stack/Stack';
 
-import { OverdriveProvider } from '.';
+import { OverdriveProvider } from './OverdriveProvider';
 
 const meta: Meta<typeof OverdriveProvider> = {
 	title: 'Utility/OverdriveProvider',

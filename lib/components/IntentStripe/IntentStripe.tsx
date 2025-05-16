@@ -7,12 +7,12 @@ import * as styles from './IntentStripe.css';
 
 type Intent = 'danger' | 'information' | 'success' | 'warning';
 
-export interface Props {
+export interface IntentStripeProps {
 	className?: string;
 	intent: Intent;
 }
 
-export const IntentStripe: FunctionComponent<Props> = ({
+export const IntentStripe: FunctionComponent<IntentStripeProps> = ({
 	className = '',
 	intent = 'success',
 }) => (
@@ -23,5 +23,3 @@ export const IntentStripe: FunctionComponent<Props> = ({
 		backgroundColour={intent}
 	/>
 );
-
-export default IntentStripe;

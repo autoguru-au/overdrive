@@ -2,19 +2,20 @@ import { IconType } from '@autoguru/icons';
 import * as React from 'react';
 import { ComponentProps, FunctionComponent } from 'react';
 
-import { Icon } from '../Icon';
-import { Inline } from '../Inline';
-import { Text } from '../Text';
+import { Icon } from '../Icon/Icon';
+import { Inline } from '../Inline/Inline';
+import { Text } from '../Text/Text';
 
 import * as styles from './Meta.css';
 
-export interface Props extends Pick<ComponentProps<typeof Text>, 'breakWord'> {
+export interface MetaProps
+	extends Pick<ComponentProps<typeof Text>, 'breakWord'> {
 	icon: IconType;
 	label: string;
 	variant?: keyof typeof styles.variant;
 }
 
-export const Meta: FunctionComponent<Props> = ({
+export const Meta: FunctionComponent<MetaProps> = ({
 	icon,
 	label,
 	variant = 'primary',
@@ -25,5 +26,3 @@ export const Meta: FunctionComponent<Props> = ({
 		<Text breakWord={breakWord}>{label}</Text>
 	</Inline>
 );
-
-export default Meta;

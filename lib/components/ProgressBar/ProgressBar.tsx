@@ -10,13 +10,13 @@ import * as styles from './ProgressBar.css';
 const colours: ReadonlyArray<'red' | 'green' | 'blue' | 'yellow' | 'neutral'> =
 	['red', 'green', 'blue', 'yellow', 'neutral'] as const;
 
-export interface Props {
+export interface ProgressBarProps {
 	value?: number;
 	colour?: (typeof colours)[number];
 }
 
 const backgroundColorMap: Record<
-	Required<Props>['colour'],
+	Required<ProgressBarProps>['colour'],
 	ComponentProps<typeof Box>['backgroundColour']
 > = {
 	red: 'red500',
@@ -26,7 +26,7 @@ const backgroundColorMap: Record<
 	neutral: 'gray500',
 };
 
-export const ProgressBar: FunctionComponent<Props> = ({
+export const ProgressBar: FunctionComponent<ProgressBarProps> = ({
 	value = 0,
 	colour = 'green',
 }) => (
@@ -45,5 +45,3 @@ export const ProgressBar: FunctionComponent<Props> = ({
 		/>
 	</Box>
 );
-
-export default ProgressBar;

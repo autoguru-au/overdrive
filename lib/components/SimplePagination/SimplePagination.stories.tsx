@@ -2,9 +2,9 @@ import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 
-import { SimplePagination } from '.';
+import { SimplePagination } from './SimplePagination';
 
 const meta = {
 	title: 'Primatives/Simple Pagination',

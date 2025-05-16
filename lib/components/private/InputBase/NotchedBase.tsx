@@ -7,7 +7,7 @@ import * as styles from './NotchedBase.css';
 import type { BordersAttach, BordersMerged } from './NotchedBase.css';
 import type { InputSize } from './withEnhancedInput.css';
 
-export interface Props {
+export interface NotchedBaseProps {
 	id: string;
 	placeholder: string;
 	isEmpty: boolean;
@@ -25,7 +25,7 @@ export interface Props {
 	isHovered?: boolean;
 }
 
-export const NotchedBase: FunctionComponent<Props> = ({
+export const NotchedBase: FunctionComponent<NotchedBaseProps> = ({
 	id,
 	placeholder,
 	isEmpty,

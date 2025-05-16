@@ -3,8 +3,8 @@ import React from 'react';
 import { Sprinkles } from '../../styles/sprinkles.css';
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
-import type { UseBoxProps } from '../Box';
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
+import type { UseBoxProps } from '../Box/useBox';
 
 import { TextStyleProps, useTextStyles } from './useTextStyles';
 
@@ -71,5 +71,3 @@ export const Text = React.forwardRef<HTMLElement, WithTestId<TextProps>>(
 );
 
 Text.displayName = 'Text';
-
-export default Text;

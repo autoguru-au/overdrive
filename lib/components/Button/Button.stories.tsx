@@ -3,13 +3,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import React, { type ComponentProps } from 'react';
 
-import { Box } from '../Box';
-import { Icon } from '../Icon';
-import { Inline } from '../Inline';
+import { Box } from '../Box/Box';
+import { Icon } from '../Icon/Icon';
+import { Inline } from '../Inline/Inline';
 
-import { type ButtonProps } from './Button';
-
-import { Button } from '.';
+import { Button, type ButtonProps } from './Button';
 
 const meta: Meta<typeof Button> = {
 	title: 'Primatives/Buttons',

@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { Box } from '../Box';
-import { FillHeightBox } from '../FillHeightBox';
-import { Heading } from '../Heading';
-import { Text } from '../Text';
+import { Box } from '../Box/Box';
+import { FillHeightBox } from '../FillHeightBox/FillHeightBox';
+import { Heading } from '../Heading/Heading';
+import { Text } from '../Text/Text';
 
-import { StickyBox } from '.';
+import { StickyBox } from './StickyBox';
 
 const meta = {
 	title: 'Layout/StickyBox',

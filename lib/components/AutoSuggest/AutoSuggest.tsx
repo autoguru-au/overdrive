@@ -20,17 +20,17 @@ import React, {
 	useState,
 } from 'react';
 
-import { useMedia } from '../../hooks/useMedia';
+import { useMedia } from '../../hooks/useMedia/useMedia';
 import { useWindowScrollLock } from '../../hooks/useWindowScrollLock';
 import { setRef, useId } from '../../utils';
-import { Box } from '../Box';
-import { Button } from '../Button';
-import { Icon } from '../Icon';
-import { Portal } from '../Portal';
-import { Positioner } from '../Positioner';
+import { Box } from '../Box/Box';
+import { Button } from '../Button/Button';
+import { Icon } from '../Icon/Icon';
+import { Portal } from '../Portal/Portal';
+import { Positioner } from '../Positioner/Positioner';
 import { EAlignment } from '../Positioner/alignment';
-import { Text } from '../Text';
-import { TextInput } from '../TextInput';
+import { Text } from '../Text/Text';
+import { TextInput } from '../TextInput/TextInput';
 import { withEnhancedInput } from '../private/InputBase';
 
 import * as styles from './AutoSuggest.css';
@@ -81,7 +81,7 @@ type Actions =
 
 type Suggestions<PayloadType> = Array<AutoSuggestValue<PayloadType>>;
 
-export interface Props<PayloadType>
+export interface AutoSuggestProps<PayloadType>
 	extends Omit<
 		ComponentPropsWithoutRef<typeof TextInput>,
 		'onChange' | 'value' | 'type' | 'suffixIcon'
@@ -100,7 +100,7 @@ export interface Props<PayloadType>
 }
 
 interface AutoSuggestInputProps<PayloadType extends unknown>
-	extends Props<PayloadType> {
+	extends AutoSuggestProps<PayloadType> {
 	noScroll?: boolean;
 	isFocused?: boolean;
 }
@@ -291,7 +291,7 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 		/>
 	);
 }) as <PayloadType extends unknown>(
-	p: Props<PayloadType> & { ref?: Ref<HTMLInputElement> },
+	p: AutoSuggestProps<PayloadType> & { ref?: Ref<HTMLInputElement> },
 ) => ReactElement;
 
 const AutoSuggestFullscreenInput = forwardRef(
@@ -537,7 +537,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 
 interface SuggestionProps<PayloadType>
 	extends Pick<
-		Props<PayloadType>,
+		AutoSuggestProps<PayloadType>,
 		'suggestions' | 'itemRenderer' | 'onChange'
 	> {
 	className?: string;
@@ -832,5 +832,3 @@ const getNextIndex = <
 
 	return itter > maxIndex ? -1 : returnIdx;
 };
-
-export default AutoSuggest;

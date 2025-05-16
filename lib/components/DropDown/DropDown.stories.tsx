@@ -8,10 +8,11 @@ import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { type ComponentProps } from 'react';
 
-import { Box } from '../Box';
-import { Button } from '../Button';
+import { Box } from '../Box/Box';
+import { Button } from '../Button/Button';
 
-import { DropDown, DropDownOption } from '.';
+import { DropDown } from './DropDown';
+import { DropDownOption } from './DropDownOption';
 
 const onClick = action('onClick');
 

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { EStarRatingSize, StarRating } from '.';
+import { EStarRatingSize, StarRating } from './StarRating';
 
 const meta = {
 	title: 'Components/Star Rating',

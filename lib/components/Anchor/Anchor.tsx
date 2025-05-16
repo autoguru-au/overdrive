@@ -12,14 +12,15 @@ import {
 	ReactNode,
 } from 'react';
 
-import { boxStyles } from '../Box';
-import { Icon } from '../Icon';
-import { Inline } from '../Inline';
-import { Text, useTextStyles } from '../Text';
+import { boxStyles } from '../Box/boxStyles';
+import { Icon } from '../Icon/Icon';
+import { Inline } from '../Inline/Inline';
+import { Text } from '../Text/Text';
+import { useTextStyles } from '../Text/useTextStyles';
 
 import * as styles from './Anchor.css';
 
-export interface Props
+export interface AnchorProps
 	extends Omit<
 		AnchorHTMLAttributes<HTMLAnchorElement>,
 		'children' | 'style' | 'is'
@@ -32,7 +33,7 @@ export interface Props
 	icon?: IconType;
 }
 
-export const Anchor: FunctionComponent<Props> = ({
+export const Anchor: FunctionComponent<AnchorProps> = ({
 	className = '',
 
 	is: Component = 'a',
@@ -74,5 +75,3 @@ export const Anchor: FunctionComponent<Props> = ({
 		? cloneElement(Component, props, childs)
 		: createElement(Component, props, childs);
 };
-
-export default Anchor;

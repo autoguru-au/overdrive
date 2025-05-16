@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 import { withEnhancedInput } from '../private/InputBase';
 
 const MAX_TEXT_AREA_INPUT_LENGTH = 4000;
@@ -34,5 +34,3 @@ export const TextAreaInput = withEnhancedInput<
 		withPrefixIcon: false,
 	},
 );
-
-export default TextAreaInput;

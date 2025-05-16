@@ -2,9 +2,9 @@ import { Meta, StoryObj } from '@storybook/react';
 import React, { type ComponentProps } from 'react';
 
 import { EAlignment } from '../Positioner/alignment';
-import { Text } from '../Text';
+import { Text } from '../Text/Text';
 
-import { Tooltip } from '.';
+import { Tooltip } from './Tooltip';
 
 const sizeScale: ComponentProps<typeof Text>['size'][] = ['3', '4'];
 

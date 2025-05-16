@@ -5,12 +5,12 @@ import { Box } from '../Box';
 
 import * as styles from './LinearProgressIndicator.css';
 
-export interface Props {
+export interface LinearProgressIndicatorProps {
 	className?: string;
 }
 
-export const LinearProgressIndicator: NamedExoticComponent<Props> = memo(
-	({ className = '' }) => {
+export const LinearProgressIndicator: NamedExoticComponent<LinearProgressIndicatorProps> =
+	memo(({ className = '' }) => {
 		return (
 			<Box
 				position="relative"
@@ -36,9 +36,6 @@ export const LinearProgressIndicator: NamedExoticComponent<Props> = memo(
 				</Box>
 			</Box>
 		);
-	},
-);
+	});
 
 LinearProgressIndicator.displayName = 'LinearProgressIndicator';
-
-export default LinearProgressIndicator;

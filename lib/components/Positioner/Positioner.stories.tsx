@@ -2,13 +2,12 @@ import { Meta, StoryObj } from '@storybook/react';
 import isChromatic from 'chromatic/isChromatic';
 import React, { useRef } from 'react';
 
-import { Box } from '../Box';
-import { Button } from '../Button';
-import { Text } from '../Text';
+import { Box } from '../Box/Box';
+import { Button } from '../Button/Button';
+import { Text } from '../Text/Text';
 
+import { Positioner } from './Positioner';
 import { EAlignment } from './alignment';
-
-import { Positioner } from '.';
 
 export default {
 	title: 'Layout/Positioner',

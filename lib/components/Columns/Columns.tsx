@@ -180,5 +180,3 @@ export const Columns = forwardRef<ComponentRef<'div'>, ColumnsPolyProps<'div'>>(
 ) as ColumnsForwardRefReturn;
 
 Columns.displayName = 'Columns';
-
-export default Columns;

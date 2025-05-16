@@ -10,7 +10,7 @@ import {
 
 import { EnhanceInputPrimitiveProps } from '../private/InputBase/withEnhancedInput';
 
-interface Props {
+interface UseNumberInputBehaviourProps {
 	value: EnhanceInputPrimitiveProps<HTMLInputElement>['value'];
 	ref: RefObject<HTMLInputElement>;
 	preventMouseWheel: boolean;
@@ -34,7 +34,7 @@ export const useNumberInputBehaviours = ({
 	onFocus: incomingOnFocus,
 	onChange: incomingOnChange,
 	value,
-}: Props): Returns => {
+}: UseNumberInputBehaviourProps): Returns => {
 	const inputRef = useRef<HTMLInputElement>(ref?.current);
 	const [isFocused, setIsFocused] = useState(false);
 	const [displayValue, setDisplayValue] = useState<string | undefined>(value);

@@ -4,9 +4,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React, { type ComponentProps } from 'react';
 
 import { argTypesExampleIcons } from '../../stories/shared/argTypes';
-import { DateInput } from '../DateInput';
+import { DateInput } from '../DateInput/DateInput';
 
-import { SelectInput } from '.';
+import { SelectInput } from './SelectInput';
 
 const valueOptions = ['Kia', 'Toyota', 'BMW', 'Mitsubishi', 'Hyundai'];
 const selectOptions = valueOptions.map((item) => (

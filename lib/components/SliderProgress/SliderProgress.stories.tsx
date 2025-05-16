@@ -3,9 +3,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
 import { boxArgTypes } from '../../stories/shared/argTypes-box';
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 
-import { SliderProgress } from '.';
+import { SliderProgress } from './SliderProgress';
 
 const meta = {
 	title: 'Components/Progress/Slider Progress',

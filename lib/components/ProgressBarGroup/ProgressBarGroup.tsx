@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { ComponentProps, Fragment, FunctionComponent } from 'react';
 
-import { Box } from '../Box';
-import { ProgressBar } from '../ProgressBar';
-import { Text } from '../Text';
+import { Box } from '../Box/Box';
+import { ProgressBar } from '../ProgressBar/ProgressBar';
+import { Text } from '../Text/Text';
 
 import * as styles from './ProgressBarGroup.css';
 
-export interface Props
+export interface ProgressBarGroupProps
 	extends Pick<ComponentProps<typeof ProgressBar>, 'colour'> {
 	prefixLabels?: string[];
 	suffixLabels?: string[];
@@ -15,7 +15,7 @@ export interface Props
 	values: number[];
 }
 
-export const ProgressBarGroup: FunctionComponent<Props> = ({
+export const ProgressBarGroup: FunctionComponent<ProgressBarGroupProps> = ({
 	prefixLabels,
 	suffixLabels,
 	values,
@@ -49,5 +49,3 @@ export const ProgressBarGroup: FunctionComponent<Props> = ({
 		</Box>
 	);
 };
-
-export default ProgressBarGroup;

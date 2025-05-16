@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
-import { Text } from '../Text';
+import { Text } from '../Text/Text';
 
-import { VisuallyHidden } from '.';
+import { VisuallyHidden } from './VisuallyHidden';
 
 const meta = {
 	title: 'Layout/Visually Hidden',

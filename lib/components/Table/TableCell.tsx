@@ -5,20 +5,21 @@ import { AriaAttributes, forwardRef } from 'react';
 import { ThemeTokens as Tokens } from '../../themes';
 import type { Alignment } from '../../utils';
 import { alignmentToFlexAlignment } from '../../utils';
-import { Box } from '../Box';
-import { Text } from '../Text';
+import { Box } from '../Box/Box';
+import { Text } from '../Text/Text';
 
 import * as styles from './TableCell.css';
 import { useTableContext } from './context';
 
-export interface Props extends Partial<Pick<AriaAttributes, 'aria-label'>> {
+export interface TableCellProps
+	extends Partial<Pick<AriaAttributes, 'aria-label'>> {
 	align?: Alignment;
 	padding?: keyof Tokens['space'];
 
 	children?: ReactNode | null;
 }
 
-export const TableCell = forwardRef<HTMLDivElement, Props>(
+export const TableCell = forwardRef<HTMLDivElement, TableCellProps>(
 	(
 		{
 			padding: incomingPadding,
@@ -66,5 +67,3 @@ export const TableCell = forwardRef<HTMLDivElement, Props>(
 );
 
 TableCell.displayName = 'TableCell';
-
-export default TableCell;

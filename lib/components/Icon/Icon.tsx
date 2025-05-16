@@ -13,14 +13,14 @@ import * as styles from './Icon.css';
 
 export type IconEl = IconType | ReactElement<SVGAttributes<SVGElement>, 'svg'>;
 
-export interface Props {
+export interface IconProps {
 	display?: Extract<UseBoxProps['display'], 'block' | 'inline-block'>;
 	className?: string;
 	size?: ResponsiveProp<keyof typeof styles.size | string>;
 	icon: IconEl;
 }
 
-export const Icon: FunctionComponent<Props> = ({
+export const Icon: FunctionComponent<IconProps> = ({
 	className = '',
 	icon,
 	size = 'small',
@@ -49,5 +49,3 @@ export const Icon: FunctionComponent<Props> = ({
 		</Box>
 	);
 };
-
-export default Icon;

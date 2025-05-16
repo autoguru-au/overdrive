@@ -5,14 +5,14 @@ import { useImageServer } from './ImageServerProvider';
 import { ResponsiveImage } from './ResponsiveImage';
 import { SimpleImage } from './SimpleImage';
 
-export interface Props extends ComponentProps<typeof ResponsiveImage> {
+export interface ImageProps extends ComponentProps<typeof ResponsiveImage> {
 	/**
 	 * If set to true, no size/quality optimisation will be done even when `ImageServerProvider` has been defined upstream.
 	 **/
 	unoptimised?: boolean;
 }
 
-export const Image: FunctionComponent<Props> = ({
+export const Image: FunctionComponent<ImageProps> = ({
 	unoptimised = false,
 	imageWidth,
 	...props
@@ -22,5 +22,3 @@ export const Image: FunctionComponent<Props> = ({
 	) : (
 		<SimpleImage {...(props as ComponentProps<typeof SimpleImage>)} />
 	);
-
-export default Image;

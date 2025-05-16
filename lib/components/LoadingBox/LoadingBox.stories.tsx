@@ -3,7 +3,7 @@ import React from 'react';
 
 import { boxArgTypes } from '../../stories/shared/argTypes-box';
 
-import { LoadingBox } from '.';
+import { LoadingBox } from './LoadingBox';
 
 export default {
 	title: 'Components/Loading Box',

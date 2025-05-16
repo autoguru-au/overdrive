@@ -4,15 +4,19 @@ import { fn } from '@storybook/test';
 import isChromatic from 'chromatic/isChromatic';
 import React, { useEffect, useState } from 'react';
 
-import { Box } from '../Box';
-import { Icon } from '../Icon';
-import { Inline } from '../Inline';
+import { Box } from '../Box/Box';
+import { Icon } from '../Icon/Icon';
+import { Inline } from '../Inline/Inline';
 import { EAlignment } from '../Positioner/alignment';
-import { Stack } from '../Stack';
-import { StarRating } from '../StarRating';
-import { Tooltip } from '../Tooltip';
+import { Stack } from '../Stack/Stack';
+import { StarRating } from '../StarRating/StarRating';
+import { Tooltip } from '../Tooltip/Tooltip';
 
-import { Tab, TabList, TabPane, TabPanes, Tabs } from '.';
+import { Tab } from './Tab';
+import { TabList } from './TabList';
+import { TabPane } from './TabPane';
+import { TabPanes } from './TabPanes';
+import { Tabs } from './Tabs';
 
 const TestChild = ({ label }) => {
 	const [thing, sething] = useState(isChromatic() ? 0.5 : Math.random() * 5);

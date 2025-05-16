@@ -2,11 +2,11 @@ import { ArrowRightIcon, ChevronRightIcon } from '@autoguru/icons';
 import { Meta, StoryObj } from '@storybook/react';
 import React, { type ComponentProps } from 'react';
 
-import { Box } from '../Box';
-import { Heading } from '../Heading';
-import { Text } from '../Text';
+import { Box } from '../Box/Box';
+import { Heading } from '../Heading/Heading';
+import { Text } from '../Text/Text';
 
-import { TextLink } from '.';
+import { TextLink } from './TextLink';
 
 const sizeScale = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 const alignOptions: ['left', 'center', 'right'] = ['left', 'center', 'right'];

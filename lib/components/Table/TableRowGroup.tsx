@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { forwardRef, ReactNode } from 'react';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 
-export interface Props {
+export interface TableRowGroupProps {
 	children: ReactNode | ReactNode[];
 }
 
-export const TableRowGroup = forwardRef<HTMLDivElement, Props>(
+export const TableRowGroup = forwardRef<HTMLDivElement, TableRowGroupProps>(
 	({ children }, ref) => (
 		<Box ref={ref} role="rowgroup" display="contents">
 			{children}
@@ -15,4 +15,4 @@ export const TableRowGroup = forwardRef<HTMLDivElement, Props>(
 	),
 );
 
-export default TableRowGroup;
+TableRowGroup.displayName = 'TableRowGroup';

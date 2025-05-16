@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { ProgressSpinner } from '.';
+import { ProgressSpinner } from './ProgressSpinner';
 
 export default {
 	title: 'Primatives/Progress Spinner',

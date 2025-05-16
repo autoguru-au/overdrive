@@ -1,12 +1,12 @@
 import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { Box } from '../Box';
-import { Heading } from '../Heading';
-import { StickyBox } from '../StickyBox';
-import { Text } from '../Text';
+import { Box } from '../Box/Box';
+import { Heading } from '../Heading/Heading';
+import { StickyBox } from '../StickyBox/StickyBox';
+import { Text } from '../Text/Text';
 
-import { ScrollPane } from '.';
+import { ScrollPane } from './ScrollPane';
 
 export default {
 	title: 'Layout/Scroll Pane',

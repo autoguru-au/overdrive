@@ -2,12 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import React from 'react';
 
-import { Box } from '../Box';
-import { Text } from '../Text';
+import { Box } from '../Box/Box';
+import { Text } from '../Text/Text';
 
+import { Switch } from './Switch';
 import { storyLabel } from './Switch.css';
-
-import { Switch } from '.';
 
 const meta: Meta<typeof Switch> = {
 	title: 'Primatives/Switch',

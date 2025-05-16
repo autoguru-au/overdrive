@@ -5,13 +5,14 @@ import { Box } from '../Box';
 
 import * as styles from './LoadingBox.css';
 
-export interface Props extends Omit<ComponentProps<typeof Box>, 'width'> {
+export interface LoadingBoxProps
+	extends Omit<ComponentProps<typeof Box>, 'width'> {
 	className?: string;
 	randomWidth?: boolean;
 	blinking?: boolean;
 }
 
-export const LoadingBox: FunctionComponent<Props> = ({
+export const LoadingBox: FunctionComponent<LoadingBoxProps> = ({
 	className = '',
 	randomWidth = false,
 	blinking = true,
@@ -35,5 +36,3 @@ export const LoadingBox: FunctionComponent<Props> = ({
 
 const getRandomIntWidth = (max: number, min: number) =>
 	`${Math.random() * (max - min) + min}%`;
-
-export default LoadingBox;

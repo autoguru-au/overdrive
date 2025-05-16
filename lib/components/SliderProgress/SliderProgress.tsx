@@ -7,7 +7,7 @@ import { Box } from '../Box';
 import { ProgressStep } from './ProgressStep';
 import * as styles from './SliderProgress.css';
 
-export interface Props
+export interface SliderProgressProps
 	extends Pick<ComponentProps<typeof Box>, 'backgroundColour'>,
 		Pick<ComponentProps<typeof ProgressStep>, 'paused' | 'duration'> {
 	className?: string;
@@ -17,7 +17,7 @@ export interface Props
 	onRequestNext(): void;
 }
 
-export const SliderProgress: NamedExoticComponent<Props> = memo(
+export const SliderProgress: NamedExoticComponent<SliderProgressProps> = memo(
 	({
 		className = '',
 		paused,

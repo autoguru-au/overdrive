@@ -3,7 +3,7 @@ import type { FunctionComponent } from 'react';
 import * as React from 'react';
 import { ReactNode, useContext } from 'react';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 
 import * as styles from './TabPane.css';
 import { TabPanesContext } from './TabPanes';
@@ -44,5 +44,3 @@ export const TabPane: FunctionComponent<{
 		</Box>
 	);
 };
-
-export default TabPane;

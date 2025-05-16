@@ -6,7 +6,8 @@ import { Box } from '../Box';
 
 import * as styles from './ScrollPane.css';
 
-export interface Props extends Omit<ComponentProps<typeof Box>, 'overflow'> {
+export interface ScrollPaneProps
+	extends Omit<ComponentProps<typeof Box>, 'overflow'> {
 	bottomGap?: keyof Tokens['space'];
 	serverVhFallback?: number;
 	includeMobile?: boolean;
@@ -14,7 +15,7 @@ export interface Props extends Omit<ComponentProps<typeof Box>, 'overflow'> {
 	className?: string;
 }
 
-export const ScrollPane = forwardRef<HTMLDivElement, Props>(
+export const ScrollPane = forwardRef<HTMLDivElement, ScrollPaneProps>(
 	({ className = '', rounded = false, ...rest }, ref) => (
 		<Box
 			ref={ref}

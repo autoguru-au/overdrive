@@ -2,10 +2,10 @@ import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
-import { Box } from '../Box';
-import { Text } from '../Text';
+import { Box } from '../Box/Box';
+import { Text } from '../Text/Text';
 
-import { Modal } from '.';
+import { Modal } from './Modal';
 
 const meta = {
 	title: 'Components/Modal',

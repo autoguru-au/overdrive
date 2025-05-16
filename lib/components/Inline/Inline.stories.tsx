@@ -2,11 +2,11 @@ import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
 // import { scaleOptions } from '../Box/argTypes';
-import { Button } from '../Button';
-import { Stack } from '../Stack';
-import { Text } from '../Text';
+import { Button } from '../Button/Button';
+import { Stack } from '../Stack/Stack';
+import { Text } from '../Text/Text';
 
-import { Inline } from '.';
+import { Inline } from './Inline';
 
 const meta: Meta<typeof Inline> = {
 	title: 'Layout/Inline',

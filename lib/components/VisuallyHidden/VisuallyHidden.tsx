@@ -1,6 +1,6 @@
 import React, { cloneElement, type ElementType } from 'react';
 
-import { useBox, type UseBoxProps } from '../Box';
+import { useBox, type UseBoxProps } from '../Box/useBox';
 
 import { visuallyHidden } from './VisuallyHidden.css';
 
@@ -25,5 +25,3 @@ export const VisuallyHidden = <E extends ElementType>({
 
 	return <Component {...componentProps}>{children}</Component>;
 };
-
-export default VisuallyHidden;

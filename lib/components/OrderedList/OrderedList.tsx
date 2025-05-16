@@ -24,7 +24,7 @@ const cycles: ListStyleType[] = [
 	'lower-roman',
 ];
 
-export interface Props
+export interface OrderedListProps
 	extends Pick<OlHTMLAttributes<HTMLOListElement>, 'start'> {
 	type?: ListStyleType;
 	className?: string;
@@ -38,7 +38,7 @@ export interface ItemProps {
 
 const OrderedListContext = createContext(-1);
 
-export const OrderedList: FunctionComponent<Props> & {
+export const OrderedList: FunctionComponent<OrderedListProps> & {
 	Item: FunctionComponent<ItemProps>;
 } = ({ children, className = '', type = null, start }) => {
 	const cycle = useContext(OrderedListContext);
@@ -78,5 +78,3 @@ const Item: FunctionComponent<ItemProps> = ({ className = '', children }) => (
 );
 
 OrderedList.Item = Item;
-
-export default OrderedList;

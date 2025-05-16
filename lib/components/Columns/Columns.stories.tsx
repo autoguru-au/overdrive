@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 
+import { Column } from './Column';
+import { Columns } from './Columns';
 import { columnsStyle } from './Columns.css';
-
-import { Column, Columns } from '.';
 
 type ColumnProps = React.ComponentProps<typeof Column>;
 
