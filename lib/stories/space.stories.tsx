@@ -6,7 +6,7 @@ import { overdriveTokens } from '../themes';
 import { tokens } from '../themes/base/tokens';
 import { breakpoints } from '../themes/makeTheme';
 
-import { Box, Stack, type Sprinkles } from './helpers';
+import { Box, Stack, type Sprinkles } from './helpers/index';
 import { labels, small, titles } from './helpers/styles.css';
 
 const { space } = tokens;

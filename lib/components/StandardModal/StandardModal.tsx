@@ -9,12 +9,12 @@ import * as React from 'react';
 import { useLayoutEffect, useRef } from 'react';
 
 import { isBrowser, useEventCallback, useId } from '../../utils';
-import { Box } from '../Box';
-import { Button } from '../Button';
-import { Heading } from '../Heading';
-import { Icon } from '../Icon';
-import { Modal } from '../Modal';
-import { useTextStyles } from '../Text';
+import { Box } from '../Box/Box';
+import { Button } from '../Button/Button';
+import { Heading } from '../Heading/Heading';
+import { Icon } from '../Icon/Icon';
+import { Modal } from '../Modal/Modal';
+import { useTextStyles } from '../Text/useTextStyles';
 
 import * as styles from './StandardModal.css';
 

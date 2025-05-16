@@ -1,7 +1,7 @@
 import { warning } from '@autoguru/utilities';
 import * as React from 'react';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 import { withEnhancedInput } from '../private/InputBase';
 
 export const DateInput = withEnhancedInput<

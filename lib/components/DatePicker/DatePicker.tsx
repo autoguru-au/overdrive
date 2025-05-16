@@ -3,10 +3,11 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { ChangeEvent, ComponentProps, FunctionComponent } from 'react';
 
-import { Box, boxStyles } from '../Box';
-import { Icon } from '../Icon';
-import { ProgressSpinner } from '../ProgressSpinner';
-import { Text } from '../Text';
+import { Box } from '../Box/Box';
+import { boxStyles } from '../Box/boxStyles';
+import { Icon } from '../Icon/Icon';
+import { ProgressSpinner } from '../ProgressSpinner/ProgressSpinner';
+import { Text } from '../Text/Text';
 
 import * as styles from './DatePicker.css';
 

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { ComponentProps, Fragment, FunctionComponent } from 'react';
 
-import { Box } from '../Box';
-import { ProgressBar } from '../ProgressBar';
-import { Text } from '../Text';
+import { Box } from '../Box/Box';
+import { ProgressBar } from '../ProgressBar/ProgressBar';
+import { Text } from '../Text/Text';
 
 import * as styles from './ProgressBarGroup.css';
 

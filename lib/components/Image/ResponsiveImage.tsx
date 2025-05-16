@@ -3,7 +3,7 @@ import type { ComponentProps, FunctionComponent } from 'react';
 import * as React from 'react';
 import { useMemo } from 'react';
 
-import { useResponsiveValue } from '../../hooks/useResponsiveValue';
+import { useResponsiveValue } from '../../hooks/useResponsiveValue/useResponsiveValue';
 import { ResponsiveProp } from '../../utils/responsiveProps.css';
 
 import { useImageServer, widthMap } from './ImageServerProvider';

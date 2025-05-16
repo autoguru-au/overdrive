@@ -2,9 +2,9 @@ import { IconType } from '@autoguru/icons';
 import * as React from 'react';
 import { ComponentProps, FunctionComponent } from 'react';
 
-import { Icon } from '../Icon';
-import { Inline } from '../Inline';
-import { Text } from '../Text';
+import { Icon } from '../Icon/Icon';
+import { Inline } from '../Inline/Inline';
+import { Text } from '../Text/Text';
 
 import * as styles from './Meta.css';
 

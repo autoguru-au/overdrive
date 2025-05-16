@@ -10,11 +10,11 @@ import {
 	useState,
 } from 'react';
 
-import { Button } from '../Button';
-import { Flyout } from '../Flyout';
-import { Icon } from '../Icon';
-import { useOutsideClick } from '../OutsideClick';
-import { EPositionerAlignment } from '../Positioner';
+import { Button } from '../Button/Button';
+import { Flyout } from '../Flyout/Flyout';
+import { Icon } from '../Icon/Icon';
+import { useOutsideClick } from '../OutsideClick/OutsideClick';
+import { EPositionerAlignment } from '../Positioner/index';
 
 import { DropDownOptionsList } from './DropDownOptionsList';
 

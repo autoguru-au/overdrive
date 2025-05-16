@@ -4,10 +4,11 @@ import * as React from 'react';
 import { FunctionComponent, memo, NamedExoticComponent } from 'react';
 
 import { ThemeTokens as Tokens } from '../../themes';
-import { Box, boxStyles } from '../Box';
-import { Icon } from '../Icon';
-import { Inline } from '../Inline';
-import { Text } from '../Text';
+import { Box } from '../Box/Box';
+import { boxStyles } from '../Box/boxStyles';
+import { Icon } from '../Icon/Icon';
+import { Inline } from '../Inline/Inline';
+import { Text } from '../Text/Text';
 
 import * as styles from './StarRating.css';
 

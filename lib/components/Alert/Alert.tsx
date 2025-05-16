@@ -10,11 +10,13 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { ComponentProps, FunctionComponent, ReactNode } from 'react';
 
-import { Box, boxStyles } from '../Box';
-import { Button } from '../Button';
-import { Icon } from '../Icon';
-import { IntentStripe } from '../IntentStripe';
-import { Text, useTextStyles } from '../Text';
+import { Box } from '../Box/Box';
+import { boxStyles } from '../Box/boxStyles';
+import { Button } from '../Button/Button';
+import { Icon } from '../Icon/Icon';
+import { IntentStripe } from '../IntentStripe/IntentStripe';
+import { Text } from '../Text/Text';
+import { useTextStyles } from '../Text/useTextStyles';
 
 import * as styles from './Alert.css';
 

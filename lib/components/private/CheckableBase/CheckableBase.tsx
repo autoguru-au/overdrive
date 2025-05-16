@@ -6,8 +6,10 @@ import React, {
 	type ReactNode,
 } from 'react';
 
-import { Box, boxStyles } from '../../Box';
-import { Text, useTextStyles } from '../../Text';
+import { Box } from '../../Box/Box';
+import { boxStyles } from '../../Box/boxStyles';
+import { Text } from '../../Text/Text';
+import { useTextStyles } from '../../Text/useTextStyles';
 
 import * as styles from './CheckableBase.css';
 

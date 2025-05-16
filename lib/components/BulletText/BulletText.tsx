@@ -6,9 +6,10 @@ import React, {
 	type ReactNode,
 } from 'react';
 
-import { Box, type UseBoxProps } from '../Box';
-import { Inline } from '../Inline';
-import { Text } from '../Text';
+import { Box } from '../Box/Box';
+import type { UseBoxProps } from '../Box/useBox';
+import { Inline } from '../Inline/Inline';
+import { Text } from '../Text/Text';
 
 import * as styles from './BulletText.css';
 

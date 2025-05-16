@@ -2,8 +2,8 @@ import { ChevronDownIcon } from '@autoguru/icons';
 import clsx from 'clsx';
 import React from 'react';
 
-import { Box } from '../Box';
-import { Icon } from '../Icon';
+import { Box } from '../Box/Box';
+import { Icon } from '../Icon/Icon';
 import { withEnhancedInput } from '../private/InputBase';
 
 import * as styles from './SelectInput.css';

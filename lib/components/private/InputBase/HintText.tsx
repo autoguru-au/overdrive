@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import React, { type FunctionComponent, type ReactNode } from 'react';
 
-import { boxStyles } from '../../Box';
-import { Text } from '../../Text';
+import { boxStyles } from '../../Box/boxStyles';
+import { Text } from '../../Text/Text';
 
 import * as styles from './HintText.css';
 import type { InputSize } from './withEnhancedInput.css';

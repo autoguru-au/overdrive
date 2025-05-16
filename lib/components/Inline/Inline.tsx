@@ -8,8 +8,9 @@ import React, {
 import flattenChildren from 'react-keyed-flatten-children';
 
 import type { SprinklesResponsive } from '../../styles/sprinkles.css';
-import { Box, useBox, type UseBoxProps } from '../Box';
-import { Text } from '../Text';
+import { Box } from '../Box/Box';
+import { useBox, type UseBoxProps } from '../Box/useBox';
+import { Text } from '../Text/Text';
 
 export type InlineDivider = ReactNode | boolean;
 export interface InlineProps {

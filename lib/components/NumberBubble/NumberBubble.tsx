@@ -3,8 +3,9 @@ import * as React from 'react';
 import { ComponentProps, FunctionComponent, useMemo } from 'react';
 
 import { toPrettyBigNumber } from '../../utils/number';
-import { Box, boxStyles } from '../Box';
-import { Text } from '../Text';
+import { Box } from '../Box/Box';
+import { boxStyles } from '../Box/boxStyles';
+import { Text } from '../Text/Text';
 
 import * as styles from './NumberBubble.css';
 

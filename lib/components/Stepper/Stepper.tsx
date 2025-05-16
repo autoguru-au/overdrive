@@ -10,10 +10,12 @@ import {
 } from 'react';
 
 import { addWithSafeDecimal } from '../../utils/number';
-import { Box, boxStyles } from '../Box';
-import { Icon } from '../Icon';
-import { Inline } from '../Inline';
-import { Text, useTextStyles } from '../Text';
+import { Box } from '../Box/Box';
+import { boxStyles } from '../Box/boxStyles';
+import { Icon } from '../Icon/Icon';
+import { Inline } from '../Inline/Inline';
+import { Text } from '../Text/Text';
+import { useTextStyles } from '../Text/useTextStyles';
 
 import * as styles from './Stepper.css';
 

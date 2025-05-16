@@ -2,13 +2,13 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { ComponentProps, FunctionComponent } from 'react';
 
-import { Box } from '../../components/Box';
+import { Box } from '../../components/Box/Box';
 import {
 	getEarliestKnownToken,
 	resolveResponsiveStyle,
 } from '../../utils/resolveResponsiveProps';
 import { ResponsiveProp } from '../../utils/responsiveProps.css';
-import { useMedia } from '../useMedia';
+import { useMedia } from '../useMedia/useMedia';
 
 import * as styles from './useAttachedBoxes.css';
 

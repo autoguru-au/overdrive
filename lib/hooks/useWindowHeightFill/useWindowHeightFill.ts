@@ -4,7 +4,7 @@ import { useTheme } from '../../components/OverdriveProvider';
 import type { ThemeTokens as Tokens } from '../../themes';
 import { overdriveTokens } from '../../themes/theme.css';
 import { getThemeTokenValue } from '../../utils/css';
-import { useResponsiveValue } from '../useResponsiveValue';
+import { useResponsiveValue } from '../useResponsiveValue/useResponsiveValue';
 
 export interface UseWindowHeightFillProps {
 	bottomGap?: keyof Tokens['space'];

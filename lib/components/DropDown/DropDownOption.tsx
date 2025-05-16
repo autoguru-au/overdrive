@@ -3,10 +3,11 @@ import clsx from 'clsx';
 import { ComponentProps, FunctionComponent } from 'react';
 import * as React from 'react';
 
-import { Box } from '../Box';
-import { Icon } from '../Icon';
-import { Inline } from '../Inline';
-import { Text, useTextStyles } from '../Text';
+import { Box } from '../Box/Box';
+import { Icon } from '../Icon/Icon';
+import { Inline } from '../Inline/Inline';
+import { Text } from '../Text/Text';
+import { useTextStyles } from '../Text/useTextStyles';
 
 import * as styles from './DropDownOption.css';
 

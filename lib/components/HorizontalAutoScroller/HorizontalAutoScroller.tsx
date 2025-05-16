@@ -12,11 +12,11 @@ import flattenChildren from 'react-keyed-flatten-children';
 import { useSwipeable } from 'react-swipeable';
 
 import { SprinklesResponsive } from '../../styles/sprinkles.css';
-import { Box } from '../Box';
-import { Button } from '../Button';
-import { Icon } from '../Icon';
+import { Box } from '../Box/Box';
+import { Button } from '../Button/Button';
+import { Icon } from '../Icon/Icon';
 import { Section } from '../Section/Section';
-import { SliderProgress } from '../SliderProgress';
+import { SliderProgress } from '../SliderProgress/SliderProgress';
 
 import * as styles from './HorizontalAutoScroller.css';
 import {
