@@ -120,8 +120,8 @@ export const Inline = <E extends ElementType>({
 						alignItems={alignY}
 						as={SemanticChild}
 						display="flex"
-						gap={space}
 						flexWrap="nowrap"
+						useVar="gap"
 					>
 						{child}
 						{dividers && idx !== items.length - 1 && (

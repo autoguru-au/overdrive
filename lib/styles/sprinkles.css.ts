@@ -119,6 +119,11 @@ const baseProperties = defineProperties({
 		// Misc
 		pointerEvents: ['auto', 'none'],
 		userSelect: ['auto', 'text', 'none'],
+		useVar: {
+			gap: {
+				gap: gapVar,
+			},
+		},
 	},
 	shorthands: {
 		text: ['fontSize', 'lineHeight'],

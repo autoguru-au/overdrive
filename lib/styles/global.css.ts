@@ -29,10 +29,11 @@ globalFontFace('AvertaStandard', {
 
 // -- root styles
 
-globalStyle('html', {
+globalStyle(':where(html)', {
 	'@layer': {
 		[cssLayerReset]: {
 			overflowX: 'hidden',
+			scrollbarGutter: 'stable',
 		},
 	},
 });
@@ -57,15 +58,25 @@ globalStyle('body, [data-od-base]', {
 			textRendering: 'optimizeLegibility',
 			textSizeAdjust: 'none',
 			WebkitTapHighlightColor: 'transparent',
+			WebkitTextSizeAdjust: 'none',
 		},
 	},
 });
 
-globalStyle('*', {
+globalStyle('*, *::after, *::before', {
 	'@layer': {
 		[cssLayerReset]: {
 			boxSizing: 'border-box',
-			font: 'inherit',
+		},
+	},
+});
+
+// inspired from https://fokus.dev/tools/uaplus/
+globalStyle(':where(button, input, select, textarea)', {
+	'@layer': {
+		[cssLayerReset]: {
+			fontFamily: 'inherit',
+			fontSize: 'inherit',
 		},
 	},
 });
