@@ -41,7 +41,7 @@ export const Standard: Story = {
 	},
 	play: async ({ args, canvasElement, step }) => {
 		const canvas = within(canvasElement);
-		const heading = canvas.getByRole('heading');
+		const heading = canvas.getAllByRole('heading')[0];
 
 		await step('<Heading /> renders content and ids', async () => {
 			await expect(heading).toHaveTextContent(args.children as string);
@@ -64,9 +64,9 @@ export const AllTypes: Story = {
 
 		await step('<Heading /> renders one of each level', async () => {
 			headingTypeOptions.forEach(async (level) => {
-				const heading = canvas.getByRole('heading', {
+				const heading = canvas.getAllByRole('heading', {
 					level: Number(level?.charAt(1)),
-				});
+				})[0];
 				await expect(heading).toBeInTheDocument();
 			});
 		});

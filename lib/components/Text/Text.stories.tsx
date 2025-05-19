@@ -40,7 +40,7 @@ export const Standard: Story = {
 	},
 	play: async ({ args, canvasElement, step }) => {
 		const canvas = within(canvasElement);
-		const para = canvas.getByRole('paragraph');
+		const para = canvas.getAllByRole('paragraph')[0];
 
 		await step('<Text /> renders content and id attributes', async () => {
 			await expect(para).toHaveTextContent(args.children as string);

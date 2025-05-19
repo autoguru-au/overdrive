@@ -32,7 +32,7 @@ export const WithIcon: Story = {
 	},
 	play: async ({ args, canvasElement, step }) => {
 		const canvas = within(canvasElement);
-		const anchor = canvas.getByRole('link');
+		const anchor = canvas.getAllByRole('link')[0];
 		const icon = canvasElement.querySelector('svg');
 
 		await step('<Anchor /> renders content, href and ids', async () => {
