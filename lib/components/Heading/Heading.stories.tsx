@@ -36,13 +36,17 @@ type Story = StoryObj<typeof Heading>;
 export const Standard: Story = {
 	args: {
 		as: 'h1',
+		id: 'story-heading',
+		testId: 'test-heading',
 	},
 	play: async ({ args, canvasElement, step }) => {
 		const canvas = within(canvasElement);
 		const heading = canvas.getByRole('heading');
 
-		await step('<Heading /> renders content', async () => {
+		await step('<Heading /> renders content and ids', async () => {
 			await expect(heading).toHaveTextContent(args.children as string);
+			await expect(heading).toHaveAttribute('id', args.id);
+			await expect(heading).toHaveAttribute('data-test-id', args.testId);
 		});
 	},
 };

@@ -35,13 +35,17 @@ type Story = StoryObj<typeof Text>;
 export const Standard: Story = {
 	args: {
 		children: 'Help people better care for their cars',
+		id: 'story-text',
+		testId: 'test-text',
 	},
 	play: async ({ args, canvasElement, step }) => {
 		const canvas = within(canvasElement);
 		const para = canvas.getByRole('paragraph');
 
-		await step('<Text /> renders content', async () => {
+		await step('<Text /> renders content and id attributes', async () => {
 			await expect(para).toHaveTextContent(args.children as string);
+			await expect(para).toHaveAttribute('id', args.id);
+			await expect(para).toHaveAttribute('data-test-id', args.testId);
 		});
 	},
 };
