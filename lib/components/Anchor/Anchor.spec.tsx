@@ -38,7 +38,8 @@ describe('<Anchor />', () => {
 
 	it('should pass on className', () => {
 		expect(
-			render(<Anchor className="test" />).container.firstChild.firstChild,
+			render(<Anchor className="test" />).container.firstChild
+				?.firstChild,
 		).toHaveClass('test');
 	});
 
@@ -64,7 +65,7 @@ describe('<Anchor />', () => {
 				Hello World!
 			</Anchor>,
 		);
-		expect(container.firstChild.firstChild).toHaveAttribute(
+		expect(container.firstChild?.firstChild).toHaveAttribute(
 			'href',
 			'https://www.autoguru.com.au',
 		);
@@ -82,7 +83,7 @@ describe('<Anchor />', () => {
 
 		it('should match snapshot with label, icon custom component', () => {
 			const { container } = render(
-				<Anchor icon={TestIcon} is={<Button />}>
+				<Anchor icon={TestIcon} as={<Button />}>
 					Hello World!
 				</Anchor>,
 			);

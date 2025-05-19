@@ -7,6 +7,7 @@ export default defineConfig({
 		include: [
 			'@vanilla-extract/sprinkles/createRuntimeSprinkles',
 			'@vanilla-extract/recipes/createRuntimeFn',
+			'@vitest/coverage-v8/browser',
 		],
 	},
 	test: {

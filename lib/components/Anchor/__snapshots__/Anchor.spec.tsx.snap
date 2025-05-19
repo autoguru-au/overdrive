@@ -1,0 +1,93 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Anchor /> > should match snapshot with label, icon and to props 1`] = `
+<div
+  class="theme_OD_Base__j49br80"
+  data-od-component-provider=""
+>
+  <a
+    class="reset_resetVariants__4z7xt3b reset_resetVariants_as_a__4z7xt315 reset_a__4z7xt32 sprinkles_alignItems_center_mobile__onxwjujq"
+    data-od-component="anchor"
+    href="https://www.autoguru.com.au"
+  >
+    <span
+      class="reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  sprinkles_fontSize_4__onxwju21 sprinkles_fontWeight_bold__onxwju2i sprinkles_alignItems_center_mobile__onxwjujq sprinkles_display_inline-flex_mobile__onxwju7i sprinkles_gap_2_mobile__onxwjuge sprinkles_color_link__onxwju60"
+    >
+      <span
+        class="reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  sprinkles_display_block_mobile__onxwju6u Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+      >
+        <svg
+          aria-hidden="true"
+          class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_display_block_mobile__onxwju6u sprinkles_width_full_mobile__onxwjufa sprinkles_height_full_mobile__onxwjudq"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+          />
+        </svg>
+      </span>
+      <span>
+        Hello World!
+      </span>
+    </span>
+  </a>
+</div>
+`;
+
+exports[`<Anchor /> > should match snapshot without label 1`] = `
+<div
+  class="theme_OD_Base__j49br80"
+  data-od-component-provider=""
+>
+  <a
+    class="reset_resetVariants__4z7xt3b reset_resetVariants_as_a__4z7xt315 reset_a__4z7xt32 sprinkles_alignItems_center_mobile__onxwjujq"
+    data-od-component="anchor"
+  >
+    <span
+      class="reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  sprinkles_fontSize_4__onxwju21 sprinkles_fontWeight_bold__onxwju2i sprinkles_alignItems_center_mobile__onxwjujq sprinkles_display_inline-flex_mobile__onxwju7i sprinkles_gap_2_mobile__onxwjuge sprinkles_color_link__onxwju60"
+    >
+      <span />
+    </span>
+  </a>
+</div>
+`;
+
+exports[`<Anchor /> > when custom component > should match snapshot with label, icon custom component 1`] = `
+<div
+  class="theme_OD_Base__j49br80"
+  data-od-component-provider=""
+>
+  <button
+    class="reset_resetVariants__4z7xt3b reset_resetVariants_as_button__4z7xt310 reset_trimmedElement__4z7xt30 reset_button__4z7xt34 sprinkles_borderBottomStyle_solid__onxwju1b sprinkles_borderLeftStyle_solid__onxwju19 sprinkles_borderRightStyle_solid__onxwju1d sprinkles_borderTopStyle_solid__onxwju1f sprinkles_borderBottomWidth_none_mobile__onxwjube sprinkles_borderLeftWidth_none_mobile__onxwjuay sprinkles_borderRightWidth_none_mobile__onxwjubu sprinkles_borderTopWidth_none_mobile__onxwjuca sprinkles_paddingLeft_4_mobile__onxwjuqy sprinkles_paddingRight_4_mobile__onxwjus2 sprinkles_paddingTop_none_mobile__onxwjutu sprinkles_paddingBottom_none_mobile__onxwjuqi sprinkles_borderRadius_md_mobile__onxwju9y sprinkles_display_inline-block_mobile__onxwju7e sprinkles_overflow_hidden_mobile__onxwju7q sprinkles_textAlign_center_mobile__onxwju9a reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_semiBold__onxwju2h sprinkles_color_white__onxwju6h typography_typographyStyles__yhjp330 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_default__p2yon57 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_3__p2yon5m reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_alignItems_center_mobile__onxwjujq"
+    data-od-component="anchor"
+    type="button"
+  >
+    <div
+      class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjudq sprinkles_alignItems_center_mobile__onxwjujq sprinkles_justifyContent_center_mobile__onxwjuka Button_body__p2yon50"
+    >
+      <span
+        class="reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  sprinkles_fontSize_4__onxwju21 sprinkles_fontWeight_bold__onxwju2i sprinkles_alignItems_center_mobile__onxwjujq sprinkles_display_inline-flex_mobile__onxwju7i sprinkles_gap_2_mobile__onxwjuge sprinkles_color_link__onxwju60"
+      >
+        <span
+          class="reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  sprinkles_display_block_mobile__onxwju6u Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+        >
+          <svg
+            aria-hidden="true"
+            class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_display_block_mobile__onxwju6u sprinkles_width_full_mobile__onxwjufa sprinkles_height_full_mobile__onxwjudq"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M183.253 353.707L280.96 256l-97.707-97.92 30.08-30.08 128 128-128 128-30.08-30.293z"
+            />
+          </svg>
+        </span>
+        <span>
+          Hello World!
+        </span>
+      </span>
+    </div>
+  </button>
+</div>
+`;

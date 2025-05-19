@@ -8,7 +8,7 @@ import * as stories from './Box.stories';
 const { ComponentAsProp, DataAttributes, ResponsiveProps, Standard } =
 	composeStories(stories);
 
-describe('Box', async () => {
+describe('<Box />', async () => {
 	await it('renders the standard Box story', async () => {
 		await Standard.run();
 		const text = Standard.args.children;
