@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { expect, within } from '@storybook/test';
 import React, { type ComponentProps } from 'react';
 
 import { overdriveTokens } from '../../themes';
@@ -36,6 +37,14 @@ export const Standard: Story = {
 	args: {
 		as: 'h1',
 	},
+	play: async ({ args, canvasElement, step }) => {
+		const canvas = within(canvasElement);
+		const heading = canvas.getByRole('heading');
+
+		await step('<Heading /> renders content', async () => {
+			await expect(heading).toHaveTextContent(args.children as string);
+		});
+	},
 };
 
 export const AllTypes: Story = {
@@ -46,6 +55,18 @@ export const AllTypes: Story = {
 			))}
 		</>
 	),
+	play: async ({ canvasElement, step }) => {
+		const canvas = within(canvasElement);
+
+		await step('<Heading /> renders one of each level', async () => {
+			headingTypeOptions.forEach(async (level) => {
+				const heading = canvas.getByRole('heading', {
+					level: Number(level?.charAt(1)),
+				});
+				await expect(heading).toBeInTheDocument();
+			});
+		});
+	},
 };
 
 export const AllColours: Story = {

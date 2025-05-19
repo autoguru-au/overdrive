@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { expect, within } from '@storybook/test';
 import React from 'react';
 
 import { valueArrays } from '../../styles/sprinkles.css';
@@ -34,6 +35,14 @@ type Story = StoryObj<typeof Text>;
 export const Standard: Story = {
 	args: {
 		children: 'Help people better care for their cars',
+	},
+	play: async ({ args, canvasElement, step }) => {
+		const canvas = within(canvasElement);
+		const para = canvas.getByRole('paragraph');
+
+		await step('<Text /> renders content', async () => {
+			await expect(para).toHaveTextContent(args.children as string);
+		});
 	},
 };
 

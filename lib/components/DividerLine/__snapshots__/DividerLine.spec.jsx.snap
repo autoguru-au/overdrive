@@ -6,7 +6,7 @@ exports[`<DividerLine /> > should match the snapshot 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_marginTop_3_mobile__onxwjuxq sprinkles_marginBottom_3_mobile__onxwjuu6 sprinkles_backgroundColor_shine__onxwju2x DividerLine_size_horizontal_2__k1y61r1"
+    class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_marginTop_3_mobile__onxwjuxr sprinkles_marginBottom_3_mobile__onxwjuu7 sprinkles_backgroundColor_shine__onxwju2y DividerLine_size_horizontal_2__k1y61r1"
   />
 </div>
 `;
@@ -17,7 +17,7 @@ exports[`<DividerLine /> > should match the snapshot as vertical 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_marginLeft_3_mobile__onxwjuva sprinkles_marginRight_3_mobile__onxwjuwi sprinkles_backgroundColor_shine__onxwju2x DividerLine_size_vertical_2__k1y61r4"
+    class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_marginLeft_3_mobile__onxwjuvb sprinkles_marginRight_3_mobile__onxwjuwj sprinkles_backgroundColor_shine__onxwju2y DividerLine_size_vertical_2__k1y61r4"
   />
 </div>
 `;
