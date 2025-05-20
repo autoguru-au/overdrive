@@ -79,7 +79,7 @@ export const MinimalModal: FunctionComponent<MinimalModalProps> = ({
 						as="main"
 						display="flex"
 						flexDirection="column"
-						flexGrow={1}
+						flexGrow="0"
 						height="full"
 						className={styles.content}
 					>

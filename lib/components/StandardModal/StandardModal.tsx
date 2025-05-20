@@ -115,7 +115,7 @@ export const StandardModal: FunctionComponent<StandardModalProps> = ({
 				>
 					<Box
 						as="header"
-						flexShrink={0}
+						flexShrink="0"
 						position="relative"
 						display="flex"
 						alignItems="center"
@@ -127,7 +127,7 @@ export const StandardModal: FunctionComponent<StandardModalProps> = ({
 						borderBottomWidth="1"
 						borderColour="light"
 					>
-						<Box flexGrow={1} id={titleId!}>
+						<Box flexGrow="1" id={titleId!}>
 							<Heading as="h4">{title}</Heading>
 						</Box>
 						<Button
@@ -149,7 +149,7 @@ export const StandardModal: FunctionComponent<StandardModalProps> = ({
 						as="main"
 						display="flex"
 						flexDirection="column"
-						flexGrow={1}
+						flexGrow="1"
 						height="full"
 						className={styles.content}
 					>

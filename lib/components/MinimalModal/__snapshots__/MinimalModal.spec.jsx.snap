@@ -42,7 +42,7 @@ exports[`<MinimalModal /> > should match snapshot with body 1`] = `
             role="dialog"
           >
             <main
-              class="sprinkles_display_flex_mobile__onxwju88 sprinkles_flexDirection_column_mobile__onxwjuns sprinkles_flexGrow_1_mobile__onxwjuo8 sprinkles_height_full_mobile__onxwjuew MinimalModal_content__13ik47w1"
+              class="sprinkles_display_flex_mobile__onxwju88 sprinkles_flexDirection_column_mobile__onxwjuns sprinkles_flexGrow_0_mobile__onxwjuo4 sprinkles_height_full_mobile__onxwjuew MinimalModal_content__13ik47w1"
             >
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis convallis neque a laoreet maximus. Vestibulum hendrerit quam at mi venenatis faucibus at vel nisi. In ut risus et ipsum tincidunt tempor. Suspendisse potenti. Praesent faucibus posuere risus, at congue mauris porttitor ut. Donec sit amet elit vitae purus dictum aliquet quis ut ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum dui sapien, porttitor ac erat vel, malesuada rutrum mauris. Nam arcu tellus, pretium ut aliquet eget, ultrices vel est. Maecenas dapibus volutpat eros a volutpat.
@@ -103,7 +103,7 @@ exports[`<MinimalModal /> > should match snapshot without title and body 1`] = `
             role="dialog"
           >
             <main
-              class="sprinkles_display_flex_mobile__onxwju88 sprinkles_flexDirection_column_mobile__onxwjuns sprinkles_flexGrow_1_mobile__onxwjuo8 sprinkles_height_full_mobile__onxwjuew MinimalModal_content__13ik47w1"
+              class="sprinkles_display_flex_mobile__onxwju88 sprinkles_flexDirection_column_mobile__onxwjuns sprinkles_flexGrow_0_mobile__onxwjuo4 sprinkles_height_full_mobile__onxwjuew MinimalModal_content__13ik47w1"
             />
           </article>
         </div>

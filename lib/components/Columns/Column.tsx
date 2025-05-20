@@ -1,14 +1,16 @@
 import { invariant } from '@autoguru/utilities';
 import React, { cloneElement, type ElementType, useContext } from 'react';
 
-import { Box, useBox, type UseBoxProps } from '../Box';
+import { Box, type BoxLikeProps, useBox, type UseBoxProps } from '../Box';
 
 import * as styles from './Column.css';
 import { ColumnContext } from './Columns';
 
-export interface ColumnProps extends styles.ColumnRecipeVariants {
+interface CustomProps extends styles.ColumnRecipeVariants {
 	width?: styles.SprinklesColumnWidthResponsive['flexBasis'];
 }
+
+export type ColumnProps<E extends ElementType> = BoxLikeProps<E, CustomProps>;
 
 /**
  * Used within a `Columns` container. This component is designed to be a flex
@@ -25,7 +27,7 @@ export const Column = <E extends ElementType>({
 	ref,
 	width,
 	...boxProps
-}: UseBoxProps<E> & ColumnProps) => {
+}: ColumnProps<E>) => {
 	const columnsContext = useContext(ColumnContext);
 	invariant(
 		columnsContext !== null,
@@ -51,16 +53,16 @@ export const Column = <E extends ElementType>({
 
 	return (
 		<Box
-			alignSelf={alignSelf}
 			as={isList ? 'li' : 'div'}
 			order={order}
-			flexGrow={grow ? 1 : 0}
-			flexShrink={noShrink ? 0 : void 0}
+			flexGrow={grow ? '1' : '0'}
+			flexShrink={noShrink ? '0' : undefined}
 			className={[
 				spaceXCls,
 				spaceYCls,
 				styles.sprinklesColumnWidthResponsive({ flexBasis: width }),
 				styles.columnStyle({
+					alignSelf,
 					grow,
 					noShrink,
 				}),

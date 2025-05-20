@@ -113,7 +113,7 @@ export const checkbox = recipe({
 		sprinklesResponsive({
 			alignItems: 'center',
 			display: 'flex',
-			flexShrink: 0,
+			flexShrink: '0',
 			justifyContent: 'center',
 			size: '6',
 		}),

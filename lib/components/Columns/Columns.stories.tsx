@@ -41,7 +41,11 @@ type Story = StoryObj<typeof Columns>;
 export const Standard: Story = {
 	render: (args) => (
 		<Columns {...args}>
-			<Column width={['full', '1/3', '1/5']} order={[0, 2]} as="section">
+			<Column
+				width={['full', '1/3', '1/5']}
+				order={['0', '2']}
+				as="section"
+			>
 				<Box
 					borderColour="gray"
 					borderWidth="1"
