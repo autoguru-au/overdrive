@@ -33,7 +33,6 @@ globalStyle(':where(html)', {
 	'@layer': {
 		[cssLayerReset]: {
 			overflowX: 'hidden',
-			scrollbarGutter: 'stable',
 		},
 	},
 });
