@@ -1,9 +1,0 @@
-import{c as d}from"./Box-ClEqokAe.js";import{R as e}from"./index-DVCUSwsV.js";import{o as E}from"./theme.css-5ro_PoLN.js";/* empty css                             */import{d as l}from"./tokens-DUw5KlBA.js";/* empty css                             */import"./tokens-CEik42zH.js";/* empty css                             */import"./tokens-CMWZAUZQ.js";import{S as s,l as g,s as u,C as h,h as k}from"./index-Bbc8siml.js";import{H as m}from"./Heading-eJ5ITvpa.js";import"./_commonjsHelpers-gnU0ypJ3.js";import"./createRuntimeFn-62c9670f.esm-BkdTE7RR.js";import"./useTextStyles-DsccIS_S.js";const P=({colour:t,hex:o,hue:a})=>e.createElement(s,{horizontal:!0,alignItems:"center",style:{gap:"10px",position:"relative"}},e.createElement(h,{size:"lg",style:{backgroundColor:E.color.gamut[a][t]}},e.createElement("div",{className:k},o)),a&&t.replace(a,"")),S=({hue:t,shades:o})=>e.createElement(s,{space:"sm"},Object.entries(o).reverse().map(([a,n])=>e.createElement(P,{colour:a,hex:n,hue:t,key:n}))),f=()=>e.createElement(s,{horizontal:!0,space:"md"},Object.keys(l).map(t=>e.createElement("div",{key:t},e.createElement(m,{as:"h3",className:d([g,u({marginBottom:"5"})])},t),e.createElement(S,{hue:t,shades:l[t]})))),B={title:"Foundation/Palette",tags:["!autodocs"]},r={render:()=>e.createElement(s,{space:"md"},e.createElement(m,{as:"h1"},"Palette"),e.createElement(m,{as:"h2"},"Colours"),e.createElement(f,null))};var c,i,p;r.parameters={...r.parameters,docs:{...(c=r.parameters)==null?void 0:c.docs,source:{originalSource:`{
-  render: () => {
-    return <Stack space="md">
-                <Heading as="h1">Palette</Heading>
-                <Heading as="h2">Colours</Heading>
-                <Palettes />
-            </Stack>;
-  }
-}`,...(p=(i=r.parameters)==null?void 0:i.docs)==null?void 0:p.source}}};const F=["Palette"];export{r as Palette,F as __namedExportsOrder,B as default};
