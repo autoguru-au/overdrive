@@ -55,8 +55,8 @@ export const Column = <E extends ElementType>({
 		<Box
 			as={isList ? 'li' : 'div'}
 			order={order}
-			flexGrow={grow ? 1 : 0}
-			flexShrink={noShrink ? 0 : void 0}
+			flexGrow={grow ? '1' : '0'}
+			flexShrink={noShrink ? '0' : undefined}
 			className={[
 				spaceXCls,
 				spaceYCls,

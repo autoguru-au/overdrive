@@ -269,10 +269,10 @@ const responsiveProperties = defineProperties({
 		justifySelf: ['flex-start', 'center', 'flex-end'],
 		// Flexbox
 		flexDirection: ['row', 'column', 'row-reverse', 'column-reverse'],
-		flexGrow: [0, 1],
-		flexShrink: [0, 1],
+		flexGrow: ['0', '1'],
+		flexShrink: ['0', '1'],
 		flexWrap: ['nowrap', 'wrap', 'wrap-reverse'],
-		order: [0, 1, 2, 3, 4],
+		order: ['0', '1', '2', '3', '4'],
 		// Grid
 		gridAutoColumns: ['auto', '1fr', 'min-content', 'max-content'],
 		gridAutoRows: ['auto', '1fr'],

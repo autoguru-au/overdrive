@@ -26,7 +26,11 @@ const scaledProps: Array<keyof ComponentProps<typeof Box>> = [
 
 const widthOptions: Array<ComponentProps<typeof Box>['width']> = ['full'];
 
-const orderOptions: Array<ComponentProps<typeof Box>['order']> = [0, 1, 2];
+const orderOptions: Array<ComponentProps<typeof Box>['order']> = [
+	'0',
+	'1',
+	'2',
+];
 
 export const boxArgTypes: Partial<ArgTypes<ComponentProps<typeof Box>>> = {
 	backgroundColour: {
