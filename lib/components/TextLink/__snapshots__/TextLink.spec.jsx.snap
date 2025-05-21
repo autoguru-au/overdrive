@@ -6,11 +6,11 @@ exports[`<TextLink /> > should allow as override 1`] = `
   data-od-component-provider=""
 >
   <p
-    class="reset_resetVariants__4z7xt3b reset_resetVariants_as_p__4z7xt3d reset_trimmedElement__4z7xt30 TextLink_root__5ax1bk0"
+    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_p__4z7xt3e reset_trimmedElement__4z7xt30 TextLink_root__5ax1bk0"
     rel="noopener noreferrer"
   >
     <span
-      class="reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_semiBold__onxwju2h sprinkles_color_link__onxwju6g typography_typographyStyles__yhjp330 reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  sprinkles_pointerEvents_none__onxwju2q sprinkles_position_relative_mobile__onxwju8r"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_semiBold__onxwju2h sprinkles_color_link__onxwju6k typography_typographyStyles__yhjp330 reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_pointerEvents_none__onxwju2u sprinkles_position_relative_mobile__onxwju8v"
     >
       Test
     </span>
@@ -24,11 +24,11 @@ exports[`<TextLink /> > should match the snapshot 1`] = `
   data-od-component-provider=""
 >
   <a
-    class="reset_resetVariants__4z7xt3b reset_resetVariants_as_a__4z7xt315 reset_a__4z7xt32 TextLink_root__5ax1bk0"
+    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_a__4z7xt316 reset_a__4z7xt32 TextLink_root__5ax1bk0"
     rel="noopener noreferrer"
   >
     <span
-      class="reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_semiBold__onxwju2h sprinkles_color_link__onxwju6g typography_typographyStyles__yhjp330 reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  sprinkles_pointerEvents_none__onxwju2q sprinkles_position_relative_mobile__onxwju8r"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_semiBold__onxwju2h sprinkles_color_link__onxwju6k typography_typographyStyles__yhjp330 reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_pointerEvents_none__onxwju2u sprinkles_position_relative_mobile__onxwju8v"
     />
   </a>
 </div>

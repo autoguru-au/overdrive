@@ -6,28 +6,28 @@ exports[`<CheckBox /> > should match the snapshot for a checked check 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_paddingTop_3_mobile__onxwjut3 sprinkles_paddingBottom_3_mobile__onxwjupr sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjujr sprinkles_flexDirection_row_mobile__onxwjumj sprinkles_justifyContent_flex-start_mobile__onxwjuk7 sprinkles_paddingRight_3_mobile__onxwjurz sprinkles_paddingLeft_none_mobile__onxwjurn sprinkles_position_relative_mobile__onxwju8r CheckableBase_root__y94qv0 reset_resetVariants__4z7xt3b reset_resetVariants_as_button__4z7xt310 reset_trimmedElement__4z7xt30 reset_button__4z7xt34"
+    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_paddingTop_3_mobile__onxwjut7 sprinkles_paddingBottom_3_mobile__onxwjupv sprinkles_display_flex_mobile__onxwju77 sprinkles_alignItems_center_mobile__onxwjujv sprinkles_flexDirection_row_mobile__onxwjumn sprinkles_justifyContent_flex-start_mobile__onxwjukb sprinkles_paddingRight_3_mobile__onxwjus3 sprinkles_paddingLeft_none_mobile__onxwjurr sprinkles_position_relative_mobile__onxwju8v CheckableBase_root__y94qv0 reset_resetVariants__4z7xt3c reset_resetVariants_as_button__4z7xt311 reset_trimmedElement__4z7xt30 reset_button__4z7xt34"
   >
     <input
       checked=""
-      class="reset_resetVariants__4z7xt3b reset_resetVariants_as_input__4z7xt312 reset_trimmedElement__4z7xt30 reset_input__4z7xt37 sprinkles_paddingBottom_none_mobile__onxwjuqj sprinkles_paddingLeft_none_mobile__onxwjurn sprinkles_paddingRight_none_mobile__onxwjusr sprinkles_paddingTop_none_mobile__onxwjutv sprinkles_marginBottom_none_mobile__onxwjuuz sprinkles_marginLeft_none_mobile__onxwjuw3 sprinkles_marginRight_none_mobile__onxwjuxb sprinkles_marginTop_none_mobile__onxwjuyj sprinkles_position_absolute_mobile__onxwju8v sprinkles_width_full_mobile__onxwjufb sprinkles_height_full_mobile__onxwjudr reset_resetVariants__4z7xt3b reset_resetVariants_as_button__4z7xt310 reset_trimmedElement__4z7xt30 reset_button__4z7xt34 CheckableBase_nativeInput__y94qv2"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_input__4z7xt313 reset_trimmedElement__4z7xt30 reset_input__4z7xt38 sprinkles_paddingBottom_none_mobile__onxwjuqn sprinkles_paddingLeft_none_mobile__onxwjurr sprinkles_paddingRight_none_mobile__onxwjusv sprinkles_paddingTop_none_mobile__onxwjutz sprinkles_marginBottom_none_mobile__onxwjuv3 sprinkles_marginLeft_none_mobile__onxwjuw7 sprinkles_marginRight_none_mobile__onxwjuxf sprinkles_marginTop_none_mobile__onxwjuyn sprinkles_position_absolute_mobile__onxwju8z sprinkles_width_full_mobile__onxwjuff sprinkles_height_full_mobile__onxwjudv reset_resetVariants__4z7xt3c reset_resetVariants_as_button__4z7xt311 reset_trimmedElement__4z7xt30 reset_button__4z7xt34 CheckableBase_nativeInput__y94qv2"
       id="«r3»"
       name=""
       type="checkbox"
       value="1"
     />
     <div
-      class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjujr sprinkles_justifyContent_center_mobile__onxwjukb sprinkles_position_relative_mobile__onxwju8r CheckableBase_checkable__y94qv3 reset_resetVariants__4z7xt3b reset_resetVariants_as_button__4z7xt310 reset_trimmedElement__4z7xt30 reset_button__4z7xt34"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju77 sprinkles_alignItems_center_mobile__onxwjujv sprinkles_justifyContent_center_mobile__onxwjukf sprinkles_position_relative_mobile__onxwju8v CheckableBase_checkable__y94qv3 reset_resetVariants__4z7xt3c reset_resetVariants_as_button__4z7xt311 reset_trimmedElement__4z7xt30 reset_button__4z7xt34"
     >
       <div
-        class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 CheckBox_checkbox_default__1ifzuoz0 CheckableBase_checkableIndicator__y94qv4 CheckBox_checkbox_selected__1ifzuoz1"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 CheckBox_checkbox_default__1ifzuoz0 CheckableBase_checkableIndicator__y94qv4 CheckBox_checkbox_selected__1ifzuoz1"
       >
         <span
-          class="reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 CheckBox_icon__1ifzuoz2"
+          class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_display_block_mobile__onxwju6z Icon_makeResponsiveStyle_key_bp__1gy3ire4 CheckBox_icon__1ifzuoz2"
         >
           <svg
             aria-hidden="true"
-            class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufb sprinkles_height_full_mobile__onxwjudr"
+            class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_block_mobile__onxwju6z sprinkles_width_full_mobile__onxwjuff sprinkles_height_full_mobile__onxwjudv"
             fill="currentColor"
             focusable="false"
             viewBox="0 0 24 24"
@@ -41,11 +41,11 @@ exports[`<CheckBox /> > should match the snapshot for a checked check 1`] = `
       </div>
     </div>
     <label
-      class="reset_resetVariants__4z7xt3b reset_resetVariants_as_label__4z7xt3l  sprinkles_width_full_mobile__onxwjufb reset_resetVariants__4z7xt3b reset_resetVariants_as_button__4z7xt310 reset_trimmedElement__4z7xt30 reset_button__4z7xt34 reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_color_neutral__onxwju6k typography_typographyStyles__yhjp330"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_label__4z7xt3m  sprinkles_width_full_mobile__onxwjuff reset_resetVariants__4z7xt3c reset_resetVariants_as_button__4z7xt311 reset_trimmedElement__4z7xt30 reset_button__4z7xt34 reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330"
       for="«r3»"
     >
       <span
-        class="reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_normal__onxwju2g sprinkles_color_neutral__onxwju6k typography_typographyStyles__yhjp330"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_normal__onxwju2g sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330"
       >
         check label 1
       </span>
@@ -60,10 +60,10 @@ exports[`<CheckBox /> > should match the snapshot for a disable checkbox 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_paddingTop_3_mobile__onxwjut3 sprinkles_paddingBottom_3_mobile__onxwjupr sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjujr sprinkles_flexDirection_row_mobile__onxwjumj sprinkles_justifyContent_flex-start_mobile__onxwjuk7 sprinkles_paddingRight_3_mobile__onxwjurz sprinkles_paddingLeft_none_mobile__onxwjurn sprinkles_position_relative_mobile__onxwju8r CheckableBase_root__y94qv0 reset_resetVariants__4z7xt3b reset_resetVariants_as_button__4z7xt310 reset_trimmedElement__4z7xt30 reset_button__4z7xt34 CheckableBase_disabled__y94qv5"
+    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_paddingTop_3_mobile__onxwjut7 sprinkles_paddingBottom_3_mobile__onxwjupv sprinkles_display_flex_mobile__onxwju77 sprinkles_alignItems_center_mobile__onxwjujv sprinkles_flexDirection_row_mobile__onxwjumn sprinkles_justifyContent_flex-start_mobile__onxwjukb sprinkles_paddingRight_3_mobile__onxwjus3 sprinkles_paddingLeft_none_mobile__onxwjurr sprinkles_position_relative_mobile__onxwju8v CheckableBase_root__y94qv0 reset_resetVariants__4z7xt3c reset_resetVariants_as_button__4z7xt311 reset_trimmedElement__4z7xt30 reset_button__4z7xt34 CheckableBase_disabled__y94qv5"
   >
     <input
-      class="reset_resetVariants__4z7xt3b reset_resetVariants_as_input__4z7xt312 reset_trimmedElement__4z7xt30 reset_input__4z7xt37 sprinkles_pointerEvents_none__onxwju2q sprinkles_paddingBottom_none_mobile__onxwjuqj sprinkles_paddingLeft_none_mobile__onxwjurn sprinkles_paddingRight_none_mobile__onxwjusr sprinkles_paddingTop_none_mobile__onxwjutv sprinkles_marginBottom_none_mobile__onxwjuuz sprinkles_marginLeft_none_mobile__onxwjuw3 sprinkles_marginRight_none_mobile__onxwjuxb sprinkles_marginTop_none_mobile__onxwjuyj sprinkles_position_absolute_mobile__onxwju8v sprinkles_width_full_mobile__onxwjufb sprinkles_height_full_mobile__onxwjudr reset_resetVariants__4z7xt3b reset_resetVariants_as_button__4z7xt310 reset_trimmedElement__4z7xt30 reset_button__4z7xt34 CheckableBase_nativeInput__y94qv2"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_input__4z7xt313 reset_trimmedElement__4z7xt30 reset_input__4z7xt38 sprinkles_pointerEvents_none__onxwju2u sprinkles_paddingBottom_none_mobile__onxwjuqn sprinkles_paddingLeft_none_mobile__onxwjurr sprinkles_paddingRight_none_mobile__onxwjusv sprinkles_paddingTop_none_mobile__onxwjutz sprinkles_marginBottom_none_mobile__onxwjuv3 sprinkles_marginLeft_none_mobile__onxwjuw7 sprinkles_marginRight_none_mobile__onxwjuxf sprinkles_marginTop_none_mobile__onxwjuyn sprinkles_position_absolute_mobile__onxwju8z sprinkles_width_full_mobile__onxwjuff sprinkles_height_full_mobile__onxwjudv reset_resetVariants__4z7xt3c reset_resetVariants_as_button__4z7xt311 reset_trimmedElement__4z7xt30 reset_button__4z7xt34 CheckableBase_nativeInput__y94qv2"
       disabled=""
       id="«r4»"
       name=""
@@ -71,17 +71,17 @@ exports[`<CheckBox /> > should match the snapshot for a disable checkbox 1`] = `
       value="1"
     />
     <div
-      class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjujr sprinkles_justifyContent_center_mobile__onxwjukb sprinkles_position_relative_mobile__onxwju8r CheckableBase_checkable__y94qv3 reset_resetVariants__4z7xt3b reset_resetVariants_as_button__4z7xt310 reset_trimmedElement__4z7xt30 reset_button__4z7xt34"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju77 sprinkles_alignItems_center_mobile__onxwjujv sprinkles_justifyContent_center_mobile__onxwjukf sprinkles_position_relative_mobile__onxwju8v CheckableBase_checkable__y94qv3 reset_resetVariants__4z7xt3c reset_resetVariants_as_button__4z7xt311 reset_trimmedElement__4z7xt30 reset_button__4z7xt34"
     >
       <div
-        class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 CheckBox_checkbox_default__1ifzuoz0 CheckableBase_checkableIndicator__y94qv4"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 CheckBox_checkbox_default__1ifzuoz0 CheckableBase_checkableIndicator__y94qv4"
       >
         <span
-          class="reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 CheckBox_icon__1ifzuoz2"
+          class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_display_block_mobile__onxwju6z Icon_makeResponsiveStyle_key_bp__1gy3ire4 CheckBox_icon__1ifzuoz2"
         >
           <svg
             aria-hidden="true"
-            class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufb sprinkles_height_full_mobile__onxwjudr"
+            class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_block_mobile__onxwju6z sprinkles_width_full_mobile__onxwjuff sprinkles_height_full_mobile__onxwjudv"
             fill="currentColor"
             focusable="false"
             viewBox="0 0 24 24"
@@ -95,11 +95,11 @@ exports[`<CheckBox /> > should match the snapshot for a disable checkbox 1`] = `
       </div>
     </div>
     <label
-      class="reset_resetVariants__4z7xt3b reset_resetVariants_as_label__4z7xt3l  sprinkles_pointerEvents_none__onxwju2q sprinkles_width_full_mobile__onxwjufb reset_resetVariants__4z7xt3b reset_resetVariants_as_button__4z7xt310 reset_trimmedElement__4z7xt30 reset_button__4z7xt34 reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_color_neutral__onxwju6k typography_typographyStyles__yhjp330 CheckableBase_label_disabled__y94qv1"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_label__4z7xt3m  sprinkles_pointerEvents_none__onxwju2u sprinkles_width_full_mobile__onxwjuff reset_resetVariants__4z7xt3c reset_resetVariants_as_button__4z7xt311 reset_trimmedElement__4z7xt30 reset_button__4z7xt34 reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330 CheckableBase_label_disabled__y94qv1"
       for="«r4»"
     >
       <span
-        class="reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_normal__onxwju2g sprinkles_color_neutral__onxwju6k typography_typographyStyles__yhjp330"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_normal__onxwju2g sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330"
       >
         check label 1
       </span>
@@ -114,27 +114,27 @@ exports[`<CheckBox /> > should match the snapshot for a single check 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_paddingTop_3_mobile__onxwjut3 sprinkles_paddingBottom_3_mobile__onxwjupr sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjujr sprinkles_flexDirection_row_mobile__onxwjumj sprinkles_justifyContent_flex-start_mobile__onxwjuk7 sprinkles_paddingRight_3_mobile__onxwjurz sprinkles_paddingLeft_none_mobile__onxwjurn sprinkles_position_relative_mobile__onxwju8r CheckableBase_root__y94qv0 reset_resetVariants__4z7xt3b reset_resetVariants_as_button__4z7xt310 reset_trimmedElement__4z7xt30 reset_button__4z7xt34"
+    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_paddingTop_3_mobile__onxwjut7 sprinkles_paddingBottom_3_mobile__onxwjupv sprinkles_display_flex_mobile__onxwju77 sprinkles_alignItems_center_mobile__onxwjujv sprinkles_flexDirection_row_mobile__onxwjumn sprinkles_justifyContent_flex-start_mobile__onxwjukb sprinkles_paddingRight_3_mobile__onxwjus3 sprinkles_paddingLeft_none_mobile__onxwjurr sprinkles_position_relative_mobile__onxwju8v CheckableBase_root__y94qv0 reset_resetVariants__4z7xt3c reset_resetVariants_as_button__4z7xt311 reset_trimmedElement__4z7xt30 reset_button__4z7xt34"
   >
     <input
-      class="reset_resetVariants__4z7xt3b reset_resetVariants_as_input__4z7xt312 reset_trimmedElement__4z7xt30 reset_input__4z7xt37 sprinkles_paddingBottom_none_mobile__onxwjuqj sprinkles_paddingLeft_none_mobile__onxwjurn sprinkles_paddingRight_none_mobile__onxwjusr sprinkles_paddingTop_none_mobile__onxwjutv sprinkles_marginBottom_none_mobile__onxwjuuz sprinkles_marginLeft_none_mobile__onxwjuw3 sprinkles_marginRight_none_mobile__onxwjuxb sprinkles_marginTop_none_mobile__onxwjuyj sprinkles_position_absolute_mobile__onxwju8v sprinkles_width_full_mobile__onxwjufb sprinkles_height_full_mobile__onxwjudr reset_resetVariants__4z7xt3b reset_resetVariants_as_button__4z7xt310 reset_trimmedElement__4z7xt30 reset_button__4z7xt34 CheckableBase_nativeInput__y94qv2"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_input__4z7xt313 reset_trimmedElement__4z7xt30 reset_input__4z7xt38 sprinkles_paddingBottom_none_mobile__onxwjuqn sprinkles_paddingLeft_none_mobile__onxwjurr sprinkles_paddingRight_none_mobile__onxwjusv sprinkles_paddingTop_none_mobile__onxwjutz sprinkles_marginBottom_none_mobile__onxwjuv3 sprinkles_marginLeft_none_mobile__onxwjuw7 sprinkles_marginRight_none_mobile__onxwjuxf sprinkles_marginTop_none_mobile__onxwjuyn sprinkles_position_absolute_mobile__onxwju8z sprinkles_width_full_mobile__onxwjuff sprinkles_height_full_mobile__onxwjudv reset_resetVariants__4z7xt3c reset_resetVariants_as_button__4z7xt311 reset_trimmedElement__4z7xt30 reset_button__4z7xt34 CheckableBase_nativeInput__y94qv2"
       id="«r2»"
       name=""
       type="checkbox"
       value="1"
     />
     <div
-      class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjujr sprinkles_justifyContent_center_mobile__onxwjukb sprinkles_position_relative_mobile__onxwju8r CheckableBase_checkable__y94qv3 reset_resetVariants__4z7xt3b reset_resetVariants_as_button__4z7xt310 reset_trimmedElement__4z7xt30 reset_button__4z7xt34"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju77 sprinkles_alignItems_center_mobile__onxwjujv sprinkles_justifyContent_center_mobile__onxwjukf sprinkles_position_relative_mobile__onxwju8v CheckableBase_checkable__y94qv3 reset_resetVariants__4z7xt3c reset_resetVariants_as_button__4z7xt311 reset_trimmedElement__4z7xt30 reset_button__4z7xt34"
     >
       <div
-        class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 CheckBox_checkbox_default__1ifzuoz0 CheckableBase_checkableIndicator__y94qv4"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 CheckBox_checkbox_default__1ifzuoz0 CheckableBase_checkableIndicator__y94qv4"
       >
         <span
-          class="reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 CheckBox_icon__1ifzuoz2"
+          class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_display_block_mobile__onxwju6z Icon_makeResponsiveStyle_key_bp__1gy3ire4 CheckBox_icon__1ifzuoz2"
         >
           <svg
             aria-hidden="true"
-            class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufb sprinkles_height_full_mobile__onxwjudr"
+            class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_block_mobile__onxwju6z sprinkles_width_full_mobile__onxwjuff sprinkles_height_full_mobile__onxwjudv"
             fill="currentColor"
             focusable="false"
             viewBox="0 0 24 24"
@@ -148,11 +148,11 @@ exports[`<CheckBox /> > should match the snapshot for a single check 1`] = `
       </div>
     </div>
     <label
-      class="reset_resetVariants__4z7xt3b reset_resetVariants_as_label__4z7xt3l  sprinkles_width_full_mobile__onxwjufb reset_resetVariants__4z7xt3b reset_resetVariants_as_button__4z7xt310 reset_trimmedElement__4z7xt30 reset_button__4z7xt34 reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_color_neutral__onxwju6k typography_typographyStyles__yhjp330"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_label__4z7xt3m  sprinkles_width_full_mobile__onxwjuff reset_resetVariants__4z7xt3c reset_resetVariants_as_button__4z7xt311 reset_trimmedElement__4z7xt30 reset_button__4z7xt34 reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330"
       for="«r2»"
     >
       <span
-        class="reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_normal__onxwju2g sprinkles_color_neutral__onxwju6k typography_typographyStyles__yhjp330"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_normal__onxwju2g sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330"
       >
         check label 1
       </span>
@@ -167,26 +167,26 @@ exports[`<CheckBox /> > should match the snapshot for a single check with no val
   data-od-component-provider=""
 >
   <div
-    class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_paddingTop_3_mobile__onxwjut3 sprinkles_paddingBottom_3_mobile__onxwjupr sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjujr sprinkles_flexDirection_row_mobile__onxwjumj sprinkles_justifyContent_flex-start_mobile__onxwjuk7 sprinkles_paddingRight_none_mobile__onxwjusr sprinkles_paddingLeft_none_mobile__onxwjurn sprinkles_position_relative_mobile__onxwju8r CheckableBase_root__y94qv0 reset_resetVariants__4z7xt3b reset_resetVariants_as_button__4z7xt310 reset_trimmedElement__4z7xt30 reset_button__4z7xt34"
+    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_paddingTop_3_mobile__onxwjut7 sprinkles_paddingBottom_3_mobile__onxwjupv sprinkles_display_flex_mobile__onxwju77 sprinkles_alignItems_center_mobile__onxwjujv sprinkles_flexDirection_row_mobile__onxwjumn sprinkles_justifyContent_flex-start_mobile__onxwjukb sprinkles_paddingRight_none_mobile__onxwjusv sprinkles_paddingLeft_none_mobile__onxwjurr sprinkles_position_relative_mobile__onxwju8v CheckableBase_root__y94qv0 reset_resetVariants__4z7xt3c reset_resetVariants_as_button__4z7xt311 reset_trimmedElement__4z7xt30 reset_button__4z7xt34"
   >
     <input
-      class="reset_resetVariants__4z7xt3b reset_resetVariants_as_input__4z7xt312 reset_trimmedElement__4z7xt30 reset_input__4z7xt37 sprinkles_paddingBottom_none_mobile__onxwjuqj sprinkles_paddingLeft_none_mobile__onxwjurn sprinkles_paddingRight_none_mobile__onxwjusr sprinkles_paddingTop_none_mobile__onxwjutv sprinkles_marginBottom_none_mobile__onxwjuuz sprinkles_marginLeft_none_mobile__onxwjuw3 sprinkles_marginRight_none_mobile__onxwjuxb sprinkles_marginTop_none_mobile__onxwjuyj sprinkles_position_absolute_mobile__onxwju8v sprinkles_width_full_mobile__onxwjufb sprinkles_height_full_mobile__onxwjudr reset_resetVariants__4z7xt3b reset_resetVariants_as_button__4z7xt310 reset_trimmedElement__4z7xt30 reset_button__4z7xt34 CheckableBase_nativeInput__y94qv2"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_input__4z7xt313 reset_trimmedElement__4z7xt30 reset_input__4z7xt38 sprinkles_paddingBottom_none_mobile__onxwjuqn sprinkles_paddingLeft_none_mobile__onxwjurr sprinkles_paddingRight_none_mobile__onxwjusv sprinkles_paddingTop_none_mobile__onxwjutz sprinkles_marginBottom_none_mobile__onxwjuv3 sprinkles_marginLeft_none_mobile__onxwjuw7 sprinkles_marginRight_none_mobile__onxwjuxf sprinkles_marginTop_none_mobile__onxwjuyn sprinkles_position_absolute_mobile__onxwju8z sprinkles_width_full_mobile__onxwjuff sprinkles_height_full_mobile__onxwjudv reset_resetVariants__4z7xt3c reset_resetVariants_as_button__4z7xt311 reset_trimmedElement__4z7xt30 reset_button__4z7xt34 CheckableBase_nativeInput__y94qv2"
       id="«r1»"
       name=""
       type="checkbox"
     />
     <div
-      class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjujr sprinkles_justifyContent_center_mobile__onxwjukb sprinkles_position_relative_mobile__onxwju8r CheckableBase_checkable__y94qv3 reset_resetVariants__4z7xt3b reset_resetVariants_as_button__4z7xt310 reset_trimmedElement__4z7xt30 reset_button__4z7xt34"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju77 sprinkles_alignItems_center_mobile__onxwjujv sprinkles_justifyContent_center_mobile__onxwjukf sprinkles_position_relative_mobile__onxwju8v CheckableBase_checkable__y94qv3 reset_resetVariants__4z7xt3c reset_resetVariants_as_button__4z7xt311 reset_trimmedElement__4z7xt30 reset_button__4z7xt34"
     >
       <div
-        class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 CheckBox_checkbox_default__1ifzuoz0 CheckableBase_checkableIndicator__y94qv4"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 CheckBox_checkbox_default__1ifzuoz0 CheckableBase_checkableIndicator__y94qv4"
       >
         <span
-          class="reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 CheckBox_icon__1ifzuoz2"
+          class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_display_block_mobile__onxwju6z Icon_makeResponsiveStyle_key_bp__1gy3ire4 CheckBox_icon__1ifzuoz2"
         >
           <svg
             aria-hidden="true"
-            class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufb sprinkles_height_full_mobile__onxwjudr"
+            class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_block_mobile__onxwju6z sprinkles_width_full_mobile__onxwjuff sprinkles_height_full_mobile__onxwjudv"
             fill="currentColor"
             focusable="false"
             viewBox="0 0 24 24"
@@ -200,11 +200,11 @@ exports[`<CheckBox /> > should match the snapshot for a single check with no val
       </div>
     </div>
     <label
-      class="reset_resetVariants__4z7xt3b reset_resetVariants_as_label__4z7xt3l  sprinkles_width_full_mobile__onxwjufb reset_resetVariants__4z7xt3b reset_resetVariants_as_button__4z7xt310 reset_trimmedElement__4z7xt30 reset_button__4z7xt34 reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_color_neutral__onxwju6k typography_typographyStyles__yhjp330"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_label__4z7xt3m  sprinkles_width_full_mobile__onxwjuff reset_resetVariants__4z7xt3c reset_resetVariants_as_button__4z7xt311 reset_trimmedElement__4z7xt30 reset_button__4z7xt34 reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330"
       for="«r1»"
     >
       <span
-        class="reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_normal__onxwju2g sprinkles_color_neutral__onxwju6k typography_typographyStyles__yhjp330"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_normal__onxwju2g sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330"
       />
     </label>
   </div>
@@ -217,27 +217,27 @@ exports[`<CheckBox /> > when with component child > should match the snapshot 1`
   data-od-component-provider=""
 >
   <div
-    class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_paddingTop_3_mobile__onxwjut3 sprinkles_paddingBottom_3_mobile__onxwjupr sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjujr sprinkles_flexDirection_row_mobile__onxwjumj sprinkles_justifyContent_flex-start_mobile__onxwjuk7 sprinkles_paddingRight_3_mobile__onxwjurz sprinkles_paddingLeft_none_mobile__onxwjurn sprinkles_position_relative_mobile__onxwju8r CheckableBase_root__y94qv0 reset_resetVariants__4z7xt3b reset_resetVariants_as_button__4z7xt310 reset_trimmedElement__4z7xt30 reset_button__4z7xt34"
+    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_paddingTop_3_mobile__onxwjut7 sprinkles_paddingBottom_3_mobile__onxwjupv sprinkles_display_flex_mobile__onxwju77 sprinkles_alignItems_center_mobile__onxwjujv sprinkles_flexDirection_row_mobile__onxwjumn sprinkles_justifyContent_flex-start_mobile__onxwjukb sprinkles_paddingRight_3_mobile__onxwjus3 sprinkles_paddingLeft_none_mobile__onxwjurr sprinkles_position_relative_mobile__onxwju8v CheckableBase_root__y94qv0 reset_resetVariants__4z7xt3c reset_resetVariants_as_button__4z7xt311 reset_trimmedElement__4z7xt30 reset_button__4z7xt34"
   >
     <input
-      class="reset_resetVariants__4z7xt3b reset_resetVariants_as_input__4z7xt312 reset_trimmedElement__4z7xt30 reset_input__4z7xt37 sprinkles_paddingBottom_none_mobile__onxwjuqj sprinkles_paddingLeft_none_mobile__onxwjurn sprinkles_paddingRight_none_mobile__onxwjusr sprinkles_paddingTop_none_mobile__onxwjutv sprinkles_marginBottom_none_mobile__onxwjuuz sprinkles_marginLeft_none_mobile__onxwjuw3 sprinkles_marginRight_none_mobile__onxwjuxb sprinkles_marginTop_none_mobile__onxwjuyj sprinkles_position_absolute_mobile__onxwju8v sprinkles_width_full_mobile__onxwjufb sprinkles_height_full_mobile__onxwjudr reset_resetVariants__4z7xt3b reset_resetVariants_as_button__4z7xt310 reset_trimmedElement__4z7xt30 reset_button__4z7xt34 CheckableBase_nativeInput__y94qv2"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_input__4z7xt313 reset_trimmedElement__4z7xt30 reset_input__4z7xt38 sprinkles_paddingBottom_none_mobile__onxwjuqn sprinkles_paddingLeft_none_mobile__onxwjurr sprinkles_paddingRight_none_mobile__onxwjusv sprinkles_paddingTop_none_mobile__onxwjutz sprinkles_marginBottom_none_mobile__onxwjuv3 sprinkles_marginLeft_none_mobile__onxwjuw7 sprinkles_marginRight_none_mobile__onxwjuxf sprinkles_marginTop_none_mobile__onxwjuyn sprinkles_position_absolute_mobile__onxwju8z sprinkles_width_full_mobile__onxwjuff sprinkles_height_full_mobile__onxwjudv reset_resetVariants__4z7xt3c reset_resetVariants_as_button__4z7xt311 reset_trimmedElement__4z7xt30 reset_button__4z7xt34 CheckableBase_nativeInput__y94qv2"
       id="«ra»"
       name=""
       type="checkbox"
       value="1"
     />
     <div
-      class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjujr sprinkles_justifyContent_center_mobile__onxwjukb sprinkles_position_relative_mobile__onxwju8r CheckableBase_checkable__y94qv3 reset_resetVariants__4z7xt3b reset_resetVariants_as_button__4z7xt310 reset_trimmedElement__4z7xt30 reset_button__4z7xt34"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju77 sprinkles_alignItems_center_mobile__onxwjujv sprinkles_justifyContent_center_mobile__onxwjukf sprinkles_position_relative_mobile__onxwju8v CheckableBase_checkable__y94qv3 reset_resetVariants__4z7xt3c reset_resetVariants_as_button__4z7xt311 reset_trimmedElement__4z7xt30 reset_button__4z7xt34"
     >
       <div
-        class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 CheckBox_checkbox_default__1ifzuoz0 CheckableBase_checkableIndicator__y94qv4"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 CheckBox_checkbox_default__1ifzuoz0 CheckableBase_checkableIndicator__y94qv4"
       >
         <span
-          class="reset_resetVariants__4z7xt3b reset_resetVariants_as_span__4z7xt3k  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 CheckBox_icon__1ifzuoz2"
+          class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_display_block_mobile__onxwju6z Icon_makeResponsiveStyle_key_bp__1gy3ire4 CheckBox_icon__1ifzuoz2"
         >
           <svg
             aria-hidden="true"
-            class="reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufb sprinkles_height_full_mobile__onxwjudr"
+            class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_block_mobile__onxwju6z sprinkles_width_full_mobile__onxwjuff sprinkles_height_full_mobile__onxwjudv"
             fill="currentColor"
             focusable="false"
             viewBox="0 0 24 24"
@@ -251,11 +251,11 @@ exports[`<CheckBox /> > when with component child > should match the snapshot 1`
       </div>
     </div>
     <label
-      class="reset_resetVariants__4z7xt3b reset_resetVariants_as_label__4z7xt3l  sprinkles_width_full_mobile__onxwjufb reset_resetVariants__4z7xt3b reset_resetVariants_as_button__4z7xt310 reset_trimmedElement__4z7xt30 reset_button__4z7xt34 reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_color_neutral__onxwju6k typography_typographyStyles__yhjp330"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_label__4z7xt3m  sprinkles_width_full_mobile__onxwjuff reset_resetVariants__4z7xt3c reset_resetVariants_as_button__4z7xt311 reset_trimmedElement__4z7xt30 reset_button__4z7xt34 reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330"
       for="«ra»"
     >
       <h1
-        class="reset_resetVariants__4z7xt3b reset_resetVariants_as_h1__4z7xt3e reset_trimmedElement__4z7xt30 reset_resetVariants__4z7xt3b reset_resetVariants_as_div__4z7xt3c reset_block__4z7xt33 sprinkles_fontSize_8__onxwju25 sprinkles_lineHeight_8__onxwju2e sprinkles_fontWeight_bold__onxwju2i sprinkles_color_dark__onxwju6h typography_typographyStyles__yhjp330"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_h1__4z7xt3f reset_trimmedElement__4z7xt30 reset__4z7xt35 sprinkles_textWrap_balance__onxwju2j reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_fontSize_8__onxwju25 sprinkles_lineHeight_8__onxwju2e sprinkles_fontWeight_bold__onxwju2i sprinkles_color_dark__onxwju6l typography_typographyStyles__yhjp330"
       >
         Hello checkbox
       </h1>
