@@ -10,12 +10,6 @@ const smallHeight = '36px';
 const selectorFocusHoverActive =
 	'&:focus-visible, &:not(:disabled):hover, &:not(:disabled):active';
 
-export const body = style({
-	display: 'grid',
-	gridAutoFlow: 'column dense',
-	gridGap: vars.space['1'],
-});
-
 export const hiddenContent = style({
 	visibility: 'hidden',
 });
@@ -28,13 +22,21 @@ export const spinner = style({
 export const button = recipe({
 	base: [
 		{
+			alignItems: 'center',
+			borderRadius: vars.border.radius.md,
+			borderStyle: 'none',
+			display: 'flex',
+			fontWeight: vars.typography.fontWeight.semiBold,
+			gap: vars.space['1'],
+			justifyContent: 'center',
+			lineHeight: 1,
+			padding: `0 ${vars.space[4]}`,
 			transitionTimingFunction: vars.animation.easing.standard,
 			transitionDuration: '0.1s',
 			transitionProperty:
 				'color, background-color, border-color, box-shadow, transform',
 			transform: 'translate(0, 0) scale(1)',
 			willChange: 'transform',
-			cursor: 'pointer',
 			selectors: {
 				'&:active:not(:disabled, [data-loading])': {
 					transform: 'scale(0.97)',
@@ -54,12 +56,17 @@ export const button = recipe({
 		// Size variants
 		size: {
 			small: {
+				fontSize: vars.typography.size[3].fontSize,
 				height: smallHeight,
+				padding: `0 ${vars.space[3]}`,
 			},
 			medium: {
+				fontSize: vars.typography.size[4].fontSize,
 				height: vars.space['8'],
 			},
 			xsmall: {
+				fontSize: vars.typography.size[2].fontSize,
+				fontWeight: vars.typography.fontWeight.normal,
 				padding: `2px ${vars.space['2']}`,
 			},
 		},
@@ -127,6 +134,16 @@ export const button = recipe({
 				},
 			},
 		},
+		isFullWidth: {
+			true: {
+				width: '100%',
+			},
+		},
+		isLoading: {
+			true: {
+				padding: vars.space.none,
+			},
+		},
 		// Miminal appearance variant
 		minimal: {
 			true: {
@@ -136,6 +153,11 @@ export const button = recipe({
 			},
 			false: [],
 		},
+		rounded: {
+			true: {
+				borderRadius: vars.border.radius.pill,
+			},
+		},
 	},
 	compoundVariants: [
 		// Size and shape compound variants
@@ -143,7 +165,6 @@ export const button = recipe({
 			variants: { size: 'small', shape: 'default' },
 			style: {
 				minWidth: vars.space['8'],
-				gridGap: vars.space['1'],
 			},
 		},
 		{
@@ -162,7 +183,6 @@ export const button = recipe({
 			variants: { size: 'medium', shape: 'default' },
 			style: {
 				minWidth: vars.space['9'],
-				gridGap: vars.space['2'],
 			},
 		},
 		{
@@ -271,7 +291,10 @@ type ButtonRecipeProps = NonNullable<Required<RecipeVariants<typeof button>>>;
 export type ButtonSize = ButtonRecipeProps['size'];
 export type ButtonShape = ButtonRecipeProps['shape'];
 export type ButtonIntent = ButtonRecipeProps['intent'];
+export type ButtonIsFullWidth = ButtonRecipeProps['isFullWidth'];
+export type ButtonIsLoading = ButtonRecipeProps['isLoading'];
 export type ButtonMinimal = ButtonRecipeProps['minimal'];
+export type ButtonRounded = ButtonRecipeProps['rounded'];
 
 export interface StyledButtonProps {
 	/**
@@ -286,4 +309,7 @@ export interface StyledButtonProps {
 	 * Present a borderless minimal appearance
 	 */
 	minimal?: ButtonMinimal;
+	isFullWidth?: ButtonIsFullWidth;
+	isLoading?: ButtonIsFullWidth;
+	rounded?: ButtonRounded;
 }

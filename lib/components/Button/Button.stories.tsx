@@ -19,12 +19,11 @@ const meta: Meta<typeof Button> = {
 		minimal: false,
 		rounded: false,
 		children: undefined,
+		isDisabled: false,
 		isFullWidth: false,
 		isLoading: false,
-		disabled: false,
-		is: undefined,
 		onClick: fn(),
-		withDoubleClicks: false,
+		// withDoubleClicks: false,
 		testId: 'storybook-button',
 	},
 	argTypes: {
@@ -100,7 +99,7 @@ const TemplateMulti = ({
 							A very very very long button Label
 						</Button>
 
-						<Button disabled {...args}>
+						<Button isDisabled {...args}>
 							Login
 						</Button>
 					</Inline>
@@ -138,7 +137,7 @@ const TemplateMulti = ({
 							Login
 						</Button>
 
-						<Button minimal disabled {...args}>
+						<Button minimal isDisabled {...args}>
 							Login
 						</Button>
 					</Inline>
