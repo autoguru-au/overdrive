@@ -7,6 +7,7 @@ import { Anchor } from './Anchor';
 
 const meta = {
 	title: 'Primatives/Anchor',
+	tags: ['polymorphic'],
 	component: Anchor,
 	args: {
 		href: 'tel:07 5612 5347',

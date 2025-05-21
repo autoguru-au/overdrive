@@ -5,6 +5,7 @@ import { Box } from './Box';
 
 const meta: Meta<typeof Box> = {
 	title: 'Primatives/Box',
+	tags: ['polymorphic'],
 	component: Box,
 	args: {
 		as: 'div',

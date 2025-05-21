@@ -14,6 +14,9 @@ interface CustomProps {
 export type AnchorProps<E extends ElementType = typeof ANCHOR_TAG> =
 	BoxLikeProps<E, CustomProps>;
 
+/**
+ * Use the Anchor component to render a simple link style with an optional icon.
+ */
 export const Anchor = <E extends ElementType = typeof ANCHOR_TAG>({
 	as = ANCHOR_TAG as E,
 	children,

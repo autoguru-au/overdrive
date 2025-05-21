@@ -11,6 +11,7 @@ import { Button, type ButtonProps } from './Button';
 
 const meta: Meta<typeof Button> = {
 	title: 'Primatives/Buttons',
+	tags: ['polymorphic'],
 	component: Button,
 	args: {
 		variant: 'secondary',

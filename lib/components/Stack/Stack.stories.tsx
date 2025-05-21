@@ -21,6 +21,7 @@ import { Stack } from './Stack';
 
 const meta: Meta<typeof Stack> = {
 	title: 'Layout/Stack',
+	tags: ['polymorphic'],
 	component: Stack,
 	args: {
 		space: '1',
