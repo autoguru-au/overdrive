@@ -4,7 +4,9 @@ import { useBox, UseBoxProps, type BoxLikeProps } from '../Box/useBox';
 
 import { textStyles, type TextStylesProps } from './textStyles';
 
-export type TextTags = 'label' | 'p' | 'span';
+// array of allowed HTML elements for Text
+const TEXT_TAGS = ['span', 'p', 'label'] as const;
+export type TextTags = (typeof TEXT_TAGS)[number];
 
 interface CustomTextProps extends Omit<TextStylesProps, 'as'> {
 	/** Use bold font weight */
@@ -16,12 +18,29 @@ export type TextProps<E extends TextTags = 'span'> = Omit<
 	'is'
 >;
 
+/**
+ * The main Overdrive component for consistent typography sizing and styling.
+ * Supports semantic text styling with size, color, and weight variations.
+ *
+ * @example
+ * <Text>
+ *   This is some text
+ * </Text>
+ *
+ * <Text as="p">
+ *   This will render as a paragraph
+ * </Text>
+ *
+ * <Text size="5" color="primary" strong>
+ *   Important text
+ * </Text>
+ */
 export const Text = <E extends TextTags>({
 	as = 'span' as E,
 	children,
 	className,
-	color,
-	colour: _colour,
+	color, // semantic tokens
+	colour: _colour, // legacy intentional tokens
 	display,
 	fontWeight = 'normal',
 	transform,
@@ -35,7 +54,7 @@ export const Text = <E extends TextTags>({
 	const colour = color ? undefined : colourOrDefault;
 
 	const styles = textStyles({
-		as: as as TextTags,
+		as: as as string,
 		size,
 		color,
 		colour,

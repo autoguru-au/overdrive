@@ -21,13 +21,16 @@ const defaultSizeMap: Record<HeadingTags, Sprinkles['fontSize']> = {
 	h6: '2',
 };
 
+/**
+ * Heading renders an <h1... h6> with default font size and weight
+ */
 export const Heading = ({
 	as = 'h1',
 	breakWord,
 	children,
 	className,
-	color,
-	colour = color ? undefined : 'dark',
+	color, // semantic tokens
+	colour = color ? undefined : 'dark', // legacy intentional tokens
 	fontWeight = 'bold',
 	noWrap,
 	size = defaultSizeMap[as],
