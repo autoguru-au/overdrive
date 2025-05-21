@@ -63,8 +63,8 @@ export const HorizontalAutoScroller: FunctionComponent<
 					if (el) itemsRef.push(el);
 				}}
 				key={index}
-				flexGrow={0}
-				flexShrink={0}
+				flexGrow="0"
+				flexShrink="0"
 				alignSelf="stretch"
 				className={clsx(
 					styles.itemMinWidth,

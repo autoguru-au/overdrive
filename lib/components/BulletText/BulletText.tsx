@@ -32,13 +32,13 @@ export const BulletText = <E extends ElementType>({
 		alignY="center"
 	>
 		{isValidElement(Bullet) ? (
-			<Box position="relative" flexShrink={0}>
+			<Box position="relative" flexShrink="0">
 				{Bullet}
 			</Box>
 		) : (
 			<Box
 				position="relative"
-				flexShrink={0}
+				flexShrink="0"
 				display="flex"
 				alignItems="center"
 				justifyContent="center"
@@ -60,7 +60,7 @@ export const BulletText = <E extends ElementType>({
 				</Text>
 			</Box>
 		)}
-		<Box flexGrow={1}>
+		<Box flexGrow="1">
 			<Text as="span" size="4" display="block">
 				{children}
 			</Text>

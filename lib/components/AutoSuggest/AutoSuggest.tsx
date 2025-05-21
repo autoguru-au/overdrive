@@ -671,7 +671,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 						as="button"
 						paddingY={size === 'small' ? '1' : '3'}
 						paddingRight={size === 'small' ? '2' : '3'}
-						flexShrink={0}
+						flexShrink="0"
 						onMouseDown={onRequestReset}
 					>
 						<Icon
@@ -682,7 +682,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 				) : // eslint-disable-next-line sonarjs/no-nested-conditional
 				fieldIcon ? (
 					<Box
-						flexShrink={0}
+						flexShrink="0"
 						paddingY={size === 'medium' ? '3' : '2'}
 						paddingRight={size === 'medium' ? '3' : '2'}
 						onClick={focusHandler}
@@ -711,7 +711,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 			>
 				<Box
 					as="input"
-					flexGrow={1}
+					flexGrow="1"
 					{...inputEventHandlers}
 					{...field}
 					ref={handleRef}
