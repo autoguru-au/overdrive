@@ -4,6 +4,7 @@ import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 import { overdriveTokens } from '../themes/theme.css';
 
 import { cssLayerReset } from './layers.css';
+import { sprinkles } from './sprinkles.css';
 
 export const trimmed = {
 	margin: 0,
@@ -60,6 +61,8 @@ const button = [
 		},
 	}),
 ];
+
+const heading = [trimmedElement, sprinkles({ textWrap: 'balance' })];
 
 const list = style({
 	'@layer': {
@@ -145,12 +148,12 @@ const vAlignMiddle = [
 export const element = {
 	div: block,
 	p: trimmedElement,
-	h1: trimmedElement,
-	h2: trimmedElement,
-	h3: trimmedElement,
-	h4: trimmedElement,
-	h5: trimmedElement,
-	h6: trimmedElement,
+	h1: heading,
+	h2: heading,
+	h3: heading,
+	h4: heading,
+	h5: heading,
+	h6: heading,
 	span: '',
 	label: '',
 	article: block,

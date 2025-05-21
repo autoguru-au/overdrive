@@ -33,6 +33,18 @@ export const typographyStyles = recipe({
 	},
 });
 
-export type TypographyStyles = NonNullable<
+export type TypographyVariants = NonNullable<
 	RecipeVariants<typeof typographyStyles>
 >;
+
+export interface TypographyStyles extends TypographyVariants {
+	/**
+	 * Prefer the `textWrap` prop on Box/boxStyles
+	 * @deprecated
+	 */
+	noWrap?: TypographyVariants['noWrap'];
+	/**
+	 * Applies CSS capitalisation
+	 */
+	transform?: TypographyVariants['transform'];
+}

@@ -36,6 +36,8 @@ type Story = StoryObj<typeof Heading>;
 export const Standard: Story = {
 	args: {
 		as: 'h1',
+		children:
+			'This heading has used a few small words, to demo balanced wrapping',
 		id: 'story-heading',
 		testId: 'test-heading',
 	},

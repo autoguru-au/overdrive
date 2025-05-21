@@ -114,6 +114,7 @@ const baseProperties = defineProperties({
 		fontSize: fontSizes,
 		lineHeight: lineHeights,
 		fontWeight: tokens.typography.fontWeight,
+		textWrap: ['balance', 'pretty', 'stable', 'nowrap'],
 		// Shadows
 		boxShadow: tokens.elevation,
 		// Misc
