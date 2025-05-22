@@ -75,7 +75,6 @@ export const AllSizes: Story = {
 	render: (args) => (
 		<>
 			{valueArrays.fontSizes.map((size) => (
-				// @ts-expect-error wrong ref type
 				<Text key={size} {...args} size={size} />
 			))}
 		</>
