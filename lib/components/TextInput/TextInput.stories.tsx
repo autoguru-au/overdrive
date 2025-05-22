@@ -1,7 +1,7 @@
 import { AccountEditIcon, EmailIcon } from '@autoguru/icons';
-import { action } from '@storybook/addon-actions';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { type ComponentProps } from 'react';
+import { action } from 'storybook/actions';
 
 import { argTypesExampleIcons } from '../../stories/shared/argTypes';
 import { boxArgTypes } from '../../stories/shared/argTypes-box';

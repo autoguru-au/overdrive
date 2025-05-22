@@ -1,6 +1,6 @@
-import { StoryObj, Meta } from '@storybook/react';
-import { fn } from '@storybook/test';
+import { StoryObj, Meta } from '@storybook/react-vite';
 import React, { type ComponentProps } from 'react';
+import { fn } from 'storybook/test';
 
 import { Radio } from './Radio';
 import { RadioGroup as RadioGroupComponent } from './RadioGroup';

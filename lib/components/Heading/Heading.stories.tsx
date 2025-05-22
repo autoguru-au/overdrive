@@ -1,6 +1,6 @@
-import { Meta, StoryObj } from '@storybook/react';
-import { expect, within } from '@storybook/test';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import React, { type ComponentProps } from 'react';
+import { expect, within } from 'storybook/test';
 
 import { overdriveTokens } from '../../themes';
 

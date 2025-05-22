@@ -1,6 +1,6 @@
-import { action } from '@storybook/addon-actions';
-import { ArgTypes, Meta, StoryObj } from '@storybook/react';
+import { ArgTypes, Meta, StoryObj } from '@storybook/react-vite';
 import React, { type ComponentProps } from 'react';
+import { action } from 'storybook/actions';
 
 import { Box } from '../Box/Box';
 import { Text } from '../Text/Text';

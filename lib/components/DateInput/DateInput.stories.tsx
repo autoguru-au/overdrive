@@ -7,9 +7,9 @@ import {
 	PlusIcon,
 	StarIcon,
 } from '@autoguru/icons';
-import { action } from '@storybook/addon-actions';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import isChromatic from 'chromatic/isChromatic';
+import { action } from 'storybook/actions';
 
 import { DateInput } from './DateInput';
 

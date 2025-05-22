@@ -1,7 +1,7 @@
 import { ArrowRightIcon, ChevronRightIcon } from '@autoguru/icons';
-import { Meta, StoryObj } from '@storybook/react';
-import { expect, userEvent, within } from '@storybook/test';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import React, { type ComponentProps } from 'react';
+import { expect, userEvent, within } from 'storybook/test';
 
 import { Heading } from '../Heading/Heading';
 import { Text } from '../Text/Text';
