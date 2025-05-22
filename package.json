@@ -99,7 +99,7 @@
 		"@storybook/addon-docs": "^9.0.0-rc.0",
 		"@storybook/addon-links": "^9.0.0-rc.0",
 		"@storybook/addon-onboarding": "^9.0.0-rc.0",
-		"@storybook/addon-vitest": "9.0.0-rc.0",
+		"@storybook/addon-vitest": "9.0.0-rc.4",
 		"@storybook/react-vite": "^9.0.0-rc.0",
 		"@testing-library/dom": "^10.4.0",
 		"@testing-library/jest-dom": "^6.6.3",
