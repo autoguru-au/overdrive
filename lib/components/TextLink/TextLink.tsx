@@ -11,13 +11,27 @@ import { TextStylesProps } from '../Text/textStyles';
 import * as styles from './TextLink.css';
 
 interface CustomProps extends Pick<TextStylesProps, 'noWrap' | 'transform'> {
+	/** Make the link colour less prominent */
 	muted?: boolean;
+	/** Optional icon, displayed after the link text */
 	icon?: IconType;
+	/** Applies font weight */
 	strong?: boolean;
 }
 
 export type TextLinkProps = BoxLikeProps<'a', CustomProps>;
 
+/**
+ * TextLink component for rendering navigation links
+ *
+ * @example
+ * ```tsx
+ * <TextLink href="https://example.com">Click me</TextLink>
+ *
+ * // With an icon
+ * <TextLink href="/settings" icon={SettingsIcon}>Settings</TextLink>
+ * ```
+ */
 export const TextLink = ({
 	as = 'a',
 	children,
@@ -69,7 +83,7 @@ export const TextLink = ({
 		as,
 		className: [styles.root, className],
 		odComponent: 'TextLink',
-		rel: props.rel ?? 'nooperner noreferrer',
+		rel: props.rel ?? 'noopener noreferrer',
 	});
 
 	if (reactElement) {

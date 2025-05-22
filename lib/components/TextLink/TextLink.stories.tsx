@@ -1,5 +1,6 @@
 import { ArrowRightIcon, ChevronRightIcon } from '@autoguru/icons';
 import { Meta, StoryObj } from '@storybook/react';
+import { expect, userEvent, within } from '@storybook/test';
 import React, { type ComponentProps } from 'react';
 
 import { Heading } from '../Heading/Heading';
@@ -85,7 +86,17 @@ export default meta;
 
 type Story = StoryObj<typeof TextLink>;
 
-export const Standard: Story = {};
+export const Standard: Story = {
+	play: async ({ args, canvasElement, step }) => {
+		const canvas = within(canvasElement);
+		const link = canvas.getAllByRole('link')[0];
+
+		await step('<TextLink /> renders content and attributes', async () => {
+			await expect(link).toHaveAttribute('href', args.href);
+			await expect(link).toHaveTextContent(args.children as string);
+		});
+	},
+};
 
 export const InsideParagraph: Story = {
 	decorators: [
@@ -103,6 +114,22 @@ export const InsideParagraph: Story = {
 export const WithIcon: Story = {
 	args: {
 		icon: ChevronRightIcon,
+	},
+	play: async ({ canvasElement, step }) => {
+		const user = userEvent.setup();
+		const canvas = within(canvasElement);
+		const link = canvas.getAllByRole('link')[0];
+
+		await step('<TextLink /> has SVG icon', async () => {
+			await expect(link.querySelector('svg')).toBeInTheDocument();
+		});
+
+		await step('<TextLink /> is interactive', async () => {
+			await expect(link).toHaveStyle({ cursor: 'pointer' });
+			await user.keyboard('{Tab}');
+			await expect(link).toHaveFocus();
+			await user.hover(link);
+		});
 	},
 };
 
