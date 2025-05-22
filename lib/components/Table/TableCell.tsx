@@ -41,6 +41,7 @@ export const TableCell = forwardRef<HTMLDivElement, TableCellProps>(
 				// scope="row"
 				display="flex"
 				alignItems="center"
+				position="relative"
 				justifyContent={alignmentToFlexAlignment(align)}
 				padding={padding}
 				borderBottomWidth="1"
@@ -49,13 +50,7 @@ export const TableCell = forwardRef<HTMLDivElement, TableCellProps>(
 			>
 				{typeof children === 'string' ||
 				typeof children === 'number' ? (
-					<Text
-						is="span"
-						align={align}
-						colour="dark"
-						display="block"
-						size="3"
-					>
+					<Text as="span" colour="dark" display="block" size="3">
 						{children}
 					</Text>
 				) : (

@@ -14,7 +14,7 @@ import { Button } from '../Button/Button';
 import { Heading } from '../Heading/Heading';
 import { Icon } from '../Icon/Icon';
 import { Modal } from '../Modal/Modal';
-import { useTextStyles } from '../Text/useTextStyles';
+import { textStyles } from '../Text/textStyles';
 
 import * as styles from './StandardModal.css';
 
@@ -139,7 +139,7 @@ export const StandardModal: FunctionComponent<StandardModalProps> = ({
 							onClick={closeButtonHandler}
 						>
 							<Icon
-								className={useTextStyles({ colour: 'muted' })}
+								className={textStyles({ colour: 'muted' })}
 								icon={WindowCloseIcon}
 								size="medium"
 							/>

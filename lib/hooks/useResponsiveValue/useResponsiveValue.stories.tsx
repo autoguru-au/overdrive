@@ -19,11 +19,11 @@ export const Standard = () => {
 
 		return (
 			<Stack>
-				<Text is="p">
+				<Text as="p">
 					All values:{' '}
 					<Text strong>{JSON.stringify(allValues)}</Text>{' '}
 				</Text>
-				<Text is="p">
+				<Text as="p">
 					Responsive value: <Text strong>{value as string}</Text>{' '}
 				</Text>
 			</Stack>

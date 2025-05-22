@@ -7,6 +7,7 @@ import { VisuallyHidden } from './VisuallyHidden';
 
 const meta = {
 	title: 'Layout/Visually Hidden',
+	tags: ['polymorphic'],
 	component: VisuallyHidden,
 	args: {
 		as: 'div',

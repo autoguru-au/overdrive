@@ -18,7 +18,7 @@ import { animate, ownerWindow, useEventCallback } from '../../utils';
 import { Box } from '../Box/Box';
 import { Button } from '../Button/Button';
 import { Icon } from '../Icon/Icon';
-import { useTextStyles } from '../Text/useTextStyles';
+import { textStyles } from '../Text/textStyles';
 
 import * as styles from './TabList.css';
 import { TabsContext } from './Tabs';
@@ -159,7 +159,7 @@ export const TabList: FunctionComponent<TabListProps> = ({
 					width="full"
 					role="tablist"
 					aria-orientation="horizontal"
-					className={useTextStyles({ noWrap: true })}
+					className={textStyles({ noWrap: true })}
 				>
 					{tabs}
 				</Box>

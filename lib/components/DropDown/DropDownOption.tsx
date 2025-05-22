@@ -7,7 +7,7 @@ import { Box } from '../Box/Box';
 import { Icon } from '../Icon/Icon';
 import { Inline } from '../Inline/Inline';
 import { Text } from '../Text/Text';
-import { useTextStyles } from '../Text/useTextStyles';
+import { textStyles } from '../Text/textStyles';
 
 import * as styles from './DropDownOption.css';
 
@@ -30,7 +30,7 @@ export const DropDownOption: FunctionComponent<DropDownOptionProps> = ({
 	width = 'full',
 	...boxProps
 }) => {
-	const colourStyles = useTextStyles({ colour: iconColour });
+	const colourStyles = textStyles({ colour: iconColour });
 	return (
 		<Box
 			as={is}
@@ -51,7 +51,7 @@ export const DropDownOption: FunctionComponent<DropDownOptionProps> = ({
 				alignX="space-between"
 				alignY="center"
 			>
-				<Text is="p" size="3">
+				<Text as="p" size="3">
 					{label}
 				</Text>
 				{icon ? (

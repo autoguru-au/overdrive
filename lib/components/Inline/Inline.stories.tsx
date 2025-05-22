@@ -10,32 +10,8 @@ import { Inline } from './Inline';
 
 const meta: Meta<typeof Inline> = {
 	title: 'Layout/Inline',
+	tags: ['polymorphic'],
 	component: Inline,
-	// argTypes: {
-	// 	alignY: {
-	// 		options: ['flexStart', 'center', 'flexEnd'],
-	// 		control: {
-	// 			type: 'select',
-	// 		},
-	// 	},
-	// 	alignX: {
-	// 		options: ['flexStart', 'center', 'flexEnd', 'spaceBetween'],
-	// 		control: {
-	// 			type: 'select',
-	// 		},
-	// 	},
-	// 	space: {
-	// 		options: scaleOptions,
-	// 		control: {
-	// 			type: 'select',
-	// 		},
-	// 	},
-	// 	dividers: {
-	// 		control: {
-	// 			type: 'boolean',
-	// 		},
-	// 	},
-	// },
 };
 
 export default meta;

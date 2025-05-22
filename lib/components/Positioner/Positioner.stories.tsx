@@ -55,7 +55,7 @@ export const Closed: Story = {
 						borderColour="gray"
 						padding="2"
 					>
-						<Text is="p">
+						<Text as="p">
 							Hello im from the consumer:{' '}
 							{isChromatic()
 								? '999'
@@ -90,7 +90,7 @@ export const Open: Story = {
 						borderColour="gray"
 						padding="2"
 					>
-						<Text is="p">
+						<Text as="p">
 							Hello im from the consumer:{' '}
 							{isChromatic()
 								? '999'
@@ -143,7 +143,7 @@ export const IllustrateAScroll: Story = {
 							borderColour="gray"
 							padding="2"
 						>
-							<Text is="p">
+							<Text as="p">
 								Hello im from the consumer:{' '}
 								{Math.ceil(Math.random() * 100)}
 							</Text>

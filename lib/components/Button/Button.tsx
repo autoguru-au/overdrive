@@ -20,7 +20,7 @@ import { Box } from '../Box/Box';
 import { BoxLikeProps, useBox, type UseBoxProps } from '../Box/useBox';
 import { Icon } from '../Icon/Icon';
 import { ProgressSpinner } from '../ProgressSpinner/ProgressSpinner';
-import { useTextStyles } from '../Text/useTextStyles';
+import { textStyles } from '../Text/textStyles';
 
 import * as styles from './Button.css';
 import type { ButtonSize, StyledButtonProps } from './Button.css';
@@ -160,7 +160,7 @@ export const Button = forwardRef<
 			borderRadius: getBorderRadius(rounded),
 			borderWidth: 'none',
 			className: [
-				useTextStyles({
+				textStyles({
 					colour: 'white',
 					fontWeight: fontWeight[size],
 					size: fontSize[size],

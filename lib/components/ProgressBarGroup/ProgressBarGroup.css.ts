@@ -6,3 +6,7 @@ export const root = style({
 	display: 'grid',
 	gridGap: `${vars.space['1']} ${vars.space['5']}`,
 });
+
+export const label = style({
+	textAlign: 'right',
+});

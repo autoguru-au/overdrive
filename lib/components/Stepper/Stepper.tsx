@@ -15,7 +15,7 @@ import { boxStyles } from '../Box/boxStyles';
 import { Icon } from '../Icon/Icon';
 import { Inline } from '../Inline/Inline';
 import { Text } from '../Text/Text';
-import { useTextStyles } from '../Text/useTextStyles';
+import { textStyles } from '../Text/textStyles';
 
 import * as styles from './Stepper.css';
 
@@ -64,7 +64,7 @@ const Handle: FunctionComponent<HandleProps> = ({
 		className={[
 			styles.handle.default,
 			{ [styles.handle.disabled]: disabled },
-			useTextStyles({ colour: 'white' }),
+			textStyles({ colour: 'white' }),
 		]}
 		backgroundColour={disabled ? 'neutral' : 'primary'}
 		aria-label={label}

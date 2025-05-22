@@ -1,7 +1,6 @@
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
-import { styledIntentionalElement } from '../../styles/intentional.css';
-import { fontSize, fontWeight } from '../../styles/typography.css';
+import { styledIntentionalElement } from '../../styles/intentColorset.css';
 import { overdriveTokens as tokens } from '../../themes/theme.css';
 
 export const styledBadge = recipe({
@@ -9,6 +8,7 @@ export const styledBadge = recipe({
 		{
 			display: 'inline-block',
 			overflow: 'hidden',
+			fontWeight: tokens.typography.fontWeight.semiBold,
 			textOverflow: 'ellipsis',
 			textTransform: 'uppercase',
 			letterSpacing: '0.5px',
@@ -16,7 +16,6 @@ export const styledBadge = recipe({
 			whiteSpace: 'nowrap',
 			padding: tokens.space[1],
 		},
-		fontWeight.semiBold,
 	],
 	variants: {
 		colour: {
@@ -31,14 +30,17 @@ export const styledBadge = recipe({
 			false: {},
 		},
 		size: {
-			small: [fontSize.xxs, fontWeight.bold],
-			standard: [fontSize.xs],
-			large: [
-				fontSize.md,
-				{
-					padding: tokens.space[4],
-				},
-			],
+			small: {
+				fontSize: tokens.typography.size[1].fontSize,
+				fontWeight: tokens.typography.fontWeight.bold,
+			},
+			standard: {
+				fontSize: tokens.typography.size[2].fontSize,
+			},
+			large: {
+				fontSize: tokens.typography.size[4].fontSize,
+				padding: tokens.space[4],
+			},
 		},
 	},
 	compoundVariants: [

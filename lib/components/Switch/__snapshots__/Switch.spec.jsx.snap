@@ -9,7 +9,7 @@ exports[`<Switch /> > should match snapshot when toggled 1`] = `
     class="Switch_base__6xc8dy0"
   >
     <div
-      class="reset_block__1oah0224 VisuallyHidden_visuallyHidden__12d73qi0"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 VisuallyHidden_visuallyHidden__12d73qi0"
       data-od-component="visually-hidden"
     >
       <input
@@ -21,11 +21,11 @@ exports[`<Switch /> > should match snapshot when toggled 1`] = `
       />
     </div>
     <div
-      class="reset_block__1oah0224 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75 Switch_toggleOn__6xc8dy2"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_fontSize_5__onxwju22 sprinkles_lineHeight_5__onxwju2b sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330 Switch_toggleOn__6xc8dy2"
       data-active=""
     >
       <div
-        class="reset_block__1oah0224 Switch_handle_default__6xc8dy4 Switch_handle_active__6xc8dy5"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 Switch_handle_default__6xc8dy4 Switch_handle_active__6xc8dy5"
       />
     </div>
   </label>
@@ -41,7 +41,7 @@ exports[`<Switch /> > should match snapshot when toggled and disabled 1`] = `
     class="Switch_base__6xc8dy0"
   >
     <div
-      class="reset_block__1oah0224 VisuallyHidden_visuallyHidden__12d73qi0"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 VisuallyHidden_visuallyHidden__12d73qi0"
       data-od-component="visually-hidden"
     >
       <input
@@ -53,12 +53,12 @@ exports[`<Switch /> > should match snapshot when toggled and disabled 1`] = `
       />
     </div>
     <div
-      class="reset_block__1oah0224 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75 Switch_disabled__6xc8dy3 Switch_toggleOn__6xc8dy2"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_fontSize_5__onxwju22 sprinkles_lineHeight_5__onxwju2b sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330 Switch_disabled__6xc8dy3 Switch_toggleOn__6xc8dy2"
       data-active=""
       data-disabled=""
     >
       <div
-        class="reset_block__1oah0224 Switch_handle_default__6xc8dy4 Switch_handle_active__6xc8dy5"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 Switch_handle_default__6xc8dy4 Switch_handle_active__6xc8dy5"
       />
     </div>
   </label>
@@ -74,7 +74,7 @@ exports[`<Switch /> > should match snapshot when un-toggled 1`] = `
     class="Switch_base__6xc8dy0"
   >
     <div
-      class="reset_block__1oah0224 VisuallyHidden_visuallyHidden__12d73qi0"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 VisuallyHidden_visuallyHidden__12d73qi0"
       data-od-component="visually-hidden"
     >
       <input
@@ -85,10 +85,10 @@ exports[`<Switch /> > should match snapshot when un-toggled 1`] = `
       />
     </div>
     <div
-      class="reset_block__1oah0224 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_fontSize_5__onxwju22 sprinkles_lineHeight_5__onxwju2b sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330"
     >
       <div
-        class="reset_block__1oah0224 Switch_handle_default__6xc8dy4"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 Switch_handle_default__6xc8dy4"
       />
     </div>
   </label>
@@ -104,7 +104,7 @@ exports[`<Switch /> > should match snapshot when un-toggled and disabled 1`] = `
     class="Switch_base__6xc8dy0"
   >
     <div
-      class="reset_block__1oah0224 VisuallyHidden_visuallyHidden__12d73qi0"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 VisuallyHidden_visuallyHidden__12d73qi0"
       data-od-component="visually-hidden"
     >
       <input
@@ -115,11 +115,11 @@ exports[`<Switch /> > should match snapshot when un-toggled and disabled 1`] = `
       />
     </div>
     <div
-      class="reset_block__1oah0224 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75 Switch_disabled__6xc8dy3"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_fontSize_5__onxwju22 sprinkles_lineHeight_5__onxwju2b sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330 Switch_disabled__6xc8dy3"
       data-disabled=""
     >
       <div
-        class="reset_block__1oah0224 Switch_handle_default__6xc8dy4"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 Switch_handle_default__6xc8dy4"
       />
     </div>
   </label>
@@ -135,7 +135,7 @@ exports[`<Switch /> > should match snapshot without props 1`] = `
     class="Switch_base__6xc8dy0"
   >
     <div
-      class="reset_block__1oah0224 VisuallyHidden_visuallyHidden__12d73qi0"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 VisuallyHidden_visuallyHidden__12d73qi0"
       data-od-component="visually-hidden"
     >
       <input
@@ -146,10 +146,10 @@ exports[`<Switch /> > should match snapshot without props 1`] = `
       />
     </div>
     <div
-      class="reset_block__1oah0224 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 useTextStyles_root__1xnpmd70 reset_block__1oah0224 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_sizes_5__1xnpmd75"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_fontSize_5__onxwju22 sprinkles_lineHeight_5__onxwju2b sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330"
     >
       <div
-        class="reset_block__1oah0224 Switch_handle_default__6xc8dy4"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 Switch_handle_default__6xc8dy4"
       />
     </div>
   </label>

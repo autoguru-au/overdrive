@@ -23,10 +23,10 @@ exports[`<Modal /> > should match snapshot 1`] = `
     >
       <div
         aria-hidden="true"
-        class="reset_block__1oah0224 sprinkles_position_fixed_mobile__onxwjua4 sprinkles_backgroundColor_neutral__onxwju32 Modal_backdrop_root__1psykzh3 Modal_transition__1psykzh1"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_position_fixed_mobile__onxwju93 sprinkles_backgroundColor_neutral__onxwju35 Modal_backdrop_root__1psykzh3 Modal_transition__1psykzh1"
       />
       <div
-        class="reset_block__1oah0224 sprinkles_position_fixed_mobile__onxwjua4 sprinkles_overflow_hidden_mobile__onxwju8w Modal_root__1psykzh0 Modal_transition__1psykzh1"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_position_fixed_mobile__onxwju93 sprinkles_overflow_hidden_mobile__onxwju7v Modal_root__1psykzh0 Modal_transition__1psykzh1"
         role="presentation"
       >
         Hello World!

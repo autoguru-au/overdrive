@@ -9,7 +9,7 @@ import React, {
 import { Box } from '../../Box/Box';
 import { boxStyles } from '../../Box/boxStyles';
 import { Text } from '../../Text/Text';
-import { useTextStyles } from '../../Text/useTextStyles';
+import { textStyles } from '../../Text/textStyles';
 
 import * as styles from './CheckableBase.css';
 
@@ -106,13 +106,13 @@ export const CheckableBase = forwardRef<HTMLInputElement, CheckableBaseProps>(
 					pointerEvents={disabled ? 'none' : void 0}
 					className={clsx(
 						boxStyles({ as: 'button' }),
-						useTextStyles({ size: '4' }),
+						textStyles({ size: '4' }),
 						{
 							[styles.label.disabled]: disabled,
 						},
 					)}
 				>
-					{nakedLabel ? <Text is="span">{label}</Text> : label}
+					{nakedLabel ? <Text as="span">{label}</Text> : label}
 				</Box>
 			</Box>
 		);

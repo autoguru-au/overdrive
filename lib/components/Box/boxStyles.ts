@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import type { ElementType } from 'react';
 
-import { element } from '../../reset/reset.css';
+import { resetStyles } from '../../styles/resetStyles';
 import {
 	sprinkles,
 	sprinklesLegacyColours,
@@ -15,62 +15,64 @@ export type BoxStylesProps<E extends ElementType = 'div'> = AsPolyProp<E> &
 	Pick<CommonBoxProps, 'className'> &
 	StyleProps;
 
-const borderColorProps = [
-	'borderColor',
-	'borderBottomColor',
-	'borderLeftColor',
-	'borderRightColor',
-	'borderTopColor',
-];
-const borderStyleProps = [
-	'borderStyle',
-	'borderBottomStyle',
-	'borderLeftStyle',
-	'borderRightStyle',
-	'borderTopStyle',
-];
-const borderWidthProps = [
-	'borderWidth',
-	'borderBottomWidth',
-	'borderLeftWidth',
-	'borderRightWidth',
-	'borderTopWidth',
-];
+export type BoxStylesReturn<P extends object> = [string, P];
+
+const borderProperties = ['Color', 'Colour', 'Width'];
+const borderPostfixes = ['', 'Bottom', 'Left', 'Right', 'Top'];
 
 /**
- * A function to be used for the `className` prop, returns combined base reset styles for the specified HTML element
- * and concatenates classes together with `className` can be an array, object, or other `clsx`-supported structure
+ * Processes component props, or used directly with style prop values to
+ * generate the combined className string for all style props (mapped from
+ * vanilla-extract sprinkles) as well the incoming className.
+ *
+ * Also applies tag-specific resets based on the `as` prop value.
+ *
+ * @returns A `{ className, baseProps }` where baseProps are leftover after extracting
+ * all style props.
  */
-export const boxStyles = <E extends ElementType = 'div'>({
+export const boxStylesWithFilteredProps = <E extends ElementType = 'div'>({
 	as,
 	className,
 	...props
 }: BoxStylesProps<E>) => {
-	const tagName: string = as?.toString() ?? 'div';
-	const resets = tagName in element ? element[tagName] : '';
-
-	const hasBorderStyle = borderStyleProps.some((key) => !!props[key]);
-	const hasBorderColorOrWidth = [
-		...borderColorProps,
-		...borderWidthProps,
-	].some((key) => !!props[key]);
-
 	const {
 		sprinklesProps,
 		sprinklesResponsiveProps,
 		sprinklesLegacyColourProps,
+		baseProps,
 	} = filterPropsWithStyles(props);
 
-	// a little bit of logic specific border properties for backwards compatability
-	if (hasBorderColorOrWidth && !hasBorderStyle) {
-		sprinklesProps['borderStyle'] = 'solid';
+	// a little bit of logic specific to border properties for backwards compatability
+	for (const postfix of borderPostfixes) {
+		for (const property of borderProperties) {
+			if (props[`border${postfix}${property}`]) {
+				sprinklesProps[`border${postfix}Style`] = 'solid';
+			}
+		}
 	}
 
-	return clsx(
-		resets,
-		sprinkles(sprinklesProps),
-		sprinklesResponsive(sprinklesResponsiveProps),
-		sprinklesLegacyColours(sprinklesLegacyColourProps),
-		className,
-	);
+	return {
+		className: clsx(
+			resetStyles({ as: as ? `${as}` : as }),
+			sprinkles(sprinklesProps),
+			sprinklesResponsive(sprinklesResponsiveProps),
+			sprinklesLegacyColours(sprinklesLegacyColourProps),
+			className,
+		),
+		baseProps,
+	};
+};
+
+/**
+ * Processes component props, or used directly with style prop values to
+ * generate the combined className string for all style props (mapped from
+ * vanilla-extract sprinkles) as well the incoming className.
+ *
+ * Also applies tag-specific resets based on the `as` prop value.
+ */
+export const boxStyles = <E extends ElementType = 'div'>(
+	props: BoxStylesProps<E>,
+) => {
+	const { className } = boxStylesWithFilteredProps<E>(props);
+	return className;
 };

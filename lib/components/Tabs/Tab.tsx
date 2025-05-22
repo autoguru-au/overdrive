@@ -4,7 +4,7 @@ import React, { cloneElement, type ElementType, useContext } from 'react';
 import { useBox, type UseBoxProps } from '../Box/useBox';
 import { Inline } from '../Inline/Inline';
 import { Text } from '../Text/Text';
-import { useTextStyles } from '../Text/useTextStyles';
+import { textStyles } from '../Text/textStyles';
 
 import * as styles from './Tab.css';
 import { TabListContext } from './TabList';
@@ -42,7 +42,7 @@ export const Tab = <E extends ElementType>({
 		as: typeof as === 'string' ? as : 'button',
 		backgroundColour: 'transparent',
 		className: [
-			useTextStyles({
+			textStyles({
 				noWrap: true,
 				size: '3',
 				fontWeight: 'bold',
@@ -68,9 +68,8 @@ export const Tab = <E extends ElementType>({
 			{typeof indication === 'number' && (
 				<Text
 					strong
-					is="span"
+					as="span"
 					size="2"
-					align="center"
 					display="block"
 					colour={isActive ? 'white' : 'dark'}
 					className={styles.indication({

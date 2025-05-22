@@ -7,4 +7,5 @@ export const cssLayerTypography = globalLayer(
 	'typography',
 );
 export const cssLayerUtil = globalLayer('util');
+export const cssColorSet = globalLayer('colorset');
 export const cssLayerComponent = globalLayer('component');

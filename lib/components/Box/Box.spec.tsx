@@ -8,7 +8,7 @@ import * as stories from './Box.stories';
 const { ComponentAsProp, DataAttributes, ResponsiveProps, Standard } =
 	composeStories(stories);
 
-describe('Box', () => {
+describe('<Box />', async () => {
 	it('renders the standard Box story', async () => {
 		await Standard.run();
 		const text = `${Standard.args.children}`;
@@ -100,7 +100,7 @@ describe('Box', () => {
 
 	it('applies colour and backgroundColour props', () => {
 		render(
-			<Box color="onSurface" backgroundColor="danger">
+			<Box color="normal" backgroundColor="danger">
 				Coloured Box
 			</Box>,
 		);

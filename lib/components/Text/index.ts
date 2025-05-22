@@ -1,4 +1,2 @@
-export { Text, type TextProps } from './Text';
-export { useTextStyles } from './useTextStyles';
-
-export type { TextStyleProps } from './useTextStyles';
+export * from './Text';
+export * from './textStyles';

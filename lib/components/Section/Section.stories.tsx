@@ -8,6 +8,7 @@ import { Section } from './Section';
 
 export default {
 	title: 'Layout/Section',
+	tags: ['polymorphic'],
 	component: Section,
 	argTypes: {
 		paddingX: boxArgTypes.paddingX,

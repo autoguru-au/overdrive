@@ -44,14 +44,14 @@ export const Standard: Story = {
 					borderRadius="1"
 					overflow="hidden"
 				>
-					<Heading as="h2" align="center" colour="white">
+					<Heading as="h2" colour="white">
 						I&apos;m a sticky header
 					</Heading>
 				</Box>
 			</StickyBox>
 			<Box padding="5" width="full" style={{ minHeight: '300vh' }}>
 				{Array.from({ length: 100 }).map((_, i) => (
-					<Text key={i} is="p">
+					<Text key={i} as="p">
 						I am page content {i + 1}
 					</Text>
 				))}

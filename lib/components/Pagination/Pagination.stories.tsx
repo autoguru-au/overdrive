@@ -15,14 +15,14 @@ type Story = StoryObj<typeof Pagination>;
 
 const renderPagination = (args: any) => (
 	<Box
+		alignItems="center"
+		display="flex"
+		justifyContent="center"
+		py="6"
 		style={{
-			height: '100vh',
-			width: '100vw',
 			maxHeight: '350px',
 		}}
-		display="flex"
-		alignItems="center"
-		justifyContent="center"
+		width="full"
 	>
 		<Pagination {...args} />
 	</Box>

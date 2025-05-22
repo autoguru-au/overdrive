@@ -12,7 +12,7 @@ const meta = {
 	component: TextContainer,
 	args: {
 		children: (
-			<Text colour="muted" is="p">
+			<Text colour="muted" as="p">
 				To avoid you coming to a halt in the middle of the road, because
 				of a banging, crash of pistons and valves fighting with each
 				other, let&apos;s investigate what the timing belt is, what it

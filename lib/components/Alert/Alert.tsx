@@ -16,7 +16,7 @@ import { Button } from '../Button/Button';
 import { Icon } from '../Icon/Icon';
 import { IntentStripe } from '../IntentStripe/IntentStripe';
 import { Text } from '../Text/Text';
-import { useTextStyles } from '../Text/useTextStyles';
+import { textStyles } from '../Text/textStyles';
 
 import * as styles from './Alert.css';
 
@@ -47,8 +47,8 @@ export const Alert: FunctionComponent<AlertProps> = ({
 	onRequestClose,
 	dismissible = typeof onRequestClose === 'function',
 }) => {
-	const dismissBtnStyles = useTextStyles({ colour: 'muted' });
-	const intentColourStyles = useTextStyles({ colour: intent });
+	const dismissBtnStyles = textStyles({ colour: 'muted' });
+	const intentColourStyles = textStyles({ colour: intent });
 
 	return (
 		<Box
@@ -81,7 +81,7 @@ export const Alert: FunctionComponent<AlertProps> = ({
 				<Box
 					alignSelf="center"
 					width="auto"
-					className={useTextStyles({ colour: 'dark' })}
+					className={textStyles({ colour: 'dark' })}
 				>
 					{typeof children === 'string' ? (
 						<Text>{children}</Text>

@@ -1,17 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
+import { expect, within } from 'storybook/test';
 
-import { Text, type TextProps } from './Text';
-import type { TextSize } from './useTextStyles';
-import * as styles from './useTextStyles.css';
+import { valueArrays } from '../../styles/sprinkles.css';
+import { overdriveTokens } from '../../themes';
 
-const elements: TextProps['as'][] = ['p', 'label', 'span'];
+import { Text, type TextTags } from './Text';
+
+const elements: TextTags[] = ['p', 'label', 'span'];
 const Wrapper = ({ children }) => (
 	<div style={{ maxWidth: '350px', width: '100%' }}>{children}</div>
 );
 
 const meta: Meta<typeof Text> = {
 	title: 'Primatives/Text',
+	tags: ['polymorphic'],
 	component: Text,
 	decorators: [(Story) => <Wrapper>{Story()}</Wrapper>],
 	args: {
@@ -33,6 +36,18 @@ type Story = StoryObj<typeof Text>;
 export const Standard: Story = {
 	args: {
 		children: 'Help people better care for their cars',
+		id: 'story-text',
+		testId: 'test-text',
+	},
+	play: async ({ args, canvasElement, step }) => {
+		const canvas = within(canvasElement);
+		const para = canvas.getAllByRole('paragraph')[0];
+
+		await step('<Text /> renders content and id attributes', async () => {
+			await expect(para).toHaveTextContent(args.children as string);
+			await expect(para).toHaveAttribute('id', args.id);
+			await expect(para).toHaveAttribute('data-test-id', args.testId);
+		});
 	},
 };
 
@@ -59,8 +74,8 @@ export const AllSizes: Story = {
 	},
 	render: (args) => (
 		<>
-			{Object.keys(styles.sizes).map((size) => (
-				<Text key={size} {...args} size={size as TextSize} />
+			{valueArrays.fontSizes.map((size) => (
+				<Text key={size} {...args} size={size} />
 			))}
 		</>
 	),
@@ -72,16 +87,13 @@ export const AllColours: Story = {
 	},
 	render: ({ children, ...args }) => (
 		<>
-			{Object.keys(styles.colours).map((color) => (
+			{Object.keys(overdriveTokens.typography.colour).map((color) => (
 				<div key={color} style={{ marginBottom: 8 }}>
 					<Text as="p" size="3" strong>
 						{color}
 					</Text>
-					<Text
-						{...args}
-						as="p"
-						colour={color as keyof typeof styles.colours}
-					>
+					{/*@ts-expect-error wrong ref type */}
+					<Text {...args} as="p" colour={color}>
 						{children}
 					</Text>
 				</div>
@@ -92,13 +104,9 @@ export const AllColours: Story = {
 
 export const WithLongUnspacedText: Story = {
 	args: {
+		as: 'label',
 		breakWord: true,
 		children:
 			'Toavoidyoucomingtoahaltinthemiddleoftheroad,becauseofabanging,crashofpistonsandvalvesfightingwitheachother,letinvestigatewhatthetiming belt is, what it does, and why it costs so much to replace or repair.',
 	},
-	render: (args) => (
-		<>
-			<Text {...args} />
-		</>
-	),
 };

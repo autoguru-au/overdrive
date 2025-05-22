@@ -12,7 +12,7 @@ import React, {
 import { Box } from '../Box/Box';
 import type { UseBoxProps } from '../Box/useBox';
 import { Text, type TextProps } from '../Text/Text';
-import { useTextStyles } from '../Text/useTextStyles';
+import { textStyles } from '../Text/textStyles';
 import * as inputStyles from '../private/InputBase/withEnhancedInput.css';
 
 import * as styles from './EditableText.css';
@@ -24,7 +24,7 @@ type BoxProps = Pick<
 
 type FilteredTextProps = Pick<
 	TextProps,
-	'is' | 'colour' | 'size' | 'children' | 'noWrap'
+	'as' | 'colour' | 'size' | 'children' | 'noWrap'
 >;
 
 type InputProps = Omit<
@@ -55,7 +55,7 @@ type InputMode = 'TEXT' | 'INPUT';
 export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 	(
 		{
-			is,
+			as: is,
 			colour = 'muted',
 			size,
 			display = 'inline-block',
@@ -102,8 +102,8 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 			[incomingOnChange, type, mode],
 		);
 
-		const textStyles = useTextStyles({
-			is,
+		const baseStyle = textStyles({
+			as: `${is}`,
 			colour,
 			size,
 		});
@@ -146,7 +146,7 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 						type={type === 'number' ? 'text' : type}
 						value={inputValue}
 						className={clsx(
-							textStyles,
+							baseStyle,
 							inputStyles.input.itself.root,
 						)}
 						onChange={onChange}
@@ -159,7 +159,7 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 					as={is}
 					colour={colour}
 					size={size}
-					className={clsx(textStyles, styles.text, {
+					className={clsx(baseStyle, styles.text, {
 						[styles.textHidden]: mode === 'INPUT',
 					})}
 				>

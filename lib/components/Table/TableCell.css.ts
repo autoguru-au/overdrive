@@ -3,7 +3,6 @@ import { style } from '@vanilla-extract/css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
 export const root = style({
-	position: 'relative',
 	borderBottomColor: vars.colours.gamut.black100,
 
 	/*

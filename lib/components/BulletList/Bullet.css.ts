@@ -13,7 +13,8 @@ export const root = styleVariants({
 			marginBottom: 0,
 		},
 
-		':before': {
+		'::before': {
+			boxSizing: 'content-box',
 			display: 'block',
 			alignSelf: 'flex-start',
 			width: vars.space['2'],
@@ -24,19 +25,19 @@ export const root = styleVariants({
 		},
 	},
 	circle: {
-		':before': {
+		'::before': {
 			borderRadius: '50%',
 		},
 	},
 	disc: {
-		':before': {
+		'::before': {
 			border: `2px solid ${vars.typography.colour.dark}`,
 			borderRadius: '50%',
 			backgroundColor: 'transparent',
 		},
 	},
 	square: {
-		':before': {
+		'::before': {
 			border: `2px solid ${vars.typography.colour.dark}`,
 			backgroundColor: 'transparent',
 		},
@@ -44,7 +45,7 @@ export const root = styleVariants({
 });
 
 export const noDot = style({
-	':before': {
+	'::before': {
 		visibility: 'hidden',
 	},
 });

@@ -15,7 +15,7 @@ const { none, ...spaceWithoutNone } = space;
 
 const fontSizes = Object.entries(tokens.typography.size).reduce(
 	(sizes, [scale, fontSize]) => {
-		sizes[scale] = fontSize;
+		sizes[scale] = fontSize.fontSize;
 		return sizes;
 	},
 	{},
@@ -23,7 +23,7 @@ const fontSizes = Object.entries(tokens.typography.size).reduce(
 
 const lineHeights = Object.entries(tokens.typography.size).reduce(
 	(sizes, [scale, lineHeight]) => {
-		sizes[scale] = lineHeight;
+		sizes[scale] = lineHeight.lineHeight;
 		return sizes;
 	},
 	{},
@@ -76,6 +76,20 @@ const gapSizesWithVar = Object.entries(space).reduce(
 	>,
 );
 
+export const valueArrays = {
+	borderColors: Object.keys(borderColors),
+	fontSizes: Object.keys(fontSizes),
+	gapSizesWithVar: Object.keys(gapSizesWithVar),
+	intentBackgroundColoursStandard: Object.keys(
+		intentBackgroundColoursStandard,
+	),
+	intentBorderColours: Object.keys(intentBackgroundColoursStandard),
+	intentForegroundColours: Object.keys(
+		intentForegroundColours,
+	) as SprinklesLegacyColours['colour'][],
+	lineHeights: Object.keys(lineHeights),
+};
+
 // --- Base sprinkles (non-responsive)
 const baseProperties = defineProperties({
 	'@layer': cssLayerUtil,
@@ -100,11 +114,17 @@ const baseProperties = defineProperties({
 		fontSize: fontSizes,
 		lineHeight: lineHeights,
 		fontWeight: tokens.typography.fontWeight,
+		textWrap: ['balance', 'pretty', 'stable', 'nowrap'],
 		// Shadows
 		boxShadow: tokens.elevation,
 		// Misc
 		pointerEvents: ['auto', 'none'],
 		userSelect: ['auto', 'text', 'none'],
+		useVar: {
+			gap: {
+				gap: gapVar,
+			},
+		},
 	},
 	shorthands: {
 		text: ['fontSize', 'lineHeight'],
@@ -146,9 +166,8 @@ const legacyColourProperties = defineProperties({
 		borderRightColor: borderColours,
 		borderTopColor: borderColours,
 		color: {
-			...intentForegroundColours,
 			...tokens.colours.foreground,
-			...tokens.colours.gamut,
+			...intentForegroundColours,
 			unset: 'unset',
 		},
 	},
@@ -180,6 +199,25 @@ export type SprinklesLegacyColours = Omit<
 	| 'borderRightColor'
 	| 'borderTopColor'
 	| 'color'
+>;
+
+const legacyTextProperties = defineProperties({
+	'@layer': cssLayerUtil,
+	properties: {
+		color: {
+			...tokens.typography.colour,
+			unset: 'unset',
+		},
+	},
+	shorthands: {
+		colour: ['color'],
+	},
+});
+
+export const sprinklesLegacyText = createSprinkles(legacyTextProperties);
+export type SprinklesLegacyText = Omit<
+	Parameters<typeof sprinklesLegacyText>[0],
+	'color'
 >;
 
 // --- Responsive sprinkles
