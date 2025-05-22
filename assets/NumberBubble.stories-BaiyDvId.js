@@ -1,0 +1,9 @@
+import{r as t,B as v,c as g,y as f}from"./iframe-C_bA5shj.js";import{t as y}from"./number-BbbOPvnN.js";import{T as N}from"./Text-Bu_KMAJq.js";var _="_1hqdrce0";const x={SMALL:"2",MEDIUM:"3",LARGE:"4",X_LARGE:"5"},s=({value:e,textColour:c="white",rawNumbers:d=!1,...p})=>{const b=t.useMemo(()=>e>9&&e<100?"MEDIUM":e>99&&e<9999||e>=9999?"LARGE":"SMALL",[e]);return t.createElement(v,{borderRadius:"full",backgroundColour:"gray900",display:"inline-block",position:"relative",padding:x[b],...p},t.createElement(N,{size:"2",strong:!0,className:g(_,f({position:"absolute"})),colour:c},d?e:y(e)))};try{s.displayName="NumberBubble",s.__docgenInfo={description:"",displayName:"NumberBubble",props:{value:{defaultValue:null,description:"",name:"value",required:!0,type:{name:"number"}},rawNumbers:{defaultValue:{value:"false"},description:"",name:"rawNumbers",required:!1,type:{name:"boolean"}},textColour:{defaultValue:{value:"white"},description:"",name:"textColour",required:!1,type:{name:"enum",value:[{value:'"link"'},{value:'"unset"'},{value:'"white"'},{value:'"dark"'},{value:'"light"'},{value:'"success"'},{value:'"danger"'},{value:'"warning"'},{value:'"neutral"'},{value:'"primary"'},{value:'"brand"'},{value:'"secondary"'},{value:'"shine"'},{value:'"information"'},{value:'"muted"'}]}}}}}catch{}const M={title:"Components/Number Bubble",component:s},r={args:{value:0}},a={args:{value:2345}};var u,o,n;r.parameters={...r.parameters,docs:{...(u=r.parameters)==null?void 0:u.docs,source:{originalSource:`{
+  args: {
+    value: 0
+  }
+}`,...(n=(o=r.parameters)==null?void 0:o.docs)==null?void 0:n.source}}};var l,i,m;a.parameters={...a.parameters,docs:{...(l=a.parameters)==null?void 0:l.docs,source:{originalSource:`{
+  args: {
+    value: 2345
+  }
+}`,...(m=(i=a.parameters)==null?void 0:i.docs)==null?void 0:m.source}}};const h=["Standard","BigNumber"];export{a as BigNumber,r as Standard,h as __namedExportsOrder,M as default};
