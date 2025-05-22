@@ -4,12 +4,12 @@
 
 ### Minor Changes
 
-- 524c1b1: The Heading component has been improved to be consistent with Text
-  and applies balanced text wrap. Anchor and TextLink have been updated to be
-  consistent also.
 - 524c1b1: The `Text` component has been rebuilt with polymorphic `as` prop,
   consistent with Box. The `noWrap` prop has been deprecated as the `textWrap`
   style prop is available in uplifted components.
+- 524c1b1: The Heading component has been improved to be consistent with Text
+  and applies balanced text wrap. Anchor and TextLink have been updated to be
+  consistent also.
 
 ## 4.43.4
 
