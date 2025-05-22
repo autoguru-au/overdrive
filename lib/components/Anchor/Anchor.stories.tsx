@@ -1,5 +1,5 @@
 import { PhoneIcon } from '@autoguru/icons';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { argTypesExampleIcons } from '../../stories/shared/argTypes';
 import { Button } from '../Button/Button';
