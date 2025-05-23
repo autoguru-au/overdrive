@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.44.1
+
+### Patch Changes
+
+- 7996070: Fix for the Columns missing default of `noWrap: false`
+
 ## 4.44.0
 
 ### Minor Changes
