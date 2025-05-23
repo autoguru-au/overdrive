@@ -1,6 +1,6 @@
 import { AccountBoxIcon, ArrowLeftIcon } from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import React, { type ComponentProps } from 'react';
+import React, { type ComponentProps, Fragment } from 'react';
 import { fn } from 'storybook/test';
 
 import { Box } from '../Box/Box';
@@ -23,7 +23,7 @@ const meta: Meta<typeof Button> = {
 		isFullWidth: false,
 		isLoading: false,
 		onPress: fn(),
-		// withDoubleClicks: false,
+		withDoubleClicks: false,
 		testId: 'storybook-button',
 	},
 	argTypes: {
@@ -73,7 +73,7 @@ const TemplateMulti = ({
 			};
 
 			return (
-				<>
+				<Fragment key={size}>
 					<Box
 						textAlign="right"
 						style={{ textTransform: 'capitalize' }}
@@ -141,7 +141,7 @@ const TemplateMulti = ({
 							Login
 						</Button>
 					</Inline>
-				</>
+				</Fragment>
 			);
 		})}
 	</>

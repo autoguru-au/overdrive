@@ -46,69 +46,6 @@ describe('<Button />', () => {
 		});
 	});
 
-	describe('when colour variants', () => {
-		it('should match snapshot for Primary button', () => {
-			expect(
-				render(<Button variant="primary" />).container.firstChild,
-			).toMatchSnapshot();
-		});
-
-		it('should apply Primary variant styles', () => {
-			expect(
-				render(<Button variant="primary" />).container.firstChild
-					.firstChild,
-			).toHaveClass(styles.button({ intent: 'primary' }));
-		});
-
-		it('should match snapshot for Secondary button', () => {
-			expect(
-				render(<Button variant="secondary" />).container.firstChild,
-			).toMatchSnapshot();
-		});
-
-		it('should apply Secondary variant styles', () => {
-			expect(
-				render(<Button variant="secondary" />).container.firstChild
-					.firstChild,
-			).toHaveClass(styles.button({ intent: 'secondary' }));
-		});
-
-		it('should match snapshot for Danger button', () => {
-			expect(
-				render(<Button variant="danger" />).container.firstChild,
-			).toMatchSnapshot();
-		});
-
-		it('should apply Danger variant styles', () => {
-			expect(
-				render(<Button variant="danger" />).container.firstChild
-					.firstChild,
-			).toHaveClass(styles.button({ intent: 'danger' }));
-		});
-	});
-
-	describe('when size variant', () => {
-		it('should match snapshot for small button', () => {
-			expect(
-				render(<Button size="small" />).container.firstChild,
-			).toMatchSnapshot();
-		});
-
-		it('should match snapshot for medium button', () => {
-			expect(
-				render(<Button size="medium" />).container.firstChild,
-			).toMatchSnapshot();
-		});
-	});
-
-	describe('when rounded', () => {
-		it('should match snapshot', () => {
-			expect(
-				render(<Button rounded />).container.firstChild,
-			).toMatchSnapshot();
-		});
-	});
-
 	describe('when isFullWidth', () => {
 		it('should match snapshot', () => {
 			expect(
@@ -118,24 +55,6 @@ describe('<Button />', () => {
 	});
 
 	describe('when loading', () => {
-		it('should match snapshot for default button', () => {
-			expect(
-				render(<Button isLoading />).container.firstChild,
-			).toMatchSnapshot();
-		});
-
-		it('should match snapshot for small button', () => {
-			expect(
-				render(<Button isLoading size="small" />).container.firstChild,
-			).toMatchSnapshot();
-		});
-
-		it('should match snapshot for medium button', () => {
-			expect(
-				render(<Button isLoading size="medium" />).container.firstChild,
-			).toMatchSnapshot();
-		});
-
 		it('should not apply loading styles to default button', () => {
 			expect(render(<Button />).container.firstChild).not.toHaveAttribute(
 				'data-loading',

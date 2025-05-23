@@ -1,10 +1,8 @@
 import { ChevronDownIcon, IconType } from '@autoguru/icons';
-import * as React from 'react';
-import {
-	ComponentProps,
-	FunctionComponent,
-	MouseEventHandler,
-	ReactNode,
+import React, {
+	type ComponentProps,
+	type FunctionComponent,
+	type ReactNode,
 	useCallback,
 	useRef,
 	useState,
@@ -45,17 +43,18 @@ export const DropDown: FunctionComponent<DropDownProps> = ({
 	const menuRef = useRef<HTMLDivElement>(null);
 	const [isOpen, setIsOpen] = useState<boolean>(incomingIsOpen);
 
-	const onMenuClick = useCallback<MouseEventHandler<HTMLButtonElement>>(
+	const onMenuClick = useCallback(
 		(event) => {
 			if (typeof incomingOnClick === 'function') incomingOnClick(event);
 			setIsOpen(!isOpen);
 		},
 		[isOpen, incomingOnClick],
 	);
+
 	useOutsideClick([menuRef], () => setIsOpen(false));
 	return (
 		<>
-			<Button ref={buttonRef} onClick={onMenuClick} {...buttonProps}>
+			<Button ref={buttonRef} onPress={onMenuClick} {...buttonProps}>
 				{label}
 				<Icon icon={icon} />
 			</Button>
