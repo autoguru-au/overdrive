@@ -85,7 +85,6 @@ export const setRef = <T>(ref: Ref<T>, value: T) => {
  * Used to merge multiple refs into a single ref callback
  * @param refs an array of refs
  */
-// using an arrow function here causes a typescript error with the `RefCallback` type
 export function mergeRefs<T>(
 	refs: Array<Ref<T> | undefined | null>,
 ): RefCallback<T> {

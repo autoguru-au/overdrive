@@ -40,22 +40,22 @@ export const SimplePagination: FunctionComponent<SimplePaginationProps> = ({
 			<Button
 				rounded
 				withDoubleClicks
-				disabled={!hasPrevious}
 				size="small"
 				variant="secondary"
 				aria-label="previous page"
 				onClick={handleClick(EChangeDirection.Previous)}
+				isDisabled={!hasPrevious}
 			>
 				<Icon size="medium" icon={ChevronLeftIcon} />
 			</Button>
 			<Button
 				rounded
 				withDoubleClicks
-				disabled={!hasNext}
 				size="small"
 				variant="secondary"
 				aria-label="next page"
 				onClick={handleClick(EChangeDirection.Next)}
+				isDisabled={!hasNext}
 			>
 				<Icon size="medium" icon={ChevronRightIcon} />
 			</Button>
