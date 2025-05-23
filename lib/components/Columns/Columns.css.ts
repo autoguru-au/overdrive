@@ -40,8 +40,9 @@ export const columnsStyle = recipe({
 		},
 	},
 	defaultVariants: {
-		wrappingDirection: 'default',
 		align: 'stretch',
+		noWrap: false,
+		wrappingDirection: 'default',
 	},
 });
 
