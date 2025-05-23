@@ -1,11 +1,5 @@
 # @autoguru/overdrive
 
-## 4.44.1
-
-### Patch Changes
-
-- 7996070: Fix for the Columns missing default of `noWrap: false`
-
 ## 4.44.0
 
 ### Minor Changes
@@ -16,6 +10,12 @@
 - 524c1b1: The Heading component has been improved to be consistent with Text
   and applies balanced text wrap. Anchor and TextLink have been updated to be
   consistent also.
+
+## 4.43.5
+
+### Patch Changes
+
+- 7996070: Fix for the Columns missing default of `noWrap: false`
 
 ## 4.43.4
 
