@@ -1,15 +1,9 @@
-import React, {
-	cloneElement,
-	type ComponentProps,
-	isValidElement,
-	useMemo,
-	useRef,
-} from 'react';
+import React, { cloneElement, isValidElement, useMemo, useRef } from 'react';
 import { type AriaButtonOptions, useButton } from 'react-aria';
 
 import { dataAttrs } from '../../utils/dataAttrs';
-import { BoxLikeProps, useBox, type UseBoxProps } from '../Box/useBox';
-import { Icon } from '../Icon/Icon';
+import { BoxLikeProps, useBox } from '../Box/useBox';
+import { Icon, type IconProps } from '../Icon/Icon';
 import { ProgressSpinner } from '../ProgressSpinner/ProgressSpinner';
 
 import * as styles from './Button.css';
@@ -36,6 +30,29 @@ interface CustomProps extends AriaButtonOptions<'button'>, StyledButtonProps {
 
 export type ButtonProps = BoxLikeProps<'button', CustomProps>;
 
+const getIconProps = (size: ButtonProps['size']) => ({
+	size: size === 'small' ? size : 'medium',
+});
+
+/**
+ * The Button supports a variety of appearances and is one of the main interactive Overdrive
+ * components. `variant`, `size` and `rounded` provide the main choices.
+ *
+ * It is recommended to use the `onPress` and related event handler provided by react-aria.
+ * For more information see the
+ * [usePress](https://react-spectrum.adobe.com/react-aria/usePress.html) documentation.
+ *
+ * Use the `isLoading` prop where there is on-page data handling.
+ *
+ * @example
+ * <Button
+ *   variant="primary"
+ *   size="medium"
+ *   onPress={() => console.info('button clicked')}
+ * >
+ *   Click Me
+ * </Button>
+ */
 export const Button = ({
 	as = 'button',
 	children,
@@ -50,7 +67,7 @@ export const Button = ({
 	variant = 'secondary',
 	...props
 }: ButtonProps) => {
-	const { 'aria-label': ariaLabel, isDisabled } = props;
+	const { 'aria-label': ariaLabel, isDisabled, ...filteredProps } = props;
 	const language = { ...defaultEnglish, ...localeText };
 	const internalRef = useRef<HTMLButtonElement>(null);
 	const isInverse = minimal || variant === 'secondary';
@@ -60,15 +77,14 @@ export const Button = ({
 		return maybeIcon;
 	}, [children]);
 
-	// Determine shape based on rounded and iconOnly status
-	const shape = useMemo(() => {
-		if (isSingleIconChild) return 'iconOnly';
-		if (rounded) return 'rounded';
-		return 'default';
-	}, [isSingleIconChild, rounded]);
+	const shape =
+		(isSingleIconChild && 'iconOnly') ||
+		(rounded && 'rounded') ||
+		'default';
 
 	const { Component, componentProps, reactElement } = useBox({
-		...(props as UseBoxProps<'button'>),
+		// filtered props are needed here to avoid passing in react-aria props
+		...filteredProps,
 		as,
 		className: [
 			styles.button({
@@ -96,30 +112,24 @@ export const Button = ({
 		internalRef,
 	);
 
-	// const ButtonIcon = () => (
-	// 	<Icon
-	// 		{...maybeIconProps}
-	// 		size={
-	// 			(maybeIconProps?.size ?? size === 'small') ? 'small' : 'medium'
-	// 		}
-	// 	/>
-	// );
-
 	const Content = () => {
 		if (isLoading)
 			return (
-				<ProgressSpinner
-					className={styles.spinner}
-					colour={isInverse ? 'secondary' : 'light'}
-				/>
+				<>
+					<div className={styles.spinnerWrapper}>
+						<ProgressSpinner
+							colour={isInverse ? 'secondary' : 'light'}
+						/>
+					</div>
+					<div className={styles.hiddenContent}>{children}</div>
+				</>
 			);
 
-		if (isSingleIconChild && isValidElement(children)) {
-			const cloneIcon = cloneElement<
-				ComponentProps<typeof Icon>,
-				typeof Icon
-			>(children, { size: 'medium' });
-			console.info('returning a clone icon');
+		if (isSingleIconChild) {
+			const cloneIcon = cloneElement(
+				children as React.ReactElement<IconProps>,
+				getIconProps(size),
+			);
 			return <>{cloneIcon}</>;
 		}
 

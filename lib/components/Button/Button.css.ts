@@ -2,6 +2,7 @@ import { style } from '@vanilla-extract/css';
 import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
+import { sprinklesResponsive } from '../../styles/sprinkles.css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
 const intentColors = vars.colours.intent;
@@ -9,14 +10,14 @@ const smallHeight = '36px';
 
 const selectorFocusHoverActive =
 	'&:focus-visible, &:not(:disabled):hover, &:not(:disabled):active';
-
-export const hiddenContent = style({
-	visibility: 'hidden',
+export const hiddenContent = style({ visibility: 'hidden' });
+export const spinnerWrapper = sprinklesResponsive({
+	display: 'grid',
+	placeItems: 'center',
+	position: 'absolute',
+	width: 'full',
 });
-
-export const spinner = style({
-	margin: '0 auto',
-});
+export const spinner = sprinklesResponsive({ mx: 'auto' });
 
 // Button recipe with all variants
 export const button = recipe({
@@ -31,6 +32,7 @@ export const button = recipe({
 			justifyContent: 'center',
 			lineHeight: 1,
 			padding: `0 ${vars.space[4]}`,
+			position: 'relative',
 			transitionTimingFunction: vars.animation.easing.standard,
 			transitionDuration: '0.1s',
 			transitionProperty:
@@ -74,7 +76,9 @@ export const button = recipe({
 		shape: {
 			default: {},
 			rounded: {},
-			iconOnly: {},
+			iconOnly: {
+				padding: 0,
+			},
 		},
 		// Intent (color scheme) variants
 		intent: {

@@ -22,7 +22,7 @@ const meta: Meta<typeof Button> = {
 		isDisabled: false,
 		isFullWidth: false,
 		isLoading: false,
-		onClick: fn(),
+		onPress: fn(),
 		// withDoubleClicks: false,
 		testId: 'storybook-button',
 	},
@@ -60,14 +60,14 @@ export const ExtraSmall: Story = {
 
 const TemplateMulti = ({
 	children,
-	onClick,
+	onPress,
 	variant,
 }: ComponentProps<typeof Button>) => (
 	<>
 		{['medium', 'small'].map((size) => {
 			const args = {
 				children,
-				onClick,
+				onPress,
 				size: size as ButtonProps['size'],
 				variant,
 			};

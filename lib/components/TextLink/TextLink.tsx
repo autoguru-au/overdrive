@@ -25,12 +25,10 @@ export type TextLinkProps = BoxLikeProps<'a', CustomProps>;
  * TextLink component for rendering navigation links
  *
  * @example
- * ```tsx
  * <TextLink href="https://example.com">Click me</TextLink>
  *
  * // With an icon
  * <TextLink href="/settings" icon={SettingsIcon}>Settings</TextLink>
- * ```
  */
 export const TextLink = ({
 	as = 'a',

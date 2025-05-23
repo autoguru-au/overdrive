@@ -2,7 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { expect, within } from 'storybook/test';
 
-import { valueArrays } from '../../styles/sprinkles.css';
+import {
+	type SprinklesLegacyText,
+	valueArrays,
+} from '../../styles/sprinkles.css';
 import { overdriveTokens } from '../../themes';
 
 import { Text, type TextTags } from './Text';
@@ -93,7 +96,11 @@ export const AllColours: Story = {
 						{color}
 					</Text>
 					{/*@ts-expect-error wrong ref type */}
-					<Text {...args} as="p" colour={color}>
+					<Text
+						{...args}
+						as="p"
+						colour={color as SprinklesLegacyText['colour']}
+					>
 						{children}
 					</Text>
 				</div>
