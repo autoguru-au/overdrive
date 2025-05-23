@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { expect, within } from '@storybook/test';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
+import { expect, within } from 'storybook/test';
 
 import { valueArrays } from '../../styles/sprinkles.css';
 import { overdriveTokens } from '../../themes';
@@ -75,7 +75,6 @@ export const AllSizes: Story = {
 	render: (args) => (
 		<>
 			{valueArrays.fontSizes.map((size) => (
-				// @ts-expect-error wrong ref type
 				<Text key={size} {...args} size={size} />
 			))}
 		</>

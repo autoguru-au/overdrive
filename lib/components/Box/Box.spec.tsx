@@ -1,4 +1,4 @@
-import { composeStories } from '@storybook/react';
+import { composeStories } from '@storybook/react-vite';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 
@@ -9,21 +9,21 @@ const { ComponentAsProp, DataAttributes, ResponsiveProps, Standard } =
 	composeStories(stories);
 
 describe('<Box />', async () => {
-	await it('renders the standard Box story', async () => {
+	it('renders the standard Box story', async () => {
 		await Standard.run();
-		const text = Standard.args.children;
+		const text = `${Standard.args.children}`;
 		const boxElement = screen.getByText(text);
 		expect(boxElement.tagName).toBe('DIV');
 	});
 
-	await it('renders the Box story with responsive props', async () => {
+	it('renders the Box story with responsive props', async () => {
 		await ResponsiveProps.run();
 		const boxElement = screen.getByText('Resize the viewport');
 		expect(boxElement.className).toMatchSnapshot();
 	});
 
 	// Test suite for className prop
-	await it('merges custom className with component styles', () => {
+	it('merges custom className with component styles', () => {
 		render(
 			<Box padding="3" className="my-custom-class another-class">
 				Custom Class Box
@@ -37,7 +37,7 @@ describe('<Box />', async () => {
 	});
 
 	// Test suite for the 'as' prop
-	await it('renders as a button element', () => {
+	it('renders as a button element', () => {
 		render(<Box as="button">Button Box</Box>);
 		const buttonElement = screen.getByRole('button', {
 			name: 'Button Box',
@@ -45,7 +45,7 @@ describe('<Box />', async () => {
 		expect(buttonElement.tagName).toBe('BUTTON');
 	});
 
-	await it('renders using a React element passed to "as" prop', async () => {
+	it('renders using a React element passed to "as" prop', async () => {
 		await ComponentAsProp.run();
 		const boxElement = screen.getByText(
 			'Styled props merged with custom component',
@@ -59,7 +59,7 @@ describe('<Box />', async () => {
 		expect(boxElement).not.toHaveAttribute('p');
 	});
 
-	await it('renders as an anchor tag with href', () => {
+	it('renders as an anchor tag with href', () => {
 		render(
 			<Box as="a" href="/test-link">
 				Anchor Box
@@ -73,7 +73,7 @@ describe('<Box />', async () => {
 	});
 
 	// Test suite for data attributes
-	await it('renders with odComponent and testId props', async () => {
+	it('renders with odComponent and testId props', async () => {
 		await DataAttributes.run();
 		const boxElement = screen.getByText('The most basic box (or is it?)');
 		expect(boxElement).toHaveAttribute('id', 'so-basic');
@@ -86,19 +86,19 @@ describe('<Box />', async () => {
 	});
 
 	// Test suite for style props
-	await it('applies basic style props (padding)', () => {
+	it('applies basic style props (padding)', () => {
 		render(<Box padding="4">Padded Box</Box>);
 		const boxElement = screen.getByText('Padded Box');
 		expect(boxElement.className).toMatchSnapshot();
 	});
 
-	await it('applies responsive style props for padding', () => {
+	it('applies responsive style props for padding', () => {
 		render(<Box padding={['2', '4', '6']}>Responsive Padded Box</Box>);
 		const boxElement = screen.getByText('Responsive Padded Box');
 		expect(boxElement.className).toMatchSnapshot();
 	});
 
-	await it('applies colour and backgroundColour props', () => {
+	it('applies colour and backgroundColour props', () => {
 		render(
 			<Box color="normal" backgroundColor="danger">
 				Coloured Box
@@ -108,7 +108,7 @@ describe('<Box />', async () => {
 		expect(boxElement.className).toMatchSnapshot();
 	});
 
-	await it('applies border props correctly', () => {
+	it('applies border props correctly', () => {
 		render(
 			<Box borderColor="warning" borderWidth="2">
 				Bordered Box

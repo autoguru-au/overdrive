@@ -215,7 +215,7 @@ const legacyTextProperties = defineProperties({
 });
 
 export const sprinklesLegacyText = createSprinkles(legacyTextProperties);
-export type SprinkesLegacyText = Omit<
+export type SprinklesLegacyText = Omit<
 	Parameters<typeof sprinklesLegacyText>[0],
 	'color'
 >;

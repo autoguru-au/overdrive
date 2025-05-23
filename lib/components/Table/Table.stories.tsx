@@ -1,4 +1,4 @@
-import { Meta, type StoryObj } from '@storybook/react';
+import { Meta, type StoryObj } from '@storybook/react-vite';
 import React, { useState } from 'react';
 
 import { arrayRingLookup } from '../../utils';

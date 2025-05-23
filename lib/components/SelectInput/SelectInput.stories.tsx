@@ -1,7 +1,7 @@
 import { CarIcon } from '@autoguru/icons';
-import { action } from '@storybook/addon-actions';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { type ComponentProps } from 'react';
+import { action } from 'storybook/actions';
 
 import { argTypesExampleIcons } from '../../stories/shared/argTypes';
 import { DateInput } from '../DateInput/DateInput';

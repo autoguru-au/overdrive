@@ -1,10 +1,28 @@
 # @autoguru/overdrive
 
+## 4.44.0
+
+### Minor Changes
+
+- 524c1b1: The `Text` component has been rebuilt with polymorphic `as` prop,
+  consistent with Box. The `noWrap` prop has been deprecated as the `textWrap`
+  style prop is available in uplifted components.
+- 524c1b1: The Heading component has been improved to be consistent with Text
+  and applies balanced text wrap. Anchor and TextLink have been updated to be
+  consistent also.
+
+## 4.43.5
+
+### Patch Changes
+
+- 7996070: Fix for the Columns missing default of `noWrap: false`
+
 ## 4.43.4
 
 ### Patch Changes
 
-- a2118b7: **Columns** `alignSelf` prop switched to "top"/"bottom" to match existing usage
+- a2118b7: **Columns** `alignSelf` prop switched to "top"/"bottom" to match
+  existing usage
 - a2118b7: Style props for `order`, `flexGrow`/`flexShrink` are now text unions
   instead of number
 
@@ -2129,20 +2147,20 @@
     backdrop. Also; if you wish to remove the fadeIn/fadeOut animation, a
     `transition?: boolean` can also be provided.
 
-	- Removes `<ModalPortal />` in favor of `<Modal />`
-	- Deprecated `withModal`, which could simply just use the Modal component
+    - Removes `<ModalPortal />` in favor of `<Modal />`
+    - Deprecated `withModal`, which could simply just use the Modal component
 
-    Worth noting that a `role="presentation"` is applied to the `Modal`, so
-    consumers should be applying a `role="none presentation"` to their direct
-    parent, if you wish content to be read out.
+        Worth noting that a `role="presentation"` is applied to the `Modal`, so
+        consumers should be applying a `role="none presentation"` to their
+        direct parent, if you wish content to be read out.
 
-    eg:
+        eg:
 
-    ```jsx
-    <Modal isOpen={true} onRequestClose={function () {}}>
-    	>
-    </Modal>
-    ```
+        ```jsx
+        <Modal isOpen={true} onRequestClose={function () {}}>
+        	>
+        </Modal>
+        ```
 
 ## 2.0.2
 

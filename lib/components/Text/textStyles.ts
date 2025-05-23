@@ -6,7 +6,7 @@ import {
 	sprinkles,
 	sprinklesLegacyText,
 	type Sprinkles,
-	type SprinkesLegacyText,
+	type SprinklesLegacyText,
 } from '../../styles/sprinkles.css';
 import {
 	typographyStyles,
@@ -15,7 +15,7 @@ import {
 import { onlyString } from '../../utils/propGuards';
 
 export type TextColor = Sprinkles['color'];
-export type TextColour = SprinkesLegacyText['colour'];
+export type TextColour = SprinklesLegacyText['colour'];
 export type TextSize = Sprinkles['text'];
 export type FontWeight = Sprinkles['fontWeight'];
 

@@ -1,6 +1,6 @@
-import { action } from '@storybook/addon-actions';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
+import { action } from 'storybook/actions';
 
 import { boxArgTypes } from '../../stories/shared/argTypes-box';
 import { Box } from '../Box/Box';
