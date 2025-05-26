@@ -38,6 +38,7 @@ export const button = recipe({
 			transitionProperty:
 				'color, background-color, border-color, box-shadow, transform',
 			transform: 'translate(0, 0) scale(1)',
+			width: 'fit-content',
 			willChange: 'transform',
 			selectors: {
 				'&:active:not(:disabled, [data-loading])': {
@@ -300,7 +301,7 @@ export type ButtonIsLoading = ButtonRecipeProps['isLoading'];
 export type ButtonMinimal = ButtonRecipeProps['minimal'];
 export type ButtonRounded = ButtonRecipeProps['rounded'];
 
-export interface StyledButtonProps {
+export interface ButtonStyleProps {
 	/**
 	 * Button sizing
 	 */
@@ -310,10 +311,13 @@ export interface StyledButtonProps {
 	 */
 	variant?: ButtonIntent;
 	/**
+	 * Pill shaped button appearance
+	 */
+	rounded?: ButtonRounded;
+	/**
 	 * Present a borderless minimal appearance
 	 */
 	minimal?: ButtonMinimal;
 	isFullWidth?: ButtonIsFullWidth;
 	isLoading?: ButtonIsFullWidth;
-	rounded?: ButtonRounded;
 }

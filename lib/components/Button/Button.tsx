@@ -5,7 +5,7 @@ import React, {
 	useMemo,
 	useState,
 	useEffect,
-	PropsWithChildren,
+	type PropsWithChildren,
 } from 'react';
 import {
 	type AriaButtonOptions,
@@ -20,7 +20,7 @@ import { Icon, type IconProps } from '../Icon/Icon';
 import { ProgressSpinner } from '../ProgressSpinner/ProgressSpinner';
 
 import * as styles from './Button.css';
-import type { StyledButtonProps } from './Button.css';
+import type { ButtonStyleProps } from './Button.css';
 
 const DOUBLE_CLICK_DETECTION_PERIOD = 700;
 const LOCALE_TEXT = {
@@ -29,11 +29,7 @@ const LOCALE_TEXT = {
 
 type LocaleText = Partial<Record<keyof typeof LOCALE_TEXT, string>>;
 
-interface CustomProps extends AriaButtonOptions<'button'>, StyledButtonProps {
-	/**
-	 * Pill shaped button appearance
-	 */
-	rounded?: boolean;
+interface CustomProps extends AriaButtonOptions<'button'>, ButtonStyleProps {
 	/**
 	 * Language content overrides
 	 */
@@ -59,7 +55,7 @@ const Spinner = ({
 	</>
 );
 
-const getIconProps = (size: ButtonProps['size']) => ({
+export const getIconProps = (size: ButtonProps['size']) => ({
 	size: size === 'small' ? size : 'medium',
 });
 
@@ -75,6 +71,11 @@ const getIconProps = (size: ButtonProps['size']) => ({
  * [usePress](https://react-spectrum.adobe.com/react-aria/usePress.html) documentation.
  *
  * Use the `isLoading` prop where there is on-page data handling.
+ *
+ * _NOTE:_ Button `as` prop cannot be provided an HTML tag. `<button>` components are
+ * interactive and accessible for use with event handlers and disabled or loading states.
+ *
+ * Please _DO NOT_ use a `<div>` tag as a button, choose an interactive HTML element.
  *
  * @example
  * <Button

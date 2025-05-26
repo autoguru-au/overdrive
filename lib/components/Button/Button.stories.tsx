@@ -11,7 +11,7 @@ import { Button, type ButtonProps } from './Button';
 
 const meta: Meta<typeof Button> = {
 	title: 'Primatives/Buttons',
-	tags: ['polymorphic'],
+	tags: [],
 	component: Button,
 	args: {
 		variant: 'secondary',
@@ -25,11 +25,6 @@ const meta: Meta<typeof Button> = {
 		onPress: fn(),
 		withDoubleClicks: false,
 		testId: 'storybook-button',
-	},
-	argTypes: {
-		is: {
-			options: ['button', 'a'],
-		},
 	},
 };
 
