@@ -1,10 +1,11 @@
 import React, {
 	cloneElement,
 	isValidElement,
-	useMemo,
 	useCallback,
+	useMemo,
 	useState,
 	useEffect,
+	PropsWithChildren,
 } from 'react';
 import {
 	type AriaButtonOptions,
@@ -34,7 +35,7 @@ interface CustomProps extends AriaButtonOptions<'button'>, StyledButtonProps {
 	 */
 	rounded?: boolean;
 	/**
-	 * Language content override
+	 * Language content overrides
 	 */
 	localeText?: LocaleText;
 	/**
@@ -46,6 +47,18 @@ interface CustomProps extends AriaButtonOptions<'button'>, StyledButtonProps {
 
 export type ButtonProps = BoxLikeProps<'button', CustomProps>;
 
+const Spinner = ({
+	isInverse,
+	children,
+}: PropsWithChildren<{ isInverse: boolean }>) => (
+	<>
+		<div className={styles.spinnerWrapper}>
+			<ProgressSpinner colour={isInverse ? 'secondary' : 'light'} />
+		</div>
+		<div className={styles.hiddenContent}>{children}</div>
+	</>
+);
+
 const getIconProps = (size: ButtonProps['size']) => ({
 	size: size === 'small' ? size : 'medium',
 });
@@ -53,6 +66,9 @@ const getIconProps = (size: ButtonProps['size']) => ({
 /**
  * The Button supports a variety of appearances and is one of the main interactive Overdrive
  * components. `variant`, `size` and `rounded` provide the main choices.
+ *
+ * By default the button will have a disabled timeout to avoid multiple rapid clicks.
+ * To prevent this feature, use the `withDoubleClicks` prop.
  *
  * It is recommended to use the `onPress` and related event handler provided by react-aria.
  * For more information see the
@@ -71,19 +87,24 @@ const getIconProps = (size: ButtonProps['size']) => ({
  */
 export const Button = ({
 	as = 'button',
-	children,
+	type = 'button',
 	className,
-	isLoading = false,
-	isFullWidth = false,
+	children,
 	localeText,
+
+	// custom props
+	size = 'medium',
+	variant = 'secondary',
+	rounded = false,
 	minimal = false,
+	isFullWidth = false,
+	isLoading = false,
+	withDoubleClicks = false,
+
+	// event handlers
 	onClick: incomingOnClick,
 	onPress: incomingOnPress,
-	rounded = false,
-	size = 'medium',
-	type = 'button',
-	variant = 'secondary',
-	withDoubleClicks = false,
+
 	...props
 }: ButtonProps) => {
 	const {
@@ -100,7 +121,9 @@ export const Button = ({
 
 	const handleOnClick = useCallback<NonNullable<PressEvents['onClick']>>(
 		(event) => {
-			if (!withDoubleClicks) setFunctionallyDisabled(true);
+			if (!withDoubleClicks) {
+				setFunctionallyDisabled(true);
+			}
 			if (typeof incomingOnClick === 'function') incomingOnClick(event);
 		},
 		[incomingOnClick, withDoubleClicks],
@@ -108,7 +131,9 @@ export const Button = ({
 
 	const handleOnPress = useCallback<NonNullable<PressEvents['onPress']>>(
 		(event) => {
-			if (!withDoubleClicks) setFunctionallyDisabled(true);
+			if (!withDoubleClicks) {
+				setFunctionallyDisabled(true);
+			}
 			if (typeof incomingOnPress === 'function') incomingOnPress(event);
 		},
 		[incomingOnPress, withDoubleClicks],
@@ -125,10 +150,13 @@ export const Button = ({
 		return void 0;
 	}, [functionallyDisabled]);
 
-	const isSingleIconChild = useMemo(() => {
-		const maybeIcon = isValidElement(children) && children.type === Icon;
-		return maybeIcon;
-	}, [children]);
+	const isSingleIconChild = useMemo(
+		() =>
+			isValidElement(children) &&
+			children.type === Icon &&
+			typeof children.type !== 'string',
+		[children],
+	);
 
 	const shape =
 		(isSingleIconChild && 'iconOnly') ||
@@ -170,16 +198,7 @@ export const Button = ({
 
 	const Content = () => {
 		if (isLoading)
-			return (
-				<>
-					<div className={styles.spinnerWrapper}>
-						<ProgressSpinner
-							colour={isInverse ? 'secondary' : 'light'}
-						/>
-					</div>
-					<div className={styles.hiddenContent}>{children}</div>
-				</>
-			);
+			return <Spinner isInverse={isInverse}>{children}</Spinner>;
 
 		if (isSingleIconChild) {
 			const cloneIcon = cloneElement(
