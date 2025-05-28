@@ -33,7 +33,7 @@ import type { InputSize } from './withEnhancedInput.css';
 type ElementTypes = HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
 type NativeAttributes<E extends ElementTypes> = Omit<
 	InputHTMLAttributes<E>,
-	'height' | 'is' | 'placeholder' | 'size' | 'width'
+	'color' | 'height' | 'is' | 'placeholder' | 'size' | 'width'
 >;
 
 // The event handlers we'll allow the wrapped component to bind too

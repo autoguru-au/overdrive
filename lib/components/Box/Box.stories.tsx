@@ -15,7 +15,7 @@ const meta: Meta<typeof Box> = {
 		borderRadius: 'none',
 		borderColour: 'gray',
 		borderWidth: '2',
-		display: 'inline-flex',
+		display: 'inlineFlex',
 		margin: undefined,
 		padding: '6',
 		textAlign: undefined,
@@ -45,8 +45,8 @@ export const DataAttributes: Story = {
 	render: () => (
 		<Box
 			id="so-basic"
-			odComponent="box-basic"
-			testId="basically-perfect"
+			// odComponent="box-basic"
+			// testId="basically-perfect"
 			data-custom-attribute="somewhat less basic"
 		>
 			The most basic box (or is it?)

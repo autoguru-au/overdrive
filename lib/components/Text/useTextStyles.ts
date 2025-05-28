@@ -18,7 +18,7 @@ export interface TextStyleProps {
 	as?: TextTags;
 	/** Set the text colour */
 	color?: TextColor;
-	/** @deprecated Prefer `color` */
+	/** _in transistion_ Prefer `color` */
 	colour?: TextColor;
 	/** Font weight of the text */
 	fontWeight?: TextFontWeight;
