@@ -1,16 +1,18 @@
 import clsx from 'clsx';
-import type { AllHTMLAttributes } from 'react';
-import React, { forwardRef, ReactNode } from 'react';
+import type { AllHTMLAttributes, ElementType, ReactNode } from 'react';
+import React, { forwardRef } from 'react';
 
-import type { BoxStyleProps } from './useBoxStyles';
-import { useBoxStyles } from './useBoxStyles';
+import { boxStyles, type BoxStylesProps } from './newBox/boxStyles';
 
 export interface BoxProps
-	extends BoxStyleProps,
+	extends Omit<BoxStylesProps, 'as'>,
 		Omit<
 			AllHTMLAttributes<HTMLElement>,
-			'as' | 'width' | 'height' | 'className' | 'is'
+			'as' | 'width' | 'height' | 'className' | 'color' | 'is' | 'size'
 		> {
+	as?: ElementType;
+	is?: ElementType;
+
 	children?: ReactNode;
 }
 
@@ -20,8 +22,8 @@ export interface BoxProps
 export const Box = forwardRef<HTMLElement, BoxProps>(
 	(
 		{
-			as = 'div',
-			is = as,
+			is = 'div',
+			as = is,
 
 			padding,
 			paddingX,
@@ -85,8 +87,8 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 		},
 		ref,
 	) => {
-		const cls = useBoxStyles({
-			is,
+		const cls = boxStyles({
+			as,
 			alignItems,
 			order,
 			backgroundColour,
@@ -137,7 +139,7 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 			width,
 		});
 
-		const Component = is;
+		const Component = as;
 
 		return (
 			<Component
@@ -152,5 +154,3 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 );
 
 Box.displayName = 'Box';
-
-export default Box;

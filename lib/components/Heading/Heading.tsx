@@ -1,13 +1,13 @@
 import React from 'react';
 
 import type { Sprinkles } from '../../styles/sprinkles.css';
-import { Box, UseBoxProps } from '../Box';
+import { Box, type BoxProps } from '../Box';
 import { textStyles, type TextStylesProps } from '../Text/textStyles';
 
 export type HeadingTags = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 export interface HeadingProps
-	extends Omit<UseBoxProps<HeadingTags>, keyof TextStylesProps>,
+	extends Omit<BoxProps, keyof TextStylesProps>,
 		Omit<TextStylesProps, 'as'> {
 	as?: HeadingTags;
 }

@@ -11,7 +11,7 @@ import {
 
 import { addWithSafeDecimal } from '../../utils/number';
 import { Box } from '../Box/Box';
-import { boxStyles } from '../Box/boxStyles';
+import { boxStyles } from '../Box/newBox/boxStyles';
 import { Icon } from '../Icon/Icon';
 import { Inline } from '../Inline/Inline';
 import { Text } from '../Text/Text';
