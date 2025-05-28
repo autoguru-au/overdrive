@@ -14,6 +14,7 @@ export const root = style({
 });
 
 export const icon = style({
+	position: 'absolute',
 	transition: `transform 0.2s ${vars.animation.easing.decelerate} 0s`,
 	right: 0,
 	top: '50%',

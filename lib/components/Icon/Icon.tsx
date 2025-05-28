@@ -14,7 +14,7 @@ import * as styles from './Icon.css';
 export type IconEl = IconType | ReactElement<SVGAttributes<SVGElement>, 'svg'>;
 
 export interface IconProps {
-	display?: Extract<BoxProps['display'], 'block' | 'inline-block'>;
+	display?: Extract<BoxProps['display'], 'block' | 'inlineBlock'>;
 	className?: string;
 	size?: ResponsiveProp<keyof typeof styles.size | string>;
 	icon: IconEl;

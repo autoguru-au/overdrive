@@ -1,96 +1,107 @@
-import type { IconType } from '@autoguru/icons';
+import { IconType } from '@autoguru/icons';
+import { invariant } from '@autoguru/utilities';
 import clsx from 'clsx';
-import React, { cloneElement } from 'react';
+import React, {
+	AnchorHTMLAttributes,
+	cloneElement,
+	ComponentProps,
+	createElement,
+	ElementType,
+	forwardRef,
+	isValidElement,
+	ReactElement,
+	ReactNode,
+} from 'react';
 
-import { boxStyles } from '../Box/boxStyles';
-import { type BoxLikeProps, useBox } from '../Box/useBox';
+import { Box } from '../Box/Box';
+import { useBoxStyles } from '../Box/useBoxStyles';
 import { Icon } from '../Icon/Icon';
 import { Text } from '../Text/Text';
-import { TextStylesProps } from '../Text/textStyles';
 
 import * as styles from './TextLink.css';
 
-interface CustomProps extends Pick<TextStylesProps, 'noWrap' | 'transform'> {
-	/** Make the link colour less prominent */
+type TextProps = Omit<ComponentProps<typeof Text>, 'is' | 'colour'>;
+type AnchorProps = Omit<
+	AnchorHTMLAttributes<HTMLAnchorElement>,
+	'children' | 'style' | 'is' | keyof TextProps
+>;
+
+export interface Props extends TextProps, AnchorProps {
+	children?: ReactNode;
+	className?: string;
+	is?: ElementType | ReactElement;
 	muted?: boolean;
-	/** Optional icon, displayed after the link text */
 	icon?: IconType;
-	/** Applies font weight */
-	strong?: boolean;
 }
 
-export type TextLinkProps = BoxLikeProps<'a', CustomProps>;
+export const TextLink = forwardRef<HTMLAnchorElement, Props>(
+	(
+		{
+			is: Component,
+			children,
+			className,
+			strong,
+			fontWeight = 'semiBold',
+			muted = false,
+			size,
+			icon,
+			...props
+		},
+		ref,
+	) => {
+		invariant(
+			!(Component !== undefined && props.href !== undefined),
+			'You cannot have both href and as defined.',
+		);
+		const body = (
+			<Text
+				as="span"
+				colour={muted ? 'muted' : 'link'}
+				size={size}
+				fontWeight={fontWeight}
+				strong={strong}
+				className={clsx(
+					useBoxStyles({
+						is: 'span',
+						pointerEvents: 'none',
+						position: 'relative',
+						paddingRight: icon ? '5' : undefined,
+					}),
+					{
+						[styles.muted]: muted,
+					},
+				)}
+			>
+				{children}
+				{icon ? (
+					<Icon
+						icon={icon}
+						size="small"
+						display="inlineBlock"
+						className={clsx(styles.icon)}
+					/>
+				) : null}
+			</Text>
+		);
 
-/**
- * TextLink component for rendering navigation links
- *
- * @example
- * ```tsx
- * <TextLink href="https://example.com">Click me</TextLink>
- *
- * // With an icon
- * <TextLink href="/settings" icon={SettingsIcon}>Settings</TextLink>
- * ```
- */
-export const TextLink = ({
-	as = 'a',
-	children,
-	className,
-	fontWeight = 'semiBold',
-	icon,
-	muted = false,
-	size,
-	strong,
-	transform,
-	...props
-}: TextLinkProps) => {
-	const body = (
-		<Text
-			as="span"
-			className={[
-				{
-					[styles.muted]: muted,
-				},
-			]}
-			colour={muted ? 'muted' : 'link'}
-			fontWeight={fontWeight}
-			pointerEvents="none"
-			position="relative"
-			pr={icon ? '5' : undefined}
-			size={size}
-			strong={strong}
-			transform={transform}
-		>
-			{children}
-			{icon ? (
-				<Icon
-					icon={icon}
-					size="small"
-					display="inline-block"
-					className={clsx(
-						styles.icon,
-						boxStyles({
-							position: 'absolute',
-						}),
-					)}
-				/>
-			) : null}
-		</Text>
-	);
+		const allProps = {
+			rel: props.rel ?? 'noopener noreferrer',
+			...props,
+			ref,
+		};
 
-	const { Component, componentProps, reactElement } = useBox<'a'>({
-		...props,
-		as,
-		className: [styles.root, className],
-		odComponent: 'TextLink',
-		rel: props.rel ?? 'noopener noreferrer',
-	});
+		if (Component === undefined) {
+			return (
+				<Box as="a" className={[className, styles.root]} {...allProps}>
+					{body}
+				</Box>
+			);
+		}
 
-	if (reactElement) {
-		return cloneElement(reactElement, componentProps, body);
-	}
-
-	return <Component {...componentProps}>{body}</Component>;
-};
+		return isValidElement(Component)
+			? cloneElement(Component, allProps, body)
+			: createElement(Component, allProps, body);
+	},
+);
 
 TextLink.displayName = 'TextLink';
