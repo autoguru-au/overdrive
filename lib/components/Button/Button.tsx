@@ -22,7 +22,7 @@ import type { TextFontWeight, TextSizeScale } from '../../themes';
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box/Box';
-import { useBoxStyles } from '../Box/useBoxStyles';
+import { useBoxStyles, type BoxStyleProps } from '../Box/useBoxStyles';
 import { Icon } from '../Icon/Icon';
 import { ProgressSpinner } from '../ProgressSpinner/ProgressSpinner';
 import { useTextStyles } from '../Text/useTextStyles';
@@ -70,15 +70,14 @@ const getSpinnerColour: (
 ) => ComponentProps<typeof ProgressSpinner>['colour'] = (variant, minimal) =>
 	minimal || variant === 'secondary' ? 'secondary' : 'light';
 
-const getBorderRadius: (
-	rounded: boolean,
-) => ComponentProps<typeof Box>['borderRadius'] = (rounded) =>
-	rounded ? 'pill' : 'md';
+const getBorderRadius: (rounded: boolean) => BoxStyleProps['borderRadius'] = (
+	rounded,
+) => (rounded ? 'pill' : 'md');
 
 const getPadding: (
 	size: ButtonProps['size'],
 	loading: boolean,
-) => ComponentProps<typeof Box>['paddingX'] = (size, loading) => {
+) => BoxStyleProps['paddingX'] = (size, loading) => {
 	if (loading) return 'none';
 	return size === 'small' ? '3' : '4';
 };

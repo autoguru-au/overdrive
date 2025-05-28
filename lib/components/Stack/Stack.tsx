@@ -2,14 +2,13 @@ import * as React from 'react';
 import { Children, FunctionComponent, ReactNode } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 
-import { Box } from '../Box/Box';
-import type { BoxStyleProps } from '../Box/useBoxStyles';
+import { Box, type BoxProps } from '../Box/Box';
 
 import { Divider } from './Divider';
 import * as styles from './Stack.css';
 
 export interface Props
-	extends Pick<BoxStyleProps, 'as' | 'is' | 'width' | 'alignItems'> {
+	extends Pick<BoxProps, 'as' | 'is' | 'width' | 'alignItems'> {
 	space?: keyof typeof styles.child.spaces;
 	className?: string;
 	dividers?: boolean;

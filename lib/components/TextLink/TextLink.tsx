@@ -23,7 +23,7 @@ import * as styles from './TextLink.css';
 type TextProps = Omit<ComponentProps<typeof Text>, 'is' | 'colour'>;
 type AnchorProps = Omit<
 	AnchorHTMLAttributes<HTMLAnchorElement>,
-	'children' | 'style' | 'is' | keyof TextProps
+	'color' | 'children' | 'style' | 'is' | keyof TextProps
 >;
 
 export interface Props extends TextProps, AnchorProps {
@@ -40,6 +40,7 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 			is: Component,
 			children,
 			className,
+			color,
 			strong,
 			fontWeight = 'semiBold',
 			muted = false,
@@ -92,7 +93,12 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 
 		if (Component === undefined) {
 			return (
-				<Box as="a" className={[className, styles.root]} {...allProps}>
+				<Box
+					as="a"
+					colour={color}
+					className={[className, styles.root]}
+					{...allProps}
+				>
 					{body}
 				</Box>
 			);

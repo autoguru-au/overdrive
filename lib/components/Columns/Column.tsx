@@ -1,21 +1,21 @@
 import { invariant } from '@autoguru/utilities';
 import * as React from 'react';
-import { ComponentProps, forwardRef, ReactNode, useContext } from 'react';
+import { forwardRef, ReactNode, useContext } from 'react';
 
-import { Box } from '../Box/Box';
+import { Box, type BoxProps } from '../Box/Box';
 
 import * as styles from './Column.css';
 import { ColumnContext } from './Columns';
 
-export interface Props
-	extends Omit<ComponentProps<typeof Box>, 'width' | 'css'>,
+export interface ColumnProps
+	extends Omit<BoxProps, 'alignSelf' | 'width' | 'css'>,
 		styles.ColumnRecipeVariants {
 	width?: styles.SprinklesColumnWidth['flexBasis'];
 	className?: string;
 	children: ReactNode | ReactNode[];
 }
 
-export const Column = forwardRef<HTMLElement, Props>(
+export const Column = forwardRef<HTMLElement, ColumnProps>(
 	(
 		{
 			className,

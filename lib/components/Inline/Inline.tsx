@@ -9,15 +9,13 @@ import {
 } from '../../hooks/useNegativeMargin/useNegativeMargin';
 import type { ThemeTokens as Tokens } from '../../themes';
 import type { ResponsiveProp } from '../../utils/responsiveProps.css';
-import { Box } from '../Box/Box';
-import type { BoxStyleProps } from '../Box/useBoxStyles';
+import { Box, type BoxProps } from '../Box/Box';
 import { Text } from '../Text/Text';
 
-export interface InlineProps
-	extends Pick<BoxStyleProps, 'as' | 'is' | 'width'> {
+export interface InlineProps extends Pick<BoxProps, 'as' | 'is' | 'width'> {
 	space?: ResponsiveProp<keyof Tokens['space']>;
-	alignY?: BoxStyleProps['alignItems'];
-	alignX?: BoxStyleProps['justifyContent'];
+	alignY?: BoxProps['alignItems'];
+	alignX?: BoxProps['justifyContent'];
 	noWrap?: boolean;
 	children: ReactNode;
 	dividers?: boolean | ReactNode;
@@ -73,12 +71,18 @@ export const Inline: FunctionComponent<InlineProps> = ({
 						flexDirection="row"
 						flexWrap="nowrap"
 						alignItems={alignY}
-						paddingTop={space}
-						paddingLeft={dividers ? undefined : space}
+						paddingTop={space as BoxProps['paddingTop']}
+						paddingLeft={
+							dividers
+								? undefined
+								: (space as BoxProps['paddingLeft'])
+						}
 					>
 						{child}
 						{dividers && idx !== items.length - 1 ? (
-							<Box paddingX={space}>{divider}</Box>
+							<Box paddingX={space as BoxProps['paddingX']}>
+								{divider}
+							</Box>
 						) : null}
 					</Box>
 				) : null,
