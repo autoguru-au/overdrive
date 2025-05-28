@@ -11,19 +11,19 @@ import * as React from 'react';
 import { ComponentProps, FunctionComponent, ReactNode } from 'react';
 
 import { Box } from '../Box/Box';
-import { boxStyles } from '../Box/boxStyles';
+import { useBoxStyles } from '../Box/useBoxStyles';
 import { Button } from '../Button/Button';
 import { Icon } from '../Icon/Icon';
 import { IntentStripe } from '../IntentStripe/IntentStripe';
 import { Text } from '../Text/Text';
-import { textStyles } from '../Text/textStyles';
+import { useTextStyles } from '../Text/useTextStyles';
 
 import * as styles from './Alert.css';
 
 type IntentStripeProps = ComponentProps<typeof IntentStripe>;
 type Intent = IntentStripeProps['intent'];
 
-export interface AlertProps extends IntentStripeProps {
+export interface Props extends IntentStripeProps {
 	children?: ReactNode;
 	className?: string;
 	inline?: boolean;
@@ -39,7 +39,7 @@ const iconMapForIntent: Record<Intent, IconType> = {
 	warning: AlertIcon,
 };
 
-export const Alert: FunctionComponent<AlertProps> = ({
+export const Alert: FunctionComponent<Props> = ({
 	children,
 	className = '',
 	intent = 'success',
@@ -47,8 +47,8 @@ export const Alert: FunctionComponent<AlertProps> = ({
 	onRequestClose,
 	dismissible = typeof onRequestClose === 'function',
 }) => {
-	const dismissBtnStyles = textStyles({ colour: 'muted' });
-	const intentColourStyles = textStyles({ colour: intent });
+	const dismissBtnStyles = useTextStyles({ colour: 'muted' });
+	const intentColourStyles = useTextStyles({ colour: intent });
 
 	return (
 		<Box
@@ -64,7 +64,6 @@ export const Alert: FunctionComponent<AlertProps> = ({
 			borderRadius="1"
 			boxShadow={inline ? 'none' : '4'}
 			padding="2"
-			data-od-component="alert"
 		>
 			<IntentStripe intent={intent} />
 			<Box display="flex" gap="2">
@@ -72,7 +71,7 @@ export const Alert: FunctionComponent<AlertProps> = ({
 					<Icon
 						icon={iconMapForIntent[intent]}
 						size="medium"
-						className={boxStyles({
+						className={useBoxStyles({
 							marginY: '2',
 							marginLeft: '2',
 						})}
@@ -81,7 +80,7 @@ export const Alert: FunctionComponent<AlertProps> = ({
 				<Box
 					alignSelf="center"
 					width="auto"
-					className={textStyles({ colour: 'dark' })}
+					className={useTextStyles({ colour: 'dark' })}
 				>
 					{typeof children === 'string' ? (
 						<Text>{children}</Text>
@@ -111,3 +110,5 @@ export const Alert: FunctionComponent<AlertProps> = ({
 		</Box>
 	);
 };
+
+export default Alert;

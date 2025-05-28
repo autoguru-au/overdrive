@@ -18,7 +18,6 @@ export const TextAreaInput = withEnhancedInput<
 		size,
 		...rest
 	}) => (
-		//@ts-expect-error onChange type incompatable HTMLInputElement vs. HTMLTextAreaElement
 		<Box
 			as="textarea"
 			{...eventHandlers}

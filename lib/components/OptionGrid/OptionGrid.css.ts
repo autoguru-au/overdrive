@@ -38,7 +38,7 @@ const grid4ColStyle = style({
 export const styledGrid = recipe({
 	base: sprinklesResponsive({
 		display: 'grid',
-		gridColumns: { mobile: 'auto' },
+		gridColumns: { mobile: '1' },
 		gap: '3',
 	}),
 	variants: {
@@ -176,7 +176,7 @@ export const styledCheckbox = recipe({
 		sprinklesResponsive({
 			alignItems: 'center',
 			display: 'flex',
-			flexShrink: '0',
+			flexShrink: 0,
 			justifyContent: 'center',
 			size: '6',
 		}),
