@@ -1,143 +1,100 @@
-import React, {
-	Children,
-	cloneElement,
-	isValidElement,
-	type ElementType,
-	type ReactNode,
-} from 'react';
+import type { FunctionComponent, ReactElement } from 'react';
+import * as React from 'react';
+import { Children, isValidElement, ReactNode } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 
-import type { SprinklesResponsive } from '../../styles/sprinkles.css';
+import {
+	useNegativeMarginLeft,
+	useNegativeMarginTop,
+} from '../../hooks/useNegativeMargin/useNegativeMargin';
+import type { ThemeTokens as Tokens } from '../../themes';
+import type { ResponsiveProp } from '../../utils/responsiveProps.css';
 import { Box } from '../Box/Box';
-import { useBox, type UseBoxProps } from '../Box/useBox';
+import type { BoxStyleProps } from '../Box/useBoxStyles';
 import { Text } from '../Text/Text';
 
-export type InlineDivider = ReactNode | boolean;
-export interface InlineProps {
-	/**
-	 * Sets the horizontal alignment
-	 */
-	alignX?: SprinklesResponsive['justifyContent'];
-	/**
-	 * Sets the vertical alignment
-	 * @default 'center'
-	 */
-	alignY?: SprinklesResponsive['alignItems'];
-	/**
-	 * A divider element to render between each child. Accepts `true`/`false` for default separator or custom JSX
-	 */
-	dividers?: InlineDivider;
-	/**
-	 * Control wrapping - `true` prevents items from wrapping to the next line when they overflow the container width
-	 * @default false (items wrap)
-	 */
+export interface Props extends Pick<BoxStyleProps, 'is' | 'width'> {
+	space?: ResponsiveProp<keyof Tokens['space']>;
+	alignY?: BoxStyleProps['alignItems'];
+	alignX?: BoxStyleProps['justifyContent'];
 	noWrap?: boolean;
-	/**
-	 * Reverse the direciton of the flow
-	 */
-	reverse?: boolean;
-	/**
-	 * Defines the gap between list items. Accepts responsive values
-	 * @default '2'
-	 */
-	space?: SprinklesResponsive['gap'];
-	/**
-	 * Sets the width of the Inline container. Accepts responsive values
-	 */
-	width?: SprinklesResponsive['width'];
+	children: ReactNode;
+	dividers?: boolean | ReactNode;
 }
 
-const renderDivider = (dividers: InlineDivider) => {
-	if (!dividers) return null;
-	if (typeof dividers === 'boolean') return <Text>•</Text>;
-	if (isValidElement(dividers)) return dividers;
-	return <Text>{dividers}</Text>;
-};
+const supportedListTypes: ReadonlyArray<keyof React.JSX.IntrinsicElements> = [
+	'ul',
+	'ol',
+] as const;
 
-/**
- * Inline arranges child elements horizontally, side by side.
- * It allows you to control the spacing between items, alignment (horizontal and vertical),
- * wrapping behavior, and optionally add dividers.
- * Useful for creating a row layout.
- *
- * @example
- * <Inline space="4" alignY="flex-start">
- *   <Button>Action 1</Button>
- *   <Button>Action 2</Button>
- * </Inline>
- *
- * @example
- * <Inline space="3" dividers>
- *   <Text>Option A</Text>
- *   <Text>Option B</Text>
- *   <Text>Option C</Text>
- * </Inline>
- *
- * @example
- * <Inline space="2" dividers="|" alignX="center">
- *   <Text>Link 1</Text>
- *   <Text>Link 2</Text>
- * </Inline>
- */
-export const Inline = <E extends ElementType>({
-	alignX,
-	alignY = 'center',
+export const Inline: FunctionComponent<Props> = ({
+	is = 'div',
 	children,
-	dividers,
-	noWrap,
-	reverse,
 	space = '2',
-	...props
-}: UseBoxProps<E> & InlineProps) => {
-	const divider = renderDivider(dividers);
-
-	const { Component, componentProps, reactElement, SemanticChild } =
-		useBox<E>({
-			...(props as UseBoxProps<E>),
-			alignItems: alignY,
-			display: 'flex',
-			flexDirection: reverse ? 'row-reverse' : 'row',
-			flexWrap: noWrap ? 'nowrap' : 'wrap',
-			gap: space,
-			justifyContent: alignX,
-			minWidth: 'fit-content',
-			odComponent: 'inline',
-			position: 'relative',
-		});
-
+	alignY = 'center',
+	alignX,
+	noWrap,
+	dividers,
+	width,
+}) => {
+	const negativeMarginLeft = useNegativeMarginLeft(space);
+	const negativeMarginTop = useNegativeMarginTop(space);
 	const items = flattenChildren(children);
-	// If there are not multiple children, return the bare item
+
 	if (items.length < 2) {
 		return <>{items}</>;
 	}
 
-	const ChildItems = () =>
-		Children.map(
-			items,
-			(child, idx) =>
-				child && (
-					<Box
-						alignItems={alignY}
-						as={SemanticChild}
-						display="flex"
-						flexWrap="nowrap"
-						useVar="gap"
-					>
-						{child}
-						{dividers && idx !== items.length - 1 && (
-							<Box aria-hidden>{divider}</Box>
-						)}
-					</Box>
-				),
-		);
+	const divider = renderDivider(dividers);
 
-	if (reactElement) {
-		return cloneElement(reactElement, componentProps, <ChildItems />);
-	}
+	let listItem: typeof is = 'div';
+	if (typeof is === 'string')
+		listItem = supportedListTypes.includes(is) ? 'li' : 'div';
 
 	return (
-		<Component {...componentProps}>
-			<ChildItems />
-		</Component>
+		<Box
+			is={is}
+			width={width}
+			position="relative"
+			display="flex"
+			alignItems={alignY}
+			justifyContent={alignX}
+			flexDirection="row"
+			flexWrap={noWrap ? 'nowrap' : 'wrap'}
+			className={[negativeMarginTop, !dividers && negativeMarginLeft]}
+		>
+			{Children.map(items, (child, idx) =>
+				child !== null && child !== undefined ? (
+					<Box
+						is={listItem}
+						display="flex"
+						flexDirection="row"
+						flexWrap="nowrap"
+						alignItems={alignY}
+						paddingTop={space}
+						paddingLeft={dividers ? undefined : space}
+					>
+						{child}
+						{dividers && idx !== items.length - 1 ? (
+							<Box paddingX={space}>{divider}</Box>
+						) : null}
+					</Box>
+				) : null,
+			)}
+		</Box>
 	);
 };
+
+const renderDivider = (dividers: Props['dividers']): ReactElement | null => {
+	if (typeof dividers === 'boolean') {
+		return dividers ? <Text>•</Text> : null;
+	}
+
+	if (isValidElement(dividers)) {
+		return dividers;
+	}
+
+	return <Text>{dividers}</Text>;
+};
+
+export default Inline;

@@ -44,7 +44,7 @@ type InputProps = Omit<
 export interface EditableTextProps
 	extends FilteredTextProps,
 		InputProps,
-		Partial<BoxProps> {
+		Partial<PickedBoxProps> {
 	className?: string;
 
 	onModeChange?: (mode: InputMode) => void;
@@ -57,7 +57,7 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 			as: is,
 			colour = 'muted',
 			size,
-			display = 'inline-block',
+			display = 'inlineBlock',
 			value,
 			onFocus,
 			onBlur,
