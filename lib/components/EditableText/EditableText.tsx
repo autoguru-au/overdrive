@@ -9,16 +9,15 @@ import React, {
 	useState,
 } from 'react';
 
-import { Box } from '../Box/Box';
-import type { UseBoxProps } from '../Box/useBox';
+import { Box, type BoxProps } from '../Box/Box';
 import { Text, type TextProps } from '../Text/Text';
 import { textStyles } from '../Text/textStyles';
 import * as inputStyles from '../private/InputBase/withEnhancedInput.css';
 
 import * as styles from './EditableText.css';
 
-type BoxProps = Pick<
-	UseBoxProps<'p'>,
+type PickedBoxProps = Pick<
+	BoxProps,
 	'display' | 'onFocus' | 'onBlur' | 'onKeyDown'
 >;
 
@@ -39,7 +38,7 @@ type InputProps = Omit<
 	| 'onBlur'
 	| 'onKeyDown'
 	| keyof FilteredTextProps
-	| keyof BoxProps
+	| keyof PickedBoxProps
 >;
 
 export interface EditableTextProps
