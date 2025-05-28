@@ -1,5 +1,13 @@
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
+import { overdriveTokens as tokens } from '../../themes';
+import { makeResponsiveStyle } from '../../utils/responsiveProps.css';
+
+export const space = {
+	spaceX: makeResponsiveStyle(tokens.space, 'paddingLeft'),
+	spaceY: makeResponsiveStyle(tokens.space, 'paddingTop'),
+};
+
 export const columnsStyle = recipe({
 	base: {
 		display: 'flex',

@@ -35,7 +35,7 @@ const columnWidthResponsive = defineProperties({
 export const sprinklesColumnWidthResponsive = createSprinkles(
 	columnWidthResponsive,
 );
-export type SprinklesColumnWidthResponsive = Parameters<
+export type SprinklesColumnWidth = Parameters<
 	typeof sprinklesColumnWidthResponsive
 >[0];
 
