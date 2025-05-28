@@ -9,13 +9,13 @@ import {
 	type ReactElement,
 } from 'react';
 
-import { useDeepCompareMemo } from '../../hooks';
+import { useDeepCompareMemo } from '../../../hooks';
 import type {
 	Sprinkles,
 	SprinklesResponsive,
 	SprinklesLegacyColours,
-} from '../../styles/sprinkles.css';
-import { dataAttrs } from '../../utils/dataAttrs';
+} from '../../../styles/sprinkles.css';
+import { dataAttrs } from '../../../utils/dataAttrs';
 
 import { boxStylesWithFilteredProps } from './boxStyles';
 
