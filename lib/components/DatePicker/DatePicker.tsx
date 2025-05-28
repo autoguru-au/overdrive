@@ -4,7 +4,7 @@ import * as React from 'react';
 import { ChangeEvent, ComponentProps, FunctionComponent } from 'react';
 
 import { Box } from '../Box/Box';
-import { boxStyles } from '../Box/boxStyles';
+import { boxStyles } from '../Box/newBox/boxStyles';
 import { Icon } from '../Icon/Icon';
 import { ProgressSpinner } from '../ProgressSpinner/ProgressSpinner';
 import { Text } from '../Text/Text';

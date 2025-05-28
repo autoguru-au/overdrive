@@ -6,7 +6,7 @@ import { useSwitch, useFocusRing, type AriaSwitchProps } from 'react-aria';
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box';
-import { textStyles } from '../Text';
+import { textStyles } from '../Text/textStyles';
 import { VisuallyHidden } from '../VisuallyHidden';
 
 import * as styles from './Switch.css';

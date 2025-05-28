@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 
 import { Box } from '../../Box/Box';
-import { boxStyles } from '../../Box/boxStyles';
+import { boxStyles } from '../../Box/newBox/boxStyles';
 import { Text } from '../../Text/Text';
 import { textStyles } from '../../Text/textStyles';
 

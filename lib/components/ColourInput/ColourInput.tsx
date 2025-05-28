@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import * as React from 'react';
 
 import { Box } from '../Box/Box';
-import { boxStyles } from '../Box/boxStyles';
+import { boxStyles } from '../Box/newBox/boxStyles';
 import { Text } from '../Text/Text';
 import { withEnhancedInput } from '../private/InputBase';
 
@@ -42,7 +42,7 @@ export const ColourInput = withEnhancedInput<{}, HTMLInputElement>(
 					height="full"
 					alignItems="center"
 					justifyContent="space-around"
-					flexShrink="0"
+					flexShrink={0}
 					pointerEvents="none"
 					position="absolute"
 				>
@@ -67,7 +67,7 @@ export const ColourInput = withEnhancedInput<{}, HTMLInputElement>(
 				<Box
 					as="input"
 					type="color"
-					flexGrow="1"
+					flexGrow={1}
 					{...eventHandlers}
 					{...field}
 					{...rest}

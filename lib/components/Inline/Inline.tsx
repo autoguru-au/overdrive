@@ -13,7 +13,8 @@ import { Box } from '../Box/Box';
 import type { BoxStyleProps } from '../Box/useBoxStyles';
 import { Text } from '../Text/Text';
 
-export interface Props extends Pick<BoxStyleProps, 'is' | 'width'> {
+export interface InlineProps
+	extends Pick<BoxStyleProps, 'as' | 'is' | 'width'> {
 	space?: ResponsiveProp<keyof Tokens['space']>;
 	alignY?: BoxStyleProps['alignItems'];
 	alignX?: BoxStyleProps['justifyContent'];
@@ -27,8 +28,9 @@ const supportedListTypes: ReadonlyArray<keyof React.JSX.IntrinsicElements> = [
 	'ol',
 ] as const;
 
-export const Inline: FunctionComponent<Props> = ({
+export const Inline: FunctionComponent<InlineProps> = ({
 	is = 'div',
+	as = is,
 	children,
 	space = '2',
 	alignY = 'center',
@@ -47,13 +49,13 @@ export const Inline: FunctionComponent<Props> = ({
 
 	const divider = renderDivider(dividers);
 
-	let listItem: typeof is = 'div';
-	if (typeof is === 'string')
-		listItem = supportedListTypes.includes(is) ? 'li' : 'div';
+	let listItem: typeof as = 'div';
+	if (typeof as === 'string')
+		listItem = supportedListTypes.includes(as) ? 'li' : 'div';
 
 	return (
 		<Box
-			is={is}
+			as={as}
 			width={width}
 			position="relative"
 			display="flex"
@@ -85,7 +87,9 @@ export const Inline: FunctionComponent<Props> = ({
 	);
 };
 
-const renderDivider = (dividers: Props['dividers']): ReactElement | null => {
+const renderDivider = (
+	dividers: InlineProps['dividers'],
+): ReactElement | null => {
 	if (typeof dividers === 'boolean') {
 		return dividers ? <Text>•</Text> : null;
 	}

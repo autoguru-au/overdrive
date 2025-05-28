@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React, { type FunctionComponent, type ReactNode } from 'react';
 
-import { boxStyles } from '../../Box/boxStyles';
+import { boxStyles } from '../../Box/newBox/boxStyles';
 import { Text } from '../../Text/Text';
 
 import * as styles from './HintText.css';

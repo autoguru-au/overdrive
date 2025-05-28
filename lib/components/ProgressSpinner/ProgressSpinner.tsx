@@ -2,7 +2,8 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { FunctionComponent } from 'react';
 
-import { Box, boxStyles } from '../Box';
+import { Box } from '../Box/Box';
+import { boxStyles } from '../Box/newBox/boxStyles';
 
 import * as styles from './ProgressSpinner.css';
 
