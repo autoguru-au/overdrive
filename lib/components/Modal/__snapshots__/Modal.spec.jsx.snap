@@ -7,7 +7,7 @@ exports[`<Modal /> > should match snapshot 1`] = `
   <div>
     <div
       class="theme_OD_Base__j49br80"
-      data-od-component-provider=""
+      data-od-component="provider"
     />
   </div>
   <div
@@ -23,7 +23,7 @@ exports[`<Modal /> > should match snapshot 1`] = `
     >
       <div
         aria-hidden="true"
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_position_fixed_mobile__onxwju9g Modal_backdrop_root__1psykzh3 Modal_transition__1psykzh1"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_position_fixed_mobile__onxwju9g sprinkles_backgroundColor_neutral__onxwju36 Modal_backdrop_root__1psykzh3 Modal_transition__1psykzh1"
       />
       <div
         class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_position_fixed_mobile__onxwju9g sprinkles_overflow_hidden_mobile__onxwju88 Modal_root__1psykzh0 Modal_transition__1psykzh1"

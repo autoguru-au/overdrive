@@ -7,7 +7,7 @@ exports[`<Tolltip /> > should match snapshot when closed 1`] = `
   <div>
     <div
       class="theme_OD_Base__j49br80"
-      data-od-component-provider=""
+      data-od-component="provider"
     >
       <div>
         trigger
@@ -32,7 +32,7 @@ exports[`<Tolltip /> > should match snapshot when opened 1`] = `
   <div>
     <div
       class="theme_OD_Base__j49br80"
-      data-od-component-provider=""
+      data-od-component="provider"
     >
       <div>
         trigger
@@ -48,7 +48,7 @@ exports[`<Tolltip /> > should match snapshot when opened 1`] = `
       style="position: absolute; left: 0px; top: 0px; margin: 0px;"
     >
       <div
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_paddingLeft_3_mobile__onxwjut8 sprinkles_paddingRight_3_mobile__onxwjuuc sprinkles_paddingTop_2_mobile__onxwjuvc sprinkles_paddingBottom_2_mobile__onxwjus0 sprinkles_width_full_mobile__onxwjufs sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_userSelect_none__onxwju2y sprinkles_pointerEvents_none__onxwju2v sprinkles_boxShadow_4__onxwju2r sprinkles_borderRadius_1_mobile__onxwjua0 Tooltip_root__1qliafn0"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_paddingLeft_3_mobile__onxwjutk sprinkles_paddingRight_3_mobile__onxwjuuo sprinkles_paddingTop_2_mobile__onxwjuvo sprinkles_paddingBottom_2_mobile__onxwjusc sprinkles_width_full_mobile__onxwjufw sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_userSelect_none__onxwju2y sprinkles_pointerEvents_none__onxwju2v sprinkles_boxShadow_4__onxwju2r sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_gray900__onxwju3q Tooltip_root__1qliafn0"
       >
         <span
           class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_2__1xnpmd72"

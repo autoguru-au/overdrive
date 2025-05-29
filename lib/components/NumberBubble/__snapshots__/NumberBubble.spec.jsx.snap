@@ -3,10 +3,10 @@
 exports[`<Section /> > should match the snapshot for negative value 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <div
-    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_paddingBottom_2_mobile__onxwjus0 sprinkles_paddingLeft_2_mobile__onxwjut4 sprinkles_paddingRight_2_mobile__onxwjuu8 sprinkles_paddingTop_2_mobile__onxwjuvc sprinkles_display_inlineBlock_mobile__onxwju7o sprinkles_position_relative_mobile__onxwju98 sprinkles_borderRadius_full_mobile__onxwjub0"
+    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_paddingBottom_2_mobile__onxwjusc sprinkles_paddingLeft_2_mobile__onxwjutg sprinkles_paddingRight_2_mobile__onxwjuuk sprinkles_paddingTop_2_mobile__onxwjuvo sprinkles_display_inlineBlock_mobile__onxwju7o sprinkles_position_relative_mobile__onxwju98 sprinkles_borderRadius_full_mobile__onxwjub4 sprinkles_backgroundColor_gray900__onxwju3q"
   >
     <span
       class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_2__1xnpmd72 NumberBubble_bubbleText__1hqdrce0 reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_position_absolute_mobile__onxwju9c"
@@ -20,10 +20,10 @@ exports[`<Section /> > should match the snapshot for negative value 1`] = `
 exports[`<Section /> > should match the snapshot for positive value 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <div
-    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_paddingBottom_2_mobile__onxwjus0 sprinkles_paddingLeft_2_mobile__onxwjut4 sprinkles_paddingRight_2_mobile__onxwjuu8 sprinkles_paddingTop_2_mobile__onxwjuvc sprinkles_display_inlineBlock_mobile__onxwju7o sprinkles_position_relative_mobile__onxwju98 sprinkles_borderRadius_full_mobile__onxwjub0"
+    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_paddingBottom_2_mobile__onxwjusc sprinkles_paddingLeft_2_mobile__onxwjutg sprinkles_paddingRight_2_mobile__onxwjuuk sprinkles_paddingTop_2_mobile__onxwjuvo sprinkles_display_inlineBlock_mobile__onxwju7o sprinkles_position_relative_mobile__onxwju98 sprinkles_borderRadius_full_mobile__onxwjub4 sprinkles_backgroundColor_gray900__onxwju3q"
   >
     <span
       class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_2__1xnpmd72 NumberBubble_bubbleText__1hqdrce0 reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_position_absolute_mobile__onxwju9c"

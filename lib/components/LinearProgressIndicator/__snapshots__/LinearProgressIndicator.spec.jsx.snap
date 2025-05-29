@@ -3,16 +3,16 @@
 exports[`<LinearProgressIndicator /> > should match snapshot 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <div
-    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_width_full_mobile__onxwjufs sprinkles_position_relative_mobile__onxwju98 sprinkles_overflow_hidden_mobile__onxwju88 LinearProgressIndicator_root__1gh10pc0"
+    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_width_full_mobile__onxwjufw sprinkles_position_relative_mobile__onxwju98 sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_backgroundColor_gray200__onxwju3j LinearProgressIndicator_root__1gh10pc0"
   >
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_width_full_mobile__onxwjufs sprinkles_height_full_mobile__onxwjue8 sprinkles_position_absolute_mobile__onxwju9c LinearProgressIndicator_linearProgressBar__1gh10pc2"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_width_full_mobile__onxwjufw sprinkles_height_full_mobile__onxwjuec sprinkles_position_absolute_mobile__onxwju9c LinearProgressIndicator_linearProgressBar__1gh10pc2"
     >
       <span
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_width_full_mobile__onxwjufs sprinkles_height_full_mobile__onxwjue8 sprinkles_position_absolute_mobile__onxwju9c LinearProgressIndicator_linearProgressBarInner__1gh10pc4"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_width_full_mobile__onxwjufw sprinkles_height_full_mobile__onxwjuec sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_green300__onxwju3t LinearProgressIndicator_linearProgressBarInner__1gh10pc4"
       />
     </div>
   </div>

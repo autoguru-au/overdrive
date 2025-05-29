@@ -3,13 +3,13 @@
 exports[`<DatePicker /> > should match snapshot without label 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <div
     class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_position_relative_mobile__onxwju98 sprinkles_overflow_hidden_mobile__onxwju88"
   >
     <input
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_input__4z7xt313 reset_trimmedElement__4z7xt30 reset_input__4z7xt38 sprinkles_width_full_mobile__onxwjufs sprinkles_height_full_mobile__onxwjue8 sprinkles_position_absolute_mobile__onxwju9c DatePicker_input__1j3uugj0"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_input__4z7xt313 reset_trimmedElement__4z7xt30 reset_input__4z7xt38 sprinkles_width_full_mobile__onxwjufw sprinkles_height_full_mobile__onxwjuec sprinkles_position_absolute_mobile__onxwju9c DatePicker_input__1j3uugj0"
       type="date"
     />
     <div

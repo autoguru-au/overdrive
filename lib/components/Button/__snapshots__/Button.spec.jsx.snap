@@ -3,14 +3,14 @@
 exports[`<Button /> > should match snapshot for default button 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <button
     class="reset_trimmedElement__4z7xt30 reset_button__4z7xt34 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_inlineBlock__3xgq1lge useBoxStyles_overflow_hidden__3xgq1lg4 useBoxStyles_textAlign_center__3xgq1lg2 useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lb9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc5 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useTextStyles_root__1xnpmd70 reset_block__4z7xt33 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_default__p2yon57 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_3__p2yon5m"
     type="button"
   >
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjue8 sprinkles_alignItems_center_mobile__onxwjukk sprinkles_justifyContent_center_mobile__onxwjulc Button_body__p2yon50"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
     />
   </button>
 </div>
@@ -19,14 +19,14 @@ exports[`<Button /> > should match snapshot for default button 1`] = `
 exports[`<Button /> > when as button > should use html button element by default 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <button
     class="reset_trimmedElement__4z7xt30 reset_button__4z7xt34 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_inlineBlock__3xgq1lge useBoxStyles_overflow_hidden__3xgq1lg4 useBoxStyles_textAlign_center__3xgq1lg2 useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lb9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc5 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useTextStyles_root__1xnpmd70 reset_block__4z7xt33 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_default__p2yon57 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_3__p2yon5m"
     type="button"
   >
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjue8 sprinkles_alignItems_center_mobile__onxwjukk sprinkles_justifyContent_center_mobile__onxwjulc Button_body__p2yon50"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
     />
   </button>
 </div>
@@ -35,14 +35,14 @@ exports[`<Button /> > when as button > should use html button element by default
 exports[`<Button /> > when colour variants > should match snapshot for Danger button 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <button
     class="reset_trimmedElement__4z7xt30 reset_button__4z7xt34 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_inlineBlock__3xgq1lge useBoxStyles_overflow_hidden__3xgq1lg4 useBoxStyles_textAlign_center__3xgq1lg2 useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lb9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc5 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useTextStyles_root__1xnpmd70 reset_block__4z7xt33 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_default__p2yon57 Button_button_intent_danger__p2yon5d Button_button_minimal_false__p2yon5i Button_button_compound_3__p2yon5m"
     type="button"
   >
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjue8 sprinkles_alignItems_center_mobile__onxwjukk sprinkles_justifyContent_center_mobile__onxwjulc Button_body__p2yon50"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
     />
   </button>
 </div>
@@ -51,14 +51,14 @@ exports[`<Button /> > when colour variants > should match snapshot for Danger bu
 exports[`<Button /> > when colour variants > should match snapshot for Primary button 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <button
     class="reset_trimmedElement__4z7xt30 reset_button__4z7xt34 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_inlineBlock__3xgq1lge useBoxStyles_overflow_hidden__3xgq1lg4 useBoxStyles_textAlign_center__3xgq1lg2 useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lb9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc5 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useTextStyles_root__1xnpmd70 reset_block__4z7xt33 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_default__p2yon57 Button_button_intent_primary__p2yon5a Button_button_minimal_false__p2yon5i Button_button_compound_3__p2yon5m"
     type="button"
   >
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjue8 sprinkles_alignItems_center_mobile__onxwjukk sprinkles_justifyContent_center_mobile__onxwjulc Button_body__p2yon50"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
     />
   </button>
 </div>
@@ -67,14 +67,14 @@ exports[`<Button /> > when colour variants > should match snapshot for Primary b
 exports[`<Button /> > when colour variants > should match snapshot for Secondary button 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <button
     class="reset_trimmedElement__4z7xt30 reset_button__4z7xt34 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_inlineBlock__3xgq1lge useBoxStyles_overflow_hidden__3xgq1lg4 useBoxStyles_textAlign_center__3xgq1lg2 useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lb9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc5 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useTextStyles_root__1xnpmd70 reset_block__4z7xt33 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_default__p2yon57 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_3__p2yon5m"
     type="button"
   >
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjue8 sprinkles_alignItems_center_mobile__onxwjukk sprinkles_justifyContent_center_mobile__onxwjulc Button_body__p2yon50"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
     />
   </button>
 </div>
@@ -83,14 +83,14 @@ exports[`<Button /> > when colour variants > should match snapshot for Secondary
 exports[`<Button /> > when custom component > should use html anchor element if href value exists 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <a
     class="reset_block__4z7xt33 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_inlineBlock__3xgq1lge useBoxStyles_overflow_hidden__3xgq1lg4 useBoxStyles_textAlign_center__3xgq1lg2 useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lb9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc5 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useTextStyles_root__1xnpmd70 reset_block__4z7xt33 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_default__p2yon57 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_3__p2yon5m"
     href="abc"
   >
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjue8 sprinkles_alignItems_center_mobile__onxwjukk sprinkles_justifyContent_center_mobile__onxwjulc Button_body__p2yon50"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
     />
   </a>
 </div>
@@ -99,14 +99,14 @@ exports[`<Button /> > when custom component > should use html anchor element if 
 exports[`<Button /> > when isFullWidth > should match snapshot 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <button
     class="reset_trimmedElement__4z7xt30 reset_button__4z7xt34 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_inlineBlock__3xgq1lge useBoxStyles_width_full__3xgq1lfv useBoxStyles_overflow_hidden__3xgq1lg4 useBoxStyles_textAlign_center__3xgq1lg2 useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lb9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc5 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useTextStyles_root__1xnpmd70 reset_block__4z7xt33 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_default__p2yon57 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_3__p2yon5m"
     type="button"
   >
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjue8 sprinkles_alignItems_center_mobile__onxwjukk sprinkles_justifyContent_center_mobile__onxwjulc Button_body__p2yon50"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
     />
   </button>
 </div>
@@ -115,7 +115,7 @@ exports[`<Button /> > when isFullWidth > should match snapshot 1`] = `
 exports[`<Button /> > when loading > should match snapshot for default button 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <button
     aria-label="loading"
@@ -125,10 +125,10 @@ exports[`<Button /> > when loading > should match snapshot for default button 1`
     type="button"
   >
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju7c sprinkles_width_full_mobile__onxwjufs sprinkles_height_full_mobile__onxwjue8 sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjukk sprinkles_justifyContent_center_mobile__onxwjulc"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju7c sprinkles_width_full_mobile__onxwjufw sprinkles_height_full_mobile__onxwjuec sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk"
     >
       <div
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju7c sprinkles_width_full_mobile__onxwjufs sprinkles_height_full_mobile__onxwjue8 sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjukk sprinkles_justifyContent_center_mobile__onxwjulc"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju7c sprinkles_width_full_mobile__onxwjufw sprinkles_height_full_mobile__onxwjuec sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk"
       >
         <div
           class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_secondary__1kpufmi7 Button_spinner__p2yon52"
@@ -149,7 +149,7 @@ exports[`<Button /> > when loading > should match snapshot for default button 1`
         </div>
       </div>
       <div
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjue8 sprinkles_alignItems_center_mobile__onxwjukk sprinkles_justifyContent_center_mobile__onxwjulc Button_body__p2yon50 Button_hiddenContent__p2yon51"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50 Button_hiddenContent__p2yon51"
       />
     </div>
   </button>
@@ -159,7 +159,7 @@ exports[`<Button /> > when loading > should match snapshot for default button 1`
 exports[`<Button /> > when loading > should match snapshot for medium button 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <button
     aria-label="loading"
@@ -169,10 +169,10 @@ exports[`<Button /> > when loading > should match snapshot for medium button 1`]
     type="button"
   >
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju7c sprinkles_width_full_mobile__onxwjufs sprinkles_height_full_mobile__onxwjue8 sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjukk sprinkles_justifyContent_center_mobile__onxwjulc"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju7c sprinkles_width_full_mobile__onxwjufw sprinkles_height_full_mobile__onxwjuec sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk"
     >
       <div
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju7c sprinkles_width_full_mobile__onxwjufs sprinkles_height_full_mobile__onxwjue8 sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjukk sprinkles_justifyContent_center_mobile__onxwjulc"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju7c sprinkles_width_full_mobile__onxwjufw sprinkles_height_full_mobile__onxwjuec sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk"
       >
         <div
           class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_secondary__1kpufmi7 Button_spinner__p2yon52"
@@ -193,7 +193,7 @@ exports[`<Button /> > when loading > should match snapshot for medium button 1`]
         </div>
       </div>
       <div
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjue8 sprinkles_alignItems_center_mobile__onxwjukk sprinkles_justifyContent_center_mobile__onxwjulc Button_body__p2yon50 Button_hiddenContent__p2yon51"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50 Button_hiddenContent__p2yon51"
       />
     </div>
   </button>
@@ -203,7 +203,7 @@ exports[`<Button /> > when loading > should match snapshot for medium button 1`]
 exports[`<Button /> > when loading > should match snapshot for small button 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <button
     aria-label="loading"
@@ -213,10 +213,10 @@ exports[`<Button /> > when loading > should match snapshot for small button 1`] 
     type="button"
   >
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju7c sprinkles_width_full_mobile__onxwjufs sprinkles_height_full_mobile__onxwjue8 sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjukk sprinkles_justifyContent_center_mobile__onxwjulc"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju7c sprinkles_width_full_mobile__onxwjufw sprinkles_height_full_mobile__onxwjuec sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk"
     >
       <div
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju7c sprinkles_width_full_mobile__onxwjufs sprinkles_height_full_mobile__onxwjue8 sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjukk sprinkles_justifyContent_center_mobile__onxwjulc"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju7c sprinkles_width_full_mobile__onxwjufw sprinkles_height_full_mobile__onxwjuec sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk"
       >
         <div
           class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_secondary__1kpufmi7 Button_spinner__p2yon52"
@@ -237,7 +237,7 @@ exports[`<Button /> > when loading > should match snapshot for small button 1`] 
         </div>
       </div>
       <div
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjue8 sprinkles_alignItems_center_mobile__onxwjukk sprinkles_justifyContent_center_mobile__onxwjulc Button_body__p2yon50 Button_hiddenContent__p2yon51"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50 Button_hiddenContent__p2yon51"
       />
     </div>
   </button>
@@ -247,14 +247,14 @@ exports[`<Button /> > when loading > should match snapshot for small button 1`] 
 exports[`<Button /> > when rounded > should match snapshot 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <button
     class="reset_trimmedElement__4z7xt30 reset_button__4z7xt34 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_inlineBlock__3xgq1lge useBoxStyles_overflow_hidden__3xgq1lg4 useBoxStyles_textAlign_center__3xgq1lg2 useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lb9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc5 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldl useTextStyles_root__1xnpmd70 reset_block__4z7xt33 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_rounded__p2yon58 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_4__p2yon5n"
     type="button"
   >
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjue8 sprinkles_alignItems_center_mobile__onxwjukk sprinkles_justifyContent_center_mobile__onxwjulc Button_body__p2yon50"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
     />
   </button>
 </div>
@@ -263,14 +263,14 @@ exports[`<Button /> > when rounded > should match snapshot 1`] = `
 exports[`<Button /> > when size variant > should match snapshot for medium button 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <button
     class="reset_trimmedElement__4z7xt30 reset_button__4z7xt34 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_inlineBlock__3xgq1lge useBoxStyles_overflow_hidden__3xgq1lg4 useBoxStyles_textAlign_center__3xgq1lg2 useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lb9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc5 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useTextStyles_root__1xnpmd70 reset_block__4z7xt33 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_default__p2yon57 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_3__p2yon5m"
     type="button"
   >
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjue8 sprinkles_alignItems_center_mobile__onxwjukk sprinkles_justifyContent_center_mobile__onxwjulc Button_body__p2yon50"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
     />
   </button>
 </div>
@@ -279,14 +279,14 @@ exports[`<Button /> > when size variant > should match snapshot for medium butto
 exports[`<Button /> > when size variant > should match snapshot for small button 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <button
     class="reset_trimmedElement__4z7xt30 reset_button__4z7xt34 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_inlineBlock__3xgq1lge useBoxStyles_overflow_hidden__3xgq1lg4 useBoxStyles_textAlign_center__3xgq1lg2 useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lb9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc5 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useTextStyles_root__1xnpmd70 reset_block__4z7xt33 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_3__1xnpmd73 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon54 Button_button_shape_default__p2yon57 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_0__p2yon5j"
     type="button"
   >
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjue8 sprinkles_alignItems_center_mobile__onxwjukk sprinkles_justifyContent_center_mobile__onxwjulc Button_body__p2yon50"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
     />
   </button>
 </div>

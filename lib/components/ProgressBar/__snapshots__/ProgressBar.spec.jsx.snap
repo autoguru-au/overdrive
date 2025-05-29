@@ -3,13 +3,13 @@
 exports[`<ProgressBar /> > should match the snapshot 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <div
-    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_borderRadius_1_mobile__onxwjua0 ProgressBar_container__4k1c010"
+    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_gray100__onxwju3i ProgressBar_container__4k1c010"
   >
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_borderRadius_1_mobile__onxwjua0 ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_green500__onxwju3v ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
       style="width: 0%;"
     />
   </div>

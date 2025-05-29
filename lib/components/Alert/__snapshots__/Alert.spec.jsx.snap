@@ -3,17 +3,17 @@
 exports[`<Alert /> > should match the snapshot 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <div
-    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_borderBottomStyle_solid__onxwju1b sprinkles_borderLeftStyle_solid__onxwju19 sprinkles_borderRightStyle_solid__onxwju1d sprinkles_borderTopStyle_solid__onxwju1f sprinkles_borderBottomWidth_1_mobile__onxwjubk sprinkles_borderLeftWidth_1_mobile__onxwjub4 sprinkles_borderRightWidth_1_mobile__onxwjuc0 sprinkles_borderTopWidth_1_mobile__onxwjucg sprinkles_paddingBottom_2_mobile__onxwjus0 sprinkles_paddingLeft_2_mobile__onxwjut4 sprinkles_paddingRight_2_mobile__onxwjuu8 sprinkles_paddingTop_2_mobile__onxwjuvc sprinkles_position_relative_mobile__onxwju98 sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_boxShadow_4__onxwju2r sprinkles_borderRadius_1_mobile__onxwjua0 useTextStyles_root__1xnpmd70 reset_block__4z7xt33 useTextStyles_colours_success__1xnpmd7m Alert_contained__19auxx40"
+    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_borderBottomStyle_solid__onxwju1b sprinkles_borderLeftStyle_solid__onxwju19 sprinkles_borderRightStyle_solid__onxwju1d sprinkles_borderTopStyle_solid__onxwju1f sprinkles_borderBottomWidth_1_mobile__onxwjubo sprinkles_borderLeftWidth_1_mobile__onxwjub8 sprinkles_borderRightWidth_1_mobile__onxwjuc4 sprinkles_borderTopWidth_1_mobile__onxwjuck sprinkles_paddingBottom_2_mobile__onxwjusc sprinkles_paddingLeft_2_mobile__onxwjutg sprinkles_paddingRight_2_mobile__onxwjuuk sprinkles_paddingTop_2_mobile__onxwjuvo sprinkles_position_relative_mobile__onxwju98 sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_boxShadow_4__onxwju2r sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_white__onxwju4r sprinkles_borderBottomColor_gray__onxwju4u sprinkles_borderLeftColor_gray__onxwju56 sprinkles_borderRightColor_gray__onxwju5i sprinkles_borderTopColor_gray__onxwju5u useTextStyles_root__1xnpmd70 reset_block__4z7xt33 useTextStyles_colours_success__1xnpmd7m Alert_contained__19auxx40"
     role="alert"
   >
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjue8 sprinkles_position_absolute_mobile__onxwju9c IntentStripe_intentBox__1n5wa370"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjuec sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_success__onxwju37 IntentStripe_intentBox__1n5wa370"
     />
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju7c sprinkles_gap_2_mobile__onxwjugw"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju7c sprinkles_gap_2_mobile__onxwjuh0"
     >
       <div
         alignself="flex-start"
@@ -38,10 +38,10 @@ exports[`<Alert /> > should match the snapshot 1`] = `
       </div>
       <div
         alignself="center"
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_width_auto_mobile__onxwjufw useTextStyles_root__1xnpmd70 reset_block__4z7xt33 useTextStyles_colours_dark__1xnpmd7f"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_width_auto_mobile__onxwjug0 useTextStyles_root__1xnpmd70 reset_block__4z7xt33 useTextStyles_colours_dark__1xnpmd7f"
       />
       <div
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_marginLeft_auto_mobile__onxwjuyk"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_marginLeft_auto_mobile__onxwjuyw"
       >
         <button
           aria-label="close"
@@ -49,7 +49,7 @@ exports[`<Alert /> > should match the snapshot 1`] = `
           type="button"
         >
           <div
-            class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjue8 sprinkles_alignItems_center_mobile__onxwjukk sprinkles_justifyContent_center_mobile__onxwjulc Button_body__p2yon50"
+            class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
           >
             <span
               class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_display_block_mobile__onxwju74 Icon_makeResponsiveStyle_key_bp__1gy3ire4 useTextStyles_root__1xnpmd70 reset_block__4z7xt33 useTextStyles_colours_muted__1xnpmd7h"

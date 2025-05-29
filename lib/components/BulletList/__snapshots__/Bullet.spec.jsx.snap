@@ -3,7 +3,7 @@
 exports[`<Bullet /> > should match the snapshot 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <li
     class="reset_resetVariants__4z7xt3c reset_resetVariants_as_li__4z7xt310  Bullet_root_default__13ecipx0"

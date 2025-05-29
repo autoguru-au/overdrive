@@ -3,7 +3,7 @@
 exports[`<Switch /> > should match snapshot when toggled 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <label
     class="Switch_base__6xc8dy0"
@@ -34,7 +34,7 @@ exports[`<Switch /> > should match snapshot when toggled 1`] = `
 exports[`<Switch /> > should match snapshot when toggled and disabled 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <label
     class="Switch_base__6xc8dy0"
@@ -66,7 +66,7 @@ exports[`<Switch /> > should match snapshot when toggled and disabled 1`] = `
 exports[`<Switch /> > should match snapshot when un-toggled 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <label
     class="Switch_base__6xc8dy0"
@@ -95,7 +95,7 @@ exports[`<Switch /> > should match snapshot when un-toggled 1`] = `
 exports[`<Switch /> > should match snapshot when un-toggled and disabled 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <label
     class="Switch_base__6xc8dy0"
@@ -125,7 +125,7 @@ exports[`<Switch /> > should match snapshot when un-toggled and disabled 1`] = `
 exports[`<Switch /> > should match snapshot without props 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <label
     class="Switch_base__6xc8dy0"
