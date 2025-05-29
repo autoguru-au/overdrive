@@ -10,6 +10,7 @@ export interface HeadingProps
 	extends Omit<BoxProps, keyof TextStylesProps>,
 		Omit<TextStylesProps, 'as'> {
 	as?: HeadingTags;
+	align?: TextStylesProps['textAlign'];
 }
 
 const defaultSizeMap: Record<HeadingTags, Sprinkles['fontSize']> = {
@@ -26,6 +27,7 @@ const defaultSizeMap: Record<HeadingTags, Sprinkles['fontSize']> = {
  */
 export const Heading = ({
 	as = 'h1',
+	align,
 	breakWord,
 	children,
 	className,
@@ -48,6 +50,7 @@ export const Heading = ({
 				fontWeight,
 				noWrap,
 				size,
+				textAlign: align,
 				transform,
 			}),
 			className,

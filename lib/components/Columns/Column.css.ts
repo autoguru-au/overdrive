@@ -42,15 +42,16 @@ export const columnStyle = recipe({
 		alignSelf: {
 			bottom: sprinkles({ alignSelf: 'flex-end' }),
 			center: sprinkles({ alignSelf: 'center' }),
+			centre: sprinkles({ alignSelf: 'center' }),
 			stretch: sprinkles({ alignSelf: 'stretch' }),
 			top: sprinkles({ alignSelf: 'flex-start' }),
 		},
 		grow: {
-			true: { flexGrow: 1 },
-			false: { flexGrow: 0 },
+			true: sprinkles({ flexGrow: '1' }),
+			false: sprinkles({ flexGrow: '0' }),
 		},
 		noShrink: {
-			true: { flexShrink: 0 },
+			true: sprinkles({ flexShrink: '0' }),
 			false: {},
 		},
 	},

@@ -18,13 +18,17 @@ const flexAlignments = {
 	'flex-start': 'flex-start',
 	center: 'center',
 	centre: 'center',
+	stretch: 'stretch',
+};
+
+const flexAlignmentsWithSpace = {
+	...flexAlignments,
 	spaceAround: 'space-around',
 	'space-around': 'space-around',
 	spaceBetween: 'space-between',
 	'space-between': 'space-between',
 	spaceEvenely: 'space-evenly',
 	'space-evenely': 'space-evenly',
-	stretch: 'stretch',
 };
 
 // --- transformations over the tokens to make ready for sprinkles
@@ -180,8 +184,8 @@ const legacyColourProperties = defineProperties({
 		borderTopColor: borderColours,
 		color: {
 			...tokens.colours.foreground,
-			// ...intentForegroundColours,
 			...tokens.typography.colour,
+			...intentForegroundColours,
 			unset: 'unset',
 			white: tokens.colours.gamut.white,
 		},
@@ -273,7 +277,12 @@ const responsiveProperties = defineProperties({
 		overflowX: ['auto', 'scroll', 'hidden'],
 		overflowY: ['auto', 'scroll', 'hidden'],
 		position: ['static', 'relative', 'absolute', 'fixed', 'sticky'],
-		textAlign: ['left', 'center', 'right'],
+		textAlign: {
+			left: 'left',
+			center: 'center',
+			centre: 'center',
+			right: 'right',
+		},
 		// Borders
 		borderRadius: tokens.border.radius,
 		borderLeftWidth: tokens.border.width,
@@ -308,16 +317,11 @@ const responsiveProperties = defineProperties({
 		rowGap: space,
 		// Alignment
 		alignItems: {
-			flexEnd: 'flex-end',
-			'flex-end': 'flex-end',
-			flexStart: 'flex-start',
-			'flex-start': 'flex-start',
-			center: 'center',
+			...flexAlignments,
 			baseline: 'baseline',
-			stretch: 'stretch',
 		},
-		justifyContent: flexAlignments,
-		alignContent: flexAlignments,
+		justifyContent: flexAlignmentsWithSpace,
+		alignContent: flexAlignmentsWithSpace,
 		alignSelf: ['flex-start', 'center', 'flex-end', 'stretch'],
 		justifySelf: ['flex-start', 'center', 'flex-end'],
 		// Flexbox
@@ -330,7 +334,7 @@ const responsiveProperties = defineProperties({
 		gridAutoColumns: ['auto', '1fr', 'min-content', 'max-content'],
 		gridAutoRows: ['auto', '1fr'],
 		gridAutoFlow: ['row', 'column', 'row dense', 'column dense'],
-		gridColumns: ['auto'],
+		gridColumns: ['1', 'auto'],
 		// Padding
 		paddingBottom: tokens.space,
 		paddingLeft: tokens.space,

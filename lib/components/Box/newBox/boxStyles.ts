@@ -5,6 +5,7 @@ import { resetStyles } from '../../../styles/resetStyles';
 import {
 	sprinkles,
 	type Sprinkles,
+	sprinklesLegacyColours,
 	type SprinklesLegacyColours,
 } from '../../../styles/sprinkles.css';
 import { filterPropsWithStyles } from '../../../utils/sprinkles';
@@ -38,7 +39,8 @@ export const boxStylesWithFilteredProps = <E extends ElementType = 'div'>({
 	className,
 	...props
 }: BoxStylesProps<E>) => {
-	const { sprinklesProps, baseProps } = filterPropsWithStyles(props);
+	const { sprinklesProps, sprinklesLegacyColourProps, baseProps } =
+		filterPropsWithStyles(props);
 
 	// a little bit of logic specific to border properties for backwards compatability
 	for (const postfix of borderPostfixes) {
@@ -53,6 +55,7 @@ export const boxStylesWithFilteredProps = <E extends ElementType = 'div'>({
 		className: clsx(
 			resetStyles({ as: as ? `${as}` : as }),
 			sprinkles(sprinklesProps),
+			sprinklesLegacyColours(sprinklesLegacyColourProps),
 			className,
 		),
 		baseProps,

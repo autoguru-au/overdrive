@@ -39,6 +39,7 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 			textAlign,
 			pointerEvents,
 
+			backgroundColor,
 			backgroundColour,
 			boxShadow,
 			color,
@@ -124,6 +125,7 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 			textAlign,
 			pointerEvents,
 
+			backgroundColor,
 			backgroundColour,
 			boxShadow,
 			color,
