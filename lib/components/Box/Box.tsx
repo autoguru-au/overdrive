@@ -2,10 +2,14 @@ import clsx from 'clsx';
 import type { AllHTMLAttributes, ElementType, ReactNode } from 'react';
 import React, { forwardRef } from 'react';
 
+import { dataAttrs } from '../../utils/dataAttrs';
+
 import { boxStyles, type BoxStylesProps } from './newBox/boxStyles';
+import type { CommonBoxProps } from './newBox/useBox';
 
 export interface BoxProps
-	extends Omit<BoxStylesProps, 'as'>,
+	extends CommonBoxProps,
+		Omit<BoxStylesProps, 'as'>,
 		Omit<
 			AllHTMLAttributes<HTMLElement>,
 			'as' | 'className' | 'color' | 'height' | 'is' | 'size' | 'width'
@@ -26,6 +30,8 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 			as = is,
 			children,
 			className,
+			odComponent,
+			testId,
 
 			// style props
 			display,
@@ -199,9 +205,13 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 
 		return (
 			<Component
-				ref={ref}
-				className={clsx(cls, className)}
 				{...allOtherProps}
+				{...dataAttrs({
+					'od-component': odComponent?.toLocaleLowerCase(),
+					testId,
+				})}
+				className={clsx(cls, className)}
+				ref={ref}
 			>
 				{children}
 			</Component>

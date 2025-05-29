@@ -76,8 +76,8 @@ describe('<Box />', async () => {
 		await DataAttributes.run();
 		const boxElement = screen.getByText('The most basic box (or is it?)');
 		expect(boxElement).toHaveAttribute('id', 'so-basic');
-		// expect(boxElement).toHaveAttribute('data-od-component', 'box-basic');
-		// expect(boxElement).toHaveAttribute('data-test-id', 'basically-perfect');
+		expect(boxElement).toHaveAttribute('data-od-component', 'box-basic');
+		expect(boxElement).toHaveAttribute('data-test-id', 'basically-perfect');
 		expect(boxElement).toHaveAttribute(
 			'data-custom-attribute',
 			'somewhat less basic',
