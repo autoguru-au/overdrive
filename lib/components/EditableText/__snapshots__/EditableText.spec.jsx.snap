@@ -6,11 +6,11 @@ exports[`<EditableText /> > should match snapshot as date input 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_inline-block_mobile__onxwju7j sprinkles_position_relative_mobile__onxwju8v EditableText_root__1iskjcs0"
+    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_inlineBlock_mobile__onxwju7o sprinkles_position_relative_mobile__onxwju98 EditableText_root__1iskjcs0"
     tabindex="0"
   >
     <span
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_normal__onxwju2g sprinkles_color_primary__onxwju6g typography_typographyStyles__yhjp330 typography_typographyStyles_noWrap_true__yhjp332 reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_color_primary__onxwju6g typography_typographyStyles__yhjp330 EditableText_text__1iskjcs1"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_primary__1xnpmd7a useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_noWrap__1xnpmd7r useTextStyles_sizes_4__1xnpmd74 reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_color_primary__onxwju6l typography_typographyStyles__yhjp330 EditableText_text__1iskjcs1"
     >
       Hello World!
     </span>
@@ -24,11 +24,11 @@ exports[`<EditableText /> > should match snapshot for default bullet text 1`] = 
   data-od-component-provider=""
 >
   <div
-    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_inline-block_mobile__onxwju7j sprinkles_position_relative_mobile__onxwju8v EditableText_root__1iskjcs0"
+    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_inlineBlock_mobile__onxwju7o sprinkles_position_relative_mobile__onxwju98 EditableText_root__1iskjcs0"
     tabindex="0"
   >
     <span
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_normal__onxwju2g sprinkles_color_primary__onxwju6g typography_typographyStyles__yhjp330 typography_typographyStyles_noWrap_true__yhjp332 reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_color_primary__onxwju6g typography_typographyStyles__yhjp330 EditableText_text__1iskjcs1"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_primary__1xnpmd7a useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_noWrap__1xnpmd7r useTextStyles_sizes_4__1xnpmd74 reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_color_primary__onxwju6l typography_typographyStyles__yhjp330 EditableText_text__1iskjcs1"
     >
       Hello World!
     </span>
@@ -42,11 +42,11 @@ exports[`<EditableText /> > should match snapshot with custom size 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_inline-block_mobile__onxwju7j sprinkles_position_relative_mobile__onxwju8v EditableText_root__1iskjcs0"
+    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_inlineBlock_mobile__onxwju7o sprinkles_position_relative_mobile__onxwju98 EditableText_root__1iskjcs0"
     tabindex="0"
   >
     <span
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_fontSize_5__onxwju22 sprinkles_lineHeight_5__onxwju2b sprinkles_fontWeight_normal__onxwju2g sprinkles_color_muted__onxwju6n typography_typographyStyles__yhjp330 typography_typographyStyles_noWrap_true__yhjp332 reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_fontSize_5__onxwju22 sprinkles_lineHeight_5__onxwju2b sprinkles_color_muted__onxwju6n typography_typographyStyles__yhjp330 EditableText_text__1iskjcs1"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_muted__1xnpmd7h useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_noWrap__1xnpmd7r useTextStyles_sizes_5__1xnpmd75 reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_fontSize_5__onxwju23 sprinkles_lineHeight_5__onxwju2c sprinkles_color_muted__onxwju6s typography_typographyStyles__yhjp330 EditableText_text__1iskjcs1"
     >
       Hello World!
     </span>

@@ -4,5 +4,9 @@ exports[`<Actions /> > should match the snapshot 1`] = `
 <div
   class="theme_OD_Base__j49br80"
   data-od-component-provider=""
-/>
+>
+  <div
+    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju7c sprinkles_flexDirection_row_mobile__onxwjuok useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm28 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw8 Columns_columnsStyle__15fwc1828 Columns_columnsStyle_align_stretch__15fwc1829 Columns_columnsStyle_noWrap_false__15fwc182d Columns_columnsStyle_wrappingDirection_default__15fwc182f"
+  />
+</div>
 `;

@@ -6,21 +6,21 @@ exports[`<DatePicker /> > should match snapshot without label 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_position_relative_mobile__onxwju8v sprinkles_overflow_hidden_mobile__onxwju7v"
+    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_position_relative_mobile__onxwju98 sprinkles_overflow_hidden_mobile__onxwju88"
   >
     <input
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_input__4z7xt313 reset_trimmedElement__4z7xt30 reset_input__4z7xt38 sprinkles_position_absolute_mobile__onxwju8z sprinkles_height_full_mobile__onxwjudv sprinkles_width_full_mobile__onxwjuff DatePicker_input__1j3uugj0"
+      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_input__4z7xt313 reset_trimmedElement__4z7xt30 reset_input__4z7xt38 sprinkles_width_full_mobile__onxwjufs sprinkles_height_full_mobile__onxwjue8 sprinkles_position_absolute_mobile__onxwju9c DatePicker_input__1j3uugj0"
       type="date"
     />
     <div
       class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 DatePicker_contents_default__1j3uugj1"
     >
       <span
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_display_block_mobile__onxwju6z Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_display_block_mobile__onxwju74 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
       >
         <svg
           aria-hidden="true"
-          class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_block_mobile__onxwju6z sprinkles_width_full_mobile__onxwjuff sprinkles_height_full_mobile__onxwjudv"
+          class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
           fill="currentColor"
           focusable="false"
           viewBox="0 0 24 24"
