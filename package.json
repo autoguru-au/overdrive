@@ -20,9 +20,9 @@
 	},
 	"license": "MIT",
 	"sideEffects": [
-		"./lib/**/global.css.*",
+		"./lib/styles/global/*",
 		"./lib/themes/**/*",
-		"./dist/**/global.css.*",
+		"./dist/styles/global/*",
 		"./dist/themes/**/*"
 	],
 	"files": [
