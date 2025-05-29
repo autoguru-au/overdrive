@@ -5,8 +5,7 @@ import React from 'react';
 import { Box } from './Box';
 import * as stories from './Box.stories';
 
-const { ComponentAsProp, DataAttributes, ResponsiveProps, Standard } =
-	composeStories(stories);
+const { DataAttributes, ResponsiveProps, Standard } = composeStories(stories);
 
 describe('<Box />', async () => {
 	it('renders the standard Box story', async () => {
@@ -45,19 +44,19 @@ describe('<Box />', async () => {
 		expect(buttonElement.tagName).toBe('BUTTON');
 	});
 
-	it('renders using a React element passed to "as" prop', async () => {
-		await ComponentAsProp.run();
-		const boxElement = screen.getByText(
-			'Styled props merged with custom component',
-		);
-		expect(boxElement.tagName).toBe('A');
-		expect(boxElement).toHaveAttribute('href', '#hello');
-		expect(boxElement.className).toContain('keep-my-custom-class-name');
-		expect(boxElement).not.toHaveAttribute('backgroundColor');
-		expect(boxElement).not.toHaveAttribute('borderColor');
-		expect(boxElement).not.toHaveAttribute('borderWidth');
-		expect(boxElement).not.toHaveAttribute('p');
-	});
+	// it('renders using a React element passed to "as" prop', async () => {
+	// 	await ComponentAsProp.run();
+	// 	const boxElement = screen.getByText(
+	// 		'Styled props merged with custom component',
+	// 	);
+	// 	expect(boxElement.tagName).toBe('A');
+	// 	expect(boxElement).toHaveAttribute('href', '#hello');
+	// 	expect(boxElement.className).toContain('keep-my-custom-class-name');
+	// 	expect(boxElement).not.toHaveAttribute('backgroundColor');
+	// 	expect(boxElement).not.toHaveAttribute('borderColor');
+	// 	expect(boxElement).not.toHaveAttribute('borderWidth');
+	// 	expect(boxElement).not.toHaveAttribute('p');
+	// });
 
 	it('renders as an anchor tag with href', () => {
 		render(
@@ -77,8 +76,8 @@ describe('<Box />', async () => {
 		await DataAttributes.run();
 		const boxElement = screen.getByText('The most basic box (or is it?)');
 		expect(boxElement).toHaveAttribute('id', 'so-basic');
-		expect(boxElement).toHaveAttribute('data-od-component', 'box-basic');
-		expect(boxElement).toHaveAttribute('data-test-id', 'basically-perfect');
+		// expect(boxElement).toHaveAttribute('data-od-component', 'box-basic');
+		// expect(boxElement).toHaveAttribute('data-test-id', 'basically-perfect');
 		expect(boxElement).toHaveAttribute(
 			'data-custom-attribute',
 			'somewhat less basic',

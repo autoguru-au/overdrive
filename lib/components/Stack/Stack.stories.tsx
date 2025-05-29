@@ -73,6 +73,6 @@ export const WithAlignment: Story = {
 	args: {
 		alignItems: 'center',
 		dividers: true,
-		space: ['2', '4', '6'],
+		// space: ['2', '4', '6'],
 	},
 };
