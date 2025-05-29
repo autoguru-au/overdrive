@@ -1,6 +1,6 @@
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
-import { sprinklesResponsive } from '../../styles/sprinkles.css';
+import { sprinkles } from '../../styles/sprinkles.css';
 
 export const totalGridColumns = 12; // chosen to be divisible by 2, 3, 4
 export const columnStyle = recipe({
@@ -30,30 +30,30 @@ export const columnGridStyle = recipe({
 	},
 	variants: {
 		align: {
-			stretch: sprinklesResponsive({
+			stretch: sprinkles({
 				alignItems: 'stretch',
 				alignContent: 'stretch',
 			}),
-			top: sprinklesResponsive({
+			top: sprinkles({
 				alignItems: 'flex-start',
 				alignContent: 'flex-start',
 			}),
-			center: sprinklesResponsive({
+			center: sprinkles({
 				alignItems: 'center',
 				alignContent: 'center',
 			}),
-			bottom: sprinklesResponsive({
+			bottom: sprinkles({
 				alignItems: 'flex-end',
 				alignContent: 'flex-end',
 			}),
 		},
 		noWrap: {
-			false: sprinklesResponsive({ flexWrap: 'wrap' }),
-			true: sprinklesResponsive({ flexWrap: 'nowrap' }),
+			false: sprinkles({ flexWrap: 'wrap' }),
+			true: sprinkles({ flexWrap: 'nowrap' }),
 		},
 		wrappingDirection: {
 			default: '',
-			reverse: sprinklesResponsive({ flexWrap: 'wrap-reverse' }),
+			reverse: sprinkles({ flexWrap: 'wrap-reverse' }),
 		},
 	},
 	defaultVariants: {

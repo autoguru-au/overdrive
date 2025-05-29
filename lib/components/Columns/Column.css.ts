@@ -3,10 +3,7 @@ import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
 
 import { cssLayerComponent } from '../../styles/layers.css';
-import {
-	responsiveConditions,
-	sprinklesResponsive,
-} from '../../styles/sprinkles.css';
+import { responsiveConditions, sprinkles } from '../../styles/sprinkles.css';
 
 const getSizeStyle = (scale: number) => `${scale * 100}%`;
 
@@ -43,10 +40,10 @@ export const columnStyle = recipe({
 	base: {},
 	variants: {
 		alignSelf: {
-			bottom: sprinklesResponsive({ alignSelf: 'flex-end' }),
-			center: sprinklesResponsive({ alignSelf: 'center' }),
-			stretch: sprinklesResponsive({ alignSelf: 'stretch' }),
-			top: sprinklesResponsive({ alignSelf: 'flex-start' }),
+			bottom: sprinkles({ alignSelf: 'flex-end' }),
+			center: sprinkles({ alignSelf: 'center' }),
+			stretch: sprinkles({ alignSelf: 'stretch' }),
+			top: sprinkles({ alignSelf: 'flex-start' }),
 		},
 		grow: {
 			true: { flexGrow: 1 },

@@ -3,14 +3,9 @@ import {
 	type Sprinkles,
 	sprinklesLegacyColours,
 	type SprinklesLegacyColours,
-	sprinklesResponsive,
-	type SprinklesResponsive,
 } from '../styles/sprinkles.css';
 
-type AnySprinklesKey =
-	| keyof Sprinkles
-	| keyof SprinklesResponsive
-	| keyof SprinklesLegacyColours;
+type AnySprinklesKey = keyof Sprinkles | keyof SprinklesLegacyColours;
 
 // Type for 'baseProps', containing only non-sprinkle properties from T
 type RemainingProps<T extends object> = {
@@ -19,7 +14,6 @@ type RemainingProps<T extends object> = {
 
 interface SortedProps<T extends object> {
 	sprinklesProps: Sprinkles;
-	sprinklesResponsiveProps: SprinklesResponsive;
 	sprinklesLegacyColourProps: SprinklesLegacyColours;
 	baseProps: RemainingProps<T>;
 }
@@ -39,14 +33,6 @@ export const isSprinklesLegacyColourProperty = (key: string) => {
 		key as keyof SprinklesLegacyColours,
 	);
 };
-
-/**
- * Typeguard function for responsive sprinkles props
- */
-export const isSprinklesResponsiveProperty = (key: string) => {
-	return sprinklesResponsive.properties.has(key as keyof SprinklesResponsive);
-};
-
 /**
  * Filters out sprinkles and responsive sprinkles props, returning only the non-sprinkles props.
  *
@@ -56,11 +42,7 @@ export const isSprinklesResponsiveProperty = (key: string) => {
 export const filterNonSprinklesProps = <P extends object>(props: P) =>
 	Object.entries(props).reduce((acc, [key, value]) => {
 		if (
-			!(
-				isSprinklesProperty(key) ||
-				isSprinklesResponsiveProperty(key) ||
-				isSprinklesLegacyColourProperty(key)
-			)
+			!(isSprinklesProperty(key) || isSprinklesLegacyColourProperty(key))
 		) {
 			acc[key] = value;
 		}
@@ -73,8 +55,7 @@ export const filterNonSprinklesProps = <P extends object>(props: P) =>
  *
  * @param props - Object containing all props to be classified.
  * @returns `{ sprinklesProps, sprinklesResponsiveProps, sprinklesLegacyColourProps, baseProps }`
- *  - `sprinklesProps`: Props matching base sprinkles
- *  - `sprinklesResponsiveProps`: Props matching responsive sprinkles
+ *  - `sprinklesProps`: Props matching sprinkles
  *  - `sprinklesLegacyColourProps`: Props matching legacy colour sprinkles
  *  - `baseProps`: The remainder are the component's base props
  */
@@ -83,7 +64,6 @@ export const filterPropsWithStyles = <P extends object>(
 ): SortedProps<P> => {
 	const acc = {
 		sprinklesProps: {} as Record<string, unknown>,
-		sprinklesResponsiveProps: {} as Record<string, unknown>,
 		sprinklesLegacyColourProps: {} as Record<string, unknown>,
 		baseProps: {} as Record<string, unknown>,
 	};
@@ -94,8 +74,6 @@ export const filterPropsWithStyles = <P extends object>(
 
 			if (isSprinklesProperty(key)) {
 				acc.sprinklesProps[key] = value;
-			} else if (isSprinklesResponsiveProperty(key)) {
-				acc.sprinklesResponsiveProps[key] = value;
 			} else if (isSprinklesLegacyColourProperty(key)) {
 				acc.sprinklesLegacyColourProps[key] = value;
 			} else {
@@ -106,8 +84,6 @@ export const filterPropsWithStyles = <P extends object>(
 
 	return {
 		sprinklesProps: acc.sprinklesProps as Sprinkles,
-		sprinklesResponsiveProps:
-			acc.sprinklesResponsiveProps as SprinklesResponsive,
 		sprinklesLegacyColourProps:
 			acc.sprinklesLegacyColourProps as SprinklesLegacyColours,
 		baseProps: acc.baseProps as RemainingProps<P>,

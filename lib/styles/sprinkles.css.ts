@@ -161,9 +161,6 @@ const baseProperties = defineProperties({
 	},
 });
 
-export const sprinkles = createSprinkles(baseProperties);
-export type Sprinkles = Parameters<typeof sprinkles>[0];
-
 // --- Legacy sprinkles with old colour tokens (non-responsive)
 const borderColours = {
 	...tokens.border.colours,
@@ -383,5 +380,5 @@ const responsiveProperties = defineProperties({
 	},
 });
 
-export const sprinklesResponsive = createSprinkles(responsiveProperties);
-export type SprinklesResponsive = Parameters<typeof sprinklesResponsive>[0];
+export const sprinkles = createSprinkles(baseProperties, responsiveProperties);
+export type Sprinkles = Parameters<typeof sprinkles>[0];

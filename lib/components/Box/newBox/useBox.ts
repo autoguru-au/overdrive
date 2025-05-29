@@ -10,25 +10,15 @@ import {
 } from 'react';
 
 import { useDeepCompareMemo } from '../../../hooks';
-import type {
-	Sprinkles,
-	SprinklesResponsive,
-	SprinklesLegacyColours,
-} from '../../../styles/sprinkles.css';
 import { dataAttrs } from '../../../utils/dataAttrs';
 
-import { boxStylesWithFilteredProps } from './boxStyles';
+import { boxStylesWithFilteredProps, type StyleProps } from './boxStyles';
 
 // defaults
 const DEFAULT_TAG = 'div' as keyof JSX.IntrinsicElements;
 const LIST_ITEM_TAG = 'li' as keyof JSX.IntrinsicElements;
 const LIST_TAGS = ['ul', 'ol'] as ReadonlyArray<keyof JSX.IntrinsicElements>;
 const OD_COMPONENT_ATTR = 'od-component';
-
-/** All vanilla-extract sprinkles props */
-export type StyleProps = Sprinkles &
-	SprinklesResponsive &
-	SprinklesLegacyColours;
 
 /**
  * Use BoxBasedProps to help consistently define the base props for a component

@@ -4,12 +4,15 @@ import type { ElementType } from 'react';
 import { resetStyles } from '../../../styles/resetStyles';
 import {
 	sprinkles,
-	sprinklesLegacyColours,
-	sprinklesResponsive,
+	type Sprinkles,
+	type SprinklesLegacyColours,
 } from '../../../styles/sprinkles.css';
 import { filterPropsWithStyles } from '../../../utils/sprinkles';
 
-import type { AsPolyProp, CommonBoxProps, StyleProps } from './useBox';
+import type { AsPolyProp, CommonBoxProps } from './useBox';
+
+/** All vanilla-extract sprinkles props */
+export type StyleProps = Sprinkles & SprinklesLegacyColours;
 
 export type BoxStylesProps<E extends ElementType = 'div'> = AsPolyProp<E> &
 	Pick<CommonBoxProps, 'className'> &
@@ -35,12 +38,7 @@ export const boxStylesWithFilteredProps = <E extends ElementType = 'div'>({
 	className,
 	...props
 }: BoxStylesProps<E>) => {
-	const {
-		sprinklesProps,
-		sprinklesResponsiveProps,
-		sprinklesLegacyColourProps,
-		baseProps,
-	} = filterPropsWithStyles(props);
+	const { sprinklesProps, baseProps } = filterPropsWithStyles(props);
 
 	// a little bit of logic specific to border properties for backwards compatability
 	for (const postfix of borderPostfixes) {
@@ -55,8 +53,6 @@ export const boxStylesWithFilteredProps = <E extends ElementType = 'div'>({
 		className: clsx(
 			resetStyles({ as: as ? `${as}` : as }),
 			sprinkles(sprinklesProps),
-			sprinklesResponsive(sprinklesResponsiveProps),
-			sprinklesLegacyColours(sprinklesLegacyColourProps),
 			className,
 		),
 		baseProps,
