@@ -2,9 +2,12 @@ import clsx from 'clsx';
 import type { AllHTMLAttributes, ElementType, ReactNode } from 'react';
 import React, { forwardRef } from 'react';
 
+import { borderReset } from '../../styles/reset.css';
+import { resetStyles } from '../../styles/resetStyles';
+import { sprinkles } from '../../styles/sprinkles.css';
 import { dataAttrs } from '../../utils/dataAttrs';
 
-import { boxStyles, type BoxStylesProps } from './newBox/boxStyles';
+import { type BoxStylesProps } from './newBox/boxStyles';
 import type { CommonBoxProps } from './newBox/useBox';
 
 export interface BoxProps
@@ -29,7 +32,7 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 			is = 'div',
 			as = is,
 			children,
-			className,
+			className: _className,
 			odComponent,
 			testId,
 
@@ -90,10 +93,10 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 			borderColour,
 			borderColourX,
 			borderColourY,
-			borderColourBottom,
-			borderColourLeft,
-			borderColourRight,
-			borderColourTop,
+			borderBottomColour,
+			borderLeftColour,
+			borderRightColour,
+			borderTopColour,
 
 			alignContent,
 			alignItems,
@@ -146,9 +149,39 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 		},
 		ref,
 	) => {
-		const cls = boxStyles({
-			as,
+		const Component = as;
+		const hasBorder = Boolean(
+			borderColor ||
+				borderStyle ||
+				borderWidth ||
+				borderWidthX ||
+				borderWidthY ||
+				borderBottomColor ||
+				borderBottomStyle ||
+				borderBottomWidth ||
+				borderLeftColor ||
+				borderLeftStyle ||
+				borderLeftWidth ||
+				borderRightColor ||
+				borderRightStyle ||
+				borderRightWidth ||
+				borderTopColor ||
+				borderTopStyle ||
+				borderTopWidth ||
+				borderWidthTop ||
+				borderWidthRight ||
+				borderWidthBottom ||
+				borderWidthLeft ||
+				borderColour ||
+				borderColourX ||
+				borderColourY ||
+				borderBottomColour ||
+				borderLeftColour ||
+				borderRightColour ||
+				borderTopColour,
+		);
 
+		const styles = sprinkles({
 			display,
 			height,
 			maxWidth,
@@ -205,10 +238,10 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 			borderColour,
 			borderColourX,
 			borderColourY,
-			borderColourBottom,
-			borderColourLeft,
-			borderColourRight,
-			borderColourTop,
+			borderBottomColour,
+			borderLeftColour,
+			borderRightColour,
+			borderTopColour,
 
 			alignContent,
 			alignItems,
@@ -258,7 +291,14 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 			paddingTop,
 		});
 
-		const Component = as;
+		const className = clsx(
+			resetStyles({ as: as ? `${as}` : as }),
+			// When any border color or width is specified, automatically set borderWidth to 'none'
+			// and borderStyle to 'solid'. This handles properties with old naming and css-aligned
+			hasBorder && borderReset,
+			styles,
+			_className,
+		);
 
 		return (
 			<Component
@@ -267,7 +307,7 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 					'od-component': odComponent?.toLocaleLowerCase(),
 					testId,
 				})}
-				className={clsx(cls, className)}
+				className={className}
 				ref={ref}
 			>
 				{children}

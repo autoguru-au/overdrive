@@ -186,10 +186,10 @@ const baseProperties = defineProperties({
 		borderLeftColor: borderColors,
 		borderRightColor: borderColors,
 		borderTopColor: borderColors,
-		borderColourBottom: mappedBorderBottomColours,
-		borderColourLeft: mappedBorderLeftColours,
-		borderColourRight: mappedBorderRightColours,
-		borderColourTop: mappedBorderTopColours,
+		borderBottomColour: mappedBorderBottomColours,
+		borderLeftColour: mappedBorderLeftColours,
+		borderRightColour: mappedBorderRightColours,
+		borderTopColour: mappedBorderTopColours,
 		borderLeftStyle: ['none', 'solid'],
 		borderBottomStyle: ['none', 'solid'],
 		borderRightStyle: ['none', 'solid'],
@@ -232,13 +232,13 @@ const baseProperties = defineProperties({
 		borderColorX: ['borderLeftColor', 'borderRightColor'],
 		borderColorY: ['borderBottomColor', 'borderTopColor'],
 		borderColour: [
-			'borderColourBottom',
-			'borderColourLeft',
-			'borderColourRight',
-			'borderColourTop',
+			'borderBottomColour',
+			'borderLeftColour',
+			'borderRightColour',
+			'borderTopColour',
 		],
-		borderColourX: ['borderColourLeft', 'borderColourRight'],
-		borderColourY: ['borderColourBottom', 'borderColourTop'],
+		borderColourX: ['borderLeftColour', 'borderRightColour'],
+		borderColourY: ['borderBottomColour', 'borderTopColour'],
 		borderStyle: [
 			'borderBottomStyle',
 			'borderLeftStyle',
@@ -418,9 +418,9 @@ export type SprinklesLegacyColours = Pick<
 	Sprinkles,
 	| 'backgroundColour'
 	| 'borderColour'
-	| 'borderColourBottom'
-	| 'borderColourLeft'
-	| 'borderColourRight'
-	| 'borderColourTop'
+	| 'borderBottomColour'
+	| 'borderLeftColour'
+	| 'borderRightColour'
+	| 'borderTopColour'
 	| 'colour'
 >;
