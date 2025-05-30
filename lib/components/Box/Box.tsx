@@ -94,10 +94,6 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 			borderColourLeft,
 			borderColourRight,
 			borderColourTop,
-			borderBottomColour,
-			borderLeftColour,
-			borderRightColour,
-			borderTopColour,
 
 			alignContent,
 			alignItems,
@@ -213,10 +209,6 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 			borderColourLeft,
 			borderColourRight,
 			borderColourTop,
-			borderBottomColour,
-			borderLeftColour,
-			borderRightColour,
-			borderTopColour,
 
 			alignContent,
 			alignItems,

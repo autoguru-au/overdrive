@@ -75,12 +75,79 @@ const intentBorderColours = Object.entries(tokens.colours.intent).reduce(
 	{} as Record<keyof typeof tokens.colours.intent, string>,
 );
 
+const backgroundColours = {
+	...intentBackgroundColoursStandard,
+	...tokens.colours.gamut,
+	transparent: 'transparent',
+};
+
 const borderColors = {
 	default: tokens.color.interactive.border,
 	muted: tokens.color.interactive.borderMuted,
 	disabled: tokens.color.interactive.borderDisabled,
 	...tokens.color.surface,
 };
+
+const borderColours = {
+	...tokens.border.colours,
+	...intentBorderColours,
+};
+
+const colours = {
+	...tokens.colours.foreground,
+	...tokens.typography.colour,
+	...intentForegroundColours,
+	unset: 'unset',
+	white: tokens.colours.gamut.white,
+};
+
+const mappedBackgroundColours = Object.entries(backgroundColours).reduce(
+	(acc, [key, value]) => {
+		acc[key] = { backgroundColor: value };
+		return acc;
+	},
+	{} as Record<keyof typeof backgroundColours, { backgroundColor: string }>,
+);
+
+const mappedBorderBottomColours = Object.entries(borderColours).reduce(
+	(acc, [key, value]) => {
+		acc[key] = { borderBottomColor: value };
+		return acc;
+	},
+	{} as Record<keyof typeof borderColours, { borderBottomColor: string }>,
+);
+
+const mappedBorderLeftColours = Object.entries(borderColours).reduce(
+	(acc, [key, value]) => {
+		acc[key] = { borderLeftColor: value };
+		return acc;
+	},
+	{} as Record<keyof typeof borderColours, { borderLeftColor: string }>,
+);
+
+const mappedBorderRightColours = Object.entries(borderColours).reduce(
+	(acc, [key, value]) => {
+		acc[key] = { borderRightColor: value };
+		return acc;
+	},
+	{} as Record<keyof typeof borderColours, { borderRightColor: string }>,
+);
+
+const mappedBorderTopColours = Object.entries(borderColours).reduce(
+	(acc, [key, value]) => {
+		acc[key] = { borderTopColor: value };
+		return acc;
+	},
+	{} as Record<keyof typeof borderColours, { borderTopColor: string }>,
+);
+
+const mappedColours = Object.entries(colours).reduce(
+	(acc, [key, value]) => {
+		acc[key] = { color: value };
+		return acc;
+	},
+	{} as Record<keyof typeof colours, { color: string }>,
+);
 
 const gapSizesWithVar = Object.entries(space).reduce(
 	(acc, [key, value]) => {
@@ -119,16 +186,22 @@ const baseProperties = defineProperties({
 		borderLeftColor: borderColors,
 		borderRightColor: borderColors,
 		borderTopColor: borderColors,
+		borderColourBottom: mappedBorderBottomColours,
+		borderColourLeft: mappedBorderLeftColours,
+		borderColourRight: mappedBorderRightColours,
+		borderColourTop: mappedBorderTopColours,
 		borderLeftStyle: ['none', 'solid'],
 		borderBottomStyle: ['none', 'solid'],
 		borderRightStyle: ['none', 'solid'],
 		borderTopStyle: ['none', 'solid'],
 		// Color
 		color: tokens.color.content,
+		colour: mappedColours,
 		backgroundColor: {
 			...tokens.color.surface,
 			transparent: 'transparent',
 		},
+		backgroundColour: mappedBackgroundColours,
 		opacity: [0, '1', '0'],
 		// Typography
 		fontSize: fontSizes,
@@ -156,75 +229,28 @@ const baseProperties = defineProperties({
 			'borderRightColor',
 			'borderTopColor',
 		],
+		borderColorX: ['borderLeftColor', 'borderRightColor'],
+		borderColorY: ['borderBottomColor', 'borderTopColor'],
+		borderColour: [
+			'borderColourBottom',
+			'borderColourLeft',
+			'borderColourRight',
+			'borderColourTop',
+		],
+		borderColourX: ['borderColourLeft', 'borderColourRight'],
+		borderColourY: ['borderColourBottom', 'borderColourTop'],
 		borderStyle: [
 			'borderBottomStyle',
 			'borderLeftStyle',
 			'borderRightStyle',
 			'borderTopStyle',
 		],
+		borderStyleBottom: ['borderBottomStyle'],
+		borderStyleLeft: ['borderLeftStyle'],
+		borderStyleRight: ['borderRightStyle'],
+		borderStyleTop: ['borderTopStyle'],
 	},
 });
-
-// --- Legacy sprinkles with old colour tokens (non-responsive)
-const borderColours = {
-	...tokens.border.colours,
-	...intentBorderColours,
-};
-const legacyColourProperties = defineProperties({
-	'@layer': cssLayerUtil,
-	properties: {
-		backgroundColor: {
-			...intentBackgroundColoursStandard,
-			...tokens.colours.gamut,
-			transparent: 'transparent',
-		},
-		borderBottomColor: borderColours,
-		borderLeftColor: borderColours,
-		borderRightColor: borderColours,
-		borderTopColor: borderColours,
-		color: {
-			...tokens.colours.foreground,
-			...tokens.typography.colour,
-			...intentForegroundColours,
-			unset: 'unset',
-			white: tokens.colours.gamut.white,
-		},
-	},
-	// use the shorthands to remap 'color' to 'colour'
-	shorthands: {
-		backgroundColour: ['backgroundColor'],
-		borderColour: [
-			'borderBottomColor',
-			'borderLeftColor',
-			'borderRightColor',
-			'borderTopColor',
-		],
-		borderColourX: ['borderLeftColor', 'borderRightColor'],
-		borderColourY: ['borderBottomColor', 'borderTopColor'],
-		borderBottomColour: ['borderBottomColor'],
-		borderLeftColour: ['borderLeftColor'],
-		borderRightColour: ['borderRightColor'],
-		borderTopColour: ['borderTopColor'],
-		borderColourBottom: ['borderBottomColor'],
-		borderColourLeft: ['borderLeftColor'],
-		borderColourRight: ['borderRightColor'],
-		borderColourTop: ['borderTopColor'],
-		colour: ['color'],
-	},
-});
-
-export const sprinklesLegacyColours = createSprinkles(legacyColourProperties);
-// filter out the spellings of 'color' from the type as well
-export type SprinklesLegacyColours = Omit<
-	Parameters<typeof sprinklesLegacyColours>[0],
-	| 'backgroundColor'
-	| 'borderColor'
-	| 'borderBottomColor'
-	| 'borderLeftColor'
-	| 'borderRightColor'
-	| 'borderTopColor'
-	| 'color'
->;
 
 const legacyTextProperties = defineProperties({
 	'@layer': cssLayerUtil,
@@ -386,3 +412,15 @@ const responsiveProperties = defineProperties({
 
 export const sprinkles = createSprinkles(baseProperties, responsiveProperties);
 export type Sprinkles = Parameters<typeof sprinkles>[0];
+
+// pick out the 'colour' spelling props
+export type SprinklesLegacyColours = Pick<
+	Sprinkles,
+	| 'backgroundColour'
+	| 'borderColour'
+	| 'borderColourBottom'
+	| 'borderColourLeft'
+	| 'borderColourRight'
+	| 'borderColourTop'
+	| 'colour'
+>;
