@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import type { ElementType } from 'react';
 
+import { borderWidthReset } from '../../../styles/reset.css';
 import { resetStyles } from '../../../styles/resetStyles';
 import {
 	sprinkles,
@@ -39,13 +40,20 @@ export const boxStylesWithFilteredProps = <E extends ElementType = 'div'>({
 	className,
 	...props
 }: BoxStylesProps<E>) => {
+	let hasBorder = false;
 	const { sprinklesProps, sprinklesLegacyColourProps, baseProps } =
 		filterPropsWithStyles(props);
 
-	// a little bit of logic specific to border properties for backwards compatability
+	// When any border color or width is specified, automatically set borderWidth to 'none
+	// and borderStyle to 'solid'. This handles properties with old naming and new
+	// css-aligned naming like borderLeftColor or borderWidthTop
 	for (const postfix of borderPostfixes) {
 		for (const property of borderProperties) {
-			if (props[`border${postfix}${property}`]) {
+			if (
+				!!props[`border${postfix}${property}`] ||
+				!!props[`border${property}${postfix}`]
+			) {
+				hasBorder = true;
 				sprinklesProps[`border${postfix}Style`] = 'solid';
 			}
 		}
@@ -54,6 +62,7 @@ export const boxStylesWithFilteredProps = <E extends ElementType = 'div'>({
 	return {
 		className: clsx(
 			resetStyles({ as: as ? `${as}` : as }),
+			hasBorder && borderWidthReset,
 			sprinkles(sprinklesProps),
 			sprinklesLegacyColours(sprinklesLegacyColourProps),
 			className,
