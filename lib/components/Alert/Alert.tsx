@@ -10,8 +10,8 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { ComponentProps, FunctionComponent, ReactNode } from 'react';
 
+import { sprinkles } from '../../styles';
 import { Box } from '../Box/Box';
-import { useBoxStyles } from '../Box/useBoxStyles';
 import { Button } from '../Button/Button';
 import { Icon } from '../Icon/Icon';
 import { IntentStripe } from '../IntentStripe/IntentStripe';
@@ -71,7 +71,7 @@ export const Alert: FunctionComponent<Props> = ({
 					<Icon
 						icon={iconMapForIntent[intent]}
 						size="medium"
-						className={useBoxStyles({
+						className={sprinkles({
 							marginY: '2',
 							marginLeft: '2',
 						})}

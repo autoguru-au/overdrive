@@ -2,8 +2,8 @@ import { warning } from '@autoguru/utilities';
 import clsx from 'clsx';
 import * as React from 'react';
 
+import { sprinkles } from '../../styles';
 import { Box } from '../Box/Box';
-import { boxStyles } from '../Box/newBox/boxStyles';
 import { Text } from '../Text/Text';
 import { withEnhancedInput } from '../private/InputBase';
 
@@ -57,7 +57,7 @@ export const ColourInput = withEnhancedInput<{}, HTMLInputElement>(
 					className={clsx(
 						styles.valueText,
 						styles.valueTextSize[size],
-						boxStyles({
+						sprinkles({
 							position: 'absolute',
 						}),
 					)}

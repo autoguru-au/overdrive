@@ -18,11 +18,11 @@ import {
 	type ReactElement,
 } from 'react';
 
+import { componentStyles } from '../../styles';
 import type { TextFontWeight, TextSizeScale } from '../../themes';
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box/Box';
-import { useBoxStyles, type BoxStyleProps } from '../Box/useBoxStyles';
 import { Icon } from '../Icon/Icon';
 import { ProgressSpinner } from '../ProgressSpinner/ProgressSpinner';
 import { useTextStyles } from '../Text/useTextStyles';
@@ -70,14 +70,9 @@ const getSpinnerColour: (
 ) => ComponentProps<typeof ProgressSpinner>['colour'] = (variant, minimal) =>
 	minimal || variant === 'secondary' ? 'secondary' : 'light';
 
-const getBorderRadius: (rounded: boolean) => BoxStyleProps['borderRadius'] = (
-	rounded,
-) => (rounded ? 'pill' : 'md');
+const getBorderRadius = (rounded: boolean) => (rounded ? 'pill' : 'md');
 
-const getPadding: (
-	size: ButtonProps['size'],
-	loading: boolean,
-) => BoxStyleProps['paddingX'] = (size, loading) => {
+const getPadding = (size: ButtonProps['size'], loading: boolean) => {
 	if (loading) return 'none';
 	return size === 'small' ? '3' : '4';
 };
@@ -161,17 +156,17 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 			'aria-label': isLoading ? language.loading : ariaLabel,
 			'data-loading': isLoading ? '' : undefined,
 			className: clsx(
-				useBoxStyles({
-					is: typeof Component === 'string' ? Component : undefined,
-					display: 'inlineBlock',
+				componentStyles({
+					as: Component,
+					display: 'inline-block',
 					overflow: 'hidden',
 					borderRadius: getBorderRadius(rounded),
 					textAlign: 'center',
 					borderWidth: 'none',
 					paddingY: 'none',
 					paddingX: getPadding(size, isLoading),
-					width: isFullWidth ? 'full' : void 0,
-					pointerEvents: functionallyDisabled ? 'none' : void 0,
+					width: isFullWidth ? 'full' : undefined,
+					pointerEvents: functionallyDisabled ? 'none' : undefined,
 				}),
 				useTextStyles({
 					colour: 'white',

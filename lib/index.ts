@@ -5,5 +5,5 @@ export type {
 	SprinklesLegacyColours as LegacyColourStyleProps,
 } from './styles/sprinkles.css';
 export { overdriveTokens as tokens } from './themes/theme.css';
-export { boxStyles as style } from './components/Box/newBox/boxStyles';
+export { sprinkles as style } from './styles/sprinkles.css';
 export { useId, arrayRingLookup } from './utils/index';

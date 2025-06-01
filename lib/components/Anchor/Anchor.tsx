@@ -12,7 +12,7 @@ import {
 	ReactNode,
 } from 'react';
 
-import { useBoxStyles } from '../Box/useBoxStyles';
+import { componentStyles } from '../../styles';
 import { Icon } from '../Icon/Icon';
 import { Inline } from '../Inline/Inline';
 import { Text } from '../Text/Text';
@@ -50,12 +50,9 @@ export const Anchor: FunctionComponent<Props> = ({
 
 	const props = {
 		className: clsx(
+			componentStyles({ as: Component, display: 'inline' }),
 			styles.root,
 			textStyles,
-			useBoxStyles({
-				is: typeof Component === 'string' ? Component : undefined,
-				display: 'inline',
-			}),
 			className,
 		),
 		disabled,

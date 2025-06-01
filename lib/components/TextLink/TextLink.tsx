@@ -13,8 +13,8 @@ import React, {
 	ReactNode,
 } from 'react';
 
+import { componentStyles } from '../../styles';
 import { Box } from '../Box/Box';
-import { useBoxStyles } from '../Box/useBoxStyles';
 import { Icon } from '../Icon/Icon';
 import { Text } from '../Text/Text';
 
@@ -62,8 +62,8 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 				fontWeight={fontWeight}
 				strong={strong}
 				className={clsx(
-					useBoxStyles({
-						is: 'span',
+					componentStyles({
+						as: 'span',
 						pointerEvents: 'none',
 						position: 'relative',
 						paddingRight: icon ? '5' : undefined,

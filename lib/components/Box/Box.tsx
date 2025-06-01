@@ -3,7 +3,7 @@ import type { AllHTMLAttributes, ElementType, ReactNode } from 'react';
 import React, { forwardRef } from 'react';
 
 import { borderReset } from '../../styles/reset.css';
-import { resetStyles } from '../../styles/resetStyles';
+import { elementResetStyles } from '../../styles/resetStyles';
 import { sprinkles } from '../../styles/sprinkles.css';
 import { dataAttrs } from '../../utils/dataAttrs';
 
@@ -292,7 +292,7 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 		});
 
 		const className = clsx(
-			resetStyles({ as: as ? `${as}` : as }),
+			elementResetStyles(as),
 			// When any border color or width is specified, automatically set borderWidth to 'none'
 			// and borderStyle to 'solid'. This handles properties with old naming and css-aligned
 			hasBorder && borderReset,

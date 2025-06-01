@@ -2,8 +2,8 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { ComponentProps, FunctionComponent, useMemo } from 'react';
 
+import { sprinkles } from '../../styles';
 import { Box } from '../Box/Box';
-import { boxStyles } from '../Box/newBox/boxStyles';
 import { Text } from '../Text/Text';
 
 import * as styles from './TextBubble.css';
@@ -67,7 +67,7 @@ export const TextBubble: FunctionComponent<TextBubbleProps> = ({
 				noWrap
 				className={clsx(
 					styles.bubbleText,
-					boxStyles({
+					sprinkles({
 						position: 'absolute',
 						overflow: 'hidden',
 						width: 'full',

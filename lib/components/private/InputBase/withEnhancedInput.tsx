@@ -18,9 +18,9 @@ import React, {
 	useState,
 } from 'react';
 
+import { componentStyles, sprinkles } from '../../../styles';
 import { useInputControlledState } from '../../../utils';
 import { Box } from '../../Box/Box';
-import { useBoxStyles } from '../../Box/useBoxStyles';
 import { Icon } from '../../Icon/Icon';
 import { ProgressSpinner } from '../../ProgressSpinner/ProgressSpinner';
 
@@ -201,8 +201,8 @@ export const withEnhancedInput = <
 			const iconSize = size === 'small' ? 'medium' : size;
 
 			const inputItselfClassName = clsx(
-				useBoxStyles({
-					is: primitiveType === 'textarea' ? 'textarea' : 'input',
+				componentStyles({
+					as: primitiveType === 'textarea' ? 'textarea' : 'input',
 					backgroundColour,
 					width: 'full',
 					position: 'relative',
@@ -288,7 +288,7 @@ export const withEnhancedInput = <
 				setIsHovered(false);
 			}, []);
 
-			const iconStyles = useBoxStyles({
+			const iconStyles = sprinkles({
 				pointerEvents: 'none',
 				position: 'absolute',
 			});

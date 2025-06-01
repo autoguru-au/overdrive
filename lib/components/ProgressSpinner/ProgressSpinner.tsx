@@ -2,8 +2,8 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { FunctionComponent } from 'react';
 
+import { componentStyles } from '../../styles';
 import { Box } from '../Box/Box';
-import { boxStyles } from '../Box/newBox/boxStyles';
 
 import * as styles from './ProgressSpinner.css';
 
@@ -27,7 +27,7 @@ export const ProgressSpinner: FunctionComponent<ProgressSpinnerProps> = ({
 	>
 		<svg
 			className={clsx(
-				boxStyles({
+				componentStyles({
 					as: 'svg',
 					display: 'block',
 					overflow: 'hidden',
