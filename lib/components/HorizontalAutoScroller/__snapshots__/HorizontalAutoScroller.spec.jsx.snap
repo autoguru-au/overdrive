@@ -18,7 +18,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
           class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_flexStart_mobile__onxwjulc HorizontalAutoScroller_controllerBtn__2i92q00 HorizontalAutoScroller_prevBtn__2i92q02"
         >
           <button
-            class="reset_trimmedElement__4z7xt30 reset_button__4z7xt35 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_inlineBlock__3xgq1lge useBoxStyles_overflow_hidden__3xgq1lg4 useBoxStyles_textAlign_center__3xgq1lg2 useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lb9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc5 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldl useTextStyles_root__1xnpmd70 reset_block__4z7xt34 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_5__p2yon5o"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_button__4z7xt312 reset_trimmedElement__4z7xt30 reset_button__4z7xt35 sprinkles_borderBottomWidth_none_mobile__onxwjuc0 sprinkles_borderLeftWidth_none_mobile__onxwjubk sprinkles_borderRightWidth_none_mobile__onxwjucg sprinkles_borderTopWidth_none_mobile__onxwjucw sprinkles_paddingLeft_4_mobile__onxwjuto sprinkles_paddingRight_4_mobile__onxwjuus sprinkles_paddingTop_none_mobile__onxwjuwk sprinkles_paddingBottom_none_mobile__onxwjut8 sprinkles_display_inline-block_mobile__onxwju7s sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_borderRadius_pill_mobile__onxwjub0 sprinkles_textAlign_center_mobile__onxwju9s useTextStyles_root__1xnpmd70 reset_block__4z7xt34 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_5__p2yon5o"
             type="button"
           >
             <div
@@ -29,7 +29,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
               >
                 <svg
                   aria-hidden="true"
-                  class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+                  class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_width_full_mobile__onxwjufw sprinkles_height_full_mobile__onxwjuec"
                   fill="currentColor"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -173,7 +173,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
           class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_flexEnd_mobile__onxwjul4 HorizontalAutoScroller_controllerBtn__2i92q00 HorizontalAutoScroller_nextBtn__2i92q03"
         >
           <button
-            class="reset_trimmedElement__4z7xt30 reset_button__4z7xt35 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_inlineBlock__3xgq1lge useBoxStyles_overflow_hidden__3xgq1lg4 useBoxStyles_textAlign_center__3xgq1lg2 useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lb9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc5 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldl useTextStyles_root__1xnpmd70 reset_block__4z7xt34 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_5__p2yon5o"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_button__4z7xt312 reset_trimmedElement__4z7xt30 reset_button__4z7xt35 sprinkles_borderBottomWidth_none_mobile__onxwjuc0 sprinkles_borderLeftWidth_none_mobile__onxwjubk sprinkles_borderRightWidth_none_mobile__onxwjucg sprinkles_borderTopWidth_none_mobile__onxwjucw sprinkles_paddingLeft_4_mobile__onxwjuto sprinkles_paddingRight_4_mobile__onxwjuus sprinkles_paddingTop_none_mobile__onxwjuwk sprinkles_paddingBottom_none_mobile__onxwjut8 sprinkles_display_inline-block_mobile__onxwju7s sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_borderRadius_pill_mobile__onxwjub0 sprinkles_textAlign_center_mobile__onxwju9s useTextStyles_root__1xnpmd70 reset_block__4z7xt34 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_5__p2yon5o"
             type="button"
           >
             <div
@@ -184,7 +184,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
               >
                 <svg
                   aria-hidden="true"
-                  class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+                  class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_width_full_mobile__onxwjufw sprinkles_height_full_mobile__onxwjuec"
                   fill="currentColor"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -214,10 +214,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
             class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_relative_mobile__onxwju98 SliderProgress_step__17uw35s1"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_primary__onxwju30 ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_primary__onxwju3o ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
             />
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_primary__onxwju30 ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3 ProgressStep_active__15qfq7e4 ProgressStep_paused__15qfq7e5"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_primary__onxwju3o ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3 ProgressStep_active__15qfq7e4 ProgressStep_paused__15qfq7e5"
               style="animation-duration: 10s;"
             />
           </div>
@@ -225,10 +225,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
             class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_relative_mobile__onxwju98 SliderProgress_step__17uw35s1"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_primary__onxwju30 ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_primary__onxwju3o ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
             />
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_primary__onxwju30 ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_primary__onxwju3o ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
               style="animation-duration: 10s;"
             />
           </div>
@@ -236,10 +236,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
             class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_relative_mobile__onxwju98 SliderProgress_step__17uw35s1"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_primary__onxwju30 ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_primary__onxwju3o ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
             />
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_primary__onxwju30 ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_primary__onxwju3o ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
               style="animation-duration: 10s;"
             />
           </div>
@@ -247,10 +247,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
             class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_relative_mobile__onxwju98 SliderProgress_step__17uw35s1"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_primary__onxwju30 ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_primary__onxwju3o ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
             />
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_primary__onxwju30 ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_primary__onxwju3o ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
               style="animation-duration: 10s;"
             />
           </div>
@@ -258,10 +258,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
             class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_relative_mobile__onxwju98 SliderProgress_step__17uw35s1"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_primary__onxwju30 ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_primary__onxwju3o ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
             />
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_primary__onxwju30 ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_primary__onxwju3o ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
               style="animation-duration: 10s;"
             />
           </div>
@@ -269,10 +269,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
             class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_relative_mobile__onxwju98 SliderProgress_step__17uw35s1"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_primary__onxwju30 ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_primary__onxwju3o ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
             />
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_primary__onxwju30 ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_primary__onxwju3o ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
               style="animation-duration: 10s;"
             />
           </div>
@@ -280,10 +280,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
             class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_relative_mobile__onxwju98 SliderProgress_step__17uw35s1"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_primary__onxwju30 ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_primary__onxwju3o ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
             />
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_primary__onxwju30 ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_primary__onxwju3o ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
               style="animation-duration: 10s;"
             />
           </div>
@@ -291,10 +291,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
             class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_relative_mobile__onxwju98 SliderProgress_step__17uw35s1"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_primary__onxwju30 ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_primary__onxwju3o ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
             />
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_primary__onxwju30 ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_primary__onxwju3o ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
               style="animation-duration: 10s;"
             />
           </div>
@@ -323,7 +323,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
           class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_flexStart_mobile__onxwjulc HorizontalAutoScroller_controllerBtn__2i92q00 HorizontalAutoScroller_prevBtn__2i92q02"
         >
           <button
-            class="reset_trimmedElement__4z7xt30 reset_button__4z7xt35 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_inlineBlock__3xgq1lge useBoxStyles_overflow_hidden__3xgq1lg4 useBoxStyles_textAlign_center__3xgq1lg2 useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lb9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc5 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldl useTextStyles_root__1xnpmd70 reset_block__4z7xt34 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_5__p2yon5o"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_button__4z7xt312 reset_trimmedElement__4z7xt30 reset_button__4z7xt35 sprinkles_borderBottomWidth_none_mobile__onxwjuc0 sprinkles_borderLeftWidth_none_mobile__onxwjubk sprinkles_borderRightWidth_none_mobile__onxwjucg sprinkles_borderTopWidth_none_mobile__onxwjucw sprinkles_paddingLeft_4_mobile__onxwjuto sprinkles_paddingRight_4_mobile__onxwjuus sprinkles_paddingTop_none_mobile__onxwjuwk sprinkles_paddingBottom_none_mobile__onxwjut8 sprinkles_display_inline-block_mobile__onxwju7s sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_borderRadius_pill_mobile__onxwjub0 sprinkles_textAlign_center_mobile__onxwju9s useTextStyles_root__1xnpmd70 reset_block__4z7xt34 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_5__p2yon5o"
             type="button"
           >
             <div
@@ -334,7 +334,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
               >
                 <svg
                   aria-hidden="true"
-                  class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+                  class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_width_full_mobile__onxwjufw sprinkles_height_full_mobile__onxwjuec"
                   fill="currentColor"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -426,7 +426,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
           class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_flexEnd_mobile__onxwjul4 HorizontalAutoScroller_controllerBtn__2i92q00 HorizontalAutoScroller_nextBtn__2i92q03"
         >
           <button
-            class="reset_trimmedElement__4z7xt30 reset_button__4z7xt35 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_inlineBlock__3xgq1lge useBoxStyles_overflow_hidden__3xgq1lg4 useBoxStyles_textAlign_center__3xgq1lg2 useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lb9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc5 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldl useTextStyles_root__1xnpmd70 reset_block__4z7xt34 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_5__p2yon5o"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_button__4z7xt312 reset_trimmedElement__4z7xt30 reset_button__4z7xt35 sprinkles_borderBottomWidth_none_mobile__onxwjuc0 sprinkles_borderLeftWidth_none_mobile__onxwjubk sprinkles_borderRightWidth_none_mobile__onxwjucg sprinkles_borderTopWidth_none_mobile__onxwjucw sprinkles_paddingLeft_4_mobile__onxwjuto sprinkles_paddingRight_4_mobile__onxwjuus sprinkles_paddingTop_none_mobile__onxwjuwk sprinkles_paddingBottom_none_mobile__onxwjut8 sprinkles_display_inline-block_mobile__onxwju7s sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_borderRadius_pill_mobile__onxwjub0 sprinkles_textAlign_center_mobile__onxwju9s useTextStyles_root__1xnpmd70 reset_block__4z7xt34 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_5__p2yon5o"
             type="button"
           >
             <div
@@ -437,7 +437,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
               >
                 <svg
                   aria-hidden="true"
-                  class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+                  class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_width_full_mobile__onxwjufw sprinkles_height_full_mobile__onxwjuec"
                   fill="currentColor"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -467,10 +467,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
             class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_relative_mobile__onxwju98 SliderProgress_step__17uw35s1"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_yellow500__onxwju4d ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_yellow500__onxwju51 ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
             />
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_yellow500__onxwju4d ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3 ProgressStep_active__15qfq7e4 ProgressStep_paused__15qfq7e5"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_yellow500__onxwju51 ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3 ProgressStep_active__15qfq7e4 ProgressStep_paused__15qfq7e5"
               style="animation-duration: 10s;"
             />
           </div>
@@ -478,10 +478,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
             class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_relative_mobile__onxwju98 SliderProgress_step__17uw35s1"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_yellow500__onxwju4d ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_yellow500__onxwju51 ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
             />
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_yellow500__onxwju4d ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_yellow500__onxwju51 ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
               style="animation-duration: 10s;"
             />
           </div>
@@ -489,10 +489,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
             class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_relative_mobile__onxwju98 SliderProgress_step__17uw35s1"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_yellow500__onxwju4d ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_yellow500__onxwju51 ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
             />
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_yellow500__onxwju4d ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_yellow500__onxwju51 ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
               style="animation-duration: 10s;"
             />
           </div>
@@ -500,10 +500,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
             class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_relative_mobile__onxwju98 SliderProgress_step__17uw35s1"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_yellow500__onxwju4d ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_yellow500__onxwju51 ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
             />
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_yellow500__onxwju4d ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_yellow500__onxwju51 ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
               style="animation-duration: 10s;"
             />
           </div>

@@ -13,10 +13,10 @@ exports[`<ProgressStep /> > should match the snapshot for 8 items 1`] = `
       class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_relative_mobile__onxwju98 SliderProgress_step__17uw35s1"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_white__onxwju4r ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_white__onxwju5f ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
       />
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_white__onxwju4r ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3 ProgressStep_passed__15qfq7e6"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_white__onxwju5f ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3 ProgressStep_passed__15qfq7e6"
         style="animation-duration: 1s;"
       />
     </div>
@@ -24,10 +24,10 @@ exports[`<ProgressStep /> > should match the snapshot for 8 items 1`] = `
       class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_relative_mobile__onxwju98 SliderProgress_step__17uw35s1"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_white__onxwju4r ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_white__onxwju5f ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
       />
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_white__onxwju4r ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3 ProgressStep_active__15qfq7e4"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_white__onxwju5f ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3 ProgressStep_active__15qfq7e4"
         style="animation-duration: 1s;"
       />
     </div>
@@ -35,10 +35,10 @@ exports[`<ProgressStep /> > should match the snapshot for 8 items 1`] = `
       class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_relative_mobile__onxwju98 SliderProgress_step__17uw35s1"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_white__onxwju4r ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_white__onxwju5f ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
       />
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_white__onxwju4r ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_white__onxwju5f ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
         style="animation-duration: 1s;"
       />
     </div>
@@ -46,10 +46,10 @@ exports[`<ProgressStep /> > should match the snapshot for 8 items 1`] = `
       class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_relative_mobile__onxwju98 SliderProgress_step__17uw35s1"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_white__onxwju4r ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_white__onxwju5f ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
       />
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_white__onxwju4r ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_white__onxwju5f ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
         style="animation-duration: 1s;"
       />
     </div>
@@ -57,10 +57,10 @@ exports[`<ProgressStep /> > should match the snapshot for 8 items 1`] = `
       class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_relative_mobile__onxwju98 SliderProgress_step__17uw35s1"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_white__onxwju4r ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_white__onxwju5f ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
       />
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_white__onxwju4r ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_white__onxwju5f ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
         style="animation-duration: 1s;"
       />
     </div>
@@ -68,10 +68,10 @@ exports[`<ProgressStep /> > should match the snapshot for 8 items 1`] = `
       class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_relative_mobile__onxwju98 SliderProgress_step__17uw35s1"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_white__onxwju4r ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_white__onxwju5f ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
       />
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_white__onxwju4r ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_white__onxwju5f ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
         style="animation-duration: 1s;"
       />
     </div>
@@ -79,10 +79,10 @@ exports[`<ProgressStep /> > should match the snapshot for 8 items 1`] = `
       class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_relative_mobile__onxwju98 SliderProgress_step__17uw35s1"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_white__onxwju4r ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_white__onxwju5f ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
       />
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_white__onxwju4r ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_white__onxwju5f ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
         style="animation-duration: 1s;"
       />
     </div>
@@ -90,10 +90,10 @@ exports[`<ProgressStep /> > should match the snapshot for 8 items 1`] = `
       class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_relative_mobile__onxwju98 SliderProgress_step__17uw35s1"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_white__onxwju4r ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_white__onxwju5f ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
       />
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_white__onxwju4r ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_white__onxwju5f ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
         style="animation-duration: 1s;"
       />
     </div>
@@ -114,10 +114,10 @@ exports[`<ProgressStep /> > should match the snapshot with custom background 1`]
       class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_relative_mobile__onxwju98 SliderProgress_step__17uw35s1"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_yellow500__onxwju4d ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_yellow500__onxwju51 ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
       />
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_yellow500__onxwju4d ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3 ProgressStep_passed__15qfq7e6"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_yellow500__onxwju51 ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3 ProgressStep_passed__15qfq7e6"
         style="animation-duration: 1s;"
       />
     </div>
@@ -125,10 +125,10 @@ exports[`<ProgressStep /> > should match the snapshot with custom background 1`]
       class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_relative_mobile__onxwju98 SliderProgress_step__17uw35s1"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_yellow500__onxwju4d ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_yellow500__onxwju51 ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
       />
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_yellow500__onxwju4d ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3 ProgressStep_active__15qfq7e4"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_yellow500__onxwju51 ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3 ProgressStep_active__15qfq7e4"
         style="animation-duration: 1s;"
       />
     </div>
@@ -136,10 +136,10 @@ exports[`<ProgressStep /> > should match the snapshot with custom background 1`]
       class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_relative_mobile__onxwju98 SliderProgress_step__17uw35s1"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_yellow500__onxwju4d ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_yellow500__onxwju51 ProgressStep_item__15qfq7e2 ProgressStep_empty__15qfq7e0"
       />
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColor_yellow500__onxwju4d ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_none_mobile__onxwju70 sprinkles_position_absolute_mobile__onxwju9c sprinkles_backgroundColour_yellow500__onxwju51 ProgressStep_item__15qfq7e2 ProgressStep_fill__15qfq7e3"
         style="animation-duration: 1s;"
       />
     </div>

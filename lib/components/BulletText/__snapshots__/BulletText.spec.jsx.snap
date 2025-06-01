@@ -20,7 +20,7 @@ exports[`<BulletText /> > should match snapshot for custom bullet text 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_width_full_mobile__onxwjufw sprinkles_height_full_mobile__onxwjuec"
               fill="currentColor"
               focusable="false"
               viewBox="0 0 24 24"

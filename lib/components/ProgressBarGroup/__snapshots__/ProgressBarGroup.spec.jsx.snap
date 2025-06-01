@@ -13,10 +13,10 @@ exports[`<ProgressBarGroup /> > should match the snapshot 1`] = `
       class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73 ProgressBarGroup_label__1e1wroi1"
     />
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_gray100__onxwju3i ProgressBar_container__4k1c010"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_backgroundColour_gray100__onxwju46 sprinkles_borderRadius_1_mobile__onxwjua4 ProgressBar_container__4k1c010"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_green500__onxwju3v ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_backgroundColour_green500__onxwju4j sprinkles_borderRadius_1_mobile__onxwjua4 ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 16.666666666666664%;"
       />
     </div>
@@ -27,10 +27,10 @@ exports[`<ProgressBarGroup /> > should match the snapshot 1`] = `
       class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73 ProgressBarGroup_label__1e1wroi1"
     />
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_gray100__onxwju3i ProgressBar_container__4k1c010"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_backgroundColour_gray100__onxwju46 sprinkles_borderRadius_1_mobile__onxwjua4 ProgressBar_container__4k1c010"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_green500__onxwju3v ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_backgroundColour_green500__onxwju4j sprinkles_borderRadius_1_mobile__onxwjua4 ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 33.33333333333333%;"
       />
     </div>
@@ -41,10 +41,10 @@ exports[`<ProgressBarGroup /> > should match the snapshot 1`] = `
       class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73 ProgressBarGroup_label__1e1wroi1"
     />
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_gray100__onxwju3i ProgressBar_container__4k1c010"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_backgroundColour_gray100__onxwju46 sprinkles_borderRadius_1_mobile__onxwjua4 ProgressBar_container__4k1c010"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_green500__onxwju3v ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_backgroundColour_green500__onxwju4j sprinkles_borderRadius_1_mobile__onxwjua4 ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 50%;"
       />
     </div>
@@ -70,10 +70,10 @@ exports[`<ProgressBarGroup /> > should should ignore extra labels 1`] = `
       a
     </span>
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_gray100__onxwju3i ProgressBar_container__4k1c010"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_backgroundColour_gray100__onxwju46 sprinkles_borderRadius_1_mobile__onxwjua4 ProgressBar_container__4k1c010"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_green500__onxwju3v ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_backgroundColour_green500__onxwju4j sprinkles_borderRadius_1_mobile__onxwjua4 ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 16.666666666666664%;"
       />
     </div>
@@ -86,10 +86,10 @@ exports[`<ProgressBarGroup /> > should should ignore extra labels 1`] = `
       b
     </span>
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_gray100__onxwju3i ProgressBar_container__4k1c010"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_backgroundColour_gray100__onxwju46 sprinkles_borderRadius_1_mobile__onxwjua4 ProgressBar_container__4k1c010"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_green500__onxwju3v ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_backgroundColour_green500__onxwju4j sprinkles_borderRadius_1_mobile__onxwjua4 ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 33.33333333333333%;"
       />
     </div>
@@ -102,10 +102,10 @@ exports[`<ProgressBarGroup /> > should should ignore extra labels 1`] = `
       c
     </span>
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_gray100__onxwju3i ProgressBar_container__4k1c010"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_backgroundColour_gray100__onxwju46 sprinkles_borderRadius_1_mobile__onxwjua4 ProgressBar_container__4k1c010"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_green500__onxwju3v ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_backgroundColour_green500__onxwju4j sprinkles_borderRadius_1_mobile__onxwjua4 ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 50%;"
       />
     </div>
@@ -131,10 +131,10 @@ exports[`<ProgressBarGroup /> > should should ignore not break when not enough l
       a
     </span>
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_gray100__onxwju3i ProgressBar_container__4k1c010"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_backgroundColour_gray100__onxwju46 sprinkles_borderRadius_1_mobile__onxwjua4 ProgressBar_container__4k1c010"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_green500__onxwju3v ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_backgroundColour_green500__onxwju4j sprinkles_borderRadius_1_mobile__onxwjua4 ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 16.666666666666664%;"
       />
     </div>
@@ -145,10 +145,10 @@ exports[`<ProgressBarGroup /> > should should ignore not break when not enough l
       class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73 ProgressBarGroup_label__1e1wroi1"
     />
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_gray100__onxwju3i ProgressBar_container__4k1c010"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_backgroundColour_gray100__onxwju46 sprinkles_borderRadius_1_mobile__onxwjua4 ProgressBar_container__4k1c010"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_green500__onxwju3v ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_backgroundColour_green500__onxwju4j sprinkles_borderRadius_1_mobile__onxwjua4 ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 33.33333333333333%;"
       />
     </div>
@@ -159,10 +159,10 @@ exports[`<ProgressBarGroup /> > should should ignore not break when not enough l
       class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73 ProgressBarGroup_label__1e1wroi1"
     />
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_gray100__onxwju3i ProgressBar_container__4k1c010"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_backgroundColour_gray100__onxwju46 sprinkles_borderRadius_1_mobile__onxwjua4 ProgressBar_container__4k1c010"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_green500__onxwju3v ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_backgroundColour_green500__onxwju4j sprinkles_borderRadius_1_mobile__onxwjua4 ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 50%;"
       />
     </div>
@@ -188,10 +188,10 @@ exports[`<ProgressBarGroup /> > should should render a prefix for every value 1`
       a
     </span>
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_gray100__onxwju3i ProgressBar_container__4k1c010"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_backgroundColour_gray100__onxwju46 sprinkles_borderRadius_1_mobile__onxwjua4 ProgressBar_container__4k1c010"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_green500__onxwju3v ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_backgroundColour_green500__onxwju4j sprinkles_borderRadius_1_mobile__onxwjua4 ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 16.666666666666664%;"
       />
     </div>
@@ -204,10 +204,10 @@ exports[`<ProgressBarGroup /> > should should render a prefix for every value 1`
       b
     </span>
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_gray100__onxwju3i ProgressBar_container__4k1c010"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_backgroundColour_gray100__onxwju46 sprinkles_borderRadius_1_mobile__onxwjua4 ProgressBar_container__4k1c010"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_green500__onxwju3v ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_backgroundColour_green500__onxwju4j sprinkles_borderRadius_1_mobile__onxwjua4 ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 33.33333333333333%;"
       />
     </div>
@@ -220,10 +220,10 @@ exports[`<ProgressBarGroup /> > should should render a prefix for every value 1`
       c
     </span>
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_gray100__onxwju3i ProgressBar_container__4k1c010"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_backgroundColour_gray100__onxwju46 sprinkles_borderRadius_1_mobile__onxwjua4 ProgressBar_container__4k1c010"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_borderRadius_1_mobile__onxwjua4 sprinkles_backgroundColor_green500__onxwju3v ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_backgroundColour_green500__onxwju4j sprinkles_borderRadius_1_mobile__onxwjua4 ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 50%;"
       />
     </div>

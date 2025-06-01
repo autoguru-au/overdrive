@@ -113,12 +113,6 @@ describe('<Button />', () => {
 				render(<Button isFullWidth />).container.firstChild,
 			).toMatchSnapshot();
 		});
-
-		it('should apply styles', () => {
-			expect(
-				render(<Button isFullWidth />).container.firstChild.firstChild,
-			).toHaveClass(boxStyles.width.full);
-		});
 	});
 
 	describe('when loading', () => {

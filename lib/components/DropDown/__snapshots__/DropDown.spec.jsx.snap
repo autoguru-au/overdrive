@@ -6,7 +6,7 @@ exports[`<DropDown /> > should match the snapshot 1`] = `
   data-od-component="provider"
 >
   <button
-    class="reset_trimmedElement__4z7xt30 reset_button__4z7xt35 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_inlineBlock__3xgq1lge useBoxStyles_overflow_hidden__3xgq1lg4 useBoxStyles_textAlign_center__3xgq1lg2 useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lb9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc5 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useTextStyles_root__1xnpmd70 reset_block__4z7xt34 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_default__p2yon57 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_3__p2yon5m"
+    class="reset_resetVariants__4z7xt3d reset_resetVariants_as_button__4z7xt312 reset_trimmedElement__4z7xt30 reset_button__4z7xt35 sprinkles_borderBottomWidth_none_mobile__onxwjuc0 sprinkles_borderLeftWidth_none_mobile__onxwjubk sprinkles_borderRightWidth_none_mobile__onxwjucg sprinkles_borderTopWidth_none_mobile__onxwjucw sprinkles_paddingLeft_4_mobile__onxwjuto sprinkles_paddingRight_4_mobile__onxwjuus sprinkles_paddingTop_none_mobile__onxwjuwk sprinkles_paddingBottom_none_mobile__onxwjut8 sprinkles_display_inline-block_mobile__onxwju7s sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_borderRadius_md_mobile__onxwjuak sprinkles_textAlign_center_mobile__onxwju9s useTextStyles_root__1xnpmd70 reset_block__4z7xt34 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_default__p2yon57 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_3__p2yon5m"
     type="button"
   >
     <div
@@ -18,7 +18,7 @@ exports[`<DropDown /> > should match the snapshot 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_width_full_mobile__onxwjufw sprinkles_height_full_mobile__onxwjuec"
           fill="currentColor"
           focusable="false"
           viewBox="0 0 24 24"
@@ -40,7 +40,7 @@ exports[`<DropDown /> > should match the snapshot as Primary variant 1`] = `
   data-od-component="provider"
 >
   <button
-    class="reset_trimmedElement__4z7xt30 reset_button__4z7xt35 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3o useBoxStyles_display_inlineBlock__3xgq1lge useBoxStyles_overflow_hidden__3xgq1lg4 useBoxStyles_textAlign_center__3xgq1lg2 useBoxStyles_border_style__3xgq1l9k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lb9 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lbp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lc5 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useTextStyles_root__1xnpmd70 reset_block__4z7xt34 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_default__p2yon57 Button_button_intent_primary__p2yon5a Button_button_minimal_false__p2yon5i Button_button_compound_3__p2yon5m"
+    class="reset_resetVariants__4z7xt3d reset_resetVariants_as_button__4z7xt312 reset_trimmedElement__4z7xt30 reset_button__4z7xt35 sprinkles_borderBottomWidth_none_mobile__onxwjuc0 sprinkles_borderLeftWidth_none_mobile__onxwjubk sprinkles_borderRightWidth_none_mobile__onxwjucg sprinkles_borderTopWidth_none_mobile__onxwjucw sprinkles_paddingLeft_4_mobile__onxwjuto sprinkles_paddingRight_4_mobile__onxwjuus sprinkles_paddingTop_none_mobile__onxwjuwk sprinkles_paddingBottom_none_mobile__onxwjut8 sprinkles_display_inline-block_mobile__onxwju7s sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_borderRadius_md_mobile__onxwjuak sprinkles_textAlign_center_mobile__onxwju9s useTextStyles_root__1xnpmd70 reset_block__4z7xt34 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_default__p2yon57 Button_button_intent_primary__p2yon5a Button_button_minimal_false__p2yon5i Button_button_compound_3__p2yon5m"
     type="button"
   >
     <div
@@ -52,7 +52,7 @@ exports[`<DropDown /> > should match the snapshot as Primary variant 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_width_full_mobile__onxwjufw sprinkles_height_full_mobile__onxwjuec"
           fill="currentColor"
           focusable="false"
           viewBox="0 0 24 24"

@@ -20,7 +20,7 @@ exports[`<Switch /> > should match snapshot when toggled 1`] = `
       />
     </div>
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_fontSize_5__onxwju23 sprinkles_lineHeight_5__onxwju2c sprinkles_color_neutral__onxwju6t typography_typographyStyles__yhjp330 Switch_toggleOn__6xc8dy2"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_fontSize_5__onxwju5o sprinkles_lineHeight_5__onxwju5x sprinkles_color_neutral__onxwju6t typography_typographyStyles__yhjp330 Switch_toggleOn__6xc8dy2"
       data-active=""
     >
       <div
@@ -51,7 +51,7 @@ exports[`<Switch /> > should match snapshot when toggled and disabled 1`] = `
       />
     </div>
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_fontSize_5__onxwju23 sprinkles_lineHeight_5__onxwju2c sprinkles_color_neutral__onxwju6t typography_typographyStyles__yhjp330 Switch_disabled__6xc8dy3 Switch_toggleOn__6xc8dy2"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_fontSize_5__onxwju5o sprinkles_lineHeight_5__onxwju5x sprinkles_color_neutral__onxwju6t typography_typographyStyles__yhjp330 Switch_disabled__6xc8dy3 Switch_toggleOn__6xc8dy2"
       data-active=""
       data-disabled=""
     >
@@ -82,7 +82,7 @@ exports[`<Switch /> > should match snapshot when un-toggled 1`] = `
       />
     </div>
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_fontSize_5__onxwju23 sprinkles_lineHeight_5__onxwju2c sprinkles_color_neutral__onxwju6t typography_typographyStyles__yhjp330"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_fontSize_5__onxwju5o sprinkles_lineHeight_5__onxwju5x sprinkles_color_neutral__onxwju6t typography_typographyStyles__yhjp330"
     >
       <div
         class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Switch_handle_default__6xc8dy4"
@@ -111,7 +111,7 @@ exports[`<Switch /> > should match snapshot when un-toggled and disabled 1`] = `
       />
     </div>
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_fontSize_5__onxwju23 sprinkles_lineHeight_5__onxwju2c sprinkles_color_neutral__onxwju6t typography_typographyStyles__yhjp330 Switch_disabled__6xc8dy3"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_fontSize_5__onxwju5o sprinkles_lineHeight_5__onxwju5x sprinkles_color_neutral__onxwju6t typography_typographyStyles__yhjp330 Switch_disabled__6xc8dy3"
       data-disabled=""
     >
       <div
@@ -141,7 +141,7 @@ exports[`<Switch /> > should match snapshot without props 1`] = `
       />
     </div>
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_fontSize_5__onxwju23 sprinkles_lineHeight_5__onxwju2c sprinkles_color_neutral__onxwju6t typography_typographyStyles__yhjp330"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_fontSize_5__onxwju5o sprinkles_lineHeight_5__onxwju5x sprinkles_color_neutral__onxwju6t typography_typographyStyles__yhjp330"
     >
       <div
         class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Switch_handle_default__6xc8dy4"
