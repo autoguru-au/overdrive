@@ -6,10 +6,10 @@ exports[`<SimplePagination /> > should match snapshot for hasNext 1`] = `
   data-od-component="provider"
 >
   <nav
-    class="reset_resetVariants__4z7xt3d reset_resetVariants_as_nav__4z7xt3x reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexDirection_row_mobile__onxwjuos sprinkles_flexWrap_wrap_mobile__onxwjuq0 sprinkles_justifyContent_center_mobile__onxwjulk useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwk useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2k"
+    class="reset_resetVariants__4z7xt3d reset_resetVariants_as_nav__4z7xt3x reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexDirection_row_mobile__onxwjuos sprinkles_flexWrap_wrap_mobile__onxwjuq0 sprinkles_justifyContent_center_mobile__onxwjunc useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwk useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2k"
   >
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexDirection_row_mobile__onxwjuos sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_paddingLeft_6_mobile__onxwjutw sprinkles_paddingTop_6_mobile__onxwjuw4"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexDirection_row_mobile__onxwjuos sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_paddingLeft_6_mobile__onxwjutw sprinkles_paddingTop_6_mobile__onxwjuw4"
     >
       <button
         aria-label="previous page"
@@ -18,7 +18,7 @@ exports[`<SimplePagination /> > should match snapshot for hasNext 1`] = `
         type="button"
       >
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc Button_body__p2yon50"
         >
           <span
             class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_display_block_mobile__onxwju74 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
@@ -40,7 +40,7 @@ exports[`<SimplePagination /> > should match snapshot for hasNext 1`] = `
       </button>
     </div>
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexDirection_row_mobile__onxwjuos sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_paddingLeft_6_mobile__onxwjutw sprinkles_paddingTop_6_mobile__onxwjuw4"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexDirection_row_mobile__onxwjuos sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_paddingLeft_6_mobile__onxwjutw sprinkles_paddingTop_6_mobile__onxwjuw4"
     >
       <button
         aria-label="next page"
@@ -48,7 +48,7 @@ exports[`<SimplePagination /> > should match snapshot for hasNext 1`] = `
         type="button"
       >
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc Button_body__p2yon50"
         >
           <span
             class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_display_block_mobile__onxwju74 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
@@ -79,10 +79,10 @@ exports[`<SimplePagination /> > should match snapshot for hasNext and hasPreviou
   data-od-component="provider"
 >
   <nav
-    class="reset_resetVariants__4z7xt3d reset_resetVariants_as_nav__4z7xt3x reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexDirection_row_mobile__onxwjuos sprinkles_flexWrap_wrap_mobile__onxwjuq0 sprinkles_justifyContent_center_mobile__onxwjulk useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwk useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2k"
+    class="reset_resetVariants__4z7xt3d reset_resetVariants_as_nav__4z7xt3x reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexDirection_row_mobile__onxwjuos sprinkles_flexWrap_wrap_mobile__onxwjuq0 sprinkles_justifyContent_center_mobile__onxwjunc useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwk useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2k"
   >
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexDirection_row_mobile__onxwjuos sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_paddingLeft_6_mobile__onxwjutw sprinkles_paddingTop_6_mobile__onxwjuw4"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexDirection_row_mobile__onxwjuos sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_paddingLeft_6_mobile__onxwjutw sprinkles_paddingTop_6_mobile__onxwjuw4"
     >
       <button
         aria-label="previous page"
@@ -90,7 +90,7 @@ exports[`<SimplePagination /> > should match snapshot for hasNext and hasPreviou
         type="button"
       >
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc Button_body__p2yon50"
         >
           <span
             class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_display_block_mobile__onxwju74 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
@@ -112,7 +112,7 @@ exports[`<SimplePagination /> > should match snapshot for hasNext and hasPreviou
       </button>
     </div>
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexDirection_row_mobile__onxwjuos sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_paddingLeft_6_mobile__onxwjutw sprinkles_paddingTop_6_mobile__onxwjuw4"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexDirection_row_mobile__onxwjuos sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_paddingLeft_6_mobile__onxwjutw sprinkles_paddingTop_6_mobile__onxwjuw4"
     >
       <button
         aria-label="next page"
@@ -120,7 +120,7 @@ exports[`<SimplePagination /> > should match snapshot for hasNext and hasPreviou
         type="button"
       >
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc Button_body__p2yon50"
         >
           <span
             class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_display_block_mobile__onxwju74 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
@@ -151,10 +151,10 @@ exports[`<SimplePagination /> > should match snapshot for hasPrevious 1`] = `
   data-od-component="provider"
 >
   <nav
-    class="reset_resetVariants__4z7xt3d reset_resetVariants_as_nav__4z7xt3x reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexDirection_row_mobile__onxwjuos sprinkles_flexWrap_wrap_mobile__onxwjuq0 sprinkles_justifyContent_center_mobile__onxwjulk useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwk useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2k"
+    class="reset_resetVariants__4z7xt3d reset_resetVariants_as_nav__4z7xt3x reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexDirection_row_mobile__onxwjuos sprinkles_flexWrap_wrap_mobile__onxwjuq0 sprinkles_justifyContent_center_mobile__onxwjunc useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwk useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2k"
   >
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexDirection_row_mobile__onxwjuos sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_paddingLeft_6_mobile__onxwjutw sprinkles_paddingTop_6_mobile__onxwjuw4"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexDirection_row_mobile__onxwjuos sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_paddingLeft_6_mobile__onxwjutw sprinkles_paddingTop_6_mobile__onxwjuw4"
     >
       <button
         aria-label="previous page"
@@ -162,7 +162,7 @@ exports[`<SimplePagination /> > should match snapshot for hasPrevious 1`] = `
         type="button"
       >
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc Button_body__p2yon50"
         >
           <span
             class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_display_block_mobile__onxwju74 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
@@ -184,7 +184,7 @@ exports[`<SimplePagination /> > should match snapshot for hasPrevious 1`] = `
       </button>
     </div>
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexDirection_row_mobile__onxwjuos sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_paddingLeft_6_mobile__onxwjutw sprinkles_paddingTop_6_mobile__onxwjuw4"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexDirection_row_mobile__onxwjuos sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_paddingLeft_6_mobile__onxwjutw sprinkles_paddingTop_6_mobile__onxwjuw4"
     >
       <button
         aria-label="next page"
@@ -193,7 +193,7 @@ exports[`<SimplePagination /> > should match snapshot for hasPrevious 1`] = `
         type="button"
       >
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc Button_body__p2yon50"
         >
           <span
             class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_display_block_mobile__onxwju74 Icon_makeResponsiveStyle_key_bp__1gy3ire4"

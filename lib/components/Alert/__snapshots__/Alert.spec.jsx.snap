@@ -16,7 +16,7 @@ exports[`<Alert /> > should match the snapshot 1`] = `
       class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_gap_2_mobile__onxwjuh0"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_alignSelf_flex-start_mobile__onxwjuo0"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_alignSelf_start_mobile__onxwjun4"
       >
         <span
           class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_display_block_mobile__onxwju74 Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_marginTop_2_mobile__onxwju10c sprinkles_marginBottom_2_mobile__onxwjuws sprinkles_marginLeft_2_mobile__onxwjuxw"
@@ -36,7 +36,7 @@ exports[`<Alert /> > should match the snapshot 1`] = `
         </span>
       </div>
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_width_auto_mobile__onxwjug0 sprinkles_alignSelf_center_mobile__onxwjuo4 useTextStyles_root__1xnpmd70 reset_block__4z7xt34 useTextStyles_colours_dark__1xnpmd7f"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_width_auto_mobile__onxwjug0 sprinkles_alignSelf_center_mobile__onxwjumk useTextStyles_root__1xnpmd70 reset_block__4z7xt34 useTextStyles_colours_dark__1xnpmd7f"
       />
       <div
         class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_marginLeft_auto_mobile__onxwjuyw"
@@ -47,7 +47,7 @@ exports[`<Alert /> > should match the snapshot 1`] = `
           type="button"
         >
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc Button_body__p2yon50"
           >
             <span
               class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_display_block_mobile__onxwju74 Icon_makeResponsiveStyle_key_bp__1gy3ire4 useTextStyles_root__1xnpmd70 reset_block__4z7xt34 useTextStyles_colours_muted__1xnpmd7h"

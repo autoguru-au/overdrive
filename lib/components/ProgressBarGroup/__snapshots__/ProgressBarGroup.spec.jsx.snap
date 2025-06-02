@@ -6,7 +6,7 @@ exports[`<ProgressBarGroup /> > should match the snapshot 1`] = `
   data-od-component="provider"
 >
   <div
-    class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_alignItems_center_mobile__onxwjuko ProgressBarGroup_root__1e1wroi0"
+    class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_alignItems_center_mobile__onxwjulo ProgressBarGroup_root__1e1wroi0"
     style="grid-template-columns: 1fr;"
   >
     <span
@@ -61,7 +61,7 @@ exports[`<ProgressBarGroup /> > should should ignore extra labels 1`] = `
   data-od-component="provider"
 >
   <div
-    class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_alignItems_center_mobile__onxwjuko ProgressBarGroup_root__1e1wroi0"
+    class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_alignItems_center_mobile__onxwjulo ProgressBarGroup_root__1e1wroi0"
     style="grid-template-columns: auto 1fr;"
   >
     <span
@@ -122,7 +122,7 @@ exports[`<ProgressBarGroup /> > should should ignore not break when not enough l
   data-od-component="provider"
 >
   <div
-    class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_alignItems_center_mobile__onxwjuko ProgressBarGroup_root__1e1wroi0"
+    class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_alignItems_center_mobile__onxwjulo ProgressBarGroup_root__1e1wroi0"
     style="grid-template-columns: auto 1fr;"
   >
     <span
@@ -179,7 +179,7 @@ exports[`<ProgressBarGroup /> > should should render a prefix for every value 1`
   data-od-component="provider"
 >
   <div
-    class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_alignItems_center_mobile__onxwjuko ProgressBarGroup_root__1e1wroi0"
+    class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_alignItems_center_mobile__onxwjulo ProgressBarGroup_root__1e1wroi0"
     style="grid-template-columns: auto 1fr;"
   >
     <span

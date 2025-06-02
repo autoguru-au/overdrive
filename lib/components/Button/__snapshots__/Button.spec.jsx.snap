@@ -10,7 +10,7 @@ exports[`<Button /> > should match snapshot for default button 1`] = `
     type="button"
   >
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc Button_body__p2yon50"
     />
   </button>
 </div>
@@ -26,7 +26,7 @@ exports[`<Button /> > when as button > should use html button element by default
     type="button"
   >
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc Button_body__p2yon50"
     />
   </button>
 </div>
@@ -42,7 +42,7 @@ exports[`<Button /> > when colour variants > should match snapshot for Danger bu
     type="button"
   >
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc Button_body__p2yon50"
     />
   </button>
 </div>
@@ -58,7 +58,7 @@ exports[`<Button /> > when colour variants > should match snapshot for Primary b
     type="button"
   >
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc Button_body__p2yon50"
     />
   </button>
 </div>
@@ -74,7 +74,7 @@ exports[`<Button /> > when colour variants > should match snapshot for Secondary
     type="button"
   >
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc Button_body__p2yon50"
     />
   </button>
 </div>
@@ -90,7 +90,7 @@ exports[`<Button /> > when custom component > should use html anchor element if 
     href="abc"
   >
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc Button_body__p2yon50"
     />
   </a>
 </div>
@@ -106,7 +106,7 @@ exports[`<Button /> > when isFullWidth > should match snapshot 1`] = `
     type="button"
   >
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc Button_body__p2yon50"
     />
   </button>
 </div>
@@ -125,10 +125,10 @@ exports[`<Button /> > when loading > should match snapshot for default button 1`
     type="button"
   >
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_position_relative_mobile__onxwju98 sprinkles_width_full_mobile__onxwjufw sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_position_relative_mobile__onxwju98 sprinkles_width_full_mobile__onxwjufw sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_position_absolute_mobile__onxwju9c sprinkles_width_full_mobile__onxwjufw sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_position_absolute_mobile__onxwju9c sprinkles_width_full_mobile__onxwjufw sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc"
       >
         <div
           class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_secondary__1kpufmi7 Button_spinner__p2yon52"
@@ -149,7 +149,7 @@ exports[`<Button /> > when loading > should match snapshot for default button 1`
         </div>
       </div>
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50 Button_hiddenContent__p2yon51"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc Button_body__p2yon50 Button_hiddenContent__p2yon51"
       />
     </div>
   </button>
@@ -169,10 +169,10 @@ exports[`<Button /> > when loading > should match snapshot for medium button 1`]
     type="button"
   >
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_position_relative_mobile__onxwju98 sprinkles_width_full_mobile__onxwjufw sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_position_relative_mobile__onxwju98 sprinkles_width_full_mobile__onxwjufw sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_position_absolute_mobile__onxwju9c sprinkles_width_full_mobile__onxwjufw sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_position_absolute_mobile__onxwju9c sprinkles_width_full_mobile__onxwjufw sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc"
       >
         <div
           class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_secondary__1kpufmi7 Button_spinner__p2yon52"
@@ -193,7 +193,7 @@ exports[`<Button /> > when loading > should match snapshot for medium button 1`]
         </div>
       </div>
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50 Button_hiddenContent__p2yon51"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc Button_body__p2yon50 Button_hiddenContent__p2yon51"
       />
     </div>
   </button>
@@ -213,10 +213,10 @@ exports[`<Button /> > when loading > should match snapshot for small button 1`] 
     type="button"
   >
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_position_relative_mobile__onxwju98 sprinkles_width_full_mobile__onxwjufw sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_position_relative_mobile__onxwju98 sprinkles_width_full_mobile__onxwjufw sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_position_absolute_mobile__onxwju9c sprinkles_width_full_mobile__onxwjufw sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_position_absolute_mobile__onxwju9c sprinkles_width_full_mobile__onxwjufw sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc"
       >
         <div
           class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_secondary__1kpufmi7 Button_spinner__p2yon52"
@@ -237,7 +237,7 @@ exports[`<Button /> > when loading > should match snapshot for small button 1`] 
         </div>
       </div>
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50 Button_hiddenContent__p2yon51"
+        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc Button_body__p2yon50 Button_hiddenContent__p2yon51"
       />
     </div>
   </button>
@@ -254,7 +254,7 @@ exports[`<Button /> > when rounded > should match snapshot 1`] = `
     type="button"
   >
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc Button_body__p2yon50"
     />
   </button>
 </div>
@@ -270,7 +270,7 @@ exports[`<Button /> > when size variant > should match snapshot for medium butto
     type="button"
   >
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc Button_body__p2yon50"
     />
   </button>
 </div>
@@ -286,7 +286,7 @@ exports[`<Button /> > when size variant > should match snapshot for small button
     type="button"
   >
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjuko sprinkles_justifyContent_center_mobile__onxwjulk Button_body__p2yon50"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc Button_body__p2yon50"
     />
   </button>
 </div>

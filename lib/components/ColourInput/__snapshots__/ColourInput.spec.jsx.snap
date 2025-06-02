@@ -15,10 +15,10 @@ exports[`<ColourInput /> > should have some hintText 1`] = `
         class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw"
       >
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjulk"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjunc"
         >
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_justifyContent_space-around_mobile__onxwjum0 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_justifyContent_space-around_mobile__onxwjuo8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
           >
             <div
               class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_paddingBottom_3_mobile__onxwjusg sprinkles_paddingLeft_3_mobile__onxwjutk sprinkles_paddingRight_3_mobile__onxwjuuo sprinkles_paddingTop_3_mobile__onxwjuvs sprinkles_borderRadius_1_mobile__onxwjua4"
@@ -89,10 +89,10 @@ exports[`<ColourInput /> > should match snapshot 1`] = `
         class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw"
       >
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjulk"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjunc"
         >
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_justifyContent_space-around_mobile__onxwjum0 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_justifyContent_space-around_mobile__onxwjuo8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
           >
             <div
               class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_paddingBottom_3_mobile__onxwjusg sprinkles_paddingLeft_3_mobile__onxwjutk sprinkles_paddingRight_3_mobile__onxwjuuo sprinkles_paddingTop_3_mobile__onxwjuvs sprinkles_borderRadius_1_mobile__onxwjua4"
@@ -158,10 +158,10 @@ exports[`<ColourInput /> > should match snapshot when active 1`] = `
         class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw"
       >
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjulk"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjunc"
         >
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_justifyContent_space-around_mobile__onxwjum0 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_justifyContent_space-around_mobile__onxwjuo8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
           >
             <div
               class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_paddingBottom_3_mobile__onxwjusg sprinkles_paddingLeft_3_mobile__onxwjutk sprinkles_paddingRight_3_mobile__onxwjuuo sprinkles_paddingTop_3_mobile__onxwjuvs sprinkles_borderRadius_1_mobile__onxwjua4"
@@ -242,10 +242,10 @@ exports[`<ColourInput /> > should match snapshot when loading 1`] = `
           </svg>
         </div>
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjulk"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjunc"
         >
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_justifyContent_space-around_mobile__onxwjum0 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_justifyContent_space-around_mobile__onxwjuo8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
           >
             <div
               class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_paddingBottom_3_mobile__onxwjusg sprinkles_paddingLeft_3_mobile__onxwjutk sprinkles_paddingRight_3_mobile__onxwjuuo sprinkles_paddingTop_3_mobile__onxwjuvs sprinkles_borderRadius_1_mobile__onxwjua4"
@@ -310,10 +310,10 @@ exports[`<ColourInput /> > should match snapshot when touched 1`] = `
         class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw"
       >
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjulk"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjunc"
         >
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_justifyContent_space-around_mobile__onxwjum0 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_justifyContent_space-around_mobile__onxwjuo8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
           >
             <div
               class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_paddingBottom_3_mobile__onxwjusg sprinkles_paddingLeft_3_mobile__onxwjutk sprinkles_paddingRight_3_mobile__onxwjuuo sprinkles_paddingTop_3_mobile__onxwjuvs sprinkles_borderRadius_1_mobile__onxwjua4"
@@ -377,10 +377,10 @@ exports[`<ColourInput /> > should match snapshot when touched and invalid 1`] = 
         class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw"
       >
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjulk"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjunc"
         >
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_justifyContent_space-around_mobile__onxwjum0 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_justifyContent_space-around_mobile__onxwjuo8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
           >
             <div
               class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_paddingBottom_3_mobile__onxwjusg sprinkles_paddingLeft_3_mobile__onxwjutk sprinkles_paddingRight_3_mobile__onxwjuuo sprinkles_paddingTop_3_mobile__onxwjuvs sprinkles_borderRadius_1_mobile__onxwjua4"
@@ -444,10 +444,10 @@ exports[`<ColourInput /> > should match snapshot when touched and valid 1`] = `
         class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw"
       >
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjulk"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjunc"
         >
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_justifyContent_space-around_mobile__onxwjum0 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_justifyContent_space-around_mobile__onxwjuo8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
           >
             <div
               class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_paddingBottom_3_mobile__onxwjusg sprinkles_paddingLeft_3_mobile__onxwjutk sprinkles_paddingRight_3_mobile__onxwjuuo sprinkles_paddingTop_3_mobile__onxwjuvs sprinkles_borderRadius_1_mobile__onxwjua4"
@@ -525,10 +525,10 @@ exports[`<ColourInput /> > should match snapshot with both icons 1`] = `
           </svg>
         </span>
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjulk"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjunc"
         >
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_justifyContent_space-around_mobile__onxwjum0 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_justifyContent_space-around_mobile__onxwjuo8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
           >
             <div
               class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_paddingBottom_3_mobile__onxwjusg sprinkles_paddingLeft_3_mobile__onxwjutk sprinkles_paddingRight_3_mobile__onxwjuuo sprinkles_paddingTop_3_mobile__onxwjuvs sprinkles_borderRadius_1_mobile__onxwjua4"
@@ -606,10 +606,10 @@ exports[`<ColourInput /> > should match snapshot with suffix icon 1`] = `
           </svg>
         </span>
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjulk"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjunc"
         >
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_justifyContent_space-around_mobile__onxwjum0 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_justifyContent_space-around_mobile__onxwjuo8 ColourInput_colouredBoxHolder__fijwir1 ColourInput_colouredBoxHolderSize_medium__fijwir3"
           >
             <div
               class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_paddingBottom_3_mobile__onxwjusg sprinkles_paddingLeft_3_mobile__onxwjutk sprinkles_paddingRight_3_mobile__onxwjuuo sprinkles_paddingTop_3_mobile__onxwjuvs sprinkles_borderRadius_1_mobile__onxwjua4"

@@ -15,7 +15,7 @@ exports[`<SelectInput /> > should have some hintText 1`] = `
         class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw"
       >
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjulk"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjunc"
         >
           <select
             autocomplete="off"
@@ -38,7 +38,7 @@ exports[`<SelectInput /> > should have some hintText 1`] = `
             </option>
           </select>
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_marginRight_4_mobile__onxwjuzc SelectInput_arrow__1gqjkbj2"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_marginRight_4_mobile__onxwjuzc SelectInput_arrow__1gqjkbj2"
           >
             <span
               class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_display_block_mobile__onxwju74 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
@@ -108,7 +108,7 @@ exports[`<SelectInput /> > should match snapshot 1`] = `
         class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw"
       >
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjulk"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjunc"
         >
           <select
             autocomplete="off"
@@ -131,7 +131,7 @@ exports[`<SelectInput /> > should match snapshot 1`] = `
             </option>
           </select>
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_marginRight_4_mobile__onxwjuzc SelectInput_arrow__1gqjkbj2"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_marginRight_4_mobile__onxwjuzc SelectInput_arrow__1gqjkbj2"
           >
             <span
               class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_display_block_mobile__onxwju74 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
@@ -196,7 +196,7 @@ exports[`<SelectInput /> > should match snapshot when active 1`] = `
         class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw"
       >
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjulk"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjunc"
         >
           <select
             autocomplete="off"
@@ -219,7 +219,7 @@ exports[`<SelectInput /> > should match snapshot when active 1`] = `
             </option>
           </select>
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_marginRight_4_mobile__onxwjuzc SelectInput_arrow__1gqjkbj2"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_marginRight_4_mobile__onxwjuzc SelectInput_arrow__1gqjkbj2"
           >
             <span
               class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_display_block_mobile__onxwju74 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
@@ -284,7 +284,7 @@ exports[`<SelectInput /> > should match snapshot when touched 1`] = `
         class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw"
       >
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjulk"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjunc"
         >
           <select
             autocomplete="off"
@@ -307,7 +307,7 @@ exports[`<SelectInput /> > should match snapshot when touched 1`] = `
             </option>
           </select>
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_marginRight_4_mobile__onxwjuzc SelectInput_arrow__1gqjkbj2"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_marginRight_4_mobile__onxwjuzc SelectInput_arrow__1gqjkbj2"
           >
             <span
               class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_display_block_mobile__onxwju74 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
@@ -372,7 +372,7 @@ exports[`<SelectInput /> > should match snapshot when touched and invalid 1`] = 
         class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw"
       >
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjulk"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjunc"
         >
           <select
             autocomplete="off"
@@ -395,7 +395,7 @@ exports[`<SelectInput /> > should match snapshot when touched and invalid 1`] = 
             </option>
           </select>
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_marginRight_4_mobile__onxwjuzc SelectInput_arrow__1gqjkbj2"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_marginRight_4_mobile__onxwjuzc SelectInput_arrow__1gqjkbj2"
           >
             <span
               class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_display_block_mobile__onxwju74 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
@@ -460,7 +460,7 @@ exports[`<SelectInput /> > should match snapshot when touched and valid 1`] = `
         class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw"
       >
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjulk"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjunc"
         >
           <select
             autocomplete="off"
@@ -483,7 +483,7 @@ exports[`<SelectInput /> > should match snapshot when touched and valid 1`] = `
             </option>
           </select>
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_marginRight_4_mobile__onxwjuzc SelectInput_arrow__1gqjkbj2"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_marginRight_4_mobile__onxwjuzc SelectInput_arrow__1gqjkbj2"
           >
             <span
               class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_display_block_mobile__onxwju74 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
@@ -548,14 +548,14 @@ exports[`<SelectInput /> > should match snapshot with custom icon 1`] = `
         class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw"
       >
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjulk"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjunc"
         >
           <select
             autocomplete="off"
             class="reset_resetVariants__4z7xt3d reset_resetVariants_as_select__4z7xt313 reset_trimmedElement__4z7xt30 reset_select__4z7xt3a sprinkles_flexGrow_1_mobile__onxwjupg SelectInput_input__1gqjkbj0 SelectInput_paddedInput__1gqjkbj1 reset_resetVariants__4z7xt3d reset_resetVariants_as_input__4z7xt314 reset_trimmedElement__4z7xt30 reset_input__4z7xt39 sprinkles_backgroundColour_transparent__onxwju5g sprinkles_width_full_mobile__onxwjufw sprinkles_position_relative_mobile__onxwju98 sprinkles_display_flex_mobile__onxwju7c sprinkles_borderRadius_md_mobile__onxwjuak withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
           />
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_marginRight_4_mobile__onxwjuzc SelectInput_arrow__1gqjkbj2"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_marginRight_4_mobile__onxwjuzc SelectInput_arrow__1gqjkbj2"
           >
             <span
               class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_display_block_mobile__onxwju74 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
@@ -632,14 +632,14 @@ exports[`<SelectInput /> > should match snapshot with prefix icon 1`] = `
           </svg>
         </span>
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjulk"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexWrap_nowrap_mobile__onxwjupw sprinkles_justifyContent_center_mobile__onxwjunc"
         >
           <select
             autocomplete="off"
             class="reset_resetVariants__4z7xt3d reset_resetVariants_as_select__4z7xt313 reset_trimmedElement__4z7xt30 reset_select__4z7xt3a sprinkles_flexGrow_1_mobile__onxwjupg SelectInput_input__1gqjkbj0 SelectInput_paddedInput__1gqjkbj1 reset_resetVariants__4z7xt3d reset_resetVariants_as_input__4z7xt314 reset_trimmedElement__4z7xt30 reset_input__4z7xt39 sprinkles_backgroundColour_transparent__onxwju5g sprinkles_width_full_mobile__onxwjufw sprinkles_position_relative_mobile__onxwju98 sprinkles_display_flex_mobile__onxwju7c sprinkles_borderRadius_md_mobile__onxwjuak withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b withEnhancedInput_inputItselfSize_medium_prefixed_any__5jmdy8d"
           />
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjuko sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_marginRight_4_mobile__onxwjuzc SelectInput_arrow__1gqjkbj2"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_pointerEvents_none__onxwju6g sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_flexShrink_0_mobile__onxwjupo sprinkles_marginRight_4_mobile__onxwjuzc SelectInput_arrow__1gqjkbj2"
           >
             <span
               class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_display_block_mobile__onxwju74 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
