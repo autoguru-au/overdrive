@@ -18,6 +18,7 @@ export interface BoxProps
 			'as' | 'className' | 'color' | 'height' | 'is' | 'size' | 'width'
 		> {
 	as?: ElementType;
+	/** @deprecated in transition to the `as` prop  */
 	is?: ElementType;
 
 	children?: ReactNode;

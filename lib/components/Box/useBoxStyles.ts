@@ -92,6 +92,10 @@ export interface BoxStyleProps extends Padding, Margin, Border, Flex {
 	className?: Parameters<typeof clsx>[0];
 }
 
+/** @deprecated in transistion to vanilla-extract sprinkes, use `sprinkles` directly or new
+ *  `componentStyles` that includes compatible `as` prop for applying tag reset styles.
+ * Both functions are exported from the `/dist/styles' folder.
+ */
 export const useBoxStyles = ({
 	as,
 	is = as,
