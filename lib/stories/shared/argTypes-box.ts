@@ -52,13 +52,13 @@ export const boxArgTypes: Partial<ArgTypes<ComponentProps<typeof Box>>> = {
 		},
 	},
 	alignItems: {
-		options: ['flexStart', 'center', 'flexEnd', 'stretch'],
+		options: ['start', 'center', 'end', 'stretch'],
 		control: {
 			type: 'select',
 		},
 	},
 	justifyContent: {
-		options: ['flexStart', 'center', 'flexEnd', 'spaceBetween'],
+		options: ['start', 'center', 'end', 'space-between'],
 		control: {
 			type: 'select',
 		},

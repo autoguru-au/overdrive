@@ -10,7 +10,7 @@ import * as styles from './MinimalModal.css';
 
 const argTypes: ArgTypes = {
 	alignItems: {
-		options: ['flexStart', 'center', 'flexEnd'],
+		options: ['start', 'center', 'end'],
 		control: {
 			type: 'select',
 		},

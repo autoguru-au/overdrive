@@ -58,7 +58,7 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 			className: clsx(
 				componentStyles({
 					as: typeof Component === 'string' ? Component : 'button',
-					display: 'inlineFlex',
+					display: 'inline-flex',
 					justifyContent: 'center',
 					backgroundColour: 'transparent',
 				}),

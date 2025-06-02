@@ -56,7 +56,7 @@ export const TextBubble: FunctionComponent<TextBubbleProps> = ({
 		<Box
 			borderRadius="full"
 			backgroundColour="gray900"
-			display="inlineBlock"
+			display="inline-block"
 			position="relative"
 			padding={valuePaddingMap[size]}
 			{...boxProps}

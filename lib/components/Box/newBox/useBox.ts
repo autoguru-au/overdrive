@@ -1,4 +1,3 @@
-import type { ClassValue as ClassName } from 'clsx';
 import {
 	isValidElement,
 	type ComponentPropsWithRef,
@@ -11,6 +10,7 @@ import {
 
 import { useDeepCompareMemo } from '../../../hooks';
 import { dataAttrs } from '../../../utils/dataAttrs';
+import type { CommonBoxProps } from '../Box';
 
 import { boxStylesWithFilteredProps, type StyleProps } from './boxStyles';
 
@@ -20,24 +20,6 @@ const LIST_ITEM_TAG = 'li' as keyof JSX.IntrinsicElements;
 const LIST_TAGS = ['ul', 'ol'] as ReadonlyArray<keyof JSX.IntrinsicElements>;
 const OD_COMPONENT_ATTR = 'od-component';
 
-/**
- * Use BoxBasedProps to help consistently define the base props for a component
- * directly implementing useBox as the type of UseBoxProps is complex to Pick from.
- */
-export interface CommonBoxProps extends PropsWithChildren {
-	/**
-	 * Accepts `string` and complex array or objects via `clsx`
-	 */
-	className?: ClassName;
-	/**
-	 * Output a data attribute with a component name in the markup, mainly used for the root element of a component
-	 */
-	odComponent?: string;
-	/**
-	 * Insert a `data-testid` attribute
-	 */
-	testId?: string;
-}
 /** Extract the ref type for a polymorphic component based on the provided element type */
 export type PolymorphicRef<C extends ElementType> =
 	ComponentPropsWithRef<C>['ref'];

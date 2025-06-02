@@ -9,8 +9,9 @@ import {
 	type SprinklesLegacyColours,
 } from '../../../styles/sprinkles.css';
 import { filterPropsWithStyles } from '../../../utils/sprinkles';
+import type { CommonBoxProps } from '../Box';
 
-import type { AsPolyProp, CommonBoxProps } from './useBox';
+import type { AsPolyProp } from './useBox';
 
 /** All vanilla-extract sprinkles props */
 export type StyleProps = Sprinkles & SprinklesLegacyColours;

@@ -15,7 +15,7 @@ const meta: Meta<typeof Box> = {
 		borderRadius: 'none',
 		borderColour: 'gray',
 		borderWidth: '2',
-		display: 'inlineFlex',
+		display: 'inline-flex',
 		margin: undefined,
 		padding: '6',
 		textAlign: undefined,

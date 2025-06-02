@@ -27,8 +27,7 @@ const flexAlignmentsWithSpace = {
 	'space-around': 'space-around',
 	spaceBetween: 'space-between',
 	'space-between': 'space-between',
-	spaceEvenely: 'space-evenly',
-	'space-evenely': 'space-evenly',
+	'space-evenly': 'space-evenly',
 };
 
 // --- transformations over the tokens to make ready for sprinkles

@@ -9,7 +9,7 @@ import { type TextStyleProps, useTextStyles } from './useTextStyles';
 
 type Display = Extract<
 	BoxStyleProps['display'],
-	'inline' | 'inlineBlock' | 'block'
+	'inline' | 'inlineBlock' | 'inline-block' | 'block'
 >;
 type ElementAttributes = React.ComponentPropsWithoutRef<'p'> &
 	Pick<React.ComponentProps<'label'>, 'htmlFor'>;

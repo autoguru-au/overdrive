@@ -1,5 +1,10 @@
-import clsx from 'clsx';
-import type { AllHTMLAttributes, ElementType, ReactNode } from 'react';
+import clsx, { type ClassValue as ClassName } from 'clsx';
+import type {
+	AllHTMLAttributes,
+	ElementType,
+	PropsWithChildren,
+	ReactNode,
+} from 'react';
 import React, { forwardRef } from 'react';
 
 import { borderReset } from '../../styles/reset.css';
@@ -8,7 +13,24 @@ import { sprinkles } from '../../styles/sprinkles.css';
 import { dataAttrs } from '../../utils/dataAttrs';
 
 import { type BoxStylesProps } from './newBox/boxStyles';
-import type { CommonBoxProps } from './newBox/useBox';
+
+/**
+ * Use CommonBoxProps to help consistently define the base props for a component
+ */
+export interface CommonBoxProps extends PropsWithChildren {
+	/**
+	 * Accepts `string` and complex array or objects via `clsx`
+	 */
+	className?: ClassName;
+	/**
+	 * Output a data attribute with a component name in the markup, mainly used for the root element of a component
+	 */
+	odComponent?: string;
+	/**
+	 * Insert a `data-testid` attribute
+	 */
+	testId?: string;
+}
 
 export interface BoxProps
 	extends CommonBoxProps,

@@ -57,7 +57,7 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 			as: is,
 			colour = 'muted',
 			size,
-			display = 'inlineBlock',
+			display = 'inline-block',
 			value,
 			onFocus,
 			onBlur,
