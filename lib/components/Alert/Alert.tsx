@@ -67,7 +67,7 @@ export const Alert: FunctionComponent<Props> = ({
 		>
 			<IntentStripe intent={intent} />
 			<Box display="flex" gap="2">
-				<Box alignSelf="flex-start">
+				<Box alignSelf="start">
 					<Icon
 						icon={iconMapForIntent[intent]}
 						size="medium"

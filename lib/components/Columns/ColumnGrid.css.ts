@@ -35,16 +35,16 @@ export const columnGridStyle = recipe({
 				alignContent: 'stretch',
 			}),
 			top: sprinkles({
-				alignItems: 'flex-start',
-				alignContent: 'flex-start',
+				alignItems: 'start',
+				alignContent: 'start',
 			}),
 			center: sprinkles({
 				alignItems: 'center',
 				alignContent: 'center',
 			}),
 			bottom: sprinkles({
-				alignItems: 'flex-end',
-				alignContent: 'flex-end',
+				alignItems: 'end',
+				alignContent: 'end',
 			}),
 		},
 		noWrap: {

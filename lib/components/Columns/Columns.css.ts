@@ -18,8 +18,8 @@ export const columnsStyle = recipe({
 				alignItems: 'stretch',
 			}),
 			top: sprinkles({
-				alignContent: 'flex-start',
-				alignItems: 'flex-start',
+				alignContent: 'start',
+				alignItems: 'start',
 			}),
 			center: sprinkles({
 				alignContent: 'center',
@@ -30,8 +30,8 @@ export const columnsStyle = recipe({
 				alignItems: 'center',
 			}),
 			bottom: sprinkles({
-				alignContent: 'flex-end',
-				alignItems: 'flex-end',
+				alignContent: 'end',
+				alignItems: 'end',
 			}),
 		},
 		noWrap: {

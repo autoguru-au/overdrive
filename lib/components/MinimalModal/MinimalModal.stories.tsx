@@ -174,7 +174,7 @@ export const PinnedToTop: Story = {
 		isOpen: true,
 		onRequestClose: action('onChange'),
 		children: <Content alignment="flexStart" />,
-		alignItems: 'flex-start',
+		alignItems: 'start',
 	},
 	render: renderStory,
 };
@@ -194,7 +194,7 @@ export const PinnedToTopBottom: Story = {
 		isOpen: true,
 		onRequestClose: action('onChange'),
 		children: <Content alignment="flexEnd" />,
-		alignItems: 'flex-end',
+		alignItems: 'end',
 	},
 	render: renderStory,
 };

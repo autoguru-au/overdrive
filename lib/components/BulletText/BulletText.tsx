@@ -22,7 +22,7 @@ export const BulletText = ({
 		as={as satisfies ComponentProps<typeof Inline>['as']}
 		noWrap
 		space="3"
-		alignX="flex-start"
+		alignX="start"
 		alignY="center"
 	>
 		{isValidElement(Bullet) ? (

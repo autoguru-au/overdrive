@@ -12,12 +12,12 @@ const { space } = tokens;
 const { none, ...spaceWithoutNone } = space;
 
 const flexAlignments = {
-	flexEnd: 'flex-end',
-	'flex-end': 'flex-end',
-	flexStart: 'flex-start',
-	'flex-start': 'flex-start',
 	center: 'center',
 	centre: 'center',
+	end: 'end',
+	flexEnd: 'end',
+	flexStart: 'start',
+	start: 'start',
 	stretch: 'stretch',
 };
 
@@ -342,14 +342,15 @@ const responsiveProperties = defineProperties({
 		columnGap: space,
 		rowGap: space,
 		// Alignment
+		alignContent: flexAlignmentsWithSpace,
 		alignItems: {
 			...flexAlignments,
 			baseline: 'baseline',
 		},
-		justifyContent: flexAlignmentsWithSpace,
-		alignContent: flexAlignmentsWithSpace,
-		alignSelf: ['flex-start', 'center', 'flex-end', 'stretch'],
-		justifySelf: ['flex-start', 'center', 'flex-end'],
+		alignSelf: flexAlignments,
+		justifyContent: {
+			...flexAlignmentsWithSpace,
+		},
 		// Flexbox
 		flexDirection: ['row', 'column', 'row-reverse', 'column-reverse'],
 		flexGrow: [0, '0', '1'],

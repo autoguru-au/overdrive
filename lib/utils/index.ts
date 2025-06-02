@@ -177,8 +177,8 @@ export type Alignment = 'left' | 'right' | 'center';
 export const alignmentToFlexAlignment = (align: Alignment) =>
 	({
 		center: 'center',
-		left: 'flex-start',
-		right: 'flex-end',
+		left: 'start',
+		right: 'end',
 	})[align] as Sprinkles['justifyContent'];
 
 /**

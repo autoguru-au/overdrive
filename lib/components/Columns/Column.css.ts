@@ -40,11 +40,11 @@ export const columnStyle = recipe({
 	base: {},
 	variants: {
 		alignSelf: {
-			bottom: sprinkles({ alignSelf: 'flex-end' }),
+			bottom: sprinkles({ alignSelf: 'end' }),
 			center: sprinkles({ alignSelf: 'center' }),
 			centre: sprinkles({ alignSelf: 'center' }),
 			stretch: sprinkles({ alignSelf: 'stretch' }),
-			top: sprinkles({ alignSelf: 'flex-start' }),
+			top: sprinkles({ alignSelf: 'start' }),
 		},
 		grow: {
 			true: sprinkles({ flexGrow: '1' }),
