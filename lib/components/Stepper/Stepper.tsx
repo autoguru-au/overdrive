@@ -9,7 +9,6 @@ import {
 	useCallback,
 } from 'react';
 
-import { elementResetStyles } from '../../styles';
 import { addWithSafeDecimal } from '../../utils/number';
 import { Box } from '../Box/Box';
 import { Icon } from '../Icon/Icon';
@@ -154,7 +153,6 @@ export const Stepper: FunctionComponent<StepperProps> = ({
 			className={clsx(
 				className,
 				styles.root,
-				elementResetStyles('button'),
 				disabled && styles.disabled,
 			)}
 			userSelect="none"
