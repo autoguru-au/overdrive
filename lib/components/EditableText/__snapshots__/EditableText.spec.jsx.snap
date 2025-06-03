@@ -6,7 +6,7 @@ exports[`<EditableText /> > should match snapshot as date input 1`] = `
   data-od-component="provider"
 >
   <div
-    class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_inlineBlock_mobile__onxwju7o sprinkles_position_relative_mobile__onxwju98 EditableText_root__1iskjcs0"
+    class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_inline-block_mobile__onxwju7s sprinkles_position_relative_mobile__onxwju98 EditableText_root__1iskjcs0"
     tabindex="0"
   >
     <span
@@ -24,7 +24,7 @@ exports[`<EditableText /> > should match snapshot for default bullet text 1`] = 
   data-od-component="provider"
 >
   <div
-    class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_inlineBlock_mobile__onxwju7o sprinkles_position_relative_mobile__onxwju98 EditableText_root__1iskjcs0"
+    class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_inline-block_mobile__onxwju7s sprinkles_position_relative_mobile__onxwju98 EditableText_root__1iskjcs0"
     tabindex="0"
   >
     <span
@@ -42,7 +42,7 @@ exports[`<EditableText /> > should match snapshot with custom size 1`] = `
   data-od-component="provider"
 >
   <div
-    class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_inlineBlock_mobile__onxwju7o sprinkles_position_relative_mobile__onxwju98 EditableText_root__1iskjcs0"
+    class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_inline-block_mobile__onxwju7s sprinkles_position_relative_mobile__onxwju98 EditableText_root__1iskjcs0"
     tabindex="0"
   >
     <span

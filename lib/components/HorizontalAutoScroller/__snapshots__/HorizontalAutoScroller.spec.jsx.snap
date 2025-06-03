@@ -9,20 +9,20 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
     class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34"
   >
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_flexDirection_column_mobile__onxwjuow Stack_child_default__1417p7aa Stack_child_spaces_5__1417p7a4"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_flexDirection_column_mobile__onxwjuoo Stack_child_default__1417p7aa Stack_child_spaces_5__1417p7a4"
     >
       <div
         class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_position_relative_mobile__onxwju98"
       >
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_flexStart_mobile__onxwjuns HorizontalAutoScroller_controllerBtn__2i92q00 HorizontalAutoScroller_prevBtn__2i92q02"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjulk sprinkles_justifyContent_start_mobile__onxwjuns HorizontalAutoScroller_controllerBtn__2i92q00 HorizontalAutoScroller_prevBtn__2i92q02"
         >
           <button
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_button__4z7xt312 reset_trimmedElement__4z7xt30 reset_button__4z7xt35 sprinkles_borderBottomWidth_none_mobile__onxwjuc0 sprinkles_borderLeftWidth_none_mobile__onxwjubk sprinkles_borderRightWidth_none_mobile__onxwjucg sprinkles_borderTopWidth_none_mobile__onxwjucw sprinkles_paddingLeft_4_mobile__onxwjuto sprinkles_paddingRight_4_mobile__onxwjuus sprinkles_paddingTop_none_mobile__onxwjuwk sprinkles_paddingBottom_none_mobile__onxwjut8 sprinkles_display_inline-block_mobile__onxwju7s sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_borderRadius_pill_mobile__onxwjub0 sprinkles_textAlign_center_mobile__onxwju9s useTextStyles_root__1xnpmd70 reset_block__4z7xt34 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_5__p2yon5o"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_button__4z7xt312 reset_trimmedElement__4z7xt30 reset_button__4z7xt35 sprinkles_borderBottomWidth_none_mobile__onxwjuc0 sprinkles_borderLeftWidth_none_mobile__onxwjubk sprinkles_borderRightWidth_none_mobile__onxwjucg sprinkles_borderTopWidth_none_mobile__onxwjucw sprinkles_paddingLeft_4_mobile__onxwjutg sprinkles_paddingRight_4_mobile__onxwjuuk sprinkles_paddingTop_none_mobile__onxwjuwc sprinkles_paddingBottom_none_mobile__onxwjut0 sprinkles_display_inline-block_mobile__onxwju7s sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_borderRadius_pill_mobile__onxwjub0 sprinkles_textAlign_center_mobile__onxwju9s useTextStyles_root__1xnpmd70 reset_block__4z7xt34 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_5__p2yon5o"
             type="button"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc Button_body__p2yon50"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulk sprinkles_justifyContent_center_mobile__onxwjun8 Button_body__p2yon50"
             >
               <span
                 class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_display_block_mobile__onxwju74 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
@@ -44,10 +44,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
           </button>
         </div>
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_width_full_mobile__onxwjufw sprinkles_flexDirection_row_mobile__onxwjuos useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2g useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwg Columns__15fwc182h Columns__15fwc1828 sprinkles_display_flex_mobile__onxwju7c sprinkles_flexDirection_row_mobile__onxwjuos Columns_columnsStyle_align_stretch__15fwc182i Columns__15fwc1829 sprinkles_alignContent_stretch_mobile__onxwjukw sprinkles_alignItems_stretch_mobile__onxwjumc Columns_columnsStyle_noWrap_true__15fwc182o Columns__15fwc182f sprinkles_flexWrap_nowrap_mobile__onxwjupw Columns_columnsStyle_wrappingDirection_default__15fwc182p"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_width_full_mobile__onxwjufw sprinkles_flexDirection_row_mobile__onxwjuok useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2g useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwg Columns__15fwc182h Columns__15fwc1828 sprinkles_display_flex_mobile__onxwju7c sprinkles_flexDirection_row_mobile__onxwjuok Columns_columnsStyle_align_stretch__15fwc182i Columns__15fwc1829 sprinkles_alignContent_stretch_mobile__onxwjukw sprinkles_alignItems_stretch_mobile__onxwjum8 Columns_columnsStyle_noWrap_true__15fwc182o Columns__15fwc182f sprinkles_flexWrap_nowrap_mobile__onxwjupo Columns_columnsStyle_wrappingDirection_default__15fwc182p"
         >
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjupc Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupo"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjup4 Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupg"
           >
             <div
               class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw HorizontalAutoScroller_controllerCol__2i92q01"
@@ -56,10 +56,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
             </div>
           </div>
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_flexBasis_1/2_mobile__1ycz12q0 Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjupc Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupo Column_columnStyle_alignSelf_stretch__1ycz12q1k Column__1ycz12q1b sprinkles_alignSelf_stretch_mobile__onxwjun8"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_flexBasis_1/2_mobile__1ycz12q0 Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjup4 Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupg Column_columnStyle_alignSelf_stretch__1ycz12q1k Column__1ycz12q1b sprinkles_alignSelf_stretch_mobile__onxwjun4"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw sprinkles_justifyContent_stretch_mobile__onxwjuo0"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw sprinkles_justifyContent_stretch_mobile__onxwjunw"
             >
               <div
                 class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_width_full_mobile__onxwjufw HorizontalAutoScroller_item__2i92q04 HorizontalAutoScroller_active__2i92q05"
@@ -69,10 +69,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
             </div>
           </div>
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_flexBasis_1/2_mobile__1ycz12q0 Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjupc Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupo Column_columnStyle_alignSelf_stretch__1ycz12q1k Column__1ycz12q1b sprinkles_alignSelf_stretch_mobile__onxwjun8"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_flexBasis_1/2_mobile__1ycz12q0 Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjup4 Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupg Column_columnStyle_alignSelf_stretch__1ycz12q1k Column__1ycz12q1b sprinkles_alignSelf_stretch_mobile__onxwjun4"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw sprinkles_justifyContent_stretch_mobile__onxwjuo0"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw sprinkles_justifyContent_stretch_mobile__onxwjunw"
             >
               <div
                 class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_width_full_mobile__onxwjufw HorizontalAutoScroller_item__2i92q04"
@@ -82,10 +82,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
             </div>
           </div>
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_flexBasis_1/2_mobile__1ycz12q0 Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjupc Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupo Column_columnStyle_alignSelf_stretch__1ycz12q1k Column__1ycz12q1b sprinkles_alignSelf_stretch_mobile__onxwjun8"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_flexBasis_1/2_mobile__1ycz12q0 Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjup4 Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupg Column_columnStyle_alignSelf_stretch__1ycz12q1k Column__1ycz12q1b sprinkles_alignSelf_stretch_mobile__onxwjun4"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw sprinkles_justifyContent_stretch_mobile__onxwjuo0"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw sprinkles_justifyContent_stretch_mobile__onxwjunw"
             >
               <div
                 class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_width_full_mobile__onxwjufw HorizontalAutoScroller_item__2i92q04"
@@ -95,10 +95,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
             </div>
           </div>
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_flexBasis_1/2_mobile__1ycz12q0 Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjupc Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupo Column_columnStyle_alignSelf_stretch__1ycz12q1k Column__1ycz12q1b sprinkles_alignSelf_stretch_mobile__onxwjun8"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_flexBasis_1/2_mobile__1ycz12q0 Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjup4 Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupg Column_columnStyle_alignSelf_stretch__1ycz12q1k Column__1ycz12q1b sprinkles_alignSelf_stretch_mobile__onxwjun4"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw sprinkles_justifyContent_stretch_mobile__onxwjuo0"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw sprinkles_justifyContent_stretch_mobile__onxwjunw"
             >
               <div
                 class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_width_full_mobile__onxwjufw HorizontalAutoScroller_item__2i92q04"
@@ -108,10 +108,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
             </div>
           </div>
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_flexBasis_1/2_mobile__1ycz12q0 Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjupc Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupo Column_columnStyle_alignSelf_stretch__1ycz12q1k Column__1ycz12q1b sprinkles_alignSelf_stretch_mobile__onxwjun8"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_flexBasis_1/2_mobile__1ycz12q0 Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjup4 Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupg Column_columnStyle_alignSelf_stretch__1ycz12q1k Column__1ycz12q1b sprinkles_alignSelf_stretch_mobile__onxwjun4"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw sprinkles_justifyContent_stretch_mobile__onxwjuo0"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw sprinkles_justifyContent_stretch_mobile__onxwjunw"
             >
               <div
                 class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_width_full_mobile__onxwjufw HorizontalAutoScroller_item__2i92q04"
@@ -121,10 +121,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
             </div>
           </div>
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_flexBasis_1/2_mobile__1ycz12q0 Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjupc Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupo Column_columnStyle_alignSelf_stretch__1ycz12q1k Column__1ycz12q1b sprinkles_alignSelf_stretch_mobile__onxwjun8"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_flexBasis_1/2_mobile__1ycz12q0 Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjup4 Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupg Column_columnStyle_alignSelf_stretch__1ycz12q1k Column__1ycz12q1b sprinkles_alignSelf_stretch_mobile__onxwjun4"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw sprinkles_justifyContent_stretch_mobile__onxwjuo0"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw sprinkles_justifyContent_stretch_mobile__onxwjunw"
             >
               <div
                 class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_width_full_mobile__onxwjufw HorizontalAutoScroller_item__2i92q04"
@@ -134,10 +134,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
             </div>
           </div>
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_flexBasis_1/2_mobile__1ycz12q0 Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjupc Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupo Column_columnStyle_alignSelf_stretch__1ycz12q1k Column__1ycz12q1b sprinkles_alignSelf_stretch_mobile__onxwjun8"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_flexBasis_1/2_mobile__1ycz12q0 Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjup4 Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupg Column_columnStyle_alignSelf_stretch__1ycz12q1k Column__1ycz12q1b sprinkles_alignSelf_stretch_mobile__onxwjun4"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw sprinkles_justifyContent_stretch_mobile__onxwjuo0"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw sprinkles_justifyContent_stretch_mobile__onxwjunw"
             >
               <div
                 class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_width_full_mobile__onxwjufw HorizontalAutoScroller_item__2i92q04"
@@ -147,10 +147,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
             </div>
           </div>
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_flexBasis_1/2_mobile__1ycz12q0 Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjupc Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupo Column_columnStyle_alignSelf_stretch__1ycz12q1k Column__1ycz12q1b sprinkles_alignSelf_stretch_mobile__onxwjun8"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_flexBasis_1/2_mobile__1ycz12q0 Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjup4 Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupg Column_columnStyle_alignSelf_stretch__1ycz12q1k Column__1ycz12q1b sprinkles_alignSelf_stretch_mobile__onxwjun4"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw sprinkles_justifyContent_stretch_mobile__onxwjuo0"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw sprinkles_justifyContent_stretch_mobile__onxwjunw"
             >
               <div
                 class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_width_full_mobile__onxwjufw HorizontalAutoScroller_item__2i92q04"
@@ -160,7 +160,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
             </div>
           </div>
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjupc Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupo"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjup4 Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupg"
           >
             <div
               class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw HorizontalAutoScroller_controllerCol__2i92q01"
@@ -170,14 +170,14 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
           </div>
         </div>
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_flexEnd_mobile__onxwjuno HorizontalAutoScroller_controllerBtn__2i92q00 HorizontalAutoScroller_nextBtn__2i92q03"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjulk sprinkles_justifyContent_flexEnd_mobile__onxwjunk HorizontalAutoScroller_controllerBtn__2i92q00 HorizontalAutoScroller_nextBtn__2i92q03"
         >
           <button
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_button__4z7xt312 reset_trimmedElement__4z7xt30 reset_button__4z7xt35 sprinkles_borderBottomWidth_none_mobile__onxwjuc0 sprinkles_borderLeftWidth_none_mobile__onxwjubk sprinkles_borderRightWidth_none_mobile__onxwjucg sprinkles_borderTopWidth_none_mobile__onxwjucw sprinkles_paddingLeft_4_mobile__onxwjuto sprinkles_paddingRight_4_mobile__onxwjuus sprinkles_paddingTop_none_mobile__onxwjuwk sprinkles_paddingBottom_none_mobile__onxwjut8 sprinkles_display_inline-block_mobile__onxwju7s sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_borderRadius_pill_mobile__onxwjub0 sprinkles_textAlign_center_mobile__onxwju9s useTextStyles_root__1xnpmd70 reset_block__4z7xt34 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_5__p2yon5o"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_button__4z7xt312 reset_trimmedElement__4z7xt30 reset_button__4z7xt35 sprinkles_borderBottomWidth_none_mobile__onxwjuc0 sprinkles_borderLeftWidth_none_mobile__onxwjubk sprinkles_borderRightWidth_none_mobile__onxwjucg sprinkles_borderTopWidth_none_mobile__onxwjucw sprinkles_paddingLeft_4_mobile__onxwjutg sprinkles_paddingRight_4_mobile__onxwjuuk sprinkles_paddingTop_none_mobile__onxwjuwc sprinkles_paddingBottom_none_mobile__onxwjut0 sprinkles_display_inline-block_mobile__onxwju7s sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_borderRadius_pill_mobile__onxwjub0 sprinkles_textAlign_center_mobile__onxwju9s useTextStyles_root__1xnpmd70 reset_block__4z7xt34 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_5__p2yon5o"
             type="button"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc Button_body__p2yon50"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulk sprinkles_justifyContent_center_mobile__onxwjun8 Button_body__p2yon50"
             >
               <span
                 class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_display_block_mobile__onxwju74 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
@@ -201,7 +201,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
       </div>
     </div>
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_flexDirection_column_mobile__onxwjuow Stack_child_default__1417p7aa Stack_child_spaces_5__1417p7a4"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_flexDirection_column_mobile__onxwjuoo Stack_child_default__1417p7aa Stack_child_spaces_5__1417p7a4"
     >
       <div
         class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_width_full_mobile__onxwjufw Section_root__184s6x60 Section_width_small__184s6x61"
@@ -314,20 +314,20 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
     class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34"
   >
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_flexDirection_column_mobile__onxwjuow Stack_child_default__1417p7aa Stack_child_spaces_5__1417p7a4"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_flexDirection_column_mobile__onxwjuoo Stack_child_default__1417p7aa Stack_child_spaces_5__1417p7a4"
     >
       <div
         class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_position_relative_mobile__onxwju98"
       >
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_flexStart_mobile__onxwjuns HorizontalAutoScroller_controllerBtn__2i92q00 HorizontalAutoScroller_prevBtn__2i92q02"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjulk sprinkles_justifyContent_start_mobile__onxwjuns HorizontalAutoScroller_controllerBtn__2i92q00 HorizontalAutoScroller_prevBtn__2i92q02"
         >
           <button
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_button__4z7xt312 reset_trimmedElement__4z7xt30 reset_button__4z7xt35 sprinkles_borderBottomWidth_none_mobile__onxwjuc0 sprinkles_borderLeftWidth_none_mobile__onxwjubk sprinkles_borderRightWidth_none_mobile__onxwjucg sprinkles_borderTopWidth_none_mobile__onxwjucw sprinkles_paddingLeft_4_mobile__onxwjuto sprinkles_paddingRight_4_mobile__onxwjuus sprinkles_paddingTop_none_mobile__onxwjuwk sprinkles_paddingBottom_none_mobile__onxwjut8 sprinkles_display_inline-block_mobile__onxwju7s sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_borderRadius_pill_mobile__onxwjub0 sprinkles_textAlign_center_mobile__onxwju9s useTextStyles_root__1xnpmd70 reset_block__4z7xt34 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_5__p2yon5o"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_button__4z7xt312 reset_trimmedElement__4z7xt30 reset_button__4z7xt35 sprinkles_borderBottomWidth_none_mobile__onxwjuc0 sprinkles_borderLeftWidth_none_mobile__onxwjubk sprinkles_borderRightWidth_none_mobile__onxwjucg sprinkles_borderTopWidth_none_mobile__onxwjucw sprinkles_paddingLeft_4_mobile__onxwjutg sprinkles_paddingRight_4_mobile__onxwjuuk sprinkles_paddingTop_none_mobile__onxwjuwc sprinkles_paddingBottom_none_mobile__onxwjut0 sprinkles_display_inline-block_mobile__onxwju7s sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_borderRadius_pill_mobile__onxwjub0 sprinkles_textAlign_center_mobile__onxwju9s useTextStyles_root__1xnpmd70 reset_block__4z7xt34 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_5__p2yon5o"
             type="button"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc Button_body__p2yon50"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulk sprinkles_justifyContent_center_mobile__onxwjun8 Button_body__p2yon50"
             >
               <span
                 class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_display_block_mobile__onxwju74 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
@@ -349,10 +349,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
           </button>
         </div>
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_width_full_mobile__onxwjufw sprinkles_flexDirection_row_mobile__onxwjuos useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2g useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwg Columns__15fwc182h Columns__15fwc1828 sprinkles_display_flex_mobile__onxwju7c sprinkles_flexDirection_row_mobile__onxwjuos Columns_columnsStyle_align_stretch__15fwc182i Columns__15fwc1829 sprinkles_alignContent_stretch_mobile__onxwjukw sprinkles_alignItems_stretch_mobile__onxwjumc Columns_columnsStyle_noWrap_true__15fwc182o Columns__15fwc182f sprinkles_flexWrap_nowrap_mobile__onxwjupw Columns_columnsStyle_wrappingDirection_default__15fwc182p"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_width_full_mobile__onxwjufw sprinkles_flexDirection_row_mobile__onxwjuok useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2g useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwg Columns__15fwc182h Columns__15fwc1828 sprinkles_display_flex_mobile__onxwju7c sprinkles_flexDirection_row_mobile__onxwjuok Columns_columnsStyle_align_stretch__15fwc182i Columns__15fwc1829 sprinkles_alignContent_stretch_mobile__onxwjukw sprinkles_alignItems_stretch_mobile__onxwjum8 Columns_columnsStyle_noWrap_true__15fwc182o Columns__15fwc182f sprinkles_flexWrap_nowrap_mobile__onxwjupo Columns_columnsStyle_wrappingDirection_default__15fwc182p"
         >
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjupc Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupo"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjup4 Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupg"
           >
             <div
               class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw HorizontalAutoScroller_controllerCol__2i92q01"
@@ -361,10 +361,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
             </div>
           </div>
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_flexBasis_1/2_mobile__1ycz12q0 Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjupc Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupo Column_columnStyle_alignSelf_stretch__1ycz12q1k Column__1ycz12q1b sprinkles_alignSelf_stretch_mobile__onxwjun8"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_flexBasis_1/2_mobile__1ycz12q0 Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjup4 Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupg Column_columnStyle_alignSelf_stretch__1ycz12q1k Column__1ycz12q1b sprinkles_alignSelf_stretch_mobile__onxwjun4"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw sprinkles_justifyContent_stretch_mobile__onxwjuo0"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw sprinkles_justifyContent_stretch_mobile__onxwjunw"
             >
               <div
                 class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_width_full_mobile__onxwjufw HorizontalAutoScroller_item__2i92q04 HorizontalAutoScroller_active__2i92q05"
@@ -374,10 +374,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
             </div>
           </div>
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_flexBasis_1/2_mobile__1ycz12q0 Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjupc Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupo Column_columnStyle_alignSelf_stretch__1ycz12q1k Column__1ycz12q1b sprinkles_alignSelf_stretch_mobile__onxwjun8"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_flexBasis_1/2_mobile__1ycz12q0 Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjup4 Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupg Column_columnStyle_alignSelf_stretch__1ycz12q1k Column__1ycz12q1b sprinkles_alignSelf_stretch_mobile__onxwjun4"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw sprinkles_justifyContent_stretch_mobile__onxwjuo0"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw sprinkles_justifyContent_stretch_mobile__onxwjunw"
             >
               <div
                 class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_width_full_mobile__onxwjufw HorizontalAutoScroller_item__2i92q04"
@@ -387,10 +387,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
             </div>
           </div>
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_flexBasis_1/2_mobile__1ycz12q0 Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjupc Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupo Column_columnStyle_alignSelf_stretch__1ycz12q1k Column__1ycz12q1b sprinkles_alignSelf_stretch_mobile__onxwjun8"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_flexBasis_1/2_mobile__1ycz12q0 Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjup4 Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupg Column_columnStyle_alignSelf_stretch__1ycz12q1k Column__1ycz12q1b sprinkles_alignSelf_stretch_mobile__onxwjun4"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw sprinkles_justifyContent_stretch_mobile__onxwjuo0"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw sprinkles_justifyContent_stretch_mobile__onxwjunw"
             >
               <div
                 class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_width_full_mobile__onxwjufw HorizontalAutoScroller_item__2i92q04"
@@ -400,10 +400,10 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
             </div>
           </div>
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_flexBasis_1/2_mobile__1ycz12q0 Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjupc Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupo Column_columnStyle_alignSelf_stretch__1ycz12q1k Column__1ycz12q1b sprinkles_alignSelf_stretch_mobile__onxwjun8"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_flexBasis_1/2_mobile__1ycz12q0 Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjup4 Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupg Column_columnStyle_alignSelf_stretch__1ycz12q1k Column__1ycz12q1b sprinkles_alignSelf_stretch_mobile__onxwjun4"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw sprinkles_justifyContent_stretch_mobile__onxwjuo0"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw sprinkles_justifyContent_stretch_mobile__onxwjunw"
             >
               <div
                 class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_width_full_mobile__onxwjufw HorizontalAutoScroller_item__2i92q04"
@@ -413,7 +413,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
             </div>
           </div>
           <div
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjupc Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupo"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Columns_makeResponsiveStyle_key_bp__15fwc18g Columns_makeResponsiveStyle_key_bp__15fwc181k Column_columnStyle__1ycz12q1g Column_columnStyle_grow_false__1ycz12q1n Column__1ycz12q1e sprinkles_flexGrow_0_mobile__onxwjup4 Column_columnStyle_noShrink_true__1ycz12q1o Column__1ycz12q1f sprinkles_flexShrink_0_mobile__onxwjupg"
           >
             <div
               class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_height_full_mobile__onxwjuec sprinkles_width_full_mobile__onxwjufw HorizontalAutoScroller_controllerCol__2i92q01"
@@ -423,14 +423,14 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
           </div>
         </div>
         <div
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_flexEnd_mobile__onxwjuno HorizontalAutoScroller_controllerBtn__2i92q00 HorizontalAutoScroller_nextBtn__2i92q03"
+          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_absolute_mobile__onxwju9c sprinkles_alignItems_center_mobile__onxwjulk sprinkles_justifyContent_flexEnd_mobile__onxwjunk HorizontalAutoScroller_controllerBtn__2i92q00 HorizontalAutoScroller_nextBtn__2i92q03"
         >
           <button
-            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_button__4z7xt312 reset_trimmedElement__4z7xt30 reset_button__4z7xt35 sprinkles_borderBottomWidth_none_mobile__onxwjuc0 sprinkles_borderLeftWidth_none_mobile__onxwjubk sprinkles_borderRightWidth_none_mobile__onxwjucg sprinkles_borderTopWidth_none_mobile__onxwjucw sprinkles_paddingLeft_4_mobile__onxwjuto sprinkles_paddingRight_4_mobile__onxwjuus sprinkles_paddingTop_none_mobile__onxwjuwk sprinkles_paddingBottom_none_mobile__onxwjut8 sprinkles_display_inline-block_mobile__onxwju7s sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_borderRadius_pill_mobile__onxwjub0 sprinkles_textAlign_center_mobile__onxwju9s useTextStyles_root__1xnpmd70 reset_block__4z7xt34 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_5__p2yon5o"
+            class="reset_resetVariants__4z7xt3d reset_resetVariants_as_button__4z7xt312 reset_trimmedElement__4z7xt30 reset_button__4z7xt35 sprinkles_borderBottomWidth_none_mobile__onxwjuc0 sprinkles_borderLeftWidth_none_mobile__onxwjubk sprinkles_borderRightWidth_none_mobile__onxwjucg sprinkles_borderTopWidth_none_mobile__onxwjucw sprinkles_paddingLeft_4_mobile__onxwjutg sprinkles_paddingRight_4_mobile__onxwjuuk sprinkles_paddingTop_none_mobile__onxwjuwc sprinkles_paddingBottom_none_mobile__onxwjut0 sprinkles_display_inline-block_mobile__onxwju7s sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_borderRadius_pill_mobile__onxwjub0 sprinkles_textAlign_center_mobile__onxwju9s useTextStyles_root__1xnpmd70 reset_block__4z7xt34 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 Button_button__p2yon53 focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon55 Button_button_shape_iconOnly__p2yon59 Button_button_intent_secondary__p2yon5c Button_button_minimal_false__p2yon5i Button_button_compound_5__p2yon5o"
             type="button"
           >
             <div
-              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulo sprinkles_justifyContent_center_mobile__onxwjunc Button_body__p2yon50"
+              class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_height_full_mobile__onxwjuec sprinkles_alignItems_center_mobile__onxwjulk sprinkles_justifyContent_center_mobile__onxwjun8 Button_body__p2yon50"
             >
               <span
                 class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_display_block_mobile__onxwju74 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
@@ -454,7 +454,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
       </div>
     </div>
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_flexDirection_column_mobile__onxwjuow Stack_child_default__1417p7aa Stack_child_spaces_5__1417p7a4"
+      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_flexDirection_column_mobile__onxwjuoo Stack_child_default__1417p7aa Stack_child_spaces_5__1417p7a4"
     >
       <div
         class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_width_full_mobile__onxwjufw Section_root__184s6x60 Section_width_small__184s6x61"
