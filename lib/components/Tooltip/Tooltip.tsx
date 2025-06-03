@@ -5,6 +5,7 @@ import {
 	ComponentProps,
 	FunctionComponent,
 	ReactElement,
+	ReactNode,
 	useCallback,
 	useEffect,
 	useRef,
@@ -25,7 +26,7 @@ export interface TooltipProps {
 	isOpen?: boolean;
 	label: string;
 	alignment?: EAlignment;
-	children: ReactElement;
+	children: ReactNode;
 	closeAfter?: number;
 }
 
@@ -72,12 +73,31 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 
 	return label?.length > 0 ? (
 		<>
-			{cloneElement(Children.only(children), {
-				// @ts-expect-error ref does not exist on the type
-				ref: triggerRef,
-				onMouseEnter: enterHandler,
-				onMouseLeave: leaveHandler,
-			})}
+			{(() => {
+				const childrenArray = Children.toArray(children);
+				
+				// If there's only one child, use the existing logic
+				if (childrenArray.length === 1) {
+					const singleChild = childrenArray[0] as ReactElement;
+					return cloneElement(singleChild, {
+						// @ts-expect-error ref does not exist on the type
+						ref: triggerRef,
+						onMouseEnter: enterHandler,
+						onMouseLeave: leaveHandler,
+					});
+				}
+				
+				// If there are multiple children, wrap them in a span
+				return (
+					<span
+						ref={triggerRef}
+						onMouseEnter={enterHandler}
+						onMouseLeave={leaveHandler}
+					>
+						{children}
+					</span>
+				);
+			})()}
 			<Positioner
 				triggerRef={triggerRef}
 				alignment={alignment}

@@ -2,6 +2,7 @@ import { Meta, StoryObj } from '@storybook/react-vite';
 import React, { type ComponentProps } from 'react';
 
 import { EAlignment } from '../Positioner/alignment';
+import { Inline } from '../Inline/Inline';
 import { Text } from '../Text/Text';
 
 import { Tooltip } from './Tooltip';
@@ -89,6 +90,35 @@ export const WithLargeTextSize: Story = {
 		size: 'large',
 		children: (
 			<div style={{ display: 'inline' }}>Im the tooltip trigger</div>
+		),
+	},
+};
+
+export const WithMultipleChildren: Story = {
+	args: {
+		label: 'This tooltip works with multiple children!',
+		alignment: EAlignment.BOTTOM,
+		children: (
+			<>
+				<Inline>
+					<Text>First text</Text>
+					<Text>Second text</Text>
+				</Inline>
+				<Text>Additional text</Text>
+			</>
+		),
+	},
+};
+
+export const WithInlineAndText: Story = {
+	args: {
+		label: 'Tooltip with Inline containing Text components',
+		alignment: EAlignment.RIGHT,
+		children: (
+			<Inline>
+				<Text>Option A</Text>
+				<Text>Option B</Text>
+			</Inline>
 		),
 	},
 };
