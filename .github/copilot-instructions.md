@@ -10,28 +10,50 @@ and well-documented components.
 
 Adhere to the patterns and best practices of the following:
 
+- **Yarn**: Yarn 4 is used for CLI commands.
 - **React (v19+)**: Leverage modern React features. Be mindful that React 19
   introduces compiler optimizations (e.g., `React.memo` might be handled
   automatically by `react-compiler`), so some manual optimizations like
   `useMemo`, `useCallback`, and `React.memo` might become less necessary. Focus
   on clean, readable code.
 - **vanilla-extract**: For all styling. Utilize its various approaches (e.g.,
-  `style`, `globalStyle`, `sprinkles`, `recipes`) appropriately. Ensure styles
-  are type-safe and efficient.
+  `sprinkles`, `recipes`) appropriately. The sprinkles generate a large
+  combination of CSS utility classes and so they should be reused wherever
+  possible to maximise effectiveness. Ensure styles are type-safe and efficient.
 - **Vitest**: For unit and integration testing. Write comprehensive tests for
-  component logic, props, and interactions.
+  component logic, props, and interactions. Only core component internals and
+  helpers should have thorough unit tests. The focus is more on Storybook play
+  functions for component interactive tests.
 - **Storybook**: For component development, documentation, and visual testing.
-  Follow best practices for creating informative and interactive stories.
+  Follow best practices for creating informative and interactive stories. All
+  stories are run through the Chormatic service for visual regression checking.
 - **React Aria**: We are gradually adopting React Aria for enhanced
   accessibility and interactions. When uplifting or creating new interactive
   components, consider using React Aria hooks and components.
-- **`useBox` Hook**: Many components utilize a central `useBox` hook (or a
-  similar pattern, often from `../Box/useBox` or `../Box/boxStyles`) to handle
-  polymorphism (via the `as` prop), common layout/styling attributes, and base
-  HTML element rendering. Familiarize yourself with its usage and props.
 - **Composition over Inheritance**: Prefer composing functionality by using
   existing primitive components (e.g., `Box`, `Text`, `Icon`) as building
   blocks.
+
+## IMPORTANT: After each task is actioned
+
+### 1. Versioning and Changeset
+
+This package uses the `changeset` library to handle versioning. As part of each
+task completion where a change is made that needs to published, never forget to
+run `yarn changeset` and generate an randomely named changeset file in the
+'.changeset' folder.
+
+### 2. Always generate a changeset file for each task or pull request
+
+Changesets are always **minor** or **patch**. Major versions should never be
+generated as part of a task completion. No pull request with publishable changes
+will be approved that is missing a changeset as this will trigger the versioning
+script in the workflow.
+
+### 3. Formatting
+
+The `yarn format` command should be used prior to a commit so that formatting
+remains consistent.
 
 ## Guiding Principles
 
@@ -51,7 +73,6 @@ Adhere to the patterns and best practices of the following:
   and flag unnecessary re-renders.
 - **Avoid premature optimization.** Profile and identify actual bottlenecks
   before applying complex optimizations.
-- **Lazy load components or heavy dependencies** where appropriate.
 
 ### 3. Component Design
 
@@ -64,32 +85,30 @@ Adhere to the patterns and best practices of the following:
         - `index.ts`: Exports the component, props types, and other relevant
           parts.
         - `ComponentName.stories.tsx`: Storybook stories.
-        - `ComponentName.spec.tsx`: Vitest tests.
+        - `ComponentName.spec.tsx`: Vitest unit tests tests - preferred only for
+          core components and primatives that are more difficult to interaction
+          test with the Storybook play function.
 - **Props Definition**:
     - Define props using TypeScript interfaces or types (e.g.,
       `ComponentNameProps`).
-    - Often, props extend a base type like
-      `BoxLikeProps<'element', CustomProps>` when using the `useBox` pattern.
+    - Often, props extend a base type like `BoxProps`.
     - Use JSDoc comments extensively for clear prop documentation for Storybook.
+      But avoid overly verbose descriptions and prefer simple clear language.
     - Set default prop values directly in the component's function signature
       destructuring.
-- **Polymorphic Components**: Components should, where sensible, support
-  polymorphism via an `as` prop (often facilitated by `useBox`) to allow
-  rendering different underlying HTML elements. Ensure proper type inference.
 - **Style Props & Styling (`vanilla-extract`)**:
     - Import styles from the co-located `ComponentName.css.ts` file (e.g.,
       `import * as styles from './ComponentName.css';`).
-    - Utilize `vanilla-extract` features like `style`, `recipes`, and
-      `sprinkles` as appropriate.
+    - Utilize `vanilla-extract` features `recipes` and `sprinkles`. `recipes`
+      can refer to `sprinkles` within the styles so that utility classes are
+      best reused.
     - Use the `clsx` utility for conditional class name application.
     - Components may accept straightforward style props, typically managed via
       `sprinkles` or `recipes`.
 - **`displayName`**: Always set a `displayName` for components for better
   debugging.
-- **`data-*` Attributes**: Utilize `data-*` attributes (e.g., via a `dataAttrs`
-  utility) for state-based styling or testing selectors where appropriate.
-- **Anchor Defaults**: For components rendering as `<a>` tags, ensure
-  `rel="noopener noreferrer"` is set by default if not overridden.
+- **`data-*` Attributes**: Move towards utilizing `data-*` attributes (e.g., via
+  a `dataAttrs` utility) for state-based styling.
 
 ### 4. Testing
 
@@ -158,10 +177,13 @@ Adhere to the patterns and best practices of the following:
 ### 9. Theming and Customization
 
 - **Leverage `vanilla-extract` Theming**: Utilize `vanilla-extract`'s theming
-  capabilities, **prioritizing the use of existing global design tokens** (e.g.,
-  for colors, spacing, typography) to ensure consistency and maintainability.
-  Components should be easily adaptable to different visual themes through these
-  tokens.
+  capabilities, **prioritizing the use of existing global design tokens** (all
+  colors, spacing, typography, etc. must come from the tokens) to ensure
+  consistency and maintainability. Components should be easily adaptable to
+  different visual themes through these tokens.
+- **Tokens Contract**: The theme contract is established in the
+  `/lib/themes/theme.css.ts` file and exports the type `ThemeTokens` which is
+  the theme contract structure that enforced at build time by vanilla-extract.
 - **Customization Points**: Provide clear and documented ways for consumers to
   customize component appearance and behavior beyond standard props where
   appropriate, ideally by extending or overriding theme tokens.
@@ -171,23 +193,7 @@ Adhere to the patterns and best practices of the following:
 - Adhere to the project's ESLint and Prettier configurations.
 - Copilot suggestions should align with these established styles.
 
-## Copilot Usage Specifics
+## Additional instructions
 
-- **Review Suggestions**: Always critically review Copilot's suggestions. Do not
-  accept them blindly. Ensure they align with these guidelines, project
-  conventions, and the specific requirements of the component.
-- **Iterative Prompting**: If the initial suggestion isn't perfect, refine your
-  prompts to guide Copilot towards a better solution.
-- **Focus on Boilerplate**: Use Copilot to help with boilerplate code (e.g.,
-  basic component structure, story setup, test file setup) but ensure the core
-  logic is well-thought-out and reviewed.
-- **Dependency Management**: **Strictly avoid adding new dependencies.** Always
-  review and utilize existing project dependencies. If a required functionality
-  is not available through existing dependencies, flag this for manual review
-  and discussion.
-- **Learning Tool**: Use Copilot as a learning tool to discover new patterns or
-  API usages, but always verify their applicability and correctness.
-
-By following these instructions, we can leverage GitHub Copilot effectively to
-enhance our development process while maintaining the quality and integrity of
-our component library.
+- **Dependencies**: **Strictly avoid adding new dependencies as part of task
+  completion.** Always review and utilize existing project dependencies.
