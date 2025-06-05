@@ -35,7 +35,7 @@ export const Heading = ({
 	noWrap,
 	transform,
 	colour = 'dark',
-	size = sizeScaleDefaults[is],
+	size = sizeScaleDefaults[as],
 	breakWord,
 	className = '',
 	children,

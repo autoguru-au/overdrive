@@ -1,4 +1,4 @@
-import { element, resetVariants, type ResetVariantProps } from './reset.css';
+import { element, resetVariants, type ResetVariantProps } from './elements.css';
 
 /**
  * Returns the reset styles based on the `as` prop tag name passed in.
