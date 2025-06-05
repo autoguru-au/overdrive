@@ -69,10 +69,10 @@ export const WithDividers: Story = {
 };
 
 /** Uses an array for `space` which means the spacing will be responsive */
-export const WithAlignment: Story = {
-	args: {
-		alignItems: 'center',
-		dividers: true,
-		space: ['2', '4', '6'],
-	},
-};
+// export const WithAlignment: Story = {
+// 	args: {
+// 		alignItems: 'center',
+// 		dividers: true,
+// 		space: ['2', '4', '6'],
+// 	},
+// };

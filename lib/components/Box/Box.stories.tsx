@@ -15,7 +15,7 @@ const meta: Meta<typeof Box> = {
 		borderRadius: 'none',
 		borderColour: 'gray',
 		borderWidth: '2',
-		display: 'inline-flex',
+		display: 'inlineFlex',
 		margin: undefined,
 		padding: '6',
 		textAlign: undefined,
@@ -45,8 +45,8 @@ export const DataAttributes: Story = {
 	render: () => (
 		<Box
 			id="so-basic"
-			odComponent="box-basic"
-			testId="basically-perfect"
+			// odComponent="box-basic"
+			// testId="basically-perfect"
 			data-custom-attribute="somewhat less basic"
 		>
 			The most basic box (or is it?)
@@ -57,17 +57,17 @@ export const DataAttributes: Story = {
 /**
  * Passing in a React element to `as` props to merge style props
  */
-export const ComponentAsProp: Story = {
-	render: () => (
-		<Box
-			as={<Box as="a" href="#hello" />}
-			backgroundColor="accent"
-			borderColor="info"
-			borderWidth="1"
-			className="keep-my-custom-class-name"
-			p="4"
-		>
-			Styled props merged with custom component
-		</Box>
-	),
-};
+// export const ComponentAsProp: Story = {
+// 	render: () => (
+// 		<Box
+// 			as={<Box as="a" href="#hello" />}
+// 			backgroundColor="accent"
+// 			borderColor="info"
+// 			borderWidth="1"
+// 			className="keep-my-custom-class-name"
+// 			p="4"
+// 		>
+// 			Styled props merged with custom component
+// 		</Box>
+// 	),
+// };

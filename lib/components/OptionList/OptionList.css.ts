@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
-import { sprinklesResponsive } from '../../styles/sprinkles.css';
+import { sprinkles } from '../../styles/sprinkles.css';
 import { overdriveTokens as tokens } from '../../themes/theme.css';
 import { interactionStyle } from '../../utils/css';
 
@@ -110,7 +110,7 @@ export const checkbox = recipe({
 				color: tokens.colours.background.body,
 			},
 		}),
-		sprinklesResponsive({
+		sprinkles({
 			alignItems: 'center',
 			display: 'flex',
 			flexShrink: '0',

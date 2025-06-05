@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
-import { sprinklesResponsive } from '../../styles/sprinkles.css';
+import { sprinkles } from '../../styles/sprinkles.css';
 import { tokens } from '../../themes/base/tokens';
 import { interactionStyle } from '../../utils/css';
 
@@ -90,7 +90,7 @@ export const styledClearButton = recipe({
 			padding: 0,
 			position: 'relative',
 		},
-		sprinklesResponsive({
+		sprinkles({
 			size: '6',
 		}),
 	],

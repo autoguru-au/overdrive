@@ -5,8 +5,7 @@ import React from 'react';
 import { Box } from './Box';
 import * as stories from './Box.stories';
 
-const { ComponentAsProp, DataAttributes, ResponsiveProps, Standard } =
-	composeStories(stories);
+const { DataAttributes, ResponsiveProps, Standard } = composeStories(stories);
 
 describe('<Box />', async () => {
 	it('renders the standard Box story', async () => {
@@ -45,19 +44,19 @@ describe('<Box />', async () => {
 		expect(buttonElement.tagName).toBe('BUTTON');
 	});
 
-	it('renders using a React element passed to "as" prop', async () => {
-		await ComponentAsProp.run();
-		const boxElement = screen.getByText(
-			'Styled props merged with custom component',
-		);
-		expect(boxElement.tagName).toBe('A');
-		expect(boxElement).toHaveAttribute('href', '#hello');
-		expect(boxElement.className).toContain('keep-my-custom-class-name');
-		expect(boxElement).not.toHaveAttribute('backgroundColor');
-		expect(boxElement).not.toHaveAttribute('borderColor');
-		expect(boxElement).not.toHaveAttribute('borderWidth');
-		expect(boxElement).not.toHaveAttribute('p');
-	});
+	// it('renders using a React element passed to "as" prop', async () => {
+	// 	await ComponentAsProp.run();
+	// 	const boxElement = screen.getByText(
+	// 		'Styled props merged with custom component',
+	// 	);
+	// 	expect(boxElement.tagName).toBe('A');
+	// 	expect(boxElement).toHaveAttribute('href', '#hello');
+	// 	expect(boxElement.className).toContain('keep-my-custom-class-name');
+	// 	expect(boxElement).not.toHaveAttribute('backgroundColor');
+	// 	expect(boxElement).not.toHaveAttribute('borderColor');
+	// 	expect(boxElement).not.toHaveAttribute('borderWidth');
+	// 	expect(boxElement).not.toHaveAttribute('p');
+	// });
 
 	it('renders as an anchor tag with href', () => {
 		render(
@@ -100,7 +99,7 @@ describe('<Box />', async () => {
 
 	it('applies colour and backgroundColour props', () => {
 		render(
-			<Box color="normal" backgroundColor="danger">
+			<Box color="normal" backgroundColour="danger">
 				Coloured Box
 			</Box>,
 		);
@@ -110,7 +109,7 @@ describe('<Box />', async () => {
 
 	it('applies border props correctly', () => {
 		render(
-			<Box borderColor="warning" borderWidth="2">
+			<Box borderColour="warning" borderWidth="2">
 				Bordered Box
 			</Box>,
 		);

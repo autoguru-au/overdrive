@@ -19,6 +19,7 @@ const responsiveConditions = {
 
 const responsiveProperties = defineProperties({
 	conditions: { ...responsiveConditions },
+	responsiveArray: ['mobile', 'tablet', 'desktop', 'largeDesktop'],
 	defaultCondition: 'mobile',
 	properties: {
 		display: [
@@ -30,8 +31,8 @@ const responsiveProperties = defineProperties({
 			'inline-flex',
 		],
 		flexDirection: ['row', 'column'],
-		flexGrow: [0, 1],
-		flexShrink: [0, 1],
+		flexGrow: ['0', '1'],
+		flexShrink: ['0', '1'],
 		flexWrap: ['nowrap', 'wrap', 'wrap-reverse'],
 		gap: space,
 		gridTemplateColumns: {
@@ -40,16 +41,27 @@ const responsiveProperties = defineProperties({
 			'3': 'repeat(3, 1fr)',
 			'4': 'repeat(4, 1fr)',
 			'5': 'repeat(5, 1fr)',
+			auto: 'auto',
 		},
-		alignItems: ['stretch', 'flex-start', 'center', 'flex-end'],
-		justifyContent: [
-			'stretch',
-			'flex-start',
+		alignContent: [
+			'baseline',
 			'center',
+			'end',
 			'space-between',
-			'flex-end',
+			'space-evenly',
+			'start',
+			'stretch',
 		],
-		alignSelf: ['flex-start', 'center', 'flex-end'],
+		alignItems: ['stretch', 'start', 'center', 'end'],
+		justifyContent: [
+			'center',
+			'end',
+			'space-between',
+			'space-evenly',
+			'start',
+			'stretch',
+		],
+		alignSelf: ['start', 'center', 'end'],
 		height: {
 			...spaceWithoutNone,
 			'100%': '100%',
@@ -58,6 +70,7 @@ const responsiveProperties = defineProperties({
 		width: {
 			...spaceWithoutNone,
 			'100%': '100%',
+			full: '100%',
 			auto: 'auto',
 		},
 	},
