@@ -6,20 +6,18 @@ exports[`<Inline /> > should match snapshot for custom element dividers 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_alignItems_center_mobile__onxwjujv sprinkles_display_flex_mobile__onxwju77 sprinkles_flexDirection_row_mobile__onxwjumn sprinkles_flexWrap_wrap_mobile__onxwjunn sprinkles_gap_2_mobile__onxwjugj sprinkles_minWidth_fit-content_mobile__onxwjugb sprinkles_position_relative_mobile__onxwju8v"
-    data-od-component="inline"
+    class="elements_block__76e2xv3 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_wrap__3xgq1lhq useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4"
   >
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_useVar_gap__onxwju2y sprinkles_alignItems_center_mobile__onxwjujv sprinkles_display_flex_mobile__onxwju77 sprinkles_flexWrap_nowrap_mobile__onxwjunj"
+      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
     >
       <span
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_normal__onxwju2g sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330"
+        class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
       >
         A
       </span>
       <div
-        aria-hidden="true"
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33"
+        class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g"
       >
         <div>
           divider
@@ -27,16 +25,15 @@ exports[`<Inline /> > should match snapshot for custom element dividers 1`] = `
       </div>
     </div>
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_useVar_gap__onxwju2y sprinkles_alignItems_center_mobile__onxwjujv sprinkles_display_flex_mobile__onxwju77 sprinkles_flexWrap_nowrap_mobile__onxwjunj"
+      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
     >
       <span
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_normal__onxwju2g sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330"
+        class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
       >
         B
       </span>
       <div
-        aria-hidden="true"
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33"
+        class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g"
       >
         <div>
           divider
@@ -44,10 +41,10 @@ exports[`<Inline /> > should match snapshot for custom element dividers 1`] = `
       </div>
     </div>
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_useVar_gap__onxwju2y sprinkles_alignItems_center_mobile__onxwjujv sprinkles_display_flex_mobile__onxwju77 sprinkles_flexWrap_nowrap_mobile__onxwjunj"
+      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
     >
       <span
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_normal__onxwju2g sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330"
+        class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
       >
         C
       </span>
@@ -62,52 +59,49 @@ exports[`<Inline /> > should match snapshot for default dividers 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_alignItems_center_mobile__onxwjujv sprinkles_display_flex_mobile__onxwju77 sprinkles_flexDirection_row_mobile__onxwjumn sprinkles_flexWrap_wrap_mobile__onxwjunn sprinkles_gap_2_mobile__onxwjugj sprinkles_minWidth_fit-content_mobile__onxwjugb sprinkles_position_relative_mobile__onxwju8v"
-    data-od-component="inline"
+    class="elements_block__76e2xv3 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_wrap__3xgq1lhq useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4"
   >
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_useVar_gap__onxwju2y sprinkles_alignItems_center_mobile__onxwjujv sprinkles_display_flex_mobile__onxwju77 sprinkles_flexWrap_nowrap_mobile__onxwjunj"
+      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
     >
       <span
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_normal__onxwju2g sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330"
+        class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
       >
         A
       </span>
       <div
-        aria-hidden="true"
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33"
+        class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g"
       >
         <span
-          class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_normal__onxwju2g sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330"
+          class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
         >
           •
         </span>
       </div>
     </div>
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_useVar_gap__onxwju2y sprinkles_alignItems_center_mobile__onxwjujv sprinkles_display_flex_mobile__onxwju77 sprinkles_flexWrap_nowrap_mobile__onxwjunj"
+      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
     >
       <span
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_normal__onxwju2g sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330"
+        class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
       >
         B
       </span>
       <div
-        aria-hidden="true"
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33"
+        class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g"
       >
         <span
-          class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_normal__onxwju2g sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330"
+          class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
         >
           •
         </span>
       </div>
     </div>
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_useVar_gap__onxwju2y sprinkles_alignItems_center_mobile__onxwjujv sprinkles_display_flex_mobile__onxwju77 sprinkles_flexWrap_nowrap_mobile__onxwjunj"
+      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
     >
       <span
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_normal__onxwju2g sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330"
+        class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
       >
         C
       </span>
@@ -122,32 +116,31 @@ exports[`<Inline /> > should match snapshot for no dividers 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_alignItems_center_mobile__onxwjujv sprinkles_display_flex_mobile__onxwju77 sprinkles_flexDirection_row_mobile__onxwjumn sprinkles_flexWrap_wrap_mobile__onxwjunn sprinkles_gap_2_mobile__onxwjugj sprinkles_minWidth_fit-content_mobile__onxwjugb sprinkles_position_relative_mobile__onxwju8v"
-    data-od-component="inline"
+    class="elements_block__76e2xv3 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_wrap__3xgq1lhq useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm24"
   >
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_useVar_gap__onxwju2y sprinkles_alignItems_center_mobile__onxwjujv sprinkles_display_flex_mobile__onxwju77 sprinkles_flexWrap_nowrap_mobile__onxwjunj"
+      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
     >
       <span
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_normal__onxwju2g sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330"
+        class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
       >
         A
       </span>
     </div>
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_useVar_gap__onxwju2y sprinkles_alignItems_center_mobile__onxwjujv sprinkles_display_flex_mobile__onxwju77 sprinkles_flexWrap_nowrap_mobile__onxwjunj"
+      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
     >
       <span
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_normal__onxwju2g sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330"
+        class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
       >
         B
       </span>
     </div>
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_useVar_gap__onxwju2y sprinkles_alignItems_center_mobile__onxwjujv sprinkles_display_flex_mobile__onxwju77 sprinkles_flexWrap_nowrap_mobile__onxwjunj"
+      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
     >
       <span
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_normal__onxwju2g sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330"
+        class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
       >
         C
       </span>
@@ -162,20 +155,18 @@ exports[`<Inline /> > should not be able to render components 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_alignItems_center_mobile__onxwjujv sprinkles_display_flex_mobile__onxwju77 sprinkles_flexDirection_row_mobile__onxwjumn sprinkles_flexWrap_wrap_mobile__onxwjunn sprinkles_gap_2_mobile__onxwjugj sprinkles_minWidth_fit-content_mobile__onxwjugb sprinkles_position_relative_mobile__onxwju8v"
-    data-od-component="inline"
+    class="elements_block__76e2xv3 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_wrap__3xgq1lhq useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4"
   >
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_useVar_gap__onxwju2y sprinkles_alignItems_center_mobile__onxwjujv sprinkles_display_flex_mobile__onxwju77 sprinkles_flexWrap_nowrap_mobile__onxwjunj"
+      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
     >
       <span
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_normal__onxwju2g sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330"
+        class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
       >
         A
       </span>
       <div
-        aria-hidden="true"
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33"
+        class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g"
       >
         <div>
           divider component from test
@@ -183,10 +174,10 @@ exports[`<Inline /> > should not be able to render components 1`] = `
       </div>
     </div>
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_useVar_gap__onxwju2y sprinkles_alignItems_center_mobile__onxwjujv sprinkles_display_flex_mobile__onxwju77 sprinkles_flexWrap_nowrap_mobile__onxwjunj"
+      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
     >
       <span
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_fontSize_4__onxwju21 sprinkles_lineHeight_4__onxwju2a sprinkles_fontWeight_normal__onxwju2g sprinkles_color_neutral__onxwju6o typography_typographyStyles__yhjp330"
+        class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
       >
         B
       </span>

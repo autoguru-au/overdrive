@@ -6,7 +6,7 @@ exports[`<BulletList /> > should match the snapshot 1`] = `
   data-od-component-provider=""
 >
   <ul
-    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_ul__4z7xt3y reset_list__4z7xt36 BulletList_root__4koeg0 BulletList_firstOccurrence__4koeg1"
+    class="elements_list__76e2xv6 BulletList_root__4koeg0 BulletList_firstOccurrence__4koeg1"
   />
 </div>
 `;
