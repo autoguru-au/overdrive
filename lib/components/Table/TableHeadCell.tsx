@@ -105,6 +105,7 @@ export const TableHeadCell = forwardRef<HTMLDivElement, TableHeadCellProps>(
 				justifyContent={alignmentToFlexAlignment(align)}
 				padding={sort ? undefined : padding}
 				borderColourBottom="dark"
+				borderWidth="none"
 				borderWidthBottom="1"
 				aria-sort={shouldSort ? sortToAria(sort!) : undefined}
 				aria-label={ariaLabel}

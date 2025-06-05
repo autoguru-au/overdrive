@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import type { ElementType } from 'react';
 
-import * as resetStyles from '../../styles/reset/elements.css';
+import * as resetStyles from '../../styles/elements.css';
 import { ThemeTokens as Tokens } from '../../themes';
 import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
 import { ResponsiveProp } from '../../utils/responsiveProps.css';

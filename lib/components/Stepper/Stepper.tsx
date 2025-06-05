@@ -169,7 +169,6 @@ export const Stepper: FunctionComponent<StepperProps> = ({
 			borderColour="gray"
 			padding="3"
 			borderRadius="1"
-			boxShadow="2"
 			onKeyDown={keyDownHandler}
 		>
 			<Columns noWrap width="full">

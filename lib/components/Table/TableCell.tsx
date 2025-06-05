@@ -44,6 +44,7 @@ export const TableCell = forwardRef<HTMLDivElement, TableCellProps>(
 				justifyContent={alignmentToFlexAlignment(align)}
 				padding={padding}
 				position="relative"
+				borderWidth="none"
 				borderWidthBottom="1"
 				aria-label={ariaLabel}
 				className={styles.root}

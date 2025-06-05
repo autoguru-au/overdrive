@@ -20,9 +20,9 @@
 	},
 	"license": "MIT",
 	"sideEffects": [
-		"./lib/**/global.css.*",
+		"./lib/styles/global/*",
 		"./lib/themes/**/*",
-		"./dist/**/global.css.*",
+		"./dist/styles/global/*",
 		"./dist/themes/**/*"
 	],
 	"files": [
@@ -51,7 +51,7 @@
 		"test": "vitest --project=unit-tests",
 		"test:ci": "yarn vitest run --no-cache --coverage --project=unit-tests",
 		"test:a11y": "vitest run --coverage --project=storybook",
-		"typeEmit": "tsc -d --declarationDir dist --emitDeclarationOnly",
+		"typeEmit": "tsc -p tsconfig.build.json --emitDeclarationOnly",
 		"watch": "tsc --watch",
 		"prepare": "husky"
 	},

@@ -1,7 +1,7 @@
 import type { Preview } from '@storybook/react-vite';
 
-import '../lib/styles/reset/fonts.css';
-import '../lib/styles/reset/global.css';
+import '../lib/styles/global/fonts.css';
+import '../lib/styles/global/reset.css';
 import * as themes from '../lib/themes';
 
 import { withOverdriveTheme } from './overdriveDecorator';

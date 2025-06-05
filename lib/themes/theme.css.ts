@@ -374,7 +374,7 @@ export { overdriveTokens as themeContractVars };
 
 export type ThemeTokens = TokensFromContract<typeof overdriveTokens>;
 
-/** *Reccomend replace usage*: `container` should be impored from `lib/styles/reset/global.css` */
+/** *Reccomend replace usage*: `container` should be impored from `lib/styles/global/reset.css` */
 export const container = style({
 	fontFamily: overdriveTokens.typography.fontFamily,
 	fontSize: overdriveTokens.typography.size[4].fontSize,

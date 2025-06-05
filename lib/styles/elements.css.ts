@@ -1,10 +1,11 @@
 import { style } from '@vanilla-extract/css';
 import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 
-import { overdriveTokens } from '../../themes/theme.css';
-import { focusOutlineStyle } from '../focusOutline.css';
-import { cssLayerReset } from '../layers.css';
-import { sprinkles } from '../sprinkles.css';
+import { overdriveTokens } from '../themes/theme.css';
+
+import { focusOutlineStyle } from './focusOutline.css';
+import { cssLayerReset } from './layers.css';
+import { sprinkles } from './sprinkles.css';
 
 export const trimmed = {
 	margin: 0,
@@ -15,6 +16,15 @@ const trimmedElement = style({
 	'@layer': {
 		[cssLayerReset]: {
 			...trimmed,
+		},
+	},
+});
+
+export const borderReset = style({
+	'@layer': {
+		[cssLayerReset]: {
+			borderStyle: 'solid',
+			borderWidth: 0,
 		},
 	},
 });
@@ -73,6 +83,7 @@ const list = style({
 
 const fieldset = [
 	trimmedElement,
+	borderReset,
 	style({
 		'@layer': {
 			[cssLayerReset]: {
