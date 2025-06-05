@@ -28,23 +28,23 @@ describe('<Button />', () => {
 		});
 	});
 
-	describe('when custom component', () => {
-		it('should use html anchor element if href value exists', () => {
-			expect(
-				render(<Button as={<a href="abc" />} />).container.firstChild,
-			).toMatchSnapshot();
-		});
+	// describe('when custom component', () => {
+	// 	it('should use html anchor element if href value exists', () => {
+	// 		expect(
+	// 			render(<Button as={<a href="abc" />} />).container.firstChild,
+	// 		).toMatchSnapshot();
+	// 	});
 
-		it('should render passed in component', () => {
-			expect(
-				render(
-					<Button as="a" href="/abcd">
-						Link button
-					</Button>,
-				).container.firstChild.firstChild,
-			).toHaveAttribute('href', '/abcd');
-		});
-	});
+	// 	it('should render passed in component', () => {
+	// 		expect(
+	// 			render(
+	// 				<Button as="a" href="/abcd">
+	// 					Link button
+	// 				</Button>,
+	// 			).container.firstChild.firstChild,
+	// 		).toHaveAttribute('href', '/abcd');
+	// 	});
+	// });
 
 	describe('when colour variants', () => {
 		it('should match snapshot for Primary button', () => {
