@@ -4,7 +4,7 @@ import { expect, within } from 'storybook/test';
 
 import { overdriveTokens } from '../../themes';
 
-import { Heading, type HeadingProps } from '.';
+import { Heading, type HeadingProps } from './Heading';
 
 const headingTypeOptions: Array<ComponentProps<typeof Heading>['as']> = [
 	'h1',

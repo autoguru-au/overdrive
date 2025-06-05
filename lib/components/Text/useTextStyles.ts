@@ -16,9 +16,9 @@ export interface TextStyleProps {
 	align?: BoxStyleProps['textAlign'];
 	/** HTML element to render as */
 	as?: TextTags;
-	/** Set the text colour */
+	/** Set the text colour [modern semantic colour tokens] */
 	color?: TextColor;
-	/** @deprecated Prefer `color` */
+	/** Accesses legacy colour tokens */
 	colour?: TextColor;
 	/** Font weight of the text */
 	fontWeight?: TextFontWeight;

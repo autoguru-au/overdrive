@@ -2,10 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { expect, within } from 'storybook/test';
 
-import { valueArrays } from '../../styles/sprinkles.css';
 import { overdriveTokens } from '../../themes';
 
-import { Text, type TextTags } from './Text';
+import { Text, type TextProps } from './Text';
+import type { TextTags } from './useTextStyles';
+import { sizes } from './useTextStyles.css';
 
 const elements: TextTags[] = ['p', 'label', 'span'];
 const Wrapper = ({ children }) => (
@@ -74,8 +75,8 @@ export const AllSizes: Story = {
 	},
 	render: (args) => (
 		<>
-			{valueArrays.fontSizes.map((size) => (
-				<Text key={size} {...args} size={size} />
+			{Object.keys(sizes).map((size) => (
+				<Text key={size} {...args} size={size as TextProps['size']} />
 			))}
 		</>
 	),
@@ -92,8 +93,11 @@ export const AllColours: Story = {
 					<Text as="p" size="3" strong>
 						{color}
 					</Text>
-					{/*@ts-expect-error wrong ref type */}
-					<Text {...args} as="p" colour={color}>
+					<Text
+						{...args}
+						as="p"
+						colour={color as TextProps['colour']}
+					>
 						{children}
 					</Text>
 				</div>

@@ -201,7 +201,7 @@ export const DateTimePicker = <D extends DateValue>({
 				</h2>
 			)}
 			<div className={layoutStyle}>
-				<div className={sprinkles({ flexShrink: 0 })}>
+				<div className={sprinkles({ flexShrink: '0' })}>
 					<h3 className={subheadingStyle}>
 						{lang?.dateLabel ?? defaultEnglish.dateLabel}
 					</h3>
@@ -231,7 +231,7 @@ export const DateTimePicker = <D extends DateValue>({
 					{/* {state.value && <h2>{dateText}</h2>} */}
 				</div>
 
-				<div className={sprinkles({ flexGrow: 1 })}>
+				<div className={sprinkles({ flexGrow: '1' })}>
 					<h3 className={subheadingStyle}>
 						{lang?.timeLabel ?? defaultEnglish.timeLabel}
 					</h3>

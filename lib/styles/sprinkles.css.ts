@@ -81,5 +81,15 @@ const responsiveProperties = defineProperties({
 	},
 });
 
-export const sprinkles = createSprinkles(responsiveProperties);
+const typographyProperties = defineProperties({
+	properties: {
+		textAlign: ['center', 'end', 'left', 'right', 'start'],
+		textWrap: ['balance', 'nowrap', 'stable'],
+	},
+});
+
+export const sprinkles = createSprinkles(
+	typographyProperties,
+	responsiveProperties,
+);
 export type Sprinkles = Parameters<typeof sprinkles>[0];

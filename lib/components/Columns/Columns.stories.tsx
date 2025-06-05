@@ -3,11 +3,9 @@ import React from 'react';
 
 import { Box } from '../Box/Box';
 
-import { Column } from './Column';
+import { Column, type ColumnProps } from './Column';
 import { Columns } from './Columns';
-import { columnsStyle } from './Columns.css';
-
-type ColumnProps = React.ComponentProps<typeof Column>;
+import * as style from './Columns.css';
 
 const meta: Meta<typeof Columns> = {
 	title: 'Layout/Columns',
@@ -23,15 +21,13 @@ const meta: Meta<typeof Columns> = {
 	},
 	argTypes: {
 		align: {
-			options: Object.keys(columnsStyle.classNames.variants.align),
+			options: Object.keys(style.align),
 		},
 		noWrap: {
-			options: Object.keys(columnsStyle.classNames.variants.noWrap),
+			options: [true, false],
 		},
 		wrappingDirection: {
-			options: Object.keys(
-				columnsStyle.classNames.variants.wrappingDirection,
-			),
+			options: Object.keys(style.wrapping),
 		},
 	},
 };
@@ -105,7 +101,7 @@ export const Standard: Story = {
 const columnProps = {
 	as: 'section',
 	width: ['full', '1/3', '1/5'],
-} satisfies ColumnProps;
+} as ColumnProps;
 
 export const StandardColumn: Story = {
 	args: {},

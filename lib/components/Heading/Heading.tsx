@@ -6,10 +6,13 @@ import { dataAttrs } from '../../utils/dataAttrs';
 import { Box, type BoxProps } from '../Box/Box';
 import { type TextStyleProps, useTextStyles } from '../Text/useTextStyles';
 
+export type HeadingTags = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+
 export interface HeadingProps
-	extends Omit<TextStyleProps, 'is'>,
+	extends Omit<TextStyleProps, 'as' | 'is'>,
 		Pick<BoxProps, 'children' | 'className' | 'id'> {
-	is?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+	as?: HeadingTags;
+	is?: HeadingTags;
 	colour?: Exclude<keyof Tokens['typography']['colour'], 'muted'>;
 }
 
@@ -24,6 +27,7 @@ const sizeScaleDefaults = {
 
 export const Heading = ({
 	is = 'h1',
+	as = is,
 	id,
 	testId,
 	align,
@@ -38,7 +42,7 @@ export const Heading = ({
 }: WithTestId<HeadingProps>) => (
 	<Box
 		id={id}
-		as={is}
+		as={as}
 		className={[
 			useTextStyles({
 				size,
