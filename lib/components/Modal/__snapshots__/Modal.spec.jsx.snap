@@ -23,10 +23,10 @@ exports[`<Modal /> > should match snapshot 1`] = `
     >
       <div
         aria-hidden="true"
-        class="elements_block__76e2xv3 useBoxStyles_position_fixed__3xgq1lfz useBoxStyles_backgroundColours_neutral__3xgq1lfi Modal_backdrop_root__1psykzh3 Modal_transition__1psykzh1"
+        class="elements_block__phak8l4 useBoxStyles_position_fixed__3xgq1lfz useBoxStyles_backgroundColours_neutral__3xgq1lfi Modal_backdrop_root__1psykzh3 Modal_transition__1psykzh1"
       />
       <div
-        class="elements_block__76e2xv3 useBoxStyles_position_fixed__3xgq1lfz useBoxStyles_overflow_hidden__3xgq1lg4 Modal_root__1psykzh0 Modal_transition__1psykzh1"
+        class="elements_block__phak8l4 useBoxStyles_position_fixed__3xgq1lfz useBoxStyles_overflow_hidden__3xgq1lg4 Modal_root__1psykzh0 Modal_transition__1psykzh1"
         role="presentation"
       >
         Hello World!

@@ -6,10 +6,10 @@ exports[`<LinearProgressIndicator /> > should match snapshot 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_overflow_hidden__3xgq1lg4 useBoxStyles_backgroundColours_gray200__3xgq1le3 LinearProgressIndicator_root__1gh10pc0"
+    class="elements_block__phak8l4 useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_overflow_hidden__3xgq1lg4 useBoxStyles_backgroundColours_gray200__3xgq1le3 LinearProgressIndicator_root__1gh10pc0"
   >
     <div
-      class="elements_block__76e2xv3 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy LinearProgressIndicator_linearProgressBar__1gh10pc2"
+      class="elements_block__phak8l4 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy LinearProgressIndicator_linearProgressBar__1gh10pc2"
     >
       <span
         class="useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_backgroundColours_green300__3xgq1led LinearProgressIndicator_linearProgressBarInner__1gh10pc4"

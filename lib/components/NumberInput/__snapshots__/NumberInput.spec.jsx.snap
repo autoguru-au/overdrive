@@ -6,17 +6,17 @@ exports[`<NumberInput /> > should have some hintText 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_width_full__3xgq1lfv"
+    class="elements_block__phak8l4 useBoxStyles_width_full__3xgq1lfv"
   >
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+        class="elements_block__phak8l4 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
       >
         <input
           autocomplete="off"
-          class="elements_trimmedElement__76e2xv0 elements_input__76e2xv8 elements_trimmedElement__76e2xv0 elements_input__76e2xv8 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+          class="elements_trimmedElement__phak8l0 elements_input__phak8l9 elements_trimmedElement__phak8l0 elements_input__phak8l9 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
           id="id"
           max="2147483647"
           type="number"
@@ -24,7 +24,7 @@ exports[`<NumberInput /> > should have some hintText 1`] = `
         />
       </div>
       <div
-        class="elements_block__76e2xv3 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="elements_block__phak8l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lj2 NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
@@ -33,12 +33,12 @@ exports[`<NumberInput /> > should have some hintText 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
           <div
-            class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_none__3xgq1lgf NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_none__3xgq1lgh NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder
           </div>
           <label
-            class="useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
+            class="useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lge useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lj2 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
             for="id"
           >
             placeholder
@@ -50,7 +50,7 @@ exports[`<NumberInput /> > should have some hintText 1`] = `
       </div>
     </div>
     <p
-      class="elements_trimmedElement__76e2xv0 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 elements_trimmedElement__76e2xv0 useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_2__1xnpmd72 elements_trimmedElement__76e2xv0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4g HintText_hintText__down5s0 InputState_natural_default_colour__a2a1mv4"
+      class="elements_trimmedElement__phak8l0 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 elements_trimmedElement__phak8l0 useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_2__1xnpmd72 elements_trimmedElement__phak8l0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4g HintText_hintText__down5s0 InputState_natural_default_colour__a2a1mv4"
     >
       hint text
     </p>
@@ -64,17 +64,17 @@ exports[`<NumberInput /> > should match snapshot 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_width_full__3xgq1lfv"
+    class="elements_block__phak8l4 useBoxStyles_width_full__3xgq1lfv"
   >
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+        class="elements_block__phak8l4 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
       >
         <input
           autocomplete="off"
-          class="elements_trimmedElement__76e2xv0 elements_input__76e2xv8 elements_trimmedElement__76e2xv0 elements_input__76e2xv8 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+          class="elements_trimmedElement__phak8l0 elements_input__phak8l9 elements_trimmedElement__phak8l0 elements_input__phak8l9 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
           id="id"
           max="2147483647"
           type="number"
@@ -82,7 +82,7 @@ exports[`<NumberInput /> > should match snapshot 1`] = `
         />
       </div>
       <div
-        class="elements_block__76e2xv3 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="elements_block__phak8l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lj2 NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
@@ -91,12 +91,12 @@ exports[`<NumberInput /> > should match snapshot 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
           <div
-            class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_none__3xgq1lgf NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_none__3xgq1lgh NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
+            class="useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lge useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lj2 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
             for="id"
           >
             placeholder something
@@ -117,24 +117,24 @@ exports[`<NumberInput /> > should match snapshot when active 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_width_full__3xgq1lfv input-class"
+    class="elements_block__phak8l4 useBoxStyles_width_full__3xgq1lfv input-class"
   >
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+        class="elements_block__phak8l4 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
       >
         <input
           autocomplete="off"
-          class="elements_trimmedElement__76e2xv0 elements_input__76e2xv8 elements_trimmedElement__76e2xv0 elements_input__76e2xv8 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+          class="elements_trimmedElement__phak8l0 elements_input__phak8l9 elements_trimmedElement__phak8l0 elements_input__phak8l9 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
           max="2147483647"
           type="number"
           value=""
         />
       </div>
       <div
-        class="elements_block__76e2xv3 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="elements_block__phak8l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lj2 NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_activeBorderColour__a2a1mv1"
@@ -143,12 +143,12 @@ exports[`<NumberInput /> > should match snapshot when active 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_activeBorderColour__a2a1mv1"
         >
           <div
-            class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_none__3xgq1lgf NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_none__3xgq1lgh NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
+            class="useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lge useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lj2 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
           >
             placeholder something
           </label>
@@ -168,17 +168,17 @@ exports[`<NumberInput /> > should match snapshot when loading 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_width_full__3xgq1lfv"
+    class="elements_block__phak8l4 useBoxStyles_width_full__3xgq1lfv"
   >
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+        class="elements_block__phak8l4 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
       >
         <input
           autocomplete="off"
-          class="elements_trimmedElement__76e2xv0 elements_input__76e2xv8 elements_trimmedElement__76e2xv0 elements_input__76e2xv8 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+          class="elements_trimmedElement__phak8l0 elements_input__phak8l9 elements_trimmedElement__phak8l0 elements_input__phak8l9 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
           id="id"
           max="2147483647"
           type="number"
@@ -186,7 +186,7 @@ exports[`<NumberInput /> > should match snapshot when loading 1`] = `
         />
       </div>
       <div
-        class="elements_block__76e2xv3 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="elements_block__phak8l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lj2 NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
@@ -195,12 +195,12 @@ exports[`<NumberInput /> > should match snapshot when loading 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
           <div
-            class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_none__3xgq1lgf NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_none__3xgq1lgh NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
+            class="useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lge useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lj2 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
             for="id"
           >
             placeholder something
@@ -221,24 +221,24 @@ exports[`<NumberInput /> > should match snapshot when touched 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_width_full__3xgq1lfv input-class"
+    class="elements_block__phak8l4 useBoxStyles_width_full__3xgq1lfv input-class"
   >
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+        class="elements_block__phak8l4 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
       >
         <input
           autocomplete="off"
-          class="elements_trimmedElement__76e2xv0 elements_input__76e2xv8 elements_trimmedElement__76e2xv0 elements_input__76e2xv8 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+          class="elements_trimmedElement__phak8l0 elements_input__phak8l9 elements_trimmedElement__phak8l0 elements_input__phak8l9 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
           max="2147483647"
           type="number"
           value=""
         />
       </div>
       <div
-        class="elements_block__76e2xv3 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="elements_block__phak8l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lj2 NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_error_default_borderColour__a2a1mvd"
@@ -247,12 +247,12 @@ exports[`<NumberInput /> > should match snapshot when touched 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_error_default_borderColour__a2a1mvd"
         >
           <div
-            class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_none__3xgq1lgf NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_none__3xgq1lgh NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
+            class="useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lge useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lj2 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
           >
             placeholder something
           </label>
@@ -272,24 +272,24 @@ exports[`<NumberInput /> > should match snapshot when touched and invalid 1`] = 
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_width_full__3xgq1lfv input-class"
+    class="elements_block__phak8l4 useBoxStyles_width_full__3xgq1lfv input-class"
   >
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+        class="elements_block__phak8l4 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
       >
         <input
           autocomplete="off"
-          class="elements_trimmedElement__76e2xv0 elements_input__76e2xv8 elements_trimmedElement__76e2xv0 elements_input__76e2xv8 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+          class="elements_trimmedElement__phak8l0 elements_input__phak8l9 elements_trimmedElement__phak8l0 elements_input__phak8l9 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
           max="2147483647"
           type="number"
           value=""
         />
       </div>
       <div
-        class="elements_block__76e2xv3 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="elements_block__phak8l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lj2 NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_error_default_borderColour__a2a1mvd"
@@ -298,12 +298,12 @@ exports[`<NumberInput /> > should match snapshot when touched and invalid 1`] = 
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_error_default_borderColour__a2a1mvd"
         >
           <div
-            class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_none__3xgq1lgf NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_none__3xgq1lgh NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
+            class="useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lge useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lj2 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
           >
             placeholder something
           </label>
@@ -323,24 +323,24 @@ exports[`<NumberInput /> > should match snapshot when touched and valid 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_width_full__3xgq1lfv input-class"
+    class="elements_block__phak8l4 useBoxStyles_width_full__3xgq1lfv input-class"
   >
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+        class="elements_block__phak8l4 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
       >
         <input
           autocomplete="off"
-          class="elements_trimmedElement__76e2xv0 elements_input__76e2xv8 elements_trimmedElement__76e2xv0 elements_input__76e2xv8 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
+          class="elements_trimmedElement__phak8l0 elements_input__phak8l9 elements_trimmedElement__phak8l0 elements_input__phak8l9 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b"
           max="2147483647"
           type="number"
           value=""
         />
       </div>
       <div
-        class="elements_block__76e2xv3 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="elements_block__phak8l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lj2 NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_success_default_borderColour__a2a1mv7"
@@ -349,12 +349,12 @@ exports[`<NumberInput /> > should match snapshot when touched and valid 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_success_default_borderColour__a2a1mv7"
         >
           <div
-            class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_none__3xgq1lgf NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_none__3xgq1lgh NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
+            class="useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lge useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lj2 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
           >
             placeholder something
           </label>
@@ -374,16 +374,16 @@ exports[`<NumberInput /> > should match snapshot with both icons 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_width_full__3xgq1lfv input-class"
+    class="elements_block__phak8l4 useBoxStyles_width_full__3xgq1lfv input-class"
   >
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+        class="elements_block__phak8l4 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
       >
         <span
-          class="useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire4 elements_block__76e2xv3 useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_prefixIcon__5jmdy8k withEnhancedInput_iconSize_medium__5jmdy8n InputState_natural_default_colour__a2a1mv4"
+          class="useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire4 elements_block__phak8l4 useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lj2 withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_prefixIcon__5jmdy8k withEnhancedInput_iconSize_medium__5jmdy8n InputState_natural_default_colour__a2a1mv4"
         >
           <svg
             aria-hidden="true"
@@ -397,7 +397,7 @@ exports[`<NumberInput /> > should match snapshot with both icons 1`] = `
           </svg>
         </span>
         <span
-          class="useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire4 elements_block__76e2xv3 useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_suffixIcon__5jmdy8l withEnhancedInput_iconSize_medium__5jmdy8n InputState_natural_default_colour__a2a1mv4"
+          class="useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire4 elements_block__phak8l4 useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lj2 withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_suffixIcon__5jmdy8l withEnhancedInput_iconSize_medium__5jmdy8n InputState_natural_default_colour__a2a1mv4"
         >
           <svg
             aria-hidden="true"
@@ -412,14 +412,14 @@ exports[`<NumberInput /> > should match snapshot with both icons 1`] = `
         </span>
         <input
           autocomplete="off"
-          class="elements_trimmedElement__76e2xv0 elements_input__76e2xv8 elements_trimmedElement__76e2xv0 elements_input__76e2xv8 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b withEnhancedInput_inputItselfSize_medium_prefixed_any__5jmdy8d undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8e"
+          class="elements_trimmedElement__phak8l0 elements_input__phak8l9 elements_trimmedElement__phak8l0 elements_input__phak8l9 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b withEnhancedInput_inputItselfSize_medium_prefixed_any__5jmdy8d undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8e"
           max="2147483647"
           type="number"
           value=""
         />
       </div>
       <div
-        class="elements_block__76e2xv3 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="elements_block__phak8l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lj2 NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
@@ -428,12 +428,12 @@ exports[`<NumberInput /> > should match snapshot with both icons 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
           <div
-            class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_none__3xgq1lgf NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_none__3xgq1lgh NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_defaultPrefixed__1ft8sxl16"
+            class="useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lge useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lj2 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_defaultPrefixed__1ft8sxl16"
           >
             placeholder something
           </label>
@@ -453,16 +453,16 @@ exports[`<NumberInput /> > should match snapshot with prefix icon 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_width_full__3xgq1lfv input-class"
+    class="elements_block__phak8l4 useBoxStyles_width_full__3xgq1lfv input-class"
   >
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+        class="elements_block__phak8l4 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
       >
         <span
-          class="useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire4 elements_block__76e2xv3 useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_prefixIcon__5jmdy8k withEnhancedInput_iconSize_medium__5jmdy8n InputState_natural_default_colour__a2a1mv4"
+          class="useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire4 elements_block__phak8l4 useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lj2 withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_prefixIcon__5jmdy8k withEnhancedInput_iconSize_medium__5jmdy8n InputState_natural_default_colour__a2a1mv4"
         >
           <svg
             aria-hidden="true"
@@ -477,14 +477,14 @@ exports[`<NumberInput /> > should match snapshot with prefix icon 1`] = `
         </span>
         <input
           autocomplete="off"
-          class="elements_trimmedElement__76e2xv0 elements_input__76e2xv8 elements_trimmedElement__76e2xv0 elements_input__76e2xv8 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b withEnhancedInput_inputItselfSize_medium_prefixed_any__5jmdy8d"
+          class="elements_trimmedElement__phak8l0 elements_input__phak8l9 elements_trimmedElement__phak8l0 elements_input__phak8l9 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b withEnhancedInput_inputItselfSize_medium_prefixed_any__5jmdy8d"
           max="2147483647"
           type="number"
           value=""
         />
       </div>
       <div
-        class="elements_block__76e2xv3 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="elements_block__phak8l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lj2 NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
@@ -493,12 +493,12 @@ exports[`<NumberInput /> > should match snapshot with prefix icon 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
           <div
-            class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_none__3xgq1lgf NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_none__3xgq1lgh NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_defaultPrefixed__1ft8sxl16"
+            class="useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lge useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lj2 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_defaultPrefixed__1ft8sxl16"
           >
             placeholder something
           </label>
@@ -518,16 +518,16 @@ exports[`<NumberInput /> > should match snapshot with suffix icon 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_width_full__3xgq1lfv input-class"
+    class="elements_block__phak8l4 useBoxStyles_width_full__3xgq1lfv input-class"
   >
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 NotchedBase_root__1ft8sxl0"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
+        class="elements_block__phak8l4 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx"
       >
         <span
-          class="useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire4 elements_block__76e2xv3 useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_suffixIcon__5jmdy8l withEnhancedInput_iconSize_medium__5jmdy8n InputState_natural_default_colour__a2a1mv4"
+          class="useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire4 elements_block__phak8l4 useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lj2 withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_suffixIcon__5jmdy8l withEnhancedInput_iconSize_medium__5jmdy8n InputState_natural_default_colour__a2a1mv4"
         >
           <svg
             aria-hidden="true"
@@ -542,14 +542,14 @@ exports[`<NumberInput /> > should match snapshot with suffix icon 1`] = `
         </span>
         <input
           autocomplete="off"
-          class="elements_trimmedElement__76e2xv0 elements_input__76e2xv8 elements_trimmedElement__76e2xv0 elements_input__76e2xv8 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8e"
+          class="elements_trimmedElement__phak8l0 elements_input__phak8l9 elements_trimmedElement__phak8l0 elements_input__phak8l9 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ld5 useBoxStyles_backgroundColours_transparent__3xgq1lfl withEnhancedInput_input_itself_root__5jmdy80 withEnhancedInput_inputItselfSize_medium_root_any__5jmdy8b undefined withEnhancedInput_inputItselfSize_medium_suffixed_any__5jmdy8e"
           max="2147483647"
           type="number"
           value=""
         />
       </div>
       <div
-        class="elements_block__76e2xv3 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
+        class="elements_block__phak8l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_textAlign_left__3xgq1lg1 useBoxStyles_pointerEvents_none__3xgq1lj2 NotchedBase_borderVisualDefaults__1ft8sxl6 NotchedBase_borders_root_default__1ft8sxlb"
       >
         <div
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_leading__1ft8sxlc InputState_natural_default_borderColour__a2a1mv5"
@@ -558,12 +558,12 @@ exports[`<NumberInput /> > should match snapshot with suffix icon 1`] = `
           class="NotchedBase_borderRegionDefaults__1ft8sxl5 NotchedBase_borders_middle__1ft8sxld InputState_natural_default_borderColour__a2a1mv5"
         >
           <div
-            class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_none__3xgq1lgf NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
+            class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l18 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3g useBoxStyles_display_none__3xgq1lgh NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_notchGapPlaceholder_base__1ft8sxl7 NotchedBase_notchGapPlaceholder_medium__1ft8sxl9"
           >
             placeholder something
           </div>
           <label
-            class="useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lgd useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lic NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
+            class="useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l10 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l24 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l38 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5g useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6k useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l7o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8s useBoxStyles_display_inline__3xgq1lge useBoxStyles_position_absolute__3xgq1lfy useBoxStyles_pointerEvents_none__3xgq1lj2 NotchedBase_placeholder_default__1ft8sxlz NotchedBase_labelStyle_base__1ft8sxl1 NotchedBase_labelStyle_medium__1ft8sxl3 NotchedBase_placeholder_mutedLabelStyles__1ft8sxl10 NotchedBase_placeholderPlacement_medium_default__1ft8sxl15"
           >
             placeholder something
           </label>

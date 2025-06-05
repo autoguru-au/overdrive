@@ -6,17 +6,17 @@ exports[`<Stack /> > should correctly handle fragment nodes 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3"
+    class="elements_block__phak8l4"
   >
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhf Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhp Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
     >
       <p>
         line 0
       </p>
     </div>
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhf Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhp Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
     >
       <p>
         Line 1
@@ -29,7 +29,7 @@ exports[`<Stack /> > should correctly handle fragment nodes 1`] = `
       </p>
     </div>
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhf Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhp Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
     >
       <p>
         line 4

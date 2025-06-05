@@ -6,11 +6,11 @@ exports[`<EditableText /> > should match snapshot as date input 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_display_inlineBlock__3xgq1lge useBoxStyles_position_relative__3xgq1lg0 EditableText_root__1iskjcs0"
+    class="elements_block__phak8l4 useBoxStyles_display_inlineBlock__3xgq1lgf useBoxStyles_position_relative__3xgq1lg0 EditableText_root__1iskjcs0"
     tabindex="0"
   >
     <span
-      class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_primary__1xnpmd7a useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_noWrap__1xnpmd7r useTextStyles_sizes_4__1xnpmd74 useTextStyles_root__1xnpmd70 elements_block__76e2xv3 useTextStyles_colours_primary__1xnpmd7a EditableText_text__1iskjcs1"
+      class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_primary__1xnpmd7a useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_noWrap__1xnpmd7r useTextStyles_sizes_4__1xnpmd74 useTextStyles_root__1xnpmd70 elements_block__phak8l4 useTextStyles_colours_primary__1xnpmd7a EditableText_text__1iskjcs1"
     >
       Hello World!
     </span>
@@ -24,11 +24,11 @@ exports[`<EditableText /> > should match snapshot for default bullet text 1`] = 
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_display_inlineBlock__3xgq1lge useBoxStyles_position_relative__3xgq1lg0 EditableText_root__1iskjcs0"
+    class="elements_block__phak8l4 useBoxStyles_display_inlineBlock__3xgq1lgf useBoxStyles_position_relative__3xgq1lg0 EditableText_root__1iskjcs0"
     tabindex="0"
   >
     <span
-      class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_primary__1xnpmd7a useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_noWrap__1xnpmd7r useTextStyles_sizes_4__1xnpmd74 useTextStyles_root__1xnpmd70 elements_block__76e2xv3 useTextStyles_colours_primary__1xnpmd7a EditableText_text__1iskjcs1"
+      class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_primary__1xnpmd7a useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_noWrap__1xnpmd7r useTextStyles_sizes_4__1xnpmd74 useTextStyles_root__1xnpmd70 elements_block__phak8l4 useTextStyles_colours_primary__1xnpmd7a EditableText_text__1iskjcs1"
     >
       Hello World!
     </span>
@@ -42,11 +42,11 @@ exports[`<EditableText /> > should match snapshot with custom size 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_display_inlineBlock__3xgq1lge useBoxStyles_position_relative__3xgq1lg0 EditableText_root__1iskjcs0"
+    class="elements_block__phak8l4 useBoxStyles_display_inlineBlock__3xgq1lgf useBoxStyles_position_relative__3xgq1lg0 EditableText_root__1iskjcs0"
     tabindex="0"
   >
     <span
-      class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_muted__1xnpmd7h useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_noWrap__1xnpmd7r useTextStyles_sizes_5__1xnpmd75 useTextStyles_root__1xnpmd70 elements_block__76e2xv3 useTextStyles_colours_muted__1xnpmd7h useTextStyles_sizes_5__1xnpmd75 EditableText_text__1iskjcs1"
+      class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_muted__1xnpmd7h useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_noWrap__1xnpmd7r useTextStyles_sizes_5__1xnpmd75 useTextStyles_root__1xnpmd70 elements_block__phak8l4 useTextStyles_colours_muted__1xnpmd7h useTextStyles_sizes_5__1xnpmd75 EditableText_text__1iskjcs1"
     >
       Hello World!
     </span>

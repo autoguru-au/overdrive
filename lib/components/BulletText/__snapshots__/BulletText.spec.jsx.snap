@@ -6,13 +6,13 @@ exports[`<BulletText /> > should match snapshot for custom bullet text 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhs useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw8 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm28"
+    class="elements_block__phak8l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh1 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhh useBoxStyles_flexWrap_nowrap__3xgq1li1 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li2 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw8 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm28"
   >
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh1 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhh useBoxStyles_flexWrap_nowrap__3xgq1li1"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_flexShrink_0__3xgq1lhp"
+        class="elements_block__phak8l4 useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_flexShrink_0__3xgq1lhz"
       >
         <span>
           <span
@@ -35,10 +35,10 @@ exports[`<BulletText /> > should match snapshot for custom bullet text 1`] = `
       </div>
     </div>
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh1 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhh useBoxStyles_flexWrap_nowrap__3xgq1li1"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_flexGrow_1__3xgq1lho"
+        class="elements_block__phak8l4 useBoxStyles_flexGrow_1__3xgq1lhy"
       >
         <span
           class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
@@ -57,13 +57,13 @@ exports[`<BulletText /> > should match snapshot for default bullet text 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhs useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw8 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm28"
+    class="elements_block__phak8l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh1 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhh useBoxStyles_flexWrap_nowrap__3xgq1li1 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li2 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw8 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm28"
   >
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh1 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhh useBoxStyles_flexWrap_nowrap__3xgq1li1"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexShrink_0__3xgq1lhp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw BulletText_bullet__1o8gcm90 BulletText_primary__1o8gcm91"
+        class="elements_block__phak8l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh1 useBoxStyles_flexShrink_0__3xgq1lhz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li6 BulletText_bullet__1o8gcm90 BulletText_primary__1o8gcm91"
       >
         <span
           class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_2__1xnpmd72 BulletText_primaryText__1o8gcm93"
@@ -73,10 +73,10 @@ exports[`<BulletText /> > should match snapshot for default bullet text 1`] = `
       </div>
     </div>
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh1 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhh useBoxStyles_flexWrap_nowrap__3xgq1li1"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_flexGrow_1__3xgq1lho"
+        class="elements_block__phak8l4 useBoxStyles_flexGrow_1__3xgq1lhy"
       >
         <span
           class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
@@ -95,13 +95,13 @@ exports[`<BulletText /> > should match snapshot for ordered bullet text 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhs useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw8 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm28"
+    class="elements_block__phak8l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh1 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhh useBoxStyles_flexWrap_nowrap__3xgq1li1 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li2 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw8 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm28"
   >
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh1 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhh useBoxStyles_flexWrap_nowrap__3xgq1li1"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexShrink_0__3xgq1lhp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw BulletText_bullet__1o8gcm90 BulletText_primary__1o8gcm91"
+        class="elements_block__phak8l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh1 useBoxStyles_flexShrink_0__3xgq1lhz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li6 BulletText_bullet__1o8gcm90 BulletText_primary__1o8gcm91"
       >
         <span
           class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_2__1xnpmd72 BulletText_primaryText__1o8gcm93"
@@ -111,10 +111,10 @@ exports[`<BulletText /> > should match snapshot for ordered bullet text 1`] = `
       </div>
     </div>
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh1 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhh useBoxStyles_flexWrap_nowrap__3xgq1li1"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_flexGrow_1__3xgq1lho"
+        class="elements_block__phak8l4 useBoxStyles_flexGrow_1__3xgq1lhy"
       >
         <span
           class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
@@ -133,13 +133,13 @@ exports[`<BulletText /> > should match snapshot for primary bullet text with cus
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhs useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw8 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm28"
+    class="elements_block__phak8l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh1 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhh useBoxStyles_flexWrap_nowrap__3xgq1li1 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li2 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw8 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm28"
   >
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh1 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhh useBoxStyles_flexWrap_nowrap__3xgq1li1"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexShrink_0__3xgq1lhp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw BulletText_bullet__1o8gcm90 BulletText_primary__1o8gcm91"
+        class="elements_block__phak8l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh1 useBoxStyles_flexShrink_0__3xgq1lhz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li6 BulletText_bullet__1o8gcm90 BulletText_primary__1o8gcm91"
       >
         <span
           class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_2__1xnpmd72 BulletText_primaryText__1o8gcm93"
@@ -149,10 +149,10 @@ exports[`<BulletText /> > should match snapshot for primary bullet text with cus
       </div>
     </div>
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh1 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhh useBoxStyles_flexWrap_nowrap__3xgq1li1"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_flexGrow_1__3xgq1lho"
+        class="elements_block__phak8l4 useBoxStyles_flexGrow_1__3xgq1lhy"
       >
         <span
           class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
@@ -171,13 +171,13 @@ exports[`<BulletText /> > should match snapshot for secondary bullet text with c
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhs useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw8 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm28"
+    class="elements_block__phak8l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh1 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhh useBoxStyles_flexWrap_nowrap__3xgq1li1 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li2 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw8 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm28"
   >
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh1 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhh useBoxStyles_flexWrap_nowrap__3xgq1li1"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_flexShrink_0__3xgq1lhp useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhw BulletText_bullet__1o8gcm90 BulletText_secondary__1o8gcm92"
+        class="elements_block__phak8l4 useBoxStyles_display_flex__3xgq1lga useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1ldl useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh1 useBoxStyles_flexShrink_0__3xgq1lhz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1li6 BulletText_bullet__1o8gcm90 BulletText_secondary__1o8gcm92"
       >
         <span
           class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_2__1xnpmd72 BulletText_secondaryText__1o8gcm94"
@@ -187,10 +187,10 @@ exports[`<BulletText /> > should match snapshot for secondary bullet text with c
       </div>
     </div>
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh7 useBoxStyles_flexWrap_nowrap__3xgq1lhr"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l8 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_display_flex__3xgq1lga useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh1 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lhh useBoxStyles_flexWrap_nowrap__3xgq1li1"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_flexGrow_1__3xgq1lho"
+        class="elements_block__phak8l4 useBoxStyles_flexGrow_1__3xgq1lhy"
       >
         <span
           class="useBoxStyles_display_block__3xgq1lg9 useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"

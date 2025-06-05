@@ -6,11 +6,11 @@ exports[`<TextLink /> > should allow as override 1`] = `
   data-od-component-provider=""
 >
   <a
-    class="elements__76e2xv2 focusOutline_focusOutlineStyle__tq83zq0 TextLink_root__5ax1bk0"
+    class="elements__phak8l3 focusOutline_focusOutlineStyle__tq83zq0 TextLink_root__5ax1bk0"
     rel="noopener noreferrer"
   >
     <span
-      class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_link__1xnpmd7e useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_pointerEvents_none__3xgq1lic"
+      class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_link__1xnpmd7e useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_pointerEvents_none__3xgq1lj2"
     >
       Test
     </span>
@@ -24,11 +24,11 @@ exports[`<TextLink /> > should match the snapshot 1`] = `
   data-od-component-provider=""
 >
   <a
-    class="elements__76e2xv2 focusOutline_focusOutlineStyle__tq83zq0 TextLink_root__5ax1bk0"
+    class="elements__phak8l3 focusOutline_focusOutlineStyle__tq83zq0 TextLink_root__5ax1bk0"
     rel="noopener noreferrer"
   >
     <span
-      class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_link__1xnpmd7e useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_pointerEvents_none__3xgq1lic"
+      class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_link__1xnpmd7e useTextStyles_fontWeight_semiBold__1xnpmd7p useTextStyles_sizes_4__1xnpmd74 useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_pointerEvents_none__3xgq1lj2"
     />
   </a>
 </div>

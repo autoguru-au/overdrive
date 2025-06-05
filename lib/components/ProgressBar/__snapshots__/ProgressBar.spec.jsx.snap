@@ -6,10 +6,10 @@ exports[`<ProgressBar /> > should match the snapshot 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+    class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
   >
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
       style="width: 0%;"
     />
   </div>

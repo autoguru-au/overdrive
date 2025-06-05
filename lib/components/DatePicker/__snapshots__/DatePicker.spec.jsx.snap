@@ -6,14 +6,14 @@ exports[`<DatePicker /> > should match snapshot without label 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_overflow_hidden__3xgq1lg4"
+    class="elements_block__phak8l4 useBoxStyles_position_relative__3xgq1lg0 useBoxStyles_overflow_hidden__3xgq1lg4"
   >
     <input
-      class="elements_trimmedElement__76e2xv0 elements_input__76e2xv8 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy DatePicker_input__1j3uugj0"
+      class="elements_trimmedElement__phak8l0 elements_input__phak8l9 useBoxStyles_width_full__3xgq1lfv useBoxStyles_height_full__3xgq1lfx useBoxStyles_position_absolute__3xgq1lfy DatePicker_input__1j3uugj0"
       type="date"
     />
     <div
-      class="elements_block__76e2xv3 DatePicker_contents_default__1j3uugj1"
+      class="elements_block__phak8l4 DatePicker_contents_default__1j3uugj1"
     >
       <span
         class="useBoxStyles_display_block__3xgq1lg9 Icon_makeResponsiveStyle_key_bp__1gy3ire4"

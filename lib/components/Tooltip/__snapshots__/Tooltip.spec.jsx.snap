@@ -19,7 +19,7 @@ exports[`<Tolltip /> > should match snapshot when closed 1`] = `
   >
     <div
       aria-hidden="true"
-      class="elements_block__76e2xv3 useBoxStyles_position_fixed__3xgq1lfz Positioner_root__1d54b7d0"
+      class="elements_block__phak8l4 useBoxStyles_position_fixed__3xgq1lfz Positioner_root__1d54b7d0"
     />
   </div>
 </body>
@@ -44,11 +44,11 @@ exports[`<Tolltip /> > should match snapshot when opened 1`] = `
   >
     <div
       aria-hidden="false"
-      class="elements_block__76e2xv3 useBoxStyles_position_fixed__3xgq1lfz Positioner_root__1d54b7d0"
+      class="elements_block__phak8l4 useBoxStyles_position_fixed__3xgq1lfz Positioner_root__1d54b7d0"
       style="position: absolute; left: 0px; top: 0px; margin: 0px;"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_width_full__3xgq1lfv useBoxStyles_overflow_hidden__3xgq1lg4 useBoxStyles_userSelect_none__3xgq1lgi useBoxStyles_pointerEvents_none__3xgq1lic useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l98 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray900__3xgq1lea Tooltip_root__1qliafn0"
+        class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l1c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l2c useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l3k useBoxStyles_width_full__3xgq1lfv useBoxStyles_overflow_hidden__3xgq1lg4 useBoxStyles_userSelect_none__3xgq1lgk useBoxStyles_pointerEvents_none__3xgq1lj2 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l98 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray900__3xgq1lea Tooltip_root__1qliafn0"
       >
         <span
           class="useBoxStyles_textAlign_left__3xgq1lg1 useTextStyles_root__1xnpmd70 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_2__1xnpmd72"

@@ -6,17 +6,17 @@ exports[`<ProgressBarGroup /> > should match the snapshot 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz ProgressBarGroup_root__1e1wroi0"
+    class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh1 ProgressBarGroup_root__1e1wroi0"
     style="grid-template-columns: 1fr;"
   >
     <span
       class="useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
     />
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 16.666666666666664%;"
       />
     </div>
@@ -27,10 +27,10 @@ exports[`<ProgressBarGroup /> > should match the snapshot 1`] = `
       class="useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
     />
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 33.33333333333333%;"
       />
     </div>
@@ -41,10 +41,10 @@ exports[`<ProgressBarGroup /> > should match the snapshot 1`] = `
       class="useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
     />
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 50%;"
       />
     </div>
@@ -61,7 +61,7 @@ exports[`<ProgressBarGroup /> > should should ignore extra labels 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz ProgressBarGroup_root__1e1wroi0"
+    class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh1 ProgressBarGroup_root__1e1wroi0"
     style="grid-template-columns: auto 1fr;"
   >
     <span
@@ -70,10 +70,10 @@ exports[`<ProgressBarGroup /> > should should ignore extra labels 1`] = `
       a
     </span>
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 16.666666666666664%;"
       />
     </div>
@@ -86,10 +86,10 @@ exports[`<ProgressBarGroup /> > should should ignore extra labels 1`] = `
       b
     </span>
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 33.33333333333333%;"
       />
     </div>
@@ -102,10 +102,10 @@ exports[`<ProgressBarGroup /> > should should ignore extra labels 1`] = `
       c
     </span>
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 50%;"
       />
     </div>
@@ -122,7 +122,7 @@ exports[`<ProgressBarGroup /> > should should ignore not break when not enough l
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz ProgressBarGroup_root__1e1wroi0"
+    class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh1 ProgressBarGroup_root__1e1wroi0"
     style="grid-template-columns: auto 1fr;"
   >
     <span
@@ -131,10 +131,10 @@ exports[`<ProgressBarGroup /> > should should ignore not break when not enough l
       a
     </span>
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 16.666666666666664%;"
       />
     </div>
@@ -145,10 +145,10 @@ exports[`<ProgressBarGroup /> > should should ignore not break when not enough l
       class="useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
     />
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 33.33333333333333%;"
       />
     </div>
@@ -159,10 +159,10 @@ exports[`<ProgressBarGroup /> > should should ignore not break when not enough l
       class="useBoxStyles_textAlign_right__3xgq1lg3 useTextStyles_root__1xnpmd70 useTextStyles_colours_light__1xnpmd7j useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_3__1xnpmd73"
     />
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 50%;"
       />
     </div>
@@ -179,7 +179,7 @@ exports[`<ProgressBarGroup /> > should should render a prefix for every value 1`
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lgz ProgressBarGroup_root__1e1wroi0"
+    class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lh1 ProgressBarGroup_root__1e1wroi0"
     style="grid-template-columns: auto 1fr;"
   >
     <span
@@ -188,10 +188,10 @@ exports[`<ProgressBarGroup /> > should should render a prefix for every value 1`
       a
     </span>
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 16.666666666666664%;"
       />
     </div>
@@ -204,10 +204,10 @@ exports[`<ProgressBarGroup /> > should should render a prefix for every value 1`
       b
     </span>
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 33.33333333333333%;"
       />
     </div>
@@ -220,10 +220,10 @@ exports[`<ProgressBarGroup /> > should should render a prefix for every value 1`
       c
     </span>
     <div
-      class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
+      class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_gray100__3xgq1le2 ProgressBar_container__4k1c010"
     >
       <div
-        class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
+        class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1lcp useBoxStyles_backgroundColours_green500__3xgq1lef ProgressBar_bar__4k1c011 ProgressBar_container__4k1c010"
         style="width: 50%;"
       />
     </div>

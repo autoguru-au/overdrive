@@ -6,7 +6,7 @@ exports[`<DividerLine /> > should match the snapshot 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6w useBoxStyles_backgroundColours_shine__3xgq1lff DividerLine_size_horizontal_2__k1y61r1"
+    class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l4o useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l6w useBoxStyles_backgroundColours_shine__3xgq1lff DividerLine_size_horizontal_2__k1y61r1"
   />
 </div>
 `;
@@ -17,7 +17,7 @@ exports[`<DividerLine /> > should match the snapshot as vertical 1`] = `
   data-od-component-provider=""
 >
   <div
-    class="elements_block__76e2xv3 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5s useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l80 useBoxStyles_backgroundColours_shine__3xgq1lff DividerLine_size_vertical_2__k1y61r4"
+    class="elements_block__phak8l4 useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l5s useBoxStyles_makeResponsiveStyle_key_bp__3xgq1l80 useBoxStyles_backgroundColours_shine__3xgq1lff DividerLine_size_vertical_2__k1y61r4"
   />
 </div>
 `;
