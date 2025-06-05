@@ -7,7 +7,7 @@ import { Box } from '../Box/Box';
 import { Icon } from '../Icon/Icon';
 import { Inline } from '../Inline/Inline';
 import { Text } from '../Text/Text';
-import { textStyles } from '../Text/textStyles';
+import { useTextStyles } from '../Text/useTextStyles';
 
 import * as styles from './DropDownOption.css';
 
@@ -26,14 +26,13 @@ export const DropDownOption: FunctionComponent<DropDownOptionProps> = ({
 	display = 'flex',
 	iconColour = 'dark',
 	is = 'button',
-	alignItems = 'center',
+	alignItems = 'space-between',
 	width = 'full',
 	...boxProps
 }) => {
-	const colourStyles = textStyles({ colour: iconColour });
+	const colourStyles = useTextStyles({ colour: iconColour });
 	return (
 		<Box
-			as={is}
 			className={clsx(styles.root, className, {
 				[styles.disabled]: disabled,
 			})}
@@ -43,15 +42,16 @@ export const DropDownOption: FunctionComponent<DropDownOptionProps> = ({
 			display={display}
 			paddingX="3"
 			paddingY="2"
+			is={is}
 		>
 			<Inline
 				noWrap
 				space="2"
 				width="full"
-				alignX="space-between"
+				alignX="spaceBetween"
 				alignY="center"
 			>
-				<Text as="p" size="3">
+				<Text is="p" size="3">
 					{label}
 				</Text>
 				{icon ? (

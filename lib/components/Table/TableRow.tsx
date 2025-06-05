@@ -3,13 +3,13 @@ import { forwardRef, MouseEventHandler, ReactNode } from 'react';
 
 import { Box } from '../Box/Box';
 
-export interface TableRowProps {
+export interface Props {
 	onClick?: MouseEventHandler<HTMLDivElement>;
 
 	children: ReactNode | ReactNode[];
 }
 
-export const TableRow = forwardRef<HTMLDivElement, TableRowProps>(
+export const TableRow = forwardRef<HTMLDivElement, Props>(
 	({ children, onClick }, ref) => (
 		<Box ref={ref} display="contents" role="row" onClick={onClick}>
 			{children}
@@ -18,3 +18,5 @@ export const TableRow = forwardRef<HTMLDivElement, TableRowProps>(
 );
 
 TableRow.displayName = 'TableRow';
+
+export default TableRow;

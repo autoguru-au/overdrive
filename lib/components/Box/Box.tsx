@@ -1,43 +1,157 @@
-import React, { cloneElement, type ElementType } from 'react';
+import clsx from 'clsx';
+import type { AllHTMLAttributes } from 'react';
+import * as React from 'react';
+import { forwardRef, ReactNode } from 'react';
 
-import { useBox, type UseBoxProps } from './useBox';
+import type { BoxStyleProps } from './useBoxStyles';
+import { useBoxStyles } from './useBoxStyles';
+
+export interface BoxProps
+	extends BoxStyleProps,
+		Omit<
+			AllHTMLAttributes<HTMLElement>,
+			'as' | 'width' | 'height' | 'className' | 'is'
+		> {
+	children?: ReactNode;
+}
 
 /**
- * A polymorphic Box component that provides a flexible container with styling capabilities, defaulting to a `<div>` element.
- * Use the `as` prop to control the rendered HTML tag. The box component exposes design system tokens relative to each style
- * prop.
- *
- * An alternative to the `as` prop is `asComponent` which allows a React element to render with the custom props
- *
- * Props include:
- * - Sprinkles props (spacing, colors, layout, etc.)
- * - Responsive props (arrays for different breakpoints)
- * - Also accepts valid HTML attributes for the chosen HTML tag
- *
- * @example
- * <Box as="section" mx="5" py="5" backgroundColor="accent">
- *   Section content
- * </Box>
- *
- * @example
- * <Box display={['block', 'flex']} p={['3', '6', '8']}>Responsive padding</Box>
- *
- * @example
- * <Box asComponent={<MyCustomThing />} borderColor="info" borderWidth="1" />
+ * Box is a general purpose container with no specific semantics.
  */
-export const Box = <E extends ElementType = 'div'>({
-	children,
-	...props
-}: UseBoxProps<E>) => {
-	const { Component, componentProps, reactElement } = useBox<E>(
-		props as UseBoxProps<E>,
-	);
+export const Box = forwardRef<HTMLElement, BoxProps>(
+	(
+		{
+			as = 'div',
+			is = as,
 
-	if (reactElement) {
-		return cloneElement(reactElement, componentProps, children);
-	}
+			padding,
+			paddingX,
+			paddingY,
+			paddingTop,
+			paddingBottom,
+			paddingLeft,
+			paddingRight,
 
-	return <Component {...componentProps}>{children}</Component>;
-};
+			margin,
+			marginX,
+			marginY,
+			marginTop,
+			marginBottom,
+			marginLeft,
+			marginRight,
+
+			display,
+			width,
+			height,
+			position,
+			overflow,
+			userSelect,
+			textAlign,
+			pointerEvents,
+
+			borderColour,
+			borderColourX,
+			borderColourY,
+			borderColourTop,
+			borderColourRight,
+			borderColourBottom,
+			borderColourLeft,
+			borderWidth,
+			borderWidthX,
+			borderWidthY,
+			borderWidthTop,
+			borderWidthRight,
+			borderWidthBottom,
+			borderWidthLeft,
+
+			boxShadow,
+			borderRadius,
+
+			backgroundColour,
+			colour,
+			opacity,
+
+			className = '',
+
+			alignItems,
+			order,
+			flexDirection,
+			flexGrow,
+			flexShrink,
+			flexWrap,
+			justifyContent,
+
+			children,
+			...allOtherProps
+		},
+		ref,
+	) => {
+		const cls = useBoxStyles({
+			is,
+			alignItems,
+			order,
+			backgroundColour,
+			colour,
+			borderColour,
+			borderColourBottom,
+			borderColourLeft,
+			borderColourRight,
+			borderColourTop,
+			borderColourX,
+			borderColourY,
+			borderRadius,
+			borderWidth,
+			borderWidthBottom,
+			borderWidthLeft,
+			borderWidthRight,
+			borderWidthTop,
+			borderWidthX,
+			borderWidthY,
+			boxShadow,
+			display,
+			flexDirection,
+			flexGrow,
+			flexShrink,
+			flexWrap,
+			height,
+			justifyContent,
+			margin,
+			marginBottom,
+			marginLeft,
+			marginRight,
+			marginTop,
+			marginX,
+			marginY,
+			opacity,
+			overflow,
+			padding,
+			paddingBottom,
+			paddingLeft,
+			paddingRight,
+			paddingTop,
+			paddingX,
+			paddingY,
+			pointerEvents,
+			position,
+			textAlign,
+			userSelect,
+			width,
+		});
+
+		const Component = is;
+
+		return (
+			<Component
+				ref={ref}
+				className={clsx(cls, className)}
+				{...allOtherProps}
+			>
+				{children}
+			</Component>
+		);
+	},
+);
 
 Box.displayName = 'Box';
+
+export default Box;

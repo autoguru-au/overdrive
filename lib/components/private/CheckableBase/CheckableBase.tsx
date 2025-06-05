@@ -7,9 +7,9 @@ import React, {
 } from 'react';
 
 import { Box } from '../../Box/Box';
-import { boxStyles } from '../../Box/boxStyles';
+import { useBoxStyles } from '../../Box/useBoxStyles';
 import { Text } from '../../Text/Text';
-import { textStyles } from '../../Text/textStyles';
+import { useTextStyles } from '../../Text/useTextStyles';
 
 import * as styles from './CheckableBase.css';
 
@@ -56,14 +56,14 @@ export const CheckableBase = forwardRef<HTMLInputElement, CheckableBaseProps>(
 				display="flex"
 				alignItems="center"
 				flexDirection="row"
-				justifyContent="flex-start"
+				justifyContent="flexStart"
 				paddingY="3"
 				paddingRight={label ? '3' : 'none'}
 				paddingLeft="none"
 				position="relative"
 				className={[
 					styles.root,
-					boxStyles({ as: 'button' }),
+					useBoxStyles({ is: 'button' }),
 					className,
 					{ [styles.disabled]: disabled },
 				]}
@@ -84,7 +84,7 @@ export const CheckableBase = forwardRef<HTMLInputElement, CheckableBaseProps>(
 					type={inputType}
 					pointerEvents={disabled ? 'none' : void 0}
 					className={clsx(
-						boxStyles({ as: 'button' }),
+						useBoxStyles({ is: 'button' }),
 						styles.nativeInput,
 					)}
 					onClick={handleClick}
@@ -95,7 +95,10 @@ export const CheckableBase = forwardRef<HTMLInputElement, CheckableBaseProps>(
 					alignItems="center"
 					justifyContent="center"
 					position="relative"
-					className={[styles.checkable, boxStyles({ as: 'button' })]}
+					className={[
+						styles.checkable,
+						useBoxStyles({ is: 'button' }),
+					]}
 				>
 					{children}
 				</Box>
@@ -105,14 +108,14 @@ export const CheckableBase = forwardRef<HTMLInputElement, CheckableBaseProps>(
 					width="full"
 					pointerEvents={disabled ? 'none' : void 0}
 					className={clsx(
-						boxStyles({ as: 'button' }),
-						textStyles({ size: '4' }),
+						useBoxStyles({ is: 'button' }),
+						useTextStyles({ size: '4' }),
 						{
 							[styles.label.disabled]: disabled,
 						},
 					)}
 				>
-					{nakedLabel ? <Text as="span">{label}</Text> : label}
+					{nakedLabel ? <Text is="span">{label}</Text> : label}
 				</Box>
 			</Box>
 		);
@@ -120,3 +123,5 @@ export const CheckableBase = forwardRef<HTMLInputElement, CheckableBaseProps>(
 );
 
 CheckableBase.displayName = 'CheckableBase';
+
+export default CheckableBase;

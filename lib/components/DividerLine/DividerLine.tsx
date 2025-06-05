@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { ComponentProps, FunctionComponent } from 'react';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 
 import * as styles from './DividerLine.css';
 
@@ -27,7 +27,7 @@ export const DividerLine: FunctionComponent<DividerLineProps> = ({
 			[styles.size.horizontal[size]]: !isVertical,
 			[styles.size.vertical[size]]: isVertical,
 		})}
-		marginY={isVertical ? undefined : space}
-		marginX={isVertical ? space : undefined}
+		marginY={isVertical ? void 0 : space}
+		marginX={isVertical ? space : void 0}
 	/>
 );

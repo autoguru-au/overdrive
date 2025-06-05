@@ -1,8 +1,10 @@
 import clsx from 'clsx';
-import React, {
-	type ChangeEventHandler,
+import * as React from 'react';
+import {
+	ChangeEventHandler,
+	ComponentProps,
 	forwardRef,
-	type InputHTMLAttributes,
+	InputHTMLAttributes,
 	useCallback,
 	useEffect,
 	useRef,
@@ -10,26 +12,22 @@ import React, {
 } from 'react';
 
 import { Box } from '../Box/Box';
-import type { UseBoxProps } from '../Box/useBox';
-import { Text, type TextProps } from '../Text/Text';
-import { textStyles } from '../Text/textStyles';
+import { Text } from '../Text/Text';
+import { useTextStyles } from '../Text/useTextStyles';
 import * as inputStyles from '../private/InputBase/withEnhancedInput.css';
 
 import * as styles from './EditableText.css';
 
 type BoxProps = Pick<
-	UseBoxProps<'p'>,
+	ComponentProps<typeof Box>,
 	'display' | 'onFocus' | 'onBlur' | 'onKeyDown'
 >;
-
-type FilteredTextProps = Pick<
-	TextProps,
-	'as' | 'colour' | 'size' | 'children' | 'noWrap'
+type TextProps = Pick<
+	ComponentProps<typeof Text>,
+	'is' | 'colour' | 'size' | 'children' | 'noWrap'
 >;
-
 type InputProps = Omit<
 	InputHTMLAttributes<HTMLInputElement>,
-	| 'color'
 	| 'style'
 	| 'is'
 	| 'autoFocus'
@@ -38,27 +36,24 @@ type InputProps = Omit<
 	| 'onFocus'
 	| 'onBlur'
 	| 'onKeyDown'
-	| keyof FilteredTextProps
+	| keyof TextProps
 	| keyof BoxProps
 >;
 
-export interface EditableTextProps
-	extends FilteredTextProps,
-		InputProps,
-		Partial<BoxProps> {
+export interface EditableTextProps extends TextProps, InputProps, BoxProps {
 	className?: string;
 
 	onModeChange?: (mode: InputMode) => void;
 }
 const numberInputValuePattern = /^\d*\.?\d*$/;
 type InputMode = 'TEXT' | 'INPUT';
-export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
+export const EditableText = forwardRef<HTMLAnchorElement, EditableTextProps>(
 	(
 		{
-			as: is,
+			is,
 			colour = 'muted',
 			size,
-			display = 'inline-block',
+			display = 'inlineBlock',
 			value,
 			onFocus,
 			onBlur,
@@ -102,8 +97,8 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 			[incomingOnChange, type, mode],
 		);
 
-		const baseStyle = textStyles({
-			as: `${is}`,
+		const textStyles = useTextStyles({
+			is,
 			colour,
 			size,
 		});
@@ -146,7 +141,7 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 						type={type === 'number' ? 'text' : type}
 						value={inputValue}
 						className={clsx(
-							baseStyle,
+							textStyles,
 							inputStyles.input.itself.root,
 						)}
 						onChange={onChange}
@@ -156,10 +151,10 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 				<Text
 					noWrap
 					ref={textRef}
-					as={is}
+					is={is}
 					colour={colour}
 					size={size}
-					className={clsx(baseStyle, styles.text, {
+					className={clsx(textStyles, styles.text, {
 						[styles.textHidden]: mode === 'INPUT',
 					})}
 				>
@@ -173,3 +168,5 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 );
 
 EditableText.displayName = 'EditableText';
+
+export default EditableText;

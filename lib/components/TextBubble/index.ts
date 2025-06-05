@@ -1,1 +1,1 @@
-export * from './TextBubble';
+export { TextBubble } from './TextBubble';

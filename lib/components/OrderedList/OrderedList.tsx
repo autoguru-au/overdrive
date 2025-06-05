@@ -8,9 +8,9 @@ import {
 	useContext,
 } from 'react';
 
-import { Box } from '../Box';
-import { Stack } from '../Stack';
-import { textStyles } from '../Text';
+import { Box } from '../Box/Box';
+import { Stack } from '../Stack/Stack';
+import { useTextStyles } from '../Text/useTextStyles';
 
 import * as styles from './OrderedList.css';
 
@@ -57,7 +57,7 @@ export const OrderedList: FunctionComponent<OrderedListProps> & {
 			marginTop={myCycle > 0 ? '2' : 'none'}
 			className={clsx(
 				styles.root.default,
-				textStyles({ colour: 'dark' }),
+				useTextStyles({ colour: 'dark' }),
 				{ [styles.root.firstOccurrence]: cycle === -1 },
 				className,
 			)}
@@ -78,3 +78,5 @@ const Item: FunctionComponent<ItemProps> = ({ className = '', children }) => (
 );
 
 OrderedList.Item = Item;
+
+export default OrderedList;

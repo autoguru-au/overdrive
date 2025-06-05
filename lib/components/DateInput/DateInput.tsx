@@ -24,7 +24,7 @@ export const DateInput = withEnhancedInput<
 
 		return (
 			<Box
-				as="input"
+				is="input"
 				{...eventHandlers}
 				{...field}
 				{...rest}
@@ -37,3 +37,5 @@ export const DateInput = withEnhancedInput<
 		primitiveType: 'date',
 	},
 );
+
+export default DateInput;

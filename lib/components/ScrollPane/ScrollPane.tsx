@@ -1,7 +1,8 @@
 import clsx from 'clsx';
-import React, { type ComponentProps, forwardRef } from 'react';
+import * as React from 'react';
+import { ComponentProps, forwardRef, FunctionComponent } from 'react';
 
-import type { ThemeTokens as Tokens } from '../../themes';
+import { ThemeTokens as Tokens } from '../../themes';
 import { Box } from '../Box';
 
 import * as styles from './ScrollPane.css';
@@ -15,7 +16,7 @@ export interface ScrollPaneProps
 	className?: string;
 }
 
-export const ScrollPane = forwardRef<HTMLDivElement, ScrollPaneProps>(
+export const ScrollPane: FunctionComponent<ScrollPaneProps> = forwardRef(
 	({ className = '', rounded = false, ...rest }, ref) => (
 		<Box
 			ref={ref}
@@ -27,3 +28,5 @@ export const ScrollPane = forwardRef<HTMLDivElement, ScrollPaneProps>(
 		/>
 	),
 );
+
+ScrollPane.displayName = 'ScrollPane';

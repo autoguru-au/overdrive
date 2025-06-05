@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { memo, NamedExoticComponent } from 'react';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 
 import * as styles from './LinearProgressIndicator.css';
 
@@ -26,7 +26,7 @@ export const LinearProgressIndicator: NamedExoticComponent<LinearProgressIndicat
 					className={styles.linearProgressBar}
 				>
 					<Box
-						as="span"
+						is="span"
 						backgroundColour="green300"
 						position="absolute"
 						width="full"
@@ -39,3 +39,5 @@ export const LinearProgressIndicator: NamedExoticComponent<LinearProgressIndicat
 	});
 
 LinearProgressIndicator.displayName = 'LinearProgressIndicator';
+
+export default LinearProgressIndicator;

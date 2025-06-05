@@ -1,1 +1,1 @@
-export * from './TextContainer';
+export { TextContainer } from './TextContainer';

@@ -7,8 +7,8 @@ import * as React from 'react';
 import { ReactNode, useLayoutEffect, useRef } from 'react';
 
 import { isBrowser, useEventCallback, useId } from '../../utils';
-import { Box } from '../Box';
-import { Modal } from '../Modal';
+import { Box } from '../Box/Box';
+import { Modal } from '../Modal/Modal';
 
 import * as styles from './MinimalModal.css';
 
@@ -79,7 +79,7 @@ export const MinimalModal: FunctionComponent<MinimalModalProps> = ({
 						as="main"
 						display="flex"
 						flexDirection="column"
-						flexGrow="0"
+						flexGrow={1}
 						height="full"
 						className={styles.content}
 					>
@@ -90,3 +90,5 @@ export const MinimalModal: FunctionComponent<MinimalModalProps> = ({
 		</Modal>
 	);
 };
+
+export default MinimalModal;

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { ComponentProps, FunctionComponent, useMemo } from 'react';
 
 import { Box } from '../Box/Box';
-import { boxStyles } from '../Box/boxStyles';
+import { useBoxStyles } from '../Box/useBoxStyles';
 import { Text } from '../Text/Text';
 
 import * as styles from './TextBubble.css';
@@ -56,7 +56,7 @@ export const TextBubble: FunctionComponent<TextBubbleProps> = ({
 		<Box
 			borderRadius="full"
 			backgroundColour="gray900"
-			display="inline-block"
+			display="inlineBlock"
 			position="relative"
 			padding={valuePaddingMap[size]}
 			{...boxProps}
@@ -65,9 +65,10 @@ export const TextBubble: FunctionComponent<TextBubbleProps> = ({
 				size="2"
 				strong
 				noWrap
+				align="center"
 				className={clsx(
 					styles.bubbleText,
-					boxStyles({
+					useBoxStyles({
 						position: 'absolute',
 						overflow: 'hidden',
 						width: 'full',
@@ -81,3 +82,5 @@ export const TextBubble: FunctionComponent<TextBubbleProps> = ({
 		</Box>
 	);
 };
+
+export default TextBubble;

@@ -1,15 +1,24 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
-import { sprinklesResponsive } from '../../styles/sprinkles.css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
 export const disabled = style({ cursor: 'not-allowed' });
 
 export const root = style({
+	width: 'max-content',
 	selectors: {
 		[`&:not(${disabled}):focus`]: {
 			borderColor: vars.colours.intent.information.background.standard,
 		},
+	},
+});
+
+export const width = styleVariants({
+	full: {
+		width: '100%',
+	},
+	default: {
+		width: 'max-content',
 	},
 });
 
@@ -32,12 +41,6 @@ export const handle = styleVariants({
 	},
 });
 
-export const label = [
-	sprinklesResponsive({
-		textAlign: 'center',
-		width: 'full',
-	}),
-	style({
-		minWidth: vars.space['6'],
-	}),
-];
+export const label = style({
+	minWidth: vars.space['8'],
+});

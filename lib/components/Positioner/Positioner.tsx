@@ -13,8 +13,8 @@ import {
 } from 'react';
 
 import { isBrowser, setRef } from '../../utils';
-import { Box } from '../Box';
-import { Portal } from '../Portal';
+import { Box } from '../Box/Box';
+import { Portal } from '../Portal/Portal';
 
 import * as styles from './Positioner.css';
 import { EAlignment } from './alignment';
@@ -167,3 +167,5 @@ const convertPlacement = (alignment: EAlignment): Placement => {
 		}
 	}
 };
+
+export default Positioner;

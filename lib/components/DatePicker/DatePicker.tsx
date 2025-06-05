@@ -4,7 +4,7 @@ import * as React from 'react';
 import { ChangeEvent, ComponentProps, FunctionComponent } from 'react';
 
 import { Box } from '../Box/Box';
-import { boxStyles } from '../Box/boxStyles';
+import { useBoxStyles } from '../Box/useBoxStyles';
 import { Icon } from '../Icon/Icon';
 import { ProgressSpinner } from '../ProgressSpinner/ProgressSpinner';
 import { Text } from '../Text/Text';
@@ -55,10 +55,10 @@ export const DatePicker: FunctionComponent<DatePickerProps> = ({
 			})}
 		>
 			<Box
-				as="input"
 				position="absolute"
 				height="full"
 				width="full"
+				is="input"
 				disabled={disabled}
 				onChange={onChangeEvent}
 				className={clsx(
@@ -79,7 +79,7 @@ export const DatePicker: FunctionComponent<DatePickerProps> = ({
 					<ProgressSpinner
 						className={clsx(
 							styles.spinner,
-							boxStyles({
+							useBoxStyles({
 								position: 'absolute',
 							}),
 						)}
@@ -99,3 +99,5 @@ export const DatePicker: FunctionComponent<DatePickerProps> = ({
 		</Box>
 	);
 };
+
+export default DatePicker;

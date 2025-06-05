@@ -9,10 +9,10 @@ import {
 } from 'react';
 
 import { noop } from '../../utils';
-import { Box } from '../Box';
-import { Icon } from '../Icon';
-import { Inline } from '../Inline';
-import { textStyles } from '../Text';
+import { Box } from '../Box/Box';
+import { Icon } from '../Icon/Icon';
+import { Inline } from '../Inline/Inline';
+import { useTextStyles } from '../Text/useTextStyles';
 
 import { Bubble } from './Bubble';
 import * as styles from './Pagination.css';
@@ -46,7 +46,7 @@ const NavButton: FunctionComponent<NavButtonProps> = ({
 	onClick = noop,
 }) => (
 	<Box
-		as="button"
+		is="button"
 		aria-disabled={disabled}
 		aria-label={label}
 		display="flex"
@@ -59,7 +59,7 @@ const NavButton: FunctionComponent<NavButtonProps> = ({
 		padding="2"
 		userSelect="none"
 		pointerEvents={disabled ? 'none' : void 0}
-		className={clsx(textStyles({ colour: 'light' }), {
+		className={clsx(useTextStyles({ colour: 'light' }), {
 			[styles.disabled]: disabled,
 		})}
 		onClick={onClick}
@@ -76,7 +76,7 @@ interface LoadingComponentProps {
 const Loading: FunctionComponent<LoadingComponentProps> = ({
 	placeholderBubblesNum = 3,
 }) => (
-	<Inline as="span" space="3">
+	<Inline is="span" space="3">
 		<NavButton disabled icon={ChevronLeftIcon} />
 		{Array.from({ length: placeholderBubblesNum })
 			.fill('')
@@ -114,7 +114,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
 	);
 
 	return !loading && total && pageSize && activePage && numPagesDisplayed ? (
-		<Inline as="nav" space="3" aria-label="pagination">
+		<Inline is="nav" space="3" aria-label="pagination">
 			<NavButton
 				disabled={activePage <= 1}
 				label="navigate back"
@@ -236,3 +236,5 @@ function buildPagesList(
 
 	return generateJumpBackwardArray(numPages, numPagesDisplayed);
 }
+
+export default Pagination;

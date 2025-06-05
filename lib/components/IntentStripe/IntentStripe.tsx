@@ -2,10 +2,14 @@ import * as React from 'react';
 import { FunctionComponent } from 'react';
 
 import { Box } from '../Box';
+import { backgroundColours } from '../Box/useBoxStyles.css';
 
 import * as styles from './IntentStripe.css';
 
-type Intent = 'danger' | 'information' | 'success' | 'warning';
+type Intent = keyof Pick<
+	typeof backgroundColours,
+	'danger' | 'information' | 'success' | 'warning'
+>;
 
 export interface IntentStripeProps {
 	className?: string;
@@ -23,3 +27,5 @@ export const IntentStripe: FunctionComponent<IntentStripeProps> = ({
 		backgroundColour={intent}
 	/>
 );
+
+export default IntentStripe;

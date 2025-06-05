@@ -11,11 +11,12 @@ import {
 
 import { addWithSafeDecimal } from '../../utils/number';
 import { Box } from '../Box/Box';
-import { boxStyles } from '../Box/boxStyles';
+import { useBoxStyles } from '../Box/useBoxStyles';
+import { Column } from '../Columns/Column';
+import { Columns } from '../Columns/Columns';
 import { Icon } from '../Icon/Icon';
-import { Inline } from '../Inline/Inline';
 import { Text } from '../Text/Text';
-import { textStyles } from '../Text/textStyles';
+import { useTextStyles } from '../Text/useTextStyles';
 
 import * as styles from './Stepper.css';
 
@@ -60,11 +61,11 @@ const Handle: FunctionComponent<HandleProps> = ({
 	onClick,
 }) => (
 	<Box
-		as="button"
+		is="button"
 		className={[
 			styles.handle.default,
 			{ [styles.handle.disabled]: disabled },
-			textStyles({ colour: 'white' }),
+			useTextStyles({ colour: 'white' }),
 		]}
 		backgroundColour={disabled ? 'neutral' : 'primary'}
 		aria-label={label}
@@ -154,8 +155,12 @@ export const Stepper: FunctionComponent<StepperProps> = ({
 			className={clsx(
 				className,
 				styles.root,
-				boxStyles({ as: 'button' }),
+				useBoxStyles({ is: 'button' }),
 				disabled && styles.disabled,
+				{
+					[styles.width.default]: !isFullWidth,
+					[styles.width.full]: isFullWidth,
+				},
 			)}
 			userSelect="none"
 			aria-disabled={disabled}
@@ -164,39 +169,48 @@ export const Stepper: FunctionComponent<StepperProps> = ({
 			borderColour="gray"
 			padding="3"
 			borderRadius="1"
-			width={isFullWidth ? 'full' : 'fit-content'}
-			minWidth="fit-content"
+			boxShadow="2"
 			onKeyDown={keyDownHandler}
 		>
-			<Inline alignX="space-between" noWrap>
-				<Box>
+			<Columns noWrap width="full">
+				<Column noShrink alignSelf="centre">
 					<Handle
 						icon={MinusIcon}
 						label="step down"
 						disabled={disabled}
 						onClick={onDecrement}
 					/>
-				</Box>
-				<Box>
+				</Column>
+				<Column noShrink grow width="auto" alignSelf="centre">
 					<Text
-						as="span"
+						is="span"
+						align="center"
 						colour="dark"
 						display="block"
-						className={clsx(styles.label)}
+						className={clsx(
+							useBoxStyles({
+								paddingX: '2',
+								width: 'full',
+								is: 'span',
+							}),
+							styles.label,
+						)}
 						size="4"
 					>
 						{Number.isFinite(value) ? format(value) : ''}
 					</Text>
-				</Box>
-				<Box>
+				</Column>
+				<Column noShrink alignSelf="centre">
 					<Handle
 						icon={PlusIcon}
 						label="step up"
 						disabled={disabled}
 						onClick={onIncrement}
 					/>
-				</Box>
-			</Inline>
+				</Column>
+			</Columns>
 		</Box>
 	);
 };
+
+export default Stepper;

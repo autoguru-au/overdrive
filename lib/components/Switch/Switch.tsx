@@ -6,8 +6,8 @@ import { useSwitch, useFocusRing, type AriaSwitchProps } from 'react-aria';
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box';
-import { textStyles } from '../Text';
-import { VisuallyHidden } from '../VisuallyHidden';
+import { useTextStyles } from '../Text/useTextStyles';
+import { VisuallyHidden } from '../VisuallyHidden/VisuallyHidden';
 
 import * as styles from './Switch.css';
 
@@ -62,7 +62,7 @@ export const Switch = ({
 				<input {...inputProps} {...focusProps} ref={ref} />
 			</VisuallyHidden>
 			<Box
-				className={clsx(styles.toggle, textStyles({ size: '5' }), {
+				className={clsx(styles.toggle, useTextStyles({ size: '5' }), {
 					[styles.disabled]: inputProps.disabled,
 					[styles.toggleOn]: state.isSelected,
 				})}
@@ -82,3 +82,5 @@ export const Switch = ({
 		</label>
 	);
 };
+
+export default Switch;

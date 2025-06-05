@@ -1,6 +1,6 @@
 import React, { type RefObject } from 'react';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 import { withEnhancedInput } from '../private/InputBase';
 
 import { useNumberInputBehaviours } from './useNumberInputBehaviours';
@@ -68,3 +68,5 @@ export const NumberInput = withEnhancedInput<NumberInputProps>(
 		primitiveType: type,
 	},
 );
+
+export default NumberInput;

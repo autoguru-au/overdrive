@@ -14,7 +14,7 @@ import { Button } from '../Button/Button';
 import { Heading } from '../Heading/Heading';
 import { Icon } from '../Icon/Icon';
 import { Modal } from '../Modal/Modal';
-import { textStyles } from '../Text/textStyles';
+import { useTextStyles } from '../Text/useTextStyles';
 
 import * as styles from './StandardModal.css';
 
@@ -115,7 +115,7 @@ export const StandardModal: FunctionComponent<StandardModalProps> = ({
 				>
 					<Box
 						as="header"
-						flexShrink="0"
+						flexShrink={0}
 						position="relative"
 						display="flex"
 						alignItems="center"
@@ -124,11 +124,11 @@ export const StandardModal: FunctionComponent<StandardModalProps> = ({
 						paddingY="3"
 						paddingLeft="5"
 						paddingRight="2"
-						borderBottomWidth="1"
+						borderWidthBottom="1"
 						borderColour="light"
 					>
-						<Box flexGrow="1" id={titleId!}>
-							<Heading as="h4">{title}</Heading>
+						<Box flexGrow={1} id={titleId!}>
+							<Heading is="h4">{title}</Heading>
 						</Box>
 						<Button
 							minimal
@@ -139,7 +139,7 @@ export const StandardModal: FunctionComponent<StandardModalProps> = ({
 							onClick={closeButtonHandler}
 						>
 							<Icon
-								className={textStyles({ colour: 'muted' })}
+								className={useTextStyles({ colour: 'muted' })}
 								icon={WindowCloseIcon}
 								size="medium"
 							/>
@@ -149,7 +149,7 @@ export const StandardModal: FunctionComponent<StandardModalProps> = ({
 						as="main"
 						display="flex"
 						flexDirection="column"
-						flexGrow="1"
+						flexGrow={1}
 						height="full"
 						className={styles.content}
 					>
@@ -160,3 +160,5 @@ export const StandardModal: FunctionComponent<StandardModalProps> = ({
 		</Modal>
 	);
 };
+
+export default StandardModal;

@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { forwardRef, ReactNode } from 'react';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 import { CheckableBase } from '../private/CheckableBase';
 import { checkableIndicator } from '../private/CheckableBase/CheckableBase.css';
 
@@ -52,3 +52,5 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(
 );
 
 Radio.displayName = 'Radio';
+
+export default Radio;

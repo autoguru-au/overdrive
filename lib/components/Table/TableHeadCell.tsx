@@ -35,10 +35,7 @@ const sortToAria = (sort: Sort): AriaAttributes['aria-sort'] => {
 	return 'none';
 };
 
-export const TableHeadCell = forwardRef<
-	HTMLTableCellElement,
-	TableHeadCellProps
->(
+export const TableHeadCell = forwardRef<HTMLDivElement, TableHeadCellProps>(
 	(
 		{
 			align = 'left',
@@ -83,7 +80,7 @@ export const TableHeadCell = forwardRef<
 				space="1"
 			>
 				{align === 'right' && shouldSort ? sorter : null}
-				<Text strong size="3" as="span" className={styles.text}>
+				<Text strong size="3" is="span" className={styles.text}>
 					{children}
 					{shouldSort ? (
 						<VisuallyHidden as="span">
@@ -100,7 +97,6 @@ export const TableHeadCell = forwardRef<
 
 		return (
 			<Box
-				as="th"
 				ref={ref}
 				role="columnheader"
 				scope="col"
@@ -108,8 +104,8 @@ export const TableHeadCell = forwardRef<
 				alignItems="center"
 				justifyContent={alignmentToFlexAlignment(align)}
 				padding={sort ? undefined : padding}
-				borderBottomColour="dark"
-				borderBottomWidth="1"
+				borderColourBottom="dark"
+				borderWidthBottom="1"
 				aria-sort={shouldSort ? sortToAria(sort!) : undefined}
 				aria-label={ariaLabel}
 				className={tableContext.stickyHead && styles.sticky}
@@ -135,3 +131,5 @@ export const TableHeadCell = forwardRef<
 );
 
 TableHeadCell.displayName = 'TableHeadCell';
+
+export default TableHeadCell;

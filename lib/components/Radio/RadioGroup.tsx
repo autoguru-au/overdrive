@@ -6,7 +6,7 @@ import React, {
 	type ReactNode,
 } from 'react';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 
 export interface RadioGroupProps {
 	name: string;
@@ -55,3 +55,5 @@ export const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(
 );
 
 RadioGroup.displayName = 'RadioGroup';
+
+export default RadioGroup;

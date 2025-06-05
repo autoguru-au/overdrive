@@ -11,12 +11,14 @@ import * as React from 'react';
 import { ComponentProps, FunctionComponent, ReactNode } from 'react';
 
 import { Box } from '../Box/Box';
-import { boxStyles } from '../Box/boxStyles';
+import { useBoxStyles } from '../Box/useBoxStyles';
 import { Button } from '../Button/Button';
+import { Column } from '../Columns/Column';
+import { Columns } from '../Columns/Columns';
 import { Icon } from '../Icon/Icon';
 import { IntentStripe } from '../IntentStripe/IntentStripe';
 import { Text } from '../Text/Text';
-import { textStyles } from '../Text/textStyles';
+import { useTextStyles } from '../Text/useTextStyles';
 
 import * as styles from './Alert.css';
 
@@ -47,8 +49,8 @@ export const Alert: FunctionComponent<AlertProps> = ({
 	onRequestClose,
 	dismissible = typeof onRequestClose === 'function',
 }) => {
-	const dismissBtnStyles = textStyles({ colour: 'muted' });
-	const intentColourStyles = textStyles({ colour: intent });
+	const dismissBtnStyles = useTextStyles({ colour: 'muted' });
+	const intentColourStyles = useTextStyles({ colour: intent });
 
 	return (
 		<Box
@@ -64,32 +66,33 @@ export const Alert: FunctionComponent<AlertProps> = ({
 			borderRadius="1"
 			boxShadow={inline ? 'none' : '4'}
 			padding="2"
-			data-od-component="alert"
 		>
 			<IntentStripe intent={intent} />
-			<Box display="flex" gap="2">
-				<Box alignSelf="flex-start">
+			<Columns noWrap spaceX="2">
+				<Column noShrink alignSelf="top">
 					<Icon
 						icon={iconMapForIntent[intent]}
 						size="medium"
-						className={boxStyles({
+						className={useBoxStyles({
 							marginY: '2',
 							marginLeft: '2',
 						})}
 					/>
-				</Box>
-				<Box
-					alignSelf="center"
+				</Column>
+
+				<Column
+					grow
 					width="auto"
-					className={textStyles({ colour: 'dark' })}
+					alignSelf="centre"
+					className={useTextStyles({ colour: 'dark' })}
 				>
 					{typeof children === 'string' ? (
 						<Text>{children}</Text>
 					) : (
 						children
 					)}
-				</Box>
-				<Box ml="auto">
+				</Column>
+				<Column noShrink alignSelf="top">
 					{dismissible && (
 						<Button
 							minimal
@@ -106,8 +109,10 @@ export const Alert: FunctionComponent<AlertProps> = ({
 							/>
 						</Button>
 					)}
-				</Box>
-			</Box>
+				</Column>
+			</Columns>
 		</Box>
 	);
 };
+
+export default Alert;

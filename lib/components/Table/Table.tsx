@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import * as React from 'react';
 import { forwardRef } from 'react';
 
-import { Box } from '../Box/Box';
+import { Box } from '../Box';
 
 import * as styles from './Table.css';
 import type { TableContext } from './context';
@@ -37,3 +37,5 @@ export const Table = forwardRef<HTMLDivElement, TableProps>(
 );
 
 Table.displayName = 'Table';
+
+export default Table;

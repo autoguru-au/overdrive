@@ -20,7 +20,7 @@ import React, {
 	useState,
 } from 'react';
 
-import { useMedia } from '../../hooks/useMedia/useMedia';
+import { useMedia } from '../../hooks/useMedia';
 import { useWindowScrollLock } from '../../hooks/useWindowScrollLock';
 import { setRef, useId } from '../../utils';
 import { Box } from '../Box/Box';
@@ -81,7 +81,7 @@ type Actions =
 
 type Suggestions<PayloadType> = Array<AutoSuggestValue<PayloadType>>;
 
-export interface AutoSuggestProps<PayloadType>
+export interface Props<PayloadType>
 	extends Omit<
 		ComponentPropsWithoutRef<typeof TextInput>,
 		'onChange' | 'value' | 'type' | 'suffixIcon'
@@ -100,7 +100,7 @@ export interface AutoSuggestProps<PayloadType>
 }
 
 interface AutoSuggestInputProps<PayloadType extends unknown>
-	extends AutoSuggestProps<PayloadType> {
+	extends Props<PayloadType> {
 	noScroll?: boolean;
 	isFocused?: boolean;
 }
@@ -291,7 +291,7 @@ export const AutoSuggest = forwardRef(function AutoSuggest(
 		/>
 	);
 }) as <PayloadType extends unknown>(
-	p: AutoSuggestProps<PayloadType> & { ref?: Ref<HTMLInputElement> },
+	p: Props<PayloadType> & { ref?: Ref<HTMLInputElement> },
 ) => ReactElement;
 
 const AutoSuggestFullscreenInput = forwardRef(
@@ -537,7 +537,7 @@ const AutoSuggestInput = forwardRef(function AutoSuggestInput(
 
 interface SuggestionProps<PayloadType>
 	extends Pick<
-		AutoSuggestProps<PayloadType>,
+		Props<PayloadType>,
 		'suggestions' | 'itemRenderer' | 'onChange'
 	> {
 	className?: string;
@@ -562,8 +562,8 @@ const SuggestionsList = <PayloadType extends unknown>({
 	suggestionListRef,
 }: SuggestionProps<PayloadType>) => (
 	<Box
-		as="ul"
 		ref={suggestionListRef}
+		as="ul"
 		backgroundColour="white"
 		className={[styles.suggestionList.defaults, className]}
 		id={suggestionListId}
@@ -576,9 +576,9 @@ const SuggestionsList = <PayloadType extends unknown>({
 
 			return (
 				<Box
-					as="li"
 					key={suggestion.text.concat(String(idx))}
 					ref={highlight ? highlightRef : undefined}
+					as="li"
 					id={getSuggestionId(suggestionListId, idx)}
 					role="option"
 					aria-selected={highlight}
@@ -668,10 +668,10 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 				// eslint-disable-next-line sonarjs/no-nested-conditional
 				isLoading ? null : field.value && isFocused ? (
 					<Box
-						as="button"
+						is="button"
 						paddingY={size === 'small' ? '1' : '3'}
 						paddingRight={size === 'small' ? '2' : '3'}
-						flexShrink="0"
+						flexShrink={0}
 						onMouseDown={onRequestReset}
 					>
 						<Icon
@@ -682,7 +682,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 				) : // eslint-disable-next-line sonarjs/no-nested-conditional
 				fieldIcon ? (
 					<Box
-						flexShrink="0"
+						flexShrink={0}
 						paddingY={size === 'medium' ? '3' : '2'}
 						paddingRight={size === 'medium' ? '3' : '2'}
 						onClick={focusHandler}
@@ -711,7 +711,7 @@ const AutoSuggestInputPrimitive = withEnhancedInput(
 			>
 				<Box
 					as="input"
-					flexGrow="1"
+					flexGrow={1}
 					{...inputEventHandlers}
 					{...field}
 					ref={handleRef}
@@ -794,7 +794,7 @@ const DefaultSuggestion: FunctionComponent<DefaultSuggestionProps> = ({
 			[styles.suggestionHighlight]: highlight,
 		})}
 	>
-		<Text as="span">{text}</Text>
+		<Text is="span">{text}</Text>
 	</div>
 );
 
@@ -832,3 +832,5 @@ const getNextIndex = <
 
 	return itter > maxIndex ? -1 : returnIdx;
 };
+
+export default AutoSuggest;

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Children, createContext, ReactNode } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 
-import { Box } from '../Box/Box';
+import { Box } from '../Box';
 
 import * as styles from './TabPanes.css';
 
@@ -45,3 +45,5 @@ export const TabPanes: FunctionComponent<TabPanesProps> = ({
 		))}
 	</Box>
 );
+
+export default TabPanes;

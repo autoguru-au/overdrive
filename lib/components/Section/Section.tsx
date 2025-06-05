@@ -1,29 +1,31 @@
-import React, { cloneElement, type FunctionComponent } from 'react';
+import clsx from 'clsx';
+import * as React from 'react';
+import { ComponentProps, FunctionComponent, ReactNode } from 'react';
 
-import { SprinklesResponsive } from '../../styles/sprinkles.css';
-import { useBox, type UseBoxProps } from '../Box';
+import { Box } from '../Box/Box';
 
 import * as styles from './Section.css';
 
-export interface SectionProps {
-	width?: SprinklesResponsive['maxWidth'];
+export interface SectionProps
+	extends Pick<ComponentProps<typeof Box>, 'paddingX' | 'ref'> {
+	width?: keyof typeof styles.width;
+	children?: ReactNode;
 }
 
-export const Section: FunctionComponent<UseBoxProps & SectionProps> = ({
+export const Section: FunctionComponent<SectionProps> = ({
 	children,
-	width: maxWidth = 'medium',
-	...props
-}) => {
-	const { Component, componentProps, reactElement } = useBox({
-		className: styles.root,
-		maxWidth: maxWidth as SprinklesResponsive['maxWidth'],
-		width: 'full',
-		...props,
-	});
+	width = 'medium',
+	paddingX,
+	ref,
+}) => (
+	<Box
+		ref={ref}
+		className={clsx(styles.root, styles.width[width!])}
+		width="full"
+		paddingX={paddingX}
+	>
+		{children}
+	</Box>
+);
 
-	if (reactElement) {
-		return cloneElement(reactElement, componentProps, children);
-	}
-
-	return <Component {...componentProps}>{children}</Component>;
-};
+export default Section;

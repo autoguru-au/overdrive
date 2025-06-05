@@ -2,7 +2,7 @@ import React, { forwardRef, useEffect, useLayoutEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import { isBrowser, isHtmlElement, setRef } from '../../utils';
-import { useTheme } from '../OverdriveProvider';
+import { useTheme } from '../OverdriveProvider/OverdriveProvider';
 
 export interface PortalProps {
 	children?: React.ReactNode;
@@ -62,3 +62,5 @@ function Portal(
 
 const _Portal = forwardRef(Portal);
 export { _Portal as Portal };
+
+export default Portal;

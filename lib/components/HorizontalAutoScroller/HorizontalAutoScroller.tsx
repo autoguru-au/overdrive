@@ -11,12 +11,14 @@ import {
 import flattenChildren from 'react-keyed-flatten-children';
 import { useSwipeable } from 'react-swipeable';
 
-import { SprinklesResponsive } from '../../styles/sprinkles.css';
 import { Box } from '../Box/Box';
 import { Button } from '../Button/Button';
+import { Column } from '../Columns/Column';
+import { Columns } from '../Columns/Columns';
 import { Icon } from '../Icon/Icon';
-import { Section } from '../Section/Section';
+import Section from '../Section/Section';
 import { SliderProgress } from '../SliderProgress/SliderProgress';
+import { Stack } from '../Stack/Stack';
 
 import * as styles from './HorizontalAutoScroller.css';
 import {
@@ -25,15 +27,16 @@ import {
 } from './useHorizontalAutoScroller';
 
 export interface HorizontalAutoScrollerProps
-	extends Omit<UseHorizontalAutoScrollerProps, 'itemsRef'> {
+	extends Pick<ComponentProps<typeof Columns>, 'space'>,
+		Omit<UseHorizontalAutoScrollerProps, 'itemsRef'> {
 	durationSeconds?: number;
 	className?: string;
-	columnWidth?: styles.SprinklesColumnWidth['flexBasis'];
+	columnWidth?: ComponentProps<typeof Column>['width'];
 	sliderProgressColour?: ComponentProps<
 		typeof SliderProgress
 	>['backgroundColour'];
 	noControls?: boolean;
-	space?: SprinklesResponsive['gap'];
+
 	children: ReactNode | ReactNode[];
 }
 
@@ -42,7 +45,7 @@ export const HorizontalAutoScroller: FunctionComponent<
 > = ({
 	sliderProgressColour = 'primary',
 	noControls = false,
-	space = ['7', '5'],
+	space = '5',
 	durationSeconds = 10,
 	children,
 	itemsPerPage: incomingItemsPerPage,
@@ -58,32 +61,25 @@ export const HorizontalAutoScroller: FunctionComponent<
 	const items = useMemo(() => {
 		const itemsRef: Array<HTMLElement> = [];
 		const list = incomingItems.map((item, index) => (
-			<Box
+			<Column
 				ref={(el) => {
 					if (el) itemsRef.push(el);
 				}}
 				key={index}
-				flexGrow="0"
-				flexShrink="0"
+				noShrink
+				width={columnWidth}
+				justifyContent="stretch"
 				alignSelf="stretch"
-				className={clsx(
-					styles.itemMinWidth,
-					styles.sprinklesColumnWidth({
-						flexBasis: columnWidth,
-					}),
-				)}
 			>
-				<Box display="flex" height="full" width="full">
-					<Box
-						width="full"
-						className={clsx(styles.item, {
-							[styles.active]: index === activeIndex,
-						})}
-					>
-						{item}
-					</Box>
+				<Box
+					width="full"
+					className={clsx(styles.item, {
+						[styles.active]: index === activeIndex,
+					})}
+				>
+					{item}
 				</Box>
-			</Box>
+			</Column>
 		));
 
 		setItemsRef(itemsRef);
@@ -121,14 +117,7 @@ export const HorizontalAutoScroller: FunctionComponent<
 	}
 
 	return (
-		<Box
-			alignItems="stretch"
-			className={className}
-			display="flex"
-			flexDirection="column"
-			gap="5"
-			odComponent="horizontal-auto-scroller"
-		>
+		<Stack className={className} space="5">
 			<Box
 				overflow="hidden"
 				position="relative"
@@ -146,7 +135,7 @@ export const HorizontalAutoScroller: FunctionComponent<
 						className={[styles.controllerBtn, styles.prevBtn]}
 						display="flex"
 						alignItems="center"
-						justifyContent="flex-start"
+						justifyContent="flexStart"
 						position="absolute"
 					>
 						<Button
@@ -162,34 +151,31 @@ export const HorizontalAutoScroller: FunctionComponent<
 						</Button>
 					</Box>
 				)}
-				<Box
-					alignItems="stretch"
-					display="flex"
-					overflow="hidden"
-					px={['7', '8']}
-					flexWrap="nowrap"
-					width="full"
-					gap={space}
+				<Columns
 					ref={containerRef}
+					overflow="hidden"
+					noWrap
+					width="full"
+					space={space}
 				>
 					{noControls ? null : (
-						<Box className={styles.controllerCol}>
+						<Column noShrink className={styles.controllerCol}>
 							<span />
-						</Box>
+						</Column>
 					)}
 					{items}
 					{noControls ? null : (
-						<Box className={styles.controllerCol}>
+						<Column noShrink className={styles.controllerCol}>
 							<span />
-						</Box>
+						</Column>
 					)}
-				</Box>
+				</Columns>
 				{noControls ? null : (
 					<Box
 						className={[styles.controllerBtn, styles.nextBtn]}
 						display="flex"
 						alignItems="center"
-						justifyContent="flex-end"
+						justifyContent="flexEnd"
 						position="absolute"
 					>
 						<Button
@@ -206,18 +192,18 @@ export const HorizontalAutoScroller: FunctionComponent<
 					</Box>
 				)}
 			</Box>
-			<Box>
-				<Section width="small">
-					<SliderProgress
-						backgroundColour={sliderProgressColour}
-						duration={`${durationSeconds}s`}
-						paused={paused}
-						onRequestNext={next}
-						totalCount={pageCount}
-						activeIndex={activePage || 0}
-					/>
-				</Section>
-			</Box>
-		</Box>
+			<Section width="small">
+				<SliderProgress
+					backgroundColour={sliderProgressColour}
+					duration={`${durationSeconds}s`}
+					paused={paused}
+					onRequestNext={next}
+					totalCount={pageCount}
+					activeIndex={activePage || 0}
+				/>
+			</Section>
+		</Stack>
 	);
 };
+
+export default HorizontalAutoScroller;

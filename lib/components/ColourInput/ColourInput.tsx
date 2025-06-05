@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import * as React from 'react';
 
 import { Box } from '../Box/Box';
-import { boxStyles } from '../Box/boxStyles';
+import { useBoxStyles } from '../Box/useBoxStyles';
 import { Text } from '../Text/Text';
 import { withEnhancedInput } from '../private/InputBase';
 
@@ -41,8 +41,8 @@ export const ColourInput = withEnhancedInput<{}, HTMLInputElement>(
 					display="flex"
 					height="full"
 					alignItems="center"
-					justifyContent="space-around"
-					flexShrink="0"
+					justifyContent="spaceAround"
+					flexShrink={0}
 					pointerEvents="none"
 					position="absolute"
 				>
@@ -57,7 +57,7 @@ export const ColourInput = withEnhancedInput<{}, HTMLInputElement>(
 					className={clsx(
 						styles.valueText,
 						styles.valueTextSize[size],
-						boxStyles({
+						useBoxStyles({
 							position: 'absolute',
 						}),
 					)}
@@ -65,9 +65,9 @@ export const ColourInput = withEnhancedInput<{}, HTMLInputElement>(
 					{field.value}
 				</Text>
 				<Box
-					as="input"
+					is="input"
 					type="color"
-					flexGrow="1"
+					flexGrow={1}
 					{...eventHandlers}
 					{...field}
 					{...rest}
@@ -83,3 +83,5 @@ export const ColourInput = withEnhancedInput<{}, HTMLInputElement>(
 		defaultValue: '#000000',
 	},
 );
+
+export default ColourInput;

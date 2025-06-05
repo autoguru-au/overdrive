@@ -2,7 +2,7 @@ import { clamp } from '@autoguru/utilities';
 import * as React from 'react';
 import { ComponentProps, FunctionComponent } from 'react';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 
 import * as styles from './ProgressBar.css';
 
@@ -45,3 +45,5 @@ export const ProgressBar: FunctionComponent<ProgressBarProps> = ({
 		/>
 	</Box>
 );
+
+export default ProgressBar;

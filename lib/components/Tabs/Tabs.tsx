@@ -52,3 +52,5 @@ export const Tabs: FunctionComponent<TabsProps> = ({
 		</TabsContext.Provider>
 	);
 };
+
+export default Tabs;

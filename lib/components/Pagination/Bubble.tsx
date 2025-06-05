@@ -7,8 +7,8 @@ import type {
 import * as React from 'react';
 import { ReactNode } from 'react';
 
-import { Box } from '../Box';
-import { textStyles } from '../Text';
+import { Box } from '../Box/Box';
+import { useTextStyles } from '../Text/useTextStyles';
 
 import * as styles from './Pagination.css';
 
@@ -35,7 +35,7 @@ export const Bubble: FunctionComponent<BubbleProps> = ({
 	else if (disabled) backgroundColour = 'gray200';
 	return (
 		<Box
-			as="button"
+			is="button"
 			backgroundColour={backgroundColour}
 			display="flex"
 			overflow="hidden"
@@ -47,7 +47,7 @@ export const Bubble: FunctionComponent<BubbleProps> = ({
 			pointerEvents={disabled ? 'none' : void 0}
 			className={clsx(
 				className,
-				textStyles({
+				useTextStyles({
 					fontWeight: 'bold',
 					colour: selected ? 'white' : 'light',
 					size: '3',
@@ -64,3 +64,5 @@ export const Bubble: FunctionComponent<BubbleProps> = ({
 		</Box>
 	);
 };
+
+export default Bubble;

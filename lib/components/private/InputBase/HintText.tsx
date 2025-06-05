@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React, { type FunctionComponent, type ReactNode } from 'react';
 
-import { boxStyles } from '../../Box/boxStyles';
+import { useBoxStyles } from '../../Box/useBoxStyles';
 import { Text } from '../../Text/Text';
 
 import * as styles from './HintText.css';
@@ -22,8 +22,8 @@ export const HintText: FunctionComponent<HintTextProps> = ({
 	size = 'medium',
 	className = '',
 }) => {
-	const style = boxStyles({
-		as: 'p',
+	const boxStyles = useBoxStyles({
+		is: 'p',
 		marginTop: '1',
 	});
 
@@ -33,10 +33,10 @@ export const HintText: FunctionComponent<HintTextProps> = ({
 
 	return (
 		<Text
-			as="p"
+			is="p"
 			size={size === 'large' ? '4' : '2'}
 			colour="unset"
-			className={clsx(style, styles.hintText, className)}
+			className={clsx(boxStyles, styles.hintText, className)}
 		>
 			{showHintText ? hintText : '\u00A0'}
 		</Text>

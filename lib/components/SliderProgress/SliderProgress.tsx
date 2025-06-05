@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { ComponentProps, memo, NamedExoticComponent } from 'react';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 
 import { ProgressStep } from './ProgressStep';
 import * as styles from './SliderProgress.css';

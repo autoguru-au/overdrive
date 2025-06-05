@@ -110,3 +110,5 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 		<>{children}</>
 	);
 };
+
+export default Tooltip;

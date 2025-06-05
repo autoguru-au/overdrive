@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ComponentProps, FunctionComponent } from 'react';
 
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 
 import * as styles from './LoadingBox.css';
 
@@ -22,7 +22,7 @@ export const LoadingBox: FunctionComponent<LoadingBoxProps> = ({
 	...boxStyles
 }) => (
 	<Box
-		as={is}
+		is={is}
 		display={display}
 		width={randomWidth ? undefined : 'full'}
 		backgroundColour={backgroundColour}
@@ -36,3 +36,5 @@ export const LoadingBox: FunctionComponent<LoadingBoxProps> = ({
 
 const getRandomIntWidth = (max: number, min: number) =>
 	`${Math.random() * (max - min) + min}%`;
+
+export default LoadingBox;

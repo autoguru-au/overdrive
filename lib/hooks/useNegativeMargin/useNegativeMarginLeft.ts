@@ -1,11 +1,11 @@
 import { ThemeTokens as Tokens } from '../../themes';
 import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
+import { ResponsiveProp } from '../../utils/responsiveProps.css';
 
 import * as styles from './useNegativeMarginLeft.css';
 
-/**
- *
- * @deprecated using this function likely means it relies on outdated css layout for spacing
- */
-export const useNegativeMarginLeft = (space: keyof Tokens['space']) =>
-	resolveResponsiveStyle(space, styles.negativeMarginLeft);
+export const useNegativeMarginLeft = (
+	space: ResponsiveProp<keyof Tokens['space']>,
+) => resolveResponsiveStyle(space, styles.negativeMarginLeft);
+
+export default useNegativeMarginLeft;

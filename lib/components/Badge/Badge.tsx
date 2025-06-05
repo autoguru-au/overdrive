@@ -4,7 +4,7 @@ import React from 'react';
 
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 
 import * as styles from './Badge.css';
 import type { StyledBadgeProps } from './Badge.css';
@@ -62,3 +62,5 @@ export const Badge = ({
 		</Box>
 	);
 };
+
+export default Badge;

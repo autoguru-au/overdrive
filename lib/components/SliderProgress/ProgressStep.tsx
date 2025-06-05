@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ComponentProps, memo, NamedExoticComponent, useCallback } from 'react';
 
 import { useAnimationEvents } from '../../hooks/useAnimationEvents';
-import { Box } from '../Box';
+import { Box } from '../Box/Box';
 
 import * as styles from './ProgressStep.css';
 

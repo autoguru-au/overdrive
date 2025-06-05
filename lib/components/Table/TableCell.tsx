@@ -41,16 +41,22 @@ export const TableCell = forwardRef<HTMLDivElement, TableCellProps>(
 				// scope="row"
 				display="flex"
 				alignItems="center"
-				position="relative"
 				justifyContent={alignmentToFlexAlignment(align)}
 				padding={padding}
-				borderBottomWidth="1"
+				position="relative"
+				borderWidthBottom="1"
 				aria-label={ariaLabel}
 				className={styles.root}
 			>
 				{typeof children === 'string' ||
 				typeof children === 'number' ? (
-					<Text as="span" colour="dark" display="block" size="3">
+					<Text
+						is="span"
+						align={align}
+						colour="dark"
+						display="block"
+						size="3"
+					>
 						{children}
 					</Text>
 				) : (
@@ -62,3 +68,5 @@ export const TableCell = forwardRef<HTMLDivElement, TableCellProps>(
 );
 
 TableCell.displayName = 'TableCell';
+
+export default TableCell;

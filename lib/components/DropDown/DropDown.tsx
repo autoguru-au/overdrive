@@ -71,3 +71,5 @@ export const DropDown: FunctionComponent<DropDownProps> = ({
 		</>
 	);
 };
+
+export default DropDown;

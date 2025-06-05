@@ -1,3 +1,3 @@
-export * from './Box';
-export * from './useBox';
-export * from './boxStyles';
+export { Box, type BoxProps } from './Box';
+export { useBoxStyles } from './useBoxStyles';
+export type { BoxStyleProps } from './useBoxStyles';

@@ -22,3 +22,5 @@ export const Image: FunctionComponent<ImageProps> = ({
 	) : (
 		<SimpleImage {...(props as ComponentProps<typeof SimpleImage>)} />
 	);
+
+export default Image;

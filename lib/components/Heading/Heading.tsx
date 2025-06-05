@@ -1,58 +1,60 @@
 import React from 'react';
 
-import type { Sprinkles } from '../../styles/sprinkles.css';
-import { Box, UseBoxProps } from '../Box';
-import { textStyles, type TextStylesProps } from '../Text/textStyles';
-
-export type HeadingTags = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+import type { ThemeTokens as Tokens } from '../../themes';
+import type { WithTestId } from '../../types';
+import { dataAttrs } from '../../utils/dataAttrs';
+import { Box, type BoxProps } from '../Box/Box';
+import { type TextStyleProps, useTextStyles } from '../Text/useTextStyles';
 
 export interface HeadingProps
-	extends Omit<UseBoxProps<HeadingTags>, keyof TextStylesProps>,
-		Omit<TextStylesProps, 'as'> {
-	as?: HeadingTags;
+	extends Omit<TextStyleProps, 'is'>,
+		Pick<BoxProps, 'children' | 'className' | 'id'> {
+	is?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+	colour?: Exclude<keyof Tokens['typography']['colour'], 'muted'>;
 }
 
-const defaultSizeMap: Record<HeadingTags, Sprinkles['fontSize']> = {
+const sizeScaleDefaults = {
 	h1: '8',
 	h2: '7',
 	h3: '6',
 	h4: '4',
 	h5: '3',
 	h6: '2',
-};
+} as const;
 
-/**
- * Heading renders an <h1... h6> with default font size and weight
- */
 export const Heading = ({
-	as = 'h1',
-	breakWord,
-	children,
-	className,
-	color, // semantic tokens
-	colour = color ? undefined : 'dark', // legacy intentional tokens
+	is = 'h1',
+	id,
+	testId,
+	align,
 	fontWeight = 'bold',
 	noWrap,
-	size = defaultSizeMap[as],
 	transform,
-	...props
-}: HeadingProps) => (
+	colour = 'dark',
+	size = sizeScaleDefaults[is],
+	breakWord,
+	className = '',
+	children,
+}: WithTestId<HeadingProps>) => (
 	<Box
-		{...props}
-		as={as}
-		color={color}
+		id={id}
+		as={is}
 		className={[
-			textStyles({
-				breakWord,
-				colour,
-				fontWeight,
-				noWrap,
+			useTextStyles({
 				size,
+				align,
+				colour,
+				noWrap,
 				transform,
+				fontWeight,
+				breakWord,
 			}),
 			className,
 		]}
+		{...dataAttrs({ 'test-id': testId })}
 	>
 		{children}
 	</Box>
 );
+
+export default Heading;

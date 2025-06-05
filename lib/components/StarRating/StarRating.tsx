@@ -5,7 +5,7 @@ import { FunctionComponent, memo, NamedExoticComponent } from 'react';
 
 import { ThemeTokens as Tokens } from '../../themes';
 import { Box } from '../Box/Box';
-import { boxStyles } from '../Box/boxStyles';
+import { useBoxStyles } from '../Box/useBoxStyles';
 import { Icon } from '../Icon/Icon';
 import { Inline } from '../Inline/Inline';
 import { Text } from '../Text/Text';
@@ -124,7 +124,7 @@ const Star: FunctionComponent<StarProps> = ({
 			icon={star}
 			size={starSizeMap.get(size)}
 			className={clsx(
-				boxStyles({ position: 'relative' }),
+				useBoxStyles({ position: 'relative' }),
 				styles.star.default,
 				{
 					[styles.star.empty]: starType === EStarType.Empty,
@@ -133,3 +133,5 @@ const Star: FunctionComponent<StarProps> = ({
 		/>
 	);
 };
+
+export default StarRating;

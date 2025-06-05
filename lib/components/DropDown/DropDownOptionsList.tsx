@@ -1,18 +1,18 @@
 import * as React from 'react';
 import { forwardRef, ReactNode } from 'react';
 
-import { Box } from '../Box';
-import { Stack } from '../Stack';
+import { Box } from '../Box/Box';
+import { Stack } from '../Stack/Stack';
 
 import * as styles from './DropDownOptionsList.css';
 
-interface DropDownOptionsListProps {
+interface DropDownOptionListProps {
 	children: ReactNode;
 }
 
 export const DropDownOptionsList = forwardRef<
 	HTMLDivElement,
-	DropDownOptionsListProps
+	DropDownOptionListProps
 >(({ children }, ref) => (
 	<Box ref={ref} className={styles.root}>
 		<Box className={styles.list} overflow="auto">
@@ -23,4 +23,4 @@ export const DropDownOptionsList = forwardRef<
 	</Box>
 ));
 
-DropDownOptionsList.displayName = 'DropDownOptionsList';
+DropDownOptionsList.displayName = 'DropDownOptionList';

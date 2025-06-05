@@ -1,49 +1,40 @@
-import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
+import { styleVariants } from '@vanilla-extract/css';
 
-export const columnsStyle = recipe({
-	base: {
-		display: 'flex',
-		flexDirection: 'row',
+import { overdriveTokens as vars } from '../../themes/theme.css';
+import { makeResponsiveStyle } from '../../utils/responsiveProps.css';
+
+export const space = {
+	spaceX: makeResponsiveStyle(vars.space, 'paddingLeft'),
+	spaceY: makeResponsiveStyle(vars.space, 'paddingTop'),
+};
+
+export const wrapping = styleVariants({
+	wrap: {
+		flexWrap: 'wrap',
 	},
-	variants: {
-		align: {
-			stretch: {
-				alignContent: 'stretch',
-				alignItems: 'stretch',
-			},
-			top: {
-				alignContent: 'flex-start',
-				alignItems: 'flex-start',
-			},
-			center: {
-				alignContent: 'center',
-				alignItems: 'center',
-			},
-			bottom: {
-				alignContent: 'flex-end',
-				alignItems: 'flex-end',
-			},
-		},
-		noWrap: {
-			false: {
-				flexWrap: 'wrap',
-			},
-			true: {
-				flexWrap: 'nowrap',
-			},
-		},
-		wrappingDirection: {
-			default: {},
-			reverse: {
-				flexWrap: 'wrap-reverse',
-			},
-		},
+	noWrap: {
+		flexWrap: 'nowrap',
 	},
-	defaultVariants: {
-		align: 'stretch',
-		noWrap: false,
-		wrappingDirection: 'default',
+	reverseWrap: {
+		flexWrap: 'wrap-reverse',
 	},
 });
 
-export type ColumnsStyle = NonNullable<RecipeVariants<typeof columnsStyle>>;
+export const align = styleVariants({
+	stretch: {
+		alignContent: 'stretch',
+		alignItems: 'stretch',
+	},
+	top: {
+		alignContent: 'flex-start',
+		alignItems: 'flex-start',
+	},
+	centre: {
+		alignContent: 'center',
+		alignItems: 'center',
+	},
+	bottom: {
+		alignContent: 'flex-end',
+		alignItems: 'flex-end',
+	},
+});
