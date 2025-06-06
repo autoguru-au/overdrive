@@ -64,6 +64,7 @@ const foregroundColourTokens: Record<
 export const border = {
 	style: style({
 		borderStyle: 'solid',
+		borderWidth: 0,
 	}),
 	colour: {
 		top: styleVariants(mapTokenToProperty(borderColours, 'borderTopColor')),
