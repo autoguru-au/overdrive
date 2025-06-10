@@ -17,16 +17,16 @@ Adhere to the patterns and best practices of the following:
   `useMemo`, `useCallback`, and `React.memo` might become less necessary. Focus
   on clean, readable code.
 - **vanilla-extract**: For all styling. Utilize its various approaches (e.g.,
-  `sprinkles`, `recipes`) appropriately. The sprinkles generate a large
-  combination of CSS utility classes and so they should be reused wherever
-  possible to maximise effectiveness. Ensure styles are type-safe and efficient.
+  `sprinkles`, `recipes`) appropriately. `sprinkles` generate numerous utility
+  classes; maximize their reuse for optimal effectiveness. Ensure styles are
+  type-safe and efficient.
 - **Vitest**: For unit and integration testing. Write comprehensive tests for
   component logic, props, and interactions. Only core component internals and
   helpers should have thorough unit tests. The focus is more on Storybook play
   functions for component interactive tests.
 - **Storybook**: For component development, documentation, and visual testing.
   Follow best practices for creating informative and interactive stories. All
-  stories are run through the Chormatic service for visual regression checking.
+  stories are run through the Chromatic service for visual regression checking.
 - **React Aria**: We are gradually adopting React Aria for enhanced
   accessibility and interactions. When uplifting or creating new interactive
   components, consider using React Aria hooks and components.
@@ -40,7 +40,7 @@ Adhere to the patterns and best practices of the following:
 
 This package uses the `changeset` library to handle versioning. As part of each
 task completion where a change is made that needs to published, never forget to
-run `yarn changeset` and generate an randomely named changeset file in the
+run `yarn changeset` and generate a randomly named changeset file in the
 '.changeset' folder.
 
 ### 2. Always generate a changeset file for each task or pull request
@@ -100,8 +100,8 @@ remains consistent.
     - Import styles from the co-located `ComponentName.css.ts` file (e.g.,
       `import * as styles from './ComponentName.css';`).
     - Utilize `vanilla-extract` features `recipes` and `sprinkles`. `recipes`
-      can refer to `sprinkles` within the styles so that utility classes are
-      best reused.
+      should refer to `sprinkles` to ensure utility classes are maximally
+      reused.
     - Use the `clsx` utility for conditional class name application.
     - Components may accept straightforward style props, typically managed via
       `sprinkles` or `recipes`.
