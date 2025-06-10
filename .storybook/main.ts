@@ -10,7 +10,7 @@ const config: StorybookConfig = {
 		'@storybook/addon-a11y',
 		'@storybook/addon-links',
 		'@chromatic-com/storybook',
-		// 'storybook-addon-tag-badges',
+		'storybook-addon-tag-badges',
 		'@storybook/addon-vitest',
 		'@storybook/addon-docs',
 	],
