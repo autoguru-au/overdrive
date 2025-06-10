@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import type { ElementType } from 'react';
 
-import { resetStyles } from '../../styles/resetStyles';
+import { resetStyles } from '../../styles/elementStyles';
 import {
 	sprinkles,
 	sprinklesLegacyText,

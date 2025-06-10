@@ -7,8 +7,8 @@ import type {
 } from 'react';
 import React, { forwardRef } from 'react';
 
-import { borderReset } from '../../styles/reset.css';
-import { elementResetStyles } from '../../styles/resetStyles';
+import { borderReset } from '../../styles/element.css';
+import { elementResetStyles } from '../../styles/elementStyles';
 import { sprinkles } from '../../styles/sprinkles.css';
 import { dataAttrs } from '../../utils/dataAttrs';
 

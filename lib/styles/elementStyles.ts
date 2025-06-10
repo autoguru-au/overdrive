@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import type { ElementType, ReactElement } from 'react';
 
-import { element, resetVariants, type ResetVariantProps } from './reset.css';
+import { element, resetVariants, type ResetVariantProps } from './element.css';
 import { sprinkles, type Sprinkles } from './sprinkles.css';
 
 /**
