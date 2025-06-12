@@ -2,7 +2,7 @@
 '@autoguru/overdrive': patch
 ---
 
-Technical uplift changes to the Box and corresponding components were manually
+Technical uplift changes to the Box, Text and related components were manually
 reverted to try and resolve instability with some instances of forms in
 consumption.
 
@@ -20,8 +20,8 @@ consumption.
 - New colour tokens are mapped to props with `color` spelling, existing
   colours/intentional colours are still available with the `colour` spelling in
   props for backwards compatibility
-- Multi-word values are in transition to camel case (e.g. `space-between`
-  instead of `spaceBetween`)
+- Values are in transition to camel case (e.g. `space-between` instead of
+  `spaceBetween`) to align with CSS
 - Border property props where the side Top/Bottom/Left/Right was placed last are
   now in transistion to be aligned with the CSS naming order (e.g.
   `borderLeftColor` instead of `borderColorLeft`)
