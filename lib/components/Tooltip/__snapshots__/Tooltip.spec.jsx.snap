@@ -19,7 +19,7 @@ exports[`<Tolltip /> > should match snapshot when closed 1`] = `
   >
     <div
       aria-hidden="true"
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_fixed_mobile__onxwju9g Positioner_root__1d54b7d0"
+      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_position_fixed_mobile__onxwju9g Positioner_root__1d54b7d0"
     />
   </div>
 </body>
@@ -44,14 +44,14 @@ exports[`<Tolltip /> > should match snapshot when opened 1`] = `
   >
     <div
       aria-hidden="false"
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_fixed_mobile__onxwju9g Positioner_root__1d54b7d0"
+      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_position_fixed_mobile__onxwju9g Positioner_root__1d54b7d0"
       style="position: absolute; left: 0px; top: 0px; margin: 0px;"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_paddingLeft_3_mobile__onxwjutc sprinkles_paddingRight_3_mobile__onxwjuug sprinkles_paddingTop_2_mobile__onxwjuvg sprinkles_paddingBottom_2_mobile__onxwjus4 sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_pointerEvents_none__onxwju6g sprinkles_userSelect_none__onxwju6j sprinkles_width_full_mobile__onxwjufw sprinkles_backgroundColour_gray900__onxwju4e sprinkles_boxShadow_4__onxwju6c sprinkles_borderRadius_1_mobile__onxwjua4 Tooltip_root__1qliafn0"
+        class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_paddingLeft_3_mobile__onxwjutc sprinkles_paddingRight_3_mobile__onxwjuug sprinkles_paddingTop_2_mobile__onxwjuvg sprinkles_paddingBottom_2_mobile__onxwjus4 sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_pointerEvents_none__onxwju6g sprinkles_userSelect_none__onxwju6j sprinkles_width_full_mobile__onxwjufw sprinkles_backgroundColour_gray900__onxwju4e sprinkles_boxShadow_4__onxwju6c sprinkles_borderRadius_1_mobile__onxwjua4 Tooltip_root__1qliafn0"
       >
         <span
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_2__1xnpmd72"
+          class="element_resetVariants__1en4q4gd element_resetVariants_as_span__1en4q4gm  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_2__1xnpmd72"
         >
           tooltip content
         </span>

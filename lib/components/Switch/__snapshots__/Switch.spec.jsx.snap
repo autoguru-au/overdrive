@@ -9,7 +9,7 @@ exports[`<Switch /> > should match snapshot when toggled 1`] = `
     class="Switch_base__6xc8dy0"
   >
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 VisuallyHidden_visuallyHidden__12d73qi0"
+      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 VisuallyHidden_visuallyHidden__12d73qi0"
     >
       <input
         checked=""
@@ -20,11 +20,11 @@ exports[`<Switch /> > should match snapshot when toggled 1`] = `
       />
     </div>
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_fontSize_5__onxwju5o sprinkles_lineHeight_5__onxwju5x sprinkles_color_neutral__onxwju6t typography_typographyStyles__yhjp330 Switch_toggleOn__6xc8dy2"
+      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_fontSize_5__onxwju5o sprinkles_lineHeight_5__onxwju5x sprinkles_color_neutral__onxwju6t typography_typographyStyles__yhjp330 Switch_toggleOn__6xc8dy2"
       data-active=""
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Switch_handle_default__6xc8dy4 Switch_handle_active__6xc8dy5"
+        class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 Switch_handle_default__6xc8dy4 Switch_handle_active__6xc8dy5"
       />
     </div>
   </label>
@@ -40,7 +40,7 @@ exports[`<Switch /> > should match snapshot when toggled and disabled 1`] = `
     class="Switch_base__6xc8dy0"
   >
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 VisuallyHidden_visuallyHidden__12d73qi0"
+      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 VisuallyHidden_visuallyHidden__12d73qi0"
     >
       <input
         checked=""
@@ -51,12 +51,12 @@ exports[`<Switch /> > should match snapshot when toggled and disabled 1`] = `
       />
     </div>
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_fontSize_5__onxwju5o sprinkles_lineHeight_5__onxwju5x sprinkles_color_neutral__onxwju6t typography_typographyStyles__yhjp330 Switch_disabled__6xc8dy3 Switch_toggleOn__6xc8dy2"
+      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_fontSize_5__onxwju5o sprinkles_lineHeight_5__onxwju5x sprinkles_color_neutral__onxwju6t typography_typographyStyles__yhjp330 Switch_disabled__6xc8dy3 Switch_toggleOn__6xc8dy2"
       data-active=""
       data-disabled=""
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Switch_handle_default__6xc8dy4 Switch_handle_active__6xc8dy5"
+        class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 Switch_handle_default__6xc8dy4 Switch_handle_active__6xc8dy5"
       />
     </div>
   </label>
@@ -72,7 +72,7 @@ exports[`<Switch /> > should match snapshot when un-toggled 1`] = `
     class="Switch_base__6xc8dy0"
   >
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 VisuallyHidden_visuallyHidden__12d73qi0"
+      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 VisuallyHidden_visuallyHidden__12d73qi0"
     >
       <input
         data-react-aria-pressable="true"
@@ -82,10 +82,10 @@ exports[`<Switch /> > should match snapshot when un-toggled 1`] = `
       />
     </div>
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_fontSize_5__onxwju5o sprinkles_lineHeight_5__onxwju5x sprinkles_color_neutral__onxwju6t typography_typographyStyles__yhjp330"
+      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_fontSize_5__onxwju5o sprinkles_lineHeight_5__onxwju5x sprinkles_color_neutral__onxwju6t typography_typographyStyles__yhjp330"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Switch_handle_default__6xc8dy4"
+        class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 Switch_handle_default__6xc8dy4"
       />
     </div>
   </label>
@@ -101,7 +101,7 @@ exports[`<Switch /> > should match snapshot when un-toggled and disabled 1`] = `
     class="Switch_base__6xc8dy0"
   >
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 VisuallyHidden_visuallyHidden__12d73qi0"
+      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 VisuallyHidden_visuallyHidden__12d73qi0"
     >
       <input
         data-react-aria-pressable="true"
@@ -111,11 +111,11 @@ exports[`<Switch /> > should match snapshot when un-toggled and disabled 1`] = `
       />
     </div>
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_fontSize_5__onxwju5o sprinkles_lineHeight_5__onxwju5x sprinkles_color_neutral__onxwju6t typography_typographyStyles__yhjp330 Switch_disabled__6xc8dy3"
+      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_fontSize_5__onxwju5o sprinkles_lineHeight_5__onxwju5x sprinkles_color_neutral__onxwju6t typography_typographyStyles__yhjp330 Switch_disabled__6xc8dy3"
       data-disabled=""
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Switch_handle_default__6xc8dy4"
+        class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 Switch_handle_default__6xc8dy4"
       />
     </div>
   </label>
@@ -131,7 +131,7 @@ exports[`<Switch /> > should match snapshot without props 1`] = `
     class="Switch_base__6xc8dy0"
   >
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 VisuallyHidden_visuallyHidden__12d73qi0"
+      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 VisuallyHidden_visuallyHidden__12d73qi0"
     >
       <input
         data-react-aria-pressable="true"
@@ -141,10 +141,10 @@ exports[`<Switch /> > should match snapshot without props 1`] = `
       />
     </div>
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_fontSize_5__onxwju5o sprinkles_lineHeight_5__onxwju5x sprinkles_color_neutral__onxwju6t typography_typographyStyles__yhjp330"
+      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_fontSize_5__onxwju5o sprinkles_lineHeight_5__onxwju5x sprinkles_color_neutral__onxwju6t typography_typographyStyles__yhjp330"
     >
       <div
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 Switch_handle_default__6xc8dy4"
+        class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 Switch_handle_default__6xc8dy4"
       />
     </div>
   </label>

@@ -6,21 +6,21 @@ exports[`<DatePicker /> > should match snapshot without label 1`] = `
   data-od-component="provider"
 >
   <div
-    class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_position_relative_mobile__onxwju98"
+    class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_position_relative_mobile__onxwju98"
   >
     <input
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_input__4z7xt314 reset_trimmedElement__4z7xt30 reset_input__4z7xt39 sprinkles_height_full_mobile__onxwjuec sprinkles_position_absolute_mobile__onxwju9c sprinkles_width_full_mobile__onxwjufw DatePicker_input__1j3uugj0"
+      class="element_resetVariants__1en4q4gd element_resetVariants_as_input__1en4q4g14 element_trimmedElement__1en4q4g0 element_input__1en4q4g9 sprinkles_height_full_mobile__onxwjuec sprinkles_position_absolute_mobile__onxwju9c sprinkles_width_full_mobile__onxwjufw DatePicker_input__1j3uugj0"
       type="date"
     />
     <div
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 DatePicker_contents_default__1j3uugj1"
+      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 DatePicker_contents_default__1j3uugj1"
     >
       <span
-        class="reset_resetVariants__4z7xt3d reset_resetVariants_as_span__4z7xt3m  sprinkles_display_block_mobile__onxwju74 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+        class="element_resetVariants__1en4q4gd element_resetVariants_as_span__1en4q4gm  sprinkles_display_block_mobile__onxwju74 Icon_makeResponsiveStyle_key_bp__1gy3ire4"
       >
         <svg
           aria-hidden="true"
-          class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_display_block_mobile__onxwju74 sprinkles_width_full_mobile__onxwjufw sprinkles_height_full_mobile__onxwjuec"
+          class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_display_block_mobile__onxwju74 sprinkles_width_full_mobile__onxwjufw sprinkles_height_full_mobile__onxwjuec"
           fill="currentColor"
           focusable="false"
           viewBox="0 0 24 24"

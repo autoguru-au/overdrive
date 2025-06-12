@@ -15,7 +15,7 @@ exports[`<Positioner /> > should match snapshot 1`] = `
   >
     <div
       aria-hidden="false"
-      class="reset_resetVariants__4z7xt3d reset_resetVariants_as_div__4z7xt3e reset_block__4z7xt34 sprinkles_position_fixed_mobile__onxwju9g Positioner_root__1d54b7d0"
+      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_position_fixed_mobile__onxwju9g Positioner_root__1d54b7d0"
     >
       Some body
     </div>
