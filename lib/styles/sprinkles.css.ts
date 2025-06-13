@@ -1,5 +1,6 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
+import { mapValues } from 'es-toolkit';
 
 import { breakpoints } from '../themes/makeTheme';
 import { overdriveTokens as tokens } from '../themes/theme.css';
@@ -30,48 +31,26 @@ const flexAlignmentsWithSpace = {
 	'space-evenly': 'space-evenly',
 };
 
-// --- transformations over the tokens to make ready for sprinkles
+const fontSizes = mapValues(tokens.typography.size, (size) => size.fontSize);
 
-const fontSizes = Object.entries(tokens.typography.size).reduce(
-	(sizes, [scale, fontSize]) => {
-		sizes[scale] = fontSize.fontSize;
-		return sizes;
-	},
-	{},
+const lineHeights = mapValues(
+	tokens.typography.size,
+	(size) => size.lineHeight,
 );
 
-const lineHeights = Object.entries(tokens.typography.size).reduce(
-	(sizes, [scale, lineHeight]) => {
-		sizes[scale] = lineHeight.lineHeight;
-		return sizes;
-	},
-	{},
-);
-
-const intentForegroundColours = Object.entries(tokens.colours.intent).reduce(
-	(acc, [intent, { foreground }]) => {
-		acc[intent] = foreground;
-		return acc;
-	},
-	{} as Record<keyof typeof tokens.colours.intent, string>,
-);
-
-const intentBackgroundColoursStandard = Object.entries(
+const intentForegroundColours = mapValues(
 	tokens.colours.intent,
-).reduce(
-	(acc, [intent, { background }]) => {
-		acc[intent] = background.standard;
-		return acc;
-	},
-	{} as Record<keyof typeof tokens.colours.intent, string>,
+	({ foreground }) => foreground,
 );
 
-const intentBorderColours = Object.entries(tokens.colours.intent).reduce(
-	(acc, [intent, { border }]) => {
-		acc[intent] = border;
-		return acc;
-	},
-	{} as Record<keyof typeof tokens.colours.intent, string>,
+const intentBackgroundColoursStandard = mapValues(
+	tokens.colours.intent,
+	({ background }) => background.standard,
+);
+
+const intentBorderColours = mapValues(
+	tokens.colours.intent,
+	({ border }) => border,
 );
 
 const backgroundColours = {
@@ -100,68 +79,39 @@ const colours = {
 	white: tokens.colours.gamut.white,
 };
 
-const mappedBackgroundColours = Object.entries(backgroundColours).reduce(
-	(acc, [key, value]) => {
-		acc[key] = { backgroundColor: value };
-		return acc;
-	},
-	{} as Record<keyof typeof backgroundColours, { backgroundColor: string }>,
+const gapSizesWithVar = mapValues(space, (value) => ({
+	vars: { [gapVar]: value },
+	gap: value,
+}));
+
+// --- MAPPED COLOURS ---
+const mappedBackgroundColours = mapValues(
+	backgroundColours,
+	(backgroundColor) => ({ backgroundColor }),
 );
 
-const mappedBorderBottomColours = Object.entries(borderColours).reduce(
-	(acc, [key, value]) => {
-		acc[key] = { borderBottomColor: value };
-		return acc;
-	},
-	{} as Record<keyof typeof borderColours, { borderBottomColor: string }>,
+const mappedBorderBottomColours = mapValues(
+	borderColours,
+	(borderBottomColor) => ({ borderBottomColor }),
 );
 
-const mappedBorderLeftColours = Object.entries(borderColours).reduce(
-	(acc, [key, value]) => {
-		acc[key] = { borderLeftColor: value };
-		return acc;
-	},
-	{} as Record<keyof typeof borderColours, { borderLeftColor: string }>,
+const mappedBorderLeftColours = mapValues(borderColours, (borderLeftColor) => ({
+	borderLeftColor,
+}));
+
+const mappedBorderRightColours = mapValues(
+	borderColours,
+	(borderRightColor) => ({ borderRightColor }),
 );
 
-const mappedBorderRightColours = Object.entries(borderColours).reduce(
-	(acc, [key, value]) => {
-		acc[key] = { borderRightColor: value };
-		return acc;
-	},
-	{} as Record<keyof typeof borderColours, { borderRightColor: string }>,
-);
+const mappedBorderTopColours = mapValues(borderColours, (borderTopColor) => ({
+	borderTopColor,
+}));
 
-const mappedBorderTopColours = Object.entries(borderColours).reduce(
-	(acc, [key, value]) => {
-		acc[key] = { borderTopColor: value };
-		return acc;
-	},
-	{} as Record<keyof typeof borderColours, { borderTopColor: string }>,
-);
+const mappedColours = mapValues(colours, (color) => ({ color }));
 
-const mappedColours = Object.entries(colours).reduce(
-	(acc, [key, value]) => {
-		acc[key] = { color: value };
-		return acc;
-	},
-	{} as Record<keyof typeof colours, { color: string }>,
-);
-
-const gapSizesWithVar = Object.entries(space).reduce(
-	(acc, [key, value]) => {
-		acc[key] = {
-			vars: { [gapVar]: value },
-			gap: value,
-		};
-		return acc;
-	},
-	{} as Record<
-		keyof typeof space,
-		{ vars: Record<string, string>; gap: string }
-	>,
-);
-
+// --- VALUE ARRAYS ---
+// (Used for Storybook controls, etc.)
 export const valueArrays = {
 	borderColors: Object.keys(borderColors),
 	fontSizes: Object.keys(fontSizes),
@@ -169,14 +119,14 @@ export const valueArrays = {
 	intentBackgroundColoursStandard: Object.keys(
 		intentBackgroundColoursStandard,
 	),
-	intentBorderColours: Object.keys(intentBackgroundColoursStandard),
+	intentBorderColours: Object.keys(intentBorderColours),
 	intentForegroundColours: Object.keys(
 		intentForegroundColours,
 	) as SprinklesLegacyColours['colour'][],
 	lineHeights: Object.keys(lineHeights),
 };
 
-// --- Base sprinkles (non-responsive)
+// --- BASE SPRINKLES (NON-RESPONSIVE) ---
 const baseProperties = defineProperties({
 	'@layer': cssLayerUtil,
 	properties: {
@@ -251,6 +201,7 @@ const baseProperties = defineProperties({
 	},
 });
 
+// --- LEGACY TEXT SPRINKLES ---
 const legacyTextProperties = defineProperties({
 	'@layer': cssLayerUtil,
 	properties: {
@@ -270,7 +221,7 @@ export type SprinklesLegacyText = Omit<
 	'color'
 >;
 
-// --- Responsive sprinkles
+// --- RESPONSIVE SPRINKLES ---
 export const responsiveConditions = {
 	mobile: {},
 	tablet: { '@media': `screen and (min-width: ${breakpoints.tablet})` },
@@ -319,7 +270,7 @@ const responsiveProperties = defineProperties({
 			...spaceWithoutNone,
 			'fit-content': 'fit-content',
 			'max-content': 'max-content',
-			'min-content': 'max-content',
+			'min-content': 'min-content',
 			full: '100%',
 			auto: 'auto',
 		},
@@ -360,7 +311,7 @@ const responsiveProperties = defineProperties({
 		gridAutoColumns: ['auto', '1fr', 'min-content', 'max-content'],
 		gridAutoRows: ['auto', '1fr'],
 		gridAutoFlow: ['row', 'column', 'row dense', 'column dense'],
-		gridColumns: ['1', 'auto'],
+		gridColumns: ['1', 'auto'], // Note: original had ['1', 'auto'], assuming this is correct
 		// Padding
 		paddingBottom: tokens.space,
 		paddingLeft: tokens.space,
@@ -413,7 +364,6 @@ const responsiveProperties = defineProperties({
 export const sprinkles = createSprinkles(baseProperties, responsiveProperties);
 export type Sprinkles = Parameters<typeof sprinkles>[0];
 
-// pick out the 'colour' spelling props
 export type SprinklesLegacyColours = Pick<
 	Sprinkles,
 	| 'backgroundColour'
