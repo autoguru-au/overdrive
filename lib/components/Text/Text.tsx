@@ -1,46 +1,43 @@
 import React from 'react';
 
+import { type Sprinkles } from '../../styles/sprinkles.css';
+import { typographyStyles } from '../../styles/typography.css';
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box/Box';
-import type { BoxStyleProps } from '../Box/useBoxStyles';
 
-import { type TextStyleProps, useTextStyles } from './useTextStyles';
+import type { TextStyleProps } from './textStyles';
 
-type Display = Extract<
-	BoxStyleProps['display'],
-	'inline' | 'inlineBlock' | 'inline-block' | 'block'
->;
 type ElementAttributes = React.ComponentPropsWithoutRef<'p'> &
 	Pick<React.ComponentProps<'label'>, 'htmlFor'>;
 
 export interface TextProps
 	extends Omit<ElementAttributes, 'color' | 'is'>,
 		TextStyleProps {
-	/** Use bold font weight */
-	strong?: boolean;
 	/** Select CSS display property  */
-	display?: Display;
+	display?: Sprinkles['display'];
 }
 
 export const Text = React.forwardRef<HTMLElement, WithTestId<TextProps>>(
 	(
 		{
+			as = 'span',
 			children,
 			className,
-			is = 'span',
-			as = is,
 			testId,
+
+			//style props
 			align = 'left',
-			colour,
 			color,
+			colour,
 			display,
-			fontWeight = 'normal',
 			transform,
 			breakWord,
 			noWrap,
 			size = '4',
 			strong = false,
+			weight = 'normal',
+
 			...props
 		},
 		ref,
@@ -48,18 +45,19 @@ export const Text = React.forwardRef<HTMLElement, WithTestId<TextProps>>(
 		<Box
 			as={as}
 			ref={ref}
+			color={color}
 			display={display}
 			textAlign={align}
 			className={[
-				useTextStyles({
+				typographyStyles({
 					as,
-					size,
-					color: color ?? (strong ? 'dark' : undefined),
-					colour,
-					fontWeight: strong ? 'bold' : fontWeight,
-					transform,
-					noWrap,
 					breakWord,
+					colour: colour ?? (strong ? 'dark' : undefined),
+					noWrap,
+					size,
+					strong,
+					transform,
+					weight,
 				}),
 				className,
 			]}
@@ -72,5 +70,3 @@ export const Text = React.forwardRef<HTMLElement, WithTestId<TextProps>>(
 );
 
 Text.displayName = 'Text';
-
-export default Text;
