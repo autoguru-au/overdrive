@@ -2,7 +2,7 @@ import { createContainer, style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
-import { sprinklesResponsive } from '../../styles/sprinkles.css';
+import { sprinkles } from '../../styles/sprinkles.css';
 import { overdriveTokens as tokens } from '../../themes';
 import { breakpoints } from '../../themes/makeTheme';
 import { interactionStyle } from '../../utils/css';
@@ -69,7 +69,7 @@ export const styledCell = recipe({
 				cursor: 'default',
 			},
 		}),
-		sprinklesResponsive({
+		sprinkles({
 			size: '7',
 		}),
 		focusOutlineStyle,
@@ -104,7 +104,7 @@ export const styledButton = recipe({
 				cursor: 'not-allowed',
 			},
 		}),
-		sprinklesResponsive({
+		sprinkles({
 			size: '7',
 		}),
 		focusOutlineStyle,

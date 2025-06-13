@@ -3,21 +3,20 @@
 exports[`<Stack /> > should correctly handle fragment nodes 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <div
-    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_display_flex_mobile__onxwju77 sprinkles_flexDirection_column_mobile__onxwjumr sprinkles_gap_2_mobile__onxwjugj"
-    data-od-component="stack"
+    class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4"
   >
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33"
+      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_flexDirection_column_mobile__onxwjuoo Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
     >
       <p>
         line 0
       </p>
     </div>
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33"
+      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_flexDirection_column_mobile__onxwjuoo Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
     >
       <p>
         Line 1
@@ -30,7 +29,7 @@ exports[`<Stack /> > should correctly handle fragment nodes 1`] = `
       </p>
     </div>
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33"
+      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_flexDirection_column_mobile__onxwjuoo Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
     >
       <p>
         line 4
@@ -43,6 +42,6 @@ exports[`<Stack /> > should correctly handle fragment nodes 1`] = `
 exports[`<Stack /> > should match the snapshot 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 />
 `;

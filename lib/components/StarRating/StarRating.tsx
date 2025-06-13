@@ -3,9 +3,9 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { FunctionComponent, memo, NamedExoticComponent } from 'react';
 
+import { sprinkles } from '../../styles';
 import { ThemeTokens as Tokens } from '../../themes';
 import { Box } from '../Box/Box';
-import { boxStyles } from '../Box/boxStyles';
 import { Icon } from '../Icon/Icon';
 import { Inline } from '../Inline/Inline';
 import { Text } from '../Text/Text';
@@ -124,7 +124,7 @@ const Star: FunctionComponent<StarProps> = ({
 			icon={star}
 			size={starSizeMap.get(size)}
 			className={clsx(
-				boxStyles({ position: 'relative' }),
+				sprinkles({ position: 'relative' }),
 				styles.star.default,
 				{
 					[styles.star.empty]: starType === EStarType.Empty,

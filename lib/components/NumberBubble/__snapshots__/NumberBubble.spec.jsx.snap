@@ -3,13 +3,13 @@
 exports[`<Section /> > should match the snapshot for negative value 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <div
-    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_paddingBottom_2_mobile__onxwjupr sprinkles_paddingLeft_2_mobile__onxwjuqv sprinkles_paddingRight_2_mobile__onxwjurz sprinkles_paddingTop_2_mobile__onxwjut3 sprinkles_borderRadius_full_mobile__onxwjuan sprinkles_display_inline-block_mobile__onxwju7j sprinkles_position_relative_mobile__onxwju8v sprinkles_backgroundColor_gray900__onxwju3p"
+    class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_paddingBottom_2_mobile__onxwjus4 sprinkles_paddingLeft_2_mobile__onxwjut8 sprinkles_paddingRight_2_mobile__onxwjuuc sprinkles_paddingTop_2_mobile__onxwjuvg sprinkles_display_inline-block_mobile__onxwju7s sprinkles_position_relative_mobile__onxwju98 sprinkles_backgroundColour_gray900__onxwju4e sprinkles_borderRadius_full_mobile__onxwjub4"
   >
     <span
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_fontSize_2__onxwju1z sprinkles_lineHeight_2__onxwju28 sprinkles_fontWeight_bold__onxwju2i sprinkles_color_white__onxwju6m typography_typographyStyles__yhjp330 NumberBubble_bubbleText__1hqdrce0 reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_position_absolute_mobile__onxwju8z"
+      class="element_resetVariants__1en4q4gd element_resetVariants_as_span__1en4q4gm  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_2__1xnpmd72 NumberBubble_bubbleText__1hqdrce0 sprinkles_position_absolute_mobile__onxwju9c"
     >
       -3
     </span>
@@ -20,13 +20,13 @@ exports[`<Section /> > should match the snapshot for negative value 1`] = `
 exports[`<Section /> > should match the snapshot for positive value 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <div
-    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_paddingBottom_2_mobile__onxwjupr sprinkles_paddingLeft_2_mobile__onxwjuqv sprinkles_paddingRight_2_mobile__onxwjurz sprinkles_paddingTop_2_mobile__onxwjut3 sprinkles_borderRadius_full_mobile__onxwjuan sprinkles_display_inline-block_mobile__onxwju7j sprinkles_position_relative_mobile__onxwju8v sprinkles_backgroundColor_gray900__onxwju3p"
+    class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_paddingBottom_2_mobile__onxwjus4 sprinkles_paddingLeft_2_mobile__onxwjut8 sprinkles_paddingRight_2_mobile__onxwjuuc sprinkles_paddingTop_2_mobile__onxwjuvg sprinkles_display_inline-block_mobile__onxwju7s sprinkles_position_relative_mobile__onxwju98 sprinkles_backgroundColour_gray900__onxwju4e sprinkles_borderRadius_full_mobile__onxwjub4"
   >
     <span
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_fontSize_2__onxwju1z sprinkles_lineHeight_2__onxwju28 sprinkles_fontWeight_bold__onxwju2i sprinkles_color_white__onxwju6m typography_typographyStyles__yhjp330 NumberBubble_bubbleText__1hqdrce0 reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_position_absolute_mobile__onxwju8z"
+      class="element_resetVariants__1en4q4gd element_resetVariants_as_span__1en4q4gm  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_white__1xnpmd7g useTextStyles_fontWeight_bold__1xnpmd7q useTextStyles_sizes_2__1xnpmd72 NumberBubble_bubbleText__1hqdrce0 sprinkles_position_absolute_mobile__onxwju9c"
     >
       3
     </span>

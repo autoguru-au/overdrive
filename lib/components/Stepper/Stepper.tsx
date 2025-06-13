@@ -11,7 +11,6 @@ import {
 
 import { addWithSafeDecimal } from '../../utils/number';
 import { Box } from '../Box/Box';
-import { boxStyles } from '../Box/boxStyles';
 import { Icon } from '../Icon/Icon';
 import { Inline } from '../Inline/Inline';
 import { Text } from '../Text/Text';
@@ -154,7 +153,6 @@ export const Stepper: FunctionComponent<StepperProps> = ({
 			className={clsx(
 				className,
 				styles.root,
-				boxStyles({ as: 'button' }),
 				disabled && styles.disabled,
 			)}
 			userSelect="none"

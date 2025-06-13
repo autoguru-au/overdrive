@@ -1,104 +1,86 @@
 # @autoguru/overdrive
 
-## 4.44.0
+## ~~4.44.0~~
+
+_Do not use_. This release was based on **4.43.1-5** and has been deprecated.
 
 ### Minor Changes
 
 - 524c1b1: The `Text` component has been rebuilt with polymorphic `as` prop,
   consistent with Box. The `noWrap` prop has been deprecated as the `textWrap`
-  style prop is available in uplifted components.
+  style prop is available in uplifted components
 - 524c1b1: The Heading component has been improved to be consistent with Text
   and applies balanced text wrap. Anchor and TextLink have been updated to be
-  consistent also.
+  consistent also
 
-## 4.43.5
+## ~~4.43.5~~
+
+_Version deprecated_
 
 ### Patch Changes
 
 - 7996070: Fix for the Columns missing default of `noWrap: false`
 
-## 4.43.4
+## ~~4.43.4~~
+
+_Version deprecated_
 
 ### Patch Changes
 
 - a2118b7: **Columns** `alignSelf` prop switched to "top"/"bottom" to match
   existing usage
-- a2118b7: Style props for `order`, `flexGrow`/`flexShrink` are now text unions
-  instead of number
 
-## 4.43.3
+## ~~4.43.3~~
 
-### Patch Changes
+_Version deprecated_
 
-- b06610d: Using the legacy `is` prop on new polymorphic components will fail
-  typechecking, convert to `as` prop
 
-## 4.43.2
+## ~~4.43.2~~
+
+_Version deprecated_
 
 ### Patch Changes
 
 - 8731541: Default exports have been removed from components. Imports requiring
   a default export should now point to `.../[component]/default`.
 
-## 4.43.1
+## ~~4.43.1~~
+
+_Version deprecated_
 
 ### Patch Changes
 
 - dd217b7: Fixes an issue with the polymorphic Button component when JSX is
   passed with the `as` prop
 
-## 4.43.0
+## ~~4.43.0~~
+
+_Version deprecated_
 
 ### Minor Changes
 
-- 42695b0: Technical uplift of Box and other related primatives to enable full
-  polymorphism.
+- 42695b0: **See 4.43.6 release notes**. Component changes were manually
+  reverted due to consuming compatibility issues
 
-    #### Style props
+  ##### CSS layers introduced
 
-    - _Breaking change:_ Prop values are now camel case (e.g. `space-between`)
-      instead of `spaceBetween`
-    - _Breaking change:_ Border property props where Top/Bottom/Left/Right was
-      named last, are now named second (e.g. no longer `borderColourLeft`, now
-      aligned to `borderLeftColour`)
-    - New colour tokens are mapped to props with `color` spelling, existing
-      colours/intentional colours are still available with the `colour` spelling
-      in props for backwards compatibility
-    - additional alias abbreviated props are available i.e. `px`, `mt` which are
-      mapped to the existing
+  - `@reset` contains base resets
+  - `@utility` contains the spinkles utility classes
 
-    ##### CSS layers introduced
+  #### Box
 
-    - `@reset` contains base resets
-    - `@utility` contains the spinkles utility classes
+  Newly implemented with more powerful polymorphic type based on the
+  `as` prop, and exposes `useBox` for core logic.
 
-    #### Components
+  - useBox returns the JSX
+    component tag as well as the processed and filtered props. It also handles
+    logic for determing a semantic child tag rather than repeated within various
+    components
+  - props `odComponent` and `testId` sets consistent data attribute for use at
+    component root are exported as `CommonBoxProps`
+  - useBoxStyles been replaced with `boxStyles` which handles the vanilla-extract
+    sprinkles
 
-    **Box** - newly implemented with more powerful polymorphic type based on the
-    `as` prop, and exposes useBox for core logic.
-
-    - useBox returns the JSX component tag as well as the processed and filtered
-      props. It also handles logic for determing a semantic child tag rather
-      than repeated within various components
-    - useBoxStyles been replaced with `boxStyles` which handles the
-      vanilla-extract sprinkles
-    - props `odComponent` and `testId` sets consistent data attribute for use at
-      component root are exported as `CommonBoxProps`
-
-    **Stack** - reimplemented with useBox and flexbox for layout
-
-    **Inline** - reimplemented with useBox and flexbox for layout
-
-    **Columns** - reimplemented with useBox, style recipe and specialised
-    vanilla-extract sprinkes
-
-    Additionally, these components have been migrated to useBox with updated
-    polymorphic props:
-
-    - Button
-    - Section
-    - Tab
-    - VisuallyHidden
 
 ## 4.42.0
 
@@ -107,13 +89,13 @@
 - d32fe98: Expands theme contract to include new 'color' tokens (work in
   progress), without removing existing. Both are documented in Storybook.
 
-    **Breaking change** type of the theme tokens object `Tokens` has been
-    renamed to `ThemeTokens` for clarity.
+  **Breaking change** type of the theme tokens object `Tokens` has been
+  renamed to `ThemeTokens` for clarity.
 
-    Replaces local (namespaced) css variables with un-namespaced vars in all
-    themes. Theme tokens are now assigned to a css layer. And vanilla-extract
-    tokens can be imported as `overdriveTokens` but using `themeContractVars`
-    will continue to work.
+  Replaces local (namespaced) css variables with un-namespaced vars in all
+  themes. Theme tokens are now assigned to a css layer. And vanilla-extract
+  tokens can be imported as `overdriveTokens` but using `themeContractVars`
+  will continue to work.
 
 ## 4.41.0
 
@@ -125,34 +107,34 @@
   `<ThemeOverrideProvider>` values have been incorporated. Applications do not
   need to be wrapped separate providers.
 
-    New peer dependency
+  New peer dependency
 
-    - Added dependency `es-toolkit`
+  - Added dependency `es-toolkit`
 
-    Provider Consolidation
+  Provider Consolidation
 
-    - `ThemeProvider` and `ThemeOverrideProvider` have been replaced by a
-      fallback provider to show deprecation warnings
-    - All theming functionality is now handled through `OverdriveProvider`
-      including a combined component API
+  - `ThemeProvider` and `ThemeOverrideProvider` have been replaced by a
+    fallback provider to show deprecation warnings
+  - All theming functionality is now handled through `OverdriveProvider`
+    including a combined component API
 
-    OverdriveProvider updates
+  OverdriveProvider updates
 
-    - `theme` prop is now optional
-    - Colour overrides are passed as an object `colorOverrides` instead of
-      individual props as in previous provider
-    - Some of the on-page behaviour of `ThemeOverrideDebugger` has been disabled
+  - `theme` prop is now optional
+  - Colour overrides are passed as an object `colorOverrides` instead of
+    individual props as in previous provider
+  - Some of the on-page behaviour of `ThemeOverrideDebugger` has been disabled
 
-    Data attribute and CSS Variables
+  Data attribute and CSS Variables
 
-    - Theme application is now available using data attribute
-      `data-od-theme=base`
-    - OD tokens are exposed globally in CSS variables
+  - Theme application is now available using data attribute
+    `data-od-theme=base`
+  - OD tokens are exposed globally in CSS variables
 
-    Reset updates
+  Reset updates
 
-    - Added `container` styles into resets
-    - Updated CSS reset
+  - Added `container` styles into resets
+  - Updated CSS reset
 
 ### Patch Changes
 
@@ -184,18 +166,18 @@
   Accessibility issues fixed relating to labelling on Button and aria attributes
   on Checkbox, Radio and Tabs.
 
-    Border radius tokens have been updated to named-sizes. The new values are
-    `sm` `md` `lg` `xl` `2xl`. Radius `1` remains for backwards compatbility.
+  Border radius tokens have been updated to named-sizes. The new values are
+  `sm` `md` `lg` `xl` `2xl`. Radius `1` remains for backwards compatbility.
 
-    Input fields: TextInput, NumberInput, DateInput, Select, and AutoSuggest now
-    have `large` size via the shared InputBase.
+  Input fields: TextInput, NumberInput, DateInput, Select, and AutoSuggest now
+  have `large` size via the shared InputBase.
 
-    Tabs: A new `appearance` prop has been added to configure a Pill
-    look-and-feel.
+  Tabs: A new `appearance` prop has been added to configure a Pill
+  look-and-feel.
 
-    Button: Addition of size `xsmall`.
+  Button: Addition of size `xsmall`.
 
-    Checkbox: Added support for an indeterminate state.
+  Checkbox: Added support for an indeterminate state.
 
 ## 4.39.2
 
@@ -219,8 +201,8 @@
 
 - 17db201: The Badge component displays bolder text at the `small` size.
 
-    Intent foreground colour for success intent has been changed for consistency
-    and to improve readability.
+  Intent foreground colour for success intent has been changed for consistency
+  and to improve readability.
 
 ## 4.38.0
 
@@ -1832,7 +1814,7 @@
 
     ```jsx
     <Text is="span" display="inlineBlock">
-    	k
+      k
     </Text>
     ```
 
@@ -1874,7 +1856,7 @@
 
     ```jsx
     <Box display="flex" width="full" justifyContent="center">
-    	>
+      >
     </Box>
     ```
 
@@ -2158,7 +2140,7 @@
 
         ```jsx
         <Modal isOpen={true} onRequestClose={function () {}}>
-        	>
+          >
         </Modal>
         ```
 
@@ -2239,7 +2221,7 @@
 
     ```jsx
     <Section width="medium" paddingX={['3', , 'none']}>
-    	>
+      >
     </Section>
     ```
 

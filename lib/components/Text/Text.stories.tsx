@@ -5,7 +5,8 @@ import { expect, within } from 'storybook/test';
 import { valueArrays } from '../../styles/sprinkles.css';
 import { overdriveTokens } from '../../themes';
 
-import { Text, type TextTags } from './Text';
+import { Text, type TextProps } from './Text';
+import type { TextTags } from './useTextStyles';
 
 const elements: TextTags[] = ['p', 'label', 'span'];
 const Wrapper = ({ children }) => (
@@ -75,7 +76,7 @@ export const AllSizes: Story = {
 	render: (args) => (
 		<>
 			{valueArrays.fontSizes.map((size) => (
-				<Text key={size} {...args} size={size} />
+				<Text key={size} {...args} size={size as TextProps['size']} />
 			))}
 		</>
 	),

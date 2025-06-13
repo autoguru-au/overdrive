@@ -11,6 +11,25 @@ const { space } = tokens;
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { none, ...spaceWithoutNone } = space;
 
+const flexAlignments = {
+	center: 'center',
+	centre: 'center',
+	end: 'end',
+	flexEnd: 'end',
+	flexStart: 'start',
+	start: 'start',
+	stretch: 'stretch',
+};
+
+const flexAlignmentsWithSpace = {
+	...flexAlignments,
+	spaceAround: 'space-around',
+	'space-around': 'space-around',
+	spaceBetween: 'space-between',
+	'space-between': 'space-between',
+	'space-evenly': 'space-evenly',
+};
+
 // --- transformations over the tokens to make ready for sprinkles
 
 const fontSizes = Object.entries(tokens.typography.size).reduce(
@@ -55,12 +74,79 @@ const intentBorderColours = Object.entries(tokens.colours.intent).reduce(
 	{} as Record<keyof typeof tokens.colours.intent, string>,
 );
 
+const backgroundColours = {
+	...intentBackgroundColoursStandard,
+	...tokens.colours.gamut,
+	transparent: 'transparent',
+};
+
 const borderColors = {
 	default: tokens.color.interactive.border,
 	muted: tokens.color.interactive.borderMuted,
 	disabled: tokens.color.interactive.borderDisabled,
 	...tokens.color.surface,
 };
+
+const borderColours = {
+	...tokens.border.colours,
+	...intentBorderColours,
+};
+
+const colours = {
+	...tokens.colours.foreground,
+	...tokens.typography.colour,
+	...intentForegroundColours,
+	unset: 'unset',
+	white: tokens.colours.gamut.white,
+};
+
+const mappedBackgroundColours = Object.entries(backgroundColours).reduce(
+	(acc, [key, value]) => {
+		acc[key] = { backgroundColor: value };
+		return acc;
+	},
+	{} as Record<keyof typeof backgroundColours, { backgroundColor: string }>,
+);
+
+const mappedBorderBottomColours = Object.entries(borderColours).reduce(
+	(acc, [key, value]) => {
+		acc[key] = { borderBottomColor: value };
+		return acc;
+	},
+	{} as Record<keyof typeof borderColours, { borderBottomColor: string }>,
+);
+
+const mappedBorderLeftColours = Object.entries(borderColours).reduce(
+	(acc, [key, value]) => {
+		acc[key] = { borderLeftColor: value };
+		return acc;
+	},
+	{} as Record<keyof typeof borderColours, { borderLeftColor: string }>,
+);
+
+const mappedBorderRightColours = Object.entries(borderColours).reduce(
+	(acc, [key, value]) => {
+		acc[key] = { borderRightColor: value };
+		return acc;
+	},
+	{} as Record<keyof typeof borderColours, { borderRightColor: string }>,
+);
+
+const mappedBorderTopColours = Object.entries(borderColours).reduce(
+	(acc, [key, value]) => {
+		acc[key] = { borderTopColor: value };
+		return acc;
+	},
+	{} as Record<keyof typeof borderColours, { borderTopColor: string }>,
+);
+
+const mappedColours = Object.entries(colours).reduce(
+	(acc, [key, value]) => {
+		acc[key] = { color: value };
+		return acc;
+	},
+	{} as Record<keyof typeof colours, { color: string }>,
+);
 
 const gapSizesWithVar = Object.entries(space).reduce(
 	(acc, [key, value]) => {
@@ -99,17 +185,23 @@ const baseProperties = defineProperties({
 		borderLeftColor: borderColors,
 		borderRightColor: borderColors,
 		borderTopColor: borderColors,
+		borderBottomColour: mappedBorderBottomColours,
+		borderLeftColour: mappedBorderLeftColours,
+		borderRightColour: mappedBorderRightColours,
+		borderTopColour: mappedBorderTopColours,
 		borderLeftStyle: ['none', 'solid'],
 		borderBottomStyle: ['none', 'solid'],
 		borderRightStyle: ['none', 'solid'],
 		borderTopStyle: ['none', 'solid'],
 		// Color
 		color: tokens.color.content,
+		colour: mappedColours,
 		backgroundColor: {
 			...tokens.color.surface,
 			transparent: 'transparent',
 		},
-		opacity: ['1', '0'],
+		backgroundColour: mappedBackgroundColours,
+		opacity: [0, '1', '0'],
 		// Typography
 		fontSize: fontSizes,
 		lineHeight: lineHeights,
@@ -136,70 +228,28 @@ const baseProperties = defineProperties({
 			'borderRightColor',
 			'borderTopColor',
 		],
+		borderColorX: ['borderLeftColor', 'borderRightColor'],
+		borderColorY: ['borderBottomColor', 'borderTopColor'],
+		borderColour: [
+			'borderBottomColour',
+			'borderLeftColour',
+			'borderRightColour',
+			'borderTopColour',
+		],
+		borderColourX: ['borderLeftColour', 'borderRightColour'],
+		borderColourY: ['borderBottomColour', 'borderTopColour'],
 		borderStyle: [
 			'borderBottomStyle',
 			'borderLeftStyle',
 			'borderRightStyle',
 			'borderTopStyle',
 		],
+		borderStyleBottom: ['borderBottomStyle'],
+		borderStyleLeft: ['borderLeftStyle'],
+		borderStyleRight: ['borderRightStyle'],
+		borderStyleTop: ['borderTopStyle'],
 	},
 });
-
-export const sprinkles = createSprinkles(baseProperties);
-export type Sprinkles = Parameters<typeof sprinkles>[0];
-
-// --- Legacy sprinkles with old colour tokens (non-responsive)
-const borderColours = {
-	...tokens.border.colours,
-	...intentBorderColours,
-};
-const legacyColourProperties = defineProperties({
-	'@layer': cssLayerUtil,
-	properties: {
-		backgroundColor: {
-			...intentBackgroundColoursStandard,
-			...tokens.colours.gamut,
-			transparent: 'transparent',
-		},
-		borderBottomColor: borderColours,
-		borderLeftColor: borderColours,
-		borderRightColor: borderColours,
-		borderTopColor: borderColours,
-		color: {
-			...tokens.colours.foreground,
-			...intentForegroundColours,
-			unset: 'unset',
-		},
-	},
-	// use the shorthands to remap 'color' to 'colour'
-	shorthands: {
-		backgroundColour: ['backgroundColor'],
-		borderBottomColour: ['borderBottomColor'],
-		borderLeftColour: ['borderLeftColor'],
-		borderRightColour: ['borderRightColor'],
-		borderTopColour: ['borderTopColor'],
-		borderColour: [
-			'borderBottomColor',
-			'borderLeftColor',
-			'borderRightColor',
-			'borderTopColor',
-		],
-		colour: ['color'],
-	},
-});
-
-export const sprinklesLegacyColours = createSprinkles(legacyColourProperties);
-// filter out the spellings of 'color' from the type as well
-export type SprinklesLegacyColours = Omit<
-	Parameters<typeof sprinklesLegacyColours>[0],
-	| 'backgroundColor'
-	| 'borderColor'
-	| 'borderBottomColor'
-	| 'borderLeftColor'
-	| 'borderRightColor'
-	| 'borderTopColor'
-	| 'color'
->;
 
 const legacyTextProperties = defineProperties({
 	'@layer': cssLayerUtil,
@@ -236,21 +286,28 @@ const responsiveProperties = defineProperties({
 	defaultCondition: 'mobile',
 	responsiveArray: ['mobile', 'tablet', 'desktop', 'largeDesktop'],
 	properties: {
-		display: [
-			'none',
-			'block',
-			'contents',
-			'flex',
-			'grid',
-			'inline',
-			'inline-block',
-			'inline-flex',
-		],
+		display: {
+			none: 'none',
+			block: 'block',
+			contents: 'contents',
+			flex: 'flex',
+			grid: 'grid',
+			inline: 'inline',
+			inlineBlock: 'inline-block',
+			'inline-block': 'inline-block',
+			inlineFlex: 'inline-flex',
+			'inline-flex': 'inline-flex',
+		},
 		overflow: ['auto', 'hidden', 'visible'],
 		overflowX: ['auto', 'scroll', 'hidden'],
 		overflowY: ['auto', 'scroll', 'hidden'],
 		position: ['static', 'relative', 'absolute', 'fixed', 'sticky'],
-		textAlign: ['left', 'center', 'right'],
+		textAlign: {
+			left: 'left',
+			center: 'center',
+			centre: 'center',
+			right: 'right',
+		},
 		// Borders
 		borderRadius: tokens.border.radius,
 		borderLeftWidth: tokens.border.width,
@@ -284,38 +341,26 @@ const responsiveProperties = defineProperties({
 		columnGap: space,
 		rowGap: space,
 		// Alignment
-		alignItems: ['flex-start', 'center', 'flex-end', 'baseline', 'stretch'],
-		justifyContent: [
-			'flex-start',
-			'center',
-			'flex-end',
-			'space-around',
-			'space-between',
-			'space-evenly',
-			'stretch',
-		],
-		alignContent: [
-			'flex-start',
-			'center',
-			'flex-end',
-			'space-around',
-			'space-between',
-			'space-evenly',
-			'stretch',
-		],
-		alignSelf: ['flex-start', 'center', 'flex-end', 'stretch'],
-		justifySelf: ['flex-start', 'center', 'flex-end'],
+		alignContent: flexAlignmentsWithSpace,
+		alignItems: {
+			...flexAlignments,
+			baseline: 'baseline',
+		},
+		alignSelf: flexAlignments,
+		justifyContent: {
+			...flexAlignmentsWithSpace,
+		},
 		// Flexbox
 		flexDirection: ['row', 'column', 'row-reverse', 'column-reverse'],
-		flexGrow: ['0', '1'],
-		flexShrink: ['0', '1'],
+		flexGrow: [0, '0', '1'],
+		flexShrink: [0, '0', '1'],
 		flexWrap: ['nowrap', 'wrap', 'wrap-reverse'],
-		order: ['0', '1', '2', '3', '4'],
+		order: [0, '0', '1', '2', '3', '4'],
 		// Grid
 		gridAutoColumns: ['auto', '1fr', 'min-content', 'max-content'],
 		gridAutoRows: ['auto', '1fr'],
 		gridAutoFlow: ['row', 'column', 'row dense', 'column dense'],
-		gridColumns: ['auto'],
+		gridColumns: ['1', 'auto'],
 		// Padding
 		paddingBottom: tokens.space,
 		paddingLeft: tokens.space,
@@ -334,6 +379,12 @@ const responsiveProperties = defineProperties({
 			'borderRightWidth',
 			'borderTopWidth',
 		],
+		borderWidthX: ['borderLeftWidth', 'borderRightWidth'],
+		borderWidthY: ['borderBottomWidth', 'borderTopWidth'],
+		borderWidthBottom: ['borderBottomWidth'],
+		borderWidthLeft: ['borderLeftWidth'],
+		borderWidthRight: ['borderRightWidth'],
+		borderWidthTop: ['borderTopWidth'],
 		placeItems: ['justifyContent', 'alignItems'],
 		size: ['width', 'height'],
 		padding: ['paddingBottom', 'paddingLeft', 'paddingRight', 'paddingTop'],
@@ -359,5 +410,17 @@ const responsiveProperties = defineProperties({
 	},
 });
 
-export const sprinklesResponsive = createSprinkles(responsiveProperties);
-export type SprinklesResponsive = Parameters<typeof sprinklesResponsive>[0];
+export const sprinkles = createSprinkles(baseProperties, responsiveProperties);
+export type Sprinkles = Parameters<typeof sprinkles>[0];
+
+// pick out the 'colour' spelling props
+export type SprinklesLegacyColours = Pick<
+	Sprinkles,
+	| 'backgroundColour'
+	| 'borderColour'
+	| 'borderBottomColour'
+	| 'borderLeftColour'
+	| 'borderRightColour'
+	| 'borderTopColour'
+	| 'colour'
+>;

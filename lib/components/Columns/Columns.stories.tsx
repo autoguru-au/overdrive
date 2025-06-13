@@ -105,7 +105,7 @@ export const Standard: Story = {
 const columnProps = {
 	as: 'section',
 	width: ['full', '1/3', '1/5'],
-} satisfies ColumnProps;
+} satisfies Partial<ColumnProps>;
 
 export const StandardColumn: Story = {
 	args: {},

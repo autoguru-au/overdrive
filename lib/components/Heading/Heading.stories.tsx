@@ -4,7 +4,7 @@ import { expect, within } from 'storybook/test';
 
 import { overdriveTokens } from '../../themes';
 
-import { Heading, type HeadingProps } from '.';
+import { Heading, type HeadingProps } from './Heading';
 
 const headingTypeOptions: Array<ComponentProps<typeof Heading>['as']> = [
 	'h1',
@@ -39,7 +39,9 @@ export const Standard: Story = {
 		children:
 			'This heading has used a few small words, to demo balanced wrapping',
 		id: 'story-heading',
-		testId: 'test-heading',
+		// @ts-expect-error data attribute
+		'data-test-id': 'test-heading',
+		// testId: 'test-heading',
 	},
 	play: async ({ args, canvasElement, step }) => {
 		const canvas = within(canvasElement);
@@ -48,7 +50,10 @@ export const Standard: Story = {
 		await step('<Heading /> renders content and ids', async () => {
 			await expect(heading).toHaveTextContent(args.children as string);
 			await expect(heading).toHaveAttribute('id', args.id);
-			await expect(heading).toHaveAttribute('data-test-id', args.testId);
+			await expect(heading).toHaveAttribute(
+				'data-test-id',
+				'test-heading',
+			);
 		});
 	},
 };

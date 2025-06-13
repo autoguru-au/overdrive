@@ -117,7 +117,7 @@ export const Provider = ({
 				<div
 					className={theme.themeRef}
 					style={styles}
-					data-od-component-provider=""
+					data-od-component="provider"
 				>
 					{children}
 				</div>

@@ -7,7 +7,7 @@ import {
 	useState,
 } from 'react';
 
-import type { SprinklesResponsive } from 'styles/sprinkles.css';
+import type { Sprinkles } from 'styles/sprinkles.css';
 
 export const isBrowser = typeof window !== 'undefined';
 
@@ -177,9 +177,9 @@ export type Alignment = 'left' | 'right' | 'center';
 export const alignmentToFlexAlignment = (align: Alignment) =>
 	({
 		center: 'center',
-		left: 'flex-start',
-		right: 'flex-end',
-	})[align] as SprinklesResponsive['justifyContent'];
+		left: 'start',
+		right: 'end',
+	})[align] as Sprinkles['justifyContent'];
 
 /**
  * A function that returns the first item in the array, if the index exceeds its maximum length

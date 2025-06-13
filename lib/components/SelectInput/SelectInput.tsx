@@ -2,8 +2,8 @@ import { ChevronDownIcon } from '@autoguru/icons';
 import clsx from 'clsx';
 import React from 'react';
 
-import { Box } from '../Box/Box';
-import { Icon } from '../Icon/Icon';
+import { Box } from '../Box';
+import { Icon } from '../Icon';
 import { withEnhancedInput } from '../private/InputBase';
 
 import * as styles from './SelectInput.css';
@@ -35,7 +35,7 @@ export const SelectInput = withEnhancedInput<
 		>
 			<Box
 				as="select"
-				flexGrow="1"
+				flexGrow={1}
 				{...eventHandlers}
 				{...field}
 				{...rest}
@@ -52,7 +52,7 @@ export const SelectInput = withEnhancedInput<
 					alignItems="center"
 					height="full"
 					marginRight={size === 'medium' ? '4' : '2'}
-					flexShrink="0"
+					flexShrink={0}
 					pointerEvents="none"
 					position="absolute"
 				>
@@ -69,3 +69,5 @@ export const SelectInput = withEnhancedInput<
 		withSuffixIcon: false,
 	},
 );
+
+export default SelectInput;

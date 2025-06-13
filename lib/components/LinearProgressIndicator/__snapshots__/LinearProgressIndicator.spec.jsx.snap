@@ -3,16 +3,16 @@
 exports[`<LinearProgressIndicator /> > should match snapshot 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <div
-    class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_position_relative_mobile__onxwju8v sprinkles_overflow_hidden_mobile__onxwju7v sprinkles_width_full_mobile__onxwjuff sprinkles_backgroundColor_gray200__onxwju3i LinearProgressIndicator_root__1gh10pc0"
+    class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_position_relative_mobile__onxwju98 sprinkles_width_full_mobile__onxwjufw sprinkles_backgroundColour_gray200__onxwju47 LinearProgressIndicator_root__1gh10pc0"
   >
     <div
-      class="reset_resetVariants__4z7xt3c reset_resetVariants_as_div__4z7xt3d reset_block__4z7xt33 sprinkles_position_absolute_mobile__onxwju8z sprinkles_width_full_mobile__onxwjuff sprinkles_height_full_mobile__onxwjudv LinearProgressIndicator_linearProgressBar__1gh10pc2"
+      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_height_full_mobile__onxwjuec sprinkles_position_absolute_mobile__onxwju9c sprinkles_width_full_mobile__onxwjufw LinearProgressIndicator_linearProgressBar__1gh10pc2"
     >
       <span
-        class="reset_resetVariants__4z7xt3c reset_resetVariants_as_span__4z7xt3l  sprinkles_position_absolute_mobile__onxwju8z sprinkles_width_full_mobile__onxwjuff sprinkles_height_full_mobile__onxwjudv sprinkles_backgroundColor_green300__onxwju3s LinearProgressIndicator_linearProgressBarInner__1gh10pc4"
+        class="element_resetVariants__1en4q4gd element_resetVariants_as_span__1en4q4gm  sprinkles_height_full_mobile__onxwjuec sprinkles_position_absolute_mobile__onxwju9c sprinkles_width_full_mobile__onxwjufw sprinkles_backgroundColour_green300__onxwju4h LinearProgressIndicator_linearProgressBarInner__1gh10pc4"
       />
     </div>
   </div>

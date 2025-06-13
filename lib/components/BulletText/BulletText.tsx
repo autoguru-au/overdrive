@@ -1,44 +1,38 @@
 import clsx from 'clsx';
-import React, {
-	ComponentProps,
-	type ElementType,
-	isValidElement,
-	type ReactNode,
-} from 'react';
+import React, { ComponentProps, isValidElement, type ReactNode } from 'react';
 
-import { Box } from '../Box/Box';
-import type { UseBoxProps } from '../Box/useBox';
+import { Box, type BoxProps } from '../Box/Box';
 import { Inline } from '../Inline/Inline';
 import { Text } from '../Text/Text';
 
 import * as styles from './BulletText.css';
 
-export interface BulletTextProps {
+export interface BulletTextProps extends BoxProps {
 	bullet?: ReactNode;
 	variant?: 'primary' | 'secondary';
 }
 
-export const BulletText = <E extends ElementType>({
+export const BulletText = ({
 	as,
 	variant = 'primary',
 	children,
 	bullet: Bullet = '•',
-}: UseBoxProps<E> & BulletTextProps) => (
+}: BulletTextProps) => (
 	<Inline
 		as={as satisfies ComponentProps<typeof Inline>['as']}
 		noWrap
 		space="3"
-		alignX="flex-start"
+		alignX="start"
 		alignY="center"
 	>
 		{isValidElement(Bullet) ? (
-			<Box position="relative" flexShrink="0">
+			<Box position="relative" flexShrink={0}>
 				{Bullet}
 			</Box>
 		) : (
 			<Box
 				position="relative"
-				flexShrink="0"
+				flexShrink={0}
 				display="flex"
 				alignItems="center"
 				justifyContent="center"
@@ -60,7 +54,7 @@ export const BulletText = <E extends ElementType>({
 				</Text>
 			</Box>
 		)}
-		<Box flexGrow="1">
+		<Box flexGrow={1}>
 			<Text as="span" size="4" display="block">
 				{children}
 			</Text>

@@ -1,6 +1,6 @@
 {
 	"name": "@autoguru/overdrive",
-	"version": "4.44.1",
+	"version": "4.43.5",
 	"description": "Overdrive is a product component library, and design system for AutoGuru.",
 	"types": "dist/index.d.ts",
 	"main": "dist/index.js",
@@ -20,9 +20,9 @@
 	},
 	"license": "MIT",
 	"sideEffects": [
-		"./lib/**/global.css.*",
+		"./lib/styles/global/*",
 		"./lib/themes/**/*",
-		"./dist/**/global.css.*",
+		"./dist/styles/global/*",
 		"./dist/themes/**/*"
 	],
 	"files": [
@@ -33,7 +33,7 @@
 	},
 	"scripts": {
 		"analyse": "vite build --config vite-analyse.config.ts",
-		"build": "babel lib --out-dir dist --extensions '.ts,.tsx,.css' --ignore 'lib/stories,lib/**/*.spec.tsx,lib/**/*.stories.tsx'",
+		"build": "babel lib --out-dir dist --extensions '.ts,.tsx,.css' --ignore 'lib/stories,lib/test,lib/**/*.spec.tsx,lib/**/*.stories.tsx'",
 		"chromatic": "chromatic test --exit-zero-on-changes --build-script-name storybook:build",
 		"copy:public": "node scripts/copyPublic.js",
 		"check-deps": "npx npm-check-updates@latest --interactive --format group",
@@ -51,7 +51,7 @@
 		"test": "vitest --project=unit-tests",
 		"test:ci": "yarn vitest run --no-cache --coverage --project=unit-tests",
 		"test:a11y": "vitest run --coverage --project=storybook",
-		"typeEmit": "tsc -d --declarationDir dist --emitDeclarationOnly",
+		"typeEmit": "tsc -p tsconfig.dist.json --emitDeclarationOnly",
 		"watch": "tsc --watch",
 		"prepare": "husky"
 	},

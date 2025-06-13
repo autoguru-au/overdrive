@@ -6,20 +6,23 @@ import React, {
 	type ComponentProps,
 	type ComponentType,
 	type FocusEventHandler,
+	type ForwardedRef,
 	forwardRef,
 	type InputHTMLAttributes,
 	type KeyboardEventHandler,
 	type MouseEventHandler,
 	type ReactNode,
 	type Ref,
+	type RefObject,
 	useCallback,
 	useState,
 } from 'react';
 
+import { componentStyles, sprinkles } from '../../../styles';
 import { useInputControlledState } from '../../../utils';
-import { Box, boxStyles } from '../../Box';
-import { Icon } from '../../Icon';
-import { ProgressSpinner } from '../../ProgressSpinner';
+import { Box } from '../../Box/Box';
+import { Icon } from '../../Icon/Icon';
+import { ProgressSpinner } from '../../ProgressSpinner/ProgressSpinner';
 
 import { HintText } from './HintText';
 import * as inputStateStyles from './InputState.css';
@@ -93,7 +96,7 @@ export type WrappedComponentProps<IncomingProps, E extends ElementTypes> = {
 		EnhanceInputPrimitiveProps<E>,
 		'placeholder' | 'hintText' | 'fieldIcon' | 'size'
 	> & {
-		ref: Ref<E>;
+		ref: ForwardedRef<ElementTypes> | RefObject<ElementTypes>;
 	};
 	fieldIcon?: EnhanceInputPrimitiveProps<E>['fieldIcon'];
 	className?: boolean;
@@ -198,7 +201,7 @@ export const withEnhancedInput = <
 			const iconSize = size === 'small' ? 'medium' : size;
 
 			const inputItselfClassName = clsx(
-				boxStyles({
+				componentStyles({
 					as: primitiveType === 'textarea' ? 'textarea' : 'input',
 					backgroundColour,
 					width: 'full',
@@ -223,6 +226,18 @@ export const withEnhancedInput = <
 				},
 			);
 
+			/*
+			Need to disable the type assertion here, as ts has no idea that P and an omitted P without its properties is just P
+			@see https://stackoverflow.com/a/53951825/2609301
+
+			type P = {firstName: string}
+			type A = P
+			type B = Omit<P, 'firstName'>
+
+			A & B != A _or_ P & Omit<P, 'firstName'> != P
+			 */
+
+			// @ts-expect-error props not assignable to type
 			const wrappingComponent: WrappedComponentProps<IncomingProps, E> = {
 				validation: {
 					isTouched,
@@ -273,7 +288,7 @@ export const withEnhancedInput = <
 				setIsHovered(false);
 			}, []);
 
-			const iconStyles = boxStyles({
+			const iconStyles = sprinkles({
 				pointerEvents: 'none',
 				position: 'absolute',
 			});

@@ -1,11 +1,11 @@
 import { ArrowUpIcon } from '@autoguru/icons';
 import clsx from 'clsx';
-import type { AriaAttributes, ComponentProps } from 'react';
+import type { AriaAttributes } from 'react';
 import * as React from 'react';
 import { forwardRef, useCallback } from 'react';
 
 import { Alignment, alignmentToFlexAlignment } from '../../utils';
-import { Box } from '../Box/Box';
+import { Box, type BoxProps } from '../Box/Box';
 import { Icon } from '../Icon/Icon';
 import { Inline } from '../Inline/Inline';
 import { Text } from '../Text/Text';
@@ -18,7 +18,7 @@ type Sort = 'asc' | 'desc' | 'none';
 
 export interface TableHeadCellProps
 	extends Partial<Pick<AriaAttributes, 'aria-label'>>,
-		Pick<ComponentProps<typeof Box>, 'padding'> {
+		Pick<BoxProps, 'padding'> {
 	align?: Alignment;
 
 	sort?: Sort;

@@ -3,8 +3,8 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { ChangeEvent, ComponentProps, FunctionComponent } from 'react';
 
+import { sprinkles } from '../../styles';
 import { Box } from '../Box/Box';
-import { boxStyles } from '../Box/boxStyles';
 import { Icon } from '../Icon/Icon';
 import { ProgressSpinner } from '../ProgressSpinner/ProgressSpinner';
 import { Text } from '../Text/Text';
@@ -79,7 +79,7 @@ export const DatePicker: FunctionComponent<DatePickerProps> = ({
 					<ProgressSpinner
 						className={clsx(
 							styles.spinner,
-							boxStyles({
+							sprinkles({
 								position: 'absolute',
 							}),
 						)}

@@ -3,7 +3,7 @@
 exports[`<Image /> > should match snapshot for eager value of default 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <img
     class=""
@@ -16,7 +16,7 @@ exports[`<Image /> > should match snapshot for eager value of default 1`] = `
 exports[`<Image /> > should match snapshot for eager value of no 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <img
     class=""
@@ -29,7 +29,7 @@ exports[`<Image /> > should match snapshot for eager value of no 1`] = `
 exports[`<Image /> > should match snapshot for eager value of yes 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <img
     class=""
@@ -42,7 +42,7 @@ exports[`<Image /> > should match snapshot for eager value of yes 1`] = `
 exports[`<Image /> > should match snapshot for sizes value of multiple sizes when ImageServerProvider is defined 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <img
     class=""
@@ -56,7 +56,7 @@ exports[`<Image /> > should match snapshot for sizes value of multiple sizes whe
 exports[`<Image /> > should match snapshot for sizes value of no when ImageServerProvider is defined 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <img
     class=""
@@ -73,7 +73,7 @@ exports[`<Image /> > should match snapshot for sizes value of no when ImageServe
 exports[`<Image /> > should match snapshot for sizes value of single size when ImageServerProvider is defined 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <img
     class=""
@@ -87,7 +87,7 @@ exports[`<Image /> > should match snapshot for sizes value of single size when I
 exports[`<Image /> > should match snapshot for unoptimised value of default  when no ImageServerProvider is defined 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <img
     class=""
@@ -100,7 +100,7 @@ exports[`<Image /> > should match snapshot for unoptimised value of default  whe
 exports[`<Image /> > should match snapshot for unoptimised value of default when ImageServerProvider is defined 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <img
     class=""
@@ -114,7 +114,7 @@ exports[`<Image /> > should match snapshot for unoptimised value of default when
 exports[`<Image /> > should match snapshot for unoptimised value of no  when no ImageServerProvider is defined 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <img
     class=""
@@ -127,7 +127,7 @@ exports[`<Image /> > should match snapshot for unoptimised value of no  when no 
 exports[`<Image /> > should match snapshot for unoptimised value of no when ImageServerProvider is defined 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <img
     class=""
@@ -144,7 +144,7 @@ exports[`<Image /> > should match snapshot for unoptimised value of no when Imag
 exports[`<Image /> > should match snapshot for unoptimised value of yes  when no ImageServerProvider is defined 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <img
     class=""
@@ -157,7 +157,7 @@ exports[`<Image /> > should match snapshot for unoptimised value of yes  when no
 exports[`<Image /> > should match snapshot for unoptimised value of yes when ImageServerProvider is defined 1`] = `
 <div
   class="theme_OD_Base__j49br80"
-  data-od-component-provider=""
+  data-od-component="provider"
 >
   <img
     class=""

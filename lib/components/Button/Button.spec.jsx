@@ -6,6 +6,7 @@ import { Icon } from '../Icon';
 
 import { Button } from './Button';
 import * as styles from './Button.css';
+import * as boxStyles from '../Box/useBoxStyles.css';
 
 describe('<Button />', () => {
 	it('should not throw', () =>
@@ -31,17 +32,14 @@ describe('<Button />', () => {
 	describe('when custom component', () => {
 		it('should use html anchor element if href value exists', () => {
 			expect(
-				render(<Button as={<a href="abc" />} />).container.firstChild,
+				render(<Button is={<a href="abc" />} />).container.firstChild,
 			).toMatchSnapshot();
 		});
 
 		it('should render passed in component', () => {
 			expect(
-				render(
-					<Button as="a" href="/abcd">
-						Link button
-					</Button>,
-				).container.firstChild.firstChild,
+				render(<Button is={<a href="/abcd" />}>Link button</Button>)
+					.container.firstChild.firstChild,
 			).toHaveAttribute('href', '/abcd');
 		});
 	});

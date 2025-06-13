@@ -1,15 +1,20 @@
 import clsx from 'clsx';
 import type { ElementType } from 'react';
 
-import { resetStyles } from '../../styles/resetStyles';
+import { borderReset } from '../../../styles/element.css';
+import { resetStyles } from '../../../styles/elementStyles';
 import {
 	sprinkles,
-	sprinklesLegacyColours,
-	sprinklesResponsive,
-} from '../../styles/sprinkles.css';
-import { filterPropsWithStyles } from '../../utils/sprinkles';
+	type Sprinkles,
+	type SprinklesLegacyColours,
+} from '../../../styles/sprinkles.css';
+import { filterPropsWithStyles } from '../../../utils/sprinkles';
+import type { CommonBoxProps } from '../Box';
 
-import type { AsPolyProp, CommonBoxProps, StyleProps } from './';
+import type { AsPolyProp } from './useBox';
+
+/** All vanilla-extract sprinkles props */
+export type StyleProps = Sprinkles & SprinklesLegacyColours;
 
 export type BoxStylesProps<E extends ElementType = 'div'> = AsPolyProp<E> &
 	Pick<CommonBoxProps, 'className'> &
@@ -19,6 +24,16 @@ export type BoxStylesReturn<P extends object> = [string, P];
 
 const borderProperties = ['Color', 'Colour', 'Width'];
 const borderPostfixes = ['', 'Bottom', 'Left', 'Right', 'Top'];
+const borderPropertyNames = new Set(
+	borderProperties.flatMap((property) =>
+		borderPostfixes.flatMap((postfix) => [
+			`border${postfix}${property}`,
+			`border${property}${postfix}`,
+		]),
+	),
+);
+export const calcHasBorder = (keys: string[]) =>
+	[...borderPropertyNames].some((borderProp) => borderProp in keys);
 
 /**
  * Processes component props, or used directly with style prop values to
@@ -35,28 +50,16 @@ export const boxStylesWithFilteredProps = <E extends ElementType = 'div'>({
 	className,
 	...props
 }: BoxStylesProps<E>) => {
-	const {
-		sprinklesProps,
-		sprinklesResponsiveProps,
-		sprinklesLegacyColourProps,
-		baseProps,
-	} = filterPropsWithStyles(props);
-
-	// a little bit of logic specific to border properties for backwards compatability
-	for (const postfix of borderPostfixes) {
-		for (const property of borderProperties) {
-			if (props[`border${postfix}${property}`]) {
-				sprinklesProps[`border${postfix}Style`] = 'solid';
-			}
-		}
-	}
+	const { sprinklesProps, baseProps } = filterPropsWithStyles(props);
+	const hasBorder = calcHasBorder(Object.keys(props));
 
 	return {
 		className: clsx(
 			resetStyles({ as: as ? `${as}` : as }),
+			// When any border color or width is specified, automatically set borderWidth to 'none'
+			// and borderStyle to 'solid'. This handles properties with old naming and css-aligned
+			hasBorder && borderReset,
 			sprinkles(sprinklesProps),
-			sprinklesResponsive(sprinklesResponsiveProps),
-			sprinklesLegacyColours(sprinklesLegacyColourProps),
 			className,
 		),
 		baseProps,

@@ -1,57 +1,76 @@
 import { IconType } from '@autoguru/icons';
-import React, { cloneElement, type ElementType } from 'react';
+import clsx from 'clsx';
+import * as React from 'react';
+import {
+	AnchorHTMLAttributes,
+	cloneElement,
+	createElement,
+	ElementType,
+	FunctionComponent,
+	isValidElement,
+	ReactElement,
+	ReactNode,
+} from 'react';
 
-import { Box } from '../Box/Box';
-import { useBox, UseBoxProps, type BoxLikeProps } from '../Box/useBox';
+import { componentStyles } from '../../styles';
 import { Icon } from '../Icon/Icon';
+import { Inline } from '../Inline/Inline';
+import { Text } from '../Text/Text';
+import { useTextStyles } from '../Text/useTextStyles';
 
-const ANCHOR_TAG = 'a';
+import * as styles from './Anchor.css';
 
-interface CustomProps {
+export interface Props
+	extends Omit<
+		AnchorHTMLAttributes<HTMLAnchorElement>,
+		'children' | 'style' | 'is'
+	> {
+	className?: string;
+	is?: ElementType | ReactElement;
+	disabled?: boolean;
+	children?: ReactNode;
+
 	icon?: IconType;
 }
 
-export type AnchorProps<E extends ElementType = typeof ANCHOR_TAG> =
-	BoxLikeProps<E, CustomProps>;
+export const Anchor: FunctionComponent<Props> = ({
+	className = '',
 
-/**
- * Use the Anchor component to render a simple link style with an optional icon.
- */
-export const Anchor = <E extends ElementType = typeof ANCHOR_TAG>({
-	as = ANCHOR_TAG as E,
+	is: Component = 'a',
+	disabled = false,
+
 	children,
+
 	icon,
-	...props
-}: AnchorProps<E>) => {
-	const { Component, componentProps, reactElement } = useBox<E>({
-		...(props as UseBoxProps<E>),
-		alignItems: 'center',
-		as,
-		odComponent: 'anchor',
+	...rest
+}) => {
+	const textStyles = useTextStyles({
+		colour: 'link',
 	});
 
-	const Content = () => (
-		<Box
-			as="span"
-			alignItems="center"
-			colour="link"
-			display="inline-flex"
-			fontSize="4"
-			fontWeight="bold"
-			gap="2"
-		>
-			{icon && <Icon icon={icon} size="small" />}
-			<span>{children}</span>
-		</Box>
+	const props = {
+		className: clsx(
+			componentStyles({ as: Component, display: 'inline' }),
+			styles.root,
+			textStyles,
+			className,
+		),
+		disabled,
+		...rest,
+	};
+
+	const childs = (
+		<Inline space="2">
+			{icon && <Icon icon={icon} size="small" className={textStyles} />}
+			<Text fontWeight="bold" size="4" colour="link">
+				{children}
+			</Text>
+		</Inline>
 	);
 
-	if (reactElement) {
-		return cloneElement(reactElement, componentProps, <Content />);
-	}
-
-	return (
-		<Component {...componentProps}>
-			<Content />
-		</Component>
-	);
+	return isValidElement(Component)
+		? cloneElement(Component, props, childs)
+		: createElement(Component, props, childs);
 };
+
+export default Anchor;

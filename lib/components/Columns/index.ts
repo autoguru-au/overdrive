@@ -1,2 +1,2 @@
-export * from './Columns';
-export * from './Column';
+export { Columns } from './Columns';
+export { Column } from './Column';
