@@ -1,5 +1,34 @@
 # @autoguru/overdrive
 
+## 4.43.6
+
+### Patch Changes
+
+- 4c44e06: Technical uplift changes to the Box, Text and related components were
+  manually reverted to try and resolve instability with some instances of forms
+  in consumption.
+
+    - Classic Box has been simplified with style helper functions and exports
+      `BoxProps`.
+    - All `forwardRef`s reinstated in components
+    - Style helper functions available `elementResetStyles` and
+      `componentStyles`, where html tag css resets and vanilla-extract sprinkles
+      are combined to replace `useBoxStyles` (now deprecated)
+    - New Box and useBox remains available in `components/Box/newBox/` during
+      mitigation but should be considered unstable
+
+    #### Style props
+
+    - New colour tokens are mapped to props with `color` spelling, existing
+      colours/intentional colours are still available with the `colour` spelling
+      in props for backwards compatibility
+    - Values are in transition to camel case (e.g. `space-between` instead of
+      `spaceBetween`) to align with CSS
+    - Border property props where the side Top/Bottom/Left/Right was placed last
+      are now in transistion to be aligned with the CSS naming order (e.g.
+      `borderLeftColor` instead of `borderColorLeft`)
+    - Abbrevitaion aliases are available for margin and padding i.e. `px`, `mt`
+
 ## ~~4.44.0~~
 
 _Do not use_. This release was based on **4.43.1-5** and has been deprecated.
@@ -34,7 +63,6 @@ _Version deprecated_
 
 _Version deprecated_
 
-
 ## ~~4.43.2~~
 
 _Version deprecated_
@@ -62,25 +90,23 @@ _Version deprecated_
 - 42695b0: **See 4.43.6 release notes**. Component changes were manually
   reverted due to consuming compatibility issues
 
-  ##### CSS layers introduced
+    ##### CSS layers introduced
 
-  - `@reset` contains base resets
-  - `@utility` contains the spinkles utility classes
+    - `@reset` contains base resets
+    - `@utility` contains the spinkles utility classes
 
-  #### Box
+    #### Box
 
-  Newly implemented with more powerful polymorphic type based on the
-  `as` prop, and exposes `useBox` for core logic.
+    Newly implemented with more powerful polymorphic type based on the `as`
+    prop, and exposes `useBox` for core logic.
 
-  - useBox returns the JSX
-    component tag as well as the processed and filtered props. It also handles
-    logic for determing a semantic child tag rather than repeated within various
-    components
-  - props `odComponent` and `testId` sets consistent data attribute for use at
-    component root are exported as `CommonBoxProps`
-  - useBoxStyles been replaced with `boxStyles` which handles the vanilla-extract
-    sprinkles
-
+    - useBox returns the JSX component tag as well as the processed and filtered
+      props. It also handles logic for determing a semantic child tag rather
+      than repeated within various components
+    - props `odComponent` and `testId` sets consistent data attribute for use at
+      component root are exported as `CommonBoxProps`
+    - useBoxStyles been replaced with `boxStyles` which handles the
+      vanilla-extract sprinkles
 
 ## 4.42.0
 
@@ -89,13 +115,13 @@ _Version deprecated_
 - d32fe98: Expands theme contract to include new 'color' tokens (work in
   progress), without removing existing. Both are documented in Storybook.
 
-  **Breaking change** type of the theme tokens object `Tokens` has been
-  renamed to `ThemeTokens` for clarity.
+    **Breaking change** type of the theme tokens object `Tokens` has been
+    renamed to `ThemeTokens` for clarity.
 
-  Replaces local (namespaced) css variables with un-namespaced vars in all
-  themes. Theme tokens are now assigned to a css layer. And vanilla-extract
-  tokens can be imported as `overdriveTokens` but using `themeContractVars`
-  will continue to work.
+    Replaces local (namespaced) css variables with un-namespaced vars in all
+    themes. Theme tokens are now assigned to a css layer. And vanilla-extract
+    tokens can be imported as `overdriveTokens` but using `themeContractVars`
+    will continue to work.
 
 ## 4.41.0
 
@@ -107,34 +133,34 @@ _Version deprecated_
   `<ThemeOverrideProvider>` values have been incorporated. Applications do not
   need to be wrapped separate providers.
 
-  New peer dependency
+    New peer dependency
 
-  - Added dependency `es-toolkit`
+    - Added dependency `es-toolkit`
 
-  Provider Consolidation
+    Provider Consolidation
 
-  - `ThemeProvider` and `ThemeOverrideProvider` have been replaced by a
-    fallback provider to show deprecation warnings
-  - All theming functionality is now handled through `OverdriveProvider`
-    including a combined component API
+    - `ThemeProvider` and `ThemeOverrideProvider` have been replaced by a
+      fallback provider to show deprecation warnings
+    - All theming functionality is now handled through `OverdriveProvider`
+      including a combined component API
 
-  OverdriveProvider updates
+    OverdriveProvider updates
 
-  - `theme` prop is now optional
-  - Colour overrides are passed as an object `colorOverrides` instead of
-    individual props as in previous provider
-  - Some of the on-page behaviour of `ThemeOverrideDebugger` has been disabled
+    - `theme` prop is now optional
+    - Colour overrides are passed as an object `colorOverrides` instead of
+      individual props as in previous provider
+    - Some of the on-page behaviour of `ThemeOverrideDebugger` has been disabled
 
-  Data attribute and CSS Variables
+    Data attribute and CSS Variables
 
-  - Theme application is now available using data attribute
-    `data-od-theme=base`
-  - OD tokens are exposed globally in CSS variables
+    - Theme application is now available using data attribute
+      `data-od-theme=base`
+    - OD tokens are exposed globally in CSS variables
 
-  Reset updates
+    Reset updates
 
-  - Added `container` styles into resets
-  - Updated CSS reset
+    - Added `container` styles into resets
+    - Updated CSS reset
 
 ### Patch Changes
 
@@ -166,18 +192,18 @@ _Version deprecated_
   Accessibility issues fixed relating to labelling on Button and aria attributes
   on Checkbox, Radio and Tabs.
 
-  Border radius tokens have been updated to named-sizes. The new values are
-  `sm` `md` `lg` `xl` `2xl`. Radius `1` remains for backwards compatbility.
+    Border radius tokens have been updated to named-sizes. The new values are
+    `sm` `md` `lg` `xl` `2xl`. Radius `1` remains for backwards compatbility.
 
-  Input fields: TextInput, NumberInput, DateInput, Select, and AutoSuggest now
-  have `large` size via the shared InputBase.
+    Input fields: TextInput, NumberInput, DateInput, Select, and AutoSuggest now
+    have `large` size via the shared InputBase.
 
-  Tabs: A new `appearance` prop has been added to configure a Pill
-  look-and-feel.
+    Tabs: A new `appearance` prop has been added to configure a Pill
+    look-and-feel.
 
-  Button: Addition of size `xsmall`.
+    Button: Addition of size `xsmall`.
 
-  Checkbox: Added support for an indeterminate state.
+    Checkbox: Added support for an indeterminate state.
 
 ## 4.39.2
 
@@ -201,8 +227,8 @@ _Version deprecated_
 
 - 17db201: The Badge component displays bolder text at the `small` size.
 
-  Intent foreground colour for success intent has been changed for consistency
-  and to improve readability.
+    Intent foreground colour for success intent has been changed for consistency
+    and to improve readability.
 
 ## 4.38.0
 
@@ -1814,7 +1840,7 @@ _Version deprecated_
 
     ```jsx
     <Text is="span" display="inlineBlock">
-      k
+    	k
     </Text>
     ```
 
@@ -1856,7 +1882,7 @@ _Version deprecated_
 
     ```jsx
     <Box display="flex" width="full" justifyContent="center">
-      >
+    	>
     </Box>
     ```
 
@@ -2140,7 +2166,7 @@ _Version deprecated_
 
         ```jsx
         <Modal isOpen={true} onRequestClose={function () {}}>
-          >
+        	>
         </Modal>
         ```
 
@@ -2221,7 +2247,7 @@ _Version deprecated_
 
     ```jsx
     <Section width="medium" paddingX={['3', , 'none']}>
-      >
+    	>
     </Section>
     ```
 
