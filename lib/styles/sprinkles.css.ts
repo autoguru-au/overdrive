@@ -31,13 +31,6 @@ const flexAlignmentsWithSpace = {
 	'space-evenly': 'space-evenly',
 };
 
-const fontSizes = mapValues(tokens.typography.size, (size) => size.fontSize);
-
-const lineHeights = mapValues(
-	tokens.typography.size,
-	(size) => size.lineHeight,
-);
-
 const intentForegroundColours = mapValues(
 	tokens.colours.intent,
 	({ foreground }) => foreground,
@@ -114,7 +107,6 @@ const mappedColours = mapValues(colours, (color) => ({ color }));
 // (Used for Storybook controls, etc.)
 export const valueArrays = {
 	borderColors: Object.keys(borderColors),
-	fontSizes: Object.keys(fontSizes),
 	gapSizesWithVar: Object.keys(gapSizesWithVar),
 	intentBackgroundColoursStandard: Object.keys(
 		intentBackgroundColoursStandard,
@@ -123,7 +115,6 @@ export const valueArrays = {
 	intentForegroundColours: Object.keys(
 		intentForegroundColours,
 	) as SprinklesLegacyColours['colour'][],
-	lineHeights: Object.keys(lineHeights),
 };
 
 // --- BASE SPRINKLES (NON-RESPONSIVE) ---
@@ -153,10 +144,15 @@ const baseProperties = defineProperties({
 		backgroundColour: mappedBackgroundColours,
 		opacity: [0, '1', '0'],
 		// Typography
-		fontSize: fontSizes,
-		lineHeight: lineHeights,
+		lineHeight: mapValues(
+			tokens.typography.size,
+			(size) => size.lineHeight,
+		),
+		fontSize: mapValues(tokens.typography.size, (size) => size.fontSize),
 		fontWeight: tokens.typography.fontWeight,
+		textTransform: ['capitalize', 'lowercase', 'uppercase'],
 		textWrap: ['balance', 'pretty', 'stable', 'nowrap'],
+		wordBreak: ['break-all', 'break-word', 'keep-all'],
 		// Shadows
 		boxShadow: tokens.elevation,
 		// Misc
@@ -200,26 +196,6 @@ const baseProperties = defineProperties({
 		borderStyleTop: ['borderTopStyle'],
 	},
 });
-
-// --- LEGACY TEXT SPRINKLES ---
-const legacyTextProperties = defineProperties({
-	'@layer': cssLayerUtil,
-	properties: {
-		color: {
-			...tokens.typography.colour,
-			unset: 'unset',
-		},
-	},
-	shorthands: {
-		colour: ['color'],
-	},
-});
-
-export const sprinklesLegacyText = createSprinkles(legacyTextProperties);
-export type SprinklesLegacyText = Omit<
-	Parameters<typeof sprinklesLegacyText>[0],
-	'color'
->;
 
 // --- RESPONSIVE SPRINKLES ---
 export const responsiveConditions = {
