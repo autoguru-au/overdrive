@@ -13,9 +13,9 @@ import {
 } from 'react';
 
 import { componentStyles } from '../../styles';
+import { typographyStyles } from '../../styles/typography.css';
 import { Inline } from '../Inline/Inline';
 import { Text } from '../Text/Text';
-import { useTextStyles } from '../Text/useTextStyles';
 
 import * as styles from './Tab.css';
 import { TabListContext } from './TabList';
@@ -62,11 +62,11 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 					justifyContent: 'center',
 					backgroundColour: 'transparent',
 				}),
-				useTextStyles({
+				typographyStyles({
+					colour: 'light',
 					noWrap: true,
 					size: '3',
-					fontWeight: 'bold',
-					colour: 'light',
+					weight: 'bold',
 				}),
 				styles.styledTab({
 					appearance,

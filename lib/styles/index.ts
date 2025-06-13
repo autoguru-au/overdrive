@@ -7,6 +7,7 @@ export {
 } from './elementReset';
 export {
 	sprinkles,
-	type Sprinkles,
-	type SprinklesLegacyColours,
+	type Sprinkles as StyleProps,
+	type SprinklesLegacyColours as LegacyColourStyleProps,
 } from './sprinkles.css';
+export { typographyStyles, type TypographyStyleProps } from './typography.css';

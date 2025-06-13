@@ -19,13 +19,13 @@ import {
 } from 'react';
 
 import { componentStyles } from '../../styles';
+import { typographyStyles } from '../../styles/typography.css';
 import type { TextFontWeight, TextSizeScale } from '../../themes';
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box/Box';
 import { Icon } from '../Icon/Icon';
 import { ProgressSpinner } from '../ProgressSpinner/ProgressSpinner';
-import { useTextStyles } from '../Text/useTextStyles';
 
 import * as styles from './Button.css';
 import type { ButtonSize, StyledButtonProps } from './Button.css';
@@ -168,9 +168,9 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 					width: isFullWidth ? 'full' : undefined,
 					pointerEvents: functionallyDisabled ? 'none' : undefined,
 				}),
-				useTextStyles({
+				typographyStyles({
 					colour: 'white',
-					fontWeight: fontWeight[size],
+					weight: fontWeight[size],
 					size: fontSize[size],
 				}),
 				styles.button({

@@ -102,7 +102,7 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 		);
 
 		const baseStyle = textStyles({
-			as: `${is}`,
+			as: is,
 			colour,
 			size,
 		});
