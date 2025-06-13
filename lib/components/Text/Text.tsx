@@ -28,8 +28,8 @@ export const Text = React.forwardRef<HTMLElement, WithTestId<TextProps>>(
 
 			//style props
 			align = 'left',
-			color,
-			colour,
+			color, // modern semantic colour tokens
+			colour, // legacy colours
 			display,
 			transform,
 			breakWord,
@@ -45,13 +45,13 @@ export const Text = React.forwardRef<HTMLElement, WithTestId<TextProps>>(
 		<Box
 			as={as}
 			ref={ref}
-			color={color}
 			display={display}
 			textAlign={align}
 			className={[
 				typographyStyles({
 					as,
 					breakWord,
+					color,
 					colour: colour ?? (strong ? 'dark' : undefined),
 					noWrap,
 					size,

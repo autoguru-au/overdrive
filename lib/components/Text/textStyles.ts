@@ -20,8 +20,8 @@ export const textStyles = ({
 
 	align: textAlign,
 	breakWord,
-	color,
-	colour = color ? undefined : 'neutral',
+	color, // modern semantic colour tokens
+	colour = color ? undefined : 'neutral', // legacy colours
 	noWrap,
 	size,
 	strong,
@@ -32,7 +32,6 @@ export const textStyles = ({
 }: TextStyleProps) =>
 	clsx(
 		sprinkles({
-			color,
 			textAlign,
 			textTransform,
 			textWrap,
@@ -41,6 +40,7 @@ export const textStyles = ({
 		typographyStyles({
 			as,
 			breakWord,
+			color,
 			colour,
 			noWrap,
 			size,

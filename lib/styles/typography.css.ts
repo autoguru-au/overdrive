@@ -44,6 +44,9 @@ export const typographyStyles = recipe({
 			span: elementReset.span,
 		},
 		breakWord: { true: {} },
+		color: mapValues(tokens.color.content, (_, color) =>
+			sprinkles({ color }),
+		),
 		// map legacy typography colours to this prop spelling
 		colour: {
 			...mapValues(tokens.typography.colour, (_, color) =>
@@ -75,6 +78,13 @@ export const typographyStyles = recipe({
 		weight: 'normal',
 	},
 	compoundVariants: [
+		{
+			variants: {
+				color: undefined,
+				colour: undefined,
+			},
+			style: sprinklesLegacyText({ color: 'neutral' }),
+		},
 		{
 			variants: {
 				breakWord: true,

@@ -63,8 +63,8 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 			backgroundColor,
 			backgroundColour,
 			boxShadow,
-			color,
-			colour,
+			color, // modern semantic colour tokens
+			colour, // legacy colours
 			fg,
 			opacity,
 
