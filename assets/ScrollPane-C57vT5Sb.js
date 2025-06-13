@@ -1,1 +1,0 @@
-import{r as l,e as s,B as t,c as p}from"./iframe-B8iXgyt9.js";var d="gklwwp0",n="gklwwp1";const e=l.forwardRef(({className:r="",rounded:o=!1,...a},c)=>s.createElement(t,{ref:c,overflow:"auto",className:p(r,d,{[n]:o}),...a}));try{e.displayName="ScrollPane",e.__docgenInfo={description:"",displayName:"ScrollPane",props:{}}}catch{}export{e as S};

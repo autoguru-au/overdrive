@@ -11576,7 +11576,8 @@ ow, 0 1px 2px 0 rgba(0, 0, 0, 0.05), 0px -5px 20px 10px ${r.background.app})`,
       running: _,
       crashed: k,
       failed: n > 0,
-      updated: v
+      updated: v,
+      "data-updated": v
     },
     /* @__PURE__ */ s.createElement($I, null, T && /* @__PURE__ */ s.createElement(
       UI,
