@@ -19,13 +19,13 @@ interface DropDownOptionProps
 }
 
 export const DropDownOption: FunctionComponent<DropDownOptionProps> = ({
+	as = 'button',
 	label,
 	icon,
 	className,
 	disabled = false,
 	display = 'flex',
 	iconColour = 'dark',
-	is = 'button',
 	alignItems = 'center',
 	width = 'full',
 	...boxProps
@@ -33,7 +33,7 @@ export const DropDownOption: FunctionComponent<DropDownOptionProps> = ({
 	const colourStyles = textStyles({ colour: iconColour });
 	return (
 		<Box
-			as={is}
+			as={as}
 			className={clsx(styles.root, className, {
 				[styles.disabled]: disabled,
 			})}

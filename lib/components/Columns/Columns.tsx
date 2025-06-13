@@ -50,8 +50,7 @@ export const Columns = forwardRef<HTMLElement, Props>(
 			noWrap,
 			wrappingDirection = 'default',
 			align = 'stretch',
-			is,
-			as = is,
+			as,
 			...boxProps
 		},
 		ref,

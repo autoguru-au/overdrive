@@ -7,8 +7,7 @@ import { Box, type BoxProps } from '../Box/Box';
 import { Divider } from './Divider';
 import * as styles from './Stack.css';
 
-export interface Props
-	extends Pick<BoxProps, 'as' | 'is' | 'width' | 'alignItems'> {
+export interface Props extends Pick<BoxProps, 'as' | 'width' | 'alignItems'> {
 	space?: keyof typeof styles.child.spaces;
 	className?: string;
 	dividers?: boolean;
@@ -22,10 +21,9 @@ const supportedListTypes: ReadonlyArray<keyof React.JSX.IntrinsicElements> = [
 ] as const;
 
 export const Stack: FunctionComponent<Props> = ({
+	as = 'div',
 	space = '2',
 	children,
-	is = 'div',
-	as = is,
 	alignItems,
 	width,
 	dividers = false,

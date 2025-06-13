@@ -87,7 +87,7 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 				{typeof indication === 'number' && (
 					<Text
 						strong
-						is="span"
+						as="span"
 						size="2"
 						align="center"
 						display="block"

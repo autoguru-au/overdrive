@@ -18,11 +18,11 @@ export const LoadingBox: FunctionComponent<LoadingBoxProps> = ({
 	blinking = true,
 	backgroundColour = 'gray200',
 	display = 'block',
-	is = 'span',
+	as = 'span',
 	...boxStyles
 }) => (
 	<Box
-		as={is}
+		as={as}
 		display={display}
 		width={randomWidth ? undefined : 'full'}
 		backgroundColour={backgroundColour}

@@ -22,7 +22,7 @@ export const Column = forwardRef<HTMLElement, ColumnProps>(
 			children,
 			width,
 			alignSelf,
-			is,
+			as,
 			noShrink = false,
 			grow = false,
 			order,
@@ -52,7 +52,7 @@ export const Column = forwardRef<HTMLElement, ColumnProps>(
 			>
 				<Box
 					ref={ref}
-					as={is}
+					as={as}
 					display="flex"
 					width="full"
 					height="full"

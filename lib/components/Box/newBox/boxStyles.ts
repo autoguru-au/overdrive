@@ -2,14 +2,16 @@ import clsx from 'clsx';
 import type { ElementType } from 'react';
 
 import { borderReset } from '../../../styles/element.css';
-import { resetStyles } from '../../../styles/elementReset';
+import {
+	resetStyles,
+	type ComponentStylesProps,
+} from '../../../styles/elementReset';
 import {
 	sprinkles,
 	type Sprinkles,
 	type SprinklesLegacyColours,
 } from '../../../styles/sprinkles.css';
 import { filterPropsWithStyles } from '../../../utils/sprinkles';
-import type { CommonBoxProps } from '../Box';
 
 import type { AsPolyProp } from './useBox';
 
@@ -17,7 +19,7 @@ import type { AsPolyProp } from './useBox';
 export type StyleProps = Sprinkles & SprinklesLegacyColours;
 
 export type BoxStylesProps<E extends ElementType = 'div'> = AsPolyProp<E> &
-	Pick<CommonBoxProps, 'className'> &
+	Pick<ComponentStylesProps, 'className'> &
 	StyleProps;
 
 export type BoxStylesReturn<P extends object> = [string, P];
