@@ -4,7 +4,7 @@ export {
 	componentStyles,
 	elementResetStyles,
 	resetStyles,
-} from './elementStyles';
+} from './elementReset';
 export {
 	sprinkles,
 	type Sprinkles,

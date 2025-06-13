@@ -1,3 +1,3 @@
 export { Box, type BoxProps } from './Box';
-export { useBoxStyles } from './useBoxStyles';
-export type { BoxStyleProps } from './useBoxStyles';
+export { componentStyles as useBoxStyles } from '../../styles/elementReset';
+export type { ComponentStylesProps as BoxStyleProps } from '../../styles/elementReset';

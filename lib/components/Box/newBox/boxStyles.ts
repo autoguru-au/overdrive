@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import type { ElementType } from 'react';
 
 import { borderReset } from '../../../styles/element.css';
-import { resetStyles } from '../../../styles/elementStyles';
+import { resetStyles } from '../../../styles/elementReset';
 import {
 	sprinkles,
 	type Sprinkles,
