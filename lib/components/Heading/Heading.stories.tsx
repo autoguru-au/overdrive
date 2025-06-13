@@ -39,9 +39,7 @@ export const Standard: Story = {
 		children:
 			'This heading has used a few small words, to demo balanced wrapping',
 		id: 'story-heading',
-		// @ts-expect-error data attribute
-		'data-test-id': 'test-heading',
-		// testId: 'test-heading',
+		testId: 'test-heading',
 	},
 	play: async ({ args, canvasElement, step }) => {
 		const canvas = within(canvasElement);

@@ -12,11 +12,11 @@ import {
 	ReactNode,
 } from 'react';
 
-import { componentStyles } from '../../styles';
+import { componentStyles } from '../../styles/elementReset';
+import { sprinkles } from '../../styles/sprinkles.css';
 import { Icon } from '../Icon/Icon';
 import { Inline } from '../Inline/Inline';
 import { Text } from '../Text/Text';
-import { useTextStyles } from '../Text/useTextStyles';
 
 import * as styles from './Anchor.css';
 
@@ -44,15 +44,14 @@ export const Anchor: FunctionComponent<Props> = ({
 	icon,
 	...rest
 }) => {
-	const textStyles = useTextStyles({
-		colour: 'link',
-	});
-
 	const props = {
 		className: clsx(
-			componentStyles({ as: Component, display: 'inline' }),
+			componentStyles({
+				as: Component,
+				colour: 'link',
+				display: 'inline',
+			}),
 			styles.root,
-			textStyles,
 			className,
 		),
 		disabled,
@@ -61,8 +60,14 @@ export const Anchor: FunctionComponent<Props> = ({
 
 	const childs = (
 		<Inline space="2">
-			{icon && <Icon icon={icon} size="small" className={textStyles} />}
-			<Text fontWeight="bold" size="4" colour="link">
+			{icon && (
+				<Icon
+					icon={icon}
+					size="small"
+					className={sprinkles({ colour: 'link' })}
+				/>
+			)}
+			<Text weight="bold" size="4" colour="link">
 				{children}
 			</Text>
 		</Inline>

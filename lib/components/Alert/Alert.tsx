@@ -16,7 +16,6 @@ import { Button } from '../Button/Button';
 import { Icon } from '../Icon/Icon';
 import { IntentStripe } from '../IntentStripe/IntentStripe';
 import { Text } from '../Text/Text';
-import { useTextStyles } from '../Text/useTextStyles';
 
 import * as styles from './Alert.css';
 
@@ -47,12 +46,9 @@ export const Alert: FunctionComponent<Props> = ({
 	onRequestClose,
 	dismissible = typeof onRequestClose === 'function',
 }) => {
-	const dismissBtnStyles = useTextStyles({ colour: 'muted' });
-	const intentColourStyles = useTextStyles({ colour: intent });
-
 	return (
 		<Box
-			className={clsx(className, intentColourStyles, {
+			className={clsx(className, sprinkles({ colour: intent }), {
 				[styles.contained]: !inline,
 			})}
 			role="alert"
@@ -80,7 +76,7 @@ export const Alert: FunctionComponent<Props> = ({
 				<Box
 					alignSelf="center"
 					width="auto"
-					className={useTextStyles({ colour: 'dark' })}
+					className={sprinkles({ colour: 'dark' })}
 				>
 					{typeof children === 'string' ? (
 						<Text>{children}</Text>
@@ -99,7 +95,7 @@ export const Alert: FunctionComponent<Props> = ({
 							onClick={onRequestClose}
 						>
 							<Icon
-								className={dismissBtnStyles}
+								className={sprinkles({ colour: 'muted' })}
 								icon={WindowCloseIcon}
 								size="medium"
 							/>
