@@ -24,7 +24,7 @@ export interface IconProps {
 }
 
 export const Icon: FunctionComponent<IconProps> = ({
-	className = '',
+	className,
 	icon,
 	size = 'small',
 	display = 'block',
@@ -47,6 +47,7 @@ export const Icon: FunctionComponent<IconProps> = ({
 			as="span"
 			display={display}
 			className={[resolveResponsiveStyle(size, styles.size), className]}
+			odComponent="icon"
 		>
 			{icon ? iconElement : '⬤'}
 		</Box>

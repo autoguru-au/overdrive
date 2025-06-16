@@ -23,7 +23,10 @@ export const ScrollPane = forwardRef<HTMLDivElement, ScrollPaneProps>(
 			className={clsx(className, styles.root, {
 				[styles.rounded]: rounded,
 			})}
+			odComponent="scroll-pane"
 			{...rest}
 		/>
 	),
 );
+
+ScrollPane.displayName = 'ScrollPane';

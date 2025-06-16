@@ -2,16 +2,14 @@ import { invariant } from '@autoguru/utilities';
 import clsx from 'clsx';
 import React from 'react';
 
-import type { WithTestId } from '../../types';
-import { dataAttrs } from '../../utils/dataAttrs';
-import { Box } from '../Box';
+import { Box, type BoxProps } from '../Box/Box';
 
 import * as styles from './Badge.css';
 import type { StyledBadgeProps } from './Badge.css';
 
 type Colours = Exclude<StyledBadgeProps['colour'], undefined>;
 
-export interface BadgeProps {
+export interface BadgeProps extends Pick<BoxProps, 'testId'> {
 	/** The text content */
 	label: string;
 	/** The color of the badge */
@@ -37,7 +35,7 @@ export const Badge = ({
 	size = 'standard',
 	className,
 	testId,
-}: WithTestId<BadgeProps>) => {
+}: BadgeProps) => {
 	invariant(
 		['string', 'number'].includes(typeof label),
 		'Badge `label` can only contain strings or numbers',
@@ -56,7 +54,8 @@ export const Badge = ({
 				className,
 			])}
 			borderRadius="1"
-			{...dataAttrs({ 'test-id': testId })}
+			odComponent="badge"
+			testId={testId}
 		>
 			{label}
 		</Box>

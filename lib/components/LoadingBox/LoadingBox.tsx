@@ -31,6 +31,7 @@ export const LoadingBox: FunctionComponent<LoadingBoxProps> = ({
 		style={{
 			width: randomWidth ? getRandomIntWidth(60, 40) : undefined,
 		}}
+		odComponent="loading-box"
 	/>
 );
 

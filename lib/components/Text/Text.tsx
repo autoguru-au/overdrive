@@ -2,8 +2,7 @@ import React from 'react';
 
 import { type Sprinkles } from '../../styles/sprinkles.css';
 import { typographyStyles } from '../../styles/typography.css';
-import type { WithTestId } from '../../types';
-import { dataAttrs } from '../../utils/dataAttrs';
+import type { TestId } from '../../types';
 import { Box } from '../Box/Box';
 
 import type { TextStyleProps } from './textStyles';
@@ -13,18 +12,18 @@ type ElementAttributes = React.ComponentPropsWithoutRef<'p'> &
 
 export interface TextProps
 	extends Omit<ElementAttributes, 'color' | 'is'>,
-		TextStyleProps {
+		TextStyleProps,
+		TestId {
 	/** Select CSS display property  */
 	display?: Sprinkles['display'];
 }
 
-export const Text = React.forwardRef<HTMLElement, WithTestId<TextProps>>(
+export const Text = React.forwardRef<HTMLElement, TextProps>(
 	(
 		{
 			as = 'span',
 			children,
 			className,
-			testId,
 
 			//style props
 			align = 'left',
@@ -62,7 +61,6 @@ export const Text = React.forwardRef<HTMLElement, WithTestId<TextProps>>(
 				className,
 			]}
 			{...props}
-			{...dataAttrs({ 'test-id': testId })}
 		>
 			{children}
 		</Box>

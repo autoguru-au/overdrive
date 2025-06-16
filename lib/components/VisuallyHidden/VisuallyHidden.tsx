@@ -12,7 +12,7 @@ type VisuallyHiddenProps = Pick<BoxProps, 'as' | 'children'>;
  * Use the `as` prop to change the rendered html tag.
  */
 export const VisuallyHidden = ({ children, ...props }: VisuallyHiddenProps) => (
-	<Box {...props} className={visuallyHidden}>
+	<Box {...props} className={visuallyHidden} odComponent="visually-hidden">
 		{children}
 	</Box>
 );

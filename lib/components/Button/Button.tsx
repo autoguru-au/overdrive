@@ -21,7 +21,7 @@ import {
 import { componentStyles } from '../../styles';
 import { typographyStyles } from '../../styles/typography.css';
 import type { TextFontWeight, TextSizeScale } from '../../themes';
-import type { WithTestId } from '../../types';
+import type { TestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box/Box';
 import { Icon } from '../Icon/Icon';
@@ -44,7 +44,8 @@ type TextContent = keyof typeof defaultEnglish;
 export interface ButtonProps
 	extends Pick<ButtonPrimitive, 'id' | 'onClick' | 'type' | 'className'>,
 		Pick<AriaAttributes, 'aria-label'>,
-		StyledButtonProps {
+		StyledButtonProps,
+		TestId {
 	children: AllowedChildren | AllowedChildren[];
 	/**
 	 * Disabling the button will prevent it from receiving keyboard focus or click events
@@ -89,7 +90,7 @@ const fontWeight: Record<ButtonSize, TextFontWeight> = {
 	medium: 'semiBold',
 };
 
-export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 	(
 		{
 			children,

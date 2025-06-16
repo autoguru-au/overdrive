@@ -14,6 +14,8 @@ import {
 
 import { componentStyles } from '../../styles/elementReset';
 import { sprinkles } from '../../styles/sprinkles.css';
+import { dataAttrs } from '../../utils/dataAttrs';
+import { BoxProps } from '../Box/Box';
 import { Icon } from '../Icon/Icon';
 import { Inline } from '../Inline/Inline';
 import { Text } from '../Text/Text';
@@ -22,9 +24,10 @@ import * as styles from './Anchor.css';
 
 export interface Props
 	extends Omit<
-		AnchorHTMLAttributes<HTMLAnchorElement>,
-		'children' | 'style' | 'is'
-	> {
+			AnchorHTMLAttributes<HTMLAnchorElement>,
+			'children' | 'style' | 'is'
+		>,
+		Pick<BoxProps, 'testId'> {
 	className?: string;
 	is?: ElementType | ReactElement;
 	disabled?: boolean;
@@ -38,6 +41,7 @@ export const Anchor: FunctionComponent<Props> = ({
 
 	is: Component = 'a',
 	disabled = false,
+	testId,
 
 	children,
 
@@ -55,6 +59,7 @@ export const Anchor: FunctionComponent<Props> = ({
 			className,
 		),
 		disabled,
+		...dataAttrs({ 'test-id': testId }),
 		...rest,
 	};
 

@@ -17,7 +17,7 @@ import {
 import { useCalendarState, type Selection } from 'react-stately';
 
 import { sprinkles } from '../../styles/sprinkles.css';
-import type { WithTestId } from '../../types';
+import type { TestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Heading } from '../Heading';
 import { Icon } from '../Icon';
@@ -49,7 +49,7 @@ export type DateAndOption = {
 	timeOption: string;
 };
 
-export interface DateTimePickerProps<D extends DateValue> {
+export interface DateTimePickerProps<D extends DateValue> extends TestId {
 	/**
 	 * A title for the date/time selection
 	 */
@@ -119,7 +119,7 @@ export const DateTimePicker = <D extends DateValue>({
 	timeOptions,
 	title,
 	testId,
-}: WithTestId<DateTimePickerProps<D>>) => {
+}: DateTimePickerProps<D>) => {
 	const selectedDate = useRef<DateValue>(null);
 	const selectedTimeOption = useRef<string>(null);
 

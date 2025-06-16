@@ -5,21 +5,16 @@ import {
 	componentStyles,
 	type ComponentStylesProps,
 } from '../../styles/elementReset';
+import { OdComponent, TestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 
 /**
  * Use CommonBoxProps to help consistently define additional utility props of a component
  */
-export interface CommonBoxProps extends PropsWithChildren {
-	/**
-	 * Output a data attribute with a component name in the markup, mainly used for the root element of a component
-	 */
-	odComponent?: string;
-	/**
-	 * Insert a `data-testid` attribute
-	 */
-	testId?: string;
-}
+export interface CommonBoxProps
+	extends OdComponent,
+		PropsWithChildren,
+		TestId {}
 
 export interface BoxProps
 	extends Omit<

@@ -29,5 +29,6 @@ export const DividerLine: FunctionComponent<DividerLineProps> = ({
 		})}
 		marginY={isVertical ? undefined : space}
 		marginX={isVertical ? space : undefined}
+		odComponent="divider-line"
 	/>
 );

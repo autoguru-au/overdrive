@@ -21,5 +21,6 @@ export const IntentStripe: FunctionComponent<IntentStripeProps> = ({
 		position="absolute"
 		height="full"
 		backgroundColour={intent}
+		odComponent="intent-stripe"
 	/>
 );
