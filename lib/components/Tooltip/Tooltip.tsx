@@ -75,10 +75,26 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 		<>
 			{(() => {
 				const childrenArray = Children.toArray(children);
-				
-				// If there's only one child, use the existing logic
+
+				// Check if we have a single child that is a React Fragment
 				if (childrenArray.length === 1) {
 					const singleChild = childrenArray[0] as ReactElement;
+
+					// If the single child is a Fragment, we need to check its children
+					if (singleChild.type === React.Fragment) {
+						// Fragment contains multiple children, so wrap them
+						return (
+							<span
+								ref={triggerRef}
+								onMouseEnter={enterHandler}
+								onMouseLeave={leaveHandler}
+							>
+								{children}
+							</span>
+						);
+					}
+
+					// Single non-fragment child, use the existing logic
 					return cloneElement(singleChild, {
 						// @ts-expect-error ref does not exist on the type
 						ref: triggerRef,
@@ -86,8 +102,8 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 						onMouseLeave: leaveHandler,
 					});
 				}
-				
-				// If there are multiple children, wrap them in a span
+
+				// Multiple children at the top level, wrap them in a span
 				return (
 					<span
 						ref={triggerRef}
