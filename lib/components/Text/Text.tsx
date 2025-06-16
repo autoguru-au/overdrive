@@ -1,81 +1,75 @@
-import React, { cloneElement } from 'react';
+import React from 'react';
 
-import { useBox, UseBoxProps, type BoxLikeProps } from '../Box/useBox';
+import type { WithTestId } from '../../types';
+import { dataAttrs } from '../../utils/dataAttrs';
+import { Box } from '../Box/Box';
+import type { BoxStyleProps } from '../Box/useBoxStyles';
 
-import { textStyles, type TextStylesProps } from './textStyles';
+import { type TextStyleProps, useTextStyles } from './useTextStyles';
 
-// array of allowed HTML elements for Text
-const TEXT_TAGS = ['span', 'p', 'label'] as const;
-export type TextTags = (typeof TEXT_TAGS)[number];
+type Display = Extract<
+	BoxStyleProps['display'],
+	'inline' | 'inlineBlock' | 'inline-block' | 'block'
+>;
+type ElementAttributes = React.ComponentPropsWithoutRef<'p'> &
+	Pick<React.ComponentProps<'label'>, 'htmlFor'>;
 
-interface CustomTextProps extends Omit<TextStylesProps, 'as'> {
+export interface TextProps
+	extends Omit<ElementAttributes, 'color' | 'is'>,
+		TextStyleProps {
 	/** Use bold font weight */
 	strong?: boolean;
+	/** Select CSS display property  */
+	display?: Display;
 }
 
-export type TextProps<E extends TextTags = 'span'> = BoxLikeProps<
-	E,
-	CustomTextProps
->;
-
-/**
- * The main Overdrive component for consistent typography sizing and styling.
- * Supports semantic text styling with size, color, and weight variations.
- *
- * @example
- * <Text>
- *   This is some text
- * </Text>
- *
- * <Text as="p">
- *   This will render as a paragraph
- * </Text>
- *
- * <Text size="5" color="primary" strong>
- *   Important text
- * </Text>
- */
-export const Text = <E extends TextTags>({
-	as = 'span' as E,
-	children,
-	className,
-	color, // semantic tokens
-	colour: _colour, // legacy intentional tokens
-	display,
-	fontWeight = 'normal',
-	transform,
-	breakWord,
-	noWrap,
-	size = '4',
-	strong = false,
-	...props
-}: TextProps<E>) => {
-	const colourOrDefault = !_colour && strong ? 'dark' : _colour;
-	const colour = color ? undefined : colourOrDefault;
-
-	const styles = textStyles({
-		as: as as string,
-		size,
-		color,
-		colour,
-		fontWeight: strong ? 'bold' : fontWeight,
-		transform,
-		noWrap,
-		breakWord,
-	});
-
-	const { Component, componentProps, reactElement } = useBox<E>({
-		...(props as UseBoxProps<E>),
-		as,
-		className: [styles, className],
-		display,
-	});
-
-	if (reactElement) {
-		return cloneElement(reactElement, componentProps, children);
-	}
-
-	return <Component {...componentProps}>{children}</Component>;
-};
+export const Text = React.forwardRef<HTMLElement, WithTestId<TextProps>>(
+	(
+		{
+			children,
+			className,
+			is = 'span',
+			as = is,
+			testId,
+			align = 'left',
+			colour,
+			color = colour,
+			display,
+			fontWeight = 'normal',
+			transform,
+			breakWord,
+			noWrap,
+			size = '4',
+			strong = false,
+			...props
+		},
+		ref,
+	) => (
+		<Box
+			as={as}
+			ref={ref}
+			display={display}
+			textAlign={align}
+			className={[
+				useTextStyles({
+					as,
+					size,
+					color: color ?? (strong ? 'dark' : undefined),
+					fontWeight: strong ? 'bold' : fontWeight,
+					transform,
+					noWrap,
+					breakWord,
+				}),
+				className,
+			]}
+			{...props}
+			{...dataAttrs({ 'test-id': testId })}
+		>
+			{children}
+		</Box>
+	),
+);
 
 Text.displayName = 'Text';
+
+export default Text;

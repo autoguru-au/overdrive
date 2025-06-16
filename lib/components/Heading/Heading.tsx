@@ -1,15 +1,18 @@
 import React from 'react';
 
 import type { Sprinkles } from '../../styles/sprinkles.css';
-import { Box, UseBoxProps } from '../Box';
+import { Box, type BoxProps } from '../Box';
 import { textStyles, type TextStylesProps } from '../Text/textStyles';
 
 export type HeadingTags = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 export interface HeadingProps
-	extends Omit<UseBoxProps<HeadingTags>, keyof TextStylesProps>,
+	extends Omit<BoxProps, keyof TextStylesProps>,
 		Omit<TextStylesProps, 'as'> {
 	as?: HeadingTags;
+	align?: TextStylesProps['textAlign'];
+	/** @deprecated Prefer `as` */
+	is?: HeadingTags;
 }
 
 const defaultSizeMap: Record<HeadingTags, Sprinkles['fontSize']> = {
@@ -25,7 +28,9 @@ const defaultSizeMap: Record<HeadingTags, Sprinkles['fontSize']> = {
  * Heading renders an <h1... h6> with default font size and weight
  */
 export const Heading = ({
-	as = 'h1',
+	is = 'h1',
+	as = is,
+	align,
 	breakWord,
 	children,
 	className,
@@ -48,6 +53,7 @@ export const Heading = ({
 				fontWeight,
 				noWrap,
 				size,
+				textAlign: align,
 				transform,
 			}),
 			className,

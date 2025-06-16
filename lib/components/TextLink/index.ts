@@ -1,1 +1,1 @@
-export * from './TextLink';
+export { TextLink } from './TextLink';

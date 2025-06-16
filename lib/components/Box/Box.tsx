@@ -1,43 +1,340 @@
-import React, { cloneElement, type ElementType } from 'react';
+import clsx, { type ClassValue as ClassName } from 'clsx';
+import type {
+	AllHTMLAttributes,
+	ElementType,
+	PropsWithChildren,
+	ReactNode,
+} from 'react';
+import React, { forwardRef } from 'react';
 
-import { useBox, type UseBoxProps } from './useBox';
+import { borderReset } from '../../styles/element.css';
+import { elementResetStyles } from '../../styles/elementStyles';
+import { sprinkles } from '../../styles/sprinkles.css';
+import { dataAttrs } from '../../utils/dataAttrs';
+
+import { type BoxStylesProps } from './newBox/boxStyles';
 
 /**
- * A polymorphic Box component that provides a flexible container with styling capabilities, defaulting to a `<div>` element.
- * Use the `as` prop to control the rendered HTML tag. The box component exposes design system tokens relative to each style
- * prop.
- *
- * An alternative to the `as` prop is `asComponent` which allows a React element to render with the custom props
- *
- * Props include:
- * - Sprinkles props (spacing, colors, layout, etc.)
- * - Responsive props (arrays for different breakpoints)
- * - Also accepts valid HTML attributes for the chosen HTML tag
- *
- * @example
- * <Box as="section" mx="5" py="5" backgroundColor="accent">
- *   Section content
- * </Box>
- *
- * @example
- * <Box display={['block', 'flex']} p={['3', '6', '8']}>Responsive padding</Box>
- *
- * @example
- * <Box asComponent={<MyCustomThing />} borderColor="info" borderWidth="1" />
+ * Use CommonBoxProps to help consistently define the base props for a component
  */
-export const Box = <E extends ElementType = 'div'>({
-	children,
-	...props
-}: UseBoxProps<E>) => {
-	const { Component, componentProps, reactElement } = useBox<E>(
-		props as UseBoxProps<E>,
-	);
+export interface CommonBoxProps extends PropsWithChildren {
+	/**
+	 * Accepts `string` and complex array or objects via `clsx`
+	 */
+	className?: ClassName;
+	/**
+	 * Output a data attribute with a component name in the markup, mainly used for the root element of a component
+	 */
+	odComponent?: string;
+	/**
+	 * Insert a `data-testid` attribute
+	 */
+	testId?: string;
+}
 
-	if (reactElement) {
-		return cloneElement(reactElement, componentProps, children);
-	}
+export interface BoxProps
+	extends CommonBoxProps,
+		Omit<BoxStylesProps, 'as'>,
+		Omit<
+			AllHTMLAttributes<HTMLElement>,
+			'as' | 'className' | 'color' | 'height' | 'is' | 'size' | 'width'
+		> {
+	as?: ElementType;
+	/** @deprecated in transition to the `as` prop  */
+	is?: ElementType;
 
-	return <Component {...componentProps}>{children}</Component>;
-};
+	children?: ReactNode;
+}
+
+/**
+ * Box is a general purpose container with no specific semantics.
+ */
+export const Box = forwardRef<HTMLElement, BoxProps>(
+	(
+		{
+			is = 'div',
+			as = is,
+			children,
+			className: _className,
+			odComponent,
+			testId,
+
+			// style props
+			display,
+			height,
+			maxWidth,
+			minWidth,
+			overflow,
+			overflowX,
+			overflowY,
+			pointerEvents,
+			position,
+			size,
+			userSelect,
+			useVar,
+			width,
+
+			bg,
+			backgroundColor,
+			backgroundColour,
+			boxShadow,
+			color,
+			colour,
+			fg,
+			opacity,
+
+			fontSize,
+			fontWeight,
+			lineHeight,
+			text,
+			textAlign,
+			textWrap,
+
+			borderRadius,
+			borderColor,
+			borderStyle,
+			borderWidth,
+			borderWidthX,
+			borderWidthY,
+			borderBottomColor,
+			borderBottomStyle,
+			borderBottomWidth,
+			borderLeftColor,
+			borderLeftStyle,
+			borderLeftWidth,
+			borderRightColor,
+			borderRightStyle,
+			borderRightWidth,
+			borderTopColor,
+			borderTopStyle,
+			borderTopWidth,
+			borderWidthTop,
+			borderWidthRight,
+			borderWidthBottom,
+			borderWidthLeft,
+
+			borderColour,
+			borderColourX,
+			borderColourY,
+			borderBottomColour,
+			borderLeftColour,
+			borderRightColour,
+			borderTopColour,
+
+			alignContent,
+			alignItems,
+			alignSelf,
+			columnGap,
+			flexDirection,
+			flexGrow,
+			flexShrink,
+			flexWrap,
+			gap,
+			gridAutoColumns,
+			gridAutoFlow,
+			gridAutoRows,
+			gridColumns,
+			justifyContent,
+			placeItems,
+			rowGap,
+			order,
+
+			m,
+			mb,
+			ml,
+			mr,
+			mt,
+			mx,
+			margin,
+			marginX,
+			marginY,
+			marginBottom,
+			marginLeft,
+			marginRight,
+			marginTop,
+
+			p,
+			pb,
+			pl,
+			pr,
+			pt,
+			px,
+			padding,
+			paddingX,
+			paddingY,
+			paddingBottom,
+			paddingLeft,
+			paddingRight,
+			paddingTop,
+
+			...allOtherProps
+		},
+		ref,
+	) => {
+		const Component = as;
+		const hasBorder = Boolean(
+			borderColor ||
+				borderStyle ||
+				borderWidth ||
+				borderWidthX ||
+				borderWidthY ||
+				borderBottomColor ||
+				borderBottomStyle ||
+				borderBottomWidth ||
+				borderLeftColor ||
+				borderLeftStyle ||
+				borderLeftWidth ||
+				borderRightColor ||
+				borderRightStyle ||
+				borderRightWidth ||
+				borderTopColor ||
+				borderTopStyle ||
+				borderTopWidth ||
+				borderWidthTop ||
+				borderWidthRight ||
+				borderWidthBottom ||
+				borderWidthLeft ||
+				borderColour ||
+				borderColourX ||
+				borderColourY ||
+				borderBottomColour ||
+				borderLeftColour ||
+				borderRightColour ||
+				borderTopColour,
+		);
+
+		const styles = sprinkles({
+			display,
+			height,
+			maxWidth,
+			minWidth,
+			overflow,
+			overflowX,
+			overflowY,
+			pointerEvents,
+			position,
+			size,
+			userSelect,
+			useVar,
+			width,
+
+			bg,
+			backgroundColor,
+			backgroundColour,
+			boxShadow,
+			color,
+			colour,
+			fg,
+			opacity,
+
+			fontSize,
+			fontWeight,
+			lineHeight,
+			text,
+			textAlign,
+			textWrap,
+
+			borderRadius,
+			borderColor,
+			borderStyle,
+			borderWidth,
+			borderWidthX,
+			borderWidthY,
+			borderBottomColor,
+			borderBottomStyle,
+			borderBottomWidth,
+			borderLeftColor,
+			borderLeftStyle,
+			borderLeftWidth,
+			borderRightColor,
+			borderRightStyle,
+			borderRightWidth,
+			borderTopColor,
+			borderTopStyle,
+			borderTopWidth,
+			borderWidthTop,
+			borderWidthRight,
+			borderWidthBottom,
+			borderWidthLeft,
+
+			borderColour,
+			borderColourX,
+			borderColourY,
+			borderBottomColour,
+			borderLeftColour,
+			borderRightColour,
+			borderTopColour,
+
+			alignContent,
+			alignItems,
+			alignSelf,
+			columnGap,
+			flexDirection,
+			flexGrow,
+			flexShrink,
+			flexWrap,
+			gap,
+			gridAutoColumns,
+			gridAutoFlow,
+			gridAutoRows,
+			gridColumns,
+			justifyContent,
+			placeItems,
+			rowGap,
+			order,
+
+			m,
+			mb,
+			ml,
+			mr,
+			mt,
+			mx,
+			margin,
+			marginX,
+			marginY,
+			marginBottom,
+			marginLeft,
+			marginRight,
+			marginTop,
+
+			p,
+			pb,
+			pl,
+			pr,
+			pt,
+			px,
+			padding,
+			paddingX,
+			paddingY,
+			paddingBottom,
+			paddingLeft,
+			paddingRight,
+			paddingTop,
+		});
+
+		const className = clsx(
+			elementResetStyles(as),
+			// When any border color or width is specified, automatically set borderWidth to 'none'
+			// and borderStyle to 'solid'. This handles properties with old naming and css-aligned
+			hasBorder && borderReset,
+			styles,
+			_className,
+		);
+
+		return (
+			<Component
+				{...allOtherProps}
+				{...dataAttrs({
+					'od-component': odComponent?.toLocaleLowerCase(),
+					testId,
+				})}
+				className={className}
+				ref={ref}
+			>
+				{children}
+			</Component>
+		);
+	},
+);
 
 Box.displayName = 'Box';

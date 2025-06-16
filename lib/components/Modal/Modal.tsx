@@ -10,8 +10,8 @@ import { ReactNode, useEffect, useReducer } from 'react';
 import FocusLock from 'react-focus-lock';
 
 import { useEventCallback } from '../../utils';
-import { Box } from '../Box';
-import { Portal } from '../Portal';
+import { Box } from '../Box/Box';
+import { Portal } from '../Portal/Portal';
 
 import * as styles from './Modal.css';
 
@@ -133,7 +133,7 @@ export const Modal: FunctionComponent<ModalProps> = ({
 								? 'none'
 								: undefined
 						}
-						opacity={state === 'OPEN' ? undefined : '0'}
+						opacity={state === 'OPEN' ? undefined : 0}
 						backgroundColour={
 							hideBackdrop ? 'transparent' : 'neutral'
 						}
@@ -149,7 +149,7 @@ export const Modal: FunctionComponent<ModalProps> = ({
 						role="presentation"
 						position="fixed"
 						overflow="hidden"
-						opacity={state === 'OPEN' ? undefined : '0'}
+						opacity={state === 'OPEN' ? undefined : 0}
 						className={[
 							styles.root,
 							styles.transition,

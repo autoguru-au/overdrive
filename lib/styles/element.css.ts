@@ -20,6 +20,15 @@ const trimmedElement = style({
 	},
 });
 
+export const borderReset = style({
+	'@layer': {
+		[cssLayerReset]: {
+			borderStyle: 'solid',
+			borderWidth: 0,
+		},
+	},
+});
+
 export const container = style({
 	'@layer': {
 		[cssLayerReset]: {
@@ -74,6 +83,7 @@ const list = style({
 
 const fieldset = [
 	trimmedElement,
+	borderReset,
 	style({
 		'@layer': {
 			[cssLayerReset]: {

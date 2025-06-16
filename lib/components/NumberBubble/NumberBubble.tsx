@@ -2,9 +2,9 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { ComponentProps, FunctionComponent, useMemo } from 'react';
 
+import { sprinkles } from '../../styles';
 import { toPrettyBigNumber } from '../../utils/number';
 import { Box } from '../Box/Box';
-import { boxStyles } from '../Box/boxStyles';
 import { Text } from '../Text/Text';
 
 import * as styles from './NumberBubble.css';
@@ -56,7 +56,7 @@ export const NumberBubble: FunctionComponent<NumberBubbleProps> = ({
 				strong
 				className={clsx(
 					styles.bubbleText,
-					boxStyles({
+					sprinkles({
 						position: 'absolute',
 					}),
 				)}

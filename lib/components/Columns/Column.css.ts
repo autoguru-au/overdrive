@@ -3,10 +3,7 @@ import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
 
 import { cssLayerComponent } from '../../styles/layers.css';
-import {
-	responsiveConditions,
-	sprinklesResponsive,
-} from '../../styles/sprinkles.css';
+import { responsiveConditions, sprinkles } from '../../styles/sprinkles.css';
 
 const getSizeStyle = (scale: number) => `${scale * 100}%`;
 
@@ -35,7 +32,7 @@ const columnWidthResponsive = defineProperties({
 export const sprinklesColumnWidthResponsive = createSprinkles(
 	columnWidthResponsive,
 );
-export type SprinklesColumnWidthResponsive = Parameters<
+export type SprinklesColumnWidth = Parameters<
 	typeof sprinklesColumnWidthResponsive
 >[0];
 
@@ -43,17 +40,18 @@ export const columnStyle = recipe({
 	base: {},
 	variants: {
 		alignSelf: {
-			bottom: sprinklesResponsive({ alignSelf: 'flex-end' }),
-			center: sprinklesResponsive({ alignSelf: 'center' }),
-			stretch: sprinklesResponsive({ alignSelf: 'stretch' }),
-			top: sprinklesResponsive({ alignSelf: 'flex-start' }),
+			bottom: sprinkles({ alignSelf: 'end' }),
+			center: sprinkles({ alignSelf: 'center' }),
+			centre: sprinkles({ alignSelf: 'center' }),
+			stretch: sprinkles({ alignSelf: 'stretch' }),
+			top: sprinkles({ alignSelf: 'start' }),
 		},
 		grow: {
-			true: { flexGrow: 1 },
-			false: { flexGrow: 0 },
+			true: sprinkles({ flexGrow: '1' }),
+			false: sprinkles({ flexGrow: '0' }),
 		},
 		noShrink: {
-			true: { flexShrink: 0 },
+			true: sprinkles({ flexShrink: '0' }),
 			false: {},
 		},
 	},

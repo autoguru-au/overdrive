@@ -18,7 +18,7 @@ const renderPagination = (args: any) => (
 		alignItems="center"
 		display="flex"
 		justifyContent="center"
-		py="6"
+		paddingY="6"
 		style={{
 			maxHeight: '350px',
 		}}

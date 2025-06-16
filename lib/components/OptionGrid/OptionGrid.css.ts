@@ -2,7 +2,7 @@ import { createContainer, style } from '@vanilla-extract/css';
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
-import { sprinklesResponsive } from '../../styles/sprinkles.css';
+import { sprinkles } from '../../styles/sprinkles.css';
 import { breakpoints } from '../../themes/makeTheme';
 import { overdriveTokens as tokens } from '../../themes/theme.css';
 import { interactionStyle, notDisabled, notSelected } from '../../utils/css';
@@ -36,9 +36,9 @@ const grid4ColStyle = style({
 });
 
 export const styledGrid = recipe({
-	base: sprinklesResponsive({
+	base: sprinkles({
 		display: 'grid',
-		gridColumns: { mobile: 'auto' },
+		gridColumns: { mobile: '1' },
 		gap: '3',
 	}),
 	variants: {
@@ -173,7 +173,7 @@ export const styledCheckbox = recipe({
 					},
 			},
 		},
-		sprinklesResponsive({
+		sprinkles({
 			alignItems: 'center',
 			display: 'flex',
 			flexShrink: '0',
@@ -226,7 +226,7 @@ export const styledRadioButton = recipe({
 				borderColor: tokens.border.colours.dark,
 			},
 		}),
-		sprinklesResponsive({
+		sprinkles({
 			alignItems: 'center',
 			size: '6',
 		}),

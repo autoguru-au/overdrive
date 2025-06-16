@@ -1,104 +1,112 @@
 # @autoguru/overdrive
 
-## 4.44.0
+## 4.43.6
+
+### Patch Changes
+
+- 4c44e06: Technical uplift changes to the Box, Text and related components were
+  manually reverted to try and resolve instability with some instances of forms
+  in consumption.
+
+    - Classic Box has been simplified with style helper functions and exports
+      `BoxProps`.
+    - All `forwardRef`s reinstated in components
+    - Style helper functions available `elementResetStyles` and
+      `componentStyles`, where html tag css resets and vanilla-extract sprinkles
+      are combined to replace `useBoxStyles` (now deprecated)
+    - New Box and useBox remains available in `components/Box/newBox/` during
+      mitigation but should be considered unstable
+
+    #### Style props
+
+    - New colour tokens are mapped to props with `color` spelling, existing
+      colours/intentional colours are still available with the `colour` spelling
+      in props for backwards compatibility
+    - Values are in transition to camel case (e.g. `space-between` instead of
+      `spaceBetween`) to align with CSS
+    - Border property props where the side Top/Bottom/Left/Right was placed last
+      are now in transistion to be aligned with the CSS naming order (e.g.
+      `borderLeftColor` instead of `borderColorLeft`)
+    - Abbrevitaion aliases are available for margin and padding i.e. `px`, `mt`
+
+## ~~4.44.0~~
+
+_Do not use_. This release was based on **4.43.1-5** and has been deprecated.
 
 ### Minor Changes
 
 - 524c1b1: The `Text` component has been rebuilt with polymorphic `as` prop,
   consistent with Box. The `noWrap` prop has been deprecated as the `textWrap`
-  style prop is available in uplifted components.
+  style prop is available in uplifted components
 - 524c1b1: The Heading component has been improved to be consistent with Text
   and applies balanced text wrap. Anchor and TextLink have been updated to be
-  consistent also.
+  consistent also
 
-## 4.43.5
+## ~~4.43.5~~
+
+_Version deprecated_
 
 ### Patch Changes
 
 - 7996070: Fix for the Columns missing default of `noWrap: false`
 
-## 4.43.4
+## ~~4.43.4~~
+
+_Version deprecated_
 
 ### Patch Changes
 
 - a2118b7: **Columns** `alignSelf` prop switched to "top"/"bottom" to match
   existing usage
-- a2118b7: Style props for `order`, `flexGrow`/`flexShrink` are now text unions
-  instead of number
 
-## 4.43.3
+## ~~4.43.3~~
 
-### Patch Changes
+_Version deprecated_
 
-- b06610d: Using the legacy `is` prop on new polymorphic components will fail
-  typechecking, convert to `as` prop
+## ~~4.43.2~~
 
-## 4.43.2
+_Version deprecated_
 
 ### Patch Changes
 
 - 8731541: Default exports have been removed from components. Imports requiring
   a default export should now point to `.../[component]/default`.
 
-## 4.43.1
+## ~~4.43.1~~
+
+_Version deprecated_
 
 ### Patch Changes
 
 - dd217b7: Fixes an issue with the polymorphic Button component when JSX is
   passed with the `as` prop
 
-## 4.43.0
+## ~~4.43.0~~
+
+_Version deprecated_
 
 ### Minor Changes
 
-- 42695b0: Technical uplift of Box and other related primatives to enable full
-  polymorphism.
-
-    #### Style props
-
-    - _Breaking change:_ Prop values are now camel case (e.g. `space-between`)
-      instead of `spaceBetween`
-    - _Breaking change:_ Border property props where Top/Bottom/Left/Right was
-      named last, are now named second (e.g. no longer `borderColourLeft`, now
-      aligned to `borderLeftColour`)
-    - New colour tokens are mapped to props with `color` spelling, existing
-      colours/intentional colours are still available with the `colour` spelling
-      in props for backwards compatibility
-    - additional alias abbreviated props are available i.e. `px`, `mt` which are
-      mapped to the existing
+- 42695b0: **See 4.43.6 release notes**. Component changes were manually
+  reverted due to consuming compatibility issues
 
     ##### CSS layers introduced
 
     - `@reset` contains base resets
     - `@utility` contains the spinkles utility classes
 
-    #### Components
+    #### Box
 
-    **Box** - newly implemented with more powerful polymorphic type based on the
-    `as` prop, and exposes useBox for core logic.
+    Newly implemented with more powerful polymorphic type based on the `as`
+    prop, and exposes `useBox` for core logic.
 
     - useBox returns the JSX component tag as well as the processed and filtered
       props. It also handles logic for determing a semantic child tag rather
       than repeated within various components
-    - useBoxStyles been replaced with `boxStyles` which handles the
-      vanilla-extract sprinkles
     - props `odComponent` and `testId` sets consistent data attribute for use at
       component root are exported as `CommonBoxProps`
-
-    **Stack** - reimplemented with useBox and flexbox for layout
-
-    **Inline** - reimplemented with useBox and flexbox for layout
-
-    **Columns** - reimplemented with useBox, style recipe and specialised
-    vanilla-extract sprinkes
-
-    Additionally, these components have been migrated to useBox with updated
-    polymorphic props:
-
-    - Button
-    - Section
-    - Tab
-    - VisuallyHidden
+    - useBoxStyles been replaced with `boxStyles` which handles the
+      vanilla-extract sprinkles
 
 ## 4.42.0
 

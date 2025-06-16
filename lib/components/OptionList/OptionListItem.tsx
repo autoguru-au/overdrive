@@ -7,7 +7,7 @@ import {
 	type AriaCheckboxGroupItemProps,
 } from 'react-aria';
 
-import { sprinklesResponsive } from '../../styles/sprinkles.css';
+import { sprinkles } from '../../styles/sprinkles.css';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Icon } from '../Icon';
 import { VisuallyHidden } from '../VisuallyHidden';
@@ -39,7 +39,7 @@ export const OptionListItem = (props: FilteredCheckboxProps) => {
 				<input {...mergeProps(inputProps, focusProps)} ref={ref} />
 			</VisuallyHidden>
 			<div
-				className={sprinklesResponsive({
+				className={sprinkles({
 					display: 'flex',
 					gap: '2',
 					width: 'full',
@@ -75,7 +75,7 @@ export const ItemSplitLabel = ({ children, content }: SplitLabelProps) => {
 
 	return (
 		<div
-			className={sprinklesResponsive({
+			className={sprinkles({
 				display: 'flex',
 				gap: '2',
 				justifyContent: 'space-between',

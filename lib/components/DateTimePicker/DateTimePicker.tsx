@@ -16,7 +16,7 @@ import {
 } from 'react-aria';
 import { useCalendarState, type Selection } from 'react-stately';
 
-import { sprinklesResponsive } from '../../styles/sprinkles.css';
+import { sprinkles } from '../../styles/sprinkles.css';
 import type { WithTestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Heading } from '../Heading';
@@ -200,7 +200,7 @@ export const DateTimePicker = <D extends DateValue>({
 				</Heading>
 			)}
 			<div className={layoutStyle}>
-				<div className={sprinklesResponsive({ flexShrink: '0' })}>
+				<div className={sprinkles({ flexShrink: '0' })}>
 					<Heading as="h3" mb="4" size="6">
 						{lang?.dateLabel ?? defaultEnglish.dateLabel}
 					</Heading>
@@ -230,7 +230,7 @@ export const DateTimePicker = <D extends DateValue>({
 					{/* {state.value && <h2>{dateText}</h2>} */}
 				</div>
 
-				<div className={sprinklesResponsive({ flexGrow: '1' })}>
+				<div className={sprinkles({ flexGrow: '1' })}>
 					<Heading as="h3" mb="4" size="6">
 						{lang?.timeLabel ?? defaultEnglish.timeLabel}
 					</Heading>

@@ -10,7 +10,7 @@ import {
 
 import { Box } from '../Box';
 import { Stack } from '../Stack';
-import { textStyles } from '../Text';
+import { useTextStyles } from '../Text';
 
 import * as styles from './OrderedList.css';
 
@@ -24,7 +24,7 @@ const cycles: ListStyleType[] = [
 	'lower-roman',
 ];
 
-export interface OrderedListProps
+export interface Props
 	extends Pick<OlHTMLAttributes<HTMLOListElement>, 'start'> {
 	type?: ListStyleType;
 	className?: string;
@@ -38,7 +38,7 @@ export interface ItemProps {
 
 const OrderedListContext = createContext(-1);
 
-export const OrderedList: FunctionComponent<OrderedListProps> & {
+export const OrderedList: FunctionComponent<Props> & {
 	Item: FunctionComponent<ItemProps>;
 } = ({ children, className = '', type = null, start }) => {
 	const cycle = useContext(OrderedListContext);
@@ -57,7 +57,7 @@ export const OrderedList: FunctionComponent<OrderedListProps> & {
 			marginTop={myCycle > 0 ? '2' : 'none'}
 			className={clsx(
 				styles.root.default,
-				textStyles({ colour: 'dark' }),
+				useTextStyles({ colour: 'dark' }),
 				{ [styles.root.firstOccurrence]: cycle === -1 },
 				className,
 			)}
@@ -78,3 +78,5 @@ const Item: FunctionComponent<ItemProps> = ({ className = '', children }) => (
 );
 
 OrderedList.Item = Item;
+
+export default OrderedList;

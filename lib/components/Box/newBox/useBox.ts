@@ -1,4 +1,3 @@
-import type { ClassValue as ClassName } from 'clsx';
 import {
 	isValidElement,
 	type ComponentPropsWithRef,
@@ -9,15 +8,11 @@ import {
 	type ReactElement,
 } from 'react';
 
-import { useDeepCompareMemo } from '../../hooks';
-import type {
-	Sprinkles,
-	SprinklesResponsive,
-	SprinklesLegacyColours,
-} from '../../styles/sprinkles.css';
-import { dataAttrs } from '../../utils/dataAttrs';
+import { useDeepCompareMemo } from '../../../hooks';
+import { dataAttrs } from '../../../utils/dataAttrs';
+import type { CommonBoxProps } from '../Box';
 
-import { boxStylesWithFilteredProps } from './boxStyles';
+import { boxStylesWithFilteredProps, type StyleProps } from './boxStyles';
 
 // defaults
 const DEFAULT_TAG = 'div' as keyof JSX.IntrinsicElements;
@@ -25,29 +20,6 @@ const LIST_ITEM_TAG = 'li' as keyof JSX.IntrinsicElements;
 const LIST_TAGS = ['ul', 'ol'] as ReadonlyArray<keyof JSX.IntrinsicElements>;
 const OD_COMPONENT_ATTR = 'od-component';
 
-/** All vanilla-extract sprinkles props */
-export type StyleProps = Sprinkles &
-	SprinklesResponsive &
-	SprinklesLegacyColours;
-
-/**
- * Use BoxBasedProps to help consistently define the base props for a component
- * directly implementing useBox as the type of UseBoxProps is complex to Pick from.
- */
-export interface CommonBoxProps extends PropsWithChildren {
-	/**
-	 * Accepts `string` and complex array or objects via `clsx`
-	 */
-	className?: ClassName;
-	/**
-	 * Output a data attribute with a component name in the markup, mainly used for the root element of a component
-	 */
-	odComponent?: string;
-	/**
-	 * Insert a `data-testid` attribute
-	 */
-	testId?: string;
-}
 /** Extract the ref type for a polymorphic component based on the provided element type */
 export type PolymorphicRef<C extends ElementType> =
 	ComponentPropsWithRef<C>['ref'];
@@ -55,8 +27,8 @@ export type PolymorphicRef<C extends ElementType> =
 /** `as` prop for polymorphic components, allowing specification of the rendered element type */
 export type AsPolyProp<C extends ElementType> = {
 	as?: C | ReactElement;
-	/* ensure legacy `is` prop does not pass typechecking */
-	is?: never;
+	/* in future we will ensure legacy `is` prop does not pass typechecking */
+	// is?: never;
 };
 
 /** `ref` prop for polymorphic components, using the extracted `PolymorphicRef` type */

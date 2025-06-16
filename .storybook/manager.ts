@@ -1,8 +1,8 @@
 import { addons } from 'storybook/manager-api';
-// import {
-// 	defaultConfig,
-// 	type TagBadgeParameters,
-// } from 'storybook-addon-tag-badges';
+import {
+	defaultConfig,
+	type TagBadgeParameters,
+} from 'storybook-addon-tag-badges';
 
 import agTheme from './ag-theme';
 
@@ -19,20 +19,27 @@ const getPreferredColorScheme = () => {
 
 addons.setConfig({
 	theme: agTheme[getPreferredColorScheme()],
-	// tagBadges: [
-	// 	{
-	// 		tags: 'updated',
-	// 		badge: {
-	// 			text: '💫 Updated',
-	// 			bgColor: '#0d54e5',
-	// 			fgColor: '#fff',
-	// 			tooltip: 'This component has recently been modified',
-	// 		},
-	// 		display: {
-	// 			sidebar: ['component'],
-	// 			toolbar: true,
-	// 		},
-	// 	},
-	// 	...defaultConfig,
-	// ] satisfies TagBadgeParameters,
+	tagBadges: [
+		{
+			tags: 'updated',
+			badge: {
+				text: '💫 Updated',
+				style: {
+					backgroundColor: '#0d54e5',
+					color: '#fff',
+				},
+				tooltip: 'This component has recently been modified',
+			},
+			display: {
+				sidebar: [
+					{
+						type: 'component',
+						skipInherited: true,
+					},
+				],
+				toolbar: true,
+			},
+		},
+		...defaultConfig,
+	] satisfies TagBadgeParameters,
 });

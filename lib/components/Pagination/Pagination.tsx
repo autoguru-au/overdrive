@@ -9,10 +9,10 @@ import {
 } from 'react';
 
 import { noop } from '../../utils';
-import { Box } from '../Box';
-import { Icon } from '../Icon';
-import { Inline } from '../Inline';
-import { textStyles } from '../Text';
+import { Box } from '../Box/Box';
+import { Icon } from '../Icon/Icon';
+import { Inline } from '../Inline/Inline';
+import { textStyles } from '../Text/textStyles';
 
 import { Bubble } from './Bubble';
 import * as styles from './Pagination.css';
