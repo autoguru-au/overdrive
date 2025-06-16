@@ -10,6 +10,7 @@ import {
 	useEffect,
 	useRef,
 	useState,
+	useId,
 } from 'react';
 
 import { Box } from '../Box/Box';
@@ -43,9 +44,10 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 	size = 'medium',
 	closeAfter = null,
 }) => {
+	const tooltipId = useId();
 	const [isOpen, setIsOpen] = useState(incomingIsOpen);
-	const childRef = useRef<HTMLDivElement>(null);
 	const triggerRef = useRef<HTMLElement>(null);
+	const tooltipRef = useRef<HTMLDivElement>(null);
 
 	const leaveTimer = useRef<ReturnType<typeof setTimeout>>(null);
 
@@ -53,7 +55,6 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 		if (leaveTimer.current) {
 			clearTimeout(leaveTimer.current);
 		}
-
 		setIsOpen(true);
 	}, [setIsOpen]);
 
@@ -63,57 +64,86 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 		}, 1e3 / 2);
 	}, [setIsOpen]);
 
-	useEffect(() => {
-		let timeout;
-		if (isOpen && typeof closeAfter === 'number')
-			timeout = setTimeout(() => setIsOpen(false), closeAfter);
+	const focusHandler = useCallback(() => {
+		setIsOpen(true);
+	}, [setIsOpen]);
 
-		return () => (timeout ? clearTimeout(timeout) : void 0);
+	const blurHandler = useCallback(() => {
+		setIsOpen(false);
+	}, [setIsOpen]);
+
+	// Handle the closeAfter prop
+	useEffect(() => {
+		let timeout: ReturnType<typeof setTimeout>;
+		if (isOpen && typeof closeAfter === 'number') {
+			timeout = setTimeout(() => setIsOpen(false), closeAfter);
+		}
+
+		return () => {
+			if (timeout) clearTimeout(timeout);
+		};
 	}, [closeAfter, isOpen, label]);
 
-	return label?.length > 0 ? (
-		<>
-			{(() => {
-				const childrenArray = Children.toArray(children);
+	// Determine if we need to wrap children or can use them directly
+	const renderTrigger = () => {
+		const childrenArray = Children.toArray(children);
 
-				// Check if we have a single child that is a React Fragment
-				if (childrenArray.length === 1) {
-					const singleChild = childrenArray[0] as ReactElement;
+		// Check if we have a single child that is a React Fragment
+		if (childrenArray.length === 1) {
+			const singleChild = childrenArray[0] as ReactElement;
 
-					// If the single child is a Fragment, we need to check its children
-					if (singleChild.type === React.Fragment) {
-						// Fragment contains multiple children, so wrap them
-						return (
-							<span
-								ref={triggerRef}
-								onMouseEnter={enterHandler}
-								onMouseLeave={leaveHandler}
-							>
-								{children}
-							</span>
-						);
-					}
-
-					// Single non-fragment child, use the existing logic
-					return cloneElement(singleChild, {
-						// @ts-expect-error ref does not exist on the type
-						ref: triggerRef,
-						onMouseEnter: enterHandler,
-						onMouseLeave: leaveHandler,
-					});
-				}
-
-				// Multiple children at the top level, wrap them in a span
+			// If the single child is a Fragment, we need to check its children
+			if (singleChild.type === React.Fragment) {
+				// Fragment contains multiple children, so wrap them
 				return (
 					<span
 						ref={triggerRef}
 						onMouseEnter={enterHandler}
 						onMouseLeave={leaveHandler}
+						onFocus={focusHandler}
+						onBlur={blurHandler}
+						tabIndex={0}
+						style={{ display: 'inline-block' }}
+						aria-describedby={isOpen ? tooltipId : undefined}
 					>
 						{children}
 					</span>
 				);
-			})()}
+			}
+
+			// Single non-fragment child, clone it with the trigger props
+			return cloneElement(singleChild, {
+				// @ts-expect-error ref does not exist on the type
+				ref: triggerRef,
+				onMouseEnter: enterHandler,
+				onMouseLeave: leaveHandler,
+				onFocus: focusHandler,
+				onBlur: blurHandler,
+				tabIndex: (singleChild.props as any).tabIndex ?? 0,
+				'aria-describedby': isOpen ? tooltipId : undefined,
+			});
+		}
+
+		// Multiple children at the top level, wrap them in a span
+		return (
+			<span
+				ref={triggerRef}
+				onMouseEnter={enterHandler}
+				onMouseLeave={leaveHandler}
+				onFocus={focusHandler}
+				onBlur={blurHandler}
+				tabIndex={0}
+				style={{ display: 'inline-block' }}
+				aria-describedby={isOpen ? tooltipId : undefined}
+			>
+				{children}
+			</span>
+		);
+	};
+
+	return label?.length > 0 ? (
+		<>
+			{renderTrigger()}
 			<Positioner
 				triggerRef={triggerRef}
 				alignment={alignment}
@@ -124,7 +154,8 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 				}
 			>
 				<Box
-					ref={childRef}
+					id={tooltipId}
+					ref={tooltipRef}
 					className={styles.root}
 					width="full"
 					pointerEvents="none"
@@ -135,6 +166,7 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 					backgroundColour="gray900"
 					paddingY="2"
 					paddingX="3"
+					role="tooltip"
 				>
 					<Text size={sizeMap[size]} colour="white">
 						{label}
@@ -146,3 +178,5 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 		<>{children}</>
 	);
 };
+
+Tooltip.displayName = 'Tooltip';

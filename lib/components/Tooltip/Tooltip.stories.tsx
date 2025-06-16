@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react-vite';
 import React, { type ComponentProps } from 'react';
 
-import { EAlignment } from '../Positioner/alignment';
 import { Inline } from '../Inline/Inline';
+import { EAlignment } from '../Positioner/alignment';
 import { Text } from '../Text/Text';
 
 import { Tooltip } from './Tooltip';
