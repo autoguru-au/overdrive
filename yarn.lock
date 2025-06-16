@@ -143,8 +143,8 @@ __metadata:
     "@testing-library/react": "npm:^16.3.0"
     "@testing-library/react-hooks": "npm:^8.0.1"
     "@testing-library/user-event": "npm:^14.6.1"
-    "@types/node": "npm:24.0.0"
-    "@types/react": "npm:19.1.7"
+    "@types/node": "npm:24.0.1"
+    "@types/react": "npm:19.1.8"
     "@types/react-dom": "npm:19.1.6"
     "@types/webpack-env": "npm:^1.18.8"
     "@typescript-eslint/utils": "npm:^8.34.0"
@@ -157,7 +157,7 @@ __metadata:
     "@vanilla-extract/webpack-plugin": "npm:^2.3.20"
     "@vitest/browser": "npm:3.2.3"
     "@vitest/coverage-v8": "npm:3.2.3"
-    "@vitest/eslint-plugin": "npm:1.2.1"
+    "@vitest/eslint-plugin": "npm:1.2.5"
     babel-plugin-add-import-extension: "npm:^1.6.0"
     babel-plugin-dev-expression: "npm:^0.2.3"
     babel-plugin-macros: "npm:^3.1.0"
@@ -175,7 +175,7 @@ __metadata:
     husky: "npm:^9.1.7"
     intersection-observer: "npm:^0.12.2"
     jsdom: "npm:26.1.0"
-    lint-staged: "npm:16.1.0"
+    lint-staged: "npm:16.1.2"
     magic-string: "npm:^0.30.17"
     mini-css-extract-plugin: "npm:^2.9.2"
     mockdate: "npm:^3.0.5"
@@ -5017,21 +5017,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
+"@types/node@npm:*, @types/node@npm:24.0.1":
   version: 24.0.1
   resolution: "@types/node@npm:24.0.1"
   dependencies:
     undici-types: "npm:~7.8.0"
   checksum: 10/6b77554f8308148e00e9c7c264ccad3e9a3d360f10b75a727d44b9bba2377022179a76905fbe1bb426ea4c6ee9f45186797ec335a5dcab803435336576db18c6
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:24.0.0":
-  version: 24.0.0
-  resolution: "@types/node@npm:24.0.0"
-  dependencies:
-    undici-types: "npm:~7.8.0"
-  checksum: 10/5e7b5184c67964cb4fa74f9fcc1f936e101d9858c9559cea75ee50558ae100f37bd4eef807d2d7fbdc413f191f74a6066f57a4d2acbd4df64f4a76b933302b52
   languageName: node
   linkType: hard
 
@@ -5065,12 +5056,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:19.1.7":
-  version: 19.1.7
-  resolution: "@types/react@npm:19.1.7"
+"@types/react@npm:19.1.8":
+  version: 19.1.8
+  resolution: "@types/react@npm:19.1.8"
   dependencies:
     csstype: "npm:^3.0.2"
-  checksum: 10/a2bd9aea233e9b8b1eb27192ee5cefd5a236b03ef9fce2e5ea8ec612cf4735d38fa443a0a1d0abea61dd166aad205fb8d799055dacfd2f0759da6f59f046fc55
+  checksum: 10/a3e6fe0f60f22828ef887f30993aa147b71532d7b1219dd00d246277eb7a9ca01ec533096237fa21ca1bccb3653373b4e8e59e5ae59f9c793058384bbc1f4d5c
   languageName: node
   linkType: hard
 
@@ -5637,9 +5628,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/eslint-plugin@npm:1.2.1":
-  version: 1.2.1
-  resolution: "@vitest/eslint-plugin@npm:1.2.1"
+"@vitest/eslint-plugin@npm:1.2.5":
+  version: 1.2.5
+  resolution: "@vitest/eslint-plugin@npm:1.2.5"
   dependencies:
     "@typescript-eslint/utils": "npm:^8.24.0"
   peerDependencies:
@@ -5651,7 +5642,7 @@ __metadata:
       optional: true
     vitest:
       optional: true
-  checksum: 10/56dccf2154df3b15c36326c4a30cd933152d5192253e9f924f5c345a5777d4e9b9ef89d9135c059ed227b93916c499897532328c4539289b79dbcb43cfc32968
+  checksum: 10/19d76615ba4d965ee7b37d439dde232f4ab559434db4e58b8f1b50087f5f60b06f4701a5d3b3d40d69e6b128c1bf6ecab4af94c716bbe2099f7623d8ba8ce092
   languageName: node
   linkType: hard
 
@@ -9889,9 +9880,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:16.1.0":
-  version: 16.1.0
-  resolution: "lint-staged@npm:16.1.0"
+"lint-staged@npm:16.1.2":
+  version: 16.1.2
+  resolution: "lint-staged@npm:16.1.2"
   dependencies:
     chalk: "npm:^5.4.1"
     commander: "npm:^14.0.0"
@@ -9905,7 +9896,7 @@ __metadata:
     yaml: "npm:^2.8.0"
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: 10/c7a52ac9551f284b09d389d515ee0951055e13f71aa18990e0804fb8738d50763aa6e262879a4f0f1cf376a4c1772748f6782e8fe98a4cb322b168af16711ba6
+  checksum: 10/90df77c2f59cdc5ebeb8a60767f07025a8aed9161f604fea6cf1ca895ff3b56995a00145a3e0b5c0bf22e8f667a6182256b68e001e5f3118e46a3c5150bede82
   languageName: node
   linkType: hard
 
