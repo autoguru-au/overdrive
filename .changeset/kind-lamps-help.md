@@ -2,4 +2,4 @@
 '@autoguru/overdrive': patch
 ---
 
-Allow multiple children in Tooltip component without manual wrapper
+Tooltip: Allow multiple children without manual Box wrapping. Fixes issue #1110
