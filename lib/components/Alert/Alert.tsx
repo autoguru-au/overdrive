@@ -11,6 +11,7 @@ import * as React from 'react';
 import { ComponentProps, FunctionComponent, ReactNode } from 'react';
 
 import { sprinkles } from '../../styles';
+import { sprinklesLegacyText } from '../../styles/typography.css';
 import { Box } from '../Box/Box';
 import { Button } from '../Button/Button';
 import { Icon } from '../Icon/Icon';
@@ -48,7 +49,7 @@ export const Alert: FunctionComponent<Props> = ({
 }) => {
 	return (
 		<Box
-			className={clsx(className, sprinkles({ colour: intent }), {
+			className={clsx(className, sprinklesLegacyText({ color: intent }), {
 				[styles.contained]: !inline,
 			})}
 			role="alert"
@@ -60,6 +61,7 @@ export const Alert: FunctionComponent<Props> = ({
 			borderRadius="1"
 			boxShadow={inline ? 'none' : '4'}
 			padding="2"
+			odComponent="alert"
 		>
 			<IntentStripe intent={intent} />
 			<Box display="flex" gap="2">
