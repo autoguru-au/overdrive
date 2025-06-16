@@ -51,6 +51,23 @@ export const useStorybookDecorator = (Story, context) => {
 
 /** For Chromatic, render all available themes for visual testing */
 export const useChromaticDecorator = (Story, context) => {
+	const portalRef = useRef<HTMLDivElement>(null);
+
+	// Check if the 'modal' tag is present in the story's tags, render the story once
+	if (context?.tags.includes('modal')) {
+		return (
+			<OverdriveProvider
+				theme={themes[0]}
+				portalMountPoint={portalRef}
+				noBodyLevelTheming
+			>
+				<div ref={portalRef}>
+					<Story {...context} />
+				</div>
+			</OverdriveProvider>
+		);
+	}
+
 	return (
 		<>
 			{themes.map((theme) => (
