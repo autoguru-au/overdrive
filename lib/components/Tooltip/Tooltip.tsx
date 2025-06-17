@@ -9,6 +9,9 @@ import React, {
 	useId,
 } from 'react';
 
+import { sprinkles } from '../../styles/sprinkles.css';
+import type { TestId } from '../../types';
+import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box/Box';
 import { Positioner } from '../Positioner/Positioner';
 import { EAlignment } from '../Positioner/alignment';
@@ -18,7 +21,7 @@ import * as styles from './Tooltip.css';
 
 type ToolTipSize = 'medium' | 'large';
 
-export interface TooltipProps {
+export interface TooltipProps extends TestId {
 	size?: ToolTipSize;
 	isOpen?: boolean;
 	label: string;
@@ -39,6 +42,7 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 	children,
 	size = 'medium',
 	closeAfter = null,
+	testId,
 }) => {
 	const tooltipId = useId();
 	const [isOpen, setIsOpen] = useState(incomingIsOpen);
@@ -78,11 +82,13 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 		return () => {
 			if (timeout) clearTimeout(timeout);
 		};
-	}, [closeAfter, isOpen, label]);
+	}, [closeAfter, isOpen]);
 
-	// Determine if we need to wrap children or can use them directly
-	const renderTrigger = () => {
-		return (
+	// return early if no label provided
+	if (!label) return <>{children}</>;
+
+	return (
+		<>
 			<span
 				ref={triggerRef}
 				onMouseEnter={enterHandler}
@@ -90,17 +96,12 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 				onFocus={focusHandler}
 				onBlur={blurHandler}
 				tabIndex={0}
-				style={{ display: 'inline-block' }}
+				className={sprinkles({ display: 'inline-block' })}
 				aria-describedby={isOpen ? tooltipId : undefined}
+				{...dataAttrs({ testid: testId })}
 			>
 				{children}
 			</span>
-		);
-	};
-
-	return label?.length > 0 ? (
-		<>
-			{renderTrigger()}
 			<Positioner
 				triggerRef={triggerRef}
 				alignment={alignment}
@@ -131,8 +132,6 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 				</Box>
 			</Positioner>
 		</>
-	) : (
-		<>{children}</>
 	);
 };
 
