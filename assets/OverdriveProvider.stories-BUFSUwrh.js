@@ -1,0 +1,9 @@
+import{e,O as a,k as g,B as o,S as h}from"./iframe-BPJhr76J.js";import{B as s}from"./Button-C-CLfH2z.js";import{I as E}from"./Inline-BHwqQZj_.js";import"./Icon-D8YYTUq2.js";import"./resolveResponsiveProps-DXxr8mrg.js";import"./ProgressSpinner-6peMk8TN.js";import"./useTextStyles-D4FwBGMO.js";import"./Text-3IOoZozm.js";import"./useNegativeMarginTop-8MlrPDw7.js";const R={title:"Utility/OverdriveProvider",component:a,parameters:{layout:"fullscreen"},render:y=>e.createElement(a,{...y},e.createElement(o,{padding:"6"},e.createElement(h,{space:"4"},e.createElement(o,{display:"flex",alignItems:"center"},e.createElement(E,{space:"4"},e.createElement(s,{variant:"primary"},"Primary Button"),e.createElement(s,{variant:"secondary"},"Secondary Button"))))))},r={},t={args:{theme:g,colorOverrides:{primaryBackground:"#6d39a8",primaryForeground:"#ffffff"}}};var i,n,d,m,c;r.parameters={...r.parameters,docs:{...(i=r.parameters)==null?void 0:i.docs,source:{originalSource:"{}",...(d=(n=r.parameters)==null?void 0:n.docs)==null?void 0:d.source},description:{story:"Uses the default base theme",...(c=(m=r.parameters)==null?void 0:m.docs)==null?void 0:c.description}}};var p,l,f,u,v;t.parameters={...t.parameters,docs:{...(p=t.parameters)==null?void 0:p.docs,source:{originalSource:`{
+  args: {
+    theme: flatRed,
+    colorOverrides: {
+      primaryBackground: '#6d39a8',
+      primaryForeground: '#ffffff'
+    }
+  }
+}`,...(f=(l=t.parameters)==null?void 0:l.docs)==null?void 0:f.source},description:{story:"Example configured similar to overrides for Merchant Finder use the flat red theme and custom colour overrides.",...(v=(u=t.parameters)==null?void 0:u.docs)==null?void 0:v.description}}};const U=["Standard","WithColorOverrides"];export{r as Standard,t as WithColorOverrides,U as __namedExportsOrder,R as default};
