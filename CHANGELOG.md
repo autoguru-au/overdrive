@@ -1,5 +1,13 @@
 # @autoguru/overdrive
 
+## 4.43.7
+
+### Patch Changes
+
+- b3100f9: Standard Modal header alignment fixed
+- 5d80612: Tooltip: Allow multiple children without manual Box wrapping. Fixes
+  issue #1110
+
 ## 4.43.6
 
 ### Patch Changes
