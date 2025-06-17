@@ -2,4 +2,4 @@
 '@autoguru/overdrive': patch
 ---
 
-Tooltip: Allow multiple children without manual Box wrapping. Fixes issue #1110
+Tooltip: Allows multiple children without manual Box wrapping (issue #1110)

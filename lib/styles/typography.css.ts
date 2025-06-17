@@ -19,6 +19,9 @@ const legacyTextProperties = defineProperties({
 });
 
 export const sprinklesLegacyText = createSprinkles(legacyTextProperties);
+export type LegacyTextColours = Parameters<
+	typeof sprinklesLegacyText
+>[0]['color'];
 
 /**
  * The global typography style function. Currently responsive values are not supported.

@@ -4,6 +4,7 @@ import { mapValues } from 'es-toolkit';
 
 import { breakpoints } from '../themes/makeTheme';
 import { overdriveTokens as tokens } from '../themes/theme.css';
+import { arrayFromKeys } from '../utils/object';
 
 import { cssLayerUtil } from './layers.css';
 import { gapVar } from './vars.css';
@@ -104,17 +105,15 @@ const mappedBorderTopColours = mapValues(borderColours, (borderTopColor) => ({
 const mappedColours = mapValues(colours, (color) => ({ color }));
 
 // --- VALUE ARRAYS ---
-// (Used for Storybook controls, etc.)
+// (Useful for Storybook controls, etc.)
 export const valueArrays = {
-	borderColors: Object.keys(borderColors),
-	gapSizesWithVar: Object.keys(gapSizesWithVar),
-	intentBackgroundColoursStandard: Object.keys(
+	borderColors: arrayFromKeys(borderColors),
+	gapSizesWithVar: arrayFromKeys(gapSizesWithVar),
+	intentBackgroundColoursStandard: arrayFromKeys(
 		intentBackgroundColoursStandard,
 	),
-	intentBorderColours: Object.keys(intentBorderColours),
-	intentForegroundColours: Object.keys(
-		intentForegroundColours,
-	) as SprinklesLegacyColours['colour'][],
+	intentBorderColours: arrayFromKeys(intentBorderColours),
+	intentForegroundColours: arrayFromKeys(intentForegroundColours),
 };
 
 // --- BASE SPRINKLES (NON-RESPONSIVE) ---
@@ -340,6 +339,10 @@ const responsiveProperties = defineProperties({
 export const sprinkles = createSprinkles(baseProperties, responsiveProperties);
 export type Sprinkles = Parameters<typeof sprinkles>[0];
 
+/**
+ * Legacy colours are not a discreet combination of all colours as many typeography colour
+ * tokens are overwritten by the intentional colour sets
+ */
 export type SprinklesLegacyColours = Pick<
 	Sprinkles,
 	| 'backgroundColour'

@@ -4,6 +4,10 @@ export { componentStyles, resetStyles } from './componentStyles';
 export {
 	sprinkles,
 	type Sprinkles as StyleProps,
-	type SprinklesLegacyColours as LegacyColourStyleProps,
+	type SprinklesLegacyColours as LegacyStyleProps,
 } from './sprinkles.css';
-export { typographyStyles, type TypographyStyleProps } from './typography.css';
+export {
+	type LegacyTextColours,
+	typographyStyles,
+	type TypographyStyleProps,
+} from './typography.css';
