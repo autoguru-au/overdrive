@@ -1,11 +1,7 @@
-import * as React from 'react';
-import {
-	Children,
-	cloneElement,
-	ComponentProps,
-	FunctionComponent,
-	ReactElement,
-	ReactNode,
+import React, {
+	type ComponentProps,
+	type FunctionComponent,
+	type ReactNode,
 	useCallback,
 	useEffect,
 	useRef,
@@ -86,45 +82,6 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 
 	// Determine if we need to wrap children or can use them directly
 	const renderTrigger = () => {
-		const childrenArray = Children.toArray(children);
-
-		// Check if we have a single child that is a React Fragment
-		if (childrenArray.length === 1) {
-			const singleChild = childrenArray[0] as ReactElement;
-
-			// If the single child is a Fragment, we need to check its children
-			if (singleChild.type === React.Fragment) {
-				// Fragment contains multiple children, so wrap them
-				return (
-					<span
-						ref={triggerRef}
-						onMouseEnter={enterHandler}
-						onMouseLeave={leaveHandler}
-						onFocus={focusHandler}
-						onBlur={blurHandler}
-						tabIndex={0}
-						style={{ display: 'inline-block' }}
-						aria-describedby={isOpen ? tooltipId : undefined}
-					>
-						{children}
-					</span>
-				);
-			}
-
-			// Single non-fragment child, clone it with the trigger props
-			return cloneElement(singleChild, {
-				// @ts-expect-error ref does not exist on the type
-				ref: triggerRef,
-				onMouseEnter: enterHandler,
-				onMouseLeave: leaveHandler,
-				onFocus: focusHandler,
-				onBlur: blurHandler,
-				tabIndex: (singleChild.props as any).tabIndex ?? 0,
-				'aria-describedby': isOpen ? tooltipId : undefined,
-			});
-		}
-
-		// Multiple children at the top level, wrap them in a span
 		return (
 			<span
 				ref={triggerRef}

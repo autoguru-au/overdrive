@@ -113,7 +113,7 @@ export const WithMultipleChildren: Story = {
 export const WithInlineAndText: Story = {
 	args: {
 		label: 'Tooltip with Inline containing Text components',
-		alignment: EAlignment.RIGHT,
+		alignment: EAlignment.TOP,
 		children: (
 			<Inline>
 				<Text>Option A</Text>
