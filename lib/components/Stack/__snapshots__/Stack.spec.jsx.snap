@@ -6,17 +6,17 @@ exports[`<Stack /> > should correctly handle fragment nodes 1`] = `
   data-od-component="provider"
 >
   <div
-    class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4"
   >
     <div
-      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_flexDirection_column_mobile__onxwjuoo Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_flexDirection_column_mobile__onxwjuof Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
     >
       <p>
         line 0
       </p>
     </div>
     <div
-      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_flexDirection_column_mobile__onxwjuoo Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_flexDirection_column_mobile__onxwjuof Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
     >
       <p>
         Line 1
@@ -29,7 +29,7 @@ exports[`<Stack /> > should correctly handle fragment nodes 1`] = `
       </p>
     </div>
     <div
-      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_flexDirection_column_mobile__onxwjuoo Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_flexDirection_column_mobile__onxwjuof Stack_child_default__1417p7aa Stack_child_spaces_2__1417p7a1"
     >
       <p>
         line 4

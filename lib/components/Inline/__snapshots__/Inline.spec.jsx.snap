@@ -6,18 +6,18 @@ exports[`<Inline /> > should match snapshot for custom element dividers 1`] = `
   data-od-component="provider"
 >
   <div
-    class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjulk sprinkles_flexDirection_row_mobile__onxwjuok sprinkles_flexWrap_wrap_mobile__onxwjups useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_position_relative_mobile__onxwju8z sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4"
   >
     <div
-      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_display_flex_mobile__onxwju7c sprinkles_alignItems_center_mobile__onxwjulk sprinkles_flexDirection_row_mobile__onxwjuok sprinkles_flexWrap_nowrap_mobile__onxwjupo sprinkles_paddingTop_2_mobile__onxwjuvg"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingTop_2_mobile__onxwjuv7"
     >
       <span
-        class="element_resetVariants__1en4q4gd element_resetVariants_as_span__1en4q4gm  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_4__yhjp332e typography__yhjp3313 sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n typography__yhjp331f typography_color_neutral__yhjp338"
       >
         A
       </span>
       <div
-        class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_paddingLeft_2_mobile__onxwjut8 sprinkles_paddingRight_2_mobile__onxwjuuc"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingLeft_2_mobile__onxwjusz sprinkles_paddingRight_2_mobile__onxwjuu3"
       >
         <div>
           divider
@@ -25,15 +25,15 @@ exports[`<Inline /> > should match snapshot for custom element dividers 1`] = `
       </div>
     </div>
     <div
-      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_display_flex_mobile__onxwju7c sprinkles_alignItems_center_mobile__onxwjulk sprinkles_flexDirection_row_mobile__onxwjuok sprinkles_flexWrap_nowrap_mobile__onxwjupo sprinkles_paddingTop_2_mobile__onxwjuvg"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingTop_2_mobile__onxwjuv7"
     >
       <span
-        class="element_resetVariants__1en4q4gd element_resetVariants_as_span__1en4q4gm  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_4__yhjp332e typography__yhjp3313 sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n typography__yhjp331f typography_color_neutral__yhjp338"
       >
         B
       </span>
       <div
-        class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_paddingLeft_2_mobile__onxwjut8 sprinkles_paddingRight_2_mobile__onxwjuuc"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingLeft_2_mobile__onxwjusz sprinkles_paddingRight_2_mobile__onxwjuu3"
       >
         <div>
           divider
@@ -41,10 +41,10 @@ exports[`<Inline /> > should match snapshot for custom element dividers 1`] = `
       </div>
     </div>
     <div
-      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_display_flex_mobile__onxwju7c sprinkles_alignItems_center_mobile__onxwjulk sprinkles_flexDirection_row_mobile__onxwjuok sprinkles_flexWrap_nowrap_mobile__onxwjupo sprinkles_paddingTop_2_mobile__onxwjuvg"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingTop_2_mobile__onxwjuv7"
     >
       <span
-        class="element_resetVariants__1en4q4gd element_resetVariants_as_span__1en4q4gm  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_4__yhjp332e typography__yhjp3313 sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n typography__yhjp331f typography_color_neutral__yhjp338"
       >
         C
       </span>
@@ -59,49 +59,49 @@ exports[`<Inline /> > should match snapshot for default dividers 1`] = `
   data-od-component="provider"
 >
   <div
-    class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjulk sprinkles_flexDirection_row_mobile__onxwjuok sprinkles_flexWrap_wrap_mobile__onxwjups useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_position_relative_mobile__onxwju8z sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4"
   >
     <div
-      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_display_flex_mobile__onxwju7c sprinkles_alignItems_center_mobile__onxwjulk sprinkles_flexDirection_row_mobile__onxwjuok sprinkles_flexWrap_nowrap_mobile__onxwjupo sprinkles_paddingTop_2_mobile__onxwjuvg"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingTop_2_mobile__onxwjuv7"
     >
       <span
-        class="element_resetVariants__1en4q4gd element_resetVariants_as_span__1en4q4gm  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_4__yhjp332e typography__yhjp3313 sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n typography__yhjp331f typography_color_neutral__yhjp338"
       >
         A
       </span>
       <div
-        class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_paddingLeft_2_mobile__onxwjut8 sprinkles_paddingRight_2_mobile__onxwjuuc"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingLeft_2_mobile__onxwjusz sprinkles_paddingRight_2_mobile__onxwjuu3"
       >
         <span
-          class="element_resetVariants__1en4q4gd element_resetVariants_as_span__1en4q4gm  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_4__yhjp332e typography__yhjp3313 sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n typography__yhjp331f typography_color_neutral__yhjp338"
         >
           •
         </span>
       </div>
     </div>
     <div
-      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_display_flex_mobile__onxwju7c sprinkles_alignItems_center_mobile__onxwjulk sprinkles_flexDirection_row_mobile__onxwjuok sprinkles_flexWrap_nowrap_mobile__onxwjupo sprinkles_paddingTop_2_mobile__onxwjuvg"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingTop_2_mobile__onxwjuv7"
     >
       <span
-        class="element_resetVariants__1en4q4gd element_resetVariants_as_span__1en4q4gm  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_4__yhjp332e typography__yhjp3313 sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n typography__yhjp331f typography_color_neutral__yhjp338"
       >
         B
       </span>
       <div
-        class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_paddingLeft_2_mobile__onxwjut8 sprinkles_paddingRight_2_mobile__onxwjuuc"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingLeft_2_mobile__onxwjusz sprinkles_paddingRight_2_mobile__onxwjuu3"
       >
         <span
-          class="element_resetVariants__1en4q4gd element_resetVariants_as_span__1en4q4gm  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_4__yhjp332e typography__yhjp3313 sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n typography__yhjp331f typography_color_neutral__yhjp338"
         >
           •
         </span>
       </div>
     </div>
     <div
-      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_display_flex_mobile__onxwju7c sprinkles_alignItems_center_mobile__onxwjulk sprinkles_flexDirection_row_mobile__onxwjuok sprinkles_flexWrap_nowrap_mobile__onxwjupo sprinkles_paddingTop_2_mobile__onxwjuvg"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingTop_2_mobile__onxwjuv7"
     >
       <span
-        class="element_resetVariants__1en4q4gd element_resetVariants_as_span__1en4q4gm  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_4__yhjp332e typography__yhjp3313 sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n typography__yhjp331f typography_color_neutral__yhjp338"
       >
         C
       </span>
@@ -116,31 +116,31 @@ exports[`<Inline /> > should match snapshot for no dividers 1`] = `
   data-od-component="provider"
 >
   <div
-    class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjulk sprinkles_flexDirection_row_mobile__onxwjuok sprinkles_flexWrap_wrap_mobile__onxwjups useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm24"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_position_relative_mobile__onxwju8z sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm24"
   >
     <div
-      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_display_flex_mobile__onxwju7c sprinkles_alignItems_center_mobile__onxwjulk sprinkles_flexDirection_row_mobile__onxwjuok sprinkles_flexWrap_nowrap_mobile__onxwjupo sprinkles_paddingLeft_2_mobile__onxwjut8 sprinkles_paddingTop_2_mobile__onxwjuvg"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_2_mobile__onxwjusz sprinkles_paddingTop_2_mobile__onxwjuv7"
     >
       <span
-        class="element_resetVariants__1en4q4gd element_resetVariants_as_span__1en4q4gm  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_4__yhjp332e typography__yhjp3313 sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n typography__yhjp331f typography_color_neutral__yhjp338"
       >
         A
       </span>
     </div>
     <div
-      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_display_flex_mobile__onxwju7c sprinkles_alignItems_center_mobile__onxwjulk sprinkles_flexDirection_row_mobile__onxwjuok sprinkles_flexWrap_nowrap_mobile__onxwjupo sprinkles_paddingLeft_2_mobile__onxwjut8 sprinkles_paddingTop_2_mobile__onxwjuvg"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_2_mobile__onxwjusz sprinkles_paddingTop_2_mobile__onxwjuv7"
     >
       <span
-        class="element_resetVariants__1en4q4gd element_resetVariants_as_span__1en4q4gm  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_4__yhjp332e typography__yhjp3313 sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n typography__yhjp331f typography_color_neutral__yhjp338"
       >
         B
       </span>
     </div>
     <div
-      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_display_flex_mobile__onxwju7c sprinkles_alignItems_center_mobile__onxwjulk sprinkles_flexDirection_row_mobile__onxwjuok sprinkles_flexWrap_nowrap_mobile__onxwjupo sprinkles_paddingLeft_2_mobile__onxwjut8 sprinkles_paddingTop_2_mobile__onxwjuvg"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_2_mobile__onxwjusz sprinkles_paddingTop_2_mobile__onxwjuv7"
     >
       <span
-        class="element_resetVariants__1en4q4gd element_resetVariants_as_span__1en4q4gm  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_4__yhjp332e typography__yhjp3313 sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n typography__yhjp331f typography_color_neutral__yhjp338"
       >
         C
       </span>
@@ -155,18 +155,18 @@ exports[`<Inline /> > should not be able to render components 1`] = `
   data-od-component="provider"
 >
   <div
-    class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_display_flex_mobile__onxwju7c sprinkles_position_relative_mobile__onxwju98 sprinkles_alignItems_center_mobile__onxwjulk sprinkles_flexDirection_row_mobile__onxwjuok sprinkles_flexWrap_wrap_mobile__onxwjups useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_position_relative_mobile__onxwju8z sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4"
   >
     <div
-      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_display_flex_mobile__onxwju7c sprinkles_alignItems_center_mobile__onxwjulk sprinkles_flexDirection_row_mobile__onxwjuok sprinkles_flexWrap_nowrap_mobile__onxwjupo sprinkles_paddingTop_2_mobile__onxwjuvg"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingTop_2_mobile__onxwjuv7"
     >
       <span
-        class="element_resetVariants__1en4q4gd element_resetVariants_as_span__1en4q4gm  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_4__yhjp332e typography__yhjp3313 sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n typography__yhjp331f typography_color_neutral__yhjp338"
       >
         A
       </span>
       <div
-        class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_paddingLeft_2_mobile__onxwjut8 sprinkles_paddingRight_2_mobile__onxwjuuc"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingLeft_2_mobile__onxwjusz sprinkles_paddingRight_2_mobile__onxwjuu3"
       >
         <div>
           divider component from test
@@ -174,10 +174,10 @@ exports[`<Inline /> > should not be able to render components 1`] = `
       </div>
     </div>
     <div
-      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_display_flex_mobile__onxwju7c sprinkles_alignItems_center_mobile__onxwjulk sprinkles_flexDirection_row_mobile__onxwjuok sprinkles_flexWrap_nowrap_mobile__onxwjupo sprinkles_paddingTop_2_mobile__onxwjuvg"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingTop_2_mobile__onxwjuv7"
     >
       <span
-        class="element_resetVariants__1en4q4gd element_resetVariants_as_span__1en4q4gm  sprinkles_textAlign_left_mobile__onxwju9o useTextStyles_root__1xnpmd70 useTextStyles_colours_neutral__1xnpmd7i useTextStyles_fontWeight_normal__1xnpmd7o useTextStyles_sizes_4__1xnpmd74"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_4__yhjp332e typography__yhjp3313 sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n typography__yhjp331f typography_color_neutral__yhjp338"
       >
         B
       </span>

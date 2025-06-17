@@ -6,7 +6,7 @@ exports[`<Bullet /> > should match the snapshot 1`] = `
   data-od-component="provider"
 >
   <li
-    class="element_resetVariants__1en4q4gd element_resetVariants_as_li__1en4q4g11  Bullet_root_default__13ecipx0"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_li__18vhvli11  Bullet_root_default__13ecipx0"
   />
 </div>
 `;
