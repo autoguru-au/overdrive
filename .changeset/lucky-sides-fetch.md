@@ -1,5 +1,5 @@
 ---
-'@autoguru/overdrive': minor
+'@autoguru/overdrive': patch
 ---
 
 The `useBoxStyles` and `useTextStyles` are now implemented by vanilla-extract
