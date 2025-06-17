@@ -1,16 +1,17 @@
-import * as React from 'react';
-import {
-	Children,
-	cloneElement,
-	ComponentProps,
-	FunctionComponent,
-	ReactElement,
+import React, {
+	type ComponentProps,
+	type FunctionComponent,
+	type ReactNode,
 	useCallback,
 	useEffect,
 	useRef,
 	useState,
+	useId,
 } from 'react';
 
+import { sprinkles } from '../../styles/sprinkles.css';
+import type { TestId } from '../../types';
+import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box/Box';
 import { Positioner } from '../Positioner/Positioner';
 import { EAlignment } from '../Positioner/alignment';
@@ -20,12 +21,12 @@ import * as styles from './Tooltip.css';
 
 type ToolTipSize = 'medium' | 'large';
 
-export interface TooltipProps {
+export interface TooltipProps extends TestId {
 	size?: ToolTipSize;
 	isOpen?: boolean;
 	label: string;
 	alignment?: EAlignment;
-	children: ReactElement;
+	children: ReactNode;
 	closeAfter?: number;
 }
 
@@ -41,10 +42,12 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 	children,
 	size = 'medium',
 	closeAfter = null,
+	testId,
 }) => {
+	const tooltipId = useId();
 	const [isOpen, setIsOpen] = useState(incomingIsOpen);
-	const childRef = useRef<HTMLDivElement>(null);
 	const triggerRef = useRef<HTMLElement>(null);
+	const tooltipRef = useRef<HTMLDivElement>(null);
 
 	const leaveTimer = useRef<ReturnType<typeof setTimeout>>(null);
 
@@ -52,7 +55,6 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 		if (leaveTimer.current) {
 			clearTimeout(leaveTimer.current);
 		}
-
 		setIsOpen(true);
 	}, [setIsOpen]);
 
@@ -62,22 +64,44 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 		}, 1e3 / 2);
 	}, [setIsOpen]);
 
+	const focusHandler = useCallback(() => {
+		setIsOpen(true);
+	}, [setIsOpen]);
+
+	const blurHandler = useCallback(() => {
+		setIsOpen(false);
+	}, [setIsOpen]);
+
+	// Handle the closeAfter prop
 	useEffect(() => {
-		let timeout;
-		if (isOpen && typeof closeAfter === 'number')
+		let timeout: ReturnType<typeof setTimeout>;
+		if (isOpen && typeof closeAfter === 'number') {
 			timeout = setTimeout(() => setIsOpen(false), closeAfter);
+		}
 
-		return () => (timeout ? clearTimeout(timeout) : void 0);
-	}, [closeAfter, isOpen, label]);
+		return () => {
+			if (timeout) clearTimeout(timeout);
+		};
+	}, [closeAfter, isOpen]);
 
-	return label?.length > 0 ? (
+	// return early if no label provided
+	if (!label) return <>{children}</>;
+
+	return (
 		<>
-			{cloneElement(Children.only(children), {
-				// @ts-expect-error ref does not exist on the type
-				ref: triggerRef,
-				onMouseEnter: enterHandler,
-				onMouseLeave: leaveHandler,
-			})}
+			<span
+				ref={triggerRef}
+				onMouseEnter={enterHandler}
+				onMouseLeave={leaveHandler}
+				onFocus={focusHandler}
+				onBlur={blurHandler}
+				tabIndex={0}
+				className={sprinkles({ display: 'inline-block' })}
+				aria-describedby={isOpen ? tooltipId : undefined}
+				{...dataAttrs({ testid: testId })}
+			>
+				{children}
+			</span>
 			<Positioner
 				triggerRef={triggerRef}
 				alignment={alignment}
@@ -88,7 +112,8 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 				}
 			>
 				<Box
-					ref={childRef}
+					id={tooltipId}
+					ref={tooltipRef}
 					className={styles.root}
 					width="full"
 					pointerEvents="none"
@@ -99,6 +124,7 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 					backgroundColour="gray900"
 					paddingY="2"
 					paddingX="3"
+					role="tooltip"
 				>
 					<Text size={sizeMap[size]} colour="white">
 						{label}
@@ -106,7 +132,7 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 				</Box>
 			</Positioner>
 		</>
-	) : (
-		<>{children}</>
 	);
 };
+
+Tooltip.displayName = 'Tooltip';
