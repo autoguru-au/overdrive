@@ -50,7 +50,7 @@ export const Simple: Story = {
 
 		await step('Group renders label and attributes', async () => {
 			await expect(group.firstChild).toHaveTextContent(`${args.label}`);
-			await expect(group).toHaveAttribute('data-test-id', args.testId);
+			await expect(group).toHaveAttribute('data-testid', args.testId);
 		});
 
 		await step('Checkboxes render labels and attributes', async () => {

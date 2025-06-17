@@ -49,7 +49,7 @@ export const Standard: Story = {
 			await expect(heading).toHaveTextContent(args.children as string);
 			await expect(heading).toHaveAttribute('id', args.id);
 			await expect(heading).toHaveAttribute(
-				'data-test-id',
+				'data-testid',
 				'test-heading',
 			);
 		});

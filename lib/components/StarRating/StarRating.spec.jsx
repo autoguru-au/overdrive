@@ -51,14 +51,14 @@ describe('<StarRating />', () => {
 	it('should add a span element inside with the rating value if label is not provided value', () => {
 		const { container } = render(<StarRating rating={4.1} />);
 		expect(
-			container.querySelector('[data-test-id="star-rating-label"]'),
+			container.querySelector('[data-testid="star-rating-label"]'),
 		).toHaveTextContent('4.1');
 	});
 
 	it('should add a span element inside with the label text value', () => {
 		const { container } = render(<StarRating label="Hello World!" />);
 		expect(
-			container.querySelector('[data-test-id="star-rating-label"]'),
+			container.querySelector('[data-testid="star-rating-label"]'),
 		).toHaveTextContent('Hello World!');
 	});
 

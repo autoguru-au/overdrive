@@ -192,7 +192,7 @@ export const DateTimePicker = <D extends DateValue>({
 			role="group"
 			aria-labelledby={titleId}
 			className={queryContainerStyle}
-			{...dataAttrs({ 'test-id': testId })}
+			{...dataAttrs({ testid: testId })}
 		>
 			{title && (
 				<Heading as="h2" id={titleId} mb="6" size="8">

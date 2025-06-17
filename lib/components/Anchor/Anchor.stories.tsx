@@ -40,7 +40,7 @@ export const WithIcon: Story = {
 			await expect(anchor).toHaveTextContent(args.children as string);
 			await expect(anchor).toHaveAttribute('href', args.href);
 			await expect(anchor).toHaveAttribute('id', args.id);
-			await expect(anchor).toHaveAttribute('data-test-id', args.testId);
+			await expect(anchor).toHaveAttribute('data-testid', args.testId);
 		});
 
 		await step('<Anchor /> renders the icon', async () => {

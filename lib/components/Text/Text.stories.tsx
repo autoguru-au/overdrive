@@ -46,7 +46,7 @@ export const Standard: Story = {
 		await step('<Text /> renders content and id attributes', async () => {
 			await expect(para).toHaveTextContent(args.children as string);
 			await expect(para).toHaveAttribute('id', args.id);
-			await expect(para).toHaveAttribute('data-test-id', args.testId);
+			await expect(para).toHaveAttribute('data-testid', args.testId);
 		});
 	},
 };

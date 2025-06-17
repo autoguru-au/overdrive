@@ -113,7 +113,7 @@ export const useBox = <E extends ElementType = 'div'>({
 		...baseProps,
 		...dataAttrs({
 			[OD_COMPONENT_ATTR]: odComponent?.toLocaleLowerCase(),
-			testId,
+			testid: testId,
 		}),
 		className,
 	} as ComponentPropsWithRef<E>;

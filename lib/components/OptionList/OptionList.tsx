@@ -70,7 +70,7 @@ export const OptionList = (props: OptionListProps) => {
 		<div
 			{...groupProps}
 			{...elementAttrs}
-			{...dataAttrs({ 'test-id': props.testId })}
+			{...dataAttrs({ testid: props.testId })}
 		>
 			<div {...labelProps} className={groupLabelStyle}>
 				{label}

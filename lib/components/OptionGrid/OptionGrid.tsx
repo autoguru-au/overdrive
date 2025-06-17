@@ -92,7 +92,7 @@ export const OptionGrid = ({
 				layout={layout}
 				selectionMode={selectionMode}
 				className={clsx([styledGrid({ columns }), className])}
-				{...dataAttrs({ 'test-id': testId })}
+				{...dataAttrs({ testid: testId })}
 				{...props}
 			>
 				{({ description, icon, label, name }) => (

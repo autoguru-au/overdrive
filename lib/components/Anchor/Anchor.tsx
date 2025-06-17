@@ -59,7 +59,7 @@ export const Anchor: FunctionComponent<Props> = ({
 			className,
 		),
 		disabled,
-		...dataAttrs({ 'test-id': testId }),
+		...dataAttrs({ testid: testId }),
 		...rest,
 	};
 

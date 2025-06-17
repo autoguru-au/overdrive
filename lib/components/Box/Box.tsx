@@ -270,7 +270,7 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 				{...allOtherProps}
 				{...dataAttrs({
 					'od-component': odComponent?.toLocaleLowerCase(),
-					testId,
+					testid: testId,
 				})}
 				className={allClasses}
 				ref={ref}

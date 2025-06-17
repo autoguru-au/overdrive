@@ -114,7 +114,7 @@ export const SearchBar = (componentProps: SearchBarProps) => {
 				disabled: props.isDisabled,
 				focus: isFocused,
 				'focus-visible': isFocusVisible,
-				'test-id': props.testId,
+				testid: props.testId,
 			})}
 		>
 			<div>
