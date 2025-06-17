@@ -11,7 +11,7 @@ import { storyLabel } from './Switch.css';
 const meta: Meta<typeof Switch> = {
 	title: 'Primatives/Switch',
 	component: Switch,
-	tags: ['updated'],
+	tags: [],
 	args: {
 		name: 'switch',
 		value: 'yes',

@@ -20,7 +20,7 @@ const listData: Array<{ label: string; value: string }> = [
 const meta: Meta<typeof CheckBox> = {
 	title: 'Forms & Input Fields/CheckBox',
 	component: CheckBox,
-	tags: ['updated'],
+	tags: [],
 	decorators: [
 		(Story) => (
 			<div style={{ maxWidth: '500px', width: '100%' }}>

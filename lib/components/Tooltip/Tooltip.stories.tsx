@@ -12,6 +12,7 @@ const sizeScale: ComponentProps<typeof Text>['size'][] = ['3', '4'];
 
 const meta = {
 	title: 'Components/Tooltip',
+	tags: ['updated'],
 	component: Tooltip,
 	decorators: [
 		(Story) => (
