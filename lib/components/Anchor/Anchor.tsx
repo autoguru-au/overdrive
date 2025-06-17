@@ -12,7 +12,7 @@ import {
 	ReactNode,
 } from 'react';
 
-import { componentStyles } from '../../styles/elementReset';
+import { componentStyles } from '../../styles/componentStyles';
 import { sprinkles } from '../../styles/sprinkles.css';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { BoxProps } from '../Box/Box';

@@ -4,7 +4,7 @@ import React, { forwardRef } from 'react';
 import {
 	componentStyles,
 	type ComponentStylesProps,
-} from '../../styles/elementReset';
+} from '../../styles/componentStyles';
 import { OdComponent, TestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 
@@ -153,7 +153,7 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 	) => {
 		const Component = as;
 
-		const styles = componentStyles({
+		const allClasses = componentStyles({
 			as,
 			className,
 
@@ -272,7 +272,7 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 					'od-component': odComponent?.toLocaleLowerCase(),
 					testId,
 				})}
-				className={styles}
+				className={allClasses}
 				ref={ref}
 			>
 				{children}

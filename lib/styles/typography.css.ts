@@ -4,7 +4,7 @@ import { mapValues } from 'es-toolkit';
 
 import { overdriveTokens as tokens } from '../themes/theme.css';
 
-import { elementReset } from './element.css';
+import { elementReset } from './elementReset.css';
 import { cssLayerTypography } from './layers.css';
 import { sprinkles, type Sprinkles } from './sprinkles.css';
 
@@ -22,7 +22,7 @@ export const sprinklesLegacyText = createSprinkles(legacyTextProperties);
 
 /**
  * The global typography style function. Currently responsive values are not supported.
- * To allow for responsive styles, use the `sprikles` directly.
+ * To allow for responsive styles, use the `sprinkles` directly.
  */
 export const typographyStyles = recipe({
 	base: {
