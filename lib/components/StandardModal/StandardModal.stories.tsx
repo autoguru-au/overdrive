@@ -9,10 +9,8 @@ import { StandardModal } from './StandardModal';
 
 const meta = {
 	title: 'Components/Modal: Standard with Title',
+	tags: ['modal'],
 	component: StandardModal,
-	parameters: {
-		chromatic: { disable: true },
-	},
 } satisfies Meta<typeof StandardModal>;
 
 export default meta;

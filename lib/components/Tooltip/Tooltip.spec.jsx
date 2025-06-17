@@ -48,4 +48,72 @@ describe('<Tolltip />', () => {
 
 		expect(baseElement).toMatchSnapshot();
 	});
+
+	describe('multiple children support', () => {
+		it('should work with multiple children', () => {
+			const { container } = render(
+				<Tooltip label="Test">
+					<div>First child</div>
+					<div>Second child</div>
+				</Tooltip>,
+			);
+
+			expect(container).toHaveTextContent('First child');
+			expect(container).toHaveTextContent('Second child');
+
+			// Multiple children should be wrapped in a span
+			const wrapper = container.querySelector('span');
+			expect(wrapper).toBeInTheDocument();
+		});
+
+		it('should show tooltip when hovering over multiple children wrapper', () => {
+			const { container } = render(
+				<Tooltip label="tooltip content">
+					<div>First child</div>
+					<div>Second child</div>
+				</Tooltip>,
+			);
+
+			const wrapper = container.querySelector('span');
+			fireEvent.mouseEnter(wrapper);
+
+			expect(container.parentNode).toHaveTextContent('tooltip content');
+		});
+
+		it('should work with React Fragment children', () => {
+			const { container } = render(
+				<Tooltip label="Fragment tooltip">
+					<>
+						<div>Fragment child 1</div>
+						<div>Fragment child 2</div>
+					</>
+				</Tooltip>,
+			);
+
+			expect(container).toHaveTextContent('Fragment child 1');
+			expect(container).toHaveTextContent('Fragment child 2');
+
+			// Fragment children should be wrapped in a span
+			const wrapper = container.querySelector('span');
+			expect(wrapper).toBeInTheDocument();
+		});
+
+		it('should show tooltip when hovering over React Fragment wrapper', () => {
+			const { container } = render(
+				<Tooltip label="Fragment tooltip content">
+					<>
+						<div>Fragment child 1</div>
+						<div>Fragment child 2</div>
+					</>
+				</Tooltip>,
+			);
+
+			const wrapper = container.querySelector('span');
+			fireEvent.mouseEnter(wrapper);
+
+			expect(container.parentNode).toHaveTextContent(
+				'Fragment tooltip content',
+			);
+		});
+	});
 });
