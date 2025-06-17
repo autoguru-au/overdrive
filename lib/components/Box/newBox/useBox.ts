@@ -9,10 +9,12 @@ import {
 } from 'react';
 
 import { useDeepCompareMemo } from '../../../hooks';
+import { componentStyles } from '../../../styles/componentStyles';
 import { dataAttrs } from '../../../utils/dataAttrs';
+import { filterPropsWithStyles } from '../../../utils/sprinkles';
 import type { CommonBoxProps } from '../Box';
 
-import { boxStylesWithFilteredProps, type StyleProps } from './boxStyles';
+import { type StyleProps } from './boxStyles';
 
 // defaults
 const DEFAULT_TAG = 'div' as keyof JSX.IntrinsicElements;
@@ -92,15 +94,15 @@ export const useBox = <E extends ElementType = 'div'>({
 	const SemanticChild = isList ? (LIST_ITEM_TAG as ElementType) : undefined;
 
 	// deep compare is mainly to attempt to stop rerenders arrising from responsive style props
-	const { className, baseProps } = useDeepCompareMemo(
-		() =>
-			boxStylesWithFilteredProps<E>({
-				as, // boxStyles uses the 'as' prop to determine css resets based on tag name
-				className: _className,
-				...props,
-			}),
-		[as, _className, props],
-	);
+	const { className, baseProps } = useDeepCompareMemo(() => {
+		const { sprinklesProps, baseProps } = filterPropsWithStyles(props);
+		const className = componentStyles({
+			as,
+			className: _className,
+			...sprinklesProps,
+		});
+		return { className, baseProps };
+	}, [as, _className, props]);
 
 	const componentProps = {
 		...baseProps,

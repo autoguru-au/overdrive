@@ -1,10 +1,6 @@
 export { cssLayerComponent, cssLayerTheme } from './layers.css';
-export { resetVariants, type ResetVariantProps } from './element.css';
-export {
-	componentStyles,
-	elementResetStyles,
-	resetStyles,
-} from './elementReset';
+export { resetVariants, type ResetVariantProps } from './elementReset.css';
+export { componentStyles, resetStyles } from './componentStyles';
 export {
 	sprinkles,
 	type Sprinkles as StyleProps,
