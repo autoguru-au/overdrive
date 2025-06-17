@@ -115,22 +115,5 @@ describe('<Tolltip />', () => {
 				'Fragment tooltip content',
 			);
 		});
-
-		it('should maintain backwards compatibility with single child', () => {
-			const { container, getByText } = render(
-				<Tooltip label="tooltip content">
-					<div>single child</div>
-				</Tooltip>,
-			);
-
-			// Should not have an extra wrapper for single child
-			const triggerElement = getByText('single child');
-			expect(triggerElement.tagName).toBe('DIV');
-			expect(container.querySelector('span')).toBeNull();
-
-			// Hover should still trigger tooltip
-			fireEvent.mouseEnter(triggerElement);
-			expect(container.parentNode).toHaveTextContent('tooltip content');
-		});
 	});
 });

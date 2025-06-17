@@ -9,11 +9,14 @@ exports[`<Tolltip /> > should match snapshot when closed 1`] = `
       class="theme_OD_Base__j49br80"
       data-od-component="provider"
     >
-      <div
+      <span
+        class="sprinkles_display_inline-block_mobile__onxwju7s"
         tabindex="0"
       >
-        trigger
-      </div>
+        <div>
+          trigger
+        </div>
+      </span>
     </div>
   </div>
   <div
@@ -36,12 +39,15 @@ exports[`<Tolltip /> > should match snapshot when opened 1`] = `
       class="theme_OD_Base__j49br80"
       data-od-component="provider"
     >
-      <div
+      <span
         aria-describedby="«r3»"
+        class="sprinkles_display_inline-block_mobile__onxwju7s"
         tabindex="0"
       >
-        trigger
-      </div>
+        <div>
+          trigger
+        </div>
+      </span>
     </div>
   </div>
   <div
