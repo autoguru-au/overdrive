@@ -2,8 +2,14 @@
 '@autoguru/overdrive': patch
 ---
 
+- Text: the props `fontWeight`, `textTransform` and `textWrap` are simplified to
+  `weight`, `transform` and `wrap`. Text now supports margin + padding style
+  props
+- The `testId` prop is more consistently rendered and tested for as
+  `data-testid` attribute
+
 The `useBoxStyles` and `useTextStyles` are now implemented by vanilla-extract
-sprinkles.
+sprinkles:
 
 - Instead of `useBoxStyles` consider importing `componentStyles` (aliased to
   `useBoxStyles` during transition)

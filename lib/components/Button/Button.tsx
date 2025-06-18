@@ -155,7 +155,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			onClick,
 			disabled: disabled || isLoading,
 			'aria-label': isLoading ? language.loading : ariaLabel,
-			'data-loading': isLoading ? '' : undefined,
 			className: clsx(
 				componentStyles({
 					as: Component,
@@ -182,6 +181,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 				}),
 				className,
 			),
+			...dataAttrs({ loading: isLoading, testid: testId }),
 			ref,
 		};
 
@@ -253,7 +253,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 				alignItems="center"
 				justifyContent="center"
 				className={styles.body}
-				{...dataAttrs({ 'data-testid': testId })}
 			>
 				{buttonContents}
 			</Box>

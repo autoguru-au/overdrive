@@ -22,6 +22,13 @@ describe('<Button />', () => {
 		).toHaveClass('button-class');
 	});
 
+	it('should have correct test ID data attribute', () => {
+		expect(
+			render(<Button testId="test-button" />).container.firstChild
+				.firstChild,
+		).toHaveAttribute('data-testid', 'test-button');
+	});
+
 	describe('when as button', () => {
 		it('should use html button element by default', () => {
 			expect(render(<Button />).container.firstChild).toMatchSnapshot();
