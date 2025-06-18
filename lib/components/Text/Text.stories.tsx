@@ -58,6 +58,9 @@ export const AllTypes: Story = {
 	args: {
 		children: longText,
 		display: 'block',
+		size: undefined,
+		weight: undefined,
+		my: '2',
 	},
 	render: (args) => (
 		<>
