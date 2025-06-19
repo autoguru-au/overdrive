@@ -12,7 +12,6 @@ import React, {
 	type ReactNode,
 } from 'react';
 
-import { componentStyles } from '../../styles';
 import { Box } from '../Box/Box';
 import { Icon } from '../Icon/Icon';
 import { Text } from '../Text/Text';
@@ -34,9 +33,21 @@ export interface TextLinkProps
 	className?: string;
 	as?: ElementType | ReactElement;
 	muted?: boolean;
+	/** Optional icon, displayed after the link text */
 	icon?: IconType;
 }
 
+/**
+ * TextLink component for rendering navigation links
+ *
+ * @example
+ * ```tsx
+ * <TextLink href="https://example.com">Click me</TextLink>
+ *
+ * // With an icon
+ * <TextLink href="/settings" icon={SettingsIcon}>Settings</TextLink>
+ * ```
+ */
 export const TextLink = forwardRef<HTMLAnchorElement, TextLinkProps>(
 	(
 		{
@@ -62,24 +73,19 @@ export const TextLink = forwardRef<HTMLAnchorElement, TextLinkProps>(
 		);
 		const body = (
 			<Text
-				as="span"
 				colour={muted ? 'muted' : 'link'}
 				noWrap={noWrap}
+				pr={icon ? '5' : undefined}
 				size={size}
 				strong={strong}
 				transform={transform}
 				weight={weight}
-				className={clsx(
-					componentStyles({
-						as: 'span',
-						pointerEvents: 'none',
-						position: 'relative',
-						paddingRight: icon ? '5' : undefined,
-					}),
+				className={[
+					styles.body,
 					{
 						[styles.muted]: muted,
 					},
-				)}
+				]}
 			>
 				{children}
 				{icon ? (

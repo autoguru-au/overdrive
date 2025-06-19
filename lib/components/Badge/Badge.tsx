@@ -2,14 +2,15 @@ import { invariant } from '@autoguru/utilities';
 import clsx from 'clsx';
 import React from 'react';
 
-import { Box, type BoxProps } from '../Box/Box';
+import type { TestId } from '../../types';
+import { Box } from '../Box/Box';
 
 import * as styles from './Badge.css';
 import type { StyledBadgeProps } from './Badge.css';
 
 type Colours = Exclude<StyledBadgeProps['colour'], undefined>;
 
-export interface BadgeProps extends Pick<BoxProps, 'testId'> {
+export interface BadgeProps extends TestId {
 	/** The text content */
 	label: string;
 	/** The color of the badge */
@@ -26,7 +27,6 @@ export interface BadgeProps extends Pick<BoxProps, 'testId'> {
  * The Badge component displays a label using intentional colour themes. The colours and sizes are configuable.
  *
  * To apply badge styling to an element directly the `styledBadge` recipe can be used.
- *
  */
 export const Badge = ({
 	label,

@@ -4,12 +4,11 @@ import clsx from 'clsx';
 
 import * as styles from './{{pascalCase name}}.css';
 
-export interface Props {
+export interface {{pascalCase name}}Props {
 example?: boolean;
 }
 
-export const {{pascalCase name}}: FunctionComponent
-<Props> = () => {
+export const {{pascalCase name}} = ({}: {{pascalCase}}Props) => {
 	return (<p className={clsx(styles.root)}>
 		New component {{name}}! 🎉 Edit lib/components/{{pascalCase name}}/{{pascalCase name}}.tsx
 	</p>);
