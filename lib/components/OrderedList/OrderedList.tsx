@@ -10,7 +10,6 @@ import {
 
 import { typographyStyles } from '../../styles/typography.css';
 import { Box } from '../Box/Box';
-import { Stack } from '../Stack/Stack';
 
 import * as styles from './OrderedList.css';
 
@@ -66,14 +65,14 @@ export const OrderedList: FunctionComponent<Props> & {
 			odComponent="ordered-list"
 		>
 			<OrderedListContext.Provider value={myCycle}>
-				<Stack space="2">{children}</Stack>
+				{children}
 			</OrderedListContext.Provider>
 		</Box>
 	);
 };
 
 const Item: FunctionComponent<ItemProps> = ({ className = '', children }) => (
-	<Box as="li" className={className}>
+	<Box as="li" className={[styles.item, className]}>
 		{children}
 	</Box>
 );
