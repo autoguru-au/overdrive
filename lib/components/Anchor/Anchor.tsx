@@ -25,11 +25,11 @@ import * as styles from './Anchor.css';
 export interface Props
 	extends Omit<
 			AnchorHTMLAttributes<HTMLAnchorElement>,
-			'children' | 'style' | 'is'
+			'as' | 'children' | 'is' | 'style'
 		>,
 		Pick<BoxProps, 'testId'> {
 	className?: string;
-	is?: ElementType | ReactElement;
+	as?: ElementType | ReactElement;
 	disabled?: boolean;
 	children?: ReactNode;
 
@@ -39,7 +39,7 @@ export interface Props
 export const Anchor: FunctionComponent<Props> = ({
 	className = '',
 
-	is: Component = 'a',
+	as: Component = 'a',
 	disabled = false,
 	testId,
 

@@ -28,15 +28,16 @@ type FilteredTextProps = Pick<
 
 type InputProps = Omit<
 	InputHTMLAttributes<HTMLInputElement>,
-	| 'color'
-	| 'style'
-	| 'is'
+	| 'as'
 	| 'autoFocus'
-	| 'width'
+	| 'color'
 	| 'height'
+	| 'is'
 	| 'onFocus'
 	| 'onBlur'
 	| 'onKeyDown'
+	| 'style'
+	| 'width'
 	| keyof FilteredTextProps
 	| keyof PickedBoxProps
 >;
@@ -54,7 +55,7 @@ type InputMode = 'TEXT' | 'INPUT';
 export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 	(
 		{
-			as: is,
+			as,
 			colour = 'muted',
 			size,
 			display = 'inline-block',
@@ -102,7 +103,7 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 		);
 
 		const baseStyle = textStyles({
-			as: is,
+			as,
 			colour,
 			size,
 		});
@@ -156,7 +157,7 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 				<Text
 					noWrap
 					ref={textRef}
-					as={is}
+					as={as}
 					colour={colour}
 					size={size}
 					className={clsx(baseStyle, styles.text, {

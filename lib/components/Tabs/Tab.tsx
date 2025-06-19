@@ -24,7 +24,7 @@ import { TabsContext } from './Tabs';
 export interface Props {
 	children?: ReactNode;
 	id?: string;
-	is?: ElementType | ReactElement;
+	as?: ElementType | ReactElement;
 	indication?: number;
 }
 
@@ -34,7 +34,7 @@ export const Tab = forwardRef<HTMLDivElement, Props>(
 			children,
 			id: incomingId = null,
 			indication = null,
-			is: Component = 'button',
+			as: Component = 'button',
 		},
 		ref,
 	) => {

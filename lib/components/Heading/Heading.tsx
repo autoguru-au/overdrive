@@ -10,8 +10,6 @@ export interface HeadingProps
 	extends Omit<BoxProps, keyof TextStyleProps>,
 		Omit<TextStyleProps, 'as'> {
 	as?: HeadingTags;
-	/** @deprecated Prefer `as` */
-	is?: HeadingTags;
 }
 
 const defaultSizeMap: Record<HeadingTags, Sprinkles['fontSize']> = {
@@ -27,8 +25,7 @@ const defaultSizeMap: Record<HeadingTags, Sprinkles['fontSize']> = {
  * Heading renders an <h1... h6> with default font size and weight
  */
 export const Heading = ({
-	is = 'h1',
-	as = is,
+	as = 'h1',
 	align,
 	breakWord,
 	children,
