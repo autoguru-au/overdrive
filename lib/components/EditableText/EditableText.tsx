@@ -23,7 +23,7 @@ type PickedBoxProps = Pick<
 
 type FilteredTextProps = Pick<
 	TextProps,
-	'as' | 'colour' | 'size' | 'children' | 'noWrap'
+	'as' | 'color' | 'colour' | 'size' | 'children' | 'noWrap'
 >;
 
 type InputProps = Omit<
@@ -56,6 +56,7 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 	(
 		{
 			as,
+			color,
 			colour = 'muted',
 			size,
 			display = 'inline-block',
@@ -158,6 +159,7 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 					noWrap
 					ref={textRef}
 					as={as}
+					color={color}
 					colour={colour}
 					size={size}
 					className={clsx(baseStyle, styles.text, {
