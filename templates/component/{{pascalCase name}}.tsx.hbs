@@ -1,15 +1,13 @@
-import * as React from 'react';
-import type { FunctionComponent } from 'react';
-import clsx from 'clsx';
+import React from 'react';
 
 import * as styles from './{{pascalCase name}}.css';
 
 export interface {{pascalCase name}}Props {
-example?: boolean;
+  example?: boolean;
 }
 
-export const {{pascalCase name}} = ({}: {{pascalCase}}Props) => {
-	return (<p className={clsx(styles.root)}>
-		New component {{name}}! 🎉 Edit lib/components/{{pascalCase name}}/{{pascalCase name}}.tsx
-	</p>);
-	};
+export const {{pascalCase name}} = ({...props}: {{pascalCase}}Props) => {
+  return (<p className={styles.root}>
+    New component {{name}}! 🎉 Edit lib/components/{{pascalCase name}}/{{pascalCase name}}.tsx
+  </p>);
+};
