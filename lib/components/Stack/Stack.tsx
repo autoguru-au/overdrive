@@ -1,65 +1,102 @@
-import * as React from 'react';
-import { Children, FunctionComponent, ReactNode } from 'react';
+import React, { Children, type ReactNode, useMemo } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 
+import type { Sprinkles } from '../../styles/sprinkles.css';
 import { Box, type BoxProps } from '../Box/Box';
 
-import { Divider } from './Divider';
-import * as styles from './Stack.css';
+import * as styles from './Divider.css';
 
-export interface Props extends Pick<BoxProps, 'as' | 'width' | 'alignItems'> {
-	space?: keyof typeof styles.child.spaces;
-	className?: string;
-	dividers?: boolean;
-
+export interface StackProps
+	extends Pick<BoxProps, 'as' | 'width' | 'alignItems'> {
 	children: ReactNode | ReactNode[];
+	className?: string;
+	/**
+	 * Show a divider element between each item
+	 */
+	dividers?: boolean;
+	/**
+	 * Defines the gap between list items. Accepts responsive values
+	 * @default '2'
+	 */
+	space?: Sprinkles['padding'];
 }
 
-const supportedListTypes: ReadonlyArray<keyof React.JSX.IntrinsicElements> = [
-	'ul',
-	'ol',
-] as const;
+export const LIST_MAP = {
+	ol: 'li',
+	ul: 'li',
+} as const;
 
-export const Stack: FunctionComponent<Props> = ({
-	as = 'div',
-	space = '2',
-	children,
+const Divider = () => <hr className={styles.hr} />;
+
+/**
+ * Stack arranges child elements vertically, one below the other.
+ * It allows you to control the spacing between items, alignment, and optionally add dividers.
+ * Useful for creating vertical lists, forms, or sections.
+ *
+ * @example
+ * <Stack>
+ *   <Text>Item 1</Text>
+ *   <Text>Item 2</Text>
+ *   <Text>Item 3</Text>
+ * </Stack>
+ *
+ * @example
+ * <Stack space="4" dividers>
+ *   <Button>Action 1</Button>
+ *   <Button>Action 2</Button>
+ * </Stack>
+ *
+ * @example
+ * <Stack alignItems="center" space="3">
+ *   <Card>Card 1</Card>
+ *   <Card>Card 2</Card>
+ * </Stack>
+ */
+export const Stack = ({
 	alignItems,
-	width,
+	as = 'div',
+	className,
+	children,
 	dividers = false,
-	className = '',
-}) => {
-	const items = flattenChildren(children);
+	space = '2',
+	width,
+}: StackProps) => {
+	const items = useMemo(() => flattenChildren(children), [children]);
 
-	if (items.length < 2) {
-		return <>{items}</>;
+	if (items.length === 0) {
+		return null;
 	}
 
-	let listItem: typeof as = 'div';
-	if (typeof as === 'string')
-		listItem = supportedListTypes.includes(as) ? 'li' : 'div';
+	const childEl =
+		typeof as === 'string' && as in LIST_MAP
+			? LIST_MAP[as as keyof typeof LIST_MAP]
+			: 'div';
 
 	return (
-		<Box as={as} className={className} width={width}>
-			{Children.map(items, (child, idx) => (
-				<Box
-					as={listItem}
-					display={alignItems ? 'flex' : void 0}
-					flexDirection="column"
-					alignItems={alignItems}
-					className={[
-						styles.child.default,
-						dividers ? undefined : styles.child.spaces[space],
-					]}
-				>
-					{dividers && idx > 0 ? (
-						<Box paddingY={space} width="full">
-							<Divider />
+		<Box
+			as={as}
+			className={className}
+			display="flex"
+			flexDirection="column"
+			gap={space}
+			odComponent="stack"
+			width={width}
+		>
+			{Children.map(
+				items,
+				(child, idx) =>
+					child && (
+						<Box
+							alignItems={alignItems}
+							as={childEl}
+							display={alignItems ? 'flex' : undefined}
+							flexDirection={alignItems ? 'column' : undefined}
+						>
+							{dividers && idx > 0 && <Divider />}
+							{child}
 						</Box>
-					) : null}
-					{child}
-				</Box>
-			))}
+					),
+			)}
 		</Box>
 	);
 };
