@@ -6,7 +6,7 @@ export interface {{pascalCase name}}Props {
   example?: boolean;
 }
 
-export const {{pascalCase name}} = ({...props}: {{pascalCase}}Props) => {
+export const {{pascalCase name}} = ({...props}: {{pascalCase name}}Props) => {
   return (<p className={styles.root}>
     New component {{name}}! 🎉 Edit lib/components/{{pascalCase name}}/{{pascalCase name}}.tsx
   </p>);
