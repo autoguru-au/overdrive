@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, fn, within, userEvent } from 'storybook/test';
 
 import { SearchBar } from './SearchBar';

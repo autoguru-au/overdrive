@@ -11,7 +11,7 @@ type ColumnProps = React.ComponentProps<typeof Column>;
 
 const meta: Meta<typeof Columns> = {
 	title: 'Layout/Columns',
-	tags: ['polymorphic'],
+	tags: [],
 	component: Columns,
 	args: {
 		align: 'bottom',

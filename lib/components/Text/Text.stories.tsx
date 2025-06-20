@@ -14,7 +14,7 @@ const Wrapper = ({ children }) => (
 
 const meta: Meta<typeof Text> = {
 	title: 'Primatives/Text',
-	tags: ['polymorphic'],
+	tags: [],
 	component: Text,
 	decorators: [(Story) => <Wrapper>{Story()}</Wrapper>],
 	args: {

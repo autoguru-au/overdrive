@@ -6,10 +6,11 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
   data-od-component="provider"
 >
   <div
-    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_flexDirection_column_mobile__onxwjuof sprinkles_gap_5_mobile__onxwjuh3"
+    data-od-component="stack"
   >
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_flexDirection_column_mobile__onxwjuof Stack_child_default__1417p7aa Stack_child_spaces_5__1417p7a4"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4"
     >
       <div
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_overflow_hidden_mobile__onxwju7z sprinkles_position_relative_mobile__onxwju8z"
@@ -204,7 +205,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot for 8 items 1`] 
       </div>
     </div>
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_flexDirection_column_mobile__onxwjuof Stack_child_default__1417p7aa Stack_child_spaces_5__1417p7a4"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4"
     >
       <div
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_full_mobile__onxwjufn Section_root__184s6x60 Section_width_small__184s6x61"
@@ -314,10 +315,11 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
   data-od-component="provider"
 >
   <div
-    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_flexDirection_column_mobile__onxwjuof sprinkles_gap_5_mobile__onxwjuh3"
+    data-od-component="stack"
   >
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_flexDirection_column_mobile__onxwjuof Stack_child_default__1417p7aa Stack_child_spaces_5__1417p7a4"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4"
     >
       <div
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_overflow_hidden_mobile__onxwju7z sprinkles_position_relative_mobile__onxwju8z"
@@ -460,7 +462,7 @@ exports[`<HorizontalAutoScroller /> > should match the snapshot with custom slid
       </div>
     </div>
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_flexDirection_column_mobile__onxwjuof Stack_child_default__1417p7aa Stack_child_spaces_5__1417p7a4"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4"
     >
       <div
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_width_full_mobile__onxwjufn Section_root__184s6x60 Section_width_small__184s6x61"
