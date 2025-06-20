@@ -12,10 +12,11 @@ exports[`<Stepper /> > should match snapshot with label formatter 1`] = `
     tabindex="0"
   >
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_position_relative_mobile__onxwju8z sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_justifyContent_space-between_mobile__onxwjuo3 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm24"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_gap_2_mobile__onxwjugr sprinkles_justifyContent_space-between_mobile__onxwjuo3"
+      data-od-component="inline"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_2_mobile__onxwjusz sprinkles_paddingTop_2_mobile__onxwjuv7"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
       >
         <div
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4"
@@ -46,7 +47,7 @@ exports[`<Stepper /> > should match snapshot with label formatter 1`] = `
         </div>
       </div>
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_2_mobile__onxwjusz sprinkles_paddingTop_2_mobile__onxwjuv7"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
       >
         <div
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4"
@@ -59,7 +60,7 @@ exports[`<Stepper /> > should match snapshot with label formatter 1`] = `
         </div>
       </div>
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_2_mobile__onxwjusz sprinkles_paddingTop_2_mobile__onxwjuv7"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
       >
         <div
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4"
@@ -106,10 +107,11 @@ exports[`<Stepper /> > should match snapshot with props 1`] = `
     tabindex="0"
   >
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_position_relative_mobile__onxwju8z sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_justifyContent_space-between_mobile__onxwjuo3 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm24"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_gap_2_mobile__onxwjugr sprinkles_justifyContent_space-between_mobile__onxwjuo3"
+      data-od-component="inline"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_2_mobile__onxwjusz sprinkles_paddingTop_2_mobile__onxwjuv7"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
       >
         <div
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4"
@@ -140,7 +142,7 @@ exports[`<Stepper /> > should match snapshot with props 1`] = `
         </div>
       </div>
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_2_mobile__onxwjusz sprinkles_paddingTop_2_mobile__onxwjuv7"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
       >
         <div
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4"
@@ -153,7 +155,7 @@ exports[`<Stepper /> > should match snapshot with props 1`] = `
         </div>
       </div>
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_2_mobile__onxwjusz sprinkles_paddingTop_2_mobile__onxwjuv7"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
       >
         <div
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4"
@@ -200,10 +202,11 @@ exports[`<Stepper /> > should match snapshot without props 1`] = `
     tabindex="0"
   >
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_position_relative_mobile__onxwju8z sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_justifyContent_space-between_mobile__onxwjuo3 useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw4 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm24"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_gap_2_mobile__onxwjugr sprinkles_justifyContent_space-between_mobile__onxwjuo3"
+      data-od-component="inline"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_2_mobile__onxwjusz sprinkles_paddingTop_2_mobile__onxwjuv7"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
       >
         <div
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4"
@@ -234,7 +237,7 @@ exports[`<Stepper /> > should match snapshot without props 1`] = `
         </div>
       </div>
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_2_mobile__onxwjusz sprinkles_paddingTop_2_mobile__onxwjuv7"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
       >
         <div
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4"
@@ -247,7 +250,7 @@ exports[`<Stepper /> > should match snapshot without props 1`] = `
         </div>
       </div>
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_2_mobile__onxwjusz sprinkles_paddingTop_2_mobile__onxwjuv7"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
       >
         <div
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4"

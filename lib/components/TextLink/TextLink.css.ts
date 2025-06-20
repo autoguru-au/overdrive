@@ -1,5 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
+import { sprinkles } from '../../styles/sprinkles.css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
 export const root = style({
@@ -19,6 +20,11 @@ export const icon = style({
 	right: 0,
 	top: '50%',
 	transform: 'translateY(-50%)',
+});
+
+export const body = sprinkles({
+	pointerEvents: 'none',
+	position: 'relative',
 });
 
 export const muted = style({

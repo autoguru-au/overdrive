@@ -21,20 +21,20 @@ import * as styles from './Tab.css';
 import { TabListContext } from './TabList';
 import { TabsContext } from './Tabs';
 
-export interface Props {
+export interface TabProps {
 	children?: ReactNode;
 	id?: string;
-	is?: ElementType | ReactElement;
+	as?: ElementType | ReactElement;
 	indication?: number;
 }
 
-export const Tab = forwardRef<HTMLDivElement, Props>(
+export const Tab = forwardRef<HTMLDivElement, TabProps>(
 	(
 		{
 			children,
 			id: incomingId = null,
 			indication = null,
-			is: Component = 'button',
+			as: Component = 'button',
 		},
 		ref,
 	) => {

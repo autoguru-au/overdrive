@@ -1,14 +1,14 @@
-import * as React from 'react';
+import React from 'react';
 import { render } from '@testing-library/react';
 import { {{pascalCase name}} } from '.';
 
 describe('<{{pascalCase name}} />', () => {
-it('should not throw', () => {
-expect(() => render(<{{pascalCase name}} />)).not.toThrow();
-});
+  it('should not throw', () => {
+    expect(() => render(<{{pascalCase name}} />)).not.toThrow();
+  });
 
 it('should match the snapshot', () => {
-expect(render(<{{pascalCase name}} />).container.firstChild)
-.toMatchSnapshot();
-});
+  expect(render(<{{pascalCase name}} />).container.firstChild)
+    .toMatchSnapshot();
+   });
 });

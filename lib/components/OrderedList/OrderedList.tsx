@@ -1,9 +1,8 @@
 import clsx from 'clsx';
-import * as React from 'react';
-import {
+import React, {
 	createContext,
-	FunctionComponent,
-	OlHTMLAttributes,
+	type FunctionComponent,
+	type OlHTMLAttributes,
 	ReactNode,
 	useContext,
 } from 'react';
@@ -24,7 +23,7 @@ const cycles: ListStyleType[] = [
 	'lower-roman',
 ];
 
-export interface Props
+export interface OrderedListProps
 	extends Pick<OlHTMLAttributes<HTMLOListElement>, 'start'> {
 	type?: ListStyleType;
 	className?: string;
@@ -38,9 +37,9 @@ export interface ItemProps {
 
 const OrderedListContext = createContext(-1);
 
-export const OrderedList: FunctionComponent<Props> & {
+export const OrderedList: FunctionComponent<OrderedListProps> & {
 	Item: FunctionComponent<ItemProps>;
-} = ({ children, className = '', type = null, start }) => {
+} = ({ children, className, type = null, start }) => {
 	const cycle = useContext(OrderedListContext);
 
 	let myCycle: number;
@@ -72,12 +71,10 @@ export const OrderedList: FunctionComponent<Props> & {
 	);
 };
 
-const Item: FunctionComponent<ItemProps> = ({ className = '', children }) => (
+const Item: FunctionComponent<ItemProps> = ({ className, children }) => (
 	<Box as="li" className={className}>
 		{children}
 	</Box>
 );
 
 OrderedList.Item = Item;
-
-export default OrderedList;

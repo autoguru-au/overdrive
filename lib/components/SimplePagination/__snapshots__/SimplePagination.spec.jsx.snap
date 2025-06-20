@@ -6,10 +6,11 @@ exports[`<SimplePagination /> > should match snapshot for hasNext 1`] = `
   data-od-component="provider"
 >
   <nav
-    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_nav__18vhvlix elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_position_relative_mobile__onxwju8z sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_justifyContent_center_mobile__onxwjumz useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwk useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2k"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_nav__18vhvlix elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_6_mobile__onxwjuh7 sprinkles_justifyContent_center_mobile__onxwjumz"
+    data-od-component="inline"
   >
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_6_mobile__onxwjutf sprinkles_paddingTop_6_mobile__onxwjuvn"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
     >
       <button
         aria-label="previous page"
@@ -41,7 +42,7 @@ exports[`<SimplePagination /> > should match snapshot for hasNext 1`] = `
       </button>
     </div>
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_6_mobile__onxwjutf sprinkles_paddingTop_6_mobile__onxwjuvn"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
     >
       <button
         aria-label="next page"
@@ -81,10 +82,11 @@ exports[`<SimplePagination /> > should match snapshot for hasNext and hasPreviou
   data-od-component="provider"
 >
   <nav
-    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_nav__18vhvlix elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_position_relative_mobile__onxwju8z sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_justifyContent_center_mobile__onxwjumz useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwk useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2k"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_nav__18vhvlix elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_6_mobile__onxwjuh7 sprinkles_justifyContent_center_mobile__onxwjumz"
+    data-od-component="inline"
   >
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_6_mobile__onxwjutf sprinkles_paddingTop_6_mobile__onxwjuvn"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
     >
       <button
         aria-label="previous page"
@@ -115,7 +117,7 @@ exports[`<SimplePagination /> > should match snapshot for hasNext and hasPreviou
       </button>
     </div>
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_6_mobile__onxwjutf sprinkles_paddingTop_6_mobile__onxwjuvn"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
     >
       <button
         aria-label="next page"
@@ -155,10 +157,11 @@ exports[`<SimplePagination /> > should match snapshot for hasPrevious 1`] = `
   data-od-component="provider"
 >
   <nav
-    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_nav__18vhvlix elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_position_relative_mobile__onxwju8z sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_justifyContent_center_mobile__onxwjumz useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwk useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2k"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_nav__18vhvlix elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_6_mobile__onxwjuh7 sprinkles_justifyContent_center_mobile__onxwjumz"
+    data-od-component="inline"
   >
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_6_mobile__onxwjutf sprinkles_paddingTop_6_mobile__onxwjuvn"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
     >
       <button
         aria-label="previous page"
@@ -189,7 +192,7 @@ exports[`<SimplePagination /> > should match snapshot for hasPrevious 1`] = `
       </button>
     </div>
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_6_mobile__onxwjutf sprinkles_paddingTop_6_mobile__onxwjuvn"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
     >
       <button
         aria-label="next page"

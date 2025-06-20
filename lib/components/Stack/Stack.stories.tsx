@@ -1,31 +1,15 @@
-import { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 
-// import { boxArgTypes } from '../Box/argTypes';
+import { valueArrays } from '../../styles/sprinkles.css';
 import { Text } from '../Text/Text';
 
 import { Stack } from './Stack';
 
-// const spacingOptions: Record<string, ComponentProps<typeof Stack>['space']> = {
-// 	none: 'none',
-// 	1: '1',
-// 	2: '2',
-// 	3: '3',
-// 	4: '4',
-// 	5: '5',
-// 	6: '6',
-// 	7: '7',
-// 	8: '8',
-// 	9: '9',
-// };
-
-const meta: Meta<typeof Stack> = {
+const meta = {
 	title: 'Layout/Stack',
-	tags: ['polymorphic'],
+	tags: [],
 	component: Stack,
-	args: {
-		space: '1',
-	},
 	render: (args) => (
 		<Stack {...args}>
 			<Text>Line 1</Text>
@@ -33,18 +17,25 @@ const meta: Meta<typeof Stack> = {
 			<Text>Line 3</Text>
 		</Stack>
 	),
-	// argTypes: {
-	// 	space: {
-	// 		options: Object.keys(spacingOptions),
-	// 		defaultValue: 1,
-	// 		control: {
-	// 			type: 'select',
-	// 		},
-	// 	},
-	// 	width: boxArgTypes.width,
-	// 	alignItems: boxArgTypes.alignItems,
-	// },
-};
+	args: {
+		dividers: false,
+		space: '1',
+		alignItems: undefined,
+		width: undefined,
+		as: undefined,
+	},
+	argTypes: {
+		space: {
+			options: valueArrays.spaceWithNone,
+		},
+		width: {
+			options: valueArrays.width,
+		},
+		alignItems: {
+			options: valueArrays.alignItems,
+		},
+	},
+} satisfies Meta<typeof Stack>;
 
 export default meta;
 
@@ -73,6 +64,6 @@ export const WithAlignment: Story = {
 	args: {
 		alignItems: 'center',
 		dividers: true,
-		// space: ['2', '4', '6'],
+		space: ['2', '4', '6'],
 	},
 };

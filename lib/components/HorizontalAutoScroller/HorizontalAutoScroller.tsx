@@ -26,7 +26,7 @@ import {
 	UseHorizontalAutoScrollerProps,
 } from './useHorizontalAutoScroller';
 
-export interface Props
+export interface HorizontalAutoScrollerProps
 	extends Pick<ComponentProps<typeof Columns>, 'space'>,
 		Omit<UseHorizontalAutoScrollerProps, 'itemsRef'> {
 	durationSeconds?: number;
@@ -40,7 +40,9 @@ export interface Props
 	children: ReactNode | ReactNode[];
 }
 
-export const HorizontalAutoScroller: FunctionComponent<Props> = ({
+export const HorizontalAutoScroller: FunctionComponent<
+	HorizontalAutoScrollerProps
+> = ({
 	sliderProgressColour = 'primary',
 	noControls = false,
 	space = '5',

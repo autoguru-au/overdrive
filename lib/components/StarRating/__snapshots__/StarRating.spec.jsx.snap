@@ -10,16 +10,18 @@ exports[`<StarRating /> > should match snapshot for small size 1`] = `
     data-od-component="star-rating"
   >
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_position_relative_mobile__onxwju8z sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwc useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2c"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_4_mobile__onxwjugz"
+      data-od-component="inline"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_4_mobile__onxwjut7 sprinkles_paddingTop_4_mobile__onxwjuvf"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
       >
         <div
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_position_relative_mobile__onxwju8z sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw10 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm210"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_none_mobile__onxwjuhn"
+          data-od-component="inline"
         >
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjutv sprinkles_paddingTop_none_mobile__onxwjuw3"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
           >
             <span
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
@@ -40,7 +42,7 @@ exports[`<StarRating /> > should match snapshot for small size 1`] = `
             </span>
           </div>
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjutv sprinkles_paddingTop_none_mobile__onxwjuw3"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
           >
             <span
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
@@ -61,7 +63,7 @@ exports[`<StarRating /> > should match snapshot for small size 1`] = `
             </span>
           </div>
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjutv sprinkles_paddingTop_none_mobile__onxwjuw3"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
           >
             <span
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
@@ -82,7 +84,7 @@ exports[`<StarRating /> > should match snapshot for small size 1`] = `
             </span>
           </div>
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjutv sprinkles_paddingTop_none_mobile__onxwjuw3"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
           >
             <span
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
@@ -103,7 +105,7 @@ exports[`<StarRating /> > should match snapshot for small size 1`] = `
             </span>
           </div>
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjutv sprinkles_paddingTop_none_mobile__onxwjuw3"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
           >
             <span
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
@@ -126,7 +128,7 @@ exports[`<StarRating /> > should match snapshot for small size 1`] = `
         </div>
       </div>
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_4_mobile__onxwjut7 sprinkles_paddingTop_4_mobile__onxwjuvf"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
       >
         <span
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_3__yhjp332d typography__yhjp3312 sprinkles_fontSize_3__onxwju5v sprinkles_lineHeight_3__onxwju5m typography__yhjp331f typography_color_neutral__yhjp338"
@@ -150,16 +152,18 @@ exports[`<StarRating /> > should match snapshot with label 1`] = `
     data-od-component="star-rating"
   >
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_position_relative_mobile__onxwju8z sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwc useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2c"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_4_mobile__onxwjugz"
+      data-od-component="inline"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_4_mobile__onxwjut7 sprinkles_paddingTop_4_mobile__onxwjuvf"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
       >
         <div
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_position_relative_mobile__onxwju8z sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw10 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm210"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_none_mobile__onxwjuhn"
+          data-od-component="inline"
         >
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjutv sprinkles_paddingTop_none_mobile__onxwjuw3"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
           >
             <span
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
@@ -180,7 +184,7 @@ exports[`<StarRating /> > should match snapshot with label 1`] = `
             </span>
           </div>
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjutv sprinkles_paddingTop_none_mobile__onxwjuw3"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
           >
             <span
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
@@ -201,7 +205,7 @@ exports[`<StarRating /> > should match snapshot with label 1`] = `
             </span>
           </div>
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjutv sprinkles_paddingTop_none_mobile__onxwjuw3"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
           >
             <span
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
@@ -222,7 +226,7 @@ exports[`<StarRating /> > should match snapshot with label 1`] = `
             </span>
           </div>
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjutv sprinkles_paddingTop_none_mobile__onxwjuw3"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
           >
             <span
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
@@ -243,7 +247,7 @@ exports[`<StarRating /> > should match snapshot with label 1`] = `
             </span>
           </div>
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjutv sprinkles_paddingTop_none_mobile__onxwjuw3"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
           >
             <span
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
@@ -266,7 +270,7 @@ exports[`<StarRating /> > should match snapshot with label 1`] = `
         </div>
       </div>
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_4_mobile__onxwjut7 sprinkles_paddingTop_4_mobile__onxwjuvf"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
       >
         <span
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_4__yhjp332e typography__yhjp3313 sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n typography__yhjp331f typography_color_neutral__yhjp338"
@@ -290,16 +294,18 @@ exports[`<StarRating /> > should match snapshot with value 1`] = `
     data-od-component="star-rating"
   >
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_position_relative_mobile__onxwju8z sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwc useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2c"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_4_mobile__onxwjugz"
+      data-od-component="inline"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_4_mobile__onxwjut7 sprinkles_paddingTop_4_mobile__onxwjuvf"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
       >
         <div
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_position_relative_mobile__onxwju8z sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw10 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm210"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_none_mobile__onxwjuhn"
+          data-od-component="inline"
         >
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjutv sprinkles_paddingTop_none_mobile__onxwjuw3"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
           >
             <span
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
@@ -320,7 +326,7 @@ exports[`<StarRating /> > should match snapshot with value 1`] = `
             </span>
           </div>
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjutv sprinkles_paddingTop_none_mobile__onxwjuw3"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
           >
             <span
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
@@ -341,7 +347,7 @@ exports[`<StarRating /> > should match snapshot with value 1`] = `
             </span>
           </div>
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjutv sprinkles_paddingTop_none_mobile__onxwjuw3"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
           >
             <span
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
@@ -362,7 +368,7 @@ exports[`<StarRating /> > should match snapshot with value 1`] = `
             </span>
           </div>
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjutv sprinkles_paddingTop_none_mobile__onxwjuw3"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
           >
             <span
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
@@ -383,7 +389,7 @@ exports[`<StarRating /> > should match snapshot with value 1`] = `
             </span>
           </div>
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjutv sprinkles_paddingTop_none_mobile__onxwjuw3"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
           >
             <span
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
@@ -406,7 +412,7 @@ exports[`<StarRating /> > should match snapshot with value 1`] = `
         </div>
       </div>
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_4_mobile__onxwjut7 sprinkles_paddingTop_4_mobile__onxwjuvf"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
       >
         <span
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_4__yhjp332e typography__yhjp3313 sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n typography__yhjp331f typography_color_neutral__yhjp338"
@@ -430,16 +436,18 @@ exports[`<StarRating /> > should match snapshot without value 1`] = `
     data-od-component="star-rating"
   >
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_position_relative_mobile__onxwju8z sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxwc useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm2c"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_4_mobile__onxwjugz"
+      data-od-component="inline"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_4_mobile__onxwjut7 sprinkles_paddingTop_4_mobile__onxwjuvf"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
       >
         <div
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_position_relative_mobile__onxwju8z sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw10 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm210"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_none_mobile__onxwjuhn"
+          data-od-component="inline"
         >
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjutv sprinkles_paddingTop_none_mobile__onxwjuw3"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
           >
             <span
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
@@ -460,7 +468,7 @@ exports[`<StarRating /> > should match snapshot without value 1`] = `
             </span>
           </div>
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjutv sprinkles_paddingTop_none_mobile__onxwjuw3"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
           >
             <span
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
@@ -481,7 +489,7 @@ exports[`<StarRating /> > should match snapshot without value 1`] = `
             </span>
           </div>
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjutv sprinkles_paddingTop_none_mobile__onxwjuw3"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
           >
             <span
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
@@ -502,7 +510,7 @@ exports[`<StarRating /> > should match snapshot without value 1`] = `
             </span>
           </div>
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjutv sprinkles_paddingTop_none_mobile__onxwjuw3"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
           >
             <span
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
@@ -523,7 +531,7 @@ exports[`<StarRating /> > should match snapshot without value 1`] = `
             </span>
           </div>
           <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_none_mobile__onxwjutv sprinkles_paddingTop_none_mobile__onxwjuw3"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
           >
             <span
               class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
@@ -546,7 +554,7 @@ exports[`<StarRating /> > should match snapshot without value 1`] = `
         </div>
       </div>
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_4_mobile__onxwjut7 sprinkles_paddingTop_4_mobile__onxwjuvf"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
       >
         <span
           class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_4__yhjp332e typography__yhjp3313 sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n typography__yhjp331f typography_color_neutral__yhjp338"

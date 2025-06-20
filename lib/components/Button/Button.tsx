@@ -51,7 +51,7 @@ export interface ButtonProps
 	 * Disabling the button will prevent it from receiving keyboard focus or click events
 	 */
 	disabled?: boolean;
-	is?: ElementType | ReactElement;
+	as?: ElementType | ReactElement;
 	isLoading?: boolean;
 	isFullWidth?: boolean;
 	/**
@@ -97,7 +97,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			className = '',
 			disabled = false,
 			id,
-			is: Component = 'button',
+			as: Component = 'button',
 			withDoubleClicks = false,
 			isLoading = false,
 			isFullWidth = false,

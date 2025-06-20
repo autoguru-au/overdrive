@@ -23,11 +23,20 @@ exports[`<Table /> > when implemented > should match snapshot 1`] = `
           role="columnheader"
           scope="col"
         >
-          <span
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_strong_true__yhjp332k typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_colour_dark__yhjp3320 typography__yhjp33r typography_color_dark__yhjp335 typography_typographyStyles_size_3__yhjp332d typography__yhjp3312 sprinkles_fontSize_3__onxwju5v sprinkles_lineHeight_3__onxwju5m typography__yhjp331i sprinkles_fontWeight_bold__onxwju64 TableHeadCell_text__1a20v5n1"
+          <div
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_start_mobile__onxwjunj"
+            data-od-component="inline"
           >
-            col 1
-          </span>
+            <div
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
+            >
+              <span
+                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_strong_true__yhjp332k typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_colour_dark__yhjp3320 typography__yhjp33r typography_color_dark__yhjp335 typography_typographyStyles_size_3__yhjp332d typography__yhjp3312 sprinkles_fontSize_3__onxwju5v sprinkles_lineHeight_3__onxwju5m typography__yhjp331i sprinkles_fontWeight_bold__onxwju64 TableHeadCell_text__1a20v5n1"
+              >
+                col 1
+              </span>
+            </div>
+          </div>
         </th>
         <th
           aria-sort="ascending"
@@ -40,10 +49,11 @@ exports[`<Table /> > when implemented > should match snapshot 1`] = `
             tabindex="-1"
           >
             <div
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_position_relative_mobile__onxwju8z sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_justifyContent_start_mobile__onxwjunj useNegativeMarginTop_makeResponsiveStyle_key_bp__rvovxw0 useNegativeMarginLeft_makeResponsiveStyle_key_bp__10sqwm20"
+              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_start_mobile__onxwjunj"
+              data-od-component="inline"
             >
               <div
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_1_mobile__onxwjusv sprinkles_paddingTop_1_mobile__onxwjuv3"
+                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
               >
                 <span
                   class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_strong_true__yhjp332k typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_colour_dark__yhjp3320 typography__yhjp33r typography_color_dark__yhjp335 typography_typographyStyles_size_3__yhjp332d typography__yhjp3312 sprinkles_fontSize_3__onxwju5v sprinkles_lineHeight_3__onxwju5m typography__yhjp331i sprinkles_fontWeight_bold__onxwju64 TableHeadCell_text__1a20v5n1"
@@ -60,7 +70,7 @@ exports[`<Table /> > when implemented > should match snapshot 1`] = `
                 </span>
               </div>
               <div
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_nowrap_mobile__onxwjupf sprinkles_paddingLeft_1_mobile__onxwjusv sprinkles_paddingTop_1_mobile__onxwjuv3"
+                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
               >
                 <span
                   class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0 TableHeadCell_sorterRoot__1a20v5n2 TableHeadCell_sorter_root__1a20v5n3 TableHeadCell_sorter_asc__1a20v5n5"
