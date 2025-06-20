@@ -33,7 +33,7 @@ const meta = {
 	],
 	args: {
 		size: '4',
-		fontWeight: 'semiBold',
+		weight: 'semiBold',
 		icon: undefined,
 		muted: false,
 		noWrap: undefined,
@@ -65,7 +65,7 @@ const meta = {
 				type: 'select',
 			},
 		},
-		fontWeight: {
+		weight: {
 			options: fontWeightOptions,
 			defaultValue: null,
 			control: {

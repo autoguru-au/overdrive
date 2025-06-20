@@ -10,7 +10,7 @@ import {
 } from 'react-aria';
 import { useSearchFieldState } from 'react-stately';
 
-import type { WithTestId } from '../../types';
+import type { TestId } from '../../types';
 import { mergeRefs } from '../../utils';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Icon } from '../Icon';
@@ -29,7 +29,7 @@ const defaultEnglish = {
 
 type TextContent = keyof typeof defaultEnglish;
 
-interface SearchBarProps extends AriaSearchFieldProps {
+interface SearchBarProps extends AriaSearchFieldProps, TestId {
 	onChange?: AriaSearchFieldProps['onChange'];
 	isDisabled?: AriaSearchFieldProps['isDisabled'];
 	maxLength?: AriaSearchFieldProps['maxLength'];
@@ -65,7 +65,7 @@ const ReactAriaButton = (props: AriaButtonProps & { className: string }) => {
  * This field does not have a visible label, so an placeholder text is used as `aria-label`.
  * It is recommended to use the `onChange` prop to handle the input content, uncontrolled.
  */
-export const SearchBar = (componentProps: WithTestId<SearchBarProps>) => {
+export const SearchBar = (componentProps: SearchBarProps) => {
 	const { label, placeholder, ref: refForwarded } = componentProps;
 	const textLabel =
 		((label as string) ?? placeholder?.length)
@@ -114,7 +114,7 @@ export const SearchBar = (componentProps: WithTestId<SearchBarProps>) => {
 				disabled: props.isDisabled,
 				focus: isFocused,
 				'focus-visible': isFocusVisible,
-				'test-id': props.testId,
+				testid: props.testId,
 			})}
 		>
 			<div>

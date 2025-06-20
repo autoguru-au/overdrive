@@ -34,6 +34,7 @@ export const ProgressBarGroup: FunctionComponent<ProgressBarGroupProps> = ({
 					hasSuffixLabels ? ' auto' : ''
 				}`,
 			}}
+			odComponent="progress-bar-group"
 		>
 			{values.map((value, idx) => (
 				<Fragment key={idx}>

@@ -12,19 +12,22 @@ import {
 	ReactNode,
 } from 'react';
 
-import { componentStyles } from '../../styles';
+import { componentStyles } from '../../styles/componentStyles';
+import { sprinkles } from '../../styles/sprinkles.css';
+import { dataAttrs } from '../../utils/dataAttrs';
+import { BoxProps } from '../Box/Box';
 import { Icon } from '../Icon/Icon';
 import { Inline } from '../Inline/Inline';
 import { Text } from '../Text/Text';
-import { useTextStyles } from '../Text/useTextStyles';
 
 import * as styles from './Anchor.css';
 
 export interface Props
 	extends Omit<
-		AnchorHTMLAttributes<HTMLAnchorElement>,
-		'children' | 'style' | 'is'
-	> {
+			AnchorHTMLAttributes<HTMLAnchorElement>,
+			'children' | 'style' | 'is'
+		>,
+		Pick<BoxProps, 'testId'> {
 	className?: string;
 	is?: ElementType | ReactElement;
 	disabled?: boolean;
@@ -38,31 +41,38 @@ export const Anchor: FunctionComponent<Props> = ({
 
 	is: Component = 'a',
 	disabled = false,
+	testId,
 
 	children,
 
 	icon,
 	...rest
 }) => {
-	const textStyles = useTextStyles({
-		colour: 'link',
-	});
-
 	const props = {
 		className: clsx(
-			componentStyles({ as: Component, display: 'inline' }),
+			componentStyles({
+				as: Component,
+				colour: 'link',
+				display: 'inline',
+			}),
 			styles.root,
-			textStyles,
 			className,
 		),
 		disabled,
+		...dataAttrs({ testid: testId }),
 		...rest,
 	};
 
 	const childs = (
 		<Inline space="2">
-			{icon && <Icon icon={icon} size="small" className={textStyles} />}
-			<Text fontWeight="bold" size="4" colour="link">
+			{icon && (
+				<Icon
+					icon={icon}
+					size="small"
+					className={sprinkles({ colour: 'link' })}
+				/>
+			)}
+			<Text weight="bold" size="4" colour="link">
 				{children}
 			</Text>
 		</Inline>

@@ -105,10 +105,7 @@ export const Interactions: Story = {
 			await expect(timePicker).toHaveAccessibleName(
 				args.timeOptions.label,
 			);
-			await expect(component).toHaveAttribute(
-				'data-test-id',
-				args.testId,
-			);
+			await expect(component).toHaveAttribute('data-testid', args.testId);
 		});
 
 		await step('Calendar selection and navigation', async () => {

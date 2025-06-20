@@ -23,6 +23,7 @@ export const BulletList: FunctionComponent<BulletListProps> = ({
 			className={clsx(className, styles.root, {
 				[styles.firstOccurrence]: stack === -1,
 			})}
+			odComponent="bullet-list"
 		>
 			<BulletListContext.Provider
 				value={stack + 1 >= bulletMap.length ? 0 : stack + 1}

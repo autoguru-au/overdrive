@@ -6,7 +6,6 @@ import { Icon } from '../Icon';
 
 import { Button } from './Button';
 import * as styles from './Button.css';
-import * as boxStyles from '../Box/useBoxStyles.css';
 
 describe('<Button />', () => {
 	it('should not throw', () =>
@@ -21,6 +20,13 @@ describe('<Button />', () => {
 			render(<Button className="button-class" />).container.firstChild
 				.firstChild,
 		).toHaveClass('button-class');
+	});
+
+	it('should have correct test ID data attribute', () => {
+		expect(
+			render(<Button testId="test-button" />).container.firstChild
+				.firstChild,
+		).toHaveAttribute('data-testid', 'test-button');
 	});
 
 	describe('when as button', () => {

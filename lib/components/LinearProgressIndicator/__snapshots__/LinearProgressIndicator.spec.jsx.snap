@@ -6,13 +6,14 @@ exports[`<LinearProgressIndicator /> > should match snapshot 1`] = `
   data-od-component="provider"
 >
   <div
-    class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_overflow_hidden_mobile__onxwju88 sprinkles_position_relative_mobile__onxwju98 sprinkles_width_full_mobile__onxwjufw sprinkles_backgroundColour_gray200__onxwju47 LinearProgressIndicator_root__1gh10pc0"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_overflow_hidden_mobile__onxwju7z sprinkles_position_relative_mobile__onxwju8z sprinkles_width_full_mobile__onxwjufn sprinkles_backgroundColour_gray200__onxwju47 LinearProgressIndicator_root__1gh10pc0"
+    data-od-component="linear-progress-indicator"
   >
     <div
-      class="element_resetVariants__1en4q4gd element_resetVariants_as_div__1en4q4ge element_block__1en4q4g4 sprinkles_height_full_mobile__onxwjuec sprinkles_position_absolute_mobile__onxwju9c sprinkles_width_full_mobile__onxwjufw LinearProgressIndicator_linearProgressBar__1gh10pc2"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_height_full_mobile__onxwjue3 sprinkles_position_absolute_mobile__onxwju93 sprinkles_width_full_mobile__onxwjufn LinearProgressIndicator_linearProgressBar__1gh10pc2"
     >
       <span
-        class="element_resetVariants__1en4q4gd element_resetVariants_as_span__1en4q4gm  sprinkles_height_full_mobile__onxwjuec sprinkles_position_absolute_mobile__onxwju9c sprinkles_width_full_mobile__onxwjufw sprinkles_backgroundColour_green300__onxwju4h LinearProgressIndicator_linearProgressBarInner__1gh10pc4"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_height_full_mobile__onxwjue3 sprinkles_position_absolute_mobile__onxwju93 sprinkles_width_full_mobile__onxwjufn sprinkles_backgroundColour_green300__onxwju4h LinearProgressIndicator_linearProgressBarInner__1gh10pc4"
       />
     </div>
   </div>

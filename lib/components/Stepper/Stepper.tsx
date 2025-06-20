@@ -165,6 +165,7 @@ export const Stepper: FunctionComponent<StepperProps> = ({
 			width={isFullWidth ? 'full' : 'fit-content'}
 			minWidth="fit-content"
 			onKeyDown={keyDownHandler}
+			odComponent="stepper"
 		>
 			<Inline alignX="space-between" noWrap>
 				<Box>

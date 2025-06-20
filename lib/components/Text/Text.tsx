@@ -1,46 +1,73 @@
 import React from 'react';
 
-import type { WithTestId } from '../../types';
-import { dataAttrs } from '../../utils/dataAttrs';
+import { type Sprinkles } from '../../styles/sprinkles.css';
+import { typographyStyles } from '../../styles/typography.css';
+import type { TestId } from '../../types';
 import { Box } from '../Box/Box';
-import type { BoxStyleProps } from '../Box/useBoxStyles';
 
-import { type TextStyleProps, useTextStyles } from './useTextStyles';
+import type { TextStyleProps } from './textStyles';
 
-type Display = Extract<
-	BoxStyleProps['display'],
-	'inline' | 'inlineBlock' | 'inline-block' | 'block'
->;
 type ElementAttributes = React.ComponentPropsWithoutRef<'p'> &
 	Pick<React.ComponentProps<'label'>, 'htmlFor'>;
 
+type AdditionalStyleProps = Pick<
+	Sprinkles,
+	| 'display'
+	| 'm'
+	| 'mb'
+	| 'ml'
+	| 'mr'
+	| 'mt'
+	| 'mx'
+	| 'my'
+	| 'margin'
+	| 'marginBottom'
+	| 'marginLeft'
+	| 'marginRight'
+	| 'marginTop'
+	| 'marginX'
+	| 'marginY'
+	| 'p'
+	| 'pb'
+	| 'pl'
+	| 'pr'
+	| 'pt'
+	| 'px'
+	| 'py'
+	| 'padding'
+	| 'paddingBottom'
+	| 'paddingLeft'
+	| 'paddingRight'
+	| 'paddingTop'
+	| 'paddingX'
+	| 'paddingY'
+>;
+
 export interface TextProps
 	extends Omit<ElementAttributes, 'color' | 'is'>,
-		TextStyleProps {
-	/** Use bold font weight */
-	strong?: boolean;
-	/** Select CSS display property  */
-	display?: Display;
-}
+		AdditionalStyleProps,
+		TextStyleProps,
+		TestId {}
 
-export const Text = React.forwardRef<HTMLElement, WithTestId<TextProps>>(
+export const Text = React.forwardRef<HTMLElement, TextProps>(
 	(
 		{
+			as = 'span',
 			children,
 			className,
-			is = 'span',
-			as = is,
-			testId,
+
+			//style props
 			align = 'left',
-			colour,
-			color = colour,
-			display,
-			fontWeight = 'normal',
-			transform,
 			breakWord,
+			color, // modern semantic colour tokens
+			colour, // legacy colours
 			noWrap,
 			size = '4',
 			strong = false,
+			transform,
+			weight = 'normal',
+			wrap,
+
 			...props
 		},
 		ref,
@@ -48,22 +75,23 @@ export const Text = React.forwardRef<HTMLElement, WithTestId<TextProps>>(
 		<Box
 			as={as}
 			ref={ref}
-			display={display}
 			textAlign={align}
+			textWrap={wrap}
 			className={[
-				useTextStyles({
+				typographyStyles({
 					as,
-					size,
-					color: color ?? (strong ? 'dark' : undefined),
-					fontWeight: strong ? 'bold' : fontWeight,
-					transform,
-					noWrap,
 					breakWord,
+					color,
+					colour: colour ?? (strong ? 'dark' : undefined),
+					noWrap,
+					size,
+					strong,
+					transform,
+					weight,
 				}),
 				className,
 			]}
 			{...props}
-			{...dataAttrs({ 'test-id': testId })}
 		>
 			{children}
 		</Box>
@@ -71,5 +99,3 @@ export const Text = React.forwardRef<HTMLElement, WithTestId<TextProps>>(
 );
 
 Text.displayName = 'Text';
-
-export default Text;

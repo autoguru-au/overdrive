@@ -24,6 +24,7 @@ export const ProgressSpinner: FunctionComponent<ProgressSpinnerProps> = ({
 			styles.colours[colour],
 			className,
 		]}
+		odComponent="progress-spinner"
 	>
 		<svg
 			className={clsx(

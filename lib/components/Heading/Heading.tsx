@@ -2,15 +2,14 @@ import React from 'react';
 
 import type { Sprinkles } from '../../styles/sprinkles.css';
 import { Box, type BoxProps } from '../Box';
-import { textStyles, type TextStylesProps } from '../Text/textStyles';
+import { textStyles, type TextStyleProps } from '../Text/textStyles';
 
 export type HeadingTags = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 export interface HeadingProps
-	extends Omit<BoxProps, keyof TextStylesProps>,
-		Omit<TextStylesProps, 'as'> {
+	extends Omit<BoxProps, keyof TextStyleProps>,
+		Omit<TextStyleProps, 'as'> {
 	as?: HeadingTags;
-	align?: TextStylesProps['textAlign'];
 	/** @deprecated Prefer `as` */
 	is?: HeadingTags;
 }
@@ -36,10 +35,10 @@ export const Heading = ({
 	className,
 	color, // semantic tokens
 	colour = color ? undefined : 'dark', // legacy intentional tokens
-	fontWeight = 'bold',
 	noWrap,
 	size = defaultSizeMap[as],
 	transform,
+	weight = 'bold',
 	...props
 }: HeadingProps) => (
 	<Box
@@ -48,13 +47,13 @@ export const Heading = ({
 		color={color}
 		className={[
 			textStyles({
+				align,
 				breakWord,
 				colour,
-				fontWeight,
 				noWrap,
 				size,
-				textAlign: align,
 				transform,
+				weight,
 			}),
 			className,
 		]}

@@ -2,7 +2,7 @@ import React, { createContext } from 'react';
 import { useCheckboxGroup, type AriaCheckboxGroupProps } from 'react-aria';
 import { type CheckboxGroupState, useCheckboxGroupState } from 'react-stately';
 
-import type { WithTestId } from '../../types';
+import type { TestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 
 import {
@@ -19,7 +19,8 @@ type ElementAttributes = Pick<
 
 export interface OptionListProps
 	extends AriaCheckboxGroupProps,
-		ElementAttributes {
+		ElementAttributes,
+		TestId {
 	/**
 	 * Label for the CheckboxButtons group needs to be provided at the component level for accessibility
 	 */
@@ -56,7 +57,7 @@ export const OptionListContext = createContext<CheckboxGroupState | null>(null);
  * Used in the booking flow on the payment step for addons.
  * Future enhancements might include: validation states/error handling
  */
-export const OptionList = (props: WithTestId<OptionListProps>) => {
+export const OptionList = (props: OptionListProps) => {
 	const { children, className, description, label, ref, style } = props;
 	const elementAttrs = { ref, className, style };
 	const state = useCheckboxGroupState(props);
@@ -69,7 +70,7 @@ export const OptionList = (props: WithTestId<OptionListProps>) => {
 		<div
 			{...groupProps}
 			{...elementAttrs}
-			{...dataAttrs({ 'test-id': props.testId })}
+			{...dataAttrs({ testid: props.testId })}
 		>
 			<div {...labelProps} className={groupLabelStyle}>
 				{label}

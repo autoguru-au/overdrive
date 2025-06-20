@@ -49,6 +49,7 @@ export const NumberBubble: FunctionComponent<NumberBubbleProps> = ({
 			display="inline-block"
 			position="relative"
 			padding={valuePaddingMap[size]}
+			odComponent="number-bubble"
 			{...boxProps}
 		>
 			<Text

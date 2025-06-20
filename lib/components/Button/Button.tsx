@@ -19,13 +19,13 @@ import {
 } from 'react';
 
 import { componentStyles } from '../../styles';
+import { typographyStyles } from '../../styles/typography.css';
 import type { TextFontWeight, TextSizeScale } from '../../themes';
-import type { WithTestId } from '../../types';
+import type { TestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box/Box';
 import { Icon } from '../Icon/Icon';
 import { ProgressSpinner } from '../ProgressSpinner/ProgressSpinner';
-import { useTextStyles } from '../Text/useTextStyles';
 
 import * as styles from './Button.css';
 import type { ButtonSize, StyledButtonProps } from './Button.css';
@@ -44,7 +44,8 @@ type TextContent = keyof typeof defaultEnglish;
 export interface ButtonProps
 	extends Pick<ButtonPrimitive, 'id' | 'onClick' | 'type' | 'className'>,
 		Pick<AriaAttributes, 'aria-label'>,
-		StyledButtonProps {
+		StyledButtonProps,
+		TestId {
 	children: AllowedChildren | AllowedChildren[];
 	/**
 	 * Disabling the button will prevent it from receiving keyboard focus or click events
@@ -89,7 +90,7 @@ const fontWeight: Record<ButtonSize, TextFontWeight> = {
 	medium: 'semiBold',
 };
 
-export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 	(
 		{
 			children,
@@ -154,7 +155,6 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 			onClick,
 			disabled: disabled || isLoading,
 			'aria-label': isLoading ? language.loading : ariaLabel,
-			'data-loading': isLoading ? '' : undefined,
 			className: clsx(
 				componentStyles({
 					as: Component,
@@ -168,9 +168,9 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 					width: isFullWidth ? 'full' : undefined,
 					pointerEvents: functionallyDisabled ? 'none' : undefined,
 				}),
-				useTextStyles({
+				typographyStyles({
 					colour: 'white',
-					fontWeight: fontWeight[size],
+					weight: fontWeight[size],
 					size: fontSize[size],
 				}),
 				styles.button({
@@ -181,6 +181,7 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 				}),
 				className,
 			),
+			...dataAttrs({ loading: isLoading, testid: testId }),
 			ref,
 		};
 
@@ -252,7 +253,6 @@ export const Button = forwardRef<HTMLButtonElement, WithTestId<ButtonProps>>(
 				alignItems="center"
 				justifyContent="center"
 				className={styles.body}
-				{...dataAttrs({ 'data-testid': testId })}
 			>
 				{buttonContents}
 			</Box>

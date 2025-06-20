@@ -50,8 +50,7 @@ export const Columns = forwardRef<HTMLElement, Props>(
 			noWrap,
 			wrappingDirection = 'default',
 			align = 'stretch',
-			is,
-			as = is,
+			as,
 			...boxProps
 		},
 		ref,
@@ -80,6 +79,7 @@ export const Columns = forwardRef<HTMLElement, Props>(
 					styles.columnsStyle({ align, noWrap, wrappingDirection }),
 					className,
 				)}
+				odComponent="columns"
 				{...boxProps}
 			>
 				<ColumnContext.Provider

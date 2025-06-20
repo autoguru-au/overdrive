@@ -12,7 +12,7 @@ import type { ResponsiveProp } from '../../utils/responsiveProps.css';
 import { Box, type BoxProps } from '../Box/Box';
 import { Text } from '../Text/Text';
 
-export interface InlineProps extends Pick<BoxProps, 'as' | 'is' | 'width'> {
+export interface InlineProps extends Pick<BoxProps, 'as' | 'width'> {
 	space?: ResponsiveProp<keyof Tokens['space']>;
 	alignY?: BoxProps['alignItems'];
 	alignX?: BoxProps['justifyContent'];
@@ -27,8 +27,7 @@ const supportedListTypes: ReadonlyArray<keyof React.JSX.IntrinsicElements> = [
 ] as const;
 
 export const Inline: FunctionComponent<InlineProps> = ({
-	is = 'div',
-	as = is,
+	as = 'div',
 	children,
 	space = '2',
 	alignY = 'center',
@@ -66,7 +65,7 @@ export const Inline: FunctionComponent<InlineProps> = ({
 			{Children.map(items, (child, idx) =>
 				child !== null && child !== undefined ? (
 					<Box
-						is={listItem}
+						as={listItem}
 						display="flex"
 						flexDirection="row"
 						flexWrap="nowrap"

@@ -37,7 +37,7 @@ const TestChild = ({ label }) => {
 const meta: Meta<typeof Tabs> = {
 	title: 'Components/Tabs',
 	component: Tabs,
-	tags: ['updated'],
+	tags: [],
 	decorators: [
 		(story) => (
 			<div style={{ maxWidth: '500px', width: '100%' }}>{story()}</div>

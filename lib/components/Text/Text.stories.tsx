@@ -2,11 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { expect, within } from 'storybook/test';
 
-import { valueArrays } from '../../styles/sprinkles.css';
 import { overdriveTokens } from '../../themes';
 
 import { Text, type TextProps } from './Text';
-import type { TextTags } from './useTextStyles';
+import type { TextTags } from './textStyles';
 
 const elements: TextTags[] = ['p', 'label', 'span'];
 const Wrapper = ({ children }) => (
@@ -23,7 +22,7 @@ const meta: Meta<typeof Text> = {
 		size: '4',
 		strong: false,
 		display: 'inline',
-		fontWeight: 'normal',
+		weight: 'normal',
 		color: undefined,
 		noWrap: undefined,
 		breakWord: undefined,
@@ -47,7 +46,7 @@ export const Standard: Story = {
 		await step('<Text /> renders content and id attributes', async () => {
 			await expect(para).toHaveTextContent(args.children as string);
 			await expect(para).toHaveAttribute('id', args.id);
-			await expect(para).toHaveAttribute('data-test-id', args.testId);
+			await expect(para).toHaveAttribute('data-testid', args.testId);
 		});
 	},
 };
@@ -59,6 +58,9 @@ export const AllTypes: Story = {
 	args: {
 		children: longText,
 		display: 'block',
+		size: undefined,
+		weight: undefined,
+		my: '2',
 	},
 	render: (args) => (
 		<>
@@ -75,7 +77,7 @@ export const AllSizes: Story = {
 	},
 	render: (args) => (
 		<>
-			{valueArrays.fontSizes.map((size) => (
+			{Object.keys(overdriveTokens.typography.size).map((size) => (
 				<Text key={size} {...args} size={size as TextProps['size']} />
 			))}
 		</>
@@ -88,13 +90,13 @@ export const AllColours: Story = {
 	},
 	render: ({ children, ...args }) => (
 		<>
-			{Object.keys(overdriveTokens.typography.colour).map((color) => (
-				<div key={color} style={{ marginBottom: 8 }}>
+			{Object.keys(overdriveTokens.typography.colour).map((colour) => (
+				<div key={colour} style={{ marginBottom: 8 }}>
 					<Text as="p" size="3" strong>
-						{color}
+						{colour}
 					</Text>
 					{/*@ts-expect-error wrong ref type */}
-					<Text {...args} as="p" colour={color}>
+					<Text {...args} as="p" colour={colour}>
 						{children}
 					</Text>
 				</div>

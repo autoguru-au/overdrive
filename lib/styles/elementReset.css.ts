@@ -157,7 +157,7 @@ const vAlignMiddle = [
 ];
 
 /** controls the list html tag names to reset and maps them to the reset style */
-export const element = {
+export const elementReset = {
 	div: block,
 	p: trimmedElement,
 	h1: heading,
@@ -197,15 +197,21 @@ export const element = {
 	tr: vAlignMiddle,
 };
 
-export type ResetTagNames = keyof typeof element;
+export type ResetTagNames = keyof typeof elementReset;
 
 export const resetVariants = recipe({
 	base: {},
 	variants: {
-		as: element,
+		as: elementReset,
+		// When any border color or width is specified, automatically set borderWidth to 'none'
+		// and borderStyle to 'solid'. This handles properties with old naming and css-aligned
+		hasBorder: {
+			true: borderReset,
+		},
 	},
 	defaultVariants: {
 		as: 'div',
+		hasBorder: false,
 	},
 });
 

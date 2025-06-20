@@ -52,7 +52,7 @@ export const StarRating: NamedExoticComponent<StarRatingProps> = memo(
 		label = rating,
 		size = EStarRatingSize.Medium,
 	}) => (
-		<Box className={className}>
+		<Box className={className} odComponent="star-rating">
 			<Inline space="4" alignY="center">
 				<Inline space="none" alignY="center">
 					{Array.from({ length: totalStars })

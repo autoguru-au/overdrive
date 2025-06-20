@@ -1,49 +1,30 @@
-import clsx, { type ClassValue as ClassName } from 'clsx';
-import type {
-	AllHTMLAttributes,
-	ElementType,
-	PropsWithChildren,
-	ReactNode,
-} from 'react';
+import type { AllHTMLAttributes, ElementType, PropsWithChildren } from 'react';
 import React, { forwardRef } from 'react';
 
-import { borderReset } from '../../styles/element.css';
-import { elementResetStyles } from '../../styles/elementStyles';
-import { sprinkles } from '../../styles/sprinkles.css';
+import {
+	componentStyles,
+	type ComponentStylesProps,
+} from '../../styles/componentStyles';
+import { OdComponent, TestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 
-import { type BoxStylesProps } from './newBox/boxStyles';
-
 /**
- * Use CommonBoxProps to help consistently define the base props for a component
+ * Use CommonBoxProps to help consistently define additional utility props of a component
  */
-export interface CommonBoxProps extends PropsWithChildren {
-	/**
-	 * Accepts `string` and complex array or objects via `clsx`
-	 */
-	className?: ClassName;
-	/**
-	 * Output a data attribute with a component name in the markup, mainly used for the root element of a component
-	 */
-	odComponent?: string;
-	/**
-	 * Insert a `data-testid` attribute
-	 */
-	testId?: string;
-}
+export interface CommonBoxProps
+	extends OdComponent,
+		PropsWithChildren,
+		TestId {}
 
 export interface BoxProps
-	extends CommonBoxProps,
-		Omit<BoxStylesProps, 'as'>,
-		Omit<
+	extends Omit<
 			AllHTMLAttributes<HTMLElement>,
 			'as' | 'className' | 'color' | 'height' | 'is' | 'size' | 'width'
-		> {
+		>,
+		CommonBoxProps,
+		ComponentStylesProps {
+	/** Pass in the HTML element or JSX component that should be rendered for the box */
 	as?: ElementType;
-	/** @deprecated in transition to the `as` prop  */
-	is?: ElementType;
-
-	children?: ReactNode;
 }
 
 /**
@@ -52,10 +33,9 @@ export interface BoxProps
 export const Box = forwardRef<HTMLElement, BoxProps>(
 	(
 		{
-			is = 'div',
-			as = is,
+			as = 'div',
 			children,
-			className: _className,
+			className,
 			odComponent,
 			testId,
 
@@ -78,8 +58,8 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 			backgroundColor,
 			backgroundColour,
 			boxShadow,
-			color,
-			colour,
+			color, // modern semantic colour tokens
+			colour, // legacy colours
 			fg,
 			opacity,
 
@@ -145,6 +125,7 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 			mr,
 			mt,
 			mx,
+			my,
 			margin,
 			marginX,
 			marginY,
@@ -159,6 +140,7 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 			pr,
 			pt,
 			px,
+			py,
 			padding,
 			paddingX,
 			paddingY,
@@ -172,38 +154,11 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 		ref,
 	) => {
 		const Component = as;
-		const hasBorder = Boolean(
-			borderColor ||
-				borderStyle ||
-				borderWidth ||
-				borderWidthX ||
-				borderWidthY ||
-				borderBottomColor ||
-				borderBottomStyle ||
-				borderBottomWidth ||
-				borderLeftColor ||
-				borderLeftStyle ||
-				borderLeftWidth ||
-				borderRightColor ||
-				borderRightStyle ||
-				borderRightWidth ||
-				borderTopColor ||
-				borderTopStyle ||
-				borderTopWidth ||
-				borderWidthTop ||
-				borderWidthRight ||
-				borderWidthBottom ||
-				borderWidthLeft ||
-				borderColour ||
-				borderColourX ||
-				borderColourY ||
-				borderBottomColour ||
-				borderLeftColour ||
-				borderRightColour ||
-				borderTopColour,
-		);
 
-		const styles = sprinkles({
+		const allClasses = componentStyles({
+			as,
+			className,
+
 			display,
 			height,
 			maxWidth,
@@ -289,6 +244,7 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 			mr,
 			mt,
 			mx,
+			my,
 			margin,
 			marginX,
 			marginY,
@@ -303,6 +259,7 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 			pr,
 			pt,
 			px,
+			py,
 			padding,
 			paddingX,
 			paddingY,
@@ -312,23 +269,14 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 			paddingTop,
 		});
 
-		const className = clsx(
-			elementResetStyles(as),
-			// When any border color or width is specified, automatically set borderWidth to 'none'
-			// and borderStyle to 'solid'. This handles properties with old naming and css-aligned
-			hasBorder && borderReset,
-			styles,
-			_className,
-		);
-
 		return (
 			<Component
 				{...allOtherProps}
 				{...dataAttrs({
 					'od-component': odComponent?.toLocaleLowerCase(),
-					testId,
+					testid: testId,
 				})}
-				className={className}
+				className={allClasses}
 				ref={ref}
 			>
 				{children}

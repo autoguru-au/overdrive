@@ -29,6 +29,7 @@ export const Table = forwardRef<HTMLDivElement, TableProps>(
 				width="full"
 				style={{ gridTemplateColumns: columnTemplate }}
 				className={styles.root}
+				odComponent="table"
 			>
 				{children}
 			</Box>

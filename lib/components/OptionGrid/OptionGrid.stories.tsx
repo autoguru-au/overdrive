@@ -186,7 +186,7 @@ export const DescriptionNoIndicator: Story = {
 
 		await step('Group renders label and attributes', async () => {
 			await expect(listbox).toHaveAccessibleName(`${args.label}`);
-			await expect(listbox).toHaveAttribute('data-test-id', args.testId);
+			await expect(listbox).toHaveAttribute('data-testid', args.testId);
 		});
 
 		await step('Options render label and description', async () => {

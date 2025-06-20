@@ -9,16 +9,26 @@ import {
 } from 'react';
 
 import { useDeepCompareMemo } from '../../../hooks';
+import {
+	componentStyles,
+	type ComponentStylesProps,
+} from '../../../styles/componentStyles';
+import type { Sprinkles } from '../../../styles/sprinkles.css';
 import { dataAttrs } from '../../../utils/dataAttrs';
+import { filterPropsWithStyles } from '../../../utils/sprinkles';
 import type { CommonBoxProps } from '../Box';
-
-import { boxStylesWithFilteredProps, type StyleProps } from './boxStyles';
 
 // defaults
 const DEFAULT_TAG = 'div' as keyof JSX.IntrinsicElements;
 const LIST_ITEM_TAG = 'li' as keyof JSX.IntrinsicElements;
 const LIST_TAGS = ['ul', 'ol'] as ReadonlyArray<keyof JSX.IntrinsicElements>;
 const OD_COMPONENT_ATTR = 'od-component';
+
+export type BoxStylesProps<E extends ElementType = 'div'> = AsPolyProp<E> &
+	Pick<ComponentStylesProps, 'className'> &
+	Sprinkles;
+
+export type BoxStylesReturn<P extends object> = [string, P];
 
 /** Extract the ref type for a polymorphic component based on the provided element type */
 export type PolymorphicRef<C extends ElementType> =
@@ -52,7 +62,7 @@ export type PolymorphicComponentProps<
 
 /** Polymorphic box props that merge sprinkles style props and the HTML element props */
 export type UseBoxProps<E extends ElementType = 'div'> =
-	PolymorphicComponentProps<E, CommonBoxProps & StyleProps>;
+	PolymorphicComponentProps<E, CommonBoxProps & Sprinkles>;
 
 /**
  * Define custom props similar to Box with polymorphic, common and style props.
@@ -61,10 +71,7 @@ export type UseBoxProps<E extends ElementType = 'div'> =
 export type BoxLikeProps<
 	E extends ElementType,
 	P = object,
-> = PolymorphicComponentProps<
-	E,
-	Omit<StyleProps, keyof P> & CommonBoxProps & P
->;
+> = PolymorphicComponentProps<E, Omit<Sprinkles, keyof P> & CommonBoxProps & P>;
 
 /**
  * The Overdrive component primitive to expose a flexible HTML element as a fully typesafe React component
@@ -92,21 +99,21 @@ export const useBox = <E extends ElementType = 'div'>({
 	const SemanticChild = isList ? (LIST_ITEM_TAG as ElementType) : undefined;
 
 	// deep compare is mainly to attempt to stop rerenders arrising from responsive style props
-	const { className, baseProps } = useDeepCompareMemo(
-		() =>
-			boxStylesWithFilteredProps<E>({
-				as, // boxStyles uses the 'as' prop to determine css resets based on tag name
-				className: _className,
-				...props,
-			}),
-		[as, _className, props],
-	);
+	const { className, baseProps } = useDeepCompareMemo(() => {
+		const { sprinklesProps, baseProps } = filterPropsWithStyles(props);
+		const className = componentStyles({
+			as,
+			className: _className,
+			...sprinklesProps,
+		});
+		return { className, baseProps };
+	}, [as, _className, props]);
 
 	const componentProps = {
 		...baseProps,
 		...dataAttrs({
 			[OD_COMPONENT_ATTR]: odComponent?.toLocaleLowerCase(),
-			testId,
+			testid: testId,
 		}),
 		className,
 	} as ComponentPropsWithRef<E>;

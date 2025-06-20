@@ -48,9 +48,9 @@ export const Bubble: FunctionComponent<BubbleProps> = ({
 			className={clsx(
 				className,
 				textStyles({
-					fontWeight: 'bold',
 					colour: selected ? 'white' : 'light',
 					size: '3',
+					weight: 'bold',
 				}),
 				{
 					[styles.selectedItem]: selected,

@@ -1,9 +1,8 @@
 import { useToggleState } from '@react-stately/toggle';
-import clsx from 'clsx';
 import React, { useRef } from 'react';
 import { useSwitch, useFocusRing, type AriaSwitchProps } from 'react-aria';
 
-import type { WithTestId } from '../../types';
+import type { TestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box';
 import { textStyles } from '../Text/textStyles';
@@ -11,7 +10,7 @@ import { VisuallyHidden } from '../VisuallyHidden';
 
 import * as styles from './Switch.css';
 
-export interface SwitchProps extends AriaSwitchProps {
+export interface SwitchProps extends AriaSwitchProps, TestId {
 	'aria-labelledby'?: AriaSwitchProps['aria-labelledby'];
 	name?: AriaSwitchProps['name'];
 	value?: AriaSwitchProps['value'];
@@ -42,7 +41,7 @@ export const Switch = ({
 	isDisabled = disabled,
 	testId,
 	...incomingProps
-}: WithTestId<SwitchProps>) => {
+}: SwitchProps) => {
 	const props = {
 		...incomingProps,
 		isDisabled,
@@ -54,18 +53,19 @@ export const Switch = ({
 	const { isFocusVisible, focusProps } = useFocusRing();
 
 	return (
-		<label
-			className={clsx(styles.base, className)}
-			{...dataAttrs({ 'test-id': testId })}
-		>
+		<Box as="label" className={[styles.base, className]} testId={testId}>
 			<VisuallyHidden>
 				<input {...inputProps} {...focusProps} ref={ref} />
 			</VisuallyHidden>
 			<Box
-				className={clsx(styles.toggle, textStyles({ size: '5' }), {
-					[styles.disabled]: inputProps.disabled,
-					[styles.toggleOn]: state.isSelected,
-				})}
+				className={[
+					styles.toggle,
+					textStyles({ size: '5' }),
+					{
+						[styles.disabled]: inputProps.disabled,
+						[styles.toggleOn]: state.isSelected,
+					},
+				]}
 				{...dataAttrs({
 					disabled: inputProps.disabled,
 					active: state.isSelected,
@@ -73,12 +73,15 @@ export const Switch = ({
 				})}
 			>
 				<Box
-					className={clsx(styles.handle.default, {
-						[styles.handle.active]: state.isSelected,
-					})}
+					className={[
+						styles.handle.default,
+						{
+							[styles.handle.active]: state.isSelected,
+						},
+					]}
 				/>
 			</Box>
 			{props.children}
-		</label>
+		</Box>
 	);
 };

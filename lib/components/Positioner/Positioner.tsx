@@ -141,6 +141,7 @@ export const Positioner: FunctionComponent<PositionerProps> = ({
 				position="fixed"
 				className={styles.root}
 				aria-hidden={!isOpen}
+				odComponent="positioner"
 			>
 				{isOpen ? children : null}
 			</Box>

@@ -9,7 +9,7 @@ import {
 } from 'react-aria-components';
 import { type SelectionMode } from 'react-stately';
 
-import type { WithTestId } from '../../types';
+import type { TestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Icon, type IconEl } from '../Icon';
 
@@ -35,7 +35,9 @@ export interface OptionItem {
 	icon?: IconEl;
 	description?: string;
 }
-export interface OptionGridProps<T> extends Omit<ListBoxProps<T>, 'items'> {
+export interface OptionGridProps<T>
+	extends Omit<ListBoxProps<T>, 'items'>,
+		TestId {
 	/**
 	 * Mandatory descriptive label that indicates the purpose of the group of options, used for assistive technologies
 	 */
@@ -80,8 +82,9 @@ export const OptionGrid = ({
 	layout = 'grid',
 	selectionMode = 'multiple',
 	testId,
+
 	...props
-}: WithTestId<OptionGridProps<OptionItem>>) => {
+}: OptionGridProps<OptionItem>) => {
 	return (
 		<div className={gridContainerStyle}>
 			<ListBox
@@ -89,7 +92,7 @@ export const OptionGrid = ({
 				layout={layout}
 				selectionMode={selectionMode}
 				className={clsx([styledGrid({ columns }), className])}
-				{...dataAttrs({ 'test-id': testId })}
+				{...dataAttrs({ testid: testId })}
 				{...props}
 			>
 				{({ description, icon, label, name }) => (

@@ -102,7 +102,7 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 		);
 
 		const baseStyle = textStyles({
-			as: `${is}`,
+			as: is,
 			colour,
 			size,
 		});
@@ -119,6 +119,7 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 				tabIndex={tabIndex}
 				position="relative"
 				className={styles.root}
+				odComponent="editable-text"
 				onClick={() => onRequestModeChange('INPUT')}
 				onFocus={(e) => {
 					if (typeof onFocus === 'function') onFocus(e);

@@ -34,6 +34,7 @@ export const ProgressBar: FunctionComponent<ProgressBarProps> = ({
 		className={styles.container}
 		borderRadius="1"
 		backgroundColour="gray100"
+		odComponent="progress-bar"
 	>
 		<Box
 			borderRadius="1"
