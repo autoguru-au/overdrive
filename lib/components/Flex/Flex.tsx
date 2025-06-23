@@ -1,32 +1,27 @@
 import clsx from 'clsx';
-import * as React from 'react';
+import React, { type PropsWithChildren } from 'react';
 
-import { Box, type BoxProps } from '../Box/Box';
+import { sprinkles, type Sprinkles } from '../../styles/sprinkles.css';
 
 import * as styles from './Flex.css';
 
-export interface FlexProps extends Omit<BoxProps, 'display' | 'flexDirection'> {
+export interface FlexProps extends PropsWithChildren {
 	/**
 	 * Defines the alignment of items on the cross-axis.
 	 * @property alignItems
 	 */
-	alignItems?: BoxProps['alignItems'];
+	alignItems?: Sprinkles['alignItems'];
 	/**
 	 * Defines the alignment of items on the main-axis.
 	 * @property justifyContent
 	 */
-	justifyContent?: BoxProps['justifyContent'];
+	justifyContent?: Sprinkles['justifyContent'];
 	/**
 	 * The space between children.
 	 * Maps to the `gap` CSS property.
 	 * @property gap
 	 */
-	gap?: BoxProps['gap'];
-	/**
-	 * Use CSS Flexbox for layout instead of Grid.
-	 * @default false
-	 */
-	flex?: boolean;
+	gap?: Sprinkles['gap'];
 	/**
 	 * Layout children horizontally (row).
 	 * If `vert` is also true, `vert` takes precedence.
@@ -42,32 +37,43 @@ export interface FlexProps extends Omit<BoxProps, 'display' | 'flexDirection'> {
 
 /**
  * A layout component for applying horizontal or vertical layouts to children items.
- * It prefers to use CSS grid for layout, or fallback to flex properties.
  */
 export const Flex = React.forwardRef<HTMLElement, FlexProps>(
-	({ flex, vert, className, ...restProps }, ref) => {
-		const direction = vert ? 'column' : 'row';
-
-		if (flex) {
-			return (
-				<Box
-					ref={ref}
-					display="flex"
-					flexDirection={direction}
-					className={className}
-					{...restProps}
-				/>
-			);
-		}
-
-		const gridClassName = styles.root({ direction });
-
+	(
+		{
+			as: Component = 'div',
+			alignItems,
+			children,
+			className,
+			gap,
+			horz = true,
+			justifyContent,
+			vert,
+			...props
+		},
+		ref,
+	) => {
 		return (
-			<Box
+			<Component
+				{...props}
+				className={clsx(
+					styles.component,
+					styles.layout({
+						horizontal: horz && !vert,
+						vertical: vert,
+					}),
+					sprinkles({
+						alignItems,
+						gap,
+						justifyContent,
+					}),
+					className,
+				)}
+				// data-expand=""
 				ref={ref}
-				className={clsx(gridClassName, className)}
-				{...restProps}
-			/>
+			>
+				{children}
+			</Component>
 		);
 	},
 );
