@@ -19,24 +19,31 @@
 The `useBoxStyles` and `useTextStyles` are now implemented by
 vanilla-extract sprinkles:
 
-- Instead of `useBoxStyles` consider importing `componentStyles` (aliased to
+- Instead of `useBoxStyles` consider importing `elementStyles` (aliased to
 	`useBoxStyles` during transition)
-- Instead of `useTextStyles` consider importing `typographyStyles` directly
-	or use the replacement `textStyles` function
+- Instead of `useTextStyles` consider importing `textStyles` (aliased to
+    `useTextStyles`) or `typography`
 
 #### Updated style functions and types
 
 Granular utilities for adding styles directly to an HTML element
 
-- `componentStyles` is the full set of combined element reset styles, style
+- `elementStyles` is the full set of combined element reset styles, style
 	props from vanilla-extract, and related logic processing for the `<Box>`
 	primitive. Example use:
-	`componentStyles({ as: 'div', padding: '2', borderTopWidth: '1' })`
+	`elementStyles({ as: 'div', padding: '2', borderTopWidth: '1' })`
+- `textStyles` combines element reset styles and a select subset of style
+    props for typography use including headings. Example use:
+	`textStyles({ as: 'label', size: '5', weight: 'semibold', px: '2' })`
+- `typography` unpins `textStyles` and can be used directly if element resets
+    are not requred
 - `resetStyles` provides baseline reset styles for an HTML element. Example
 	use: `resetStyles('button')`
 
 **Types**
 
+- `ElementStylesProps`
+- `TextStylesProps`
 - `StyleProps` is all allowed style props from vanilla-extract
 - `LegacyStyleProps` for style props with `colour` spelling
 - `LegacyTextColours`
