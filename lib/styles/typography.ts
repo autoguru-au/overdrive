@@ -60,27 +60,31 @@ export const typography = ({
 	align: textAlign,
 	breakWord = false,
 	color, // modern semantic colour tokens
-	colour = color ? undefined : DEFAULT_TEXT_COLOUR, // legacy colours
+	colour, // legacy colours
 	noWrap = false,
 	size: text = DEFAULT_TEXT_SIZE,
 	strong = false,
 	transform: textTransform,
-	weight: fontWeight = DEFAULT_TEXT_WEIGHT,
-	wrap: textWrap = noWrap ? 'nowrap' : undefined,
-	wordBreak = breakWord ? 'break-word' : undefined,
+	weight = DEFAULT_TEXT_WEIGHT,
+	wrap,
+	wordBreak,
 }: TypographyProps) =>
 	clsx(
 		common,
 		sprinkles({
 			color,
-			fontWeight: strong === true ? 'bold' : fontWeight,
+			fontWeight: strong === true ? 'bold' : weight,
 			text,
 			textAlign,
 			textTransform,
-			textWrap,
-			wordBreak,
+			textWrap: noWrap === true ? 'nowrap' : wrap,
+			wordBreak: breakWord === true ? 'break-word' : wordBreak,
 		}),
-		sprinklesLegacyText({ color: colour }),
+		!color &&
+			sprinklesLegacyText({
+				color:
+					colour ?? (strong === true ? 'dark' : DEFAULT_TEXT_COLOUR),
+			}),
 	);
 
 export interface TextStylesProps extends TypographyProps {
@@ -113,9 +117,9 @@ export function textStyles({
 	as = 'span',
 	className,
 
-	colour = isHeadingTag(as) ? 'dark' : DEFAULT_TEXT_COLOUR,
-	size = isHeadingTag(as) ? headingSizeMap[as] : DEFAULT_TEXT_SIZE,
-	weight = isHeadingTag(as) ? 'bold' : DEFAULT_TEXT_WEIGHT,
+	colour = isHeadingTag(as) ? 'dark' : undefined,
+	size = isHeadingTag(as) ? headingSizeMap[as] : undefined,
+	weight = isHeadingTag(as) ? 'bold' : undefined,
 	// remaining style props
 	...props
 }: TextStylesProps) {

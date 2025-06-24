@@ -3,7 +3,6 @@ import React, { type ComponentProps } from 'react';
 
 import { type Sprinkles } from '../../styles/sprinkles.css';
 import {
-	DEFAULT_TEXT_COLOUR,
 	DEFAULT_TEXT_SIZE,
 	DEFAULT_TEXT_WEIGHT,
 	textStyles,
@@ -86,7 +85,7 @@ export const Text = React.forwardRef<HTMLElement, TextProps>(
 			align,
 			breakWord,
 			color, // modern semantic colour tokens
-			colour = DEFAULT_TEXT_COLOUR, // legacy colours
+			colour, // legacy colours
 			noWrap,
 			size = DEFAULT_TEXT_SIZE,
 			strong,
