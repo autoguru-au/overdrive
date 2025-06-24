@@ -26,7 +26,7 @@ exports[`<ColourInput /> > should have some hintText 1`] = `
             />
           </div>
           <span
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_4__yhjp332e typography__yhjp3313 sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n typography__yhjp331f typography_color_neutral__yhjp338 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 sprinkles_position_absolute_mobile__onxwju93"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n sprinkles_fontWeight_normal__onxwju62 typography_color_neutral__yhjp338 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 sprinkles_position_absolute_mobile__onxwju93"
           >
             #6c1111
           </span>
@@ -66,7 +66,7 @@ exports[`<ColourInput /> > should have some hintText 1`] = `
       </div>
     </div>
     <p
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_p__18vhvlif elementReset_trimmedElement__18vhvli0 sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_p__yhjp331l elementReset_trimmedElement__18vhvli0 typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_colour_unset__yhjp3329 typography_typographyStyles_size_2__yhjp332c typography__yhjp3311 sprinkles_fontSize_2__onxwju5u sprinkles_lineHeight_2__onxwju5l elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_p__18vhvlif elementReset_trimmedElement__18vhvli0 sprinkles_marginTop_1_mobile__onxwjuzr HintText_hintText__down5s0 InputState_natural_default_colour__a2a1mv4"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_p__18vhvlif elementReset_trimmedElement__18vhvli0 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_p__18vhvlif elementReset_trimmedElement__18vhvli0 typography_common__yhjp33f sprinkles_fontSize_2__onxwju5u sprinkles_lineHeight_2__onxwju5l sprinkles_fontWeight_normal__onxwju62 typography_color_unset__yhjp33e elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_p__18vhvlif elementReset_trimmedElement__18vhvli0 sprinkles_marginTop_1_mobile__onxwjuzr HintText_hintText__down5s0 InputState_natural_default_colour__a2a1mv4"
     >
       hint text
     </p>
@@ -100,7 +100,7 @@ exports[`<ColourInput /> > should match snapshot 1`] = `
             />
           </div>
           <span
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_4__yhjp332e typography__yhjp3313 sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n typography__yhjp331f typography_color_neutral__yhjp338 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 sprinkles_position_absolute_mobile__onxwju93"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n sprinkles_fontWeight_normal__onxwju62 typography_color_neutral__yhjp338 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 sprinkles_position_absolute_mobile__onxwju93"
           >
             #6c1111
           </span>
@@ -169,7 +169,7 @@ exports[`<ColourInput /> > should match snapshot when active 1`] = `
             />
           </div>
           <span
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_4__yhjp332e typography__yhjp3313 sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n typography__yhjp331f typography_color_neutral__yhjp338 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 sprinkles_position_absolute_mobile__onxwju93"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n sprinkles_fontWeight_normal__onxwju62 typography_color_neutral__yhjp338 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 sprinkles_position_absolute_mobile__onxwju93"
           >
             #ec4040
           </span>
@@ -254,7 +254,7 @@ exports[`<ColourInput /> > should match snapshot when loading 1`] = `
             />
           </div>
           <span
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_4__yhjp332e typography__yhjp3313 sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n typography__yhjp331f typography_color_neutral__yhjp338 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 sprinkles_position_absolute_mobile__onxwju93"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n sprinkles_fontWeight_normal__onxwju62 typography_color_neutral__yhjp338 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 sprinkles_position_absolute_mobile__onxwju93"
           >
             #6c1111
           </span>
@@ -322,7 +322,7 @@ exports[`<ColourInput /> > should match snapshot when touched 1`] = `
             />
           </div>
           <span
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_4__yhjp332e typography__yhjp3313 sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n typography__yhjp331f typography_color_neutral__yhjp338 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 sprinkles_position_absolute_mobile__onxwju93"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n sprinkles_fontWeight_normal__onxwju62 typography_color_neutral__yhjp338 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 sprinkles_position_absolute_mobile__onxwju93"
           >
             #6c1111
           </span>
@@ -389,7 +389,7 @@ exports[`<ColourInput /> > should match snapshot when touched and invalid 1`] = 
             />
           </div>
           <span
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_4__yhjp332e typography__yhjp3313 sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n typography__yhjp331f typography_color_neutral__yhjp338 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 sprinkles_position_absolute_mobile__onxwju93"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n sprinkles_fontWeight_normal__onxwju62 typography_color_neutral__yhjp338 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 sprinkles_position_absolute_mobile__onxwju93"
           >
             #6c1111
           </span>
@@ -456,7 +456,7 @@ exports[`<ColourInput /> > should match snapshot when touched and valid 1`] = `
             />
           </div>
           <span
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_4__yhjp332e typography__yhjp3313 sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n typography__yhjp331f typography_color_neutral__yhjp338 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 sprinkles_position_absolute_mobile__onxwju93"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n sprinkles_fontWeight_normal__onxwju62 typography_color_neutral__yhjp338 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 sprinkles_position_absolute_mobile__onxwju93"
           >
             #6c1111
           </span>
@@ -538,7 +538,7 @@ exports[`<ColourInput /> > should match snapshot with both icons 1`] = `
             />
           </div>
           <span
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_4__yhjp332e typography__yhjp3313 sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n typography__yhjp331f typography_color_neutral__yhjp338 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 sprinkles_position_absolute_mobile__onxwju93"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n sprinkles_fontWeight_normal__onxwju62 typography_color_neutral__yhjp338 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 sprinkles_position_absolute_mobile__onxwju93"
           >
             #6c1111
           </span>
@@ -620,7 +620,7 @@ exports[`<ColourInput /> > should match snapshot with suffix icon 1`] = `
             />
           </div>
           <span
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_size_4__yhjp332e typography__yhjp3313 sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n typography__yhjp331f typography_color_neutral__yhjp338 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 sprinkles_position_absolute_mobile__onxwju93"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n sprinkles_fontWeight_normal__onxwju62 typography_color_neutral__yhjp338 ColourInput_valueText__fijwir4 ColourInput_valueTextSize_medium__fijwir6 sprinkles_position_absolute_mobile__onxwju93"
           >
             #6c1111
           </span>

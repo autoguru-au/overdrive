@@ -5,7 +5,6 @@ import { overdriveTokens } from '../themes/theme.css';
 
 import { focusOutlineStyle } from './focusOutline.css';
 import { cssLayerReset } from './layers.css';
-import { sprinkles } from './sprinkles.css';
 
 export const trimmed = {
 	margin: 0,
@@ -73,7 +72,16 @@ const button = [
 	}),
 ];
 
-const heading = [trimmedElement, sprinkles({ textWrap: 'balance' })];
+const heading = [
+	trimmedElement,
+	style({
+		'@layer': {
+			[cssLayerReset]: {
+				textWrap: 'balance',
+			},
+		},
+	}),
+];
 
 const list = style({
 	'@layer': {

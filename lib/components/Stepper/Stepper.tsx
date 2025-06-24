@@ -9,12 +9,12 @@ import {
 	useCallback,
 } from 'react';
 
+import { textStyles } from '../../styles/typography';
 import { addWithSafeDecimal } from '../../utils/number';
 import { Box } from '../Box/Box';
 import { Icon } from '../Icon/Icon';
 import { Inline } from '../Inline/Inline';
 import { Text } from '../Text/Text';
-import { textStyles } from '../Text/textStyles';
 
 import * as styles from './Stepper.css';
 

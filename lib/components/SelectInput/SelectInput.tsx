@@ -35,7 +35,7 @@ export const SelectInput = withEnhancedInput<
 		>
 			<Box
 				as="select"
-				flexGrow={1}
+				flexGrow="1"
 				{...eventHandlers}
 				{...field}
 				{...rest}
@@ -52,7 +52,7 @@ export const SelectInput = withEnhancedInput<
 					alignItems="center"
 					height="full"
 					marginRight={size === 'medium' ? '4' : '2'}
-					flexShrink={0}
+					flexShrink="0"
 					pointerEvents="none"
 					position="absolute"
 				>

@@ -4,7 +4,7 @@ import * as React from 'react';
 import { cloneElement } from 'react';
 
 import { useNullCheck } from '../../hooks/useNullCheck';
-import { componentStyles } from '../../styles';
+import { elementStyles } from '../../styles';
 import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
 import { ResponsiveProp } from '../../utils/responsiveProps.css';
 import { Box, type BoxProps } from '../Box/Box';
@@ -32,7 +32,7 @@ export const Icon: FunctionComponent<IconProps> = ({
 	useNullCheck(icon, 'Icon component received an empty icon prop.');
 
 	const iconElement = cloneElement(icon, {
-		className: componentStyles({
+		className: elementStyles({
 			as: 'svg',
 			display: 'block',
 			width: 'full',

@@ -6,9 +6,9 @@ import React, {
 } from 'react';
 
 import { resetStyles } from '../../../styles';
+import { textStyles } from '../../../styles/typography';
 import { Box } from '../../Box/Box';
 import { Text } from '../../Text/Text';
-import { textStyles } from '../../Text/textStyles';
 
 import * as styles from './CheckableBase.css';
 

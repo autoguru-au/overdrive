@@ -19,16 +19,24 @@ import { Box } from '../Box/Box';
 
 import * as styles from './Columns.css';
 
-export interface Props
+export interface ColumnsProps
 	extends Omit<ComponentProps<typeof Box>, 'css'>,
 		styles.ColumnsStyle {
+	children?: ReactNode;
 	className?: string;
 	columns?: number;
+	/**
+	 * Shorthand for applying the X & Y spacing. Can be a responsive array.
+	 */
 	space?: ResponsiveProp<keyof Tokens['space']>;
+	/**
+	 * Horizontal spacing between columns. Can be a responsive array.
+	 */
 	spaceX?: ResponsiveProp<keyof typeof styles.space.spaceX>;
+	/**
+	 * Vertical spacing between rows when wrapping occurs. Can be a responsive array.
+	 */
 	spaceY?: ResponsiveProp<keyof typeof styles.space.spaceY>;
-
-	children?: ReactNode;
 }
 
 interface ColumnContextValue {
@@ -39,7 +47,37 @@ interface ColumnContextValue {
 
 export const ColumnContext = createContext<ColumnContextValue | null>(null);
 
-export const Columns = forwardRef<HTMLElement, Props>(
+/**
+ * `Columns` is a layout component used to arrange child elements horizontally in columns. The `Columns` component must
+ * be populated with `Column` components.
+ *
+ * `Columns` provides responsive control over spacing between columns (and rows when wrapping), alignment, and wrapping
+ * behavior. And it exposes the ColumnContext which is used by each child Column.
+ *
+ * @example
+ * // Basic usage with uniform spacing
+ * <Columns space="4">
+ *   <Column width="1/3"><Card>Column 1</Card></Column>
+ *   <Column width="1/3"><Card>Column 2</Card></Column>
+ *   <Column width="1/3"><Card>Column 3</Card></Column>
+ * </Columns>
+ *
+ * @example
+ * // Responsive spacing and alignment
+ * <Columns spaceX={['2', '4']} spaceY="3" align="center">
+ *   <Column width={['full', '1/2']}><Button>Button 1</Button></Column>
+ *   <Column width={['full', '1/2']}><Button>Button 2</Button></Column>
+ * </Columns>
+ *
+ * @example
+ * // Preventing wrapping
+ * <Columns noWrap space="5">
+ *   <Item>Item A</Item>
+ *   <Item>Item B</Item>
+ *   <Item>Item C</Item>
+ * </Columns>
+ */
+export const Columns = forwardRef<HTMLElement, ColumnsProps>(
 	(
 		{
 			className,

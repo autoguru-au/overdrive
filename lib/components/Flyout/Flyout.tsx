@@ -1,12 +1,16 @@
-import type { ComponentPropsWithoutRef, FunctionComponent } from 'react';
-import * as React from 'react';
+import React, { type ComponentProps } from 'react';
 
 import { Box } from '../Box/Box';
 import { Positioner } from '../Positioner/Positioner';
 
-export const Flyout: FunctionComponent<
-	ComponentPropsWithoutRef<typeof Positioner>
-> = ({ children, triggerRef, isOpen, alignment, triggerOffset, ...rest }) => (
+export const Flyout = ({
+	children,
+	triggerRef,
+	isOpen,
+	alignment,
+	triggerOffset,
+	...rest
+}: ComponentProps<typeof Positioner>) => (
 	<Positioner
 		triggerRef={triggerRef}
 		isOpen={isOpen}

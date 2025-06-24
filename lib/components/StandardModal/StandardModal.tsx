@@ -8,13 +8,13 @@ import type {
 import * as React from 'react';
 import { useLayoutEffect, useRef } from 'react';
 
+import { textStyles } from '../../styles/typography';
 import { isBrowser, useEventCallback, useId } from '../../utils';
 import { Box } from '../Box/Box';
 import { Button } from '../Button/Button';
 import { Heading } from '../Heading/Heading';
 import { Icon } from '../Icon/Icon';
 import { Modal } from '../Modal/Modal';
-import { textStyles } from '../Text/textStyles';
 
 import * as styles from './StandardModal.css';
 

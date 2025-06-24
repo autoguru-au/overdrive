@@ -21,7 +21,7 @@ exports[`<Switch /> > should match snapshot when toggled 1`] = `
       />
     </div>
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_colour_neutral__yhjp3323 typography__yhjp33u typography_color_neutral__yhjp338 typography_typographyStyles_size_5__yhjp332f typography__yhjp3314 sprinkles_fontSize_5__onxwju5x sprinkles_lineHeight_5__onxwju5o Switch_toggleOn__6xc8dy2"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_5__onxwju5x sprinkles_lineHeight_5__onxwju5o sprinkles_fontWeight_normal__onxwju62 typography_color_neutral__yhjp338 Switch_toggleOn__6xc8dy2"
       data-active=""
     >
       <div
@@ -53,7 +53,7 @@ exports[`<Switch /> > should match snapshot when toggled and disabled 1`] = `
       />
     </div>
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_colour_neutral__yhjp3323 typography__yhjp33u typography_color_neutral__yhjp338 typography_typographyStyles_size_5__yhjp332f typography__yhjp3314 sprinkles_fontSize_5__onxwju5x sprinkles_lineHeight_5__onxwju5o Switch_disabled__6xc8dy3 Switch_toggleOn__6xc8dy2"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_5__onxwju5x sprinkles_lineHeight_5__onxwju5o sprinkles_fontWeight_normal__onxwju62 typography_color_neutral__yhjp338 Switch_disabled__6xc8dy3 Switch_toggleOn__6xc8dy2"
       data-active=""
       data-disabled=""
     >
@@ -85,7 +85,7 @@ exports[`<Switch /> > should match snapshot when un-toggled 1`] = `
       />
     </div>
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_colour_neutral__yhjp3323 typography__yhjp33u typography_color_neutral__yhjp338 typography_typographyStyles_size_5__yhjp332f typography__yhjp3314 sprinkles_fontSize_5__onxwju5x sprinkles_lineHeight_5__onxwju5o"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_5__onxwju5x sprinkles_lineHeight_5__onxwju5o sprinkles_fontWeight_normal__onxwju62 typography_color_neutral__yhjp338"
     >
       <div
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Switch_handle_default__6xc8dy4"
@@ -115,7 +115,7 @@ exports[`<Switch /> > should match snapshot when un-toggled and disabled 1`] = `
       />
     </div>
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_colour_neutral__yhjp3323 typography__yhjp33u typography_color_neutral__yhjp338 typography_typographyStyles_size_5__yhjp332f typography__yhjp3314 sprinkles_fontSize_5__onxwju5x sprinkles_lineHeight_5__onxwju5o Switch_disabled__6xc8dy3"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_5__onxwju5x sprinkles_lineHeight_5__onxwju5o sprinkles_fontWeight_normal__onxwju62 typography_color_neutral__yhjp338 Switch_disabled__6xc8dy3"
       data-disabled=""
     >
       <div
@@ -146,7 +146,7 @@ exports[`<Switch /> > should match snapshot without props 1`] = `
       />
     </div>
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_colour_neutral__yhjp3323 typography__yhjp33u typography_color_neutral__yhjp338 typography_typographyStyles_size_5__yhjp332f typography__yhjp3314 sprinkles_fontSize_5__onxwju5x sprinkles_lineHeight_5__onxwju5o"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Switch_toggle__6xc8dy1 focusOutline_focusOutlineStyle__tq83zq0 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_5__onxwju5x sprinkles_lineHeight_5__onxwju5o sprinkles_fontWeight_normal__onxwju62 typography_color_neutral__yhjp338"
     >
       <div
         class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 Switch_handle_default__6xc8dy4"

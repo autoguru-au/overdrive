@@ -14,11 +14,11 @@ import React, {
 } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 
+import { textStyles } from '../../styles/typography';
 import { animate, ownerWindow, useEventCallback } from '../../utils';
 import { Box } from '../Box/Box';
 import { Button } from '../Button/Button';
 import { Icon } from '../Icon/Icon';
-import { textStyles } from '../Text/textStyles';
 
 import * as styles from './TabList.css';
 import { TabsContext } from './Tabs';

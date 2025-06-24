@@ -10,7 +10,7 @@ exports[`<Section /> > should match the snapshot for negative value 1`] = `
     data-od-component="number-bubble"
   >
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_strong_true__yhjp332k typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_colour_white__yhjp3321 typography__yhjp33s typography_color_white__yhjp336 typography_typographyStyles_size_2__yhjp332c typography__yhjp3311 sprinkles_fontSize_2__onxwju5u sprinkles_lineHeight_2__onxwju5l typography__yhjp331i sprinkles_fontWeight_bold__onxwju64 NumberBubble_bubbleText__1hqdrce0 sprinkles_position_absolute_mobile__onxwju93"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2__onxwju5u sprinkles_lineHeight_2__onxwju5l sprinkles_fontWeight_bold__onxwju64 typography_color_white__yhjp336 NumberBubble_bubbleText__1hqdrce0 sprinkles_position_absolute_mobile__onxwju93"
     >
       -3
     </span>
@@ -28,7 +28,7 @@ exports[`<Section /> > should match the snapshot for positive value 1`] = `
     data-od-component="number-bubble"
   >
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_strong_true__yhjp332k typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_colour_white__yhjp3321 typography__yhjp33s typography_color_white__yhjp336 typography_typographyStyles_size_2__yhjp332c typography__yhjp3311 sprinkles_fontSize_2__onxwju5u sprinkles_lineHeight_2__onxwju5l typography__yhjp331i sprinkles_fontWeight_bold__onxwju64 NumberBubble_bubbleText__1hqdrce0 sprinkles_position_absolute_mobile__onxwju93"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2__onxwju5u sprinkles_lineHeight_2__onxwju5l sprinkles_fontWeight_bold__onxwju64 typography_color_white__yhjp336 NumberBubble_bubbleText__1hqdrce0 sprinkles_position_absolute_mobile__onxwju93"
     >
       3
     </span>

@@ -22,13 +22,13 @@ const meta: Meta<typeof Button> = {
 		isFullWidth: false,
 		isLoading: false,
 		disabled: false,
-		is: undefined,
+		as: undefined,
 		onClick: fn(),
 		withDoubleClicks: false,
 		testId: 'storybook-button',
 	},
 	argTypes: {
-		is: {
+		as: {
 			options: ['button', 'a'],
 		},
 	},
