@@ -12,7 +12,7 @@ import {
 	ReactNode,
 } from 'react';
 
-import { componentStyles } from '../../styles/componentStyles';
+import { elementStyles } from '../../styles';
 import type { TestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box/Box';
@@ -46,7 +46,7 @@ export const Anchor: FunctionComponent<Props> = ({
 }) => {
 	const props = {
 		className: clsx(
-			componentStyles({
+			elementStyles({
 				as: Component,
 				colour: 'link',
 				display: 'inline',

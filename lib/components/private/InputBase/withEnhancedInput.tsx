@@ -18,7 +18,7 @@ import React, {
 	useState,
 } from 'react';
 
-import { componentStyles, sprinkles } from '../../../styles';
+import { sprinkles, elementStyles } from '../../../styles';
 import { useInputControlledState } from '../../../utils';
 import { Box } from '../../Box/Box';
 import { Icon } from '../../Icon/Icon';
@@ -201,7 +201,7 @@ export const withEnhancedInput = <
 			const iconSize = size === 'small' ? 'medium' : size;
 
 			const inputItselfClassName = clsx(
-				componentStyles({
+				elementStyles({
 					as: primitiveType === 'textarea' ? 'textarea' : 'input',
 					backgroundColour,
 					width: 'full',

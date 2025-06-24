@@ -50,8 +50,7 @@ const Divider = ({ children }: PropsWithChildren) => {
 /**
  * Inline arranges child elements horizontally, side by side.
  * It allows you to control the spacing between items, alignment (horizontal and vertical),
- * wrapping behavior, and optionally add dividers.
- * Useful for creating a row layout.
+ * wrapping behavior, and optionally add dividers. Useful for creating a row layout.
  *
  * @example
  * <Inline space="4" alignY="flex-start">

@@ -12,8 +12,8 @@ import {
 	useContext,
 } from 'react';
 
-import { componentStyles } from '../../styles';
-import { typographyStyles } from '../../styles/typography.css';
+import { elementStyles } from '../../styles';
+import { textStyles } from '../../styles/typography';
 import { Inline } from '../Inline/Inline';
 import { Text } from '../Text/Text';
 
@@ -56,13 +56,13 @@ export const Tab = forwardRef<HTMLDivElement, TabProps>(
 
 		const props = {
 			className: clsx(
-				componentStyles({
+				elementStyles({
 					as: typeof Component === 'string' ? Component : 'button',
 					display: 'inline-flex',
 					justifyContent: 'center',
 					backgroundColour: 'transparent',
 				}),
-				typographyStyles({
+				textStyles({
 					colour: 'light',
 					noWrap: true,
 					size: '3',

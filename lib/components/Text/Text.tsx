@@ -6,7 +6,7 @@ import {
 	DEFAULT_TEXT_COLOUR,
 	DEFAULT_TEXT_SIZE,
 	DEFAULT_TEXT_WEIGHT,
-	styledText,
+	textStyles,
 	type TextTags,
 	type TypographyProps,
 } from '../../styles/typography';
@@ -103,7 +103,7 @@ export const Text = React.forwardRef<HTMLElement, TextProps>(
 			as={as}
 			ref={ref}
 			className={[
-				styledText({
+				textStyles({
 					align,
 					as,
 					breakWord,

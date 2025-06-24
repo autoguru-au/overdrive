@@ -18,8 +18,8 @@ import {
 	type ReactElement,
 } from 'react';
 
-import { componentStyles } from '../../styles';
-import { typographyStyles } from '../../styles/typography.css';
+import { elementStyles } from '../../styles';
+import { textStyles } from '../../styles/typography';
 import type { TextFontWeight, TextSizeScale } from '../../themes';
 import type { TestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
@@ -156,7 +156,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			disabled: disabled || isLoading,
 			'aria-label': isLoading ? language.loading : ariaLabel,
 			className: clsx(
-				componentStyles({
+				elementStyles({
 					as: Component,
 					display: 'inline-block',
 					overflow: 'hidden',
@@ -168,7 +168,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 					width: isFullWidth ? 'full' : undefined,
 					pointerEvents: functionallyDisabled ? 'none' : undefined,
 				}),
-				typographyStyles({
+				textStyles({
 					colour: 'white',
 					weight: fontWeight[size],
 					size: fontSize[size],

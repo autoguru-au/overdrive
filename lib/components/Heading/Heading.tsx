@@ -4,7 +4,7 @@ import React from 'react';
 import { sprinkles } from '../../styles';
 import {
 	type HeadingTags,
-	styledText,
+	textStyles,
 	type TypographyProps,
 } from '../../styles/typography';
 import type { TestId } from '../../types';
@@ -110,7 +110,7 @@ export const Heading = ({
 	return (
 		<Tag
 			{...props}
-			className={styledText({
+			className={textStyles({
 				as: Tag,
 				align,
 				breakWord,

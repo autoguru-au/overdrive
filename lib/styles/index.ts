@@ -1,7 +1,7 @@
 export { cssLayerComponent, cssLayerTheme } from './layers.css';
 export { resetVariants, type ResetVariantProps } from './elementReset.css';
 export {
-	componentStyles as styledElement,
+	componentStyles as elementStyles,
 	type ComponentStylesProps as StyledElementProps,
 	resetStyles,
 } from './componentStyles';
@@ -11,8 +11,8 @@ export {
 	type SprinklesLegacyColours as LegacyStyleProps,
 } from './sprinkles.css';
 export {
-	styledText,
-	type StyledTextProps,
+	textStyles,
+	type TextStylesProps,
 	typography,
 	type TypographyProps,
 } from './typography';

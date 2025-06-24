@@ -12,17 +12,17 @@ import React, {
 	type ReactNode,
 } from 'react';
 
+import type { TextStylesProps } from '../../styles/typography';
 import { Box } from '../Box/Box';
 import { Icon } from '../Icon/Icon';
 import { Text } from '../Text/Text';
-import type { TextStyleProps } from '../Text/textStyles';
 
 import * as styles from './TextLink.css';
 
 type AnchorProps = ComponentPropsWithoutRef<'a'>;
-type FilteredAnchorProps = Omit<AnchorProps, keyof TextStyleProps>;
+type FilteredAnchorProps = Omit<AnchorProps, keyof TextStylesProps>;
 type FilteredTextStyleProps = Omit<
-	TextStyleProps,
+	TextStylesProps,
 	'as' | 'align' | 'breakword' | 'wordbreak' | 'wrap'
 >;
 

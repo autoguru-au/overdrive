@@ -83,7 +83,7 @@ export const typography = ({
 		sprinklesLegacyText({ color: colour }),
 	);
 
-export interface StyledTextProps extends TypographyProps {
+export interface TextStylesProps extends TypographyProps {
 	as?: TextTags | HeadingTags;
 	className?: ClassName;
 }
@@ -94,22 +94,22 @@ export interface StyledTextProps extends TypographyProps {
  *
  * @example
  * // Basic usage with semantic color
- * styledText({ color: 'primary', size: 'large' })
+ * textStyles({ color: 'primary', size: 'large' })
  *
  * @example
  * // Applies default colour, weight and sizing to heading
- * styledText({ as: 'h2' })
+ * textStyles({ as: 'h2' })
  *
  * @example
  * // Text wrapping and transformation
- * styledText({
+ * textStyles({
  * 	 as: 'label',
  *   noWrap: true,
  *   transform: 'uppercase',
  *   breakWord: true
  * })
  */
-export function styledText({
+export function textStyles({
 	as = 'span',
 	className,
 
@@ -118,7 +118,7 @@ export function styledText({
 	weight = isHeadingTag(as) ? 'bold' : DEFAULT_TEXT_WEIGHT,
 	// remaining style props
 	...props
-}: StyledTextProps) {
+}: TextStylesProps) {
 	return clsx(
 		resetStyles(as),
 		typography({ colour, size, weight, ...props }),
