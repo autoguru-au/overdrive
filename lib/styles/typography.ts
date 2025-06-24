@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import clsx, { type ClassValue as ClassName } from 'clsx';
 
 import { resetStyles } from './componentStyles';
 import { sprinkles, type Sprinkles } from './sprinkles.css';
@@ -16,6 +16,17 @@ export const DEFAULT_TEXT_WEIGHT = 'normal' as Sprinkles['fontWeight'];
 
 export type TextTags = (typeof TEXT_TAGS)[number];
 export type HeadingTags = (typeof HEADING_TAGS)[number];
+
+const isHeadingTag = (tag: string) => HEADING_TAGS.includes(tag as HeadingTags);
+
+const headingSizeMap: Record<HeadingTags, Sprinkles['fontSize']> = {
+	h1: '8',
+	h2: '7',
+	h3: '6',
+	h4: '4',
+	h5: '3',
+	h6: '2',
+};
 
 export interface TypographyProps {
 	/** Aligns text horizontally */
@@ -74,16 +85,8 @@ export const typography = ({
 
 export interface StyledTextProps extends TypographyProps {
 	as?: TextTags | HeadingTags;
+	className?: ClassName;
 }
-
-const headingSizeMap: Record<HeadingTags, Sprinkles['fontSize']> = {
-	h1: '8',
-	h2: '7',
-	h3: '6',
-	h4: '4',
-	h5: '3',
-	h6: '2',
-};
 
 /**
  * Primary utility for styling typography, combines reset styles, style props and element props.
@@ -108,15 +111,17 @@ const headingSizeMap: Record<HeadingTags, Sprinkles['fontSize']> = {
  */
 export function styledText({
 	as = 'span',
+	className,
 
-	colour = as in HEADING_TAGS ? 'dark' : DEFAULT_TEXT_COLOUR,
-	size = as in HEADING_TAGS ? headingSizeMap[as] : DEFAULT_TEXT_SIZE,
-	weight = as in HEADING_TAGS ? 'bold' : DEFAULT_TEXT_WEIGHT,
+	colour = isHeadingTag(as) ? 'dark' : DEFAULT_TEXT_COLOUR,
+	size = isHeadingTag(as) ? headingSizeMap[as] : DEFAULT_TEXT_SIZE,
+	weight = isHeadingTag(as) ? 'bold' : DEFAULT_TEXT_WEIGHT,
 	// remaining style props
 	...props
 }: StyledTextProps) {
 	return clsx(
 		resetStyles(as),
 		typography({ colour, size, weight, ...props }),
+		className,
 	);
 }

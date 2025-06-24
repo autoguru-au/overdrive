@@ -7,8 +7,8 @@ import {
 	DEFAULT_TEXT_SIZE,
 	DEFAULT_TEXT_WEIGHT,
 	styledText,
-	type StyledTextProps,
 	type TextTags,
+	type TypographyProps,
 } from '../../styles/typography';
 import type { TestId } from '../../types';
 import { Box } from '../Box/Box';
@@ -16,7 +16,7 @@ import { Box } from '../Box/Box';
 type ElementAttributes = React.ComponentPropsWithoutRef<'p'> &
 	Pick<ComponentProps<'label'>, 'htmlFor'>;
 
-type AdditionalStyleProps = Pick<
+export type AdditionalStyleProps = Pick<
 	Sprinkles,
 	| 'display'
 	| 'm'
@@ -50,9 +50,9 @@ type AdditionalStyleProps = Pick<
 >;
 
 export interface TextProps
-	extends Omit<ElementAttributes, 'className' | 'color' | 'is'>,
+	extends Omit<ElementAttributes, 'className' | 'is' | keyof TypographyProps>,
 		AdditionalStyleProps,
-		StyledTextProps,
+		TypographyProps,
 		TestId {
 	as?: TextTags;
 	className?: ClassName;
