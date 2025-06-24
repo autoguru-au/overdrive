@@ -2,11 +2,16 @@ import type { ClassValue as ClassName } from 'clsx';
 import React, { type ComponentProps } from 'react';
 
 import { type Sprinkles } from '../../styles/sprinkles.css';
-import { typographyStyles } from '../../styles/typography.css';
+import {
+	DEFAULT_TEXT_COLOUR,
+	DEFAULT_TEXT_SIZE,
+	DEFAULT_TEXT_WEIGHT,
+	styledText,
+	type StyledTextProps,
+	type TextTags,
+} from '../../styles/typography';
 import type { TestId } from '../../types';
 import { Box } from '../Box/Box';
-
-import type { TextStyleProps } from './textStyles';
 
 type ElementAttributes = React.ComponentPropsWithoutRef<'p'> &
 	Pick<ComponentProps<'label'>, 'htmlFor'>;
@@ -47,22 +52,23 @@ type AdditionalStyleProps = Pick<
 export interface TextProps
 	extends Omit<ElementAttributes, 'className' | 'color' | 'is'>,
 		AdditionalStyleProps,
-		TextStyleProps,
+		StyledTextProps,
 		TestId {
+	as?: TextTags;
 	className?: ClassName;
 }
 
 /**
- * The main Overdrive component for consistent typography sizing and styling.
- * Supports semantic text styling with size, color, and weight variations.
+ * The main Overdrive component for consistent typography.
+ * Supports size, color, and weight variations, as well as style props for display, margin and padding.
  *
  * @example
  * <Text>
  *   This is some text
  * </Text>
  *
- * <Text as="p">
- *   This will render as a paragraph
+ * <Text as="p" my="2">
+ *   This will render as a paragraph with vertical margins
  * </Text>
  *
  * <Text size="5" color="primary" strong>
@@ -77,15 +83,15 @@ export const Text = React.forwardRef<HTMLElement, TextProps>(
 			className,
 
 			//style props
-			align = 'left',
+			align,
 			breakWord,
 			color, // modern semantic colour tokens
-			colour, // legacy colours
+			colour = DEFAULT_TEXT_COLOUR, // legacy colours
 			noWrap,
-			size = '4',
-			strong = false,
+			size = DEFAULT_TEXT_SIZE,
+			strong,
 			transform,
-			weight = 'normal',
+			weight = DEFAULT_TEXT_WEIGHT,
 			wrap,
 
 			...props
@@ -93,25 +99,25 @@ export const Text = React.forwardRef<HTMLElement, TextProps>(
 		ref,
 	) => (
 		<Box
+			{...props}
 			as={as}
 			ref={ref}
-			textAlign={align}
-			textWrap={wrap}
 			className={[
-				typographyStyles({
+				styledText({
+					align,
 					as,
 					breakWord,
 					color,
-					colour: colour ?? (strong ? 'dark' : undefined),
+					colour,
 					noWrap,
 					size,
 					strong,
 					transform,
 					weight,
+					wrap,
 				}),
 				className,
 			]}
-			{...props}
 		>
 			{children}
 		</Box>
