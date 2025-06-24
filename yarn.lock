@@ -179,7 +179,7 @@ __metadata:
     magic-string: "npm:^0.30.17"
     mini-css-extract-plugin: "npm:^2.9.2"
     mockdate: "npm:^3.0.5"
-    playwright: "npm:^1.53.0"
+    playwright: "npm:1.53.1"
     plop: "npm:^4.0.1"
     postcss: "npm:^8.5.6"
     prettier: "npm:^3.5.3"
@@ -11211,7 +11211,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright@npm:^1.53.0":
+"playwright@npm:1.53.1":
   version: 1.53.1
   resolution: "playwright@npm:1.53.1"
   dependencies:
