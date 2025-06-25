@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Box } from '../Box/Box';
 
-import { Flex } from './Flex';
+import { FlexStack } from './FlexStack';
 
 const Item = ({ children }: React.PropsWithChildren) => (
 	<Box
@@ -18,54 +18,32 @@ const Item = ({ children }: React.PropsWithChildren) => (
 	</Box>
 );
 
-const Content = () => (
-	<>
-		<Item>1</Item>
-		<Item>2</Item>
-		<Item>3</Item>
-		<Item>4</Item>
-		<Item>5</Item>
-		<Item>6</Item>
-		<Item>7</Item>
-		<Item>8</Item>
-		<Item>9</Item>
-		<Item>10</Item>
-		<Item>11</Item>
-		<Item>12</Item>
-		<Item>13</Item>
-		<Item>14</Item>
-		<Item>15</Item>
-		<Item>16</Item>
-		<Item>17</Item>
-		<Item>18</Item>
-		<Item>19</Item>
-		<Item>20</Item>
-	</>
-);
+// eslint-disable-next-line unicorn/no-new-array
+const items = [...new Array(9).keys()].map((n) => <Item key={n}>{n + 1}</Item>);
 
 const meta = {
-	title: 'Layout/Flex',
+	title: 'Layout/Flex/Stack',
 	tags: [],
-	component: Flex,
+	component: FlexStack,
+	render: (args) => <FlexStack {...args}>{items}</FlexStack>,
+
 	args: {
-		children: <Content />,
-		gap: '4',
+		gap: '6',
 	},
-} satisfies Meta<typeof Flex>;
+} satisfies Meta<typeof FlexStack>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Horizontal: Story = {
-	args: {
-		// alignItems: 'center',
-		horz: true,
-		// justifyContent: 'center',
-	},
-};
+export const Standard: Story = {};
 
-export const Vertical: Story = {
+/**
+ * Change the size of the preview or resize the browser to see layout shifts
+ */
+export const ResponsiveReversed: Story = {
 	args: {
-		vert: true,
+		align: { tablet: 'start', desktop: 'end' },
+		gap: ['8', '6', '4'],
+		reverse: true,
 	},
 };
