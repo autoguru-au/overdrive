@@ -76,6 +76,6 @@
 		"babel-plugin-dev-expression",
 		"babel-plugin-add-import-extension"
 	],
-	"comments": false,
+	"comments": true,
 	"minified": false
 }
