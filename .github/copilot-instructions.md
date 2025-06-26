@@ -1,199 +1,390 @@
-# GitHub Copilot Instructions for Our React Component Library
+# Copilot Instructions - React Component Library
 
-## Overview
+## Tech Stack
 
-This document provides guidelines for using GitHub Copilot within this React
-component library. Our goal is to maintain high-quality, performant, accessible,
-and well-documented components.
+- React 19+ (compiler optimizations reduce need for memo/useCallback)
+- vanilla-extract (all styling via sprinkles/recipes)
+- Vitest (unit tests for helpers/hooks only)
+- Storybook (interactive component testing via play functions)
+- React Aria (for complex interactive components)
+- Yarn 4 (package manager)
 
-## Core Technologies & Libraries
+## Critical Rules
 
-Adhere to the patterns and best practices of the following:
+1. **NO new dependencies** - use existing only
+2. **Always use design tokens** from `/lib/themes/theme.css.ts`
+3. **Compose from primitives** (Box, Text, Icon, etc.)
+4. **Fix all linting/TypeScript errors** in modified files
+5. **Set displayName** on all components
 
-- **Yarn**: Yarn 4 is used for CLI commands.
-- **React (v19+)**: Leverage modern React features. Be mindful that React 19
-  introduces compiler optimizations (e.g., `React.memo` might be handled
-  automatically by `react-compiler`), so some manual optimizations like
-  `useMemo`, `useCallback`, and `React.memo` might become less necessary. Focus
-  on clean, readable code.
-- **vanilla-extract**: For all styling. Utilize its various approaches (e.g.,
-  `sprinkles`, `recipes`) appropriately. `sprinkles` generate numerous utility
-  classes; maximize their reuse for optimal effectiveness. Ensure styles are
-  type-safe and efficient.
-- **Vitest**: For unit and integration testing. Write comprehensive tests for
-  component logic, props, and interactions. Only core component internals and
-  helpers should have thorough unit tests. The focus is more on Storybook play
-  functions for component interactive tests.
-- **Storybook**: For component development, documentation, and visual testing.
-  Follow best practices for creating informative and interactive stories. All
-  stories are run through the Chromatic service for visual regression checking.
-- **React Aria**: We are gradually adopting React Aria for enhanced
-  accessibility and interactions. When uplifting or creating new interactive
-  components, consider using React Aria hooks and components.
-- **Composition over Inheritance**: Prefer composing functionality by using
-  existing primitive components (e.g., `Box`, `Text`, `Icon`) as building
-  blocks.
+## Component Structure
 
-## IMPORTANT: After each task is actioned
+```
+lib/components/ComponentName/
+├── ComponentName.tsx         # Component logic
+├── ComponentName.css.ts      # vanilla-extract styles
+├── ComponentName.stories.tsx # Storybook stories
+├── ComponentName.spec.tsx    # Unit tests (only for internals)
+└── index.ts                  # Exports
+```
 
-### 1. Versioning and Changeset
+## Performance Guidelines
 
-This package uses the `changeset` library to handle versioning. As part of each
-task completion where a change is made that needs to published, never forget to
-run `yarn changeset` and generate a randomly named changeset file in the
-'.changeset' folder.
+### React 19 Optimizations
 
-### 2. Always generate a changeset file for each task or pull request
+- **Automatic optimizations**: React 19 compiler handles most memo/callback
+  optimizations
+- **When to still optimize manually**:
+    - Heavy computational functions inside components
+    - Complex object/array transformations
+    - Expensive child component renders with stable props
+    - Event handlers passed to many children
 
-Changesets are always **minor** or **patch**. Major versions should never be
-generated as part of a task completion. No pull request with publishable changes
-will be approved that is missing a changeset as this will trigger the versioning
-script in the workflow.
+### Performance Checklist
 
-### 3. Formatting
+- [ ] Avoid inline object/array creation in render
+- [ ] Use stable references for callbacks passed as props
+- [ ] Lazy load heavy components with React.lazy()
+- [ ] Virtualize long lists (use existing virtualization components)
+- [ ] Debounce/throttle expensive operations
+- [ ] Profile before optimizing - use React DevTools Profiler
 
-The `yarn format` command should be used prior to a commit so that formatting
-remains consistent.
+### vanilla-extract Performance
 
-## Guiding Principles
+```typescript
+// BAD - creates new styles on every render
+const dynamicStyle = style({ color: props.color });
 
-### 1. Simplicity and Clarity
+// GOOD - use recipes with variants
+export const root = recipe({
+	variants: {
+		color: {
+			primary: sprinkles({ color: 'primary' }),
+			secondary: sprinkles({ color: 'secondary' }),
+		},
+	},
+});
+```
 
-- **Write clear, concise, and understandable code.** Avoid overly complex
-  solutions.
-- **Prioritize readability.** Code should be easy for other developers to pick
-  up and maintain.
-- **Comment complex logic** or non-obvious decisions.
+## Modularity & Reusability Patterns
 
-### 2. Performance
+### Component Composition Blueprint
 
-- **Build performant components by default.**
-- **Be mindful of re-renders.** While React 19's compiler will help, still be
-  conscious of potential performance bottlenecks. Copilot should help identify
-  and flag unnecessary re-renders.
-- **Avoid premature optimization.** Profile and identify actual bottlenecks
-  before applying complex optimizations.
+```typescript
+// 1. Define reusable types
+export interface ComponentBaseProps {
+  variant?: 'primary' | 'secondary';
+  size?: 'small' | 'medium' | 'large';
+}
 
-### 3. Component Design
+// 2. Create composable hook
+export const useComponentLogic = <T extends HTMLElement = HTMLDivElement>(
+  props: ComponentBaseProps
+) => {
+  const [state, setState] = useState();
+  const ref = useRef<T>(null);
 
-- **File Structure**:
-    - Each component resides in its own directory (e.g.,
-      `lib/components/ComponentName/`).
-    - Key files typically include:
-        - `ComponentName.tsx`: Main component logic and JSX.
-        - `ComponentName.css.ts`: Styles defined using `vanilla-extract`.
-        - `index.ts`: Exports the component, props types, and other relevant
-          parts.
-        - `ComponentName.stories.tsx`: Storybook stories.
-        - `ComponentName.spec.tsx`: Vitest unit tests tests - preferred only for
-          core components and primatives that are more difficult to interaction
-          test with the Storybook play function.
-- **Props Definition**:
-    - Define props using TypeScript interfaces or types (e.g.,
-      `ComponentNameProps`).
-    - Often, props extend a base type like `BoxProps`.
-    - Use JSDoc comments extensively for clear prop documentation for Storybook.
-      But avoid overly verbose descriptions and prefer simple clear language.
-    - Set default prop values directly in the component's function signature
-      destructuring.
-- **Style Props & Styling (`vanilla-extract`)**:
-    - Import styles from the co-located `ComponentName.css.ts` file (e.g.,
-      `import * as styles from './ComponentName.css';`).
-    - Utilize `vanilla-extract` features `recipes` and `sprinkles`. `recipes`
-      should refer to `sprinkles` to ensure utility classes are maximally
-      reused.
-    - Use the `clsx` utility for conditional class name application.
-    - Components may accept straightforward style props, typically managed via
-      `sprinkles` or `recipes`.
-- **`displayName`**: Always set a `displayName` for components for better
-  debugging.
-- **`data-*` Attributes**: Move towards utilizing `data-*` attributes (e.g., via
-  a `dataAttrs` utility) for state-based styling.
+  const handlers = {
+    onClick: useCallback(() => {}, []),
+    onKeyDown: useCallback(() => {}, []),
+  } as const;
 
-### 4. Testing
+  return { state, handlers, ref } as const;
+};
 
-- **Vitest**:
-    - Aim for high test coverage.
-    - Test component behavior, not just implementation details.
-    - Use `@testing-library/react` for querying and interacting with components.
-- **Storybook**:
-    - Create stories for all components and their variants.
-    - Use controls to showcase different props and states.
-    - Write clear descriptions for stories and props in the `argTypes`
-      documentation.
-    - Ensure stories cover interaction states (hover, focus, active, disabled).
-    - Test keyboard interactions thoroughly within Storybook.
+// 3. Build component using primitives
+export const Component = forwardRef<HTMLDivElement, ComponentProps>(
+  ({ children, ...props }, ref) => {
+    const { state, handlers } = useComponentLogic(props);
 
-### 5. Documentation
+    return (
+      <Box ref={ref} {...handlers} {...props}>
+        <Text>{children}</Text>
+      </Box>
+    );
+  }
+);
+```
 
-- **Component User Documentation is Key**: Storybook serves as our primary
-  documentation for component users.
-- **Props**: Clearly document all props, their types, default values, and
-  purpose using JSDoc comments, which Storybook will pick up.
-- **Usage Examples**: Provide clear and practical usage examples in stories.
-- **Accessibility Notes**: Document any specific accessibility considerations or
-  patterns used in the component.
+### Reusability Checklist
 
-### 6. Accessibility (a11y)
+- [ ] Can this logic be extracted into a hook?
+- [ ] Are we using existing primitives as building blocks?
+- [ ] Can this be a compound component pattern?
+- [ ] Are props generic enough for multiple use cases?
+- [ ] Is the component single-responsibility?
+- [ ] Can styles be shared via sprinkles utilities?
 
-- **Adhere to WCAG 2.1 AA guidelines.**
-- **Semantic HTML**: Use appropriate HTML elements for their intended purpose.
-- **Keyboard Navigation**: All interactive elements must be fully operable via
-  keyboard. Test tab order, focus states, and keyboard-specific interactions
-  (e.g., Enter, Space, Escape keys).
-- **Focus Management**: Ensure logical focus management, especially for
-  interactive and modal components.
-- **ARIA Attributes**: Use ARIA attributes correctly when native semantics are
-  insufficient. Prefer native HTML elements where possible.
-- **`react-aria` Adoption**: For new complex interactive components (e.g.,
-  modals, dropdowns, date pickers) or when uplifting existing ones, prioritize
-  using `react-aria` hooks and components to leverage their built-in
-  accessibility features.
-- **Color Contrast**: Ensure sufficient color contrast for text and UI elements.
-- **Internationalization (i18n)**: Design components with internationalization
-  in mind. Avoid hardcoding text that may need translation; use placeholders or
-  a designated i18n system if applicable.
+### Compound Component Pattern
 
-### 7. Error Handling and Resilience
+```typescript
+const ComponentContext = createContext<ComponentState | null>(null);
 
-- **Graceful Degradation**: Components should handle unexpected prop values or
-  states gracefully.
-- **Prop Validation**: Clearly define and validate critical props.
-- **User Feedback**: Provide clear feedback for errors or invalid states where
-  appropriate.
+export const Component = Object.assign(ComponentRoot, {
+  Item: ComponentItem,
+  Trigger: ComponentTrigger,
+  Content: ComponentContent,
+});
 
-### 8. Security
+// Usage
+<Component>
+  <Component.Trigger>Open</Component.Trigger>
+  <Component.Content>
+    <Component.Item>Option 1</Component.Item>
+  </Component.Content>
+</Component>
+```
 
-- **Prevent XSS**:
-    - Be cautious with `dangerouslySetInnerHTML`. Avoid it whenever possible. If
-      used, ensure the HTML content is properly sanitized.
-    - Do not directly render user-provided strings as HTML without sanitization.
-- **Props Injection**: Ensure that props passed to underlying elements do not
-  inadvertently introduce security vulnerabilities (e.g., injecting arbitrary
-  attributes).
-- **Third-party Libraries**: Be mindful of the security implications of any
-  third-party libraries integrated into components.
+## Linting & Code Quality
 
-### 9. Theming and Customization
+### Pre-Commit Checklist
 
-- **Leverage `vanilla-extract` Theming**: Utilize `vanilla-extract`'s theming
-  capabilities, **prioritizing the use of existing global design tokens** (all
-  colors, spacing, typography, etc. must come from the tokens) to ensure
-  consistency and maintainability. Components should be easily adaptable to
-  different visual themes through these tokens.
-- **Tokens Contract**: The theme contract is established in the
-  `/lib/themes/theme.css.ts` file and exports the type `ThemeTokens` which is
-  the theme contract structure that enforced at build time by vanilla-extract.
-- **Customization Points**: Provide clear and documented ways for consumers to
-  customize component appearance and behavior beyond standard props where
-  appropriate, ideally by extending or overriding theme tokens.
+- [ ] No ESLint errors in modified files
+- [ ] No TypeScript errors
+- [ ] All imports are used
+- [ ] No console.log statements
+- [ ] Component has displayName
+- [ ] Props have JSDoc comments
+- [ ] No any types (use unknown or proper types)
+- [ ] No magic numbers (use constants/tokens)
+- [ ] Consistent naming conventions
 
-### 10. Code Style and Linting
+### Common Linting Patterns to Fix
 
-- Adhere to the project's ESLint and Prettier configurations.
-- Copilot suggestions should align with these established styles.
+```typescript
+// BAD
+const Component = (props) => { // Missing types
+  console.log(props); // Console statement
+  const unused = 'value'; // Unused variable
+  return <div style={{color: 'red'}} />; // Inline styles
+};
 
-## Additional instructions
+// GOOD
+export const Component = forwardRef<HTMLDivElement, ComponentProps>(
+  ({ variant = 'primary', ...props }, ref) => {
+    return <Box ref={ref} className={styles.root({ variant })} {...props} />;
+  }
+);
+Component.displayName = 'Component';
+```
 
-- **Dependencies**: **Strictly avoid adding new dependencies as part of task
-  completion.** Always review and utilize existing project dependencies.
+## Testing Strategy
+
+### What to Test Where
+
+```typescript
+// Vitest - Unit test internal logic
+describe('useComponentLogic', () => {
+	it('should handle state changes', () => {
+		const { result } = renderHook(() => useComponentLogic());
+		act(() => result.current.handlers.onClick());
+		expect(result.current.state).toBe(expected);
+	});
+});
+
+// Storybook - Test user interactions
+export const Default: Story = {
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+		const button = canvas.getByRole('button');
+
+		await userEvent.click(button);
+		await expect(button).toHaveAttribute('aria-pressed', 'true');
+
+		await userEvent.keyboard('{Tab}');
+		await expect(button).toHaveFocus();
+	},
+};
+```
+
+### Testing Checklist
+
+- [ ] Unit tests for all custom hooks
+- [ ] Unit tests for utility functions
+- [ ] Storybook stories for all variants
+- [ ] Play functions for interactions
+- [ ] Keyboard navigation tested
+- [ ] Screen reader announcements tested
+- [ ] Error states tested
+- [ ] Loading states tested
+- [ ] Edge cases covered
+
+## Accessibility Assessment Criteria
+
+- [ ] **Keyboard Navigation**
+    - [ ] Tab order is logical
+    - [ ] All interactive elements reachable
+    - [ ] Enter/Space activates buttons
+    - [ ] Escape closes overlays
+    - [ ] Arrow keys for navigation where expected
+- [ ] **Screen Reader**
+    - [ ] Proper semantic HTML or ARIA role
+    - [ ] Descriptive aria-labels
+    - [ ] States announced (expanded, selected, etc.)
+    - [ ] Live regions for dynamic content
+    - [ ] Error messages associated with inputs
+- [ ] **Visual**
+    - [ ] Focus indicators visible
+    - [ ] Color contrast ≥ 4.5:1 (text), ≥ 3:1 (UI)
+    - [ ] Touch targets ≥ 44x44px
+    - [ ] No color-only information
+- [ ] **Motion**
+    - [ ] Respects prefers-reduced-motion
+    - [ ] Animations can be paused/stopped
+    - [ ] No seizure-inducing flashing
+
+### React Aria Integration
+
+```typescript
+// For complex interactions, use React Aria
+import { useButton, useToggleButton } from '@react-aria/button';
+import { useFocusRing } from '@react-aria/focus';
+
+export const AriaButton = (props: AriaButtonProps) => {
+  const ref = useRef<HTMLButtonElement>(null);
+  const { buttonProps, isPressed } = useToggleButton(props, state, ref);
+  const { focusProps, isFocusVisible } = useFocusRing();
+
+  return (
+    <button
+      {...mergeProps(buttonProps, focusProps)}
+      ref={ref}
+      data-pressed={isPressed}
+      data-focus-visible={isFocusVisible}
+      className={styles.button}
+    >
+      {props.children}
+    </button>
+  );
+};
+```
+
+## Style Implementation
+
+### vanilla-extract Best Practices
+
+```typescript
+import { recipe } from '@vanilla-extract/recipes';
+import { sprinkles } from '../../css/sprinkles.css';
+
+// Define variants using sprinkles for reusability
+export const root = recipe({
+	base: [
+		sprinkles({
+			display: 'flex',
+			alignItems: 'center',
+			padding: 'medium',
+			borderRadius: 'medium',
+			transition: 'colors',
+		}),
+	],
+	variants: {
+		variant: {
+			primary: sprinkles({
+				background: 'brandPrimary',
+				color: 'white',
+			}),
+			secondary: sprinkles({
+				background: 'transparent',
+				color: 'brandPrimary',
+				border: 'standard',
+			}),
+		},
+		size: {
+			small: sprinkles({ padding: 'small' }),
+			medium: sprinkles({ padding: 'medium' }),
+			large: sprinkles({ padding: 'large' }),
+		},
+	},
+	defaultVariants: {
+		variant: 'primary',
+		size: 'medium',
+	},
+});
+
+// Use data attributes for state-based styling
+export const stateStyles = style({
+	selectors: {
+		'&[data-pressed="true"]': {
+			transform: 'scale(0.98)',
+		},
+		'&[data-focus-visible="true"]': {
+			outline: '2px solid',
+			outlineColor: vars.color.focus,
+			outlineOffset: 2,
+		},
+	},
+});
+```
+
+## Component Documentation Template
+
+````typescript
+export interface ComponentProps extends BoxProps {
+  /** The visual style variant */
+  variant?: 'primary' | 'secondary';
+
+  /** Size of the component */
+  size?: 'small' | 'medium' | 'large';
+
+  /** Whether the component is disabled */
+  disabled?: boolean;
+
+  /** Callback fired when activated */
+  onActivate?: () => void;
+}
+
+/**
+ * Component description for Storybook
+ *
+ * @example
+ * ```tsx
+ * <Component variant="primary" size="medium">
+ *   Content
+ * </Component>
+ * ```
+ */
+export const Component = forwardRef<HTMLDivElement, ComponentProps>(...);
+````
+
+## Available Components Reference
+
+### Primitives to Compose From
+
+Box, Text, Icon, Heading, Section, Stack, Inline, Columns
+
+### Form Building Blocks
+
+Button, TextInput, TextAreaInput, SelectInput, CheckBox, Radio, Switch,
+NumberInput, DateInput, SearchBar, EditableText, ColourInput
+
+### Display Components
+
+Badge, Alert, Table, ProgressBar, StarRating, NumberBubble, Tooltip, LoadingBox
+
+### Navigation Components
+
+Tabs, Pagination, TextLink, Anchor, Actions, DropDown, SideMenu
+
+### Layout Utilities
+
+FillHeightBox, StickyBox, TextContainer, DividerLine, ScrollPane,
+HorizontalAutoScroller
+
+### Overlay Components
+
+Modal, StandardModal, MinimalModal, Flyout, Toaster, Portal
+
+### List Components
+
+BulletList, OrderedList, OptionList, OptionGrid, AutoSuggest
+
+### Utility Components
+
+VisuallyHidden, OutsideClick, Positioner, Image, Stepper
+
+### Context Provider
+
+OverdriveProvider
+
+###
