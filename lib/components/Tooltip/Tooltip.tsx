@@ -1,14 +1,12 @@
 import React, {
+	Children,
+	cloneElement,
+	isValidElement,
 	type ComponentProps,
-	type FunctionComponent,
 	type ReactNode,
-	useCallback,
-	useEffect,
-	useRef,
-	useState,
-	useId,
 } from 'react';
 
+import { useTooltip } from '../../hooks';
 import { sprinkles } from '../../styles/sprinkles.css';
 import type { TestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
@@ -22,12 +20,31 @@ import * as styles from './Tooltip.css';
 type ToolTipSize = 'medium' | 'large';
 
 export interface TooltipProps extends TestId {
+	/**
+	 * Size of the tooltip text
+	 * @default 'medium'
+	 */
 	size?: ToolTipSize;
+	/**
+	 * Whether the tooltip is open. When provided, the tooltip becomes controlled
+	 */
 	isOpen?: boolean;
+	/**
+	 * Text content displayed in the tooltip
+	 */
 	label: string;
+	/**
+	 * Position of the tooltip relative to the trigger element
+	 */
 	alignment?: EAlignment;
+	/**
+	 * The element(s) that trigger the tooltip on hover or focus
+	 */
 	children: ReactNode;
-	closeAfter?: number;
+	/**
+	 * Auto-close the tooltip after this many milliseconds. Set to null to disable auto-close
+	 */
+	closeAfter?: number | null;
 }
 
 const sizeMap: Record<ToolTipSize, ComponentProps<typeof Text>['size']> = {
@@ -35,7 +52,7 @@ const sizeMap: Record<ToolTipSize, ComponentProps<typeof Text>['size']> = {
 	large: '3',
 };
 
-export const Tooltip: FunctionComponent<TooltipProps> = ({
+export const Tooltip = ({
 	alignment = EAlignment.RIGHT,
 	isOpen: incomingIsOpen,
 	label,
@@ -43,46 +60,11 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 	size = 'medium',
 	closeAfter = null,
 	testId,
-}) => {
-	const tooltipId = useId();
-	const [isOpen, setIsOpen] = useState(incomingIsOpen);
-	const triggerRef = useRef<HTMLElement>(null);
-	const tooltipRef = useRef<HTMLDivElement>(null);
-
-	const leaveTimer = useRef<ReturnType<typeof setTimeout>>(null);
-
-	const enterHandler = useCallback(() => {
-		if (leaveTimer.current) {
-			clearTimeout(leaveTimer.current);
-		}
-		setIsOpen(true);
-	}, [setIsOpen]);
-
-	const leaveHandler = useCallback(() => {
-		leaveTimer.current = setTimeout(() => {
-			setIsOpen(false);
-		}, 1e3 / 2);
-	}, [setIsOpen]);
-
-	const focusHandler = useCallback(() => {
-		setIsOpen(true);
-	}, [setIsOpen]);
-
-	const blurHandler = useCallback(() => {
-		setIsOpen(false);
-	}, [setIsOpen]);
-
-	// Handle the closeAfter prop
-	useEffect(() => {
-		let timeout: ReturnType<typeof setTimeout>;
-		if (isOpen && typeof closeAfter === 'number') {
-			timeout = setTimeout(() => setIsOpen(false), closeAfter);
-		}
-
-		return () => {
-			if (timeout) clearTimeout(timeout);
-		};
-	}, [closeAfter, isOpen]);
+}: TooltipProps) => {
+	const { isOpen, triggerRef, triggerProps, tooltipBoxProps } = useTooltip({
+		isOpen: incomingIsOpen,
+		closeAfter,
+	});
 
 	// return early if no label provided
 	if (!label) return <>{children}</>;
@@ -91,13 +73,9 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 		<>
 			<span
 				ref={triggerRef}
-				onMouseEnter={enterHandler}
-				onMouseLeave={leaveHandler}
-				onFocus={focusHandler}
-				onBlur={blurHandler}
+				{...triggerProps}
 				tabIndex={0}
 				className={sprinkles({ display: 'inline-block' })}
-				aria-describedby={isOpen ? tooltipId : undefined}
 				{...dataAttrs({ testid: testId })}
 			>
 				{children}
@@ -105,27 +83,9 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 			<Positioner
 				triggerRef={triggerRef}
 				alignment={alignment}
-				isOpen={
-					typeof incomingIsOpen === 'boolean'
-						? incomingIsOpen
-						: isOpen
-				}
+				isOpen={isOpen}
 			>
-				<Box
-					id={tooltipId}
-					ref={tooltipRef}
-					className={styles.root}
-					width="full"
-					pointerEvents="none"
-					userSelect="none"
-					overflow="hidden"
-					borderRadius="1"
-					boxShadow="4"
-					backgroundColour="gray900"
-					paddingY="2"
-					paddingX="3"
-					role="tooltip"
-				>
+				<Box {...tooltipBoxProps} className={styles.root}>
 					<Text size={sizeMap[size]} colour="white">
 						{label}
 					</Text>
@@ -136,3 +96,42 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
 };
 
 Tooltip.displayName = 'Tooltip';
+
+export const TooltipInteractive = ({
+	alignment = EAlignment.RIGHT,
+	isOpen: incomingIsOpen,
+	label,
+	children,
+	size = 'medium',
+	closeAfter = null,
+}: Omit<TooltipProps, 'testId'>) => {
+	const { isOpen, triggerRef, triggerProps, tooltipBoxProps } = useTooltip({
+		isOpen: incomingIsOpen,
+		closeAfter,
+	});
+
+	// return early if no label provided or non component children
+	if (!label || !isValidElement(children)) return <>{children}</>;
+
+	return (
+		<>
+			{cloneElement(Children.only(children) as React.ReactElement<any>, {
+				...triggerProps,
+				ref: triggerRef,
+			})}
+			<Positioner
+				triggerRef={triggerRef}
+				alignment={alignment}
+				isOpen={isOpen}
+			>
+				<Box {...tooltipBoxProps} className={styles.root}>
+					<Text size={sizeMap[size]} colour="white">
+						{label}
+					</Text>
+				</Box>
+			</Positioner>
+		</>
+	);
+};
+
+TooltipInteractive.displayName = 'TooltipInteractive';

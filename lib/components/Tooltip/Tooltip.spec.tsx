@@ -75,7 +75,7 @@ describe('<Tolltip />', () => {
 			);
 
 			const wrapper = container.querySelector('span');
-			fireEvent.mouseEnter(wrapper);
+			if (wrapper) fireEvent.mouseEnter(wrapper);
 
 			expect(container.parentNode).toHaveTextContent('tooltip content');
 		});
@@ -109,7 +109,7 @@ describe('<Tolltip />', () => {
 			);
 
 			const wrapper = container.querySelector('span');
-			fireEvent.mouseEnter(wrapper);
+			if (wrapper) fireEvent.mouseEnter(wrapper);
 
 			expect(container.parentNode).toHaveTextContent(
 				'Fragment tooltip content',
