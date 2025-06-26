@@ -1,5 +1,5 @@
 export {
 	useTooltip,
-	type UseTooltipOptions,
-	type UseTooltipReturn,
+	type UseTooltipProps,
+	type ToolTipSize,
 } from './useTooltip';

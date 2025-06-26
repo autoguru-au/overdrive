@@ -1,6 +1,13 @@
 import React, { useCallback, useEffect, useRef, useState, useId } from 'react';
 
-export interface UseTooltipOptions {
+import { Box } from '../../components/Box/Box';
+import { Positioner } from '../../components/Positioner/Positioner';
+import { EAlignment } from '../../components/Positioner/alignment';
+import { Text, type TextProps } from '../../components/Text/Text';
+
+export type ToolTipSize = 'medium' | 'large';
+
+export interface UseTooltipProps {
 	/**
 	 * Whether the tooltip should be controlled externally
 	 */
@@ -15,51 +22,10 @@ export interface UseTooltipOptions {
 	onOpenChange?: (isOpen: boolean) => void;
 }
 
-export interface UseTooltipReturn {
-	/**
-	 * Whether the tooltip is currently open
-	 */
-	isOpen: boolean;
-	/**
-	 * Unique ID for the tooltip element
-	 */
-	tooltipId: string;
-	/**
-	 * Ref to attach to the trigger element
-	 */
-	triggerRef: React.RefObject<HTMLElement | null>;
-	/**
-	 * Ref to attach to the tooltip element
-	 */
-	tooltipRef: React.RefObject<HTMLDivElement | null>;
-	/**
-	 * Props to spread on the trigger element
-	 */
-	triggerProps: {
-		onMouseEnter: () => void;
-		onMouseLeave: () => void;
-		onFocus: () => void;
-		onBlur: () => void;
-		'aria-describedby': string | undefined;
-	};
-	/**
-	 * Props for the tooltip Box component for consistent styling
-	 */
-	tooltipBoxProps: {
-		id: string;
-		ref: React.RefObject<HTMLDivElement | null>;
-		width: 'full';
-		pointerEvents: 'none';
-		userSelect: 'none';
-		overflow: 'hidden';
-		borderRadius: '1';
-		boxShadow: '4';
-		backgroundColour: 'gray900';
-		paddingY: '2';
-		paddingX: '3';
-		role: 'tooltip';
-	};
-}
+const sizeMap: Record<ToolTipSize, TextProps['size']> = {
+	medium: '2',
+	large: '3',
+};
 
 /**
  * Hook for managing tooltip state and interactions
@@ -68,7 +34,7 @@ export const useTooltip = ({
 	isOpen: controlledIsOpen,
 	closeAfter = null,
 	onOpenChange,
-}: UseTooltipOptions = {}): UseTooltipReturn => {
+}: UseTooltipProps) => {
 	const tooltipId = useId();
 	const [internalIsOpen, setInternalIsOpen] = useState(false);
 	const triggerRef = useRef<HTMLElement>(null);
@@ -145,27 +111,55 @@ export const useTooltip = ({
 		'aria-describedby': isOpen ? tooltipId : undefined,
 	};
 
-	const tooltipBoxProps = {
-		id: tooltipId,
-		ref: tooltipRef,
-		width: 'full' as const,
-		pointerEvents: 'none' as const,
-		userSelect: 'none' as const,
-		overflow: 'hidden' as const,
-		borderRadius: '1' as const,
-		boxShadow: '4' as const,
-		backgroundColour: 'gray900' as const,
-		paddingY: '2' as const,
-		paddingX: '3' as const,
-		role: 'tooltip' as const,
-	};
+	const PositionedTooltip = useCallback(
+		({
+			alignment = EAlignment.RIGHT,
+			className,
+			label,
+			size = 'medium',
+		}: {
+			alignment?: EAlignment;
+			className?: string;
+			label: string;
+			size?: ToolTipSize;
+		}) => {
+			const textSize = sizeMap[size];
+
+			return (
+				<Positioner
+					triggerRef={triggerRef}
+					alignment={alignment}
+					isOpen={isOpen}
+				>
+					<Box
+						className={className}
+						id={tooltipId}
+						ref={tooltipRef}
+						width="full"
+						pointerEvents="none"
+						userSelect="none"
+						overflow="hidden"
+						borderRadius="1"
+						boxShadow="4"
+						backgroundColour="gray900"
+						paddingY="2"
+						paddingX="3"
+						role="tooltip"
+					>
+						<Text size={textSize} colour="white">
+							{label}
+						</Text>
+					</Box>
+				</Positioner>
+			);
+		},
+		[isOpen, tooltipId],
+	);
 
 	return {
 		isOpen,
-		tooltipId,
 		triggerRef,
-		tooltipRef,
 		triggerProps,
-		tooltipBoxProps,
+		PositionedTooltip,
 	};
 };

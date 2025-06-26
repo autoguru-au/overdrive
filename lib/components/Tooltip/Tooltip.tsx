@@ -2,22 +2,19 @@ import React, {
 	Children,
 	cloneElement,
 	isValidElement,
-	type ComponentProps,
 	type ReactNode,
 } from 'react';
 
-import { useTooltip } from '../../hooks';
+import {
+	useTooltip,
+	type ToolTipSize,
+} from '../../hooks/useTooltip/useTooltip';
 import { sprinkles } from '../../styles/sprinkles.css';
 import type { TestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
-import { Box } from '../Box/Box';
-import { Positioner } from '../Positioner/Positioner';
 import { EAlignment } from '../Positioner/alignment';
-import { Text } from '../Text/Text';
 
 import * as styles from './Tooltip.css';
-
-type ToolTipSize = 'medium' | 'large';
 
 export interface TooltipProps extends TestId {
 	/**
@@ -47,22 +44,17 @@ export interface TooltipProps extends TestId {
 	closeAfter?: number | null;
 }
 
-const sizeMap: Record<ToolTipSize, ComponentProps<typeof Text>['size']> = {
-	medium: '2',
-	large: '3',
-};
-
 export const Tooltip = ({
 	alignment = EAlignment.RIGHT,
-	isOpen: incomingIsOpen,
+	isOpen,
 	label,
 	children,
 	size = 'medium',
 	closeAfter = null,
 	testId,
 }: TooltipProps) => {
-	const { isOpen, triggerRef, triggerProps, tooltipBoxProps } = useTooltip({
-		isOpen: incomingIsOpen,
+	const { PositionedTooltip, triggerRef, triggerProps } = useTooltip({
+		isOpen,
 		closeAfter,
 	});
 
@@ -80,33 +72,28 @@ export const Tooltip = ({
 			>
 				{children}
 			</span>
-			<Positioner
-				triggerRef={triggerRef}
+			<PositionedTooltip
 				alignment={alignment}
-				isOpen={isOpen}
-			>
-				<Box {...tooltipBoxProps} className={styles.root}>
-					<Text size={sizeMap[size]} colour="white">
-						{label}
-					</Text>
-				</Box>
-			</Positioner>
+				className={styles.root}
+				label={label}
+				size={size}
+			/>
 		</>
 	);
 };
 
 Tooltip.displayName = 'Tooltip';
 
-export const TooltipInteractive = ({
+export const TooltipOnComponent = ({
 	alignment = EAlignment.RIGHT,
-	isOpen: incomingIsOpen,
+	isOpen,
 	label,
 	children,
 	size = 'medium',
 	closeAfter = null,
 }: Omit<TooltipProps, 'testId'>) => {
-	const { isOpen, triggerRef, triggerProps, tooltipBoxProps } = useTooltip({
-		isOpen: incomingIsOpen,
+	const { PositionedTooltip, triggerRef, triggerProps } = useTooltip({
+		isOpen,
 		closeAfter,
 	});
 
@@ -115,23 +102,19 @@ export const TooltipInteractive = ({
 
 	return (
 		<>
+			{/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
 			{cloneElement(Children.only(children) as React.ReactElement<any>, {
 				...triggerProps,
 				ref: triggerRef,
 			})}
-			<Positioner
-				triggerRef={triggerRef}
+			<PositionedTooltip
 				alignment={alignment}
-				isOpen={isOpen}
-			>
-				<Box {...tooltipBoxProps} className={styles.root}>
-					<Text size={sizeMap[size]} colour="white">
-						{label}
-					</Text>
-				</Box>
-			</Positioner>
+				className={styles.root}
+				label={label}
+				size={size}
+			/>
 		</>
 	);
 };
 
-TooltipInteractive.displayName = 'TooltipInteractive';
+TooltipOnComponent.displayName = 'TooltipOnComponent';
