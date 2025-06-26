@@ -42,7 +42,17 @@ const defaultEnglish = {
 type TextContent = keyof typeof defaultEnglish;
 
 export interface ButtonProps
-	extends Pick<ButtonPrimitive, 'id' | 'onClick' | 'type' | 'className'>,
+	extends Pick<
+			ButtonPrimitive,
+			| 'id'
+			| 'onBlur'
+			| 'onClick'
+			| 'onFocus'
+			| 'onMouseEnter'
+			| 'onMouseLeave'
+			| 'type'
+			| 'className'
+		>,
 		Pick<AriaAttributes, 'aria-label'>,
 		StyledButtonProps,
 		TestId {
@@ -103,7 +113,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			isFullWidth = false,
 			lang,
 			minimal = false,
+			onBlur,
 			onClick: incomingOnClick,
+			onFocus,
+			onMouseEnter,
+			onMouseLeave,
 			rounded = false,
 			size = 'medium',
 			type = 'button',
@@ -152,7 +166,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 		const props: ButtonPrimitive & { 'data-loading'?: string } = {
 			type: Component === 'button' ? type : undefined,
 			id,
+			onBlur,
 			onClick,
+			onFocus,
+			onMouseEnter,
+			onMouseLeave,
 			disabled: disabled || isLoading,
 			'aria-label': isLoading ? language.loading : ariaLabel,
 			className: clsx(
