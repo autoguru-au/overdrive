@@ -1,0 +1,1 @@
+import{e}from"./iframe-CapgcpQw.js";const o=e.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 512 512",fill:"currentColor",focusable:"false"},e.createElement("path",{d:"M277.333 426.667h-42.666v-256L117.333 288 87.04 257.707 256 88.747l168.96 168.96L394.667 288 277.333 170.667v256z"}));export{o as I};
