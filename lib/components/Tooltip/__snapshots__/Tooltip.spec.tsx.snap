@@ -10,7 +10,6 @@ exports[`<Tooltip /> > should match snapshot when closed 1`] = `
       data-od-component="provider"
     >
       <span
-        class="sprinkles_display_inline-block_mobile__onxwju7j"
         tabindex="0"
       >
         <div>
@@ -42,7 +41,6 @@ exports[`<Tooltip /> > should match snapshot when opened 1`] = `
     >
       <span
         aria-describedby="«r3»"
-        class="sprinkles_display_inline-block_mobile__onxwju7j"
         tabindex="0"
       >
         <div>

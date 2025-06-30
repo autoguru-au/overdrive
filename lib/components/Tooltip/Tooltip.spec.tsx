@@ -7,7 +7,7 @@ import { Button } from '../Button';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 
-import { Tooltip, TooltipOnComponent } from './Tooltip';
+import { Tooltip } from './Tooltip';
 
 describe('<Tooltip />', () => {
 	const tooltipContentText = 'tooltip content';
@@ -15,7 +15,7 @@ describe('<Tooltip />', () => {
 	it('should not throw', () => {
 		expect(() => {
 			render(
-				<Tooltip label="Test">
+				<Tooltip label={tooltipContentText}>
 					<div>trigger</div>
 				</Tooltip>,
 			);
@@ -34,10 +34,9 @@ describe('<Tooltip />', () => {
 		expect(container.parentNode).toHaveTextContent(tooltipContentText);
 	});
 
-	// TODO: This is skipped, as the `style="visibility: visible;"` shouldnt be there
 	it('should match snapshot when closed', () => {
 		const { baseElement } = render(
-			<Tooltip label={tooltipContentText}>
+			<Tooltip label={tooltipContentText} wrapper>
 				<div>trigger</div>
 			</Tooltip>,
 		);
@@ -47,7 +46,7 @@ describe('<Tooltip />', () => {
 
 	it('should match snapshot when opened', () => {
 		const { baseElement, getByText } = render(
-			<Tooltip label={tooltipContentText}>
+			<Tooltip label={tooltipContentText} wrapper>
 				<div>trigger</div>
 			</Tooltip>,
 		);
@@ -58,9 +57,11 @@ describe('<Tooltip />', () => {
 	});
 
 	describe('with string children', () => {
-		it('should work with string content', () => {
+		it('should work with string content when using wrapper', () => {
 			const { container, getByText } = render(
-				<Tooltip label="tooltip content">Simple text content</Tooltip>,
+				<Tooltip label={tooltipContentText} wrapper>
+					Simple text content
+				</Tooltip>,
 			);
 
 			expect(container).toHaveTextContent('Simple text content');
@@ -68,12 +69,23 @@ describe('<Tooltip />', () => {
 			fireEvent.mouseEnter(getByText('Simple text content'));
 			expect(container.parentNode).toHaveTextContent('tooltip content');
 		});
+
+		it('should fail with string content when not using wrapper', () => {
+			// This should throw an invariant error since string children require wrapper
+			expect(() => {
+				render(
+					<Tooltip label="tooltip content">
+						Simple text content
+					</Tooltip>,
+				);
+			}).toThrow();
+		});
 	});
 
 	describe('with Text component children', () => {
 		it('should work with Text component', () => {
 			const { container } = render(
-				<Tooltip label="Text tooltip">
+				<Tooltip label={tooltipContentText}>
 					<Text>Text component content</Text>
 				</Tooltip>,
 			);
@@ -85,33 +97,35 @@ describe('<Tooltip />', () => {
 			expect(wrapper).toBeInTheDocument();
 
 			if (wrapper) fireEvent.mouseEnter(wrapper);
-			expect(container.parentNode).toHaveTextContent('Text tooltip');
+			expect(container.parentNode).toHaveTextContent(tooltipContentText);
 		});
 	});
 
 	describe('with Badge component children', () => {
-		it('should work with Badge component', () => {
+		it('should work with Badge component', async () => {
 			const { container } = render(
-				<Tooltip label="Badge tooltip">
+				<Tooltip label={tooltipContentText} wrapper>
 					<Badge label="Badge content" />
 				</Tooltip>,
 			);
 
+			// Find the Badge element directly and trigger hover
+			const badge = container.querySelector(
+				'[data-od-component="badge"]',
+			) as HTMLElement;
+
+			expect(badge).toBeInTheDocument();
 			expect(container).toHaveTextContent('Badge content');
 
-			// Tooltip should wrap the Badge component in a span
-			const wrapper = container.querySelector('span');
-			expect(wrapper).toBeInTheDocument();
-
-			if (wrapper) fireEvent.mouseEnter(wrapper);
-			expect(container.parentNode).toHaveTextContent('Badge tooltip');
+			fireEvent.mouseEnter(badge);
+			expect(document.body).toHaveTextContent(tooltipContentText);
 		});
 	});
 
 	describe('multiple children support', () => {
-		it('should work with multiple children', () => {
+		it('should work with multiple children when using wrapper', () => {
 			const { container } = render(
-				<Tooltip label="Test">
+				<Tooltip label={tooltipContentText} wrapper>
 					<div>First child</div>
 					<div>Second child</div>
 				</Tooltip>,
@@ -127,7 +141,7 @@ describe('<Tooltip />', () => {
 
 		it('should show tooltip when hovering over multiple children wrapper', () => {
 			const { container } = render(
-				<Tooltip label={tooltipContentText}>
+				<Tooltip label={tooltipContentText} wrapper>
 					<div>First child</div>
 					<div>Second child</div>
 				</Tooltip>,
@@ -139,9 +153,20 @@ describe('<Tooltip />', () => {
 			expect(container.parentNode).toHaveTextContent(tooltipContentText);
 		});
 
-		it('should work with React Fragment children', () => {
+		it('should fail with multiple children when not using wrapper', () => {
+			expect(() => {
+				render(
+					<Tooltip label="Test">
+						<div>First child</div>
+						<div>Second child</div>
+					</Tooltip>,
+				);
+			}).toThrow();
+		});
+
+		it('should work with React Fragment children when using wrapper', () => {
 			const { container } = render(
-				<Tooltip label="Fragment tooltip">
+				<Tooltip label={tooltipContentText} wrapper>
 					<>
 						<div>Fragment child 1</div>
 						<div>Fragment child 2</div>
@@ -155,24 +180,10 @@ describe('<Tooltip />', () => {
 			// Fragment children should be wrapped in a span
 			const wrapper = container.querySelector('span');
 			expect(wrapper).toBeInTheDocument();
-		});
 
-		it('should show tooltip when hovering over React Fragment wrapper', () => {
-			const { container } = render(
-				<Tooltip label="Fragment tooltip content">
-					<>
-						<div>Fragment child 1</div>
-						<div>Fragment child 2</div>
-					</>
-				</Tooltip>,
-			);
-
-			const wrapper = container.querySelector('span');
 			if (wrapper) fireEvent.mouseEnter(wrapper);
 
-			expect(container.parentNode).toHaveTextContent(
-				'Fragment tooltip content',
-			);
+			expect(container.parentNode).toHaveTextContent(tooltipContentText);
 		});
 	});
 
@@ -210,20 +221,20 @@ describe('<Tooltip />', () => {
 				</Tooltip>,
 			);
 
-			// Should return children without wrapping span
-			expect(container.querySelector('span')).not.toBeInTheDocument();
+			// Should return children as-is without any wrapper
 			expect(container).toHaveTextContent('trigger');
+			expect(container.querySelector('span')).not.toBeInTheDocument();
 		});
 	});
 });
 
-describe('<TooltipOnComponent />', () => {
+describe('<Tooltip /> with interactive child', () => {
 	it('should not throw with interactive components', () => {
 		expect(() => {
 			render(
-				<TooltipOnComponent label="Interactive tooltip">
+				<Tooltip label="Interactive tooltip">
 					<Button>Click me</Button>
-				</TooltipOnComponent>,
+				</Tooltip>,
 			);
 		}).not.toThrow();
 	});
@@ -231,9 +242,9 @@ describe('<TooltipOnComponent />', () => {
 	describe('with Button component', () => {
 		it('should work with Button component', () => {
 			const { getByRole } = render(
-				<TooltipOnComponent label="Button tooltip">
+				<Tooltip label="Button tooltip">
 					<Button>Interactive Button</Button>
-				</TooltipOnComponent>,
+				</Tooltip>,
 			);
 
 			const button = getByRole('button');
@@ -247,9 +258,9 @@ describe('<TooltipOnComponent />', () => {
 		it('should preserve button functionality', () => {
 			const handleClick = vi.fn();
 			const { getByRole } = render(
-				<TooltipOnComponent label="Clickable button tooltip">
+				<Tooltip label="Clickable button tooltip">
 					<Button onClick={handleClick}>Clickable Button</Button>
-				</TooltipOnComponent>,
+				</Tooltip>,
 			);
 
 			const button = getByRole('button');
@@ -261,9 +272,9 @@ describe('<TooltipOnComponent />', () => {
 	describe('with TextInput component', () => {
 		it('should work with TextInput component', () => {
 			const { container, getByRole } = render(
-				<TooltipOnComponent label="Input tooltip">
+				<Tooltip label="Input tooltip">
 					<TextInput name="test-input" placeholder="Enter text" />
-				</TooltipOnComponent>,
+				</Tooltip>,
 			);
 
 			const input = getByRole('textbox');
@@ -275,13 +286,13 @@ describe('<TooltipOnComponent />', () => {
 		it('should preserve input functionality', () => {
 			const handleChange = vi.fn();
 			const { getByRole } = render(
-				<TooltipOnComponent label="Interactive input tooltip">
+				<Tooltip label="Interactive input tooltip">
 					<TextInput
 						name="test-input-2"
 						placeholder="Test input"
 						onChange={handleChange}
 					/>
-				</TooltipOnComponent>,
+				</Tooltip>,
 			);
 
 			const input = getByRole('textbox');
@@ -293,9 +304,9 @@ describe('<TooltipOnComponent />', () => {
 	describe('with native button element', () => {
 		it('should work with native button', () => {
 			const { container, getByRole } = render(
-				<TooltipOnComponent label="Native button tooltip">
+				<Tooltip label="Native button tooltip">
 					<button type="button">Native Button</button>
-				</TooltipOnComponent>,
+				</Tooltip>,
 			);
 
 			const button = getByRole('button');
@@ -310,94 +321,16 @@ describe('<TooltipOnComponent />', () => {
 		it('should preserve native button functionality', () => {
 			const handleClick = vi.fn();
 			const { getByRole } = render(
-				<TooltipOnComponent label="Native clickable tooltip">
+				<Tooltip label="Native clickable tooltip">
 					<button type="button" onClick={handleClick}>
 						Native Clickable
 					</button>
-				</TooltipOnComponent>,
+				</Tooltip>,
 			);
 
 			const button = getByRole('button');
 			fireEvent.click(button);
 			expect(handleClick).toHaveBeenCalledTimes(1);
-		});
-	});
-
-	describe('controlled state', () => {
-		it('should show tooltip when isOpen is true', () => {
-			const { container } = render(
-				<TooltipOnComponent
-					label="controlled interactive tooltip"
-					isOpen={true}
-				>
-					<Button>Controlled Button</Button>
-				</TooltipOnComponent>,
-			);
-
-			expect(container.parentNode).toHaveTextContent(
-				'controlled interactive tooltip',
-			);
-		});
-
-		it('should not show tooltip when isOpen is false', () => {
-			const { container } = render(
-				<TooltipOnComponent
-					label="controlled interactive tooltip"
-					isOpen={false}
-				>
-					<Button>Controlled Button</Button>
-				</TooltipOnComponent>,
-			);
-
-			expect(container.parentNode).not.toHaveTextContent(
-				'controlled interactive tooltip',
-			);
-		});
-	});
-
-	describe('no label handling', () => {
-		it('should not render tooltip when label is empty', () => {
-			const { container, getByRole } = render(
-				<TooltipOnComponent label="">
-					<Button>Button without tooltip</Button>
-				</TooltipOnComponent>,
-			);
-
-			const button = getByRole('button');
-			expect(button).toHaveTextContent('Button without tooltip');
-
-			// Should not have tooltip wrapper or show tooltip content
-			fireEvent.mouseEnter(button);
-			expect(container.parentNode).not.toHaveTextContent('');
-		});
-	});
-
-	describe('invalid children handling', () => {
-		it('should handle non-React element children gracefully', () => {
-			const { container } = render(
-				<TooltipOnComponent label="Invalid children tooltip">
-					Plain text string
-				</TooltipOnComponent>,
-			);
-
-			// Should return the children as-is when not a valid React element
-			expect(container).toHaveTextContent('Plain text string');
-			expect(container.parentNode).not.toHaveTextContent(
-				'Invalid children tooltip',
-			);
-		});
-
-		it('should handle null children', () => {
-			const { container } = render(
-				<TooltipOnComponent label="Null children tooltip">
-					{null}
-				</TooltipOnComponent>,
-			);
-
-			// Should not crash and not show tooltip
-			expect(container.parentNode).not.toHaveTextContent(
-				'Null children tooltip',
-			);
 		});
 	});
 });
