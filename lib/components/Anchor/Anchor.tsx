@@ -13,14 +13,13 @@ import {
 } from 'react';
 
 import { componentStyles } from '../../styles/componentStyles';
+import { focusOutlineStyle } from '../../styles/focusOutline.css';
 import { sprinkles } from '../../styles/sprinkles.css';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { BoxProps } from '../Box/Box';
 import { Icon } from '../Icon/Icon';
 import { Inline } from '../Inline/Inline';
 import { Text } from '../Text/Text';
-
-import * as styles from './Anchor.css';
 
 export interface Props
 	extends Omit<
@@ -53,9 +52,9 @@ export const Anchor: FunctionComponent<Props> = ({
 			componentStyles({
 				as: Component,
 				colour: 'link',
-				display: 'inline',
+				display: 'inline-flex',
 			}),
-			styles.root,
+			focusOutlineStyle,
 			className,
 		),
 		disabled,

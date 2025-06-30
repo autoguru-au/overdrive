@@ -4,6 +4,7 @@ export * from './useDeepCompareMemo';
 export * from './useDocumentBodyStyles';
 export * from './useNegativeMargin';
 export * from './useResponsiveValue';
+export * from './useTooltip';
 export * from './useWindowHeightFill';
 export * from './useWindowScrollLock';
 export * from './useMedia';
