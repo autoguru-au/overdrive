@@ -8,7 +8,7 @@ import { EAlignment } from '../Positioner/alignment';
 import { Text } from '../Text/Text';
 import { TextInput } from '../TextInput';
 
-import { Tooltip, TooltipOnComponent } from './Tooltip';
+import { Tooltip } from './Tooltip';
 
 const sizeScale: ComponentProps<typeof Text>['size'][] = ['3', '4'];
 const standardTooltipLabel = "I'm the tooltip body";
@@ -69,6 +69,8 @@ export const Standard: Story = {
 	args: {
 		label: standardTooltipLabel,
 		closeAfter: undefined,
+		wrapper: true,
+		testId: 'standard-tooltip',
 	},
 	play: async ({ canvasElement, step }) => {
 		const canvas = within(canvasElement);
@@ -104,10 +106,12 @@ export const Standard: Story = {
 	},
 };
 
-export const WithAutoClose: Story = {
+export const LargeWithAutoClose: Story = {
 	args: {
 		label: 'I will automatically close after 5 seconds',
 		closeAfter: 5e3,
+		size: 'large',
+		wrapper: true,
 	},
 };
 
@@ -115,21 +119,14 @@ export const WithLongText: Story = {
 	args: {
 		label: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
 		alignment: EAlignment.TOP,
-	},
-};
-
-export const WithLargeTextSize: Story = {
-	args: {
-		label: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
-		alignment: EAlignment.BOTTOM,
-		size: 'large',
+		wrapper: true,
 	},
 };
 
 export const WithMultipleChildren: Story = {
 	args: {
-		label: 'This tooltip works with multiple children!',
-		alignment: EAlignment.LEFT,
+		label: 'This tooltip works with multiple children! Best to use a wrapper',
+		alignment: EAlignment.BOTTOM,
 		testId: 'trigger',
 		children: (
 			<>
@@ -140,6 +137,7 @@ export const WithMultipleChildren: Story = {
 				<Text>Second child element</Text>
 			</>
 		),
+		wrapper: true,
 	},
 	play: async ({ canvasElement, step }) => {
 		const canvas = within(canvasElement);
@@ -179,11 +177,7 @@ export const WithMultipleChildren: Story = {
 	},
 };
 
-/**
- * Example of `<TooltipOnComponent>` component with Button nested inside
- */
 export const OnButton: Story = {
-	render: (args) => <TooltipOnComponent {...args} />,
 	args: {
 		label: 'This tooltip appears on an interactive button',
 		alignment: EAlignment.TOP,
@@ -213,9 +207,12 @@ export const OnButton: Story = {
 			});
 		});
 
+		// Reset focus to body to ensure Tab focuses the trigger next
+		document.body.focus();
+
 		await step('Test button focus interaction', async () => {
 			// Focus to show tooltip
-			await userEvent.click(button);
+			await userEvent.tab();
 			await expect(button).toHaveFocus();
 			await waitFor(async () => {
 				const tooltip = await canvas.findByRole('tooltip');
@@ -230,20 +227,10 @@ export const OnButton: Story = {
 				await expect(tooltipAfterDelay).not.toBeInTheDocument();
 			});
 		});
-
-		await step('Test button functionality is preserved', async () => {
-			// Ensure button is still clickable and functional
-			await userEvent.click(button);
-			await expect(button).toHaveFocus();
-		});
 	},
 };
 
-/**
- * Example of `<TooltipOnComponent>` component with TextInput nested inside
- */
 export const OnTextInput: Story = {
-	render: (args) => <TooltipOnComponent {...args} />,
 	args: {
 		label: 'This tooltip provides helpful input guidance',
 		alignment: EAlignment.TOP,

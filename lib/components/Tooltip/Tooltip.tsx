@@ -33,6 +33,16 @@ export interface TooltipProps extends TestId {
 	wrapper?: boolean | keyof React.JSX.IntrinsicElements;
 }
 
+/**
+ * Renders a tooltip that appears when the user hovers over or focuses on the trigger element.
+ *
+ * If the provided children are not keyboard-focusable, you can supply set `wrapper` to true to
+ * ensure keyboard accessibility. You can also give a tag name to the `wrapper` prop.
+ *
+ * This component can operate in either controlled or uncontrolled mode:
+ * - In uncontrolled mode, it opens on hover/focus and can auto-close after a specified delay.
+ * - In controlled mode, its visibility is managed externally via the `isOpen` prop.
+ */
 export const Tooltip = ({
 	alignment = EAlignment.RIGHT,
 	isOpen,
@@ -102,38 +112,3 @@ export const Tooltip = ({
 };
 
 Tooltip.displayName = 'Tooltip';
-
-export const TooltipOnComponent = ({
-	alignment = EAlignment.RIGHT,
-	isOpen,
-	label,
-	children,
-	size = 'medium',
-	closeAfter = null,
-}: Omit<TooltipProps, 'testId'>) => {
-	const { PositionedTooltip, triggerRef, triggerProps } = useTooltip({
-		isOpen,
-		closeAfter,
-	});
-
-	// return early if no label provided or non component children
-	if (!label || !isValidElement(children)) return <>{children}</>;
-
-	return (
-		<>
-			{/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-			{cloneElement(Children.only(children) as React.ReactElement<any>, {
-				...triggerProps,
-				ref: triggerRef,
-			})}
-			<PositionedTooltip
-				alignment={alignment}
-				className={styles.root}
-				label={label}
-				size={size}
-			/>
-		</>
-	);
-};
-
-TooltipOnComponent.displayName = 'TooltipOnComponent';
