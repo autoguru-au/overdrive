@@ -5626,14 +5626,14 @@ __metadata:
   linkType: hard
 
 "@vanilla-extract/vite-plugin@npm:^5.0.6":
-  version: 5.0.6
-  resolution: "@vanilla-extract/vite-plugin@npm:5.0.6"
+  version: 5.0.7
+  resolution: "@vanilla-extract/vite-plugin@npm:5.0.7"
   dependencies:
     "@vanilla-extract/compiler": "npm:^0.2.3"
     "@vanilla-extract/integration": "npm:^8.0.4"
   peerDependencies:
     vite: ^5.0.0 || ^6.0.0
-  checksum: 10/9ace6ceac402c6711120a8f542f0cf2fdb9db436e11a0c6ce0bf9fd18cf31aa1cb3249990501757b625f5b8addbdc42448fcecb1ebe160216b32afeda6eacf96
+  checksum: 10/72a231fac0156f4cbf08e3dec1a24c730756981e3aa3293dc73148d716bb44bf45d1448f7439e0b8715a368c9652e359de92ab09fd9132e1791ad7bdf3beed56
   languageName: node
   linkType: hard
 
