@@ -2,9 +2,6 @@
 '@autoguru/overdrive': patch
 ---
 
-Introduces specialised TooltipOnComponent to specifically handle nested React
-components (Box, TextInput, Button, etc) inside the Tooltip trigger as per the
-classic implentation.
-
-- Tooltip: for simpler use cases like text or icons.
-- TooltipOnComponent: for more complex nested components.
+Tooltip: reverts the default behaviour to expect a React component child based
+on actual consumer usage it very prevalant. The new `wrapper` props on the
+Tooltip will render a wrapper for simpler non-interactive children.
