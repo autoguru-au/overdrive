@@ -2,12 +2,12 @@
 
 ## Tech Stack
 
-- React 19+ (compiler optimizations reduce need for memo/useCallback)
-- vanilla-extract (all styling via sprinkles/recipes)
-- Vitest (unit tests for helpers/hooks only)
-- Storybook (interactive component testing via play functions)
-- React Aria (for complex interactive components)
 - Yarn 4 (package manager)
+- React 19+ (compiler optimizations reduce need for memo/useCallback)
+- React Aria (for interactive components to acheive excellent accessibility)
+- vanilla-extract (all styling via sprinkles)
+- Vitest
+- Storybook (interactive component testing via play functions)
 
 ## Critical Rules
 
@@ -40,35 +40,26 @@ lib/components/ComponentName/
     - Expensive child component renders with stable props
     - Event handlers passed to many children
 
-### Performance Checklist
+### Performance Considerations
 
-- [ ] Avoid inline object/array creation in render
-- [ ] Use stable references for callbacks passed as props
-- [ ] Lazy load heavy components with React.lazy()
-- [ ] Virtualize long lists (use existing virtualization components)
-- [ ] Debounce/throttle expensive operations
-- [ ] Profile before optimizing - use React DevTools Profiler
-
-### vanilla-extract Performance
-
-```typescript
-// BAD - creates new styles on every render
-const dynamicStyle = style({ color: props.color });
-
-// GOOD - use recipes with variants
-export const root = recipe({
-	variants: {
-		color: {
-			primary: sprinkles({ color: 'primary' }),
-			secondary: sprinkles({ color: 'secondary' }),
-		},
-	},
-});
-```
+- Avoid inline object/array creation in render
+- Avoid function components defined inside a component or other unstable
+  functions
+- Use stable references for callbacks passed as props
+- Look for unstable props or children
+- Debounce/throttle expensive operations
 
 ## Modularity & Reusability Patterns
 
 ### Component Composition Blueprint
+
+- Write component structure consistently with existing components
+- Composite components ensure the props extend TestId to receive the `testId`
+  prop
+- Composite components ensure to set the Box prop `odComponent` value to the
+  component name
+- State that affects UI should have a data attribute rendered on the component
+- Use the `dataAttr` helper util to manage the custom data attributes
 
 ```typescript
 // 1. Define reusable types
@@ -85,8 +76,8 @@ export const useComponentLogic = <T extends HTMLElement = HTMLDivElement>(
   const ref = useRef<T>(null);
 
   const handlers = {
-    onClick: useCallback(() => {}, []),
-    onKeyDown: useCallback(() => {}, []),
+	onClick: useCallback(() => {}, []),
+	onKeyDown: useCallback(() => {}, []),
   } as const;
 
   return { state, handlers, ref } as const;
@@ -95,59 +86,64 @@ export const useComponentLogic = <T extends HTMLElement = HTMLDivElement>(
 // 3. Build component using primitives
 export const Component = forwardRef<HTMLDivElement, ComponentProps>(
   ({ children, ...props }, ref) => {
-    const { state, handlers } = useComponentLogic(props);
+	const { state, handlers } = useComponentLogic(props);
 
-    return (
-      <Box ref={ref} {...handlers} {...props}>
-        <Text>{children}</Text>
-      </Box>
-    );
+	return (
+	  <Box ref={ref} {...handlers} {...props} {...dataAttrs({ componentState: state })}>
+		<Text>{children}</Text>
+	  </Box>
+	);
   }
 );
 ```
 
-### Reusability Checklist
-
-- [ ] Can this logic be extracted into a hook?
-- [ ] Are we using existing primitives as building blocks?
-- [ ] Can this be a compound component pattern?
-- [ ] Are props generic enough for multiple use cases?
-- [ ] Is the component single-responsibility?
-- [ ] Can styles be shared via sprinkles utilities?
-
-### Compound Component Pattern
+### React Aria Integration
 
 ```typescript
-const ComponentContext = createContext<ComponentState | null>(null);
+// For interative elements use React Aria
+import { useButton, useToggleButton } from '@react-aria/button';
+import { useFocusRing } from '@react-aria/focus';
 
-export const Component = Object.assign(ComponentRoot, {
-  Item: ComponentItem,
-  Trigger: ComponentTrigger,
-  Content: ComponentContent,
-});
+import { dataAttrs } from '../../utils/dataAttrs';
 
-// Usage
-<Component>
-  <Component.Trigger>Open</Component.Trigger>
-  <Component.Content>
-    <Component.Item>Option 1</Component.Item>
-  </Component.Content>
-</Component>
+export const AriaButton = (props: AriaButtonProps) => {
+  const ref = useRef<HTMLButtonElement>(null);
+  const { buttonProps, isPressed } = useToggleButton(props, state, ref);
+  const { focusProps, isFocusVisible } = useFocusRing();
+
+  return (
+	<button
+	  {...mergeProps(buttonProps, focusProps)}
+	  className={styles.button}
+	  ref={ref}
+	  {...dataAttrs({ pressed: isPressed, 'focus-visible': isFocusVisible })}
+	>
+	  {props.children}
+	</button>
+  );
+};
 ```
+
+### Reusability Considerations
+
+- Can this logic be extracted into a hook?
+- Are we using existing primitives as building blocks?
+- Can this be a compound component pattern?
+- Are props generic enough for multiple use cases?
+- Is the component single-responsibility?
+- Can styles be shared via sprinkles utilities?
 
 ## Linting & Code Quality
 
-### Pre-Commit Checklist
-
-- [ ] No ESLint errors in modified files
-- [ ] No TypeScript errors
-- [ ] All imports are used
-- [ ] No console.log statements
-- [ ] Component has displayName
-- [ ] Props have JSDoc comments
-- [ ] No any types (use unknown or proper types)
-- [ ] No magic numbers (use constants/tokens)
-- [ ] Consistent naming conventions
+- No ESLint errors in modified files
+- No TypeScript errors
+- All imports are used
+- No console.log statements
+- Component has displayName
+- Props have JSDoc comments
+- No `any` types (use unknown or proper types)
+- No magic numbers (use constants/tokens)
+- Consistent naming conventions
 
 ### Common Linting Patterns to Fix
 
@@ -162,101 +158,10 @@ const Component = (props) => { // Missing types
 // GOOD
 export const Component = forwardRef<HTMLDivElement, ComponentProps>(
   ({ variant = 'primary', ...props }, ref) => {
-    return <Box ref={ref} className={styles.root({ variant })} {...props} />;
+	return <Box ref={ref} className={styles.root({ variant })} {...props} />;
   }
 );
 Component.displayName = 'Component';
-```
-
-## Testing Strategy
-
-### What to Test Where
-
-```typescript
-// Vitest - Unit test internal logic
-describe('useComponentLogic', () => {
-	it('should handle state changes', () => {
-		const { result } = renderHook(() => useComponentLogic());
-		act(() => result.current.handlers.onClick());
-		expect(result.current.state).toBe(expected);
-	});
-});
-
-// Storybook - Test user interactions
-export const Default: Story = {
-	play: async ({ canvasElement }) => {
-		const canvas = within(canvasElement);
-		const button = canvas.getByRole('button');
-
-		await userEvent.click(button);
-		await expect(button).toHaveAttribute('aria-pressed', 'true');
-
-		await userEvent.keyboard('{Tab}');
-		await expect(button).toHaveFocus();
-	},
-};
-```
-
-### Testing Checklist
-
-- [ ] Unit tests for all custom hooks
-- [ ] Unit tests for utility functions
-- [ ] Storybook stories for all variants
-- [ ] Play functions for interactions
-- [ ] Keyboard navigation tested
-- [ ] Screen reader announcements tested
-- [ ] Error states tested
-- [ ] Loading states tested
-- [ ] Edge cases covered
-
-## Accessibility Assessment Criteria
-
-- [ ] **Keyboard Navigation**
-    - [ ] Tab order is logical
-    - [ ] All interactive elements reachable
-    - [ ] Enter/Space activates buttons
-    - [ ] Escape closes overlays
-    - [ ] Arrow keys for navigation where expected
-- [ ] **Screen Reader**
-    - [ ] Proper semantic HTML or ARIA role
-    - [ ] Descriptive aria-labels
-    - [ ] States announced (expanded, selected, etc.)
-    - [ ] Live regions for dynamic content
-    - [ ] Error messages associated with inputs
-- [ ] **Visual**
-    - [ ] Focus indicators visible
-    - [ ] Color contrast ≥ 4.5:1 (text), ≥ 3:1 (UI)
-    - [ ] Touch targets ≥ 44x44px
-    - [ ] No color-only information
-- [ ] **Motion**
-    - [ ] Respects prefers-reduced-motion
-    - [ ] Animations can be paused/stopped
-    - [ ] No seizure-inducing flashing
-
-### React Aria Integration
-
-```typescript
-// For complex interactions, use React Aria
-import { useButton, useToggleButton } from '@react-aria/button';
-import { useFocusRing } from '@react-aria/focus';
-
-export const AriaButton = (props: AriaButtonProps) => {
-  const ref = useRef<HTMLButtonElement>(null);
-  const { buttonProps, isPressed } = useToggleButton(props, state, ref);
-  const { focusProps, isFocusVisible } = useFocusRing();
-
-  return (
-    <button
-      {...mergeProps(buttonProps, focusProps)}
-      ref={ref}
-      data-pressed={isPressed}
-      data-focus-visible={isFocusVisible}
-      className={styles.button}
-    >
-      {props.children}
-    </button>
-  );
-};
 ```
 
 ## Style Implementation
@@ -264,45 +169,57 @@ export const AriaButton = (props: AriaButtonProps) => {
 ### vanilla-extract Best Practices
 
 ```typescript
-import { recipe } from '@vanilla-extract/recipes';
 import { sprinkles } from '../../css/sprinkles.css';
 
-// Define variants using sprinkles for reusability
-export const root = recipe({
-	base: [
-		sprinkles({
-			display: 'flex',
-			alignItems: 'center',
-			padding: 'medium',
-			borderRadius: 'medium',
-			transition: 'colors',
-		}),
-	],
-	variants: {
-		variant: {
-			primary: sprinkles({
-				background: 'brandPrimary',
-				color: 'white',
-			}),
-			secondary: sprinkles({
-				background: 'transparent',
-				color: 'brandPrimary',
-				border: 'standard',
-			}),
-		},
-		size: {
-			small: sprinkles({ padding: 'small' }),
-			medium: sprinkles({ padding: 'medium' }),
-			large: sprinkles({ padding: 'large' }),
-		},
-	},
-	defaultVariants: {
-		variant: 'primary',
-		size: 'medium',
-	},
-});
+// A mix of responsive props and simple boolean props will be custom mapped
+export interface RowProps {
+	/** Cross-axis horizontal alignment of items (_responsive_) */
+	align?: ResponsiveFlexProps['justifyContent'];
+	/** Shortcut center horizontal alignment */
+	center?: boolean;
+	/** Shortcut end/bottom alignment */
+	end?: boolean;
+	/** Item horizontal spacing (_responsive_)*/
+	gap?: ResponsiveFlexProps['gap'];
+	/** Prevent items from wrapping to the next row */
+	noWrap?: boolean;
+	/** Main-axis (horizontal) alignment of items (_responsive_) */
+	justify?: ResponsiveFlexProps['alignItems'];
+	/** Reverse item order */
+	reverse?: boolean;
+	/** Shortcut `space-between` justification */
+	spaceBetween?: boolean;
+	/** Shortcut start/top alignment */
+	start?: boolean;
+}
 
-// Use data attributes for state-based styling
+// Define custom mapping functions to turn the props into a `sprinkles` function call
+const rowPropMapping = ({
+	align = 'start',
+	center,
+	end,
+	gap = '2',
+	noWrap,
+	justify,
+	reverse,
+	spaceBetween,
+	start,
+}: RowProps) =>
+	({
+		alignItems: justify,
+		display: 'flex',
+		flexDirection: (reverse && 'row-reverse') || 'row',
+		flexWrap: noWrap === true ? 'nowrap' : 'wrap',
+		gap,
+		justifyContent:
+			(start && 'start') ||
+			(center && 'center') ||
+			(end && 'end') ||
+			(spaceBetween && 'space-between') ||
+			align,
+	}) satisfies Sprinkles;
+
+// Prefer use of data attributes for state-based styling
 export const stateStyles = style({
 	selectors: {
 		'&[data-pressed="true"]': {
@@ -383,8 +300,10 @@ BulletList, OrderedList, OptionList, OptionGrid, AutoSuggest
 
 VisuallyHidden, OutsideClick, Positioner, Image, Stepper
 
+### Internal
+
+CheckableBase, InputBase
+
 ### Context Provider
 
 OverdriveProvider
-
-###
