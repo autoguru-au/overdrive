@@ -1,7 +1,10 @@
 import type { AllHTMLAttributes, ElementType, PropsWithChildren } from 'react';
 import React, { forwardRef } from 'react';
 
-import { elementStyles, type StyledElementProps } from '../../styles';
+import {
+	elementStyles,
+	type ElementStylesProps,
+} from '../../styles/elementStyles';
 import { OdComponent, TestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 
@@ -19,7 +22,7 @@ export interface BoxProps
 			'as' | 'className' | 'color' | 'height' | 'is' | 'size' | 'width'
 		>,
 		CommonBoxProps,
-		StyledElementProps {
+		ElementStylesProps {
 	/** Pass in the HTML element or JSX component that should be rendered for the box */
 	as?: ElementType;
 }

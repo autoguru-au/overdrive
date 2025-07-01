@@ -88,7 +88,7 @@ Granular utilities for adding styles directly to an HTML element
 	`BoxProps`.
 - All `forwardRef`s reinstated in components
 - Style helper functions available `elementResetStyles` and
-	`componentStyles`, where html tag css resets and vanilla-extract sprinkles
+	`elementStyles`, where html tag css resets and vanilla-extract sprinkles
 	are combined to replace `useBoxStyles` (now deprecated)
 - New Box and useBox remains available in `components/Box/newBox/` during
 	mitigation but should be considered unstable

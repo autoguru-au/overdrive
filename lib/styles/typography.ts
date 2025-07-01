@@ -1,6 +1,6 @@
 import clsx, { type ClassValue as ClassName } from 'clsx';
 
-import { resetStyles } from './componentStyles';
+import { resetStyles } from './elementStyles';
 import { sprinkles, type Sprinkles } from './sprinkles.css';
 import {
 	common,
