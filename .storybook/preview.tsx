@@ -68,6 +68,7 @@ const preview: Preview = {
 					['Palette', 'Theme Colours', 'Borders', 'Space'],
 					'Primatives',
 					'Layout',
+					'Content',
 					'Forms & Input Fields',
 					'Components',
 					[

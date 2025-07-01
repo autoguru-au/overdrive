@@ -6,6 +6,7 @@ import { Stepper } from './Stepper';
 
 const meta = {
 	title: 'Forms & Input Fields/Stepper',
+	tags: ['review'],
 	component: Stepper,
 } satisfies Meta<typeof Stepper>;
 

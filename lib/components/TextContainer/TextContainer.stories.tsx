@@ -8,7 +8,7 @@ import { Text } from '../Text/Text';
 import { TextContainer } from './TextContainer';
 
 const meta = {
-	title: 'Components/Text Container',
+	title: 'Content/Text Container',
 	component: TextContainer,
 	args: {
 		children: (

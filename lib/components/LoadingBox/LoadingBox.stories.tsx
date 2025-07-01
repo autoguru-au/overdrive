@@ -6,7 +6,7 @@ import { boxArgTypes } from '../../stories/shared/argTypes-box';
 import { LoadingBox } from './LoadingBox';
 
 export default {
-	title: 'Components/Loading Box',
+	title: 'Primatives/Indicators/Loading Box',
 	component: LoadingBox,
 	decorators: [
 		(story) => (

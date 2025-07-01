@@ -22,7 +22,7 @@ const transformOptions: Array<ComponentProps<typeof Text>['transform']> = [
 ];
 
 const meta = {
-	title: 'Primatives/Text Link',
+	title: 'Content/Text Link',
 	component: TextLink,
 	decorators: [
 		(Story) => (

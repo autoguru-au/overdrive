@@ -6,7 +6,7 @@ import { argTypesExampleIcons } from '../../stories/shared/argTypes';
 import { Anchor } from './Anchor';
 
 const meta = {
-	title: 'Primatives/Anchor',
+	title: 'Content/Anchor',
 	tags: ['polymorphic'],
 	component: Anchor,
 	args: {

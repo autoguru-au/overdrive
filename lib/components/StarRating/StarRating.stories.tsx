@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { EStarRatingSize, StarRating } from './StarRating';
 
 const meta = {
-	title: 'Components/Star Rating',
+	title: 'Content/Star Rating',
 	component: StarRating,
 	argTypes: {
 		size: {

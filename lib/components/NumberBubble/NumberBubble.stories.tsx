@@ -5,7 +5,7 @@ import { NumberBubble } from './NumberBubble';
 type Story = StoryObj<typeof NumberBubble>;
 
 export default {
-	title: 'Components/Number Bubble',
+	title: 'Content/Number Bubble',
 	component: NumberBubble,
 } satisfies Meta<typeof NumberBubble>;
 

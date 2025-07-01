@@ -16,7 +16,7 @@ const headingTypeOptions: Array<ComponentProps<typeof Heading>['as']> = [
 ];
 
 const meta = {
-	title: 'Primatives/Heading',
+	title: 'Content/Heading',
 	component: Heading,
 	decorators: [
 		(Story) => (
