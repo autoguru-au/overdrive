@@ -1,5 +1,17 @@
 # @autoguru/overdrive
 
+## 4.43.10
+
+### Patch Changes
+
+- 01f9aaf: Tooltip: reverts the default behaviour to expect a React component
+  child based on actual consumer usage it very prevalant. The new `wrapper`
+  props on the Tooltip will render a wrapper for simpler non-interactive
+  children.
+- 01f9aaf: Button: additional native events handled (onFocus, onBlur,
+  onMouseEnter, onMouseLeave)
+- 01f9aaf: Anchor: fixes missing focus-visible outline
+
 ## 4.43.9
 
 ### Patch Changes
