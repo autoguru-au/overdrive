@@ -1,5 +1,23 @@
 # @autoguru/overdrive
 
+## 4.43.10
+
+### Patch Changes
+
+- 01f9aaf: Tooltip: reverts the default behaviour to expect a React component
+  child based on actual consumer usage it very prevalant. The new `wrapper`
+  props on the Tooltip will render a wrapper for simpler non-interactive
+  children.
+- 01f9aaf: Button: additional native events handled (onFocus, onBlur,
+  onMouseEnter, onMouseLeave)
+- 01f9aaf: Anchor: fixes missing focus-visible outline
+
+## 4.43.9
+
+### Patch Changes
+
+- 1c28b39: Fix: corrects `useBoxStyles` logic to expected behaviour
+
 ## 4.43.8
 
 ### Patch Changes
@@ -149,7 +167,6 @@ _Version deprecated_
   reverted due to consuming compatibility issues
 
     ##### CSS layers introduced
-
     - `@reset` contains base resets
     - `@utility` contains the spinkles utility classes
 
@@ -157,7 +174,6 @@ _Version deprecated_
 
     Newly implemented with more powerful polymorphic type based on the `as`
     prop, and exposes `useBox` for core logic.
-
     - useBox returns the JSX component tag as well as the processed and filtered
       props. It also handles logic for determing a semantic child tag rather
       than repeated within various components
@@ -192,31 +208,26 @@ _Version deprecated_
   need to be wrapped separate providers.
 
     New peer dependency
-
     - Added dependency `es-toolkit`
 
     Provider Consolidation
-
     - `ThemeProvider` and `ThemeOverrideProvider` have been replaced by a
       fallback provider to show deprecation warnings
     - All theming functionality is now handled through `OverdriveProvider`
       including a combined component API
 
     OverdriveProvider updates
-
     - `theme` prop is now optional
     - Colour overrides are passed as an object `colorOverrides` instead of
       individual props as in previous provider
     - Some of the on-page behaviour of `ThemeOverrideDebugger` has been disabled
 
     Data attribute and CSS Variables
-
     - Theme application is now available using data attribute
       `data-od-theme=base`
     - OD tokens are exposed globally in CSS variables
 
     Reset updates
-
     - Added `container` styles into resets
     - Updated CSS reset
 
@@ -322,7 +333,6 @@ _Version deprecated_
 ### Minor Changes
 
 - 8739e4f: **Enhancements**
-
     - `as` prop added to Box, with existing `is` prop as alias to ensure
       non-breaking.
     - `VisuallyHidden` component has been simplified.
@@ -331,7 +341,6 @@ _Version deprecated_
     - `odStyle` is now the function name for using sprinkles.
 
 - 8739e4f: **New components**
-
     - Option List (beta) to display a grouped set of optional items that are
       checkbox form controls.
     - Option Grid (beta) to group selectable tiles that support per-item icons,
@@ -2096,7 +2105,6 @@ _Version deprecated_
 
     `<AutoSuggest>` can now be given a `autoWidth` prop that will auto the width
     in relation to setting the width, or for it to be automatic.
-
     - `autoWidth={true}` means, size the flyout to the width of flyout children
       "automatically"
     - `autoWidth={false}` means to set to the width of the select input.
@@ -2212,7 +2220,6 @@ _Version deprecated_
     You can give this component `hideBackdrop?: boolean` prop to disable the
     backdrop. Also; if you wish to remove the fadeIn/fadeOut animation, a
     `transition?: boolean` can also be provided.
-
     - Removes `<ModalPortal />` in favor of `<Modal />`
     - Deprecated `withModal`, which could simply just use the Modal component
 
@@ -2266,7 +2273,6 @@ _Version deprecated_
     **Features**
 
     Breakpoints have been amended to follow (mobile first):
-
     - `tablet` is iPad Mini width less 25%, so any device greater than 768px
     - `desktop` we are considering as iPad Pro width less 25%, so any device
       larger than 1024px
@@ -2353,7 +2359,6 @@ _Version deprecated_
 - 8881bdd: Styles are now `treat` driven.
 
     **A few changes**
-
     - `OverdriveProvider` must now be provider
     - `ToastProvider` must also be provided when using a `useToast`
     - `@autoguru/overdrive/reset` must be given first.

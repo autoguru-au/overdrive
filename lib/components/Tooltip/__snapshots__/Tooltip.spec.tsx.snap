@@ -1,0 +1,75 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Tooltip /> > should match snapshot when closed 1`] = `
+<body
+  class="theme_OD_Base__j49br80"
+>
+  <div>
+    <div
+      class="theme_OD_Base__j49br80"
+      data-od-component="provider"
+    >
+      <span
+        tabindex="0"
+      >
+        <div>
+          trigger
+        </div>
+      </span>
+    </div>
+  </div>
+  <div
+    class="theme_OD_Base__j49br80"
+  >
+    <div
+      aria-hidden="true"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_position_fixed_mobile__onxwju97 Positioner_root__1d54b7d0"
+      data-od-component="positioner"
+    />
+  </div>
+</body>
+`;
+
+exports[`<Tooltip /> > should match snapshot when opened 1`] = `
+<body
+  class="theme_OD_Base__j49br80"
+>
+  <div>
+    <div
+      class="theme_OD_Base__j49br80"
+      data-od-component="provider"
+    >
+      <span
+        aria-describedby="«r3»"
+        tabindex="0"
+      >
+        <div>
+          trigger
+        </div>
+      </span>
+    </div>
+  </div>
+  <div
+    class="theme_OD_Base__j49br80"
+  >
+    <div
+      aria-hidden="false"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_position_fixed_mobile__onxwju97 Positioner_root__1d54b7d0"
+      data-od-component="positioner"
+      style="position: absolute; left: 0px; top: 0px; margin: 0px;"
+    >
+      <div
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_paddingLeft_3_mobile__onxwjut3 sprinkles_paddingRight_3_mobile__onxwjuu7 sprinkles_paddingTop_2_mobile__onxwjuv7 sprinkles_paddingBottom_2_mobile__onxwjurv sprinkles_overflow_hidden_mobile__onxwju7z sprinkles_pointerEvents_none__onxwju6m sprinkles_userSelect_none__onxwju6p sprinkles_width_full_mobile__onxwjufn sprinkles_backgroundColour_gray900__onxwju4e sprinkles_boxShadow_4__onxwju6i sprinkles_borderRadius_1_mobile__onxwju9v Tooltip_root__1qliafn0"
+        id="«r3»"
+        role="tooltip"
+      >
+        <span
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2__onxwju5u sprinkles_lineHeight_2__onxwju5l sprinkles_fontWeight_normal__onxwju62 typography_color_white__yhjp336"
+        >
+          tooltip content
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;

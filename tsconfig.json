@@ -5,9 +5,6 @@
 	"compilerOptions": {
 		"baseUrl": "./lib",
 		"outDir": "./dist/",
-		"declaration": true,
-		"declarationMap": true,
-		"declarationDir": "./dist/",
 		"isolatedModules": true,
 		"strict": true,
 		"sourceMap": false,

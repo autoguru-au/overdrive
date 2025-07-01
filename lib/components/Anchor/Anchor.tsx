@@ -13,13 +13,13 @@ import {
 } from 'react';
 
 import { elementStyles } from '../../styles';
+import { focusOutlineStyle } from '../../styles/focusOutline.css';
 import type { TestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box/Box';
 import { Icon } from '../Icon/Icon';
 
 const ANCHOR_TAG = 'a';
-
 export interface Props
 	extends Omit<
 			AnchorHTMLAttributes<HTMLAnchorElement>,
@@ -49,8 +49,9 @@ export const Anchor: FunctionComponent<Props> = ({
 			elementStyles({
 				as: Component,
 				colour: 'link',
-				display: 'inline',
+				display: 'inline-flex',
 			}),
+			focusOutlineStyle,
 			className,
 		),
 		disabled,
