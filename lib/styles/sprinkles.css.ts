@@ -6,7 +6,7 @@ import { breakpoints } from '../themes/makeTheme';
 import { overdriveTokens as tokens } from '../themes/theme.css';
 import { arrayFromKeys } from '../utils/object';
 
-import { cssLayerUtil } from './layers.css';
+import { cssLayerStyleprops } from './layers.css';
 import { gapVar } from './vars.css';
 
 const { space } = tokens;
@@ -118,7 +118,7 @@ export const valueArrays = {
 
 // --- BASE SPRINKLES (NON-RESPONSIVE) ---
 const baseProperties = defineProperties({
-	'@layer': cssLayerUtil,
+	'@layer': cssLayerStyleprops,
 	properties: {
 		// Borders
 		borderBottomColor: borderColors,
@@ -207,7 +207,7 @@ export const responsiveConditions = {
 };
 
 const responsiveProperties = defineProperties({
-	'@layer': cssLayerUtil,
+	'@layer': cssLayerStyleprops,
 	conditions: responsiveConditions,
 	defaultCondition: 'mobile',
 	responsiveArray: ['mobile', 'tablet', 'desktop', 'largeDesktop'],
