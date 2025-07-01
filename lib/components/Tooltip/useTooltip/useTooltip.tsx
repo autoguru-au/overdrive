@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useRef, useState, useId } from 'react';
 
-import { Box } from '../../components/Box/Box';
-import { Positioner } from '../../components/Positioner/Positioner';
-import { EAlignment } from '../../components/Positioner/alignment';
-import { Text, type TextProps } from '../../components/Text/Text';
+import { Box } from '../../Box/Box';
+import { Positioner } from '../../Positioner/Positioner';
+import { EAlignment } from '../../Positioner/alignment';
+import { Text, type TextProps } from '../../Text/Text';
 
 export type ToolTipSize = 'medium' | 'large';
 

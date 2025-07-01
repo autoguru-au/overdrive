@@ -1,7 +1,7 @@
 import { fireEvent, render, renderHook, act } from '@testing-library/react';
 import * as React from 'react';
 
-import { EAlignment } from '../../components/Positioner/alignment';
+import { EAlignment } from '../../Positioner/alignment';
 
 import { useTooltip } from './useTooltip';
 

@@ -6,15 +6,12 @@ import React, {
 	type ReactNode,
 } from 'react';
 
-import {
-	useTooltip,
-	type ToolTipSize,
-} from '../../hooks/useTooltip/useTooltip';
 import type { TestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { EAlignment } from '../Positioner/alignment';
 
 import * as styles from './Tooltip.css';
+import { useTooltip, type ToolTipSize } from './useTooltip/useTooltip';
 
 export interface TooltipProps extends TestId {
 	/** Size of the tooltip text */
@@ -88,12 +85,11 @@ export const Tooltip = ({
 	}
 
 	invariant(
-		isValidElement(children),
-		'Tooltips without a wrapper should have a single child component',
+		Children.count(children) === 1 &&
+			isValidElement(Children.only(children)),
+		'Tooltips without a wrapper should have a single React element as a child',
 	);
-	if (!isValidElement(children)) return <>{children}</>;
 
-	// nested React component which receices spread props
 	return (
 		<>
 			{/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
