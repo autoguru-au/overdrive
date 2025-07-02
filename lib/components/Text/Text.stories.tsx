@@ -2,10 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { expect, within } from 'storybook/test';
 
+import type { TextTags } from '../../styles/typography';
 import { overdriveTokens } from '../../themes';
 
 import { Text, type TextProps } from './Text';
-import type { TextTags } from './textStyles';
 
 const elements: TextTags[] = ['p', 'label', 'span'];
 const Wrapper = ({ children }) => (
@@ -14,7 +14,7 @@ const Wrapper = ({ children }) => (
 
 const meta: Meta<typeof Text> = {
 	title: 'Primitives/Text',
-	tags: ['polymorphic'],
+	tags: [],
 	component: Text,
 	decorators: [(Story) => <Wrapper>{Story()}</Wrapper>],
 	args: {

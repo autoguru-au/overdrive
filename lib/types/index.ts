@@ -7,7 +7,7 @@ export interface OdComponent {
 
 export interface TestId {
 	/**
-	 * The test ID will be rendered as a data attribute on the element for e2e testing purposes
+	 * The test ID will be rendered as a data attribute `data-testid` on the element for use with test assertions
 	 */
 	testId?: string;
 }

@@ -62,7 +62,7 @@ export const resetStyles = (
 	});
 };
 
-export interface ComponentStylesProps extends Sprinkles {
+export interface ElementStylesProps extends Sprinkles {
 	as?: string | ElementType | ReactElement;
 	className?: ClassName;
 }
@@ -72,15 +72,15 @@ export interface ComponentStylesProps extends Sprinkles {
  * Allows `as` prop that is JSX or other React element to safely be passed in so it does not have to be filtered out.
  * Includes logic for adding border reset styles when any border props are used.
  *
- * @example <svg className={componentStyles({ as: 'svg', padding: '1', size: '4' })} ... />
- * @example <div className={componentStyles({ borderTopWidth: '1', borderTopColor: 'soft' })}
+ * @example <svg className={elementStyles({ as: 'svg', padding: '1', size: '4' })} ... />
+ * @example <div className={elementStyles({ borderTopWidth: '1', borderTopColor: 'soft' })}
  * // ^ this will trigger the border reset ^
  */
-export const componentStyles = ({
+export const elementStyles = ({
 	as,
 	className,
 	...styleProps
-}: ComponentStylesProps) =>
+}: ElementStylesProps) =>
 	clsx(
 		resetStyles(as, { hasBorder: hasBorderRelatedProp(styleProps) }),
 		sprinkles(styleProps),

@@ -2,49 +2,66 @@ import { IconType } from '@autoguru/icons';
 import { invariant } from '@autoguru/utilities';
 import clsx from 'clsx';
 import React, {
-	AnchorHTMLAttributes,
 	cloneElement,
-	ComponentProps,
+	type ComponentPropsWithoutRef,
 	createElement,
-	ElementType,
+	type ElementType,
 	forwardRef,
 	isValidElement,
-	ReactElement,
-	ReactNode,
+	type ReactElement,
+	type ReactNode,
 } from 'react';
 
-import { componentStyles } from '../../styles';
+import type { TextStylesProps } from '../../styles/typography';
 import { Box } from '../Box/Box';
 import { Icon } from '../Icon/Icon';
 import { Text } from '../Text/Text';
 
 import * as styles from './TextLink.css';
 
-type TextProps = Omit<ComponentProps<typeof Text>, 'is' | 'colour'>;
-type AnchorProps = Omit<
-	AnchorHTMLAttributes<HTMLAnchorElement>,
-	'color' | 'children' | 'style' | 'is' | keyof TextProps
+type AnchorProps = ComponentPropsWithoutRef<'a'>;
+type FilteredAnchorProps = Omit<AnchorProps, keyof TextStylesProps>;
+type FilteredTextStyleProps = Omit<
+	TextStylesProps,
+	'as' | 'align' | 'breakword' | 'wordbreak' | 'wrap'
 >;
 
-export interface Props extends TextProps, AnchorProps {
+export interface TextLinkProps
+	extends FilteredAnchorProps,
+		FilteredTextStyleProps {
 	children?: ReactNode;
 	className?: string;
-	is?: ElementType | ReactElement;
+	as?: ElementType | ReactElement;
 	muted?: boolean;
+	/** Optional icon, displayed after the link text */
 	icon?: IconType;
 }
 
-export const TextLink = forwardRef<HTMLAnchorElement, Props>(
+/**
+ * TextLink component for rendering navigation links
+ *
+ * @example
+ * ```tsx
+ * <TextLink href="https://example.com">Click me</TextLink>
+ *
+ * // With an icon
+ * <TextLink href="/settings" icon={SettingsIcon}>Settings</TextLink>
+ * ```
+ */
+export const TextLink = forwardRef<HTMLAnchorElement, TextLinkProps>(
 	(
 		{
-			is: Component,
+			as: Component,
 			children,
 			className,
 			color,
-			strong,
-			muted = false,
-			size,
+			colour,
 			icon,
+			muted = false,
+			noWrap,
+			size,
+			strong,
+			transform,
 			weight = 'semiBold',
 			...props
 		},
@@ -56,22 +73,19 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 		);
 		const body = (
 			<Text
-				as="span"
 				colour={muted ? 'muted' : 'link'}
+				noWrap={noWrap}
+				pr={icon ? '5' : undefined}
 				size={size}
-				weight={weight}
 				strong={strong}
-				className={clsx(
-					componentStyles({
-						as: 'span',
-						pointerEvents: 'none',
-						position: 'relative',
-						paddingRight: icon ? '5' : undefined,
-					}),
+				transform={transform}
+				weight={weight}
+				className={[
+					styles.body,
 					{
 						[styles.muted]: muted,
 					},
-				)}
+				]}
 			>
 				{children}
 				{icon ? (
@@ -96,6 +110,7 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(
 				<Box
 					as="a"
 					color={color}
+					colour={colour}
 					className={[className, styles.root]}
 					{...allProps}
 				>

@@ -12,33 +12,30 @@ import {
 	ReactNode,
 } from 'react';
 
-import { componentStyles } from '../../styles/componentStyles';
+import { elementStyles } from '../../styles';
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
-import { sprinkles } from '../../styles/sprinkles.css';
+import type { TestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
-import { BoxProps } from '../Box/Box';
+import { Box } from '../Box/Box';
 import { Icon } from '../Icon/Icon';
-import { Inline } from '../Inline/Inline';
-import { Text } from '../Text/Text';
 
+const ANCHOR_TAG = 'a';
 export interface Props
 	extends Omit<
 			AnchorHTMLAttributes<HTMLAnchorElement>,
-			'children' | 'style' | 'is'
+			'as' | 'children' | 'is' | 'style'
 		>,
-		Pick<BoxProps, 'testId'> {
-	className?: string;
-	is?: ElementType | ReactElement;
+		TestId {
+	as?: ElementType | ReactElement;
 	disabled?: boolean;
 	children?: ReactNode;
-
 	icon?: IconType;
 }
 
 export const Anchor: FunctionComponent<Props> = ({
-	className = '',
+	className,
 
-	is: Component = 'a',
+	as: Component = ANCHOR_TAG,
 	disabled = false,
 	testId,
 
@@ -49,7 +46,7 @@ export const Anchor: FunctionComponent<Props> = ({
 }) => {
 	const props = {
 		className: clsx(
-			componentStyles({
+			elementStyles({
 				as: Component,
 				colour: 'link',
 				display: 'inline-flex',
@@ -62,24 +59,24 @@ export const Anchor: FunctionComponent<Props> = ({
 		...rest,
 	};
 
-	const childs = (
-		<Inline space="2">
-			{icon && (
-				<Icon
-					icon={icon}
-					size="small"
-					className={sprinkles({ colour: 'link' })}
-				/>
-			)}
-			<Text weight="bold" size="4" colour="link">
-				{children}
-			</Text>
-		</Inline>
+	const content = (
+		<Box
+			as="span"
+			alignItems="center"
+			colour="link"
+			display="inline-flex"
+			fontSize="4"
+			fontWeight="bold"
+			gap="2"
+		>
+			{icon && <Icon icon={icon} size="small" />}
+			<span>{children}</span>
+		</Box>
 	);
 
 	return isValidElement(Component)
-		? cloneElement(Component, props, childs)
-		: createElement(Component, props, childs);
+		? cloneElement(Component, props, content)
+		: createElement(Component, props, content);
 };
 
 export default Anchor;

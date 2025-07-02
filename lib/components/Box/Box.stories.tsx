@@ -1,11 +1,11 @@
-import { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 
 import { Box } from './Box';
 
 const meta: Meta<typeof Box> = {
 	title: 'Primitives/Box',
-	tags: ['polymorphic'],
+	tags: [],
 	component: Box,
 	args: {
 		as: 'div',
