@@ -8,7 +8,7 @@ import { Icon } from './Icon';
 type Story = StoryObj<typeof Icon>;
 
 export default {
-	title: 'Primatives/Icon',
+	title: 'Primitives/Icon',
 	component: Icon,
 	args: {
 		icon: undefined,

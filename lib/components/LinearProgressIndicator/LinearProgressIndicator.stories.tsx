@@ -4,7 +4,7 @@ import * as React from 'react';
 import { LinearProgressIndicator } from './LinearProgressIndicator';
 
 export default {
-	title: 'Primatives/Indicators/Linear Progress',
+	title: 'Primitives/Indicators/Linear Progress',
 	component: LinearProgressIndicator,
 	decorators: [
 		(story) => (

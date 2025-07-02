@@ -37,7 +37,7 @@ const calcWidth = (width: (typeof sizeOptions)[number] | 'full') =>
 	width === 'full' ? '100%' : widthMap[width as keyof typeof widthMap];
 
 const meta = {
-	title: 'Primatives/Image',
+	title: 'Primitives/Image',
 	component: Image,
 	args: {
 		imageWidth: '8',

@@ -64,7 +64,7 @@ type Story = StoryObj<typeof ComponentName>;
 
 Use appropriate categories in the `title` field:
 
-- `Primatives/` - For base components (Button, Box, Text, etc.)
+- `Primitives/` - For base components (Button, Box, Text, etc.)
 - `Layout/` - For layout components (Stack, Inline, Columns, etc.)
 - `Forms/` - For form controls (TextInput, CheckBox, etc.)
 - `Navigation/` - For navigation components (Tabs, Pagination, etc.)

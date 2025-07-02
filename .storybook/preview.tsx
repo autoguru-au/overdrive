@@ -66,7 +66,7 @@ const preview: Preview = {
 					'Overdrive',
 					'Foundation',
 					['Palette', 'Theme Colours', 'Borders', 'Space'],
-					'Primatives',
+					'Primitives',
 					'Layout',
 					'Content',
 					'Forms & Input Fields',

@@ -4,7 +4,7 @@ import React from 'react';
 import { Box } from './Box';
 
 const meta: Meta<typeof Box> = {
-	title: 'Primatives/Box',
+	title: 'Primitives/Box',
 	tags: ['polymorphic'],
 	component: Box,
 	args: {

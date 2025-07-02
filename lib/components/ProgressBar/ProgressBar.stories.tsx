@@ -6,7 +6,7 @@ import { Stack } from '../Stack/Stack';
 import { ProgressBar } from './ProgressBar';
 
 export default {
-	title: 'Primatives/Indicators/Progress Bar',
+	title: 'Primitives/Indicators/Progress Bar',
 	component: ProgressBar,
 } satisfies Meta<typeof ProgressBar>;
 

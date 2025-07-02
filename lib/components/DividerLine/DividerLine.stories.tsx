@@ -37,7 +37,7 @@ const colours: ReadonlyArray<ComponentProps<typeof DividerLine>['colour']> = [
 ] as const;
 
 const meta = {
-	title: 'Primatives/Divider Line',
+	title: 'Primitives/Divider Line',
 	component: DividerLine,
 	argTypes: {
 		space: {

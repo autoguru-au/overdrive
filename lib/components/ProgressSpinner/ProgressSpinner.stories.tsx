@@ -4,7 +4,7 @@ import React from 'react';
 import { ProgressSpinner } from './ProgressSpinner';
 
 export default {
-	title: 'Primatives/Indicators/Progress Spinner',
+	title: 'Primitives/Indicators/Progress Spinner',
 	component: ProgressSpinner,
 	decorators: [
 		(story) => (
