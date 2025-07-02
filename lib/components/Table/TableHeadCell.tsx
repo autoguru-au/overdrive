@@ -83,7 +83,13 @@ export const TableHeadCell = forwardRef<
 				space="1"
 			>
 				{align === 'right' && shouldSort ? sorter : null}
-				<Text strong size="3" as="span" className={styles.text}>
+				<Text
+					strong
+					size="3"
+					as="span"
+					align={align}
+					className={styles.text}
+				>
 					{children}
 					{shouldSort ? (
 						<VisuallyHidden as="span">

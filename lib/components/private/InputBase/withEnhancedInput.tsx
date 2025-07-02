@@ -18,7 +18,7 @@ import React, {
 	useState,
 } from 'react';
 
-import { componentStyles, sprinkles } from '../../../styles';
+import { sprinkles, elementStyles } from '../../../styles';
 import { useInputControlledState } from '../../../utils';
 import { Box } from '../../Box/Box';
 import { Icon } from '../../Icon/Icon';
@@ -33,7 +33,7 @@ import type { InputSize } from './withEnhancedInput.css';
 type ElementTypes = HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
 type NativeAttributes<E extends ElementTypes> = Omit<
 	InputHTMLAttributes<E>,
-	'color' | 'height' | 'is' | 'placeholder' | 'size' | 'width'
+	'as' | 'color' | 'height' | 'is' | 'placeholder' | 'size' | 'width'
 >;
 
 // The event handlers we'll allow the wrapped component to bind too
@@ -201,7 +201,7 @@ export const withEnhancedInput = <
 			const iconSize = size === 'small' ? 'medium' : size;
 
 			const inputItselfClassName = clsx(
-				componentStyles({
+				elementStyles({
 					as: primitiveType === 'textarea' ? 'textarea' : 'input',
 					backgroundColour,
 					width: 'full',

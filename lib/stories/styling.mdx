@@ -1,0 +1,156 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Styling" tags={['new']} />
+
+# Styling
+
+This document provides guidelines for using the custom styling functions
+available in Overdrive. These functions are built on vanilla-extract `sprinkles`
+and provide type-safe, efficient build-time styling.
+
+These utilities are intended for scenarios where HTML elements are being styled
+directly in JSX, rather than using our `<Box>`, `<Text>` or other primitives.
+
+### Transition
+
+The new styling functions replace the older `useBoxStyles` and `useTextStyles`
+hooks. For a smooth transition they remain aliased:
+
+- `useBoxStyles` = `elementStyles`.
+- `useTextStyles` = `textStyles`.
+
+## Styling Functions
+
+- [css](#css)
+- [elementStyles](#elementstyles)
+- [typography](#typography)
+- [textStyles](#textstyles)
+- [resetStyles](#resetstyles)
+
+### `css`
+
+The `css` function is the most fundamental of the styling utilities, generated
+by "sprinkles". It provides access to the full set of atomic and responsive
+style props. Both responsive arrays and object notations are supported for most
+style properties. Any properties which are not responsive can be reconfigured
+almost instantly.
+
+**When to use it:** Anywhere, any time, to apply sprinkles utility classes
+directly to an element. It is lightweight and efficient.
+
+**Example:**
+
+```tsx
+import { css } from '@autoguru/overdrive';
+
+const MyComponent = ({ children }) => (
+	<LocalComponent>
+		<div
+			className={css({
+				// responsive array notation
+				p: ['2', '4', '6', '8'],
+				// responsive object notation
+				mx: { mobile: '3', tablet: '5', desktop: '8' },
+				borderTopWidth: '1',
+				borderColor: 'neutral',
+			})}
+		>
+			{children}
+		</div>
+	</LocalComponent>
+);
+```
+
+### `elementStyles`
+
+`elementStyles` is a comprehensive styling function that combines baseline
+element reset styles with all style props. This styling logic underpins the
+`<Box>` component.
+
+Replaces the `useBoxStyles` hook.
+
+**When to use it:** When you need to apply style props (sprinkles) as well as
+element reset styles.
+
+---
+
+### `typography`
+
+The `typography` function is a more granular version of `textStyles`. It
+provides only the typography-specific style props from `vanilla-extract`
+_without_ the element reset styles.
+
+**When to use it:** When you need to apply only typographic styles and want to
+manage element resets yourself, or when no reset is needed.
+
+**Example:**
+
+```tsx
+import { typography } from '@autoguru/overdrive';
+
+const SimpleText = ({ children }) => {
+	return (
+		<span className={typography({ size: '4', weight: 'semibold' })}>
+			{children}
+		</span>
+	);
+};
+```
+
+---
+
+### `textStyles`
+
+`textStyles` is a specialized function for typography. It combines element reset
+styles with a subset of style props suitable for text elements like labels,
+paragraphs, and headings. It's the foundation for our `<Text>` and `<Heading>`
+components.
+
+Replaces `useTextStyles` hook.
+
+**When to use it:** When you need to style text-based HTML elements.
+
+**Example:**
+
+```tsx
+import { textStyles } from '@autoguru/overdrive';
+
+const MyLabel = ({ children, className }) => {
+	return (
+		<label
+			className={textStyles({
+				as: 'label',
+				className,
+				size: '5',
+				weight: 'semibold',
+				px: '2',
+			})}
+		>
+			{children}
+		</label>
+	);
+};
+```
+
+---
+
+### `resetStyles`
+
+`resetStyles` provides baseline reset styles for a given HTML element (e.g.,
+'div', 'button', 'a').
+
+## Types
+
+To ensure type safety, we provide several utility types for props.
+
+- **`ElementStylesProps`**: The complete set of props accepted by the
+  `elementStyles` function. It extends `StyleProps`.
+- **`TextStylesProps`**: The set of props accepted by the `textStyles` function.
+- **`StyleProps`**: Contains all possible style props available from sprinkles.
+- **`LegacyStyleProps`**: For style props that use the `colour` spelling for
+  backward compatibility.
+- **`LegacyTextColours`**: A type for legacy text colour names.
+
+By using these types, you can ensure that you're only passing valid style
+properties to the functions, leveraging TypeScript's static analysis to catch
+errors early.

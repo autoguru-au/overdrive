@@ -2,9 +2,9 @@ import type { AllHTMLAttributes, ElementType, PropsWithChildren } from 'react';
 import React, { forwardRef } from 'react';
 
 import {
-	componentStyles,
-	type ComponentStylesProps,
-} from '../../styles/componentStyles';
+	elementStyles,
+	type ElementStylesProps,
+} from '../../styles/elementStyles';
 import { OdComponent, TestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 
@@ -22,13 +22,28 @@ export interface BoxProps
 			'as' | 'className' | 'color' | 'height' | 'is' | 'size' | 'width'
 		>,
 		CommonBoxProps,
-		ComponentStylesProps {
+		ElementStylesProps {
 	/** Pass in the HTML element or JSX component that should be rendered for the box */
 	as?: ElementType;
 }
 
 /**
- * Box is a general purpose container with no specific semantics.
+ * The Box component provides powerful responsive style props to a given tag, defaulting to a `<div>` element.
+ * Style props are generated from the design tokens, are fully type-safe, and reuse utility classes.
+ *
+ * Use the `as` prop to control the rendered HTML tag. The box component exposes design system tokens relative to each style
+ * prop.
+ *
+ * @example
+ * <Box as="section" mx="5" py="5" backgroundColor="accent">
+ *   Section content
+ * </Box>
+ *
+ * @example
+ * <Box display={['block', 'flex']} p={['3', '6', '8']}>Responsive padding</Box>
+ *
+ * @example
+ * <Box as={<MyCustomThing />} borderColor="info" borderWidth="1" />
  */
 export const Box = forwardRef<HTMLElement, BoxProps>(
 	(
@@ -155,7 +170,7 @@ export const Box = forwardRef<HTMLElement, BoxProps>(
 	) => {
 		const Component = as;
 
-		const allClasses = componentStyles({
+		const allClasses = elementStyles({
 			as,
 			className,
 

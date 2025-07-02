@@ -1,16 +1,21 @@
-import React from 'react';
+import type { ClassValue as ClassName } from 'clsx';
+import React, { type ComponentProps } from 'react';
 
 import { type Sprinkles } from '../../styles/sprinkles.css';
-import { typographyStyles } from '../../styles/typography.css';
+import {
+	DEFAULT_TEXT_SIZE,
+	DEFAULT_TEXT_WEIGHT,
+	textStyles,
+	type TextTags,
+	type TypographyProps,
+} from '../../styles/typography';
 import type { TestId } from '../../types';
 import { Box } from '../Box/Box';
 
-import type { TextStyleProps } from './textStyles';
-
 type ElementAttributes = React.ComponentPropsWithoutRef<'p'> &
-	Pick<React.ComponentProps<'label'>, 'htmlFor'>;
+	Pick<ComponentProps<'label'>, 'htmlFor'>;
 
-type AdditionalStyleProps = Pick<
+export type AdditionalStyleProps = Pick<
 	Sprinkles,
 	| 'display'
 	| 'm'
@@ -44,11 +49,31 @@ type AdditionalStyleProps = Pick<
 >;
 
 export interface TextProps
-	extends Omit<ElementAttributes, 'color' | 'is'>,
+	extends Omit<ElementAttributes, 'className' | 'is' | keyof TypographyProps>,
 		AdditionalStyleProps,
-		TextStyleProps,
-		TestId {}
+		TypographyProps,
+		TestId {
+	as?: TextTags;
+	className?: ClassName;
+}
 
+/**
+ * The main Overdrive component for consistent typography.
+ * Supports size, color, and weight variations, as well as style props for display, margin and padding.
+ *
+ * @example
+ * <Text>
+ *   This is some text
+ * </Text>
+ *
+ * <Text as="p" my="2">
+ *   This will render as a paragraph with vertical margins
+ * </Text>
+ *
+ * <Text size="5" color="primary" strong>
+ *   Important text
+ * </Text>
+ */
 export const Text = React.forwardRef<HTMLElement, TextProps>(
 	(
 		{
@@ -57,15 +82,15 @@ export const Text = React.forwardRef<HTMLElement, TextProps>(
 			className,
 
 			//style props
-			align = 'left',
+			align,
 			breakWord,
 			color, // modern semantic colour tokens
 			colour, // legacy colours
 			noWrap,
-			size = '4',
-			strong = false,
+			size = DEFAULT_TEXT_SIZE,
+			strong,
 			transform,
-			weight = 'normal',
+			weight = DEFAULT_TEXT_WEIGHT,
 			wrap,
 
 			...props
@@ -73,25 +98,25 @@ export const Text = React.forwardRef<HTMLElement, TextProps>(
 		ref,
 	) => (
 		<Box
+			{...props}
 			as={as}
 			ref={ref}
-			textAlign={align}
-			textWrap={wrap}
 			className={[
-				typographyStyles({
+				textStyles({
+					align,
 					as,
 					breakWord,
 					color,
-					colour: colour ?? (strong ? 'dark' : undefined),
+					colour,
 					noWrap,
 					size,
 					strong,
 					transform,
 					weight,
+					wrap,
 				}),
 				className,
 			]}
-			{...props}
 		>
 			{children}
 		</Box>

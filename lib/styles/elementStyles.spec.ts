@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { componentStyles } from './componentStyles';
+import { elementStyles } from './elementStyles';
 import type { Sprinkles } from './sprinkles.css';
 
 // Test constants
@@ -11,27 +11,27 @@ const MockComponent = () => null;
 const createMockSprinklesProps = (props: Partial<Sprinkles>): Sprinkles =>
 	props as Sprinkles;
 
-describe('componentStyles', () => {
+describe('elementStyles', () => {
 	describe('with no props', () => {
 		it('should return empty string when no props are provided', () => {
-			const result = componentStyles({});
+			const result = elementStyles({});
 			expect(result).toBe('');
 		});
 
 		it('should return empty string when only non-string as prop is provided', () => {
-			const result = componentStyles({ as: MockComponent });
+			const result = elementStyles({ as: MockComponent });
 			expect(result).toBe('');
 		});
 	});
 
 	describe('with className only', () => {
 		it('should return the className when only className is provided', () => {
-			const result = componentStyles({ className: MOCK_CLASS_NAME });
+			const result = elementStyles({ className: MOCK_CLASS_NAME });
 			expect(result).toBe(MOCK_CLASS_NAME);
 		});
 
 		it('should return the className when className and non-string as prop are provided', () => {
-			const result = componentStyles({
+			const result = elementStyles({
 				className: MOCK_CLASS_NAME,
 				as: MockComponent,
 			});
@@ -41,25 +41,25 @@ describe('componentStyles', () => {
 
 	describe('with as prop', () => {
 		it('should return styles with length when as prop is a valid HTML element', () => {
-			const result = componentStyles({ as: 'div' });
+			const result = elementStyles({ as: 'div' });
 			expect(typeof result).toBe('string');
 			expect(result.length).toBeGreaterThan(0);
 		});
 
 		it('should return styles with length when as prop is a known element with reset styles', () => {
-			const result = componentStyles({ as: 'button' });
+			const result = elementStyles({ as: 'button' });
 			expect(typeof result).toBe('string');
 			expect(result.length).toBeGreaterThan(0);
 		});
 
 		it('should return styles with length when as prop is an unknown element', () => {
-			const result = componentStyles({ as: 'custom-element' });
+			const result = elementStyles({ as: 'custom-element' });
 			expect(typeof result).toBe('string');
 			expect(result.length).toBeGreaterThan(0);
 		});
 
 		it('should return only className when as prop is not a string', () => {
-			const result = componentStyles({
+			const result = elementStyles({
 				as: MockComponent,
 				className: 'test-class',
 			});
@@ -69,7 +69,7 @@ describe('componentStyles', () => {
 
 	describe('with style props', () => {
 		it('should return styles with length when padding prop is provided', () => {
-			const result = componentStyles({
+			const result = elementStyles({
 				...createMockSprinklesProps({ padding: '4' }),
 			});
 			expect(typeof result).toBe('string');
@@ -77,7 +77,7 @@ describe('componentStyles', () => {
 		});
 
 		it('should return styles with length when margin prop is provided', () => {
-			const result = componentStyles({
+			const result = elementStyles({
 				...createMockSprinklesProps({ margin: '2' }),
 			});
 			expect(typeof result).toBe('string');
@@ -85,7 +85,7 @@ describe('componentStyles', () => {
 		});
 
 		it('should return styles with length when multiple style props are provided', () => {
-			const result = componentStyles({
+			const result = elementStyles({
 				...createMockSprinklesProps({
 					padding: '4',
 					margin: '2',
@@ -99,7 +99,7 @@ describe('componentStyles', () => {
 
 	describe('with border props', () => {
 		it('should return styles with length when borderColor is provided', () => {
-			const result = componentStyles({
+			const result = elementStyles({
 				as: 'div',
 				...createMockSprinklesProps({ borderColor: 'default' }),
 			});
@@ -108,7 +108,7 @@ describe('componentStyles', () => {
 		});
 
 		it('should return styles with length when borderWidth is provided', () => {
-			const result = componentStyles({
+			const result = elementStyles({
 				as: 'div',
 				...createMockSprinklesProps({ borderWidth: '1' }),
 			});
@@ -117,7 +117,7 @@ describe('componentStyles', () => {
 		});
 
 		it('should return styles with length when borderStyle is provided', () => {
-			const result = componentStyles({
+			const result = elementStyles({
 				as: 'div',
 				...createMockSprinklesProps({ borderStyle: 'solid' }),
 			});
@@ -126,7 +126,7 @@ describe('componentStyles', () => {
 		});
 
 		it('should return styles with length when specific border side props are provided', () => {
-			const result = componentStyles({
+			const result = elementStyles({
 				as: 'div',
 				...createMockSprinklesProps({
 					borderTopColor: 'default',
@@ -138,7 +138,7 @@ describe('componentStyles', () => {
 		});
 
 		it('should return styles with length when legacy border colour props are provided', () => {
-			const result = componentStyles({
+			const result = elementStyles({
 				as: 'div',
 				...createMockSprinklesProps({ borderColour: 'gray' }),
 			});
@@ -147,7 +147,7 @@ describe('componentStyles', () => {
 		});
 
 		it('should return styles with length when borderColourX is provided', () => {
-			const result = componentStyles({
+			const result = elementStyles({
 				as: 'div',
 				...createMockSprinklesProps({ borderColourX: 'light' }),
 			});
@@ -156,7 +156,7 @@ describe('componentStyles', () => {
 		});
 
 		it('should return styles with length when borderColourY is provided', () => {
-			const result = componentStyles({
+			const result = elementStyles({
 				as: 'div',
 				...createMockSprinklesProps({ borderColourY: 'dark' }),
 			});
@@ -165,7 +165,7 @@ describe('componentStyles', () => {
 		});
 
 		it('should return styles with length when specific side borderColour props are provided', () => {
-			const result = componentStyles({
+			const result = elementStyles({
 				as: 'div',
 				...createMockSprinklesProps({
 					borderTopColour: 'primary',
@@ -179,7 +179,7 @@ describe('componentStyles', () => {
 
 	describe('with combined props', () => {
 		it('should return styles with length when as, className, and style props are provided', () => {
-			const result = componentStyles({
+			const result = elementStyles({
 				as: 'div',
 				className: MOCK_CLASS_NAME,
 				...createMockSprinklesProps({
@@ -192,7 +192,7 @@ describe('componentStyles', () => {
 		});
 
 		it('should return styles with length when complex combination of props is provided', () => {
-			const result = componentStyles({
+			const result = elementStyles({
 				as: 'section',
 				className: 'complex-component',
 				...createMockSprinklesProps({
@@ -211,7 +211,7 @@ describe('componentStyles', () => {
 
 	describe('edge cases', () => {
 		it('should handle undefined className', () => {
-			const result = componentStyles({
+			const result = elementStyles({
 				as: 'span',
 				className: undefined,
 			});
@@ -220,7 +220,7 @@ describe('componentStyles', () => {
 		});
 
 		it('should handle null className', () => {
-			const result = componentStyles({
+			const result = elementStyles({
 				as: 'section',
 				className: null,
 			});
@@ -229,7 +229,7 @@ describe('componentStyles', () => {
 		});
 
 		it('should handle array className', () => {
-			const result = componentStyles({
+			const result = elementStyles({
 				as: 'ul',
 				className: ['class1', 'class2'],
 			});
@@ -242,11 +242,11 @@ describe('componentStyles', () => {
 		it('should accept all optional props', () => {
 			// This test verifies that all props are optional by not causing TypeScript errors
 			expect(() => {
-				componentStyles({});
-				componentStyles({ as: 'div' });
-				componentStyles({ className: 'test' });
-				componentStyles(createMockSprinklesProps({ padding: '4' }));
-				componentStyles({
+				elementStyles({});
+				elementStyles({ as: 'div' });
+				elementStyles({ className: 'test' });
+				elementStyles(createMockSprinklesProps({ padding: '4' }));
+				elementStyles({
 					as: 'div',
 					className: 'test',
 					...createMockSprinklesProps({

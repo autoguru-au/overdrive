@@ -64,7 +64,7 @@ exports[`<Tooltip /> > should match snapshot when opened 1`] = `
         role="tooltip"
       >
         <span
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_textAlign_left_mobile__onxwju9f typography_typographyStyles__yhjp331j typography_typographyStyles_as_span__yhjp331m  typography_typographyStyles_weight_normal__yhjp332o typography__yhjp331c sprinkles_fontWeight_normal__onxwju62 typography_typographyStyles_colour_white__yhjp3321 typography__yhjp33s typography_color_white__yhjp336 typography_typographyStyles_size_2__yhjp332c typography__yhjp3311 sprinkles_fontSize_2__onxwju5u sprinkles_lineHeight_2__onxwju5l"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2__onxwju5u sprinkles_lineHeight_2__onxwju5l sprinkles_fontWeight_normal__onxwju62 typography_color_white__yhjp336"
         >
           tooltip content
         </span>

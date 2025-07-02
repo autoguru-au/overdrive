@@ -10,9 +10,9 @@ import {
 
 import { useDeepCompareMemo } from '../../../hooks';
 import {
-	componentStyles,
-	type ComponentStylesProps,
-} from '../../../styles/componentStyles';
+	elementStyles,
+	type ElementStylesProps,
+} from '../../../styles/elementStyles';
 import type { Sprinkles } from '../../../styles/sprinkles.css';
 import { dataAttrs } from '../../../utils/dataAttrs';
 import { filterPropsWithStyles } from '../../../utils/sprinkles';
@@ -25,7 +25,7 @@ const LIST_TAGS = ['ul', 'ol'] as ReadonlyArray<keyof JSX.IntrinsicElements>;
 const OD_COMPONENT_ATTR = 'od-component';
 
 export type BoxStylesProps<E extends ElementType = 'div'> = AsPolyProp<E> &
-	Pick<ComponentStylesProps, 'className'> &
+	Pick<ElementStylesProps, 'className'> &
 	Sprinkles;
 
 export type BoxStylesReturn<P extends object> = [string, P];
@@ -101,7 +101,7 @@ export const useBox = <E extends ElementType = 'div'>({
 	// deep compare is mainly to attempt to stop rerenders arrising from responsive style props
 	const { className, baseProps } = useDeepCompareMemo(() => {
 		const { sprinklesProps, baseProps } = filterPropsWithStyles(props);
-		const className = componentStyles({
+		const className = elementStyles({
 			as,
 			className: _className,
 			...sprinklesProps,

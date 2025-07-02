@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import React, { ComponentProps, isValidElement, type ReactNode } from 'react';
 
 import { Box, type BoxProps } from '../Box/Box';
@@ -32,21 +31,24 @@ export const BulletText = ({
 		) : (
 			<Box
 				position="relative"
-				flexShrink={0}
+				flexShrink="0"
 				display="flex"
 				alignItems="center"
 				justifyContent="center"
-				className={clsx(styles.bullet, {
-					[styles.primary]: variant === 'primary',
-					[styles.secondary]: variant !== 'primary',
-				})}
+				className={[
+					styles.bullet,
+					{
+						[styles.primary]: variant === 'primary',
+						[styles.secondary]: variant !== 'primary',
+					},
+				]}
 				borderRadius="pill"
 			>
 				<Text
-					className={clsx({
+					className={{
 						[styles.primaryText]: variant === 'primary',
 						[styles.secondaryText]: variant !== 'primary',
-					})}
+					}}
 					as="span"
 					size="2"
 				>
@@ -54,7 +56,7 @@ export const BulletText = ({
 				</Text>
 			</Box>
 		)}
-		<Box flexGrow={1}>
+		<Box flexGrow="1">
 			<Text as="span" size="4" display="block">
 				{children}
 			</Text>
