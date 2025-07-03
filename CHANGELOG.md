@@ -4,7 +4,7 @@
 
 ### Minor Changes
 
-)(8abb8a5)
+(8abb8a5)
 
 - Inline, Stack and Anchor: refactored to use flexbox layout
 - Text and Heading: uses refactored typography and `textStyles`
