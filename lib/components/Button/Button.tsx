@@ -18,8 +18,8 @@ import {
 	type ReactElement,
 } from 'react';
 
-import { componentStyles } from '../../styles';
-import { typographyStyles } from '../../styles/typography.css';
+import { elementStyles } from '../../styles';
+import { textStyles } from '../../styles/typography';
 import type { TextFontWeight, TextSizeScale } from '../../themes';
 import type { TestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
@@ -42,7 +42,17 @@ const defaultEnglish = {
 type TextContent = keyof typeof defaultEnglish;
 
 export interface ButtonProps
-	extends Pick<ButtonPrimitive, 'id' | 'onClick' | 'type' | 'className'>,
+	extends Pick<
+			ButtonPrimitive,
+			| 'id'
+			| 'onBlur'
+			| 'onClick'
+			| 'onFocus'
+			| 'onMouseEnter'
+			| 'onMouseLeave'
+			| 'type'
+			| 'className'
+		>,
 		Pick<AriaAttributes, 'aria-label'>,
 		StyledButtonProps,
 		TestId {
@@ -51,7 +61,7 @@ export interface ButtonProps
 	 * Disabling the button will prevent it from receiving keyboard focus or click events
 	 */
 	disabled?: boolean;
-	is?: ElementType | ReactElement;
+	as?: ElementType | ReactElement;
 	isLoading?: boolean;
 	isFullWidth?: boolean;
 	/**
@@ -97,13 +107,17 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			className = '',
 			disabled = false,
 			id,
-			is: Component = 'button',
+			as: Component = 'button',
 			withDoubleClicks = false,
 			isLoading = false,
 			isFullWidth = false,
 			lang,
 			minimal = false,
+			onBlur,
 			onClick: incomingOnClick,
+			onFocus,
+			onMouseEnter,
+			onMouseLeave,
 			rounded = false,
 			size = 'medium',
 			type = 'button',
@@ -152,11 +166,15 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 		const props: ButtonPrimitive & { 'data-loading'?: string } = {
 			type: Component === 'button' ? type : undefined,
 			id,
+			onBlur,
 			onClick,
+			onFocus,
+			onMouseEnter,
+			onMouseLeave,
 			disabled: disabled || isLoading,
 			'aria-label': isLoading ? language.loading : ariaLabel,
 			className: clsx(
-				componentStyles({
+				elementStyles({
 					as: Component,
 					display: 'inline-block',
 					overflow: 'hidden',
@@ -168,7 +186,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 					width: isFullWidth ? 'full' : undefined,
 					pointerEvents: functionallyDisabled ? 'none' : undefined,
 				}),
-				typographyStyles({
+				textStyles({
 					colour: 'white',
 					weight: fontWeight[size],
 					size: fontSize[size],

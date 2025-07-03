@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 
 import { Stack } from '../Stack/Stack';
@@ -6,7 +6,7 @@ import { Stack } from '../Stack/Stack';
 import { ProgressBar } from './ProgressBar';
 
 export default {
-	title: 'Components/Progress/Progress Bar',
+	title: 'Primitives/Indicators/Progress Bar',
 	component: ProgressBar,
 } satisfies Meta<typeof ProgressBar>;
 

@@ -47,7 +47,12 @@ const hasBorderRelatedProp = (props: Sprinkles) =>
  * Returns the reset styles based on the `as` prop tag name passed in.
  * A wrapper around `resetVariants` recipe to allow any string to be passed in
  */
-export const resetStyles = (element: string, options?: ResetPropsWithoutAs) => {
+export const resetStyles = (
+	element: unknown,
+	options?: ResetPropsWithoutAs,
+) => {
+	if (typeof element !== 'string') return '';
+
 	const as = (
 		element in elementReset ? element : undefined
 	) as ResetVariantProps['as'];
@@ -57,7 +62,7 @@ export const resetStyles = (element: string, options?: ResetPropsWithoutAs) => {
 	});
 };
 
-export interface ComponentStylesProps extends Sprinkles {
+export interface ElementStylesProps extends Sprinkles {
 	as?: string | ElementType | ReactElement;
 	className?: ClassName;
 }
@@ -67,21 +72,17 @@ export interface ComponentStylesProps extends Sprinkles {
  * Allows `as` prop that is JSX or other React element to safely be passed in so it does not have to be filtered out.
  * Includes logic for adding border reset styles when any border props are used.
  *
- * @example <svg className={componentStyles({ as: 'svg', padding: '1', size: '4' })} ... />
- * @example <div className={componentStyles({ as: 'div', borderTopWidth: '1', borderTopColor: 'soft' })}
+ * @example <svg className={elementStyles({ as: 'svg', padding: '1', size: '4' })} ... />
+ * @example <div className={elementStyles({ borderTopWidth: '1', borderTopColor: 'soft' })}
  * // ^ this will trigger the border reset ^
  */
-export const componentStyles = ({
+export const elementStyles = ({
 	as,
 	className,
 	...styleProps
-}: ComponentStylesProps) => {
-	if (typeof as !== 'string') return clsx(className);
-
-	const hasBorder = hasBorderRelatedProp(styleProps);
-	return clsx(
-		resetStyles(as, { hasBorder }),
+}: ElementStylesProps) =>
+	clsx(
+		resetStyles(as, { hasBorder: hasBorderRelatedProp(styleProps) }),
 		sprinkles(styleProps),
 		className,
 	);
-};

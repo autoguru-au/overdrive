@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 
 import { Button } from '../Button/Button';
@@ -8,7 +8,7 @@ import { Text } from '../Text/Text';
 import { TextContainer } from './TextContainer';
 
 const meta = {
-	title: 'Components/Text Container',
+	title: 'Content/Text Container',
 	component: TextContainer,
 	args: {
 		children: (

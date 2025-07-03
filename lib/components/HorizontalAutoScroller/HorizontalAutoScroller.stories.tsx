@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import Rand from 'rand-seed';
 import React, { type ComponentProps } from 'react';
 

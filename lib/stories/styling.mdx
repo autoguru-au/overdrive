@@ -1,0 +1,347 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Styling" tags={['new']} />
+
+# Styling
+
+This document provides guidelines for using the custom styling functions
+available in Overdrive. These functions are built on vanilla-extract `sprinkles`
+and provide type-safe, efficient build-time styling.
+
+These utilities are intended for scenarios where HTML elements are being styled
+directly in JSX, rather than using our `<Box>`, `<Text>` or other primitives.
+
+- [Styling Functions](#styling-functions)
+- [Types](#types)
+- [Style Props](#style-props)
+
+### Transition
+
+The new styling functions replace the older `useBoxStyles` and `useTextStyles`
+hooks. For a smooth transition they remain aliased:
+
+- `useBoxStyles` = `elementStyles`.
+- `useTextStyles` = `textStyles`.
+
+## Styling Functions
+
+- [css](#css)
+- [elementStyles](#elementstyles)
+- [typography](#typography)
+- [textStyles](#textstyles)
+- [resetStyles](#resetstyles)
+
+### `css`
+
+The `css` function is the most fundamental of the styling utilities, generated
+by "sprinkles". It provides access to the full set of atomic and responsive
+style props. Both responsive arrays and object notations are supported for most
+style properties. Any properties which are not responsive can be reconfigured
+almost instantly.
+
+**When to use it:** Anywhere, any time, to apply sprinkles utility classes
+directly to an element. It is lightweight and efficient.
+
+**Example:**
+
+```tsx
+import { css } from '@autoguru/overdrive';
+
+const MyComponent = ({ children }) => (
+	<LocalComponent>
+		<div
+			className={css({
+				// responsive array notation (padding shorthand)
+				p: ['2', '4', '6', '8'],
+				// responsive object notation (marginX shorthand)
+				mx: { mobile: '3', tablet: '5', desktop: '8' },
+				bg: 'soft',
+				fg: 'info',
+				borderColor: 'neutral',
+				borderRadius: 'sm',
+			})}
+		>
+			{children}
+		</div>
+	</LocalComponent>
+);
+```
+
+### `elementStyles`
+
+`elementStyles` is a comprehensive styling function that combines baseline
+element reset styles with all style props. This styling logic underpins the
+`<Box>` component.
+
+Replaces the `useBoxStyles` hook.
+
+**When to use it:** When you need to apply style props (sprinkles) as well as
+element reset styles.
+
+**Example:**
+
+```tsx
+import { elementStyles } from '@autoguru/overdrive';
+
+const MyCard = ({ children, className }) => {
+	return (
+		<div
+			className={elementStyles({
+				// `as` prop defaults to `div`
+				// as: 'div',
+				className,
+				p: '4',
+				borderRadius: '2',
+				backgroundColor: 'white',
+				borderWidth: '1',
+				borderColor: 'neutral',
+				boxShadow: '1',
+			})}
+		>
+			{children}
+		</div>
+	);
+};
+```
+
+---
+
+### `typography`
+
+The `typography` function is a more granular version of `textStyles`. It
+provides only the typography-specific style props from `vanilla-extract`
+_without_ the element reset styles.
+
+**When to use it:** When you need to apply only typographic styles and want to
+manage element resets yourself, or when no reset is needed.
+
+**Example:**
+
+```tsx
+import { typography } from '@autoguru/overdrive';
+
+const SimpleText = ({ children }) => {
+	return (
+		<span className={typography({ size: '4', weight: 'semibold' })}>
+			{children}
+		</span>
+	);
+};
+```
+
+---
+
+### `textStyles`
+
+`textStyles` is a specialized function for typography. It combines element reset
+styles with a subset of style props suitable for text elements like labels,
+paragraphs, and headings. It's the foundation for our `<Text>` and `<Heading>`
+components.
+
+Replaces `useTextStyles` hook.
+
+**When to use it:** When you need to style text-based HTML elements.
+
+**Example:**
+
+```tsx
+import { textStyles } from '@autoguru/overdrive';
+
+const MyLabel = ({ children, className }) => {
+	return (
+		<label
+			className={textStyles({
+				as: 'label',
+				className,
+				size: '5',
+				weight: 'semibold',
+				px: '2',
+			})}
+		>
+			{children}
+		</label>
+	);
+};
+```
+
+---
+
+### `resetStyles`
+
+`resetStyles` provides baseline reset styles for a given HTML element (e.g.,
+'div', 'button', 'a').
+
+## Types
+
+To ensure type safety, we provide several utility types for props.
+
+- **`ElementStylesProps`**: The complete set of props accepted by the
+  `elementStyles` function. It extends `StyleProps`.
+- **`TextStylesProps`**: The set of props accepted by the `textStyles` function.
+- **`StyleProps`**: Contains all possible style props available from sprinkles.
+- **`LegacyStyleProps`**: For style props that use the `colour` spelling for
+  backward compatibility.
+- **`LegacyTextColours`**: A type for legacy text colour names.
+
+By using these types, you can ensure that you're only passing valid style
+properties to the functions, leveraging TypeScript's static analysis to catch
+errors early.
+
+## Style Props
+
+The following style props are available through the "sprinkles" and can be used
+with `css` and `elementStyles`. A subset of props are available with
+`textStyles` and `typography` functions.
+
+Many props support responsive values using array notation
+`['mobile', 'tablet', 'desktop']` or object notation
+`{ mobile: 'value', tablet: 'value', desktop: 'value' }`. If a particular prop
+needs to be converted to responsive, please raise a GitHub issue.
+
+_Note_: for props that are numerical, it is advised to use a string value such
+as `'0'` so that it is typesafe.
+
+### Spacing
+
+Space tokens: (`"0"`, `"1"`, `"2"`, `"3"`, `"4"`, `"5"`, `"6"`,`"7"`, `"8"`,
+`"9"`)
+
+**Padding:**
+
+- **`padding`** / **`p`** - Padding (all sides)
+- **`paddingTop`** / **`pt`** - Padding top
+- **`paddingRight`** / **`pr`** - Padding right
+- **`paddingBottom`** / **`pb`** - Padding bottom
+- **`paddingLeft`** / **`pl`** - Padding left
+- **`paddingX`** / **`px`** - Padding left + right
+- **`paddingY`** / **`py`** - Padding top + bottom
+
+**Margin:**
+
+- **`margin`** / **`m`** - Margin (all sides)
+- **`marginTop`** / **`mt`** - Margin top
+- **`marginRight`** / **`mr`** - Margin right
+- **`marginBottom`** / **`mb`** - Margin bottom
+- **`marginLeft`** / **`ml`** - Margin left
+- **`marginX`** / **`mx`** - Margin left + right
+- **`marginY`** / **`my`** - Margin top + bottom
+
+### Layout/Positioning
+
+- **`display`** - display property (`none`, `block`, `contents`, `flex`, `grid`,
+  `inline`, `inlineBlock`, `inlineFlex`)
+- **`position`** - position property (`static`, `relative`, `absolute`, `fixed`,
+  `sticky`)
+- **`overflow`** - overflow property (`auto`, `hidden`, `visible`)
+- **`overflowX`** - Coverflow-x property (`auto`, `scroll`, `hidden`)
+- **`overflowY`** - overflow-y property (`auto`, `scroll`, `hidden`)
+
+### Flexbox & Grid
+
+- **`flexDirection`** - flex-direction (`row`, `column`, `row-reverse`,
+  `column-reverse`)
+- **`flexWrap`** - flex-wrap (`nowrap`, `wrap`, `wrap-reverse`)
+- **`flexGrow`** - flex-grow (`"0"`, `"1"`)
+- **`flexShrink`** - flex-shrink (`"0"`, `"1"`)
+- **`placeItems`** - Shorthand for `justifyContent` and `alignItems`
+- **`alignItems`** - align-items (`start`, `center`, `end`, `stretch`,
+  `baseline`)
+- **`alignSelf`** - align-self (`start`, `center`, `end`, `stretch`)
+- **`alignContent`** - align-content (includes `space-between`, `space-around`,
+  `space-evenly`)
+- **`justifyContent`** - justify-content (`start`, `center`, `end`,
+  `space-between`, `space-around`, `space-evenly`)
+- **`order`** - order (`"0"`, `"1"`, `"2"`, `"3"`, `"4"`)
+- **`gap`** - gap property for flex/grid layouts (space tokens)
+- **`columnGap`** - column-gap property
+- **`rowGap`** - row-gap property
+- **`gridAutoColumns`** - grid-auto-columns (`auto`, `1fr`, `min-content`,
+  `max-content`)
+- **`gridAutoRows`** - grid-auto-rows (`auto`, `1fr`)
+- **`gridAutoFlow`** - grid-auto-flow (`row`, `column`, `row dense`,
+  `column dense`)
+- **`gridColumns`** - grid-template-columns (`"1"`, `auto`)
+
+### Sizing
+
+- **`size`** - Shorthand for `width` and `height` (space tokens)
+- **`width`** - (space tokens, `fit-content`, `max-content`, `min-content`,
+  `full`, `auto`)
+- **`height`** - (space tokens, `fit-content`, `max-content`, `min-content`,
+  `full`, `auto`)
+- **`minWidth`** - min-width property (`auto`, `fit-content`)
+- **`maxWidth`** - max-width property (`small`, `medium`, `large`,
+  `fit-content`, `max-content`)
+
+### Typography
+
+Size tokens: (`"0"`, `"1"`, `"2"`, `"3"`, `"4"`, `"5"`, `"6"`,`"7"`, `"8"`,
+`"9"`)
+
+- **`text`** - Shorthand for `fontSize` and `lineHeight`
+- **`fontSize`** - Font size using design tokens
+- **`fontWeight`** - Font weight using design tokens (`normal`, `semibold`,
+  `bold`)
+- **`lineHeight`** - Line height using design tokens
+- **`textAlign`** - Text alignment (`left`, `center`, `right`)
+- **`textTransform`** - Text transform (`capitalize`, `lowercase`, `uppercase`)
+- **`textWrap`** - Text wrapping (`balance`, `pretty`, `stable`, `nowrap`)
+- **`wordBreak`** - Word breaking (`break-all`, `break-word`, `keep-all`)
+
+### Colors
+
+- **`color`** / **`fg`** - Text colour using semantic tokens
+- **`backgroundColor`** / **`bg`** - Background colour using semantic tokens
+
+- **`colour`** - Text color using legacy intentional colorset
+- **`backgroundColour`** - Background colour using legacy intentional colorset
+
+### Borders
+
+**Border Width:**
+
+- **`borderWidth`** - Border width (`none`, `"1"`, `"2"`, `"3"`)
+- **`borderWidthX`** - Border width left + right
+- **`borderWidthY`** - Border width top + bottom
+- **`borderTopWidth`** / **`borderRightWidtht`** / **`borderBottomWidth`** /
+  **`borderLeftWidth`**
+
+**Border Color:**
+
+- **`borderColor`** - Border colour (all sides)
+- **`borderColorX`** - Border colour left + right
+- **`borderColorY`** - Border colour top + bottom
+- **`borderTopColor`** / **`borderRightColor`** / **`borderBottomColor`** /
+  **`borderLeftColor`**
+
+- **`borderColour`** - Border colour using legacy colour mapping (all sides)
+- **`borderColourX`** - Border colour left + right using legacy mapping
+- **`borderColourY`** - Border colour top + bottom using legacy mapping
+- **`borderTopColour`** / **`borderRightColour`** / **`borderBottomColour`** /
+  **`borderLeftColour`**
+
+**Border Style:**
+
+- **`borderStyle`** - Border style (`none`, `solid`)
+- **`borderTopStyle`** / **`borderRightStyle`** / **`borderBottomStyle`** /
+  **`borderLeftStyle`**
+
+**Border Radius:**
+
+- **`borderRadius`** - Border radius using design tokens (`none`, `min`, `sm`,
+  `md`, `lg`, `xl`, `2xl`, `"1"`, `pill`, `full`)
+
+### Visual Effects
+
+- **`boxShadow`** - Box shadow from elevation tokens (`none`, `"1"`, `"2"`,
+  `"3"`, `"4"`, `"5"`)
+- **`opacity`** - CSS opacity property (`"0"`, `"1"`)
+
+### Interaction
+
+- **`pointerEvents`** - CSS pointer-events property (`auto`, `none`)
+- **`userSelect`** - CSS user-select property (`auto`, `text`, `none`)
+
+### Special
+
+- **`useVar`** - Custom property to apply the gap css var

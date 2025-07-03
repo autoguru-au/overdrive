@@ -1,5 +1,5 @@
 import { CheckIcon } from '@autoguru/icons';
-import { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import * as React from 'react';
 
 import { Icon } from '../Icon/Icon';
@@ -7,7 +7,7 @@ import { Icon } from '../Icon/Icon';
 import { BulletText } from './BulletText';
 
 const meta = {
-	title: 'Components/Bullet Text',
+	title: 'Content/Bullet Text',
 	component: BulletText,
 	args: {
 		as: 'div',

@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 
 import { Text } from '../Text/Text';
@@ -7,7 +7,7 @@ import { Bullet } from './Bullet';
 import { BulletList } from './BulletList';
 
 const meta = {
-	title: 'Primatives/Bullet List',
+	title: 'Content/Bullet List',
 	component: BulletList,
 	decorators: [
 		(Story) => (

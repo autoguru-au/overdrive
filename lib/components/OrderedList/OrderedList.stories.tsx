@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 
 import { Text } from '../Text/Text';
@@ -6,7 +6,7 @@ import { Text } from '../Text/Text';
 import { OrderedList } from './OrderedList';
 
 export default {
-	title: 'Primatives/Ordered List',
+	title: 'Content/Ordered List',
 	component: OrderedList,
 } satisfies Meta<typeof OrderedList>;
 

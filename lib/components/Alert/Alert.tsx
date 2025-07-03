@@ -7,8 +7,7 @@ import {
 	WindowCloseIcon,
 } from '@autoguru/icons';
 import clsx from 'clsx';
-import * as React from 'react';
-import { ComponentProps, FunctionComponent, ReactNode } from 'react';
+import React, { type ComponentProps, type ReactNode } from 'react';
 
 import { sprinkles } from '../../styles';
 import { sprinklesLegacyText } from '../../styles/typography.css';
@@ -23,7 +22,7 @@ import * as styles from './Alert.css';
 type IntentStripeProps = ComponentProps<typeof IntentStripe>;
 type Intent = IntentStripeProps['intent'];
 
-export interface Props extends IntentStripeProps {
+export interface AlertProps extends IntentStripeProps {
 	children?: ReactNode;
 	className?: string;
 	inline?: boolean;
@@ -39,14 +38,14 @@ const iconMapForIntent: Record<Intent, IconType> = {
 	warning: AlertIcon,
 };
 
-export const Alert: FunctionComponent<Props> = ({
+export const Alert = ({
 	children,
 	className = '',
 	intent = 'success',
 	inline = false,
 	onRequestClose,
 	dismissible = typeof onRequestClose === 'function',
-}) => {
+}: AlertProps) => {
 	return (
 		<Box
 			className={clsx(className, sprinklesLegacyText({ color: intent }), {

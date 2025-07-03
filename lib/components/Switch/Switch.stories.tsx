@@ -9,7 +9,7 @@ import { Switch } from './Switch';
 import { storyLabel } from './Switch.css';
 
 const meta: Meta<typeof Switch> = {
-	title: 'Primatives/Switch',
+	title: 'Forms & Input Fields/Switch',
 	component: Switch,
 	tags: [],
 	args: {

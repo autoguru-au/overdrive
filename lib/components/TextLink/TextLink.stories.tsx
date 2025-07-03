@@ -1,5 +1,5 @@
 import { ArrowRightIcon, ChevronRightIcon } from '@autoguru/icons';
-import { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { type ComponentProps } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 
@@ -22,7 +22,7 @@ const transformOptions: Array<ComponentProps<typeof Text>['transform']> = [
 ];
 
 const meta = {
-	title: 'Primatives/Text Link',
+	title: 'Content/Text Link',
 	component: TextLink,
 	decorators: [
 		(Story) => (

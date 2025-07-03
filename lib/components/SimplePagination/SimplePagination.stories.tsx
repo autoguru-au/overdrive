@@ -7,7 +7,7 @@ import { Box } from '../Box/Box';
 import { SimplePagination } from './SimplePagination';
 
 const meta = {
-	title: 'Primatives/Simple Pagination',
+	title: 'Components/Simple Pagination',
 	component: SimplePagination,
 	decorators: [
 		(Story) => (

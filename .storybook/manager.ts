@@ -40,6 +40,26 @@ addons.setConfig({
 				toolbar: true,
 			},
 		},
+		{
+			tags: 'review',
+			badge: {
+				text: '🍂 Reviewing',
+				style: {
+					backgroundColor: '#e0d5cbff',
+					color: '#000',
+				},
+				tooltip: 'This component is under review for retirement',
+			},
+			display: {
+				sidebar: [
+					{
+						type: 'component',
+						skipInherited: true,
+					},
+				],
+				toolbar: true,
+			},
+		},
 		...defaultConfig,
 	] satisfies TagBadgeParameters,
 });

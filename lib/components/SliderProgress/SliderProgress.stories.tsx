@@ -8,7 +8,7 @@ import { Box } from '../Box/Box';
 import { SliderProgress } from './SliderProgress';
 
 const meta = {
-	title: 'Components/Progress/Slider Progress',
+	title: 'Primitives/Indicators/Slider Progress',
 	component: SliderProgress,
 	argTypes: {
 		backgroundColour: boxArgTypes.backgroundColour,

@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 
 import { boxArgTypes } from '../../stories/shared/argTypes-box';
@@ -6,7 +6,7 @@ import { boxArgTypes } from '../../stories/shared/argTypes-box';
 import { LoadingBox } from './LoadingBox';
 
 export default {
-	title: 'Components/Loading Box',
+	title: 'Primitives/Indicators/Loading Box',
 	component: LoadingBox,
 	decorators: [
 		(story) => (

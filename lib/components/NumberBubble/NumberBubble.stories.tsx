@@ -1,11 +1,11 @@
-import { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { NumberBubble } from './NumberBubble';
 
 type Story = StoryObj<typeof NumberBubble>;
 
 export default {
-	title: 'Components/Number Bubble',
+	title: 'Content/Number Bubble',
 	component: NumberBubble,
 } satisfies Meta<typeof NumberBubble>;
 

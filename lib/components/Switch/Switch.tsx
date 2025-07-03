@@ -2,10 +2,10 @@ import { useToggleState } from '@react-stately/toggle';
 import React, { useRef } from 'react';
 import { useSwitch, useFocusRing, type AriaSwitchProps } from 'react-aria';
 
+import { textStyles } from '../../styles/typography';
 import type { TestId } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box';
-import { textStyles } from '../Text/textStyles';
 import { VisuallyHidden } from '../VisuallyHidden';
 
 import * as styles from './Switch.css';

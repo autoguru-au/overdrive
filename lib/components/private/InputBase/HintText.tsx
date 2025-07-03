@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React, { type FunctionComponent, type ReactNode } from 'react';
 
-import { componentStyles } from '../../../styles';
+import { elementStyles } from '../../../styles';
 import { Text } from '../../Text/Text';
 
 import * as styles from './HintText.css';
@@ -32,7 +32,7 @@ export const HintText: FunctionComponent<HintTextProps> = ({
 			size={size === 'large' ? '4' : '2'}
 			colour="unset"
 			className={clsx(
-				componentStyles({ as: 'p', mt: '1' }),
+				elementStyles({ as: 'p', mt: '1' }),
 				styles.hintText,
 				className,
 			)}

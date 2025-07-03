@@ -6,7 +6,8 @@ import { Button } from '../Button/Button';
 import { Actions } from './Actions';
 
 const meta = {
-	title: 'Components/Actions',
+	title: 'Layout/Actions',
+	tags: ['review'],
 	component: Actions,
 	decorators: [
 		(story) => (

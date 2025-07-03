@@ -1,10 +1,10 @@
-import { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import * as React from 'react';
 
 import { LinearProgressIndicator } from './LinearProgressIndicator';
 
 export default {
-	title: 'Components/Progress/Linear',
+	title: 'Primitives/Indicators/Linear Progress',
 	component: LinearProgressIndicator,
 	decorators: [
 		(story) => (

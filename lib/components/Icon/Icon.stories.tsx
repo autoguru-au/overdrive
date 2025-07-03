@@ -1,5 +1,5 @@
 import { CalendarIcon } from '@autoguru/icons';
-import { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { argTypesExampleIcons } from '../../stories/shared/argTypes';
 
@@ -8,7 +8,7 @@ import { Icon } from './Icon';
 type Story = StoryObj<typeof Icon>;
 
 export default {
-	title: 'Primatives/Icon',
+	title: 'Primitives/Icon',
 	component: Icon,
 	args: {
 		icon: undefined,

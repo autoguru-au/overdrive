@@ -6,7 +6,7 @@ import { breakpoints } from '../themes/makeTheme';
 import { overdriveTokens as tokens } from '../themes/theme.css';
 import { arrayFromKeys } from '../utils/object';
 
-import { cssLayerUtil } from './layers.css';
+import { cssLayerStyleprops } from './layers.css';
 import { gapVar } from './vars.css';
 
 const { space } = tokens;
@@ -104,21 +104,9 @@ const mappedBorderTopColours = mapValues(borderColours, (borderTopColor) => ({
 
 const mappedColours = mapValues(colours, (color) => ({ color }));
 
-// --- VALUE ARRAYS ---
-// (Useful for Storybook controls, etc.)
-export const valueArrays = {
-	borderColors: arrayFromKeys(borderColors),
-	gapSizesWithVar: arrayFromKeys(gapSizesWithVar),
-	intentBackgroundColoursStandard: arrayFromKeys(
-		intentBackgroundColoursStandard,
-	),
-	intentBorderColours: arrayFromKeys(intentBorderColours),
-	intentForegroundColours: arrayFromKeys(intentForegroundColours),
-};
-
 // --- BASE SPRINKLES (NON-RESPONSIVE) ---
 const baseProperties = defineProperties({
-	'@layer': cssLayerUtil,
+	'@layer': cssLayerStyleprops,
 	properties: {
 		// Borders
 		borderBottomColor: borderColors,
@@ -207,7 +195,7 @@ export const responsiveConditions = {
 };
 
 const responsiveProperties = defineProperties({
-	'@layer': cssLayerUtil,
+	'@layer': cssLayerStyleprops,
 	conditions: responsiveConditions,
 	defaultCondition: 'mobile',
 	responsiveArray: ['mobile', 'tablet', 'desktop', 'largeDesktop'],
@@ -353,3 +341,21 @@ export type SprinklesLegacyColours = Pick<
 	| 'borderTopColour'
 	| 'colour'
 >;
+
+// --- VALUE ARRAYS ---
+// (Useful for Storybook controls, etc.)
+export const valueArrays = {
+	alignItems: arrayFromKeys(responsiveProperties.styles.alignItems.values),
+	borderColors: arrayFromKeys(borderColors),
+	gapSizesWithVar: arrayFromKeys(gapSizesWithVar),
+	intentBackgroundColoursStandard: arrayFromKeys(
+		intentBackgroundColoursStandard,
+	),
+	intentBorderColours: arrayFromKeys(intentBorderColours),
+	intentForegroundColours: arrayFromKeys(intentForegroundColours),
+	justifyContent: arrayFromKeys(
+		responsiveProperties.styles.justifyContent.values,
+	),
+	spaceWithNone: arrayFromKeys(space),
+	width: arrayFromKeys(responsiveProperties.styles.width.values),
+};

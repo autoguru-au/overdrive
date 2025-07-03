@@ -73,7 +73,7 @@ describe('<Anchor />', () => {
 	describe('when custom component', () => {
 		it('should add Button dom element if button component is passed down to it', () => {
 			const { container } = render(
-				<Anchor className="anchor-class" is={<Button />}>
+				<Anchor className="anchor-class" as={<Button />}>
 					Hello World!
 				</Anchor>,
 			);
@@ -82,7 +82,7 @@ describe('<Anchor />', () => {
 
 		it('should match snapshot with label, icon custom component', () => {
 			const { container } = render(
-				<Anchor icon={TestIcon} is={<Button />}>
+				<Anchor icon={TestIcon} as={<Button />}>
 					Hello World!
 				</Anchor>,
 			);

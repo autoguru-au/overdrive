@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { type ComponentProps } from 'react';
 
 import { Badge } from './Badge';
@@ -14,7 +14,7 @@ const colours: ReadonlyArray<ComponentProps<typeof Badge>['colour']> = [
 ] as const;
 
 export default {
-	title: 'Components/Badge',
+	title: 'Content/Badge',
 	component: Badge,
 } satisfies Meta<typeof Badge>;
 

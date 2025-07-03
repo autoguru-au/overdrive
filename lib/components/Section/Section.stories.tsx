@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { type ComponentProps } from 'react';
 
 import { boxArgTypes } from '../../stories/shared/argTypes-box';
@@ -8,7 +8,7 @@ import { Section } from './Section';
 
 export default {
 	title: 'Layout/Section',
-	tags: ['polymorphic'],
+	tags: ['review'],
 	component: Section,
 	argTypes: {
 		paddingX: boxArgTypes.paddingX,

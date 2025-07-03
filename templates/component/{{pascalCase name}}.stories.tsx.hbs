@@ -1,0 +1,16 @@
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import React from 'react';
+
+import { {{pascalCase name}} } from './{{pascalCase name}}';
+
+const meta = {
+  title: '{{pascalCase name}}',
+  component: {{pascalCase name}},
+  args: {},
+} satisfies Meta<typeof {{pascalCase name}}>;
+
+export default meta;
+
+type Story = StoryObj<typeof {{pascalCase name}}>;
+
+export const Standard: Story = {};

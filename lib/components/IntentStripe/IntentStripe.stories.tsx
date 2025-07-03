@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { type ComponentProps } from 'react';
 
 import { Box } from '../Box/Box';
@@ -7,7 +7,7 @@ import { IntentStripe } from './IntentStripe';
 
 type Intent = ComponentProps<typeof IntentStripe>['intent'];
 export default {
-	title: 'Components/Intent Stripe',
+	title: 'Content/Intent Stripe',
 	component: IntentStripe,
 	argTypes: {
 		intent: {

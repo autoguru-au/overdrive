@@ -1,28 +1,21 @@
 import clsx from 'clsx';
-import * as React from 'react';
-import { ComponentProps, FunctionComponent, useMemo } from 'react';
+import React, { type FunctionComponent, useMemo } from 'react';
 
 import { sprinkles } from '../../styles';
-import { Box } from '../Box/Box';
-import { Text } from '../Text/Text';
+import { Box, type BoxProps } from '../Box/Box';
+import { Text, type TextProps } from '../Text/Text';
 
 import * as styles from './TextBubble.css';
 
 export interface TextBubbleProps
-	extends Omit<
-		ComponentProps<typeof Box>,
-		'borderRadius' | 'position' | 'padding'
-	> {
+	extends Omit<BoxProps, 'borderRadius' | 'position' | 'padding'> {
 	label: string;
 	rawNumbers?: boolean;
-	textColour?: ComponentProps<typeof Text>['colour'];
+	textColour?: TextProps['colour'];
 }
 
 type BubbleSize = 'SMALL' | 'MEDIUM' | 'LARGE' | 'X_LARGE';
-const valuePaddingMap: Record<
-	BubbleSize,
-	ComponentProps<typeof Box>['padding']
-> = {
+const valuePaddingMap: Record<BubbleSize, BoxProps['padding']> = {
 	SMALL: '3',
 	MEDIUM: '4',
 	LARGE: '5',

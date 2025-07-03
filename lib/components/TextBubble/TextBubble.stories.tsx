@@ -1,11 +1,11 @@
-import { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { TextBubble } from './TextBubble';
 
 type Story = StoryObj<typeof TextBubble>;
 
 export default {
-	title: 'Components/Text Bubble',
+	title: 'Content/Text Bubble',
 	component: TextBubble,
 } satisfies Meta<typeof TextBubble>;
 

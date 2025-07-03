@@ -10,7 +10,7 @@ import { Inline } from '../Inline/Inline';
 import { Button, type ButtonProps } from './Button';
 
 const meta: Meta<typeof Button> = {
-	title: 'Primatives/Buttons',
+	title: 'Primitives/Buttons',
 	tags: ['polymorphic'],
 	component: Button,
 	args: {
@@ -22,13 +22,13 @@ const meta: Meta<typeof Button> = {
 		isFullWidth: false,
 		isLoading: false,
 		disabled: false,
-		is: undefined,
+		as: undefined,
 		onClick: fn(),
 		withDoubleClicks: false,
 		testId: 'storybook-button',
 	},
 	argTypes: {
-		is: {
+		as: {
 			options: ['button', 'a'],
 		},
 	},
