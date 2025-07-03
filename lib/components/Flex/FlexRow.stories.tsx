@@ -1,40 +1,32 @@
 import { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 
-import { Box, type BoxProps } from '../Box/Box';
+import { sprinkles, type Sprinkles } from '../../styles/sprinkles.css';
 
 import { FlexRow } from './FlexRow';
 
-const itemProps = {
+const itemSprinkles = {
 	paddingX: '4',
 	borderStyle: 'solid',
 	borderWidth: '1',
-	borderColor: 'muted',
+	borderColor: 'hard',
 	display: 'flex',
 	alignItems: 'center',
 	justifyContent: 'center',
-	style: { minWidth: '150px' },
-} satisfies BoxProps;
+} satisfies Sprinkles;
 
-const Item1 = () => (
-	<Box height="8" {...itemProps}>
-		1
-	</Box>
-);
-const Item2 = () => (
-	<Box height="9" {...itemProps}>
-		2
-	</Box>
-);
-const Item3 = () => (
-	<Box height="7" {...itemProps}>
-		3
-	</Box>
-);
+const itemProps = (height: Sprinkles['height']) => ({
+	className: sprinkles({ height, ...itemSprinkles }),
+	style: { minWidth: '150px' },
+});
+
+const Item1 = () => <div {...itemProps('8')}>1</div>;
+const Item2 = () => <div {...itemProps('9')}>2</div>;
+const Item3 = () => <div {...itemProps('7')}>3</div>;
 
 const meta = {
-	title: 'Layout/Flex/Row',
-	tags: [],
+	title: 'Layout/Flex/FlexRow',
+	tags: ['new'],
 	component: FlexRow,
 	render: (args) => (
 		<FlexRow {...args}>

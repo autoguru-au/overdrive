@@ -1,9 +1,10 @@
 import React, { type PropsWithChildren } from 'react';
 
 import { sprinkles, type Sprinkles } from '../../styles/sprinkles.css';
-import { Box } from '../Box/Box';
+import type { SimpleAsProp } from '../../types';
+import { useBox } from '../Box/useBox/useBox';
 
-import type { ResponsiveFlexProps } from './Flex.css';
+import type { ResponsiveFlexProps } from './flex';
 
 export interface StackProps {
 	/** Cross-axis horizontal alignment of items (_responsive_) */
@@ -70,7 +71,10 @@ const stackPropMapping = ({
  */
 export const stack = (props: StackProps) => sprinkles(stackPropMapping(props));
 
-export interface FlexStackProps extends StackProps, PropsWithChildren {}
+export interface FlexStackProps
+	extends StackProps,
+		PropsWithChildren,
+		SimpleAsProp {}
 
 /**
  * A vertical layout component that arranges children in a column with consistent spacing.
@@ -105,8 +109,13 @@ export interface FlexStackProps extends StackProps, PropsWithChildren {}
  *   <Button>Action 3</Button>
  * </FlexStack>
  */
-export const FlexStack = ({ children, ...props }: FlexStackProps) => (
-	<Box {...stackPropMapping(props)}>{children}</Box>
-);
+export const FlexStack = ({ as, children, ...props }: FlexStackProps) => {
+	const { Component, componentProps } = useBox({
+		as,
+		odComponent: 'flex-stack',
+		...stackPropMapping(props),
+	});
+	return <Component {...componentProps}>{children}</Component>;
+};
 
 FlexStack.displayName = 'FlexStack';

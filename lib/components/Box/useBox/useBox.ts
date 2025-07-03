@@ -267,12 +267,12 @@ export const useBox = ({
 	});
 
 	const componentProps = {
-		...elementProps,
-		className,
 		...dataAttrs({
 			'od-component': odComponent?.toLocaleLowerCase(),
 			testid: testId,
 		}),
+		...elementProps,
+		className,
 	};
 
 	return {

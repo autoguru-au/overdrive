@@ -1,32 +1,34 @@
 import { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 
-import { Box } from '../Box/Box';
+import { sprinkles, type Sprinkles } from '../../styles/sprinkles.css';
 
 import { FlexStack } from './FlexStack';
 
-const Item = ({ children }: React.PropsWithChildren) => (
-	<Box
-		padding="4"
-		borderStyle="solid"
-		borderWidth="1"
-		borderColor="muted"
-		style={{ minWidth: '100px' }}
-		textAlign="center"
-	>
-		{children}
-	</Box>
-);
+const itemSprinkles = {
+	padding: '4',
+	borderStyle: 'solid',
+	borderWidth: '1',
+	borderColor: 'hard',
+	textAlign: 'center',
+} satisfies Sprinkles;
 
 // eslint-disable-next-line unicorn/no-new-array
-const items = [...new Array(9).keys()].map((n) => <Item key={n}>{n + 1}</Item>);
+const items = [...new Array(9).keys()].map((n) => (
+	<div
+		className={sprinkles(itemSprinkles)}
+		style={{ minWidth: '100px' }}
+		key={n}
+	>
+		{n + 1}
+	</div>
+));
 
 const meta = {
-	title: 'Layout/Flex/Stack',
-	tags: [],
+	title: 'Layout/Flex/FlexStack',
+	tags: ['new'],
 	component: FlexStack,
 	render: (args) => <FlexStack {...args}>{items}</FlexStack>,
-
 	args: {
 		gap: '6',
 	},

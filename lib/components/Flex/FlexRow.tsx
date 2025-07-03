@@ -1,9 +1,12 @@
 import React, { type PropsWithChildren } from 'react';
 
 import { sprinkles, type Sprinkles } from '../../styles/sprinkles.css';
-import { Box } from '../Box/Box';
+import type { SimpleAsProp } from '../../types';
+import { dataAttrs } from '../../utils/dataAttrs';
+import { useBox } from '../Box/useBox/useBox';
 
-import type { ResponsiveFlexProps } from './Flex.css';
+import { component as componentStyle } from './Flex.css';
+import type { ResponsiveFlexProps } from './flex';
 
 export interface RowProps {
 	/** Cross-axis horizontal alignment of items (_responsive_) */
@@ -12,6 +15,8 @@ export interface RowProps {
 	center?: boolean;
 	/** Shortcut end/bottom alignment */
 	end?: boolean;
+	/** Child elements should fill available space */
+	expand?: boolean;
 	/** Item horizontal spacing (_responsive_)*/
 	gap?: ResponsiveFlexProps['gap'];
 	/** Prevent items from wrapping to the next row */
@@ -68,7 +73,10 @@ const rowPropMapping = ({
  */
 export const row = (props: RowProps) => sprinkles(rowPropMapping(props));
 
-export interface FlexRowProps extends RowProps, PropsWithChildren {}
+export interface FlexRowProps
+	extends RowProps,
+		PropsWithChildren,
+		SimpleAsProp {}
 
 /**
  * A horizontal layout component that arranges items with consistent spacing.
@@ -92,8 +100,15 @@ export interface FlexRowProps extends RowProps, PropsWithChildren {}
  *   <Button>Action 3</Button>
  * </FlexRow>
  */
-export const FlexRow = ({ children, ...props }: FlexRowProps) => (
-	<Box {...rowPropMapping(props)}>{children}</Box>
-);
+export const FlexRow = ({ as, children, expand, ...props }: FlexRowProps) => {
+	const { Component, componentProps } = useBox({
+		as,
+		odComponent: 'flex-row',
+		className: componentStyle,
+		...rowPropMapping(props),
+		...dataAttrs({ expand }),
+	});
+	return <Component {...componentProps}>{children}</Component>;
+};
 
 FlexRow.displayName = 'FlexRow';

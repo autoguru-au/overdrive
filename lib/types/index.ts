@@ -1,4 +1,10 @@
 import type { ClassValue } from 'clsx';
+import type { ElementType } from 'react';
+
+export interface SimpleAsProp {
+	/** Name of HTML tag to render the component as */
+	as?: ElementType;
+}
 
 export interface OdComponent {
 	/**
