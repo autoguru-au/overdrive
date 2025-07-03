@@ -2,25 +2,38 @@
 
 ## 4.44.2
 
-### Patch Changes
+### Minor Changes
 
-- 8abb8a5: OrderedList: fixed HTML structure
-- 8abb8a5: Replace 'is' prop with 'as' prop across all remaining components
-- 8abb8a5: Text and Heading: uses refactored typography and `textStyles`
-  functions with more unified prop handling
-- 8abb8a5: Inline, Stack and Anchor: refactored to use flexbox layout
+)(8abb8a5)
+
+- Inline, Stack and Anchor: refactored to use flexbox layout
+- Text and Heading: uses refactored typography and `textStyles`
+  functions with more unified prop handling and balanced text wrap
+- Finish replacement of 'is' prop with 'as' prop on all components
+- OrderedList: fixed HTML structure
+
+## ~~4.44.1~~
+
+_Version deprecated_ Use 4.44.2 and above.
+
+## ~~4.44.0~~
+
+_Version deprecated_. This minor was based on **4.43.1-5** now deprecated. Use
+4.44.2 and above.
 
 ## 4.43.10
 
 ### Patch Changes
 
-- 01f9aaf: Tooltip: reverts the default behaviour to expect a React component
+(01f9aaf)
+
+- Tooltip: reverts the default behaviour to expect a React component
   child based on actual consumer usage it very prevalant. The new `wrapper`
   props on the Tooltip will render a wrapper for simpler non-interactive
   children.
-- 01f9aaf: Button: additional native events handled (onFocus, onBlur,
+- Button: additional native events handled (onFocus, onBlur,
   onMouseEnter, onMouseLeave)
-- 01f9aaf: Anchor: fixes missing focus-visible outline
+- Anchor: fixes missing focus-visible outline
 
 ## 4.43.9
 
@@ -113,19 +126,6 @@ Granular utilities for adding styles directly to an HTML element
   now in transistion to be aligned with the CSS naming order (e.g.
   `borderLeftColor` instead of `borderColorLeft`)
 - Abbrevitaion aliases are available for margin and padding i.e. `px`, `mt`
-
-## ~~4.44.0~~
-
-_Do not use_. This release was based on **4.43.1-5** and has been deprecated.
-
-### Minor Changes
-
-- 524c1b1: The `Text` component has been rebuilt with polymorphic `as` prop,
-  consistent with Box. The `noWrap` prop has been deprecated as the `textWrap`
-  style prop is available in uplifted components
-- 524c1b1: The Heading component has been improved to be consistent with Text
-  and applies balanced text wrap. Anchor and TextLink have been updated to be
-  consistent also
 
 ## ~~4.43.5~~
 
