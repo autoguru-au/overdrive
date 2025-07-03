@@ -6,7 +6,7 @@ import { argTypesExampleIcons } from '../../stories/shared/argTypes';
 import { Meta } from './Meta';
 
 export default {
-	title: 'Components/Meta',
+	title: 'Content/Meta',
 	component: Meta,
 	argTypes: {
 		icon: argTypesExampleIcons,

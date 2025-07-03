@@ -8,7 +8,7 @@ import { overdriveTokens } from '../../themes';
 import { Heading, type HeadingProps } from './Heading';
 
 const meta = {
-	title: 'Primatives/Heading',
+	title: 'Content/Heading',
 	component: Heading,
 	decorators: [
 		(Story) => (

@@ -7,7 +7,7 @@ import { Icon } from '../Icon/Icon';
 import { BulletText } from './BulletText';
 
 const meta = {
-	title: 'Components/Bullet Text',
+	title: 'Content/Bullet Text',
 	component: BulletText,
 	args: {
 		as: 'div',

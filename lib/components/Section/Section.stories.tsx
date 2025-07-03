@@ -8,7 +8,7 @@ import { Section } from './Section';
 
 export default {
 	title: 'Layout/Section',
-	tags: [],
+	tags: ['review'],
 	component: Section,
 	argTypes: {
 		paddingX: boxArgTypes.paddingX,

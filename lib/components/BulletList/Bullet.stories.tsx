@@ -7,7 +7,7 @@ import { Bullet } from './Bullet';
 import { BulletList } from './BulletList';
 
 const meta = {
-	title: 'Primatives/Bullet List',
+	title: 'Content/Bullet List',
 	component: BulletList,
 	decorators: [
 		(Story) => (
