@@ -35,10 +35,10 @@ lib/components/ComponentName/
 - **Automatic optimizations**: React 19 compiler handles most memo/callback
   optimizations
 - **When to still optimize manually**:
-    - Heavy computational functions inside components
-    - Complex object/array transformations
-    - Expensive child component renders with stable props
-    - Event handlers passed to many children
+  - Heavy computational functions inside components
+  - Complex object/array transformations
+  - Expensive child component renders with stable props
+  - Event handlers passed to many children
 
 ### Performance Considerations
 
@@ -173,64 +173,64 @@ import { sprinkles } from '../../css/sprinkles.css';
 
 // A mix of responsive props and simple boolean props will be custom mapped
 export interface RowProps {
-	/** Cross-axis horizontal alignment of items (_responsive_) */
-	align?: ResponsiveFlexProps['justifyContent'];
-	/** Shortcut center horizontal alignment */
-	center?: boolean;
-	/** Shortcut end/bottom alignment */
-	end?: boolean;
-	/** Item horizontal spacing (_responsive_)*/
-	gap?: ResponsiveFlexProps['gap'];
-	/** Prevent items from wrapping to the next row */
-	noWrap?: boolean;
-	/** Main-axis (horizontal) alignment of items (_responsive_) */
-	justify?: ResponsiveFlexProps['alignItems'];
-	/** Reverse item order */
-	reverse?: boolean;
-	/** Shortcut `space-between` justification */
-	spaceBetween?: boolean;
-	/** Shortcut start/top alignment */
-	start?: boolean;
+  /** Cross-axis horizontal alignment of items (_responsive_) */
+  align?: ResponsiveFlexProps['justifyContent'];
+  /** Shortcut center horizontal alignment */
+  center?: boolean;
+  /** Shortcut end/bottom alignment */
+  end?: boolean;
+  /** Item horizontal spacing (_responsive_)*/
+  gap?: ResponsiveFlexProps['gap'];
+  /** Prevent items from wrapping to the next row */
+  noWrap?: boolean;
+  /** Main-axis (horizontal) alignment of items (_responsive_) */
+  justify?: ResponsiveFlexProps['alignItems'];
+  /** Reverse item order */
+  reverse?: boolean;
+  /** Shortcut `space-between` justification */
+  spaceBetween?: boolean;
+  /** Shortcut start/top alignment */
+  start?: boolean;
 }
 
 // Define custom mapping functions to turn the props into a `sprinkles` function call
 const rowPropMapping = ({
-	align = 'start',
-	center,
-	end,
-	gap = '2',
-	noWrap,
-	justify,
-	reverse,
-	spaceBetween,
-	start,
+  align = 'start',
+  center,
+  end,
+  gap = '2',
+  noWrap,
+  justify,
+  reverse,
+  spaceBetween,
+  start,
 }: RowProps) =>
-	({
-		alignItems: justify,
-		display: 'flex',
-		flexDirection: (reverse && 'row-reverse') || 'row',
-		flexWrap: noWrap === true ? 'nowrap' : 'wrap',
-		gap,
-		justifyContent:
-			(start && 'start') ||
-			(center && 'center') ||
-			(end && 'end') ||
-			(spaceBetween && 'space-between') ||
-			align,
-	}) satisfies Sprinkles;
+  ({
+    alignItems: justify,
+    display: 'flex',
+    flexDirection: (reverse && 'row-reverse') || 'row',
+    flexWrap: noWrap === true ? 'nowrap' : 'wrap',
+    gap,
+    justifyContent:
+      (start && 'start') ||
+      (center && 'center') ||
+      (end && 'end') ||
+      (spaceBetween && 'space-between') ||
+      align,
+  }) satisfies Sprinkles;
 
 // Prefer use of data attributes for state-based styling
 export const stateStyles = style({
-	selectors: {
-		'&[data-pressed="true"]': {
-			transform: 'scale(0.98)',
-		},
-		'&[data-focus-visible="true"]': {
-			outline: '2px solid',
-			outlineColor: vars.color.focus,
-			outlineOffset: 2,
-		},
-	},
+  selectors: {
+    '&[data-pressed="true"]': {
+      transform: 'scale(0.98)',
+    },
+    '&[data-focus-visible="true"]': {
+      outline: '2px solid',
+      outlineColor: vars.color.focus,
+      outlineOffset: 2,
+    },
+  },
 });
 ```
 

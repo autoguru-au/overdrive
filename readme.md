@@ -47,7 +47,7 @@ want to use:
 import { OverdriveProvider, Button } from '@autoguru/overdrive';
 
 <OverdriveProvider>
-	<Button variant="primary">Hello World</Button>
+  <Button variant="primary">Hello World</Button>
 </OverdriveProvider>;
 ```
 
@@ -59,16 +59,16 @@ You can also customise the theme colours using the provider props:
 
 ```jsx
 <OverdriveProvider
-	theme={baseTheme}
-	colorOverrides={{
-		primaryBackground: '#FF0000',
-		primaryForeground: '#FFFFFF',
-		primaryBackgroundMild: '#FFE5E5',
-		primaryBackgroundStrong: '#CC0000',
-		primaryBorder: '#CC0000',
-	}}
+  theme={baseTheme}
+  colorOverrides={{
+    primaryBackground: '#FF0000',
+    primaryForeground: '#FFFFFF',
+    primaryBackgroundMild: '#FFE5E5',
+    primaryBackgroundStrong: '#CC0000',
+    primaryBorder: '#CC0000',
+  }}
 >
-	<Button variant="primary">Custom Red Theme</Button>
+  <Button variant="primary">Custom Red Theme</Button>
 </OverdriveProvider>
 ```
 

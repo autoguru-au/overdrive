@@ -45,15 +45,15 @@ import { fn } from 'storybook/test';
 import { ComponentName, type ComponentNameProps } from './ComponentName';
 
 const meta: Meta<typeof ComponentName> = {
-	title: 'Category/ComponentName',
-	component: ComponentName,
-	tags: ['polymorphic'], // if applicable
-	args: {
-		// Default args for all stories
-	},
-	argTypes: {
-		// Control documentation
-	},
+  title: 'Category/ComponentName',
+  component: ComponentName,
+  tags: ['polymorphic'], // if applicable
+  args: {
+    // Default args for all stories
+  },
+  argTypes: {
+    // Control documentation
+  },
 };
 
 export default meta;
@@ -91,19 +91,19 @@ Include interactive tests using Storybook's play function for:
 
 ```tsx
 export const InteractiveExample: Story = {
-	args: {
-		// story-specific args
-	},
-	play: async ({ canvasElement, step }) => {
-		const canvas = within(canvasElement);
+  args: {
+    // story-specific args
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
 
-		await step('Test interaction description', async () => {
-			// Test implementation
-			const element = canvas.getByRole('button');
-			await userEvent.click(element);
-			await expect(element).toHaveAttribute('aria-pressed', 'true');
-		});
-	},
+    await step('Test interaction description', async () => {
+      // Test implementation
+      const element = canvas.getByRole('button');
+      await userEvent.click(element);
+      await expect(element).toHaveAttribute('aria-pressed', 'true');
+    });
+  },
 };
 ```
 
@@ -138,13 +138,13 @@ import * as stories from './ComponentName.stories';
 const { Standard, VariantName } = composeStories(stories);
 
 describe('<ComponentName />', () => {
-	// Test stories first
-	it('renders the standard story', async () => {
-		await Standard.run();
-		// Assertions
-	});
+  // Test stories first
+  it('renders the standard story', async () => {
+    await Standard.run();
+    // Assertions
+  });
 
-	// Then test component-specific logic
+  // Then test component-specific logic
 });
 ```
 

@@ -56,15 +56,6 @@
 		"prepare": "husky"
 	},
 	"browserslist": "extends browserslist-config-autoguru",
-	"prettier": {
-		"bracketSpacing": true,
-		"printWidth": 80,
-		"proseWrap": "always",
-		"singleQuote": true,
-		"tabWidth": 4,
-		"trailingComma": "all",
-		"useTabs": true
-	},
 	"devDependencies": {
 		"@autoguru/babel-preset": "3.2.0",
 		"@autoguru/eslint-plugin": "2.0.0",
