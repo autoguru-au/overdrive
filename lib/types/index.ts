@@ -1,3 +1,5 @@
+import type { ClassValue } from 'clsx';
+
 export interface OdComponent {
 	/**
 	 * Output a data attribute with a component name in the markup, mainly used for the root element of a component
@@ -16,3 +18,16 @@ export interface TestId {
  * Adds a testId property to the given type
  */
 export type WithTestId<T = unknown> = T & TestId;
+
+/**
+ * Use ConsistentComponentProps to define shared Overdrive props
+ */
+export interface ConsistentComponentProps extends OdComponent, TestId {
+	/** Flexible className that accepts strings, arrays and objects */
+	className?: ClassValue;
+}
+
+/**
+ * Adds ConsistentComponentProps to the given type
+ */
+export type WithComponentProps<T = unknown> = T & ConsistentComponentProps;

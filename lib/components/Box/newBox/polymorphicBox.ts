@@ -14,9 +14,9 @@ import {
 	type ElementStylesProps,
 } from '../../../styles/elementStyles';
 import type { Sprinkles } from '../../../styles/sprinkles.css';
+import type { ConsistentComponentProps } from '../../../types';
 import { dataAttrs } from '../../../utils/dataAttrs';
 import { filterPropsWithStyles } from '../../../utils/sprinkles';
-import type { CommonBoxProps } from '../Box';
 
 // defaults
 const DEFAULT_TAG = 'div' as keyof JSX.IntrinsicElements;
@@ -62,7 +62,7 @@ export type PolymorphicComponentProps<
 
 /** Polymorphic box props that merge sprinkles style props and the HTML element props */
 export type UseBoxProps<E extends ElementType = 'div'> =
-	PolymorphicComponentProps<E, CommonBoxProps & Sprinkles>;
+	PolymorphicComponentProps<E, ConsistentComponentProps & Sprinkles>;
 
 /**
  * Define custom props similar to Box with polymorphic, common and style props.
@@ -71,7 +71,10 @@ export type UseBoxProps<E extends ElementType = 'div'> =
 export type BoxLikeProps<
 	E extends ElementType,
 	P = object,
-> = PolymorphicComponentProps<E, Omit<Sprinkles, keyof P> & CommonBoxProps & P>;
+> = PolymorphicComponentProps<
+	E,
+	Omit<Sprinkles, keyof P> & ConsistentComponentProps & P
+>;
 
 /**
  * The Overdrive component primitive to expose a flexible HTML element as a fully typesafe React component
