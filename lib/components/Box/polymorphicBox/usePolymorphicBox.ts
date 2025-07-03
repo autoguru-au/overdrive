@@ -86,7 +86,7 @@ export type BoxLikeProps<
  * if JSX was passed in the `as` prop and `cloneElement` will need to be used. `SemanticChild` is only defined
  * depending on the HTML tag.
  */
-export const useBox = <E extends ElementType = 'div'>({
+export const usePolymorphicBox = <E extends ElementType = 'div'>({
 	as: _as,
 	className: _className,
 	odComponent,

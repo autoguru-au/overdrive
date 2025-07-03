@@ -8,7 +8,7 @@ import { useBox } from '../Box/useBox/useBox';
 import { component as componentStyle } from './Flex.css';
 import type { ResponsiveFlexProps } from './flex';
 
-export interface RowProps {
+export interface FlexInlineProps {
 	/** Cross-axis horizontal alignment of items (_responsive_) */
 	align?: ResponsiveFlexProps['justifyContent'];
 	/** Shortcut center horizontal alignment */
@@ -31,7 +31,7 @@ export interface RowProps {
 	start?: boolean;
 }
 
-const rowPropMapping = ({
+const inlinePropMapping = ({
 	align = 'start',
 	center,
 	end,
@@ -41,7 +41,7 @@ const rowPropMapping = ({
 	reverse,
 	spaceBetween,
 	start,
-}: RowProps) =>
+}: FlexInlineProps) =>
 	({
 		alignItems: justify,
 		display: 'flex',
@@ -71,10 +71,11 @@ const rowPropMapping = ({
  *   gap: { mobile: '2', tablet: '4', desktop: '6' }
  * });
  */
-export const row = (props: RowProps) => sprinkles(rowPropMapping(props));
+export const inline = (props: FlexInlineProps) =>
+	sprinkles(inlinePropMapping(props));
 
-export interface FlexRowProps
-	extends RowProps,
+export interface ComponentFlexInlineProps
+	extends FlexInlineProps,
 		PropsWithChildren,
 		SimpleAsProp {}
 
@@ -100,15 +101,20 @@ export interface FlexRowProps
  *   <Button>Action 3</Button>
  * </FlexRow>
  */
-export const FlexRow = ({ as, children, expand, ...props }: FlexRowProps) => {
+export const FlexInline = ({
+	as,
+	children,
+	expand,
+	...props
+}: ComponentFlexInlineProps) => {
 	const { Component, componentProps } = useBox({
 		as,
-		odComponent: 'flex-row',
+		odComponent: 'flex-inline',
 		className: componentStyle,
-		...rowPropMapping(props),
+		...inlinePropMapping(props),
 		...dataAttrs({ expand }),
 	});
 	return <Component {...componentProps}>{children}</Component>;
 };
 
-FlexRow.displayName = 'FlexRow';
+FlexInline.displayName = 'FlexInline';

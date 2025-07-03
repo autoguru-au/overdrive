@@ -25,7 +25,7 @@ const items = [...new Array(9).keys()].map((n) => (
 ));
 
 const meta = {
-	title: 'Layout/Flex/FlexStack',
+	title: 'Layout/Flex/Flex Stack',
 	tags: ['new'],
 	component: FlexStack,
 	render: (args) => <FlexStack {...args}>{items}</FlexStack>,

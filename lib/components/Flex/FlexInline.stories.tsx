@@ -3,7 +3,7 @@ import React from 'react';
 
 import { sprinkles, type Sprinkles } from '../../styles/sprinkles.css';
 
-import { FlexRow } from './FlexRow';
+import { FlexInline } from './FlexInline';
 
 const itemSprinkles = {
 	paddingX: '4',
@@ -25,21 +25,21 @@ const Item2 = () => <div {...itemProps('9')}>2</div>;
 const Item3 = () => <div {...itemProps('7')}>3</div>;
 
 const meta = {
-	title: 'Layout/Flex/FlexRow',
+	title: 'Layout/Flex/Flex Inline',
 	tags: ['new'],
-	component: FlexRow,
+	component: FlexInline,
 	render: (args) => (
-		<FlexRow {...args}>
+		<FlexInline {...args}>
 			<Item1 />
 			<Item2 />
 			<Item3 />
-		</FlexRow>
+		</FlexInline>
 	),
 
 	args: {
 		gap: '6',
 	},
-} satisfies Meta<typeof FlexRow>;
+} satisfies Meta<typeof FlexInline>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
