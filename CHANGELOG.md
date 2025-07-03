@@ -1,5 +1,15 @@
 # @autoguru/overdrive
 
+## 4.44.2
+
+### Patch Changes
+
+- 8abb8a5: OrderedList: fixed HTML structure
+- 8abb8a5: Replace 'is' prop with 'as' prop across all remaining components
+- 8abb8a5: Text and Heading: uses refactored typography and `textStyles`
+  functions with more unified prop handling
+- 8abb8a5: Inline, Stack and Anchor: refactored to use flexbox layout
+
 ## 4.43.10
 
 ### Patch Changes
@@ -24,39 +34,38 @@
 
 (ddf9976)
 
-- The `is` prop has been removed from Box, Inline, Stack, Columns,
-  Column, DropDownOption, LoadingBox and VisuallyHidden
+- The `is` prop has been removed from Box, Inline, Stack, Columns, Column,
+  DropDownOption, LoadingBox and VisuallyHidden
 
-- Text: the props `fontWeight`, `textTransform` and `textWrap` are
-  simplified to `weight`, `transform` and `wrap`. Text now supports margin +
-  padding style props
+- Text: the props `fontWeight`, `textTransform` and `textWrap` are simplified to
+  `weight`, `transform` and `wrap`. Text now supports margin + padding style
+  props
 
 - The `testId` prop is more consistently rendered and tested for as
-	`data-testid` attribute
+  `data-testid` attribute
 
-The `useBoxStyles` and `useTextStyles` are now implemented by
-vanilla-extract sprinkles:
+The `useBoxStyles` and `useTextStyles` are now implemented by vanilla-extract
+sprinkles:
 
 - Instead of `useBoxStyles` consider importing `elementStyles` (aliased to
-	`useBoxStyles` during transition)
+  `useBoxStyles` during transition)
 - Instead of `useTextStyles` consider importing `textStyles` (aliased to
-    `useTextStyles`) or `typography`
+  `useTextStyles`) or `typography`
 
 #### Updated style functions and types
 
 Granular utilities for adding styles directly to an HTML element
 
-- `elementStyles` is the full set of combined element reset styles, style
-	props from vanilla-extract, and related logic processing for the `<Box>`
-	primitive. Example use:
-	`elementStyles({ as: 'div', padding: '2', borderTopWidth: '1' })`
-- `textStyles` combines element reset styles and a select subset of style
-    props for typography use including headings. Example use:
-	`textStyles({ as: 'label', size: '5', weight: 'semibold', px: '2' })`
+- `elementStyles` is the full set of combined element reset styles, style props
+  from vanilla-extract, and related logic processing for the `<Box>` primitive.
+  Example use: `elementStyles({ as: 'div', padding: '2', borderTopWidth: '1' })`
+- `textStyles` combines element reset styles and a select subset of style props
+  for typography use including headings. Example use:
+  `textStyles({ as: 'label', size: '5', weight: 'semibold', px: '2' })`
 - `typography` unpins `textStyles` and can be used directly if element resets
-    are not requred
-- `resetStyles` provides baseline reset styles for an HTML element. Example
-	use: `resetStyles('button')`
+  are not requred
+- `resetStyles` provides baseline reset styles for an HTML element. Example use:
+  `resetStyles('button')`
 
 **Types**
 
@@ -80,29 +89,29 @@ Granular utilities for adding styles directly to an HTML element
 
 (4c44e06)
 
-- Technical uplift changes to the Box, Text and related components were
-  manually reverted to try and resolve instability with some instances of forms
-  in consumption.
+- Technical uplift changes to the Box, Text and related components were manually
+  reverted to try and resolve instability with some instances of forms in
+  consumption.
 
 - Classic Box has been simplified with style helper functions and exports
-	`BoxProps`.
+  `BoxProps`.
 - All `forwardRef`s reinstated in components
-- Style helper functions available `elementResetStyles` and
-	`elementStyles`, where html tag css resets and vanilla-extract sprinkles
-	are combined to replace `useBoxStyles` (now deprecated)
+- Style helper functions available `elementResetStyles` and `elementStyles`,
+  where html tag css resets and vanilla-extract sprinkles are combined to
+  replace `useBoxStyles` (now deprecated)
 - New Box and useBox remains available in `components/Box/newBox/` during
-	mitigation but should be considered unstable
+  mitigation but should be considered unstable
 
 #### Style props
 
 - New colour tokens are mapped to props with `color` spelling, existing
-	colours/intentional colours are still available with the `colour` spelling
-	in props for backwards compatibility
+  colours/intentional colours are still available with the `colour` spelling in
+  props for backwards compatibility
 - Values are in transition to camel case (e.g. `space-between` instead of
-	`spaceBetween`) to align with CSS
-- Border property props where the side Top/Bottom/Left/Right was placed last
-	are now in transistion to be aligned with the CSS naming order (e.g.
-	`borderLeftColor` instead of `borderColorLeft`)
+  `spaceBetween`) to align with CSS
+- Border property props where the side Top/Bottom/Left/Right was placed last are
+  now in transistion to be aligned with the CSS naming order (e.g.
+  `borderLeftColor` instead of `borderColorLeft`)
 - Abbrevitaion aliases are available for margin and padding i.e. `px`, `mt`
 
 ## ~~4.44.0~~
