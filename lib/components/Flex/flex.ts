@@ -3,10 +3,6 @@ import type { ComponentPropsWithoutRef } from 'react';
 import { sprinkles, type Sprinkles } from '../../styles/sprinkles.css';
 import type { SimpleAsProp } from '../../types';
 
-export interface FlexComponentBaseProps
-	extends ComponentPropsWithoutRef<'div'>,
-		SimpleAsProp {}
-
 export type FlexComponentProps<T> = Omit<
 	ComponentPropsWithoutRef<'div'>,
 	keyof Sprinkles | keyof T | 'style'
@@ -38,10 +34,10 @@ export interface FlexInlineProps {
 }
 
 export const inlinePropMapping = ({
-	align = 'start',
+	align,
 	center,
 	end,
-	gap = '2',
+	gap,
 	noWrap,
 	justify,
 	reverse,
@@ -104,7 +100,7 @@ export const stackPropMapping = ({
 	align,
 	center,
 	end,
-	gap = '2',
+	gap,
 	justify,
 	reverse,
 	start,

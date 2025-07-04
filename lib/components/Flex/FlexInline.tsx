@@ -51,10 +51,10 @@ export const FlexInline = ({
 	children,
 	expand, // data attribute instead of style prop
 
-	align,
+	align = 'start',
 	center,
 	end,
-	gap,
+	gap = '2',
 	noWrap,
 	justify,
 	reverse,

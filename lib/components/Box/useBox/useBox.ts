@@ -4,18 +4,19 @@ import {
 	elementStyles,
 	type ElementStylesProps,
 } from '../../../styles/elementStyles';
-import type { ConsistentComponentProps } from '../../../types';
+import type { ConsistentComponentProps, OdComponent } from '../../../types';
 import { dataAttrs } from '../../../utils/dataAttrs';
 
+type FilteredAttributes = Omit<
+	AllHTMLAttributes<HTMLElement>,
+	'as' | 'className' | 'color' | 'height' | 'is' | 'size' | 'width'
+>;
+
 export interface UseBoxProps
-	extends Omit<
-			AllHTMLAttributes<HTMLElement>,
-			'as' | 'className' | 'color' | 'height' | 'is' | 'size' | 'width'
-		>,
+	extends FilteredAttributes,
 		ConsistentComponentProps,
-		ElementStylesProps {
-	as?: ElementType;
-}
+		OdComponent,
+		ElementStylesProps {}
 
 export const useBox = ({
 	as = 'div',
@@ -276,7 +277,8 @@ export const useBox = ({
 	};
 
 	return {
-		Component: as,
+		Component: as as ElementType,
 		componentProps,
+		// In future we may want to calc a child tag for semantic nested children
 	};
 };

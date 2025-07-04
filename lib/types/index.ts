@@ -28,12 +28,7 @@ export type WithTestId<T = unknown> = T & TestId;
 /**
  * Use ConsistentComponentProps to define shared Overdrive props
  */
-export interface ConsistentComponentProps extends OdComponent, TestId {
+export interface ConsistentComponentProps extends TestId {
 	/** Flexible className that accepts strings, arrays and objects */
 	className?: ClassValue;
 }
-
-/**
- * Adds ConsistentComponentProps to the given type
- */
-export type WithComponentProps<T = unknown> = T & ConsistentComponentProps;

@@ -58,7 +58,7 @@ export const FlexStack = ({
 	align,
 	center,
 	end,
-	gap,
+	gap = '2',
 	justify,
 	reverse,
 	start,
