@@ -16,6 +16,25 @@ You are working with a React component library that uses:
 - **TypeScript** for type safety
 - **vanilla-extract** for styling
 
+## Guidelines
+
+### Do
+
+- Focus on user-facing behavior over implementation details
+- Test accessibility features thoroughly
+- Use descriptive test and story names
+- Include edge cases and error states
+- Leverage existing stories in spec files via `composeStories`
+- Write play functions for interactive components
+- Document complex interactions in story descriptions
+
+### Don't
+
+- Duplicate testing between stories and specs
+- Use overly complex story setups
+- Skip accessibility testing
+- Add new dependencies
+
 ## Task Types
 
 ### 1. New Component Testing Setup
@@ -80,6 +99,11 @@ Use appropriate categories in the `title` field:
 4. **Edge Cases** - Long text, empty states, error states
 5. **Accessibility** - Keyboard navigation, screen reader scenarios
 
+### Documentation
+
+- Provide meaningful control options in `argTypes`
+- Document accessibility considerations
+
 ### Play Functions
 
 Include interactive tests using Storybook's play function for:
@@ -106,13 +130,6 @@ export const InteractiveExample: Story = {
   },
 };
 ```
-
-### Documentation
-
-- Use clear, descriptive JSDoc comments for props
-- Include usage examples in story descriptions
-- Document accessibility considerations
-- Provide meaningful control options in `argTypes`
 
 ## Spec File Requirements
 
@@ -148,6 +165,12 @@ describe('<ComponentName />', () => {
 });
 ```
 
+### Only use stories in the render function
+
+- `render` functions in the spec file should only use story components
+- Add any props necessary to the story component
+- Don't use the published React component directly in the `render` function
+
 ### Testing Priorities
 
 1. **Story Composition** - Use `composeStories` to test stories directly
@@ -163,37 +186,16 @@ describe('<ComponentName />', () => {
 - Use snapshot testing sparingly, only for complex DOM structures
 - Mock external dependencies appropriately
 
-## Guidelines
-
-### Do
-
-- Focus on user-facing behavior over implementation details
-- Test accessibility features thoroughly
-- Use descriptive test and story names
-- Include edge cases and error states
-- Leverage existing stories in spec files via `composeStories`
-- Write play functions for interactive components
-- Document complex interactions in story descriptions
-
-### Don't
-
-- Test internal implementation details
-- Create spec files for simple presentational components
-- Duplicate testing between stories and specs
-- Use overly complex story setups
-- Skip accessibility testing
-- Add unnecessary dependencies
-
-## Example Commands
+## Terminal Commands
 
 After creating or updating tests, always run:
 
 ```bash
 # Run tests
-yarn test [ComponentName]
+yarn test run [ComponentName]
 
 # Update snapshots if needed
-yarn test [ComponentName] -u
+yarn test run [ComponentName] -u
 ```
 
 ## Accessibility Testing
