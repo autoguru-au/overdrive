@@ -9,7 +9,7 @@ import { StandardModal } from './StandardModal';
 
 const meta = {
 	title: 'Components/Modal: Standard with Title',
-	tags: ['modal'],
+	tags: ['skip-themes'],
 	component: StandardModal,
 } satisfies Meta<typeof StandardModal>;
 

@@ -1,6 +1,6 @@
 import React, { cloneElement, type ElementType } from 'react';
 
-import { useBox, type UseBoxProps } from './useBox';
+import { usePolymorphicBox, type UseBoxProps } from './usePolymorphicBox';
 
 /**
  * A polymorphic Box component that provides a flexible container with styling capabilities, defaulting to a `<div>` element.
@@ -25,11 +25,11 @@ import { useBox, type UseBoxProps } from './useBox';
  * @example
  * <Box asComponent={<MyCustomThing />} borderColor="info" borderWidth="1" />
  */
-export const NewBox = <E extends ElementType = 'div'>({
+export const PolymorphicBox = <E extends ElementType = 'div'>({
 	children,
 	...props
 }: UseBoxProps<E>) => {
-	const { Component, componentProps, reactElement } = useBox<E>(
+	const { Component, componentProps, reactElement } = usePolymorphicBox<E>(
 		props as UseBoxProps<E>,
 	);
 
@@ -40,4 +40,4 @@ export const NewBox = <E extends ElementType = 'div'>({
 	return <Component {...componentProps}>{children}</Component>;
 };
 
-NewBox.displayName = 'NewBox';
+PolymorphicBox.displayName = 'PolymorphicBox';
