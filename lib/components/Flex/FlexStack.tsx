@@ -11,10 +11,18 @@ import {
 export type FlexStackComponentProps = FlexComponentProps<FlexStackProps>;
 
 /**
- * A vertical layout component that arranges children in a column with consistent spacing.
- * Built on top of the Box component with flexbox layout.
+ * A vertical layout component that arranges children in a column with
+ * consistent spacing without wrapping contint within additional components.
  *
- * **Note**: Explicit props (`align`, `justify`) take precedence over shortcut props (`center`, `start`, etc.).
+ * - Supports responsive spacing and alignment
+ * - Can be reversed, centered, or justified
+ *
+ * The `stack` function is available to apply the same flex layout option
+ * to any html element. Example use
+ * `<div className={stack({ gap: '3', center: true })} />`
+ *
+ * **Note**: Responsive props (`align`, `justify`) take precedence over
+ * shortcut props (`center`, `start`, etc.).
  *
  * @example
  * // Basic stack
@@ -53,7 +61,6 @@ export const FlexStack = ({
 	gap,
 	justify,
 	reverse,
-	spaceBetween,
 	start,
 
 	...attrs // html attributes
@@ -68,7 +75,6 @@ export const FlexStack = ({
 			gap,
 			justify,
 			reverse,
-			spaceBetween,
 			start,
 		}),
 	});

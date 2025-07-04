@@ -13,26 +13,38 @@ import {
 export type FlexInlineComponentProps = FlexComponentProps<FlexInlineProps>;
 
 /**
- * A horizontal layout component that arranges items with consistent spacing.
+ * A horizontal layout component that arranges items with consistent spacing
+ * without wrapping content within additional components.
+ *
+ * - Supports responsive spacing and alignment
+ * - Can be reversed, centered, or justified
+ * - Wrapping behavior can be controlled
+ *
+ * The `inline` function is available to apply the same flex layout option
+ * to any html element. Example use
+ * `<div className={inline({ gap: '3', end: true })} />`
+ *
+ * **Note**: Responsive props (`align`, `justify`) take precedence over
+ * shortcut props (`center`, `start`, etc.).
  *
  * @example
- * // Basic row centred
- * <FlexRow center gap="4">
+ * // Basic inline row with centered items
+ * <FlexInline center gap="4">
  *   <div>Item 1</div>
  *   <div>Item 2</div>
  *   <div>Item 3</div>
- * </FlexRow>
+ * </FlexInline>
  *
  * @example
  * // Responsive properties
- * <FlexRow
+ * <FlexInline
  *   align={['start', 'center']}
  *   gap={{ mobile: '4', desktop: '6' }}
  * >
  *   <Button>Action 1</Button>
  *   <Button>Action 2</Button>
  *   <Button>Action 3</Button>
- * </FlexRow>
+ * </FlexInline>
  */
 export const FlexInline = ({
 	as,

@@ -55,11 +55,12 @@ export const inlinePropMapping = ({
 		flexWrap: noWrap === true ? 'nowrap' : 'wrap',
 		gap,
 		justifyContent:
-			(start && 'start') ||
-			(center && 'center') ||
-			(end && 'end') ||
-			(spaceBetween && 'space-between') ||
-			align,
+			align ??
+			((start && 'start') ||
+				(center && 'center') ||
+				(end && 'end') ||
+				(spaceBetween && 'space-between') ||
+				undefined),
 	}) satisfies Sprinkles;
 
 /**
@@ -95,8 +96,6 @@ export interface FlexStackProps {
 	justify?: Sprinkles['justifyContent'];
 	/** Reverse item order */
 	reverse?: boolean;
-	/** Shortcut `space-between` justification */
-	spaceBetween?: boolean;
 	/** Shortcut start/left alignment */
 	start?: boolean;
 }
@@ -108,7 +107,6 @@ export const stackPropMapping = ({
 	gap = '2',
 	justify,
 	reverse,
-	spaceBetween,
 	start,
 }: FlexStackProps) =>
 	({
@@ -121,8 +119,7 @@ export const stackPropMapping = ({
 		display: 'flex',
 		flexDirection: (reverse && 'column-reverse') || 'column',
 		gap,
-		justifyContent:
-			justify ?? ((spaceBetween && 'space-between') || undefined),
+		justifyContent: justify,
 	}) satisfies Sprinkles;
 
 /**
