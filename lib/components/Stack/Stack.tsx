@@ -2,6 +2,7 @@ import React, { Children, type ReactNode, useMemo } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 
 import type { Sprinkles } from '../../styles/sprinkles.css';
+import { calcChildElement } from '../../utils/elements';
 import type { BoxProps } from '../Box/Box';
 import { useBox } from '../Box/useBox/useBox';
 
@@ -21,11 +22,6 @@ export interface StackProps
 	 */
 	space?: Sprinkles['padding'];
 }
-
-export const LIST_MAP = {
-	ol: 'li',
-	ul: 'li',
-} as const;
 
 const Divider = () => <hr className={styles.hr} />;
 
@@ -75,14 +71,11 @@ export const Stack = ({
 	});
 
 	const items = useMemo(() => flattenChildren(children), [children]);
-	const childEl =
-		typeof as === 'string' && as in LIST_MAP
-			? LIST_MAP[as as keyof typeof LIST_MAP]
-			: 'div';
+	const childAs = calcChildElement(as);
 
 	const { Component: ChildComponent, componentProps: childComponentProps } =
 		useBox({
-			as: childEl,
+			as: childAs,
 
 			alignItems,
 			display: alignItems ? 'flex' : undefined,

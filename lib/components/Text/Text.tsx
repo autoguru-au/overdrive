@@ -9,7 +9,7 @@ import {
 	type TextTags,
 	type TypographyProps,
 } from '../../styles/typography';
-import type { TestId } from '../../types';
+import type { TestIdProp } from '../../types';
 import { useBox } from '../Box/useBox/useBox';
 
 type ElementAttributes = React.ComponentPropsWithoutRef<'p'> &
@@ -52,7 +52,7 @@ export interface TextProps
 	extends Omit<ElementAttributes, 'className' | 'is' | keyof TypographyProps>,
 		AdditionalStyleProps,
 		TypographyProps,
-		TestId {
+		TestIdProp {
 	as?: TextTags;
 	className?: ClassName;
 }

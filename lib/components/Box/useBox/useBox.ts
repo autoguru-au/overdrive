@@ -4,7 +4,7 @@ import {
 	elementStyles,
 	type ElementStylesProps,
 } from '../../../styles/elementStyles';
-import type { ConsistentComponentProps, OdComponent } from '../../../types';
+import type { ConsistentComponentProps, OdComponentProp } from '../../../types';
 import { dataAttrs } from '../../../utils/dataAttrs';
 
 type FilteredAttributes = Omit<
@@ -15,7 +15,7 @@ type FilteredAttributes = Omit<
 export interface UseBoxProps
 	extends FilteredAttributes,
 		ConsistentComponentProps,
-		OdComponent,
+		OdComponentProp,
 		ElementStylesProps {}
 
 export const useBox = ({

@@ -9,9 +9,9 @@ import React, {
 import flattenChildren from 'react-keyed-flatten-children';
 
 import type { Sprinkles } from '../../styles/sprinkles.css';
+import { calcChildElement } from '../../utils/elements';
 import type { BoxProps } from '../Box/Box';
 import { useBox } from '../Box/useBox/useBox';
-import { LIST_MAP } from '../Stack/Stack';
 import { Text } from '../Text/Text';
 
 export interface InlineProps extends Pick<BoxProps, 'as' | 'width'> {
@@ -100,10 +100,7 @@ export const Inline: FunctionComponent<InlineProps> = ({
 	});
 
 	const items = useMemo(() => flattenChildren(children), [children]);
-	const childEl =
-		typeof as === 'string' && as in LIST_MAP
-			? LIST_MAP[as as keyof typeof LIST_MAP]
-			: 'div';
+	const childEl = calcChildElement(as);
 
 	const { Component: ChildComponent, componentProps: childComponentProps } =
 		useBox({

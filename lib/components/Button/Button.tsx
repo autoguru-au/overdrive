@@ -21,7 +21,7 @@ import {
 import { elementStyles } from '../../styles';
 import { textStyles } from '../../styles/typography';
 import type { TextFontWeight, TextSizeScale } from '../../themes';
-import type { TestId } from '../../types';
+import type { TestIdProp } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box/Box';
 import { Icon } from '../Icon/Icon';
@@ -55,7 +55,7 @@ export interface ButtonProps
 		>,
 		Pick<AriaAttributes, 'aria-label'>,
 		StyledButtonProps,
-		TestId {
+		TestIdProp {
 	children: AllowedChildren | AllowedChildren[];
 	/**
 	 * Disabling the button will prevent it from receiving keyboard focus or click events
