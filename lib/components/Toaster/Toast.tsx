@@ -17,8 +17,8 @@ import {
 import { isBrowser } from '../../utils';
 import { Alert } from '../Alert/Alert';
 import { Box } from '../Box/Box';
+import { stack } from '../Flex/flex';
 import { Portal } from '../Portal/Portal';
-import { Stack } from '../Stack/Stack';
 
 import * as styles from './Toast.css';
 
@@ -101,7 +101,7 @@ const InternalToastProvider = ({ children }) => {
 					justifyContent="center"
 					className={styles.root}
 				>
-					<Stack space="2">
+					<div className={stack({ gap: '2' })}>
 						{toasts.map((item) => (
 							<Toast
 								key={item.id}
@@ -109,7 +109,7 @@ const InternalToastProvider = ({ children }) => {
 								remove={removeToast}
 							/>
 						))}
-					</Stack>
+					</div>
 				</Box>
 			</Portal>
 		</ToastControllerContext.Provider>

@@ -2,33 +2,20 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 
 import flatRed from '../../themes/flat_red';
-import { Box } from '../Box/Box';
 import { Button } from '../Button/Button';
 import { FlexInline } from '../Flex/FlexInline';
-import { Stack } from '../Stack/Stack';
 
 import { OverdriveProvider } from './OverdriveProvider';
 
 const meta: Meta<typeof OverdriveProvider> = {
 	title: 'Utility/OverdriveProvider',
 	component: OverdriveProvider,
-	parameters: {
-		layout: 'fullscreen',
-	},
 	render: (args) => (
 		<OverdriveProvider {...args}>
-			<Box padding="6">
-				<Stack space="4">
-					<Box display="flex" alignItems="center">
-						<FlexInline gap="4">
-							<Button variant="primary">Primary Button</Button>
-							<Button variant="secondary">
-								Secondary Button
-							</Button>
-						</FlexInline>
-					</Box>
-				</Stack>
-			</Box>
+			<FlexInline gap="4">
+				<Button variant="primary">Primary Button</Button>
+				<Button variant="secondary">Secondary Button</Button>
+			</FlexInline>
 		</OverdriveProvider>
 	),
 };

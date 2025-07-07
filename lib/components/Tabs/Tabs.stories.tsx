@@ -6,9 +6,9 @@ import { fn } from 'storybook/test';
 
 import { Box } from '../Box/Box';
 import { FlexInline } from '../Flex/FlexInline';
+import { FlexStack } from '../Flex/FlexStack';
 import { Icon } from '../Icon/Icon';
 import { EAlignment } from '../Positioner/alignment';
-import { Stack } from '../Stack/Stack';
 import { StarRating } from '../StarRating/StarRating';
 import { Tooltip } from '../Tooltip/Tooltip';
 
@@ -76,13 +76,13 @@ export const Standard: Story = {
 					<TabPane>Content B</TabPane>
 					<TabPane>Content C</TabPane>
 					<TabPane>
-						<Stack>
+						<FlexStack>
 							<TestChild label="5" />
 							<TestChild label="4" />
 							<TestChild label="3" />
 							<TestChild label="2" />
 							<TestChild label="1" />
-						</Stack>
+						</FlexStack>
 					</TabPane>
 				</TabPanes>
 			</>
@@ -169,13 +169,13 @@ export const WithStretch: Story = {
 				<TabPanes>
 					<TabPane>Content A</TabPane>
 					<TabPane>
-						<Stack>
+						<FlexStack>
 							<TestChild label="5" />
 							<TestChild label="4" />
 							<TestChild label="3" />
 							<TestChild label="2" />
 							<TestChild label="1" />
-						</Stack>
+						</FlexStack>
 					</TabPane>
 				</TabPanes>
 			</>
