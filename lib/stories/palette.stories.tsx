@@ -2,12 +2,14 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import clsx from 'clsx';
 import React from 'react';
 
+import { FlexInline } from '../components/Flex/FlexInline';
+import { FlexStack } from '../components/Flex/FlexStack';
 import { Heading } from '../components/Heading';
+import { sprinkles } from '../styles/sprinkles.css';
 import { overdriveTokens, type ColourValue } from '../themes';
 import { colourMapWithoutWhite } from '../themes/base/colours';
 
-import { ColourSwatch, Stack } from './helpers';
-import { sprinkles } from './helpers/sprinkles.css';
+import { ColourSwatch } from './helpers';
 import { labels, hexPill } from './helpers/styles.css';
 
 interface SwatchProps {
@@ -16,14 +18,7 @@ interface SwatchProps {
 	hue?: string;
 }
 const Swatch = ({ colour, hex, hue }: SwatchProps) => (
-	<Stack
-		horizontal
-		alignItems="center"
-		style={{
-			gap: '10px',
-			position: 'relative',
-		}}
-	>
+	<FlexInline justify="center">
 		<ColourSwatch
 			size="lg"
 			style={{
@@ -33,7 +28,7 @@ const Swatch = ({ colour, hex, hue }: SwatchProps) => (
 			<div className={hexPill}>{hex}</div>
 		</ColourSwatch>
 		{hue && colour.replace(hue, '')}
-	</Stack>
+	</FlexInline>
 );
 
 interface PaletteSwatchesProps {
@@ -41,17 +36,17 @@ interface PaletteSwatchesProps {
 	shades: ColourValue;
 }
 const PaletteSwatches = ({ hue, shades }: PaletteSwatchesProps) => (
-	<Stack space="sm">
+	<FlexStack gap="5">
 		{Object.entries(shades)
 			.reverse()
 			.map(([colour, hex]) => (
 				<Swatch colour={colour} hex={hex} hue={hue} key={hex} />
 			))}
-	</Stack>
+	</FlexStack>
 );
 
 const Palettes = () => (
-	<Stack horizontal space="md">
+	<FlexInline gap="8">
 		{Object.keys(colourMapWithoutWhite).map((hue) => (
 			<div key={hue}>
 				<Heading
@@ -66,7 +61,7 @@ const Palettes = () => (
 				/>
 			</div>
 		))}
-	</Stack>
+	</FlexInline>
 );
 
 const meta: Meta = {
@@ -80,11 +75,11 @@ type Story = StoryObj;
 export const Palette: Story = {
 	render: () => {
 		return (
-			<Stack space="md">
+			<FlexStack gap="7">
 				<Heading as="h1">Palette</Heading>
 				<Heading as="h2">Colours</Heading>
 				<Palettes />
-			</Stack>
+			</FlexStack>
 		);
 	},
 };

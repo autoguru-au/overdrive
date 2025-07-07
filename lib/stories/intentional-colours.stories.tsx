@@ -1,34 +1,35 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 
+import { FlexInline } from '../components/Flex/FlexInline';
+import { FlexStack } from '../components/Flex/FlexStack';
 import { Heading } from '../components/Heading';
 import { overdriveTokens } from '../themes/theme.css';
 
-import { Stack } from './helpers';
 import { labels, variantColourSwatch } from './helpers/styles.css';
 
 const ThemeSwatch = ({ label, cssVar }) => (
-	<Stack space="xxs" key={label}>
+	<FlexStack gap="1" key={label}>
 		<div
 			className={variantColourSwatch({ shape: 'rectangle' })}
 			style={{ background: cssVar }}
 		></div>
 		<span className={labels}>{label}</span>
-	</Stack>
+	</FlexStack>
 );
 
 const SemanticSwatches = ({ vars }: { vars: Record<string, string> }) => (
-	<Stack space="sm" horizontal>
+	<FlexInline gap="5">
 		{Object.entries(vars).map(([colour, cssVar]) => (
-			<Stack space="xxs" key={colour}>
+			<FlexStack gap="1" key={colour}>
 				<div
 					className={variantColourSwatch({ shape: 'rectangle' })}
 					style={{ background: cssVar }}
 				></div>
 				<span className={labels}>{colour}</span>
-			</Stack>
+			</FlexStack>
 		))}
-	</Stack>
+	</FlexInline>
 );
 
 const IntentionalSwatches = ({
@@ -40,12 +41,12 @@ const IntentionalSwatches = ({
 		border: string;
 	};
 }) => (
-	<Stack space="sm">
-		<Stack space="sm" horizontal>
+	<FlexStack gap="5">
+		<FlexInline gap="5">
 			<ThemeSwatch label="Border" cssVar={vars.border} />
 			<ThemeSwatch label="Foreground" cssVar={vars.foreground} />
-		</Stack>
-		<Stack space="sm" horizontal>
+		</FlexInline>
+		<FlexInline gap="5">
 			<ThemeSwatch
 				label="Background strong"
 				cssVar={vars.background.strong}
@@ -58,8 +59,8 @@ const IntentionalSwatches = ({
 				label="Background mild"
 				cssVar={vars.background.mild}
 			/>
-		</Stack>
-	</Stack>
+		</FlexInline>
+	</FlexStack>
 );
 
 const meta: Meta = {
@@ -73,7 +74,7 @@ type Story = StoryObj;
 export const LegacyColoursets: Story = {
 	render: () => {
 		return (
-			<Stack>
+			<FlexStack gap="7">
 				<hgroup>
 					<Heading as="h1">Intentional Colours</Heading>
 					<p>
@@ -85,52 +86,54 @@ export const LegacyColoursets: Story = {
 						view alternate colour mappings.
 					</p>
 				</hgroup>
-				<Stack space="md" horizontal>
-					<Stack>
+				<FlexInline gap="8">
+					<FlexStack gap="6">
 						<Heading as="h2">Body</Heading>
 						<SemanticSwatches vars={overdriveTokens.body} />
-					</Stack>
-					<Stack>
+					</FlexStack>
+					<FlexStack gap="6">
 						<Heading as="h2">Foreground</Heading>
 						<SemanticSwatches
 							vars={overdriveTokens.colours.foreground}
 						/>
-					</Stack>
-					<Stack>
+					</FlexStack>
+					<FlexStack gap="6">
 						<Heading as="h2">Background</Heading>
 						<SemanticSwatches
 							vars={overdriveTokens.colours.background}
 						/>
-					</Stack>
-					<Stack>
+					</FlexStack>
+					<FlexStack gap="6">
 						<Heading as="h2">Border</Heading>
 						<SemanticSwatches
 							vars={overdriveTokens.border.colours}
 						/>
-					</Stack>
-				</Stack>
-				<Stack>
+					</FlexStack>
+				</FlexInline>
+				<FlexStack gap="6">
 					<Heading as="h2">Typography</Heading>
 					<SemanticSwatches
 						vars={overdriveTokens.typography.colour}
 					/>
-				</Stack>
-				<Stack>
-					<Heading as="h2">Intentional colour sets</Heading>
-					<Stack space="lg" horizontal>
+				</FlexStack>
+				<FlexStack gap="6">
+					<Heading as="h2" mt="4">
+						Intentional colour sets
+					</Heading>
+					<FlexInline gap="8">
 						{Object.entries(overdriveTokens.colours.intent).map(
 							([title, vars]) => (
 								<div key={title}>
-									<Heading as="h4" className={labels}>
+									<Heading as="h4" mb="4" className={labels}>
 										{title}
 									</Heading>
 									<IntentionalSwatches vars={vars} />
 								</div>
 							),
 						)}
-					</Stack>
-				</Stack>
-			</Stack>
+					</FlexInline>
+				</FlexStack>
+			</FlexStack>
 		);
 	},
 };

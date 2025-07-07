@@ -25,7 +25,7 @@ export const small = style({
 export const gridSwatches = style({
 	display: 'grid',
 	gridTemplateColumns: 'repeat(5, 1fr)',
-	gap: '2em',
+	gap: '1.3em',
 });
 
 export const hexPill = style({
@@ -39,10 +39,36 @@ export const hexPill = style({
 	top: '5px',
 });
 
-export const transitionColours = style({
+export const icon = style({
+	width: '140px',
+	height: '120px',
+
+	listStyle: 'none',
+	textAlign: 'center',
+
+	display: 'flex',
+	flexDirection: 'column',
+	alignItems: 'center',
+	justifyContent: 'center',
+	padding: overdriveTokens.space[2],
+
+	backgroundColor: overdriveTokens.color.surface.page,
+	borderColor: overdriveTokens.color.interactive.border,
+	borderRadius: overdriveTokens.border.radius.md,
+	borderStyle: 'solid',
+	borderWidth: overdriveTokens.border.width[2],
+	color: overdriveTokens.color.content.normal,
+
 	transitionProperty: 'background,color',
 	transitionDuration: '600ms',
 	transitionBehavior: 'ease-in-out',
+
+	selectors: {
+		'&:hover': {
+			backgroundColor: overdriveTokens.colours.gamut.gray800,
+			color: overdriveTokens.color.content.inverse,
+		},
+	},
 });
 
 export const variantColourSwatch = recipe({
