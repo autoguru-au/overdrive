@@ -10,7 +10,7 @@ import {
 	type TypographyProps,
 } from '../../styles/typography';
 import type { TestId } from '../../types';
-import { Box } from '../Box/Box';
+import { useBox } from '../Box/useBox/useBox';
 
 type ElementAttributes = React.ComponentPropsWithoutRef<'p'> &
 	Pick<ComponentProps<'label'>, 'htmlFor'>;
@@ -80,6 +80,7 @@ export const Text = React.forwardRef<HTMLElement, TextProps>(
 			as = 'span',
 			children,
 			className,
+			testId,
 
 			//style props
 			align,
@@ -96,12 +97,10 @@ export const Text = React.forwardRef<HTMLElement, TextProps>(
 			...props
 		},
 		ref,
-	) => (
-		<Box
-			{...props}
-			as={as}
-			ref={ref}
-			className={[
+	) => {
+		const { Component, componentProps } = useBox({
+			as,
+			className: [
 				textStyles({
 					align,
 					as,
@@ -116,11 +115,15 @@ export const Text = React.forwardRef<HTMLElement, TextProps>(
 					wrap,
 				}),
 				className,
-			]}
-		>
-			{children}
-		</Box>
-	),
+			],
+			testId,
+		});
+		return (
+			<Component {...props} {...componentProps} ref={ref}>
+				{children}
+			</Component>
+		);
+	},
 );
 
 Text.displayName = 'Text';

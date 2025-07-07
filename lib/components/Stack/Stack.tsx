@@ -2,13 +2,14 @@ import React, { Children, type ReactNode, useMemo } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 
 import type { Sprinkles } from '../../styles/sprinkles.css';
-import { Box, type BoxProps } from '../Box/Box';
+import type { BoxProps } from '../Box/Box';
+import { useBox } from '../Box/useBox/useBox';
 
 import * as styles from './Divider.css';
 
 export interface StackProps
 	extends Pick<BoxProps, 'as' | 'width' | 'alignItems'> {
-	children: ReactNode | ReactNode[];
+	children: ReactNode;
 	className?: string;
 	/**
 	 * Show a divider element between each item
@@ -53,50 +54,55 @@ const Divider = () => <hr className={styles.hr} />;
  * </Stack>
  */
 export const Stack = ({
-	alignItems,
 	as = 'div',
-	className,
 	children,
+	className,
+
+	alignItems,
 	dividers = false,
-	space = '2',
+	space: gap = '2',
 	width,
 }: StackProps) => {
+	const { Component, componentProps } = useBox({
+		as,
+		className,
+		odComponent: 'stack',
+
+		display: 'flex',
+		flexDirection: 'column',
+		gap,
+		width,
+	});
+
 	const items = useMemo(() => flattenChildren(children), [children]);
-
-	if (items.length === 0) {
-		return null;
-	}
-
 	const childEl =
 		typeof as === 'string' && as in LIST_MAP
 			? LIST_MAP[as as keyof typeof LIST_MAP]
 			: 'div';
 
+	const { Component: ChildComponent, componentProps: childComponentProps } =
+		useBox({
+			as: childEl,
+
+			alignItems,
+			display: alignItems ? 'flex' : undefined,
+			flexDirection: alignItems ? 'column' : undefined,
+		});
+
+	if (items.length === 0) return null;
+
 	return (
-		<Box
-			as={as}
-			className={className}
-			display="flex"
-			flexDirection="column"
-			gap={space}
-			odComponent="stack"
-			width={width}
-		>
+		<Component {...componentProps}>
 			{Children.map(
 				items,
 				(child, idx) =>
 					child && (
-						<Box
-							alignItems={alignItems}
-							as={childEl}
-							display={alignItems ? 'flex' : undefined}
-							flexDirection={alignItems ? 'column' : undefined}
-						>
+						<ChildComponent {...childComponentProps}>
 							{dividers && idx > 0 && <Divider />}
 							{child}
-						</Box>
+						</ChildComponent>
 					),
 			)}
-		</Box>
+		</Component>
 	);
 };
