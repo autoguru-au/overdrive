@@ -4,7 +4,7 @@ import React from 'react';
 import flatRed from '../../themes/flat_red';
 import { Box } from '../Box/Box';
 import { Button } from '../Button/Button';
-import { Inline } from '../Inline/Inline';
+import { FlexInline } from '../Flex/FlexInline';
 import { Stack } from '../Stack/Stack';
 
 import { OverdriveProvider } from './OverdriveProvider';
@@ -20,12 +20,12 @@ const meta: Meta<typeof OverdriveProvider> = {
 			<Box padding="6">
 				<Stack space="4">
 					<Box display="flex" alignItems="center">
-						<Inline space="4">
+						<FlexInline gap="4">
 							<Button variant="primary">Primary Button</Button>
 							<Button variant="secondary">
 								Secondary Button
 							</Button>
-						</Inline>
+						</FlexInline>
 					</Box>
 				</Stack>
 			</Box>

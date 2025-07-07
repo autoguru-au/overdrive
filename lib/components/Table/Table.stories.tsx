@@ -5,7 +5,7 @@ import { arrayRingLookup } from '../../utils';
 import { Actions } from '../Actions/Actions';
 import { Badge } from '../Badge/Badge';
 import { Button } from '../Button/Button';
-import { Inline } from '../Inline/Inline';
+import { FlexInline } from '../Flex/FlexInline';
 import { Stack } from '../Stack/Stack';
 import { Text } from '../Text/Text';
 
@@ -100,9 +100,9 @@ export const Standard: Story = {
 						</TableCell>
 						<TableCell align="right">$99.00</TableCell>
 						<TableCell>
-							<Inline>
+							<FlexInline>
 								<Badge label="Paid" colour="green" />
-							</Inline>
+							</FlexInline>
 						</TableCell>
 						<TableCell>2min</TableCell>
 						<TableCell align="right">
@@ -138,10 +138,10 @@ export const Standard: Story = {
 						</TableCell>
 						<TableCell align="right">$102.00</TableCell>
 						<TableCell>
-							<Inline>
+							<FlexInline>
 								<Badge label="Paid" colour="green" />
 								<Badge label="Dispute" colour="red" />
-							</Inline>
+							</FlexInline>
 						</TableCell>
 						<TableCell>5min</TableCell>
 						<TableCell align="right">
@@ -177,10 +177,10 @@ export const Standard: Story = {
 						</TableCell>
 						<TableCell align="right">$2,495.45</TableCell>
 						<TableCell>
-							<Inline>
+							<FlexInline>
 								<Badge label="Paid" colour="green" />
 								<Badge label="Complete" colour="green" />
-							</Inline>
+							</FlexInline>
 						</TableCell>
 						<TableCell>5hr</TableCell>
 						<TableCell align="right">
@@ -216,9 +216,9 @@ export const Standard: Story = {
 						</TableCell>
 						<TableCell align="right">$11,158.46</TableCell>
 						<TableCell>
-							<Inline>
+							<FlexInline>
 								<Badge label="Unpaid" colour="yellow" />
-							</Inline>
+							</FlexInline>
 						</TableCell>
 						<TableCell>15hr</TableCell>
 						<TableCell align="right">

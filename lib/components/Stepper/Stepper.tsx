@@ -12,8 +12,8 @@ import {
 import { textStyles } from '../../styles/typography';
 import { addWithSafeDecimal } from '../../utils/number';
 import { Box } from '../Box/Box';
+import { inline } from '../Flex/flex';
 import { Icon } from '../Icon/Icon';
-import { Inline } from '../Inline/Inline';
 import { Text } from '../Text/Text';
 
 import * as styles from './Stepper.css';
@@ -167,7 +167,13 @@ export const Stepper: FunctionComponent<StepperProps> = ({
 			onKeyDown={keyDownHandler}
 			odComponent="stepper"
 		>
-			<Inline alignX="space-between" noWrap>
+			<div
+				className={inline({
+					align: 'space-between',
+					gap: '2',
+					noWrap: true,
+				})}
+			>
 				<Box>
 					<Handle
 						icon={MinusIcon}
@@ -195,7 +201,7 @@ export const Stepper: FunctionComponent<StepperProps> = ({
 						onClick={onIncrement}
 					/>
 				</Box>
-			</Inline>
+			</div>
 		</Box>
 	);
 };

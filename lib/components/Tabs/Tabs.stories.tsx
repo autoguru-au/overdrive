@@ -5,8 +5,8 @@ import React, { useEffect, useState } from 'react';
 import { fn } from 'storybook/test';
 
 import { Box } from '../Box/Box';
+import { FlexInline } from '../Flex/FlexInline';
 import { Icon } from '../Icon/Icon';
-import { Inline } from '../Inline/Inline';
 import { EAlignment } from '../Positioner/alignment';
 import { Stack } from '../Stack/Stack';
 import { StarRating } from '../StarRating/StarRating';
@@ -121,7 +121,7 @@ export const WithComplexTab: Story = {
 			<>
 				<TabList>
 					<Tab indication={2}>
-						<Inline alignY="center">
+						<FlexInline justify="center">
 							Tab 1
 							<Tooltip
 								alignment={EAlignment.BOTTOM}
@@ -131,10 +131,10 @@ export const WithComplexTab: Story = {
 									<Icon icon={OttoIcon} />
 								</Box>
 							</Tooltip>
-						</Inline>
+						</FlexInline>
 					</Tab>
 					<Tab>
-						<Inline alignY="center">
+						<FlexInline justify="center">
 							Tab 2
 							<Tooltip
 								alignment={EAlignment.BOTTOM}
@@ -144,7 +144,7 @@ export const WithComplexTab: Story = {
 									<Icon icon={AlertIcon} />
 								</Box>
 							</Tooltip>
-						</Inline>
+						</FlexInline>
 					</Tab>
 				</TabList>
 

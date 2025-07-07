@@ -4,8 +4,8 @@ import React, { type ComponentProps } from 'react';
 import { fn } from 'storybook/test';
 
 import { Box } from '../Box/Box';
+import { FlexInline } from '../Flex/FlexInline';
 import { Icon } from '../Icon/Icon';
-import { Inline } from '../Inline/Inline';
 
 import { Button, type ButtonProps } from './Button';
 
@@ -81,7 +81,7 @@ const TemplateMulti = ({
 					>
 						{size}
 					</Box>
-					<Inline space="3">
+					<FlexInline gap="3">
 						<Button {...args}>Login</Button>
 						<Button {...args}>
 							<Icon icon={AccountBoxIcon} />
@@ -103,13 +103,13 @@ const TemplateMulti = ({
 						<Button disabled {...args}>
 							Login
 						</Button>
-					</Inline>
+					</FlexInline>
 					<div>
 						<Button isFullWidth {...args}>
 							Full Width
 						</Button>
 					</div>
-					<Inline space="3">
+					<FlexInline gap="3">
 						<Button minimal {...args}>
 							Login
 						</Button>
@@ -141,7 +141,7 @@ const TemplateMulti = ({
 						<Button minimal disabled {...args}>
 							Login
 						</Button>
-					</Inline>
+					</FlexInline>
 				</>
 			);
 		})}
