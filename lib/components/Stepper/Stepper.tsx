@@ -169,8 +169,9 @@ export const Stepper: FunctionComponent<StepperProps> = ({
 		>
 			<div
 				className={inline({
-					align: 'space-between',
 					gap: '2',
+					align: 'space-between',
+					justify: 'center',
 					noWrap: true,
 				})}
 			>

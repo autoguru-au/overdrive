@@ -79,7 +79,7 @@ export const Standard: Story = {
 					<TableRow>
 						<TableCell>522698</TableCell>
 						<TableCell>
-							<div className={stack({ gap: '1' })}>
+							<div className={stack({ gap: '2' })}>
 								<Text size="3" colour="dark">
 									My Auto Service & Repair
 								</Text>
@@ -89,7 +89,7 @@ export const Standard: Story = {
 							</div>
 						</TableCell>
 						<TableCell>
-							<div className={stack({ gap: '1' })}>
+							<div className={stack({ gap: '2' })}>
 								<Text size="3" colour="dark">
 									ABC123
 								</Text>
@@ -117,7 +117,7 @@ export const Standard: Story = {
 					<TableRow>
 						<TableCell>597194</TableCell>
 						<TableCell>
-							<div className={stack({ gap: '1' })}>
+							<div className={stack({ gap: '2' })}>
 								<Text size="3" colour="dark">
 									Magic Spanners
 								</Text>
@@ -127,7 +127,7 @@ export const Standard: Story = {
 							</div>
 						</TableCell>
 						<TableCell>
-							<div className={stack({ gap: '1' })}>
+							<div className={stack({ gap: '2' })}>
 								<Text size="3" colour="dark">
 									ABC123
 								</Text>
@@ -156,7 +156,7 @@ export const Standard: Story = {
 					<TableRow>
 						<TableCell>789456</TableCell>
 						<TableCell>
-							<div className={stack({ gap: '1' })}>
+							<div className={stack({ gap: '2' })}>
 								<Text size="3" colour="dark">
 									Super Special Cars
 								</Text>
@@ -166,7 +166,7 @@ export const Standard: Story = {
 							</div>
 						</TableCell>
 						<TableCell>
-							<div className={stack({ gap: '1' })}>
+							<div className={stack({ gap: '2' })}>
 								<Text size="3" colour="dark">
 									ABC123
 								</Text>
@@ -195,7 +195,7 @@ export const Standard: Story = {
 					<TableRow>
 						<TableCell>159753</TableCell>
 						<TableCell>
-							<div className={stack({ gap: '1' })}>
+							<div className={stack({ gap: '2' })}>
 								<Text size="3" colour="dark">
 									Humans &apos;n Cars
 								</Text>
@@ -205,7 +205,7 @@ export const Standard: Story = {
 							</div>
 						</TableCell>
 						<TableCell>
-							<div className={stack({ gap: '1' })}>
+							<div className={stack({ gap: '2' })}>
 								<Text size="3" colour="dark">
 									ABC123
 								</Text>
