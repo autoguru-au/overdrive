@@ -11,7 +11,10 @@ export type FlexComponentProps<T> = Omit<
 	T;
 
 export interface FlexInlineProps {
-	/** Cross-axis horizontal alignment of items (_responsive_) */
+	/**
+	 * Main-axis horizontal alignment of items (_responsive_)
+	 * @default start
+	 */
 	align?: Sprinkles['justifyContent'];
 	/** Shortcut center horizontal alignment */
 	center?: boolean;
@@ -19,11 +22,13 @@ export interface FlexInlineProps {
 	end?: boolean;
 	/** Child elements should fill available space */
 	expand?: boolean;
+	/** Adds 100% width */
+	fullWidth?: boolean;
 	/** Item horizontal spacing (_responsive_)*/
 	gap?: Sprinkles['gap'];
 	/** Prevent items from wrapping to the next row */
 	noWrap?: boolean;
-	/** Main-axis (horizontal) alignment of items (_responsive_) */
+	/** Cross-axis vertical alignment of items (_responsive_) */
 	justify?: Sprinkles['alignItems'];
 	/** Reverse item order */
 	reverse?: boolean;
@@ -37,6 +42,7 @@ export const inlinePropMapping = ({
 	align,
 	center,
 	end,
+	fullWidth,
 	gap,
 	noWrap,
 	justify,
@@ -56,7 +62,8 @@ export const inlinePropMapping = ({
 				(center && 'center') ||
 				(end && 'end') ||
 				(spaceBetween && 'space-between') ||
-				undefined),
+				'start'),
+		width: fullWidth === true ? 'full' : undefined,
 	}) satisfies Sprinkles;
 
 /**
@@ -88,7 +95,7 @@ export interface FlexStackProps {
 	end?: boolean;
 	/** Item vertical spacing (_responsive_)*/
 	gap?: Sprinkles['gap'];
-	/** Main-axis (vertical) alignment of items (_responsive_) */
+	/** Main-axis vertical alignment of items (_responsive_) */
 	justify?: Sprinkles['justifyContent'];
 	/** Reverse item order */
 	reverse?: boolean;

@@ -51,9 +51,10 @@ export const FlexInline = ({
 	children,
 	expand, // data attribute instead of style prop
 
-	align = 'start',
+	align,
 	center,
 	end,
+	fullWidth,
 	gap = '2',
 	noWrap,
 	justify,
@@ -71,6 +72,7 @@ export const FlexInline = ({
 			align,
 			center,
 			end,
+			fullWidth,
 			gap,
 			noWrap,
 			justify,
