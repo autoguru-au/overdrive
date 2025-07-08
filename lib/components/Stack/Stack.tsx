@@ -3,13 +3,12 @@ import flattenChildren from 'react-keyed-flatten-children';
 
 import type { Sprinkles } from '../../styles/sprinkles.css';
 import { calcChildElement } from '../../utils/elements';
-import type { BoxProps } from '../Box/Box';
-import { useBox } from '../Box/useBox/useBox';
+import { useBox, type UseBoxProps } from '../Box/useBox/useBox';
 
 import * as styles from './Divider.css';
 
 export interface StackProps
-	extends Pick<BoxProps, 'as' | 'width' | 'alignItems'> {
+	extends Pick<UseBoxProps, 'as' | 'width' | 'alignItems'> {
 	children: ReactNode;
 	className?: string;
 	/**

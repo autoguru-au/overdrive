@@ -1,14 +1,14 @@
 import { invariant } from '@autoguru/utilities';
-import * as React from 'react';
-import { forwardRef, ReactNode, useContext } from 'react';
+import React, { forwardRef, ReactNode, useContext } from 'react';
 
-import { Box, type BoxProps } from '../Box/Box';
+import { elementStyles } from '../../styles';
+import { useBox, type UseBoxProps } from '../Box/useBox/useBox';
 
 import * as styles from './Column.css';
 import { ColumnContext } from './Columns';
 
 export interface ColumnProps
-	extends Omit<BoxProps, 'alignSelf' | 'width' | 'css'>,
+	extends Omit<UseBoxProps, 'alignSelf' | 'width' | 'css'>,
 		styles.ColumnRecipeVariants {
 	width?: styles.SprinklesColumnWidth['flexBasis'];
 	className?: string;
@@ -38,30 +38,34 @@ export const Column = forwardRef<HTMLElement, ColumnProps>(
 		);
 
 		const { isList, spaceXCls, spaceYCls } = columnsContext;
+		const { Component, componentProps } = useBox({
+			as,
+			className,
+
+			display: 'flex',
+			height: 'full',
+			width: 'full',
+		});
+		const Wrapper = isList ? 'li' : 'div';
+		const wrapperStyles = elementStyles({
+			as: Wrapper,
+			className: [
+				spaceXCls,
+				spaceYCls,
+				styles.sprinklesColumnWidthResponsive({
+					flexBasis: width,
+				}),
+				styles.columnStyle({ alignSelf, grow, noShrink }),
+			],
+			order,
+		});
 
 		return (
-			<Box
-				as={isList ? 'li' : 'div'}
-				order={order}
-				className={[
-					spaceXCls,
-					spaceYCls,
-					styles.sprinklesColumnWidthResponsive({ flexBasis: width }),
-					styles.columnStyle({ alignSelf, grow, noShrink }),
-				]}
-			>
-				<Box
-					ref={ref}
-					as={as}
-					display="flex"
-					width="full"
-					height="full"
-					className={className}
-					{...boxProps}
-				>
+			<Wrapper className={wrapperStyles}>
+				<Component {...boxProps} {...componentProps} ref={ref}>
 					{children}
-				</Box>
-			</Box>
+				</Component>
+			</Wrapper>
 		);
 	},
 );

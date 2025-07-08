@@ -1,6 +1,4 @@
-import clsx from 'clsx';
-import * as React from 'react';
-import {
+import React, {
 	ComponentProps,
 	createContext,
 	forwardRef,
@@ -16,6 +14,7 @@ import type { ThemeTokens as Tokens } from '../../themes';
 import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
 import { ResponsiveProp } from '../../utils/responsiveProps.css';
 import { Box } from '../Box/Box';
+import { useBox } from '../Box/useBox/useBox';
 
 import * as styles from './Columns.css';
 
@@ -105,21 +104,22 @@ export const Columns = forwardRef<HTMLElement, ColumnsProps>(
 		const marginLeftFix = useNegativeMarginLeft(resolvedSpaceX);
 		const marginTopFix = useNegativeMarginTop(resolvedSpaceY);
 
+		const { Component, componentProps } = useBox({
+			as,
+			className: [
+				marginLeftFix,
+				marginTopFix,
+				styles.columnsStyle({ align, noWrap, wrappingDirection }),
+				className,
+			],
+			odComponent: 'columns',
+
+			display: 'flex',
+			flexDirection: 'row',
+		});
+
 		return (
-			<Box
-				ref={ref}
-				as={as}
-				display="flex"
-				flexDirection="row"
-				className={clsx(
-					marginLeftFix,
-					marginTopFix,
-					styles.columnsStyle({ align, noWrap, wrappingDirection }),
-					className,
-				)}
-				odComponent="columns"
-				{...boxProps}
-			>
+			<Component {...boxProps} {...componentProps} ref={ref}>
 				<ColumnContext.Provider
 					value={useMemo(
 						() => ({
@@ -140,7 +140,7 @@ export const Columns = forwardRef<HTMLElement, ColumnsProps>(
 				>
 					{children}
 				</ColumnContext.Provider>
-			</Box>
+			</Component>
 		);
 	},
 );
