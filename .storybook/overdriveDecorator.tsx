@@ -53,8 +53,8 @@ export const useStorybookDecorator = (Story, context) => {
 export const useChromaticDecorator = (Story, context) => {
 	const portalRef = useRef<HTMLDivElement>(null);
 
-	// Check if the 'modal' tag is present in the story's tags, render the story once
-	if (context?.tags.includes('modal')) {
+	// Check if the 'skip-themes' tag is present in the story's tags, render the story once
+	if (context?.tags.includes('skip-themes')) {
 		return (
 			<OverdriveProvider
 				theme={themes[0]}

@@ -131,18 +131,11 @@ Granular utilities for adding styles directly to an HTML element
 
 _Version deprecated_
 
-### Patch Changes
-
-- 7996070: Fix for the Columns missing default of `noWrap: false`
 
 ## ~~4.43.4~~
 
 _Version deprecated_
 
-### Patch Changes
-
-- a2118b7: **Columns** `alignSelf` prop switched to "top"/"bottom" to match
-  existing usage
 
 ## ~~4.43.3~~
 
@@ -175,21 +168,10 @@ _Version deprecated_
 - 42695b0: **See 4.43.6 release notes**. Component changes were manually
   reverted due to consuming compatibility issues
 
-    ##### CSS layers introduced
-    - `@reset` contains base resets
-    - `@utility` contains the spinkles utility classes
+	##### CSS layers introduced
+	- `@reset` contains base resets
+	- `@utility` contains the spinkles utility classes
 
-    #### Box
-
-    Newly implemented with more powerful polymorphic type based on the `as`
-    prop, and exposes `useBox` for core logic.
-    - useBox returns the JSX component tag as well as the processed and filtered
-      props. It also handles logic for determing a semantic child tag rather
-      than repeated within various components
-    - props `odComponent` and `testId` sets consistent data attribute for use at
-      component root are exported as `CommonBoxProps`
-    - useBoxStyles been replaced with `boxStyles` which handles the
-      vanilla-extract sprinkles
 
 ## 4.42.0
 
@@ -198,13 +180,13 @@ _Version deprecated_
 - d32fe98: Expands theme contract to include new 'color' tokens (work in
   progress), without removing existing. Both are documented in Storybook.
 
-    **Breaking change** type of the theme tokens object `Tokens` has been
-    renamed to `ThemeTokens` for clarity.
+	**Breaking change** type of the theme tokens object `Tokens` has been
+	renamed to `ThemeTokens` for clarity.
 
-    Replaces local (namespaced) css variables with un-namespaced vars in all
-    themes. Theme tokens are now assigned to a css layer. And vanilla-extract
-    tokens can be imported as `overdriveTokens` but using `themeContractVars`
-    will continue to work.
+	Replaces local (namespaced) css variables with un-namespaced vars in all
+	themes. Theme tokens are now assigned to a css layer. And vanilla-extract
+	tokens can be imported as `overdriveTokens` but using `themeContractVars`
+	will continue to work.
 
 ## 4.41.0
 
@@ -216,29 +198,29 @@ _Version deprecated_
   `<ThemeOverrideProvider>` values have been incorporated. Applications do not
   need to be wrapped separate providers.
 
-    New peer dependency
-    - Added dependency `es-toolkit`
+	New peer dependency
+	- Added dependency `es-toolkit`
 
-    Provider Consolidation
-    - `ThemeProvider` and `ThemeOverrideProvider` have been replaced by a
-      fallback provider to show deprecation warnings
-    - All theming functionality is now handled through `OverdriveProvider`
-      including a combined component API
+	Provider Consolidation
+	- `ThemeProvider` and `ThemeOverrideProvider` have been replaced by a
+		fallback provider to show deprecation warnings
+	- All theming functionality is now handled through `OverdriveProvider`
+		including a combined component API
 
-    OverdriveProvider updates
-    - `theme` prop is now optional
-    - Colour overrides are passed as an object `colorOverrides` instead of
-      individual props as in previous provider
-    - Some of the on-page behaviour of `ThemeOverrideDebugger` has been disabled
+	OverdriveProvider updates
+	- `theme` prop is now optional
+	- Colour overrides are passed as an object `colorOverrides` instead of
+		individual props as in previous provider
+	- Some of the on-page behaviour of `ThemeOverrideDebugger` has been disabled
 
-    Data attribute and CSS Variables
-    - Theme application is now available using data attribute
-      `data-od-theme=base`
-    - OD tokens are exposed globally in CSS variables
+	Data attribute and CSS Variables
+	- Theme application is now available using data attribute
+		`data-od-theme=base`
+	- OD tokens are exposed globally in CSS variables
 
-    Reset updates
-    - Added `container` styles into resets
-    - Updated CSS reset
+	Reset updates
+	- Added `container` styles into resets
+	- Updated CSS reset
 
 ### Patch Changes
 

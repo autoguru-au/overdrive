@@ -1,0 +1,19 @@
+{
+  "bracketSpacing": true,
+  "printWidth": 80,
+  "proseWrap": "always",
+  "singleQuote": true,
+  "tabWidth": 4,
+  "trailingComma": "all",
+  "useTabs": true
+  ,
+  "overrides": [
+    {
+      "files": ["*.md", "*.mdx"],
+      "options": {
+				"tabWidth": 2,
+        "useTabs": false
+      }
+    }
+  ]
+}

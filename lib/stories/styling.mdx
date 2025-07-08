@@ -48,22 +48,22 @@ directly to an element. It is lightweight and efficient.
 import { css } from '@autoguru/overdrive';
 
 const MyComponent = ({ children }) => (
-	<LocalComponent>
-		<div
-			className={css({
-				// responsive array notation (padding shorthand)
-				p: ['2', '4', '6', '8'],
-				// responsive object notation (marginX shorthand)
-				mx: { mobile: '3', tablet: '5', desktop: '8' },
-				bg: 'soft',
-				fg: 'info',
-				borderColor: 'neutral',
-				borderRadius: 'sm',
-			})}
-		>
-			{children}
-		</div>
-	</LocalComponent>
+  <LocalComponent>
+    <div
+      className={css({
+        // responsive array notation (padding shorthand)
+        p: ['2', '4', '6', '8'],
+        // responsive object notation (marginX shorthand)
+        mx: { mobile: '3', tablet: '5', desktop: '8' },
+        bg: 'soft',
+        fg: 'info',
+        borderColor: 'neutral',
+        borderRadius: 'sm',
+      })}
+    >
+      {children}
+    </div>
+  </LocalComponent>
 );
 ```
 
@@ -84,23 +84,23 @@ element reset styles.
 import { elementStyles } from '@autoguru/overdrive';
 
 const MyCard = ({ children, className }) => {
-	return (
-		<div
-			className={elementStyles({
-				// `as` prop defaults to `div`
-				// as: 'div',
-				className,
-				p: '4',
-				borderRadius: '2',
-				backgroundColor: 'white',
-				borderWidth: '1',
-				borderColor: 'neutral',
-				boxShadow: '1',
-			})}
-		>
-			{children}
-		</div>
-	);
+  return (
+    <div
+      className={elementStyles({
+        // `as` prop defaults to `div`
+        // as: 'div',
+        className,
+        p: '4',
+        borderRadius: '2',
+        backgroundColor: 'white',
+        borderWidth: '1',
+        borderColor: 'neutral',
+        boxShadow: '1',
+      })}
+    >
+      {children}
+    </div>
+  );
 };
 ```
 
@@ -121,11 +121,11 @@ manage element resets yourself, or when no reset is needed.
 import { typography } from '@autoguru/overdrive';
 
 const SimpleText = ({ children }) => {
-	return (
-		<span className={typography({ size: '4', weight: 'semibold' })}>
-			{children}
-		</span>
-	);
+  return (
+    <span className={typography({ size: '4', weight: 'semibold' })}>
+      {children}
+    </span>
+  );
 };
 ```
 
@@ -148,19 +148,19 @@ Replaces `useTextStyles` hook.
 import { textStyles } from '@autoguru/overdrive';
 
 const MyLabel = ({ children, className }) => {
-	return (
-		<label
-			className={textStyles({
-				as: 'label',
-				className,
-				size: '5',
-				weight: 'semibold',
-				px: '2',
-			})}
-		>
-			{children}
-		</label>
-	);
+  return (
+    <label
+      className={textStyles({
+        as: 'label',
+        className,
+        size: '5',
+        weight: 'semibold',
+        px: '2',
+      })}
+    >
+      {children}
+    </label>
+  );
 };
 ```
 

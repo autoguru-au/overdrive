@@ -76,7 +76,12 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 		const inputRef = useRef<HTMLInputElement>(null);
 		const [mode, setMode] = useState<InputMode>('TEXT');
 		const [inputValue, setInputValue] = useState(value);
+
 		const onRequestModeChange = (newMode: InputMode) => {
+			if (`${inputValue}`.length === 0) {
+				setInputValue(value);
+			}
+
 			setMode(newMode);
 			if (typeof onModeChange === 'function') {
 				onModeChange(newMode);
@@ -88,17 +93,24 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 				const changeValue = e.currentTarget.value;
 				// eslint-disable-next-line unicorn/prefer-at
 				const lastChar = changeValue.charAt(changeValue.length - 1);
+
+				// If the last entered character is not a digit or '.', don't update the state
 				if (
 					type === 'number' &&
 					!numberInputValuePattern.test(lastChar)
 				) {
-					// If the last entered character is not a digit or '.', don't update the state
 					return;
 				}
+
 				if (mode === 'INPUT') {
 					setInputValue(changeValue);
 				}
-				if (typeof incomingOnChange === 'function') incomingOnChange(e);
+
+				if (
+					`${changeValue}`.length > 0 &&
+					typeof incomingOnChange === 'function'
+				)
+					incomingOnChange(e);
 			},
 			[incomingOnChange, type, mode],
 		);
@@ -108,12 +120,14 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 			colour,
 			size,
 		});
-		const [width, setWidth] = useState<number | undefined>();
+		const [width, setWidth] = useState(10);
 		useEffect(() => {
 			if (textRef.current) {
-				setWidth(textRef.current.clientWidth);
+				setWidth(
+					Math.ceil(textRef.current.getBoundingClientRect().width),
+				);
 			}
-		}, [textRef.current, inputValue]);
+		}, [inputValue]);
 		return (
 			<Box
 				ref={ref}
@@ -146,6 +160,7 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 						autoFocus
 						ref={inputRef}
 						type={type === 'number' ? 'text' : type}
+						name="editable-text"
 						value={inputValue}
 						className={clsx(
 							baseStyle,

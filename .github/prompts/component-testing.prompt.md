@@ -16,6 +16,45 @@ You are working with a React component library that uses:
 - **TypeScript** for type safety
 - **vanilla-extract** for styling
 
+## Guidelines
+
+### Do
+
+- Focus on user-facing behavior over implementation details
+- Test accessibility features thoroughly
+- Use descriptive test and story names
+- Include edge cases and error states
+- Prefer the Storybook `decorators` wrapper instead of a custom `render`
+  function in a story
+- Aim for 5 stories per component, or less
+- Leverage existing stories in spec files via `composeStories`
+- Write play functions for interactive components
+- Document complex interactions in story descriptions
+
+### Don't
+
+- Duplicate testing between stories and specs
+- Add custom `options` or `description` to Storybook argTypes
+- Use overly complex story setups or put the main children content in a `render`
+  function
+- Use the `style` prop directly in the story, import and use the `sprinkles`
+  function or another internal style util
+- Skip accessibility testing
+- Add new dependencies
+- Write a lot of stories unless it is particularily complex component
+
+### Terminal Commands
+
+After creating or updating tests, always run:
+
+```bash
+# Run tests
+yarn test run [ComponentName]
+
+# Update snapshots if needed
+yarn test run [ComponentName] -u
+```
+
 ## Task Types
 
 ### 1. New Component Testing Setup
@@ -42,18 +81,27 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { fn } from 'storybook/test';
 
+// Use the `sprinkles` function for local styling, except for width/height, if any is needed in a story
+// Always use the `valueArrays` to populate the argTypes
+import {
+  sprinkles,
+  type Sprinkles,
+  valueArrays,
+} from '../../styles/sprinkles.css';
+
 import { ComponentName, type ComponentNameProps } from './ComponentName';
 
 const meta: Meta<typeof ComponentName> = {
-	title: 'Category/ComponentName',
-	component: ComponentName,
-	tags: ['polymorphic'], // if applicable
-	args: {
-		// Default args for all stories
-	},
-	argTypes: {
-		// Control documentation
-	},
+  title: 'Category/ComponentName',
+  component: ComponentName,
+  tags: ['polymorphic'], // if applicable
+  args: {
+    // Populate component-specific args here so that correct defaults are set in the story
+  },
+  argTypes: {
+    // Declare options here from `valueArray`
+    // No add `control` or `description` values for argTypes here, they are inferred from typescript
+  },
 };
 
 export default meta;
@@ -80,6 +128,11 @@ Use appropriate categories in the `title` field:
 4. **Edge Cases** - Long text, empty states, error states
 5. **Accessibility** - Keyboard navigation, screen reader scenarios
 
+### Documentation
+
+- Provide meaningful control options in `argTypes`
+- Document accessibility considerations
+
 ### Play Functions
 
 Include interactive tests using Storybook's play function for:
@@ -91,28 +144,21 @@ Include interactive tests using Storybook's play function for:
 
 ```tsx
 export const InteractiveExample: Story = {
-	args: {
-		// story-specific args
-	},
-	play: async ({ canvasElement, step }) => {
-		const canvas = within(canvasElement);
+  args: {
+    // story-specific args
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
 
-		await step('Test interaction description', async () => {
-			// Test implementation
-			const element = canvas.getByRole('button');
-			await userEvent.click(element);
-			await expect(element).toHaveAttribute('aria-pressed', 'true');
-		});
-	},
+    await step('Test interaction description', async () => {
+      // Test implementation
+      const element = canvas.getByRole('button');
+      await userEvent.click(element);
+      await expect(element).toHaveAttribute('aria-pressed', 'true');
+    });
+  },
 };
 ```
-
-### Documentation
-
-- Use clear, descriptive JSDoc comments for props
-- Include usage examples in story descriptions
-- Document accessibility considerations
-- Provide meaningful control options in `argTypes`
 
 ## Spec File Requirements
 
@@ -138,15 +184,21 @@ import * as stories from './ComponentName.stories';
 const { Standard, VariantName } = composeStories(stories);
 
 describe('<ComponentName />', () => {
-	// Test stories first
-	it('renders the standard story', async () => {
-		await Standard.run();
-		// Assertions
-	});
+  // Test stories first
+  it('renders the standard story', async () => {
+    await Standard.run();
+    // Assertions
+  });
 
-	// Then test component-specific logic
+  // Then test component-specific logic
 });
 ```
+
+### Only use stories in the render function
+
+- `render` functions in the spec file should only use story components
+- Add any props necessary to the story component
+- Don't use the published React component directly in the `render` function
 
 ### Testing Priorities
 
@@ -162,39 +214,6 @@ describe('<ComponentName />', () => {
 - Test user interactions with `@testing-library/user-event`
 - Use snapshot testing sparingly, only for complex DOM structures
 - Mock external dependencies appropriately
-
-## Guidelines
-
-### Do
-
-- Focus on user-facing behavior over implementation details
-- Test accessibility features thoroughly
-- Use descriptive test and story names
-- Include edge cases and error states
-- Leverage existing stories in spec files via `composeStories`
-- Write play functions for interactive components
-- Document complex interactions in story descriptions
-
-### Don't
-
-- Test internal implementation details
-- Create spec files for simple presentational components
-- Duplicate testing between stories and specs
-- Use overly complex story setups
-- Skip accessibility testing
-- Add unnecessary dependencies
-
-## Example Commands
-
-After creating or updating tests, always run:
-
-```bash
-# Run tests
-yarn test [ComponentName]
-
-# Update snapshots if needed
-yarn test [ComponentName] -u
-```
 
 ## Accessibility Testing
 
