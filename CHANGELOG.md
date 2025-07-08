@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 4.44.4
+
+### Patch Changes
+
+- 2bc6cce: NumberBubble: improved text centering
+- 2bc6cce: Fix: missing `useBoxStyles` alias export
+
 ## 4.44.3
 
 ### Patch Changes
