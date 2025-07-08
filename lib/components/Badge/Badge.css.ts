@@ -18,17 +18,8 @@ export const styledBadge = recipe({
 		},
 	],
 	variants: {
-		colour: {
-			neutral: {},
-			red: {},
-			green: {},
-			blue: {},
-			yellow: {},
-		},
-		inverted: {
-			true: {},
-			false: {},
-		},
+		
+		
 		size: {
 			small: {
 				fontSize: tokens.typography.size[1].fontSize,
@@ -38,8 +29,8 @@ export const styledBadge = recipe({
 				fontSize: tokens.typography.size[2].fontSize,
 			},
 			large: {
-				fontSize: tokens.typography.size[4].fontSize,
 				padding: tokens.space[4],
+				fontSize: tokens.typography.size[4].fontSize,
 			},
 		},
 	},

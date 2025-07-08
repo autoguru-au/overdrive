@@ -21,8 +21,8 @@ const blinker = keyframes({
 });
 
 export const blinking = style({
+	animationName: blinker,
 	animationDuration: '1.5s',
 	animationTimingFunction: vars.animation.easing.standard,
 	animationIterationCount: 'infinite',
-	animationName: blinker,
 });

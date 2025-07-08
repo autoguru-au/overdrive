@@ -13,8 +13,8 @@ export const simpleRoot = style({
 });
 
 export const content = style({
-	height: 'fit-content',
 	transition: `transform 0.3s ${vars.animation.easing.standard} 0s`,
+	height: 'fit-content',
 });
 
 export const popped = style({

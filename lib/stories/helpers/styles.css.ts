@@ -12,10 +12,10 @@ export const labels = style({
 });
 
 export const codeVariable = style({
+	lineHeight: '1.25',
 	color: overdriveTokens.color.gamut.gray[600],
 	fontFamily: 'monospace',
 	fontSize: '13px',
-	lineHeight: '1.25',
 });
 
 export const small = style({
@@ -29,42 +29,42 @@ export const gridSwatches = style({
 });
 
 export const hexPill = style({
-	backgroundColor: 'hsl(0 0 100 / 75%)',
-	borderRadius: '100px',
-	display: 'inline-block',
-	fontSize: '11px',
-	padding: '1px 8px',
 	position: 'absolute',
-	textTransform: 'uppercase',
 	top: '5px',
+	display: 'inline-block',
+	borderRadius: '100px',
+	backgroundColor: 'hsl(0 0 100 / 75%)',
+	padding: '1px 8px',
+	textTransform: 'uppercase',
+	fontSize: '11px',
 });
 
 export const transitionColours = style({
-	transitionProperty: 'background,color',
 	transitionDuration: '600ms',
+	transitionProperty: 'background,color',
 	transitionBehavior: 'ease-in-out',
 });
 
 export const variantColourSwatch = recipe({
 	base: {
 		position: 'relative',
-		borderColor: overdriveTokens.color.gamut.gray[200],
-		borderStyle: 'solid',
 		borderWidth: overdriveTokens.border.width[1],
+		borderStyle: 'solid',
+		borderColor: overdriveTokens.color.gamut.gray[200],
 	},
 	variants: {
 		size: {
 			sm: {
-				height: overdriveTokens.space[7],
 				width: overdriveTokens.space[7],
+				height: overdriveTokens.space[7],
 			},
 			md: {
-				height: overdriveTokens.space[8],
 				width: overdriveTokens.space[8],
+				height: overdriveTokens.space[8],
 			},
 			lg: {
-				height: overdriveTokens.space[9],
 				width: overdriveTokens.space[9],
+				height: overdriveTokens.space[9],
 			},
 		},
 		shape: {

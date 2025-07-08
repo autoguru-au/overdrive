@@ -376,8 +376,8 @@ export type ThemeTokens = TokensFromContract<typeof overdriveTokens>;
 
 /** *Reccomend replace usage*: `container` should be impored from `lib/reset/reset.css` */
 export const container = style({
+	lineHeight: overdriveTokens.typography.size[4].lineHeight,
 	fontFamily: overdriveTokens.typography.fontFamily,
 	fontSize: overdriveTokens.typography.size[4].fontSize,
 	fontWeight: overdriveTokens.typography.fontWeight.normal,
-	lineHeight: overdriveTokens.typography.size[4].lineHeight,
 });

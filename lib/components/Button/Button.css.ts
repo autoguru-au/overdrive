@@ -64,37 +64,33 @@ export const button = recipe({
 			},
 		},
 		// Shape variants
-		shape: {
-			default: {},
-			rounded: {},
-			iconOnly: {},
-		},
+		
 		// Intent (color scheme) variants
 		intent: {
 			primary: {
-				color: intentColors.primary.foreground,
 				backgroundColor: intentColors.primary.background.standard,
+				color: intentColors.primary.foreground,
 				[selectorFocusHoverActive]: {
-					color: intentColors.primary.foreground,
 					backgroundColor: intentColors.primary.background.strong,
+					color: intentColors.primary.foreground,
 				},
 			},
 			brand: {
-				color: intentColors.brand.foreground,
 				backgroundColor: intentColors.brand.background.standard,
+				color: intentColors.brand.foreground,
 				[selectorFocusHoverActive]: {
 					backgroundColor: intentColors.brand.background.strong,
 				},
 			},
 			secondary: {
-				color: intentColors.secondary.foreground,
-				backgroundColor: intentColors.secondary.background.standard,
 				border: `1px solid ${intentColors.secondary.border}`,
+				backgroundColor: intentColors.secondary.background.standard,
+				color: intentColors.secondary.foreground,
 				selectors: {
 					[selectorFocusHoverActive]: {
+						borderColor: intentColors.secondary.background.strong,
 						backgroundColor:
 							intentColors.secondary.background.strong,
-						borderColor: intentColors.secondary.background.strong,
 					},
 				},
 			},
@@ -130,9 +126,9 @@ export const button = recipe({
 		// Miminal appearance variant
 		minimal: {
 			true: {
-				color: vars.typography.colour.neutral,
-				backgroundColor: 'transparent',
 				border: 'none',
+				backgroundColor: 'transparent',
+				color: vars.typography.colour.neutral,
 			},
 			false: [],
 		},

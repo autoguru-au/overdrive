@@ -64,16 +64,13 @@ const generatedCompoundVariants = intentKeys.flatMap((intentionKey) => [
 
 export const styledIntentionalElement = recipe({
 	base: {
-		backgroundColor: intentBg,
 		borderColor: intentBorderColor,
+		backgroundColor: intentBg,
 		color: intentColor,
 	},
 	variants: {
 		intention: intentionRecipeVariants,
-		inverted: {
-			true: {},
-			false: {},
-		},
+		
 	},
 	compoundVariants: generatedCompoundVariants,
 });

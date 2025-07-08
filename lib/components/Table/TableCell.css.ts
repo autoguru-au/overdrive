@@ -12,15 +12,15 @@ export const root = style({
 	@see https://caniuse.com/#feat=css-subgrid
 	 */
 	':before': {
-		display: 'block',
-		content: '""',
 		position: 'absolute',
 		zIndex: -1,
 		top: 0,
+		right: '-1000%',
 		bottom: 0,
 		left: '-1000%',
-		right: '-1000%',
+		display: 'block',
 		transition: `background-color 0.2s ${vars.animation.easing.accelerate}`,
+		content: '""',
 	},
 
 	selectors: {

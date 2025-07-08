@@ -22,31 +22,31 @@ const circleBase = style({
 export const radio = style([
 	circleBase,
 	{
-		borderColor: colorMid,
-		borderStyle: 'solid',
+		transition,
 		borderWidth: borderWidth,
-		height: outerSize,
+		borderStyle: 'solid',
+		borderColor: colorMid,
 		width: outerSize,
 		selectors: {
 			[`${nativeInput}:not(:checked,[checked]):hover ~${checkable} &`]: {
 				backgroundColor: colorMid,
 			},
 		},
-		transition,
+		height: outerSize,
 	},
 ]);
 
 export const radioSelected = style({
-	backgroundColor: colorAccent,
 	borderColor: colorAccent,
+	backgroundColor: colorAccent,
 });
 
 export const inner = style([
 	circleBase,
 	{
-		height: innerSize,
-		width: innerSize,
 		transition: `${transition}, transform 0.2s ${vars.animation.easing.standard}`,
+		width: innerSize,
+		height: innerSize,
 		selectors: {
 			[`${nativeInput}:not(:checked):hover ~${checkable} &`]: {
 				backgroundColor: colorContrast,

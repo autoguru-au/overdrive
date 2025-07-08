@@ -20,16 +20,16 @@ export const nativeInput = style({
 	zIndex: 2,
 	top: 0,
 	left: 0,
-	cursor: 'inherit',
 	opacity: 0,
 	outline: 'none',
+	cursor: 'inherit',
 });
 
 export const checkable = style({
-	width: `calc(${vars.space['6']} + (${vars.space[3]} * 2))`,
-	height: `calc(${vars.space['6']} + (${vars.space[3]} * 2))`,
 	marginTop: `calc(-1*${vars.space['3']})`,
 	marginBottom: `calc(-1*${vars.space['3']})`,
+	width: `calc(${vars.space['6']} + (${vars.space[3]} * 2))`,
+	height: `calc(${vars.space['6']} + (${vars.space[3]} * 2))`,
 });
 
 export const checkableIndicator = style({

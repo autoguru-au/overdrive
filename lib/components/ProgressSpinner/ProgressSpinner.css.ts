@@ -8,8 +8,8 @@ const spinAnim = keyframes({
 	},
 });
 export const circular = style({
-	animationName: spinAnim,
 	transformOrigin: 'center center',
+	animationName: spinAnim,
 	animationDuration: '2s',
 	animationTimingFunction: 'linear',
 	animationIterationCount: 'infinite',
@@ -32,13 +32,13 @@ const stokeAnim = keyframes({
 	},
 });
 export const path = style({
-	strokeDasharray: '1, 200',
-	strokeDashoffset: 0,
-	strokeLinecap: 'round',
+	animationName: stokeAnim,
 	animationDuration: '1.5s',
 	animationTimingFunction: vars.animation.easing.standard,
 	animationIterationCount: 'infinite',
-	animationName: stokeAnim,
+	strokeDasharray: '1, 200',
+	strokeDashoffset: 0,
+	strokeLinecap: 'round',
 });
 
 export const colours = styleVariants({

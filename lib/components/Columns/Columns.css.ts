@@ -39,7 +39,7 @@ export const columnsStyle = recipe({
 			true: sprinkles({ flexWrap: 'nowrap' }),
 		},
 		wrappingDirection: {
-			default: {},
+			
 			reverse: sprinkles({ flexWrap: 'wrap-reverse' }),
 		},
 	},

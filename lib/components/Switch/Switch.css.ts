@@ -16,13 +16,13 @@ export const base = style({
 
 export const toggle = style([
 	{
-		cursor: 'pointer',
-		backgroundColor: colorMid,
-		height: height,
-		width: `calc(2 * ${height} - 2px)`,
-		borderRadius: vars.border.radius.pill,
-		padding: '3px 4px',
 		transition: 'background-color 0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
+		borderRadius: vars.border.radius.pill,
+		backgroundColor: colorMid,
+		cursor: 'pointer',
+		padding: '3px 4px',
+		width: `calc(2 * ${height} - 2px)`,
+		height: height,
 		selectors: {
 			'&:not([data-disabled]):hover': {
 				backgroundColor: colorAccent,
@@ -47,11 +47,11 @@ const handleTranslate = `translateX(calc(${handleSize} - 4px))`;
 export const handle = styleVariants({
 	default: {
 		aspectRatio: '1',
-		height: '100%',
-		borderRadius: vars.border.radius.full,
-		backgroundColor: colorContrast,
 		transition: 'transform 0.2s cubic-bezier(0, 0, 0.2, 1) 0s',
 		willChange: 'transform',
+		borderRadius: vars.border.radius.full,
+		backgroundColor: colorContrast,
+		height: '100%',
 		selectors: {
 			[`${toggle}:not([data-disabled]):hover &`]: {
 				transform: handleScale,

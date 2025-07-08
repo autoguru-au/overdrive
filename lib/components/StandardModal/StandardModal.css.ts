@@ -8,12 +8,12 @@ export const container = style({
 });
 
 export const modal = style({
+	alignSelf: 'flex-end',
+	borderRadius: `${vars.border.radius['2xl']} ${vars.border.radius['2xl']} 0 0`,
 	width: '100vw',
 	height: 'auto',
-	alignSelf: 'flex-end',
 	minHeight: `calc(3 * ${vars.space['8']})`,
 	maxHeight: `calc(100vh - ${vars.space['8']})`,
-	borderRadius: `${vars.border.radius['2xl']} ${vars.border.radius['2xl']} 0 0`,
 	...responsiveStyle({
 		tablet: {
 			alignSelf: 'center',

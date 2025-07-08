@@ -17,11 +17,11 @@ export const root = styleVariants({
 			boxSizing: 'content-box',
 			display: 'block',
 			alignSelf: 'flex-start',
+			marginTop: `calc((1.6em - ${vars.space['2']}) / 2)`,
+			backgroundColor: vars.typography.colour.dark,
 			width: vars.space['2'],
 			height: vars.space['2'],
-			marginTop: `calc((1.6em - ${vars.space['2']}) / 2)`,
 			content: "' '",
-			backgroundColor: vars.typography.colour.dark,
 		},
 	},
 	circle: {

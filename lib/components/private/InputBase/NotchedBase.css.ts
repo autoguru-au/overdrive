@@ -28,10 +28,10 @@ const defaultBorderWidth = vars.border.width['1'];
 const largeBorderWidth = vars.border.width['2'];
 
 const borderRegionDefaults = style({
-	borderWidth: defaultBorderWidth,
-	borderStyle: 'solid',
 	display: 'inline-flex',
 	transition: `border-color 0.2s ${vars.animation.easing.decelerate} 0s`,
+	borderWidth: defaultBorderWidth,
+	borderStyle: 'solid',
 });
 
 const borderVisualDefaults = style({
@@ -70,9 +70,9 @@ export const borders = {
 	leading: [
 		borderRegionDefaults,
 		style({
-			width: vars.space['2'],
 			borderRight: 'none',
 			borderRadius: `${vars.border.radius['md']} 0 0 ${vars.border.radius['md']}`,
+			width: vars.space['2'],
 		}),
 	],
 	middle: [
@@ -174,11 +174,11 @@ export type BordersMerged = keyof typeof bordersMerged.complete;
 
 export const placeholder = styleVariants({
 	default: {
-		lineHeight: 1,
 		top: 0,
 		left: 0,
-		transition: `color 0.2s ${vars.animation.easing.decelerate} 0s, transform 0.2s ${vars.animation.easing.decelerate} 0s`,
 		transformOrigin: 'top left',
+		transition: `color 0.2s ${vars.animation.easing.decelerate} 0s, transform 0.2s ${vars.animation.easing.decelerate} 0s`,
+		lineHeight: 1,
 	},
 	mutedLabelStyles: {
 		color: vars.typography.colour.muted,

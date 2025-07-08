@@ -43,7 +43,7 @@ export const styledGrid = recipe({
 	}),
 	variants: {
 		columns: {
-			'1': {},
+			
 			'2': {
 				'@container': {
 					[`${gridContainer} (min-width: 640px)`]: {
@@ -89,57 +89,6 @@ const optionTransition = style({
 	transition: 'background 100ms ease-in, border-color 100ms ease-in',
 });
 
-export const styledGridItem = recipe({
-	base: [
-		{
-			alignItems: 'center',
-			backgroundColor: tokens.colours.background.body,
-			borderColor: tokens.border.colours.gray,
-			borderRadius: tokens.border.radius['md'],
-			borderStyle: 'solid',
-			borderWidth: tokens.border.width[1],
-			minHeight: '80px',
-			userSelect: 'none',
-			display: 'flex',
-			gap: tokens.space[2],
-			padding: `${tokens.space[3]} ${tokens.space[4]}`,
-			position: 'relative',
-		},
-		interactionStyle({
-			hover: {
-				cursor: 'pointer',
-			},
-			selected: {
-				backgroundColor: tokens.colours.background.body,
-				borderColor: tokens.border.colours.dark,
-			},
-		}),
-		{
-			selectors: {
-				'&[data-selected]:after': {
-					outlineColor: tokens.colours.gamut.black900,
-					outlineStyle: 'solid',
-					outlineWidth: tokens.border.width[2],
-					borderRadius: 'inherit',
-					content: '',
-					display: 'block',
-					position: 'absolute',
-					width: '100%',
-					height: '100%',
-					left: 0,
-					top: 0,
-				},
-				'&:hover:not([data-selected]), &[data-focus-visible]:not([data-selected])':
-					{
-						backgroundColor: tokens.border.colours.light,
-						borderColor: tokens.border.colours.light,
-					},
-			},
-		},
-		optionTransition,
-		focusOutlineStyle,
-	],
-});
 
 export type StyledGridItemProps = NonNullable<
 	RecipeVariants<typeof styledGridItem>
@@ -147,42 +96,10 @@ export type StyledGridItemProps = NonNullable<
 
 // === Indicator styles
 export const styleIndicator = style({
-	height: '26px',
 	width: '26px',
+	height: '26px',
 });
 
-export const styledCheckbox = recipe({
-	base: [
-		{
-			backgroundColor: tokens.colours.background.body,
-			borderRadius: tokens.border.radius['sm'],
-			color: 'transparent',
-		},
-		interactionStyle({
-			selected: {
-				backgroundColor: tokens.colours.foreground.body,
-				color: tokens.colours.background.body,
-			},
-		}),
-		{
-			selectors: {
-				[`&[data-hover]${notSelected}${notDisabled}, &[data-focus-visible]${notSelected}${notDisabled}`]:
-					{
-						backgroundColor: tokens.colours.gamut.gray300,
-						color: tokens.colours.background.body,
-					},
-			},
-		},
-		sprinkles({
-			alignItems: 'center',
-			display: 'flex',
-			flexShrink: '0',
-			justifyContent: 'center',
-			size: '6',
-		}),
-		optionTransition,
-	],
-});
 
 export type StyledCheckboxProps = NonNullable<
 	RecipeVariants<typeof styledCheckbox>
@@ -191,15 +108,15 @@ export type StyledCheckboxProps = NonNullable<
 const pseudoRadio = style({
 	selectors: {
 		'&:after': {
-			borderRadius: 'inherit',
-			content: '',
-			display: 'block',
 			position: 'absolute',
+			top: 0,
+			left: 0,
+			display: 'block',
 			transform: 'scale(0.475)',
+			borderRadius: 'inherit',
 			width: '100%',
 			height: '100%',
-			left: 0,
-			top: 0,
+			content: '',
 		},
 		'&[data-hover]:after, &[data-focus-visible]:after': {
 			background: tokens.colours.gamut.gray200,
@@ -210,39 +127,6 @@ const pseudoRadio = style({
 	},
 });
 
-export const styledRadioButton = recipe({
-	base: [
-		{
-			backgroundColor: tokens.colours.background.body,
-			borderColor: tokens.border.colours.gray,
-			borderRadius: tokens.border.radius.full,
-			borderStyle: 'solid',
-			borderWidth: tokens.border.width[1],
-			position: 'relative',
-		},
-		interactionStyle({
-			selected: {
-				backgroundColor: tokens.colours.foreground.body,
-				borderColor: tokens.border.colours.dark,
-			},
-		}),
-		sprinkles({
-			alignItems: 'center',
-			size: '6',
-		}),
-		{
-			selectors: {
-				'&[data-hover]:not([data-selected]),&[focus-visible]:not([data-selected])':
-					{
-						backgroundColor: tokens.colours.gamut.gray300,
-						borderColor: tokens.colours.gamut.gray300,
-					},
-			},
-		},
-		pseudoRadio,
-		optionTransition,
-	],
-});
 
 export type StyledRadioButtonProps = NonNullable<
 	RecipeVariants<typeof styledRadioButton>

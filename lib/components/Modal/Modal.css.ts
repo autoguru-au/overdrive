@@ -3,11 +3,11 @@ import { style, styleVariants } from '@vanilla-extract/css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
 export const root = style({
+	zIndex: 1000,
 	top: 0,
 	right: 0,
 	bottom: 0,
 	left: 0,
-	zIndex: 1000,
 });
 
 export const transition = style({
@@ -25,11 +25,11 @@ export const entry = style({
 
 export const backdrop = styleVariants({
 	root: {
+		zIndex: 999,
 		top: 0,
 		right: 0,
 		bottom: 0,
 		left: 0,
-		zIndex: 999,
 		opacity: 0.75,
 		backdropFilter: 'blur(5px)',
 	},

@@ -9,47 +9,47 @@ export const fullScreenRoot = style({
 	right: vars.space['5'],
 	bottom: vars.space['5'],
 	left: vars.space['5'],
-	paddingBottom: vars.space['5'],
 	paddingTop: vars.space['2'],
-	overflowY: 'auto',
-	maxHeight: '100vh',
+	paddingBottom: vars.space['5'],
 	height: 'stretch',
+	maxHeight: '100vh',
+	overflowY: 'auto',
 
 	':before': {
-		content: '""',
 		position: 'fixed',
 		zIndex: 0,
+		top: 0,
+		right: 0,
+		bottom: 0,
+		left: 0,
 		backgroundColor: vars.colours.intent.secondary.background.standard,
 		pointerEvents: 'none',
-		top: 0,
-		left: 0,
-		bottom: 0,
-		right: 0,
+		content: '""',
 	},
 });
 
 export const suggestionList = {
 	defaults: style({
+		zIndex: 2,
 		display: 'grid',
-		overflowY: 'auto',
-		maxHeight: '384px',
-		overscrollBehavior: 'contain',
 		gridAutoFlow: 'row',
 		gridGap: 0,
-		zIndex: 2,
+		maxHeight: '384px',
+		overflowY: 'auto',
+		overscrollBehavior: 'contain',
 	}),
 	blockOptions: style({
 		borderRadius: vars.border.radius['md'],
-		overflowY: 'auto',
 		maxHeight: '384px',
+		overflowY: 'auto',
 	}),
 	inlineOptions: style({
-		overflowY: 'auto',
 		maxHeight: '100%',
+		overflowY: 'auto',
 	}),
 	inlineOptionsNoScroll: style({
-		overflowY: 'visible',
 		maxHeight: 'none',
+		overflowY: 'visible',
 	}),
 };
 
@@ -59,8 +59,8 @@ export const inputPrimitive = style({
 });
 export const input = style({
 	position: 'sticky',
-	top: 0,
 	zIndex: 2,
+	top: 0,
 	backgroundColor: 'white',
 });
 export const fullScreenInput = style({
@@ -69,9 +69,9 @@ export const fullScreenInput = style({
 
 export const fullScreenCloseBtn = style({
 	position: 'fixed',
+	zIndex: 3,
 	top: vars.space['5'],
 	right: vars.space['2'],
-	zIndex: 3,
 });
 
 export const spacer = style({
@@ -80,12 +80,12 @@ export const spacer = style({
 
 export const suggestion = style({
 	display: 'block',
-	padding: `${vars.space['3']} calc(${vars.space['3']} + 1px)`,
-	width: '100%',
-	cursor: 'pointer',
-	textAlign: 'left',
 	outline: 'none',
 	backgroundColor: 'transparent',
+	cursor: 'pointer',
+	padding: `${vars.space['3']} calc(${vars.space['3']} + 1px)`,
+	width: '100%',
+	textAlign: 'left',
 });
 
 export const suggestionListItem = styleVariants({
@@ -98,6 +98,6 @@ export const suggestionListItem = styleVariants({
 });
 
 export const suggestionHighlight = style({
-	color: vars.typography.colour.information,
 	backgroundColor: vars.colours.background.light,
+	color: vars.typography.colour.information,
 });

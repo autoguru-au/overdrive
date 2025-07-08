@@ -11,16 +11,16 @@ export const input = style({
 	cursor: 'pointer',
 	selectors: {
 		'&::-webkit-calendar-picker-indicator': {
-			background: 'transparent',
-			bottom: 0,
-			color: 'transparent',
-			cursor: 'pointer',
-			height: 'auto',
-			left: 0,
 			position: 'absolute',
-			right: 0,
 			top: 0,
+			right: 0,
+			bottom: 0,
+			left: 0,
+			background: 'transparent',
+			cursor: 'pointer',
 			width: 'auto',
+			height: 'auto',
+			color: 'transparent',
 		},
 	},
 });
@@ -29,9 +29,9 @@ export const contents = styleVariants({
 	default: {
 		display: 'grid',
 		gridTemplateColumns: 'auto',
+		gridGap: vars.space['1'],
 		alignItems: 'center',
 		justifyContent: 'flex-start',
-		gridGap: vars.space['1'],
 	},
 	withLabel: {
 		gridTemplateColumns: 'auto auto',

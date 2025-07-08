@@ -10,14 +10,14 @@ export const input = {
 			outline: 'none',
 			selectors: {
 				'&[disabled]': {
-					color: vars.colours.background.neutral,
 					cursor: 'not-allowed',
+					color: vars.colours.background.neutral,
 				},
 				'&::placeholder': {
-					fontSize: vars.typography.size['4'].fontSize,
+					opacity: 1,
 					lineHeight: vars.typography.size['4'].lineHeight,
 					color: vars.typography.colour.muted,
-					opacity: 1,
+					fontSize: vars.typography.size['4'].fontSize,
 				},
 			},
 		},
@@ -30,8 +30,8 @@ export const types = styleVariants({
 	textarea: {
 		height: textAreaHeight,
 		minHeight: textAreaHeight,
-		lineHeight: 1.2,
 		resize: 'vertical',
+		lineHeight: 1.2,
 	},
 });
 
@@ -63,10 +63,10 @@ export const inputItselfSize = {
 	small: {
 		root: styleVariants({
 			any: {
-				fontSize: vars.typography.size['3'].fontSize,
-				lineHeight: vars.typography.size['3'].lineHeight,
 				padding: `${vars.space['2']}`,
 				minHeight: `calc(${vars.typography.size['3'].lineHeight} + (2* ${vars.space['2']}))`,
+				lineHeight: vars.typography.size['3'].lineHeight,
+				fontSize: vars.typography.size['3'].fontSize,
 			},
 			textarea: {
 				padding: `0 ${vars.space['2']} ${vars.space['2']}`,
@@ -92,10 +92,10 @@ export const inputItselfSize = {
 	medium: {
 		root: styleVariants({
 			any: {
-				fontSize: vars.typography.size['4'].fontSize,
-				lineHeight: vars.typography.size['4'].lineHeight,
-				height: vars.space['8'],
 				padding: `calc(((${vars.space['8']} - ${vars.typography.size['4'].fontSize}) / 2) - 3px) calc(${vars.space['4']} - 1px)`,
+				height: vars.space['8'],
+				lineHeight: vars.typography.size['4'].lineHeight,
+				fontSize: vars.typography.size['4'].fontSize,
 			},
 			textarea: {
 				padding: `${vars.space['1']} calc(${vars.space['4']} - 1px) calc(((${vars.space['8']} - ${vars.typography.size['4'].fontSize}) / 2) - 3px)`,
@@ -115,10 +115,10 @@ export const inputItselfSize = {
 	large: {
 		root: styleVariants({
 			any: {
-				fontSize: vars.typography.size['7'].fontSize,
-				lineHeight: vars.typography.size['7'].lineHeight,
-				height: '72px',
 				padding: '12px 25px',
+				height: '72px',
+				lineHeight: vars.typography.size['7'].lineHeight,
+				fontSize: vars.typography.size['7'].fontSize,
 				'::placeholder': {
 					fontSize: vars.typography.size['7'].fontSize,
 					// lineHeight: vars.typography.size['6'].lineHeight,

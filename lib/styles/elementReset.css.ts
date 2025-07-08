@@ -22,8 +22,8 @@ const trimmedElement = style({
 export const borderReset = style({
 	'@layer': {
 		[cssLayerReset]: {
-			borderStyle: 'solid',
 			borderWidth: 0,
+			borderStyle: 'solid',
 		},
 	},
 });
@@ -31,10 +31,10 @@ export const borderReset = style({
 export const container = style({
 	'@layer': {
 		[cssLayerReset]: {
+			lineHeight: overdriveTokens.typography.size[4].lineHeight,
 			fontFamily: overdriveTokens.typography.fontFamily,
 			fontSize: overdriveTokens.typography.size[4].fontSize,
 			fontWeight: overdriveTokens.typography.fontWeight.normal,
-			lineHeight: overdriveTokens.typography.size[4].lineHeight,
 		},
 	},
 });
@@ -62,10 +62,10 @@ const button = [
 		'@layer': {
 			[cssLayerReset]: {
 				appearance: 'none',
-				background: 'none',
-				borderStyle: 'none',
-				cursor: 'pointer',
 				outline: 'none',
+				borderStyle: 'none',
+				background: 'none',
+				cursor: 'pointer',
 				userSelect: 'none',
 			},
 		},
@@ -148,8 +148,8 @@ const table = [
 	style({
 		'@layer': {
 			[cssLayerReset]: {
-				borderSpacing: 0,
 				borderCollapse: 'collapse',
+				borderSpacing: 0,
 			},
 		},
 	}),
@@ -208,7 +208,7 @@ export const elementReset = {
 export type ResetTagNames = keyof typeof elementReset;
 
 export const resetVariants = recipe({
-	base: {},
+	
 	variants: {
 		as: elementReset,
 		// When any border color or width is specified, automatically set borderWidth to 'none'

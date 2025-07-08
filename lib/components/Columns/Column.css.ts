@@ -37,7 +37,7 @@ export type SprinklesColumnWidth = Parameters<
 >[0];
 
 export const columnStyle = recipe({
-	base: {},
+	
 	variants: {
 		alignSelf: {
 			bottom: sprinkles({ alignSelf: 'end' }),
@@ -52,7 +52,7 @@ export const columnStyle = recipe({
 		},
 		noShrink: {
 			true: sprinkles({ flexShrink: '0' }),
-			false: {},
+			
 		},
 	},
 	defaultVariants: {

@@ -11,14 +11,14 @@ export const root = style({
 	},
 });
 export const disabled = style({
-	cursor: 'not-allowed',
 	opacity: '0.3',
+	cursor: 'not-allowed',
 });
 export const action = style({
 	transition: `opacity 0.3s ${vars.animation.easing.standard} 0.1s`,
+	opacity: 0,
 	willChange: 'transform',
 	pointerEvents: 'none',
-	opacity: 0,
 	selectors: {
 		[`${root}:hover &`]: {
 			opacity: '1',

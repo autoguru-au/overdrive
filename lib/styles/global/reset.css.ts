@@ -15,8 +15,8 @@ globalStyle('body', {
 	'@layer': {
 		[cssLayerReset]: {
 			margin: 0,
-			padding: 0,
 			border: 'none',
+			padding: 0,
 		},
 	},
 });
@@ -24,12 +24,12 @@ globalStyle('body', {
 globalStyle('body, [data-od-base]', {
 	'@layer': {
 		[cssLayerReset]: {
+			textRendering: 'optimizeLegibility',
+			textSizeAdjust: 'none',
+			lineHeight: overdriveTokens.typography.size[4].lineHeight,
 			fontFamily: overdriveTokens.typography.fontFamily,
 			fontSize: overdriveTokens.typography.size[4].fontSize,
 			fontWeight: overdriveTokens.typography.fontWeight.normal,
-			lineHeight: overdriveTokens.typography.size[4].lineHeight,
-			textRendering: 'optimizeLegibility',
-			textSizeAdjust: 'none',
 			WebkitTapHighlightColor: 'transparent',
 			WebkitTextSizeAdjust: 'none',
 		},

@@ -4,7 +4,7 @@ import { sprinkles } from '../../styles/sprinkles.css';
 
 export const totalGridColumns = 12; // chosen to be divisible by 2, 3, 4
 export const columnStyle = recipe({
-	base: {},
+	
 	variants: {
 		width: {
 			'1/2': `span ${totalGridColumns / 2}`,
@@ -25,8 +25,8 @@ export const columnStyle = recipe({
 export const columnGridStyle = recipe({
 	base: {
 		display: 'grid',
-		gridAutoFlow: 'row',
 		gridTemplateColumns: `repeat(${totalGridColumns}, [col-start] 1fr)`,
+		gridAutoFlow: 'row',
 	},
 	variants: {
 		align: {

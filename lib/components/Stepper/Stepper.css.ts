@@ -5,13 +5,12 @@ import { overdriveTokens as vars } from '../../themes/theme.css';
 
 export const disabled = style({ cursor: 'not-allowed' });
 
-export const root = style({});
 
 export const handle = styleVariants({
 	default: {
+		transition: `background-color 0.1s ${vars.animation.easing.standard}`,
 		width: vars.space[6],
 		height: vars.space[6],
-		transition: `background-color 0.1s ${vars.animation.easing.standard}`,
 		selectors: {
 			[`${root}:not(${disabled}) &:hover`]: {
 				backgroundColor: vars.colours.intent.primary.background.strong,

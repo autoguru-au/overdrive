@@ -4,10 +4,10 @@ import { overdriveTokens as vars } from '../../themes/theme.css';
 
 const actionWidth = 50;
 export const controllerBtn = style({
-	top: 0,
-	height: '100%',
-	width: actionWidth,
 	zIndex: 9,
+	top: 0,
+	width: actionWidth,
+	height: '100%',
 });
 export const controllerCol = style({
 	width: actionWidth,
@@ -26,11 +26,11 @@ export const nextBtn = style({
 });
 
 export const item = style({
-	userSelect: 'none',
-	willChange: 'transform',
-	transition: `opacity 0.3s ${vars.animation.easing.standard} 0s, transform 0.3s ${vars.animation.easing.standard} 0s`,
 	transform: 'scale(0.9)',
+	transition: `opacity 0.3s ${vars.animation.easing.standard} 0s, transform 0.3s ${vars.animation.easing.standard} 0s`,
 	opacity: 0.6,
+	willChange: 'transform',
+	userSelect: 'none',
 });
 export const active = style({
 	transform: 'scale(1)',

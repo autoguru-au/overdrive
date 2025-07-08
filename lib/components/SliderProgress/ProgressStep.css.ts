@@ -21,10 +21,10 @@ export const item = style({
 });
 
 export const fill = style({
-	animationTimingFunction: 'linear',
 	transformOrigin: '0% center',
-	animationPlayState: 'paused',
 	animationName: scaleAnim,
+	animationTimingFunction: 'linear',
+	animationPlayState: 'paused',
 });
 
 export const active = style({

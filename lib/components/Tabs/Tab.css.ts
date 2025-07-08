@@ -32,9 +32,9 @@ export const styledTab = recipe({
 			},
 			pill: {
 				borderRadius: vars.border.radius.pill,
+				padding: `${vars.space['2']} ${vars.space['4']}`,
 				color: vars.colours.foreground.body,
 				fontWeight: vars.typography.fontWeight.normal,
-				padding: `${vars.space['2']} ${vars.space['4']}`,
 				selectors: {
 					'&+&': {
 						marginLeft: vars.space['3'],
@@ -45,9 +45,7 @@ export const styledTab = recipe({
 				},
 			},
 		},
-		active: {
-			true: {},
-		},
+		
 	},
 	compoundVariants: [
 		{
@@ -98,7 +96,7 @@ export const indication = recipe({
 	],
 	variants: {
 		appearance: {
-			underlined: {},
+			
 			pill: {
 				selectors: {
 					[`${styledTab.classNames.base}:not([aria-selected=true]):hover &`]:
@@ -108,9 +106,7 @@ export const indication = recipe({
 				},
 			},
 		},
-		active: {
-			true: {},
-		},
+		
 	},
 	compoundVariants: [
 		{

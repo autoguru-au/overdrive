@@ -3,9 +3,9 @@ import { style } from '@vanilla-extract/css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
 export const bullet = style({
-	lineHeight: vars.typography.size['2'].lineHeight,
 	width: vars.space['6'],
 	height: vars.space['6'],
+	lineHeight: vars.typography.size['2'].lineHeight,
 });
 
 export const primary = style({

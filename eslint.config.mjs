@@ -1,5 +1,6 @@
 import { base, react, typescript } from '@autoguru/eslint-plugin/config';
 import storybook from 'eslint-plugin-storybook';
+import vanillaExtract from '@antebudimir/eslint-plugin-vanilla-extract';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -7,6 +8,17 @@ export default [
 	...typescript,
 	...react,
 	...storybook.configs['flat/recommended'],
+	{
+		files: ['**/*.css.ts'],
+		plugins: {
+			'vanilla-extract': vanillaExtract,
+		},
+		rules: {
+			...vanillaExtract.configs.recommended.rules,
+			// Disable no-empty-style-blocks as it produces false positives with sprinkles and conditional styles
+			'vanilla-extract/no-empty-style-blocks': 'off',
+		},
+	},
 	{
 		ignores: ['!.storybook'],
 		rules: {

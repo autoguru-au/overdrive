@@ -14,8 +14,8 @@ export const text = style({
 
 const sorterRoot = style({
 	transformOrigin: 'center',
-	transitionProperty: 'transform',
 	transitionDuration: '0.3s',
+	transitionProperty: 'transform',
 	willChange: 'transform',
 });
 
@@ -23,8 +23,8 @@ export const sorter = {
 	root: [
 		sorterRoot,
 		style({
-			color: vars.typography.colour.muted,
 			transitionTimingFunction: vars.animation.easing.standard,
+			color: vars.typography.colour.muted,
 			selectors: {
 				[`${sorterButton}:hover &`]: {
 					color: vars.typography.colour.dark,
@@ -34,14 +34,14 @@ export const sorter = {
 	],
 	...styleVariants({
 		none: {
-			opacity: '0',
 			transform: 'translateY(10%) rotateX(0)',
 			transitionProperty: 'transform, opacity',
+			opacity: '0',
 
 			selectors: {
 				[`${sorterButton}:hover &`]: {
-					opacity: '0.50',
 					transform: 'translateY(0px) rotateX(0)',
+					opacity: '0.50',
 				},
 			},
 		},
@@ -56,6 +56,6 @@ export const sorter = {
 
 export const sticky = style({
 	position: 'sticky',
-	top: 0,
 	zIndex: 1,
+	top: 0,
 });

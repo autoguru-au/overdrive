@@ -5,9 +5,9 @@ import { overdriveTokens as vars } from '../../themes/theme.css';
 
 export const root = style({
 	transitionDelay: '0s',
-	transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
 	transitionDuration: '0.2s',
 	transitionProperty: 'box-shadow',
+	transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
 	boxShadow: `inset 0 0px 0 0 ${vars.typography.colour.link}`,
 	':hover': {
 		boxShadow: `inset 0 -2px 0 0 ${vars.typography.colour.link}`,
@@ -16,10 +16,10 @@ export const root = style({
 
 export const icon = style({
 	position: 'absolute',
-	transition: `transform 0.2s ${vars.animation.easing.decelerate} 0s`,
-	right: 0,
 	top: '50%',
+	right: 0,
 	transform: 'translateY(-50%)',
+	transition: `transform 0.2s ${vars.animation.easing.decelerate} 0s`,
 });
 
 export const body = sprinkles({
@@ -29,7 +29,7 @@ export const body = sprinkles({
 
 export const muted = style({
 	':hover': {
-		color: 'white',
 		boxShadow: `inset 0 -1.6em 0 0 ${vars.typography.colour.link}`,
+		color: 'white',
 	},
 });
