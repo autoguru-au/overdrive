@@ -1,5 +1,21 @@
 # @autoguru/overdrive
 
+## 4.44.3
+
+### Patch Changes
+
+- 147aeb0: ### Flex Layout
+
+  Introduces FlexStack and FlexInline layout components with enhanced responsive
+  capabilities, underpinned by className style functions `inline` and `stack`.
+
+  ### useBox available
+  - `useBox` returns the component tag as well as the processed and filtered
+    props
+  - `UseBoxProps`
+
+- 147aeb0: EditableText: fixes width during edit mode
+
 ## 4.44.2
 
 ### Minor Changes
@@ -7,8 +23,8 @@
 (8abb8a5)
 
 - Inline, Stack and Anchor: refactored to use flexbox layout
-- Text and Heading: uses refactored typography and `textStyles`
-  functions with more unified prop handling and balanced text wrap
+- Text and Heading: uses refactored typography and `textStyles` functions with
+  more unified prop handling and balanced text wrap
 - Finish replacement of 'is' prop with 'as' prop on all components
 - OrderedList: fixed HTML structure
 
@@ -27,12 +43,11 @@ _Version deprecated_. This minor was based on **4.43.1-5** now deprecated. Use
 
 (01f9aaf)
 
-- Tooltip: reverts the default behaviour to expect a React component
-  child based on actual consumer usage it very prevalant. The new `wrapper`
-  props on the Tooltip will render a wrapper for simpler non-interactive
-  children.
-- Button: additional native events handled (onFocus, onBlur,
-  onMouseEnter, onMouseLeave)
+- Tooltip: reverts the default behaviour to expect a React component child based
+  on actual consumer usage it very prevalant. The new `wrapper` props on the
+  Tooltip will render a wrapper for simpler non-interactive children.
+- Button: additional native events handled (onFocus, onBlur, onMouseEnter,
+  onMouseLeave)
 - Anchor: fixes missing focus-visible outline
 
 ## 4.43.9
@@ -131,11 +146,9 @@ Granular utilities for adding styles directly to an HTML element
 
 _Version deprecated_
 
-
 ## ~~4.43.4~~
 
 _Version deprecated_
-
 
 ## ~~4.43.3~~
 
@@ -168,10 +181,9 @@ _Version deprecated_
 - 42695b0: **See 4.43.6 release notes**. Component changes were manually
   reverted due to consuming compatibility issues
 
-	##### CSS layers introduced
-	- `@reset` contains base resets
-	- `@utility` contains the spinkles utility classes
-
+  ##### CSS layers introduced
+  - `@reset` contains base resets
+  - `@utility` contains the spinkles utility classes
 
 ## 4.42.0
 
@@ -180,13 +192,13 @@ _Version deprecated_
 - d32fe98: Expands theme contract to include new 'color' tokens (work in
   progress), without removing existing. Both are documented in Storybook.
 
-	**Breaking change** type of the theme tokens object `Tokens` has been
-	renamed to `ThemeTokens` for clarity.
+  **Breaking change** type of the theme tokens object `Tokens` has been renamed
+  to `ThemeTokens` for clarity.
 
-	Replaces local (namespaced) css variables with un-namespaced vars in all
-	themes. Theme tokens are now assigned to a css layer. And vanilla-extract
-	tokens can be imported as `overdriveTokens` but using `themeContractVars`
-	will continue to work.
+  Replaces local (namespaced) css variables with un-namespaced vars in all
+  themes. Theme tokens are now assigned to a css layer. And vanilla-extract
+  tokens can be imported as `overdriveTokens` but using `themeContractVars` will
+  continue to work.
 
 ## 4.41.0
 
@@ -198,29 +210,28 @@ _Version deprecated_
   `<ThemeOverrideProvider>` values have been incorporated. Applications do not
   need to be wrapped separate providers.
 
-	New peer dependency
-	- Added dependency `es-toolkit`
+  New peer dependency
+  - Added dependency `es-toolkit`
 
-	Provider Consolidation
-	- `ThemeProvider` and `ThemeOverrideProvider` have been replaced by a
-		fallback provider to show deprecation warnings
-	- All theming functionality is now handled through `OverdriveProvider`
-		including a combined component API
+  Provider Consolidation
+  - `ThemeProvider` and `ThemeOverrideProvider` have been replaced by a fallback
+    provider to show deprecation warnings
+  - All theming functionality is now handled through `OverdriveProvider`
+    including a combined component API
 
-	OverdriveProvider updates
-	- `theme` prop is now optional
-	- Colour overrides are passed as an object `colorOverrides` instead of
-		individual props as in previous provider
-	- Some of the on-page behaviour of `ThemeOverrideDebugger` has been disabled
+  OverdriveProvider updates
+  - `theme` prop is now optional
+  - Colour overrides are passed as an object `colorOverrides` instead of
+    individual props as in previous provider
+  - Some of the on-page behaviour of `ThemeOverrideDebugger` has been disabled
 
-	Data attribute and CSS Variables
-	- Theme application is now available using data attribute
-		`data-od-theme=base`
-	- OD tokens are exposed globally in CSS variables
+  Data attribute and CSS Variables
+  - Theme application is now available using data attribute `data-od-theme=base`
+  - OD tokens are exposed globally in CSS variables
 
-	Reset updates
-	- Added `container` styles into resets
-	- Updated CSS reset
+  Reset updates
+  - Added `container` styles into resets
+  - Updated CSS reset
 
 ### Patch Changes
 
@@ -252,18 +263,18 @@ _Version deprecated_
   Accessibility issues fixed relating to labelling on Button and aria attributes
   on Checkbox, Radio and Tabs.
 
-    Border radius tokens have been updated to named-sizes. The new values are
-    `sm` `md` `lg` `xl` `2xl`. Radius `1` remains for backwards compatbility.
+  Border radius tokens have been updated to named-sizes. The new values are `sm`
+  `md` `lg` `xl` `2xl`. Radius `1` remains for backwards compatbility.
 
-    Input fields: TextInput, NumberInput, DateInput, Select, and AutoSuggest now
-    have `large` size via the shared InputBase.
+  Input fields: TextInput, NumberInput, DateInput, Select, and AutoSuggest now
+  have `large` size via the shared InputBase.
 
-    Tabs: A new `appearance` prop has been added to configure a Pill
-    look-and-feel.
+  Tabs: A new `appearance` prop has been added to configure a Pill
+  look-and-feel.
 
-    Button: Addition of size `xsmall`.
+  Button: Addition of size `xsmall`.
 
-    Checkbox: Added support for an indeterminate state.
+  Checkbox: Added support for an indeterminate state.
 
 ## 4.39.2
 
@@ -287,8 +298,8 @@ _Version deprecated_
 
 - 17db201: The Badge component displays bolder text at the `small` size.
 
-    Intent foreground colour for success intent has been changed for consistency
-    and to improve readability.
+  Intent foreground colour for success intent has been changed for consistency
+  and to improve readability.
 
 ## 4.38.0
 
@@ -324,18 +335,18 @@ _Version deprecated_
 ### Minor Changes
 
 - 8739e4f: **Enhancements**
-    - `as` prop added to Box, with existing `is` prop as alias to ensure
-      non-breaking.
-    - `VisuallyHidden` component has been simplified.
-    - More sprinkles defined such as typography, responsive breakpoints and
-      interaction conditions and properties.
-    - `odStyle` is now the function name for using sprinkles.
+  - `as` prop added to Box, with existing `is` prop as alias to ensure
+    non-breaking.
+  - `VisuallyHidden` component has been simplified.
+  - More sprinkles defined such as typography, responsive breakpoints and
+    interaction conditions and properties.
+  - `odStyle` is now the function name for using sprinkles.
 
 - 8739e4f: **New components**
-    - Option List (beta) to display a grouped set of optional items that are
-      checkbox form controls.
-    - Option Grid (beta) to group selectable tiles that support per-item icons,
-      it is a custom ARIA listbox instance and is not a native form control.
+  - Option List (beta) to display a grouped set of optional items that are
+    checkbox form controls.
+  - Option Grid (beta) to group selectable tiles that support per-item icons, it
+    is a custom ARIA listbox instance and is not a native form control.
 
 ## 4.35.2
 
@@ -1528,7 +1539,7 @@ _Version deprecated_
 
 - a631d85: SelectInput: Gets option to be passed a custom field icon
 
-    AutoSuggest: Gets option to be passed a custom field icon
+  AutoSuggest: Gets option to be passed a custom field icon
 
 ## 2.3.0
 
@@ -1542,9 +1553,9 @@ _Version deprecated_
 
 - 75d6708: Checkbox: Accepts ref
 
-    RadioGroup: Accepts ref
+  RadioGroup: Accepts ref
 
-    Radio: Accepts ref
+  Radio: Accepts ref
 
 ## 2.2.7
 
@@ -1558,8 +1569,7 @@ _Version deprecated_
 
 - b328760: Box: Gets padding reset for field and fieldset elements
 
-    AutoSuggest: Gets fix for exception when clicking outside an open
-    AutoSuggest
+  AutoSuggest: Gets fix for exception when clicking outside an open AutoSuggest
 
 ## 2.2.5
 
@@ -1577,7 +1587,7 @@ _Version deprecated_
 
 - ee67f76: TextLink: Gets inline reset styles
 
-    ProgressSpinner: Gets svg and block resets for the animates SVG
+  ProgressSpinner: Gets svg and block resets for the animates SVG
 
 ## 2.2.3
 
@@ -1585,9 +1595,9 @@ _Version deprecated_
 
 - 340da9a: Text: Gets explicit reset styles for span and p
 
-    field: Gets explicit reset styles
+  field: Gets explicit reset styles
 
-    fieldset: Gets explicit reset styles
+  fieldset: Gets explicit reset styles
 
 ## 2.2.2
 
@@ -1609,7 +1619,7 @@ _Version deprecated_
 
 - 667876a: **Checkboxes**: Disabled mode gets reduced opacity
 
-    **Radio**: Disabled mode gets reduced opacity
+  **Radio**: Disabled mode gets reduced opacity
 
 ## 2.1.9
 
@@ -1675,9 +1685,9 @@ _Version deprecated_
 
 - 052a024: Corrected types to be more type safe and accurate.
 
-    Notably `<Box>`. Seeing as we `createElement`, we fixed types to only allow
-    `IntrinsicElements | JSXElementConstructor`. As such, any `"button"` or
-    `TextLink` prop values will work. However, `<TextLink />` will not.
+  Notably `<Box>`. Seeing as we `createElement`, we fixed types to only allow
+  `IntrinsicElements | JSXElementConstructor`. As such, any `"button"` or
+  `TextLink` prop values will work. However, `<TextLink />` will not.
 
 ## 2.0.27
 
@@ -1686,8 +1696,8 @@ _Version deprecated_
 - 648ec6a: **Inputs:** Introduces `reserveHintSpace` prop—to _reserve_ the space
   that would otherwise be occupied by the hint text.
 
-    Super useful in stacked forms with validation, so that page layout shifts
-    don't occur.
+  Super useful in stacked forms with validation, so that page layout shifts
+  don't occur.
 
 ## 2.0.26
 
@@ -1711,16 +1721,16 @@ _Version deprecated_
 - 5bbe87a: **Tabs:** Adds new renderInactivePanes prop to render tabs that are
   inactive.
 
-    By default, TabPanes themselves only render when they are active. Sometimes
-    in certain cases you'd want to preserve the local state within those tabs as
-    a user switches between tabs. Setting `renderInactivePanes` on TabPanes will
-    be rendered but visually hidden.
+  By default, TabPanes themselves only render when they are active. Sometimes in
+  certain cases you'd want to preserve the local state within those tabs as a
+  user switches between tabs. Setting `renderInactivePanes` on TabPanes will be
+  rendered but visually hidden.
 
-    **Example:**
+  **Example:**
 
-    ```jsx
-    <Tabs active={0}>> > > > > > > } t > ></Tabs>
-    ```
+  ```jsx
+  <Tabs active={0}>> > > > > > > } t > ></Tabs>
+  ```
 
 - 7131a5f: **Tabs:** Fixes a visual quirk when indications are mixed with
   non-indicators
@@ -1770,7 +1780,7 @@ _Version deprecated_
   of a redefinition of _shared_ styles such as margin/padding. We now instead
   prefer the usage of `useBoxStyles` or the `Box` component.
 
-    There _should_ be no real regression in terms of usage api.
+  There _should_ be no real regression in terms of usage api.
 
 - 63d81e5: Box: pointerEvents value can now be passed to `Box` and
   `useBoxStyles` as 'none' or undefined.
@@ -1778,13 +1788,13 @@ _Version deprecated_
   changed. This is really because 9/10 times you'd be rendering this in a
   `Stack`, which already handles the `ul/li` couple.
 
-    **FEATURES**
+  **FEATURES**
 
-    ```jsx
-    <Stack is="ul">> ></Stack>
-    ```
+  ```jsx
+  <Stack is="ul">> ></Stack>
+  ```
 
-    which already wraps each child in an `li`.
+  which already wraps each child in an `li`.
 
 ## 2.0.17
 
@@ -1798,10 +1808,10 @@ _Version deprecated_
 
 - 6d9e5b5: Reset: Table reset is no longer global. So use `<Box is="table" />`
 
-    ```diff
-    -<table>
-    +<Box is="table">
-    ```
+  ```diff
+  -<table>
+  +<Box is="table">
+  ```
 
 - 6d9e5b5: Inline: Supports alignX to position items on the x axis aka;
   `justifyContent`.
@@ -1810,58 +1820,58 @@ _Version deprecated_
   of the page.
 - 6d9e5b5: Table: Introduces Tables
 
-    Implemented as a css-grid, so column widths are to be defined in
-    gridTemplateColumns. All components in this scope accept a ref property.
+  Implemented as a css-grid, so column widths are to be defined in
+  gridTemplateColumns. All components in this scope accept a ref property.
 
-    Please note! In order to remain structurally WAI-ARIA compliant; the
-    `TableRowGroup` must be placed around the _traditional_ `tbody` and `thead`.
+  Please note! In order to remain structurally WAI-ARIA compliant; the
+  `TableRowGroup` must be placed around the _traditional_ `tbody` and `thead`.
 
-    **FEATURES**
+  **FEATURES**
 
-    ### Example
+  ### Example
 
-    ```jsx
-    <Table columnTemplate="repeat(2, auto)">></Table>
-    ```
+  ```jsx
+  <Table columnTemplate="repeat(2, auto)">></Table>
+  ```
 
-    ### Sticky Header
+  ### Sticky Header
 
-    ```diff
-    -<Table columnTemplate="repeat(2, auto)">
-    +<Table stickyHead columnTemplate="repeat(2, auto)">
-    >
-    >
-    >
-    ```
+  ```diff
+  -<Table columnTemplate="repeat(2, auto)">
+  +<Table stickyHead columnTemplate="repeat(2, auto)">
+  >
+  >
+  >
+  ```
 
-    ### Sorting Columns
+  ### Sorting Columns
 
-    ```diff
-    <Table columnTemplate="repeat(2, auto)">
-    >
-    >
-    -            <TableHeadCell>Col 1</TableHeadCell>
-    +            <TableHeadCell sort="asc" onSortChange={}>Col 1</TableHeadCell>
-    ```
+  ```diff
+  <Table columnTemplate="repeat(2, auto)">
+  >
+  >
+  -            <TableHeadCell>Col 1</TableHeadCell>
+  +            <TableHeadCell sort="asc" onSortChange={}>Col 1</TableHeadCell>
+  ```
 
-    A column can only have _sort_ functionality when the `sort` prop is set to
-    either `asc | desc | none`. An `onSortChange` callback when applied to the
-    cell that allows observing this. This callback will send the _new_ sort to
-    have applied to it. This is a stateless component, so make sure you wire the
-    value back into `sort`.
+  A column can only have _sort_ functionality when the `sort` prop is set to
+  either `asc | desc | none`. An `onSortChange` callback when applied to the
+  cell that allows observing this. This callback will send the _new_ sort to
+  have applied to it. This is a stateless component, so make sure you wire the
+  value back into `sort`.
 
-    ### Row Clicking
+  ### Row Clicking
 
-    ```diff
-    <Table columnTemplate="repeat(2, auto)">
-    >
-    -        <TableRow>
-    +        <TableRow onClick={}>
-    >
-    ```
+  ```diff
+  <Table columnTemplate="repeat(2, auto)">
+  >
+  -        <TableRow>
+  +        <TableRow onClick={}>
+  >
+  ```
 
-    Please note; that if you're also tracking clicks of cell buttons, to check
-    the currentTarget of whether to apply the callback.
+  Please note; that if you're also tracking clicks of cell buttons, to check the
+  currentTarget of whether to apply the callback.
 
 ## 2.0.15
 
@@ -1869,38 +1879,38 @@ _Version deprecated_
 
 - 5353a1a: Box: Added textAlign as a prop
 
-    Worth noting that we want to deprecate the use of `align` in our
-    `useTextStyles`. As it's now shifted to our box. The `align` prop will still
-    remain on the `Text` component.
+  Worth noting that we want to deprecate the use of `align` in our
+  `useTextStyles`. As it's now shifted to our box. The `align` prop will still
+  remain on the `Text` component.
 
-    **FEATURES**
+  **FEATURES**
 
-    ```jsx
-    <Box textAlign="center" />
-    ```
+  ```jsx
+  <Box textAlign="center" />
+  ```
 
 - 715b035: Box: Added userSelect prop to disable selecting its content
 - 987a68b: VisuallyHidden: Added brand-new component to visually hide content
 
-    **FEATURES**
+  **FEATURES**
 
-    ```jsx
-    <VisuallyHidden>hello screen reader</VisuallyHidden>
-    <Text>
-    o
-    >
-    </Text>
-    ```
+  ```jsx
+  <VisuallyHidden>hello screen reader</VisuallyHidden>
+  <Text>
+  o
+  >
+  </Text>
+  ```
 
 - e2f4a5b: Text: Allow setting a display override
 
-    **FEATURES**
+  **FEATURES**
 
-    ```jsx
-    <Text is="span" display="inlineBlock">
-    	k
-    </Text>
-    ```
+  ```jsx
+  <Text is="span" display="inlineBlock">
+    k
+  </Text>
+  ```
 
 - 175cb09: Icon: Child svg's are cloned and positioned to the size of the parent
 
@@ -1910,11 +1920,11 @@ _Version deprecated_
 
 - 5428b9e: LoadingBox: Exposes height and display box props
 
-    **FEATURES**
+  **FEATURES**
 
-    ```jsx
-    <LoadingBox height="full" display="inlineBlock" />
-    ```
+  ```jsx
+  <LoadingBox height="full" display="inlineBlock" />
+  ```
 
 - e3e5aa9: Box: Display prop inline-block renamed to inlineBlock to be more
   consistent
@@ -1929,20 +1939,20 @@ _Version deprecated_
 - 52c424f: Inline: Now wrap properly, and support a prop to enable/disable it.
 - e0a4291: Box: Introduces flex style props to `Box` and `useBoxStyles`
 
-    **FEATURES**
+  **FEATURES**
 
-    You can now send in `alignItems`,`flexDirection`, `flexGrow`, `flexShrink`,
-    `flexWrap`, `justifyContent` to Box and useBoxStyles for whatever you like.
+  You can now send in `alignItems`,`flexDirection`, `flexGrow`, `flexShrink`,
+  `flexWrap`, `justifyContent` to Box and useBoxStyles for whatever you like.
 
-    We have specifically chosen `alignItems`, `flexDirection`, `justifyContent`
-    as Responsive candidates as we've found the others won't have a responsive
-    use case.
+  We have specifically chosen `alignItems`, `flexDirection`, `justifyContent` as
+  Responsive candidates as we've found the others won't have a responsive use
+  case.
 
-    ```jsx
-    <Box display="flex" width="full" justifyContent="center">
-    	>
-    </Box>
-    ```
+  ```jsx
+  <Box display="flex" width="full" justifyContent="center">
+    >
+  </Box>
+  ```
 
 ## 2.0.12
 
@@ -1950,44 +1960,43 @@ _Version deprecated_
 
 - 62c7111: Stack: A Renamed prop from spacing to space
 
-    eg:
+  eg:
 
-    ```diff
-    <Stack is="ul"
-    -    spacing="3">
-    +    space="3">
-    >
-    >
-    >
-    </Stack>
-    ```
+  ```diff
+  <Stack is="ul"
+  -    spacing="3">
+  +    space="3">
+  >
+  >
+  >
+  </Stack>
+  ```
 
 - 822863d: Inline: Supports inline dividers between elements.
 
-    Supports, text, numbers or elements.
+  Supports, text, numbers or elements.
 
-    **FEATURES**
+  **FEATURES**
 
-    ```jsx
-    <Inline dividers>> > > ></Inline>
-    ```
+  ```jsx
+  <Inline dividers>> > > ></Inline>
+  ```
 
 - a0fce92: Text: Exposes a new white-space nowrap prop
 
-    This is an **experimental** prop, we know of one use-case where this can be
-    used, but will likely also appear on the Box.
+  This is an **experimental** prop, we know of one use-case where this can be
+  used, but will likely also appear on the Box.
 
-    So do let us know if you're using this, and it hasnt worked in your
-    use-case.
+  So do let us know if you're using this, and it hasnt worked in your use-case.
 
-    **FEATURES**
+  **FEATURES**
 
-    You can now pass a `noWrap` prop to any `<Text />` which applies a
-    `white-space: nowrap` to itself.
+  You can now pass a `noWrap` prop to any `<Text />` which applies a
+  `white-space: nowrap` to itself.
 
-    ```jsx
-    <Text noWrap>I wont wrap</Text>
-    ```
+  ```jsx
+  <Text noWrap>I wont wrap</Text>
+  ```
 
 ## 2.0.11
 
@@ -2002,11 +2011,11 @@ _Version deprecated_
 - 0b6c621: Tabs: Adds `scrollable`, which scrolls the tabs horizontally on
   smaller devices.
 
-    **FEATURES**
+  **FEATURES**
 
-    ```jsx
-    <Tabs>> > > > > ></Tabs>
-    ```
+  ```jsx
+  <Tabs>> > > > > ></Tabs>
+  ```
 
 - 729dfdd: Input: Notchless inputs will no longer break when part of a flex
   container
@@ -2017,17 +2026,17 @@ _Version deprecated_
 
 - 0b59110: Flatten fragments when provided as children
 
-    Will now support fragments and otherwise boolean children that previously
-    would not have worked:
+  Will now support fragments and otherwise boolean children that previously
+  would not have worked:
 
-    ```jsx
-    <Stack>> ( > > > > > } ></Stack>
-    ```
+  ```jsx
+  <Stack>> ( > > > > > } ></Stack>
+  ```
 
-    > which would have the past not had lines 1-3 spaced evenly.
+  > which would have the past not had lines 1-3 spaced evenly.
 
-    this was also true for: `Actions`, `Inline`, `TabList`, `TabPanes` and
-    `Stack`. Which have been rectified.
+  this was also true for: `Actions`, `Inline`, `TabList`, `TabPanes` and
+  `Stack`. Which have been rectified.
 
 ## 2.0.8
 
@@ -2035,11 +2044,11 @@ _Version deprecated_
 
 - 55ee559: Positioner: Removes usingPositioner
 
-    **FEATURES**
+  **FEATURES**
 
-    Removes the usingPositioner HoC in favour of a plain-old component that'll
-    gives us the ability to send _all_ our Box props onto it. It also aids in
-    corrected aria-\* props.
+  Removes the usingPositioner HoC in favour of a plain-old component that'll
+  gives us the ability to send _all_ our Box props onto it. It also aids in
+  corrected aria-\* props.
 
 ## 2.0.7
 
@@ -2047,34 +2056,34 @@ _Version deprecated_
 
 - b9a2c45: InputBase: Allow for notchless inputs
 
-    **FEATURES**
+  **FEATURES**
 
-    Sometimes the notch behavior won't work because of its context - much like
-    an input that sits within a table, where the column already denotes what
-    should be entered into the input.
+  Sometimes the notch behavior won't work because of its context - much like an
+  input that sits within a table, where the column already denotes what should
+  be entered into the input.
 
-    > Please be aware that this should be avoided, as in most cases we should
-    > notch, so a user knows what's in the input especially when its defaulted.
+  > Please be aware that this should be avoided, as in most cases we should
+  > notch, so a user knows what's in the input especially when its defaulted.
 
 - 7736914: Box: Adds an overflow prop and allows className to be clsx compatible
 
-    **FEATURES**
+  **FEATURES**
 
-    `ClassName` can now be sent in directly to Box instead of through clsx.
+  `ClassName` can now be sent in directly to Box instead of through clsx.
 
-    eg.
+  eg.
 
-    ```diff
-    - <Box className={clsx(styles.one, styles.two)}>
-    + <Box className={[styles.one, styles.two]}>
-    o
-    </Box>
+  ```diff
+  - <Box className={clsx(styles.one, styles.two)}>
+  + <Box className={[styles.one, styles.two]}>
+  o
+  </Box>
 
-    - <Box className={clsx({[styles.one]: maybeDoMe}, styles.two)}>
-    + <Box className={[{[styles.one]: maybeDoMe}, styles.two]}>
-    o
-    </Box>
-    ```
+  - <Box className={clsx({[styles.one]: maybeDoMe}, styles.two)}>
+  + <Box className={[{[styles.one]: maybeDoMe}, styles.two]}>
+  o
+  </Box>
+  ```
 
 - 17d2354: Stack: Expose the Box width on Stack
 - 475601c: Tabs: Now always fills the width of its parent
@@ -2092,55 +2101,55 @@ _Version deprecated_
 - 4df7e83: AutoSuggest: Introduce a autoWidth prop that either will size the
   flyout to either the width of the children, or the input.
 
-    **FEATURES**
+  **FEATURES**
 
-    `<AutoSuggest>` can now be given a `autoWidth` prop that will auto the width
-    in relation to setting the width, or for it to be automatic.
-    - `autoWidth={true}` means, size the flyout to the width of flyout children
-      "automatically"
-    - `autoWidth={false}` means to set to the width of the select input.
+  `<AutoSuggest>` can now be given a `autoWidth` prop that will auto the width
+  in relation to setting the width, or for it to be automatic.
+  - `autoWidth={true}` means, size the flyout to the width of flyout children
+    "automatically"
+  - `autoWidth={false}` means to set to the width of the select input.
 
-    eg:
+  eg:
 
-    ```jsx
+  ```jsx
 
-    // size to the width of the flyout children
-    <AutoSuggest
-    "
-    }
-    h
-    />
+  // size to the width of the flyout children
+  <AutoSuggest
+  "
+  }
+  h
+  />
 
-    // size to the width of the input (current behaviour)
-    <AutoSuggest
-    "
-    }
-    />
+  // size to the width of the input (current behaviour)
+  <AutoSuggest
+  "
+  }
+  />
 
-    ```
+  ```
 
 - 378e5da: AutoSuggest: Input search types to remove the webkit clear button
 
-    **FEATURES**
+  **FEATURES**
 
-    When we reset input type searches, we incorrectly "hid" the webkit search
-    buttons, this aims to correct that.
+  When we reset input type searches, we incorrectly "hid" the webkit search
+  buttons, this aims to correct that.
 
 - eb3cf9d: AutoSuggest: Support the usage of passing a ref down to the
   implemented input
 
-    **FEATURES**
+  **FEATURES**
 
-    `<AutoSuggest>` can now be given a ref which will be passed down to the
-    underlying input.
+  `<AutoSuggest>` can now be given a ref which will be passed down to the
+  underlying input.
 
-    eg:
+  eg:
 
-    ```tsx
-    const myRef = useRef<HTMLInputElement | null>(null);
+  ```tsx
+  const myRef = useRef<HTMLInputElement | null>(null);
 
-    <AutoSuggest ref={myRef} value={null} placeholder={'My AutoSuggest'} />;
-    ```
+  <AutoSuggest ref={myRef} value={null} placeholder={'My AutoSuggest'} />;
+  ```
 
 - bab9cd2: InputBase: Always full width the input wrapper
 
@@ -2150,25 +2159,24 @@ _Version deprecated_
 
 - 801c254: Positioner: Uses Popper.js to run the flyouts.
 
-    **FEATURES**
+  **FEATURES**
 
-    **`<Positioner />`** uses Popper.js, as it offers a wide array of
-    performance improvements and caters for some edge-cases, like when the'yre
-    nested etc.
+  **`<Positioner />`** uses Popper.js, as it offers a wide array of performance
+  improvements and caters for some edge-cases, like when the'yre nested etc.
 
-    Few stats: we use popper-lite which is rated at 3.73Kb minified and
-    compressed. Now getOptimalPosition was about 1.3Kb minified and compressed.
-    However, it had a few holes, and when I looked at what it'll take to
-    implement the features to solve the holes - we'd probably still beat the
-    file size, but not by much...
+  Few stats: we use popper-lite which is rated at 3.73Kb minified and
+  compressed. Now getOptimalPosition was about 1.3Kb minified and compressed.
+  However, it had a few holes, and when I looked at what it'll take to implement
+  the features to solve the holes - we'd probably still beat the file size, but
+  not by much...
 
-    So with that once internal bandwidth increase this'll likely be revisited -
-    and perhaps utilize `detectOverflow` as a roll-your-own solution.
+  So with that once internal bandwidth increase this'll likely be revisited -
+  and perhaps utilize `detectOverflow` as a roll-your-own solution.
 
 - 0964a1d: useNegativeMargin: Correctly fill columns to their parents width
 
-    **BUG FIXES** Columns were not completely filling its parent due to negative
-    margins
+  **BUG FIXES** Columns were not completely filling its parent due to negative
+  margins
 
 ## 2.0.3
 
@@ -2176,55 +2184,55 @@ _Version deprecated_
 
 - 15f486c: Modals: Now uses a shared `<Portal />` component.
 
-    **FEATURES**
+  **FEATURES**
 
-    **`<Portal />`** component allowing for shared Portaling of components to
-    inside a container.
+  **`<Portal />`** component allowing for shared Portaling of components to
+  inside a container.
 
-    Responsibility: Rendering a child into a container, which by default is
-    `window.body`.
+  Responsibility: Rendering a child into a container, which by default is
+  `window.body`.
+
+  eg:
+
+  ```jsx
+  // Input
+  <div>
+  g
+  >
+  >
+  >
+  </div>
+
+  // Result
+  <body>
+  >
+  >
+  </body>
+  ```
+
+  **`<Modal />`** is in charge of handling a backdrop - which also directly uses
+  the new `<Portal>` component.
+
+  Responsibility: Renders a child into a Portal, with a backdrop and correct
+  aria attributes applied.
+
+  You can give this component `hideBackdrop?: boolean` prop to disable the
+  backdrop. Also; if you wish to remove the fadeIn/fadeOut animation, a
+  `transition?: boolean` can also be provided.
+  - Removes `<ModalPortal />` in favor of `<Modal />`
+  - Deprecated `withModal`, which could simply just use the Modal component
+
+    Worth noting that a `role="presentation"` is applied to the `Modal`, so
+    consumers should be applying a `role="none presentation"` to their direct
+    parent, if you wish content to be read out.
 
     eg:
 
     ```jsx
-    // Input
-    <div>
-    g
-    >
-    >
-    >
-    </div>
-
-    // Result
-    <body>
-    >
-    >
-    </body>
+    <Modal isOpen={true} onRequestClose={function () {}}>
+      >
+    </Modal>
     ```
-
-    **`<Modal />`** is in charge of handling a backdrop - which also directly
-    uses the new `<Portal>` component.
-
-    Responsibility: Renders a child into a Portal, with a backdrop and correct
-    aria attributes applied.
-
-    You can give this component `hideBackdrop?: boolean` prop to disable the
-    backdrop. Also; if you wish to remove the fadeIn/fadeOut animation, a
-    `transition?: boolean` can also be provided.
-    - Removes `<ModalPortal />` in favor of `<Modal />`
-    - Deprecated `withModal`, which could simply just use the Modal component
-
-        Worth noting that a `role="presentation"` is applied to the `Modal`, so
-        consumers should be applying a `role="none presentation"` to their
-        direct parent, if you wish content to be read out.
-
-        eg:
-
-        ```jsx
-        <Modal isOpen={true} onRequestClose={function () {}}>
-        	>
-        </Modal>
-        ```
 
 ## 2.0.2
 
@@ -2232,93 +2240,93 @@ _Version deprecated_
 
 - 6c3ae76: Tabs: Support stretching tablist items to the width of the container
 
-    **FEATURES**
+  **FEATURES**
 
-    **`<TabList />`**
+  **`<TabList />`**
 
-    In small contexts, like sidebars, or mobile viewports with minimal tablist
-    items. It makes sense to stretch items to meet the width of the container.
+  In small contexts, like sidebars, or mobile viewports with minimal tablist
+  items. It makes sense to stretch items to meet the width of the container.
 
-    eg:
+  eg:
 
-    ```
-    <Tabs>
-    >
-    >
-    >
-    >
-    </Tabs>
-    ```
+  ```
+  <Tabs>
+  >
+  >
+  >
+  >
+  </Tabs>
+  ```
 
 - 302405b: Alert: Inline is now full width
 
-    **Features**
+  **Features**
 
-    `<Alert />`
+  `<Alert />`
 
-    When passing the `inline` prop, in the past it was maxWidth 640px - which in
-    inline contexts, you'd want to span the entire width of its container.
+  When passing the `inline` prop, in the past it was maxWidth 640px - which in
+  inline contexts, you'd want to span the entire width of its container.
 
 - 3bcf649: Adds the Inline and Section layout components
 
-    **Features**
+  **Features**
 
-    Breakpoints have been amended to follow (mobile first):
-    - `tablet` is iPad Mini width less 25%, so any device greater than 768px
-    - `desktop` we are considering as iPad Pro width less 25%, so any device
-      larger than 1024px
-    - `largeDesktop` is taken as a 1920x1080 less 25%, so any device larger than
-      1440px
+  Breakpoints have been amended to follow (mobile first):
+  - `tablet` is iPad Mini width less 25%, so any device greater than 768px
+  - `desktop` we are considering as iPad Pro width less 25%, so any device
+    larger than 1024px
+  - `largeDesktop` is taken as a 1920x1080 less 25%, so any device larger than
+    1440px
 
-    all at landscape.
+  all at landscape.
 
-    **`<Inline />`**
+  **`<Inline />`**
 
-    When you're wanting to `inline` something. Like a badge list; you can use
-    use the `<Inline />` component to solve this.
+  When you're wanting to `inline` something. Like a badge list; you can use use
+  the `<Inline />` component to solve this.
 
-    eg:
+  eg:
 
-    ```jsx
-    <Inline>> > ></Inline>
-    ```
+  ```jsx
+  <Inline>> > ></Inline>
+  ```
 
-    **`<Section />`**
+  **`<Section />`**
 
-    A component that wraps its children, setting a `max-width` and centering on
-    the screen. This will generally sit high up in the component tree. It offers
-    2 widths `medium` and `large`. The medium width is intended for smaller more
-    concise layouts - like our Afterpay landing, or Uber landing. Were as the
-    `large` will probably be more for our Leads or Bookings list screens.
+  A component that wraps its children, setting a `max-width` and centering on
+  the screen. This will generally sit high up in the component tree. It offers 2
+  widths `medium` and `large`. The medium width is intended for smaller more
+  concise layouts - like our Afterpay landing, or Uber landing. Were as the
+  `large` will probably be more for our Leads or Bookings list screens.
 
-    When coupled with `Columns` we effectively have a full fletched layout
-    system, that can 🤷‍ replace our `ContainedLayout` and `ContentOnlyLayout`
-    internal components.
+  When coupled with `Columns` we effectively have a full fletched layout system,
+  that can 🤷‍ replace our `ContainedLayout` and `ContentOnlyLayout` internal
+  components.
 
-    To solve the `ThreeColumnLayout` and `TwoColumnLayout` we can build internal
-    abstractions that extend this perhaps.
+  To solve the `ThreeColumnLayout` and `TwoColumnLayout` we can build internal
+  abstractions that extend this perhaps.
 
-    eg:
+  eg:
 
-    ```jsx
-    <Section width="medium" paddingX={['3', , 'none']}>
-    	>
-    </Section>
-    ```
+  ```jsx
+  <Section width="medium" paddingX={['3', , 'none']}>
+    >
+  </Section>
+  ```
 
 - f9dac97: Inline: Supporting alignY responsive prop StarRating: Consumes
   `<Inline />`
 
-    **FEATURES**
+  **FEATURES**
 
-    **`<Inline />`**
+  **`<Inline />`**
 
-    Now supports an alignY responsive prop to vertically center its items to
-    either `top | center | bottom`, eg: `<Inline alignY="center">`
+  Now supports an alignY responsive prop to vertically center its items to
+  either `top | center | bottom`, eg: `<Inline alignY="center">`
 
-    **`<StarRating />`**
+  **`<StarRating />`**
 
-    Uses the `<Inline />` component instead of columns, so should use less DOM
+  Uses the `<Inline />` component instead of columns, so should use less DOM
 
 ## 2.0.1
 
@@ -2326,22 +2334,21 @@ _Version deprecated_
 
 - c66b727: Anchors are now cursor pointer by default
 
-    Seeing as we use `<TextLink />` or `<Box is="a" href="" />` in a few places,
-    it only makes sense to use `a { cursor: pointer }`.
+  Seeing as we use `<TextLink />` or `<Box is="a" href="" />` in a few places,
+  it only makes sense to use `a { cursor: pointer }`.
 
 - 57b8cf3: Actions now filters out undefined or null children
 
-    **`<Actions />`**
+  **`<Actions />`**
 
-    Removed the className prop, this will slowly start happening across the
-    stack.
+  Removed the className prop, this will slowly start happening across the stack.
 
-    ```diff
-    -<Actions className="test">
-    +<Actions>
-    .
-    </Actions>
-    ```
+  ```diff
+  -<Actions className="test">
+  +<Actions>
+  .
+  </Actions>
+  ```
 
 ## 2.0.0
 
@@ -2349,13 +2356,13 @@ _Version deprecated_
 
 - 8881bdd: Styles are now `treat` driven.
 
-    **A few changes**
-    - `OverdriveProvider` must now be provider
-    - `ToastProvider` must also be provided when using a `useToast`
-    - `@autoguru/overdrive/reset` must be given first.
+  **A few changes**
+  - `OverdriveProvider` must now be provider
+  - `ToastProvider` must also be provided when using a `useToast`
+  - `@autoguru/overdrive/reset` must be given first.
 
-    ... and a whole series of other things. Please consult to the PR (#273) to
-    get a better idea of what's changed.
+  ... and a whole series of other things. Please consult to the PR (#273) to get
+  a better idea of what's changed.
 
 ### Patch Changes
 
