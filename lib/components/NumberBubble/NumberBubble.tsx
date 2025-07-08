@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import * as React from 'react';
 import { ComponentProps, FunctionComponent, useMemo } from 'react';
 
@@ -7,8 +6,6 @@ import { toPrettyBigNumber } from '../../utils/number';
 import { Box, type BoxProps } from '../Box/Box';
 import { useBox } from '../Box/useBox/useBox';
 import { Text } from '../Text/Text';
-
-import * as styles from './NumberBubble.css';
 
 export interface NumberBubbleProps
 	extends Omit<
@@ -53,10 +50,11 @@ export const NumberBubble: FunctionComponent<NumberBubbleProps> = ({
 	return (
 		<Component {...componentProps}>
 			<span
-				className={clsx(
-					styles.bubbleText,
-					textStyles({ size: '2', colour: textColour, strong: true }),
-				)}
+				className={textStyles({
+					size: '2',
+					colour: textColour,
+					strong: true,
+				})}
 			>
 				{rawNumbers ? value : toPrettyBigNumber(value)}
 			</span>
