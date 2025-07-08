@@ -161,7 +161,7 @@ __metadata:
     babel-plugin-add-import-extension: "npm:1.6.0"
     babel-plugin-dev-expression: "npm:0.2.3"
     babel-plugin-macros: "npm:3.1.0"
-    browserslist-config-autoguru: "npm:2.4.4"
+    browserslist-config-autoguru: "npm:2.5.0"
     chromatic: "npm:13.1.2"
     clsx: "npm:2.1.1"
     colord: "npm:2.9.3"
@@ -6449,16 +6449,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"browserslist-config-autoguru@npm:2.4.4":
-  version: 2.4.4
-  resolution: "browserslist-config-autoguru@npm:2.4.4"
+"browserslist-config-autoguru@npm:2.5.0":
+  version: 2.5.0
+  resolution: "browserslist-config-autoguru@npm:2.5.0"
   dependencies:
-    browserslist: "npm:^4.21.4"
-  checksum: 10/4c189f0f649389099f74c3d2feaec6cc6fd1c879ccf7f71cd5cc1fd8c5518ebc50eca0cbcb36e45ac86cf0235a6cc2afe3985b0055254dc6061ba8119adac283
+    browserslist: "npm:^4.25.1"
+  checksum: 10/653444f56119d94349df834cd0c290a3704edba81b9345a0607d8f616d25069e78fa8d97c961ff1062a17e91af3d2f2aa4d0765245d8e420266576152674f0ea
   languageName: node
   linkType: hard
 
-"browserslist@npm:^4.21.4, browserslist@npm:^4.24.0, browserslist@npm:^4.25.0":
+"browserslist@npm:^4.24.0, browserslist@npm:^4.25.0, browserslist@npm:^4.25.1":
   version: 4.25.1
   resolution: "browserslist@npm:4.25.1"
   dependencies:
