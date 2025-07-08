@@ -7,7 +7,7 @@ import { useNullCheck } from '../../hooks/useNullCheck';
 import { elementStyles } from '../../styles';
 import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
 import { ResponsiveProp } from '../../utils/responsiveProps.css';
-import { Box, type BoxProps } from '../Box/Box';
+import { useBox, type UseBoxProps } from '../Box/useBox/useBox';
 
 import * as styles from './Icon.css';
 
@@ -15,7 +15,7 @@ export type IconEl = IconType | ReactElement<SVGAttributes<SVGElement>, 'svg'>;
 
 export interface IconProps {
 	display?: Extract<
-		BoxProps['display'],
+		UseBoxProps['display'],
 		'block' | 'inlineBlock' | 'inline-block'
 	>;
 	className?: string;
@@ -31,6 +31,13 @@ export const Icon: FunctionComponent<IconProps> = ({
 }) => {
 	useNullCheck(icon, 'Icon component received an empty icon prop.');
 
+	const { Component: Wrapper, componentProps: wrapperProps } = useBox({
+		as: 'span',
+		className: [resolveResponsiveStyle(size, styles.size), className],
+		odComponent: 'icon',
+		display,
+	});
+
 	const iconElement = cloneElement(icon, {
 		className: elementStyles({
 			as: 'svg',
@@ -42,14 +49,5 @@ export const Icon: FunctionComponent<IconProps> = ({
 		'aria-hidden': icon.props['aria-label'] ? undefined : true,
 	});
 
-	return (
-		<Box
-			as="span"
-			display={display}
-			className={[resolveResponsiveStyle(size, styles.size), className]}
-			odComponent="icon"
-		>
-			{icon ? iconElement : '⬤'}
-		</Box>
-	);
+	return <Wrapper {...wrapperProps}>{icon ? iconElement : '⬤'}</Wrapper>;
 };

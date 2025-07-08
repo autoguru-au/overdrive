@@ -1,7 +1,7 @@
 import type { ClassValue as ClassName } from 'clsx';
 import React, { type ComponentProps } from 'react';
 
-import { type Sprinkles } from '../../styles/sprinkles.css';
+import { sprinkles, type Sprinkles } from '../../styles/sprinkles.css';
 import {
 	DEFAULT_TEXT_SIZE,
 	DEFAULT_TEXT_WEIGHT,
@@ -82,7 +82,7 @@ export const Text = React.forwardRef<HTMLElement, TextProps>(
 			className,
 			testId,
 
-			//style props
+			//text style props
 			align,
 			breakWord,
 			color, // modern semantic colour tokens
@@ -94,6 +94,37 @@ export const Text = React.forwardRef<HTMLElement, TextProps>(
 			weight = DEFAULT_TEXT_WEIGHT,
 			wrap,
 
+			//style props
+			display,
+			m,
+			mb,
+			ml,
+			mr,
+			mt,
+			mx,
+			my,
+			margin,
+			marginBottom,
+			marginLeft,
+			marginRight,
+			marginTop,
+			marginX,
+			marginY,
+			p,
+			pb,
+			pl,
+			pr,
+			pt,
+			px,
+			py,
+			padding,
+			paddingBottom,
+			paddingLeft,
+			paddingRight,
+			paddingTop,
+			paddingX,
+			paddingY,
+
 			...props
 		},
 		ref,
@@ -102,8 +133,9 @@ export const Text = React.forwardRef<HTMLElement, TextProps>(
 			as,
 			className: [
 				textStyles({
-					align,
 					as,
+
+					align,
 					breakWord,
 					color,
 					colour,
@@ -113,6 +145,37 @@ export const Text = React.forwardRef<HTMLElement, TextProps>(
 					transform,
 					weight,
 					wrap,
+				}),
+				sprinkles({
+					display,
+					m,
+					mb,
+					ml,
+					mr,
+					mt,
+					mx,
+					my,
+					margin,
+					marginBottom,
+					marginLeft,
+					marginRight,
+					marginTop,
+					marginX,
+					marginY,
+					p,
+					pb,
+					pl,
+					pr,
+					pt,
+					px,
+					py,
+					padding,
+					paddingBottom,
+					paddingLeft,
+					paddingRight,
+					paddingTop,
+					paddingX,
+					paddingY,
 				}),
 				className,
 			],
