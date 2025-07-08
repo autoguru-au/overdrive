@@ -2,9 +2,10 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { ComponentProps, FunctionComponent, useMemo } from 'react';
 
-import { sprinkles } from '../../styles';
+import { textStyles } from '../../styles/typography';
 import { toPrettyBigNumber } from '../../utils/number';
-import { Box } from '../Box/Box';
+import { Box, type BoxProps } from '../Box/Box';
+import { useBox } from '../Box/useBox/useBox';
 import { Text } from '../Text/Text';
 
 import * as styles from './NumberBubble.css';
@@ -19,15 +20,11 @@ export interface NumberBubbleProps
 	textColour?: ComponentProps<typeof Text>['colour'];
 }
 
-type BubbleSize = 'SMALL' | 'MEDIUM' | 'LARGE' | 'X_LARGE';
-const valuePaddingMap: Record<
-	BubbleSize,
-	ComponentProps<typeof Box>['padding']
-> = {
-	SMALL: '2',
-	MEDIUM: '3',
-	LARGE: '4',
-	X_LARGE: '5',
+type BubbleSize = 'SMALL' | 'MEDIUM' | 'LARGE';
+const sizeMap: Record<BubbleSize, BoxProps['size']> = {
+	SMALL: '4',
+	MEDIUM: '6',
+	LARGE: '7',
 };
 
 export const NumberBubble: FunctionComponent<NumberBubbleProps> = ({
@@ -37,34 +34,32 @@ export const NumberBubble: FunctionComponent<NumberBubbleProps> = ({
 	...boxProps
 }) => {
 	const size = useMemo<BubbleSize>(() => {
-		if (value > 9 && value < 100) return 'MEDIUM';
-		if (value > 99 && value < 9999) return 'LARGE';
-		if (value >= 9999) return 'LARGE';
-		return 'SMALL';
+		if (value < 10) return 'SMALL';
+		if (value >= 10 && value < 100) return 'MEDIUM';
+		return 'LARGE';
 	}, [value]);
+	const { Component, componentProps } = useBox({
+		odComponent: 'number-bubble',
+
+		alignItems: 'center',
+		backgroundColour: 'gray900',
+		borderRadius: 'full',
+		display: 'inline-flex',
+		justifyContent: 'center',
+		size: sizeMap[size],
+
+		...boxProps,
+	});
 	return (
-		<Box
-			borderRadius="full"
-			backgroundColour="gray900"
-			display="inline-block"
-			position="relative"
-			padding={valuePaddingMap[size]}
-			odComponent="number-bubble"
-			{...boxProps}
-		>
-			<Text
-				size="2"
-				strong
+		<Component {...componentProps}>
+			<span
 				className={clsx(
 					styles.bubbleText,
-					sprinkles({
-						position: 'absolute',
-					}),
+					textStyles({ size: '2', colour: textColour, strong: true }),
 				)}
-				colour={textColour}
 			>
 				{rawNumbers ? value : toPrettyBigNumber(value)}
-			</Text>
-		</Box>
+			</span>
+		</Component>
 	);
 };

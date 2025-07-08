@@ -1,7 +1,11 @@
 import { style } from '@vanilla-extract/css';
 
+import { cssLayerComponent } from '../../styles/layers.css';
+
 export const bubbleText = style({
-	top: '50%',
-	left: '50%',
-	transform: 'translate(-50%, -50%)',
+	'@layer': {
+		[cssLayerComponent]: {
+			transform: 'translateY(-0.525px)',
+		},
+	},
 });
