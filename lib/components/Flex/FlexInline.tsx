@@ -65,6 +65,7 @@ export const FlexInline = ({
 	...attrs // html attributes
 }: FlexInlineComponentProps) => {
 	const { Component, componentProps } = useBox({
+		...attrs,
 		as,
 		odComponent: 'flex-inline',
 		className: inlineStyle,
@@ -80,7 +81,6 @@ export const FlexInline = ({
 			spaceBetween,
 			start,
 		}),
-		...attrs,
 		...dataAttrs({ expand }),
 	});
 	return <Component {...componentProps}>{children}</Component>;
