@@ -1,3 +1,4 @@
+import vanillaExtract from '@antebudimir/eslint-plugin-vanilla-extract';
 import { base, react, typescript } from '@autoguru/eslint-plugin/config';
 import storybook from 'eslint-plugin-storybook';
 
@@ -7,6 +8,20 @@ export default [
 	...typescript,
 	...react,
 	...storybook.configs['flat/recommended'],
+	{
+		files: ['**/*.css.ts'],
+		ignores: ['src/themes/theme.css.ts'],
+		plugins: {
+			'vanilla-extract': vanillaExtract,
+		},
+		rules: {
+			'vanilla-extract/alphabetical-order': 'error',
+			// Disable no-empty-style-blocks as it produces false positives with sprinkles and conditional styles
+			'vanilla-extract/no-empty-style-blocks': 'off',
+			'vanilla-extract/no-unknown-unit': 'error',
+			'vanilla-extract/no-zero-unit': 'warn',
+		},
+	},
 	{
 		ignores: ['!.storybook'],
 		rules: {

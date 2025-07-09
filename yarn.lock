@@ -22,6 +22,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@antebudimir/eslint-plugin-vanilla-extract@npm:^1.11.0":
+  version: 1.11.0
+  resolution: "@antebudimir/eslint-plugin-vanilla-extract@npm:1.11.0"
+  peerDependencies:
+    eslint: ">=8.57.0"
+  checksum: 10/eda23e02c8b6c54e9bc435427b9d7d18b2c8c3adc0b7270ae0bb758f06b35930748282c9dd44fc75fbd7446895a90a63418223aa166ad603ad6f46c4f01f8283
+  languageName: node
+  linkType: hard
+
 "@asamuzakjp/css-color@npm:^3.2.0":
   version: 3.2.0
   resolution: "@asamuzakjp/css-color@npm:3.2.0"
@@ -105,6 +114,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@autoguru/overdrive@workspace:."
   dependencies:
+    "@antebudimir/eslint-plugin-vanilla-extract": "npm:^1.11.0"
     "@autoguru/babel-preset": "npm:3.2.0"
     "@autoguru/eslint-plugin": "npm:2.0.0"
     "@autoguru/icons": "npm:1.8.11"
