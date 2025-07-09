@@ -130,11 +130,11 @@ export const Text = React.forwardRef<HTMLElement, TextProps>(
 		ref,
 	) => {
 		const { Component, componentProps } = useBox({
+			...props,
 			as,
 			className: [
 				textStyles({
 					as,
-
 					align,
 					breakWord,
 					color,
@@ -182,7 +182,7 @@ export const Text = React.forwardRef<HTMLElement, TextProps>(
 			testId,
 		});
 		return (
-			<Component {...props} {...componentProps} ref={ref}>
+			<Component {...componentProps} ref={ref}>
 				{children}
 			</Component>
 		);

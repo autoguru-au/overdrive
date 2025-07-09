@@ -79,15 +79,17 @@ export const ColumnContext = createContext<ColumnContextValue | null>(null);
 export const Columns = forwardRef<HTMLElement, ColumnsProps>(
 	(
 		{
-			className,
+			as,
 			children,
+			className,
+
+			align = 'stretch',
+			noWrap,
 			space,
 			spaceX,
 			spaceY,
-			noWrap,
 			wrappingDirection = 'default',
-			align = 'stretch',
-			as,
+
 			...boxProps
 		},
 		ref,
@@ -105,6 +107,7 @@ export const Columns = forwardRef<HTMLElement, ColumnsProps>(
 		const marginTopFix = useNegativeMarginTop(resolvedSpaceY);
 
 		const { Component, componentProps } = useBox({
+			...boxProps,
 			as,
 			className: [
 				marginLeftFix,
@@ -113,13 +116,12 @@ export const Columns = forwardRef<HTMLElement, ColumnsProps>(
 				className,
 			],
 			odComponent: 'columns',
-
 			display: 'flex',
 			flexDirection: 'row',
 		});
 
 		return (
-			<Component {...boxProps} {...componentProps} ref={ref}>
+			<Component {...componentProps} ref={ref}>
 				<ColumnContext.Provider
 					value={useMemo(
 						() => ({

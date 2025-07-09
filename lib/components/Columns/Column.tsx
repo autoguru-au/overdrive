@@ -18,14 +18,15 @@ export interface ColumnProps
 export const Column = forwardRef<HTMLElement, ColumnProps>(
 	(
 		{
-			className,
-			children,
-			width,
-			alignSelf,
 			as,
-			noShrink = false,
+			children,
+			className,
+
+			alignSelf,
 			grow = false,
+			noShrink = false,
 			order,
+			width,
 
 			...boxProps
 		},
@@ -39,6 +40,7 @@ export const Column = forwardRef<HTMLElement, ColumnProps>(
 
 		const { isList, spaceXCls, spaceYCls } = columnsContext;
 		const { Component, componentProps } = useBox({
+			...boxProps,
 			as,
 			className,
 
@@ -62,7 +64,7 @@ export const Column = forwardRef<HTMLElement, ColumnProps>(
 
 		return (
 			<Wrapper className={wrapperStyles}>
-				<Component {...boxProps} {...componentProps} ref={ref}>
+				<Component {...componentProps} ref={ref}>
 					{children}
 				</Component>
 			</Wrapper>
