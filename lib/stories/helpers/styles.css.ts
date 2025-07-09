@@ -24,8 +24,8 @@ export const small = style({
 
 export const gridSwatches = style({
 	display: 'grid',
-	gridTemplateColumns: 'repeat(5, 1fr)',
 	gap: '1.3em',
+	gridTemplateColumns: 'repeat(5, 1fr)',
 });
 
 export const hexPill = style({
@@ -40,28 +40,28 @@ export const hexPill = style({
 });
 
 export const icon = style({
-	width: '140px',
-	height: '120px',
-
-	listStyle: 'none',
-	textAlign: 'center',
-
-	display: 'flex',
-	flexDirection: 'column',
 	alignItems: 'center',
-	justifyContent: 'center',
-	padding: overdriveTokens.space[2],
-
 	backgroundColor: overdriveTokens.color.surface.page,
+
 	borderColor: overdriveTokens.color.interactive.border,
 	borderRadius: overdriveTokens.border.radius.md,
+
 	borderStyle: 'solid',
 	borderWidth: overdriveTokens.border.width[2],
 	color: overdriveTokens.color.content.normal,
+	display: 'flex',
+	flexDirection: 'column',
 
-	transitionProperty: 'background,color',
-	transitionDuration: '600ms',
+	height: '120px',
+	justifyContent: 'center',
+	listStyle: 'none',
+	padding: overdriveTokens.space[2],
+	textAlign: 'center',
 	transitionBehavior: 'ease-in-out',
+
+	transitionDuration: '600ms',
+	transitionProperty: 'background,color',
+	width: '140px',
 
 	selectors: {
 		'&:hover': {
@@ -73,10 +73,10 @@ export const icon = style({
 
 export const variantColourSwatch = recipe({
 	base: {
-		position: 'relative',
 		borderColor: overdriveTokens.color.gamut.gray[200],
 		borderStyle: 'solid',
 		borderWidth: overdriveTokens.border.width[1],
+		position: 'relative',
 	},
 	variants: {
 		size: {

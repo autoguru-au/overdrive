@@ -3,10 +3,10 @@ import { style, styleVariants } from '@vanilla-extract/css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
 export const root = style({
-	top: 0,
-	right: 0,
 	bottom: 0,
 	left: 0,
+	right: 0,
+	top: 0,
 	zIndex: 1000,
 });
 
@@ -24,16 +24,16 @@ export const entry = style({
 });
 
 export const backdrop = styleVariants({
-	root: {
-		top: 0,
-		right: 0,
-		bottom: 0,
-		left: 0,
-		zIndex: 999,
-		opacity: 0.75,
-		backdropFilter: 'blur(5px)',
-	},
 	invisible: {
 		backdropFilter: 'none',
+	},
+	root: {
+		backdropFilter: 'blur(5px)',
+		bottom: 0,
+		left: 0,
+		opacity: 0.75,
+		right: 0,
+		top: 0,
+		zIndex: 999,
 	},
 });

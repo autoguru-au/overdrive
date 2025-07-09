@@ -11,11 +11,11 @@ const activeBorderColour = style({
 });
 
 export const disabled = styleVariants({
-	colour: {
-		color: vars.colours.gamut.gray200,
-	},
 	borderColour: {
 		borderColor: vars.border.colours.gray,
+	},
+	colour: {
+		color: vars.colours.gamut.gray200,
 	},
 });
 

@@ -78,17 +78,17 @@ export const itemLabelStyle = style({
 
 // === Checkbox styles
 const checkboxTransition = style({
+	transitionDuration: '100ms',
 	transitionProperty: 'background',
 	transitionTimingFunction: 'ease-in',
-	transitionDuration: '100ms',
 });
 
 const checkboxHovered = style({
 	selectors: {
 		[`${styledOptionItem.classNames.base}:hover &:not([data-checked],[data-disabled])`]:
 			{
-				color: tokens.colours.background.body,
 				background: tokens.colours.gamut.gray300,
+				color: tokens.colours.background.body,
 			},
 	},
 });

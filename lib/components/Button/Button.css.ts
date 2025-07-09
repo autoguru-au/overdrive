@@ -72,24 +72,24 @@ export const button = recipe({
 		// Intent (color scheme) variants
 		intent: {
 			primary: {
-				color: intentColors.primary.foreground,
 				backgroundColor: intentColors.primary.background.standard,
+				color: intentColors.primary.foreground,
 				[selectorFocusHoverActive]: {
-					color: intentColors.primary.foreground,
 					backgroundColor: intentColors.primary.background.strong,
+					color: intentColors.primary.foreground,
 				},
 			},
 			brand: {
-				color: intentColors.brand.foreground,
 				backgroundColor: intentColors.brand.background.standard,
+				color: intentColors.brand.foreground,
 				[selectorFocusHoverActive]: {
 					backgroundColor: intentColors.brand.background.strong,
 				},
 			},
 			secondary: {
-				color: intentColors.secondary.foreground,
 				backgroundColor: intentColors.secondary.background.standard,
 				border: `1px solid ${intentColors.secondary.border}`,
+				color: intentColors.secondary.foreground,
 				selectors: {
 					[selectorFocusHoverActive]: {
 						backgroundColor:
@@ -130,9 +130,9 @@ export const button = recipe({
 		// Miminal appearance variant
 		minimal: {
 			true: {
-				color: vars.typography.colour.neutral,
 				backgroundColor: 'transparent',
 				border: 'none',
+				color: vars.typography.colour.neutral,
 			},
 			false: [],
 		},
