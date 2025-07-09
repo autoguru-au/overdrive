@@ -80,13 +80,10 @@ export const FlexInline = ({
 			spaceBetween,
 			start,
 		}),
+		...attrs,
 		...dataAttrs({ expand }),
 	});
-	return (
-		<Component {...attrs} {...componentProps}>
-			{children}
-		</Component>
-	);
+	return <Component {...componentProps}>{children}</Component>;
 };
 
 FlexInline.displayName = 'FlexInline';

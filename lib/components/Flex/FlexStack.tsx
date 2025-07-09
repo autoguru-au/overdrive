@@ -77,12 +77,9 @@ export const FlexStack = ({
 			reverse,
 			start,
 		}),
+		...attrs,
 	});
-	return (
-		<Component {...attrs} {...componentProps}>
-			{children}
-		</Component>
-	);
+	return <Component {...componentProps}>{children}</Component>;
 };
 
 FlexStack.displayName = 'FlexStack';
