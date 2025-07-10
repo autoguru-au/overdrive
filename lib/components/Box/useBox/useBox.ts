@@ -4,7 +4,11 @@ import {
 	elementStyles,
 	type ElementStylesProps,
 } from '../../../styles/elementStyles';
-import type { ConsistentComponentProps, OdComponentProp } from '../../../types';
+import type {
+	ConsistentComponentProps,
+	DataAttributes,
+	OdComponentProp,
+} from '../../../types';
 import { dataAttrs } from '../../../utils/dataAttrs';
 
 type FilteredAttributes = Omit<
@@ -16,7 +20,8 @@ export interface UseBoxProps
 	extends FilteredAttributes,
 		ConsistentComponentProps,
 		OdComponentProp,
-		ElementStylesProps {}
+		ElementStylesProps,
+		DataAttributes {}
 
 export const useBox = ({
 	as = 'div',

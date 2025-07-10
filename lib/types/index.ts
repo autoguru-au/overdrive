@@ -17,6 +17,10 @@ export interface ComponentClassNameProp {
 	className?: ClassValue;
 }
 
+export type DataAttributes = {
+	[key: `data-${string}`]: string | number | boolean | undefined;
+};
+
 export interface OdComponentProp {
 	/**
 	 * Output a data attribute with a component name in the markup, mainly used for the root element of a component
