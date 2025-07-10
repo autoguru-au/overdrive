@@ -1,1 +1,0 @@
-import{$ as l}from"./useFocusRing-D8S42_IN.js";import{r as d}from"./iframe-CQI638ZW.js";function f(r,i,a){let n=d.useRef(i),t=l(()=>{a&&a(n.current)});d.useEffect(()=>{var o;let e=r==null||(o=r.current)===null||o===void 0?void 0:o.form;return e?.addEventListener("reset",t),()=>{e?.removeEventListener("reset",t)}},[r,t])}export{f as $};
