@@ -1,0 +1,546 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Button /> > renders the primary set of buttons story > primary-button-set 1`] = `
+[
+  <button
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon58 Button_button_shape_default__p2yon5a Button_button_intent_primary__p2yon5d Button_button_minimal_false__p2yon5l Button_button_compound_3__p2yon5s"
+    type="button"
+  >
+    Login
+  </button>,
+  <button
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon58 Button_button_shape_default__p2yon5a Button_button_intent_primary__p2yon5d Button_button_minimal_false__p2yon5l Button_button_compound_3__p2yon5s"
+    type="button"
+  >
+    <span
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+      data-od-component="icon"
+    >
+      <svg
+        aria-hidden="true"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6 17c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6m9-9a3 3 0 11-6 0 3 3 0 016 0zM3 5v14a2 2 0 002 2h14c1.103 0 2-.896 2-2V5c0-1.104-.897-2-2-2H5a2 2 0 00-2 2z"
+        />
+      </svg>
+    </span>
+    Login
+  </button>,
+  <button
+    aria-label="login"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon58 Button_button_shape_iconOnly__p2yon5c Button_button_intent_primary__p2yon5d Button_button_minimal_false__p2yon5l Button_button_compound_5__p2yon5u"
+    type="button"
+  >
+    <span
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+      data-od-component="icon"
+    >
+      <svg
+        aria-hidden="true"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6 17c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6m9-9a3 3 0 11-6 0 3 3 0 016 0zM3 5v14a2 2 0 002 2h14c1.103 0 2-.896 2-2V5c0-1.104-.897-2-2-2H5a2 2 0 00-2 2z"
+        />
+      </svg>
+    </span>
+  </button>,
+  <button
+    aria-label="login"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon58 Button_button_shape_iconOnly__p2yon5c Button_button_intent_primary__p2yon5d Button_button_minimal_false__p2yon5l Button_button_rounded_true__p2yon5m Button__p2yon54 sprinkles_borderRadius_pill_mobile__onxwjuar Button_button_compound_5__p2yon5u"
+    type="button"
+  >
+    <span
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+      data-od-component="icon"
+    >
+      <svg
+        aria-hidden="true"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6 17c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6m9-9a3 3 0 11-6 0 3 3 0 016 0zM3 5v14a2 2 0 002 2h14c1.103 0 2-.896 2-2V5c0-1.104-.897-2-2-2H5a2 2 0 00-2 2z"
+        />
+      </svg>
+    </span>
+  </button>,
+  <button
+    aria-label="loading"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon58 Button_button_shape_default__p2yon5a Button_button_intent_primary__p2yon5d Button_button_minimal_false__p2yon5l Button_button_isLoading_true__p2yon5o Button_button_compound_3__p2yon5s"
+    data-loading=""
+    disabled=""
+    type="button"
+  >
+    <div
+      class="Button__p2yon51 sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_alignItems_center_mobile__onxwjulb sprinkles_display_grid_mobile__onxwju77 sprinkles_position_absolute_mobile__onxwju93 sprinkles_width_full_mobile__onxwjufn"
+    >
+      <div
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_light__1kpufmi6"
+        data-od-component="progress-spinner"
+      >
+        <svg
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_overflow_hidden_mobile__onxwju7z ProgressSpinner_circular__1kpufmi1"
+          viewBox="25 25 50 50"
+        >
+          <circle
+            class="ProgressSpinner_path__1kpufmi3 ProgressSpinner_size_medium_path__1kpufmid"
+            cx="50"
+            cy="50"
+            fill="none"
+            r="20"
+            stroke-miterlimit="10"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      class="Button_hiddenContent__p2yon50"
+    >
+      A very very very long button Label
+    </div>
+  </button>,
+  <button
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon58 Button_button_shape_default__p2yon5a Button_button_intent_primary__p2yon5d Button_button_minimal_false__p2yon5l Button_button_compound_3__p2yon5s"
+    disabled=""
+    type="button"
+  >
+    Login
+  </button>,
+  <button
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon58 Button_button_shape_default__p2yon5a Button_button_intent_primary__p2yon5d Button_button_minimal_false__p2yon5l Button_button_isFullWidth_true__p2yon5n Button__p2yon55 sprinkles_width_full_mobile__onxwjufn Button_button_compound_3__p2yon5s"
+    type="button"
+  >
+    Full Width
+  </button>,
+  <button
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon58 Button_button_shape_default__p2yon5a Button_button_intent_primary__p2yon5d Button_button_minimal_true__p2yon5k Button_button_compound_3__p2yon5s Button_button_compound_6__p2yon5v"
+    type="button"
+  >
+    Login
+  </button>,
+  <button
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon58 Button_button_shape_default__p2yon5a Button_button_intent_primary__p2yon5d Button_button_minimal_true__p2yon5k Button_button_compound_3__p2yon5s Button_button_compound_6__p2yon5v"
+    type="button"
+  >
+    <span
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+      data-od-component="icon"
+    >
+      <svg
+        aria-hidden="true"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6 17c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6m9-9a3 3 0 11-6 0 3 3 0 016 0zM3 5v14a2 2 0 002 2h14c1.103 0 2-.896 2-2V5c0-1.104-.897-2-2-2H5a2 2 0 00-2 2z"
+        />
+      </svg>
+    </span>
+    Login
+  </button>,
+  <button
+    aria-label="login"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon58 Button_button_shape_iconOnly__p2yon5c Button_button_intent_primary__p2yon5d Button_button_minimal_true__p2yon5k Button_button_compound_5__p2yon5u Button_button_compound_6__p2yon5v"
+    type="button"
+  >
+    <span
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+      data-od-component="icon"
+    >
+      <svg
+        aria-hidden="true"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6 17c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6m9-9a3 3 0 11-6 0 3 3 0 016 0zM3 5v14a2 2 0 002 2h14c1.103 0 2-.896 2-2V5c0-1.104-.897-2-2-2H5a2 2 0 00-2 2z"
+        />
+      </svg>
+    </span>
+  </button>,
+  <button
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon58 Button_button_shape_rounded__p2yon5b Button_button_intent_primary__p2yon5d Button_button_minimal_true__p2yon5k Button_button_rounded_true__p2yon5m Button__p2yon54 sprinkles_borderRadius_pill_mobile__onxwjuar Button_button_compound_4__p2yon5t Button_button_compound_6__p2yon5v"
+    type="button"
+  >
+    1
+  </button>,
+  <button
+    aria-label="login"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon58 Button_button_shape_rounded__p2yon5b Button_button_intent_primary__p2yon5d Button_button_minimal_true__p2yon5k Button_button_rounded_true__p2yon5m Button__p2yon54 sprinkles_borderRadius_pill_mobile__onxwjuar Button_button_compound_4__p2yon5t Button_button_compound_6__p2yon5v"
+    type="button"
+  >
+    <span
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+      data-od-component="icon"
+    >
+      <svg
+        aria-hidden="true"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6 17c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6m9-9a3 3 0 11-6 0 3 3 0 016 0zM3 5v14a2 2 0 002 2h14c1.103 0 2-.896 2-2V5c0-1.104-.897-2-2-2H5a2 2 0 00-2 2z"
+        />
+      </svg>
+    </span>
+    1
+  </button>,
+  <button
+    aria-label="login"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon58 Button_button_shape_iconOnly__p2yon5c Button_button_intent_primary__p2yon5d Button_button_minimal_true__p2yon5k Button_button_rounded_true__p2yon5m Button__p2yon54 sprinkles_borderRadius_pill_mobile__onxwjuar Button_button_compound_5__p2yon5u Button_button_compound_6__p2yon5v"
+    type="button"
+  >
+    <span
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+      data-od-component="icon"
+    >
+      <svg
+        aria-hidden="true"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6 17c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6m9-9a3 3 0 11-6 0 3 3 0 016 0zM3 5v14a2 2 0 002 2h14c1.103 0 2-.896 2-2V5c0-1.104-.897-2-2-2H5a2 2 0 00-2 2z"
+        />
+      </svg>
+    </span>
+  </button>,
+  <button
+    aria-label="loading"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon58 Button_button_shape_default__p2yon5a Button_button_intent_primary__p2yon5d Button_button_minimal_true__p2yon5k Button_button_isLoading_true__p2yon5o Button_button_compound_3__p2yon5s Button_button_compound_6__p2yon5v"
+    data-loading=""
+    disabled=""
+    type="button"
+  >
+    <div
+      class="Button__p2yon51 sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_alignItems_center_mobile__onxwjulb sprinkles_display_grid_mobile__onxwju77 sprinkles_position_absolute_mobile__onxwju93 sprinkles_width_full_mobile__onxwjufn"
+    >
+      <div
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_secondary__1kpufmi8"
+        data-od-component="progress-spinner"
+      >
+        <svg
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_overflow_hidden_mobile__onxwju7z ProgressSpinner_circular__1kpufmi1"
+          viewBox="25 25 50 50"
+        >
+          <circle
+            class="ProgressSpinner_path__1kpufmi3 ProgressSpinner_size_medium_path__1kpufmid"
+            cx="50"
+            cy="50"
+            fill="none"
+            r="20"
+            stroke-miterlimit="10"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      class="Button_hiddenContent__p2yon50"
+    >
+      Login
+    </div>
+  </button>,
+  <button
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_medium__p2yon58 Button_button_shape_default__p2yon5a Button_button_intent_primary__p2yon5d Button_button_minimal_true__p2yon5k Button_button_compound_3__p2yon5s Button_button_compound_6__p2yon5v"
+    disabled=""
+    type="button"
+  >
+    Login
+  </button>,
+  <button
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon57 Button_button_shape_default__p2yon5a Button_button_intent_primary__p2yon5d Button_button_minimal_false__p2yon5l Button_button_compound_0__p2yon5p"
+    type="button"
+  >
+    Login
+  </button>,
+  <button
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon57 Button_button_shape_default__p2yon5a Button_button_intent_primary__p2yon5d Button_button_minimal_false__p2yon5l Button_button_compound_0__p2yon5p"
+    type="button"
+  >
+    <span
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+      data-od-component="icon"
+    >
+      <svg
+        aria-hidden="true"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6 17c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6m9-9a3 3 0 11-6 0 3 3 0 016 0zM3 5v14a2 2 0 002 2h14c1.103 0 2-.896 2-2V5c0-1.104-.897-2-2-2H5a2 2 0 00-2 2z"
+        />
+      </svg>
+    </span>
+    Login
+  </button>,
+  <button
+    aria-label="login"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon57 Button_button_shape_iconOnly__p2yon5c Button_button_intent_primary__p2yon5d Button_button_minimal_false__p2yon5l Button_button_compound_2__p2yon5r"
+    type="button"
+  >
+    <span
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+      data-od-component="icon"
+    >
+      <svg
+        aria-hidden="true"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6 17c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6m9-9a3 3 0 11-6 0 3 3 0 016 0zM3 5v14a2 2 0 002 2h14c1.103 0 2-.896 2-2V5c0-1.104-.897-2-2-2H5a2 2 0 00-2 2z"
+        />
+      </svg>
+    </span>
+  </button>,
+  <button
+    aria-label="login"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon57 Button_button_shape_iconOnly__p2yon5c Button_button_intent_primary__p2yon5d Button_button_minimal_false__p2yon5l Button_button_rounded_true__p2yon5m Button__p2yon54 sprinkles_borderRadius_pill_mobile__onxwjuar Button_button_compound_2__p2yon5r"
+    type="button"
+  >
+    <span
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+      data-od-component="icon"
+    >
+      <svg
+        aria-hidden="true"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6 17c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6m9-9a3 3 0 11-6 0 3 3 0 016 0zM3 5v14a2 2 0 002 2h14c1.103 0 2-.896 2-2V5c0-1.104-.897-2-2-2H5a2 2 0 00-2 2z"
+        />
+      </svg>
+    </span>
+  </button>,
+  <button
+    aria-label="loading"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon57 Button_button_shape_default__p2yon5a Button_button_intent_primary__p2yon5d Button_button_minimal_false__p2yon5l Button_button_isLoading_true__p2yon5o Button_button_compound_0__p2yon5p"
+    data-loading=""
+    disabled=""
+    type="button"
+  >
+    <div
+      class="Button__p2yon51 sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_alignItems_center_mobile__onxwjulb sprinkles_display_grid_mobile__onxwju77 sprinkles_position_absolute_mobile__onxwju93 sprinkles_width_full_mobile__onxwjufn"
+    >
+      <div
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_light__1kpufmi6"
+        data-od-component="progress-spinner"
+      >
+        <svg
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_overflow_hidden_mobile__onxwju7z ProgressSpinner_circular__1kpufmi1"
+          viewBox="25 25 50 50"
+        >
+          <circle
+            class="ProgressSpinner_path__1kpufmi3 ProgressSpinner_size_medium_path__1kpufmid"
+            cx="50"
+            cy="50"
+            fill="none"
+            r="20"
+            stroke-miterlimit="10"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      class="Button_hiddenContent__p2yon50"
+    >
+      A very very very long button Label
+    </div>
+  </button>,
+  <button
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon57 Button_button_shape_default__p2yon5a Button_button_intent_primary__p2yon5d Button_button_minimal_false__p2yon5l Button_button_compound_0__p2yon5p"
+    disabled=""
+    type="button"
+  >
+    Login
+  </button>,
+  <button
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon57 Button_button_shape_default__p2yon5a Button_button_intent_primary__p2yon5d Button_button_minimal_false__p2yon5l Button_button_isFullWidth_true__p2yon5n Button__p2yon55 sprinkles_width_full_mobile__onxwjufn Button_button_compound_0__p2yon5p"
+    type="button"
+  >
+    Full Width
+  </button>,
+  <button
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon57 Button_button_shape_default__p2yon5a Button_button_intent_primary__p2yon5d Button_button_minimal_true__p2yon5k Button_button_compound_0__p2yon5p Button_button_compound_6__p2yon5v"
+    type="button"
+  >
+    Login
+  </button>,
+  <button
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon57 Button_button_shape_default__p2yon5a Button_button_intent_primary__p2yon5d Button_button_minimal_true__p2yon5k Button_button_compound_0__p2yon5p Button_button_compound_6__p2yon5v"
+    type="button"
+  >
+    <span
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+      data-od-component="icon"
+    >
+      <svg
+        aria-hidden="true"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6 17c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6m9-9a3 3 0 11-6 0 3 3 0 016 0zM3 5v14a2 2 0 002 2h14c1.103 0 2-.896 2-2V5c0-1.104-.897-2-2-2H5a2 2 0 00-2 2z"
+        />
+      </svg>
+    </span>
+    Login
+  </button>,
+  <button
+    aria-label="login"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon57 Button_button_shape_iconOnly__p2yon5c Button_button_intent_primary__p2yon5d Button_button_minimal_true__p2yon5k Button_button_compound_2__p2yon5r Button_button_compound_6__p2yon5v"
+    type="button"
+  >
+    <span
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+      data-od-component="icon"
+    >
+      <svg
+        aria-hidden="true"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6 17c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6m9-9a3 3 0 11-6 0 3 3 0 016 0zM3 5v14a2 2 0 002 2h14c1.103 0 2-.896 2-2V5c0-1.104-.897-2-2-2H5a2 2 0 00-2 2z"
+        />
+      </svg>
+    </span>
+  </button>,
+  <button
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon57 Button_button_shape_rounded__p2yon5b Button_button_intent_primary__p2yon5d Button_button_minimal_true__p2yon5k Button_button_rounded_true__p2yon5m Button__p2yon54 sprinkles_borderRadius_pill_mobile__onxwjuar Button_button_compound_1__p2yon5q Button_button_compound_6__p2yon5v"
+    type="button"
+  >
+    1
+  </button>,
+  <button
+    aria-label="login"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon57 Button_button_shape_rounded__p2yon5b Button_button_intent_primary__p2yon5d Button_button_minimal_true__p2yon5k Button_button_rounded_true__p2yon5m Button__p2yon54 sprinkles_borderRadius_pill_mobile__onxwjuar Button_button_compound_1__p2yon5q Button_button_compound_6__p2yon5v"
+    type="button"
+  >
+    <span
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+      data-od-component="icon"
+    >
+      <svg
+        aria-hidden="true"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6 17c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6m9-9a3 3 0 11-6 0 3 3 0 016 0zM3 5v14a2 2 0 002 2h14c1.103 0 2-.896 2-2V5c0-1.104-.897-2-2-2H5a2 2 0 00-2 2z"
+        />
+      </svg>
+    </span>
+    1
+  </button>,
+  <button
+    aria-label="login"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon57 Button_button_shape_iconOnly__p2yon5c Button_button_intent_primary__p2yon5d Button_button_minimal_true__p2yon5k Button_button_rounded_true__p2yon5m Button__p2yon54 sprinkles_borderRadius_pill_mobile__onxwjuar Button_button_compound_2__p2yon5r Button_button_compound_6__p2yon5v"
+    type="button"
+  >
+    <span
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0"
+      data-od-component="icon"
+    >
+      <svg
+        aria-hidden="true"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6 17c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6m9-9a3 3 0 11-6 0 3 3 0 016 0zM3 5v14a2 2 0 002 2h14c1.103 0 2-.896 2-2V5c0-1.104-.897-2-2-2H5a2 2 0 00-2 2z"
+        />
+      </svg>
+    </span>
+  </button>,
+  <button
+    aria-label="loading"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon57 Button_button_shape_default__p2yon5a Button_button_intent_primary__p2yon5d Button_button_minimal_true__p2yon5k Button_button_isLoading_true__p2yon5o Button_button_compound_0__p2yon5p Button_button_compound_6__p2yon5v"
+    data-loading=""
+    disabled=""
+    type="button"
+  >
+    <div
+      class="Button__p2yon51 sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_alignItems_center_mobile__onxwjulb sprinkles_display_grid_mobile__onxwju77 sprinkles_position_absolute_mobile__onxwju93 sprinkles_width_full_mobile__onxwjufn"
+    >
+      <div
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_secondary__1kpufmi8"
+        data-od-component="progress-spinner"
+      >
+        <svg
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_overflow_hidden_mobile__onxwju7z ProgressSpinner_circular__1kpufmi1"
+          viewBox="25 25 50 50"
+        >
+          <circle
+            class="ProgressSpinner_path__1kpufmi3 ProgressSpinner_size_medium_path__1kpufmid"
+            cx="50"
+            cy="50"
+            fill="none"
+            r="20"
+            stroke-miterlimit="10"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      class="Button_hiddenContent__p2yon50"
+    >
+      Login
+    </div>
+  </button>,
+  <button
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 Button_button__p2yon56 Button__p2yon53 sprinkles_borderBottomStyle_none__onxwju2m sprinkles_borderLeftStyle_none__onxwju2k sprinkles_borderRightStyle_none__onxwju2o sprinkles_borderTopStyle_none__onxwju2q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_borderRadius_md_mobile__onxwjuab sprinkles_display_flex_mobile__onxwju73 sprinkles_fontWeight_semiBold__onxwju63 sprinkles_gap_1_mobile__onxwjugn sprinkles_justifyContent_center_mobile__onxwjumz sprinkles_position_relative_mobile__onxwju8z sprinkles_width_fit-content_mobile__onxwjufb focusOutline_focusOutlineStyle__tq83zq0 Button_button_size_small__p2yon57 Button_button_shape_default__p2yon5a Button_button_intent_primary__p2yon5d Button_button_minimal_true__p2yon5k Button_button_compound_0__p2yon5p Button_button_compound_6__p2yon5v"
+    disabled=""
+    type="button"
+  >
+    Login
+  </button>,
+]
+`;
