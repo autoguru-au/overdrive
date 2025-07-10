@@ -50,7 +50,7 @@ exports[`<Alert /> > should match the snapshot 1`] = `
           type="button"
         >
           <span
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0 sprinkles_colour_muted__onxwju37"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_colour_muted__onxwju37"
             data-od-component="icon"
           >
             <svg

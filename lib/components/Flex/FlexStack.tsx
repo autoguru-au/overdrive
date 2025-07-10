@@ -60,8 +60,10 @@ export const FlexStack = ({
 	end,
 	gap = '2',
 	justify,
+	minWidth,
 	reverse,
 	start,
+	width,
 
 	...attrs // html attributes
 }: FlexStackComponentProps) => {
@@ -74,8 +76,10 @@ export const FlexStack = ({
 			end,
 			gap,
 			justify,
+			minWidth,
 			reverse,
 			start,
+			width,
 		}),
 	});
 	return (
