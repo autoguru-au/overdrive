@@ -66,6 +66,7 @@ export const FlexStack = ({
 	...attrs // html attributes
 }: FlexStackComponentProps) => {
 	const { Component, componentProps } = useBox({
+		...attrs,
 		as,
 		odComponent: 'flex-stack',
 		...stackPropMapping({
@@ -78,11 +79,7 @@ export const FlexStack = ({
 			start,
 		}),
 	});
-	return (
-		<Component {...attrs} {...componentProps}>
-			{children}
-		</Component>
-	);
+	return <Component {...componentProps}>{children}</Component>;
 };
 
 FlexStack.displayName = 'FlexStack';

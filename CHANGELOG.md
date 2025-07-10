@@ -4,24 +4,31 @@
 
 ### Patch Changes
 
-- 2bc6cce: NumberBubble: improved text centering
-- 2bc6cce: Fix: missing `useBoxStyles` alias export
+(2bc6cce)
+
+- **Fix:** missing `useBoxStyles` alias export
+- **NumberBubble:** improved text centering
 
 ## 4.44.3
 
 ### Patch Changes
 
-- 147aeb0: ### Flex Layout
+(147aeb0)
 
-  Introduces FlexStack and FlexInline layout components with enhanced responsive
-  capabilities, underpinned by className style functions `inline` and `stack`.
+- **EditableText:** fixes width during edit mode
 
-  ### useBox available
-  - `useBox` returns the component tag as well as the processed and filtered
+**Flex Layout**
+
+- Introduces FlexStack and FlexInline layout components with enhanced responsive
+  capabilities, underpinned by className style functions `inline` and `stack`
+
+
+**useBox available**
+
+- `useBox` returns the component tag as well as the processed and filtered
     props
-  - `UseBoxProps`
+- `UseBoxProps`
 
-- 147aeb0: EditableText: fixes width during edit mode
 
 ## 4.44.2
 
@@ -29,11 +36,11 @@
 
 (8abb8a5)
 
-- Inline, Stack and Anchor: refactored to use flexbox layout
-- Text and Heading: uses refactored typography and `textStyles` functions with
+- All remaining component 'is' props replaced by 'as'
+- **Inline, Stack and Anchor:** refactored to use flexbox layout
+- **Text and Heading:** uses refactored typography and `textStyles` functions with
   more unified prop handling and balanced text wrap
-- Finish replacement of 'is' prop with 'as' prop on all components
-- OrderedList: fixed HTML structure
+- **OrderedList:** fixed HTML structure
 
 ## ~~4.44.1~~
 
@@ -41,8 +48,8 @@ _Version deprecated_ Use 4.44.2 and above.
 
 ## ~~4.44.0~~
 
-_Version deprecated_. This minor was based on **4.43.1-5** now deprecated. Use
-4.44.2 and above.
+_Version deprecated_. Use 4.44.2 and above.
+This minor was based on **4.43.1-5** (now deprecated) for `.0` and `.1`.
 
 ## 4.43.10
 

@@ -13,6 +13,10 @@ export interface OdComponent {
 	odComponent?: string;
 }
 
+export type DataAttributes = {
+	[key: `data-${string}`]: string | number | boolean | undefined;
+};
+
 export interface TestId {
 	/**
 	 * The test ID will be rendered as a data attribute `data-testid` on the element for use with test assertions
