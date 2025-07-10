@@ -78,9 +78,8 @@ const Spinner = ({
 	</>
 );
 
-export const getIconProps = (size: ButtonProps['size']) => ({
-	size: size === 'small' ? size : 'medium',
-});
+export const calcIconSize = (size: ButtonProps['size']) =>
+	size === 'small' ? size : 'medium';
 
 /**
  * The Button supports a variety of appearances and is one of the main interactive Overdrive
@@ -198,16 +197,20 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			// ref,
 		});
 
-		const buttonContents = useMemo(
-			() =>
-				isSingleIconChild
-					? cloneElement(
-							children as React.ReactElement<IconProps>,
-							getIconProps(size),
-						)
-					: children,
-			[isSingleIconChild, children, size],
-		);
+		const buttonContents = useMemo(() => {
+			if (isSingleIconChild) {
+				const iconProps = children as ReactElement<
+					ComponentProps<typeof Icon>
+				>;
+				// if it is an icon button, allow custom icon size from the element
+				// otherwise, standardise the size
+				const iconSize = iconProps?.props?.size ?? calcIconSize(size);
+				return cloneElement(children as React.ReactElement<IconProps>, {
+					size: iconSize,
+				});
+			}
+			return children;
+		}, [isSingleIconChild, children, size]);
 
 		useEffect(() => {
 			if (functionallyDisabled) {

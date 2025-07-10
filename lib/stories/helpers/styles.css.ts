@@ -2,6 +2,7 @@ import { style } from '@vanilla-extract/css';
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
 import { overdriveTokens } from '../../themes';
+import { breakpoints } from '../../themes/makeTheme';
 
 export const titles = style({
 	marginTop: '11px',
@@ -25,7 +26,15 @@ export const small = style({
 export const gridSwatches = style({
 	display: 'grid',
 	gap: '1.3em',
-	gridTemplateColumns: 'repeat(5, 1fr)',
+	gridTemplateColumns: 'repeat(2, 1fr)',
+	'@media': {
+		[`screen and (min-width: ${breakpoints.tablet})`]: {
+			gridTemplateColumns: 'repeat(4, 1fr)',
+		},
+		[`screen and (min-width: ${breakpoints.desktop})`]: {
+			gridTemplateColumns: 'repeat(5, 1fr)',
+		},
+	},
 });
 
 export const hexPill = style({
@@ -97,7 +106,9 @@ export const variantColourSwatch = recipe({
 			circle: { borderRadius: '100%' },
 			rectangle: {
 				borderRadius: overdriveTokens.border.radius['md'],
-				width: '140px',
+				maxWidth: 160,
+				minWidth: 120,
+				width: 'auto',
 			},
 		},
 	},
