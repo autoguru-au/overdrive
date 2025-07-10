@@ -210,14 +210,14 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 		);
 
 		useEffect(() => {
-			let timeout;
-			if (functionallyDisabled)
-				timeout = setTimeout(
-					() => setFunctionallyDisabled(false),
-					DOUBLE_CLICK_DETECTION_PERIOD,
-				);
+			if (functionallyDisabled) {
+				const timer = setTimeout(() => {
+					setFunctionallyDisabled(false);
+				}, DOUBLE_CLICK_DETECTION_PERIOD);
 
-			return () => (timeout ? clearTimeout(timeout) : void 0);
+				return () => clearTimeout(timer);
+			}
+			return void 0;
 		}, [functionallyDisabled]);
 
 		const child = isLoading ? (
@@ -226,7 +226,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			buttonContents
 		);
 		return React.isValidElement(as)
-			? cloneElement(as, { ...componentProps, ref }, child)
+			? cloneElement(
+					as,
+					{ ...componentProps, ref } as Record<string, unknown>,
+					child,
+				)
 			: createElement(Component, { ...componentProps, ref }, child);
 	},
 );

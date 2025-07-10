@@ -14,18 +14,19 @@ const meta: Meta<typeof Button> = {
 	tags: ['polymorphic'],
 	component: Button,
 	args: {
+		as: 'button',
 		variant: 'secondary',
 		size: 'medium',
 		minimal: false,
 		rounded: false,
-		children: undefined,
 		isFullWidth: false,
 		isLoading: false,
 		disabled: false,
-		as: undefined,
-		onClick: fn(),
 		withDoubleClicks: false,
+		children: undefined,
+		localeText: undefined,
 		testId: 'storybook-button',
+		onClick: fn(),
 	},
 	argTypes: {
 		as: {
