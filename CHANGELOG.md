@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.44.5
+
+### Patch Changes
+
+- 2f7b9d0: **FlexInline and FlexStack:** correct handling of element attributes
+
 ## 4.44.4
 
 ### Patch Changes
@@ -22,13 +28,10 @@
 - Introduces FlexStack and FlexInline layout components with enhanced responsive
   capabilities, underpinned by className style functions `inline` and `stack`
 
-
 **useBox available**
 
-- `useBox` returns the component tag as well as the processed and filtered
-    props
+- `useBox` returns the component tag as well as the processed and filtered props
 - `UseBoxProps`
-
 
 ## 4.44.2
 
@@ -38,8 +41,8 @@
 
 - All remaining component 'is' props replaced by 'as'
 - **Inline, Stack and Anchor:** refactored to use flexbox layout
-- **Text and Heading:** uses refactored typography and `textStyles` functions with
-  more unified prop handling and balanced text wrap
+- **Text and Heading:** uses refactored typography and `textStyles` functions
+  with more unified prop handling and balanced text wrap
 - **OrderedList:** fixed HTML structure
 
 ## ~~4.44.1~~
@@ -48,8 +51,8 @@ _Version deprecated_ Use 4.44.2 and above.
 
 ## ~~4.44.0~~
 
-_Version deprecated_. Use 4.44.2 and above.
-This minor was based on **4.43.1-5** (now deprecated) for `.0` and `.1`.
+_Version deprecated_. Use 4.44.2 and above. This minor was based on **4.43.1-5**
+(now deprecated) for `.0` and `.1`.
 
 ## 4.43.10
 
