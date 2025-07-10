@@ -66,6 +66,7 @@ export const FlexInline = ({
 	...attrs // html attributes
 }: FlexInlineComponentProps) => {
 	const { Component, componentProps } = useBox({
+		...attrs,
 		as,
 		odComponent: 'flex-inline',
 		className: inlineStyle,
@@ -84,11 +85,7 @@ export const FlexInline = ({
 		}),
 		...dataAttrs({ expand }),
 	});
-	return (
-		<Component {...attrs} {...componentProps}>
-			{children}
-		</Component>
-	);
+	return <Component {...componentProps}>{children}</Component>;
 };
 
 FlexInline.displayName = 'FlexInline';
