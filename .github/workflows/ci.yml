@@ -81,7 +81,7 @@ jobs:
             node_version: ${{ needs.setup.outputs.node_version }}
         secrets:
             NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     visual_test:
         name: Visual changes
