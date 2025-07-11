@@ -1,8 +1,11 @@
 {
-	"mode": "pre",
-	"tag": "next",
-	"initialVersions": {
-		"@autoguru/overdrive": "4.44.5"
-	},
-	"changesets": ["ready-cougars-sink"]
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "@autoguru/overdrive": "4.44.5"
+  },
+  "changesets": [
+    "ready-cougars-sink",
+    "ripe-beds-learn"
+  ]
 }
