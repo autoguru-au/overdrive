@@ -4,12 +4,6 @@ on:
     push:
         branches: [main]
     workflow_call:
-        inputs:
-            is_prerelease:
-                description: 'Prerelease mode'
-                type: boolean
-                default: false
-                required: false
 
 jobs:
     setup:
@@ -54,22 +48,9 @@ jobs:
 
             - name: Create Release or Publish
               id: changesets
-              if: ${{ !inputs.is_prerelease }}
               uses: changesets/action@v1
               with:
                   publish: yarn release
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-            - name: Publish Prerelease
-              id: changesets-prerelease
-              if: ${{ inputs.is_prerelease }}
-              uses: changesets/action@v1
-              with:
-                  publish: yarn release
-                  commit: ''
-                  title: ''
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
