@@ -157,7 +157,7 @@ jobs:
                   git config --local user.name "GitHub Action"
                   git add .
                   git commit -m "Prerelease Version v${{ steps.version.outputs.version }}" || exit 0
-                  git push
+                  git push origin HEAD:${{ github.ref_name }}
 
             - name: Create GitHub prerelease
               uses: actions/create-release@v1
