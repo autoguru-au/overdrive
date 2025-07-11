@@ -79,8 +79,8 @@ export const styledTab = recipe({
 
 export const item = style({
 	display: 'inline-flex',
-	width: 'max-content',
 	verticalAlign: 'middle',
+	width: 'max-content',
 });
 
 export const indication = recipe({

@@ -1,6 +1,6 @@
 {
 	"name": "@autoguru/overdrive",
-	"version": "4.44.5",
+	"version": "4.45.0-next.1",
 	"description": "Overdrive is a product component library, and design system for AutoGuru.",
 	"types": "dist/index.d.ts",
 	"main": "dist/index.js",
@@ -57,6 +57,7 @@
 	},
 	"browserslist": "extends browserslist-config-autoguru",
 	"devDependencies": {
+		"@antebudimir/eslint-plugin-vanilla-extract": "^1.11.0",
 		"@autoguru/babel-preset": "3.2.0",
 		"@autoguru/eslint-plugin": "2.0.0",
 		"@autoguru/icons": "1.8.11",

@@ -10,7 +10,7 @@ exports[`<Section /> > should match the snapshot for negative value 1`] = `
     data-od-component="number-bubble"
   >
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2__onxwju5u sprinkles_lineHeight_2__onxwju5l sprinkles_fontWeight_bold__onxwju64 typography_color_white__yhjp336"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2__onxwju5u sprinkles_lineHeight_2__onxwju5l sprinkles_fontWeight_bold__onxwju64 typography_color_white__yhjp336 NumberBubble_numberStyle__1hqdrce0"
     >
       -3
     </span>
@@ -28,7 +28,7 @@ exports[`<Section /> > should match the snapshot for positive value 1`] = `
     data-od-component="number-bubble"
   >
     <span
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2__onxwju5u sprinkles_lineHeight_2__onxwju5l sprinkles_fontWeight_bold__onxwju64 typography_color_white__yhjp336"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_2__onxwju5u sprinkles_lineHeight_2__onxwju5l sprinkles_fontWeight_bold__onxwju64 typography_color_white__yhjp336 NumberBubble_numberStyle__1hqdrce0"
     >
       3
     </span>

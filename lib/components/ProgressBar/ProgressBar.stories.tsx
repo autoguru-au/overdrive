@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 
-import { Stack } from '../Stack/Stack';
+import { FlexStack } from '../Flex/FlexStack';
 
 import { ProgressBar } from './ProgressBar';
 
@@ -24,13 +24,13 @@ export const WithValue: Story = {
 
 export const AllColours: Story = {
 	render: (args) => (
-		<Stack space="2">
+		<FlexStack gap="2">
 			<ProgressBar value={0.5} colour="green" {...args} />
 			<ProgressBar value={0.4} colour="blue" {...args} />
 			<ProgressBar value={0.1} colour="neutral" {...args} />
 			<ProgressBar value={15} colour="red" {...args} />
 			<ProgressBar value={0.156} colour="yellow" {...args} />
-		</Stack>
+		</FlexStack>
 	),
 	args: {},
 };

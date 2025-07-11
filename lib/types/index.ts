@@ -1,23 +1,34 @@
 import type { ClassValue } from 'clsx';
-import type { ElementType } from 'react';
+import type { ElementType, ReactElement } from 'react';
 
 export interface SimpleAsProp {
 	/** Name of HTML tag to render the component as */
 	as?: ElementType;
 }
 
-export interface OdComponent {
-	/**
-	 * Output a data attribute with a component name in the markup, mainly used for the root element of a component
-	 */
-	odComponent?: string;
+export type AsProp = string | ElementType | ReactElement;
+export interface ComponentAsProp {
+	/** Name of HTML tag or a React/JSX component to render the component as */
+	as?: AsProp;
+}
+
+export interface ComponentClassNameProp {
+	/** Flexible className that accepts strings, arrays and objects */
+	className?: ClassValue;
 }
 
 export type DataAttributes = {
 	[key: `data-${string}`]: string | number | boolean | undefined;
 };
 
-export interface TestId {
+export interface OdComponentProp {
+	/**
+	 * Output a data attribute with a component name in the markup, mainly used for the root element of a component
+	 */
+	odComponent?: string;
+}
+
+export interface TestIdProp {
 	/**
 	 * The test ID will be rendered as a data attribute `data-testid` on the element for use with test assertions
 	 */
@@ -27,12 +38,11 @@ export interface TestId {
 /**
  * Adds a testId property to the given type
  */
-export type WithTestId<T = unknown> = T & TestId;
+export type WithTestId<T = unknown> = T & TestIdProp;
 
 /**
  * Use ConsistentComponentProps to define shared Overdrive props
  */
-export interface ConsistentComponentProps extends TestId {
-	/** Flexible className that accepts strings, arrays and objects */
-	className?: ClassValue;
-}
+export interface ConsistentComponentProps
+	extends ComponentClassNameProp,
+		TestIdProp {}

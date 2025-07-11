@@ -1,7 +1,4 @@
-import { IconType } from '@autoguru/icons';
-import clsx from 'clsx';
-import * as React from 'react';
-import {
+import React, {
 	cloneElement,
 	createElement,
 	forwardRef,
@@ -12,38 +9,33 @@ import {
 	useState,
 	type AriaAttributes,
 	type ComponentProps,
-	type ComponentPropsWithRef,
 	type ElementType,
 	type MouseEventHandler,
+	type PropsWithChildren,
 	type ReactElement,
 } from 'react';
 
-import { elementStyles } from '../../styles';
-import { textStyles } from '../../styles/typography';
-import type { TextFontWeight, TextSizeScale } from '../../themes';
-import type { TestId } from '../../types';
-import { dataAttrs } from '../../utils/dataAttrs';
-import { Box } from '../Box/Box';
-import { Icon } from '../Icon/Icon';
+import type { TestIdProp } from '../../types';
+import { useBox } from '../Box/useBox/useBox';
+import { Icon, type IconProps } from '../Icon/Icon';
 import { ProgressSpinner } from '../ProgressSpinner/ProgressSpinner';
 
 import * as styles from './Button.css';
-import type { ButtonSize, StyledButtonProps } from './Button.css';
+import type { StyledButtonProps } from './Button.css';
 
-type ButtonPrimitive = ComponentPropsWithRef<'button'>;
-type AllowedChildren = string | IconType;
+type ButtonPrimitive = ComponentProps<'button'>;
 
 const DOUBLE_CLICK_DETECTION_PERIOD = 700;
-
-const defaultEnglish = {
+const LOCALE_TEXT_DEFAULT = {
 	loading: 'loading',
 } as const;
 
-type TextContent = keyof typeof defaultEnglish;
+type LocaleText = Partial<Record<keyof typeof LOCALE_TEXT_DEFAULT, string>>;
 
 export interface ButtonProps
 	extends Pick<
 			ButtonPrimitive,
+			| 'children'
 			| 'id'
 			| 'onBlur'
 			| 'onClick'
@@ -55,8 +47,7 @@ export interface ButtonProps
 		>,
 		Pick<AriaAttributes, 'aria-label'>,
 		StyledButtonProps,
-		TestId {
-	children: AllowedChildren | AllowedChildren[];
+		TestIdProp {
 	/**
 	 * Disabling the button will prevent it from receiving keyboard focus or click events
 	 */
@@ -70,82 +61,99 @@ export interface ButtonProps
 	rounded?: boolean;
 	withDoubleClicks?: boolean;
 	/**
-	 * Language content override
+	 * Language content overrides
 	 */
-	lang?: Partial<Record<TextContent, string>>;
+	localeText?: LocaleText;
 }
 
-const getSpinnerColour: (
-	variant: ButtonProps['variant'],
-	minimal: boolean,
-) => ComponentProps<typeof ProgressSpinner>['colour'] = (variant, minimal) =>
-	minimal || variant === 'secondary' ? 'secondary' : 'light';
+const Spinner = ({
+	isInverse,
+	children,
+}: PropsWithChildren<{ isInverse: boolean }>) => (
+	<>
+		<div className={styles.spinnerWrapper}>
+			<ProgressSpinner colour={isInverse ? 'secondary' : 'light'} />
+		</div>
+		<div className={styles.hiddenContent}>{children}</div>
+	</>
+);
 
-const getBorderRadius = (rounded: boolean) => (rounded ? 'pill' : 'md');
+export const calcIconSize = (size: ButtonProps['size']) =>
+	size === 'small' ? size : 'medium';
 
-const getPadding = (size: ButtonProps['size'], loading: boolean) => {
-	if (loading) return 'none';
-	return size === 'small' ? '3' : '4';
-};
-
-const fontSize: Record<ButtonSize, TextSizeScale> = {
-	xsmall: '2',
-	small: '3',
-	medium: '4',
-};
-
-const fontWeight: Record<ButtonSize, TextFontWeight> = {
-	xsmall: 'normal',
-	small: 'semiBold',
-	medium: 'semiBold',
-};
-
+/**
+ * The Button supports a variety of appearances and is one of the main interactive Overdrive
+ * components. `variant`, `size` and `rounded` provide the main choices.
+ *
+ * By default the button will have a disabled timeout to avoid multiple rapid clicks.
+ * To prevent this feature, use the `withDoubleClicks` prop.
+ *
+ * It is recommended to use the `onPress` and related event handler provided by react-aria.
+ * For more information see the
+ * [usePress](https://react-spectrum.adobe.com/react-aria/usePress.html) documentation.
+ *
+ * Use the `isLoading` prop where there is on-page data handling.
+ *
+ * _NOTE:_ Button `as` prop cannot be provided an HTML tag. `<button>` components are
+ * interactive and accessible for use with event handlers and disabled or loading states.
+ *
+ * Please _DO NOT_ use a `<div>` tag as a button, choose an interactive HTML element.
+ *
+ * @example
+ * <Button
+ *   variant="primary"
+ *   size="medium"
+ *   onPress={() => console.info('button clicked')}
+ * >
+ *   Click Me
+ * </Button>
+ */
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 	(
 		{
+			as = 'button',
 			children,
-			className = '',
-			disabled = false,
+			className,
 			id,
-			as: Component = 'button',
-			withDoubleClicks = false,
+			type = 'button',
+
+			disabled = false,
 			isLoading = false,
 			isFullWidth = false,
-			lang,
+			localeText,
 			minimal = false,
+			rounded = false,
+			size = 'medium',
+			testId,
+			variant = 'secondary',
+			withDoubleClicks = false,
+
 			onBlur,
 			onClick: incomingOnClick,
 			onFocus,
 			onMouseEnter,
 			onMouseLeave,
-			rounded = false,
-			size = 'medium',
-			type = 'button',
-			variant = 'secondary',
+
 			'aria-label': ariaLabel,
-			testId,
 		},
 		ref,
 	) => {
-		const language = { ...defaultEnglish, ...lang };
-		const { isSingleIconChild, props: maybeIconProps } = useMemo(() => {
-			const maybeIcon =
-				// @ts-expect-error This comparison appears to be unintentional
-				isValidElement(children) && children.type === Icon;
-			const maybeProps = children as ReactElement<
-				ComponentProps<typeof Icon>
-			>;
-
-			return maybeIcon
-				? {
-						isSingleIconChild: true,
-						props: maybeProps.props,
-					}
-				: { isSingleIconChild: false };
-		}, [children]);
-
 		const [functionallyDisabled, setFunctionallyDisabled] =
 			useState<boolean>(false);
+
+		const language = { ...LOCALE_TEXT_DEFAULT, ...localeText };
+		const isInverse = minimal || variant === 'secondary';
+		const isSingleIconChild = useMemo(
+			() =>
+				isValidElement(children) &&
+				children.type === Icon &&
+				typeof children.type !== 'string',
+			[children],
+		);
+		const shape =
+			(isSingleIconChild && 'iconOnly') ||
+			(rounded && 'rounded') ||
+			'default';
 
 		const onClick = useCallback<MouseEventHandler<HTMLButtonElement>>(
 			(event) => {
@@ -156,132 +164,78 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			[withDoubleClicks, incomingOnClick],
 		);
 
-		// Determine shape based on rounded and iconOnly status
-		const shape = useMemo(() => {
-			if (isSingleIconChild) return 'iconOnly';
-			if (rounded) return 'rounded';
-			return 'default';
-		}, [isSingleIconChild, rounded]);
-
-		const props: ButtonPrimitive & { 'data-loading'?: string } = {
-			type: Component === 'button' ? type : undefined,
+		const { Component, componentProps } = useBox({
+			as,
+			disabled: disabled || isLoading,
 			id,
+			testId,
+			type: as === 'button' ? type : undefined,
+
+			className: [
+				styles.button({
+					intent: variant,
+					isFullWidth,
+					isLoading,
+					minimal,
+					rounded,
+					shape,
+					size,
+				}),
+				className,
+			],
+			pointerEvents: functionallyDisabled ? 'none' : undefined,
+
+			'aria-label': isLoading ? language.loading : ariaLabel,
+			'data-loading': isLoading ? '' : undefined,
+
 			onBlur,
 			onClick,
 			onFocus,
 			onMouseEnter,
 			onMouseLeave,
-			disabled: disabled || isLoading,
-			'aria-label': isLoading ? language.loading : ariaLabel,
-			className: clsx(
-				elementStyles({
-					as: Component,
-					display: 'inline-block',
-					overflow: 'hidden',
-					borderRadius: getBorderRadius(rounded),
-					textAlign: 'center',
-					borderWidth: 'none',
-					paddingY: 'none',
-					paddingX: getPadding(size, isLoading),
-					width: isFullWidth ? 'full' : undefined,
-					pointerEvents: functionallyDisabled ? 'none' : undefined,
-				}),
-				textStyles({
-					colour: 'white',
-					weight: fontWeight[size],
-					size: fontSize[size],
-				}),
-				styles.button({
-					size,
-					shape,
-					intent: variant,
-					minimal,
-				}),
-				className,
-			),
-			...dataAttrs({ loading: isLoading, testid: testId }),
-			ref,
-		};
 
-		const buttonContents = useMemo(
-			() => (
-				<>
-					{isSingleIconChild && maybeIconProps ? (
-						<Icon
-							size={
-								(maybeIconProps.size ?? size === 'small')
-									? 'small'
-									: 'medium'
-							}
-							{...maybeIconProps}
-						/>
-					) : (
-						children
-					)}
-				</>
-			),
-			[maybeIconProps, isSingleIconChild, children, size],
-		);
+			// ref,
+		});
+
+		const buttonContents = useMemo(() => {
+			if (isSingleIconChild) {
+				const iconProps = children as ReactElement<
+					ComponentProps<typeof Icon>
+				>;
+				// if it is an icon button, allow custom icon size from the element
+				// otherwise, standardise the size
+				const iconSize = iconProps?.props?.size ?? calcIconSize(size);
+				return cloneElement(children as React.ReactElement<IconProps>, {
+					size: iconSize,
+				});
+			}
+			return children;
+		}, [isSingleIconChild, children, size]);
 
 		useEffect(() => {
-			let timeout;
-			if (functionallyDisabled)
-				timeout = setTimeout(
-					() => setFunctionallyDisabled(false),
-					DOUBLE_CLICK_DETECTION_PERIOD,
-				);
+			if (functionallyDisabled) {
+				const timer = setTimeout(() => {
+					setFunctionallyDisabled(false);
+				}, DOUBLE_CLICK_DETECTION_PERIOD);
 
-			return () => (timeout ? clearTimeout(timeout) : void 0);
+				return () => clearTimeout(timer);
+			}
+			return void 0;
 		}, [functionallyDisabled]);
 
 		const child = isLoading ? (
-			<Box
-				display="flex"
-				justifyContent="center"
-				position="relative"
-				alignItems="center"
-				width="full"
-				height="full"
-			>
-				<Box
-					position="absolute"
-					alignItems="center"
-					justifyContent="center"
-					display="flex"
-					width="full"
-					height="full"
-				>
-					<ProgressSpinner
-						className={styles.spinner}
-						colour={getSpinnerColour(variant, minimal)}
-					/>
-				</Box>
-				<Box
-					height="full"
-					alignItems="center"
-					justifyContent="center"
-					className={[styles.body, styles.hiddenContent]}
-				>
-					{buttonContents}
-				</Box>
-			</Box>
+			<Spinner isInverse={isInverse}>{buttonContents}</Spinner>
 		) : (
-			<Box
-				height="full"
-				alignItems="center"
-				justifyContent="center"
-				className={styles.body}
-			>
-				{buttonContents}
-			</Box>
+			buttonContents
 		);
-
-		return isValidElement(Component)
-			? cloneElement(Component, { ...props }, child)
-			: createElement(Component, { ...props }, child);
+		return React.isValidElement(as)
+			? cloneElement(
+					as,
+					{ ...componentProps, ref } as Record<string, unknown>,
+					child,
+				)
+			: createElement(Component, { ...componentProps, ref }, child);
 	},
 );
 
 Button.displayName = 'Button';
-
-export default Button;

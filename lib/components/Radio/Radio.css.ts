@@ -15,8 +15,8 @@ const borderWidth = vars.border.width['1'];
 const transition = `background-color 0.2s ${vars.animation.easing.decelerate} 0s, border-color 0.2s ${vars.animation.easing.decelerate} 0s`;
 
 const circleBase = style({
-	position: 'absolute',
 	borderRadius: vars.border.radius.full,
+	position: 'absolute',
 });
 
 export const radio = style([
@@ -26,13 +26,13 @@ export const radio = style([
 		borderStyle: 'solid',
 		borderWidth: borderWidth,
 		height: outerSize,
-		width: outerSize,
+		transition,
 		selectors: {
 			[`${nativeInput}:not(:checked,[checked]):hover ~${checkable} &`]: {
 				backgroundColor: colorMid,
 			},
 		},
-		transition,
+		width: outerSize,
 	},
 ]);
 
@@ -45,8 +45,8 @@ export const inner = style([
 	circleBase,
 	{
 		height: innerSize,
-		width: innerSize,
 		transition: `${transition}, transform 0.2s ${vars.animation.easing.standard}`,
+		width: innerSize,
 		selectors: {
 			[`${nativeInput}:not(:checked):hover ~${checkable} &`]: {
 				backgroundColor: colorContrast,

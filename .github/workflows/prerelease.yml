@@ -1,0 +1,105 @@
+name: Prerelease
+
+on:
+    workflow_call:
+        inputs:
+            node_version:
+                required: true
+                type: string
+        secrets:
+            NPM_TOKEN:
+                required: true
+            GH_TOKEN:
+                required: true
+
+jobs:
+    prerelease:
+        name: Prerelease publish
+        runs-on: ubuntu-latest
+        env:
+            TZ: Australia/Brisbane
+            CI: true
+        steps:
+            - uses: actions/checkout@main
+              with:
+                  fetch-depth: 0
+
+            - name: Setup Node ${{ inputs.node_version }}
+              uses: actions/setup-node@main
+              with:
+                  node-version: ${{ inputs.node_version }}
+                  cache: 'yarn'
+                  registry-url: 'https://registry.npmjs.org'
+
+            - name: Yarn install
+              run: yarn --immutable
+
+            - name: Store current package version
+              id: current_version
+              run:
+                  echo "version=$(jq -r '.version' package.json)" >>
+                  $GITHUB_OUTPUT
+
+            - name: Changeset version
+              run: yarn changeset version
+
+            - name: Store new package version
+              id: new_version
+              run:
+                  echo "version=$(jq -r '.version' package.json)" >>
+                  $GITHUB_OUTPUT
+
+            - name: Check if version changed
+              id: version_check
+              run: |
+                  if [ "${{ steps.current_version.outputs.version }}" = "${{ steps.new_version.outputs.version }}" ]; then
+                    echo "📭 No version changes detected. Exiting prerelease workflow."
+                    echo "changed=false" >> $GITHUB_OUTPUT
+                  else
+                    echo "📬 Version changed from ${{ steps.current_version.outputs.version }} to ${{ steps.new_version.outputs.version }}"
+                    echo "changed=true" >> $GITHUB_OUTPUT
+                  fi
+
+            - name: Publish to npm with prerelease tag
+              if: steps.version_check.outputs.changed == 'true'
+              run: yarn changeset publish
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+            - name: Get package version
+              if: steps.version_check.outputs.changed == 'true' && success()
+              id: version
+              run:
+                  echo "version=$(jq -r '.version' package.json)" >>
+                  $GITHUB_OUTPUT
+
+            - name: Create GitHub prerelease
+              if: steps.version_check.outputs.changed == 'true' && success()
+              uses: actions/create-release@v1
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+              with:
+                  tag_name: v${{ steps.version.outputs.version }}
+                  release_name: v${{ steps.version.outputs.version }}
+                  draft: false
+                  prerelease: true
+                  body: |
+                      ### Prerelease version
+
+                      - Install with: `yarn up @autoguru/overdrive@${{ steps.version.outputs.version }}`
+
+            - name: Commit version changes
+              if: steps.version_check.outputs.changed == 'true' && success()
+              # purposely not checking in CHANGELOG.md to the working branch
+              run: |
+                  git config --local user.email "action@github.com"
+                  git config --local user.name "GitHub Action"
+                  git add package.json yarn.lock .changeset
+                  git commit -m "Prerelease Version v${{ steps.version.outputs.version }}" || exit 0
+                  git push origin HEAD:${{ github.head_ref || github.ref_name }}
+
+            - name: Post-publish Notifications
+              if: steps.version_check.outputs.changed == 'true' && success()
+              run: |
+                  echo "📦 Prerelease Published: ${{ steps.version.outputs.version }}"
+                  echo "🔗 NPM URL: https://www.npmjs.com/package/$(node -p "require('./package.json').name")"

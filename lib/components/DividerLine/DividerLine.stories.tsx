@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { type ComponentProps } from 'react';
 
 import { Box } from '../Box/Box';
+import { FlexInline } from '../Flex/FlexInline';
 import { Heading } from '../Heading/Heading';
-import { Inline } from '../Inline/Inline';
 
 import { DividerLine } from './DividerLine';
 
@@ -114,7 +114,7 @@ export const Vertical: Story = {
 		isVertical: true,
 	},
 	render: (args) => (
-		<Inline alignY="stretch">
+		<FlexInline justify="stretch">
 			<Heading as="h2" size="7">
 				Title 1
 			</Heading>
@@ -122,7 +122,7 @@ export const Vertical: Story = {
 			<Heading as="h2" size="7">
 				Title 1
 			</Heading>
-		</Inline>
+		</FlexInline>
 	),
 };
 

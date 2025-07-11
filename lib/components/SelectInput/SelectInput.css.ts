@@ -3,8 +3,8 @@ import { style } from '@vanilla-extract/css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
 export const input = style({
-	marginTop: `calc(-1 * ${vars.border.width['1']})`,
 	marginBottom: `calc(-1 * ${vars.border.width['1']})`,
+	marginTop: `calc(-1 * ${vars.border.width['1']})`,
 });
 export const paddedInput = style({
 	selectors: {
@@ -15,8 +15,8 @@ export const paddedInput = style({
 });
 
 export const arrow = style({
-	top: '0',
 	right: '0',
+	top: '0',
 });
 
 export const arrowDisabled = style({

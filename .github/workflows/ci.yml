@@ -44,6 +44,7 @@ jobs:
     test:
         name: Lint & Test
         needs: setup
+        if: github.ref_name != 'main'
         runs-on: ubuntu-latest
         env:
             TZ: Australia/Brisbane
@@ -71,6 +72,19 @@ jobs:
             - uses: codecov/codecov-action@v5
               with:
                   token: ${{ secrets.CODECOV }}
+
+    call_prerelease:
+        name: Check prerelease
+        needs: [setup, test]
+        if:
+            github.ref_name != 'main' && needs.setup.outputs.has_prerelease ==
+            'true'
+        uses: ./.github/workflows/prerelease.yml
+        with:
+            node_version: ${{ needs.setup.outputs.node_version }}
+        secrets:
+            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     visual_test:
         name: Visual changes
@@ -109,10 +123,3 @@ jobs:
               with:
                   projectToken: ${{ secrets.CHROMATIC_APP_CODE }}
                   skip: true
-
-    # disabling for now due to auth issue "ENEEDAUTH This command requires you to be logged in"
-    # call-prerelease:
-    #     name: Trigger release for prerelease
-    #     needs: [setup, test]
-    #     if: needs.setup.outputs.has_prerelease == 'true'
-    #     uses: ./.github/workflows/release.yml

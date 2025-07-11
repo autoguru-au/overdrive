@@ -14,9 +14,9 @@ globalStyle(':where(html)', {
 globalStyle('body', {
 	'@layer': {
 		[cssLayerReset]: {
+			border: 'none',
 			margin: 0,
 			padding: 0,
-			border: 'none',
 		},
 	},
 });
