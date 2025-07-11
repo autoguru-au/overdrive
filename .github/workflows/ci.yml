@@ -111,9 +111,69 @@ jobs:
                   skip: true
 
     call-prerelease:
-        name: Trigger release for prerelease
+        name: Publish Prerelease
         needs: [setup, test]
+        runs-on: ubuntu-latest
         if: needs.setup.outputs.has_prerelease == 'true'
-        uses: ./.github/workflows/release.yml
-        with:
-            is_prerelease: true
+        env:
+            TZ: Australia/Brisbane
+            CI: true
+        steps:
+            - uses: actions/checkout@main
+              with:
+                  fetch-depth: 0
+
+            - name: Setup Node ${{ needs.setup.outputs.node_version }}
+              uses: actions/setup-node@main
+              with:
+                  node-version: ${{ needs.setup.outputs.node_version }}
+                  cache: 'yarn'
+
+            - name: Yarn install
+              run: yarn --immutable
+
+            - name: Changeset version
+              run: yarn changeset version
+
+            # - name: Build packages
+            #   run: yarn build
+
+            - name: Publish to npm with @next tag
+              run: npm publish --tag next --access public
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+            - name: Get package version
+              id: version
+              run:
+                  echo "version=$(jq -r '.version' package.json)" >>
+                  $GITHUB_OUTPUT
+
+            - name: Commit version changes
+              if: success()
+              run: |
+                  git config --local user.email "action@github.com"
+                  git config --local user.name "GitHub Action"
+                  git add .
+                  git commit -m "Prerelease Version v${{ steps.version.outputs.version }}" || exit 0
+                  git push
+
+            - name: Create GitHub prerelease
+              uses: actions/create-release@v1
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                  tag_name: v${{ steps.version.outputs.version }}
+                  release_name: v${{ steps.version.outputs.version }}
+                  draft: false
+                  prerelease: true
+                  body: |
+                      Prerelease version ${{ steps.version.outputs.version }}
+
+                      Install with: `npm install @autoguru/overdrive@next`
+
+            - name: Post-publish Notifications
+              if: success()
+              run: |
+                  echo "📦 Prerelease Publised: ${{ steps.version.outputs.version }}"
+                  echo "🔗 NPM URL: https://www.npmjs.com/package/$(node -p "require('./package.json').name")"
