@@ -10,133 +10,103 @@ exports[`<StarRating /> > should match snapshot for small size 1`] = `
     data-od-component="star-rating"
   >
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_4_mobile__onxwjugz"
-      data-od-component="inline"
+      class="sprinkles_alignItems_center_mobile__onxwjulb sprinkles_display_flex_mobile__onxwju73 sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_4_mobile__onxwjugz sprinkles_justifyContent_start_mobile__onxwjunj"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-      >
-        <div
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_none_mobile__onxwjuhn"
-          data-od-component="inline"
-        >
-          <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-          >
-            <span
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
-              data-od-component="icon"
-            >
-              <svg
-                aria-hidden="true"
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
-                fill="currentColor"
-                focusable="false"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
-                />
-              </svg>
-            </span>
-          </div>
-          <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-          >
-            <span
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
-              data-od-component="icon"
-            >
-              <svg
-                aria-hidden="true"
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
-                fill="currentColor"
-                focusable="false"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
-                />
-              </svg>
-            </span>
-          </div>
-          <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-          >
-            <span
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
-              data-od-component="icon"
-            >
-              <svg
-                aria-hidden="true"
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
-                fill="currentColor"
-                focusable="false"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
-                />
-              </svg>
-            </span>
-          </div>
-          <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-          >
-            <span
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
-              data-od-component="icon"
-            >
-              <svg
-                aria-hidden="true"
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
-                fill="currentColor"
-                focusable="false"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
-                />
-              </svg>
-            </span>
-          </div>
-          <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-          >
-            <span
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
-              data-od-component="icon"
-            >
-              <svg
-                aria-hidden="true"
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
-                fill="currentColor"
-                focusable="false"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
-                />
-              </svg>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
+        class="sprinkles_alignItems_center_mobile__onxwjulb sprinkles_display_flex_mobile__onxwju73 sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_none_mobile__onxwjuhn sprinkles_justifyContent_start_mobile__onxwjunj"
       >
         <span
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3__onxwju5v sprinkles_lineHeight_3__onxwju5m sprinkles_fontWeight_normal__onxwju62 typography_color_neutral__yhjp338"
-          data-testid="star-rating-label"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
+          data-od-component="icon"
         >
-          Hello World!
+          <svg
+            aria-hidden="true"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+            />
+          </svg>
+        </span>
+        <span
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
+          data-od-component="icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+            />
+          </svg>
+        </span>
+        <span
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
+          data-od-component="icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+            />
+          </svg>
+        </span>
+        <span
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
+          data-od-component="icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+            />
+          </svg>
+        </span>
+        <span
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire0 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+          data-od-component="icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+            />
+          </svg>
         </span>
       </div>
+      <span
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3__onxwju5v sprinkles_lineHeight_3__onxwju5m sprinkles_fontWeight_normal__onxwju62 typography_color_neutral__yhjp338"
+        data-testid="star-rating-label"
+      >
+        Hello World!
+      </span>
     </div>
   </div>
 </div>
@@ -152,133 +122,103 @@ exports[`<StarRating /> > should match snapshot with label 1`] = `
     data-od-component="star-rating"
   >
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_4_mobile__onxwjugz"
-      data-od-component="inline"
+      class="sprinkles_alignItems_center_mobile__onxwjulb sprinkles_display_flex_mobile__onxwju73 sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_4_mobile__onxwjugz sprinkles_justifyContent_start_mobile__onxwjunj"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-      >
-        <div
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_none_mobile__onxwjuhn"
-          data-od-component="inline"
-        >
-          <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-          >
-            <span
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
-              data-od-component="icon"
-            >
-              <svg
-                aria-hidden="true"
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
-                fill="currentColor"
-                focusable="false"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
-                />
-              </svg>
-            </span>
-          </div>
-          <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-          >
-            <span
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
-              data-od-component="icon"
-            >
-              <svg
-                aria-hidden="true"
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
-                fill="currentColor"
-                focusable="false"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
-                />
-              </svg>
-            </span>
-          </div>
-          <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-          >
-            <span
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
-              data-od-component="icon"
-            >
-              <svg
-                aria-hidden="true"
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
-                fill="currentColor"
-                focusable="false"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
-                />
-              </svg>
-            </span>
-          </div>
-          <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-          >
-            <span
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
-              data-od-component="icon"
-            >
-              <svg
-                aria-hidden="true"
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
-                fill="currentColor"
-                focusable="false"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
-                />
-              </svg>
-            </span>
-          </div>
-          <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-          >
-            <span
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
-              data-od-component="icon"
-            >
-              <svg
-                aria-hidden="true"
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
-                fill="currentColor"
-                focusable="false"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
-                />
-              </svg>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
+        class="sprinkles_alignItems_center_mobile__onxwjulb sprinkles_display_flex_mobile__onxwju73 sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_none_mobile__onxwjuhn sprinkles_justifyContent_start_mobile__onxwjunj"
       >
         <span
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n sprinkles_fontWeight_normal__onxwju62 typography_color_neutral__yhjp338"
-          data-testid="star-rating-label"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
+          data-od-component="icon"
         >
-          Hello World!
+          <svg
+            aria-hidden="true"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+            />
+          </svg>
+        </span>
+        <span
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
+          data-od-component="icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+            />
+          </svg>
+        </span>
+        <span
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
+          data-od-component="icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+            />
+          </svg>
+        </span>
+        <span
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
+          data-od-component="icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+            />
+          </svg>
+        </span>
+        <span
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+          data-od-component="icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+            />
+          </svg>
         </span>
       </div>
+      <span
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n sprinkles_fontWeight_normal__onxwju62 typography_color_neutral__yhjp338"
+        data-testid="star-rating-label"
+      >
+        Hello World!
+      </span>
     </div>
   </div>
 </div>
@@ -294,133 +234,103 @@ exports[`<StarRating /> > should match snapshot with value 1`] = `
     data-od-component="star-rating"
   >
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_4_mobile__onxwjugz"
-      data-od-component="inline"
+      class="sprinkles_alignItems_center_mobile__onxwjulb sprinkles_display_flex_mobile__onxwju73 sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_4_mobile__onxwjugz sprinkles_justifyContent_start_mobile__onxwjunj"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-      >
-        <div
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_none_mobile__onxwjuhn"
-          data-od-component="inline"
-        >
-          <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-          >
-            <span
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
-              data-od-component="icon"
-            >
-              <svg
-                aria-hidden="true"
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
-                fill="currentColor"
-                focusable="false"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
-                />
-              </svg>
-            </span>
-          </div>
-          <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-          >
-            <span
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
-              data-od-component="icon"
-            >
-              <svg
-                aria-hidden="true"
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
-                fill="currentColor"
-                focusable="false"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
-                />
-              </svg>
-            </span>
-          </div>
-          <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-          >
-            <span
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
-              data-od-component="icon"
-            >
-              <svg
-                aria-hidden="true"
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
-                fill="currentColor"
-                focusable="false"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 15.396V6.095l1.71 4.036 4.38.376-3.323 2.878.995 4.281M22 9.244l-7.19-.617L11.998 2 9.19 8.627 2 9.244l5.454 4.726L5.82 21 12 17.272 18.18 21l-1.635-7.03L22 9.244z"
-                />
-              </svg>
-            </span>
-          </div>
-          <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-          >
-            <span
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
-              data-od-component="icon"
-            >
-              <svg
-                aria-hidden="true"
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
-                fill="currentColor"
-                focusable="false"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
-                />
-              </svg>
-            </span>
-          </div>
-          <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-          >
-            <span
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
-              data-od-component="icon"
-            >
-              <svg
-                aria-hidden="true"
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
-                fill="currentColor"
-                focusable="false"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
-                />
-              </svg>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
+        class="sprinkles_alignItems_center_mobile__onxwjulb sprinkles_display_flex_mobile__onxwju73 sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_none_mobile__onxwjuhn sprinkles_justifyContent_start_mobile__onxwjunj"
       >
         <span
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n sprinkles_fontWeight_normal__onxwju62 typography_color_neutral__yhjp338"
-          data-testid="star-rating-label"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
+          data-od-component="icon"
         >
-          2.7
+          <svg
+            aria-hidden="true"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+            />
+          </svg>
+        </span>
+        <span
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
+          data-od-component="icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+            />
+          </svg>
+        </span>
+        <span
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0"
+          data-od-component="icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 15.396V6.095l1.71 4.036 4.38.376-3.323 2.878.995 4.281M22 9.244l-7.19-.617L11.998 2 9.19 8.627 2 9.244l5.454 4.726L5.82 21 12 17.272 18.18 21l-1.635-7.03L22 9.244z"
+            />
+          </svg>
+        </span>
+        <span
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+          data-od-component="icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+            />
+          </svg>
+        </span>
+        <span
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+          data-od-component="icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+            />
+          </svg>
         </span>
       </div>
+      <span
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n sprinkles_fontWeight_normal__onxwju62 typography_color_neutral__yhjp338"
+        data-testid="star-rating-label"
+      >
+        2.7
+      </span>
     </div>
   </div>
 </div>
@@ -436,131 +346,101 @@ exports[`<StarRating /> > should match snapshot without value 1`] = `
     data-od-component="star-rating"
   >
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_4_mobile__onxwjugz"
-      data-od-component="inline"
+      class="sprinkles_alignItems_center_mobile__onxwjulb sprinkles_display_flex_mobile__onxwju73 sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_4_mobile__onxwjugz sprinkles_justifyContent_start_mobile__onxwjunj"
     >
       <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-      >
-        <div
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_none_mobile__onxwjuhn"
-          data-od-component="inline"
-        >
-          <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-          >
-            <span
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
-              data-od-component="icon"
-            >
-              <svg
-                aria-hidden="true"
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
-                fill="currentColor"
-                focusable="false"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
-                />
-              </svg>
-            </span>
-          </div>
-          <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-          >
-            <span
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
-              data-od-component="icon"
-            >
-              <svg
-                aria-hidden="true"
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
-                fill="currentColor"
-                focusable="false"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
-                />
-              </svg>
-            </span>
-          </div>
-          <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-          >
-            <span
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
-              data-od-component="icon"
-            >
-              <svg
-                aria-hidden="true"
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
-                fill="currentColor"
-                focusable="false"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
-                />
-              </svg>
-            </span>
-          </div>
-          <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-          >
-            <span
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
-              data-od-component="icon"
-            >
-              <svg
-                aria-hidden="true"
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
-                fill="currentColor"
-                focusable="false"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
-                />
-              </svg>
-            </span>
-          </div>
-          <div
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-          >
-            <span
-              class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
-              data-od-component="icon"
-            >
-              <svg
-                aria-hidden="true"
-                class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
-                fill="currentColor"
-                focusable="false"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
-                />
-              </svg>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
+        class="sprinkles_alignItems_center_mobile__onxwjulb sprinkles_display_flex_mobile__onxwju73 sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_none_mobile__onxwjuhn sprinkles_justifyContent_start_mobile__onxwjunj"
       >
         <span
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n sprinkles_fontWeight_normal__onxwju62 typography_color_neutral__yhjp338"
-          data-testid="star-rating-label"
-        />
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+          data-od-component="icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+            />
+          </svg>
+        </span>
+        <span
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+          data-od-component="icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+            />
+          </svg>
+        </span>
+        <span
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+          data-od-component="icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+            />
+          </svg>
+        </span>
+        <span
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+          data-od-component="icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+            />
+          </svg>
+        </span>
+        <span
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4 sprinkles_position_relative_mobile__onxwju8z StarRating_star_default__icwp6r0 StarRating_star_empty__icwp6r1"
+          data-od-component="icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 17.27l6.18 3.728-1.636-7.03L22 9.244l-7.19-.618L12 1.999 9.19 8.625 2 9.243l5.454 4.726-1.635 7.029L12 17.27z"
+            />
+          </svg>
+        </span>
       </div>
+      <span
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n sprinkles_fontWeight_normal__onxwju62 typography_color_neutral__yhjp338"
+        data-testid="star-rating-label"
+      />
     </div>
   </div>
 </div>

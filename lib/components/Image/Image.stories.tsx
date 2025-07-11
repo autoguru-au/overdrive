@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import isChromatic from 'chromatic/isChromatic';
 import React, { type ComponentProps } from 'react';
 
-import { Stack } from '../Stack/Stack';
+import { stack } from '../Flex/flex';
 import { Text } from '../Text/Text';
 
 import { Image } from './Image';
@@ -12,7 +12,7 @@ type SizeOption = ComponentProps<typeof Image>['imageWidth'];
 const sizeOptions: SizeOption[] = isChromatic()
 	? ['8']
 	: [
-			'1',
+			// '1',
 			'2',
 			'3',
 			'4',
@@ -31,7 +31,7 @@ const sizeOptions: SizeOption[] = isChromatic()
 		];
 
 const qualityOptions: NonNullable<ComponentProps<typeof Image>['quality']>[] =
-	isChromatic() ? [70] : [1, 20, 40, 60, 80, 100];
+	isChromatic() ? [70] : [/*1,*/ 20, 40, 60, 80, 100];
 
 const calcWidth = (width: (typeof sizeOptions)[number] | 'full') =>
 	width === 'full' ? '100%' : widthMap[width as keyof typeof widthMap];
@@ -186,9 +186,9 @@ export const WithImageServerQualities: Story = {
 	render: (args) => (
 		<ImageServerProvider srcUrlMapper={srcUrlMapper}>
 			<div style={{ width: '100%', overflow: 'auto' }}>
-				<Stack space="5">
+				<div className={stack({ gap: '5' })}>
 					{qualityOptions.map((quality) => (
-						<Stack key={quality} space="1">
+						<div className={stack({ gap: '1' })} key={quality}>
 							<Text>
 								Quality: <Text strong>{quality}</Text>
 							</Text>
@@ -199,9 +199,9 @@ export const WithImageServerQualities: Story = {
 								imageWidth={args.width as SizeOption}
 								quality={quality}
 							/>
-						</Stack>
+						</div>
 					))}
-				</Stack>
+				</div>
 			</div>
 		</ImageServerProvider>
 	),
@@ -217,9 +217,12 @@ export const WithImageServerResizing: Story = {
 	render: (args) => (
 		<ImageServerProvider srcUrlMapper={srcUrlMapper}>
 			<div style={{ width: '100%', overflow: 'auto' }}>
-				<Stack width="full" space="5">
+				<div className={stack({ gap: '5' })}>
 					{sizeOptions.map((width) => (
-						<Stack key={width as string} space="1">
+						<div
+							className={stack({ gap: '1' })}
+							key={width as string}
+						>
 							<Text>
 								Quality: <Text strong>{args.quality}</Text>
 							</Text>
@@ -234,9 +237,9 @@ export const WithImageServerResizing: Story = {
 								width={`${calcWidth(width)}`}
 								imageWidth={width}
 							/>
-						</Stack>
+						</div>
 					))}
-				</Stack>
+				</div>
 			</div>
 		</ImageServerProvider>
 	),

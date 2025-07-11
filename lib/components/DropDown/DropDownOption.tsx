@@ -5,8 +5,8 @@ import * as React from 'react';
 
 import { textStyles } from '../../styles/typography';
 import { Box } from '../Box/Box';
+import { inline } from '../Flex/flex';
 import { Icon } from '../Icon/Icon';
-import { Inline } from '../Inline/Inline';
 import { Text } from '../Text/Text';
 
 import * as styles from './DropDownOption.css';
@@ -44,12 +44,14 @@ export const DropDownOption: FunctionComponent<DropDownOptionProps> = ({
 			paddingX="3"
 			paddingY="2"
 		>
-			<Inline
-				noWrap
-				space="2"
-				width="full"
-				alignX="space-between"
-				alignY="center"
+			<div
+				className={inline({
+					align: 'space-between',
+					justify: 'center',
+					gap: '2',
+					fullWidth: true,
+					noWrap: true,
+				})}
 			>
 				<Text as="p" size="3">
 					{label}
@@ -57,7 +59,7 @@ export const DropDownOption: FunctionComponent<DropDownOptionProps> = ({
 				{icon ? (
 					<Icon className={colourStyles} size="medium" icon={icon} />
 				) : null}
-			</Inline>
+			</div>
 		</Box>
 	);
 };

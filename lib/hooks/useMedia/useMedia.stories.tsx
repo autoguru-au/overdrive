@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Stack } from '../../components/Stack/Stack';
+import { FlexStack } from '../../components/Flex/FlexStack';
 import { Text } from '../../components/Text/Text';
 import { breakpoints } from '../../themes/makeTheme';
 
@@ -23,7 +23,7 @@ export const Standard = () => {
 		]);
 
 		return (
-			<Stack>
+			<FlexStack>
 				<Text>
 					isMobile: <Text strong>{isMobile ? 'true' : 'false'}</Text>{' '}
 					- {breakpoints.mobile}
@@ -42,7 +42,7 @@ export const Standard = () => {
 					<Text strong>{isLargeDesktop ? 'true' : 'false'}</Text> -{' '}
 					{breakpoints.largeDesktop}
 				</Text>
-			</Stack>
+			</FlexStack>
 		);
 	};
 

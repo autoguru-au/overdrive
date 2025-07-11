@@ -1,5 +1,6 @@
-import clsx, { type ClassValue as ClassName } from 'clsx';
-import type { ElementType, ReactElement } from 'react';
+import clsx from 'clsx';
+
+import type { ComponentAsProp, ComponentClassNameProp } from '../types';
 
 import {
 	elementReset,
@@ -62,10 +63,10 @@ export const resetStyles = (
 	});
 };
 
-export interface ElementStylesProps extends Sprinkles {
-	as?: string | ElementType | ReactElement;
-	className?: ClassName;
-}
+export interface ElementStylesProps
+	extends ComponentAsProp,
+		ComponentClassNameProp,
+		Sprinkles {}
 
 /**
  * Convenience function that combines element reset styles via `as` props and sprinkles utility styles.

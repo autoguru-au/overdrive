@@ -7,7 +7,7 @@ import {
 import type {
 	ConsistentComponentProps,
 	DataAttributes,
-	OdComponent,
+	OdComponentProp,
 } from '../../../types';
 import { dataAttrs } from '../../../utils/dataAttrs';
 
@@ -19,7 +19,7 @@ type FilteredAttributes = Omit<
 export interface UseBoxProps
 	extends FilteredAttributes,
 		ConsistentComponentProps,
-		OdComponent,
+		OdComponentProp,
 		ElementStylesProps,
 		DataAttributes {}
 

@@ -2,7 +2,7 @@ import { invariant } from '@autoguru/utilities';
 import clsx from 'clsx';
 import React from 'react';
 
-import type { TestId } from '../../types';
+import type { TestIdProp } from '../../types';
 import { Box } from '../Box/Box';
 
 import * as styles from './Badge.css';
@@ -10,7 +10,7 @@ import type { StyledBadgeProps } from './Badge.css';
 
 type Colours = Exclude<StyledBadgeProps['colour'], undefined>;
 
-export interface BadgeProps extends TestId {
+export interface BadgeProps extends TestIdProp {
 	/** The text content */
 	label: string;
 	/** The color of the badge */

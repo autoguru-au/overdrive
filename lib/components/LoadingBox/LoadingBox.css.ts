@@ -11,18 +11,18 @@ const blinker = keyframes({
 		opacity: 0.4,
 	},
 
-	'50%': {
-		opacity: 1,
-	},
-
 	'100%': {
 		opacity: 0.4,
+	},
+
+	'50%': {
+		opacity: 1,
 	},
 });
 
 export const blinking = style({
 	animationDuration: '1.5s',
-	animationTimingFunction: vars.animation.easing.standard,
 	animationIterationCount: 'infinite',
 	animationName: blinker,
+	animationTimingFunction: vars.animation.easing.standard,
 });

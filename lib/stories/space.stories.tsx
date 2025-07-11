@@ -1,43 +1,44 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 
-import { Heading } from '../components/Heading';
-import { overdriveTokens } from '../themes';
+import { FlexInline } from '../components/Flex/FlexInline';
+import { FlexStack } from '../components/Flex/FlexStack';
+import { Heading } from '../components/Heading/Heading';
+import { sprinkles, type Sprinkles } from '../styles/sprinkles.css';
 import { tokens } from '../themes/base/tokens';
 import { breakpoints } from '../themes/makeTheme';
 
-import { Box, Stack, type Sprinkles } from './helpers/index';
 import { labels, small, titles } from './helpers/styles.css';
 
 const { space } = tokens;
 const spaceItems = Object.keys(space).filter((val) => val !== 'none');
 
 const SpaceScale = () => (
-	<Stack space="sm">
+	<FlexStack gap="5">
 		<Heading as="h2" className={titles}>
 			Space scale
 		</Heading>
 
 		{spaceItems.map((space) => (
-			<Stack space="sm" alignItems="center" horizontal key={space}>
+			<FlexInline gap="5" justify="center" key={space}>
 				<p className={labels}>{space}</p>
-				<Box
-					height="5"
-					width={space as Sprinkles['width']}
-					style={{
-						backgroundColor: overdriveTokens.color.gamut.black[700],
-					}}
+				<div
+					className={sprinkles({
+						backgroundColour: 'black700',
+						height: '5',
+						width: space as Sprinkles['width'],
+					})}
 				/>
 				<p className={small}>{tokens.space[space]}</p>
-			</Stack>
+			</FlexInline>
 		))}
-	</Stack>
+	</FlexStack>
 );
 
 const breakpointItems = Object.entries(breakpoints);
 const Breakpoints = () => {
 	return (
-		<Stack space="sm">
+		<FlexStack gap="5">
 			<Heading as="h2" className={titles}>
 				Breakpoints
 			</Heading>
@@ -50,7 +51,7 @@ const Breakpoints = () => {
 						: ' and up'}
 				</div>
 			))}
-		</Stack>
+		</FlexStack>
 	);
 };
 
@@ -64,10 +65,10 @@ type Story = StoryObj;
 
 export const Space: Story = {
 	render: () => (
-		<Stack gap="8" horizontal>
+		<FlexInline gap="8">
 			<Heading as="h1">Space</Heading>
 			<SpaceScale />
 			<Breakpoints />
-		</Stack>
+		</FlexInline>
 	),
 };

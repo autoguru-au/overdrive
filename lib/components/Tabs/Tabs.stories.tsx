@@ -5,10 +5,10 @@ import React, { useEffect, useState } from 'react';
 import { fn } from 'storybook/test';
 
 import { Box } from '../Box/Box';
+import { FlexInline } from '../Flex/FlexInline';
+import { FlexStack } from '../Flex/FlexStack';
 import { Icon } from '../Icon/Icon';
-import { Inline } from '../Inline/Inline';
 import { EAlignment } from '../Positioner/alignment';
-import { Stack } from '../Stack/Stack';
 import { StarRating } from '../StarRating/StarRating';
 import { Tooltip } from '../Tooltip/Tooltip';
 
@@ -76,13 +76,13 @@ export const Standard: Story = {
 					<TabPane>Content B</TabPane>
 					<TabPane>Content C</TabPane>
 					<TabPane>
-						<Stack>
+						<FlexStack>
 							<TestChild label="5" />
 							<TestChild label="4" />
 							<TestChild label="3" />
 							<TestChild label="2" />
 							<TestChild label="1" />
-						</Stack>
+						</FlexStack>
 					</TabPane>
 				</TabPanes>
 			</>
@@ -121,7 +121,7 @@ export const WithComplexTab: Story = {
 			<>
 				<TabList>
 					<Tab indication={2}>
-						<Inline alignY="center">
+						<FlexInline justify="center">
 							Tab 1
 							<Tooltip
 								alignment={EAlignment.BOTTOM}
@@ -131,10 +131,10 @@ export const WithComplexTab: Story = {
 									<Icon icon={OttoIcon} />
 								</Box>
 							</Tooltip>
-						</Inline>
+						</FlexInline>
 					</Tab>
 					<Tab>
-						<Inline alignY="center">
+						<FlexInline justify="center">
 							Tab 2
 							<Tooltip
 								alignment={EAlignment.BOTTOM}
@@ -144,7 +144,7 @@ export const WithComplexTab: Story = {
 									<Icon icon={AlertIcon} />
 								</Box>
 							</Tooltip>
-						</Inline>
+						</FlexInline>
 					</Tab>
 				</TabList>
 
@@ -169,13 +169,13 @@ export const WithStretch: Story = {
 				<TabPanes>
 					<TabPane>Content A</TabPane>
 					<TabPane>
-						<Stack>
+						<FlexStack>
 							<TestChild label="5" />
 							<TestChild label="4" />
 							<TestChild label="3" />
 							<TestChild label="2" />
 							<TestChild label="1" />
-						</Stack>
+						</FlexStack>
 					</TabPane>
 				</TabPanes>
 			</>

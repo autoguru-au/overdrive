@@ -7,7 +7,7 @@ import {
 	textStyles,
 	type TypographyProps,
 } from '../../styles/typography';
-import type { TestId } from '../../types';
+import type { TestIdProp } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { type AdditionalStyleProps } from '../Text/Text';
 
@@ -17,7 +17,7 @@ export interface HeadingProps
 	extends Omit<ElementAttributes, 'className' | 'is' | keyof TypographyProps>,
 		TypographyProps,
 		AdditionalStyleProps,
-		TestId {
+		TestIdProp {
 	as?: HeadingTags;
 	className?: ClassName;
 }
