@@ -2,8 +2,8 @@ import { IconType } from '@autoguru/icons';
 import * as React from 'react';
 import { ComponentProps, FunctionComponent } from 'react';
 
+import { inline } from '../Flex/flex';
 import { Icon } from '../Icon/Icon';
-import { Inline } from '../Inline/Inline';
 import { Text } from '../Text/Text';
 
 import * as styles from './Meta.css';
@@ -21,8 +21,8 @@ export const Meta: FunctionComponent<MetaProps> = ({
 	variant = 'primary',
 	breakWord,
 }) => (
-	<Inline noWrap as="span" space="2" alignY="center">
+	<span className={inline({ gap: '2', justify: 'center', noWrap: true })}>
 		{icon && <Icon icon={icon} className={styles.variant[variant]} />}
 		<Text breakWord={breakWord}>{label}</Text>
-	</Inline>
+	</span>
 );

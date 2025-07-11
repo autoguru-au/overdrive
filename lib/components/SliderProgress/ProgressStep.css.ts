@@ -14,17 +14,17 @@ const scaleAnim = keyframes({
 });
 
 export const item = style({
-	top: 0,
-	right: 0,
 	bottom: 0,
 	left: 0,
+	right: 0,
+	top: 0,
 });
 
 export const fill = style({
+	animationName: scaleAnim,
+	animationPlayState: 'paused',
 	animationTimingFunction: 'linear',
 	transformOrigin: '0% center',
-	animationPlayState: 'paused',
-	animationName: scaleAnim,
 });
 
 export const active = style({

@@ -8,8 +8,8 @@ export const root = style({
 	transition: `box-shadow 0.3s ${vars.animation.easing.standard} 0s`,
 });
 export const simpleRoot = style({
-	position: 'sticky',
 	height: 'fit-content',
+	position: 'sticky',
 });
 
 export const content = style({

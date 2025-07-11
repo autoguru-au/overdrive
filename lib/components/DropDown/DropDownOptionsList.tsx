@@ -1,7 +1,5 @@
-import * as React from 'react';
-import { forwardRef, ReactNode } from 'react';
+import React, { forwardRef, ReactNode } from 'react';
 
-import { Box } from '../Box';
 import { Stack } from '../Stack';
 
 import * as styles from './DropDownOptionsList.css';
@@ -14,13 +12,13 @@ export const DropDownOptionsList = forwardRef<
 	HTMLDivElement,
 	DropDownOptionsListProps
 >(({ children }, ref) => (
-	<Box ref={ref} className={styles.root}>
-		<Box className={styles.list} overflow="auto">
+	<div ref={ref} className={styles.root}>
+		<div className={styles.list}>
 			<Stack dividers width="full" space="none">
 				{children}
 			</Stack>
-		</Box>
-	</Box>
+		</div>
+	</div>
 ));
 
 DropDownOptionsList.displayName = 'DropDownOptionsList';

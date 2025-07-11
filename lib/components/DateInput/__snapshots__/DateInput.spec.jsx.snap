@@ -189,7 +189,7 @@ exports[`<DateInput /> > should match snapshot when loading 1`] = `
           </svg>
         </span>
         <div
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_default__1kpufmi4 sprinkles_pointerEvents_none__onxwju6m sprinkles_position_absolute_mobile__onxwju93 withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_suffixIcon__5jmdy8l withEnhancedInput_iconSize_medium__5jmdy8n"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 ProgressSpinner_size_medium_circular__1kpufmic ProgressSpinner_colours_default__1kpufmi5 sprinkles_pointerEvents_none__onxwju6m sprinkles_position_absolute_mobile__onxwju93 withEnhancedInput_iconRoot__5jmdy8j withEnhancedInput_suffixIcon__5jmdy8l withEnhancedInput_iconSize_medium__5jmdy8n"
           data-od-component="progress-spinner"
         >
           <svg

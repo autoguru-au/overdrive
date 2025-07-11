@@ -16,29 +16,29 @@ const transition = `border-color 0.2s ${vars.animation.easing.decelerate} 0s, ba
 
 export const checkbox = styleVariants({
 	default: {
-		display: 'flex',
 		alignItems: 'center',
-		justifyContent: 'center',
-		width: size,
-		height: size,
-		boxSizing: 'border-box',
-		borderRadius: borderRadius,
-		color: colorContrast,
 		borderColor: colorMid,
+		borderRadius: borderRadius,
 		borderStyle: 'solid',
 		borderWidth: borderWidth,
-		zIndex: 0,
+		boxSizing: 'border-box',
+		color: colorContrast,
+		display: 'flex',
+		height: size,
+		justifyContent: 'center',
+		transition,
+		width: size,
 		selectors: {
 			[`${nativeInput}:not(:checked):hover ~${checkable} &:not([data-indeterminate])`]:
 				{
 					backgroundColor: colorMid,
 				},
 		},
-		transition,
+		zIndex: 0,
 	},
 	selected: {
-		borderColor: colorAccent,
 		backgroundColor: colorAccent,
+		borderColor: colorAccent,
 	},
 });
 

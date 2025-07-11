@@ -6,8 +6,8 @@ import { FunctionComponent, memo, NamedExoticComponent } from 'react';
 import { sprinkles } from '../../styles';
 import { ThemeTokens as Tokens } from '../../themes';
 import { Box } from '../Box/Box';
+import { inline } from '../Flex/flex';
 import { Icon } from '../Icon/Icon';
-import { Inline } from '../Inline/Inline';
 import { Text } from '../Text/Text';
 
 import * as styles from './StarRating.css';
@@ -53,8 +53,8 @@ export const StarRating: NamedExoticComponent<StarRatingProps> = memo(
 		size = EStarRatingSize.Medium,
 	}) => (
 		<Box className={className} odComponent="star-rating">
-			<Inline space="4" alignY="center">
-				<Inline space="none" alignY="center">
+			<div className={inline({ gap: '4', justify: 'center' })}>
+				<div className={inline({ gap: 'none', justify: 'center' })}>
 					{Array.from({ length: totalStars })
 						.fill(0)
 						.map((_, index) => (
@@ -65,7 +65,7 @@ export const StarRating: NamedExoticComponent<StarRatingProps> = memo(
 								size={size}
 							/>
 						))}
-				</Inline>
+				</div>
 				{label === null ? null : (
 					<Text
 						size={labelSizeMap.get(size)}
@@ -74,7 +74,7 @@ export const StarRating: NamedExoticComponent<StarRatingProps> = memo(
 						{label}
 					</Text>
 				)}
-			</Inline>
+			</div>
 		</Box>
 	),
 );

@@ -4,8 +4,8 @@ import { FunctionComponent } from 'react';
 
 import { noop } from '../../utils';
 import { Button } from '../Button/Button';
+import { inline } from '../Flex/flex';
 import { Icon } from '../Icon/Icon';
-import { Inline } from '../Inline/Inline';
 
 export enum EChangeDirection {
 	Previous = 'previous',
@@ -30,12 +30,9 @@ export const SimplePagination: FunctionComponent<SimplePaginationProps> = ({
 	};
 
 	return (
-		<Inline
-			as="nav"
-			space="6"
+		<nav
+			className={inline({ gap: '6', center: true })}
 			aria-label="pagination"
-			alignX="center"
-			alignY="center"
 		>
 			<Button
 				rounded
@@ -59,6 +56,6 @@ export const SimplePagination: FunctionComponent<SimplePaginationProps> = ({
 			>
 				<Icon size="medium" icon={ChevronRightIcon} />
 			</Button>
-		</Inline>
+		</nav>
 	);
 };

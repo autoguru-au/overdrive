@@ -5,4 +5,5 @@ export const root = style({
 });
 export const list = style({
 	maxHeight: 300,
+	overflow: 'auto',
 });

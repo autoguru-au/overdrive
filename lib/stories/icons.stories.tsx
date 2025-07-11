@@ -2,12 +2,12 @@ import * as iconset from '@autoguru/icons';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 
-import { Heading } from '../components/Heading';
-import { Icon } from '../components/Icon';
+import { FlexStack } from '../components/Flex/FlexStack';
+import { Heading } from '../components/Heading/Heading';
+import { Icon } from '../components/Icon/Icon';
+import { sprinkles } from '../styles/sprinkles.css';
 
-import { Box, Stack } from './helpers';
-import { sprinkles } from './helpers/sprinkles.css';
-import { transitionColours } from './helpers/styles.css';
+import { icon as iconStyle } from './helpers/styles.css';
 
 const IconGrid = () => {
 	return (
@@ -24,32 +24,7 @@ const IconGrid = () => {
 				Object.entries(iconset).map(([name, icon]) => {
 					if (icon)
 						return (
-							<Box
-								as="li"
-								// background={{
-								// 	initial: 'white',
-								// 	hover: 'gray800',
-								// }}
-								borderColor="gray"
-								borderStyle="solid"
-								borderWidth="2"
-								borderRadius="md"
-								// color={{ initial: 'gray700', hover: 'white' }}
-								display="flex"
-								flexDirection="column"
-								alignItems="center"
-								justifyContent="center"
-								padding="2"
-								margin="none"
-								key={name}
-								style={{
-									listStyle: 'none',
-									width: '140px',
-									height: '120px',
-									textAlign: 'center',
-								}}
-								className={transitionColours}
-							>
+							<li key={name} className={iconStyle}>
 								<Icon icon={icon} size="large" />
 								<div
 									className={sprinkles({
@@ -61,7 +36,7 @@ const IconGrid = () => {
 										.split(/(?=[A-Z])/)
 										.join(' ')}
 								</div>
-							</Box>
+							</li>
 						);
 				})
 			}
@@ -82,10 +57,10 @@ export const IconSet: Story = {
 		chromatic: { disableSnapshot: true },
 	},
 	render: () => (
-		<Stack space="sm">
+		<FlexStack gap="7">
 			<Heading as="h1">Icon Set</Heading>
 			<Heading as="h4">@autoguru/icons</Heading>
 			<IconGrid />
-		</Stack>
+		</FlexStack>
 	),
 };

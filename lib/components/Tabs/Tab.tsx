@@ -14,7 +14,7 @@ import {
 
 import { elementStyles } from '../../styles';
 import { textStyles } from '../../styles/typography';
-import { Inline } from '../Inline/Inline';
+import { inline } from '../Flex/flex';
 import { Text } from '../Text/Text';
 
 import * as styles from './Tab.css';
@@ -82,7 +82,14 @@ export const Tab = forwardRef<HTMLDivElement, TabProps>(
 		};
 
 		const child = (
-			<Inline noWrap space="2" alignY="center" alignX="center">
+			<div
+				className={inline({
+					gap: '2',
+					align: 'center',
+					justify: 'center',
+					noWrap: true,
+				})}
+			>
 				<span className={styles.item}>{children}</span>
 				{typeof indication === 'number' && (
 					<Text
@@ -100,7 +107,7 @@ export const Tab = forwardRef<HTMLDivElement, TabProps>(
 						{indication}
 					</Text>
 				)}
-			</Inline>
+			</div>
 		);
 
 		return isValidElement(Component)

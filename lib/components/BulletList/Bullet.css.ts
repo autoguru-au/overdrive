@@ -3,10 +3,15 @@ import { style, styleVariants } from '@vanilla-extract/css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
 export const root = styleVariants({
+	circle: {
+		'::before': {
+			borderRadius: '50%',
+		},
+	},
 	default: {
 		display: 'grid',
-		gridTemplateColumns: 'min-content 1fr',
 		gridGap: vars.space['4'],
+		gridTemplateColumns: 'min-content 1fr',
 		marginBottom: vars.space['2'],
 
 		':last-of-type': {
@@ -14,32 +19,27 @@ export const root = styleVariants({
 		},
 
 		'::before': {
-			boxSizing: 'content-box',
-			display: 'block',
 			alignSelf: 'flex-start',
-			width: vars.space['2'],
+			backgroundColor: vars.typography.colour.dark,
+			boxSizing: 'content-box',
+			content: "' '",
+			display: 'block',
 			height: vars.space['2'],
 			marginTop: `calc((1.6em - ${vars.space['2']}) / 2)`,
-			content: "' '",
-			backgroundColor: vars.typography.colour.dark,
-		},
-	},
-	circle: {
-		'::before': {
-			borderRadius: '50%',
+			width: vars.space['2'],
 		},
 	},
 	disc: {
 		'::before': {
+			backgroundColor: 'transparent',
 			border: `2px solid ${vars.typography.colour.dark}`,
 			borderRadius: '50%',
-			backgroundColor: 'transparent',
 		},
 	},
 	square: {
 		'::before': {
-			border: `2px solid ${vars.typography.colour.dark}`,
 			backgroundColor: 'transparent',
+			border: `2px solid ${vars.typography.colour.dark}`,
 		},
 	},
 });

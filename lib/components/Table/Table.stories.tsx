@@ -5,8 +5,8 @@ import { arrayRingLookup } from '../../utils';
 import { Actions } from '../Actions/Actions';
 import { Badge } from '../Badge/Badge';
 import { Button } from '../Button/Button';
-import { Inline } from '../Inline/Inline';
-import { Stack } from '../Stack/Stack';
+import { FlexInline } from '../Flex/FlexInline';
+import { stack } from '../Flex/flex';
 import { Text } from '../Text/Text';
 
 import { Table } from './Table';
@@ -79,30 +79,30 @@ export const Standard: Story = {
 					<TableRow>
 						<TableCell>522698</TableCell>
 						<TableCell>
-							<Stack space="1">
+							<div className={stack({ gap: '2' })}>
 								<Text size="3" colour="dark">
 									My Auto Service & Repair
 								</Text>
 								<Text size="2" colour="muted">
 									Gold Coast
 								</Text>
-							</Stack>
+							</div>
 						</TableCell>
 						<TableCell>
-							<Stack space="1">
+							<div className={stack({ gap: '2' })}>
 								<Text size="3" colour="dark">
 									ABC123
 								</Text>
 								<Text noWrap size="2" colour="muted">
 									Audi A4
 								</Text>
-							</Stack>
+							</div>
 						</TableCell>
 						<TableCell align="right">$99.00</TableCell>
 						<TableCell>
-							<Inline>
+							<FlexInline>
 								<Badge label="Paid" colour="green" />
-							</Inline>
+							</FlexInline>
 						</TableCell>
 						<TableCell>2min</TableCell>
 						<TableCell align="right">
@@ -117,31 +117,31 @@ export const Standard: Story = {
 					<TableRow>
 						<TableCell>597194</TableCell>
 						<TableCell>
-							<Stack space="1">
+							<div className={stack({ gap: '2' })}>
 								<Text size="3" colour="dark">
 									Magic Spanners
 								</Text>
 								<Text size="2" colour="muted">
 									Brisbane CBD
 								</Text>
-							</Stack>
+							</div>
 						</TableCell>
 						<TableCell>
-							<Stack space="1">
+							<div className={stack({ gap: '2' })}>
 								<Text size="3" colour="dark">
 									ABC123
 								</Text>
 								<Text noWrap size="2" colour="muted">
 									Prosche Macan
 								</Text>
-							</Stack>
+							</div>
 						</TableCell>
 						<TableCell align="right">$102.00</TableCell>
 						<TableCell>
-							<Inline>
+							<FlexInline>
 								<Badge label="Paid" colour="green" />
 								<Badge label="Dispute" colour="red" />
-							</Inline>
+							</FlexInline>
 						</TableCell>
 						<TableCell>5min</TableCell>
 						<TableCell align="right">
@@ -156,31 +156,31 @@ export const Standard: Story = {
 					<TableRow>
 						<TableCell>789456</TableCell>
 						<TableCell>
-							<Stack space="1">
+							<div className={stack({ gap: '2' })}>
 								<Text size="3" colour="dark">
 									Super Special Cars
 								</Text>
 								<Text size="2" colour="muted">
 									Sydney CBD
 								</Text>
-							</Stack>
+							</div>
 						</TableCell>
 						<TableCell>
-							<Stack space="1">
+							<div className={stack({ gap: '2' })}>
 								<Text size="3" colour="dark">
 									ABC123
 								</Text>
 								<Text noWrap size="2" colour="muted">
 									Maserati Levante
 								</Text>
-							</Stack>
+							</div>
 						</TableCell>
 						<TableCell align="right">$2,495.45</TableCell>
 						<TableCell>
-							<Inline>
+							<FlexInline>
 								<Badge label="Paid" colour="green" />
 								<Badge label="Complete" colour="green" />
-							</Inline>
+							</FlexInline>
 						</TableCell>
 						<TableCell>5hr</TableCell>
 						<TableCell align="right">
@@ -195,30 +195,30 @@ export const Standard: Story = {
 					<TableRow>
 						<TableCell>159753</TableCell>
 						<TableCell>
-							<Stack space="1">
+							<div className={stack({ gap: '2' })}>
 								<Text size="3" colour="dark">
 									Humans &apos;n Cars
 								</Text>
 								<Text size="2" colour="muted">
 									Brisbane CBD
 								</Text>
-							</Stack>
+							</div>
 						</TableCell>
 						<TableCell>
-							<Stack space="1">
+							<div className={stack({ gap: '2' })}>
 								<Text size="3" colour="dark">
 									ABC123
 								</Text>
 								<Text size="2" colour="muted">
 									Koenigsegg Agera RS
 								</Text>
-							</Stack>
+							</div>
 						</TableCell>
 						<TableCell align="right">$11,158.46</TableCell>
 						<TableCell>
-							<Inline>
+							<FlexInline>
 								<Badge label="Unpaid" colour="yellow" />
-							</Inline>
+							</FlexInline>
 						</TableCell>
 						<TableCell>15hr</TableCell>
 						<TableCell align="right">
