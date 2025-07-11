@@ -44,6 +44,7 @@ jobs:
     test:
         name: Lint & Test
         needs: setup
+        if: github.ref_name != 'main'
         runs-on: ubuntu-latest
         env:
             TZ: Australia/Brisbane
@@ -72,10 +73,12 @@ jobs:
               with:
                   token: ${{ secrets.CODECOV }}
 
-    call-prerelease:
-        name: Publish Prerelease
+    call_prerelease:
+        name: Check prerelease
         needs: [setup, test]
-        if: needs.setup.outputs.has_prerelease == 'true'
+        if:
+            github.ref_name != 'main' && needs.setup.outputs.has_prerelease ==
+            'true'
         uses: ./.github/workflows/prerelease.yml
         with:
             node_version: ${{ needs.setup.outputs.node_version }}

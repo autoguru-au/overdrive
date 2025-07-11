@@ -14,7 +14,7 @@ on:
 
 jobs:
     prerelease:
-        name: Publish Prerelease
+        name: Prerelease publish
         runs-on: ubuntu-latest
         env:
             TZ: Australia/Brisbane
@@ -73,16 +73,6 @@ jobs:
                   echo "version=$(jq -r '.version' package.json)" >>
                   $GITHUB_OUTPUT
 
-            - name: Commit version changes
-              if: steps.version_check.outputs.changed == 'true' && success()
-              # purposely not checking in CHANGELOG.md to the working branch
-              run: |
-                  git config --local user.email "action@github.com"
-                  git config --local user.name "GitHub Action"
-                  git add package.json yarn.lock .changeset
-                  git commit -m "Prerelease Version v${{ steps.version.outputs.version }}" || exit 0
-                  git push origin HEAD:${{ github.ref_name }}
-
             - name: Create GitHub prerelease
               if: steps.version_check.outputs.changed == 'true' && success()
               uses: actions/create-release@v1
@@ -97,6 +87,16 @@ jobs:
                       ### Prerelease version
 
                       - Install with: `yarn up @autoguru/overdrive@${{ steps.version.outputs.version }}`
+
+            - name: Commit version changes
+              if: steps.version_check.outputs.changed == 'true' && success()
+              # purposely not checking in CHANGELOG.md to the working branch
+              run: |
+                  git config --local user.email "action@github.com"
+                  git config --local user.name "GitHub Action"
+                  git add package.json yarn.lock .changeset
+                  git commit -m "Prerelease Version v${{ steps.version.outputs.version }}" || exit 0
+                  git push origin HEAD:${{ github.head_ref || github.ref_name }}
 
             - name: Post-publish Notifications
               if: steps.version_check.outputs.changed == 'true' && success()
