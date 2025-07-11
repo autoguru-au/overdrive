@@ -115,3 +115,5 @@ jobs:
         needs: [setup, test]
         if: needs.setup.outputs.has_prerelease == 'true'
         uses: ./.github/workflows/release.yml
+        with:
+            is_prerelease: true
