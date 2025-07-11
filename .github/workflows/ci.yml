@@ -72,6 +72,17 @@ jobs:
               with:
                   token: ${{ secrets.CODECOV }}
 
+    call-prerelease:
+        name: Publish Prerelease
+        needs: [setup, test]
+        if: needs.setup.outputs.has_prerelease == 'true'
+        uses: ./.github/workflows/prerelease.yml
+        with:
+            node_version: ${{ needs.setup.outputs.node_version }}
+        secrets:
+            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     visual_test:
         name: Visual changes
         needs: setup
@@ -109,98 +120,3 @@ jobs:
               with:
                   projectToken: ${{ secrets.CHROMATIC_APP_CODE }}
                   skip: true
-
-    call-prerelease:
-        name: Publish Prerelease
-        needs: [setup, test]
-        runs-on: ubuntu-latest
-        if: needs.setup.outputs.has_prerelease == 'true'
-        env:
-            TZ: Australia/Brisbane
-            CI: true
-        steps:
-            - uses: actions/checkout@main
-              with:
-                  fetch-depth: 0
-
-            - name: Setup Node ${{ needs.setup.outputs.node_version }}
-              uses: actions/setup-node@main
-              with:
-                  node-version: ${{ needs.setup.outputs.node_version }}
-                  cache: 'yarn'
-                  registry-url: 'https://registry.npmjs.org'
-
-            - name: Yarn install
-              run: yarn --immutable
-
-            - name: Get current package version
-              id: current_version
-              run:
-                  echo "version=$(jq -r '.version' package.json)" >>
-                  $GITHUB_OUTPUT
-
-            - name: Changeset version
-              run: yarn changeset version
-
-            - name: Get new package version
-              id: new_version
-              run:
-                  echo "version=$(jq -r '.version' package.json)" >>
-                  $GITHUB_OUTPUT
-
-            - name: Check if version changed
-              id: version_check
-              run: |
-                  if [ "${{ steps.current_version.outputs.version }}" = "${{ steps.new_version.outputs.version }}" ]; then
-                    echo "No version changes detected. Exiting prerelease workflow."
-                    echo "changed=false" >> $GITHUB_OUTPUT
-                  else
-                    echo "Version changed from ${{ steps.current_version.outputs.version }} to ${{ steps.new_version.outputs.version }}"
-                    echo "changed=true" >> $GITHUB_OUTPUT
-                  fi
-
-            # - name: Build packages
-            #   run: yarn build
-
-            - name: Publish to npm with @next tag
-              if: steps.version_check.outputs.changed == 'true'
-              run: npm publish --tag next --access public
-              env:
-                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-            - name: Get package version
-              if: steps.version_check.outputs.changed == 'true'
-              id: version
-              run:
-                  echo "version=$(jq -r '.version' package.json)" >>
-                  $GITHUB_OUTPUT
-
-            - name: Commit version changes
-              if: steps.version_check.outputs.changed == 'true'
-              run: |
-                  git config --local user.email "action@github.com"
-                  git config --local user.name "GitHub Action"
-                  git add .
-                  git commit -m "Prerelease Version v${{ steps.version.outputs.version }}" || exit 0
-                  git push origin HEAD:${{ github.ref_name }}
-
-            - name: Create GitHub prerelease
-              if: steps.version_check.outputs.changed == 'true'
-              uses: actions/create-release@v1
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              with:
-                  tag_name: v${{ steps.version.outputs.version }}
-                  release_name: v${{ steps.version.outputs.version }}
-                  draft: false
-                  prerelease: true
-                  body: |
-                      Prerelease version ${{ steps.version.outputs.version }}
-
-                      Install with: `npm install @autoguru/overdrive@next`
-
-            - name: Post-publish Notifications
-              if: steps.version_check.outputs.changed == 'true'
-              run: |
-                  echo "📦 Prerelease Publised: ${{ steps.version.outputs.version }}"
-                  echo "🔗 NPM URL: https://www.npmjs.com/package/$(node -p "require('./package.json').name")"
