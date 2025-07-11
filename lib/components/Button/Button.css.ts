@@ -28,7 +28,6 @@ export const button = recipe({
 			alignItems: 'center',
 			borderRadius: 'md',
 			borderStyle: 'none',
-			display: 'flex',
 			fontWeight: 'semiBold',
 			gap: '1',
 			justifyContent: 'center',
@@ -39,6 +38,7 @@ export const button = recipe({
 			'@layer': {
 				[cssLayerComponent]: {
 					cursor: 'pointer',
+					display: 'flex',
 					lineHeight: 1,
 					padding: `0 ${vars.space[4]}`,
 					transform: 'translate(0, 0) scale(1)',
