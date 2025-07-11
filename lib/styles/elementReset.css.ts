@@ -148,8 +148,8 @@ const table = [
 	style({
 		'@layer': {
 			[cssLayerReset]: {
-				borderSpacing: 0,
 				borderCollapse: 'collapse',
+				borderSpacing: 0,
 			},
 		},
 	}),

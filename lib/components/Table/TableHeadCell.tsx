@@ -6,8 +6,8 @@ import { forwardRef, useCallback } from 'react';
 
 import { Alignment, alignmentToFlexAlignment } from '../../utils';
 import { Box, type BoxProps } from '../Box/Box';
+import { inline } from '../Flex/flex';
 import { Icon } from '../Icon/Icon';
-import { Inline } from '../Inline/Inline';
 import { Text } from '../Text/Text';
 import { VisuallyHidden } from '../VisuallyHidden/VisuallyHidden';
 
@@ -77,10 +77,12 @@ export const TableHeadCell = forwardRef<
 		);
 
 		const child = (
-			<Inline
-				alignY="center"
-				alignX={alignmentToFlexAlignment(align)}
-				space="1"
+			<div
+				className={inline({
+					gap: '1',
+					align: alignmentToFlexAlignment(align),
+					justify: 'center',
+				})}
 			>
 				{align === 'right' && shouldSort ? sorter : null}
 				<Text
@@ -101,7 +103,7 @@ export const TableHeadCell = forwardRef<
 				{(align === 'left' || align === 'center') && shouldSort
 					? sorter
 					: null}
-			</Inline>
+			</div>
 		);
 
 		return (

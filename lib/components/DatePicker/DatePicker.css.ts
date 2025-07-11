@@ -3,12 +3,12 @@ import { style, styleVariants } from '@vanilla-extract/css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
 export const input = style({
-	top: 0,
-	right: 0,
 	bottom: 0,
+	cursor: 'pointer',
 	left: 0,
 	opacity: 0,
-	cursor: 'pointer',
+	right: 0,
+	top: 0,
 	selectors: {
 		'&::-webkit-calendar-picker-indicator': {
 			background: 'transparent',
@@ -27,11 +27,11 @@ export const input = style({
 
 export const contents = styleVariants({
 	default: {
-		display: 'grid',
-		gridTemplateColumns: 'auto',
 		alignItems: 'center',
-		justifyContent: 'flex-start',
+		display: 'grid',
 		gridGap: vars.space['1'],
+		gridTemplateColumns: 'auto',
+		justifyContent: 'flex-start',
 	},
 	withLabel: {
 		gridTemplateColumns: 'auto auto',
@@ -47,7 +47,7 @@ export const disabled = styleVariants({
 });
 
 export const spinner = style({
-	top: '50%',
 	left: '50%',
+	top: '50%',
 	transform: 'translate(-50%, -50%)',
 });

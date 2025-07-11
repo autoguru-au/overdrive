@@ -13,11 +13,11 @@ export const selectedItem = style({
 });
 
 export const activeItem = style({
-	lineHeight: `calc(${paginationBubbleSize} - 3px)`,
-	width: paginationBubbleSize,
-	height: paginationBubbleSize,
 	cursor: 'pointer',
+	height: paginationBubbleSize,
+	lineHeight: `calc(${paginationBubbleSize} - 3px)`,
 	transition: `background-color 0.2s ${vars.animation.easing.decelerate} 0s, box-shadow 0.2s ${vars.animation.easing.decelerate} 0s`,
+	width: paginationBubbleSize,
 
 	selectors: {
 		[`&:not(${selectedItem}):hover`]: {

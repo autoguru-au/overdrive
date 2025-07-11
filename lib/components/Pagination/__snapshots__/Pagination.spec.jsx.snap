@@ -6,84 +6,63 @@ exports[`<Pagination /> > should match snapshot for loading phase 1`] = `
   data-od-component="provider"
 >
   <span
-    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_flex_mobile__onxwju73 sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_3_mobile__onxwjugv"
-    data-od-component="inline"
+    class="sprinkles_display_flex_mobile__onxwju73 sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_flexWrap_wrap_mobile__onxwjupj sprinkles_gap_3_mobile__onxwjugv sprinkles_justifyContent_start_mobile__onxwjunj"
   >
-    <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
+    <button
+      aria-disabled="true"
+      aria-label=""
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 sprinkles_paddingBottom_2_mobile__onxwjurv sprinkles_paddingLeft_2_mobile__onxwjusz sprinkles_paddingRight_2_mobile__onxwjuu3 sprinkles_paddingTop_2_mobile__onxwjuv7 sprinkles_display_flex_mobile__onxwju73 sprinkles_overflow_hidden_mobile__onxwju7z sprinkles_pointerEvents_none__onxwju6m sprinkles_userSelect_none__onxwju6p sprinkles_textAlign_center_mobile__onxwju9j sprinkles_borderRadius_pill_mobile__onxwjuar sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_justifyContent_center_mobile__onxwjumz elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n sprinkles_fontWeight_normal__onxwju62 typography_color_light__yhjp339 Pagination_disabled__9nf7kx0"
     >
-      <button
-        aria-disabled="true"
-        aria-label=""
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 sprinkles_paddingBottom_2_mobile__onxwjurv sprinkles_paddingLeft_2_mobile__onxwjusz sprinkles_paddingRight_2_mobile__onxwjuu3 sprinkles_paddingTop_2_mobile__onxwjuv7 sprinkles_display_flex_mobile__onxwju73 sprinkles_overflow_hidden_mobile__onxwju7z sprinkles_pointerEvents_none__onxwju6m sprinkles_userSelect_none__onxwju6p sprinkles_textAlign_center_mobile__onxwju9j sprinkles_borderRadius_pill_mobile__onxwjuar sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_justifyContent_center_mobile__onxwjumz elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n sprinkles_fontWeight_normal__onxwju62 typography_color_light__yhjp339 Pagination_disabled__9nf7kx0"
+      <span
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+        data-od-component="icon"
       >
-        <span
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4"
-          data-od-component="icon"
+        <svg
+          aria-hidden="true"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <svg
-            aria-hidden="true"
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M15.414 16.584l-4.586-4.586 4.586-4.586-1.415-1.414-6 6 6 6 1.415-1.414z"
-            />
-          </svg>
-        </span>
-      </button>
-    </div>
-    <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
+          <path
+            d="M15.414 16.584l-4.586-4.586 4.586-4.586-1.415-1.414-6 6 6 6 1.415-1.414z"
+          />
+        </svg>
+      </span>
+    </button>
+    <button
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 sprinkles_display_flex_mobile__onxwju73 sprinkles_overflow_hidden_mobile__onxwju7z sprinkles_pointerEvents_none__onxwju6m sprinkles_backgroundColour_gray200__onxwju47 sprinkles_textAlign_center_mobile__onxwju9j sprinkles_borderRadius_pill_mobile__onxwjuar sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_justifyContent_center_mobile__onxwjumz Pagination_disabled__9nf7kx0 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3__onxwju5v sprinkles_lineHeight_3__onxwju5m sprinkles_fontWeight_bold__onxwju64 typography_color_light__yhjp339 Pagination_activeItem__9nf7kx2"
+    />
+    <button
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 sprinkles_display_flex_mobile__onxwju73 sprinkles_overflow_hidden_mobile__onxwju7z sprinkles_pointerEvents_none__onxwju6m sprinkles_backgroundColour_gray200__onxwju47 sprinkles_textAlign_center_mobile__onxwju9j sprinkles_borderRadius_pill_mobile__onxwjuar sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_justifyContent_center_mobile__onxwjumz Pagination_disabled__9nf7kx0 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3__onxwju5v sprinkles_lineHeight_3__onxwju5m sprinkles_fontWeight_bold__onxwju64 typography_color_light__yhjp339 Pagination_activeItem__9nf7kx2"
+    />
+    <button
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 sprinkles_display_flex_mobile__onxwju73 sprinkles_overflow_hidden_mobile__onxwju7z sprinkles_pointerEvents_none__onxwju6m sprinkles_backgroundColour_gray200__onxwju47 sprinkles_textAlign_center_mobile__onxwju9j sprinkles_borderRadius_pill_mobile__onxwjuar sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_justifyContent_center_mobile__onxwjumz Pagination_disabled__9nf7kx0 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3__onxwju5v sprinkles_lineHeight_3__onxwju5m sprinkles_fontWeight_bold__onxwju64 typography_color_light__yhjp339 Pagination_activeItem__9nf7kx2"
+    />
+    <button
+      aria-disabled="true"
+      aria-label=""
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 sprinkles_paddingBottom_2_mobile__onxwjurv sprinkles_paddingLeft_2_mobile__onxwjusz sprinkles_paddingRight_2_mobile__onxwjuu3 sprinkles_paddingTop_2_mobile__onxwjuv7 sprinkles_display_flex_mobile__onxwju73 sprinkles_overflow_hidden_mobile__onxwju7z sprinkles_pointerEvents_none__onxwju6m sprinkles_userSelect_none__onxwju6p sprinkles_textAlign_center_mobile__onxwju9j sprinkles_borderRadius_pill_mobile__onxwjuar sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_justifyContent_center_mobile__onxwjumz elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n sprinkles_fontWeight_normal__onxwju62 typography_color_light__yhjp339 Pagination_disabled__9nf7kx0"
     >
-      <button
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 sprinkles_display_flex_mobile__onxwju73 sprinkles_overflow_hidden_mobile__onxwju7z sprinkles_pointerEvents_none__onxwju6m sprinkles_backgroundColour_gray200__onxwju47 sprinkles_textAlign_center_mobile__onxwju9j sprinkles_borderRadius_pill_mobile__onxwjuar sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_justifyContent_center_mobile__onxwjumz Pagination_disabled__9nf7kx0 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3__onxwju5v sprinkles_lineHeight_3__onxwju5m sprinkles_fontWeight_bold__onxwju64 typography_color_light__yhjp339 Pagination_activeItem__9nf7kx2"
-      />
-    </div>
-    <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-    >
-      <button
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 sprinkles_display_flex_mobile__onxwju73 sprinkles_overflow_hidden_mobile__onxwju7z sprinkles_pointerEvents_none__onxwju6m sprinkles_backgroundColour_gray200__onxwju47 sprinkles_textAlign_center_mobile__onxwju9j sprinkles_borderRadius_pill_mobile__onxwjuar sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_justifyContent_center_mobile__onxwjumz Pagination_disabled__9nf7kx0 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3__onxwju5v sprinkles_lineHeight_3__onxwju5m sprinkles_fontWeight_bold__onxwju64 typography_color_light__yhjp339 Pagination_activeItem__9nf7kx2"
-      />
-    </div>
-    <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-    >
-      <button
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 sprinkles_display_flex_mobile__onxwju73 sprinkles_overflow_hidden_mobile__onxwju7z sprinkles_pointerEvents_none__onxwju6m sprinkles_backgroundColour_gray200__onxwju47 sprinkles_textAlign_center_mobile__onxwju9j sprinkles_borderRadius_pill_mobile__onxwjuar sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_justifyContent_center_mobile__onxwjumz Pagination_disabled__9nf7kx0 elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_3__onxwju5v sprinkles_lineHeight_3__onxwju5m sprinkles_fontWeight_bold__onxwju64 typography_color_light__yhjp339 Pagination_activeItem__9nf7kx2"
-      />
-    </div>
-    <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_flex_mobile__onxwju73 sprinkles_useVar_gap__onxwju6q sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexWrap_nowrap_mobile__onxwjupf"
-    >
-      <button
-        aria-disabled="true"
-        aria-label=""
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_button__18vhvli12 elementReset_trimmedElement__18vhvli0 elementReset_button__18vhvli5 sprinkles_paddingBottom_2_mobile__onxwjurv sprinkles_paddingLeft_2_mobile__onxwjusz sprinkles_paddingRight_2_mobile__onxwjuu3 sprinkles_paddingTop_2_mobile__onxwjuv7 sprinkles_display_flex_mobile__onxwju73 sprinkles_overflow_hidden_mobile__onxwju7z sprinkles_pointerEvents_none__onxwju6m sprinkles_userSelect_none__onxwju6p sprinkles_textAlign_center_mobile__onxwju9j sprinkles_borderRadius_pill_mobile__onxwjuar sprinkles_alignItems_center_mobile__onxwjulb sprinkles_flexDirection_row_mobile__onxwjuob sprinkles_justifyContent_center_mobile__onxwjumz elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  typography_common__yhjp33f sprinkles_fontSize_4__onxwju5w sprinkles_lineHeight_4__onxwju5n sprinkles_fontWeight_normal__onxwju62 typography_color_light__yhjp339 Pagination_disabled__9nf7kx0"
+      <span
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4"
+        data-od-component="icon"
       >
-        <span
-          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_display_block_mobile__onxwju6v Icon_makeResponsiveStyle_key_bp__1gy3ire4"
-          data-od-component="icon"
+        <svg
+          aria-hidden="true"
+          class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <svg
-            aria-hidden="true"
-            class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_display_block_mobile__onxwju6v sprinkles_width_full_mobile__onxwjufn sprinkles_height_full_mobile__onxwjue3"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8.585 16.584l4.586-4.586-4.586-4.586L10 5.998l6 6-6 6-1.414-1.414z"
-            />
-          </svg>
-        </span>
-      </button>
-    </div>
+          <path
+            d="M8.585 16.584l4.586-4.586-4.586-4.586L10 5.998l6 6-6 6-1.414-1.414z"
+          />
+        </svg>
+      </span>
+    </button>
   </span>
 </div>
 `;

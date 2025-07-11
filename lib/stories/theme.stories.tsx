@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 
+import { FlexStack } from '../components/Flex/FlexStack';
 import { Heading } from '../components/Heading';
 import { overdriveTokens } from '../themes/theme.css';
 
-import { Stack } from './helpers';
 import {
 	codeVariable,
 	gridSwatches,
@@ -38,7 +38,7 @@ type Story = StoryObj;
 export const ThemeColours: Story = {
 	render: () => {
 		return (
-			<Stack>
+			<FlexStack gap="7">
 				<hgroup>
 					<Heading>Theme Colours</Heading>
 					<p style={{ fontStyle: 'italic' }}>
@@ -46,11 +46,11 @@ export const ThemeColours: Story = {
 						added, renamed or colours reassigned.
 					</p>
 				</hgroup>
-				<Stack space="md">
+				<FlexStack gap="7">
 					{Object.entries(overdriveTokens.color)
 						.filter(([key]) => key !== 'gamut')
 						.map(([group, colours]) => (
-							<Stack key={group}>
+							<FlexStack gap="4" key={group}>
 								<Heading as="h2" className={labels}>
 									{group}
 								</Heading>
@@ -58,7 +58,7 @@ export const ThemeColours: Story = {
 								<div className={gridSwatches}>
 									{Object.entries(colours).map(
 										([colour, cssVar]) => (
-											<Stack space="xxs" key={colour}>
+											<FlexStack gap="1" key={colour}>
 												<div
 													className={variantColourSwatch(
 														{
@@ -83,14 +83,14 @@ export const ThemeColours: Story = {
 														colour,
 													)}
 												</code>
-											</Stack>
+											</FlexStack>
 										),
 									)}
 								</div>
-							</Stack>
+							</FlexStack>
 						))}
-				</Stack>
-			</Stack>
+				</FlexStack>
+			</FlexStack>
 		);
 	},
 };

@@ -12,21 +12,21 @@ export const root = style({
 	@see https://caniuse.com/#feat=css-subgrid
 	 */
 	':before': {
-		display: 'block',
-		content: '""',
-		position: 'absolute',
-		zIndex: -1,
-		top: 0,
 		bottom: 0,
+		content: '""',
+		display: 'block',
 		left: '-1000%',
+		position: 'absolute',
 		right: '-1000%',
+		top: 0,
 		transition: `background-color 0.2s ${vars.animation.easing.accelerate}`,
+		zIndex: -1,
 	},
 
 	selectors: {
 		'&:hover:before': {
-			transitionTimingFunction: vars.animation.easing.decelerate,
 			backgroundColor: vars.colours.gamut.gray100,
+			transitionTimingFunction: vars.animation.easing.decelerate,
 		},
 	},
 });

@@ -1,11 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 
-import { Heading } from '../components/Heading';
+import { Box, type BoxProps } from '../components/Box/Box';
+import { FlexInline } from '../components/Flex/FlexInline';
+import { FlexStack } from '../components/Flex/FlexStack';
+import { Heading } from '../components/Heading/Heading';
 import { overdriveTokens } from '../themes';
 import { tokens } from '../themes/base/tokens';
 
-import { Box, Stack, type Sprinkles } from './helpers';
 import { titles } from './helpers/styles.css';
 
 const { border, elevation } = tokens;
@@ -14,41 +16,41 @@ const widthItems = Object.keys(border.width);
 const radiusItems = Object.keys(border.radius);
 
 const Elevation = () => (
-	<Stack>
+	<FlexStack gap="6">
 		<Heading as="h2" className={titles}>
 			Elevation
 		</Heading>
 
 		{elevationItems.map((elevation) => (
-			<Stack space="sm" alignItems="center" horizontal key={elevation}>
+			<FlexInline gap="5" justify="center" key={elevation}>
 				<Box
 					borderRadius="1"
-					boxShadow={elevation as Sprinkles['boxShadow']}
+					boxShadow={elevation as BoxProps['boxShadow']}
 					size="9"
 					style={{
 						backgroundColor: overdriveTokens.color.gamut.gray[100],
 					}}
 				/>
 				<p>{elevation}</p>
-			</Stack>
+			</FlexInline>
 		))}
-	</Stack>
+	</FlexStack>
 );
 
 const Widths = () => {
 	return (
-		<Stack>
+		<FlexStack gap="6">
 			<Heading as="h2" className={titles}>
 				Width
 			</Heading>
 
 			{widthItems.map((width) => (
-				<Stack space="sm" alignItems="center" horizontal key={width}>
+				<FlexInline gap="5" justify="center" key={width}>
 					<Box
-						borderColor="dark"
+						borderColor="hard"
 						borderRadius="1"
 						borderStyle="solid"
-						borderWidth={width as Sprinkles['borderWidth']}
+						borderWidth={width as BoxProps['borderWidth']}
 						size="9"
 						style={{
 							backgroundColor:
@@ -56,25 +58,25 @@ const Widths = () => {
 						}}
 					/>
 					<p>{width}</p>
-				</Stack>
+				</FlexInline>
 			))}
-		</Stack>
+		</FlexStack>
 	);
 };
 
 const Radius = () => {
 	return (
-		<Stack>
+		<FlexStack gap="6">
 			<Heading as="h2" className={titles}>
 				Radius
 			</Heading>
 
 			{radiusItems.map((radius) => (
-				<Stack space="sm" alignItems="center" horizontal key={radius}>
+				<FlexInline gap="5" justify="center" key={radius}>
 					<Box
 						alignItems="center"
-						borderColor="gray"
-						borderRadius={radius as Sprinkles['borderRadius']}
+						borderColor="soft"
+						borderRadius={radius as BoxProps['borderRadius']}
 						display="flex"
 						justifyContent="center"
 						size="9"
@@ -92,9 +94,9 @@ const Radius = () => {
 						{tokens.border.radius[radius]}
 					</Box>
 					<p>{radius}</p>
-				</Stack>
+				</FlexInline>
 			))}
-		</Stack>
+		</FlexStack>
 	);
 };
 
@@ -108,13 +110,13 @@ type Story = StoryObj;
 
 export const Borders: Story = {
 	render: () => (
-		<Stack gap="8" horizontal>
+		<FlexInline gap="8">
 			<Heading as="h1">
 				Borders &amp; <br /> Elevation
 			</Heading>
 			<Widths />
 			<Radius />
 			<Elevation />
-		</Stack>
+		</FlexInline>
 	),
 };

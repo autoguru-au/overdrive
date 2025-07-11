@@ -14,8 +14,8 @@ export const text = style({
 
 const sorterRoot = style({
 	transformOrigin: 'center',
-	transitionProperty: 'transform',
 	transitionDuration: '0.3s',
+	transitionProperty: 'transform',
 	willChange: 'transform',
 });
 
@@ -33,6 +33,12 @@ export const sorter = {
 		}),
 	],
 	...styleVariants({
+		asc: {
+			transform: 'translateY(0px) rotateY(0)',
+		},
+		desc: {
+			transform: 'translateY(0px) rotateX(180deg)',
+		},
 		none: {
 			opacity: '0',
 			transform: 'translateY(10%) rotateX(0)',
@@ -44,12 +50,6 @@ export const sorter = {
 					transform: 'translateY(0px) rotateX(0)',
 				},
 			},
-		},
-		asc: {
-			transform: 'translateY(0px) rotateY(0)',
-		},
-		desc: {
-			transform: 'translateY(0px) rotateX(180deg)',
 		},
 	}),
 };

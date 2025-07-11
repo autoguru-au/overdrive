@@ -13,14 +13,14 @@ export const labelStyle = styleVariants({
 	base: {
 		textWrap: 'nowrap',
 	},
-	small: {
-		fontSize: vars.typography.size['4'].fontSize,
+	large: {
+		fontSize: vars.typography.size['7'].fontSize,
 	},
 	medium: {
 		fontSize: vars.typography.size['4'].fontSize,
 	},
-	large: {
-		fontSize: vars.typography.size['7'].fontSize,
+	small: {
+		fontSize: vars.typography.size['4'].fontSize,
 	},
 });
 
@@ -28,8 +28,8 @@ const defaultBorderWidth = vars.border.width['1'];
 const largeBorderWidth = vars.border.width['2'];
 
 const borderRegionDefaults = style({
-	borderWidth: defaultBorderWidth,
 	borderStyle: 'solid',
+	borderWidth: defaultBorderWidth,
 	display: 'inline-flex',
 	transition: `border-color 0.2s ${vars.animation.easing.decelerate} 0s`,
 });
@@ -42,14 +42,14 @@ export const notchGapPlaceholder = styleVariants({
 	base: {
 		visibility: 'hidden',
 	},
-	small: {
-		fontSize: `calc(${vars.typography.size['4'].fontSize} * ${active_scaling_factor})`,
+	large: {
+		fontSize: `calc(${vars.typography.size['7'].fontSize} * ${active_scaling_factor})`,
 	},
 	medium: {
 		fontSize: `calc(${vars.typography.size['4'].fontSize} * ${active_scaling_factor})`,
 	},
-	large: {
-		fontSize: `calc(${vars.typography.size['7'].fontSize} * ${active_scaling_factor})`,
+	small: {
+		fontSize: `calc(${vars.typography.size['4'].fontSize} * ${active_scaling_factor})`,
 	},
 });
 
@@ -58,10 +58,10 @@ export const borders = {
 		default: [
 			borderVisualDefaults,
 			style({
-				zIndex: 2,
-				top: 0,
-				right: 0,
 				left: 0,
+				right: 0,
+				top: 0,
+				zIndex: 2,
 			}),
 		],
 		disabled: '',
@@ -70,63 +70,63 @@ export const borders = {
 	leading: [
 		borderRegionDefaults,
 		style({
-			width: vars.space['2'],
-			borderRight: 'none',
 			borderRadius: `${vars.border.radius['md']} 0 0 ${vars.border.radius['md']}`,
+			borderRight: 'none',
+			width: vars.space['2'],
 		}),
 	],
 	middle: [
 		borderRegionDefaults,
 		style({
-			transition: `width 0.15s ${vars.animation.easing.decelerate}, border-color 0.2s ${vars.animation.easing.decelerate} 0s`,
-			borderTopStyle: 'none',
-			borderRightStyle: 'none',
 			borderLeftStyle: 'none',
+			borderRightStyle: 'none',
+			borderTopStyle: 'none',
+			transition: `width 0.15s ${vars.animation.easing.decelerate}, border-color 0.2s ${vars.animation.easing.decelerate} 0s`,
 		}),
 	],
 	trailing: [
 		borderRegionDefaults,
 		style({
-			flexGrow: 1,
 			borderLeft: 'none',
 			borderRadius: `0 ${vars.border.radius['md']} ${vars.border.radius['md']} 0`,
+			flexGrow: 1,
 		}),
 	],
 };
 
 export const bordersAttach = {
 	complete: styleVariants({
-		NONE: {
-			borderRadius: `${vars.border.radius['md']}`,
-		},
-		LEFT: {
-			borderRadius: `0 ${vars.border.radius['md']} ${vars.border.radius['md']} 0`,
-		},
-		TOP: {
-			borderRadius: `0 0 ${vars.border.radius['md']} ${vars.border.radius['md']}`,
-		},
-		RIGHT: {
-			borderRadius: `${vars.border.radius['md']} 0 0 ${vars.border.radius['md']}`,
+		ALL: {
+			borderRadius: 0,
 		},
 		BOTTOM: {
 			borderRadius: `${vars.border.radius['md']} ${vars.border.radius['md']} 0 0`,
 		},
-		ALL: {
-			borderRadius: 0,
+		LEFT: {
+			borderRadius: `0 ${vars.border.radius['md']} ${vars.border.radius['md']} 0`,
+		},
+		NONE: {
+			borderRadius: `${vars.border.radius['md']}`,
+		},
+		RIGHT: {
+			borderRadius: `${vars.border.radius['md']} 0 0 ${vars.border.radius['md']}`,
+		},
+		TOP: {
+			borderRadius: `0 0 ${vars.border.radius['md']} ${vars.border.radius['md']}`,
 		},
 	}),
 	flatCorners: styleVariants({
+		BOTTOM_LEFT: {
+			borderBottomLeftRadius: 0,
+		},
+		BOTTOM_RIGHT: {
+			borderBottomRightRadius: 0,
+		},
 		TOP_LEFT: {
 			borderTopLeftRadius: 0,
 		},
 		TOP_RIGHT: {
 			borderTopRightRadius: 0,
-		},
-		BOTTOM_RIGHT: {
-			borderBottomRightRadius: 0,
-		},
-		BOTTOM_LEFT: {
-			borderBottomLeftRadius: 0,
 		},
 	}),
 };
@@ -135,37 +135,37 @@ export type BordersAttach = keyof typeof bordersAttach.complete;
 
 export const bordersMerged = {
 	complete: styleVariants({
-		NONE: {
-			borderWidth: defaultBorderWidth,
-		},
-		LEFT: {
-			borderLeftColor: 'transparent',
-		},
-		TOP: {
-			borderTopColor: 'transparent',
-		},
-		RIGHT: {
-			borderRightColor: 'transparent',
+		ALL: {
+			borderColor: 'transparent',
 		},
 		BOTTOM: {
 			borderBottomColor: 'transparent',
 		},
-		ALL: {
-			borderColor: 'transparent',
+		LEFT: {
+			borderLeftColor: 'transparent',
+		},
+		NONE: {
+			borderWidth: defaultBorderWidth,
+		},
+		RIGHT: {
+			borderRightColor: 'transparent',
+		},
+		TOP: {
+			borderTopColor: 'transparent',
 		},
 	}),
 	flatCorners: styleVariants({
+		BOTTOM_LEFT: {
+			borderBottomLeftRadius: 0,
+		},
+		BOTTOM_RIGHT: {
+			borderBottomRightRadius: 0,
+		},
 		TOP_LEFT: {
 			borderTopLeftRadius: 0,
 		},
 		TOP_RIGHT: {
 			borderTopRightRadius: 0,
-		},
-		BOTTOM_RIGHT: {
-			borderBottomRightRadius: 0,
-		},
-		BOTTOM_LEFT: {
-			borderBottomLeftRadius: 0,
 		},
 	}),
 };
@@ -174,17 +174,17 @@ export type BordersMerged = keyof typeof bordersMerged.complete;
 
 export const placeholder = styleVariants({
 	default: {
+		left: 0,
 		lineHeight: 1,
 		top: 0,
-		left: 0,
-		transition: `color 0.2s ${vars.animation.easing.decelerate} 0s, transform 0.2s ${vars.animation.easing.decelerate} 0s`,
 		transformOrigin: 'top left',
-	},
-	mutedLabelStyles: {
-		color: vars.typography.colour.muted,
+		transition: `color 0.2s ${vars.animation.easing.decelerate} 0s, transform 0.2s ${vars.animation.easing.decelerate} 0s`,
 	},
 	disabled: {
 		color: vars.colours.background.neutral,
+	},
+	mutedLabelStyles: {
+		color: vars.typography.colour.muted,
 	},
 });
 
@@ -239,12 +239,12 @@ export const placeholderPlacement: Record<InputSize, Record<string, string>> = {
 			)}) scale(1)`,
 		},
 		shifted: {
-			zIndex: 2,
 			transform: `translate(${calcPlaceholderTranslate(
 				true,
 				false,
 				'small',
 			)}) scale(${active_scaling_factor})`,
+			zIndex: 2,
 		},
 	}),
 	medium: styleVariants({
@@ -263,12 +263,12 @@ export const placeholderPlacement: Record<InputSize, Record<string, string>> = {
 			)}) scale(1)`,
 		},
 		shifted: {
-			zIndex: 2,
 			transform: `translate(${calcPlaceholderTranslate(
 				true,
 				false,
 				'medium',
 			)}) scale(${active_scaling_factor})`,
+			zIndex: 2,
 		},
 	}),
 	large: styleVariants({
@@ -287,12 +287,12 @@ export const placeholderPlacement: Record<InputSize, Record<string, string>> = {
 			)}) scale(1)`,
 		},
 		shifted: {
-			zIndex: 2,
 			transform: `translate(${calcPlaceholderTranslate(
 				true,
 				false,
 				'large',
 			)}) scale(${active_scaling_factor})`,
+			zIndex: 2,
 		},
 	}),
 };
@@ -302,6 +302,6 @@ export const largeBorder = style({
 });
 
 export const largeBorderY = style({
-	borderTopWidth: largeBorderWidth,
 	borderBottomWidth: largeBorderWidth,
+	borderTopWidth: largeBorderWidth,
 });

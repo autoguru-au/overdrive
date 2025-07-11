@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import React, {
 	createContext,
 	type FunctionComponent,
@@ -8,8 +7,8 @@ import React, {
 } from 'react';
 
 import { textStyles } from '../../styles/typography';
-import { Box } from '../Box/Box';
-import { Stack } from '../Stack/Stack';
+import { useBox } from '../Box/useBox/useBox';
+import { stack } from '../Flex/flex';
 
 import * as styles from './OrderedList.css';
 
@@ -49,32 +48,33 @@ export const OrderedList: FunctionComponent<OrderedListProps> & {
 		myCycle = type === null ? cycle + 1 : cycles.indexOf(type);
 	}
 
+	const { Component, componentProps } = useBox({
+		as: 'ol',
+		className: [
+			styles.root.default,
+			stack({ gap: '2' }),
+			textStyles({ colour: 'dark' }),
+			{ [styles.root.firstOccurrence]: cycle === -1 },
+			className,
+		],
+		marginTop: myCycle > 0 ? '2' : 'none',
+		paddingLeft: '6',
+		odComponent: 'ordered-list',
+		start,
+		style: { listStyleType: cycles[myCycle] },
+	});
+
 	return (
-		<Box
-			as="ol"
-			paddingLeft="6"
-			marginTop={myCycle > 0 ? '2' : 'none'}
-			className={clsx(
-				styles.root.default,
-				textStyles({ colour: 'dark' }),
-				{ [styles.root.firstOccurrence]: cycle === -1 },
-				className,
-			)}
-			style={{ listStyleType: cycles[myCycle] }}
-			start={start}
-			odComponent="ordered-list"
-		>
+		<Component {...componentProps}>
 			<OrderedListContext.Provider value={myCycle}>
-				<Stack space="2">{children}</Stack>
+				{children}
 			</OrderedListContext.Provider>
-		</Box>
+		</Component>
 	);
 };
 
 const Item: FunctionComponent<ItemProps> = ({ className, children }) => (
-	<Box as="li" className={className}>
-		{children}
-	</Box>
+	<li className={className}>{children}</li>
 );
 
 OrderedList.Item = Item;

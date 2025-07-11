@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import React, {
 	type ChangeEventHandler,
 	forwardRef,
@@ -115,12 +114,13 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 			[incomingOnChange, type, mode],
 		);
 
+		const [width, setWidth] = useState(8);
 		const baseStyle = textStyles({
 			as,
 			colour,
 			size,
 		});
-		const [width, setWidth] = useState(10);
+
 		useEffect(() => {
 			if (textRef.current) {
 				setWidth(
@@ -128,6 +128,7 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 				);
 			}
 		}, [inputValue]);
+
 		return (
 			<Box
 				ref={ref}
@@ -162,12 +163,15 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 						type={type === 'number' ? 'text' : type}
 						name="editable-text"
 						value={inputValue}
-						className={clsx(
+						className={[
 							baseStyle,
+							styles.input,
 							inputStyles.input.itself.root,
-						)}
+						]}
 						onChange={onChange}
-						style={{ width }}
+						style={
+							{ '--width': `${width}px` } as React.CSSProperties
+						}
 					/>
 				)}
 				<Text
@@ -177,9 +181,13 @@ export const EditableText = forwardRef<HTMLDivElement, EditableTextProps>(
 					color={color}
 					colour={colour}
 					size={size}
-					className={clsx(baseStyle, styles.text, {
-						[styles.textHidden]: mode === 'INPUT',
-					})}
+					className={[
+						baseStyle,
+						styles.text,
+						{
+							[styles.textHidden]: mode === 'INPUT',
+						},
+					]}
 				>
 					{mode === 'INPUT'
 						? inputRef.current?.value || value

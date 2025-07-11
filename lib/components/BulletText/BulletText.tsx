@@ -1,28 +1,31 @@
-import React, { ComponentProps, isValidElement, type ReactNode } from 'react';
+import React, { isValidElement, type ReactNode } from 'react';
 
-import { Box, type BoxProps } from '../Box/Box';
-import { Inline } from '../Inline/Inline';
+import { Box } from '../Box/Box';
+import { type FlexInlineComponentProps } from '../Flex/FlexInline';
+import { inline } from '../Flex/flex';
 import { Text } from '../Text/Text';
 
 import * as styles from './BulletText.css';
 
-export interface BulletTextProps extends BoxProps {
+export interface BulletTextProps
+	extends Pick<FlexInlineComponentProps, 'as' | 'children'> {
 	bullet?: ReactNode;
 	variant?: 'primary' | 'secondary';
 }
 
 export const BulletText = ({
-	as,
+	as: Component = 'div',
 	variant = 'primary',
 	children,
 	bullet: Bullet = '•',
 }: BulletTextProps) => (
-	<Inline
-		as={as satisfies ComponentProps<typeof Inline>['as']}
-		noWrap
-		space="3"
-		alignX="start"
-		alignY="center"
+	<Component
+		className={inline({
+			align: 'start',
+			gap: '3',
+			justify: 'center',
+			noWrap: true,
+		})}
 	>
 		{isValidElement(Bullet) ? (
 			<Box position="relative" flexShrink={0}>
@@ -61,5 +64,5 @@ export const BulletText = ({
 				{children}
 			</Text>
 		</Box>
-	</Inline>
+	</Component>
 );

@@ -9,7 +9,7 @@ import {
 } from 'react-aria-components';
 import { type SelectionMode } from 'react-stately';
 
-import type { TestId } from '../../types';
+import type { TestIdProp } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Icon, type IconEl } from '../Icon';
 
@@ -37,7 +37,7 @@ export interface OptionItem {
 }
 export interface OptionGridProps<T>
 	extends Omit<ListBoxProps<T>, 'items'>,
-		TestId {
+		TestIdProp {
 	/**
 	 * Mandatory descriptive label that indicates the purpose of the group of options, used for assistive technologies
 	 */
