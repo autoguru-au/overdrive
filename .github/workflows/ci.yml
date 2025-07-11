@@ -128,6 +128,7 @@ jobs:
               with:
                   node-version: ${{ needs.setup.outputs.node_version }}
                   cache: 'yarn'
+                  registry-url: 'https://registry.npmjs.org'
 
             - name: Yarn install
               run: yarn --immutable
