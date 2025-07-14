@@ -5,8 +5,6 @@ import { toPrettyBigNumber } from '../../utils/number';
 import { useBox, type UseBoxProps } from '../Box/useBox/useBox';
 import { type TextProps } from '../Text/Text';
 
-import * as styles from './NumberBubble.css';
-
 export interface NumberBubbleProps
 	extends Pick<UseBoxProps, 'backgroundColor' | 'backgroundColour'> {
 	value: number;
@@ -51,7 +49,6 @@ export const NumberBubble = ({
 			<span
 				className={textStyles({
 					size: '2',
-					className: styles.numberStyle,
 					color: textColor,
 					colour: textColour,
 					strong: true,
