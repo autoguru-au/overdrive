@@ -1,20 +1,40 @@
 name: Prerelease
 
 on:
-    workflow_call:
-        inputs:
-            node_version:
-                required: true
-                type: string
-        secrets:
-            NPM_TOKEN:
-                required: true
-            GH_TOKEN:
-                required: true
+    workflow_dispatch:
 
 jobs:
+    setup:
+        name: Setup environment
+        runs-on: ubuntu-latest
+        outputs:
+            node_version: ${{ steps.version.outputs.node_version }}
+            has_prerelease: ${{ steps.exists.outputs.pre_exists }}
+        steps:
+            - uses: actions/checkout@main
+              with:
+                  fetch-depth: 0
+
+            - name: Get Node version
+              id: version
+              run: |
+                  echo "node_version=$(jq -r '.volta.node' package.json)" >> $GITHUB_OUTPUT
+
+            - name: Check for changeset pre.json
+              id: exists
+              run: |
+                  if [ -f ".changeset/pre.json" ]; then
+                    echo "Prerelease found"
+                    echo "pre_exists=true" >> $GITHUB_OUTPUT
+                  else
+                    echo "No prerelease found"
+                    echo "pre_exists=false" >> $GITHUB_OUTPUT
+                  fi
+
     prerelease:
         name: Prerelease publish
+        needs: setup
+        if: needs.setup.outputs.has_prerelease == 'true'
         runs-on: ubuntu-latest
         env:
             TZ: Australia/Brisbane
@@ -24,10 +44,10 @@ jobs:
               with:
                   fetch-depth: 0
 
-            - name: Setup Node ${{ inputs.node_version }}
+            - name: Setup Node
               uses: actions/setup-node@main
               with:
-                  node-version: ${{ inputs.node_version }}
+                  node-version: ${{ needs.setup.outputs.node_version }}
                   cache: 'yarn'
                   registry-url: 'https://registry.npmjs.org'
 

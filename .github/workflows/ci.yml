@@ -73,19 +73,6 @@ jobs:
               with:
                   token: ${{ secrets.CODECOV }}
 
-    call_prerelease:
-        name: Check prerelease
-        needs: [setup, test]
-        if:
-            github.ref_name != 'main' && needs.setup.outputs.has_prerelease ==
-            'true'
-        uses: ./.github/workflows/prerelease.yml
-        with:
-            node_version: ${{ needs.setup.outputs.node_version }}
-        secrets:
-            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
     visual_test:
         name: Visual changes
         needs: setup
