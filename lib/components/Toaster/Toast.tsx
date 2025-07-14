@@ -133,64 +133,32 @@ export const useToast = (): ToastFn => {
 
 	return useMemo(() => {
 		const fn: ToastFn = (message, duration = DEFAULT_DURATION) =>
-			void addToast({
+			addToast({
 				message,
 				duration,
 				intent: 'information',
 			});
 
-		// @ts-ignore
-		fn.primary = (message, duration = DEFAULT_DURATION) =>
-			void addToast({
-				message,
-				duration,
-				// @ts-ignore
-				intent: 'primary',
-			});
-		// @ts-ignore
-		fn.secondary = (message, duration = DEFAULT_DURATION) =>
-			void addToast({
-				message,
-				duration,
-				// @ts-ignore
-				intent: 'secondary',
-			});
-		// @ts-ignore
-		fn.shine = (message, duration = DEFAULT_DURATION) =>
-			void addToast({
-				message,
-				duration,
-				// @ts-ignore
-				intent: 'shine',
-			});
 		fn.success = (message, duration = DEFAULT_DURATION) =>
-			void addToast({
+			addToast({
 				message,
 				duration,
 				intent: 'success',
 			});
-		// @ts-ignore
-		fn.neutral = (message, duration = DEFAULT_DURATION) =>
-			void addToast({
-				message,
-				duration,
-				// @ts-ignore
-				intent: 'neutral',
-			});
 		fn.danger = (message, duration = DEFAULT_DURATION) =>
-			void addToast({
+			addToast({
 				message,
 				duration,
 				intent: 'danger',
 			});
 		fn.information = (message, duration = DEFAULT_DURATION) =>
-			void addToast({
+			addToast({
 				message,
 				duration,
 				intent: 'information',
 			});
 		fn.warning = (message, duration = DEFAULT_DURATION) =>
-			void addToast({
+			addToast({
 				message,
 				duration,
 				intent: 'warning',

@@ -115,7 +115,7 @@ export const Positioner: FunctionComponent<PositionerProps> = ({
 	}, [handleOpen]);
 
 	// Close when component un-mounts;
-	useEffect(() => () => void handleClose(), []);
+	useEffect(() => () => handleClose(), []);
 
 	useEffect(() => {
 		if (!isOpen) {
