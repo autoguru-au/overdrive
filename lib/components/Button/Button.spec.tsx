@@ -151,6 +151,32 @@ describe('<Button />', () => {
 		expect(button).not.toHaveFocus();
 	});
 
+	// Test ref forwarding
+	it('forwards ref to the underlying button element', () => {
+		const buttonRef = React.createRef<HTMLButtonElement>();
+		render(<Button ref={buttonRef}>Ref Button</Button>);
+
+		const button = screen.getByRole('button', { name: 'Ref Button' });
+		expect(buttonRef.current).toBe(button);
+		expect(buttonRef.current).toBeInstanceOf(HTMLButtonElement);
+	});
+
+	it('forwards ref when using custom "as" element', () => {
+		const linkRef = React.createRef<HTMLAnchorElement>();
+		render(
+			<Button
+				ref={linkRef as React.Ref<HTMLButtonElement>}
+				as={<a href="/test" />}
+			>
+				Link Button
+			</Button>,
+		);
+
+		const link = screen.getByRole('link', { name: 'Link Button' });
+		expect(linkRef.current).toBe(link);
+		expect(linkRef.current).toBeInstanceOf(HTMLAnchorElement);
+	});
+
 	// Test additional props and edge cases
 	it('handles different button types', () => {
 		render(<Button type="submit">Submit Button</Button>);

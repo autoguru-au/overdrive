@@ -12,6 +12,7 @@ import React, {
 	type ElementType,
 	type MouseEventHandler,
 	type PropsWithChildren,
+	type Ref,
 	type ReactElement,
 } from 'react';
 
@@ -24,6 +25,10 @@ import * as styles from './Button.css';
 import type { StyledButtonProps } from './Button.css';
 
 type ButtonPrimitive = ComponentProps<'button'>;
+
+type ComponentPropsWithRef<T = Element> = React.HTMLAttributes<T> & {
+	ref: Ref<T>;
+};
 
 const DOUBLE_CLICK_DETECTION_PERIOD = 700;
 const LOCALE_TEXT_DEFAULT = {
@@ -193,8 +198,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			onFocus,
 			onMouseEnter,
 			onMouseLeave,
-
-			// ref,
 		});
 
 		const buttonContents = useMemo(() => {
@@ -231,7 +234,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 		return React.isValidElement(as)
 			? cloneElement(
 					as,
-					{ ...componentProps, ref } as Record<string, unknown>,
+					{ ...componentProps, ref } as ComponentPropsWithRef,
 					child,
 				)
 			: createElement(Component, { ...componentProps, ref }, child);
