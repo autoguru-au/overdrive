@@ -4,7 +4,7 @@ import flattenChildren from 'react-keyed-flatten-children';
 import type { Sprinkles } from '../../styles/sprinkles.css';
 import { Box, type BoxProps } from '../Box/Box';
 
-import * as styles from './Divider.css';
+import * as styles from './Stack.css';
 
 export interface StackProps
 	extends Pick<BoxProps, 'as' | 'width' | 'alignItems'> {
@@ -75,7 +75,7 @@ export const Stack = ({
 	return (
 		<Box
 			as={as}
-			className={className}
+			className={{ [styles.stackWithDividers]: dividers, className }}
 			display="flex"
 			flexDirection="column"
 			gap={space}
