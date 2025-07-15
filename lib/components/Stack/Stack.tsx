@@ -5,7 +5,7 @@ import type { Sprinkles } from '../../styles/sprinkles.css';
 import { calcChildElement } from '../../utils/elements';
 import { useBox, type UseBoxProps } from '../Box/useBox/useBox';
 
-import * as styles from './Divider.css';
+import * as styles from './Stack.css';
 
 export interface StackProps
 	extends Pick<UseBoxProps, 'as' | 'width' | 'alignItems'> {
@@ -60,7 +60,7 @@ export const Stack = ({
 }: StackProps) => {
 	const { Component, componentProps } = useBox({
 		as,
-		className,
+		className: { [styles.stackWithDividers]: dividers, className },
 		odComponent: 'stack',
 
 		display: 'flex',
