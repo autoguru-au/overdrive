@@ -1,1 +1,0 @@
-import{e}from"./iframe-euna8s5s.js";const o=e.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24",fill:"currentColor",focusable:"false"},e.createElement("path",{d:"M19 12.998H5V11l14-.002v2z"}));export{o as I};
