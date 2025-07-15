@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 4.44.6
+
+### Patch Changes
+
+- ae1c150: **Stack:** spacing with dividers calculated to match original
+  implementation
+
 ## 4.44.5
 
 ### Patch Changes
