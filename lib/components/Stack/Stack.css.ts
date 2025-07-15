@@ -11,7 +11,7 @@ export const hr = style({
 			boxShadow: `inset 0 0 0 1px ${vars.colours.background.neutral}`,
 			height: '1px',
 			margin: 0,
-			transform: `translateY(calc(2*${gapVar} / -2))`,
+			transform: `translateY(calc(${gapVar} * -1))`,
 			width: '100%',
 		},
 	},
@@ -21,7 +21,7 @@ export const stackWithDividers = style({
 	'@layer': {
 		[cssLayerComponent]: {
 			// double the flex gap to match spacing of original implementation
-			gap: `calc(2*${gapVar})`,
+			gap: `calc(2 * ${gapVar})`,
 		},
 	},
 });
