@@ -5,8 +5,8 @@ export const root = style({
 	outline: 'none',
 
 	':after': {
-		display: 'table',
 		clear: 'both',
 		content: '""',
+		display: 'table',
 	},
 });

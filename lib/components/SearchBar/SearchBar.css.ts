@@ -97,7 +97,7 @@ export const styledClearButton = recipe({
 });
 
 export const fieldWrapper = style({
+	alignItems: 'center',
 	display: 'flex',
 	flexGrow: 1,
-	alignItems: 'center',
 });

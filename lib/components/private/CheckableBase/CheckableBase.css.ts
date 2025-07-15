@@ -17,19 +17,19 @@ export const label = styleVariants({
 });
 
 export const nativeInput = style({
-	zIndex: 2,
-	top: 0,
-	left: 0,
 	cursor: 'inherit',
+	left: 0,
 	opacity: 0,
 	outline: 'none',
+	top: 0,
+	zIndex: 2,
 });
 
 export const checkable = style({
-	width: `calc(${vars.space['6']} + (${vars.space[3]} * 2))`,
 	height: `calc(${vars.space['6']} + (${vars.space[3]} * 2))`,
-	marginTop: `calc(-1*${vars.space['3']})`,
 	marginBottom: `calc(-1*${vars.space['3']})`,
+	marginTop: `calc(-1*${vars.space['3']})`,
+	width: `calc(${vars.space['6']} + (${vars.space[3]} * 2))`,
 });
 
 export const checkableIndicator = style({

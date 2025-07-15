@@ -2,7 +2,7 @@ import React, { createContext } from 'react';
 import { useCheckboxGroup, type AriaCheckboxGroupProps } from 'react-aria';
 import { type CheckboxGroupState, useCheckboxGroupState } from 'react-stately';
 
-import type { TestId } from '../../types';
+import type { TestIdProp } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 
 import {
@@ -20,7 +20,7 @@ type ElementAttributes = Pick<
 export interface OptionListProps
 	extends AriaCheckboxGroupProps,
 		ElementAttributes,
-		TestId {
+		TestIdProp {
 	/**
 	 * Label for the CheckboxButtons group needs to be provided at the component level for accessibility
 	 */

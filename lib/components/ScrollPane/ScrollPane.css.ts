@@ -11,13 +11,13 @@ export const root = style({
 		background: 'transparent',
 	},
 	'::-webkit-scrollbar-thumb': {
-		overflow: 'hidden',
 		backgroundColor: vars.colours.gamut.gray300,
+		overflow: 'hidden',
 	},
 	'::-webkit-scrollbar-track': {
-		position: 'absolute',
 		backgroundColor: vars.colours.gamut.gray100,
 		border: `1px solid ${vars.colours.gamut.gray200}`,
+		position: 'absolute',
 	},
 	'::-webkit-scrollbar-button': {
 		display: 'none',

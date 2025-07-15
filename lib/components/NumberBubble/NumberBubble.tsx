@@ -1,35 +1,33 @@
-import * as React from 'react';
-import { ComponentProps, FunctionComponent, useMemo } from 'react';
+import React, { useMemo } from 'react';
 
 import { textStyles } from '../../styles/typography';
 import { toPrettyBigNumber } from '../../utils/number';
-import { Box, type BoxProps } from '../Box/Box';
-import { useBox } from '../Box/useBox/useBox';
-import { Text } from '../Text/Text';
+import { useBox, type UseBoxProps } from '../Box/useBox/useBox';
+import { type TextProps } from '../Text/Text';
 
 export interface NumberBubbleProps
-	extends Omit<
-		ComponentProps<typeof Box>,
-		'borderRadius' | 'position' | 'padding'
-	> {
+	extends Pick<UseBoxProps, 'backgroundColor' | 'backgroundColour'> {
 	value: number;
 	rawNumbers?: boolean;
-	textColour?: ComponentProps<typeof Text>['colour'];
+	textColor?: TextProps['color'];
+	textColour?: TextProps['colour'];
 }
 
 type BubbleSize = 'SMALL' | 'MEDIUM' | 'LARGE';
-const sizeMap: Record<BubbleSize, BoxProps['size']> = {
+const sizeMap: Record<BubbleSize, UseBoxProps['size']> = {
 	SMALL: '4',
 	MEDIUM: '6',
 	LARGE: '7',
 };
 
-export const NumberBubble: FunctionComponent<NumberBubbleProps> = ({
-	value,
-	textColour = 'white',
+export const NumberBubble = ({
+	backgroundColor,
+	backgroundColour = backgroundColor ? undefined : 'gray900',
 	rawNumbers = false,
-	...boxProps
-}) => {
+	textColor,
+	textColour = textColor ? undefined : 'white',
+	value,
+}: NumberBubbleProps) => {
 	const size = useMemo<BubbleSize>(() => {
 		if (value < 10) return 'SMALL';
 		if (value >= 10 && value < 100) return 'MEDIUM';
@@ -39,19 +37,19 @@ export const NumberBubble: FunctionComponent<NumberBubbleProps> = ({
 		odComponent: 'number-bubble',
 
 		alignItems: 'center',
-		backgroundColour: 'gray900',
+		backgroundColor,
+		backgroundColour,
 		borderRadius: 'full',
 		display: 'inline-flex',
 		justifyContent: 'center',
 		size: sizeMap[size],
-
-		...boxProps,
 	});
 	return (
 		<Component {...componentProps}>
 			<span
 				className={textStyles({
 					size: '2',
+					color: textColor,
 					colour: textColour,
 					strong: true,
 				})}

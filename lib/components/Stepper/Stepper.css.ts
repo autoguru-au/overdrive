@@ -9,9 +9,9 @@ export const root = style({});
 
 export const handle = styleVariants({
 	default: {
-		width: vars.space[6],
 		height: vars.space[6],
 		transition: `background-color 0.1s ${vars.animation.easing.standard}`,
+		width: vars.space[6],
 		selectors: {
 			[`${root}:not(${disabled}) &:hover`]: {
 				backgroundColor: vars.colours.intent.primary.background.strong,
