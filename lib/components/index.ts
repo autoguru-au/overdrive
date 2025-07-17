@@ -15,6 +15,7 @@ export * from './DividerLine';
 export * from './DropDown';
 export * from './EditableText';
 export * from './FillHeightBox';
+export * from './Flex';
 export * from './Flyout';
 export * from './Heading';
 export * from './HorizontalAutoScroller';
