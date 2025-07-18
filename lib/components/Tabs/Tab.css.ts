@@ -1,9 +1,8 @@
 import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
+import { focusOutline } from '../../styles/focusOutline.css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
-
-import { focusOutline } from './../../styles/focusOutline.css';
 
 const lineBottomHeight = '1px';
 const size = '20px';
@@ -44,6 +43,15 @@ export const styledTab = recipe({
 					},
 				},
 			},
+			minimal: {
+				borderBottom: `2px solid transparent`,
+				padding: '6px 0',
+				selectors: {
+					'&+&': {
+						marginLeft: vars.space['6'],
+					},
+				},
+			},
 		},
 		active: {
 			true: {},
@@ -69,6 +77,16 @@ export const styledTab = recipe({
 			style: {
 				backgroundColor: vars.colours.foreground.body,
 				color: vars.colours.background.body,
+			},
+		},
+		{
+			variants: {
+				appearance: 'minimal',
+				active: true,
+			},
+			style: {
+				color: vars.color.content.normal,
+				borderBottomColor: vars.color.content.normal,
 			},
 		},
 	],
@@ -107,6 +125,7 @@ export const indication = recipe({
 						},
 				},
 			},
+			minimal: {},
 		},
 		active: {
 			true: {},
@@ -137,3 +156,6 @@ export const indication = recipe({
 		appearance: 'underlined',
 	},
 });
+
+export type TabVariants = NonNullable<Parameters<typeof styledTab>[0]>;
+export type TabAppearance = NonNullable<TabVariants['appearance']>;
