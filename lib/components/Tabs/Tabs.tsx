@@ -4,11 +4,12 @@ import { createContext, ReactNode, useMemo } from 'react';
 
 import { useId, useUncontrolledState } from '../../utils';
 
-type TabsAppearance = 'underlined' | 'pill';
+import type { TabAppearance } from './Tab.css';
+
 interface TabsContextValue {
 	id?: string;
 	activeIndex: number;
-	appearance: TabsAppearance;
+	appearance: TabAppearance;
 	onChange?: (index: number) => void;
 }
 
@@ -17,7 +18,7 @@ export const TabsContext = createContext<TabsContextValue | null>(null);
 export interface TabsProps {
 	id?: string | null;
 	active: number;
-	appearance?: 'underlined' | 'pill';
+	appearance?: TabAppearance;
 	children?: ReactNode;
 	onChange?: (index: number) => void;
 }

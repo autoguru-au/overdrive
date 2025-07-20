@@ -11,6 +11,7 @@ export const styledTabList = recipe({
 				boxShadow: `inset 0 -1px 0 0 ${vars.border.colours.gray}`,
 			},
 			pill: {},
+			minimal: {},
 		},
 		scroll: {
 			true: {

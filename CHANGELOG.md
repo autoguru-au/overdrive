@@ -1,5 +1,13 @@
 # @autoguru/overdrive
 
+## 4.44.7
+
+### Patch Changes
+
+- f950fa1: The new Flex components and associated utils are now correctly
+  exported
+- da11b7f: Tabs: `minimal` appearance setting
+
 ## 4.44.6
 
 ### Patch Changes

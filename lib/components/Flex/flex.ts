@@ -51,7 +51,7 @@ export const inlinePropMapping = ({
 	reverse,
 	spaceBetween,
 	start,
-}: FlexInlineProps) =>
+}: FlexInlineProps = {}) =>
 	({
 		alignItems: justify,
 		display: 'flex',
@@ -75,16 +75,16 @@ export const inlinePropMapping = ({
  *
  * @example
  * // Basic row with defaults
- * const simple = row();
+ * const simple = inline();
  *
  * // Centered row with responsive gap
- * const centered = row({
+ * const centered = inline({
  *   align: 'center',
  *   justify: 'center',
  *   gap: { mobile: '2', tablet: '4', desktop: '6' }
  * });
  */
-export const inline = (props: FlexInlineProps) =>
+export const inline = (props: FlexInlineProps = {}) =>
 	sprinkles(inlinePropMapping(props));
 
 // ---
@@ -118,7 +118,7 @@ export const stackPropMapping = ({
 	reverse,
 	start,
 	width,
-}: FlexStackProps) =>
+}: FlexStackProps = {}) =>
 	({
 		alignItems:
 			align ??
@@ -154,5 +154,5 @@ export const stackPropMapping = ({
  * 	 align: 'stretch',
  * });
  */
-export const stack = (props: FlexStackProps) =>
+export const stack = (props: FlexStackProps = {}) =>
 	sprinkles(stackPropMapping(props));
