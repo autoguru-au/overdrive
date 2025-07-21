@@ -131,11 +131,6 @@ const baseProperties = defineProperties({
 		backgroundColour: mappedBackgroundColours,
 		opacity: [0, '1', '0'],
 		// Typography
-		lineHeight: mapValues(
-			tokens.typography.size,
-			(size) => size.lineHeight,
-		),
-		fontSize: mapValues(tokens.typography.size, (size) => size.fontSize),
 		fontWeight: tokens.typography.fontWeight,
 		textTransform: ['capitalize', 'lowercase', 'uppercase'],
 		textWrap: ['balance', 'pretty', 'stable', 'nowrap'],
@@ -152,7 +147,6 @@ const baseProperties = defineProperties({
 		},
 	},
 	shorthands: {
-		text: ['fontSize', 'lineHeight'],
 		bg: ['backgroundColor'],
 		fg: ['color'],
 		borderColor: [
@@ -216,6 +210,12 @@ const responsiveProperties = defineProperties({
 		overflowX: ['auto', 'scroll', 'hidden'],
 		overflowY: ['auto', 'scroll', 'hidden'],
 		position: ['static', 'relative', 'absolute', 'fixed', 'sticky'],
+		// Typography
+		lineHeight: mapValues(
+			tokens.typography.size,
+			(size) => size.lineHeight,
+		),
+		fontSize: mapValues(tokens.typography.size, (size) => size.fontSize),
 		textAlign: {
 			left: 'left',
 			center: 'center',
@@ -301,6 +301,7 @@ const responsiveProperties = defineProperties({
 		borderWidthTop: ['borderTopWidth'],
 		placeItems: ['justifyContent', 'alignItems'],
 		size: ['width', 'height'],
+		text: ['fontSize', 'lineHeight'],
 		padding: ['paddingBottom', 'paddingLeft', 'paddingRight', 'paddingTop'],
 		p: ['paddingBottom', 'paddingLeft', 'paddingRight', 'paddingTop'],
 		paddingX: ['paddingLeft', 'paddingRight'],
