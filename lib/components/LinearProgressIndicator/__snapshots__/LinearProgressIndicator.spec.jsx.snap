@@ -6,14 +6,14 @@ exports[`<LinearProgressIndicator /> > should match snapshot 1`] = `
   data-od-component="provider"
 >
   <div
-    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_overflow_hidden_mobile__onxwju7z sprinkles_position_relative_mobile__onxwju8z sprinkles_width_full_mobile__onxwjufn sprinkles_backgroundColour_gray200__onxwju47 LinearProgressIndicator_root__1gh10pc0"
+    class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_overflow_hidden_mobile__onxwju7h sprinkles_position_relative_mobile__onxwju8h sprinkles_width_full_mobile__onxwjuh5 sprinkles_backgroundColour_gray200__onxwju47 LinearProgressIndicator_root__1gh10pc0"
     data-od-component="linear-progress-indicator"
   >
     <div
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_height_full_mobile__onxwjue3 sprinkles_position_absolute_mobile__onxwju93 sprinkles_width_full_mobile__onxwjufn LinearProgressIndicator_linearProgressBar__1gh10pc2"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_height_full_mobile__onxwjufl sprinkles_position_absolute_mobile__onxwju8l sprinkles_width_full_mobile__onxwjuh5 LinearProgressIndicator_linearProgressBar__1gh10pc2"
     >
       <span
-        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_height_full_mobile__onxwjue3 sprinkles_position_absolute_mobile__onxwju93 sprinkles_width_full_mobile__onxwjufn sprinkles_backgroundColour_green300__onxwju4h LinearProgressIndicator_linearProgressBarInner__1gh10pc4"
+        class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_span__18vhvlim  sprinkles_height_full_mobile__onxwjufl sprinkles_position_absolute_mobile__onxwju8l sprinkles_width_full_mobile__onxwjuh5 sprinkles_backgroundColour_green300__onxwju4h LinearProgressIndicator_linearProgressBarInner__1gh10pc4"
       />
     </div>
   </div>
