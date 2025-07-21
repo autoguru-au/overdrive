@@ -3,6 +3,7 @@ import { style } from '@vanilla-extract/css';
 
 import { breakpoints, type Breakpoints } from '../themes/makeTheme';
 
+import { cssLayerMap, type CSSLayers } from './layers.css';
 import { responsiveConditions } from './sprinkles.css';
 
 /**
@@ -14,24 +15,34 @@ export type ResponsiveStyleMap = Partial<Record<Breakpoints, StyleRule>>;
  * Creates a single responsive style class that applies different styles at different breakpoints
  *
  * @param styles - Object defining styles for each breakpoint
+ * @param layer - Optional CSS layer name to apply the styles within
  * @returns A single vanilla-extract style class with responsive behavior
  *
  * @example
  * ```typescript
- * const styles = createResponsiveClass({
+ * const styles = responsiveStyles({
  *   mobile: { padding: '16px', fontSize: '14px' },
  *   tablet: { padding: '24px', fontSize: '16px' },
  *   desktop: { padding: '32px', fontSize: '18px' }
  * });
  *
+ * // With CSS layer
+ * const layeredStyles = responsiveStyles({
+ *   mobile: { padding: '16px', fontSize: '14px' },
+ *   tablet: { padding: '24px', fontSize: '16px' },
+ *   desktop: { padding: '32px', fontSize: '18px' }
+ * }, 'component');
+ *
  * // Usage in a component
  * <div className={styles}>Responsive content</div>
  * ```
  */
-export const createResponsiveClass = (styles: ResponsiveStyleMap): string => {
+export const responsiveStyles = (
+	styles: ResponsiveStyleMap,
+	layer?: CSSLayers,
+) => {
 	const responsiveStyle: CSSProperties = {};
 
-	// Build the responsive style object
 	for (const [breakpoint, styleRule] of Object.entries(styles)) {
 		if (breakpoint in breakpoints) {
 			const breakpointKey = breakpoint as Breakpoints;
@@ -54,5 +65,14 @@ export const createResponsiveClass = (styles: ResponsiveStyleMap): string => {
 			}
 		}
 	}
+
+	if (layer) {
+		return style({
+			'@layer': {
+				[cssLayerMap[layer]]: responsiveStyle,
+			},
+		});
+	}
+
 	return style(responsiveStyle);
 };
