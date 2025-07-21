@@ -1,5 +1,12 @@
 # @autoguru/overdrive
 
+## 4.44.8
+
+### Patch Changes
+
+- 87eeac6: Responsive style props for text size are enabled in Text and Heading
+  components.
+
 ## 4.44.7
 
 ### Patch Changes
