@@ -15,7 +15,7 @@ exports[`<Positioner /> > should match snapshot 1`] = `
   >
     <div
       aria-hidden="false"
-      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_position_fixed_mobile__onxwju97 Positioner_root__1d54b7d0"
+      class="elementReset_resetVariants__18vhvlid elementReset_resetVariants_as_div__18vhvlie elementReset_block__18vhvli4 sprinkles_position_fixed_mobile__onxwju8p Positioner_root__1d54b7d0"
       data-od-component="positioner"
     >
       Some body
