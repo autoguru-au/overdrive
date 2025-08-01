@@ -11,6 +11,22 @@ export const breakpoints: BreakPoints = {
 	largeDesktop: '1920px', // 1080p width (1920 - 25%)
 };
 
+export type Breakpoints = keyof typeof breakpoints;
+
+/**
+ * Type guard to check if a value is a valid breakpoint key
+ */
+export const isBreakpoint = (value: string): value is Breakpoints => {
+	return value in breakpoints;
+};
+
+/**
+ * Get all available breakpoint keys
+ */
+export const getBreakpoint = (): readonly Breakpoints[] => {
+	return Object.keys(breakpoints) as Breakpoints[];
+};
+
 export const mediaQuery = mapValues(
 	breakpoints,
 	(breakpoint) => `screen and (min-width: ${breakpoint})`,

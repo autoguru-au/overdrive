@@ -113,6 +113,59 @@ const meta: Meta<typeof OptionGrid> = {
 export default meta;
 type Story = StoryObj<typeof OptionGrid>;
 
+export const Simple: Story = {
+	args: {
+		label: 'Select options',
+		items: alphaOptions,
+		indicator: 'checkbox',
+	},
+	play: async ({ args, canvasElement, step }) => {
+		const contentOptions = args.items;
+		const canvas = within(canvasElement);
+
+		// add a small pause, because react-aria init :(
+		await new Promise((resolve) => setTimeout(resolve, 25));
+		const listbox = canvas.getAllByRole('listbox')[0];
+		const options = getAllByRole(listbox, 'option');
+
+		await step('Group renders label and attributes', async () => {
+			await expect(listbox).toHaveAccessibleName(`${args.label}`);
+			await expect(listbox).toHaveAttribute('data-testid', args.testId);
+		});
+
+		await step('Options render label and description', async () => {
+			for (const [idx, option] of options.entries()) {
+				const content = contentOptions[idx];
+				await expect(option).toHaveTextContent(content.label);
+				await expect(option).toHaveTextContent(
+					content.description ?? '',
+				);
+				await expect(option).toHaveAttribute('data-key', content.name);
+			}
+		});
+
+		await step('Selected states and onChange event', async () => {
+			for (const idx of [0, 2]) {
+				const option = options[idx];
+				await userEvent.click(option);
+				await expect(args.onSelectionChange).toHaveBeenCalled();
+				await expect(option).toHaveAttribute('aria-selected', 'true');
+			}
+
+			await expect(options[1]).toHaveAttribute('aria-selected', 'false');
+		});
+
+		await step('Keyboard interaction', async () => {
+			await userEvent.keyboard(
+				'[ArrowLeft][ArrowLeft][Enter][ArrowRight][ArrowRight][Enter]',
+			);
+			await expect(args.onSelectionChange).toHaveBeenCalled();
+			await expect(options[0]).toHaveAttribute('aria-selected', 'false');
+			await expect(options[2]).toHaveAttribute('aria-selected', 'false');
+		});
+	},
+};
+
 /** Uncontrolled with custom icons */
 export const UncontrolledWithIcons: Story = {
 	args: {
@@ -163,61 +216,5 @@ export const SingleSelectionControlled: Story = {
 				onSelectionChange={handleChange}
 			/>
 		);
-	},
-};
-
-/**
- * Indicator is set to `none` and each option has a description.
- */
-export const DescriptionNoIndicator: Story = {
-	args: {
-		label: 'Select options',
-		items: alphaOptions,
-		indicator: 'none',
-	},
-	play: async ({ args, canvasElement, step }) => {
-		const contentOptions = args.items;
-		const canvas = within(canvasElement);
-
-		// add a small pause, because react-aria init :(
-		await new Promise((resolve) => setTimeout(resolve, 25));
-		const listbox = canvas.getAllByRole('listbox')[0];
-		const options = getAllByRole(listbox, 'option');
-
-		await step('Group renders label and attributes', async () => {
-			await expect(listbox).toHaveAccessibleName(`${args.label}`);
-			await expect(listbox).toHaveAttribute('data-testid', args.testId);
-		});
-
-		await step('Options render label and description', async () => {
-			for (const [idx, option] of options.entries()) {
-				const content = contentOptions[idx];
-				await expect(option).toHaveTextContent(content.label);
-				await expect(option).toHaveTextContent(
-					content.description ?? '',
-				);
-				await expect(option).toHaveAttribute('data-key', content.name);
-			}
-		});
-
-		await step('Selected states and onChange event', async () => {
-			for (const idx of [0, 2]) {
-				const option = options[idx];
-				await userEvent.click(option);
-				await expect(args.onSelectionChange).toHaveBeenCalled();
-				await expect(option).toHaveAttribute('aria-selected', 'true');
-			}
-
-			await expect(options[1]).toHaveAttribute('aria-selected', 'false');
-		});
-
-		await step('Keyboard interaction', async () => {
-			await userEvent.keyboard(
-				'[ArrowLeft][ArrowLeft][Enter][ArrowRight][ArrowRight][Enter]',
-			);
-			await expect(args.onSelectionChange).toHaveBeenCalled();
-			await expect(options[0]).toHaveAttribute('aria-selected', 'false');
-			await expect(options[2]).toHaveAttribute('aria-selected', 'false');
-		});
 	},
 };
