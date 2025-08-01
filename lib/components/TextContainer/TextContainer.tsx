@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { FunctionComponent, ReactElement } from 'react';
+import clsx from 'clsx';
+import React, { FunctionComponent, ReactElement } from 'react';
 
 import { Box } from '../Box/Box';
-import { Stack } from '../Stack/Stack';
+import { stack } from '../Flex/flex';
 
 export interface TextContainerProps {
 	heading?: ReactElement;
@@ -17,7 +17,7 @@ export const TextContainer: FunctionComponent<TextContainerProps> = ({
 	children,
 	action,
 }) => (
-	<Stack as="article" space="2" className={className}>
+	<article className={clsx(stack({ gap: '2' }), className)}>
 		<Box
 			alignItems="center"
 			display="flex"
@@ -28,5 +28,5 @@ export const TextContainer: FunctionComponent<TextContainerProps> = ({
 			{action && <Box>{action}</Box>}
 		</Box>
 		{children}
-	</Stack>
+	</article>
 );

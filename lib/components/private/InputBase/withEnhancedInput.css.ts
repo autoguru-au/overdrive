@@ -5,18 +5,18 @@ import { overdriveTokens as vars } from '../../../themes/theme.css';
 export const input = {
 	itself: styleVariants({
 		root: {
-			zIndex: 1,
 			alignSelf: 'flex-end',
 			outline: 'none',
+			zIndex: 1,
 			selectors: {
 				'&[disabled]': {
 					color: vars.colours.background.neutral,
 					cursor: 'not-allowed',
 				},
 				'&::placeholder': {
+					color: vars.typography.colour.muted,
 					fontSize: vars.typography.size['4'].fontSize,
 					lineHeight: vars.typography.size['4'].lineHeight,
-					color: vars.typography.colour.muted,
 					opacity: 1,
 				},
 			},
@@ -29,8 +29,8 @@ const textAreaHeight = '107px';
 export const types = styleVariants({
 	textarea: {
 		height: textAreaHeight,
-		minHeight: textAreaHeight,
 		lineHeight: 1.2,
+		minHeight: textAreaHeight,
 		resize: 'vertical',
 	},
 });
@@ -65,8 +65,8 @@ export const inputItselfSize = {
 			any: {
 				fontSize: vars.typography.size['3'].fontSize,
 				lineHeight: vars.typography.size['3'].lineHeight,
-				padding: `${vars.space['2']}`,
 				minHeight: `calc(${vars.typography.size['3'].lineHeight} + (2* ${vars.space['2']}))`,
+				padding: `${vars.space['2']}`,
 			},
 			textarea: {
 				padding: `0 ${vars.space['2']} ${vars.space['2']}`,
@@ -93,8 +93,8 @@ export const inputItselfSize = {
 		root: styleVariants({
 			any: {
 				fontSize: vars.typography.size['4'].fontSize,
-				lineHeight: vars.typography.size['4'].lineHeight,
 				height: vars.space['8'],
+				lineHeight: vars.typography.size['4'].lineHeight,
 				padding: `calc(((${vars.space['8']} - ${vars.typography.size['4'].fontSize}) / 2) - 3px) calc(${vars.space['4']} - 1px)`,
 			},
 			textarea: {
@@ -116,8 +116,8 @@ export const inputItselfSize = {
 		root: styleVariants({
 			any: {
 				fontSize: vars.typography.size['7'].fontSize,
-				lineHeight: vars.typography.size['7'].lineHeight,
 				height: '72px',
+				lineHeight: vars.typography.size['7'].lineHeight,
 				padding: '12px 25px',
 				'::placeholder': {
 					fontSize: vars.typography.size['7'].fontSize,
@@ -144,10 +144,10 @@ export const inputItselfSize = {
 export type InputSize = keyof typeof inputItselfSize;
 
 export const iconRoot = style({
-	zIndex: 1,
 	top: '50%',
 	transform: 'translate(0, -50%)',
 	transition: `color 0.2s ${vars.animation.easing.decelerate} 0s`,
+	zIndex: 1,
 });
 
 export const prefixIcon = style({
@@ -157,13 +157,13 @@ export const suffixIcon = style({
 	right: 0,
 });
 export const iconSize = styleVariants({
-	small: {
-		margin: `0 ${vars.space['2']}`,
+	large: {
+		margin: `0 calc(${vars.space['5']} - 1px)`,
 	},
 	medium: {
 		margin: `0 calc(${vars.space['3']} - 1px)`,
 	},
-	large: {
-		margin: `0 calc(${vars.space['5']} - 1px)`,
+	small: {
+		margin: `0 ${vars.space['2']}`,
 	},
 });

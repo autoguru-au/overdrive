@@ -3,65 +3,65 @@ import { style, styleVariants } from '@vanilla-extract/css';
 import { overdriveTokens as vars } from '../../themes/theme.css';
 
 export const fullScreenRoot = style({
-	position: 'fixed',
-	zIndex: 1001,
-	top: vars.space['5'],
-	right: vars.space['5'],
 	bottom: vars.space['5'],
+	height: 'stretch',
 	left: vars.space['5'],
+	maxHeight: '100vh',
+	overflowY: 'auto',
 	paddingBottom: vars.space['5'],
 	paddingTop: vars.space['2'],
-	overflowY: 'auto',
-	maxHeight: '100vh',
-	height: 'stretch',
+	position: 'fixed',
+	right: vars.space['5'],
+	top: vars.space['5'],
+	zIndex: 1001,
 
 	':before': {
-		content: '""',
-		position: 'fixed',
-		zIndex: 0,
 		backgroundColor: vars.colours.intent.secondary.background.standard,
-		pointerEvents: 'none',
-		top: 0,
-		left: 0,
 		bottom: 0,
+		content: '""',
+		left: 0,
+		pointerEvents: 'none',
+		position: 'fixed',
 		right: 0,
+		top: 0,
+		zIndex: 0,
 	},
 });
 
 export const suggestionList = {
 	defaults: style({
 		display: 'grid',
-		overflowY: 'auto',
-		maxHeight: '384px',
-		overscrollBehavior: 'contain',
 		gridAutoFlow: 'row',
 		gridGap: 0,
+		maxHeight: '384px',
+		overflowY: 'auto',
+		overscrollBehavior: 'contain',
 		zIndex: 2,
 	}),
 	blockOptions: style({
 		borderRadius: vars.border.radius['md'],
-		overflowY: 'auto',
 		maxHeight: '384px',
+		overflowY: 'auto',
 	}),
 	inlineOptions: style({
-		overflowY: 'auto',
 		maxHeight: '100%',
+		overflowY: 'auto',
 	}),
 	inlineOptionsNoScroll: style({
-		overflowY: 'visible',
 		maxHeight: 'none',
+		overflowY: 'visible',
 	}),
 };
 
 export const inputPrimitive = style({
-	marginTop: `calc(-1 * ${vars.border.width['1']})`,
 	marginBottom: `calc(-1 * ${vars.border.width['1']})`,
+	marginTop: `calc(-1 * ${vars.border.width['1']})`,
 });
 export const input = style({
+	backgroundColor: 'white',
 	position: 'sticky',
 	top: 0,
 	zIndex: 2,
-	backgroundColor: 'white',
 });
 export const fullScreenInput = style({
 	width: 'calc(100% - 40px)',
@@ -69,8 +69,8 @@ export const fullScreenInput = style({
 
 export const fullScreenCloseBtn = style({
 	position: 'fixed',
-	top: vars.space['5'],
 	right: vars.space['2'],
+	top: vars.space['5'],
 	zIndex: 3,
 });
 
@@ -79,13 +79,13 @@ export const spacer = style({
 });
 
 export const suggestion = style({
-	display: 'block',
-	padding: `${vars.space['3']} calc(${vars.space['3']} + 1px)`,
-	width: '100%',
-	cursor: 'pointer',
-	textAlign: 'left',
-	outline: 'none',
 	backgroundColor: 'transparent',
+	cursor: 'pointer',
+	display: 'block',
+	outline: 'none',
+	padding: `${vars.space['3']} calc(${vars.space['3']} + 1px)`,
+	textAlign: 'left',
+	width: '100%',
 });
 
 export const suggestionListItem = styleVariants({
@@ -98,6 +98,6 @@ export const suggestionListItem = styleVariants({
 });
 
 export const suggestionHighlight = style({
-	color: vars.typography.colour.information,
 	backgroundColor: vars.colours.background.light,
+	color: vars.typography.colour.information,
 });

@@ -14,7 +14,7 @@ import {
 
 import { elementStyles } from '../../styles';
 import { focusOutlineStyle } from '../../styles/focusOutline.css';
-import type { TestId } from '../../types';
+import type { TestIdProp } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box/Box';
 import { Icon } from '../Icon/Icon';
@@ -25,7 +25,7 @@ export interface Props
 			AnchorHTMLAttributes<HTMLAnchorElement>,
 			'as' | 'children' | 'is' | 'style'
 		>,
-		TestId {
+		TestIdProp {
 	as?: ElementType | ReactElement;
 	disabled?: boolean;
 	children?: ReactNode;

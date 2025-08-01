@@ -8,12 +8,12 @@ export const container = style({
 });
 
 export const modal = style({
-	width: '100vw',
-	height: 'auto',
 	alignSelf: 'flex-end',
-	minHeight: `calc(3 * ${vars.space['8']})`,
-	maxHeight: `calc(100vh - ${vars.space['8']})`,
 	borderRadius: `${vars.border.radius['2xl']} ${vars.border.radius['2xl']} 0 0`,
+	height: 'auto',
+	maxHeight: `calc(100vh - ${vars.space['8']})`,
+	minHeight: `calc(3 * ${vars.space['8']})`,
+	width: '100vw',
 	...responsiveStyle({
 		tablet: {
 			alignSelf: 'center',
@@ -67,9 +67,9 @@ export const modalSizeStandard = style(
 );
 
 export const headerCloseButton = style({
-	top: 0,
-	right: 0,
 	bottom: 0,
+	right: 0,
+	top: 0,
 });
 
 export const content = style({

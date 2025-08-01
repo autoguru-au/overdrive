@@ -3,14 +3,14 @@ import React, { useRef } from 'react';
 import { useSwitch, useFocusRing, type AriaSwitchProps } from 'react-aria';
 
 import { textStyles } from '../../styles/typography';
-import type { TestId } from '../../types';
+import type { TestIdProp } from '../../types';
 import { dataAttrs } from '../../utils/dataAttrs';
 import { Box } from '../Box';
 import { VisuallyHidden } from '../VisuallyHidden';
 
 import * as styles from './Switch.css';
 
-export interface SwitchProps extends AriaSwitchProps, TestId {
+export interface SwitchProps extends AriaSwitchProps, TestIdProp {
 	'aria-labelledby'?: AriaSwitchProps['aria-labelledby'];
 	name?: AriaSwitchProps['name'];
 	value?: AriaSwitchProps['value'];
