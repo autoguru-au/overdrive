@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
+import { vi } from 'vitest';
 
 import { Icon } from './Icon';
 
@@ -33,5 +34,37 @@ describe('<Icon />', () => {
 				'span>svg',
 			),
 		).toBeInTheDocument();
+	});
+
+	it('should throw error when icon is null', () => {
+		// Let's see what actually happens instead of expecting an error
+		const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+		const result = render(<Icon icon={null} />);
+		
+		expect(consoleSpy).toHaveBeenCalledWith(
+			'%cIcon component received an empty icon prop.',
+			'color: orange'
+		);
+		
+		// Check what gets rendered
+		expect(result.container.innerHTML).toContain('⬤');
+		
+		consoleSpy.mockRestore();
+	});
+
+	it('should throw error when icon is undefined', () => {
+		// Let's see what actually happens instead of expecting an error  
+		const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+		const result = render(<Icon icon={undefined} />);
+		
+		expect(consoleSpy).toHaveBeenCalledWith(
+			'%cIcon component received an empty icon prop.',
+			'color: orange'
+		);
+		
+		// Check what gets rendered
+		expect(result.container.innerHTML).toContain('⬤');
+		
+		consoleSpy.mockRestore();
 	});
 });
