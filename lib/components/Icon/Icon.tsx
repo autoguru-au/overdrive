@@ -20,7 +20,7 @@ export interface IconProps {
 	>;
 	className?: string;
 	size?: ResponsiveProp<keyof typeof styles.size | string>;
-	icon: IconEl | null | undefined;
+	icon?: IconEl;
 }
 
 export const Icon: FunctionComponent<IconProps> = ({
