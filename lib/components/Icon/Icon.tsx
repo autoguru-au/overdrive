@@ -20,7 +20,7 @@ export interface IconProps {
 	>;
 	className?: string;
 	size?: ResponsiveProp<keyof typeof styles.size | string>;
-	icon: IconEl;
+	icon: IconEl | null | undefined;
 }
 
 export const Icon: FunctionComponent<IconProps> = ({
@@ -30,6 +30,20 @@ export const Icon: FunctionComponent<IconProps> = ({
 	display = 'block',
 }) => {
 	useNullCheck(icon, 'Icon component received an empty icon prop.');
+
+	// Handle null/undefined icons by showing fallback without trying to clone
+	if (!icon) {
+		return (
+			<Box
+				as="span"
+				display={display}
+				className={[resolveResponsiveStyle(size, styles.size), className]}
+				odComponent="icon"
+			>
+				⬤
+			</Box>
+		);
+	}
 
 	const iconElement = cloneElement(icon, {
 		className: elementStyles({
@@ -49,7 +63,7 @@ export const Icon: FunctionComponent<IconProps> = ({
 			className={[resolveResponsiveStyle(size, styles.size), className]}
 			odComponent="icon"
 		>
-			{icon ? iconElement : '⬤'}
+			{iconElement}
 		</Box>
 	);
 };

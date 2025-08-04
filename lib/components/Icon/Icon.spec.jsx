@@ -36,8 +36,7 @@ describe('<Icon />', () => {
 		).toBeInTheDocument();
 	});
 
-	it('should throw error when icon is null', () => {
-		// Let's see what actually happens instead of expecting an error
+	it('should handle null icon gracefully with warning and fallback', () => {
 		const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
 		const result = render(<Icon icon={null} />);
 		
@@ -52,8 +51,7 @@ describe('<Icon />', () => {
 		consoleSpy.mockRestore();
 	});
 
-	it('should throw error when icon is undefined', () => {
-		// Let's see what actually happens instead of expecting an error  
+	it('should handle undefined icon gracefully with warning and fallback', () => {
 		const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
 		const result = render(<Icon icon={undefined} />);
 		
@@ -66,5 +64,10 @@ describe('<Icon />', () => {
 		expect(result.container.innerHTML).toContain('⬤');
 		
 		consoleSpy.mockRestore();
+	});
+
+	it('should not throw errors when icon prop is null or undefined', () => {
+		expect(() => render(<Icon icon={null} />)).not.toThrow();
+		expect(() => render(<Icon icon={undefined} />)).not.toThrow();
 	});
 });
