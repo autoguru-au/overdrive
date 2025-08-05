@@ -1,17 +1,23 @@
 import type { IconType } from '@autoguru/icons';
-import type { FunctionComponent, ReactElement, SVGAttributes } from 'react';
-import * as React from 'react';
-import { cloneElement } from 'react';
+import React, {
+	cloneElement,
+	type FunctionComponent,
+	type ReactElement,
+	type SVGAttributes,
+} from 'react';
 
 import { useNullCheck } from '../../hooks/useNullCheck';
 import { elementStyles } from '../../styles';
 import { resolveResponsiveStyle } from '../../utils/resolveResponsiveProps';
-import { ResponsiveProp } from '../../utils/responsiveProps.css';
+import type { ResponsiveProp } from '../../utils/responsiveProps.css';
 import { Box, type BoxProps } from '../Box/Box';
 
 import * as styles from './Icon.css';
 
-export type IconEl = IconType | ReactElement<SVGAttributes<SVGElement>, 'svg'>;
+export type IconEl =
+	| IconType
+	| ReactElement<SVGAttributes<SVGElement>, 'svg'>
+	| null;
 
 export interface IconProps {
 	display?: Extract<
@@ -20,7 +26,7 @@ export interface IconProps {
 	>;
 	className?: string;
 	size?: ResponsiveProp<keyof typeof styles.size | string>;
-	icon: IconEl;
+	icon?: IconEl;
 }
 
 export const Icon: FunctionComponent<IconProps> = ({
@@ -30,6 +36,18 @@ export const Icon: FunctionComponent<IconProps> = ({
 	display = 'block',
 }) => {
 	useNullCheck(icon, 'Icon component received an empty icon prop.');
+
+	const boxProps: BoxProps = {
+		as: 'span',
+		display,
+		className: [resolveResponsiveStyle(size, styles.size), className],
+		odComponent: 'icon',
+	};
+
+	// Handle null/undefined icons by showing fallback without trying to clone
+	if (!icon) {
+		return <Box {...boxProps}>⬤</Box>;
+	}
 
 	const iconElement = cloneElement(icon, {
 		className: elementStyles({
@@ -42,14 +60,5 @@ export const Icon: FunctionComponent<IconProps> = ({
 		'aria-hidden': icon.props['aria-label'] ? undefined : true,
 	});
 
-	return (
-		<Box
-			as="span"
-			display={display}
-			className={[resolveResponsiveStyle(size, styles.size), className]}
-			odComponent="icon"
-		>
-			{icon ? iconElement : '⬤'}
-		</Box>
-	);
+	return <Box {...boxProps}>{iconElement}</Box>;
 };
