@@ -49,17 +49,3 @@ export const Responsive: Story = {
 		size: ['small', 'medium', 'large'],
 	},
 };
-
-export const NullIcon: Story = {
-	args: {
-		icon: null,
-		size: 'medium',
-	},
-};
-
-export const UndefinedIcon: Story = {
-	args: {
-		icon: undefined,
-		size: 'medium',
-	},
-};
