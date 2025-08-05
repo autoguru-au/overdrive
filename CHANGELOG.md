@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.44.9
+
+### Patch Changes
+
+- a0c0b3d: **Icon**: handles null and undefined icon prop edgecase
+
 ## 4.44.8
 
 ### Patch Changes
