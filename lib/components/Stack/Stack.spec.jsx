@@ -39,7 +39,9 @@ describe('<Stack />', () => {
 			</Stack>,
 		);
 
-		const stackElement = container.querySelector('[data-od-component="stack"]');
+		const stackElement = container.querySelector(
+			'[data-od-component="stack"]',
+		);
 		expect(stackElement).toHaveClass('custom-stack-class');
 	});
 
@@ -51,7 +53,9 @@ describe('<Stack />', () => {
 			</Stack>,
 		);
 
-		const stackElement = container.querySelector('[data-od-component="stack"]');
+		const stackElement = container.querySelector(
+			'[data-od-component="stack"]',
+		);
 		expect(stackElement).toHaveClass('custom-stack-class');
 		// Verify both the custom class and divider styles are applied
 		expect(stackElement.className).toContain('custom-stack-class');
