@@ -49,7 +49,7 @@
 
 (147aeb0)
 
-- **EditableText:** fixes width during edit mode
+- **EditableText:** fixes incorrect width during edit mode from v4.44.2
 
 **Flex Layout**
 
