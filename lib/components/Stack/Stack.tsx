@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import React, { Children, type ReactNode, useMemo } from 'react';
 import flattenChildren from 'react-keyed-flatten-children';
 
@@ -75,7 +76,7 @@ export const Stack = ({
 	return (
 		<Box
 			as={as}
-			className={{ [styles.stackWithDividers]: dividers, className }}
+			className={clsx(dividers && styles.stackWithDividers, className)}
 			display="flex"
 			flexDirection="column"
 			gap={space}
