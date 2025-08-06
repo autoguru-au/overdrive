@@ -1,5 +1,11 @@
 # @autoguru/overdrive
 
+## 4.44.10
+
+### Patch Changes
+
+- 4590663: **Stack**: fix for className value render
+
 ## 4.44.9
 
 ### Patch Changes
