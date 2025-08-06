@@ -154,8 +154,10 @@ export const styleIndicator = style({
 export const styledCheckbox = recipe({
 	base: [
 		{
-			backgroundColor: tokens.colours.background.body,
+			borderColor: tokens.border.colours.gray,
 			borderRadius: tokens.border.radius['sm'],
+			borderStyle: 'solid',
+			borderWidth: tokens.border.width[1],
 			color: 'transparent',
 		},
 		interactionStyle({

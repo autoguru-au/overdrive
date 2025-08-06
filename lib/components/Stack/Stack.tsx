@@ -75,7 +75,7 @@ export const Stack = ({
 	return (
 		<Box
 			as={as}
-			className={{ [styles.stackWithDividers]: dividers, className }}
+			className={[dividers && styles.stackWithDividers, className]}
 			display="flex"
 			flexDirection="column"
 			gap={space}

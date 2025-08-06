@@ -30,4 +30,35 @@ describe('<Stack />', () => {
 		);
 		expect(container.firstChild).toMatchSnapshot();
 	});
+
+	it('should handle className prop correctly', () => {
+		const { container } = render(
+			<Stack className="custom-stack-class">
+				<div>Item 1</div>
+				<div>Item 2</div>
+			</Stack>,
+		);
+
+		const stackElement = container.querySelector(
+			'[data-od-component="stack"]',
+		);
+		expect(stackElement).toHaveClass('custom-stack-class');
+	});
+
+	it('should handle className prop with dividers correctly', () => {
+		const { container } = render(
+			<Stack className="custom-stack-class" dividers>
+				<div>Item 1</div>
+				<div>Item 2</div>
+			</Stack>,
+		);
+
+		const stackElement = container.querySelector(
+			'[data-od-component="stack"]',
+		);
+		expect(stackElement).toHaveClass('custom-stack-class');
+		// Verify both the custom class and divider styles are applied
+		expect(stackElement.className).toContain('custom-stack-class');
+		expect(stackElement.className).toContain('stackWithDividers');
+	});
 });
