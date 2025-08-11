@@ -125,7 +125,7 @@ __metadata:
     "@babel/preset-env": "npm:7.28.0"
     "@babel/preset-react": "npm:7.27.1"
     "@babel/preset-typescript": "npm:7.27.1"
-    "@babel/runtime-corejs3": "npm:7.28.0"
+    "@babel/runtime-corejs3": "npm:7.28.2"
     "@changesets/cli": "npm:2.29.5"
     "@chromatic-com/storybook": "npm:4.1.0"
     "@internationalized/date": "npm:3.8.2"
@@ -1592,12 +1592,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime-corejs3@npm:7.28.0, @babel/runtime-corejs3@npm:^7.24.5":
-  version: 7.28.0
-  resolution: "@babel/runtime-corejs3@npm:7.28.0"
+"@babel/runtime-corejs3@npm:7.28.2, @babel/runtime-corejs3@npm:^7.24.5":
+  version: 7.28.2
+  resolution: "@babel/runtime-corejs3@npm:7.28.2"
   dependencies:
     core-js-pure: "npm:^3.43.0"
-  checksum: 10/309eb0314e085132c0b231aa2032612ff656bb518d0cd0dc256d036de70309b77e0a5c7d9510e23cec69d3cad916c42b28c4c0cc2568237ac8710d8d4345ab7b
+  checksum: 10/a616cdeb1ac5be075c433e28a6ec2b17ad1f3db92ea5a983b72401c6ddfb4440300dd2083ebb7820acf22d62f7611ee2f27c8b2bbb8988c4216325121faefbcc
   languageName: node
   linkType: hard
 
